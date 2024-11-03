@@ -8,7 +8,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
-    "format:write": "prettier \"**/*\" --ignore-unknown --list-different --write",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --list-different --write",
     "clean": "turbo clean && rimraf node_modules",
     "typecheck": "tsc"
   },

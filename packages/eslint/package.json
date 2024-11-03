@@ -15,7 +15,7 @@
         "clean": "rimraf *.tsbuildinfo node_modules",
         "lint": "eslint .  --max-warnings 0",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:write": "prettier \"**/*\" --ignore-unknown --list-different --write",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --list-different --write",
         "typecheck": "tsc"
     },
     "dependencies": {
