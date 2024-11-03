@@ -1,5 +1,5 @@
 {
-  "extends": "@solar/tsconfig/base.json",
-  "include": ["./src/**/*","eslint.config.js"],
-  "exclude": ["dist", "build", "node_modules", ".vscode", ".next", ".turbo"]
+    "extends": "@solar/tsconfig/base.json",
+    "include": ["./src/**/*", "eslint.config.js"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".next", ".turbo"]
 }

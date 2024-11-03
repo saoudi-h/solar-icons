@@ -1,45 +1,49 @@
 {
-  "name": "@solar/eslint",
-  "version": "0.0.0",
-  "private": true,
-  "description": "A package to share ESLint configurations in workspace",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "default": "./src/index.js",
-      "types": "./src/index.d.ts"
+    "name": "@solar/eslint",
+    "version": "0.0.0",
+    "private": true,
+    "description": "A package to share ESLint configurations in workspace",
+    "license": "MIT",
+    "type": "module",
+    "exports": {
+        ".": {
+            "default": "./src/index.js",
+            "types": "./src/index.d.ts"
+        }
+    },
+    "scripts": {
+        "clean": "rimraf *.tsbuildinfo node_modules",
+        "lint": "eslint .  --max-warnings 0",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:write": "prettier \"**/*\" --ignore-unknown --list-different --write",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@eslint/compat": "^1.1.1",
+        "@eslint/eslintrc": "^3.1.0",
+        "@eslint/js": "^9.9.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-jsdoc": "^50.2.2",
+        "eslint-plugin-jsx-a11y": "^6.9.0",
+        "eslint-plugin-playwright": "^1.6.2",
+        "eslint-plugin-react": "^7.35.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-regexp": "^2.6.0",
+        "eslint-plugin-tailwindcss": "^3.17.4",
+        "eslint-plugin-turbo": "^2.1.1",
+        "globals": "^15.9.0",
+        "typescript-eslint": "^8.4.0"
+    },
+    "devDependencies": {
+        "@next/eslint-plugin-next": "^14.2.7",
+        "@solar/prettier": "workspace:*",
+        "@solar/tsconfig": "workspace:*",
+        "@types/eslint-config-prettier": "^6.11.3",
+        "@types/node": "^22.8.7",
+        "@typescript-eslint/utils": "^8.4.0",
+        "eslint-plugin-storybook": "^0.8.0",
+        "prettier": "^3.3.3",
+        "rimraf": "^6.0.1",
+        "typescript": "^5.0.0"
     }
-  },
-  "scripts": {
-    "clean": "rimraf *.tsbuildinfo node_modules",
-    "lint": "eslint .  --max-warnings 0",
-    "typecheck": "tsc"
-  },
-  "dependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsdoc": "^50.2.2",
-    "eslint-plugin-jsx-a11y": "^6.9.0",
-    "eslint-plugin-playwright": "^1.6.2",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-regexp": "^2.6.0",
-    "eslint-plugin-tailwindcss": "^3.17.4",
-    "eslint-plugin-turbo": "^2.1.1",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.4.0"
-  },
-  "devDependencies": {
-    "@next/eslint-plugin-next": "^14.2.7",
-    "@solar/tsconfig": "workspace:^",
-    "@types/eslint-config-prettier": "^6.11.3",
-    "@types/node": "^22.8.7",
-    "@typescript-eslint/utils": "^8.4.0",
-    "eslint-plugin-storybook": "^0.8.0",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.0.0"
-  }
 }
