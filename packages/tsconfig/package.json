@@ -2,8 +2,14 @@
   "name": "@solar/tsconfig",
   "version": "0.0.0",
   "private": true,
+  "description": "A package to share tsconfig presets around the workspace",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+  "type": "module",
+  "files": [
+    "./base.json",
+    "./next.json",
+    "./react.json",
+    "./build.json",
+    "./dom.json"
+  ]
 }
