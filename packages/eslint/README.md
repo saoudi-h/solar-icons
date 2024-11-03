@@ -1,3 +1,3 @@
-# `@turbo/eslint-config`
+# `@solar/eslint`
 
 Collection of internal eslint configurations.
