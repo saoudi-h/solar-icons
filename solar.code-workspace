@@ -1,8 +1,45 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".",
+    },
+    {
+      "path": "packages/core",
+    },
+    {
+      "path": "packages/eslint",
+    },
+    {
+      "path": "packages/react",
+    },
+    {
+      "path": "packages/tsconfig",
+    },
+    {
+      "path": "packages/prettier",
+    },
+  ],
+  "settings": {
+    "biome.enabled": false,
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#f2e6df",
+      "activityBar.background": "#f2e6df",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#4ab571",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#15202b99",
+      "sash.hoverBorder": "#f2e6df",
+      "statusBar.background": "#e4c8bb",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#d5aa96",
+      "statusBarItem.remoteBackground": "#e4c8bb",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#e4c8bb",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#e4c8bb99",
+      "titleBar.inactiveForeground": "#15202b99",
+    },
+    "peacock.color": "#e4c8bb",
+  },
 }

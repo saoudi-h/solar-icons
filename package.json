@@ -1,19 +1,51 @@
 {
   "name": "solar",
   "private": true,
+  "description": "Solar Icons",
+  "type": "module",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+    "format:write": "prettier \"**/*\" --ignore-unknown --list-different --write",
+    "clean": "turbo clean && rimraf node_modules",
+    "typecheck": "tsc"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
+    "@solar/eslint": "workspace:*",
+    "@solar/tsconfig": "workspace:*",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.8.7",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "turbo": "^2.2.3",
-    "typescript": "5.5.4"
+    "typescript": "^5.0.0"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saoudi-h/solar.git"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "svg",
+    "solar",
+    "design",
+    "interface",
+    "phosphor",
+    "UI",
+    "UX"
+  ],
+  "author": {
+    "name": "Saoudi Hakim",
+    "url": "https://hakimsaoudi.dev",
+    "email": "saoudihakim@gmail.com"
+  },
+  "license": "MIT"
 }
