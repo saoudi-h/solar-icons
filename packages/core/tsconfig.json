@@ -5,9 +5,6 @@
         "moduleResolution": "Bundler",
         "baseUrl": "src",
         "rootDir": "src",
-        "paths": {
-            "@sella/ui/*": ["./*"]
-        }
     },
     "include": ["./src/**/*"],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
