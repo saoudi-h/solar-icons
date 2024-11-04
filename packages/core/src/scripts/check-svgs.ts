@@ -1,13 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
+const __dirname = import.meta.dirname
 const SVGS_PATH = path.resolve(__dirname, '../svgs');
 
-const ICON_WEIGHTS: string[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone']; // Liste des poids pour la vérification
+const ICON_WEIGHTS: string[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone']; // List of icon weights
 
 const checkSvgs = () => {
   let totalIcons = 0;

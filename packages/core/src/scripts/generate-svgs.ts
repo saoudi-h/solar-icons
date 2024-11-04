@@ -1,18 +1,19 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import axios from 'axios';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
 import * as Figma from 'figma-api';
 import pLimit from 'p-limit';
+import { toKebabCase } from '../utils';
+import { Metadata } from '../types';
+import  iconWeights  from '../icon-weights.json' assert { type: 'json' };
 
 // Load environment variables
 dotenv.config();
 
 // Define base constants
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const SVGS_PATH = path.resolve(__dirname, '../svgs');
 const METADATA_PATH = path.resolve(__dirname, '../metadata.json');
 const CONCURRENCY_LIMIT = 50;
@@ -27,24 +28,9 @@ if (!FIGMA_API_TOKEN || !FIGMA_FILE_ID) {
 }
 
 // Define icon styles as in Figma
-const ICON_WEIGHTS: Record<string, string> = {
-  Broken: 'Broken',
-  LineDuotone: 'LineDuotone',
-  Linear: 'Linear',
-  Outline: 'Outline',
-  Bold: 'Bold',
-  BoldDuotone: 'BoldDuotone',
-};
+const ICON_WEIGHTS: Record<string, string> = iconWeights;
 
-// Types for metadata
-interface Metadata {
-  categories: {
-    [category: string]: {
-      tags: string[];
-      icons: string[];
-    };
-  };
-}
+
 
 interface ParsedIconName {
   style: string;
@@ -66,14 +52,6 @@ const initializeSvgsDirectory = async (): Promise<void> => {
   }
 };
 
-// Function to convert a string to kebab-case
-const toKebabCase = (str: string): string => {
-  return str
-    .replace(/([a-z])([A-Z])/g, '$1-$2') // Separate uppercase letters without altering the first letter.
-    .replace(/[\s,]+/g, '-') // Replace spaces and commas with dashes.
-    .replace(/[^a-zA-Z0-9\-]/g, '') // Remove non-alphanumeric characters (including uppercase).
-    .toLowerCase(); // Convert to lowercase at the end.
-};
 
 // Function to parse and clean the icon name
 const parseIconName = (name: string): ParsedIconName => {
@@ -342,4 +320,4 @@ const generateSvgs = async (): Promise<void> => {
 };
 
 // Execute the SVG generation
-generateSvgs();
+await generateSvgs();
