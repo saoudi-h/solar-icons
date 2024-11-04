@@ -7,8 +7,9 @@
         "lint": "eslint . --max-warnings 0",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "svgs:generate": "tsx src/scripts/generate-svgs.ts",
-        "svgs:check": "tsx src/scripts/check-svgs.ts",
+        "generate:svgs": "tsx src/scripts/generate-svgs.ts",
+        "check:svgs": "tsx src/scripts/check-svgs.ts",
+        "check:metadata": "tsx src/scripts/check-metadata.ts",
         "typecheck": "tsc"
     },
     "devDependencies": {
