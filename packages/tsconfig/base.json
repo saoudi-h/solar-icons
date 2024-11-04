@@ -48,7 +48,6 @@
   "include": [
     "./.commitlintrc.ts",
     "./.storybook/**/*",
-    "./**/*.astro",
     "./**/*.ts",
     "./**/*.tsx",
     "./**/*.cts",
