@@ -9,6 +9,6 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["./src/**/*", "./src/**/*.json", "vite.config.ts","types"],
+    "include": ["./src/**/*", "./src/**/*.json", "vite.config.ts"],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
 }
