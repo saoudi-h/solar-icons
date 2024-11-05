@@ -1,6 +1,5 @@
 /**
  * Convert a type string from camelCase to PascalCase
- *
  * @example
  * type Test = CamelToPascal<'fooBar'> // 'FooBar'
  */
@@ -22,7 +21,7 @@ export interface Metadata {
 
 /**
  * Icon Style Enum
- * */
+ */
 export enum IconStyle {
     BROKEN = 'Broken',
     LINE_DUOTONE = 'LineDuotone',
@@ -34,5 +33,5 @@ export enum IconStyle {
 
 /**
  * Icon Weight Type
- * */
+ */
 export type IconWeight = 'Broken' | 'LineDuotone' | 'Linear' | 'Outline' | 'Bold' | 'BoldDuotone'

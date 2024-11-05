@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 import * as Figma from 'figma-api'
 import pLimit from 'p-limit'
 import { fixIconName, toKebabCase } from '../utils'
-import { Metadata } from '../types'
+import type { Metadata } from '../types'
 import iconWeights from '../icon-weights.json' assert { type: 'json' }
 
 // Load environment variables

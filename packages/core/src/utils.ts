@@ -1,4 +1,5 @@
-import { CamelToPascal, Metadata } from './types'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { CamelToPascal, Metadata } from './types'
 import fs from 'node:fs'
 import path from 'node:path'
 import chalk from 'chalk'
@@ -10,10 +11,9 @@ const METADATA_PATH = path.resolve(__dirname, './metadata.json')
 
 /**
  * Load the metadata from the JSON file
- *
- * @returns {Promise<Object>} The metadata object
+ * @returns The metadata object
  */
-export const loadMetadata = async (): Promise<Object> => {
+export const loadMetadata = async (): Promise<object> => {
     try {
         return JSON.parse(await fs.promises.readFile(METADATA_PATH, 'utf-8'))
     } catch (error) {
@@ -26,8 +26,9 @@ export const loadMetadata = async (): Promise<Object> => {
 
 /**
  * Check if the metadata file exists
- * @returns {void}
- * @throws {Error} If the metadata file does not exist
+ *
+ * If the metadata file does not exist, this function will log an error
+ * and exit the process with an error code.
  */
 export const checkMetadataFileExists = () => {
     if (!fs.existsSync(METADATA_PATH)) {
@@ -39,8 +40,8 @@ export const checkMetadataFileExists = () => {
 //----------------------------------------------------------------------------------------------------------------
 /**
  * Check if the metadata is valid
- * @param {any} data - The metadata object
- * @returns {boolean} - True if the metadata is valid, false otherwise
+ * @param data - The metadata object
+ * @returns - True if the metadata is valid, false otherwise
  */
 export function isValidMetadata(data: any): data is Metadata {
     // Check if the data is an object and has the "categories" property
@@ -83,26 +84,30 @@ export function isValidMetadata(data: any): data is Metadata {
 //----------------------------------------------------------------------------------------------------------------
 
 /**
- * Converts string to kebab case
- *
- * @param {string} str
- * @returns {string} A kebabized string
+ * Converts a string to kebab case
+ * @example
+ * toKebabCase('StringWithUppercaseLetters') // 'string-with-uppercase-letters'
+ * toKebabCase('String With Spaces') // 'string-with-spaces'
+ * toKebabCase('String,With,Commas') // 'string-with-commas'
+ * toKebabCase('String!With!Punctuation') // 'string-with-punctuation'
+ * toKebabCase('StringWithUppercaseLetters And Spaces') // 'string-with-uppercase-letters-and-spaces'
+ * @param str - The string to convert to kebab case
+ * @returns The kebab case representation of the string
  */
 export const toKebabCase = (str: string): string => {
     return str
         .replace(/([a-z])([A-Z])/g, '$1-$2') // Separate uppercase letters without altering the first letter.
         .replace(/[\s,]+/g, '-') // Replace spaces and commas with dashes.
-        .replace(/[^a-zA-Z0-9\-]/g, '') // Remove non-alphanumeric characters (including uppercase).
+        .replace(/[^a-z0-9-]/gi, '') // Remove non-alphanumeric characters (including uppercase).
         .toLowerCase() // Convert to lowercase at the end.
 }
 
 //----------------------------------------------------------------------------------------------------------------
 
 /**
- * Cleans icon name
- *
- * @param {string} str
- * @returns {string} A cleaned icon name
+ * Replaces occurrences of "4K" in the icon name string with "FourK".
+ * @param str - The icon name string to be fixed.
+ * @returns The fixed icon name string with "4K" replaced by "FourK".
  */
 export const fixIconName = (str: string): string => {
     return str.replace(/4K/g, 'FourK')
@@ -111,23 +116,33 @@ export const fixIconName = (str: string): string => {
 //----------------------------------------------------------------------------------------------------------------
 
 /**
- * Converts string to camel case
- *
- * @param {string} string
- * @returns {string} A camelized string
+ * Converts a string to camel case
+ * @example
+ * toCamelCase('string-with-dashes') // 'stringWithDashes'
+ * toCamelCase('String With Spaces') // 'stringWithSpaces'
+ * toCamelCase('String,With,Commas') // 'stringWithCommas'
+ * toCamelCase('String!With!Punctuation') // 'stringWithPunctuation'
+ * toCamelCase('StringWithUppercaseLetters And Spaces') // 'stringWithUppercaseLettersAndSpaces'
+ * @param string - The string to convert to camel case
+ * @returns The camel case representation of the string
  */
 export const toCamelCase = <T extends string>(string: T) =>
-    string.replace(/^([A-Z])|[\s-_]+(\w)/g, (_, p1, p2) =>
+    string.replace(/^([A-Z])|[\s\-_]+(\w)/g, (_, p1, p2) =>
         p2 ? p2.toUpperCase() : p1.toLowerCase()
     )
 
 //----------------------------------------------------------------------------------------------------------------
 
 /**
- * Converts string to pascal case
- *
- * @param {string} string
- * @returns {string} A pascalized string
+ * Converts a string to PascalCase (uppercase first letter, no separators).
+ * @example
+ * toPascalCase('string-with-dashes') // 'StringWithDashes'
+ * toPascalCase('String With Spaces') // 'StringWithSpaces'
+ * toPascalCase('String,With,Commas') // 'StringWithCommas'
+ * toPascalCase('String!With!Punctuation') // 'StringWithPunctuation'
+ * toPascalCase('StringWithUppercaseLetters And Spaces') // 'StringWithUppercaseLettersAndSpaces'
+ * @param string - The string to convert to PascalCase
+ * @returns The PascalCase representation of the string
  */
 export const toPascalCase = <T extends string>(string: T): CamelToPascal<T> => {
     const camelCase = toCamelCase(string)

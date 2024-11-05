@@ -40,6 +40,7 @@
         "figma-api": "^1.11.0",
         "globals": "^15.11.0",
         "p-limit": "^6.1.0",
+        "picocolors": "^1.1.1",
         "prettier": "^3.2.5",
         "rimraf": "^6.0.1",
         "tsx": "^4.19.2",
@@ -64,9 +65,6 @@
         "email": "saoudihakim@gmail.com"
     },
     "peerDependencies": {
-        "node:fs": ">= 16.8",
-        "node:path": ">= 16.8",
-        "node:url": ">= 16.8",
         "chalk": ">= 5.3.0"
     },
     "license": "MIT",
