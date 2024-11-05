@@ -13,6 +13,9 @@
         },
         "./package.json": {
             "default": "./package.json"
+        },
+        "./metadata.json": {
+            "default": "./dist/metadata.json"
         }
     },
     "scripts": {
@@ -24,7 +27,7 @@
         "check:svgs": "tsx src/scripts/check-svgs.ts",
         "check:metadata": "tsx src/scripts/check-metadata.ts",
         "clean": "node_modules dist",
-        "clean:generated": "rimraf src/svgs src/metadata.json",
+        "clean:generated": "rimraf svgs src/metadata.json",
         "typecheck": "tsc"
     },
     "devDependencies": {
