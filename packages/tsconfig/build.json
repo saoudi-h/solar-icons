@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Build",
   "compilerOptions": {
-    "tsBuildInfoFile": "./tsconfig.build.tsbuildinfo",
     "outDir": "./dist",
     "rootDir": "./src",
     "noEmit": false
