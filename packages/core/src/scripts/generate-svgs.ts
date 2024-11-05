@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import axios from 'axios'
-import chalk from 'chalk'
+import pc from 'picocolors'
 import dotenv from 'dotenv'
 import * as Figma from 'figma-api'
 import pLimit from 'p-limit'
@@ -23,7 +23,7 @@ const { FIGMA_API_TOKEN, FIGMA_FILE_ID } = process.env
 
 // Check environment variables
 if (!FIGMA_API_TOKEN || !FIGMA_FILE_ID) {
-    console.error(chalk.red('Environment Variables not set.'))
+    console.error(pc.red('Environment Variables not set.'))
     process.exit(1)
 }
 
@@ -43,9 +43,9 @@ const initializeSvgsDirectory = async (): Promise<void> => {
     try {
         await fs.rm(SVGS_PATH, { recursive: true, force: true })
         await fs.mkdir(SVGS_PATH, { recursive: true })
-        console.log(chalk.green(`Initialized directory: ${SVGS_PATH}`))
+        console.log(pc.green(`Initialized directory: ${SVGS_PATH}`))
     } catch (error) {
-        console.error(chalk.red('Error initializing svgs directory:'), error)
+        console.error(pc.red('Error initializing svgs directory:'), error)
         process.exit(1)
     }
 }
@@ -55,9 +55,7 @@ const parseIconName = (name: string): ParsedIconName => {
     const parts = name.split('/').map(part => part.trim())
 
     if (parts.length !== 3) {
-        console.error(
-            chalk.red(`Invalid name format: "${name}". Expected 3 parts separated by "/".`)
-        )
+        console.error(pc.red(`Invalid name format: "${name}". Expected 3 parts separated by "/".`))
         process.exit(1)
     }
 
@@ -70,7 +68,7 @@ const parseIconName = (name: string): ParsedIconName => {
     const categoryParts = categoriesRaw!.split(/[,&]+/).map(part => part.trim())
 
     if (categoryParts.length === 0) {
-        console.error(chalk.red(`No categories found in: "${categoriesRaw}"`))
+        console.error(pc.red(`No categories found in: "${categoriesRaw}"`))
         process.exit(1)
     }
 
@@ -97,11 +95,11 @@ const downloadSvg = async (url: string, retries = 3): Promise<string> => {
         return data
     } catch (error) {
         if (retries > 0) {
-            console.warn(chalk.yellow(`Retrying download... Attempts remaining: ${retries}`))
+            console.warn(pc.yellow(`Retrying download... Attempts remaining: ${retries}`))
             await new Promise(res => setTimeout(res, 1000))
             return downloadSvg(url, retries - 1)
         } else {
-            console.error(chalk.red('Error downloading SVG:'), error)
+            console.error(pc.red('Error downloading SVG:'), error)
             return ''
         }
     }
@@ -116,7 +114,7 @@ const fetchImageUrls = async (
     const chunkSize = 500
     const urls: Record<string, string> = {}
 
-    console.log(chalk.blue('Fetching image URLs from Figma...'))
+    console.log(pc.blue('Fetching image URLs from Figma...'))
     for (let i = 0; i < ids.length; i += chunkSize) {
         const chunkIds = ids.slice(i, i + chunkSize).join(',')
         const response = await api.getImage(fileId, {
@@ -125,7 +123,7 @@ const fetchImageUrls = async (
             format: 'svg',
         })
         Object.assign(urls, response.images)
-        console.log(chalk.green(`Fetched URLs for chunk ${Math.floor(i / chunkSize) + 1}`))
+        console.log(pc.green(`Fetched URLs for chunk ${Math.floor(i / chunkSize) + 1}`))
     }
 
     return urls
@@ -171,7 +169,7 @@ const verifySvgs = async (
         { simplifiedOriginal: string; simplifiedKebab: string; tags: string[] }
     >
 ): Promise<void> => {
-    console.log(chalk.blue('Verifying directory contents...'))
+    console.log(pc.blue('Verifying directory contents...'))
     let totalIcons = 0
 
     // Calculate column widths for the report
@@ -196,16 +194,16 @@ const verifySvgs = async (
                 totalIcons += fileCount
                 rows.push({ category: originalCategory, weight, files: fileCount })
                 console.log(
-                    chalk.blue(` - ${originalCategory} / ${weight}:`),
-                    chalk.green(`${fileCount} icons`)
+                    pc.blue(` - ${originalCategory} / ${weight}:`),
+                    pc.green(`${fileCount} icons`)
                 )
             } catch (error) {
-                console.error(chalk.red(`Error reading directory ${weightPath}:`), error)
+                console.error(pc.red(`Error reading directory ${weightPath}:`), error)
             }
         }
     }
 
-    console.log(chalk.green(`Total icons: ${totalIcons}`))
+    console.log(pc.green(`Total icons: ${totalIcons}`))
 }
 
 //------------------------------------------------------------------------------------------------
@@ -221,16 +219,16 @@ const main = async (): Promise<void> => {
         // Initialize the Figma API
         const api = new Figma.Api({ personalAccessToken: FIGMA_API_TOKEN })
 
-        console.log(chalk.blue('Fetching file data from Figma...'))
+        console.log(pc.blue('Fetching file data from Figma...'))
         const { components } = await api.getFile(FIGMA_FILE_ID)
         const ids = Object.keys(components)
 
-        console.log(chalk.blue(`Fetched ${ids.length} components.`))
+        console.log(pc.blue(`Fetched ${ids.length} components.`))
 
         // Fetch the URLs for the SVGs
         const urls = await fetchImageUrls(api, FIGMA_FILE_ID, ids)
 
-        console.log(chalk.blue('Downloading and saving icons...'))
+        console.log(pc.blue('Downloading and saving icons...'))
 
         const limit = pLimit(CONCURRENCY_LIMIT)
         let totalIconsProcessed = 0
@@ -251,7 +249,7 @@ const main = async (): Promise<void> => {
                 const name = component?.name
 
                 if (!name) {
-                    console.warn(chalk.yellow(`Skipping undefined name for component ID: ${id}`))
+                    console.warn(pc.yellow(`Skipping undefined name for component ID: ${id}`))
                     failedDownloads[id] = 'undefined name'
                     return
                 }
@@ -269,7 +267,7 @@ const main = async (): Promise<void> => {
                 const iconWeight = ICON_WEIGHTS[style]
 
                 if (!iconWeight) {
-                    console.warn(chalk.yellow(`Unknown style for icon: ${name}`))
+                    console.warn(pc.yellow(`Unknown style for icon: ${name}`))
                     failedDownloads[id] = 'unknown style'
                     return
                 }
@@ -279,7 +277,7 @@ const main = async (): Promise<void> => {
                     // Check for collisions
                     if (simplifiedCategorySet.has(mainCategoryKebab)) {
                         console.error(
-                            chalk.red(
+                            pc.red(
                                 `Collision detected for simplified category name: "${mainCategoryKebab}"`
                             )
                         )
@@ -315,7 +313,7 @@ const main = async (): Promise<void> => {
                 try {
                     await fs.mkdir(path.dirname(iconPath), { recursive: true })
                 } catch (error) {
-                    console.error(chalk.red(`Error creating directory for ${iconPath}:`), error)
+                    console.error(pc.red(`Error creating directory for ${iconPath}:`), error)
                     failedDownloads[id] = 'failed to create directory'
                     return
                 }
@@ -324,13 +322,13 @@ const main = async (): Promise<void> => {
                 try {
                     await fs.writeFile(iconPath, svgData, 'utf-8')
                     console.log(
-                        chalk.green(
+                        pc.green(
                             `Saved "${parsed.iconNameKebab}" in "${mainCategoryOriginal}" / "${iconWeight}"`
                         )
                     )
                     totalIconsProcessed++
                 } catch (error) {
-                    console.error(chalk.red(`Error writing file ${iconPath}:`), error)
+                    console.error(pc.red(`Error writing file ${iconPath}:`), error)
                     failedDownloads[id] = 'failed to write file'
                 }
             })
@@ -338,28 +336,28 @@ const main = async (): Promise<void> => {
 
         // Wait for all download promises to resolve
         await Promise.all(downloadPromises)
-        console.log(chalk.green(`\nSVGs generated successfully: ${totalIconsProcessed} icons.`))
+        console.log(pc.green(`\nSVGs generated successfully: ${totalIconsProcessed} icons.`))
 
         // Verify directory contents
         await verifySvgs(SVGS_PATH, ICON_WEIGHTS, metadata, categoryMap)
 
         // Summary of failed downloads
         if (Object.keys(failedDownloads).length > 0) {
-            console.log(chalk.yellow('\nSummary of failed downloads:'))
+            console.log(pc.yellow('\nSummary of failed downloads:'))
             for (const [id, reason] of Object.entries(failedDownloads)) {
-                console.log(chalk.red(`ID ${id}: ${reason}`))
+                console.log(pc.red(`ID ${id}: ${reason}`))
             }
         } else {
-            console.log(chalk.green('\nNo failures!'))
+            console.log(pc.green('\nNo failures!'))
         }
 
         // Generate the metadata file
         await fs.writeFile(METADATA_PATH, JSON.stringify(metadata, null, 2), 'utf-8')
-        console.log(chalk.green(`\nMetadata file generated at ${METADATA_PATH}`))
+        console.log(pc.green(`\nMetadata file generated at ${METADATA_PATH}`))
 
-        console.log(chalk.green('\nSVG generation and verification completed.'))
+        console.log(pc.green('\nSVG generation and verification completed.'))
     } catch (error) {
-        console.error(chalk.red('An unexpected error occurred:'), error)
+        console.error(pc.red('An unexpected error occurred:'), error)
         process.exit(1)
     }
 }

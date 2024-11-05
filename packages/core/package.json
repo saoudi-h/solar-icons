@@ -34,7 +34,6 @@
         "@types/node": "^22.8.7",
         "@vitejs/plugin-react": "^4.3.3",
         "axios": "^1.7.7",
-        "chalk": "^5.3.0",
         "dotenv": "^16.4.5",
         "eslint": "^9.14.0",
         "figma-api": "^1.11.0",
@@ -65,7 +64,7 @@
         "email": "saoudihakim@gmail.com"
     },
     "peerDependencies": {
-        "chalk": ">= 5.3.0"
+        "picocolors": "^1.1.1"
     },
     "license": "MIT",
     "bugs": {

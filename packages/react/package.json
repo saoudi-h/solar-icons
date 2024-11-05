@@ -67,6 +67,7 @@
         "@types/react-dom": "^18.3.1",
         "@vitejs/plugin-react": "^4.3.3",
         "dotenv": "^16.4.5",
+        "picocolors": "^1.1.1",
         "prettier": "^3.3.3",
         "react": "18.3.1",
         "react-dom": "^18.3.1",

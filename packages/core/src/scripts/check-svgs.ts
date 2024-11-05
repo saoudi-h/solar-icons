@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import chalk from 'chalk'
+import pc from 'picocolors'
 
 const __dirname = import.meta.dirname
 const SVGS_PATH = path.resolve(__dirname, '../svgs')
@@ -10,11 +10,11 @@ const ICON_WEIGHTS: string[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'B
 const checkSvgs = () => {
     let totalIcons = 0
 
-    console.log(chalk.blue('Checking SVGs...\n'))
+    console.log(pc.blue('Checking SVGs...\n'))
 
     // Check if svgs directory exists
     if (!fs.existsSync(SVGS_PATH)) {
-        console.log(chalk.red(`Error: Directory ${SVGS_PATH} does not exist.`))
+        console.log(pc.red(`Error: Directory ${SVGS_PATH} does not exist.`))
         process.exit(1) // Exit with an error
     }
 
@@ -24,7 +24,7 @@ const checkSvgs = () => {
         .filter(dirent => dirent.isDirectory())
 
     if (categories.length === 0) {
-        console.log(chalk.red('No categories found in the SVGs directory.'))
+        console.log(pc.red('No categories found in the SVGs directory.'))
         process.exit(1)
     }
 
@@ -46,7 +46,7 @@ const checkSvgs = () => {
                 rows.push({ category: categoryDir.name, weight, files: fileCount })
             } else {
                 console.log(
-                    chalk.yellow(
+                    pc.yellow(
                         `Warning: Weight directory "${weight}" missing in category "${categoryDir.name}".`
                     )
                 )
@@ -75,21 +75,21 @@ const checkSvgs = () => {
     const footer = `└${'─'.repeat(categoryColumnWidth + 2)}┴${'─'.repeat(weightColumnWidth + 2)}┴${'─'.repeat(filesColumnWidth + 2)}┘`
 
     // Print table
-    console.log(chalk.blue(separator))
-    console.log(chalk.blue(header))
-    console.log(chalk.blue(divider))
+    console.log(pc.blue(separator))
+    console.log(pc.blue(header))
+    console.log(pc.blue(divider))
 
     rows.forEach(({ category, weight, files }, index) => {
         const row = `│ ${category.padEnd(categoryColumnWidth)} │ ${weight.padEnd(weightColumnWidth)} │ ${files
             .toString()
             .padStart(filesColumnWidth)} │`
-        console.log(chalk.blue(row))
+        console.log(pc.blue(row))
 
-        if (index === rows.length - 2) console.log(chalk.blue(divider)) // Divider before the total row
+        if (index === rows.length - 2) console.log(pc.blue(divider)) // Divider before the total row
     })
 
-    console.log(chalk.blue(footer))
-    console.log(chalk.green('\nSVGs check completed successfully.'))
+    console.log(pc.blue(footer))
+    console.log(pc.green('\nSVGs check completed successfully.'))
 }
 
 // Run the check

@@ -2,7 +2,7 @@
 import type { CamelToPascal, Metadata } from './types'
 import fs from 'node:fs'
 import path from 'node:path'
-import chalk from 'chalk'
+import pc from 'picocolors'
 
 const __dirname = import.meta.dirname
 const METADATA_PATH = path.resolve(__dirname, './metadata.json')
@@ -17,7 +17,7 @@ export const loadMetadata = async (): Promise<object> => {
     try {
         return JSON.parse(await fs.promises.readFile(METADATA_PATH, 'utf-8'))
     } catch (error) {
-        console.error(chalk.red('Error loading metadata:'), error)
+        console.error(pc.red('Error loading metadata:'), error)
         process.exit(1)
     }
 }
@@ -32,7 +32,7 @@ export const loadMetadata = async (): Promise<object> => {
  */
 export const checkMetadataFileExists = () => {
     if (!fs.existsSync(METADATA_PATH)) {
-        console.log(chalk.red(`Error: Metadata file ${METADATA_PATH} does not exist.`))
+        console.log(pc.red(`Error: Metadata file ${METADATA_PATH} does not exist.`))
         process.exit(1) // Exit with an error
     }
 }
