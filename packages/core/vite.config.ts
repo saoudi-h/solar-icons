@@ -8,10 +8,6 @@ export default defineConfig({
         viteStaticCopy({
             targets: [
                 {
-                    src: 'src/svgs',
-                    dest: '.',
-                },
-                {
                     src: 'src/metadata.json',
                     dest: '.',
                 },

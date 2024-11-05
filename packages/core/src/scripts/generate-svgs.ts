@@ -14,7 +14,7 @@ dotenv.config()
 
 // Define base constants
 const __dirname = import.meta.dirname
-const SVGS_PATH = path.resolve(__dirname, '../svgs')
+const SVGS_PATH = path.resolve(__dirname, '../../svgs')
 const METADATA_PATH = path.resolve(__dirname, '../metadata.json')
 const CONCURRENCY_LIMIT = 50
 

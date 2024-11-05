@@ -3,7 +3,7 @@ import path from 'node:path'
 import pc from 'picocolors'
 
 const __dirname = import.meta.dirname
-const SVGS_PATH = path.resolve(__dirname, '../svgs')
+const SVGS_PATH = path.resolve(__dirname, '../../svgs')
 
 const ICON_WEIGHTS: string[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone'] // List of icon weights
 
