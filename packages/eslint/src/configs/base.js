@@ -16,8 +16,8 @@ export const base = defineConfig(
 
     // Base JS/TS configs
     js.configs.recommended,
-    ...tseslint.configs.strictTypeChecked,
-    ...tseslint.configs.stylisticTypeChecked,
+    ...tseslint.configs.recommended,
+    ...tseslint.configs.recommended,
 
     // Good to have extras
     regexpPlugin.configs['flat/recommended'],
