@@ -1,5 +1,5 @@
 {
-    "extends": "@solar/tsconfig/react.json",
+    "extends": "@solar/tsconfig/base.json",
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",

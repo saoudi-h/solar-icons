@@ -8,8 +8,8 @@
         "emitDeclarationOnly": true,
         "allowSyntheticDefaultImports": true,
         "target": "ES2020",
-        "baseUrl": "src",
-        "rootDir": ".",
+        "baseUrl": ".",
+        "rootDir": "src",
         "importHelpers": true,
         "isolatedModules": true,
         "sourceMap": true

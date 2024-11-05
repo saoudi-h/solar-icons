@@ -7,6 +7,21 @@ import pc from 'picocolors'
 const __dirname = import.meta.dirname
 const METADATA_PATH = path.resolve(__dirname, './metadata.json')
 
+
+// ----------------------------------------------------------------------------------------------------------------
+
+/**
+ * Icon Style Enum
+ */
+export enum IconStyle {
+    BROKEN = 'Broken',
+    LINE_DUOTONE = 'LineDuotone',
+    LINEAR = 'Linear',
+    OUTLINE = 'Outline',
+    BOLD = 'Bold',
+    BOLD_DUOTONE = 'BoldDuotone',
+}
+
 //----------------------------------------------------------------------------------------------------------------
 
 /**
