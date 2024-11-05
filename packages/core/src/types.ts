@@ -19,3 +19,20 @@ export interface Metadata {
         }
     }
 }
+
+/**
+ * Icon Style Enum
+ * */
+export enum IconStyle {
+    BROKEN = 'Broken',
+    LINE_DUOTONE = 'LineDuotone',
+    LINEAR = 'Linear',
+    OUTLINE = 'Outline',
+    BOLD = 'Bold',
+    BOLD_DUOTONE = 'BoldDuotone',
+}
+
+/**
+ * Icon Weight Type
+ * */
+export type IconWeight = 'Broken' | 'LineDuotone' | 'Linear' | 'Outline' | 'Bold' | 'BoldDuotone'
