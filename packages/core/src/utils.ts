@@ -105,8 +105,7 @@ export const toKebabCase = (str: string): string => {
  * @returns {string} A cleaned icon name
  */
 export const fixIconName = (str: string): string => {
-    return str
-        .replace(/4K/g, 'FourK')
+    return str.replace(/4K/g, 'FourK')
 }
 
 //----------------------------------------------------------------------------------------------------------------
@@ -118,7 +117,7 @@ export const fixIconName = (str: string): string => {
  * @returns {string} A camelized string
  */
 export const toCamelCase = <T extends string>(string: T) =>
-    string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2) =>
+    string.replace(/^([A-Z])|[\s-_]+(\w)/g, (_, p1, p2) =>
         p2 ? p2.toUpperCase() : p1.toLowerCase()
     )
 

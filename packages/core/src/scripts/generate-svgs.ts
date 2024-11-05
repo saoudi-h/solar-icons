@@ -83,7 +83,7 @@ const parseIconName = (name: string): ParsedIconName => {
 
     // fix icon name
     const cleanedIconName = fixIconName(iconNameRaw!)
-    
+
     // Icon name in kebab-case
     const iconNameKebab = toKebabCase(cleanedIconName)
 
@@ -155,10 +155,10 @@ const generateMetadata = (metadata: Metadata, parsed: ParsedIconName): void => {
         }
     }
 
-  // Add the icon name to the category in metadata if it doesn't exist
-  if (!metadata.categories[mainCategoryKebab].icons.includes(iconNameKebab)) {
-    metadata.categories[mainCategoryKebab].icons.push(iconNameKebab)
-  }
+    // Add the icon name to the category in metadata if it doesn't exist
+    if (!metadata.categories[mainCategoryKebab].icons.includes(iconNameKebab)) {
+        metadata.categories[mainCategoryKebab].icons.push(iconNameKebab)
+    }
 }
 
 // Function to verify the contents of the directories and produce a report
@@ -177,7 +177,7 @@ const verifySvgs = async (
     // Calculate column widths for the report
     const rows: { category: string; weight: string; files: number }[] = []
 
-    for (const [categoryKebab, data] of Object.entries(metadata.categories)) {
+    for (const [categoryKebab, _] of Object.entries(metadata.categories)) {
         // Find the original category name from categoryMap
         const originalCategoryEntry = Object.values(categoryMap).find(
             cat => cat.simplifiedKebab === categoryKebab
