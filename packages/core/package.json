@@ -3,13 +3,28 @@
     "version": "0.0.0",
     "private": true,
     "type": "module",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        },
+        "./package.json": {
+            "default": "./package.json"
+        }
+    },
     "scripts": {
+        "build": "vite build && tsc --build tsconfig.build.json",
         "lint": "eslint . --max-warnings 0",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:svgs": "tsx src/scripts/generate-svgs.ts",
         "check:svgs": "tsx src/scripts/check-svgs.ts",
         "check:metadata": "tsx src/scripts/check-metadata.ts",
+        "clean": "node_modules dist",
+        "clean:generated": "rimraf src/svgs src/metadata.json",
         "typecheck": "tsc"
     },
     "devDependencies": {
@@ -17,16 +32,20 @@
         "@solar/prettier": "workspace:*",
         "@solar/tsconfig": "workspace:*",
         "@types/node": "^22.8.7",
+        "@vitejs/plugin-react": "^4.3.3",
         "axios": "^1.7.7",
         "chalk": "^5.3.0",
-        "del-cli": "^6.0.0",
         "dotenv": "^16.4.5",
+        "eslint": "^9.14.0",
         "figma-api": "^1.11.0",
         "globals": "^15.11.0",
         "p-limit": "^6.1.0",
         "prettier": "^3.2.5",
+        "rimraf": "^6.0.1",
         "tsx": "^4.19.2",
-        "typescript": "^5.0.0"
+        "typescript": "^5.0.0",
+        "vite": "^5.4.10",
+        "vite-plugin-static-copy": "^2.0.0"
     },
     "keywords": [
         "core",
@@ -43,6 +62,12 @@
         "name": "Saoudi Hakim",
         "url": "https://hakimsaoudi.dev",
         "email": "saoudihakim@gmail.com"
+    },
+    "peerDependencies": {
+        "node:fs": ">= 16.8",
+        "node:path": ">= 16.8",
+        "node:url": ">= 16.8",
+        "chalk": ">= 5.3.0"
     },
     "license": "MIT",
     "bugs": {

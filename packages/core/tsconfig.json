@@ -4,8 +4,8 @@
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "baseUrl": "src",
-        "rootDir": "src",
+        "rootDir": "src"
     },
-    "include": ["./src/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+    "include": ["./src/**/*", "./src/**/*.json", "vite.config.ts"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "vite.config.ts"]
 }
