@@ -7,7 +7,6 @@ import pc from 'picocolors'
 const __dirname = import.meta.dirname
 const METADATA_PATH = path.resolve(__dirname, './metadata.json')
 
-
 // ----------------------------------------------------------------------------------------------------------------
 
 /**
