@@ -69,25 +69,25 @@ ${Object.entries(iconsInCategory[iconName]!)
  */`
 
             const componentContent = `/* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import ${importBase} from "../../lib/${importBase}";
-import weights from "../../defs/${category}/${name}";
+import { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import ${importBase} from "../../lib/${importBase}"
+import weights from "../../defs/${category}/${name}"
 
 ${doc}
 const ${name}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <${importBase} ref={ref} {...props} weights={weights} />
-));
+))
 
-${name}.displayName = "${name}";
-export default ${name};
+${name}.displayName = "${name}"
+export default ${name}
 `
 
             fs.writeFileSync(path.join(categoryPath, `${name}.tsx`), componentContent, {
                 flag: 'w',
             })
 
-            categoryIndexContent += `export { default as ${name} } from './${name}';\n`
+            categoryIndexContent += `export { default as ${name} } from './${name}'\n`
         }
 
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, { flag: 'w' })
@@ -97,7 +97,7 @@ export default ${name};
     const globalIndexContent = Object.keys(groupedIcons)
         .map(category => {
             const categoryName = toPascalCase(category)
-            return `export * as ${categoryName} from './${category}';`
+            return `export * as ${categoryName} from './${category}'`
         })
         .join('\n')
 
@@ -126,8 +126,8 @@ function generateIconDefinitions(groupedIcons: ReturnType<typeof groupIconsByNam
             const name = toPascalCase(iconName)
 
             const defContent = `/* GENERATED FILE */
-import React, { ReactElement } from "react";
-import { IconWeight } from "../../lib";
+import type { ReactElement } from 'react'
+import type { IconWeight } from '../../lib'
 
 export default new Map<IconWeight, ReactElement>([
 ${Object.entries(iconStyles!)
@@ -240,12 +240,12 @@ function generateComponents(icons: SvgMap) {
  */
 function generateMainExports() {
     const mainIndexContent = `\
-                   /* GENERATED FILE */
-                   export type { IconProps, IconWeight } from "./lib";
-                   export { IconContext, IconBase } from "./lib";
-                   export * as SSR from "./ssr";
-                   export * from "./csr";
-                   `
+/* GENERATED FILE */
+export type { IconProps, IconWeight } from "./lib"
+export { IconContext, IconBase } from "./lib"
+export * as SSR from "./ssr"
+export * from "./csr"
+`
 
     try {
         // Write the main export index
