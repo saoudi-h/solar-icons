@@ -65,7 +65,10 @@ const parseIconName = (name: string): ParsedIconName => {
     const style = styleRaw!.replace(/\s+/g, '')
 
     // Categories: split by ',' or '&', trim, kebab-case
-    const categoryParts = categoriesRaw!.split(/[,&]+/).map(part => part.trim())
+    const categoryParts = categoriesRaw!
+        .split(/[,&]+/)
+        .map(part => part.trim())
+        .sort((a, b) => a.length - b.length)
 
     if (categoryParts.length === 0) {
         console.error(pc.red(`No categories found in: "${categoriesRaw}"`))
@@ -132,11 +135,11 @@ const fetchImageUrls = async (
 // Function to create the save path for the SVG
 const createIconPath = (
     svgsPath: string,
-    categoryOriginal: string,
+    categoryKebab: string,
     weight: string,
     iconKebab: string
 ): string => {
-    const categoryPath = path.join(svgsPath, categoryOriginal) // Original name of the category
+    const categoryPath = path.join(svgsPath, categoryKebab) // kebab-case name of the category
     const weightPath = path.join(categoryPath, weight) // Original name of the weight
     return path.join(weightPath, `${iconKebab}.svg`) // Kebab-case name of the icon
 }
@@ -163,11 +166,7 @@ const generateMetadata = (metadata: Metadata, parsed: ParsedIconName): void => {
 const verifySvgs = async (
     svgsPath: string,
     iconWeights: Record<string, string>,
-    metadata: Metadata,
-    categoryMap: Record<
-        string,
-        { simplifiedOriginal: string; simplifiedKebab: string; tags: string[] }
-    >
+    metadata: Metadata
 ): Promise<void> => {
     console.log(pc.blue('Verifying directory contents...'))
     let totalIcons = 0
@@ -176,25 +175,17 @@ const verifySvgs = async (
     const rows: { category: string; weight: string; files: number }[] = []
 
     for (const [categoryKebab, _] of Object.entries(metadata.categories)) {
-        // Find the original category name from categoryMap
-        const originalCategoryEntry = Object.values(categoryMap).find(
-            cat => cat.simplifiedKebab === categoryKebab
-        )
-        const originalCategory = originalCategoryEntry
-            ? originalCategoryEntry.simplifiedOriginal
-            : toKebabCase(categoryKebab)
-
         for (const weight of Object.values(iconWeights)) {
-            const weightPath = path.join(svgsPath, originalCategory, weight)
+            const weightPath = path.join(svgsPath, categoryKebab, weight)
             try {
                 const files = await fs.readdir(weightPath)
                 const svgFiles = files.filter(file => file.endsWith('.svg'))
                 const fileCount = svgFiles.length
 
                 totalIcons += fileCount
-                rows.push({ category: originalCategory, weight, files: fileCount })
+                rows.push({ category: categoryKebab, weight, files: fileCount })
                 console.log(
-                    pc.blue(` - ${originalCategory} / ${weight}:`),
+                    pc.blue(` - ${categoryKebab} / ${weight}:`),
                     pc.green(`${fileCount} icons`)
                 )
             } catch (error) {
@@ -206,154 +197,200 @@ const verifySvgs = async (
     console.log(pc.green(`Total icons: ${totalIcons}`))
 }
 
-//------------------------------------------------------------------------------------------------
-// Main function
-//------------------------------------------------------------------------------------------------
+// Types
+interface CategoryMapEntry {
+    simplifiedOriginal: string
+    simplifiedKebab: string
+    tags: string[]
+}
 
-// Main function to generate the SVGs
-const main = async (): Promise<void> => {
-    try {
-        // Initialize the svgs directory
-        await initializeSvgsDirectory()
+interface ComponentData {
+    components: Record<string, { name: string }>
+    ids: string[]
+}
 
-        // Initialize the Figma API
-        const api = new Figma.Api({ personalAccessToken: FIGMA_API_TOKEN })
+interface ParsedIconName {
+    style: string
+    mainCategoryOriginal: string
+    mainCategoryKebab: string
+    iconNameKebab: string
+    tags: string[]
+}
 
-        console.log(pc.blue('Fetching file data from Figma...'))
-        const { components } = await api.getFile(FIGMA_FILE_ID)
-        const ids = Object.keys(components)
+interface DownloadResult {
+    success: number
+    failures: Record<string, string>
+    metadata: Metadata
+    categoryMap: Record<string, CategoryMapEntry>
+}
 
-        console.log(pc.blue(`Fetched ${ids.length} components.`))
+// Fetch data from Figma
+const fetchFigmaComponents = async (api: Figma.Api): Promise<ComponentData> => {
+    console.log(pc.blue('Fetching file data from Figma...'))
+    const { components } = await api.getFile(FIGMA_FILE_ID)
+    const ids = Object.keys(components)
+    console.log(pc.blue(`Fetched ${ids.length} components.`))
+    return { components, ids }
+}
 
-        // Fetch the URLs for the SVGs
-        const urls = await fetchImageUrls(api, FIGMA_FILE_ID, ids)
+// Process categories
+const processCategoryMap = (
+    parsed: ParsedIconName,
+    simplifiedCategorySet: Set<string>,
+    categoryMap: Record<string, CategoryMapEntry>
+): void => {
+    const { mainCategoryOriginal, mainCategoryKebab, tags } = parsed
 
-        console.log(pc.blue('Downloading and saving icons...'))
-
-        const limit = pLimit(CONCURRENCY_LIMIT)
-        let totalIconsProcessed = 0
-
-        // Initialize structures for metadata and failed downloads
-        const metadata: Metadata = { categories: {} }
-        const failedDownloads: Record<string, string> = {}
-        const categoryMap: Record<
-            string,
-            { simplifiedOriginal: string; simplifiedKebab: string; tags: string[] }
-        > = {}
-        const simplifiedCategorySet = new Set<string>()
-
-        // Create download promises
-        const downloadPromises = ids.map(id =>
-            limit(async () => {
-                const component = components[id]
-                const name = component?.name
-
-                if (!name) {
-                    console.warn(pc.yellow(`Skipping undefined name for component ID: ${id}`))
-                    failedDownloads[id] = 'undefined name'
-                    return
-                }
-
-                const svgData = await downloadSvg(urls[id] ?? '')
-                if (!svgData) {
-                    failedDownloads[id] = 'failed to download'
-                    return
-                }
-
-                const parsed = parseIconName(name)
-                const { style, mainCategoryOriginal, mainCategoryKebab, tags, iconNameKebab } =
-                    parsed
-
-                const iconWeight = ICON_WEIGHTS[style]
-
-                if (!iconWeight) {
-                    console.warn(pc.yellow(`Unknown style for icon: ${name}`))
-                    failedDownloads[id] = 'unknown style'
-                    return
-                }
-
-                // Simplify the category name and collect tags
-                if (!categoryMap[parsed.mainCategoryOriginal]) {
-                    // Check for collisions
-                    if (simplifiedCategorySet.has(mainCategoryKebab)) {
-                        console.error(
-                            pc.red(
-                                `Collision detected for simplified category name: "${mainCategoryKebab}"`
-                            )
-                        )
-                        console.error(
-                            `Categories "${parsed.mainCategoryOriginal}" and another category simplify to the same name.`
-                        )
-                        console.error(
-                            'Please adjust the simplifyCategory function or category names to resolve the collision.'
-                        )
-                        process.exit(1)
-                    } else {
-                        simplifiedCategorySet.add(mainCategoryKebab)
-                        categoryMap[parsed.mainCategoryOriginal] = {
-                            simplifiedOriginal: mainCategoryOriginal,
-                            simplifiedKebab: mainCategoryKebab,
-                            tags,
-                        }
-                    }
-                }
-
-                // Generate metadata
-                generateMetadata(metadata, parsed)
-
-                // Define the path to save the SVG
-                const iconPath = createIconPath(
-                    SVGS_PATH,
-                    mainCategoryOriginal,
-                    iconWeight,
-                    iconNameKebab
-                )
-
-                // Ensure the weight directory exists
-                try {
-                    await fs.mkdir(path.dirname(iconPath), { recursive: true })
-                } catch (error) {
-                    console.error(pc.red(`Error creating directory for ${iconPath}:`), error)
-                    failedDownloads[id] = 'failed to create directory'
-                    return
-                }
-
-                // Write the SVG file
-                try {
-                    await fs.writeFile(iconPath, svgData, 'utf-8')
-                    console.log(
-                        pc.green(
-                            `Saved "${parsed.iconNameKebab}" in "${mainCategoryOriginal}" / "${iconWeight}"`
-                        )
-                    )
-                    totalIconsProcessed++
-                } catch (error) {
-                    console.error(pc.red(`Error writing file ${iconPath}:`), error)
-                    failedDownloads[id] = 'failed to write file'
-                }
-            })
-        )
-
-        // Wait for all download promises to resolve
-        await Promise.all(downloadPromises)
-        console.log(pc.green(`\nSVGs generated successfully: ${totalIconsProcessed} icons.`))
-
-        // Verify directory contents
-        await verifySvgs(SVGS_PATH, ICON_WEIGHTS, metadata, categoryMap)
-
-        // Summary of failed downloads
-        if (Object.keys(failedDownloads).length > 0) {
-            console.log(pc.yellow('\nSummary of failed downloads:'))
-            for (const [id, reason] of Object.entries(failedDownloads)) {
-                console.log(pc.red(`ID ${id}: ${reason}`))
-            }
-        } else {
-            console.log(pc.green('\nNo failures!'))
+    if (!categoryMap[mainCategoryOriginal]) {
+        if (simplifiedCategorySet.has(mainCategoryKebab)) {
+            throw new Error(
+                `Collision detected for simplified category name: "${mainCategoryKebab}"`
+            )
         }
 
-        // Generate the metadata file
-        await fs.writeFile(METADATA_PATH, JSON.stringify(metadata, null, 2), 'utf-8')
-        console.log(pc.green(`\nMetadata file generated at ${METADATA_PATH}`))
+        simplifiedCategorySet.add(mainCategoryKebab)
+        categoryMap[mainCategoryOriginal] = {
+            simplifiedOriginal: mainCategoryOriginal,
+            simplifiedKebab: mainCategoryKebab,
+            tags,
+        }
+    }
+}
+
+// Save individual SVG
+const saveSvg = async (
+    iconPath: string,
+    svgData: string,
+    parsed: ParsedIconName,
+    mainCategoryOriginal: string,
+    iconWeight: string
+): Promise<void> => {
+    await fs.mkdir(path.dirname(iconPath), { recursive: true })
+    await fs.writeFile(iconPath, svgData, 'utf-8')
+    console.log(
+        pc.green(`Saved "${parsed.iconNameKebab}" in "${mainCategoryOriginal}" / "${iconWeight}"`)
+    )
+}
+
+// Process single component
+const processComponent = async (
+    component: { name?: string },
+    id: string,
+    urls: Record<string, string>,
+    metadata: Metadata,
+    categoryMap: Record<string, CategoryMapEntry>,
+    simplifiedCategorySet: Set<string>
+): Promise<boolean> => {
+    if (!component.name) {
+        console.warn(pc.yellow(`Skipping undefined name for component ID: ${id}`))
+        return false
+    }
+
+    const svgData = await downloadSvg(urls[id] ?? '')
+    if (!svgData) return false
+
+    const parsed = parseIconName(component.name)
+    const iconWeight = ICON_WEIGHTS[parsed.style]
+
+    if (!iconWeight) {
+        console.warn(pc.yellow(`Unknown style for icon: ${component.name}`))
+        return false
+    }
+
+    processCategoryMap(parsed, simplifiedCategorySet, categoryMap)
+    generateMetadata(metadata, parsed)
+
+    const iconPath = createIconPath(
+        SVGS_PATH,
+        parsed.mainCategoryKebab,
+        iconWeight,
+        parsed.iconNameKebab
+    )
+
+    try {
+        await saveSvg(iconPath, svgData, parsed, parsed.mainCategoryKebab, iconWeight)
+        return true
+    } catch (error) {
+        console.error(pc.red(`Error processing ${iconPath}:`), error)
+        return false
+    }
+}
+
+// Download all components
+const downloadComponents = async (
+    components: Record<string, { name: string }>,
+    ids: string[],
+    urls: Record<string, string>
+): Promise<DownloadResult> => {
+    const limit = pLimit(CONCURRENCY_LIMIT)
+    let totalIconsProcessed = 0
+    const failedDownloads: Record<string, string> = {}
+    const metadata: Metadata = { categories: {} }
+    const categoryMap: Record<string, CategoryMapEntry> = {}
+    const simplifiedCategorySet = new Set<string>()
+
+    const downloadPromises = ids.map(id =>
+        limit(async () => {
+            try {
+                const success = await processComponent(
+                    components[id]!,
+                    id,
+                    urls,
+                    metadata,
+                    categoryMap,
+                    simplifiedCategorySet
+                )
+                if (success) totalIconsProcessed++
+                else failedDownloads[id] = 'processing failed'
+            } catch {
+                failedDownloads[id] = 'download failed'
+            }
+        })
+    )
+
+    await Promise.all(downloadPromises)
+    return {
+        success: totalIconsProcessed,
+        failures: failedDownloads,
+        metadata,
+        categoryMap,
+    }
+}
+
+// Generate final outputs
+const generateOutputs = async (
+    metadata: Metadata,
+    failedDownloads: Record<string, string>
+): Promise<void> => {
+    if (Object.keys(failedDownloads).length > 0) {
+        console.log(pc.yellow('\nSummary of failed downloads:'))
+        for (const [id, reason] of Object.entries(failedDownloads)) {
+            console.log(pc.red(`ID ${id}: ${reason}`))
+        }
+    } else {
+        console.log(pc.green('\nNo failures!'))
+    }
+
+    await fs.writeFile(METADATA_PATH, JSON.stringify(metadata, null, 2), 'utf-8')
+    console.log(pc.green(`\nMetadata file generated at ${METADATA_PATH}`))
+}
+
+// Main function
+const main = async (): Promise<void> => {
+    try {
+        await initializeSvgsDirectory()
+
+        const api = new Figma.Api({ personalAccessToken: FIGMA_API_TOKEN })
+        const { components, ids } = await fetchFigmaComponents(api)
+
+        const urls = await fetchImageUrls(api, FIGMA_FILE_ID, ids)
+        console.log(pc.blue('Downloading and saving icons...'))
+
+        const { success, failures, metadata } = await downloadComponents(components, ids, urls)
+        console.log(pc.green(`\nSVGs generated successfully: ${success} icons.`))
+
+        await verifySvgs(SVGS_PATH, ICON_WEIGHTS, metadata)
+        await generateOutputs(metadata, failures)
 
         console.log(pc.green('\nSVG generation and verification completed.'))
     } catch (error) {
