@@ -41,5 +41,9 @@
       "titleBar.inactiveForeground": "#15202b99"
     },
     "peacock.color": "#e4c8bb",
+    "cSpell.words": [
+      "picocolors",
+      "Svgs"
+    ],
   },
 }
