@@ -6,6 +6,7 @@
     "type": "module",
     "sideEffects": false,
     "scripts": {
+        "generate:assets": "tsx scripts/generate-assets.ts",
         "build": "vite build && tsc",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
