@@ -1,5 +1,5 @@
 {
-    "extends": "@solar/tsconfig/react.json",
+    "extends": "@solar-icons/tsconfig/react.json",
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",

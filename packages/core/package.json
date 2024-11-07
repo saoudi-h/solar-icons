@@ -1,6 +1,6 @@
 {
-    "name": "@solar/core",
-    "version": "0.0.0",
+    "name": "@solar-icons/core",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "main": "src/index.ts",
@@ -31,9 +31,9 @@
         "typecheck": "tsc"
     },
     "devDependencies": {
-        "@solar/eslint": "workspace:*",
-        "@solar/prettier": "workspace:*",
-        "@solar/tsconfig": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
         "@types/node": "^22.8.7",
         "@vitejs/plugin-react": "^4.3.3",
         "axios": "^1.7.7",

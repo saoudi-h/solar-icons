@@ -1,6 +1,6 @@
 {
-    "name": "@solar/eslint",
-    "version": "0.0.0",
+    "name": "@solar-icons/eslint",
+    "version": "1.0.0",
     "private": true,
     "description": "A package to share ESLint configurations in workspace",
     "license": "MIT",
@@ -36,8 +36,8 @@
     },
     "devDependencies": {
         "@next/eslint-plugin-next": "^14.2.7",
-        "@solar/prettier": "workspace:*",
-        "@solar/tsconfig": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint-config-prettier": "^6.11.3",
         "@types/node": "^22.8.7",
         "@typescript-eslint/utils": "^8.4.0",

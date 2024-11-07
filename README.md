@@ -27,13 +27,13 @@ Solar icons are available as SVG files, making them versatile for use in various
 ### Web
 Solar can be implemented directly in web projects using the SVG files or JavaScript for additional interactivity.
 ```sh
-npm install @solar/icons
+npm install @solar-icons/icons
 ```
 
 ### React
 The React package allows easy integration of Solar icons into React applications.
 ```sh
-npm install @solar/react
+npm install @solar-icons/react
 ```
 For detailed documentation, visit the [React package README](./packages/react/README.md).
 
@@ -46,7 +46,7 @@ For detailed documentation, visit the [React package README](./packages/react/RE
 ## Installation
 To install the React package:
 ```sh
-npm install @solar/react
+npm install @solar-icons/react
 ```
 Or install a specific package for your framework.
 
@@ -58,7 +58,7 @@ This package provides ready-to-use React components, offering flexibility with s
 - **Global Styling**: Manage global icon properties using `SolarProvider` and `useSolar()`.
 
 ```js
-import { Home } from '@solar/react';
+import { Home } from '@solar-icons/react';
 ```
 
 ## Icon Categories
