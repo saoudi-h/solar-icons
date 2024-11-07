@@ -1,6 +1,7 @@
 {
     "extends": "@solar/tsconfig/react.json",
     "compilerOptions": {
+        "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "rootDir": ".",

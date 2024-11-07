@@ -6,8 +6,8 @@
     "type": "module",
     "sideEffects": false,
     "scripts": {
+        "build": "vite build && tsc --build tsconfig.build.json",
         "generate:assets": "tsx scripts/generate-assets.ts",
-        "build": "vite build && tsc",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
@@ -23,6 +23,16 @@
             "import": "./dist/esm/index.mjs",
             "require": "./dist/cjs/index.cjs",
             "types": "./dist/types/index.d.ts"
+        },
+        "./category": {
+            "import": "./dist/esm/csr/category.mjs",
+            "require": "./dist/cjs/csr/category.cjs",
+            "types": "./dist/types/csr/category.d.ts"
+        },
+        "./ssr/category": {
+            "import": "./dist/esm/ssr/category.mjs",
+            "require": "./dist/cjs/ssr/category.cjs",
+            "types": "./dist/types/ssr/category.d.ts"
         },
         "./icons/*": {
             "import": "./dist/esm/csr/*.mjs",
