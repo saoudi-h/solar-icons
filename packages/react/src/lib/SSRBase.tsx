@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import type { IconProps, IconWeight } from './types'
 
 interface IconBaseProps extends IconProps {

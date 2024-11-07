@@ -69,7 +69,7 @@ ${Object.entries(iconsInCategory[iconName]!)
  */`
 
             const componentContent = `/* GENERATED FILE */
-import { forwardRef } from "react"
+import React, { forwardRef } from "react"
 import type { IconProps, Icon } from "../../lib/types"
 import ${importBase} from "../../lib/${importBase}"
 import weights from "../../defs/${category}/${name}"
@@ -94,14 +94,25 @@ export default ${name}
     }
 
     // Generate global index
-    const globalIndexContent = Object.keys(groupedIcons)
+    let globalIndexContent = Object.keys(groupedIcons)
+        .map(category => {
+            return `export * from './${category}'`
+        })
+        .join('\n')
+
+    globalIndexContent += '\nexport * as category from "./category"'
+
+    fs.writeFileSync(path.join(BASE_PATH, 'index.ts'), globalIndexContent, { flag: 'w' })
+
+    // Generate category index
+    const globalCategoryIndexContent = Object.keys(groupedIcons)
         .map(category => {
             const categoryName = toPascalCase(category)
             return `export * as ${categoryName} from './${category}'`
         })
         .join('\n')
 
-    fs.writeFileSync(path.join(BASE_PATH, 'index.ts'), globalIndexContent, { flag: 'w' })
+    fs.writeFileSync(path.join(BASE_PATH, 'category.ts'), globalCategoryIndexContent, { flag: 'w' })
 }
 
 /**
@@ -126,7 +137,7 @@ function generateIconDefinitions(groupedIcons: ReturnType<typeof groupIconsByNam
             const name = toPascalCase(iconName)
 
             const defContent = `/* GENERATED FILE */
-import type { ReactElement } from 'react'
+import React, { ReactElement } from "react"
 import type { IconWeight } from '../../lib'
 
 export default new Map<IconWeight, ReactElement>([
@@ -149,8 +160,7 @@ ${Object.entries(iconStyles!)
     // Generate global index
     const globalIndexContent = Object.keys(groupedIcons)
         .map(category => {
-            const categoryName = toPascalCase(category)
-            return `export * as ${categoryName} from './${category}';`
+            return `export * from './${category}';`
         })
         .join('\n')
 
@@ -242,9 +252,12 @@ function generateMainExports() {
     const mainIndexContent = `\
 /* GENERATED FILE */
 export type { IconProps, IconWeight } from "./lib"
-export { IconContext, IconBase } from "./lib"
+export { SolarProvider, useSolar, IconBase } from "./lib"
 export * as SSR from "./ssr"
 export * from "./csr"
+import * as solar from "./csr/category"
+export { solar }
+export default solar
 `
 
     try {

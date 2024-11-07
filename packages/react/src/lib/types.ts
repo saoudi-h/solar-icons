@@ -10,12 +10,16 @@ export enum IconStyle {
 }
 export type IconWeight = 'Broken' | 'LineDuotone' | 'Linear' | 'Outline' | 'Bold' | 'BoldDuotone'
 
-export interface IconProps extends ComponentPropsWithoutRef<'svg'>, RefAttributes<SVGSVGElement> {
+export interface IconBaseProps {
     alt?: string
     color?: string
     size?: string | number
     weight?: IconWeight
     mirrored?: boolean
+}
+
+export interface IconProps extends ComponentPropsWithoutRef<'svg'>, RefAttributes<SVGSVGElement>, Omit<IconBaseProps, 'color'> {
+    color?: string;
 }
 
 export type Icon = React.ForwardRefExoticComponent<

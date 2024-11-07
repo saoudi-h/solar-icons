@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
-import { forwardRef, useContext } from 'react'
-import { IconContext } from './context'
+import React, { forwardRef } from 'react'
+import { useSolar } from './context'
 import type { IconProps, IconWeight } from './types'
 
 interface IconBaseProps extends IconProps {
@@ -11,12 +11,14 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
     const { alt, color, size, weight, mirrored, children, weights, ...restProps } = props
 
     const {
-        color: contextColor = 'currentColor',
-        size: contextSize,
-        weight: contextWeight = 'Linear',
-        mirrored: contextMirrored = false,
-        ...restContext
-    } = useContext(IconContext)
+        value: {
+            color: contextColor = 'currentColor',
+            size: contextSize,
+            weight: contextWeight = 'Linear',
+            mirrored: contextMirrored = false,
+        },
+        svgProps,
+    } = useSolar()
 
     return (
         <svg
@@ -28,7 +30,7 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
             fill="none"
             viewBox="0 0 24 24"
             transform={mirrored || contextMirrored ? 'scale(-1, 1)' : undefined}
-            {...restContext}
+            {...svgProps}
             {...restProps}>
             {!!alt && <title>{alt}</title>}
             {children}
