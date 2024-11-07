@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/SlashCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/SlashCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xNC4wMTg0IDcuMzY0NUMxNC4xMjU3IDYuOTY0NCAxMy44ODgyIDYuNTUzMTUgMTMuNDg4MSA2LjQ0NTk1QzEzLjA4OCA2LjMzODc0IDEyLjY3NjggNi41NzYxOCAxMi41Njk2IDYuOTc2MjhMOS45ODEzNyAxNi42MzU1QzkuODc0MTYgMTcuMDM1NiAxMC4xMTE2IDE3LjQ0NjkgMTAuNTExNyAxNy41NTQxQzEwLjkxMTggMTcuNjYxMyAxMS4zMjMgMTcuNDIzOSAxMS40MzAzIDE3LjAyMzhMMTQuMDE4NCA3LjM2NDVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/SlashCircle";
  */
 const SlashCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SlashCircle.displayName = "SlashCircle";
-export default SlashCircle;
+SlashCircle.displayName = "SlashCircle"
+export default SlashCircle

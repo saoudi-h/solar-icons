@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/MinimizeSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/MinimizeSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxNi4xMzQgMiAxOC40NTUzIDIgMTkuOTUxNyAyLjk4NzY3TDE0Ljc1IDguMTg5MzRWNi4yNUMxNC43NSA1LjgzNTc5IDE0LjQxNDIgNS41IDE0IDUuNUMxMy41ODU4IDUuNSAxMy4yNSA1LjgzNTc5IDEzLjI1IDYuMjVWMTBDMTMuMjUgMTAuNDE0MiAxMy41ODU4IDEwLjc1IDE0IDEwLjc1SDE3Ljc1QzE4LjE2NDIgMTAuNzUgMTguNSAxMC40MTQyIDE4LjUgMTBDMTguNSA5LjU4NTc5IDE4LjE2NDIgOS4yNSAxNy43NSA5LjI1SDE1LjgxMDdMMjEuMDEyMyA0LjA0ODMyQzIyIDUuNTQ0NjYgMjIgNy44NjYgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuODY2IDIyIDUuNTQ0NjYgMjIgNC4wNDgzMyAyMS4wMTIzTDkuMjUgMTUuODEwN1YxNy43NUM5LjI1IDE4LjE2NDIgOS41ODU3OSAxOC41IDEwIDE4LjVDMTAuNDE0MiAxOC41IDEwLjc1IDE4LjE2NDIgMTAuNzUgMTcuNzVWMTRDMTAuNzUgMTMuNTg1OCAxMC40MTQyIDEzLjI1IDEwIDEzLjI1SDYuMjVDNS44MzU3OSAxMy4yNSA1LjUgMTMuNTg1OCA1LjUgMTRDNS41IDE0LjQxNDIgNS44MzU3OSAxNC43NSA2LjI1IDE0Ljc1SDguMTg5MzRMMi45ODc2NyAxOS45NTE3QzIgMTguNDU1MyAyIDE2LjEzNCAyIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/MinimizeSquare";
  */
 const MinimizeSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MinimizeSquare.displayName = "MinimizeSquare";
-export default MinimizeSquare;
+MinimizeSquare.displayName = "MinimizeSquare"
+export default MinimizeSquare

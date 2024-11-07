@@ -1,6 +1,6 @@
 /* GENERATED FILE */
-import React, { ReactElement } from "react";
-import { IconWeight } from "../../lib";
+import React, { ReactElement } from "react"
+import type { IconWeight } from '../../lib'
 
 export default new Map<IconWeight, ReactElement>([
   ["Bold", <><path fillRule="evenodd" clipRule="evenodd" d="M9.75 21C9.75 21.4142 9.41421 21.75 9 21.75H3C2.58579 21.75 2.25 21.4142 2.25 21V15C2.25 14.5858 2.58579 14.25 3 14.25C3.41421 14.25 3.75 14.5858 3.75 15V19.1893L10.4697 12.4697C10.7626 12.1768 11.2374 12.1768 11.5303 12.4697C11.8232 12.7626 11.8232 13.2374 11.5303 13.5303L4.81066 20.25H9C9.41421 20.25 9.75 20.5858 9.75 21Z" fill="currentColor"/>

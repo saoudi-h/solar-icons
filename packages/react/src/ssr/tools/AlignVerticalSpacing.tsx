@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/AlignVerticalSpacing";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/AlignVerticalSpacing"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNSAyMUMxLjI1IDIwLjU4NTggMS41ODU3OSAyMC4yNSAyIDIwLjI1TDIyIDIwLjI1QzIyLjQxNDIgMjAuMjUgMjIuNzUgMjAuNTg1OCAyMi43NSAyMUMyMi43NSAyMS40MTQyIDIyLjQxNDIgMjEuNzUgMjIgMjEuNzVMMiAyMS43NUMxLjU4NTc5IDIxLjc1IDEuMjUgMjEuNDE0MiAxLjI1IDIxWk0xLjI1IDNDMS4yNSAyLjU4NTc5IDEuNTg1NzkgMi4yNSAyIDIuMjVMMjIgMi4yNUMyMi40MTQyIDIuMjUgMjIuNzUgMi41ODU3OSAyMi43NSAzQzIyLjc1IDMuNDE0MjEgMjIuNDE0MiAzLjc1IDIyIDMuNzVMMiAzLjc1QzEuNTg1NzkgMy43NSAxLjI1IDMuNDE0MjEgMS4yNSAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNCAxMkM0IDEzLjg4NTYgNCAxNC44Mjg0IDQuNTg1NzkgMTUuNDE0MkM1LjE3MTU3IDE2IDYuMTE0MzggMTYgOCAxNkwxNiAxNkMxNy44ODU2IDE2IDE4LjgyODQgMTYgMTkuNDE0MiAxNS40MTQyQzIwIDE0LjgyODQgMjAgMTMuODg1NiAyMCAxMkMyMCAxMC4xMTQ0IDIwIDkuMTcxNTcgMTkuNDE0MiA4LjU4NTc5QzE4LjgyODQgOCAxNy44ODU2IDggMTYgOEg4QzYuMTE0MzggOCA1LjE3MTU3IDggNC41ODU3OSA4LjU4NTc5QzQgOS4xNzE1OCA0IDEwLjExNDQgNCAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/AlignVerticalSpacing";
  */
 const AlignVerticalSpacing: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlignVerticalSpacing.displayName = "AlignVerticalSpacing";
-export default AlignVerticalSpacing;
+AlignVerticalSpacing.displayName = "AlignVerticalSpacing"
+export default AlignVerticalSpacing

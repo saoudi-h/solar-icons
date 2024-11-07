@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/search/MinimalisticMagniferZoomOut";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/search/MinimalisticMagniferZoomOut"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC4xMjc5IDExLjE0MjlDMjAuMTI3OSAxNi4xOTI0IDE2LjA2OTggMjAuMjg1OSAxMS4wNjM5IDIwLjI4NTlDNi4wNTgwNiAyMC4yODU5IDIgMTYuMTkyNCAyIDExLjE0MjlDMiA2LjA5MzQzIDYuMDU4MDYgMiAxMS4wNjM5IDJDMTYuMDY5OCAyIDIwLjEyNzkgNi4wOTM0MyAyMC4xMjc5IDExLjE0MjlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4yOTQ0IDExLjE0MjlDOC4yOTQ0IDEwLjcyMjEgOC42MzI1NyAxMC4zODEgOS4wNDk3MiAxMC4zODFIMTMuMDc4MUMxMy40OTUzIDEwLjM4MSAxMy44MzM1IDEwLjcyMjEgMTMuODMzNSAxMS4xNDI5QzEzLjgzMzUgMTEuNTYzNyAxMy40OTUzIDExLjkwNDggMTMuMDc4MSAxMS45MDQ4SDkuMDQ5NzJDOC42MzI1NyAxMS45MDQ4IDguMjk0NCAxMS41NjM3IDguMjk0NCAxMS4xNDI5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy44MTk0IDE5LjcwMDZDMTcuNzMwMSAxOC42MDY0IDE4LjYzNTcgMTcuNjkyOSAxOS43MjA1IDE3Ljc4M0MxOS45MDg1IDE3Ljc5ODYgMjAuMTMzNyAxNy44NjcgMjAuMzYzIDE3LjkzNjdDMjAuMzg1MSAxNy45NDM1IDIwLjQwNzMgMTcuOTUwMiAyMC40Mjk0IDE3Ljk1NjlDMjAuNDQ5NCAxNy45NjI5IDIwLjQ2OTQgMTcuOTY4OSAyMC40ODk0IDE3Ljk3NDlDMjAuNzAwMSAxOC4wMzgzIDIwLjkwOTcgMTguMTAxMyAyMS4wNjkyIDE4LjE4NzRDMjEuOTg0NCAxOC42ODE4IDIyLjI3OTkgMTkuODYzMSAyMS43MDY3IDIwLjczNjNDMjEuNjA2OCAyMC44ODg0IDIxLjQ1MTkgMjEuMDQ0MSAyMS4yOTYyIDIxLjIwMDdDMjEuMjgxNCAyMS4yMTU2IDIxLjI2NjYgMjEuMjMwNSAyMS4yNTE5IDIxLjI0NTRDMjEuMjM3MSAyMS4yNjAyIDIxLjIyMjQgMjEuMjc1MiAyMS4yMDc2IDIxLjI5MDFDMjEuMDUyNCAyMS40NDcxIDIwLjg5OCAyMS42MDM0IDIwLjc0NzIgMjEuNzA0MUMxOS44ODE2IDIyLjI4MjMgMTguNzEwNSAyMS45ODQzIDE4LjIyMDQgMjEuMDYxMUMxOC4xMzUgMjAuOTAwMiAxOC4wNzI1IDIwLjY4ODggMTguMDA5NyAyMC40NzYyQzE4LjAwMzggMjAuNDU2MSAxNy45OTc4IDIwLjQzNTkgMTcuOTkxOCAyMC40MTU3QzE3Ljk4NTIgMjAuMzkzNCAxNy45Nzg1IDIwLjM3MTEgMTcuOTcxOSAyMC4zNDg4QzE3LjkwMjggMjAuMTE3NSAxNy44MzQ5IDE5Ljg5MDMgMTcuODE5NCAxOS43MDA2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/search/MinimalisticMagniferZoomOut";
  */
 const MinimalisticMagniferZoomOut: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MinimalisticMagniferZoomOut.displayName = "MinimalisticMagniferZoomOut";
-export default MinimalisticMagniferZoomOut;
+MinimalisticMagniferZoomOut.displayName = "MinimalisticMagniferZoomOut"
+export default MinimalisticMagniferZoomOut

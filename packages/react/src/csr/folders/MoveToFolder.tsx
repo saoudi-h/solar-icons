@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/folders/MoveToFolder";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/folders/MoveToFolder"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMS43OTc5VjE0QzIyIDE3Ljc3MTIgMjIgMTkuNjU2OSAyMC44Mjg0IDIwLjgyODRDMTkuNjU2OSAyMiAxNy43NzEzIDIyIDE0IDIySDEwQzYuMjI4NzggMjIgNC4zNDMxNSAyMiAzLjE3MTU3IDIwLjgyODRDMi4xOTcyNSAxOS44NTQxIDIuMDMzMjEgMTguMzg1OSAyLjAwNTU5IDE1Ljc1MDFIMTAuNjkzN0w4LjQzMzkyIDE3LjM5MzVDOC4wOTg5MyAxNy42MzcxIDguMDI0ODcgMTguMTA2MiA4LjI2ODQ5IDE4LjQ0MTJDOC41MTIxMiAxOC43NzYyIDguOTgxMTggMTguODUwMiA5LjMxNjE3IDE4LjYwNjZMMTMuNDQxMiAxNS42MDY2QzEzLjYzNTIgMTUuNDY1NSAxMy43NSAxNS4yNCAxMy43NSAxNS4wMDAxQzEzLjc1IDE0Ljc2MDEgMTMuNjM1MiAxNC41MzQ2IDEzLjQ0MTIgMTQuMzkzNUw5LjMxNjE3IDExLjM5MzVDOC45ODExOCAxMS4xNDk5IDguNTEyMTIgMTEuMjIzOSA4LjI2ODQ5IDExLjU1ODlDOC4wMjQ4NyAxMS44OTM5IDguMDk4OTMgMTIuMzYzIDguNDMzOTIgMTIuNjA2NkwxMC42OTM3IDE0LjI1MDFIMi4wMDAwMUwyIDE0TDIuMDAwMDMgNi45NDk3NUMyLjAwMDAzIDYuMDY3MjUgMi4wMDAwMyA1LjYyNTk0IDIuMDY5MzggNS4yNTgzOUMyLjM3NDY3IDMuNjQwMzEgMy42NDAzMyAyLjM3NDY0IDUuMjU4NDEgMi4wNjkzNUM1LjYyNTk3IDIgNi4wNjcyNCAyIDYuOTQ5NzcgMkM3LjMzNjQ0IDIgNy41Mjk3OCAyIDcuNzE1NTkgMi4wMTczOEM4LjUxNjY3IDIuMDkyMjkgOS4yNzY1NCAyLjQwNzA0IDkuODk1OTYgMi45MjA1MUMxMC4wMzk2IDMuMDM5NjEgMTAuMTc2MyAzLjE3NjMzIDEwLjQ0OTggMy40NDk3NUwxMSA0QzExLjgxNTggNC44MTU3OCAxMi4yMjM3IDUuMjIzNjcgMTIuNzEyMSA1LjQ5NTQzQzEyLjk4MDUgNS42NDQ3MSAxMy4yNjUxIDUuNzYyNiAxMy41NjA0IDUuODQ2NzhDMTQuMDk3OSA2IDE0LjY3NDggNiAxNS44Mjg0IDZIMTYuMjAyMUMxOC44MzQ1IDYgMjAuMTUwNyA2IDIxLjAwNjIgNi43Njk0NkMyMS4wODQ5IDYuODQwMjQgMjEuMTU5OCA2LjkxNTE0IDIxLjIzMDYgNi45OTM4M0MyMiA3Ljg0OTM1IDIyIDkuMTY1NTQgMjIgMTEuNzk3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/folders/MoveToFolder";
  */
 const MoveToFolder: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MoveToFolder.displayName = "MoveToFolder";
-export default MoveToFolder;
+MoveToFolder.displayName = "MoveToFolder"
+export default MoveToFolder

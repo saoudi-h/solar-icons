@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/Refresh";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/Refresh"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi4wNzg5IDIuMjVDNy4yODU0IDIuMjUgMy4zNDQ3OCA1LjkxMyAyLjk2MDU1IDEwLjU4MzNIMi4wMDAwMkMxLjY5NjE0IDEwLjU4MzMgMS40MjIyOSAxMC43NjY3IDEuMzA2NTUgMTEuMDQ3N0MxLjE5MDgxIDExLjMyODcgMS4yNTYwNiAxMS42NTE3IDEuNDcxNzggMTEuODY1N0wzLjE1MTU5IDEzLjUzMjRDMy40NDQgMTMuODIyNSAzLjkxNTY3IDEzLjgyMjUgNC4yMDgwOCAxMy41MzI0TDUuODg3ODkgMTEuODY1N0M2LjEwMzYxIDExLjY1MTcgNi4xNjg4NiAxMS4zMjg3IDYuMDUzMTIgMTEuMDQ3N0M1LjkzNzM4IDEwLjc2NjcgNS42NjM1MyAxMC41ODMzIDUuMzU5NjUgMTAuNTgzM0g0LjQ2NjhDNC44NDY1MiA2Ljc1MTY3IDguMTA0NzkgMy43NSAxMi4wNzg5IDMuNzVDMTQuODQ4NCAzLjc1IDE3LjI3MjcgNS4yMDg0NSAxOC42MTU2IDcuMzkyNzlDMTguODMyNSA3Ljc0NTY1IDE5LjI5NDQgNy44NTU4NSAxOS42NDczIDcuNjM4OTJDMjAuMDAwMiA3LjQyMTk5IDIwLjExMDQgNi45NjAwNyAxOS44OTM0IDYuNjA3MjFDMTguMjg3MSAzLjk5NDI3IDE1LjM4NzMgMi4yNSAxMi4wNzg5IDIuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMC44NDExIDEwLjQ2NjZDMjAuNTQ5IDEwLjE3NzggMjAuMDc4OSAxMC4xNzc4IDE5Ljc4NjcgMTAuNDY2NkwxOC4xMDA1IDEyLjEzMzNDMTcuODg0MSAxMi4zNDcxIDE3LjgxODQgMTIuNjcwMyAxNy45MzM5IDEyLjk1MTdDMTguMDQ5NSAxMy4yMzMgMTguMzIzNSAxMy40MTY3IDE4LjYyNzcgMTMuNDE2N0gxOS41MjY4QzE5LjE0NTUgMTcuMjQ2MiAxNS44NzU5IDIwLjI1IDExLjg4MjggMjAuMjVDOS4xMDAyNiAyMC4yNSA2LjY2NTg2IDE4Ljc5MDMgNS4zMTc5NiAxNi42MDYxQzUuMTAwNDIgMTYuMjUzNiA0LjYzODMzIDE2LjE0NDIgNC4yODU4MyAxNi4zNjE4QzMuOTMzMzQgMTYuNTc5MyAzLjgyMzkzIDE3LjA0MTQgNC4wNDE0NiAxNy4zOTM5QzUuNjU0MDcgMjAuMDA3IDguNTY0MDYgMjEuNzUgMTEuODgyOCAyMS43NUMxNi42OTA2IDIxLjc1IDIwLjY0NzUgMTguMDg5MiAyMS4wMzMxIDEzLjQxNjdIMjIuMDAwMkMyMi4zMDQzIDEzLjQxNjcgMjIuNTc4MyAxMy4yMzMgMjIuNjkzOSAxMi45NTE3QzIyLjgwOTUgMTIuNjcwMyAyMi43NDM3IDEyLjM0NzEgMjIuNTI3NCAxMi4xMzMzTDIwLjg0MTEgMTAuNDY2NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/Refresh";
  */
 const Refresh: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Refresh.displayName = "Refresh";
-export default Refresh;
+Refresh.displayName = "Refresh"
+export default Refresh

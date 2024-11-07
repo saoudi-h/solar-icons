@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/Moon";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/Moon"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgMTEuNTM3MyAyMS4zMDY1IDExLjQ2MDggMjEuMDY3MiAxMS44NTY4QzE5LjkyODkgMTMuNzQwNiAxNy44NjE1IDE1IDE1LjUgMTVDMTEuOTEwMSAxNSA5IDEyLjA4OTkgOSA4LjVDOSA2LjEzODQ1IDEwLjI1OTQgNC4wNzEwNSAxMi4xNDMyIDIuOTMyNzZDMTIuNTM5MiAyLjY5MzQ3IDEyLjQ2MjcgMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Moon";
  */
 const Moon: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Moon.displayName = "Moon";
-export default Moon;
+Moon.displayName = "Moon"
+export default Moon

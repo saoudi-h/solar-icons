@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/TextUnderlineCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/TextUnderlineCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJaTTcuMjUgMTdDNy4yNSAxNi41ODU4IDcuNTg1NzkgMTYuMjUgOCAxNi4yNUgxNkMxNi40MTQyIDE2LjI1IDE2Ljc1IDE2LjU4NTggMTYuNzUgMTdDMTYuNzUgMTcuNDE0MiAxNi40MTQyIDE3Ljc1IDE2IDE3Ljc1SDhDNy41ODU3OSAxNy43NSA3LjI1IDE3LjQxNDIgNy4yNSAxN1pNOC43NSA3QzguNzUgNi41ODU3OSA4LjQxNDIxIDYuMjUgOCA2LjI1QzcuNTg1NzkgNi4yNSA3LjI1IDYuNTg1NzkgNy4yNSA3VjEwQzcuMjUgMTIuNjIzNCA5LjM3NjY1IDE0Ljc1IDEyIDE0Ljc1QzE0LjYyMzQgMTQuNzUgMTYuNzUgMTIuNjIzNCAxNi43NSAxMFY3QzE2Ljc1IDYuNTg1NzkgMTYuNDE0MiA2LjI1IDE2IDYuMjVDMTUuNTg1OCA2LjI1IDE1LjI1IDYuNTg1NzkgMTUuMjUgN1YxMEMxNS4yNSAxMS43OTQ5IDEzLjc5NDkgMTMuMjUgMTIgMTMuMjVDMTAuMjA1MSAxMy4yNSA4Ljc1IDExLjc5NDkgOC43NSAxMFY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextUnderlineCircle";
  */
 const TextUnderlineCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextUnderlineCircle.displayName = "TextUnderlineCircle";
-export default TextUnderlineCircle;
+TextUnderlineCircle.displayName = "TextUnderlineCircle"
+export default TextUnderlineCircle

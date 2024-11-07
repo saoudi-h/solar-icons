@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/HomeAngle2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/HomeAngle2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4zMzUzNyA3Ljg3NDk1QzEuNzk0OTEgOS4wMDIyOSAxLjk4NDYzIDEwLjMyMDggMi4zNjQwNyAxMi45NTc5TDIuNjQyODQgMTQuODk1MkMzLjEzMDI1IDE4LjI4MjcgMy4zNzM5NiAxOS45NzY0IDQuNTQ5MDMgMjAuOTg4MkM1LjcyNDA5IDIyIDcuNDQ3MzcgMjIgMTAuODkzOSAyMkgxMy4xMDYxQzE2LjU1MjYgMjIgMTguMjc1OSAyMiAxOS40NTEgMjAuOTg4MkMyMC42MjYgMTkuOTc2NCAyMC44Njk3IDE4LjI4MjcgMjEuMzU3MiAxNC44OTUyTDIxLjYzNTkgMTIuOTU3OUMyMi4wMTU0IDEwLjMyMDggMjIuMjA1MSA5LjAwMjI5IDIxLjY2NDYgNy44NzQ5NUMyMS4xMjQyIDYuNzQ3NiAxOS45NzM4IDYuMDYyMzQgMTcuNjczMSA0LjY5MTgxTDE2LjI4ODIgMy44NjY4N0MxNC4xOTkgMi42MjIyOSAxMy4xNTQzIDIgMTIgMkMxMC44NDU3IDIgOS44MDEwNCAyLjYyMjI5IDcuNzExNzUgMy44NjY4N0w2LjMyNjkxIDQuNjkxODFDNC4wMjYxOSA2LjA2MjM0IDIuODc1ODMgNi43NDc2IDIuMzM1MzcgNy44NzQ5NVpNMTIgMTguNzVDMTEuNTg1OCAxOC43NSAxMS4yNSAxOC40MTQyIDExLjI1IDE4VjE1QzExLjI1IDE0LjU4NTggMTEuNTg1OCAxNC4yNSAxMiAxNC4yNUMxMi40MTQyIDE0LjI1IDEyLjc1IDE0LjU4NTggMTIuNzUgMTVWMThDMTIuNzUgMTguNDE0MiAxMi40MTQyIDE4Ljc1IDEyIDE4Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeAngle2";
  */
 const HomeAngle2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeAngle2.displayName = "HomeAngle2";
-export default HomeAngle2;
+HomeAngle2.displayName = "HomeAngle2"
+export default HomeAngle2

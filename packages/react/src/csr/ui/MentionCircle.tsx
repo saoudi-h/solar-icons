@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/MentionCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/MentionCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxMC4zNUMxMi45MTEzIDEwLjM1IDEzLjY1IDExLjA4ODcgMTMuNjUgMTJDMTMuNjUgMTIuOTExMyAxMi45MTEzIDEzLjY1IDEyIDEzLjY1QzExLjA4ODcgMTMuNjUgMTAuMzUgMTIuOTExMyAxMC4zNSAxMkMxMC4zNSAxMS4wODg3IDExLjA4ODcgMTAuMzUgMTIgMTAuMzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTYuNzUgMTJDNi43NSA5LjEwMDUgOS4xMDA1IDYuNzUgMTIgNi43NUMxNC44OTk1IDYuNzUgMTcuMjUgOS4xMDA1IDE3LjI1IDEyQzE3LjI1IDEyLjYzMjcgMTcuMTM4NCAxMy4yMzc2IDE2LjkzNDUgMTMuNzk3M0MxNi44OTkxIDEzLjg5NDQgMTYuODI5NSAxMy45OTg5IDE2LjcxODMgMTQuMTAxNUwxNi42Mzc3IDE0LjE3NThDMTYuMzM2OSAxNC40NTMzIDE1Ljg4NTMgMTQuNDg4OCAxNS41NDQ4IDE0LjI2MThDMTUuMjk4MSAxNC4wOTc0IDE1LjE1IDEzLjgyMDYgMTUuMTUgMTMuNTI0MVYxMkMxNS4xNSAxMC4yNjAzIDEzLjczOTcgOC44NSAxMiA4Ljg1QzEwLjI2MDMgOC44NSA4Ljg1IDEwLjI2MDMgOC44NSAxMkM4Ljg1IDEzLjczOTcgMTAuMjYwMyAxNS4xNSAxMiAxNS4xNUMxMi43MDE3IDE1LjE1IDEzLjM0OTkgMTQuOTIwNSAxMy44NzM1IDE0LjUzMjVDMTQuMDU1NyAxNC45MjMzIDE0LjM0MzEgMTUuMjYzNSAxNC43MTI3IDE1LjUwOTlDMTUuNjI5NCAxNi4xMjEgMTYuODQ1MSAxNi4wMjUyIDE3LjY1NDggMTUuMjc4M0wxNy43MzU0IDE1LjIwNEMxNy45ODU1IDE0Ljk3MzIgMTguMjExIDE0LjY3NTYgMTguMzQzOSAxNC4zMTA4QzE4LjYwNjkgMTMuNTg4OSAxOC43NSAxMi44MTAzIDE4Ljc1IDEyQzE4Ljc1IDguMjcyMDggMTUuNzI3OSA1LjI1IDEyIDUuMjVDOC4yNzIwOCA1LjI1IDUuMjUgOC4yNzIwOCA1LjI1IDEyQzUuMjUgMTUuNzI3OSA4LjI3MjA4IDE4Ljc1IDEyIDE4Ljc1QzEyLjQxNDIgMTguNzUgMTIuNzUgMTguNDE0MiAxMi43NSAxOEMxMi43NSAxNy41ODU4IDEyLjQxNDIgMTcuMjUgMTIgMTcuMjVDOS4xMDA1IDE3LjI1IDYuNzUgMTQuODk5NSA2Ljc1IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/MentionCircle";
  */
 const MentionCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MentionCircle.displayName = "MentionCircle";
-export default MentionCircle;
+MentionCircle.displayName = "MentionCircle"
+export default MentionCircle

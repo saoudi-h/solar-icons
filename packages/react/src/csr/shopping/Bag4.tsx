@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/shopping/Bag4";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/shopping/Bag4"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4yNTAxMiA3LjAxMzQ2QzguMjUwMDQgNy4wMDg5OCA4LjI1IDcuMDA0NDkgOC4yNSA3VjZDOC4yNSAzLjkyODkzIDkuOTI4OTMgMi4yNSAxMiAyLjI1QzE0LjA3MTEgMi4yNSAxNS43NSAzLjkyODkzIDE1Ljc1IDZWN0MxNS43NSA3LjAwNDUgMTUuNzUgNy4wMDg5OCAxNS43NDk5IDcuMDEzNDZDMTcuMDQ3MiA3LjA0OTc1IDE3LjgzNzUgNy4xODM5MyAxOC40NDI1IDcuNjc5OTdDMTkuMjcyIDguMzU5OTUgMTkuNTAyOSA5LjUxNDQgMTkuOTY0NiAxMS44MjMzTDIwLjU2NDYgMTQuODIzM0MyMS4yMjg3IDE4LjE0MzcgMjEuNTYwOCAxOS44MDM5IDIwLjY2MDYgMjAuOTAyQzE5Ljc2MDQgMjIgMTguMDY3MyAyMiAxNC42ODEyIDIySDkuMzE4OEM1LjkzMjYyIDIyIDQuMjM5NTQgMjIgMy4zMzkzNiAyMC45MDJDMi40MzkxOSAxOS44MDM5IDIuNzcxMjMgMTguMTQzNyAzLjQzNTMyIDE0LjgyMzNMNC4wMzUzMiAxMS44MjMzQzQuNDk3MSA5LjUxNDQgNC43Mjc5OSA4LjM1OTk1IDUuNTU3NDIgNy42Nzk5N0M2LjE2MjUxIDcuMTgzOTIgNi45NTI3MyA3LjA0OTc1IDguMjUwMTIgNy4wMTM0NlpNOS43NSA2QzkuNzUgNC43NTczNiAxMC43NTc0IDMuNzUgMTIgMy43NUMxMy4yNDI2IDMuNzUgMTQuMjUgNC43NTczNiAxNC4yNSA2VjdDMTQuMjUgNyAxNC4yNSA3IDE0LjI1IDdDMTQuMTk0NCA2Ljk5OTk5IDE0LjEzODEgNyAxNC4wODEyIDdIOS45MTg4QzkuODYxODUgNyA5LjgwNTU5IDcgOS43NSA3LjAwMDAxQzkuNzUgNy4wMDAwMSA5Ljc1IDcuMDAwMDEgOS43NSA3LjAwMDAxVjZaTTE1IDExQzE1LjU1MjMgMTEgMTYgMTAuNTUyMyAxNiAxMEMxNiA5LjQ0NzcyIDE1LjU1MjMgOSAxNSA5QzE0LjQ0NzcgOSAxNCA5LjQ0NzcyIDE0IDEwQzE0IDEwLjU1MjMgMTQuNDQ3NyAxMSAxNSAxMVpNOS45OTk5OCAxMEM5Ljk5OTk4IDEwLjU1MjMgOS41NTIyNiAxMSA4Ljk5OTk4IDExQzguNDQ3NjkgMTEgNy45OTk5OCAxMC41NTIzIDcuOTk5OTggMTBDNy45OTk5OCA5LjQ0NzcyIDguNDQ3NjkgOSA4Ljk5OTk4IDlDOS41NTIyNiA5IDkuOTk5OTggOS40NDc3MiA5Ljk5OTk4IDEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/Bag4";
  */
 const Bag4: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bag4.displayName = "Bag4";
-export default Bag4;
+Bag4.displayName = "Bag4"
+export default Bag4

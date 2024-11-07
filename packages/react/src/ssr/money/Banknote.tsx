@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/money/Banknote";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/money/Banknote"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05Ljc1IDEyQzkuNzUgMTMuMjQyNiAxMC43NTc0IDE0LjI1IDEyIDE0LjI1QzEzLjI0MjYgMTQuMjUgMTQuMjUgMTMuMjQyNiAxNC4yNSAxMkMxNC4yNSAxMC43NTc0IDEzLjI0MjYgOS43NSAxMiA5Ljc1QzEwLjc1NzQgOS43NSA5Ljc1IDEwLjc1NzQgOS43NSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zLjc3NzcyIDE4LjMyNTlDNC43ODY2MSAxOSA2LjE5MTA4IDE5IDkgMTlMMTUgMTlDMTcuODA4OSAxOSAxOS4yMTM0IDE5IDIwLjIyMjMgMTguMzI1OUMyMC42NTkgMTguMDM0IDIxLjAzNCAxNy42NTkgMjEuMzI1OSAxNy4yMjIzQzIyIDE2LjIxMzQgMjIgMTQuODA4OSAyMiAxMkMyMiA5LjE5MTA3IDIyIDcuNzg2NjEgMjEuMzI1OSA2Ljc3NzcyQzIxLjAzNCA2LjM0MDk2IDIwLjY1OSA1Ljk2NTk1IDIwLjIyMjMgNS42NzQxMkMxOS4yMTM0IDUgMTcuODA4OSA1IDE1IDVIOUM2LjE5MTA4IDUgNC43ODY2MSA1IDMuNzc3NzIgNS42NzQxMkMzLjM0MDk2IDUuOTY1OTYgMi45NjU5NiA2LjM0MDk2IDIuNjc0MTIgNi43Nzc3MkMyIDcuNzg2NjEgMiA5LjE5MTA4IDIgMTJDMiAxNC44MDg5IDIgMTYuMjEzNCAyLjY3NDEyIDE3LjIyMjNDMi45NjU5NiAxNy42NTkgMy4zNDA5NiAxOC4wMzQgMy43Nzc3MiAxOC4zMjU5Wk0xMiAxNS43NUM5LjkyODkzIDE1Ljc1IDguMjUgMTQuMDcxMSA4LjI1IDEyQzguMjUgOS45Mjg5MyA5LjkyODkzIDguMjUgMTIgOC4yNUMxNC4wNzExIDguMjUgMTUuNzUgOS45Mjg5MyAxNS43NSAxMkMxNS43NSAxNC4wNzExIDE0LjA3MTEgMTUuNzUgMTIgMTUuNzVaTTUuNSAxNS43NUM1LjA4NTc5IDE1Ljc1IDQuNzUgMTUuNDE0MiA0Ljc1IDE1TDQuNzUgOUM0Ljc1IDguNTg1NzkgNS4wODU3OSA4LjI1IDUuNSA4LjI1QzUuOTE0MjEgOC4yNSA2LjI1IDguNTg1NzkgNi4yNSA5TDYuMjUgMTVDNi4yNSAxNS40MTQyIDUuOTE0MjEgMTUuNzUgNS41IDE1Ljc1Wk0xNy43NSAxNUMxNy43NSAxNS40MTQyIDE4LjA4NTggMTUuNzUgMTguNSAxNS43NUMxOC45MTQyIDE1Ljc1IDE5LjI1IDE1LjQxNDIgMTkuMjUgMTVWOUMxOS4yNSA4LjU4NTc5IDE4LjkxNDIgOC4yNSAxOC41IDguMjVDMTguMDg1OCA4LjI1IDE3Ljc1IDguNTg1NzkgMTcuNzUgOVYxNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Banknote";
  */
 const Banknote: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Banknote.displayName = "Banknote";
-export default Banknote;
+Banknote.displayName = "Banknote"
+export default Banknote

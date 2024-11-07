@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/QuestionCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/QuestionCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk0xMiA3Ljc1QzExLjM3ODcgNy43NSAxMC44NzUgOC4yNTM2OCAxMC44NzUgOC44NzVDMTAuODc1IDkuMjg5MjEgMTAuNTM5MiA5LjYyNSAxMC4xMjUgOS42MjVDOS43MTA3OSA5LjYyNSA5LjM3NSA5LjI4OTIxIDkuMzc1IDguODc1QzkuMzc1IDcuNDI1MjUgMTAuNTUwMyA2LjI1IDEyIDYuMjVDMTMuNDQ5NyA2LjI1IDE0LjYyNSA3LjQyNTI1IDE0LjYyNSA4Ljg3NUMxNC42MjUgOS41ODU4NCAxNC4zNDE1IDEwLjIzMiAxMy44ODMgMTAuNzA0QzEzLjc5MDcgMTAuNzk4OSAxMy43MDI3IDEwLjg4NjkgMTMuNjE4NyAxMC45NzA4QzEzLjQwMjkgMTEuMTg2NCAxMy4yMTM4IDExLjM3NTMgMTMuMDQ3OSAxMS41ODg1QzEyLjgyODkgMTEuODY5OSAxMi43NSAxMi4wNzY4IDEyLjc1IDEyLjI1VjEzQzEyLjc1IDEzLjQxNDIgMTIuNDE0MiAxMy43NSAxMiAxMy43NUMxMS41ODU4IDEzLjc1IDExLjI1IDEzLjQxNDIgMTEuMjUgMTNWMTIuMjVDMTEuMjUgMTEuNTk0OCAxMS41NTUgMTEuMDY0NCAxMS44NjQyIDEwLjY2NzJDMTIuMDkyOSAxMC4zNzMzIDEyLjM4MDQgMTAuMDg2MyAxMi42MTM4IDkuODUzNDZDMTIuNjg0MiA5Ljc4MzIxIDEyLjc0OTYgOS43MTc4OSAxMi44MDcgOS42NTg3N0MxMy4wMDQ2IDkuNDU1NDMgMTMuMTI1IDkuMTgwMDQgMTMuMTI1IDguODc1QzEzLjEyNSA4LjI1MzY4IDEyLjYyMTMgNy43NSAxMiA3Ljc1Wk0xMiAxN0MxMi41NTIzIDE3IDEzIDE2LjU1MjMgMTMgMTZDMTMgMTUuNDQ3NyAxMi41NTIzIDE1IDEyIDE1QzExLjQ0NzcgMTUgMTEgMTUuNDQ3NyAxMSAxNkMxMSAxNi41NTIzIDExLjQ0NzcgMTcgMTIgMTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/QuestionCircle";
  */
 const QuestionCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-QuestionCircle.displayName = "QuestionCircle";
-export default QuestionCircle;
+QuestionCircle.displayName = "QuestionCircle"
+export default QuestionCircle

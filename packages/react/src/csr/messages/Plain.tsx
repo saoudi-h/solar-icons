@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Plain";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Plain"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC42MzU3IDE1LjY3MDFMMjAuMzUyMSAxMC41MjA4QzIxLjg1MTYgNi4wMjI0MiAyMi42MDEzIDMuNzczMjIgMjEuNDE0IDIuNTg1OTVDMjAuMjI2OCAxLjM5ODY5IDE3Ljk3NzYgMi4xNDg0MiAxMy40NzkyIDMuNjQ3ODhMOC4zMjk4NyA1LjM2NDMyQzQuNjk5MjMgNi41NzQ1MyAyLjg4MzkyIDcuMTc5NjQgMi4zNjgwNiA4LjA2Njk4QzEuODc3MzEgOC45MTExMiAxLjg3NzMxIDkuOTUzNjkgMi4zNjgwNiAxMC43OTc4QzIuODgzOTIgMTEuNjg1MiA0LjY5OTIzIDEyLjI5MDMgOC4zMjk4NyAxMy41MDA1QzguNzc5ODEgMTMuNjUwNSA5LjI4NjAxIDEzLjU0MzQgOS42MjI5NCAxMy4yMDk2TDE1LjEyODYgNy43NTQ5NUMxNS40MzgzIDcuNDQ4MDggMTUuOTM4MiA3LjQ1MDQxIDE2LjI0NSA3Ljc2MDE1QzE2LjU1MTkgOC4wNjk4OSAxNi41NDk2IDguNTY5NzUgMTYuMjM5OCA4Ljg3NjYyTDEwLjgyMzEgMTQuMjQzMkMxMC40NTE4IDE0LjYxMTEgMTAuMzM0MiAxNS4xNzQyIDEwLjQ5OTUgMTUuNjcwMUMxMS43MDk3IDE5LjMwMDcgMTIuMzE0OCAyMS4xMTYxIDEzLjIwMjIgMjEuNjMxOUMxNC4wNDYzIDIyLjEyMjcgMTUuMDg4OSAyMi4xMjI3IDE1LjkzMyAyMS42MzE5QzE2LjgyMDQgMjEuMTE2MSAxNy40MjU1IDE5LjMwMDggMTguNjM1NyAxNS42NzAxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Plain";
  */
 const Plain: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Plain.displayName = "Plain";
-export default Plain;
+Plain.displayName = "Plain"
+export default Plain

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/settings/Widget3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/settings/Widget3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS43NSA2LjVDMS43NSAzLjg3NjY1IDMuODc2NjUgMS43NSA2LjUgMS43NUM5LjEyMzM1IDEuNzUgMTEuMjUgMy44NzY2NSAxMS4yNSA2LjVDMTEuMjUgOS4xMjMzNSA5LjEyMzM1IDExLjI1IDYuNSAxMS4yNUMzLjg3NjY1IDExLjI1IDEuNzUgOS4xMjMzNSAxLjc1IDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi43NSAxNy41QzEyLjc1IDE0Ljg3NjYgMTQuODc2NiAxMi43NSAxNy41IDEyLjc1QzIwLjEyMzQgMTIuNzUgMjIuMjUgMTQuODc2NiAyMi4yNSAxNy41QzIyLjI1IDIwLjEyMzQgMjAuMTIzNCAyMi4yNSAxNy41IDIyLjI1QzE0Ljg3NjYgMjIuMjUgMTIuNzUgMjAuMTIzNCAxMi43NSAxNy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIyLjI1IDYuNUMyMi4yNSAzLjg3NjY1IDIwLjEyMzQgMS43NSAxNy41IDEuNzVDMTQuODc2NiAxLjc1IDEyLjc1IDMuODc2NjUgMTIuNzUgNi41QzEyLjc1IDkuMTIzMzUgMTQuODc2NiAxMS4yNSAxNy41IDExLjI1QzIwLjEyMzQgMTEuMjUgMjIuMjUgOS4xMjMzNSAyMi4yNSA2LjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuMjUgMTcuNUMxMS4yNSAxNC44NzY2IDkuMTIzMzUgMTIuNzUgNi41IDEyLjc1QzMuODc2NjUgMTIuNzUgMS43NSAxNC44NzY2IDEuNzUgMTcuNUMxLjc1IDIwLjEyMzQgMy44NzY2NSAyMi4yNSA2LjUgMjIuMjVDOS4xMjMzNSAyMi4yNSAxMS4yNSAyMC4xMjM0IDExLjI1IDE3LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/Widget3";
  */
 const Widget3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Widget3.displayName = "Widget3";
-export default Widget3;
+Widget3.displayName = "Widget3"
+export default Widget3

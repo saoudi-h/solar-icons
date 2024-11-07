@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/HourglassLine";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/HourglassLine"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4xOTgyNSAzLjI5OTE4QzUuODAwNDYgMiA3Ljg2Njk3IDIgMTIgMkMxNi4xMzMgMiAxOC4xOTk1IDIgMTguODAxNyAzLjI5OTE4QzE4Ljg1MzUgMy40MTA4NiAxOC44OTcyIDMuNTI2ODYgMTguOTMyMyAzLjY0NjFDMTkuMzQxNCA1LjAzMzMgMTcuODgwMiA2LjY0MTExIDE0Ljk1NzcgOS44NTY3NEwxMyAxMkwxNC45NTc3IDE0LjE0MzNDMTcuODgwMiAxNy4zNTg5IDE5LjM0MTQgMTguOTY2NyAxOC45MzIzIDIwLjM1MzlDMTguODk3MiAyMC40NzMxIDE4Ljg1MzUgMjAuNTg5MSAxOC44MDE3IDIwLjcwMDhDMTguMTk5NSAyMiAxNi4xMzMgMjIgMTIgMjJDNy44NjY5NyAyMiA1LjgwMDQ2IDIyIDUuMTk4MjUgMjAuNzAwOEM1LjE0NjQ5IDIwLjU4OTEgNS4xMDI4MiAyMC40NzMxIDUuMDY3NjUgMjAuMzUzOUM0LjY1ODU3IDE4Ljk2NjcgNi4xMTk4MSAxNy4zNTg5IDkuMDQyMyAxNC4xNDMzTDExIDEyTDkuMDQyMyA5Ljg1Njc0QzYuMTE5ODEgNi42NDExMSA0LjY1ODU3IDUuMDMzMyA1LjA2NzY1IDMuNjQ2MUM1LjEwMjgyIDMuNTI2ODYgNS4xNDY0OSAzLjQxMDg2IDUuMTk4MjUgMy4yOTkxOFpNMTAgMTcuNzVDOS41ODU3OSAxNy43NSA5LjI1IDE4LjA4NTggOS4yNSAxOC41QzkuMjUgMTguOTE0MiA5LjU4NTc5IDE5LjI1IDEwIDE5LjI1SDE0QzE0LjQxNDIgMTkuMjUgMTQuNzUgMTguOTE0MiAxNC43NSAxOC41QzE0Ljc1IDE4LjA4NTggMTQuNDE0MiAxNy43NSAxNCAxNy43NUgxMFpNOS4yNSA1LjVDOS4yNSA1LjA4NTc5IDkuNTg1NzkgNC43NSAxMCA0Ljc1SDE0QzE0LjQxNDIgNC43NSAxNC43NSA1LjA4NTc5IDE0Ljc1IDUuNUMxNC43NSA1LjkxNDIxIDE0LjQxNDIgNi4yNSAxNCA2LjI1SDEwQzkuNTg1NzkgNi4yNSA5LjI1IDUuOTE0MjEgOS4yNSA1LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/HourglassLine";
  */
 const HourglassLine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HourglassLine.displayName = "HourglassLine";
-export default HourglassLine;
+HourglassLine.displayName = "HourglassLine"
+export default HourglassLine

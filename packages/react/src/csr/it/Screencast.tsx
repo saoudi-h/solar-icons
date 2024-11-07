@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/Screencast";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/Screencast"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjUwMDQxIDRIMTQuMDAwNEMxNy43NzE2IDQgMTkuNjU3MyA0IDIwLjgyODggNS4xNzE1N0MyMi4wMDA0IDYuMzQzMTUgMjIuMDAwNCA4LjIyODc2IDIyLjAwMDQgMTJDMjIuMDAwNCAxNS43NzEyIDIyLjAwMDQgMTcuNjU2OSAyMC44Mjg4IDE4LjgyODRDMTkuNzI5NSAxOS45Mjc3IDE3LjEyMTEgMTkuOTk1NSAxMy42ODggMTkuOTk5N0MxMy4zMDgzIDIwLjAwMDIgMTMuMDAwNCAxOS42OTIyIDEzLjAwMDQgMTkuMzEyNUMxMy4wMDA0IDEzLjYxNzEgOC4zODMzNSA5IDIuNjg3OTEgOUMyLjMwODIyIDkgMS45OTk0NiA4LjY5MjE2IDIuMDAxOTcgOC4zMTI0N0MyLjAwNDAxIDguMDAyODIgMi4wMDg3NCA3LjcxODkzIDIuMDE5NjcgNy42MDc5M0MyLjIwNjcyIDUuNzA4ODIgMy43MDkyMyA0LjIwNjMxIDUuNjA4MzQgNC4wMTkyNkM1LjgwMzkgNCA2LjAzNjA3IDQgNi41MDA0MSA0WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMiAxMC4yNUMxLjU4NTc5IDEwLjI1IDEuMjUgMTAuNTg1OCAxLjI1IDExQzEuMjUgMTEuNDE0MiAxLjU4NTc5IDExLjc1IDIgMTEuNzVDNi41NTYzNSAxMS43NSAxMC4yNSAxNS40NDM3IDEwLjI1IDIwQzEwLjI1IDIwLjQxNDIgMTAuNTg1OCAyMC43NSAxMSAyMC43NUMxMS40MTQyIDIwLjc1IDExLjc1IDIwLjQxNDIgMTEuNzUgMjBDMTEuNzUgMTQuNjE1MiA3LjM4NDc4IDEwLjI1IDIgMTAuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yIDEzLjI1QzEuNTg1NzkgMTMuMjUgMS4yNSAxMy41ODU4IDEuMjUgMTRDMS4yNSAxNC40MTQyIDEuNTg1NzkgMTQuNzUgMiAxNC43NUM0Ljg5OTUgMTQuNzUgNy4yNSAxNy4xMDA1IDcuMjUgMjBDNy4yNSAyMC40MTQyIDcuNTg1NzkgMjAuNzUgOCAyMC43NUM4LjQxNDIxIDIwLjc1IDguNzUgMjAuNDE0MiA4Ljc1IDIwQzguNzUgMTYuMjcyMSA1LjcyNzkyIDEzLjI1IDIgMTMuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yIDE2LjI1QzEuNTg1NzkgMTYuMjUgMS4yNSAxNi41ODU4IDEuMjUgMTdDMS4yNSAxNy40MTQyIDEuNTg1NzkgMTcuNzUgMiAxNy43NUMzLjI0MjY0IDE3Ljc1IDQuMjUgMTguNzU3NCA0LjI1IDIwQzQuMjUgMjAuNDE0MiA0LjU4NTc5IDIwLjc1IDUgMjAuNzVDNS40MTQyMSAyMC43NSA1Ljc1IDIwLjQxNDIgNS43NSAyMEM1Ljc1IDE3LjkyODkgNC4wNzEwNyAxNi4yNSAyIDE2LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/Screencast";
  */
 const Screencast: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Screencast.displayName = "Screencast";
-export default Screencast;
+Screencast.displayName = "Screencast"
+export default Screencast

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/MaximizeSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/MaximizeSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTEyLjUgN0MxMi41IDYuNTg1NzkgMTIuODM1OCA2LjI1IDEzLjI1IDYuMjVIMTdDMTcuNDE0MiA2LjI1IDE3Ljc1IDYuNTg1NzkgMTcuNzUgN1YxMC43NUMxNy43NSAxMS4xNjQyIDE3LjQxNDIgMTEuNSAxNyAxMS41QzE2LjU4NTggMTEuNSAxNi4yNSAxMS4xNjQyIDE2LjI1IDEwLjc1VjguODEwNjZMOC44MTA2NiAxNi4yNUgxMC43NUMxMS4xNjQyIDE2LjI1IDExLjUgMTYuNTg1OCAxMS41IDE3QzExLjUgMTcuNDE0MiAxMS4xNjQyIDE3Ljc1IDEwLjc1IDE3Ljc1SDdDNi41ODU3OSAxNy43NSA2LjI1IDE3LjQxNDIgNi4yNSAxN1YxMy4yNUM2LjI1IDEyLjgzNTggNi41ODU3OSAxMi41IDcgMTIuNUM3LjQxNDIxIDEyLjUgNy43NSAxMi44MzU4IDcuNzUgMTMuMjVWMTUuMTg5M0wxNS4xODkzIDcuNzVIMTMuMjVDMTIuODM1OCA3Ljc1IDEyLjUgNy40MTQyMSAxMi41IDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/MaximizeSquare";
  */
 const MaximizeSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MaximizeSquare.displayName = "MaximizeSquare";
-export default MaximizeSquare;
+MaximizeSquare.displayName = "MaximizeSquare"
+export default MaximizeSquare

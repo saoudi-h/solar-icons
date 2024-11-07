@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/home/Sofa";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/home/Sofa"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDEyVjEzSDEySDE3VjEyQzE3IDEwLjM0NTQgMTguMzM5NSA5LjAwMzY4IDE5Ljk5MzIgOS4wMDAwMUMxOS45ODQ3IDguNjcxOTkgMTkuOTY1NyA4LjQzMzc5IDE5LjkyMzEgOC4yMTk2NEMxOS42MDc1IDYuNjMyODggMTguMzY3MSA1LjM5MjQ5IDE2Ljc4MDQgNS4wNzY4NkMxNi4zOTQgNSAxNS45MjkzIDUgMTUgNUgxMkg5QzguMDcwNjkgNSA3LjYwNjAzIDUgNy4yMTk2NCA1LjA3Njg2QzUuNjMyODggNS4zOTI0OSA0LjM5MjQ5IDYuNjMyODggNC4wNzY4NiA4LjIxOTY0QzQuMDM0MjYgOC40MzM3OSA0LjAxNTI3IDguNjcxOTkgNC4wMDY4MSA5LjAwMDAxQzUuNjYwNTMgOS4wMDM2OCA3IDEwLjM0NTQgNyAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE4LjQ0NDQgMThINS41NTU1NkM1LjI3ODQ5IDE4IDUuMDA4ODMgMTcuOTY4MyA0Ljc1IDE3LjkwODRWMTlDNC43NSAxOS40MTQyIDQuNDE0MjEgMTkuNzUgNCAxOS43NUMzLjU4NTc5IDE5Ljc1IDMuMjUgMTkuNDE0MiAzLjI1IDE5VjE3LjE1MTNDMi40ODUwOCAxNi40OTkxIDIgMTUuNTI4NCAyIDE0LjQ0NDRWMTJDMiAxMC44OTU0IDIuODk1NDMgMTAgNCAxMEM1LjEwNDU3IDEwIDYgMTAuODk1NCA2IDEyVjEzLjJDNiAxMy42NDE4IDYuMzU4MTcgMTQgNi44IDE0SDE3LjJDMTcuNjQxOCAxNCAxOCAxMy42NDE4IDE4IDEzLjJWMTJDMTggMTAuODk1NCAxOC44OTU0IDEwIDIwIDEwQzIxLjEwNDYgMTAgMjIgMTAuODk1NCAyMiAxMlYxNC40NDQ0QzIyIDE1LjUyODQgMjEuNTE0OSAxNi40OTkxIDIwLjc1IDE3LjE1MTNWMTlDMjAuNzUgMTkuNDE0MiAyMC40MTQyIDE5Ljc1IDIwIDE5Ljc1QzE5LjU4NTggMTkuNzUgMTkuMjUgMTkuNDE0MiAxOS4yNSAxOVYxNy45MDg0QzE4Ljk5MTIgMTcuOTY4MyAxOC43MjE1IDE4IDE4LjQ0NDQgMThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Sofa";
  */
 const Sofa: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sofa.displayName = "Sofa";
-export default Sofa;
+Sofa.displayName = "Sofa"
+export default Sofa

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/SquareTopDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/SquareTopDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQuMjUgM0MxNC4yNSAyLjU4NTc5IDE0LjU4NTggMi4yNSAxNSAyLjI1SDIxQzIxLjQxNDIgMi4yNSAyMS43NSAyLjU4NTc5IDIxLjc1IDNWOUMyMS43NSA5LjQxNDIxIDIxLjQxNDIgOS43NSAyMSA5Ljc1QzIwLjU4NTggOS43NSAyMC4yNSA5LjQxNDIxIDIwLjI1IDlWNC44MTA2NkwxMy41MzAzIDExLjUzMDNDMTMuMjM3NCAxMS44MjMyIDEyLjc2MjYgMTEuODIzMiAxMi40Njk3IDExLjUzMDNDMTIuMTc2OCAxMS4yMzc0IDEyLjE3NjggMTAuNzYyNiAxMi40Njk3IDEwLjQ2OTdMMTkuMTg5MyAzLjc1SDE1QzE0LjU4NTggMy43NSAxNC4yNSAzLjQxNDIxIDE0LjI1IDNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS45OTk1IDExLjAxNjRDMjEuNjk4MyAxMS4xNjU5IDIxLjM1OSAxMS4yNSAyMSAxMS4yNUMxOS43NTc0IDExLjI1IDE4Ljc1IDEwLjI0MjYgMTguNzUgOVY4LjQzMTk4TDE0LjU5MSAxMi41OTFDMTMuNzEyMyAxMy40Njk3IDEyLjI4NzcgMTMuNDY5NyAxMS40MDkgMTIuNTkxQzEwLjUzMDMgMTEuNzEyMyAxMC41MzAzIDEwLjI4NzcgMTEuNDA5IDkuNDA5MDFMMTUuNTY4IDUuMjVIMTVDMTMuNzU3NCA1LjI1IDEyLjc1IDQuMjQyNjQgMTIuNzUgM0MxMi43NSAyLjY0MTAxIDEyLjgzNDEgMi4zMDE2NSAxMi45ODM2IDIuMDAwNTVDMTIuNjY3NiAyIDEyLjMzOTkgMiAxMiAyQzcuMjg1OTYgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTYgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NiAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgMTEuNjYwMSAyMiAxMS4zMzI0IDIxLjk5OTUgMTEuMDE2NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/SquareTopDown";
  */
 const SquareTopDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareTopDown.displayName = "SquareTopDown";
-export default SquareTopDown;
+SquareTopDown.displayName = "SquareTopDown"
+export default SquareTopDown

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/UploadTwiceSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/UploadTwiceSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOS4yNSAxN0M5LjI1IDE3LjQxNDIgOC45MTQyMSAxNy43NSA4LjUgMTcuNzVDOC4wODU3OSAxNy43NSA3Ljc1IDE3LjQxNDIgNy43NSAxN1YxMi4wNzE1TDYuNTc2MTcgMTMuNDgwMUM2LjMxMDk5IDEzLjc5ODMgNS44MzgwNyAxMy44NDEzIDUuNTE5ODYgMTMuNTc2MkM1LjIwMTY1IDEzLjMxMSA1LjE1ODY2IDEyLjgzODEgNS40MjM4MyAxMi41MTk5TDcuOTIzODMgOS41MTk4NkM4LjA2NjMzIDkuMzQ4ODcgOC4yNzc0MiA5LjI1IDguNSA5LjI1QzguNzIyNTkgOS4yNSA4LjkzMzY3IDkuMzQ4ODcgOS4wNzYxNyA5LjUxOTg2TDExLjU3NjIgMTIuNTE5OUMxMS44NDEzIDEyLjgzODEgMTEuNzk4MyAxMy4zMTEgMTEuNDgwMSAxMy41NzYyQzExLjE2MTkgMTMuODQxMyAxMC42ODkgMTMuNzk4MyAxMC40MjM4IDEzLjQ4MDFMOS4yNSAxMi4wNzE1VjE3Wk0xNS41IDE3Ljc1QzE1LjkxNDIgMTcuNzUgMTYuMjUgMTcuNDE0MiAxNi4yNSAxN1YxMi4wNzE1TDE3LjQyMzggMTMuNDgwMUMxNy42ODkgMTMuNzk4MyAxOC4xNjE5IDEzLjg0MTMgMTguNDgwMSAxMy41NzYyQzE4Ljc5ODMgMTMuMzExIDE4Ljg0MTMgMTIuODM4MSAxOC41NzYyIDEyLjUxOTlMMTYuMDc2MiA5LjUxOTg2QzE1LjkzMzcgOS4zNDg4NyAxNS43MjI2IDkuMjUgMTUuNSA5LjI1QzE1LjI3NzQgOS4yNSAxNS4wNjYzIDkuMzQ4ODcgMTQuOTIzOCA5LjUxOTg2TDEyLjQyMzggMTIuNTE5OUMxMi4xNTg3IDEyLjgzODEgMTIuMjAxNyAxMy4zMTEgMTIuNTE5OSAxMy41NzYyQzEyLjgzODEgMTMuODQxMyAxMy4zMTEgMTMuNzk4MyAxMy41NzYyIDEzLjQ4MDFMMTQuNzUgMTIuMDcxNVYxN0MxNC43NSAxNy40MTQyIDE1LjA4NTggMTcuNzUgMTUuNSAxNy43NVpNNiA3Ljc1QzUuNTg1NzkgNy43NSA1LjI1IDcuNDE0MjEgNS4yNSA3QzUuMjUgNi41ODU3OSA1LjU4NTc5IDYuMjUgNiA2LjI1SDE4QzE4LjQxNDIgNi4yNSAxOC43NSA2LjU4NTc5IDE4Ljc1IDdDMTguNzUgNy40MTQyMSAxOC40MTQyIDcuNzUgMTggNy43NUg2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/UploadTwiceSquare";
  */
 const UploadTwiceSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UploadTwiceSquare.displayName = "UploadTwiceSquare";
-export default UploadTwiceSquare;
+UploadTwiceSquare.displayName = "UploadTwiceSquare"
+export default UploadTwiceSquare

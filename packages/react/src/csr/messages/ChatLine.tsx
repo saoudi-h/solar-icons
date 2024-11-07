@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/ChatLine";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/ChatLine"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNjI4OCAyMC40NzE4TDEzLjA4NjcgMjEuMzg3N0MxMi42MDM1IDIyLjIwNCAxMS4zOTY1IDIyLjIwNCAxMC45MTMzIDIxLjM4NzdMMTAuMzcxMiAyMC40NzE4QzkuOTUwNzMgMTkuNzYxNCA5Ljc0MDQ5IDE5LjQwNjMgOS40MDI3OSAxOS4yMDk4QzkuMDY1MDkgMTkuMDEzNCA4LjYzOTkyIDE5LjAwNjEgNy43ODk1OCAxOC45OTE1QzYuNTM0MjIgMTguOTY5OCA1Ljc0Njg5IDE4Ljg5MjkgNS4wODY1OCAxOC42MTk0QzMuODYxNDQgMTguMTExOSAyLjg4ODA3IDE3LjEzODYgMi4zODA2IDE1LjkxMzRDMiAxNC45OTQ2IDIgMTMuODI5NyAyIDExLjVWMTAuNUMyIDcuMjI2NTcgMiA1LjU4OTg1IDIuNzM2OCA0LjM4NzUxQzMuMTQ5MDggMy43MTQ3MyAzLjcxNDczIDMuMTQ5MDggNC4zODc1MSAyLjczNjhDNS41ODk4NSAyIDcuMjI2NTcgMiAxMC41IDJIMTMuNUMxNi43NzM0IDIgMTguNDEwMSAyIDE5LjYxMjUgMi43MzY4QzIwLjI4NTMgMy4xNDkwOCAyMC44NTA5IDMuNzE0NzMgMjEuMjYzMiA0LjM4NzUxQzIyIDUuNTg5ODUgMjIgNy4yMjY1NyAyMiAxMC41VjExLjVDMjIgMTMuODI5NyAyMiAxNC45OTQ2IDIxLjYxOTQgMTUuOTEzNEMyMS4xMTE5IDE3LjEzODYgMjAuMTM4NiAxOC4xMTE5IDE4LjkxMzQgMTguNjE5NEMxOC4yNTMxIDE4Ljg5MjkgMTcuNDY1OCAxOC45Njk4IDE2LjIxMDQgMTguOTkxNUMxNS4zNiAxOS4wMDYxIDE0LjkzNDkgMTkuMDEzNCAxNC41OTcyIDE5LjIwOThDMTQuMjU5NSAxOS40MDYyIDE0LjA0OTIgMTkuNzYxNCAxMy42Mjg4IDIwLjQ3MThaTTggMTEuNzVDNy41ODU3OSAxMS43NSA3LjI1IDEyLjA4NTggNy4yNSAxMi41QzcuMjUgMTIuOTE0MiA3LjU4NTc5IDEzLjI1IDggMTMuMjVIMTMuNUMxMy45MTQyIDEzLjI1IDE0LjI1IDEyLjkxNDIgMTQuMjUgMTIuNUMxNC4yNSAxMi4wODU4IDEzLjkxNDIgMTEuNzUgMTMuNSAxMS43NUg4Wk03LjI1IDlDNy4yNSA4LjU4NTc5IDcuNTg1NzkgOC4yNSA4IDguMjVIMTZDMTYuNDE0MiA4LjI1IDE2Ljc1IDguNTg1NzkgMTYuNzUgOUMxNi43NSA5LjQxNDIxIDE2LjQxNDIgOS43NSAxNiA5Ljc1SDhDNy41ODU3OSA5Ljc1IDcuMjUgOS40MTQyMSA3LjI1IDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatLine";
  */
 const ChatLine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatLine.displayName = "ChatLine";
-export default ChatLine;
+ChatLine.displayName = "ChatLine"
+export default ChatLine

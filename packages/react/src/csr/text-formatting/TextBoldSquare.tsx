@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/TextBoldSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/TextBoldSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4yNSA5QzE0LjI1IDEwLjI0MjYgMTMuMjQyNiAxMS4yNSAxMiAxMS4yNUg4Ljc1VjcuNTIxNzRDOC43NSA3LjA5NTUyIDkuMDk1NTIgNi43NSA5LjUyMTc0IDYuNzVIMTJDMTMuMjQyNiA2Ljc1IDE0LjI1IDcuNzU3MzYgMTQuMjUgOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTguNzUgMTYuODIzNVYxMi43NUgxM0MxNC4yNDI2IDEyLjc1IDE1LjI1IDEzLjc1NzQgMTUuMjUgMTVDMTUuMjUgMTYuMjQyNiAxNC4yNDI2IDE3LjI1IDEzIDE3LjI1SDkuMTc2NDdDOC45NDA5NCAxNy4yNSA4Ljc1IDE3LjA1OTEgOC43NSAxNi44MjM1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NUM0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTIgMjJDMTYuNzE0IDIyIDE5LjA3MTEgMjIgMjAuNTM1NSAyMC41MzU1QzIyIDE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyQzIyIDcuMjg1OTUgMjIgNC45Mjg5MyAyMC41MzU1IDMuNDY0NDdDMTkuMDcxMSAyIDE2LjcxNCAyIDEyIDJDNy4yODU5NSAyIDQuOTI4OTMgMiAzLjQ2NDQ3IDMuNDY0NDdaTTcuMjUgNy41MjE3NEM3LjI1IDYuMjY3MDkgOC4yNjcwOSA1LjI1IDkuNTIxNzQgNS4yNUgxMkMxNC4wNzExIDUuMjUgMTUuNzUgNi45Mjg5MyAxNS43NSA5QzE1Ljc1IDEwLjAyOSAxNS4zMzU2IDEwLjk2MTIgMTQuNjY0NSAxMS42Mzg3QzE1LjkwMDQgMTIuMjUxOSAxNi43NSAxMy41MjY4IDE2Ljc1IDE1QzE2Ljc1IDE3LjA3MTEgMTUuMDcxMSAxOC43NSAxMyAxOC43NUg5LjE3NjQ3QzguMTEyNTEgMTguNzUgNy4yNSAxNy44ODc1IDcuMjUgMTYuODIzNVY3LjUyMTc0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextBoldSquare";
  */
 const TextBoldSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextBoldSquare.displayName = "TextBoldSquare";
-export default TextBoldSquare;
+TextBoldSquare.displayName = "TextBoldSquare"
+export default TextBoldSquare

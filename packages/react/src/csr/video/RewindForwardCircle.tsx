@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/RewindForwardCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/RewindForwardCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMy40MzYgNy40NjEwNUMxMy4wOTg5IDcuMjIwMjkgMTIuNjMwNSA3LjI5ODM2IDEyLjM4OTggNy42MzU0MkMxMi4xNDkgNy45NzI0OCAxMi4yMjcxIDguNDQwODkgMTIuNTY0MSA4LjY4MTY1TDE1Ljc4NTcgMTAuOTgyOEMxNi40ODM2IDExLjQ4MTMgMTYuNDgzNiAxMi41MTg2IDE1Ljc4NTcgMTMuMDE3MUwxMi41NjQxIDE1LjMxODJDMTIuMjI3MSAxNS41NTg5IDEyLjE0OSAxNi4wMjc0IDEyLjM4OTggMTYuMzY0NEMxMi42MzA1IDE2LjcwMTUgMTMuMDk4OSAxNi43Nzk1IDEzLjQzNiAxNi41Mzg4TDE2LjY1NzUgMTQuMjM3N0MxOC4xOTMgMTMuMTQwOSAxOC4xOTMgMTAuODU4OSAxNi42NTc1IDkuNzYyMTVMMTMuNDM2IDcuNDYxMDVaTTcuNSAxNS4xMzE4VjguODY4ODdDNy41IDguMDcwMTcgOC4zOTAxNSA3LjU5Mzc4IDkuMDU0NyA4LjAzNjgyTDEzLjc1MTkgMTEuMTY4M0MxNC4zNDU3IDExLjU2NDEgMTQuMzQ1NyAxMi40MzY2IDEzLjc1MTkgMTIuODMyNEw5LjA1NDcgMTUuOTYzOUM4LjM5MDE0IDE2LjQwNjkgNy41IDE1LjkzMDUgNy41IDE1LjEzMThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/RewindForwardCircle";
  */
 const RewindForwardCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RewindForwardCircle.displayName = "RewindForwardCircle";
-export default RewindForwardCircle;
+RewindForwardCircle.displayName = "RewindForwardCircle"
+export default RewindForwardCircle

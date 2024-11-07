@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Bluetooth";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Bluetooth"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi43NDI2IDE1LjE1NzdMMTIuMzAxOSAxMi4wMDQzTDEyLjMwNzkgMTIuMDAwMUwxMi4zMDEzIDExLjk5NTRMMTYuNzQyNiA4Ljg0MTQ5QzE3LjI4MjkgOC40NTc4OCAxNy43NTQ3IDguMTIyODQgMTguMDg0MiA3LjgwNzcxQzE4LjQzNSA3LjQ3MjI0IDE4Ljc1IDcuMDQzMTkgMTguNzUgNi40NTgzNEMxOC43NSA1Ljg3MzQ5IDE4LjQzNSA1LjQ0NDQ0IDE4LjA4NDIgNS4xMDg5N0MxNy43NTQ3IDQuNzkzODUgMTcuMjgyOSA0LjQ1ODgxIDE2Ljc0MjYgNC4wNzUyTDE0LjkwOTggMi43NzM2NkMxNC4xODAzIDIuMjU1NTkgMTMuNTY0NCAxLjgxODE3IDEzLjA1MzUgMS41NTc1OEMxMi41MzMzIDEuMjkyMjMgMTEuODk4MiAxLjA5MjU0IDExLjI2MyAxLjQxNzUyQzEwLjYyNjEgMS43NDM0MiAxMC40MTkxIDIuMzc2NSAxMC4zMzM3IDIuOTUzNEMxMC4yNDk5IDMuNTE4ODggMTAuMjUgNC4yNzE5OCAxMC4yNSA1LjE2MjY2TDEwLjI1IDEwLjU1OTVMNi40MzAxNiA3Ljg4NTY0QzYuMDkwODIgNy42NDgxIDUuNjIzMTggNy43MzA2MyA1LjM4NTY0IDguMDY5OTdDNS4xNDgxIDguNDA5MyA1LjIzMDYzIDguODc2OTUgNS41Njk5NyA5LjExNDQ5TDkuNjkyMjIgMTIuMDAwMUw1LjU2OTk3IDE0Ljg4NTZDNS4yMzA2MyAxNS4xMjMyIDUuMTQ4MSAxNS41OTA4IDUuMzg1NjQgMTUuOTMwMkM1LjYyMzE4IDE2LjI2OTUgNi4wOTA4MiAxNi4zNTIgNi40MzAxNiAxNi4xMTQ1TDEwLjI1IDEzLjQ0MDZMMTAuMjUgMTguODM2NUMxMC4yNSAxOS43MjcyIDEwLjI0OTkgMjAuNDgwMyAxMC4zMzM3IDIxLjA0NThDMTAuNDE5MSAyMS42MjI3IDEwLjYyNjEgMjIuMjU1OCAxMS4yNjMxIDIyLjU4MTdDMTEuODk4MiAyMi45MDY3IDEyLjUzMzMgMjIuNzA3IDEzLjA1MzUgMjIuNDQxNkMxMy41NjQ0IDIyLjE4MSAxNC4xODAzIDIxLjc0MzYgMTQuOTA5OCAyMS4yMjU1TDE2Ljc0MjUgMTkuOTI0QzE3LjI4MjggMTkuNTQwNCAxNy43NTQ3IDE5LjIwNTMgMTguMDg0MiAxOC44OTAyQzE4LjQzNSAxOC41NTQ4IDE4Ljc1IDE4LjEyNTcgMTguNzUgMTcuNTQwOUMxOC43NSAxNi45NTYgMTguNDM1IDE2LjUyNyAxOC4wODQyIDE2LjE5MTVDMTcuNzU0NyAxNS44NzY0IDE3LjI4MjkgMTUuNTQxMyAxNi43NDI2IDE1LjE1NzdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Bluetooth";
  */
 const Bluetooth: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bluetooth.displayName = "Bluetooth";
-export default Bluetooth;
+Bluetooth.displayName = "Bluetooth"
+export default Bluetooth

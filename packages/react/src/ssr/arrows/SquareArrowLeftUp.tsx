@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/SquareArrowLeftUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/SquareArrowLeftUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxNi43MTQgMiAxOS4wNzExIDIgMjAuNTM1NSAzLjQ2NDQ3QzIyIDQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMkMyMiAxNi43MTQgMjIgMTkuMDcxMSAyMC41MzU1IDIwLjUzNTVDMTkuMDcxMSAyMiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NVpNOS4xNzE1NyA4LjQyMTU3QzguNzU3MzYgOC40MjE1NyA4LjQyMTU3IDguNzU3MzYgOC40MjE1NyA5LjE3MTU3TDguNDIxNTcgMTMuNDE0MkM4LjQyMTU3IDEzLjgyODQgOC43NTczNiAxNC4xNjQyIDkuMTcxNTcgMTQuMTY0MkM5LjU4NTc5IDE0LjE2NDIgOS45MjE1NyAxMy44Mjg0IDkuOTIxNTcgMTMuNDE0Mkw5LjkyMTU3IDEwLjk4MjJMMTQuMjk4MSAxNS4zNTg4QzE0LjU5MSAxNS42NTE3IDE1LjA2NTkgMTUuNjUxNyAxNS4zNTg4IDE1LjM1ODhDMTUuNjUxNyAxNS4wNjU5IDE1LjY1MTcgMTQuNTkxIDE1LjM1ODggMTQuMjk4MUwxMC45ODIyIDkuOTIxNTdIMTMuNDE0MkMxMy44Mjg0IDkuOTIxNTcgMTQuMTY0MiA5LjU4NTc5IDE0LjE2NDIgOS4xNzE1N0MxNC4xNjQyIDguNzU3MzYgMTMuODI4NCA4LjQyMTU3IDEzLjQxNDIgOC40MjE1N0w5LjE3MTU3IDguNDIxNTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareArrowLeftUp";
  */
 const SquareArrowLeftUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareArrowLeftUp.displayName = "SquareArrowLeftUp";
-export default SquareArrowLeftUp;
+SquareArrowLeftUp.displayName = "SquareArrowLeftUp"
+export default SquareArrowLeftUp

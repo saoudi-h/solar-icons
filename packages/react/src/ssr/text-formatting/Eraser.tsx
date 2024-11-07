@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/Eraser";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/Eraser"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS40MDk2IDUuNTA1MDZDMTMuMDc5NiAzLjgzNTAyIDEzLjkxNDYgMyAxNC45NTIyIDNDMTUuOTg5OSAzIDE2LjgyNDkgMy44MzUwMiAxOC40OTQ5IDUuNTA1MDZDMjAuMTY1IDcuMTc1MSAyMSA4LjAxMDEzIDIxIDkuMDQ3NzZDMjEgMTAuMDg1NCAyMC4xNjUgMTAuOTIwNCAxOC40OTQ5IDEyLjU5MDRMMTQuMzAxNyAxNi43ODM3TDcuMjE2MzQgOS42OTgyOEwxMS40MDk2IDUuNTA1MDZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik02LjE1NTcgMTAuNzU5TDEzLjI0MTEgMTcuODQ0M0wxMi41OTA0IDE4LjQ5NDlDMTIuMjEyNyAxOC44NzI3IDExLjg3NzcgMTkuMjA3NyAxMS41NzM0IDE5LjVIMjFDMjEuNDE0MiAxOS41IDIxLjc1IDE5LjgzNTggMjEuNzUgMjAuMjVDMjEuNzUgMjAuNjY0MiAyMS40MTQyIDIxIDIxIDIxSDlDNy45ODQyMyAyMC45NzQ3IDcuMTQ5NCAyMC4xMzkzIDUuNTA1MDYgMTguNDk0OUMzLjgzNTAyIDE2LjgyNDkgMyAxNS45ODk5IDMgMTQuOTUyMkMzIDEzLjkxNDYgMy44MzUwMiAxMy4wNzk2IDUuNTA1MDYgMTEuNDA5Nkw2LjE1NTcgMTAuNzU5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/Eraser";
  */
 const Eraser: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Eraser.displayName = "Eraser";
-export default Eraser;
+Eraser.displayName = "Eraser"
+export default Eraser

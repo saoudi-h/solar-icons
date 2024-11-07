@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/SaleSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/SaleSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTUuNTMwMyA4LjQ2OTY3QzE1LjgyMzIgOC43NjI1NiAxNS44MjMyIDkuMjM3NDQgMTUuNTMwMyA5LjUzMDMzTDkuNTMwMzMgMTUuNTMwM0M5LjIzNzQ0IDE1LjgyMzIgOC43NjI1NiAxNS44MjMyIDguNDY5NjcgMTUuNTMwM0M4LjE3Njc4IDE1LjIzNzQgOC4xNzY3OCAxNC43NjI2IDguNDY5NjcgMTQuNDY5N0wxNC40Njk3IDguNDY5NjdDMTQuNzYyNiA4LjE3Njc4IDE1LjIzNzQgOC4xNzY3OCAxNS41MzAzIDguNDY5NjdaTTEwLjUgOS41QzEwLjUgMTAuMDUyMyAxMC4wNTIzIDEwLjUgOS41IDEwLjVDOC45NDc3MiAxMC41IDguNSAxMC4wNTIzIDguNSA5LjVDOC41IDguOTQ3NzIgOC45NDc3MiA4LjUgOS41IDguNUMxMC4wNTIzIDguNSAxMC41IDguOTQ3NzIgMTAuNSA5LjVaTTE0LjUgMTUuNUMxNS4wNTIzIDE1LjUgMTUuNSAxNS4wNTIzIDE1LjUgMTQuNUMxNS41IDEzLjk0NzcgMTUuMDUyMyAxMy41IDE0LjUgMTMuNUMxMy45NDc3IDEzLjUgMTMuNSAxMy45NDc3IDEzLjUgMTQuNUMxMy41IDE1LjA1MjMgMTMuOTQ3NyAxNS41IDE0LjUgMTUuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/SaleSquare";
  */
 const SaleSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SaleSquare.displayName = "SaleSquare";
-export default SaleSquare;
+SaleSquare.displayName = "SaleSquare"
+export default SaleSquare

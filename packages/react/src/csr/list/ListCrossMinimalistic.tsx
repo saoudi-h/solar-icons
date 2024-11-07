@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListCrossMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListCrossMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIMTFDMTEuNDE0MiAxMC4yNSAxMS43NSAxMC41ODU4IDExLjc1IDExQzExLjc1IDExLjQxNDIgMTEuNDE0MiAxMS43NSAxMSAxMS43NUgzQzIuNTg1NzkgMTEuNzUgMi4yNSAxMS40MTQyIDIuMjUgMTFaTTE0LjQ2OTcgMTAuNDY5N0MxNC43NjI2IDEwLjE3NjggMTUuMjM3NCAxMC4xNzY4IDE1LjUzMDMgMTAuNDY5N0wxNy41IDEyLjQzOTNMMTkuNDY5NyAxMC40Njk3QzE5Ljc2MjYgMTAuMTc2OCAyMC4yMzc0IDEwLjE3NjggMjAuNTMwMyAxMC40Njk3QzIwLjgyMzIgMTAuNzYyNiAyMC44MjMyIDExLjIzNzQgMjAuNTMwMyAxMS41MzAzTDE4LjU2MDcgMTMuNUwyMC41MzAzIDE1LjQ2OTdDMjAuODIzMiAxNS43NjI2IDIwLjgyMzIgMTYuMjM3NCAyMC41MzAzIDE2LjUzMDNDMjAuMjM3NCAxNi44MjMyIDE5Ljc2MjYgMTYuODIzMiAxOS40Njk3IDE2LjUzMDNMMTcuNSAxNC41NjA3TDE1LjUzMDMgMTYuNTMwM0MxNS4yMzc0IDE2LjgyMzIgMTQuNzYyNiAxNi44MjMyIDE0LjQ2OTcgMTYuNTMwM0MxNC4xNzY4IDE2LjIzNzQgMTQuMTc2OCAxNS43NjI2IDE0LjQ2OTcgMTUuNDY5N0wxNi40MzkzIDEzLjVMMTQuNDY5NyAxMS41MzAzQzE0LjE3NjggMTEuMjM3NCAxNC4xNzY4IDEwLjc2MjYgMTQuNDY5NyAxMC40Njk3Wk0yLjI1IDE2QzIuMjUgMTUuNTg1OCAyLjU4NTc5IDE1LjI1IDMgMTUuMjVIMTFDMTEuNDE0MiAxNS4yNSAxMS43NSAxNS41ODU4IDExLjc1IDE2QzExLjc1IDE2LjQxNDIgMTEuNDE0MiAxNi43NSAxMSAxNi43NUgzQzIuNTg1NzkgMTYuNzUgMi4yNSAxNi40MTQyIDIuMjUgMTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListCrossMinimalistic";
  */
 const ListCrossMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListCrossMinimalistic.displayName = "ListCrossMinimalistic";
-export default ListCrossMinimalistic;
+ListCrossMinimalistic.displayName = "ListCrossMinimalistic"
+export default ListCrossMinimalistic

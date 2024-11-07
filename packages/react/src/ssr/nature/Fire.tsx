@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/nature/Fire";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/nature/Fire"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi44MzI0IDIxLjgwMTNDMTUuOTU4MyAyMS4xNzQ3IDIwIDE4LjkyNiAyMCAxMy4xMTEyQzIwIDcuODE5NiAxNi4xMjY3IDQuMjk1OTMgMTMuMzQxNSAyLjY3Njg1QzEyLjcyMzUgMi4zMTc1NyAxMiAyLjc5MDA2IDEyIDMuNTA0OTJWNS4zMzM0QzEyIDYuNzc1MjYgMTEuMzkzOCA5LjQwNzExIDkuNzA5MzIgMTAuNTAxOEM4Ljg0OTMyIDExLjA2MDcgNy45MjA1MiAxMC4yMjQyIDcuODE2IDkuMjAzODhMNy43MzAxNyA4LjM2NjA0QzcuNjMwNCA3LjM5MjAzIDYuNjM4NDEgNi44MDA3NSA1Ljg1OTk2IDcuMzk0NkM0LjQ2MTQ3IDguNDYxNDQgMyAxMC4zMjk2IDMgMTMuMTExMkMzIDIwLjIyMjMgOC4yODg4OSAyMi4wMDAxIDEwLjkzMzMgMjIuMDAwMUMxMS4wODcxIDIyLjAwMDEgMTEuMjQ4OCAyMS45OTU1IDExLjQxNzEgMjEuOTg1OEMxMC4xMTEzIDIxLjg3NDIgOCAyMS4wNjQgOCAxOC40NDQyQzggMTYuMzk0OSA5LjQ5NTA3IDE1LjAwODUgMTAuNjMxIDE0LjMzNDZDMTAuOTM2NSAxNC4xNTMzIDExLjI5NDEgMTQuMzg4NyAxMS4yOTQxIDE0Ljc0MzlWMTUuMzMzMUMxMS4yOTQxIDE1Ljc4NCAxMS40Njg1IDE2LjQ4ODkgMTEuODgzNiAxNi45NzE0QzEyLjM1MzQgMTcuNTE3NCAxMy4wNDI5IDE2Ljk0NTQgMTMuMDk4NSAxNi4yMjczQzEzLjExNjEgMTYuMDAwOCAxMy4zNDM5IDE1Ljg1NjQgMTMuNTQwMSAxNS45NzExQzE0LjE4MTQgMTYuMzQ1OSAxNSAxNy4xNDY1IDE1IDE4LjQ0NDJDMTUgMjAuNDkyMiAxMy44NzEgMjEuNDM0MyAxMi44MzI0IDIxLjgwMTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/nature/Fire";
  */
 const Fire: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Fire.displayName = "Fire";
-export default Fire;
+Fire.displayName = "Fire"
+export default Fire

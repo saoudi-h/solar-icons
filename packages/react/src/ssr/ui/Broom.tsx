@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Broom";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Broom"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC4yMjExIDE5LjY0MzFDMTguNjk4MSAxOC43Mzk2IDE5LjE2MjcgMTcuNzA2NSAxOS40NjEzIDE2LjY2MjNDMTkuODcyMiAxNS4yMjQ3IDIwLjAyMDcgMTMuODc1MSAyMC4wNjI5IDEyLjg0NTFMMTguNTEwNSAxMS4yOTI2TDEyLjcwNzMgNS40ODk0NEwxMS4xNTQ5IDMuOTM3MDFDMTAuMTI0OCAzLjk3OTE3IDguNzc1MzEgNC4xMjc2NyA3LjMzNzY3IDQuNTM4NjVDNi4yOTM0OCA0LjgzNzE2IDUuMjYwMzcgNS4zMDE4MyA0LjM1NjkzIDUuNzc4ODVDMi4xMDA5OCA2Ljk2OTk4IDEuNDI3MjEgOS43MTA3MSAyLjQ5NzE2IDExLjgwNjhMMi41MTAyMSAxMS44MzI0TDMuMjA5MjMgMTIuOTgxNUM1LjE1MDAyIDE2LjE3MTggNy44MjgwNCAxOC44NDk5IDExLjAxODQgMjAuNzkwN0wxMi4xNjc1IDIxLjQ4OThMMTIuMTkzMSAyMS41MDI4QzE0LjI4OTIgMjIuNTcyOCAxNy4wMjk5IDIxLjg5OSAxOC4yMjExIDE5LjY0MzFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS43NzQ3IDMuMzEzNDNDMjIuMDc1MSAzLjAxMjk2IDIyLjA3NTEgMi41MjU4MSAyMS43NzQ3IDIuMjI1MzVDMjEuNDc0MiAxLjkyNDg4IDIwLjk4NyAxLjkyNDg4IDIwLjY4NjYgMi4yMjUzNUwxOS4wMTE4IDMuOTAwMThDMTcuMzExOCAyLjY2NTY5IDE0Ljk5NDEgMi42NjU3NSAxMy4yOTQyIDMuOTAwMkwxNC40MDI3IDUuMDA4NjZMMTguOTkxNSA5LjU5NzQ5TDIwLjA5OTkgMTAuNzA1OUMyMS4zMzQ0IDkuMDA1OTcgMjEuMzM0MyA2LjY4ODIxIDIwLjA5OTggNC45ODgyNkwyMS43NzQ3IDMuMzEzNDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Broom";
  */
 const Broom: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Broom.displayName = "Broom";
-export default Broom;
+Broom.displayName = "Broom"
+export default Broom

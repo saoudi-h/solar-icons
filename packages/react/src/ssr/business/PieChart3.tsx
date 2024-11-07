@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/PieChart3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/PieChart3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjQ0NDMgMy42ODUzQzYuOTcxMTUgMy4zMzMyNyA3LjUyNzY2IDMuMDMzODMgOC4xMDU3NyAyLjc4OTRDOS41MDg2OCAyLjE5NjI3IDEwLjIxMDEgMS44OTk3IDExLjEwNTEgMi40OTI5NkMxMiAzLjA4NjIzIDEyIDQuMDU3NDggMTIgNlY4QzEyIDkuODg1NjEgMTIgMTAuODI4NCAxMi41ODU4IDExLjQxNDJDMTMuMTcxNiAxMiAxNC4xMTQ0IDEyIDE2IDEySDE4QzE5Ljk0MjUgMTIgMjAuOTEzOCAxMiAyMS41MDcgMTIuODk0OUMyMi4xMDAzIDEzLjc4OTkgMjEuODAzNyAxNC40OTEzIDIxLjIxMDYgMTUuODk0MkMyMC45NjYyIDE2LjQ3MjMgMjAuNjY2NyAxNy4wMjg4IDIwLjMxNDcgMTcuNTU1N0MxOS4yMTU5IDE5LjIwMDIgMTcuNjU0MSAyMC40ODE5IDE1LjgyNjggMjEuMjM4OEMxMy45OTk2IDIxLjk5NTcgMTEuOTg4OSAyMi4xOTM3IDEwLjA0OTEgMjEuODA3OEM4LjEwOTI5IDIxLjQyMiA2LjMyNzQ2IDIwLjQ2OTYgNC45Mjg5NCAxOS4wNzExQzMuNTMwNDEgMTcuNjcyNSAyLjU3OCAxNS44OTA3IDIuMTkyMTUgMTMuOTUwOUMxLjgwNjMgMTIuMDExMSAyLjAwNDMzIDEwLjAwMDQgMi43NjEyMSA4LjE3MzE2QzMuNTE4MDkgNi4zNDU5IDQuNzk5ODEgNC43ODQxMiA2LjQ0NDMgMy42ODUzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjc3MzkgMi4xMjgxMkMxMy44NzcxIDEuNzI2OTggMTQuMjg2IDEuNDg1NDkgMTQuNjg3MSAxLjU4ODczQzE4LjQ2NTggMi41NjEyOSAyMS40Mzg5IDUuNTM0NDMgMjIuNDExNSA5LjMxMzA3QzIyLjUxNDcgOS43MTQyMSAyMi4yNzMyIDEwLjEyMzEgMjEuODcyMSAxMC4yMjYzQzIxLjQ3MDkgMTAuMzI5NiAyMS4wNjIxIDEwLjA4ODEgMjAuOTU4OCA5LjY4Njk2QzIwLjEyMjUgNi40Mzc1NyAxNy41NjI2IDMuODc3NzIgMTQuMzEzMiAzLjA0MTM5QzEzLjkxMjEgMi45MzgxNCAxMy42NzA2IDIuNTI5MjYgMTMuNzczOSAyLjEyODEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/PieChart3";
  */
 const PieChart3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PieChart3.displayName = "PieChart3";
-export default PieChart3;
+PieChart3.displayName = "PieChart3"
+export default PieChart3

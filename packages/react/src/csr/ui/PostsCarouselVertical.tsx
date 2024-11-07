@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/PostsCarouselVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/PostsCarouselVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDUuNUgxNkMxNy42NTY5IDUuNSAxOSA0LjE1Njg1IDE5IDIuNUMxOSAyLjIyMzg2IDE4Ljc3NjEgMiAxOC41IDJINS41QzUuMjIzODYgMiA1IDIuMjIzODYgNSAyLjVDNSA0LjE1Njg1IDYuMzQzMTUgNS41IDggNS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNSAxMS41QzUgOS42MTQzOCA1IDguNjcxNTcgNS41ODU3OSA4LjA4NTc5QzYuMTcxNTcgNy41IDcuMTE0MzggNy41IDkgNy41SDE1QzE2Ljg4NTYgNy41IDE3LjgyODQgNy41IDE4LjQxNDIgOC4wODU3OUMxOSA4LjY3MTU3IDE5IDkuNjE0MzggMTkgMTEuNVYxMi41QzE5IDE0LjM4NTYgMTkgMTUuMzI4NCAxOC40MTQyIDE1LjkxNDJDMTcuODI4NCAxNi41IDE2Ljg4NTYgMTYuNSAxNSAxNi41SDlDNy4xMTQzOCAxNi41IDYuMTcxNTcgMTYuNSA1LjU4NTc5IDE1LjkxNDJDNSAxNS4zMjg0IDUgMTQuMzg1NiA1IDEyLjVWMTEuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE2IDE4LjVIOEM2LjM0MzE1IDE4LjUgNSAxOS44NDMxIDUgMjEuNUM1IDIxLjc3NjEgNS4yMjM4NiAyMiA1LjUgMjJMMTguNSAyMkMxOC43NzYxIDIyIDE5IDIxLjc3NjEgMTkgMjEuNUMxOSAxOS44NDMxIDE3LjY1NjkgMTguNSAxNiAxOC41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/PostsCarouselVertical";
  */
 const PostsCarouselVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PostsCarouselVertical.displayName = "PostsCarouselVertical";
-export default PostsCarouselVertical;
+PostsCarouselVertical.displayName = "PostsCarouselVertical"
+export default PostsCarouselVertical

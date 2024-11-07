@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Monitor";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Monitor"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDE3QzUuMTcxNTcgMTcgMy43NTczNiAxNyAyLjg3ODY4IDE2LjEyMTNDMi4zMDkzOCAxNS41NTIgMi4xMDg5MyAxNC43NTc5IDIuMDM4MzUgMTMuNUgyMS45NjE2QzIxLjg5MTEgMTQuNzU3OSAyMS42OTA2IDE1LjU1MiAyMS4xMjEzIDE2LjEyMTNDMjAuMjQyNiAxNyAxOC44Mjg0IDE3IDE2IDE3SDEyLjc1VjIxSDE2QzE2LjQxNDIgMjEgMTYuNzUgMjEuMzM1OCAxNi43NSAyMS43NUMxNi43NSAyMi4xNjQyIDE2LjQxNDIgMjIuNSAxNiAyMi41SDhDNy41ODU3OSAyMi41IDcuMjUgMjIuMTY0MiA3LjI1IDIxLjc1QzcuMjUgMjEuMzM1OCA3LjU4NTc5IDIxIDggMjFIMTEuMjVWMTdIOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwIDJIMTRDMTcuNzcxMiAyIDE5LjY1NjkgMiAyMC44Mjg0IDMuMTcxNTdDMjIgNC4zNDMxNSAyMiA2LjIyODc2IDIyIDEwVjExQzIyIDExLjU1MTYgMjIgMTIuMDQ5NCAyMS45OTM1IDEyLjVIMi4wMDY1MkMyIDEyLjA0OTQgMiAxMS41NTE2IDIgMTFWMTBDMiA2LjIyODc2IDIgNC4zNDMxNSAzLjE3MTU3IDMuMTcxNTdDNC4zNDMxNSAyIDYuMjI4NzYgMiAxMCAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Monitor";
  */
 const Monitor: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Monitor.displayName = "Monitor";
-export default Monitor;
+Monitor.displayName = "Monitor"
+export default Monitor

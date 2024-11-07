@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Laptop3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Laptop3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC41IDJIOS41QzYuNjcxNTcgMiA1LjI1NzM2IDIgNC4zNzg2OCAyLjg3ODY4QzMuNSAzLjc1NzM2IDMuNSA1LjE3MTU3IDMuNSA4VjExLjVDMy41IDEzLjM4NTYgMy41IDE0LjMyODQgNC4wODU3OSAxNC45MTQyQzQuNjcxNTcgMTUuNSA1LjYxNDM4IDE1LjUgNy41IDE1LjVIMTYuNUMxOC4zODU2IDE1LjUgMTkuMzI4NCAxNS41IDE5LjkxNDIgMTQuOTE0MkMyMC41IDE0LjMyODQgMjAuNSAxMy4zODU2IDIwLjUgMTEuNVY4QzIwLjUgNS4xNzE1NyAyMC41IDMuNzU3MzYgMTkuNjIxMyAyLjg3ODY4QzE4Ljc0MjYgMiAxNy4zMjg0IDIgMTQuNSAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNSAyMkgxOUMyMC42NTY5IDIyIDIyIDIwLjY1NjkgMjIgMTlWMThDMjIgMTcuNDQ3NyAyMS41NTIzIDE3IDIxIDE3SDE2LjY2NjdDMTYuMjMzOSAxNyAxNS44MTI5IDE3LjE0MDQgMTUuNDY2NyAxNy40TDE0LjUzMzMgMTguMUMxNC4xODcxIDE4LjM1OTYgMTMuNzY2MSAxOC41IDEzLjMzMzMgMTguNUgxMC42NjY3QzEwLjIzMzkgMTguNSA5LjgxMjg2IDE4LjM1OTYgOS40NjY2NyAxOC4xTDguNTMzMzMgMTcuNEM4LjE4NzE0IDE3LjE0MDQgNy43NjYwNyAxNyA3LjMzMzMzIDE3SDNDMi40NDc3MiAxNyAyIDE3LjQ0NzcgMiAxOFYxOUMyIDIwLjY1NjkgMy4zNDMxNSAyMiA1IDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Laptop3";
  */
 const Laptop3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Laptop3.displayName = "Laptop3";
-export default Laptop3;
+Laptop3.displayName = "Laptop3"
+export default Laptop3

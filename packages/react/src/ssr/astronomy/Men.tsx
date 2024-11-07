@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/astronomy/Men";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/astronomy/Men"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy4wMDAxIDEuMjVDMTYuNTg1OCAxLjI1IDE2LjI1MDEgMS41ODU3OSAxNi4yNTAxIDJDMTYuMjUwMSAyLjQxNDIxIDE2LjU4NTggMi43NSAxNy4wMDAxIDIuNzVIMjAuMTg5NEwxNS4xMDE4IDcuODM3NkMxMy43MTcgNi42ODk4OSAxMS45MzkxIDYgMTAgNkM1LjU4MTcyIDYgMiA5LjU4MTcyIDIgMTRDMiAxOC40MTgzIDUuNTgxNzIgMjIgMTAgMjJDMTQuNDE4MyAyMiAxOCAxOC40MTgzIDE4IDE0QzE4IDEyLjA2MDkgMTcuMzEwMSAxMC4yODMgMTYuMTYyNCA4Ljg5ODI3TDIxLjI1MDEgMy44MTA2NlY3QzIxLjI1MDEgNy40MTQyMSAyMS41ODU4IDcuNzUgMjIuMDAwMSA3Ljc1QzIyLjQxNDMgNy43NSAyMi43NTAxIDcuNDE0MjEgMjIuNzUwMSA3VjJDMjIuNzUwMSAxLjU4NTc5IDIyLjQxNDMgMS4yNSAyMi4wMDAxIDEuMjVIMTcuMDAwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/astronomy/Men";
  */
 const Men: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Men.displayName = "Men";
-export default Men;
+Men.displayName = "Men"
+export default Men

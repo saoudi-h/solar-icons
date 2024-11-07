@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/Chart";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/Chart"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCAxMy43NUMyMCAxMy4zMzU4IDE5LjY2NDIgMTMgMTkuMjUgMTNIMTYuMjVDMTUuODM1OCAxMyAxNS41IDEzLjMzNTggMTUuNSAxMy43NVYyMC41SDE0VjQuMjVDMTQgMy41MjE2OSAxMy45OTg0IDMuMDUwOTEgMTMuOTUxOCAyLjcwNDAzQzEzLjkwOCAyLjM3ODcyIDEzLjgzNzQgMi4yNzY3NiAxMy43ODAzIDIuMjE5NjdDMTMuNzIzMiAyLjE2MjU4IDEzLjYyMTMgMi4wOTE5NyAxMy4yOTYgMi4wNDgyM0MxMi45NDkxIDIuMDAxNTkgMTIuNDc4MyAyIDExLjc1IDJDMTEuMDIxNyAyIDEwLjU1MDkgMi4wMDE1OSAxMC4yMDQgMi4wNDgyM0M5Ljg3ODcyIDIuMDkxOTcgOS43NzY3NiAyLjE2MjU4IDkuNzE5NjcgMi4yMTk2N0M5LjY2MjU4IDIuMjc2NzYgOS41OTE5NiAyLjM3ODcyIDkuNTQ4MjMgMi43MDQwM0M5LjUwMTU5IDMuMDUwOTEgOS41IDMuNTIxNjkgOS41IDQuMjVWMjAuNUg4VjguNzVDOCA4LjMzNTc5IDcuNjY0MjEgOCA3LjI1IDhINC4yNUMzLjgzNTc5IDggMy41IDguMzM1NzkgMy41IDguNzVWMjAuNUgySDEuNzVDMS4zMzU3OSAyMC41IDEgMjAuODM1OCAxIDIxLjI1QzEgMjEuNjY0MiAxLjMzNTc5IDIyIDEuNzUgMjJIMjEuNzVDMjIuMTY0MiAyMiAyMi41IDIxLjY2NDIgMjIuNSAyMS4yNUMyMi41IDIwLjgzNTggMjIuMTY0MiAyMC41IDIxLjc1IDIwLjVIMjEuNUgyMFYxMy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/Chart";
  */
 const Chart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Chart.displayName = "Chart";
-export default Chart;
+Chart.displayName = "Chart"
+export default Chart

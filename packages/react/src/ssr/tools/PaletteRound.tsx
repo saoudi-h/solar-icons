@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/PaletteRound";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/PaletteRound"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy44OTk0IDIyQzIwLjEwODYgMjIgMjEuODk5NCAyMC4yMDkxIDIxLjg5OTQgMThDMjEuODk5NCAxNS43OTA5IDIwLjEwODYgMTQgMTcuODk5NCAxNEgxNy42Nzk3TDExLjg3OCAxOS43OThDMTEuNjM2IDIwLjAzOTkgMTEuNSAyMC4zMzkxIDExLjUgMjAuNjgxM0MxMS41IDIxLjM5MzYgMTIuMDc3NCAyMiAxMi43ODk3IDIySDE3Ljg5OTRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMy4yODM5IDQuOTU4ODJMMTIuMjI5MSA2LjAxMzU3QzExLjc2MzMgNi40ODEwNyAxMS41MDEyIDcuMTEzODEgMTEuNSA3Ljc3MzhMMTEuNSAxNi4wMTE5QzExLjUgMTcuMDY2NiAxMS41IDE3LjU5MzkgMTEuODEzNSAxNy43MTk5QzEyLjEyNzEgMTcuODQ1OSAxMi40OTIgMTcuNDY1MyAxMy4yMjE5IDE2LjcwNEwxOS4wNTk5IDEwLjYxNDRDMjAuNTgxOSA5LjAyNjkxIDIwLjU1NTQgNi41MTM5MSAxOS4wMDAzIDQuOTU4ODNDMTcuNDIxOCAzLjM4MDI2IDE0Ljg2MjQgMy4zODAyNiAxMy4yODM5IDQuOTU4ODJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAgNlYxOEMxMCAyMC4yMDkxIDguMjA5MTQgMjIgNiAyMkMzLjc5MDg2IDIyIDIgMjAuMjA5MSAyIDE4VjZDMiAzLjc5MDg2IDMuNzkwODYgMiA2IDJDOC4yMDkxNCAyIDEwIDMuNzkwODYgMTAgNlpNNiAxOUM2LjU1MjI4IDE5IDcgMTguNTUyMyA3IDE4QzcgMTcuNDQ3NyA2LjU1MjI4IDE3IDYgMTdDNS40NDc3MiAxNyA1IDE3LjQ0NzcgNSAxOEM1IDE4LjU1MjMgNS40NDc3MiAxOSA2IDE5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/PaletteRound";
  */
 const PaletteRound: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PaletteRound.displayName = "PaletteRound";
-export default PaletteRound;
+PaletteRound.displayName = "PaletteRound"
+export default PaletteRound

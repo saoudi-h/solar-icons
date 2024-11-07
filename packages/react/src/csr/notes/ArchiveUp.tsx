@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/ArchiveUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/ArchiveUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDVDMiA0LjA1NzE5IDIgMy41ODU3OSAyLjI5Mjg5IDMuMjkyODlDMi41ODU3OSAzIDMuMDU3MTkgMyA0IDNIMjBDMjAuOTQyOCAzIDIxLjQxNDIgMyAyMS43MDcxIDMuMjkyODlDMjIgMy41ODU3OSAyMiA0LjA1NzE5IDIyIDVDMjIgNS45NDI4MSAyMiA2LjQxNDIxIDIxLjcwNzEgNi43MDcxMUMyMS40MTQyIDcgMjAuOTQyOCA3IDIwIDdINEMzLjA1NzE5IDcgMi41ODU3OSA3IDIuMjkyODkgNi43MDcxMUMyIDYuNDE0MjEgMiA1Ljk0MjgxIDIgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjA2ODkgOC40OTk5M0MyMC4yMTAxIDguNDk5OTkgMjAuMzU1MSA4LjUwMDA1IDIwLjUgOC40OTgwNVYxMi45OTk5QzIwLjUgMTYuNzcxMSAyMC41IDE4LjY1NjggMTkuMzI4NCAxOS44MjgzQzE4LjE4MyAyMC45NzM3IDE2LjM1NTIgMjAuOTk5MyAxMi43NSAyMC45OTk5TDEyLjc1IDEzLjk1NDNMMTQuNDQyNSAxNS44MzQ5QzE0LjcxOTYgMTYuMTQyOCAxNS4xOTM4IDE2LjE2NzggMTUuNTAxNyAxNS44OTA3QzE1LjgwOTYgMTUuNjEzNiAxNS44MzQ2IDE1LjEzOTQgMTUuNTU3NSAxNC44MzE1TDEyLjU1NzUgMTEuNDk4MkMxMi40MTUyIDExLjM0MDEgMTIuMjEyNiAxMS4yNDk5IDEyIDExLjI0OTlDMTEuNzg3NCAxMS4yNDk5IDExLjU4NDggMTEuMzQwMSAxMS40NDI1IDExLjQ5ODJMOC40NDI1NCAxNC44MzE1QzguMTY1NDQgMTUuMTM5NCA4LjE5MDQgMTUuNjEzNiA4LjQ5ODI4IDE1Ljg5MDdDOC44MDYxNyAxNi4xNjc4IDkuMjgwMzggMTYuMTQyOCA5LjU1NzQ4IDE1LjgzNDlMMTEuMjUgMTMuOTU0M0wxMS4yNSAyMC45OTk5QzcuNjQ0ODUgMjAuOTk5MyA1LjgxNjk3IDIwLjk3MzcgNC42NzE1NyAxOS44MjgzQzMuNSAxOC42NTY4IDMuNSAxNi43NzExIDMuNSAxMi45OTk5VjguNDk4MDVDMy42NDQ4OCA4LjUwMDA1IDMuNzg5OTkgOC40OTk5OSAzLjkzMTE0IDguNDk5OTNIMjAuMDY4OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ArchiveUp";
  */
 const ArchiveUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArchiveUp.displayName = "ArchiveUp";
-export default ArchiveUp;
+ArchiveUp.displayName = "ArchiveUp"
+export default ArchiveUp

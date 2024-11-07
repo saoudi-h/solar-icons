@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Videocamera";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Videocamera"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDExLjVWMTIuNUMyIDE1Ljc4NzUgMiAxNy40MzEyIDIuOTA3OTYgMTguNTM3NkMzLjA3NDE4IDE4Ljc0MDEgMy4yNTk4OSAxOC45MjU4IDMuNDYyNDMgMTkuMDkyQzQuNTY4NzggMjAgNi4yMTI1MiAyMCA5LjUgMjBDMTIuNzg3NSAyMCAxNC40MzEyIDIwIDE1LjUzNzYgMTkuMDkyQzE1Ljc0MDEgMTguOTI1OCAxNS45MjU4IDE4Ljc0MDEgMTYuMDkyIDE4LjUzNzZDMTYuNzkzNiAxNy42ODI3IDE2Ljk1MzEgMTYuNTA3IDE2Ljk4OTMgMTQuNUwxNy42NTg0IDE0LjgyOTJDMTkuNjA0MiAxNS44MDIxIDIwLjU3NzIgMTYuMjg4NiAyMS4yODg2IDE1Ljg0ODlDMjIgMTUuNDA5MyAyMiAxNC4zMjE1IDIyIDEyLjE0NTlWMTEuODU0MUMyMiA5LjY3ODUzIDIyIDguNTkwNzUgMjEuMjg4NiA4LjE1MTA3QzIwLjU3NzIgNy43MTE0IDE5LjYwNDIgOC4xOTc4OCAxNy42NTg0IDkuMTcwODJMMTYuOTg5MyA5LjUwMDAyQzE2Ljk1MzEgNy40OTMwMyAxNi43OTM2IDYuMzE3MyAxNi4wOTIgNS40NjI0M0MxNS45MjU4IDUuMjU5ODkgMTUuNzQwMSA1LjA3NDE4IDE1LjUzNzYgNC45MDc5NkMxNC40MzEyIDQgMTIuNzg3NSA0IDkuNSA0QzYuMjEyNTIgNCA0LjU2ODc4IDQgMy40NjI0MyA0LjkwNzk2QzMuMjU5ODkgNS4wNzQxOCAzLjA3NDE4IDUuMjU5ODkgMi45MDc5NiA1LjQ2MjQzQzIgNi41Njg3OCAyIDguMjEyNTIgMiAxMS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Videocamera";
  */
 const Videocamera: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Videocamera.displayName = "Videocamera";
-export default Videocamera;
+Videocamera.displayName = "Videocamera"
+export default Videocamera

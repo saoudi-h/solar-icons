@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/LinkCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/LinkCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNOS41IDguNzVDNy43MDUwNyA4Ljc1IDYuMjUgMTAuMjA1MSA2LjI1IDEyQzYuMjUgMTMuNzk0OSA3LjcwNTA3IDE1LjI1IDkuNSAxNS4yNUMxMS4yOTQ5IDE1LjI1IDEyLjc1IDEzLjc5NDkgMTIuNzUgMTJDMTIuNzUgMTEuNTg1OCAxMy4wODU4IDExLjI1IDEzLjUgMTEuMjVDMTMuOTE0MiAxMS4yNSAxNC4yNSAxMS41ODU4IDE0LjI1IDEyQzE0LjI1IDE0LjYyMzQgMTIuMTIzNCAxNi43NSA5LjUgMTYuNzVDNi44NzY2NSAxNi43NSA0Ljc1IDE0LjYyMzQgNC43NSAxMkM0Ljc1IDkuMzc2NjUgNi44NzY2NSA3LjI1IDkuNSA3LjI1QzkuOTE0MjEgNy4yNSAxMC4yNSA3LjU4NTc5IDEwLjI1IDhDMTAuMjUgOC40MTQyMSA5LjkxNDIxIDguNzUgOS41IDguNzVaTTE3Ljc1IDEyQzE3Ljc1IDEzLjc5NDkgMTYuMjk0OSAxNS4yNSAxNC41IDE1LjI1QzE0LjA4NTggMTUuMjUgMTMuNzUgMTUuNTg1OCAxMy43NSAxNkMxMy43NSAxNi40MTQyIDE0LjA4NTggMTYuNzUgMTQuNSAxNi43NUMxNy4xMjM0IDE2Ljc1IDE5LjI1IDE0LjYyMzQgMTkuMjUgMTJDMTkuMjUgOS4zNzY2NSAxNy4xMjM0IDcuMjUgMTQuNSA3LjI1QzExLjg3NjYgNy4yNSA5Ljc1IDkuMzc2NjUgOS43NSAxMkM5Ljc1IDEyLjQxNDIgMTAuMDg1OCAxMi43NSAxMC41IDEyLjc1QzEwLjkxNDIgMTIuNzUgMTEuMjUgMTIuNDE0MiAxMS4yNSAxMkMxMS4yNSAxMC4yMDUxIDEyLjcwNTEgOC43NSAxNC41IDguNzVDMTYuMjk0OSA4Ljc1IDE3Ljc1IDEwLjIwNTEgMTcuNzUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/LinkCircle";
  */
 const LinkCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LinkCircle.displayName = "LinkCircle";
-export default LinkCircle;
+LinkCircle.displayName = "LinkCircle"
+export default LinkCircle

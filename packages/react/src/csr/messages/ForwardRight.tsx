@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/ForwardRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/ForwardRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy45NTUxIDUuMTgzNDFMMTguOTMyOSA5LjYwODE1QzE5Ljg2MzUgMTAuNDM1MyAyMC4zMjg4IDEwLjg0ODkgMjAuNTAwMiAxMS4zMzczQzIwLjY1MDggMTEuNzY2MiAyMC42NTA4IDEyLjIzMzUgMjAuNTAwMiAxMi42NjI0QzIwLjMyODggMTMuMTUwOCAxOS44NjM1IDEzLjU2NDQgMTguOTMyOSAxNC4zOTE2TDEzLjk1NTEgMTguODE2M0MxMy41MzI4IDE5LjE5MTcgMTMuMzIxNiAxOS4zNzk0IDEzLjE0MjMgMTkuMzg2MUMxMi45ODY1IDE5LjM5MTkgMTIuODM2OSAxOS4zMjQ3IDEyLjczNzcgMTkuMjA0NEMxMi42MjM2IDE5LjA2NTkgMTIuNjIzNiAxOC43ODM0IDEyLjYyMzYgMTguMjE4NFYxNS40Mjg0QzEwLjE5NTUgMTUuNDI4NCA3LjYzMDkzIDE2LjIwODMgNS43NTgzMSAxNy41OTI2QzQuNzgzNDIgMTguMzEzMyA0LjI5NTk1IDE4LjY3MzcgNC4xMTAyOSAxOC42NTk1QzMuOTI5MzIgMTguNjQ1NiAzLjgxNDQ2IDE4LjU3NSAzLjcyMDU2IDE4LjQxOTZDMy42MjQyMyAxOC4yNjAzIDMuNzA5MzIgMTcuNzYyNCAzLjg3OTQ5IDE2Ljc2NjZDNC45ODQ0NiAxMC4zMDA0IDkuNDM0NDMgOC41NzEyOSAxMi42MjM2IDguNTcxMjlWNS43ODEzNEMxMi42MjM2IDUuMjE2MzIgMTIuNjIzNiA0LjkzMzgxIDEyLjczNzcgNC43OTUzMUMxMi44MzY5IDQuNjc0OTggMTIuOTg2NSA0LjYwNzggMTMuMTQyMyA0LjYxMzYzQzEzLjMyMTYgNC42MjAzNCAxMy41MzI4IDQuODA4MDMgMTMuOTU1MSA1LjE4MzQxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ForwardRight";
  */
 const ForwardRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ForwardRight.displayName = "ForwardRight";
-export default ForwardRight;
+ForwardRight.displayName = "ForwardRight"
+export default ForwardRight

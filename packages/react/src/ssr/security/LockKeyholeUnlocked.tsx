@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/LockKeyholeUnlocked";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/LockKeyholeUnlocked"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi43NSA4QzYuNzUgNS4xMDA1MSA5LjEwMDUxIDIuNzUgMTIgMi43NUMxNC40NDUzIDIuNzUgMTYuNTAxOCA0LjQyMjQyIDE3LjA4NDYgNi42ODY5NEMxNy4xODc5IDcuMDg4MDggMTcuNTk2OCA3LjMyOTU3IDE3Ljk5NzkgNy4yMjYzM0MxOC4zOTkxIDcuMTIzMDggMTguNjQwNSA2LjcxNDIgMTguNTM3MyA2LjMxMzA2QzE3Ljc4OCAzLjQwMTkgMTUuMTQ2MyAxLjI1IDEyIDEuMjVDOC4yNzIwOCAxLjI1IDUuMjUgNC4yNzIwOCA1LjI1IDhWMTAuMDU0NkM0LjEzNTI1IDEwLjEzNzkgMy40MDkzMSAxMC4zNDggMi44Nzg2OCAxMC44Nzg3QzIgMTEuNzU3NCAyIDEzLjE3MTYgMiAxNkMyIDE4LjgyODQgMiAyMC4yNDI2IDIuODc4NjggMjEuMTIxM0MzLjc1NzM2IDIyIDUuMTcxNTcgMjIgOCAyMkgxNkMxOC44Mjg0IDIyIDIwLjI0MjYgMjIgMjEuMTIxMyAyMS4xMjEzQzIyIDIwLjI0MjYgMjIgMTguODI4NCAyMiAxNkMyMiAxMy4xNzE2IDIyIDExLjc1NzQgMjEuMTIxMyAxMC44Nzg3QzIwLjI0MjYgMTAgMTguODI4NCAxMCAxNiAxMEg4QzcuNTQ4NDkgMTAgNy4xMzMwMSAxMCA2Ljc1IDEwLjAwMzZWOFpNMTQgMTZDMTQgMTcuMTA0NiAxMy4xMDQ2IDE4IDEyIDE4QzEwLjg5NTQgMTggMTAgMTcuMTA0NiAxMCAxNkMxMCAxNC44OTU0IDEwLjg5NTQgMTQgMTIgMTRDMTMuMTA0NiAxNCAxNCAxNC44OTU0IDE0IDE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/LockKeyholeUnlocked";
  */
 const LockKeyholeUnlocked: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LockKeyholeUnlocked.displayName = "LockKeyholeUnlocked";
-export default LockKeyholeUnlocked;
+LockKeyholeUnlocked.displayName = "LockKeyholeUnlocked"
+export default LockKeyholeUnlocked

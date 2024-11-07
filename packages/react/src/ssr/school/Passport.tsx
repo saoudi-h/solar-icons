@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/school/Passport";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/school/Passport"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDVDNSA0LjU5MzM0IDQuNzU3MjcgNC4yNDMzOCA0LjQwODc5IDQuMDg3MUM0LjU1MjcxIDMuOTczNzQgNC43MjcxMiAzLjg5NjE1IDQuOTE5NTkgMy44Njg2NUwxNS43MTcyIDIuMzI2MTRDMTYuOTIyIDIuMTU0MDIgMTggMy4wODg5NCAxOCA0LjMwNjA0VjUuMTI2MDJDMTcuNjgwNCA1LjA0Mzc1IDE3LjM0NTMgNSAxNyA1SDVaIiBmaWxsPSIjMUMyNzREIi8+CjxwYXRoIGQ9Ik05Ljc1IDEzQzkuNzUgMTEuNzU3NCAxMC43NTc0IDEwLjc1IDEyIDEwLjc1QzEzLjI0MjYgMTAuNzUgMTQuMjUgMTEuNzU3NCAxNC4yNSAxM0MxNC4yNSAxNC4yNDI2IDEzLjI0MjYgMTUuMjUgMTIgMTUuMjVDMTAuNzU3NCAxNS4yNSA5Ljc1IDE0LjI0MjYgOS43NSAxM1oiIGZpbGw9IiMxQzI3NEQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOCA2LjE3MDcxQzE5LjE2NTIgNi41ODI1NCAyMCA3LjY5Mzc4IDIwIDlWMTlDMjAgMjAuNjU2OSAxOC42NTY5IDIyIDE3IDIySDdDNS4zNDMxNSAyMiA0IDIwLjY1NjkgNCAxOVY1QzQgNS4xODIxNCA0LjA0ODcgNS4zNTI5MSA0LjEzMzc4IDUuNUM0LjMwNjY5IDUuNzk4OSA0LjYyOTg2IDYgNSA2SDE3QzE3LjM1MDYgNiAxNy42ODcyIDYuMDYwMTUgMTggNi4xNzA3MVpNMTIgOS4yNUM5LjkyODkzIDkuMjUgOC4yNSAxMC45Mjg5IDguMjUgMTNDOC4yNSAxNS4wNzExIDkuOTI4OTMgMTYuNzUgMTIgMTYuNzVDMTQuMDcxMSAxNi43NSAxNS43NSAxNS4wNzExIDE1Ljc1IDEzQzE1Ljc1IDEwLjkyODkgMTQuMDcxMSA5LjI1IDEyIDkuMjVaTTEwIDE4LjI1QzkuNTg1NzkgMTguMjUgOS4yNSAxOC41ODU4IDkuMjUgMTlDOS4yNSAxOS40MTQyIDkuNTg1NzkgMTkuNzUgMTAgMTkuNzVIMTRDMTQuNDE0MiAxOS43NSAxNC43NSAxOS40MTQyIDE0Ljc1IDE5QzE0Ljc1IDE4LjU4NTggMTQuNDE0MiAxOC4yNSAxNCAxOC4yNUgxMFoiIGZpbGw9IiMxQzI3NEQiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/Passport";
  */
 const Passport: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Passport.displayName = "Passport";
-export default Passport;
+Passport.displayName = "Passport"
+export default Passport

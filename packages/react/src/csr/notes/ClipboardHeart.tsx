@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/ClipboardHeart";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/ClipboardHeart"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjUgMkM4LjY3MTU3IDIgOCAyLjY3MTU3IDggMy41VjQuNUM4IDUuMzI4NDMgOC42NzE1NyA2IDkuNSA2SDE0LjVDMTUuMzI4NCA2IDE2IDUuMzI4NDMgMTYgNC41VjMuNUMxNiAyLjY3MTU3IDE1LjMyODQgMiAxNC41IDJIOS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuNSA0LjAzNjYyQzUuMjQyMDkgNC4xMDcxOSA0LjQ0Nzk4IDQuMzA3NjQgMy44Nzg2OCA0Ljg3Njk0QzMgNS43NTU2MiAzIDcuMTY5ODMgMyA5Ljk5ODI2VjE1Ljk5ODNDMyAxOC44MjY3IDMgMjAuMjQwOSAzLjg3ODY4IDIxLjExOTZDNC43NTczNiAyMS45OTgzIDYuMTcxNTcgMjEuOTk4MyA5IDIxLjk5ODNIMTVDMTcuODI4NCAyMS45OTgzIDE5LjI0MjYgMjEuOTk4MyAyMC4xMjEzIDIxLjExOTZDMjEgMjAuMjQwOSAyMSAxOC44MjY3IDIxIDE1Ljk5ODNWOS45OTgyNkMyMSA3LjE2OTgzIDIxIDUuNzU1NjIgMjAuMTIxMyA0Ljg3Njk0QzE5LjU1MiA0LjMwNzY0IDE4Ljc1NzkgNC4xMDcxOSAxNy41IDQuMDM2NjJWNC41QzE3LjUgNi4xNTY4NSAxNi4xNTY5IDcuNSAxNC41IDcuNUg5LjVDNy44NDMxNSA3LjUgNi41IDYuMTU2ODUgNi41IDQuNVY0LjAzNjYyWk0xMS4wNDI5IDE1LjM2NTZDMTAuMTY0OSAxNC43MjEzIDkgMTMuNjgxMiA5IDEyLjY5NjdDOSAxMS4wMjM1IDEwLjY1IDEwLjM5ODggMTIgMTEuNjkxM0MxMy4zNSAxMC4zOTg4IDE1IDExLjAyMzUgMTUgMTIuNjk2N0MxNSAxMy42ODEyIDEzLjgzNTIgMTQuNzIxNCAxMi45NTcxIDE1LjM2NTZDMTIuNTM3NCAxNS42NzM2IDEyLjMyNzUgMTUuODI3NiAxMiAxNS44Mjc2QzExLjY3MjUgMTUuODI3NiAxMS40NjI2IDE1LjY3MzYgMTEuMDQyOSAxNS4zNjU2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ClipboardHeart";
  */
 const ClipboardHeart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClipboardHeart.displayName = "ClipboardHeart";
-export default ClipboardHeart;
+ClipboardHeart.displayName = "ClipboardHeart"
+export default ClipboardHeart

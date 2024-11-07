@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/MapPointWave";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/MapPointWave"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMi4wMDAzQzE3LjUyMjggMjIuMDAwMyAyMiAxOS45ODU2IDIyIDE3LjUwMDNDMjIgMTYuMjMzNyAyMC44MzcgMTUuMDg5MiAxOC45NjU0IDE0LjI3MTVDMTcuODIzMyAxNi4zNjczIDE2LjA4MTcgMTguMTczOCAxMy44Njk1IDE5LjExOTJDMTIuNjgwNCAxOS42Mjc0IDExLjMxOTYgMTkuNjI3NCAxMC4xMzA1IDE5LjExOTJDNy45MTgyOCAxOC4xNzM4IDYuMTc2NjYgMTYuMzY3MyA1LjAzNDU4IDE0LjI3MTVDMy4xNjI5NSAxNS4wODkyIDIgMTYuMjMzNyAyIDE3LjUwMDNDMiAxOS45ODU2IDYuNDc3MTUgMjIuMDAwMyAxMiAyMi4wMDAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUgOC41MTQ2NEM1IDQuOTE2NyA4LjEzNDAxIDIgMTIgMkMxNS44NjYgMiAxOSA0LjkxNjcgMTkgOC41MTQ2NEMxOSAxMi4wODQ0IDE2Ljc2NTggMTYuMjQ5OSAxMy4yODAxIDE3LjczOTZDMTIuNDY3NSAxOC4wODY4IDExLjUzMjUgMTguMDg2OCAxMC43MTk5IDE3LjczOTZDNy4yMzQxNiAxNi4yNDk5IDUgMTIuMDg0NCA1IDguNTE0NjRaTTEyIDExQzEzLjEwNDYgMTEgMTQgMTAuMTA0NiAxNCA5QzE0IDcuODk1NDMgMTMuMTA0NiA3IDEyIDdDMTAuODk1NCA3IDEwIDcuODk1NDMgMTAgOUMxMCAxMC4xMDQ2IDEwLjg5NTQgMTEgMTIgMTFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapPointWave";
  */
 const MapPointWave: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapPointWave.displayName = "MapPointWave";
-export default MapPointWave;
+MapPointWave.displayName = "MapPointWave"
+export default MapPointWave

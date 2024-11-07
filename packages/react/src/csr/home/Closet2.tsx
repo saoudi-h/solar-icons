@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/Closet2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/Closet2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuMjUgMkgxMEM2LjIyODc2IDIgNC4zNDMxNSAyIDMuMTcxNTcgMy4xNzE1N0MyIDQuMzQzMTUgMiA2LjIyODc2IDIgMTBWMTJDMiAxNS43NzEyIDIgMTcuNjU2OSAzLjE3MTU3IDE4LjgyODRDMy40NzU5OSAxOS4xMzI4IDMuODI4NjEgMTkuMzU4MiA0LjI1IDE5LjUyNDlWMjJDNC4yNSAyMi40MTQyIDQuNTg1NzkgMjIuNzUgNSAyMi43NUM1LjQxNDIxIDIyLjc1IDUuNzUgMjIuNDE0MiA1Ljc1IDIyVjE5Ljg3MTNDNi44MTk4OSAyMCA4LjE5MzY0IDIwIDEwIDIwSDExLjI1VjJaTTkgOC4yNUM5LjQxNDIxIDguMjUgOS43NSA4LjU4NTc5IDkuNzUgOVYxM0M5Ljc1IDEzLjQxNDIgOS40MTQyMSAxMy43NSA5IDEzLjc1QzguNTg1NzkgMTMuNzUgOC4yNSAxMy40MTQyIDguMjUgMTNWOUM4LjI1IDguNTg1NzkgOC41ODU3OSA4LjI1IDkgOC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi43NSAyMEgxNEMxNS44MDY0IDIwIDE3LjE4MDEgMjAgMTguMjUgMTkuODcxM1YyMkMxOC4yNSAyMi40MTQyIDE4LjU4NTggMjIuNzUgMTkgMjIuNzVDMTkuNDE0MiAyMi43NSAxOS43NSAyMi40MTQyIDE5Ljc1IDIyVjE5LjUyNDlDMjAuMTcxNCAxOS4zNTgyIDIwLjUyNCAxOS4xMzI4IDIwLjgyODQgMTguODI4NEMyMiAxNy42NTY5IDIyIDE1Ljc3MTIgMjIgMTJWMTBDMjIgNi4yMjg3NiAyMiA0LjM0MzE1IDIwLjgyODQgMy4xNzE1N0MxOS42NTY5IDIgMTcuNzcxMiAyIDE0IDJIMTIuNzVWMjBaTTE1IDguMjVDMTUuNDE0MiA4LjI1IDE1Ljc1IDguNTg1NzkgMTUuNzUgOVYxM0MxNS43NSAxMy40MTQyIDE1LjQxNDIgMTMuNzUgMTUgMTMuNzVDMTQuNTg1OCAxMy43NSAxNC4yNSAxMy40MTQyIDE0LjI1IDEzVjlDMTQuMjUgOC41ODU3OSAxNC41ODU4IDguMjUgMTUgOC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Closet2";
  */
 const Closet2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Closet2.displayName = "Closet2";
-export default Closet2;
+Closet2.displayName = "Closet2"
+export default Closet2

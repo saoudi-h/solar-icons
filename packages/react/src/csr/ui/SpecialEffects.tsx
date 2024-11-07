@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/SpecialEffects";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/SpecialEffects"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNNi43NSAxMS4yNUgxMEMxMC40MTQyIDExLjI1IDEwLjc1IDExLjU4NTggMTAuNzUgMTJDMTAuNzUgMTIuNDE0MiAxMC40MTQyIDEyLjc1IDEwIDEyLjc1SDYuNzVWMTZDNi43NSAxNi40MTQyIDYuNDE0MjEgMTYuNzUgNiAxNi43NUM1LjU4NTc5IDE2Ljc1IDUuMjUgMTYuNDE0MiA1LjI1IDE2VjEyVjhDNS4yNSA3LjU4NTc5IDUuNTg1NzkgNy4yNSA2IDcuMjVIMTBDMTAuNDE0MiA3LjI1IDEwLjc1IDcuNTg1NzkgMTAuNzUgOEMxMC43NSA4LjQxNDIxIDEwLjQxNDIgOC43NSAxMCA4Ljc1SDYuNzVWMTEuMjVaTTExLjU1IDcuNEMxMS44ODE0IDcuMTUxNDcgMTIuMzUxNSA3LjIxODYzIDEyLjYgNy41NUwxNSAxMC43NUwxNy40IDcuNTVDMTcuNjQ4NSA3LjIxODYzIDE4LjExODYgNy4xNTE0NyAxOC40NSA3LjRDMTguNzgxNCA3LjY0ODUzIDE4Ljg0ODUgOC4xMTg2MyAxOC42IDguNDVMMTUuOTM3NSAxMkwxOC42IDE1LjU1QzE4Ljg0ODUgMTUuODgxNCAxOC43ODE0IDE2LjM1MTUgMTguNDUgMTYuNkMxOC4xMTg2IDE2Ljg0ODUgMTcuNjQ4NSAxNi43ODE0IDE3LjQgMTYuNDVMMTUgMTMuMjVMMTIuNiAxNi40NUMxMi4zNTE1IDE2Ljc4MTQgMTEuODgxNCAxNi44NDg1IDExLjU1IDE2LjZDMTEuMjE4NiAxNi4zNTE1IDExLjE1MTUgMTUuODgxNCAxMS40IDE1LjU1TDE0LjA2MjUgMTJMMTEuNCA4LjQ1QzExLjE1MTUgOC4xMTg2MyAxMS4yMTg2IDcuNjQ4NTMgMTEuNTUgNy40WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/SpecialEffects";
  */
 const SpecialEffects: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SpecialEffects.displayName = "SpecialEffects";
-export default SpecialEffects;
+SpecialEffects.displayName = "SpecialEffects"
+export default SpecialEffects

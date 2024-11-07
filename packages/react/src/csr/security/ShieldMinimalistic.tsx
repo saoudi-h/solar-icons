@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/ShieldMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/ShieldMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDEwLjQxNjdDMyA3LjIxOTA3IDMgNS42MjAyOCAzLjM3NzUyIDUuMDgyNDFDMy43NTUwMyA0LjU0NDU0IDUuMjU4MzIgNC4wMjk5NiA4LjI2NDkxIDMuMDAwNzlMOC44Mzc3MiAyLjgwNDcyQzEwLjQwNSAyLjI2ODI0IDExLjE4ODYgMiAxMiAyQzEyLjgxMTQgMiAxMy41OTUgMi4yNjgyNCAxNS4xNjIzIDIuODA0NzJMMTUuNzM1MSAzLjAwMDc5QzE4Ljc0MTcgNC4wMjk5NiAyMC4yNDUgNC41NDQ1NCAyMC42MjI1IDUuMDgyNDFDMjEgNS42MjAyOCAyMSA3LjIxOTA3IDIxIDEwLjQxNjdDMjEgMTAuODk5NiAyMSAxMS40MjM0IDIxIDExLjk5MTRDMjEgMTcuNjI5NCAxNi43NjEgMjAuMzY1NSAxNC4xMDE0IDIxLjUyNzNDMTMuMzggMjEuODQyNCAxMy4wMTkzIDIyIDEyIDIyQzEwLjk4MDcgMjIgMTAuNjIgMjEuODQyNCA5Ljg5ODU2IDIxLjUyNzNDNy4yMzg5NiAyMC4zNjU1IDMgMTcuNjI5NCAzIDExLjk5MTRDMyAxMS40MjM0IDMgMTAuODk5NiAzIDEwLjQxNjdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldMinimalistic";
  */
 const ShieldMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldMinimalistic.displayName = "ShieldMinimalistic";
-export default ShieldMinimalistic;
+ShieldMinimalistic.displayName = "ShieldMinimalistic"
+export default ShieldMinimalistic

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/MinimizeSquare3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/MinimizeSquare3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE4QzIgMTYuMTE0NCAyIDE1LjE3MTYgMi41ODU3OSAxNC41ODU4QzMuMTcxNTcgMTQgNC4xMTQzOCAxNCA2IDE0QzcuODg1NjIgMTQgOC44Mjg0MyAxNCA5LjQxNDIxIDE0LjU4NThDMTAgMTUuMTcxNiAxMCAxNi4xMTQ0IDEwIDE4QzEwIDE5Ljg4NTYgMTAgMjAuODI4NCA5LjQxNDIxIDIxLjQxNDJDOC44Mjg0MyAyMiA3Ljg4NTYyIDIyIDYgMjJDNC4xMTQzOCAyMiAzLjE3MTU3IDIyIDIuNTg1NzkgMjEuNDE0MkMyIDIwLjgyODQgMiAxOS44ODU2IDIgMThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDEyLjM5NTYgMiAxMi43NzQ2IDIuMDAwODcgMTMuMTM3OEMyLjUwODk2IDEyLjgwNDcgMy4wNjg4MiAxMi42NTg4IDMuNjA1NiAxMi41ODY2QzQuMjUxMjIgMTIuNDk5OCA1LjA0NDg4IDEyLjQ5OTkgNS45MTA1MiAxMi41SDYuMDg5NTFDNi45NTUxNCAxMi40OTk5IDcuNzQ4ODEgMTIuNDk5OCA4LjM5NDQzIDEyLjU4NjZDOS4xMDUzOSAxMi42ODIyIDkuODU2ODQgMTIuOTA3MSAxMC40NzQ5IDEzLjUyNTFDMTEuMDkyOSAxNC4xNDMyIDExLjMxNzggMTQuODk0NiAxMS40MTM0IDE1LjYwNTZDMTEuNTAwMiAxNi4yNTEyIDExLjUwMDEgMTcuMDQ0OSAxMS41IDE3LjkxMDVWMTguMDg5NUMxMS41MDAxIDE4Ljk1NTIgMTEuNTAwMiAxOS43NDg4IDExLjQxMzQgMjAuMzk0NEMxMS4zNDEyIDIwLjkzMTIgMTEuMTk1NCAyMS40OTEgMTAuODYyMiAyMS45OTkxQzExLjIyNTUgMjIgMTEuNjA0NCAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTUuNzUgMTIuNzVDMTYuMTY0MiAxMi43NSAxNi41IDEyLjQxNDIgMTYuNSAxMkMxNi41IDExLjU4NTggMTYuMTY0MiAxMS4yNSAxNS43NSAxMS4yNUgxMy44MTA3TDE3LjUzMDMgNy41MzAzM0MxNy44MjMyIDcuMjM3NDQgMTcuODIzMiA2Ljc2MjU2IDE3LjUzMDMgNi40Njk2N0MxNy4yMzc0IDYuMTc2NzggMTYuNzYyNiA2LjE3Njc4IDE2LjQ2OTcgNi40Njk2N0wxMi43NSAxMC4xODkzVjguMjVDMTIuNzUgNy44MzU3OSAxMi40MTQyIDcuNSAxMiA3LjVDMTEuNTg1OCA3LjUgMTEuMjUgNy44MzU3OSAxMS4yNSA4LjI1VjEyQzExLjI1IDEyLjQxNDIgMTEuNTg1OCAxMi43NSAxMiAxMi43NUgxNS43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/MinimizeSquare3";
  */
 const MinimizeSquare3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MinimizeSquare3.displayName = "MinimizeSquare3";
-export default MinimizeSquare3;
+MinimizeSquare3.displayName = "MinimizeSquare3"
+export default MinimizeSquare3

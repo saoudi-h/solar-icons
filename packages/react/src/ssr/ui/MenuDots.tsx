@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/MenuDots";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/MenuDots"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDEyQzcgMTMuMTA0NiA2LjEwNDU3IDE0IDUgMTRDMy44OTU0MyAxNCAzIDEzLjEwNDYgMyAxMkMzIDEwLjg5NTQgMy44OTU0MyAxMCA1IDEwQzYuMTA0NTcgMTAgNyAxMC44OTU0IDcgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNCAxMkMxNCAxMy4xMDQ2IDEzLjEwNDYgMTQgMTIgMTRDMTAuODk1NCAxNCAxMCAxMy4xMDQ2IDEwIDEyQzEwIDEwLjg5NTQgMTAuODk1NCAxMCAxMiAxMEMxMy4xMDQ2IDEwIDE0IDEwLjg5NTQgMTQgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMSAxMkMyMSAxMy4xMDQ2IDIwLjEwNDYgMTQgMTkgMTRDMTcuODk1NCAxNCAxNyAxMy4xMDQ2IDE3IDEyQzE3IDEwLjg5NTQgMTcuODk1NCAxMCAxOSAxMEMyMC4xMDQ2IDEwIDIxIDEwLjg5NTQgMjEgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/MenuDots";
  */
 const MenuDots: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MenuDots.displayName = "MenuDots";
-export default MenuDots;
+MenuDots.displayName = "MenuDots"
+export default MenuDots

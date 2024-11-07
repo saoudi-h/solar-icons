@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/HomeAddAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/HomeAddAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4zMzUzNyA3Ljg3NDk1QzEuNzk0OTEgOS4wMDIyOSAxLjk4NDYzIDEwLjMyMDggMi4zNjQwNyAxMi45NTc5TDIuNjQyODQgMTQuODk1MkMzLjEzMDI1IDE4LjI4MjcgMy4zNzM5NiAxOS45NzY0IDQuNTQ5MDMgMjAuOTg4MkM1LjcyNDA5IDIyIDcuNDQ3MzcgMjIgMTAuODkzOSAyMkgxMy4xMDYxQzE2LjU1MjYgMjIgMTguMjc1OSAyMiAxOS40NTEgMjAuOTg4MkMyMC42MjYgMTkuOTc2NCAyMC44Njk3IDE4LjI4MjcgMjEuMzU3MiAxNC44OTUyTDIxLjYzNTkgMTIuOTU3OUMyMi4wMTU0IDEwLjMyMDggMjIuMjA1MSA5LjAwMjI5IDIxLjY2NDYgNy44NzQ5NUMyMS4xMjQyIDYuNzQ3NiAxOS45NzM4IDYuMDYyMzQgMTcuNjczMSA0LjY5MTgxTDE2LjI4ODIgMy44NjY4N0MxNC4xOTkgMi42MjIyOSAxMy4xNTQzIDIgMTIgMkMxMC44NDU3IDIgOS44MDEwNCAyLjYyMjI5IDcuNzExNzUgMy44NjY4N0w2LjMyNjkxIDQuNjkxODFDNC4wMjYxOSA2LjA2MjM0IDIuODc1ODMgNi43NDc2IDIuMzM1MzcgNy44NzQ5NVpNMTIuMDAwMSA5LjI0OTc5QzEyLjQxNDMgOS4yNDk3OSAxMi43NTAxIDkuNTg1NTggMTIuNzUwMSA5Ljk5OTc5VjEyLjI0OThMMTUuMDAwMSAxMi4yNDk4QzE1LjQxNDMgMTIuMjQ5OCAxNS43NTAxIDEyLjU4NTYgMTUuNzUwMSAxMi45OTk4QzE1Ljc1MDEgMTMuNDE0IDE1LjQxNDMgMTMuNzQ5OCAxNS4wMDAxIDEzLjc0OThMMTIuNzUwMSAxMy43NDk4VjE1Ljk5OThDMTIuNzUwMSAxNi40MTQgMTIuNDE0MyAxNi43NDk4IDEyLjAwMDEgMTYuNzQ5OEMxMS41ODU5IDE2Ljc0OTggMTEuMjUwMSAxNi40MTQgMTEuMjUwMSAxNS45OTk4VjEzLjc0OThIOS4wMDAxQzguNTg1ODkgMTMuNzQ5OCA4LjI1MDEgMTMuNDE0IDguMjUwMSAxMi45OTk4QzguMjUwMSAxMi41ODU2IDguNTg1ODkgMTIuMjQ5OCA5LjAwMDEgMTIuMjQ5OEgxMS4yNTAxVjkuOTk5NzlDMTEuMjUwMSA5LjU4NTU4IDExLjU4NTkgOS4yNDk3OSAxMi4wMDAxIDkuMjQ5NzlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeAddAngle";
  */
 const HomeAddAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeAddAngle.displayName = "HomeAddAngle";
-export default HomeAddAngle;
+HomeAddAngle.displayName = "HomeAddAngle"
+export default HomeAddAngle

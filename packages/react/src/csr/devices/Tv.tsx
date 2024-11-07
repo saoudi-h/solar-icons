@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Tv";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Tv"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTYuMDAwMVYxMi4wMDAxQzIyIDkuMTcxNjkgMjIgNy43NTc0NyAyMS4xMjEzIDYuODc4NzlDMjAuMjk2IDYuMDUzNDkgMTguOTk4MyA2LjAwMzM2IDE2LjUgNi4wMDAzMVYyMS45OTk5QzE4Ljk5ODMgMjEuOTk2OSAyMC4yOTYgMjEuOTQ2NyAyMS4xMjEzIDIxLjEyMTRDMjIgMjAuMjQyOCAyMiAxOC44Mjg1IDIyIDE2LjAwMDFaTTE5IDExQzE5LjU1MjMgMTEgMjAgMTEuNDQ3NyAyMCAxMkMyMCAxMi41NTIzIDE5LjU1MjMgMTMgMTkgMTNDMTguNDQ3NyAxMyAxOCAxMi41NTIzIDE4IDEyQzE4IDExLjQ0NzcgMTguNDQ3NyAxMSAxOSAxMVpNMTkgMTVDMTkuNTUyMyAxNSAyMCAxNS40NDc3IDIwIDE2QzIwIDE2LjU1MjMgMTkuNTUyMyAxNyAxOSAxN0MxOC40NDc3IDE3IDE4IDE2LjU1MjMgMTggMTZDMTggMTUuNDQ3NyAxOC40NDc3IDE1IDE5IDE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUuNTY5NCAzLjQ4ODExTDEzLjQxNjMgNi4wMDAxMUgxNVYyMi4wMDAxTDggMjIuMDAwMUM1LjE3MTU3IDIyLjAwMDEgMy43NTczNiAyMi4wMDAxIDIuODc4NjggMjEuMTIxNEMyIDIwLjI0MjggMiAxOC44Mjg1IDIgMTYuMDAwMVYxMi4wMDAxQzIgOS4xNzE2OSAyIDcuNzU3NDcgMi44Nzg2OCA2Ljg3ODc5QzMuNzU3MzYgNi4wMDAxMSA1LjE3MTU3IDYuMDAwMTEgOCA2LjAwMDExSDEwLjU4MzdMOC40MzA1NCAzLjQ4ODExQzguMTYwOTggMy4xNzM2MSA4LjE5NzQgMi43MDAxNCA4LjUxMTg5IDIuNDMwNTdDOC44MjYzOSAyLjE2MTAxIDkuMjk5ODYgMi4xOTc0MyA5LjU2OTQzIDIuNTExOTJMMTIgNS4zNDc1N0wxNC40MzA1IDIuNTExOTJDMTQuNzAwMSAyLjE5NzQzIDE1LjE3MzYgMi4xNjEgMTUuNDg4MSAyLjQzMDU3QzE1LjgwMjYgMi43MDAxNCAxNS44MzkgMy4xNzM2MSAxNS41Njk0IDMuNDg4MTFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Tv";
  */
 const Tv: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Tv.displayName = "Tv";
-export default Tv;
+Tv.displayName = "Tv"
+export default Tv

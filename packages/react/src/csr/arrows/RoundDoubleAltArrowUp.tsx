@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RoundDoubleAltArrowUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RoundDoubleAltArrowUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk04LjQ2OTY3IDE0Ljk2OTdDOC4xNzY3OCAxNS4yNjI2IDguMTc2NzggMTUuNzM3NCA4LjQ2OTY3IDE2LjAzMDNDOC43NjI1NiAxNi4zMjMyIDkuMjM3NDQgMTYuMzIzMiA5LjUzMDMzIDE2LjAzMDNMMTIgMTMuNTYwN0wxNC40Njk3IDE2LjAzMDNDMTQuNzYyNiAxNi4zMjMyIDE1LjIzNzQgMTYuMzIzMiAxNS41MzAzIDE2LjAzMDNDMTUuODIzMiAxNS43Mzc0IDE1LjgyMzIgMTUuMjYyNiAxNS41MzAzIDE0Ljk2OTdMMTIuNTMwMyAxMS45Njk3QzEyLjIzNzQgMTEuNjc2OCAxMS43NjI2IDExLjY3NjggMTEuNDY5NyAxMS45Njk3TDguNDY5NjcgMTQuOTY5N1pNOC40Njk2NyAxMi4wMzAzQzguMTc2NzggMTEuNzM3NCA4LjE3Njc4IDExLjI2MjYgOC40Njk2NyAxMC45Njk3TDExLjQ2OTcgNy45Njk2N0MxMS43NjI2IDcuNjc2NzggMTIuMjM3NCA3LjY3Njc4IDEyLjUzMDMgNy45Njk2N0wxNS41MzAzIDEwLjk2OTdDMTUuODIzMiAxMS4yNjI2IDE1LjgyMzIgMTEuNzM3NCAxNS41MzAzIDEyLjAzMDNDMTUuMjM3NCAxMi4zMjMyIDE0Ljc2MjYgMTIuMzIzMiAxNC40Njk3IDEyLjAzMDNMMTIgOS41NjA2Nkw5LjUzMDMzIDEyLjAzMDNDOS4yMzc0NCAxMi4zMjMyIDguNzYyNTYgMTIuMzIzMiA4LjQ2OTY3IDEyLjAzMDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundDoubleAltArrowUp";
  */
 const RoundDoubleAltArrowUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundDoubleAltArrowUp.displayName = "RoundDoubleAltArrowUp";
-export default RoundDoubleAltArrowUp;
+RoundDoubleAltArrowUp.displayName = "RoundDoubleAltArrowUp"
+export default RoundDoubleAltArrowUp

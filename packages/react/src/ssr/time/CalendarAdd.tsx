@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/time/CalendarAdd";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/time/CalendarAdd"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03Ljc1IDIuNUM3Ljc1IDIuMDg1NzkgNy40MTQyMSAxLjc1IDcgMS43NUM2LjU4NTc5IDEuNzUgNi4yNSAyLjA4NTc5IDYuMjUgMi41VjQuMDc5MjZDNC44MTA2NyA0LjE5NDUxIDMuODY1NzcgNC40NzczNyAzLjE3MTU3IDUuMTcxNTdDMi40NzczNyA1Ljg2NTc3IDIuMTk0NTEgNi44MTA2NyAyLjA3OTI2IDguMjVIMjEuOTIwN0MyMS44MDU1IDYuODEwNjcgMjEuNTIyNiA1Ljg2NTc3IDIwLjgyODQgNS4xNzE1N0MyMC4xMzQyIDQuNDc3MzcgMTkuMTg5MyA0LjE5NDUxIDE3Ljc1IDQuMDc5MjZWMi41QzE3Ljc1IDIuMDg1NzkgMTcuNDE0MiAxLjc1IDE3IDEuNzVDMTYuNTg1OCAxLjc1IDE2LjI1IDIuMDg1NzkgMTYuMjUgMi41VjQuMDEyOUMxNS41ODQ3IDQgMTQuODM5IDQgMTQgNEgxMEM5LjE2MDk3IDQgOC40MTUyNyA0IDcuNzUgNC4wMTI5VjIuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMiAxMlYxNEMyMiAxNy43NzEyIDIyIDE5LjY1NjkgMjAuODI4NCAyMC44Mjg0QzE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNCAyMkgxMEM2LjIyODc2IDIyIDQuMzQzMTUgMjIgMy4xNzE1NyAyMC44Mjg0QzIgMTkuNjU2OSAyIDE3Ljc3MTIgMiAxNFYxMkMyIDExLjE2MSAyIDEwLjQxNTMgMi4wMTI5IDkuNzVIMjEuOTg3MUMyMiAxMC40MTUzIDIyIDExLjE2MSAyMiAxMlpNMTYgMTMuMjVDMTYuNDE0MiAxMy4yNSAxNi43NSAxMy41ODU4IDE2Ljc1IDE0VjE1LjI1TDE4IDE1LjI1QzE4LjQxNDIgMTUuMjUgMTguNzUgMTUuNTg1OCAxOC43NSAxNkMxOC43NSAxNi40MTQyIDE4LjQxNDIgMTYuNzUgMTggMTYuNzVIMTYuNzVWMThDMTYuNzUgMTguNDE0MiAxNi40MTQyIDE4Ljc1IDE2IDE4Ljc1QzE1LjU4NTggMTguNzUgMTUuMjUgMTguNDE0MiAxNS4yNSAxOFYxNi43NUwxNCAxNi43NUMxMy41ODU4IDE2Ljc1IDEzLjI1IDE2LjQxNDIgMTMuMjUgMTZDMTMuMjUgMTUuNTg1OCAxMy41ODU4IDE1LjI1IDE0IDE1LjI1SDE1LjI1VjE0QzE1LjI1IDEzLjU4NTggMTUuNTg1OCAxMy4yNSAxNiAxMy4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/CalendarAdd";
  */
 const CalendarAdd: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CalendarAdd.displayName = "CalendarAdd";
-export default CalendarAdd;
+CalendarAdd.displayName = "CalendarAdd"
+export default CalendarAdd

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Help";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Help"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS41ODE2IDE4LjUyMDlDMjEuMDg4OSAxNi43NzAxIDIyIDE0LjQ5MTUgMjIgMTJDMjIgOS41MDg1MyAyMS4wODg5IDcuMjI5ODcgMTkuNTgxNiA1LjQ3OTA2TDE1LjMwODkgOS43NTE3OEMxNS43NDUgMTAuMzkyNSAxNiAxMS4xNjY1IDE2IDEyQzE2IDEyLjgzMzUgMTUuNzQ1IDEzLjYwNzUgMTUuMzA4OSAxNC4yNDgyTDE5LjU4MTYgMTguNTIwOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE4LjUyMDkgMTkuNTgxNkMxNi43NzAxIDIxLjA4ODkgMTQuNDkxNSAyMiAxMiAyMkM5LjUwODUzIDIyIDcuMjI5ODcgMjEuMDg4OSA1LjQ3OTA2IDE5LjU4MTZMOS43NTE3OCAxNS4zMDg5QzEwLjM5MjUgMTUuNzQ1IDExLjE2NjUgMTYgMTIgMTZDMTIuODMzNSAxNiAxMy42MDc1IDE1Ljc0NSAxNC4yNDgyIDE1LjMwODlMMTguNTIwOSAxOS41ODE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNC40MTg0IDE4LjUyMDlMOC42OTExMiAxNC4yNDgyQzguMjU0OTUgMTMuNjA3NSA4IDEyLjgzMzUgOCAxMkM4IDExLjE2NjUgOC4yNTQ5NSAxMC4zOTI1IDguNjkxMTIgOS43NTE3OEw0LjQxODQgNS40NzkwNkMyLjkxMTE0IDcuMjI5ODcgMiA5LjUwODUzIDIgMTJDMiAxNC40OTE1IDIuOTExMTQgMTYuNzcwMSA0LjQxODQgMTguNTIwOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEyIDhDMTEuMTY2NSA4IDEwLjM5MjUgOC4yNTQ5NSA5Ljc1MTc4IDguNjkxMTJMNS40NzkwNiA0LjQxODRDNy4yMjk4NyAyLjkxMTE0IDkuNTA4NTMgMiAxMiAyQzE0LjQ5MTUgMiAxNi43NzAxIDIuOTExMTQgMTguNTIwOSA0LjQxODRMMTQuMjQ4MiA4LjY5MTEyQzEzLjYwNzUgOC4yNTQ5NSAxMi44MzM1IDggMTIgOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Help";
  */
 const Help: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Help.displayName = "Help";
-export default Help;
+Help.displayName = "Help"
+export default Help

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Flag";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Flag"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01Ljc1IDFDNi4xNjQyMSAxIDYuNSAxLjMzNTc5IDYuNSAxLjc1VjMuNkw4LjIyMDY3IDMuMjU1ODdDOS44NzEyIDIuOTI1NzYgMTEuNTgyMSAzLjA4Mjg0IDEzLjE0NDkgMy43MDc5N0wxMy4zNDg2IDMuNzg5NDNDMTQuOTA5NyA0LjQxMzg5IDE2LjYyOCA0LjUzMDUxIDE4LjI1OTIgNC4xMjI3QzE5LjAxNjUgMy45MzMzOSAxOS43NSA0LjUwNjEzIDE5Ljc1IDUuMjg2NjlWMTIuNjUzN0MxOS43NSAxMy4yOTggMTkuMzExNSAxMy44NTk2IDE4LjY4NjQgMTQuMDE1OUwxOC40NzIgMTQuMDY5NUMxNi43MDI0IDE0LjUxMTkgMTQuODM4NSAxNC4zODU0IDEzLjE0NDkgMTMuNzA4QzExLjU4MjEgMTMuMDgyOCA5Ljg3MTIgMTIuOTI1OCA4LjIyMDY3IDEzLjI1NTlMNi41IDEzLjZWMjEuNzVDNi41IDIyLjE2NDIgNi4xNjQyMSAyMi41IDUuNzUgMjIuNUM1LjMzNTc5IDIyLjUgNSAyMi4xNjQyIDUgMjEuNzVWMS43NUM1IDEuMzM1NzkgNS4zMzU3OSAxIDUuNzUgMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Flag";
  */
 const Flag: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Flag.displayName = "Flag";
-export default Flag;
+Flag.displayName = "Flag"
+export default Flag

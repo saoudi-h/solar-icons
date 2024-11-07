@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/ClapperboardOpen";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/ClapperboardOpen"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDExSDE2QzE3Ljg4NTYgMTEgMTguODI4NCAxMSAxOS40MTQyIDExLjU4NThDMjAgMTIuMTcxNiAyMCAxMy4xMTQ0IDIwIDE1VjE2QzIwIDE4LjgyODQgMjAgMjAuMjQyNiAxOS4xMjEzIDIxLjEyMTNDMTguMjQyNiAyMiAxNi44Mjg0IDIyIDE0IDIySDEwQzcuMTcxNTcgMjIgNS43NTczNiAyMiA0Ljg3ODY4IDIxLjEyMTNDNCAyMC4yNDI2IDQgMTguODI4NCA0IDE2VjExWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTMuOTE4NCAzLjE2NTk4TDkuMTUwMjUgNC40NDM2MUM5LjE3MTQzIDQuNTI5MTcgOS4xNzc3OSA0LjYxOTkzIDkuMTY2NzMgNC43MTI2Mkw4LjU2MjY2IDkuNzc3NDRMMTMuMzQyIDguNDk2ODJDMTMuMzE0OSA4LjQwMzIyIDEzLjMwNTggOC4zMDI3NiAxMy4zMTggOC4xOTk5M0wxMy45MTg0IDMuMTY1OThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNC44NDEyIDguMDk1MTFMMTguMjQ4NyA3LjE4MjA4QzE4LjQ3MzEgNy4xMjE5NSAxOC41ODUzIDcuMDkxODggMTguNjczNiA3LjA0ODMyQzE5LjAzNjQgNi44Njk0MyAxOS4yNTU3IDYuNDg5NjQgMTkuMjI5MiA2LjA4NjA0QzE5LjIyMjggNS45ODc3NiAxOS4xOTI3IDUuODc1NTYgMTkuMTMyNiA1LjY1MTE0QzE4Ljk1MjIgNC45Nzc5MSAxOC44NjIgNC42NDEyOSAxOC43MzEzIDQuMzc2MjlDMTguMTk0NiAzLjI4ODA0IDE3LjA1NTMgMi42MzAyMiAxNS44NDQ1IDIuNzA5NThDMTUuNzIxMyAyLjcxNzY2IDE1LjU5MDcgMi43MzgxMSAxNS40MzE0IDIuNzcyMzVDMTUuNDUwNSAyLjg1NDY1IDE1LjQ1NTggMi45NDE1OSAxNS40NDUyIDMuMDMwM0wxNC44NDEyIDguMDk1MTFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03LjA2MzQ5IDEwLjE3OTFDNy4wMzY0MyAxMC4wODU1IDcuMDI3MjcgOS45ODUwOSA3LjAzOTUzIDkuODgyMjVMNy42Mzk5MiA0Ljg0ODMxTDcuNTM2ODIgNC44NzU5M0M1LjczMTI4IDUuMzU5NzMgNC44Mjg1MSA1LjYwMTYyIDQuMjYwMSA2LjE3MDAzQzMuODg3NzMgNi41NDI0IDMuNjE5OTQgNy4wMDYyMyAzLjQ4MzY0IDcuNTE0ODlDMy4yNzU1OSA4LjI5MTM1IDMuNTE3NDkgOS4xOTQxMiA0LjAwMTI4IDEwLjk5OTdMNy4wNjM0OSAxMC4xNzkxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/ClapperboardOpen";
  */
 const ClapperboardOpen: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClapperboardOpen.displayName = "ClapperboardOpen";
-export default ClapperboardOpen;
+ClapperboardOpen.displayName = "ClapperboardOpen"
+export default ClapperboardOpen

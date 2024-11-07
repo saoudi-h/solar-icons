@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/time/WatchSquareMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/time/WatchSquareMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS42NzQxMiA2Ljc3NzcyQzUgNy43ODY2MSA1IDkuMTkxMDggNSAxMkM1IDE0LjgwODkgNSAxNi4yMTM0IDUuNjc0MTIgMTcuMjIyM0M1Ljk2NTk2IDE3LjY1OSA2LjM0MDk2IDE4LjAzNCA2Ljc3NzcyIDE4LjMyNTlDNy43ODY2MSAxOSA5LjE5MTA4IDE5IDEyIDE5QzE0LjgwODkgMTkgMTYuMjEzNCAxOSAxNy4yMjIzIDE4LjMyNTlDMTcuNjU5IDE4LjAzNCAxOC4wMzQgMTcuNjU5IDE4LjMyNTkgMTcuMjIyM0MxOSAxNi4yMTM0IDE5IDE0LjgwODkgMTkgMTJDMTkgOS4xOTEwOCAxOSA3Ljc4NjYxIDE4LjMyNTkgNi43Nzc3MkMxOC4wMzQgNi4zNDA5NiAxNy42NTkgNS45NjU5NiAxNy4yMjIzIDUuNjc0MTJDMTYuMjEzNCA1IDE0LjgwODkgNSAxMiA1QzkuMTkxMDggNSA3Ljc4NjYxIDUgNi43Nzc3MiA1LjY3NDEyQzYuMzQwOTYgNS45NjU5NiA1Ljk2NTk2IDYuMzQwOTYgNS42NzQxMiA2Ljc3NzcyWk0xMiA4LjI0OTk4QzEyLjQxNDIgOC4yNDk5OCAxMi43NSA4LjU4NTc3IDEyLjc1IDguOTk5OThWMTEuNzU3NkwxNC41MTk4IDEzLjQ1OTRDMTQuODE4NCAxMy43NDY1IDE0LjgyNzcgMTQuMjIxMiAxNC41NDA2IDE0LjUxOThDMTQuMjUzNSAxNC44MTg0IDEzLjc3ODcgMTQuODI3NyAxMy40ODAyIDE0LjU0MDZMMTEuNDgwMiAxMi42MTc1QzExLjMzMzEgMTIuNDc2MSAxMS4yNSAxMi4yODA5IDExLjI1IDEyLjA3NjlWOC45OTk5OEMxMS4yNSA4LjU4NTc3IDExLjU4NTggOC4yNDk5OCAxMiA4LjI0OTk4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMjUgMkM2LjI1IDEuNTg1NzkgNi41ODU3OSAxLjI1IDcgMS4yNUgxN0MxNy40MTQyIDEuMjUgMTcuNzUgMS41ODU3OSAxNy43NSAyQzE3Ljc1IDIuNDE0MjEgMTcuNDE0MiAyLjc1IDE3IDIuNzVIN0M2LjU4NTc5IDIuNzUgNi4yNSAyLjQxNDIxIDYuMjUgMlpNNi4yNSAyMkM2LjI1IDIxLjU4NTggNi41ODU3OSAyMS4yNSA3IDIxLjI1SDE3QzE3LjQxNDIgMjEuMjUgMTcuNzUgMjEuNTg1OCAxNy43NSAyMkMxNy43NSAyMi40MTQyIDE3LjQxNDIgMjIuNzUgMTcgMjIuNzVIN0M2LjU4NTc5IDIyLjc1IDYuMjUgMjIuNDE0MiA2LjI1IDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/WatchSquareMinimalistic";
  */
 const WatchSquareMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WatchSquareMinimalistic.displayName = "WatchSquareMinimalistic";
-export default WatchSquareMinimalistic;
+WatchSquareMinimalistic.displayName = "WatchSquareMinimalistic"
+export default WatchSquareMinimalistic

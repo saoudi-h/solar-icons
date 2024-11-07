@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/notes/ClipboardAdd";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/notes/ClipboardAdd"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjUgMkM4LjY3MTU3IDIgOCAyLjY3MTU3IDggMy41VjQuNUM4IDUuMzI4NDMgOC42NzE1NyA2IDkuNSA2SDE0LjVDMTUuMzI4NCA2IDE2IDUuMzI4NDMgMTYgNC41VjMuNUMxNiAyLjY3MTU3IDE1LjMyODQgMiAxNC41IDJIOS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMuODc4NjggNC44NzY5NEM0LjQ0Nzk4IDQuMzA3NjQgNS4yNDIwOSA0LjEwNzE5IDYuNSA0LjAzNjYyVjQuNUM2LjUgNi4xNTY4NSA3Ljg0MzE1IDcuNSA5LjUgNy41SDE0LjVDMTYuMTU2OSA3LjUgMTcuNSA2LjE1Njg1IDE3LjUgNC41VjQuMDM2NjJDMTguNzU3OSA0LjEwNzE5IDE5LjU1MiA0LjMwNzY0IDIwLjEyMTMgNC44NzY5NEMyMSA1Ljc1NTYyIDIxIDcuMTY5ODMgMjEgOS45OTgyNlYxNS45OTgzQzIxIDE4LjgyNjcgMjEgMjAuMjQwOSAyMC4xMjEzIDIxLjExOTZDMTkuMjQyNiAyMS45OTgzIDE3LjgyODQgMjEuOTk4MyAxNSAyMS45OTgzSDlDNi4xNzE1NyAyMS45OTgzIDQuNzU3MzYgMjEuOTk4MyAzLjg3ODY4IDIxLjExOTZDMyAyMC4yNDA5IDMgMTguODI2NyAzIDE1Ljk5ODNWOS45OTgyNkMzIDcuMTY5ODMgMyA1Ljc1NTYyIDMuODc4NjggNC44NzY5NFpNMTIuNzUgMTFDMTIuNzUgMTAuNTg1OCAxMi40MTQyIDEwLjI1IDEyIDEwLjI1QzExLjU4NTggMTAuMjUgMTEuMjUgMTAuNTg1OCAxMS4yNSAxMUwxMS4yNSAxMy4yNUg5QzguNTg1NzkgMTMuMjUgOC4yNSAxMy41ODU4IDguMjUgMTRDOC4yNSAxNC40MTQyIDguNTg1NzkgMTQuNzUgOSAxNC43NUgxMS4yNVYxN0MxMS4yNSAxNy40MTQyIDExLjU4NTggMTcuNzUgMTIgMTcuNzVDMTIuNDE0MiAxNy43NSAxMi43NSAxNy40MTQyIDEyLjc1IDE3TDEyLjc1IDE0Ljc1SDE1QzE1LjQxNDIgMTQuNzUgMTUuNzUgMTQuNDE0MiAxNS43NSAxNEMxNS43NSAxMy41ODU4IDE1LjQxNDIgMTMuMjUgMTUgMTMuMjVIMTIuNzVWMTFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ClipboardAdd";
  */
 const ClipboardAdd: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClipboardAdd.displayName = "ClipboardAdd";
-export default ClipboardAdd;
+ClipboardAdd.displayName = "ClipboardAdd"
+export default ClipboardAdd

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notifications/Bell";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notifications/Bell"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjM1MTc5IDIwLjI0MThDOS4xOTI4OCAyMS4zMTEgMTAuNTE0MiAyMiAxMiAyMkMxMy40ODU4IDIyIDE0LjgwNzEgMjEuMzExIDE1LjY0ODIgMjAuMjQxOEMxMy4yMjY0IDIwLjU3IDEwLjc3MzYgMjAuNTcgOC4zNTE3OSAyMC4yNDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTguNzQ5MSA5VjkuNzA0MUMxOC43NDkxIDEwLjU0OTEgMTguOTkwMyAxMS4zNzUyIDE5LjQ0MjIgMTIuMDc4MkwyMC41NDk2IDEzLjgwMTJDMjEuNTYxMiAxNS4zNzQ5IDIwLjc4OSAxNy41MTM5IDE5LjAyOTYgMTguMDExNkMxNC40MjczIDE5LjMxMzQgOS41NzI3NCAxOS4zMTM0IDQuOTcwMzYgMTguMDExNkMzLjIxMTA1IDE3LjUxMzkgMi40Mzg4MiAxNS4zNzQ5IDMuNDUwMzYgMTMuODAxMkw0LjU1NzggMTIuMDc4MkM1LjAwOTcyIDExLjM3NTIgNS4yNTA4NyAxMC41NDkxIDUuMjUwODcgOS43MDQxVjlDNS4yNTA4NyA1LjEzNDAxIDguMjcyNTYgMiAxMiAyQzE1LjcyNzQgMiAxOC43NDkxIDUuMTM0MDEgMTguNzQ5MSA5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notifications/Bell";
  */
 const Bell: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bell.displayName = "Bell";
-export default Bell;
+Bell.displayName = "Bell"
+export default Bell

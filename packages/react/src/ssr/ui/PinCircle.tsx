@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/PinCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/PinCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk0xNC4xMDk2IDguNDE4NzhMMTUuNTkyIDkuOTAyNThDMTYuNTk4IDEwLjkwOTUgMTcuMTAwOSAxMS40MTMgMTYuOTgzNiAxMS45NTU3QzE2Ljg2NjIgMTIuNDk4NSAxNi4yMDAzIDEyLjc0ODcgMTQuODY4NCAxMy4yNDkxTDEzLjk0NjMgMTMuNTk1NUMxMy41ODk2IDEzLjcyOTUgMTMuNDExMyAxMy43OTY1IDEzLjI3MzYgMTMuOTE1N0MxMy4yMTM0IDEzLjk2NzkgMTMuMTU5NCAxNC4wMjcgMTMuMTEyOSAxNC4wOTE4QzEzLjAwNjggMTQuMjM5NyAxMi45NTYyIDE0LjQyMzYgMTIuODU1IDE0Ljc5MTNDMTIuNjI0OSAxNS42Mjc2IDEyLjUwOTkgMTYuMDQ1NyAxMi4yMzU5IDE2LjIwMkMxMi4xMjA1IDE2LjI2NzkgMTEuOTg5OCAxNi4zMDI1IDExLjg1NjkgMTYuMzAyM0MxMS41NDE2IDE2LjMwMTggMTEuMjM1MiAxNS45OTUxIDEwLjYyMjUgMTUuMzgxOEwxMC4xNDk3IDE0LjkwODZMOC41MzEgMTYuNTI5OUM4LjIzODM1IDE2LjgyMyA3Ljc2MzQ4IDE2LjgyMzQgNy40NzAzNCAxNi41MzA4QzcuMTc3MjEgMTYuMjM4MSA3LjE3NjgzIDE1Ljc2MzIgNy40Njk0OCAxNS40NzAxTDkuMDg4OTIgMTMuODQ4QzkuMDg4NzEgMTMuODQ4MiA5LjA4OTE0IDEzLjg0NzggOS4wODg5MiAxMy44NDhMOC42NDI2MiAxMy40QzguMDMzNzMgMTIuNzkwNSA3LjcyOTI5IDEyLjQ4NTggNy43MjczMSAxMi4xNzIzQzcuNzI2NDUgMTIuMDM2OCA3Ljc2MTY0IDExLjkwMzUgNy44MjkyNiAxMS43ODZDNy45ODU2OCAxMS41MTQ1IDguNDAwNzkgMTEuNCA5LjIzMDk3IDExLjE3MTFDOS41OTkzIDExLjA2OTYgOS43ODM0NiAxMS4wMTg4IDkuOTMxNSAxMC45MTIzQzkuOTk3OTIgMTAuODY0NCAxMC4wNTgzIDEwLjgwODggMTAuMTExNCAxMC43NDY1QzEwLjIyOTggMTAuNjA3NiAxMC4yOTU2IDEwLjQyODEgMTAuNDI3MSAxMC4wNjlMMTAuNzYxMSA5LjE1NzUzQzExLjI1NDUgNy44MTA3OCAxMS41MDEzIDcuMTM3NCAxMi4wNDU1IDcuMDE3MzRDMTIuNTg5NiA2Ljg5NzI4IDEzLjA5NjMgNy40MDQ0NSAxNC4xMDk2IDguNDE4NzhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/PinCircle";
  */
 const PinCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PinCircle.displayName = "PinCircle";
-export default PinCircle;
+PinCircle.displayName = "PinCircle"
+export default PinCircle

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/CloudStorage";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/CloudStorage"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC45MzkzNCAxNC40MzkzQzguNSAxNC44Nzg3IDguNSAxNS41ODU4IDguNSAxN1YxOUM4LjUgMjAuNDE0MiA4LjUgMjEuMTIxMyA4LjkzOTM0IDIxLjU2MDdDOS4zNzg2OCAyMiAxMC4wODU4IDIyIDExLjUgMjJIMTIuNUMxMy45MTQyIDIyIDE0LjYyMTMgMjIgMTUuMDYwNyAyMS41NjA3QzE1LjUgMjEuMTIxMyAxNS41IDIwLjQxNDIgMTUuNSAxOVYxN0MxNS41IDE1LjU4NTggMTUuNSAxNC44Nzg3IDE1LjA2MDcgMTQuNDM5M0MxNC42MjEzIDE0IDEzLjkxNDIgMTQgMTIuNSAxNEgxMS41QzEwLjA4NTggMTQgOS4zNzg2OCAxNCA4LjkzOTM0IDE0LjQzOTNaTTEwLjI1IDE4QzEwLjI1IDE3LjU4NTggMTAuNTg1OCAxNy4yNSAxMSAxNy4yNUgxM0MxMy40MTQyIDE3LjI1IDEzLjc1IDE3LjU4NTggMTMuNzUgMThDMTMuNzUgMTguNDE0MiAxMy40MTQyIDE4Ljc1IDEzIDE4Ljc1SDExQzEwLjU4NTggMTguNzUgMTAuMjUgMTguNDE0MiAxMC4yNSAxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuMDAwMDIgMThMNy4wMDAwMSAxNi45MTg0QzYuOTk5ODkgMTYuMjgyMyA2Ljk5OTc2IDE1LjY2NDEgNy4wNjgzMSAxNS4xNTQyQzcuMTQ1NiAxNC41Nzk0IDcuMzMzODggMTMuOTIzNSA3Ljg3ODcgMTMuMzc4N0M4LjQyMzUyIDEyLjgzMzkgOS4wNzk0NCAxMi42NDU2IDkuNjU0MjQgMTIuNTY4M0MxMC4xNjQxIDEyLjQ5OTggMTAuNzgyMyAxMi40OTk5IDExLjQxODQgMTIuNUgxMi41ODE2QzEzLjIxNzcgMTIuNDk5OSAxMy44MzU5IDEyLjQ5OTggMTQuMzQ1OCAxMi41NjgzQzE0LjkyMDYgMTIuNjQ1NiAxNS41NzY1IDEyLjgzMzkgMTYuMTIxMyAxMy4zNzg3QzE2LjY2NjIgMTMuOTIzNSAxNi44NTQ0IDE0LjU3OTQgMTYuOTMxNyAxNS4xNTQyQzE3LjAwMDMgMTUuNjY0MSAxNy4wMDAyIDE2LjI4MjMgMTcgMTYuOTE4NEwxNyAxNy45NTYzQzE5LjgxODggMTcuNjA4OSAyMiAxNS4yMzI3IDIyIDEyLjM1MjlDMjIgOS44ODExMyAyMC4zOTMgNy43ODAyNCAxOC4xNTUxIDcuMDE0OThDMTcuODM3MSA0LjE5MzcxIDE1LjQxNTkgMiAxMi40NzYyIDJDOS4zMjAyOCAyIDYuNzYxOSA0LjUyODI3IDYuNzYxOSA3LjY0NzA2QzYuNzYxOSA4LjMzNjg3IDYuODg3MDYgOC45OTc4IDcuMTE2MTYgOS42MDg4N0M2Ljg0NzUgOS41NTY3MyA2LjU2OTgzIDkuNTI5NDEgNi4yODU3MSA5LjUyOTQxQzMuOTE4NzggOS41Mjk0MSAyIDExLjQyNTYgMiAxMy43NjQ3QzIgMTYuMTAzOCAzLjkxODc4IDE4IDYuMjg1NzEgMThINy4wMDAwMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/CloudStorage";
  */
 const CloudStorage: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloudStorage.displayName = "CloudStorage";
-export default CloudStorage;
+CloudStorage.displayName = "CloudStorage"
+export default CloudStorage

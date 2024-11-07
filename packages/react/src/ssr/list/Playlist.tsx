@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/Playlist";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/Playlist"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIxQzIxLjQxNDIgNS4yNSAyMS43NSA1LjU4NTc5IDIxLjc1IDZDMjEuNzUgNi40MTQyMSAyMS40MTQyIDYuNzUgMjEgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDEwQzIuMjUgOS41ODU3OSAyLjU4NTc5IDkuMjUgMyA5LjI1SDIxQzIxLjQxNDIgOS4yNSAyMS43NSA5LjU4NTc5IDIxLjc1IDEwQzIxLjc1IDEwLjQxNDIgMjEuNDE0MiAxMC43NSAyMSAxMC43NUgzQzIuNTg1NzkgMTAuNzUgMi4yNSAxMC40MTQyIDIuMjUgMTBaTTIuMjUgMTRDMi4yNSAxMy41ODU4IDIuNTg1NzkgMTMuMjUgMyAxMy4yNUgxMUMxMS40MTQyIDEzLjI1IDExLjc1IDEzLjU4NTggMTEuNzUgMTRDMTEuNzUgMTQuNDE0MiAxMS40MTQyIDE0Ljc1IDExIDE0Ljc1SDNDMi41ODU3OSAxNC43NSAyLjI1IDE0LjQxNDIgMi4yNSAxNFpNMi4yNSAxOEMyLjI1IDE3LjU4NTggMi41ODU3OSAxNy4yNSAzIDE3LjI1SDExQzExLjQxNDIgMTcuMjUgMTEuNzUgMTcuNTg1OCAxMS43NSAxOEMxMS43NSAxOC40MTQyIDExLjQxNDIgMTguNzUgMTEgMTguNzVIM0MyLjU4NTc5IDE4Ljc1IDIuMjUgMTguNDE0MiAyLjI1IDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTguODc1IDE0LjExODRDMjAuNTI4OCAxNS4wNzMzIDIxLjM1NTggMTUuNTUwNyAyMS40NzcyIDE2LjIzOTVDMjEuNTA3NiAxNi40MTE4IDIxLjUwNzYgMTYuNTg4MiAyMS40NzcyIDE2Ljc2MDVDMjEuMzU1OCAxNy40NDkzIDIwLjUyODggMTcuOTI2NyAxOC44NzUgMTguODgxNkMxNy4yMjEyIDE5LjgzNjQgMTYuMzk0MiAyMC4zMTM4IDE1LjczNyAyMC4wNzQ2QzE1LjU3MjUgMjAuMDE0OCAxNS40MTk5IDE5LjkyNjYgMTUuMjg1OCAxOS44MTQxQzE0Ljc1IDE5LjM2NDUgMTQuNzUgMTguNDA5NyAxNC43NSAxNi41QzE0Ljc1IDE0LjU5MDMgMTQuNzUgMTMuNjM1NSAxNS4yODU4IDEzLjE4NTlDMTUuNDE5OSAxMy4wNzM0IDE1LjU3MjUgMTIuOTg1MiAxNS43MzcgMTIuOTI1NEMxNi4zOTQyIDEyLjY4NjIgMTcuMjIxMiAxMy4xNjM2IDE4Ljg3NSAxNC4xMTg0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/Playlist";
  */
 const Playlist: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Playlist.displayName = "Playlist";
-export default Playlist;
+Playlist.displayName = "Playlist"
+export default Playlist

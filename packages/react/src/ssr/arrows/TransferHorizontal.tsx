@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/TransferHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/TransferHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC4yNSA0LjAwMDAzQzEwLjI1IDMuNjkwNzQgMTAuMDYwMiAzLjQxMzE3IDkuNzcxOTEgMy4zMDEwNUM5LjQ4MzY2IDMuMTg4OTIgOS4xNTYxNCAzLjI2NTI0IDguOTQ3MTUgMy40OTMyNEwzLjQ0NzE1IDkuNDkzMjRDMy4yNDYxNyA5LjcxMjQ4IDMuMTkzNzQgMTAuMDI5OCAzLjMxMzUgMTAuMzAyQzMuNDMzMjcgMTAuNTc0MyAzLjcwMjU5IDEwLjc1IDQuMDAwMDIgMTAuNzVIMjBDMjAuNDE0MiAxMC43NSAyMC43NSAxMC40MTQyIDIwLjc1IDEwQzIwLjc1IDkuNTg1ODIgMjAuNDE0MiA5LjI1MDAzIDIwIDkuMjUwMDNMMTAuMjUgOS4yNTAwM1Y0LjAwMDAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTMuNzUgMjBMMTMuNzUgMTQuNzVINC4wMDAwMkMzLjU4NTggMTQuNzUgMy4yNTAwMiAxNC40MTQyIDMuMjUwMDIgMTRDMy4yNTAwMiAxMy41ODU4IDMuNTg1OCAxMy4yNSA0LjAwMDAyIDEzLjI1TDIwIDEzLjI1QzIwLjI5NzQgMTMuMjUgMjAuNTY2OCAxMy40MjU4IDIwLjY4NjUgMTMuNjk4QzIwLjgwNjMgMTMuOTcwMyAyMC43NTM5IDE0LjI4NzYgMjAuNTUyOSAxNC41MDY4TDE1LjA1MjkgMjAuNTA2OEMxNC44NDM5IDIwLjczNDggMTQuNTE2NCAyMC44MTExIDE0LjIyODEgMjAuNjk5QzEzLjkzOTkgMjAuNTg2OSAxMy43NSAyMC4zMDkzIDEzLjc1IDIwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/TransferHorizontal";
  */
 const TransferHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TransferHorizontal.displayName = "TransferHorizontal";
-export default TransferHorizontal;
+TransferHorizontal.displayName = "TransferHorizontal"
+export default TransferHorizontal

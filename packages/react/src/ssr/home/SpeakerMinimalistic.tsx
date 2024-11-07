@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/home/SpeakerMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/home/SpeakerMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxMC43NUMxMC4yMDUxIDEwLjc1IDguNzUgMTIuMjA1MSA4Ljc1IDE0QzguNzUgMTUuNzk0OSAxMC4yMDUxIDE3LjI1IDEyIDE3LjI1QzEzLjc5NDkgMTcuMjUgMTUuMjUgMTUuNzk0OSAxNS4yNSAxNEMxNS4yNSAxMi4yMDUxIDEzLjc5NDkgMTAuNzUgMTIgMTAuNzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNCAxMEM0IDYuMjI4NzYgNCA0LjM0MzE1IDUuMTcxNTcgMy4xNzE1N0M2LjM0MzE1IDIgOC4yMjg3NiAyIDEyIDJDMTUuNzcxMiAyIDE3LjY1NjkgMiAxOC44Mjg0IDMuMTcxNTdDMjAgNC4zNDMxNSAyMCA2LjIyODc2IDIwIDEwVjE0QzIwIDE3Ljc3MTIgMjAgMTkuNjU2OSAxOC44Mjg0IDIwLjgyODRDMTcuNjU2OSAyMiAxNS43NzEyIDIyIDEyIDIyQzguMjI4NzYgMjIgNi4zNDMxNSAyMiA1LjE3MTU3IDIwLjgyODRDNCAxOS42NTY5IDQgMTcuNzcxMiA0IDE0VjEwWk03LjI1IDE0QzcuMjUgMTEuMzc2NiA5LjM3NjY1IDkuMjUgMTIgOS4yNUMxNC42MjM0IDkuMjUgMTYuNzUgMTEuMzc2NiAxNi43NSAxNEMxNi43NSAxNi42MjM0IDE0LjYyMzQgMTguNzUgMTIgMTguNzVDOS4zNzY2NSAxOC43NSA3LjI1IDE2LjYyMzQgNy4yNSAxNFpNMTAgNS4yNUM5LjU4NTc5IDUuMjUgOS4yNSA1LjU4NTc5IDkuMjUgNkM5LjI1IDYuNDE0MjEgOS41ODU3OSA2Ljc1IDEwIDYuNzVIMTRDMTQuNDE0MiA2Ljc1IDE0Ljc1IDYuNDE0MjEgMTQuNzUgNkMxNC43NSA1LjU4NTc5IDE0LjQxNDIgNS4yNSAxNCA1LjI1SDEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/SpeakerMinimalistic";
  */
 const SpeakerMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SpeakerMinimalistic.displayName = "SpeakerMinimalistic";
-export default SpeakerMinimalistic;
+SpeakerMinimalistic.displayName = "SpeakerMinimalistic"
+export default SpeakerMinimalistic

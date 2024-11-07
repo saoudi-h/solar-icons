@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/Cardholder";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/Cardholder"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTggMTUuMjVDNy41ODU3OSAxNS4yNSA3LjI1IDE1LjU4NTggNy4yNSAxNkM3LjI1IDE2LjQxNDIgNy41ODU3OSAxNi43NSA4IDE2Ljc1SDE2QzE2LjQxNDIgMTYuNzUgMTYuNzUgMTYuNDE0MiAxNi43NSAxNkMxNi43NSAxNS41ODU4IDE2LjQxNDIgMTUuMjUgMTYgMTUuMjVIOFpNNy41ODU3OSA2LjU4NTc5QzguMTcxNTcgNiA5LjExNDM4IDYgMTEgNkgxM0MxNC44ODU2IDYgMTUuODI4NCA2IDE2LjQxNDIgNi41ODU3OUMxNyA3LjE3MTU3IDE3IDguMTE0MzggMTcgMTBWMTAuMjVIMTlDMTkuNDE0MiAxMC4yNSAxOS43NSAxMC41ODU4IDE5Ljc1IDExQzE5Ljc1IDExLjQxNDIgMTkuNDE0MiAxMS43NSAxOSAxMS43NUg1QzQuNTg1NzkgMTEuNzUgNC4yNSAxMS40MTQyIDQuMjUgMTFDNC4yNSAxMC41ODU4IDQuNTg1NzkgMTAuMjUgNSAxMC4yNUg3VjEwQzcgOC4xMTQzOCA3IDcuMTcxNTcgNy41ODU3OSA2LjU4NTc5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Cardholder";
  */
 const Cardholder: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Cardholder.displayName = "Cardholder";
-export default Cardholder;
+Cardholder.displayName = "Cardholder"
+export default Cardholder

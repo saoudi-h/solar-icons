@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/CheckSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/CheckSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk0xNi4wMzAzIDguOTY5NjdDMTYuMzIzMiA5LjI2MjU2IDE2LjMyMzIgOS43Mzc0NCAxNi4wMzAzIDEwLjAzMDNMMTEuMDMwMyAxNS4wMzAzQzEwLjczNzQgMTUuMzIzMiAxMC4yNjI2IDE1LjMyMzIgOS45Njk2NyAxNS4wMzAzTDcuOTY5NjcgMTMuMDMwM0M3LjY3Njc4IDEyLjczNzQgNy42NzY3OCAxMi4yNjI2IDcuOTY5NjcgMTEuOTY5N0M4LjI2MjU2IDExLjY3NjggOC43Mzc0NCAxMS42NzY4IDkuMDMwMzMgMTEuOTY5N0wxMC41IDEzLjQzOTNMMTQuOTY5NyA4Ljk2OTY3QzE1LjI2MjYgOC42NzY3OCAxNS43Mzc0IDguNjc2NzggMTYuMDMwMyA4Ljk2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CheckSquare";
  */
 const CheckSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CheckSquare.displayName = "CheckSquare";
-export default CheckSquare;
+CheckSquare.displayName = "CheckSquare"
+export default CheckSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/settings/Widget2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/settings/Widget2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiA2LjYzNDE1QzIgNC4wNzQ3OCA0LjA3NDc4IDIgNi42MzQxNSAyQzkuMTkzNTEgMiAxMS4yNjgzIDQuMDc0NzggMTEuMjY4MyA2LjYzNDE1QzExLjI2ODMgOS4xOTM1MSA5LjE5MzUxIDExLjI2ODMgNi42MzQxNSAxMS4yNjgzQzQuMDc0NzggMTEuMjY4MyAyIDkuMTkzNTEgMiA2LjYzNDE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjczMTcgMTcuMzY1OUMxMi43MzE3IDE0LjgwNjUgMTQuODA2NSAxMi43MzE3IDE3LjM2NTkgMTIuNzMxN0MxOS45MjUyIDEyLjczMTcgMjIgMTQuODA2NSAyMiAxNy4zNjU5QzIyIDE5LjkyNTIgMTkuOTI1MiAyMiAxNy4zNjU5IDIyQzE0LjgwNjUgMjIgMTIuNzMxNyAxOS45MjUyIDEyLjczMTcgMTcuMzY1OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIgMTcuNUMyIDE1LjM3ODcgMiAxNC4zMTggMi42NTkwMSAxMy42NTlDMy4zMTgwMiAxMyA0LjM3ODY4IDEzIDYuNSAxM0M4LjYyMTMyIDEzIDkuNjgxOTggMTMgMTAuMzQxIDEzLjY1OUMxMSAxNC4zMTggMTEgMTUuMzc4NyAxMSAxNy41QzExIDE5LjYyMTMgMTEgMjAuNjgyIDEwLjM0MSAyMS4zNDFDOS42ODE5OCAyMiA4LjYyMTMyIDIyIDYuNSAyMkM0LjM3ODY4IDIyIDMuMzE4MDIgMjIgMi42NTkwMSAyMS4zNDFDMiAyMC42ODIgMiAxOS42MjEzIDIgMTcuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEzIDYuNUMxMyA0LjM3ODY4IDEzIDMuMzE4MDIgMTMuNjU5IDIuNjU5MDFDMTQuMzE4IDIgMTUuMzc4NyAyIDE3LjUgMkMxOS42MjEzIDIgMjAuNjgyIDIgMjEuMzQxIDIuNjU5MDFDMjIgMy4zMTgwMiAyMiA0LjM3ODY4IDIyIDYuNUMyMiA4LjYyMTMyIDIyIDkuNjgxOTggMjEuMzQxIDEwLjM0MUMyMC42ODIgMTEgMTkuNjIxMyAxMSAxNy41IDExQzE1LjM3ODcgMTEgMTQuMzE4IDExIDEzLjY1OSAxMC4zNDFDMTMgOS42ODE5OCAxMyA4LjYyMTMyIDEzIDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/Widget2";
  */
 const Widget2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Widget2.displayName = "Widget2";
-export default Widget2;
+Widget2.displayName = "Widget2"
+export default Widget2

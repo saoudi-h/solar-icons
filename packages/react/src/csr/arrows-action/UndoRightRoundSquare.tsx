@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/UndoRightRoundSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/UndoRightRoundSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQxIDIyIDEyQzIyIDcuMjg1OTggMjIgNC45Mjg5MyAyMC41MzU1IDMuNDY0NDdDMTkuMDcxMSAyIDE2LjcxNCAyIDEyIDJDNy4yODU5NSAyIDQuOTI4OTMgMiAzLjQ2NDQ3IDMuNDY0NDdaTTE1Ljc1ODcgNi44NzI3M0MxNS40NTQzIDYuNTkxNzcgMTQuOTc5OSA2LjYxMDc1IDE0LjY5ODkgNi45MTUxMkMxNC40MTc5IDcuMjE5NDggMTQuNDM2OSA3LjY5Mzk4IDE0Ljc0MTMgNy45NzQ5M0wxNS41ODE4IDguNzUwNzVIOS45NjE1NUM3LjYzNTU4IDguNzUwNzUgNS43NSAxMC42MzYzIDUuNzUgMTIuOTYyM0M1Ljc1IDE1LjI4ODMgNy42MzU1NyAxNy4xNzM4IDkuOTYxNTQgMTcuMTczOEgxNC41QzE0LjkxNDIgMTcuMTczOCAxNS4yNSAxNi44MzggMTUuMjUgMTYuNDIzOEMxNS4yNSAxNi4wMDk2IDE0LjkxNDIgMTUuNjczOCAxNC41IDE1LjY3MzhIOS45NjE1NEM4LjQ2NCAxNS42NzM4IDcuMjUgMTQuNDU5OCA3LjI1IDEyLjk2MjNDNy4yNSAxMS40NjQ3IDguNDY0IDEwLjI1MDggOS45NjE1NSAxMC4yNTA4SDE1LjU4MThMMTQuNzQxMyAxMS4wMjY2QzE0LjQzNjkgMTEuMzA3NSAxNC40MTc5IDExLjc4MiAxNC42OTg5IDEyLjA4NjRDMTQuOTc5OSAxMi4zOTA4IDE1LjQ1NDMgMTIuNDA5NyAxNS43NTg3IDEyLjEyODhMMTguMDA4NyAxMC4wNTE5QzE4LjE2MjUgOS45MDk4NyAxOC4yNSA5LjcxMDA3IDE4LjI1IDkuNTAwNzVDMTguMjUgOS4yOTE0MyAxOC4xNjI1IDkuMDkxNjMgMTguMDA4NyA4Ljk0OTY1TDE1Ljc1ODcgNi44NzI3M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/UndoRightRoundSquare";
  */
 const UndoRightRoundSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UndoRightRoundSquare.displayName = "UndoRightRoundSquare";
-export default UndoRightRoundSquare;
+UndoRightRoundSquare.displayName = "UndoRightRoundSquare"
+export default UndoRightRoundSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Filter";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Filter"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSAzSDVDMy41ODU3OSAzIDIuODc4NjggMyAyLjQzOTM0IDMuNDEyMkMyIDMuODI0NCAyIDQuNDg3ODIgMiA1LjgxNDY2VjYuNTA0NDhDMiA3LjU0MjMyIDIgOC4wNjEyNCAyLjI1OTYgOC40OTE0MkMyLjUxOTIgOC45MjE2IDIuOTkzNDcgOS4xODg1OCAzLjk0MjAyIDkuNzIyNTVMNi44NTUwNCAxMS4zNjI0QzcuNDkxNDYgMTEuNzIwNiA3LjgwOTY3IDExLjg5OTggOC4wMzc1MSAxMi4wOTc2QzguNTExOTkgMTIuNTA5NSA4LjgwNDA4IDEyLjk5MzUgOC45MzY0NCAxMy41ODcyQzkgMTMuODcyMiA5IDE0LjIwNTggOSAxNC44NzI5TDkgMTcuNTQyNEM5IDE4LjQ1MiA5IDE4LjkwNjcgOS4yNTE5MiAxOS4yNjEzQzkuNTAzODUgMTkuNjE1OCA5Ljk1MTI4IDE5Ljc5MDcgMTAuODQ2MiAyMC4xNDA2QzEyLjcyNDggMjAuODc1IDEzLjY2NDEgMjEuMjQyMiAxNC4zMzIxIDIwLjgyNDRDMTUgMjAuNDA2NiAxNSAxOS40NTE5IDE1IDE3LjU0MjRWMTQuODcyOUMxNSAxNC4yMDU4IDE1IDEzLjg3MjIgMTUuMDYzNiAxMy41ODcyQzE1LjE5NTkgMTIuOTkzNSAxNS40ODggMTIuNTA5NSAxNS45NjI1IDEyLjA5NzZDMTYuMTkwMyAxMS44OTk4IDE2LjUwODUgMTEuNzIwNiAxNy4xNDUgMTEuMzYyNEwyMC4wNTggOS43MjI1NUMyMS4wMDY1IDkuMTg4NTggMjEuNDgwOCA4LjkyMTYgMjEuNzQwNCA4LjQ5MTQyQzIyIDguMDYxMjQgMjIgNy41NDIzMiAyMiA2LjUwNDQ4VjUuODE0NjZDMjIgNC40ODc4MiAyMiAzLjgyNDQgMjEuNTYwNyAzLjQxMjJDMjEuMTIxMyAzIDIwLjQxNDIgMyAxOSAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Filter";
  */
 const Filter: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Filter.displayName = "Filter";
-export default Filter;
+Filter.displayName = "Filter"
+export default Filter

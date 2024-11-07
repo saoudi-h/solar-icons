@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/SoundwaveSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/SoundwaveSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTIuNzUgN0MxMi43NSA2LjU4NTc5IDEyLjQxNDIgNi4yNSAxMiA2LjI1QzExLjU4NTggNi4yNSAxMS4yNSA2LjU4NTc5IDExLjI1IDdWMTdDMTEuMjUgMTcuNDE0MiAxMS41ODU4IDE3Ljc1IDEyIDE3Ljc1QzEyLjQxNDIgMTcuNzUgMTIuNzUgMTcuNDE0MiAxMi43NSAxN1Y3Wk03Ljc1IDlDNy43NSA4LjU4NTc5IDcuNDE0MjEgOC4yNSA3IDguMjVDNi41ODU3OSA4LjI1IDYuMjUgOC41ODU3OSA2LjI1IDlWMTVDNi4yNSAxNS40MTQyIDYuNTg1NzkgMTUuNzUgNyAxNS43NUM3LjQxNDIxIDE1Ljc1IDcuNzUgMTUuNDE0MiA3Ljc1IDE1VjlaTTE3Ljc1IDEwQzE3Ljc1IDkuNTg1NzkgMTcuNDE0MiA5LjI1IDE3IDkuMjVDMTYuNTg1OCA5LjI1IDE2LjI1IDkuNTg1NzkgMTYuMjUgMTBWMTRDMTYuMjUgMTQuNDE0MiAxNi41ODU4IDE0Ljc1IDE3IDE0Ljc1QzE3LjQxNDIgMTQuNzUgMTcuNzUgMTQuNDE0MiAxNy43NSAxNFYxMFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/SoundwaveSquare";
  */
 const SoundwaveSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SoundwaveSquare.displayName = "SoundwaveSquare";
-export default SoundwaveSquare;
+SoundwaveSquare.displayName = "SoundwaveSquare"
+export default SoundwaveSquare

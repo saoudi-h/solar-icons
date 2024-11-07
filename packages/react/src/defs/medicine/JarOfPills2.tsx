@@ -1,6 +1,6 @@
 /* GENERATED FILE */
-import React, { ReactElement } from "react";
-import { IconWeight } from "../../lib";
+import React, { ReactElement } from "react"
+import type { IconWeight } from '../../lib'
 
 export default new Map<IconWeight, ReactElement>([
   ["Bold", <><path d="M16.3663 16.179L16.8782 15.6671C17.794 14.7513 19.3098 14.7822 20.2638 15.7362C21.2178 16.6902 21.2487 18.206 20.3329 19.1218L19.821 19.6338C19.7778 19.5242 19.7227 19.3974 19.6527 19.2566C19.4264 18.8018 19.0463 18.2044 18.421 17.5791C17.7957 16.9537 17.1982 16.5736 16.7434 16.3473C16.6026 16.2773 16.4758 16.2221 16.3663 16.179Z" fill="currentColor"/>

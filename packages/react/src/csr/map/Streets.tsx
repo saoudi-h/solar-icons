@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/Streets";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/Streets"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjQ2NDQ3IDMuNDY0NDdDMiA0LjkyODkzIDIgNy4yODU5NiAyIDEyQzIgMTYuMTM0IDIgMTguNDU1MyAyLjk4NzY3IDE5Ljk1MTdMMTkuOTUxNyAyLjk4NzY2QzE4LjQ1NTMgMiAxNi4xMzQgMiAxMiAyQzcuMjg1OTUgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuMDEyMyA0LjA0ODMzTDEzLjA2MDcgMTJMMjEuMDEyMyAxOS45NTE3QzIyIDE4LjQ1NTMgMjIgMTYuMTM0IDIyIDEyQzIyIDcuODY2IDIyIDUuNTQ0NjYgMjEuMDEyMyA0LjA0ODMzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMTMuMDYwN0w0LjA0ODMzIDIxLjAxMjNDNS41NDQ2NiAyMiA3Ljg2NiAyMiAxMiAyMkMxNi4xMzQgMjIgMTguNDU1MyAyMiAxOS45NTE3IDIxLjAxMjNMMTIgMTMuMDYwN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Streets";
  */
 const Streets: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Streets.displayName = "Streets";
-export default Streets;
+Streets.displayName = "Streets"
+export default Streets

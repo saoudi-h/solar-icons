@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListCheckMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListCheckMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMyA2Ljc1QzMgNi4zMzU3OSAzLjMzNTc5IDYgMy43NSA2SDIwLjc1QzIxLjE2NDIgNiAyMS41IDYuMzM1NzkgMjEuNSA2Ljc1QzIxLjUgNy4xNjQyMSAyMS4xNjQyIDcuNSAyMC43NSA3LjVIMy43NUMzLjMzNTc5IDcuNSAzIDcuMTY0MjEgMyA2Ljc1Wk0yMS4yMTEzIDExLjE1ODZDMjEuNTM3OSAxMS40MTM0IDIxLjU5NjEgMTEuODg0NyAyMS4zNDE0IDEyLjIxMTNMMTcuNDQxNCAxNy4yMTEzQzE3LjMwMjIgMTcuMzg5NyAxNy4wODk5IDE3LjQ5NTggMTYuODYzNiAxNy40OTk5QzE2LjYzNzMgMTcuNTA0IDE2LjQyMTMgMTcuNDA1NyAxNi4yNzU3IDE3LjIzMjRMMTQuMTc1NyAxNC43MzI0QzEzLjkwOTMgMTQuNDE1MiAxMy45NTA0IDEzLjk0MjEgMTQuMjY3NiAxMy42NzU3QzE0LjU4NDggMTMuNDA5MyAxNS4wNTc5IDEzLjQ1MDQgMTUuMzI0MyAxMy43Njc2TDE2LjgyODQgMTUuNTU4MkwyMC4xNTg2IDExLjI4ODdDMjAuNDEzNCAxMC45NjIxIDIwLjg4NDcgMTAuOTAzOSAyMS4yMTEzIDExLjE1ODZaTTMgMTEuNzVDMyAxMS4zMzU4IDMuMzM1NzkgMTEgMy43NSAxMUgxMC43NUMxMS4xNjQyIDExIDExLjUgMTEuMzM1OCAxMS41IDExLjc1QzExLjUgMTIuMTY0MiAxMS4xNjQyIDEyLjUgMTAuNzUgMTIuNUgzLjc1QzMuMzM1NzkgMTIuNSAzIDEyLjE2NDIgMyAxMS43NVpNMyAxNi43NUMzIDE2LjMzNTggMy4zMzU3OSAxNiAzLjc1IDE2SDEwLjc1QzExLjE2NDIgMTYgMTEuNSAxNi4zMzU4IDExLjUgMTYuNzVDMTEuNSAxNy4xNjQyIDExLjE2NDIgMTcuNSAxMC43NSAxNy41SDMuNzVDMy4zMzU3OSAxNy41IDMgMTcuMTY0MiAzIDE2Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListCheckMinimalistic";
  */
 const ListCheckMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListCheckMinimalistic.displayName = "ListCheckMinimalistic";
-export default ListCheckMinimalistic;
+ListCheckMinimalistic.displayName = "ListCheckMinimalistic"
+export default ListCheckMinimalistic

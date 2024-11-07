@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/DocumentsMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/DocumentsMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuNzUgMkgxMi43NUMxNS41Nzg0IDIgMTYuOTkyNiAyIDE3Ljg3MTMgMi44Nzg2OEMxOC43NSAzLjc1NzM2IDE4Ljc1IDUuMTcxNTcgMTguNzUgOFYxNkMxOC43NSAxOC44Mjg0IDE4Ljc1IDIwLjI0MjYgMTcuODcxMyAyMS4xMjEzQzE2Ljk5MjYgMjIgMTUuNTc4NCAyMiAxMi43NSAyMkgxMC43NUM3LjkyMTU3IDIyIDYuNTA3MzYgMjIgNS42Mjg2OCAyMS4xMjEzQzQuNzUgMjAuMjQyNiA0Ljc1IDE4LjgyODQgNC43NSAxNlY4QzQuNzUgNS4xNzE1NyA0Ljc1IDMuNzU3MzYgNS42Mjg2OCAyLjg3ODY4QzYuNTA3MzYgMiA3LjkyMTU3IDIgMTAuNzUgMlpNOCAxM0M4IDEyLjU4NTggOC4zMzU3OSAxMi4yNSA4Ljc1IDEyLjI1SDE0Ljc1QzE1LjE2NDIgMTIuMjUgMTUuNSAxMi41ODU4IDE1LjUgMTNDMTUuNSAxMy40MTQyIDE1LjE2NDIgMTMuNzUgMTQuNzUgMTMuNzVIOC43NUM4LjMzNTc5IDEzLjc1IDggMTMuNDE0MiA4IDEzWk04IDlDOCA4LjU4NTc5IDguMzM1NzkgOC4yNSA4Ljc1IDguMjVIMTQuNzVDMTUuMTY0MiA4LjI1IDE1LjUgOC41ODU3OSAxNS41IDlDMTUuNSA5LjQxNDIxIDE1LjE2NDIgOS43NSAxNC43NSA5Ljc1SDguNzVDOC4zMzU3OSA5Ljc1IDggOS40MTQyMSA4IDlaTTggMTdDOCAxNi41ODU4IDguMzM1NzkgMTYuMjUgOC43NSAxNi4yNUgxMS43NUMxMi4xNjQyIDE2LjI1IDEyLjUgMTYuNTg1OCAxMi41IDE3QzEyLjUgMTcuNDE0MiAxMi4xNjQyIDE3Ljc1IDExLjc1IDE3Ljc1SDguNzVDOC4zMzU3OSAxNy43NSA4IDE3LjQxNDIgOCAxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjc1IDQuMjVDMi4xNjQyMSA0LjI1IDIuNSA0LjU4NTc5IDIuNSA1VjE5QzIuNSAxOS40MTQyIDIuMTY0MjEgMTkuNzUgMS43NSAxOS43NUMxLjMzNTc5IDE5Ljc1IDEgMTkuNDE0MiAxIDE5VjVDMSA0LjU4NTc5IDEuMzM1NzkgNC4yNSAxLjc1IDQuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuNzUgNC4yNUMyMi4xNjQyIDQuMjUgMjIuNSA0LjU4NTc5IDIyLjUgNVYxOUMyMi41IDE5LjQxNDIgMjIuMTY0MiAxOS43NSAyMS43NSAxOS43NUMyMS4zMzU4IDE5Ljc1IDIxIDE5LjQxNDIgMjEgMTlWNUMyMSA0LjU4NTc5IDIxLjMzNTggNC4yNSAyMS43NSA0LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/DocumentsMinimalistic";
  */
 const DocumentsMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DocumentsMinimalistic.displayName = "DocumentsMinimalistic";
-export default DocumentsMinimalistic;
+DocumentsMinimalistic.displayName = "DocumentsMinimalistic"
+export default DocumentsMinimalistic

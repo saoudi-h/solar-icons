@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/ShieldMinus";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/ShieldMinus"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTUgMTIuNzVDMTUuNDE0MiAxMi43NSAxNS43NSAxMi40MTQyIDE1Ljc1IDEyQzE1Ljc1IDExLjU4NTggMTUuNDE0MiAxMS4yNSAxNSAxMS4yNUg5QzguNTg1NzkgMTEuMjUgOC4yNSAxMS41ODU4IDguMjUgMTJDOC4yNSAxMi40MTQyIDguNTg1NzkgMTIuNzUgOSAxMi43NUgxNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldMinus";
  */
 const ShieldMinus: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldMinus.displayName = "ShieldMinus";
-export default ShieldMinus;
+ShieldMinus.displayName = "ShieldMinus"
+export default ShieldMinus

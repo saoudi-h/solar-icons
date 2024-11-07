@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/MinimizeSquareMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/MinimizeSquareMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTYuNDY5NjcgMTcuNTMwM0M2LjE3Njc4IDE3LjIzNzQgNi4xNzY3OCAxNi43NjI2IDYuNDY5NjcgMTYuNDY5N0w4LjY4OTM0IDE0LjI1SDcuNUM3LjA4NTc5IDE0LjI1IDYuNzUgMTMuOTE0MiA2Ljc1IDEzLjVDNi43NSAxMy4wODU4IDcuMDg1NzkgMTIuNzUgNy41IDEyLjc1SDEwLjVDMTAuOTE0MiAxMi43NSAxMS4yNSAxMy4wODU4IDExLjI1IDEzLjVWMTYuNUMxMS4yNSAxNi45MTQyIDEwLjkxNDIgMTcuMjUgMTAuNSAxNy4yNUMxMC4wODU4IDE3LjI1IDkuNzUgMTYuOTE0MiA5Ljc1IDE2LjVWMTUuMzEwN0w3LjUzMDMzIDE3LjUzMDNDNy4yMzc0NCAxNy44MjMyIDYuNzYyNTYgMTcuODIzMiA2LjQ2OTY3IDE3LjUzMDNaTTE2LjUgMTEuMjVDMTYuOTE0MiAxMS4yNSAxNy4yNSAxMC45MTQyIDE3LjI1IDEwLjVDMTcuMjUgMTAuMDg1OCAxNi45MTQyIDkuNzUgMTYuNSA5Ljc1SDE1LjMxMDdMMTcuNTMwMyA3LjUzMDMzQzE3LjgyMzIgNy4yMzc0NCAxNy44MjMyIDYuNzYyNTYgMTcuNTMwMyA2LjQ2OTY3QzE3LjIzNzQgNi4xNzY3OCAxNi43NjI2IDYuMTc2NzggMTYuNDY5NyA2LjQ2OTY3TDE0LjI1IDguNjg5MzRWNy41QzE0LjI1IDcuMDg1NzkgMTMuOTE0MiA2Ljc1IDEzLjUgNi43NUMxMy4wODU4IDYuNzUgMTIuNzUgNy4wODU3OSAxMi43NSA3LjVWMTAuNUMxMi43NSAxMC45MTQyIDEzLjA4NTggMTEuMjUgMTMuNSAxMS4yNUgxNi41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/MinimizeSquareMinimalistic";
  */
 const MinimizeSquareMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MinimizeSquareMinimalistic.displayName = "MinimizeSquareMinimalistic";
-export default MinimizeSquareMinimalistic;
+MinimizeSquareMinimalistic.displayName = "MinimizeSquareMinimalistic"
+export default MinimizeSquareMinimalistic

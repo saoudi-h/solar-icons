@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/SimCardMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/SimCardMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTIuMzQxNSAyIDEyLjUxMjIgMiAxMi42ODU4IDIuMDE1MTVDMTMuNDk1MSAyLjA4NTgxIDE0LjI4NzQgMi40MTQgMTQuOTA5NyAyLjkzNjMxQzE1LjA0MzEgMy4wNDgzNCAxNS4xNjY4IDMuMTcyMDQgMTUuNDE0MiAzLjQxOTM4TDIwLjU4MDYgOC41ODU3OEMyMC44MjggOC44MzMxNyAyMC45NTE2IDguOTU2ODcgMjEuMDYzNyA5LjA5MDM0QzIxLjU4NiA5LjcxMjU3IDIxLjkxNDIgMTAuNTA0OSAyMS45ODQ4IDExLjMxNDJDMjIgMTEuNDg3OCAyMiAxMS42NTg1IDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMlpNOC42MDk4MiAxMy4wMzg0QzguODAzMDIgMTMgOS4wMzUzNSAxMyA5LjUgMTNIMTQuNUMxNC45NjQ3IDEzIDE1LjE5NyAxMyAxNS4zOTAyIDEzLjAzODRDMTYuMTgzNiAxMy4xOTYyIDE2LjgwMzggMTMuODE2NCAxNi45NjE2IDE0LjYwOThDMTcgMTQuODAzIDE3IDE1LjAzNTMgMTcgMTUuNUMxNyAxNS45NjQ3IDE3IDE2LjE5NyAxNi45NjE2IDE2LjM5MDJDMTYuODAzOCAxNy4xODM2IDE2LjE4MzYgMTcuODAzOCAxNS4zOTAyIDE3Ljk2MTZDMTUuMTk3IDE4IDE0Ljk2NDcgMTggMTQuNSAxOEg5LjVDOS4wMzUzNSAxOCA4LjgwMzAyIDE4IDguNjA5ODIgMTcuOTYxNkM3LjgxNjQ0IDE3LjgwMzggNy4xOTYyNCAxNy4xODM2IDcuMDM4NDMgMTYuMzkwMkM3IDE2LjE5NyA3IDE1Ljk2NDcgNyAxNS41QzcgMTUuMDM1MyA3IDE0LjgwMyA3LjAzODQzIDE0LjYwOThDNy4xOTYyNCAxMy44MTY0IDcuODE2NDQgMTMuMTk2MiA4LjYwOTgyIDEzLjAzODRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/SimCardMinimalistic";
  */
 const SimCardMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SimCardMinimalistic.displayName = "SimCardMinimalistic";
-export default SimCardMinimalistic;
+SimCardMinimalistic.displayName = "SimCardMinimalistic"
+export default SimCardMinimalistic

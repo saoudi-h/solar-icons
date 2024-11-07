@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/SmartVacuumCleaner2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/SmartVacuumCleaner2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiA2LjVDMTAuNzU3NCA2LjUgOS43NSA3LjUwNzM2IDkuNzUgOC43NUM5Ljc1IDkuOTkyNjQgMTAuNzU3NCAxMSAxMiAxMUMxMy4yNDI2IDExIDE0LjI1IDkuOTkyNjQgMTQuMjUgOC43NUMxNC4yNSA3LjUwNzM2IDEzLjI0MjYgNi41IDEyIDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOC41MjA5IDE5LjMzMTZDMTYuNzcwMSAyMC44Mzg5IDE0LjQ5MTUgMjEuNzUgMTIgMjEuNzVDOS41MDg1MyAyMS43NSA3LjIyOTg3IDIwLjgzODkgNS40NzkwNiAxOS4zMzE2TDIuNTMwMzMgMjIuMjgwM0MyLjIzNzQ0IDIyLjU3MzIgMS43NjI1NiAyMi41NzMyIDEuNDY5NjcgMjIuMjgwM0MxLjE3Njc4IDIxLjk4NzQgMS4xNzY3OCAyMS41MTI2IDEuNDY5NjcgMjEuMjE5N0w0LjQxODQgMTguMjcwOUMyLjkxMTE0IDE2LjUyMDEgMiAxNC4yNDE1IDIgMTEuNzVDMiA2LjIyNzE1IDYuNDc3MTUgMS43NSAxMiAxLjc1QzE3LjUyMjggMS43NSAyMiA2LjIyNzE1IDIyIDExLjc1QzIyIDE0LjI0MTUgMjEuMDg4OSAxNi41MjAxIDE5LjU4MTYgMTguMjcwOUwyMi41MzAzIDIxLjIxOTdDMjIuODIzMiAyMS41MTI2IDIyLjgyMzIgMjEuOTg3NCAyMi41MzAzIDIyLjI4MDNDMjIuMjM3NCAyMi41NzMyIDIxLjc2MjYgMjIuNTczMiAyMS40Njk3IDIyLjI4MDNMMTguNTIwOSAxOS4zMzE2Wk04LjI1IDguNzVDOC4yNSA2LjY3ODkzIDkuOTI4OTMgNSAxMiA1QzE0LjA3MTEgNSAxNS43NSA2LjY3ODkzIDE1Ljc1IDguNzVDMTUuNzUgMTAuODIxMSAxNC4wNzExIDEyLjUgMTIgMTIuNUM5LjkyODkzIDEyLjUgOC4yNSAxMC44MjExIDguMjUgOC43NVpNMTIuNzUgMTUuNzVDMTIuNzUgMTUuMzM1OCAxMi40MTQyIDE1IDEyIDE1QzExLjU4NTggMTUgMTEuMjUgMTUuMzM1OCAxMS4yNSAxNS43NVYxNy43NUMxMS4yNSAxOC4xNjQyIDExLjU4NTggMTguNSAxMiAxOC41QzEyLjQxNDIgMTguNSAxMi43NSAxOC4xNjQyIDEyLjc1IDE3Ljc1VjE1Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/SmartVacuumCleaner2";
  */
 const SmartVacuumCleaner2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SmartVacuumCleaner2.displayName = "SmartVacuumCleaner2";
-export default SmartVacuumCleaner2;
+SmartVacuumCleaner2.displayName = "SmartVacuumCleaner2"
+export default SmartVacuumCleaner2

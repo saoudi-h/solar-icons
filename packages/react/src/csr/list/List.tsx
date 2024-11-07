@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/List";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/List"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNSA3QzMuMjUgNi41ODU3OSAzLjU4NTc5IDYuMjUgNCA2LjI1SDIwQzIwLjQxNDIgNi4yNSAyMC43NSA2LjU4NTc5IDIwLjc1IDdDMjAuNzUgNy40MTQyMSAyMC40MTQyIDcuNzUgMjAgNy43NUg0QzMuNTg1NzkgNy43NSAzLjI1IDcuNDE0MjEgMy4yNSA3Wk0zLjI1IDEyQzMuMjUgMTEuNTg1OCAzLjU4NTc5IDExLjI1IDQgMTEuMjVIMTVDMTUuNDE0MiAxMS4yNSAxNS43NSAxMS41ODU4IDE1Ljc1IDEyQzE1Ljc1IDEyLjQxNDIgMTUuNDE0MiAxMi43NSAxNSAxMi43NUg0QzMuNTg1NzkgMTIuNzUgMy4yNSAxMi40MTQyIDMuMjUgMTJaTTMuMjUgMTdDMy4yNSAxNi41ODU4IDMuNTg1NzkgMTYuMjUgNCAxNi4yNUg5QzkuNDE0MjEgMTYuMjUgOS43NSAxNi41ODU4IDkuNzUgMTdDOS43NSAxNy40MTQyIDkuNDE0MjEgMTcuNzUgOSAxNy43NUg0QzMuNTg1NzkgMTcuNzUgMy4yNSAxNy40MTQyIDMuMjUgMTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/List";
  */
 const List: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-List.displayName = "List";
-export default List;
+List.displayName = "List"
+export default List

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/CardSearch";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/CardSearch"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuNzUgMTQuNUMxNi41MDc0IDE0LjUgMTUuNSAxNS41MDc0IDE1LjUgMTYuNzVDMTUuNSAxNy45OTI2IDE2LjUwNzQgMTkgMTcuNzUgMTlDMTguOTkyNiAxOSAyMCAxNy45OTI2IDIwIDE2Ljc1QzIwIDE1LjUwNzQgMTguOTkyNiAxNC41IDE3Ljc1IDE0LjVaTTE0IDE2Ljc1QzE0IDE0LjY3ODkgMTUuNjc4OSAxMyAxNy43NSAxM0MxOS44MjExIDEzIDIxLjUgMTQuNjc4OSAyMS41IDE2Ljc1QzIxLjUgMTcuNTE0MyAyMS4yNzEzIDE4LjIyNTIgMjAuODc4NyAxOC44MThMMjEuNzgwMyAxOS43MTk3QzIyLjA3MzIgMjAuMDEyNiAyMi4wNzMyIDIwLjQ4NzQgMjEuNzgwMyAyMC43ODAzQzIxLjQ4NzQgMjEuMDczMiAyMS4wMTI2IDIxLjA3MzIgMjAuNzE5NyAyMC43ODAzTDE5LjgxOCAxOS44Nzg3QzE5LjIyNTIgMjAuMjcxMyAxOC41MTQzIDIwLjUgMTcuNzUgMjAuNUMxNS42Nzg5IDIwLjUgMTQgMTguODIxMSAxNCAxNi43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwIDRIMTRDMTcuNzcxMiA0IDE5LjY1NjkgNCAyMC44Mjg0IDUuMTcxNTdDMjEuNjcyIDYuMDE1MTEgMjEuOTA4MiA3LjIyODgyIDIxLjk3NDMgOS4yNUgyLjAyNTcyQzIuMDkxODUgNy4yMjg4MiAyLjMyODAzIDYuMDE1MTEgMy4xNzE1NyA1LjE3MTU3QzQuMzQzMTUgNCA2LjIyODc2IDQgMTAgNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwIDIwSDEzLjYyNjZDMTIuOTIxMSAxOS4xMDYxIDEyLjUgMTcuOTc3MiAxMi41IDE2Ljc1QzEyLjUgMTMuODUwNSAxNC44NTA1IDExLjUgMTcuNzUgMTEuNUMxOS40OTQ3IDExLjUgMjEuMDQwNiAxMi4zNTExIDIxLjk5NTMgMTMuNjYwN0MyMiAxMy4xNTE3IDIyIDEyLjU5OTcgMjIgMTJDMjIgMTEuNTU4MSAyMiAxMS4xNDIgMjEuOTk4MSAxMC43NUgyLjAwMTg5QzIgMTEuMTQyIDIgMTEuNTU4MSAyIDEyQzIgMTUuNzcxMiAyIDE3LjY1NjkgMy4xNzE1NyAxOC44Mjg0QzQuMzQzMTUgMjAgNi4yMjg3NiAyMCAxMCAyMFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTUuMjUgMTZDNS4yNSAxNS41ODU4IDUuNTg1NzkgMTUuMjUgNiAxNS4yNUgxMEMxMC40MTQyIDE1LjI1IDEwLjc1IDE1LjU4NTggMTAuNzUgMTZDMTAuNzUgMTYuNDE0MiAxMC40MTQyIDE2Ljc1IDEwIDE2Ljc1SDZDNS41ODU3OSAxNi43NSA1LjI1IDE2LjQxNDIgNS4yNSAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/CardSearch";
  */
 const CardSearch: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CardSearch.displayName = "CardSearch";
-export default CardSearch;
+CardSearch.displayName = "CardSearch"
+export default CardSearch

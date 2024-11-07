@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Pip2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Pip2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi45NTQ5MSA1LjA2MTA3QzIgNi4zNzU0IDIgOC4yNTAyNyAyIDEyQzIgMTUuNzQ5NyAyIDE3LjYyNDYgMi45NTQ5MSAxOC45Mzg5QzMuMjYzMzEgMTkuMzYzNCAzLjYzNjYgMTkuNzM2NyA0LjA2MTA3IDIwLjA0NTFDNS4zNzU0IDIxIDcuMjUwMjcgMjEgMTEgMjFIMTNDMTYuNzQ5NyAyMSAxOC42MjQ2IDIxIDE5LjkzODkgMjAuMDQ1MUMyMC4zNjM0IDE5LjczNjcgMjAuNzM2NyAxOS4zNjM0IDIxLjA0NTEgMTguOTM4OUMyMiAxNy42MjQ2IDIyIDE1Ljc0OTcgMjIgMTJDMjIgOC4yNTAyNyAyMiA2LjM3NTQgMjEuMDQ1MSA1LjA2MTA3QzIwLjczNjcgNC42MzY2IDIwLjM2MzQgNC4yNjMzMSAxOS45Mzg5IDMuOTU0OTFDMTguNjI0NiAzIDE2Ljc0OTcgMyAxMyAzSDExQzcuMjUwMjcgMyA1LjM3NTQgMyA0LjA2MTA3IDMuOTU0OTFDMy42MzY2IDQuMjYzMzEgMy4yNjMzMSA0LjYzNjYgMi45NTQ5MSA1LjA2MTA3Wk0xMS4xNzQgMTIuNDQwNEMxMSAxMi44NjkyIDExIDEzLjQxMjggMTEgMTQuNUMxMSAxNS41ODcyIDExIDE2LjEzMDggMTEuMTc0IDE2LjU1OTZDMTEuNDA2IDE3LjEzMTMgMTEuODUwOSAxNy41ODU2IDEyLjQxMSAxNy44MjI0QzEyLjgzMTEgMTggMTMuMzYzNiAxOCAxNC40Mjg2IDE4SDE1LjU3MTRDMTYuNjM2NCAxOCAxNy4xNjg5IDE4IDE3LjU4OSAxNy44MjI0QzE4LjE0OTEgMTcuNTg1NiAxOC41OTQgMTcuMTMxMyAxOC44MjYgMTYuNTU5NkMxOSAxNi4xMzA4IDE5IDE1LjU4NzIgMTkgMTQuNUMxOSAxMy40MTI4IDE5IDEyLjg2OTIgMTguODI2IDEyLjQ0MDRDMTguNTk0IDExLjg2ODcgMTguMTQ5MSAxMS40MTQ0IDE3LjU4OSAxMS4xNzc2QzE3LjE2ODkgMTEgMTYuNjM2NCAxMSAxNS41NzE0IDExSDE0LjQyODZDMTMuMzYzNiAxMSAxMi44MzExIDExIDEyLjQxMSAxMS4xNzc2QzExLjg1MDkgMTEuNDE0NCAxMS40MDYgMTEuODY4NyAxMS4xNzQgMTIuNDQwNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Pip2";
  */
 const Pip2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pip2.displayName = "Pip2";
-export default Pip2;
+Pip2.displayName = "Pip2"
+export default Pip2

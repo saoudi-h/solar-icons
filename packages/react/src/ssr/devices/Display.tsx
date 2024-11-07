@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Display";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Display"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDguNzU5OTRDMiA2LjA0NDY4IDIgNC42ODcwNSAyLjg3ODY4IDMuODQzNTJDMy43NTczNiAzIDUuMTcxNTcgMyA4IDNIMTZDMTguODI4NCAzIDIwLjI0MjYgMyAyMS4xMjEzIDMuODQzNTJDMjIgNC42ODcwNSAyMiA2LjA0NDY4IDIyIDguNzU5OTRWOS43MTk5M0MyMiAxMi40MzUyIDIyIDEzLjc5MjggMjEuMTIxMyAxNC42MzYzQzIwLjI0MjYgMTUuNDc5OSAxOC44Mjg0IDE1LjQ3OTkgMTYgMTUuNDc5OUgxMi43NVYxNy44NDA5TDE4LjIzNzIgMTkuNTk2OEMxOC42MzAxIDE5LjcyMjUgMTguODQyNSAyMC4xMzAzIDE4LjcxMTUgMjAuNTA3NUMxOC41ODA1IDIwLjg4NDcgMTguMTU1OCAyMS4wODg2IDE3Ljc2MjggMjAuOTYyOUwxMiAxOS4xMTg4TDYuMjM3MTcgMjAuOTYyOUM1Ljg0NDIxIDIxLjA4ODYgNS40MTk0NyAyMC44ODQ3IDUuMjg4NDkgMjAuNTA3NUM1LjE1NzUgMjAuMTMwMyA1LjM2OTg3IDE5LjcyMjUgNS43NjI4MyAxOS41OTY4TDExLjI1IDE3Ljg0MDlWMTUuNDc5OUg4QzUuMTcxNTcgMTUuNDc5OSAzLjc1NzM2IDE1LjQ3OTkgMi44Nzg2OCAxNC42MzYzQzIgMTMuNzkyOCAyIDEyLjQzNTIgMiA5LjcxOTkzVjguNzU5OTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Display";
  */
 const Display: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Display.displayName = "Display";
-export default Display;
+Display.displayName = "Display"
+export default Display

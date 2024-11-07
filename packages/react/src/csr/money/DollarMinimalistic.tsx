@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/DollarMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/DollarMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMi43NSA2QzEyLjc1IDUuNTg1NzkgMTIuNDE0MiA1LjI1IDEyIDUuMjVDMTEuNTg1OCA1LjI1IDExLjI1IDUuNTg1NzkgMTEuMjUgNlY2LjMxNjczQzkuNjE5NTcgNi42MDg2NyA4LjI1IDcuODMzNjEgOC4yNSA5LjVDOC4yNSAxMS40MTcyIDEwLjA2MjggMTIuNzUgMTIgMTIuNzVDMTMuMzc2NSAxMi43NSAxNC4yNSAxMy42NTU3IDE0LjI1IDE0LjVDMTQuMjUgMTUuMzQ0MyAxMy4zNzY1IDE2LjI1IDEyIDE2LjI1QzEwLjYyMzUgMTYuMjUgOS43NSAxNS4zNDQzIDkuNzUgMTQuNUM5Ljc1IDE0LjA4NTggOS40MTQyMSAxMy43NSA5IDEzLjc1QzguNTg1NzkgMTMuNzUgOC4yNSAxNC4wODU4IDguMjUgMTQuNUM4LjI1IDE2LjE2NjQgOS42MTk1NyAxNy4zOTEzIDExLjI1IDE3LjY4MzNWMThDMTEuMjUgMTguNDE0MiAxMS41ODU4IDE4Ljc1IDEyIDE4Ljc1QzEyLjQxNDIgMTguNzUgMTIuNzUgMTguNDE0MiAxMi43NSAxOFYxNy42ODMzQzE0LjM4MDQgMTcuMzkxMyAxNS43NSAxNi4xNjY0IDE1Ljc1IDE0LjVDMTUuNzUgMTIuNTgyOCAxMy45MzcyIDExLjI1IDEyIDExLjI1QzEwLjYyMzUgMTEuMjUgOS43NSAxMC4zNDQzIDkuNzUgOS41QzkuNzUgOC42NTU3MyAxMC42MjM1IDcuNzUgMTIgNy43NUMxMy4zNzY1IDcuNzUgMTQuMjUgOC42NTU3MyAxNC4yNSA5LjVDMTQuMjUgOS45MTQyMSAxNC41ODU4IDEwLjI1IDE1IDEwLjI1QzE1LjQxNDIgMTAuMjUgMTUuNzUgOS45MTQyMSAxNS43NSA5LjVDMTUuNzUgNy44MzM2MSAxNC4zODA0IDYuNjA4NjcgMTIuNzUgNi4zMTY3M1Y2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/DollarMinimalistic";
  */
 const DollarMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DollarMinimalistic.displayName = "DollarMinimalistic";
-export default DollarMinimalistic;
+DollarMinimalistic.displayName = "DollarMinimalistic"
+export default DollarMinimalistic

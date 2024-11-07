@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Paperclip";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Paperclip"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC44ODU1OCAzLjM2MjYyQzExLjgyODMgMC41NDU3OTUgMTYuNTg2NCAwLjU0NTc5NSAxOS41MjkxIDMuMzYyNjJDMjIuNDkwMyA2LjE5NzE0IDIyLjQ5MDMgMTAuODA3IDE5LjUyOTEgMTMuNjQxNUwxMS41ODEgMjEuMjQ5NUM5LjQ5MDk3IDIzLjI1MDIgNi4xMTUzMiAyMy4yNTAyIDQuMDI1MjUgMjEuMjQ5NUMxLjkxNjY5IDE5LjIzMTIgMS45MTY2OSAxNS45NDQ2IDQuMDI1MjUgMTMuOTI2M0wxMS44NTkgNi40Mjc3MUMxMy4wOTY0IDUuMjQzMjQgMTUuMDg5NiA1LjI0MzI1IDE2LjMyNyA2LjQyNzcxQzE3LjU4MjkgNy42Mjk4OSAxNy41ODI5IDkuNTkzMTYgMTYuMzI3IDEwLjc5NTNMOC40MzYxMiAxOC4zNDg2QzguMTM2ODkgMTguNjM1IDcuNjYyMTMgMTguNjI0NyA3LjM3NTcxIDE4LjMyNTRDNy4wODkyOSAxOC4wMjYyIDcuMDk5NjcgMTcuNTUxNSA3LjM5ODg5IDE3LjI2NUwxNS4yODk4IDkuNzExNzVDMTUuOTI4NiA5LjEwMDIxIDE1LjkyODYgOC4xMjI4NSAxNS4yODk4IDcuNTExM0MxNC42MzI0IDYuODgyMDUgMTMuNTUzNiA2Ljg4MjA1IDEyLjg5NjIgNy41MTEzTDUuMDYyNDggMTUuMDA5OEMzLjU3MDk1IDE2LjQzNzYgMy41NzA5NSAxOC43MzgyIDUuMDYyNDggMjAuMTY1OUM2LjU3MjUxIDIxLjYxMTQgOS4wMzM3NyAyMS42MTE0IDEwLjU0MzggMjAuMTY1OUwxOC40OTE5IDEyLjU1NzlDMjAuODM2IDEwLjMxNCAyMC44MzYgNi42OTAxIDE4LjQ5MTkgNC40NDYyQzE2LjEyOTIgMi4xODQ2IDEyLjI4NTUgMi4xODQ2IDkuOTIyOCA0LjQ0NjJMMy41MTg2MSAxMC41NzY0QzMuMjE5MzkgMTAuODYyOCAyLjc0NDYzIDEwLjg1MjQgMi40NTgyMSAxMC41NTMyQzIuMTcxNzkgMTAuMjU0IDIuMTgyMTYgOS43NzkyNCAyLjQ4MTM5IDkuNDkyODFMOC44ODU1OCAzLjM2MjYyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Paperclip";
  */
 const Paperclip: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Paperclip.displayName = "Paperclip";
-export default Paperclip;
+Paperclip.displayName = "Paperclip"
+export default Paperclip

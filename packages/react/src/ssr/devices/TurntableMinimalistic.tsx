@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/TurntableMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/TurntableMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuNzUwMSAyLjIyMTY1VjcuOTY0ODJDMTcuNzUwMSA4LjU0OTkzIDE3LjQ1NzcgOS4wOTYzNCAxNi45NzA4IDkuNDIwOUwxNC40MTYxIDExLjEyNEMxNC4wNzE1IDExLjM1MzggMTMuNjA1OCAxMS4yNjA3IDEzLjM3NiAxMC45MTZDMTMuMTQ2MyAxMC41NzE0IDEzLjIzOTQgMTAuMTA1NyAxMy41ODQxIDkuODc1OTZMMTYuMTM4OCA4LjE3MjgzQzE2LjIwODMgOC4xMjY0NiAxNi4yNTAxIDguMDQ4NCAxNi4yNTAxIDcuOTY0ODJWMi4wNjg3NEMxNS4wOTQzIDIgMTMuNzAwNSAyIDEyIDJDNy4yODU5NSAyIDQuOTI4OTMgMiAzLjQ2NDQ3IDMuNDY0NDdDMiA0LjkyODkzIDIgNy4yODU5NSAyIDEyQzIgMTYuNzE0IDIgMTkuMDcxMSAzLjQ2NDQ3IDIwLjUzNTVDNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyIDIyQzE2LjcxNCAyMiAxOS4wNzExIDIyIDIwLjUzNTUgMjAuNTM1NUMyMiAxOS4wNzExIDIyIDE2LjcxNCAyMiAxMkMyMiA3LjI4NTk1IDIyIDQuOTI4OTMgMjAuNTM1NSAzLjQ2NDQ3QzE5Ljg1MTUgMi43ODA0NSAxOC45NzI4IDIuNDE1OTIgMTcuNzUwMSAyLjIyMTY1Wk02LjI1IDEyQzYuMjUgOC44MjQzNiA4LjgyNDM2IDYuMjUgMTIgNi4yNUMxMi41OTk3IDYuMjUgMTMuMTc5MyA2LjM0MjA2IDEzLjcyNDcgNi41MTMzNkMxNC4xMTk5IDYuNjM3NDggMTQuMzM5NyA3LjA1ODQ2IDE0LjIxNTUgNy40NTM2NEMxNC4wOTE0IDcuODQ4ODIgMTMuNjcwNCA4LjA2ODU2IDEzLjI3NTMgNy45NDQ0NEMxMi44NzM2IDcuODE4MjkgMTIuNDQ1NSA3Ljc1IDEyIDcuNzVDOS42NTI3OSA3Ljc1IDcuNzUgOS42NTI3OSA3Ljc1IDEyQzcuNzUgMTQuMzQ3MiA5LjY1Mjc5IDE2LjI1IDEyIDE2LjI1QzE0LjM0NzIgMTYuMjUgMTYuMjUgMTQuMzQ3MiAxNi4yNSAxMkMxNi4yNSAxMS41ODU4IDE2LjU4NTggMTEuMjUgMTcgMTEuMjVDMTcuNDE0MiAxMS4yNSAxNy43NSAxMS41ODU4IDE3Ljc1IDEyQzE3Ljc1IDE1LjE3NTYgMTUuMTc1NiAxNy43NSAxMiAxNy43NUM4LjgyNDM2IDE3Ljc1IDYuMjUgMTUuMTc1NiA2LjI1IDEyWk0xMCAxMS4yNUMxMC40MTQyIDExLjI1IDEwLjc1IDExLjU4NTggMTAuNzUgMTJDMTAuNzUgMTIuNjkwNCAxMS4zMDk2IDEzLjI1IDEyIDEzLjI1QzEyLjQxNDIgMTMuMjUgMTIuNzUgMTMuNTg1OCAxMi43NSAxNEMxMi43NSAxNC40MTQyIDEyLjQxNDIgMTQuNzUgMTIgMTQuNzVDMTAuNDgxMiAxNC43NSA5LjI1IDEzLjUxODggOS4yNSAxMkM5LjI1IDExLjU4NTggOS41ODU3OSAxMS4yNSAxMCAxMS4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/TurntableMinimalistic";
  */
 const TurntableMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TurntableMinimalistic.displayName = "TurntableMinimalistic";
-export default TurntableMinimalistic;
+TurntableMinimalistic.displayName = "TurntableMinimalistic"
+export default TurntableMinimalistic

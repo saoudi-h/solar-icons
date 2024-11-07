@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/HomeSmileAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/HomeSmileAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMTA2MSAyMkgxMC44OTM5QzcuNDQ3MzcgMjIgNS43MjQwOSAyMiA0LjU0OTAzIDIwLjk4ODJDMy4zNzM5NiAxOS45NzY0IDMuMTMwMjUgMTguMjgyNyAyLjY0Mjg0IDE0Ljg5NTJMMi4zNjQwNyAxMi45NTc5QzEuOTg0NjMgMTAuMzIwOCAxLjc5NDkxIDkuMDAyMjkgMi4zMzUzNyA3Ljg3NDk1QzIuODc1ODMgNi43NDc2IDQuMDI2MTkgNi4wNjIzNCA2LjMyNjkxIDQuNjkxODFMNy43MTE3NSAzLjg2Njg3QzkuODAxMDQgMi42MjIyOSAxMC44NDU3IDIgMTIgMkMxMy4xNTQzIDIgMTQuMTk5IDIuNjIyMjkgMTYuMjg4MiAzLjg2Njg3TDE3LjY3MzEgNC42OTE4MUMxOS45NzM4IDYuMDYyMzQgMjEuMTI0MiA2Ljc0NzYgMjEuNjY0NiA3Ljg3NDk1QzIyLjIwNTEgOS4wMDIyOSAyMi4wMTU0IDEwLjMyMDggMjEuNjM1OSAxMi45NTc5TDIxLjM1NzIgMTQuODk1MkMyMC44Njk3IDE4LjI4MjcgMjAuNjI2IDE5Ljk3NjQgMTkuNDUxIDIwLjk4ODJDMTguMjc1OSAyMiAxNi41NTI2IDIyIDEzLjEwNjEgMjJaTTguMzk3NTcgMTUuNTUzMkM4LjY0NDIzIDE1LjIyMDQgOS4xMTM5NSAxNS4xNTA2IDkuNDQ2NzEgMTUuMzk3M0MxMC4xNzUxIDE1LjkzNzEgMTEuMDU0MiAxNi4yNDk4IDEyLjAwMDEgMTYuMjQ5OEMxMi45NDYgMTYuMjQ5OCAxMy44MjUxIDE1LjkzNzEgMTQuNTUzNSAxNS4zOTczQzE0Ljg4NjMgMTUuMTUwNiAxNS4zNTYgMTUuMjIwNCAxNS42MDI2IDE1LjU1MzJDMTUuODQ5MyAxNS44ODU5IDE1Ljc3OTUgMTYuMzU1NyAxNS40NDY3IDE2LjYwMjNDMTQuNDc0MyAxNy4zMjMxIDEzLjI4NTEgMTcuNzQ5OCAxMi4wMDAxIDE3Ljc0OThDMTAuNzE1MSAxNy43NDk4IDkuNTI1OSAxNy4zMjMxIDguNTUzNDkgMTYuNjAyM0M4LjIyMDcyIDE2LjM1NTcgOC4xNTA5MiAxNS44ODU5IDguMzk3NTcgMTUuNTUzMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeSmileAngle";
  */
 const HomeSmileAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeSmileAngle.displayName = "HomeSmileAngle";
-export default HomeSmileAngle;
+HomeSmileAngle.displayName = "HomeSmileAngle"
+export default HomeSmileAngle

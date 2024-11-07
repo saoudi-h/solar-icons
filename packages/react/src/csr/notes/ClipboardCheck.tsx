@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/ClipboardCheck";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/ClipboardCheck"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjUgMkM4LjY3MTU3IDIgOCAyLjY3MTU3IDggMy41VjQuNUM4IDUuMzI4NDMgOC42NzE1NyA2IDkuNSA2SDE0LjVDMTUuMzI4NCA2IDE2IDUuMzI4NDMgMTYgNC41VjMuNUMxNiAyLjY3MTU3IDE1LjMyODQgMiAxNC41IDJIOS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuNSA0LjAzNjYyQzUuMjQyMDkgNC4xMDcxOSA0LjQ0Nzk4IDQuMzA3NjQgMy44Nzg2OCA0Ljg3Njk0QzMgNS43NTU2MiAzIDcuMTY5ODMgMyA5Ljk5ODI2VjE1Ljk5ODNDMyAxOC44MjY3IDMgMjAuMjQwOSAzLjg3ODY4IDIxLjExOTZDNC43NTczNiAyMS45OTgzIDYuMTcxNTcgMjEuOTk4MyA5IDIxLjk5ODNIMTVDMTcuODI4NCAyMS45OTgzIDE5LjI0MjYgMjEuOTk4MyAyMC4xMjEzIDIxLjExOTZDMjEgMjAuMjQwOSAyMSAxOC44MjY3IDIxIDE1Ljk5ODNWOS45OTgyNkMyMSA3LjE2OTgzIDIxIDUuNzU1NjIgMjAuMTIxMyA0Ljg3Njk0QzE5LjU1MiA0LjMwNzY0IDE4Ljc1NzkgNC4xMDcxOSAxNy41IDQuMDM2NjJWNC41QzE3LjUgNi4xNTY4NSAxNi4xNTY5IDcuNSAxNC41IDcuNUg5LjVDNy44NDMxNSA3LjUgNi41IDYuMTU2ODUgNi41IDQuNVY0LjAzNjYyWk0xNS41MTE3IDEyLjU0ODNDMTUuODE0NiAxMi4yNjU3IDE1LjgzMDkgMTEuNzkxMSAxNS41NDgzIDExLjQ4ODNDMTUuMjY1NyAxMS4xODU1IDE0Ljc5MTEgMTEuMTY5MSAxNC40ODgzIDExLjQ1MTdMMTAuNzE0MyAxNC45NzQxTDkuNTExNzQgMTMuODUxN0M5LjIwODkzIDEzLjU2OTEgOC43MzQzNCAxMy41ODU1IDguNDUxNzEgMTMuODg4M0M4LjE2OTA5IDE0LjE5MTEgOC4xODU0NSAxNC42NjU3IDguNDg4MjYgMTQuOTQ4M0wxMC4yMDI1IDE2LjU0ODNDMTAuNDkwNyAxNi44MTcyIDEwLjkzNzkgMTYuODE3MiAxMS4yMjYgMTYuNTQ4M0wxNS41MTE3IDEyLjU0ODNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ClipboardCheck";
  */
 const ClipboardCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClipboardCheck.displayName = "ClipboardCheck";
-export default ClipboardCheck;
+ClipboardCheck.displayName = "ClipboardCheck"
+export default ClipboardCheck

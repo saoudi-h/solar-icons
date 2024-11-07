@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/ChatSquare2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/ChatSquare2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTcgOC4yNUMxNy40MTQyIDguMjUgMTcuNzUgOC41ODU3OSAxNy43NSA5VjE4QzE3Ljc1IDE4LjQxNDIgMTcuNDE0MiAxOC43NSAxNyAxOC43NUMxNi41ODU4IDE4Ljc1IDE2LjI1IDE4LjQxNDIgMTYuMjUgMThWOUMxNi4yNSA4LjU4NTc5IDE2LjU4NTggOC4yNSAxNyA4LjI1Wk0xMi43NSAxMkMxMi43NSAxMS41ODU4IDEyLjQxNDIgMTEuMjUgMTIgMTEuMjVDMTEuNTg1OCAxMS4yNSAxMS4yNSAxMS41ODU4IDExLjI1IDEyVjE4QzExLjI1IDE4LjQxNDIgMTEuNTg1OCAxOC43NSAxMiAxOC43NUMxMi40MTQyIDE4Ljc1IDEyLjc1IDE4LjQxNDIgMTIuNzUgMThWMTJaTTcgMTQuMjVDNy40MTQyMSAxNC4yNSA3Ljc1IDE0LjU4NTggNy43NSAxNVYxOEM3Ljc1IDE4LjQxNDIgNy40MTQyMSAxOC43NSA3IDE4Ljc1QzYuNTg1NzkgMTguNzUgNi4yNSAxOC40MTQyIDYuMjUgMThWMTVDNi4yNSAxNC41ODU4IDYuNTg1NzkgMTQuMjUgNyAxNC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/ChatSquare2";
  */
 const ChatSquare2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatSquare2.displayName = "ChatSquare2";
-export default ChatSquare2;
+ChatSquare2.displayName = "ChatSquare2"
+export default ChatSquare2

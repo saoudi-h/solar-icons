@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/business/Chart2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/business/Chart2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy4yOTI5IDIuMjkyODlDMTcgMi41ODU3OSAxNyAzLjA1NzE5IDE3IDRWMTdDMTcgMTcuOTQyOCAxNyAxOC40MTQyIDE3LjI5MjkgMTguNzA3MUMxNy41ODU4IDE5IDE4LjA1NzIgMTkgMTkgMTlDMTkuOTQyOCAxOSAyMC40MTQyIDE5IDIwLjcwNzEgMTguNzA3MUMyMSAxOC40MTQyIDIxIDE3Ljk0MjggMjEgMTdWNEMyMSAzLjA1NzE5IDIxIDIuNTg1NzkgMjAuNzA3MSAyLjI5Mjg5QzIwLjQxNDIgMiAxOS45NDI4IDIgMTkgMkMxOC4wNTcyIDIgMTcuNTg1OCAyIDE3LjI5MjkgMi4yOTI4OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwIDdDMTAgNi4wNTcxOSAxMCA1LjU4NTc5IDEwLjI5MjkgNS4yOTI4OUMxMC41ODU4IDUgMTEuMDU3MiA1IDEyIDVDMTIuOTQyOCA1IDEzLjQxNDIgNSAxMy43MDcxIDUuMjkyODlDMTQgNS41ODU3OSAxNCA2LjA1NzE5IDE0IDdWMTdDMTQgMTcuOTQyOCAxNCAxOC40MTQyIDEzLjcwNzEgMTguNzA3MUMxMy40MTQyIDE5IDEyLjk0MjggMTkgMTIgMTlDMTEuMDU3MiAxOSAxMC41ODU4IDE5IDEwLjI5MjkgMTguNzA3MUMxMCAxOC40MTQyIDEwIDE3Ljk0MjggMTAgMTdWN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMuMjkyODkgOS4yOTI4OUMzIDkuNTg1NzkgMyAxMC4wNTcyIDMgMTFWMTdDMyAxNy45NDI4IDMgMTguNDE0MiAzLjI5Mjg5IDE4LjcwNzFDMy41ODU3OSAxOSA0LjA1NzE5IDE5IDUgMTlDNS45NDI4MSAxOSA2LjQxNDIxIDE5IDYuNzA3MTEgMTguNzA3MUM3IDE4LjQxNDIgNyAxNy45NDI4IDcgMTdWMTFDNyAxMC4wNTcyIDcgOS41ODU3OSA2LjcwNzExIDkuMjkyODlDNi40MTQyMSA5IDUuOTQyODEgOSA1IDlDNC4wNTcxOSA5IDMuNTg1NzkgOSAzLjI5Mjg5IDkuMjkyODlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0zIDIxLjI1QzIuNTg1NzkgMjEuMjUgMi4yNSAyMS41ODU4IDIuMjUgMjJDMi4yNSAyMi40MTQyIDIuNTg1NzkgMjIuNzUgMyAyMi43NUgyMUMyMS40MTQyIDIyLjc1IDIxLjc1IDIyLjQxNDIgMjEuNzUgMjJDMjEuNzUgMjEuNTg1OCAyMS40MTQyIDIxLjI1IDIxIDIxLjI1SDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/Chart2";
  */
 const Chart2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Chart2.displayName = "Chart2";
-export default Chart2;
+Chart2.displayName = "Chart2"
+export default Chart2

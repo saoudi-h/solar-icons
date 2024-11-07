@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/settings/Widget6";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/settings/Widget6"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDYuNUMyIDQuMDE0NzIgNC4wMTQ3MiAyIDYuNSAyQzguOTg1MjggMiAxMSA0LjAxNDcyIDExIDYuNVY5LjVDMTEgOS44NDg3NCAxMSAxMC4wMjMxIDEwLjk2MTcgMTAuMTY2MkMxMC44NTc2IDEwLjU1NDQgMTAuNTU0NCAxMC44NTc2IDEwLjE2NjIgMTAuOTYxN0MxMC4wMjMxIDExIDkuODQ4NzQgMTEgOS41IDExSDYuNUM0LjAxNDcyIDExIDIgOC45ODUyOCAyIDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEzIDE0LjVDMTMgMTQuMTUxMyAxMyAxMy45NzY5IDEzLjAzODMgMTMuODMzOEMxMy4xNDI0IDEzLjQ0NTYgMTMuNDQ1NiAxMy4xNDI0IDEzLjgzMzggMTMuMDM4M0MxMy45NzY5IDEzIDE0LjE1MTMgMTMgMTQuNSAxM0gxNy41QzE5Ljk4NTMgMTMgMjIgMTUuMDE0NyAyMiAxNy41QzIyIDE5Ljk4NTMgMTkuOTg1MyAyMiAxNy41IDIyQzE1LjAxNDcgMjIgMTMgMTkuOTg1MyAxMyAxNy41VjE0LjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yIDE3LjVDMiAxNS4wMTQ3IDQuMDE0NzIgMTMgNi41IDEzSDkuMkM5LjgzMDA2IDEzIDEwLjE0NTEgMTMgMTAuMzg1NyAxMy4xMjI2QzEwLjU5NzQgMTMuMjMwNSAxMC43Njk1IDEzLjQwMjYgMTAuODc3NCAxMy42MTQzQzExIDEzLjg1NDkgMTEgMTQuMTY5OSAxMSAxNC44VjE3LjVDMTEgMTkuOTg1MyA4Ljk4NTI4IDIyIDYuNSAyMkM0LjAxNDcyIDIyIDIgMTkuOTg1MyAyIDE3LjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMyA2LjVDMTMgNC4wMTQ3MiAxNS4wMTQ3IDIgMTcuNSAyQzE5Ljk4NTMgMiAyMiA0LjAxNDcyIDIyIDYuNUMyMiA4Ljk4NTI4IDE5Ljk4NTMgMTEgMTcuNSAxMUgxNC4yODU3QzE0LjEzNjUgMTEgMTQuMDYxOCAxMSAxMy45OTkgMTAuOTkyOUMxMy40Nzc1IDEwLjkzNDIgMTMuMDY1OCAxMC41MjI1IDEzLjAwNzEgMTAuMDAxQzEzIDkuOTM4MTggMTMgOS44NjM1NSAxMyA5LjcxNDI5VjYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/Widget6";
  */
 const Widget6: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Widget6.displayName = "Widget6";
-export default Widget6;
+Widget6.displayName = "Widget6"
+export default Widget6

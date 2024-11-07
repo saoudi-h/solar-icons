@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/PlaylistMinimalistic2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/PlaylistMinimalistic2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuNzUgNkMxNS43NSA2LjQxNDIxIDE1LjQxNDIgNi43NSAxNSA2Ljc1SDNDMi41ODU3OSA2Ljc1IDIuMjUgNi40MTQyMSAyLjI1IDZDMi4yNSA1LjU4NTc5IDIuNTg1NzkgNS4yNSAzIDUuMjVIMTVDMTUuNDE0MiA1LjI1IDE1Ljc1IDUuNTg1NzkgMTUuNzUgNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy43NSAxMEMxMy43NSAxMC40MTQyIDEzLjQxNDIgMTAuNzUgMTMgMTAuNzVIM0MyLjU4NTc5IDEwLjc1IDIuMjUgMTAuNDE0MiAyLjI1IDEwQzIuMjUgOS41ODU3OSAyLjU4NTc5IDkuMjUgMyA5LjI1SDEzQzEzLjQxNDIgOS4yNSAxMy43NSA5LjU4NTc5IDEzLjc1IDEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTkuNzUgMTRDOS43NSAxNC40MTQyIDkuNDE0MjEgMTQuNzUgOSAxNC43NUgzQzIuNTg1NzkgMTQuNzUgMi4yNSAxNC40MTQyIDIuMjUgMTRDMi4yNSAxMy41ODU4IDIuNTg1NzkgMTMuMjUgMyAxMy4yNUg5QzkuNDE0MjEgMTMuMjUgOS43NSAxMy41ODU4IDkuNzUgMTRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC43NSAxOEM4Ljc1IDE4LjQxNDIgOC40MTQyMSAxOC43NSA4IDE4Ljc1SDNDMi41ODU3OSAxOC43NSAyLjI1IDE4LjQxNDIgMi4yNSAxOEMyLjI1IDE3LjU4NTggMi41ODU3OSAxNy4yNSAzIDE3LjI1SDhDOC40MTQyMSAxNy4yNSA4Ljc1IDE3LjU4NTggOC43NSAxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3IDcuMjVDMTcuNDE0MiA3LjI1IDE3Ljc1IDcuNTg1NzkgMTcuNzUgOEMxNy43NSA5Ljc5NDkzIDE5LjIwNTEgMTEuMjUgMjEgMTEuMjVDMjEuNDE0MiAxMS4yNSAyMS43NSAxMS41ODU4IDIxLjc1IDEyQzIxLjc1IDEyLjQxNDIgMjEuNDE0MiAxMi43NSAyMSAxMi43NUMxOS43NDI4IDEyLjc1IDE4LjU5OTcgMTIuMjYxNiAxNy43NSAxMS40NjQxVjE2LjVDMTcuNzUgMTguMjk0OSAxNi4yOTQ5IDE5Ljc1IDE0LjUgMTkuNzVDMTIuNzA1MSAxOS43NSAxMS4yNSAxOC4yOTQ5IDExLjI1IDE2LjVDMTEuMjUgMTQuNzA1MSAxMi43MDUxIDEzLjI1IDE0LjUgMTMuMjVDMTUuMTQ0MyAxMy4yNSAxNS43NDQ5IDEzLjQzNzUgMTYuMjUgMTMuNzYwOVY4QzE2LjI1IDcuNTg1NzkgMTYuNTg1OCA3LjI1IDE3IDcuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/PlaylistMinimalistic2";
  */
 const PlaylistMinimalistic2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PlaylistMinimalistic2.displayName = "PlaylistMinimalistic2";
-export default PlaylistMinimalistic2;
+PlaylistMinimalistic2.displayName = "PlaylistMinimalistic2"
+export default PlaylistMinimalistic2

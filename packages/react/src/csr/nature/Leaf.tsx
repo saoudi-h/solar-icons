@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/nature/Leaf";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/nature/Leaf"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS4yNSAyLjA4MjU4QzExLjAwNjYgMi4xMzY4NCAxMC43Njc1IDIuMjE3ODIgMTAuNTM3MSAyLjMyNTU0QzYuNTUzMzIgNC4xODc1OCA0IDkuMzk0NTIgNCAxMy44NTY3QzQgMTguMDk2NyA3LjE4MzQxIDIxLjU3OTggMTEuMjUgMjEuOTY0N1YyLjA4MjU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIuNzUgMjEuOTY0N0MxNi44MTY2IDIxLjU3OTggMjAgMTguMDk2NyAyMCAxMy44NTY3QzIwIDEzLjQ1MDcgMTkuOTc4OSAxMy4wMzg1IDE5LjkzNzQgMTIuNjIzMkwxMi43NSAxOS44MTA2VjIxLjk2NDdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xOC4yNTk3IDcuMTc5NjRDMTcuODcwNyA2LjQ1NDgyIDE3LjQyMjIgNS43NjgxNSAxNi45MiA1LjE0MDY4TDEyLjc1IDkuMzEwNjVWMTIuNjg5M0wxOC4yNTk3IDcuMTc5NjRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNS45MDg0IDQuMDMwODhDMTUuMTczMiAzLjMyNTY1IDE0LjM1MzggMi43NDE5NSAxMy40NjI5IDIuMzI1NTRDMTMuMjMyNSAyLjIxNzgyIDEyLjk5MzQgMi4xMzY4NCAxMi43NSAyLjA4MjU4VjcuMTg5MzNMMTUuOTA4NCA0LjAzMDg4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTguOTM2NCA4LjYyNDIxTDEyLjc1IDE0LjgxMDZWMTcuNjg5M0wxOS41IDEwLjkzOTNMMTkuNjMxOSAxMC44MDc0QzE5LjQ1OCAxMC4wNjk3IDE5LjIyNDYgOS4zMzYzMyAxOC45MzY0IDguNjI0MjFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/nature/Leaf";
  */
 const Leaf: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Leaf.displayName = "Leaf";
-export default Leaf;
+Leaf.displayName = "Leaf"
+export default Leaf

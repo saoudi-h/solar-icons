@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/shopping/Bag3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/shopping/Bag3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS41NzM4NiA0LjY5MTQ3QzQuNzQwNjggNS4zODI5NSA0LjUyMTIyIDYuNTUzMzkgNC4wODIzMSA4Ljg5NDI3TDMuMzMyMzEgMTIuODk0M0MyLjcxNTEyIDE2LjE4NiAyLjQwNjUyIDE3LjgzMTggMy4zMDYyNCAxOC45MTU5QzQuMjA1OTUgMjAgNS44ODA0OCAyMCA5LjIyOTU0IDIwSDE0Ljc3MDRDMTguMTE5NSAyMCAxOS43OTQgMjAgMjAuNjkzNyAxOC45MTU5QzIxLjU5MzQgMTcuODMxOCAyMS4yODQ5IDE2LjE4NiAyMC42Njc3IDEyLjg5NDNMMTkuOTE3NyA4Ljg5NDI3QzE5LjQ3ODcgNi41NTMzOSAxOS4yNTkzIDUuMzgyOTUgMTguNDI2MSA0LjY5MTQ3QzE3LjU5MjkgNCAxNi40MDIxIDQgMTQuMDIwNCA0SDkuOTc5NTRDNy41OTc4NyA0IDYuNDA3MDMgNCA1LjU3Mzg2IDQuNjkxNDdaTTkuODc4MjIgNy43NTAwN0MxMC4xODc1IDguNjI0OTcgMTEuMDIxOSA5LjI1IDEyLjAwMDQgOS4yNUMxMi45Nzg5IDkuMjUgMTMuODEzMyA4LjYyNDk3IDE0LjEyMjUgNy43NTAwN0MxNC4yNjA2IDcuMzU5NTMgMTQuNjg5MSA3LjE1NDgzIDE1LjA3OTYgNy4yOTI4N0MxNS40NzAxIDcuNDMwOTEgMTUuNjc0OCA3Ljg1OTQgMTUuNTM2OCA4LjI0OTkzQzE1LjAyMjQgOS43MDU0MSAxMy42MzQzIDEwLjc1IDEyLjAwMDQgMTAuNzVDMTAuMzY2NCAxMC43NSA4Ljk3ODM5IDkuNzA1NDEgOC40NjM5NiA4LjI0OTkzQzguMzI1OTIgNy44NTk0IDguNTMwNjEgNy40MzA5MSA4LjkyMTE1IDcuMjkyODdDOS4zMTE2OSA3LjE1NDgzIDkuNzQwMTggNy4zNTk1MyA5Ljg3ODIyIDcuNzUwMDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/Bag3";
  */
 const Bag3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bag3.displayName = "Bag3";
-export default Bag3;
+Bag3.displayName = "Bag3"
+export default Bag3

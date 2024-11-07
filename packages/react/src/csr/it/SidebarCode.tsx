@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/SidebarCode";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/SidebarCode"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMUMyIDcuMjI4NzcgMiA1LjM0MzE1IDMuMTcxNTcgNC4xNzE1OEM0LjM0MzE1IDMuMDAwMDEgNi4yMjg3NiAzLjAwMDAxIDEwIDMuMDAwMDFIMTRIMTQuMjVMMTQuMjUgMjFIMTRIMTBDNi4yMjg3NiAyMSA0LjM0MzE1IDIxIDMuMTcxNTcgMTkuODI4NEMyIDE4LjY1NjkgMiAxNi43NzEyIDIgMTNWMTFaTTE1Ljc1IDIwLjk5NDRMMTUuNzUgMy4wMDU2QzE4LjM4NTkgMy4wMzMyMSAxOS44NTQxIDMuMTk3MjUgMjAuODI4NCA0LjE3MTU4QzIyIDUuMzQzMTUgMjIgNy4yMjg3NyAyMiAxMVYxM0MyMiAxNi43NzEyIDIyIDE4LjY1NjkgMjAuODI4NCAxOS44Mjg0QzE5Ljg1NDEgMjAuODAyOCAxOC4zODU5IDIwLjk2NjggMTUuNzUgMjAuOTk0NFpNOS45Njk2NyAxNS40Njk3QzEwLjI2MjYgMTUuMTc2OCAxMC43Mzc0IDE1LjE3NjggMTEuMDMwMyAxNS40Njk3TDEyLjAzMDMgMTYuNDY5N0MxMi4zMjMyIDE2Ljc2MjYgMTIuMzIzMiAxNy4yMzc0IDEyLjAzMDMgMTcuNTMwM0wxMS4wMzAzIDE4LjUzMDNDMTAuNzM3NCAxOC44MjMyIDEwLjI2MjYgMTguODIzMiA5Ljk2OTY3IDE4LjUzMDNDOS42NzY3OCAxOC4yMzc0IDkuNjc2NzggMTcuNzYyNiA5Ljk2OTY3IDE3LjQ2OTdMMTAuNDM5MyAxN0w5Ljk2OTY3IDE2LjUzMDNDOS42NzY3OCAxNi4yMzc0IDkuNjc2NzggMTUuNzYyNiA5Ljk2OTY3IDE1LjQ2OTdaTTkuNzAyMjUgMTQuMjYzM0M5Ljg0NzY5IDEzLjg3NTUgOS42NTExOCAxMy40NDMyIDkuMjYzMzQgMTMuMjk3OEM4Ljg3NTUgMTMuMTUyMyA4LjQ0MzE5IDEzLjM0ODggOC4yOTc3NSAxMy43MzY3TDYuNzk3NzUgMTcuNzM2N0M2LjY1MjMxIDE4LjEyNDUgNi44NDg4MiAxOC41NTY4IDcuMjM2NjYgMTguNzAyM0M3LjYyNDUgMTguODQ3NyA4LjA1NjgxIDE4LjY1MTIgOC4yMDIyNSAxOC4yNjMzTDkuNzAyMjUgMTQuMjYzM1pNNi41MzAzMyAxMy40Njk3QzYuODIzMjIgMTMuNzYyNiA2LjgyMzIyIDE0LjIzNzQgNi41MzAzMyAxNC41MzAzTDYuMDYwNjYgMTVMNi41MzAzMyAxNS40Njk3QzYuODIzMjIgMTUuNzYyNiA2LjgyMzIyIDE2LjIzNzQgNi41MzAzMyAxNi41MzAzQzYuMjM3NDQgMTYuODIzMiA1Ljc2MjU2IDE2LjgyMzIgNS40Njk2NyAxNi41MzAzTDQuNDY5NjcgMTUuNTMwM0M0LjE3Njc4IDE1LjIzNzQgNC4xNzY3OCAxNC43NjI2IDQuNDY5NjcgMTQuNDY5N0w1LjQ2OTY3IDEzLjQ2OTdDNS43NjI1NiAxMy4xNzY4IDYuMjM3NDQgMTMuMTc2OCA2LjUzMDMzIDEzLjQ2OTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/SidebarCode";
  */
 const SidebarCode: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SidebarCode.displayName = "SidebarCode";
-export default SidebarCode;
+SidebarCode.displayName = "SidebarCode"
+export default SidebarCode

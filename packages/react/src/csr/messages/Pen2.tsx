@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Pen2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Pen2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNSAyMkMzLjI1IDIxLjU4NTggMy41ODU3OSAyMS4yNSA0IDIxLjI1SDIwQzIwLjQxNDIgMjEuMjUgMjAuNzUgMjEuNTg1OCAyMC43NSAyMkMyMC43NSAyMi40MTQyIDIwLjQxNDIgMjIuNzUgMjAgMjIuNzVINEMzLjU4NTc5IDIyLjc1IDMuMjUgMjIuNDE0MiAzLjI1IDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTEuNTIwMSAxNC45MjlMMTEuNTIwMSAxNC45Mjg5TDE3LjQzNjggOS4wMTIyNUMxNi42MzE1IDguNjc3MSAxNS42Nzc3IDguMTI2NTYgMTQuNzc1NyA3LjIyNDU1QzEzLjg3MzYgNi4zMjIzOCAxMy4zMjMgNS4zNjg0NiAxMi45ODc5IDQuNTYzMTJMNy4wNzEwNiAxMC40Nzk5TDcuMDcxMDEgMTAuNDhDNi42MDkzMiAxMC45NDE3IDYuMzc4NDYgMTEuMTcyNSA2LjE3OTkyIDExLjQyNzFDNS45NDU3MSAxMS43MjczIDUuNzQ0OTEgMTIuMDUyMiA1LjU4MTA3IDEyLjM5NkM1LjQ0MjE5IDEyLjY4NzQgNS4zMzg5NCAxMi45OTcyIDUuMTMyNDUgMTMuNjE2N0w0LjA0MzU2IDE2Ljg4MzNDMy45NDE5NCAxNy4xODgyIDQuMDIxMjggMTcuNTI0MyA0LjI0ODUgMTcuNzUxNUM0LjQ3NTczIDE3Ljk3ODcgNC44MTE4MiAxOC4wNTgxIDUuMTE2NjcgMTcuOTU2NEw4LjM4MzM0IDE2Ljg2NzZDOS4wMDI4MSAxNi42NjExIDkuMzEyNTYgMTYuNTU3OCA5LjYwMzk4IDE2LjQxODlDOS45NDc3NSAxNi4yNTUxIDEwLjI3MjcgMTYuMDU0MyAxMC41NzI5IDE1LjgyMDFDMTAuODI3NSAxNS42MjE1IDExLjA1ODQgMTUuMzkwNyAxMS41MjAxIDE0LjkyOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE5LjA3ODYgNy4zNzA0NEMyMC4zMDcxIDYuMTQxODggMjAuMzA3MSA0LjE0OTk5IDE5LjA3ODYgMi45MjE0MkMxNy44NSAxLjY5Mjg2IDE1Ljg1ODEgMS42OTI4NiAxNC42Mjk2IDIuOTIxNDJMMTMuOTE5OSAzLjYzMTA1QzEzLjkyOTYgMy42NjA0IDEzLjkzOTcgMy42OTAxNSAxMy45NTAyIDMuNzIwMjhDMTQuMjEwMyA0LjQ3IDE0LjcwMSA1LjQ1MjgxIDE1LjYyNDMgNi4zNzYwMkMxNi41NDc1IDcuMjk5MjMgMTcuNTMwMyA3Ljc4OTk5IDE4LjI4IDguMDUwMDlDMTguMzEgOC4wNjA1IDE4LjMzOTYgOC4wNzA1NCAxOC4zNjg4IDguMDgwMjFMMTkuMDc4NiA3LjM3MDQ0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Pen2";
  */
 const Pen2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pen2.displayName = "Pen2";
-export default Pen2;
+Pen2.displayName = "Pen2"
+export default Pen2

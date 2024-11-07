@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/Exit";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/Exit"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS43MDcyNSAyLjQwODdDOSAzLjAzNTY5IDkgNC4xODI1OSA5IDYuNDc2NFYxNy41MjM2QzkgMTkuODE3NCA5IDIwLjk2NDMgOS43MDcyNSAyMS41OTEzQzEwLjQxNDUgMjIuMjE4MyAxMS40OTU1IDIyLjAyOTcgMTMuNjU3NiAyMS42NTI2TDE1Ljk4NjQgMjEuMjQ2NUMxOC4zODA5IDIwLjgyODggMTkuNTc4MSAyMC42MiAyMC4yODkxIDE5Ljc0MTdDMjEgMTguODYzNSAyMSAxNy41OTMzIDIxIDE1LjA1MjlWOC45NDcxMUMyMSA2LjQwNjcxIDIxIDUuMTM2NTIgMjAuMjg5MSA0LjI1ODI2QzE5LjU3ODEgMy4zNzk5OSAxOC4zODA5IDMuMTcxMTggMTUuOTg2NCAyLjc1MzU0TDEzLjY1NzYgMi4zNDczNkMxMS40OTU1IDEuOTcwMjYgMTAuNDE0NSAxLjc4MTcxIDkuNzA3MjUgMi40MDg3Wk0xMiAxMC4xNjg2QzEyLjQxNDIgMTAuMTY4NiAxMi43NSAxMC41MiAxMi43NSAxMC45NTM1VjEzLjA0NjVDMTIuNzUgMTMuNDggMTIuNDE0MiAxMy44MzE0IDEyIDEzLjgzMTRDMTEuNTg1OCAxMy44MzE0IDExLjI1IDEzLjQ4IDExLjI1IDEzLjA0NjVWMTAuOTUzNUMxMS4yNSAxMC41MiAxMS41ODU4IDEwLjE2ODYgMTIgMTAuMTY4NloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuNTQ3MTcgNC41QzUuNDg4ODkgNC41MDMgNC40MTU5OSA0LjU0ODI2IDMuNzMyMjMgNS4yMzIwMkMzIDUuOTY0MjUgMyA3LjE0Mjc2IDMgOS40OTk3OVYxNC40OTk4QzMgMTYuODU2OCAzIDE4LjAzNTMgMy43MzIyMyAxOC43Njc2QzQuNDE1OTkgMTkuNDUxMyA1LjQ4ODg5IDE5LjQ5NjYgNy41NDcxNyAxOS40OTk2QzcuNDk5ODUgMTguODc2MyA3LjQ5OTkyIDE4LjE1NTcgNy41MDAwMSAxNy4zNzY4VjYuNjIyN0M3LjQ5OTkyIDUuODQzODggNy40OTk4NSA1LjEyMzMgNy41NDcxNyA0LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Exit";
  */
 const Exit: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Exit.displayName = "Exit";
-export default Exit;
+Exit.displayName = "Exit"
+export default Exit

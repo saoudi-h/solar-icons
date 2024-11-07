@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/astronomy/Asteroid";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/astronomy/Asteroid"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTQuMTI2NiAyIDE2LjA5ODIgMi42NjM4MyAxNy43MTg4IDMuNzk1NTlDMTYuNzk5OCA0Ljk0ODc0IDE2LjI1IDYuNDExMDUgMTYuMjUgNy45OTk3NEMxNi4yNSAxMS4yNjc1IDE4LjU3MTMgMTMuOTkxNCAyMS42NTQ1IDE0LjYxNTVDMjAuNTA0NyAxOC44Njk4IDE2LjYxNzkgMjIgMTIgMjJDMTEuMzYxNSAyMiAxMC43MzY5IDIxLjk0MDIgMTAuMTMxNiAyMS44MjU4QzEwLjUyODcgMjAuOTY1MyAxMC43NSAyMC4wMDc1IDEwLjc1IDE5QzEwLjc1IDE1LjI3MjEgNy43Mjc5IDEyLjI1IDMuOTk5OTggMTIuMjVDMy4zMTAxNCAxMi4yNSAyLjY0MzIzIDEyLjM1MzcgMi4wMTQ3IDEyLjU0NjlDMi4wMDQ5NCAxMi4zNjU4IDIgMTIuMTgzNSAyIDEyWk0xNiAxNkMxNiAxNi41NTIzIDE1LjU1MjMgMTcgMTUgMTdDMTQuNDQ3NyAxNyAxNCAxNi41NTIzIDE0IDE2QzE0IDE1LjQ0NzcgMTQuNDQ3NyAxNSAxNSAxNUMxNS41NTIzIDE1IDE2IDE1LjQ0NzcgMTYgMTZaTTEwLjUgMTFDMTEuODgwNyAxMSAxMyA5Ljg4MDcxIDEzIDguNUMxMyA3LjExOTI5IDExLjg4MDcgNiAxMC41IDZDOS4xMTkyOSA2IDggNy4xMTkyOSA4IDguNUM4IDkuODgwNzEgOS4xMTkyOSAxMSAxMC41IDExWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcuNzUgNy45OTk3NEMxNy43NSA2Ljc2ODk5IDE4LjE3MjYgNS42Mzg5NiAxOC44ODEyIDQuNzQzOTZDMjAuODAyMSA2LjU2NjI0IDIyIDkuMTQzMjIgMjIgMTJDMjIgMTIuMzg2MSAyMS45NzgxIDEyLjc2NzIgMjEuOTM1NSAxMy4xNDE5QzE5LjU0NjMgMTIuNjUwMyAxNy43NSAxMC41MzQgMTcuNzUgNy45OTk3NFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTguNjU3NzggMjEuNDI3OEM1LjQwODI1IDIwLjI3NTggMi45MzExNiAxNy40OTE0IDIuMjEyNTIgMTQuMDYwNUwyLjMyNDQ3IDE0LjAyMjhDMi44NDk2OSAxMy44NDYxIDMuNDEyODQgMTMuNzUgMy45OTk5OCAxMy43NUM2Ljg5OTQ4IDEzLjc1IDkuMjQ5OTggMTYuMTAwNSA5LjI0OTk4IDE5QzkuMjQ5OTggMTkuODM1MSA5LjA1NTU1IDIwLjYyMjYgOC43MTAxNyAyMS4zMjE4TDguNjU3NzggMjEuNDI3OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/astronomy/Asteroid";
  */
 const Asteroid: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Asteroid.displayName = "Asteroid";
-export default Asteroid;
+Asteroid.displayName = "Asteroid"
+export default Asteroid

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/Sofa2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/Sofa2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDEzVjEyQzcgMTAuMzQ1NCA1LjY2MDUzIDkuMDAzNjggNC4wMDY4MSA5LjAwMDAxQzQuMDE1MjcgOC42NzE5OSA0LjAzNDI2IDguNDMzNzkgNC4wNzY4NiA4LjIxOTY0QzQuMzkyNDkgNi42MzI4OCA1LjYzMjg4IDUuMzkyNDkgNy4yMTk2NCA1LjA3Njg2QzcuNjA2MDMgNSA4LjA3MDY5IDUgOSA1SDExLjI1VjEzSDdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi43NSAxM0gxN1YxMkMxNyAxMC4zNDU0IDE4LjMzOTUgOS4wMDM2OCAxOS45OTMyIDkuMDAwMDFDMTkuOTg0NyA4LjY3MTk5IDE5Ljk2NTcgOC40MzM3OSAxOS45MjMxIDguMjE5NjRDMTkuNjA3NSA2LjYzMjg4IDE4LjM2NzEgNS4zOTI0OSAxNi43ODA0IDUuMDc2ODZDMTYuMzk0IDUgMTUuOTI5MyA1IDE1IDVIMTIuNzVWMTNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xOC40NDQ0IDE4SDUuNTU1NTZDNS4yNzg0OSAxOCA1LjAwODgzIDE3Ljk2ODMgNC43NSAxNy45MDg0VjE5QzQuNzUgMTkuNDE0MiA0LjQxNDIxIDE5Ljc1IDQgMTkuNzVDMy41ODU3OSAxOS43NSAzLjI1IDE5LjQxNDIgMy4yNSAxOVYxNy4xNTEzQzIuNDg1MDggMTYuNDk5MSAyIDE1LjUyODQgMiAxNC40NDQ0VjEyQzIgMTAuODk1NCAyLjg5NTQzIDEwIDQgMTBDNS4xMDQ1NyAxMCA2IDEwLjg5NTQgNiAxMlYxMy4yQzYgMTMuNjQxOCA2LjM1ODE3IDE0IDYuOCAxNEgxNy4yQzE3LjY0MTggMTQgMTggMTMuNjQxOCAxOCAxMy4yVjEyQzE4IDEwLjg5NTQgMTguODk1NCAxMCAyMCAxMEMyMS4xMDQ2IDEwIDIyIDEwLjg5NTQgMjIgMTJWMTQuNDQ0NEMyMiAxNS41Mjg0IDIxLjUxNDkgMTYuNDk5MSAyMC43NSAxNy4xNTEzVjE5QzIwLjc1IDE5LjQxNDIgMjAuNDE0MiAxOS43NSAyMCAxOS43NUMxOS41ODU4IDE5Ljc1IDE5LjI1IDE5LjQxNDIgMTkuMjUgMTlWMTcuOTA4NEMxOC45OTEyIDE3Ljk2ODMgMTguNzIxNSAxOCAxOC40NDQ0IDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Sofa2";
  */
 const Sofa2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sofa2.displayName = "Sofa2";
-export default Sofa2;
+Sofa2.displayName = "Sofa2"
+export default Sofa2

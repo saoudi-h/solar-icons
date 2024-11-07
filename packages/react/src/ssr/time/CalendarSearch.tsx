@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/time/CalendarSearch";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/time/CalendarSearch"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTggMTUuNzVDMTYuNzU3NCAxNS43NSAxNS43NSAxNi43NTc0IDE1Ljc1IDE4QzE1Ljc1IDE5LjI0MjYgMTYuNzU3NCAyMC4yNSAxOCAyMC4yNUMxOS4yNDI2IDIwLjI1IDIwLjI1IDE5LjI0MjYgMjAuMjUgMThDMjAuMjUgMTYuNzU3NCAxOS4yNDI2IDE1Ljc1IDE4IDE1Ljc1Wk0xNC4yNSAxOEMxNC4yNSAxNS45Mjg5IDE1LjkyODkgMTQuMjUgMTggMTQuMjVDMjAuMDcxMSAxNC4yNSAyMS43NSAxNS45Mjg5IDIxLjc1IDE4QzIxLjc1IDE4Ljc2NDMgMjEuNTIxMyAxOS40NzUyIDIxLjEyODcgMjAuMDY4TDIyLjUzMDMgMjEuNDY5N0MyMi44MjMyIDIxLjc2MjYgMjIuODIzMiAyMi4yMzc0IDIyLjUzMDMgMjIuNTMwM0MyMi4yMzc0IDIyLjgyMzIgMjEuNzYyNiAyMi44MjMyIDIxLjQ2OTcgMjIuNTMwM0wyMC4wNjggMjEuMTI4N0MxOS40NzUyIDIxLjUyMTMgMTguNzY0MyAyMS43NSAxOCAyMS43NUMxNS45Mjg5IDIxLjc1IDE0LjI1IDIwLjA3MTEgMTQuMjUgMThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03Ljc1IDIuNUM3Ljc1IDIuMDg1NzkgNy40MTQyMSAxLjc1IDcgMS43NUM2LjU4NTc5IDEuNzUgNi4yNSAyLjA4NTc5IDYuMjUgMi41VjQuMDc5MjZDNC44MTA2NyA0LjE5NDUxIDMuODY1NzcgNC40NzczNyAzLjE3MTU3IDUuMTcxNTdDMi40NzczNyA1Ljg2NTc3IDIuMTk0NTEgNi44MTA2NyAyLjA3OTI2IDguMjVIMjEuOTIwN0MyMS44MDU1IDYuODEwNjcgMjEuNTIyNiA1Ljg2NTc3IDIwLjgyODQgNS4xNzE1N0MyMC4xMzQyIDQuNDc3MzcgMTkuMTg5MyA0LjE5NDUxIDE3Ljc1IDQuMDc5MjZWMi41QzE3Ljc1IDIuMDg1NzkgMTcuNDE0MiAxLjc1IDE3IDEuNzVDMTYuNTg1OCAxLjc1IDE2LjI1IDIuMDg1NzkgMTYuMjUgMi41VjQuMDEyOUMxNS41ODQ3IDQgMTQuODM5IDQgMTQgNEgxMEM5LjE2MDk3IDQgOC40MTUyNyA0IDcuNzUgNC4wMTI5VjIuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDEyVjE0QzIyIDE0LjIwNTMgMjIgMTQuNDA1IDIxLjk5OTggMTQuNTk5MkMyMS4wMzY4IDEzLjQ2NzcgMTkuNjAyMiAxMi43NSAxOCAxMi43NUMxNS4xMDA1IDEyLjc1IDEyLjc1IDE1LjEwMDUgMTIuNzUgMThDMTIuNzUgMTkuNjAyMiAxMy40Njc3IDIxLjAzNjggMTQuNTk5MiAyMS45OTk4QzE0LjQwNSAyMiAxNC4yMDUzIDIyIDE0IDIySDEwQzYuMjI4NzYgMjIgNC4zNDMxNSAyMiAzLjE3MTU3IDIwLjgyODRDMiAxOS42NTY5IDIgMTcuNzcxMiAyIDE0VjEyQzIgMTEuMTYxIDIgMTAuNDE1MyAyLjAxMjkgOS43NUgyMS45ODcxQzIyIDEwLjQxNTMgMjIgMTEuMTYxIDIyIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/CalendarSearch";
  */
 const CalendarSearch: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CalendarSearch.displayName = "CalendarSearch";
-export default CalendarSearch;
+CalendarSearch.displayName = "CalendarSearch"
+export default CalendarSearch

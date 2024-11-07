@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/MenuDotsCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/MenuDotsCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk04IDEzQzguNTUyMjggMTMgOSAxMi41NTIzIDkgMTJDOSAxMS40NDc3IDguNTUyMjggMTEgOCAxMUM3LjQ0NzcyIDExIDcgMTEuNDQ3NyA3IDEyQzcgMTIuNTUyMyA3LjQ0NzcyIDEzIDggMTNaTTEyIDEzQzEyLjU1MjMgMTMgMTMgMTIuNTUyMyAxMyAxMkMxMyAxMS40NDc3IDEyLjU1MjMgMTEgMTIgMTFDMTEuNDQ3NyAxMSAxMSAxMS40NDc3IDExIDEyQzExIDEyLjU1MjMgMTEuNDQ3NyAxMyAxMiAxM1pNMTYgMTNDMTYuNTUyMyAxMyAxNyAxMi41NTIzIDE3IDEyQzE3IDExLjQ0NzcgMTYuNTUyMyAxMSAxNiAxMUMxNS40NDc3IDExIDE1IDExLjQ0NzcgMTUgMTJDMTUgMTIuNTUyMyAxNS40NDc3IDEzIDE2IDEzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/MenuDotsCircle";
  */
 const MenuDotsCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MenuDotsCircle.displayName = "MenuDotsCircle";
-export default MenuDotsCircle;
+MenuDotsCircle.displayName = "MenuDotsCircle"
+export default MenuDotsCircle

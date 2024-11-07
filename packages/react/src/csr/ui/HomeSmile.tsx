@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/HomeSmile";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/HomeSmile"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi41MTkyIDcuODIyNzRDMiA4Ljc3MTI4IDIgOS45MTU0OSAyIDEyLjIwMzlWMTMuNzI1QzIgMTcuNjI1OCAyIDE5LjU3NjMgMy4xNzE1NyAyMC43ODgxQzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC43ODgxQzIyIDE5LjU3NjMgMjIgMTcuNjI1OCAyMiAxMy43MjVWMTIuMjAzOUMyMiA5LjkxNTQ5IDIyIDguNzcxMjggMjEuNDgwOCA3LjgyMjc0QzIwLjk2MTYgNi44NzQyMSAyMC4wMTMxIDYuMjg1NTEgMTguMTE2IDUuMTA4MTJMMTYuMTE2IDMuODY2ODdDMTQuMTEwNiAyLjYyMjI5IDEzLjEwNzkgMiAxMiAyQzEwLjg5MjEgMiA5Ljg4OTM5IDIuNjIyMjkgNy44ODQwMyAzLjg2Njg3TDUuODg0MDMgNS4xMDgxM0MzLjk4Njk1IDYuMjg1NTEgMy4wMzg0IDYuODc0MjEgMi41MTkyIDcuODIyNzRaTTkuNDQ2NjEgMTUuMzk3NUM5LjExMzg1IDE1LjE1MDggOC42NDQxMyAxNS4yMjA2IDguMzk3NDcgMTUuNTUzNEM4LjE1MDgyIDE1Ljg4NjIgOC4yMjA2MiAxNi4zNTU5IDguNTUzMzkgMTYuNjAyNUM5LjUyNTggMTcuMzIzMyAxMC43MTUgMTcuNzUgMTIgMTcuNzVDMTMuMjg1IDE3Ljc1IDE0LjQ3NDIgMTcuMzIzMyAxNS40NDY2IDE2LjYwMjVDMTUuNzc5NCAxNi4zNTU5IDE1Ljg0OTIgMTUuODg2MiAxNS42MDI1IDE1LjU1MzRDMTUuMzU1OSAxNS4yMjA2IDE0Ljg4NjIgMTUuMTUwOCAxNC41NTM0IDE1LjM5NzVDMTMuODI1IDE1LjkzNzMgMTIuOTQ1OSAxNi4yNSAxMiAxNi4yNUMxMS4wNTQxIDE2LjI1IDEwLjE3NSAxNS45MzczIDkuNDQ2NjEgMTUuMzk3NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeSmile";
  */
 const HomeSmile: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeSmile.displayName = "HomeSmile";
-export default HomeSmile;
+HomeSmile.displayName = "HomeSmile"
+export default HomeSmile

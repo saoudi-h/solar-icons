@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/Upload";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/Upload"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMTUuNzVDMTIuNDE0MiAxNS43NSAxMi43NSAxNS40MTQyIDEyLjc1IDE1VjQuMDI3NDRMMTQuNDMwNiA1Ljk4ODA5QzE0LjcwMDEgNi4zMDI1OSAxNS4xNzM2IDYuMzM5MDEgMTUuNDg4MSA2LjA2OTQ0QzE1LjgwMjYgNS43OTk4OCAxNS44MzkgNS4zMjY0IDE1LjU2OTQgNS4wMTE5MUwxMi41Njk0IDEuNTExOTFDMTIuNDI3IDEuMzQ1NjcgMTIuMjE4OSAxLjI1IDEyIDEuMjVDMTEuNzgxMSAxLjI1IDExLjU3MyAxLjM0NTY3IDExLjQzMDYgMS41MTE5MUw4LjQzMDU2IDUuMDExOTFDOC4xNjA5OSA1LjMyNjQgOC4xOTc0MSA1Ljc5OTg4IDguNTExOTEgNi4wNjk0NEM4LjgyNjQgNi4zMzkwMSA5LjI5OTg4IDYuMzAyNTkgOS41Njk0NCA1Ljk4ODA5TDExLjI1IDQuMDI3NDRMMTEuMjUgMTVDMTEuMjUgMTUuNDE0MiAxMS41ODU4IDE1Ljc1IDEyIDE1Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTYgOUMxNS4yOTc4IDkgMTQuOTQ2NyA5IDE0LjY5NDUgOS4xNjg1MUMxNC41ODUzIDkuMjQxNDggMTQuNDkxNSA5LjMzNTI1IDE0LjQxODYgOS40NDQ0NkMxNC4yNSA5LjY5NjY3IDE0LjI1IDEwLjA0NzggMTQuMjUgMTAuNzVMMTQuMjUgMTVDMTQuMjUgMTYuMjQyNiAxMy4yNDI3IDE3LjI1IDEyIDE3LjI1QzEwLjc1NzQgMTcuMjUgOS43NTAwNCAxNi4yNDI2IDkuNzUwMDQgMTVMOS43NTAwNCAxMC43NUM5Ljc1MDA0IDEwLjA0NzggOS43NTAwNCA5LjY5NjY0IDkuNTgxNDkgOS40NDQ0QzkuNTA4NTQgOS4zMzUyMyA5LjQxNDgxIDkuMjQxNSA5LjMwNTY0IDkuMTY4NTVDOS4wNTM0MSA5IDguNzAyMjcgOSA4IDlDNS4xNzE1NyA5IDMuNzU3MzYgOSAyLjg3ODY4IDkuODc4NjhDMiAxMC43NTc0IDIgMTIuMTcxNCAyIDE0Ljk5OThWMTUuOTk5OEMyIDE4LjgyODIgMiAyMC4yNDI0IDIuODc4NjggMjEuMTIxMUMzLjc1NzM2IDIxLjk5OTggNS4xNzE1NyAyMS45OTk4IDggMjEuOTk5OEgxNkMxOC44Mjg0IDIxLjk5OTggMjAuMjQyNiAyMS45OTk4IDIxLjEyMTMgMjEuMTIxMUMyMiAyMC4yNDI0IDIyIDE4LjgyODIgMjIgMTUuOTk5OFYxNC45OTk4QzIyIDEyLjE3MTQgMjIgMTAuNzU3NCAyMS4xMjEzIDkuODc4NjhDMjAuMjQyNiA5IDE4LjgyODQgOSAxNiA5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Upload";
  */
 const Upload: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Upload.displayName = "Upload";
-export default Upload;
+Upload.displayName = "Upload"
+export default Upload

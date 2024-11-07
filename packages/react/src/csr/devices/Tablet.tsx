@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Tablet";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Tablet"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyAxOC44Mjg0QzQuMzQzMTUgMjAgNi4yMjg3NiAyMCAxMCAyMEwxNCAyMEMxNy43NzEyIDIwIDE5LjY1NjkgMjAgMjAuODI4NCAxOC44Mjg0QzIyIDE3LjY1NjkgMjIgMTUuNzcxMiAyMiAxMkMyMiA4LjIyODc2IDIyIDYuMzQzMTQgMjAuODI4NCA1LjE3MTU3QzE5LjY1NjkgNCAxNy43NzEyIDQgMTQgNEgxMEM2LjIyODc2IDQgNC4zNDMxNSA0IDMuMTcxNTcgNS4xNzE1N0MyIDYuMzQzMTUgMiA4LjIyODc2IDIgMTJDMiAxNS43NzEyIDIgMTcuNjU2OSAzLjE3MTU3IDE4LjgyODRaTTkgMTYuMjVDOC41ODU3OSAxNi4yNSA4LjI1IDE2LjU4NTggOC4yNSAxN0M4LjI1IDE3LjQxNDIgOC41ODU3OSAxNy43NSA5IDE3Ljc1SDE1QzE1LjQxNDIgMTcuNzUgMTUuNzUgMTcuNDE0MiAxNS43NSAxN0MxNS43NSAxNi41ODU4IDE1LjQxNDIgMTYuMjUgMTUgMTYuMjVIOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Tablet";
  */
 const Tablet: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Tablet.displayName = "Tablet";
-export default Tablet;
+Tablet.displayName = "Tablet"
+export default Tablet

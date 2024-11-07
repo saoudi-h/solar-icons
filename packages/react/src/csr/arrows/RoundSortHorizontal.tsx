@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RoundSortHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RoundSortHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk0xMy43NTQ1IDExLjQ0NUMxMy40NDggMTEuMTY2NCAxMi45NzM3IDExLjE4OSAxMi42OTUgMTEuNDk1NUMxMi40MTY0IDExLjgwMiAxMi40MzkgMTIuMjc2MyAxMi43NDU1IDEyLjU1NUwxNC4wNiAxMy43NUg4QzcuNTg1NzkgMTMuNzUgNy4yNSAxNC4wODU4IDcuMjUgMTQuNUM3LjI1IDE0LjkxNDIgNy41ODU3OSAxNS4yNSA4IDE1LjI1SDE0LjA2TDEyLjc0NTUgMTYuNDQ1QzEyLjQzOSAxNi43MjM3IDEyLjQxNjQgMTcuMTk4IDEyLjY5NSAxNy41MDQ1QzEyLjk3MzcgMTcuODExIDEzLjQ0OCAxNy44MzM2IDEzLjc1NDUgMTcuNTU1TDE2LjUwNDUgMTUuMDU1QzE2LjY2MDkgMTQuOTEyOCAxNi43NSAxNC43MTEzIDE2Ljc1IDE0LjVDMTYuNzUgMTQuMjg4NyAxNi42NjA5IDE0LjA4NzIgMTYuNTA0NSAxMy45NDVMMTMuNzU0NSAxMS40NDVaTTExLjMwNSA2LjQ5NTQ5QzExLjU4MzYgNi44MDE5OSAxMS41NjEgNy4yNzYzMiAxMS4yNTQ1IDcuNTU0OTVMOS45Mzk5NiA4Ljc1SDE2QzE2LjQxNDIgOC43NSAxNi43NSA5LjA4NTc5IDE2Ljc1IDkuNUMxNi43NSA5LjkxNDIxIDE2LjQxNDIgMTAuMjUgMTYgMTAuMjVIOS45Mzk5NkwxMS4yNTQ1IDExLjQ0NUMxMS41NjEgMTEuNzIzNyAxMS41ODM2IDEyLjE5OCAxMS4zMDUgMTIuNTA0NUMxMS4wMjYzIDEyLjgxMSAxMC41NTIgMTIuODMzNiAxMC4yNDU1IDEyLjU1NUw3LjQ5NTUgMTAuMDU1QzcuMzM5MTQgOS45MTI4MSA3LjI1IDkuNzExMzEgNy4yNSA5LjVDNy4yNSA5LjI4ODY5IDcuMzM5MTQgOS4wODcxOSA3LjQ5NTUgOC45NDUwNEwxMC4yNDU1IDYuNDQ1MDRDMTAuNTUyIDYuMTY2NDEgMTEuMDI2MyA2LjE4OSAxMS4zMDUgNi40OTU0OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundSortHorizontal";
  */
 const RoundSortHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundSortHorizontal.displayName = "RoundSortHorizontal";
-export default RoundSortHorizontal;
+RoundSortHorizontal.displayName = "RoundSortHorizontal"
+export default RoundSortHorizontal

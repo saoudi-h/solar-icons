@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/Chandelier";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/Chandelier"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjI1IDRDOC4yNSAzLjU4NTc5IDguNTg1NzkgMy4yNSA5IDMuMjVIMTVDMTUuNDE0MiAzLjI1IDE1Ljc1IDMuNTg1NzkgMTUuNzUgNEMxNS43NSA0LjQxNDIxIDE1LjQxNDIgNC43NSAxNSA0Ljc1SDEyLjc1VjE2LjVDMTIuNzUgMTguMDE4OCAxMy45ODEyIDE5LjI1IDE1LjUgMTkuMjVDMTcuMDE4OCAxOS4yNSAxOC4yNSAxOC4wMTg4IDE4LjI1IDE2LjVWMTUuOTA1NUMxNi45NTYxIDE1LjU3MjUgMTYgMTQuMzk3OSAxNiAxM1YxMS4yQzE2IDEwLjUzNzMgMTYuNTM3MyAxMCAxNy4yIDEwSDIwLjhDMjEuNDYyNyAxMCAyMiAxMC41MzczIDIyIDExLjJWMTNDMjIgMTQuMzk3OSAyMS4wNDM5IDE1LjU3MjUgMTkuNzUgMTUuOTA1NVYxNi41QzE5Ljc1IDE4Ljg0NzIgMTcuODQ3MiAyMC43NSAxNS41IDIwLjc1QzE0LjA0ODQgMjAuNzUgMTIuNzY2NyAyMC4wMjIyIDEyIDE4LjkxMTZDMTEuMjMzMyAyMC4wMjIyIDkuOTUxNjUgMjAuNzUgOC41IDIwLjc1QzYuMTUyNzkgMjAuNzUgNC4yNSAxOC44NDcyIDQuMjUgMTYuNVYxNS45MDU1QzIuOTU2MDggMTUuNTcyNSAyIDE0LjM5NzkgMiAxM1YxMC44NTcxQzIgMTAuMzgzOCAyLjM4Mzc2IDEwIDIuODU3MTQgMTBINy4xNDI4NkM3LjYxNjI0IDEwIDggMTAuMzgzOCA4IDEwLjg1NzFWMTNDOCAxNC4zOTc5IDcuMDQzOTIgMTUuNTcyNSA1Ljc1IDE1LjkwNTVWMTYuNUM1Ljc1IDE4LjAxODggNi45ODEyMiAxOS4yNSA4LjUgMTkuMjVDMTAuMDE4OCAxOS4yNSAxMS4yNSAxOC4wMTg4IDExLjI1IDE2LjVWNC43NUg5QzguNTg1NzkgNC43NSA4LjI1IDQuNDE0MjEgOC4yNSA0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Chandelier";
  */
 const Chandelier: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Chandelier.displayName = "Chandelier";
-export default Chandelier;
+Chandelier.displayName = "Chandelier"
+export default Chandelier

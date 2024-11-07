@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/RoundTransferHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/RoundTransferHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk03IDE0Ljc1TDE1IDE0Ljc1TDEzLjA2OTMgMTYuNDM0OUMxMi43NTczIDE2LjcwNzMgMTIuNzI1MSAxNy4xODExIDEyLjk5NzQgMTcuNDkzMUMxMy4yNjk4IDE3LjgwNTIgMTMuNzQzNiAxNy44Mzc0IDE0LjA1NTcgMTcuNTY1MUwxNy40OTMyIDE0LjU2NTFDMTcuNzI4NyAxNC4zNTk1IDE3LjgxMiAxNC4wMjk0IDE3LjcwMjIgMTMuNzM2N0MxNy41OTI1IDEzLjQ0MzkgMTcuMzEyNiAxMy4yNSAxNyAxMy4yNUw3IDEzLjI1QzYuNTg1NzkgMTMuMjUgNi4yNSAxMy41ODU4IDYuMjUgMTRDNi4yNSAxNC40MTQyIDYuNTg1NzkgMTQuNzUgNyAxNC43NVpNMTEuMDAyNiA2LjUwNjg1QzExLjI3NDkgNi44MTg5MyAxMS4yNDI3IDcuMjkyNzEgMTAuOTMwNyA3LjU2NTA3TDkgOS4yNUgxN0MxNy40MTQyIDkuMjUgMTcuNzUgOS41ODU3OSAxNy43NSAxMEMxNy43NSAxMC40MTQyIDE3LjQxNDIgMTAuNzUgMTcgMTAuNzVIN0M2LjY4NzM3IDEwLjc1IDYuNDA3NTMgMTAuNTU2MSA2LjI5Nzc1IDEwLjI2MzNDNi4xODc5OCA5Ljk3MDYxIDYuMjcxMyA5LjY0MDUgNi41MDY4NSA5LjQzNDkzTDkuOTQ0MzUgNi40MzQ5M0MxMC4yNTY0IDYuMTYyNTcgMTAuNzMwMiA2LjE5NDc3IDExLjAwMjYgNi41MDY4NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundTransferHorizontal";
  */
 const RoundTransferHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundTransferHorizontal.displayName = "RoundTransferHorizontal";
-export default RoundTransferHorizontal;
+RoundTransferHorizontal.displayName = "RoundTransferHorizontal"
+export default RoundTransferHorizontal

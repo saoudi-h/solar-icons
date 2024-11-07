@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/CheckRead";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/CheckRead"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk0xNC40NzQzIDguNDE5QzE0Ljc5NTIgOC42ODA5NCAxNC44NDI5IDkuMTUzNDEgMTQuNTgxIDkuNDc0MjhMOC44NjY3MSAxNi40NzQzQzguNzI0MjcgMTYuNjQ4OCA4LjUxMDk2IDE2Ljc1IDguMjg1NzEgMTYuNzVDOC4wNjA0NyAxNi43NSA3Ljg0NzE2IDE2LjY0ODggNy43MDQ3MiAxNi40NzQzTDUuNDE5IDEzLjY3NDNDNS4xNTcwNyAxMy4zNTM0IDUuMjA0ODQgMTIuODgwOSA1LjUyNTcyIDEyLjYxOUM1Ljg0NjU5IDEyLjM1NzEgNi4zMTkwNiAxMi40MDQ4IDYuNTgxIDEyLjcyNTdMOC4yODU3MSAxNC44MTRMMTMuNDE5IDguNTI1NzJDMTMuNjgwOSA4LjIwNDg0IDE0LjE1MzQgOC4xNTcwNyAxNC40NzQzIDguNDE5Wk0xOC40NzQzIDguNDE5MDFDMTguNzk1MiA4LjY4MDk1IDE4Ljg0MjkgOS4xNTM0MiAxOC41ODEgOS40NzQyOUwxMi44NjY1IDE2LjQ3NDNDMTIuNzE1MiAxNi42NTk2IDEyLjQ4NDYgMTYuNzYxNyAxMi4yNDU3IDE2Ljc0ODlDMTIuMDA2OCAxNi43MzYyIDExLjc4ODMgMTYuNjEwMyAxMS42NTc1IDE2LjQwOTlMMTEuMzcxOSAxNS45NzI0QzExLjE0NTUgMTUuNjI1NiAxMS4yNDMyIDE1LjE2MDggMTEuNTkwMSAxNC45MzQ0QzExLjc5MzkgMTQuODAxNCAxMi4wMzg0IDE0Ljc4MDMgMTIuMjUxNCAxNC44NTU4TDE3LjQxOSA4LjUyNTcxQzE3LjY4MSA4LjIwNDg0IDE4LjE1MzQgOC4xNTcwNyAxOC40NzQzIDguNDE5MDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/CheckRead";
  */
 const CheckRead: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CheckRead.displayName = "CheckRead";
-export default CheckRead;
+CheckRead.displayName = "CheckRead"
+export default CheckRead

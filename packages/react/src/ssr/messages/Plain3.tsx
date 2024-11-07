@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/Plain3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/Plain3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMzUyMSAxMC41MjA4TDE4LjYzNTcgMTUuNjcwMUMxNy40MjU1IDE5LjMwMDggMTYuODIwNCAyMS4xMTYxIDE1LjkzMyAyMS42MzE5QzE1LjA4ODkgMjIuMTIyNyAxNC4wNDYzIDIyLjEyMjcgMTMuMjAyMiAyMS42MzE5QzEyLjMxNDggMjEuMTE2MSAxMS43MDk3IDE5LjMwMDggMTAuNDk5NSAxNS42NzAxQzEwLjMwNTIgMTUuMDg3MiAxMC4yMDggMTQuNzk1NyAxMC4wNDQ5IDE0LjU1MjFDOS44ODY4NyAxNC4zMTYgOS42ODQwNCAxNC4xMTMxIDkuNDQ3OTMgMTMuOTU1MUM5LjIwNDMgMTMuNzkyIDguOTEyODIgMTMuNjk0OCA4LjMyOTg3IDEzLjUwMDVDNC42OTkyMyAxMi4yOTAzIDIuODgzOTIgMTEuNjg1MiAyLjM2ODA2IDEwLjc5NzhDMS44NzczMSA5Ljk1MzY5IDEuODc3MzEgOC45MTExMiAyLjM2ODA2IDguMDY2OThDMi44ODM5MiA3LjE3OTY0IDQuNjk5MjMgNi41NzQ1MyA4LjMyOTg3IDUuMzY0MzJMMTMuNDc5MiAzLjY0Nzg4QzE3Ljk3NzYgMi4xNDg0MiAyMC4yMjY4IDEuMzk4NjkgMjEuNDE0IDIuNTg1OTVDMjIuNjAxMyAzLjc3MzIyIDIxLjg1MTYgNi4wMjI0MiAyMC4zNTIxIDEwLjUyMDhaTTEzLjA0NTcgMTAuOTAyMkMxMi43NTQ0IDEwLjYwNzcgMTIuNzU3MSAxMC4xMzI4IDEzLjA1MTYgOS44NDE1M0wxNy4yNjIxIDUuNjc3NDJDMTcuNTU2NiA1LjM4NjE1IDE4LjAzMTUgNS4zODg3OCAxOC4zMjI3IDUuNjgzM0MxOC42MTQgNS45Nzc4MSAxOC42MTE0IDYuNDUyNjcgMTguMzE2OSA2Ljc0Mzk0TDE0LjEwNjMgMTAuOTA4MUMxMy44MTE4IDExLjE5OTMgMTMuMzM3IDExLjE5NjcgMTMuMDQ1NyAxMC45MDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Plain3";
  */
 const Plain3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Plain3.displayName = "Plain3";
-export default Plain3;
+Plain3.displayName = "Plain3"
+export default Plain3

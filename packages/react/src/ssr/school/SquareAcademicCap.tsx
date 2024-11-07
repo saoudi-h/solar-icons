@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/school/SquareAcademicCap";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/school/SquareAcademicCap"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4yMTcyIDMuNDk5NjVDMTIuNzk2MiAyLjgzMzQ1IDExLjIwMzcgMi44MzM0NSA5Ljc4MjcyIDMuNDk5NjVMMy4wOTE2IDYuNjM2NTlDMi4wMTU2IDcuMTQxMDUgMS43MzUwNyA4LjU2MzUyIDIuMjUgOS41NDY2NkwyLjI1IDE0LjVDMi4yNSAxNC45MTQyIDIuNTg1NzkgMTUuMjUgMyAxNS4yNUMzLjQxNDIxIDE1LjI1IDMuNzUgMTQuOTE0MiAzLjc1IDE0LjVWMTAuNjcyTDkuNzgyODEgMTMuNTAwM0MxMS4yMDM4IDE0LjE2NjUgMTIuNzk2MyAxNC4xNjY1IDE0LjIxNzMgMTMuNTAwM0wyMC45MDg0IDEwLjM2MzRDMjIuMzYzOSA5LjY4MTA1IDIyLjM2MzkgNy4zMTg5OSAyMC45MDg0IDYuNjM2NjRMMTQuMjE3MiAzLjQ5OTY1WiIgZmlsbD0iIzFDMjc0RCIvPgo8cGF0aCBkPSJNNSAxMi45MTQ3VjE2LjYyNTRDNSAxNy42MzM0IDUuNTAzNSAxOC41NzcyIDYuMzg1MzMgMTkuMDY1NkM3Ljg1MzcgMTkuODc4NyAxMC4yMDQgMjEgMTIgMjFDMTMuNzk2IDIxIDE2LjE0NjMgMTkuODc4NyAxNy42MTQ3IDE5LjA2NTZDMTguNDk2NSAxOC41NzcyIDE5IDE3LjYzMzQgMTkgMTYuNjI1NFYxMi45MTQ4TDE0Ljg1NCAxNC44NTg1QzEzLjAyOTYgMTUuNzEzOCAxMC45NzA1IDE1LjcxMzggOS4xNDYwNyAxNC44NTg1TDUgMTIuOTE0N1oiIGZpbGw9IiMxQzI3NEQiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/SquareAcademicCap";
  */
 const SquareAcademicCap: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareAcademicCap.displayName = "SquareAcademicCap";
-export default SquareAcademicCap;
+SquareAcademicCap.displayName = "SquareAcademicCap"
+export default SquareAcademicCap

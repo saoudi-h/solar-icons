@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/Thermometer";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/Thermometer"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS45NjIyOSAyMC4xNzM5TDUuNTc4NjYgMjAuNTU3NkM0Ljk4ODc1IDIxLjE0NzUgNC4wMzIzMyAyMS4xNDc1IDMuNDQyNDMgMjAuNTU3NkMyLjg1MjUyIDE5Ljk2NzcgMi44NTI1MiAxOS4wMTEyIDMuNDQyNDMgMTguNDIxM0wzLjgyNjA2IDE4LjAzNzdDNC4yNTg2OSAxNy42MDUxIDQuNDcxMjEgMTYuOTk5MiA0LjQwMzY0IDE2LjM5MTFMNC4zMTQ4NSAxNS41OTJDNC4yMTM1IDE0LjY3OTkgNC41MzIyOCAxMy43NzExIDUuMTgxMjMgMTMuMTIyMkwxNC4xMjM2IDQuMTc5ODFDMTUuNjk2NyAyLjYwNjczIDE4LjI0NzEgMi42MDY3MyAxOS44MjAyIDQuMTc5ODFDMjEuMzkzMyA1Ljc1Mjg4IDIxLjM5MzMgOC4zMDMzNCAxOS44MjAyIDkuODc2NDJMMTguOTI2NSAxMC43NzAxTDE3LjYyNiA5LjQ2OTY3QzE3LjMzMzEgOS4xNzY3OCAxNi44NTgzIDkuMTc2NzggMTYuNTY1NCA5LjQ2OTY3QzE2LjI3MjUgOS43NjI1NiAxNi4yNzI1IDEwLjIzNzQgMTYuNTY1NCAxMC41MzAzTDE3Ljg2NTggMTEuODMwOEwxNS43MjcxIDEzLjk2OTZMMTQuNDI2NiAxMi42NjkxQzE0LjEzMzcgMTIuMzc2MiAxMy42NTg4IDEyLjM3NjIgMTMuMzY1OSAxMi42NjkxQzEzLjA3MzEgMTIuOTYyIDEzLjA3MzEgMTMuNDM2OSAxMy4zNjU5IDEzLjcyOThMMTQuNjY2NCAxNS4wMzAyTDEyLjUxNzggMTcuMTc4OEwxMS4yMTczIDE1Ljg3ODRDMTAuOTI0NCAxNS41ODU1IDEwLjQ0OTYgMTUuNTg1NSAxMC4xNTY3IDE1Ljg3ODRDOS44NjM3OSAxNi4xNzEzIDkuODYzNzkgMTYuNjQ2MSAxMC4xNTY3IDE2LjkzOUwxMS40NTcxIDE4LjIzOTVMMTAuODc3OCAxOC44MTg4QzEwLjIyODkgMTkuNDY3NyA5LjMyMDEzIDE5Ljc4NjUgOC40MDc5OSAxOS42ODUxTDcuNjA4ODYgMTkuNTk2NEM3LjAwMDc2IDE5LjUyODggNi4zOTQ5MiAxOS43NDEzIDUuOTYyMjkgMjAuMTczOVpNMTYuMDMwMyA5LjAzMDMzQzE2LjMyMzIgOC43Mzc0NCAxNi4zMjMyIDguMjYyNTYgMTYuMDMwMyA3Ljk2OTY3QzE1LjczNzQgNy42NzY3OCAxNS4yNjI2IDcuNjc2NzggMTQuOTY5NyA3Ljk2OTY3TDguNDY5NjcgMTQuNDY5N0M4LjE3Njc4IDE0Ljc2MjYgOC4xNzY3OCAxNS4yMzc0IDguNDY5NjcgMTUuNTMwM0M4Ljc2MjU2IDE1LjgyMzIgOS4yMzc0NCAxNS44MjMyIDkuNTMwMzMgMTUuNTMwM0wxNi4wMzAzIDkuMDMwMzNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Thermometer";
  */
 const Thermometer: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Thermometer.displayName = "Thermometer";
-export default Thermometer;
+Thermometer.displayName = "Thermometer"
+export default Thermometer

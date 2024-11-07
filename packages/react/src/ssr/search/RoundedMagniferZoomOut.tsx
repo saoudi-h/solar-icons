@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/search/RoundedMagniferZoomOut";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/search/RoundedMagniferZoomOut"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC4zMTMzIDExLjE1NjZDMjAuMzEzMyAxNi4yMTM3IDE2LjIxMzcgMjAuMzEzMyAxMS4xNTY2IDIwLjMxMzNDNi4wOTk1NiAyMC4zMTMzIDIgMTYuMjEzNyAyIDExLjE1NjZDMiA2LjA5OTU2IDYuMDk5NTYgMiAxMS4xNTY2IDJDMTYuMjEzNyAyIDIwLjMxMzMgNi4wOTk1NiAyMC4zMTMzIDExLjE1NjZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4wMjQxIDExLjE1NjZDOC4wMjQxIDEwLjc1NzQgOC4zNDc3NSAxMC40MzM3IDguNzQ2OTkgMTAuNDMzN0gxMy41NjYzQzEzLjk2NTUgMTAuNDMzNyAxNC4yODkyIDEwLjc1NzQgMTQuMjg5MiAxMS4xNTY2QzE0LjI4OTIgMTEuNTU1OSAxMy45NjU1IDExLjg3OTUgMTMuNTY2MyAxMS44Nzk1SDguNzQ2OTlDOC4zNDc3NSAxMS44Nzk1IDguMDI0MSAxMS41NTU5IDguMDI0MSAxMS4xNTY2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOC44MzgyIDE4LjgzODJDMTkuMTIwNSAxOC41NTU5IDE5LjU3ODMgMTguNTU1OSAxOS44NjA2IDE4LjgzODJMMjEuNzg4MyAyMC43NjU5QzIyLjA3MDYgMjEuMDQ4MyAyMi4wNzA2IDIxLjUwNiAyMS43ODgzIDIxLjc4ODNDMjEuNTA2IDIyLjA3MDYgMjEuMDQ4MyAyMi4wNzA2IDIwLjc2NTkgMjEuNzg4M0wxOC44MzgyIDE5Ljg2MDZDMTguNTU1OSAxOS41NzgzIDE4LjU1NTkgMTkuMTIwNSAxOC44MzgyIDE4LjgzODJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/search/RoundedMagniferZoomOut";
  */
 const RoundedMagniferZoomOut: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundedMagniferZoomOut.displayName = "RoundedMagniferZoomOut";
-export default RoundedMagniferZoomOut;
+RoundedMagniferZoomOut.displayName = "RoundedMagniferZoomOut"
+export default RoundedMagniferZoomOut

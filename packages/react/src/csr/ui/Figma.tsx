@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Figma";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Figma"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC42NjY5OSA5LjQxNjY3QzcuMjQwMjEgOS40MTY2NyA2LjA4MzY2IDEwLjU3MzEgNi4wODM2NiAxMS45OTk4QzYuMDgzNjYgMTMuNDI2NiA3LjI0MDI2IDE0LjU4MzIgOC42NjY5OSAxNC41ODMySDExLjI1MDNWMTIuMDUxOUMxMS4yNTAxIDEyLjAzNDYgMTEuMjUgMTIuMDE3MiAxMS4yNSAxMS45OTk4QzExLjI1IDExLjk4MjUgMTEuMjUwMSAxMS45NjUxIDExLjI1MDMgMTEuOTQ3OFY5LjQxNjY3SDguNjY2OTlaTTExLjI1MDMgNy45MTY2N0g4LjY2Njk5QzcuMjQwMjYgNy45MTY2NyA2LjA4MzY2IDYuNzYwMDcgNi4wODM2NiA1LjMzMzMzQzYuMDgzNjYgMy45MDY2IDcuMjQwMjYgMi43NSA4LjY2Njk5IDIuNzVIMTEuMjUwM1Y3LjkxNjY3Wk0xMi43NTAzIDIuNzVWNy45MTY2M0wxNS4zMzMgNy45MTY1QzE2Ljc1OTcgNy45MTY1IDE3LjkxNjcgNi43NjAwMiAxNy45MTY3IDUuMzMzMzNDMTcuOTE2NyAzLjkwNjYgMTYuNzYwMSAyLjc1IDE1LjMzMzMgMi43NUgxMi43NTAzWk0xNS4zMzMxIDkuNDE2NUMxMy45MjAzIDkuNDE2NjQgMTIuNzcyNCAxMC41NTA5IDEyLjc1MDMgMTEuOTU4NFYxMi4wNDEyQzEyLjc3MjQgMTMuNDQ4OSAxMy45MjA0IDE0LjU4MzIgMTUuMzMzMyAxNC41ODMyQzE2Ljc2MDEgMTQuNTgzMiAxNy45MTY3IDEzLjQyNjYgMTcuOTE2NyAxMS45OTk4QzE3LjkxNjcgMTAuNTczMSAxNi43NTk4IDkuNDE2NTIgMTUuMzMzMSA5LjQxNjVaTTguNjY2OTkgMTYuMDgzMkM3LjI0MDMgMTYuMDgzMiA2LjA4MzUgMTcuMjQgNi4wODM1IDE4LjY2NjhDNi4wODM1IDIwLjA5MzYgNy4yNDAwOSAyMS4yNTAyIDguNjY2ODMgMjEuMjUwMkMxMC4wOTM2IDIxLjI1MDIgMTEuMjUwMiAyMC4wOTM2IDExLjI1MDIgMTguNjY2OEwxMS4yNTAzIDE2LjA4MzJIOC42NjY5OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Figma";
  */
 const Figma: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Figma.displayName = "Figma";
-export default Figma;
+Figma.displayName = "Figma"
+export default Figma

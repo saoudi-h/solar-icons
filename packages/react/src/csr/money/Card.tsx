@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/Card";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/Card"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNCA0SDEwQzYuMjI4NzYgNCA0LjM0MzE1IDQgMy4xNzE1NyA1LjE3MTU3QzIuMzI4MDMgNi4wMTUxMSAyLjA5MTg1IDcuMjI4ODIgMi4wMjU3MiA5LjI1SDIxLjk3NDNDMjEuOTA4MiA3LjIyODgyIDIxLjY3MiA2LjAxNTExIDIwLjgyODQgNS4xNzE1N0MxOS42NTY5IDQgMTcuNzcxMiA0IDE0IDRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMCAyMEgxNEMxNy43NzEyIDIwIDE5LjY1NjkgMjAgMjAuODI4NCAxOC44Mjg0QzIyIDE3LjY1NjkgMjIgMTUuNzcxMiAyMiAxMkMyMiAxMS41NTgxIDIyIDExLjE0MiAyMS45OTgxIDEwLjc1SDIuMDAxODlDMiAxMS4xNDIgMiAxMS41NTgxIDIgMTJDMiAxNS43NzEyIDIgMTcuNjU2OSAzLjE3MTU3IDE4LjgyODRDNC4zNDMxNSAyMCA2LjIyODc2IDIwIDEwIDIwWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUuMjUgMTZDNS4yNSAxNS41ODU4IDUuNTg1NzkgMTUuMjUgNiAxNS4yNUgxMEMxMC40MTQyIDE1LjI1IDEwLjc1IDE1LjU4NTggMTAuNzUgMTZDMTAuNzUgMTYuNDE0MiAxMC40MTQyIDE2Ljc1IDEwIDE2Ljc1SDZDNS41ODU3OSAxNi43NSA1LjI1IDE2LjQxNDIgNS4yNSAxNloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNzUgMTZDMTEuNzUgMTUuNTg1OCAxMi4wODU4IDE1LjI1IDEyLjUgMTUuMjVIMTRDMTQuNDE0MiAxNS4yNSAxNC43NSAxNS41ODU4IDE0Ljc1IDE2QzE0Ljc1IDE2LjQxNDIgMTQuNDE0MiAxNi43NSAxNCAxNi43NUgxMi41QzEyLjA4NTggMTYuNzUgMTEuNzUgMTYuNDE0MiAxMS43NSAxNloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Card";
  */
 const Card: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Card.displayName = "Card";
-export default Card;
+Card.displayName = "Card"
+export default Card

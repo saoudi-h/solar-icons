@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/food/OvenMittsMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/food/OvenMittsMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy41ODc1OCAyMC4wMjYyTDQuMDE4OCAxNi41MzY4QzIuNjcyOTMgMTUuMjIxIDIgMTQuNTYzIDIgMTMuNzQ1NEMyIDEzLjIwODkgMi4yODk3MiAxMi43NDEyIDIuODY5MTYgMTIuMTExMkMzLjQ2MDM2IDExLjQ2ODUgMy43NTU5NSAxMS4xNDcxIDMuODg5NjggMTAuODEwOUM0LjAyMzQxIDEwLjQ3NDggNC4wMjcwNSAxMC4wOTY3IDQuMDM0MzMgOS4zNDA1Nkw0LjA2NjQ4IDUuOTk5MjNDNC4wMzIxNyAzLjgxNzMyIDUuNDQwOTMgMi4wMjY5NCA3LjIxMzA1IDIuMDAwM0M4LjY2NzU5IDEuOTc4NDMgOS45MTQ4MiAzLjE1MTU5IDEwLjMzNDEgNC43NzkyOUwxMC43OTk1IDQuMzI0MjlDMTMuMzYxOCAxLjgxOTA4IDE3LjUxNiAxLjgxOTA4IDIwLjA3ODMgNC4zMjQyOUMyMi42NDA2IDYuODI5NTEgMjIuNjQwNiAxMC44OTEzIDIwLjA3ODMgMTMuMzk2NUwxMy4yOTc2IDIwLjAyNjJDMTEuOTUxOCAyMS4zNDIxIDExLjI3ODggMjIgMTAuNDQyNiAyMkM5LjYwNjM4IDIyIDguOTMzNDUgMjEuMzQyMSA3LjU4NzU4IDIwLjAyNjJaTTUuOTgwMzMgMTIuODcyMkM2LjI2OTkxIDEyLjU3NiA2Ljc0NDc1IDEyLjU3MDYgNy4wNDA5MyAxMi44NjAyTDExLjMyMzUgMTcuMDQ3NEMxMS42MTk2IDE3LjMzNyAxMS42MjUgMTcuODExOCAxMS4zMzU0IDE4LjEwOEMxMS4wNDU4IDE4LjQwNDEgMTAuNTcxIDE4LjQwOTUgMTAuMjc0OCAxOC4xMTk5TDUuOTkyMjggMTMuOTMyOEM1LjY5NjEgMTMuNjQzMiA1LjY5MDc2IDEzLjE2ODMgNS45ODAzMyAxMi44NzIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/OvenMittsMinimalistic";
  */
 const OvenMittsMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-OvenMittsMinimalistic.displayName = "OvenMittsMinimalistic";
-export default OvenMittsMinimalistic;
+OvenMittsMinimalistic.displayName = "OvenMittsMinimalistic"
+export default OvenMittsMinimalistic

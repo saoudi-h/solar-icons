@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareSortHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareSortHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTEyLjc0NTUgMTIuNTU1QzEyLjQzOSAxMi4yNzYzIDEyLjQxNjQgMTEuODAyIDEyLjY5NSAxMS40OTU1QzEyLjk3MzcgMTEuMTg5IDEzLjQ0OCAxMS4xNjY0IDEzLjc1NDUgMTEuNDQ1TDE2LjUwNDUgMTMuOTQ1QzE2LjY2MDkgMTQuMDg3MiAxNi43NSAxNC4yODg3IDE2Ljc1IDE0LjVDMTYuNzUgMTQuNzExMyAxNi42NjA5IDE0LjkxMjggMTYuNTA0NSAxNS4wNTVMMTMuNzU0NSAxNy41NTVDMTMuNDQ4IDE3LjgzMzYgMTIuOTczNyAxNy44MTEgMTIuNjk1IDE3LjUwNDVDMTIuNDE2NCAxNy4xOTggMTIuNDM5IDE2LjcyMzcgMTIuNzQ1NSAxNi40NDVMMTQuMDYgMTUuMjVIOEM3LjU4NTc5IDE1LjI1IDcuMjUgMTQuOTE0MiA3LjI1IDE0LjVDNy4yNSAxNC4wODU4IDcuNTg1NzkgMTMuNzUgOCAxMy43NUgxNC4wNkwxMi43NDU1IDEyLjU1NVpNMTEuMzA1IDYuNDk1NDlDMTEuNTgzNiA2LjgwMTk5IDExLjU2MSA3LjI3NjMyIDExLjI1NDUgNy41NTQ5NUw5LjkzOTk2IDguNzVIMTZDMTYuNDE0MiA4Ljc1IDE2Ljc1IDkuMDg1NzkgMTYuNzUgOS41QzE2Ljc1IDkuOTE0MjEgMTYuNDE0MiAxMC4yNSAxNiAxMC4yNUg5LjkzOTk2TDExLjI1NDUgMTEuNDQ1QzExLjU2MSAxMS43MjM3IDExLjU4MzYgMTIuMTk4IDExLjMwNSAxMi41MDQ1QzExLjAyNjMgMTIuODExIDEwLjU1MiAxMi44MzM2IDEwLjI0NTUgMTIuNTU1TDcuNDk1NSAxMC4wNTVDNy4zMzkxNCA5LjkxMjgxIDcuMjUgOS43MTEzMSA3LjI1IDkuNUM3LjI1IDkuMjg4NjkgNy4zMzkxNCA5LjA4NzE5IDcuNDk1NSA4Ljk0NTA0TDEwLjI0NTUgNi40NDUwNEMxMC41NTIgNi4xNjY0MSAxMS4wMjYzIDYuMTg5IDExLjMwNSA2LjQ5NTQ5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareSortHorizontal";
  */
 const SquareSortHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareSortHorizontal.displayName = "SquareSortHorizontal";
-export default SquareSortHorizontal;
+SquareSortHorizontal.displayName = "SquareSortHorizontal"
+export default SquareSortHorizontal

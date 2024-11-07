@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/LockPasswordUnlocked";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/LockPasswordUnlocked"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi43NSA4QzYuNzUgNS4xMDA1MSA5LjEwMDUxIDIuNzUgMTIgMi43NUMxNC40NDUzIDIuNzUgMTYuNTAxOCA0LjQyMjQyIDE3LjA4NDYgNi42ODY5NEMxNy4xODc5IDcuMDg4MDggMTcuNTk2OCA3LjMyOTU3IDE3Ljk5NzkgNy4yMjYzM0MxOC4zOTkxIDcuMTIzMDggMTguNjQwNSA2LjcxNDIgMTguNTM3MyA2LjMxMzA2QzE3Ljc4OCAzLjQwMTkgMTUuMTQ2MyAxLjI1IDEyIDEuMjVDOC4yNzIwOCAxLjI1IDUuMjUgNC4yNzIwOCA1LjI1IDhWMTAuMDU0NkM0LjEzNTI1IDEwLjEzNzkgMy40MDkzMSAxMC4zNDggMi44Nzg2OCAxMC44Nzg3QzIgMTEuNzU3NCAyIDEzLjE3MTYgMiAxNkMyIDE4LjgyODQgMiAyMC4yNDI2IDIuODc4NjggMjEuMTIxM0MzLjc1NzM2IDIyIDUuMTcxNTcgMjIgOCAyMkgxNkMxOC44Mjg0IDIyIDIwLjI0MjYgMjIgMjEuMTIxMyAyMS4xMjEzQzIyIDIwLjI0MjYgMjIgMTguODI4NCAyMiAxNkMyMiAxMy4xNzE2IDIyIDExLjc1NzQgMjEuMTIxMyAxMC44Nzg3QzIwLjI0MjYgMTAgMTguODI4NCAxMCAxNiAxMEg4QzcuNTQ4NDkgMTAgNy4xMzMwMSAxMCA2Ljc1IDEwLjAwMzZWOFpNOCAxN0M4LjU1MjI4IDE3IDkgMTYuNTUyMyA5IDE2QzkgMTUuNDQ3NyA4LjU1MjI4IDE1IDggMTVDNy40NDc3MiAxNSA3IDE1LjQ0NzcgNyAxNkM3IDE2LjU1MjMgNy40NDc3MiAxNyA4IDE3Wk0xMiAxN0MxMi41NTIzIDE3IDEzIDE2LjU1MjMgMTMgMTZDMTMgMTUuNDQ3NyAxMi41NTIzIDE1IDEyIDE1QzExLjQ0NzcgMTUgMTEgMTUuNDQ3NyAxMSAxNkMxMSAxNi41NTIzIDExLjQ0NzcgMTcgMTIgMTdaTTE3IDE2QzE3IDE2LjU1MjMgMTYuNTUyMyAxNyAxNiAxN0MxNS40NDc3IDE3IDE1IDE2LjU1MjMgMTUgMTZDMTUgMTUuNDQ3NyAxNS40NDc3IDE1IDE2IDE1QzE2LjU1MjMgMTUgMTcgMTUuNDQ3NyAxNyAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/LockPasswordUnlocked";
  */
 const LockPasswordUnlocked: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LockPasswordUnlocked.displayName = "LockPasswordUnlocked";
-export default LockPasswordUnlocked;
+LockPasswordUnlocked.displayName = "LockPasswordUnlocked"
+export default LockPasswordUnlocked

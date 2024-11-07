@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Pip";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Pip"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMyAxN0MxMyAxNS4xMTQ0IDEzIDE0LjE3MTYgMTMuNTg1OCAxMy41ODU4QzE0LjE3MTYgMTMgMTUuMTE0NCAxMyAxNyAxM0gxOEMxOS44ODU2IDEzIDIwLjgyODQgMTMgMjEuNDE0MiAxMy41ODU4QzIyIDE0LjE3MTYgMjIgMTUuMTE0NCAyMiAxN0MyMiAxOC44ODU2IDIyIDE5LjgyODQgMjEuNDE0MiAyMC40MTQyQzIwLjgyODQgMjEgMTkuODg1NiAyMSAxOCAyMUgxN0MxNS4xMTQ0IDIxIDE0LjE3MTYgMjEgMTMuNTg1OCAyMC40MTQyQzEzIDE5LjgyODQgMTMgMTguODg1NiAxMyAxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE0IDNIMTBDNi4yMjg3NiAzIDQuMzQzMTUgMyAzLjE3MTU3IDQuMTcxNTdDMiA1LjM0MzE1IDIgNy4yMjg3NiAyIDExVjEzQzIgMTYuNzcxMiAyIDE4LjY1NjkgMy4xNzE1NyAxOS44Mjg0QzQuMzQzMTUgMjEgNi4yMjg3NiAyMSAxMCAyMUMxMC40NjU5IDIxIDEwLjY5ODkgMjEgMTAuODgyNyAyMC45MjM5QzExLjEyNzcgMjAuODIyNCAxMS4zMjI0IDIwLjYyNzcgMTEuNDIzOSAyMC4zODI3QzExLjUgMjAuMTk4OSAxMS41IDE5Ljk2NTkgMTEuNSAxOS41VjE3LjVDMTEuNSAxNC42NzE2IDExLjUgMTMuMjU3NCAxMi4zNzg3IDEyLjM3ODdDMTMuMjU3NCAxMS41IDE0LjY3MTYgMTEuNSAxNy41IDExLjVIMjBDMjAuOTQ4NiAxMS41IDIxLjQyMjkgMTEuNSAyMS43MTY2IDExLjIwMjVDMjIuMDEwMiAxMC45MDUgMjIuMDA0MiAxMC40MzY2IDIxLjk5MiA5LjQ5OTc0QzIxLjk1NzcgNi44NjYyNiAyMS43Nzc1IDUuMTIwNiAyMC44Mjg0IDQuMTcxNTdDMTkuNjU2OSAzIDE3Ljc3MTIgMyAxNCAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Pip";
  */
 const Pip: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pip.displayName = "Pip";
-export default Pip;
+Pip.displayName = "Pip"
+export default Pip

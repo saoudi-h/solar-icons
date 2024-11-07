@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/ChefHat";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/ChefHat"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDVDNC4yMzg1OCA1IDIgNy4yMzg1OCAyIDEwQzIgMTIuMDUwMyAzLjIzNDEgMTMuODEyNCA1IDE0LjU4NFYxNy4yNUgxOUwxOSAxNC41ODRDMjAuNzY1OSAxMy44MTI0IDIyIDEyLjA1MDMgMjIgMTBDMjIgNy4yMzg1OCAxOS43NjE0IDUgMTcgNUMxNi43NDk1IDUgMTYuNTAzMyA1LjAxODQyIDE2LjI2MjYgNS4wNTM5OUMxNS42NjA0IDMuMjc4MDYgMTMuOTc5NCAyIDEyIDJDMTAuMDIwNiAyIDguMzM5NjEgMy4yNzgwNiA3LjczNzM2IDUuMDUzOTlDNy40OTY3MyA1LjAxODQyIDcuMjUwNTIgNSA3IDVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xOC45OTgzIDE4Ljc1SDUuMDAxNjlDNS4wMTE4OCAyMC4xNDY5IDUuMDgzNDMgMjAuOTExOSA1LjU4NTc5IDIxLjQxNDJDNi4xNzE1NyAyMiA3LjExNDM4IDIyIDkgMjJIMTVDMTYuODg1NiAyMiAxNy44Mjg0IDIyIDE4LjQxNDIgMjEuNDE0MkMxOC45MTY2IDIwLjkxMTkgMTguOTg4MSAyMC4xNDY5IDE4Ljk5ODMgMTguNzVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/ChefHat";
  */
 const ChefHat: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChefHat.displayName = "ChefHat";
-export default ChefHat;
+ChefHat.displayName = "ChefHat"
+export default ChefHat

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/MouseCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/MouseCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjEuNDUzNEM2Ljc3MjU2IDIxLjQ1MzQgMi41MzQ4OCAxNy4xODM0IDIuNTM0ODggMTEuOTE2MUMyLjUzNDg4IDcuMjk4NTYgNS43OTIyMiAzLjQ0NTkzIDEwLjExODIgMi41NjcwNEMxMC42NDU0IDIuNDU5OTUgMTEuMjMyNiAyLjkwMjI4IDExLjIzMjYgMy42Njc1NFY1LjcyOTY3SDEyLjc2NzRWMy42Njc1NEMxMi43Njc0IDIuMTU1MDMgMTEuNTAzNyAwLjcwNzg0NSA5LjgxNDg3IDEuMDUwOTVDNC43ODY2MSAyLjA3MjUxIDEgNi41NDc4NCAxIDExLjkxNjFDMSAxOC4wMzc1IDUuOTI0ODcgMjMgMTIgMjNDMTguMDc1MSAyMyAyMyAxOC4wMzc1IDIzIDExLjkxNjFDMjMgNy41Mjc2NSAyMC40Njg5IDMuNzM2NDEgMTYuODAxIDEuOTQwOTFDMTYuNDE5NyAxLjc1NDI5IDE1Ljk2MDUgMS45MTQ0MiAxNS43NzUzIDIuMjk4NTZDMTUuNTkwMSAyLjY4MjcxIDE1Ljc0OSAzLjE0NTQyIDE2LjEzMDMgMy4zMzIwNEMxOS4yODk4IDQuODc4NjcgMjEuNDY1MSA4LjE0MjEzIDIxLjQ2NTEgMTEuOTE2MUMyMS40NjUxIDE3LjE4MzQgMTcuMjI3NCAyMS40NTM0IDEyIDIxLjQ1MzRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03LjkwNjk4IDEzLjk1MzlDNy45MDY5OCAxNi4yNDUxIDkuNzM5NDkgMTguMTAyNCAxMiAxOC4xMDI0QzE0LjI2MDUgMTguMTAyNCAxNi4wOTMgMTYuMjQ1MSAxNi4wOTMgMTMuOTUzOVYxMC41ODMySDcuOTA2OThWMTMuOTUzOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEyLjc2NzQgOS4zMzgzOUgxNi4wMjEyQzE1LjcwOTEgNy42NzA5OSAxNC40MTI1IDYuMDQ1OTYgMTIuNzY3NCA1LjcyOTY3VjkuMzM4MzlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMS4yMzI2IDkuMzM4MzlWNS43Mjk2N0M5LjU4NzQ2IDYuMDQ1OTYgOC4yOTA4NyA3LjY3MDk5IDcuOTc4ODEgOS4zMzgzOUgxMS4yMzI2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/MouseCircle";
  */
 const MouseCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MouseCircle.displayName = "MouseCircle";
-export default MouseCircle;
+MouseCircle.displayName = "MouseCircle"
+export default MouseCircle

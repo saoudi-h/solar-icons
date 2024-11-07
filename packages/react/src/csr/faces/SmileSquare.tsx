@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/faces/SmileSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/faces/SmileSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTUgMTJDMTUuNTUyMyAxMiAxNiAxMS4zMjg0IDE2IDEwLjVDMTYgOS42NzE1NyAxNS41NTIzIDkgMTUgOUMxNC40NDc3IDkgMTQgOS42NzE1NyAxNCAxMC41QzE0IDExLjMyODQgMTQuNDQ3NyAxMiAxNSAxMlpNMTAgMTAuNUMxMCAxMS4zMjg0IDkuNTUyMjggMTIgOSAxMkM4LjQ0NzcyIDEyIDggMTEuMzI4NCA4IDEwLjVDOCA5LjY3MTU3IDguNDQ3NzIgOSA5IDlDOS41NTIyOCA5IDEwIDkuNjcxNTcgMTAgMTAuNVpNOC4zOTc0NyAxNS41NTM0QzguNjQ0MTMgMTUuMjIwNiA5LjExMzg1IDE1LjE1MDggOS40NDY2MSAxNS4zOTc1QzEwLjE3NSAxNS45MzczIDExLjA1NDEgMTYuMjUgMTIgMTYuMjVDMTIuOTQ1OSAxNi4yNSAxMy44MjUgMTUuOTM3MyAxNC41NTM0IDE1LjM5NzVDMTQuODg2MiAxNS4xNTA4IDE1LjM1NTkgMTUuMjIwNiAxNS42MDI1IDE1LjU1MzRDMTUuODQ5MiAxNS44ODYyIDE1Ljc3OTQgMTYuMzU1OSAxNS40NDY2IDE2LjYwMjVDMTQuNDc0MiAxNy4zMjMzIDEzLjI4NSAxNy43NSAxMiAxNy43NUMxMC43MTUgMTcuNzUgOS41MjU4IDE3LjMyMzMgOC41NTMzOSAxNi42MDI1QzguMjIwNjIgMTYuMzU1OSA4LjE1MDgyIDE1Ljg4NjIgOC4zOTc0NyAxNS41NTM0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/SmileSquare";
  */
 const SmileSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SmileSquare.displayName = "SmileSquare";
-export default SmileSquare;
+SmileSquare.displayName = "SmileSquare"
+export default SmileSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/SortFromBottomToTop";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/SortFromBottomToTop"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNzYyOCAzLjI4ODU0QzE3LjA2OTEgMy4xODY0NSAxNy40MDYzIDMuMjkxNzkgMTcuNiAzLjU1MDA1TDIwLjYgNy41NTAwNUMyMC44NDg1IDcuODgxNDIgMjAuNzgxNCA4LjM1MTUyIDIwLjQ1IDguNjAwMDVDMjAuMTE4NiA4Ljg0ODU4IDE5LjY0ODUgOC43ODE0MiAxOS40IDguNDUwMDVMMTcuNzUgNi4yNTAwNVYyMEMxNy43NSAyMC40MTQzIDE3LjQxNDIgMjAuNzUgMTcgMjAuNzVDMTYuNTg1OCAyMC43NSAxNi4yNSAyMC40MTQzIDE2LjI1IDIwVjQuMDAwMDVDMTYuMjUgMy42NzcyMyAxNi40NTY2IDMuMzkwNjIgMTYuNzYyOCAzLjI4ODU0Wk0zLjI1IDguMDAwMDVDMy4yNSA3LjU4NTgzIDMuNTg1NzkgNy4yNTAwNSA0IDcuMjUwMDVIMTNDMTMuNDE0MiA3LjI1MDA1IDEzLjc1IDcuNTg1ODMgMTMuNzUgOC4wMDAwNUMxMy43NSA4LjQxNDI2IDEzLjQxNDIgOC43NTAwNSAxMyA4Ljc1MDA1SDRDMy41ODU3OSA4Ljc1MDA1IDMuMjUgOC40MTQyNiAzLjI1IDguMDAwMDVaTTUuMjUgMTNDNS4yNSAxMi41ODU4IDUuNTg1NzkgMTIuMjUgNiAxMi4yNUgxM0MxMy40MTQyIDEyLjI1IDEzLjc1IDEyLjU4NTggMTMuNzUgMTNDMTMuNzUgMTMuNDE0MyAxMy40MTQyIDEzLjc1IDEzIDEzLjc1SDZDNS41ODU3OSAxMy43NSA1LjI1IDEzLjQxNDMgNS4yNSAxM1pNNy4yNSAxOEM3LjI1IDE3LjU4NTggNy41ODU3OSAxNy4yNSA4IDE3LjI1SDEzQzEzLjQxNDIgMTcuMjUgMTMuNzUgMTcuNTg1OCAxMy43NSAxOEMxMy43NSAxOC40MTQzIDEzLjQxNDIgMTguNzUgMTMgMTguNzVIOEM3LjU4NTc5IDE4Ljc1IDcuMjUgMTguNDE0MyA3LjI1IDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/SortFromBottomToTop";
  */
 const SortFromBottomToTop: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SortFromBottomToTop.displayName = "SortFromBottomToTop";
-export default SortFromBottomToTop;
+SortFromBottomToTop.displayName = "SortFromBottomToTop"
+export default SortFromBottomToTop

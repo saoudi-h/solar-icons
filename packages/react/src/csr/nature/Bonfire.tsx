@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/nature/Bonfire";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/nature/Bonfire"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zMTMwNyAxNC42OTk2QzMuNDc5MSAxNC4zMjAxIDMuOTIxMzIgMTQuMTQ3IDQuMzAwOCAxNC4zMTMxTDkuMzAwOCAxNi41MDA2QzkuNjgwMjkgMTYuNjY2NiA5Ljg1MzMzIDE3LjEwODggOS42ODczMSAxNy40ODgzQzkuNTIxMjggMTcuODY3OCA5LjA3OTA2IDE4LjA0MDggOC42OTk1NyAxNy44NzQ4TDMuNjk5NTggMTUuNjg3M0MzLjMyMDA5IDE1LjUyMTMgMy4xNDcwNSAxNS4wNzkxIDMuMzEzMDcgMTQuNjk5NlpNMjAuNjg3MyAxNC42OTk2QzIwLjg1MzMgMTUuMDc5MSAyMC42ODAzIDE1LjUyMTMgMjAuMzAwOCAxNS42ODczTDQuMzAwOCAyMi42ODczQzMuOTIxMzIgMjIuODUzMyAzLjQ3OTEgMjIuNjgwMyAzLjMxMzA3IDIyLjMwMDhDMy4xNDcwNSAyMS45MjEzIDMuMzIwMDkgMjEuNDc5MSAzLjY5OTU4IDIxLjMxMzFMMTkuNjk5NiAxNC4zMTMxQzIwLjA3OTEgMTQuMTQ3IDIwLjUyMTMgMTQuMzIwMSAyMC42ODczIDE0LjY5OTZaTTEzLjgxMzEgMTkuMjkzM0MxMy45NzkxIDE4LjkxMzggMTQuNDIxMyAxOC43NDA4IDE0LjgwMDggMTguOTA2OEwyMC4zMDA4IDIxLjMxMzFDMjAuNjgwMyAyMS40NzkxIDIwLjg1MzMgMjEuOTIxMyAyMC42ODczIDIyLjMwMDhDMjAuNTIxMyAyMi42ODAzIDIwLjA3OTEgMjIuODUzMyAxOS42OTk2IDIyLjY4NzNMMTQuMTk5NiAyMC4yODExQzEzLjgyMDEgMjAuMTE1IDEzLjY0NyAxOS42NzI4IDEzLjgxMzEgMTkuMjkzM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS42IDE1QzEzLjczMzMgMTUgMTggMTMuNzYxNSAxOCA4LjgwNzQ1QzE4IDUuNzc2IDE2LjE1MTIgMy41Nzc0IDE0LjQwMDkgMi4yNjQ2QzEzLjUwMyAxLjU5MTA4IDEyLjM1MjkgMi4yODk2NSAxMi4zNTI5IDMuMzg4OTZDMTIuMzUyOSA0LjEzMTY5IDEyLjE0MjQgNS4zNjYxNCAxMS41NTk2IDYuMjc5OThDMTAuODc3NyA3LjM0OTQ0IDkuNzUxMjcgNi40MjEgOS41NzI5NiA1LjE3NjI0QzkuNDgzNTQgNC41NTIwMSA4Ljc5NjM4IDQuMjkzODggOC4yNjA5OSA0LjY1Mjc0QzcuMjA4MzkgNS4zNTgyNiA2IDYuNzEwMTcgNiA4LjgwNzQ1QzYgMTMuNzYxNSA5LjczMzMzIDE1IDExLjYgMTVaTTE1LjIxNTUgOS4yODE2M0MxNS42MTIzIDkuNDAwNjUgMTUuODM3NCA5LjgxODc3IDE1LjcxODQgMTAuMjE1NUMxNS40NDk1IDExLjExMTkgMTQuMzM0NCAxMi43NSAxMiAxMi43NUMxMS41ODU4IDEyLjc1IDExLjI1IDEyLjQxNDIgMTEuMjUgMTJDMTEuMjUgMTEuNTg1OCAxMS41ODU4IDExLjI1IDEyIDExLjI1QzEzLjUwNTYgMTEuMjUgMTQuMTUwNSAxMC4yMjE1IDE0LjI4MTYgOS43ODQ0OUMxNC40MDA3IDkuMzg3NzQgMTQuODE4OCA5LjE2MjYxIDE1LjIxNTUgOS4yODE2M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/nature/Bonfire";
  */
 const Bonfire: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bonfire.displayName = "Bonfire";
-export default Bonfire;
+Bonfire.displayName = "Bonfire"
+export default Bonfire

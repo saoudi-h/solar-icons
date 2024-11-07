@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/ShieldCross";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/ShieldCross"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTAuMDMwMyA4Ljk2OTY1QzkuNzM3NDQgOC42NzY3NiA5LjI2MjU2IDguNjc2NzYgOC45Njk2NyA4Ljk2OTY1QzguNjc2NzggOS4yNjI1NCA4LjY3Njc4IDkuNzM3NDIgOC45Njk2NyAxMC4wMzAzTDEwLjkzOTQgMTJMOC45Njk2OSAxMy45Njk3QzguNjc2OCAxNC4yNjI1IDguNjc2OCAxNC43Mzc0IDguOTY5NjkgMTUuMDMwM0M5LjI2MjU4IDE1LjMyMzIgOS43Mzc0NiAxNS4zMjMyIDEwLjAzMDQgMTUuMDMwM0wxMiAxMy4wNjA3TDEzLjk2OTYgMTUuMDMwM0MxNC4yNjI1IDE1LjMyMzIgMTQuNzM3NCAxNS4zMjMyIDE1LjAzMDMgMTUuMDMwM0MxNS4zMjMyIDE0LjczNzQgMTUuMzIzMiAxNC4yNjI1IDE1LjAzMDMgMTMuOTY5NkwxMy4wNjA3IDEyTDE1LjAzMDMgMTAuMDMwM0MxNS4zMjMyIDkuNzM3NDQgMTUuMzIzMiA5LjI2MjU2IDE1LjAzMDMgOC45Njk2N0MxNC43Mzc0IDguNjc2NzggMTQuMjYyNiA4LjY3Njc4IDEzLjk2OTcgOC45Njk2N0wxMiAxMC45MzkzTDEwLjAzMDMgOC45Njk2NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldCross";
  */
 const ShieldCross: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldCross.displayName = "ShieldCross";
-export default ShieldCross;
+ShieldCross.displayName = "ShieldCross"
+export default ShieldCross

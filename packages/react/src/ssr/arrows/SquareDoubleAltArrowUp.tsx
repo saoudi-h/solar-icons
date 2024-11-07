@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/SquareDoubleAltArrowUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/SquareDoubleAltArrowUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNOC40Njk2NyAxMC45Njk3QzguMTc2NzggMTEuMjYyNiA4LjE3Njc4IDExLjczNzQgOC40Njk2NyAxMi4wMzAzQzguNzYyNTYgMTIuMzIzMiA5LjIzNzQ0IDEyLjMyMzIgOS41MzAzMyAxMi4wMzAzTDEyIDkuNTYwNjZMMTQuNDY5NyAxMi4wMzAzQzE0Ljc2MjYgMTIuMzIzMiAxNS4yMzc0IDEyLjMyMzIgMTUuNTMwMyAxMi4wMzAzQzE1LjgyMzIgMTEuNzM3NCAxNS44MjMyIDExLjI2MjYgMTUuNTMwMyAxMC45Njk3TDEyLjUzMDMgNy45Njk2N0MxMi4yMzc0IDcuNjc2NzggMTEuNzYyNiA3LjY3Njc4IDExLjQ2OTcgNy45Njk2N0w4LjQ2OTY3IDEwLjk2OTdaTTguNDY5NjcgMTYuMDMwM0M4LjE3Njc4IDE1LjczNzQgOC4xNzY3OCAxNS4yNjI2IDguNDY5NjcgMTQuOTY5N0wxMS40Njk3IDExLjk2OTdDMTEuNzYyNiAxMS42NzY4IDEyLjIzNzQgMTEuNjc2OCAxMi41MzAzIDExLjk2OTdMMTUuNTMwMyAxNC45Njk3QzE1LjgyMzIgMTUuMjYyNiAxNS44MjMyIDE1LjczNzQgMTUuNTMwMyAxNi4wMzAzQzE1LjIzNzQgMTYuMzIzMiAxNC43NjI2IDE2LjMyMzIgMTQuNDY5NyAxNi4wMzAzTDEyIDEzLjU2MDdMOS41MzAzMyAxNi4wMzAzQzkuMjM3NDQgMTYuMzIzMiA4Ljc2MjU2IDE2LjMyMzIgOC40Njk2NyAxNi4wMzAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareDoubleAltArrowUp";
  */
 const SquareDoubleAltArrowUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareDoubleAltArrowUp.displayName = "SquareDoubleAltArrowUp";
-export default SquareDoubleAltArrowUp;
+SquareDoubleAltArrowUp.displayName = "SquareDoubleAltArrowUp"
+export default SquareDoubleAltArrowUp

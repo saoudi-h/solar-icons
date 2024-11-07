@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/HighDefinition";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/HighDefinition"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTYuMjUgOEM2LjI1IDcuNTg1NzkgNS45MTQyMSA3LjI1IDUuNSA3LjI1QzUuMDg1NzkgNy4yNSA0Ljc1IDcuNTg1NzkgNC43NSA4VjE2QzQuNzUgMTYuNDE0MiA1LjA4NTc5IDE2Ljc1IDUuNSAxNi43NUM1LjkxNDIxIDE2Ljc1IDYuMjUgMTYuNDE0MiA2LjI1IDE2VjEyLjc1SDkuNTY0ODJWMTZDOS41NjQ4MiAxNi40MTQyIDkuOTAwNiAxNi43NSAxMC4zMTQ4IDE2Ljc1QzEwLjcyOSAxNi43NSAxMS4wNjQ4IDE2LjQxNDIgMTEuMDY0OCAxNlY4QzExLjA2NDggNy41ODU3OSAxMC43MjkgNy4yNSAxMC4zMTQ4IDcuMjVDOS45MDA2IDcuMjUgOS41NjQ4MiA3LjU4NTc5IDkuNTY0ODIgOFYxMS4yNUg2LjI1VjhaTTExLjk3MjIgOC44QzExLjk3MjIgNy44MTk3OSAxMi44NzUzIDcuMjUgMTMuNjg1MiA3LjI1QzE2LjYyMjQgNy4yNSAxOS4yNSA5LjI1MjQ4IDE5LjI1IDEyQzE5LjI1IDE0Ljc0NzUgMTYuNjIyNCAxNi43NSAxMy42ODUyIDE2Ljc1QzEyLjg3NTMgMTYuNzUgMTEuOTcyMiAxNi4xODAyIDExLjk3MjIgMTUuMlY4LjhaTTEzLjQ3MjIgOC44MjE1NEMxMy40NzQ5IDguODE4ODEgMTMuNDc4NSA4LjgxNTM1IDEzLjQ4MzUgOC44MTEyMUMxMy41MTYxIDguNzg0MTUgMTMuNTg1IDguNzUgMTMuNjg1MiA4Ljc1QzE2LjA2NjMgOC43NSAxNy43NSAxMC4zMjkyIDE3Ljc1IDEyQzE3Ljc1IDEzLjY3MDggMTYuMDY2MyAxNS4yNSAxMy42ODUyIDE1LjI1QzEzLjU4NSAxNS4yNSAxMy41MTYxIDE1LjIxNTkgMTMuNDgzNSAxNS4xODg4QzEzLjQ3ODUgMTUuMTg0NyAxMy40NzQ5IDE1LjE4MTIgMTMuNDcyMiAxNS4xNzg1VjguODIxNTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HighDefinition";
  */
 const HighDefinition: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HighDefinition.displayName = "HighDefinition";
-export default HighDefinition;
+HighDefinition.displayName = "HighDefinition"
+export default HighDefinition

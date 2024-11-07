@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Letter";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Letter"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyA1LjE3MTU3QzIgNi4zNDMxNSAyIDguMjI4NzYgMiAxMkMyIDE1Ljc3MTIgMiAxNy42NTY5IDMuMTcxNTcgMTguODI4NEM0LjM0MzE1IDIwIDYuMjI4NzYgMjAgMTAgMjBIMTRDMTcuNzcxMiAyMCAxOS42NTY5IDIwIDIwLjgyODQgMTguODI4NEMyMiAxNy42NTY5IDIyIDE1Ljc3MTIgMjIgMTJDMjIgOC4yMjg3NiAyMiA2LjM0MzE1IDIwLjgyODQgNS4xNzE1N0MxOS42NTY5IDQgMTcuNzcxMiA0IDE0IDRIMTBDNi4yMjg3NiA0IDQuMzQzMTUgNCAzLjE3MTU3IDUuMTcxNTdaTTE4LjU3NjIgNy41MTk4NkMxOC44NDEzIDcuODM4MDcgMTguNzk4MyA4LjMxMDk5IDE4LjQ4MDEgOC41NzYxN0wxNi4yODM3IDEwLjQwNjZDMTUuMzk3MyAxMS4xNDUyIDE0LjY3ODkgMTEuNzQzOSAxNC4wNDQ4IDEyLjE1MTdDMTMuMzg0MyAxMi41NzY1IDEyLjc0MTEgMTIuODQ0OSAxMiAxMi44NDQ5QzExLjI1ODkgMTIuODQ0OSAxMC42MTU3IDEyLjU3NjUgOS45NTUxOCAxMi4xNTE3QzkuMzIxMTIgMTEuNzQzOSA4LjYwMjcxIDExLjE0NTIgNy43MTYzNiAxMC40MDY2TDUuNTE5ODYgOC41NzYxN0M1LjIwMTY1IDguMzEwOTkgNS4xNTg2NiA3LjgzODA3IDUuNDIzODMgNy41MTk4NkM1LjY4OTAxIDcuMjAxNjUgNi4xNjE5MyA3LjE1ODY2IDYuNDgwMTQgNy40MjM4M0w4LjYzOTAzIDkuMjIyOTFDOS41NzE5OSAxMC4wMDA0IDEwLjIxOTcgMTAuNTM4NCAxMC43NjY2IDEwLjg5MDFDMTEuMjk1OSAxMS4yMzA2IDExLjY1NDkgMTEuMzQ0OSAxMiAxMS4zNDQ5QzEyLjM0NTEgMTEuMzQ0OSAxMi43MDQxIDExLjIzMDYgMTMuMjMzNCAxMC44OTAxQzEzLjc4MDMgMTAuNTM4NCAxNC40MjggMTAuMDAwNCAxNS4zNjEgOS4yMjI5MUwxNy41MTk5IDcuNDIzODNDMTcuODM4MSA3LjE1ODY2IDE4LjMxMSA3LjIwMTY1IDE4LjU3NjIgNy41MTk4NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Letter";
  */
 const Letter: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Letter.displayName = "Letter";
-export default Letter;
+Letter.displayName = "Letter"
+export default Letter

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListDownMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListDownMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIMjBDMjAuNDE0MiAxMC4yNSAyMC43NSAxMC41ODU4IDIwLjc1IDExQzIwLjc1IDExLjQxNDIgMjAuNDE0MiAxMS43NSAyMCAxMS43NUgzQzIuNTg1NzkgMTEuNzUgMi4yNSAxMS40MTQyIDIuMjUgMTFaTTIuMjUgMTZDMi4yNSAxNS41ODU4IDIuNTg1NzkgMTUuMjUgMyAxNS4yNUgxMEMxMC40MTQyIDE1LjI1IDEwLjc1IDE1LjU4NTggMTAuNzUgMTZDMTAuNzUgMTYuNDE0MiAxMC40MTQyIDE2Ljc1IDEwIDE2Ljc1SDNDMi41ODU3OSAxNi43NSAyLjI1IDE2LjQxNDIgMi4yNSAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4wMTE5IDE4LjU2OTRDMTcuMjkyOCAxOC44MTAyIDE3LjcwNzIgMTguODEwMiAxNy45ODgxIDE4LjU2OTRMMjEuNDg4MSAxNS41Njk0QzIxLjgwMjYgMTUuMjk5OSAyMS44MzkgMTQuODI2NCAyMS41Njk0IDE0LjUxMTlDMjEuMjk5OSAxNC4xOTc0IDIwLjgyNjQgMTQuMTYxIDIwLjUxMTkgMTQuNDMwNkwxNy41IDE3LjAxMjJMMTQuNDg4MSAxNC40MzA2QzE0LjE3MzYgMTQuMTYxIDEzLjcwMDEgMTQuMTk3NCAxMy40MzA2IDE0LjUxMTlDMTMuMTYxIDE0LjgyNjQgMTMuMTk3NCAxNS4yOTk5IDEzLjUxMTkgMTUuNTY5NEwxNy4wMTE5IDE4LjU2OTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListDownMinimalistic";
  */
 const ListDownMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListDownMinimalistic.displayName = "ListDownMinimalistic";
-export default ListDownMinimalistic;
+ListDownMinimalistic.displayName = "ListDownMinimalistic"
+export default ListDownMinimalistic

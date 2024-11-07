@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/DownloadSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/DownloadSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTEyIDYuMjVDMTIuNDE0MiA2LjI1IDEyLjc1IDYuNTg1NzkgMTIuNzUgN1YxMi4xODkzTDE0LjQ2OTcgMTAuNDY5N0MxNC43NjI2IDEwLjE3NjggMTUuMjM3NCAxMC4xNzY4IDE1LjUzMDMgMTAuNDY5N0MxNS44MjMyIDEwLjc2MjYgMTUuODIzMiAxMS4yMzc0IDE1LjUzMDMgMTEuNTMwM0wxMi41MzAzIDE0LjUzMDNDMTIuMzg5NyAxNC42NzEgMTIuMTk4OSAxNC43NSAxMiAxNC43NUMxMS44MDExIDE0Ljc1IDExLjYxMDMgMTQuNjcxIDExLjQ2OTcgMTQuNTMwM0w4LjQ2OTY3IDExLjUzMDNDOC4xNzY3OCAxMS4yMzc0IDguMTc2NzggMTAuNzYyNiA4LjQ2OTY3IDEwLjQ2OTdDOC43NjI1NiAxMC4xNzY4IDkuMjM3NDQgMTAuMTc2OCA5LjUzMDMzIDEwLjQ2OTdMMTEuMjUgMTIuMTg5M1Y3QzExLjI1IDYuNTg1NzkgMTEuNTg1OCA2LjI1IDEyIDYuMjVaTTggMTYuMjVDNy41ODU3OSAxNi4yNSA3LjI1IDE2LjU4NTggNy4yNSAxN0M3LjI1IDE3LjQxNDIgNy41ODU3OSAxNy43NSA4IDE3Ljc1SDE2QzE2LjQxNDIgMTcuNzUgMTYuNzUgMTcuNDE0MiAxNi43NSAxN0MxNi43NSAxNi41ODU4IDE2LjQxNDIgMTYuMjUgMTYgMTYuMjVIOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/DownloadSquare";
  */
 const DownloadSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DownloadSquare.displayName = "DownloadSquare";
-export default DownloadSquare;
+DownloadSquare.displayName = "DownloadSquare"
+export default DownloadSquare

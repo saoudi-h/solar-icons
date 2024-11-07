@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/medicine/Bones";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/medicine/Bones"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyLjAwMDFDMiA3LjI4NjA1IDIgNC45MjkwMiAzLjQ2NDQ3IDMuNDY0NTZDNC42NDA5IDIuMjg4MTIgNi4zOTMzMiAyLjA1Njc0IDkuNDgwOSAyLjAxMTIzVjQuMDYwNjlDOS40ODA5IDQuNjE3MTcgOS4wMDQ1NyA1LjA1OTIxIDguNTIwMzkgNS4zMzM1QzcuNjA1NjYgNS44NTE3MSA2Ljk2MTkxIDcuMDQgNi45NjE5MSA4LjA5MTA3QzYuOTYxOTEgOS40ODIyNyA4LjA4OTcgMTAuNjEwMSA5LjQ4MDkgMTAuNjEwMUMxMC44NzIxIDEwLjYxMDEgMTEuOTk5OSA5LjQ4MjI3IDExLjk5OTkgOC4wOTEwN0MxMS45OTk5IDkuNDgyMjcgMTMuMTI3NyAxMC42MTAxIDE0LjUxODkgMTAuNjEwMUMxNS45MTAxIDEwLjYxMDEgMTcuMDM3OSA5LjQ4MjI3IDE3LjAzNzkgOC4wOTEwN0MxNy4wMzc5IDcuMDQgMTYuMzk0MSA1Ljg1MTcxIDE1LjQ3OTQgNS4zMzM1QzE0Ljk5NTIgNS4wNTkyMSAxNC41MTg5IDQuNjE3MTcgMTQuNTE4OSA0LjA2MDY5VjIuMDExMjNDMTcuNjA2NiAyLjA1NjczIDE5LjM1OTEgMi4yODgxIDIwLjUzNTUgMy40NjQ1NkMyMiA0LjkyOTAyIDIyIDcuMjg2MDUgMjIgMTIuMDAwMUMyMiAxNi43MTQxIDIyIDE5LjA3MTIgMjAuNTM1NSAyMC41MzU2QzE5LjM2MzkgMjEuNzA3MiAxNy42MjEgMjEuOTQxNSAxNC41NTcgMjEuOTg4NEwxNC41NTcgMTkuOTg0OUMxNC41NTcgMTkuNDI4NCAxNS4wMzMzIDE4Ljk4NjQgMTUuNTE3NSAxOC43MTIxQzE2LjQzMjIgMTguMTkzOSAxNy4wNzYgMTcuMDA1NiAxNy4wNzYgMTUuOTU0NUMxNy4wNzYgMTQuNTYzMyAxNS45NDgyIDEzLjQzNTUgMTQuNTU3IDEzLjQzNTVDMTMuMTY1OCAxMy40MzU1IDEyLjAzOCAxNC41NjMzIDEyLjAzOCAxNS45NTQ1QzEyLjAzOCAxNC41NjMzIDEwLjkxMDIgMTMuNDM1NSA5LjUxODk5IDEzLjQzNTVDOC4xMjc3OSAxMy40MzU1IDcgMTQuNTYzMyA3IDE1Ljk1NDVDNyAxNy4wMDU2IDcuNjQzNzUgMTguMTkzOSA4LjU1ODQ4IDE4LjcxMjFDOS4wNDI2NiAxOC45ODY0IDkuNTE4OTkgMTkuNDI4NCA5LjUxODk5IDE5Ljk4NDlWMjEuOTg5NUM2LjQwNzcxIDIxLjk0NTMgNC42NDU3MyAyMS43MTY5IDMuNDY0NDcgMjAuNTM1NkMyIDE5LjA3MTIgMiAxNi43MTQxIDIgMTIuMDAwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Bones";
  */
 const Bones: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bones.displayName = "Bones";
-export default Bones;
+Bones.displayName = "Bones"
+export default Bones

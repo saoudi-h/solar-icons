@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Box";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Box"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy41Nzc3IDQuNDMxNTJMMTUuNTc3NyAzLjM4MTk3QzEzLjgyMjEgMi40NjA2NiAxMi45NDQzIDIgMTIgMkMxMS4wNTU3IDIgMTAuMTc3OSAyLjQ2MDY2IDguNDIyMjkgMy4zODE5N0w4LjEwMDU3IDMuNTUwOEwxNy4wMjM2IDguNjQ5NjdMMjEuMDQwMyA2LjY0MTMyQzIwLjM5NDEgNS45MDk0OSAxOS4zNTE1IDUuMzYyMzQgMTcuNTc3NyA0LjQzMTUyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuNzQ4NCA3Ljk2NDM0TDE3Ljc1IDkuOTYzNTNWMTNDMTcuNzUgMTMuNDE0MiAxNy40MTQyIDEzLjc1IDE3IDEzLjc1QzE2LjU4NTggMTMuNzUgMTYuMjUgMTMuNDE0MiAxNi4yNSAxM1YxMC43MTM1TDEyLjc1IDEyLjQ2MzVWMjEuOTA0QzEzLjQ2NzkgMjEuNzI1MiAxNC4yODQ4IDIxLjI5NjUgMTUuNTc3NyAyMC42MThMMTcuNTc3NyAxOS41Njg1QzE5LjcyOTQgMTguNDM5MyAyMC44MDUyIDE3Ljg3NDggMjEuNDAyNiAxNi44NjAzQzIyIDE1Ljg0NTggMjIgMTQuNTgzMyAyMiAxMi4wNTg1VjExLjk0MTVDMjIgMTAuMDQ4OSAyMiA4Ljg2NTU3IDIxLjc0ODQgNy45NjQzNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTExLjI1IDIxLjkwNFYxMi40NjM1TDIuMjUxNjQgNy45NjQzNEMyIDguODY1NTcgMiAxMC4wNDg5IDIgMTEuOTQxNVYxMi4wNTg1QzIgMTQuNTgzMyAyIDE1Ljg0NTggMi41OTc0IDE2Ljg2MDNDMy4xOTQ3OSAxNy44NzQ4IDQuMjcwNjIgMTguNDM5MyA2LjQyMjI4IDE5LjU2ODVMOC40MjIyOSAyMC42MThDOS43MTUyNCAyMS4yOTY1IDEwLjUzMjEgMjEuNzI1MiAxMS4yNSAyMS45MDRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yLjk1OTY5IDYuNjQxMzJMMTIgMTEuMTYxNUwxNS40MTEyIDkuNDU1OUw2LjUyNDU2IDQuMzc3ODVMNi40MjIyOSA0LjQzMTUyQzQuNjQ4NTUgNS4zNjIzNCAzLjYwNTkgNS45MDk0OSAyLjk1OTY5IDYuNjQxMzJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Box";
  */
 const Box: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Box.displayName = "Box";
-export default Box;
+Box.displayName = "Box"
+export default Box

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Ghost";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Ghost"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTkuMjA1OFYxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMlYxOS4yMDU4QzIgMjAuNDg5NiAzLjM1MDk4IDIxLjMyNDUgNC40OTkyIDIwLjc1MDRDNS40MjcyNiAyMC4yODY0IDYuNTMyOCAyMC4zNTUyIDcuMzk2MTQgMjAuOTMwOEM4LjM2NzM2IDIxLjU3ODIgOS42MzI2NCAyMS41NzgyIDEwLjYwMzkgMjAuOTMwOEwxMC45NTY1IDIwLjY5NTdDMTEuNTg4NCAyMC4yNzQ0IDEyLjQxMTYgMjAuMjc0NCAxMy4wNDM1IDIwLjY5NTdMMTMuMzk2MSAyMC45MzA4QzE0LjM2NzQgMjEuNTc4MiAxNS42MzI2IDIxLjU3ODIgMTYuNjAzOSAyMC45MzA4QzE3LjQ2NzIgMjAuMzU1MiAxOC41NzI3IDIwLjI4NjQgMTkuNTAwOCAyMC43NTA0QzIwLjY0OSAyMS4zMjQ1IDIyIDIwLjQ4OTYgMjIgMTkuMjA1OFpNMTYgMTAuNUMxNiAxMS4zMjg0IDE1LjU1MjMgMTIgMTUgMTJDMTQuNDQ3NyAxMiAxNCAxMS4zMjg0IDE0IDEwLjVDMTQgOS42NzE1NyAxNC40NDc3IDkgMTUgOUMxNS41NTIzIDkgMTYgOS42NzE1NyAxNiAxMC41Wk05IDEyQzkuNTUyMjggMTIgMTAgMTEuMzI4NCAxMCAxMC41QzEwIDkuNjcxNTcgOS41NTIyOCA5IDkgOUM4LjQ0NzcyIDkgOCA5LjY3MTU3IDggMTAuNUM4IDExLjMyODQgOC40NDc3MiAxMiA5IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Ghost";
  */
 const Ghost: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Ghost.displayName = "Ghost";
-export default Ghost;
+Ghost.displayName = "Ghost"
+export default Ghost

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/PointOnMapPerspective";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/PointOnMapPerspective"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNyAyQzE1LjM0MzEgMiAxNCAzLjM0MzE1IDE0IDVDMTQgNi4zOTc4OCAxNC45NTYxIDcuNTcyNDYgMTYuMjUgNy45MDU0OUwxNi4yNSAxM0MxNi4yNSAxMy40MTQyIDE2LjU4NTggMTMuNzUgMTcgMTMuNzVDMTcuNDE0MiAxMy43NSAxNy43NSAxMy40MTQyIDE3Ljc1IDEzVjcuOTA1NDlDMTkuMDQzOSA3LjU3MjQ1IDIwIDYuMzk3ODggMjAgNUMyMCAzLjM0MzE1IDE4LjY1NjkgMiAxNyAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOCAyMkgxNkMxOC40ODIyIDIyIDE5Ljg3NTIgMjIgMjAuNzczIDIxLjQwNjFMMTIuMjU5MSAxNi43MjM0TDQuMjE1NzggMjEuODAzNEM1LjA4NzA1IDIyIDYuMjgyOTMgMjIgOCAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwLjc1NzYgMTUuODk3NkwyLjUxMTEyIDExLjM2MjFDMiAxMi4yNjMzIDIgMTMuNjM4OSAyIDE2QzIgMTguNjY1NyAyIDIwLjA3NTIgMi43MzU1NyAyMC45NjQyTDEwLjc1NzYgMTUuODk3NloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDE2QzIyIDEzLjE3MTYgMjIgMTEuNzU3NCAyMS4xMjEzIDEwLjg3ODdDMjAuNjMxNCAxMC4zODg4IDE5Ljk3NTEgMTAuMTcyIDE5IDEwLjA3NjFWMTNDMTkgMTQuMTA0NiAxOC4xMDQ2IDE1IDE3IDE1QzE1Ljg5NTQgMTUgMTUgMTQuMTA0NiAxNSAxM1YxMEg4QzUuOTU1MTIgMTAgNC42NDk0NCAxMCAzLjc1MDkxIDEwLjMzMkwyMS42ODY4IDIwLjE5NjhDMjIgMTkuMyAyMiAxOC4wMDU1IDIyIDE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/PointOnMapPerspective";
  */
 const PointOnMapPerspective: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PointOnMapPerspective.displayName = "PointOnMapPerspective";
-export default PointOnMapPerspective;
+PointOnMapPerspective.displayName = "PointOnMapPerspective"
+export default PointOnMapPerspective

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/LockUnlocked";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/LockUnlocked"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02Ljc1IDhDNi43NSA1LjEwMDUxIDkuMTAwNTEgMi43NSAxMiAyLjc1QzE0LjQ0NTMgMi43NSAxNi41MDE4IDQuNDIyNDIgMTcuMDg0NiA2LjY4Njk0QzE3LjE4NzkgNy4wODgwOCAxNy41OTY4IDcuMzI5NTcgMTcuOTk3OSA3LjIyNjMzQzE4LjM5OTEgNy4xMjMwOCAxOC42NDA1IDYuNzE0MiAxOC41MzczIDYuMzEzMDZDMTcuNzg4IDMuNDAxOSAxNS4xNDYzIDEuMjUgMTIgMS4yNUM4LjI3MjA4IDEuMjUgNS4yNSA0LjI3MjA4IDUuMjUgOFYxMC4wNTQ2QzQuMTM1MjUgMTAuMTM3OSAzLjQwOTMxIDEwLjM0OCAyLjg3ODY4IDEwLjg3ODdDMiAxMS43NTc0IDIgMTMuMTcxNiAyIDE2QzIgMTguODI4NCAyIDIwLjI0MjYgMi44Nzg2OCAyMS4xMjEzQzMuNzU3MzYgMjIgNS4xNzE1NyAyMiA4IDIySDE2QzE4LjgyODQgMjIgMjAuMjQyNiAyMiAyMS4xMjEzIDIxLjEyMTNDMjIgMjAuMjQyNiAyMiAxOC44Mjg0IDIyIDE2QzIyIDEzLjE3MTYgMjIgMTEuNzU3NCAyMS4xMjEzIDEwLjg3ODdDMjAuMjQyNiAxMCAxOC44Mjg0IDEwIDE2IDEwSDhDNy41NDg0OSAxMCA3LjEzMzAxIDEwIDYuNzUgMTAuMDAzNlY4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/LockUnlocked";
  */
 const LockUnlocked: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LockUnlocked.displayName = "LockUnlocked";
-export default LockUnlocked;
+LockUnlocked.displayName = "LockUnlocked"
+export default LockUnlocked

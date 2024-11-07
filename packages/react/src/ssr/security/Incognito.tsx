@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/Incognito";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/Incognito"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC42MTM4IDguNTQ0NzlMNC4xODc1IDEwLjI1SDJDMS41ODU3OSAxMC4yNSAxLjI1IDEwLjU4NTggMS4yNSAxMUMxLjI1IDExLjQxNDIgMS41ODU3OSAxMS43NSAyIDExLjc1SDIyQzIyLjQxNDIgMTEuNzUgMjIuNzUgMTEuNDE0MiAyMi43NSAxMUMyMi43NSAxMC41ODU4IDIyLjQxNDIgMTAuMjUgMjIgMTAuMjVIMTkuODEyNUwxOS4zODYyIDguNTQ0NzlDMTguODQwNSA2LjM2MjExIDE4LjU2NzcgNS4yNzA3NyAxNy43NTM5IDQuNjM1MzhDMTYuOTQwMSA0IDE1LjgxNTIgNCAxMy41NjUzIDRIMTAuNDM0N0M4LjE4NDggNCA3LjA1OTg4IDQgNi4yNDYwOSA0LjYzNTM4QzUuNDMyMzEgNS4yNzA3NyA1LjE1OTQ3IDYuMzYyMTEgNC42MTM4IDguNTQ0NzlaTTYuNSAyMUM4LjEyMzE2IDIxIDkuNDg4MjYgMTkuODk1MSA5Ljg4NDE3IDE4LjM5NjNMMTAuOTkzOCAxNy44NDE1QzExLjYyNzIgMTcuNTI0OCAxMi4zNzI4IDE3LjUyNDggMTMuMDA2MiAxNy44NDE1TDE0LjExNTggMTguMzk2M0MxNC41MTE3IDE5Ljg5NTEgMTUuODc2OCAyMSAxNy41IDIxQzE5LjQzMyAyMSAyMSAxOS40MzMgMjEgMTcuNUMyMSAxNS41NjcgMTkuNDMzIDE0IDE3LjUgMTRDMTUuODM5OSAxNCAxNC40NDk4IDE1LjE1NTggMTQuMDkwMyAxNi43MDY1TDEzLjY3NzEgMTYuNDk5OUMxMi42MjEzIDE1Ljk3MiAxMS4zNzg3IDE1Ljk3MiAxMC4zMjI5IDE2LjQ5OTlMOS45MDk2NyAxNi43MDY1QzkuNTUwMjMgMTUuMTU1OCA4LjE2MDA5IDE0IDYuNSAxNEM0LjU2NyAxNCAzIDE1LjU2NyAzIDE3LjVDMyAxOS40MzMgNC41NjcgMjEgNi41IDIxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/Incognito";
  */
 const Incognito: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Incognito.displayName = "Incognito";
-export default Incognito;
+Incognito.displayName = "Incognito"
+export default Incognito

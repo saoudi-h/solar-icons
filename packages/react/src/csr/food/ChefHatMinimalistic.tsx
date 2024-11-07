@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/ChefHatMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/ChefHatMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMEMyIDcuMjM4NTggNC4yMzg1OCA1IDcgNUM3LjI1MDUyIDUgNy40OTY3MyA1LjAxODQyIDcuNzM3MzYgNS4wNTM5OUM4LjMzOTYxIDMuMjc4MDYgMTAuMDIwNiAyIDEyIDJDMTMuOTc5NCAyIDE1LjY2MDQgMy4yNzgwNiAxNi4yNjI2IDUuMDUzOTlDMTYuNTAzMyA1LjAxODQyIDE2Ljc0OTUgNSAxNyA1QzE5Ljc2MTQgNSAyMiA3LjIzODU4IDIyIDEwQzIyIDEyLjA1MDMgMjAuNzY1OSAxMy44MTI0IDE5IDE0LjU4NEwxOSAxOEMxOSAxOS44ODU2IDE5IDIwLjgyODQgMTguNDE0MiAyMS40MTQyQzE3LjgyODQgMjIgMTYuODg1NiAyMiAxNSAyMkg5QzcuMTE0MzggMjIgNi4xNzE1NyAyMiA1LjU4NTc5IDIxLjQxNDJDNSAyMC44Mjg0IDUgMTkuODg1NiA1IDE4VjE0LjU4NEMzLjIzNDEgMTMuODEyNCAyIDEyLjA1MDMgMiAxMFpNOSAxNy4yNUM4LjU4NTc5IDE3LjI1IDguMjUgMTcuNTg1OCA4LjI1IDE4QzguMjUgMTguNDE0MiA4LjU4NTc5IDE4Ljc1IDkgMTguNzVIMTVDMTUuNDE0MiAxOC43NSAxNS43NSAxOC40MTQyIDE1Ljc1IDE4QzE1Ljc1IDE3LjU4NTggMTUuNDE0MiAxNy4yNSAxNSAxNy4yNUg5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/ChefHatMinimalistic";
  */
 const ChefHatMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChefHatMinimalistic.displayName = "ChefHatMinimalistic";
-export default ChefHatMinimalistic;
+ChefHatMinimalistic.displayName = "ChefHatMinimalistic"
+export default ChefHatMinimalistic

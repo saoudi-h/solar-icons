@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/MusicNote";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/MusicNote"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC4wOTA5IDExLjk2MjlMMTkuMzYzNiA4LjYzMDg3VjE0LjE3MDdDMTguODEyNiAxMy44NTM4IDE4LjE1NzQgMTMuNjcgMTcuNDU0NSAxMy42N0MxNS40OTY0IDEzLjY3IDEzLjkwOTEgMTUuMDk2IDEzLjkwOTEgMTYuODU1QzEzLjkwOTEgMTguNjE0IDE1LjQ5NjQgMjAuMDQgMTcuNDU0NSAyMC4wNEMxOS40MTI2IDIwLjA0IDIxIDE4LjYxNCAyMSAxNi44NTVDMjEgMTYuODU1IDIxIDE2Ljg1NTEgMjEgMTYuODU1TDIxIDcuNDkyMzZDMjEgNi4zNzIzOCAyMSA1LjQzMzEgMjAuOTEyMyA0LjY4NDcyQzIwLjg5OTkgNC41Nzg5NSAyMC44ODUyIDQuNDczOCAyMC44NjkgNC4zNzU2OUMyMC43ODQ1IDMuODY0NDEgMjAuNjM1MiAzLjM4NzQ1IDIwLjM0NyAyLjk4OTE3QzIwLjIwMjggMi43OTAwMiAyMC4wMjQgMi42MTA1NSAxOS44MDEyIDIuNDU2MjhDMTkuNzU5NCAyLjQyNzM2IDE5LjcxNiAyLjM5OTMyIDE5LjY3MTEgMi4zNzIyTDE5LjY2MjEgMi4zNjY3OUMxOC44OTA2IDEuOTA1NTMgMTguMDIzMyAxLjkzODUyIDE3LjEyOTggMi4xNDMwNUMxNi4yNjU3IDIuMzQwODYgMTUuMTk0NCAyLjc0MzY4IDEzLjg4MDggMy4yMzc2M0wxMS41OTYzIDQuMDk2NTZDMTAuOTgwNiA0LjMyODA2IDEwLjQ1ODkgNC41MjQxOSAxMC4wNDk0IDQuNzI3MzRDOS42MTM3NiA0Ljk0MzQ4IDkuMjM4NDkgNS4xOTg0IDguOTU3MDcgNS41NzgyOEM4LjY3NTY0IDUuOTU4MTcgOC41NTg3NiA2LjM2NzU2IDguNTA1MDEgNi44MTIwM0M4LjQ1NDUgNy4yMjk3OCA4LjQ1NDUyIDcuNzM3OCA4LjQ1NDU1IDguMzM3NDNWMTYuMTMwN0M3LjkwMzQ3IDE1LjgxMzggNy4yNDgzNSAxNS42MyA2LjU0NTQ1IDE1LjYzQzQuNTg3MzUgMTUuNjMgMyAxNy4wNTYgMyAxOC44MTVDMyAyMC41NzQgNC41ODczNSAyMiA2LjU0NTQ1IDIyQzguNTAzNTUgMjIgMTAuMDkwOSAyMC41NzQgMTAuMDkwOSAxOC44MTVDMTAuMDkwOSAxOC44MTUgMTAuMDkwOSAxOC44MTUxIDEwLjA5MDkgMTguODE1TDEwLjA5MDkgMTEuOTYyOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/MusicNote";
  */
 const MusicNote: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MusicNote.displayName = "MusicNote";
-export default MusicNote;
+MusicNote.displayName = "MusicNote"
+export default MusicNote

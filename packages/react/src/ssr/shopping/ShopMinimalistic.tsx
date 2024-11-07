@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/shopping/ShopMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/shopping/ShopMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSAxNC4yNUMxOS40MTQyIDE0LjI1IDE5Ljc1IDE0LjU4NTggMTkuNzUgMTVWMjEuMjVIMjFDMjEuNDE0MiAyMS4yNSAyMS43NSAyMS41ODU4IDIxLjc1IDIyQzIxLjc1IDIyLjQxNDIgMjEuNDE0MiAyMi43NSAyMSAyMi43NUgzQzIuNTg1NzkgMjIuNzUgMi4yNSAyMi40MTQyIDIuMjUgMjJDMi4yNSAyMS41ODU4IDIuNTg1NzkgMjEuMjUgMyAyMS4yNUg0LjI1VjE1QzQuMjUgMTQuNTg1OCA0LjU4NTc5IDE0LjI1IDUgMTQuMjVDNS40MTQyMSAxNC4yNSA1Ljc1IDE0LjU4NTggNS43NSAxNVYyMS4yNUgxOC4yNVYxNUMxOC4yNSAxNC41ODU4IDE4LjU4NTggMTQuMjUgMTkgMTQuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNi41Mjc4IDJINy40NzIxNEM2LjI2OTMyIDIgNS42Njc5MSAyIDUuMTg0NjEgMi4yOTg3QzQuNzAxMyAyLjU5NzQgNC40MzIzNCAzLjEzNTMxIDMuODk0NDMgNC4yMTExNEwyLjQ5MDgxIDcuNzU5MjlDMi4xNjY1MiA4LjU3OTA1IDEuODgyNzkgOS41NDUyNSAyLjQyODY3IDEwLjIzNzVDMi43OTQ4OSAxMC43MDE5IDMuMzYyNTcgMTEgMy45OTk5MSAxMUM1LjEwNDQ4IDExIDUuOTk5OTEgMTAuMTA0NiA1Ljk5OTkxIDlDNS45OTk5MSAxMC4xMDQ2IDYuODk1MzQgMTEgNy45OTk5MSAxMUM5LjEwNDQ4IDExIDkuOTk5OTEgMTAuMTA0NiA5Ljk5OTkxIDlDOS45OTk5MSAxMC4xMDQ2IDEwLjg5NTMgMTEgMTEuOTk5OSAxMUMxMy4xMDQ1IDExIDEzLjk5OTkgMTAuMTA0NiAxMy45OTk5IDlDMTMuOTk5OSAxMC4xMDQ2IDE0Ljg5NTMgMTEgMTUuOTk5OSAxMUMxNy4xMDQ1IDExIDE3Ljk5OTkgMTAuMTA0NiAxNy45OTk5IDlDMTcuOTk5OSAxMC4xMDQ2IDE4Ljg5NTMgMTEgMTkuOTk5OSAxMUMyMC42MzczIDExIDIxLjIwNSAxMC43MDE5IDIxLjU3MTIgMTAuMjM3NUMyMi4xMTcxIDkuNTQ1MjUgMjEuODMzNCA4LjU3OTA1IDIxLjUwOTEgNy43NTkyOUwyMC4xMDU1IDQuMjExMTRDMTkuNTY3NiAzLjEzNTMxIDE5LjI5ODYgMi41OTc0IDE4LjgxNTMgMi4yOTg3QzE4LjMzMiAyIDE3LjczMDYgMiAxNi41Mjc4IDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/ShopMinimalistic";
  */
 const ShopMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShopMinimalistic.displayName = "ShopMinimalistic";
-export default ShopMinimalistic;
+ShopMinimalistic.displayName = "ShopMinimalistic"
+export default ShopMinimalistic

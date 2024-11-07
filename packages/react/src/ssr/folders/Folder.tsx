@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/folders/Folder";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/folders/Folder"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4wNjkzNSA1LjI1ODM5QzIgNS42MjU5NSAyIDYuMDY3MjIgMiA2Ljk0OTc1VjE0QzIgMTcuNzcxMiAyIDE5LjY1NjkgMy4xNzE1NyAyMC44Mjg0QzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC44Mjg0QzIyIDE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNFYxMS43OTc5QzIyIDkuMTY1NTQgMjIgNy44NDkzNSAyMS4yMzA1IDYuOTkzODNDMjEuMTU5OCA2LjkxNTE0IDIxLjA4NDkgNi44NDAyNCAyMS4wMDYyIDYuNzY5NDZDMjAuMTUwNiA2IDE4LjgzNDUgNiAxNi4yMDIxIDZIMTUuODI4NEMxNC42NzQ3IDYgMTQuMDk3OSA2IDEzLjU2MDQgNS44NDY3OEMxMy4yNjUxIDUuNzYyNiAxMi45ODA0IDUuNjQ0NzEgMTIuNzEyMSA1LjQ5NTQzQzEyLjIyMzcgNS4yMjM2NyAxMS44MTU4IDQuODE1NzggMTEgNEwxMC40NDk3IDMuNDQ5NzVDMTAuMTc2MyAzLjE3NjMzIDEwLjAzOTYgMy4wMzk2MSA5Ljg5NTk0IDIuOTIwNTFDOS4yNzY1MiAyLjQwNzA0IDguNTE2NjUgMi4wOTIyOSA3LjcxNTU3IDIuMDE3MzhDNy41Mjk3NiAyIDcuMzM2NDIgMiA2Ljk0OTc1IDJDNi4wNjcyMiAyIDUuNjI1OTUgMiA1LjI1ODM5IDIuMDY5MzVDMy42NDAzMSAyLjM3NDY0IDIuMzc0NjQgMy42NDAzMSAyLjA2OTM1IDUuMjU4MzlaTTEyLjI1IDEwQzEyLjI1IDkuNTg1NzkgMTIuNTg1OCA5LjI1IDEzIDkuMjVIMThDMTguNDE0MiA5LjI1IDE4Ljc1IDkuNTg1NzkgMTguNzUgMTBDMTguNzUgMTAuNDE0MiAxOC40MTQyIDEwLjc1IDE4IDEwLjc1SDEzQzEyLjU4NTggMTAuNzUgMTIuMjUgMTAuNDE0MiAxMi4yNSAxMFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/folders/Folder";
  */
 const Folder: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Folder.displayName = "Folder";
-export default Folder;
+Folder.displayName = "Folder"
+export default Folder

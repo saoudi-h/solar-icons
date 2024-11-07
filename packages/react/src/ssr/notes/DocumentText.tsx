@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/notes/DocumentText";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/notes/DocumentText"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4xNzE1NyAzLjE3MTU3QzMgNC4zNDMxNSAzIDYuMjI4NzYgMyAxMFYxNEMzIDE3Ljc3MTIgMyAxOS42NTY5IDQuMTcxNTcgMjAuODI4NEM1LjM0MzE1IDIyIDcuMjI4NzYgMjIgMTEgMjJIMTNDMTYuNzcxMiAyMiAxOC42NTY5IDIyIDE5LjgyODQgMjAuODI4NEMyMSAxOS42NTY5IDIxIDE3Ljc3MTIgMjEgMTRWMTBDMjEgNi4yMjg3NiAyMSA0LjM0MzE1IDE5LjgyODQgMy4xNzE1N0MxOC42NTY5IDIgMTYuNzcxMiAyIDEzIDJIMTFDNy4yMjg3NiAyIDUuMzQzMTUgMiA0LjE3MTU3IDMuMTcxNTdaTTcuMjUgOEM3LjI1IDcuNTg1NzkgNy41ODU3OSA3LjI1IDggNy4yNUgxNkMxNi40MTQyIDcuMjUgMTYuNzUgNy41ODU3OSAxNi43NSA4QzE2Ljc1IDguNDE0MjEgMTYuNDE0MiA4Ljc1IDE2IDguNzVIOEM3LjU4NTc5IDguNzUgNy4yNSA4LjQxNDIxIDcuMjUgOFpNNy4yNSAxMkM3LjI1IDExLjU4NTggNy41ODU3OSAxMS4yNSA4IDExLjI1SDE2QzE2LjQxNDIgMTEuMjUgMTYuNzUgMTEuNTg1OCAxNi43NSAxMkMxNi43NSAxMi40MTQyIDE2LjQxNDIgMTIuNzUgMTYgMTIuNzVIOEM3LjU4NTc5IDEyLjc1IDcuMjUgMTIuNDE0MiA3LjI1IDEyWk04IDE1LjI1QzcuNTg1NzkgMTUuMjUgNy4yNSAxNS41ODU4IDcuMjUgMTZDNy4yNSAxNi40MTQyIDcuNTg1NzkgMTYuNzUgOCAxNi43NUgxM0MxMy40MTQyIDE2Ljc1IDEzLjc1IDE2LjQxNDIgMTMuNzUgMTZDMTMuNzUgMTUuNTg1OCAxMy40MTQyIDE1LjI1IDEzIDE1LjI1SDhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/DocumentText";
  */
 const DocumentText: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DocumentText.displayName = "DocumentText";
-export default DocumentText;
+DocumentText.displayName = "DocumentText"
+export default DocumentText

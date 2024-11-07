@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/CalendarMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/CalendarMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxNFYxMkMyMiAxMS4xNjEgMjIgMTAuNDE1MyAyMS45ODcxIDkuNzVIMi4wMTI5QzIgMTAuNDE1MyAyIDExLjE2MSAyIDEyVjE0QzIgMTcuNzcxMiAyIDE5LjY1NjkgMy4xNzE1NyAyMC44Mjg0QzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC44Mjg0QzIyIDE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuNzUgMi41QzcuNzUgMi4wODU3OSA3LjQxNDIxIDEuNzUgNyAxLjc1QzYuNTg1NzkgMS43NSA2LjI1IDIuMDg1NzkgNi4yNSAyLjVWNC4wNzkyNkM0LjgxMDY3IDQuMTk0NTEgMy44NjU3NyA0LjQ3NzM3IDMuMTcxNTcgNS4xNzE1N0MyLjQ3NzM3IDUuODY1NzcgMi4xOTQ1MSA2LjgxMDY3IDIuMDc5MjYgOC4yNUgyMS45MjA3QzIxLjgwNTUgNi44MTA2NyAyMS41MjI2IDUuODY1NzcgMjAuODI4NCA1LjE3MTU3QzIwLjEzNDIgNC40NzczNyAxOS4xODkzIDQuMTk0NTEgMTcuNzUgNC4wNzkyNlYyLjVDMTcuNzUgMi4wODU3OSAxNy40MTQyIDEuNzUgMTcgMS43NUMxNi41ODU4IDEuNzUgMTYuMjUgMi4wODU3OSAxNi4yNSAyLjVWNC4wMTI5QzE1LjU4NDcgNCAxNC44MzkgNCAxNCA0SDEwQzkuMTYwOTcgNCA4LjQxNTI3IDQgNy43NSA0LjAxMjlWMi41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/CalendarMinimalistic";
  */
 const CalendarMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CalendarMinimalistic.displayName = "CalendarMinimalistic";
-export default CalendarMinimalistic;
+CalendarMinimalistic.displayName = "CalendarMinimalistic"
+export default CalendarMinimalistic

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/notes/ArchiveDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/notes/ArchiveDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDVDMiA0LjA1NzE5IDIgMy41ODU3OSAyLjI5Mjg5IDMuMjkyODlDMi41ODU3OSAzIDMuMDU3MTkgMyA0IDNIMjBDMjAuOTQyOCAzIDIxLjQxNDIgMyAyMS43MDcxIDMuMjkyODlDMjIgMy41ODU3OSAyMiA0LjA1NzE5IDIyIDVDMjIgNS45NDI4MSAyMiA2LjQxNDIxIDIxLjcwNzEgNi43MDcxMUMyMS40MTQyIDcgMjAuOTQyOCA3IDIwIDdINEMzLjA1NzE5IDcgMi41ODU3OSA3IDIuMjkyODkgNi43MDcxMUMyIDYuNDE0MjEgMiA1Ljk0MjgxIDIgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjA2ODkgOC40OTk5M0MyMC4yMTAxIDguNDk5OTkgMjAuMzU1MSA4LjUwMDA1IDIwLjUgOC40OTgwNVYxMi45OTk5QzIwLjUgMTYuNzcxMSAyMC41IDE4LjY1NjggMTkuMzI4NCAxOS44MjgzQzE4LjE1NjkgMjAuOTk5OSAxNi4yNzEyIDIwLjk5OTkgMTIuNSAyMC45OTk5SDExLjVDNy43Mjg3NiAyMC45OTk5IDUuODQzMTUgMjAuOTk5OSA0LjY3MTU3IDE5LjgyODNDMy41IDE4LjY1NjggMy41IDE2Ljc3MTEgMy41IDEyLjk5OTlWOC40OTgwNUMzLjY0NDg4IDguNTAwMDUgMy43ODk5OSA4LjQ5OTk5IDMuOTMxMTQgOC40OTk5M0wxMS4yNSA4LjQ5OTkyTDExLjI1IDE1LjA0NTRMOS41NTc0OCAxMy4xNjQ4QzkuMjgwMzggMTIuODU2OSA4LjgwNjE3IDEyLjgzMiA4LjQ5ODI4IDEzLjEwOTFDOC4xOTA0IDEzLjM4NjIgOC4xNjU0NCAxMy44NjA0IDguNDQyNTQgMTQuMTY4M0wxMS40NDI1IDE3LjUwMTZDMTEuNTg0OCAxNy42NTk2IDExLjc4NzQgMTcuNzQ5OSAxMiAxNy43NDk5QzEyLjIxMjYgMTcuNzQ5OSAxMi40MTUyIDE3LjY1OTYgMTIuNTU3NSAxNy41MDE2TDE1LjU1NzUgMTQuMTY4M0MxNS44MzQ2IDEzLjg2MDQgMTUuODA5NiAxMy4zODYyIDE1LjUwMTcgMTMuMTA5MUMxNS4xOTM4IDEyLjgzMiAxNC43MTk2IDEyLjg1NjkgMTQuNDQyNSAxMy4xNjQ4TDEyLjc1IDE1LjA0NTRMMTIuNzUgOC40OTk5MkwyMC4wNjg5IDguNDk5OTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ArchiveDown";
  */
 const ArchiveDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArchiveDown.displayName = "ArchiveDown";
-export default ArchiveDown;
+ArchiveDown.displayName = "ArchiveDown"
+export default ArchiveDown

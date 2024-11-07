@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatRoundLine";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatRoundLine"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTMuNTk5NyAyLjM3NTYyIDE1LjExMTYgMy4wNDM0NiAxNi40NTI1QzMuMjIwOTQgMTYuODA4OCAzLjI4MDAxIDE3LjIxNjEgMy4xNzcxMiAxNy42MDA2TDIuNTgxNTEgMTkuODI2N0MyLjMyMjk1IDIwLjc5MyAzLjIwNzAxIDIxLjY3NyA0LjE3MzM1IDIxLjQxODVMNi4zOTkzOSAyMC44MjI5QzYuNzgzOTMgMjAuNzIgNy4xOTEyMSAyMC43NzkxIDcuNTQ3NTMgMjAuOTU2NUM4Ljg4ODM3IDIxLjYyNDQgMTAuNDAwMyAyMiAxMiAyMlpNOCAxMy4yNUM3LjU4NTc5IDEzLjI1IDcuMjUgMTMuNTg1OCA3LjI1IDE0QzcuMjUgMTQuNDE0MiA3LjU4NTc5IDE0Ljc1IDggMTQuNzVIMTMuNUMxMy45MTQyIDE0Ljc1IDE0LjI1IDE0LjQxNDIgMTQuMjUgMTRDMTQuMjUgMTMuNTg1OCAxMy45MTQyIDEzLjI1IDEzLjUgMTMuMjVIOFpNNy4yNSAxMC41QzcuMjUgMTAuMDg1OCA3LjU4NTc5IDkuNzUgOCA5Ljc1SDE2QzE2LjQxNDIgOS43NSAxNi43NSAxMC4wODU4IDE2Ljc1IDEwLjVDMTYuNzUgMTAuOTE0MiAxNi40MTQyIDExLjI1IDE2IDExLjI1SDhDNy41ODU3OSAxMS4yNSA3LjI1IDEwLjkxNDIgNy4yNSAxMC41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundLine";
  */
 const ChatRoundLine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundLine.displayName = "ChatRoundLine";
-export default ChatRoundLine;
+ChatRoundLine.displayName = "ChatRoundLine"
+export default ChatRoundLine

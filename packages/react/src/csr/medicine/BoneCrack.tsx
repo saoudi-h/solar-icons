@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/medicine/BoneCrack";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/medicine/BoneCrack"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy4yODk1IDUuNzg5N0MxMy4wMDkyIDQuNzc2NDYgMTMuMzk0MiAzLjQ4MTAyIDE0LjEzNzQgMi43Mzc3OUMxNS4xMjEyIDEuNzU0MDcgMTYuNzE2MSAxLjc1NDA3IDE3LjY5OTggMi43Mzc3OUMxOC42ODM1IDMuNzIxNTIgMTguNjgzNSA1LjMxNjQ2IDE3LjY5OTggNi4zMDAxOEMxOC42ODM1IDUuMzE2NDYgMjAuMjc4NSA1LjMxNjQ2IDIxLjI2MjIgNi4zMDAxOEMyMi4yNDU5IDcuMjgzOTEgMjIuMjQ1OSA4Ljg3ODg0IDIxLjI2MjIgOS44NjI1N0MyMC41MTkgMTAuNjA1OCAxOS4yMjM1IDEwLjk5MDggMTguMjEwMyAxMC43MTA1QzE3LjY3NCAxMC41NjIgMTcuMDI0NiAxMC41Mzc4IDE2LjYzMTEgMTAuOTMxM0wxNS43ODg2IDExLjc3MzhMMTMuMTAzNyAxMi4xODY2VjExLjY0NjVDMTMuMTAzNyAxMS40MDU0IDEyLjk4NzkgMTEuMTc5IDEyLjc5MjMgMTEuMDM4MUMxMi41OTY3IDEwLjg5NzEgMTIuMzQ1MyAxMC44NTg3IDEyLjExNjYgMTAuOTM1TDEwLjk4MjQgMTEuMzEzVjkuNDU1MTlMMTMuMDY4NyA3LjM2ODlDMTMuNDYyMiA2Ljk3NTQxIDEzLjQzOCA2LjMyNjAzIDEzLjI4OTUgNS43ODk3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOS40ODI0MiAxMC45NTUyTDcuMzY4OSAxMy4wNjg3QzYuOTc1NDEgMTMuNDYyMiA2LjMyNjAzIDEzLjQzOCA1Ljc4OTcgMTMuMjg5NUM0Ljc3NjQ2IDEzLjAwOTIgMy40ODEwMSAxMy4zOTQyIDIuNzM3NzkgMTQuMTM3NEMxLjc1NDA3IDE1LjEyMTIgMS43NTQwNyAxNi43MTYxIDIuNzM3NzkgMTcuNjk5OEMzLjcyMTUyIDE4LjY4MzUgNS4zMTY0NiAxOC42ODM1IDYuMzAwMTggMTcuNjk5OEM1LjMxNjQ2IDE4LjY4MzUgNS4zMTY0NSAyMC4yNzg1IDYuMzAwMTggMjEuMjYyMkM3LjI4MzkxIDIyLjI0NTkgOC44Nzg4NCAyMi4yNDU5IDkuODYyNTcgMjEuMjYyMkMxMC42MDU4IDIwLjUxOSAxMC45OTA4IDE5LjIyMzUgMTAuNzEwNSAxOC4yMTAzQzEwLjU2MiAxNy42NzQgMTAuNTM3OCAxNy4wMjQ2IDEwLjkzMTMgMTYuNjMxMUwxMy45OTUzIDEzLjU2NzFMMTIuNDY3NyAxMy44MDJDMTIuMjUxNCAxMy44MzUyIDEyLjAzMTQgMTMuNzcyNCAxMS44NjU0IDEzLjYyOTlDMTEuNjk5MyAxMy40ODc0IDExLjYwMzcgMTMuMjc5NSAxMS42MDM3IDEzLjA2MDdWMTIuNjg3MUwxMC40Njk2IDEzLjA2NTFDMTAuMjQwOSAxMy4xNDEzIDkuOTg5NDcgMTMuMTAzIDkuNzkzODkgMTIuOTYyQzkuNTk4MzEgMTIuODIxMSA5LjQ4MjQyIDEyLjU5NDcgOS40ODI0MiAxMi4zNTM2VjEwLjk1NTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/BoneCrack";
  */
 const BoneCrack: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BoneCrack.displayName = "BoneCrack";
-export default BoneCrack;
+BoneCrack.displayName = "BoneCrack"
+export default BoneCrack

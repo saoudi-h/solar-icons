@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/Hourglass";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/Hourglass"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjE5ODI1IDMuMjk5MThDNS44MDA0NiAyIDcuODY2OTcgMiAxMiAyQzE2LjEzMyAyIDE4LjE5OTUgMiAxOC44MDE3IDMuMjk5MThDMTguODUzNSAzLjQxMDg2IDE4Ljg5NzIgMy41MjY4NiAxOC45MzIzIDMuNjQ2MUMxOS4zNDE0IDUuMDMzMyAxNy44ODAyIDYuNjQxMTEgMTQuOTU3NyA5Ljg1Njc0TDEzIDEyTDE0Ljk1NzcgMTQuMTQzM0MxNy44ODAyIDE3LjM1ODkgMTkuMzQxNCAxOC45NjY3IDE4LjkzMjMgMjAuMzUzOUMxOC44OTcyIDIwLjQ3MzEgMTguODUzNSAyMC41ODkxIDE4LjgwMTcgMjAuNzAwOEMxOC4xOTk1IDIyIDE2LjEzMyAyMiAxMiAyMkM3Ljg2Njk3IDIyIDUuODAwNDYgMjIgNS4xOTgyNSAyMC43MDA4QzUuMTQ2NDkgMjAuNTg5MSA1LjEwMjgyIDIwLjQ3MzEgNS4wNjc2NSAyMC4zNTM5QzQuNjU4NTcgMTguOTY2NyA2LjExOTgxIDE3LjM1ODkgOS4wNDIzIDE0LjE0MzNMMTEgMTJMOS4wNDIzIDkuODU2NzRDNi4xMTk4MSA2LjY0MTExIDQuNjU4NTcgNS4wMzMzIDUuMDY3NjUgMy42NDYxQzUuMTAyODIgMy41MjY4NiA1LjE0NjQ5IDMuNDEwODYgNS4xOTgyNSAzLjI5OTE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/Hourglass";
  */
 const Hourglass: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Hourglass.displayName = "Hourglass";
-export default Hourglass;
+Hourglass.displayName = "Hourglass"
+export default Hourglass

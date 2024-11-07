@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RestartSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RestartSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTE1LjkzNDYgNS41OTE1OEMxNi4yMTcgNS43MDY2MiAxNi40MDE3IDUuOTgxMjEgMTYuNDAxNyA2LjI4NjE2VjkuMDAwNjdDMTYuNDAxNyA5LjQxNDg5IDE2LjA2NTkgOS43NTA2NyAxNS42NTE3IDkuNzUwNjdIMTNDMTIuNjk4MyA5Ljc1MDY3IDEyLjQyNTkgOS41Njk4NCAxMi4zMDg4IDkuMjkxNzRDMTIuMTkxNyA5LjAxMzY0IDEyLjI1MjcgOC42OTI0NSAxMi40NjM1IDguNDc2NTlMMTMuMjI1IDcuNjk3MDVDMTEuNzc5NSA3LjI1MTQzIDEwLjE0NjcgNy42MTMwMyA5LjAwMDk3IDguNzg1OTZDNy4zMzMwMSAxMC40OTM1IDcuMzMzMDEgMTMuMjY5IDkuMDAwOTcgMTQuOTc2NUMxMC42NTkzIDE2LjY3NDIgMTMuMzQwNyAxNi42NzQyIDE0Ljk5OSAxNC45NzY1QzE1LjY3NjkgMTQuMjgyNiAxNi4wODA1IDEzLjQxMTIgMTYuMjA2OSAxMi41MDQ1QzE2LjI2NTEgMTIuMDg2NSAxNi41OTcyIDExLjczNDkgMTcuMDE5MiAxMS43MzQ5QzE3LjQyNDYgMTEuNzM0OSAxNy43NjA5IDEyLjA1OTUgMTcuNzIxNyAxMi40NjNDMTcuNTk1NyAxMy43NjA2IDE3LjA0NzEgMTUuMDI2NSAxNi4wNzIgMTYuMDI0N0MxMy44MjUyIDE4LjMyNDggMTAuMTc0OCAxOC4zMjQ4IDcuOTI3OTYgMTYuMDI0N0M1LjY5MDY4IDEzLjczNDQgNS42OTA2OCAxMC4wMjgxIDcuOTI3OTYgNy43Mzc4QzkuNjY1NTEgNS45NTkwNSAxMi4yNDQgNS41NTQ2NSAxNC4zNjQ3IDYuNTMwMzdMMTUuMTE1MiA1Ljc2MjA4QzE1LjMyODMgNS41NDM5MyAxNS42NTIyIDUuNDc2NTMgMTUuOTM0NiA1LjU5MTU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RestartSquare";
  */
 const RestartSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RestartSquare.displayName = "RestartSquare";
-export default RestartSquare;
+RestartSquare.displayName = "RestartSquare"
+export default RestartSquare

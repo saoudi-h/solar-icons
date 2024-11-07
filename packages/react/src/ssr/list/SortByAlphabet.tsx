@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/SortByAlphabet";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/SortByAlphabet"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA3QzIuMjUgNi41ODU3OSAyLjU4NTc5IDYuMjUgMyA2LjI1SDEzQzEzLjQxNDIgNi4yNSAxMy43NSA2LjU4NTc5IDEzLjc1IDdDMTMuNzUgNy40MTQyMSAxMy40MTQyIDcuNzUgMTMgNy43NUgzQzIuNTg1NzkgNy43NSAyLjI1IDcuNDE0MjEgMi4yNSA3Wk0xNi41IDYuMjVDMTYuNzk1MSA2LjI1IDE3LjA2MjggNi40MjMwOSAxNy4xODM5IDYuNjkyMjNMMjEuNjgzOSAxNi42OTIyQzIxLjg1MzkgMTcuMDcgMjEuNjg1NSAxNy41MTQgMjEuMzA3OCAxNy42ODM5QzIwLjkzIDE3Ljg1MzkgMjAuNDg2IDE3LjY4NTUgMjAuMzE2MSAxNy4zMDc4TDE4Ljg3ODcgMTQuMTEzNkgxNC4xMjEzTDEyLjY4MzkgMTcuMzA3OEMxMi41MTQgMTcuNjg1NSAxMi4wNyAxNy44NTM5IDExLjY5MjIgMTcuNjgzOUMxMS4zMTQ1IDE3LjUxNCAxMS4xNDYxIDE3LjA3IDExLjMxNjEgMTYuNjkyMkwxNS44MTYxIDYuNjkyMjNDMTUuOTM3MiA2LjQyMzA5IDE2LjIwNDkgNi4yNSAxNi41IDYuMjVaTTE0Ljc5NjMgMTIuNjEzNkgxOC4yMDM3TDE2LjUgOC44Mjc2NEwxNC43OTYzIDEyLjYxMzZaTTIuMjUgMTJDMi4yNSAxMS41ODU4IDIuNTg1NzkgMTEuMjUgMyAxMS4yNUgxMEMxMC40MTQyIDExLjI1IDEwLjc1IDExLjU4NTggMTAuNzUgMTJDMTAuNzUgMTIuNDE0MiAxMC40MTQyIDEyLjc1IDEwIDEyLjc1SDNDMi41ODU3OSAxMi43NSAyLjI1IDEyLjQxNDIgMi4yNSAxMlpNMi4yNSAxN0MyLjI1IDE2LjU4NTggMi41ODU3OSAxNi4yNSAzIDE2LjI1SDhDOC40MTQyMSAxNi4yNSA4Ljc1IDE2LjU4NTggOC43NSAxN0M4Ljc1IDE3LjQxNDIgOC40MTQyMSAxNy43NSA4IDE3Ljc1SDNDMi41ODU3OSAxNy43NSAyLjI1IDE3LjQxNDIgMi4yNSAxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/SortByAlphabet";
  */
 const SortByAlphabet: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SortByAlphabet.displayName = "SortByAlphabet";
-export default SortByAlphabet;
+SortByAlphabet.displayName = "SortByAlphabet"
+export default SortByAlphabet

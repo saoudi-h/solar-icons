@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Logout";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Logout"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNDY5NyA4LjQ2OTY3QzE2LjE3NjggOC43NjI1NiAxNi4xNzY4IDkuMjM3NDQgMTYuNDY5NyA5LjUzMDMzTDE4LjE4OTMgMTEuMjVIMTBDOS41ODU3OSAxMS4yNSA5LjI1IDExLjU4NTggOS4yNSAxMkM5LjI1IDEyLjQxNDIgOS41ODU3OSAxMi43NSAxMCAxMi43NUgxOC4xODkzTDE2LjQ2OTcgMTQuNDY5N0MxNi4xNzY4IDE0Ljc2MjYgMTYuMTc2OCAxNS4yMzc0IDE2LjQ2OTcgMTUuNTMwM0MxNi43NjI2IDE1LjgyMzIgMTcuMjM3NCAxNS44MjMyIDE3LjUzMDMgMTUuNTMwM0wyMC41MzAzIDEyLjUzMDNDMjAuODIzMiAxMi4yMzc0IDIwLjgyMzIgMTEuNzYyNiAyMC41MzAzIDExLjQ2OTdMMTcuNTMwMyA4LjQ2OTY3QzE3LjIzNzQgOC4xNzY3OCAxNi43NjI2IDguMTc2NzggMTYuNDY5NyA4LjQ2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNCAxMkM0IDE2LjQxODMgNy41ODE3MiAyMCAxMiAyMFYxNi4yNUMxMiAxNS4zMDcyIDEyIDE0LjgzNTggMTEuNzA3MSAxNC41NDI5QzExLjQxNDIgMTQuMjUgMTAuOTQyOCAxNC4yNSAxMCAxNC4yNUwtbmFuIC1uYW5MMTAgMTQuMjVDOC43NTczNiAxNC4yNSA3Ljc1IDEzLjI0MjYgNy43NSAxMkM3Ljc1IDEwLjc1NzQgOC43NTczNiA5Ljc1IDEwIDkuNzVMLW5hbiAtbmFuTDEwIDkuNzVDMTAuOTQyOCA5Ljc1IDExLjQxNDIgOS43NSAxMS43MDcxIDkuNDU3MTFDMTIgOS4xNjQyMSAxMiA4LjY5MjgxIDEyIDcuNzVWNEM3LjU4MTcyIDQgNCA3LjU4MTcyIDQgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Logout";
  */
 const Logout: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Logout.displayName = "Logout";
-export default Logout;
+Logout.displayName = "Logout"
+export default Logout

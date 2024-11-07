@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListHeartMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListHeartMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIOUM5LjQxNDIxIDEwLjI1IDkuNzUgMTAuNTg1OCA5Ljc1IDExQzkuNzUgMTEuNDE0MiA5LjQxNDIxIDExLjc1IDkgMTEuNzVIM0MyLjU4NTc5IDExLjc1IDIuMjUgMTEuNDE0MiAyLjI1IDExWk0yLjI1IDE2QzIuMjUgMTUuNTg1OCAyLjU4NTc5IDE1LjI1IDMgMTUuMjVIMTBDMTAuNDE0MiAxNS4yNSAxMC43NSAxNS41ODU4IDEwLjc1IDE2QzEwLjc1IDE2LjQxNDIgMTAuNDE0MiAxNi43NSAxMCAxNi43NUgzQzIuNTg1NzkgMTYuNzUgMi4yNSAxNi40MTQyIDIuMjUgMTZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMyAxMS43MTQ4QzEzIDEzLjQ2NzMgMTUuMTYzMyAxNS4zMzA0IDE2LjQ5MDEgMTYuMzA4MkMxNi45NDQyIDE2LjY0MyAxNy4xNzEzIDE2LjgxMDMgMTcuNSAxNi44MTAzQzE3LjgyODcgMTYuODEwMyAxOC4wNTU4IDE2LjY0MyAxOC41MDk5IDE2LjMwODJDMTkuODM2NyAxNS4zMzA0IDIyIDEzLjQ2NzQgMjIgMTEuNzE0N0MyMiA5LjAzNzU4IDE5LjUyNDkgOC4wMzgwNiAxNy41IDEwLjEwNjFDMTUuNDc1MSA4LjAzODA2IDEzIDkuMDM3NTggMTMgMTEuNzE0OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListHeartMinimalistic";
  */
 const ListHeartMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListHeartMinimalistic.displayName = "ListHeartMinimalistic";
-export default ListHeartMinimalistic;
+ListHeartMinimalistic.displayName = "ListHeartMinimalistic"
+export default ListHeartMinimalistic

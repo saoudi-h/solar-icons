@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/users/UserBlock";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/users/UserBlock"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNSAxNS43NUMxNC45ODEyIDE1Ljc1IDEzLjc1IDE2Ljk4MTIgMTMuNzUgMTguNUMxMy43NSAxOS4wMDA0IDEzLjg4MzIgMTkuNDY5MSAxNC4xMTY3IDE5Ljg3MzJMMTcuODczMiAxNi4xMTY3QzE3LjQ2OTEgMTUuODgzMiAxNy4wMDA0IDE1Ljc1IDE2LjUgMTUuNzVaTTE4LjkxOTYgMTcuMTkxNkwxNS4xOTE2IDIwLjkxOTZDMTUuNTgwNiAyMS4xMzA1IDE2LjAyNjEgMjEuMjUgMTYuNSAyMS4yNUMxOC4wMTg4IDIxLjI1IDE5LjI1IDIwLjAxODggMTkuMjUgMTguNUMxOS4yNSAxOC4wMjYxIDE5LjEzMDUgMTcuNTgwNiAxOC45MTk2IDE3LjE5MTZaTTEyLjI1IDE4LjVDMTIuMjUgMTYuMTUyOCAxNC4xNTI4IDE0LjI1IDE2LjUgMTQuMjVDMTcuNjg5IDE0LjI1IDE4Ljc2NTIgMTQuNzM5MyAxOS41MzU3IDE1LjUyNTZDMjAuMjg2MSAxNi4yOTE0IDIwLjc1IDE3LjM0MjMgMjAuNzUgMTguNUMyMC43NSAyMC44NDcyIDE4Ljg0NzIgMjIuNzUgMTYuNSAyMi43NUMxNS4zNDIzIDIyLjc1IDE0LjI5MTQgMjIuMjg2MSAxMy41MjU2IDIxLjUzNTdDMTIuNzM5MyAyMC43NjUyIDEyLjI1IDE5LjY4OSAxMi4yNSAxOC41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTYgNkMxNiA4LjIwOTE0IDE0LjIwOTEgMTAgMTIgMTBDOS43OTA4NiAxMCA4IDguMjA5MTQgOCA2QzggMy43OTA4NiA5Ljc5MDg2IDIgMTIgMkMxNC4yMDkxIDIgMTYgMy43OTA4NiAxNiA2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTQuMjk1MSAxMy4xODc5QzEyLjIxMzcgMTQuMDUyOSAxMC43NSAxNi4xMDU1IDEwLjc1IDE4LjVDMTAuNzUgMTkuODE2MyAxMS4xOTQzIDIxLjAzMTUgMTEuOTM3OCAyMkM0IDIxLjk4OTUgNCAxOS45Nzg4IDQgMTcuNUM0IDE1LjAxNDcgNy41ODE3MiAxMyAxMiAxM0MxMi43OTc3IDEzIDEzLjU2ODEgMTMuMDY1NyAxNC4yOTUxIDEzLjE4NzlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/users/UserBlock";
  */
 const UserBlock: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UserBlock.displayName = "UserBlock";
-export default UserBlock;
+UserBlock.displayName = "UserBlock"
+export default UserBlock

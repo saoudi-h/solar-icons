@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/Pallete2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/Pallete2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuODQ2OCAyMS45MzQyQzUuODY3MTMgMjEuMzYyNCAyIDE3LjEzMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuMTU2NSAxOC43MTczIDE2LjczMjUgMTUuOTEzNSAxNi4zNzAzQzE0LjI5NjQgMTYuMTYxNCAxMi44Mzg2IDE1Ljk3MzEgMTIuMjYxOSAxNi44ODhDMTEuODY3NCAxNy41MTM2IDEyLjI5MzggMTguMjkzOCAxMi44MTY4IDE4LjgxNjhDMTMuNDcwMyAxOS40NzAzIDEzLjQ3MDMgMjAuNTI5NyAxMi44MTY4IDIxLjE4MzJDMTIuMjkzOCAyMS43MDYyIDExLjU4MTYgMjIuMDE4NiAxMC44NDY4IDIxLjkzNDJaTTExLjA4NSA2Ljk5OTc2QzExLjA4NSA3LjgyODE4IDEwLjQxMzQgOC40OTk3NiA5LjU4NSA4LjQ5OTc2QzguNzU2NTggOC40OTk3NiA4LjA4NSA3LjgyODE4IDguMDg1IDYuOTk5NzZDOC4wODUgNi4xNzEzMyA4Ljc1NjU4IDUuNDk5NzYgOS41ODUgNS40OTk3NkMxMC40MTM0IDUuNDk5NzYgMTEuMDg1IDYuMTcxMzMgMTEuMDg1IDYuOTk5NzZaTTYuNSAxM0M3LjMyODQzIDEzIDggMTIuMzI4NCA4IDExLjVDOCAxMC42NzE2IDcuMzI4NDMgOS45OTk5OCA2LjUgOS45OTk5OEM1LjY3MTU3IDkuOTk5OTggNSAxMC42NzE2IDUgMTEuNUM1IDEyLjMyODQgNS42NzE1NyAxMyA2LjUgMTNaTTE3LjUgMTNDMTguMzI4NCAxMyAxOSAxMi4zMjg0IDE5IDExLjVDMTkgMTAuNjcxNiAxOC4zMjg0IDkuOTk5OTggMTcuNSA5Ljk5OTk4QzE2LjY3MTYgOS45OTk5OCAxNiAxMC42NzE2IDE2IDExLjVDMTYgMTIuMzI4NCAxNi42NzE2IDEzIDE3LjUgMTNaTTE0LjUgOC40OTk5OEMxNS4zMjg0IDguNDk5OTggMTYgNy44Mjg0MSAxNiA2Ljk5OTk4QzE2IDYuMTcxNTYgMTUuMzI4NCA1LjQ5OTk4IDE0LjUgNS40OTk5OEMxMy42NzE2IDUuNDk5OTggMTMgNi4xNzE1NiAxMyA2Ljk5OTk4QzEzIDcuODI4NDEgMTMuNjcxNiA4LjQ5OTk4IDE0LjUgOC40OTk5OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/Pallete2";
  */
 const Pallete2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pallete2.displayName = "Pallete2";
-export default Pallete2;
+Pallete2.displayName = "Pallete2"
+export default Pallete2

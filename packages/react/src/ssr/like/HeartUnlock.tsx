@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/like/HeartUnlock";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/like/HeartUnlock"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43NSA3QzcuNzUgNS40ODk2NyA4LjE4ODEgNC40NTMwMSA4Ljg2MDcgMy43OTI0N0M5LjUzNjIgMy4xMjkwOCAxMC41NDUgMi43NSAxMS44NzE4IDIuNzVDMTMuNTM5NCAyLjc1IDE0LjcxMjkgMy4zNDQyMiAxNS4zNjIxIDQuMzk0MzZDMTUuNTc5OCA0Ljc0NjY5IDE2LjA0MiA0Ljg1NTc1IDE2LjM5NDQgNC42Mzc5NUMxNi43NDY3IDQuNDIwMTUgMTYuODU1NyAzLjk1Nzk3IDE2LjYzNzkgMy42MDU2NEMxNS42NDQ4IDEuOTk4OTggMTMuOTA4OSAxLjI1IDExLjg3MTggMS4yNUMxMC4yNjM0IDEuMjUgOC44MzYyOCAxLjcxNDA3IDcuODA5NjggMi43MjIyNUM2Ljc4MDE5IDMuNzMzMjggNi4yNSA1LjE5NjYyIDYuMjUgN1Y3LjI4OTJDNC4zNjYwNCA3Ljk4NzQ2IDMgOS44NzMyOSAzIDEyLjA5OTJDMyAxNS45Mzc1IDUuOTY4MzcgMTguMTUxNiA4LjQ5NTY1IDIwLjAzNjhDOC43NTgzMiAyMC4yMzI3IDkuMDE2MjQgMjAuNDI1MSA5LjI2NTU2IDIwLjYxNTRDMTAuMiAyMS4zMjg1IDExLjEgMjIgMTIgMjJDMTIuOSAyMiAxMy44IDIxLjMyODUgMTQuNzM0NCAyMC42MTU0QzE0Ljk4MzggMjAuNDI1MSAxNS4yNDE3IDIwLjIzMjcgMTUuNTA0NCAyMC4wMzY4QzE4LjAzMTYgMTguMTUxNiAyMSAxNS45Mzc1IDIxIDEyLjA5OTJDMjEgNy44NjE5NiAxNi4wNDk5IDQuODU3MDEgMTIgOC45MzA2MkMxMC42MTA1IDcuNTMzMDIgOS4xMTUxMyA2Ljk2ODYzIDcuNzUgNy4wMDEzNFY3Wk0xMiAxMS4yNUMxMi40MTQyIDExLjI1IDEyLjc1IDExLjU4NTggMTIuNzUgMTJWMTQuNUMxMi43NSAxNC45MTQyIDEyLjQxNDIgMTUuMjUgMTIgMTUuMjVDMTEuNTg1OCAxNS4yNSAxMS4yNSAxNC45MTQyIDExLjI1IDE0LjVWMTJDMTEuMjUgMTEuNTg1OCAxMS41ODU4IDExLjI1IDEyIDExLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/HeartUnlock";
  */
 const HeartUnlock: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HeartUnlock.displayName = "HeartUnlock";
-export default HeartUnlock;
+HeartUnlock.displayName = "HeartUnlock"
+export default HeartUnlock

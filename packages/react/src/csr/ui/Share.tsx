@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Share";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Share"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuODAzIDUuMzMzMzNDMTMuODAzIDMuNDkyMzggMTUuMzAyMiAyIDE3LjE1MTUgMkMxOS4wMDA4IDIgMjAuNSAzLjQ5MjM4IDIwLjUgNS4zMzMzM0MyMC41IDcuMTc0MjggMTkuMDAwOCA4LjY2NjY3IDE3LjE1MTUgOC42NjY2N0MxNi4yMTc3IDguNjY2NjcgMTUuMzczOCA4LjI4NTk2IDE0Ljc2NzEgNy42NzM0N0wxMC4xMzE3IDEwLjgyOTVDMTAuMTc0NSAxMS4wNDI1IDEwLjE5NyAxMS4yNjI1IDEwLjE5NyAxMS40ODcyQzEwLjE5NyAxMS45MzIyIDEwLjEwOSAxMi4zNTc2IDkuOTQ5NTkgMTIuNzQ2NEwxNS4wMzIzIDE2LjA4NThDMTUuNjA5MiAxNS42MTYxIDE2LjM0NzMgMTUuMzMzMyAxNy4xNTE1IDE1LjMzMzNDMTkuMDAwOCAxNS4zMzMzIDIwLjUgMTYuODI1NyAyMC41IDE4LjY2NjdDMjAuNSAyMC41MDc2IDE5LjAwMDggMjIgMTcuMTUxNSAyMkMxNS4zMDIyIDIyIDEzLjgwMyAyMC41MDc2IDEzLjgwMyAxOC42NjY3QzEzLjgwMyAxOC4xODQ1IDEzLjkwNjIgMTcuNzI1NSAxNC4wOTE3IDE3LjMxMTFMOS4wNTAwNyAxMy45OTg3QzguNDYxOTYgMTQuNTA5OCA3LjY5MTYgMTQuODIwNSA2Ljg0ODQ4IDE0LjgyMDVDNC45OTkxNyAxNC44MjA1IDMuNSAxMy4zMjgxIDMuNSAxMS40ODcyQzMuNSA5LjY0NjIzIDQuOTk5MTcgOC4xNTM4NSA2Ljg0ODQ4IDguMTUzODVDNy45MTE5IDguMTUzODUgOC44NTg1MyA4LjY0NzI1IDkuNDcxNDUgOS40MTUxOEwxMy45NjM5IDYuMzU2NDJDMTMuODU5NCA2LjAzMzU5IDEzLjgwMyA1LjY4OTYgMTMuODAzIDUuMzMzMzNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Share";
  */
 const Share: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Share.displayName = "Share";
-export default Share;
+Share.displayName = "Share"
+export default Share

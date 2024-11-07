@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/UploadMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/UploadMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi41NTM1IDIuNDkzOTJDMTIuNDExNCAyLjMzODUyIDEyLjIxMDYgMi4yNSAxMiAyLjI1QzExLjc4OTQgMi4yNSAxMS41ODg2IDIuMzM4NTIgMTEuNDQ2NSAyLjQ5MzkyTDcuNDQ2NDggNi44Njg5MkM3LjE2Njk4IDcuMTc0NjIgNy4xODgyMiA3LjY0OTAyIDcuNDkzOTIgNy45Mjg1MkM3Ljc5OTYzIDguMjA4MDIgOC4yNzQwMiA4LjE4Njc4IDguNTUzNTIgNy44ODEwOEwxMS4yNSA0LjkzMThWMTZDMTEuMjUgMTYuNDE0MiAxMS41ODU4IDE2Ljc1IDEyIDE2Ljc1QzEyLjQxNDIgMTYuNzUgMTIuNzUgMTYuNDE0MiAxMi43NSAxNlY0LjkzMThMMTUuNDQ2NSA3Ljg4MTA4QzE1LjcyNiA4LjE4Njc4IDE2LjIwMDQgOC4yMDgwMiAxNi41MDYxIDcuOTI4NTJDMTYuODExOCA3LjY0OTAyIDE2LjgzMyA3LjE3NDYyIDE2LjU1MzUgNi44Njg5MkwxMi41NTM1IDIuNDkzOTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0zLjc1IDE1QzMuNzUgMTQuNTg1OCAzLjQxNDIyIDE0LjI1IDMgMTQuMjVDMi41ODU3OSAxNC4yNSAyLjI1IDE0LjU4NTggMi4yNSAxNVYxNS4wNTQ5QzIuMjQ5OTggMTYuNDIyNSAyLjI0OTk2IDE3LjUyNDggMi4zNjY1MiAxOC4zOTE4QzIuNDg3NTQgMTkuMjkxOSAyLjc0NjQzIDIwLjA0OTcgMy4zNDgzNSAyMC42NTE2QzMuOTUwMjcgMjEuMjUzNiA0LjcwODE0IDIxLjUxMjUgNS42MDgyNSAyMS42MzM1QzYuNDc1MjIgMjEuNzUgNy41Nzc1NCAyMS43NSA4Ljk0NTEzIDIxLjc1SDE1LjA1NDlDMTYuNDIyNSAyMS43NSAxNy41MjQ4IDIxLjc1IDE4LjM5MTggMjEuNjMzNUMxOS4yOTE5IDIxLjUxMjUgMjAuMDQ5NyAyMS4yNTM2IDIwLjY1MTcgMjAuNjUxNkMyMS4yNTM2IDIwLjA0OTcgMjEuNTEyNSAxOS4yOTE5IDIxLjYzMzUgMTguMzkxOEMyMS43NSAxNy41MjQ4IDIxLjc1IDE2LjQyMjUgMjEuNzUgMTUuMDU0OVYxNUMyMS43NSAxNC41ODU4IDIxLjQxNDIgMTQuMjUgMjEgMTQuMjVDMjAuNTg1OCAxNC4yNSAyMC4yNSAxNC41ODU4IDIwLjI1IDE1QzIwLjI1IDE2LjQzNTQgMjAuMjQ4NCAxNy40MzY1IDIwLjE0NjkgMTguMTkxOUMyMC4wNDgyIDE4LjkyNTcgMTkuODY3OCAxOS4zMTQyIDE5LjU5MSAxOS41OTFDMTkuMzE0MiAxOS44Njc4IDE4LjkyNTcgMjAuMDQ4MiAxOC4xOTE5IDIwLjE0NjlDMTcuNDM2NSAyMC4yNDg0IDE2LjQzNTQgMjAuMjUgMTUgMjAuMjVIOUM3LjU2NDU5IDIwLjI1IDYuNTYzNDcgMjAuMjQ4NCA1LjgwODEyIDIwLjE0NjlDNS4wNzQzNSAyMC4wNDgyIDQuNjg1NzcgMTkuODY3OCA0LjQwOTAxIDE5LjU5MUM0LjEzMjI1IDE5LjMxNDIgMy45NTE4IDE4LjkyNTcgMy44NTMxNSAxOC4xOTE5QzMuNzUxNTkgMTcuNDM2NSAzLjc1IDE2LjQzNTQgMy43NSAxNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/UploadMinimalistic";
  */
 const UploadMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UploadMinimalistic.displayName = "UploadMinimalistic";
-export default UploadMinimalistic;
+UploadMinimalistic.displayName = "UploadMinimalistic"
+export default UploadMinimalistic

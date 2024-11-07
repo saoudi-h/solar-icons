@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/it/Hashtag";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/it/Hashtag"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuNzIyNiAzLjIwMDY4QzEwLjgzMzUgMi44MDE1OCAxMC41OTk4IDIuMzg4MTcgMTAuMjAwNyAyLjI3NzMxQzkuODAxNjMgMi4xNjY0NSA5LjM4ODIyIDIuNDAwMTEgOS4yNzczNiAyLjc5OTIxTDcuNzYzMjcgOC4yNDk5NUg0QzMuNTg1NzkgOC4yNDk5NSAzLjI1IDguNTg1NzMgMy4yNSA4Ljk5OTk1QzMuMjUgOS40MTQxNiAzLjU4NTc5IDkuNzQ5OTUgNCA5Ljc0OTk1SDcuMzQ2Nkw1LjgxODgyIDE1LjI0OTlIMkMxLjU4NTc5IDE1LjI0OTkgMS4yNSAxNS41ODU3IDEuMjUgMTUuOTk5OUMxLjI1IDE2LjQxNDIgMS41ODU3OSAxNi43NDk5IDIgMTYuNzQ5OUg1LjQwMjE2TDQuMjc3MzYgMjAuNzk5MkM0LjE2NjUgMjEuMTk4MyA0LjQwMDE2IDIxLjYxMTcgNC43OTkyNyAyMS43MjI2QzUuMTk4MzcgMjEuODMzNCA1LjYxMTc4IDIxLjU5OTggNS43MjI2NCAyMS4yMDA3TDYuOTU4OTUgMTYuNzQ5OUgxNC40MDIyTDEzLjI3NzQgMjAuNzk5MkMxMy4xNjY1IDIxLjE5ODMgMTMuNDAwMiAyMS42MTE3IDEzLjc5OTMgMjEuNzIyNkMxNC4xOTg0IDIxLjgzMzQgMTQuNjExOCAyMS41OTk4IDE0LjcyMjYgMjEuMjAwN0wxNS45NTkgMTYuNzQ5OUgyMEMyMC40MTQyIDE2Ljc0OTkgMjAuNzUgMTYuNDE0MiAyMC43NSAxNS45OTk5QzIwLjc1IDE1LjU4NTcgMjAuNDE0MiAxNS4yNDk5IDIwIDE1LjI0OTlIMTYuMzc1NkwxNy45MDM0IDkuNzQ5OTVIMjJDMjIuNDE0MiA5Ljc0OTk1IDIyLjc1IDkuNDE0MTYgMjIuNzUgOC45OTk5NUMyMi43NSA4LjU4NTczIDIyLjQxNDIgOC4yNDk5NSAyMiA4LjI0OTk1SDE4LjMyMDFMMTkuNzIyNiAzLjIwMDY4QzE5LjgzMzUgMi44MDE1OCAxOS41OTk4IDIuMzg4MTcgMTkuMjAwNyAyLjI3NzMxQzE4LjgwMTYgMi4xNjY0NSAxOC4zODgyIDIuNDAwMTEgMTguMjc3NCAyLjc5OTIxTDE2Ljc2MzMgOC4yNDk5NUg5LjMyMDA2TDEwLjcyMjYgMy4yMDA2OFpNMTQuODE4OCAxNS4yNDk5TDE2LjM0NjYgOS43NDk5NUg4LjkwMzRMNy4zNzU2MiAxNS4yNDk5SDE0LjgxODhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/Hashtag";
  */
 const Hashtag: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Hashtag.displayName = "Hashtag";
-export default Hashtag;
+Hashtag.displayName = "Hashtag"
+export default Hashtag

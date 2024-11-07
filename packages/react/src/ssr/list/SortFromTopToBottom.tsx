@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/SortFromTopToBottom";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/SortFromTopToBottom"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcgMy4yNUMxNy40MTQyIDMuMjUgMTcuNzUgMy41ODU3OSAxNy43NSA0VjE3Ljc1TDE5LjQgMTUuNTVDMTkuNjQ4NSAxNS4yMTg2IDIwLjExODYgMTUuMTUxNSAyMC40NSAxNS40QzIwLjc4MTQgMTUuNjQ4NSAyMC44NDg1IDE2LjExODYgMjAuNiAxNi40NUwxNy42IDIwLjQ1QzE3LjQwNjMgMjAuNzA4MyAxNy4wNjkxIDIwLjgxMzYgMTYuNzYyOCAyMC43MTE1QzE2LjQ1NjYgMjAuNjA5NCAxNi4yNSAyMC4zMjI4IDE2LjI1IDIwVjRDMTYuMjUgMy41ODU3OSAxNi41ODU4IDMuMjUgMTcgMy4yNVpNNy4yNSA2QzcuMjUgNS41ODU3OSA3LjU4NTc5IDUuMjUgOCA1LjI1SDEzQzEzLjQxNDIgNS4yNSAxMy43NSA1LjU4NTc5IDEzLjc1IDZDMTMuNzUgNi40MTQyMSAxMy40MTQyIDYuNzUgMTMgNi43NUg4QzcuNTg1NzkgNi43NSA3LjI1IDYuNDE0MjEgNy4yNSA2Wk01LjI1IDExQzUuMjUgMTAuNTg1OCA1LjU4NTc5IDEwLjI1IDYgMTAuMjVIMTNDMTMuNDE0MiAxMC4yNSAxMy43NSAxMC41ODU4IDEzLjc1IDExQzEzLjc1IDExLjQxNDIgMTMuNDE0MiAxMS43NSAxMyAxMS43NUg2QzUuNTg1NzkgMTEuNzUgNS4yNSAxMS40MTQyIDUuMjUgMTFaTTMuMjUgMTZDMy4yNSAxNS41ODU4IDMuNTg1NzkgMTUuMjUgNCAxNS4yNUgxM0MxMy40MTQyIDE1LjI1IDEzLjc1IDE1LjU4NTggMTMuNzUgMTZDMTMuNzUgMTYuNDE0MiAxMy40MTQyIDE2Ljc1IDEzIDE2Ljc1SDRDMy41ODU3OSAxNi43NSAzLjI1IDE2LjQxNDIgMy4yNSAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/SortFromTopToBottom";
  */
 const SortFromTopToBottom: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SortFromTopToBottom.displayName = "SortFromTopToBottom";
-export default SortFromTopToBottom;
+SortFromTopToBottom.displayName = "SortFromTopToBottom"
+export default SortFromTopToBottom

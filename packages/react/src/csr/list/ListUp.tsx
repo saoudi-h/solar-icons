@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIxQzIxLjQxNDIgNS4yNSAyMS43NSA1LjU4NTc5IDIxLjc1IDZDMjEuNzUgNi40MTQyMSAyMS40MTQyIDYuNzUgMjEgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDEwQzIuMjUgOS41ODU3OSAyLjU4NTc5IDkuMjUgMyA5LjI1SDIxQzIxLjQxNDIgOS4yNSAyMS43NSA5LjU4NTc5IDIxLjc1IDEwQzIxLjc1IDEwLjQxNDIgMjEuNDE0MiAxMC43NSAyMSAxMC43NUgzQzIuNTg1NzkgMTAuNzUgMi4yNSAxMC40MTQyIDIuMjUgMTBaTTIuMjUgMTRDMi4yNSAxMy41ODU4IDIuNTg1NzkgMTMuMjUgMyAxMy4yNUgxMUMxMS40MTQyIDEzLjI1IDExLjc1IDEzLjU4NTggMTEuNzUgMTRDMTEuNzUgMTQuNDE0MiAxMS40MTQyIDE0Ljc1IDExIDE0Ljc1SDNDMi41ODU3OSAxNC43NSAyLjI1IDE0LjQxNDIgMi4yNSAxNFpNMTcuMDExOSAxNC40MzA2QzE3LjI5MjggMTQuMTg5OCAxNy43MDcyIDE0LjE4OTggMTcuOTg4MSAxNC40MzA2TDIxLjQ4ODEgMTcuNDMwNkMyMS44MDI2IDE3LjcwMDEgMjEuODM5IDE4LjE3MzYgMjEuNTY5NCAxOC40ODgxQzIxLjI5OTkgMTguODAyNiAyMC44MjY0IDE4LjgzOSAyMC41MTE5IDE4LjU2OTRMMTcuNSAxNS45ODc4TDE0LjQ4ODEgMTguNTY5NEMxNC4xNzM2IDE4LjgzOSAxMy43MDAxIDE4LjgwMjYgMTMuNDMwNiAxOC40ODgxQzEzLjE2MSAxOC4xNzM2IDEzLjE5NzQgMTcuNzAwMSAxMy41MTE5IDE3LjQzMDZMMTcuMDExOSAxNC40MzA2Wk0yLjI1IDE4QzIuMjUgMTcuNTg1OCAyLjU4NTc5IDE3LjI1IDMgMTcuMjVIMTFDMTEuNDE0MiAxNy4yNSAxMS43NSAxNy41ODU4IDExLjc1IDE4QzExLjc1IDE4LjQxNDIgMTEuNDE0MiAxOC43NSAxMSAxOC43NUgzQzIuNTg1NzkgMTguNzUgMi4yNSAxOC40MTQyIDIuMjUgMThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListUp";
  */
 const ListUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListUp.displayName = "ListUp";
-export default ListUp;
+ListUp.displayName = "ListUp"
+export default ListUp

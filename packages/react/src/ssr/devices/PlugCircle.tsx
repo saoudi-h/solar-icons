@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/PlugCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/PlugCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyQzYuNDc3MTUgMiAyIDYuNDgzMzYgMiAxMi4wMTM5QzIgMTcuMjkxOCA2LjA3NzU5IDIxLjYxNjEgMTEuMjUwMyAyMkwxMS4yNDk5IDE1LjkzODdDOS42NzczNyAxNS41OTQ5IDguNSAxNC4xOTI0IDguNSAxMi41MTQ2VjEyLjAxMzlDOC41IDExLjQ2MDggOC45NDc3MiAxMS4wMTI1IDkuNSAxMS4wMTI1SDkuNzVWOS4wMDk3QzkuNzUgOC41OTQ5MSAxMC4wODU4IDguMjU4NjYgMTAuNSA4LjI1ODY2QzEwLjkxNDIgOC4yNTg2NiAxMS4yNSA4LjU5NDkxIDExLjI1IDkuMDA5N1YxMS4wMTI1SDEyLjc1VjkuMDA5N0MxMi43NSA4LjU5NDkxIDEzLjA4NTggOC4yNTg2NiAxMy41IDguMjU4NjZDMTMuOTE0MiA4LjI1ODY2IDE0LjI1IDguNTk0OTEgMTQuMjUgOS4wMDk3VjExLjAxMjVIMTQuNUMxNS4wNTIzIDExLjAxMjUgMTUuNSAxMS40NjA4IDE1LjUgMTIuMDEzOVYxMi41MTQ2QzE1LjUgMTQuMTkyNSAxNC4zMjI2IDE1LjU5NSAxMi43NDk5IDE1LjkzODhMMTIuNzQ5NyAyMkMxNy45MjI0IDIxLjYxNjEgMjIgMTcuMjkxOCAyMiAxMi4wMTM5QzIyIDYuNDgzMzYgMTcuNTIyOCAyIDEyIDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/PlugCircle";
  */
 const PlugCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PlugCircle.displayName = "PlugCircle";
-export default PlugCircle;
+PlugCircle.displayName = "PlugCircle"
+export default PlugCircle

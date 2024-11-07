@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/settings/Widget4";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/settings/Widget4"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDYuMjEwNTNDMiA0LjIyNTY3IDIgMy4yMzMyMyAyLjY1OTAxIDIuNjE2NjJDMy4zMTgwMiAyIDQuMzc4NjggMiA2LjUgMkM4LjYyMTMyIDIgOS42ODE5OCAyIDEwLjM0MSAyLjYxNjYyQzExIDMuMjMzMjMgMTEgNC4yMjU2NyAxMSA2LjIxMDUzVjE3Ljc4OTVDMTEgMTkuNzc0MyAxMSAyMC43NjY4IDEwLjM0MSAyMS4zODM0QzkuNjgxOTggMjIgOC42MjEzMiAyMiA2LjUgMjJDNC4zNzg2OCAyMiAzLjMxODAyIDIyIDIuNjU5MDEgMjEuMzgzNEMyIDIwLjc2NjggMiAxOS43NzQzIDIgMTcuNzg5NVY2LjIxMDUzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTMgMTUuNEMxMyAxMy4zMjU4IDEzIDEyLjI4ODcgMTMuNjU5IDExLjY0NDRDMTQuMzE4IDExIDE1LjM3ODcgMTEgMTcuNSAxMUMxOS42MjEzIDExIDIwLjY4MiAxMSAyMS4zNDEgMTEuNjQ0NEMyMiAxMi4yODg3IDIyIDEzLjMyNTggMjIgMTUuNFYxNy42QzIyIDE5LjY3NDIgMjIgMjAuNzExMyAyMS4zNDEgMjEuMzU1NkMyMC42ODIgMjIgMTkuNjIxMyAyMiAxNy41IDIyQzE1LjM3ODcgMjIgMTQuMzE4IDIyIDEzLjY1OSAyMS4zNTU2QzEzIDIwLjcxMTMgMTMgMTkuNjc0MiAxMyAxNy42VjE1LjRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMyA1LjVDMTMgNC40MTI4IDEzIDMuODY5MiAxMy4xNzEzIDMuNDQwNDFDMTMuMzk5NiAyLjg2ODY3IDEzLjgzNzYgMi40MTQ0MyAxNC4zODkgMi4xNzc2MUMxNC44MDI0IDIgMTUuMzI2NiAyIDE2LjM3NSAySDE4LjYyNUMxOS42NzM0IDIgMjAuMTk3NiAyIDIwLjYxMSAyLjE3NzYxQzIxLjE2MjQgMi40MTQ0MyAyMS42MDA0IDIuODY4NjcgMjEuODI4NyAzLjQ0MDQxQzIyIDMuODY5MiAyMiA0LjQxMjggMjIgNS41QzIyIDYuNTg3MiAyMiA3LjEzMDggMjEuODI4NyA3LjU1OTU5QzIxLjYwMDQgOC4xMzEzMyAyMS4xNjI0IDguNTg1NTcgMjAuNjExIDguODIyMzlDMjAuMTk3NiA5IDE5LjY3MzQgOSAxOC42MjUgOUgxNi4zNzVDMTUuMzI2NiA5IDE0LjgwMjQgOSAxNC4zODkgOC44MjIzOUMxMy44Mzc2IDguNTg1NTcgMTMuMzk5NiA4LjEzMTMzIDEzLjE3MTMgNy41NTk1OUMxMyA3LjEzMDggMTMgNi41ODcyIDEzIDUuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/Widget4";
  */
 const Widget4: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Widget4.displayName = "Widget4";
-export default Widget4;
+Widget4.displayName = "Widget4"
+export default Widget4

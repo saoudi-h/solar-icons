@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Socket";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Socket"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi43NSAxMkM2Ljc1IDkuMzU1MTUgOC43MDU3OCA3LjE2NzA5IDExLjI1IDYuODAzMTdWNy41QzExLjI1IDcuOTE0MjEgMTEuNTg1OCA4LjI1IDEyIDguMjVDMTIuNDE0MiA4LjI1IDEyLjc1IDcuOTE0MjEgMTIuNzUgNy41VjYuODAzMTdDMTUuMjk0MiA3LjE2NzA5IDE3LjI1IDkuMzU1MTUgMTcuMjUgMTJDMTcuMjUgMTQuNjQ0OSAxNS4yOTQyIDE2LjgzMjkgMTIuNzUgMTcuMTk2OFYxNi40OTk5QzEyLjc1IDE2LjA4NTcgMTIuNDE0MiAxNS43NDk5IDEyIDE1Ljc0OTlDMTEuNTg1OCAxNS43NDk5IDExLjI1IDE2LjA4NTcgMTEuMjUgMTYuNDk5OVYxNy4xOTY4QzguNzA1NzggMTYuODMyOSA2Ljc1IDE0LjY0NDkgNi43NSAxMlpNMTUgMTJDMTUgMTIuNTUyMyAxNC41NTIzIDEzIDE0IDEzQzEzLjQ0NzcgMTMgMTMgMTIuNTUyMyAxMyAxMkMxMyAxMS40NDc3IDEzLjQ0NzcgMTEgMTQgMTFDMTQuNTUyMyAxMSAxNSAxMS40NDc3IDE1IDEyWk0xMCAxM0MxMC41NTIzIDEzIDExIDEyLjU1MjMgMTEgMTJDMTEgMTEuNDQ3NyAxMC41NTIzIDExIDEwIDExQzkuNDQ3NzIgMTEgOSAxMS40NDc3IDkgMTJDOSAxMi41NTIzIDkuNDQ3NzIgMTMgMTAgMTNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTIgNS4yNUM4LjI3MjA4IDUuMjUgNS4yNSA4LjI3MjA4IDUuMjUgMTJDNS4yNSAxNS43Mjc5IDguMjcyMDggMTguNzUgMTIgMTguNzVDMTUuNzI3OSAxOC43NSAxOC43NSAxNS43Mjc5IDE4Ljc1IDEyQzE4Ljc1IDguMjcyMDggMTUuNzI3OSA1LjI1IDEyIDUuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Socket";
  */
 const Socket: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Socket.displayName = "Socket";
-export default Socket;
+Socket.displayName = "Socket"
+export default Socket

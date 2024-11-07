@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Copyright";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Copyright"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyWk0xMi4yODU3IDguNzVDMTAuMjgzNCA4Ljc1IDguNzUgMTAuMjUzIDguNzUgMTJDOC43NSAxMy43NDcgMTAuMjgzNCAxNS4yNSAxMi4yODU3IDE1LjI1QzEyLjc5NzQgMTUuMjUgMTMuMjgxIDE1LjE1MDQgMTMuNzE2OCAxNC45NzI3QzE0LjEwMDMgMTQuODE2MyAxNC41MzgxIDE1LjAwMDQgMTQuNjk0NSAxNS4zODRDMTQuODUwOSAxNS43Njc1IDE0LjY2NjcgMTYuMjA1MiAxNC4yODMyIDE2LjM2MTZDMTMuNjY5IDE2LjYxMjEgMTIuOTkzMSAxNi43NSAxMi4yODU3IDE2Ljc1QzkuNTU0MTQgMTYuNzUgNy4yNSAxNC42NzEyIDcuMjUgMTJDNy4yNSA5LjMyODc1IDkuNTU0MTQgNy4yNSAxMi4yODU3IDcuMjVDMTIuOTkzMSA3LjI1IDEzLjY2OSA3LjM4NzkxIDE0LjI4MzIgNy42MzgzNkMxNC42NjY3IDcuNzk0NzcgMTQuODUwOSA4LjIzMjQ5IDE0LjY5NDUgOC42MTYwNEMxNC41MzgxIDguOTk5NTggMTQuMTAwMyA5LjE4MzcyIDEzLjcxNjggOS4wMjczMUMxMy4yODEgOC44NDk2MSAxMi43OTc0IDguNzUgMTIuMjg1NyA4Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Copyright";
  */
 const Copyright: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Copyright.displayName = "Copyright";
-export default Copyright;
+Copyright.displayName = "Copyright"
+export default Copyright

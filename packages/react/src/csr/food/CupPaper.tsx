@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/CupPaper";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/CupPaper"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjE4NTI3IDJIMTQuODE0OUMxNi42NTI2IDIgMTcuNTcxNSAyIDE4LjI5NDMgMi40NDQzMkMxOC40MTkgMi41MjA5OCAxOC41Mzc5IDIuNjA2NjYgMTguNjUwMSAyLjcwMDY5QzE5LjMwMDMgMy4yNDU2MiAxOS41OTEyIDQuMTE3MjcgMjAuMTcyOSA1Ljg2MDVMMjAuMjA4NyA1Ljk2NzkxQzIwLjUyNzUgNi45MjMxOCAyMC42ODY5IDcuNDAwODEgMjAuNTE4NSA3Ljc2MTk1QzIwLjQ2NTMgNy44NzU5MiAyMC4zOTEyIDcuOTc4ODQgMjAuMjk5OSA4LjA2NTMzQzIwLjAxMDYgOC4zMzkzNyAxOS41MDcxIDguMzM5MzcgMTguNTAwMSA4LjMzOTM3TDE4LjA3MzkgMTEuMjVINS45MjYxNEw1LjUgOC4zMzkzN0M0LjQ5Mjk5IDguMzM5MzcgMy45ODk0OSA4LjMzOTM2IDMuNzAwMjIgOC4wNjUzM0MzLjYwODkzIDcuOTc4ODQgMy41MzQ3NyA3Ljg3NTkyIDMuNDgxNjMgNy43NjE5NUMzLjMxMzI1IDcuNDAwODEgMy40NzI2MyA2LjkyMzE4IDMuNzkxMzkgNS45Njc5MUwzLjgyNzIyIDUuODYwNTZDNC40MDg5MyA0LjExNzI3IDQuNjk5NzkgMy4yNDU2MyA1LjM1MDA0IDIuNzAwNjlDNS40NjIyMyAyLjYwNjY2IDUuNTgxMTUgMi41MjA5OCA1LjcwNTg1IDIuNDQ0MzJDNi40Mjg1OSAyIDcuMzQ3NDkgMiA5LjE4NTI3IDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNy4zNDE4IDE2LjI1SDYuNjU4MTdMNi4xNDU3NSAxMi43NUgxNy44NTQzTDE3LjM0MTggMTYuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMy4wNDMgMjJIMTAuOTU3QzkuMzA4MzUgMjIgOC40ODQwMSAyMiA3LjkyMDczIDIxLjUxMzJDNy4zNTc0NSAyMS4wMjY0IDcuMjM4MDQgMjAuMjEwNyA2Ljk5OTIxIDE4LjU3OTRMNi44Nzc3OCAxNy43NUgxNy4xMjIyTDE3LjAwMDggMTguNTc5NEMxNi43NjIgMjAuMjEwNyAxNi42NDI1IDIxLjAyNjQgMTYuMDc5MyAyMS41MTMyQzE1LjUxNiAyMiAxNC42OTE3IDIyIDEzLjA0MyAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/CupPaper";
  */
 const CupPaper: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CupPaper.displayName = "CupPaper";
-export default CupPaper;
+CupPaper.displayName = "CupPaper"
+export default CupPaper

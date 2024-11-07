@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/CameraMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/CameraMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOCA0QzggMy40NDc3MiA4LjQxMzI4IDMgOC45MjMwOCAzSDE1LjA3NjlDMTUuNTg2NyAzIDE2IDMuNDQ3NzIgMTYgNEMxNiA0LjU1MjI4IDE1LjU4NjcgNSAxNS4wNzY5IDVIOC45MjMwOEM4LjQxMzI4IDUgOCA0LjU1MjI4IDggNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05Ljc3Nzc4IDIxSDE0LjIyMjJDMTcuMzQzMyAyMSAxOC45MDM4IDIxIDIwLjAyNDggMjAuMjc3N0MyMC41MSAxOS45NjUgMjAuOTI2NyAxOS41NjMyIDIxLjI1MSAxOS4wOTUzQzIyIDE4LjAxNDMgMjIgMTYuNTA5NSAyMiAxMy40OTk5QzIyIDEwLjQ5MDMgMjEuOTk5OCA4Ljk4NTcgMjEuMjUwOCA3LjkwNDczQzIwLjkyNjYgNy40MzY3NiAyMC41MDk5IDcuMDM0OTcgMjAuMDI0NiA2LjcyMjI4QzE4LjkwMzYgNiAxNy4zNDMxIDYgMTQuMjIyMSA2SDkuNzc3NjFDNi42NTY1OSA2IDUuMDk2MDcgNiAzLjk3NTA4IDYuNzIyMjhDMy40ODk3OSA3LjAzNDk3IDMuMDczMTIgNy40MzY3NiAyLjc0ODg2IDcuOTA0NzNDMiA4Ljk4NTQ3IDIgMTAuNDg5NiAyIDEzLjQ5NzlMMiAxMy40OTk5QzIgMTYuNTA5NSAyIDE4LjAxNDMgMi43NDkwMiAxOS4wOTUzQzMuMDczMjggMTkuNTYzMiAzLjQ4OTk1IDE5Ljk2NSAzLjk3NTI0IDIwLjI3NzdDNS4wOTYyNCAyMSA2LjY1Njc1IDIxIDkuNzc3NzggMjFaTTcuODMzMzMgMTMuNDk5OUM3LjgzMzMzIDExLjI4MDggOS42OTg4MSA5LjQ4MTk2IDEyIDkuNDgxOTZDMTQuMzAxMiA5LjQ4MTk2IDE2LjE2NjcgMTEuMjgwOCAxNi4xNjY3IDEzLjQ5OTlDMTYuMTY2NyAxNS43MTg5IDE0LjMwMTIgMTcuNTE3OCAxMiAxNy41MTc4QzkuNjk4ODEgMTcuNTE3OCA3LjgzMzMzIDE1LjcxODkgNy44MzMzMyAxMy40OTk5Wk05LjUgMTMuNDk5OUM5LjUgMTIuMTY4NSAxMC42MTkzIDExLjA4OTEgMTIgMTEuMDg5MUMxMy4zODA3IDExLjA4OTEgMTQuNSAxMi4xNjg1IDE0LjUgMTMuNDk5OUMxNC41IDE0LjgzMTMgMTMuMzgwNyAxNS45MTA2IDEyIDE1LjkxMDZDMTAuNjE5MyAxNS45MTA2IDkuNSAxNC44MzEzIDkuNSAxMy40OTk5Wk0xOC4xMTExIDkuNDgxOTZDMTcuNjUwOSA5LjQ4MTk2IDE3LjI3NzggOS44NDE3NCAxNy4yNzc4IDEwLjI4NTVDMTcuMjc3OCAxMC43Mjk0IDE3LjY1MDkgMTEuMDg5MSAxOC4xMTExIDExLjA4OTFIMTguNjY2N0MxOS4xMjY5IDExLjA4OTEgMTkuNSAxMC43Mjk0IDE5LjUgMTAuMjg1NUMxOS41IDkuODQxNzQgMTkuMTI2OSA5LjQ4MTk2IDE4LjY2NjcgOS40ODE5NkgxOC4xMTExWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/CameraMinimalistic";
  */
 const CameraMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CameraMinimalistic.displayName = "CameraMinimalistic";
-export default CameraMinimalistic;
+CameraMinimalistic.displayName = "CameraMinimalistic"
+export default CameraMinimalistic

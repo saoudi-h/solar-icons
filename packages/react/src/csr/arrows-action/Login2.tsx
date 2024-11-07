@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/Login2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/Login2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS42MjUgMTJDMS42MjUgMTIuNDE0MiAxLjk2MDc5IDEyLjc1IDIuMzc1IDEyLjc1TDEzLjM0NzYgMTIuNzVMMTEuMzg2OSAxNC40MzA2QzExLjA3MjQgMTQuNzAwMSAxMS4wMzYgMTUuMTczNiAxMS4zMDU2IDE1LjQ4ODFDMTEuNTc1MSAxNS44MDI2IDEyLjA0ODYgMTUuODM5IDEyLjM2MzEgMTUuNTY5NEwxNS44NjMxIDEyLjU2OTRDMTYuMDI5MyAxMi40MjcgMTYuMTI1IDEyLjIxODkgMTYuMTI1IDEyQzE2LjEyNSAxMS43ODExIDE2LjAyOTMgMTEuNTczIDE1Ljg2MzEgMTEuNDMwNkwxMi4zNjMxIDguNDMwNTZDMTIuMDQ4NiA4LjE2MDk5IDExLjU3NTEgOC4xOTc0MSAxMS4zMDU2IDguNTExOTFDMTEuMDM2IDguODI2NCAxMS4wNzI0IDkuMjk5ODggMTEuMzg2OSA5LjU2OTQ0TDEzLjM0NzYgMTEuMjVMMi4zNzUgMTEuMjVDMS45NjA3OSAxMS4yNSAxLjYyNSAxMS41ODU4IDEuNjI1IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOS4zNzUgOS43NTAwNEw5Ljc1MzI4IDkuNzUwMDRDOS40OTQ3MyA5LjAxNjQ1IDkuNjI0MSA4LjE2ODc2IDEwLjE2NjcgNy41MzU3NkMxMC45NzU0IDYuNTkyMjggMTIuMzk1OCA2LjQ4MzAxIDEzLjMzOTMgNy4yOTE3MUwxNi44MzkzIDEwLjI5MTdDMTcuMzM4IDEwLjcxOTIgMTcuNjI1IDExLjM0MzIgMTcuNjI1IDEyQzE3LjYyNSAxMi42NTY5IDE3LjMzOCAxMy4yODA5IDE2LjgzOTMgMTMuNzA4NEwxMy4zMzkzIDE2LjcwODRDMTIuMzk1OCAxNy41MTcxIDEwLjk3NTQgMTcuNDA3OCAxMC4xNjY3IDE2LjQ2NDNDOS42MjQxIDE1LjgzMTMgOS40OTQ3MyAxNC45ODM2IDkuNzUzMjggMTQuMjVMOS4zNzUgMTQuMjVMOS4zNzUgMTZDOS4zNzUgMTguODI4NCA5LjM3NSAyMC4yNDI2IDEwLjI1MzcgMjEuMTIxM0MxMS4xMzI0IDIyIDEyLjU0NjYgMjIgMTUuMzc1IDIyTDE2LjM3NSAyMkMxOS4yMDM0IDIyIDIwLjYxNzYgMjIgMjEuNDk2MyAyMS4xMjEzQzIyLjM3NSAyMC4yNDI2IDIyLjM3NSAxOC44Mjg0IDIyLjM3NSAxNkwyMi4zNzUgOEMyMi4zNzUgNS4xNzE1OCAyMi4zNzUgMy43NTczNiAyMS40OTYzIDIuODc4NjhDMjAuNjE3NiAyIDE5LjIwMzQgMiAxNi4zNzUgMkwxNS4zNzUgMkMxMi41NDY2IDIgMTEuMTMyNCAyIDEwLjI1MzcgMi44Nzg2OEM5LjM3NSAzLjc1NzM2IDkuMzc1IDUuMTcxNTcgOS4zNzUgOEw5LjM3NSA5Ljc1MDA0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Login2";
  */
 const Login2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Login2.displayName = "Login2";
-export default Login2;
+Login2.displayName = "Login2"
+export default Login2

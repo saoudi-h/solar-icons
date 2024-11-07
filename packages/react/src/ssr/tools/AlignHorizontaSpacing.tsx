@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/AlignHorizontaSpacing";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/AlignHorizontaSpacing"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMyAxLjI1QzMuNDE0MjIgMS4yNSAzLjc1IDEuNTg1NzkgMy43NSAyTDMuNzUgMjJDMy43NSAyMi40MTQyIDMuNDE0MjEgMjIuNzUgMyAyMi43NUMyLjU4NTc5IDIyLjc1IDIuMjUgMjIuNDE0MiAyLjI1IDIyTDIuMjUgMkMyLjI1IDEuNTg1NzkgMi41ODU3OSAxLjI1IDMgMS4yNVpNMjEgMS4yNUMyMS40MTQyIDEuMjUgMjEuNzUgMS41ODU3OSAyMS43NSAyTDIxLjc1IDIyQzIxLjc1IDIyLjQxNDIgMjEuNDE0MiAyMi43NSAyMSAyMi43NUMyMC41ODU4IDIyLjc1IDIwLjI1IDIyLjQxNDIgMjAuMjUgMjJMMjAuMjUgMkMyMC4yNSAxLjU4NTc5IDIwLjU4NTggMS4yNSAyMSAxLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgNEMxMC4xMTQ0IDQgOS4xNzE1NyA0IDguNTg1NzkgNC41ODU3OUM4IDUuMTcxNTcgOCA2LjExNDM4IDggOFYxNkM4IDE3Ljg4NTYgOCAxOC44Mjg0IDguNTg1NzkgMTkuNDE0MkM5LjE3MTU3IDIwIDEwLjExNDQgMjAgMTIgMjBDMTMuODg1NiAyMCAxNC44Mjg0IDIwIDE1LjQxNDIgMTkuNDE0MkMxNiAxOC44Mjg0IDE2IDE3Ljg4NTYgMTYgMTZWOEMxNiA2LjExNDM4IDE2IDUuMTcxNTcgMTUuNDE0MiA0LjU4NTc5QzE0LjgyODQgNCAxMy44ODU2IDQgMTIgNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/AlignHorizontaSpacing";
  */
 const AlignHorizontaSpacing: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlignHorizontaSpacing.displayName = "AlignHorizontaSpacing";
-export default AlignHorizontaSpacing;
+AlignHorizontaSpacing.displayName = "AlignHorizontaSpacing"
+export default AlignHorizontaSpacing

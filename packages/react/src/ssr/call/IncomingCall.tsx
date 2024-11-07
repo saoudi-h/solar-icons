@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/call/IncomingCall";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/call/IncomingCall"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSA1TDE1IDlNMTUgOVY2TTE1IDlIMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTUuNTU2MiAxNC41NDc3TDE1LjEwMDcgMTUuMDI3MkMxNS4xMDA3IDE1LjAyNzIgMTQuMDE4MSAxNi4xNjcgMTEuMDYzMSAxMy4wNTU5QzguMTA4MTIgOS45NDQ4NCA5LjE5MDcgOC44MDUwNyA5LjE5MDcgOC44MDUwN0w5LjQ3NzUyIDguNTAzMTFDMTAuMTg0MSA3Ljc1OTI0IDEwLjI1MDcgNi41NjQ5NyA5LjYzNDI0IDUuNjkzMUw4LjM3MzI2IDMuOTA5NjFDNy42MTAyOCAyLjgzMDUgNi4xMzU5NiAyLjY4Nzk1IDUuMjYxNDUgMy42MDg2NEwzLjY5MTg1IDUuMjYxMTRDMy4yNTgyMyA1LjcxNzY2IDIuOTY3NjUgNi4zMDk0NSAzLjAwMjg5IDYuOTY1OTRDMy4wOTMwNCA4LjY0NTQ2IDMuODEwNzEgMTIuMjU5IDcuODE1MzYgMTYuNDc1MkMxMi4wNjIxIDIwLjk0NjIgMTYuMDQ2OCAyMS4xMjM5IDE3LjY3NjMgMjAuOTYzMUMxOC4xOTE3IDIwLjkxMjIgMTguNjM5OSAyMC42MzQzIDE5LjAwMTEgMjAuMjU0TDIwLjQyMTcgMTguNzU4NEMyMS4zODA2IDE3Ljc0ODkgMjEuMTEwMiAxNi4wMTgyIDE5Ljg4MzMgMTUuMzEyTDE3Ljk3MjggMTQuMjEyM0MxNy4xNjcyIDEzLjc0ODYgMTYuMTg1OCAxMy44ODQ4IDE1LjU1NjIgMTQuNTQ3N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/IncomingCall";
  */
 const IncomingCall: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-IncomingCall.displayName = "IncomingCall";
-export default IncomingCall;
+IncomingCall.displayName = "IncomingCall"
+export default IncomingCall

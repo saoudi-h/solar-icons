@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/CallCancelRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/CallCancelRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuNDY5NyAzLjQ2OTY3QzE1Ljc2MjYgMy4xNzY3OCAxNi4yMzc0IDMuMTc2NzggMTYuNTMwMyAzLjQ2OTY3TDE4IDQuOTM5MzVMMTkuNDY5NyAzLjQ2OTY5QzE5Ljc2MjYgMy4xNzY3OSAyMC4yMzc0IDMuMTc2NzkgMjAuNTMwMyAzLjQ2OTY5QzIwLjgyMzIgMy43NjI1OCAyMC44MjMyIDQuMjM3NDUgMjAuNTMwMyA0LjUzMDM1TDE5LjA2MDcgNi4wMDAwMUwyMC41MzAzIDcuNDY5NjVDMjAuODIzMiA3Ljc2MjU1IDIwLjgyMzIgOC4yMzc0MiAyMC41MzAzIDguNTMwMzFDMjAuMjM3NCA4LjgyMzIxIDE5Ljc2MjUgOC44MjMyMSAxOS40Njk3IDguNTMwMzFMMTggNy4wNjA2N0wxNi41MzAzIDguNTMwMzNDMTYuMjM3NSA4LjgyMzIyIDE1Ljc2MjYgOC44MjMyMiAxNS40Njk3IDguNTMwMzNDMTUuMTc2OCA4LjIzNzQ0IDE1LjE3NjggNy43NjI1NiAxNS40Njk3IDcuNDY5NjdMMTYuOTM5MyA2LjAwMDAxTDE1LjQ2OTcgNC41MzAzM0MxNS4xNzY4IDQuMjM3NDQgMTUuMTc2OCAzLjc2MjU2IDE1LjQ2OTcgMy40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEwLjAzNzYgNS4zMTYxN0wxMC42ODY2IDYuNDc5MUMxMS4yNzIzIDcuNTI4NTggMTEuMDM3MiA4LjkwNTMyIDEwLjExNDcgOS44Mjc4QzEwLjExNDcgOS44Mjc4IDEwLjExNDcgOS44Mjc4IDEwLjExNDcgOS44Mjc4QzEwLjExNDYgOS44Mjc5MiA4Ljk5NTg4IDEwLjk0NjggMTEuMDI0NSAxMi45NzU1QzEzLjA1MjUgMTUuMDAzNSAxNC4xNzE0IDEzLjg4NjEgMTQuMTcyMiAxMy44ODUzQzE0LjE3MjIgMTMuODg1MyAxNC4xNzIyIDEzLjg4NTMgMTQuMTcyMiAxMy44ODUzQzE1LjA5NDcgMTIuOTYyOCAxNi40NzE0IDEyLjcyNzcgMTcuNTIwOSAxMy4zMTM0TDE4LjY4MzggMTMuOTYyNEMyMC4yNjg2IDE0Ljg0NjggMjAuNDU1NyAxNy4wNjkyIDE5LjA2MjggMTguNDYyMkMxOC4yMjU4IDE5LjI5OTIgMTcuMjAwNCAxOS45NTA1IDE2LjA2NjkgMTkuOTkzNEMxNC4xNTg4IDIwLjA2NTggMTAuOTE4MyAxOS41ODI5IDcuNjY3NyAxNi4zMzIzQzQuNDE3MTMgMTMuMDgxNyAzLjkzNDIxIDkuODQxMjIgNC4wMDY1NSA3LjkzMzA5QzQuMDQ5NTIgNi43OTk2IDQuNzAwOCA1Ljc3NDIzIDUuNTM3ODEgNC45MzcyM0M2LjkzMDc2IDMuNTQ0MjggOS4xNTMxNyAzLjczMTQ0IDEwLjAzNzYgNS4zMTYxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/CallCancelRounded";
  */
 const CallCancelRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CallCancelRounded.displayName = "CallCancelRounded";
-export default CallCancelRounded;
+CallCancelRounded.displayName = "CallCancelRounded"
+export default CallCancelRounded

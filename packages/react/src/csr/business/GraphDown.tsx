@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/business/GraphDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/business/GraphDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNNy41MzAzMyA5LjQ2OTY3QzcuMjM3NDQgOS4xNzY3OCA2Ljc2MjU2IDkuMTc2NzggNi40Njk2NyA5LjQ2OTY3QzYuMTc2NzggOS43NjI1NiA2LjE3Njc4IDEwLjIzNzQgNi40Njk2NyAxMC41MzAzTDguNzYyNTYgMTIuODIzMkM5LjQ0NTk4IDEzLjUwNjYgMTAuNTU0IDEzLjUwNjYgMTEuMjM3NCAxMi44MjMyTDEyLjgyMzIgMTEuMjM3NEMxMi45MjA5IDExLjEzOTggMTMuMDc5MSAxMS4xMzk4IDEzLjE3NjggMTEuMjM3NEwxNS4xODkzIDEzLjI1SDE0LjVDMTQuMDg1OCAxMy4yNSAxMy43NSAxMy41ODU4IDEzLjc1IDE0QzEzLjc1IDE0LjQxNDIgMTQuMDg1OCAxNC43NSAxNC41IDE0Ljc1SDE3QzE3LjQxNDIgMTQuNzUgMTcuNzUgMTQuNDE0MiAxNy43NSAxNFYxMS41QzE3Ljc1IDExLjA4NTggMTcuNDE0MiAxMC43NSAxNyAxMC43NUMxNi41ODU4IDEwLjc1IDE2LjI1IDExLjA4NTggMTYuMjUgMTEuNVYxMi4xODkzTDE0LjIzNzQgMTAuMTc2OEMxMy41NTQgOS40OTMzNiAxMi40NDYgOS40OTMzNiAxMS43NjI2IDEwLjE3NjhMMTAuMTc2OCAxMS43NjI2QzEwLjA3OTEgMTEuODYwMiA5LjkyMDg1IDExLjg2MDIgOS44MjMyMiAxMS43NjI2TDcuNTMwMzMgOS40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/GraphDown";
  */
 const GraphDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GraphDown.displayName = "GraphDown";
-export default GraphDown;
+GraphDown.displayName = "GraphDown"
+export default GraphDown

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/ParagraphSpacing";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/ParagraphSpacing"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjI1IDNDMy4yNSAyLjU4NTc5IDMuNTg1NzkgMi4yNSA0IDIuMjVIMjBDMjAuNDE0MiAyLjI1IDIwLjc1IDIuNTg1NzkgMjAuNzUgM0MyMC43NSAzLjQxNDIxIDIwLjQxNDIgMy43NSAyMCAzLjc1SDRDMy41ODU3OSAzLjc1IDMuMjUgMy40MTQyMSAzLjI1IDNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0zLjI1IDIxQzMuMjUgMjAuNTg1OCAzLjU4NTc5IDIwLjI1IDQgMjAuMjVIMjBDMjAuNDE0MiAyMC4yNSAyMC43NSAyMC41ODU4IDIwLjc1IDIxQzIwLjc1IDIxLjQxNDIgMjAuNDE0MiAyMS43NSAyMCAyMS43NUg0QzMuNTg1NzkgMjEuNzUgMy4yNSAyMS40MTQyIDMuMjUgMjFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi41MzAzIDQuOTY5NjdDMTIuMjM3NCA0LjY3Njc4IDExLjc2MjYgNC42NzY3OCAxMS40Njk3IDQuOTY5NjdMOC40Njk2NyA3Ljk2OTY3QzguMTc2NzggOC4yNjI1NiA4LjE3Njc4IDguNzM3NDQgOC40Njk2NyA5LjAzMDMzQzguNzYyNTYgOS4zMjMyMiA5LjIzNzQ0IDkuMzIzMjIgOS41MzAzMyA5LjAzMDMzTDExLjI1IDcuMzEwNjZWMTYuNjg5M0w5LjUzMDMzIDE0Ljk2OTdDOS4yMzc0NCAxNC42NzY4IDguNzYyNTYgMTQuNjc2OCA4LjQ2OTY3IDE0Ljk2OTdDOC4xNzY3OCAxNS4yNjI2IDguMTc2NzggMTUuNzM3NCA4LjQ2OTY3IDE2LjAzMDNMMTEuNDY5NyAxOS4wMzAzQzExLjc2MjYgMTkuMzIzMiAxMi4yMzc0IDE5LjMyMzIgMTIuNTMwMyAxOS4wMzAzTDE1LjUzMDMgMTYuMDMwM0MxNS44MjMyIDE1LjczNzQgMTUuODIzMiAxNS4yNjI2IDE1LjUzMDMgMTQuOTY5N0MxNS4yMzc0IDE0LjY3NjggMTQuNzYyNiAxNC42NzY4IDE0LjQ2OTcgMTQuOTY5N0wxMi43NSAxNi42ODkzVjcuMzEwNjZMMTQuNDY5NyA5LjAzMDMzQzE0Ljc2MjYgOS4zMjMyMiAxNS4yMzc0IDkuMzIzMjIgMTUuNTMwMyA5LjAzMDMzQzE1LjgyMzIgOC43Mzc0NCAxNS44MjMyIDguMjYyNTYgMTUuNTMwMyA3Ljk2OTY3TDEyLjUzMDMgNC45Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/ParagraphSpacing";
  */
 const ParagraphSpacing: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ParagraphSpacing.displayName = "ParagraphSpacing";
-export default ParagraphSpacing;
+ParagraphSpacing.displayName = "ParagraphSpacing"
+export default ParagraphSpacing

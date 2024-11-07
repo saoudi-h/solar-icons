@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/BarChair";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/BarChair"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC43NTQ2NyAyLjMwODM5QzYuNjUyMTIgMi42Njg4MyA1LjIwMjM5IDQuNjE1OCA1LjQ1OTc0IDYuNzMzNDRMNS40NzY2NiA2Ljg3MjY1QzUuNTM3NjYgNy4zNzQ1OSA1Ljk2MzczIDcuNzUyMDEgNi40NjkzNiA3Ljc1MjAxSDguMjMzMUw1LjI2NjggMjEuNTk0N0M1LjE4MDAxIDIxLjk5OTcgNS40Mzc5OSAyMi4zOTg0IDUuODQzMDEgMjIuNDg1MkM2LjI0ODAzIDIyLjU3MiA2LjY0NjcyIDIyLjMxNCA2LjczMzUxIDIxLjkwOUw3LjY3NzkgMTcuNTAxOUgxNi4zMjI0TDE3LjI2NjggMjEuOTA5QzE3LjM1MzYgMjIuMzE0IDE3Ljc1MjMgMjIuNTcyIDE4LjE1NzMgMjIuNDg1MkMxOC41NjIzIDIyLjM5ODQgMTguODIwMyAyMS45OTk3IDE4LjczMzUgMjEuNTk0N0wxNS43NjcyIDcuNzUyMDFIMTcuNTMxQzE4LjAzNjcgNy43NTIwMSAxOC40NjI3IDcuMzc0NTkgMTguNTIzNyA2Ljg3MjY1TDE4LjU0MDYgNi43MzM0NEMxOC43OTggNC42MTU4IDE3LjM0ODMgMi42Njg4MyAxNS4yNDU3IDIuMzA4MzlMMTQuODcyNiAyLjI0NDQyQzEyLjk3MTUgMS45MTg1MyAxMS4wMjg5IDEuOTE4NTMgOS4xMjc4MSAyLjI0NDQyTDguNzU0NjcgMi4zMDgzOVpNMTQuMjUgNy43NTIwMUg5Ljc1MDMxQzkuNzUwMjUgNy44MDM3OSA5Ljc0NDc5IDcuODU2MzUgOS43MzM1MSA3LjkwOTAxTDcuOTk5MzIgMTYuMDAxOUgxNi4wMDFMMTQuMjY2OCA3LjkwOTAxQzE0LjI1NTUgNy44NTYzNSAxNC4yNTAxIDcuODAzNzkgMTQuMjUgNy43NTIwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/BarChair";
  */
 const BarChair: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BarChair.displayName = "BarChair";
-export default BarChair;
+BarChair.displayName = "BarChair"
+export default BarChair

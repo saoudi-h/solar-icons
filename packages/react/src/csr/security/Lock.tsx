@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/Lock";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/Lock"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4yNSAxMC4wNTQ2VjhDNS4yNSA0LjI3MjA4IDguMjcyMDggMS4yNSAxMiAxLjI1QzE1LjcyNzkgMS4yNSAxOC43NSA0LjI3MjA4IDE4Ljc1IDhWMTAuMDU0NkMxOS44NjQ4IDEwLjEzNzkgMjAuNTkwNyAxMC4zNDggMjEuMTIxMyAxMC44Nzg3QzIyIDExLjc1NzQgMjIgMTMuMTcxNiAyMiAxNkMyMiAxOC44Mjg0IDIyIDIwLjI0MjYgMjEuMTIxMyAyMS4xMjEzQzIwLjI0MjYgMjIgMTguODI4NCAyMiAxNiAyMkg4QzUuMTcxNTcgMjIgMy43NTczNiAyMiAyLjg3ODY4IDIxLjEyMTNDMiAyMC4yNDI2IDIgMTguODI4NCAyIDE2QzIgMTMuMTcxNiAyIDExLjc1NzQgMi44Nzg2OCAxMC44Nzg3QzMuNDA5MzEgMTAuMzQ4IDQuMTM1MjUgMTAuMTM3OSA1LjI1IDEwLjA1NDZaTTYuNzUgOEM2Ljc1IDUuMTAwNTEgOS4xMDA1MSAyLjc1IDEyIDIuNzVDMTQuODk5NSAyLjc1IDE3LjI1IDUuMTAwNTEgMTcuMjUgOFYxMC4wMDM2QzE2Ljg2NyAxMCAxNi40NTE1IDEwIDE2IDEwSDhDNy41NDg0OSAxMCA3LjEzMzAxIDEwIDYuNzUgMTAuMDAzNlY4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/Lock";
  */
 const Lock: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Lock.displayName = "Lock";
-export default Lock;
+Lock.displayName = "Lock"
+export default Lock

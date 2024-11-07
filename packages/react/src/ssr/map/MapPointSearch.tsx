@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/MapPointSearch";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/MapPointSearch"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM3LjU4MTcyIDIgNCA1LjY0NTg4IDQgMTAuMTQzM0M0IDE0LjYwNTUgNi41NTMzMiAxOS44MTI0IDEwLjUzNzEgMjEuNjc0NEMxMS40NjU3IDIyLjEwODUgMTIuNTM0MyAyMi4xMDg1IDEzLjQ2MjkgMjEuNjc0NEMxNy40NDY3IDE5LjgxMjQgMjAgMTQuNjA1NSAyMCAxMC4xNDMzQzIwIDUuNjQ1ODggMTYuNDE4MyAyIDEyIDJaTTguMjUgMTBDOC4yNSA3LjkyODkzIDkuOTI4OTMgNi4yNSAxMiA2LjI1QzE0LjA3MTEgNi4yNSAxNS43NSA3LjkyODkzIDE1Ljc1IDEwQzE1Ljc1IDEwLjc2MjggMTUuNTIxNyAxMS40NzMxIDE1LjEzMDQgMTIuMDY1M0wxNi4wMzE3IDEyLjk3MTVDMTYuMzIzOCAxMy4yNjUyIDE2LjMyMjUgMTMuNzQwMSAxNi4wMjg4IDE0LjAzMjJDMTUuNzM1MSAxNC4zMjQzIDE1LjI2MDIgMTQuMzIzIDE0Ljk2ODEgMTQuMDI5M0wxNC4wNzA2IDEzLjEyNjhDMTMuNDc3NCAxMy41MjAzIDEyLjc2NTEgMTMuNzUgMTIgMTMuNzVDOS45Mjg5MyAxMy43NSA4LjI1IDEyLjA3MTEgOC4yNSAxMFpNOS43NSAxMEM5Ljc1IDguNzU3MzYgMTAuNzU3NCA3Ljc1IDEyIDcuNzVDMTMuMjQyNiA3Ljc1IDE0LjI1IDguNzU3MzYgMTQuMjUgMTBDMTQuMjUgMTAuNjIwMiAxNC4wMDAxIDExLjE4MDYgMTMuNTkzNyAxMS41ODgzQzEzLjE4NTQgMTEuOTk3OSAxMi42MjI5IDEyLjI1IDEyIDEyLjI1QzEwLjc1NzQgMTIuMjUgOS43NSAxMS4yNDI2IDkuNzUgMTBaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapPointSearch";
  */
 const MapPointSearch: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapPointSearch.displayName = "MapPointSearch";
-export default MapPointSearch;
+MapPointSearch.displayName = "MapPointSearch"
+export default MapPointSearch

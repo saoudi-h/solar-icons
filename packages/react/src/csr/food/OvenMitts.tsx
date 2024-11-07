@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/OvenMitts";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/OvenMitts"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00LjAxODggMTYuNTM2OEw3LjU4NzU4IDIwLjAyNjJDOC45MzM0NSAyMS4zNDIxIDkuNjA2MzggMjIgMTAuNDQyNiAyMkMxMC45NTY1IDIyIDExLjQwODcgMjEuNzUxNSAxMS45OTMzIDIxLjI1NDZDMTIuMzUxMSAyMC45NTA1IDEyLjUzIDIwLjc5ODQgMTIuNTM3OSAyMC41NzgxQzEyLjU0NTggMjAuMzU3OCAxMi4zNjkzIDIwLjE4NDYgMTIuMDE2NCAxOS44MzgxTDQuMTA2NDkgMTIuMDczMUMzLjg2NjE5IDExLjgzNzIgMy43NDYwMyAxMS43MTkyIDMuNjEzNzUgMTEuNjg2M0MzLjUyMzg3IDExLjY2NCAzLjQzNjM4IDExLjY2NjIgMy4zNDc3NiAxMS42OTMxQzMuMjE3MzIgMTEuNzMyNyAzLjEwMTI3IDExLjg1ODkgMi44NjkxNiAxMi4xMTEyQzIuMjg5NzIgMTIuNzQxMiAyIDEzLjIwODkgMiAxMy43NDU0QzIgMTQuNTYzIDIuNjcyOTMgMTUuMjIxIDQuMDE4OCAxNi41MzY4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjAuMDc4MyAxMy4zOTY1QzIyLjY0MDYgMTAuODkxMyAyMi42NDA2IDYuODI5NTEgMjAuMDc4MyA0LjMyNDI5QzE3LjUxNiAxLjgxOTA4IDEzLjM2MTggMS44MTkwOCAxMC43OTk1IDQuMzI0MjlMMTAuMzM0MSA0Ljc3OTI5QzkuOTE0ODIgMy4xNTE1OSA4LjY2NzU5IDEuOTc4NDMgNy4yMTMwNSAyLjAwMDNDNS40NDA5MyAyLjAyNjk0IDQuMDMyMTcgMy44MTczMiA0LjA2NjQ4IDUuOTk5MjNMNC4wMzMxOSA5LjQ1NjUxQzQuMDMwOTggOS42NzQ4MyA0LjAyOTg4IDkuNzgzOTkgNC4wNjg4NiA5Ljg3ODIyQzQuMTA3ODQgOS45NzI0NSA0LjE4NDMgMTAuMDQ3NSA0LjMzNzIgMTAuMTk3NkwxMy4xMjUzIDE4LjgyNDdDMTMuNDU1NSAxOS4xNDg4IDEzLjYyMDUgMTkuMzEwOSAxMy44MjQ3IDE5LjMxMTFDMTQuMDI4OCAxOS4zMTEzIDE0LjE5NDIgMTkuMTQ5NiAxNC41MjUgMTguODI2MUwyMC4wNzgzIDEzLjM5NjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/OvenMitts";
  */
 const OvenMitts: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-OvenMitts.displayName = "OvenMitts";
-export default OvenMitts;
+OvenMitts.displayName = "OvenMitts"
+export default OvenMitts

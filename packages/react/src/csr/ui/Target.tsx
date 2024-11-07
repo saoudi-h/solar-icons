@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Target";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Target"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuMjQ3OSAyQzYuMzA5MjkgMi4zNjYxOCAyLjM2NjE4IDYuMzA5MjkgMiAxMS4yNDc5SDQuOTgwNTZDNS4zOTU5MiAxMS4yNDc5IDUuNzMyNjQgMTEuNTg0NiA1LjczMjY0IDEyQzUuNzMyNjQgMTIuNDE1NCA1LjM5NTkyIDEyLjc1MjEgNC45ODA1NiAxMi43NTIxSDJDMi4zNjYxOCAxNy42OTA3IDYuMzA5MjkgMjEuNjMzOCAxMS4yNDc5IDIyVjE5LjAxOTRDMTEuMjQ3OSAxOC42MDQxIDExLjU4NDYgMTguMjY3NCAxMiAxOC4yNjc0QzEyLjQxNTQgMTguMjY3NCAxMi43NTIxIDE4LjYwNDEgMTIuNzUyMSAxOS4wMTk0VjIyQzE3LjY5MDcgMjEuNjMzOCAyMS42MzM4IDE3LjY5MDcgMjIgMTIuNzUyMUgxOS4wMTk0QzE4LjYwNDEgMTIuNzUyMSAxOC4yNjc0IDEyLjQxNTQgMTguMjY3NCAxMkMxOC4yNjc0IDExLjU4NDYgMTguNjA0MSAxMS4yNDc5IDE5LjAxOTQgMTEuMjQ3OUgyMkMyMS42MzM4IDYuMzA5MjkgMTcuNjkwNyAyLjM2NjE4IDEyLjc1MjEgMlY0Ljk4MDU2QzEyLjc1MjEgNS4zOTU5MiAxMi40MTU0IDUuNzMyNjQgMTIgNS43MzI2NEMxMS41ODQ2IDUuNzMyNjQgMTEuMjQ3OSA1LjM5NTkyIDExLjI0NzkgNC45ODA1NlYyWk05LjI0MjM2IDEyQzkuMjQyMzYgMTEuNTg0NiA5LjU3OTA4IDExLjI0NzkgOS45OTQ0NCAxMS4yNDc5SDExLjI0NzlWOS45OTQ0NEMxMS4yNDc5IDkuNTc5MDggMTEuNTg0NiA5LjI0MjM2IDEyIDkuMjQyMzZDMTIuNDE1NCA5LjI0MjM2IDEyLjc1MjEgOS41NzkwOCAxMi43NTIxIDkuOTk0NDRWMTEuMjQ3OUgxNC4wMDU2QzE0LjQyMDkgMTEuMjQ3OSAxNC43NTc2IDExLjU4NDYgMTQuNzU3NiAxMkMxNC43NTc2IDEyLjQxNTQgMTQuNDIwOSAxMi43NTIxIDE0LjAwNTYgMTIuNzUyMUgxMi43NTIxVjE0LjAwNTZDMTIuNzUyMSAxNC40MjA5IDEyLjQxNTQgMTQuNzU3NiAxMiAxNC43NTc2QzExLjU4NDYgMTQuNzU3NiAxMS4yNDc5IDE0LjQyMDkgMTEuMjQ3OSAxNC4wMDU2VjEyLjc1MjFIOS45OTQ0NEM5LjU3OTA4IDEyLjc1MjEgOS4yNDIzNiAxMi40MTU0IDkuMjQyMzYgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Target";
  */
 const Target: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Target.displayName = "Target";
-export default Target;
+Target.displayName = "Target"
+export default Target

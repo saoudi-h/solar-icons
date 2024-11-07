@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatRoundCheck";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatRoundCheck"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzEwLjQwMDMgMjIgOC44ODgzNyAyMS42MjQ0IDcuNTQ3NTMgMjAuOTU2NUM3LjE5MTIxIDIwLjc3OTEgNi43ODM5MyAyMC43MiA2LjM5OTM5IDIwLjgyMjlMNC4xNzMzNSAyMS40MTg1QzMuMjA3MDEgMjEuNjc3IDIuMzIyOTUgMjAuNzkzIDIuNTgxNTEgMTkuODI2N0wzLjE3NzEyIDE3LjYwMDZDMy4yODAwMSAxNy4yMTYxIDMuMjIwOTQgMTYuODA4OCAzLjA0MzQ2IDE2LjQ1MjVDMi4zNzU2MiAxNS4xMTE2IDIgMTMuNTk5NyAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlpNMTUuNTMwMyA5LjQ2OTY3QzE1LjgyMzIgOS43NjI1NiAxNS44MjMyIDEwLjIzNzQgMTUuNTMwMyAxMC41MzAzTDExLjUzMDMgMTQuNTMwM0MxMS4yNDE3IDE0LjgxOSAxMC43NzUxIDE0LjgyMzggMTAuNDgwNiAxNC41NDFMOC40ODA2IDEyLjYyMUM4LjE4MTc5IDEyLjMzNDIgOC4xNzIxIDExLjg1OTQgOC40NTg5NiAxMS41NjA2QzguNzQ1ODIgMTEuMjYxOCA5LjIyMDU5IDExLjI1MjEgOS41MTk0IDExLjUzOUwxMC45ODkzIDEyLjk1MDFMMTQuNDY5NyA5LjQ2OTY3QzE0Ljc2MjYgOS4xNzY3OCAxNS4yMzc0IDkuMTc2NzggMTUuNTMwMyA5LjQ2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundCheck";
  */
 const ChatRoundCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundCheck.displayName = "ChatRoundCheck";
-export default ChatRoundCheck;
+ChatRoundCheck.displayName = "ChatRoundCheck"
+export default ChatRoundCheck

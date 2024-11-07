@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Power";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Power"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyVjYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIuNzUgMi43NUMxMi43NSAyLjMzNTc5IDEyLjQxNDIgMiAxMiAyQzExLjU4NTggMiAxMS4yNSAyLjMzNTc5IDExLjI1IDIuNzVWNi43NUMxMS4yNSA3LjE2NDIxIDExLjU4NTggNy41IDEyIDcuNUMxMi40MTQyIDcuNSAxMi43NSA3LjE2NDIxIDEyLjc1IDYuNzVWMi43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTguNzkxOSA1LjE0NjkyQzkuMTczNDUgNC45ODU3MSA5LjM1MjA4IDQuNTQ1NzEgOS4xOTA4NyA0LjE2NDE2QzkuMDI5NjYgMy43ODI2IDguNTg5NjYgMy42MDM5OCA4LjIwODEgMy43NjUxOUM0LjcwODMyIDUuMjQzODYgMi4yNSA4LjcwOTA1IDIuMjUgMTIuNzUwMUMyLjI1IDE4LjEzNDkgNi42MTUyMiAyMi41MDAxIDEyIDIyLjUwMDFDMTcuMzg0OCAyMi41MDAxIDIxLjc1IDE4LjEzNDkgMjEuNzUgMTIuNzUwMUMyMS43NSA4LjcwOTA1IDE5LjI5MTcgNS4yNDM4NiAxNS43OTE5IDMuNzY1MTlDMTUuNDEwMyAzLjYwMzk4IDE0Ljk3MDMgMy43ODI2IDE0LjgwOTEgNC4xNjQxNkMxNC42NDc5IDQuNTQ1NzEgMTQuODI2NSA0Ljk4NTcxIDE1LjIwODEgNS4xNDY5MkMxOC4xNzIyIDYuMzk5MjcgMjAuMjUgOS4zMzI5MyAyMC4yNSAxMi43NTAxQzIwLjI1IDE3LjMwNjUgMTYuNTU2MyAyMS4wMDAxIDEyIDIxLjAwMDFDNy40NDM2NSAyMS4wMDAxIDMuNzUgMTcuMzA2NSAzLjc1IDEyLjc1MDFDMy43NSA5LjMzMjkzIDUuODI3NzkgNi4zOTkyNyA4Ljc5MTkgNS4xNDY5MloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Power";
  */
 const Power: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Power.displayName = "Power";
-export default Power;
+Power.displayName = "Power"
+export default Power

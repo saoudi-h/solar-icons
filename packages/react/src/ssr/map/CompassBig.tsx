@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/CompassBig";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/CompassBig"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy41NTQyOCAyMS41Mjg4QzUuMzUxMzIgMjIuNzUgOC40OTc0OSAyMS40OTE1IDE0Ljc4OTggMTguOTc0NkMxNi4xMzIgMTguNDM3NyAxNi44MDMxIDE4LjE2OTMgMTcuMzI5NSAxNy43MDc2QzE3LjQ2MzcgMTcuNTkgMTcuNTkgMTcuNDYzNyAxNy43MDc2IDE3LjMyOTVDMTguMTY5MyAxNi44MDMxIDE4LjQzNzcgMTYuMTMyIDE4Ljk3NDYgMTQuNzg5OEMyMS40OTE1IDguNDk3NDkgMjIuNzUgNS4zNTEzMiAyMS41Mjg4IDMuNTU0MjhDMjEuMjM5MyAzLjEyODIgMjAuODcxOCAyLjc2MDcgMjAuNDQ1NyAyLjQ3MTE3QzE4LjY0ODcgMS4yNTAwMSAxNS41MDI1IDIuNTA4NDggOS4yMTAxNyA1LjAyNTQyQzcuODY4MDIgNS41NjIyNyA3LjE5Njk1IDUuODMwNyA2LjY3MDQ4IDYuMjkyMzhDNi41MzYzMyA2LjQxMDAyIDYuNDEwMDIgNi41MzYzMyA2LjI5MjM4IDYuNjcwNDhDNS44MzA3IDcuMTk2OTUgNS41NjIyOCA3Ljg2ODAyIDUuMDI1NDIgOS4yMTAxN0MyLjUwODQ4IDE1LjUwMjUgMS4yNTAwMSAxOC42NDg3IDIuNDcxMTcgMjAuNDQ1N0MyLjc2MDcxIDIwLjg3MTggMy4xMjgyIDIxLjIzOTMgMy41NTQyOCAyMS41Mjg4Wk04LjI1IDEyQzguMjUgOS45Mjg5MyA5LjkyODkzIDguMjUgMTIgOC4yNUMxNC4wNzExIDguMjUgMTUuNzUgOS45Mjg5MyAxNS43NSAxMkMxNS43NSAxNC4wNzExIDE0LjA3MTEgMTUuNzUgMTIgMTUuNzVDOS45Mjg5MyAxNS43NSA4LjI1IDE0LjA3MTEgOC4yNSAxMlpNOS43NSAxMkM5Ljc1IDEwLjc1NzQgMTAuNzU3NCA5Ljc1IDEyIDkuNzVDMTMuMjQyNiA5Ljc1IDE0LjI1IDEwLjc1NzQgMTQuMjUgMTJDMTQuMjUgMTMuMjQyNiAxMy4yNDI2IDE0LjI1IDEyIDE0LjI1QzEwLjc1NzQgMTQuMjUgOS43NSAxMy4yNDI2IDkuNzUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/CompassBig";
  */
 const CompassBig: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CompassBig.displayName = "CompassBig";
-export default CompassBig;
+CompassBig.displayName = "CompassBig"
+export default CompassBig

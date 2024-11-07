@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/settings/Tuning";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/settings/Tuning"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi45NTkgOS43NUMxNi41NDQ4IDkuNzUgMTYuMjA5IDkuNDE0MjEgMTYuMjA5IDlMMTYuMjA5IDJDMTYuMjA5IDEuNTg1NzkgMTYuNTQ0OCAxLjI1IDE2Ljk1OSAxLjI1QzE3LjM3MzIgMS4yNSAxNy43MDkgMS41ODU3OSAxNy43MDkgMkwxNy43MDkgOUMxNy43MDkgOS40MTQyMSAxNy4zNzMyIDkuNzUgMTYuOTU5IDkuNzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03IDEyLjVDNS4zNDMxNSAxMi41IDQgMTEuMTU2OSA0IDkuNUM0IDcuODQzMTUgNS4zNDMxNSA2LjUgNyA2LjVDOC42NTY4NSA2LjUgMTAgNy44NDMxNSAxMCA5LjVDMTAgMTEuMTU2OSA4LjY1Njg1IDEyLjUgNyAxMi41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcgMTEuNUMxNS4zNDMxIDExLjUgMTQgMTIuODQzMSAxNCAxNC41QzE0IDE2LjE1NjkgMTUuMzQzMSAxNy41IDE3IDE3LjVDMTguNjU2OSAxNy41IDIwIDE2LjE1NjkgMjAgMTQuNUMyMCAxMi44NDMxIDE4LjY1NjkgMTEuNSAxNyAxMS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNi4yMDkwMSAxNUM2LjIwOTAxIDE0LjU4NTggNi41NDQ4IDE0LjI1IDYuOTU5MDEgMTQuMjVDNy4zNzMyMiAxNC4yNSA3LjcwOTAxIDE0LjU4NTggNy43MDkwMSAxNVYyMkM3LjcwOTAxIDIyLjQxNDIgNy4zNzMyMiAyMi43NSA2Ljk1OTAxIDIyLjc1QzYuNTQ0OCAyMi43NSA2LjIwOTAxIDIyLjQxNDIgNi4yMDkwMSAyMlYxNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE2Ljk1OSAyMi43NUMxNi41NDQ4IDIyLjc1IDE2LjIwOSAyMi40MTQyIDE2LjIwOSAyMlYyMEMxNi4yMDkgMTkuNTg1OCAxNi41NDQ4IDE5LjI1IDE2Ljk1OSAxOS4yNUMxNy4zNzMyIDE5LjI1IDE3LjcwOSAxOS41ODU4IDE3LjcwOSAyMFYyMkMxNy43MDkgMjIuNDE0MiAxNy4zNzMyIDIyLjc1IDE2Ljk1OSAyMi43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTYuMjA5MDEgMkM2LjIwOTAxIDEuNTg1NzkgNi41NDQ4IDEuMjUgNi45NTkwMSAxLjI1QzcuMzczMjIgMS4yNSA3LjcwOTAxIDEuNTg1NzkgNy43MDkwMSAyVjRDNy43MDkwMSA0LjQxNDIxIDcuMzczMjIgNC43NSA2Ljk1OTAxIDQuNzVDNi41NDQ4IDQuNzUgNi4yMDkwMSA0LjQxNDIxIDYuMjA5MDEgNFYyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/Tuning";
  */
 const Tuning: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Tuning.displayName = "Tuning";
-export default Tuning;
+Tuning.displayName = "Tuning"
+export default Tuning

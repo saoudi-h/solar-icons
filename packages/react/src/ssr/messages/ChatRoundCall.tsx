@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatRoundCall";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatRoundCall"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzEwLjQwMDMgMjIgOC44ODgzNyAyMS42MjQ0IDcuNTQ3NTMgMjAuOTU2NUM3LjE5MTIxIDIwLjc3OTEgNi43ODM5MyAyMC43MiA2LjM5OTM5IDIwLjgyMjlMNC4xNzMzNSAyMS40MTg1QzMuMjA3MDEgMjEuNjc3IDIuMzIyOTUgMjAuNzkzIDIuNTgxNTEgMTkuODI2N0wzLjE3NzEyIDE3LjYwMDZDMy4yODAwMSAxNy4yMTYxIDMuMjIwOTQgMTYuODA4OCAzLjA0MzQ2IDE2LjQ1MjVDMi4zNzU2MiAxNS4xMTE2IDIgMTMuNTk5NyAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlpNMTIgNy4yNUMxMi40MTQyIDcuMjUgMTIuNzUgNy41ODU3OSAxMi43NSA4VjE2QzEyLjc1IDE2LjQxNDIgMTIuNDE0MiAxNi43NSAxMiAxNi43NUMxMS41ODU4IDE2Ljc1IDExLjI1IDE2LjQxNDIgMTEuMjUgMTZWOEMxMS4yNSA3LjU4NTc5IDExLjU4NTggNy4yNSAxMiA3LjI1Wk04Ljc1IDEwQzguNzUgOS41ODU3OSA4LjQxNDIxIDkuMjUgOCA5LjI1QzcuNTg1NzkgOS4yNSA3LjI1IDkuNTg1NzkgNy4yNSAxMFYxNEM3LjI1IDE0LjQxNDIgNy41ODU3OSAxNC43NSA4IDE0Ljc1QzguNDE0MjEgMTQuNzUgOC43NSAxNC40MTQyIDguNzUgMTRWMTBaTTE2IDkuMjVDMTYuNDE0MiA5LjI1IDE2Ljc1IDkuNTg1NzkgMTYuNzUgMTBWMTRDMTYuNzUgMTQuNDE0MiAxNi40MTQyIDE0Ljc1IDE2IDE0Ljc1QzE1LjU4NTggMTQuNzUgMTUuMjUgMTQuNDE0MiAxNS4yNSAxNFYxMEMxNS4yNSA5LjU4NTc5IDE1LjU4NTggOS4yNSAxNiA5LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundCall";
  */
 const ChatRoundCall: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundCall.displayName = "ChatRoundCall";
-export default ChatRoundCall;
+ChatRoundCall.displayName = "ChatRoundCall"
+export default ChatRoundCall

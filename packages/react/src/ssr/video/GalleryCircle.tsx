@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/GalleryCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/GalleryCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNyA5QzE3IDEwLjEwNDYgMTYuMTA0NiAxMSAxNSAxMUMxMy44OTU0IDExIDEzIDEwLjEwNDYgMTMgOUMxMyA3Ljg5NTQzIDEzLjg5NTQgNyAxNSA3QzE2LjEwNDYgNyAxNyA3Ljg5NTQzIDE3IDlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMS4yNUM2LjA2Mjk0IDEuMjUgMS4yNSA2LjA2Mjk0IDEuMjUgMTJDMS4yNSAxNy45MzcxIDYuMDYyOTQgMjIuNzUgMTIgMjIuNzVDMTcuOTM3MSAyMi43NSAyMi43NSAxNy45MzcxIDIyLjc1IDEyQzIyLjc1IDYuMDYyOTQgMTcuOTM3MSAxLjI1IDEyIDEuMjVaTTExLjE4MjIgMTUuMzYxOEw2Ljg5MjQ5IDExLjA3MjFDNi4wMzYyOCAxMC4yMTU5IDQuNjYyODYgMTAuMTcwMiAzLjc1MTU5IDEwLjk2NzVMMi43NTEgMTEuODYyM0MyLjgyNDY0IDYuODE3MTQgNi45MzczNSAyLjc1IDEyIDIuNzVDMTcuMTA4NiAyLjc1IDIxLjI1IDYuODkxMzcgMjEuMjUgMTJDMjEuMjUgMTMuOTU0NiAyMC42NDM4IDE1Ljc2NzYgMTkuNjA5IDE3LjI2MTJMMTcuNzc2NSAxNS41OTlDMTYuNzM2OSAxNC42NjM0IDE1LjE4ODggMTQuNTcwMiAxNC4wNDQ2IDE1LjM3NDRMMTMuNzQ2NCAxNS41ODM5QzEyLjk1MTIgMTYuMTQyOCAxMS44Njk0IDE2LjA0OTEgMTEuMTgyMiAxNS4zNjE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/GalleryCircle";
  */
 const GalleryCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GalleryCircle.displayName = "GalleryCircle";
-export default GalleryCircle;
+GalleryCircle.displayName = "GalleryCircle"
+export default GalleryCircle

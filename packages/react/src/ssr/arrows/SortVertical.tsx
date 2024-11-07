@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/SortVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/SortVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxMy4xMjVDMTIuMzAxMyAxMy4xMjUgMTIuNTczMyAxMy4zMDUyIDEyLjY5MDcgMTMuNTgyN0MxMi44MDgxIDEzLjg2MDEgMTIuNzQ4MiAxNC4xODA4IDEyLjUzODQgMTQuMzk3MUw4LjUzODQ0IDE4LjUyMjFDOC4zOTcxOSAxOC42Njc4IDguMjAyOTMgMTguNzUgOC4wMDAwMiAxOC43NUM3Ljc5NzExIDE4Ljc1IDcuNjAyODUgMTguNjY3OCA3LjQ2MTU5IDE4LjUyMjFMMy40NjE1OSAxNC4zOTcxQzMuMjUxODggMTQuMTgwOCAzLjE5MTkyIDEzLjg2MDEgMy4zMDkzNCAxMy41ODI3QzMuNDI2NzYgMTMuMzA1MiAzLjY5ODc3IDEzLjEyNSA0LjAwMDAyIDEzLjEyNUg3LjI1MDAyVjZDNy4yNTAwMiA1LjU4NTc5IDcuNTg1OCA1LjI1IDguMDAwMDIgNS4yNUM4LjQxNDIzIDUuMjUgOC43NTAwMiA1LjU4NTc5IDguNzUwMDIgNlYxMy4xMjVIMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMCAxMC44NzVDMjAuMzAxMyAxMC44NzUgMjAuNTczMyAxMC42OTQ4IDIwLjY5MDcgMTAuNDE3M0MyMC44MDgxIDEwLjEzOTkgMjAuNzQ4MiA5LjgxOTE2IDIwLjUzODQgOS42MDI4OUwxNi41Mzg0IDUuNDc3ODlDMTYuMzk3MiA1LjMzMjIyIDE2LjIwMjkgNS4yNSAxNiA1LjI1QzE1Ljc5NzEgNS4yNSAxNS42MDI5IDUuMzMyMjIgMTUuNDYxNiA1LjQ3Nzg5TDExLjQ2MTYgOS42MDI4OUMxMS4yNTE5IDkuODE5MTYgMTEuMTkxOSAxMC4xMzk5IDExLjMwOTMgMTAuNDE3M0MxMS40MjY4IDEwLjY5NDggMTEuNjk4OCAxMC44NzUgMTIgMTAuODc1SDE1LjI1VjE4QzE1LjI1IDE4LjQxNDIgMTUuNTg1OCAxOC43NSAxNiAxOC43NUMxNi40MTQyIDE4Ljc1IDE2Ljc1IDE4LjQxNDIgMTYuNzUgMThMMTYuNzUgMTAuODc1SDIwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SortVertical";
  */
 const SortVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SortVertical.displayName = "SortVertical";
-export default SortVertical;
+SortVertical.displayName = "SortVertical"
+export default SortVertical

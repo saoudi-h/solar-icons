@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/ClapperboardPlay";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/ClapperboardPlay"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyQzEzLjg0NTIgMiAxNS4zMjkzIDIgMTYuNTQwMSAyLjA4NzgzTDEzLjA5ODYgNy4yNTAwMkg4LjQwMTM5TDExLjkwMTQgMkgxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMuNDY0NDcgMy40NjQ0N0M0LjcxNjgzIDIuMjEyMSA2LjYyMTk0IDIuMDMwNzIgMTAuMDk1NyAyLjAwNDQ1TDYuNTk4NjEgNy4yNTAwMkgyLjEwNDE4QzIuMjUxNDMgNS40ODU5MyAyLjYwNjggNC4zMjIxMyAzLjQ2NDQ3IDMuNDY0NDdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDEwLjc2MzMgMiA5LjY4ODc1IDIuMDI2NDQgOC43NTAwMkgyMS45NzM2QzIyIDkuNjg4NzUgMjIgMTAuNzYzMyAyMiAxMkMyMiAxNi43MTQgMjIgMTkuMDcxMSAyMC41MzU1IDIwLjUzNTVDMTkuMDcxMSAyMiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMlpNMTMuMDE0IDEyLjU4NTJDMTQuMzM4IDEzLjQzOTUgMTUgMTMuODY2NiAxNSAxNC41QzE1IDE1LjEzMzQgMTQuMzM4IDE1LjU2MDUgMTMuMDE0IDE2LjQxNDhDMTEuNjcxOSAxNy4yODA3IDExLjAwMDggMTcuNzEzNyAxMC41MDA0IDE3LjM5NThDMTAgMTcuMDc3OSAxMCAxNi4yMTg2IDEwIDE0LjVDMTAgMTIuNzgxNCAxMCAxMS45MjIxIDEwLjUwMDQgMTEuNjA0MkMxMS4wMDA4IDExLjI4NjMgMTEuNjcxOSAxMS43MTkzIDEzLjAxNCAxMi41ODUyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuODk1OCA3LjI1MDAyQzIxLjc0ODYgNS40ODU5MyAyMS4zOTMyIDQuMzIyMTMgMjAuNTM1NSAzLjQ2NDQ3QzE5LjkzODIgMi44NjcxNCAxOS4xOTI0IDIuNTEzNDUgMTguMTk4NyAyLjMwNDAzTDE0LjkwMTQgNy4yNTAwMkgyMS44OTU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/ClapperboardPlay";
  */
 const ClapperboardPlay: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClapperboardPlay.displayName = "ClapperboardPlay";
-export default ClapperboardPlay;
+ClapperboardPlay.displayName = "ClapperboardPlay"
+export default ClapperboardPlay

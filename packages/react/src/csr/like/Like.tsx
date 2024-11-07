@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/like/Like";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/like/Like"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC4yNjk5IDE2LjI2NUwyMC45NzU0IDEyLjE4NTJDMjEuMTUxNiAxMS4xNjYyIDIwLjM2OCAxMC4yMzQyIDE5LjMzNSAxMC4yMzQySDE0LjE1MzlDMTMuNjQwNCAxMC4yMzQyIDEzLjI0OTQgOS43NzMyOCAxMy4zMzI1IDkuMjY1OThMMTMuOTk1MiA1LjIyMTQyQzE0LjEwMjggNC41NjQzNSAxNC4wNzIxIDMuODkyIDEzLjkwNDkgMy4yNDc1MkMxMy43NjY0IDIuNzEzNjQgMTMuMzU0NSAyLjI4NDk1IDEyLjgxMjggMi4xMTA5M0wxMi42Njc4IDIuMDY0MzVDMTIuMzQwNCAxLjk1OTE4IDExLjk4MzEgMS45ODM2NSAxMS42NzQ0IDIuMTMyMzlDMTEuMzM0NyAyLjI5NjExIDExLjA4NjEgMi41OTQ3MyAxMC45OTQgMi45NDk4OUwxMC41MTgzIDQuNzgzNzRDMTAuMzY2OSA1LjM2NzIzIDEwLjE0NjUgNS45MzA0NSA5Ljg2MjE4IDYuNDYyNjJDOS40NDY4MyA3LjI0MDE3IDguODA0NjUgNy44NjI0NiA4LjEzNzExIDguNDM3NjlMNi42OTgzOCA5LjY3NzQ5QzYuMjkyNzIgMTAuMDI3MSA2LjA3OTY4IDEwLjU1MDYgNi4xMjU4NCAxMS4wODQ0TDYuOTM4MDEgMjAuNDc3MUM3LjAxMjUgMjEuMzM4NiA3LjczMjggMjIgOC41OTY1OCAyMkgxMy4yNDUyQzE2LjcyNjUgMjIgMTkuNjk3NSAxOS41NzQ0IDIwLjI2OTkgMTYuMjY1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIuOTY3NjcgOS40ODUwOEMzLjM2ODkzIDkuNDY3NzcgMy43MTI2MSA5Ljc2OTYzIDMuNzQ3MjEgMTAuMTY5OEw0LjcxODgxIDIxLjQwNjNDNC43ODEyMiAyMi4xMjgxIDQuMjEyNjggMjIuNzUwMiAzLjQ4NjcxIDIyLjc1MDJDMi44MDI4OSAyMi43NTAyIDIuMjUgMjIuMTk1NCAyLjI1IDIxLjUxMjlWMTAuMjM0NEMyLjI1IDkuODMyNzUgMi41NjY0IDkuNTAyNCAyLjk2NzY3IDkuNDg1MDhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/Like";
  */
 const Like: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Like.displayName = "Like";
-export default Like;
+Like.displayName = "Like"
+export default Like

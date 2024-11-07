@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/Login";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/Login"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuODQ0NyA4LjA5NDY3QzEwLjU1MTggOC4zODc1NiAxMC41NTE4IDguODYyNDQgMTAuODQ0NyA5LjE1NTMzTDEyLjU2NDMgMTAuODc1SDQuMzc1QzMuOTYwNzkgMTAuODc1IDMuNjI1IDExLjIxMDggMy42MjUgMTEuNjI1QzMuNjI1IDEyLjAzOTIgMy45NjA3OSAxMi4zNzUgNC4zNzUgMTIuMzc1SDEyLjU2NDNMMTAuODQ0NyAxNC4wOTQ3QzEwLjU1MTggMTQuMzg3NiAxMC41NTE4IDE0Ljg2MjQgMTAuODQ0NyAxNS4xNTUzQzExLjEzNzYgMTUuNDQ4MiAxMS42MTI0IDE1LjQ0ODIgMTEuOTA1MyAxNS4xNTUzTDE0LjkwNTMgMTIuMTU1M0MxNS4xOTgyIDExLjg2MjQgMTUuMTk4MiAxMS4zODc2IDE0LjkwNTMgMTEuMDk0N0wxMS45MDUzIDguMDk0NjdDMTEuNjEyNCA3LjgwMTc4IDExLjEzNzYgNy44MDE3OCAxMC44NDQ3IDguMDk0NjdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi4zNzUgNS44Nzc0NUMxMi4zNzUgNi4zMjU0IDEyLjY0OTIgNi43MTcyNSAxMi45NjYgNy4wMzQwMUwxNS45NjYgMTAuMDM0QzE2Ljg0NDcgMTAuOTEyNyAxNi44NDQ3IDEyLjMzNzMgMTUuOTY2IDEzLjIxNkwxMi45NjYgMTYuMjE2QzEyLjY0OTIgMTYuNTMyNyAxMi4zNzUgMTYuOTI0NiAxMi4zNzUgMTcuMzcyNlYxOS42MjVDMTYuNzkzMyAxOS42MjUgMjAuMzc1IDE2LjA0MzMgMjAuMzc1IDExLjYyNUMyMC4zNzUgNy4yMDY3MiAxNi43OTMzIDMuNjI1IDEyLjM3NSAzLjYyNVY1Ljg3NzQ1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Login";
  */
 const Login: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Login.displayName = "Login";
-export default Login;
+Login.displayName = "Login"
+export default Login

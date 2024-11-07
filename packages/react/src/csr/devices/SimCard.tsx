@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/SimCard";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/SimCard"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTIuMzQxNSAyIDEyLjUxMjIgMiAxMi42ODU4IDIuMDE1MTVDMTMuNDk1MSAyLjA4NTgxIDE0LjI4NzQgMi40MTQgMTQuOTA5NyAyLjkzNjMxQzE1LjA0MzEgMy4wNDgzNCAxNS4xNjY4IDMuMTcyMDQgMTUuNDE0MiAzLjQxOTM4TDIwLjU4MDYgOC41ODU3OEMyMC44MjggOC44MzMxNyAyMC45NTE2IDguOTU2ODcgMjEuMDYzNyA5LjA5MDM0QzIxLjU4NiA5LjcxMjU3IDIxLjkxNDIgMTAuNTA0OSAyMS45ODQ4IDExLjMxNDJDMjIgMTEuNDg3OCAyMiAxMS42NTg1IDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMlpNOC44ODg4NiAxOC42NjI5QzkuMzkzMzEgMTkgMTAuMDk1NSAxOSAxMS41IDE5VjEyQzEwLjA5NTUgMTIgOS4zOTMzMSAxMiA4Ljg4ODg2IDEyLjMzNzFDOC42NzA0OCAxMi40ODMgOC40ODI5OCAxMi42NzA1IDguMzM3MDYgMTIuODg4OUM4IDEzLjM5MzMgOCAxNC4wOTU1IDggMTUuNUM4IDE2LjkwNDUgOCAxNy42MDY3IDguMzM3MDYgMTguMTExMUM4LjQ4Mjk4IDE4LjMyOTUgOC42NzA0OCAxOC41MTcgOC44ODg4NiAxOC42NjI5Wk0xNS4xMTExIDE4LjY2MjlDMTQuNjA2NyAxOSAxMy45MDQ1IDE5IDEyLjUgMTlWMTZIMTUuOTk5M0MxNS45OTQ2IDE3LjA3ODkgMTUuOTU3NCAxNy42NzA1IDE1LjY2MjkgMTguMTExMUMxNS41MTcgMTguMzI5NSAxNS4zMjk1IDE4LjUxNyAxNS4xMTExIDE4LjY2MjlaTTEyLjUgMTJDMTMuOTA0NSAxMiAxNC42MDY3IDEyIDE1LjExMTEgMTIuMzM3MUMxNS4zMjk1IDEyLjQ4MyAxNS41MTcgMTIuNjcwNSAxNS42NjI5IDEyLjg4ODlDMTUuOTU3NCAxMy4zMjk1IDE1Ljk5NDYgMTMuOTIxMSAxNS45OTkzIDE1SDEyLjVWMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/SimCard";
  */
 const SimCard: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SimCard.displayName = "SimCard";
-export default SimCard;
+SimCard.displayName = "SimCard"
+export default SimCard

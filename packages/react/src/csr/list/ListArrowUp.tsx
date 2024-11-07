@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListArrowUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListArrowUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIxQzIxLjQxNDIgNS4yNSAyMS43NSA1LjU4NTc5IDIxLjc1IDZDMjEuNzUgNi40MTQyMSAyMS40MTQyIDYuNzUgMjEgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDEwQzIuMjUgOS41ODU3OSAyLjU4NTc5IDkuMjUgMyA5LjI1SDIxQzIxLjQxNDIgOS4yNSAyMS43NSA5LjU4NTc5IDIxLjc1IDEwQzIxLjc1IDEwLjQxNDIgMjEuNDE0MiAxMC43NSAyMSAxMC43NUgzQzIuNTg1NzkgMTAuNzUgMi4yNSAxMC40MTQyIDIuMjUgMTBaTTIuMjUgMTRDMi4yNSAxMy41ODU4IDIuNTg1NzkgMTMuMjUgMyAxMy4yNUgxMUMxMS40MTQyIDEzLjI1IDExLjc1IDEzLjU4NTggMTEuNzUgMTRDMTEuNzUgMTQuNDE0MiAxMS40MTQyIDE0Ljc1IDExIDE0Ljc1SDNDMi41ODU3OSAxNC43NSAyLjI1IDE0LjQxNDIgMi4yNSAxNFpNMTYuOTY5NyAxMy40Njk3QzE3LjI2MjYgMTMuMTc2OCAxNy43Mzc0IDEzLjE3NjggMTguMDMwMyAxMy40Njk3TDIwLjUzMDMgMTUuOTY5N0MyMC44MjMyIDE2LjI2MjYgMjAuODIzMiAxNi43Mzc0IDIwLjUzMDMgMTcuMDMwM0MyMC4yMzc0IDE3LjMyMzIgMTkuNzYyNiAxNy4zMjMyIDE5LjQ2OTcgMTcuMDMwM0wxOC4yNSAxNS44MTA3VjIwQzE4LjI1IDIwLjQxNDIgMTcuOTE0MiAyMC43NSAxNy41IDIwLjc1QzE3LjA4NTggMjAuNzUgMTYuNzUgMjAuNDE0MiAxNi43NSAyMFYxNS44MTA3TDE1LjUzMDMgMTcuMDMwM0MxNS4yMzc0IDE3LjMyMzIgMTQuNzYyNiAxNy4zMjMyIDE0LjQ2OTcgMTcuMDMwM0MxNC4xNzY4IDE2LjczNzQgMTQuMTc2OCAxNi4yNjI2IDE0LjQ2OTcgMTUuOTY5N0wxNi45Njk3IDEzLjQ2OTdaTTIuMjUgMThDMi4yNSAxNy41ODU4IDIuNTg1NzkgMTcuMjUgMyAxNy4yNUgxMUMxMS40MTQyIDE3LjI1IDExLjc1IDE3LjU4NTggMTEuNzUgMThDMTEuNzUgMTguNDE0MiAxMS40MTQyIDE4Ljc1IDExIDE4Ljc1SDNDMi41ODU3OSAxOC43NSAyLjI1IDE4LjQxNDIgMi4yNSAxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListArrowUp";
  */
 const ListArrowUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListArrowUp.displayName = "ListArrowUp";
-export default ListArrowUp;
+ListArrowUp.displayName = "ListArrowUp"
+export default ListArrowUp

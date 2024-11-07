@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/LinkRound";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/LinkRound"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNSA5QzEuMjUgNS4yNzIwOCA0LjI3MjA4IDIuMjUgOCAyLjI1SDEyQzE1LjcyNzkgMi4yNSAxOC43NSA1LjI3MjA4IDE4Ljc1IDlDMTguNzUgMTIuNzI3OSAxNS43Mjc5IDE1Ljc1IDEyIDE1Ljc1SDEwQzkuNTg1NzkgMTUuNzUgOS4yNSAxNS40MTQyIDkuMjUgMTVDOS4yNSAxNC41ODU4IDkuNTg1NzkgMTQuMjUgMTAgMTQuMjVIMTJDMTQuODk5NSAxNC4yNSAxNy4yNSAxMS44OTk1IDE3LjI1IDlDMTcuMjUgNi4xMDA1MSAxNC44OTk1IDMuNzUgMTIgMy43NUg4QzUuMTAwNTEgMy43NSAyLjc1IDYuMTAwNTEgMi43NSA5QzIuNzUgMTAuMzQ1MSAzLjI1NDg3IDExLjU3MDUgNC4wODY2NCAxMi40OTk4QzQuMzYyODggMTIuODA4NSA0LjMzNjYyIDEzLjI4MjYgNC4wMjc5NyAxMy41NTg5QzMuNzE5MzMgMTMuODM1MSAzLjI0NTE4IDEzLjgwODggMi45Njg5NCAxMy41MDAyQzEuOTAwNTQgMTIuMzA2NSAxLjI1IDEwLjcyODMgMS4yNSA5Wk0xMiA5Ljc1QzkuMTAwNTEgOS43NSA2Ljc1IDEyLjEwMDUgNi43NSAxNUM2Ljc1IDE3Ljg5OTUgOS4xMDA1MSAyMC4yNSAxMiAyMC4yNUgxNkMxOC44OTk1IDIwLjI1IDIxLjI1IDE3Ljg5OTUgMjEuMjUgMTVDMjEuMjUgMTMuNjU0OSAyMC43NDUxIDEyLjQyOTUgMTkuOTEzNCAxMS41MDAyQzE5LjYzNzEgMTEuMTkxNSAxOS42NjM0IDEwLjcxNzQgMTkuOTcyIDEwLjQ0MTFDMjAuMjgwNyAxMC4xNjQ5IDIwLjc1NDggMTAuMTkxMiAyMS4wMzExIDEwLjQ5OThDMjIuMDk5NSAxMS42OTM1IDIyLjc1IDEzLjI3MTcgMjIuNzUgMTVDMjIuNzUgMTguNzI3OSAxOS43Mjc5IDIxLjc1IDE2IDIxLjc1SDEyQzguMjcyMDggMjEuNzUgNS4yNSAxOC43Mjc5IDUuMjUgMTVDNS4yNSAxMS4yNzIxIDguMjcyMDggOC4yNSAxMiA4LjI1SDE0QzE0LjQxNDIgOC4yNSAxNC43NSA4LjU4NTc5IDE0Ljc1IDlDMTQuNzUgOS40MTQyMSAxNC40MTQyIDkuNzUgMTQgOS43NUgxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/LinkRound";
  */
 const LinkRound: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LinkRound.displayName = "LinkRound";
-export default LinkRound;
+LinkRound.displayName = "LinkRound"
+export default LinkRound

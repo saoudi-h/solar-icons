@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/users/UserCrossRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/users/UserCrossRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUuNDE0NyAxMy41MDc0QzE0LjQwNDYgMTMuMTg0MiAxMy4yNCAxMyAxMiAxM0M4LjEzNDAxIDEzIDUgMTQuNzkwOSA1IDE3QzUgMTkuMTQwNiA3Ljk0MjQ0IDIwLjg4ODQgMTEuNjQyMSAyMC45OTQ5QzExLjYxNSAyMC44Njg2IDExLjU5NCAyMC43NDMyIDExLjU3NzUgMjAuNjIwMUMxMS40OTk4IDIwLjA0MjQgMTEuNDk5OSAxOS4zMzY1IDExLjUgMTguNTg2VjE4LjQxNEMxMS40OTk5IDE3LjY2MzUgMTEuNDk5OCAxNi45NTc2IDExLjU3NzUgMTYuMzc5OUMxMS42NjM5IDE1LjczNyAxMS44NzA1IDE1LjAzMzMgMTIuNDUxOSAxNC40NTE5QzEzLjAzMzQgMTMuODcwNSAxMy43MzcgMTMuNjYzOSAxNC4zNzk5IDEzLjU3NzRDMTQuNjkxOSAxMy41MzU1IDE1LjA0MTIgMTMuNTE2MiAxNS40MTQ3IDEzLjUwNzRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNSAyMkMxNC44NTAxIDIyIDE0LjAyNTEgMjIgMTMuNTEyNiAyMS40ODc0QzEzIDIwLjk3NDkgMTMgMjAuMTQ5OSAxMyAxOC41QzEzIDE2Ljg1MDEgMTMgMTYuMDI1MSAxMy41MTI2IDE1LjUxMjZDMTQuMDI1MSAxNSAxNC44NTAxIDE1IDE2LjUgMTVDMTguMTQ5OSAxNSAxOC45NzQ5IDE1IDE5LjQ4NzQgMTUuNTEyNkMyMCAxNi4wMjUxIDIwIDE2Ljg1MDEgMjAgMTguNUMyMCAyMC4xNDk5IDIwIDIwLjk3NDkgMTkuNDg3NCAyMS40ODc0QzE4Ljk3NDkgMjIgMTguMTQ5OSAyMiAxNi41IDIyWk0xNS4zNTY5IDE2LjUzMkMxNS4xMjkxIDE2LjMwNDIgMTQuNzU5OCAxNi4zMDQyIDE0LjUzMiAxNi41MzJDMTQuMzA0MiAxNi43NTk4IDE0LjMwNDIgMTcuMTI5MSAxNC41MzIgMTcuMzU2OUwxNS42NzUgMTguNUwxNC41MzIgMTkuNjQzMUMxNC4zMDQyIDE5Ljg3MDkgMTQuMzA0MiAyMC4yNDAyIDE0LjUzMiAyMC40NjhDMTQuNzU5OCAyMC42OTU4IDE1LjEyOTEgMjAuNjk1OCAxNS4zNTY5IDIwLjQ2OEwxNi41IDE5LjMyNUwxNy42NDMxIDIwLjQ2OEMxNy44NzA5IDIwLjY5NTggMTguMjQwMiAyMC42OTU4IDE4LjQ2OCAyMC40NjhDMTguNjk1OCAyMC4yNDAyIDE4LjY5NTggMTkuODcwOSAxOC40NjggMTkuNjQzMUwxNy4zMjUgMTguNUwxOC40NjggMTcuMzU2OUMxOC42OTU4IDE3LjEyOTEgMTguNjk1OCAxNi43NTk4IDE4LjQ2OCAxNi41MzJDMTguMjQwMiAxNi4zMDQyIDE3Ljg3MDkgMTYuMzA0MiAxNy42NDMxIDE2LjUzMkwxNi41IDE3LjY3NUwxNS4zNTY5IDE2LjUzMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/users/UserCrossRounded";
  */
 const UserCrossRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UserCrossRounded.displayName = "UserCrossRounded";
-export default UserCrossRounded;
+UserCrossRounded.displayName = "UserCrossRounded"
+export default UserCrossRounded

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/CameraSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/CameraSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNNy4yNSAxMkM3LjI1IDkuMzc2NjUgOS4zNzY2NSA3LjI1IDEyIDcuMjVDMTQuNjIzNCA3LjI1IDE2Ljc1IDkuMzc2NjUgMTYuNzUgMTJDMTYuNzUgMTQuNjIzNCAxNC42MjM0IDE2Ljc1IDEyIDE2Ljc1QzkuMzc2NjUgMTYuNzUgNy4yNSAxNC42MjM0IDcuMjUgMTJaTTguNzUgMTJDOC43NSAxMC4yMDUxIDEwLjIwNTEgOC43NSAxMiA4Ljc1QzEzLjc5NDkgOC43NSAxNS4yNSAxMC4yMDUxIDE1LjI1IDEyQzE1LjI1IDEzLjc5NDkgMTMuNzk0OSAxNS4yNSAxMiAxNS4yNUMxMC4yMDUxIDE1LjI1IDguNzUgMTMuNzk0OSA4Ljc1IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/CameraSquare";
  */
 const CameraSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CameraSquare.displayName = "CameraSquare";
-export default CameraSquare;
+CameraSquare.displayName = "CameraSquare"
+export default CameraSquare

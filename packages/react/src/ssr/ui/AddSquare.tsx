@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/AddSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/AddSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk0xMiA4LjI1QzEyLjQxNDIgOC4yNSAxMi43NSA4LjU4NTc5IDEyLjc1IDlWMTEuMjVIMTVDMTUuNDE0MiAxMS4yNSAxNS43NSAxMS41ODU4IDE1Ljc1IDEyQzE1Ljc1IDEyLjQxNDIgMTUuNDE0MiAxMi43NSAxNSAxMi43NUgxMi43NUwxMi43NSAxNUMxMi43NSAxNS40MTQyIDEyLjQxNDIgMTUuNzUgMTIgMTUuNzVDMTEuNTg1OCAxNS43NSAxMS4yNSAxNS40MTQyIDExLjI1IDE1VjEyLjc1SDlDOC41ODU3OSAxMi43NSA4LjI1IDEyLjQxNDIgOC4yNSAxMkM4LjI1IDExLjU4NTggOC41ODU3OSAxMS4yNSA5IDExLjI1SDExLjI1TDExLjI1IDlDMTEuMjUgOC41ODU3OSAxMS41ODU4IDguMjUgMTIgOC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/AddSquare";
  */
 const AddSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AddSquare.displayName = "AddSquare";
-export default AddSquare;
+AddSquare.displayName = "AddSquare"
+export default AddSquare

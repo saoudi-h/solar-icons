@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/RoundArrowRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/RoundArrowRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMi40Njk3IDguNDY5NjdDMTIuNzYyNiA4LjE3Njc4IDEzLjIzNzQgOC4xNzY3OCAxMy41MzAzIDguNDY5NjdMMTYuNTMwMyAxMS40Njk3QzE2LjgyMzIgMTEuNzYyNiAxNi44MjMyIDEyLjIzNzQgMTYuNTMwMyAxMi41MzAzTDEzLjUzMDMgMTUuNTMwM0MxMy4yMzc0IDE1LjgyMzIgMTIuNzYyNiAxNS44MjMyIDEyLjQ2OTcgMTUuNTMwM0MxMi4xNzY4IDE1LjIzNzQgMTIuMTc2OCAxNC43NjI2IDEyLjQ2OTcgMTQuNDY5N0wxNC4xODkzIDEyLjc1SDhDNy41ODU3OSAxMi43NSA3LjI1IDEyLjQxNDIgNy4yNSAxMkM3LjI1IDExLjU4NTggNy41ODU3OSAxMS4yNSA4IDExLjI1SDE0LjE4OTNMMTIuNDY5NyA5LjUzMDMzQzEyLjE3NjggOS4yMzc0NCAxMi4xNzY4IDguNzYyNTYgMTIuNDY5NyA4LjQ2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundArrowRight";
  */
 const RoundArrowRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundArrowRight.displayName = "RoundArrowRight";
-export default RoundArrowRight;
+RoundArrowRight.displayName = "RoundArrowRight"
+export default RoundArrowRight

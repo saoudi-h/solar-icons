@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Microphone";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Microphone"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyQzguODI0MzYgMiA2LjI1IDQuNTc0MzYgNi4yNSA3Ljc1VjEwLjc1QzYuMjUgMTMuOTI1NiA4LjgyNDM2IDE2LjUgMTIgMTYuNUMxNC45MjE0IDE2LjUgMTcuMzM0IDE0LjMyMTMgMTcuNzAxNSAxMS41TDEzIDExLjVDMTIuNTg1OCAxMS41IDEyLjI1IDExLjE2NDIgMTIuMjUgMTAuNzVDMTIuMjUgMTAuMzM1OCAxMi41ODU4IDEwIDEzIDEwTDE3Ljc1IDEwVjguNUgxM0MxMi41ODU4IDguNSAxMi4yNSA4LjE2NDIxIDEyLjI1IDcuNzVDMTIuMjUgNy4zMzU3OSAxMi41ODU4IDcgMTMgN0gxNy43MDE1QzE3LjMzNCA0LjE3ODczIDE0LjkyMTQgMiAxMiAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQgOUM0LjQxNDIxIDkgNC43NSA5LjMzNTc5IDQuNzUgOS43NVYxMC43NUM0Ljc1IDE0Ljc1NDEgNy45OTU5NCAxOCAxMiAxOEMxNi4wMDQxIDE4IDE5LjI1IDE0Ljc1NDEgMTkuMjUgMTAuNzVWOS43NUMxOS4yNSA5LjMzNTc5IDE5LjU4NTggOSAyMCA5QzIwLjQxNDIgOSAyMC43NSA5LjMzNTc5IDIwLjc1IDkuNzVWMTAuNzVDMjAuNzUgMTUuMzI5OCAxNy4yMzE0IDE5LjA4NzkgMTIuNzUgMTkuNDY4M1YyMS43NUMxMi43NSAyMi4xNjQyIDEyLjQxNDIgMjIuNSAxMiAyMi41QzExLjU4NTggMjIuNSAxMS4yNSAyMi4xNjQyIDExLjI1IDIxLjc1VjE5LjQ2ODNDNi43Njg2IDE5LjA4NzkgMy4yNSAxNS4zMjk4IDMuMjUgMTAuNzVWOS43NUMzLjI1IDkuMzM1NzkgMy41ODU3OSA5IDQgOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Microphone";
  */
 const Microphone: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Microphone.displayName = "Microphone";
-export default Microphone;
+Microphone.displayName = "Microphone"
+export default Microphone

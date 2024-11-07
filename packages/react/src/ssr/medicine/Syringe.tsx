@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/Syringe";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/Syringe"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy43ODE5IDMuMjI1OTVDMTcuNDgwNyAyLjkyNDY4IDE2Ljk5MjIgMi45MjQ2OCAxNi42OTEgMy4yMjU5NUMxNi4zODk3IDMuNTI3MjEgMTYuMzg5NyA0LjAxNTY1IDE2LjY5MSA0LjMxNjkyTDE3LjY0MTUgNS4yNjc0M0wxNS45NDI3IDYuOTY2MjFMMTUuMDc1MiA2LjA5ODcxQzE0LjMgNS4zMjM0OCAxMy45MTI0IDQuOTM1ODYgMTMuNDcxNyA0Ljc3NTQzQzEzLjAwNDIgNC42MDUzIDEyLjQ5MTggNC42MDUzIDEyLjAyNDQgNC43NzU0M0MxMS41ODM2IDQuOTM1ODYgMTEuMTk2IDUuMzIzNDggMTAuNDIwOCA2LjA5ODcxTDEwLjMwMTMgNi4yMTgyNkwxNy43ODE3IDEzLjY5ODhMMTcuOTAxMiAxMy41NzkyQzE4LjY3NjQgMTIuODA0IDE5LjA2NCAxMi40MTY0IDE5LjIyNDQgMTEuOTc1NkMxOS4zOTQ1IDExLjUwODIgMTkuMzk0NSAxMC45OTU4IDE5LjIyNDQgMTAuNTI4M0MxOS4wNjQgMTAuMDg3NSAxOC42NzY0IDkuNjk5OTIgMTcuOTAxMiA4LjkyNDdMMTcuMDMzNyA4LjA1NzE4TDE4LjczMjQgNi4zNTg0TDE5LjY4MzEgNy4zMDkxM0MxOS45ODQ0IDcuNjEwNCAyMC40NzI4IDcuNjEwNCAyMC43NzQxIDcuMzA5MTNDMjEuMDc1MyA3LjAwNzg3IDIxLjA3NTMgNi41MTk0MyAyMC43NzQxIDYuMjE4MTdMMTcuNzgxOSAzLjIyNTk1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNi4wMTU3MiAxMC41MDM5TDkuMjEwMzYgNy4zMDkxOUwxNi42OTA3IDE0Ljc4OTdMMTUuNTM3NiAxNS45NDI5TDEyLjU2OTggMTIuOTc1MUMxMi4yNjg2IDEyLjY3MzggMTEuNzgwMSAxMi42NzM4IDExLjQ3ODkgMTIuOTc1MUMxMS4xNzc2IDEzLjI3NjMgMTEuMTc3NiAxMy43NjQ4IDExLjQ3ODkgMTQuMDY2TDE0LjQ0NjYgMTcuMDMzOUwxMy44NTQ1IDE3LjYyNkwxMi4xNjE2IDE1LjkzM0MxMS44NjAzIDE1LjYzMTggMTEuMzcxOSAxNS42MzE4IDExLjA3MDYgMTUuOTMzQzEwLjc2OTQgMTYuMjM0MyAxMC43Njk0IDE2LjcyMjcgMTEuMDcwNiAxNy4wMjRMMTIuNjkxOSAxOC42NDUzQzEwLjg0NjIgMTkuODc5NSA4LjM5NTU2IDE5LjgyNzggNi42MDA1MiAxOC40OTAzTDQuMzE2ODggMjAuNzc0MUM0LjAxNTYzIDIxLjA3NTMgMy41MjcyIDIxLjA3NTMgMy4yMjU5NCAyMC43NzQxQzIuOTI0NjkgMjAuNDcyOCAyLjkyNDY5IDE5Ljk4NDMgMy4yMjU5NCAxOS42ODMxTDUuNTA5NjIgMTcuMzk5M0MzLjk2NjcgMTUuMzI4MSA0LjEzNTQgMTIuMzg0MyA2LjAxNTcyIDEwLjUwMzlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Syringe";
  */
 const Syringe: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Syringe.displayName = "Syringe";
-export default Syringe;
+Syringe.displayName = "Syringe"
+export default Syringe

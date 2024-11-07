@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/KeyMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/KeyMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTguOTc3MSAxNC43OTA0QzIxLjY3NDMgMTIuMDkzMiAyMS42NzQzIDcuNzIwMTMgMTguOTc3MSA1LjAyMjkxQzE2LjI3OTkgMi4zMjU3IDExLjkwNjggMi4zMjU3IDkuMjA5NjEgNS4wMjI5MUM3LjQxODY2IDYuODEzODUgNi44MTY5IDkuMzQzNjYgNy40MDQzMiAxMS42MzExQzcuNDk5MDYgMTIgNy40MTQ5MiAxMi4zOTkgNy4xNDU1OCAxMi42Njg0TDMuNDMzNDkgMTYuMzgwNEMzLjExNTU4IDE2LjY5ODQgMi45NTk0MSAxNy4xNDM1IDMuMDA5MDYgMTcuNTkwNEwzLjI0MTEzIDE5LjY3OUMzLjI2NTg3IDE5LjkwMTcgMy4zNjU2NiAyMC4xMDkzIDMuNTI0MDggMjAuMjY3N0wzLjczMjI5IDIwLjQ3NTlDMy44OTA3MiAyMC42MzQzIDQuMDk4MzQgMjAuNzM0MSA0LjMyMTAxIDIwLjc1ODlMNi40MDk2IDIwLjk5MDlDNi44NTY0NSAyMS4wNDA2IDcuMzAxNjQgMjAuODg0NCA3LjYxOTU2IDIwLjU2NjVMOC4zMjk1OCAxOS44NTY1TDYuNTgzNDMgMTguMTI5NEM2LjI4ODkzIDE3LjgzODIgNi4yODYzMiAxNy4zNjMzIDYuNTc3NiAxNy4wNjg4QzYuODY4ODggMTYuNzc0MyA3LjM0Mzc1IDE2Ljc3MTcgNy42MzgyNSAxNy4wNjNMOS4zOTAyNiAxOC43OTU4TDExLjMzMTkgMTYuODU0MUMxMS42MDEzIDE2LjU4NDggMTIgMTYuNTAwOSAxMi4zNjg5IDE2LjU5NTdDMTQuNjU2MyAxNy4xODMxIDE3LjE4NjEgMTYuNTgxMyAxOC45NzcxIDE0Ljc5MDRaTTEyLjU4NTggOC41ODU3OUMxMy4zNjY4IDcuODA0NzQgMTQuNjMzMiA3LjgwNDc0IDE1LjQxNDIgOC41ODU3OUMxNi4xOTUzIDkuMzY2ODQgMTYuMTk1MyAxMC42MzMyIDE1LjQxNDIgMTEuNDE0MkMxNC42MzMyIDEyLjE5NTMgMTMuMzY2OCAxMi4xOTUzIDEyLjU4NTggMTEuNDE0MkMxMS44MDQ3IDEwLjYzMzIgMTEuODA0NyA5LjM2Njg0IDEyLjU4NTggOC41ODU3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/KeyMinimalistic";
  */
 const KeyMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-KeyMinimalistic.displayName = "KeyMinimalistic";
-export default KeyMinimalistic;
+KeyMinimalistic.displayName = "KeyMinimalistic"
+export default KeyMinimalistic

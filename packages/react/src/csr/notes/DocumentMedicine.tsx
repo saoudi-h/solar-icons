@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/DocumentMedicine";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/DocumentMedicine"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4xNzE1NyAzLjE3MTU3QzMgNC4zNDMxNSAzIDYuMjI4NzYgMyAxMFYxNEMzIDE3Ljc3MTIgMyAxOS42NTY5IDQuMTcxNTcgMjAuODI4NEM1LjM0MzE1IDIyIDcuMjI4NzYgMjIgMTEgMjJIMTNDMTYuNzcxMiAyMiAxOC42NTY5IDIyIDE5LjgyODQgMjAuODI4NEMyMSAxOS42NTY5IDIxIDE3Ljc3MTIgMjEgMTRWMTBDMjEgNi4yMjg3NiAyMSA0LjM0MzE1IDE5LjgyODQgMy4xNzE1N0MxOC42NTY5IDIgMTYuNzcxMiAyIDEzIDJIMTFDNy4yMjg3NiAyIDUuMzQzMTUgMiA0LjE3MTU3IDMuMTcxNTdaTTEyLjc1IDZDMTIuNzUgNS41ODU3OSAxMi40MTQyIDUuMjUgMTIgNS4yNUMxMS41ODU4IDUuMjUgMTEuMjUgNS41ODU3OSAxMS4yNSA2VjcuMjVIOS45OTk5N0M5LjU4NTc1IDcuMjUgOS4yNDk5NyA3LjU4NTc5IDkuMjQ5OTcgOEM5LjI0OTk3IDguNDE0MjEgOS41ODU3NSA4Ljc1IDkuOTk5OTcgOC43NUgxMS4yNUwxMS4yNSAxMEMxMS4yNSAxMC40MTQyIDExLjU4NTggMTAuNzUgMTIgMTAuNzVDMTIuNDE0MiAxMC43NSAxMi43NSAxMC40MTQyIDEyLjc1IDEwTDEyLjc1IDguNzVMMTQgOC43NUMxNC40MTQyIDguNzUgMTQuNzUgOC40MTQyMSAxNC43NSA4QzE0Ljc1IDcuNTg1NzkgMTQuNDE0MiA3LjI1IDE0IDcuMjVIMTIuNzVWNlpNOCAxMy4yNUM3LjU4NTc5IDEzLjI1IDcuMjUgMTMuNTg1OCA3LjI1IDE0QzcuMjUgMTQuNDE0MiA3LjU4NTc5IDE0Ljc1IDggMTQuNzVIMTZDMTYuNDE0MiAxNC43NSAxNi43NSAxNC40MTQyIDE2Ljc1IDE0QzE2Ljc1IDEzLjU4NTggMTYuNDE0MiAxMy4yNSAxNiAxMy4yNUg4Wk05IDE3LjI1QzguNTg1NzkgMTcuMjUgOC4yNSAxNy41ODU4IDguMjUgMThDOC4yNSAxOC40MTQyIDguNTg1NzkgMTguNzUgOSAxOC43NUgxNUMxNS40MTQyIDE4Ljc1IDE1Ljc1IDE4LjQxNDIgMTUuNzUgMThDMTUuNzUgMTcuNTg1OCAxNS40MTQyIDE3LjI1IDE1IDE3LjI1SDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/DocumentMedicine";
  */
 const DocumentMedicine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DocumentMedicine.displayName = "DocumentMedicine";
-export default DocumentMedicine;
+DocumentMedicine.displayName = "DocumentMedicine"
+export default DocumentMedicine

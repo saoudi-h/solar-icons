@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Bolt";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Bolt"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjY2OTUzIDkuOTE0MzZMOC43MzE2NyA1Ljc3MTMzQzEwLjcxMSAzLjA5MzI3IDExLjcwMDcgMS43NTQyNSAxMi42MjQxIDIuMDM3MjFDMTMuNTQ3NCAyLjMyMDE4IDEzLjU0NzQgMy45NjI0OSAxMy41NDc0IDcuMjQ3MTJWNy41NTY4MkMxMy41NDc0IDguNzQxNTEgMTMuNTQ3NCA5LjMzMzg2IDEzLjkyNiA5LjcwNTQxTDEzLjk0NiA5LjcyNDY2QzE0LjMzMjcgMTAuMDg4NCAxNC45NDkyIDEwLjA4ODQgMTYuMTgyMiAxMC4wODg0QzE4LjQwMTEgMTAuMDg4NCAxOS41MTA2IDEwLjA4ODQgMTkuODg1NSAxMC43NjEzQzE5Ljg5MTcgMTAuNzcyNCAxOS44OTc3IDEwLjc4MzcgMTkuOTAzNiAxMC43OTVDMjAuMjU3NiAxMS40Nzg0IDE5LjYxNTIgMTIuMzQ3NSAxOC4zMzA0IDE0LjA4NTdMMTUuMjY4MyAxOC4yMjg3QzEzLjI4ODkgMjAuOTA2NyAxMi4yOTkyIDIyLjI0NTggMTEuMzc1OCAyMS45NjI4QzEwLjQ1MjUgMjEuNjc5OCAxMC40NTI1IDIwLjAzNzUgMTAuNDUyNSAxNi43NTI4TDEwLjQ1MjYgMTYuNDQzM0MxMC40NTI2IDE1LjI1ODUgMTAuNDUyNiAxNC42NjYyIDEwLjA3NCAxNC4yOTQ2TDEwLjA1NCAxNC4yNzU0QzkuNjY3MyAxMy45MTE3IDkuMDUwNzkgMTMuOTExNyA3LjgxNzc1IDEzLjkxMTdDNS41OTg4OCAxMy45MTE3IDQuNDg5NDUgMTMuOTExNyA0LjExNDUgMTMuMjM4N0M0LjEwODI5IDEzLjIyNzYgNC4xMDIyNSAxMy4yMTY0IDQuMDk2MzkgMTMuMjA1QzMuNzQyNDQgMTIuNTIxNyA0LjM4NDggMTEuNjUyNiA1LjY2OTUzIDkuOTE0MzZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Bolt";
  */
 const Bolt: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bolt.displayName = "Bolt";
-export default Bolt;
+Bolt.displayName = "Bolt"
+export default Bolt

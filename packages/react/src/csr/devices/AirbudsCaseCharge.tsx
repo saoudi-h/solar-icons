@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/AirbudsCaseCharge";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/AirbudsCaseCharge"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy45NTQ5MSA0LjA2MTA3QzMgNS4zNzU0IDMgNy4yNTAyNyAzIDExVjEzQzMgMTYuNzQ5NyAzIDE4LjYyNDYgMy45NTQ5MSAxOS45Mzg5QzQuMjYzMzEgMjAuMzYzNCA0LjYzNjYgMjAuNzM2NyA1LjA2MTA3IDIxLjA0NTFDNi4zNzU0IDIyIDguMjUwMjcgMjIgMTIgMjJDMTUuNzQ5NyAyMiAxNy42MjQ2IDIyIDE4LjkzODkgMjEuMDQ1MUMxOS4zNjM0IDIwLjczNjcgMTkuNzM2NyAyMC4zNjM0IDIwLjA0NTEgMTkuOTM4OUMyMSAxOC42MjQ2IDIxIDE2Ljc0OTcgMjEgMTNWMTFDMjEgNy4yNTAyNyAyMSA1LjM3NTQgMjAuMDQ1MSA0LjA2MTA3QzE5LjczNjcgMy42MzY2IDE5LjM2MzQgMy4yNjMzMSAxOC45Mzg5IDIuOTU0OTFDMTcuNjI0NiAyIDE1Ljc0OTcgMiAxMiAyQzguMjUwMjcgMiA2LjM3NTQgMiA1LjA2MTA3IDIuOTU0OTFDNC42MzY2IDMuMjYzMzEgNC4yNjMzMSAzLjYzNjYgMy45NTQ5MSA0LjA2MTA3Wk03IDguMjVDNi41ODU3OSA4LjI1IDYuMjUgOC41ODU3OSA2LjI1IDlDNi4yNSA5LjQxNDIxIDYuNTg1NzkgOS43NSA3IDkuNzVIMTdDMTcuNDE0MiA5Ljc1IDE3Ljc1IDkuNDE0MjEgMTcuNzUgOUMxNy43NSA4LjU4NTc5IDE3LjQxNDIgOC4yNSAxNyA4LjI1SDdaTTEyLjU4NTcgMTMuNDY4NUMxMi44NDQ0IDEzLjE0NTEgMTIuNzkyIDEyLjY3MzEgMTIuNDY4NSAxMi40MTQzQzEyLjE0NTEgMTIuMTU1NiAxMS42NzMxIDEyLjIwOCAxMS40MTQzIDEyLjUzMTVMOS40MTQzNCAxNS4wMzE2QzkuMjM0MjQgMTUuMjU2NyA5LjE5OTEzIDE1LjU2NTIgOS4zMjQwMyAxNS44MjVDOS40NDg5MiAxNi4wODQ4IDkuNzExNyAxNi4yNTAxIDEwIDE2LjI1MDFIMTIuNDM5NUwxMS40MTQ0IDE3LjUzMTVDMTEuMTU1NiAxNy44NTQ5IDExLjIwOCAxOC4zMjY5IDExLjUzMTUgMTguNTg1NkMxMS44NTQ5IDE4Ljg0NDQgMTIuMzI2OSAxOC43OTIgMTIuNTg1NiAxOC40Njg1TDE0LjU4NTYgMTUuOTY4NkMxNC43NjU4IDE1Ljc0MzUgMTQuODAwOSAxNS40MzUxIDE0LjY3NiAxNS4xNzUyQzE0LjU1MTEgMTQuOTE1NCAxNC4yODgzIDE0Ljc1MDEgMTQgMTQuNzUwMUgxMS41NjA0TDEyLjU4NTcgMTMuNDY4NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/AirbudsCaseCharge";
  */
 const AirbudsCaseCharge: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AirbudsCaseCharge.displayName = "AirbudsCaseCharge";
-export default AirbudsCaseCharge;
+AirbudsCaseCharge.displayName = "AirbudsCaseCharge"
+export default AirbudsCaseCharge

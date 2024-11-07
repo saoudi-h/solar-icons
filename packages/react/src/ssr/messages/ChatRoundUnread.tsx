@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatRoundUnread";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatRoundUnread"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgMTEuMDk0IDIxLjg3OTUgMTAuMjE2MiAyMS42NTM3IDkuMzgxNjFDMjEuNTY4NCA5LjA2NjMzIDIxLjE5ODcgOC45NDA4MyAyMC45MDI4IDkuMDc5MUMyMC4zMjQ4IDkuMzQ5MTYgMTkuNjggOS41IDE5IDkuNUMxNi41MTQ3IDkuNSAxNC41IDcuNDg1MjggMTQuNSA1QzE0LjUgNC4zMTk5NiAxNC42NTA4IDMuNjc1MTYgMTQuOTIwOSAzLjA5NzIyQzE1LjA1OTIgMi44MDEzMSAxNC45MzM3IDIuNDMxNiAxNC42MTg0IDIuMzQ2M0MxMy43ODM4IDIuMTIwNDggMTIuOTA2IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxMy41OTk3IDIuMzc1NjIgMTUuMTExNiAzLjA0MzQ2IDE2LjQ1MjVDMy4yMjA5NCAxNi44MDg4IDMuMjgwMDEgMTcuMjE2MSAzLjE3NzEyIDE3LjYwMDZMMi41ODE1MSAxOS44MjY3QzIuMzIyOTUgMjAuNzkzIDMuMjA3MDEgMjEuNjc3IDQuMTczMzUgMjEuNDE4NUw2LjM5OTM5IDIwLjgyMjlDNi43ODM5MyAyMC43MiA3LjE5MTIxIDIwLjc3OTEgNy41NDc1MyAyMC45NTY1QzguODg4MzcgMjEuNjI0NCAxMC40MDAzIDIyIDEyIDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8Y2lyY2xlIGN4PSIxOSIgY3k9IjUiIHI9IjMiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundUnread";
  */
 const ChatRoundUnread: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundUnread.displayName = "ChatRoundUnread";
-export default ChatRoundUnread;
+ChatRoundUnread.displayName = "ChatRoundUnread"
+export default ChatRoundUnread

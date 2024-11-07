@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/SdCard";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/SdCard"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTIuMzQxNSAyIDEyLjUxMjIgMiAxMi42ODU4IDIuMDE1MTVDMTMuNDk1MSAyLjA4NTgxIDE0LjI4NzQgMi40MTQgMTQuOTA5NyAyLjkzNjMxQzE1LjA0MzEgMy4wNDgzNSAxNS4xNjY4IDMuMTcyMDYgMTUuNDE0MiAzLjQxOTQ0TDIwLjU4MDYgOC41ODU3OEMyMC44MjggOC44MzMxNyAyMC45NTE2IDguOTU2ODcgMjEuMDYzNyA5LjA5MDM0QzIxLjU4NiA5LjcxMjU3IDIxLjkxNDIgMTAuNTA0OSAyMS45ODQ4IDExLjMxNDJDMjIgMTEuNDg3OCAyMiAxMS42NTg1IDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMlpNMTMgNS4yNUMxMy40MTQyIDUuMjUgMTMuNzUgNS41ODU3OSAxMy43NSA2VjlDMTMuNzUgOS40MTQyMSAxMy40MTQyIDkuNzUgMTMgOS43NUMxMi41ODU4IDkuNzUgMTIuMjUgOS40MTQyMSAxMi4yNSA5VjZDMTIuMjUgNS41ODU3OSAxMi41ODU4IDUuMjUgMTMgNS4yNVpNMTAuNzUgNkMxMC43NSA1LjU4NTc5IDEwLjQxNDIgNS4yNSAxMCA1LjI1QzkuNTg1NzkgNS4yNSA5LjI1IDUuNTg1NzkgOS4yNSA2VjlDOS4yNSA5LjQxNDIxIDkuNTg1NzkgOS43NSAxMCA5Ljc1QzEwLjQxNDIgOS43NSAxMC43NSA5LjQxNDIxIDEwLjc1IDlWNlpNNyA1LjI1QzcuNDE0MjEgNS4yNSA3Ljc1IDUuNTg1NzkgNy43NSA2VjlDNy43NSA5LjQxNDIxIDcuNDE0MjEgOS43NSA3IDkuNzVDNi41ODU3OSA5Ljc1IDYuMjUgOS40MTQyMSA2LjI1IDlWNkM2LjI1IDUuNTg1NzkgNi41ODU3OSA1LjI1IDcgNS4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/SdCard";
  */
 const SdCard: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SdCard.displayName = "SdCard";
-export default SdCard;
+SdCard.displayName = "SdCard"
+export default SdCard

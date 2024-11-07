@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/ArchiveCheck";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/ArchiveCheck"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDVDMiA0LjA1NzE5IDIgMy41ODU3OSAyLjI5Mjg5IDMuMjkyODlDMi41ODU3OSAzIDMuMDU3MTkgMyA0IDNIMjBDMjAuOTQyOCAzIDIxLjQxNDIgMyAyMS43MDcxIDMuMjkyODlDMjIgMy41ODU3OSAyMiA0LjA1NzE5IDIyIDVDMjIgNS45NDI4MSAyMiA2LjQxNDIxIDIxLjcwNzEgNi43MDcxMUMyMS40MTQyIDcgMjAuOTQyOCA3IDIwIDdINEMzLjA1NzE5IDcgMi41ODU3OSA3IDIuMjkyODkgNi43MDcxMUMyIDYuNDE0MjEgMiA1Ljk0MjgxIDIgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC4wNjg5IDguNDk5OTNDMjAuMjEwMSA4LjQ5OTk5IDIwLjM1NTEgOC41MDAwNSAyMC41IDguNDk4MDVWMTIuOTk5OUMyMC41IDE2Ljc3MTEgMjAuNSAxOC42NTY4IDE5LjMyODQgMTkuODI4M0MxOC4xNTY5IDIwLjk5OTkgMTYuMjcxMiAyMC45OTk5IDEyLjUgMjAuOTk5OUgxMS41QzcuNzI4NzYgMjAuOTk5OSA1Ljg0MzE1IDIwLjk5OTkgNC42NzE1NyAxOS44MjgzQzMuNSAxOC42NTY4IDMuNSAxNi43NzExIDMuNSAxMi45OTk5VjguNDk4MDVDMy42NDQ4OCA4LjUwMDA1IDMuNzg5OTkgOC40OTk5OSAzLjkzMTE0IDguNDk5OTNIMjAuMDY4OVpNMTQuOTk5NSAxMi4xOTA2QzE1LjMwODUgMTIuNDY2NCAxNS4zMzUzIDEyLjk0MDUgMTUuMDU5NSAxMy4yNDk1TDExLjQ4OCAxNy4yNDk1QzExLjM0NTcgMTcuNDA4OSAxMS4xNDIyIDE3LjUgMTAuOTI4NiAxNy41QzEwLjcxNDkgMTcuNSAxMC41MTE0IDE3LjQwODkgMTAuMzY5MSAxNy4yNDk1TDguOTQwNTUgMTUuNjQ5NUM4LjY2NDY4IDE1LjM0MDUgOC42OTE1MiAxNC44NjY0IDkuMDAwNSAxNC41OTA2QzkuMzA5NDcgMTQuMzE0NyA5Ljc4MzU5IDE0LjM0MTUgMTAuMDU5NSAxNC42NTA1TDEwLjkyODYgMTUuNjIzOUwxMy45NDA2IDEyLjI1MDVDMTQuMjE2NCAxMS45NDE1IDE0LjY5MDUgMTEuOTE0NyAxNC45OTk1IDEyLjE5MDZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/ArchiveCheck";
  */
 const ArchiveCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArchiveCheck.displayName = "ArchiveCheck";
-export default ArchiveCheck;
+ArchiveCheck.displayName = "ArchiveCheck"
+export default ArchiveCheck

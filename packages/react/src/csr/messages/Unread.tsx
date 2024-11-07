@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Unread";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Unread"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJDMiA3LjI4NTk1IDIgNC45Mjg5MyAzLjQ2NDQ3IDMuNDY0NDdDNC45Mjg5MyAyIDcuMjg1OTUgMiAxMiAyQzE2LjcxNCAyIDE5LjA3MTEgMiAyMC41MzU1IDMuNDY0NDdDMjIgNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyWk0xNy40NTQ1IDYuOTAzNDNDMTcuNzg0IDcuMTU0NDYgMTcuODQ3NiA3LjYyNTA1IDE3LjU5NjYgNy45NTQ1M0wxMC43Mzk0IDE2Ljk1NDVDMTAuNjAyOSAxNy4xMzM3IDEwLjM5MyAxNy4yNDIxIDEwLjE2NzggMTcuMjQ5NkM5Ljk0MjY2IDE3LjI1NzEgOS43MjYwNCAxNy4xNjMgOS41Nzc4NyAxNi45OTMyTDYuNDM1MDEgMTMuMzkzMkM2LjE2MjYgMTMuMDgxMiA2LjE5NDcyIDEyLjYwNzQgNi41MDY3NiAxMi4zMzVDNi44MTg3OSAxMi4wNjI2IDcuMjkyNTggMTIuMDk0NyA3LjU2NDk5IDEyLjQwNjhMMTAuMTAzMyAxNS4zMTQzTDE2LjQwMzQgNy4wNDU0N0MxNi42NTQ1IDYuNzE1OTkgMTcuMTI1MSA2LjY1MjM5IDE3LjQ1NDUgNi45MDM0M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Unread";
  */
 const Unread: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Unread.displayName = "Unread";
-export default Unread;
+Unread.displayName = "Unread"
+export default Unread

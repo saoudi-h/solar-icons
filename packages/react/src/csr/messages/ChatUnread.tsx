@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/ChatUnread";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/ChatUnread"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy4wODY3IDIxLjM4NzdMMTMuNjI4OCAyMC40NzE4QzE0LjA0OTIgMTkuNzYxNCAxNC4yNTk1IDE5LjQwNjIgMTQuNTk3MiAxOS4yMDk4QzE0LjkzNDkgMTkuMDEzNCAxNS4zNiAxOS4wMDYxIDE2LjIxMDQgMTguOTkxNUMxNy40NjU4IDE4Ljk2OTggMTguMjUzMSAxOC44OTI5IDE4LjkxMzQgMTguNjE5NEMyMC4xMzg2IDE4LjExMTkgMjEuMTExOSAxNy4xMzg2IDIxLjYxOTQgMTUuOTEzNEMyMiAxNC45OTQ2IDIyIDEzLjgyOTcgMjIgMTEuNVYxMC41QzIyIDEwLjEzMDMgMjIgOS43ODE1MyAyMS45OTg5IDkuNDUxODdDMjEuOTk3NiA5LjAyNDU0IDIxLjQ3NTEgOC43ODMwNyAyMS4wOTcxIDguOTgyNUMyMC40NzA5IDkuMzEyOTQgMTkuNzU3MyA5LjUgMTkgOS41QzE2LjUxNDcgOS41IDE0LjUgNy40ODUyOCAxNC41IDVDMTQuNSA0LjI0MjcxIDE0LjY4NzEgMy41MjkxMSAxNS4wMTc1IDIuOTAyODhDMTUuMjE2OSAyLjUyNDk0IDE0Ljk3NTUgMi4wMDI0NCAxNC41NDgxIDIuMDAxMDZDMTQuMjE4NSAyIDEzLjg2OTcgMiAxMy41IDJIMTAuNUM3LjIyNjU3IDIgNS41ODk4NSAyIDQuMzg3NTEgMi43MzY4QzMuNzE0NzMgMy4xNDkwOCAzLjE0OTA4IDMuNzE0NzMgMi43MzY4IDQuMzg3NTFDMiA1LjU4OTg1IDIgNy4yMjY1NyAyIDEwLjVWMTEuNUMyIDEzLjgyOTcgMiAxNC45OTQ2IDIuMzgwNiAxNS45MTM0QzIuODg4MDcgMTcuMTM4NiAzLjg2MTQ0IDE4LjExMTkgNS4wODY1OCAxOC42MTk0QzUuNzQ2ODkgMTguODkyOSA2LjUzNDIyIDE4Ljk2OTggNy43ODk1OCAxOC45OTE1QzguNjM5OTIgMTkuMDA2MSA5LjA2NTA5IDE5LjAxMzQgOS40MDI3OSAxOS4yMDk4QzkuNzQwNDkgMTkuNDA2MyA5Ljk1MDczIDE5Ljc2MTQgMTAuMzcxMiAyMC40NzE4TDEwLjkxMzMgMjEuMzg3N0MxMS4zOTY1IDIyLjIwNCAxMi42MDM1IDIyLjIwNCAxMy4wODY3IDIxLjM4NzdaIiBmaWxsPSIjMUMyNzRDIi8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iNSIgcj0iMyIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatUnread";
  */
 const ChatUnread: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatUnread.displayName = "ChatUnread";
-export default ChatUnread;
+ChatUnread.displayName = "ChatUnread"
+export default ChatUnread

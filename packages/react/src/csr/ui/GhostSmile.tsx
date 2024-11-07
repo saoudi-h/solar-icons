@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/GhostSmile";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/GhostSmile"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJWMTkuMjA1OEMyMiAyMC40ODk2IDIwLjY0OSAyMS4zMjQ1IDE5LjUwMDggMjAuNzUwNEMxOC41NzI3IDIwLjI4NjQgMTcuNDY3MiAyMC4zNTUyIDE2LjYwMzkgMjAuOTMwOEMxNS42MzI2IDIxLjU3ODIgMTQuMzY3NCAyMS41NzgyIDEzLjM5NjEgMjAuOTMwOEwxMy4wNDM1IDIwLjY5NTdDMTIuNDExNiAyMC4yNzQ0IDExLjU4ODQgMjAuMjc0NCAxMC45NTY1IDIwLjY5NTdMMTAuNjAzOSAyMC45MzA4QzkuNjMyNjQgMjEuNTc4MiA4LjM2NzM2IDIxLjU3ODIgNy4zOTYxNCAyMC45MzA4QzYuNTMyOCAyMC4zNTUyIDUuNDI3MjYgMjAuMjg2NCA0LjQ5OTIgMjAuNzUwNEMzLjM1MDk4IDIxLjMyNDUgMiAyMC40ODk2IDIgMTkuMjA1OFYxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJaTTkuNDQ2NjEgMTQuMzk3NUM5LjExMzg1IDE0LjE1MDggOC42NDQxMyAxNC4yMjA2IDguMzk3NDcgMTQuNTUzNEM4LjE1MDgyIDE0Ljg4NjIgOC4yMjA2MiAxNS4zNTU5IDguNTUzMzkgMTUuNjAyNUM5LjUyNTggMTYuMzIzMyAxMC43MTUgMTYuNzUgMTIgMTYuNzVDMTMuMjg1IDE2Ljc1IDE0LjQ3NDIgMTYuMzIzMyAxNS40NDY2IDE1LjYwMjVDMTUuNzc5NCAxNS4zNTU5IDE1Ljg0OTIgMTQuODg2MiAxNS42MDI1IDE0LjU1MzRDMTUuMzU1OSAxNC4yMjA2IDE0Ljg4NjIgMTQuMTUwOCAxNC41NTM0IDE0LjM5NzVDMTMuODI1IDE0LjkzNzMgMTIuOTQ1OSAxNS4yNSAxMiAxNS4yNUMxMS4wNTQxIDE1LjI1IDEwLjE3NSAxNC45MzczIDkuNDQ2NjEgMTQuMzk3NVpNMTYgOS41QzE2IDEwLjMyODQgMTUuNTUyMyAxMSAxNSAxMUMxNC40NDc3IDExIDE0IDEwLjMyODQgMTQgOS41QzE0IDguNjcxNTcgMTQuNDQ3NyA4IDE1IDhDMTUuNTUyMyA4IDE2IDguNjcxNTcgMTYgOS41Wk05IDExQzkuNTUyMjggMTEgMTAgMTAuMzI4NCAxMCA5LjVDMTAgOC42NzE1NyA5LjU1MjI4IDggOSA4QzguNDQ3NzIgOCA4IDguNjcxNTcgOCA5LjVDOCAxMC4zMjg0IDguNDQ3NzIgMTEgOSAxMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/GhostSmile";
  */
 const GhostSmile: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GhostSmile.displayName = "GhostSmile";
-export default GhostSmile;
+GhostSmile.displayName = "GhostSmile"
+export default GhostSmile

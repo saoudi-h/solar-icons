@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcgMy4yNUMxNy4yMzYxIDMuMjUgMTcuNDU4NCAzLjM2MTE1IDE3LjYgMy41NUwyMC42IDcuNTVDMjAuODQ4NSA3Ljg4MTM3IDIwLjc4MTQgOC4zNTE0NyAyMC40NSA4LjZDMjAuMTE4NiA4Ljg0ODUzIDE5LjY0ODUgOC43ODEzNyAxOS40IDguNDVMMTcuNzUgNi4yNVYxNy43NUwxOS40IDE1LjU1QzE5LjY0ODUgMTUuMjE4NiAyMC4xMTg2IDE1LjE1MTUgMjAuNDUgMTUuNEMyMC43ODE0IDE1LjY0ODUgMjAuODQ4NSAxNi4xMTg2IDIwLjYgMTYuNDVMMTcuNiAyMC40NUMxNy40NTg0IDIwLjYzODkgMTcuMjM2MSAyMC43NSAxNyAyMC43NUMxNi43NjM5IDIwLjc1IDE2LjU0MTYgMjAuNjM4OSAxNi40IDIwLjQ1TDEzLjQgMTYuNDVDMTMuMTUxNSAxNi4xMTg2IDEzLjIxODYgMTUuNjQ4NSAxMy41NSAxNS40QzEzLjg4MTQgMTUuMTUxNSAxNC4zNTE1IDE1LjIxODYgMTQuNiAxNS41NUwxNi4yNSAxNy43NVY2LjI1TDE0LjYgOC40NUMxNC4zNTE1IDguNzgxMzcgMTMuODgxNCA4Ljg0ODUzIDEzLjU1IDguNkMxMy4yMTg2IDguMzUxNDcgMTMuMTUxNSA3Ljg4MTM3IDEzLjQgNy41NUwxNi40IDMuNTVDMTYuNTQxNiAzLjM2MTE1IDE2Ljc2MzkgMy4yNSAxNyAzLjI1Wk0zLjI1IDdDMy4yNSA2LjU4NTc5IDMuNTg1NzkgNi4yNSA0IDYuMjVIMTFDMTEuNDE0MiA2LjI1IDExLjc1IDYuNTg1NzkgMTEuNzUgN0MxMS43NSA3LjQxNDIxIDExLjQxNDIgNy43NSAxMSA3Ljc1SDRDMy41ODU3OSA3Ljc1IDMuMjUgNy40MTQyMSAzLjI1IDdaTTMuMjUgMTJDMy4yNSAxMS41ODU4IDMuNTg1NzkgMTEuMjUgNCAxMS4yNUgxMUMxMS40MTQyIDExLjI1IDExLjc1IDExLjU4NTggMTEuNzUgMTJDMTEuNzUgMTIuNDE0MiAxMS40MTQyIDEyLjc1IDExIDEyLjc1SDRDMy41ODU3OSAxMi43NSAzLjI1IDEyLjQxNDIgMy4yNSAxMlpNMy4yNSAxN0MzLjI1IDE2LjU4NTggMy41ODU3OSAxNi4yNSA0IDE2LjI1SDExQzExLjQxNDIgMTYuMjUgMTEuNzUgMTYuNTg1OCAxMS43NSAxN0MxMS43NSAxNy40MTQyIDExLjQxNDIgMTcuNzUgMTEgMTcuNzVINEMzLjU4NTc5IDE3Ljc1IDMuMjUgMTcuNDE0MiAzLjI1IDE3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListVertical";
  */
 const ListVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListVertical.displayName = "ListVertical";
-export default ListVertical;
+ListVertical.displayName = "ListVertical"
+export default ListVertical

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/FlipHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/FlipHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE4LjExMzZWNS44ODYzOEMyIDQuMTg0MjMgMiAzLjMzMzE2IDIuNTQyNDIgMy4wNTQwMkMzLjA4NDg0IDIuNzc0ODggMy43NzczOCAzLjI2OTU2IDUuMTYyNDcgNC4yNTg5MUw2Ljc0MzcxIDUuMzg4MzdDNy4zNTk1NyA1LjgyODI3IDcuNjY3NSA2LjA0ODIyIDcuODMzNzUgNi4zNzEyN0M4IDYuNjk0MzIgOCA3LjA3Mjc0IDggNy44Mjk1N1YxNi4xNzA0QzggMTYuOTI3MyA4IDE3LjMwNTcgNy44MzM3NSAxNy42Mjg3QzcuNjY3NSAxNy45NTE4IDcuMzU5NTcgMTguMTcxNyA2Ljc0MzcyIDE4LjYxMTZMNS4xNjI0OCAxOS43NDExQzMuNzc3MzggMjAuNzMwNCAzLjA4NDg0IDIxLjIyNTEgMi41NDI0MiAyMC45NDZDMiAyMC42NjY4IDIgMTkuODE1OCAyIDE4LjExMzZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMiAxOC4xMTM2VjUuODg2MzhDMjIgNC4xODQyMyAyMiAzLjMzMzE2IDIxLjQ1NzYgMy4wNTQwMkMyMC45MTUyIDIuNzc0ODggMjAuMjIyNiAzLjI2OTU2IDE4LjgzNzUgNC4yNTg5MUwxNy4yNTYzIDUuMzg4MzdDMTYuNjQwNCA1LjgyODI3IDE2LjMzMjUgNi4wNDgyMiAxNi4xNjYyIDYuMzcxMjdDMTYgNi42OTQzMiAxNiA3LjA3Mjc0IDE2IDcuODI5NTdWMTYuMTcwNEMxNiAxNi45MjczIDE2IDE3LjMwNTcgMTYuMTY2MiAxNy42Mjg3QzE2LjMzMjUgMTcuOTUxOCAxNi42NDA0IDE4LjE3MTcgMTcuMjU2MyAxOC42MTE2TDE4LjgzNzUgMTkuNzQxMUMyMC4yMjI2IDIwLjczMDQgMjAuOTE1MiAyMS4yMjUxIDIxLjQ1NzYgMjAuOTQ2QzIyIDIwLjY2NjggMjIgMTkuODE1OCAyMiAxOC4xMTM2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDEuMjVDMTIuNDE0MiAxLjI1IDEyLjc1IDEuNTg1NzkgMTIuNzUgMlY2QzEyLjc1IDYuNDE0MjEgMTIuNDE0MiA2Ljc1IDEyIDYuNzVDMTEuNTg1OCA2Ljc1IDExLjI1IDYuNDE0MjEgMTEuMjUgNlYyQzExLjI1IDEuNTg1NzkgMTEuNTg1OCAxLjI1IDEyIDEuMjVaTTEyIDkuMjVDMTIuNDE0MiA5LjI1IDEyLjc1IDkuNTg1NzkgMTIuNzUgMTBWMTRDMTIuNzUgMTQuNDE0MiAxMi40MTQyIDE0Ljc1IDEyIDE0Ljc1QzExLjU4NTggMTQuNzUgMTEuMjUgMTQuNDE0MiAxMS4yNSAxNFYxMEMxMS4yNSA5LjU4NTc5IDExLjU4NTggOS4yNSAxMiA5LjI1Wk0xMiAxNy4yNUMxMi40MTQyIDE3LjI1IDEyLjc1IDE3LjU4NTggMTIuNzUgMThWMjJDMTIuNzUgMjIuNDE0MiAxMi40MTQyIDIyLjc1IDEyIDIyLjc1QzExLjU4NTggMjIuNzUgMTEuMjUgMjIuNDE0MiAxMS4yNSAyMlYxOEMxMS4yNSAxNy41ODU4IDExLjU4NTggMTcuMjUgMTIgMTcuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/FlipHorizontal";
  */
 const FlipHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FlipHorizontal.displayName = "FlipHorizontal";
-export default FlipHorizontal;
+FlipHorizontal.displayName = "FlipHorizontal"
+export default FlipHorizontal

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Smartphone";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Smartphone"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuMDUxNiAySDExLjk0ODRDMTAuMjY4MiAxLjk5OTk5IDguOTM3MzIgMS45OTk5NyA3Ljg5NTc1IDIuMTQyNDVDNi44MjM4MiAyLjI4OTA4IDUuOTU2MjEgMi41OTgwMyA1LjI3MTk5IDMuMjk0MThDNC41ODc3OCAzLjk5MDMzIDQuMjg0MTMgNC44NzMwOCA0LjE0MDAxIDUuOTYzN0MzLjk5OTk3IDcuMDIzNDMgMy45OTk5OSA4LjM3NzUxIDQgMTAuMDg3VjEzLjkxMjlDMy45OTk5OSAxNS42MjI1IDMuOTk5OTcgMTYuOTc2NiA0LjE0MDAxIDE4LjAzNjNDNC4yODQxMyAxOS4xMjY5IDQuNTg3NzggMjAuMDA5NyA1LjI3MTk5IDIwLjcwNThDNS45NTYyMSAyMS40MDIgNi44MjM4MiAyMS43MTA5IDcuODk1NzUgMjEuODU3NUM4LjkzNzMxIDIyIDEwLjI2ODIgMjIgMTEuOTQ4NCAyMkgxMi4wNTE2QzEzLjczMTggMjIgMTUuMDYyNyAyMiAxNi4xMDQzIDIxLjg1NzVDMTcuMTc2MiAyMS43MTA5IDE4LjA0MzggMjEuNDAyIDE4LjcyOCAyMC43MDU4QzE5LjQxMjIgMjAuMDA5NyAxOS43MTU5IDE5LjEyNjkgMTkuODYgMTguMDM2M0MyMCAxNi45NzY2IDIwIDE1LjYyMjUgMjAgMTMuOTEzVjEwLjA4NzFDMjAgOC4zNzc1NCAyMCA3LjAyMzQzIDE5Ljg2IDUuOTYzN0MxOS43MTU5IDQuODczMDggMTkuNDEyMiAzLjk5MDMzIDE4LjcyOCAzLjI5NDE4QzE4LjA0MzggMi41OTgwMyAxNy4xNzYyIDIuMjg5MDggMTYuMTA0MyAyLjE0MjQ1QzE1LjA2MjcgMS45OTk5NyAxMy43MzE4IDEuOTk5OTkgMTIuMDUxNiAyWk04LjU3MTQzIDE4LjUxMTZDOC41NzE0MyAxOC4xMjYzIDguODc4NDMgMTcuODE0IDkuMjU3MTQgMTcuODE0SDE0Ljc0MjlDMTUuMTIxNiAxNy44MTQgMTUuNDI4NiAxOC4xMjYzIDE1LjQyODYgMTguNTExNkMxNS40Mjg2IDE4Ljg5NjkgMTUuMTIxNiAxOS4yMDkzIDE0Ljc0MjkgMTkuMjA5M0g5LjI1NzE0QzguODc4NDMgMTkuMjA5MyA4LjU3MTQzIDE4Ljg5NjkgOC41NzE0MyAxOC41MTE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Smartphone";
  */
 const Smartphone: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Smartphone.displayName = "Smartphone";
-export default Smartphone;
+Smartphone.displayName = "Smartphone"
+export default Smartphone

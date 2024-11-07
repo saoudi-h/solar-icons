@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/SkipPrevious";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/SkipPrevious"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjA5MDE1IDE0LjY0NzRDNi4zMDMyOCAxMy40OTM1IDYuMzAzMjggMTAuNTA2NSA4LjA5MDE1IDkuMzUyNThMMTguODc5MiAyLjM4NTQ4QzIwLjYxNTggMS4yNjQwMiAyMi43NSAyLjcyMzY4IDIyLjc1IDUuMDMyOVYxOC45NjcxQzIyLjc1IDIxLjI3NjMgMjAuNjE1OCAyMi43MzYgMTguODc5MiAyMS42MTQ1TDguMDkwMTUgMTQuNjQ3NFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIgNUMyIDQuNTg1NzkgMi4zMzU3OSA0LjI1IDIuNzUgNC4yNUMzLjE2NDIxIDQuMjUgMy41IDQuNTg1NzkgMy41IDVWMTlDMy41IDE5LjQxNDIgMy4xNjQyMSAxOS43NSAyLjc1IDE5Ljc1QzIuMzM1NzkgMTkuNzUgMiAxOS40MTQyIDIgMTlWNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/SkipPrevious";
  */
 const SkipPrevious: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SkipPrevious.displayName = "SkipPrevious";
-export default SkipPrevious;
+SkipPrevious.displayName = "SkipPrevious"
+export default SkipPrevious

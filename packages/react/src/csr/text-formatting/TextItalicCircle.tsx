@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/TextItalicCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/TextItalicCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTEwLjY2NjcgNi4yNUgxMy4zMTYyQzEzLjMyNzMgNi4yNDk3NSAxMy4zMzg0IDYuMjQ5NzUgMTMuMzQ5NSA2LjI1SDE2QzE2LjQxNDIgNi4yNSAxNi43NSA2LjU4NTc5IDE2Ljc1IDdDMTYuNzUgNy40MTQyMSAxNi40MTQyIDcuNzUgMTYgNy43NUgxMy45MDk1TDExLjY0MjkgMTYuMjVIMTMuMzMzM0MxMy43NDc1IDE2LjI1IDE0LjA4MzMgMTYuNTg1OCAxNC4wODMzIDE3QzE0LjA4MzMgMTcuNDE0MiAxMy43NDc1IDE3Ljc1IDEzLjMzMzMgMTcuNzVIMTAuNjgzOEMxMC42NzI3IDE3Ljc1MDIgMTAuNjYxNiAxNy43NTAyIDEwLjY1MDUgMTcuNzVIOEM3LjU4NTc5IDE3Ljc1IDcuMjUgMTcuNDE0MiA3LjI1IDE3QzcuMjUgMTYuNTg1OCA3LjU4NTc5IDE2LjI1IDggMTYuMjVIMTAuMDkwNUwxMi4zNTcxIDcuNzVIMTAuNjY2N0MxMC4yNTI1IDcuNzUgOS45MTY2NyA3LjQxNDIxIDkuOTE2NjcgN0M5LjkxNjY3IDYuNTg1NzkgMTAuMjUyNSA2LjI1IDEwLjY2NjcgNi4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextItalicCircle";
  */
 const TextItalicCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextItalicCircle.displayName = "TextItalicCircle";
-export default TextItalicCircle;
+TextItalicCircle.displayName = "TextItalicCircle"
+export default TextItalicCircle

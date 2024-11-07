@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/KeyMinimalistic2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/KeyMinimalistic2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUgMTZDMTguODY2IDE2IDIyIDEyLjg2NiAyMiA5QzIyIDUuMTM0MDEgMTguODY2IDIgMTUgMkMxMS4xMzQgMiA4IDUuMTM0MDEgOCA5QzggMTAuNjYyOCA4LjU3OTc5IDEyLjE5MDIgOS41NDgyNCAxMy4zOTExTDMuOTY5OTUgMTguOTY5NEwyLjk2OTY3IDE5Ljk2OTdDMi42NzY3OCAyMC4yNjI2IDIuNjc2NzggMjAuNzM3NCAyLjk2OTY3IDIxLjAzMDNDMy4yNjI1NiAyMS4zMjMyIDMuNzM3NDQgMjEuMzIzMiA0LjAzMDMzIDIxLjAzMDNMNC41IDIwLjU2MDdMNS40Njk2NyAyMS41MzAzQzUuNzYyNTYgMjEuODIzMiA2LjIzNzQ0IDIxLjgyMzIgNi41MzAzMyAyMS41MzAzQzYuODIzMjIgMjEuMjM3NCA2LjgyMzIyIDIwLjc2MjYgNi41MzAzMyAyMC40Njk3TDUuNTYwNjYgMTkuNUw2LjUgMTguNTYwN0w3LjQ2OTY3IDE5LjUzMDNDNy43NjI1NiAxOS44MjMyIDguMjM3NDQgMTkuODIzMiA4LjUzMDMzIDE5LjUzMDNDOC44MjMyMiAxOS4yMzc0IDguODIzMjIgMTguNzYyNiA4LjUzMDMzIDE4LjQ2OTdMNy41NjA2NiAxNy41TDEwLjYwODkgMTQuNDUxOEMxMS44MDk4IDE1LjQyMDIgMTMuMzM3MiAxNiAxNSAxNlpNMTUgMTFDMTYuMTA0NiAxMSAxNyAxMC4xMDQ2IDE3IDlDMTcgNy44OTU0MyAxNi4xMDQ2IDcgMTUgN0MxMy44OTU0IDcgMTMgNy44OTU0MyAxMyA5QzEzIDEwLjEwNDYgMTMuODk1NCAxMSAxNSAxMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/KeyMinimalistic2";
  */
 const KeyMinimalistic2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-KeyMinimalistic2.displayName = "KeyMinimalistic2";
-export default KeyMinimalistic2;
+KeyMinimalistic2.displayName = "KeyMinimalistic2"
+export default KeyMinimalistic2

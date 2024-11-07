@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Database";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Database"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCAxOEMyMCAyMC4yMDkxIDE2LjQxODMgMjIgMTIgMjJDNy41ODE3MiAyMiA0IDIwLjIwOTEgNCAxOFYxMy45NzRDNC41MDIyMSAxNC41OTA2IDUuMjE0OTUgMTUuMTAyOSA2LjAwNzc0IDE1LjQ5OTJDNy41ODAwNCAxNi4yODU0IDkuNjk5NjcgMTYuNzUgMTIgMTYuNzVDMTQuMzAwMyAxNi43NSAxNi40MiAxNi4yODU0IDE3Ljk5MjMgMTUuNDk5MkMxOC43ODUxIDE1LjEwMjkgMTkuNDk3OCAxNC41OTA2IDIwIDEzLjk3NFYxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEyIDEwLjc1QzE0LjMwMDMgMTAuNzUgMTYuNDIgMTAuMjg1NCAxNy45OTIzIDkuNDk5MjVDMTguNzg1MSA5LjEwMjg1IDE5LjQ5NzggOC41OTA1OSAyMCA3Ljk3Mzk3VjEyQzIwIDEyLjUgMTguMjE0MyAxMy41OTExIDE3LjMyMTQgMTQuMTU3NkMxNS45OTgzIDE0LjgxOTIgMTQuMTE4IDE1LjI1IDEyIDE1LjI1QzkuODgyMDUgMTUuMjUgOC4wMDE2OCAxNC44MTkyIDYuNjc4NTYgMTQuMTU3NkM1LjUgMTMuNTY4MyA0IDEyLjUgNCAxMlY3Ljk3Mzk3QzQuNTAyMjEgOC41OTA1OSA1LjIxNDk1IDkuMTAyODUgNi4wMDc3NCA5LjQ5OTI1QzcuNTgwMDQgMTAuMjg1NCA5LjY5OTY3IDEwLjc1IDEyIDEwLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcuMzIxNCA4LjE1NzYxQzE1Ljk5ODMgOC44MTkxNyAxNC4xMTggOS4yNSAxMiA5LjI1QzkuODgyMDUgOS4yNSA4LjAwMTY4IDguODE5MTcgNi42Nzg1NiA4LjE1NzYxQzYuMTYzODQgNy45NTU5NiA1LjAwNjM3IDcuMzE0OTIgNC4yMDE1IDYuMjc5MzVDNC4wNjQ1NCA2LjEwMzEzIDQuMDA1NzYgNS44Nzg1MyA0LjAzOTg4IDUuNjU3OThDNC4wNjI4MyA1LjUwOTY5IDQuMDk0OCA1LjM1Njk1IDQuMTM1NzggNS4yNjIyNkM0LjgyODE1IDMuNDA1NTQgOC4wODU4IDIgMTIgMkMxNS45MTQyIDIgMTkuMTcxOCAzLjQwNTU0IDE5Ljg2NDIgNS4yNjIyNkMxOS45MDUyIDUuMzU2OTUgMTkuOTM3MiA1LjUwOTY5IDE5Ljk2MDEgNS42NTc5OEMxOS45OTQyIDUuODc4NTMgMTkuOTM1NSA2LjEwMzEzIDE5Ljc5ODUgNi4yNzkzNUMxOC45OTM2IDcuMzE0OTIgMTcuODM2MiA3Ljk1NTk2IDE3LjMyMTQgOC4xNTc2MVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Database";
  */
 const Database: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Database.displayName = "Database";
-export default Database;
+Database.displayName = "Database"
+export default Database

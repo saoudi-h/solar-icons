@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/ArrowDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/ArrowDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi43NSA0QzEyLjc1IDMuNTg1NzkgMTIuNDE0MiAzLjI1IDEyIDMuMjVDMTEuNTg1OCAzLjI1IDExLjI1IDMuNTg1NzkgMTEuMjUgNEwxMS4yNSAxMy4yNUg2LjAwMDAyQzUuNjk2NjggMTMuMjUgNS40MjMyIDEzLjQzMjcgNS4zMDcxMSAxMy43MTNDNS4xOTEwMyAxMy45OTMyIDUuMjU1MTkgMTQuMzE1OCA1LjQ2OTY5IDE0LjUzMDNMMTEuNDY5NyAyMC41MzAzQzExLjYxMDMgMjAuNjcxIDExLjgwMTEgMjAuNzUgMTIgMjAuNzVDMTIuMTk4OSAyMC43NSAxMi4zODk3IDIwLjY3MSAxMi41MzA0IDIwLjUzMDNMMTguNTMwNCAxNC41MzAzQzE4Ljc0NDkgMTQuMzE1OCAxOC44MDkgMTMuOTkzMiAxOC42OTI5IDEzLjcxM0MxOC41NzY4IDEzLjQzMjcgMTguMzAzNCAxMy4yNSAxOCAxMy4yNUgxMi43NUwxMi43NSA0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/ArrowDown";
  */
 const ArrowDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArrowDown.displayName = "ArrowDown";
-export default ArrowDown;
+ArrowDown.displayName = "ArrowDown"
+export default ArrowDown

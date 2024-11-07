@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/time/AlarmRemove";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/time/AlarmRemove"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuMDAwMSAyMi4wMDAxQzE2Ljk3MDcgMjIuMDAwMSAyMS4wMDAxIDE3Ljk3MDcgMjEuMDAwMSAxMy4wMDAxQzIxLjAwMDEgOC4wMjk1NCAxNi45NzA3IDQuMDAwMSAxMi4wMDAxIDQuMDAwMUM3LjAyOTU0IDQuMDAwMSAzLjAwMDEgOC4wMjk1NCAzLjAwMDEgMTMuMDAwMUMzLjAwMDEgMTcuOTcwNyA3LjAyOTU0IDIyLjAwMDEgMTIuMDAwMSAyMi4wMDAxWk0xNS4wMDAxIDEyLjI1MDFDMTUuNDE0MyAxMi4yNTAxIDE1Ljc1MDEgMTIuNTg1OSAxNS43NTAxIDEzLjAwMDFDMTUuNzUwMSAxMy40MTQzIDE1LjQxNDMgMTMuNzUwMSAxNS4wMDAxIDEzLjc1MDFMOS4wMDAxIDEzLjc1MDFDOC41ODU4OSAxMy43NTAxIDguMjUwMSAxMy40MTQzIDguMjUwMSAxMy4wMDAxQzguMjUwMSAxMi41ODU5IDguNTg1ODkgMTIuMjUwMSA5LjAwMDEgMTIuMjUwMUwxNS4wMDAxIDEyLjI1MDFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4xMzYxMiAxLjYwMjZDOC4zNTU2NiAxLjk1Mzg2IDguMjQ4ODcgMi40MTY1NyA3Ljg5NzYyIDIuNjM2MUwzLjg5NzYgNS4xMzYxQzMuNTQ2MzQgNS4zNTU2MyAzLjA4MzYzIDUuMjQ4ODUgMi44NjQxIDQuODk3NkMyLjY0NDU3IDQuNTQ2MzQgMi43NTEzNSA0LjA4MzYzIDMuMTAyNiAzLjg2NDFMNy4xMDI2MyAxLjM2NDFDNy40NTM4OCAxLjE0NDU3IDcuOTE2NTkgMS4yNTEzNSA4LjEzNjEyIDEuNjAyNlpNMTUuODY0MSAxLjYwMjZDMTYuMDgzNiAxLjI1MTM1IDE2LjU0NjMgMS4xNDQ1NyAxNi44OTc2IDEuMzY0MUwyMC44OTc2IDMuODY0MUMyMS4yNDg5IDQuMDgzNjMgMjEuMzU1NiA0LjU0NjM1IDIxLjEzNjEgNC44OTc2QzIwLjkxNjYgNS4yNDg4NSAyMC40NTM5IDUuMzU1NjMgMjAuMTAyNiA1LjEzNjFMMTYuMTAyNiAyLjYzNjFDMTUuNzUxMyAyLjQxNjU3IDE1LjY0NDYgMS45NTM4NSAxNS44NjQxIDEuNjAyNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/AlarmRemove";
  */
 const AlarmRemove: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlarmRemove.displayName = "AlarmRemove";
-export default AlarmRemove;
+AlarmRemove.displayName = "AlarmRemove"
+export default AlarmRemove

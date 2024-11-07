@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Vinyl";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Vinyl"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS42MzExIDEwLjQ4NzlDMTIuNjcgMTAuNDg3OSAxMy41MTIyIDExLjMzMDEgMTMuNTEyMiAxMi4zNjg5QzEzLjUxMjIgMTMuNDA3OCAxMi42NyAxNC4yNSAxMS42MzExIDE0LjI1QzEwLjU5MjIgMTQuMjUgOS43NSAxMy40MDc4IDkuNzUgMTIuMzY4OUM5Ljc1IDExLjMzMDEgMTAuNTkyMiAxMC40ODc5IDExLjYzMTEgMTAuNDg3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaTTE0LjQ4NyAzLjI4NDQ3QzE0LjI1OTIgMy4yMTI5MiAxNC4wMTA5IDMuMjU0MTIgMTMuODE4NCAzLjM5NTQyQzEzLjYyNTkgMy41MzY3MiAxMy41MTIyIDMuNzYxMjMgMTMuNTEyMiA0LjAwMDAxVjkuNTU5MDZDMTIuOTc0NCA5LjE5ODMyIDEyLjMyNzQgOC45ODc4OSAxMS42MzExIDguOTg3ODlDOS43NjM3OSA4Ljk4Nzg5IDguMjUgMTAuNTAxNiA4LjI1IDEyLjM2ODlDOC4yNSAxNC4yMzYzIDkuNzYzNzkgMTUuNzUgMTEuNjMxMSAxNS43NUMxMy40OTg0IDE1Ljc1IDE1LjAxMjIgMTQuMjM2MyAxNS4wMTIyIDEyLjM2ODlWNS4wOTM3QzE3LjAzODkgNi4wMzczMyAxOC42MDY0IDcuODAzNjkgMTkuMjg0NSA5Ljk2MjM4QzE5LjQwODYgMTAuMzU3NiAxOS44Mjk2IDEwLjU3NzMgMjAuMjI0NyAxMC40NTMyQzIwLjYxOTkgMTAuMzI5MSAyMC44Mzk3IDkuOTA4MDggMjAuNzE1NSA5LjUxMjlDMTkuNzg1MyA2LjU1MTI5IDE3LjQ0ODYgNC4yMTQ2NSAxNC40ODcgMy4yODQ0N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Vinyl";
  */
 const Vinyl: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Vinyl.displayName = "Vinyl";
-export default Vinyl;
+Vinyl.displayName = "Vinyl"
+export default Vinyl

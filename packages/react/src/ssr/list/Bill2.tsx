@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/Bill2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/Bill2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxLjI1QzEuNTg1NzkgMS4yNSAxLjI1IDEuNTg1NzkgMS4yNSAyQzEuMjUgMi40MTQyMSAxLjU4NTc5IDIuNzUgMiAyLjc1SDRWMTIuMjc3NEM0IDEzLjYxNzUgNCAxNC4yODc1IDQuMjY4MSAxNC44NzgzQzQuNTM2MiAxNS40NjkyIDUuMDQwNDYgMTUuOTEwNCA2LjA0ODk3IDE2Ljc5MjhMOC4wNDg5NyAxOC41NDI5QzkuOTMxNTIgMjAuMTkwMSAxMC44NzI4IDIxLjAxMzcgMTIgMjEuMDEzN0MxMy4xMjcyIDIxLjAxMzcgMTQuMDY4NSAyMC4xOTAxIDE1Ljk1MSAxOC41NDI5TDE3Ljk1MSAxNi43OTI5QzE4Ljk1OTUgMTUuOTEwNCAxOS40NjM4IDE1LjQ2OTIgMTkuNzMxOSAxNC44NzgzQzIwIDE0LjI4NzUgMjAgMTMuNjE3NSAyMCAxMi4yNzc0VjIuNzVIMjJDMjIuNDE0MiAyLjc1IDIyLjc1IDIuNDE0MjEgMjIuNzUgMkMyMi43NSAxLjU4NTc5IDIyLjQxNDIgMS4yNSAyMiAxLjI1SDJaTTguNSAxMi4yNUM4LjA4NTc5IDEyLjI1IDcuNzUgMTIuNTg1OCA3Ljc1IDEzQzcuNzUgMTMuNDE0MiA4LjA4NTc5IDEzLjc1IDguNSAxMy43NUgxNS41QzE1LjkxNDIgMTMuNzUgMTYuMjUgMTMuNDE0MiAxNi4yNSAxM0MxNi4yNSAxMi41ODU4IDE1LjkxNDIgMTIuMjUgMTUuNSAxMi4yNUg4LjVaTTcuNzUgOEM3Ljc1IDcuNTg1NzkgOC4wODU3OSA3LjI1IDguNSA3LjI1SDE1LjVDMTUuOTE0MiA3LjI1IDE2LjI1IDcuNTg1NzkgMTYuMjUgOEMxNi4yNSA4LjQxNDIxIDE1LjkxNDIgOC43NSAxNS41IDguNzVIOC41QzguMDg1NzkgOC43NSA3Ljc1IDguNDE0MjEgNy43NSA4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/Bill2";
  */
 const Bill2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bill2.displayName = "Bill2";
-export default Bill2;
+Bill2.displayName = "Bill2"
+export default Bill2

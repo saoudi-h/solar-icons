@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/like/Hearts";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/like/Hearts"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41IDEzLjI4NzFDMTQuMDI1MSAxMC41NzEzIDExIDEyLjU3NDYgMTEgMTUuMzk5NUMxMSAxNy45NTgzIDEyLjgxNCAxOS40MzQ0IDE0LjM1ODQgMjAuNjkxMkwxNC40MDE4IDIwLjcyNjVDMTQuNTQ3NCAyMC44NDQ5IDE0LjY5MDMgMjAuOTYxNSAxNC44MjkgMjEuMDc2OUMxNS40IDIxLjU1MjMgMTUuOTUgMjIgMTYuNSAyMkMxNy4wNSAyMiAxNy42IDIxLjU1MjMgMTguMTcxIDIxLjA3NjlDMTkuNzg5MyAxOS43Mjk2IDIyIDE4LjIyNDMgMjIgMTUuMzk5NUMyMiAxNC40NzE1IDIxLjY3MzUgMTMuNjMyMSAyMS4xNDc0IDEzLjAxOTdDMjAuMDcxOCAxMS43Njc3IDE4LjE2MTkgMTEuNDYzNSAxNi41IDEzLjI4NzFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik04LjEwNjI3IDE4LjI0NjhDNS4yOTgxOSAxNi4wODMzIDIgMTMuNTQyMiAyIDkuMTM3MUMyIDQuMjc0MTYgNy41MDAxNiAwLjgyNTQ2NCAxMiA1LjUwMDYzQzE2LjQ5OTggMC44MjU0NjQgMjIgNC4yNzQxNiAyMiA5LjEzNzFDMjIgOS45NzA2NyAyMS44ODE5IDEwLjczNzUgMjEuNjcxNCAxMS40NDc3QzIwLjk1MjQgMTAuODcwMSAyMC4wNTEgMTAuNTA1NiAxOS4wNTIgMTAuNUMxOC4xNjIgMTAuNDk1IDE3LjI5MzYgMTAuNzc0NSAxNi40OTg4IDExLjMxMDFDMTUuMTA5OSAxMC4zNzczIDEzLjU0MjkgMTAuMjUxOCAxMi4xNjk4IDEwLjkxNDdDMTAuNTM0NSAxMS43MDQyIDkuNSAxMy40NzA1IDkuNSAxNS4zOTk0QzkuNSAxNy43MDQ2IDEwLjY0ODUgMTkuMzIxNyAxMS44NDE1IDIwLjQ5MzdDMTAuODk0MiAyMC40MTg0IDkuOTQ1MTQgMTkuNjg2MSA4Ljk2MTczIDE4LjkxMDlDOC42ODQ3MSAxOC42OTI1IDguMzk4MTQgMTguNDcxNyA4LjEwNjI3IDE4LjI0NjhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/Hearts";
  */
 const Hearts: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Hearts.displayName = "Hearts";
-export default Hearts;
+Hearts.displayName = "Hearts"
+export default Hearts

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareArrowDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareArrowDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTIgNy4yNUMxMi40MTQyIDcuMjUgMTIuNzUgNy41ODU3OSAxMi43NSA4VjE0LjE4OTNMMTQuNDY5NyAxMi40Njk3QzE0Ljc2MjYgMTIuMTc2OCAxNS4yMzc0IDEyLjE3NjggMTUuNTMwMyAxMi40Njk3QzE1LjgyMzIgMTIuNzYyNiAxNS44MjMyIDEzLjIzNzQgMTUuNTMwMyAxMy41MzAzTDEyLjUzMDMgMTYuNTMwM0MxMi4zODk3IDE2LjY3MSAxMi4xOTg5IDE2Ljc1IDEyIDE2Ljc1QzExLjgwMTEgMTYuNzUgMTEuNjEwMyAxNi42NzEgMTEuNDY5NyAxNi41MzAzTDguNDY5NjcgMTMuNTMwM0M4LjE3Njc4IDEzLjIzNzQgOC4xNzY3OCAxMi43NjI2IDguNDY5NjcgMTIuNDY5N0M4Ljc2MjU2IDEyLjE3NjggOS4yMzc0NCAxMi4xNzY4IDkuNTMwMzMgMTIuNDY5N0wxMS4yNSAxNC4xODkzVjhDMTEuMjUgNy41ODU3OSAxMS41ODU4IDcuMjUgMTIgNy4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareArrowDown";
  */
 const SquareArrowDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareArrowDown.displayName = "SquareArrowDown";
-export default SquareArrowDown;
+SquareArrowDown.displayName = "SquareArrowDown"
+export default SquareArrowDown

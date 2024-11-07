@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/RoundGraph";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/RoundGraph"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJaTTExLjI1IDVDMTEuMjUgNC41ODU3OSAxMS41ODU4IDQuMjUgMTIgNC4yNUMxNi4yODAyIDQuMjUgMTkuNzUgNy43MTk3OSAxOS43NSAxMkMxOS43NSAxNi4yODAyIDE2LjI4MDIgMTkuNzUgMTIgMTkuNzVDNy43MTk3OSAxOS43NSA0LjI1IDE2LjI4MDIgNC4yNSAxMkM0LjI1IDExLjU4NTggNC41ODU3OSAxMS4yNSA1IDExLjI1QzUuNDE0MjEgMTEuMjUgNS43NSAxMS41ODU4IDUuNzUgMTJDNS43NSAxNS40NTE4IDguNTQ4MjIgMTguMjUgMTIgMTguMjVDMTUuNDUxOCAxOC4yNSAxOC4yNSAxNS40NTE4IDE4LjI1IDEyQzE4LjI1IDguNTQ4MjIgMTUuNDUxOCA1Ljc1IDEyIDUuNzVDMTEuNTg1OCA1Ljc1IDExLjI1IDUuNDE0MjEgMTEuMjUgNVpNMTIgNy4yNUMxMS41ODU4IDcuMjUgMTEuMjUgNy41ODU3OSAxMS4yNSA4QzExLjI1IDguNDE0MjEgMTEuNTg1OCA4Ljc1IDEyIDguNzVDMTMuNzk0OSA4Ljc1IDE1LjI1IDEwLjIwNTEgMTUuMjUgMTJDMTUuMjUgMTMuNzk0OSAxMy43OTQ5IDE1LjI1IDEyIDE1LjI1QzExLjU4NTggMTUuMjUgMTEuMjUgMTUuNTg1OCAxMS4yNSAxNkMxMS4yNSAxNi40MTQyIDExLjU4NTggMTYuNzUgMTIgMTYuNzVDMTQuNjIzNCAxNi43NSAxNi43NSAxNC42MjM0IDE2Ljc1IDEyQzE2Ljc1IDkuMzc2NjUgMTQuNjIzNCA3LjI1IDEyIDcuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/RoundGraph";
  */
 const RoundGraph: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundGraph.displayName = "RoundGraph";
-export default RoundGraph;
+RoundGraph.displayName = "RoundGraph"
+export default RoundGraph

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareArrowRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareArrowRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNNy4yNSAxMkM3LjI1IDExLjU4NTggNy41ODU3OSAxMS4yNSA4IDExLjI1SDE0LjE4OTNMMTIuNDY5NyA5LjUzMDMzQzEyLjE3NjggOS4yMzc0NCAxMi4xNzY4IDguNzYyNTYgMTIuNDY5NyA4LjQ2OTY3QzEyLjc2MjYgOC4xNzY3OCAxMy4yMzc0IDguMTc2NzggMTMuNTMwMyA4LjQ2OTY3TDE2LjUzMDMgMTEuNDY5N0MxNi42NzEgMTEuNjEwMyAxNi43NSAxMS44MDExIDE2Ljc1IDEyQzE2Ljc1IDEyLjE5ODkgMTYuNjcxIDEyLjM4OTcgMTYuNTMwMyAxMi41MzAzTDEzLjUzMDMgMTUuNTMwM0MxMy4yMzc0IDE1LjgyMzIgMTIuNzYyNiAxNS44MjMyIDEyLjQ2OTcgMTUuNTMwM0MxMi4xNzY4IDE1LjIzNzQgMTIuMTc2OCAxNC43NjI2IDEyLjQ2OTcgMTQuNDY5N0wxNC4xODkzIDEyLjc1SDhDNy41ODU3OSAxMi43NSA3LjI1IDEyLjQxNDIgNy4yNSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareArrowRight";
  */
 const SquareArrowRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareArrowRight.displayName = "SquareArrowRight";
-export default SquareArrowRight;
+SquareArrowRight.displayName = "SquareArrowRight"
+export default SquareArrowRight

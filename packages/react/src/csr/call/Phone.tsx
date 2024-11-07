@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/Phone";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/Phone"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41NTYyIDEyLjkwNjJMMTYuMTAwNyAxMy4zNTlDMTYuMTAwNyAxMy4zNTkgMTUuMDE4MSAxNC40MzU1IDEyLjA2MzEgMTEuNDk3MkM5LjEwODEyIDguNTU5MDEgMTAuMTkwNyA3LjQ4MjU3IDEwLjE5MDcgNy40ODI1N0wxMC40Nzc1IDcuMTk3MzhDMTEuMTg0MSA2LjQ5NDg0IDExLjI1MDcgNS4zNjY5MSAxMC42MzQyIDQuNTQzNDhMOS4zNzMyNiAyLjg1OTA4QzguNjEwMjggMS44Mzk5MiA3LjEzNTk2IDEuNzA1MjkgNi4yNjE0NSAyLjU3NDgzTDQuNjkxODUgNC4xMzU1MkM0LjI1ODIzIDQuNTY2NjggMy45Njc2NSA1LjEyNTU5IDQuMDAyODkgNS43NDU2MUM0LjA5MzA0IDcuMzMxODIgNC44MTA3MSAxMC43NDQ3IDguODE1MzYgMTQuNzI2NkMxMy4wNjIxIDE4Ljk0OTIgMTcuMDQ2OCAxOS4xMTcgMTguNjc2MyAxOC45NjUxQzE5LjE5MTcgMTguOTE3MSAxOS42Mzk5IDE4LjY1NDYgMjAuMDAxMSAxOC4yOTU0TDIxLjQyMTcgMTYuODgzQzIyLjM4MDYgMTUuOTI5NSAyMi4xMTAyIDE0LjI5NDkgMjAuODgzMyAxMy42MjhMMTguOTcyOCAxMi41ODk0QzE4LjE2NzIgMTIuMTUxNSAxNy4xODU4IDEyLjI4MDEgMTYuNTU2MiAxMi45MDYyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/Phone";
  */
 const Phone: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Phone.displayName = "Phone";
-export default Phone;
+Phone.displayName = "Phone"
+export default Phone

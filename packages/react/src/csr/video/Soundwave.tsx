@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Soundwave";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Soundwave"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMy4yNUMxMi40MTQyIDMuMjUgMTIuNzUgMy41ODU3OSAxMi43NSA0TDEyLjc1IDIwQzEyLjc1IDIwLjQxNDIgMTIuNDE0MiAyMC43NSAxMiAyMC43NUMxMS41ODU4IDIwLjc1IDExLjI1IDIwLjQxNDIgMTEuMjUgMjBMMTEuMjUgNEMxMS4yNSAzLjU4NTc5IDExLjU4NTggMy4yNSAxMiAzLjI1Wk04IDYuMjVDOC40MTQyMSA2LjI1IDguNzUgNi41ODU3OSA4Ljc1IDdWMTdDOC43NSAxNy40MTQyIDguNDE0MjEgMTcuNzUgOCAxNy43NUM3LjU4NTc5IDE3Ljc1IDcuMjUgMTcuNDE0MiA3LjI1IDE3VjdDNy4yNSA2LjU4NTc5IDcuNTg1NzkgNi4yNSA4IDYuMjVaTTE2IDYuMjVDMTYuNDE0MiA2LjI1IDE2Ljc1IDYuNTg1NzkgMTYuNzUgN1YxN0MxNi43NSAxNy40MTQyIDE2LjQxNDIgMTcuNzUgMTYgMTcuNzVDMTUuNTg1OCAxNy43NSAxNS4yNSAxNy40MTQyIDE1LjI1IDE3VjdDMTUuMjUgNi41ODU3OSAxNS41ODU4IDYuMjUgMTYgNi4yNVpNNCAxMC4yNUM0LjQxNDIxIDEwLjI1IDQuNzUgMTAuNTg1OCA0Ljc1IDExTDQuNzUgMTNDNC43NSAxMy40MTQyIDQuNDE0MjEgMTMuNzUgNCAxMy43NUMzLjU4NTc5IDEzLjc1IDMuMjUgMTMuNDE0MiAzLjI1IDEzTDMuMjUgMTFDMy4yNSAxMC41ODU4IDMuNTg1NzkgMTAuMjUgNCAxMC4yNVpNMjAgMTAuMjVDMjAuNDE0MiAxMC4yNSAyMC43NSAxMC41ODU4IDIwLjc1IDExVjEzQzIwLjc1IDEzLjQxNDIgMjAuNDE0MiAxMy43NSAyMCAxMy43NUMxOS41ODU4IDEzLjc1IDE5LjI1IDEzLjQxNDIgMTkuMjUgMTNWMTFDMTkuMjUgMTAuNTg1OCAxOS41ODU4IDEwLjI1IDIwIDEwLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Soundwave";
  */
 const Soundwave: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Soundwave.displayName = "Soundwave";
-export default Soundwave;
+Soundwave.displayName = "Soundwave"
+export default Soundwave

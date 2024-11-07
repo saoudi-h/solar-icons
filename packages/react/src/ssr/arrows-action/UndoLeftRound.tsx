@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/UndoLeftRound";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/UndoLeftRound"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy41MzAzMyAzLjQ2OTY3QzcuODIzMjIgMy43NjI1NiA3LjgyMzIyIDQuMjM3NDQgNy41MzAzMyA0LjUzMDMzTDUuODEwNjYgNi4yNUgxNUMxOC4xNzU2IDYuMjUgMjAuNzUgOC44MjQzNiAyMC43NSAxMkMyMC43NSAxNS4xNzU2IDE4LjE3NTYgMTcuNzUgMTUgMTcuNzVIOC4wMDAwMUM3LjU4NTc5IDE3Ljc1IDcuMjUwMDEgMTcuNDE0MiA3LjI1MDAxIDE3QzcuMjUwMDEgMTYuNTg1OCA3LjU4NTc5IDE2LjI1IDguMDAwMDEgMTYuMjVIMTVDMTcuMzQ3MiAxNi4yNSAxOS4yNSAxNC4zNDcyIDE5LjI1IDEyQzE5LjI1IDkuNjUyNzkgMTcuMzQ3MiA3Ljc1IDE1IDcuNzVINS44MTA2Nkw3LjUzMDMzIDkuNDY5NjdDNy44MjMyMiA5Ljc2MjU2IDcuODIzMjIgMTAuMjM3NCA3LjUzMDMzIDEwLjUzMDNDNy4yMzc0NCAxMC44MjMyIDYuNzYyNTYgMTAuODIzMiA2LjQ2OTY3IDEwLjUzMDNMMy40Njk2NyA3LjUzMDMzQzMuMTc2NzggNy4yMzc0NCAzLjE3Njc4IDYuNzYyNTYgMy40Njk2NyA2LjQ2OTY3TDYuNDY5NjcgMy40Njk2N0M2Ljc2MjU2IDMuMTc2NzggNy4yMzc0NCAzLjE3Njc4IDcuNTMwMzMgMy40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/UndoLeftRound";
  */
 const UndoLeftRound: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UndoLeftRound.displayName = "UndoLeftRound";
-export default UndoLeftRound;
+UndoLeftRound.displayName = "UndoLeftRound"
+export default UndoLeftRound

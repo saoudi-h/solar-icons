@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/AugmentedReality";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/AugmentedReality"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTkuMjE1ODYgNy43NzYyOUM5LjExODAxIDcuNDYzMTkgOC44MjgwNCA3LjI1IDguNSA3LjI1QzguMTcxOTYgNy4yNSA3Ljg4MTk5IDcuNDYzMTkgNy43ODQxNCA3Ljc3NjI5TDUuMjg0MTQgMTUuNzc2M0M1LjE2MDU5IDE2LjE3MTcgNS4zODA5NCAxNi41OTIzIDUuNzc2MjkgMTYuNzE1OUM2LjE3MTY1IDE2LjgzOTQgNi41OTIzMSAxNi42MTkxIDYuNzE1ODYgMTYuMjIzN0w3LjQyNjM5IDEzLjk1SDkuNTczNjFMMTAuMjg0MSAxNi4yMjM3QzEwLjQwNzcgMTYuNjE5MSAxMC44MjgzIDE2LjgzOTQgMTEuMjIzNyAxNi43MTU5QzExLjYxOTEgMTYuNTkyMyAxMS44Mzk0IDE2LjE3MTcgMTEuNzE1OSAxNS43NzYzTDkuMjE1ODYgNy43NzYyOVpNNy44OTUxNCAxMi40NUg5LjEwNDg2TDguNSAxMC41MTQ1TDcuODk1MTQgMTIuNDVaTTEzLjI1IDhDMTMuMjUgNy41ODU3OSAxMy41ODU4IDcuMjUgMTQgNy4yNUgxNkMxNy41MTg4IDcuMjUgMTguNzUgOC40ODEyMiAxOC43NSAxMEMxOC43NSAxMS4yNDY5IDE3LjkyMDEgMTIuMyAxNi43ODI2IDEyLjYzN0wxOC42MzYgMTUuNjAyNUMxOC44NTU1IDE1Ljk1MzggMTguNzQ4OCAxNi40MTY1IDE4LjM5NzUgMTYuNjM2QzE4LjA0NjIgMTYuODU1NSAxNy41ODM1IDE2Ljc0ODggMTcuMzY0IDE2LjM5NzVMMTUuMDg0MyAxMi43NUgxNC43NVYxNkMxNC43NSAxNi40MTQyIDE0LjQxNDIgMTYuNzUgMTQgMTYuNzVDMTMuNTg1OCAxNi43NSAxMy4yNSAxNi40MTQyIDEzLjI1IDE2VjhaTTE0Ljc1IDExLjI1VjguNzVIMTZDMTYuNjkwNCA4Ljc1IDE3LjI1IDkuMzA5NjQgMTcuMjUgMTBDMTcuMjUgMTAuNjkwNCAxNi42OTA0IDExLjI1IDE2IDExLjI1SDE0Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/AugmentedReality";
  */
 const AugmentedReality: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AugmentedReality.displayName = "AugmentedReality";
-export default AugmentedReality;
+AugmentedReality.displayName = "AugmentedReality"
+export default AugmentedReality

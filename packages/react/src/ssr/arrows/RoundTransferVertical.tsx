@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/RoundTransferVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/RoundTransferVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMkMyMiAxNy41MjI4IDE3LjUyMjggMjIgMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJaTTE0Ljc1IDE3TDE0Ljc1IDlMMTYuNDM0OSAxMC45MzA3QzE2LjcwNzMgMTEuMjQyNyAxNy4xODExIDExLjI3NDkgMTcuNDkzMSAxMS4wMDI2QzE3LjgwNTIgMTAuNzMwMiAxNy44Mzc0IDEwLjI1NjQgMTcuNTY1MSA5Ljk0NDM1TDE0LjU2NTEgNi41MDY4NUMxNC4zNTk1IDYuMjcxMyAxNC4wMjk0IDYuMTg3OTggMTMuNzM2NyA2LjI5Nzc1QzEzLjQ0MzkgNi40MDc1MyAxMy4yNSA2LjY4NzM3IDEzLjI1IDdMMTMuMjUgMTdDMTMuMjUgMTcuNDE0MiAxMy41ODU4IDE3Ljc1IDE0IDE3Ljc1QzE0LjQxNDIgMTcuNzUgMTQuNzUgMTcuNDE0MiAxNC43NSAxN1pNNi41MDY4NSAxMi45OTc0QzYuODE4OTMgMTIuNzI1MSA3LjI5MjcxIDEyLjc1NzMgNy41NjUwNyAxMy4wNjkzTDkuMjUgMTVWN0M5LjI1IDYuNTg1NzkgOS41ODU3OSA2LjI1IDEwIDYuMjVDMTAuNDE0MiA2LjI1IDEwLjc1IDYuNTg1NzkgMTAuNzUgN1YxN0MxMC43NSAxNy4zMTI2IDEwLjU1NjEgMTcuNTkyNSAxMC4yNjMzIDE3LjcwMjJDOS45NzA2MSAxNy44MTIgOS42NDA1IDE3LjcyODcgOS40MzQ5MyAxNy40OTMyTDYuNDM0OTMgMTQuMDU1N0M2LjE2MjU3IDEzLjc0MzYgNi4xOTQ3NyAxMy4yNjk4IDYuNTA2ODUgMTIuOTk3NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundTransferVertical";
  */
 const RoundTransferVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundTransferVertical.displayName = "RoundTransferVertical";
-export default RoundTransferVertical;
+RoundTransferVertical.displayName = "RoundTransferVertical"
+export default RoundTransferVertical

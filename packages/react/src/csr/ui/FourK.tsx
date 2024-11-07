@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/FourK";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/FourK"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTYuMjUgOEM2LjI1IDcuNTg1NzkgNS45MTQyMSA3LjI1IDUuNSA3LjI1QzUuMDg1NzkgNy4yNSA0Ljc1IDcuNTg1NzkgNC43NSA4VjEwQzQuNzUgMTEuNTE4OCA1Ljk4MTIyIDEyLjc1IDcuNSAxMi43NUg5Ljc1VjE2QzkuNzUgMTYuNDE0MiAxMC4wODU4IDE2Ljc1IDEwLjUgMTYuNzVDMTAuOTE0MiAxNi43NSAxMS4yNSAxNi40MTQyIDExLjI1IDE2VjhDMTEuMjUgNy41ODU3OSAxMC45MTQyIDcuMjUgMTAuNSA3LjI1QzEwLjA4NTggNy4yNSA5Ljc1IDcuNTg1NzkgOS43NSA4VjExLjI1SDcuNUM2LjgwOTY0IDExLjI1IDYuMjUgMTAuNjkwNCA2LjI1IDEwVjhaTTE5LjAxOTggNy40NTkzOEMxOS4zMTg0IDcuNzQ2NDcgMTkuMzI3NyA4LjIyMTI1IDE5LjA0MDYgOC41MTk4M0wxNi4zNzM4IDExLjI5MzNMMTkuMTMxNCAxNS41OTUzQzE5LjM1NDkgMTUuOTQ0IDE5LjI1MzUgMTYuNDA3OSAxOC45MDQ4IDE2LjYzMTRDMTguNTU2IDE2Ljg1NDkgMTguMDkyMSAxNi43NTM1IDE3Ljg2ODYgMTYuNDA0N0wxNS4zMDQ3IDEyLjQwNTFMMTQuMjUgMTMuNTAyMVYxNkMxNC4yNSAxNi40MTQyIDEzLjkxNDIgMTYuNzUgMTMuNSAxNi43NUMxMy4wODU4IDE2Ljc1IDEyLjc1IDE2LjQxNDIgMTIuNzUgMTZWOEMxMi43NSA3LjU4NTc5IDEzLjA4NTggNy4yNSAxMy41IDcuMjVDMTMuOTE0MiA3LjI1IDE0LjI1IDcuNTg1NzkgMTQuMjUgOFYxMS4zMzc5TDE3Ljk1OTQgNy40ODAxN0MxOC4yNDY1IDcuMTgxNTkgMTguNzIxMyA3LjE3MjI4IDE5LjAxOTggNy40NTkzOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/FourK";
  */
 const FourK: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FourK.displayName = "FourK";
-export default FourK;
+FourK.displayName = "FourK"
+export default FourK

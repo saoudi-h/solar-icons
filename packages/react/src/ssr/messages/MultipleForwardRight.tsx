@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/MultipleForwardRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/MultipleForwardRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi4zMzE1IDUuMTgzNTVMMTcuMzA5NCA5LjYwODI5QzE4LjIzOTkgMTAuNDM1NSAxOC43MDUyIDEwLjg0OTEgMTguODc2NyAxMS4zMzc0QzE5LjAyNzMgMTEuNzY2MyAxOS4wMjczIDEyLjIzMzcgMTguODc2NyAxMi42NjI2QzE4LjcwNTIgMTMuMTUwOSAxOC4yMzk5IDEzLjU2NDUgMTcuMzA5NCAxNC4zOTE3TDEyLjMzMTUgMTguODE2NUMxMS45MDkyIDE5LjE5MTggMTEuNjk4MSAxOS4zNzk1IDExLjUxODcgMTkuMzg2MkMxMS4zNjI5IDE5LjM5MjEgMTEuMjEzMyAxOS4zMjQ5IDExLjExNDIgMTkuMjA0NkMxMSAxOS4wNjYxIDExIDE4Ljc4MzUgMTEgMTguMjE4NVYxNS40Mjg2QzguNTcxOTYgMTUuNDI4NiA2LjAwNzM5IDE2LjIwODQgNC4xMzQ3OCAxNy41OTI4QzMuMTU5ODggMTguMzEzNSAyLjY3MjQyIDE4LjY3MzkgMi40ODY3NiAxOC42NTk2QzIuMzA1NzggMTguNjQ1OCAyLjE5MDkzIDE4LjU3NTEgMi4wOTcwMyAxOC40MTk4QzIuMDAwNyAxOC4yNjA0IDIuMDg1NzggMTcuNzYyNSAyLjI1NTk1IDE2Ljc2NjdDMy4zNjA5MyAxMC4zMDA2IDcuODEwOSA4LjU3MTQzIDExIDguNTcxNDNWNS43ODE0OEMxMSA1LjIxNjQ2IDExIDQuOTMzOTYgMTEuMTE0MiA0Ljc5NTQ1QzExLjIxMzMgNC42NzUxMyAxMS4zNjI5IDQuNjA3OTQgMTEuNTE4NyA0LjYxMzc4QzExLjY5ODEgNC42MjA0OSAxMS45MDkyIDQuODA4MTggMTIuMzMxNSA1LjE4MzU1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE0Ljk4ODkgMy45ODk2NkMxNS4yNzA4IDMuNjg2MTMgMTUuNzQ1MyAzLjY2ODU2IDE2LjA0ODggMy45NTA0MUwyMS4yNjUxIDguNzk0MDNDMjIuMjEyIDkuNjczMzMgMjIuNzUgMTAuOTA3MiAyMi43NSAxMi4xOTk0QzIyLjc1IDEzLjU2MTYgMjIuMTUyNCAxNC44NTUzIDIxLjExNTEgMTUuNzM4MkwxNi4wMjQ2IDIwLjA3MTFDMTUuNzA5MiAyMC4zMzk2IDE1LjIzNTkgMjAuMzAxNiAxNC45Njc0IDE5Ljk4NjFDMTQuNjk4OSAxOS42NzA3IDE0LjczNyAxOS4xOTc0IDE1LjA1MjQgMTguOTI4OUwyMC4xNDI4IDE0LjU5NkMyMC44NDUzIDEzLjk5OCAyMS4yNSAxMy4xMjIgMjEuMjUgMTIuMTk5NEMyMS4yNSAxMS4zMjQzIDIwLjg4NTcgMTAuNDg4NyAyMC4yNDQ0IDkuODkzMjJMMTUuMDI4MiA1LjA0OTZDMTQuNzI0NiA0Ljc2Nzc1IDE0LjcwNzEgNC4yOTMyIDE0Ljk4ODkgMy45ODk2NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/MultipleForwardRight";
  */
 const MultipleForwardRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MultipleForwardRight.displayName = "MultipleForwardRight";
-export default MultipleForwardRight;
+MultipleForwardRight.displayName = "MultipleForwardRight"
+export default MultipleForwardRight

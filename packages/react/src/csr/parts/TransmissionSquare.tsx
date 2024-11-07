@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/parts/TransmissionSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/parts/TransmissionSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOCA4LjI1QzguNDE0MjEgOC4yNSA4Ljc1IDguNTg1NzkgOC43NSA5VjExLjI1SDExLjI1VjlDMTEuMjUgOC41ODU3OSAxMS41ODU4IDguMjUgMTIgOC4yNUMxMi40MTQyIDguMjUgMTIuNzUgOC41ODU3OSAxMi43NSA5VjExLjI1SDEzQzEzLjQ3NjIgMTEuMjUgMTMuNzk1OCAxMS4yNDk2IDE0LjA0MzMgMTEuMjMyN0MxNC4yODQgMTEuMjE2MyAxNC40MDEyIDExLjE4NjggMTQuNDc4NCAxMS4xNTQ4QzE0Ljc4NDYgMTEuMDI4IDE1LjAyOCAxMC43ODQ2IDE1LjE1NDkgMTAuNDc4NEMxNS4xODY4IDEwLjQwMTIgMTUuMjE2MyAxMC4yODQgMTUuMjMyNyAxMC4wNDMzQzE1LjI0OTYgOS43OTU3OSAxNS4yNSA5LjQ3NjIgMTUuMjUgOUMxNS4yNSA4LjU4NTc5IDE1LjU4NTggOC4yNSAxNiA4LjI1QzE2LjQxNDIgOC4yNSAxNi43NSA4LjU4NTc5IDE2Ljc1IDlWOS4wMjUyNkMxNi43NSA5LjQ2OTcyIDE2Ljc1IDkuODQwNzUgMTYuNzI5MiAxMC4xNDU0QzE2LjcwNzYgMTAuNDYyNSAxNi42NjEgMTAuNzYyIDE2LjU0MDcgMTEuMDUyNEMxNi4yNjE2IDExLjcyNjIgMTUuNzI2MiAxMi4yNjE2IDE1LjA1MjQgMTIuNTQwN0MxNC43NjIgMTIuNjYxIDE0LjQ2MjUgMTIuNzA3NiAxNC4xNDU0IDEyLjcyOTJDMTMuODQwOCAxMi43NSAxMy40Njk3IDEyLjc1IDEzLjAyNTMgMTIuNzVIMTIuNzVWMTVDMTIuNzUgMTUuNDE0MiAxMi40MTQyIDE1Ljc1IDEyIDE1Ljc1QzExLjU4NTggMTUuNzUgMTEuMjUgMTUuNDE0MiAxMS4yNSAxNVYxMi43NUg4Ljc1VjE1QzguNzUgMTUuNDE0MiA4LjQxNDIxIDE1Ljc1IDggMTUuNzVDNy41ODU3OSAxNS43NSA3LjI1IDE1LjQxNDIgNy4yNSAxNVY5QzcuMjUgOC41ODU3OSA3LjU4NTc5IDguMjUgOCA4LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/parts/TransmissionSquare";
  */
 const TransmissionSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TransmissionSquare.displayName = "TransmissionSquare";
-export default TransmissionSquare;
+TransmissionSquare.displayName = "TransmissionSquare"
+export default TransmissionSquare

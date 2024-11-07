@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/SkipNext";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/SkipNext"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi42NTk4IDE0LjY0NzRDMTguNDQ2NyAxMy40OTM1IDE4LjQ0NjcgMTAuNTA2NSAxNi42NTk4IDkuMzUyNThMNS44NzA4MyAyLjM4NTQ4QzQuMTM0MTkgMS4yNjQwMiAyIDIuNzIzNjggMiA1LjAzMjlWMTguOTY3MUMyIDIxLjI3NjMgNC4xMzQxOSAyMi43MzYgNS44NzA4MyAyMS42MTQ1TDE2LjY1OTggMTQuNjQ3NFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyLjc1IDVDMjIuNzUgNC41ODU3OSAyMi40MTQyIDQuMjUgMjIgNC4yNUMyMS41ODU4IDQuMjUgMjEuMjUgNC41ODU3OSAyMS4yNSA1VjE5QzIxLjI1IDE5LjQxNDIgMjEuNTg1OCAxOS43NSAyMiAxOS43NUMyMi40MTQyIDE5Ljc1IDIyLjc1IDE5LjQxNDIgMjIuNzUgMTlWNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/SkipNext";
  */
 const SkipNext: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SkipNext.displayName = "SkipNext";
-export default SkipNext;
+SkipNext.displayName = "SkipNext"
+export default SkipNext

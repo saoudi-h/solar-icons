@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/MapArrowDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/MapArrowDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjE2NDk2IDQuNDk3NDdMMTAuNTI3NSAyMS4wMDcyQzExLjExNzggMjIuMzMwOSAxMi44ODIyIDIyLjMzMDkgMTMuNDcyNSAyMS4wMDcyTDIwLjgzNSA0LjQ5NzQ3QzIxLjUwMjEgMy4wMDE2MyAyMC4wMjA5IDEuNDUwMDYgMTguNjMzMSAyLjE5MDk5TDEyLjcyOTQgNS4zNDMwM0MxMi4yNzAyIDUuNTg4MTggMTEuNzI5OCA1LjU4ODE4IDExLjI3MDYgNS4zNDMwM0w1LjM2Njg5IDIuMTkwOTlDMy45NzkxNCAxLjQ1MDA3IDIuNDk3ODkgMy4wMDE2MyAzLjE2NDk2IDQuNDk3NDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapArrowDown";
  */
 const MapArrowDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapArrowDown.displayName = "MapArrowDown";
-export default MapArrowDown;
+MapArrowDown.displayName = "MapArrowDown"
+export default MapArrowDown

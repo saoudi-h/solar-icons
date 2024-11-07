@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/PlaaylistMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/PlaaylistMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIMTBDMTAuNDE0MiAxMC4yNSAxMC43NSAxMC41ODU4IDEwLjc1IDExQzEwLjc1IDExLjQxNDIgMTAuNDE0MiAxMS43NSAxMCAxMS43NUgzQzIuNTg1NzkgMTEuNzUgMi4yNSAxMS40MTQyIDIuMjUgMTFaTTIuMjUgMTZDMi4yNSAxNS41ODU4IDIuNTg1NzkgMTUuMjUgMyAxNS4yNUgxMEMxMC40MTQyIDE1LjI1IDEwLjc1IDE1LjU4NTggMTAuNzUgMTZDMTAuNzUgMTYuNDE0MiAxMC40MTQyIDE2Ljc1IDEwIDE2Ljc1SDNDMi41ODU3OSAxNi43NSAyLjI1IDE2LjQxNDIgMi4yNSAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE5LjEyNSAxMC42ODU0QzIwLjc2NyAxMS42MzM0IDIxLjU4OCAxMi4xMDc0IDIxLjg0NzggMTIuNzM0NkMyMi4wNTA3IDEzLjIyNDcgMjIuMDUwNyAxMy43NzUzIDIxLjg0NzggMTQuMjY1NEMyMS41ODggMTQuODkyNiAyMC43NjcgMTUuMzY2NiAxOS4xMjUgMTYuMzE0NkMxNy40ODMgMTcuMjYyNiAxNi42NjIgMTcuNzM2NiAxNS45ODg5IDE3LjY0OEMxNS40NjMxIDE3LjU3ODcgMTQuOTg2MiAxNy4zMDM0IDE0LjY2MzMgMTYuODgyNkMxNC4yNSAxNi4zNDQgMTQuMjUgMTUuMzk2IDE0LjI1IDEzLjVDMTQuMjUgMTEuNjA0IDE0LjI1IDEwLjY1NiAxNC42NjMzIDEwLjExNzRDMTQuOTg2MiA5LjY5NjU5IDE1LjQ2MzEgOS40MjEyOCAxNS45ODg5IDkuMzUyMDVDMTYuNjYyIDkuMjYzNDMgMTcuNDgzIDkuNzM3NDMgMTkuMTI1IDEwLjY4NTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/PlaaylistMinimalistic";
  */
 const PlaaylistMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PlaaylistMinimalistic.displayName = "PlaaylistMinimalistic";
-export default PlaaylistMinimalistic;
+PlaaylistMinimalistic.displayName = "PlaaylistMinimalistic"
+export default PlaaylistMinimalistic

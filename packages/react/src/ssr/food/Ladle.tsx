@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/food/Ladle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/food/Ladle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjY4NDIxIDIuNzVDNC4wNjM2OSAyLjc1IDIuNzUgNC4wNjM2OSAyLjc1IDUuNjg0MjFDMi43NSA2LjA5ODQyIDIuNDE0MjEgNi40MzQyMSAyIDYuNDM0MjFDMS41ODU3OSA2LjQzNDIxIDEuMjUgNi4wOTg0MiAxLjI1IDUuNjg0MjFDMS4yNSAzLjIzNTI2IDMuMjM1MjYgMS4yNSA1LjY4NDIxIDEuMjVDOC4xMzMxNiAxLjI1IDEwLjExODQgMy4yMzUyNiAxMC4xMTg0IDUuNjg0MjFWMTEuNzQxQzkuNzY2MDMgMTEuOTIwMiA5LjQzNDYyIDEyLjEyNTMgOS4xNDQ0IDEyLjM1OTRDOC45NzE0NSAxMi40OTg5IDguNzg3MyAxMi42NzA2IDguNjE4NDIgMTIuODc0NVY1LjY4NDIxQzguNjE4NDIgNC4wNjM2OSA3LjMwNDczIDIuNzUgNS42ODQyMSAyLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOC42MzMwOCAxNi4xNDNDOC44Njk0NyAxOS44MzE1IDExLjkzNiAyMi43NSAxNS42ODQyIDIyLjc1QzE5LjM1NiAyMi43NSAyMi4zNzM2IDE5Ljk0OTMgMjIuNzE3NCAxNi4zNjc2QzIyLjY0OTEgMTYuNDQxNCAyMi41Nzk0IDE2LjUxMDYgMjIuNTA5NiAxNi41NzUxQzIyLjAwNyAxNy4wMzkyIDIxLjM2NTUgMTcuMzkyMiAyMC43MDc4IDE3LjY1ODNDMTkuMzgzOSAxOC4xOTM5IDE3LjY4ODQgMTguNSAxNiAxOC41QzE0LjMxNDYgMTguNSAxMi41MTQzIDE4LjE5NSAxMS4wOTE4IDE3LjY3NzRDMTAuMzg2NSAxNy40MjA3IDkuNjkyMDkgMTcuMDgyNCA5LjE0NDM5IDE2LjY0MDZDOC45NzY0MyAxNi41MDUxIDguNzk3OTIgMTYuMzM5MyA4LjYzMzA4IDE2LjE0M1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDE0LjVDMjIgMTUuODgwNyAxOS4wNTM5IDE3IDE2IDE3QzEyLjk0NjEgMTcgOS41IDE1Ljg4MDcgOS41IDE0LjVDOS41IDEzLjExOTMgMTIuOTQ2MSAxMiAxNiAxMkMxOS4wNTM5IDEyIDIyIDEzLjExOTMgMjIgMTQuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/Ladle";
  */
 const Ladle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Ladle.displayName = "Ladle";
-export default Ladle;
+Ladle.displayName = "Ladle"
+export default Ladle

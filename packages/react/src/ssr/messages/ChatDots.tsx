@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatDots";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatDots"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMDg2NyAyMS4zODc3TDEzLjYyODggMjAuNDcxOEMxNC4wNDkyIDE5Ljc2MTQgMTQuMjU5NSAxOS40MDYyIDE0LjU5NzIgMTkuMjA5OEMxNC45MzQ5IDE5LjAxMzQgMTUuMzYgMTkuMDA2MSAxNi4yMTA0IDE4Ljk5MTVDMTcuNDY1OCAxOC45Njk4IDE4LjI1MzEgMTguODkyOSAxOC45MTM0IDE4LjYxOTRDMjAuMTM4NiAxOC4xMTE5IDIxLjExMTkgMTcuMTM4NiAyMS42MTk0IDE1LjkxMzRDMjIgMTQuOTk0NiAyMiAxMy44Mjk3IDIyIDExLjVWMTAuNUMyMiA3LjIyNjU3IDIyIDUuNTg5ODUgMjEuMjYzMiA0LjM4NzUxQzIwLjg1MDkgMy43MTQ3MyAyMC4yODUzIDMuMTQ5MDggMTkuNjEyNSAyLjczNjhDMTguNDEwMSAyIDE2Ljc3MzQgMiAxMy41IDJIMTAuNUM3LjIyNjU3IDIgNS41ODk4NSAyIDQuMzg3NTEgMi43MzY4QzMuNzE0NzMgMy4xNDkwOCAzLjE0OTA4IDMuNzE0NzMgMi43MzY4IDQuMzg3NTFDMiA1LjU4OTg1IDIgNy4yMjY1NyAyIDEwLjVWMTEuNUMyIDEzLjgyOTcgMiAxNC45OTQ2IDIuMzgwNiAxNS45MTM0QzIuODg4MDcgMTcuMTM4NiAzLjg2MTQ0IDE4LjExMTkgNS4wODY1OCAxOC42MTk0QzUuNzQ2ODkgMTguODkyOSA2LjUzNDIyIDE4Ljk2OTggNy43ODk1OCAxOC45OTE1QzguNjM5OTIgMTkuMDA2MSA5LjA2NTA5IDE5LjAxMzQgOS40MDI3OSAxOS4yMDk4QzkuNzQwNDkgMTkuNDA2MyA5Ljk1MDczIDE5Ljc2MTQgMTAuMzcxMiAyMC40NzE4TDEwLjkxMzMgMjEuMzg3N0MxMS4zOTY1IDIyLjIwNCAxMi42MDM1IDIyLjIwNCAxMy4wODY3IDIxLjM4NzdaTTE2IDEyQzE2LjU1MjMgMTIgMTcgMTEuNTUyMyAxNyAxMUMxNyAxMC40NDc3IDE2LjU1MjMgMTAgMTYgMTBDMTUuNDQ3NyAxMCAxNSAxMC40NDc3IDE1IDExQzE1IDExLjU1MjMgMTUuNDQ3NyAxMiAxNiAxMlpNMTMgMTFDMTMgMTEuNTUyMyAxMi41NTIzIDEyIDEyIDEyQzExLjQ0NzcgMTIgMTEgMTEuNTUyMyAxMSAxMUMxMSAxMC40NDc3IDExLjQ0NzcgMTAgMTIgMTBDMTIuNTUyMyAxMCAxMyAxMC40NDc3IDEzIDExWk04IDEyQzguNTUyMjggMTIgOSAxMS41NTIzIDkgMTFDOSAxMC40NDc3IDguNTUyMjggMTAgOCAxMEM3LjQ0NzcyIDEwIDcgMTAuNDQ3NyA3IDExQzcgMTEuNTUyMyA3LjQ0NzcyIDEyIDggMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatDots";
  */
 const ChatDots: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatDots.displayName = "ChatDots";
-export default ChatDots;
+ChatDots.displayName = "ChatDots"
+export default ChatDots

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/tools/AlignHorizontalCenter";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/tools/AlignHorizontalCenter"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSA3LjVDMTkgNi41NjUzOCAxOSA2LjA5ODA4IDE4Ljc5OSA1Ljc1QzE4LjY2NzQgNS41MjE5NyAxOC40NzggNS4zMzI2MSAxOC4yNSA1LjIwMDk2QzE3LjkwMTkgNSAxNy40MzQ2IDUgMTYuNSA1TDEyLjc1IDVMMTIuNzUgMkMxMi43NSAxLjU4NTc5IDEyLjQxNDIgMS4yNSAxMiAxLjI1QzExLjU4NTggMS4yNSAxMS4yNSAxLjU4NTc5IDExLjI1IDJMMTEuMjUgNUw3LjUgNUM2LjU2NTM4IDUgNi4wOTgwOCA1IDUuNzUgNS4yMDA5NkM1LjUyMTk3IDUuMzMyNjEgNS4zMzI2MSA1LjUyMTk3IDUuMjAwOTYgNS43NUM1IDYuMDk4MDcgNSA2LjU2NTM4IDUgNy41QzUgOC40MzQ2MSA1IDguOTAxOTIgNS4yMDA5NiA5LjI1QzUuMzMyNjEgOS40NzgwMyA1LjUyMTk3IDkuNjY3MzkgNS43NSA5Ljc5OTA0QzYuMDk4MDggMTAgNi41NjUzOCAxMCA3LjUgMTBIMTEuMjVMMTEuMjUgMTRIOS41QzguNTY1MzggMTQgOC4wOTgwOCAxNCA3Ljc1IDE0LjIwMUM3LjUyMTk3IDE0LjMzMjYgNy4zMzI2MSAxNC41MjIgNy4yMDA5NiAxNC43NUM3IDE1LjA5ODEgNyAxNS41NjU0IDcgMTYuNUM3IDE3LjQzNDYgNyAxNy45MDE5IDcuMjAwOTYgMTguMjVDNy4zMzI2MSAxOC40NzggNy41MjE5NyAxOC42Njc0IDcuNzUgMTguNzk5QzguMDk4MDggMTkgOC41NjUzOCAxOSA5LjUgMTlIMTEuMjVMMTEuMjUgMjJDMTEuMjUgMjIuNDE0MiAxMS41ODU4IDIyLjc1IDEyIDIyLjc1QzEyLjQxNDIgMjIuNzUgMTIuNzUgMjIuNDE0MiAxMi43NSAyMkwxMi43NSAxOUgxNC41QzE1LjQzNDYgMTkgMTUuOTAxOSAxOSAxNi4yNSAxOC43OTlDMTYuNDc4IDE4LjY2NzQgMTYuNjY3NCAxOC40NzggMTYuNzk5IDE4LjI1QzE3IDE3LjkwMTkgMTcgMTcuNDM0NiAxNyAxNi41QzE3IDE1LjU2NTQgMTcgMTUuMDk4MSAxNi43OTkgMTQuNzVDMTYuNjY3NCAxNC41MjIgMTYuNDc4IDE0LjMzMjYgMTYuMjUgMTQuMjAxQzE1LjkwMTkgMTQgMTUuNDM0NiAxNCAxNC41IDE0SDEyLjc1TDEyLjc1IDEwSDE2LjVDMTcuNDM0NiAxMCAxNy45MDE5IDEwIDE4LjI1IDkuNzk5MDRDMTguNDc4IDkuNjY3MzkgMTguNjY3NCA5LjQ3ODAzIDE4Ljc5OSA5LjI1QzE5IDguOTAxOTIgMTkgOC40MzQ2MiAxOSA3LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/AlignHorizontalCenter";
  */
 const AlignHorizontalCenter: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlignHorizontalCenter.displayName = "AlignHorizontalCenter";
-export default AlignHorizontalCenter;
+AlignHorizontalCenter.displayName = "AlignHorizontalCenter"
+export default AlignHorizontalCenter

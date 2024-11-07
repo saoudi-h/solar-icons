@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/messages/ChatRoundDots";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/messages/ChatRoundDots"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxMy41OTk3IDIuMzc1NjIgMTUuMTExNiAzLjA0MzQ2IDE2LjQ1MjVDMy4yMjA5NCAxNi44MDg4IDMuMjgwMDEgMTcuMjE2MSAzLjE3NzEyIDE3LjYwMDZMMi41ODE1MSAxOS44MjY3QzIuMzIyOTUgMjAuNzkzIDMuMjA3MDEgMjEuNjc3IDQuMTczMzUgMjEuNDE4NUw2LjM5OTM5IDIwLjgyMjlDNi43ODM5MyAyMC43MiA3LjE5MTIxIDIwLjc3OTEgNy41NDc1MyAyMC45NTY1QzguODg4MzYgMjEuNjI0NCAxMC40MDAzIDIyIDEyIDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUgMTJDMTUgMTIuNTUyMyAxNS40NDc3IDEzIDE2IDEzQzE2LjU1MjMgMTMgMTcgMTIuNTUyMyAxNyAxMkMxNyAxMS40NDc3IDE2LjU1MjMgMTEgMTYgMTFDMTUuNDQ3NyAxMSAxNSAxMS40NDc3IDE1IDEyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExIDEyQzExIDEyLjU1MjMgMTEuNDQ3NyAxMyAxMiAxM0MxMi41NTIzIDEzIDEzIDEyLjU1MjMgMTMgMTJDMTMgMTEuNDQ3NyAxMi41NTIzIDExIDEyIDExQzExLjQ0NzcgMTEgMTEgMTEuNDQ3NyAxMSAxMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik03IDEyQzcgMTIuNTUyMyA3LjQ0NzcyIDEzIDggMTNDOC41NTIyOCAxMyA5IDEyLjU1MjMgOSAxMkM5IDExLjQ0NzcgOC41NTIyOCAxMSA4IDExQzcuNDQ3NzIgMTEgNyAxMS40NDc3IDcgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundDots";
  */
 const ChatRoundDots: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundDots.displayName = "ChatRoundDots";
-export default ChatRoundDots;
+ChatRoundDots.displayName = "ChatRoundDots"
+export default ChatRoundDots

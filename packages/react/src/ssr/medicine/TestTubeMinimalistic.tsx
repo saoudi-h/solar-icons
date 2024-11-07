@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/TestTubeMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/TestTubeMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC44NjkyIDIuMjIzNzlDMTQuNTczMSAxLjkyNjMzIDE0LjA5MTkgMS45MjUyNyAxMy43OTQ0IDIuMjIxNDFDMTMuNDk3IDIuNTE3NTYgMTMuNDk1OSAyLjk5ODc2IDEzLjc5MjEgMy4yOTYyMUwxNC40ODU1IDMuOTkyN0w3LjUzNjY3IDEwLjk3MjNMOC4yMjY5MiAxMS4wNDkzQzkuNjE4NzMgMTEuMjA0NyAxMC43MTM2IDEyLjMwNzQgMTAuODY3NiAxMy42OTk0QzEwLjkyNjIgMTQuMjI4OSAxMS4yNjI3IDE0LjY4NDIgMTEuNzQ2MiAxNC44OTQxTDEzLjcxMjkgMTUuNzEwNUwxOS45MzIzIDkuNDYzNjJMMjAuNzAxNCAxMC4yMzYyQzIwLjk5NzYgMTAuNTMzNiAyMS40Nzg4IDEwLjUzNDcgMjEuNzc2MiAxMC4yMzg2QzIyLjA3MzcgOS45NDI0MiAyMi4wNzQ3IDkuNDYxMjIgMjEuNzc4NiA5LjE2Mzc3TDE0Ljg2OTIgMi4yMjM3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTQuMTI4MDYgMTQuMzk2TDYuMTY2MjUgMTIuMzQ4OEw4LjA1ODMzIDEyLjU2QzguNzM5MTggMTIuNjM2IDkuMjgwNSAxMy4xNzY3IDkuMzU2ODEgMTMuODY2NUM5LjQ3NTQgMTQuOTM4NiAxMC4xNTkgMTUuODY1OCAxMS4xNDkyIDE2LjI5MkwxMi41NTM2IDE2Ljg3NUw5LjU3NDg0IDE5Ljg2NjlDOC4wNzA3NSAyMS4zNzc3IDUuNjMyMTUgMjEuMzc3NyA0LjEyODA2IDE5Ljg2NjlDMi42MjM5OCAxOC4zNTYyIDIuNjIzOTggMTUuOTA2OCA0LjEyODA2IDE0LjM5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/TestTubeMinimalistic";
  */
 const TestTubeMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TestTubeMinimalistic.displayName = "TestTubeMinimalistic";
-export default TestTubeMinimalistic;
+TestTubeMinimalistic.displayName = "TestTubeMinimalistic"
+export default TestTubeMinimalistic

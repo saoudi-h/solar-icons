@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/money/Ruble";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/money/Ruble"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy41IDExLjI1SDEwLjc1VjguMkMxMC43NSA4LjEwMzAzIDEwLjc1MDEgOC4wNDUzMSAxMC43NTEzIDguMDAxOEMxMC43NTIgNy45NzQxOSAxMC43NTMxIDcuOTYyMTkgMTAuNzUzMyA3Ljk1OTNDMTAuNzcwOCA3Ljg1MzYyIDEwLjg1MzYgNy43NzA3NyAxMC45NTkzIDcuNzUzMzRDMTAuOTYyMiA3Ljc1MzA1IDEwLjk3NDIgNy43NTIwMSAxMS4wMDE4IDcuNzUxMjZDMTEuMDQ1MyA3Ljc1MDA3IDExLjEwMyA3Ljc1IDExLjIgNy43NUgxMy41QzE0LjQ2NjUgNy43NSAxNS4yNSA4LjUzMzUgMTUuMjUgOS41QzE1LjI1IDEwLjQ2NjUgMTQuNDY2NSAxMS4yNSAxMy41IDExLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlpNOC4yNSAxNEM4LjI1IDEzLjU4NTggOC41ODU3OSAxMy4yNSA5IDEzLjI1SDkuMjVWMTIuNzVIOUM4LjU4NTc5IDEyLjc1IDguMjUgMTIuNDE0MiA4LjI1IDEyQzguMjUgMTEuNTg1OCA4LjU4NTc5IDExLjI1IDkgMTEuMjVIOS4yNUw5LjI0OTk3IDguMTYxNTFDOS4yNDk3OSA4LjAxNTk4IDkuMjQ5NjEgNy44NjQ3MSA5LjI3MTU1IDcuNzI2MjRDOS4zOTAxNSA2Ljk3NzQzIDkuOTc3NDMgNi4zOTAxNSAxMC43MjYyIDYuMjcxNTVDMTAuODY0NyA2LjI0OTYxIDExLjAxNiA2LjI0OTc5IDExLjE2MTUgNi4yNDk5N0wxMy41IDYuMjVDMTUuMjk0OSA2LjI1IDE2Ljc1IDcuNzA1MDcgMTYuNzUgOS41QzE2Ljc1IDExLjI5NDkgMTUuMjk0OSAxMi43NSAxMy41IDEyLjc1SDEwLjc1VjEzLjI1SDEyQzEyLjQxNDIgMTMuMjUgMTIuNzUgMTMuNTg1OCAxMi43NSAxNEMxMi43NSAxNC40MTQyIDEyLjQxNDIgMTQuNzUgMTIgMTQuNzVIMTAuNzVWMTdDMTAuNzUgMTcuNDE0MiAxMC40MTQyIDE3Ljc1IDEwIDE3Ljc1QzkuNTg1NzkgMTcuNzUgOS4yNSAxNy40MTQyIDkuMjUgMTdWMTQuNzVIOUM4LjU4NTc5IDE0Ljc1IDguMjUgMTQuNDE0MiA4LjI1IDE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Ruble";
  */
 const Ruble: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Ruble.displayName = "Ruble";
-export default Ruble;
+Ruble.displayName = "Ruble"
+export default Ruble

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/Programming";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/Programming"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNNi40MjM4NSA5LjUxOTg4QzYuNjg5MDMgOS4yMDE2NyA3LjE2MTk1IDkuMTU4NjggNy40ODAxNiA5LjQyMzg1TDcuNzU2NTggOS42NTQyQzguMzYxNTMgMTAuMTU4MyA4Ljg3NjUzIDEwLjU4NzQgOS4yMzI5NSAxMC45ODIxQzkuNjExNTEgMTEuNDAxMyA5LjkwNjk0IDExLjg4MzQgOS45MDY5NCAxMi41QzkuOTA2OTQgMTMuMTE2NiA5LjYxMTUxIDEzLjU5ODcgOS4yMzI5NSAxNC4wMTc5QzguODc2NTMgMTQuNDEyNiA4LjM2MTUzIDE0Ljg0MTggNy43NTY1OCAxNS4zNDU4TDcuNDgwMTYgMTUuNTc2MkM3LjE2MTk1IDE1Ljg0MTQgNi42ODkwMyAxNS43OTg0IDYuNDIzODUgMTUuNDgwMkM2LjE1ODY4IDE1LjE2MTkgNi4yMDE2NyAxNC42ODkgNi41MTk4OCAxNC40MjM5TDYuNzU0MjggMTQuMjI4NUM3LjQxMjg1IDEzLjY3OTcgNy44NDM0OCAxMy4zMTg1IDguMTE5NjggMTMuMDEyNkM4LjM4MTk2IDEyLjcyMjIgOC40MDY5NCAxMi41ODYgOC40MDY5NCAxMi41QzguNDA2OTQgMTIuNDE0IDguMzgxOTYgMTIuMjc3OSA4LjExOTY4IDExLjk4NzRDNy44NDM0OCAxMS42ODE1IDcuNDEyODUgMTEuMzIwMyA2Ljc1NDI5IDEwLjc3MTVMNi41MTk4OCAxMC41NzYyQzYuMjAxNjcgMTAuMzExIDYuMTU4NjggOS44MzgwOSA2LjQyMzg1IDkuNTE5ODhaTTE3Ljc1IDE1QzE3Ljc1IDE1LjQxNDIgMTcuNDE0MiAxNS43NSAxNyAxNS43NUgxMkMxMS41ODU4IDE1Ljc1IDExLjI1IDE1LjQxNDIgMTEuMjUgMTVDMTEuMjUgMTQuNTg1OCAxMS41ODU4IDE0LjI1IDEyIDE0LjI1SDE3QzE3LjQxNDIgMTQuMjUgMTcuNzUgMTQuNTg1OCAxNy43NSAxNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/Programming";
  */
 const Programming: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Programming.displayName = "Programming";
-export default Programming;
+Programming.displayName = "Programming"
+export default Programming

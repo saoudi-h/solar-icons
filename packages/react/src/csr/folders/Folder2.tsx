@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/folders/Folder2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/folders/Folder2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4wNjkzNSA1LjI1ODM5QzIgNS42MjU5NSAyIDYuMDY3MjIgMiA2Ljk0OTc1VjkuMjVIMjEuOTUzMUMyMS44ODA5IDguMjAxMTcgMjEuNjk3MyA3LjUxMjc2IDIxLjIzMDUgNi45OTM4M0MyMS4xNTk4IDYuOTE1MTQgMjEuMDg0OSA2Ljg0MDI0IDIxLjAwNjIgNi43Njk0NkMyMC4xNTA2IDYgMTguODM0NSA2IDE2LjIwMjEgNkgxNS44Mjg0QzE0LjY3NDcgNiAxNC4wOTc5IDYgMTMuNTYwNCA1Ljg0Njc4QzEzLjI2NTEgNS43NjI2IDEyLjk4MDQgNS42NDQ3MSAxMi43MTIxIDUuNDk1NDNDMTIuMjIzNyA1LjIyMzY3IDExLjgxNTggNC44MTU3OCAxMSA0TDEwLjQ0OTcgMy40NDk3NUMxMC4xNzYzIDMuMTc2MzMgMTAuMDM5NiAzLjAzOTYxIDkuODk1OTQgMi45MjA1MUM5LjI3NjUyIDIuNDA3MDQgOC41MTY2NSAyLjA5MjI5IDcuNzE1NTcgMi4wMTczOEM3LjUyOTc2IDIgNy4zMzY0MiAyIDYuOTQ5NzUgMkM2LjA2NzIyIDIgNS42MjU5NSAyIDUuMjU4MzkgMi4wNjkzNUMzLjY0MDMxIDIuMzc0NjQgMi4zNzQ2NCAzLjY0MDMxIDIuMDY5MzUgNS4yNTgzOVpNMjEuOTk3OCAxMC43NUgyVjE0QzIgMTcuNzcxMiAyIDE5LjY1NjkgMy4xNzE1NyAyMC44Mjg0QzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC44Mjg0QzIyIDE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNFYxMS43OTc5QzIyIDExLjQyMjcgMjEuOTk3OCAxMC43NSAyMS45OTc4IDEwLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/folders/Folder2";
  */
 const Folder2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Folder2.displayName = "Folder2";
-export default Folder2;
+Folder2.displayName = "Folder2"
+export default Folder2

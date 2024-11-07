@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Repeat";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Repeat"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC40Njk2NyAyLjQ2OTY3QzguNzYyNTYgMi4xNzY3OCA5LjIzNzQ0IDIuMTc2NzggOS41MzAzMyAyLjQ2OTY3TDExLjUzMDMgNC40Njk2N0MxMS43NDQ4IDQuNjg0MTcgMTEuODA5IDUuMDA2NzYgMTEuNjkyOSA1LjI4NzAxQzExLjU3NjggNS41NjcyNyAxMS4zMDMzIDUuNzUgMTEgNS43NUg5QzUuNTQ4MjIgNS43NSAyLjc1IDguNTQ4MjIgMi43NSAxMkMyLjc1IDE1LjQ1MTcgNS41NDg0NiAxOC4yNSA5LjAwMDI4IDE4LjI1SDkuNUM5LjkxNDIxIDE4LjI1IDEwLjI1IDE4LjU4NTggMTAuMjUgMTlDMTAuMjUgMTkuNDE0MiA5LjkxNDIxIDE5Ljc1IDkuNSAxOS43NUg5LjAwMDI4QzQuNzIwMTEgMTkuNzUgMS4yNSAxNi4yODAyIDEuMjUgMTJDMS4yNSA3LjcxOTc5IDQuNzE5NzkgNC4yNSA5IDQuMjVIOS4xODkzNEw4LjQ2OTY3IDMuNTMwMzNDOC4xNzY3OCAzLjIzNzQ0IDguMTc2NzggMi43NjI1NiA4LjQ2OTY3IDIuNDY5NjdaTTEzLjc1IDVDMTMuNzUgNC41ODU3OSAxNC4wODU4IDQuMjUgMTQuNSA0LjI1SDE1QzE5LjI4MDIgNC4yNSAyMi43NSA3LjcxOTc5IDIyLjc1IDEyQzIyLjc1IDE2LjI4MDIgMTkuMjgwMiAxOS43NSAxNSAxOS43NUgxNC44MTA3TDE1LjUzMDMgMjAuNDY5N0MxNS44MjMyIDIwLjc2MjYgMTUuODIzMiAyMS4yMzc0IDE1LjUzMDMgMjEuNTMwM0MxNS4yMzc0IDIxLjgyMzIgMTQuNzYyNiAyMS44MjMyIDE0LjQ2OTcgMjEuNTMwM0wxMi40Njk3IDE5LjUzMDNDMTIuMjU1MiAxOS4zMTU4IDEyLjE5MSAxOC45OTMyIDEyLjMwNzEgMTguNzEzQzEyLjQyMzIgMTguNDMyNyAxMi42OTY3IDE4LjI1IDEzIDE4LjI1SDE1QzE4LjQ1MTggMTguMjUgMjEuMjUgMTUuNDUxOCAyMS4yNSAxMkMyMS4yNSA4LjU0ODIyIDE4LjQ1MTggNS43NSAxNSA1Ljc1SDE0LjVDMTQuMDg1OCA1Ljc1IDEzLjc1IDUuNDE0MjEgMTMuNzUgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Repeat";
  */
 const Repeat: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Repeat.displayName = "Repeat";
-export default Repeat;
+Repeat.displayName = "Repeat"
+export default Repeat

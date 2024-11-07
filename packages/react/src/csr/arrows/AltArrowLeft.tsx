@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/AltArrowLeft";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/AltArrowLeft"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjE2NDg1IDExLjYyOTZMMTQuNzk1MyA1LjE5OTlDMTUuMjA5MSA0Ljc5ODY5IDE2IDUuMDQxODkgMTYgNS41NzAzTDE2IDE4LjQyOTdDMTYgMTguOTU4MSAxNS4yMDkxIDE5LjIwMTMgMTQuNzk1MyAxOC44MDAxTDguMTY0ODUgMTIuMzcwNEM3Ljk0NTA1IDEyLjE1NzMgNy45NDUwNSAxMS44NDI3IDguMTY0ODUgMTEuNjI5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/AltArrowLeft";
  */
 const AltArrowLeft: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AltArrowLeft.displayName = "AltArrowLeft";
-export default AltArrowLeft;
+AltArrowLeft.displayName = "AltArrowLeft"
+export default AltArrowLeft

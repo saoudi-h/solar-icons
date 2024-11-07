@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Weigher";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Weigher"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMyAxMEMzIDYuMjI4NzYgMyA0LjM0MzE1IDQuMTcxNTcgMy4xNzE1N0M1LjM0MzE1IDIgNy4yMjg3NiAyIDExIDJIMTNDMTYuNzcxMiAyIDE4LjY1NjkgMiAxOS44Mjg0IDMuMTcxNTdDMjEgNC4zNDMxNSAyMSA2LjIyODc2IDIxIDEwVjE0QzIxIDE3Ljc3MTIgMjEgMTkuNjU2OSAxOS44Mjg0IDIwLjgyODRDMTguNjU2OSAyMiAxNi43NzEyIDIyIDEzIDIySDExQzcuMjI4NzYgMjIgNS4zNDMxNSAyMiA0LjE3MTU3IDIwLjgyODRDMyAxOS42NTY5IDMgMTcuNzcxMiAzIDE0VjEwWk03LjI1IDE4QzcuMjUgMTcuNTg1OCA3LjU4NTc5IDE3LjI1IDggMTcuMjVIMTZDMTYuNDE0MiAxNy4yNSAxNi43NSAxNy41ODU4IDE2Ljc1IDE4QzE2Ljc1IDE4LjQxNDIgMTYuNDE0MiAxOC43NSAxNiAxOC43NUg4QzcuNTg1NzkgMTguNzUgNy4yNSAxOC40MTQyIDcuMjUgMThaTTE1LjM1NTMgNi4zMDk4NEMxMy4xMzM4IDUuODk2NzIgMTAuODY2MyA1Ljg5NjcyIDguNjQ0NzQgNi4zMDk4NEw4LjE2ODk3IDYuMzk4MzFDNy4yODg3IDYuNTYyIDYuNzY5NDIgNy41OTE1OCA3LjEwMDg1IDguNTE2MDdMNy44NDUyNSAxMC41OTI1QzcuOTUzMTQgMTAuODkzNCA4LjI0MzcgMTEuMDU5MiA4LjUyNTUzIDEwLjk4MDZDOC43MDI4MSAxMC45MzExIDguODgwNzMgMTAuODg1NSA5LjA1OTE4IDEwLjg0MzdMOC40MTk4NCA4Ljg1NEM4LjI2MzUxIDguMzY3NDggOC40OTAyNyA3LjgzMTY4IDguOTI2MzIgNy42NTcyNUM5LjM2MjM3IDcuNDgyODMgOS44NDI1OSA3LjczNTg0IDkuOTk4OTIgOC4yMjIzNkwxMC43NTE0IDEwLjU2NDFDMTIuMzMwNCAxMC40MSAxMy45MjY3IDEwLjU0ODggMTUuNDc0NiAxMC45ODA2QzE1Ljc1NjQgMTEuMDU5MiAxNi4wNDcgMTAuODkzNCAxNi4xNTQ4IDEwLjU5MjVMMTYuODk5MiA4LjUxNjA3QzE3LjIzMDcgNy41OTE1OCAxNi43MTE0IDYuNTYyIDE1LjgzMTEgNi4zOTgzMUwxNS4zNTUzIDYuMzA5ODRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Weigher";
  */
 const Weigher: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Weigher.displayName = "Weigher";
-export default Weigher;
+Weigher.displayName = "Weigher"
+export default Weigher

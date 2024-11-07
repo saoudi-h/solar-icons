@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/VideocameraRecord";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/VideocameraRecord"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMi41VjExLjVDMiA4LjIxMjUyIDIgNi41Njg3OCAyLjkwNzk2IDUuNDYyNDNDMy4wNzQxOCA1LjI1OTg5IDMuMjU5ODkgNS4wNzQxOCAzLjQ2MjQzIDQuOTA3OTZDNC41Njg3OCA0IDYuMjEyNTIgNCA5LjUgNEMxMi43ODc1IDQgMTQuNDMxMiA0IDE1LjUzNzYgNC45MDc5NkMxNS43NDAxIDUuMDc0MTggMTUuOTI1OCA1LjI1OTg5IDE2LjA5MiA1LjQ2MjQzQzE2Ljc5MzYgNi4zMTczIDE2Ljk1MzEgNy40OTMwMyAxNi45ODkzIDkuNTAwMDJMMTcuNjU4NCA5LjE3MDgyQzE5LjYwNDIgOC4xOTc4OCAyMC41NzcyIDcuNzExNCAyMS4yODg2IDguMTUxMDdDMjIgOC41OTA3NSAyMiA5LjY3ODUzIDIyIDExLjg1NDFWMTIuMTQ1OUMyMiAxNC4zMjE1IDIyIDE1LjQwOTMgMjEuMjg4NiAxNS44NDg5QzIwLjU3NzIgMTYuMjg4NiAxOS42MDQyIDE1LjgwMjEgMTcuNjU4NCAxNC44MjkyTDE2Ljk4OTMgMTQuNUMxNi45NTMxIDE2LjUwNyAxNi43OTM2IDE3LjY4MjcgMTYuMDkyIDE4LjUzNzZDMTUuOTI1OCAxOC43NDAxIDE1Ljc0MDEgMTguOTI1OCAxNS41Mzc2IDE5LjA5MkMxNC40MzEyIDIwIDEyLjc4NzUgMjAgOS41IDIwQzYuMjEyNTIgMjAgNC41Njg3OCAyMCAzLjQ2MjQzIDE5LjA5MkMzLjI1OTg5IDE4LjkyNTggMy4wNzQxOCAxOC43NDAxIDIuOTA3OTYgMTguNTM3NkMyIDE3LjQzMTIgMiAxNS43ODc1IDIgMTIuNVpNMTMuNTYwNyA5LjU2MDY2QzE0LjE0NjQgOC45NzQ4NyAxNC4xNDY0IDguMDI1MTMgMTMuNTYwNyA3LjQzOTM0QzEyLjk3NDkgNi44NTM1NSAxMi4wMjUxIDYuODUzNTUgMTEuNDM5MyA3LjQzOTM0QzEwLjg1MzYgOC4wMjUxMyAxMC44NTM2IDguOTc0ODcgMTEuNDM5MyA5LjU2MDY2QzEyLjAyNTEgMTAuMTQ2NCAxMi45NzQ5IDEwLjE0NjQgMTMuNTYwNyA5LjU2MDY2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/VideocameraRecord";
  */
 const VideocameraRecord: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-VideocameraRecord.displayName = "VideocameraRecord";
-export default VideocameraRecord;
+VideocameraRecord.displayName = "VideocameraRecord"
+export default VideocameraRecord

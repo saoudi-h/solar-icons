@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/school/BookmarkCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/school/BookmarkCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xNiAxNC4wNDU1VjExLjU0ODhDMTYgOS40MDQ0NSAxNiA4LjMzMjMgMTUuNDE0MiA3LjY2NjE1QzE0LjgyODQgNyAxMy44ODU2IDcgMTIgN0MxMC4xMTQ0IDcgOS4xNzE1NyA3IDguNTg1NzkgNy42NjYxNUM4IDguMzMyMyA4IDkuNDA0NDUgOCAxMS41NDg4VjE0LjA0NTVDOCAxNS41OTM3IDggMTYuMzY3OSA4LjMyNjI3IDE2LjcwNjJDOC40ODE4NyAxNi44Njc1IDguNjc4MjkgMTYuOTY4OCA4Ljg4NzUyIDE2Ljk5NThDOS4zMjYyMyAxNy4wNTIyIDkuODM4NTUgMTYuNTQyNSAxMC44NjMyIDE1LjUyMjlDMTEuMzE2MSAxNS4wNzIyIDExLjU0MjYgMTQuODQ2OSAxMS44MDQ2IDE0Ljc4NzVDMTEuOTMzNiAxNC43NTgzIDEyLjA2NjQgMTQuNzU4MyAxMi4xOTU0IDE0Ljc4NzVDMTIuNDU3NCAxNC44NDY5IDEyLjY4MzkgMTUuMDcyMiAxMy4xMzY4IDE1LjUyMjlDMTQuMTYxNSAxNi41NDI1IDE0LjY3MzggMTcuMDUyMiAxNS4xMTI1IDE2Ljk5NThDMTUuMzIxNyAxNi45Njg4IDE1LjUxODEgMTYuODY3NSAxNS42NzM3IDE2LjcwNjJDMTYgMTYuMzY3OSAxNiAxNS41OTM3IDE2IDE0LjA0NTVaIiBmaWxsPSIjMUMyNzREIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/BookmarkCircle";
  */
 const BookmarkCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BookmarkCircle.displayName = "BookmarkCircle";
-export default BookmarkCircle;
+BookmarkCircle.displayName = "BookmarkCircle"
+export default BookmarkCircle

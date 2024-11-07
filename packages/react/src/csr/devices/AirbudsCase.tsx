@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/AirbudsCase";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/AirbudsCase"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjAwMTU2IDkuNzVDMyAxMC4xNDIxIDMgMTAuNTU4IDMgMTFWMTNDMyAxNi43NDk3IDMgMTguNjI0NiAzLjk1NDkxIDE5LjkzODlDNC4yNjMzMSAyMC4zNjM0IDQuNjM2NiAyMC43MzY3IDUuMDYxMDcgMjEuMDQ1MUM2LjM3NTQgMjIgOC4yNTAyNyAyMiAxMiAyMkMxNS43NDk3IDIyIDE3LjYyNDYgMjIgMTguOTM4OSAyMS4wNDUxQzE5LjM2MzQgMjAuNzM2NyAxOS43MzY3IDIwLjM2MzQgMjAuMDQ1MSAxOS45Mzg5QzIxIDE4LjYyNDYgMjEgMTYuNzQ5NyAyMSAxM1YxMUMyMSAxMC41NTggMjEgMTAuMTQyMSAyMC45OTg0IDkuNzVIMTcuNjQ2NUMxNy4zMiAxMC45MDQzIDE2LjI1ODggMTEuNzUgMTUgMTEuNzVIOUM3Ljc0MTIyIDExLjc1IDYuNjc5OTggMTAuOTA0MyA2LjM1MzUyIDkuNzVIMy4wMDE1NloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMuMDIxMjkgOC4yNUg2LjM1MzUyQzYuNjc5OTggNy4wOTU3NSA3Ljc0MTIyIDYuMjUgOSA2LjI1SDE1QzE2LjI1ODggNi4yNSAxNy4zMiA3LjA5NTc1IDE3LjY0NjUgOC4yNUgyMC45Nzg3QzIwLjkyNDMgNi4yMzkyNCAyMC43MzEyIDUuMDA1NDYgMjAuMDQ1MSA0LjA2MTA3QzE5LjczNjcgMy42MzY2IDE5LjM2MzQgMy4yNjMzMSAxOC45Mzg5IDIuOTU0OTFDMTcuNjI0NiAyIDE1Ljc0OTcgMiAxMiAyQzguMjUwMjcgMiA2LjM3NTQgMiA1LjA2MTA3IDIuOTU0OTFDNC42MzY2IDMuMjYzMzEgNC4yNjMzMSAzLjYzNjYgMy45NTQ5MSA0LjA2MTA3QzMuMjY4NzggNS4wMDU0NiAzLjA3NTY1IDYuMjM5MjQgMy4wMjEyOSA4LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNy43NSA5QzcuNzUgOC4zMDk2NCA4LjMwOTY0IDcuNzUgOSA3Ljc1SDE1QzE1LjY5MDQgNy43NSAxNi4yNSA4LjMwOTY0IDE2LjI1IDlDMTYuMjUgOS42OTAzNiAxNS42OTA0IDEwLjI1IDE1IDEwLjI1SDlDOC4zMDk2NCAxMC4yNSA3Ljc1IDkuNjkwMzYgNy43NSA5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/AirbudsCase";
  */
 const AirbudsCase: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AirbudsCase.displayName = "AirbudsCase";
-export default AirbudsCase;
+AirbudsCase.displayName = "AirbudsCase"
+export default AirbudsCase

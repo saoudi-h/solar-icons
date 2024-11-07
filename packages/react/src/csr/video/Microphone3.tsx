@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Microphone3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Microphone3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNCA5QzQuNDE0MjEgOSA0Ljc1IDkuMzM1NzkgNC43NSA5Ljc1VjEwLjc1QzQuNzUgMTQuNzU0MSA3Ljk5NTk0IDE4IDEyIDE4QzE2LjAwNDEgMTggMTkuMjUgMTQuNzU0MSAxOS4yNSAxMC43NVY5Ljc1QzE5LjI1IDkuMzM1NzkgMTkuNTg1OCA5IDIwIDlDMjAuNDE0MiA5IDIwLjc1IDkuMzM1NzkgMjAuNzUgOS43NVYxMC43NUMyMC43NSAxNS4zMjk4IDE3LjIzMTQgMTkuMDg3OSAxMi43NSAxOS40NjgzVjIxLjc1QzEyLjc1IDIyLjE2NDIgMTIuNDE0MiAyMi41IDEyIDIyLjVDMTEuNTg1OCAyMi41IDExLjI1IDIyLjE2NDIgMTEuMjUgMjEuNzVWMTkuNDY4M0M2Ljc2ODYgMTkuMDg3OSAzLjI1IDE1LjMyOTggMy4yNSAxMC43NVY5Ljc1QzMuMjUgOS4zMzU3OSAzLjU4NTc5IDkgNCA5WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDJDOC44MjQzNiAyIDYuMjUgNC41NzQzNiA2LjI1IDcuNzVWMTAuNzVDNi4yNSAxMy45MjU2IDguODI0MzYgMTYuNSAxMiAxNi41QzE1LjE3NTYgMTYuNSAxNy43NSAxMy45MjU2IDE3Ljc1IDEwLjc1VjcuNzVDMTcuNzUgNC41NzQzNiAxNS4xNzU2IDIgMTIgMlpNMTQgMTEuNUMxNC40MTQyIDExLjUgMTQuNzUgMTEuMTY0MiAxNC43NSAxMC43NUMxNC43NSAxMC4zMzU4IDE0LjQxNDIgMTAgMTQgMTBIMTBDOS41ODU3OSAxMCA5LjI1IDEwLjMzNTggOS4yNSAxMC43NUM5LjI1IDExLjE2NDIgOS41ODU3OSAxMS41IDEwIDExLjVIMTRaTTEzLjc1IDcuNzVDMTMuNzUgOC4xNjQyMSAxMy40MTQyIDguNSAxMyA4LjVIMTFDMTAuNTg1OCA4LjUgMTAuMjUgOC4xNjQyMSAxMC4yNSA3Ljc1QzEwLjI1IDcuMzM1NzkgMTAuNTg1OCA3IDExIDdIMTNDMTMuNDE0MiA3IDEzLjc1IDcuMzM1NzkgMTMuNzUgNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Microphone3";
  */
 const Microphone3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Microphone3.displayName = "Microphone3";
-export default Microphone3;
+Microphone3.displayName = "Microphone3"
+export default Microphone3

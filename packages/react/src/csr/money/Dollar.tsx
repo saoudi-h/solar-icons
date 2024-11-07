@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/Dollar";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/Dollar"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS4yNSA3Ljg0NzQ4QzEwLjMxNDEgOC4xMDMzOSA5Ljc1IDguODIxNTQgOS43NSA5LjVDOS43NSAxMC4xNzg1IDEwLjMxNDEgMTAuODk2NiAxMS4yNSAxMS4xNTI1VjcuODQ3NDhaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi43NSAxMi44NDc1VjE2LjE1MjVDMTMuNjg1OSAxNS44OTY2IDE0LjI1IDE1LjE3ODUgMTQuMjUgMTQuNUMxNC4yNSAxMy44MjE1IDEzLjY4NTkgMTMuMTAzNCAxMi43NSAxMi44NDc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlpNMTIgNS4yNUMxMi40MTQyIDUuMjUgMTIuNzUgNS41ODU3OSAxMi43NSA2VjYuMzE2NzNDMTQuMzgwNCA2LjYwODY3IDE1Ljc1IDcuODMzNjEgMTUuNzUgOS41QzE1Ljc1IDkuOTE0MjEgMTUuNDE0MiAxMC4yNSAxNSAxMC4yNUMxNC41ODU4IDEwLjI1IDE0LjI1IDkuOTE0MjEgMTQuMjUgOS41QzE0LjI1IDguODIxNTQgMTMuNjg1OSA4LjEwMzM5IDEyLjc1IDcuODQ3NDhWMTEuMzE2N0MxNC4zODA0IDExLjYwODcgMTUuNzUgMTIuODMzNiAxNS43NSAxNC41QzE1Ljc1IDE2LjE2NjQgMTQuMzgwNCAxNy4zOTEzIDEyLjc1IDE3LjY4MzNWMThDMTIuNzUgMTguNDE0MiAxMi40MTQyIDE4Ljc1IDEyIDE4Ljc1QzExLjU4NTggMTguNzUgMTEuMjUgMTguNDE0MiAxMS4yNSAxOFYxNy42ODMzQzkuNjE5NTcgMTcuMzkxMyA4LjI1IDE2LjE2NjQgOC4yNSAxNC41QzguMjUgMTQuMDg1OCA4LjU4NTc5IDEzLjc1IDkgMTMuNzVDOS40MTQyMSAxMy43NSA5Ljc1IDE0LjA4NTggOS43NSAxNC41QzkuNzUgMTUuMTc4NSAxMC4zMTQxIDE1Ljg5NjYgMTEuMjUgMTYuMTUyNVYxMi42ODMzQzkuNjE5NTcgMTIuMzkxMyA4LjI1IDExLjE2NjQgOC4yNSA5LjVDOC4yNSA3LjgzMzYxIDkuNjE5NTcgNi42MDg2NyAxMS4yNSA2LjMxNjczVjZDMTEuMjUgNS41ODU3OSAxMS41ODU4IDUuMjUgMTIgNS4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Dollar";
  */
 const Dollar: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Dollar.displayName = "Dollar";
-export default Dollar;
+Dollar.displayName = "Dollar"
+export default Dollar

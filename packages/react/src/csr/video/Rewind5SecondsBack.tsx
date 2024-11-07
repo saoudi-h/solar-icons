@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Rewind5SecondsBack";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Rewind5SecondsBack"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuMTc0NSA4LjYwNDcyQzEwLjM0NDcgOC4wOTQyOSAxMC44MjIzIDcuNzUgMTEuMzYwNCA3Ljc1SDE0QzE0LjQxNDIgNy43NSAxNC43NSA4LjA4NTc5IDE0Ljc1IDguNUMxNC43NSA4LjkxNDIxIDE0LjQxNDIgOS4yNSAxNCA5LjI1SDExLjU0MDZMMTEuMDQwNiAxMC43NUgxMkMxMy41MTg4IDEwLjc1IDE0Ljc1IDExLjk4MTIgMTQuNzUgMTMuNUMxNC43NSAxNS4wMTg4IDEzLjUxODggMTYuMjUgMTIgMTYuMjVIMTBDOS41ODU3OSAxNi4yNSA5LjI1IDE1LjkxNDIgOS4yNSAxNS41QzkuMjUgMTUuMDg1OCA5LjU4NTc5IDE0Ljc1IDEwIDE0Ljc1SDEyQzEyLjY5MDQgMTQuNzUgMTMuMjUgMTQuMTkwNCAxMy4yNSAxMy41QzEzLjI1IDEyLjgwOTYgMTIuNjkwNCAxMi4yNSAxMiAxMi4yNUgxMC42OTM3QzkuODQwNTIgMTIuMjUgOS4yMzgwNSAxMS40MTQxIDkuNTA3ODYgMTAuNjA0N0wxMC4xNzQ1IDguNjA0NzJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuMzI0IDEuNjc1MTFDMTEuNDQ4OSAxLjQxNTI2IDExLjcxMTcgMS4yNSAxMiAxLjI1QzEyLjczNTMgMS4yNSAxMy40NTQxIDEuMzIzOTQgMTQuMTQ5MiAxLjQ2NTAzQzE5LjA1NjMgMi40NjExMiAyMi43NSA2Ljc5ODM3IDIyLjc1IDEyQzIyLjc1IDE3LjkzNzEgMTcuOTM3MSAyMi43NSAxMiAyMi43NUM2LjA2Mjk0IDIyLjc1IDEuMjUgMTcuOTM3MSAxLjI1IDEyQzEuMjUgNy41OTA2NSAzLjkwNDU5IDMuODAyOTggNy42OTk3MiAyLjE0NDgyQzguMDc5MjkgMS45Nzg5OCA4LjUyMTQzIDIuMTUyMjQgOC42ODcyNiAyLjUzMTgxQzguODUzMSAyLjkxMTM3IDguNjc5ODQgMy4zNTM1MSA4LjMwMDI4IDMuNTE5MzVDNS4wMzE3OSA0Ljk0NzQyIDIuNzUgOC4yMDgwOCAyLjc1IDEyQzIuNzUgMTcuMTA4NiA2Ljg5MTM3IDIxLjI1IDEyIDIxLjI1QzE3LjEwODYgMjEuMjUgMjEuMjUgMTcuMTA4NiAyMS4yNSAxMkMyMS4yNSA3Ljg0OTUzIDE4LjUxNTggNC4zMzYyMiAxNC43NSAzLjE2NTQ0VjQuNUMxNC43NSA0LjgxODUyIDE0LjU0ODggNS4xMDIyOSAxNC4yNDgzIDUuMjA3NzJDMTMuOTQ3NyA1LjMxMzE1IDEzLjYxMzMgNS4yMTcyNCAxMy40MTQzIDQuOTY4NTJMMTEuNDE0MyAyLjQ2ODUyQzExLjIzNDIgMi4yNDMzOSAxMS4xOTkxIDEuOTM0OTYgMTEuMzI0IDEuNjc1MTFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Rewind5SecondsBack";
  */
 const Rewind5SecondsBack: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Rewind5SecondsBack.displayName = "Rewind5SecondsBack";
-export default Rewind5SecondsBack;
+Rewind5SecondsBack.displayName = "Rewind5SecondsBack"
+export default Rewind5SecondsBack

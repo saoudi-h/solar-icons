@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/SquareSortVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/SquareSortVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTcuNTU0OTUgMTIuNzQ1NUM3LjI3NjMyIDEyLjQzOSA2LjgwMTk5IDEyLjQxNjQgNi40OTU0OSAxMi42OTVDNi4xODkgMTIuOTczNyA2LjE2NjQxIDEzLjQ0OCA2LjQ0NTA0IDEzLjc1NDVMOC45NDUwNCAxNi41MDQ1QzkuMDg3MTkgMTYuNjYwOSA5LjI4ODY5IDE2Ljc1IDkuNSAxNi43NUM5LjcxMTMxIDE2Ljc1IDkuOTEyODEgMTYuNjYwOSAxMC4wNTUgMTYuNTA0NUwxMi41NTUgMTMuNzU0NUMxMi44MzM2IDEzLjQ0OCAxMi44MTEgMTIuOTczNyAxMi41MDQ1IDEyLjY5NUMxMi4xOTggMTIuNDE2NCAxMS43MjM3IDEyLjQzOSAxMS40NDUgMTIuNzQ1NUwxMC4yNSAxNC4wNlY4QzEwLjI1IDcuNTg1NzkgOS45MTQyMSA3LjI1IDkuNSA3LjI1QzkuMDg1NzkgNy4yNSA4Ljc1IDcuNTg1NzkgOC43NSA4VjE0LjA2TDcuNTU0OTUgMTIuNzQ1NVpNMTEuNDk1NSAxMS4zMDVDMTEuODAyIDExLjU4MzYgMTIuMjc2MyAxMS41NjEgMTIuNTU1IDExLjI1NDVMMTMuNzUgOS45Mzk5NUwxMy43NSAxNkMxMy43NSAxNi40MTQyIDE0LjA4NTggMTYuNzUgMTQuNSAxNi43NUMxNC45MTQyIDE2Ljc1IDE1LjI1IDE2LjQxNDIgMTUuMjUgMTZMMTUuMjUgOS45Mzk5NUwxNi40NDUgMTEuMjU0NUMxNi43MjM3IDExLjU2MSAxNy4xOTggMTEuNTgzNiAxNy41MDQ1IDExLjMwNUMxNy44MTEgMTEuMDI2MyAxNy44MzM2IDEwLjU1MiAxNy41NTUgMTAuMjQ1NUwxNS4wNTUgNy40OTU0OUMxNC45MTI4IDcuMzM5MTQgMTQuNzExMyA3LjI1IDE0LjUgNy4yNUMxNC4yODg3IDcuMjUgMTQuMDg3MiA3LjMzOTE0IDEzLjk0NSA3LjQ5NTQ5TDExLjQ0NSAxMC4yNDU1QzExLjE2NjQgMTAuNTUyIDExLjE4OSAxMS4wMjYzIDExLjQ5NTUgMTEuMzA1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareSortVertical";
  */
 const SquareSortVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareSortVertical.displayName = "SquareSortVertical";
-export default SquareSortVertical;
+SquareSortVertical.displayName = "SquareSortVertical"
+export default SquareSortVertical

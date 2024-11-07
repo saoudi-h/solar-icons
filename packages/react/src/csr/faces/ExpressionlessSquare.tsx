@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/faces/ExpressionlessSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/faces/ExpressionlessSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk05IDE2Ljc1QzguNTg1NzkgMTYuNzUgOC4yNSAxNi40MTQyIDguMjUgMTZDOC4yNSAxNS41ODU4IDguNTg1NzkgMTUuMjUgOSAxNS4yNUgxNUMxNS40MTQyIDE1LjI1IDE1Ljc1IDE1LjU4NTggMTUuNzUgMTZDMTUuNzUgMTYuNDE0MiAxNS40MTQyIDE2Ljc1IDE1IDE2Ljc1SDlaTTEwIDEwLjVDMTAgMTEuMzI4NCA5LjU1MjI4IDEyIDkgMTJDOC40NDc3MiAxMiA4IDExLjMyODQgOCAxMC41QzggOS42NzE1NyA4LjQ0NzcyIDkgOSA5QzkuNTUyMjggOSAxMCA5LjY3MTU3IDEwIDEwLjVaTTE1IDEyQzE1LjU1MjMgMTIgMTYgMTEuMzI4NCAxNiAxMC41QzE2IDkuNjcxNTcgMTUuNTUyMyA5IDE1IDlDMTQuNDQ3NyA5IDE0IDkuNjcxNTcgMTQgMTAuNUMxNCAxMS4zMjg0IDE0LjQ0NzcgMTIgMTUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/ExpressionlessSquare";
  */
 const ExpressionlessSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ExpressionlessSquare.displayName = "ExpressionlessSquare";
-export default ExpressionlessSquare;
+ExpressionlessSquare.displayName = "ExpressionlessSquare"
+export default ExpressionlessSquare

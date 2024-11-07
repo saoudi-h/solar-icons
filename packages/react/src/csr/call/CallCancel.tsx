@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/CallCancel";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/CallCancel"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCA0LjAwMDAyTDE2IDhNMTYgNEwyMCA3Ljk5OTk4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE1LjU1NjIgMTQuNTQ3N0wxNS4xMDA3IDE1LjAyNzJDMTUuMTAwNyAxNS4wMjcyIDE0LjAxODEgMTYuMTY3IDExLjA2MzEgMTMuMDU1OUM4LjEwODEyIDkuOTQ0ODQgOS4xOTA3IDguODA1MDcgOS4xOTA3IDguODA1MDdMOS40Nzc1MiA4LjUwMzExQzEwLjE4NDEgNy43NTkyNCAxMC4yNTA3IDYuNTY0OTcgOS42MzQyNCA1LjY5MzFMOC4zNzMyNiAzLjkwOTYxQzcuNjEwMjggMi44MzA1IDYuMTM1OTYgMi42ODc5NSA1LjI2MTQ1IDMuNjA4NjRMMy42OTE4NSA1LjI2MTE0QzMuMjU4MjMgNS43MTc2NiAyLjk2NzY1IDYuMzA5NDUgMy4wMDI4OSA2Ljk2NTk0QzMuMDkzMDQgOC42NDU0NiAzLjgxMDcxIDEyLjI1OSA3LjgxNTM2IDE2LjQ3NTJDMTIuMDYyMSAyMC45NDYyIDE2LjA0NjggMjEuMTIzOSAxNy42NzYzIDIwLjk2MzFDMTguMTkxNyAyMC45MTIyIDE4LjYzOTkgMjAuNjM0MyAxOS4wMDExIDIwLjI1NEwyMC40MjE3IDE4Ljc1ODRDMjEuMzgwNiAxNy43NDg5IDIxLjExMDIgMTYuMDE4MiAxOS44ODMzIDE1LjMxMkwxNy45NzI4IDE0LjIxMjNDMTcuMTY3MiAxMy43NDg2IDE2LjE4NTggMTMuODg0OCAxNS41NTYyIDE0LjU0NzdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/CallCancel";
  */
 const CallCancel: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CallCancel.displayName = "CallCancel";
-export default CallCancel;
+CallCancel.displayName = "CallCancel"
+export default CallCancel

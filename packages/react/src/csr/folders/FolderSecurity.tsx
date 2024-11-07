@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/folders/FolderSecurity";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/folders/FolderSecurity"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMTEuNzVDMTEuMzA5NiAxMS43NSAxMC43NSAxMi4zMDk2IDEwLjc1IDEzQzEwLjc1IDEzLjY5MDQgMTEuMzA5NiAxNC4yNSAxMiAxNC4yNUMxMi42OTA0IDE0LjI1IDEzLjI1IDEzLjY5MDQgMTMuMjUgMTNDMTMuMjUgMTIuMzA5NiAxMi42OTA0IDExLjc1IDEyIDExLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIyIDExLjc5NzlWMTRDMjIgMTcuNzcxMiAyMiAxOS42NTY5IDIwLjgyODQgMjAuODI4NEMxOS42NTY5IDIyIDE3Ljc3MTIgMjIgMTQgMjJIMTBDNi4yMjg3NiAyMiA0LjM0MzE1IDIyIDMuMTcxNTcgMjAuODI4NEMyIDE5LjY1NjkgMiAxNy43NzEyIDIgMTRWNi45NDk3NUMyIDYuMDY3MjIgMiA1LjYyNTk1IDIuMDY5MzUgNS4yNTgzOUMyLjM3NDY0IDMuNjQwMzEgMy42NDAzMSAyLjM3NDY0IDUuMjU4MzkgMi4wNjkzNUM1LjYyNTk1IDIgNi4wNjcyMiAyIDYuOTQ5NzUgMkM3LjMzNjQyIDIgNy41Mjk3NiAyIDcuNzE1NTcgMi4wMTczOEM4LjUxNjY1IDIuMDkyMjkgOS4yNzY1MiAyLjQwNzA0IDkuODk1OTQgMi45MjA1MUMxMC4wMzk2IDMuMDM5NjEgMTAuMTc2MyAzLjE3NjMzIDEwLjQ0OTcgMy40NDk3NUwxMSA0QzExLjgxNTggNC44MTU3OCAxMi4yMjM3IDUuMjIzNjcgMTIuNzEyMSA1LjQ5NTQzQzEyLjk4MDQgNS42NDQ3MSAxMy4yNjUxIDUuNzYyNiAxMy41NjA0IDUuODQ2NzhDMTQuMDk3OSA2IDE0LjY3NDcgNiAxNS44Mjg0IDZIMTYuMjAyMUMxOC44MzQ1IDYgMjAuMTUwNiA2IDIxLjAwNjIgNi43Njk0NkMyMS4wODQ5IDYuODQwMjQgMjEuMTU5OCA2LjkxNTE0IDIxLjIzMDUgNi45OTM4M0MyMiA3Ljg0OTM1IDIyIDkuMTY1NTQgMjIgMTEuNzk3OVpNMTIgMTAuMjVDMTAuNDgxMiAxMC4yNSA5LjI1IDExLjQ4MTIgOS4yNSAxM0M5LjI1IDE0LjI1ODggMTAuMDk1NyAxNS4zMiAxMS4yNSAxNS42NDY1VjE3LjVDMTEuMjUgMTcuOTE0MiAxMS41ODU4IDE4LjI1IDEyIDE4LjI1QzEyLjQxNDIgMTguMjUgMTIuNzUgMTcuOTE0MiAxMi43NSAxNy41VjE1LjY0NjVDMTMuOTA0MyAxNS4zMiAxNC43NSAxNC4yNTg4IDE0Ljc1IDEzQzE0Ljc1IDExLjQ4MTIgMTMuNTE4OCAxMC4yNSAxMiAxMC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/folders/FolderSecurity";
  */
 const FolderSecurity: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FolderSecurity.displayName = "FolderSecurity";
-export default FolderSecurity;
+FolderSecurity.displayName = "FolderSecurity"
+export default FolderSecurity

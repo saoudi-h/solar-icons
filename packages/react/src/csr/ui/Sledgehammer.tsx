@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Sledgehammer";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Sledgehammer"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03LjYwMzc5IDQuNjAzNzlDOS4zMzk2NSAyLjg2NzkzIDEwLjIwNzYgMiAxMS4yODYxIDJDMTIuMzY0NiAyIDEzLjIzMjYgMi44Njc5MyAxNC45Njg0IDQuNjAzNzlMMTkuMzg3MiA5LjAyMjU2QzIxLjEyMyAxMC43NTg0IDIxLjk5MSAxMS42MjYzIDIxLjk5MSAxMi43MDQ5QzIxLjk5MSAxMy43ODM0IDIxLjEyMyAxNC42NTEzIDE5LjM4NzIgMTYuMzg3MkMxNy42NTEzIDE4LjEyMyAxNi43ODM0IDE4Ljk5MSAxNS43MDQ5IDE4Ljk5MUMxNC42MjYzIDE4Ljk5MSAxMy43NTg0IDE4LjEyMyAxMi4wMjI2IDE2LjM4NzJMNy42MDM3OSAxMS45Njg0QzUuODY3OTMgMTAuMjMyNiA1IDkuMzY0NjIgNSA4LjI4NjFDNSA3LjIwNzU3IDUuODY3OTMgNi4zMzk2NSA3LjYwMzc5IDQuNjAzNzlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03LjI4NCAxMy43Njk5TDIuODI1ODEgMTguMjI4MUMyLjQ4MzM3IDE4LjU3MDYgMi4zMTIxNCAxOC43NDE4IDIuMjA5MyAxOC45MTk5QzEuOTMwMjMgMTkuNDAzMyAxLjkzMDIzIDE5Ljk5ODggMi4yMDkzIDIwLjQ4MjJDMi4zMTIxNCAyMC42NjAzIDIuNDgzMzYgMjAuODMxNSAyLjgyNTc4IDIxLjE3MzlDMy4xNjgyMyAyMS41MTY0IDMuMzM5NDggMjEuNjg3NiAzLjUxNzYgMjEuNzkwNUM0LjAwMDk3IDIyLjA2OTYgNC41OTY1IDIyLjA2OTYgNS4wNzk4NyAyMS43OTA1QzUuMjU3OTkgMjEuNjg3NiA1LjQyOTIxIDIxLjUxNjQgNS43NzE2NiAyMS4xNzRMMTAuMjI5OCAxNi43MTU4TDcuMjg0IDEzLjc2OTlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik04LjM0NDY2IDEyLjcwOTNMOC4zNDkwNSAxMi43MDQ5TDExLjI5NDkgMTUuNjUwN0wxMS4yOTA1IDE1LjY1NTFMOC4zNDQ2NiAxMi43MDkzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTkuNjY4NiA3LjE4MjYxQzE5LjkyMzMgNi43MDczIDE5LjkxNTMgNi4xMzI2NCAxOS42NDQ1IDUuNjYzNTlDMTkuNTQxNiA1LjQ4NTQ3IDE5LjM3MDQgNS4zMTQyNSAxOS4wMjggNC45NzE4MUMxOC42ODU1IDQuNjI5MzYgMTguNTE0MyA0LjQ1ODE0IDE4LjMzNjIgNC4zNTUzQzE3Ljg2NzEgNC4wODQ1IDE3LjI5MjUgNC4wNzY0NyAxNi44MTcyIDQuMzMxMjNMMTkuNjY4NiA3LjE4MjYxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Sledgehammer";
  */
 const Sledgehammer: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sledgehammer.displayName = "Sledgehammer";
-export default Sledgehammer;
+Sledgehammer.displayName = "Sledgehammer"
+export default Sledgehammer

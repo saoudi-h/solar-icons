@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/SoundwaveCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/SoundwaveCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTEyLjc1IDdDMTIuNzUgNi41ODU3OSAxMi40MTQyIDYuMjUgMTIgNi4yNUMxMS41ODU4IDYuMjUgMTEuMjUgNi41ODU3OSAxMS4yNSA3VjE3QzExLjI1IDE3LjQxNDIgMTEuNTg1OCAxNy43NSAxMiAxNy43NUMxMi40MTQyIDE3Ljc1IDEyLjc1IDE3LjQxNDIgMTIuNzUgMTdWN1pNNy43NSA5QzcuNzUgOC41ODU3OSA3LjQxNDIxIDguMjUgNyA4LjI1QzYuNTg1NzkgOC4yNSA2LjI1IDguNTg1NzkgNi4yNSA5VjE1QzYuMjUgMTUuNDE0MiA2LjU4NTc5IDE1Ljc1IDcgMTUuNzVDNy40MTQyMSAxNS43NSA3Ljc1IDE1LjQxNDIgNy43NSAxNVY5Wk0xNy43NSAxMEMxNy43NSA5LjU4NTc5IDE3LjQxNDIgOS4yNSAxNyA5LjI1QzE2LjU4NTggOS4yNSAxNi4yNSA5LjU4NTc5IDE2LjI1IDEwVjE0QzE2LjI1IDE0LjQxNDIgMTYuNTg1OCAxNC43NSAxNyAxNC43NUMxNy40MTQyIDE0Ljc1IDE3Ljc1IDE0LjQxNDIgMTcuNzUgMTRWMTBaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/SoundwaveCircle";
  */
 const SoundwaveCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SoundwaveCircle.displayName = "SoundwaveCircle";
-export default SoundwaveCircle;
+SoundwaveCircle.displayName = "SoundwaveCircle"
+export default SoundwaveCircle

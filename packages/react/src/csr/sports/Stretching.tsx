@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/sports/Stretching";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/sports/Stretching"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy4wMDAyIDQuNUMxNy4wMDAyIDUuODgwNzEgMTUuODgwOSA3IDE0LjUwMDIgN0MxMy4xMTk1IDcgMTIuMDAwMiA1Ljg4MDcxIDEyLjAwMDIgNC41QzEyLjAwMDIgMy4xMTkyOSAxMy4xMTk1IDIgMTQuNTAwMiAyQzE1Ljg4MDkgMiAxNy4wMDAyIDMuMTE5MjkgMTcuMDAwMiA0LjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuNTAyOCA5LjIwNjczQzExLjk4NzUgOC41NzA0MyAxMy42MzkxIDkuNjU5NSAxMy42MzkxIDExLjI3NDhWMTMuODk1M0MxMy42MzkxIDE0LjM2NTQgMTMuNTE4NiAxNC44Mjc2IDEzLjI4OTEgMTUuMjM3OUwxMC41NzY4IDIwLjA4NjFDMTAuMjUxOSAyMC42NjY4IDkuNzI3NDggMjEuMTEgOS4xMDA3NCAyMS4zMzM2TDUuMjUyMTggMjIuNzA2NEM0Ljg2MjA1IDIyLjg0NTYgNC40MzI5NiAyMi42NDIxIDQuMjkzOCAyMi4yNTJDNC4xNTQ2NCAyMS44NjE4IDQuMzU4MDkgMjEuNDMyOCA0Ljc0ODIzIDIxLjI5MzZMOC41OTY3OCAxOS45MjA4QzguODgxNjYgMTkuODE5MiA5LjEyMDA0IDE5LjYxNzcgOS4yNjc3MSAxOS4zNTM3TDExLjk4IDE0LjUwNTVDMTIuMDg0MyAxNC4zMTkxIDEyLjEzOTEgMTQuMTA4OSAxMi4xMzkxIDEzLjg5NTNWMTEuMjc0OEMxMi4xMzkxIDEwLjczNjQgMTEuNTg4NiAxMC4zNzMzIDExLjA5MzcgMTAuNTg1NEw4LjYzNzg2IDExLjYzNzlDOC4xNDY0MyAxMS44NDg1IDguMDI2OSAxMi40OTEgOC40MDk3MiAxMi44NjQzTDkuMDIzNzggMTMuNDYzQzkuMzIwMzYgMTMuNzUyMiA5LjMyNjM3IDE0LjIyNyA5LjAzNzIgMTQuNTIzNkM4Ljc0ODA0IDE0LjgyMDIgOC4yNzMyMSAxNC44MjYyIDcuOTc2NjMgMTQuNTM3TDcuMzYyNTcgMTMuOTM4M0M2LjIxNDEyIDEyLjgxODYgNi41NzI2OSAxMC44OTExIDguMDQ2OTggMTAuMjU5MkwxMC41MDI4IDkuMjA2NzNaTTE2LjU1OTEgMTQuMDUzNUMxOC4yMzIgMTMuNzgxNyAxOS43NTAyIDE1LjA3MzEgMTkuNzUwMiAxNi43Njc5VjIyQzE5Ljc1MDIgMjIuNDE0MiAxOS40MTQ0IDIyLjc1IDE5LjAwMDIgMjIuNzVDMTguNTg2IDIyLjc1IDE4LjI1MDIgMjIuNDE0MiAxOC4yNTAyIDIyVjE2Ljc2NzlDMTguMjUwMiAxNS45OTc1IDE3LjU2MDEgMTUuNDEwNSAxNi43OTk3IDE1LjUzNDFMMTUuNzg3MiAxNS42OTg2QzE1LjM3ODMgMTUuNzY1MSAxNC45OTMgMTUuNDg3NSAxNC45MjY2IDE1LjA3ODZDMTQuODYwMSAxNC42Njk4IDE1LjEzNzcgMTQuMjg0NSAxNS41NDY2IDE0LjIxOEwxNi41NTkxIDE0LjA1MzVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/sports/Stretching";
  */
 const Stretching: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Stretching.displayName = "Stretching";
-export default Stretching;
+Stretching.displayName = "Stretching"
+export default Stretching

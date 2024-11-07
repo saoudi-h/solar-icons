@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/parts/WheelAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/parts/WheelAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMSAxMkMyMSAxNy41MjI4IDE4LjkyNzcgMjIgMTYuMzcxNCAyMkg4LjY1NzE0QzkuNTIzNiAyMS40Mzg1IDEwLjMxMjYgMjAuNDUwNiAxMC44NTYyIDE5LjI3NjNDMTEuNzMgMTcuMzg4NCAxMi4yNTcxIDE0LjgxNTQgMTIuMjU3MSAxMkMxMi4yNTcxIDkuMTg0NjIgMTEuNzMgNi42MTE2MyAxMC44NTYyIDQuNzIzNzVDMTAuMzEyNiAzLjU0OTM5IDkuNTIzNiAyLjU2MTQ3IDguNjU3MTQgMkgxNi4zNzE0QzE4LjkyNzcgMiAyMSA2LjQ3NzE1IDIxIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMzEwMzggNS4xMzQxMUMzLjUwODk4IDYuODY1NTMgMyA5LjI5MjU0IDMgMTJDMyAxNC43MDc1IDMuNTA4OTggMTcuMTM0NSA0LjMxMDM4IDE4Ljg2NTlDNS4xMzM1IDIwLjY0NDIgNi4xNjQ1NyAyMS41IDcuMTE0MjkgMjEuNUM4LjA2NCAyMS41IDkuMDk1MDcgMjAuNjQ0MiA5LjkxODE5IDE4Ljg2NTlDMTAuNzE5NiAxNy4xMzQ1IDExLjIyODYgMTQuNzA3NSAxMS4yMjg2IDEyQzExLjIyODYgOS4yOTI1NCAxMC43MTk2IDYuODY1NTMgOS45MTgxOSA1LjEzNDExQzkuMDk1MDcgMy4zNTU3NyA4LjA2NCAyLjUgNy4xMTQyOSAyLjVDNi4xNjQ1NyAyLjUgNS4xMzM1IDMuMzU1NzcgNC4zMTAzOCA1LjEzNDExWk01LjU3MTQzIDEyQzUuNTcxNDMgMTUuMzEzNyA2LjI2MjE5IDE4IDcuMTE0MjkgMThDNy45MDEwNyAxOCA4LjU1MDMgMTUuNzA5NyA4LjY0NTIxIDEyLjc1SDcuNjI4NTdDNy4yMDI1MiAxMi43NSA2Ljg1NzE0IDEyLjQxNDIgNi44NTcxNCAxMkM2Ljg1NzE0IDExLjU4NTggNy4yMDI1MiAxMS4yNSA3LjYyODU3IDExLjI1SDguNjQ1MjFDOC41NTAzIDguMjkwMjcgNy45MDEwNyA2IDcuMTE0MjkgNkM2LjI2MjE5IDYgNS41NzE0MyA4LjY4NjI5IDUuNTcxNDMgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/parts/WheelAngle";
  */
 const WheelAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WheelAngle.displayName = "WheelAngle";
-export default WheelAngle;
+WheelAngle.displayName = "WheelAngle"
+export default WheelAngle

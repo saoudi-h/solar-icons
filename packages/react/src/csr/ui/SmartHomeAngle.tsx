@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/SmartHomeAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/SmartHomeAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yLjI1IDEyLjI1QzIuMjUgMTEuODM1OCAyLjU4NTc5IDExLjUgMyAxMS41QzguMzg0NzggMTEuNSAxMi43NSAxNS44NjUyIDEyLjc1IDIxLjI1QzEyLjc1IDIxLjY2NDIgMTIuNDE0MiAyMiAxMiAyMkMxMS41ODU4IDIyIDExLjI1IDIxLjY2NDIgMTEuMjUgMjEuMjVDMTEuMjUgMTYuNjkzNyA3LjU1NjM1IDEzIDMgMTNDMi41ODU3OSAxMyAyLjI1IDEyLjY2NDIgMi4yNSAxMi4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIuMjUgMTUuMjVDMi4yNSAxNC44MzU4IDIuNTg1NzkgMTQuNSAzIDE0LjVDNi43Mjc5MiAxNC41IDkuNzUgMTcuNTIyMSA5Ljc1IDIxLjI1QzkuNzUgMjEuNjY0MiA5LjQxNDIxIDIyIDkgMjJDOC41ODU3OSAyMiA4LjI1IDIxLjY2NDIgOC4yNSAyMS4yNUM4LjI1IDE4LjM1MDUgNS44OTk1IDE2IDMgMTZDMi41ODU3OSAxNiAyLjI1IDE1LjY2NDIgMi4yNSAxNS4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMgMTcuNUMyLjU4NTc5IDE3LjUgMi4yNSAxNy44MzU4IDIuMjUgMTguMjVDMi4yNSAxOC42NjQyIDIuNTg1NzkgMTkgMyAxOUM0LjI0MjY0IDE5IDUuMjUgMjAuMDA3NCA1LjI1IDIxLjI1QzUuMjUgMjEuNjY0MiA1LjU4NTc5IDIyIDYgMjJDNi40MTQyMSAyMiA2Ljc1IDIxLjY2NDIgNi43NSAyMS4yNUM2Ljc1IDE5LjE3ODkgNS4wNzEwNyAxNy41IDMgMTcuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIuMDI0NDYgMTAuMjIxOUMyLjMxOTU3IDEwLjA3OTcgMi42NTA0OCAxMCAzIDEwQzkuMjEzMiAxMCAxNC4yNSAxNS4wMzY4IDE0LjI1IDIxLjI1QzE0LjI1IDIxLjUxMjYgMTQuMjA1IDIxLjc2NDYgMTQuMTIyNCAyMS45OTg5QzE2LjkwMzYgMjEuOTg5MiAxOC4zOTc2IDIxLjg5NTMgMTkuNDUxIDIwLjk4ODJDMjAuNjI2IDE5Ljk3NjQgMjAuODY5NyAxOC4yODI3IDIxLjM1NzIgMTQuODk1MkwyMS42MzU5IDEyLjk1NzlDMjIuMDE1NCAxMC4zMjA4IDIyLjIwNTEgOS4wMDIyOSAyMS42NjQ2IDcuODc0OTVDMjEuMTI0MiA2Ljc0NzYgMTkuOTczOCA2LjA2MjM0IDE3LjY3MzEgNC42OTE4MkwxNi4yODgyIDMuODY2ODdDMTQuMTk5IDIuNjIyMjkgMTMuMTU0MyAyIDEyIDJDMTAuODQ1NyAyIDkuODAxMDQgMi42MjIyOSA3LjcxMTc1IDMuODY2ODdMNi4zMjY5MSA0LjY5MTgxQzQuMDI2MTkgNi4wNjIzNCAyLjg3NTgzIDYuNzQ3NiAyLjMzNTM3IDcuODc0OTVDMi4wMjQ3NyA4LjUyMjgxIDEuOTU1MzMgOS4yMzM4MSAyLjAyNDQ2IDEwLjIyMTlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/SmartHomeAngle";
  */
 const SmartHomeAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SmartHomeAngle.displayName = "SmartHomeAngle";
-export default SmartHomeAngle;
+SmartHomeAngle.displayName = "SmartHomeAngle"
+export default SmartHomeAngle

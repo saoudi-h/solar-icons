@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/HamburgerMenu";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/HamburgerMenu"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNMTguNzUgMTZDMTguNzUgMTYuNDE0MiAxOC40MTQyIDE2Ljc1IDE4IDE2Ljc1SDZDNS41ODU3OSAxNi43NSA1LjI1IDE2LjQxNDIgNS4yNSAxNkM1LjI1IDE1LjU4NTggNS41ODU3OSAxNS4yNSA2IDE1LjI1SDE4QzE4LjQxNDIgMTUuMjUgMTguNzUgMTUuNTg1OCAxOC43NSAxNlpNMTggMTIuNzVDMTguNDE0MiAxMi43NSAxOC43NSAxMi40MTQyIDE4Ljc1IDEyQzE4Ljc1IDExLjU4NTggMTguNDE0MiAxMS4yNSAxOCAxMS4yNUg2QzUuNTg1NzkgMTEuMjUgNS4yNSAxMS41ODU4IDUuMjUgMTJDNS4yNSAxMi40MTQyIDUuNTg1NzkgMTIuNzUgNiAxMi43NUgxOFpNMTguNzUgOEMxOC43NSA4LjQxNDIxIDE4LjQxNDIgOC43NSAxOCA4Ljc1SDZDNS41ODU3OSA4Ljc1IDUuMjUgOC40MTQyMSA1LjI1IDhDNS4yNSA3LjU4NTc5IDUuNTg1NzkgNy4yNSA2IDcuMjVIMThDMTguNDE0MiA3LjI1IDE4Ljc1IDcuNTg1NzkgMTguNzUgOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HamburgerMenu";
  */
 const HamburgerMenu: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HamburgerMenu.displayName = "HamburgerMenu";
-export default HamburgerMenu;
+HamburgerMenu.displayName = "HamburgerMenu"
+export default HamburgerMenu

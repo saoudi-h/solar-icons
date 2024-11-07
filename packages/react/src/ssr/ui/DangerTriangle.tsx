@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/DangerTriangle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/DangerTriangle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4zMTE3MSAxMC43NjE1QzguMjMwMDcgNS41ODcxNiA5LjY4OTI1IDMgMTIgM0MxNC4zMTA3IDMgMTUuNzY5OSA1LjU4NzE2IDE4LjY4ODMgMTAuNzYxNUwxOS4wNTE5IDExLjQwNjNDMjEuNDc3MSAxNS43MDYxIDIyLjY4OTcgMTcuODU2IDIxLjU5MzcgMTkuNDI4QzIwLjQ5NzggMjEgMTcuNzg2NCAyMSAxMi4zNjM3IDIxSDExLjYzNjNDNi4yMTM1NiAyMSAzLjUwMjE3IDIxIDIuNDA2MjYgMTkuNDI4QzEuMzEwMzQgMTcuODU2IDIuNTIyOTEgMTUuNzA2MSA0Ljk0ODA1IDExLjQwNjNMNS4zMTE3MSAxMC43NjE1Wk0xMiA3LjI1QzEyLjQxNDIgNy4yNSAxMi43NSA3LjU4NTc5IDEyLjc1IDhWMTNDMTIuNzUgMTMuNDE0MiAxMi40MTQyIDEzLjc1IDEyIDEzLjc1QzExLjU4NTggMTMuNzUgMTEuMjUgMTMuNDE0MiAxMS4yNSAxM1Y4QzExLjI1IDcuNTg1NzkgMTEuNTg1OCA3LjI1IDEyIDcuMjVaTTEyIDE3QzEyLjU1MjMgMTcgMTMgMTYuNTUyMyAxMyAxNkMxMyAxNS40NDc3IDEyLjU1MjMgMTUgMTIgMTVDMTEuNDQ3NyAxNSAxMSAxNS40NDc3IDExIDE2QzExIDE2LjU1MjMgMTEuNDQ3NyAxNyAxMiAxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/DangerTriangle";
  */
 const DangerTriangle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DangerTriangle.displayName = "DangerTriangle";
-export default DangerTriangle;
+DangerTriangle.displayName = "DangerTriangle"
+export default DangerTriangle

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/sports/Bowling";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/sports/Bowling"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMy41IDEyQzEzLjUgMTEuMTcxNiAxMi44Mjg0IDEwLjUgMTIgMTAuNUMxMS4xNzE2IDEwLjUgMTAuNSAxMS4xNzE2IDEwLjUgMTJDMTAuNSAxMi44Mjg0IDExLjE3MTYgMTMuNSAxMiAxMy41QzEyLjgyODQgMTMuNSAxMy41IDEyLjgyODQgMTMuNSAxMlpNMTIgNS41QzEyLjgyODQgNS41IDEzLjUgNi4xNzE1NyAxMy41IDdDMTMuNSA3LjgyODQzIDEyLjgyODQgOC41IDEyIDguNUMxMS4xNzE2IDguNSAxMC41IDcuODI4NDMgMTAuNSA3QzEwLjUgNi4xNzE1NyAxMS4xNzE2IDUuNSAxMiA1LjVaTTkuNSA5LjVDOS41IDguNjcxNTcgOC44Mjg0MyA4IDggOEM3LjE3MTU3IDggNi41IDguNjcxNTcgNi41IDkuNUM2LjUgMTAuMzI4NCA3LjE3MTU3IDExIDggMTFDOC44Mjg0MyAxMSA5LjUgMTAuMzI4NCA5LjUgOS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/sports/Bowling";
  */
 const Bowling: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bowling.displayName = "Bowling";
-export default Bowling;
+Bowling.displayName = "Bowling"
+export default Bowling

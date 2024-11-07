@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/MapPointRemove";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/MapPointRemove"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM3LjU4MTcyIDIgNCA1LjY0NTg4IDQgMTAuMTQzM0M0IDE0LjYwNTUgNi41NTMzMiAxOS44MTI0IDEwLjUzNzEgMjEuNjc0NEMxMS40NjU3IDIyLjEwODUgMTIuNTM0MyAyMi4xMDg1IDEzLjQ2MjkgMjEuNjc0NEMxNy40NDY3IDE5LjgxMjQgMjAgMTQuNjA1NSAyMCAxMC4xNDMzQzIwIDUuNjQ1ODggMTYuNDE4MyAyIDEyIDJaTTguMjUgMTBDOC4yNSA5LjU4NTc5IDguNTg1NzkgOS4yNSA5IDkuMjVIMTVDMTUuNDE0MiA5LjI1IDE1Ljc1IDkuNTg1NzkgMTUuNzUgMTBDMTUuNzUgMTAuNDE0MiAxNS40MTQyIDEwLjc1IDE1IDEwLjc1SDlDOC41ODU3OSAxMC43NSA4LjI1IDEwLjQxNDIgOC4yNSAxMFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapPointRemove";
  */
 const MapPointRemove: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapPointRemove.displayName = "MapPointRemove";
-export default MapPointRemove;
+MapPointRemove.displayName = "MapPointRemove"
+export default MapPointRemove

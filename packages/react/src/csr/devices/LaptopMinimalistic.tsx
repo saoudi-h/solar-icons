@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/LaptopMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/LaptopMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMSAyMC4yNEMxIDE5LjgyMDMgMS4zNDM2IDE5LjQ4IDEuNzY3NDQgMTkuNDhIMjIuMjMyNkMyMi42NTY0IDE5LjQ4IDIzIDE5LjgyMDMgMjMgMjAuMjRDMjMgMjAuNjU5NyAyMi42NTY0IDIxIDIyLjIzMjYgMjFIMS43Njc0NEMxLjM0MzYgMjEgMSAyMC42NTk3IDEgMjAuMjRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy42ODk4MSAzLjg5MDRDMi43OTA3IDQuNzgwNzkgMi43OTA3IDYuMjEzODYgMi43OTA3IDkuMDhWMTQuMTQ2N0MyLjc5MDcgMTYuMDU3NCAyLjc5MDcgMTcuMDEyOCAzLjM5MDExIDE3LjYwNjRDMy45ODk1MiAxOC4yIDQuOTU0MjUgMTguMiA2Ljg4MzcyIDE4LjJIMTcuMTE2M0MxOS4wNDU3IDE4LjIgMjAuMDEwNSAxOC4yIDIwLjYwOTkgMTcuNjA2NEMyMS4yMDkzIDE3LjAxMjggMjEuMjA5MyAxNi4wNTc0IDIxLjIwOTMgMTQuMTQ2N1Y5LjA4QzIxLjIwOTMgNi4yMTM4NiAyMS4yMDkzIDQuNzgwNzkgMjAuMzEwMiAzLjg5MDRDMTkuNDExMSAzIDE3Ljk2NCAzIDE1LjA2OTggM0g4LjkzMDIzQzYuMDM2MDMgMyA0LjU4ODkzIDMgMy42ODk4MSAzLjg5MDRaTTguMTYyNzkgMTUuMTZDOC4xNjI3OSAxNC43NDAzIDguNTA2MzkgMTQuNCA4LjkzMDIzIDE0LjRIMTUuMDY5OEMxNS40OTM2IDE0LjQgMTUuODM3MiAxNC43NDAzIDE1LjgzNzIgMTUuMTZDMTUuODM3MiAxNS41Nzk3IDE1LjQ5MzYgMTUuOTIgMTUuMDY5OCAxNS45Mkg4LjkzMDIzQzguNTA2MzkgMTUuOTIgOC4xNjI3OSAxNS41Nzk3IDguMTYyNzkgMTUuMTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/LaptopMinimalistic";
  */
 const LaptopMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LaptopMinimalistic.displayName = "LaptopMinimalistic";
-export default LaptopMinimalistic;
+LaptopMinimalistic.displayName = "LaptopMinimalistic"
+export default LaptopMinimalistic

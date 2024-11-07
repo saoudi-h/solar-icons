@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/ArrowToDownLeft";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/ArrowToDownLeft"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuNTMwMyAxMy45Njk3QzE3LjgyMzIgMTQuMjYyNiAxNy44MjMyIDE0LjczNzQgMTcuNTMwMyAxNS4wMzAzTDEyLjUzMDMgMjAuMDMwM0MxMi4yMzc0IDIwLjMyMzIgMTEuNzYyNiAyMC4zMjMyIDExLjQ2OTcgMjAuMDMwM0w2LjQ2OTY3IDE1LjAzMDNDNi4xNzY3OCAxNC43Mzc0IDYuMTc2NzggMTQuMjYyNiA2LjQ2OTY3IDEzLjk2OTdDNi43NjI1NiAxMy42NzY4IDcuMjM3NDQgMTMuNjc2OCA3LjUzMDMzIDEzLjk2OTdMMTEuMjUgMTcuNjg5M0wxMS4yNSA5LjVDMTEuMjUgOC43ODY2OCAxMS4wMjk4IDcuNzAwMDEgMTAuMzkxMyA2LjgxMzIzQzkuNzgwNCA1Ljk2NDY4IDguNzU1NTYgNS4yNSA3IDUuMjVDNi41ODU3OSA1LjI1IDYuMjUgNC45MTQyMSA2LjI1IDQuNUM2LjI1IDQuMDg1NzkgNi41ODU3OSAzLjc1IDcgMy43NUM5LjI0NDQ0IDMuNzUgMTAuNzE5NiA0LjcwMTk4IDExLjYwODcgNS45MzY3N0MxMi40NzAyIDcuMTMzMzIgMTIuNzUgOC41NDY2NSAxMi43NSA5LjVMMTIuNzUgMTcuNjg5M0wxNi40Njk3IDEzLjk2OTdDMTYuNzYyNiAxMy42NzY4IDE3LjIzNzQgMTMuNjc2OCAxNy41MzAzIDEzLjk2OTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/ArrowToDownLeft";
  */
 const ArrowToDownLeft: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArrowToDownLeft.displayName = "ArrowToDownLeft";
-export default ArrowToDownLeft;
+ArrowToDownLeft.displayName = "ArrowToDownLeft"
+export default ArrowToDownLeft

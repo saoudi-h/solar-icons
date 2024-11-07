@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/TextItalicSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/TextItalicSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTAuNjY2NyA2LjI1SDEzLjMxNjJDMTMuMzI3MyA2LjI0OTc1IDEzLjMzODQgNi4yNDk3NSAxMy4zNDk1IDYuMjVIMTZDMTYuNDE0MiA2LjI1IDE2Ljc1IDYuNTg1NzkgMTYuNzUgN0MxNi43NSA3LjQxNDIxIDE2LjQxNDIgNy43NSAxNiA3Ljc1SDEzLjkwOTVMMTEuNjQyOSAxNi4yNUgxMy4zMzMzQzEzLjc0NzUgMTYuMjUgMTQuMDgzMyAxNi41ODU4IDE0LjA4MzMgMTdDMTQuMDgzMyAxNy40MTQyIDEzLjc0NzUgMTcuNzUgMTMuMzMzMyAxNy43NUgxMC42ODM4QzEwLjY3MjcgMTcuNzUwMiAxMC42NjE2IDE3Ljc1MDIgMTAuNjUwNSAxNy43NUg4QzcuNTg1NzkgMTcuNzUgNy4yNSAxNy40MTQyIDcuMjUgMTdDNy4yNSAxNi41ODU4IDcuNTg1NzkgMTYuMjUgOCAxNi4yNUgxMC4wOTA1TDEyLjM1NzEgNy43NUgxMC42NjY3QzEwLjI1MjUgNy43NSA5LjkxNjY3IDcuNDE0MjEgOS45MTY2NyA3QzkuOTE2NjcgNi41ODU3OSAxMC4yNTI1IDYuMjUgMTAuNjY2NyA2LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextItalicSquare";
  */
 const TextItalicSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextItalicSquare.displayName = "TextItalicSquare";
-export default TextItalicSquare;
+TextItalicSquare.displayName = "TextItalicSquare"
+export default TextItalicSquare

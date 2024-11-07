@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/settings/WidgetAdd";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/settings/WidgetAdd"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuNSAyLjc1QzE3LjkxNDIgMi43NSAxOC4yNSAzLjA4NTc5IDE4LjI1IDMuNVY1Ljc1SDIwLjVDMjAuOTE0MiA1Ljc1IDIxLjI1IDYuMDg1NzkgMjEuMjUgNi41QzIxLjI1IDYuOTE0MjEgMjAuOTE0MiA3LjI1IDIwLjUgNy4yNUgxOC4yNVY5LjVDMTguMjUgOS45MTQyMSAxNy45MTQyIDEwLjI1IDE3LjUgMTAuMjVDMTcuMDg1OCAxMC4yNSAxNi43NSA5LjkxNDIxIDE2Ljc1IDkuNVY3LjI1SDE0LjVDMTQuMDg1OCA3LjI1IDEzLjc1IDYuOTE0MjEgMTMuNzUgNi41QzEzLjc1IDYuMDg1NzkgMTQuMDg1OCA1Ljc1IDE0LjUgNS43NUgxNi43NVYzLjVDMTYuNzUgMy4wODU3OSAxNy4wODU4IDIuNzUgMTcuNSAyLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMiA2LjVDMiA0LjM3ODY4IDIgMy4zMTgwMiAyLjY1OTAxIDIuNjU5MDFDMy4zMTgwMiAyIDQuMzc4NjggMiA2LjUgMkM4LjYyMTMyIDIgOS42ODE5OCAyIDEwLjM0MSAyLjY1OTAxQzExIDMuMzE4MDIgMTEgNC4zNzg2OCAxMSA2LjVDMTEgOC42MjEzMiAxMSA5LjY4MTk4IDEwLjM0MSAxMC4zNDFDOS42ODE5OCAxMSA4LjYyMTMyIDExIDYuNSAxMUM0LjM3ODY4IDExIDMuMzE4MDIgMTEgMi42NTkwMSAxMC4zNDFDMiA5LjY4MTk4IDIgOC42MjEzMiAyIDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEzIDE3LjVDMTMgMTUuMzc4NyAxMyAxNC4zMTggMTMuNjU5IDEzLjY1OUMxNC4zMTggMTMgMTUuMzc4NyAxMyAxNy41IDEzQzE5LjYyMTMgMTMgMjAuNjgyIDEzIDIxLjM0MSAxMy42NTlDMjIgMTQuMzE4IDIyIDE1LjM3ODcgMjIgMTcuNUMyMiAxOS42MjEzIDIyIDIwLjY4MiAyMS4zNDEgMjEuMzQxQzIwLjY4MiAyMiAxOS42MjEzIDIyIDE3LjUgMjJDMTUuMzc4NyAyMiAxNC4zMTggMjIgMTMuNjU5IDIxLjM0MUMxMyAyMC42ODIgMTMgMTkuNjIxMyAxMyAxNy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMiAxNy41QzIgMTUuMzc4NyAyIDE0LjMxOCAyLjY1OTAxIDEzLjY1OUMzLjMxODAyIDEzIDQuMzc4NjggMTMgNi41IDEzQzguNjIxMzIgMTMgOS42ODE5OCAxMyAxMC4zNDEgMTMuNjU5QzExIDE0LjMxOCAxMSAxNS4zNzg3IDExIDE3LjVDMTEgMTkuNjIxMyAxMSAyMC42ODIgMTAuMzQxIDIxLjM0MUM5LjY4MTk4IDIyIDguNjIxMzIgMjIgNi41IDIyQzQuMzc4NjggMjIgMy4zMTgwMiAyMiAyLjY1OTAxIDIxLjM0MUMyIDIwLjY4MiAyIDE5LjYyMTMgMiAxNy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/settings/WidgetAdd";
  */
 const WidgetAdd: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WidgetAdd.displayName = "WidgetAdd";
-export default WidgetAdd;
+WidgetAdd.displayName = "WidgetAdd"
+export default WidgetAdd

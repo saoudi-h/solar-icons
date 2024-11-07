@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/Routing3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/Routing3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSIzIiBmaWxsPSIjMUMyNzRDIi8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iMTkiIHI9IjMiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC4yNTAxIDVDMTAuMjUwMSA0LjU4NTc5IDEwLjU4NTkgNC4yNSAxMS4wMDAxIDQuMjVIMTYuMTMyQzE4Ljg4MzIgNC4yNSAxOS45Mjk1IDcuODQzIDE3LjYwODQgOS4zMjAwN0w3LjE5NzEzIDE1Ljk0NTRDNi4xNDIwNyAxNi42MTY4IDYuNjE3NjYgMTguMjUgNy44NjgyMSAxOC4yNUgxMS4xODk0TDEwLjk2OTggMTguMDMwM0MxMC42NzY5IDE3LjczNzQgMTAuNjc2OSAxNy4yNjI2IDEwLjk2OTggMTYuOTY5N0MxMS4yNjI3IDE2LjY3NjggMTEuNzM3NSAxNi42NzY4IDEyLjAzMDQgMTYuOTY5N0wxMy41MzA0IDE4LjQ2OTdDMTMuODIzMyAxOC43NjI2IDEzLjgyMzMgMTkuMjM3NCAxMy41MzA0IDE5LjUzMDNMMTIuMDMwNCAyMS4wMzAzQzExLjczNzUgMjEuMzIzMiAxMS4yNjI3IDIxLjMyMzIgMTAuOTY5OCAyMS4wMzAzQzEwLjY3NjkgMjAuNzM3NCAxMC42NzY5IDIwLjI2MjYgMTAuOTY5OCAxOS45Njk3TDExLjE4OTQgMTkuNzVINy44NjgyMUM1LjExNjk3IDE5Ljc1IDQuMDcwNzEgMTYuMTU3IDYuMzkxODEgMTQuNjc5OUwxNi44MDMxIDguMDU0NThDMTcuODU4MSA3LjM4MzE4IDE3LjM4MjUgNS43NSAxNi4xMzIgNS43NUgxMS4wMDAxQzEwLjU4NTkgNS43NSAxMC4yNTAxIDUuNDE0MjEgMTAuMjUwMSA1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Routing3";
  */
 const Routing3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Routing3.displayName = "Routing3";
-export default Routing3;
+Routing3.displayName = "Routing3"
+export default Routing3

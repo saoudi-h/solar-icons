@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/parts/Wheel";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/parts/Wheel"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xNy45NTM2IDEyLjc0OTlIMTQuOTA1NUMxNC43Njc1IDEzLjI4NjEgMTQuNDg1IDEzLjc2NDQgMTQuMTAxOSAxNC4xNDA2TDE1LjYyNjIgMTYuNzgwN0MxNi44ODA5IDE1LjgyNzUgMTcuNzQ4OSAxNC4zOTE3IDE3Ljk1MzYgMTIuNzQ5OVpNMTQuMzI3NyAxNy41MzE4TDEyLjgwMzIgMTQuODkxM0MxMi41NDc2IDE0Ljk2MjEgMTIuMjc4MiAxNSAxMiAxNUMxMS43MjE4IDE1IDExLjQ1MjQgMTQuOTYyMSAxMS4xOTY3IDE0Ljg5MTJMOS42NzIyIDE3LjUzMTdDMTAuMzg4IDE3LjgzMzMgMTEuMTc0NSAxOCAxMiAxOEMxMi44MjU1IDE4IDEzLjYxMiAxNy44MzMzIDE0LjMyNzcgMTcuNTMxOFpNOC4zNzM3OSAxNi43ODA2TDkuODk4MDYgMTQuMTQwNUM5LjUxNSAxMy43NjQzIDkuMjMyNDcgMTMuMjg2MSA5LjA5NDQ4IDEyLjc0OTlINi4wNDY0QzYuMjUxMSAxNC4zOTE3IDcuMTE5MTEgMTUuODI3NSA4LjM3Mzc5IDE2Ljc4MDZaTTE3Ljk1MzYgMTEuMjQ5OUgxNC45MDU1QzE0Ljc2NzQgMTAuNzEzNyAxNC40ODQ5IDEwLjIzNTUgMTQuMTAxOCA5Ljg1OTM4TDE1LjYyNjEgNy4yMTkyOEMxNi44ODA4IDguMTcyNCAxNy43NDg4IDkuNjA4MTQgMTcuOTUzNiAxMS4yNDk5Wk0xNC4zMjc3IDYuNDY4MjJDMTMuNjExOSA2LjE2NjY4IDEyLjgyNTQgNiAxMiA2QzExLjE3NDYgNiAxMC4zODggNi4xNjY2OSA5LjY3MjI3IDYuNDY4MjRMMTEuMTk2OCA5LjEwODc0QzExLjQ1MjQgOS4wMzc4NyAxMS43MjE4IDkgMTIgOUMxMi4yNzgyIDkgMTIuNTQ3NSA5LjAzNzg3IDEyLjgwMzIgOS4xMDg3M0wxNC4zMjc3IDYuNDY4MjJaTTkuODk4MTIgOS44NTk0Mkw4LjM3Mzg1IDcuMjE5MzFDNy4xMTkyIDguMTcyNDQgNi4yNTExOSA5LjYwODE2IDYuMDQ2NDQgMTEuMjQ5OUg5LjA5NDU1QzkuMjMyNTcgMTAuNzEzNyA5LjUxNTA5IDEwLjIzNTYgOS44OTgxMiA5Ljg1OTQyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/parts/Wheel";
  */
 const Wheel: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Wheel.displayName = "Wheel";
-export default Wheel;
+Wheel.displayName = "Wheel"
+export default Wheel

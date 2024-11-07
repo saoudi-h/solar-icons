@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/tools/AlignTop";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/tools/AlignTop"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNSAzLjc1QzEuMjUgNC4xNjQyMSAxLjU4NTc5IDQuNSAyIDQuNUgyMkMyMi40MTQyIDQuNSAyMi43NSA0LjE2NDIxIDIyLjc1IDMuNzVDMjIuNzUgMy4zMzU3OSAyMi40MTQyIDMgMjIgM0gyQzEuNTg1NzkgMyAxLjI1IDMuMzM1NzkgMS4yNSAzLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNy41IDcuNzVDNi41NjUzOCA3Ljc1IDYuMDk4MDggNy43NSA1Ljc1IDcuOTUwOTZDNS41MjE5NyA4LjA4MjYxIDUuMzMyNjEgOC4yNzE5NyA1LjIwMDk2IDguNUM1IDguODQ4MDggNSA5LjMxNTM4IDUgMTAuMjVMNSAxOS4yNUM1IDIwLjE4NDYgNSAyMC42NTE5IDUuMjAwOTYgMjFDNS4zMzI2MSAyMS4yMjggNS41MjE5NyAyMS40MTc0IDUuNzUgMjEuNTQ5QzYuMDk4MDggMjEuNzUgNi41NjUzOCAyMS43NSA3LjUgMjEuNzVDOC40MzQ2MiAyMS43NSA4LjkwMTkyIDIxLjc1IDkuMjUgMjEuNTQ5QzkuNDc4MDMgMjEuNDE3NCA5LjY2NzM5IDIxLjIyOCA5Ljc5OTA0IDIxQzEwIDIwLjY1MTkgMTAgMjAuMTg0NiAxMCAxOS4yNVYxMC4yNUMxMCA5LjMxNTM4IDEwIDguODQ4MDggOS43OTkwNCA4LjVDOS42NjczOSA4LjI3MTk3IDkuNDc4MDMgOC4wODI2MSA5LjI1IDcuOTUwOTZDOC45MDE5MiA3Ljc1IDguNDM0NjIgNy43NSA3LjUgNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE2LjUgNy43NUMxNS41NjU0IDcuNzUgMTUuMDk4MSA3Ljc1IDE0Ljc1IDcuOTUwOTZDMTQuNTIyIDguMDgyNjEgMTQuMzMyNiA4LjI3MTk3IDE0LjIwMSA4LjVDMTQgOC44NDgwOCAxNCA5LjMxNTM4IDE0IDEwLjI1VjE2LjI1QzE0IDE3LjE4NDYgMTQgMTcuNjUxOSAxNC4yMDEgMThDMTQuMzMyNiAxOC4yMjggMTQuNTIyIDE4LjQxNzQgMTQuNzUgMTguNTQ5QzE1LjA5ODEgMTguNzUgMTUuNTY1NCAxOC43NSAxNi41IDE4Ljc1QzE3LjQzNDYgMTguNzUgMTcuOTAxOSAxOC43NSAxOC4yNSAxOC41NDlDMTguNDc4IDE4LjQxNzQgMTguNjY3NCAxOC4yMjggMTguNzk5IDE4QzE5IDE3LjY1MTkgMTkgMTcuMTg0NiAxOSAxNi4yNVYxMC4yNUMxOSA5LjMxNTM4IDE5IDguODQ4MDggMTguNzk5IDguNUMxOC42Njc0IDguMjcxOTcgMTguNDc4IDguMDgyNjEgMTguMjUgNy45NTA5NkMxNy45MDE5IDcuNzUgMTcuNDM0NiA3Ljc1IDE2LjUgNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/AlignTop";
  */
 const AlignTop: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlignTop.displayName = "AlignTop";
-export default AlignTop;
+AlignTop.displayName = "AlignTop"
+export default AlignTop

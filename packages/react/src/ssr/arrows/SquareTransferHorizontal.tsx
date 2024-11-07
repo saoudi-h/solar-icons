@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/SquareTransferHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/SquareTransferHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTE3IDEzLjI1QzE3LjMxMjYgMTMuMjUgMTcuNTkyNSAxMy40NDM5IDE3LjcwMjIgMTMuNzM2N0MxNy44MTIgMTQuMDI5NCAxNy43Mjg3IDE0LjM1OTUgMTcuNDkzMiAxNC41NjUxTDE0LjA1NTcgMTcuNTY1MUMxMy43NDM2IDE3LjgzNzQgMTMuMjY5OCAxNy44MDUyIDEyLjk5NzQgMTcuNDkzMUMxMi43MjUxIDE3LjE4MTEgMTIuNzU3MyAxNi43MDczIDEzLjA2OTQgMTYuNDM0OUwxNSAxNC43NUw3IDE0Ljc1QzYuNTg1NzkgMTQuNzUgNi4yNSAxNC40MTQyIDYuMjUgMTRDNi4yNSAxMy41ODU4IDYuNTg1NzkgMTMuMjUgNyAxMy4yNUwxNyAxMy4yNVpNMTEuMDAyNiA2LjUwNjg1QzExLjI3NDkgNi44MTg5MyAxMS4yNDI3IDcuMjkyNzEgMTAuOTMwNyA3LjU2NTA3TDkgOS4yNUgxN0MxNy40MTQyIDkuMjUgMTcuNzUgOS41ODU3OSAxNy43NSAxMEMxNy43NSAxMC40MTQyIDE3LjQxNDIgMTAuNzUgMTcgMTAuNzVIN0M2LjY4NzM3IDEwLjc1IDYuNDA3NTMgMTAuNTU2MSA2LjI5Nzc1IDEwLjI2MzNDNi4xODc5OCA5Ljk3MDYxIDYuMjcxMyA5LjY0MDUgNi41MDY4NSA5LjQzNDkzTDkuOTQ0MzUgNi40MzQ5M0MxMC4yNTY0IDYuMTYyNTcgMTAuNzMwMiA2LjE5NDc3IDExLjAwMjYgNi41MDY4NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareTransferHorizontal";
  */
 const SquareTransferHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareTransferHorizontal.displayName = "SquareTransferHorizontal";
-export default SquareTransferHorizontal;
+SquareTransferHorizontal.displayName = "SquareTransferHorizontal"
+export default SquareTransferHorizontal

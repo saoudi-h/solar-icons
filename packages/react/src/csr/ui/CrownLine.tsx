@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/CrownLine";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/CrownLine"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuODM4MiAxMS4xMjYzTDIxLjYwOSAxMy41NjE2QzIxLjIzMTMgMTcuNTc0MiAyMS4wNDI1IDE5LjU4MDUgMTkuODU5OSAyMC43OTAyQzE4LjY3NzMgMjIgMTYuOTA0OCAyMiAxMy4zNTk5IDIySDEwLjY0MDFDNy4wOTUxNyAyMiA1LjMyMjcxIDIyIDQuMTQwMDkgMjAuNzkwMkMyLjk1NzQ4IDE5LjU4MDUgMi43Njg2NSAxNy41NzQyIDIuMzkxIDEzLjU2MTZMMi4xNjE4MSAxMS4xMjYzQzEuOTgxOCA5LjIxMzcgMS44OTE4IDguMjU3MzkgMi4yMTg5OSA3Ljg2MjA3QzIuMzk1OTggNy42NDgyMyAyLjYzNjY2IDcuNTE3MiAyLjg5Mzk5IDcuNDk0NkMzLjM2OTY4IDcuNDUyODIgMy45NjcwOCA4LjEzMjkgNS4xNjE4NyA5LjQ5MzA3QzUuNzc5NzcgMTAuMTk2NSA2LjA4ODcyIDEwLjU0ODIgNi40MzMzNyAxMC42MDI3QzYuNjI0MzQgMTAuNjMyOCA2LjgxODkyIDEwLjYwMTggNi45OTUyNiAxMC41MTMxQzcuMzEzNTEgMTAuMzUyOSA3LjUyNTcgOS45MTgxMiA3Ljk1MDA3IDkuMDQ4NTJMMTAuMTg2OSA0LjQ2NDg2QzEwLjk4ODggMi44MjE2MiAxMS4zODk4IDIgMTIgMkMxMi42MTAyIDIgMTMuMDExMiAyLjgyMTYyIDEzLjgxMzEgNC40NjQ4NUwxNi4wNDk5IDkuMDQ4NTFDMTYuNDc0MyA5LjkxODEyIDE2LjY4NjUgMTAuMzUyOSAxNy4wMDQ3IDEwLjUxMzFDMTcuMTgxMSAxMC42MDE4IDE3LjM3NTcgMTAuNjMyOCAxNy41NjY2IDEwLjYwMjdDMTcuOTExMyAxMC41NDgyIDE4LjIyMDIgMTAuMTk2NSAxOC44MzgxIDkuNDkzMDdDMjAuMDMyOSA4LjEzMjkgMjAuNjMwMyA3LjQ1MjgyIDIxLjEwNiA3LjQ5NDZDMjEuMzYzMyA3LjUxNzIgMjEuNjA0IDcuNjQ4MjMgMjEuNzgxIDcuODYyMDdDMjIuMTA4MiA4LjI1NzM5IDIyLjAxODIgOS4yMTM3IDIxLjgzODIgMTEuMTI2M1pNOC4yNSAxOEM4LjI1IDE3LjU4NTggOC41ODU3OSAxNy4yNSA5IDE3LjI1SDE1QzE1LjQxNDIgMTcuMjUgMTUuNzUgMTcuNTg1OCAxNS43NSAxOEMxNS43NSAxOC40MTQyIDE1LjQxNDIgMTguNzUgMTUgMTguNzVIOUM4LjU4NTc5IDE4Ljc1IDguMjUgMTguNDE0MiA4LjI1IDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CrownLine";
  */
 const CrownLine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CrownLine.displayName = "CrownLine";
-export default CrownLine;
+CrownLine.displayName = "CrownLine"
+export default CrownLine

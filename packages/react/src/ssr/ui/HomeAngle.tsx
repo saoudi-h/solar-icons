@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/HomeAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/HomeAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4zMzUzNyA3Ljg3NDk1QzEuNzk0OTEgOS4wMDIyOSAxLjk4NDYzIDEwLjMyMDggMi4zNjQwNyAxMi45NTc5TDIuNjQyODQgMTQuODk1MkMzLjEzMDI1IDE4LjI4MjcgMy4zNzM5NiAxOS45NzY0IDQuNTQ5MDMgMjAuOTg4MkM1LjcyNDA5IDIyIDcuNDQ3MzcgMjIgMTAuODkzOSAyMkgxMy4xMDYxQzE2LjU1MjYgMjIgMTguMjc1OSAyMiAxOS40NTEgMjAuOTg4MkMyMC42MjYgMTkuOTc2NCAyMC44Njk3IDE4LjI4MjcgMjEuMzU3MiAxNC44OTUyTDIxLjYzNTkgMTIuOTU3OUMyMi4wMTU0IDEwLjMyMDggMjIuMjA1MSA5LjAwMjI5IDIxLjY2NDYgNy44NzQ5NUMyMS4xMjQyIDYuNzQ3NiAxOS45NzM4IDYuMDYyMzQgMTcuNjczMSA0LjY5MTgxTDE2LjI4ODIgMy44NjY4N0MxNC4xOTkgMi42MjIyOSAxMy4xNTQzIDIgMTIgMkMxMC44NDU3IDIgOS44MDEwNCAyLjYyMjI5IDcuNzExNzUgMy44NjY4N0w2LjMyNjkxIDQuNjkxODFDNC4wMjYxOSA2LjA2MjM0IDIuODc1ODMgNi43NDc2IDIuMzM1MzcgNy44NzQ5NVpNOC4yNTAxIDE3Ljk5OThDOC4yNTAxIDE3LjU4NTYgOC41ODU4OSAxNy4yNDk4IDkuMDAwMSAxNy4yNDk4SDE1LjAwMDFDMTUuNDE0MyAxNy4yNDk4IDE1Ljc1MDEgMTcuNTg1NiAxNS43NTAxIDE3Ljk5OThDMTUuNzUwMSAxOC40MTQgMTUuNDE0MyAxOC43NDk4IDE1LjAwMDEgMTguNzQ5OEg5LjAwMDFDOC41ODU4OSAxOC43NDk4IDguMjUwMSAxOC40MTQgOC4yNTAxIDE3Ljk5OThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeAngle";
  */
 const HomeAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeAngle.displayName = "HomeAngle";
-export default HomeAngle;
+HomeAngle.displayName = "HomeAngle"
+export default HomeAngle

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Mirror2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Mirror2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjYzNjM2IDIySDE4LjM2MzZDMjAuMzcxOSAyMiAyMiAyMC4zNzE5IDIyIDE4LjM2MzZDMjIgMTcuNjEwNSAyMS4zODk1IDE3IDIwLjYzNjQgMTdIMTYuODI4NEMxNi4yOTggMTcgMTUuNzg5MyAxNy4yMTA3IDE1LjQxNDIgMTcuNTg1OEwxNC41ODU4IDE4LjQxNDJDMTQuMjEwNyAxOC43ODkzIDEzLjcwMiAxOSAxMy4xNzE2IDE5SDEwLjgyODRDMTAuMjk4IDE5IDkuNzg5MjkgMTguNzg5MyA5LjQxNDIxIDE4LjQxNDJMOC41ODU3OSAxNy41ODU4QzguMjEwNzEgMTcuMjEwNyA3LjcwMjAxIDE3IDcuMTcxNTcgMTdIMy4zNjM2NEMyLjYxMDUyIDE3IDIgMTcuNjEwNSAyIDE4LjM2MzZDMiAyMC4zNzE5IDMuNjI4MDYgMjIgNS42MzYzNiAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMgMTJDMyA3LjAyOTQ0IDcuMDI5NDQgMyAxMiAzQzE2Ljk3MDYgMyAyMSA3LjAyOTQ0IDIxIDEyQzIxIDEzLjI0MTQgMjAuNzQ4NyAxNC40MjQxIDIwLjI5NDEgMTUuNUgxNi44Mjg0QzE1LjkwMDIgMTUuNSAxNS4wMDk5IDE1Ljg2ODcgMTQuMzUzNiAxNi41MjUxTDEzLjUyNTEgMTcuMzUzNkMxMy40MzE0IDE3LjQ0NzMgMTMuMzA0MiAxNy41IDEzLjE3MTYgMTcuNUgxMC44Mjg0QzEwLjY5NTggMTcuNSAxMC41Njg2IDE3LjQ0NzMgMTAuNDc0OSAxNy4zNTM2TDkuNjQ2NDUgMTYuNTI1MUM4Ljk5MDA3IDE1Ljg2ODcgOC4wOTk4MyAxNS41IDcuMTcxNTcgMTUuNUgzLjcwNTkxQzMuMjUxMzQgMTQuNDI0MSAzIDEzLjI0MTQgMyAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Mirror2";
  */
 const Mirror2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Mirror2.displayName = "Mirror2";
-export default Mirror2;
+Mirror2.displayName = "Mirror2"
+export default Mirror2

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/RecordAudioCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/RecordAudioCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04Ljc1IDEyQzguNzUgMTAuMjA1MSAxMC4yMDUxIDguNzUgMTIgOC43NUMxMy43OTQ5IDguNzUgMTUuMjUgMTAuMjA1MSAxNS4yNSAxMkMxNS4yNSAxMy43OTQ5IDEzLjc5NDkgMTUuMjUgMTIgMTUuMjVDMTAuMjA1MSAxNS4yNSA4Ljc1IDEzLjc5NDkgOC43NSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaTTEyIDcuMjVDOS4zNzY2NSA3LjI1IDcuMjUgOS4zNzY2NSA3LjI1IDEyQzcuMjUgMTQuNjIzNCA5LjM3NjY1IDE2Ljc1IDEyIDE2Ljc1QzE0LjYyMzQgMTYuNzUgMTYuNzUgMTQuNjIzNCAxNi43NSAxMkMxNi43NSA5LjM3NjY1IDE0LjYyMzQgNy4yNSAxMiA3LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/RecordAudioCircle";
  */
 const RecordAudioCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RecordAudioCircle.displayName = "RecordAudioCircle";
-export default RecordAudioCircle;
+RecordAudioCircle.displayName = "RecordAudioCircle"
+export default RecordAudioCircle

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/MapArrowSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/MapArrowSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNMTYuOTM0OCA4LjE5NTk4TDEzLjQyMjcgMTcuMzYxOEMxMy4xMDQ1IDE4LjE5MjIgMTEuOTQgMTguMjE5MiAxMS42OTE3IDE3LjQwMTlMMTAuNjM1MiAxMy45MjQ5QzEwLjU1MyAxMy42NTQ1IDEwLjM0NTUgMTMuNDQ3IDEwLjA3NTEgMTMuMzY0OEw2LjU5ODEgMTIuMzA4M0M1Ljc4MDc5IDEyLjA2IDUuODA3NzkgMTAuODk1NSA2LjYzODI0IDEwLjU3NzNMMTUuODA0IDcuMDY1MjFDMTYuNTM4OSA2Ljc4MzYxIDE3LjIxNjQgNy40NjEwNyAxNi45MzQ4IDguMTk1OThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapArrowSquare";
  */
 const MapArrowSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapArrowSquare.displayName = "MapArrowSquare";
-export default MapArrowSquare;
+MapArrowSquare.displayName = "MapArrowSquare"
+export default MapArrowSquare

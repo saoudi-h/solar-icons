@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/LinkMinimalistic2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/LinkMinimalistic2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS43Mzg4IDQuMjYxMThDMTcuMDU3MiAxLjU3OTYxIDEyLjcwOTUgMS41Nzk2MSAxMC4wMjc5IDQuMjYxMThMOS4zMDcwNyA0Ljk4MjAzQzkuMDE0MTggNS4yNzQ5MiA5LjAxNDE4IDUuNzQ5OCA5LjMwNzA3IDYuMDQyNjlDOS41OTk5NyA2LjMzNTU4IDEwLjA3NDggNi4zMzU1OCAxMC4zNjc3IDYuMDQyNjlMMTEuMDg4NiA1LjMyMTg0QzEzLjE4NDQgMy4yMjYwNSAxNi41ODIzIDMuMjI2MDUgMTguNjc4MSA1LjMyMTg0QzIwLjc3MzkgNy40MTc2MyAyMC43NzM5IDEwLjgxNTYgMTguNjc4MSAxMi45MTE0TDE3Ljk1NzMgMTMuNjMyMkMxNy42NjQ0IDEzLjkyNTEgMTcuNjY0NCAxNC40IDE3Ljk1NzMgMTQuNjkyOUMxOC4yNTAyIDE0Ljk4NTggMTguNzI1IDE0Ljk4NTggMTkuMDE3OSAxNC42OTI5TDE5LjczODggMTMuOTcyQzIyLjQyMDMgMTEuMjkwNSAyMi40MjAzIDYuOTQyNzYgMTkuNzM4OCA0LjI2MTE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNi4wNDI2OSA5LjMwNzA3QzYuMzM1NTggOS41OTk5NyA2LjMzNTU4IDEwLjA3NDggNi4wNDI2OSAxMC4zNjc3TDUuMzIxODQgMTEuMDg4NkMzLjIyNjA1IDEzLjE4NDQgMy4yMjYwNSAxNi41ODIzIDUuMzIxODQgMTguNjc4MUM3LjQxNzYzIDIwLjc3MzkgMTAuODE1NiAyMC43NzM5IDEyLjkxMTQgMTguNjc4MUwxMy42MzIyIDE3Ljk1NzNDMTMuOTI1MSAxNy42NjQ0IDE0LjQgMTcuNjY0NCAxNC42OTI5IDE3Ljk1NzNDMTQuOTg1OCAxOC4yNTAxIDE0Ljk4NTggMTguNzI1IDE0LjY5MjkgMTkuMDE3OUwxMy45NzIgMTkuNzM4OEMxMS4yOTA1IDIyLjQyMDMgNi45NDI3NiAyMi40MjAzIDQuMjYxMTggMTkuNzM4OEMxLjU3OTYxIDE3LjA1NzIgMS41Nzk2MSAxMi43MDk1IDQuMjYxMTggMTAuMDI3OUw0Ljk4MjAzIDkuMzA3MDdDNS4yNzQ5MiA5LjAxNDE4IDUuNzQ5OCA5LjAxNDE4IDYuMDQyNjkgOS4zMDcwN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE0LjY5MjggOS4zMDcwN0MxNC45ODU3IDkuNTk5OTcgMTQuOTg1NyAxMC4wNzQ4IDE0LjY5MjggMTAuMzY3N0wxMC4zNjc3IDE0LjY5MjhDMTAuMDc0OCAxNC45ODU3IDkuNTk5OTcgMTQuOTg1NyA5LjMwNzA3IDE0LjY5MjhDOS4wMTQxOCAxNC4zOTk5IDkuMDE0MTggMTMuOTI1MSA5LjMwNzA3IDEzLjYzMjJMMTMuNjMyMiA5LjMwNzA3QzEzLjkyNTEgOS4wMTQxOCAxNC4zOTk5IDkuMDE0MTggMTQuNjkyOCA5LjMwNzA3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/LinkMinimalistic2";
  */
 const LinkMinimalistic2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LinkMinimalistic2.displayName = "LinkMinimalistic2";
-export default LinkMinimalistic2;
+LinkMinimalistic2.displayName = "LinkMinimalistic2"
+export default LinkMinimalistic2

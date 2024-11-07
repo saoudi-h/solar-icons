@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/faces/SmileCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/faces/SmileCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk04LjM5NzQ3IDE1LjU1MzRDOC42NDQxMyAxNS4yMjA2IDkuMTEzODUgMTUuMTUwOCA5LjQ0NjYxIDE1LjM5NzVDMTAuMTc1IDE1LjkzNzMgMTEuMDU0MSAxNi4yNSAxMiAxNi4yNUMxMi45NDU5IDE2LjI1IDEzLjgyNSAxNS45MzczIDE0LjU1MzQgMTUuMzk3NUMxNC44ODYyIDE1LjE1MDggMTUuMzU1OSAxNS4yMjA2IDE1LjYwMjUgMTUuNTUzNEMxNS44NDkyIDE1Ljg4NjIgMTUuNzc5NCAxNi4zNTU5IDE1LjQ0NjYgMTYuNjAyNUMxNC40NzQyIDE3LjMyMzMgMTMuMjg1IDE3Ljc1IDEyIDE3Ljc1QzEwLjcxNSAxNy43NSA5LjUyNTggMTcuMzIzMyA4LjU1MzM5IDE2LjYwMjVDOC4yMjA2MiAxNi4zNTU5IDguMTUwODIgMTUuODg2MiA4LjM5NzQ3IDE1LjU1MzRaTTE2IDEwLjVDMTYgMTEuMzI4NCAxNS41NTIzIDEyIDE1IDEyQzE0LjQ0NzcgMTIgMTQgMTEuMzI4NCAxNCAxMC41QzE0IDkuNjcxNTcgMTQuNDQ3NyA5IDE1IDlDMTUuNTUyMyA5IDE2IDkuNjcxNTcgMTYgMTAuNVpNOSAxMkM5LjU1MjI4IDEyIDEwIDExLjMyODQgMTAgMTAuNUMxMCA5LjY3MTU3IDkuNTUyMjggOSA5IDlDOC40NDc3MiA5IDggOS42NzE1NyA4IDEwLjVDOCAxMS4zMjg0IDguNDQ3NzIgMTIgOSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/SmileCircle";
  */
 const SmileCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SmileCircle.displayName = "SmileCircle";
-export default SmileCircle;
+SmileCircle.displayName = "SmileCircle"
+export default SmileCircle

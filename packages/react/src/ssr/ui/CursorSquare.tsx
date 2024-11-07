@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/CursorSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/CursorSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTIuMzk3NSAxNC4wMzg1TDE0Ljg1OSAxNi40OTk5QzE1LjExMzggMTYuNzU0OCAxNS4yNDEzIDE2Ljg4MjIgMTUuMzgzNCAxNi45NDExQzE1LjU3MyAxNy4wMTk2IDE1Ljc4NTkgMTcuMDE5NiAxNS45NzU1IDE2Ljk0MTFDMTYuMTE3NiAxNi44ODIyIDE2LjI0NTEgMTYuNzU0OCAxNi40OTk5IDE2LjQ5OTlDMTYuNzU0OCAxNi4yNDUxIDE2Ljg4MjIgMTYuMTE3NiAxNi45NDExIDE1Ljk3NTVDMTcuMDE5NiAxNS43ODU5IDE3LjAxOTYgMTUuNTczIDE2Ljk0MTEgMTUuMzgzNEMxNi44ODIyIDE1LjI0MTMgMTYuNzU0OCAxNS4xMTM4IDE2LjQ5OTkgMTQuODU5TDE0LjAzODUgMTIuMzk3NUwxNC43OTAyIDExLjY0NTlDMTUuNTU5NyAxMC44NzY0IDE1Ljk0NDQgMTAuNDkxNiAxNS44NTM2IDEwLjA3ODFDMTUuNzYyOCA5LjY2NDUxIDE1LjI1MjIgOS40NzY0MSAxNC4yMzEgOS4xMDAxOUwxMC44MjUzIDcuODQ1NDRDOC43ODgxNiA3LjA5NDkyIDcuNzY5NiA2LjcxOTY2IDcuMjQ0NjMgNy4yNDQ2M0M2LjcxOTY2IDcuNzY5NiA3LjA5NDkyIDguNzg4MTYgNy44NDU0NCAxMC44MjUzTDkuMTAwMTkgMTQuMjMxQzkuNDc2NDEgMTUuMjUyMiA5LjY2NDUyIDE1Ljc2MjggMTAuMDc4MSAxNS44NTM2QzEwLjQ5MTYgMTUuOTQ0NCAxMC44NzY0IDE1LjU1OTcgMTEuNjQ1OSAxNC43OTAyTDEyLjM5NzUgMTQuMDM4NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CursorSquare";
  */
 const CursorSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CursorSquare.displayName = "CursorSquare";
-export default CursorSquare;
+CursorSquare.displayName = "CursorSquare"
+export default CursorSquare

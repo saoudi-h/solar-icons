@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/Radar";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/Radar"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk0xMy4zNTg0IDYuOTMwMzNDMTIuNjA0IDYuNzI4MTcgMTEuODQ1OCA2LjcwMTE2IDExLjEyNTUgNi44MjMzOEMxMC43MTcxIDYuODkyNjcgMTAuMzI5OSA2LjYxNzc5IDEwLjI2MDYgNi4yMDk0MUMxMC4xOTEzIDUuODAxMDMgMTAuNDY2MiA1LjQxMzgxIDEwLjg3NDUgNS4zNDQ1MkMxMS44MDMzIDUuMTg2OTMgMTIuNzc5NiA1LjIyMjMyIDEzLjc0NjYgNS40ODE0NEMxNy4zNDY3IDYuNDQ2MDggMTkuNDgzMiAxMC4xNDY1IDE4LjUxODYgMTMuNzQ2NkMxNy41NTM5IDE3LjM0NjcgMTMuODUzNSAxOS40ODMyIDEwLjI1MzQgMTguNTE4NkM2LjY1MzI1IDE3LjU1MzkgNC41MTY3OSAxMy44NTM1IDUuNDgxNDQgMTAuMjUzNEM1LjY3MjMyIDkuNTQwOTggNS45NzA5NiA4Ljg4NDYgNi4zNTU2MSA4LjI5Nzk1QzYuODA4NDkgNy42MDcyMyA3LjcxMjUxIDcuNTY0OTEgOC4yNzQwNSA4LjAxOTQxTDEyLjQ3MTggMTEuNDE3QzEyLjc5MzggMTEuNjc3NiAxMi44NDM2IDEyLjE0OTkgMTIuNTgzIDEyLjQ3MThDMTIuMzIyNCAxMi43OTM4IDExLjg1MDEgMTIuODQzNiAxMS41MjgyIDEyLjU4M0w3LjQ4OTE1IDkuMzEzODlDNy4yNDg2IDkuNzE4NCA3LjA1ODYgMTAuMTYyOSA2LjkzMDMzIDEwLjY0MTZDNi4xODAxIDEzLjQ0MTUgNy44NDE2OCAxNi4zMTk0IDEwLjY0MTYgMTcuMDY5N0MxMy40NDE1IDE3LjgxOTkgMTYuMzE5NCAxNi4xNTgzIDE3LjA2OTcgMTMuMzU4NEMxNy44MTk5IDEwLjU1ODUgMTYuMTU4MyA3LjY4MDU2IDEzLjM1ODQgNi45MzAzM1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Radar";
  */
 const Radar: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Radar.displayName = "Radar";
-export default Radar;
+Radar.displayName = "Radar"
+export default Radar

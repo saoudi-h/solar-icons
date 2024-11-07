@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/ScreenShare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/ScreenShare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjYyMzMzIDQuNTA3ODlDNS4xNTIwNCA0LjUzNDk0IDQuMzA1NDEgNC42NTk0NCAzLjczMjIzIDUuMjMyNjJDMyA1Ljk2NDg1IDMgNy4xNDMzNiAzIDkuNTAwMzlWMTQuNTAwNEMzIDE2Ljg1NzQgMyAxOC4wMzU5IDMuNzMyMjMgMTguNzY4MkM0LjMwNTQxIDE5LjM0MTMgNS4xNTIwNCAxOS40NjU4IDYuNjIzMzIgMTkuNDkyOUM2LjYyMzI5IDE5LjQ5MjYgNi42MjMzNiAxOS40OTMxIDYuNjIzMzIgMTkuNDkyOUM2LjQ5OTk3IDE4LjU3NTQgNi40OTk5MyAxNy40Mjg5IDYuNSAxNi4wOTkyVjcuOTAxNjdDNi40OTk5MyA2LjU3MTk0IDYuNDk5OTggNS40MjUzOCA2LjYyMzMzIDQuNTA3ODlDNi42MjMzNyA0LjUwNzYxIDYuNjIzMjkgNC41MDgxNyA2LjYyMzMzIDQuNTA3ODlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC44Nzg2OCAyLjg3ODY4QzggMy43NTczNiA4IDUuMTcxNTcgOCA4VjE2QzggMTguODI4NCA4IDIwLjI0MjYgOC44Nzg2OCAyMS4xMjEzQzkuNzU3MzYgMjIgMTEuMTcxNiAyMiAxNCAyMkgxNUMxNy44Mjg0IDIyIDE5LjI0MjYgMjIgMjAuMTIxMyAyMS4xMjEzQzIxIDIwLjI0MjYgMjEgMTguODI4NCAyMSAxNlY4QzIxIDUuMTcxNTcgMjEgMy43NTczNiAyMC4xMjEzIDIuODc4NjhDMTkuMjQyNiAyIDE3LjgyODQgMiAxNSAySDE0QzExLjE3MTYgMiA5Ljc1NzM2IDIgOC44Nzg2OCAyLjg3ODY4Wk0xNS4wMzAzIDcuNDY5NjdDMTQuNzM3NCA3LjE3Njc4IDE0LjI2MjYgNy4xNzY3OCAxMy45Njk3IDcuNDY5NjdMMTEuNDY5NyA5Ljk2OTY3QzExLjE3NjggMTAuMjYyNiAxMS4xNzY4IDEwLjczNzQgMTEuNDY5NyAxMS4wMzAzQzExLjc2MjYgMTEuMzIzMiAxMi4yMzc0IDExLjMyMzIgMTIuNTMwMyAxMS4wMzAzTDEzLjc1IDkuODEwNjZWMTZDMTMuNzUgMTYuNDE0MiAxNC4wODU4IDE2Ljc1IDE0LjUgMTYuNzVDMTQuOTE0MiAxNi43NSAxNS4yNSAxNi40MTQyIDE1LjI1IDE2VjkuODEwNjZMMTYuNDY5NyAxMS4wMzAzQzE2Ljc2MjYgMTEuMzIzMiAxNy4yMzc0IDExLjMyMzIgMTcuNTMwMyAxMS4wMzAzQzE3LjgyMzIgMTAuNzM3NCAxNy44MjMyIDEwLjI2MjYgMTcuNTMwMyA5Ljk2OTY3TDE1LjAzMDMgNy40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/ScreenShare";
  */
 const ScreenShare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ScreenShare.displayName = "ScreenShare";
-export default ScreenShare;
+ScreenShare.displayName = "ScreenShare"
+export default ScreenShare

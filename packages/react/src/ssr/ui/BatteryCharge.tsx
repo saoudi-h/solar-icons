@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/BatteryCharge";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/BatteryCharge"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDguMjI4NzYgMiA2LjM0MzE1IDMuMTcxNTcgNS4xNzE1N0M0LjM0MzE1IDQgNi4yMjg3NiA0IDEwIDRIMTEuNUMxNS4yNzEyIDQgMTcuMTU2OSA0IDE4LjMyODQgNS4xNzE1N0MxOS4yNzE1IDYuMTE0NjYgMTkuNDU1NCA3LjUyMDQzIDE5LjQ5MTMgMTBIMTkuOTk5OUMyMC45NDI3IDEwIDIxLjQxNDEgMTAgMjEuNzA3IDEwLjI5MjlDMjEuOTk5OSAxMC41ODU4IDIxLjk5OTkgMTEuMDU3MiAyMS45OTk5IDEyQzIxLjk5OTkgMTIuOTQyOCAyMS45OTk5IDEzLjQxNDIgMjEuNzA3IDEzLjcwNzFDMjEuNDE0MSAxNCAyMC45NDI3IDE0IDE5Ljk5OTkgMTRIMTkuNDkxM0MxOS40NTU0IDE2LjQ3OTYgMTkuMjcxNSAxNy44ODUzIDE4LjMyODQgMTguODI4NEMxNy4xNTY5IDIwIDE1LjI3MTIgMjAgMTEuNSAyMEgxMEM2LjIyODc2IDIwIDQuMzQzMTUgMjAgMy4xNzE1NyAxOC44Mjg0QzIgMTcuNjU2OSAyIDE1Ljc3MTIgMiAxMlpNMTEuOTgwMSA4LjQyMzgzQzEyLjI5ODMgOC42ODkwMSAxMi4zNDEzIDkuMTYxOTMgMTIuMDc2MiA5LjQ4MDE0TDEwLjYwMTMgMTEuMjVIMTIuNUMxMi43OTEgMTEuMjUgMTMuMDU1OCAxMS40MTgzIDEzLjE3OTIgMTEuNjgxOUMxMy4zMDI2IDExLjk0NTQgMTMuMjYyNSAxMi4yNTY2IDEzLjA3NjIgMTIuNDgwMUwxMC41NzYyIDE1LjQ4MDFDMTAuMzExIDE1Ljc5ODMgOS44MzgwNyAxNS44NDEzIDkuNTE5ODYgMTUuNTc2MkM5LjIwMTY1IDE1LjMxMSA5LjE1ODY2IDE0LjgzODEgOS40MjM4MyAxNC41MTk5TDEwLjg5ODcgMTIuNzVIOUM4LjcwODk5IDEyLjc1IDguNDQ0MjQgMTIuNTgxNyA4LjMyMDgxIDEyLjMxODFDOC4xOTczNyAxMi4wNTQ2IDguMjM3NTMgMTEuNzQzNCA4LjQyMzgzIDExLjUxOTlMMTAuOTIzOCA4LjUxOTg2QzExLjE4OSA4LjIwMTY1IDExLjY2MTkgOC4xNTg2NiAxMS45ODAxIDguNDIzODNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/BatteryCharge";
  */
 const BatteryCharge: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BatteryCharge.displayName = "BatteryCharge";
-export default BatteryCharge;
+BatteryCharge.displayName = "BatteryCharge"
+export default BatteryCharge

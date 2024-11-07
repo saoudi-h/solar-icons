@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Turntable";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Turntable"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi4yNSA5QzE2LjI1IDguNTg1NzkgMTYuNTg1OCA4LjI1IDE3IDguMjVDMTcuNDE0MiA4LjI1IDE3Ljc1IDguNTg1NzkgMTcuNzUgOUMxNy43NSA5LjQxNDIxIDE3LjQxNDIgOS43NSAxNyA5Ljc1QzE2LjU4NTggOS43NSAxNi4yNSA5LjQxNDIxIDE2LjI1IDlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik02Ljc1IDEyQzYuNzUgMTAuMjA1MSA4LjIwNTA3IDguNzUgMTAgOC43NUMxMS43OTQ5IDguNzUgMTMuMjUgMTAuMjA1MSAxMy4yNSAxMkMxMy4yNSAxMy43OTQ5IDExLjc5NDkgMTUuMjUgMTAgMTUuMjVDOC4yMDUwNyAxNS4yNSA2Ljc1IDEzLjc5NDkgNi43NSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zLjE3MTU3IDMuNDY0NDdDMiA0LjkyODkzIDIgNy4yODU5NSAyIDEyQzIgMTYuNzE0IDIgMTkuMDcxMSAzLjE3MTU3IDIwLjUzNTVDNC4zNDMxNSAyMiA2LjIyODc2IDIyIDEwIDIySDE0QzE3Ljc3MTIgMjIgMTkuNjU2OSAyMiAyMC44Mjg0IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjgyODQgMy40NjQ0N0MxOS42NTY5IDIgMTcuNzcxMiAyIDE0IDJIMTBDNi4yMjg3NiAyIDQuMzQzMTUgMiAzLjE3MTU3IDMuNDY0NDdaTTE3IDYuNzVDMTUuNzU3NCA2Ljc1IDE0Ljc1IDcuNzU3MzYgMTQuNzUgOUMxNC43NSA5Ljk3OTY2IDE1LjM3NjEgMTAuODEzMSAxNi4yNSAxMS4xMjJWMTQuNzYzOUMxNi4yNSAxNS4yMzc0IDE1Ljk4MjUgMTUuNjcwMiAxNS41NTkgMTUuODgyTDE0LjY2NDYgMTYuMzI5MkMxNC4yOTQxIDE2LjUxNDQgMTQuMTQzOSAxNi45NjQ5IDE0LjMyOTIgMTcuMzM1NEMxNC41MTQ0IDE3LjcwNTkgMTQuOTY0OSAxNy44NTYxIDE1LjMzNTQgMTcuNjcwOEwxNi4yMjk4IDE3LjIyMzZDMTcuMTYxNSAxNi43NTc4IDE3Ljc1IDE1LjgwNTYgMTcuNzUgMTQuNzYzOVYxMS4xMjJDMTguNjIzOSAxMC44MTMxIDE5LjI1IDkuOTc5NjYgMTkuMjUgOUMxOS4yNSA3Ljc1NzM2IDE4LjI0MjYgNi43NSAxNyA2Ljc1Wk0xMCA3LjI1QzcuMzc2NjUgNy4yNSA1LjI1IDkuMzc2NjUgNS4yNSAxMkM1LjI1IDE0LjYyMzQgNy4zNzY2NSAxNi43NSAxMCAxNi43NUMxMi42MjM0IDE2Ljc1IDE0Ljc1IDE0LjYyMzQgMTQuNzUgMTJDMTQuNzUgOS4zNzY2NSAxMi42MjM0IDcuMjUgMTAgNy4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Turntable";
  */
 const Turntable: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Turntable.displayName = "Turntable";
-export default Turntable;
+Turntable.displayName = "Turntable"
+export default Turntable

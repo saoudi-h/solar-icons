@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/like/Dislike";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/like/Dislike"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC4yNjk5IDguNDg1MDVMMjAuOTc1NCAxMi41NjQ4QzIxLjE1MTYgMTMuNTgzOCAyMC4zNjggMTQuNTE1OCAxOS4zMzUgMTQuNTE1OEgxNC4xNTM5QzEzLjY0MDQgMTQuNTE1OCAxMy4yNDk0IDE0Ljk3NjcgMTMuMzMyNSAxNS40ODRMMTMuOTk1MiAxOS41Mjg2QzE0LjEwMjggMjAuMTg1NyAxNC4wNzIxIDIwLjg1OCAxMy45MDQ5IDIxLjUwMjVDMTMuNzY2NCAyMi4wMzY0IDEzLjM1NDUgMjIuNDY1IDEyLjgxMjggMjIuNjM5MUwxMi42Njc4IDIyLjY4NTZDMTIuMzQwNCAyMi43OTA4IDExLjk4MzEgMjIuNzY2MyAxMS42NzQ0IDIyLjYxNzZDMTEuMzM0NyAyMi40NTM5IDExLjA4NjEgMjIuMTU1MyAxMC45OTQgMjEuODAwMUwxMC41MTgzIDE5Ljk2NjNDMTAuMzY2OSAxOS4zODI4IDEwLjE0NjUgMTguODE5NSA5Ljg2MjE4IDE4LjI4NzRDOS40NDY4MyAxNy41MDk4IDguODA0NjUgMTYuODg3NSA4LjEzNzExIDE2LjMxMjNMNi42OTgzOCAxNS4wNzI1QzYuMjkyNzIgMTQuNzIyOSA2LjA3OTY4IDE0LjE5OTQgNi4xMjU4NCAxMy42NjU2TDYuOTM4MDEgNC4yNzI5M0M3LjAxMjUgMy40MTEzOSA3LjczMjggMi43NSA4LjU5NjU4IDIuNzVIMTMuMjQ1MkMxNi43MjY1IDIuNzUgMTkuNjk3NSA1LjE3NTYxIDIwLjI2OTkgOC40ODUwNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yLjk2NzY3IDE1LjI2NTFDMy4zNjg5MyAxNS4yODI0IDMuNzEyNjEgMTQuOTgwNiAzLjc0NzIxIDE0LjU4MDRMNC43MTg4MSAzLjM0Mzg5QzQuNzgxMjIgMi42MjIxIDQuMjEyNjggMiAzLjQ4NjcxIDJDMi44MDI4OSAyIDIuMjUgMi41NTQ3NCAyLjI1IDMuMjM3MjZWMTQuNTE1OEMyLjI1IDE0LjkxNzQgMi41NjY0IDE1LjI0NzggMi45Njc2NyAxNS4yNjUxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/Dislike";
  */
 const Dislike: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Dislike.displayName = "Dislike";
-export default Dislike;
+Dislike.displayName = "Dislike"
+export default Dislike

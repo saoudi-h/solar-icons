@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/BatteryChargeMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/BatteryChargeMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDguMjI4NzYgMiA2LjM0MzE1IDMuMTcxNTcgNS4xNzE1N0M0LjM0MzE1IDQgNi4yMjg3NiA0IDEwIDRIMTEuNUMxNS4yNzEyIDQgMTcuMTU2OSA0IDE4LjMyODQgNS4xNzE1N0MxOS41IDYuMzQzMTUgMTkuNSA4LjIyODc2IDE5LjUgMTJDMTkuNSAxNS43NzEyIDE5LjUgMTcuNjU2OSAxOC4zMjg0IDE4LjgyODRDMTcuMTU2OSAyMCAxNS4yNzEyIDIwIDExLjUgMjBIMTBDNi4yMjg3NiAyMCA0LjM0MzE1IDIwIDMuMTcxNTcgMTguODI4NEMyIDE3LjY1NjkgMiAxNS43NzEyIDIgMTJaTTExLjk4MDEgOC40MjM4M0MxMi4yOTgzIDguNjg5MDEgMTIuMzQxMyA5LjE2MTkzIDEyLjA3NjIgOS40ODAxNEwxMC42MDEzIDExLjI1SDEyLjVDMTIuNzkxIDExLjI1IDEzLjA1NTggMTEuNDE4MyAxMy4xNzkyIDExLjY4MTlDMTMuMzAyNiAxMS45NDU0IDEzLjI2MjUgMTIuMjU2NiAxMy4wNzYyIDEyLjQ4MDFMMTAuNTc2MiAxNS40ODAxQzEwLjMxMSAxNS43OTgzIDkuODM4MDcgMTUuODQxMyA5LjUxOTg2IDE1LjU3NjJDOS4yMDE2NSAxNS4zMTEgOS4xNTg2NiAxNC44MzgxIDkuNDIzODMgMTQuNTE5OUwxMC44OTg3IDEyLjc1SDlDOC43MDg5OSAxMi43NSA4LjQ0NDI0IDEyLjU4MTcgOC4zMjA4MSAxMi4zMTgxQzguMTk3MzcgMTIuMDU0NiA4LjIzNzUzIDExLjc0MzQgOC40MjM4MyAxMS41MTk5TDEwLjkyMzggOC41MTk4NkMxMS4xODkgOC4yMDE2NSAxMS42NjE5IDguMTU4NjYgMTEuOTgwMSA4LjQyMzgzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuMjUgMTRDMjEuMjUgMTQuNDE0MiAyMS41ODU4IDE0Ljc1IDIyIDE0Ljc1QzIyLjQxNDIgMTQuNzUgMjIuNzUgMTQuNDE0MiAyMi43NSAxNFYxMEMyMi43NSA5LjU4NTc5IDIyLjQxNDIgOS4yNSAyMiA5LjI1QzIxLjU4NTggOS4yNSAyMS4yNSA5LjU4NTc5IDIxLjI1IDEwVjE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/BatteryChargeMinimalistic";
  */
 const BatteryChargeMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BatteryChargeMinimalistic.displayName = "BatteryChargeMinimalistic";
-export default BatteryChargeMinimalistic;
+BatteryChargeMinimalistic.displayName = "BatteryChargeMinimalistic"
+export default BatteryChargeMinimalistic

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/school/BookMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/school/BookMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjY1NTE3IDIuMjI3MzJDNS4yMjI1IDIuMzQwMzcgNC45NDM4IDIuNTAwMjEgNC43MjcxOCAyLjcxMjQ0QzQuNDIxNzkgMy4wMTE2NSA0LjIyMjY4IDMuNDMxNzIgNC4xMTM4MiA0LjIyNUM0LjAwMTc2IDUuMDQxNTkgNCA2LjEyMzg3IDQgNy42NzU2OFYxNi4yNDQyQzQuMzg4NjcgMTUuOTc4MSA0LjgyNjc0IDE1Ljc3NTYgNS4yOTg5OSAxNS42NTE3QzUuNDEyOTYgMTUuNjIxNyA1LjUzMTAzIDE1LjU5ODMgNS42NTUxNyAxNS41Nzk5VjIuMjI3MzJaIiBmaWxsPSIjMUMyNzREIi8+CjxwYXRoIGQ9Ik03LjMxMDM0IDE1LjUxMzVDNy4zMjIwNiAxNS41MTM1IDcuMzMzODIgMTUuNTEzNSA3LjM0NTYzIDE1LjUxMzVMMjAgMTUuNTEzNVY3LjY3NTY4QzIwIDYuMTIzODcgMTkuOTk4MiA1LjA0MTU5IDE5Ljg4NjIgNC4yMjQ5OUMxOS43NzczIDMuNDMxNzIgMTkuNTc4MiAzLjAxMTY1IDE5LjI3MjggMi43MTI0NEMxOC45Njc0IDIuNDEzMjQgMTguNTM4NyAyLjIxODE2IDE3LjcyOSAyLjExMTUxQzE2Ljg5NTUgMi4wMDE3MiAxNS43OTA4IDIgMTQuMjA2OSAySDkuNzkzMUM4Ljc5MTM4IDIgNy45ODEzMyAyLjAwMDY5IDcuMzEwMzQgMi4wMjg5N1YxNS41MTM1WiIgZmlsbD0iIzFDMjc0RCIvPgo8cGF0aCBkPSJNNy40NzM0MSAxNy4xMzUxQzYuMzkzOTUgMTcuMTM1MSA2LjAxNjU3IDE3LjE0MjEgNS43MjczOCAxNy4yMThDNC45MzM2NSAxNy40MjY0IDQuMzAwODggMTguMDA0NCA0LjAyOTUyIDE4Ljc1NThDNC4wNDYzIDE5LjEzODIgNC4wNzI1OSAxOS40NzQ2IDQuMTEzODIgMTkuNzc1QzQuMjIyNjggMjAuNTY4MyA0LjQyMTc5IDIwLjk4ODQgNC43MjcxOCAyMS4yODc2QzUuMDMyNTggMjEuNTg2OCA1LjQ2MTM1IDIxLjc4MTggNi4yNzEwMyAyMS44ODg1QzcuMTA0NTIgMjEuOTk4MyA4LjIwOTIgMjIgOS43OTMxIDIySDE0LjIwNjlDMTUuNzkwOCAyMiAxNi44OTU1IDIxLjk5ODMgMTcuNzI5IDIxLjg4ODVDMTguNTM4NyAyMS43ODE4IDE4Ljk2NzQgMjEuNTg2OCAxOS4yNzI4IDIxLjI4NzZDMTkuNTc4MiAyMC45ODg0IDE5Ljc3NzMgMjAuNTY4MyAxOS44ODYyIDE5Ljc3NUMxOS45Nzc2IDE5LjEwODggMTkuOTk1NiAxOC4yNjU3IDE5Ljk5OTEgMTcuMTM1MUg3LjQ3MzQxWiIgZmlsbD0iIzFDMjc0RCIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/BookMinimalistic";
  */
 const BookMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BookMinimalistic.displayName = "BookMinimalistic";
-export default BookMinimalistic;
+BookMinimalistic.displayName = "BookMinimalistic"
+export default BookMinimalistic

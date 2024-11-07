@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/VideoLibrary";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/VideoLibrary"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjUwOTg5IDIuMDAwMDFIMTUuNDlDMTUuNzIyNSAxLjk5OTk1IDE1LjkwMDcgMS45OTk5MSAxNi4wNTY1IDIuMDE1MTVDMTcuMTY0MyAyLjEyMzUyIDE4LjA3MTEgMi43ODk1OCAxOC40NTU2IDMuNjg2NzhINS41NDQyOEM1LjkyODc5IDIuNzg5NTggNi44MzU1NSAyLjEyMzUyIDcuOTQzMzcgMi4wMTUxNUM4LjA5OTE3IDEuOTk5OTEgOC4yNzc0MSAxLjk5OTk1IDguNTA5ODkgMi4wMDAwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTYuMzEwNTIgNC43MjMxMkM0LjkxOTg5IDQuNzIzMTIgMy43Nzk2MyA1LjU2Mjg3IDMuMzk5MSA2LjY3NjkxQzMuMzkxMTcgNi43MDAxMyAzLjM4MzU2IDYuNzIzNDggMy4zNzYyOSA2Ljc0NjkzQzMuNzc0NDQgNi42MjYzNiA0LjE4ODgxIDYuNTQ3NTkgNC42MDgyNyA2LjQ5MzgyQzUuNjg4NjUgNi4zNTUzMSA3LjA1Mzk5IDYuMzU1MzggOC42NDAwMiA2LjM1NTQ3SDE1LjUzMjFDMTcuMTE4MSA2LjM1NTM4IDE4LjQ4MzUgNi4zNTUzMSAxOS41NjM5IDYuNDkzODJDMTkuOTgzMyA2LjU0NzU5IDIwLjM5NzcgNi42MjYzNiAyMC43OTU4IDYuNzQ2OTNDMjAuNzg4NiA2LjcyMzQ4IDIwLjc4MSA2LjcwMDEzIDIwLjc3MyA2LjY3NjkxQzIwLjM5MjUgNS41NjI4NyAxOS4yNTIyIDQuNzIzMTIgMTcuODYxNiA0LjcyMzEySDYuMzEwNTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMzI3NiA3LjU0MjA0SDguNjcyMzlDNS4yOTc1OCA3LjU0MjA0IDMuNjEwMTcgNy41NDIwNCAyLjY2MjMyIDguNTI4ODdDMS43MTQ0NyA5LjUxNTcgMS45Mzc0OCAxMS4wNDAzIDIuMzgzNTEgMTQuMDg5NkwyLjgwNjQ4IDE2Ljk4MTFDMy4xNTYyNiAxOS4zNzI0IDMuMzMxMTUgMjAuNTY4IDQuMjI4MzQgMjEuMjg0QzUuMTI1NTMgMjIgNi40NDg4IDIyIDkuMDk1MzQgMjJIMTQuOTA0NkMxNy41NTEyIDIyIDE4Ljg3NDUgMjIgMTkuNzcxNyAyMS4yODRDMjAuNjY4OSAyMC41NjggMjAuODQzNyAxOS4zNzI0IDIxLjE5MzUgMTYuOTgxMUwyMS42MTY1IDE0LjA4OTZDMjIuMDYyNSAxMS4wNDA0IDIyLjI4NTUgOS41MTU2OSAyMS4zMzc3IDguNTI4ODdDMjAuMzg5OCA3LjU0MjA0IDE4LjcwMjQgNy41NDIwNCAxNS4zMjc2IDcuNTQyMDRaTTE0LjU4MTIgMTUuNzk0MkMxNS4xMzk2IDE1LjQ0ODEgMTUuMTM5NiAxNC41NTE5IDE0LjU4MTIgMTQuMjA1OEwxMS4yMDk2IDEyLjExNTZDMTAuNjY2OSAxMS43NzkyIDEwIDEyLjIxNzEgMTAgMTIuOTA5OVYxNy4wOTAxQzEwIDE3Ljc4MjkgMTAuNjY2OSAxOC4yMjA4IDExLjIwOTYgMTcuODg0NEwxNC41ODEyIDE1Ljc5NDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/VideoLibrary";
  */
 const VideoLibrary: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-VideoLibrary.displayName = "VideoLibrary";
-export default VideoLibrary;
+VideoLibrary.displayName = "VideoLibrary"
+export default VideoLibrary

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/tools/AlignLeft";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/tools/AlignLeft"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzUgMS42MjVDMy43ODkyMSAxLjYyNSA0LjEyNSAxLjk2MDc5IDQuMTI1IDIuMzc1TDQuMTI1IDIyLjM3NUM0LjEyNSAyMi43ODkyIDMuNzg5MjEgMjMuMTI1IDMuMzc1IDIzLjEyNUMyLjk2MDc5IDIzLjEyNSAyLjYyNSAyMi43ODkyIDIuNjI1IDIyLjM3NUwyLjYyNSAyLjM3NUMyLjYyNSAxLjk2MDc5IDIuOTYwNzkgMS42MjUgMy4zNzUgMS42MjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03LjM3NSA3Ljg3NUM3LjM3NSA2Ljk0MDM4IDcuMzc1IDYuNDczMDggNy41NzU5NiA2LjEyNUM3LjcwNzYxIDUuODk2OTcgNy44OTY5NyA1LjcwNzYxIDguMTI1IDUuNTc1OTZDOC40NzMwOCA1LjM3NSA4Ljk0MDM4IDUuMzc1IDkuODc1IDUuMzc1SDE4Ljg3NUMxOS44MDk2IDUuMzc1IDIwLjI3NjkgNS4zNzUgMjAuNjI1IDUuNTc1OTZDMjAuODUzIDUuNzA3NjEgMjEuMDQyNCA1Ljg5Njk3IDIxLjE3NCA2LjEyNUMyMS4zNzUgNi40NzMwOCAyMS4zNzUgNi45NDAzOCAyMS4zNzUgNy44NzVDMjEuMzc1IDguODA5NjIgMjEuMzc1IDkuMjc2OTIgMjEuMTc0IDkuNjI1QzIxLjA0MjQgOS44NTMwMyAyMC44NTMgMTAuMDQyNCAyMC42MjUgMTAuMTc0QzIwLjI3NjkgMTAuMzc1IDE5LjgwOTYgMTAuMzc1IDE4Ljg3NSAxMC4zNzVMOS44NzUgMTAuMzc1QzguOTQwMzggMTAuMzc1IDguNDczMDggMTAuMzc1IDguMTI1IDEwLjE3NEM3Ljg5Njk3IDEwLjA0MjQgNy43MDc2MSA5Ljg1MzAzIDcuNTc1OTYgOS42MjVDNy4zNzUgOS4yNzY5MiA3LjM3NSA4LjgwOTYyIDcuMzc1IDcuODc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNy4zNzUgMTYuODc1QzcuMzc1IDE1Ljk0MDQgNy4zNzUgMTUuNDczMSA3LjU3NTk2IDE1LjEyNUM3LjcwNzYxIDE0Ljg5NyA3Ljg5Njk3IDE0LjcwNzYgOC4xMjUgMTQuNTc2QzguNDczMDggMTQuMzc1IDguOTQwMzggMTQuMzc1IDkuODc1IDE0LjM3NUwxNS44NzUgMTQuMzc1QzE2LjgwOTYgMTQuMzc1IDE3LjI3NjkgMTQuMzc1IDE3LjYyNSAxNC41NzZDMTcuODUzIDE0LjcwNzYgMTguMDQyNCAxNC44OTcgMTguMTc0IDE1LjEyNUMxOC4zNzUgMTUuNDczMSAxOC4zNzUgMTUuOTQwNCAxOC4zNzUgMTYuODc1QzE4LjM3NSAxNy44MDk2IDE4LjM3NSAxOC4yNzY5IDE4LjE3NCAxOC42MjVDMTguMDQyNCAxOC44NTMgMTcuODUzIDE5LjA0MjQgMTcuNjI1IDE5LjE3NEMxNy4yNzY5IDE5LjM3NSAxNi44MDk2IDE5LjM3NSAxNS44NzUgMTkuMzc1SDkuODc1QzguOTQwMzggMTkuMzc1IDguNDczMDggMTkuMzc1IDguMTI1IDE5LjE3NEM3Ljg5Njk3IDE5LjA0MjQgNy43MDc2MSAxOC44NTMgNy41NzU5NiAxOC42MjVDNy4zNzUgMTguMjc2OSA3LjM3NSAxNy44MDk2IDcuMzc1IDE2Ljg3NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/AlignLeft";
  */
 const AlignLeft: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlignLeft.displayName = "AlignLeft";
-export default AlignLeft;
+AlignLeft.displayName = "AlignLeft"
+export default AlignLeft

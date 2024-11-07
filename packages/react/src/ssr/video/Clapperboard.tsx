@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Clapperboard";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Clapperboard"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC4wOTU3IDIuMDA0NDVDNi42MjE5NCAyLjAzMDcyIDQuNzE2ODMgMi4yMTIxIDMuNDY0NDcgMy40NjQ0N0MyLjYwNjggNC4zMjIxMyAyLjI1MTQzIDUuNDg1OTMgMi4xMDQxOCA3LjI1MDAySDYuNTk4NjFMMTAuMDk1NyAyLjAwNDQ1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMi4wMjY0NCA4Ljc1MDAyQzIgOS42ODg3NSAyIDEwLjc2MzMgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgMTAuNzYzMyAyMiA5LjY4ODc1IDIxLjk3MzYgOC43NTAwMkgyLjAyNjQ0WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuODk1OCA3LjI1MDAyQzIxLjc0ODYgNS40ODU5MyAyMS4zOTMyIDQuMzIyMTMgMjAuNTM1NSAzLjQ2NDQ3QzE5LjkzODIgMi44NjcxNCAxOS4xOTI0IDIuNTEzNDUgMTguMTk4NyAyLjMwNDAzTDE0LjkwMTQgNy4yNTAwMkgyMS44OTU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTYuNTQwMSAyLjA4NzgzQzE1LjMyOTMgMiAxMy44NDUyIDIgMTIgMkMxMS45NjcgMiAxMS45MzQyIDIgMTEuOTAxNCAyTDguNDAxMzkgNy4yNTAwMkgxMy4wOTg2TDE2LjU0MDEgMi4wODc4M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Clapperboard";
  */
 const Clapperboard: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Clapperboard.displayName = "Clapperboard";
-export default Clapperboard;
+Clapperboard.displayName = "Clapperboard"
+export default Clapperboard

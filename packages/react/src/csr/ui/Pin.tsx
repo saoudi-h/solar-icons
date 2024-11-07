@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Pin";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Pin"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS4xODM1IDcuODA1MTZMMTYuMjE4OCA0LjgzNzU1QzE0LjE5MjEgMi44MDg5IDEzLjE3ODggMS43OTQ1NyAxMi4wOTA0IDIuMDM0NjhDMTEuMDAyMSAyLjI3NDggMTAuNTA4NiAzLjYyMTU1IDkuNTIxNyA2LjMxNTA2TDguODUzNzMgOC4xMzgxQzguNTkwNjMgOC44NTYxNyA4LjQ1OTA4IDkuMjE1MiA4LjIyMjM5IDkuNDkyOTJDOC4xMTYxOSA5LjYxNzU0IDcuOTk1MzYgOS43Mjg4NyA3Ljg2MjUxIDkuODI0NTFDNy41NjY0NCAxMC4wMzc3IDcuMTk4MTEgMTAuMTM5MiA2LjQ2MTQ1IDEwLjM0MjNDNC44MDEwNyAxMC44IDMuOTcwODggMTEuMDI4OSAzLjY1ODA0IDExLjU3MjFDMy41MjI4IDExLjgwNjkgMy40NTI0MiAxMi4wNzM1IDMuNDU0MTMgMTIuMzQ0NkMzLjQ1ODA5IDEyLjk3MTUgNC4wNjY5OCAxMy41ODEgNS4yODQ3NiAxNC44TDYuNjk5MzUgMTYuMjE2M0wyLjIyMzQ1IDIwLjY5NjRDMS45MjU1MiAyMC45OTQ2IDEuOTI1NTIgMjEuNDc4MiAyLjIyMzQ1IDIxLjc3NjRDMi41MjEzOCAyMi4wNzQ2IDMuMDA0NDMgMjIuMDc0NiAzLjMwMjM2IDIxLjc3NjRMNy43Nzg0MSAxNy4yOTYxTDkuMjQ0NDEgMTguNzYzNUMxMC40Njk5IDE5Ljk5MDIgMTEuMDgyNyAyMC42MDM2IDExLjcxMzQgMjAuNjA0NUMxMS45NzkyIDIwLjYwNDkgMTIuMjQwNCAyMC41MzU4IDEyLjQ3MTMgMjAuNDA0MUMxMy4wMTkyIDIwLjA5MTQgMTMuMjQ5MyAxOS4yNTUxIDEzLjcwOTUgMTcuNTgyNUMxMy45MTE5IDE2Ljg0NzIgMTQuMDEzIDE2LjQ3OTUgMTQuMjI1NCAxNi4xODM1QzE0LjMxODQgMTYuMDU0IDE0LjQyNjIgMTUuOTM1OCAxNC41NDY4IDE1LjgzMTRDMTQuODIyMSAxNS41OTMgMTUuMTc4OCAxNS40NTkgMTUuODkyMiAxNS4xOTFMMTcuNzM2MiAxNC40OTgxQzIwLjQgMTMuNDk3MyAyMS43MzE5IDEyLjk5NjkgMjEuOTY2NyAxMS45MTE1QzIyLjIwMTQgMTAuODI2IDIxLjE5NTQgOS44MTkwNSAxOS4xODM1IDcuODA1MTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Pin";
  */
 const Pin: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pin.displayName = "Pin";
-export default Pin;
+Pin.displayName = "Pin"
+export default Pin

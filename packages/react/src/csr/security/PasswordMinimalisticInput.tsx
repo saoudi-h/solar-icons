@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/PasswordMinimalisticInput";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/PasswordMinimalisticInput"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS43NSAyQzE1Ljc1IDEuNTg1NzkgMTUuNDE0MiAxLjI1IDE1IDEuMjVDMTQuNTg1OCAxLjI1IDE0LjI1IDEuNTg1NzkgMTQuMjUgMlYyMkMxNC4yNSAyMi40MTQyIDE0LjU4NTggMjIuNzUgMTUgMjIuNzVDMTUuNDE0MiAyMi43NSAxNS43NSAyMi40MTQyIDE1Ljc1IDIyVjE5Ljk5NDRDMTguMzg1OSAxOS45NjY4IDE5Ljg1NDEgMTkuODAyOCAyMC44Mjg0IDE4LjgyODRDMjIgMTcuNjU2OSAyMiAxNS43NzEyIDIyIDEyQzIyIDguMjI4NzYgMjIgNi4zNDMxNSAyMC44Mjg0IDUuMTcxNTdDMTkuODU0MSA0LjE5NzI0IDE4LjM4NTkgNC4wMzMyMSAxNS43NSA0LjAwNTU5VjJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyAxOC44Mjg0QzQuMzQzMTUgMjAgNi4yMjg3NiAyMCAxMCAyMEgxM1YxMlY0SDEwQzYuMjI4NzYgNCA0LjM0MzE1IDQgMy4xNzE1NyA1LjE3MTU3QzIgNi4zNDMxNSAyIDguMjI4NzYgMiAxMkMyIDE1Ljc3MTIgMiAxNy42NTY5IDMuMTcxNTcgMTguODI4NFpNMTMgMTJDMTMgMTEuNDQ3NyAxMi41NTIzIDExIDEyIDExQzExLjQ0NzcgMTEgMTEgMTEuNDQ3NyAxMSAxMkMxMSAxMi41NTIzIDExLjQ0NzcgMTMgMTIgMTNDMTIuNTUyMyAxMyAxMyAxMi41NTIzIDEzIDEyWk05IDEyQzkgMTIuNTUyMyA4LjU1MjI4IDEzIDggMTNDNy40NDc3MiAxMyA3IDEyLjU1MjMgNyAxMkM3IDExLjQ0NzcgNy40NDc3MiAxMSA4IDExQzguNTUyMjggMTEgOSAxMS40NDc3IDkgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/PasswordMinimalisticInput";
  */
 const PasswordMinimalisticInput: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PasswordMinimalisticInput.displayName = "PasswordMinimalisticInput";
-export default PasswordMinimalisticInput;
+PasswordMinimalisticInput.displayName = "PasswordMinimalisticInput"
+export default PasswordMinimalisticInput

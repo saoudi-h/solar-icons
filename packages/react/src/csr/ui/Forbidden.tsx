@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Forbidden";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Forbidden"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMy4xNTExVjEwLjg0ODlDMjIgOS42MjI2NyAyMiA5LjAwOTU0IDIxLjc3MTYgOC40NTgyM0MyMS41NDMzIDcuOTA2OTEgMjEuMTA5NyA3LjQ3MzM3IDIwLjI0MjYgNi42MDYyOEwxOS4zNDg1IDUuNzEyMTRMNS43MTIwMyAxOS4zNDg0TDYuNjA2MjggMjAuMjQyNkM3LjQ3MzM3IDIxLjEwOTcgNy45MDY5MSAyMS41NDMzIDguNDU4MjMgMjEuNzcxNkM5LjAwOTU0IDIyIDkuNjIyNjcgMjIgMTAuODQ4OSAyMkgxMy4xNTExQzE0LjM3NzMgMjIgMTQuOTkwNSAyMiAxNS41NDE4IDIxLjc3MTZDMTYuMDkzMSAyMS41NDMzIDE2LjUyNjYgMjEuMTA5NyAxNy4zOTM3IDIwLjI0MjZMMjAuMjQyNiAxNy4zOTM3QzIxLjEwOTcgMTYuNTI2NiAyMS41NDMzIDE2LjA5MzEgMjEuNzcxNiAxNS41NDE4QzIyIDE0Ljk5MDUgMjIgMTQuMzc3MyAyMiAxMy4xNTExWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNC42NTEzNyAxOC4yODc3TDMuNzU3MzYgMTcuMzkzN0MyLjg5MDI3IDE2LjUyNjYgMi40NTY3MiAxNi4wOTMxIDIuMjI4MzYgMTUuNTQxOEMyIDE0Ljk5MDUgMiAxNC4zNzczIDIgMTMuMTUxMVYxMC44NDg5QzIgOS42MjI2NyAyIDkuMDA5NTQgMi4yMjgzNiA4LjQ1ODIzQzIuNDU2NzIgNy45MDY5MSAyLjg5MDI3IDcuNDczMzcgMy43NTczNiA2LjYwNjI4TDYuNjA2MjggMy43NTczNkM3LjQ3MzM3IDIuODkwMjcgNy45MDY5MSAyLjQ1NjcyIDguNDU4MjMgMi4yMjgzNkM5LjAwOTU0IDIgOS42MjI2NyAyIDEwLjg0ODkgMkgxMy4xNTExQzE0LjM3NzMgMiAxNC45OTA1IDIgMTUuNTQxOCAyLjIyODM2QzE2LjA5MzEgMi40NTY3MiAxNi41MjY2IDIuODkwMjcgMTcuMzkzNyAzLjc1NzM2TDE4LjI4NzggNC42NTE0OEw0LjY1MTM3IDE4LjI4NzdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Forbidden";
  */
 const Forbidden: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Forbidden.displayName = "Forbidden";
-export default Forbidden;
+Forbidden.displayName = "Forbidden"
+export default Forbidden

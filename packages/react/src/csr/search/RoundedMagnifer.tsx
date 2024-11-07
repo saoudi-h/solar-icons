@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/search/RoundedMagnifer";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/search/RoundedMagnifer"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuODE5NCAxOS43MDA2QzE3LjczMDIgMTguNjA2NCAxOC42MzU3IDE3LjY5MjkgMTkuNzIwNSAxNy43ODNDMTkuOTA4NiAxNy43OTg2IDIwLjEzMzcgMTcuODY3MSAyMC4zNjMgMTcuOTM2OEMyMC4zODUxIDE3Ljk0MzUgMjAuNDA3MyAxNy45NTAyIDIwLjQyOTQgMTcuOTU2OUMyMC40NDk0IDE3Ljk2MjkgMjAuNDY5NCAxNy45Njg5IDIwLjQ4OTQgMTcuOTc1QzIwLjcwMDEgMTguMDM4MyAyMC45MDk3IDE4LjEwMTMgMjEuMDY5MiAxOC4xODc0QzIxLjk4NDQgMTguNjgxOCAyMi4yNzk5IDE5Ljg2MzEgMjEuNzA2NyAyMC43MzYzQzIxLjYwNjggMjAuODg4NCAyMS40NTE5IDIxLjA0NDEgMjEuMjk2MiAyMS4yMDA3QzIxLjI4MTQgMjEuMjE1NiAyMS4yNjY2IDIxLjIzMDUgMjEuMjUxOSAyMS4yNDU0QzIxLjIzNzEgMjEuMjYwMiAyMS4yMjI0IDIxLjI3NTIgMjEuMjA3NiAyMS4yOTAxQzIxLjA1MjQgMjEuNDQ3MSAyMC44OTggMjEuNjAzNCAyMC43NDcyIDIxLjcwNDFDMTkuODgxNiAyMi4yODIzIDE4LjcxMDUgMjEuOTg0MyAxOC4yMjA0IDIxLjA2MTFDMTguMTM1IDIwLjkwMDIgMTguMDcyNSAyMC42ODg4IDE4LjAwOTcgMjAuNDc2MkMxOC4wMDM4IDIwLjQ1NjEgMTcuOTk3OCAyMC40MzU5IDE3Ljk5MTggMjAuNDE1N0MxNy45ODUyIDIwLjM5MzQgMTcuOTc4NSAyMC4zNzExIDE3Ljk3MTkgMjAuMzQ4OEMxNy45MDI4IDIwLjExNzUgMTcuODM0OSAxOS44OTAzIDE3LjgxOTQgMTkuNzAwNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjEyNzggMTEuMTQyOUMyMC4xMjc4IDE2LjE5MjQgMTYuMDY5NyAyMC4yODU4IDExLjA2MzkgMjAuMjg1OEM2LjA1ODA0IDIwLjI4NTggMiAxNi4xOTI0IDIgMTEuMTQyOUMyIDYuMDkzNDIgNi4wNTgwNCAyIDExLjA2MzkgMkMxNi4wNjk3IDIgMjAuMTI3OCA2LjA5MzQyIDIwLjEyNzggMTEuMTQyOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/search/RoundedMagnifer";
  */
 const RoundedMagnifer: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundedMagnifer.displayName = "RoundedMagnifer";
-export default RoundedMagnifer;
+RoundedMagnifer.displayName = "RoundedMagnifer"
+export default RoundedMagnifer

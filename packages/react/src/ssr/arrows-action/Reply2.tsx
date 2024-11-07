@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Reply2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Reply2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTkuNSA2LjI1QzE5LjkxNDIgNi4yNSAyMC4yNSA2LjU4NTc5IDIwLjI1IDdDMjAuMjUgOS4yNDQ0NCAxOS4yOTggMTAuNzE5NiAxOC4wNjMyIDExLjYwODdDMTYuODY2NyAxMi40NzAyIDE1LjQ1MzQgMTIuNzUgMTQuNSAxMi43NUw2LjMxMDY2IDEyLjc1TDEwLjAzMDMgMTYuNDY5N0MxMC4zMjMyIDE2Ljc2MjYgMTAuMzIzMiAxNy4yMzc0IDEwLjAzMDMgMTcuNTMwM0M5LjczNzQ0IDE3LjgyMzIgOS4yNjI1NiAxNy44MjMyIDguOTY5NjcgMTcuNTMwM0wzLjk2OTY3IDEyLjUzMDNDMy42NzY3OCAxMi4yMzc0IDMuNjc2NzggMTEuNzYyNiAzLjk2OTY3IDExLjQ2OTdMOC45Njk2NyA2LjQ2OTY3QzkuMjYyNTYgNi4xNzY3OCA5LjczNzQ0IDYuMTc2NzggMTAuMDMwMyA2LjQ2OTY3QzEwLjMyMzIgNi43NjI1NiAxMC4zMjMyIDcuMjM3NDQgMTAuMDMwMyA3LjUzMDMzTDYuMzEwNjYgMTEuMjVMMTQuNSAxMS4yNUMxNS4yMTMzIDExLjI1IDE2LjMgMTEuMDI5OCAxNy4xODY4IDEwLjM5MTNDMTguMDM1MyA5Ljc4MDQgMTguNzUgOC43NTU1NiAxOC43NSA3QzE4Ljc1IDYuNTg1NzkgMTkuMDg1OCA2LjI1IDE5LjUgNi4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Reply2";
  */
 const Reply2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Reply2.displayName = "Reply2";
-export default Reply2;
+Reply2.displayName = "Reply2"
+export default Reply2

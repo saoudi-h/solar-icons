@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/it/HashtagCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/it/HashtagCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4wOTIgMTAuNzVMMTMuMzQyIDEzLjI1SDkuOTA4MDJMMTAuNjU4IDEwLjc1SDE0LjA5MloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMlpNMTEuMjE1NSA2LjI4MTY0QzExLjYxMjMgNi40MDA2NyAxMS44Mzc0IDYuODE4NzggMTEuNzE4NCA3LjIxNTUzTDExLjEwOCA5LjI1MDAxSDE0LjU0MkwxNS4yODE2IDYuNzg0NUMxNS40MDA3IDYuMzg3NzYgMTUuODE4OCA2LjE2MjYyIDE2LjIxNTUgNi4yODE2NEMxNi42MTIzIDYuNDAwNjcgMTYuODM3NCA2LjgxODc4IDE2LjcxODQgNy4yMTU1M0wxNi4xMDggOS4yNTAwMUgxOEMxOC40MTQyIDkuMjUwMDEgMTguNzUgOS41ODU4IDE4Ljc1IDEwQzE4Ljc1IDEwLjQxNDIgMTguNDE0MiAxMC43NSAxOCAxMC43NUgxNS42NThMMTQuOTA4IDEzLjI1SDE3QzE3LjQxNDIgMTMuMjUgMTcuNzUgMTMuNTg1OCAxNy43NSAxNEMxNy43NSAxNC40MTQyIDE3LjQxNDIgMTQuNzUgMTcgMTQuNzVIMTQuNDU4TDEzLjcxODQgMTcuMjE1NUMxMy41OTkzIDE3LjYxMjMgMTMuMTgxMiAxNy44Mzc0IDEyLjc4NDUgMTcuNzE4NEMxMi4zODc3IDE3LjU5OTQgMTIuMTYyNiAxNy4xODEyIDEyLjI4MTYgMTYuNzg0NUwxMi44OTIgMTQuNzVIOS40NTgwMkw4LjcxODM3IDE3LjIxNTVDOC41OTkzNSAxNy42MTIzIDguMTgxMjMgMTcuODM3NCA3Ljc4NDQ5IDE3LjcxODRDNy4zODc3NCAxNy41OTk0IDcuMTYyNjEgMTcuMTgxMiA3LjI4MTYzIDE2Ljc4NDVMNy44OTE5OCAxNC43NUg2QzUuNTg1NzkgMTQuNzUgNS4yNSAxNC40MTQyIDUuMjUgMTRDNS4yNSAxMy41ODU4IDUuNTg1NzkgMTMuMjUgNiAxMy4yNUg4LjM0MTk4TDkuMDkxOTggMTAuNzVIN0M2LjU4NTc5IDEwLjc1IDYuMjUgMTAuNDE0MiA2LjI1IDEwQzYuMjUgOS41ODU4IDYuNTg1NzkgOS4yNTAwMSA3IDkuMjUwMDFIOS41NDE5OEwxMC4yODE2IDYuNzg0NUMxMC40MDA3IDYuMzg3NzYgMTAuODE4OCA2LjE2MjYyIDExLjIxNTUgNi4yODE2NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/HashtagCircle";
  */
 const HashtagCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HashtagCircle.displayName = "HashtagCircle";
-export default HashtagCircle;
+HashtagCircle.displayName = "HashtagCircle"
+export default HashtagCircle

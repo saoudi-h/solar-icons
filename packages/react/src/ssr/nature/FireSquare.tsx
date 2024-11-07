@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/nature/FireSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/nature/FireSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTcgMTIuNjY2N0MxNyAxNi45MzMzIDEzLjQ0NDQgMTggMTEuNjY2NyAxOEMxMC4xMTExIDE4IDcgMTYuOTMzMyA3IDEyLjY2NjdDNyAxMC44MTA5IDguMDYyOTIgOS42MzI3NSA4Ljk1NTkzIDkuMDM5NzRDOS4zNjQyMSA4Ljc2ODYzIDkuODcyMDEgOC45NDE5MSA5Ljg5ODQxIDkuNDMxM0M5Ljk1NjE2IDEwLjUwMjEgMTAuNzgxNCAxMS4zNjIyIDExLjQyMDUgMTAuNTAxMUMxMi4wMDU0IDkuNzEyOTggMTIuMjk0MSA4LjY0MjcyIDEyLjI5NDEgOEMxMi4yOTQxIDcuMDUzMjIgMTMuMjUyNSA2LjQ1MTU4IDE0LjAwMDggNy4wMzE2NUMxNS40NTkzIDguMTYyMyAxNyAxMC4wNTU4IDE3IDEyLjY2NjdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/nature/FireSquare";
  */
 const FireSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FireSquare.displayName = "FireSquare";
-export default FireSquare;
+FireSquare.displayName = "FireSquare"
+export default FireSquare

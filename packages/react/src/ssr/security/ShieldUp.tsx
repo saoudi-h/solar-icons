@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/ShieldUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/ShieldUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTYuNDUgMTAuOTVMMTMuMDUgOC40QzEyLjQyNzggNy45MzMzMyAxMS41NzIyIDcuOTMzMzMgMTAuOTUgOC40TDcuNTUgMTAuOTVDNy4yMTg2MyAxMS4xOTg1IDcuMTUxNDcgMTEuNjY4NiA3LjQgMTJDNy42NDg1MyAxMi4zMzE0IDguMTE4NjMgMTIuMzk4NSA4LjQ1IDEyLjE1TDExLjg1IDkuNkMxMS45Mzg5IDkuNTMzMzMgMTIuMDYxMSA5LjUzMzMzIDEyLjE1IDkuNkwxNS41NSAxMi4xNUMxNS44ODE0IDEyLjM5ODUgMTYuMzUxNSAxMi4zMzE0IDE2LjYgMTJDMTYuODQ4NSAxMS42Njg2IDE2Ljc4MTQgMTEuMTk4NSAxNi40NSAxMC45NVpNMTQuNDUgMTMuNDVMMTIuNDUgMTEuOTVDMTIuMTgzMyAxMS43NSAxMS44MTY3IDExLjc1IDExLjU1IDExLjk1TDkuNTUgMTMuNDVDOS4yMTg2MyAxMy42OTg1IDkuMTUxNDcgMTQuMTY4NiA5LjQgMTQuNUM5LjY0ODUzIDE0LjgzMTQgMTAuMTE4NiAxNC44OTg1IDEwLjQ1IDE0LjY1TDEyIDEzLjQ4NzVMMTMuNTUgMTQuNjVDMTMuODgxNCAxNC44OTg1IDE0LjM1MTUgMTQuODMxNCAxNC42IDE0LjVDMTQuODQ4NSAxNC4xNjg2IDE0Ljc4MTQgMTMuNjk4NSAxNC40NSAxMy40NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldUp";
  */
 const ShieldUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldUp.displayName = "ShieldUp";
-export default ShieldUp;
+ShieldUp.displayName = "ShieldUp"
+export default ShieldUp

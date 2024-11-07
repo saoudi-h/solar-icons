@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/LetterUnread";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/LetterUnread"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiA2QzIyIDcuNjU2ODUgMjAuNjU2OSA5IDE5IDlDMTcuMzQzMSA5IDE2IDcuNjU2ODUgMTYgNkMxNiA0LjM0MzE1IDE3LjM0MzEgMyAxOSAzQzIwLjY1NjkgMyAyMiA0LjM0MzE1IDIyIDZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQgNUgxMEM2LjIyODc2IDUgNC4zNDMxNSA1IDMuMTcxNTcgNi4xNzE1N0MyIDcuMzQzMTUgMiA5LjIyODc2IDIgMTNDMiAxNi43NzEyIDIgMTguNjU2OSAzLjE3MTU3IDE5LjgyODRDNC4zNDMxNSAyMSA2LjIyODc2IDIxIDEwIDIxSDE0QzE3Ljc3MTIgMjEgMTkuNjU2OSAyMSAyMC44Mjg0IDE5LjgyODRDMjIgMTguNjU2OSAyMiAxNi43NzEyIDIyIDEzQzIyIDExLjU0NjYgMjIgMTAuMzczMyAyMS45MzI5IDkuNDEzQzIxLjE0NTMgMTAuMDkwNSAyMC4xMjA1IDEwLjUgMTkgMTAuNUMxOC41MjEzIDEwLjUgMTguMDYwMSAxMC40MjUzIDE3LjYyNzQgMTAuMjg2OEwxNi4yODM3IDExLjQwNjZDMTUuMzk3MyAxMi4xNDUyIDE0LjY3ODkgMTIuNzQzOSAxNC4wNDQ4IDEzLjE1MTdDMTMuMzg0MyAxMy41NzY1IDEyLjc0MTEgMTMuODQ0OSAxMiAxMy44NDQ5QzExLjI1ODkgMTMuODQ0OSAxMC42MTU3IDEzLjU3NjUgOS45NTUxOCAxMy4xNTE3QzkuMzIxMTIgMTIuNzQzOSA4LjYwMjcxIDEyLjE0NTIgNy43MTYzNiAxMS40MDY2TDUuNTE5ODYgOS41NzYxN0M1LjIwMTY1IDkuMzEwOTkgNS4xNTg2NiA4LjgzODA3IDUuNDIzODMgOC41MTk4NkM1LjY4OTAxIDguMjAxNjUgNi4xNjE5MyA4LjE1ODY2IDYuNDgwMTQgOC40MjM4M0w4LjYzOTAzIDEwLjIyMjlDOS41NzE5OSAxMS4wMDA0IDEwLjIxOTcgMTEuNTM4NCAxMC43NjY2IDExLjg5MDFDMTEuMjk1OSAxMi4yMzA2IDExLjY1NDkgMTIuMzQ0OSAxMiAxMi4zNDQ5QzEyLjM0NTEgMTIuMzQ0OSAxMi43MDQxIDEyLjIzMDYgMTMuMjMzNCAxMS44OTAxQzEzLjc4MDMgMTEuNTM4NCAxNC40MjggMTEuMDAwNCAxNS4zNjEgMTAuMjIyOUwxNi4yMDA0IDkuNTIzMzVDMTUuMTY0MyA4LjY5ODkzIDE0LjUgNy40MjcwNCAxNC41IDZDMTQuNSA1LjY1NjM4IDE0LjUzODUgNS4zMjE3NSAxNC42MTE1IDUuMDAwMkMxNC40MTMzIDUgMTQuMjA5NiA1IDE0IDVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/LetterUnread";
  */
 const LetterUnread: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LetterUnread.displayName = "LetterUnread";
-export default LetterUnread;
+LetterUnread.displayName = "LetterUnread"
+export default LetterUnread

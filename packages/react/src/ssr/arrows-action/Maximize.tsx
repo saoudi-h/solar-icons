@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Maximize";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Maximize"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi4xNDI5IDEuMjVDMTUuNzI4NiAxLjI1IDE1LjM5MjkgMS41ODU3OSAxNS4zOTI5IDJDMTUuMzkyOSAyLjQxNDIxIDE1LjcyODYgMi43NSAxNi4xNDI5IDIuNzVIMjAuMTg5M0wxNC40Njk3IDguNDY5NjdDMTQuMTc2OCA4Ljc2MjU2IDE0LjE3NjggOS4yMzc0NCAxNC40Njk3IDkuNTMwMzNDMTQuNzYyNiA5LjgyMzIyIDE1LjIzNzQgOS44MjMyMiAxNS41MzAzIDkuNTMwMzNMMjEuMjUgMy44MTA2NlY3Ljg1NzE0QzIxLjI1IDguMjcxMzYgMjEuNTg1OCA4LjYwNzE0IDIyIDguNjA3MTRDMjIuNDE0MiA4LjYwNzE0IDIyLjc1IDguMjcxMzYgMjIuNzUgNy44NTcxNFYyQzIyLjc1IDEuNTg1NzkgMjIuNDE0MiAxLjI1IDIyIDEuMjVIMTYuMTQyOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuODU3MTQgMjIuNzVDOC4yNzEzNiAyMi43NSA4LjYwNzE0IDIyLjQxNDIgOC42MDcxNCAyMkM4LjYwNzE0IDIxLjU4NTggOC4yNzEzNiAyMS4yNSA3Ljg1NzE0IDIxLjI1SDMuODEwNjZMOS41MzAzMyAxNS41MzAzQzkuODIzMjIgMTUuMjM3NCA5LjgyMzIyIDE0Ljc2MjYgOS41MzAzMyAxNC40Njk3QzkuMjM3NDQgMTQuMTc2OCA4Ljc2MjU2IDE0LjE3NjggOC40Njk2NyAxNC40Njk3TDIuNzUgMjAuMTg5M1YxNi4xNDI5QzIuNzUgMTUuNzI4NiAyLjQxNDIxIDE1LjM5MjkgMiAxNS4zOTI5QzEuNTg1NzkgMTUuMzkyOSAxLjI1IDE1LjcyODYgMS4yNSAxNi4xNDI5VjIyQzEuMjUgMjIuNDE0MiAxLjU4NTc5IDIyLjc1IDIgMjIuNzVINy44NTcxNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Maximize";
  */
 const Maximize: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Maximize.displayName = "Maximize";
-export default Maximize;
+Maximize.displayName = "Maximize"
+export default Maximize

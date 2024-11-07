@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/shopping/Bag";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/shopping/Bag"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4yNTAxMyA2LjAxNDg5QzguMjUwMDMgNi4wMDk5NCA4LjI0OTk4IDYuMDA0OTggOC4yNDk5OCA2VjVDOC4yNDk5OCAyLjkyODkzIDkuOTI4OTIgMS4yNSAxMiAxLjI1QzE0LjA3MTEgMS4yNSAxNS43NSAyLjkyODkzIDE1Ljc1IDVWNkMxNS43NSA2LjAwNDk4IDE1Ljc0OTkgNi4wMDk5NCAxNS43NDk4IDYuMDE0ODlDMTcuMDM3MSA2LjA1MzUzIDE3LjgyNDggNi4xOTI0IDE4LjQyNjEgNi42OTE0N0MxOS4yNTkzIDcuMzgyOTUgMTkuNDc4NyA4LjU1MzM5IDE5LjkxNzcgMTAuODk0M0wyMC42Njc3IDE0Ljg5NDNDMjEuMjg0OSAxOC4xODYgMjEuNTkzNCAxOS44MzE4IDIwLjY5MzcgMjAuOTE1OUMxOS43OTQgMjIgMTguMTE5NSAyMiAxNC43NzA0IDIySDkuMjI5NTRDNS44ODA0OCAyMiA0LjIwNTk1IDIyIDMuMzA2MjQgMjAuOTE1OUMyLjQwNjUyIDE5LjgzMTggMi43MTUxMiAxOC4xODYgMy4zMzIzMSAxNC44OTQzTDQuMDgyMzEgMTAuODk0M0M0LjUyMTIyIDguNTUzMzkgNC43NDA2OCA3LjM4Mjk1IDUuNTczODYgNi42OTE0N0M2LjE3NTIxIDYuMTkyNCA2Ljk2Mjg3IDYuMDUzNTMgOC4yNTAxMyA2LjAxNDg5Wk05Ljc0OTk4IDVDOS43NDk5OCAzLjc1NzM2IDEwLjc1NzMgMi43NSAxMiAyLjc1QzEzLjI0MjYgMi43NSAxNC4yNSAzLjc1NzM2IDE0LjI1IDVWNkMxNC4yNSA1Ljk5OTk5IDE0LjI1IDYuMDAwMDEgMTQuMjUgNkMxNC4xNzQ3IDUuOTk5OTggMTQuMDk4MiA2IDE0LjAyMDQgNkg5Ljk3OTU0QzkuOTAxNzYgNiA5LjgyNTI1IDYgOS43NDk5OCA2LjAwMDAyQzkuNzQ5OTggNi4wMDAwMiA5Ljc0OTk4IDYuMDAwMDMgOS43NDk5OCA2LjAwMDAyVjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/Bag";
  */
 const Bag: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bag.displayName = "Bag";
-export default Bag;
+Bag.displayName = "Bag"
+export default Bag

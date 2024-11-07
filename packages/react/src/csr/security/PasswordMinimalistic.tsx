@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/PasswordMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/PasswordMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyA1LjE3MTU3QzIgNi4zNDMxNSAyIDguMjI4NzYgMiAxMkMyIDE1Ljc3MTIgMiAxNy42NTY5IDMuMTcxNTcgMTguODI4NEM0LjM0MzE1IDIwIDYuMjI4NzYgMjAgMTAgMjBIMTRDMTcuNzcxMiAyMCAxOS42NTY5IDIwIDIwLjgyODQgMTguODI4NEMyMiAxNy42NTY5IDIyIDE1Ljc3MTIgMjIgMTJDMjIgOC4yMjg3NiAyMiA2LjM0MzE1IDIwLjgyODQgNS4xNzE1N0MxOS42NTY5IDQgMTcuNzcxMiA0IDE0IDRIMTBDNi4yMjg3NiA0IDQuMzQzMTUgNCAzLjE3MTU3IDUuMTcxNTdaTTggMTNDOC41NTIyOCAxMyA5IDEyLjU1MjMgOSAxMkM5IDExLjQ0NzcgOC41NTIyOCAxMSA4IDExQzcuNDQ3NzIgMTEgNyAxMS40NDc3IDcgMTJDNyAxMi41NTIzIDcuNDQ3NzIgMTMgOCAxM1pNMTMgMTJDMTMgMTIuNTUyMyAxMi41NTIzIDEzIDEyIDEzQzExLjQ0NzcgMTMgMTEgMTIuNTUyMyAxMSAxMkMxMSAxMS40NDc3IDExLjQ0NzcgMTEgMTIgMTFDMTIuNTUyMyAxMSAxMyAxMS40NDc3IDEzIDEyWk0xNiAxM0MxNi41NTIzIDEzIDE3IDEyLjU1MjMgMTcgMTJDMTcgMTEuNDQ3NyAxNi41NTIzIDExIDE2IDExQzE1LjQ0NzcgMTEgMTUgMTEuNDQ3NyAxNSAxMkMxNSAxMi41NTIzIDE1LjQ0NzcgMTMgMTYgMTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/PasswordMinimalistic";
  */
 const PasswordMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PasswordMinimalistic.displayName = "PasswordMinimalistic";
-export default PasswordMinimalistic;
+PasswordMinimalistic.displayName = "PasswordMinimalistic"
+export default PasswordMinimalistic

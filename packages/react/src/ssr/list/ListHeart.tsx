@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListHeart";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListHeart"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNCAxNS4wMzYxQzE0IDE2LjI3MDkgMTUuNDg0OSAxNy41Nzg5IDE2LjUyMDMgMTguMzQwOEMxNi45NTQ2IDE4LjY2MDMgMTcuMTcxNyAxOC44MjAxIDE3LjUgMTguODIwMUMxNy44MjgzIDE4LjgyMDEgMTguMDQ1NCAxOC42NjAzIDE4LjQ3OTcgMTguMzQwOEMxOS41MTUxIDE3LjU3ODkgMjEgMTYuMjcwOSAyMSAxNS4wMzYxQzIxIDEzLjAyODIgMTkuMDc0OSAxMi4yNzg2IDE3LjUgMTMuODI5NkMxNS45MjUxIDEyLjI3ODYgMTQgMTMuMDI4MiAxNCAxNS4wMzYxWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIuMjUgNkMyLjI1IDUuNTg1NzkgMi41ODU3OSA1LjI1IDMgNS4yNUgyMUMyMS40MTQyIDUuMjUgMjEuNzUgNS41ODU3OSAyMS43NSA2QzIxLjc1IDYuNDE0MjEgMjEuNDE0MiA2Ljc1IDIxIDYuNzVIM0MyLjU4NTc5IDYuNzUgMi4yNSA2LjQxNDIxIDIuMjUgNlpNMi4yNSAxMEMyLjI1IDkuNTg1NzkgMi41ODU3OSA5LjI1IDMgOS4yNUgyMUMyMS40MTQyIDkuMjUgMjEuNzUgOS41ODU3OSAyMS43NSAxMEMyMS43NSAxMC40MTQyIDIxLjQxNDIgMTAuNzUgMjEgMTAuNzVIM0MyLjU4NTc5IDEwLjc1IDIuMjUgMTAuNDE0MiAyLjI1IDEwWk0yLjI1IDE0QzIuMjUgMTMuNTg1OCAyLjU4NTc5IDEzLjI1IDMgMTMuMjVIMTBDMTAuNDE0MiAxMy4yNSAxMC43NSAxMy41ODU4IDEwLjc1IDE0QzEwLjc1IDE0LjQxNDIgMTAuNDE0MiAxNC43NSAxMCAxNC43NUgzQzIuNTg1NzkgMTQuNzUgMi4yNSAxNC40MTQyIDIuMjUgMTRaTTIuMjUgMThDMi4yNSAxNy41ODU4IDIuNTg1NzkgMTcuMjUgMyAxNy4yNUgxMEMxMC40MTQyIDE3LjI1IDEwLjc1IDE3LjU4NTggMTAuNzUgMThDMTAuNzUgMTguNDE0MiAxMC40MTQyIDE4Ljc1IDEwIDE4Ljc1SDNDMi41ODU3OSAxOC43NSAyLjI1IDE4LjQxNDIgMi4yNSAxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListHeart";
  */
 const ListHeart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListHeart.displayName = "ListHeart";
-export default ListHeart;
+ListHeart.displayName = "ListHeart"
+export default ListHeart

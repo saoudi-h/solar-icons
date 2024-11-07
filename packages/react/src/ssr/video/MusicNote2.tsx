@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/MusicNote2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/MusicNote2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy43NSAyQzEzLjc1IDEuNTg1NzkgMTMuNDE0MiAxLjI1IDEzIDEuMjVDMTIuNTg1OCAxLjI1IDEyLjI1IDEuNTg1NzkgMTIuMjUgMlYxNC41MzU5QzExLjQwMDMgMTMuNzM4NCAxMC4yNTcyIDEzLjI1IDkgMTMuMjVDNi4zNzY2NSAxMy4yNSA0LjI1IDE1LjM3NjYgNC4yNSAxOEM0LjI1IDIwLjYyMzQgNi4zNzY2NSAyMi43NSA5IDIyLjc1QzExLjYyMzQgMjIuNzUgMTMuNzUgMjAuNjIzNCAxMy43NSAxOFY2LjI0M0MxNC45ODc1IDcuNzcyMjUgMTYuODc5NSA4Ljc1IDE5IDguNzVDMTkuNDE0MiA4Ljc1IDE5Ljc1IDguNDE0MjEgMTkuNzUgOEMxOS43NSA3LjU4NTc5IDE5LjQxNDIgNy4yNSAxOSA3LjI1QzE2LjEwMDUgNy4yNSAxMy43NSA0Ljg5OTUgMTMuNzUgMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/MusicNote2";
  */
 const MusicNote2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MusicNote2.displayName = "MusicNote2";
-export default MusicNote2;
+MusicNote2.displayName = "MusicNote2"
+export default MusicNote2

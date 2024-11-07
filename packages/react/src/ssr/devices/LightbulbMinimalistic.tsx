@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/LightbulbMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/LightbulbMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS4yNSAxOC43MDg5QzkuMjUgMTguMjg5NCA5LjU4NTc5IDE3Ljk0OTQgMTAgMTcuOTQ5NEgxNEMxNC40MTQyIDE3Ljk0OTQgMTQuNzUgMTguMjg5NCAxNC43NSAxOC43MDg5QzE0Ljc1IDE5LjEyODMgMTQuNDE0MiAxOS40Njg0IDE0IDE5LjQ2ODRIMTBDOS41ODU3OSAxOS40Njg0IDkuMjUgMTkuMTI4MyA5LjI1IDE4LjcwODlaTTkuOTE2NjcgMjEuMjQwNUM5LjkxNjY3IDIwLjgyMSAxMC4yNTI1IDIwLjQ4MSAxMC42NjY3IDIwLjQ4MUgxMy4zMzMzQzEzLjc0NzUgMjAuNDgxIDE0LjA4MzMgMjAuODIxIDE0LjA4MzMgMjEuMjQwNUMxNC4wODMzIDIxLjY2IDEzLjc0NzUgMjIgMTMuMzMzMyAyMkgxMC42NjY3QzEwLjI1MjUgMjIgOS45MTY2NyAyMS42NiA5LjkxNjY3IDIxLjI0MDVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03LjQxMDU4IDEzLjgyODNMOC41MTQ2MyAxNC44ODA3QzguODI0MzcgMTUuMTc1OSA5IDE1LjU4NzUgOSAxNi4wMTgyQzkgMTYuNjY1MyA5LjUxOCAxNy4xODk5IDEwLjE1NyAxNy4xODk5SDEzLjg0M0MxNC40ODIgMTcuMTg5OSAxNSAxNi42NjUzIDE1IDE2LjAxODJDMTUgMTUuNTg3NSAxNS4xNzU2IDE1LjE3NTkgMTUuNDg1NCAxNC44ODA3TDE2LjU4OTQgMTMuODI4M0MxOC4xMzA2IDEyLjM0ODEgMTguOTkxMiAxMC40MDM0IDE4Ljk5OTkgOC4zODE3TDE5IDguMjk2NzhDMTkgNC44NDI0MyAxNS44NjYgMiAxMiAyQzguMTM0MDEgMiA1IDQuODQyNDMgNSA4LjI5Njc4TDUuMDAwMDcgOC4zODE3QzUuMDA4NzUgMTAuNDAzNCA1Ljg2OTM5IDEyLjM0ODEgNy40MTA1OCAxMy44MjgzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/LightbulbMinimalistic";
  */
 const LightbulbMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LightbulbMinimalistic.displayName = "LightbulbMinimalistic";
-export default LightbulbMinimalistic;
+LightbulbMinimalistic.displayName = "LightbulbMinimalistic"
+export default LightbulbMinimalistic

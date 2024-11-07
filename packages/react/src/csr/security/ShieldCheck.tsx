@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/ShieldCheck";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/ShieldCheck"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTUuMDU5NSAxMC40OTk1QzE1LjMzNTMgMTAuMTkwNSAxNS4zMDg1IDkuNzE2NDIgMTQuOTk5NSA5LjQ0MDU1QzE0LjY5MDUgOS4xNjQ2NyAxNC4yMTY0IDkuMTkxNTEgMTMuOTQwNSA5LjUwMDQ5TDEwLjkyODYgMTIuODczOUwxMC4wNTk1IDExLjkwMDVDOS43ODM1OCAxMS41OTE1IDkuMzA5NDcgMTEuNTY0NyA5LjAwMDQ5IDExLjg0MDVDOC42OTE1MSAxMi4xMTY0IDguNjY0NjcgMTIuNTkwNSA4Ljk0MDU1IDEyLjg5OTVMMTAuMzY5MSAxNC40OTk1QzEwLjUxMTQgMTQuNjU4OSAxMC43MTQ5IDE0Ljc1IDEwLjkyODYgMTQuNzVDMTEuMTQyMiAxNC43NSAxMS4zNDU3IDE0LjY1ODkgMTEuNDg4IDE0LjQ5OTVMMTUuMDU5NSAxMC40OTk1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldCheck";
  */
 const ShieldCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldCheck.displayName = "ShieldCheck";
-export default ShieldCheck;
+ShieldCheck.displayName = "ShieldCheck"
+export default ShieldCheck

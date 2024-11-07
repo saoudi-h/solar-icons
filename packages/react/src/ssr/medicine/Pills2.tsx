@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/Pills2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/Pills2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi4wMjYxIDkuOTY1NDRDMTIuNjM4MiA5LjEzNTc4IDEzIDguMTEwMTQgMTMgN0MxMyA0LjIzODU4IDEwLjc2MTQgMiA4IDJDNi44ODk4NiAyIDUuODY0MjIgMi4zNjE3OSA1LjAzNDU2IDIuOTczOUwxMi4wMjYxIDkuOTY1NDRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMC45NjU0IDExLjAyNjFDMTAuMTM1OCAxMS42MzgyIDkuMTEwMTQgMTIgOCAxMkM1LjIzODU4IDEyIDMgOS43NjE0MiAzIDdDMyA1Ljg4OTg2IDMuMzYxNzkgNC44NjQyMiAzLjk3MzkgNC4wMzQ1NkwxMC45NjU0IDExLjAyNjFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS45NDM3IDE2LjI1QzIxLjc4OTggMTUuMjMwNSAyMS4zMjA0IDE0LjI0OTUgMjAuNTM1NCAxMy40NjQ1QzE4LjU4MjggMTEuNTExOCAxNS40MTcgMTEuNTExOCAxMy40NjQ0IDEzLjQ2NDVDMTIuNjc5NCAxNC4yNDk1IDEyLjIxIDE1LjIzMDUgMTIuMDU2MiAxNi4yNUgyMS45NDM3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuOTQzNyAxNy43NUgxMi4wNTYyQzEyLjIxIDE4Ljc2OTUgMTIuNjc5NCAxOS43NTA1IDEzLjQ2NDQgMjAuNTM1NUMxNS40MTcgMjIuNDg4MiAxOC41ODI4IDIyLjQ4ODIgMjAuNTM1NCAyMC41MzU1QzIxLjMyMDQgMTkuNzUwNSAyMS43ODk4IDE4Ljc2OTUgMjEuOTQzNyAxNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Pills2";
  */
 const Pills2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pills2.displayName = "Pills2";
-export default Pills2;
+Pills2.displayName = "Pills2"
+export default Pills2

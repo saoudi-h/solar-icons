@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Flashlight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Flashlight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCA0LjI1SDQuMDAwMDJMNCA0QzQgMy4wNTcxOSA0IDIuNTg1NzkgNC4yOTI4OSAyLjI5Mjg5QzQuNTg1NzkgMiA1LjA1NzE5IDIgNiAySDE4QzE4Ljk0MjggMiAxOS40MTQyIDIgMTkuNzA3MSAyLjI5Mjg5QzIwIDIuNTg1NzkgMjAgMy4wNTcxOSAyMCA0TDIwIDQuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNi4xNzE2IDguODI4NDNDMTYuMDA5NCA4Ljk5MDU3IDE1Ljg3IDkuMTI5OTggMTUuNzUgOS4yNTQ3NVY5LjI1SDguMjVWOS4yNTQ3NUM4LjEyOTk5IDkuMTI5OTkgNy45OTA2MSA4Ljk5MDYxIDcuODI4NSA4LjgyODVMNC43NSA1Ljc1SDE5LjI1TDE2LjE3MTYgOC44Mjg0M1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05IDExLjY1NjlWMTlDOSAxOS45MzE5IDkgMjAuMzk3OCA5LjE1MjI0IDIwLjc2NTRDOS4zNTUyMyAyMS4yNTU0IDkuNzQ0NTggMjEuNjQ0OCAxMC4yMzQ2IDIxLjg0NzhDMTAuNjAyMiAyMiAxMS4wNjgxIDIyIDEyIDIyQzEyLjkzMTkgMjIgMTMuMzk3OCAyMiAxMy43NjU0IDIxLjg0NzhDMTQuMjU1NCAyMS42NDQ4IDE0LjY0NDggMjEuMjU1NCAxNC44NDc4IDIwLjc2NTRDMTUgMjAuMzk3OCAxNSAxOS45MzE5IDE1IDE5VjExLjY1NjlDMTUgMTEuMjc5NSAxNSAxMC45ODkzIDE1LjAxNSAxMC43NUg4Ljk4NTAzQzkgMTAuOTg5MyA5IDExLjI3OTUgOSAxMS42NTY5Wk0xMi43NSAxM0MxMi43NSAxMi41ODU4IDEyLjQxNDIgMTIuMjUgMTIgMTIuMjVDMTEuNTg1OCAxMi4yNSAxMS4yNSAxMi41ODU4IDExLjI1IDEzVjE1QzExLjI1IDE1LjQxNDIgMTEuNTg1OCAxNS43NSAxMiAxNS43NUMxMi40MTQyIDE1Ljc1IDEyLjc1IDE1LjQxNDIgMTIuNzUgMTVWMTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Flashlight";
  */
 const Flashlight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Flashlight.displayName = "Flashlight";
-export default Flashlight;
+Flashlight.displayName = "Flashlight"
+export default Flashlight

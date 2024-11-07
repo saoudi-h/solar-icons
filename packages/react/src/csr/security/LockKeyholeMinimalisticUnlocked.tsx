@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/LockKeyholeMinimalisticUnlocked";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/LockKeyholeMinimalisticUnlocked"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMi43NUM5LjEwMDUxIDIuNzUgNi43NSA1LjEwMDUxIDYuNzUgOFYxMC4wMDM2QzcuMTMzMDEgMTAgNy41NDg0OSAxMCA4IDEwSDE2QzE4LjgyODQgMTAgMjAuMjQyNiAxMCAyMS4xMjEzIDEwLjg3ODdDMjIgMTEuNzU3NCAyMiAxMy4xNzE2IDIyIDE2QzIyIDE4LjgyODQgMjIgMjAuMjQyNiAyMS4xMjEzIDIxLjEyMTNDMjAuMjQyNiAyMiAxOC44Mjg0IDIyIDE2IDIySDhDNS4xNzE1NyAyMiAzLjc1NzM2IDIyIDIuODc4NjggMjEuMTIxM0MyIDIwLjI0MjYgMiAxOC44Mjg0IDIgMTZDMiAxMy4xNzE2IDIgMTEuNzU3NCAyLjg3ODY4IDEwLjg3ODdDMy40MDkzMSAxMC4zNDggNC4xMzUyNSAxMC4xMzc5IDUuMjUgMTAuMDU0NlY4QzUuMjUgNC4yNzIwOCA4LjI3MjA4IDEuMjUgMTIgMS4yNUMxNS4xNDYzIDEuMjUgMTcuNzg4IDMuNDAxOSAxOC41MzczIDYuMzEzMDZDMTguNjQwNSA2LjcxNDIgMTguMzk5MSA3LjEyMzA4IDE3Ljk5NzkgNy4yMjYzM0MxNy41OTY4IDcuMzI5NTcgMTcuMTg3OSA3LjA4ODA4IDE3LjA4NDYgNi42ODY5NEMxNi41MDE4IDQuNDIyNDIgMTQuNDQ1MyAyLjc1IDEyIDIuNzVaTTEyLjc1IDE0QzEyLjc1IDEzLjU4NTggMTIuNDE0MiAxMy4yNSAxMiAxMy4yNUMxMS41ODU4IDEzLjI1IDExLjI1IDEzLjU4NTggMTEuMjUgMTRWMThDMTEuMjUgMTguNDE0MiAxMS41ODU4IDE4Ljc1IDEyIDE4Ljc1QzEyLjQxNDIgMTguNzUgMTIuNzUgMTguNDE0MiAxMi43NSAxOFYxNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/LockKeyholeMinimalisticUnlocked";
  */
 const LockKeyholeMinimalisticUnlocked: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LockKeyholeMinimalisticUnlocked.displayName = "LockKeyholeMinimalisticUnlocked";
-export default LockKeyholeMinimalisticUnlocked;
+LockKeyholeMinimalisticUnlocked.displayName = "LockKeyholeMinimalisticUnlocked"
+export default LockKeyholeMinimalisticUnlocked

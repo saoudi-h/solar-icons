@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/files/CloudFile";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/files/CloudFile"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS4zNTE3IDcuNjE2NjVMMTUuMzkyOSA0LjA1Mzc1QzE0LjI2NTEgMy4wMzg2OCAxMy43MDEyIDIuNTMxMTQgMTMuMDA5MiAyLjI2NTYyTDEzIDUuMDAwMTFDMTMgNy4zNTcxMyAxMyA4LjUzNTY0IDEzLjczMjIgOS4yNjc4N0MxNC40NjQ1IDEwLjAwMDEgMTUuNjQzIDEwLjAwMDEgMTggMTAuMDAwMUgyMS41ODAxQzIxLjIxNzUgOS4yOTU4OCAyMC41Njg0IDguNzExNjQgMTkuMzUxNyA3LjYxNjY1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDIySDE0QzE3Ljc3MTIgMjIgMTkuNjU2OSAyMiAyMC44Mjg0IDIwLjgyODRDMjIgMTkuNjU2OSAyMiAxNy43NzEyIDIyIDE0VjEzLjU2MjlDMjIgMTIuNjkwMSAyMiAxMi4wMzQ0IDIxLjk1NzQgMTEuNTAwMUgxOEwxNy45MDUxIDExLjUwMDFDMTYuODA4IDExLjUwMDIgMTUuODM4NSAxMS41MDAzIDE1LjA1NjkgMTEuMzk1MkMxNC4yMDk4IDExLjI4MTMgMTMuMzYyOCAxMS4wMTk4IDEyLjY3MTYgMTAuMzI4NUMxMS45ODAzIDkuNjM3MjYgMTEuNzE4OCA4Ljc5MDI4IDExLjYwNDkgNy45NDMxNkMxMS40OTk4IDcuMTYxNjQgMTEuNDk5OSA2LjE5MjA3IDExLjUgNS4wOTQ5N0wxMS41MDkyIDIuMjYwNTdDMTEuNTA5NSAyLjE3ODEzIDExLjUxNjYgMi4wOTY1OSAxMS41MyAyLjAxNjY2QzExLjEyMTQgMiAxMC42MzU4IDIgMTAuMDI5OCAyQzYuMjM4NjkgMiA0LjM0MzE1IDIgMy4xNzE1NyAzLjE3MTU3QzIgNC4zNDMxNSAyIDYuMjI4NzYgMiAxMFYxNEMyIDE3Ljc3MTIgMiAxOS42NTY5IDMuMTcxNTcgMjAuODI4NEM0LjM0MzE1IDIyIDYuMjI4NzYgMjIgMTAgMjJaTTExIDE4QzEyLjEwNDYgMTggMTMgMTcuMjA5OSAxMyAxNi4yMzUzQzEzIDE1LjQ2MjkgMTIuNDM3NSAxNC44MDYzIDExLjY1NDMgMTQuNTY3MkMxMS41NDMgMTMuNjg1NSAxMC42OTU2IDEzIDkuNjY2NjcgMTNDOC41NjIxIDEzIDcuNjY2NjcgMTMuNzkwMSA3LjY2NjY3IDE0Ljc2NDdDNy42NjY2NyAxNC45ODAzIDcuNzEwNDcgMTUuMTg2OCA3Ljc5MDY2IDE1LjM3NzhDNy42OTY2MiAxNS4zNjE1IDcuNTk5NDQgMTUuMzUyOSA3LjUgMTUuMzUyOUM2LjY3MTU3IDE1LjM1MjkgNiAxNS45NDU1IDYgMTYuNjc2NUM2IDE3LjQwNzQgNi42NzE1NyAxOCA3LjUgMThIMTFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/files/CloudFile";
  */
 const CloudFile: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloudFile.displayName = "CloudFile";
-export default CloudFile;
+CloudFile.displayName = "CloudFile"
+export default CloudFile

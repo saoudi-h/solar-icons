@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/Route";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/Route"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi4xNDIxNCA2LjE0MjE0QzguOTAzNTYgMy4zODA3MSAxMC4yODQzIDIgMTIgMkMxMy43MTU3IDIgMTUuMDk2NCAzLjM4MDcxIDE3Ljg1NzkgNi4xNDIxNEMyMC42MTkzIDguOTAzNTYgMjIgMTAuMjg0MyAyMiAxMkMyMiAxMy43MTU3IDIwLjYxOTMgMTUuMDk2NCAxNy44NTc5IDE3Ljg1NzlDMTUuMDk2NCAyMC42MTkzIDEzLjcxNTcgMjIgMTIgMjJDMTAuMjg0MyAyMiA4LjkwMzU2IDIwLjYxOTMgNi4xNDIxNCAxNy44NTc5QzMuMzgwNzEgMTUuMDk2NCAyIDEzLjcxNTcgMiAxMkMyIDEwLjI4NDMgMy4zODA3MSA4LjkwMzU2IDYuMTQyMTQgNi4xNDIxNFpNMTMuODQ2MyA4LjQ1Mjg1QzEzLjU0NDEgOC4xNjk1NSAxMy4wNjk1IDguMTg0ODYgMTIuNzg2MiA4LjQ4NzA0QzEyLjUwMjkgOC43ODkyMyAxMi41MTgyIDkuMjYzODYgMTIuODIwNCA5LjU0NzE1TDE0LjEwMzQgMTAuNzVIMTAuNjY2N0MxMC4xMTE2IDEwLjc1IDkuMjg4NjEgMTAuOTAwMyA4LjU4MDQgMTEuMzc4NEM3LjgzMjA4IDExLjg4MzUgNy4yNSAxMi43MzQ1IDcuMjUgMTRDNy4yNSAxNC40MTQyIDcuNTg1NzkgMTQuNzUgOCAxNC43NUM4LjQxNDIxIDE0Ljc1IDguNzUgMTQuNDE0MiA4Ljc1IDE0QzguNzUgMTMuMjY1NSA5LjA1NjgxIDEyLjg2NjUgOS40MTk2MSAxMi42MjE2QzkuODIyNSAxMi4zNDk3IDEwLjMzMjkgMTIuMjUgMTAuNjY2NyAxMi4yNUgxNC4xMDM0TDEyLjgyMDQgMTMuNDUyOEMxMi41MTgyIDEzLjczNjEgMTIuNTAyOSAxNC4yMTA4IDEyLjc4NjIgMTQuNTEzQzEzLjA2OTUgMTQuODE1MSAxMy41NDQxIDE0LjgzMDUgMTMuODQ2MyAxNC41NDcyTDE2LjUxMyAxMi4wNDcyQzE2LjY2NDIgMTEuOTA1NCAxNi43NSAxMS43MDczIDE2Ljc1IDExLjVDMTYuNzUgMTEuMjkyNyAxNi42NjQyIDExLjA5NDYgMTYuNTEzIDEwLjk1MjhMMTMuODQ2MyA4LjQ1Mjg1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Route";
  */
 const Route: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Route.displayName = "Route";
-export default Route;
+Route.displayName = "Route"
+export default Route

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/Dialog";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/Dialog"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiA4LjVDMjIgNC45MTAxNSAxOS4wODk5IDIgMTUuNSAyQzEzLjQxNzEgMiAxMS41NjMxIDIuOTgyMyAxMC4zNzM1IDQuNTA3MjFDMTUuNDQ3MSA0LjcwMzM2IDE5LjUgOC44NzgzOCAxOS41IDE0QzE5LjUgMTQuMTEwMyAxOS40OTgxIDE0LjIyMDIgMTkuNDk0NCAxNC4zMjk2TDE5LjgyNjcgMTQuNDE4NUMyMC43OTMgMTQuNjc3IDIxLjY3NyAxMy43OTMgMjEuNDE4NSAxMi44MjY3TDIxLjI5MTEgMTIuMzUwNkMyMS4xODgyIDExLjk2NjEgMjEuMjUwMSAxMS41NTk4IDIxLjQxNTUgMTEuMTk3N0MyMS43OTA4IDEwLjM3NiAyMiA5LjQ2MjQyIDIyIDguNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOCAxNEMxOCAxOC40MTgzIDE0LjQxODMgMjIgMTAgMjJDOC43NjQ0OSAyMiA3LjU5NDQgMjEuNzE5OSA2LjU0OTc2IDIxLjIxOThDNi4xOTA3MSAyMS4wNDc5IDUuNzgzOTMgMjAuOTg3NiA1LjM5OTM5IDIxLjA5MDRMNC4xNzMzNSAyMS40MTg1QzMuMjA3MDEgMjEuNjc3IDIuMzIyOTUgMjAuNzkzIDIuNTgxNTEgMTkuODI2N0wyLjkwOTU1IDE4LjYwMDZDMy4wMTI0NSAxOC4yMTYxIDIuOTUyMDkgMTcuODA5MyAyLjc4MDIgMTcuNDUwMkMyLjI4MDA4IDE2LjQwNTYgMiAxNS4yMzU1IDIgMTRDMiA5LjU4MTcyIDUuNTgxNzIgNiAxMCA2QzE0LjQxODMgNiAxOCA5LjU4MTcyIDE4IDE0Wk02LjUgMTVDNy4wNTIyOCAxNSA3LjUgMTQuNTUyMyA3LjUgMTRDNy41IDEzLjQ0NzcgNy4wNTIyOCAxMyA2LjUgMTNDNS45NDc3MiAxMyA1LjUgMTMuNDQ3NyA1LjUgMTRDNS41IDE0LjU1MjMgNS45NDc3MiAxNSA2LjUgMTVaTTEwIDE1QzEwLjU1MjMgMTUgMTEgMTQuNTUyMyAxMSAxNEMxMSAxMy40NDc3IDEwLjU1MjMgMTMgMTAgMTNDOS40NDc3MiAxMyA5IDEzLjQ0NzcgOSAxNEM5IDE0LjU1MjMgOS40NDc3MiAxNSAxMCAxNVpNMTMuNSAxNUMxNC4wNTIzIDE1IDE0LjUgMTQuNTUyMyAxNC41IDE0QzE0LjUgMTMuNDQ3NyAxNC4wNTIzIDEzIDEzLjUgMTNDMTIuOTQ3NyAxMyAxMi41IDEzLjQ0NzcgMTIuNSAxNEMxMi41IDE0LjU1MjMgMTIuOTQ3NyAxNSAxMy41IDE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/Dialog";
  */
 const Dialog: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Dialog.displayName = "Dialog";
-export default Dialog;
+Dialog.displayName = "Dialog"
+export default Dialog

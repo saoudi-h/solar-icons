@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/InfoSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/InfoSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk0xMiAxNy43NUMxMi40MTQyIDE3Ljc1IDEyLjc1IDE3LjQxNDIgMTIuNzUgMTdWMTFDMTIuNzUgMTAuNTg1OCAxMi40MTQyIDEwLjI1IDEyIDEwLjI1QzExLjU4NTggMTAuMjUgMTEuMjUgMTAuNTg1OCAxMS4yNSAxMVYxN0MxMS4yNSAxNy40MTQyIDExLjU4NTggMTcuNzUgMTIgMTcuNzVaTTEyIDdDMTIuNTUyMyA3IDEzIDcuNDQ3NzIgMTMgOEMxMyA4LjU1MjI4IDEyLjU1MjMgOSAxMiA5QzExLjQ0NzcgOSAxMSA4LjU1MjI4IDExIDhDMTEgNy40NDc3MiAxMS40NDc3IDcgMTIgN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/InfoSquare";
  */
 const InfoSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-InfoSquare.displayName = "InfoSquare";
-export default InfoSquare;
+InfoSquare.displayName = "InfoSquare"
+export default InfoSquare

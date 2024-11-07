@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/money/Tag";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/money/Tag"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4xMjI2NCAxMi44MTZDMi40MTAxOCAxMy44MTg2IDMuMTgyOTUgMTQuNTkxNCA0LjcyODQ4IDE2LjEzNjlMNi41NTgxMiAxNy45NjY1QzkuMjQ3MTEgMjAuNjU1NSAxMC41OTE2IDIyIDEyLjI2MjMgMjJDMTMuOTMzIDIyIDE1LjI3NzUgMjAuNjU1NSAxNy45NjY1IDE3Ljk2NjVDMjAuNjU1NSAxNS4yNzc1IDIyIDEzLjkzMyAyMiAxMi4yNjIzQzIyIDEwLjU5MTYgMjAuNjU1NSA5LjI0NzExIDE3Ljk2NjUgNi41NTgxMkwxNi4xMzY5IDQuNzI4NDhDMTQuNTkxNCAzLjE4Mjk1IDEzLjgxODYgMi40MTAxOCAxMi44MTYgMi4xMjI2NEMxMS44MTM0IDEuODM1MDkgMTAuNzQ4NSAyLjA4MDgzIDguNjE4NzUgMi41NzIzMUw3LjM5MDU3IDIuODU1NzRDNS41OTg4IDMuMjY5MjIgNC43MDI5MiAzLjQ3NTk3IDQuMDg5NDQgNC4wODk0NEMzLjQ3NTk3IDQuNzAyOTIgMy4yNjkyMiA1LjU5ODgxIDIuODU1NzQgNy4zOTA1N0wyLjU3MjMxIDguNjE4NzVDMi4wODA4MyAxMC43NDg1IDEuODM1MDkgMTEuODEzNCAyLjEyMjY0IDEyLjgxNlpNMTAuMTIzNCA3LjI3MDk4QzEwLjkxMSA4LjA1ODU2IDEwLjkxMSA5LjMzNTQ5IDEwLjEyMzQgMTAuMTIzMUM5LjMzNTgxIDEwLjkxMDcgOC4wNTg4OCAxMC45MTA3IDcuMjcxMjkgMTAuMTIzMUM2LjQ4MzcxIDkuMzM1NDkgNi40ODM3MSA4LjA1ODU2IDcuMjcxMjkgNy4yNzA5OEM4LjA1ODg4IDYuNDgzMzkgOS4zMzU4MSA2LjQ4MzM5IDEwLjEyMzQgNy4yNzA5OFpNMTkuMDUxMSAxMi4wNTExTDEyLjA3MjEgMTkuMDMwM0MxMS43NzkyIDE5LjMyMzIgMTEuMzA0MyAxOS4zMjMyIDExLjAxMTQgMTkuMDMwM0MxMC43MTg1IDE4LjczNzUgMTAuNzE4NSAxOC4yNjI2IDExLjAxMTQgMTcuOTY5N0wxNy45OTA0IDEwLjk5MDRDMTguMjgzMyAxMC42OTc1IDE4Ljc1ODIgMTAuNjk3NSAxOS4wNTExIDEwLjk5MDRDMTkuMzQ0IDExLjI4MzMgMTkuMzQ0IDExLjc1ODIgMTkuMDUxMSAxMi4wNTExWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/Tag";
  */
 const Tag: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Tag.displayName = "Tag";
-export default Tag;
+Tag.displayName = "Tag"
+export default Tag

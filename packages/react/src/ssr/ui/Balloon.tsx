@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Balloon";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Balloon"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTkuNDk5OCA5LjU2MDUyQzE5LjUzMzIgMTMuNzAyNSAxNi4wODE1IDE3LjUzMzQgMTEuOTM5NSAxNy41QzcuNzk3NDggMTcuNDY2NiA0LjUzMzY3IDEzLjU4MTUgNC41MDAyNSA5LjQzOTQ4QzQuNDY2ODMgNS4yOTc0OCA3Ljc5NzQ4IDEuOTY2ODMgMTEuOTM5NSAyLjAwMDI1QzE2LjA4MTUgMi4wMzM2NyAxOS40NjYzIDUuNDE4NTIgMTkuNDk5OCA5LjU2MDUyWk0xMi41MDYxIDUuMjUwMDJDMTIuMDkxOSA1LjI0NjY4IDExLjc1MzQgNS41Nzk3NSAxMS43NSA1Ljk5Mzk1QzExLjc0NjcgNi40MDgxNSAxMi4wNzk3IDYuNzQ2NjMgMTIuNDkzOSA2Ljc0OTk4QzEzLjcyODEgNi43NTk5MyAxNC43NDAxIDcuNzcxOTQgMTQuNzUgOS4wMDYwNUMxNC43NTM0IDkuNDIwMjUgMTUuMDkxOSA5Ljc1MzMyIDE1LjUwNjEgOS43NDk5OEMxNS45MjAzIDkuNzQ2NjMgMTYuMjUzMyA5LjQwODE1IDE2LjI1IDguOTkzOTVDMTYuMjMzNCA2Ljk0MDg4IDE0LjU1OTEgNS4yNjY1OSAxMi41MDYxIDUuMjUwMDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNC4xNjcgMTguMjE0NEMxNC40OTkyIDE5LjI3NjcgMTMuODEwOCAyMC4zNDYxIDEyLjc1MDEgMjAuNTYxNlYyMS45OTk4QzEyLjc1MDEgMjIuNDE0IDEyLjQxNDMgMjIuNzQ5OCAxMi4wMDAxIDIyLjc0OThDMTEuNTg1OSAyMi43NDk4IDExLjI1MDEgMjIuNDE0IDExLjI1MDEgMjEuOTk5OFYyMC41NjE2QzEwLjE4OTQgMjAuMzQ2MSA5LjUwMDk0IDE5LjI3NjcgOS44MzMxNiAxOC4yMTQ0TDkuODQwMDUgMTguMTkzQzEwLjUwNDQgMTguMzg2NyAxMS4yMDQzIDE4LjQ5MzkgMTEuOTMxNSAxOC40OTk4QzEyLjcwMjUgMTguNTA2IDEzLjQ0OTMgMTguMzk3MyAxNC4xNTk1IDE4LjE5MDlDMTQuMTYyMiAxOC4xOTg4IDE0LjE2NDYgMTguMjA2NiAxNC4xNjcgMTguMjE0NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Balloon";
  */
 const Balloon: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Balloon.displayName = "Balloon";
-export default Balloon;
+Balloon.displayName = "Balloon"
+export default Balloon

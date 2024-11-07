@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/money/WadOfMoney";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/money/WadOfMoney"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjI1IDUuMDAwNTVDNS45MzI1NyA1LjAwNTg2IDQuNjkyNTMgNS4wNjI4NiAzLjc3NzcyIDUuNjc0MTJDMy4zNDA5NiA1Ljk2NTk2IDIuOTY1OTYgNi4zNDA5NiAyLjY3NDEyIDYuNzc3NzJDMiA3Ljc4NjYxIDIgOS4xOTEwOCAyIDEyQzIgMTQuODA4OSAyIDE2LjIxMzQgMi42NzQxMiAxNy4yMjIzQzIuOTY1OTYgMTcuNjU5IDMuMzQwOTYgMTguMDM0IDMuNzc3NzIgMTguMzI1OUM0LjY5MjUzIDE4LjkzNzEgNS45MzI1OCAxOC45OTQxIDguMjUgMTguOTk5NVYxNC45MDU1QzYuOTU2MDggMTQuNTcyNSA2IDEzLjM5NzkgNiAxMkM2IDEwLjYwMjEgNi45NTYwOCA5LjQyNzU1IDguMjUgOS4wOTQ1MVY1LjAwMDU1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOS43NSAxOUwxNC4yNSAxOVY1SDkuNzVWMTlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNS43NSA1LjAwMDU1VjkuMDk0NTFDMTcuMDQzOSA5LjQyNzU1IDE4IDEwLjYwMjEgMTggMTJDMTggMTMuMzk3OSAxNy4wNDM5IDE0LjU3MjUgMTUuNzUgMTQuOTA1NVYxOC45OTk1QzE4LjA2NzQgMTguOTk0MSAxOS4zMDc1IDE4LjkzNzEgMjAuMjIyMyAxOC4zMjU5QzIwLjY1OSAxOC4wMzQgMjEuMDM0IDE3LjY1OSAyMS4zMjU5IDE3LjIyMjNDMjIgMTYuMjEzNCAyMiAxNC44MDg5IDIyIDEyQzIyIDkuMTkxMDcgMjIgNy43ODY2MSAyMS4zMjU5IDYuNzc3NzJDMjEuMDM0IDYuMzQwOTYgMjAuNjU5IDUuOTY1OTUgMjAuMjIyMyA1LjY3NDEyQzE5LjMwNzUgNS4wNjI4NiAxOC4wNjc0IDUuMDA1ODYgMTUuNzUgNS4wMDA1NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/WadOfMoney";
  */
 const WadOfMoney: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WadOfMoney.displayName = "WadOfMoney";
-export default WadOfMoney;
+WadOfMoney.displayName = "WadOfMoney"
+export default WadOfMoney

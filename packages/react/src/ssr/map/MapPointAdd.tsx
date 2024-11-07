@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/MapPointAdd";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/MapPointAdd"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM3LjU4MTcyIDIgNCA1LjY0NTg4IDQgMTAuMTQzM0M0IDE0LjYwNTUgNi41NTMzMiAxOS44MTI0IDEwLjUzNzEgMjEuNjc0NEMxMS40NjU3IDIyLjEwODUgMTIuNTM0MyAyMi4xMDg1IDEzLjQ2MjkgMjEuNjc0NEMxNy40NDY3IDE5LjgxMjQgMjAgMTQuNjA1NSAyMCAxMC4xNDMzQzIwIDUuNjQ1ODggMTYuNDE4MyAyIDEyIDJaTTEyIDYuNzVDMTIuNDE0MiA2Ljc1IDEyLjc1IDcuMDg1NzkgMTIuNzUgNy41VjkuMjVIMTQuNUMxNC45MTQyIDkuMjUgMTUuMjUgOS41ODU3OSAxNS4yNSAxMEMxNS4yNSAxMC40MTQyIDE0LjkxNDIgMTAuNzUgMTQuNSAxMC43NUgxMi43NVYxMi41QzEyLjc1IDEyLjkxNDIgMTIuNDE0MiAxMy4yNSAxMiAxMy4yNUMxMS41ODU4IDEzLjI1IDExLjI1IDEyLjkxNDIgMTEuMjUgMTIuNVYxMC43NUg5LjVDOS4wODU3OSAxMC43NSA4Ljc1IDEwLjQxNDIgOC43NSAxMEM4Ljc1IDkuNTg1NzkgOS4wODU3OSA5LjI1IDkuNSA5LjI1SDExLjI1VjcuNUMxMS4yNSA3LjA4NTc5IDExLjU4NTggNi43NSAxMiA2Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapPointAdd";
  */
 const MapPointAdd: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapPointAdd.displayName = "MapPointAdd";
-export default MapPointAdd;
+MapPointAdd.displayName = "MapPointAdd"
+export default MapPointAdd

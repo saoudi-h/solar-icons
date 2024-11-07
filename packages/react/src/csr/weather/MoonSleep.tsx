@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/MoonSleep";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/MoonSleep"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTggMi43NUMxNy41ODU4IDIuNzUgMTcuMjUgMi40MTQyMSAxNy4yNSAyQzE3LjI1IDEuNTg1NzkgMTcuNTg1OCAxLjI1IDE4IDEuMjVIMjJDMjIuMzAzNCAxLjI1IDIyLjU3NjggMS40MzI3MyAyMi42OTI5IDEuNzEyOTlDMjIuODA5IDEuOTkzMjQgMjIuNzQ0OSAyLjMxNTgzIDIyLjUzMDQgMi41MzAzM0wxOS44MTA3IDUuMjVIMjJDMjIuNDE0MiA1LjI1IDIyLjc1IDUuNTg1NzkgMjIuNzUgNkMyMi43NSA2LjQxNDIxIDIyLjQxNDIgNi43NSAyMiA2Ljc1SDE4QzE3LjY5NjcgNi43NSAxNy40MjMyIDYuNTY3MjcgMTcuMzA3MSA2LjI4NzAxQzE3LjE5MSA2LjAwNjc2IDE3LjI1NTIgNS42ODQxNyAxNy40Njk3IDUuNDY5NjdMMjAuMTg5NCAyLjc1SDE4Wk0xMy41IDguNzVDMTMuMDg1OCA4Ljc1IDEyLjc1IDguNDE0MjEgMTIuNzUgOEMxMi43NSA3LjU4NTc5IDEzLjA4NTggNy4yNSAxMy41IDcuMjVIMTYuNUMxNi44MDM0IDcuMjUgMTcuMDc2OCA3LjQzMjczIDE3LjE5MjkgNy43MTI5OUMxNy4zMDkgNy45OTMyNCAxNy4yNDQ5IDguMzE1ODMgMTcuMDMwNCA4LjUzMDMzTDE1LjMxMDcgMTAuMjVIMTYuNUMxNi45MTQyIDEwLjI1IDE3LjI1IDEwLjU4NTggMTcuMjUgMTFDMTcuMjUgMTEuNDE0MiAxNi45MTQyIDExLjc1IDE2LjUgMTEuNzVIMTMuNUMxMy4xOTY3IDExLjc1IDEyLjkyMzIgMTEuNTY3MyAxMi44MDcxIDExLjI4N0MxMi42OTEgMTEuMDA2OCAxMi43NTUyIDEwLjY4NDIgMTIuOTY5NyAxMC40Njk3TDE0LjY4OTQgOC43NUgxMy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDExLjUzNzMgMjEuMzA2NSAxMS40NjA4IDIxLjA2NzIgMTEuODU2OEMxOS45Mjg5IDEzLjc0MDYgMTcuODYxNSAxNSAxNS41IDE1QzExLjkxMDEgMTUgOSAxMi4wODk5IDkgOC41QzkgNi4xMzg0NSAxMC4yNTk0IDQuMDcxMDUgMTIuMTQzMiAyLjkzMjc2QzEyLjUzOTIgMi42OTM0NyAxMi40NjI3IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/MoonSleep";
  */
 const MoonSleep: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MoonSleep.displayName = "MoonSleep";
-export default MoonSleep;
+MoonSleep.displayName = "MoonSleep"
+export default MoonSleep

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/school/NotebookMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/school/NotebookMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE2LjE0MzZWNC45OTc4QzIgMy44OTk2MyAyLjg4NjMgMy4wMDc1MiAzLjk4MjQgMy4wNzQ4OUM0Ljk1ODc3IDMuMTM0OSA2LjExMzQ5IDMuMjUzNTEgNyAzLjQ4NzQ0QzguMDQ5MjEgMy43NjQzMSA5LjI5NjExIDQuMzU0MDEgMTAuMjgyMyA0Ljg3NTQ2QzEwLjU4OTMgNS4wMzc4MiAxMC45MTU4IDUuMTUwNDQgMTEuMjUgNS4yMTM5NEwxMS4yNSAyMC4zOTI2QzEwLjk0NzEgMjAuMzI1OCAxMC42NTE1IDIwLjIxOCAxMC4zNzI0IDIwLjA2OTJDOS4zNzI5MyAxOS41MzY1IDguMDgxNDUgMTguOTE4NyA3IDE4LjYzMzRDNi4xMjMyOSAxOC40MDIgNC45ODQyOCAxOC4yODM1IDQuMDE0ODYgMTguMjIyOEMyLjkwNjA1IDE4LjE1MzUgMiAxNy4yNTQ2IDIgMTYuMTQzNloiIGZpbGw9IiMxQzI3NEQiLz4KPHBhdGggZD0iTTEyLjc1IDIwLjM5MjZDMTMuMDUyOSAyMC4zMjU4IDEzLjM0ODUgMjAuMjE4IDEzLjYyNzYgMjAuMDY5MkMxNC42MjcxIDE5LjUzNjUgMTUuOTE4NSAxOC45MTg3IDE3IDE4LjYzMzRDMTcuODc2NyAxOC40MDIgMTkuMDE1NyAxOC4yODM1IDE5Ljk4NTEgMTguMjIyOEMyMS4wOTQgMTguMTUzNSAyMiAxNy4yNTQ2IDIyIDE2LjE0MzZWNC45MzMxOUMyMiAzLjg2MDc1IDIxLjE1MzggMi45ODA0MSAyMC4wODIgMy4wMTc3NUMxOC45NTM0IDMuMDU3MDYgMTcuNTQ2OSAzLjE3NDAzIDE2LjUgMy40ODc0NEMxNS41OTI0IDMuNzU5MTYgMTQuNTM1MyA0LjMwNDE4IDEzLjY3MzggNC44MDI3NUMxMy4zODI0IDQuOTcxNDUgMTMuMDcwOCA1LjA5NTM1IDEyLjc1IDUuMTczOTFMMTIuNzUgMjAuMzkyNloiIGZpbGw9IiMxQzI3NEQiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/NotebookMinimalistic";
  */
 const NotebookMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-NotebookMinimalistic.displayName = "NotebookMinimalistic";
-export default NotebookMinimalistic;
+NotebookMinimalistic.displayName = "NotebookMinimalistic"
+export default NotebookMinimalistic

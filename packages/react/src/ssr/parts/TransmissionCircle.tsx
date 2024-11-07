@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/parts/TransmissionCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/parts/TransmissionCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk04IDguMjVDOC40MTQyMSA4LjI1IDguNzUgOC41ODU3OSA4Ljc1IDlWMTEuMjVIMTEuMjVWOUMxMS4yNSA4LjU4NTc5IDExLjU4NTggOC4yNSAxMiA4LjI1QzEyLjQxNDIgOC4yNSAxMi43NSA4LjU4NTc5IDEyLjc1IDlWMTEuMjVIMTNDMTMuNDc2MiAxMS4yNSAxMy43OTU4IDExLjI0OTYgMTQuMDQzMyAxMS4yMzI3QzE0LjI4NCAxMS4yMTYzIDE0LjQwMTIgMTEuMTg2OCAxNC40Nzg0IDExLjE1NDhDMTQuNzg0NiAxMS4wMjggMTUuMDI4IDEwLjc4NDYgMTUuMTU0OSAxMC40Nzg0QzE1LjE4NjggMTAuNDAxMiAxNS4yMTYzIDEwLjI4NCAxNS4yMzI3IDEwLjA0MzNDMTUuMjQ5NiA5Ljc5NTc5IDE1LjI1IDkuNDc2MiAxNS4yNSA5QzE1LjI1IDguNTg1NzkgMTUuNTg1OCA4LjI1IDE2IDguMjVDMTYuNDE0MiA4LjI1IDE2Ljc1IDguNTg1NzkgMTYuNzUgOVY5LjAyNTI2QzE2Ljc1IDkuNDY5NzIgMTYuNzUgOS44NDA3NSAxNi43MjkyIDEwLjE0NTRDMTYuNzA3NiAxMC40NjI1IDE2LjY2MSAxMC43NjIgMTYuNTQwNyAxMS4wNTI0QzE2LjI2MTYgMTEuNzI2MiAxNS43MjYyIDEyLjI2MTYgMTUuMDUyNCAxMi41NDA3QzE0Ljc2MiAxMi42NjEgMTQuNDYyNSAxMi43MDc2IDE0LjE0NTQgMTIuNzI5MkMxMy44NDA4IDEyLjc1IDEzLjQ2OTcgMTIuNzUgMTMuMDI1MyAxMi43NUgxMi43NVYxNUMxMi43NSAxNS40MTQyIDEyLjQxNDIgMTUuNzUgMTIgMTUuNzVDMTEuNTg1OCAxNS43NSAxMS4yNSAxNS40MTQyIDExLjI1IDE1VjEyLjc1SDguNzVWMTVDOC43NSAxNS40MTQyIDguNDE0MjEgMTUuNzUgOCAxNS43NUM3LjU4NTc5IDE1Ljc1IDcuMjUgMTUuNDE0MiA3LjI1IDE1VjlDNy4yNSA4LjU4NTc5IDcuNTg1NzkgOC4yNSA4IDguMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/parts/TransmissionCircle";
  */
 const TransmissionCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TransmissionCircle.displayName = "TransmissionCircle";
-export default TransmissionCircle;
+TransmissionCircle.displayName = "TransmissionCircle"
+export default TransmissionCircle

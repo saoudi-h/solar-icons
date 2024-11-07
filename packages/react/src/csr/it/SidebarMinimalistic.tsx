@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/SidebarMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/SidebarMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyA0LjE3MTU3QzIgNS4zNDMxNSAyIDcuMjI4NzYgMiAxMVYxM0MyIDE2Ljc3MTIgMiAxOC42NTY5IDMuMTcxNTcgMTkuODI4NEM0LjM0MzE1IDIxIDYuMjI4NzYgMjEgMTAgMjFIMTRDMTQuMDg0MyAyMSAxNC4xNjc2IDIxIDE0LjI1IDIxTDE0LjI1IDNDMTQuMTY3NiAyLjk5OTk5IDE0LjA4NDMgMyAxNCAzSDEwQzYuMjI4NzYgMyA0LjM0MzE1IDMgMy4xNzE1NyA0LjE3MTU3Wk0xNS43NSAzLjAwNTU5TDE1Ljc1IDIwLjk5NDRDMTguMzg1OSAyMC45NjY4IDE5Ljg1NDEgMjAuODAyOCAyMC44Mjg0IDE5LjgyODRDMjIgMTguNjU2OSAyMiAxNi43NzEyIDIyIDEzVjExQzIyIDcuMjI4NzYgMjIgNS4zNDMxNSAyMC44Mjg0IDQuMTcxNTdDMTkuODU0MSAzLjE5NzI0IDE4LjM4NTkgMy4wMzMyMSAxNS43NSAzLjAwNTU5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/SidebarMinimalistic";
  */
 const SidebarMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SidebarMinimalistic.displayName = "SidebarMinimalistic";
-export default SidebarMinimalistic;
+SidebarMinimalistic.displayName = "SidebarMinimalistic"
+export default SidebarMinimalistic

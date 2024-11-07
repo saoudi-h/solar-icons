@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/users/UserHeartRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/users/UserHeartRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjUxMjYgMjEuNDg3NEMxNC4wMjUxIDIyIDE0Ljg1MDEgMjIgMTYuNSAyMkMxOC4xNDk5IDIyIDE4Ljk3NDkgMjIgMTkuNDg3NCAyMS40ODc0QzIwIDIwLjk3NDkgMjAgMjAuMTQ5OSAyMCAxOC41QzIwIDE2Ljg1MDEgMjAgMTYuMDI1MSAxOS40ODc0IDE1LjUxMjZDMTguOTc0OSAxNSAxOC4xNDk5IDE1IDE2LjUgMTVDMTQuODUwMSAxNSAxNC4wMjUxIDE1IDEzLjUxMjYgMTUuNTEyNkMxMyAxNi4wMjUxIDEzIDE2Ljg1MDEgMTMgMTguNUMxMyAyMC4xNDk5IDEzIDIwLjk3NDkgMTMuNTEyNiAyMS40ODc0Wk0xNS41MjY2IDE5Ljk3NjVDMTQuODI0NSAxOS40NzM4IDE0IDE4Ljg4MzMgMTQgMTcuODU5OEMxNCAxNi43Mjk5IDE1LjM3NSAxNS45Mjg1IDE2LjUgMTcuMDE0OEMxNy42MjUgMTUuOTI4NSAxOSAxNi43Mjk5IDE5IDE3Ljg1OThDMTkgMTguODgzMyAxOC4xNzU1IDE5LjQ3MzggMTcuNDczNCAxOS45NzY1QzE3LjQwMDUgMjAuMDI4NyAxNy4zMjg4IDIwLjA4IDE3LjI1OTYgMjAuMTMwOEMxNyAyMC4zMjA5IDE2Ljc1IDIwLjUgMTYuNSAyMC41QzE2LjI1IDIwLjUgMTYgMjAuMzIwOSAxNS43NDA0IDIwLjEzMDhDMTUuNjcxMiAyMC4wOCAxNS41OTk1IDIwLjAyODcgMTUuNTI2NiAxOS45NzY1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUuNDE0NyAxMy41MDc0QzE0LjQwNDYgMTMuMTg0MiAxMy4yNCAxMyAxMiAxM0M4LjEzNDAxIDEzIDUgMTQuNzkwOSA1IDE3QzUgMTkuMTQwNiA3Ljk0MjQ0IDIwLjg4ODQgMTEuNjQyMSAyMC45OTQ5QzExLjYxNSAyMC44Njg2IDExLjU5NCAyMC43NDMyIDExLjU3NzUgMjAuNjIwMUMxMS40OTk4IDIwLjA0MjQgMTEuNDk5OSAxOS4zMzY1IDExLjUgMTguNTg2VjE4LjQxNEMxMS40OTk5IDE3LjY2MzUgMTEuNDk5OCAxNi45NTc2IDExLjU3NzUgMTYuMzc5OUMxMS42NjM5IDE1LjczNyAxMS44NzA1IDE1LjAzMzMgMTIuNDUxOSAxNC40NTE5QzEzLjAzMzQgMTMuODcwNSAxMy43MzcgMTMuNjYzOSAxNC4zNzk5IDEzLjU3NzRDMTQuNjkxOSAxMy41MzU1IDE1LjA0MTIgMTMuNTE2MiAxNS40MTQ3IDEzLjUwNzRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/users/UserHeartRounded";
  */
 const UserHeartRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UserHeartRounded.displayName = "UserHeartRounded";
-export default UserHeartRounded;
+UserHeartRounded.displayName = "UserHeartRounded"
+export default UserHeartRounded

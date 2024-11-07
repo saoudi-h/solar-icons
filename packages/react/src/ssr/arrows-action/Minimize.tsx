@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Minimize";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Minimize"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC44NTcxIDkuNzVDMjEuMjcxNCA5Ljc1IDIxLjYwNzEgOS40MTQyMSAyMS42MDcxIDlDMjEuNjA3MSA4LjU4NTc5IDIxLjI3MTQgOC4yNSAyMC44NTcxIDguMjVIMTYuODEwN0wyMi41MzAzIDIuNTMwMzNDMjIuODIzMiAyLjIzNzQ0IDIyLjgyMzIgMS43NjI1NiAyMi41MzAzIDEuNDY5NjdDMjIuMjM3NCAxLjE3Njc4IDIxLjc2MjYgMS4xNzY3OCAyMS40Njk3IDEuNDY5NjdMMTUuNzUgNy4xODkzNFYzLjE0Mjg2QzE1Ljc1IDIuNzI4NjQgMTUuNDE0MiAyLjM5Mjg2IDE1IDIuMzkyODZDMTQuNTg1OCAyLjM5Mjg2IDE0LjI1IDIuNzI4NjQgMTQuMjUgMy4xNDI4NlY5QzE0LjI1IDkuNDE0MjEgMTQuNTg1OCA5Ljc1IDE1IDkuNzVIMjAuODU3MVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTMuMTQyODYgMTQuMjVDMi43Mjg2NCAxNC4yNSAyLjM5Mjg2IDE0LjU4NTggMi4zOTI4NiAxNUMyLjM5Mjg2IDE1LjQxNDIgMi43Mjg2NCAxNS43NSAzLjE0Mjg2IDE1Ljc1SDcuMTg5MzRMMS40Njk2NyAyMS40Njk3QzEuMTc2NzggMjEuNzYyNiAxLjE3Njc4IDIyLjIzNzQgMS40Njk2NyAyMi41MzAzQzEuNzYyNTYgMjIuODIzMiAyLjIzNzQ0IDIyLjgyMzIgMi41MzAzMyAyMi41MzAzTDguMjUgMTYuODEwN1YyMC44NTcxQzguMjUgMjEuMjcxNCA4LjU4NTc5IDIxLjYwNzEgOSAyMS42MDcxQzkuNDE0MjEgMjEuNjA3MSA5Ljc1IDIxLjI3MTQgOS43NSAyMC44NTcxVjE1QzkuNzUgMTQuNTg1OCA5LjQxNDIxIDE0LjI1IDkgMTQuMjVIMy4xNDI4NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Minimize";
  */
 const Minimize: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Minimize.displayName = "Minimize";
-export default Minimize;
+Minimize.displayName = "Minimize"
+export default Minimize

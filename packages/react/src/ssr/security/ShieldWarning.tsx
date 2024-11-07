@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/ShieldWarning";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/ShieldWarning"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMyAxMC40MTY3QzMgNy4yMTkwNyAzIDUuNjIwMjggMy4zNzc1MiA1LjA4MjQxQzMuNzU1MDMgNC41NDQ1NCA1LjI1ODMyIDQuMDI5OTYgOC4yNjQ5MSAzLjAwMDc5TDguODM3NzIgMi44MDQ3MkMxMC40MDUgMi4yNjgyNCAxMS4xODg2IDIgMTIgMkMxMi44MTE0IDIgMTMuNTk1IDIuMjY4MjQgMTUuMTYyMyAyLjgwNDcyTDE1LjczNTEgMy4wMDA3OUMxOC43NDE3IDQuMDI5OTYgMjAuMjQ1IDQuNTQ0NTQgMjAuNjIyNSA1LjA4MjQxQzIxIDUuNjIwMjggMjEgNy4yMTkwNyAyMSAxMC40MTY3VjExLjk5MTRDMjEgMTcuNjI5NCAxNi43NjEgMjAuMzY1NSAxNC4xMDE0IDIxLjUyNzNDMTMuMzggMjEuODQyNCAxMy4wMTkzIDIyIDEyIDIyQzEwLjk4MDcgMjIgMTAuNjIgMjEuODQyNCA5Ljg5ODU2IDIxLjUyNzNDNy4yMzg5NiAyMC4zNjU1IDMgMTcuNjI5NCAzIDExLjk5MTRWMTAuNDE2N1pNMTIgNy4yNUMxMi40MTQyIDcuMjUgMTIuNzUgNy41ODU3OSAxMi43NSA4VjEyQzEyLjc1IDEyLjQxNDIgMTIuNDE0MiAxMi43NSAxMiAxMi43NUMxMS41ODU4IDEyLjc1IDExLjI1IDEyLjQxNDIgMTEuMjUgMTJWOEMxMS4yNSA3LjU4NTc5IDExLjU4NTggNy4yNSAxMiA3LjI1Wk0xMiAxNkMxMi41NTIzIDE2IDEzIDE1LjU1MjMgMTMgMTVDMTMgMTQuNDQ3NyAxMi41NTIzIDE0IDEyIDE0QzExLjQ0NzcgMTQgMTEgMTQuNDQ3NyAxMSAxNUMxMSAxNS41NTIzIDExLjQ0NzcgMTYgMTIgMTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldWarning";
  */
 const ShieldWarning: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldWarning.displayName = "ShieldWarning";
-export default ShieldWarning;
+ShieldWarning.displayName = "ShieldWarning"
+export default ShieldWarning

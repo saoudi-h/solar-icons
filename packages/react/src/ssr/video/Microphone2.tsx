@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Microphone2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Microphone2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05Ljc1IDcuNzVDOS43NSA3LjMzNTc5IDkuNDE0MjEgNyA5IDdINy44MTU5N0g2LjI5ODQ3QzYuNjY1OTggNC4xNzg3MyA5LjA3ODU1IDIgMTIgMkMxNC45MjE0IDIgMTcuMzM0IDQuMTc4NzMgMTcuNzAxNSA3SDE2LjE4NEwxMy41IDdDMTMuMDg1OCA3IDEyLjc1IDcuMzM1NzkgMTIuNzUgNy43NUMxMi43NSA4LjE2NDIxIDEzLjA4NTggOC41IDEzLjUgOC41TDE2LjI1IDguNUgxNy43NVYxMEgxNi4yNUgxMy41QzEzLjA4NTggMTAgMTIuNzUgMTAuMzM1OCAxMi43NSAxMC43NUMxMi43NSAxMS4xNjQyIDEzLjA4NTggMTEuNSAxMy41IDExLjVIMTYuMTg0SDE3LjcwMTVDMTcuMzM0IDE0LjMyMTMgMTQuOTIxNCAxNi41IDEyIDE2LjVDOS4wNzg1NSAxNi41IDYuNjY1OTggMTQuMzIxMyA2LjI5ODQ3IDExLjVINy44MTU5N0g5QzkuNDE0MjEgMTEuNSA5Ljc1IDExLjE2NDIgOS43NSAxMC43NUM5Ljc1IDEwLjMzNTggOS40MTQyMSAxMCA5IDEwSDcuNzVINi4yNVY4LjVINy43NUg5QzkuNDE0MjEgOC41IDkuNzUgOC4xNjQyMSA5Ljc1IDcuNzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNCA5QzQuNDE0MjEgOSA0Ljc1IDkuMzM1NzkgNC43NSA5Ljc1VjEwLjc1QzQuNzUgMTQuNzU0MSA3Ljk5NTk0IDE4IDEyIDE4QzE2LjAwNDEgMTggMTkuMjUgMTQuNzU0MSAxOS4yNSAxMC43NVY5Ljc1QzE5LjI1IDkuMzM1NzkgMTkuNTg1OCA5IDIwIDlDMjAuNDE0MiA5IDIwLjc1IDkuMzM1NzkgMjAuNzUgOS43NVYxMC43NUMyMC43NSAxNS4zMjk4IDE3LjIzMTQgMTkuMDg3OSAxMi43NSAxOS40NjgzVjIxLjc1QzEyLjc1IDIyLjE2NDIgMTIuNDE0MiAyMi41IDEyIDIyLjVDMTEuNTg1OCAyMi41IDExLjI1IDIyLjE2NDIgMTEuMjUgMjEuNzVWMTkuNDY4M0M2Ljc2ODYgMTkuMDg3OSAzLjI1IDE1LjMyOTggMy4yNSAxMC43NVY5Ljc1QzMuMjUgOS4zMzU3OSAzLjU4NTc5IDkgNCA5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Microphone2";
  */
 const Microphone2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Microphone2.displayName = "Microphone2";
-export default Microphone2;
+Microphone2.displayName = "Microphone2"
+export default Microphone2

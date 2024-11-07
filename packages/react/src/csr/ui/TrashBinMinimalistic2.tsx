@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/TrashBinMinimalistic2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/TrashBinMinimalistic2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDYuNTIzODFDMyA2LjEyOTMyIDMuMzI2NzEgNS44MDk1MiAzLjcyOTczIDUuODA5NTJIOC41MTc4N0M4LjUyNDM3IDQuOTY4MyA4LjYxNTU0IDMuODE1MDQgOS40NTAzNyAzLjAxNjY4QzEwLjEwNzQgMi4zODgzOSAxMS4wMDgxIDIgMTIgMkMxMi45OTE5IDIgMTMuODkyNiAyLjM4ODM5IDE0LjU0OTYgMy4wMTY2OEMxNS4zODQ0IDMuODE1MDQgMTUuNDc1NiA0Ljk2ODMgMTUuNDgyMSA1LjgwOTUySDIwLjI3MDNDMjAuNjczMyA1LjgwOTUyIDIxIDYuMTI5MzIgMjEgNi41MjM4MUMyMSA2LjkxODMgMjAuNjczMyA3LjIzODEgMjAuMjcwMyA3LjIzODFIMy43Mjk3M0MzLjMyNjcxIDcuMjM4MSAzIDYuOTE4MyAzIDYuNTIzODFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMS42MDY2IDIySDEyLjM5MzVDMTUuMTAxIDIyIDE2LjQ1NDcgMjIgMTcuMzM0OSAyMS4xMzY4QzE4LjIxNTEgMjAuMjczNiAxOC4zMDUyIDE4Ljg1NzYgMTguNDg1MyAxNi4wMjU3TDE4Ljc0NDggMTEuOTQ1MkMxOC44NDI1IDEwLjQwODYgMTguODkxMyA5LjY0MDM3IDE4LjQ0OTggOS4xNTM1MkMxOC4wMDgyIDguNjY2NjcgMTcuMjYyNSA4LjY2NjY3IDE1Ljc3MTIgOC42NjY2N0g4LjIyODg0QzYuNzM3NSA4LjY2NjY3IDUuOTkxODMgOC42NjY2NyA1LjU1MDI2IDkuMTUzNTJDNS4xMDg3IDkuNjQwMzcgNS4xNTc1NiAxMC40MDg2IDUuMjU1MjggMTEuOTQ1Mkw1LjUxNDc5IDE2LjAyNTdDNS42OTQ4OSAxOC44NTc2IDUuNzg0OTQgMjAuMjczNiA2LjY2NTEzIDIxLjEzNjhDNy41NDUzMiAyMiA4Ljg5OTA2IDIyIDExLjYwNjYgMjJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/TrashBinMinimalistic2";
  */
 const TrashBinMinimalistic2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TrashBinMinimalistic2.displayName = "TrashBinMinimalistic2";
-export default TrashBinMinimalistic2;
+TrashBinMinimalistic2.displayName = "TrashBinMinimalistic2"
+export default TrashBinMinimalistic2

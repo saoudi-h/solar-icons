@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/files/FileDownload";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/files/FileDownload"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS4zNTE3IDcuNjE2NjVMMTUuMzkyOSA0LjA1Mzc1QzE0LjI2NTEgMy4wMzg2OCAxMy43MDEyIDIuNTMxMTQgMTMuMDA5MiAyLjI2NTYyTDEzIDUuMDAwMTFDMTMgNy4zNTcxMyAxMyA4LjUzNTY0IDEzLjczMjIgOS4yNjc4N0MxNC40NjQ1IDEwLjAwMDEgMTUuNjQzIDEwLjAwMDEgMTggMTAuMDAwMUgyMS41ODAxQzIxLjIxNzUgOS4yOTU4OCAyMC41Njg0IDguNzExNjQgMTkuMzUxNyA3LjYxNjY1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDIySDE0QzE3Ljc3MTIgMjIgMTkuNjU2OSAyMiAyMC44Mjg0IDIwLjgyODRDMjIgMTkuNjU2OSAyMiAxNy43NzEyIDIyIDE0VjEzLjU2MjlDMjIgMTIuNjkwMSAyMiAxMi4wMzQ0IDIxLjk1NzQgMTEuNTAwMUgxOEwxNy45MDUxIDExLjUwMDFDMTYuODA4IDExLjUwMDIgMTUuODM4NSAxMS41MDAzIDE1LjA1NjkgMTEuMzk1MkMxNC4yMDk4IDExLjI4MTMgMTMuMzYyOCAxMS4wMTk4IDEyLjY3MTYgMTAuMzI4NUMxMS45ODAzIDkuNjM3MjYgMTEuNzE4OCA4Ljc5MDI4IDExLjYwNDkgNy45NDMxNkMxMS40OTk4IDcuMTYxNjQgMTEuNDk5OSA2LjE5MjA3IDExLjUgNS4wOTQ5N0wxMS41MDkyIDIuMjYwNTdDMTEuNTA5NSAyLjE3ODEzIDExLjUxNjYgMi4wOTY1OSAxMS41MyAyLjAxNjY2QzExLjEyMTQgMiAxMC42MzU4IDIgMTAuMDI5OCAyQzYuMjM4NjkgMiA0LjM0MzE1IDIgMy4xNzE1NyAzLjE3MTU3QzIgNC4zNDMxNSAyIDYuMjI4NzYgMiAxMFYxNEMyIDE3Ljc3MTIgMiAxOS42NTY5IDMuMTcxNTcgMjAuODI4NEM0LjM0MzE1IDIyIDYuMjI4NzYgMjIgMTAgMjJaTTcuOTg3MDQgMTkuMDQ3MkM4LjI3NTU0IDE5LjMxNzYgOC43MjQ0NiAxOS4zMTc2IDkuMDEyOTYgMTkuMDQ3MkwxMS4wMTMgMTcuMTcyMkMxMS4zMTUxIDE2Ljg4ODkgMTEuMzMwNSAxNi40MTQyIDExLjA0NzIgMTYuMTEyQzEwLjc2MzkgMTUuODA5OSAxMC4yODkyIDE1Ljc5NDUgOS45ODcwNCAxNi4wNzc4TDkuMjUgMTYuNzY4OEw5LjI1IDEzLjVDOS4yNSAxMy4wODU4IDguOTE0MjEgMTIuNzUgOC41IDEyLjc1QzguMDg1NzkgMTIuNzUgNy43NSAxMy4wODU4IDcuNzUgMTMuNVYxNi43Njg4TDcuMDEyOTYgMTYuMDc3OEM2LjcxMDc3IDE1Ljc5NDUgNi4yMzYxNSAxNS44MDk5IDUuOTUyODUgMTYuMTEyQzUuNjY5NTUgMTYuNDE0MiA1LjY4NDg2IDE2Ljg4ODkgNS45ODcwNCAxNy4xNzIyTDcuOTg3MDQgMTkuMDQ3MloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/files/FileDownload";
  */
 const FileDownload: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FileDownload.displayName = "FileDownload";
-export default FileDownload;
+FileDownload.displayName = "FileDownload"
+export default FileDownload

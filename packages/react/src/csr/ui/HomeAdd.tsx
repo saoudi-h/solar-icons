@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/HomeAdd";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/HomeAdd"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi41MTkyIDcuODIyNzRDMiA4Ljc3MTI4IDIgOS45MTU0OSAyIDEyLjIwMzlWMTMuNzI1QzIgMTcuNjI1OCAyIDE5LjU3NjMgMy4xNzE1NyAyMC43ODgxQzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC43ODgxQzIyIDE5LjU3NjMgMjIgMTcuNjI1OCAyMiAxMy43MjVWMTIuMjAzOUMyMiA5LjkxNTQ5IDIyIDguNzcxMjggMjEuNDgwOCA3LjgyMjc0QzIwLjk2MTYgNi44NzQyMSAyMC4wMTMxIDYuMjg1NTEgMTguMTE2IDUuMTA4MTJMMTYuMTE2IDMuODY2ODdDMTQuMTEwNiAyLjYyMjI5IDEzLjEwNzkgMiAxMiAyQzEwLjg5MjEgMiA5Ljg4OTM5IDIuNjIyMjkgNy44ODQwMyAzLjg2Njg3TDUuODg0MDMgNS4xMDgxM0MzLjk4Njk1IDYuMjg1NTEgMy4wMzg0IDYuODc0MjEgMi41MTkyIDcuODIyNzRaTTEyLjc1IDExQzEyLjc1IDEwLjU4NTggMTIuNDE0MiAxMC4yNSAxMiAxMC4yNUMxMS41ODU4IDEwLjI1IDExLjI1IDEwLjU4NTggMTEuMjUgMTFMMTEuMjUgMTMuMjVIOUM4LjU4NTc5IDEzLjI1IDguMjUgMTMuNTg1OCA4LjI1IDE0QzguMjUgMTQuNDE0MiA4LjU4NTc5IDE0Ljc1IDkgMTQuNzVIMTEuMjVWMTdDMTEuMjUgMTcuNDE0MiAxMS41ODU4IDE3Ljc1IDEyIDE3Ljc1QzEyLjQxNDIgMTcuNzUgMTIuNzUgMTcuNDE0MiAxMi43NSAxN1YxNC43NUgxNUMxNS40MTQyIDE0Ljc1IDE1Ljc1IDE0LjQxNDIgMTUuNzUgMTRDMTUuNzUgMTMuNTg1OCAxNS40MTQyIDEzLjI1IDE1IDEzLjI1SDEyLjc1TDEyLjc1IDExWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/HomeAdd";
  */
 const HomeAdd: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HomeAdd.displayName = "HomeAdd";
-export default HomeAdd;
+HomeAdd.displayName = "HomeAdd"
+export default HomeAdd

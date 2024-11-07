@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/school/PassportMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/school/PassportMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDVDNSA0LjU5MzM0IDQuNzU3MjcgNC4yNDMzOCA0LjQwODc5IDQuMDg3MUM0LjU1MjcxIDMuOTczNzQgNC43MjcxMiAzLjg5NjE1IDQuOTE5NTkgMy44Njg2NUwxNS43MTcyIDIuMzI2MTRDMTYuOTIyIDIuMTU0MDIgMTggMy4wODg5NCAxOCA0LjMwNjA0VjUuMTI2MDJDMTcuNjgwNCA1LjA0Mzc1IDE3LjM0NTMgNSAxNyA1SDVaIiBmaWxsPSIjMUMyNzREIi8+CjxwYXRoIGQ9Ik05Ljc1IDE0QzkuNzUgMTIuNzU3NCAxMC43NTc0IDExLjc1IDEyIDExLjc1QzEzLjI0MjYgMTEuNzUgMTQuMjUgMTIuNzU3NCAxNC4yNSAxNEMxNC4yNSAxNS4yNDI2IDEzLjI0MjYgMTYuMjUgMTIgMTYuMjVDMTAuNzU3NCAxNi4yNSA5Ljc1IDE1LjI0MjYgOS43NSAxNFoiIGZpbGw9IiMxQzI3NEQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOCA2LjE3MDcxQzE5LjE2NTIgNi41ODI1NCAyMCA3LjY5Mzc4IDIwIDlWMTlDMjAgMjAuNjU2OSAxOC42NTY5IDIyIDE3IDIySDdDNS4zNDMxNSAyMiA0IDIwLjY1NjkgNCAxOVY1QzQgNS4xODIxNCA0LjA0ODcgNS4zNTI5MSA0LjEzMzc4IDUuNUM0LjMwNjY5IDUuNzk4OSA0LjYyOTg2IDYgNSA2SDE3QzE3LjM1MDYgNiAxNy42ODcyIDYuMDYwMTUgMTggNi4xNzA3MVpNMTIgMTAuMjVDOS45Mjg5MyAxMC4yNSA4LjI1IDExLjkyODkgOC4yNSAxNEM4LjI1IDE2LjA3MTEgOS45Mjg5MyAxNy43NSAxMiAxNy43NUMxNC4wNzExIDE3Ljc1IDE1Ljc1IDE2LjA3MTEgMTUuNzUgMTRDMTUuNzUgMTEuOTI4OSAxNC4wNzExIDEwLjI1IDEyIDEwLjI1WiIgZmlsbD0iIzFDMjc0RCIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/PassportMinimalistic";
  */
 const PassportMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PassportMinimalistic.displayName = "PassportMinimalistic";
-export default PassportMinimalistic;
+PassportMinimalistic.displayName = "PassportMinimalistic"
+export default PassportMinimalistic

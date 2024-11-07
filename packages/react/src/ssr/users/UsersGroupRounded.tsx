@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/users/UsersGroupRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/users/UsersGroupRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjkuMDAwOTgiIGN5PSI2IiByPSI0IiBmaWxsPSIjMUMyNzRDIi8+CjxlbGxpcHNlIGN4PSI5LjAwMDk4IiBjeT0iMTcuMDAxIiByeD0iNyIgcnk9IjQiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjk5OTYgMTcuMDAwNUMyMC45OTk2IDE4LjY1NzMgMTguOTY0MSAyMC4wMDA0IDE2LjQ3ODggMjAuMDAwNEMxNy4yMTEgMTkuMjAwMSAxNy43MTQ1IDE4LjE5NTUgMTcuNzE0NSAxNy4wMDE4QzE3LjcxNDUgMTUuODA2OCAxNy4yMDk4IDE0LjgwMTMgMTYuNDc2MiAxNC4wMDA1QzE4Ljk2MTUgMTQuMDAwNSAyMC45OTk2IDE1LjM0MzYgMjAuOTk5NiAxNy4wMDA1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcuOTk5NiA2LjAwMDczQzE3Ljk5OTYgNy42NTc1OSAxNi42NTY1IDkuMDAwNzMgMTQuOTk5NiA5LjAwMDczQzE0LjYzODMgOS4wMDA3MyAxNC4yOTIgOC45MzY4NyAxMy45NzEyIDguODE5ODFDMTQuNDQ0MyA3Ljk4NzcyIDE0LjcxNDUgNy4wMjUyMiAxNC43MTQ1IDUuOTk5NjJDMTQuNzE0NSA0Ljk3NDc3IDE0LjQ0NDcgNC4wMTI5NCAxMy45NzIyIDMuMTgxMjdDMTQuMjkyNyAzLjA2NDQ2IDE0LjYzODcgMy4wMDA3MyAxNC45OTk2IDMuMDAwNzNDMTYuNjU2NSAzLjAwMDczIDE3Ljk5OTYgNC4zNDM4OCAxNy45OTk2IDYuMDAwNzNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/users/UsersGroupRounded";
  */
 const UsersGroupRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UsersGroupRounded.displayName = "UsersGroupRounded";
-export default UsersGroupRounded;
+UsersGroupRounded.displayName = "UsersGroupRounded"
+export default UsersGroupRounded

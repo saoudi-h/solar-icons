@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/Backspace";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/Backspace"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi44NzExNCAxOS40OTg2QzcuODAwODUgMjAgOC45MTQ1OCAyMCAxMS4xNDIgMjBIMTMuNzc5QzE3LjY1NDQgMjAgMTkuNTkyMSAyMCAyMC43OTYxIDE4LjgyODRDMjIgMTcuNjU2OSAyMiAxNS43NzEyIDIyIDEyQzIyIDguMjI4NzYgMjIgNi4zNDMxNSAyMC43OTYxIDUuMTcxNTdDMTkuNTkyMSA0IDE3LjY1NDQgNCAxMy43NzkgNEgxMS4xNDJDOC45MTQ1OCA0IDcuODAwODUgNCA2Ljg3MTE0IDQuNTAxNDNDNS45NDE0NCA1LjAwMjg2IDUuMzUxMTcgNS45MjE5MSA0LjE3MDYxIDcuNzYwMDFMMy40ODk4MSA4LjgyMDAxQzIuNDk2NiAxMC4zNjY0IDIgMTEuMTM5NiAyIDEyQzIgMTIuODYwNCAyLjQ5NjYgMTMuNjMzNiAzLjQ4OTgxIDE1LjE4TDQuMTcwNjEgMTYuMjRDNS4zNTExNyAxOC4wNzgxIDUuOTQxNDQgMTguOTk3MSA2Ljg3MTE0IDE5LjQ5ODZaTTExLjAzMDMgOC45Njk2N0MxMC43Mzc0IDguNjc2NzggMTAuMjYyNSA4LjY3Njc4IDkuOTY5NjUgOC45Njk2N0M5LjY3Njc2IDkuMjYyNTYgOS42NzY3NiA5LjczNzQ0IDkuOTY5NjUgMTAuMDMwM0wxMS45MzkzIDEyTDkuOTY5NjcgMTMuOTY5N0M5LjY3Njc4IDE0LjI2MjYgOS42NzY3OCAxNC43Mzc0IDkuOTY5NjcgMTUuMDMwM0MxMC4yNjI2IDE1LjMyMzIgMTAuNzM3NCAxNS4zMjMyIDExLjAzMDMgMTUuMDMwM0wxMyAxMy4wNjA3TDE0Ljk2OTYgMTUuMDMwM0MxNS4yNjI1IDE1LjMyMzIgMTUuNzM3NCAxNS4zMjMyIDE2LjAzMDMgMTUuMDMwM0MxNi4zMjMyIDE0LjczNzQgMTYuMzIzMiAxNC4yNjI1IDE2LjAzMDMgMTMuOTY5N0wxNC4wNjA2IDEyTDE2LjAzMDMgMTAuMDMwNEMxNi4zMjMyIDkuNzM3NDYgMTYuMzIzMiA5LjI2MjU4IDE2LjAzMDMgOC45Njk2OUMxNS43Mzc0IDguNjc2OCAxNS4yNjI1IDguNjc2OCAxNC45Njk2IDguOTY5NjlMMTMgMTAuOTM5NEwxMS4wMzAzIDguOTY5NjdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/Backspace";
  */
 const Backspace: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Backspace.displayName = "Backspace";
-export default Backspace;
+Backspace.displayName = "Backspace"
+export default Backspace

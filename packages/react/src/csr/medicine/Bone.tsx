@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/medicine/Bone";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/medicine/Bone"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4xMzc0IDIuNzM3NzlDMTMuMzk0MiAzLjQ4MTAyIDEzLjAwOTIgNC43NzY0NiAxMy4yODk1IDUuNzg5N0MxMy40MzggNi4zMjYwMyAxMy40NjIyIDYuOTc1NDEgMTMuMDY4NyA3LjM2ODlMNy4zNjg5IDEzLjA2ODdDNi45NzU0MSAxMy40NjIyIDYuMzI2MDMgMTMuNDM4IDUuNzg5NyAxMy4yODk1QzQuNzc2NDYgMTMuMDA5MiAzLjQ4MTAxIDEzLjM5NDIgMi43Mzc3OSAxNC4xMzc0QzEuNzU0MDcgMTUuMTIxMiAxLjc1NDA3IDE2LjcxNjEgMi43Mzc3OSAxNy42OTk4QzMuNzIxNTIgMTguNjgzNSA1LjMxNjQ2IDE4LjY4MzUgNi4zMDAxOCAxNy42OTk4QzUuMzE2NDYgMTguNjgzNSA1LjMxNjQ1IDIwLjI3ODUgNi4zMDAxOCAyMS4yNjIyQzcuMjgzOTEgMjIuMjQ1OSA4Ljg3ODg0IDIyLjI0NTkgOS44NjI1NyAyMS4yNjIyQzEwLjYwNTggMjAuNTE5IDEwLjk5MDggMTkuMjIzNSAxMC43MTA1IDE4LjIxMDNDMTAuNTYyIDE3LjY3NCAxMC41Mzc4IDE3LjAyNDYgMTAuOTMxMyAxNi42MzExTDE2LjYzMTEgMTAuOTMxM0MxNy4wMjQ2IDEwLjUzNzggMTcuNjc0IDEwLjU2MiAxOC4yMTAzIDEwLjcxMDVDMTkuMjIzNSAxMC45OTA4IDIwLjUxOSAxMC42MDU4IDIxLjI2MjIgOS44NjI1N0MyMi4yNDU5IDguODc4ODQgMjIuMjQ1OSA3LjI4MzkxIDIxLjI2MjIgNi4zMDAxOEMyMC4yNzg1IDUuMzE2NDYgMTguNjgzNSA1LjMxNjQ2IDE3LjY5OTggNi4zMDAxOEMxOC42ODM1IDUuMzE2NDYgMTguNjgzNSAzLjcyMTUyIDE3LjY5OTggMi43Mzc3OUMxNi43MTYxIDEuNzU0MDcgMTUuMTIxMiAxLjc1NDA3IDE0LjEzNzQgMi43Mzc3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Bone";
  */
 const Bone: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bone.displayName = "Bone";
-export default Bone;
+Bone.displayName = "Bone"
+export default Bone

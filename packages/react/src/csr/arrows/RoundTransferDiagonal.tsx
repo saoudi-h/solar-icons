@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RoundTransferDiagonal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RoundTransferDiagonal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgOC44NzYzOCAzLjQzMjE3IDYuMDg3MjUgNS42NzU2OCA0LjI1MzQ1TDEzLjMyODQgMTIuNTA5OUMxMy41MzgxIDEyLjczNjIgMTMuODY1IDEyLjgxMSAxNC4xNTIzIDEyLjY5ODNDMTQuNDM5NSAxMi41ODU3IDE0LjYyODQgMTIuMzA4NiAxNC42Mjg0IDEyLjAwMDFWNy41MDAxMUMxNC42Mjg0IDcuMDg1OSAxNC4yOTI2IDYuNzUwMTEgMTMuODc4NCA2Ljc1MDExQzEzLjQ2NDIgNi43NTAxMSAxMy4xMjg0IDcuMDg1OSAxMy4xMjg0IDcuNTAwMTFWMTAuMDg3Nkw2LjkxNzE1IDMuMzg2MjhDOC40MDY1OCAyLjUwNTQ5IDEwLjE0NDMgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE1LjEyNTUgMjAuNTY2MSAxNy45MTYyIDE4LjMyMDIgMTkuNzQ5OUwxMC40MjA3IDExLjQ4MThDMTAuMjA5IDExLjI2MDMgOS44ODM3OSAxMS4xODk4IDkuNTk5MzQgMTEuMzAzOEM5LjMxNDg4IDExLjQxNzkgOS4xMjg0MyAxMS42OTM1IDkuMTI4NDMgMTJWMTYuNUM5LjEyODQzIDE2LjkxNDIgOS40NjQyMiAxNy4yNSA5Ljg3ODQzIDE3LjI1QzEwLjI5MjYgMTcuMjUgMTAuNjI4NCAxNi45MTQyIDEwLjYyODQgMTYuNVYxMy44NzA2TDE3LjA3NTIgMjAuNjE4MkMxNS41ODc1IDIxLjQ5NjIgMTMuODUyNiAyMiAxMiAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundTransferDiagonal";
  */
 const RoundTransferDiagonal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundTransferDiagonal.displayName = "RoundTransferDiagonal";
-export default RoundTransferDiagonal;
+RoundTransferDiagonal.displayName = "RoundTransferDiagonal"
+export default RoundTransferDiagonal

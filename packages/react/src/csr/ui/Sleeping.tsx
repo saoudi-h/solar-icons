@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Sleeping";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Sleeping"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yLjc1IDZDMi43NSA1LjU4NTc5IDIuNDE0MjEgNS4yNSAyIDUuMjVDMS41ODU3OSA1LjI1IDEuMjUgNS41ODU3OSAxLjI1IDZWMThDMS4yNSAxOC40MTQyIDEuNTg1NzkgMTguNzUgMiAxOC43NUMyLjQxNDIxIDE4Ljc1IDIuNzUgMTguNDE0MiAyLjc1IDE4VjE2Ljc1SDIxLjE0MlYxOC4wMDAyQzIxLjE0MiAxOC40MTQ0IDIxLjQ3NzggMTguNzUwMiAyMS44OTIgMTguNzUwMkMyMi4zMDYzIDE4Ljc1MDIgMjIuNjQyIDE4LjQxNDQgMjIuNjQyIDE4LjAwMDJWMTYuMDAwMUwyMi42NDI5IDE1LjY0M0MyMi42NDI5IDEzLjY0OCAyMi42NDI5IDEyLjY1MDYgMjIuMzYyMyAxMS44NDg3QzIxLjg1OTcgMTAuNDEyNSAyMC43MzA1IDkuMjgzMjUgMTkuMjk0MyA4Ljc4MDY5QzE4LjQ5MjQgOC41MDAxMSAxNy40OTQ5IDguNTAwMTEgMTUuNSA4LjUwMDExSDE1LjQ5NzdDMTQuNyA4LjUwMDExIDEzLjY1OTkgOC41MDAxMSAxMy4zMzk0IDguNjEyMjNDMTIuNzY0OSA4LjgxMzI2IDEyLjMxMzMgOS4yNjQ5NSAxMi4xMTIyIDkuODM5NDRDMTIgMTAuMTYwMiAxMiAxMC41NTkyIDEyIDExLjM1NzFWMTUuMjVIMi43NVY2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNyAxMy41QzguMzgwNzEgMTMuNSA5LjUgMTIuMzgwNyA5LjUgMTFDOS41IDkuNjE5MjkgOC4zODA3MSA4LjUgNyA4LjVDNS42MTkyOSA4LjUgNC41IDkuNjE5MjkgNC41IDExQzQuNSAxMi4zODA3IDUuNjE5MjkgMTMuNSA3IDEzLjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Sleeping";
  */
 const Sleeping: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sleeping.displayName = "Sleeping";
-export default Sleeping;
+Sleeping.displayName = "Sleeping"
+export default Sleeping

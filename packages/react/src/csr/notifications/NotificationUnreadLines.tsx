@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notifications/NotificationUnreadLines";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notifications/NotificationUnreadLines"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiA1QzIyIDYuNjU2ODUgMjAuNjU2OSA4IDE5IDhDMTcuMzQzMSA4IDE2IDYuNjU2ODUgMTYgNUMxNiAzLjM0MzE1IDE3LjM0MzEgMiAxOSAyQzIwLjY1NjkgMiAyMiAzLjM0MzE1IDIyIDVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi4yNSAxNEM2LjI1IDEzLjU4NTggNi41ODU3OSAxMy4yNSA3IDEzLjI1SDE2QzE2LjQxNDIgMTMuMjUgMTYuNzUgMTMuNTg1OCAxNi43NSAxNEMxNi43NSAxNC40MTQyIDE2LjQxNDIgMTQuNzUgMTYgMTQuNzVIN0M2LjU4NTc5IDE0Ljc1IDYuMjUgMTQuNDE0MiA2LjI1IDE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMuNDY0NDcgMjAuNTM1NUM0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTIgMjJDMTYuNzE0IDIyIDE5LjA3MTEgMjIgMjAuNTM1NSAyMC41MzU1QzIyIDE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyQzIyIDEwLjYwMTIgMjIgOS40MDk5OSAyMS45NjE3IDguMzg4MDJDMjEuMTcwMyA5LjA4MDQyIDIwLjEzNDIgOS41IDE5IDkuNUMxNi41MTQ3IDkuNSAxNC41IDcuNDg1MjggMTQuNSA1QzE0LjUgMy44NjU4NCAxNC45MTk2IDIuODI5NjcgMTUuNjEyIDIuMDM4MjZDMTQuNTkgMiAxMy4zOTg4IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNNi4yNSAxNy41QzYuMjUgMTcuMDg1OCA2LjU4NTc5IDE2Ljc1IDcgMTYuNzVIMTNDMTMuNDE0MiAxNi43NSAxMy43NSAxNy4wODU4IDEzLjc1IDE3LjVDMTMuNzUgMTcuOTE0MiAxMy40MTQyIDE4LjI1IDEzIDE4LjI1SDdDNi41ODU3OSAxOC4yNSA2LjI1IDE3LjkxNDIgNi4yNSAxNy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notifications/NotificationUnreadLines";
  */
 const NotificationUnreadLines: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-NotificationUnreadLines.displayName = "NotificationUnreadLines";
-export default NotificationUnreadLines;
+NotificationUnreadLines.displayName = "NotificationUnreadLines"
+export default NotificationUnreadLines

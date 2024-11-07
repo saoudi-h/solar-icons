@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/AlarmSleep";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/AlarmSleep"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4xMzYxMiAxLjYwMjZDOC4zNTU2NiAxLjk1Mzg2IDguMjQ4ODcgMi40MTY1NyA3Ljg5NzYyIDIuNjM2MUwzLjg5NzYgNS4xMzYxQzMuNTQ2MzQgNS4zNTU2MyAzLjA4MzYzIDUuMjQ4ODUgMi44NjQxIDQuODk3NkMyLjY0NDU3IDQuNTQ2MzQgMi43NTEzNSA0LjA4MzYzIDMuMTAyNiAzLjg2NDFMNy4xMDI2MyAxLjM2NDFDNy40NTM4OCAxLjE0NDU3IDcuOTE2NTkgMS4yNTEzNSA4LjEzNjEyIDEuNjAyNlpNMTUuODY0MSAxLjYwMjZDMTYuMDgzNiAxLjI1MTM1IDE2LjU0NjMgMS4xNDQ1NyAxNi44OTc2IDEuMzY0MUwyMC44OTc2IDMuODY0MUMyMS4yNDg5IDQuMDgzNjMgMjEuMzU1NiA0LjU0NjM1IDIxLjEzNjEgNC44OTc2QzIwLjkxNjYgNS4yNDg4NSAyMC40NTM5IDUuMzU1NjMgMjAuMTAyNiA1LjEzNjFMMTYuMTAyNiAyLjYzNjFDMTUuNzUxMyAyLjQxNjU3IDE1LjY0NDYgMS45NTM4NSAxNS44NjQxIDEuNjAyNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4wMDAxIDIyLjAwMDFDMTYuOTcwNyAyMi4wMDAxIDIxLjAwMDEgMTcuOTcwNyAyMS4wMDAxIDEzLjAwMDFDMjEuMDAwMSA4LjAyOTU0IDE2Ljk3MDcgNC4wMDAxIDEyLjAwMDEgNC4wMDAxQzcuMDI5NTQgNC4wMDAxIDMuMDAwMSA4LjAyOTU0IDMuMDAwMSAxMy4wMDAxQzMuMDAwMSAxNy45NzA3IDcuMDI5NTQgMjIuMDAwMSAxMi4wMDAxIDIyLjAwMDFaTTkuMDAwMSAxMC43NTAxQzguNTg1ODkgMTAuNzUwMSA4LjI1MDEgMTAuNDE0MyA4LjI1MDEgMTAuMDAwMUM4LjI1MDEgOS41ODU4OSA4LjU4NTg5IDkuMjUwMSA5LjAwMDEgOS4yNTAxSDE1LjAwMDFDMTUuMzAzNCA5LjI1MDEgMTUuNTc2OSA5LjQzMjgzIDE1LjY5MyA5LjcxMzA5QzE1LjgwOTEgOS45OTMzNCAxNS43NDQ5IDEwLjMxNTkgMTUuNTMwNCAxMC41MzA0TDEwLjgxMDggMTUuMjUwMUgxNS4wMDAxQzE1LjQxNDMgMTUuMjUwMSAxNS43NTAxIDE1LjU4NTkgMTUuNzUwMSAxNi4wMDAxQzE1Ljc1MDEgMTYuNDE0MyAxNS40MTQzIDE2Ljc1MDEgMTUuMDAwMSAxNi43NTAxSDkuMDAwMUM4LjY5Njc1IDE2Ljc1MDEgOC40MjMyOCAxNi41Njc0IDguMzA3MTkgMTYuMjg3MUM4LjE5MTEgMTYuMDA2OSA4LjI1NTI3IDE1LjY4NDMgOC40Njk3NyAxNS40Njk4TDEzLjE4OTQgMTAuNzUwMUg5LjAwMDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/AlarmSleep";
  */
 const AlarmSleep: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AlarmSleep.displayName = "AlarmSleep";
-export default AlarmSleep;
+AlarmSleep.displayName = "AlarmSleep"
+export default AlarmSleep

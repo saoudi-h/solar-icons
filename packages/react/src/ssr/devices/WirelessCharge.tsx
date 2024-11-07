@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/WirelessCharge";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/WirelessCharge"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuMDY0NiAxNy45OTk3QzE2LjQ4MjcgMTguMDM1NCAyMC4wMzU0IDE0LjQ4MjcgMTkuOTk5NyAxMC4wNjQ2QzE5Ljk2NDEgNS42NDY0MiAxNi4zNTM2IDIuMDM1OTIgMTEuOTM1NCAyLjAwMDI3QzcuNTE3MzEgMS45NjQ2MSAzLjk2NDYxIDUuNTE3MzEgNC4wMDAyNyA5LjkzNTQ1QzQuMDM1OTIgMTQuMzUzNiA3LjY0NjQyIDE3Ljk2NDEgMTIuMDY0NiAxNy45OTk3Wk0xMy4zNzM5IDYuNDU2OUMxMy42NzM5IDYuNzQyNTYgMTMuNjg1NCA3LjIxNzMgMTMuMzk5OCA3LjUxNzI0TDExLjc0OTUgOS4yNUgxMy45OTk1QzE0LjI5OTYgOS4yNSAxNC41NzA3IDkuNDI4OCAxNC42ODg5IDkuNzA0NTZDMTQuODA3MSA5Ljk4MDMyIDE0Ljc0OTUgMTAuMyAxNC41NDI2IDEwLjUxNzJMMTEuNjg1NSAxMy41MTcyQzExLjM5OTggMTMuODE3MiAxMC45MjUxIDEzLjgyODggMTAuNjI1MSAxMy41NDMxQzEwLjMyNTIgMTMuMjU3NCAxMC4zMTM2IDEyLjc4MjcgMTAuNTk5MyAxMi40ODI4TDEyLjI0OTUgMTAuNzVIOS45OTk1M0M5LjY5OTUxIDEwLjc1IDkuNDI4MzYgMTAuNTcxMiA5LjMxMDE3IDEwLjI5NTRDOS4xOTE5OSAxMC4wMTk3IDkuMjQ5NTIgOS43MDAwMiA5LjQ1NjQzIDkuNDgyNzZMMTIuMzEzNiA2LjQ4Mjc2QzEyLjU5OTIgNi4xODI4MSAxMy4wNzQgNi4xNzEyMyAxMy4zNzM5IDYuNDU2OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTExLjExNzMgMjAuOTI0MkMxMS4xNTg0IDIwLjk0MTIgMTEuMjAxOSAyMC45NTQ0IDExLjI1IDIwLjk2NDdWMjJDMTEuMjUgMjIuNDE0MiAxMS41ODU4IDIyLjc1IDEyIDIyLjc1QzEyLjQxNDIgMjIuNzUgMTIuNzUgMjIuNDE0MiAxMi43NSAyMlYyMC45NjQ3QzEyLjc5ODEgMjAuOTU0NCAxMi44NDE2IDIwLjk0MTIgMTIuODgyNyAyMC45MjQyQzEzLjEyNzcgMjAuODIyNyAxMy4zMjI0IDIwLjYyOCAxMy40MjM5IDIwLjM4M0MxMy41IDIwLjE5OTIgMTMuNSAxOS45NjYzIDEzLjUgMTkuNTAwM1YxOC44OTY0QzEzLjAzMDMgMTguOTY4NSAxMi41NDgxIDE5LjAwNCAxMi4wNTY1IDE5QzExLjUyNiAxOC45OTU4IDExLjAwNTkgMTguOTQ1NyAxMC41IDE4Ljg1MzVWMTkuNTAwM0MxMC41IDE5Ljk2NjMgMTAuNSAyMC4xOTkyIDEwLjU3NjEgMjAuMzgzQzEwLjY3NzYgMjAuNjI4IDEwLjg3MjMgMjAuODIyNyAxMS4xMTczIDIwLjkyNDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/WirelessCharge";
  */
 const WirelessCharge: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WirelessCharge.displayName = "WirelessCharge";
-export default WirelessCharge;
+WirelessCharge.displayName = "WirelessCharge"
+export default WirelessCharge

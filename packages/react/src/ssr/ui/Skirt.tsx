@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Skirt";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Skirt"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi4xMDgzIDJINy44OTE3QzYuOTIzMzcgMiA2LjQzOTIgMiA2LjEzODM4IDIuMjkyODlDNS44Mzc1NiAyLjU4NTc5IDUuODM3NTYgMy4wNTcxOSA1LjgzNzU2IDRWNC43NUgxOC4xNjI0VjRDMTguMTYyNCAzLjA1NzE5IDE4LjE2MjQgMi41ODU3OSAxNy44NjE2IDIuMjkyODlDMTcuNTYwOCAyIDE3LjA3NjYgMiAxNi4xMDgzIDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yLjA4MDY2IDE3Ljk1MjlMNS42MTEyOSA2LjI1SDkuMDM0MzRMNy4xNDczNSAyMS40MDczQzcuMTQzMzcgMjEuNDM5MyA3LjE0MTQ2IDIxLjQ3MSA3LjE0MTUzIDIxLjUwMjRDNS4wNDYwMyAyMS4wNDA5IDMuNjAwOTEgMjAuMzQ5MSAyLjczNDUgMTkuODI5M0MyLjA4MjIyIDE5LjQzNzkgMS44NjQ3MyAxOC42Njg2IDIuMDgwNjYgMTcuOTUyOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTguNTkzMjMgMjEuNzY1NUM5LjYwNjM0IDIxLjkxMTUgMTAuNzQwMSAyMiAxMiAyMkMxMy4yNTk4IDIyIDE0LjM5MzUgMjEuOTExNSAxNS40MDY2IDIxLjc2NTVDMTUuMzg2IDIxLjcxMDkgMTUuMzcxNSAyMS42NTMxIDE1LjM2MzkgMjEuNTkyN0wxMy40NTM5IDYuMjVIMTAuNTQ1OUw4LjYzNTg2IDIxLjU5MjdDOC42MjgzMyAyMS42NTMxIDguNjEzODIgMjEuNzEwOSA4LjU5MzIzIDIxLjc2NTVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNC45NjU1IDYuMjVMMTYuODUyNCAyMS40MDczQzE2Ljg1NjQgMjEuNDM5MyAxNi44NTgzIDIxLjQ3MTEgMTYuODU4MyAyMS41MDI1QzE4Ljk1MzkgMjEuMDQxIDIwLjM5OTEgMjAuMzQ5MSAyMS4yNjU1IDE5LjgyOTNDMjEuOTE3OCAxOS40Mzc5IDIyLjEzNTMgMTguNjY4NiAyMS45MTkzIDE3Ljk1MjlMMTguMzg4NyA2LjI1SDE0Ljk2NTVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Skirt";
  */
 const Skirt: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Skirt.displayName = "Skirt";
-export default Skirt;
+Skirt.displayName = "Skirt"
+export default Skirt

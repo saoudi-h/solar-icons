@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/it/WindowFrame";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/it/WindowFrame"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIuMzg0MjEgNC41NDQ3MiAyLjEwMDggNi4xMTA2NCAyLjAyNjQ1IDguNzVIMjEuOTczNkMyMS44OTkyIDYuMTEwNjQgMjEuNjE1OCA0LjU0NDcyIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMiAxMkMyIDExLjM3NjYgMiAxMC43OTQ0IDIuMDAzMzkgMTAuMjVIOC4yNUw4LjI1IDIxVjIxLjk1NjNDNS45MDk2MiAyMS44NTkxIDQuNDc0NjggMjEuNTQ1OCAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTYgN0M2LjU1MjI4IDcgNyA2LjU1MjI4IDcgNkM3IDUuNDQ3NzIgNi41NTIyOCA1IDYgNUM1LjQ0NzcyIDUgNSA1LjQ0NzcyIDUgNkM1IDYuNTUyMjggNS40NDc3MiA3IDYgN1pNMTAgNkMxMCA2LjU1MjI4IDkuNTUyMjggNyA5IDdDOC40NDc3MiA3IDggNi41NTIyOCA4IDZDOCA1LjQ0NzcyIDguNDQ3NzIgNSA5IDVDOS41NTIyOCA1IDEwIDUuNDQ3NzIgMTAgNlpNMTIgN0MxMi41NTIzIDcgMTMgNi41NTIyOCAxMyA2QzEzIDUuNDQ3NzIgMTIuNTUyMyA1IDEyIDVDMTEuNDQ3NyA1IDExIDUuNDQ3NzIgMTEgNkMxMSA2LjU1MjI4IDExLjQ0NzcgNyAxMiA3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzExLjE4MTUgMjIgMTAuNDM0MSAyMiA5Ljc1IDIxLjk5MjNWMjFMOS43NSAxMC4yNUgyMS45OTY2QzIyIDEwLjc5NDQgMjIgMTEuMzc2NiAyMiAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/WindowFrame";
  */
 const WindowFrame: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-WindowFrame.displayName = "WindowFrame";
-export default WindowFrame;
+WindowFrame.displayName = "WindowFrame"
+export default WindowFrame

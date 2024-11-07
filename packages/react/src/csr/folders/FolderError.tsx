@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/folders/FolderError";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/folders/FolderError"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4wNjkzNSA1LjI1ODM5QzIgNS42MjU5NSAyIDYuMDY3MjIgMiA2Ljk0OTc1VjE0QzIgMTcuNzcxMiAyIDE5LjY1NjkgMy4xNzE1NyAyMC44Mjg0QzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC44Mjg0QzIyIDE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNFYxMS43OTc5QzIyIDkuMTY1NTQgMjIgNy44NDkzNSAyMS4yMzA1IDYuOTkzODNDMjEuMTU5OCA2LjkxNTE0IDIxLjA4NDkgNi44NDAyNCAyMS4wMDYyIDYuNzY5NDZDMjAuMTUwNiA2IDE4LjgzNDUgNiAxNi4yMDIxIDZIMTUuODI4NEMxNC42NzQ3IDYgMTQuMDk3OSA2IDEzLjU2MDQgNS44NDY3OEMxMy4yNjUxIDUuNzYyNiAxMi45ODA0IDUuNjQ0NzEgMTIuNzEyMSA1LjQ5NTQzQzEyLjIyMzcgNS4yMjM2NyAxMS44MTU4IDQuODE1NzggMTEgNEwxMC40NDk3IDMuNDQ5NzVDMTAuMTc2MyAzLjE3NjMzIDEwLjAzOTYgMy4wMzk2MSA5Ljg5NTk0IDIuOTIwNTFDOS4yNzY1MiAyLjQwNzA0IDguNTE2NjUgMi4wOTIyOSA3LjcxNTU3IDIuMDE3MzhDNy41Mjk3NiAyIDcuMzM2NDIgMiA2Ljk0OTc1IDJDNi4wNjcyMiAyIDUuNjI1OTUgMiA1LjI1ODM5IDIuMDY5MzVDMy42NDAzMSAyLjM3NDY0IDIuMzc0NjQgMy42NDAzMSAyLjA2OTM1IDUuMjU4MzlaTTkuOTY5NjcgMTEuNDY5N0MxMC4yNjI2IDExLjE3NjggMTAuNzM3NCAxMS4xNzY4IDExLjAzMDMgMTEuNDY5N0wxMiAxMi40MzkzTDEyLjk2OTcgMTEuNDY5N0MxMy4yNjI2IDExLjE3NjggMTMuNzM3NCAxMS4xNzY4IDE0LjAzMDMgMTEuNDY5N0MxNC4zMjMyIDExLjc2MjYgMTQuMzIzMiAxMi4yMzc0IDE0LjAzMDMgMTIuNTMwM0wxMy4wNjA3IDEzLjVMMTQuMDMwMyAxNC40Njk3QzE0LjMyMzIgMTQuNzYyNiAxNC4zMjMyIDE1LjIzNzQgMTQuMDMwMyAxNS41MzAzQzEzLjczNzQgMTUuODIzMiAxMy4yNjI2IDE1LjgyMzIgMTIuOTY5NyAxNS41MzAzTDEyIDE0LjU2MDdMMTEuMDMwMyAxNS41MzAzQzEwLjczNzQgMTUuODIzMiAxMC4yNjI2IDE1LjgyMzIgOS45Njk2NyAxNS41MzAzQzkuNjc2NzggMTUuMjM3NCA5LjY3Njc4IDE0Ljc2MjYgOS45Njk2NyAxNC40Njk3TDEwLjkzOTMgMTMuNUw5Ljk2OTY3IDEyLjUzMDNDOS42NzY3OCAxMi4yMzc0IDkuNjc2NzggMTEuNzYyNiA5Ljk2OTY3IDExLjQ2OTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/folders/FolderError";
  */
 const FolderError: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FolderError.displayName = "FolderError";
-export default FolderError;
+FolderError.displayName = "FolderError"
+export default FolderError

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/call/PhoneRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/call/PhoneRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC4wMzc2IDUuMzE2MTdMMTAuNjg2NiA2LjQ3OTFDMTEuMjcyMyA3LjUyODU4IDExLjAzNzIgOC45MDUzMiAxMC4xMTQ3IDkuODI3OEMxMC4xMTQ3IDkuODI3OCAxMC4xMTQ3IDkuODI3OCAxMC4xMTQ3IDkuODI3OEMxMC4xMTQ2IDkuODI3OTIgOC45OTU4OCAxMC45NDY4IDExLjAyNDUgMTIuOTc1NUMxMy4wNTI1IDE1LjAwMzUgMTQuMTcxNCAxMy44ODYxIDE0LjE3MjIgMTMuODg1M0MxNC4xNzIyIDEzLjg4NTMgMTQuMTcyMiAxMy44ODUzIDE0LjE3MjIgMTMuODg1M0MxNS4wOTQ3IDEyLjk2MjggMTYuNDcxNCAxMi43Mjc3IDE3LjUyMDkgMTMuMzEzNEwxOC42ODM4IDEzLjk2MjRDMjAuMjY4NiAxNC44NDY4IDIwLjQ1NTcgMTcuMDY5MiAxOS4wNjI4IDE4LjQ2MjJDMTguMjI1OCAxOS4yOTkyIDE3LjIwMDQgMTkuOTUwNSAxNi4wNjY5IDE5Ljk5MzRDMTQuMTU4OCAyMC4wNjU4IDEwLjkxODMgMTkuNTgyOSA3LjY2NzcgMTYuMzMyM0M0LjQxNzEzIDEzLjA4MTcgMy45MzQyMSA5Ljg0MTIyIDQuMDA2NTUgNy45MzMwOUM0LjA0OTUyIDYuNzk5NiA0LjcwMDggNS43NzQyMyA1LjUzNzgxIDQuOTM3MjNDNi45MzA3NiAzLjU0NDI4IDkuMTUzMTcgMy43MzE0NCAxMC4wMzc2IDUuMzE2MTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/PhoneRounded";
  */
 const PhoneRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PhoneRounded.displayName = "PhoneRounded";
-export default PhoneRounded;
+PhoneRounded.displayName = "PhoneRounded"
+export default PhoneRounded

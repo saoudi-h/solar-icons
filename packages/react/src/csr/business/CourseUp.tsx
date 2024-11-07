@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/business/CourseUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/business/CourseUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuNjY3OSA3QzE1LjY2NzkgNi41ODU3OSAxNi4wMDM2IDYuMjUgMTYuNDE3OSA2LjI1SDIyQzIyLjQxNDIgNi4yNSAyMi43NSA2LjU4NTc5IDIyLjc1IDdWMTIuNTQ1OEMyMi43NSAxMi45NiAyMi40MTQyIDEzLjI5NTggMjIgMTMuMjk1OEMyMS41ODU4IDEzLjI5NTggMjEuMjUgMTIuOTYgMjEuMjUgMTIuNTQ1OFY4LjgwMjg2TDE1LjExNDIgMTQuOTAxM0MxNC42NDUyIDE1LjM2NzQgMTQuMjQxIDE1Ljc2OTIgMTMuODczOSAxNi4wNDc3QzEzLjQ4MDQgMTYuMzQ2MiAxMy4wNDMyIDE2LjU3MiAxMi41MDUgMTYuNTcyQzExLjk2NjggMTYuNTcxOSAxMS41Mjk3IDE2LjM0NiAxMS4xMzYyIDE2LjA0NzRDMTAuNzY5MiAxNS43Njg4IDEwLjM2NTEgMTUuMzY3IDkuODk2MjkgMTQuOTAwN0w5LjYyMjAzIDE0LjYyOEM5LjEwNzg3IDE0LjExNjcgOC43NzQ1MiAxMy43ODc1IDguNDk2OTUgMTMuNTc2OUM4LjIzNjcyIDEzLjM3OTQgOC4xMTUwNiAxMy4zNTczIDguMDM0NDkgMTMuMzU3NEM3Ljk1MzkzIDEzLjM1NzQgNy44MzIyOCAxMy4zNzk1IDcuNTcyMTkgMTMuNTc3MkM3LjI5NDc4IDEzLjc4ODEgNi45NjE2NyAxNC4xMTc1IDYuNDQ3ODkgMTQuNjI5MkwyLjUyOTIyIDE4LjUzMTRDMi4yMzU3MSAxOC44MjM3IDEuNzYwODQgMTguODIyNyAxLjQ2ODU2IDE4LjUyOTJDMS4xNzYyOCAxOC4yMzU3IDEuMTc3MjggMTcuNzYwOCAxLjQ3MDc4IDE3LjQ2ODZMNS40MjQzMyAxMy41MzE1QzUuODkzMjYgMTMuMDY0NSA2LjI5NzQyIDEyLjY2MiA2LjY2NDUyIDEyLjM4M0M3LjA1ODAyIDEyLjA4MzkgNy40OTUzNSAxMS44NTc2IDguMDMzOTUgMTEuODU3NEM4LjU3MjU0IDExLjg1NzIgOS4wMTAwMyAxMi4wODMyIDkuNDAzNzUgMTIuMzgyQzkuNzcxMDUgMTIuNjYwNyAxMC4xNzU1IDEzLjA2MyAxMC42NDQ4IDEzLjUyOTZMMTAuOTE5IDEzLjgwMjRDMTEuNDMyNyAxNC4zMTMyIDExLjc2NTggMTQuNjQyMSAxMi4wNDMxIDE0Ljg1MjZDMTIuMzAzMSAxNS4wNDk5IDEyLjQyNDcgMTUuMDcyIDEyLjUwNTIgMTUuMDcyQzEyLjU4NTcgMTUuMDcyIDEyLjcwNzMgMTUuMDQ5OSAxMi45NjczIDE0Ljg1MjdDMTMuMjQ0NyAxNC42NDIzIDEzLjU3NzggMTQuMzEzNCAxNC4wOTE2IDEzLjgwMjdMMjAuMTgxNSA3Ljc1SDE2LjQxNzlDMTYuMDAzNiA3Ljc1IDE1LjY2NzkgNy40MTQyMSAxNS42Njc5IDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/CourseUp";
  */
 const CourseUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CourseUp.displayName = "CourseUp";
-export default CourseUp;
+CourseUp.displayName = "CourseUp"
+export default CourseUp

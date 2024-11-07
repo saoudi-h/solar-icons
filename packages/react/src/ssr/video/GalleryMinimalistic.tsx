@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/GalleryMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/GalleryMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTYgMTBDMTcuMTA0NiAxMCAxOCA5LjEwNDU3IDE4IDhDMTggNi44OTU0MyAxNy4xMDQ2IDYgMTYgNkMxNC44OTU0IDYgMTQgNi44OTU0MyAxNCA4QzE0IDkuMTA0NTcgMTQuODk1NCAxMCAxNiAxMFpNNi4zMjA5MiAxMy4xMDM4QzYuOTQ1MDEgMTIuNTI0MSA3LjkxOTkxIDEyLjU1NjYgOC41MDM5NyAxMy4xNzY2TDExLjE1MTUgMTUuOTg2OUMxMS45NTA5IDE2LjgzNTYgMTMuMjU5NiAxNi45NDk5IDE0LjE5NDEgMTYuMjUyN0MxNC44MDczIDE1Ljc5NTMgMTUuNjYxIDE1Ljg0NzMgMTYuMjE0MSAxNi4zNzU3TDE4LjQ4MTkgMTguNTQyM0MxOC43ODE0IDE4LjgyODQgMTkuMjU2MiAxOC44MTc2IDE5LjU0MjMgMTguNTE4MUMxOS44Mjg0IDE4LjIxODYgMTkuODE3NiAxNy43NDM4IDE5LjUxODEgMTcuNDU3N0wxNy4yNTAzIDE1LjI5MTFDMTYuMTY3OSAxNC4yNTcgMTQuNDk3MSAxNC4xNTUzIDEzLjI5NzIgMTUuMDUwNEMxMi45NzM1IDE1LjI5MTkgMTIuNTIwMiAxNS4yNTIzIDEyLjI0MzMgMTQuOTU4NEw5LjU5NTc5IDEyLjE0ODFDOC40NDY1MSAxMC45MjgxIDYuNTI4MTYgMTAuODY0MSA1LjMwMDEgMTIuMDA0N0w0LjQ4OTYgMTIuNzU3NUM0LjE4NjEgMTMuMDM5NCA0LjE2ODU4IDEzLjUxMzkgNC40NTA0NyAxMy44MTc0QzQuNzMyMzYgMTQuMTIwOSA1LjIwNjkxIDE0LjEzODUgNS41MTA0MSAxMy44NTY2TDYuMzIwOTIgMTMuMTAzOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/GalleryMinimalistic";
  */
 const GalleryMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GalleryMinimalistic.displayName = "GalleryMinimalistic";
-export default GalleryMinimalistic;
+GalleryMinimalistic.displayName = "GalleryMinimalistic"
+export default GalleryMinimalistic

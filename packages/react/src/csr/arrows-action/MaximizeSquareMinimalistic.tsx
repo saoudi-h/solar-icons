@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/MaximizeSquareMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/MaximizeSquareMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTMuMjUgN0MxMy4yNSA3LjQxNDIxIDEzLjU4NTggNy43NSAxNCA3Ljc1SDE1LjE4OTNMMTIuOTY5NyA5Ljk2OTY3QzEyLjY3NjggMTAuMjYyNiAxMi42NzY4IDEwLjczNzQgMTIuOTY5NyAxMS4wMzAzQzEzLjI2MjYgMTEuMzIzMiAxMy43Mzc0IDExLjMyMzIgMTQuMDMwMyAxMS4wMzAzTDE2LjI1IDguODEwNjZWMTBDMTYuMjUgMTAuNDE0MiAxNi41ODU4IDEwLjc1IDE3IDEwLjc1QzE3LjQxNDIgMTAuNzUgMTcuNzUgMTAuNDE0MiAxNy43NSAxMFY3QzE3Ljc1IDYuNTg1NzkgMTcuNDE0MiA2LjI1IDE3IDYuMjVIMTRDMTMuNTg1OCA2LjI1IDEzLjI1IDYuNTg1NzkgMTMuMjUgN1pNMTEuMDMwMyAxNC4wMzAzQzExLjMyMzIgMTMuNzM3NCAxMS4zMjMyIDEzLjI2MjYgMTEuMDMwMyAxMi45Njk3QzEwLjczNzQgMTIuNjc2OCAxMC4yNjI2IDEyLjY3NjggOS45Njk2NyAxMi45Njk3TDcuNzUgMTUuMTg5M1YxNEM3Ljc1IDEzLjU4NTggNy40MTQyMSAxMy4yNSA3IDEzLjI1QzYuNTg1NzkgMTMuMjUgNi4yNSAxMy41ODU4IDYuMjUgMTRWMTdDNi4yNSAxNy40MTQyIDYuNTg1NzkgMTcuNzUgNyAxNy43NUgxMEMxMC40MTQyIDE3Ljc1IDEwLjc1IDE3LjQxNDIgMTAuNzUgMTdDMTAuNzUgMTYuNTg1OCAxMC40MTQyIDE2LjI1IDEwIDE2LjI1SDguODEwNjZMMTEuMDMwMyAxNC4wMzAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/MaximizeSquareMinimalistic";
  */
 const MaximizeSquareMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MaximizeSquareMinimalistic.displayName = "MaximizeSquareMinimalistic";
-export default MaximizeSquareMinimalistic;
+MaximizeSquareMinimalistic.displayName = "MaximizeSquareMinimalistic"
+export default MaximizeSquareMinimalistic

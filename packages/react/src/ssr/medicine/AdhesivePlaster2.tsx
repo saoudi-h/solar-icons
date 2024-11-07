@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/AdhesivePlaster2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/AdhesivePlaster2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC45MDk0IDEzLjMzMTlMMTMuMzMxOSAyMC45MDk0QzE1LjQ1MTcgMjIuNTEyOCAxOC40ODI5IDIyLjM0ODIgMjAuNDE1NSAyMC40MTU1QzIyLjM0ODIgMTguNDgyOSAyMi41MTI4IDE1LjQ1MTcgMjAuOTA5NCAxMy4zMzE5WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjIzNDcgMTkuODg1MkwxOS44ODUyIDEyLjIzNDdMMTEuNzY1MyA0LjExNDhMNC4xMTQ4IDExLjc2NTNMMTIuMjM0NyAxOS44ODUyWk05Ljg3ODY0IDExLjI5MjlDMTAuMjY5MiAxMS42ODM0IDEwLjI2OTIgMTIuMzE2NiA5Ljg3ODY0IDEyLjcwNzFDOS40ODgxMiAxMy4wOTc2IDguODU0OTYgMTMuMDk3NiA4LjQ2NDQzIDEyLjcwNzFDOC4wNzM5MSAxMi4zMTY2IDguMDczOTEgMTEuNjgzNCA4LjQ2NDQzIDExLjI5MjlDOC44NTQ5NiAxMC45MDI0IDkuNDg4MTIgMTAuOTAyNCA5Ljg3ODY0IDExLjI5MjlaTTEyLjcwNzMgMTUuNTM1NUMxMy4wOTc4IDE1LjE0NSAxMy4wOTc4IDE0LjUxMTggMTIuNzA3MyAxNC4xMjEzQzEyLjMxNjcgMTMuNzMwNyAxMS42ODM2IDEzLjczMDcgMTEuMjkzIDE0LjEyMTNDMTAuOTAyNSAxNC41MTE4IDEwLjkwMjUgMTUuMTQ1IDExLjI5MyAxNS41MzU1QzExLjY4MzYgMTUuOTI2IDEyLjMxNjcgMTUuOTI2IDEyLjcwNzMgMTUuNTM1NVpNMTIuNzA3MyA4LjQ2NDUyQzEzLjA5NzggOC44NTUwNSAxMy4wOTc4IDkuNDg4MjEgMTIuNzA3MyA5Ljg3ODc0QzEyLjMxNjcgMTAuMjY5MyAxMS42ODM2IDEwLjI2OTMgMTEuMjkzIDkuODc4NzRDMTAuOTAyNSA5LjQ4ODIxIDEwLjkwMjUgOC44NTUwNSAxMS4yOTMgOC40NjQ1MkMxMS42ODM2IDguMDc0IDEyLjMxNjcgOC4wNzQgMTIuNzA3MyA4LjQ2NDUyWk0xNS41MzU0IDEyLjcwNzFDMTUuOTI1OSAxMi4zMTY2IDE1LjkyNTkgMTEuNjgzNCAxNS41MzU0IDExLjI5MjlDMTUuMTQ0OSAxMC45MDI0IDE0LjUxMTcgMTAuOTAyNCAxNC4xMjEyIDExLjI5MjlDMTMuNzMwNiAxMS42ODM0IDEzLjczMDYgMTIuMzE2NiAxNC4xMjEyIDEyLjcwNzFDMTQuNTExNyAxMy4wOTc2IDE1LjE0NDkgMTMuMDk3NiAxNS41MzU0IDEyLjcwNzFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0zLjA5MDYxIDEwLjY2ODJMMTAuNjY4MiAzLjA5MDYxQzguNTQ4MzUgMS40ODcxNyA1LjUxNzE0IDEuNjUxNzkgMy41ODQ0NyAzLjU4NDQ3QzEuNjUxNzkgNS41MTcxNCAxLjQ4NzE3IDguNTQ4MzUgMy4wOTA2MSAxMC42NjgyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/AdhesivePlaster2";
  */
 const AdhesivePlaster2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AdhesivePlaster2.displayName = "AdhesivePlaster2";
-export default AdhesivePlaster2;
+AdhesivePlaster2.displayName = "AdhesivePlaster2"
+export default AdhesivePlaster2

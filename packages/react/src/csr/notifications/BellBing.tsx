@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notifications/BellBing";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notifications/BellBing"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjM1MTc5IDIwLjI0MThDOS4xOTI4OCAyMS4zMTEgMTAuNTE0MiAyMiAxMiAyMkMxMy40ODU4IDIyIDE0LjgwNzEgMjEuMzExIDE1LjY0ODIgMjAuMjQxOEMxMy4yMjY0IDIwLjU3IDEwLjc3MzYgMjAuNTcgOC4zNTE3OSAyMC4yNDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE4Ljc0OTEgOS43MDQxVjlDMTguNzQ5MSA1LjEzNDAxIDE1LjcyNzQgMiAxMiAyQzguMjcyNTYgMiA1LjI1MDg3IDUuMTM0MDEgNS4yNTA4NyA5VjkuNzA0MUM1LjI1MDg3IDEwLjU0OTEgNS4wMDk3MiAxMS4zNzUyIDQuNTU3OCAxMi4wNzgyTDMuNDUwMzYgMTMuODAxMkMyLjQzODgyIDE1LjM3NDkgMy4yMTEwNSAxNy41MTM5IDQuOTcwMzYgMTguMDExNkM5LjU3Mjc0IDE5LjMxMzQgMTQuNDI3MyAxOS4zMTM0IDE5LjAyOTYgMTguMDExNkMyMC43ODkgMTcuNTEzOSAyMS41NjEyIDE1LjM3NDkgMjAuNTQ5NiAxMy44MDEyTDE5LjQ0MjIgMTIuMDc4MkMxOC45OTAzIDExLjM3NTIgMTguNzQ5MSAxMC41NDkxIDE4Ljc0OTEgOS43MDQxWk0xMiA1LjI1QzEyLjQxNDIgNS4yNSAxMi43NSA1LjU4NTc5IDEyLjc1IDZWMTBDMTIuNzUgMTAuNDE0MiAxMi40MTQyIDEwLjc1IDEyIDEwLjc1QzExLjU4NTggMTAuNzUgMTEuMjUgMTAuNDE0MiAxMS4yNSAxMFY2QzExLjI1IDUuNTg1NzkgMTEuNTg1OCA1LjI1IDEyIDUuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notifications/BellBing";
  */
 const BellBing: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BellBing.displayName = "BellBing";
-export default BellBing;
+BellBing.displayName = "BellBing"
+export default BellBing

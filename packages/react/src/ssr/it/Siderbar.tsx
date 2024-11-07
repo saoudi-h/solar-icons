@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/it/Siderbar";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/it/Siderbar"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMVYxM0MyMiAxNi43NzEyIDIyIDE4LjY1NjkgMjAuODI4NCAxOS44Mjg0QzE5Ljg1NDEgMjAuODAyOCAxOC4zODU5IDIwLjk2NjggMTUuNzUgMjAuOTk0NFYzLjAwNTU5QzE4LjM4NTkgMy4wMzMyMSAxOS44NTQxIDMuMTk3MjQgMjAuODI4NCA0LjE3MTU3QzIyIDUuMzQzMTUgMjIgNy4yMjg3NiAyMiAxMVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMCAzSDE0SDE0LjI1TDE0LjI1IDIxSDE0SDEwQzYuMjI4NzYgMjEgNC4zNDMxNSAyMSAzLjE3MTU3IDE5LjgyODRDMiAxOC42NTY5IDIgMTYuNzcxMiAyIDEzVjExQzIgNy4yMjg3NiAyIDUuMzQzMTUgMy4xNzE1NyA0LjE3MTU3QzQuMzQzMTUgMyA2LjIyODc2IDMgMTAgM1pNNC43NSAxMEM0Ljc1IDkuNTg1NzkgNS4wODU3OSA5LjI1IDUuNSA5LjI1SDExLjVDMTEuOTE0MiA5LjI1IDEyLjI1IDkuNTg1NzkgMTIuMjUgMTBDMTIuMjUgMTAuNDE0MiAxMS45MTQyIDEwLjc1IDExLjUgMTAuNzVINS41QzUuMDg1NzkgMTAuNzUgNC43NSAxMC40MTQyIDQuNzUgMTBaTTUuNzUgMTRDNS43NSAxMy41ODU4IDYuMDg1NzkgMTMuMjUgNi41IDEzLjI1SDEwLjVDMTAuOTE0MiAxMy4yNSAxMS4yNSAxMy41ODU4IDExLjI1IDE0QzExLjI1IDE0LjQxNDIgMTAuOTE0MiAxNC43NSAxMC41IDE0Ljc1SDYuNUM2LjA4NTc5IDE0Ljc1IDUuNzUgMTQuNDE0MiA1Ljc1IDE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/it/Siderbar";
  */
 const Siderbar: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Siderbar.displayName = "Siderbar";
-export default Siderbar;
+Siderbar.displayName = "Siderbar"
+export default Siderbar

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/BombMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/BombMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS42NjQ2IDIuODI5MzRDMTYuMDM1MSAyLjY0NDEgMTYuNDg1NiAyLjc5NDI3IDE2LjY3MDggMy4xNjQ3NUwxNy4xNzA4IDQuMTY0NzVDMTcuMzU2MSA0LjUzNTI0IDE3LjIwNTkgNC45ODU3NCAxNi44MzU0IDUuMTcwOThDMTYuNDY0OSA1LjM1NjIzIDE2LjAxNDQgNS4yMDYwNiAxNS44MjkyIDQuODM1NTdMMTUuMzI5MiAzLjgzNTU3QzE1LjE0MzkgMy40NjUwOSAxNS4yOTQxIDMuMDE0NTkgMTUuNjY0NiAyLjgyOTM0WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTguODI5MiA3LjE2NDc1QzE5LjAxNDQgNi43OTQyNyAxOS40NjQ5IDYuNjQ0MSAxOS44MzU0IDYuODI5MzRMMjAuODM1NCA3LjMyOTM0QzIxLjIwNTkgNy41MTQ1OSAyMS4zNTYxIDcuOTY1MDkgMjEuMTcwOCA4LjMzNTU3QzIwLjk4NTYgOC43MDYwNiAyMC41MzUxIDguODU2MjMgMjAuMTY0NiA4LjY3MDk4TDE5LjE2NDYgOC4xNzA5OEMxOC43OTQxIDcuOTg1NzQgMTguNjQzOSA3LjUzNTI0IDE4LjgyOTIgNy4xNjQ3NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjUzMDMgNC41MzA0OUMyMC44MjMyIDQuMjM3NiAyMC44MjMyIDMuNzYyNzMgMjAuNTMwMyAzLjQ2OTgzQzIwLjIzNzQgMy4xNzY5NCAxOS43NjI2IDMuMTc2OTQgMTkuNDY5NyAzLjQ2OTgzTDE4LjQ2OTcgNC40Njk4M0MxOC4xNzY4IDQuNzYyNzMgMTguMTc2OCA1LjIzNzYgMTguNDY5NyA1LjUzMDQ5QzE4Ljc2MjYgNS44MjMzOSAxOS4yMzc0IDUuODIzMzkgMTkuNTMwMyA1LjUzMDQ5TDIwLjUzMDMgNC41MzA0OVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3IDE0LjUwMDJDMTcgMTguNjQyMyAxMy42NDIxIDIyLjAwMDIgOS41IDIyLjAwMDJDNS4zNTc4NiAyMi4wMDAyIDIgMTguNjQyMyAyIDE0LjUwMDJDMiAxMC4zNTggNS4zNTc4NiA3LjAwMDE2IDkuNSA3LjAwMDE2QzEzLjY0MjEgNy4wMDAxNiAxNyAxMC4zNTggMTcgMTQuNTAwMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3LjUzMDIgNy41MzA0OUwxNi4zNzIyIDguNjg4NTNDMTYuMDQ4NiA4LjMwNjMxIDE1LjY5MzggNy45NTE0MyAxNS4zMTE1IDcuNjI3ODdMMTYuNDY5NiA2LjQ2OTgzQzE2Ljc2MjUgNi4xNzY5NCAxNy4yMzczIDYuMTc2OTQgMTcuNTMwMiA2LjQ2OTgzQzE3LjgyMzEgNi43NjI3MyAxNy44MjMxIDcuMjM3NiAxNy41MzAyIDcuNTMwNDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/BombMinimalistic";
  */
 const BombMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BombMinimalistic.displayName = "BombMinimalistic";
-export default BombMinimalistic;
+BombMinimalistic.displayName = "BombMinimalistic"
+export default BombMinimalistic

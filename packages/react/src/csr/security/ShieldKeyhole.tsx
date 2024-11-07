@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/ShieldKeyhole";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/ShieldKeyhole"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTMuNSAxNUMxMy41IDE1LjU1MjMgMTMuMDUyMyAxNiAxMi41IDE2SDExLjVDMTAuOTQ3NyAxNiAxMC41IDE1LjU1MjMgMTAuNSAxNVYxMy41OTg3QzkuNjAzMyAxMy4wNzk5IDkgMTIuMTEwNCA5IDExQzkgOS4zNDMxNSAxMC4zNDMxIDggMTIgOEMxMy42NTY5IDggMTUgOS4zNDMxNSAxNSAxMUMxNSAxMi4xMTA0IDE0LjM5NjcgMTMuMDc5OSAxMy41IDEzLjU5ODdWMTVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldKeyhole";
  */
 const ShieldKeyhole: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldKeyhole.displayName = "ShieldKeyhole";
-export default ShieldKeyhole;
+ShieldKeyhole.displayName = "ShieldKeyhole"
+export default ShieldKeyhole

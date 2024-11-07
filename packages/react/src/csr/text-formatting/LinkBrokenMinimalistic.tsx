@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/LinkBrokenMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/LinkBrokenMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCA1LjA0ODc3TDEwLjM2NyA0LjcwNTYzQzEyLjc5OTUgMi40MzE0NiAxNi43NDMyIDIuNDMxNDYgMTkuMTc1NyA0LjcwNTYzQzIxLjYwODEgNi45Nzk4IDIxLjYwODEgMTAuNjY3IDE5LjE3NTcgMTIuOTQxMUwxNi45NzM1IDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE0IDE4LjkyNzhMMTMuNjM0NSAxOS4yNzczQzExLjIxMjMgMjEuNTkzNyA3LjI1NDM0IDIxLjU2NDQgNC44MzIwOSAxOS4yNDhDMi40MzM3NiAxNi45NTQ2IDIuMzc2MzkgMTMuMjE1MyA0Ljc0MDk1IDEwLjg5TDUuNjQ1OTQgMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNi41ODczOSAzTDcuNSA1LjIwNTIxIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTMuNTAyMzggNi4wODY1OEw5LjA1MDIxIDguNzk0NTMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/LinkBrokenMinimalistic";
  */
 const LinkBrokenMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LinkBrokenMinimalistic.displayName = "LinkBrokenMinimalistic";
-export default LinkBrokenMinimalistic;
+LinkBrokenMinimalistic.displayName = "LinkBrokenMinimalistic"
+export default LinkBrokenMinimalistic

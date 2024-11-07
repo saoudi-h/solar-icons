@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/files/File";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/files/File"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQgMjJIMTBDNi4yMjg3NiAyMiA0LjM0MzE1IDIyIDMuMTcxNTcgMjAuODI4NEMyIDE5LjY1NjkgMiAxNy43NzEyIDIgMTRWMTBDMiA2LjIyODc2IDIgNC4zNDMxNSAzLjE3MTU3IDMuMTcxNTdDNC4zNDMxNSAyIDYuMjM4NjkgMiAxMC4wMjk4IDJDMTAuNjM1OCAyIDExLjEyMTQgMiAxMS41MyAyLjAxNjY2QzExLjUxNjYgMi4wOTY1OSAxMS41MDk1IDIuMTc4MTMgMTEuNTA5MiAyLjI2MDU3TDExLjUgNS4wOTQ5N0MxMS40OTk5IDYuMTkyMDcgMTEuNDk5OCA3LjE2MTY0IDExLjYwNDkgNy45NDMxNkMxMS43MTg4IDguNzkwMjggMTEuOTgwMyA5LjYzNzI2IDEyLjY3MTYgMTAuMzI4NUMxMy4zNjI4IDExLjAxOTggMTQuMjA5OCAxMS4yODEzIDE1LjA1NjkgMTEuMzk1MkMxNS44Mzg1IDExLjUwMDMgMTYuODA4IDExLjUwMDIgMTcuOTA1MSAxMS41MDAxTDE4IDExLjUwMDFIMjEuOTU3NEMyMiAxMi4wMzQ0IDIyIDEyLjY5MDEgMjIgMTMuNTYyOVYxNEMyMiAxNy43NzEyIDIyIDE5LjY1NjkgMjAuODI4NCAyMC44Mjg0QzE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNCAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE5LjM1MTcgNy42MTY2NUwxNS4zOTI5IDQuMDUzNzVDMTQuMjY1MSAzLjAzODY4IDEzLjcwMTIgMi41MzExNCAxMy4wMDkyIDIuMjY1NjJMMTMgNS4wMDAxMUMxMyA3LjM1NzEzIDEzIDguNTM1NjQgMTMuNzMyMiA5LjI2Nzg3QzE0LjQ2NDUgMTAuMDAwMSAxNS42NDMgMTAuMDAwMSAxOCAxMC4wMDAxSDIxLjU4MDFDMjEuMjE3NSA5LjI5NTg4IDIwLjU2ODQgOC43MTE2NCAxOS4zNTE3IDcuNjE2NjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/files/File";
  */
 const File: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-File.displayName = "File";
-export default File;
+File.displayName = "File"
+export default File

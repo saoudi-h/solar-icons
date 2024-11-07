@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Explicit";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Explicit"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOC4yNSA4QzguMjUgNy4wMzM1IDkuMDMzNSA2LjI1IDEwIDYuMjVIMTVDMTUuNDE0MiA2LjI1IDE1Ljc1IDYuNTg1NzkgMTUuNzUgN0MxNS43NSA3LjQxNDIxIDE1LjQxNDIgNy43NSAxNSA3Ljc1SDEwQzkuODYxOTMgNy43NSA5Ljc1IDcuODYxOTMgOS43NSA4VjExLjI1SDE1QzE1LjQxNDIgMTEuMjUgMTUuNzUgMTEuNTg1OCAxNS43NSAxMkMxNS43NSAxMi40MTQyIDE1LjQxNDIgMTIuNzUgMTUgMTIuNzVIOS43NVYxNkM5Ljc1IDE2LjEzODEgOS44NjE5MyAxNi4yNSAxMCAxNi4yNUgxNUMxNS40MTQyIDE2LjI1IDE1Ljc1IDE2LjU4NTggMTUuNzUgMTdDMTUuNzUgMTcuNDE0MiAxNS40MTQyIDE3Ljc1IDE1IDE3Ljc1SDEwQzkuMDMzNSAxNy43NSA4LjI1IDE2Ljk2NjUgOC4yNSAxNlY4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Explicit";
  */
 const Explicit: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Explicit.displayName = "Explicit";
-export default Explicit;
+Explicit.displayName = "Explicit"
+export default Explicit

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/ReciveSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/ReciveSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyQzcuMjg1OTUgMjIgNC45Mjg5MyAyMiAzLjQ2NDQ3IDIwLjUzNTVDMiAxOS4wNzExIDIgMTYuNzE0IDIgMTJaTTYuMjUgMTJDNi4yNSAxMi40MTQyIDYuNTg1NzkgMTIuNzUgNyAxMi43NUgxMi4xODkzTDEwLjQ2OTcgMTQuNDY5N0MxMC4xNzY4IDE0Ljc2MjYgMTAuMTc2OCAxNS4yMzc0IDEwLjQ2OTcgMTUuNTMwM0MxMC43NjI2IDE1LjgyMzIgMTEuMjM3NCAxNS44MjMyIDExLjUzMDMgMTUuNTMwM0wxNC41MzAzIDEyLjUzMDNDMTQuNjcxIDEyLjM4OTcgMTQuNzUgMTIuMTk4OSAxNC43NSAxMkMxNC43NSAxMS44MDExIDE0LjY3MSAxMS42MTAzIDE0LjUzMDMgMTEuNDY5N0wxMS41MzAzIDguNDY5NjdDMTEuMjM3NCA4LjE3Njc4IDEwLjc2MjYgOC4xNzY3OCAxMC40Njk3IDguNDY5NjdDMTAuMTc2OCA4Ljc2MjU2IDEwLjE3NjggOS4yMzc0NCAxMC40Njk3IDkuNTMwMzNMMTIuMTg5MyAxMS4yNUg3QzYuNTg1NzkgMTEuMjUgNi4yNSAxMS41ODU4IDYuMjUgMTJaTTE3Ljc1IDhDMTcuNzUgNy41ODU3OSAxNy40MTQyIDcuMjUgMTcgNy4yNUMxNi41ODU4IDcuMjUgMTYuMjUgNy41ODU3OSAxNi4yNSA4VjE2QzE2LjI1IDE2LjQxNDIgMTYuNTg1OCAxNi43NSAxNyAxNi43NUMxNy40MTQyIDE2Ljc1IDE3Ljc1IDE2LjQxNDIgMTcuNzUgMTZWOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/ReciveSquare";
  */
 const ReciveSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ReciveSquare.displayName = "ReciveSquare";
-export default ReciveSquare;
+ReciveSquare.displayName = "ReciveSquare"
+export default ReciveSquare

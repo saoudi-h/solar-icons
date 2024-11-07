@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/search/MagniferZoomOut";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/search/MagniferZoomOut"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuNzg4MyAyMS43ODgzQzIyLjA3MDYgMjEuNTA2IDIyLjA3MDYgMjEuMDQ4MyAyMS43ODgzIDIwLjc2NTlMMTguMTIyNCAxNy4xMDAyQzE5LjQ4ODQgMTUuNTAwNyAyMC4zMTMzIDEzLjQyNSAyMC4zMTMzIDExLjE1NjZDMjAuMzEzMyA2LjA5OTU2IDE2LjIxMzcgMiAxMS4xNTY2IDJDNi4wOTk1NiAyIDIgNi4wOTk1NiAyIDExLjE1NjZDMiAxNi4yMTM3IDYuMDk5NTYgMjAuMzEzMyAxMS4xNTY2IDIwLjMxMzNDMTMuNDI0OSAyMC4zMTMzIDE1LjUwMDYgMTkuNDg4NSAxNy4xIDE4LjEyMjVMMjAuNzY1OSAyMS43ODgzQzIxLjA0ODMgMjIuMDcwNiAyMS41MDYgMjIuMDcwNiAyMS43ODgzIDIxLjc4ODNaTTguMDI0MSAxMS4xNTY2QzguMDI0MSAxMC43NTc0IDguMzQ3NzUgMTAuNDMzNyA4Ljc0Njk5IDEwLjQzMzdIMTMuNTY2M0MxMy45NjU1IDEwLjQzMzcgMTQuMjg5MiAxMC43NTc0IDE0LjI4OTIgMTEuMTU2NkMxNC4yODkyIDExLjU1NTkgMTMuOTY1NSAxMS44Nzk1IDEzLjU2NjMgMTEuODc5NUg4Ljc0Njk5QzguMzQ3NzUgMTEuODc5NSA4LjAyNDEgMTEuNTU1OSA4LjAyNDEgMTEuMTU2NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/search/MagniferZoomOut";
  */
 const MagniferZoomOut: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MagniferZoomOut.displayName = "MagniferZoomOut";
-export default MagniferZoomOut;
+MagniferZoomOut.displayName = "MagniferZoomOut"
+export default MagniferZoomOut

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/sports/Dumbbell";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/sports/Dumbbell"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxNFYxMEMyMiA5LjA2ODEyIDIyIDguNjAyMTggMjEuODQ3OCA4LjIzNDYzQzIxLjY0NDggNy43NDQ1OCAyMS4yNTU0IDcuMzU1MjMgMjAuNzY1NCA3LjE1MjI0QzIwLjM5NzggNyAxOS45MzE5IDcgMTkgN0MxOC4wNjgxIDcgMTcuNjAyMiA3IDE3LjIzNDYgNy4xNTIyNEMxNi43NDQ2IDcuMzU1MjMgMTYuMzU1MiA3Ljc0NDU4IDE2LjE1MjIgOC4yMzQ2M0MxNiA4LjYwMjE4IDE2IDkuNTY4MTIgMTYgMTAuNUg4QzggOS41NjgxMiA4IDguNjAyMTggNy44NDc3NiA4LjIzNDYzQzcuNjQ0NzcgNy43NDQ1OCA3LjI1NTQyIDcuMzU1MjMgNi43NjUzNyA3LjE1MjI0QzYuMzk3ODIgNyA1LjkzMTg4IDcgNSA3QzQuMDY4MTIgNyAzLjYwMjE4IDcgMy4yMzQ2MyA3LjE1MjI0QzIuNzQ0NTggNy4zNTUyMyAyLjM1NTIzIDcuNzQ0NTggMi4xNTIyNCA4LjIzNDYzQzIgOC42MDIxOCAyIDkuMDY4MTIgMiAxMFYxNEMyIDE0LjkzMTkgMiAxNS4zOTc4IDIuMTUyMjQgMTUuNzY1NEMyLjM1NTIzIDE2LjI1NTQgMi43NDQ1OCAxNi42NDQ4IDMuMjM0NjMgMTYuODQ3OEMzLjYwMjE4IDE3IDQuMDY4MTIgMTcgNSAxN0M1LjkzMTg4IDE3IDYuMzk3ODIgMTcgNi43NjUzNyAxNi44NDc4QzcuMjU1NDIgMTYuNjQ0OCA3LjY0NDc3IDE2LjI1NTQgNy44NDc3NiAxNS43NjU0QzggMTUuMzk3OCA4IDE0LjQzMTkgOCAxMy41SDE2QzE2IDE0LjQzMTkgMTYgMTUuMzk3OCAxNi4xNTIyIDE1Ljc2NTRDMTYuMzU1MiAxNi4yNTU0IDE2Ljc0NDYgMTYuNjQ0OCAxNy4yMzQ2IDE2Ljg0NzhDMTcuNjAyMiAxNyAxOC4wNjgxIDE3IDE5IDE3QzE5LjkzMTkgMTcgMjAuMzk3OCAxNyAyMC43NjU0IDE2Ljg0NzhDMjEuMjU1NCAxNi42NDQ4IDIxLjY0NDggMTYuMjU1NCAyMS44NDc4IDE1Ljc2NTRDMjIgMTUuMzk3OCAyMiAxNC45MzE5IDIyIDE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/sports/Dumbbell";
  */
 const Dumbbell: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Dumbbell.displayName = "Dumbbell";
-export default Dumbbell;
+Dumbbell.displayName = "Dumbbell"
+export default Dumbbell

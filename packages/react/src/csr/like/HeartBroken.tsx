@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/like/HeartBroken";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/like/HeartBroken"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjEwNjI3IDE4LjI0NjhDNS4yOTgxOSAxNi4wODMzIDIgMTMuNTQyMiAyIDkuMTM3MUMyIDQuNTM2NTYgNi45MjI2IDEuMjAxNzYgMTEuMjYzOSA0LjgxMzczTDkuODEwNjQgOC4yMDQ2N0M5LjY3MTggOC41Mjg2MiA5Ljc3NzI3IDguOTA1NTQgMTAuMDY0MSA5LjExMDRMMTIuODk3MyAxMS4xMzQxTDEwLjQzMDYgMTQuMDEyQzEwLjE3NTUgMTQuMzA5NiAxMC4xOTI2IDE0Ljc1MzMgMTAuNDY5NyAxNS4wMzA0TDEyLjE2OTQgMTYuNzMwMkwxMS4yNTk0IDIwLjM3MDJDMTAuNTA0MyAyMC4xMTY5IDkuNzQzODkgMTkuNTI3NSA4Ljk2MTczIDE4LjkxMDlDOC42ODQ3MSAxOC42OTI1IDguMzk4MTQgMTguNDcxNyA4LjEwNjI3IDE4LjI0NjhaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi44MTE4IDIwLjM0NTNDMTMuNTQzNSAyMC4wNzk4IDE0LjI4MDcgMTkuNTA4MSAxNS4wMzgzIDE4LjkxMDlDMTUuMzE1MyAxOC42OTI1IDE1LjYwMTkgMTguNDcxNyAxNS44OTM3IDE4LjI0NjhDMTguNzAxOCAxNi4wODMzIDIyIDEzLjU0MjIgMjIgOS4xMzcxQzIyIDQuNjIyMjEgMTcuMjU5IDEuMzI2MzcgMTIuOTc5MiA0LjYxOTE5TDExLjQyNzIgOC4yNDA2N0wxNC40MzU5IDEwLjM4OThDMTQuNjA3MiAxMC41MTIxIDE0LjcxOTEgMTAuNzAwNyAxNC43NDQ1IDEwLjkwOTZDMTQuNzY5OSAxMS4xMTg1IDE0LjcwNjQgMTEuMzI4NCAxNC41Njk0IDExLjQ4ODJMMTIuMDIxNCAxNC40NjA5TDEzLjUzMDMgMTUuOTY5OEMxMy43MTY2IDE2LjE1NjEgMTMuNzkxNSAxNi40MjY0IDEzLjcyNzYgMTYuNjgyTDEyLjgxMTggMjAuMzQ1M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/HeartBroken";
  */
 const HeartBroken: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-HeartBroken.displayName = "HeartBroken";
-export default HeartBroken;
+HeartBroken.displayName = "HeartBroken"
+export default HeartBroken

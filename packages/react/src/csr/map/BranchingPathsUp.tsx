@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/BranchingPathsUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/BranchingPathsUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOC4wMzAzMyA1Ljk2OTY3QzguMzIzMjIgNi4yNjI1NiA4LjMyMzIyIDYuNzM3NDQgOC4wMzAzMyA3LjAzMDMzTDcuODEwNjYgNy4yNUg4QzkuNjc5NDcgNy4yNSAxMS4xNTU0IDguMTIxNjIgMTIgOS40MzcxOEMxMi44NDQ2IDguMTIxNjIgMTQuMzIwNSA3LjI1IDE2IDcuMjVIMTYuMTg5M0wxNS45Njk3IDcuMDMwMzNDMTUuNjc2OCA2LjczNzQ0IDE1LjY3NjggNi4yNjI1NiAxNS45Njk3IDUuOTY5NjdDMTYuMjYyNiA1LjY3Njc4IDE2LjczNzQgNS42NzY3OCAxNy4wMzAzIDUuOTY5NjdMMTguNTMwMyA3LjQ2OTY3QzE4LjgyMzIgNy43NjI1NiAxOC44MjMyIDguMjM3NDQgMTguNTMwMyA4LjUzMDMzTDE3LjAzMDMgMTAuMDMwM0MxNi43Mzc0IDEwLjMyMzIgMTYuMjYyNiAxMC4zMjMyIDE1Ljk2OTcgMTAuMDMwM0MxNS42NzY4IDkuNzM3NDQgMTUuNjc2OCA5LjI2MjU2IDE1Ljk2OTcgOC45Njk2N0wxNi4xODkzIDguNzVIMTZDMTQuMjA1MSA4Ljc1IDEyLjc1IDEwLjIwNTEgMTIuNzUgMTJWMThDMTIuNzUgMTguNDE0MiAxMi40MTQyIDE4Ljc1IDEyIDE4Ljc1QzExLjU4NTggMTguNzUgMTEuMjUgMTguNDE0MiAxMS4yNSAxOFYxMkMxMS4yNSAxMC4yMDUxIDkuNzk0OTMgOC43NSA4IDguNzVINy44MTA2Nkw4LjAzMDMzIDguOTY5NjdDOC4zMjMyMiA5LjI2MjU2IDguMzIzMjIgOS43Mzc0NCA4LjAzMDMzIDEwLjAzMDNDNy43Mzc0NCAxMC4zMjMyIDcuMjYyNTYgMTAuMzIzMiA2Ljk2OTY3IDEwLjAzMDNMNS40Njk2NyA4LjUzMDMzQzUuMTc2NzggOC4yMzc0NCA1LjE3Njc4IDcuNzYyNTYgNS40Njk2NyA3LjQ2OTY3TDYuOTY5NjcgNS45Njk2N0M3LjI2MjU2IDUuNjc2NzggNy43Mzc0NCA1LjY3Njc4IDguMDMwMzMgNS45Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/BranchingPathsUp";
  */
 const BranchingPathsUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BranchingPathsUp.displayName = "BranchingPathsUp";
-export default BranchingPathsUp;
+BranchingPathsUp.displayName = "BranchingPathsUp"
+export default BranchingPathsUp

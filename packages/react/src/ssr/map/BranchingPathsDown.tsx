@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/BranchingPathsDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/BranchingPathsDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTIgNS43NUMxMi40MTQyIDUuNzUgMTIuNzUgNi4wODU3OSAxMi43NSA2LjVWMTIuNUMxMi43NSAxNC4yOTQ5IDE0LjIwNTEgMTUuNzUgMTYgMTUuNzVIMTYuMTg5M0wxNS45Njk3IDE1LjUzMDNDMTUuNjc2OCAxNS4yMzc0IDE1LjY3NjggMTQuNzYyNiAxNS45Njk3IDE0LjQ2OTdDMTYuMjYyNiAxNC4xNzY4IDE2LjczNzQgMTQuMTc2OCAxNy4wMzAzIDE0LjQ2OTdMMTguNTMwMyAxNS45Njk3QzE4LjgyMzIgMTYuMjYyNiAxOC44MjMyIDE2LjczNzQgMTguNTMwMyAxNy4wMzAzTDE3LjAzMDMgMTguNTMwM0MxNi43Mzc0IDE4LjgyMzIgMTYuMjYyNiAxOC44MjMyIDE1Ljk2OTcgMTguNTMwM0MxNS42NzY4IDE4LjIzNzQgMTUuNjc2OCAxNy43NjI2IDE1Ljk2OTcgMTcuNDY5N0wxNi4xODkzIDE3LjI1SDE2QzE0LjMyMDUgMTcuMjUgMTIuODQ0NiAxNi4zNzg0IDEyIDE1LjA2MjhDMTEuMTU1NCAxNi4zNzg0IDkuNjc5NDcgMTcuMjUgOCAxNy4yNUg3LjgxMDY2TDguMDMwMzMgMTcuNDY5N0M4LjMyMzIyIDE3Ljc2MjYgOC4zMjMyMiAxOC4yMzc0IDguMDMwMzMgMTguNTMwM0M3LjczNzQ0IDE4LjgyMzIgNy4yNjI1NiAxOC44MjMyIDYuOTY5NjcgMTguNTMwM0w1LjQ2OTY3IDE3LjAzMDNDNS4xNzY3OCAxNi43Mzc0IDUuMTc2NzggMTYuMjYyNiA1LjQ2OTY3IDE1Ljk2OTdMNi45Njk2NyAxNC40Njk3QzcuMjYyNTYgMTQuMTc2OCA3LjczNzQ0IDE0LjE3NjggOC4wMzAzMyAxNC40Njk3QzguMzIzMjIgMTQuNzYyNiA4LjMyMzIyIDE1LjIzNzQgOC4wMzAzMyAxNS41MzAzTDcuODEwNjYgMTUuNzVIOEM5Ljc5NDkzIDE1Ljc1IDExLjI1IDE0LjI5NDkgMTEuMjUgMTIuNVY2LjVDMTEuMjUgNi4wODU3OSAxMS41ODU4IDUuNzUgMTIgNS43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/BranchingPathsDown";
  */
 const BranchingPathsDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BranchingPathsDown.displayName = "BranchingPathsDown";
-export default BranchingPathsDown;
+BranchingPathsDown.displayName = "BranchingPathsDown"
+export default BranchingPathsDown

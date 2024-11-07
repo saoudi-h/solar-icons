@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/Stars";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/Stars"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03LjQ1Mjg0IDIuNzEyNjZDNy44Mjc2IDEuNzYyNDQgOS4xNzI0IDEuNzYyNDUgOS41NDcxNiAyLjcxMjY3TDEwLjcwODUgNS42NTczMkMxMC44MjI5IDUuOTQ3NDMgMTEuMDUyNiA2LjE3NzA3IDExLjM0MjcgNi4yOTE0OEwxNC4yODczIDcuNDUyODRDMTUuMjM3NiA3LjgyNzYgMTUuMjM3NiA5LjE3MjQgMTQuMjg3MyA5LjU0NzE2TDExLjM0MjcgMTAuNzA4NUMxMS4wNTI2IDEwLjgyMjkgMTAuODIyOSAxMS4wNTI2IDEwLjcwODUgMTEuMzQyN0w5LjU0NzE2IDE0LjI4NzNDOS4xNzI0IDE1LjIzNzYgNy44Mjc2IDE1LjIzNzYgNy40NTI4NCAxNC4yODczTDYuMjkxNDggMTEuMzQyN0M2LjE3NzA3IDExLjA1MjYgNS45NDc0MyAxMC44MjI5IDUuNjU3MzIgMTAuNzA4NUwyLjcxMjY2IDkuNTQ3MTZDMS43NjI0NCA5LjE3MjQgMS43NjI0NSA3LjgyNzYgMi43MTI2NyA3LjQ1Mjg0TDUuNjU3MzIgNi4yOTE0OEM1Ljk0NzQzIDYuMTc3MDcgNi4xNzcwNyA1Ljk0NzQzIDYuMjkxNDggNS42NTczMkw3LjQ1Mjg0IDIuNzEyNjZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNi45MjQ1IDEzLjM5MTZDMTcuMTMwNSAxMi44Njk1IDE3Ljg2OTUgMTIuODY5NSAxOC4wNzU1IDEzLjM5MTZMMTguOTc2MSAxNS42NzUzQzE5LjAzOSAxNS44MzQ4IDE5LjE2NTIgMTUuOTYxIDE5LjMyNDcgMTYuMDIzOUwyMS42MDg0IDE2LjkyNDVDMjIuMTMwNSAxNy4xMzA1IDIyLjEzMDUgMTcuODY5NSAyMS42MDg0IDE4LjA3NTVMMTkuMzI0NyAxOC45NzYxQzE5LjE2NTIgMTkuMDM5IDE5LjAzOSAxOS4xNjUyIDE4Ljk3NjEgMTkuMzI0N0wxOC4wNzU1IDIxLjYwODRDMTcuODY5NSAyMi4xMzA1IDE3LjEzMDUgMjIuMTMwNSAxNi45MjQ1IDIxLjYwODRMMTYuMDIzOSAxOS4zMjQ3QzE1Ljk2MSAxOS4xNjUyIDE1LjgzNDggMTkuMDM5IDE1LjY3NTMgMTguOTc2MUwxMy4zOTE2IDE4LjA3NTVDMTIuODY5NSAxNy44Njk1IDEyLjg2OTUgMTcuMTMwNSAxMy4zOTE2IDE2LjkyNDVMMTUuNjc1MyAxNi4wMjM5QzE1LjgzNDggMTUuOTYxIDE1Ljk2MSAxNS44MzQ4IDE2LjAyMzkgMTUuNjc1M0wxNi45MjQ1IDEzLjM5MTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Stars";
  */
 const Stars: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Stars.displayName = "Stars";
-export default Stars;
+Stars.displayName = "Stars"
+export default Stars

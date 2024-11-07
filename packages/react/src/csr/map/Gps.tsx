@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/Gps";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/Gps"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMkMyIDEyLjM4NTMgMi4zMTIzNiAxMi42OTc3IDIuNjk3NjcgMTIuNjk3N0g0LjU5MDQxQzQuOTIwNzggMTYuMjUwOSA3Ljc0OTE0IDE5LjA3OTIgMTEuMzAyMyAxOS40MDk2VjIxLjMwMjNDMTEuMzAyMyAyMS42ODc2IDExLjYxNDcgMjIgMTIgMjJDMTIuMzg1MyAyMiAxMi42OTc3IDIxLjY4NzYgMTIuNjk3NyAyMS4zMDIzVjE5LjQwOTZDMTYuMjUwOSAxOS4wNzkyIDE5LjA3OTIgMTYuMjUwOSAxOS40MDk2IDEyLjY5NzdIMjEuMzAyM0MyMS42ODc2IDEyLjY5NzcgMjIgMTIuMzg1MyAyMiAxMkMyMiAxMS42MTQ3IDIxLjY4NzYgMTEuMzAyMyAyMS4zMDIzIDExLjMwMjNIMTkuNDA5NkMxOS4wNzkyIDcuNzQ5MTQgMTYuMjUwOSA0LjkyMDc4IDEyLjY5NzcgNC41OTA0MVYyLjY5NzY3QzEyLjY5NzcgMi4zMTIzNiAxMi4zODUzIDIgMTIgMkMxMS42MTQ3IDIgMTEuMzAyMyAyLjMxMjM2IDExLjMwMjMgMi42OTc2N1Y0LjU5MDQxQzcuNzQ5MTQgNC45MjA3OCA0LjkyMDc4IDcuNzQ5MTQgNC41OTA0MSAxMS4zMDIzSDIuNjk3NjdDMi4zMTIzNiAxMS4zMDIzIDIgMTEuNjE0NyAyIDEyWk04LjUxMTYzIDEyQzguNTExNjMgMTAuMDczNCAxMC4wNzM0IDguNTExNjMgMTIgOC41MTE2M0MxMy45MjY2IDguNTExNjMgMTUuNDg4NCAxMC4wNzM0IDE1LjQ4ODQgMTJDMTUuNDg4NCAxMy45MjY2IDEzLjkyNjYgMTUuNDg4NCAxMiAxNS40ODg0QzEwLjA3MzQgMTUuNDg4NCA4LjUxMTYzIDEzLjkyNjYgOC41MTE2MyAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTkuOTA2OTggMTJDOS45MDY5OCAxMC44NDQxIDEwLjg0NDEgOS45MDY5OCAxMiA5LjkwNjk4QzEzLjE1NTkgOS45MDY5OCAxNC4wOTMgMTAuODQ0MSAxNC4wOTMgMTJDMTQuMDkzIDEzLjE1NTkgMTMuMTU1OSAxNC4wOTMgMTIgMTQuMDkzQzEwLjg0NDEgMTQuMDkzIDkuOTA2OTggMTMuMTU1OSA5LjkwNjk4IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Gps";
  */
 const Gps: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Gps.displayName = "Gps";
-export default Gps;
+Gps.displayName = "Gps"
+export default Gps

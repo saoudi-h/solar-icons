@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/Laptop";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/Laptop"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuMzkxMSAxNi4zMzU4QzIxLjQzNTYgMTYuMzgxOCAyMS40NTc5IDE2LjQwNDggMjEuNDc4NyAxNi40Mjc2QzIxLjc5OTggMTYuNzgwMiAyMS45ODQzIDE3LjIzNTggMjEuOTk5IDE3LjcxMjRDMjIgMTcuNzQzMyAyMiAxNy43NzUzIDIyIDE3LjgzOTNDMjIgMTcuOTg4NSAyMiAxOC4wNjMxIDIxLjk5NiAxOC4xMjYxQzIxLjkzMjUgMTkuMTMxNCAyMS4xMzE0IDE5LjkzMjUgMjAuMTI2MSAxOS45OTZDMjAuMDYzMSAyMCAxOS45ODg1IDIwIDE5LjgzOTMgMjBINC4xNjA2OEM0LjAxMTQ4IDIwIDMuOTM2ODggMjAgMy44NzM4OCAxOS45OTZDMi44Njg2NSAxOS45MzI1IDIuMDY3NDkgMTkuMTMxNCAyLjAwMzk4IDE4LjEyNjFDMiAxOC4wNjMxIDIgMTcuOTg4NSAyIDE3LjgzOTNDMiAxNy43NzUzIDIgMTcuNzQzMyAyLjAwMDk2IDE3LjcxMjRDMi4wMTU2OSAxNy4yMzU4IDIuMjAwMjIgMTYuNzgwMiAyLjUyMTI3IDE2LjQyNzZDMi41NDIwOCAxNi40MDQ4IDIuNTY0MzMgMTYuMzgxOCAyLjYwODgzIDE2LjMzNTlMMy45MDMxMSAxNUgyMC4wOTY5TDIxLjM5MTEgMTYuMzM1OFpNOC43NSAxOEM4Ljc1IDE3LjU4NTggOS4wODU3OSAxNy4yNSA5LjUgMTcuMjVIMTQuNUMxNC45MTQyIDE3LjI1IDE1LjI1IDE3LjU4NTggMTUuMjUgMThDMTUuMjUgMTguNDE0MiAxNC45MTQyIDE4Ljc1IDE0LjUgMTguNzVIOS41QzkuMDg1NzkgMTguNzUgOC43NSAxOC40MTQyIDguNzUgMThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4zNTI5NCA3QzQuMzUyOTQgNS4xMTQzOCA0LjM1Mjk0IDQuMTcxNTcgNC45Mzg3MyAzLjU4NTc5QzUuNTI0NTEgMyA2LjQ2NzMyIDMgOC4zNTI5NCAzSDE1LjY0NzFDMTcuNTMyNyAzIDE4LjQ3NTUgMyAxOS4wNjEzIDMuNTg1NzlDMTkuNjQ3MSA0LjE3MTU3IDE5LjY0NzEgNS4xMTQzOCAxOS42NDcxIDdWMTRINC4zNTI5NFY3Wk0xMiA2LjVDMTIuNDE0MiA2LjUgMTIuNzUgNi4xNjQyMSAxMi43NSA1Ljc1QzEyLjc1IDUuMzM1NzkgMTIuNDE0MiA1IDEyIDVDMTEuNTg1OCA1IDExLjI1IDUuMzM1NzkgMTEuMjUgNS43NUMxMS4yNSA2LjE2NDIxIDExLjU4NTggNi41IDEyIDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Laptop";
  */
 const Laptop: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Laptop.displayName = "Laptop";
-export default Laptop;
+Laptop.displayName = "Laptop"
+export default Laptop

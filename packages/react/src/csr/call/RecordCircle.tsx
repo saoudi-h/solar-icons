@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/RecordCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/RecordCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4yNSAxMkMxNC4yNSAxMS4wMzM1IDE1LjAzMzUgMTAuMjUgMTYgMTAuMjVDMTYuOTY2NSAxMC4yNSAxNy43NSAxMS4wMzM1IDE3Ljc1IDEyQzE3Ljc1IDEyLjk2NjUgMTYuOTY2NSAxMy43NSAxNiAxMy43NUMxNS4wMzM1IDEzLjc1IDE0LjI1IDEyLjk2NjUgMTQuMjUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik04IDEzLjc1QzguOTY2NSAxMy43NSA5Ljc1IDEyLjk2NjUgOS43NSAxMkM5Ljc1IDExLjAzMzUgOC45NjY1IDEwLjI1IDggMTAuMjVDNy4wMzM1IDEwLjI1IDYuMjUgMTEuMDMzNSA2LjI1IDEyQzYuMjUgMTIuOTY2NSA3LjAzMzUgMTMuNzUgOCAxMy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaTTEzLjI2MDkgMTMuNzVDMTIuOTM3NSAxMy4yNDQ5IDEyLjc1IDEyLjY0NDMgMTIuNzUgMTJDMTIuNzUgMTAuMjA1MSAxNC4yMDUxIDguNzUgMTYgOC43NUMxNy43OTQ5IDguNzUgMTkuMjUgMTAuMjA1MSAxOS4yNSAxMkMxOS4yNSAxMy43OTQ5IDE3Ljc5NDkgMTUuMjUgMTYgMTUuMjVIOEM2LjIwNTA3IDE1LjI1IDQuNzUgMTMuNzk0OSA0Ljc1IDEyQzQuNzUgMTAuMjA1MSA2LjIwNTA3IDguNzUgOCA4Ljc1QzkuNzk0OTMgOC43NSAxMS4yNSAxMC4yMDUxIDExLjI1IDEyQzExLjI1IDEyLjY0NDMgMTEuMDYyNSAxMy4yNDQ5IDEwLjczOTEgMTMuNzVIMTMuMjYwOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/RecordCircle";
  */
 const RecordCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RecordCircle.displayName = "RecordCircle";
-export default RecordCircle;
+RecordCircle.displayName = "RecordCircle"
+export default RecordCircle

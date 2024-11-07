@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/VinylRecord";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/VinylRecord"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC45Mjg5MyAxOS4wNzExQzguODM0MTggMjIuOTc2MyAxNS4xNjU4IDIyLjk3NjMgMTkuMDcxMSAxOS4wNzExQzIyLjk3NjMgMTUuMTY1OCAyMi45NzYzIDguODM0MTggMTkuMDcxMSA0LjkyODkzQzE1LjE2NTggMS4wMjM2OSA4LjgzNDE4IDEuMDIzNjkgNC45Mjg5MyA0LjkyODkzQzEuMDIzNjkgOC44MzQxOCAxLjAyMzY5IDE1LjE2NTggNC45Mjg5MyAxOS4wNzExWk0xNy4xMjY1IDYuODczNDhDMTYuODMzNiA2LjU4MDU4IDE2LjM1ODggNi41ODA1OCAxNi4wNjU5IDYuODczNDhDMTUuNzczIDcuMTY2MzcgMTUuNzczIDcuNjQxMjQgMTYuMDY1OSA3LjkzNDE0QzE4LjMxMTQgMTAuMTc5NyAxOC4zMTE0IDEzLjgyMDMgMTYuMDY1OSAxNi4wNjU5QzE1Ljc3MyAxNi4zNTg4IDE1Ljc3MyAxNi44MzM2IDE2LjA2NTkgMTcuMTI2NUMxNi4zNTg4IDE3LjQxOTQgMTYuODMzNiAxNy40MTk0IDE3LjEyNjUgMTcuMTI2NUMxOS45NTc4IDE0LjI5NTIgMTkuOTU3OCA5LjcwNDc4IDE3LjEyNjUgNi44NzM0OFpNOS4zNDgzNSA5LjM0ODM1QzEwLjgxMjggNy44ODM4OCAxMy4xODcyIDcuODgzODggMTQuNjUxNyA5LjM0ODM1QzE2LjExNjEgMTAuODEyOCAxNi4xMTYxIDEzLjE4NzIgMTQuNjUxNyAxNC42NTE3QzEzLjE4NzIgMTYuMTE2MSAxMC44MTI4IDE2LjExNjEgOS4zNDgzNSAxNC42NTE3QzcuODgzODggMTMuMTg3MiA3Ljg4Mzg4IDEwLjgxMjggOS4zNDgzNSA5LjM0ODM1Wk0xMC40MDkgMTAuNDA5QzExLjI4NzcgOS41MzAzMyAxMi43MTIzIDkuNTMwMzMgMTMuNTkxIDEwLjQwOUMxNC40Njk3IDExLjI4NzcgMTQuNDY5NyAxMi43MTIzIDEzLjU5MSAxMy41OTFDMTIuNzEyMyAxNC40Njk3IDExLjI4NzcgMTQuNDY5NyAxMC40MDkgMTMuNTkxQzkuNTMwMzMgMTIuNzEyMyA5LjUzMDMzIDExLjI4NzcgMTAuNDA5IDEwLjQwOVpNNy45MzQxNCA3LjkzNDE0QzguMjI3MDMgNy42NDEyNCA4LjIyNzAzIDcuMTY2MzcgNy45MzQxNCA2Ljg3MzQ4QzcuNjQxMjQgNi41ODA1OCA3LjE2NjM3IDYuNTgwNTggNi44NzM0OCA2Ljg3MzQ4QzQuMDQyMTcgOS43MDQ3OCA0LjA0MjE3IDE0LjI5NTIgNi44NzM0OCAxNy4xMjY1QzcuMTY2MzcgMTcuNDE5NCA3LjY0MTI0IDE3LjQxOTQgNy45MzQxNCAxNy4xMjY1QzguMjI3MDMgMTYuODMzNiA4LjIyNzAzIDE2LjM1ODggNy45MzQxNCAxNi4wNjU5QzUuNjg4NjIgMTMuODIwMyA1LjY4ODYyIDEwLjE3OTcgNy45MzQxNCA3LjkzNDE0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/VinylRecord";
  */
 const VinylRecord: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-VinylRecord.displayName = "VinylRecord";
-export default VinylRecord;
+VinylRecord.displayName = "VinylRecord"
+export default VinylRecord

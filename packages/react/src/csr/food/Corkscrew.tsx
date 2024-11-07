@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/Corkscrew";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/Corkscrew"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS4zNTcgOC4zODMxNEMxNy43NTExIDguNjAwMDYgMTYuNDc2NyA5Ljg2MTI4IDE2LjIzOTggMTEuNDYwN0wxNC45MTk4IDEwLjE0MDdMMTMuNTk1NSAxMS40NjQ5QzEzLjQ4MjYgMTEuNTc3OSAxMy40NjE5IDExLjc1MzcgMTMuNTQ1NyAxMS44ODk4TDE0LjE5MTYgMTIuOTM5NUMxNC45MjkgMTQuMTM3OCAxMy40OTkgMTUuNDg4NSAxMi4zNDQ2IDE0LjY4NEw3LjcyNzAyIDExLjQ2NTdMMTIuNjcxMiAxOC41NTk1QzEzLjQ4MTYgMTkuNzIyMiAxMi4xMDc1IDIxLjE1NjUgMTAuOTExMSAyMC4zOTY4TDQuNzk1NDYgMTYuNTEzMUw1LjQ0NDggMTcuODgzOUM1Ljc3ODMyIDE4LjU4OCA1LjYzNDQ1IDE5LjQyNiA1LjA4MjYgMTkuOTc3OUwyLjUzMDMzIDIyLjUzMDFDMi4yMzc0NCAyMi44MjMgMS43NjI1NiAyMi44MjMgMS40Njk2NyAyMi41MzAxQzEuMTc2NzggMjIuMjM3MiAxLjE3Njc4IDIxLjc2MjQgMS40Njk2NyAyMS40Njk1TDQuMDIxOTQgMTguOTE3MkM0LjEyNDU4IDE4LjgxNDYgNC4xNTE5MSAxOC42NTg1IDQuMDg5MTkgMTguNTI2MUwzLjEzOTk0IDE2LjUyMjFDMi41ODMwNSAxNS4zNDY0IDMuOTEgMTQuMTczOSA1LjAwODE2IDE0Ljg3MTNMMTAuODY0MSAxOC41OUw1Ljg0ODE0IDExLjM5MzJDNS4wMTk5MSAxMC4yMDQ5IDYuNDY2MjQgOC43NTg1NiA3LjY1NDU3IDkuNTg2NzlMMTIuNDA0NCAxMi44OTczTDEyLjI2ODIgMTIuNjc1OUMxMS44MjA0IDExLjk0ODMgMTEuOTMwNyAxMS4wMDg0IDEyLjUzNDkgMTAuNDA0M0wxMy44NTkxIDkuMDgwMDJMMTAuNTE4IDUuNzM4ODVDOS42NjI2NCA0Ljg4MzUzIDkuNjYyNjQgMy40OTY4IDEwLjUxOCAyLjY0MTQ4QzExLjM3MzMgMS43ODYxNyAxMi43NiAxLjc4NjE3IDEzLjYxNTMgMi42NDE0OEwxOS4zNTcgOC4zODMxNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIxLjM1ODcgMTMuNDgyM0MyMS43Nzc5IDEzLjA2MzEgMjEuOTkxNiAxMi41MTY0IDIxLjk5OTkgMTEuOTY3MUMyMS45ODIzIDEwLjc5NDkgMjEuMDI2NiA5Ljg1MDEgMTkuODUwMiA5Ljg1MDFDMTguNjYyOCA5Ljg1MDEgMTcuNzAwMiAxMC44MTI3IDE3LjcwMDIgMTIuMDAwMUMxNy43MDAyIDEyLjgxNjIgMTguMTU0OSAxMy41MjYxIDE4LjgyNDcgMTMuODkwM0MxOS42NDU5IDE0LjMwMzkgMjAuNjczMSAxNC4xNjc5IDIxLjM1ODcgMTMuNDgyM1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/Corkscrew";
  */
 const Corkscrew: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Corkscrew.displayName = "Corkscrew";
-export default Corkscrew;
+Corkscrew.displayName = "Corkscrew"
+export default Corkscrew

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/RoundAltArrowRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/RoundAltArrowRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk05Ljk2OTY3IDguNDY5NjdDMTAuMjYyNiA4LjE3Njc4IDEwLjczNzQgOC4xNzY3OCAxMS4wMzAzIDguNDY5NjdMMTQuMDMwMyAxMS40Njk3QzE0LjMyMzIgMTEuNzYyNiAxNC4zMjMyIDEyLjIzNzQgMTQuMDMwMyAxMi41MzAzTDExLjAzMDMgMTUuNTMwM0MxMC43Mzc0IDE1LjgyMzIgMTAuMjYyNiAxNS44MjMyIDkuOTY5NjcgMTUuNTMwM0M5LjY3Njc4IDE1LjIzNzQgOS42NzY3OCAxNC43NjI2IDkuOTY5NjcgMTQuNDY5N0wxMi40MzkzIDEyTDkuOTY5NjcgOS41MzAzM0M5LjY3Njc4IDkuMjM3NDQgOS42NzY3OCA4Ljc2MjU2IDkuOTY5NjcgOC40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundAltArrowRight";
  */
 const RoundAltArrowRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundAltArrowRight.displayName = "RoundAltArrowRight";
-export default RoundAltArrowRight;
+RoundAltArrowRight.displayName = "RoundAltArrowRight"
+export default RoundAltArrowRight

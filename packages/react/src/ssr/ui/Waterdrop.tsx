@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Waterdrop";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Waterdrop"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNjExNSAyMkM2Ljg1NTQ5IDIyIDMgMTguMDU2OSAzIDEzLjE5MjhWMTIuOTI4MUMzIDguMzE2NTEgNS43Mjg1NCA0LjE2MzQ3IDkuOTAzMjkgMi40MjA3N0MxMS4yNDczIDEuODU5NzQgMTIuNzUyNyAxLjg1OTc0IDE0LjA5NjcgMi40MjA3N0MxOC4yNzE1IDQuMTYzNDcgMjEgOC4zMTY1MSAyMSAxMi45MjgxVjEzLjE5MjhDMjEgMTguMDU2OSAxNy4xNDQ1IDIyIDEyLjM4ODUgMjJIMTEuNjExNVpNMTIuMDY2NCA1Ljk2MTQ1QzEyLjI0MDIgNi4zMzc0MSAxMi4wNzY0IDYuNzgzMTMgMTEuNzAwNCA2Ljk1Njk5QzEwLjE1NSA3LjY3MTcgOC45MDcxMiA5LjEyNTM0IDguMzI5NjEgMTAuOTQ5OUM4LjIwNDYyIDExLjM0NDkgNy43ODMxNiAxMS41NjM3IDcuMzg4MjYgMTEuNDM4N0M2Ljk5MzM1IDExLjMxMzcgNi43NzQ1NCAxMC44OTIyIDYuODk5NTQgMTAuNDk3M0M3LjU5MTU0IDguMzEwOTcgOS4xMDU5MyA2LjUwNDE4IDExLjA3MDggNS41OTU1MkMxMS40NDY4IDUuNDIxNjYgMTEuODkyNSA1LjU4NTUgMTIuMDY2NCA1Ljk2MTQ1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Waterdrop";
  */
 const Waterdrop: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Waterdrop.displayName = "Waterdrop";
-export default Waterdrop;
+Waterdrop.displayName = "Waterdrop"
+export default Waterdrop

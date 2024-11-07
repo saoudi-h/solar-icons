@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/like/MedalRibbon";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/like/MedalRibbon"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSA5QzE5IDEyLjg2NiAxNS44NjYgMTYgMTIgMTZDOC4xMzQwMSAxNiA1IDEyLjg2NiA1IDlDNSA1LjEzNDAxIDguMTM0MDEgMiAxMiAyQzE1Ljg2NiAyIDE5IDUuMTM0MDEgMTkgOVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuMDkzMDEgMTUuOTQxNEw2LjcxNDI0IDE3LjMyM0M2LjA4NTkgMTkuNjE0OCA1Ljc3MTczIDIwLjc2MDcgNi4xOTA5NyAyMS4zODgxQzYuMzM3OSAyMS42MDc5IDYuNTM1IDIxLjc4NDQgNi43NjM3MiAyMS45MDA4QzcuNDE2MzQgMjIuMjMzMSA4LjQyNCAyMS43MDgxIDEwLjQzOTMgMjAuNjU4QzExLjEwOTkgMjAuMzA4NiAxMS40NDUyIDIwLjEzMzkgMTEuODAxNCAyMC4wOTU5QzExLjkzMzUgMjAuMDgxOCAxMi4wNjY1IDIwLjA4MTggMTIuMTk4NiAyMC4wOTU5QzEyLjU1NDggMjAuMTMzOSAxMi44OTAxIDIwLjMwODYgMTMuNTYwNyAyMC42NThDMTUuNTc2IDIxLjcwODEgMTYuNTgzNyAyMi4yMzMxIDE3LjIzNjMgMjEuOTAwOEMxNy40NjUgMjEuNzg0NCAxNy42NjIxIDIxLjYwNzkgMTcuODA5IDIxLjM4ODFDMTguMjI4MyAyMC43NjA3IDE3LjkxNDEgMTkuNjE0OCAxNy4yODU4IDE3LjMyM0wxNi45MDcgMTUuOTQxNEMxNS41MjA4IDE2LjkyMzEgMTMuODI3OCAxNy41IDEyIDE3LjVDMTAuMTcyMiAxNy41IDguNDc5MTUgMTYuOTIzMSA3LjA5MzAxIDE1Ljk0MTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/like/MedalRibbon";
  */
 const MedalRibbon: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MedalRibbon.displayName = "MedalRibbon";
-export default MedalRibbon;
+MedalRibbon.displayName = "MedalRibbon"
+export default MedalRibbon

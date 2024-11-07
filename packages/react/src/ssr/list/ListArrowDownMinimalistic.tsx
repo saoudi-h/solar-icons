@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListArrowDownMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListArrowDownMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIMTJDMTIuNDE0MiAxMC4yNSAxMi43NSAxMC41ODU4IDEyLjc1IDExQzEyLjc1IDExLjQxNDIgMTIuNDE0MiAxMS43NSAxMiAxMS43NUgzQzIuNTg1NzkgMTEuNzUgMi4yNSAxMS40MTQyIDIuMjUgMTFaTTIuMjUgMTZDMi4yNSAxNS41ODU4IDIuNTg1NzkgMTUuMjUgMyAxNS4yNUgxMUMxMS40MTQyIDE1LjI1IDExLjc1IDE1LjU4NTggMTEuNzUgMTZDMTEuNzUgMTYuNDE0MiAxMS40MTQyIDE2Ljc1IDExIDE2Ljc1SDNDMi41ODU3OSAxNi43NSAyLjI1IDE2LjQxNDIgMi4yNSAxNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNi45Njk3IDE3LjUzMDNDMTcuMjYyNiAxNy44MjMyIDE3LjczNzQgMTcuODIzMiAxOC4wMzAzIDE3LjUzMDNMMjAuNTMwMyAxNS4wMzAzQzIwLjgyMzIgMTQuNzM3NCAyMC44MjMyIDE0LjI2MjYgMjAuNTMwMyAxMy45Njk3QzIwLjIzNzQgMTMuNjc2OCAxOS43NjI2IDEzLjY3NjggMTkuNDY5NyAxMy45Njk3TDE4LjI1IDE1LjE4OTNWOUMxOC4yNSA4LjU4NTc5IDE3LjkxNDIgOC4yNSAxNy41IDguMjVDMTcuMDg1OCA4LjI1IDE2Ljc1IDguNTg1NzkgMTYuNzUgOVYxNS4xODkzTDE1LjUzMDMgMTMuOTY5N0MxNS4yMzc0IDEzLjY3NjggMTQuNzYyNiAxMy42NzY4IDE0LjQ2OTcgMTMuOTY5N0MxNC4xNzY4IDE0LjI2MjYgMTQuMTc2OCAxNC43Mzc0IDE0LjQ2OTcgMTUuMDMwM0wxNi45Njk3IDE3LjUzMDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListArrowDownMinimalistic";
  */
 const ListArrowDownMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListArrowDownMinimalistic.displayName = "ListArrowDownMinimalistic";
-export default ListArrowDownMinimalistic;
+ListArrowDownMinimalistic.displayName = "ListArrowDownMinimalistic"
+export default ListArrowDownMinimalistic

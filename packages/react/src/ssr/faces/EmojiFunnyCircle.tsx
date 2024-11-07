@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/faces/EmojiFunnyCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/faces/EmojiFunnyCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk04LjE4NTEgMTUuNzUwOEM4LjI4NTggMTUuMzQ5IDguNjkzMTUgMTUuMTA0OSA5LjA5NDk0IDE1LjIwNTZDMTAuMjI1MiAxNS40ODg5IDExLjUyMzIgMTUuNDkyNCAxMi44NDEgMTUuMTM5M0MxNC4xNTg4IDE0Ljc4NjIgMTUuMjgxMSAxNC4xMzQyIDE2LjExODMgMTMuMzIzN0MxNi40MTU5IDEzLjAzNTYgMTYuODkwOCAxMy4wNDMzIDE3LjE3ODkgMTMuMzQwOUMxNy40NjcgMTMuNjM4NSAxNy40NTkzIDE0LjExMzMgMTcuMTYxNyAxNC40MDE0QzE2LjgxNDIgMTQuNzM3OCAxNi40Mjk3IDE1LjA0OTIgMTYuMDEyOCAxNS4zMzAxTDE2LjE3MDggMTUuNjUyQzE2LjUzOTQgMTYuNDAzMSAxNi4yMjIzIDE3LjMxMDYgMTUuNDY2MSAxNy42Njg1QzE0LjcyNDkgMTguMDE5NCAxMy44MzkzIDE3LjcxIDEzLjQ3OCAxNi45NzM4TDEzLjI4MTcgMTYuNTc0TDEzLjIyOTIgMTYuNTg4MkMxMS42NzM5IDE3LjAwNSAxMC4xMTY2IDE3LjAwODEgOC43MzAyNiAxNi42NjA2QzguMzI4NDcgMTYuNTU5OSA4LjA4NDQgMTYuMTUyNiA4LjE4NTEgMTUuNzUwOFpNMTUuNDc1NCA5LjUxNTcyQzE1LjY4OTggMTAuMzE1OSAxNS40MzExIDExLjA4MDUgMTQuODk3NyAxMS4yMjM0QzE0LjM2NDIgMTEuMzY2NCAxMy43NTc5IDEwLjgzMzYgMTMuNTQzNSAxMC4wMzM0QzEzLjMyOTEgOS4yMzMxNiAxMy41ODc3IDguNDY4NiAxNC4xMjEyIDguMzI1NjVDMTQuNjU0NyA4LjE4MjcxIDE1LjI2MDkgOC43MTU1MiAxNS40NzU0IDkuNTE1NzJaTTkuMTAyMjUgMTIuNzc2NEM5LjYzNTcxIDEyLjYzMzUgOS44OTQzNiAxMS44Njg5IDkuNjc5OTQgMTEuMDY4N0M5LjQ2NTUzIDEwLjI2ODUgOC44NTkyNiA5LjczNTY5IDguMzI1NzkgOS44Nzg2M0M3Ljc5MjMyIDEwLjAyMTYgNy41MzM2OCAxMC43ODYxIDcuNzQ4MDkgMTEuNTg2M0M3Ljk2MjUgMTIuMzg2NSA4LjU2ODc4IDEyLjkxOTQgOS4xMDIyNSAxMi43NzY0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/EmojiFunnyCircle";
  */
 const EmojiFunnyCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-EmojiFunnyCircle.displayName = "EmojiFunnyCircle";
-export default EmojiFunnyCircle;
+EmojiFunnyCircle.displayName = "EmojiFunnyCircle"
+export default EmojiFunnyCircle

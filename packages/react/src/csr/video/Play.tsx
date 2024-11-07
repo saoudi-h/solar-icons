@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/Play";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/Play"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMS40MDg2IDkuMzUyNThDMjMuNTMwNSAxMC41MDY1IDIzLjUzMDUgMTMuNDkzNSAyMS40MDg2IDE0LjY0NzRMOC41OTY2MiAyMS42MTQ1QzYuNTM0MzUgMjIuNzM2IDQgMjEuMjc2MyA0IDE4Ljk2NzFMNCA1LjAzMjlDNCAyLjcyMzY4IDYuNTM0MzUgMS4yNjQwMiA4LjU5NjYxIDIuMzg1NDhMMjEuNDA4NiA5LjM1MjU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Play";
  */
 const Play: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Play.displayName = "Play";
-export default Play;
+Play.displayName = "Play"
+export default Play

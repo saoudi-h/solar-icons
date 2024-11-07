@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/devices/PrinterMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/devices/PrinterMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy4xMjEzIDIxLjEyMTNDMTggMjAuMjQyNiAxOCAxOC44Mjg0IDE4IDE2TDE4IDEyLjY1OTVDMTYuNTIzMyAxMi4xNTc5IDE0LjU0MTkgMTEuNzQ5OCAxMiAxMS43NDk4QzkuNDU4MTIgMTEuNzQ5OCA3LjQ3NjY3IDEyLjE1NzkgNiAxMi42NTk1VjE2QzYgMTguODI4NCA2IDIwLjI0MjYgNi44Nzg2OCAyMS4xMjEzQzcuNzU3MzYgMjIgOS4xNzE1NyAyMiAxMiAyMkMxNC44Mjg0IDIyIDE2LjI0MjYgMjIgMTcuMTIxMyAyMS4xMjEzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTYgNkg4QzUuMTcxNTcgNiAzLjc1NzM2IDYgMi44Nzg2OCA2Ljg3ODY4QzIgNy43NTczNiAyIDkuMTcxNTcgMiAxMkMyIDE0LjgyODQgMiAxNi4yNDI2IDIuODc4NjggMTcuMTIxM0MzLjM3MTA1IDE3LjYxMzcgNC4wMzE1NyAxNy44MzAyIDUuMDE0ODQgMTcuOTI1M0M0Ljk5OTk2IDE3LjM2NjIgNC45OTk5OCAxNi43NDgxIDUgMTYuMDcwNkw1IDEzLjA0MjRDNC45MzQzNCAxMy4wNzA2IDQuODcwMDcgMTMuMDk4OCA0LjgwNzIgMTMuMTI3MUM0LjQyOTMzIDEzLjI5NjcgMy45ODU0NiAxMy4xMjc5IDMuODE1OCAxMi43NTAxQzMuNjQ2MTQgMTIuMzcyMiAzLjgxNDkzIDExLjkyODMgNC4xOTI4IDExLjc1ODdDNS45MTQ1NSAxMC45ODU2IDguNDgwNSAxMC4yNDk4IDEyIDEwLjI0OThDMTUuNTE5NSAxMC4yNDk4IDE4LjA4NTQgMTAuOTg1NiAxOS44MDcyIDExLjc1ODdDMjAuMTg1MSAxMS45MjgzIDIwLjM1MzkgMTIuMzcyMiAyMC4xODQyIDEyLjc1MDFDMjAuMDE0NSAxMy4xMjc5IDE5LjU3MDcgMTMuMjk2NyAxOS4xOTI4IDEzLjEyNzFDMTkuMTI5OSAxMy4wOTg4IDE5LjA2NTcgMTMuMDcwNiAxOSAxMy4wNDI0TDE5IDE2LjA3MDZDMTkgMTYuNzQ4IDE5IDE3LjM2NjIgMTguOTg1MiAxNy45MjUzQzE5Ljk2ODQgMTcuODMwMiAyMC42MjkgMTcuNjEzNyAyMS4xMjEzIDE3LjEyMTNDMjIgMTYuMjQyNiAyMiAxNC44Mjg0IDIyIDEyQzIyIDkuMTcxNTcgMjIgNy43NTczNiAyMS4xMjEzIDYuODc4NjhDMjAuMjQyNiA2IDE4LjgyODQgNiAxNiA2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcuMTIwOSAyLjg3ODY4QzE2LjI0MjIgMiAxNC44MjggMiAxMS45OTk1IDJDOS4xNzExMiAyIDcuNzU2OTEgMiA2Ljg3ODIzIDIuODc4NjhDNi4zODU4NiAzLjM3MTA1IDYuMTY5MzkgNC4wMzE1NyA2LjA3NDIyIDUuMDE0ODRDNi42MzM0NiA0Ljk5OTk2IDcuMjUxNjEgNC45OTk5OCA3LjkyOTIxIDVIMTYuMDcwNEMxNi43NDc4IDQuOTk5OTggMTcuMzY1OCA0Ljk5OTk2IDE3LjkyNDkgNS4wMTQ4M0MxNy44Mjk3IDQuMDMxNTYgMTcuNjEzMiAzLjM3MTA1IDE3LjEyMDkgMi44Nzg2OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/PrinterMinimalistic";
  */
 const PrinterMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PrinterMinimalistic.displayName = "PrinterMinimalistic";
-export default PrinterMinimalistic;
+PrinterMinimalistic.displayName = "PrinterMinimalistic"
+export default PrinterMinimalistic

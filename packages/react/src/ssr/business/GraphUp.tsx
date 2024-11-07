@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/GraphUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/GraphUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTMuNzUgMTBDMTMuNzUgMTAuNDE0MiAxNC4wODU4IDEwLjc1IDE0LjUgMTAuNzVIMTUuMTg5M0wxMy4xNzY4IDEyLjc2MjZDMTMuMDc5MSAxMi44NjAyIDEyLjkyMDkgMTIuODYwMiAxMi44MjMyIDEyLjc2MjZMMTEuMjM3NCAxMS4xNzY4QzEwLjU1NCAxMC40OTM0IDkuNDQ1OTggMTAuNDkzNCA4Ljc2MjU2IDExLjE3NjhMNi40Njk2NyAxMy40Njk3QzYuMTc2NzggMTMuNzYyNiA2LjE3Njc4IDE0LjIzNzQgNi40Njk2NyAxNC41MzAzQzYuNzYyNTYgMTQuODIzMiA3LjIzNzQ0IDE0LjgyMzIgNy41MzAzMyAxNC41MzAzTDkuODIzMjIgMTIuMjM3NEM5LjkyMDg1IDEyLjEzOTggMTAuMDc5MSAxMi4xMzk4IDEwLjE3NjggMTIuMjM3NEwxMS43NjI2IDEzLjgyMzJDMTIuNDQ2IDE0LjUwNjYgMTMuNTU0IDE0LjUwNjYgMTQuMjM3NCAxMy44MjMyTDE2LjI1IDExLjgxMDdWMTIuNUMxNi4yNSAxMi45MTQyIDE2LjU4NTggMTMuMjUgMTcgMTMuMjVDMTcuNDE0MiAxMy4yNSAxNy43NSAxMi45MTQyIDE3Ljc1IDEyLjVWMTBDMTcuNzUgOS41ODU3OSAxNy40MTQyIDkuMjUgMTcgOS4yNUgxNC41QzE0LjA4NTggOS4yNSAxMy43NSA5LjU4NTc5IDEzLjc1IDEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/GraphUp";
  */
 const GraphUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GraphUp.displayName = "GraphUp";
-export default GraphUp;
+GraphUp.displayName = "GraphUp"
+export default GraphUp

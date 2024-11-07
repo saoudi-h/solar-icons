@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Home";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Home"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi41MTkyIDcuODIyNzRDMiA4Ljc3MTI4IDIgOS45MTU0OSAyIDEyLjIwMzlWMTMuNzI1QzIgMTcuNjI1OCAyIDE5LjU3NjMgMy4xNzE1NyAyMC43ODgxQzQuMzQzMTUgMjIgNi4yMjg3NiAyMiAxMCAyMkgxNEMxNy43NzEyIDIyIDE5LjY1NjkgMjIgMjAuODI4NCAyMC43ODgxQzIyIDE5LjU3NjMgMjIgMTcuNjI1OCAyMiAxMy43MjVWMTIuMjAzOUMyMiA5LjkxNTQ5IDIyIDguNzcxMjggMjEuNDgwOCA3LjgyMjc0QzIwLjk2MTYgNi44NzQyMSAyMC4wMTMxIDYuMjg1NTEgMTguMTE2IDUuMTA4MTJMMTYuMTE2IDMuODY2ODdDMTQuMTEwNiAyLjYyMjI5IDEzLjEwNzkgMiAxMiAyQzEwLjg5MjEgMiA5Ljg4OTM5IDIuNjIyMjkgNy44ODQwMyAzLjg2Njg3TDUuODg0MDMgNS4xMDgxM0MzLjk4Njk1IDYuMjg1NTEgMy4wMzg0IDYuODc0MjEgMi41MTkyIDcuODIyNzRaTTkgMTcuMjVDOC41ODU3OSAxNy4yNSA4LjI1IDE3LjU4NTggOC4yNSAxOEM4LjI1IDE4LjQxNDIgOC41ODU3OSAxOC43NSA5IDE4Ljc1SDE1QzE1LjQxNDIgMTguNzUgMTUuNzUgMTguNDE0MiAxNS43NSAxOEMxNS43NSAxNy41ODU4IDE1LjQxNDIgMTcuMjUgMTUgMTcuMjVIOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Home";
  */
 const Home: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Home.displayName = "Home";
-export default Home;
+Home.displayName = "Home"
+export default Home

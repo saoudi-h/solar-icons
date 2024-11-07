@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/CrownMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/CrownMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMS42MDkgMTMuNTYxNkwyMS44MzgyIDExLjEyNjNDMjIuMDE4MiA5LjIxMzcgMjIuMTA4MiA4LjI1NzM5IDIxLjc4MSA3Ljg2MjA3QzIxLjYwNCA3LjY0ODIzIDIxLjM2MzMgNy41MTcyIDIxLjEwNiA3LjQ5NDZDMjAuNjMwMyA3LjQ1MjgyIDIwLjAzMjkgOC4xMzI5IDE4LjgzODEgOS40OTMwN0MxOC4yMjAyIDEwLjE5NjUgMTcuOTExMyAxMC41NDgyIDE3LjU2NjYgMTAuNjAyN0MxNy4zNzU3IDEwLjYzMjggMTcuMTgxMSAxMC42MDE4IDE3LjAwNDcgMTAuNTEzMUMxNi42ODY1IDEwLjM1MjkgMTYuNDc0MyA5LjkxODEyIDE2LjA0OTkgOS4wNDg1MUwxMy44MTMxIDQuNDY0ODVDMTMuMDExMiAyLjgyMTYyIDEyLjYxMDIgMiAxMiAyQzExLjM4OTggMiAxMC45ODg4IDIuODIxNjIgMTAuMTg2OSA0LjQ2NDg2TDcuOTUwMDcgOS4wNDg1MkM3LjUyNTcgOS45MTgxMiA3LjMxMzUxIDEwLjM1MjkgNi45OTUyNiAxMC41MTMxQzYuODE4OTIgMTAuNjAxOCA2LjYyNDM0IDEwLjYzMjggNi40MzMzNyAxMC42MDI3QzYuMDg4NzIgMTAuNTQ4MiA1Ljc3OTc3IDEwLjE5NjUgNS4xNjE4NyA5LjQ5MzA3QzMuOTY3MDggOC4xMzI5IDMuMzY5NjggNy40NTI4MiAyLjg5Mzk5IDcuNDk0NkMyLjYzNjY2IDcuNTE3MiAyLjM5NTk4IDcuNjQ4MjMgMi4yMTg5OSA3Ljg2MjA3QzEuODkxOCA4LjI1NzM5IDEuOTgxOCA5LjIxMzcgMi4xNjE4MSAxMS4xMjYzTDIuMzkxIDEzLjU2MTZDMi43Njg2NSAxNy41NzQyIDIuOTU3NDggMTkuNTgwNSA0LjE0MDA5IDIwLjc5MDJDNS4zMjI3MSAyMiA3LjA5NTE3IDIyIDEwLjY0MDEgMjJIMTMuMzU5OUMxNi45MDQ4IDIyIDE4LjY3NzMgMjIgMTkuODU5OSAyMC43OTAyQzIxLjA0MjUgMTkuNTgwNSAyMS4yMzEzIDE3LjU3NDIgMjEuNjA5IDEzLjU2MTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CrownMinimalistic";
  */
 const CrownMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CrownMinimalistic.displayName = "CrownMinimalistic";
-export default CrownMinimalistic;
+CrownMinimalistic.displayName = "CrownMinimalistic"
+export default CrownMinimalistic

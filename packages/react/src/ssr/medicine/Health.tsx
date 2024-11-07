@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/Health";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/Health"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC45NjE3MyAxOC40Njg3QzYuMDE5NDMgMTYuMjEzNyAyIDEyLjQ4ODYgMiA4Ljk2NjUzQzIgMy4wODI2MiA3LjUwMDE2IDAuODg1ODU5IDEyIDUuNDMxMTFDMTYuNDk5OCAwLjg4NTg1OSAyMiAzLjA4MjYyIDIyIDguOTY2NUMyMiAxMi40ODg3IDE3Ljk4MDYgMTYuMjEzNyAxNS4wMzgzIDE4LjQ2ODdDMTMuNzA2MyAxOS40ODk2IDEzLjA0MDMgMjAgMTIgMjBDMTAuOTU5NyAyMCAxMC4yOTM3IDE5LjQ4OTYgOC45NjE3MyAxOC40Njg3Wk0xNi41IDYuMjVDMTYuOTE0MiA2LjI1IDE3LjI1IDYuNTg1NzkgMTcuMjUgN1Y4LjI1MDAySDE4LjVDMTguOTE0MiA4LjI1MDAyIDE5LjI1IDguNTg1OCAxOS4yNSA5LjAwMDAyQzE5LjI1IDkuNDE0MjMgMTguOTE0MiA5Ljc1MDAyIDE4LjUgOS43NTAwMkgxNy4yNVYxMUMxNy4yNSAxMS40MTQyIDE2LjkxNDIgMTEuNzUgMTYuNSAxMS43NUMxNi4wODU4IDExLjc1IDE1Ljc1IDExLjQxNDIgMTUuNzUgMTFWOS43NTAwMkwxNC41IDkuNzUwMDJDMTQuMDg1OCA5Ljc1MDAyIDEzLjc1IDkuNDE0MjMgMTMuNzUgOS4wMDAwMkMxMy43NSA4LjU4NTggMTQuMDg1OCA4LjI1MDAyIDE0LjUgOC4yNTAwMkgxNS43NVY3QzE1Ljc1IDYuNTg1NzkgMTYuMDg1OCA2LjI1IDE2LjUgNi4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/Health";
  */
 const Health: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Health.displayName = "Health";
-export default Health;
+Health.displayName = "Health"
+export default Health

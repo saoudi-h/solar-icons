@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/CloseCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/CloseCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWk04Ljk2OTYzIDguOTY5NjVDOS4yNjI1MiA4LjY3Njc2IDkuNzM3MzkgOC42NzY3NiAxMC4wMzAzIDguOTY5NjVMMTIgMTAuOTM5M0wxMy45Njk2IDguOTY5NjdDMTQuMjYyNSA4LjY3Njc4IDE0LjczNzQgOC42NzY3OCAxNS4wMzAzIDguOTY5NjdDMTUuMzIzMiA5LjI2MjU2IDE1LjMyMzIgOS43Mzc0NCAxNS4wMzAzIDEwLjAzMDNMMTMuMDYwNiAxMkwxNS4wMzAzIDEzLjk2OTZDMTUuMzIzMiAxNC4yNjI1IDE1LjMyMzIgMTQuNzM3NCAxNS4wMzAzIDE1LjAzMDNDMTQuNzM3NCAxNS4zMjMyIDE0LjI2MjUgMTUuMzIzMiAxMy45Njk2IDE1LjAzMDNMMTIgMTMuMDYwN0wxMC4wMzAzIDE1LjAzMDNDOS43Mzc0MiAxNS4zMjMyIDkuMjYyNTQgMTUuMzIzMiA4Ljk2OTY1IDE1LjAzMDNDOC42NzY3NiAxNC43Mzc0IDguNjc2NzYgMTQuMjYyNSA4Ljk2OTY1IDEzLjk2OTdMMTAuOTM5MyAxMkw4Ljk2OTYzIDEwLjAzMDNDOC42NzY3MyA5LjczNzQyIDguNjc2NzMgOS4yNjI1NCA4Ljk2OTYzIDguOTY5NjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CloseCircle";
  */
 const CloseCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloseCircle.displayName = "CloseCircle";
-export default CloseCircle;
+CloseCircle.displayName = "CloseCircle"
+export default CloseCircle

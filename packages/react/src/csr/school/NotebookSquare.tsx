@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/school/NotebookSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/school/NotebookSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4xNzE1NyAyLjE3MTU3QzIgMy4zNDMxNSAyIDUuMjI4NzYgMiA5VjEzQzIgMTYuNzcxMiAyIDE4LjY1NjkgMy4xNzE1NyAxOS44Mjg0QzQuMzQzMTUgMjEgNi4yMjg3NiAyMSAxMCAyMUgxNEMxNy43NzEyIDIxIDE5LjY1NjkgMjEgMjAuODI4NCAxOS44Mjg0QzIyIDE4LjY1NjkgMjIgMTYuNzcxMiAyMiAxM1Y5QzIyIDUuMjI4NzYgMjIgMy4zNDMxNSAyMC44Mjg0IDIuMTcxNTdDMTkuNjU2OSAxIDE3Ljc3MTIgMSAxNCAxSDEwQzYuMjI4NzYgMSA0LjM0MzE1IDEgMy4xNzE1NyAyLjE3MTU3Wk0xMi41MDc0IDE1LjcyMjNMMTIuNSAxNS43MjYyVjcuMjgyNzdMMTIuNTIxOSA3LjI3MDQyQzEzLjA3NTIgNi45NTAyNyAxMy45Njg1IDYuNDczNTYgMTQuNyA2LjI3MDc5QzE1LjI0MDQgNi4xMjA5OSAxNS45NDA1IDYuMDUxOTcgMTYuNTU2OCA2LjAyMTdDMTcuMzYxOSA1Ljk4MjE2IDE4IDYuNjQ1NDMgMTggNy40NTE1NFYxMi45MTA4QzE4IDEzLjc0MzcgMTcuMzIwNyAxNC40MTUxIDE2LjQ5MDEgMTQuNDc3QzE1Ljk4MzkgMTQuNTE0NyAxNS40Mzc1IDE0LjU3ODMgMTUgMTQuNjg1MkMxNC4xNjM0IDE0Ljg4OTYgMTMuMTE3NCAxNS40MDA5IDEyLjUwNzQgMTUuNzIyM1pNNiA3LjQ5NjQ5VjEyLjkxMDhDNiAxMy43NDM3IDYuNjc5MzQgMTQuNDE1MSA3LjUwOTkxIDE0LjQ3N0M4LjAxNjA4IDE0LjUxNDcgOC41NjI0OCAxNC41NzgzIDkgMTQuNjg1MkM5LjgzNjU1IDE0Ljg4OTYgMTAuODgyNiAxNS40MDA5IDExLjQ5MjYgMTUuNzIyM0wxMS41IDE1LjcyNjJWNy4zMTA5NEMxMS40ODgxIDcuMzA1MjUgMTEuNDc2MyA3LjI5OTMzIDExLjQ2NDYgNy4yOTMxOEMxMC44NTEgNi45NzExIDkuODIzOSA2LjQ3MjEgOSA2LjI3MDc5QzguNTU1OTIgNi4xNjIyOCA3Ljk5OTY3IDYuMDk4NDQgNy40ODcxNyA2LjA2MDkxQzYuNjY1MzkgNi4wMDA3NCA2IDYuNjcyNTEgNiA3LjQ5NjQ5WiIgZmlsbD0iIzFDMjc0RCIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/NotebookSquare";
  */
 const NotebookSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-NotebookSquare.displayName = "NotebookSquare";
-export default NotebookSquare;
+NotebookSquare.displayName = "NotebookSquare"
+export default NotebookSquare

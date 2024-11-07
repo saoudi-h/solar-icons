@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/History";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/History"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4wNzg2OCA1LjA2ODkxQzguODc0MDIgMS4yNzg5MyAxNS4wNDM3IDEuMzE5MjMgMTguODYyMiA1LjEzNzc4QzIyLjY4MjQgOC45NTc5NyAyMi43MjExIDE1LjEzMTMgMTguOTI2MiAxOC45MjYyQzE1LjEzMTIgMjIuNzIxMSA4Ljk1NzkzIDIyLjY4MjQgNS4xMzc3NCAxOC44NjIyQzIuODczODkgMTYuNTk4NCAxLjkzOTA0IDEzLjUwOTkgMi4zNDA0NyAxMC41ODEyQzIuMzk2NzIgMTAuMTcwOCAyLjc3NSA5Ljg4Mzc3IDMuMTg1MzcgOS45NDAwMkMzLjU5NTc1IDkuOTk2MjcgMy44ODI4MiAxMC4zNzQ1IDMuODI2NTggMTAuNzg0OUMzLjQ4NjYgMTMuMjY1MiA0LjI3NzgyIDE1Ljg4MSA2LjE5ODQgMTcuODAxNkM5LjQ0Mjg4IDIxLjA0NjEgMTQuNjY2NCAyMS4wNjQ2IDE3Ljg2NTUgMTcuODY1NUMyMS4wNjQ2IDE0LjY2NjQgMjEuMDQ2IDkuNDQyOTIgMTcuODAxNSA2LjE5ODQ0QzE0LjU1ODcgMi45NTU2MSA5LjMzODg5IDIuOTM1MzkgNi4xMzkzNSA2LjEyOTU3TDYuODg3MDUgNi4xMzMzM0M3LjMwMTI2IDYuMTM1NDEgNy42MzUzNSA2LjQ3Mjg4IDcuNjMzMjcgNi44ODcwOUM3LjYzMTE5IDcuMzAxMyA3LjI5MzcyIDcuNjM1MzkgNi44Nzk1MSA3LjYzMzMxTDQuMzMzOTYgNy42MjA1MkMzLjkyMjY5IDcuNjE4NDUgMy41ODk4MSA3LjI4NTU2IDMuNTg3NzQgNi44NzQzTDMuNTc0OTUgNC4zMjg3NEMzLjU3Mjg2IDMuOTE0NTQgMy45MDY5NiAzLjU3NzA3IDQuMzIxMTcgMy41NzQ5OEM0LjczNTM4IDMuNTcyOSA1LjA3Mjg1IDMuOTA3IDUuMDc0OTMgNC4zMjEyMUw1LjA3ODY4IDUuMDY4OTFaTTExLjk5OTkgNy4yNDk5MkMxMi40MTQxIDcuMjQ5OTIgMTIuNzQ5OSA3LjU4NTcxIDEyLjc0OTkgNy45OTk5MlYxMS42ODkzTDE1LjAzMDIgMTMuOTY5NkMxNS4zMjMxIDE0LjI2MjUgMTUuMzIzMSAxNC43Mzc0IDE1LjAzMDIgMTUuMDMwMkMxNC43MzczIDE1LjMyMzEgMTQuMjYyNCAxNS4zMjMxIDEzLjk2OTYgMTUuMDMwMkwxMS4yNDk5IDEyLjMxMDZWNy45OTk5MkMxMS4yNDk5IDcuNTg1NzEgMTEuNTg1NyA3LjI0OTkyIDExLjk5OTkgNy4yNDk5MloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/History";
  */
 const History: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-History.displayName = "History";
-export default History;
+History.displayName = "History"
+export default History

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/SliderMinimalisticHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/SliderMinimalisticHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNiA1Ljg0NjE1QzE4LjgyODQgNS44NDYxNSAyMC4yNDI2IDUuODQ2MTUgMjEuMTIxMyA2Ljc0NzM2QzIyIDcuNjQ4NTcgMjIgOS4wOTkwNSAyMiAxMkMyMiAxNC45MDEgMjIgMTYuMzUxNCAyMS4xMjEzIDE3LjI1MjZDMjAuMjQyNiAxOC4xNTM4IDE4LjgyODQgMTguMTUzOCAxNiAxOC4xNTM4TDggMTguMTUzOEM1LjE3MTU3IDE4LjE1MzggMy43NTczNiAxOC4xNTM4IDIuODc4NjggMTcuMjUyNkMyIDE2LjM1MTQgMiAxNC45MDEgMiAxMkMyIDkuMDk5MDUgMiA3LjY0ODU3IDIuODc4NjggNi43NDczNkMzLjc1NzM2IDUuODQ2MTUgNS4xNzE1NyA1Ljg0NjE1IDggNS44NDYxNUwxNiA1Ljg0NjE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIwLjI1IDIuNzY5MjNDMjAuMjUgMy4xOTQwNyAxOS45MTQyIDMuNTM4NDYgMTkuNSAzLjUzODQ2TDQuNSAzLjUzODQ2QzQuMDg1NzkgMy41Mzg0NiAzLjc1IDMuMTk0MDYgMy43NSAyLjc2OTIzQzMuNzUgMi4zNDQ0IDQuMDg1NzkgMiA0LjUgMkwxOS41IDJDMTkuOTE0MiAyIDIwLjI1IDIuMzQ0NCAyMC4yNSAyLjc2OTIzWk0yMC4yNSAyMS4yMzA4QzIwLjI1IDIxLjY1NTYgMTkuOTE0MiAyMiAxOS41IDIyTDQuNSAyMkM0LjA4NTc5IDIyIDMuNzUgMjEuNjU1NiAzLjc1IDIxLjIzMDhDMy43NSAyMC44MDU5IDQuMDg1NzkgMjAuNDYxNSA0LjUgMjAuNDYxNUwxOS41IDIwLjQ2MTVDMTkuOTE0MiAyMC40NjE1IDIwLjI1IDIwLjgwNTkgMjAuMjUgMjEuMjMwOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/SliderMinimalisticHorizontal";
  */
 const SliderMinimalisticHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SliderMinimalisticHorizontal.displayName = "SliderMinimalisticHorizontal";
-export default SliderMinimalisticHorizontal;
+SliderMinimalisticHorizontal.displayName = "SliderMinimalisticHorizontal"
+export default SliderMinimalisticHorizontal

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/home/Sofa3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/home/Sofa3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS43NDk3IDEyLjc1QzIwLjcxNjYgOC44NjU3OCAyMS4xNDU2IDYuODQ3MzcgMjAuMTM0IDUuNDI4MjFDMjAuMDY2NSA1LjMzMzQ1IDE5Ljk5NDggNS4yNDE2OSAxOS45MTkzIDUuMTUzMTdDMTguNzIxNiAzLjc1IDE2LjQ4MTEgMy43NSAxMS45OTk5IDMuNzVDNy41MTg4IDMuNzUgNS4yNzgyNCAzLjc1IDQuMDgwNTkgNS4xNTMxN0M0LjAwNTA0IDUuMjQxNjkgMy45MzMzOSA1LjMzMzQ1IDMuODY1ODQgNS40MjgyMUMyLjg1NDI0IDYuODQ3MzcgMy4yODMyOSA4Ljg2NTc4IDQuMjUwMTcgMTIuNzVIMTkuNzQ5N1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTQuNzUgMTcuNzVWMTkuNzVDNC43NSAyMC4xNjQyIDQuNDE0MjEgMjAuNSA0IDIwLjVDMy41ODU3OSAyMC41IDMuMjUgMjAuMTY0MiAzLjI1IDE5Ljc1VjE3LjYwNDZDMi41MTcwNCAxNy4zMDc5IDIgMTYuNTg5MyAyIDE1Ljc1QzIgMTQuNjQ1NCAyLjg5NTQzIDEzLjc1IDQgMTMuNzVIMjBDMjEuMTA0NiAxMy43NSAyMiAxNC42NDU0IDIyIDE1Ljc1QzIyIDE2LjU4OTMgMjEuNDgzIDE3LjMwNzkgMjAuNzUgMTcuNjA0NlYxOS43NUMyMC43NSAyMC4xNjQyIDIwLjQxNDIgMjAuNSAyMCAyMC41QzE5LjU4NTggMjAuNSAxOS4yNSAyMC4xNjQyIDE5LjI1IDE5Ljc1VjE3Ljc1SDQuNzVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Sofa3";
  */
 const Sofa3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sofa3.displayName = "Sofa3";
-export default Sofa3;
+Sofa3.displayName = "Sofa3"
+export default Sofa3

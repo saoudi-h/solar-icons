@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Reorder";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Reorder"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNMTkgMTguNzVDMTkuNDE0MiAxOC43NSAxOS43NSAxOC40MTQyIDE5Ljc1IDE4QzE5Ljc1IDE3LjU4NTggMTkuNDE0MiAxNy4yNSAxOSAxNy4yNUg1QzQuNTg1NzkgMTcuMjUgNC4yNSAxNy41ODU4IDQuMjUgMThDNC4yNSAxOC40MTQyIDQuNTg1NzkgMTguNzUgNSAxOC43NUgxOVpNMTkuNzUgMTRDMTkuNzUgMTQuNDE0MiAxOS40MTQyIDE0Ljc1IDE5IDE0Ljc1SDVDNC41ODU3OSAxNC43NSA0LjI1IDE0LjQxNDIgNC4yNSAxNEM0LjI1IDEzLjU4NTggNC41ODU3OSAxMy4yNSA1IDEzLjI1SDE5QzE5LjQxNDIgMTMuMjUgMTkuNzUgMTMuNTg1OCAxOS43NSAxNFpNMTkgMTAuNzVDMTkuNDE0MiAxMC43NSAxOS43NSAxMC40MTQyIDE5Ljc1IDEwQzE5Ljc1IDkuNTg1NzkgMTkuNDE0MiA5LjI1IDE5IDkuMjVINUM0LjU4NTc5IDkuMjUgNC4yNSA5LjU4NTc5IDQuMjUgMTBDNC4yNSAxMC40MTQyIDQuNTg1NzkgMTAuNzUgNSAxMC43NUgxOVpNMTkuNzUgNkMxOS43NSA2LjQxNDIxIDE5LjQxNDIgNi43NSAxOSA2Ljc1SDVDNC41ODU3OSA2Ljc1IDQuMjUgNi40MTQyMSA0LjI1IDZDNC4yNSA1LjU4NTc5IDQuNTg1NzkgNS4yNSA1IDUuMjVIMTlDMTkuNDE0MiA1LjI1IDE5Ljc1IDUuNTg1NzkgMTkuNzUgNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Reorder";
  */
 const Reorder: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Reorder.displayName = "Reorder";
-export default Reorder;
+Reorder.displayName = "Reorder"
+export default Reorder

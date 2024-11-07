@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Sort";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Sort"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNMTQuNzUgMTZDMTQuNzUgMTYuNDE0MiAxNC40MTQyIDE2Ljc1IDE0IDE2Ljc1SDEwQzkuNTg1NzkgMTYuNzUgOS4yNSAxNi40MTQyIDkuMjUgMTZDOS4yNSAxNS41ODU4IDkuNTg1NzkgMTUuMjUgMTAgMTUuMjVIMTRDMTQuNDE0MiAxNS4yNSAxNC43NSAxNS41ODU4IDE0Ljc1IDE2Wk0xNiAxMi43NUMxNi40MTQyIDEyLjc1IDE2Ljc1IDEyLjQxNDIgMTYuNzUgMTJDMTYuNzUgMTEuNTg1OCAxNi40MTQyIDExLjI1IDE2IDExLjI1SDhDNy41ODU3OSAxMS4yNSA3LjI1IDExLjU4NTggNy4yNSAxMkM3LjI1IDEyLjQxNDIgNy41ODU3OSAxMi43NSA4IDEyLjc1SDE2Wk0xOC43NSA4QzE4Ljc1IDguNDE0MjEgMTguNDE0MiA4Ljc1IDE4IDguNzVINkM1LjU4NTc5IDguNzUgNS4yNSA4LjQxNDIxIDUuMjUgOEM1LjI1IDcuNTg1NzkgNS41ODU3OSA3LjI1IDYgNy4yNUgxOEMxOC40MTQyIDcuMjUgMTguNzUgNy41ODU3OSAxOC43NSA4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Sort";
  */
 const Sort: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Sort.displayName = "Sort";
-export default Sort;
+Sort.displayName = "Sort"
+export default Sort

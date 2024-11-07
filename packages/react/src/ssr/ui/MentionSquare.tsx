@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/MentionSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/MentionSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxMC4zNUMxMi45MTEzIDEwLjM1IDEzLjY1IDExLjA4ODcgMTMuNjUgMTJDMTMuNjUgMTIuOTExMyAxMi45MTEzIDEzLjY1IDEyIDEzLjY1QzExLjA4ODcgMTMuNjUgMTAuMzUgMTIuOTExMyAxMC4zNSAxMkMxMC4zNSAxMS4wODg3IDExLjA4ODcgMTAuMzUgMTIgMTAuMzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNNi43NSAxMkM2Ljc1IDkuMTAwNSA5LjEwMDUgNi43NSAxMiA2Ljc1QzE0Ljg5OTUgNi43NSAxNy4yNSA5LjEwMDUgMTcuMjUgMTJDMTcuMjUgMTIuNjMyNyAxNy4xMzg0IDEzLjIzNzYgMTYuOTM0NSAxMy43OTczQzE2Ljg5OTEgMTMuODk0NCAxNi44Mjk1IDEzLjk5ODkgMTYuNzE4MyAxNC4xMDE1TDE2LjYzNzcgMTQuMTc1OEMxNi4zMzY5IDE0LjQ1MzMgMTUuODg1MyAxNC40ODg4IDE1LjU0NDggMTQuMjYxOEMxNS4yOTgxIDE0LjA5NzQgMTUuMTUgMTMuODIwNiAxNS4xNSAxMy41MjQxVjEyQzE1LjE1IDEwLjI2MDMgMTMuNzM5NyA4Ljg1IDEyIDguODVDMTAuMjYwMyA4Ljg1IDguODUgMTAuMjYwMyA4Ljg1IDEyQzguODUgMTMuNzM5NyAxMC4yNjAzIDE1LjE1IDEyIDE1LjE1QzEyLjcwMTcgMTUuMTUgMTMuMzQ5OSAxNC45MjA1IDEzLjg3MzUgMTQuNTMyNUMxNC4wNTU3IDE0LjkyMzMgMTQuMzQzMSAxNS4yNjM1IDE0LjcxMjcgMTUuNTA5OUMxNS42Mjk0IDE2LjEyMSAxNi44NDUxIDE2LjAyNTIgMTcuNjU0OCAxNS4yNzgzTDE3LjczNTQgMTUuMjA0QzE3Ljk4NTUgMTQuOTczMiAxOC4yMTEgMTQuNjc1NiAxOC4zNDM5IDE0LjMxMDhDMTguNjA2OSAxMy41ODg5IDE4Ljc1IDEyLjgxMDMgMTguNzUgMTJDMTguNzUgOC4yNzIwOCAxNS43Mjc5IDUuMjUgMTIgNS4yNUM4LjI3MjA4IDUuMjUgNS4yNSA4LjI3MjA4IDUuMjUgMTJDNS4yNSAxNS43Mjc5IDguMjcyMDggMTguNzUgMTIgMTguNzVDMTIuNDE0MiAxOC43NSAxMi43NSAxOC40MTQyIDEyLjc1IDE4QzEyLjc1IDE3LjU4NTggMTIuNDE0MiAxNy4yNSAxMiAxNy4yNUM5LjEwMDUgMTcuMjUgNi43NSAxNC44OTk1IDYuNzUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/MentionSquare";
  */
 const MentionSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MentionSquare.displayName = "MentionSquare";
-export default MentionSquare;
+MentionSquare.displayName = "MentionSquare"
+export default MentionSquare

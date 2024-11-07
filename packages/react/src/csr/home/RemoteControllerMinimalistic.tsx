@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/RemoteControllerMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/RemoteControllerMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05Ljc1IDExQzkuNzUgOS43NTczNiAxMC43NTc0IDguNzUgMTIgOC43NUMxMy4yNDI2IDguNzUgMTQuMjUgOS43NTczNiAxNC4yNSAxMUMxNC4yNSAxMi4yNDI2IDEzLjI0MjYgMTMuMjUgMTIgMTMuMjVDMTAuNzU3NCAxMy4yNSA5Ljc1IDEyLjI0MjYgOS43NSAxMVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjY3NDEyIDMuNzc3NzJDNSA0Ljc4NjYxIDUgNi4xOTEwOCA1IDlWMTVDNSAxNy44MDg5IDUgMTkuMjEzNCA1LjY3NDEyIDIwLjIyMjNDNS45NjU5NiAyMC42NTkgNi4zNDA5NiAyMS4wMzQgNi43Nzc3MiAyMS4zMjU5QzcuNzg2NjEgMjIgOS4xOTEwOCAyMiAxMiAyMkMxNC44MDg5IDIyIDE2LjIxMzQgMjIgMTcuMjIyMyAyMS4zMjU5QzE3LjY1OSAyMS4wMzQgMTguMDM0IDIwLjY1OSAxOC4zMjU5IDIwLjIyMjNDMTkgMTkuMjEzNCAxOSAxNy44MDg5IDE5IDE1VjlDMTkgNi4xOTEwOCAxOSA0Ljc4NjYxIDE4LjMyNTkgMy43Nzc3MkMxOC4wMzQgMy4zNDA5NiAxNy42NTkgMi45NjU5NiAxNy4yMjIzIDIuNjc0MTJDMTYuMjEzNCAyIDE0LjgwODkgMiAxMiAyQzkuMTkxMDggMiA3Ljc4NjYxIDIgNi43Nzc3MiAyLjY3NDEyQzYuMzQwOTYgMi45NjU5NiA1Ljk2NTk2IDMuMzQwOTYgNS42NzQxMiAzLjc3NzcyWk0xMiA3LjI1QzkuOTI4OTMgNy4yNSA4LjI1IDguOTI4OTMgOC4yNSAxMUM4LjI1IDEzLjA3MTEgOS45Mjg5MyAxNC43NSAxMiAxNC43NUMxNC4wNzExIDE0Ljc1IDE1Ljc1IDEzLjA3MTEgMTUuNzUgMTFDMTUuNzUgOC45Mjg5MyAxNC4wNzExIDcuMjUgMTIgNy4yNVpNMTMgNUMxMyA1LjU1MjI4IDEyLjU1MjMgNiAxMiA2QzExLjQ0NzcgNiAxMSA1LjU1MjI4IDExIDVDMTEgNC40NDc3MiAxMS40NDc3IDQgMTIgNEMxMi41NTIzIDQgMTMgNC40NDc3MiAxMyA1Wk0xMiAxOEMxMi41NTIzIDE4IDEzIDE3LjU1MjMgMTMgMTdDMTMgMTYuNDQ3NyAxMi41NTIzIDE2IDEyIDE2QzExLjQ0NzcgMTYgMTEgMTYuNDQ3NyAxMSAxN0MxMSAxNy41NTIzIDExLjQ0NzcgMTggMTIgMThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/RemoteControllerMinimalistic";
  */
 const RemoteControllerMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RemoteControllerMinimalistic.displayName = "RemoteControllerMinimalistic";
-export default RemoteControllerMinimalistic;
+RemoteControllerMinimalistic.displayName = "RemoteControllerMinimalistic"
+export default RemoteControllerMinimalistic

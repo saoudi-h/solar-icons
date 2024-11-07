@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Cursor";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Cursor"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41NzQ0IDE5LjE5OTlMMTIuNjM2MSAxNS4yNjE2TDExLjQzMzQgMTYuNDY0M0MxMC4yMDIyIDE3LjY5NTUgOS41ODY1NiAxOC4zMTExIDguOTI0ODkgMTguMTY1OEM4LjI2MzIyIDE4LjAyMDQgNy45NjIyNSAxNy4yMDM1IDcuMzYwMyAxNS41Njk2TDUuMzUyNyAxMC4xMjA1QzQuMTUxODcgNi44NjEwNiAzLjU1MTQ2IDUuMjMxMzYgNC4zOTE0MSA0LjM5MTQxQzUuMjMxMzYgMy41NTE0NiA2Ljg2MTA2IDQuMTUxODcgMTAuMTIwNSA1LjM1MjcxTDE1LjU2OTYgNy4zNjAzQzE3LjIwMzUgNy45NjIyNSAxOC4wMjA0IDguMjYzMjIgMTguMTY1OCA4LjkyNDg5QzE4LjMxMTEgOS41ODY1NiAxNy42OTU1IDEwLjIwMjIgMTYuNDY0MyAxMS40MzM0TDE1LjI2MTYgMTIuNjM2MUwxOS4xOTk5IDE2LjU3NDRDMTkuNjA3NyAxNi45ODIxIDE5LjgxMTYgMTcuMTg2IDE5LjkwNTggMTcuNDEzNUMyMC4wMzE0IDE3LjcxNjggMjAuMDMxNCAxOC4wNTc1IDE5LjkwNTggMTguMzYwOEMxOS44MTE2IDE4LjU4ODIgMTkuNjA3NyAxOC43OTIxIDE5LjE5OTkgMTkuMTk5OUMxOC43OTIxIDE5LjYwNzcgMTguNTg4MiAxOS44MTE2IDE4LjM2MDggMTkuOTA1OEMxOC4wNTc1IDIwLjAzMTQgMTcuNzE2OCAyMC4wMzE0IDE3LjQxMzUgMTkuOTA1OEMxNy4xODYgMTkuODExNiAxNi45ODIxIDE5LjYwNzcgMTYuNTc0NCAxOS4xOTk5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Cursor";
  */
 const Cursor: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Cursor.displayName = "Cursor";
-export default Cursor;
+Cursor.displayName = "Cursor"
+export default Cursor

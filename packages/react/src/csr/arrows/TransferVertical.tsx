@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/TransferVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/TransferVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00LjAwMDAzIDEzLjc1QzMuNjkwNzQgMTMuNzUgMy40MTMxNyAxMy45Mzk5IDMuMzAxMDUgMTQuMjI4MUMzLjE4ODkyIDE0LjUxNjQgMy4yNjUyNCAxNC44NDM5IDMuNDkzMjQgMTUuMDUyOUw5LjQ5MzI0IDIwLjU1MjlDOS43MTI0OSAyMC43NTM5IDEwLjAyOTggMjAuODA2MyAxMC4zMDIgMjAuNjg2NUMxMC41NzQzIDIwLjU2NjggMTAuNzUgMjAuMjk3NCAxMC43NSAyMEwxMC43NSA0LjAwMDAyQzEwLjc1IDMuNTg1OCAxMC40MTQyIDMuMjUwMDIgMTAgMy4yNTAwMkM5LjU4NTgyIDMuMjUwMDIgOS4yNTAwMyAzLjU4NTggOS4yNTAwMyA0LjAwMDAyVjEzLjc1SDQuMDAwMDNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMCAxMC4yNUwxNC43NSAxMC4yNVYyMEMxNC43NSAyMC40MTQyIDE0LjQxNDIgMjAuNzUgMTQgMjAuNzVDMTMuNTg1OCAyMC43NSAxMy4yNSAyMC40MTQyIDEzLjI1IDIwTDEzLjI1IDQuMDAwMDJDMTMuMjUgMy43MDI1OSAxMy40MjU4IDMuNDMzMjcgMTMuNjk4IDMuMzEzNUMxMy45NzAzIDMuMTkzNzQgMTQuMjg3NiAzLjI0NjE3IDE0LjUwNjggMy40NDcxNUwyMC41MDY4IDguOTQ3MTVDMjAuNzM0OCA5LjE1NjE0IDIwLjgxMTEgOS40ODM2NiAyMC42OTkgOS43NzE5MUMyMC41ODY5IDEwLjA2MDIgMjAuMzA5MyAxMC4yNSAyMCAxMC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/TransferVertical";
  */
 const TransferVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TransferVertical.displayName = "TransferVertical";
-export default TransferVertical;
+TransferVertical.displayName = "TransferVertical"
+export default TransferVertical

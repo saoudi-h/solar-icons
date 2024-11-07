@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/EraserCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/EraserCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTExLjYwNjQgNy42NzAwNEMxMi43MTk3IDYuNTU2NjggMTMuMjc2NCA2IDEzLjk2ODIgNkMxNC42NTk5IDYgMTUuMjE2NiA2LjU1NjY4IDE2LjMzIDcuNjcwMDRDMTcuNDQzMyA4Ljc4MzQgMTggOS4zNDAwOCAxOCAxMC4wMzE4QzE4IDEwLjcyMzYgMTcuNDQzMyAxMS4yODAzIDE2LjMzIDEyLjM5MzZMMTMuNzExNCAxNS4wMTIyTDguOTg3ODEgMTAuMjg4NkwxMS42MDY0IDcuNjcwMDRaTTcuOTI3MTUgMTEuMzQ5M0wxMi42NTA3IDE2LjA3MjlMMTIuMzkzNiAxNi4zM0MxMS4yODAzIDE3LjQ0MzMgMTAuNzIzNiAxOCAxMC4wMzE4IDE4QzkuMzQwMDggMTggOC43ODM0IDE3LjQ0MzMgNy42NzAwNCAxNi4zM0M2LjU1NjY4IDE1LjIxNjYgNiAxNC42NTk5IDYgMTMuOTY4MkM2IDEzLjI3NjQgNi41NTY2OCAxMi43MTk3IDcuNjcwMDQgMTEuNjA2NEw3LjkyNzE1IDExLjM0OTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/EraserCircle";
  */
 const EraserCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-EraserCircle.displayName = "EraserCircle";
-export default EraserCircle;
+EraserCircle.displayName = "EraserCircle"
+export default EraserCircle

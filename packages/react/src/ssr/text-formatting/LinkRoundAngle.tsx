@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/LinkRoundAngle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/LinkRoundAngle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjE2OTM0IDYuMzA4OTdDOC4yNDY2NyA0LjIzMDM0IDExLjYxNDUgNC4yMzAzNCAxMy42OTE4IDYuMzA4OTdDMTUuNzY5NCA4LjM4Nzg1IDE1Ljc2OTQgMTEuNzU4NiAxMy42OTE4IDEzLjgzNzVMMTIuMjYxMiAxNS4yNjg5QzExLjk2ODQgMTUuNTYxOSAxMS45Njg2IDE2LjAzNjggMTIuMjYxNiAxNi4zMjk2QzEyLjU1NDUgMTYuNjIyNCAxMy4wMjk0IDE2LjYyMjIgMTMuMzIyMiAxNi4zMjkyTDE0Ljc1MjggMTQuODk3OEMxNy40MTU3IDEyLjIzMzIgMTcuNDE1NyA3LjkxMzIzIDE0Ljc1MjggNS4yNDg2NEMxMi4wODk2IDIuNTgzNzkgNy43NzE1NCAyLjU4Mzc5IDUuMTA4MzUgNS4yNDg2NEwyLjI0NzIgOC4xMTE1N0MtMC40MTU3MzMgMTAuNzc2MiAtMC40MTU3MzMgMTUuMDk2MSAyLjI0NzIgMTcuNzYwN0MzLjQ4MTg0IDE4Ljk5NjEgNS4wNzQwMSAxOS42NTkzIDYuNjkwMTUgMTkuNzQ4OEM3LjEwMzcyIDE5Ljc3MTggNy40NTc1OCAxOS40NTUxIDcuNDgwNTEgMTkuMDQxNUM3LjUwMzQzIDE4LjYyNzkgNy4xODY3NCAxOC4yNzQxIDYuNzczMTYgMTguMjUxMkM1LjUxMTU2IDE4LjE4MTIgNC4yNzE5MiAxNy42NjQ3IDMuMzA4MTkgMTYuNzAwNEMxLjIzMDYgMTQuNjIxNSAxLjIzMDYgMTEuMjUwOCAzLjMwODE5IDkuMTcxOUw2LjE2OTM0IDYuMzA4OTdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNy4zMDk5IDQuMjUxMTVDMTYuODk2MyA0LjIyODIyIDE2LjU0MjQgNC41NDQ5MSAxNi41MTk1IDQuOTU4NDlDMTYuNDk2NiA1LjM3MjA3IDE2LjgxMzMgNS43MjU5MyAxNy4yMjY4IDUuNzQ4ODVDMTguNDg4NCA1LjgxODc4IDE5LjcyODEgNi4zMzUyOCAyMC42OTE4IDcuMjk5NjFDMjIuNzY5NCA5LjM3ODQ5IDIyLjc2OTQgMTIuNzQ5MiAyMC42OTE4IDE0LjgyODFMMTcuODMwNyAxNy42OTFDMTUuNzUzMyAxOS43Njk3IDEyLjM4NTUgMTkuNzY5NyAxMC4zMDgyIDE3LjY5MUM4LjIzMDYgMTUuNjEyMiA4LjIzMDYgMTIuMjQxNCAxMC4zMDgyIDEwLjE2MjZMMTEuNzM4OCA4LjczMTA4QzEyLjAzMTYgOC40MzgxIDEyLjAzMTQgNy45NjMyMiAxMS43Mzg0IDcuNjcwNDJDMTEuNDQ1NCA3LjM3NzYyIDEwLjk3MDYgNy4zNzc3NyAxMC42Nzc4IDcuNjcwNzVMOS4yNDcyIDkuMTAyMjJDNi41ODQyNyAxMS43NjY4IDYuNTg0MjcgMTYuMDg2OCA5LjI0NzIgMTguNzUxNEMxMS45MTA0IDIxLjQxNjIgMTYuMjI4NSAyMS40MTYyIDE4Ljg5MTYgMTguNzUxNEwyMS43NTI4IDE1Ljg4ODRDMjQuNDE1NyAxMy4yMjM4IDI0LjQxNTcgOC45MDM4NyAyMS43NTI4IDYuMjM5MjhDMjAuNTE4MiA1LjAwMzg3IDE4LjkyNiA0LjM0MDczIDE3LjMwOTkgNC4yNTExNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/LinkRoundAngle";
  */
 const LinkRoundAngle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-LinkRoundAngle.displayName = "LinkRoundAngle";
-export default LinkRoundAngle;
+LinkRoundAngle.displayName = "LinkRoundAngle"
+export default LinkRoundAngle

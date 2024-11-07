@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Scissors";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Scissors"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjY1Mzc2IDEuNjMyNTdDNi40NTA3NiAxLjI3MTUxIDUuOTkzNDkgMS4xNDMzOCA1LjYzMjQ0IDEuMzQ2MzhDNS4yNzEzOCAxLjU0OTM4IDUuMTQzMjQgMi4wMDY2NCA1LjM0NjI0IDIuMzY3N0wxMS4xMzk2IDEyLjY3MThMOC40MzIyNiAxNy40ODcxQzcuODUwNjQgMTYuMTY5NyA2LjUzMjcgMTUuMjUwMSA1IDE1LjI1MDFDMi45Mjg5MyAxNS4yNTAxIDEuMjUgMTYuOTI5MSAxLjI1IDE5LjAwMDFDMS4yNSAyMS4wNzEyIDIuOTI4OTMgMjIuNzUwMSA1IDIyLjc1MDFDNi40MjI4NiAyMi43NTAxIDcuNjYwNjMgMjEuOTU3NyA4LjI5NjA2IDIwLjc5MDFMMTIgMTQuMjAyMkwxNS43MDM5IDIwLjc5QzE2LjMzOTMgMjEuOTU3NyAxNy41NzcxIDIyLjc1MDEgMTkgMjIuNzUwMUMyMS4wNzExIDIyLjc1MDEgMjIuNzUgMjEuMDcxMiAyMi43NSAxOS4wMDAxQzIyLjc1IDE2LjkyOTEgMjEuMDcxMSAxNS4yNTAxIDE5IDE1LjI1MDFDMTcuNDY3MyAxNS4yNTAxIDE2LjE0OTQgMTYuMTY5NiAxNS41Njc3IDE3LjQ4NzFMMTIuODYwNCAxMi42NzE4TDE4LjY1MzggMi4zNjc3QzE4Ljg1NjggMi4wMDY2NCAxOC43Mjg2IDEuNTQ5MzggMTguMzY3NiAxLjM0NjM4QzE4LjAwNjUgMS4xNDMzOCAxNy41NDkyIDEuMjcxNTEgMTcuMzQ2MiAxLjYzMjU3TDEyIDExLjE0MTVMNi42NTM3NiAxLjYzMjU3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Scissors";
  */
 const Scissors: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Scissors.displayName = "Scissors";
-export default Scissors;
+Scissors.displayName = "Scissors"
+export default Scissors

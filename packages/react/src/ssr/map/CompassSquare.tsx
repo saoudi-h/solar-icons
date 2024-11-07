@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/CompassSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/CompassSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk0xMy45NTYzIDE0LjA5NTFDMTMuNzYzMSAxNC4yNjQ2IDEzLjUxNjggMTQuMzYzMSAxMy4wMjQxIDE0LjU2MDJDMTAuNzE0MyAxNS40ODQxIDkuNTU5NDIgMTUuOTQ2MSA4Ljg5OTc2IDE1LjQ5NzhDOC43NDMzNiAxNS4zOTE1IDguNjA4NDYgMTUuMjU2NiA4LjUwMjE4IDE1LjEwMDJDOC4wNTM5MiAxNC40NDA2IDguNTE1ODcgMTMuMjg1NyA5LjQzOTc5IDEwLjk3NTlDOS42MzY4NSAxMC40ODMyIDkuNzM1MzkgMTAuMjM2OSA5LjkwNDg2IDEwLjA0MzdDOS45NDgwNCA5Ljk5NDQxIDkuOTk0NDEgOS45NDgwNCAxMC4wNDM3IDkuOTA0ODZDMTAuMjM2OSA5LjczNTM5IDEwLjQ4MzIgOS42MzY4NSAxMC45NzU5IDkuNDM5NzlDMTMuMjg1NyA4LjUxNTg3IDE0LjQ0MDYgOC4wNTM5MiAxNS4xMDAyIDguNTAyMThDMTUuMjU2NiA4LjYwODQ2IDE1LjM5MTUgOC43NDMzNiAxNS40OTc4IDguODk5NzZDMTUuOTQ2MSA5LjU1OTQyIDE1LjQ4NDEgMTAuNzE0MyAxNC41NjAyIDEzLjAyNDFDMTQuMzYzMSAxMy41MTY4IDE0LjI2NDYgMTMuNzYzMSAxNC4wOTUxIDEzLjk1NjNDMTQuMDUyIDE0LjAwNTYgMTQuMDA1NiAxNC4wNTIgMTMuOTU2MyAxNC4wOTUxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/CompassSquare";
  */
 const CompassSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CompassSquare.displayName = "CompassSquare";
-export default CompassSquare;
+CompassSquare.displayName = "CompassSquare"
+export default CompassSquare

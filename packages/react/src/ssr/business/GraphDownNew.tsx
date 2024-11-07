@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/business/GraphDownNew";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/business/GraphDownNew"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiA1QzIyIDYuNjU2ODUgMjAuNjU2OSA4IDE5IDhDMTcuMzQzMSA4IDE2IDYuNjU2ODUgMTYgNUMxNiAzLjM0MzE1IDE3LjM0MzEgMiAxOSAyQzIwLjY1NjkgMiAyMiAzLjM0MzE1IDIyIDVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkMxMy4zOTg4IDIgMTQuNTkgMiAxNS42MTIgMi4wMzgyNkMxNC45MTk2IDIuODI5NjcgMTQuNSAzLjg2NTg0IDE0LjUgNUMxNC41IDcuNDg1MjggMTYuNTE0NyA5LjUgMTkgOS41QzIwLjEzNDIgOS41IDIxLjE3MDMgOS4wODA0MiAyMS45NjE3IDguMzg4MDJDMjIgOS40MSAyMiAxMC42MDEyIDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMlpNMTQuNSAxMy4yNUMxNC4wODU4IDEzLjI1IDEzLjc1IDEzLjU4NTggMTMuNzUgMTRDMTMuNzUgMTQuNDE0MiAxNC4wODU4IDE0Ljc1IDE0LjUgMTQuNzVIMTdDMTcuNDE0MiAxNC43NSAxNy43NSAxNC40MTQyIDE3Ljc1IDE0VjExLjVDMTcuNzUgMTEuMDg1OCAxNy40MTQyIDEwLjc1IDE3IDEwLjc1QzE2LjU4NTggMTAuNzUgMTYuMjUgMTEuMDg1OCAxNi4yNSAxMS41VjEyLjE4OTNMMTQuMjM3NCAxMC4xNzY4QzEzLjU1NCA5LjQ5MzM2IDEyLjQ0NiA5LjQ5MzM2IDExLjc2MjYgMTAuMTc2OEwxMC4xNzY4IDExLjc2MjZDMTAuMDc5MSAxMS44NjAyIDkuOTIwODUgMTEuODYwMiA5LjgyMzIyIDExLjc2MjZMNy41MzAzMyA5LjQ2OTY3QzcuMjM3NDQgOS4xNzY3OCA2Ljc2MjU2IDkuMTc2NzggNi40Njk2NyA5LjQ2OTY3QzYuMTc2NzggOS43NjI1NiA2LjE3Njc4IDEwLjIzNzQgNi40Njk2NyAxMC41MzAzTDguNzYyNTYgMTIuODIzMkM5LjQ0NTk4IDEzLjUwNjYgMTAuNTU0IDEzLjUwNjYgMTEuMjM3NCAxMi44MjMyTDEyLjgyMzIgMTEuMjM3NEMxMi45MjA5IDExLjEzOTggMTMuMDc5MSAxMS4xMzk4IDEzLjE3NjggMTEuMjM3NEwxNS4xODkzIDEzLjI1SDE0LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/GraphDownNew";
  */
 const GraphDownNew: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-GraphDownNew.displayName = "GraphDownNew";
-export default GraphDownNew;
+GraphDownNew.displayName = "GraphDownNew"
+export default GraphDownNew

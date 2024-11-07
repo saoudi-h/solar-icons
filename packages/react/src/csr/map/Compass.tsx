@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/map/Compass";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/map/Compass"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMy45NTYzIDE0LjA5NDlDMTMuNzYzIDE0LjI2NDQgMTMuNTE2NyAxNC4zNjI5IDEzLjAyNCAxNC41NkMxMC43MTQyIDE1LjQ4MzkgOS41NTkzNiAxNS45NDU5IDguODk5NzEgMTUuNDk3NkM4Ljc0MzMgMTUuMzkxMyA4LjYwODQgMTUuMjU2NCA4LjUwMjEyIDE1LjFDOC4wNTM4NiAxNC40NDA0IDguNTE1ODIgMTMuMjg1NSA5LjQzOTczIDEwLjk3NTdDOS42MzY4IDEwLjQ4MyA5LjczNTMzIDEwLjIzNjcgOS45MDQ4IDEwLjA0MzRDOS45NDc5OSA5Ljk5NDE5IDkuOTk0MzUgOS45NDc4MiAxMC4wNDM2IDkuOTA0NjRDMTAuMjM2OCA5LjczNTE3IDEwLjQ4MzIgOS42MzY2MyAxMC45NzU5IDkuNDM5NTZDMTMuMjg1NiA4LjUxNTY1IDE0LjQ0MDUgOC4wNTM3IDE1LjEwMDIgOC41MDE5NkMxNS4yNTY2IDguNjA4MjQgMTUuMzkxNSA4Ljc0MzE0IDE1LjQ5NzggOC44OTk1NEMxNS45NDYgOS41NTkyIDE1LjQ4NDEgMTAuNzE0MSAxNC41NjAyIDEzLjAyMzlDMTQuMzYzMSAxMy41MTY1IDE0LjI2NDYgMTMuNzYyOSAxNC4wOTUxIDEzLjk1NjFDMTQuMDUxOSAxNC4wMDU0IDE0LjAwNTUgMTQuMDUxNyAxMy45NTYzIDE0LjA5NDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/Compass";
  */
 const Compass: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Compass.displayName = "Compass";
-export default Compass;
+Compass.displayName = "Compass"
+export default Compass

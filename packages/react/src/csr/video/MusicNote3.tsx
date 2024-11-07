@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/MusicNote3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/MusicNote3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4zMTg3IDIuNTA0OThDMTMuMDUxNCAyLjM1NzE2IDExLjg0ODkgMy4xMDAzMyAxMS40MTQ0IDQuMjk5ODlDMTEuMzE2NSA0LjU3MDIzIDExLjI4MjEgNC44NjI1MSAxMS4yNjYgNS4xNjg4OEMxMS4yNTM5IDUuNDAwMDEgMTEuMjUwOSA1LjY3NTUyIDExLjI1MDMgNkwxMS4yNSA2LjQ1NDk5QzExLjI1IDYuNDU5OCAxMS4yNSA2LjQ2NDYgMTEuMjUgNi40NjkzOFYxNC41MzU5QzEwLjQwMDMgMTMuNzM4NCA5LjI1NzIxIDEzLjI1IDggMTMuMjVDNS4zNzY2NSAxMy4yNSAzLjI1IDE1LjM3NjYgMy4yNSAxOEMzLjI1IDIwLjYyMzQgNS4zNzY2NSAyMi43NSA4IDIyLjc1QzEwLjYyMzQgMjIuNzUgMTIuNzUgMjAuNjIzNCAxMi43NSAxOFY5LjIxMDU5QzEyLjg1NDggOS4yNjY0NiAxMi45NjgzIDkuMzIzMTYgMTMuMDkyNyA5LjM4NTI3TDE1LjgwMDIgMTAuNzM5QzE2LjIxODUgMTAuOTQ4MSAxNi41NTg5IDExLjExODMgMTYuODM3OCAxMS4yMzk5QzE3LjExOSAxMS4zNjI1IDE3LjM5NTggMTEuNDYyNSAxNy42ODE0IDExLjQ5NThDMTguOTQ4NiAxMS42NDM2IDIwLjE1MTEgMTAuOTAwNCAyMC41ODU2IDkuNzAwODlDMjAuNjgzNiA5LjQzMDU1IDIwLjcxNzkgOS4xMzgyNiAyMC43MzQxIDguODMxODlDMjAuNzUgOC41MjgwNiAyMC43NSA4LjE0NzUyIDIwLjc1IDcuNjc5ODhMMjAuNzUwMSA3LjU5NzA1QzIwLjc1MDIgNy4yNDkzIDIwLjc1MDMgNi45NzcyNiAyMC43MDEgNi43MTk0NkMyMC41NzQgNi4wNTU4NSAyMC4yMDcxIDUuNDYyMjMgMTkuNjcwNCA1LjA1MTg1QzE5LjQ2MTggNC44OTI0MiAxOS4yMTg1IDQuNzcwODggMTguOTA3NCA0LjYxNTVMMTYuMTk5OSAzLjI2MTc5QzE1Ljc4MTYgMy4wNTI2NCAxNS40NDEyIDIuODgyNDQgMTUuMTYyMyAyLjc2MDg2QzE0Ljg4MTEgMi42MzgyNiAxNC42MDQzIDIuNTM4MjkgMTQuMzE4NyAyLjUwNDk4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/MusicNote3";
  */
 const MusicNote3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MusicNote3.displayName = "MusicNote3";
-export default MusicNote3;
+MusicNote3.displayName = "MusicNote3"
+export default MusicNote3

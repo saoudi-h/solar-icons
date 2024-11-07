@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/Shield";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/Shield"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS4yNSAyLjA3MzI0QzEwLjY0MzcgMi4xODYzNCA5LjkzMTU5IDIuNDMwMTEgOC44Mzc3MiAyLjgwNDU0TDguMjY0OTEgMy4wMDA2MkM1LjI1ODMyIDQuMDI5NzggMy43NTUwMyA0LjU0NDM2IDMuMzc3NTIgNS4wODIyM0MzLjAwODI1IDUuNjA4MzYgMy4wMDAxOCA3LjE0OTU3IDMgMTAuMjA5M0wxMS4yNSA3LjQ1OTI1VjIuMDczMjRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMS4yNSA5LjA0MDM5TDMgMTEuNzkwNFYxMS45OTEyQzMgMTcuNjI5MyA3LjIzODk2IDIwLjM2NTMgOS44OTg1NiAyMS41MjcxQzEwLjQwOTMgMjEuNzUwMiAxMC43MzkyIDIxLjg5NDMgMTEuMjUgMjEuOTU5NVY5LjA0MDM5WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIuNzUgMjEuOTU5NVY5LjA0MDM5TDIxIDExLjc5MDRWMTEuOTkxMkMyMSAxNy42MjkzIDE2Ljc2MSAyMC4zNjUzIDE0LjEwMTQgMjEuNTI3MUMxMy41OTA3IDIxLjc1MDIgMTMuMjYwOCAyMS44OTQzIDEyLjc1IDIxLjk1OTVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMi43NSA3LjQ1OTI1VjIuMDczMjRDMTMuMzU2MyAyLjE4NjM0IDE0LjA2ODQgMi40MzAxMSAxNS4xNjIzIDIuODA0NTRMMTUuNzM1MSAzLjAwMDYyQzE4Ljc0MTcgNC4wMjk3OCAyMC4yNDUgNC41NDQzNiAyMC42MjI1IDUuMDgyMjNDMjAuOTkxOCA1LjYwODM2IDIwLjk5OTggNy4xNDk1NyAyMSAxMC4yMDkzTDEyLjc1IDcuNDU5MjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/Shield";
  */
 const Shield: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Shield.displayName = "Shield";
-export default Shield;
+Shield.displayName = "Shield"
+export default Shield

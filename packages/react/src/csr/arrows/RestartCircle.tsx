@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RestartCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RestartCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xNS45MzQ2IDUuNTkxNThDMTYuMjE3IDUuNzA2NjIgMTYuNDAxNyA1Ljk4MTIxIDE2LjQwMTcgNi4yODYxNlY5LjAwMDY3QzE2LjQwMTcgOS40MTQ4OSAxNi4wNjU5IDkuNzUwNjcgMTUuNjUxNyA5Ljc1MDY3SDEzQzEyLjY5ODMgOS43NTA2NyAxMi40MjU5IDkuNTY5ODQgMTIuMzA4OCA5LjI5MTc0QzEyLjE5MTcgOS4wMTM2NCAxMi4yNTI3IDguNjkyNDUgMTIuNDYzNSA4LjQ3NjU5TDEzLjIyNSA3LjY5NzA1QzExLjc3OTUgNy4yNTE0MyAxMC4xNDY3IDcuNjEzMDMgOS4wMDA5NyA4Ljc4NTk2QzcuMzMzMDEgMTAuNDkzNSA3LjMzMzAxIDEzLjI2OSA5LjAwMDk3IDE0Ljk3NjVDMTAuNjU5MyAxNi42NzQyIDEzLjM0MDcgMTYuNjc0MiAxNC45OTkgMTQuOTc2NUMxNS42NzY5IDE0LjI4MjYgMTYuMDgwNSAxMy40MTEyIDE2LjIwNjkgMTIuNTA0NUMxNi4yNjUxIDEyLjA4NjUgMTYuNTk3MiAxMS43MzQ5IDE3LjAxOTIgMTEuNzM0OUMxNy40MjQ2IDExLjczNDkgMTcuNzYwOSAxMi4wNTk1IDE3LjcyMTcgMTIuNDYzQzE3LjU5NTcgMTMuNzYwNiAxNy4wNDcxIDE1LjAyNjUgMTYuMDcyIDE2LjAyNDdDMTMuODI1MiAxOC4zMjQ4IDEwLjE3NDggMTguMzI0OCA3LjkyNzk2IDE2LjAyNDdDNS42OTA2OCAxMy43MzQ0IDUuNjkwNjggMTAuMDI4MSA3LjkyNzk2IDcuNzM3OEM5LjY2NTUxIDUuOTU5MDUgMTIuMjQ0IDUuNTU0NjUgMTQuMzY0NyA2LjUzMDM3TDE1LjExNTIgNS43NjIwOEMxNS4zMjgzIDUuNTQzOTMgMTUuNjUyMiA1LjQ3NjUzIDE1LjkzNDYgNS41OTE1OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RestartCircle";
  */
 const RestartCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RestartCircle.displayName = "RestartCircle";
-export default RestartCircle;
+RestartCircle.displayName = "RestartCircle"
+export default RestartCircle

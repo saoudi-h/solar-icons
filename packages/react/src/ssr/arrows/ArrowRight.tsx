@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows/ArrowRight";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows/ArrowRight"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDExLjI1QzMuNTg1NzkgMTEuMjUgMy4yNSAxMS41ODU4IDMuMjUgMTJDMy4yNSAxMi40MTQyIDMuNTg1NzkgMTIuNzUgNCAxMi43NUgxMy4yNVYxOEMxMy4yNSAxOC4zMDM0IDEzLjQzMjcgMTguNTc2OCAxMy43MTMgMTguNjkyOUMxMy45OTMyIDE4LjgwOSAxNC4zMTU4IDE4Ljc0NDkgMTQuNTMwMyAxOC41MzA0TDIwLjUzMDMgMTIuNTMwNEMyMC42NzEgMTIuMzg5NyAyMC43NSAxMi4xOTg5IDIwLjc1IDEyQzIwLjc1IDExLjgwMTEgMjAuNjcxIDExLjYxMDMgMjAuNTMwMyAxMS40Njk3TDE0LjUzMDMgNS40Njk2OUMxNC4zMTU4IDUuMjU1MTkgMTMuOTkzMiA1LjE5MTAzIDEzLjcxMyA1LjMwNzExQzEzLjQzMjcgNS40MjMyIDEzLjI1IDUuNjk2NjggMTMuMjUgNi4wMDAwMlYxMS4yNUg0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/ArrowRight";
  */
 const ArrowRight: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ArrowRight.displayName = "ArrowRight";
-export default ArrowRight;
+ArrowRight.displayName = "ArrowRight"
+export default ArrowRight

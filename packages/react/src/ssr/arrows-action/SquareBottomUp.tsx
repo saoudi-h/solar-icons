@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/SquareBottomUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/SquareBottomUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjU2ODAyIDE1LjI1TDIuMzYyNzIgMTguNDU1M0MyIDE2Ljk5MTMgMiAxNC45NjA1IDIgMTJDMiA3LjI4NTk1IDIgNC45Mjg5MyAzLjQ2NDQ3IDMuNDY0NDdDNC45Mjg5MyAyIDcuMjg1OTUgMiAxMiAyQzE2LjcxNCAyIDE5LjA3MTEgMiAyMC41MzU1IDMuNDY0NDdDMjIgNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM5LjAzOTU1IDIyIDcuMDA4NjkgMjIgNS41NDQ3IDIxLjYzNzNMOC43NSAxOC40MzJWMTlDOC43NSAyMC4yNDI2IDkuNzU3MzYgMjEuMjUgMTEgMjEuMjVDMTIuMjQyNiAyMS4yNSAxMy4yNSAyMC4yNDI2IDEzLjI1IDE5VjEzQzEzLjI1IDExLjc1NzQgMTIuMjQyNiAxMC43NSAxMSAxMC43NUg1QzMuNzU3MzYgMTAuNzUgMi43NSAxMS43NTc0IDIuNzUgMTNDMi43NSAxNC4yNDI2IDMuNzU3MzYgMTUuMjUgNSAxNS4yNUg1LjU2ODAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNSAxMi4yNUM0LjU4NTc5IDEyLjI1IDQuMjUgMTIuNTg1OCA0LjI1IDEzQzQuMjUgMTMuNDE0MiA0LjU4NTc5IDEzLjc1IDUgMTMuNzVIOS4xODkzNEwyLjQ2OTY3IDIwLjQ2OTdDMi4xNzY3OCAyMC43NjI2IDIuMTc2NzggMjEuMjM3NCAyLjQ2OTY3IDIxLjUzMDNDMi43NjI1NiAyMS44MjMyIDMuMjM3NDQgMjEuODIzMiAzLjUzMDMzIDIxLjUzMDNMMTAuMjUgMTQuODEwN1YxOUMxMC4yNSAxOS40MTQyIDEwLjU4NTggMTkuNzUgMTEgMTkuNzVDMTEuNDE0MiAxOS43NSAxMS43NSAxOS40MTQyIDExLjc1IDE5VjEzQzExLjc1IDEyLjU4NTggMTEuNDE0MiAxMi4yNSAxMSAxMi4yNUg1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/SquareBottomUp";
  */
 const SquareBottomUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareBottomUp.displayName = "SquareBottomUp";
-export default SquareBottomUp;
+SquareBottomUp.displayName = "SquareBottomUp"
+export default SquareBottomUp

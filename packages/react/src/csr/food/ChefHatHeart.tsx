@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/ChefHatHeart";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/ChefHatHeart"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMEMyIDcuMjM4NTggNC4yMzg1OCA1IDcgNUM3LjI1MDUyIDUgNy40OTY3MyA1LjAxODQyIDcuNzM3MzYgNS4wNTM5OUM4LjMzOTYxIDMuMjc4MDYgMTAuMDIwNiAyIDEyIDJDMTMuOTc5NCAyIDE1LjY2MDQgMy4yNzgwNiAxNi4yNjI2IDUuMDUzOTlDMTYuNTAzMyA1LjAxODQyIDE2Ljc0OTUgNSAxNyA1QzE5Ljc2MTQgNSAyMiA3LjIzODU4IDIyIDEwQzIyIDEyLjA1MDMgMjAuNzY1OSAxMy44MTI0IDE5IDE0LjU4NEwxOSAxNy4yNUg1VjE0LjU4NEMzLjIzNDEgMTMuODEyNCAyIDEyLjA1MDMgMiAxMFpNMTEuMDQyOSAxMy42NjkzQzEwLjE2NDkgMTMuMDI1MSA5IDExLjk4NDkgOSAxMS4wMDA0QzkgOS4zMjcyMSAxMC42NSA4LjcwMjUgMTIgOS45OTUwNkMxMy4zNSA4LjcwMjUgMTUgOS4zMjcyMSAxNSAxMS4wMDA0QzE1IDExLjk4NDkgMTMuODM1MiAxMy4wMjUxIDEyLjk1NzEgMTMuNjY5M0MxMi41Mzc0IDEzLjk3NzMgMTIuMzI3NSAxNC4xMzEzIDEyIDE0LjEzMTNDMTEuNjcyNSAxNC4xMzEzIDExLjQ2MjYgMTMuOTc3MyAxMS4wNDI5IDEzLjY2OTNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik01LjU4NTc5IDIxLjQxNDJDNS4wODM0MyAyMC45MTE5IDUuMDExODggMjAuMTQ2OSA1LjAwMTY5IDE4Ljc1SDE4Ljk5ODNDMTguOTg4MSAyMC4xNDY5IDE4LjkxNjYgMjAuOTExOSAxOC40MTQyIDIxLjQxNDJDMTcuODI4NCAyMiAxNi44ODU2IDIyIDE1IDIySDlDNy4xMTQzOCAyMiA2LjE3MTU3IDIyIDUuNTg1NzkgMjEuNDE0MloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/ChefHatHeart";
  */
 const ChefHatHeart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChefHatHeart.displayName = "ChefHatHeart";
-export default ChefHatHeart;
+ChefHatHeart.displayName = "ChefHatHeart"
+export default ChefHatHeart

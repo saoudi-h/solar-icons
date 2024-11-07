@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareTransferVertical";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareTransferVertical"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MyIDQuOTI4OTMgMiA3LjI4NTk1IDIgMTJDMiAxNi43MTQgMiAxOS4wNzExIDMuNDY0NDcgMjAuNTM1NVpNNy41NjUwNyAxMy4wNjkzQzcuMjkyNzEgMTIuNzU3MyA2LjgxODkzIDEyLjcyNTEgNi41MDY4NSAxMi45OTc0QzYuMTk0NzcgMTMuMjY5OCA2LjE2MjU3IDEzLjc0MzYgNi40MzQ5MyAxNC4wNTU3TDkuNDM0OTMgMTcuNDkzMkM5LjY0MDUgMTcuNzI4NyA5Ljk3MDYyIDE3LjgxMiAxMC4yNjMzIDE3LjcwMjJDMTAuNTU2MSAxNy41OTI1IDEwLjc1IDE3LjMxMjYgMTAuNzUgMTdWN0MxMC43NSA2LjU4NTc5IDEwLjQxNDIgNi4yNSAxMCA2LjI1QzkuNTg1NzkgNi4yNSA5LjI1IDYuNTg1NzkgOS4yNSA3VjE1TDcuNTY1MDcgMTMuMDY5M1pNMTMuNzM2NyA2LjI5Nzc1QzEzLjQ0MzkgNi40MDc1MyAxMy4yNSA2LjY4NzM3IDEzLjI1IDdMMTMuMjUgMTdDMTMuMjUgMTcuNDE0MiAxMy41ODU4IDE3Ljc1IDE0IDE3Ljc1QzE0LjQxNDIgMTcuNzUgMTQuNzUgMTcuNDE0MiAxNC43NSAxN0wxNC43NSA5TDE2LjQzNDkgMTAuOTMwNkMxNi43MDczIDExLjI0MjcgMTcuMTgxMSAxMS4yNzQ5IDE3LjQ5MzEgMTEuMDAyNkMxNy44MDUyIDEwLjczMDIgMTcuODM3NCAxMC4yNTY0IDE3LjU2NTEgOS45NDQzNUwxNC41NjUxIDYuNTA2ODVDMTQuMzU5NSA2LjI3MTMgMTQuMDI5NCA2LjE4Nzk4IDEzLjczNjcgNi4yOTc3NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareTransferVertical";
  */
 const SquareTransferVertical: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareTransferVertical.displayName = "SquareTransferVertical";
-export default SquareTransferVertical;
+SquareTransferVertical.displayName = "SquareTransferVertical"
+export default SquareTransferVertical

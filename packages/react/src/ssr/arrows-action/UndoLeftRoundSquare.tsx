@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/UndoLeftRoundSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/UndoLeftRoundSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQxIDIyIDEyQzIyIDcuMjg1OTggMjIgNC45Mjg5MyAyMC41MzU1IDMuNDY0NDdDMTkuMDcxMSAyIDE2LjcxNCAyIDEyIDJDNy4yODU5NSAyIDQuOTI4OTMgMiAzLjQ2NDQ3IDMuNDY0NDdaTTkuMjU4NzEgNy45NzM5NUM5LjU2MzA4IDcuNjkzIDkuNTgyMDUgNy4yMTg1MSA5LjMwMTEgNi45MTQxNEM5LjAyMDE1IDYuNjA5NzggOC41NDU2NSA2LjU5MDggOC4yNDEyOSA2Ljg3MTc1TDUuOTkxMjkgOC45NDg2N0M1LjgzNzQ4IDkuMDkwNjUgNS43NSA5LjI5MDQ1IDUuNzUgOS40OTk3N0M1Ljc1IDkuNzA5MSA1LjgzNzQ4IDkuOTA4OSA1Ljk5MTI5IDEwLjA1MDlMOC4yNDEyOSAxMi4xMjc4QzguNTQ1NjUgMTIuNDA4OCA5LjAyMDE1IDEyLjM4OTggOS4zMDExIDEyLjA4NTRDOS41ODIwNSAxMS43ODEgOS41NjMwOCAxMS4zMDY1IDkuMjU4NzEgMTEuMDI1Nkw4LjQxODI0IDEwLjI0OThIMTQuMDM4NUMxNS41MzYgMTAuMjQ5OCAxNi43NSAxMS40NjM4IDE2Ljc1IDEyLjk2MTNDMTYuNzUgMTQuNDU4OSAxNS41MzYgMTUuNjcyOSAxNC4wMzg1IDE1LjY3MjlIOS41QzkuMDg1NzkgMTUuNjcyOSA4Ljc1IDE2LjAwODYgOC43NSAxNi40MjI5QzguNzUgMTYuODM3MSA5LjA4NTc5IDE3LjE3MjkgOS41IDE3LjE3MjlIMTQuMDM4NUMxNi4zNjQ0IDE3LjE3MjkgMTguMjUgMTUuMjg3MyAxOC4yNSAxMi45NjEzQzE4LjI1IDEwLjYzNTMgMTYuMzY0NCA4Ljc0OTc3IDE0LjAzODUgOC43NDk3N0g4LjQxODI0TDkuMjU4NzEgNy45NzM5NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/UndoLeftRoundSquare";
  */
 const UndoLeftRoundSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UndoLeftRoundSquare.displayName = "UndoLeftRoundSquare";
-export default UndoLeftRoundSquare;
+UndoLeftRoundSquare.displayName = "UndoLeftRoundSquare"
+export default UndoLeftRoundSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/KeyMinimalisticSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/KeyMinimalisticSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi4zOTA1IDkuNzIzNzhDMTIuOTExMiA5LjIwMzA4IDEzLjc1NTQgOS4yMDMwOCAxNC4yNzYxIDkuNzIzNzhDMTQuNzk2OCAxMC4yNDQ1IDE0Ljc5NjggMTEuMDg4NyAxNC4yNzYxIDExLjYwOTRDMTMuNzU1NCAxMi4xMzAxIDEyLjkxMTIgMTIuMTMwMSAxMi4zOTA1IDExLjYwOTRDMTEuODY5OCAxMS4wODg3IDExLjg2OTggMTAuMjQ0NSAxMi4zOTA1IDkuNzIzNzhaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTYuNjUxNCA3LjM0ODYxQzE4LjQ0OTUgOS4xNDY3NSAxOC40NDk1IDEyLjA2MjEgMTYuNjUxNCAxMy44NjAzQzE1LjQ1NzQgMTUuMDU0MiAxMy43NzA5IDE1LjQ1NTQgMTIuMjQ1OSAxNS4wNjM4QzEyIDE1LjAwMDYgMTEuNzM0MiAxNS4wNTY1IDExLjU1NDYgMTUuMjM2MUwxMC40MzcxIDE2LjM1MzZMMTAuNDM0MiAxNi4zNTA3TDkuMjY4MTMgMTUuMTk3NUM4Ljk3MzYzIDE0LjkwNjIgOC40OTg3NiAxNC45MDg4IDguMjA3NDggMTUuMjAzM0M3LjkxNjIxIDE1LjQ5NzggNy45MTg4MiAxNS45NzI3IDguMjEzMzIgMTYuMjY0TDkuMzc2NCAxNy40MTQzTDkuMDc5NyAxNy43MTFDOC44Njc3NiAxNy45MjI5IDguNTcwOTcgMTguMDI3MSA4LjI3MzA3IDE3Ljk5NEw2Ljg4MDY4IDE3LjgzOTJDNi43MzIyMyAxNy44MjI4IDYuNTkzODEgMTcuNzU2MiA2LjQ4ODIgMTcuNjUwNkw2LjM0OTM5IDE3LjUxMThDNi4yNDM3NyAxNy40MDYyIDYuMTc3MjUgMTcuMjY3OCA2LjE2MDc1IDE3LjExOTNMNi4wMDYwNCAxNS43MjY5QzUuOTcyOTQgMTUuNDI5IDYuMDc3MDUgMTUuMTMyMiA2LjI4ODk5IDE0LjkyMDNMOC43NjM3MiAxMi40NDU2QzguOTQzMjggMTIuMjY2IDguOTk5MzcgMTIgOC45MzYyMSAxMS43NTQxQzguNTQ0NiAxMC4yMjkxIDguOTQ1NzggOC41NDI1NyAxMC4xMzk3IDcuMzQ4NjFDMTEuOTM3OSA1LjU1MDQ2IDE0Ljg1MzIgNS41NTA0NiAxNi42NTE0IDcuMzQ4NjFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/KeyMinimalisticSquare";
  */
 const KeyMinimalisticSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-KeyMinimalisticSquare.displayName = "KeyMinimalisticSquare";
-export default KeyMinimalisticSquare;
+KeyMinimalisticSquare.displayName = "KeyMinimalisticSquare"
+export default KeyMinimalisticSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/ShieldKeyholeMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/ShieldKeyholeMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC44NzUzIDguNTUyMTJDMTEuMzE0NiA4LjI5ODQ4IDExLjgwMTcgOC4yMTAwNyAxMi4yNjg0IDguMjY2NjRDMTIuOTQ4OSA4LjM0OTEyIDEzLjU4MDQgOC43Mzg1NiAxMy45NDgxIDkuMzc1NDlDMTQuMzE1OSAxMC4wMTI0IDE0LjMzNzQgMTAuNzU0IDE0LjA2ODYgMTEuMzg0NkMxMy44ODQyIDExLjgxNyAxMy41NjQxIDEyLjE5NDcgMTMuMTI0OCAxMi40NDg0QzEyLjA0ODggMTMuMDY5NSAxMC42NzMxIDEyLjcwMDkgMTAuMDUxOSAxMS42MjVDOS40MzA2OSAxMC41NDkxIDkuNzk5MzMgOS4xNzMzIDEwLjg3NTMgOC41NTIxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zLjM3NzUyIDUuMDgyNDFDMyA1LjYyMDI4IDMgNy4yMTkwNyAzIDEwLjQxNjdWMTEuOTkxNEMzIDE3LjYyOTQgNy4yMzg5NiAyMC4zNjU1IDkuODk4NTYgMjEuNTI3M0MxMC42MiAyMS44NDI0IDEwLjk4MDcgMjIgMTIgMjJDMTMuMDE5MyAyMiAxMy4zOCAyMS44NDI0IDE0LjEwMTQgMjEuNTI3M0MxNi43NjEgMjAuMzY1NSAyMSAxNy42Mjk0IDIxIDExLjk5MTRWMTAuNDE2N0MyMSA3LjIxOTA3IDIxIDUuNjIwMjggMjAuNjIyNSA1LjA4MjQxQzIwLjI0NSA0LjU0NDU0IDE4Ljc0MTcgNC4wMjk5NiAxNS43MzUxIDMuMDAwNzlMMTUuMTYyMyAyLjgwNDcyQzEzLjU5NSAyLjI2ODI0IDEyLjgxMTQgMiAxMiAyQzExLjE4ODYgMiAxMC40MDUgMi4yNjgyNCA4LjgzNzcyIDIuODA0NzJMOC4yNjQ5MSAzLjAwMDc5QzUuMjU4MzIgNC4wMjk5NiAzLjc1NTAzIDQuNTQ0NTQgMy4zNzc1MiA1LjA4MjQxWk0xMi40NDg5IDYuNzc3NTRDMTEuNjcwOCA2LjY4MzIyIDEwLjg1NTUgNi44MzE0NyAxMC4xMjUzIDcuMjUzMDhDOC4zMzE4OSA4LjI4ODQ4IDcuNzE3NDQgMTAuNTgxNiA4Ljc1Mjg0IDEyLjM3NUM5LjMxMTI3IDEzLjM0MjIgMTAuMjM1NiAxMy45NjY1IDExLjI1IDE0LjE3NFYxNi41MDAyQzExLjI1IDE2LjkxNDUgMTEuNTg1OCAxNy4yNTAyIDEyIDE3LjI1MDJDMTIuNDE0MiAxNy4yNTAyIDEyLjc1IDE2LjkxNDUgMTIuNzUgMTYuNTAwMlYxNC4xNzVDMTMuMTM1NiAxNC4wOTYzIDEzLjUxNTIgMTMuOTU1IDEzLjg3NDggMTMuNzQ3NEMxNC42MDUgMTMuMzI1OCAxNS4xNDEgMTIuNjkzOSAxNS40NDg0IDExLjk3MjhDMTUuODk0MyAxMC45MjcgMTUuODYwOCA5LjY4ODI3IDE1LjI0NzIgOC42MjU0OUMxNC42MzM2IDcuNTYyNzIgMTMuNTc3NiA2LjkxNDM0IDEyLjQ0ODkgNi43Nzc1NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldKeyholeMinimalistic";
  */
 const ShieldKeyholeMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldKeyholeMinimalistic.displayName = "ShieldKeyholeMinimalistic";
-export default ShieldKeyholeMinimalistic;
+ShieldKeyholeMinimalistic.displayName = "ShieldKeyholeMinimalistic"
+export default ShieldKeyholeMinimalistic

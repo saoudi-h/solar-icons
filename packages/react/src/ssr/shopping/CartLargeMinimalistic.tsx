@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/shopping/CartLargeMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/shopping/CartLargeMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yLjA4NDE2IDIuNzUxMkMyLjIyMTU1IDIuMzYwNDQgMi42NDk3IDIuMTU1MDMgMy4wNDA0NyAyLjI5MjQyTDMuMzQxODcgMi4zOTgzOEMzLjk1ODM5IDIuNjE1MTEgNC40ODIwMyAyLjc5OTE5IDQuODk0MTEgMy4wMDEzOUM1LjMzNDc0IDMuMjE3NTkgNS43MTI1OSAzLjQ4MzkzIDUuOTk2NzcgMy44OTk3OUM2LjI3ODc1IDQuMzEyNDMgNi4zOTUxNyA0Ljc2NTE1IDYuNDQ4OSA1LjI2MTUzQzYuNDcyOTUgNS40ODM3MyA2LjQ4NTY0IDUuNzI5NjcgNi40OTIzMyA2SDE3LjEzMDVDMTguODE1NSA2IDIwLjMzMjMgNiAyMC43NzYyIDYuNTc3MDhDMjEuMjIwMiA3LjE1NDE3IDIxLjA0NjYgOC4wMjM2OSAyMC42OTk1IDkuNzYyNzVMMjAuMTk5NyAxMi4xODc1QzE5Ljg4NDYgMTMuNzE2NCAxOS43MjcgMTQuNDgwOCAxOS4xNzUzIDE0LjkzMDRDMTguNjIzNiAxNS4zOCAxNy44NDMxIDE1LjM4IDE2LjI4MjEgMTUuMzhIMTAuOTc5MkM4LjE5MDI4IDE1LjM4IDYuNzk1ODMgMTUuMzggNS45Mjk0MyAxNC40NjYyQzUuMDYzMDIgMTMuNTUyMyA0Ljk5OTc5IDEyLjU4MTYgNC45OTk3OSA5LjY0TDQuOTk5NzkgNy4wMzgzMkM0Ljk5OTc5IDYuMjk4MzcgNC45OTg3NyA1LjgwMzE2IDQuOTU3NjEgNS40MjI5NUM0LjkxODI4IDUuMDU5NiA0Ljg0ODU4IDQuODc4MTggNC43NTgzMiA0Ljc0NjA5QzQuNjcwMjYgNC42MTcyMyA0LjUzNjU5IDQuNDk2OCA0LjIzMzM2IDQuMzQ4MDJDMy45MTA1MiA0LjE4OTYxIDMuNDcxNzcgNC4wMzQwNiAyLjgwNDE2IDMuNzk5MzRMMi41NDI5NSAzLjcwNzVDMi4xNTIxOCAzLjU3MDEyIDEuOTQ2NzggMy4xNDE5NyAyLjA4NDE2IDIuNzUxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTcuNSAxOEM4LjMyODQzIDE4IDkgMTguNjcxNiA5IDE5LjVDOSAyMC4zMjg0IDguMzI4NDMgMjEgNy41IDIxQzYuNjcxNTcgMjEgNiAyMC4zMjg0IDYgMTkuNUM2IDE4LjY3MTYgNi42NzE1NyAxOCA3LjUgMThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNi41IDE4LjAwMDFDMTcuMzI4NCAxOC4wMDAxIDE4IDE4LjY3MTYgMTggMTkuNTAwMUMxOCAyMC4zMjg1IDE3LjMyODQgMjEuMDAwMSAxNi41IDIxLjAwMDFDMTUuNjcxNiAyMS4wMDAxIDE1IDIwLjMyODUgMTUgMTkuNTAwMUMxNSAxOC42NzE2IDE1LjY3MTYgMTguMDAwMSAxNi41IDE4LjAwMDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/CartLargeMinimalistic";
  */
 const CartLargeMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CartLargeMinimalistic.displayName = "CartLargeMinimalistic";
-export default CartLargeMinimalistic;
+CartLargeMinimalistic.displayName = "CartLargeMinimalistic"
+export default CartLargeMinimalistic

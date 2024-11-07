@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/call/IncomingCallRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/call/IncomingCallRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOSA1TDE1IDlNMTUgOVY2TTE1IDlIMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTAuMDM3NiA1LjMxNjE3TDEwLjY4NjYgNi40NzkxQzExLjI3MjMgNy41Mjg1OCAxMS4wMzcyIDguOTA1MzIgMTAuMTE0NyA5LjgyNzhDMTAuMTE0NyA5LjgyNzggMTAuMTE0NyA5LjgyNzggMTAuMTE0NyA5LjgyNzhDMTAuMTE0NiA5LjgyNzkyIDguOTk1ODggMTAuOTQ2OCAxMS4wMjQ1IDEyLjk3NTVDMTMuMDUyNSAxNS4wMDM1IDE0LjE3MTQgMTMuODg2MSAxNC4xNzIyIDEzLjg4NTNDMTQuMTcyMiAxMy44ODUzIDE0LjE3MjIgMTMuODg1MyAxNC4xNzIyIDEzLjg4NTNDMTUuMDk0NyAxMi45NjI4IDE2LjQ3MTQgMTIuNzI3NyAxNy41MjA5IDEzLjMxMzRMMTguNjgzOCAxMy45NjI0QzIwLjI2ODYgMTQuODQ2OCAyMC40NTU3IDE3LjA2OTIgMTkuMDYyOCAxOC40NjIyQzE4LjIyNTggMTkuMjk5MiAxNy4yMDA0IDE5Ljk1MDUgMTYuMDY2OSAxOS45OTM0QzE0LjE1ODggMjAuMDY1OCAxMC45MTgzIDE5LjU4MjkgNy42Njc3IDE2LjMzMjNDNC40MTcxMyAxMy4wODE3IDMuOTM0MjEgOS44NDEyMiA0LjAwNjU1IDcuOTMzMDlDNC4wNDk1MiA2Ljc5OTYgNC43MDA4IDUuNzc0MjMgNS41Mzc4MSA0LjkzNzIzQzYuOTMwNzYgMy41NDQyOCA5LjE1MzE3IDMuNzMxNDQgMTAuMDM3NiA1LjMxNjE3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/IncomingCallRounded";
  */
 const IncomingCallRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-IncomingCallRounded.displayName = "IncomingCallRounded";
-export default IncomingCallRounded;
+IncomingCallRounded.displayName = "IncomingCallRounded"
+export default IncomingCallRounded

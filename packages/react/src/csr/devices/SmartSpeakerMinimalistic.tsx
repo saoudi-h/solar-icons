@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/SmartSpeakerMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/SmartSpeakerMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy4yMzkzNiAyLjQ2MTRDNS4xNTEyNCAyLjg1MTc2IDMuNTYyMjUgNC41NTM2NyAzLjMyMTAyIDYuNjU4MThMMy4zMDUzMiA2Ljc5NTE2QzIuODk4MjMgMTAuMzQ2NyAyLjg5ODIzIDEzLjkzMjkgMy4zMDUzMiAxNy40ODQ0QzMuNTUyNjYgMTkuNjQyMiA1LjI0ODY4IDIxLjM1MTIgNy40MTAxOSAyMS42MjA2TDguNDI1NjkgMjEuNzQ3MUM4LjkyMDUxIDIxLjgwODggOS4xNjc5MiAyMS44Mzk2IDkuNDE1MDUgMjEuODY1NEMxMS4xMzM1IDIyLjA0NDkgMTIuODY2IDIyLjA0NDkgMTQuNTg0NSAyMS44NjU0QzE0LjgzMTYgMjEuODM5NiAxNS4wNzkgMjEuODA4OCAxNS41NzM4IDIxLjc0NzFMMTYuNDggMjEuNjM0MkMxOC43MDQxIDIxLjM1NyAyMC40NDczIDE5LjU5NTEgMjAuNjk0OCAxNy4zNzM5TDIwLjcxMiAxNy4yMTk5QzIxLjEwNzIgMTMuNjcyOSAyMS4wOTU3IDEwLjA5MjUgMjAuNjc3NCA2LjU0ODA5QzIwLjQzNjcgNC41MDc2NCAxOC44OTM0IDIuODYwMTkgMTYuODY4MSAyLjQ4MTU3TDE2LjU0NTEgMi40MjExOUMxMy41NDEgMS44NTk2IDEwLjQ1ODUgMS44NTk2IDcuNDU0NCAyLjQyMTJMNy4yMzkzNiAyLjQ2MTRaTTYuNDI1MDEgNS41MTg0NUM2LjY5MDk2IDUuMjAwOSA3LjE2Mzk5IDUuMTU5MDYgNy40ODE1NCA1LjQyNTAxQzguMDU4NzEgNS45MDgzNyA5LjY3NjE3IDYuNzUgMTIgNi43NUMxNC4zMjM4IDYuNzUgMTUuOTQxMyA1LjkwODM3IDE2LjUxODUgNS40MjUwMUMxNi44MzYgNS4xNTkwNiAxNy4zMDkgNS4yMDA5IDE3LjU3NSA1LjUxODQ1QzE3Ljg0MDkgNS44MzYwMSAxNy43OTkxIDYuMzA5MDQgMTcuNDgxNSA2LjU3NDk5QzE2LjYxOTYgNy4yOTY4OCAxNC42NTYyIDguMjUgMTIgOC4yNUM5LjM0MzgzIDguMjUgNy4zODA0MyA3LjI5Njg4IDYuNTE4NDUgNi41NzQ5OUM2LjIwMDkgNi4zMDkwNCA2LjE1OTA2IDUuODM2MDEgNi40MjUwMSA1LjUxODQ1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/SmartSpeakerMinimalistic";
  */
 const SmartSpeakerMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SmartSpeakerMinimalistic.displayName = "SmartSpeakerMinimalistic";
-export default SmartSpeakerMinimalistic;
+SmartSpeakerMinimalistic.displayName = "SmartSpeakerMinimalistic"
+export default SmartSpeakerMinimalistic

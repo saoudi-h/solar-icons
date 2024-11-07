@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/Fridge";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/Fridge"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4xNzE1NyAzLjE3MTU3QzQgNC4zNDMxNSA0IDYuMjI4NzYgNCAxMFYxMC43NUgyMFYxMEMyMCA2LjIyODc2IDIwIDQuMzQzMTUgMTguODI4NCAzLjE3MTU3QzE3LjY1NjkgMiAxNS43NzEyIDIgMTIgMkM4LjIyODc2IDIgNi4zNDMxNSAyIDUuMTcxNTcgMy4xNzE1N1pNMTcgNi4yNUMxNy40MTQyIDYuMjUgMTcuNzUgNi41ODU3OSAxNy43NSA3VjlDMTcuNzUgOS40MTQyMSAxNy40MTQyIDkuNzUgMTcgOS43NUMxNi41ODU4IDkuNzUgMTYuMjUgOS40MTQyMSAxNi4yNSA5VjdDMTYuMjUgNi41ODU3OSAxNi41ODU4IDYuMjUgMTcgNi4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00IDEyLjI1VjEzQzQgMTYuNzcxMiA0IDE4LjY1NjkgNS4xNzE1NyAxOS44Mjg0QzUuNDc1OTkgMjAuMTMyOCA1LjgyODYxIDIwLjM1ODIgNi4yNSAyMC41MjQ5VjIyQzYuMjUgMjIuNDE0MiA2LjU4NTc5IDIyLjc1IDcgMjIuNzVIOEM4LjQxNDIxIDIyLjc1IDguNzUgMjIuNDE0MiA4Ljc1IDIyVjIwLjk1MzRDOS42NDQ2MSAyMSAxMC43MTI0IDIxIDEyIDIxQzEzLjI4NzYgMjEgMTQuMzU1NCAyMSAxNS4yNSAyMC45NTM0VjIyQzE1LjI1IDIyLjQxNDIgMTUuNTg1OCAyMi43NSAxNiAyMi43NUgxN0MxNy40MTQyIDIyLjc1IDE3Ljc1IDIyLjQxNDIgMTcuNzUgMjJWMjAuNTI0OUMxOC4xNzE0IDIwLjM1ODIgMTguNTI0IDIwLjEzMjggMTguODI4NCAxOS44Mjg0QzIwIDE4LjY1NjkgMjAgMTYuNzcxMiAyMCAxM1YxMi4yNUg0Wk0xNyAxMy4yNUMxNy40MTQyIDEzLjI1IDE3Ljc1IDEzLjU4NTggMTcuNzUgMTRWMTZDMTcuNzUgMTYuNDE0MiAxNy40MTQyIDE2Ljc1IDE3IDE2Ljc1QzE2LjU4NTggMTYuNzUgMTYuMjUgMTYuNDE0MiAxNi4yNSAxNlYxNEMxNi4yNSAxMy41ODU4IDE2LjU4NTggMTMuMjUgMTcgMTMuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Fridge";
  */
 const Fridge: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Fridge.displayName = "Fridge";
-export default Fridge;
+Fridge.displayName = "Fridge"
+export default Fridge

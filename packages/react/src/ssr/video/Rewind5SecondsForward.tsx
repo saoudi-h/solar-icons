@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Rewind5SecondsForward";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Rewind5SecondsForward"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuMTc0NSA4LjYwNDcyQzEwLjM0NDcgOC4wOTQyOSAxMC44MjIzIDcuNzUgMTEuMzYwNCA3Ljc1SDE0QzE0LjQxNDIgNy43NSAxNC43NSA4LjA4NTc5IDE0Ljc1IDguNUMxNC43NSA4LjkxNDIxIDE0LjQxNDIgOS4yNSAxNCA5LjI1SDExLjU0MDZMMTEuMDQwNiAxMC43NUgxMkMxMy41MTg4IDEwLjc1IDE0Ljc1IDExLjk4MTIgMTQuNzUgMTMuNUMxNC43NSAxNS4wMTg4IDEzLjUxODggMTYuMjUgMTIgMTYuMjVIMTBDOS41ODU3OSAxNi4yNSA5LjI1IDE1LjkxNDIgOS4yNSAxNS41QzkuMjUgMTUuMDg1OCA5LjU4NTc5IDE0Ljc1IDEwIDE0Ljc1SDEyQzEyLjY5MDQgMTQuNzUgMTMuMjUgMTQuMTkwNCAxMy4yNSAxMy41QzEzLjI1IDEyLjgwOTYgMTIuNjkwNCAxMi4yNSAxMiAxMi4yNUgxMC42OTM3QzkuODQwNTIgMTIuMjUgOS4yMzgwNSAxMS40MTQxIDkuNTA3ODYgMTAuNjA0N0wxMC4xNzQ1IDguNjA0NzJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuNjc2IDEuNjc1MTFDMTIuNTUxMSAxLjQxNTI2IDEyLjI4ODMgMS4yNSAxMiAxLjI1QzExLjI2NDcgMS4yNSAxMC41NDU5IDEuMzIzOTQgOS44NTA4IDEuNDY1MDNDNC45NDM2NyAyLjQ2MTEyIDEuMjUgNi43OTgzNyAxLjI1IDEyQzEuMjUgMTcuOTM3MSA2LjA2Mjk0IDIyLjc1IDEyIDIyLjc1QzE3LjkzNzEgMjIuNzUgMjIuNzUgMTcuOTM3MSAyMi43NSAxMkMyMi43NSA3LjU5MDY1IDIwLjA5NTQgMy44MDI5OCAxNi4zMDAzIDIuMTQ0ODJDMTUuOTIwNyAxLjk3ODk4IDE1LjQ3ODYgMi4xNTIyNCAxNS4zMTI3IDIuNTMxODFDMTUuMTQ2OSAyLjkxMTM3IDE1LjMyMDIgMy4zNTM1MSAxNS42OTk3IDMuNTE5MzVDMTguOTY4MiA0Ljk0NzQyIDIxLjI1IDguMjA4MDggMjEuMjUgMTJDMjEuMjUgMTcuMTA4NiAxNy4xMDg2IDIxLjI1IDEyIDIxLjI1QzYuODkxMzcgMjEuMjUgMi43NSAxNy4xMDg2IDIuNzUgMTJDMi43NSA3Ljg0OTUzIDUuNDg0MjEgNC4zMzYyMiA5LjI1IDMuMTY1NDRWNC41QzkuMjUgNC44MTg1MiA5LjQ1MTE4IDUuMTAyMjkgOS43NTE3NSA1LjIwNzcyQzEwLjA1MjMgNS4zMTMxNSAxMC4zODY3IDUuMjE3MjQgMTAuNTg1NyA0Ljk2ODUyTDEyLjU4NTcgMi40Njg1MkMxMi43NjU4IDIuMjQzMzkgMTIuODAwOSAxLjkzNDk2IDEyLjY3NiAxLjY3NTExWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Rewind5SecondsForward";
  */
 const Rewind5SecondsForward: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Rewind5SecondsForward.displayName = "Rewind5SecondsForward";
-export default Rewind5SecondsForward;
+Rewind5SecondsForward.displayName = "Rewind5SecondsForward"
+export default Rewind5SecondsForward

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/ClapperboardText";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/ClapperboardText"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41NDAxIDIuMDg3ODNDMTUuMzI5MyAyIDEzLjg0NTIgMiAxMiAySDExLjkwMTRMOC40MDEzOSA3LjI1MDAySDEzLjA5ODZMMTYuNTQwMSAyLjA4NzgzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTAuMDk1NyAyLjAwNDQ1QzYuNjIxOTQgMi4wMzA3MiA0LjcxNjgzIDIuMjEyMSAzLjQ2NDQ3IDMuNDY0NDdDMi42MDY4IDQuMzIyMTMgMi4yNTE0MyA1LjQ4NTkzIDIuMTA0MTggNy4yNTAwMkg2LjU5ODYxTDEwLjA5NTcgMi4wMDQ0NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yLjAyNjQ0IDguNzUwMDJDMiA5LjY4ODc1IDIgMTAuNzYzMyAyIDEyQzIgMTYuNzE0IDIgMTkuMDcxMSAzLjQ2NDQ3IDIwLjUzNTVDNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyIDIyQzE2LjcxNCAyMiAxOS4wNzExIDIyIDIwLjUzNTUgMjAuNTM1NUMyMiAxOS4wNzExIDIyIDE2LjcxNCAyMiAxMkMyMiAxMC43NjMzIDIyIDkuNjg4NzUgMjEuOTczNiA4Ljc1MDAySDIuMDI2NDRaTTUuNzUgMTRDNS43NSAxMy41ODU4IDYuMDg1NzkgMTMuMjUgNi41IDEzLjI1SDE0LjVDMTQuOTE0MiAxMy4yNSAxNS4yNSAxMy41ODU4IDE1LjI1IDE0QzE1LjI1IDE0LjQxNDIgMTQuOTE0MiAxNC43NSAxNC41IDE0Ljc1SDYuNUM2LjA4NTc5IDE0Ljc1IDUuNzUgMTQuNDE0MiA1Ljc1IDE0Wk02LjUgMTYuNzVDNi4wODU3OSAxNi43NSA1Ljc1IDE3LjA4NTggNS43NSAxNy41QzUuNzUgMTcuOTE0MiA2LjA4NTc5IDE4LjI1IDYuNSAxOC4yNUgxMkMxMi40MTQyIDE4LjI1IDEyLjc1IDE3LjkxNDIgMTIuNzUgMTcuNUMxMi43NSAxNy4wODU4IDEyLjQxNDIgMTYuNzUgMTIgMTYuNzVINi41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjAuNTM1NSAzLjQ2NDQ3QzIxLjM5MzIgNC4zMjIxMyAyMS43NDg2IDUuNDg1OTMgMjEuODk1OCA3LjI1MDAySDE0LjkwMTRMMTguMTk4NyAyLjMwNDAzQzE5LjE5MjQgMi41MTM0NSAxOS45MzgyIDIuODY3MTQgMjAuNTM1NSAzLjQ2NDQ3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/ClapperboardText";
  */
 const ClapperboardText: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ClapperboardText.displayName = "ClapperboardText";
-export default ClapperboardText;
+ClapperboardText.displayName = "ClapperboardText"
+export default ClapperboardText

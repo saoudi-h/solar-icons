@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/security/ShieldPlus";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/security/ShieldPlus"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4zNzc1MiA1LjA4MjQxQzMgNS42MjAyOCAzIDcuMjE5MDcgMyAxMC40MTY3VjExLjk5MTRDMyAxNy42Mjk0IDcuMjM4OTYgMjAuMzY1NSA5Ljg5ODU2IDIxLjUyNzNDMTAuNjIgMjEuODQyNCAxMC45ODA3IDIyIDEyIDIyQzEzLjAxOTMgMjIgMTMuMzggMjEuODQyNCAxNC4xMDE0IDIxLjUyNzNDMTYuNzYxIDIwLjM2NTUgMjEgMTcuNjI5NCAyMSAxMS45OTE0VjEwLjQxNjdDMjEgNy4yMTkwNyAyMSA1LjYyMDI4IDIwLjYyMjUgNS4wODI0MUMyMC4yNDUgNC41NDQ1NCAxOC43NDE3IDQuMDI5OTYgMTUuNzM1MSAzLjAwMDc5TDE1LjE2MjMgMi44MDQ3MkMxMy41OTUgMi4yNjgyNCAxMi44MTE0IDIgMTIgMkMxMS4xODg2IDIgMTAuNDA1IDIuMjY4MjQgOC44Mzc3MiAyLjgwNDcyTDguMjY0OTEgMy4wMDA3OUM1LjI1ODMyIDQuMDI5OTYgMy43NTUwMyA0LjU0NDU0IDMuMzc3NTIgNS4wODI0MVpNMTIuNzUgOUMxMi43NSA4LjU4NTc5IDEyLjQxNDIgOC4yNSAxMiA4LjI1QzExLjU4NTggOC4yNSAxMS4yNSA4LjU4NTc5IDExLjI1IDlMMTEuMjUgMTEuMjVIOUM4LjU4NTc5IDExLjI1IDguMjUgMTEuNTg1OCA4LjI1IDEyQzguMjUgMTIuNDE0MiA4LjU4NTc5IDEyLjc1IDkgMTIuNzVIMTEuMjVWMTVDMTEuMjUgMTUuNDE0MiAxMS41ODU4IDE1Ljc1IDEyIDE1Ljc1QzEyLjQxNDIgMTUuNzUgMTIuNzUgMTUuNDE0MiAxMi43NSAxNVYxMi43NUgxNUMxNS40MTQyIDEyLjc1IDE1Ljc1IDEyLjQxNDIgMTUuNzUgMTJDMTUuNzUgMTEuNTg1OCAxNS40MTQyIDExLjI1IDE1IDExLjI1SDEyLjc1TDEyLjc1IDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/ShieldPlus";
  */
 const ShieldPlus: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ShieldPlus.displayName = "ShieldPlus";
-export default ShieldPlus;
+ShieldPlus.displayName = "ShieldPlus"
+export default ShieldPlus

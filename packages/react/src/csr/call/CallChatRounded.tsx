@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/CallChatRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/CallChatRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNyAxMkMxOS43NjE0IDEyIDIyIDkuNzYxNDIgMjIgN0MyMiA0LjIzODU4IDE5Ljc2MTQgMiAxNyAyQzE0LjIzODYgMiAxMiA0LjIzODU4IDEyIDdDMTIgNy43OTk4NCAxMi4xODc4IDguNTU1ODIgMTIuNTIxNyA5LjIyNjI0QzEyLjYxMDUgOS40MDQ0IDEyLjY0IDkuNjA4MDMgMTIuNTg4NiA5LjgwMDMxTDEyLjI5MDggMTAuOTEzM0MxMi4xNjE1IDExLjM5NjUgMTIuNjAzNSAxMS44Mzg1IDEzLjA4NjcgMTEuNzA5MkwxNC4xOTk3IDExLjQxMTRDMTQuMzkyIDExLjM2IDE0LjU5NTYgMTEuMzg5NSAxNC43NzM4IDExLjQ3ODNDMTUuNDQ0MiAxMS44MTIyIDE2LjIwMDIgMTIgMTcgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik04LjAzNzU5IDcuMzE2MTdMOC42ODY2IDguNDc5MUM5LjI3MjMgOS41Mjg1OCA5LjAzNzE4IDEwLjkwNTMgOC4xMTQ3MSAxMS44Mjc4QzguMTE0NzEgMTEuODI3OCA4LjExNDcxIDExLjgyNzggOC4xMTQ3MSAxMS44Mjc4QzguMTE0NTkgMTEuODI3OSA2Ljk5NTg4IDEyLjk0NjggOS4wMjQ1MSAxNC45NzU1QzExLjA1MjUgMTcuMDAzNSAxMi4xNzE0IDE1Ljg4NjEgMTIuMTcyMiAxNS44ODUzQzEyLjE3MjIgMTUuODg1MyAxMi4xNzIyIDE1Ljg4NTMgMTIuMTcyMiAxNS44ODUzQzEzLjA5NDcgMTQuOTYyOCAxNC40NzE0IDE0LjcyNzcgMTUuNTIwOSAxNS4zMTM0TDE2LjY4MzggMTUuOTYyNEMxOC4yNjg2IDE2Ljg0NjggMTguNDU1NyAxOS4wNjkyIDE3LjA2MjggMjAuNDYyMkMxNi4yMjU4IDIxLjI5OTIgMTUuMjAwNCAyMS45NTA1IDE0LjA2NjkgMjEuOTkzNEMxMi4xNTg4IDIyLjA2NTggOC45MTgyOCAyMS41ODI5IDUuNjY3NyAxOC4zMzIzQzIuNDE3MTMgMTUuMDgxNyAxLjkzNDIxIDExLjg0MTIgMi4wMDY1NSA5LjkzMzA5QzIuMDQ5NTIgOC43OTk2IDIuNzAwOCA3Ljc3NDIzIDMuNTM3ODEgNi45MzcyM0M0LjkzMDc2IDUuNTQ0MjggNy4xNTMxNyA1LjczMTQ0IDguMDM3NTkgNy4zMTYxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/CallChatRounded";
  */
 const CallChatRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CallChatRounded.displayName = "CallChatRounded";
-export default CallChatRounded;
+CallChatRounded.displayName = "CallChatRounded"
+export default CallChatRounded

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/RoundArrowLeftDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/RoundArrowLeftDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTE0LjI1IDE1QzE0LjI1IDE1LjQxNDIgMTMuOTE0MiAxNS43NSAxMy41IDE1Ljc1SDlDOC41ODU3OSAxNS43NSA4LjI1IDE1LjQxNDIgOC4yNSAxNVYxMC41QzguMjUgMTAuMDg1OCA4LjU4NTc5IDkuNzUgOSA5Ljc1QzkuNDE0MjEgOS43NSA5Ljc1IDEwLjA4NTggOS43NSAxMC41VjEzLjE4OTNMMTQuNDY5NyA4LjQ2OTY3QzE0Ljc2MjYgOC4xNzY3OCAxNS4yMzc0IDguMTc2NzggMTUuNTMwMyA4LjQ2OTY3QzE1LjgyMzIgOC43NjI1NiAxNS44MjMyIDkuMjM3NDQgMTUuNTMwMyA5LjUzMDMzTDEwLjgxMDcgMTQuMjVIMTMuNUMxMy45MTQyIDE0LjI1IDE0LjI1IDE0LjU4NTggMTQuMjUgMTVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/RoundArrowLeftDown";
  */
 const RoundArrowLeftDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RoundArrowLeftDown.displayName = "RoundArrowLeftDown";
-export default RoundArrowLeftDown;
+RoundArrowLeftDown.displayName = "RoundArrowLeftDown"
+export default RoundArrowLeftDown

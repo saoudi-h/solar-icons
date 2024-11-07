@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Import";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Import"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuNTMwMyAxMC40Njk3QzE1LjIzNzQgMTAuMTc2OCAxNC43NjI2IDEwLjE3NjggMTQuNDY5NyAxMC40Njk3TDEyLjc1IDEyLjE4OTNWNEMxMi43NSAzLjU4NTc5IDEyLjQxNDIgMy4yNSAxMiAzLjI1QzExLjU4NTggMy4yNSAxMS4yNSAzLjU4NTc5IDExLjI1IDRMMTEuMjUgMTIuMTg5M0w5LjUzMDMzIDEwLjQ2OTdDOS4yMzc0NCAxMC4xNzY4IDguNzYyNTYgMTAuMTc2OCA4LjQ2OTY3IDEwLjQ2OTdDOC4xNzY3OCAxMC43NjI2IDguMTc2NzggMTEuMjM3NCA4LjQ2OTY3IDExLjUzMDNMMTEuNDY5NyAxNC41MzAzQzExLjc2MjYgMTQuODIzMiAxMi4yMzc0IDE0LjgyMzIgMTIuNTMwMyAxNC41MzAzTDE1LjUzMDMgMTEuNTMwM0MxNS44MjMyIDExLjIzNzQgMTUuODIzMiAxMC43NjI2IDE1LjUzMDMgMTAuNDY5N1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3Ljc0NzYgMTJDMTcuMjk5NiAxMiAxNi45MDc3IDEyLjI3NDIgMTYuNTkxIDEyLjU5MUwxMy41OTEgMTUuNTkxQzEyLjcxMjMgMTYuNDY5NyAxMS4yODc3IDE2LjQ2OTcgMTAuNDA5IDE1LjU5MUw3LjQwOTAxIDEyLjU5MUM3LjA5MjI2IDEyLjI3NDIgNi43MDA0MSAxMiA2LjI1MjQ1IDEySDRDNCAxNi40MTgzIDcuNTgxNzIgMjAgMTIgMjBDMTYuNDE4MyAyMCAyMCAxNi40MTgzIDIwIDEySDE3Ljc0NzZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Import";
  */
 const Import: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Import.displayName = "Import";
-export default Import;
+Import.displayName = "Import"
+export default Import

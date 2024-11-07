@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/ChatRoundMoney";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/ChatRoundMoney"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzEwLjQwMDMgMjIgOC44ODgzNyAyMS42MjQ0IDcuNTQ3NTMgMjAuOTU2NUM3LjE5MTIxIDIwLjc3OTEgNi43ODM5MyAyMC43MiA2LjM5OTM5IDIwLjgyMjlMNC4xNzMzNSAyMS40MTg1QzMuMjA3MDEgMjEuNjc3IDIuMzIyOTUgMjAuNzkzIDIuNTgxNTEgMTkuODI2N0wzLjE3NzEyIDE3LjYwMDZDMy4yODAwMSAxNy4yMTYxIDMuMjIwOTQgMTYuODA4OCAzLjA0MzQ2IDE2LjQ1MjVDMi4zNzU2MiAxNS4xMTE2IDIgMTMuNTk5NyAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlpNMTIgNy4yNUMxMi40MTQyIDcuMjUgMTIuNzUgNy41ODU3OSAxMi43NSA4VjguMDEwMjNDMTMuODM4OCA4LjI4NDU0IDE0Ljc1IDkuMTQzIDE0Ljc1IDEwLjMzMzNDMTQuNzUgMTAuNzQ3NSAxNC40MTQyIDExLjA4MzMgMTQgMTEuMDgzM0MxMy41ODU4IDExLjA4MzMgMTMuMjUgMTAuNzQ3NSAxMy4yNSAxMC4zMzMzQzEzLjI1IDkuOTQ5MyAxMi44MjQyIDkuNDE2NjcgMTIgOS40MTY2N0MxMS4xNzU4IDkuNDE2NjcgMTAuNzUgOS45NDkzIDEwLjc1IDEwLjMzMzNDMTAuNzUgMTAuNzE3NCAxMS4xNzU4IDExLjI1IDEyIDExLjI1QzEzLjM4NDkgMTEuMjUgMTQuNzUgMTIuMjA5NyAxNC43NSAxMy42NjY3QzE0Ljc1IDE0Ljg1NyAxMy44Mzg4IDE1LjcxNTUgMTIuNzUgMTUuOTg5OFYxNkMxMi43NSAxNi40MTQyIDEyLjQxNDIgMTYuNzUgMTIgMTYuNzVDMTEuNTg1OCAxNi43NSAxMS4yNSAxNi40MTQyIDExLjI1IDE2VjE1Ljk4OThDMTAuMTYxMiAxNS43MTU1IDkuMjUgMTQuODU3IDkuMjUgMTMuNjY2N0M5LjI1IDEzLjI1MjUgOS41ODU3OSAxMi45MTY3IDEwIDEyLjkxNjdDMTAuNDE0MiAxMi45MTY3IDEwLjc1IDEzLjI1MjUgMTAuNzUgMTMuNjY2N0MxMC43NSAxNC4wNTA3IDExLjE3NTggMTQuNTgzMyAxMiAxNC41ODMzQzEyLjgyNDIgMTQuNTgzMyAxMy4yNSAxNC4wNTA3IDEzLjI1IDEzLjY2NjdDMTMuMjUgMTMuMjgyNiAxMi44MjQyIDEyLjc1IDEyIDEyLjc1QzEwLjYxNTEgMTIuNzUgOS4yNSAxMS43OTAzIDkuMjUgMTAuMzMzM0M5LjI1IDkuMTQzIDEwLjE2MTIgOC4yODQ1NCAxMS4yNSA4LjAxMDIzVjhDMTEuMjUgNy41ODU3OSAxMS41ODU4IDcuMjUgMTIgNy4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatRoundMoney";
  */
 const ChatRoundMoney: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatRoundMoney.displayName = "ChatRoundMoney";
-export default ChatRoundMoney;
+ChatRoundMoney.displayName = "ChatRoundMoney"
+export default ChatRoundMoney

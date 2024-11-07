@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/faces/SadCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/faces/SadCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xNSAxMkMxNS41NTIzIDEyIDE2IDExLjMyODQgMTYgMTAuNUMxNiA5LjY3MTU3IDE1LjU1MjMgOSAxNSA5QzE0LjQ0NzcgOSAxNCA5LjY3MTU3IDE0IDEwLjVDMTQgMTEuMzI4NCAxNC40NDc3IDEyIDE1IDEyWk0xMCAxMC41QzEwIDExLjMyODQgOS41NTIyOCAxMiA5IDEyQzguNDQ3NzIgMTIgOCAxMS4zMjg0IDggMTAuNUM4IDkuNjcxNTcgOC40NDc3MiA5IDkgOUM5LjU1MjI4IDkgMTAgOS42NzE1NyAxMCAxMC41Wk04LjM5NzQ3IDE3LjQ0NjZDOC42NDQxMyAxNy43Nzk0IDkuMTEzODUgMTcuODQ5MiA5LjQ0NjYxIDE3LjYwMjVDMTAuMTc1IDE3LjA2MjcgMTEuMDU0MSAxNi43NSAxMiAxNi43NUMxMi45NDU5IDE2Ljc1IDEzLjgyNSAxNy4wNjI3IDE0LjU1MzQgMTcuNjAyNUMxNC44ODYyIDE3Ljg0OTIgMTUuMzU1OSAxNy43Nzk0IDE1LjYwMjUgMTcuNDQ2NkMxNS44NDkyIDE3LjExMzggMTUuNzc5NCAxNi42NDQxIDE1LjQ0NjYgMTYuMzk3NUMxNC40NzQyIDE1LjY3NjcgMTMuMjg1IDE1LjI1IDEyIDE1LjI1QzEwLjcxNSAxNS4yNSA5LjUyNTggMTUuNjc2NyA4LjU1MzM5IDE2LjM5NzVDOC4yMjA2MiAxNi42NDQxIDguMTUwODIgMTcuMTEzOCA4LjM5NzQ3IDE3LjQ0NjZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/SadCircle";
  */
 const SadCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SadCircle.displayName = "SadCircle";
-export default SadCircle;
+SadCircle.displayName = "SadCircle"
+export default SadCircle

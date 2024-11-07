@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notifications/NotificationUnread";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notifications/NotificationUnread"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxMy4zOTg4IDIgMTQuNTkgMiAxNS42MTIgMi4wMzgyNkMxNC45MTk2IDIuODI5NjcgMTQuNSAzLjg2NTg0IDE0LjUgNUMxNC41IDcuNDg1MjggMTYuNTE0NyA5LjUgMTkgOS41QzIwLjEzNDIgOS41IDIxLjE3MDMgOS4wODA0MiAyMS45NjE3IDguMzg4MDJDMjIgOS40MDk5OSAyMiAxMC42MDEyIDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDVDMjIgNi42NTY4NSAyMC42NTY5IDggMTkgOEMxNy4zNDMxIDggMTYgNi42NTY4NSAxNiA1QzE2IDMuMzQzMTUgMTcuMzQzMSAyIDE5IDJDMjAuNjU2OSAyIDIyIDMuMzQzMTUgMjIgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notifications/NotificationUnread";
  */
 const NotificationUnread: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-NotificationUnread.displayName = "NotificationUnread";
-export default NotificationUnread;
+NotificationUnread.displayName = "NotificationUnread"
+export default NotificationUnread

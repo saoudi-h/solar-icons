@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Pause";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Pause"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDZDMiA0LjExNDM4IDIgMy4xNzE1NyAyLjU4NTc5IDIuNTg1NzlDMy4xNzE1NyAyIDQuMTE0MzggMiA2IDJDNy44ODU2MiAyIDguODI4NDMgMiA5LjQxNDIxIDIuNTg1NzlDMTAgMy4xNzE1NyAxMCA0LjExNDM4IDEwIDZWMThDMTAgMTkuODg1NiAxMCAyMC44Mjg0IDkuNDE0MjEgMjEuNDE0MkM4LjgyODQzIDIyIDcuODg1NjIgMjIgNiAyMkM0LjExNDM4IDIyIDMuMTcxNTcgMjIgMi41ODU3OSAyMS40MTQyQzIgMjAuODI4NCAyIDE5Ljg4NTYgMiAxOFY2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTQgNkMxNCA0LjExNDM4IDE0IDMuMTcxNTcgMTQuNTg1OCAyLjU4NTc5QzE1LjE3MTYgMiAxNi4xMTQ0IDIgMTggMkMxOS44ODU2IDIgMjAuODI4NCAyIDIxLjQxNDIgMi41ODU3OUMyMiAzLjE3MTU3IDIyIDQuMTE0MzggMjIgNlYxOEMyMiAxOS44ODU2IDIyIDIwLjgyODQgMjEuNDE0MiAyMS40MTQyQzIwLjgyODQgMjIgMTkuODg1NiAyMiAxOCAyMkMxNi4xMTQ0IDIyIDE1LjE3MTYgMjIgMTQuNTg1OCAyMS40MTQyQzE0IDIwLjgyODQgMTQgMTkuODg1NiAxNCAxOFY2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Pause";
  */
 const Pause: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Pause.displayName = "Pause";
-export default Pause;
+Pause.displayName = "Pause"
+export default Pause

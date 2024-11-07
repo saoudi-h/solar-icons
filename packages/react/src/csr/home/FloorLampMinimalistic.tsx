@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/FloorLampMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/FloorLampMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC41OTg3IDNDMTQuMDggMi40MDIyIDEzLjExMDQgMiAxMiAyQzEwLjg4OTYgMiA5LjkyMDA4IDIuNDAyMiA5LjQwMTM3IDNIMTQuNTk4N1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEyLjc0ODUgNy45NTU0OUMxNC43NDczIDcuNzE1NDcgMTYuMzU4OSA2LjUyODkzIDE2Ljg0NzUgNC45ODQ0OUMxNy4wMTQxIDQuNDU3OTIgMTYuNTUyNCA0IDE2LjAwMDEgNEg4LjAwMDA5QzcuNDQ3OCA0IDYuOTg2MDggNC40NTc5MiA3LjE1MjY2IDQuOTg0NDlDNy42NDEyMiA2LjUyODggOS4yNTI1OCA3LjcxNTI3IDExLjI1MTEgNy45NTU0M0MxMS4yNTAzIDcuOTcwMTcgMTEuMjQ5OCA3Ljk4NTA0IDExLjI0OTggOFYxNC40MDdDMTEuMTI3NiAxNC4yODk1IDEwLjk5ODcgMTQuMTc4IDEwLjg2MzQgMTQuMDczTDEwLjg1MTcgMTQuMDYzOUw2Ljk2NDcyIDExLjI4NTZMNi44ODg1NSAxMS4yMjg1QzcuMjYzOTEgMTAuMjk3IDcuMTYzNjEgOS4yMzQ2MyA2LjYyODkyIDguMzkyOTdDNi4zMjQxNCA3LjkxMzIxIDUuNjYwOTQgNy45OTU0NCA1LjMxMTMzIDguNDQyOTlMMi43NzkyNCAxMS42ODQ1QzIuNDI5NjMgMTIuMTMyIDIuNTA1MzUgMTIuODAxOCAzLjAzODg5IDEyLjk4ODhDNC4wNDQzNiAxMy4zNDEgNS4xNzgxNCAxMy4xNDIgNi4wMDgzNCAxMi40NDMzTDYuMDc4OTIgMTIuNDk2Mkw5Ljk1NDc1IDE1LjI2NjZDMTAuNzYxNyAxNS44OTgzIDExLjIzOTcgMTYuODY5NCAxMS4yNDk4IDE3LjkwMzNWMjEuMjVIOC45OTk4NEM4LjU4NTYzIDIxLjI1IDguMjQ5ODQgMjEuNTg1OCA4LjI0OTg0IDIyQzguMjQ5ODQgMjIuNDE0MiA4LjU4NTYzIDIyLjc1IDguOTk5ODQgMjIuNzVIMTQuOTk5OEMxNS40MTQxIDIyLjc1IDE1Ljc0OTggMjIuNDE0MiAxNS43NDk4IDIyQzE1Ljc0OTggMjEuNTg1OCAxNS40MTQxIDIxLjI1IDE0Ljk5OTggMjEuMjVIMTIuNzQ5OFYxOS4wMTU5TDEyLjc1IDE5VjE3LjkzNjhMMTIuNzQ5OCAxNy44OTY2VjhDMTIuNzQ5OCA3Ljk4NTA2IDEyLjc0OTQgNy45NzAyMSAxMi43NDg1IDcuOTU1NDlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yLjE1NjgyIDEwLjg1NjlMNC4zNjg1MiA4LjAyNTYzQzMuNjYwNjEgNy45MTIwMiAyLjkxNDI5IDguMTc3OTEgMi40MzkwNCA4Ljc4NjNDMS45NjM3OSA5LjM5NDY5IDEuODgxOTQgMTAuMTg5IDIuMTU2ODIgMTAuODU2OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/FloorLampMinimalistic";
  */
 const FloorLampMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FloorLampMinimalistic.displayName = "FloorLampMinimalistic";
-export default FloorLampMinimalistic;
+FloorLampMinimalistic.displayName = "FloorLampMinimalistic"
+export default FloorLampMinimalistic

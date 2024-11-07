@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/text-formatting/TextUnderline";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/text-formatting/TextUnderline"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDNDNSAyLjQ0NzcyIDQuNTUyMjggMiA0IDJDMy40NDc3MiAyIDMgMi40NDc3MiAzIDNWOUMzIDEzLjk3MDYgNy4wMjk0NCAxOCAxMiAxOEMxNi45NzA2IDE4IDIxIDEzLjk3MDYgMjEgOVYzQzIxIDIuNDQ3NzIgMjAuNTUyMyAyIDIwIDJDMTkuNDQ3NyAyIDE5IDIuNDQ3NzIgMTkgM1Y5QzE5IDEyLjg2NiAxNS44NjYgMTYgMTIgMTZDOC4xMzQwMSAxNiA1IDEyLjg2NiA1IDlWM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTQgMjBDMy40NDc3MiAyMCAzIDIwLjQ0NzcgMyAyMUMzIDIxLjU1MjMgMy40NDc3MiAyMiA0IDIySDIwQzIwLjU1MjMgMjIgMjEgMjEuNTUyMyAyMSAyMUMyMSAyMC40NDc3IDIwLjU1MjMgMjAgMjAgMjBINFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextUnderline";
  */
 const TextUnderline: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextUnderline.displayName = "TextUnderline";
-export default TextUnderline;
+TextUnderline.displayName = "TextUnderline"
+export default TextUnderline

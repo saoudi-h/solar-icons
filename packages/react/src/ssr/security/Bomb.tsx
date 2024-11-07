@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/Bomb";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/Bomb"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNyAxNC41QzE3IDE4LjY0MjEgMTMuNjQyMSAyMiA5LjUgMjJDNS4zNTc4NiAyMiAyIDE4LjY0MjEgMiAxNC41QzIgMTAuMzU3OSA1LjM1Nzg2IDcgOS41IDdDMTMuNjQyMSA3IDE3IDEwLjM1NzkgMTcgMTQuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3Ljk4MTEgMi4zNTMxNkMxOC4xNjY4IDEuODgyMjggMTguODMzMiAxLjg4MjI4IDE5LjAxODkgMi4zNTMxNkwxOS42NzMzIDQuMDEyNDJDMTkuNzMgNC4xNTYxOCAxOS44NDM4IDQuMjY5OTggMTkuOTg3NiA0LjMyNjY4TDIxLjY0NjggNC45ODEwOEMyMi4xMTc3IDUuMTY2NzkgMjIuMTE3NyA1LjgzMzIxIDIxLjY0NjggNi4wMTg5MkwxOS45ODc2IDYuNjczMzJDMTkuODQzOCA2LjczMDAyIDE5LjczIDYuODQzODIgMTkuNjczMyA2Ljk4NzU4TDE5LjAxODkgOC42NDY4NEMxOC44MzMyIDkuMTE3NzIgMTguMTY2OCA5LjExNzcyIDE3Ljk4MTEgOC42NDY4NEwxNy4zMjY3IDYuOTg3NThDMTcuMjcgNi44NDM4MiAxNy4xNTYyIDYuNzMwMDIgMTcuMDEyNCA2LjY3MzMyTDE1LjM1MzIgNi4wMTg5MkMxNC44ODIzIDUuODMzMjEgMTQuODgyMyA1LjE2Njc5IDE1LjM1MzIgNC45ODEwOEwxNy4wMTI0IDQuMzI2NjhDMTcuMTU2MiA0LjI2OTk4IDE3LjI3IDQuMTU2MTggMTcuMzI2NyA0LjAxMjQyTDE3Ljk4MTEgMi4zNTMxNloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE2LjAxNzUgOS4wNDMyOEwxNi43NjY5IDguMjkzODZMMTYuNDY2OSA3LjUzMzEyTDE1LjcwNjMgNy4yMzMxNUwxNC45NTY4IDcuOTgyNjFDMTUuMzQwNyA4LjMwNDM2IDE1LjY5NTcgOC42NTk0IDE2LjAxNzUgOS4wNDMyOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/Bomb";
  */
 const Bomb: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bomb.displayName = "Bomb";
-export default Bomb;
+Bomb.displayName = "Bomb"
+export default Bomb

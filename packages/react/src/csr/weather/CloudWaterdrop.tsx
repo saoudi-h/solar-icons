@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/CloudWaterdrop";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/CloudWaterdrop"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNSAxOS4wODM3QzE1IDIwLjY5NDYgMTMuNjU2OSAyMi4wMDA0IDEyIDIyLjAwMDRDMTAuMzQzMSAyMi4wMDA0IDkgMjAuNjk0NiA5IDE5LjA4MzdDOSAxOC4xNzE4IDkuOTYxNDMgMTYuOTgzOCAxMC43OTU4IDE2LjEyNDVDMTEuNDYyNiAxNS40Mzc3IDEyLjUzNzQgMTUuNDM3NyAxMy4yMDQyIDE2LjEyNDVDMTQuMDM4NiAxNi45ODM4IDE1IDE4LjE3MTggMTUgMTkuMDgzN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTkuNzE5NTcgMTUuMDc5NkM5LjI3MTAxIDE1LjU0MTYgOC43NTIxNSAxNi4xMjc4IDguMzM1ODcgMTYuNzUzOUM3Ljk2NDQ3IDE3LjMxMjYgNy41Mjc1OCAxOC4xMTYyIDcuNTAxMjUgMTlINi4yODU3MUMzLjkxODc4IDE5IDIgMTcuMTAzOCAyIDE0Ljc2NDdDMiAxMi40MjU2IDMuOTE4NzggMTAuNTI5NCA2LjI4NTcxIDEwLjUyOTRDNi41Njk4MyAxMC41Mjk0IDYuODQ3NSAxMC41NTY3IDcuMTE2MTYgMTAuNjA4OUM2Ljg4NzA2IDkuOTk3OCA2Ljc2MTkgOS4zMzY4NyA2Ljc2MTkgOC42NDcwNkM2Ljc2MTkgNS41MjgyNyA5LjMyMDI4IDMgMTIuNDc2MiAzQzE1LjQxNTkgMyAxNy44MzcxIDUuMTkzNzEgMTguMTU1MSA4LjAxNDk4QzIwLjM5MyA4Ljc4MDI0IDIyIDEwLjg4MTEgMjIgMTMuMzUyOUMyMiAxNi40MDEzIDE5LjU1NTkgMTguODg1NSAxNi40OTg2IDE4Ljk5NjJDMTYuNDcxMiAxOC4xMTM5IDE2LjAzNSAxNy4zMTE4IDE1LjY2NDEgMTYuNzUzOUMxNS4yNDc5IDE2LjEyNzggMTQuNzI5IDE1LjU0MTYgMTQuMjgwNCAxNS4wNzk2QzEzLjAyNDQgMTMuNzg2IDEwLjk3NTYgMTMuNzg2IDkuNzE5NTcgMTUuMDc5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/CloudWaterdrop";
  */
 const CloudWaterdrop: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloudWaterdrop.displayName = "CloudWaterdrop";
-export default CloudWaterdrop;
+CloudWaterdrop.displayName = "CloudWaterdrop"
+export default CloudWaterdrop

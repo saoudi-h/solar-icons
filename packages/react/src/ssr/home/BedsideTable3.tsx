@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/home/BedsideTable3";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/home/BedsideTable3"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiAxMEMyIDYuMjI4NzYgMiA0LjM0MzE1IDMuMTcxNTcgMy4xNzE1N0M0LjM0MzE1IDIgNi4yMjg3NiAyIDEwIDJIMTRDMTcuNzcxMiAyIDE5LjY1NjkgMiAyMC44Mjg0IDMuMTcxNTdDMjIgNC4zNDMxNSAyMiA2LjIyODc2IDIyIDEwVjEwLjI1SDJWMTBaTTguMjUgNi41QzguMjUgNi4wODU3OSA4LjU4NTc5IDUuNzUgOSA1Ljc1SDE1QzE1LjQxNDIgNS43NSAxNS43NSA2LjA4NTc5IDE1Ljc1IDYuNUMxNS43NSA2LjkxNDIxIDE1LjQxNDIgNy4yNSAxNSA3LjI1SDlDOC41ODU3OSA3LjI1IDguMjUgNi45MTQyMSA4LjI1IDYuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yIDExLjc1SDIyVjEyQzIyIDE1Ljc3MTIgMjIgMTcuNjU2OSAyMC44Mjg0IDE4LjgyODRDMjAuNTI0IDE5LjEzMjggMjAuMTcxNCAxOS4zNTgyIDE5Ljc1IDE5LjUyNDlWMjJDMTkuNzUgMjIuNDE0MiAxOS40MTQyIDIyLjc1IDE5IDIyLjc1QzE4LjU4NTggMjIuNzUgMTguMjUgMjIuNDE0MiAxOC4yNSAyMlYxOS44NzEzQzE3LjE4MDEgMjAgMTUuODA2NCAyMCAxNCAyMEgxMEM4LjE5MzY0IDIwIDYuODE5ODkgMjAgNS43NSAxOS44NzEzVjIyQzUuNzUgMjIuNDE0MiA1LjQxNDIxIDIyLjc1IDUgMjIuNzVDNC41ODU3OSAyMi43NSA0LjI1IDIyLjQxNDIgNC4yNSAyMlYxOS41MjQ5QzMuODI4NjEgMTkuMzU4MiAzLjQ3NTk5IDE5LjEzMjggMy4xNzE1NyAxOC44Mjg0QzIgMTcuNjU2OSAyIDE1Ljc3MTIgMiAxMlYxMS43NVpNOC4yNSAxNS41QzguMjUgMTUuMDg1OCA4LjU4NTc5IDE0Ljc1IDkgMTQuNzVIMTVDMTUuNDE0MiAxNC43NSAxNS43NSAxNS4wODU4IDE1Ljc1IDE1LjVDMTUuNzUgMTUuOTE0MiAxNS40MTQyIDE2LjI1IDE1IDE2LjI1SDlDOC41ODU3OSAxNi4yNSA4LjI1IDE1LjkxNDIgOC4yNSAxNS41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/BedsideTable3";
  */
 const BedsideTable3: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BedsideTable3.displayName = "BedsideTable3";
-export default BedsideTable3;
+BedsideTable3.displayName = "BedsideTable3"
+export default BedsideTable3

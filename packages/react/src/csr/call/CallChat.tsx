@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/CallChat";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/CallChat"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC41NTYyIDE1LjU0NzdMMTQuMTAwNyAxNi4wMjcyQzE0LjEwMDcgMTYuMDI3MiAxMy4wMTgxIDE3LjE2NyAxMC4wNjMxIDE0LjA1NTlDNy4xMDgxMiAxMC45NDQ4IDguMTkwNyA5LjgwNTA3IDguMTkwNyA5LjgwNTA3TDguNDc3NTIgOS41MDMxMUM5LjE4NDA3IDguNzU5MjQgOS4yNTA2OCA3LjU2NDk3IDguNjM0MjQgNi42OTMxTDcuMzczMjYgNC45MDk2MUM2LjYxMDI4IDMuODMwNSA1LjEzNTk2IDMuNjg3OTUgNC4yNjE0NSA0LjYwODY0TDIuNjkxODUgNi4yNjExNEMyLjI1ODIzIDYuNzE3NjYgMS45Njc2NSA3LjMwOTQ1IDIuMDAyODkgNy45NjU5NEMyLjA5MzA0IDkuNjQ1NDYgMi44MTA3MSAxMy4yNTkgNi44MTUzNiAxNy40NzUyQzExLjA2MjEgMjEuOTQ2MiAxNS4wNDY4IDIyLjEyMzkgMTYuNjc2MyAyMS45NjMxQzE3LjE5MTcgMjEuOTEyMiAxNy42Mzk5IDIxLjYzNDMgMTguMDAxMSAyMS4yNTRMMTkuNDIxNyAxOS43NTg0QzIwLjM4MDYgMTguNzQ4OSAyMC4xMTAyIDE3LjAxODIgMTguODgzMyAxNi4zMTJMMTYuOTcyOCAxNS4yMTIzQzE2LjE2NzIgMTQuNzQ4NiAxNS4xODU4IDE0Ljg4NDggMTQuNTU2MiAxNS41NDc3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTcgMTJDMTkuNzYxNCAxMiAyMiA5Ljc2MTQyIDIyIDdDMjIgNC4yMzg1OCAxOS43NjE0IDIgMTcgMkMxNC4yMzg2IDIgMTIgNC4yMzg1OCAxMiA3QzEyIDcuNzk5ODQgMTIuMTg3OCA4LjU1NTgyIDEyLjUyMTcgOS4yMjYyNEMxMi42MTA1IDkuNDA0NCAxMi42NCA5LjYwODAzIDEyLjU4ODYgOS44MDAzMUwxMi4yOTA4IDEwLjkxMzNDMTIuMTYxNSAxMS4zOTY1IDEyLjYwMzUgMTEuODM4NSAxMy4wODY3IDExLjcwOTJMMTQuMTk5NyAxMS40MTE0QzE0LjM5MiAxMS4zNiAxNC41OTU2IDExLjM4OTUgMTQuNzczOCAxMS40NzgzQzE1LjQ0NDIgMTEuODEyMiAxNi4yMDAyIDEyIDE3IDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/CallChat";
  */
 const CallChat: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CallChat.displayName = "CallChat";
-export default CallChat;
+CallChat.displayName = "CallChat"
+export default CallChat

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Forward";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Forward"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuOTY5NyA2LjQ2OTY3QzE0LjI2MjYgNi4xNzY3OCAxNC43Mzc0IDYuMTc2NzggMTUuMDMwMyA2LjQ2OTY3TDIwLjAzMDMgMTEuNDY5N0MyMC4zMjMyIDExLjc2MjYgMjAuMzIzMiAxMi4yMzc0IDIwLjAzMDMgMTIuNTMwM0wxNS4wMzAzIDE3LjUzMDNDMTQuNzM3NCAxNy44MjMyIDE0LjI2MjYgMTcuODIzMiAxMy45Njk3IDE3LjUzMDNDMTMuNjc2OCAxNy4yMzc0IDEzLjY3NjggMTYuNzYyNiAxMy45Njk3IDE2LjQ2OTdMMTcuNjg5MyAxMi43NUw5LjUgMTIuNzVDOC43ODY2OCAxMi43NSA3LjcwMDAyIDEyLjk3MDIgNi44MTMyMyAxMy42MDg3QzUuOTY0NjggMTQuMjE5NiA1LjI1IDE1LjI0NDQgNS4yNSAxN0M1LjI1IDE3LjQxNDIgNC45MTQyMSAxNy43NSA0LjUgMTcuNzVDNC4wODU3OSAxNy43NSAzLjc1IDE3LjQxNDIgMy43NSAxN0MzLjc1IDE0Ljc1NTYgNC43MDE5OCAxMy4yODA0IDUuOTM2NzcgMTIuMzkxM0M3LjEzMzMyIDExLjUyOTggOC41NDY2NSAxMS4yNSA5LjUgMTEuMjVMMTcuNjg5MyAxMS4yNUwxMy45Njk3IDcuNTMwMzNDMTMuNjc2OCA3LjIzNzQ0IDEzLjY3NjggNi43NjI1NiAxMy45Njk3IDYuNDY5NjdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Forward";
  */
 const Forward: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Forward.displayName = "Forward";
-export default Forward;
+Forward.displayName = "Forward"
+export default Forward

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Danger";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Danger"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy44NDMwOCAzLjgwMjExQzkuODcxOCAyLjYwMDcgMTAuODg2MiAyIDEyIDJDMTMuMTEzOCAyIDE0LjEyODIgMi42MDA3IDE2LjE1NjkgMy44MDIxMUwxNi44NDMxIDQuMjA4NDZDMTguODcxOCA1LjQwOTg3IDE5Ljg4NjIgNi4wMTA1NyAyMC40NDMxIDdDMjEgNy45ODk0MyAyMSA5LjE5MDg0IDIxIDExLjU5MzdWMTIuNDA2M0MyMSAxNC44MDkyIDIxIDE2LjAxMDYgMjAuNDQzMSAxN0MxOS44ODYyIDE3Ljk4OTQgMTguODcxOCAxOC41OTAxIDE2Ljg0MzEgMTkuNzkxNUwxNi4xNTY5IDIwLjE5NzlDMTQuMTI4MiAyMS4zOTkzIDEzLjExMzggMjIgMTIgMjJDMTAuODg2MiAyMiA5Ljg3MTggMjEuMzk5MyA3Ljg0MzA4IDIwLjE5NzlMNy4xNTY5MiAxOS43OTE1QzUuMTI4MiAxOC41OTAxIDQuMTEzODQgMTcuOTg5NCAzLjU1NjkyIDE3QzMgMTYuMDEwNiAzIDE0LjgwOTIgMyAxMi40MDYzVjExLjU5MzdDMyA5LjE5MDg0IDMgNy45ODk0MyAzLjU1NjkyIDdDNC4xMTM4NCA2LjAxMDU3IDUuMTI4MiA1LjQwOTg3IDcuMTU2OTIgNC4yMDg0Nkw3Ljg0MzA4IDMuODAyMTFaTTEzIDE2QzEzIDE2LjU1MjMgMTIuNTUyMyAxNyAxMiAxN0MxMS40NDc3IDE3IDExIDE2LjU1MjMgMTEgMTZDMTEgMTUuNDQ3NyAxMS40NDc3IDE1IDEyIDE1QzEyLjU1MjMgMTUgMTMgMTUuNDQ3NyAxMyAxNlpNMTIgNi4yNUMxMi40MTQyIDYuMjUgMTIuNzUgNi41ODU3OSAxMi43NSA3VjEzQzEyLjc1IDEzLjQxNDIgMTIuNDE0MiAxMy43NSAxMiAxMy43NUMxMS41ODU4IDEzLjc1IDExLjI1IDEzLjQxNDIgMTEuMjUgMTNWN0MxMS4yNSA2LjU4NTc5IDExLjU4NTggNi4yNSAxMiA2LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Danger";
  */
 const Danger: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Danger.displayName = "Danger";
-export default Danger;
+Danger.displayName = "Danger"
+export default Danger

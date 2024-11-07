@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareArrowUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareArrowUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxNi43MTQgMiAxOS4wNzExIDIgMjAuNTM1NSAzLjQ2NDQ3QzIyIDQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMkMyMiAxNi43MTQgMjIgMTkuMDcxMSAyMC41MzU1IDIwLjUzNTVDMTkuMDcxMSAyMiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NVpNMTIgMTYuNzVDMTIuNDE0MiAxNi43NSAxMi43NSAxNi40MTQyIDEyLjc1IDE2VjkuODEwNjZMMTQuNDY5NyAxMS41MzAzQzE0Ljc2MjYgMTEuODIzMiAxNS4yMzc0IDExLjgyMzIgMTUuNTMwMyAxMS41MzAzQzE1LjgyMzIgMTEuMjM3NCAxNS44MjMyIDEwLjc2MjYgMTUuNTMwMyAxMC40Njk3TDEyLjUzMDMgNy40Njk2N0MxMi4zODk3IDcuMzI5MDIgMTIuMTk4OSA3LjI1IDEyIDcuMjVDMTEuODAxMSA3LjI1IDExLjYxMDMgNy4zMjkwMiAxMS40Njk3IDcuNDY5NjdMOC40Njk2NyAxMC40Njk3QzguMTc2NzggMTAuNzYyNiA4LjE3Njc4IDExLjIzNzQgOC40Njk2NyAxMS41MzAzQzguNzYyNTYgMTEuODIzMiA5LjIzNzQ0IDExLjgyMzIgOS41MzAzMyAxMS41MzAzTDExLjI1IDkuODEwNjZWMTZDMTEuMjUgMTYuNDE0MiAxMS41ODU4IDE2Ljc1IDEyIDE2Ljc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareArrowUp";
  */
 const SquareArrowUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareArrowUp.displayName = "SquareArrowUp";
-export default SquareArrowUp;
+SquareArrowUp.displayName = "SquareArrowUp"
+export default SquareArrowUp

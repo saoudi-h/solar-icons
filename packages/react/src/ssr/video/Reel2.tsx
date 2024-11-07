@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/Reel2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/Reel2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxNC4yNUMxMC43NTc0IDE0LjI1IDkuNzUgMTMuMjQyNiA5Ljc1IDEyQzkuNzUgMTAuNzU3NCAxMC43NTc0IDkuNzUgMTIgOS43NUMxMy4yNDI2IDkuNzUgMTQuMjUgMTAuNzU3NCAxNC4yNSAxMkMxNC4yNSAxMy4yNDI2IDEzLjI0MjYgMTQuMjUgMTIgMTQuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTUuNTg4NyAyMC4xMDk3IDE4LjczNTggMTcuMjcwNCAyMC41SDIxLjI1QzIxLjY2NDIgMjAuNSAyMiAyMC44MzU4IDIyIDIxLjI1QzIyIDIxLjY2NDIgMjEuNjY0MiAyMiAyMS4yNSAyMkgxMlpNMTMgNS41QzEzIDQuOTQ3NzIgMTIuNTUyMyA0LjUgMTIgNC41QzExLjQ0NzcgNC41IDExIDQuOTQ3NzIgMTEgNS41QzExIDYuMDUyMjggMTEuNDQ3NyA2LjUgMTIgNi41QzEyLjU1MjMgNi41IDEzIDYuMDUyMjggMTMgNS41Wk02LjUgMTJDNi41IDEyLjU1MjMgNi4wNTIyOCAxMyA1LjUgMTNDNC45NDc3MiAxMyA0LjUgMTIuNTUyMyA0LjUgMTJDNC41IDExLjQ0NzcgNC45NDc3MiAxMSA1LjUgMTFDNi4wNTIyOCAxMSA2LjUgMTEuNDQ3NyA2LjUgMTJaTTE5LjUgMTJDMTkuNSAxMi41NTIzIDE5LjA1MjMgMTMgMTguNSAxM0MxNy45NDc3IDEzIDE3LjUgMTIuNTUyMyAxNy41IDEyQzE3LjUgMTEuNDQ3NyAxNy45NDc3IDExIDE4LjUgMTFDMTkuMDUyMyAxMSAxOS41IDExLjQ0NzcgMTkuNSAxMlpNMTIgMTcuNUMxMi41NTIzIDE3LjUgMTMgMTcuOTQ3NyAxMyAxOC41QzEzIDE5LjA1MjMgMTIuNTUyMyAxOS41IDEyIDE5LjVDMTEuNDQ3NyAxOS41IDExIDE5LjA1MjMgMTEgMTguNUMxMSAxNy45NDc3IDExLjQ0NzcgMTcuNSAxMiAxNy41Wk04LjI1IDEyQzguMjUgMTQuMDcxMSA5LjkyODkzIDE1Ljc1IDEyIDE1Ljc1QzE0LjA3MTEgMTUuNzUgMTUuNzUgMTQuMDcxMSAxNS43NSAxMkMxNS43NSA5LjkyODkzIDE0LjA3MTEgOC4yNSAxMiA4LjI1QzkuOTI4OTMgOC4yNSA4LjI1IDkuOTI4OTMgOC4yNSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/Reel2";
  */
 const Reel2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Reel2.displayName = "Reel2";
-export default Reel2;
+Reel2.displayName = "Reel2"
+export default Reel2

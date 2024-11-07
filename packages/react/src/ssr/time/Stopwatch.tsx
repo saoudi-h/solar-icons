@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/time/Stopwatch";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/time/Stopwatch"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTYuOTcwNiAyMiAyMSAxNy45NzA2IDIxIDEzQzIxIDguMDI5NDQgMTYuOTcwNiA0IDEyIDRDNy4wMjk0NCA0IDMgOC4wMjk0NCAzIDEzQzMgMTcuOTcwNiA3LjAyOTQ0IDIyIDEyIDIyWk0xMiA4LjI1QzEyLjQxNDIgOC4yNSAxMi43NSA4LjU4NTc5IDEyLjc1IDlWMTNDMTIuNzUgMTMuNDE0MiAxMi40MTQyIDEzLjc1IDEyIDEzLjc1QzExLjU4NTggMTMuNzUgMTEuMjUgMTMuNDE0MiAxMS4yNSAxM1Y5QzExLjI1IDguNTg1NzkgMTEuNTg1OCA4LjI1IDEyIDguMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS4yNSAyQzkuMjUgMS41ODU3OSA5LjU4NTc5IDEuMjUgMTAgMS4yNUgxNEMxNC40MTQyIDEuMjUgMTQuNzUgMS41ODU3OSAxNC43NSAyQzE0Ljc1IDIuNDE0MjEgMTQuNDE0MiAyLjc1IDE0IDIuNzVIMTBDOS41ODU3OSAyLjc1IDkuMjUgMi40MTQyMSA5LjI1IDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/Stopwatch";
  */
 const Stopwatch: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Stopwatch.displayName = "Stopwatch";
-export default Stopwatch;
+Stopwatch.displayName = "Stopwatch"
+export default Stopwatch

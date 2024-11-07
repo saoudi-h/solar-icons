@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/video/PauseCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/video/PauseCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk04LjA3NjEyIDguNjE3MzJDOCA4LjgwMTA5IDggOS4wMzQwNiA4IDkuNVYxNC41QzggMTQuOTY1OSA4IDE1LjE5ODkgOC4wNzYxMiAxNS4zODI3QzguMTc3NjEgMTUuNjI3NyA4LjM3MjI5IDE1LjgyMjQgOC42MTczMiAxNS45MjM5QzguODAxMDkgMTYgOS4wMzQwNiAxNiA5LjUgMTZDOS45NjU5NCAxNiAxMC4xOTg5IDE2IDEwLjM4MjcgMTUuOTIzOUMxMC42Mjc3IDE1LjgyMjQgMTAuODIyNCAxNS42Mjc3IDEwLjkyMzkgMTUuMzgyN0MxMSAxNS4xOTg5IDExIDE0Ljk2NTkgMTEgMTQuNVY5LjVDMTEgOS4wMzQwNiAxMSA4LjgwMTA5IDEwLjkyMzkgOC42MTczMkMxMC44MjI0IDguMzcyMjkgMTAuNjI3NyA4LjE3NzYxIDEwLjM4MjcgOC4wNzYxMkMxMC4xOTg5IDggOS45NjU5NCA4IDkuNSA4QzkuMDM0MDYgOCA4LjgwMTA5IDggOC42MTczMiA4LjA3NjEyQzguMzcyMjkgOC4xNzc2MSA4LjE3NzYxIDguMzcyMjkgOC4wNzYxMiA4LjYxNzMyWk0xMy4wNzYxIDguNjE3MzJDMTMgOC44MDEwOSAxMyA5LjAzNDA2IDEzIDkuNVYxNC41QzEzIDE0Ljk2NTkgMTMgMTUuMTk4OSAxMy4wNzYxIDE1LjM4MjdDMTMuMTc3NiAxNS42Mjc3IDEzLjM3MjMgMTUuODIyNCAxMy42MTczIDE1LjkyMzlDMTMuODAxMSAxNiAxNC4wMzQxIDE2IDE0LjUgMTZDMTQuOTY1OSAxNiAxNS4xOTg5IDE2IDE1LjM4MjcgMTUuOTIzOUMxNS42Mjc3IDE1LjgyMjQgMTUuODIyNCAxNS42Mjc3IDE1LjkyMzkgMTUuMzgyN0MxNiAxNS4xOTg5IDE2IDE0Ljk2NTkgMTYgMTQuNVY5LjVDMTYgOS4wMzQwNiAxNiA4LjgwMTA5IDE1LjkyMzkgOC42MTczMkMxNS44MjI0IDguMzcyMjkgMTUuNjI3NyA4LjE3NzYxIDE1LjM4MjcgOC4wNzYxMkMxNS4xOTg5IDggMTQuOTY1OSA4IDE0LjUgOEMxNC4wMzQxIDggMTMuODAxMSA4IDEzLjYxNzMgOC4wNzYxMkMxMy4zNzIzIDguMTc3NjEgMTMuMTc3NiA4LjM3MjI5IDEzLjA3NjEgOC42MTczMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/PauseCircle";
  */
 const PauseCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PauseCircle.displayName = "PauseCircle";
-export default PauseCircle;
+PauseCircle.displayName = "PauseCircle"
+export default PauseCircle

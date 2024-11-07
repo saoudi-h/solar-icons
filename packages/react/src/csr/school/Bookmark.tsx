@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/school/Bookmark";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/school/Bookmark"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEgMTEuMDk3NVYxNi4wOTA5QzIxIDE5LjE4NzUgMjEgMjAuNzM1OCAyMC4yNjU5IDIxLjQxMjNDMTkuOTE1OCAyMS43MzUgMTkuNDczOSAyMS45Mzc3IDE5LjAwMzEgMjEuOTkxNUMxOC4wMTYgMjIuMTA0NSAxNi44NjMzIDIxLjA4NDkgMTQuNTU3OCAxOS4wNDU4QzEzLjUzODggMTguMTQ0NSAxMy4wMjkyIDE3LjY5MzggMTIuNDM5NyAxNy41NzUxQzEyLjE0OTQgMTcuNTE2NiAxMS44NTA2IDE3LjUxNjYgMTEuNTYwMyAxNy41NzUxQzEwLjk3MDggMTcuNjkzOCAxMC40NjEyIDE4LjE0NDUgOS40NDIxNiAxOS4wNDU4QzcuMTM2NzMgMjEuMDg0OSA1Ljk4NDAyIDIyLjEwNDUgNC45OTY5MiAyMS45OTE1QzQuNTI2MTUgMjEuOTM3NyA0LjA4NDIxIDIxLjczNSAzLjczNDExIDIxLjQxMjNDMyAyMC43MzU4IDMgMTkuMTg3NSAzIDE2LjA5MDlWMTEuMDk3NUMzIDYuODA4OTEgMyA0LjY2NDYgNC4zMTgwMiAzLjMzMjNDNS42MzYwNCAyIDcuNzU3MzYgMiAxMiAyQzE2LjI0MjYgMiAxOC4zNjQgMiAxOS42ODIgMy4zMzIzQzIxIDQuNjY0NiAyMSA2LjgwODkxIDIxIDExLjA5NzVaTTguMjUgNkM4LjI1IDUuNTg1NzkgOC41ODU3OSA1LjI1IDkgNS4yNUgxNUMxNS40MTQyIDUuMjUgMTUuNzUgNS41ODU3OSAxNS43NSA2QzE1Ljc1IDYuNDE0MjEgMTUuNDE0MiA2Ljc1IDE1IDYuNzVIOUM4LjU4NTc5IDYuNzUgOC4yNSA2LjQxNDIxIDguMjUgNloiIGZpbGw9IiMxQzI3NEQiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/school/Bookmark";
  */
 const Bookmark: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bookmark.displayName = "Bookmark";
-export default Bookmark;
+Bookmark.displayName = "Bookmark"
+export default Bookmark

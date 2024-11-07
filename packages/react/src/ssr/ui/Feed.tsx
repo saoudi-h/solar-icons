@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Feed";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Feed"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMyAxMEMzIDYuMjI4NzYgMyA0LjM0MzE1IDQuMTcxNTcgMy4xNzE1N0M1LjM0MzE1IDIgNy4yMjg3NiAyIDExIDJIMTNDMTYuNzcxMiAyIDE4LjY1NjkgMiAxOS44Mjg0IDMuMTcxNTdDMjEgNC4zNDMxNSAyMSA2LjIyODc2IDIxIDEwVjE0QzIxIDE3Ljc3MTIgMjEgMTkuNjU2OSAxOS44Mjg0IDIwLjgyODRDMTguNjU2OSAyMiAxNi43NzEyIDIyIDEzIDIySDExQzcuMjI4NzYgMjIgNS4zNDMxNSAyMiA0LjE3MTU3IDIwLjgyODRDMyAxOS42NTY5IDMgMTcuNzcxMiAzIDE0VjEwWk02IDEyQzYgMTAuNTg1OCA2IDkuODc4NjggNi40MzkzNCA5LjQzOTM0QzYuODc4NjggOSA3LjU4NTc5IDkgOSA5SDE1QzE2LjQxNDIgOSAxNy4xMjEzIDkgMTcuNTYwNyA5LjQzOTM0QzE4IDkuODc4NjggMTggMTAuNTg1OCAxOCAxMlYxNkMxOCAxNy40MTQyIDE4IDE4LjEyMTMgMTcuNTYwNyAxOC41NjA3QzE3LjEyMTMgMTkgMTYuNDE0MiAxOSAxNSAxOUg5QzcuNTg1NzkgMTkgNi44Nzg2OCAxOSA2LjQzOTM0IDE4LjU2MDdDNiAxOC4xMjEzIDYgMTcuNDE0MiA2IDE2VjEyWk03IDUuMjVDNi41ODU3OSA1LjI1IDYuMjUgNS41ODU3OSA2LjI1IDZDNi4yNSA2LjQxNDIxIDYuNTg1NzkgNi43NSA3IDYuNzVIMTJDMTIuNDE0MiA2Ljc1IDEyLjc1IDYuNDE0MjEgMTIuNzUgNkMxMi43NSA1LjU4NTc5IDEyLjQxNDIgNS4yNSAxMiA1LjI1SDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Feed";
  */
 const Feed: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Feed.displayName = "Feed";
-export default Feed;
+Feed.displayName = "Feed"
+export default Feed

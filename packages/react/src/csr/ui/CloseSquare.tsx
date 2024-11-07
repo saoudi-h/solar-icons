@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/CloseSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/CloseSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTYuNzE0IDIgMTkuMDcxMSAyIDIwLjUzNTUgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuNTM1NSAyMC41MzU1QzE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyIDIyWk04Ljk2OTY1IDguOTY5NjdDOS4yNjI1NCA4LjY3Njc4IDkuNzM3NDIgOC42NzY3OCAxMC4wMzAzIDguOTY5NjdMMTIgMTAuOTM5NEwxMy45Njk2IDguOTY5NjlDMTQuMjYyNSA4LjY3NjggMTQuNzM3NCA4LjY3NjggMTUuMDMwMyA4Ljk2OTY5QzE1LjMyMzIgOS4yNjI1OCAxNS4zMjMyIDkuNzM3NDYgMTUuMDMwMyAxMC4wMzAzTDEzLjA2MDYgMTJMMTUuMDMwMyAxMy45Njk3QzE1LjMyMzIgMTQuMjYyNSAxNS4zMjMyIDE0LjczNzQgMTUuMDMwMyAxNS4wMzAzQzE0LjczNzQgMTUuMzIzMiAxNC4yNjI1IDE1LjMyMzIgMTMuOTY5NiAxNS4wMzAzTDEyIDEzLjA2MDdMMTAuMDMwMyAxNS4wMzAzQzkuNzM3NDQgMTUuMzIzMiA5LjI2MjU2IDE1LjMyMzIgOC45Njk2NyAxNS4wMzAzQzguNjc2NzggMTQuNzM3NCA4LjY3Njc4IDE0LjI2MjYgOC45Njk2NyAxMy45Njk3TDEwLjkzOTMgMTJMOC45Njk2NSAxMC4wMzAzQzguNjc2NzYgOS43Mzc0NCA4LjY3Njc2IDkuMjYyNTYgOC45Njk2NSA4Ljk2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/CloseSquare";
  */
 const CloseSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloseSquare.displayName = "CloseSquare";
-export default CloseSquare;
+CloseSquare.displayName = "CloseSquare"
+export default CloseSquare

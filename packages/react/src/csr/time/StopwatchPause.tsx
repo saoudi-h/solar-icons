@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/StopwatchPause";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/StopwatchPause"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEgMTMuNzVDMjEgMTguNzIwNiAxNi45NzA2IDIyLjc1IDEyIDIyLjc1QzcuMDI5NDQgMjIuNzUgMyAxOC43MjA2IDMgMTMuNzVDMyA4Ljc3OTQ0IDcuMDI5NDQgNC43NSAxMiA0Ljc1QzE2Ljk3MDYgNC43NSAyMSA4Ljc3OTQ0IDIxIDEzLjc1Wk0xMSAxNi4yNVYxMS4yNUMxMSAxMC43ODQxIDExIDEwLjU1MTEgMTAuOTIzOSAxMC4zNjczQzEwLjgyMjQgMTAuMTIyMyAxMC42Mjc3IDkuOTI3NjEgMTAuMzgyNyA5LjgyNjEyQzEwLjE5ODkgOS43NSA5Ljk2NTk0IDkuNzUgOS41IDkuNzVDOS4wMzQwNiA5Ljc1IDguODAxMDkgOS43NSA4LjYxNzMyIDkuODI2MTJDOC4zNzIyOSA5LjkyNzYxIDguMTc3NjEgMTAuMTIyMyA4LjA3NjEyIDEwLjM2NzNDOCAxMC41NTExIDggMTAuNzg0MSA4IDExLjI1VjE2LjI1QzggMTYuNzE1OSA4IDE2Ljk0ODkgOC4wNzYxMiAxNy4xMzI3QzguMTc3NjEgMTcuMzc3NyA4LjM3MjI5IDE3LjU3MjQgOC42MTczMiAxNy42NzM5QzguODAxMDkgMTcuNzUgOS4wMzQwNiAxNy43NSA5LjUgMTcuNzVDOS45NjU5NCAxNy43NSAxMC4xOTg5IDE3Ljc1IDEwLjM4MjcgMTcuNjczOUMxMC42Mjc3IDE3LjU3MjQgMTAuODIyNCAxNy4zNzc3IDEwLjkyMzkgMTcuMTMyN0MxMSAxNi45NDg5IDExIDE2LjcxNTkgMTEgMTYuMjVaTTE2IDE2LjI1VjExLjI1QzE2IDEwLjc4NDEgMTYgMTAuNTUxMSAxNS45MjM5IDEwLjM2NzNDMTUuODIyNCAxMC4xMjIzIDE1LjYyNzcgOS45Mjc2MSAxNS4zODI3IDkuODI2MTJDMTUuMTk4OSA5Ljc1IDE0Ljk2NTkgOS43NSAxNC41IDkuNzVDMTQuMDM0MSA5Ljc1IDEzLjgwMTEgOS43NSAxMy42MTczIDkuODI2MTJDMTMuMzcyMyA5LjkyNzYxIDEzLjE3NzYgMTAuMTIyMyAxMy4wNzYxIDEwLjM2NzNDMTMgMTAuNTUxMSAxMyAxMC43ODQxIDEzIDExLjI1VjE2LjI1QzEzIDE2LjcxNTkgMTMgMTYuOTQ4OSAxMy4wNzYxIDE3LjEzMjdDMTMuMTc3NiAxNy4zNzc3IDEzLjM3MjMgMTcuNTcyNCAxMy42MTczIDE3LjY3MzlDMTMuODAxMSAxNy43NSAxNC4wMzQxIDE3Ljc1IDE0LjUgMTcuNzVDMTQuOTY1OSAxNy43NSAxNS4xOTg5IDE3Ljc1IDE1LjM4MjcgMTcuNjczOUMxNS42Mjc3IDE3LjU3MjQgMTUuODIyNCAxNy4zNzc3IDE1LjkyMzkgMTcuMTMyN0MxNiAxNi45NDg5IDE2IDE2LjcxNTkgMTYgMTYuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMCAyQzkuNTg1NzkgMiA5LjI1IDIuMzM1NzkgOS4yNSAyLjc1QzkuMjUgMy4xNjQyMSA5LjU4NTc5IDMuNSAxMCAzLjVIMTRDMTQuNDE0MiAzLjUgMTQuNzUgMy4xNjQyMSAxNC43NSAyLjc1QzE0Ljc1IDIuMzM1NzkgMTQuNDE0MiAyIDE0IDJIMTBaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/StopwatchPause";
  */
 const StopwatchPause: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-StopwatchPause.displayName = "StopwatchPause";
-export default StopwatchPause;
+StopwatchPause.displayName = "StopwatchPause"
+export default StopwatchPause

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/EndCallRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/EndCallRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjYwNzIgMTYuODk3M0w2Ljk0NjkgMTYuNTE3M0M4LjE1NTkxIDE2LjE3NDQgOSAxNC45ODI2IDkgMTMuNjE4NUM5IDEzLjYxODUgOSAxMy42MTg1IDkgMTMuNjE4NUM5IDEzLjYxODUgOS4wMDAwMSAxMS45NjM5IDEyIDExLjk2MzlDMTQuOTk5OSAxMS45NjM5IDE1IDEzLjYxODQgMTUgMTMuNjE4NUMxNSAxMy42MTg1IDE1IDEzLjYxODUgMTUgMTMuNjE4NUMxNSAxNC45ODI2IDE1Ljg0NDEgMTYuMTc0NCAxNy4wNTMxIDE2LjUxNzNMMTguMzkyOCAxNi44OTczQzIwLjIxODQgMTcuNDE1MSAyMiAxNS45MTAyIDIyIDEzLjg1MDRDMjIgMTIuNjEyNyAyMS43MjM0IDExLjM3MyAyMC45MTcxIDEwLjUwMzJDMTkuNTU5OCA5LjAzODg5IDE2LjgwNjggNyAxMiA3QzcuMTkzMjIgNyA0LjQ0MDIzIDkuMDM4ODggMy4wODI4OSAxMC41MDMyQzIuMjc2NTkgMTEuMzczIDIgMTIuNjEyNyAyIDEzLjg1MDRDMiAxNS45MTAyIDMuNzgxNTggMTcuNDE1MSA1LjYwNzIgMTYuODk3M1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/EndCallRounded";
  */
 const EndCallRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-EndCallRounded.displayName = "EndCallRounded";
-export default EndCallRounded;
+EndCallRounded.displayName = "EndCallRounded"
+export default EndCallRounded

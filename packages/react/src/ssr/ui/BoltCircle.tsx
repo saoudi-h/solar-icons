@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/BoltCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/BoltCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJaTTExLjIyNzQgOC41NjkwNEw5LjIxMjM2IDEwLjE3MzdDOC4zNjY5NSAxMC44NDY5IDcuOTQ0MjQgMTEuMTgzNiA4LjAyNjc1IDExLjU1OTRMOC4wMzExNCAxMS41NzhDOC4xMjUxNCAxMS45NTE1IDguNjYwOTYgMTIuMDk1MSA5LjczMjU5IDEyLjM4MjNDMTAuMzI4MSAxMi41NDE4IDEwLjYyNTkgMTIuNjIxNiAxMC43NjU2IDEyLjg0NzNMMTAuNzcyNyAxMi44NTkyQzEwLjkwNzUgMTMuMDg3NiAxMC44MzA4IDEzLjM3MzcgMTAuNjc3NSAxMy45NDU5TDEwLjYzNzQgMTQuMDk1NEMxMC4yMTIzIDE1LjY4MTggOS45OTk3OSAxNi40NzQ5IDEwLjQwOTEgMTYuNzMxMUMxMC44MTg0IDE2Ljk4NzIgMTEuNDY5NyAxNi40Njg2IDEyLjc3MjMgMTUuNDMxNEwxNC43ODczIDEzLjgyNjdDMTUuNjMyNyAxMy4xNTM1IDE2LjA1NTQgMTIuODE2OSAxNS45NzI5IDEyLjQ0MUwxNS45Njg2IDEyLjQyMjRDMTUuODc0NSAxMi4wNDg5IDE1LjMzODcgMTEuOTA1MyAxNC4yNjcxIDExLjYxODJDMTMuNjcxNiAxMS40NTg2IDEzLjM3MzggMTEuMzc4OCAxMy4yMzQxIDExLjE1MzFMMTMuMjI3IDExLjE0MTJDMTMuMDkyMiAxMC45MTI4IDEzLjE2ODkgMTAuNjI2NyAxMy4zMjIyIDEwLjA1NDZMMTMuMzYyMyA5LjkwNUMxMy43ODczIDguMzE4NjQgMTMuOTk5OSA3LjUyNTQ3IDEzLjU5MDUgNy4yNjkzMUMxMy4xODEyIDcuMDEzMTYgMTIuNTI5OSA3LjUzMTc5IDExLjIyNzQgOC41NjkwNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/BoltCircle";
  */
 const BoltCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BoltCircle.displayName = "BoltCircle";
-export default BoltCircle;
+BoltCircle.displayName = "BoltCircle"
+export default BoltCircle

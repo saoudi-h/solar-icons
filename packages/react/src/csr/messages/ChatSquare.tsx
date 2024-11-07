@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/messages/ChatSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/messages/ChatSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy42Mjg4IDIwLjQ3MThMMTMuMDg2NyAyMS4zODc3QzEyLjYwMzUgMjIuMjA0IDExLjM5NjUgMjIuMjA0IDEwLjkxMzMgMjEuMzg3N0wxMC4zNzEyIDIwLjQ3MThDOS45NTA3MyAxOS43NjE0IDkuNzQwNDkgMTkuNDA2MyA5LjQwMjc5IDE5LjIwOThDOS4wNjUwOSAxOS4wMTM0IDguNjM5OTIgMTkuMDA2MSA3Ljc4OTU4IDE4Ljk5MTVDNi41MzQyMiAxOC45Njk4IDUuNzQ2ODkgMTguODkyOSA1LjA4NjU4IDE4LjYxOTRDMy44NjE0NCAxOC4xMTE5IDIuODg4MDcgMTcuMTM4NiAyLjM4MDYgMTUuOTEzNEMyIDE0Ljk5NDYgMiAxMy44Mjk3IDIgMTEuNVYxMC41QzIgNy4yMjY1NyAyIDUuNTg5ODUgMi43MzY4IDQuMzg3NTFDMy4xNDkwOCAzLjcxNDczIDMuNzE0NzMgMy4xNDkwOCA0LjM4NzUxIDIuNzM2OEM1LjU4OTg1IDIgNy4yMjY1NyAyIDEwLjUgMkgxMy41QzE2Ljc3MzQgMiAxOC40MTAxIDIgMTkuNjEyNSAyLjczNjhDMjAuMjg1MyAzLjE0OTA4IDIwLjg1MDkgMy43MTQ3MyAyMS4yNjMyIDQuMzg3NTFDMjIgNS41ODk4NSAyMiA3LjIyNjU3IDIyIDEwLjVWMTEuNUMyMiAxMy44Mjk3IDIyIDE0Ljk5NDYgMjEuNjE5NCAxNS45MTM0QzIxLjExMTkgMTcuMTM4NiAyMC4xMzg2IDE4LjExMTkgMTguOTEzNCAxOC42MTk0QzE4LjI1MzEgMTguODkyOSAxNy40NjU4IDE4Ljk2OTggMTYuMjEwNCAxOC45OTE1QzE1LjM2IDE5LjAwNjEgMTQuOTM0OSAxOS4wMTM0IDE0LjU5NzIgMTkuMjA5OEMxNC4yNTk1IDE5LjQwNjIgMTQuMDQ5MiAxOS43NjE0IDEzLjYyODggMjAuNDcxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/messages/ChatSquare";
  */
 const ChatSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChatSquare.displayName = "ChatSquare";
-export default ChatSquare;
+ChatSquare.displayName = "ChatSquare"
+export default ChatSquare

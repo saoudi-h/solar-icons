@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/sports/Skateboard";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/sports/Skateboard"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS41ODQwNSA2LjM3NjA0QzEuOTI4NyA2LjE0NjI4IDIuMzk0MzUgNi4yMzk0MSAyLjYyNDEyIDYuNTg0MDVMMy40MzY2NSA3LjgwMjg2QzQuMDM5NDIgOC43MDcgNS4wNTQxNyA5LjI1MDA4IDYuMTQwODEgOS4yNTAwOEgxNy44NTkzQzE4Ljk0NiA5LjI1MDA4IDE5Ljk2MDcgOC43MDcgMjAuNTYzNSA3LjgwMjg1TDIxLjM3NiA2LjU4NDA1QzIxLjYwNTggNi4yMzk0MSAyMi4wNzE1IDYuMTQ2MjggMjIuNDE2MSA2LjM3NjA0QzIyLjc2MDggNi42MDU4MSAyMi44NTM5IDcuMDcxNDYgMjIuNjI0MSA3LjQxNjFMMjEuODExNiA4LjYzNDlDMjAuOTMwNiA5Ljk1NjM1IDE5LjQ0NzUgMTAuNzUwMSAxNy44NTkzIDEwLjc1MDFINi4xNDA4MUM0LjU1MjY0IDEwLjc1MDEgMy4wNjk1NCA5Ljk1NjM1IDIuMTg4NTggOC42MzQ5MUwxLjM3NjA0IDcuNDE2MUMxLjE0NjI4IDcuMDcxNDYgMS4yMzk0MSA2LjYwNTgxIDEuNTg0MDUgNi4zNzYwNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTkuMDAwMDggMTUuMDAwMUM5LjAwMDA4IDE2LjEwNDYgOC4xMDQ2NSAxNy4wMDAxIDcuMDAwMDggMTcuMDAwMUM1Ljg5NTUxIDE3LjAwMDEgNS4wMDAwOCAxNi4xMDQ2IDUuMDAwMDggMTUuMDAwMUM1LjAwMDA4IDEzLjg5NTUgNS44OTU1MSAxMy4wMDAxIDcuMDAwMDggMTMuMDAwMUM4LjEwNDY1IDEzLjAwMDEgOS4wMDAwOCAxMy44OTU1IDkuMDAwMDggMTUuMDAwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE5LjAwMDEgMTUuMDAwMUMxOS4wMDAxIDE2LjEwNDYgMTguMTA0NiAxNy4wMDAxIDE3LjAwMDEgMTcuMDAwMUMxNS44OTU1IDE3LjAwMDEgMTUuMDAwMSAxNi4xMDQ2IDE1LjAwMDEgMTUuMDAwMUMxNS4wMDAxIDEzLjg5NTUgMTUuODk1NSAxMy4wMDAxIDE3LjAwMDEgMTMuMDAwMUMxOC4xMDQ2IDEzLjAwMDEgMTkuMDAwMSAxMy44OTU1IDE5LjAwMDEgMTUuMDAwMVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/sports/Skateboard";
  */
 const Skateboard: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Skateboard.displayName = "Skateboard";
-export default Skateboard;
+Skateboard.displayName = "Skateboard"
+export default Skateboard

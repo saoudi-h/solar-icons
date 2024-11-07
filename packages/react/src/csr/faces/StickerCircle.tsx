@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/faces/StickerCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/faces/StickerCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy4wMTMgMiAyMS4xNjQ1IDUuNjg4NzMgMjEuODg4MiAxMC41TDIxLjY4NiAxMC40OTk5QzE5LjE5NjUgMTAuNDk5MSAxNy41NTk4IDEwLjQ5ODYgMTYuMTkyNiAxMC45NzdDMTMuNzUxIDExLjgzMTMgMTEuODMxMyAxMy43NTEgMTAuOTc3IDE2LjE5MjZDMTAuNDk4NiAxNy41NTk4IDEwLjQ5OTEgMTkuMTk2NSAxMC40OTk5IDIxLjY4NkwxMC41IDIxLjg4ODJDNS42ODg3MyAyMS4xNjQ1IDIgMTcuMDEzIDIgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS4yNDI0IDEzLjcwODNMMTMuNzA4MyAyMS4yNDI0QzEzLjY0MTkgMjEuMzA4NyAxMy41NzI1IDIxLjM3MTggMTMuNTAwNCAyMS40MzFDMTMuNDQ4IDIxLjQ3NDEgMTMuMzk0MyAyMS41MTUxIDEzLjMzOTIgMjEuNTU0QzEyLjk0NjIgMjEuODMxNCAxMi40ODU4IDIyIDEyIDIyQzEyIDIxLjQ0ODQgMTIgMjAuOTUxMyAxMi4wMDMgMjAuNUMxMi4wMTUzIDE4LjY2NjIgMTIuMDc3NiAxNy41ODg5IDEyLjM5MjggMTYuNjg4QzEzLjA5NjQgMTQuNjc3MyAxNC42NzczIDEzLjA5NjQgMTYuNjg4IDEyLjM5MjhDMTcuNTg4OSAxMi4wNzc2IDE4LjY2NjIgMTIuMDE1MyAyMC41IDEyLjAwM0MyMC45NTEzIDEyIDIxLjQ0ODQgMTIgMjIgMTJDMjIgMTIuNDg1OCAyMS44MzE0IDEyLjk0NjIgMjEuNTU0IDEzLjMzOTJDMjEuNTE1MSAxMy4zOTQzIDIxLjQ3NDEgMTMuNDQ4IDIxLjQzMSAxMy41MDA0QzIxLjM3MTggMTMuNTcyNSAyMS4zMDg3IDEzLjY0MTkgMjEuMjQyNCAxMy43MDgzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/StickerCircle";
  */
 const StickerCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-StickerCircle.displayName = "StickerCircle";
-export default StickerCircle;
+StickerCircle.displayName = "StickerCircle"
+export default StickerCircle

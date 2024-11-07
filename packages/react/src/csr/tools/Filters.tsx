@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/tools/Filters";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/tools/Filters"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOCA4QzE4IDExLjMxMzcgMTUuMzEzNyAxNCAxMiAxNEM4LjY4NjI5IDE0IDYgMTEuMzEzNyA2IDhDNiA0LjY4NjI5IDguNjg2MjkgMiAxMiAyQzE1LjMxMzcgMiAxOCA0LjY4NjI5IDE4IDhaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik01LjAzMzQ5IDEwLjc4MzRDMy4yMjE2MyAxMS44MTYgMiAxMy43NjUzIDIgMTZDMiAxOS4zMTM3IDQuNjg2MjkgMjIgOCAyMkMxMS4zMTM3IDIyIDE0IDE5LjMxMzcgMTQgMTZDMTQgMTUuNzQzNyAxMy45ODM5IDE1LjQ5MTEgMTMuOTUyNyAxNS4yNDMyQzEzLjMzMDEgMTUuNDEwNyAxMi42NzU1IDE1LjUgMTIgMTUuNUM4Ljg0MTM5IDE1LjUgNi4xMzg4MiAxMy41NDc0IDUuMDMzNDkgMTAuNzgzNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE1LjM4NjYgMTQuNjkzNkMxNS40NjExIDE1LjExNzkgMTUuNSAxNS41NTQ0IDE1LjUgMTZDMTUuNSAxOC4wOTA2IDE0LjY0NDYgMTkuOTgxNSAxMy4yNjQ2IDIxLjM0MTZDMTQuMDg0OSAyMS43NjI1IDE1LjAxNDcgMjIgMTYgMjJDMTkuMzEzNyAyMiAyMiAxOS4zMTM3IDIyIDE2QzIyIDEzLjc2NTMgMjAuNzc4MyAxMS44MTYgMTguOTY2NSAxMC43ODM0QzE4LjI4NzYgMTIuNDgxMSAxNy4wMDYyIDEzLjg3MjYgMTUuMzg2NiAxNC42OTM2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/tools/Filters";
  */
 const Filters: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Filters.displayName = "Filters";
-export default Filters;
+Filters.displayName = "Filters"
+export default Filters

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/medicine/DropperMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/medicine/DropperMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTkgMTEuNzVWMTMuMjVIMTdDMTYuNTg1OCAxMy4yNSAxNi4yNSAxMy41ODU4IDE2LjI1IDE0QzE2LjI1IDE0LjQxNDIgMTYuNTg1OCAxNC43NSAxNyAxNC43NUgxOVYxNS44ODMxQzE5IDE2LjY0MzggMTguNjgwOSAxNy4zNjk3IDE4LjEyMDMgMTcuODg0MUMxNi41ODY3IDE5LjI5MTMgMTQuNjg5MSAyMC4wNzUxIDEyLjc1IDIwLjIzNTZWMjEuMjVDMTIuNzUgMjEuNjY0MiAxMi40MTQyIDIyIDEyIDIyQzExLjU4NTggMjIgMTEuMjUgMjEuNjY0MiAxMS4yNSAyMS4yNVYyMC4yMzU2QzkuMzEwODkgMjAuMDc1MSA3LjQxMzI3IDE5LjI5MTMgNS44Nzk2NiAxNy44ODQxQzUuMzE5MTEgMTcuMzY5NyA1IDE2LjY0MzggNSAxNS44ODMxVjhDNSA2LjExNDM4IDUgNS4xNzE1NyA1LjU4NTc5IDQuNTg1NzlDNi4xNzE1NyA0IDcuMTE0MzggNCA5IDRIMTVDMTYuODg1NiA0IDE3LjgyODQgNCAxOC40MTQyIDQuNTg1NzlDMTguOTE2NiA1LjA4ODE0IDE4Ljk4ODEgNS44NTMwNiAxOC45OTgzIDcuMjVIMTdDMTYuNTg1OCA3LjI1IDE2LjI1IDcuNTg1NzkgMTYuMjUgOEMxNi4yNSA4LjQxNDIxIDE2LjU4NTggOC43NSAxNyA4Ljc1SDE5VjEwLjI1SDE3QzE2LjU4NTggMTAuMjUgMTYuMjUgMTAuNTg1OCAxNi4yNSAxMUMxNi4yNSAxMS40MTQyIDE2LjU4NTggMTEuNzUgMTcgMTEuNzVIMTlaTTEyIDE0QzEzLjEwNDYgMTQgMTQgMTMuMDY3MyAxNCAxMS45MTY3QzE0IDExLjE5NjggMTMuMjE3IDEwLjIzNTkgMTIuNjMwOSA5LjYxNzQ0QzEyLjI4MzkgOS4yNTEzMiAxMS43MTYxIDkuMjUxMzIgMTEuMzY5MSA5LjYxNzQ0QzEwLjc4MyAxMC4yMzU5IDEwIDExLjE5NjggMTAgMTEuOTE2N0MxMCAxMy4wNjczIDEwLjg5NTQgMTQgMTIgMTRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMy43MzI1IDNDMTMuMzg2NiAyLjQwMjIgMTIuNzQwMyAyIDEyIDJDMTEuMjU5NyAyIDEwLjYxMzQgMi40MDIyIDEwLjI2NzYgM0wxMy43MzI1IDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/medicine/DropperMinimalistic";
  */
 const DropperMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-DropperMinimalistic.displayName = "DropperMinimalistic";
-export default DropperMinimalistic;
+DropperMinimalistic.displayName = "DropperMinimalistic"
+export default DropperMinimalistic

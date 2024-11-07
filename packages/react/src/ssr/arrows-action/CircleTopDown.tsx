@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/CircleTopDown";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/CircleTopDown"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuNTMwMyAyLjQ2OTY3QzIxLjgyMzIgMi43NjI1NiAyMS44MjMyIDMuMjM3NDQgMjEuNTMwMyAzLjUzMDMzTDEzLjgxMDcgMTEuMjVIMTcuMzQzOEMxNy43NTggMTEuMjUgMTguMDkzOCAxMS41ODU4IDE4LjA5MzggMTJDMTguMDkzOCAxMi40MTQyIDE3Ljc1OCAxMi43NSAxNy4zNDM4IDEyLjc1SDEyQzExLjU4NTggMTIuNzUgMTEuMjUgMTIuNDE0MiAxMS4yNSAxMlY2LjY1NjI1QzExLjI1IDYuMjQyMDQgMTEuNTg1OCA1LjkwNjI1IDEyIDUuOTA2MjVDMTIuNDE0MiA1LjkwNjI1IDEyLjc1IDYuMjQyMDQgMTIuNzUgNi42NTYyNVYxMC4xODkzTDIwLjQ2OTcgMi40Njk2N0MyMC43NjI2IDIuMTc2NzggMjEuMjM3NCAyLjE3Njc4IDIxLjUzMDMgMi40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIwLjQ4MTcgNi43MDAyNkwxNy40MzAzIDkuNzUxNjRDMTguNjMyOSA5Ljc5NzE0IDE5LjU5MzggMTAuNzg2NCAxOS41OTM4IDEyQzE5LjU5MzggMTMuMjQyNiAxOC41ODY0IDE0LjI1IDE3LjM0MzggMTQuMjVIMTJDMTAuNzU3NCAxNC4yNSA5Ljc1IDEzLjI0MjYgOS43NSAxMlY2LjY1NjI1QzkuNzUgNS40MTM2MSAxMC43NTc0IDQuNDA2MjUgMTIgNC40MDYyNUMxMy4yMTM2IDQuNDA2MjUgMTQuMjAyOSA1LjM2NzE1IDE0LjI0ODQgNi41Njk2NkwxNy4yOTk3IDMuNTE4MjhDMTUuNzYzMiAyLjU1NjE4IDEzLjk0NjYgMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgMTAuMDUzNCAyMS40NDM4IDguMjM2NzggMjAuNDgxNyA2LjcwMDI2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/CircleTopDown";
  */
 const CircleTopDown: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CircleTopDown.displayName = "CircleTopDown";
-export default CircleTopDown;
+CircleTopDown.displayName = "CircleTopDown"
+export default CircleTopDown

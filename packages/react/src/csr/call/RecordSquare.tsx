@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/call/RecordSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/call/RecordSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC4yNSAxMkMxNC4yNSAxMS4wMzM1IDE1LjAzMzUgMTAuMjUgMTYgMTAuMjVDMTYuOTY2NSAxMC4yNSAxNy43NSAxMS4wMzM1IDE3Ljc1IDEyQzE3Ljc1IDEyLjk2NjUgMTYuOTY2NSAxMy43NSAxNiAxMy43NUMxNS4wMzM1IDEzLjc1IDE0LjI1IDEyLjk2NjUgMTQuMjUgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik04IDEzLjc1QzguOTY2NSAxMy43NSA5Ljc1IDEyLjk2NjUgOS43NSAxMkM5Ljc1IDExLjAzMzUgOC45NjY1IDEwLjI1IDggMTAuMjVDNy4wMzM1IDEwLjI1IDYuMjUgMTEuMDMzNSA2LjI1IDEyQzYuMjUgMTIuOTY2NSA3LjAzMzUgMTMuNzUgOCAxMy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zLjQ2NDQ3IDMuNDY0NDdDMiA0LjkyODkzIDIgNy4yODU5NSAyIDEyQzIgMTYuNzE0IDIgMTkuMDcxMSAzLjQ2NDQ3IDIwLjUzNTVDNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyIDIyQzE2LjcxNCAyMiAxOS4wNzExIDIyIDIwLjUzNTUgMjAuNTM1NUMyMiAxOS4wNzExIDIyIDE2LjcxNCAyMiAxMkMyMiA3LjI4NTk1IDIyIDQuOTI4OTMgMjAuNTM1NSAzLjQ2NDQ3QzE5LjA3MTEgMiAxNi43MTQgMiAxMiAyQzcuMjg1OTUgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3Wk0xMy4yNjA5IDEzLjc1QzEyLjkzNzUgMTMuMjQ0OSAxMi43NSAxMi42NDQzIDEyLjc1IDEyQzEyLjc1IDEwLjIwNTEgMTQuMjA1MSA4Ljc1IDE2IDguNzVDMTcuNzk0OSA4Ljc1IDE5LjI1IDEwLjIwNTEgMTkuMjUgMTJDMTkuMjUgMTMuNzk0OSAxNy43OTQ5IDE1LjI1IDE2IDE1LjI1SDhDNi4yMDUwNyAxNS4yNSA0Ljc1IDEzLjc5NDkgNC43NSAxMkM0Ljc1IDEwLjIwNTEgNi4yMDUwNyA4Ljc1IDggOC43NUM5Ljc5NDkzIDguNzUgMTEuMjUgMTAuMjA1MSAxMS4yNSAxMkMxMS4yNSAxMi42NDQzIDExLjA2MjUgMTMuMjQ0OSAxMC43MzkxIDEzLjc1SDEzLjI2MDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/call/RecordSquare";
  */
 const RecordSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RecordSquare.displayName = "RecordSquare";
-export default RecordSquare;
+RecordSquare.displayName = "RecordSquare"
+export default RecordSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/security/Eye";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/security/Eye"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05Ljc1IDEyQzkuNzUgMTAuNzU3NCAxMC43NTc0IDkuNzUgMTIgOS43NUMxMy4yNDI2IDkuNzUgMTQuMjUgMTAuNzU3NCAxNC4yNSAxMkMxNC4yNSAxMy4yNDI2IDEzLjI0MjYgMTQuMjUgMTIgMTQuMjVDMTAuNzU3NCAxNC4yNSA5Ljc1IDEzLjI0MjYgOS43NSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yIDEyQzIgMTMuNjM5NCAyLjQyNDk2IDE0LjE5MTUgMy4yNzQ4OSAxNS4yOTU3QzQuOTcxOTYgMTcuNTAwNCA3LjgxODExIDIwIDEyIDIwQzE2LjE4MTkgMjAgMTkuMDI4IDE3LjUwMDQgMjAuNzI1MSAxNS4yOTU3QzIxLjU3NSAxNC4xOTE1IDIyIDEzLjYzOTQgMjIgMTJDMjIgMTAuMzYwNiAyMS41NzUgOS44MDg1MyAyMC43MjUxIDguNzA0MzNDMTkuMDI4IDYuNDk5NTYgMTYuMTgxOSA0IDEyIDRDNy44MTgxMSA0IDQuOTcxOTYgNi40OTk1NiAzLjI3NDg5IDguNzA0MzNDMi40MjQ5NiA5LjgwODUzIDIgMTAuMzYwNiAyIDEyWk0xMiA4LjI1QzkuOTI4OTMgOC4yNSA4LjI1IDkuOTI4OTMgOC4yNSAxMkM4LjI1IDE0LjA3MTEgOS45Mjg5MyAxNS43NSAxMiAxNS43NUMxNC4wNzExIDE1Ljc1IDE1Ljc1IDE0LjA3MTEgMTUuNzUgMTJDMTUuNzUgOS45Mjg5MyAxNC4wNzExIDguMjUgMTIgOC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/security/Eye";
  */
 const Eye: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Eye.displayName = "Eye";
-export default Eye;
+Eye.displayName = "Eye"
+export default Eye

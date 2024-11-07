@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/EraserSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/EraserSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOC45ODc4MSAxMC4yODg2TDEzLjcxMTQgMTUuMDEyMkwxNi4zMyAxMi4zOTM2QzE3LjQ0MzMgMTEuMjgwMyAxOCAxMC43MjM2IDE4IDEwLjAzMThDMTggOS4zNDAwOCAxNy40NDMzIDguNzgzNCAxNi4zMyA3LjY3MDA0QzE1LjIxNjYgNi41NTY2OCAxNC42NTk5IDYgMTMuOTY4MiA2QzEzLjI3NjQgNiAxMi43MTk3IDYuNTU2NjggMTEuNjA2NCA3LjY3MDA0TDguOTg3ODEgMTAuMjg4NlpNMTIuMzkzNiAxNi4zM0wxMi42NTA3IDE2LjA3MjlMNy45MjcxNSAxMS4zNDkzTDcuNjcwMDQgMTEuNjA2NEM2LjU1NjY4IDEyLjcxOTcgNiAxMy4yNzY0IDYgMTMuOTY4MkM2IDE0LjY1OTkgNi41NTY2OCAxNS4yMTY2IDcuNjcwMDQgMTYuMzNDOC43ODM0IDE3LjQ0MzMgOS4zNDAwOCAxOCAxMC4wMzE4IDE4QzEwLjcyMzYgMTggMTEuMjgwMyAxNy40NDMzIDEyLjM5MzYgMTYuMzNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/EraserSquare";
  */
 const EraserSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-EraserSquare.displayName = "EraserSquare";
-export default EraserSquare;
+EraserSquare.displayName = "EraserSquare"
+export default EraserSquare

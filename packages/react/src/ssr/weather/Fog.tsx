@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/weather/Fog";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/weather/Fog"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02Ljc2MTkgNy42NDcwNkM2Ljc2MTkgNC41MjgyNyA5LjMyMDI4IDIgMTIuNDc2MiAyQzE1LjQxNTkgMiAxNy44MzcxIDQuMTkzNzEgMTguMTU1MSA3LjAxNDk4QzIwLjM5MyA3Ljc4MDI0IDIyIDkuODgxMTMgMjIgMTIuMzUyOUMyMiAxMy40MTIgMjEuNzA1IDE0LjQwMyAyMS4xOTE3IDE1LjI1SDIyQzIyLjQxNDIgMTUuMjUgMjIuNzUgMTUuNTg1OCAyMi43NSAxNkMyMi43NSAxNi40MTQyIDIyLjQxNDIgMTYuNzUgMjIgMTYuNzVIMkMxLjU4NTc5IDE2Ljc1IDEuMjUgMTYuNDE0MiAxLjI1IDE2QzEuMjUgMTUuNTg1OCAxLjU4NTc5IDE1LjI1IDIgMTUuMjVIMi4yNzA5NUMyLjA5NTc4IDE0Ljc4NzggMiAxNC4yODczIDIgMTMuNzY0N0MyIDExLjQyNTYgMy45MTg3OCA5LjUyOTQxIDYuMjg1NzEgOS41Mjk0MUM2LjU2OTgzIDkuNTI5NDEgNi44NDc1IDkuNTU2NzMgNy4xMTYxNiA5LjYwODg3QzYuODg3MDYgOC45OTc4IDYuNzYxOSA4LjMzNjg3IDYuNzYxOSA3LjY0NzA2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNNSAxOC4yNUM0LjU4NTc5IDE4LjI1IDQuMjUgMTguNTg1OCA0LjI1IDE5QzQuMjUgMTkuNDE0MiA0LjU4NTc5IDE5Ljc1IDUgMTkuNzVIMTlDMTkuNDE0MiAxOS43NSAxOS43NSAxOS40MTQyIDE5Ljc1IDE5QzE5Ljc1IDE4LjU4NTggMTkuNDE0MiAxOC4yNSAxOSAxOC4yNUg1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOCAyMS4yNUM3LjU4NTc5IDIxLjI1IDcuMjUgMjEuNTg1OCA3LjI1IDIyQzcuMjUgMjIuNDE0MiA3LjU4NTc5IDIyLjc1IDggMjIuNzVIMTZDMTYuNDE0MiAyMi43NSAxNi43NSAyMi40MTQyIDE2Ljc1IDIyQzE2Ljc1IDIxLjU4NTggMTYuNDE0MiAyMS4yNSAxNiAyMS4yNUg4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Fog";
  */
 const Fog: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Fog.displayName = "Fog";
-export default Fog;
+Fog.displayName = "Fog"
+export default Fog

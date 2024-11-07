@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/weather/Temperature";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/weather/Temperature"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuNSAxNi41QzE3LjUgMTkuNTM3NiAxNS4wMzc2IDIyIDEyIDIyQzguOTYyNDMgMjIgNi41IDE5LjUzNzYgNi41IDE2LjVDNi41IDE0Ljc2MzYgNy4zMDQ2NSAxMy4yMTUyIDguNTYxNDEgMTIuMjA3MkM4LjgyNTA1IDExLjk5NTcgOSAxMS42ODU3IDkgMTEuMzQ3N1Y1QzkgMy4zNDMxNSAxMC4zNDMxIDIgMTIgMkMxMy42NTY5IDIgMTUgMy4zNDMxNSAxNSA1VjExLjM0NzdDMTUgMTEuNjg1NyAxNS4xNzQ5IDExLjk5NTcgMTUuNDM4NiAxMi4yMDcyQzE2LjY5NTQgMTMuMjE1MiAxNy41IDE0Ljc2MzYgMTcuNSAxNi41Wk0xMiA0LjI1QzEyLjQxNDIgNC4yNSAxMi43NSA0LjU4NTc5IDEyLjc1IDVWMTMuMzgwNEMxMi43NSAxMy44MTcyIDEzLjA0NzMgMTQuMTg3NiAxMy40MDggMTQuNDMzOUMxNC4wNjczIDE0Ljg4NDEgMTQuNSAxNS42NDE1IDE0LjUgMTYuNUMxNC41IDE3Ljg4MDcgMTMuMzgwNyAxOSAxMiAxOUMxMC42MTkzIDE5IDkuNSAxNy44ODA3IDkuNSAxNi41QzkuNSAxNS42NDE1IDkuOTMyNzMgMTQuODg0MSAxMC41OTIgMTQuNDMzOUMxMC45NTI3IDE0LjE4NzYgMTEuMjUgMTMuODE3MiAxMS4yNSAxMy4zODA0VjVDMTEuMjUgNC41ODU3OSAxMS41ODU4IDQuMjUgMTIgNC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Temperature";
  */
 const Temperature: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Temperature.displayName = "Temperature";
-export default Temperature;
+Temperature.displayName = "Temperature"
+export default Temperature

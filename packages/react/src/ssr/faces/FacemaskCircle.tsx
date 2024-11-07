@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/faces/FacemaskCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/faces/FacemaskCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMS44MjM5IDEzLjg3ODJMMTcuNzEyIDE1LjUyMjZMMTcuMzMyMSAyMC40NjE0QzE5LjYzMTYgMTkuMDA5MyAyMS4yOTggMTYuNjQ1NyAyMS44MjM5IDEzLjg3ODJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNS43NjU3IDIxLjI2NjdMMTYuMjEgMTUuNDkxNEwxMy41Nzg0IDE0LjQzODdDMTIuNTY1MiAxNC4wMzM0IDExLjQzNDggMTQuMDMzNCAxMC40MjE2IDE0LjQzODdMNy43OTAwNCAxNS40OTE0TDguMjM0MjcgMjEuMjY2N0M5LjM5NjU3IDIxLjczOTUgMTAuNjY3OSAyMiAxMiAyMkMxMy4zMzIxIDIyIDE0LjYwMzQgMjEuNzM5NSAxNS43NjU3IDIxLjI2NjdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik02LjY2Nzg5IDIwLjQ2MTRMNi4yODkyOSAxNS41MzkyTDIuMjExNzQgMTQuMDU2OEMyLjc3NDIzIDE2Ljc0NzMgNC40MTgwNiAxOS4wNDA2IDYuNjY3ODkgMjAuNDYxNFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMS45OTgyIDEyLjE5M0MyMS45OTk0IDEyLjEyODggMjIgMTIuMDY0NSAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDEyLjEyOTQgMi4wMDI0NiAxMi4yNTgyIDIuMDA3MzMgMTIuMzg2NEw2Ljk4NzI0IDE0LjE5NjlMOS44NjQ1IDEzLjA0NkMxMS4yMzU0IDEyLjQ5NzcgMTIuNzY0NiAxMi40OTc3IDE0LjEzNTUgMTMuMDQ2TDE3IDE0LjE5MThMMjEuOTk4MiAxMi4xOTNaTTE2IDEwLjVDMTYgMTEuMzI4NCAxNS41NTIzIDEyIDE1IDEyQzE0LjQ0NzcgMTIgMTQgMTEuMzI4NCAxNCAxMC41QzE0IDkuNjcxNTcgMTQuNDQ3NyA5IDE1IDlDMTUuNTUyMyA5IDE2IDkuNjcxNTcgMTYgMTAuNVpNOSAxMkM5LjU1MjI4IDEyIDEwIDExLjMyODQgMTAgMTAuNUMxMCA5LjY3MTU3IDkuNTUyMjggOSA5IDlDOC40NDc3MiA5IDggOS42NzE1NyA4IDEwLjVDOCAxMS4zMjg0IDguNDQ3NzIgMTIgOSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/FacemaskCircle";
  */
 const FacemaskCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-FacemaskCircle.displayName = "FacemaskCircle";
-export default FacemaskCircle;
+FacemaskCircle.displayName = "FacemaskCircle"
+export default FacemaskCircle

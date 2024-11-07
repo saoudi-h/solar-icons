@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/search/MagniferZoomIn";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/search/MagniferZoomIn"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuNzg4MyAyMS43ODgzQzIyLjA3MDYgMjEuNTA2IDIyLjA3MDYgMjEuMDQ4MyAyMS43ODgzIDIwLjc2NTlMMTguMTIyNCAxNy4xMDAxQzE5LjQ4ODUgMTUuNTAwNiAyMC4zMTMzIDEzLjQyNDkgMjAuMzEzMyAxMS4xNTY2QzIwLjMxMzMgNi4wOTk1NiAxNi4yMTM3IDIgMTEuMTU2NiAyQzYuMDk5NTYgMiAyIDYuMDk5NTYgMiAxMS4xNTY2QzIgMTYuMjEzNyA2LjA5OTU2IDIwLjMxMzMgMTEuMTU2NiAyMC4zMTMzQzEzLjQyNDkgMjAuMzEzMyAxNS41MDA2IDE5LjQ4ODUgMTcuMTAwMSAxOC4xMjI0TDIwLjc2NTkgMjEuNzg4M0MyMS4wNDgzIDIyLjA3MDYgMjEuNTA2IDIyLjA3MDYgMjEuNzg4MyAyMS43ODgzWk0xMS4xNTY2IDguMDI0MUMxMS41NTU5IDguMDI0MSAxMS44Nzk1IDguMzQ3NzUgMTEuODc5NSA4Ljc0Njk5VjEwLjQzMzdIMTMuNTY2M0MxMy45NjU1IDEwLjQzMzcgMTQuMjg5MiAxMC43NTc0IDE0LjI4OTIgMTEuMTU2NkMxNC4yODkyIDExLjU1NTkgMTMuOTY1NSAxMS44Nzk1IDEzLjU2NjMgMTEuODc5NUgxMS44Nzk1VjEzLjU2NjNDMTEuODc5NSAxMy45NjU1IDExLjU1NTkgMTQuMjg5MiAxMS4xNTY2IDE0LjI4OTJDMTAuNzU3NCAxNC4yODkyIDEwLjQzMzcgMTMuOTY1NSAxMC40MzM3IDEzLjU2NjNWMTEuODc5NUg4Ljc0Njk5QzguMzQ3NzUgMTEuODc5NSA4LjAyNDEgMTEuNTU1OSA4LjAyNDEgMTEuMTU2NkM4LjAyNDEgMTAuNzU3NCA4LjM0Nzc1IDEwLjQzMzcgOC43NDY5OSAxMC40MzM3SDEwLjQzMzdWOC43NDY5OUMxMC40MzM3IDguMzQ3NzUgMTAuNzU3NCA4LjAyNDEgMTEuMTU2NiA4LjAyNDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/search/MagniferZoomIn";
  */
 const MagniferZoomIn: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MagniferZoomIn.displayName = "MagniferZoomIn";
-export default MagniferZoomIn;
+MagniferZoomIn.displayName = "MagniferZoomIn"
+export default MagniferZoomIn

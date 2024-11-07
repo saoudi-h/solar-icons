@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/SortByTime";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/SortByTime"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNSA3QzEuMjUgNi41ODU3OSAxLjU4NTc5IDYuMjUgMiA2LjI1SDEwQzEwLjQxNDIgNi4yNSAxMC43NSA2LjU4NTc5IDEwLjc1IDdDMTAuNzUgNy40MTQyMSAxMC40MTQyIDcuNzUgMTAgNy43NUgyQzEuNTg1NzkgNy43NSAxLjI1IDcuNDE0MjEgMS4yNSA3Wk0xLjI1IDEyQzEuMjUgMTEuNTg1OCAxLjU4NTc5IDExLjI1IDIgMTEuMjVIOEM4LjQxNDIxIDExLjI1IDguNzUgMTEuNTg1OCA4Ljc1IDEyQzguNzUgMTIuNDE0MiA4LjQxNDIxIDEyLjc1IDggMTIuNzVIMkMxLjU4NTc5IDEyLjc1IDEuMjUgMTIuNDE0MiAxLjI1IDEyWk0xLjI1IDE3QzEuMjUgMTYuNTg1OCAxLjU4NTc5IDE2LjI1IDIgMTYuMjVIMTBDMTAuNDE0MiAxNi4yNSAxMC43NSAxNi41ODU4IDEwLjc1IDE3QzEwLjc1IDE3LjQxNDIgMTAuNDE0MiAxNy43NSAxMCAxNy43NUgyQzEuNTg1NzkgMTcuNzUgMS4yNSAxNy40MTQyIDEuMjUgMTdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcgMTdDMTkuNzYxNCAxNyAyMiAxNC43NjE0IDIyIDEyQzIyIDkuMjM4NTggMTkuNzYxNCA3IDE3IDdDMTQuMjM4NiA3IDEyIDkuMjM4NTggMTIgMTJDMTIgMTQuNzYxNCAxNC4yMzg2IDE3IDE3IDE3Wk0xNy43NSAxMEMxNy43NSA5LjU4NTc5IDE3LjQxNDIgOS4yNSAxNyA5LjI1QzE2LjU4NTggOS4yNSAxNi4yNSA5LjU4NTc5IDE2LjI1IDEwVjExLjg0NjJDMTYuMjUgMTIuMDI2NiAxNi4zMTUxIDEyLjIwMSAxNi40MzMyIDEyLjMzNzRMMTcuNDMzMiAxMy40OTEyQzE3LjcwNDUgMTMuODA0MiAxOC4xNzgyIDEzLjgzOCAxOC40OTEyIDEzLjU2NjhDMTguODA0MiAxMy4yOTU1IDE4LjgzOCAxMi44MjE4IDE4LjU2NjggMTIuNTA4OEwxNy43NSAxMS41NjY0VjEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/SortByTime";
  */
 const SortByTime: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SortByTime.displayName = "SortByTime";
-export default SortByTime;
+SortByTime.displayName = "SortByTime"
+export default SortByTime

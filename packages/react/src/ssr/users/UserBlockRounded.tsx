@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/users/UserBlockRounded";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/users/UserBlockRounded"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE4IDE1Ljc1QzE2Ljc1NzQgMTUuNzUgMTUuNzUgMTYuNzU3NCAxNS43NSAxOEMxNS43NSAxOC4zNDczIDE1LjgyODcgMTguNjc2MyAxNS45NjkzIDE4Ljk3TDE4Ljk3MDEgMTUuOTY5M0MxOC42NzYzIDE1LjgyODcgMTguMzQ3NCAxNS43NSAxOCAxNS43NVpNMjAuMDMwNyAxNy4wMjk5TDE3LjAyOTkgMjAuMDMwN0MxNy4zMjM2IDIwLjE3MTMgMTcuNjUyNiAyMC4yNSAxOCAyMC4yNUMxOS4yNDI2IDIwLjI1IDIwLjI1IDE5LjI0MjYgMjAuMjUgMThDMjAuMjUgMTcuNjUyNiAyMC4xNzEzIDE3LjMyMzcgMjAuMDMwNyAxNy4wMjk5Wk0xNC4yNSAxOEMxNC4yNSAxNS45Mjg5IDE1LjkyODkgMTQuMjUgMTggMTQuMjVDMjAuMDcxMSAxNC4yNSAyMS43NSAxNS45Mjg5IDIxLjc1IDE4QzIxLjc1IDIwLjA3MTEgMjAuMDcxMSAyMS43NSAxOCAyMS43NUMxNS45Mjg5IDIxLjc1IDE0LjI1IDIwLjA3MTEgMTQuMjUgMThaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNS4zMjY3IDEzLjQ4MDdDMTMuNzg0MSAxNC4zOTUxIDEyLjc1IDE2LjA3NjggMTIuNzUgMThDMTIuNzUgMTkuMDY5MyAxMy4wNjk3IDIwLjA2MzkgMTMuNjE4NyAyMC44OTM1QzEzLjA5OTEgMjAuOTYzOCAxMi41NTcyIDIxLjAwMSAxMiAyMS4wMDFDOC4xMzQwMSAyMS4wMDEgNSAxOS4yMTAxIDUgMTcuMDAxQzUgMTQuNzkxOCA4LjEzNDAxIDEzLjAwMSAxMiAxMy4wMDFDMTMuMjA0MSAxMy4wMDEgMTQuMzM3MiAxMy4xNzQ3IDE1LjMyNjcgMTMuNDgwN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/users/UserBlockRounded";
  */
 const UserBlockRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-UserBlockRounded.displayName = "UserBlockRounded";
-export default UserBlockRounded;
+UserBlockRounded.displayName = "UserBlockRounded"
+export default UserBlockRounded

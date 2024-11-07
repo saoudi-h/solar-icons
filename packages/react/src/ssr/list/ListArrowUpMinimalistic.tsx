@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListArrowUpMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListArrowUpMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0xNi45Njk3IDguNDY5NjdDMTcuMjYyNiA4LjE3Njc4IDE3LjczNzQgOC4xNzY3OCAxOC4wMzAzIDguNDY5NjdMMjAuNTMwMyAxMC45Njk3QzIwLjgyMzIgMTEuMjYyNiAyMC44MjMyIDExLjczNzQgMjAuNTMwMyAxMi4wMzAzQzIwLjIzNzQgMTIuMzIzMiAxOS43NjI2IDEyLjMyMzIgMTkuNDY5NyAxMi4wMzAzTDE4LjI1IDEwLjgxMDdWMTdDMTguMjUgMTcuNDE0MiAxNy45MTQyIDE3Ljc1IDE3LjUgMTcuNzVDMTcuMDg1OCAxNy43NSAxNi43NSAxNy40MTQyIDE2Ljc1IDE3VjEwLjgxMDdMMTUuNTMwMyAxMi4wMzAzQzE1LjIzNzQgMTIuMzIzMiAxNC43NjI2IDEyLjMyMzIgMTQuNDY5NyAxMi4wMzAzQzE0LjE3NjggMTEuNzM3NCAxNC4xNzY4IDExLjI2MjYgMTQuNDY5NyAxMC45Njk3TDE2Ljk2OTcgOC40Njk2N1pNMi4yNSAxMUMyLjI1IDEwLjU4NTggMi41ODU3OSAxMC4yNSAzIDEwLjI1SDExQzExLjQxNDIgMTAuMjUgMTEuNzUgMTAuNTg1OCAxMS43NSAxMUMxMS43NSAxMS40MTQyIDExLjQxNDIgMTEuNzUgMTEgMTEuNzVIM0MyLjU4NTc5IDExLjc1IDIuMjUgMTEuNDE0MiAyLjI1IDExWk0yLjI1IDE2QzIuMjUgMTUuNTg1OCAyLjU4NTc5IDE1LjI1IDMgMTUuMjVIMTJDMTIuNDE0MiAxNS4yNSAxMi43NSAxNS41ODU4IDEyLjc1IDE2QzEyLjc1IDE2LjQxNDIgMTIuNDE0MiAxNi43NSAxMiAxNi43NUgzQzIuNTg1NzkgMTYuNzUgMi4yNSAxNi40MTQyIDIuMjUgMTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListArrowUpMinimalistic";
  */
 const ListArrowUpMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListArrowUpMinimalistic.displayName = "ListArrowUpMinimalistic";
-export default ListArrowUpMinimalistic;
+ListArrowUpMinimalistic.displayName = "ListArrowUpMinimalistic"
+export default ListArrowUpMinimalistic

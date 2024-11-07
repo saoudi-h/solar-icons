@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/Clouds";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/Clouds"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC4yODU3IDIyQzIwLjMzNzEgMjIgMjIgMjAuNDE5OCAyMiAxOC40NzA2QzIyIDE2LjkyNTcgMjAuOTU1NCAxNS42MTI2IDE5LjUwMDggMTUuMTM0NEMxOS4yOTQxIDEzLjM3MTEgMTcuNzIwMyAxMiAxNS44MDk1IDEyQzEzLjc1ODIgMTIgMTIuMDk1MiAxMy41ODAyIDEyLjA5NTIgMTUuNTI5NEMxMi4wOTUyIDE1Ljk2MDUgMTIuMTc2NiAxNi4zNzM2IDEyLjMyNTUgMTYuNzU1NUMxMi4xNTA5IDE2LjcyMyAxMS45NzA0IDE2LjcwNTkgMTEuNzg1NyAxNi43MDU5QzEwLjI0NzIgMTYuNzA1OSA5IDE3Ljg5MSA5IDE5LjM1MjlDOSAyMC44MTQ5IDEwLjI0NzIgMjIgMTEuNzg1NyAyMkgxOC4yODU3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuNTUxMiAxNC41NTAzQzIxLjMxNTggMTQuMzY3NyAyMS4wNjQyIDE0LjIwNDggMjAuNzk5NiAxNC4wNjM5QzIwLjE0MDQgMTEuOTYyNyAxOC4xMTQgMTAuNSAxNS44MDk1IDEwLjVDMTMuMDU1NyAxMC41IDEwLjY4NjEgMTIuNTk5MSAxMC41OTc4IDE1LjM2OTFDOS4yNzY4IDE1LjczOTUgOC4xODcyMyAxNi43MTIzIDcuNzMwNzIgMThINi4yODU3MUMzLjkxODc4IDE4IDIgMTYuMTAzOCAyIDEzLjc2NDdDMiAxMS40MjU2IDMuOTE4NzggOS41Mjk0MSA2LjI4NTcxIDkuNTI5NDFDNi41Njk4MyA5LjUyOTQxIDYuODQ3NSA5LjU1NjczIDcuMTE2MTYgOS42MDg4N0M2Ljg4NzA2IDguOTk3OCA2Ljc2MTkgOC4zMzY4NyA2Ljc2MTkgNy42NDcwNkM2Ljc2MTkgNC41MjgyNyA5LjMyMDI4IDIgMTIuNDc2MiAyQzE1LjQxNTkgMiAxNy44MzcxIDQuMTkzNzEgMTguMTU1MSA3LjAxNDk4QzIwLjM5MyA3Ljc4MDI0IDIyIDkuODgxMTMgMjIgMTIuMzUyOUMyMiAxMy4xMzI0IDIxLjg0MDIgMTMuODc0OSAyMS41NTEyIDE0LjU1MDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Clouds";
  */
 const Clouds: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Clouds.displayName = "Clouds";
-export default Clouds;
+Clouds.displayName = "Clouds"
+export default Clouds

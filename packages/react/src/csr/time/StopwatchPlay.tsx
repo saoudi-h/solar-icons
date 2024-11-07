@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/time/StopwatchPlay";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/time/StopwatchPlay"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS4yNSAyLjc1QzkuMjUgMi4zMzU3OSA5LjU4NTc5IDIgMTAgMkgxNEMxNC40MTQyIDIgMTQuNzUgMi4zMzU3OSAxNC43NSAyLjc1QzE0Ljc1IDMuMTY0MjEgMTQuNDE0MiAzLjUgMTQgMy41SDEwQzkuNTg1NzkgMy41IDkuMjUgMy4xNjQyMSA5LjI1IDIuNzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEgMTMuNzVDMjEgMTguNzIwNiAxNi45NzA2IDIyLjc1IDEyIDIyLjc1QzcuMDI5NDQgMjIuNzUgMyAxOC43MjA2IDMgMTMuNzVDMyA4Ljc3OTQ0IDcuMDI5NDQgNC43NSAxMiA0Ljc1QzE2Ljk3MDYgNC43NSAyMSA4Ljc3OTQ0IDIxIDEzLjc1Wk0xMy4wMjYxIDExLjAyNDlDMTIuNzg4OCAxMC44NTgzIDEyLjUyMDEgMTAuNjg2IDEyLjI0MTkgMTAuNTE2OEMxMS4xNjk1IDkuODY0NjYgMTAuNjMzMyA5LjUzODU5IDEwLjE1MjQgOS44OTk2QzkuNjcxNSAxMC4yNjA2IDkuNjI3NzkgMTEuMDE2NCA5LjU0MDM4IDEyLjUyNzhDOS41MTU2NiAxMi45NTUzIDkuNSAxMy4zNzQzIDkuNSAxMy43NUM5LjUgMTQuMTI1NyA5LjUxNTY2IDE0LjU0NDcgOS41NDAzOCAxNC45NzIyQzkuNjI3NzkgMTYuNDgzNiA5LjY3MTUgMTcuMjM5NCAxMC4xNTI0IDE3LjYwMDRDMTAuNjMzMyAxNy45NjE0IDExLjE2OTUgMTcuNjM1MyAxMi4yNDE5IDE2Ljk4MzJDMTIuNTIwMSAxNi44MTQgMTIuNzg4OCAxNi42NDE3IDEzLjAyNjEgMTYuNDc1MUMxMy4yOTY2IDE2LjI4NTIgMTMuNTkwOSAxNi4wNTczIDEzLjg4NzYgMTUuODE1MkMxNC45NjI1IDE0LjkzODMgMTUuNSAxNC40OTk5IDE1LjUgMTMuNzVDMTUuNSAxMy4wMDAxIDE0Ljk2MjUgMTIuNTYxNyAxMy44ODc2IDExLjY4NDhDMTMuNTkwOSAxMS40NDI3IDEzLjI5NjYgMTEuMjE0OCAxMy4wMjYxIDExLjAyNDlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/time/StopwatchPlay";
  */
 const StopwatchPlay: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-StopwatchPlay.displayName = "StopwatchPlay";
-export default StopwatchPlay;
+StopwatchPlay.displayName = "StopwatchPlay"
+export default StopwatchPlay

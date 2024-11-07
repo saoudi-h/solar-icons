@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListCheck";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListCheck"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMiA1Ljc1QzIgNS4zMzU3OSAyLjMzNTc5IDUgMi43NSA1SDIwLjc1QzIxLjE2NDIgNSAyMS41IDUuMzM1NzkgMjEuNSA1Ljc1QzIxLjUgNi4xNjQyMSAyMS4xNjQyIDYuNSAyMC43NSA2LjVIMi43NUMyLjMzNTc5IDYuNSAyIDYuMTY0MjEgMiA1Ljc1Wk0yIDkuNzVDMiA5LjMzNTc5IDIuMzM1NzkgOSAyLjc1IDlIMjAuNzVDMjEuMTY0MiA5IDIxLjUgOS4zMzU3OSAyMS41IDkuNzVDMjEuNSAxMC4xNjQyIDIxLjE2NDIgMTAuNSAyMC43NSAxMC41SDIuNzVDMi4zMzU3OSAxMC41IDIgMTAuMTY0MiAyIDkuNzVaTTIwLjIxMTMgMTIuNjU4NkMyMC41Mzc5IDEyLjkxMzQgMjAuNTk2MSAxMy4zODQ3IDIwLjM0MTQgMTMuNzExM0wxNi40NDE0IDE4LjcxMTNDMTYuMzAyMiAxOC44ODk3IDE2LjA4OTkgMTguOTk1OCAxNS44NjM2IDE4Ljk5OTlDMTUuNjM3MyAxOS4wMDQgMTUuNDIxMyAxOC45MDU3IDE1LjI3NTcgMTguNzMyNEwxMy4xNzU3IDE2LjIzMjRDMTIuOTA5MyAxNS45MTUyIDEyLjk1MDQgMTUuNDQyMSAxMy4yNjc2IDE1LjE3NTdDMTMuNTg0OCAxNC45MDkzIDE0LjA1NzkgMTQuOTUwNCAxNC4zMjQzIDE1LjI2NzZMMTUuODI4NCAxNy4wNTgyTDE5LjE1ODYgMTIuNzg4N0MxOS40MTM0IDEyLjQ2MjEgMTkuODg0NyAxMi40MDM5IDIwLjIxMTMgMTIuNjU4NlpNMiAxMy43NUMyIDEzLjMzNTggMi4zMzU3OSAxMyAyLjc1IDEzSDkuNzVDMTAuMTY0MiAxMyAxMC41IDEzLjMzNTggMTAuNSAxMy43NUMxMC41IDE0LjE2NDIgMTAuMTY0MiAxNC41IDkuNzUgMTQuNUgyLjc1QzIuMzM1NzkgMTQuNSAyIDE0LjE2NDIgMiAxMy43NVpNMiAxNy43NUMyIDE3LjMzNTggMi4zMzU3OSAxNyAyLjc1IDE3SDkuNzVDMTAuMTY0MiAxNyAxMC41IDE3LjMzNTggMTAuNSAxNy43NUMxMC41IDE4LjE2NDIgMTAuMTY0MiAxOC41IDkuNzUgMTguNUgyLjc1QzIuMzM1NzkgMTguNSAyIDE4LjE2NDIgMiAxNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListCheck";
  */
 const ListCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListCheck.displayName = "ListCheck";
-export default ListCheck;
+ListCheck.displayName = "ListCheck"
+export default ListCheck

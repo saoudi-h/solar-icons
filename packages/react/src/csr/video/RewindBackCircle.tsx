@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/video/RewindBackCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/video/RewindBackCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyWk0xMC41NjQgNy40NjEwNUMxMC45MDExIDcuMjIwMjkgMTEuMzY5NSA3LjI5ODM2IDExLjYxMDIgNy42MzU0MkMxMS44NTEgNy45NzI0OCAxMS43NzI5IDguNDQwODkgMTEuNDM1OSA4LjY4MTY1TDguMjE0MzIgMTAuOTgyOEM3LjUxNjM5IDExLjQ4MTMgNy41MTYzOSAxMi41MTg2IDguMjE0MzIgMTMuMDE3MUwxMS40MzU5IDE1LjMxODJDMTEuNzcyOSAxNS41NTg5IDExLjg1MSAxNi4wMjc0IDExLjYxMDIgMTYuMzY0NEMxMS4zNjk1IDE2LjcwMTUgMTAuOTAxMSAxNi43Nzk1IDEwLjU2NCAxNi41Mzg4TDcuMzQyNDcgMTQuMjM3N0M1LjgwNzAxIDEzLjE0MDkgNS44MDcwMSAxMC44NTg5IDcuMzQyNDcgOS43NjIxNUwxMC41NjQgNy40NjEwNVpNMTYuNSAxNS4xMzE4VjguODY4ODdDMTYuNSA4LjA3MDE3IDE1LjYwOTkgNy41OTM3OCAxNC45NDUzIDguMDM2ODJMMTAuMjQ4MSAxMS4xNjgzQzkuNjU0MzQgMTEuNTY0MSA5LjY1NDM0IDEyLjQzNjYgMTAuMjQ4MSAxMi44MzI0TDE0Ljk0NTMgMTUuOTYzOUMxNS42MDk5IDE2LjQwNjkgMTYuNSAxNS45MzA1IDE2LjUgMTUuMTMxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/video/RewindBackCircle";
  */
 const RewindBackCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-RewindBackCircle.displayName = "RewindBackCircle";
-export default RewindBackCircle;
+RewindBackCircle.displayName = "RewindBackCircle"
+export default RewindBackCircle

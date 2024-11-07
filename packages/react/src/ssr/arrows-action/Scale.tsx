@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/arrows-action/Scale";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/arrows-action/Scale"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS45MDYyIDJDMTUuOTA2MiAyLjQxNDIxIDE2LjI0MiAyLjc1IDE2LjY1NjIgMi43NUgyMC4xODkzTDEyLjc1IDEwLjE4OTNWOEMxMi43NSA3LjU4NTc5IDEyLjQxNDIgNy4yNSAxMiA3LjI1QzExLjU4NTggNy4yNSAxMS4yNSA3LjU4NTc5IDExLjI1IDhWMTJDMTEuMjUgMTIuNDE0MiAxMS41ODU4IDEyLjc1IDEyIDEyLjc1SDE2QzE2LjQxNDIgMTIuNzUgMTYuNzUgMTIuNDE0MiAxNi43NSAxMkMxNi43NSAxMS41ODU4IDE2LjQxNDIgMTEuMjUgMTYgMTEuMjVIMTMuODEwN0wyMS4yNSAzLjgxMDY2VjcuMzQzNzVDMjEuMjUgNy43NTc5NiAyMS41ODU4IDguMDkzNzUgMjIgOC4wOTM3NUMyMi40MTQyIDguMDkzNzUgMjIuNzUgNy43NTc5NiAyMi43NSA3LjM0Mzc1VjJDMjIuNzUgMS41ODU3OSAyMi40MTQyIDEuMjUgMjIgMS4yNUgxNi42NTYyQzE2LjI0MiAxLjI1IDE1LjkwNjIgMS41ODU3OSAxNS45MDYyIDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xOS43NTE2IDcuNDMwMzRDMTkuNzk3IDguNjI5NjkgMjAuNzgxMiA5LjU4ODcgMjEuOTkwNCA5LjU5MzczQzIyIDEwLjMxOTggMjIgMTEuMTE4NyAyMiAxMkMyMiAxNi43MTQgMjIgMTkuMDcxMSAyMC41MzU1IDIwLjUzNTVDMTkuMDcxMSAyMiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMkMyIDcuMjg1OTUgMiA0LjkyODkzIDMuNDY0NDcgMy40NjQ0N0M0LjkyODkzIDIgNy4yODU5NSAyIDEyIDJDMTIuODgxMyAyIDEzLjY4MDIgMiAxNC40MDYzIDIuMDA5NTdDMTQuNDExMyAzLjIxODg0IDE1LjM3MDMgNC4yMDI5OCAxNi41Njk3IDQuMjQ4MzZMMTMuOTQ2OCA2Ljg3MTIyQzEzLjU1NzIgNi4yMDA3OCAxMi44MzEzIDUuNzUgMTIgNS43NUMxMC43NTc0IDUuNzUgOS43NSA2Ljc1NzM2IDkuNzUgOFYxMkM5Ljc1IDEzLjI0MjYgMTAuNzU3NCAxNC4yNSAxMiAxNC4yNUgxNkMxNy4yNDI2IDE0LjI1IDE4LjI1IDEzLjI0MjYgMTguMjUgMTJDMTguMjUgMTEuMTY4NyAxNy43OTkyIDEwLjQ0MjggMTcuMTI4OCAxMC4wNTMyTDE5Ljc1MTYgNy40MzAzNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/Scale";
  */
 const Scale: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Scale.displayName = "Scale";
-export default Scale;
+Scale.displayName = "Scale"
+export default Scale

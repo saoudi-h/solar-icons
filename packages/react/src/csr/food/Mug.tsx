@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/food/Mug";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/food/Mug"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDdDMyA1LjExNDM4IDMgNC4xNzE1NyAzLjU4NTc5IDMuNTg1NzlDNC4xNzE1NyAzIDUuMTE0MzggMyA3IDNIMTNDMTQuODg1NiAzIDE1LjgyODQgMyAxNi40MTQyIDMuNTg1NzlDMTYuNTk1NiAzLjc2NzE3IDE2LjcyMDggMy45ODI3NyAxNi44MDczIDQuMjVIMThDMjAuNjIzNCA0LjI1IDIyLjc1IDYuMzc2NjUgMjIuNzUgOUMyMi43NSAxMS42MjM0IDIwLjYyMzQgMTMuNzUgMTggMTMuNzVIMTdWMTIuMjVIMThDMTkuNzk0OSAxMi4yNSAyMS4yNSAxMC43OTQ5IDIxLjI1IDlDMjEuMjUgNy4yMDUwNyAxOS43OTQ5IDUuNzUgMTggNS43NUgxNi45OTA4QzE3IDYuMTEzNTMgMTcgNi41MjcxMiAxNyA3VjEyLjI1SDMuMDAwMDJMMyA3WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMy4wMTA5NSAxMy43NUgxNi45ODkxQzE2Ljk1MjggMTUuNDU1MyAxNi43OTYzIDE2LjQ0NjMgMTYuMTIxMyAxNy4xMjEzQzE1LjI0MjYgMTggMTMuODI4NCAxOCAxMSAxOEg5QzYuMTcxNTcgMTggNC43NTczNiAxOCAzLjg3ODY4IDE3LjEyMTNDMy4yMDM3IDE2LjQ0NjMgMy4wNDcyMiAxNS40NTUzIDMuMDEwOTUgMTMuNzVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNSAyMUMxLjI1IDIwLjU4NTggMS41ODU3OSAyMC4yNSAyIDIwLjI1TDIyIDIwLjI1QzIyLjQxNDIgMjAuMjUgMjIuNzUgMjAuNTg1OCAyMi43NSAyMUMyMi43NSAyMS40MTQyIDIyLjQxNDIgMjEuNzUgMjIgMjEuNzVMMiAyMS43NUMxLjU4NTc5IDIxLjc1IDEuMjUgMjEuNDE0MiAxLjI1IDIxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/food/Mug";
  */
 const Mug: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Mug.displayName = "Mug";
-export default Mug;
+Mug.displayName = "Mug"
+export default Mug

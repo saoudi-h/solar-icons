@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/Cosmetic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/Cosmetic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyLjVDMiAxMi4yMjM5IDIuMjIzODYgMTIgMi41IDEySDcuNUM3Ljc3NjE0IDEyIDggMTIuMjIzOSA4IDEyLjVWMThDOCAxOS42NTY5IDYuNjU2ODUgMjEgNSAyMUMzLjM0MzE1IDIxIDIgMTkuNjU2OSAyIDE4VjEyLjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0zIDEwLjVIN1Y1Ljk5OTgzQzcgNS4yNTY0NCA2LjIxNzY5IDQuNzcyOTUgNS41NTI3OSA1LjEwNTRMMy41NTI3OSA2LjEwNTRDMy4yMTQgNi4yNzQ3OSAzIDYuNjIxMDUgMyA2Ljk5OTgzVjEwLjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMSAxMC41QzExIDcuNDYyNDMgMTMuNDYyNCA1IDE2LjUgNUMxOS41Mzc2IDUgMjIgNy40NjI0MyAyMiAxMC41QzIyIDEzLjUzNzYgMTkuNTM3NiAxNiAxNi41IDE2QzEzLjQ2MjQgMTYgMTEgMTMuNTM3NiAxMSAxMC41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUuNzUgMTcuNzEwM0MxNS45OTY0IDE3LjczNjUgMTYuMjQ2NiAxNy43NSAxNi41IDE3Ljc1QzE2Ljc1MzQgMTcuNzUgMTcuMDAzNiAxNy43MzY1IDE3LjI1IDE3LjcxMDNWMTkuNUgxOS41QzE5LjkxNDIgMTkuNSAyMC4yNSAxOS44MzU4IDIwLjI1IDIwLjI1QzIwLjI1IDIwLjY2NDIgMTkuOTE0MiAyMSAxOS41IDIxSDEzLjVDMTMuMDg1OCAyMSAxMi43NSAyMC42NjQyIDEyLjc1IDIwLjI1QzEyLjc1IDE5LjgzNTggMTMuMDg1OCAxOS41IDEzLjUgMTkuNUgxNS43NVYxNy43MTAzWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Cosmetic";
  */
 const Cosmetic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Cosmetic.displayName = "Cosmetic";
-export default Cosmetic;
+Cosmetic.displayName = "Cosmetic"
+export default Cosmetic

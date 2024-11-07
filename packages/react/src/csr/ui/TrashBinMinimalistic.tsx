@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/TrashBinMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/TrashBinMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDYuNTIzODFDMyA2LjEyOTMyIDMuMzI2NzEgNS44MDk1MiAzLjcyOTczIDUuODA5NTJIOC41MTc4N0M4LjUyNDM3IDQuOTY4MyA4LjYxNTU0IDMuODE1MDQgOS40NTAzNyAzLjAxNjY4QzEwLjEwNzQgMi4zODgzOSAxMS4wMDgxIDIgMTIgMkMxMi45OTE5IDIgMTMuODkyNiAyLjM4ODM5IDE0LjU0OTYgMy4wMTY2OEMxNS4zODQ0IDMuODE1MDQgMTUuNDc1NiA0Ljk2ODMgMTUuNDgyMSA1LjgwOTUySDIwLjI3MDNDMjAuNjczMyA1LjgwOTUyIDIxIDYuMTI5MzIgMjEgNi41MjM4MUMyMSA2LjkxODMgMjAuNjczMyA3LjIzODEgMjAuMjcwMyA3LjIzODFIMy43Mjk3M0MzLjMyNjcxIDcuMjM4MSAzIDYuOTE4MyAzIDYuNTIzODFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNTk1NiAyMkgxMi40MDQ0QzE1LjE4NzEgMjIgMTYuNTc4NSAyMiAxNy40ODMxIDIxLjExNDFDMTguMzg3OCAyMC4yMjgxIDE4LjQ4MDMgMTguNzc0OSAxOC42NjU0IDE1Ljg2ODVMMTguOTMyMSAxMS42ODA2QzE5LjAzMjYgMTAuMTAzNiAxOS4wODI4IDkuMzE1MTEgMTguNjI4OSA4LjgxNTQ1QzE4LjE3NTEgOC4zMTU3OSAxNy40MDg3IDguMzE1NzkgMTUuODc2IDguMzE1NzlIOC4xMjQwNEM2LjU5MTI3IDguMzE1NzkgNS44MjQ4OCA4LjMxNTc5IDUuMzcxMDUgOC44MTU0NUM0LjkxNzIyIDkuMzE1MTEgNC45Njc0NCAxMC4xMDM2IDUuMDY3ODggMTEuNjgwNkw1LjMzNDU5IDE1Ljg2ODVDNS41MTk3IDE4Ljc3NDkgNS42MTIyNSAyMC4yMjgxIDYuNTE2ODkgMjEuMTE0MUM3LjQyMTUzIDIyIDguODEyODkgMjIgMTEuNTk1NiAyMlpNMTAuMjQ2MyAxMi4xODg1QzEwLjIwNTEgMTEuNzU0NiA5LjgzNzUzIDExLjQzODEgOS40MjUzNyAxMS40ODE1QzkuMDEzMjEgMTEuNTI0OSA4LjcxMjUxIDExLjkxMTcgOC43NTM3MiAxMi4zNDU2TDkuMjUzNzIgMTcuNjA4N0M5LjI5NDk0IDE4LjA0MjYgOS42NjI0NyAxOC4zNTkxIDEwLjA3NDYgMTguMzE1N0MxMC40ODY4IDE4LjI3MjQgMTAuNzg3NSAxNy44ODU1IDEwLjc0NjMgMTcuNDUxNkwxMC4yNDYzIDEyLjE4ODVaTTE0LjU3NDYgMTEuNDgxNUMxNC45ODY4IDExLjUyNDkgMTUuMjg3NSAxMS45MTE3IDE1LjI0NjMgMTIuMzQ1NkwxNC43NDYzIDE3LjYwODdDMTQuNzA1MSAxOC4wNDI2IDE0LjMzNzUgMTguMzU5MSAxMy45MjU0IDE4LjMxNTdDMTMuNTEzMiAxOC4yNzI0IDEzLjIxMjUgMTcuODg1NSAxMy4yNTM3IDE3LjQ1MTZMMTMuNzUzNyAxMi4xODg1QzEzLjc5NDkgMTEuNzU0NiAxNC4xNjI1IDExLjQzODEgMTQuNTc0NiAxMS40ODE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/TrashBinMinimalistic";
  */
 const TrashBinMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TrashBinMinimalistic.displayName = "TrashBinMinimalistic";
-export default TrashBinMinimalistic;
+TrashBinMinimalistic.displayName = "TrashBinMinimalistic"
+export default TrashBinMinimalistic

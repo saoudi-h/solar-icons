@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/TextItalic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/TextItalic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQuOTc2OCAxLjAwMDAySDlDOC40NDc3MiAxLjAwMDAyIDggMS40NDc3MyA4IDIuMDAwMDJDOCAyLjU1MjMgOC40NDc3MiAzLjAwMDAyIDkgMy4wMDAwMkgxMy42NTZMOC4yNTU5NyAyMUgzQzIuNDQ3NzIgMjEgMiAyMS40NDc3IDIgMjJDMiAyMi41NTIzIDIuNDQ3NzIgMjMgMyAyM0g4Ljk3NzUzQzguOTkyODEgMjMuMDAwNCA5LjAwODA1IDIzLjAwMDQgOS4wMjMyNSAyM0gxNUMxNS41NTIzIDIzIDE2IDIyLjU1MjMgMTYgMjJDMTYgMjEuNDQ3NyAxNS41NTIzIDIxIDE1IDIxSDEwLjM0NEwxNS43NDQgMy4wMDAwMkgyMUMyMS41NTIzIDMuMDAwMDIgMjIgMi41NTIzIDIyIDIuMDAwMDJDMjIgMS40NDc3MyAyMS41NTIzIDEuMDAwMDIgMjEgMS4wMDAwMkgxNS4wMjI1QzE1LjAwNzIgMC45OTk2NjcgMTQuOTkyIDAuOTk5NjY5IDE0Ljk3NjggMS4wMDAwMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/TextItalic";
  */
 const TextItalic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TextItalic.displayName = "TextItalic";
-export default TextItalic;
+TextItalic.displayName = "TextItalic"
+export default TextItalic

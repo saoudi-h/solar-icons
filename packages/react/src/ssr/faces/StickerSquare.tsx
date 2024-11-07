@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/faces/StickerSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/faces/StickerSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNSAyMS44Mzg5QzE2LjQ4NzMgMjEuODQxNyAxNi40NzQ1IDIxLjg0NDQgMTYuNDYxNyAyMS44NDcyTDE2LjQ1ODIgMjEuODQ3OUMxNi40NDI0IDIxLjg1MTIgMTYuNDI2NiAyMS44NTQ1IDE2LjQxMDcgMjEuODU3OEwxNi40MDkyIDIxLjg1ODFDMTYuNDI1NiAyMS44NTQ4IDE2LjQ0MTkgMjEuODUxNCAxNi40NTgyIDIxLjg0NzlDMTYuNDcyMiAyMS44NDQ5IDE2LjQ4NjEgMjEuODQxOSAxNi41IDIxLjgzODlaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMiAxNUMyMS40MTYyIDE1IDIwLjkyMzkgMTUgMjAuNSAxNS4wMDc2QzE5LjU3MjQgMTUuMDI0MSAxOC45NzE4IDE1LjA3NjggMTguNDU0OSAxNS4yNDQ3QzE2LjkzMjcgMTUuNzM5MyAxNS43MzkzIDE2LjkzMjcgMTUuMjQ0NyAxOC40NTQ5QzE1LjA3NjggMTguOTcxOCAxNS4wMjQxIDE5LjU3MjQgMTUuMDA3NiAyMC41QzE1IDIwLjkyMzkgMTUgMjEuNDE2MiAxNSAyMkMxNS40ODI3IDIyIDE1Ljk1NCAyMS45NTExIDE2LjQwOTIgMjEuODU4MUwxNi40MTA3IDIxLjg1NzhMMTYuNDU4MiAyMS44NDc5TDE2LjQ2MTcgMjEuODQ3MkwxNi41IDIxLjgzODlDMTkuMTYyIDIxLjI1NzcgMjEuMjU3NyAxOS4xNjIgMjEuODM4OSAxNi41QzIxLjk0NDQgMTYuMDE2OCAyMiAxNS41MTQ5IDIyIDE1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkgxMy41TDEzLjQ5OTkgMjEuNzQwOUMxMy40OTkgMjAuMTMyNSAxMy40OTg0IDE4Ljk3NTQgMTMuODE4MSAxNy45OTE0QzE0LjQ2MTEgMTYuMDEyNSAxNi4wMTI1IDE0LjQ2MTEgMTcuOTkxNCAxMy44MTgxQzE4Ljk3NTQgMTMuNDk4NCAyMC4xMzI1IDEzLjQ5OSAyMS43NDA5IDEzLjQ5OTlMMjIgMTMuNVYxMkMyMiA3LjI4NTk1IDIyIDQuOTI4OTMgMjAuNTM1NSAzLjQ2NDQ3QzE5LjA3MTEgMiAxNi43MTQgMiAxMiAyQzcuMjg1OTUgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/StickerSquare";
  */
 const StickerSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-StickerSquare.displayName = "StickerSquare";
-export default StickerSquare;
+StickerSquare.displayName = "StickerSquare"
+export default StickerSquare

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/Waterdrops";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/Waterdrops"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCAxNy44MzMyQzEwIDIwLjEzNDQgOC4yMDkxNCAyMS45OTk5IDYgMjEuOTk5OUMzLjc5MDg2IDIxLjk5OTkgMiAyMC4xMzQ0IDIgMTcuODMzMkMyIDE2LjM5MzQgMy41NjU5MyAxNC40NzE3IDQuNzM4MjMgMTMuMjM0N0M1LjQzMjIyIDEyLjUwMjUgNi41Njc3OCAxMi41MDI1IDcuMjYxNzcgMTMuMjM0N0M4LjQzNDA3IDE0LjQ3MTcgMTAgMTYuMzkzNCAxMCAxNy44MzMyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjIgMTcuODMzMkMyMiAyMC4xMzQ0IDIwLjIwOTEgMjEuOTk5OSAxOCAyMS45OTk5QzE1Ljc5MDkgMjEuOTk5OSAxNCAyMC4xMzQ0IDE0IDE3LjgzMzJDMTQgMTYuMzkzNCAxNS41NjU5IDE0LjQ3MTcgMTYuNzM4MiAxMy4yMzQ3QzE3LjQzMjIgMTIuNTAyNSAxOC41Njc4IDEyLjUwMjUgMTkuMjYxOCAxMy4yMzQ3QzIwLjQzNDEgMTQuNDcxNyAyMiAxNi4zOTM0IDIyIDE3LjgzMzJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNiA3LjgzMzE5QzE2IDEwLjEzNDQgMTQuMjA5MSAxMS45OTk5IDEyIDExLjk5OTlDOS43OTA4NiAxMS45OTk5IDggMTAuMTM0NCA4IDcuODMzMTlDOCA2LjM5MzM3IDkuNTY1OTMgNC40NzE2NSAxMC43MzgyIDMuMjM0NzNDMTEuNDMyMiAyLjUwMjQ5IDEyLjU2NzggMi41MDI0OSAxMy4yNjE4IDMuMjM0NzNDMTQuNDM0MSA0LjQ3MTY1IDE2IDYuMzkzMzcgMTYgNy44MzMxOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/Waterdrops";
  */
 const Waterdrops: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Waterdrops.displayName = "Waterdrops";
-export default Waterdrops;
+Waterdrops.displayName = "Waterdrops"
+export default Waterdrops

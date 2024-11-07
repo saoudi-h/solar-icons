@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/ScissorsSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/ScissorsSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTYuMzc5IDUuMzUyOTRDMTYuMDIxNiA1LjE0MzYxIDE1LjU2MjIgNS4yNjM2NyAxNS4zNTI4IDUuNjIxMDlMMTIuMDAwMSAxMS4zNDU3TDguNjQ3NDIgNS42MjEwOUM4LjQzODA5IDUuMjYzNjcgNy45Nzg2NCA1LjE0MzYxIDcuNjIxMjEgNS4zNTI5NEM3LjI2Mzc5IDUuNTYyMjcgNy4xNDM3MyA2LjAyMTcyIDcuMzUzMDYgNi4zNzkxNUwxMS4xMzEgMTIuODI5OEwxMC4wMTk1IDE0LjcyNzdDOS41MzkwNiAxNC4wNzAzIDguNzQ3ODQgMTMuNjUwMSA3Ljg3NSAxMy42NTAxQzYuNDU0NCAxMy42NTAxIDUuMjUgMTQuNzYzMiA1LjI1IDE2LjIwMDFDNS4yNSAxNy42MzcgNi40NTQ0IDE4Ljc1MDEgNy44NzUgMTguNzUwMUM4Ljg2NzMzIDE4Ljc1MDEgOS43NTQxNyAxOC4yMDcgMTAuMTk4NyAxNy4zODk4TDEyLjAwMDEgMTQuMzEzOUwxMy44MDE1IDE3LjM4OThDMTQuMjQ2MSAxOC4yMDcgMTUuMTMyOSAxOC43NTAxIDE2LjEyNTIgMTguNzUwMUMxNy41NDU4IDE4Ljc1MDEgMTguNzUwMiAxNy42MzcgMTguNzUwMiAxNi4yMDAxQzE4Ljc1MDIgMTQuNzYzMiAxNy41NDU4IDEzLjY1MDEgMTYuMTI1MiAxMy42NTAxQzE1LjI1MjQgMTMuNjUwMSAxNC40NjEyIDE0LjA3MDMgMTMuOTgwOCAxNC43Mjc3TDEyLjg2OTMgMTIuODI5OEwxNi42NDcyIDYuMzc5MTVDMTYuODU2NSA2LjAyMTcyIDE2LjczNjUgNS41NjIyNyAxNi4zNzkgNS4zNTI5NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/ScissorsSquare";
  */
 const ScissorsSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ScissorsSquare.displayName = "ScissorsSquare";
-export default ScissorsSquare;
+ScissorsSquare.displayName = "ScissorsSquare"
+export default ScissorsSquare

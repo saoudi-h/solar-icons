@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/list/ListUpMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/list/ListUpMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIwQzIwLjQxNDIgNS4yNSAyMC43NSA1LjU4NTc5IDIwLjc1IDZDMjAuNzUgNi40MTQyMSAyMC40MTQyIDYuNzUgMjAgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDExQzIuMjUgMTAuNTg1OCAyLjU4NTc5IDEwLjI1IDMgMTAuMjVIMjBDMjAuNDE0MiAxMC4yNSAyMC43NSAxMC41ODU4IDIwLjc1IDExQzIwLjc1IDExLjQxNDIgMjAuNDE0MiAxMS43NSAyMCAxMS43NUgzQzIuNTg1NzkgMTEuNzUgMi4yNSAxMS40MTQyIDIuMjUgMTFaTTE3LjAxMTkgMTQuNDMwNkMxNy4yOTI4IDE0LjE4OTggMTcuNzA3MiAxNC4xODk4IDE3Ljk4ODEgMTQuNDMwNkwyMS40ODgxIDE3LjQzMDZDMjEuODAyNiAxNy43MDAxIDIxLjgzOSAxOC4xNzM2IDIxLjU2OTQgMTguNDg4MUMyMS4yOTk5IDE4LjgwMjYgMjAuODI2NCAxOC44MzkgMjAuNTExOSAxOC41Njk0TDE3LjUgMTUuOTg3OEwxNC40ODgxIDE4LjU2OTRDMTQuMTczNiAxOC44MzkgMTMuNzAwMSAxOC44MDI2IDEzLjQzMDYgMTguNDg4MUMxMy4xNjEgMTguMTczNiAxMy4xOTc0IDE3LjcwMDEgMTMuNTExOSAxNy40MzA2TDE3LjAxMTkgMTQuNDMwNlpNMi4yNSAxNkMyLjI1IDE1LjU4NTggMi41ODU3OSAxNS4yNSAzIDE1LjI1SDExQzExLjQxNDIgMTUuMjUgMTEuNzUgMTUuNTg1OCAxMS43NSAxNkMxMS43NSAxNi40MTQyIDExLjQxNDIgMTYuNzUgMTEgMTYuNzVIM0MyLjU4NTc5IDE2Ljc1IDIuMjUgMTYuNDE0MiAyLjI1IDE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListUpMinimalistic";
  */
 const ListUpMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListUpMinimalistic.displayName = "ListUpMinimalistic";
-export default ListUpMinimalistic;
+ListUpMinimalistic.displayName = "ListUpMinimalistic"
+export default ListUpMinimalistic

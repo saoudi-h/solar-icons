@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/AddCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/AddCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMi43NSA5QzEyLjc1IDguNTg1NzkgMTIuNDE0MiA4LjI1IDEyIDguMjVDMTEuNTg1OCA4LjI1IDExLjI1IDguNTg1NzkgMTEuMjUgOUwxMS4yNSAxMS4yNUg5QzguNTg1NzkgMTEuMjUgOC4yNSAxMS41ODU4IDguMjUgMTJDOC4yNSAxMi40MTQyIDguNTg1NzkgMTIuNzUgOSAxMi43NUgxMS4yNVYxNUMxMS4yNSAxNS40MTQyIDExLjU4NTggMTUuNzUgMTIgMTUuNzVDMTIuNDE0MiAxNS43NSAxMi43NSAxNS40MTQyIDEyLjc1IDE1TDEyLjc1IDEyLjc1SDE1QzE1LjQxNDIgMTIuNzUgMTUuNzUgMTIuNDE0MiAxNS43NSAxMkMxNS43NSAxMS41ODU4IDE1LjQxNDIgMTEuMjUgMTUgMTEuMjVIMTIuNzVWOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/AddCircle";
  */
 const AddCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AddCircle.displayName = "AddCircle";
-export default AddCircle;
+AddCircle.displayName = "AddCircle"
+export default AddCircle

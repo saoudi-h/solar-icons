@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/nature/Flame";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/nature/Flame"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCAxNS4wMDAyQzIwIDE5LjI1NDcgMTcuMzgxOSAyMS4xMjE2IDE1LjM1ODggMjEuNzUxMkMxNC45Mjc0IDIxLjg4NTQgMTQuNjQzOCAyMS4zODI1IDE0LjkwMTkgMjEuMDExNkMxNS43ODIzIDE5Ljc0NjQgMTYuOCAxNy44MTYxIDE2LjggMTYuMDAwMkMxNi44IDE0LjA0OTYgMTUuMTU1OSAxMS43NDY3IDEzLjg3MjEgMTAuMzI2M0MxMy41Nzg2IDEwLjAwMTYgMTMuMDY2NyAxMC4yMTY0IDEzLjA1MDcgMTAuNjUzOUMxMi45OTc2IDEyLjEwMzEgMTIuNzY4OSAxNC4wNDIgMTEuNzgyOCAxNS41NjE2QzExLjYyNDEgMTUuODA2MiAxMS4yODcyIDE1LjgyNjQgMTEuMTA2MyAxNS41OTc3QzEwLjc5ODIgMTUuMjA4IDEwLjQ5MDEgMTQuNzI2NyAxMC4xODIgMTQuMzQ2NEMxMC4wMTYgMTQuMTQxNiA5LjcxNjA0IDE0LjEzODggOS41MjQ2MSAxNC4zMkM4Ljc3ODI1IDE1LjAyNjcgNy43MzMzMyAxNi4xMjg4IDcuNzMzMzMgMTcuNTAwMkM3LjczMzMzIDE4LjQzMDEgOC4wOTM2IDE5LjQwNSA4LjUwMDA3IDIwLjE4OTNDOC43MjM2OCAyMC42MjA4IDguMzI2MDcgMjEuMTQwMiA3Ljg5NTczIDIwLjkxNDRDNi4xMTMwNyAxOS45Nzg5IDQgMTguMDgzOCA0IDE1LjAwMDJDNCAxMS44NTM4IDguMzEwMjkgNy40OTUwMyA5Ljk1NjA1IDMuMzc3MTJDMTAuMjE1NyAyLjcyNzMzIDExLjAxNjEgMi40MjE5OSAxMS41NzI3IDIuODQ2MDNDMTQuOTQzOSA1LjQxNDA5IDIwIDEwLjM3ODMgMjAgMTUuMDAwMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/nature/Flame";
  */
 const Flame: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Flame.displayName = "Flame";
-export default Flame;
+Flame.displayName = "Flame"
+export default Flame

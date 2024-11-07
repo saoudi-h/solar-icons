@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareAltArrowLeft";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareAltArrowLeft"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuNTM1NSAzLjQ2NDQ3QzE5LjA3MTEgMiAxNi43MTQgMiAxMiAyQzcuMjg1OTUgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N1pNMTQuMDMwMyA4LjQ2OTY3QzE0LjMyMzIgOC43NjI1NiAxNC4zMjMyIDkuMjM3NDQgMTQuMDMwMyA5LjUzMDMzTDExLjU2MDcgMTJMMTQuMDMwMyAxNC40Njk3QzE0LjMyMzIgMTQuNzYyNiAxNC4zMjMyIDE1LjIzNzQgMTQuMDMwMyAxNS41MzAzQzEzLjczNzQgMTUuODIzMiAxMy4yNjI2IDE1LjgyMzIgMTIuOTY5NyAxNS41MzAzTDkuOTY5NjcgMTIuNTMwM0M5LjgyOTAyIDEyLjM4OTcgOS43NSAxMi4xOTg5IDkuNzUgMTJDOS43NSAxMS44MDExIDkuODI5MDIgMTEuNjEwMyA5Ljk2OTY3IDExLjQ2OTdMMTIuOTY5NyA4LjQ2OTY3QzEzLjI2MjYgOC4xNzY3OCAxMy43Mzc0IDguMTc2NzggMTQuMDMwMyA4LjQ2OTY3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareAltArrowLeft";
  */
 const SquareAltArrowLeft: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareAltArrowLeft.displayName = "SquareAltArrowLeft";
-export default SquareAltArrowLeft;
+SquareAltArrowLeft.displayName = "SquareAltArrowLeft"
+export default SquareAltArrowLeft

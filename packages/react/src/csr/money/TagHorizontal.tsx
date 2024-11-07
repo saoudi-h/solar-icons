@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/money/TagHorizontal";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/money/TagHorizontal"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuODU4IDIwSDEwLjIyMUM2LjM0NTYgMjAgNC40MDc4OSAyMCAzLjIwMzk0IDE4LjgyODRDMiAxNy42NTY5IDIgMTUuNzcxMiAyIDEyQzIgOC4yMjg3NiAyIDYuMzQzMTUgMy4yMDM5NCA1LjE3MTU3QzQuNDA3ODkgNCA2LjM0NTYxIDQgMTAuMjIxIDRIMTIuODU4QzE1LjA4NTQgNCAxNi4xOTkyIDQgMTcuMTI4OSA0LjUwMTQzQzE4LjA1ODYgNS4wMDI4NiAxOC42NDg4IDUuOTIxOTEgMTkuODI5NCA3Ljc2MDAxTDIwLjUxMDIgOC44MjAwMUMyMS41MDM0IDEwLjM2NjQgMjIgMTEuMTM5NiAyMiAxMkMyMiAxMi44NjA0IDIxLjUwMzQgMTMuNjMzNiAyMC41MTAyIDE1LjE4TDE5LjgyOTQgMTYuMjRDMTguNjQ4OCAxOC4wNzgxIDE4LjA1ODYgMTguOTk3MSAxNy4xMjg5IDE5LjQ5ODZDMTYuMTk5MiAyMCAxNS4wODU0IDIwIDEyLjg1OCAyMFpNNyA3LjA1NDIzQzcuNDE0MjEgNy4wNTQyMyA3Ljc1IDcuMzcwMjYgNy43NSA3Ljc2MDExVjE2LjIzNTNDNy43NSAxNi42MjUxIDcuNDE0MjEgMTYuOTQxMiA3IDE2Ljk0MTJDNi41ODU3OSAxNi45NDEyIDYuMjUgMTYuNjI1MSA2LjI1IDE2LjIzNTNWNy43NjAxMUM2LjI1IDcuMzcwMjYgNi41ODU3OSA3LjA1NDIzIDcgNy4wNTQyM1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/money/TagHorizontal";
  */
 const TagHorizontal: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-TagHorizontal.displayName = "TagHorizontal";
-export default TagHorizontal;
+TagHorizontal.displayName = "TagHorizontal"
+export default TagHorizontal

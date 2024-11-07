@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows-action/CircleTopUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows-action/CircleTopUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQuNSAyLjc1QzE0LjUgMi4zMzU3OSAxNC44MzU4IDIgMTUuMjUgMkgyMS4yNUMyMS42NjQyIDIgMjIgMi4zMzU3OSAyMiAyLjc1VjguNzVDMjIgOS4xNjQyMSAyMS42NjQyIDkuNSAyMS4yNSA5LjVDMjAuODM1OCA5LjUgMjAuNSA5LjE2NDIxIDIwLjUgOC43NVY0LjU2MDY2TDEzLjc4MDMgMTEuMjgwM0MxMy40ODc0IDExLjU3MzIgMTMuMDEyNiAxMS41NzMyIDEyLjcxOTcgMTEuMjgwM0MxMi40MjY4IDEwLjk4NzQgMTIuNDI2OCAxMC41MTI2IDEyLjcxOTcgMTAuMjE5N0wxOS40MzkzIDMuNUgxNS4yNUMxNC44MzU4IDMuNSAxNC41IDMuMTY0MjEgMTQuNSAyLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTEuMjUgMi43NUM1LjcyNzE1IDIuNzUgMS4yNSA3LjIyNzE1IDEuMjUgMTIuNzVDMS4yNSAxOC4yNzI4IDUuNzI3MTUgMjIuNzUgMTEuMjUgMjIuNzVDMTYuNzcyOCAyMi43NSAyMS4yNSAxOC4yNzI4IDIxLjI1IDEyLjc1QzIxLjI1IDEyLjE1MTIgMjEuMTk3NCAxMS41NjQ3IDIxLjA5NjUgMTAuOTk0OEMxOS45MjU0IDEwLjkxNTkgMTkgOS45NDEwNCAxOSA4Ljc1VjguMTgxOThMMTQuODQxIDEyLjM0MUMxMy45NjIzIDEzLjIxOTcgMTIuNTM3NyAxMy4yMTk3IDExLjY1OSAxMi4zNDFDMTAuNzgwMyAxMS40NjIzIDEwLjc4MDMgMTAuMDM3NyAxMS42NTkgOS4xNTkwMUwxNS44MTggNUgxNS4yNUMxNC4wNTkgNSAxMy4wODQxIDQuMDc0NTYgMTMuMDA1MiAyLjkwMzUyQzEyLjQzNTMgMi44MDI2MyAxMS44NDg4IDIuNzUgMTEuMjUgMi43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows-action/CircleTopUp";
  */
 const CircleTopUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CircleTopUp.displayName = "CircleTopUp";
-export default CircleTopUp;
+CircleTopUp.displayName = "CircleTopUp"
+export default CircleTopUp

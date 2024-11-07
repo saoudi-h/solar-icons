@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/list/ListCross";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/list/ListCross"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi4yNSA2QzIuMjUgNS41ODU3OSAyLjU4NTc5IDUuMjUgMyA1LjI1SDIxQzIxLjQxNDIgNS4yNSAyMS43NSA1LjU4NTc5IDIxLjc1IDZDMjEuNzUgNi40MTQyMSAyMS40MTQyIDYuNzUgMjEgNi43NUgzQzIuNTg1NzkgNi43NSAyLjI1IDYuNDE0MjEgMi4yNSA2Wk0yLjI1IDEwQzIuMjUgOS41ODU3OSAyLjU4NTc5IDkuMjUgMyA5LjI1SDIxQzIxLjQxNDIgOS4yNSAyMS43NSA5LjU4NTc5IDIxLjc1IDEwQzIxLjc1IDEwLjQxNDIgMjEuNDE0MiAxMC43NSAyMSAxMC43NUgzQzIuNTg1NzkgMTAuNzUgMi4yNSAxMC40MTQyIDIuMjUgMTBaTTE0LjQ2OTcgMTIuOTY5N0MxNC43NjI2IDEyLjY3NjggMTUuMjM3NCAxMi42NzY4IDE1LjUzMDMgMTIuOTY5N0wxNy41IDE0LjkzOTNMMTkuNDY5NyAxMi45Njk3QzE5Ljc2MjYgMTIuNjc2OCAyMC4yMzc0IDEyLjY3NjggMjAuNTMwMyAxMi45Njk3QzIwLjgyMzIgMTMuMjYyNiAyMC44MjMyIDEzLjczNzQgMjAuNTMwMyAxNC4wMzAzTDE4LjU2MDcgMTZMMjAuNTMwMyAxNy45Njk3QzIwLjgyMzIgMTguMjYyNiAyMC44MjMyIDE4LjczNzQgMjAuNTMwMyAxOS4wMzAzQzIwLjIzNzQgMTkuMzIzMiAxOS43NjI2IDE5LjMyMzIgMTkuNDY5NyAxOS4wMzAzTDE3LjUgMTcuMDYwN0wxNS41MzAzIDE5LjAzMDNDMTUuMjM3NCAxOS4zMjMyIDE0Ljc2MjYgMTkuMzIzMiAxNC40Njk3IDE5LjAzMDNDMTQuMTc2OCAxOC43Mzc0IDE0LjE3NjggMTguMjYyNiAxNC40Njk3IDE3Ljk2OTdMMTYuNDM5MyAxNkwxNC40Njk3IDE0LjAzMDNDMTQuMTc2OCAxMy43Mzc0IDE0LjE3NjggMTMuMjYyNiAxNC40Njk3IDEyLjk2OTdaTTIuMjUgMTRDMi4yNSAxMy41ODU4IDIuNTg1NzkgMTMuMjUgMyAxMy4yNUgxMUMxMS40MTQyIDEzLjI1IDExLjc1IDEzLjU4NTggMTEuNzUgMTRDMTEuNzUgMTQuNDE0MiAxMS40MTQyIDE0Ljc1IDExIDE0Ljc1SDNDMi41ODU3OSAxNC43NSAyLjI1IDE0LjQxNDIgMi4yNSAxNFpNMi4yNSAxOEMyLjI1IDE3LjU4NTggMi41ODU3OSAxNy4yNSAzIDE3LjI1SDExQzExLjQxNDIgMTcuMjUgMTEuNzUgMTcuNTg1OCAxMS43NSAxOEMxMS43NSAxOC40MTQyIDExLjQxNDIgMTguNzUgMTEgMTguNzVIM0MyLjU4NTc5IDE4Ljc1IDIuMjUgMTguNDE0MiAyLjI1IDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/list/ListCross";
  */
 const ListCross: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ListCross.displayName = "ListCross";
-export default ListCross;
+ListCross.displayName = "ListCross"
+export default ListCross

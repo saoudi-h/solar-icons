@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/astronomy/StarCircle";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/astronomy/StarCircle"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMC44NjEzIDkuMzYzMzVMMTAuNzMwMiA5LjU5ODQ5QzEwLjU4NjIgOS44NTY3NyAxMC41MTQyIDkuOTg1OTEgMTAuNDAyIDEwLjA3MTFDMTAuMjg5NyAxMC4xNTYzIDEwLjE0OTkgMTAuMTg4IDkuODcwMzUgMTAuMjUxMkw5LjYxNTgxIDEwLjMwODhDOC42MzE5NSAxMC41MzE0IDguMTQwMDEgMTAuNjQyNyA4LjAyMjk3IDExLjAxOTFDNy45MDU5MyAxMS4zOTU1IDguMjQxMyAxMS43ODc2IDguOTEyMDQgMTIuNTcyTDkuMDg1NTcgMTIuNzc0OUM5LjI3NjE3IDEyLjk5NzggOS4zNzE0NyAxMy4xMDkyIDkuNDE0MzUgMTMuMjQ3MUM5LjQ1NzIyIDEzLjM4NSA5LjQ0MjgxIDEzLjUzMzYgOS40MTM5OSAxMy44MzFMOS4zODc3NiAxNC4xMDE4QzkuMjg2MzUgMTUuMTQ4MiA5LjIzNTY1IDE1LjY3MTUgOS41NDIwNiAxNS45MDQxQzkuODQ4NDcgMTYuMTM2NyAxMC4zMDkxIDE1LjkyNDYgMTEuMjMwMyAxNS41MDA1TDExLjQ2ODYgMTUuMzkwN0MxMS43MzA0IDE1LjI3MDIgMTEuODYxMyAxNS4yMDk5IDEyIDE1LjIwOTlDMTIuMTM4NyAxNS4yMDk5IDEyLjI2OTYgMTUuMjcwMiAxMi41MzE0IDE1LjM5MDdMMTIuNzY5NyAxNS41MDA1QzEzLjY5MDkgMTUuOTI0NiAxNC4xNTE1IDE2LjEzNjcgMTQuNDU3OSAxNS45MDQxQzE0Ljc2NDQgMTUuNjcxNSAxNC43MTM2IDE1LjE0ODIgMTQuNjEyMiAxNC4xMDE4TDE0LjU4NiAxMy44MzFDMTQuNTU3MiAxMy41MzM2IDE0LjU0MjggMTMuMzg1IDE0LjU4NTcgMTMuMjQ3MUMxNC42Mjg1IDEzLjEwOTIgMTQuNzIzOCAxMi45OTc4IDE0LjkxNDQgMTIuNzc0OUwxNS4wODggMTIuNTcyQzE1Ljc1ODcgMTEuNzg3NiAxNi4wOTQxIDExLjM5NTUgMTUuOTc3IDExLjAxOTFDMTUuODYgMTAuNjQyNyAxNS4zNjgxIDEwLjUzMTQgMTQuMzg0MiAxMC4zMDg4TDE0LjEyOTYgMTAuMjUxMkMxMy44NTAxIDEwLjE4OCAxMy43MTAzIDEwLjE1NjMgMTMuNTk4IDEwLjA3MTFDMTMuNDg1OCA5Ljk4NTkyIDEzLjQxMzggOS44NTY3OCAxMy4yNjk4IDkuNTk4NUwxMy4xMzg3IDkuMzYzMzVDMTIuNjMyMSA4LjQ1NDQ1IDEyLjM3ODcgOCAxMiA4QzExLjYyMTMgOCAxMS4zNjc5IDguNDU0NDYgMTAuODYxMyA5LjM2MzM1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/astronomy/StarCircle";
  */
 const StarCircle: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-StarCircle.displayName = "StarCircle";
-export default StarCircle;
+StarCircle.displayName = "StarCircle"
+export default StarCircle

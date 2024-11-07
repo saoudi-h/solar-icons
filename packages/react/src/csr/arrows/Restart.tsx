@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/Restart";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/Restart"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC4yNTc3IDMuNTA4MjhDMTguNTM4IDMuNjI0MzcgMTguNzIwNyAzLjg5Nzg1IDE4LjcyMDcgNC4yMDExOVY4LjQ0MzgzQzE4LjcyMDcgOC44NTgwNSAxOC4zODQ5IDkuMTkzODMgMTcuOTcwNyA5LjE5MzgzSDEzLjcyOEMxMy40MjQ3IDkuMTkzODMgMTMuMTUxMiA5LjAxMTEgMTMuMDM1MSA4LjczMDg1QzEyLjkxOTEgOC40NTA1OSAxMi45ODMyIDguMTI4IDEzLjE5NzcgNy45MTM1TDE0LjgwMDcgNi4zMTA1QzEyLjE2NzQgNS4yMDkxMiA5LjAxNjA2IDUuNzMwOSA2Ljg3MzQ4IDcuODczNDhDNC4wNDIxNyAxMC43MDQ4IDQuMDQyMTcgMTUuMjk1MiA2Ljg3MzQ4IDE4LjEyNjVDOS43MDQ3OCAyMC45NTc4IDE0LjI5NTIgMjAuOTU3OCAxNy4xMjY1IDE4LjEyNjVDMTguNzcyNyAxNi40ODAzIDE5LjQ2MjIgMTQuMjQwMSAxOS4xOTM1IDEyLjA5MzdDMTkuMTQyIDExLjY4MjcgMTkuNDMzNSAxMS4zMDc4IDE5Ljg0NDUgMTEuMjU2M0MyMC4yNTU1IDExLjIwNDkgMjAuNjMwNCAxMS40OTYzIDIwLjY4MTkgMTEuOTA3M0MyMS4wMDU3IDE0LjQ5MzQgMjAuMTc0NiAxNy4xOTk3IDE4LjE4NzIgMTkuMTg3MkMxNC43NzAxIDIyLjYwNDMgOS4yMjk5IDIyLjYwNDMgNS44MTI4MiAxOS4xODcyQzIuMzk1NzMgMTUuNzcwMSAyLjM5NTczIDEwLjIyOTkgNS44MTI4MiA2LjgxMjgyQzguNTUxMTkgNC4wNzQ0NCAxMi42NTE1IDMuNTMxMiAxNS45MzA5IDUuMTgwMjhMMTcuNDQwNCAzLjY3MDg2QzE3LjY1NDkgMy40NTYzNyAxNy45Nzc0IDMuMzkyMiAxOC4yNTc3IDMuNTA4MjhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/Restart";
  */
 const Restart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Restart.displayName = "Restart";
-export default Restart;
+Restart.displayName = "Restart"
+export default Restart

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/BoxMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/BoxMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNy41Nzc3IDQuNDMxNTJMMTUuNTc3NyAzLjM4MTk3QzEzLjgyMjEgMi40NjA2NiAxMi45NDQzIDIgMTIgMkMxMS4wNTU3IDIgMTAuMTc3OSAyLjQ2MDY2IDguNDIyMjkgMy4zODE5N0w2LjQyMjI5IDQuNDMxNTJDNC42NDg1NSA1LjM2MjM0IDMuNjA1OSA1LjkwOTUgMi45NTk2OSA2LjY0MTMyTDEyIDExLjE2MTVMMjEuMDQwMyA2LjY0MTMyQzIwLjM5NDEgNS45MDk1IDE5LjM1MTUgNS4zNjIzNCAxNy41Nzc3IDQuNDMxNTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS43NDg0IDcuOTY0MzVMMTIuNzUgMTIuNDYzNVYyMS45MDRDMTMuNDY3OSAyMS43MjUyIDE0LjI4NDggMjEuMjk2NSAxNS41Nzc3IDIwLjYxOEwxNy41Nzc3IDE5LjU2ODVDMTkuNzI5NCAxOC40MzkzIDIwLjgwNTIgMTcuODc0OCAyMS40MDI2IDE2Ljg2MDNDMjIgMTUuODQ1OCAyMiAxNC41ODMzIDIyIDEyLjA1ODVWMTEuOTQxNUMyMiAxMC4wNDg5IDIyIDguODY1NTggMjEuNzQ4NCA3Ljk2NDM1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTEuMjUgMjEuOTA0VjEyLjQ2MzVMMi4yNTE2NCA3Ljk2NDM0QzIgOC44NjU1NyAyIDEwLjA0ODkgMiAxMS45NDE1VjEyLjA1ODVDMiAxNC41ODMzIDIgMTUuODQ1OCAyLjU5NzQgMTYuODYwM0MzLjE5NDc5IDE3Ljg3NDggNC4yNzA2MyAxOC40MzkzIDYuNDIyMjkgMTkuNTY4NUw4LjQyMjI5IDIwLjYxOEM5LjcxNTI0IDIxLjI5NjUgMTAuNTMyMSAyMS43MjUyIDExLjI1IDIxLjkwNFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/BoxMinimalistic";
  */
 const BoxMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BoxMinimalistic.displayName = "BoxMinimalistic";
-export default BoxMinimalistic;
+BoxMinimalistic.displayName = "BoxMinimalistic"
+export default BoxMinimalistic

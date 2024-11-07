@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/map/MapPointHospital";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/map/MapPointHospital"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgNy43NUMxMi40MTQyIDcuNzUgMTIuNzUgOC4wODU3OSAxMi43NSA4LjVWOS4yNUgxMy41QzEzLjkxNDIgOS4yNSAxNC4yNSA5LjU4NTc5IDE0LjI1IDEwQzE0LjI1IDEwLjQxNDIgMTMuOTE0MiAxMC43NSAxMy41IDEwLjc1SDEyLjc1VjExLjVDMTIuNzUgMTEuOTE0MiAxMi40MTQyIDEyLjI1IDEyIDEyLjI1QzExLjU4NTggMTIuMjUgMTEuMjUgMTEuOTE0MiAxMS4yNSAxMS41VjEwLjc1SDEwLjVDMTAuMDg1OCAxMC43NSA5Ljc1IDEwLjQxNDIgOS43NSAxMEM5Ljc1IDkuNTg1NzkgMTAuMDg1OCA5LjI1IDEwLjUgOS4yNUgxMS4yNVY4LjVDMTEuMjUgOC4wODU3OSAxMS41ODU4IDcuNzUgMTIgNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzcuNTgxNzIgMiA0IDUuNjQ1ODggNCAxMC4xNDMzQzQgMTQuNjA1NSA2LjU1MzMyIDE5LjgxMjQgMTAuNTM3MSAyMS42NzQ0QzExLjQ2NTcgMjIuMTA4NSAxMi41MzQzIDIyLjEwODUgMTMuNDYyOSAyMS42NzQ0QzE3LjQ0NjcgMTkuODEyNCAyMCAxNC42MDU1IDIwIDEwLjE0MzNDMjAgNS42NDU4OCAxNi40MTgzIDIgMTIgMlpNMTIgMTRDMTQuMjA5MSAxNCAxNiAxMi4yMDkxIDE2IDEwQzE2IDcuNzkwODYgMTQuMjA5MSA2IDEyIDZDOS43OTA4NiA2IDggNy43OTA4NiA4IDEwQzggMTIuMjA5MSA5Ljc5MDg2IDE0IDEyIDE0Wk0xMi43NSA4LjVDMTIuNzUgOC4wODU3OSAxMi40MTQyIDcuNzUgMTIgNy43NUMxMS41ODU4IDcuNzUgMTEuMjUgOC4wODU3OSAxMS4yNSA4LjVWOS4yNUgxMC41QzEwLjA4NTggOS4yNSA5Ljc1IDkuNTg1NzkgOS43NSAxMEM5Ljc1IDEwLjQxNDIgMTAuMDg1OCAxMC43NSAxMC41IDEwLjc1SDExLjI1VjExLjVDMTEuMjUgMTEuOTE0MiAxMS41ODU4IDEyLjI1IDEyIDEyLjI1QzEyLjQxNDIgMTIuMjUgMTIuNzUgMTEuOTE0MiAxMi43NSAxMS41VjEwLjc1SDEzLjVDMTMuOTE0MiAxMC43NSAxNC4yNSAxMC40MTQyIDE0LjI1IDEwQzE0LjI1IDkuNTg1NzkgMTMuOTE0MiA5LjI1IDEzLjUgOS4yNUgxMi43NVY4LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/map/MapPointHospital";
  */
 const MapPointHospital: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-MapPointHospital.displayName = "MapPointHospital";
-export default MapPointHospital;
+MapPointHospital.displayName = "MapPointHospital"
+export default MapPointHospital

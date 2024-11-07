@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notifications/BellOff";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notifications/BellOff"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjM1MTc5IDIwLjI0MThDOS4xOTI4OCAyMS4zMTEgMTAuNTE0MiAyMiAxMiAyMkMxMy40ODU4IDIyIDE0LjgwNzEgMjEuMzExIDE1LjY0ODIgMjAuMjQxOEMxMy4yMjY0IDIwLjU3IDEwLjc3MzYgMjAuNTcgOC4zNTE3OSAyMC4yNDE4WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE4Ljc0OTEgOVY5LjcwNDFDMTguNzQ5MSAxMC41NDkxIDE4Ljk5MDMgMTEuMzc1MiAxOS40NDIyIDEyLjA3ODJMMjAuNTQ5NiAxMy44MDEyQzIxLjU2MTIgMTUuMzc0OSAyMC43ODkgMTcuNTEzOSAxOS4wMjk2IDE4LjAxMTZDMTQuNDI3MyAxOS4zMTM0IDkuNTcyNzQgMTkuMzEzNCA0Ljk3MDM2IDE4LjAxMTZDMy4yMTEwNSAxNy41MTM5IDIuNDM4ODIgMTUuMzc0OSAzLjQ1MDM2IDEzLjgwMTJMNC41NTc4IDEyLjA3ODJDNS4wMDk3MiAxMS4zNzUyIDUuMjUwODcgMTAuNTQ5MSA1LjI1MDg3IDkuNzA0MVY5QzUuMjUwODcgNS4xMzQwMSA4LjI3MjU2IDIgMTIgMkMxNS43Mjc0IDIgMTguNzQ5MSA1LjEzNDAxIDE4Ljc0OTEgOVpNMTAuMDcxNyA5Ljc1QzkuNjcyMzMgOS43NSA5LjM0ODU3IDkuNDE0MjEgOS4zNDg1NyA5QzkuMzQ4NTcgOC41ODU3OCA5LjY3MjMzIDguMjUgMTAuMDcxNyA4LjI1SDEzLjkyODNDMTQuMjIwOCA4LjI1IDE0LjQ4NDUgOC40MzI3MyAxNC41OTY0IDguNzEyOTlDMTQuNzA4MyA4Ljk5MzI0IDE0LjY0NjUgOS4zMTU4MyAxNC40Mzk3IDkuNTMwMzNMMTEuODE3NSAxMi4yNUgxMy45MjgzQzE0LjMyNzcgMTIuMjUgMTQuNjUxNSAxMi41ODU4IDE0LjY1MTUgMTNDMTQuNjUxNSAxMy40MTQyIDE0LjMyNzcgMTMuNzUgMTMuOTI4MyAxMy43NUgxMC4wNzE3QzkuNzc5MjIgMTMuNzUgOS41MTU1NCAxMy41NjczIDkuNDAzNjIgMTMuMjg3QzkuMjkxNjkgMTMuMDA2OCA5LjM1MzU2IDEyLjY4NDIgOS41NjAzNyAxMi40Njk3TDEyLjE4MjYgOS43NUgxMC4wNzE3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notifications/BellOff";
  */
 const BellOff: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BellOff.displayName = "BellOff";
-export default BellOff;
+BellOff.displayName = "BellOff"
+export default BellOff

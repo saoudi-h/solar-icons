@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/notes/Clipboard";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/notes/Clipboard"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDMuNUM4IDIuNjcxNTcgOC42NzE1NyAyIDkuNSAySDE0LjVDMTUuMzI4NCAyIDE2IDIuNjcxNTcgMTYgMy41VjQuNUMxNiA1LjMyODQzIDE1LjMyODQgNiAxNC41IDZIOS41QzguNjcxNTcgNiA4IDUuMzI4NDMgOCA0LjVWMy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuNSA0LjAzNjYyQzUuMjQyMDkgNC4xMDcxOSA0LjQ0Nzk4IDQuMzA3NjQgMy44Nzg2OCA0Ljg3Njk0QzMgNS43NTU2MiAzIDcuMTY5ODMgMyA5Ljk5ODI2VjE1Ljk5ODNDMyAxOC44MjY3IDMgMjAuMjQwOSAzLjg3ODY4IDIxLjExOTZDNC43NTczNiAyMS45OTgzIDYuMTcxNTcgMjEuOTk4MyA5IDIxLjk5ODNIMTVDMTcuODI4NCAyMS45OTgzIDE5LjI0MjYgMjEuOTk4MyAyMC4xMjEzIDIxLjExOTZDMjEgMjAuMjQwOSAyMSAxOC44MjY3IDIxIDE1Ljk5ODNWOS45OTgyNkMyMSA3LjE2OTgzIDIxIDUuNzU1NjIgMjAuMTIxMyA0Ljg3Njk0QzE5LjU1MiA0LjMwNzY0IDE4Ljc1NzkgNC4xMDcxOSAxNy41IDQuMDM2NjJWNC41QzE3LjUgNi4xNTY4NSAxNi4xNTY5IDcuNSAxNC41IDcuNUg5LjVDNy44NDMxNSA3LjUgNi41IDYuMTU2ODUgNi41IDQuNVY0LjAzNjYyWk02LjI1IDEwLjVDNi4yNSAxMC4wODU4IDYuNTg1NzkgOS43NSA3IDkuNzVIMTdDMTcuNDE0MiA5Ljc1IDE3Ljc1IDEwLjA4NTggMTcuNzUgMTAuNUMxNy43NSAxMC45MTQyIDE3LjQxNDIgMTEuMjUgMTcgMTEuMjVIN0M2LjU4NTc5IDExLjI1IDYuMjUgMTAuOTE0MiA2LjI1IDEwLjVaTTcuMjUgMTRDNy4yNSAxMy41ODU4IDcuNTg1NzkgMTMuMjUgOCAxMy4yNUgxNkMxNi40MTQyIDEzLjI1IDE2Ljc1IDEzLjU4NTggMTYuNzUgMTRDMTYuNzUgMTQuNDE0MiAxNi40MTQyIDE0Ljc1IDE2IDE0Ljc1SDhDNy41ODU3OSAxNC43NSA3LjI1IDE0LjQxNDIgNy4yNSAxNFpNOC4yNSAxNy41QzguMjUgMTcuMDg1OCA4LjU4NTc5IDE2Ljc1IDkgMTYuNzVIMTVDMTUuNDE0MiAxNi43NSAxNS43NSAxNy4wODU4IDE1Ljc1IDE3LjVDMTUuNzUgMTcuOTE0MiAxNS40MTQyIDE4LjI1IDE1IDE4LjI1SDlDOC41ODU3OSAxOC4yNSA4LjI1IDE3LjkxNDIgOC4yNSAxNy41WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/Clipboard";
  */
 const Clipboard: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Clipboard.displayName = "Clipboard";
-export default Clipboard;
+Clipboard.displayName = "Clipboard"
+export default Clipboard

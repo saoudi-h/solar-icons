@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/weather/CloudyMoon";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/weather/CloudyMoon"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS4yODU3IDIyQzEzLjMzNzEgMjIgMTUgMjAuNDE5OCAxNSAxOC40NzA2QzE1IDE2LjkyNTcgMTMuOTU1NCAxNS42MTI2IDEyLjUwMDggMTUuMTM0NEMxMi4yOTQxIDEzLjM3MTEgMTAuNzIwMyAxMiA4LjgwOTUyIDEyQzYuNzU4MTggMTIgNS4wOTUyNCAxMy41ODAyIDUuMDk1MjQgMTUuNTI5NEM1LjA5NTI0IDE1Ljk2MDUgNS4xNzY1OSAxNi4zNzM2IDUuMzI1NSAxNi43NTU1QzUuMTUwODcgMTYuNzIzIDQuOTcwMzkgMTYuNzA1OSA0Ljc4NTcxIDE2LjcwNTlDMy4yNDcyMSAxNi43MDU5IDIgMTcuODkxIDIgMTkuMzUyOUMyIDIwLjgxNDkgMy4yNDcyMSAyMiA0Ljc4NTcxIDIySDExLjI4NTdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yLjcxNjA1IDE1LjcyMzFDMi45OTM5NiAxNS41NzQ3IDMuMjg5NTggMTUuNDU1NSAzLjU5Nzc5IDE1LjM2OTFDMy42ODYwOSAxMi41OTkxIDYuMDU1NzEgMTAuNSA4LjgwOTUyIDEwLjVDOC45ODE4NSAxMC41IDkuMTUyNjEgMTAuNTA4MiA5LjMyMTM3IDEwLjUyNDJDOS4xMTI4IDkuODg3MTYgOSA5LjIwNjc1IDkgOC41QzkgNi4xMzg0NSAxMC4yNTk0IDQuMDcxMDUgMTIuMTQzMiAyLjkzMjc2QzEyLjUzOTIgMi42OTM0NyAxMi40NjI3IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxMy4zMTU5IDIuMjU0MTUgMTQuNTcyNCAyLjcxNjA1IDE1LjcyMzFaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMiAxMkMyMiAxNi4yNjU4IDE5LjMyODkgMTkuOTA3OCAxNS41NjgxIDIxLjM0NDdDMTYuMTUyNyAyMC41MzgzIDE2LjUgMTkuNTUyNyAxNi41IDE4LjQ3MDZDMTYuNSAxNy4wOTk2IDE1LjkzNzIgMTUuODc4OSAxNS4wNDM0IDE0Ljk4NDJDMTUuMTk0MiAxNC45OTQ3IDE1LjM0NjUgMTUgMTUuNSAxNUMxNy44NjE1IDE1IDE5LjkyODkgMTMuNzQwNiAyMS4wNjcyIDExLjg1NjhDMjEuMzA2NSAxMS40NjA4IDIyIDExLjUzNzMgMjIgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/weather/CloudyMoon";
  */
 const CloudyMoon: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-CloudyMoon.displayName = "CloudyMoon";
-export default CloudyMoon;
+CloudyMoon.displayName = "CloudyMoon"
+export default CloudyMoon

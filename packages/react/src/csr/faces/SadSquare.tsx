@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/faces/SadSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/faces/SadSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNOC4zOTc0NyAxNy40NDY2QzguNjQ0MTMgMTcuNzc5NCA5LjExMzg1IDE3Ljg0OTIgOS40NDY2MSAxNy42MDI1QzEwLjE3NSAxNy4wNjI3IDExLjA1NDEgMTYuNzUgMTIgMTYuNzVDMTIuOTQ1OSAxNi43NSAxMy44MjUgMTcuMDYyNyAxNC41NTM0IDE3LjYwMjVDMTQuODg2MiAxNy44NDkyIDE1LjM1NTkgMTcuNzc5NCAxNS42MDI1IDE3LjQ0NjZDMTUuODQ5MiAxNy4xMTM4IDE1Ljc3OTQgMTYuNjQ0MSAxNS40NDY2IDE2LjM5NzVDMTQuNDc0MiAxNS42NzY3IDEzLjI4NSAxNS4yNSAxMiAxNS4yNUMxMC43MTUgMTUuMjUgOS41MjU4IDE1LjY3NjcgOC41NTMzOSAxNi4zOTc1QzguMjIwNjIgMTYuNjQ0MSA4LjE1MDgyIDE3LjExMzggOC4zOTc0NyAxNy40NDY2Wk0xNiAxMC41QzE2IDExLjMyODQgMTUuNTUyMyAxMiAxNSAxMkMxNC40NDc3IDEyIDE0IDExLjMyODQgMTQgMTAuNUMxNCA5LjY3MTU3IDE0LjQ0NzcgOSAxNSA5QzE1LjU1MjMgOSAxNiA5LjY3MTU3IDE2IDEwLjVaTTkgMTJDOS41NTIyOCAxMiAxMCAxMS4zMjg0IDEwIDEwLjVDMTAgOS42NzE1NyA5LjU1MjI4IDkgOSA5QzguNDQ3NzIgOSA4IDkuNjcxNTcgOCAxMC41QzggMTEuMzI4NCA4LjQ0NzcyIDEyIDkgMTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/faces/SadSquare";
  */
 const SadSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SadSquare.displayName = "SadSquare";
-export default SadSquare;
+SadSquare.displayName = "SadSquare"
+export default SadSquare

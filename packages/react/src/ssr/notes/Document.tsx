@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/notes/Document";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/notes/Document"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4xNzE1NyAzLjE3MTU3QzMgNC4zNDMxNSAzIDYuMjI4NzYgMyAxMFYxNEMzIDE3Ljc3MTIgMyAxOS42NTY5IDQuMTcxNTcgMjAuODI4NEM1LjM0MzE1IDIyIDcuMjI4NzYgMjIgMTEgMjJIMTNDMTYuNzcxMiAyMiAxOC42NTY5IDIyIDE5LjgyODQgMjAuODI4NEMyMSAxOS42NTY5IDIxIDE3Ljc3MTIgMjEgMTRWMTBDMjEgNi4yMjg3NiAyMSA0LjM0MzE1IDE5LjgyODQgMy4xNzE1N0MxOC42NTY5IDIgMTYuNzcxMiAyIDEzIDJIMTFDNy4yMjg3NiAyIDUuMzQzMTUgMiA0LjE3MTU3IDMuMTcxNTdaTTggOS4yNUM3LjU4NTc5IDkuMjUgNy4yNSA5LjU4NTc5IDcuMjUgMTBDNy4yNSAxMC40MTQyIDcuNTg1NzkgMTAuNzUgOCAxMC43NUgxNkMxNi40MTQyIDEwLjc1IDE2Ljc1IDEwLjQxNDIgMTYuNzUgMTBDMTYuNzUgOS41ODU3OSAxNi40MTQyIDkuMjUgMTYgOS4yNUg4Wk04IDEzLjI1QzcuNTg1NzkgMTMuMjUgNy4yNSAxMy41ODU4IDcuMjUgMTRDNy4yNSAxNC40MTQyIDcuNTg1NzkgMTQuNzUgOCAxNC43NUgxM0MxMy40MTQyIDE0Ljc1IDEzLjc1IDE0LjQxNDIgMTMuNzUgMTRDMTMuNzUgMTMuNTg1OCAxMy40MTQyIDEzLjI1IDEzIDEzLjI1SDhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/notes/Document";
  */
 const Document: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Document.displayName = "Document";
-export default Document;
+Document.displayName = "Document"
+export default Document

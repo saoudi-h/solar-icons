@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Smartphone2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Smartphone2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNS4xNzE1NyAzLjE3MTU3QzQgNC4zNDMxNSA0IDYuMjI4NzYgNCAxMFYxNEM0IDE3Ljc3MTIgNCAxOS42NTY5IDUuMTcxNTcgMjAuODI4NEM2LjM0MzE1IDIyIDguMjI4NzYgMjIgMTIgMjJDMTUuNzcxMiAyMiAxNy42NTY5IDIyIDE4LjgyODQgMjAuODI4NEMyMCAxOS42NTY5IDIwIDE3Ljc3MTIgMjAgMTRWMTBDMjAgNi4yMjg3NiAyMCA0LjM0MzE1IDE4LjgyODQgMy4xNzE1N0MxNy42NTY5IDIgMTUuNzcxMiAyIDEyIDJDOC4yMjg3NiAyIDYuMzQzMTUgMiA1LjE3MTU3IDMuMTcxNTdaTTkgNC4yNUM4LjU4NTc5IDQuMjUgOC4yNSA0LjU4NTc5IDguMjUgNUM4LjI1IDUuNDE0MjEgOC41ODU3OSA1Ljc1IDkgNS43NUgxNUMxNS40MTQyIDUuNzUgMTUuNzUgNS40MTQyMSAxNS43NSA1QzE1Ljc1IDQuNTg1NzkgMTUuNDE0MiA0LjI1IDE1IDQuMjVIOVpNMTIgMTlDMTMuMTA0NiAxOSAxNCAxOC4xMDQ2IDE0IDE3QzE0IDE1Ljg5NTQgMTMuMTA0NiAxNSAxMiAxNUMxMC44OTU0IDE1IDEwIDE1Ljg5NTQgMTAgMTdDMTAgMTguMTA0NiAxMC44OTU0IDE5IDEyIDE5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Smartphone2";
  */
 const Smartphone2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Smartphone2.displayName = "Smartphone2";
-export default Smartphone2;
+Smartphone2.displayName = "Smartphone2"
+export default Smartphone2

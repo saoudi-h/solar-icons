@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/text-formatting/Text";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/text-formatting/Text"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy45MzQxNyAyQzcuOTU2MDQgMiA3Ljk3Nzk5IDIgOCAyTDE2LjA2NTggMkMxNi45NTIzIDEuOTk5OTUgMTcuNzE2MSAxLjk5OTkxIDE4LjMyNzggMi4wODIxNUMxOC45ODMzIDIuMTcwMjggMTkuNjExNyAyLjM2OTAyIDIwLjEyMTMgMi44Nzg2OEMyMC42MzEgMy4zODgzNSAyMC44Mjk3IDQuMDE2NyAyMC45MTc5IDQuNjcyMjFDMjEuMDAwMSA1LjI4Mzg4IDIxLjAwMDEgNi4wNDc3IDIxIDYuOTM0MkwyMSA3Ljk1QzIxIDguNTAyMjkgMjAuNTUyMyA4Ljk1IDIwIDguOTVDMTkuNDQ3NyA4Ljk1IDE5IDguNTAyMjkgMTkgNy45NVY3LjAwMDAxQzE5IDYuMDI4OTMgMTguOTk3OSA1LjQwMTIyIDE4LjkzNTcgNC45Mzg3MUMxOC44Nzc0IDQuNTA0OTcgMTguNzgzMiA0LjM2OTAyIDE4LjcwNzEgNC4yOTI5QzE4LjYzMSA0LjIxNjc3IDE4LjQ5NSA0LjEyMjYzIDE4LjA2MTMgNC4wNjQzMUMxNy41OTg4IDQuMDAyMTMgMTYuOTcxMSA0IDE2IDRIMTNWMjFDMTMgMjEuNTUyMyAxMi41NTIzIDIyIDEyIDIyQzExLjQ0NzcgMjIgMTEgMjEuNTUyMyAxMSAyMVY0SDhDNy4wMjg5MyA0IDYuNDAxMjIgNC4wMDIxMyA1LjkzODcxIDQuMDY0MzFDNS41MDQ5NyA0LjEyMjYzIDUuMzY5MDIgNC4yMTY3NyA1LjI5MjkgNC4yOTI5QzUuMjE2NzcgNC4zNjkwMiA1LjEyMjYzIDQuNTA0OTcgNS4wNjQzMSA0LjkzODcxQzUuMDAyMTMgNS40MDEyMiA1IDYuMDI4OTMgNSA3LjAwMDAxVjcuOTVDNSA4LjUwMjI5IDQuNTUyMjkgOC45NSA0IDguOTVDMy40NDc3MiA4Ljk1IDMgOC41MDIyOSAzIDcuOTVWNy4wMDAwMUMzIDYuOTc3OTkgMyA2Ljk1NjA0IDMgNi45MzQxOEMyLjk5OTk1IDYuMDQ3NjkgMi45OTk5MSA1LjI4Mzg3IDMuMDgyMTUgNC42NzIyMUMzLjE3MDI4IDQuMDE2NyAzLjM2OTAyIDMuMzg4MzUgMy44Nzg2OCAyLjg3ODY4QzQuMzg4MzUgMi4zNjkwMiA1LjAxNjcgMi4xNzAyOCA1LjY3MjIxIDIuMDgyMTVDNi4yODM4NyAxLjk5OTkxIDcuMDQ3NjkgMS45OTk5NSA3LjkzNDE3IDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik03IDIxSDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/text-formatting/Text";
  */
 const Text: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Text.displayName = "Text";
-export default Text;
+Text.displayName = "Text"
+export default Text

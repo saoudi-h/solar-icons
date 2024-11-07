@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/shopping/Bag5";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/shopping/Bag5"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4yNSA3LjAwMTUxTDguMjUgNkM4LjI1IDMuOTI4OTMgOS45Mjg5MyAyLjI1IDEyIDIuMjVDMTQuMDcxMSAyLjI1IDE1Ljc1IDMuOTI4OTMgMTUuNzUgNlY3TDE1Ljc1IDcuMDAxNTFDMTguNDM0NCA3LjAxMzYgMTkuODYwNiA3LjEyMjIgMjAuNjYwNiA4LjA5ODAzQzIxLjU2MDggOS4xOTYwNyAyMS4yMjg3IDEwLjg1NjMgMjAuNTY0NiAxNC4xNzY3TDE5Ljk2NDYgMTcuMTc2N0MxOS41MDI5IDE5LjQ4NTYgMTkuMjcyIDIwLjY0MDEgMTguNDQyNSAyMS4zMkMxNy42MTMxIDIyIDE2LjQzNTggMjIgMTQuMDgxMiAyMkg5LjkxODhDNy41NjQxNyAyMiA2LjM4Njg2IDIyIDUuNTU3NDIgMjEuMzJDNC43Mjc5OSAyMC42NDAxIDQuNDk3MSAxOS40ODU2IDQuMDM1MzIgMTcuMTc2N0wzLjQzNTMyIDE0LjE3NjdDMi43NzEyMyAxMC44NTYzIDIuNDM5MTkgOS4xOTYwNyAzLjMzOTM2IDguMDk4MDNDNC4xMzkzNiA3LjEyMjE5IDUuNTY1NjIgNy4wMTM2IDguMjUgNy4wMDE1MVpNOS43NSA2QzkuNzUgNC43NTczNiAxMC43NTc0IDMuNzUgMTIgMy43NUMxMy4yNDI2IDMuNzUgMTQuMjUgNC43NTczNiAxNC4yNSA2VjdIOS43NVY2Wk0xNSAxMUMxNS41NTIzIDExIDE2IDEwLjU1MjMgMTYgMTBDMTYgOS40NDc3MiAxNS41NTIzIDkgMTUgOUMxNC40NDc3IDkgMTQgOS40NDc3MiAxNCAxMEMxNCAxMC41NTIzIDE0LjQ0NzcgMTEgMTUgMTFaTTkuOTk5OTggMTBDOS45OTk5OCAxMC41NTIzIDkuNTUyMjYgMTEgOC45OTk5OCAxMUM4LjQ0NzY5IDExIDcuOTk5OTggMTAuNTUyMyA3Ljk5OTk4IDEwQzcuOTk5OTggOS40NDc3MiA4LjQ0NzY5IDkgOC45OTk5OCA5QzkuNTUyMjYgOSA5Ljk5OTk4IDkuNDQ3NzIgOS45OTk5OCAxMFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/shopping/Bag5";
  */
 const Bag5: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Bag5.displayName = "Bag5";
-export default Bag5;
+Bag5.displayName = "Bag5"
+export default Bag5

@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import SSRBase from "../../lib/SSRBase";
-import weights from "../../defs/ui/Flag2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import SSRBase from "../../lib/SSRBase"
+import weights from "../../defs/ui/Flag2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01Ljc1IDFDNi4xNjQyMSAxIDYuNSAxLjMzNTc5IDYuNSAxLjc1VjMuNkw4LjIyMDY3IDMuMjU1ODdDOS44NzEyIDIuOTI1NzYgMTEuNTgyMSAzLjA4Mjg0IDEzLjE0NDkgMy43MDc5N0wxMy41NTgyIDMuODczMjlDMTQuOTgzMSA0LjQ0MzIzIDE2LjU1MTMgNC41NDk2NyAxOC4wNDAxIDQuMTc3NDZDMTguNjcxMSA0LjAxOTcyIDE5LjE3NzggNC43MDM2IDE4Ljg0MzIgNS4yNjEzMkwxNy41NjQ3IDcuMzkyMjFDMTcuMjIzMiA3Ljk2MTM3IDE3LjA1MjQgOC4yNDU5NSAxNy4wMTE5IDguNTU1NDlDMTYuOTk1MSA4LjY4NDYxIDE2Ljk5NTEgOC44MTUzOSAxNy4wMTE5IDguOTQ0NTFDMTcuMDUyNCA5LjI1NDA1IDE3LjIyMzIgOS41Mzg2MyAxNy41NjQ3IDEwLjEwNzhMMTkuMTI1MyAxMi43MDg5QzE5LjQzNjEgMTMuMjI2OSAxOS4xNTgyIDEzLjg5OCAxOC41NzIxIDE0LjA0NDVMMTguNDcyIDE0LjA2OTVDMTYuNzAyNCAxNC41MTE5IDE0LjgzODUgMTQuMzg1NCAxMy4xNDQ5IDEzLjcwOEMxMS41ODIxIDEzLjA4MjggOS44NzEyIDEyLjkyNTggOC4yMjA2NyAxMy4yNTU5TDYuNSAxMy42VjIxLjc1QzYuNSAyMi4xNjQyIDYuMTY0MjEgMjIuNSA1Ljc1IDIyLjVDNS4zMzU3OSAyMi41IDUgMjIuMTY0MiA1IDIxLjc1VjEuNzVDNSAxLjMzNTc5IDUuMzM1NzkgMSA1Ljc1IDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/Flag2";
  */
 const Flag2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <SSRBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Flag2.displayName = "Flag2";
-export default Flag2;
+Flag2.displayName = "Flag2"
+export default Flag2

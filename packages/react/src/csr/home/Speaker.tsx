@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/Speaker";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/Speaker"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiA2LjI1QzExLjMwOTYgNi4yNSAxMC43NSA2LjgwOTY0IDEwLjc1IDcuNUMxMC43NSA4LjE5MDM2IDExLjMwOTYgOC43NSAxMiA4Ljc1QzEyLjY5MDQgOC43NSAxMy4yNSA4LjE5MDM2IDEzLjI1IDcuNUMxMy4yNSA2LjgwOTY0IDEyLjY5MDQgNi4yNSAxMiA2LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOS43NSAxNS41QzkuNzUgMTQuMjU3NCAxMC43NTc0IDEzLjI1IDEyIDEzLjI1QzEzLjI0MjYgMTMuMjUgMTQuMjUgMTQuMjU3NCAxNC4yNSAxNS41QzE0LjI1IDE2Ljc0MjYgMTMuMjQyNiAxNy43NSAxMiAxNy43NUMxMC43NTc0IDE3Ljc1IDkuNzUgMTYuNzQyNiA5Ljc1IDE1LjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNCAxMEM0IDYuMjI4NzYgNCA0LjM0MzE1IDUuMTcxNTcgMy4xNzE1N0M2LjM0MzE1IDIgOC4yMjg3NiAyIDEyIDJDMTUuNzcxMiAyIDE3LjY1NjkgMiAxOC44Mjg0IDMuMTcxNTdDMjAgNC4zNDMxNSAyMCA2LjIyODc2IDIwIDEwVjE0QzIwIDE3Ljc3MTIgMjAgMTkuNjU2OSAxOC44Mjg0IDIwLjgyODRDMTcuNjU2OSAyMiAxNS43NzEyIDIyIDEyIDIyQzguMjI4NzYgMjIgNi4zNDMxNSAyMiA1LjE3MTU3IDIwLjgyODRDNCAxOS42NTY5IDQgMTcuNzcxMiA0IDE0VjEwWk05LjI1IDcuNUM5LjI1IDUuOTgxMjIgMTAuNDgxMiA0Ljc1IDEyIDQuNzVDMTMuNTE4OCA0Ljc1IDE0Ljc1IDUuOTgxMjIgMTQuNzUgNy41QzE0Ljc1IDkuMDE4NzggMTMuNTE4OCAxMC4yNSAxMiAxMC4yNUMxMC40ODEyIDEwLjI1IDkuMjUgOS4wMTg3OCA5LjI1IDcuNVpNMTIgMTEuNzVDOS45Mjg5MyAxMS43NSA4LjI1IDEzLjQyODkgOC4yNSAxNS41QzguMjUgMTcuNTcxMSA5LjkyODkzIDE5LjI1IDEyIDE5LjI1QzE0LjA3MTEgMTkuMjUgMTUuNzUgMTcuNTcxMSAxNS43NSAxNS41QzE1Ljc1IDEzLjQyODkgMTQuMDcxMSAxMS43NSAxMiAxMS43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/Speaker";
  */
 const Speaker: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Speaker.displayName = "Speaker";
-export default Speaker;
+Speaker.displayName = "Speaker"
+export default Speaker

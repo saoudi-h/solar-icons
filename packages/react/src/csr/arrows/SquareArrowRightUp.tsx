@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/arrows/SquareArrowRightUp";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/arrows/SquareArrowRightUp"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuNTM1NSAyMC41MzU1QzIyIDE5LjA3MTEgMjIgMTYuNzE0IDIyIDEyQzIyIDcuMjg1OTUgMjIgNC45Mjg5MyAyMC41MzU1IDMuNDY0NDdDMTkuMDcxMSAyIDE2LjcxNCAyIDEyIDJDNy4yODU5NSAyIDQuOTI4OTMgMiAzLjQ2NDQ3IDMuNDY0NDdDMiA0LjkyODkzIDIgNy4yODU5NSAyIDEyQzIgMTYuNzE0IDIgMTkuMDcxMSAzLjQ2NDQ3IDIwLjUzNTVDNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyIDIyQzE2LjcxNCAyMiAxOS4wNzExIDIyIDIwLjUzNTUgMjAuNTM1NVpNMTQuODI4NCA4LjQyMTU3QzE1LjI0MjYgOC40MjE1NyAxNS41Nzg0IDguNzU3MzYgMTUuNTc4NCA5LjE3MTU3TDE1LjU3ODQgMTMuNDE0MkMxNS41Nzg0IDEzLjgyODQgMTUuMjQyNiAxNC4xNjQyIDE0LjgyODQgMTQuMTY0MkMxNC40MTQyIDE0LjE2NDIgMTQuMDc4NCAxMy44Mjg0IDE0LjA3ODQgMTMuNDE0MkwxNC4wNzg0IDEwLjk4MjJMOS43MDE5IDE1LjM1ODhDOS40MDkwMSAxNS42NTE3IDguOTM0MTMgMTUuNjUxNyA4LjY0MTI0IDE1LjM1ODhDOC4zNDgzNSAxNS4wNjU5IDguMzQ4MzUgMTQuNTkxIDguNjQxMjQgMTQuMjk4MUwxMy4wMTc4IDkuOTIxNTdIMTAuNTg1OEMxMC4xNzE2IDkuOTIxNTcgOS44MzU3OSA5LjU4NTc5IDkuODM1NzkgOS4xNzE1N0M5LjgzNTc5IDguNzU3MzYgMTAuMTcxNiA4LjQyMTU3IDEwLjU4NTggOC40MjE1N0wxNC44Mjg0IDguNDIxNTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/arrows/SquareArrowRightUp";
  */
 const SquareArrowRightUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SquareArrowRightUp.displayName = "SquareArrowRightUp";
-export default SquareArrowRightUp;
+SquareArrowRightUp.displayName = "SquareArrowRightUp"
+export default SquareArrowRightUp

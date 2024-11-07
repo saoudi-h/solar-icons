@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/home/BedsideTable";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/home/BedsideTable"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuOTc0MyA3LjI1SDIuMDI1NzJDMi4wOTE4NSA1LjIyODgyIDIuMzI4MDMgNC4wMTUxMSAzLjE3MTU3IDMuMTcxNTdDNC4zNDMxNSAyIDYuMjI4NzYgMiAxMCAySDE0QzE3Ljc3MTIgMiAxOS42NTY5IDIgMjAuODI4NCAzLjE3MTU3QzIxLjY3MiA0LjAxNTExIDIxLjkwODIgNS4yMjg4MiAyMS45NzQzIDcuMjVaTTEzIDVDMTMgNS41NTIyOCAxMi41NTIzIDYgMTIgNkMxMS40NDc3IDYgMTEgNS41NTIyOCAxMSA1QzExIDQuNDQ3NzEgMTEuNDQ3NyA0IDEyIDRDMTIuNTUyMyA0IDEzIDQuNDQ3NzEgMTMgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yIDEwQzIgOS41NTgwNyAyIDkuMTQyMDMgMi4wMDE4OSA4Ljc1SDIxLjk5ODFDMjIgOS4xNDIwMyAyMiA5LjU1ODA3IDIyIDEwVjEyQzIyIDEyLjQ0MTkgMjIgMTIuODU4IDIxLjk5ODEgMTMuMjVIMi4wMDE4OUMyIDEyLjg1OCAyIDEyLjQ0MTkgMiAxMlYxMFpNMTIgMTJDMTIuNTUyMyAxMiAxMyAxMS41NTIzIDEzIDExQzEzIDEwLjQ0NzcgMTIuNTUyMyAxMCAxMiAxMEMxMS40NDc3IDEwIDExIDEwLjQ0NzcgMTEgMTFDMTEgMTEuNTUyMyAxMS40NDc3IDEyIDEyIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxLjk3NDMgMTQuNzVIMi4wMjU3MkMyLjA5MTg1IDE2Ljc3MTIgMi4zMjgwMyAxNy45ODQ5IDMuMTcxNTcgMTguODI4NEMzLjQ3NTk5IDE5LjEzMjggMy44Mjg2MSAxOS4zNTgyIDQuMjUgMTkuNTI0OVYyMkM0LjI1IDIyLjQxNDIgNC41ODU3OSAyMi43NSA1IDIyLjc1QzUuNDE0MjEgMjIuNzUgNS43NSAyMi40MTQyIDUuNzUgMjJWMTkuODcxM0M2LjgxOTg5IDIwIDguMTkzNjQgMjAgMTAgMjBIMTRDMTUuODA2NCAyMCAxNy4xODAxIDIwIDE4LjI1IDE5Ljg3MTNWMjJDMTguMjUgMjIuNDE0MiAxOC41ODU4IDIyLjc1IDE5IDIyLjc1QzE5LjQxNDIgMjIuNzUgMTkuNzUgMjIuNDE0MiAxOS43NSAyMlYxOS41MjQ5QzIwLjE3MTQgMTkuMzU4MiAyMC41MjQgMTkuMTMyOCAyMC44Mjg0IDE4LjgyODRDMjEuNjcyIDE3Ljk4NDkgMjEuOTA4MiAxNi43NzEyIDIxLjk3NDMgMTQuNzVaTTEzIDE3QzEzIDE3LjU1MjMgMTIuNTUyMyAxOCAxMiAxOEMxMS40NDc3IDE4IDExIDE3LjU1MjMgMTEgMTdDMTEgMTYuNDQ3NyAxMS40NDc3IDE2IDEyIDE2QzEyLjU1MjMgMTYgMTMgMTYuNDQ3NyAxMyAxN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/home/BedsideTable";
  */
 const BedsideTable: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-BedsideTable.displayName = "BedsideTable";
-export default BedsideTable;
+BedsideTable.displayName = "BedsideTable"
+export default BedsideTable

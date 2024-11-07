@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/business/ChartSquare";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/business/ChartSquare"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1QzQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMiAyMkMxNi43MTQgMjIgMTkuMDcxMSAyMiAyMC41MzU1IDIwLjUzNTVDMjIgMTkuMDcxMSAyMiAxNi43MTQgMjIgMTJDMjIgNy4yODU5NSAyMiA0LjkyODkzIDIwLjUzNTUgMy40NjQ0N0MxOS4wNzExIDIgMTYuNzE0IDIgMTIgMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N1pNMTcgMTIuMjVDMTcuNDE0MiAxMi4yNSAxNy43NSAxMi41ODU4IDE3Ljc1IDEzVjE4QzE3Ljc1IDE4LjQxNDIgMTcuNDE0MiAxOC43NSAxNyAxOC43NUMxNi41ODU4IDE4Ljc1IDE2LjI1IDE4LjQxNDIgMTYuMjUgMThWMTNDMTYuMjUgMTIuNTg1OCAxNi41ODU4IDEyLjI1IDE3IDEyLjI1Wk0xMi43NSA2QzEyLjc1IDUuNTg1NzkgMTIuNDE0MiA1LjI1IDEyIDUuMjVDMTEuNTg1OCA1LjI1IDExLjI1IDUuNTg1NzkgMTEuMjUgNlYxOEMxMS4yNSAxOC40MTQyIDExLjU4NTggMTguNzUgMTIgMTguNzVDMTIuNDE0MiAxOC43NSAxMi43NSAxOC40MTQyIDEyLjc1IDE4VjZaTTcgOC4yNUM3LjQxNDIxIDguMjUgNy43NSA4LjU4NTc5IDcuNzUgOVYxOEM3Ljc1IDE4LjQxNDIgNy40MTQyMSAxOC43NSA3IDE4Ljc1QzYuNTg1NzkgMTguNzUgNi4yNSAxOC40MTQyIDYuMjUgMThWOUM2LjI1IDguNTg1NzkgNi41ODU3OSA4LjI1IDcgOC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/ChartSquare";
  */
 const ChartSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-ChartSquare.displayName = "ChartSquare";
-export default ChartSquare;
+ChartSquare.displayName = "ChartSquare"
+export default ChartSquare

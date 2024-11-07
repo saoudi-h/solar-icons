@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/business/PieChart2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/business/PieChart2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjIyMjA5IDQuNjAxMDVDNi42NjY2NSA0LjMwNCA3LjEzMzQ0IDQuMDQ2MzYgNy42MTcxIDMuODI5NzZDOC45ODg5OCAzLjIxNTM5IDkuNjc0OTEgMi45MDgyIDEwLjU4NzUgMy40OTk0QzExLjUgNC4wOTA2MSAxMS41IDUuMDYwNDEgMTEuNSA3LjAwMDAxVjguNTAwMDFDMTEuNSAxMC4zODU2IDExLjUgMTEuMzI4NCAxMi4wODU4IDExLjkxNDJDMTIuNjcxNiAxMi41IDEzLjYxNDQgMTIuNSAxNS41IDEyLjVIMTdDMTguOTM5NiAxMi41IDE5LjkwOTQgMTIuNSAyMC41MDA2IDEzLjQxMjVDMjEuMDkxOCAxNC4zMjUxIDIwLjc4NDYgMTUuMDExIDIwLjE3MDIgMTYuMzgyOUMxOS45NTM2IDE2Ljg2NjYgMTkuNjk2IDE3LjMzMzQgMTkuMzk5IDE3Ljc3NzlDMTguMzU1MSAxOS4zNDAyIDE2Ljg3MTQgMjAuNTU3OCAxNS4xMzU1IDIxLjI3NjlDMTMuMzk5NiAyMS45OTU5IDExLjQ4OTUgMjIuMTg0IDkuNjQ2NjUgMjEuODE3NUM3LjgwMzgzIDIxLjQ1MDkgNi4xMTEwOSAyMC41NDYxIDQuNzgyNDkgMTkuMjE3NUMzLjQ1Mzg5IDE3Ljg4ODkgMi41NDkxIDE2LjE5NjIgMi4xODI1NCAxNC4zNTM0QzEuODE1OTggMTIuNTEwNSAyLjAwNDEyIDEwLjYwMDQgMi43MjMxNSA4Ljg2NDUxQzMuNDQyMTggNy4xMjg2MSA0LjY1OTgyIDUuNjQ0OTIgNi4yMjIwOSA0LjYwMTA1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjEuNDQ2IDcuMDY5MDFDMjAuNjM0MiA1LjAwODMxIDE4Ljk5MTcgMy4zNjU3OSAxNi45MzEgMi41NTM5OEMxNS4zODk1IDEuOTQ2NjkgMTQgMy4zNDMxNiAxNCA1LjAwMDAyVjkuMDAwMDJDMTQgOS41NTIzIDE0LjQ0NzcgMTAgMTUgMTBIMTlDMjAuNjU2OSAxMCAyMi4wNTMzIDguNjEwNTUgMjEuNDQ2IDcuMDY5MDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/business/PieChart2";
  */
 const PieChart2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-PieChart2.displayName = "PieChart2";
-export default PieChart2;
+PieChart2.displayName = "PieChart2"
+export default PieChart2

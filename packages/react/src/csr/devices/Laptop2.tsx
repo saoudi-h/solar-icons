@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/Laptop2";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/Laptop2"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDIySDE5QzIwLjY1NjkgMjIgMjIgMjAuNjU2OSAyMiAxOVYxNy41QzIyIDE2Ljk0NzcgMjEuNTUyMyAxNi41IDIxIDE2LjVIMTYuNjY2N0MxNi4yMzM5IDE2LjUgMTUuODEyOSAxNi42NDA0IDE1LjQ2NjcgMTYuOUwxNC41MzMzIDE3LjZDMTQuMTg3MSAxNy44NTk2IDEzLjc2NjEgMTggMTMuMzMzMyAxOEgxMC42NjY3QzEwLjIzMzkgMTggOS44MTI4NiAxNy44NTk2IDkuNDY2NjcgMTcuNkw4LjUzMzMzIDE2LjlDOC4xODcxNCAxNi42NDA0IDcuNzY2MDcgMTYuNSA3LjMzMzMzIDE2LjVIM0MyLjQ0NzcyIDE2LjUgMiAxNi45NDc3IDIgMTcuNVYxOUMyIDIwLjY1NjkgMy4zNDMxNSAyMiA1IDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOS41IDJIMTQuNUMxNy4zMjg0IDIgMTguNzQyNiAyIDE5LjYyMTMgMi44Nzg2OEMyMC41IDMuNzU3MzYgMjAuNSA1LjE3MTU3IDIwLjUgOFYxNUgxNi42NjY3QzE1LjkwOTQgMTUgMTUuMTcyNSAxNS4yNDU2IDE0LjU2NjcgMTUuN0wxMy42MzMzIDE2LjRDMTMuNTQ2OCAxNi40NjQ5IDEzLjQ0MTUgMTYuNSAxMy4zMzMzIDE2LjVIMTAuNjY2N0MxMC41NTg1IDE2LjUgMTAuNDUzMiAxNi40NjQ5IDEwLjM2NjcgMTYuNEw5LjQzMzMzIDE1LjdDOC44Mjc1IDE1LjI0NTYgOC4wOTA2MyAxNSA3LjMzMzMzIDE1SDMuNVY4QzMuNSA1LjE3MTU3IDMuNSAzLjc1NzM2IDQuMzc4NjggMi44Nzg2OEM1LjI1NzM2IDIgNi42NzE1NyAyIDkuNSAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/Laptop2";
  */
 const Laptop2: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-Laptop2.displayName = "Laptop2";
-export default Laptop2;
+Laptop2.displayName = "Laptop2"
+export default Laptop2

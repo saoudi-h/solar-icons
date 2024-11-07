@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/devices/AirbudsCaseMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/devices/AirbudsCaseMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy45NTQ5MSA0LjA2MTA3QzMgNS4zNzU0IDMgNy4yNTAyNyAzIDExVjEzQzMgMTYuNzQ5NyAzIDE4LjYyNDYgMy45NTQ5MSAxOS45Mzg5QzQuMjYzMzEgMjAuMzYzNCA0LjYzNjYgMjAuNzM2NyA1LjA2MTA3IDIxLjA0NTFDNi4zNzU0IDIyIDguMjUwMjcgMjIgMTIgMjJDMTUuNzQ5NyAyMiAxNy42MjQ2IDIyIDE4LjkzODkgMjEuMDQ1MUMxOS4zNjM0IDIwLjczNjcgMTkuNzM2NyAyMC4zNjM0IDIwLjA0NTEgMTkuOTM4OUMyMSAxOC42MjQ2IDIxIDE2Ljc0OTcgMjEgMTNWMTFDMjEgNy4yNTAyNyAyMSA1LjM3NTQgMjAuMDQ1MSA0LjA2MTA3QzE5LjczNjcgMy42MzY2IDE5LjM2MzQgMy4yNjMzMSAxOC45Mzg5IDIuOTU0OTFDMTcuNjI0NiAyIDE1Ljc0OTcgMiAxMiAyQzguMjUwMjcgMiA2LjM3NTQgMiA1LjA2MTA3IDIuOTU0OTFDNC42MzY2IDMuMjYzMzEgNC4yNjMzMSAzLjYzNjYgMy45NTQ5MSA0LjA2MTA3Wk03IDguMjVDNi41ODU3OSA4LjI1IDYuMjUgOC41ODU3OSA2LjI1IDlDNi4yNSA5LjQxNDIxIDYuNTg1NzkgOS43NSA3IDkuNzVIMTdDMTcuNDE0MiA5Ljc1IDE3Ljc1IDkuNDE0MjEgMTcuNzUgOUMxNy43NSA4LjU4NTc5IDE3LjQxNDIgOC4yNSAxNyA4LjI1SDdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/devices/AirbudsCaseMinimalistic";
  */
 const AirbudsCaseMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-AirbudsCaseMinimalistic.displayName = "AirbudsCaseMinimalistic";
-export default AirbudsCaseMinimalistic;
+AirbudsCaseMinimalistic.displayName = "AirbudsCaseMinimalistic"
+export default AirbudsCaseMinimalistic

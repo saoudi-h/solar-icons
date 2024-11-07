@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-import { forwardRef } from "react";
-import type { IconProps, Icon } from "../../lib/types";
-import IconBase from "../../lib/IconBase";
-import weights from "../../defs/ui/SliderVerticalMinimalistic";
+import React, { forwardRef } from "react"
+import type { IconProps, Icon } from "../../lib/types"
+import IconBase from "../../lib/IconBase"
+import weights from "../../defs/ui/SliderVerticalMinimalistic"
 
 /**
  * ### ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01Ljg0NjE1IDhDNS44NDYxNSA1LjE3MTU3IDUuODQ2MTUgMy43NTczNiA2Ljc0NzM2IDIuODc4NjhDNy42NDg1NyAyIDkuMDk5MDUgMiAxMiAyQzE0LjkwMSAyIDE2LjM1MTQgMiAxNy4yNTI2IDIuODc4NjhDMTguMTUzOCAzLjc1NzM2IDE4LjE1MzggNS4xNzE1NyAxOC4xNTM4IDhWMTZDMTguMTUzOCAxOC44Mjg0IDE4LjE1MzggMjAuMjQyNiAxNy4yNTI2IDIxLjEyMTNDMTYuMzUxNCAyMiAxNC45MDEgMjIgMTIgMjJDOS4wOTkwNSAyMiA3LjY0ODU3IDIyIDYuNzQ3MzYgMjEuMTIxM0M1Ljg0NjE1IDIwLjI0MjYgNS44NDYxNSAxOC44Mjg0IDUuODQ2MTUgMTZWOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yLjc2OTIzIDMuNzVDMy4xOTQwNyAzLjc1IDMuNTM4NDYgNC4wODU3OSAzLjUzODQ2IDQuNVYxOS41QzMuNTM4NDYgMTkuOTE0MiAzLjE5NDA3IDIwLjI1IDIuNzY5MjMgMjAuMjVDMi4zNDQ0IDIwLjI1IDIgMTkuOTE0MiAyIDE5LjVWNC41QzIgNC4wODU3OSAyLjM0NDQgMy43NSAyLjc2OTIzIDMuNzVaTTIxLjIzMDggMy43NUMyMS42NTU2IDMuNzUgMjIgNC4wODU3OSAyMiA0LjVWMTkuNUMyMiAxOS45MTQyIDIxLjY1NTYgMjAuMjUgMjEuMjMwOCAyMC4yNUMyMC44MDU5IDIwLjI1IDIwLjQ2MTUgMTkuOTE0MiAyMC40NjE1IDE5LjVWNC41QzIwLjQ2MTUgNC4wODU3OSAyMC44MDU5IDMuNzUgMjEuMjMwOCAzLjc1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K) Bold
@@ -14,7 +14,7 @@ import weights from "../../defs/ui/SliderVerticalMinimalistic";
  */
 const SliderVerticalMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props} weights={weights} />
-));
+))
 
-SliderVerticalMinimalistic.displayName = "SliderVerticalMinimalistic";
-export default SliderVerticalMinimalistic;
+SliderVerticalMinimalistic.displayName = "SliderVerticalMinimalistic"
+export default SliderVerticalMinimalistic
