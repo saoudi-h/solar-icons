@@ -1,23 +1,23 @@
 {
   "folders": [
     {
-      "path": ".",
+      "path": "."
     },
     {
-      "path": "packages/core",
+      "path": "packages/core"
     },
     {
-      "path": "packages/eslint",
+      "path": "packages/eslint"
     },
     {
-      "path": "packages/react",
+      "path": "packages/react"
     },
     {
-      "path": "packages/tsconfig",
+      "path": "packages/tsconfig"
     },
     {
-      "path": "packages/prettier",
-    },
+      "path": "packages/prettier"
+    }
   ],
   "settings": {
     "biome.enabled": false,
