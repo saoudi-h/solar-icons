@@ -10,6 +10,8 @@
     "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
     "format:fix": "prettier \"**/*\" --ignore-unknown --list-different --write",
     "clean": "turbo clean && rimraf node_modules",
+    "version": "changeset version",
+    "release": "changeset publish",
     "typecheck": "tsc"
   },
   "devDependencies": {
