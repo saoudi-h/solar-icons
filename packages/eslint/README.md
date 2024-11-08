@@ -1,3 +1,3 @@
-# `@solar/eslint`
+# `@solar-icons/eslint`
 
 Collection of internal eslint configurations.

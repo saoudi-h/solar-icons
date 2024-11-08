@@ -1,53 +1,101 @@
-# solar-react
+# @solar-icons/react
 
-**`solar-react`** is
-
----
-
-## Features
-
----
+The `@solar-icons/react` package provides a robust, flexible, and easy-to-use library of React components for the Solar icon set. This package enables developers to seamlessly integrate Solar's multi-style icons into React applications, supporting both client-side rendering (CSR) and server-side rendering (SSR).
 
 ## Installation
 
-Install `solar-react` via npm or yarn:
+Install the package using npm or yarn:
 
-```sh
-npm install solar-react
+```bash
+npm install @solar-icons/react
 ```
 
 or
 
-```sh
-yarn add solar-react
+```bash
+yarn add @solar-icons/react
 ```
 
-or
+## Usage
 
-```sh
-pnpm add solar-react
+To use an icon in your React application, simply import it from the package:
+
+```jsx
+import solar, { ArrowUp } from '@solar-icons/react';
+import { Arrows } from '@solar-icons/react/category';
+
+function App() {
+  return (
+    <>
+        <ArrowUp size={24} weight="Outline" mirrored />
+        <solar.Arrows.ArrowDown size={32} weight="BoldDuotone"  />
+        <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
+    </>
+  );
+}
 ```
 
----
+### Properties
 
-## Getting Started
+Each icon component supports the following properties:
 
-### Step-by-Step Example:
+- **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
+- **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
+- **`weight`**: Specifies the icon style. Options include `"Bold"`, `"Linear"`, `"Outline"`, `"BoldDuotone"`, `"LineDuotone"`, and `"Broken"`.
+- **`mirrored`**: Flips the icon horizontally when set to `true`.
 
-## API Documentation
+## Advanced Usage
 
-## Problem Solved
+### Global Icon Configuration
+
+To apply consistent styles across multiple icons, use the `SolarProvider` component to wrap your application:
+
+```jsx
+import { SolarProvider } from '@solar-icons/react';
+
+function App() {
+  return (
+    <SolarProvider value={{ size: '32', color: 'purple', weight: 'Linear' }}>
+      <YourComponents />
+    </SolarProvider>
+  );
+}
+```
+
+### Server-Side Rendering (SSR)
+
+The `@solar-icons/react` package is optimized for SSR, ensuring that icons render correctly on both the client and server sides:
+
+```jsx
+import solar, { ArrowUp } from '@solar-icons/react/ssr';
+import { Arrows } from '@solar-icons/react/ssr/category';
+
+function App() {
+  return (
+    <>
+        <ArrowUp size={24} weight="Outline" />
+        <solar.Arrows.ArrowDown size={32} weight="BoldDuotone"  />
+        <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
+    </>
+  );
+}
+```
+
+
 
 ## Contributing
 
-We welcome contributions to improve `solar-react`. Feel free to open issues, suggest features, or contribute code!
-
----
+As an open-source project, contributions are welcome. However, please note that while the Solar project is maintained by a single developer, we encourage anyone interested to contribute through pull requests and issues.
 
 ## License
 
-`solar-react` is MIT licensed.
+The `@solar-icons/react` code and library are licensed under the [MIT License](./LICENSE). The Solar icon pack itself is licensed under **CC BY 4.0** by **480 Design**, requiring attribution for any use. For more information and to view the original icon set, visit [480 Design's Figma page](https://www.figma.com/community/file/1166831539721848736).
+
+## Acknowledgements
+
+Special thanks to **480 Design** for creating the original Solar icon pack. Additional appreciation goes to **Phosphor Icons** and **Lucide Icons** for their inspiration in shaping the structure and approach of the `@solar-icons/react` package.
 
 ---
 
-For full documentation, please check our [documentation](./docs/README.md) folder.
+For detailed documentation and examples, refer to the [project's main documentation](../README.md).
+
