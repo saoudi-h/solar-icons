@@ -1,7 +1,10 @@
 {
     "name": "@solar-icons/react",
     "version": "0.0.0",
-    "private": true,
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "Solar Icons for React",
     "type": "module",
     "sideEffects": false,
