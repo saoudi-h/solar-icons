@@ -8,6 +8,10 @@
     "description": "Solar Icons for React",
     "type": "module",
     "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md"
+    ],
     "scripts": {
         "build": "vite build && tsc --build tsconfig.build.json",
         "generate:assets": "tsx scripts/generate-assets.ts",
