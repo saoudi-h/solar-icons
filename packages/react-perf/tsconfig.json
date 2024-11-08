@@ -1,0 +1,15 @@
+{
+    "extends": "@solar-icons/tsconfig/react.json",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "rootDir": ".",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "include": ["./src/**/*", "vite.config.ts", "./scripts/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+}

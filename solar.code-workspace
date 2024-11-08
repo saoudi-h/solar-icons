@@ -1,22 +1,32 @@
 {
   "folders": [
     {
+      "name": "solar",
       "path": "."
     },
     {
+      "name": "core",
       "path": "packages/core"
     },
     {
+      "name": "eslint",
       "path": "packages/eslint"
     },
     {
-      "path": "packages/react"
-    },
-    {
+      "name": "tsconfig",
       "path": "packages/tsconfig"
     },
     {
+      "name": "prettier",
       "path": "packages/prettier"
+    },
+    {
+      "name": "react",
+      "path": "packages/react"
+    },
+    {
+      "name": "react-perf",
+      "path": "packages/react-perf"
     }
   ],
   "settings": {
