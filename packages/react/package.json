@@ -6,20 +6,29 @@
         "access": "public"
     },
     "description": "Solar Icons for React",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/react"
+    },
     "type": "module",
     "sideEffects": false,
     "files": [
         "dist",
-        "README.md"
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "vite build && tsc --build tsconfig.build.json",
+        "build": "pnpm copy:licenses &&vite build && tsc --build tsconfig.build.json",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        
         "typecheck": "tsc"
     },
     "module": "./dist/esm/index.mjs",
@@ -120,6 +129,6 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/saoudi-h/solar/issues"
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
 }
