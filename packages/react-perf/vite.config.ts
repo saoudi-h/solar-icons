@@ -7,13 +7,16 @@ export default defineConfig({
     plugins: [react({ jsxRuntime: 'classic' })],
     build: {
         minify: true,
-        target: 'ES2017',
+        target: 'ES2020',
         lib: {
             entry: resolve(__dirname, 'src/index.ts'),
         },
         rollupOptions: {
             external: Object.keys(pkg.peerDependencies),
-            input: './src/index.ts',
+            input: {
+                index: './src/index.ts',
+                style: './src/icons/style/index.ts',
+            },
             output: [
                 {
                     format: 'esm',
