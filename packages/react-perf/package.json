@@ -6,14 +6,22 @@
         "access": "public"
     },
     "description": "Solar Icons for React with performance in mind",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/react-perf"
+    },
     "type": "module",
     "sideEffects": false,
     "files": [
         "dist",
-        "README.md"
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "vite build && tsc --build tsconfig.build.json",
+        "build": "pnpm copy:license &&vite build && tsc --build tsconfig.build.json",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
@@ -32,47 +40,27 @@
             "types": "./dist/types/index.d.ts"
         },
         "./category": {
-            "import": "./dist/esm/csr/category.mjs",
-            "require": "./dist/cjs/csr/category.cjs",
-            "types": "./dist/types/csr/category.d.ts"
+            "import": "./dist/esm/icons/index.mjs",
+            "require": "./dist/cjs/icons/index.cjs",
+            "types": "./dist/types/icons/index.d.ts"
         },
-        "./ssr/category": {
-            "import": "./dist/esm/ssr/category.mjs",
-            "require": "./dist/cjs/ssr/category.cjs",
-            "types": "./dist/types/ssr/category.d.ts"
+        "./category/*": {
+            "import": "./dist/esm/icons/*/index.mjs",
+            "require": "./dist/cjs/icons/*/index.cjs",
+            "types": "./dist/types/icons/*/index.d.ts"
         },
-        "./icons/*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
-        },
-        "./csr/*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
+        "./*": {
+            "import": "./dist/esm/icons/style/*.mjs",
+            "require": "./dist/cjs/icons/style/*.cjs",
+            "types": "./dist/types/icons/style/*.d.ts"
         },
         "./lib/*": {
             "import": "./dist/esm/lib/*.mjs",
             "require": "./dist/cjs/lib/*.cjs",
             "types": "./dist/types/lib/*.d.ts"
         },
-        "./ssr": {
-            "import": "./dist/esm/ssr/index.mjs",
-            "require": "./dist/cjs/ssr/index.cjs",
-            "types": "./dist/types/ssr/index.d.ts"
-        },
-        "./ssr/*": {
-            "import": "./dist/esm/ssr/*.mjs",
-            "require": "./dist/cjs/ssr/*.cjs",
-            "types": "./dist/types/ssr/*.d.ts"
-        },
         "./package.json": {
             "default": "./package.json"
-        },
-        "./*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
         }
     },
     "devDependencies": {
@@ -120,6 +108,6 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/saoudi-h/solar/issues"
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
 }
