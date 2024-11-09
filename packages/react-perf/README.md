@@ -21,15 +21,15 @@ yarn add @solar-icons/react-perf
 To use an icon in your React application, import the specific icon directly for optimal performance:
 
 ```jsx
-import { ArrowUpBold, ArrowUpLinear } from '@solar-icons/react-perf';
+import { ArrowUpBold, ArrowUpLinear } from '@solar-icons/react-perf'
 
 function App() {
-  return (
-    <div>
-      <ArrowUpBold size={24} color="#000" />
-      <ArrowUpLinear size={32} color="blue" />
-    </div>
-  );
+    return (
+        <div>
+            <ArrowUpBold size={24} color="#000" />
+            <ArrowUpLinear size={32} color="blue" />
+        </div>
+    )
 }
 ```
 
@@ -38,33 +38,32 @@ function App() {
 For more modular imports, you can import icons by style:
 
 ```jsx
-import { ArrowUp } from '@solar-icons/react-perf/linear';
-import { ArrowDown } from '@solar-icons/react-perf/bold';
+import { ArrowUp } from '@solar-icons/react-perf/linear'
+import { ArrowDown } from '@solar-icons/react-perf/bold'
 
 function App() {
-  return (
-    <div>
-      <ArrowUp size={24} />
-      <ArrowDown size={32} />
-    </div>
-  );
+    return (
+        <div>
+            <ArrowUp size={24} />
+            <ArrowDown size={32} />
+        </div>
+    )
 }
 ```
 
 ## Key Features
 
-- **Performance-Oriented**: Each icon is packaged individually, ensuring that only the required assets are included in the final bundle.
-- **Single-Style Icons**: Icons are separated by style (e.g., `Bold`, `Linear`), enabling more precise imports.
-- **Lightweight SVGs**: Each icon is optimized for minimal SVG size to reduce load times.
+-   **Performance-Oriented**: Each icon is packaged individually, ensuring that only the required assets are included in the final bundle.
+-   **Single-Style Icons**: Icons are separated by style (e.g., `Bold`, `Linear`), enabling more precise imports.
+-   **Lightweight SVGs**: Each icon is optimized for minimal SVG size to reduce load times.
 
 ### Properties
 
 Each icon component supports the following properties:
 
-- **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
-- **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
-- **`mirrored`**: Flips the icon horizontally when set to `true`.
-
+-   **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
+-   **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
+-   **`mirrored`**: Flips the icon horizontally when set to `true`.
 
 ## Advanced Usage
 
@@ -73,10 +72,10 @@ Each icon component supports the following properties:
 Customize icons using standard React properties or additional CSS classes:
 
 ```jsx
-import { ArrowUpBold } from '@solar-icons/react-perf';
+import { ArrowUpBold } from '@solar-icons/react-perf'
 
 function CustomIcon() {
-  return <ArrowUpBold size="48" className="custom-class" />;
+    return <ArrowUpBold size="48" className="custom-class" />
 }
 ```
 
