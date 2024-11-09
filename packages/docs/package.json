@@ -1,0 +1,39 @@
+{
+  "name": "@solar-icons/docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "postinstall": "fumadocs-mdx",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+    "clean": "rimraf *.tsbuildinfo node_modules build dist"
+  },
+  "dependencies": {
+    "next": "15.0.3",
+    "fumadocs-ui": "14.3.1",
+    "fumadocs-core": "14.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "fumadocs-mdx": "11.1.1"
+  },
+  "devDependencies": {
+    "@solar-icons/eslint": "workspace:*",
+    "@solar-icons/prettier": "workspace:*",
+    "@solar-icons/tsconfig": "workspace:*",
+    "@types/node": "22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "@types/mdx": "^2.0.13",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3"
+  }
+}
