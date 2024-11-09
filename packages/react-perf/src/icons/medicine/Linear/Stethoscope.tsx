@@ -1,0 +1,20 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDE0LjIzNTRWMTcuMDAwMUM5IDE5Ljc2MTUgMTEuMjM4NiAyMi4wMDAxIDE0IDIyLjAwMDFIMTQuODgyNEMxNi43NjkxIDIyLjAwMDEgMTguMzU5NSAyMC43MzExIDE4Ljg0NjUgMTkuMDAwMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNS40Mjg1NyAzSDUuMzM2OUM1LjAyNDA0IDMgNC44Njc2MSAzIDQuNzM1NzQgMy4wMTE2NkMzLjI4NzYzIDMuMTM5NzIgMi4xMzk3MiA0LjI4NzYzIDIuMDExNjYgNS43MzU3NEMyIDUuODY3NjEgMiA2LjAyNDA0IDIgNi4zMzY5VjcuMjM1MjlDMiAxMS4xMDEzIDUuMTM0MDEgMTQuMjM1MyA5IDE0LjIzNTNDMTIuNzA4MiAxNC4yMzUzIDE1LjcxNDMgMTEuMjI5MiAxNS43MTQzIDcuNTIxVjYuMzM2OUMxNS43MTQzIDYuMDI0MDQgMTUuNzE0MyA1Ljg2NzYxIDE1LjcwMjYgNS43MzU3NEMxNS41NzQ2IDQuMjg3NjMgMTQuNDI2NyAzLjEzOTcyIDEyLjk3ODUgMy4wMTE2NkMxMi44NDY3IDMgMTIuNjkwMiAzIDEyLjM3NzQgM0gxMi4yODU3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iMTkiIGN5PSIxNiIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTIgMlY0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTYgMlY0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const Stethoscope:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <path d="M9 14.2354V17.0001C9 19.7615 11.2386 22.0001 14 22.0001H14.8824C16.7691 22.0001 18.3595 20.7311 18.8465 19.0001" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M5.42857 3H5.3369C5.02404 3 4.86761 3 4.73574 3.01166C3.28763 3.13972 2.13972 4.28763 2.01166 5.73574C2 5.86761 2 6.02404 2 6.3369V7.23529C2 11.1013 5.13401 14.2353 9 14.2353C12.7082 14.2353 15.7143 11.2292 15.7143 7.521V6.3369C15.7143 6.02404 15.7143 5.86761 15.7026 5.73574C15.5746 4.28763 14.4267 3.13972 12.9785 3.01166C12.8467 3 12.6902 3 12.3774 3H12.2857" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<circle cx="19" cy="16" r="3" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M12 2V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M6 2V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+Stethoscope.displayName = "Stethoscope"

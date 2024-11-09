@@ -1,0 +1,15 @@
+export { CloudFile as CloudFileOutline } from './CloudFile';
+export { CodeFile as CodeFileOutline } from './CodeFile';
+export { FigmaFile as FigmaFileOutline } from './FigmaFile';
+export { FileCheck as FileCheckOutline } from './FileCheck';
+export { FileCorrupted as FileCorruptedOutline } from './FileCorrupted';
+export { FileDownload as FileDownloadOutline } from './FileDownload';
+export { FileFavourite as FileFavouriteOutline } from './FileFavourite';
+export { FileLeft as FileLeftOutline } from './FileLeft';
+export { FileRemove as FileRemoveOutline } from './FileRemove';
+export { FileRight as FileRightOutline } from './FileRight';
+export { FileSend as FileSendOutline } from './FileSend';
+export { FileSmile as FileSmileOutline } from './FileSmile';
+export { FileText as FileTextOutline } from './FileText';
+export { File as FileOutline } from './File';
+export { ZipFile as ZipFileOutline } from './ZipFile';

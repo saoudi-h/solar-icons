@@ -1,0 +1,17 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC4zMTMzIDExLjE1NjZDMjAuMzEzMyAxNi4yMTM3IDE2LjIxMzcgMjAuMzEzMyAxMS4xNTY2IDIwLjMxMzNDNi4wOTk1NiAyMC4zMTMzIDIgMTYuMjEzNyAyIDExLjE1NjZDMiA2LjA5OTU2IDYuMDk5NTYgMiAxMS4xNTY2IDJDMTYuMjEzNyAyIDIwLjMxMzMgNi4wOTk1NiAyMC4zMTMzIDExLjE1NjZaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTguODM4MiAxOC44MzgyQzE5LjEyMDUgMTguNTU1OSAxOS41NzgzIDE4LjU1NTkgMTkuODYwNiAxOC44MzgyTDIxLjc4ODMgMjAuNzY1OUMyMi4wNzA2IDIxLjA0ODMgMjIuMDcwNiAyMS41MDYgMjEuNzg4MyAyMS43ODgzQzIxLjUwNiAyMi4wNzA2IDIxLjA0ODMgMjIuMDcwNiAyMC43NjU5IDIxLjc4ODNMMTguODM4MiAxOS44NjA2QzE4LjU1NTkgMTkuNTc4MyAxOC41NTU5IDE5LjEyMDUgMTguODM4MiAxOC44MzgyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const MinimalisticMagnifer:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <path d="M20.3133 11.1566C20.3133 16.2137 16.2137 20.3133 11.1566 20.3133C6.09956 20.3133 2 16.2137 2 11.1566C2 6.09956 6.09956 2 11.1566 2C16.2137 2 20.3133 6.09956 20.3133 11.1566Z" fill="currentColor"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M18.8382 18.8382C19.1205 18.5559 19.5783 18.5559 19.8606 18.8382L21.7883 20.7659C22.0706 21.0483 22.0706 21.506 21.7883 21.7883C21.506 22.0706 21.0483 22.0706 20.7659 21.7883L18.8382 19.8606C18.5559 19.5783 18.5559 19.1205 18.8382 18.8382Z" fill="currentColor"/>
+    </IconBase>
+))
+
+MinimalisticMagnifer.displayName = "MinimalisticMagnifer"

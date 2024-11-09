@@ -1,0 +1,16 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuNDg4MSA0LjQzMDU3QzE1LjgwMjYgNC43MDAxNCAxNS44MzkgNS4xNzM2MSAxNS41Njk0IDUuNDg4MTFMOS45ODc4MSAxMkwxNS41Njk0IDE4LjUxMTlDMTUuODM5IDE4LjgyNjQgMTUuODAyNiAxOS4yOTk5IDE1LjQ4ODEgMTkuNTY5NUMxNS4xNzM2IDE5LjgzOSAxNC43MDAxIDE5LjgwMjYgMTQuNDMwNiAxOS40ODgxTDguNDMwNTYgMTIuNDg4MUM4LjE4OTgxIDEyLjIwNzIgOC4xODk4MSAxMS43OTI4IDguNDMwNTYgMTEuNTExOUwxNC40MzA2IDQuNTExOTJDMTQuNzAwMSA0LjE5NzQzIDE1LjE3MzYgNC4xNjEgMTUuNDg4MSA0LjQzMDU3WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const AltArrowLeft:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <path fillRule="evenodd" clipRule="evenodd" d="M15.4881 4.43057C15.8026 4.70014 15.839 5.17361 15.5694 5.48811L9.98781 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5695C15.1736 19.839 14.7001 19.8026 14.4306 19.4881L8.43056 12.4881C8.18981 12.2072 8.18981 11.7928 8.43056 11.5119L14.4306 4.51192C14.7001 4.19743 15.1736 4.161 15.4881 4.43057Z" fill="currentColor"/>
+    </IconBase>
+))
+
+AltArrowLeft.displayName = "AltArrowLeft"

@@ -1,0 +1,14 @@
+export { AddFolder as AddFolderOutline } from './AddFolder';
+export { Folder2 as Folder2Outline } from './Folder2';
+export { FolderCheck as FolderCheckOutline } from './FolderCheck';
+export { FolderCloud as FolderCloudOutline } from './FolderCloud';
+export { FolderError as FolderErrorOutline } from './FolderError';
+export { FolderFavouriteBookmark as FolderFavouriteBookmarkOutline } from './FolderFavouriteBookmark';
+export { FolderFavouriteStar as FolderFavouriteStarOutline } from './FolderFavouriteStar';
+export { FolderOpen as FolderOpenOutline } from './FolderOpen';
+export { FolderPathConnect as FolderPathConnectOutline } from './FolderPathConnect';
+export { FolderSecurity as FolderSecurityOutline } from './FolderSecurity';
+export { FolderWithFiles as FolderWithFilesOutline } from './FolderWithFiles';
+export { Folder as FolderOutline } from './Folder';
+export { MoveToFolder as MoveToFolderOutline } from './MoveToFolder';
+export { RemoveFolder as RemoveFolderOutline } from './RemoveFolder';
