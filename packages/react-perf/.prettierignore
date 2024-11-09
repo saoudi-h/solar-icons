@@ -1,2 +1,4 @@
 .next
 node_modules
+src/icons/**/*
+src/index.ts
