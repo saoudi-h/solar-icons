@@ -1,0 +1,15 @@
+export { SettingsMinimalistic as SettingsMinimalisticLineDuotone } from './SettingsMinimalistic';
+export { Settings as SettingsLineDuotone } from './Settings';
+export { Tuning2 as Tuning2LineDuotone } from './Tuning2';
+export { Tuning3 as Tuning3LineDuotone } from './Tuning3';
+export { Tuning4 as Tuning4LineDuotone } from './Tuning4';
+export { TuningSquare2 as TuningSquare2LineDuotone } from './TuningSquare2';
+export { TuningSquare as TuningSquareLineDuotone } from './TuningSquare';
+export { Tuning as TuningLineDuotone } from './Tuning';
+export { Widget2 as Widget2LineDuotone } from './Widget2';
+export { Widget3 as Widget3LineDuotone } from './Widget3';
+export { Widget4 as Widget4LineDuotone } from './Widget4';
+export { Widget5 as Widget5LineDuotone } from './Widget5';
+export { Widget6 as Widget6LineDuotone } from './Widget6';
+export { WidgetAdd as WidgetAddLineDuotone } from './WidgetAdd';
+export { Widget as WidgetLineDuotone } from './Widget';

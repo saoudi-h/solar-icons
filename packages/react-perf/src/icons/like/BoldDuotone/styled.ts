@@ -1,0 +1,17 @@
+export { Dislike as DislikeBoldDuotone } from './Dislike';
+export { HeartAngle as HeartAngleBoldDuotone } from './HeartAngle';
+export { HeartBroken as HeartBrokenBoldDuotone } from './HeartBroken';
+export { HeartLock as HeartLockBoldDuotone } from './HeartLock';
+export { HeartShine as HeartShineBoldDuotone } from './HeartShine';
+export { HeartUnlock as HeartUnlockBoldDuotone } from './HeartUnlock';
+export { Heart as HeartBoldDuotone } from './Heart';
+export { Hearts as HeartsBoldDuotone } from './Hearts';
+export { Like as LikeBoldDuotone } from './Like';
+export { MedalRibbonStar as MedalRibbonStarBoldDuotone } from './MedalRibbonStar';
+export { MedalRibbon as MedalRibbonBoldDuotone } from './MedalRibbon';
+export { MedalRibbonsStar as MedalRibbonsStarBoldDuotone } from './MedalRibbonsStar';
+export { MedalStarCircle as MedalStarCircleBoldDuotone } from './MedalStarCircle';
+export { MedalStarSquare as MedalStarSquareBoldDuotone } from './MedalStarSquare';
+export { MedalStar as MedalStarBoldDuotone } from './MedalStar';
+export { StarShine as StarShineBoldDuotone } from './StarShine';
+export { Star as StarBoldDuotone } from './Star';
