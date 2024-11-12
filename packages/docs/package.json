@@ -1,41 +1,49 @@
 {
-  "name": "@solar-icons/docs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
-    "postinstall": "fumadocs-mdx",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix",
-    "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
-    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-    "clean": "rimraf *.tsbuildinfo node_modules build dist"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "fumadocs-core": "14.3.1",
-    "fumadocs-mdx": "11.1.1",
-    "fumadocs-ui": "14.3.1",
-    "next": "15.0.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@solar-icons/eslint": "workspace:*",
-    "@solar-icons/prettier": "workspace:*",
-    "@solar-icons/tsconfig": "workspace:*",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
-  }
+    "name": "@solar-icons/docs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "start": "next start",
+        "postinstall": "fumadocs-mdx",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "generate:hero:utils": "tsx ./components/home-page/sections/hero/generateHeroUtils.ts"
+    },
+    "dependencies": {
+        "@radix-ui/react-separator": "^1.1.0",
+        "@radix-ui/react-slot": "^1.1.0",
+        "@solar-icons/react": "^1.0.0",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.11.11",
+        "fumadocs-core": "14.3.1",
+        "fumadocs-mdx": "11.1.1",
+        "fumadocs-ui": "14.3.1",
+        "jotai": "^2.10.2",
+        "next": "15.0.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "tailwind-merge": "^2.5.4",
+        "tailwindcss-animate": "^1.0.7"
+    },
+    "devDependencies": {
+        "@iconify/react": "^5.0.2",
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
+        "@types/mdx": "^2.0.13",
+        "@types/node": "22.9.0",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.47",
+        "tailwindcss": "^3.4.14",
+        "tsx": "^4.19.2"
+    }
 }
