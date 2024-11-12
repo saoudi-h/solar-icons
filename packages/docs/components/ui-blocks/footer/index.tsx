@@ -7,7 +7,7 @@ import { Logo } from '../logo'
 export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
     return (
         <footer className="flex w-full flex-col border-t border-border bg-accent/30">
-            <div className="max-w-fd-container px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 self-center w-full flex flex-col lg:flex-row">
+            <div className="max-w-fd-container px-6 py-12 sm:py-16 lg:px-8 lg:py-24 self-center w-full flex flex-col lg:flex-row">
                     <div className="space-y-8 md:pr-8">
                         <div className="flex items-center justify-start">
                                 <Logo />
@@ -15,9 +15,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                         <p className="text-small text-muted-foreground">{bottomText}</p>
                     </div>
 
-                    <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                         {sections.map((section, index) => {
-                            console.log('section.title : ', section.title)
                             return (
                                 <div key={index}>
                                     <h3 className="text-md font-bold mb-4 font-heading">
