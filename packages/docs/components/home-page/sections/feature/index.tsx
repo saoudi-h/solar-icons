@@ -6,6 +6,7 @@ import { Home } from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Heading } from '@/components/ui/heading'
+import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
 
 export interface FeatureCardProps {
     title: string
@@ -41,13 +42,13 @@ export const FeatureSection = () => {
     let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     return (
-        <section className="relative flex flex-col items-center rounded-2xl bg-hero-section-centered-navbar px-3 md:rounded-3xl md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
+        <MotionSection className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
             <div className="absolute inset-0 overflow-hidden">
                 <ShapeSvg className="w-full text-primary blur-sm" />
             </div>
             <div className="flex flex-col items-center py-24">
                 <div className="flex flex-col text-center">
-                    <Heading size='h1' justify='center'>
+                    <Heading size="h1" justify="center">
                         Why Choose{' '}
                         <span className="decoration-primary decoration-clone underline-offset-8 underline">
                             Solar Icons
@@ -84,7 +85,7 @@ export const FeatureSection = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </MotionSection>
     )
 }
 
