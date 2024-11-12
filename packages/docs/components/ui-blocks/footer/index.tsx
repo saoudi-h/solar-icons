@@ -13,33 +13,6 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                 <Logo />
                         </div>
                         <p className="text-small text-muted-foreground">{bottomText}</p>
-                        <div className="flex space-x-6">
-                            <a
-                                className="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-default-400"
-                                href="https://twitter.com/getnextui"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                tabIndex={0}
-                                role="link">
-                                <span className="sr-only">Twitter</span>
-                            </a>
-                            <a
-                                className="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-default-400"
-                                href="https://github.com/nextui-org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                tabIndex={0}
-                                role="link"></a>
-                            <a
-                                className="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-default-400"
-                                href="https://discord.gg/9b6yyZKmH4"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                tabIndex={0}
-                                role="link">
-                                <span className="sr-only">Discord</span>
-                            </a>
-                        </div>
                     </div>
 
                     <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
