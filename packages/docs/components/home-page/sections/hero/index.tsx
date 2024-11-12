@@ -17,10 +17,10 @@ export const HeroSection = () => {
                     with multi-style support and cross-framework compatibility.
                 </p>
                 <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                    <Button variant="default" className="rounded-full" size="lg">
+                    <Button variant="default" className="rounded-full" size="xl">
                         Get Started
                     </Button>
-                    <Button variant="outline" className="rounded-full" size="lg">
+                    <Button variant="secondary" className="rounded-full" size="xl">
                         Explore Icons
                     </Button>
                 </div>
