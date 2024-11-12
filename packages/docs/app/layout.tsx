@@ -3,6 +3,7 @@ import './global.css'
 import { RootProvider } from 'fumadocs-ui/provider'
 import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
+import { Provider as JotaiProvider } from 'jotai'
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],
@@ -27,7 +28,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             className={cn(heading.variable, body.variable, mono.variable, body.className)}
             suppressHydrationWarning>
             <body className="flex flex-col min-h-screen">
-                <RootProvider>{children}</RootProvider>
+                <RootProvider>
+                    <JotaiProvider>{children}</JotaiProvider>
+                </RootProvider>
             </body>
         </html>
     )
