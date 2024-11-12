@@ -1,5 +1,5 @@
 import { FooterProps } from '@/components/ui-blocks/footer/types'
-import { BugMinimalistic, Help } from '@solar-icons/react/ssr'
+import { BugMinimalistic, Help, SmartphoneUpdate, Diploma } from '@solar-icons/react/ssr'
 import { Icon } from '@iconify/react'
 
 export interface Config {
@@ -51,12 +51,12 @@ export const config: Config = {
                     {
                         label: 'License',
                         url: '/license',
-                        icon: <Icon icon="hugeicons:license-draft" />,
+                        icon: <Diploma size={20} />,
                     },
                     {
                         label: 'Changelog',
                         url: '/changelog',
-                        icon: <Icon icon="catppuccin:changelog" />,
+                        icon: <SmartphoneUpdate size={20} />,
                     },
                 ],
             },
