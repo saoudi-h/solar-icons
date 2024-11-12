@@ -5,6 +5,7 @@ import type { Icon as IconType } from '@solar-icons/react/lib/types'
 import { Home } from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { Heading } from '@/components/ui/heading'
 
 export interface FeatureCardProps {
     title: string
@@ -46,13 +47,13 @@ export const FeatureSection = () => {
             </div>
             <div className="flex flex-col items-center py-24">
                 <div className="flex flex-col text-center">
-                    <h1 className="text-4xl font-medium tracking-tight font-heading">
+                    <Heading size='h1' justify='center'>
                         Why Choose{' '}
                         <span className="decoration-primary decoration-clone underline-offset-8 underline">
                             Solar Icons
                         </span>
                         ?
-                    </h1>
+                    </Heading>
                     <div className="flex flex-row gap-4 mt-8 items-stretch w-full flex-wrap">
                         {features.map((item, idx) => (
                             <div
@@ -96,16 +97,16 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     <Card className="relative z-20 bg-accent/20 backdrop-blur-md w-full h-full">
         <CardHeader>
             <CardTitle>
-                <div
+                <Heading size="h2" justify="center"
                     className={cn(
                         hovered && 'text-primary',
-                        'flex flex-row gap-4 items-center font-heading font-bold transition-colors duration-300 ease-in-out'
+                        'flex flex-row gap-4 items-center transition-colors duration-300 ease-in-out'
                     )}>
                     <IconContainer>
                         <Icon weight="BoldDuotone" size="24" />
                     </IconContainer>
                     {title}
-                </div>
+                </Heading>
             </CardTitle>
         </CardHeader>
         <CardContent>
