@@ -3,7 +3,6 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { HeroRotation } from './HeroRotation'
 import { Heading } from '@/components/ui/heading'
-import { MotionSection } from '@/components/ui-blocks/animations/SectionMotion'
 
 export const HeroSection = () => {
     return (
