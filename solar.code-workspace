@@ -55,14 +55,17 @@
         },
         "peacock.color": "#e4c8bb",
         "cSpell.words": [
+            "devicon",
             "fumadocs",
             "iconify",
             "picocolors",
+            "Qwik",
             "Saoudi",
             "Svgs",
             "tailwindcss",
             "tsbuildinfo",
             "typecheck",
+            "vuejs",
         ],
     },
 }
