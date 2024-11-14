@@ -110,16 +110,24 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                     <button
                         className="size-full hover:bg-primary/30  hover:backdrop-contrast-125 text-heading text-md font-black text-foreground/70 hover:text-foreground transition-color duration-100 border-b border-primary/30 rounded-t-full"
                         onClick={() => setNextCategory()}>
-                        <div className="pb-3 active:scale-90 hover:scale-110 transition-all duration-100 size-full flex items-end justify-center rounded-t-full">
+                        <motion.div
+                            key={category}
+                            animate={{ filter: ['blur(10px)', 'blur(0px)'] }}
+                            transition={{ duration: 0.5 }}
+                            className="pb-3 active:scale-90 hover:scale-110 transition-all duration-100 size-full flex items-end justify-center rounded-t-full">
                             {category}
-                        </div>
+                        </motion.div>
                     </button>
                     <button
                         className="size-full hover:bg-primary/30  hover:backdrop-contrast-125 text-heading text-md font-black text-foreground/70 hover:text-foreground transition-color duration-100 border-t border-primary/10 rounded-b-full"
                         onClick={() => setNextStyle()}>
-                        <div className="pt-3 active:scale-90 hover:scale-110 transition-all duration-100 size-full flex items-start justify-center rounded-b-full">
+                        <motion.div
+                            key={style}
+                            animate={{ filter: ['blur(10px)', 'blur(0px)'] }}
+                            transition={{ duration: 0.5 }}
+                            className="pt-3 active:scale-90 hover:scale-110 transition-all duration-100 size-full flex items-start justify-center rounded-b-full">
                             {style}
-                        </div>
+                        </motion.div>
                     </button>
                 </div>
             </Circle>
