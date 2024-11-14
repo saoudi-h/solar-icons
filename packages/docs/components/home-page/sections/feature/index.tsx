@@ -1,12 +1,14 @@
 'use client'
-import React, { SVGProps, useState } from 'react'
+import React, {  useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
 import { Home } from '@solar-icons/react/ssr/category'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { Heading } from '@/components/ui/heading'
+import { Heading, MotionHeading } from '@/components/ui/heading'
 import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
+import { MotionShapeSvg } from './ShapeSvg'
+import { IconContainer } from '@/components/ui/icon-container'
 
 export interface FeatureCardProps {
     title: string
@@ -39,25 +41,59 @@ const features: FeatureCardProps[] = [
 ]
 
 export const FeatureSection = () => {
+    const ref = React.useRef<HTMLDivElement>(null)
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ['start end', 'end start'],
+    })
+
+    const y = useTransform(scrollYProgress, [0, 1], [-100, 300])
+
     let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+    const itemVariants = {
+        hidden: { opacity: 0, y: 100 },
+        visible: (index: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                ease: 'easeOut',
+                duration: 0.6,
+                delay: 0.1 * index,
+            },
+        }),
+    }
 
     return (
         <MotionSection className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
-            <div className="absolute inset-0 overflow-hidden">
-                <ShapeSvg className="w-full text-primary blur-sm" />
-            </div>
+            <motion.div
+                className="absolute inset-0 overflow-hidden flex items-center justify-center"
+                ref={ref}>
+                <MotionShapeSvg className="w-full text-primary blur-xs" style={{ y }} />
+            </motion.div>
             <div className="flex flex-col items-center py-24">
                 <div className="flex flex-col text-center">
-                    <Heading size="h1" justify="center">
+                    <MotionHeading
+                        size="h1"
+                        justify="center"
+                        initial="hidden"
+                        variants={itemVariants}
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        custom={0}>
                         Why Choose{' '}
                         <span className="decoration-primary decoration-clone underline-offset-8 underline">
                             Solar Icons
                         </span>
                         ?
-                    </Heading>
+                    </MotionHeading>
                     <div className="flex flex-row gap-4 mt-8 items-stretch w-full flex-wrap">
                         {features.map((item, idx) => (
-                            <div
+                            <motion.div
+                                initial="hidden"
+                                variants={itemVariants}
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.5 }}
+                                custom={idx}
                                 key={item?.title}
                                 className="relative flex-1 p-2"
                                 onMouseEnter={() => setHoveredIndex(idx)}
@@ -80,7 +116,7 @@ export const FeatureSection = () => {
                                     )}
                                 </AnimatePresence>
                                 <FeatureCard {...item} hovered={hoveredIndex === idx} />
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -95,10 +131,12 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     Icon,
     hovered = false,
 }) => (
-    <Card className="relative z-20 bg-accent/20 backdrop-blur-md w-full h-full">
+    <Card className="relative z-20 bg-accent/20 backdrop-blur-sm w-full h-full">
         <CardHeader>
             <CardTitle>
-                <Heading size="h2" justify="center"
+                <Heading
+                    size="h2"
+                    justify="center"
                     className={cn(
                         hovered && 'text-primary',
                         'flex flex-row gap-4 items-center transition-colors duration-300 ease-in-out'
@@ -116,24 +154,4 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     </Card>
 )
 
-const IconContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className="rounded-md border to-secondary shadow-md  bg-gradient-to-t from-fd-background/80 p-1 ">
-        {children}
-    </div>
-)
 
-const ShapeSvg: React.FC<SVGProps<SVGSVGElement>> = props => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1422 800" {...props}>
-        <g fill="none" stroke="currentColor" strokeLinecap="round">
-            <path d="M0 520q355.5-245 711-120t711 120"></path>
-            <path d="M0 468q355.5-193 711-68t711 68" opacity="0.51"></path>
-            <path d="M0 416q355.5-141 711-16t711 16" opacity="0.7"></path>
-            <path d="M0 364q355.5-89 711 36t711-36" opacity="0.99"></path>
-            <path d="M0 312q355.5-37 711 88t711-88" opacity="0.48"></path>
-            <path d="M0 260q355.5 15 711 140t711-140" opacity="0.62"></path>
-            <path d="M0 208q355.5 67 711 192t711-192" opacity="0.76"></path>
-            <path d="M0 156q355.5 119 711 244t711-244" opacity="0.32"></path>
-            <path d="M0 104q355.5 171 711 296t711-296" opacity="0.98"></path>
-        </g>
-    </svg>
-)
