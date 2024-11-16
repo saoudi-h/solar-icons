@@ -5,6 +5,7 @@ import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
 import { Provider as JotaiProvider } from 'jotai'
 import { ReactLenis } from 'lenis/react'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],
@@ -31,9 +32,11 @@ export default function Layout({ children }: { children: ReactNode }) {
             <body className="flex flex-col min-h-screen">
                 <RootProvider>
                     <JotaiProvider>
-                        <ReactLenis root options={{ autoRaf: true }}>
-                            {children}
-                        </ReactLenis>
+                        <TooltipProvider>
+                            <ReactLenis root options={{ autoRaf: true }}>
+                                {children}
+                            </ReactLenis>
+                        </TooltipProvider>
                     </JotaiProvider>
                 </RootProvider>
             </body>
