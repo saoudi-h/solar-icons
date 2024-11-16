@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const NoiseSvg = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => (
     <svg {...props} ref={ref}>

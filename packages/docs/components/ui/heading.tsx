@@ -3,7 +3,6 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
 
 const headingVariants = cva('text-foreground font-heading', {
     variants: {
@@ -50,6 +49,4 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
 )
 Heading.displayName = 'Heading'
 
-const MotionHeading = motion.create(Heading)
-
-export { Heading, headingVariants, MotionHeading }
+export { Heading, headingVariants }
