@@ -1,11 +1,32 @@
-'use client'
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { HeroRotation } from './HeroRotation'
 import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
+import Link from 'next/link'
 
-export const HeroSection = () => {
+export interface HeroSectionProps {
+    title: {
+        part1: string
+        part2: string
+    }
+    content: string
+    getStarted: {
+        label: string
+        href: string
+    }
+    exploreIcons: {
+        label: string
+        href: string
+    }
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({
+    title,
+    content,
+    getStarted,
+    exploreIcons,
+}) => {
     return (
         <section className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full">
             <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
@@ -21,20 +42,19 @@ export const HeroSection = () => {
                 />
                 <div className="relative my-14 mt-16 flex flex-col items-center justify-center gap-6">
                     <Heading size="h1" justify="center">
-                        Solar Icons
+                        {title.part1}
                         <br />
-                        Empower Your Projects
+                        {title.part2}
                     </Heading>
                     <p className="text-center text-base text-muted-foreground sm:w-[466px] md:text-lg md:leading-6">
-                        A comprehensive icon library tailored for modern web and mobile
-                        applications, with multi-style support and cross-framework compatibility.
+                        {content}
                     </p>
                     <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                        <Button variant="default" className="rounded-full" size="xl">
-                            Get Started
+                        <Button asChild variant="default" className="rounded-full" size="xl">
+                            <Link href={getStarted.href || '#'}>{getStarted.label}</Link>
                         </Button>
-                        <Button variant="secondary" className="rounded-full" size="xl">
-                            Explore Icons
+                        <Button colors="secondary" className="rounded-full" size="xl">
+                            <Link href={exploreIcons.href || '#'}>{exploreIcons.label}</Link>
                         </Button>
                     </div>
                 </div>

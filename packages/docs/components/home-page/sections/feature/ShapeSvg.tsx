@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import React, { SVGProps } from "react"
+'use client'
+import { motion } from 'framer-motion'
+import React, { SVGProps } from 'react'
 
 const ShapeSvg = React.forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(({ ...props }, ref) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1422 800" {...props} ref={ref}>

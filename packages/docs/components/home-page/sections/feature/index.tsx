@@ -1,14 +1,15 @@
 'use client'
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
 import { Home } from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { Heading, MotionHeading } from '@/components/ui/heading'
+import { Heading } from '@/components/ui/heading'
 import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
 import { MotionShapeSvg } from './ShapeSvg'
 import { IconContainer } from '@/components/ui/icon-container'
+import { MotionHeading } from '@/components/ui/motion'
 
 export interface FeatureCardProps {
     title: string
@@ -153,5 +154,3 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
         </CardContent>
     </Card>
 )
-
-

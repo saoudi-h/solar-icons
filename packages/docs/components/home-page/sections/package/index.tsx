@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { Heading, MotionHeading } from '@/components/ui/heading'
+import { Heading } from '@/components/ui/heading'
 import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
 import { Icon } from '@iconify/react'
 import { NoiseSvg } from '@/components/ui/noise-svg'
@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRightUp } from '@solar-icons/react'
 import { useRouter } from 'next/navigation'
-
+import { MotionHeading } from '@/components/ui/motion'
 export interface PackageCardProps {
     title: string
     link?: string
@@ -142,7 +142,11 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                             'flex flex-row gap-4 items-center transition-colors duration-300 ease-in-out'
                         )}>
                         {title}
-                        {status && status !== 'released' && <Badge variant="default" colors="default" size="sm">{status}</Badge>}
+                        {status && status !== 'released' && (
+                            <Badge variant="default" colors="default" size="sm">
+                                {status}
+                            </Badge>
+                        )}
                     </Heading>
                 </CardTitle>
             </CardHeader>
@@ -156,9 +160,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     }}
                     disabled={!link}
                     size="icon"
-                    variant="outline"
-                    color=""
-                    className="rounded-l-xl rounded-r-none w-10 border-r-border/50">
+                    colors="secondary"
+                    className="rounded-l-xl !rounded-r-none w-10 border-r-border/50">
                     <ArrowRightUp className="size-full" />
                 </Button>
                 <Button
@@ -167,8 +170,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     }}
                     disabled={!githubLink}
                     size="icon"
-                    variant="outline"
-                    color=""
+                    colors="secondary"
                     className="rounded-none border-x-transparent">
                     <Icon icon="mdi:github" className="size-full" />
                 </Button>
@@ -178,9 +180,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     }}
                     disabled={!npmLink}
                     size="icon"
-                    variant="outline"
-                    color=""
-                    className="rounded-r-xl rounded-l-none border-l-border/50">
+                    colors="secondary"
+                    className="rounded-r-xl !rounded-l-none border-l-border/50">
                     <Icon icon="devicon:npm" className="size-full" />
                 </Button>
             </CardFooter>
