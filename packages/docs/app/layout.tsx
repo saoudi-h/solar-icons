@@ -1,3 +1,4 @@
+'use client'
 import { cn } from '@/lib/utils'
 import './global.css'
 import { RootProvider } from 'fumadocs-ui/provider'
@@ -33,7 +34,12 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <RootProvider>
                     <JotaiProvider>
                         <TooltipProvider>
-                            <ReactLenis root options={{ autoRaf: true }}>
+                            <ReactLenis
+                                root
+                                options={{
+                                    autoRaf: true,
+                                    prevent: node => node.classList.contains('select__menu-list'),
+                                }}>
                                 {children}
                             </ReactLenis>
                         </TooltipProvider>
