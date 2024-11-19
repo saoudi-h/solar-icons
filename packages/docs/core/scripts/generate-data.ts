@@ -30,7 +30,7 @@ export const icons = {`
         const tags = categoryData.tags
 
         const categoryPascalCase = toPascalCase(categoryName)
-        categoryList.push(categoryPascalCase)
+        categoryList.push(categoryName)
         const dataIcons = icons
             .map(
                 (icon: string) =>

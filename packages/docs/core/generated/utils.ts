@@ -3,5 +3,5 @@
 export const styles = ['Broken', 'Outline', 'Linear', 'Bold', 'LineDuotone', 'BoldDuotone'] as const
 export type Style = (typeof styles)[number] 
 
-export const categories = ["Messages","Arrows","Map","Video","Money","Devices","Weather","Files","Astronomy","Folders","Faces","Sports","Search","Time","List","Ui","Call","Medicine","Home","It","Settings","TextFormatting","Business","Shopping","Nature","School","Tools","Food","Like","ArrowsAction","Notes","Notifications","Security","Users","Building","Hands","Parts"] as const
+export const categories = ["messages","arrows","map","video","money","devices","weather","files","astronomy","folders","faces","sports","search","time","list","ui","call","medicine","home","it","settings","text-formatting","business","shopping","nature","school","tools","food","like","arrows-action","notes","notifications","security","users","building","hands","parts"] as const
 export type Category = typeof categories[number]
