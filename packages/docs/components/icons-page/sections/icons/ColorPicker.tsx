@@ -47,10 +47,8 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
         if (!synched) {
             setForcedTheme(undefined)
         } else if (isDark && (forcedTheme === 'dark' || forcedTheme === undefined)) {
-            console.log('set to light')
             setForcedTheme('light')
         } else if (!isDark && (forcedTheme === 'light' || forcedTheme === undefined)) {
-            console.log('set to dark')
             setForcedTheme('dark')
         }
     }, [isDark, forcedTheme, synched])

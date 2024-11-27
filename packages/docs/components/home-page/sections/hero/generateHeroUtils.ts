@@ -26,11 +26,11 @@ export const getIconsByCategory = (category: string) => {
     Object.entries(categories).forEach(([categoryName, categoryData]: [string, any]) => {
         const icons = categoryData.icons
 
-        // Vérifie qu'il y a au moins 23 icônes pour la catégorie
+        // Check that there are at least 23 icons for the category
         if (icons.length < 23) return
         const categoryPascalCase = toPascalCase(categoryName)
         categoryList.push(categoryPascalCase)
-        // Sépare les icônes en interne (10) et externe (13)
+        // Separates icons into internal (10) and external (13)
         const innerIcons = icons
             .slice(0, 10)
             .map((icon: string) => `solar.${categoryPascalCase}.${toPascalCase(icon)}`)
@@ -52,7 +52,7 @@ export const getIconsByCategory = (category: string) => {
 `
     })
 
-    // Termine le switch et exporte la fonction par défaut
+    // Complete the switch and export the default function
     output += `
     default:
       return {
@@ -71,7 +71,7 @@ export const getIconsByCategory = (category: string) => {
     return output
 }
 
-// Fonction principale pour lire le fichier JSON et écrire le fichier TypeScript généré
+// Main function to read JSON file and write generated TypeScript file
 const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)

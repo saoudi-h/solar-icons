@@ -36,7 +36,6 @@ export const searchIcons = ({
             icon.name.includes(lowerKeyword) ||
             icon.tags.some(tag => tag.includes(lowerKeyword))
 
-        console.log('categories', categories, icon.category);
         const matchesCategory = !categories || categories.length === 0 || categories.includes(icon.category)
 
         return matchesCategory && matchesKeyword

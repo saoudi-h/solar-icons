@@ -1,9 +1,7 @@
 'use client'
-import { useState } from 'react'
 import { FilterBar } from './FilterBar'
 import { IconGrid } from './IconGrid'
 import { SolarProvider } from '@solar-icons/react'
-import { cn } from '@/lib/utils'
 import { atom, useAtom } from 'jotai'
 import { Category } from '@/core/generated/utils'
 
