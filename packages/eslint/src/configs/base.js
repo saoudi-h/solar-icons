@@ -11,14 +11,12 @@ import { compat, defineConfig } from '../utils.js'
 
 export const base = defineConfig(
     {
-        ignores: ['.next', '.astro', 'dist', 'storybook-static'],
+        ignores: ['.next', 'dist', 'storybook-static'],
     },
 
     // Base JS/TS configs
     js.configs.recommended,
     ...tseslint.configs.recommended,
-    ...tseslint.configs.recommended,
-
     // Good to have extras
     regexpPlugin.configs['flat/recommended'],
     {
