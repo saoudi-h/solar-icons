@@ -5,13 +5,13 @@ import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Toggle } from '@/components/ui/toggle'
 import { Link, LinkBroken } from '@solar-icons/react/ssr'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
 import { atomWithStorage } from 'jotai/utils'
 import { useAtom } from 'jotai'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { forcedThemeAtom } from '../../../../atom/forcedThemeAtom'
 
 const MotionLinkBroken = motion.create(LinkBroken)
 const MotionLink = motion.create(Link)
@@ -29,12 +29,12 @@ interface ColorPickerProps {
     setIsDark: (isDark: boolean) => void
 }
 
-const synchedThemeStoarge = atomWithStorage('synched', true)
+const synchedThemeStorageAtom = atomWithStorage('synched', true)
 
 export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDark, setIsDark }) => {
-    const [synched, setSynched] = useAtom(synchedThemeStoarge)
+    const [synched, setSynched] = useAtom(synchedThemeStorageAtom)
+    const [forcedTheme, setForcedTheme] = useAtom(forcedThemeAtom)
     const [inputColor, setInputColor] = useState<string>(color)
-    const { setTheme, resolvedTheme } = useTheme()
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setInputColor(value)
@@ -44,13 +44,16 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
     }
 
     useEffect(() => {
-        if (!synched) return
-        if (isDark && resolvedTheme === 'dark') {
-            setTheme('light')
-        } else if (!isDark && resolvedTheme === 'light') {
-            setTheme('dark')
+        if (!synched) {
+            setForcedTheme(undefined)
+        } else if (isDark && (forcedTheme === 'dark' || forcedTheme === undefined)) {
+            console.log('set to light')
+            setForcedTheme('light')
+        } else if (!isDark && (forcedTheme === 'light' || forcedTheme === undefined)) {
+            console.log('set to dark')
+            setForcedTheme('dark')
         }
-    }, [isDark, resolvedTheme, synched])
+    }, [isDark, forcedTheme, synched])
 
     useEffect(() => {
         if (color === inputColor) return
