@@ -25,6 +25,17 @@
         --destructive-foreground: 0 0% 100%;
         --ring: 219 95% 22%;
         --radius: 0.5rem;
+        --default-950: 240 10% 3.9%;
+        --default-900: 240 5.9% 10%;
+        --default-800: 240 3.7% 15.9%;
+        --default-700: 240 5.3% 26.1%;
+        --default-600: 240 5.2% 33.9%;
+        --default-500: 240 3.8% 46.1%;
+        --default-400: 240 5% 64.9%;
+        --default-300: 240 4.9% 83.9%;
+        --default-200: 240 5.9% 90%;
+        --default-100: 240 4.8% 95.9%;
+        --default-50: 0 0% 98%;
     }
 
     .dark {
@@ -47,6 +58,17 @@
         --destructive: 15 83% 57%;
         --destructive-foreground: 0 0% 0%;
         --ring: 219 95% 22%;
+        --default-950: 0 0% 98%;
+        --default-900: 240 4.8% 95.9%;
+        --default-800: 240 5.9% 90%;
+        --default-700: 240 4.9% 83.9%;
+        --default-600: 240 5% 64.9%;
+        --default-500: 240 3.8% 46.1%;
+        --default-400: 240 5.2% 33.9%;
+        --default-300: 240 5.3% 26.1%;
+        --default-200: 240 3.7% 15.9%;
+        --default-100: 240 5.9% 10%;
+        --default-50: 240 10% 3.9%;
     }
 }
 @layer base {
