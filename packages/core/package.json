@@ -16,6 +16,9 @@
         },
         "./metadata.json": {
             "default": "./dist/metadata.json"
+        },
+        "./metadata-descriptions.json": {
+            "default": "./dist/metadata-descriptions.json"
         }
     },
     "scripts": {
