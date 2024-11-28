@@ -4,7 +4,7 @@ import { TooltipProvider } from '@radix-ui/react-tooltip'
 import { RootProvider } from 'fumadocs-ui/provider'
 import { useAtom } from 'jotai'
 import { ReactLenis } from 'lenis/react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 /**
