@@ -1,5 +1,5 @@
+import { IconData } from '@/core/generated/descriptions'
 import { motion } from 'framer-motion'
-import { IconData } from './utils'
 
 interface IconCardProps extends IconData {
     index: number

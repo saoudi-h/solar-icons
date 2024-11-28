@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { IconCard } from './IconCard'
-import { IconData, searchIcons } from './utils'
+import { searchIcons } from './utils'
 import { cn } from '@/lib/utils'
 import { AnimatePresence } from 'framer-motion'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -8,6 +8,7 @@ import { useAtom } from 'jotai'
 import { categoriesAtom, displayedIconsAtom, filteredIconsAtom, keywordAtom } from '.'
 import { Button } from '@/components/ui/button'
 import { DoubleAltArrowDown, Traffic } from '@solar-icons/react/ssr'
+import { IconData } from '@/core/generated/descriptions'
 
 export const IconGrid: React.FC = () => {
     const ref = useRef<HTMLDivElement>(null)

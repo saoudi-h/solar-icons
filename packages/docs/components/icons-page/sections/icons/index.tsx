@@ -4,8 +4,8 @@ import { IconGrid } from './IconGrid'
 import { SolarProvider } from '@solar-icons/react'
 import { atom, useAtom } from 'jotai'
 import { Category } from '@/core/generated/utils'
-import { IconData } from './utils'
 import { cn } from '@/lib/utils'
+import { IconData } from '@/core/generated/descriptions'
 
 export const colorIconDark = atom(false)
 export type CategoryOption = {

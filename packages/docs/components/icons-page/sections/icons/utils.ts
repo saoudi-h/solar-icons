@@ -1,26 +1,16 @@
-import icons from '@/core/generated/data'
-import { Category } from '@/core/generated/utils'
-import { Icon as IconType } from '@solar-icons/react/lib/types'
+import icons, { IconData } from '@/core/generated/descriptions'
+
 import { CategoryOption } from '.'
 
-export interface IconData {
-    category: Category
-    name: string
-    pascalName: string
-    tags: string[]
-    Icon: IconType
-}
+import Fuse from 'fuse.js'
+
+const fuse = new Fuse(icons, {
+    keys: ['name', 'tags', 'category', 'categoryTags'],
+    threshold: 0.3,
+})
 
 export const getAllIcons = (): IconData[] => {
-    return Object.entries(icons).flatMap(([category, data]) =>
-        Object.entries(data.icons).map(([name, icon]) => ({
-            category: category as Category,
-            name,
-            pascalName: icon.pascalName,
-            tags: data.tags,
-            Icon: icon.import,
-        }))
-    )
+    return icons as IconData[]
 }
 
 export const searchIcons = ({
@@ -30,15 +20,17 @@ export const searchIcons = ({
     keyword?: string
     categories?: CategoryOption[] | undefined
 }): IconData[] => {
-    const lowerKeyword = keyword && keyword.toLowerCase()
-    return getAllIcons().filter(icon => {
-        const matchesKeyword =
-            !lowerKeyword ||
-            icon.name.includes(lowerKeyword) ||
-            icon.tags.some(tag => tag.includes(lowerKeyword))
+    const preFilteredIcons = categories?.length
+        ? getAllIcons().filter(icon => categories.some(c => c.value === icon.category))
+        : getAllIcons()
 
-        const matchesCategory = !categories || categories.length === 0 || categories.find(c => c.value === icon.category)
+    if (keyword) {
+        const fuseSearch = new Fuse(preFilteredIcons, {
+            keys: ['name', 'tags', 'category', 'categoryTags'],
+            threshold: 0.3, 
+        })
+        return fuseSearch.search(keyword.toLowerCase()).map(r => r.item)
+    }
 
-        return matchesCategory && matchesKeyword
-    })
+    return preFilteredIcons
 }

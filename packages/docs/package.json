@@ -13,7 +13,8 @@
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
         "generate:hero:utils": "tsx ./components/home-page/sections/hero/generateHeroUtils.ts",
-        "generate:data": "tsx ./core/scripts/generate-data.ts"
+        "generate:data": "tsx ./core/scripts/generate-data.ts",
+        "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts"
     },
     "dependencies": {
         "@radix-ui/react-dialog": "^1.1.2",
@@ -33,6 +34,7 @@
         "fumadocs-core": "14.3.1",
         "fumadocs-mdx": "11.1.1",
         "fumadocs-ui": "14.3.1",
+        "fuse.js": "^7.0.0",
         "jotai": "^2.10.2",
         "lenis": "^1.1.16",
         "lucide-react": "^0.462.0",
