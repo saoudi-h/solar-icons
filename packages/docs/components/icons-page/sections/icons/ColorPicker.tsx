@@ -12,6 +12,7 @@ import { useAtom } from 'jotai'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { forcedThemeAtom } from '../../../../atom/forcedThemeAtom'
+import { cn } from '@/lib/utils'
 
 const MotionLinkBroken = motion.create(LinkBroken)
 const MotionLink = motion.create(Link)
@@ -27,11 +28,12 @@ interface ColorPickerProps {
     setColor: (color: string) => void
     isDark: boolean
     setIsDark: (isDark: boolean) => void
+    className?: string
 }
 
 const synchedThemeStorageAtom = atomWithStorage('synched', true)
 
-export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDark, setIsDark }) => {
+export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDark, setIsDark, className }) => {
     const [synched, setSynched] = useAtom(synchedThemeStorageAtom)
     const [forcedTheme, setForcedTheme] = useAtom(forcedThemeAtom)
     const [inputColor, setInputColor] = useState<string>(color)
@@ -70,11 +72,13 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
     }, [color])
 
     return (
-        <div className="flex items-center">
+        <div className={cn('flex items-center', className)}>
             <Tooltip>
                 <TooltipTrigger asChild>
                     <Toggle
-                        className="relative rounded-l-lg size-10 rounded-r-none bg-accent/30 border-none overflow-hidden"
+                        variant="outline"
+                        colors="accent"
+                        className="relative rounded-l-lg size-10 rounded-r-none bg-default-100 border-none overflow-hidden"
                         pressed={synched}
                         onPressedChange={setSynched}>
                         <AnimatePresence>
@@ -109,12 +113,12 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
 
             <Popover>
                 <PopoverTrigger asChild>
-                    <div className="flex flex-row flex-nowrap gap-0 items-center justify-center">
+                    <div className="flex flex-row flex-nowrap gap-0 items-center justify-center flex-1">
                         <Button
                             asChild
                             variant="outline"
                             colors="accent"
-                            className="w-full !p-0 !border-none">
+                            className="w-full !p-0 !border-none bg-default-100">
                             <Input
                                 style={{
                                     backgroundColor: color,
@@ -125,18 +129,18 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
                                 onChange={handleChange}
                                 placeholder="#000000"
                                 maxLength={7}
-                                className="w-20 text-center rounded-l-lg h-10 rounded-none"
+                                className="w-full text-center rounded-l-lg h-10 rounded-none"
                             />
                         </Button>
                     </div>
                 </PopoverTrigger>
-                <PopoverContent className="w-full bg-accent/30 border-border/30 p-0">
+                <PopoverContent className="w-full bg-default-100 p-0">
                     <HexColorPicker color={color} onChange={setColor} />
                 </PopoverContent>
             </Popover>
             <CopyButton
                 value={color}
-                className="rounded-r-lg rounded-l-none border-none bg-accent/30 h-10"
+                className="rounded-r-lg rounded-l-none border-none bg-default-100 hover:bg-default-300 h-10"
                 colors="accent"
                 variant="outline"></CopyButton>
         </div>

@@ -4,18 +4,29 @@ import { IconGrid } from './IconGrid'
 import { SolarProvider } from '@solar-icons/react'
 import { atom, useAtom } from 'jotai'
 import { Category } from '@/core/generated/utils'
+import { IconData } from './utils'
+import { cn } from '@/lib/utils'
 
 export const colorIconDark = atom(false)
-export const categoriesAtom = atom<Category[]>([])
+export type CategoryOption = {
+    value: Category
+    label: Category
+}
+
+export const categoriesAtom = atom<CategoryOption[]>([])
+export const displayedIconsAtom = atom<IconData[]>([])
+export const filteredIconsAtom = atom<IconData[]>([])
+export const displayedCountAtom = atom(get => get(displayedIconsAtom).length)
+export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
 export const keywordAtom = atom<string>('')
 
-export const IconShowcase = () => {
+export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [isDark, setIsDark] = useAtom(colorIconDark)
 
     return (
         <SolarProvider value={{ weight: 'Outline', color: '#000000', size: 24 }}>
-            <section className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full">
-                <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl w-full">
+            <section className={cn("relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full", className)}>
+                <div className="relative gap-2 rounded-2xl md:rounded-3xl w-full">
                     <div className="relative flex flex-col gap-4 p-4 rounded-xl">
                         <FilterBar
                             isDark={isDark}

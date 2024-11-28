@@ -1,6 +1,7 @@
 import icons from '@/core/generated/data'
 import { Category } from '@/core/generated/utils'
 import { Icon as IconType } from '@solar-icons/react/lib/types'
+import { CategoryOption } from '.'
 
 export interface IconData {
     category: Category
@@ -27,7 +28,7 @@ export const searchIcons = ({
     categories,
 }: {
     keyword?: string
-    categories?: Category[] | undefined
+    categories?: CategoryOption[] | undefined
 }): IconData[] => {
     const lowerKeyword = keyword && keyword.toLowerCase()
     return getAllIcons().filter(icon => {
@@ -36,7 +37,7 @@ export const searchIcons = ({
             icon.name.includes(lowerKeyword) ||
             icon.tags.some(tag => tag.includes(lowerKeyword))
 
-        const matchesCategory = !categories || categories.length === 0 || categories.includes(icon.category)
+        const matchesCategory = !categories || categories.length === 0 || categories.find(c => c.value === icon.category)
 
         return matchesCategory && matchesKeyword
     })
