@@ -3,7 +3,7 @@
 'use client'
 
 import { Command as CommandPrimitive, useCommandState } from 'cmdk'
-import { CloseCircle } from '@solar-icons/react/ssr'
+import { AltArrowDown, CloseCircle } from '@solar-icons/react/ssr'
 
 import * as React from 'react'
 import { forwardRef, useEffect } from 'react'
@@ -11,6 +11,7 @@ import { forwardRef, useEffect } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Command, CommandGroup, CommandItem, CommandList } from '@/components/ui/command'
 import { cn } from '@/lib/utils'
+import { Button } from './button'
 
 export interface Option {
     value: string
@@ -444,7 +445,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 filter={commandFilter()}>
                 <div
                     className={cn(
-                        'min-h-10 rounded-md border border-input text-sm',
+                        'relative min-h-10 rounded-md border border-input text-sm',
                         {
                             'px-3 py-2': selected.length !== 0,
                             'cursor-text': !disabled && selected.length !== 0,
@@ -455,6 +456,25 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                         if (disabled) return
                         inputRef?.current?.focus()
                     }}>
+                    {selected.length < 1 ||
+                    selected.filter(s => s.fixed).length === selected.length ? (
+                        <AltArrowDown className="h-4 w-4 opacity-50 absolute right-3 top-1/2 translate-y-[-50%] z-10" />
+                    ) : (
+                        <Button
+                            variant="link"
+                            size="icon"
+                            colors="accent"
+                            onClick={() => {
+                                setSelected(selected.filter(s => s.fixed))
+                                onChange?.(selected.filter(s => s.fixed))
+                            }}
+                            className={cn(
+                                'absolute right-0 top-1/2 translate-y-[-50%] z-10 size-5 p-0',
+                                (hideClearAllButton || disabled) && 'hidden'
+                            )}>
+                            <CloseCircle weight="Bold" size={24} className="drop-shadow-md" />
+                        </Button>
+                    )}
                     <div className="relative flex flex-wrap gap-1 min-h-10">
                         {selected.map(option => {
                             return (
@@ -463,7 +483,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     key={option.value}
                                     className={cn(
                                         'data-[disabled]:bg-muted-foreground data-[disabled]:text-muted data-[disabled]:hover:bg-muted-foreground',
-                                        'data-[fixed]:bg-muted-foreground data-[fixed]:hover:bg-muted-foreground p-1 rounded-lg',
+                                        'data-[fixed]:bg-muted-foreground data-[fixed]:hover:bg-muted-foreground p-1 pr-0.5 rounded-lg',
                                         badgeClassName
                                     )}
                                     data-fixed={option.fixed}
@@ -528,22 +548,6 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 inputProps?.className
                             )}
                         />
-                        <button
-                            type="button"
-                            onClick={() => {
-                                setSelected(selected.filter(s => s.fixed))
-                                onChange?.(selected.filter(s => s.fixed))
-                            }}
-                            className={cn(
-                                'absolute right-0 h-6 w-6 p-0',
-                                (hideClearAllButton ||
-                                    disabled ||
-                                    selected.length < 1 ||
-                                    selected.filter(s => s.fixed).length === selected.length) &&
-                                    'hidden'
-                            )}>
-                            <CloseCircle weight="Bold" />
-                        </button>
                     </div>
                 </div>
                 <div className="relative">
@@ -624,4 +628,3 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
 
 MultipleSelector.displayName = 'MultipleSelector'
 export default MultipleSelector
-

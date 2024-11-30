@@ -18,7 +18,7 @@ export function CopyButton({
     value,
     className,
     src,
-    variant = 'ghost',
+    variant = 'default',
     ...props
 }: CopyButtonProps) {
     const [hasCopied, setHasCopied] = React.useState(false)
@@ -32,6 +32,7 @@ export function CopyButton({
     return (
         <Button
             size="icon"
+            colors="accent"
             variant={variant}
             className={cn(
                 '',

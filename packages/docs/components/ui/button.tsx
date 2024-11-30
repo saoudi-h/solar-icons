@@ -4,27 +4,27 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-    'border-2 shadow-xs inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 transition-all duration-200 ease-in active:scale-95 [&_svg]:shrink-0 items-center justify-center',
+    'border-2 shadow-xs inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 transition-all duration-200 ease-in active:scale-95 [&_svg]:shrink-0 items-center justify-center',
     {
         variants: {
             variant: {
                 default: '',
-                outline: 'border border-input bg-transparent',
-                ghost: 'bg-transparent border-transparent',
-                link: 'bg-transparent hover:bg-transparent border-transparent hover:border-transparent',
+                outline: '!bg-transparent',
+                ghost: '!bg-transparent !border-transparent',
+                link: '!bg-transparent !hover:bg-transparent !border-transparent !hover:border-transparent',
             },
             size: {
                 default: 'h-9 px-5 py-2',
                 sm: 'h-8 rounded-md px-4 text-xs border',
                 lg: 'h-10 rounded-md px-9',
                 xl: 'h-12 rounded-md px-9',
-                icon: 'h-9 w-9 border',
+                icon: 'h-9 w-9 !border',
             },
             colors: {
                 default:
                     'bg-primary text-primary-foreground/80 border-primary hover:text-primary-foreground hover:bg-primary/80',
                 secondary:
-                    'text-secondary-foreground/80 hover:text-secondary-foreground bg-secondary border-border hover:bg-secondary/80 hover:border-secondary/80',
+                    'text-secondary-foreground/80 hover:text-secondary-foreground bg-secondary border-secondary-foreground/60 hover:bg-secondary/80 hover:border-secondary-foreground/80',
                 destructive:
                     'text-destructive-foreground bg-destructive border-destructive hover:bg-destructive/80 hover:border-destructive/80',
                 warning:
@@ -52,7 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const Comp = asChild ? Slot : 'button'
         return (
             <Comp
-                className={cn(buttonVariants({ size, colors, variant, className }))}
+                className={cn(buttonVariants({ colors, variant, size, className }))}
                 ref={ref}
                 {...props}
             />
