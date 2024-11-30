@@ -6,6 +6,7 @@ import { useAtom } from 'jotai'
 import { ReactLenis } from 'lenis/react'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 
 /**
  * Providers wraps the app in the following providers:
@@ -22,16 +23,18 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     }, [pathname])
     return (
         <RootProvider theme={{ forcedTheme: forcedTheme }}>
-            <TooltipProvider>
-                <ReactLenis
-                    root
-                    options={{
-                        autoRaf: true,
-                        prevent: node => node.classList.contains('select__menu-list'),
-                    }}>
-                    {children}
-                </ReactLenis>
-            </TooltipProvider>
+            <NuqsAdapter>
+                <TooltipProvider>
+                    <ReactLenis
+                        root
+                        options={{
+                            autoRaf: true,
+                            prevent: node => node.classList.contains('ReactVirtualized__Grid'),
+                        }}>
+                        {children}
+                    </ReactLenis>
+                </TooltipProvider>
+            </NuqsAdapter>
         </RootProvider>
     )
 }

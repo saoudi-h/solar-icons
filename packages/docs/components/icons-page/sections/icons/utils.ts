@@ -1,14 +1,14 @@
 import icons, { IconData } from '@/core/generated/descriptions'
+import { Category } from '@/core/generated/utils'
 
-import { CategoryOption } from '.'
 
 import Fuse from 'fuse.js'
 
-const fuse = new Fuse(icons, {
-    keys: ['name', 'tags', 'category', 'categoryTags'],
-    threshold: 0.3,
-})
 
+export type CategoryOption = {
+    value: Category
+    label: Category
+}
 export const getAllIcons = (): IconData[] => {
     return icons as IconData[]
 }

@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import {
     Select,
@@ -16,44 +15,23 @@ import { Restart, MinimalisticMagnifer, Dialog } from '@solar-icons/react/ssr'
 import { categories, styles } from '@/core/generated/utils'
 import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
-import { useScroll } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import {
-    categoriesAtom,
-    CategoryOption,
-    displayedCountAtom,
-    filteredCountAtom,
-    keywordAtom,
-} from '.'
 import { useAtom } from 'jotai'
 import MultipleSelector, { Option } from '@/components/ui/multi-selector'
-import { useScreenReverse } from '@/lib/screens'
 import NumberTicker from '@/components/ui/number-ticker'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-
-interface FilterBarProps {
-    isDark: boolean
-    setIsDark: (isDark: boolean) => void
-}
+import { categoriesAtom, filteredCountAtom, keywordAtom } from './context'
+import { CategoryOption } from './utils'
 
 const categoryOptions = categories.map(c => ({ value: c, label: c }))
 
-export const FilterBar: React.FC<FilterBarProps> = ({ isDark, setIsDark }) => {
+export const FilterBar: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
-    const [displayedCount] = useAtom(displayedCountAtom)
     const [keyword, setKeyword] = useAtom(keywordAtom)
     const [categories, setCategories] = useAtom(categoriesAtom)
-    const isMobile = useScreenReverse('sm')
 
-    const [isSticky, setIsSticky] = useState(false)
-    const { scrollY } = useScroll()
     const { value, setValue } = useSolar()
     const { resolvedTheme } = useTheme()
 
-    scrollY.on('change', () => {
-        if (isMobile) setIsSticky(false)
-        else setIsSticky(scrollY.get() > 56)
-    })
 
     const setWeight = (weight: IconWeight) => {
         setValue({
@@ -86,17 +64,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({ isDark, setIsDark }) => {
             size: 24,
             weight: 'Linear',
         })
+        setKeyword('')
+        setCategories([])
     }
 
     return (
-        <div
-            className={cn(
-                isSticky
-                    ? 'sticky bg-default-300/50 top-14 backdrop-blur-md shadow-sm rounded-none'
-                    : 'bg-default-200 dark:bg-zinc-950 rounded-xl',
-                'flex flex-wrap justify-between gap-2 p-2 w-full shadow-sm z-20'
-            )}>
-            <div className="flex justify-start content-start flex-wrap flex-1 gap-2">
+        <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-sm z-20">
+            <div className="flex content-start justify-start flex-wrap flex-1 gap-2">
                 {/* Style selector */}
                 <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
                     <SelectTrigger className="w-48 bg-default-100 h-10 rounded-lg !border-none !shadow-none">
@@ -136,8 +110,6 @@ export const FilterBar: React.FC<FilterBarProps> = ({ isDark, setIsDark }) => {
                 <ColorPicker
                     color={value.color || '#000000'}
                     setColor={setColor}
-                    isDark={isDark}
-                    setIsDark={setIsDark}
                     className="w-48 h-10"
                 />
 
@@ -163,31 +135,15 @@ export const FilterBar: React.FC<FilterBarProps> = ({ isDark, setIsDark }) => {
                 </Button>
 
                 {/* Reset button */}
-                <div className="h-10 rounded-lg !border-none bg-default-100 text-muted-foreground flex flex-row gap-1 items-center justify-center p-1 text-xs font-bold">
-                    <div className=" bg-default-200 border-border rounded-md py-1 h-full flex items-center justify-center px-2">
-                        <Tooltip>
-                            <TooltipTrigger>
-                                <NumberTicker value={displayedCount} />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <span className="font-extralight">
-                                    {displayedCount} icons displayed
-                                </span>
-                            </TooltipContent>
-                        </Tooltip>
-                    </div>
-                    <div className=" bg-default-200 border-border rounded-md py-1 h-full flex items-center justify-center px-2">
-                        <Tooltip>
-                            <TooltipTrigger>
-                                <NumberTicker value={filteredCount} />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <span className="font-extralight">
-                                    {filteredCount} icons founded
-                                </span>
-                            </TooltipContent>
-                        </Tooltip>
-                    </div>
+                <div className="h-10 rounded-lg !border-none bg-default-100 text-muted-foreground flex flex-row gap-1 items-center justify-center p-1 text-xs font-bold px-3">
+                    <Tooltip>
+                        <TooltipTrigger>
+                            <NumberTicker value={filteredCount} />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                            <span className="font-extralight">{filteredCount} icons founded</span>
+                        </TooltipContent>
+                    </Tooltip>
                 </div>
             </div>
             {/* alternative to react Select */}

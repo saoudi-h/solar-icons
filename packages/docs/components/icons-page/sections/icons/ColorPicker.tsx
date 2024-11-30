@@ -11,11 +11,10 @@ import { atomWithStorage } from 'jotai/utils'
 import { useAtom } from 'jotai'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { forcedThemeAtom } from '../../../../atom/forcedThemeAtom'
+import { forcedThemeAtom } from '@/atom/forcedThemeAtom'
 import { cn } from '@/lib/utils'
+import { colorIconDark } from './context'
 
-const MotionLinkBroken = motion.create(LinkBroken)
-const MotionLink = motion.create(Link)
 const variants = {
     initial: { x: 30 },
     animate: { x: 0 },
@@ -26,14 +25,13 @@ const variants = {
 interface ColorPickerProps {
     color: string
     setColor: (color: string) => void
-    isDark: boolean
-    setIsDark: (isDark: boolean) => void
     className?: string
 }
 
 const synchedThemeStorageAtom = atomWithStorage('synched', true)
 
-export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDark, setIsDark, className }) => {
+export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, className }) => {
+    const [isDark, setIsDark] = useAtom(colorIconDark)
     const [synched, setSynched] = useAtom(synchedThemeStorageAtom)
     const [forcedTheme, setForcedTheme] = useAtom(forcedThemeAtom)
     const [inputColor, setInputColor] = useState<string>(color)
@@ -76,32 +74,32 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
             <Tooltip>
                 <TooltipTrigger asChild>
                     <Toggle
-                        variant="outline"
+                        variant="default"
                         colors="accent"
                         className="relative rounded-l-lg size-10 rounded-r-none bg-default-100 border-none overflow-hidden"
                         pressed={synched}
                         onPressedChange={setSynched}>
                         <AnimatePresence>
                             {synched ? (
-                                <MotionLinkBroken
+                                <motion.div
+                                    variants={variants}
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
                                     key="link-boken"
-                                    size={24}
-                                    variants={variants}
-                                    initial="initial"
-                                    animate="animate"
-                                    exit="exit"
-                                    className="absolute inset-0 self-center justify-self-center"
-                                />
+                                    className="absolute inset-0 size-full flex justify-center items-center">
+                                    <LinkBroken size={24} />
+                                </motion.div>
                             ) : (
-                                <MotionLink
-                                    key="link"
-                                    size={24}
+                                <motion.div
                                     variants={variants}
                                     initial="initial"
                                     animate="animate"
                                     exit="exit"
-                                    className="absolute inset-0 justify-self-center self-center"
-                                />
+                                    key="link"
+                                    className="absolute inset-0 size-full flex justify-center items-center">
+                                    <Link size={24} />
+                                </motion.div>
                             )}
                         </AnimatePresence>
                     </Toggle>
@@ -116,8 +114,8 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
                     <div className="flex flex-row flex-nowrap gap-0 items-center justify-center flex-1">
                         <Button
                             asChild
-                            variant="outline"
-                            colors="accent"
+                            variant="default"
+                            colors="secondary"
                             className="w-full !p-0 !border-none bg-default-100">
                             <Input
                                 style={{
@@ -140,9 +138,9 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, isDar
             </Popover>
             <CopyButton
                 value={color}
-                className="rounded-r-lg rounded-l-none border-none bg-default-100 hover:bg-default-300 h-10"
+                className="rounded-r-lg rounded-l-none border-none bg-default-100 h-10"
                 colors="accent"
-                variant="outline"></CopyButton>
+                variant="default"></CopyButton>
         </div>
     )
 }
