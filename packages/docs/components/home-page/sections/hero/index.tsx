@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         <Button asChild variant="default" className="rounded-full" size="xl">
                             <Link href={getStarted.href || '#'}>{getStarted.label}</Link>
                         </Button>
-                        <Button colors="secondary" className="rounded-full" size="xl">
+                        <Button colors="secondary" variant="outline" className="rounded-full" size="xl">
                             <Link href={exploreIcons.href || '#'}>{exploreIcons.label}</Link>
                         </Button>
                     </div>

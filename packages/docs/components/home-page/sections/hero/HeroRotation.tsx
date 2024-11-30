@@ -53,7 +53,6 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
     const generateIcons = (
         icons: SolarIcon[],
         radius: number,
-        isOuter: boolean,
         selectedStyle: Style,
         rotation: MotionValue<number>
     ) => {
@@ -102,8 +101,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
             <Circle size={600} />
             <Circle size={450} />
             <div className="relative w-[700px] h-[700px]">
-                {generateIcons(outerIcons, 260, true, selectedStyle, rotationOuter)}
-                {generateIcons(innerIcons, 185, false, selectedStyle, rotationInner)}
+                {generateIcons(outerIcons, 260, selectedStyle, rotationOuter)}
+                {generateIcons(innerIcons, 185, selectedStyle, rotationInner)}
             </div>
             <Circle size={160} noGradient>
                 <div className="relative flex flex-col items-center justify-center size-full rounded-full bg-accent/50 dark:bg-gradient-to-b bg-gradient-to-t from-primary/50 to-transparent backdrop-contrast-150 z-50 overflow-hidden">
@@ -207,7 +206,7 @@ export const HeroRotation = () => {
         return () => clearInterval(interval)
     }, [])
 
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((_, delta) => {
         const scrollDirection = scrollVelocity.get() < 0 ? -1 : 1
         const speedAdjustment = 1 + Math.abs(velocityFactor.get())
 
