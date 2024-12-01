@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import metadata from '@solar-icons/core/metadata.json' assert { type: 'json' }
 
 const toPascalCase = (str: string) =>
@@ -7,7 +7,7 @@ const toPascalCase = (str: string) =>
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join('')
 
-const outputFilePath = './components/home-page/sections/hero/generatedHeroUtils.ts'
+const outputFilePath = './core/generated/generatedHeroUtils.ts'
 const categoryList: string[] = []
 
 const generateIconsByCategory = (data: any) => {
@@ -38,7 +38,7 @@ export const getIconsByCategory = (category: string) => {
             .slice(10, 23)
             .map((icon: string) => `solar.${categoryPascalCase}.${toPascalCase(icon)}`)
 
-        // Génère le code TypeScript pour chaque catégorie
+        // Generate the typescript code for each category
         output += `
     case '${categoryPascalCase}':
       return {
@@ -76,9 +76,9 @@ const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)
         fs.writeFileSync(outputFilePath, outputContent)
-        console.log('Le fichier TypeScript a été généré avec succès !')
+        console.log('The TypeScript file was generated successfully !')
     } catch (error) {
-        console.error('Erreur lors de la génération du fichier :', error)
+        console.error('Error generating file :', error)
     }
 }
 
