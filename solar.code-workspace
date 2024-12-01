@@ -29,7 +29,7 @@
             "path": "packages/react-perf",
         },
         {
-            "path": "packages/docs",
+            "path": "apps/docs",
         },
     ],
     "settings": {

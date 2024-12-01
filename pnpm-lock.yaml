@@ -46,80 +46,7 @@ importers:
         specifier: ^5.0.0
         version: 5.6.3
 
-  packages/core:
-    dependencies:
-      '@langchain/core':
-        specifier: ^0.3.18
-        version: 0.3.18
-      '@langchain/ollama':
-        specifier: ^0.1.2
-        version: 0.1.2(@langchain/core@0.3.18)
-    devDependencies:
-      '@solar-icons/eslint':
-        specifier: workspace:*
-        version: link:../eslint
-      '@solar-icons/prettier':
-        specifier: workspace:*
-        version: link:../prettier
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
-      '@types/node':
-        specifier: ^22.8.7
-        version: 22.9.0
-      '@vitejs/plugin-react':
-        specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
-      axios:
-        specifier: ^1.7.7
-        version: 1.7.7
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      eslint:
-        specifier: ^9.14.0
-        version: 9.15.0(jiti@1.21.6)
-      figma-api:
-        specifier: ^1.11.0
-        version: 1.12.0
-      globals:
-        specifier: ^15.11.0
-        version: 15.12.0
-      p-limit:
-        specifier: ^6.1.0
-        version: 6.1.0
-      picocolors:
-        specifier: ^1.1.1
-        version: 1.1.1
-      pino:
-        specifier: ^9.5.0
-        version: 9.5.0
-      pino-pretty:
-        specifier: ^13.0.0
-        version: 13.0.0
-      prettier:
-        specifier: ^3.2.5
-        version: 3.3.3
-      rimraf:
-        specifier: ^6.0.1
-        version: 6.0.1
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
-      tsx:
-        specifier: ^4.19.2
-        version: 4.19.2
-      typescript:
-        specifier: ^5.0.0
-        version: 5.6.3
-      vite:
-        specifier: ^5.4.10
-        version: 5.4.11(@types/node@22.9.0)
-      vite-plugin-static-copy:
-        specifier: ^2.0.0
-        version: 2.1.0(vite@5.4.11(@types/node@22.9.0))
-
-  packages/docs:
+  apps/docs:
     dependencies:
       '@radix-ui/react-dialog':
         specifier: ^1.1.2
@@ -223,16 +150,16 @@ importers:
         version: 5.0.2(react@18.3.1)
       '@solar-icons/core':
         specifier: workspace:*
-        version: link:../core
+        version: link:../../packages/core
       '@solar-icons/eslint':
         specifier: workspace:*
-        version: link:../eslint
+        version: link:../../packages/eslint
       '@solar-icons/prettier':
         specifier: workspace:*
-        version: link:../prettier
+        version: link:../../packages/prettier
       '@solar-icons/tsconfig':
         specifier: workspace:*
-        version: link:../tsconfig
+        version: link:../../packages/tsconfig
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -260,6 +187,79 @@ importers:
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
+
+  packages/core:
+    dependencies:
+      '@langchain/core':
+        specifier: ^0.3.18
+        version: 0.3.18
+      '@langchain/ollama':
+        specifier: ^0.1.2
+        version: 0.1.2(@langchain/core@0.3.18)
+    devDependencies:
+      '@solar-icons/eslint':
+        specifier: workspace:*
+        version: link:../eslint
+      '@solar-icons/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      '@solar-icons/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/node':
+        specifier: ^22.8.7
+        version: 22.9.0
+      '@vitejs/plugin-react':
+        specifier: ^4.3.3
+        version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
+      eslint:
+        specifier: ^9.14.0
+        version: 9.15.0(jiti@1.21.6)
+      figma-api:
+        specifier: ^1.11.0
+        version: 1.12.0
+      globals:
+        specifier: ^15.11.0
+        version: 15.12.0
+      p-limit:
+        specifier: ^6.1.0
+        version: 6.1.0
+      picocolors:
+        specifier: ^1.1.1
+        version: 1.1.1
+      pino:
+        specifier: ^9.5.0
+        version: 9.5.0
+      pino-pretty:
+        specifier: ^13.0.0
+        version: 13.0.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.3.3
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.2
+      typescript:
+        specifier: ^5.0.0
+        version: 5.6.3
+      vite:
+        specifier: ^5.4.10
+        version: 5.4.11(@types/node@22.9.0)
+      vite-plugin-static-copy:
+        specifier: ^2.0.0
+        version: 2.1.0(vite@5.4.11(@types/node@22.9.0))
 
   packages/eslint:
     dependencies:
