@@ -12,7 +12,7 @@ import {
     useVelocity,
 } from 'framer-motion'
 import type { Icon as SolarIcon } from '@solar-icons/react/lib/types'
-import { categories, getIconsByCategory, Style, styles, Category } from './generatedHeroUtils'
+import { categories, getIconsByCategory, Style, styles, Category } from '@/core/generated/generatedHeroUtils'
 import { cn } from '@/lib/utils'
 import './heroSectionStyle.css'
 import { atom, useAtom } from 'jotai'
