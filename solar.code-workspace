@@ -29,7 +29,7 @@
             "path": "packages/react-perf",
         },
         {
-            "path": "packages/docs",
+            "path": "apps/docs",
         },
     ],
     "settings": {
@@ -51,7 +51,7 @@
             "titleBar.activeBackground": "#e4c8bb",
             "titleBar.activeForeground": "#15202b",
             "titleBar.inactiveBackground": "#e4c8bb99",
-            "titleBar.inactiveForeground": "#15202b99",
+            "titleBar.inactiveForeground": "#15202b99"
         },
         "peacock.color": "#e4c8bb",
         "cSpell.words": [

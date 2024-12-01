@@ -40,86 +40,13 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       turbo:
-        specifier: ^2.2.3
-        version: 2.3.0
+        specifier: ^2.3.3
+        version: 2.3.3
       typescript:
         specifier: ^5.0.0
         version: 5.6.3
 
-  packages/core:
-    dependencies:
-      '@langchain/core':
-        specifier: ^0.3.18
-        version: 0.3.18
-      '@langchain/ollama':
-        specifier: ^0.1.2
-        version: 0.1.2(@langchain/core@0.3.18)
-    devDependencies:
-      '@solar-icons/eslint':
-        specifier: workspace:*
-        version: link:../eslint
-      '@solar-icons/prettier':
-        specifier: workspace:*
-        version: link:../prettier
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
-      '@types/node':
-        specifier: ^22.8.7
-        version: 22.9.0
-      '@vitejs/plugin-react':
-        specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
-      axios:
-        specifier: ^1.7.7
-        version: 1.7.7
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      eslint:
-        specifier: ^9.14.0
-        version: 9.15.0(jiti@1.21.6)
-      figma-api:
-        specifier: ^1.11.0
-        version: 1.12.0
-      globals:
-        specifier: ^15.11.0
-        version: 15.12.0
-      p-limit:
-        specifier: ^6.1.0
-        version: 6.1.0
-      picocolors:
-        specifier: ^1.1.1
-        version: 1.1.1
-      pino:
-        specifier: ^9.5.0
-        version: 9.5.0
-      pino-pretty:
-        specifier: ^13.0.0
-        version: 13.0.0
-      prettier:
-        specifier: ^3.2.5
-        version: 3.3.3
-      rimraf:
-        specifier: ^6.0.1
-        version: 6.0.1
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
-      tsx:
-        specifier: ^4.19.2
-        version: 4.19.2
-      typescript:
-        specifier: ^5.0.0
-        version: 5.6.3
-      vite:
-        specifier: ^5.4.10
-        version: 5.4.11(@types/node@22.9.0)
-      vite-plugin-static-copy:
-        specifier: ^2.0.0
-        version: 2.1.0(vite@5.4.11(@types/node@22.9.0))
-
-  packages/docs:
+  apps/docs:
     dependencies:
       '@radix-ui/react-dialog':
         specifier: ^1.1.2
@@ -223,16 +150,16 @@ importers:
         version: 5.0.2(react@18.3.1)
       '@solar-icons/core':
         specifier: workspace:*
-        version: link:../core
+        version: link:../../packages/core
       '@solar-icons/eslint':
         specifier: workspace:*
-        version: link:../eslint
+        version: link:../../packages/eslint
       '@solar-icons/prettier':
         specifier: workspace:*
-        version: link:../prettier
+        version: link:../../packages/prettier
       '@solar-icons/tsconfig':
         specifier: workspace:*
-        version: link:../tsconfig
+        version: link:../../packages/tsconfig
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -260,6 +187,79 @@ importers:
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
+
+  packages/core:
+    dependencies:
+      '@langchain/core':
+        specifier: ^0.3.18
+        version: 0.3.18
+      '@langchain/ollama':
+        specifier: ^0.1.2
+        version: 0.1.2(@langchain/core@0.3.18)
+    devDependencies:
+      '@solar-icons/eslint':
+        specifier: workspace:*
+        version: link:../eslint
+      '@solar-icons/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      '@solar-icons/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/node':
+        specifier: ^22.8.7
+        version: 22.9.0
+      '@vitejs/plugin-react':
+        specifier: ^4.3.3
+        version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
+      eslint:
+        specifier: ^9.14.0
+        version: 9.15.0(jiti@1.21.6)
+      figma-api:
+        specifier: ^1.11.0
+        version: 1.12.0
+      globals:
+        specifier: ^15.11.0
+        version: 15.12.0
+      p-limit:
+        specifier: ^6.1.0
+        version: 6.1.0
+      picocolors:
+        specifier: ^1.1.1
+        version: 1.1.1
+      pino:
+        specifier: ^9.5.0
+        version: 9.5.0
+      pino-pretty:
+        specifier: ^13.0.0
+        version: 13.0.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.3.3
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.2
+      typescript:
+        specifier: ^5.0.0
+        version: 5.6.3
+      vite:
+        specifier: ^5.4.10
+        version: 5.4.11(@types/node@22.9.0)
+      vite-plugin-static-copy:
+        specifier: ^2.0.0
+        version: 2.1.0(vite@5.4.11(@types/node@22.9.0))
 
   packages/eslint:
     dependencies:
@@ -4794,38 +4794,38 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  turbo-darwin-64@2.3.0:
-    resolution: {integrity: sha512-pji+D49PhFItyQjf2QVoLZw2d3oRGo8gJgKyOiRzvip78Rzie74quA8XNwSg/DuzM7xx6gJ3p2/LylTTlgZXxQ==}
+  turbo-darwin-64@2.3.3:
+    resolution: {integrity: sha512-bxX82xe6du/3rPmm4aCC5RdEilIN99VUld4HkFQuw+mvFg6darNBuQxyWSHZTtc25XgYjQrjsV05888w1grpaA==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.3.0:
-    resolution: {integrity: sha512-AJrGIL9BO41mwDF/IBHsNGwvtdyB911vp8f5mbNo1wG66gWTvOBg7WCtYQBvCo11XTenTfXPRSsAb7w3WAZb6w==}
+  turbo-darwin-arm64@2.3.3:
+    resolution: {integrity: sha512-DYbQwa3NsAuWkCUYVzfOUBbSUBVQzH5HWUFy2Kgi3fGjIWVZOFk86ss+xsWu//rlEAfYwEmopigsPYSmW4X15A==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.3.0:
-    resolution: {integrity: sha512-jZqW6vc2sPJT3M/3ZmV1Cg4ecQVPqsbHncG/RnogHpBu783KCSXIndgxvUQNm9qfgBYbZDBnP1md63O4UTElhw==}
+  turbo-linux-64@2.3.3:
+    resolution: {integrity: sha512-eHj9OIB0dFaP6BxB88jSuaCLsOQSYWBgmhy2ErCu6D2GG6xW3b6e2UWHl/1Ho9FsTg4uVgo4DB9wGsKa5erjUA==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.3.0:
-    resolution: {integrity: sha512-HUbDLJlvd/hxuyCNO0BmEWYQj0TugRMvSQeG8vHJH+Lq8qOgDAe7J0K73bFNbZejZQxW3C3XEiZFB3pnpO78+A==}
+  turbo-linux-arm64@2.3.3:
+    resolution: {integrity: sha512-NmDE/NjZoDj1UWBhMtOPmqFLEBKhzGS61KObfrDEbXvU3lekwHeoPvAMfcovzswzch+kN2DrtbNIlz+/rp8OCg==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.3.0:
-    resolution: {integrity: sha512-c5rxrGNTYDWX9QeMzWLFE9frOXnKjHGEvQMp1SfldDlbZYsloX9UKs31TzUThzfTgTiz8NYuShaXJ2UvTMnV/g==}
+  turbo-windows-64@2.3.3:
+    resolution: {integrity: sha512-O2+BS4QqjK3dOERscXqv7N2GXNcqHr9hXumkMxDj/oGx9oCatIwnnwx34UmzodloSnJpgSqjl8iRWiY65SmYoQ==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.3.0:
-    resolution: {integrity: sha512-7qfUuYhfIVb1AZgs89DxhXK+zZez6O2ocmixEQ4hXZK7ytnBt5vaz2zGNJJKFNYIL5HX1C3tuHolnpNgDNCUIg==}
+  turbo-windows-arm64@2.3.3:
+    resolution: {integrity: sha512-dW4ZK1r6XLPNYLIKjC4o87HxYidtRRcBeo/hZ9Wng2XM/MqqYkAyzJXJGgRMsc0MMEN9z4+ZIfnSNBrA0b08ag==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.3.0:
-    resolution: {integrity: sha512-/uOq5o2jwRPyaUDnwBpOR5k9mQq4c3wziBgWNWttiYQPmbhDtrKYPRBxTvA2WpgQwRIbt8UM612RMN8n/TvmHA==}
+  turbo@2.3.3:
+    resolution: {integrity: sha512-DUHWQAcC8BTiUZDRzAYGvpSpGLiaOQPfYXlCieQbwUvmml/LRGIe3raKdrOPOoiX0DYlzxs2nH6BoWJoZrj8hA==}
     hasBin: true
 
   tw-screens@1.0.0:
@@ -10052,32 +10052,32 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  turbo-darwin-64@2.3.0:
+  turbo-darwin-64@2.3.3:
     optional: true
 
-  turbo-darwin-arm64@2.3.0:
+  turbo-darwin-arm64@2.3.3:
     optional: true
 
-  turbo-linux-64@2.3.0:
+  turbo-linux-64@2.3.3:
     optional: true
 
-  turbo-linux-arm64@2.3.0:
+  turbo-linux-arm64@2.3.3:
     optional: true
 
-  turbo-windows-64@2.3.0:
+  turbo-windows-64@2.3.3:
     optional: true
 
-  turbo-windows-arm64@2.3.0:
+  turbo-windows-arm64@2.3.3:
     optional: true
 
-  turbo@2.3.0:
+  turbo@2.3.3:
     optionalDependencies:
-      turbo-darwin-64: 2.3.0
-      turbo-darwin-arm64: 2.3.0
-      turbo-linux-64: 2.3.0
-      turbo-linux-arm64: 2.3.0
-      turbo-windows-64: 2.3.0
-      turbo-windows-arm64: 2.3.0
+      turbo-darwin-64: 2.3.3
+      turbo-darwin-arm64: 2.3.3
+      turbo-linux-64: 2.3.3
+      turbo-linux-arm64: 2.3.3
+      turbo-windows-64: 2.3.3
+      turbo-windows-arm64: 2.3.3
 
   tw-screens@1.0.0(react@18.3.1):
     dependencies:
