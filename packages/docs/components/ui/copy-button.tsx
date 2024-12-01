@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { CheckCircle, Copy } from '@Solar-icons/react/ssr'
+import { CheckCircle, Copy } from '@solar-icons/react/ssr'
 import { cn } from '@/lib/utils'
 import { Button, ButtonProps } from '@/components/ui/button'
 
