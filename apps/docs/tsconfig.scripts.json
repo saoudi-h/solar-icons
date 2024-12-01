@@ -1,0 +1,11 @@
+{
+    "extends": "@solar-icons/tsconfig/base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "include": ["core/scripts/*.ts"],
+    "exclude": ["node_modules"]
+}
