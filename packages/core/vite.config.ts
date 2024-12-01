@@ -11,6 +11,10 @@ export default defineConfig({
                     src: 'src/metadata.json',
                     dest: '.',
                 },
+                {
+                    src: "src/metadata-descriptions.json",
+                    dest: '.'
+                }
             ],
         }),
     ],
