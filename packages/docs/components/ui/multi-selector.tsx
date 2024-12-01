@@ -428,6 +428,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         }, [creatable, commandProps?.filter])
 
         return (
+            // @ts-ignore
             <Command
                 ref={dropdownRef}
                 {...commandProps}

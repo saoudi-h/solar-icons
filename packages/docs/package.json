@@ -12,7 +12,7 @@
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "typecheck": "tsc",
-        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist .turbo .next",
         "generate:hero:utils": "tsx ./components/home-page/sections/hero/generateHeroUtils.ts",
         "generate:data": "tsx ./core/scripts/generate-data.ts",
         "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts"
