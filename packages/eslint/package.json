@@ -35,7 +35,7 @@
         "typescript-eslint": "^8.15.0"
     },
     "devDependencies": {
-        "@next/eslint-plugin-next": "^14.2.7",
+        "@next/eslint-plugin-next": "^15.0.0",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint-config-prettier": "^6.11.3",
