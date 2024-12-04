@@ -192,10 +192,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.18
-        version: 0.3.18
+        version: 0.3.20
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.2(@langchain/core@0.3.18)
+        version: 0.1.2(@langchain/core@0.3.20)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1299,8 +1299,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@langchain/core@0.3.18':
-    resolution: {integrity: sha512-IEZCrFs1Xd0J2FTH1D3Lnm3/Yk2r8LSpwDeLYwcCom3rNAK5k4mKQ2rwIpNq3YuqBdrTNMKRO+PopjkP1SB17A==}
+  '@langchain/core@0.3.20':
+    resolution: {integrity: sha512-29yg7dccRkJ1MdGFW4FSp6+yM8LoisBHWjXsoi+hTRTQBael3yhjnevrNtVjhF8FMAt/rDQan6bHsGCQkwcScA==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.1.2':
@@ -3597,8 +3597,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  langsmith@0.2.5:
-    resolution: {integrity: sha512-dA+l7ZEh1Q9Q9FcE39PUSSEMfsFo73R2V81fRo5KSlGNcypOEhoQvv6lbjyZP7MHmt3/9pPcfpuRd5Y4RbFYqQ==}
+  langsmith@0.2.8:
+    resolution: {integrity: sha512-wKVNZoYtd8EqQWUEsfDZlZ77rH7vVqgNtONXRwynUp7ZFMFUIPhSlqE9pXqrmYPE8ZTBFj7diag2lFgUuaOEKw==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -5847,13 +5847,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/core@0.3.18':
+  '@langchain/core@0.3.20':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.15
-      langsmith: 0.2.5
+      langsmith: 0.2.8
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -5863,9 +5863,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.2(@langchain/core@0.3.18)':
+  '@langchain/ollama@0.1.2(@langchain/core@0.3.20)':
     dependencies:
-      '@langchain/core': 0.3.18
+      '@langchain/core': 0.3.20
       ollama: 0.5.10
       uuid: 10.0.0
 
@@ -8466,7 +8466,7 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  langsmith@0.2.5:
+  langsmith@0.2.8:
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
