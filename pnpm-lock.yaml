@@ -104,7 +104,7 @@ importers:
         version: 7.0.0
       jotai:
         specifier: ^2.10.2
-        version: 2.10.2(@types/react@18.3.12)(react@18.3.1)
+        version: 2.10.3(@types/react@18.3.12)(react@18.3.1)
       lenis:
         specifier: ^1.1.16
         version: 1.1.16(react@18.3.1)
@@ -3358,8 +3358,8 @@ packages:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
-  jotai@2.10.2:
-    resolution: {integrity: sha512-DqsBTlRglIBviuJLfK6JxZzpd6vKfbuJ4IqRCz70RFEDeZf46Fcteb/FXxNr1UnoxR5oUy3oq7IE8BrEq0G5DQ==}
+  jotai@2.10.3:
+    resolution: {integrity: sha512-Nnf4IwrLhNfuz2JOQLI0V/AgwcpxvVy8Ec8PidIIDeRi4KCFpwTFIpHAAcU+yCgnw/oASYElq9UY0YdUUegsSA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -8085,7 +8085,7 @@ snapshots:
 
   jiti@1.21.6: {}
 
-  jotai@2.10.2(@types/react@18.3.12)(react@18.3.1):
+  jotai@2.10.3(@types/react@18.3.12)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.12
       react: 18.3.1
