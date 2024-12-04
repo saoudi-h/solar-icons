@@ -214,7 +214,7 @@ importers:
         version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
       axios:
         specifier: ^1.7.7
-        version: 1.7.7
+        version: 1.7.8
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -2475,8 +2475,8 @@ packages:
   axios@0.27.2:
     resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
 
-  axios@1.7.7:
-    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+  axios@1.7.8:
+    resolution: {integrity: sha512-Uu0wb7KNqK2t5K+YQyVCLM76prD5sRFjKHbJYCP1J7JFGEQ6nN7HWn9+04LAeiJ3ji54lgS/gZCH1oxyrf1SPw==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -7110,7 +7110,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.7.7:
+  axios@1.7.8:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.1
