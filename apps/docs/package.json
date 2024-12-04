@@ -39,7 +39,7 @@
         "fuse.js": "^7.0.0",
         "jotai": "^2.10.2",
         "lenis": "^1.1.16",
-        "lucide-react": "^0.462.0",
+        "lucide-react": "^0.464.0",
         "next": "15.0.3",
         "next-themes": "^0.4.3",
         "nuqs": "^2.2.3",
