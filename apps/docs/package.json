@@ -50,7 +50,7 @@
         "react-virtualized": "^9.22.5",
         "tailwind-merge": "^2.5.4",
         "tailwindcss-animate": "^1.0.7",
-        "tw-screens": "^1.0.0"
+        "tw-screens": "^1.0.1"
     },
     "devDependencies": {
         "@iconify/react": "^5.0.2",
