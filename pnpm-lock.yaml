@@ -217,7 +217,7 @@ importers:
         version: 1.7.7
       dotenv:
         specifier: ^16.4.5
-        version: 16.4.5
+        version: 16.4.7
       eslint:
         specifier: ^9.14.0
         version: 9.15.0(jiti@1.21.6)
@@ -367,7 +367,7 @@ importers:
         version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
       dotenv:
         specifier: ^16.4.5
-        version: 16.4.5
+        version: 16.4.7
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -424,7 +424,7 @@ importers:
         version: 4.3.3(vite@5.4.11(@types/node@22.9.0))
       dotenv:
         specifier: ^16.4.5
-        version: 16.4.5
+        version: 16.4.7
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -2777,8 +2777,8 @@ packages:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
 
-  dotenv@16.4.5:
-    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   dotenv@8.6.0:
@@ -7394,7 +7394,7 @@ snapshots:
 
   dotenv@16.0.3: {}
 
-  dotenv@16.4.5: {}
+  dotenv@16.4.7: {}
 
   dotenv@8.6.0: {}
 
