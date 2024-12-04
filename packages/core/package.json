@@ -56,7 +56,7 @@
         "sharp": "^0.33.5",
         "tsx": "^4.19.2",
         "typescript": "^5.0.0",
-        "vite": "^5.4.10",
+        "vite": "^6.0.0",
         "vite-plugin-static-copy": "^2.0.0"
     },
     "keywords": [
