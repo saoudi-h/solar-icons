@@ -97,8 +97,8 @@ importers:
         specifier: 11.1.2
         version: 11.1.2(acorn@8.14.0)(fumadocs-core@14.5.6(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       fumadocs-ui:
-        specifier: 14.5.5
-        version: 14.5.5(@types/react-dom@18.3.1)(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.16)
+        specifier: 14.5.6
+        version: 14.5.6(@types/react-dom@18.3.1)(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.16)
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -1386,10 +1386,6 @@ packages:
 
   '@orama/orama@2.1.1':
     resolution: {integrity: sha512-euTV/2kya290SNkl5m8e/H1na8iDygk74nNtl4E0YZNyYIrEMwE1JwamoroMKGZw2Uz+in/8gH3m1+2YfP0j1w==}
-    engines: {node: '>= 16.0.0'}
-
-  '@orama/orama@3.0.2':
-    resolution: {integrity: sha512-1dfxup89K2DB2bbfx9rXyr/IAvhCKbH79lZCXVh5HWvdJ9g0VAvPIs3+UzjiyOdycEHYTbYundCTN6+Ygj3z4w==}
     engines: {node: '>= 16.0.0'}
 
   '@pkgjs/parseargs@0.11.0':
@@ -2943,26 +2939,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fumadocs-core@14.5.5:
-    resolution: {integrity: sha512-ogJ7Ue8EGX4tEbz6rB3IF/zUEtHxMk5JOZeDr3NX+x2kqARQ3SD5kFvw71vvH/MaQVYDGizBQU+BH4E4B4mzRg==}
-    peerDependencies:
-      '@oramacloud/client': 1.x.x
-      algoliasearch: 4.24.0
-      next: 14.x.x || 15.x.x
-      react: '>= 18'
-      react-dom: '>= 18'
-    peerDependenciesMeta:
-      '@oramacloud/client':
-        optional: true
-      algoliasearch:
-        optional: true
-      next:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
   fumadocs-core@14.5.6:
     resolution: {integrity: sha512-Rwzn8zEH/GJukd+YWfTILhvwRL0BZyTvysv4Bx7wZdHITBvFFr0oUeZcxzPr+IB1wAduO5ix9Bp9NMGm1y4UvA==}
     peerDependencies:
@@ -2990,8 +2966,8 @@ packages:
       fumadocs-core: ^14.0.0
       next: 14.x.x || 15.x.x
 
-  fumadocs-ui@14.5.5:
-    resolution: {integrity: sha512-UmQXXtlxbiY2YxiPF2eAmf8pzUxTLB0brKBmyHwZSNjADGUPOYjKkLrTaGCaUnPORMbhPypHRmdOAsZ6I5sFIg==}
+  fumadocs-ui@14.5.6:
+    resolution: {integrity: sha512-GGASIM7pdKPgzOWFC8W0BH8AD2OwKZqt8Vucz9tCQtbrL3v93/5kIyHf/uFEH0+PIoAimUKyRXsV6i5s8+mKcA==}
     peerDependencies:
       next: 14.x.x || 15.x.x
       react: '>= 18'
@@ -3485,13 +3461,13 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.462.0:
-    resolution: {integrity: sha512-NTL7EbAao9IFtuSivSZgrAh4fZd09Lr+6MTkqIxuHaH2nnYiYIzXPo06cOxHg9wKLdj6LL8TByG4qpePqwgx/g==}
+  lucide-react@0.464.0:
+    resolution: {integrity: sha512-eCx1qClbnw5qRqB2Z1AFFp71wdJXEwhPp5ii8LviyvHb7o/7eMXFiTyDHh7JpjM9BO9pC6ZUp/c7mCwwxbPIcg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide-react@0.464.0:
-    resolution: {integrity: sha512-eCx1qClbnw5qRqB2Z1AFFp71wdJXEwhPp5ii8LviyvHb7o/7eMXFiTyDHh7JpjM9BO9pC6ZUp/c7mCwwxbPIcg==}
+  lucide-react@0.465.0:
+    resolution: {integrity: sha512-uV7WEqbwaCcc+QjAxIhAvkAr3kgwkkYID3XptCHll72/F7NZlk6ONmJYpk+Xqx5Q0r/8wiOjz73H1BYbl8Z8iw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
@@ -5812,8 +5788,6 @@ snapshots:
 
   '@orama/orama@2.1.1': {}
 
-  '@orama/orama@3.0.2': {}
-
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -7611,30 +7585,6 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-core@14.5.5(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      '@formatjs/intl-localematcher': 0.5.8
-      '@orama/orama': 3.0.2
-      '@shikijs/rehype': 1.24.0
-      github-slugger: 2.0.0
-      hast-util-to-estree: 3.1.0
-      hast-util-to-jsx-runtime: 2.3.2
-      image-size: 1.1.1
-      negotiator: 1.0.0
-      react-remove-scroll: 2.6.0(@types/react@18.3.13)(react@18.3.1)
-      remark: 15.0.1
-      remark-gfm: 4.0.0
-      scroll-into-view-if-needed: 3.1.0
-      shiki: 1.24.0
-      unist-util-visit: 5.0.0
-    optionalDependencies:
-      next: 15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
   fumadocs-core@14.5.6(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.8
@@ -7676,7 +7626,7 @@ snapshots:
       - acorn
       - supports-color
 
-  fumadocs-ui@14.5.5(@types/react-dom@18.3.1)(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.16):
+  fumadocs-ui@14.5.6(@types/react-dom@18.3.1)(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.16):
     dependencies:
       '@radix-ui/react-accordion': 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-collapsible': 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7688,9 +7638,9 @@ snapshots:
       '@radix-ui/react-slot': 1.1.0(@types/react@18.3.13)(react@18.3.1)
       '@radix-ui/react-tabs': 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       class-variance-authority: 0.7.1
-      fumadocs-core: 14.5.5(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      fumadocs-core: 14.5.6(@types/react@18.3.13)(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lodash.merge: 4.6.2
-      lucide-react: 0.462.0(react@18.3.1)
+      lucide-react: 0.465.0(react@18.3.1)
       next: 15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-themes: 0.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       postcss-selector-parser: 7.0.0
@@ -8195,11 +8145,11 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.462.0(react@18.3.1):
+  lucide-react@0.464.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
-  lucide-react@0.464.0(react@18.3.1):
+  lucide-react@0.465.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
