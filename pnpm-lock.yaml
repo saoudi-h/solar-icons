@@ -143,7 +143,7 @@ importers:
         version: 1.0.7(tailwindcss@3.4.16)
       tw-screens:
         specifier: ^1.0.1
-        version: 1.0.1(react@18.3.1)
+        version: 1.0.2(react@18.3.1)
     devDependencies:
       '@iconify/react':
         specifier: ^5.0.2
@@ -4603,8 +4603,8 @@ packages:
     resolution: {integrity: sha512-DUHWQAcC8BTiUZDRzAYGvpSpGLiaOQPfYXlCieQbwUvmml/LRGIe3raKdrOPOoiX0DYlzxs2nH6BoWJoZrj8hA==}
     hasBin: true
 
-  tw-screens@1.0.1:
-    resolution: {integrity: sha512-hZ3oe4odxtiU+LS7HNDBOAlG+YnE1nGyGNbAMGoHUpqE4OJwm4CstbYFYv9xwDSX/O+V86C7pmOY00XT35rLVQ==}
+  tw-screens@1.0.2:
+    resolution: {integrity: sha512-4IWXD/oBDw0AsVwlLqQI3h6LLpO8kyrwAm8oo9DRGlRvtJjRsx9lvNwLMj2u7SkLiKGWwAXHulalrxJ4YgqVWQ==}
     engines: {node: '>=16'}
     peerDependencies:
       react: ^18
@@ -9670,7 +9670,7 @@ snapshots:
       turbo-windows-64: 2.3.3
       turbo-windows-arm64: 2.3.3
 
-  tw-screens@1.0.1(react@18.3.1):
+  tw-screens@1.0.2(react@18.3.1):
     dependencies:
       react: 18.3.1
 
