@@ -147,7 +147,7 @@ importers:
     devDependencies:
       '@iconify/react':
         specifier: ^5.0.2
-        version: 5.0.2(react@18.3.1)
+        version: 5.1.0(react@18.3.1)
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../../packages/core
@@ -1167,8 +1167,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@iconify/react@5.0.2':
-    resolution: {integrity: sha512-wtmstbYlEbo4NDxFxBJkhkf9gJBDqMGr7FaqLrAUMneRV3Z+fVHLJjOhWbkAF8xDQNFC/wcTYdrWo1lnRhmagQ==}
+  '@iconify/react@5.1.0':
+    resolution: {integrity: sha512-vj2wzalywy23DR37AnsogMPIkDa1nKEqITjxpH4z44tiLV869Mh7VyydD4/t0yJLEs9tsxlrPWtXvMOe1Lcd5g==}
     peerDependencies:
       react: '>=16'
 
@@ -5686,7 +5686,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@iconify/react@5.0.2(react@18.3.1)':
+  '@iconify/react@5.1.0(react@18.3.1)':
     dependencies:
       '@iconify/types': 2.0.0
       react: 18.3.1
