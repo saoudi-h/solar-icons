@@ -195,7 +195,7 @@ importers:
         version: 0.3.24
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.3(@langchain/core@0.3.24)
+        version: 0.1.4(@langchain/core@0.3.24)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1309,8 +1309,8 @@ packages:
     resolution: {integrity: sha512-xd7+VSJCwFNwt57poYjl18SbAb51mLWvq7OvQhkUQXv20LdnrO8Y5e2NhVKpNcYE306fFfAu+ty9ncPyKCpMZA==}
     engines: {node: '>=18'}
 
-  '@langchain/ollama@0.1.3':
-    resolution: {integrity: sha512-j7STBQXzfT3HtU3pUXh7cp5lz2W8BA0mba0eC8zPjZo009VfLI/bE3cO90zjRFVY9ZloWU6r+jzL92Z2tPkQbQ==}
+  '@langchain/ollama@0.1.4':
+    resolution: {integrity: sha512-olHPViUurGcmOI3IbhIGK/EJ7QxDlZru4j98V269PiEFTIVlciRULltgI/t3voHYTdvB8R+HV8pMo/Y3UVzvzA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
@@ -5856,7 +5856,7 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.3(@langchain/core@0.3.24)':
+  '@langchain/ollama@0.1.4(@langchain/core@0.3.24)':
     dependencies:
       '@langchain/core': 0.3.24
       ollama: 0.5.11
