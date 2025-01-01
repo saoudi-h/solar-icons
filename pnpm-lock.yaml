@@ -192,10 +192,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.20
-        version: 0.3.26
+        version: 0.3.27
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.4(@langchain/core@0.3.26)
+        version: 0.1.4(@langchain/core@0.3.27)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1312,8 +1312,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@langchain/core@0.3.26':
-    resolution: {integrity: sha512-6RUQHEp8wv+JwtYIIEBYBzbLlcAQZFc7EDOgAM0ukExjh9HiXoJzoWpgMRRCrr/koIbtwXPJUqBprZK1I1CXHQ==}
+  '@langchain/core@0.3.27':
+    resolution: {integrity: sha512-jtJKbJWB1NPU1YvtrExOB2rumvUFgkJwlWGxyjSIV9A6zcLVmUbcZGV8fCSuXgl5bbzOIQLJ1xcLYQmbW9TkTg==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.1.4':
@@ -3671,8 +3671,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  langsmith@0.2.13:
-    resolution: {integrity: sha512-16EOM5nhU6GlMCKGm5sgBIAKOKzS2d30qcDZmF21kSLZJiUhUNTROwvYdqgZLrGfIIzmSMJHCKA7RFd5qf50uw==}
+  langsmith@0.2.14:
+    resolution: {integrity: sha512-ClAuAgSf3m9miMYotLEaZKQyKdaWlfjhebCuYco8bc6g72dU2VwTg31Bv4YINBq7EH2i1cMwbOiJxbOXPqjGig==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -6035,14 +6035,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/core@0.3.26':
+  '@langchain/core@0.3.27':
     dependencies:
       '@cfworker/json-schema': 4.0.3
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.16
-      langsmith: 0.2.13
+      langsmith: 0.2.14
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -6052,9 +6052,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.4(@langchain/core@0.3.26)':
+  '@langchain/ollama@0.1.4(@langchain/core@0.3.27)':
     dependencies:
-      '@langchain/core': 0.3.26
+      '@langchain/core': 0.3.27
       ollama: 0.5.11
       uuid: 10.0.0
 
@@ -8817,7 +8817,7 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  langsmith@0.2.13:
+  langsmith@0.2.14:
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
