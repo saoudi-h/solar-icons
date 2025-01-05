@@ -326,7 +326,7 @@ importers:
         version: 8.17.0(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2)
       eslint-plugin-storybook:
         specifier: ^0.11.1
-        version: 0.11.1(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2)
+        version: 0.11.2(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2)
       prettier:
         specifier: ^3.3.3
         version: 3.4.2
@@ -1998,8 +1998,8 @@ packages:
       react: '>= 16.8'
       react-dom: '>= 16.8'
 
-  '@storybook/csf@0.1.11':
-    resolution: {integrity: sha512-dHYFQH3mA+EtnCkHXzicbLgsvzYjcDJ1JWsogbItZogkPHgSJM/Wr71uMkcvw8v9mmCyP4NpXJuu6bPoVsOnzg==}
+  '@storybook/csf@0.1.13':
+    resolution: {integrity: sha512-7xOOwCLGB3ebM87eemep89MYRFTko+D8qE7EdAAq74lgdqRR5cOUtYWJLjO2dLtP94nqoOdHJo6MdLLKzg412Q==}
 
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
@@ -2825,11 +2825,11 @@ packages:
     peerDependencies:
       eslint: '>=8.44.0'
 
-  eslint-plugin-storybook@0.11.1:
-    resolution: {integrity: sha512-yGKpAYkBm/Q2hZg476vRUAvd9lAccjjSvzU5nYy3BSQbKTPy7uopx7JEpwk2vSuw4weTMZzWF64z9/gp/K5RCg==}
+  eslint-plugin-storybook@0.11.2:
+    resolution: {integrity: sha512-0Z4DUklJrC+GHjCRXa7PYfPzWC15DaVnwaOYenpgXiCEijXPZkLKCms+rHhtoRcWccP7Z8DpOOaP1gc3P9oOwg==}
     engines: {node: '>= 18'}
     peerDependencies:
-      eslint: '>=6'
+      eslint: '>=8'
 
   eslint-plugin-tailwindcss@3.17.5:
     resolution: {integrity: sha512-8Mi7p7dm+mO1dHgRHHFdPu4RDTBk69Cn4P0B40vRQR+MrguUpwmKwhZy1kqYe3Km8/4nb+cyrCF+5SodOEmaow==}
@@ -6616,7 +6616,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/csf@0.1.11':
+  '@storybook/csf@0.1.13':
     dependencies:
       type-fest: 2.19.0
 
@@ -7705,9 +7705,9 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-storybook@0.11.1(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2):
+  eslint-plugin-storybook@0.11.2(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2):
     dependencies:
-      '@storybook/csf': 0.1.11
+      '@storybook/csf': 0.1.13
       '@typescript-eslint/utils': 8.17.0(eslint@9.16.0(jiti@1.21.7))(typescript@5.7.2)
       eslint: 9.16.0(jiti@1.21.7)
       ts-dedent: 2.2.0
