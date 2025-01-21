@@ -192,10 +192,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.20
-        version: 0.3.31
+        version: 0.3.32
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.4(@langchain/core@0.3.31)
+        version: 0.1.4(@langchain/core@0.3.32)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1312,8 +1312,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@langchain/core@0.3.31':
-    resolution: {integrity: sha512-Fjy8gdaFjGuAW7+ug1XfQYJR3fyWPpWyydPXOhXfjnThaMnHfhIg9kzA3W7DxiMLgAC2fQsAqyxGJVXajV/07A==}
+  '@langchain/core@0.3.32':
+    resolution: {integrity: sha512-QesrB7qPrvdIKgCL6/hfa1e7+5dCCgunN5nRGvr0LYWEVuLBrUd93PDvpPP9Fk43+HZnS16adTCYOwX0Jad5Bw==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.1.4':
@@ -2511,10 +2511,6 @@ packages:
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
-  commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
-
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
@@ -2528,6 +2524,9 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  console-table-printer@2.12.1:
+    resolution: {integrity: sha512-wKGOQRRvdnd89pCeH96e2Fn4wkbenSP6LMHfjfyNLMbGuHEFbMqQNuxXqd0oXG9caIOQ1FTvc5Uijp9/4jujnQ==}
 
   convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
@@ -3564,8 +3563,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  langsmith@0.2.15:
-    resolution: {integrity: sha512-homtJU41iitqIZVuuLW7iarCzD4f39KcfP9RTBWav9jifhrsDa1Ez89Ejr+4qi72iuBu8Y5xykchsGVgiEZ93w==}
+  langsmith@0.3.0:
+    resolution: {integrity: sha512-VUO2j1pKqZBIwcllEuD4H3EUNKGOKabJiwPDqSeTaZNXQQxvT3GPIyi+myGmkLrmOG3Y6jMDNTC4yxzJRQvakw==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -4534,6 +4533,9 @@ packages:
 
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
+
+  simple-wcswidth@1.0.1:
+    resolution: {integrity: sha512-xMO/8eNREtaROt7tJvWJqHBDTMFN4eiQ5I4JRMuilwfnFcV5W9u7RUkueNkdw0jPqGMX36iCywelS5yilTuOxg==}
 
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -5931,14 +5933,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/core@0.3.31':
+  '@langchain/core@0.3.32':
     dependencies:
       '@cfworker/json-schema': 4.1.0
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.16
-      langsmith: 0.2.15
+      langsmith: 0.3.0
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -5948,9 +5950,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.4(@langchain/core@0.3.31)':
+  '@langchain/ollama@0.1.4(@langchain/core@0.3.32)':
     dependencies:
-      '@langchain/core': 0.3.31
+      '@langchain/core': 0.3.32
       ollama: 0.5.11
       uuid: 10.0.0
 
@@ -7221,8 +7223,6 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  commander@10.0.1: {}
-
   commander@4.1.1: {}
 
   comment-parser@1.4.1: {}
@@ -7230,6 +7230,10 @@ snapshots:
   compute-scroll-into-view@3.1.0: {}
 
   concat-map@0.0.1: {}
+
+  console-table-printer@2.12.1:
+    dependencies:
+      simple-wcswidth: 1.0.1
 
   convert-source-map@1.9.0: {}
 
@@ -8591,10 +8595,11 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  langsmith@0.2.15:
+  langsmith@0.3.0:
     dependencies:
       '@types/uuid': 10.0.0
-      commander: 10.0.1
+      chalk: 4.1.2
+      console-table-printer: 2.12.1
       p-queue: 6.6.2
       p-retry: 4.6.2
       semver: 7.6.3
@@ -9940,6 +9945,8 @@ snapshots:
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
+
+  simple-wcswidth@1.0.1: {}
 
   slash@3.0.0: {}
 
