@@ -192,10 +192,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.20
-        version: 0.3.33
+        version: 0.3.36
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.4(@langchain/core@0.3.33)
+        version: 0.1.4(@langchain/core@0.3.36)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1316,8 +1316,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@langchain/core@0.3.33':
-    resolution: {integrity: sha512-gIszaRKWmP1HEgOhJLJaMiTMH8U3W9hG6raWihwpCTb0Ns7owjrmaqmgMa9h3W4/0xriaKfrfFBd6tepKsfxZA==}
+  '@langchain/core@0.3.36':
+    resolution: {integrity: sha512-lOS6f5o2MarjGPomHPhzde9xI3lZW2NIOEdCv0dvjb1ZChWhwXWHtAMHSZmuSB53ySzDWAMkimimHd+Yqz5MwQ==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.1.4':
@@ -5948,7 +5948,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/core@0.3.33':
+  '@langchain/core@0.3.36':
     dependencies:
       '@cfworker/json-schema': 4.1.0
       ansi-styles: 5.2.0
@@ -5965,9 +5965,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.4(@langchain/core@0.3.33)':
+  '@langchain/ollama@0.1.4(@langchain/core@0.3.36)':
     dependencies:
-      '@langchain/core': 0.3.33
+      '@langchain/core': 0.3.36
       ollama: 0.5.11
       uuid: 10.0.0
 
