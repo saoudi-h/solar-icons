@@ -195,7 +195,7 @@ importers:
         version: 0.3.36
       '@langchain/ollama':
         specifier: ^0.1.2
-        version: 0.1.4(@langchain/core@0.3.36)
+        version: 0.1.5(@langchain/core@0.3.36)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1320,8 +1320,8 @@ packages:
     resolution: {integrity: sha512-lOS6f5o2MarjGPomHPhzde9xI3lZW2NIOEdCv0dvjb1ZChWhwXWHtAMHSZmuSB53ySzDWAMkimimHd+Yqz5MwQ==}
     engines: {node: '>=18'}
 
-  '@langchain/ollama@0.1.4':
-    resolution: {integrity: sha512-olHPViUurGcmOI3IbhIGK/EJ7QxDlZru4j98V269PiEFTIVlciRULltgI/t3voHYTdvB8R+HV8pMo/Y3UVzvzA==}
+  '@langchain/ollama@0.1.5':
+    resolution: {integrity: sha512-S2tF94uIJtXavekKg10LvTV+jIelOIrubaCnje8BopfiNOVcnzsSulUL4JH0wvdxMZq0vbE4/i9RwC2q9ivOmA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
@@ -3988,8 +3988,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  ollama@0.5.11:
-    resolution: {integrity: sha512-lDAKcpmBU3VAOGF05NcQipHNKTdpKfAHpZ7bjCsElkUkmX7SNZImi6lwIxz/l1zQtLq0S3wuLneRuiXxX2KIew==}
+  ollama@0.5.12:
+    resolution: {integrity: sha512-flVH1fn1c9NF7VV3bW9kSu0E+bYc40b4DxL/gS2Debhao35osJFRDiPOj9sIWTMvcyj78Paw1OuhfIe7uhDWfQ==}
 
   on-exit-leak-free@2.1.2:
     resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
@@ -5965,10 +5965,10 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.4(@langchain/core@0.3.36)':
+  '@langchain/ollama@0.1.5(@langchain/core@0.3.36)':
     dependencies:
       '@langchain/core': 0.3.36
-      ollama: 0.5.11
+      ollama: 0.5.12
       uuid: 10.0.0
 
   '@manypkg/find-root@1.1.0':
@@ -9265,7 +9265,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  ollama@0.5.11:
+  ollama@0.5.12:
     dependencies:
       whatwg-fetch: 3.6.20
 
