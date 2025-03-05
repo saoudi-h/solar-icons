@@ -194,8 +194,8 @@ importers:
         specifier: ^0.3.20
         version: 0.3.42
       '@langchain/ollama':
-        specifier: ^0.1.2
-        version: 0.1.5(@langchain/core@0.3.42)
+        specifier: ^0.2.0
+        version: 0.2.0(@langchain/core@0.3.42)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1343,8 +1343,8 @@ packages:
     resolution: {integrity: sha512-pT/jC5lqWK3YGDq8dQwgKoa6anqAhMtG1x5JbnrOj9NdaLeBbCKBDQ+/Ykzk3nZ8o+0UMsaXNZo7IVL83VVjHg==}
     engines: {node: '>=18'}
 
-  '@langchain/ollama@0.1.5':
-    resolution: {integrity: sha512-S2tF94uIJtXavekKg10LvTV+jIelOIrubaCnje8BopfiNOVcnzsSulUL4JH0wvdxMZq0vbE4/i9RwC2q9ivOmA==}
+  '@langchain/ollama@0.2.0':
+    resolution: {integrity: sha512-jLlYFqt+nbhaJKLakk7lRTWHZJ7wHeJLM6yuv4jToQ8zPzpL//372+MjggDoW0mnw8ofysg1T2C6mEJspKJtiA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
@@ -6224,11 +6224,13 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/ollama@0.1.5(@langchain/core@0.3.42)':
+  '@langchain/ollama@0.2.0(@langchain/core@0.3.42)':
     dependencies:
       '@langchain/core': 0.3.42
       ollama: 0.5.12
       uuid: 10.0.0
+      zod: 3.24.2
+      zod-to-json-schema: 3.24.3(zod@3.24.2)
 
   '@manypkg/find-root@1.1.0':
     dependencies:

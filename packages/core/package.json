@@ -87,6 +87,6 @@
     },
     "dependencies": {
         "@langchain/core": "^0.3.20",
-        "@langchain/ollama": "^0.1.2"
+        "@langchain/ollama": "^0.2.0"
     }
 }
