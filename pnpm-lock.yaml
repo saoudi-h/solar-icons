@@ -325,8 +325,8 @@ importers:
         specifier: ^8.4.0
         version: 8.17.0(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3)
       eslint-plugin-storybook:
-        specifier: ^0.11.1
-        version: 0.11.6(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3)
+        specifier: ^0.12.0
+        version: 0.12.0(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3)
       prettier:
         specifier: ^3.3.3
         version: 3.4.2
@@ -2992,8 +2992,8 @@ packages:
     peerDependencies:
       eslint: '>=8.44.0'
 
-  eslint-plugin-storybook@0.11.6:
-    resolution: {integrity: sha512-3WodYD6Bs9ACqnB+TP2TuLh774c/nacAjxSKOP9bHJ2c8rf+nrhocxjjeAWNmO9IPkFIzTKlcl0vNXI2yYpVOw==}
+  eslint-plugin-storybook@0.12.0:
+    resolution: {integrity: sha512-Lg5I0+npTgiYgZ4KSvGWGDFZi3eOCNJPaWX0c9rTEEXC5wvooOClsP9ZtbI4hhFKyKgYR877KiJxbRTSJq9gWA==}
     engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=8'
@@ -8089,7 +8089,7 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-storybook@0.11.6(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3):
+  eslint-plugin-storybook@0.12.0(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3):
     dependencies:
       '@storybook/csf': 0.1.13
       '@typescript-eslint/utils': 8.17.0(eslint@9.16.0(jiti@2.4.2))(typescript@5.7.3)
