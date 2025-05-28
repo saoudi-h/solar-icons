@@ -29,7 +29,7 @@ importers:
         version: 9.6.1
       '@types/node':
         specifier: ^22.10.1
-        version: 22.15.21
+        version: 22.15.23
       eslint:
         specifier: ^9.16.0
         version: 9.27.0(jiti@2.4.2)
@@ -2273,9 +2273,6 @@ packages:
 
   '@types/node@22.12.0':
     resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
-
-  '@types/node@22.15.21':
-    resolution: {integrity: sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==}
 
   '@types/node@22.15.23':
     resolution: {integrity: sha512-7Ec1zaFPF4RJ0eXu1YT/xgiebqwqoJz8rYPDi/O2BcZ++Wpt0Kq9cl0eg6NN6bYbPnR67ZLo7St5Q3UK0SnARw==}
@@ -7201,10 +7198,6 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
-  '@types/node@22.15.21':
-    dependencies:
-      undici-types: 6.21.0
-
   '@types/node@22.15.23':
     dependencies:
       undici-types: 6.21.0
@@ -8471,7 +8464,7 @@ snapshots:
 
   figma-api@1.12.0:
     dependencies:
-      '@types/node': 22.15.23
+      '@types/node': 22.12.0
       axios: 0.27.2
     transitivePeerDependencies:
       - debug
