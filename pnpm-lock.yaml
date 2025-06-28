@@ -35,7 +35,7 @@ importers:
         version: 9.29.0(jiti@2.4.2)
       prettier:
         specifier: ^3.4.2
-        version: 3.6.0
+        version: 3.6.2
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -4480,8 +4480,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  prettier@3.6.0:
-    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -10084,7 +10084,7 @@ snapshots:
 
   prettier@3.4.2: {}
 
-  prettier@3.6.0: {}
+  prettier@3.6.2: {}
 
   process-warning@4.0.0: {}
 
