@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
-import { Home } from '@solar-icons/react/ssr/category'
+import * as solar from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Heading } from '@/components/ui/heading'
-import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
+import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { MotionShapeSvg } from './ShapeSvg'
 import { IconContainer } from '@/components/ui/icon-container'
 import { MotionHeading } from '@/components/ui/motion'
@@ -22,26 +22,26 @@ const features: FeatureCardProps[] = [
     {
         title: 'Multi-Style Support',
         content: '7,000+ Unique Icons Across Diverse Categories',
-        Icon: Home.BedsideTable3,
+        Icon: solar.Tools.PaletteRound,
     },
     {
         title: 'Cross-Framework Compatibility',
         content: 'Multi-Style Variations: Bold, Linear, Outline, and more',
-        Icon: Home.Closet2,
+        Icon: solar.TextFormatting.Link,
     },
     {
         title: 'Easy Integration',
         content: 'Optimized for Performance and Versatility',
-        Icon: Home.BedsideTable4,
+        Icon: solar.Devices.PlugCircle,
     },
     {
         title: 'Adaptations for Multiple Frameworks',
         content: 'Optimized for Performance and Versatility',
-        Icon: Home.Condicioner2,
+        Icon: solar.Map.Globus,
     },
 ]
 
-export const FeatureSection = () => {
+export const FeaturesSection = () => {
     const ref = React.useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -65,7 +65,7 @@ export const FeatureSection = () => {
     }
 
     return (
-        <MotionSection className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
+        <SectionMotion className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
             <motion.div
                 className="absolute inset-0 overflow-hidden flex items-center justify-center"
                 ref={ref}>
@@ -80,6 +80,7 @@ export const FeatureSection = () => {
                         variants={itemVariants}
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}
+                        className="pb-16"
                         custom={0}>
                         Why Choose{' '}
                         <span className="decoration-primary decoration-clone underline-offset-8 underline">
@@ -122,7 +123,7 @@ export const FeatureSection = () => {
                     </div>
                 </div>
             </div>
-        </MotionSection>
+        </SectionMotion>
     )
 }
 
@@ -140,10 +141,10 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
                     justify="center"
                     className={cn(
                         hovered && 'text-primary',
-                        'flex flex-row gap-4 items-center transition-colors duration-300 ease-in-out'
+                        'flex flex-row gap-4 items-start transition-colors duration-300 ease-in-out'
                     )}>
                     <IconContainer>
-                        <Icon weight="BoldDuotone" size="24" />
+                        <Icon weight="BoldDuotone" size="32" />
                     </IconContainer>
                     {title}
                 </Heading>

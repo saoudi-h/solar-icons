@@ -22,7 +22,7 @@ interface IconProviderWrapperProps {
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
     defaultColor = '#9fcfe6',
-    defaultSize = 24,
+    defaultSize = 64,
     defaultWeight = 'BoldDuotone',
 }) => {
     return (

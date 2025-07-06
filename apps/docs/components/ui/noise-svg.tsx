@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 const NoiseSvg = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => (

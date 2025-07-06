@@ -34,14 +34,9 @@ export function CopyButton({
             size="icon"
             colors="accent"
             variant={variant}
-            className={cn(
-                '',
-                className
-            )}
+            className={cn('', className)}
             onClick={() => {
-                copyToClipboard(
-                    value
-                )
+                copyToClipboard(value)
                 setHasCopied(true)
             }}
             {...props}>

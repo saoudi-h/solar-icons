@@ -1,9 +1,8 @@
 import React from 'react'
-import { Button } from '@/components/ui/button'
 import { HeroRotation } from './HeroRotation'
 import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
-import Link from 'next/link'
+import { SuperButton, SuperButtonProps } from '@/components/ui/SuperButton'
 
 export interface HeroSectionProps {
     title: {
@@ -11,16 +10,9 @@ export interface HeroSectionProps {
         part2: string
     }
     content: string
-    getStarted: {
-        label: string
-        href: string
-    }
-    exploreIcons: {
-        label: string
-        href: string
-    }
+    getStarted: SuperButtonProps
+    exploreIcons: SuperButtonProps
 }
-
 export const HeroSection: React.FC<HeroSectionProps> = ({
     title,
     content,
@@ -50,12 +42,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         {content}
                     </p>
                     <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                        <Button asChild variant="default" className="rounded-full" size="xl">
-                            <Link href={getStarted.href || '#'}>{getStarted.label}</Link>
+                        <SuperButton {...getStarted}></SuperButton>
+                        <SuperButton {...exploreIcons}></SuperButton>
+                        {/* <Button
+                            asChild
+                            variant="default"
+                            size="xl"
+                            className="rounded-full hover:shadow-md transform-origin-center hover:rotate-6 hover:scale-110 transition-all px-4">
+                            <Link href={getStarted.href || '#'} className="flex flex-row gap-4">
+                                <getStarted.Icon size={24} />
+                                {getStarted.label}
+                            </Link>
                         </Button>
-                        <Button colors="secondary" variant="outline" className="rounded-full" size="xl">
-                            <Link href={exploreIcons.href || '#'}>{exploreIcons.label}</Link>
-                        </Button>
+                        <Button
+                            asChild
+                            colors="secondary"
+                            variant="outline"
+                            className="rounded-full hover:shadow-md transform-origin-center hover:-rotate-6 hover:scale-110 transition-all px-4"
+                            size="xl">
+                            <Link href={exploreIcons.href || '#'} className="flex flex-row gap-4">
+                                <exploreIcons.Icon size={24} />
+                                {exploreIcons.label}
+                            </Link>
+                        </Button> */}
                     </div>
                 </div>
                 <HeroRotation />

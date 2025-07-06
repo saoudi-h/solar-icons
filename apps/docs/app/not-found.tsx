@@ -1,9 +1,9 @@
+'use client'
 import React from 'react'
 import { Heading } from '@/components/ui/heading'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { config } from '@/config'
+import { SuperButton, SuperButtonProps } from '@/components/ui/SuperButton'
 
 export interface NotFoundProps {
     title: {
@@ -11,16 +11,8 @@ export interface NotFoundProps {
         part2: string
     }
     description: string
-    primaryAction: {
-        label: string
-        href: string
-        icon: React.ReactElement
-    }
-    secondaryAction: {
-        label: string
-        href: string
-        icon: React.ReactElement
-    }
+    primaryAction: SuperButtonProps
+    secondaryAction: SuperButtonProps
 }
 const notfound = () => {
     const { title, description, primaryAction, secondaryAction } = config.notFound
@@ -46,19 +38,12 @@ const notfound = () => {
                         <p className="text-center text-base text-muted-foreground sm:w-[466px] md:text-lg md:leading-6">
                             {description}
                         </p>
-                        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                            <Button asChild colors="secondary" className="rounded-full" size="xl">
-                                <Link href={secondaryAction.href || '#'}>
-                                    {secondaryAction.icon}
-                                    {secondaryAction.label}
-                                </Link>
-                            </Button>
-                            <Button asChild variant="default" className="rounded-full" size="xl">
-                                <Link href={primaryAction.href || '#'}>
-                                    {primaryAction.icon}
-                                    {primaryAction.label}
-                                </Link>
-                            </Button>
+                        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6 mt-6">
+                            <SuperButton {...secondaryAction}></SuperButton>
+                            <SuperButton
+                                label={primaryAction.label}
+                                onClick={() => history.back()}
+                                Icon={primaryAction.Icon}></SuperButton>
                         </div>
                     </div>
                 </div>

@@ -10,12 +10,12 @@ const itemVariants = {
     },
 }
 
-type SectionMotionProps = MotionProps & React.HTMLAttributes<HTMLElement>
+type FooterMotionProps = MotionProps & React.HTMLAttributes<HTMLElement>
 
-export const SectionMotion = forwardRef<HTMLElement, SectionMotionProps>(
+export const FooterMotion = forwardRef<HTMLElement, FooterMotionProps>(
     ({ children, ...props }, ref) => {
         return (
-            <motion.section
+            <motion.footer
                 ref={ref}
                 initial="hidden"
                 whileInView="visible"
@@ -23,9 +23,9 @@ export const SectionMotion = forwardRef<HTMLElement, SectionMotionProps>(
                 variants={itemVariants}
                 {...props}>
                 {children}
-            </motion.section>
+            </motion.footer>
         )
     }
 )
 
-SectionMotion.displayName = 'SectionMotion'
+FooterMotion.displayName = 'FooterMotion'

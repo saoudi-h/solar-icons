@@ -3,5173 +3,5173 @@
 import { solar } from '@solar-icons/react'
 
 export const icons = {
-    "messages": {
-        tags: ["messages","conversation"],
+    messages: {
+        tags: ['messages', 'conversation'],
         icons: {
-           "chat-round-money": {
+            'chat-round-money': {
                 pascalName: 'ChatRoundMoney',
-                import: solar.Messages.ChatRoundMoney    
+                import: solar.Messages.ChatRoundMoney,
             },
-           "chat-unread": {
+            'chat-unread': {
                 pascalName: 'ChatUnread',
-                import: solar.Messages.ChatUnread    
+                import: solar.Messages.ChatUnread,
             },
-           "letter-unread": {
+            'letter-unread': {
                 pascalName: 'LetterUnread',
-                import: solar.Messages.LetterUnread    
+                import: solar.Messages.LetterUnread,
             },
-           "chat-line": {
+            'chat-line': {
                 pascalName: 'ChatLine',
-                import: solar.Messages.ChatLine    
+                import: solar.Messages.ChatLine,
             },
-           "inbox-archive": {
+            'inbox-archive': {
                 pascalName: 'InboxArchive',
-                import: solar.Messages.InboxArchive    
+                import: solar.Messages.InboxArchive,
             },
-           "chat-round-video": {
+            'chat-round-video': {
                 pascalName: 'ChatRoundVideo',
-                import: solar.Messages.ChatRoundVideo    
+                import: solar.Messages.ChatRoundVideo,
             },
-           "pen-2": {
+            'pen-2': {
                 pascalName: 'Pen2',
-                import: solar.Messages.Pen2    
+                import: solar.Messages.Pen2,
             },
-           "inbox-out": {
+            'inbox-out': {
                 pascalName: 'InboxOut',
-                import: solar.Messages.InboxOut    
+                import: solar.Messages.InboxOut,
             },
-           "paperclip-rounded-2": {
+            'paperclip-rounded-2': {
                 pascalName: 'PaperclipRounded2',
-                import: solar.Messages.PaperclipRounded2    
+                import: solar.Messages.PaperclipRounded2,
             },
-           "dialog": {
+            dialog: {
                 pascalName: 'Dialog',
-                import: solar.Messages.Dialog    
+                import: solar.Messages.Dialog,
             },
-           "chat-square-like": {
+            'chat-square-like': {
                 pascalName: 'ChatSquareLike',
-                import: solar.Messages.ChatSquareLike    
+                import: solar.Messages.ChatSquareLike,
             },
-           "chat-square-arrow": {
+            'chat-square-arrow': {
                 pascalName: 'ChatSquareArrow',
-                import: solar.Messages.ChatSquareArrow    
+                import: solar.Messages.ChatSquareArrow,
             },
-           "square-share-line": {
+            'square-share-line': {
                 pascalName: 'SquareShareLine',
-                import: solar.Messages.SquareShareLine    
+                import: solar.Messages.SquareShareLine,
             },
-           "check-read": {
+            'check-read': {
                 pascalName: 'CheckRead',
-                import: solar.Messages.CheckRead    
+                import: solar.Messages.CheckRead,
             },
-           "chat-round": {
+            'chat-round': {
                 pascalName: 'ChatRound',
-                import: solar.Messages.ChatRound    
+                import: solar.Messages.ChatRound,
             },
-           "chat-round-call": {
+            'chat-round-call': {
                 pascalName: 'ChatRoundCall',
-                import: solar.Messages.ChatRoundCall    
+                import: solar.Messages.ChatRoundCall,
             },
-           "inbox-unread": {
+            'inbox-unread': {
                 pascalName: 'InboxUnread',
-                import: solar.Messages.InboxUnread    
+                import: solar.Messages.InboxUnread,
             },
-           "multiple-forward-left": {
+            'multiple-forward-left': {
                 pascalName: 'MultipleForwardLeft',
-                import: solar.Messages.MultipleForwardLeft    
+                import: solar.Messages.MultipleForwardLeft,
             },
-           "chat-round-dots": {
+            'chat-round-dots': {
                 pascalName: 'ChatRoundDots',
-                import: solar.Messages.ChatRoundDots    
+                import: solar.Messages.ChatRoundDots,
             },
-           "forward-right": {
+            'forward-right': {
                 pascalName: 'ForwardRight',
-                import: solar.Messages.ForwardRight    
+                import: solar.Messages.ForwardRight,
             },
-           "chat-dots": {
+            'chat-dots': {
                 pascalName: 'ChatDots',
-                import: solar.Messages.ChatDots    
+                import: solar.Messages.ChatDots,
             },
-           "chat-round-unread": {
+            'chat-round-unread': {
                 pascalName: 'ChatRoundUnread',
-                import: solar.Messages.ChatRoundUnread    
+                import: solar.Messages.ChatRoundUnread,
             },
-           "inbox": {
+            inbox: {
                 pascalName: 'Inbox',
-                import: solar.Messages.Inbox    
+                import: solar.Messages.Inbox,
             },
-           "plain-2": {
+            'plain-2': {
                 pascalName: 'Plain2',
-                import: solar.Messages.Plain2    
+                import: solar.Messages.Plain2,
             },
-           "letter-opened": {
+            'letter-opened': {
                 pascalName: 'LetterOpened',
-                import: solar.Messages.LetterOpened    
+                import: solar.Messages.LetterOpened,
             },
-           "pen": {
+            pen: {
                 pascalName: 'Pen',
-                import: solar.Messages.Pen    
+                import: solar.Messages.Pen,
             },
-           "chat-square-call": {
+            'chat-square-call': {
                 pascalName: 'ChatSquareCall',
-                import: solar.Messages.ChatSquareCall    
+                import: solar.Messages.ChatSquareCall,
             },
-           "inbox-line": {
+            'inbox-line': {
                 pascalName: 'InboxLine',
-                import: solar.Messages.InboxLine    
+                import: solar.Messages.InboxLine,
             },
-           "pen-new-round": {
+            'pen-new-round': {
                 pascalName: 'PenNewRound',
-                import: solar.Messages.PenNewRound    
+                import: solar.Messages.PenNewRound,
             },
-           "square-forward": {
+            'square-forward': {
                 pascalName: 'SquareForward',
-                import: solar.Messages.SquareForward    
+                import: solar.Messages.SquareForward,
             },
-           "plain-3": {
+            'plain-3': {
                 pascalName: 'Plain3',
-                import: solar.Messages.Plain3    
+                import: solar.Messages.Plain3,
             },
-           "chat-square-check": {
+            'chat-square-check': {
                 pascalName: 'ChatSquareCheck',
-                import: solar.Messages.ChatSquareCheck    
+                import: solar.Messages.ChatSquareCheck,
             },
-           "chat-round-like": {
+            'chat-round-like': {
                 pascalName: 'ChatRoundLike',
-                import: solar.Messages.ChatRoundLike    
+                import: solar.Messages.ChatRoundLike,
             },
-           "paperclip": {
+            paperclip: {
                 pascalName: 'Paperclip',
-                import: solar.Messages.Paperclip    
+                import: solar.Messages.Paperclip,
             },
-           "dialog-2": {
+            'dialog-2': {
                 pascalName: 'Dialog2',
-                import: solar.Messages.Dialog2    
+                import: solar.Messages.Dialog2,
             },
-           "paperclip-rounded": {
+            'paperclip-rounded': {
                 pascalName: 'PaperclipRounded',
-                import: solar.Messages.PaperclipRounded    
+                import: solar.Messages.PaperclipRounded,
             },
-           "inbox-in": {
+            'inbox-in': {
                 pascalName: 'InboxIn',
-                import: solar.Messages.InboxIn    
+                import: solar.Messages.InboxIn,
             },
-           "chat-square-code": {
+            'chat-square-code': {
                 pascalName: 'ChatSquareCode',
-                import: solar.Messages.ChatSquareCode    
+                import: solar.Messages.ChatSquareCode,
             },
-           "paperclip-2": {
+            'paperclip-2': {
                 pascalName: 'Paperclip2',
-                import: solar.Messages.Paperclip2    
+                import: solar.Messages.Paperclip2,
             },
-           "unread": {
+            unread: {
                 pascalName: 'Unread',
-                import: solar.Messages.Unread    
+                import: solar.Messages.Unread,
             },
-           "pen-new-square": {
+            'pen-new-square': {
                 pascalName: 'PenNewSquare',
-                import: solar.Messages.PenNewSquare    
+                import: solar.Messages.PenNewSquare,
             },
-           "chat-round-line": {
+            'chat-round-line': {
                 pascalName: 'ChatRoundLine',
-                import: solar.Messages.ChatRoundLine    
+                import: solar.Messages.ChatRoundLine,
             },
-           "chat-square": {
+            'chat-square': {
                 pascalName: 'ChatSquare',
-                import: solar.Messages.ChatSquare    
+                import: solar.Messages.ChatSquare,
             },
-           "chat-round-check": {
+            'chat-round-check': {
                 pascalName: 'ChatRoundCheck',
-                import: solar.Messages.ChatRoundCheck    
+                import: solar.Messages.ChatRoundCheck,
             },
-           "letter": {
+            letter: {
                 pascalName: 'Letter',
-                import: solar.Messages.Letter    
+                import: solar.Messages.Letter,
             },
-           "multiple-forward-right": {
+            'multiple-forward-right': {
                 pascalName: 'MultipleForwardRight',
-                import: solar.Messages.MultipleForwardRight    
+                import: solar.Messages.MultipleForwardRight,
             },
-           "mailbox": {
+            mailbox: {
                 pascalName: 'Mailbox',
-                import: solar.Messages.Mailbox    
+                import: solar.Messages.Mailbox,
             },
-           "plain": {
+            plain: {
                 pascalName: 'Plain',
-                import: solar.Messages.Plain    
-            }
+                import: solar.Messages.Plain,
+            },
         },
     },
-    "arrows": {
-        tags: ["arrows"],
+    arrows: {
+        tags: ['arrows'],
         icons: {
-           "square-double-alt-arrow-down": {
+            'square-double-alt-arrow-down': {
                 pascalName: 'SquareDoubleAltArrowDown',
-                import: solar.Arrows.SquareDoubleAltArrowDown    
+                import: solar.Arrows.SquareDoubleAltArrowDown,
             },
-           "square-double-alt-arrow-left": {
+            'square-double-alt-arrow-left': {
                 pascalName: 'SquareDoubleAltArrowLeft',
-                import: solar.Arrows.SquareDoubleAltArrowLeft    
+                import: solar.Arrows.SquareDoubleAltArrowLeft,
             },
-           "square-double-alt-arrow-right": {
+            'square-double-alt-arrow-right': {
                 pascalName: 'SquareDoubleAltArrowRight',
-                import: solar.Arrows.SquareDoubleAltArrowRight    
+                import: solar.Arrows.SquareDoubleAltArrowRight,
             },
-           "square-alt-arrow-right": {
+            'square-alt-arrow-right': {
                 pascalName: 'SquareAltArrowRight',
-                import: solar.Arrows.SquareAltArrowRight    
+                import: solar.Arrows.SquareAltArrowRight,
             },
-           "square-alt-arrow-left": {
+            'square-alt-arrow-left': {
                 pascalName: 'SquareAltArrowLeft',
-                import: solar.Arrows.SquareAltArrowLeft    
+                import: solar.Arrows.SquareAltArrowLeft,
             },
-           "square-alt-arrow-down": {
+            'square-alt-arrow-down': {
                 pascalName: 'SquareAltArrowDown',
-                import: solar.Arrows.SquareAltArrowDown    
+                import: solar.Arrows.SquareAltArrowDown,
             },
-           "square-arrow-left": {
+            'square-arrow-left': {
                 pascalName: 'SquareArrowLeft',
-                import: solar.Arrows.SquareArrowLeft    
+                import: solar.Arrows.SquareArrowLeft,
             },
-           "square-arrow-down": {
+            'square-arrow-down': {
                 pascalName: 'SquareArrowDown',
-                import: solar.Arrows.SquareArrowDown    
+                import: solar.Arrows.SquareArrowDown,
             },
-           "square-arrow-left-up": {
+            'square-arrow-left-up': {
                 pascalName: 'SquareArrowLeftUp',
-                import: solar.Arrows.SquareArrowLeftUp    
+                import: solar.Arrows.SquareArrowLeftUp,
             },
-           "square-arrow-left-down": {
+            'square-arrow-left-down': {
                 pascalName: 'SquareArrowLeftDown',
-                import: solar.Arrows.SquareArrowLeftDown    
+                import: solar.Arrows.SquareArrowLeftDown,
             },
-           "square-arrow-right": {
+            'square-arrow-right': {
                 pascalName: 'SquareArrowRight',
-                import: solar.Arrows.SquareArrowRight    
+                import: solar.Arrows.SquareArrowRight,
             },
-           "square-double-alt-arrow-up": {
+            'square-double-alt-arrow-up': {
                 pascalName: 'SquareDoubleAltArrowUp',
-                import: solar.Arrows.SquareDoubleAltArrowUp    
+                import: solar.Arrows.SquareDoubleAltArrowUp,
             },
-           "square-arrow-up": {
+            'square-arrow-up': {
                 pascalName: 'SquareArrowUp',
-                import: solar.Arrows.SquareArrowUp    
+                import: solar.Arrows.SquareArrowUp,
             },
-           "square-transfer-vertical": {
+            'square-transfer-vertical': {
                 pascalName: 'SquareTransferVertical',
-                import: solar.Arrows.SquareTransferVertical    
+                import: solar.Arrows.SquareTransferVertical,
             },
-           "square-alt-arrow-up": {
+            'square-alt-arrow-up': {
                 pascalName: 'SquareAltArrowUp',
-                import: solar.Arrows.SquareAltArrowUp    
+                import: solar.Arrows.SquareAltArrowUp,
             },
-           "square-arrow-right-up": {
+            'square-arrow-right-up': {
                 pascalName: 'SquareArrowRightUp',
-                import: solar.Arrows.SquareArrowRightUp    
+                import: solar.Arrows.SquareArrowRightUp,
             },
-           "square-arrow-right-down": {
+            'square-arrow-right-down': {
                 pascalName: 'SquareArrowRightDown',
-                import: solar.Arrows.SquareArrowRightDown    
+                import: solar.Arrows.SquareArrowRightDown,
             },
-           "round-alt-arrow-right": {
+            'round-alt-arrow-right': {
                 pascalName: 'RoundAltArrowRight',
-                import: solar.Arrows.RoundAltArrowRight    
+                import: solar.Arrows.RoundAltArrowRight,
             },
-           "round-arrow-left": {
+            'round-arrow-left': {
                 pascalName: 'RoundArrowLeft',
-                import: solar.Arrows.RoundArrowLeft    
+                import: solar.Arrows.RoundArrowLeft,
             },
-           "square-sort-vertical": {
+            'square-sort-vertical': {
                 pascalName: 'SquareSortVertical',
-                import: solar.Arrows.SquareSortVertical    
+                import: solar.Arrows.SquareSortVertical,
             },
-           "round-alt-arrow-left": {
+            'round-alt-arrow-left': {
                 pascalName: 'RoundAltArrowLeft',
-                import: solar.Arrows.RoundAltArrowLeft    
+                import: solar.Arrows.RoundAltArrowLeft,
             },
-           "round-sort-vertical": {
+            'round-sort-vertical': {
                 pascalName: 'RoundSortVertical',
-                import: solar.Arrows.RoundSortVertical    
+                import: solar.Arrows.RoundSortVertical,
             },
-           "square-transfer-horizontal": {
+            'square-transfer-horizontal': {
                 pascalName: 'SquareTransferHorizontal',
-                import: solar.Arrows.SquareTransferHorizontal    
+                import: solar.Arrows.SquareTransferHorizontal,
             },
-           "round-arrow-left-down": {
+            'round-arrow-left-down': {
                 pascalName: 'RoundArrowLeftDown',
-                import: solar.Arrows.RoundArrowLeftDown    
+                import: solar.Arrows.RoundArrowLeftDown,
             },
-           "round-double-alt-arrow-down": {
+            'round-double-alt-arrow-down': {
                 pascalName: 'RoundDoubleAltArrowDown',
-                import: solar.Arrows.RoundDoubleAltArrowDown    
+                import: solar.Arrows.RoundDoubleAltArrowDown,
             },
-           "round-arrow-right": {
+            'round-arrow-right': {
                 pascalName: 'RoundArrowRight',
-                import: solar.Arrows.RoundArrowRight    
+                import: solar.Arrows.RoundArrowRight,
             },
-           "square-sort-horizontal": {
+            'square-sort-horizontal': {
                 pascalName: 'SquareSortHorizontal',
-                import: solar.Arrows.SquareSortHorizontal    
+                import: solar.Arrows.SquareSortHorizontal,
             },
-           "round-arrow-down": {
+            'round-arrow-down': {
                 pascalName: 'RoundArrowDown',
-                import: solar.Arrows.RoundArrowDown    
+                import: solar.Arrows.RoundArrowDown,
             },
-           "round-arrow-left-up": {
+            'round-arrow-left-up': {
                 pascalName: 'RoundArrowLeftUp',
-                import: solar.Arrows.RoundArrowLeftUp    
+                import: solar.Arrows.RoundArrowLeftUp,
             },
-           "round-alt-arrow-up": {
+            'round-alt-arrow-up': {
                 pascalName: 'RoundAltArrowUp',
-                import: solar.Arrows.RoundAltArrowUp    
+                import: solar.Arrows.RoundAltArrowUp,
             },
-           "round-alt-arrow-down": {
+            'round-alt-arrow-down': {
                 pascalName: 'RoundAltArrowDown',
-                import: solar.Arrows.RoundAltArrowDown    
+                import: solar.Arrows.RoundAltArrowDown,
             },
-           "round-double-alt-arrow-left": {
+            'round-double-alt-arrow-left': {
                 pascalName: 'RoundDoubleAltArrowLeft',
-                import: solar.Arrows.RoundDoubleAltArrowLeft    
+                import: solar.Arrows.RoundDoubleAltArrowLeft,
             },
-           "round-sort-horizontal": {
+            'round-sort-horizontal': {
                 pascalName: 'RoundSortHorizontal',
-                import: solar.Arrows.RoundSortHorizontal    
+                import: solar.Arrows.RoundSortHorizontal,
             },
-           "round-transfer-vertical": {
+            'round-transfer-vertical': {
                 pascalName: 'RoundTransferVertical',
-                import: solar.Arrows.RoundTransferVertical    
+                import: solar.Arrows.RoundTransferVertical,
             },
-           "round-transfer-diagonal": {
+            'round-transfer-diagonal': {
                 pascalName: 'RoundTransferDiagonal',
-                import: solar.Arrows.RoundTransferDiagonal    
+                import: solar.Arrows.RoundTransferDiagonal,
             },
-           "round-arrow-right-up": {
+            'round-arrow-right-up': {
                 pascalName: 'RoundArrowRightUp',
-                import: solar.Arrows.RoundArrowRightUp    
+                import: solar.Arrows.RoundArrowRightUp,
             },
-           "round-arrow-right-down": {
+            'round-arrow-right-down': {
                 pascalName: 'RoundArrowRightDown',
-                import: solar.Arrows.RoundArrowRightDown    
+                import: solar.Arrows.RoundArrowRightDown,
             },
-           "transfer-vertical": {
+            'transfer-vertical': {
                 pascalName: 'TransferVertical',
-                import: solar.Arrows.TransferVertical    
+                import: solar.Arrows.TransferVertical,
             },
-           "round-double-alt-arrow-right": {
+            'round-double-alt-arrow-right': {
                 pascalName: 'RoundDoubleAltArrowRight',
-                import: solar.Arrows.RoundDoubleAltArrowRight    
+                import: solar.Arrows.RoundDoubleAltArrowRight,
             },
-           "round-transfer-horizontal": {
+            'round-transfer-horizontal': {
                 pascalName: 'RoundTransferHorizontal',
-                import: solar.Arrows.RoundTransferHorizontal    
+                import: solar.Arrows.RoundTransferHorizontal,
             },
-           "sort-vertical": {
+            'sort-vertical': {
                 pascalName: 'SortVertical',
-                import: solar.Arrows.SortVertical    
+                import: solar.Arrows.SortVertical,
             },
-           "double-alt-arrow-right": {
+            'double-alt-arrow-right': {
                 pascalName: 'DoubleAltArrowRight',
-                import: solar.Arrows.DoubleAltArrowRight    
+                import: solar.Arrows.DoubleAltArrowRight,
             },
-           "transfer-horizontal": {
+            'transfer-horizontal': {
                 pascalName: 'TransferHorizontal',
-                import: solar.Arrows.TransferHorizontal    
+                import: solar.Arrows.TransferHorizontal,
             },
-           "arrow-down": {
+            'arrow-down': {
                 pascalName: 'ArrowDown',
-                import: solar.Arrows.ArrowDown    
+                import: solar.Arrows.ArrowDown,
             },
-           "double-alt-arrow-down": {
+            'double-alt-arrow-down': {
                 pascalName: 'DoubleAltArrowDown',
-                import: solar.Arrows.DoubleAltArrowDown    
+                import: solar.Arrows.DoubleAltArrowDown,
             },
-           "sort-horizontal": {
+            'sort-horizontal': {
                 pascalName: 'SortHorizontal',
-                import: solar.Arrows.SortHorizontal    
+                import: solar.Arrows.SortHorizontal,
             },
-           "round-double-alt-arrow-up": {
+            'round-double-alt-arrow-up': {
                 pascalName: 'RoundDoubleAltArrowUp',
-                import: solar.Arrows.RoundDoubleAltArrowUp    
+                import: solar.Arrows.RoundDoubleAltArrowUp,
             },
-           "double-alt-arrow-up": {
+            'double-alt-arrow-up': {
                 pascalName: 'DoubleAltArrowUp',
-                import: solar.Arrows.DoubleAltArrowUp    
+                import: solar.Arrows.DoubleAltArrowUp,
             },
-           "arrow-left-down": {
+            'arrow-left-down': {
                 pascalName: 'ArrowLeftDown',
-                import: solar.Arrows.ArrowLeftDown    
+                import: solar.Arrows.ArrowLeftDown,
             },
-           "arrow-right-down": {
+            'arrow-right-down': {
                 pascalName: 'ArrowRightDown',
-                import: solar.Arrows.ArrowRightDown    
+                import: solar.Arrows.ArrowRightDown,
             },
-           "arrow-left": {
+            'arrow-left': {
                 pascalName: 'ArrowLeft',
-                import: solar.Arrows.ArrowLeft    
+                import: solar.Arrows.ArrowLeft,
             },
-           "round-arrow-up": {
+            'round-arrow-up': {
                 pascalName: 'RoundArrowUp',
-                import: solar.Arrows.RoundArrowUp    
+                import: solar.Arrows.RoundArrowUp,
             },
-           "arrow-right-up": {
+            'arrow-right-up': {
                 pascalName: 'ArrowRightUp',
-                import: solar.Arrows.ArrowRightUp    
+                import: solar.Arrows.ArrowRightUp,
             },
-           "arrow-right": {
+            'arrow-right': {
                 pascalName: 'ArrowRight',
-                import: solar.Arrows.ArrowRight    
+                import: solar.Arrows.ArrowRight,
             },
-           "double-alt-arrow-left": {
+            'double-alt-arrow-left': {
                 pascalName: 'DoubleAltArrowLeft',
-                import: solar.Arrows.DoubleAltArrowLeft    
+                import: solar.Arrows.DoubleAltArrowLeft,
             },
-           "arrow-left-up": {
+            'arrow-left-up': {
                 pascalName: 'ArrowLeftUp',
-                import: solar.Arrows.ArrowLeftUp    
+                import: solar.Arrows.ArrowLeftUp,
             },
-           "alt-arrow-right": {
+            'alt-arrow-right': {
                 pascalName: 'AltArrowRight',
-                import: solar.Arrows.AltArrowRight    
+                import: solar.Arrows.AltArrowRight,
             },
-           "alt-arrow-up": {
+            'alt-arrow-up': {
                 pascalName: 'AltArrowUp',
-                import: solar.Arrows.AltArrowUp    
+                import: solar.Arrows.AltArrowUp,
             },
-           "arrow-up": {
+            'arrow-up': {
                 pascalName: 'ArrowUp',
-                import: solar.Arrows.ArrowUp    
+                import: solar.Arrows.ArrowUp,
             },
-           "refresh-circle": {
+            'refresh-circle': {
                 pascalName: 'RefreshCircle',
-                import: solar.Arrows.RefreshCircle    
+                import: solar.Arrows.RefreshCircle,
             },
-           "restart": {
+            restart: {
                 pascalName: 'Restart',
-                import: solar.Arrows.Restart    
+                import: solar.Arrows.Restart,
             },
-           "refresh": {
+            refresh: {
                 pascalName: 'Refresh',
-                import: solar.Arrows.Refresh    
+                import: solar.Arrows.Refresh,
             },
-           "restart-circle": {
+            'restart-circle': {
                 pascalName: 'RestartCircle',
-                import: solar.Arrows.RestartCircle    
+                import: solar.Arrows.RestartCircle,
             },
-           "refresh-square": {
+            'refresh-square': {
                 pascalName: 'RefreshSquare',
-                import: solar.Arrows.RefreshSquare    
+                import: solar.Arrows.RefreshSquare,
             },
-           "alt-arrow-down": {
+            'alt-arrow-down': {
                 pascalName: 'AltArrowDown',
-                import: solar.Arrows.AltArrowDown    
+                import: solar.Arrows.AltArrowDown,
             },
-           "alt-arrow-left": {
+            'alt-arrow-left': {
                 pascalName: 'AltArrowLeft',
-                import: solar.Arrows.AltArrowLeft    
+                import: solar.Arrows.AltArrowLeft,
             },
-           "restart-square": {
+            'restart-square': {
                 pascalName: 'RestartSquare',
-                import: solar.Arrows.RestartSquare    
-            }
+                import: solar.Arrows.RestartSquare,
+            },
         },
     },
-    "map": {
-        tags: ["map","location"],
+    map: {
+        tags: ['map', 'location'],
         icons: {
-           "map-point-wave": {
+            'map-point-wave': {
                 pascalName: 'MapPointWave',
-                import: solar.Map.MapPointWave    
+                import: solar.Map.MapPointWave,
             },
-           "map-point": {
+            'map-point': {
                 pascalName: 'MapPoint',
-                import: solar.Map.MapPoint    
+                import: solar.Map.MapPoint,
             },
-           "map-point-remove": {
+            'map-point-remove': {
                 pascalName: 'MapPointRemove',
-                import: solar.Map.MapPointRemove    
+                import: solar.Map.MapPointRemove,
             },
-           "map-point-favourite": {
+            'map-point-favourite': {
                 pascalName: 'MapPointFavourite',
-                import: solar.Map.MapPointFavourite    
+                import: solar.Map.MapPointFavourite,
             },
-           "map-point-hospital": {
+            'map-point-hospital': {
                 pascalName: 'MapPointHospital',
-                import: solar.Map.MapPointHospital    
+                import: solar.Map.MapPointHospital,
             },
-           "map-point-school": {
+            'map-point-school': {
                 pascalName: 'MapPointSchool',
-                import: solar.Map.MapPointSchool    
+                import: solar.Map.MapPointSchool,
             },
-           "map-point-search": {
+            'map-point-search': {
                 pascalName: 'MapPointSearch',
-                import: solar.Map.MapPointSearch    
+                import: solar.Map.MapPointSearch,
             },
-           "compass": {
+            compass: {
                 pascalName: 'Compass',
-                import: solar.Map.Compass    
+                import: solar.Map.Compass,
             },
-           "compass-square": {
+            'compass-square': {
                 pascalName: 'CompassSquare',
-                import: solar.Map.CompassSquare    
+                import: solar.Map.CompassSquare,
             },
-           "people-nearby": {
+            'people-nearby': {
                 pascalName: 'PeopleNearby',
-                import: solar.Map.PeopleNearby    
+                import: solar.Map.PeopleNearby,
             },
-           "map-arrow-left": {
+            'map-arrow-left': {
                 pascalName: 'MapArrowLeft',
-                import: solar.Map.MapArrowLeft    
+                import: solar.Map.MapArrowLeft,
             },
-           "map-point-add": {
+            'map-point-add': {
                 pascalName: 'MapPointAdd',
-                import: solar.Map.MapPointAdd    
+                import: solar.Map.MapPointAdd,
             },
-           "map-arrow-right": {
+            'map-arrow-right': {
                 pascalName: 'MapArrowRight',
-                import: solar.Map.MapArrowRight    
+                import: solar.Map.MapArrowRight,
             },
-           "branching-paths-down": {
+            'branching-paths-down': {
                 pascalName: 'BranchingPathsDown',
-                import: solar.Map.BranchingPathsDown    
+                import: solar.Map.BranchingPathsDown,
             },
-           "branching-paths-up": {
+            'branching-paths-up': {
                 pascalName: 'BranchingPathsUp',
-                import: solar.Map.BranchingPathsUp    
+                import: solar.Map.BranchingPathsUp,
             },
-           "point-on-map": {
+            'point-on-map': {
                 pascalName: 'PointOnMap',
-                import: solar.Map.PointOnMap    
+                import: solar.Map.PointOnMap,
             },
-           "map": {
+            map: {
                 pascalName: 'Map',
-                import: solar.Map.Map    
+                import: solar.Map.Map,
             },
-           "map-arrow-square": {
+            'map-arrow-square': {
                 pascalName: 'MapArrowSquare',
-                import: solar.Map.MapArrowSquare    
+                import: solar.Map.MapArrowSquare,
             },
-           "route": {
+            route: {
                 pascalName: 'Route',
-                import: solar.Map.Route    
+                import: solar.Map.Route,
             },
-           "signpost": {
+            signpost: {
                 pascalName: 'Signpost',
-                import: solar.Map.Signpost    
+                import: solar.Map.Signpost,
             },
-           "global": {
+            global: {
                 pascalName: 'Global',
-                import: solar.Map.Global    
+                import: solar.Map.Global,
             },
-           "streets-navigation": {
+            'streets-navigation': {
                 pascalName: 'StreetsNavigation',
-                import: solar.Map.StreetsNavigation    
+                import: solar.Map.StreetsNavigation,
             },
-           "map-point-rotate": {
+            'map-point-rotate': {
                 pascalName: 'MapPointRotate',
-                import: solar.Map.MapPointRotate    
+                import: solar.Map.MapPointRotate,
             },
-           "map-arrow-down": {
+            'map-arrow-down': {
                 pascalName: 'MapArrowDown',
-                import: solar.Map.MapArrowDown    
+                import: solar.Map.MapArrowDown,
             },
-           "signpost-2": {
+            'signpost-2': {
                 pascalName: 'Signpost2',
-                import: solar.Map.Signpost2    
+                import: solar.Map.Signpost2,
             },
-           "map-arrow-up": {
+            'map-arrow-up': {
                 pascalName: 'MapArrowUp',
-                import: solar.Map.MapArrowUp    
+                import: solar.Map.MapArrowUp,
             },
-           "streets-map-point": {
+            'streets-map-point': {
                 pascalName: 'StreetsMapPoint',
-                import: solar.Map.StreetsMapPoint    
+                import: solar.Map.StreetsMapPoint,
             },
-           "radar-2": {
+            'radar-2': {
                 pascalName: 'Radar2',
-                import: solar.Map.Radar2    
+                import: solar.Map.Radar2,
             },
-           "streets": {
+            streets: {
                 pascalName: 'Streets',
-                import: solar.Map.Streets    
+                import: solar.Map.Streets,
             },
-           "routing": {
+            routing: {
                 pascalName: 'Routing',
-                import: solar.Map.Routing    
+                import: solar.Map.Routing,
             },
-           "point-on-map-perspective": {
+            'point-on-map-perspective': {
                 pascalName: 'PointOnMapPerspective',
-                import: solar.Map.PointOnMapPerspective    
+                import: solar.Map.PointOnMapPerspective,
             },
-           "gps": {
+            gps: {
                 pascalName: 'Gps',
-                import: solar.Map.Gps    
+                import: solar.Map.Gps,
             },
-           "routing-3": {
+            'routing-3': {
                 pascalName: 'Routing3',
-                import: solar.Map.Routing3    
+                import: solar.Map.Routing3,
             },
-           "compass-big": {
+            'compass-big': {
                 pascalName: 'CompassBig',
-                import: solar.Map.CompassBig    
+                import: solar.Map.CompassBig,
             },
-           "globus": {
+            globus: {
                 pascalName: 'Globus',
-                import: solar.Map.Globus    
+                import: solar.Map.Globus,
             },
-           "radar": {
+            radar: {
                 pascalName: 'Radar',
-                import: solar.Map.Radar    
+                import: solar.Map.Radar,
             },
-           "routing-2": {
+            'routing-2': {
                 pascalName: 'Routing2',
-                import: solar.Map.Routing2    
-            }
+                import: solar.Map.Routing2,
+            },
         },
     },
-    "video": {
-        tags: ["video","audio","sound"],
+    video: {
+        tags: ['video', 'audio', 'sound'],
         icons: {
-           "music-note-4": {
+            'music-note-4': {
                 pascalName: 'MusicNote4',
-                import: solar.Video.MusicNote4    
+                import: solar.Video.MusicNote4,
             },
-           "clapperboard": {
+            clapperboard: {
                 pascalName: 'Clapperboard',
-                import: solar.Video.Clapperboard    
+                import: solar.Video.Clapperboard,
             },
-           "rewind-5-seconds-back": {
+            'rewind-5-seconds-back': {
                 pascalName: 'Rewind5SecondsBack',
-                import: solar.Video.Rewind5SecondsBack    
+                import: solar.Video.Rewind5SecondsBack,
             },
-           "record-audio-circle": {
+            'record-audio-circle': {
                 pascalName: 'RecordAudioCircle',
-                import: solar.Video.RecordAudioCircle    
+                import: solar.Video.RecordAudioCircle,
             },
-           "video-frame": {
+            'video-frame': {
                 pascalName: 'VideoFrame',
-                import: solar.Video.VideoFrame    
+                import: solar.Video.VideoFrame,
             },
-           "record": {
+            record: {
                 pascalName: 'Record',
-                import: solar.Video.Record    
+                import: solar.Video.Record,
             },
-           "library": {
+            library: {
                 pascalName: 'Library',
-                import: solar.Video.Library    
+                import: solar.Video.Library,
             },
-           "gallery": {
+            gallery: {
                 pascalName: 'Gallery',
-                import: solar.Video.Gallery    
+                import: solar.Video.Gallery,
             },
-           "microphone-2": {
+            'microphone-2': {
                 pascalName: 'Microphone2',
-                import: solar.Video.Microphone2    
+                import: solar.Video.Microphone2,
             },
-           "video-frame-cut": {
+            'video-frame-cut': {
                 pascalName: 'VideoFrameCut',
-                import: solar.Video.VideoFrameCut    
+                import: solar.Video.VideoFrameCut,
             },
-           "volume-loud": {
+            'volume-loud': {
                 pascalName: 'VolumeLoud',
-                import: solar.Video.VolumeLoud    
+                import: solar.Video.VolumeLoud,
             },
-           "music-note-3": {
+            'music-note-3': {
                 pascalName: 'MusicNote3',
-                import: solar.Video.MusicNote3    
+                import: solar.Video.MusicNote3,
             },
-           "rewind-5-seconds-forward": {
+            'rewind-5-seconds-forward': {
                 pascalName: 'Rewind5SecondsForward',
-                import: solar.Video.Rewind5SecondsForward    
+                import: solar.Video.Rewind5SecondsForward,
             },
-           "soundwave": {
+            soundwave: {
                 pascalName: 'Soundwave',
-                import: solar.Video.Soundwave    
+                import: solar.Video.Soundwave,
             },
-           "vinyl-record": {
+            'vinyl-record': {
                 pascalName: 'VinylRecord',
-                import: solar.Video.VinylRecord    
+                import: solar.Video.VinylRecord,
             },
-           "repeat-one": {
+            'repeat-one': {
                 pascalName: 'RepeatOne',
-                import: solar.Video.RepeatOne    
+                import: solar.Video.RepeatOne,
             },
-           "clapperboard-play": {
+            'clapperboard-play': {
                 pascalName: 'ClapperboardPlay',
-                import: solar.Video.ClapperboardPlay    
+                import: solar.Video.ClapperboardPlay,
             },
-           "repeat": {
+            repeat: {
                 pascalName: 'Repeat',
-                import: solar.Video.Repeat    
+                import: solar.Video.Repeat,
             },
-           "soundwave-square": {
+            'soundwave-square': {
                 pascalName: 'SoundwaveSquare',
-                import: solar.Video.SoundwaveSquare    
+                import: solar.Video.SoundwaveSquare,
             },
-           "gallery-minimalistic": {
+            'gallery-minimalistic': {
                 pascalName: 'GalleryMinimalistic',
-                import: solar.Video.GalleryMinimalistic    
+                import: solar.Video.GalleryMinimalistic,
             },
-           "album": {
+            album: {
                 pascalName: 'Album',
-                import: solar.Video.Album    
+                import: solar.Video.Album,
             },
-           "volume-small": {
+            'volume-small': {
                 pascalName: 'VolumeSmall',
-                import: solar.Video.VolumeSmall    
+                import: solar.Video.VolumeSmall,
             },
-           "clapperboard-open": {
+            'clapperboard-open': {
                 pascalName: 'ClapperboardOpen',
-                import: solar.Video.ClapperboardOpen    
+                import: solar.Video.ClapperboardOpen,
             },
-           "stop": {
+            stop: {
                 pascalName: 'Stop',
-                import: solar.Video.Stop    
+                import: solar.Video.Stop,
             },
-           "microphone-3": {
+            'microphone-3': {
                 pascalName: 'Microphone3',
-                import: solar.Video.Microphone3    
+                import: solar.Video.Microphone3,
             },
-           "microphone": {
+            microphone: {
                 pascalName: 'Microphone',
-                import: solar.Video.Microphone    
+                import: solar.Video.Microphone,
             },
-           "muted": {
+            muted: {
                 pascalName: 'Muted',
-                import: solar.Video.Muted    
+                import: solar.Video.Muted,
             },
-           "repeat-one-minimalistic": {
+            'repeat-one-minimalistic': {
                 pascalName: 'RepeatOneMinimalistic',
-                import: solar.Video.RepeatOneMinimalistic    
+                import: solar.Video.RepeatOneMinimalistic,
             },
-           "play": {
+            play: {
                 pascalName: 'Play',
-                import: solar.Video.Play    
+                import: solar.Video.Play,
             },
-           "gallery-download": {
+            'gallery-download': {
                 pascalName: 'GalleryDownload',
-                import: solar.Video.GalleryDownload    
+                import: solar.Video.GalleryDownload,
             },
-           "soundwave-circle": {
+            'soundwave-circle': {
                 pascalName: 'SoundwaveCircle',
-                import: solar.Video.SoundwaveCircle    
+                import: solar.Video.SoundwaveCircle,
             },
-           "pause": {
+            pause: {
                 pascalName: 'Pause',
-                import: solar.Video.Pause    
+                import: solar.Video.Pause,
             },
-           "gallery-wide": {
+            'gallery-wide': {
                 pascalName: 'GalleryWide',
-                import: solar.Video.GalleryWide    
+                import: solar.Video.GalleryWide,
             },
-           "video-frame-cut-2": {
+            'video-frame-cut-2': {
                 pascalName: 'VideoFrameCut2',
-                import: solar.Video.VideoFrameCut2    
+                import: solar.Video.VideoFrameCut2,
             },
-           "vinyl": {
+            vinyl: {
                 pascalName: 'Vinyl',
-                import: solar.Video.Vinyl    
+                import: solar.Video.Vinyl,
             },
-           "music-note-2": {
+            'music-note-2': {
                 pascalName: 'MusicNote2',
-                import: solar.Video.MusicNote2    
+                import: solar.Video.MusicNote2,
             },
-           "rewind-15-seconds-forward": {
+            'rewind-15-seconds-forward': {
                 pascalName: 'Rewind15SecondsForward',
-                import: solar.Video.Rewind15SecondsForward    
+                import: solar.Video.Rewind15SecondsForward,
             },
-           "video-frame-replace": {
+            'video-frame-replace': {
                 pascalName: 'VideoFrameReplace',
-                import: solar.Video.VideoFrameReplace    
+                import: solar.Video.VideoFrameReplace,
             },
-           "play-stream": {
+            'play-stream': {
                 pascalName: 'PlayStream',
-                import: solar.Video.PlayStream    
+                import: solar.Video.PlayStream,
             },
-           "video-library": {
+            'video-library': {
                 pascalName: 'VideoLibrary',
-                import: solar.Video.VideoLibrary    
+                import: solar.Video.VideoLibrary,
             },
-           "clapperboard-open-play": {
+            'clapperboard-open-play': {
                 pascalName: 'ClapperboardOpenPlay',
-                import: solar.Video.ClapperboardOpenPlay    
+                import: solar.Video.ClapperboardOpenPlay,
             },
-           "rewind-15-seconds-back": {
+            'rewind-15-seconds-back': {
                 pascalName: 'Rewind15SecondsBack',
-                import: solar.Video.Rewind15SecondsBack    
+                import: solar.Video.Rewind15SecondsBack,
             },
-           "volume": {
+            volume: {
                 pascalName: 'Volume',
-                import: solar.Video.Volume    
+                import: solar.Video.Volume,
             },
-           "music-note": {
+            'music-note': {
                 pascalName: 'MusicNote',
-                import: solar.Video.MusicNote    
+                import: solar.Video.MusicNote,
             },
-           "rewind-forward": {
+            'rewind-forward': {
                 pascalName: 'RewindForward',
-                import: solar.Video.RewindForward    
+                import: solar.Video.RewindForward,
             },
-           "gallery-send": {
+            'gallery-send': {
                 pascalName: 'GallerySend',
-                import: solar.Video.GallerySend    
+                import: solar.Video.GallerySend,
             },
-           "gallery-add": {
+            'gallery-add': {
                 pascalName: 'GalleryAdd',
-                import: solar.Video.GalleryAdd    
+                import: solar.Video.GalleryAdd,
             },
-           "video-frame-2": {
+            'video-frame-2': {
                 pascalName: 'VideoFrame2',
-                import: solar.Video.VideoFrame2    
+                import: solar.Video.VideoFrame2,
             },
-           "gallery-remove": {
+            'gallery-remove': {
                 pascalName: 'GalleryRemove',
-                import: solar.Video.GalleryRemove    
+                import: solar.Video.GalleryRemove,
             },
-           "wallpaper": {
+            wallpaper: {
                 pascalName: 'Wallpaper',
-                import: solar.Video.Wallpaper    
+                import: solar.Video.Wallpaper,
             },
-           "music-library-2": {
+            'music-library-2': {
                 pascalName: 'MusicLibrary2',
-                import: solar.Video.MusicLibrary2    
+                import: solar.Video.MusicLibrary2,
             },
-           "microphone-large": {
+            'microphone-large': {
                 pascalName: 'MicrophoneLarge',
-                import: solar.Video.MicrophoneLarge    
+                import: solar.Video.MicrophoneLarge,
             },
-           "clapperboard-edit": {
+            'clapperboard-edit': {
                 pascalName: 'ClapperboardEdit',
-                import: solar.Video.ClapperboardEdit    
+                import: solar.Video.ClapperboardEdit,
             },
-           "rewind-back": {
+            'rewind-back': {
                 pascalName: 'RewindBack',
-                import: solar.Video.RewindBack    
+                import: solar.Video.RewindBack,
             },
-           "upload-track-2": {
+            'upload-track-2': {
                 pascalName: 'UploadTrack2',
-                import: solar.Video.UploadTrack2    
+                import: solar.Video.UploadTrack2,
             },
-           "volume-cross": {
+            'volume-cross': {
                 pascalName: 'VolumeCross',
-                import: solar.Video.VolumeCross    
+                import: solar.Video.VolumeCross,
             },
-           "clapperboard-text": {
+            'clapperboard-text': {
                 pascalName: 'ClapperboardText',
-                import: solar.Video.ClapperboardText    
+                import: solar.Video.ClapperboardText,
             },
-           "rewind-10-seconds-forward": {
+            'rewind-10-seconds-forward': {
                 pascalName: 'Rewind10SecondsForward',
-                import: solar.Video.Rewind10SecondsForward    
+                import: solar.Video.Rewind10SecondsForward,
             },
-           "video-frame-play-vertical": {
+            'video-frame-play-vertical': {
                 pascalName: 'VideoFramePlayVertical',
-                import: solar.Video.VideoFramePlayVertical    
+                import: solar.Video.VideoFramePlayVertical,
             },
-           "music-library": {
+            'music-library': {
                 pascalName: 'MusicLibrary',
-                import: solar.Video.MusicLibrary    
+                import: solar.Video.MusicLibrary,
             },
-           "podcast": {
+            podcast: {
                 pascalName: 'Podcast',
-                import: solar.Video.Podcast    
+                import: solar.Video.Podcast,
             },
-           "music-note-slider-2": {
+            'music-note-slider-2': {
                 pascalName: 'MusicNoteSlider2',
-                import: solar.Video.MusicNoteSlider2    
+                import: solar.Video.MusicNoteSlider2,
             },
-           "gallery-edit": {
+            'gallery-edit': {
                 pascalName: 'GalleryEdit',
-                import: solar.Video.GalleryEdit    
+                import: solar.Video.GalleryEdit,
             },
-           "upload-track": {
+            'upload-track': {
                 pascalName: 'UploadTrack',
-                import: solar.Video.UploadTrack    
+                import: solar.Video.UploadTrack,
             },
-           "panorama": {
+            panorama: {
                 pascalName: 'Panorama',
-                import: solar.Video.Panorama    
+                import: solar.Video.Panorama,
             },
-           "skip-next": {
+            'skip-next': {
                 pascalName: 'SkipNext',
-                import: solar.Video.SkipNext    
+                import: solar.Video.SkipNext,
             },
-           "gallery-check": {
+            'gallery-check': {
                 pascalName: 'GalleryCheck',
-                import: solar.Video.GalleryCheck    
+                import: solar.Video.GalleryCheck,
             },
-           "music-note-slider": {
+            'music-note-slider': {
                 pascalName: 'MusicNoteSlider',
-                import: solar.Video.MusicNoteSlider    
+                import: solar.Video.MusicNoteSlider,
             },
-           "music-notes": {
+            'music-notes': {
                 pascalName: 'MusicNotes',
-                import: solar.Video.MusicNotes    
+                import: solar.Video.MusicNotes,
             },
-           "video-frame-play-horizontal": {
+            'video-frame-play-horizontal': {
                 pascalName: 'VideoFramePlayHorizontal',
-                import: solar.Video.VideoFramePlayHorizontal    
+                import: solar.Video.VideoFramePlayHorizontal,
             },
-           "gallery-favourite": {
+            'gallery-favourite': {
                 pascalName: 'GalleryFavourite',
-                import: solar.Video.GalleryFavourite    
+                import: solar.Video.GalleryFavourite,
             },
-           "pause-circle": {
+            'pause-circle': {
                 pascalName: 'PauseCircle',
-                import: solar.Video.PauseCircle    
+                import: solar.Video.PauseCircle,
             },
-           "gallery-circle": {
+            'gallery-circle': {
                 pascalName: 'GalleryCircle',
-                import: solar.Video.GalleryCircle    
+                import: solar.Video.GalleryCircle,
             },
-           "play-circle": {
+            'play-circle': {
                 pascalName: 'PlayCircle',
-                import: solar.Video.PlayCircle    
+                import: solar.Video.PlayCircle,
             },
-           "rewind-forward-circle": {
+            'rewind-forward-circle': {
                 pascalName: 'RewindForwardCircle',
-                import: solar.Video.RewindForwardCircle    
+                import: solar.Video.RewindForwardCircle,
             },
-           "skip-previous": {
+            'skip-previous': {
                 pascalName: 'SkipPrevious',
-                import: solar.Video.SkipPrevious    
+                import: solar.Video.SkipPrevious,
             },
-           "videocamera": {
+            videocamera: {
                 pascalName: 'Videocamera',
-                import: solar.Video.Videocamera    
+                import: solar.Video.Videocamera,
             },
-           "gallery-round": {
+            'gallery-round': {
                 pascalName: 'GalleryRound',
-                import: solar.Video.GalleryRound    
+                import: solar.Video.GalleryRound,
             },
-           "videocamera-record": {
+            'videocamera-record': {
                 pascalName: 'VideocameraRecord',
-                import: solar.Video.VideocameraRecord    
+                import: solar.Video.VideocameraRecord,
             },
-           "rewind-back-circle": {
+            'rewind-back-circle': {
                 pascalName: 'RewindBackCircle',
-                import: solar.Video.RewindBackCircle    
+                import: solar.Video.RewindBackCircle,
             },
-           "camera-square": {
+            'camera-square': {
                 pascalName: 'CameraSquare',
-                import: solar.Video.CameraSquare    
+                import: solar.Video.CameraSquare,
             },
-           "stream": {
+            stream: {
                 pascalName: 'Stream',
-                import: solar.Video.Stream    
+                import: solar.Video.Stream,
             },
-           "stop-circle": {
+            'stop-circle': {
                 pascalName: 'StopCircle',
-                import: solar.Video.StopCircle    
+                import: solar.Video.StopCircle,
             },
-           "videocamera-add": {
+            'videocamera-add': {
                 pascalName: 'VideocameraAdd',
-                import: solar.Video.VideocameraAdd    
+                import: solar.Video.VideocameraAdd,
             },
-           "camera-add": {
+            'camera-add': {
                 pascalName: 'CameraAdd',
-                import: solar.Video.CameraAdd    
+                import: solar.Video.CameraAdd,
             },
-           "camera-minimalistic": {
+            'camera-minimalistic': {
                 pascalName: 'CameraMinimalistic',
-                import: solar.Video.CameraMinimalistic    
+                import: solar.Video.CameraMinimalistic,
             },
-           "camera": {
+            camera: {
                 pascalName: 'Camera',
-                import: solar.Video.Camera    
+                import: solar.Video.Camera,
             },
-           "rewind-10-seconds-back": {
+            'rewind-10-seconds-back': {
                 pascalName: 'Rewind10SecondsBack',
-                import: solar.Video.Rewind10SecondsBack    
+                import: solar.Video.Rewind10SecondsBack,
             },
-           "playback-speed": {
+            'playback-speed': {
                 pascalName: 'PlaybackSpeed',
-                import: solar.Video.PlaybackSpeed    
+                import: solar.Video.PlaybackSpeed,
             },
-           "shuffle": {
+            shuffle: {
                 pascalName: 'Shuffle',
-                import: solar.Video.Shuffle    
+                import: solar.Video.Shuffle,
             },
-           "camera-rotate": {
+            'camera-rotate': {
                 pascalName: 'CameraRotate',
-                import: solar.Video.CameraRotate    
+                import: solar.Video.CameraRotate,
             },
-           "to-pip": {
+            'to-pip': {
                 pascalName: 'ToPip',
-                import: solar.Video.ToPip    
+                import: solar.Video.ToPip,
             },
-           "pip": {
+            pip: {
                 pascalName: 'Pip',
-                import: solar.Video.Pip    
+                import: solar.Video.Pip,
             },
-           "reel-2": {
+            'reel-2': {
                 pascalName: 'Reel2',
-                import: solar.Video.Reel2    
+                import: solar.Video.Reel2,
             },
-           "reel": {
+            reel: {
                 pascalName: 'Reel',
-                import: solar.Video.Reel    
+                import: solar.Video.Reel,
             },
-           "pip-2": {
+            'pip-2': {
                 pascalName: 'Pip2',
-                import: solar.Video.Pip2    
+                import: solar.Video.Pip2,
             },
-           "quit-pip": {
+            'quit-pip': {
                 pascalName: 'QuitPip',
-                import: solar.Video.QuitPip    
+                import: solar.Video.QuitPip,
             },
-           "full-screen-square": {
+            'full-screen-square': {
                 pascalName: 'FullScreenSquare',
-                import: solar.Video.FullScreenSquare    
+                import: solar.Video.FullScreenSquare,
             },
-           "full-screen": {
+            'full-screen': {
                 pascalName: 'FullScreen',
-                import: solar.Video.FullScreen    
+                import: solar.Video.FullScreen,
             },
-           "quit-full-screen": {
+            'quit-full-screen': {
                 pascalName: 'QuitFullScreen',
-                import: solar.Video.QuitFullScreen    
+                import: solar.Video.QuitFullScreen,
             },
-           "quit-full-screen-circle": {
+            'quit-full-screen-circle': {
                 pascalName: 'QuitFullScreenCircle',
-                import: solar.Video.QuitFullScreenCircle    
+                import: solar.Video.QuitFullScreenCircle,
             },
-           "quit-full-screen-square": {
+            'quit-full-screen-square': {
                 pascalName: 'QuitFullScreenSquare',
-                import: solar.Video.QuitFullScreenSquare    
+                import: solar.Video.QuitFullScreenSquare,
             },
-           "full-screen-circle": {
+            'full-screen-circle': {
                 pascalName: 'FullScreenCircle',
-                import: solar.Video.FullScreenCircle    
-            }
+                import: solar.Video.FullScreenCircle,
+            },
         },
     },
-    "money": {
-        tags: ["money"],
+    money: {
+        tags: ['money'],
         icons: {
-           "cardholder": {
+            cardholder: {
                 pascalName: 'Cardholder',
-                import: solar.Money.Cardholder    
+                import: solar.Money.Cardholder,
             },
-           "wallet-money": {
+            'wallet-money': {
                 pascalName: 'WalletMoney',
-                import: solar.Money.WalletMoney    
+                import: solar.Money.WalletMoney,
             },
-           "wallet": {
+            wallet: {
                 pascalName: 'Wallet',
-                import: solar.Money.Wallet    
+                import: solar.Money.Wallet,
             },
-           "ticker-star": {
+            'ticker-star': {
                 pascalName: 'TickerStar',
-                import: solar.Money.TickerStar    
+                import: solar.Money.TickerStar,
             },
-           "ticket-sale": {
+            'ticket-sale': {
                 pascalName: 'TicketSale',
-                import: solar.Money.TicketSale    
+                import: solar.Money.TicketSale,
             },
-           "card-transfer": {
+            'card-transfer': {
                 pascalName: 'CardTransfer',
-                import: solar.Money.CardTransfer    
+                import: solar.Money.CardTransfer,
             },
-           "card-2": {
+            'card-2': {
                 pascalName: 'Card2',
-                import: solar.Money.Card2    
+                import: solar.Money.Card2,
             },
-           "card-recive": {
+            'card-recive': {
                 pascalName: 'CardRecive',
-                import: solar.Money.CardRecive    
+                import: solar.Money.CardRecive,
             },
-           "card-send": {
+            'card-send': {
                 pascalName: 'CardSend',
-                import: solar.Money.CardSend    
+                import: solar.Money.CardSend,
             },
-           "wallet-2": {
+            'wallet-2': {
                 pascalName: 'Wallet2',
-                import: solar.Money.Wallet2    
+                import: solar.Money.Wallet2,
             },
-           "card-search": {
+            'card-search': {
                 pascalName: 'CardSearch',
-                import: solar.Money.CardSearch    
+                import: solar.Money.CardSearch,
             },
-           "sale": {
+            sale: {
                 pascalName: 'Sale',
-                import: solar.Money.Sale    
+                import: solar.Money.Sale,
             },
-           "tag": {
+            tag: {
                 pascalName: 'Tag',
-                import: solar.Money.Tag    
+                import: solar.Money.Tag,
             },
-           "ticket": {
+            ticket: {
                 pascalName: 'Ticket',
-                import: solar.Money.Ticket    
+                import: solar.Money.Ticket,
             },
-           "card": {
+            card: {
                 pascalName: 'Card',
-                import: solar.Money.Card    
+                import: solar.Money.Card,
             },
-           "euro": {
+            euro: {
                 pascalName: 'Euro',
-                import: solar.Money.Euro    
+                import: solar.Money.Euro,
             },
-           "tag-price": {
+            'tag-price': {
                 pascalName: 'TagPrice',
-                import: solar.Money.TagPrice    
+                import: solar.Money.TagPrice,
             },
-           "sale-square": {
+            'sale-square': {
                 pascalName: 'SaleSquare',
-                import: solar.Money.SaleSquare    
+                import: solar.Money.SaleSquare,
             },
-           "ruble": {
+            ruble: {
                 pascalName: 'Ruble',
-                import: solar.Money.Ruble    
+                import: solar.Money.Ruble,
             },
-           "banknote": {
+            banknote: {
                 pascalName: 'Banknote',
-                import: solar.Money.Banknote    
+                import: solar.Money.Banknote,
             },
-           "verified-check": {
+            'verified-check': {
                 pascalName: 'VerifiedCheck',
-                import: solar.Money.VerifiedCheck    
+                import: solar.Money.VerifiedCheck,
             },
-           "banknote-2": {
+            'banknote-2': {
                 pascalName: 'Banknote2',
-                import: solar.Money.Banknote2    
+                import: solar.Money.Banknote2,
             },
-           "wad-of-money": {
+            'wad-of-money': {
                 pascalName: 'WadOfMoney',
-                import: solar.Money.WadOfMoney    
+                import: solar.Money.WadOfMoney,
             },
-           "safe-square": {
+            'safe-square': {
                 pascalName: 'SafeSquare',
-                import: solar.Money.SafeSquare    
+                import: solar.Money.SafeSquare,
             },
-           "safe-circle": {
+            'safe-circle': {
                 pascalName: 'SafeCircle',
-                import: solar.Money.SafeCircle    
+                import: solar.Money.SafeCircle,
             },
-           "safe-2": {
+            'safe-2': {
                 pascalName: 'Safe2',
-                import: solar.Money.Safe2    
+                import: solar.Money.Safe2,
             },
-           "dollar-minimalistic": {
+            'dollar-minimalistic': {
                 pascalName: 'DollarMinimalistic',
-                import: solar.Money.DollarMinimalistic    
+                import: solar.Money.DollarMinimalistic,
             },
-           "dollar": {
+            dollar: {
                 pascalName: 'Dollar',
-                import: solar.Money.Dollar    
+                import: solar.Money.Dollar,
             },
-           "bill-list": {
+            'bill-list': {
                 pascalName: 'BillList',
-                import: solar.Money.BillList    
+                import: solar.Money.BillList,
             },
-           "tag-horizontal": {
+            'tag-horizontal': {
                 pascalName: 'TagHorizontal',
-                import: solar.Money.TagHorizontal    
+                import: solar.Money.TagHorizontal,
             },
-           "bill-cross": {
+            'bill-cross': {
                 pascalName: 'BillCross',
-                import: solar.Money.BillCross    
+                import: solar.Money.BillCross,
             },
-           "bill-check": {
+            'bill-check': {
                 pascalName: 'BillCheck',
-                import: solar.Money.BillCheck    
+                import: solar.Money.BillCheck,
             },
-           "money-bag": {
+            'money-bag': {
                 pascalName: 'MoneyBag',
-                import: solar.Money.MoneyBag    
+                import: solar.Money.MoneyBag,
             },
-           "bill": {
+            bill: {
                 pascalName: 'Bill',
-                import: solar.Money.Bill    
+                import: solar.Money.Bill,
             },
-           "cash-out": {
+            'cash-out': {
                 pascalName: 'CashOut',
-                import: solar.Money.CashOut    
-            }
+                import: solar.Money.CashOut,
+            },
         },
     },
-    "devices": {
-        tags: ["devices","electronic"],
+    devices: {
+        tags: ['devices', 'electronic'],
         icons: {
-           "gamepad": {
+            gamepad: {
                 pascalName: 'Gamepad',
-                import: solar.Devices.Gamepad    
+                import: solar.Devices.Gamepad,
             },
-           "gamepad-charge": {
+            'gamepad-charge': {
                 pascalName: 'GamepadCharge',
-                import: solar.Devices.GamepadCharge    
+                import: solar.Devices.GamepadCharge,
             },
-           "gamepad-minimalistic": {
+            'gamepad-minimalistic': {
                 pascalName: 'GamepadMinimalistic',
-                import: solar.Devices.GamepadMinimalistic    
+                import: solar.Devices.GamepadMinimalistic,
             },
-           "gamepad-old": {
+            'gamepad-old': {
                 pascalName: 'GamepadOld',
-                import: solar.Devices.GamepadOld    
+                import: solar.Devices.GamepadOld,
             },
-           "smartphone-rotate-orientation": {
+            'smartphone-rotate-orientation': {
                 pascalName: 'SmartphoneRotateOrientation',
-                import: solar.Devices.SmartphoneRotateOrientation    
+                import: solar.Devices.SmartphoneRotateOrientation,
             },
-           "smartphone-update": {
+            'smartphone-update': {
                 pascalName: 'SmartphoneUpdate',
-                import: solar.Devices.SmartphoneUpdate    
+                import: solar.Devices.SmartphoneUpdate,
             },
-           "smartphone-rotate-2": {
+            'smartphone-rotate-2': {
                 pascalName: 'SmartphoneRotate2',
-                import: solar.Devices.SmartphoneRotate2    
+                import: solar.Devices.SmartphoneRotate2,
             },
-           "smartphone": {
+            smartphone: {
                 pascalName: 'Smartphone',
-                import: solar.Devices.Smartphone    
+                import: solar.Devices.Smartphone,
             },
-           "smartphone-vibration": {
+            'smartphone-vibration': {
                 pascalName: 'SmartphoneVibration',
-                import: solar.Devices.SmartphoneVibration    
+                import: solar.Devices.SmartphoneVibration,
             },
-           "gamepad-no-charge": {
+            'gamepad-no-charge': {
                 pascalName: 'GamepadNoCharge',
-                import: solar.Devices.GamepadNoCharge    
+                import: solar.Devices.GamepadNoCharge,
             },
-           "headphones-square": {
+            'headphones-square': {
                 pascalName: 'HeadphonesSquare',
-                import: solar.Devices.HeadphonesSquare    
+                import: solar.Devices.HeadphonesSquare,
             },
-           "smartphone-rotate-angle": {
+            'smartphone-rotate-angle': {
                 pascalName: 'SmartphoneRotateAngle',
-                import: solar.Devices.SmartphoneRotateAngle    
+                import: solar.Devices.SmartphoneRotateAngle,
             },
-           "i-phone": {
+            'i-phone': {
                 pascalName: 'IPhone',
-                import: solar.Devices.IPhone    
+                import: solar.Devices.IPhone,
             },
-           "smartphone-2": {
+            'smartphone-2': {
                 pascalName: 'Smartphone2',
-                import: solar.Devices.Smartphone2    
+                import: solar.Devices.Smartphone2,
             },
-           "headphones-round": {
+            'headphones-round': {
                 pascalName: 'HeadphonesRound',
-                import: solar.Devices.HeadphonesRound    
+                import: solar.Devices.HeadphonesRound,
             },
-           "headphones-round-sound": {
+            'headphones-round-sound': {
                 pascalName: 'HeadphonesRoundSound',
-                import: solar.Devices.HeadphonesRoundSound    
+                import: solar.Devices.HeadphonesRoundSound,
             },
-           "tablet": {
+            tablet: {
                 pascalName: 'Tablet',
-                import: solar.Devices.Tablet    
+                import: solar.Devices.Tablet,
             },
-           "server": {
+            server: {
                 pascalName: 'Server',
-                import: solar.Devices.Server    
+                import: solar.Devices.Server,
             },
-           "server-2": {
+            'server-2': {
                 pascalName: 'Server2',
-                import: solar.Devices.Server2    
+                import: solar.Devices.Server2,
             },
-           "headphones-square-sound": {
+            'headphones-square-sound': {
                 pascalName: 'HeadphonesSquareSound',
-                import: solar.Devices.HeadphonesSquareSound    
+                import: solar.Devices.HeadphonesSquareSound,
             },
-           "server-minimalistic": {
+            'server-minimalistic': {
                 pascalName: 'ServerMinimalistic',
-                import: solar.Devices.ServerMinimalistic    
+                import: solar.Devices.ServerMinimalistic,
             },
-           "server-square": {
+            'server-square': {
                 pascalName: 'ServerSquare',
-                import: solar.Devices.ServerSquare    
+                import: solar.Devices.ServerSquare,
             },
-           "server-path": {
+            'server-path': {
                 pascalName: 'ServerPath',
-                import: solar.Devices.ServerPath    
+                import: solar.Devices.ServerPath,
             },
-           "mouse": {
+            mouse: {
                 pascalName: 'Mouse',
-                import: solar.Devices.Mouse    
+                import: solar.Devices.Mouse,
             },
-           "server-square-update": {
+            'server-square-update': {
                 pascalName: 'ServerSquareUpdate',
-                import: solar.Devices.ServerSquareUpdate    
+                import: solar.Devices.ServerSquareUpdate,
             },
-           "mouse-minimalistic": {
+            'mouse-minimalistic': {
                 pascalName: 'MouseMinimalistic',
-                import: solar.Devices.MouseMinimalistic    
+                import: solar.Devices.MouseMinimalistic,
             },
-           "airbuds-case": {
+            'airbuds-case': {
                 pascalName: 'AirbudsCase',
-                import: solar.Devices.AirbudsCase    
+                import: solar.Devices.AirbudsCase,
             },
-           "airbuds-remove": {
+            'airbuds-remove': {
                 pascalName: 'AirbudsRemove',
-                import: solar.Devices.AirbudsRemove    
+                import: solar.Devices.AirbudsRemove,
             },
-           "airbuds-case-charge": {
+            'airbuds-case-charge': {
                 pascalName: 'AirbudsCaseCharge',
-                import: solar.Devices.AirbudsCaseCharge    
+                import: solar.Devices.AirbudsCaseCharge,
             },
-           "mouse-circle": {
+            'mouse-circle': {
                 pascalName: 'MouseCircle',
-                import: solar.Devices.MouseCircle    
+                import: solar.Devices.MouseCircle,
             },
-           "server-square-cloud": {
+            'server-square-cloud': {
                 pascalName: 'ServerSquareCloud',
-                import: solar.Devices.ServerSquareCloud    
+                import: solar.Devices.ServerSquareCloud,
             },
-           "airbuds-case-open": {
+            'airbuds-case-open': {
                 pascalName: 'AirbudsCaseOpen',
-                import: solar.Devices.AirbudsCaseOpen    
+                import: solar.Devices.AirbudsCaseOpen,
             },
-           "airbuds": {
+            airbuds: {
                 pascalName: 'Airbuds',
-                import: solar.Devices.Airbuds    
+                import: solar.Devices.Airbuds,
             },
-           "laptop-minimalistic": {
+            'laptop-minimalistic': {
                 pascalName: 'LaptopMinimalistic',
-                import: solar.Devices.LaptopMinimalistic    
+                import: solar.Devices.LaptopMinimalistic,
             },
-           "airbuds-right": {
+            'airbuds-right': {
                 pascalName: 'AirbudsRight',
-                import: solar.Devices.AirbudsRight    
+                import: solar.Devices.AirbudsRight,
             },
-           "airbuds-check": {
+            'airbuds-check': {
                 pascalName: 'AirbudsCheck',
-                import: solar.Devices.AirbudsCheck    
+                import: solar.Devices.AirbudsCheck,
             },
-           "airbuds-left": {
+            'airbuds-left': {
                 pascalName: 'AirbudsLeft',
-                import: solar.Devices.AirbudsLeft    
+                import: solar.Devices.AirbudsLeft,
             },
-           "laptop": {
+            laptop: {
                 pascalName: 'Laptop',
-                import: solar.Devices.Laptop    
+                import: solar.Devices.Laptop,
             },
-           "cpu-bolt": {
+            'cpu-bolt': {
                 pascalName: 'CpuBolt',
-                import: solar.Devices.CpuBolt    
+                import: solar.Devices.CpuBolt,
             },
-           "airbuds-case-minimalistic": {
+            'airbuds-case-minimalistic': {
                 pascalName: 'AirbudsCaseMinimalistic',
-                import: solar.Devices.AirbudsCaseMinimalistic    
+                import: solar.Devices.AirbudsCaseMinimalistic,
             },
-           "airbuds-charge": {
+            'airbuds-charge': {
                 pascalName: 'AirbudsCharge',
-                import: solar.Devices.AirbudsCharge    
+                import: solar.Devices.AirbudsCharge,
             },
-           "laptop-3": {
+            'laptop-3': {
                 pascalName: 'Laptop3',
-                import: solar.Devices.Laptop3    
+                import: solar.Devices.Laptop3,
             },
-           "cpu": {
+            cpu: {
                 pascalName: 'Cpu',
-                import: solar.Devices.Cpu    
+                import: solar.Devices.Cpu,
             },
-           "laptop-2": {
+            'laptop-2': {
                 pascalName: 'Laptop2',
-                import: solar.Devices.Laptop2    
+                import: solar.Devices.Laptop2,
             },
-           "turntable": {
+            turntable: {
                 pascalName: 'Turntable',
-                import: solar.Devices.Turntable    
+                import: solar.Devices.Turntable,
             },
-           "turntable-music-note": {
+            'turntable-music-note': {
                 pascalName: 'TurntableMusicNote',
-                import: solar.Devices.TurntableMusicNote    
+                import: solar.Devices.TurntableMusicNote,
             },
-           "monitor": {
+            monitor: {
                 pascalName: 'Monitor',
-                import: solar.Devices.Monitor    
+                import: solar.Devices.Monitor,
             },
-           "boombox": {
+            boombox: {
                 pascalName: 'Boombox',
-                import: solar.Devices.Boombox    
+                import: solar.Devices.Boombox,
             },
-           "cassette": {
+            cassette: {
                 pascalName: 'Cassette',
-                import: solar.Devices.Cassette    
+                import: solar.Devices.Cassette,
             },
-           "monitor-camera": {
+            'monitor-camera': {
                 pascalName: 'MonitorCamera',
-                import: solar.Devices.MonitorCamera    
+                import: solar.Devices.MonitorCamera,
             },
-           "monitor-smartphone": {
+            'monitor-smartphone': {
                 pascalName: 'MonitorSmartphone',
-                import: solar.Devices.MonitorSmartphone    
+                import: solar.Devices.MonitorSmartphone,
             },
-           "printer-minimalistic": {
+            'printer-minimalistic': {
                 pascalName: 'PrinterMinimalistic',
-                import: solar.Devices.PrinterMinimalistic    
+                import: solar.Devices.PrinterMinimalistic,
             },
-           "cassette-2": {
+            'cassette-2': {
                 pascalName: 'Cassette2',
-                import: solar.Devices.Cassette2    
+                import: solar.Devices.Cassette2,
             },
-           "printer": {
+            printer: {
                 pascalName: 'Printer',
-                import: solar.Devices.Printer    
+                import: solar.Devices.Printer,
             },
-           "printer-2": {
+            'printer-2': {
                 pascalName: 'Printer2',
-                import: solar.Devices.Printer2    
+                import: solar.Devices.Printer2,
             },
-           "display": {
+            display: {
                 pascalName: 'Display',
-                import: solar.Devices.Display    
+                import: solar.Devices.Display,
             },
-           "bluetooth": {
+            bluetooth: {
                 pascalName: 'Bluetooth',
-                import: solar.Devices.Bluetooth    
+                import: solar.Devices.Bluetooth,
             },
-           "bluetooth-circle": {
+            'bluetooth-circle': {
                 pascalName: 'BluetoothCircle',
-                import: solar.Devices.BluetoothCircle    
+                import: solar.Devices.BluetoothCircle,
             },
-           "keyboard": {
+            keyboard: {
                 pascalName: 'Keyboard',
-                import: solar.Devices.Keyboard    
+                import: solar.Devices.Keyboard,
             },
-           "turntable-minimalistic": {
+            'turntable-minimalistic': {
                 pascalName: 'TurntableMinimalistic',
-                import: solar.Devices.TurntableMinimalistic    
+                import: solar.Devices.TurntableMinimalistic,
             },
-           "smart-speaker": {
+            'smart-speaker': {
                 pascalName: 'SmartSpeaker',
-                import: solar.Devices.SmartSpeaker    
+                import: solar.Devices.SmartSpeaker,
             },
-           "telescope": {
+            telescope: {
                 pascalName: 'Telescope',
-                import: solar.Devices.Telescope    
+                import: solar.Devices.Telescope,
             },
-           "smart-speaker-2": {
+            'smart-speaker-2': {
                 pascalName: 'SmartSpeaker2',
-                import: solar.Devices.SmartSpeaker2    
+                import: solar.Devices.SmartSpeaker2,
             },
-           "bluetooth-square": {
+            'bluetooth-square': {
                 pascalName: 'BluetoothSquare',
-                import: solar.Devices.BluetoothSquare    
+                import: solar.Devices.BluetoothSquare,
             },
-           "tv": {
+            tv: {
                 pascalName: 'Tv',
-                import: solar.Devices.Tv    
+                import: solar.Devices.Tv,
             },
-           "bluetooth-wave": {
+            'bluetooth-wave': {
                 pascalName: 'BluetoothWave',
-                import: solar.Devices.BluetoothWave    
+                import: solar.Devices.BluetoothWave,
             },
-           "gameboy": {
+            gameboy: {
                 pascalName: 'Gameboy',
-                import: solar.Devices.Gameboy    
+                import: solar.Devices.Gameboy,
             },
-           "radio-minimalistic": {
+            'radio-minimalistic': {
                 pascalName: 'RadioMinimalistic',
-                import: solar.Devices.RadioMinimalistic    
+                import: solar.Devices.RadioMinimalistic,
             },
-           "radio": {
+            radio: {
                 pascalName: 'Radio',
-                import: solar.Devices.Radio    
+                import: solar.Devices.Radio,
             },
-           "projector": {
+            projector: {
                 pascalName: 'Projector',
-                import: solar.Devices.Projector    
+                import: solar.Devices.Projector,
             },
-           "smart-speaker-minimalistic": {
+            'smart-speaker-minimalistic': {
                 pascalName: 'SmartSpeakerMinimalistic',
-                import: solar.Devices.SmartSpeakerMinimalistic    
+                import: solar.Devices.SmartSpeakerMinimalistic,
             },
-           "diskette": {
+            diskette: {
                 pascalName: 'Diskette',
-                import: solar.Devices.Diskette    
+                import: solar.Devices.Diskette,
             },
-           "plug-circle": {
+            'plug-circle': {
                 pascalName: 'PlugCircle',
-                import: solar.Devices.PlugCircle    
+                import: solar.Devices.PlugCircle,
             },
-           "sd-card": {
+            'sd-card': {
                 pascalName: 'SdCard',
-                import: solar.Devices.SdCard    
+                import: solar.Devices.SdCard,
             },
-           "sim-card-minimalistic": {
+            'sim-card-minimalistic': {
                 pascalName: 'SimCardMinimalistic',
-                import: solar.Devices.SimCardMinimalistic    
+                import: solar.Devices.SimCardMinimalistic,
             },
-           "sim-cards": {
+            'sim-cards': {
                 pascalName: 'SimCards',
-                import: solar.Devices.SimCards    
+                import: solar.Devices.SimCards,
             },
-           "wireless-charge": {
+            'wireless-charge': {
                 pascalName: 'WirelessCharge',
-                import: solar.Devices.WirelessCharge    
+                import: solar.Devices.WirelessCharge,
             },
-           "flash-drive": {
+            'flash-drive': {
                 pascalName: 'FlashDrive',
-                import: solar.Devices.FlashDrive    
+                import: solar.Devices.FlashDrive,
             },
-           "ssd-round": {
+            'ssd-round': {
                 pascalName: 'SsdRound',
-                import: solar.Devices.SsdRound    
+                import: solar.Devices.SsdRound,
             },
-           "lightning": {
+            lightning: {
                 pascalName: 'Lightning',
-                import: solar.Devices.Lightning    
+                import: solar.Devices.Lightning,
             },
-           "sim-card": {
+            'sim-card': {
                 pascalName: 'SimCard',
-                import: solar.Devices.SimCard    
+                import: solar.Devices.SimCard,
             },
-           "weigher": {
+            weigher: {
                 pascalName: 'Weigher',
-                import: solar.Devices.Weigher    
+                import: solar.Devices.Weigher,
             },
-           "lightbulb-minimalistic": {
+            'lightbulb-minimalistic': {
                 pascalName: 'LightbulbMinimalistic',
-                import: solar.Devices.LightbulbMinimalistic    
+                import: solar.Devices.LightbulbMinimalistic,
             },
-           "lightbulb-bolt": {
+            'lightbulb-bolt': {
                 pascalName: 'LightbulbBolt',
-                import: solar.Devices.LightbulbBolt    
+                import: solar.Devices.LightbulbBolt,
             },
-           "ssd-square": {
+            'ssd-square': {
                 pascalName: 'SsdSquare',
-                import: solar.Devices.SsdSquare    
+                import: solar.Devices.SsdSquare,
             },
-           "cloud-storage": {
+            'cloud-storage': {
                 pascalName: 'CloudStorage',
-                import: solar.Devices.CloudStorage    
+                import: solar.Devices.CloudStorage,
             },
-           "devices": {
+            devices: {
                 pascalName: 'Devices',
-                import: solar.Devices.Devices    
+                import: solar.Devices.Devices,
             },
-           "lightbulb": {
+            lightbulb: {
                 pascalName: 'Lightbulb',
-                import: solar.Devices.Lightbulb    
+                import: solar.Devices.Lightbulb,
             },
-           "socket": {
+            socket: {
                 pascalName: 'Socket',
-                import: solar.Devices.Socket    
-            }
+                import: solar.Devices.Socket,
+            },
         },
     },
-    "weather": {
-        tags: ["weather"],
+    weather: {
+        tags: ['weather'],
         icons: {
-           "clouds": {
+            clouds: {
                 pascalName: 'Clouds',
-                import: solar.Weather.Clouds    
+                import: solar.Weather.Clouds,
             },
-           "cloud-bolt": {
+            'cloud-bolt': {
                 pascalName: 'CloudBolt',
-                import: solar.Weather.CloudBolt    
+                import: solar.Weather.CloudBolt,
             },
-           "clound-cross": {
+            'clound-cross': {
                 pascalName: 'CloundCross',
-                import: solar.Weather.CloundCross    
+                import: solar.Weather.CloundCross,
             },
-           "cloud-check": {
+            'cloud-check': {
                 pascalName: 'CloudCheck',
-                import: solar.Weather.CloudCheck    
+                import: solar.Weather.CloudCheck,
             },
-           "fog": {
+            fog: {
                 pascalName: 'Fog',
-                import: solar.Weather.Fog    
+                import: solar.Weather.Fog,
             },
-           "cloud-plus": {
+            'cloud-plus': {
                 pascalName: 'CloudPlus',
-                import: solar.Weather.CloudPlus    
+                import: solar.Weather.CloudPlus,
             },
-           "cloud-sun-2": {
+            'cloud-sun-2': {
                 pascalName: 'CloudSun2',
-                import: solar.Weather.CloudSun2    
+                import: solar.Weather.CloudSun2,
             },
-           "cloud-rain": {
+            'cloud-rain': {
                 pascalName: 'CloudRain',
-                import: solar.Weather.CloudRain    
+                import: solar.Weather.CloudRain,
             },
-           "cloud-sun": {
+            'cloud-sun': {
                 pascalName: 'CloudSun',
-                import: solar.Weather.CloudSun    
+                import: solar.Weather.CloudSun,
             },
-           "cloud-bolt-minimalistic": {
+            'cloud-bolt-minimalistic': {
                 pascalName: 'CloudBoltMinimalistic',
-                import: solar.Weather.CloudBoltMinimalistic    
+                import: solar.Weather.CloudBoltMinimalistic,
             },
-           "cloud-storm": {
+            'cloud-storm': {
                 pascalName: 'CloudStorm',
-                import: solar.Weather.CloudStorm    
+                import: solar.Weather.CloudStorm,
             },
-           "cloud": {
+            cloud: {
                 pascalName: 'Cloud',
-                import: solar.Weather.Cloud    
+                import: solar.Weather.Cloud,
             },
-           "cloud-minus": {
+            'cloud-minus': {
                 pascalName: 'CloudMinus',
-                import: solar.Weather.CloudMinus    
+                import: solar.Weather.CloudMinus,
             },
-           "cloud-waterdrop": {
+            'cloud-waterdrop': {
                 pascalName: 'CloudWaterdrop',
-                import: solar.Weather.CloudWaterdrop    
+                import: solar.Weather.CloudWaterdrop,
             },
-           "cloud-waterdrops": {
+            'cloud-waterdrops': {
                 pascalName: 'CloudWaterdrops',
-                import: solar.Weather.CloudWaterdrops    
+                import: solar.Weather.CloudWaterdrops,
             },
-           "moon": {
+            moon: {
                 pascalName: 'Moon',
-                import: solar.Weather.Moon    
+                import: solar.Weather.Moon,
             },
-           "moon-stars": {
+            'moon-stars': {
                 pascalName: 'MoonStars',
-                import: solar.Weather.MoonStars    
+                import: solar.Weather.MoonStars,
             },
-           "cloud-snowfall-minimalistic": {
+            'cloud-snowfall-minimalistic': {
                 pascalName: 'CloudSnowfallMinimalistic',
-                import: solar.Weather.CloudSnowfallMinimalistic    
+                import: solar.Weather.CloudSnowfallMinimalistic,
             },
-           "tornado": {
+            tornado: {
                 pascalName: 'Tornado',
-                import: solar.Weather.Tornado    
+                import: solar.Weather.Tornado,
             },
-           "cloud-upload": {
+            'cloud-upload': {
                 pascalName: 'CloudUpload',
-                import: solar.Weather.CloudUpload    
+                import: solar.Weather.CloudUpload,
             },
-           "cloud-snowfall": {
+            'cloud-snowfall': {
                 pascalName: 'CloudSnowfall',
-                import: solar.Weather.CloudSnowfall    
+                import: solar.Weather.CloudSnowfall,
             },
-           "sun-2": {
+            'sun-2': {
                 pascalName: 'Sun2',
-                import: solar.Weather.Sun2    
+                import: solar.Weather.Sun2,
             },
-           "cloud-download": {
+            'cloud-download': {
                 pascalName: 'CloudDownload',
-                import: solar.Weather.CloudDownload    
+                import: solar.Weather.CloudDownload,
             },
-           "cloudy-moon": {
+            'cloudy-moon': {
                 pascalName: 'CloudyMoon',
-                import: solar.Weather.CloudyMoon    
+                import: solar.Weather.CloudyMoon,
             },
-           "moon-fog": {
+            'moon-fog': {
                 pascalName: 'MoonFog',
-                import: solar.Weather.MoonFog    
+                import: solar.Weather.MoonFog,
             },
-           "sun": {
+            sun: {
                 pascalName: 'Sun',
-                import: solar.Weather.Sun    
+                import: solar.Weather.Sun,
             },
-           "sunrise": {
+            sunrise: {
                 pascalName: 'Sunrise',
-                import: solar.Weather.Sunrise    
+                import: solar.Weather.Sunrise,
             },
-           "waterdrops": {
+            waterdrops: {
                 pascalName: 'Waterdrops',
-                import: solar.Weather.Waterdrops    
+                import: solar.Weather.Waterdrops,
             },
-           "sun-fog": {
+            'sun-fog': {
                 pascalName: 'SunFog',
-                import: solar.Weather.SunFog    
+                import: solar.Weather.SunFog,
             },
-           "snowflake": {
+            snowflake: {
                 pascalName: 'Snowflake',
-                import: solar.Weather.Snowflake    
+                import: solar.Weather.Snowflake,
             },
-           "wind": {
+            wind: {
                 pascalName: 'Wind',
-                import: solar.Weather.Wind    
+                import: solar.Weather.Wind,
             },
-           "sunset": {
+            sunset: {
                 pascalName: 'Sunset',
-                import: solar.Weather.Sunset    
+                import: solar.Weather.Sunset,
             },
-           "moon-sleep": {
+            'moon-sleep': {
                 pascalName: 'MoonSleep',
-                import: solar.Weather.MoonSleep    
+                import: solar.Weather.MoonSleep,
             },
-           "tornado-small": {
+            'tornado-small': {
                 pascalName: 'TornadoSmall',
-                import: solar.Weather.TornadoSmall    
+                import: solar.Weather.TornadoSmall,
             },
-           "temperature": {
+            temperature: {
                 pascalName: 'Temperature',
-                import: solar.Weather.Temperature    
+                import: solar.Weather.Temperature,
             },
-           "stars": {
+            stars: {
                 pascalName: 'Stars',
-                import: solar.Weather.Stars    
-            }
+                import: solar.Weather.Stars,
+            },
         },
     },
-    "files": {
-        tags: ["files"],
+    files: {
+        tags: ['files'],
         icons: {
-           "file-check": {
+            'file-check': {
                 pascalName: 'FileCheck',
-                import: solar.Files.FileCheck    
+                import: solar.Files.FileCheck,
             },
-           "file-text": {
+            'file-text': {
                 pascalName: 'FileText',
-                import: solar.Files.FileText    
+                import: solar.Files.FileText,
             },
-           "file": {
+            file: {
                 pascalName: 'File',
-                import: solar.Files.File    
+                import: solar.Files.File,
             },
-           "file-left": {
+            'file-left': {
                 pascalName: 'FileLeft',
-                import: solar.Files.FileLeft    
+                import: solar.Files.FileLeft,
             },
-           "file-right": {
+            'file-right': {
                 pascalName: 'FileRight',
-                import: solar.Files.FileRight    
+                import: solar.Files.FileRight,
             },
-           "file-smile-": {
+            'file-smile-': {
                 pascalName: 'FileSmile',
-                import: solar.Files.FileSmile    
+                import: solar.Files.FileSmile,
             },
-           "file-corrupted": {
+            'file-corrupted': {
                 pascalName: 'FileCorrupted',
-                import: solar.Files.FileCorrupted    
+                import: solar.Files.FileCorrupted,
             },
-           "file-send": {
+            'file-send': {
                 pascalName: 'FileSend',
-                import: solar.Files.FileSend    
+                import: solar.Files.FileSend,
             },
-           "file-remove": {
+            'file-remove': {
                 pascalName: 'FileRemove',
-                import: solar.Files.FileRemove    
+                import: solar.Files.FileRemove,
             },
-           "code-file": {
+            'code-file': {
                 pascalName: 'CodeFile',
-                import: solar.Files.CodeFile    
+                import: solar.Files.CodeFile,
             },
-           "zip-file": {
+            'zip-file': {
                 pascalName: 'ZipFile',
-                import: solar.Files.ZipFile    
+                import: solar.Files.ZipFile,
             },
-           "figma-file": {
+            'figma-file': {
                 pascalName: 'FigmaFile',
-                import: solar.Files.FigmaFile    
+                import: solar.Files.FigmaFile,
             },
-           "file-favourite": {
+            'file-favourite': {
                 pascalName: 'FileFavourite',
-                import: solar.Files.FileFavourite    
+                import: solar.Files.FileFavourite,
             },
-           "file-download": {
+            'file-download': {
                 pascalName: 'FileDownload',
-                import: solar.Files.FileDownload    
+                import: solar.Files.FileDownload,
             },
-           "cloud-file": {
+            'cloud-file': {
                 pascalName: 'CloudFile',
-                import: solar.Files.CloudFile    
-            }
+                import: solar.Files.CloudFile,
+            },
         },
     },
-    "astronomy": {
-        tags: ["astronomy"],
+    astronomy: {
+        tags: ['astronomy'],
         icons: {
-           "men": {
+            men: {
                 pascalName: 'Men',
-                import: solar.Astronomy.Men    
+                import: solar.Astronomy.Men,
             },
-           "black-hole-3": {
+            'black-hole-3': {
                 pascalName: 'BlackHole3',
-                import: solar.Astronomy.BlackHole3    
+                import: solar.Astronomy.BlackHole3,
             },
-           "black-hole": {
+            'black-hole': {
                 pascalName: 'BlackHole',
-                import: solar.Astronomy.BlackHole    
+                import: solar.Astronomy.BlackHole,
             },
-           "women": {
+            women: {
                 pascalName: 'Women',
-                import: solar.Astronomy.Women    
+                import: solar.Astronomy.Women,
             },
-           "planet-2": {
+            'planet-2': {
                 pascalName: 'Planet2',
-                import: solar.Astronomy.Planet2    
+                import: solar.Astronomy.Planet2,
             },
-           "rocket-2": {
+            'rocket-2': {
                 pascalName: 'Rocket2',
-                import: solar.Astronomy.Rocket2    
+                import: solar.Astronomy.Rocket2,
             },
-           "asteroid": {
+            asteroid: {
                 pascalName: 'Asteroid',
-                import: solar.Astronomy.Asteroid    
+                import: solar.Astronomy.Asteroid,
             },
-           "rocket": {
+            rocket: {
                 pascalName: 'Rocket',
-                import: solar.Astronomy.Rocket    
+                import: solar.Astronomy.Rocket,
             },
-           "atom": {
+            atom: {
                 pascalName: 'Atom',
-                import: solar.Astronomy.Atom    
+                import: solar.Astronomy.Atom,
             },
-           "earth": {
+            earth: {
                 pascalName: 'Earth',
-                import: solar.Astronomy.Earth    
+                import: solar.Astronomy.Earth,
             },
-           "infinity": {
+            infinity: {
                 pascalName: 'Infinity',
-                import: solar.Astronomy.Infinity    
+                import: solar.Astronomy.Infinity,
             },
-           "planet-4": {
+            'planet-4': {
                 pascalName: 'Planet4',
-                import: solar.Astronomy.Planet4    
+                import: solar.Astronomy.Planet4,
             },
-           "star-circle": {
+            'star-circle': {
                 pascalName: 'StarCircle',
-                import: solar.Astronomy.StarCircle    
+                import: solar.Astronomy.StarCircle,
             },
-           "satellite": {
+            satellite: {
                 pascalName: 'Satellite',
-                import: solar.Astronomy.Satellite    
+                import: solar.Astronomy.Satellite,
             },
-           "black-hole-2": {
+            'black-hole-2': {
                 pascalName: 'BlackHole2',
-                import: solar.Astronomy.BlackHole2    
+                import: solar.Astronomy.BlackHole2,
             },
-           "star-fall": {
+            'star-fall': {
                 pascalName: 'StarFall',
-                import: solar.Astronomy.StarFall    
+                import: solar.Astronomy.StarFall,
             },
-           "star-rainbow": {
+            'star-rainbow': {
                 pascalName: 'StarRainbow',
-                import: solar.Astronomy.StarRainbow    
+                import: solar.Astronomy.StarRainbow,
             },
-           "planet-3": {
+            'planet-3': {
                 pascalName: 'Planet3',
-                import: solar.Astronomy.Planet3    
+                import: solar.Astronomy.Planet3,
             },
-           "star-2": {
+            'star-2': {
                 pascalName: 'Star2',
-                import: solar.Astronomy.Star2    
+                import: solar.Astronomy.Star2,
             },
-           "stars-line": {
+            'stars-line': {
                 pascalName: 'StarsLine',
-                import: solar.Astronomy.StarsLine    
+                import: solar.Astronomy.StarsLine,
             },
-           "planet": {
+            planet: {
                 pascalName: 'Planet',
-                import: solar.Astronomy.Planet    
+                import: solar.Astronomy.Planet,
             },
-           "stars-2": {
+            'stars-2': {
                 pascalName: 'Stars2',
-                import: solar.Astronomy.Stars2    
+                import: solar.Astronomy.Stars2,
             },
-           "star-ring": {
+            'star-ring': {
                 pascalName: 'StarRing',
-                import: solar.Astronomy.StarRing    
+                import: solar.Astronomy.StarRing,
             },
-           "stars-minimalistic": {
+            'stars-minimalistic': {
                 pascalName: 'StarsMinimalistic',
-                import: solar.Astronomy.StarsMinimalistic    
+                import: solar.Astronomy.StarsMinimalistic,
             },
-           "star-fall-2": {
+            'star-fall-2': {
                 pascalName: 'StarFall2',
-                import: solar.Astronomy.StarFall2    
+                import: solar.Astronomy.StarFall2,
             },
-           "ufo": {
+            ufo: {
                 pascalName: 'Ufo',
-                import: solar.Astronomy.Ufo    
+                import: solar.Astronomy.Ufo,
             },
-           "ufo-2": {
+            'ufo-2': {
                 pascalName: 'Ufo2',
-                import: solar.Astronomy.Ufo2    
+                import: solar.Astronomy.Ufo2,
             },
-           "star-fall-minimalistic": {
+            'star-fall-minimalistic': {
                 pascalName: 'StarFallMinimalistic',
-                import: solar.Astronomy.StarFallMinimalistic    
+                import: solar.Astronomy.StarFallMinimalistic,
             },
-           "star-fall-minimalistic-2": {
+            'star-fall-minimalistic-2': {
                 pascalName: 'StarFallMinimalistic2',
-                import: solar.Astronomy.StarFallMinimalistic2    
+                import: solar.Astronomy.StarFallMinimalistic2,
             },
-           "star-rings": {
+            'star-rings': {
                 pascalName: 'StarRings',
-                import: solar.Astronomy.StarRings    
+                import: solar.Astronomy.StarRings,
             },
-           "star-angle": {
+            'star-angle': {
                 pascalName: 'StarAngle',
-                import: solar.Astronomy.StarAngle    
+                import: solar.Astronomy.StarAngle,
             },
-           "ufo-3": {
+            'ufo-3': {
                 pascalName: 'Ufo3',
-                import: solar.Astronomy.Ufo3    
-            }
+                import: solar.Astronomy.Ufo3,
+            },
         },
     },
-    "folders": {
-        tags: ["folders"],
+    folders: {
+        tags: ['folders'],
         icons: {
-           "folder": {
+            folder: {
                 pascalName: 'Folder',
-                import: solar.Folders.Folder    
+                import: solar.Folders.Folder,
             },
-           "folder-2": {
+            'folder-2': {
                 pascalName: 'Folder2',
-                import: solar.Folders.Folder2    
+                import: solar.Folders.Folder2,
             },
-           "folder-check": {
+            'folder-check': {
                 pascalName: 'FolderCheck',
-                import: solar.Folders.FolderCheck    
+                import: solar.Folders.FolderCheck,
             },
-           "folder-favourite-star": {
+            'folder-favourite-star': {
                 pascalName: 'FolderFavouriteStar',
-                import: solar.Folders.FolderFavouriteStar    
+                import: solar.Folders.FolderFavouriteStar,
             },
-           "folder-error": {
+            'folder-error': {
                 pascalName: 'FolderError',
-                import: solar.Folders.FolderError    
+                import: solar.Folders.FolderError,
             },
-           "remove-folder": {
+            'remove-folder': {
                 pascalName: 'RemoveFolder',
-                import: solar.Folders.RemoveFolder    
+                import: solar.Folders.RemoveFolder,
             },
-           "move-to-folder": {
+            'move-to-folder': {
                 pascalName: 'MoveToFolder',
-                import: solar.Folders.MoveToFolder    
+                import: solar.Folders.MoveToFolder,
             },
-           "add-folder": {
+            'add-folder': {
                 pascalName: 'AddFolder',
-                import: solar.Folders.AddFolder    
+                import: solar.Folders.AddFolder,
             },
-           "folder-favourite-bookmark": {
+            'folder-favourite-bookmark': {
                 pascalName: 'FolderFavouriteBookmark',
-                import: solar.Folders.FolderFavouriteBookmark    
+                import: solar.Folders.FolderFavouriteBookmark,
             },
-           "folder-security": {
+            'folder-security': {
                 pascalName: 'FolderSecurity',
-                import: solar.Folders.FolderSecurity    
+                import: solar.Folders.FolderSecurity,
             },
-           "folder-cloud": {
+            'folder-cloud': {
                 pascalName: 'FolderCloud',
-                import: solar.Folders.FolderCloud    
+                import: solar.Folders.FolderCloud,
             },
-           "folder-with-files": {
+            'folder-with-files': {
                 pascalName: 'FolderWithFiles',
-                import: solar.Folders.FolderWithFiles    
+                import: solar.Folders.FolderWithFiles,
             },
-           "folder-open": {
+            'folder-open': {
                 pascalName: 'FolderOpen',
-                import: solar.Folders.FolderOpen    
+                import: solar.Folders.FolderOpen,
             },
-           "folder-path-connect": {
+            'folder-path-connect': {
                 pascalName: 'FolderPathConnect',
-                import: solar.Folders.FolderPathConnect    
-            }
+                import: solar.Folders.FolderPathConnect,
+            },
         },
     },
-    "faces": {
-        tags: ["faces","emotions","stickers"],
+    faces: {
+        tags: ['faces', 'emotions', 'stickers'],
         icons: {
-           "expressionless-circle": {
+            'expressionless-circle': {
                 pascalName: 'ExpressionlessCircle',
-                import: solar.Faces.ExpressionlessCircle    
+                import: solar.Faces.ExpressionlessCircle,
             },
-           "smile-square": {
+            'smile-square': {
                 pascalName: 'SmileSquare',
-                import: solar.Faces.SmileSquare    
+                import: solar.Faces.SmileSquare,
             },
-           "smile-circle": {
+            'smile-circle': {
                 pascalName: 'SmileCircle',
-                import: solar.Faces.SmileCircle    
+                import: solar.Faces.SmileCircle,
             },
-           "sad-square": {
+            'sad-square': {
                 pascalName: 'SadSquare',
-                import: solar.Faces.SadSquare    
+                import: solar.Faces.SadSquare,
             },
-           "expressionless-square": {
+            'expressionless-square': {
                 pascalName: 'ExpressionlessSquare',
-                import: solar.Faces.ExpressionlessSquare    
+                import: solar.Faces.ExpressionlessSquare,
             },
-           "face-scan-circle": {
+            'face-scan-circle': {
                 pascalName: 'FaceScanCircle',
-                import: solar.Faces.FaceScanCircle    
+                import: solar.Faces.FaceScanCircle,
             },
-           "sad-circle": {
+            'sad-circle': {
                 pascalName: 'SadCircle',
-                import: solar.Faces.SadCircle    
+                import: solar.Faces.SadCircle,
             },
-           "face-scan-square": {
+            'face-scan-square': {
                 pascalName: 'FaceScanSquare',
-                import: solar.Faces.FaceScanSquare    
+                import: solar.Faces.FaceScanSquare,
             },
-           "sticker-square": {
+            'sticker-square': {
                 pascalName: 'StickerSquare',
-                import: solar.Faces.StickerSquare    
+                import: solar.Faces.StickerSquare,
             },
-           "emoji-funny-square": {
+            'emoji-funny-square': {
                 pascalName: 'EmojiFunnySquare',
-                import: solar.Faces.EmojiFunnySquare    
+                import: solar.Faces.EmojiFunnySquare,
             },
-           "sticker-smile-circle": {
+            'sticker-smile-circle': {
                 pascalName: 'StickerSmileCircle',
-                import: solar.Faces.StickerSmileCircle    
+                import: solar.Faces.StickerSmileCircle,
             },
-           "sticker-smile-circle-2": {
+            'sticker-smile-circle-2': {
                 pascalName: 'StickerSmileCircle2',
-                import: solar.Faces.StickerSmileCircle2    
+                import: solar.Faces.StickerSmileCircle2,
             },
-           "confounded-circle": {
+            'confounded-circle': {
                 pascalName: 'ConfoundedCircle',
-                import: solar.Faces.ConfoundedCircle    
+                import: solar.Faces.ConfoundedCircle,
             },
-           "facemask-circle": {
+            'facemask-circle': {
                 pascalName: 'FacemaskCircle',
-                import: solar.Faces.FacemaskCircle    
+                import: solar.Faces.FacemaskCircle,
             },
-           "facemask-square": {
+            'facemask-square': {
                 pascalName: 'FacemaskSquare',
-                import: solar.Faces.FacemaskSquare    
+                import: solar.Faces.FacemaskSquare,
             },
-           "sticker-smile-square": {
+            'sticker-smile-square': {
                 pascalName: 'StickerSmileSquare',
-                import: solar.Faces.StickerSmileSquare    
+                import: solar.Faces.StickerSmileSquare,
             },
-           "sticker-circle": {
+            'sticker-circle': {
                 pascalName: 'StickerCircle',
-                import: solar.Faces.StickerCircle    
+                import: solar.Faces.StickerCircle,
             },
-           "sleeping-square": {
+            'sleeping-square': {
                 pascalName: 'SleepingSquare',
-                import: solar.Faces.SleepingSquare    
+                import: solar.Faces.SleepingSquare,
             },
-           "emoji-funny-circle": {
+            'emoji-funny-circle': {
                 pascalName: 'EmojiFunnyCircle',
-                import: solar.Faces.EmojiFunnyCircle    
+                import: solar.Faces.EmojiFunnyCircle,
             },
-           "sleeping-circle": {
+            'sleeping-circle': {
                 pascalName: 'SleepingCircle',
-                import: solar.Faces.SleepingCircle    
+                import: solar.Faces.SleepingCircle,
             },
-           "confounded-square": {
+            'confounded-square': {
                 pascalName: 'ConfoundedSquare',
-                import: solar.Faces.ConfoundedSquare    
-            }
+                import: solar.Faces.ConfoundedSquare,
+            },
         },
     },
-    "sports": {
-        tags: ["sports"],
+    sports: {
+        tags: ['sports'],
         icons: {
-           "skateboarding-round": {
+            'skateboarding-round': {
                 pascalName: 'SkateboardingRound',
-                import: solar.Sports.SkateboardingRound    
+                import: solar.Sports.SkateboardingRound,
             },
-           "skateboarding": {
+            skateboarding: {
                 pascalName: 'Skateboarding',
-                import: solar.Sports.Skateboarding    
+                import: solar.Sports.Skateboarding,
             },
-           "running-2": {
+            'running-2': {
                 pascalName: 'Running2',
-                import: solar.Sports.Running2    
+                import: solar.Sports.Running2,
             },
-           "bicycling-round": {
+            'bicycling-round': {
                 pascalName: 'BicyclingRound',
-                import: solar.Sports.BicyclingRound    
+                import: solar.Sports.BicyclingRound,
             },
-           "skateboard": {
+            skateboard: {
                 pascalName: 'Skateboard',
-                import: solar.Sports.Skateboard    
+                import: solar.Sports.Skateboard,
             },
-           "running-round": {
+            'running-round': {
                 pascalName: 'RunningRound',
-                import: solar.Sports.RunningRound    
+                import: solar.Sports.RunningRound,
             },
-           "walking-round": {
+            'walking-round': {
                 pascalName: 'WalkingRound',
-                import: solar.Sports.WalkingRound    
+                import: solar.Sports.WalkingRound,
             },
-           "hiking-minimalistic": {
+            'hiking-minimalistic': {
                 pascalName: 'HikingMinimalistic',
-                import: solar.Sports.HikingMinimalistic    
+                import: solar.Sports.HikingMinimalistic,
             },
-           "running": {
+            running: {
                 pascalName: 'Running',
-                import: solar.Sports.Running    
+                import: solar.Sports.Running,
             },
-           "meditation-round": {
+            'meditation-round': {
                 pascalName: 'MeditationRound',
-                import: solar.Sports.MeditationRound    
+                import: solar.Sports.MeditationRound,
             },
-           "bicycling": {
+            bicycling: {
                 pascalName: 'Bicycling',
-                import: solar.Sports.Bicycling    
+                import: solar.Sports.Bicycling,
             },
-           "hiking-round": {
+            'hiking-round': {
                 pascalName: 'HikingRound',
-                import: solar.Sports.HikingRound    
+                import: solar.Sports.HikingRound,
             },
-           "stretching": {
+            stretching: {
                 pascalName: 'Stretching',
-                import: solar.Sports.Stretching    
+                import: solar.Sports.Stretching,
             },
-           "meditation": {
+            meditation: {
                 pascalName: 'Meditation',
-                import: solar.Sports.Meditation    
+                import: solar.Sports.Meditation,
             },
-           "treadmill": {
+            treadmill: {
                 pascalName: 'Treadmill',
-                import: solar.Sports.Treadmill    
+                import: solar.Sports.Treadmill,
             },
-           "treadmill-round": {
+            'treadmill-round': {
                 pascalName: 'TreadmillRound',
-                import: solar.Sports.TreadmillRound    
+                import: solar.Sports.TreadmillRound,
             },
-           "stretching-round": {
+            'stretching-round': {
                 pascalName: 'StretchingRound',
-                import: solar.Sports.StretchingRound    
+                import: solar.Sports.StretchingRound,
             },
-           "walking": {
+            walking: {
                 pascalName: 'Walking',
-                import: solar.Sports.Walking    
+                import: solar.Sports.Walking,
             },
-           "water-sun": {
+            'water-sun': {
                 pascalName: 'WaterSun',
-                import: solar.Sports.WaterSun    
+                import: solar.Sports.WaterSun,
             },
-           "water": {
+            water: {
                 pascalName: 'Water',
-                import: solar.Sports.Water    
+                import: solar.Sports.Water,
             },
-           "hiking": {
+            hiking: {
                 pascalName: 'Hiking',
-                import: solar.Sports.Hiking    
+                import: solar.Sports.Hiking,
             },
-           "dumbbell": {
+            dumbbell: {
                 pascalName: 'Dumbbell',
-                import: solar.Sports.Dumbbell    
+                import: solar.Sports.Dumbbell,
             },
-           "swimming": {
+            swimming: {
                 pascalName: 'Swimming',
-                import: solar.Sports.Swimming    
+                import: solar.Sports.Swimming,
             },
-           "dumbbells-2": {
+            'dumbbells-2': {
                 pascalName: 'Dumbbells2',
-                import: solar.Sports.Dumbbells2    
+                import: solar.Sports.Dumbbells2,
             },
-           "dumbbells": {
+            dumbbells: {
                 pascalName: 'Dumbbells',
-                import: solar.Sports.Dumbbells    
+                import: solar.Sports.Dumbbells,
             },
-           "dumbbell-small": {
+            'dumbbell-small': {
                 pascalName: 'DumbbellSmall',
-                import: solar.Sports.DumbbellSmall    
+                import: solar.Sports.DumbbellSmall,
             },
-           "body-shape-minimalistic": {
+            'body-shape-minimalistic': {
                 pascalName: 'BodyShapeMinimalistic',
-                import: solar.Sports.BodyShapeMinimalistic    
+                import: solar.Sports.BodyShapeMinimalistic,
             },
-           "dumbbell-large": {
+            'dumbbell-large': {
                 pascalName: 'DumbbellLarge',
-                import: solar.Sports.DumbbellLarge    
+                import: solar.Sports.DumbbellLarge,
             },
-           "ranking": {
+            ranking: {
                 pascalName: 'Ranking',
-                import: solar.Sports.Ranking    
+                import: solar.Sports.Ranking,
             },
-           "dumbbell-large-minimalistic": {
+            'dumbbell-large-minimalistic': {
                 pascalName: 'DumbbellLargeMinimalistic',
-                import: solar.Sports.DumbbellLargeMinimalistic    
+                import: solar.Sports.DumbbellLargeMinimalistic,
             },
-           "golf": {
+            golf: {
                 pascalName: 'Golf',
-                import: solar.Sports.Golf    
+                import: solar.Sports.Golf,
             },
-           "tennis": {
+            tennis: {
                 pascalName: 'Tennis',
-                import: solar.Sports.Tennis    
+                import: solar.Sports.Tennis,
             },
-           "tennis-2": {
+            'tennis-2': {
                 pascalName: 'Tennis2',
-                import: solar.Sports.Tennis2    
+                import: solar.Sports.Tennis2,
             },
-           "volleyball": {
+            volleyball: {
                 pascalName: 'Volleyball',
-                import: solar.Sports.Volleyball    
+                import: solar.Sports.Volleyball,
             },
-           "volleyball-2": {
+            'volleyball-2': {
                 pascalName: 'Volleyball2',
-                import: solar.Sports.Volleyball2    
+                import: solar.Sports.Volleyball2,
             },
-           "football": {
+            football: {
                 pascalName: 'Football',
-                import: solar.Sports.Football    
+                import: solar.Sports.Football,
             },
-           "basketball": {
+            basketball: {
                 pascalName: 'Basketball',
-                import: solar.Sports.Basketball    
+                import: solar.Sports.Basketball,
             },
-           "balls": {
+            balls: {
                 pascalName: 'Balls',
-                import: solar.Sports.Balls    
+                import: solar.Sports.Balls,
             },
-           "rugby": {
+            rugby: {
                 pascalName: 'Rugby',
-                import: solar.Sports.Rugby    
+                import: solar.Sports.Rugby,
             },
-           "body-shape": {
+            'body-shape': {
                 pascalName: 'BodyShape',
-                import: solar.Sports.BodyShape    
+                import: solar.Sports.BodyShape,
             },
-           "bowling": {
+            bowling: {
                 pascalName: 'Bowling',
-                import: solar.Sports.Bowling    
-            }
+                import: solar.Sports.Bowling,
+            },
         },
     },
-    "search": {
-        tags: ["search"],
+    search: {
+        tags: ['search'],
         icons: {
-           "minimalistic-magnifer-zoom-in": {
+            'minimalistic-magnifer-zoom-in': {
                 pascalName: 'MinimalisticMagniferZoomIn',
-                import: solar.Search.MinimalisticMagniferZoomIn    
+                import: solar.Search.MinimalisticMagniferZoomIn,
             },
-           "minimalistic-magnifer-zoom-out": {
+            'minimalistic-magnifer-zoom-out': {
                 pascalName: 'MinimalisticMagniferZoomOut',
-                import: solar.Search.MinimalisticMagniferZoomOut    
+                import: solar.Search.MinimalisticMagniferZoomOut,
             },
-           "minimalistic-magnifer": {
+            'minimalistic-magnifer': {
                 pascalName: 'MinimalisticMagnifer',
-                import: solar.Search.MinimalisticMagnifer    
+                import: solar.Search.MinimalisticMagnifer,
             },
-           "magnifer": {
+            magnifer: {
                 pascalName: 'Magnifer',
-                import: solar.Search.Magnifer    
+                import: solar.Search.Magnifer,
             },
-           "rounded-magnifer-zoom-in": {
+            'rounded-magnifer-zoom-in': {
                 pascalName: 'RoundedMagniferZoomIn',
-                import: solar.Search.RoundedMagniferZoomIn    
+                import: solar.Search.RoundedMagniferZoomIn,
             },
-           "magnifer-bug": {
+            'magnifer-bug': {
                 pascalName: 'MagniferBug',
-                import: solar.Search.MagniferBug    
+                import: solar.Search.MagniferBug,
             },
-           "magnifer-zoom-in": {
+            'magnifer-zoom-in': {
                 pascalName: 'MagniferZoomIn',
-                import: solar.Search.MagniferZoomIn    
+                import: solar.Search.MagniferZoomIn,
             },
-           "rounded-magnifer-bug": {
+            'rounded-magnifer-bug': {
                 pascalName: 'RoundedMagniferBug',
-                import: solar.Search.RoundedMagniferBug    
+                import: solar.Search.RoundedMagniferBug,
             },
-           "rounded-magnifer": {
+            'rounded-magnifer': {
                 pascalName: 'RoundedMagnifer',
-                import: solar.Search.RoundedMagnifer    
+                import: solar.Search.RoundedMagnifer,
             },
-           "rounded-magnifer-zoom-out": {
+            'rounded-magnifer-zoom-out': {
                 pascalName: 'RoundedMagniferZoomOut',
-                import: solar.Search.RoundedMagniferZoomOut    
+                import: solar.Search.RoundedMagniferZoomOut,
             },
-           "minimalistic-magnifer-bug": {
+            'minimalistic-magnifer-bug': {
                 pascalName: 'MinimalisticMagniferBug',
-                import: solar.Search.MinimalisticMagniferBug    
+                import: solar.Search.MinimalisticMagniferBug,
             },
-           "magnifer-zoom-out": {
+            'magnifer-zoom-out': {
                 pascalName: 'MagniferZoomOut',
-                import: solar.Search.MagniferZoomOut    
-            }
+                import: solar.Search.MagniferZoomOut,
+            },
         },
     },
-    "time": {
-        tags: ["time"],
+    time: {
+        tags: ['time'],
         icons: {
-           "clock-circle": {
+            'clock-circle': {
                 pascalName: 'ClockCircle',
-                import: solar.Time.ClockCircle    
+                import: solar.Time.ClockCircle,
             },
-           "history": {
+            history: {
                 pascalName: 'History',
-                import: solar.Time.History    
+                import: solar.Time.History,
             },
-           "clock-square": {
+            'clock-square': {
                 pascalName: 'ClockSquare',
-                import: solar.Time.ClockSquare    
+                import: solar.Time.ClockSquare,
             },
-           "alarm-play": {
+            'alarm-play': {
                 pascalName: 'AlarmPlay',
-                import: solar.Time.AlarmPlay    
+                import: solar.Time.AlarmPlay,
             },
-           "alarm": {
+            alarm: {
                 pascalName: 'Alarm',
-                import: solar.Time.Alarm    
+                import: solar.Time.Alarm,
             },
-           "alarm-sleep": {
+            'alarm-sleep': {
                 pascalName: 'AlarmSleep',
-                import: solar.Time.AlarmSleep    
+                import: solar.Time.AlarmSleep,
             },
-           "alarm-add": {
+            'alarm-add': {
                 pascalName: 'AlarmAdd',
-                import: solar.Time.AlarmAdd    
+                import: solar.Time.AlarmAdd,
             },
-           "alarm-turn-off": {
+            'alarm-turn-off': {
                 pascalName: 'AlarmTurnOff',
-                import: solar.Time.AlarmTurnOff    
+                import: solar.Time.AlarmTurnOff,
             },
-           "stopwatch-play": {
+            'stopwatch-play': {
                 pascalName: 'StopwatchPlay',
-                import: solar.Time.StopwatchPlay    
+                import: solar.Time.StopwatchPlay,
             },
-           "hourglass": {
+            hourglass: {
                 pascalName: 'Hourglass',
-                import: solar.Time.Hourglass    
+                import: solar.Time.Hourglass,
             },
-           "stopwatch-pause": {
+            'stopwatch-pause': {
                 pascalName: 'StopwatchPause',
-                import: solar.Time.StopwatchPause    
+                import: solar.Time.StopwatchPause,
             },
-           "history-3": {
+            'history-3': {
                 pascalName: 'History3',
-                import: solar.Time.History3    
+                import: solar.Time.History3,
             },
-           "calendar-minimalistic": {
+            'calendar-minimalistic': {
                 pascalName: 'CalendarMinimalistic',
-                import: solar.Time.CalendarMinimalistic    
+                import: solar.Time.CalendarMinimalistic,
             },
-           "history-2": {
+            'history-2': {
                 pascalName: 'History2',
-                import: solar.Time.History2    
+                import: solar.Time.History2,
             },
-           "calendar": {
+            calendar: {
                 pascalName: 'Calendar',
-                import: solar.Time.Calendar    
+                import: solar.Time.Calendar,
             },
-           "alarm-pause": {
+            'alarm-pause': {
                 pascalName: 'AlarmPause',
-                import: solar.Time.AlarmPause    
+                import: solar.Time.AlarmPause,
             },
-           "stopwatch": {
+            stopwatch: {
                 pascalName: 'Stopwatch',
-                import: solar.Time.Stopwatch    
+                import: solar.Time.Stopwatch,
             },
-           "calendar-mark": {
+            'calendar-mark': {
                 pascalName: 'CalendarMark',
-                import: solar.Time.CalendarMark    
+                import: solar.Time.CalendarMark,
             },
-           "calendar-date": {
+            'calendar-date': {
                 pascalName: 'CalendarDate',
-                import: solar.Time.CalendarDate    
+                import: solar.Time.CalendarDate,
             },
-           "calendar-add": {
+            'calendar-add': {
                 pascalName: 'CalendarAdd',
-                import: solar.Time.CalendarAdd    
+                import: solar.Time.CalendarAdd,
             },
-           "alarm-remove": {
+            'alarm-remove': {
                 pascalName: 'AlarmRemove',
-                import: solar.Time.AlarmRemove    
+                import: solar.Time.AlarmRemove,
             },
-           "watch-square": {
+            'watch-square': {
                 pascalName: 'WatchSquare',
-                import: solar.Time.WatchSquare    
+                import: solar.Time.WatchSquare,
             },
-           "calendar-search": {
+            'calendar-search': {
                 pascalName: 'CalendarSearch',
-                import: solar.Time.CalendarSearch    
+                import: solar.Time.CalendarSearch,
             },
-           "watch-round": {
+            'watch-round': {
                 pascalName: 'WatchRound',
-                import: solar.Time.WatchRound    
+                import: solar.Time.WatchRound,
             },
-           "watch-square-minimalistic": {
+            'watch-square-minimalistic': {
                 pascalName: 'WatchSquareMinimalistic',
-                import: solar.Time.WatchSquareMinimalistic    
+                import: solar.Time.WatchSquareMinimalistic,
             },
-           "hourglass-line": {
+            'hourglass-line': {
                 pascalName: 'HourglassLine',
-                import: solar.Time.HourglassLine    
+                import: solar.Time.HourglassLine,
             },
-           "watch-square-minimalistic-charge": {
+            'watch-square-minimalistic-charge': {
                 pascalName: 'WatchSquareMinimalisticCharge',
-                import: solar.Time.WatchSquareMinimalisticCharge    
-            }
+                import: solar.Time.WatchSquareMinimalisticCharge,
+            },
         },
     },
-    "list": {
-        tags: ["list"],
+    list: {
+        tags: ['list'],
         icons: {
-           "plaaylist-minimalistic": {
+            'plaaylist-minimalistic': {
                 pascalName: 'PlaaylistMinimalistic',
-                import: solar.List.PlaaylistMinimalistic    
+                import: solar.List.PlaaylistMinimalistic,
             },
-           "playlist-2": {
+            'playlist-2': {
                 pascalName: 'Playlist2',
-                import: solar.List.Playlist2    
+                import: solar.List.Playlist2,
             },
-           "playlist-minimalistic-2": {
+            'playlist-minimalistic-2': {
                 pascalName: 'PlaylistMinimalistic2',
-                import: solar.List.PlaylistMinimalistic2    
+                import: solar.List.PlaylistMinimalistic2,
             },
-           "playlist-minimalistic-3": {
+            'playlist-minimalistic-3': {
                 pascalName: 'PlaylistMinimalistic3',
-                import: solar.List.PlaylistMinimalistic3    
+                import: solar.List.PlaylistMinimalistic3,
             },
-           "list-heart": {
+            'list-heart': {
                 pascalName: 'ListHeart',
-                import: solar.List.ListHeart    
+                import: solar.List.ListHeart,
             },
-           "list-heart-minimalistic": {
+            'list-heart-minimalistic': {
                 pascalName: 'ListHeartMinimalistic',
-                import: solar.List.ListHeartMinimalistic    
+                import: solar.List.ListHeartMinimalistic,
             },
-           "list-down-minimalistic": {
+            'list-down-minimalistic': {
                 pascalName: 'ListDownMinimalistic',
-                import: solar.List.ListDownMinimalistic    
+                import: solar.List.ListDownMinimalistic,
             },
-           "list-check": {
+            'list-check': {
                 pascalName: 'ListCheck',
-                import: solar.List.ListCheck    
+                import: solar.List.ListCheck,
             },
-           "list-check-minimalistic": {
+            'list-check-minimalistic': {
                 pascalName: 'ListCheckMinimalistic',
-                import: solar.List.ListCheckMinimalistic    
+                import: solar.List.ListCheckMinimalistic,
             },
-           "list-cross": {
+            'list-cross': {
                 pascalName: 'ListCross',
-                import: solar.List.ListCross    
+                import: solar.List.ListCross,
             },
-           "list-cross-minimalistic": {
+            'list-cross-minimalistic': {
                 pascalName: 'ListCrossMinimalistic',
-                import: solar.List.ListCrossMinimalistic    
+                import: solar.List.ListCrossMinimalistic,
             },
-           "sort-by-alphabet": {
+            'sort-by-alphabet': {
                 pascalName: 'SortByAlphabet',
-                import: solar.List.SortByAlphabet    
+                import: solar.List.SortByAlphabet,
             },
-           "list": {
+            list: {
                 pascalName: 'List',
-                import: solar.List.List    
+                import: solar.List.List,
             },
-           "sort-from-top-to-bottom": {
+            'sort-from-top-to-bottom': {
                 pascalName: 'SortFromTopToBottom',
-                import: solar.List.SortFromTopToBottom    
+                import: solar.List.SortFromTopToBottom,
             },
-           "list-arrow-up": {
+            'list-arrow-up': {
                 pascalName: 'ListArrowUp',
-                import: solar.List.ListArrowUp    
+                import: solar.List.ListArrowUp,
             },
-           "list-down": {
+            'list-down': {
                 pascalName: 'ListDown',
-                import: solar.List.ListDown    
+                import: solar.List.ListDown,
             },
-           "sort-from-bottom-to-top": {
+            'sort-from-bottom-to-top': {
                 pascalName: 'SortFromBottomToTop',
-                import: solar.List.SortFromBottomToTop    
+                import: solar.List.SortFromBottomToTop,
             },
-           "list-up-minimalistic": {
+            'list-up-minimalistic': {
                 pascalName: 'ListUpMinimalistic',
-                import: solar.List.ListUpMinimalistic    
+                import: solar.List.ListUpMinimalistic,
             },
-           "list-arrow-down": {
+            'list-arrow-down': {
                 pascalName: 'ListArrowDown',
-                import: solar.List.ListArrowDown    
+                import: solar.List.ListArrowDown,
             },
-           "list-arrow-down-minimalistic": {
+            'list-arrow-down-minimalistic': {
                 pascalName: 'ListArrowDownMinimalistic',
-                import: solar.List.ListArrowDownMinimalistic    
+                import: solar.List.ListArrowDownMinimalistic,
             },
-           "checklist": {
+            checklist: {
                 pascalName: 'Checklist',
-                import: solar.List.Checklist    
+                import: solar.List.Checklist,
             },
-           "bill-2": {
+            'bill-2': {
                 pascalName: 'Bill2',
-                import: solar.List.Bill2    
+                import: solar.List.Bill2,
             },
-           "playlist": {
+            playlist: {
                 pascalName: 'Playlist',
-                import: solar.List.Playlist    
+                import: solar.List.Playlist,
             },
-           "list-arrow-up-minimalistic": {
+            'list-arrow-up-minimalistic': {
                 pascalName: 'ListArrowUpMinimalistic',
-                import: solar.List.ListArrowUpMinimalistic    
+                import: solar.List.ListArrowUpMinimalistic,
             },
-           "checklist-minimalistic": {
+            'checklist-minimalistic': {
                 pascalName: 'ChecklistMinimalistic',
-                import: solar.List.ChecklistMinimalistic    
+                import: solar.List.ChecklistMinimalistic,
             },
-           "list-up": {
+            'list-up': {
                 pascalName: 'ListUp',
-                import: solar.List.ListUp    
+                import: solar.List.ListUp,
             },
-           "list-vertical": {
+            'list-vertical': {
                 pascalName: 'ListVertical',
-                import: solar.List.ListVertical    
+                import: solar.List.ListVertical,
             },
-           "sort-by-time": {
+            'sort-by-time': {
                 pascalName: 'SortByTime',
-                import: solar.List.SortByTime    
-            }
+                import: solar.List.SortByTime,
+            },
         },
     },
-    "ui": {
-        tags: ["ui","essentional"],
+    ui: {
+        tags: ['ui', 'essentional'],
         icons: {
-           "check-circle": {
+            'check-circle': {
                 pascalName: 'CheckCircle',
-                import: solar.Ui.CheckCircle    
+                import: solar.Ui.CheckCircle,
             },
-           "close-circle": {
+            'close-circle': {
                 pascalName: 'CloseCircle',
-                import: solar.Ui.CloseCircle    
+                import: solar.Ui.CloseCircle,
             },
-           "info-circle": {
+            'info-circle': {
                 pascalName: 'InfoCircle',
-                import: solar.Ui.InfoCircle    
+                import: solar.Ui.InfoCircle,
             },
-           "add-circle": {
+            'add-circle': {
                 pascalName: 'AddCircle',
-                import: solar.Ui.AddCircle    
+                import: solar.Ui.AddCircle,
             },
-           "question-circle": {
+            'question-circle': {
                 pascalName: 'QuestionCircle',
-                import: solar.Ui.QuestionCircle    
+                import: solar.Ui.QuestionCircle,
             },
-           "danger-circle": {
+            'danger-circle': {
                 pascalName: 'DangerCircle',
-                import: solar.Ui.DangerCircle    
+                import: solar.Ui.DangerCircle,
             },
-           "danger-triangle": {
+            'danger-triangle': {
                 pascalName: 'DangerTriangle',
-                import: solar.Ui.DangerTriangle    
+                import: solar.Ui.DangerTriangle,
             },
-           "danger": {
+            danger: {
                 pascalName: 'Danger',
-                import: solar.Ui.Danger    
+                import: solar.Ui.Danger,
             },
-           "forbidden": {
+            forbidden: {
                 pascalName: 'Forbidden',
-                import: solar.Ui.Forbidden    
+                import: solar.Ui.Forbidden,
             },
-           "forbidden-circle": {
+            'forbidden-circle': {
                 pascalName: 'ForbiddenCircle',
-                import: solar.Ui.ForbiddenCircle    
+                import: solar.Ui.ForbiddenCircle,
             },
-           "close-square": {
+            'close-square': {
                 pascalName: 'CloseSquare',
-                import: solar.Ui.CloseSquare    
+                import: solar.Ui.CloseSquare,
             },
-           "add-square": {
+            'add-square': {
                 pascalName: 'AddSquare',
-                import: solar.Ui.AddSquare    
+                import: solar.Ui.AddSquare,
             },
-           "question-square": {
+            'question-square': {
                 pascalName: 'QuestionSquare',
-                import: solar.Ui.QuestionSquare    
+                import: solar.Ui.QuestionSquare,
             },
-           "danger-square": {
+            'danger-square': {
                 pascalName: 'DangerSquare',
-                import: solar.Ui.DangerSquare    
+                import: solar.Ui.DangerSquare,
             },
-           "check-square": {
+            'check-square': {
                 pascalName: 'CheckSquare',
-                import: solar.Ui.CheckSquare    
+                import: solar.Ui.CheckSquare,
             },
-           "menu-dots-circle": {
+            'menu-dots-circle': {
                 pascalName: 'MenuDotsCircle',
-                import: solar.Ui.MenuDotsCircle    
+                import: solar.Ui.MenuDotsCircle,
             },
-           "menu-dots-square": {
+            'menu-dots-square': {
                 pascalName: 'MenuDotsSquare',
-                import: solar.Ui.MenuDotsSquare    
+                import: solar.Ui.MenuDotsSquare,
             },
-           "revote": {
+            revote: {
                 pascalName: 'Revote',
-                import: solar.Ui.Revote    
+                import: solar.Ui.Revote,
             },
-           "menu-dots": {
+            'menu-dots': {
                 pascalName: 'MenuDots',
-                import: solar.Ui.MenuDots    
+                import: solar.Ui.MenuDots,
             },
-           "home-add": {
+            'home-add': {
                 pascalName: 'HomeAdd',
-                import: solar.Ui.HomeAdd    
+                import: solar.Ui.HomeAdd,
             },
-           "smart-home": {
+            'smart-home': {
                 pascalName: 'SmartHome',
-                import: solar.Ui.SmartHome    
+                import: solar.Ui.SmartHome,
             },
-           "info-square": {
+            'info-square': {
                 pascalName: 'InfoSquare',
-                import: solar.Ui.InfoSquare    
+                import: solar.Ui.InfoSquare,
             },
-           "minus-circle": {
+            'minus-circle': {
                 pascalName: 'MinusCircle',
-                import: solar.Ui.MinusCircle    
+                import: solar.Ui.MinusCircle,
             },
-           "home": {
+            home: {
                 pascalName: 'Home',
-                import: solar.Ui.Home    
+                import: solar.Ui.Home,
             },
-           "home-smile": {
+            'home-smile': {
                 pascalName: 'HomeSmile',
-                import: solar.Ui.HomeSmile    
+                import: solar.Ui.HomeSmile,
             },
-           "home-2": {
+            'home-2': {
                 pascalName: 'Home2',
-                import: solar.Ui.Home2    
+                import: solar.Ui.Home2,
             },
-           "home-angle": {
+            'home-angle': {
                 pascalName: 'HomeAngle',
-                import: solar.Ui.HomeAngle    
+                import: solar.Ui.HomeAngle,
             },
-           "home-add-angle": {
+            'home-add-angle': {
                 pascalName: 'HomeAddAngle',
-                import: solar.Ui.HomeAddAngle    
+                import: solar.Ui.HomeAddAngle,
             },
-           "home-angle-2": {
+            'home-angle-2': {
                 pascalName: 'HomeAngle2',
-                import: solar.Ui.HomeAngle2    
+                import: solar.Ui.HomeAngle2,
             },
-           "battery-half-minimalistic": {
+            'battery-half-minimalistic': {
                 pascalName: 'BatteryHalfMinimalistic',
-                import: solar.Ui.BatteryHalfMinimalistic    
+                import: solar.Ui.BatteryHalfMinimalistic,
             },
-           "home-wi-fi-angle": {
+            'home-wi-fi-angle': {
                 pascalName: 'HomeWiFiAngle',
-                import: solar.Ui.HomeWiFiAngle    
+                import: solar.Ui.HomeWiFiAngle,
             },
-           "smart-home-angle": {
+            'smart-home-angle': {
                 pascalName: 'SmartHomeAngle',
-                import: solar.Ui.SmartHomeAngle    
+                import: solar.Ui.SmartHomeAngle,
             },
-           "battery-charge-minimalistic": {
+            'battery-charge-minimalistic': {
                 pascalName: 'BatteryChargeMinimalistic',
-                import: solar.Ui.BatteryChargeMinimalistic    
+                import: solar.Ui.BatteryChargeMinimalistic,
             },
-           "minus-square": {
+            'minus-square': {
                 pascalName: 'MinusSquare',
-                import: solar.Ui.MinusSquare    
+                import: solar.Ui.MinusSquare,
             },
-           "battery-low-minimalistic": {
+            'battery-low-minimalistic': {
                 pascalName: 'BatteryLowMinimalistic',
-                import: solar.Ui.BatteryLowMinimalistic    
+                import: solar.Ui.BatteryLowMinimalistic,
             },
-           "battery-low": {
+            'battery-low': {
                 pascalName: 'BatteryLow',
-                import: solar.Ui.BatteryLow    
+                import: solar.Ui.BatteryLow,
             },
-           "home-wi-fi": {
+            'home-wi-fi': {
                 pascalName: 'HomeWiFi',
-                import: solar.Ui.HomeWiFi    
+                import: solar.Ui.HomeWiFi,
             },
-           "battery-full": {
+            'battery-full': {
                 pascalName: 'BatteryFull',
-                import: solar.Ui.BatteryFull    
+                import: solar.Ui.BatteryFull,
             },
-           "home-smile-angle": {
+            'home-smile-angle': {
                 pascalName: 'HomeSmileAngle',
-                import: solar.Ui.HomeSmileAngle    
+                import: solar.Ui.HomeSmileAngle,
             },
-           "slider-vertical": {
+            'slider-vertical': {
                 pascalName: 'SliderVertical',
-                import: solar.Ui.SliderVertical    
+                import: solar.Ui.SliderVertical,
             },
-           "slider-minimalistic-horizontal": {
+            'slider-minimalistic-horizontal': {
                 pascalName: 'SliderMinimalisticHorizontal',
-                import: solar.Ui.SliderMinimalisticHorizontal    
+                import: solar.Ui.SliderMinimalisticHorizontal,
             },
-           "database": {
+            database: {
                 pascalName: 'Database',
-                import: solar.Ui.Database    
+                import: solar.Ui.Database,
             },
-           "crown-minimalistic": {
+            'crown-minimalistic': {
                 pascalName: 'CrownMinimalistic',
-                import: solar.Ui.CrownMinimalistic    
+                import: solar.Ui.CrownMinimalistic,
             },
-           "slider-horizontal": {
+            'slider-horizontal': {
                 pascalName: 'SliderHorizontal',
-                import: solar.Ui.SliderHorizontal    
+                import: solar.Ui.SliderHorizontal,
             },
-           "battery-charge": {
+            'battery-charge': {
                 pascalName: 'BatteryCharge',
-                import: solar.Ui.BatteryCharge    
+                import: solar.Ui.BatteryCharge,
             },
-           "battery-full-minimalistic": {
+            'battery-full-minimalistic': {
                 pascalName: 'BatteryFullMinimalistic',
-                import: solar.Ui.BatteryFullMinimalistic    
+                import: solar.Ui.BatteryFullMinimalistic,
             },
-           "traffic": {
+            traffic: {
                 pascalName: 'Traffic',
-                import: solar.Ui.Traffic    
+                import: solar.Ui.Traffic,
             },
-           "pin": {
+            pin: {
                 pascalName: 'Pin',
-                import: solar.Ui.Pin    
+                import: solar.Ui.Pin,
             },
-           "slider-vertical-minimalistic": {
+            'slider-vertical-minimalistic': {
                 pascalName: 'SliderVerticalMinimalistic',
-                import: solar.Ui.SliderVerticalMinimalistic    
+                import: solar.Ui.SliderVerticalMinimalistic,
             },
-           "crown-star": {
+            'crown-star': {
                 pascalName: 'CrownStar',
-                import: solar.Ui.CrownStar    
+                import: solar.Ui.CrownStar,
             },
-           "crown-line": {
+            'crown-line': {
                 pascalName: 'CrownLine',
-                import: solar.Ui.CrownLine    
+                import: solar.Ui.CrownLine,
             },
-           "pin-list": {
+            'pin-list': {
                 pascalName: 'PinList',
-                import: solar.Ui.PinList    
+                import: solar.Ui.PinList,
             },
-           "trash-bin-2": {
+            'trash-bin-2': {
                 pascalName: 'TrashBin2',
-                import: solar.Ui.TrashBin2    
+                import: solar.Ui.TrashBin2,
             },
-           "trash-bin-minimalistic": {
+            'trash-bin-minimalistic': {
                 pascalName: 'TrashBinMinimalistic',
-                import: solar.Ui.TrashBinMinimalistic    
+                import: solar.Ui.TrashBinMinimalistic,
             },
-           "pin-circle": {
+            'pin-circle': {
                 pascalName: 'PinCircle',
-                import: solar.Ui.PinCircle    
+                import: solar.Ui.PinCircle,
             },
-           "trash-bin-minimalistic-2": {
+            'trash-bin-minimalistic-2': {
                 pascalName: 'TrashBinMinimalistic2',
-                import: solar.Ui.TrashBinMinimalistic2    
+                import: solar.Ui.TrashBinMinimalistic2,
             },
-           "share": {
+            share: {
                 pascalName: 'Share',
-                import: solar.Ui.Share    
+                import: solar.Ui.Share,
             },
-           "traffic-economy": {
+            'traffic-economy': {
                 pascalName: 'TrafficEconomy',
-                import: solar.Ui.TrafficEconomy    
+                import: solar.Ui.TrafficEconomy,
             },
-           "share-circle": {
+            'share-circle': {
                 pascalName: 'ShareCircle',
-                import: solar.Ui.ShareCircle    
+                import: solar.Ui.ShareCircle,
             },
-           "trash-bin-trash": {
+            'trash-bin-trash': {
                 pascalName: 'TrashBinTrash',
-                import: solar.Ui.TrashBinTrash    
+                import: solar.Ui.TrashBinTrash,
             },
-           "target": {
+            target: {
                 pascalName: 'Target',
-                import: solar.Ui.Target    
+                import: solar.Ui.Target,
             },
-           "crown": {
+            crown: {
                 pascalName: 'Crown',
-                import: solar.Ui.Crown    
+                import: solar.Ui.Crown,
             },
-           "plate": {
+            plate: {
                 pascalName: 'Plate',
-                import: solar.Ui.Plate    
+                import: solar.Ui.Plate,
             },
-           "subtitles": {
+            subtitles: {
                 pascalName: 'Subtitles',
-                import: solar.Ui.Subtitles    
+                import: solar.Ui.Subtitles,
             },
-           "cat": {
+            cat: {
                 pascalName: 'Cat',
-                import: solar.Ui.Cat    
+                import: solar.Ui.Cat,
             },
-           "waterdrop": {
+            waterdrop: {
                 pascalName: 'Waterdrop',
-                import: solar.Ui.Waterdrop    
+                import: solar.Ui.Waterdrop,
             },
-           "posts-carousel-vertical": {
+            'posts-carousel-vertical': {
                 pascalName: 'PostsCarouselVertical',
-                import: solar.Ui.PostsCarouselVertical    
+                import: solar.Ui.PostsCarouselVertical,
             },
-           "bolt": {
+            bolt: {
                 pascalName: 'Bolt',
-                import: solar.Ui.Bolt    
+                import: solar.Ui.Bolt,
             },
-           "posts-carousel-horizontal": {
+            'posts-carousel-horizontal': {
                 pascalName: 'PostsCarouselHorizontal',
-                import: solar.Ui.PostsCarouselHorizontal    
+                import: solar.Ui.PostsCarouselHorizontal,
             },
-           "umbrella": {
+            umbrella: {
                 pascalName: 'Umbrella',
-                import: solar.Ui.Umbrella    
+                import: solar.Ui.Umbrella,
             },
-           "bolt-circle": {
+            'bolt-circle': {
                 pascalName: 'BoltCircle',
-                import: solar.Ui.BoltCircle    
+                import: solar.Ui.BoltCircle,
             },
-           "ghost-smile": {
+            'ghost-smile': {
                 pascalName: 'GhostSmile',
-                import: solar.Ui.GhostSmile    
+                import: solar.Ui.GhostSmile,
             },
-           "power": {
+            power: {
                 pascalName: 'Power',
-                import: solar.Ui.Power    
+                import: solar.Ui.Power,
             },
-           "broom": {
+            broom: {
                 pascalName: 'Broom',
-                import: solar.Ui.Broom    
+                import: solar.Ui.Broom,
             },
-           "figma": {
+            figma: {
                 pascalName: 'Figma',
-                import: solar.Ui.Figma    
+                import: solar.Ui.Figma,
             },
-           "paw": {
+            paw: {
                 pascalName: 'Paw',
-                import: solar.Ui.Paw    
+                import: solar.Ui.Paw,
             },
-           "balloon": {
+            balloon: {
                 pascalName: 'Balloon',
-                import: solar.Ui.Balloon    
+                import: solar.Ui.Balloon,
             },
-           "win-rar": {
+            'win-rar': {
                 pascalName: 'WinRar',
-                import: solar.Ui.WinRar    
+                import: solar.Ui.WinRar,
             },
-           "flag": {
+            flag: {
                 pascalName: 'Flag',
-                import: solar.Ui.Flag    
+                import: solar.Ui.Flag,
             },
-           "fuel": {
+            fuel: {
                 pascalName: 'Fuel',
-                import: solar.Ui.Fuel    
+                import: solar.Ui.Fuel,
             },
-           "cup": {
+            cup: {
                 pascalName: 'Cup',
-                import: solar.Ui.Cup    
+                import: solar.Ui.Cup,
             },
-           "cup-music": {
+            'cup-music': {
                 pascalName: 'CupMusic',
-                import: solar.Ui.CupMusic    
+                import: solar.Ui.CupMusic,
             },
-           "cup-star": {
+            'cup-star': {
                 pascalName: 'CupStar',
-                import: solar.Ui.CupStar    
+                import: solar.Ui.CupStar,
             },
-           "battery-half": {
+            'battery-half': {
                 pascalName: 'BatteryHalf',
-                import: solar.Ui.BatteryHalf    
+                import: solar.Ui.BatteryHalf,
             },
-           "help": {
+            help: {
                 pascalName: 'Help',
-                import: solar.Ui.Help    
+                import: solar.Ui.Help,
             },
-           "explicit": {
+            explicit: {
                 pascalName: 'Explicit',
-                import: solar.Ui.Explicit    
+                import: solar.Ui.Explicit,
             },
-           "xxx": {
+            xxx: {
                 pascalName: 'Xxx',
-                import: solar.Ui.Xxx    
+                import: solar.Ui.Xxx,
             },
-           "special-effects": {
+            'special-effects': {
                 pascalName: 'SpecialEffects',
-                import: solar.Ui.SpecialEffects    
+                import: solar.Ui.SpecialEffects,
             },
-           "cup-first": {
+            'cup-first': {
                 pascalName: 'CupFirst',
-                import: solar.Ui.CupFirst    
+                import: solar.Ui.CupFirst,
             },
-           "high-definition": {
+            'high-definition': {
                 pascalName: 'HighDefinition',
-                import: solar.Ui.HighDefinition    
+                import: solar.Ui.HighDefinition,
             },
-           "flag-2": {
+            'flag-2': {
                 pascalName: 'Flag2',
-                import: solar.Ui.Flag2    
+                import: solar.Ui.Flag2,
             },
-           "augmented-reality": {
+            'augmented-reality': {
                 pascalName: 'AugmentedReality',
-                import: solar.Ui.AugmentedReality    
+                import: solar.Ui.AugmentedReality,
             },
-           "reorder": {
+            reorder: {
                 pascalName: 'Reorder',
-                import: solar.Ui.Reorder    
+                import: solar.Ui.Reorder,
             },
-           "ghost": {
+            ghost: {
                 pascalName: 'Ghost',
-                import: solar.Ui.Ghost    
+                import: solar.Ui.Ghost,
             },
-           "high-quality": {
+            'high-quality': {
                 pascalName: 'HighQuality',
-                import: solar.Ui.HighQuality    
+                import: solar.Ui.HighQuality,
             },
-           "creative-commons": {
+            'creative-commons': {
                 pascalName: 'CreativeCommons',
-                import: solar.Ui.CreativeCommons    
+                import: solar.Ui.CreativeCommons,
             },
-           "copyright": {
+            copyright: {
                 pascalName: 'Copyright',
-                import: solar.Ui.Copyright    
+                import: solar.Ui.Copyright,
             },
-           "scissors": {
+            scissors: {
                 pascalName: 'Scissors',
-                import: solar.Ui.Scissors    
+                import: solar.Ui.Scissors,
             },
-           "filter": {
+            filter: {
                 pascalName: 'Filter',
-                import: solar.Ui.Filter    
+                import: solar.Ui.Filter,
             },
-           "glasses": {
+            glasses: {
                 pascalName: 'Glasses',
-                import: solar.Ui.Glasses    
+                import: solar.Ui.Glasses,
             },
-           "sort": {
+            sort: {
                 pascalName: 'Sort',
-                import: solar.Ui.Sort    
+                import: solar.Ui.Sort,
             },
-           "box-minimalistic": {
+            'box-minimalistic': {
                 pascalName: 'BoxMinimalistic',
-                import: solar.Ui.BoxMinimalistic    
+                import: solar.Ui.BoxMinimalistic,
             },
-           "copy": {
+            copy: {
                 pascalName: 'Copy',
-                import: solar.Ui.Copy    
+                import: solar.Ui.Copy,
             },
-           "box": {
+            box: {
                 pascalName: 'Box',
-                import: solar.Ui.Box    
+                import: solar.Ui.Box,
             },
-           "ferris-wheel": {
+            'ferris-wheel': {
                 pascalName: 'FerrisWheel',
-                import: solar.Ui.FerrisWheel    
+                import: solar.Ui.FerrisWheel,
             },
-           "four-k": {
+            'four-k': {
                 pascalName: 'FourK',
-                import: solar.Ui.FourK    
+                import: solar.Ui.FourK,
             },
-           "perfume": {
+            perfume: {
                 pascalName: 'Perfume',
-                import: solar.Ui.Perfume    
+                import: solar.Ui.Perfume,
             },
-           "paper-bin": {
+            'paper-bin': {
                 pascalName: 'PaperBin',
-                import: solar.Ui.PaperBin    
+                import: solar.Ui.PaperBin,
             },
-           "scissors-square": {
+            'scissors-square': {
                 pascalName: 'ScissorsSquare',
-                import: solar.Ui.ScissorsSquare    
+                import: solar.Ui.ScissorsSquare,
             },
-           "sleeping": {
+            sleeping: {
                 pascalName: 'Sleeping',
-                import: solar.Ui.Sleeping    
+                import: solar.Ui.Sleeping,
             },
-           "delivery": {
+            delivery: {
                 pascalName: 'Delivery',
-                import: solar.Ui.Delivery    
+                import: solar.Ui.Delivery,
             },
-           "feed": {
+            feed: {
                 pascalName: 'Feed',
-                import: solar.Ui.Feed    
+                import: solar.Ui.Feed,
             },
-           "gift": {
+            gift: {
                 pascalName: 'Gift',
-                import: solar.Ui.Gift    
+                import: solar.Ui.Gift,
             },
-           "magic-stick": {
+            'magic-stick': {
                 pascalName: 'MagicStick',
-                import: solar.Ui.MagicStick    
+                import: solar.Ui.MagicStick,
             },
-           "magic-stick-3": {
+            'magic-stick-3': {
                 pascalName: 'MagicStick3',
-                import: solar.Ui.MagicStick3    
+                import: solar.Ui.MagicStick3,
             },
-           "sledgehammer": {
+            sledgehammer: {
                 pascalName: 'Sledgehammer',
-                import: solar.Ui.Sledgehammer    
+                import: solar.Ui.Sledgehammer,
             },
-           "magic-stick-2": {
+            'magic-stick-2': {
                 pascalName: 'MagicStick2',
-                import: solar.Ui.MagicStick2    
+                import: solar.Ui.MagicStick2,
             },
-           "flashlight-on": {
+            'flashlight-on': {
                 pascalName: 'FlashlightOn',
-                import: solar.Ui.FlashlightOn    
+                import: solar.Ui.FlashlightOn,
             },
-           "flashlight": {
+            flashlight: {
                 pascalName: 'Flashlight',
-                import: solar.Ui.Flashlight    
+                import: solar.Ui.Flashlight,
             },
-           "magnet-wave": {
+            'magnet-wave': {
                 pascalName: 'MagnetWave',
-                import: solar.Ui.MagnetWave    
+                import: solar.Ui.MagnetWave,
             },
-           "magnet": {
+            magnet: {
                 pascalName: 'Magnet',
-                import: solar.Ui.Magnet    
+                import: solar.Ui.Magnet,
             },
-           "cursor-square": {
+            'cursor-square': {
                 pascalName: 'CursorSquare',
-                import: solar.Ui.CursorSquare    
+                import: solar.Ui.CursorSquare,
             },
-           "cosmetic": {
+            cosmetic: {
                 pascalName: 'Cosmetic',
-                import: solar.Ui.Cosmetic    
+                import: solar.Ui.Cosmetic,
             },
-           "cursor": {
+            cursor: {
                 pascalName: 'Cursor',
-                import: solar.Ui.Cursor    
+                import: solar.Ui.Cursor,
             },
-           "confetti-minimalistic": {
+            'confetti-minimalistic': {
                 pascalName: 'ConfettiMinimalistic',
-                import: solar.Ui.ConfettiMinimalistic    
+                import: solar.Ui.ConfettiMinimalistic,
             },
-           "mask-happly": {
+            'mask-happly': {
                 pascalName: 'MaskHapply',
-                import: solar.Ui.MaskHapply    
+                import: solar.Ui.MaskHapply,
             },
-           "mirror-2": {
+            'mirror-2': {
                 pascalName: 'Mirror2',
-                import: solar.Ui.Mirror2    
+                import: solar.Ui.Mirror2,
             },
-           "skirt": {
+            skirt: {
                 pascalName: 'Skirt',
-                import: solar.Ui.Skirt    
+                import: solar.Ui.Skirt,
             },
-           "confetti": {
+            confetti: {
                 pascalName: 'Confetti',
-                import: solar.Ui.Confetti    
+                import: solar.Ui.Confetti,
             },
-           "accessibility": {
+            accessibility: {
                 pascalName: 'Accessibility',
-                import: solar.Ui.Accessibility    
+                import: solar.Ui.Accessibility,
             },
-           "t-shirt": {
+            't-shirt': {
                 pascalName: 'TShirt',
-                import: solar.Ui.TShirt    
+                import: solar.Ui.TShirt,
             },
-           "mention-square": {
+            'mention-square': {
                 pascalName: 'MentionSquare',
-                import: solar.Ui.MentionSquare    
+                import: solar.Ui.MentionSquare,
             },
-           "body": {
+            body: {
                 pascalName: 'Body',
-                import: solar.Ui.Body    
+                import: solar.Ui.Body,
             },
-           "mask-sad": {
+            'mask-sad': {
                 pascalName: 'MaskSad',
-                import: solar.Ui.MaskSad    
+                import: solar.Ui.MaskSad,
             },
-           "mention-circle": {
+            'mention-circle': {
                 pascalName: 'MentionCircle',
-                import: solar.Ui.MentionCircle    
+                import: solar.Ui.MentionCircle,
             },
-           "hanger": {
+            hanger: {
                 pascalName: 'Hanger',
-                import: solar.Ui.Hanger    
+                import: solar.Ui.Hanger,
             },
-           "hanger-2": {
+            'hanger-2': {
                 pascalName: 'Hanger2',
-                import: solar.Ui.Hanger2    
+                import: solar.Ui.Hanger2,
             },
-           "masks": {
+            masks: {
                 pascalName: 'Masks',
-                import: solar.Ui.Masks    
+                import: solar.Ui.Masks,
             },
-           "hamburger-menu": {
+            'hamburger-menu': {
                 pascalName: 'HamburgerMenu',
-                import: solar.Ui.HamburgerMenu    
-            }
+                import: solar.Ui.HamburgerMenu,
+            },
         },
     },
-    "call": {
-        tags: ["call"],
+    call: {
+        tags: ['call'],
         icons: {
-           "call-cancel-rounded": {
+            'call-cancel-rounded': {
                 pascalName: 'CallCancelRounded',
-                import: solar.Call.CallCancelRounded    
+                import: solar.Call.CallCancelRounded,
             },
-           "end-call-rounded": {
+            'end-call-rounded': {
                 pascalName: 'EndCallRounded',
-                import: solar.Call.EndCallRounded    
+                import: solar.Call.EndCallRounded,
             },
-           "incoming-call-rounded": {
+            'incoming-call-rounded': {
                 pascalName: 'IncomingCallRounded',
-                import: solar.Call.IncomingCallRounded    
+                import: solar.Call.IncomingCallRounded,
             },
-           "outgoing-call-rounded": {
+            'outgoing-call-rounded': {
                 pascalName: 'OutgoingCallRounded',
-                import: solar.Call.OutgoingCallRounded    
+                import: solar.Call.OutgoingCallRounded,
             },
-           "phone": {
+            phone: {
                 pascalName: 'Phone',
-                import: solar.Call.Phone    
+                import: solar.Call.Phone,
             },
-           "call-dropped-rounded": {
+            'call-dropped-rounded': {
                 pascalName: 'CallDroppedRounded',
-                import: solar.Call.CallDroppedRounded    
+                import: solar.Call.CallDroppedRounded,
             },
-           "phone-calling": {
+            'phone-calling': {
                 pascalName: 'PhoneCalling',
-                import: solar.Call.PhoneCalling    
+                import: solar.Call.PhoneCalling,
             },
-           "phone-rounded": {
+            'phone-rounded': {
                 pascalName: 'PhoneRounded',
-                import: solar.Call.PhoneRounded    
+                import: solar.Call.PhoneRounded,
             },
-           "call-cancel": {
+            'call-cancel': {
                 pascalName: 'CallCancel',
-                import: solar.Call.CallCancel    
+                import: solar.Call.CallCancel,
             },
-           "incoming-call": {
+            'incoming-call': {
                 pascalName: 'IncomingCall',
-                import: solar.Call.IncomingCall    
+                import: solar.Call.IncomingCall,
             },
-           "call-medicine-rounded": {
+            'call-medicine-rounded': {
                 pascalName: 'CallMedicineRounded',
-                import: solar.Call.CallMedicineRounded    
+                import: solar.Call.CallMedicineRounded,
             },
-           "record-minimalistic": {
+            'record-minimalistic': {
                 pascalName: 'RecordMinimalistic',
-                import: solar.Call.RecordMinimalistic    
+                import: solar.Call.RecordMinimalistic,
             },
-           "phone-calling-rounded": {
+            'phone-calling-rounded': {
                 pascalName: 'PhoneCallingRounded',
-                import: solar.Call.PhoneCallingRounded    
+                import: solar.Call.PhoneCallingRounded,
             },
-           "call-dropped": {
+            'call-dropped': {
                 pascalName: 'CallDropped',
-                import: solar.Call.CallDropped    
+                import: solar.Call.CallDropped,
             },
-           "outgoing-call": {
+            'outgoing-call': {
                 pascalName: 'OutgoingCall',
-                import: solar.Call.OutgoingCall    
+                import: solar.Call.OutgoingCall,
             },
-           "record-square": {
+            'record-square': {
                 pascalName: 'RecordSquare',
-                import: solar.Call.RecordSquare    
+                import: solar.Call.RecordSquare,
             },
-           "call-chat-rounded": {
+            'call-chat-rounded': {
                 pascalName: 'CallChatRounded',
-                import: solar.Call.CallChatRounded    
+                import: solar.Call.CallChatRounded,
             },
-           "call-medicine": {
+            'call-medicine': {
                 pascalName: 'CallMedicine',
-                import: solar.Call.CallMedicine    
+                import: solar.Call.CallMedicine,
             },
-           "record-circle": {
+            'record-circle': {
                 pascalName: 'RecordCircle',
-                import: solar.Call.RecordCircle    
+                import: solar.Call.RecordCircle,
             },
-           "end-call": {
+            'end-call': {
                 pascalName: 'EndCall',
-                import: solar.Call.EndCall    
+                import: solar.Call.EndCall,
             },
-           "call-chat": {
+            'call-chat': {
                 pascalName: 'CallChat',
-                import: solar.Call.CallChat    
-            }
+                import: solar.Call.CallChat,
+            },
         },
     },
-    "medicine": {
-        tags: ["medicine"],
+    medicine: {
+        tags: ['medicine'],
         icons: {
-           "jar-of-pills": {
+            'jar-of-pills': {
                 pascalName: 'JarOfPills',
-                import: solar.Medicine.JarOfPills    
+                import: solar.Medicine.JarOfPills,
             },
-           "bacteria": {
+            bacteria: {
                 pascalName: 'Bacteria',
-                import: solar.Medicine.Bacteria    
+                import: solar.Medicine.Bacteria,
             },
-           "dna": {
+            dna: {
                 pascalName: 'Dna',
-                import: solar.Medicine.Dna    
+                import: solar.Medicine.Dna,
             },
-           "syringe": {
+            syringe: {
                 pascalName: 'Syringe',
-                import: solar.Medicine.Syringe    
+                import: solar.Medicine.Syringe,
             },
-           "jar-of-pills-2": {
+            'jar-of-pills-2': {
                 pascalName: 'JarOfPills2',
-                import: solar.Medicine.JarOfPills2    
+                import: solar.Medicine.JarOfPills2,
             },
-           "benzene-ring": {
+            'benzene-ring': {
                 pascalName: 'BenzeneRing',
-                import: solar.Medicine.BenzeneRing    
+                import: solar.Medicine.BenzeneRing,
             },
-           "pills-3": {
+            'pills-3': {
                 pascalName: 'Pills3',
-                import: solar.Medicine.Pills3    
+                import: solar.Medicine.Pills3,
             },
-           "dropper-2": {
+            'dropper-2': {
                 pascalName: 'Dropper2',
-                import: solar.Medicine.Dropper2    
+                import: solar.Medicine.Dropper2,
             },
-           "thermometer": {
+            thermometer: {
                 pascalName: 'Thermometer',
-                import: solar.Medicine.Thermometer    
+                import: solar.Medicine.Thermometer,
             },
-           "pills-2": {
+            'pills-2': {
                 pascalName: 'Pills2',
-                import: solar.Medicine.Pills2    
+                import: solar.Medicine.Pills2,
             },
-           "dropper-3": {
+            'dropper-3': {
                 pascalName: 'Dropper3',
-                import: solar.Medicine.Dropper3    
+                import: solar.Medicine.Dropper3,
             },
-           "dropper-minimalistic-2": {
+            'dropper-minimalistic-2': {
                 pascalName: 'DropperMinimalistic2',
-                import: solar.Medicine.DropperMinimalistic2    
+                import: solar.Medicine.DropperMinimalistic2,
             },
-           "bone": {
+            bone: {
                 pascalName: 'Bone',
-                import: solar.Medicine.Bone    
+                import: solar.Medicine.Bone,
             },
-           "adhesive-plaster-2": {
+            'adhesive-plaster-2': {
                 pascalName: 'AdhesivePlaster2',
-                import: solar.Medicine.AdhesivePlaster2    
+                import: solar.Medicine.AdhesivePlaster2,
             },
-           "pill": {
+            pill: {
                 pascalName: 'Pill',
-                import: solar.Medicine.Pill    
+                import: solar.Medicine.Pill,
             },
-           "dropper": {
+            dropper: {
                 pascalName: 'Dropper',
-                import: solar.Medicine.Dropper    
+                import: solar.Medicine.Dropper,
             },
-           "test-tube": {
+            'test-tube': {
                 pascalName: 'TestTube',
-                import: solar.Medicine.TestTube    
+                import: solar.Medicine.TestTube,
             },
-           "pills": {
+            pills: {
                 pascalName: 'Pills',
-                import: solar.Medicine.Pills    
+                import: solar.Medicine.Pills,
             },
-           "bones": {
+            bones: {
                 pascalName: 'Bones',
-                import: solar.Medicine.Bones    
+                import: solar.Medicine.Bones,
             },
-           "test-tube-minimalistic": {
+            'test-tube-minimalistic': {
                 pascalName: 'TestTubeMinimalistic',
-                import: solar.Medicine.TestTubeMinimalistic    
+                import: solar.Medicine.TestTubeMinimalistic,
             },
-           "bone-broken": {
+            'bone-broken': {
                 pascalName: 'BoneBroken',
-                import: solar.Medicine.BoneBroken    
+                import: solar.Medicine.BoneBroken,
             },
-           "heart-pulse": {
+            'heart-pulse': {
                 pascalName: 'HeartPulse',
-                import: solar.Medicine.HeartPulse    
+                import: solar.Medicine.HeartPulse,
             },
-           "dropper-minimalistic": {
+            'dropper-minimalistic': {
                 pascalName: 'DropperMinimalistic',
-                import: solar.Medicine.DropperMinimalistic    
+                import: solar.Medicine.DropperMinimalistic,
             },
-           "bone-crack": {
+            'bone-crack': {
                 pascalName: 'BoneCrack',
-                import: solar.Medicine.BoneCrack    
+                import: solar.Medicine.BoneCrack,
             },
-           "heart-pulse-2": {
+            'heart-pulse-2': {
                 pascalName: 'HeartPulse2',
-                import: solar.Medicine.HeartPulse2    
+                import: solar.Medicine.HeartPulse2,
             },
-           "stethoscope": {
+            stethoscope: {
                 pascalName: 'Stethoscope',
-                import: solar.Medicine.Stethoscope    
+                import: solar.Medicine.Stethoscope,
             },
-           "pulse": {
+            pulse: {
                 pascalName: 'Pulse',
-                import: solar.Medicine.Pulse    
+                import: solar.Medicine.Pulse,
             },
-           "medical-kit": {
+            'medical-kit': {
                 pascalName: 'MedicalKit',
-                import: solar.Medicine.MedicalKit    
+                import: solar.Medicine.MedicalKit,
             },
-           "virus": {
+            virus: {
                 pascalName: 'Virus',
-                import: solar.Medicine.Virus    
+                import: solar.Medicine.Virus,
             },
-           "adhesive-plaster": {
+            'adhesive-plaster': {
                 pascalName: 'AdhesivePlaster',
-                import: solar.Medicine.AdhesivePlaster    
+                import: solar.Medicine.AdhesivePlaster,
             },
-           "pulse-2": {
+            'pulse-2': {
                 pascalName: 'Pulse2',
-                import: solar.Medicine.Pulse2    
+                import: solar.Medicine.Pulse2,
             },
-           "health": {
+            health: {
                 pascalName: 'Health',
-                import: solar.Medicine.Health    
-            }
+                import: solar.Medicine.Health,
+            },
         },
     },
-    "home": {
-        tags: ["home","furniture"],
+    home: {
+        tags: ['home', 'furniture'],
         icons: {
-           "condicioner": {
+            condicioner: {
                 pascalName: 'Condicioner',
-                import: solar.Home.Condicioner    
+                import: solar.Home.Condicioner,
             },
-           "condicioner-2": {
+            'condicioner-2': {
                 pascalName: 'Condicioner2',
-                import: solar.Home.Condicioner2    
+                import: solar.Home.Condicioner2,
             },
-           "remote-controller": {
+            'remote-controller': {
                 pascalName: 'RemoteController',
-                import: solar.Home.RemoteController    
+                import: solar.Home.RemoteController,
             },
-           "speaker": {
+            speaker: {
                 pascalName: 'Speaker',
-                import: solar.Home.Speaker    
+                import: solar.Home.Speaker,
             },
-           "remote-controller-minimalistic": {
+            'remote-controller-minimalistic': {
                 pascalName: 'RemoteControllerMinimalistic',
-                import: solar.Home.RemoteControllerMinimalistic    
+                import: solar.Home.RemoteControllerMinimalistic,
             },
-           "speaker-minimalistic": {
+            'speaker-minimalistic': {
                 pascalName: 'SpeakerMinimalistic',
-                import: solar.Home.SpeakerMinimalistic    
+                import: solar.Home.SpeakerMinimalistic,
             },
-           "washing-machine": {
+            'washing-machine': {
                 pascalName: 'WashingMachine',
-                import: solar.Home.WashingMachine    
+                import: solar.Home.WashingMachine,
             },
-           "sofa-3": {
+            'sofa-3': {
                 pascalName: 'Sofa3',
-                import: solar.Home.Sofa3    
+                import: solar.Home.Sofa3,
             },
-           "remote-controller-2": {
+            'remote-controller-2': {
                 pascalName: 'RemoteController2',
-                import: solar.Home.RemoteController2    
+                import: solar.Home.RemoteController2,
             },
-           "closet": {
+            closet: {
                 pascalName: 'Closet',
-                import: solar.Home.Closet    
+                import: solar.Home.Closet,
             },
-           "sofa": {
+            sofa: {
                 pascalName: 'Sofa',
-                import: solar.Home.Sofa    
+                import: solar.Home.Sofa,
             },
-           "mirror": {
+            mirror: {
                 pascalName: 'Mirror',
-                import: solar.Home.Mirror    
+                import: solar.Home.Mirror,
             },
-           "washing-machine-minimalistic": {
+            'washing-machine-minimalistic': {
                 pascalName: 'WashingMachineMinimalistic',
-                import: solar.Home.WashingMachineMinimalistic    
+                import: solar.Home.WashingMachineMinimalistic,
             },
-           "closet-2": {
+            'closet-2': {
                 pascalName: 'Closet2',
-                import: solar.Home.Closet2    
+                import: solar.Home.Closet2,
             },
-           "bed": {
+            bed: {
                 pascalName: 'Bed',
-                import: solar.Home.Bed    
+                import: solar.Home.Bed,
             },
-           "sofa-2": {
+            'sofa-2': {
                 pascalName: 'Sofa2',
-                import: solar.Home.Sofa2    
+                import: solar.Home.Sofa2,
             },
-           "lamp": {
+            lamp: {
                 pascalName: 'Lamp',
-                import: solar.Home.Lamp    
+                import: solar.Home.Lamp,
             },
-           "bath": {
+            bath: {
                 pascalName: 'Bath',
-                import: solar.Home.Bath    
+                import: solar.Home.Bath,
             },
-           "bedside-table-4": {
+            'bedside-table-4': {
                 pascalName: 'BedsideTable4',
-                import: solar.Home.BedsideTable4    
+                import: solar.Home.BedsideTable4,
             },
-           "chandelier": {
+            chandelier: {
                 pascalName: 'Chandelier',
-                import: solar.Home.Chandelier    
+                import: solar.Home.Chandelier,
             },
-           "trellis": {
+            trellis: {
                 pascalName: 'Trellis',
-                import: solar.Home.Trellis    
+                import: solar.Home.Trellis,
             },
-           "bedside-table": {
+            'bedside-table': {
                 pascalName: 'BedsideTable',
-                import: solar.Home.BedsideTable    
+                import: solar.Home.BedsideTable,
             },
-           "armchair": {
+            armchair: {
                 pascalName: 'Armchair',
-                import: solar.Home.Armchair    
+                import: solar.Home.Armchair,
             },
-           "floor-lamp-minimalistic": {
+            'floor-lamp-minimalistic': {
                 pascalName: 'FloorLampMinimalistic',
-                import: solar.Home.FloorLampMinimalistic    
+                import: solar.Home.FloorLampMinimalistic,
             },
-           "bedside-table-3": {
+            'bedside-table-3': {
                 pascalName: 'BedsideTable3',
-                import: solar.Home.BedsideTable3    
+                import: solar.Home.BedsideTable3,
             },
-           "armchair-2": {
+            'armchair-2': {
                 pascalName: 'Armchair2',
-                import: solar.Home.Armchair2    
+                import: solar.Home.Armchair2,
             },
-           "fridge": {
+            fridge: {
                 pascalName: 'Fridge',
-                import: solar.Home.Fridge    
+                import: solar.Home.Fridge,
             },
-           "chair": {
+            chair: {
                 pascalName: 'Chair',
-                import: solar.Home.Chair    
+                import: solar.Home.Chair,
             },
-           "volume-knob": {
+            'volume-knob': {
                 pascalName: 'VolumeKnob',
-                import: solar.Home.VolumeKnob    
+                import: solar.Home.VolumeKnob,
             },
-           "bar-chair": {
+            'bar-chair': {
                 pascalName: 'BarChair',
-                import: solar.Home.BarChair    
+                import: solar.Home.BarChair,
             },
-           "bedside-table-2": {
+            'bedside-table-2': {
                 pascalName: 'BedsideTable2',
-                import: solar.Home.BedsideTable2    
+                import: solar.Home.BedsideTable2,
             },
-           "smart-vacuum-cleaner": {
+            'smart-vacuum-cleaner': {
                 pascalName: 'SmartVacuumCleaner',
-                import: solar.Home.SmartVacuumCleaner    
+                import: solar.Home.SmartVacuumCleaner,
             },
-           "chair-2": {
+            'chair-2': {
                 pascalName: 'Chair2',
-                import: solar.Home.Chair2    
+                import: solar.Home.Chair2,
             },
-           "floor-lamp": {
+            'floor-lamp': {
                 pascalName: 'FloorLamp',
-                import: solar.Home.FloorLamp    
+                import: solar.Home.FloorLamp,
             },
-           "smart-vacuum-cleaner-2": {
+            'smart-vacuum-cleaner-2': {
                 pascalName: 'SmartVacuumCleaner2',
-                import: solar.Home.SmartVacuumCleaner2    
-            }
+                import: solar.Home.SmartVacuumCleaner2,
+            },
         },
     },
-    "it": {
-        tags: ["it","network","programming"],
+    it: {
+        tags: ['it', 'network', 'programming'],
         icons: {
-           "wi-fi-router-minimalistic": {
+            'wi-fi-router-minimalistic': {
                 pascalName: 'WiFiRouterMinimalistic',
-                import: solar.It.WiFiRouterMinimalistic    
+                import: solar.It.WiFiRouterMinimalistic,
             },
-           "sidebar-minimalistic": {
+            'sidebar-minimalistic': {
                 pascalName: 'SidebarMinimalistic',
-                import: solar.It.SidebarMinimalistic    
+                import: solar.It.SidebarMinimalistic,
             },
-           "siderbar": {
+            siderbar: {
                 pascalName: 'Siderbar',
-                import: solar.It.Siderbar    
+                import: solar.It.Siderbar,
             },
-           "wi-fi-router-round": {
+            'wi-fi-router-round': {
                 pascalName: 'WiFiRouterRound',
-                import: solar.It.WiFiRouterRound    
+                import: solar.It.WiFiRouterRound,
             },
-           "sidebar-code": {
+            'sidebar-code': {
                 pascalName: 'SidebarCode',
-                import: solar.It.SidebarCode    
+                import: solar.It.SidebarCode,
             },
-           "wi-fi-router": {
+            'wi-fi-router': {
                 pascalName: 'WiFiRouter',
-                import: solar.It.WiFiRouter    
+                import: solar.It.WiFiRouter,
             },
-           "window-frame": {
+            'window-frame': {
                 pascalName: 'WindowFrame',
-                import: solar.It.WindowFrame    
+                import: solar.It.WindowFrame,
             },
-           "usb-circle": {
+            'usb-circle': {
                 pascalName: 'UsbCircle',
-                import: solar.It.UsbCircle    
+                import: solar.It.UsbCircle,
             },
-           "usb-square": {
+            'usb-square': {
                 pascalName: 'UsbSquare',
-                import: solar.It.UsbSquare    
+                import: solar.It.UsbSquare,
             },
-           "code": {
+            code: {
                 pascalName: 'Code',
-                import: solar.It.Code    
+                import: solar.It.Code,
             },
-           "screencast": {
+            screencast: {
                 pascalName: 'Screencast',
-                import: solar.It.Screencast    
+                import: solar.It.Screencast,
             },
-           "translation-2": {
+            'translation-2': {
                 pascalName: 'Translation2',
-                import: solar.It.Translation2    
+                import: solar.It.Translation2,
             },
-           "programming": {
+            programming: {
                 pascalName: 'Programming',
-                import: solar.It.Programming    
+                import: solar.It.Programming,
             },
-           "code-circle": {
+            'code-circle': {
                 pascalName: 'CodeCircle',
-                import: solar.It.CodeCircle    
+                import: solar.It.CodeCircle,
             },
-           "code-2": {
+            'code-2': {
                 pascalName: 'Code2',
-                import: solar.It.Code2    
+                import: solar.It.Code2,
             },
-           "translation": {
+            translation: {
                 pascalName: 'Translation',
-                import: solar.It.Translation    
+                import: solar.It.Translation,
             },
-           "usb": {
+            usb: {
                 pascalName: 'Usb',
-                import: solar.It.Usb    
+                import: solar.It.Usb,
             },
-           "structure": {
+            structure: {
                 pascalName: 'Structure',
-                import: solar.It.Structure    
+                import: solar.It.Structure,
             },
-           "slash-square": {
+            'slash-square': {
                 pascalName: 'SlashSquare',
-                import: solar.It.SlashSquare    
+                import: solar.It.SlashSquare,
             },
-           "code-square": {
+            'code-square': {
                 pascalName: 'CodeSquare',
-                import: solar.It.CodeSquare    
+                import: solar.It.CodeSquare,
             },
-           "screencast-2": {
+            'screencast-2': {
                 pascalName: 'Screencast2',
-                import: solar.It.Screencast2    
+                import: solar.It.Screencast2,
             },
-           "station": {
+            station: {
                 pascalName: 'Station',
-                import: solar.It.Station    
+                import: solar.It.Station,
             },
-           "slash-circle": {
+            'slash-circle': {
                 pascalName: 'SlashCircle',
-                import: solar.It.SlashCircle    
+                import: solar.It.SlashCircle,
             },
-           "station-minimalistic": {
+            'station-minimalistic': {
                 pascalName: 'StationMinimalistic',
-                import: solar.It.StationMinimalistic    
+                import: solar.It.StationMinimalistic,
             },
-           "command": {
+            command: {
                 pascalName: 'Command',
-                import: solar.It.Command    
+                import: solar.It.Command,
             },
-           "bug-minimalistic": {
+            'bug-minimalistic': {
                 pascalName: 'BugMinimalistic',
-                import: solar.It.BugMinimalistic    
+                import: solar.It.BugMinimalistic,
             },
-           "hashtag": {
+            hashtag: {
                 pascalName: 'Hashtag',
-                import: solar.It.Hashtag    
+                import: solar.It.Hashtag,
             },
-           "hashtag-square": {
+            'hashtag-square': {
                 pascalName: 'HashtagSquare',
-                import: solar.It.HashtagSquare    
+                import: solar.It.HashtagSquare,
             },
-           "hashtag-chat": {
+            'hashtag-chat': {
                 pascalName: 'HashtagChat',
-                import: solar.It.HashtagChat    
+                import: solar.It.HashtagChat,
             },
-           "bug": {
+            bug: {
                 pascalName: 'Bug',
-                import: solar.It.Bug    
+                import: solar.It.Bug,
             },
-           "hashtag-circle": {
+            'hashtag-circle': {
                 pascalName: 'HashtagCircle',
-                import: solar.It.HashtagCircle    
-            }
+                import: solar.It.HashtagCircle,
+            },
         },
     },
-    "settings": {
-        tags: ["settings","fine-tuning"],
+    settings: {
+        tags: ['settings', 'fine-tuning'],
         icons: {
-           "settings-minimalistic": {
+            'settings-minimalistic': {
                 pascalName: 'SettingsMinimalistic',
-                import: solar.Settings.SettingsMinimalistic    
+                import: solar.Settings.SettingsMinimalistic,
             },
-           "settings": {
+            settings: {
                 pascalName: 'Settings',
-                import: solar.Settings.Settings    
+                import: solar.Settings.Settings,
             },
-           "widget": {
+            widget: {
                 pascalName: 'Widget',
-                import: solar.Settings.Widget    
+                import: solar.Settings.Widget,
             },
-           "widget-4": {
+            'widget-4': {
                 pascalName: 'Widget4',
-                import: solar.Settings.Widget4    
+                import: solar.Settings.Widget4,
             },
-           "widget-add": {
+            'widget-add': {
                 pascalName: 'WidgetAdd',
-                import: solar.Settings.WidgetAdd    
+                import: solar.Settings.WidgetAdd,
             },
-           "widget-3": {
+            'widget-3': {
                 pascalName: 'Widget3',
-                import: solar.Settings.Widget3    
+                import: solar.Settings.Widget3,
             },
-           "tuning-2": {
+            'tuning-2': {
                 pascalName: 'Tuning2',
-                import: solar.Settings.Tuning2    
+                import: solar.Settings.Tuning2,
             },
-           "tuning-4": {
+            'tuning-4': {
                 pascalName: 'Tuning4',
-                import: solar.Settings.Tuning4    
+                import: solar.Settings.Tuning4,
             },
-           "tuning-3": {
+            'tuning-3': {
                 pascalName: 'Tuning3',
-                import: solar.Settings.Tuning3    
+                import: solar.Settings.Tuning3,
             },
-           "tuning": {
+            tuning: {
                 pascalName: 'Tuning',
-                import: solar.Settings.Tuning    
+                import: solar.Settings.Tuning,
             },
-           "tuning-square": {
+            'tuning-square': {
                 pascalName: 'TuningSquare',
-                import: solar.Settings.TuningSquare    
+                import: solar.Settings.TuningSquare,
             },
-           "widget-5": {
+            'widget-5': {
                 pascalName: 'Widget5',
-                import: solar.Settings.Widget5    
+                import: solar.Settings.Widget5,
             },
-           "tuning-square-2": {
+            'tuning-square-2': {
                 pascalName: 'TuningSquare2',
-                import: solar.Settings.TuningSquare2    
+                import: solar.Settings.TuningSquare2,
             },
-           "widget-2": {
+            'widget-2': {
                 pascalName: 'Widget2',
-                import: solar.Settings.Widget2    
+                import: solar.Settings.Widget2,
             },
-           "widget-6": {
+            'widget-6': {
                 pascalName: 'Widget6',
-                import: solar.Settings.Widget6    
-            }
+                import: solar.Settings.Widget6,
+            },
         },
     },
-    "text-formatting": {
-        tags: ["text-formatting"],
+    'text-formatting': {
+        tags: ['text-formatting'],
         icons: {
-           "eraser-circle": {
+            'eraser-circle': {
                 pascalName: 'EraserCircle',
-                import: solar.TextFormatting.EraserCircle    
+                import: solar.TextFormatting.EraserCircle,
             },
-           "eraser": {
+            eraser: {
                 pascalName: 'Eraser',
-                import: solar.TextFormatting.Eraser    
+                import: solar.TextFormatting.Eraser,
             },
-           "text-italic": {
+            'text-italic': {
                 pascalName: 'TextItalic',
-                import: solar.TextFormatting.TextItalic    
+                import: solar.TextFormatting.TextItalic,
             },
-           "eraser-square": {
+            'eraser-square': {
                 pascalName: 'EraserSquare',
-                import: solar.TextFormatting.EraserSquare    
+                import: solar.TextFormatting.EraserSquare,
             },
-           "text-italic-square": {
+            'text-italic-square': {
                 pascalName: 'TextItalicSquare',
-                import: solar.TextFormatting.TextItalicSquare    
+                import: solar.TextFormatting.TextItalicSquare,
             },
-           "text-circle": {
+            'text-circle': {
                 pascalName: 'TextCircle',
-                import: solar.TextFormatting.TextCircle    
+                import: solar.TextFormatting.TextCircle,
             },
-           "text-cross-circle": {
+            'text-cross-circle': {
                 pascalName: 'TextCrossCircle',
-                import: solar.TextFormatting.TextCrossCircle    
+                import: solar.TextFormatting.TextCrossCircle,
             },
-           "text-bold-circle": {
+            'text-bold-circle': {
                 pascalName: 'TextBoldCircle',
-                import: solar.TextFormatting.TextBoldCircle    
+                import: solar.TextFormatting.TextBoldCircle,
             },
-           "text-cross": {
+            'text-cross': {
                 pascalName: 'TextCross',
-                import: solar.TextFormatting.TextCross    
+                import: solar.TextFormatting.TextCross,
             },
-           "text-underline-circle": {
+            'text-underline-circle': {
                 pascalName: 'TextUnderlineCircle',
-                import: solar.TextFormatting.TextUnderlineCircle    
+                import: solar.TextFormatting.TextUnderlineCircle,
             },
-           "text-italic-circle": {
+            'text-italic-circle': {
                 pascalName: 'TextItalicCircle',
-                import: solar.TextFormatting.TextItalicCircle    
+                import: solar.TextFormatting.TextItalicCircle,
             },
-           "text-cross-square": {
+            'text-cross-square': {
                 pascalName: 'TextCrossSquare',
-                import: solar.TextFormatting.TextCrossSquare    
+                import: solar.TextFormatting.TextCrossSquare,
             },
-           "text": {
+            text: {
                 pascalName: 'Text',
-                import: solar.TextFormatting.Text    
+                import: solar.TextFormatting.Text,
             },
-           "text-underline": {
+            'text-underline': {
                 pascalName: 'TextUnderline',
-                import: solar.TextFormatting.TextUnderline    
+                import: solar.TextFormatting.TextUnderline,
             },
-           "text-underline-cross": {
+            'text-underline-cross': {
                 pascalName: 'TextUnderlineCross',
-                import: solar.TextFormatting.TextUnderlineCross    
+                import: solar.TextFormatting.TextUnderlineCross,
             },
-           "text-square": {
+            'text-square': {
                 pascalName: 'TextSquare',
-                import: solar.TextFormatting.TextSquare    
+                import: solar.TextFormatting.TextSquare,
             },
-           "text-bold": {
+            'text-bold': {
                 pascalName: 'TextBold',
-                import: solar.TextFormatting.TextBold    
+                import: solar.TextFormatting.TextBold,
             },
-           "text-selection": {
+            'text-selection': {
                 pascalName: 'TextSelection',
-                import: solar.TextFormatting.TextSelection    
+                import: solar.TextFormatting.TextSelection,
             },
-           "link": {
+            link: {
                 pascalName: 'Link',
-                import: solar.TextFormatting.Link    
+                import: solar.TextFormatting.Link,
             },
-           "link-broken-minimalistic": {
+            'link-broken-minimalistic': {
                 pascalName: 'LinkBrokenMinimalistic',
-                import: solar.TextFormatting.LinkBrokenMinimalistic    
+                import: solar.TextFormatting.LinkBrokenMinimalistic,
             },
-           "link-round": {
+            'link-round': {
                 pascalName: 'LinkRound',
-                import: solar.TextFormatting.LinkRound    
+                import: solar.TextFormatting.LinkRound,
             },
-           "link-square": {
+            'link-square': {
                 pascalName: 'LinkSquare',
-                import: solar.TextFormatting.LinkSquare    
+                import: solar.TextFormatting.LinkSquare,
             },
-           "text-square-2": {
+            'text-square-2': {
                 pascalName: 'TextSquare2',
-                import: solar.TextFormatting.TextSquare2    
+                import: solar.TextFormatting.TextSquare2,
             },
-           "paragraph-spacing": {
+            'paragraph-spacing': {
                 pascalName: 'ParagraphSpacing',
-                import: solar.TextFormatting.ParagraphSpacing    
+                import: solar.TextFormatting.ParagraphSpacing,
             },
-           "text-field": {
+            'text-field': {
                 pascalName: 'TextField',
-                import: solar.TextFormatting.TextField    
+                import: solar.TextFormatting.TextField,
             },
-           "link-minimalistic-2": {
+            'link-minimalistic-2': {
                 pascalName: 'LinkMinimalistic2',
-                import: solar.TextFormatting.LinkMinimalistic2    
+                import: solar.TextFormatting.LinkMinimalistic2,
             },
-           "link-circle": {
+            'link-circle': {
                 pascalName: 'LinkCircle',
-                import: solar.TextFormatting.LinkCircle    
+                import: solar.TextFormatting.LinkCircle,
             },
-           "text-bold-square": {
+            'text-bold-square': {
                 pascalName: 'TextBoldSquare',
-                import: solar.TextFormatting.TextBoldSquare    
+                import: solar.TextFormatting.TextBoldSquare,
             },
-           "text-field-focus": {
+            'text-field-focus': {
                 pascalName: 'TextFieldFocus',
-                import: solar.TextFormatting.TextFieldFocus    
+                import: solar.TextFormatting.TextFieldFocus,
             },
-           "link-broken": {
+            'link-broken': {
                 pascalName: 'LinkBroken',
-                import: solar.TextFormatting.LinkBroken    
+                import: solar.TextFormatting.LinkBroken,
             },
-           "link-minimalistic": {
+            'link-minimalistic': {
                 pascalName: 'LinkMinimalistic',
-                import: solar.TextFormatting.LinkMinimalistic    
+                import: solar.TextFormatting.LinkMinimalistic,
             },
-           "backspace": {
+            backspace: {
                 pascalName: 'Backspace',
-                import: solar.TextFormatting.Backspace    
+                import: solar.TextFormatting.Backspace,
             },
-           "link-round-angle": {
+            'link-round-angle': {
                 pascalName: 'LinkRoundAngle',
-                import: solar.TextFormatting.LinkRoundAngle    
-            }
+                import: solar.TextFormatting.LinkRoundAngle,
+            },
         },
     },
-    "business": {
-        tags: ["business","statistic"],
+    business: {
+        tags: ['business', 'statistic'],
         icons: {
-           "pie-chart": {
+            'pie-chart': {
                 pascalName: 'PieChart',
-                import: solar.Business.PieChart    
+                import: solar.Business.PieChart,
             },
-           "pie-chart-2": {
+            'pie-chart-2': {
                 pascalName: 'PieChart2',
-                import: solar.Business.PieChart2    
+                import: solar.Business.PieChart2,
             },
-           "graph": {
+            graph: {
                 pascalName: 'Graph',
-                import: solar.Business.Graph    
+                import: solar.Business.Graph,
             },
-           "graph-new-up": {
+            'graph-new-up': {
                 pascalName: 'GraphNewUp',
-                import: solar.Business.GraphNewUp    
+                import: solar.Business.GraphNewUp,
             },
-           "round-graph": {
+            'round-graph': {
                 pascalName: 'RoundGraph',
-                import: solar.Business.RoundGraph    
+                import: solar.Business.RoundGraph,
             },
-           "presentation-graph": {
+            'presentation-graph': {
                 pascalName: 'PresentationGraph',
-                import: solar.Business.PresentationGraph    
+                import: solar.Business.PresentationGraph,
             },
-           "graph-up": {
+            'graph-up': {
                 pascalName: 'GraphUp',
-                import: solar.Business.GraphUp    
+                import: solar.Business.GraphUp,
             },
-           "diagram-up": {
+            'diagram-up': {
                 pascalName: 'DiagramUp',
-                import: solar.Business.DiagramUp    
+                import: solar.Business.DiagramUp,
             },
-           "graph-new": {
+            'graph-new': {
                 pascalName: 'GraphNew',
-                import: solar.Business.GraphNew    
+                import: solar.Business.GraphNew,
             },
-           "graph-down": {
+            'graph-down': {
                 pascalName: 'GraphDown',
-                import: solar.Business.GraphDown    
+                import: solar.Business.GraphDown,
             },
-           "diagram-down": {
+            'diagram-down': {
                 pascalName: 'DiagramDown',
-                import: solar.Business.DiagramDown    
+                import: solar.Business.DiagramDown,
             },
-           "chart-square": {
+            'chart-square': {
                 pascalName: 'ChartSquare',
-                import: solar.Business.ChartSquare    
+                import: solar.Business.ChartSquare,
             },
-           "pie-chart-3": {
+            'pie-chart-3': {
                 pascalName: 'PieChart3',
-                import: solar.Business.PieChart3    
+                import: solar.Business.PieChart3,
             },
-           "chart": {
+            chart: {
                 pascalName: 'Chart',
-                import: solar.Business.Chart    
+                import: solar.Business.Chart,
             },
-           "chart-2": {
+            'chart-2': {
                 pascalName: 'Chart2',
-                import: solar.Business.Chart2    
+                import: solar.Business.Chart2,
             },
-           "chat-square-2": {
+            'chat-square-2': {
                 pascalName: 'ChatSquare2',
-                import: solar.Business.ChatSquare2    
+                import: solar.Business.ChatSquare2,
             },
-           "course-down": {
+            'course-down': {
                 pascalName: 'CourseDown',
-                import: solar.Business.CourseDown    
+                import: solar.Business.CourseDown,
             },
-           "course-up": {
+            'course-up': {
                 pascalName: 'CourseUp',
-                import: solar.Business.CourseUp    
+                import: solar.Business.CourseUp,
             },
-           "graph-down-new": {
+            'graph-down-new': {
                 pascalName: 'GraphDownNew',
-                import: solar.Business.GraphDownNew    
-            }
+                import: solar.Business.GraphDownNew,
+            },
         },
     },
-    "shopping": {
-        tags: ["shopping","ecommerce"],
+    shopping: {
+        tags: ['shopping', 'ecommerce'],
         icons: {
-           "cart-large-2": {
+            'cart-large-2': {
                 pascalName: 'CartLarge2',
-                import: solar.Shopping.CartLarge2    
+                import: solar.Shopping.CartLarge2,
             },
-           "cart-large-minimalistic": {
+            'cart-large-minimalistic': {
                 pascalName: 'CartLargeMinimalistic',
-                import: solar.Shopping.CartLargeMinimalistic    
+                import: solar.Shopping.CartLargeMinimalistic,
             },
-           "cart-large": {
+            'cart-large': {
                 pascalName: 'CartLarge',
-                import: solar.Shopping.CartLarge    
+                import: solar.Shopping.CartLarge,
             },
-           "cart-check": {
+            'cart-check': {
                 pascalName: 'CartCheck',
-                import: solar.Shopping.CartCheck    
+                import: solar.Shopping.CartCheck,
             },
-           "cart-large-4": {
+            'cart-large-4': {
                 pascalName: 'CartLarge4',
-                import: solar.Shopping.CartLarge4    
+                import: solar.Shopping.CartLarge4,
             },
-           "cart-cross": {
+            'cart-cross': {
                 pascalName: 'CartCross',
-                import: solar.Shopping.CartCross    
+                import: solar.Shopping.CartCross,
             },
-           "cart-plus": {
+            'cart-plus': {
                 pascalName: 'CartPlus',
-                import: solar.Shopping.CartPlus    
+                import: solar.Shopping.CartPlus,
             },
-           "cart": {
+            cart: {
                 pascalName: 'Cart',
-                import: solar.Shopping.Cart    
+                import: solar.Shopping.Cart,
             },
-           "cart-large-3": {
+            'cart-large-3': {
                 pascalName: 'CartLarge3',
-                import: solar.Shopping.CartLarge3    
+                import: solar.Shopping.CartLarge3,
             },
-           "cart-3": {
+            'cart-3': {
                 pascalName: 'Cart3',
-                import: solar.Shopping.Cart3    
+                import: solar.Shopping.Cart3,
             },
-           "bag": {
+            bag: {
                 pascalName: 'Bag',
-                import: solar.Shopping.Bag    
+                import: solar.Shopping.Bag,
             },
-           "cart-2": {
+            'cart-2': {
                 pascalName: 'Cart2',
-                import: solar.Shopping.Cart2    
+                import: solar.Shopping.Cart2,
             },
-           "cart-5": {
+            'cart-5': {
                 pascalName: 'Cart5',
-                import: solar.Shopping.Cart5    
+                import: solar.Shopping.Cart5,
             },
-           "bag-cross": {
+            'bag-cross': {
                 pascalName: 'BagCross',
-                import: solar.Shopping.BagCross    
+                import: solar.Shopping.BagCross,
             },
-           "bag-2": {
+            'bag-2': {
                 pascalName: 'Bag2',
-                import: solar.Shopping.Bag2    
+                import: solar.Shopping.Bag2,
             },
-           "bag-music-2": {
+            'bag-music-2': {
                 pascalName: 'BagMusic2',
-                import: solar.Shopping.BagMusic2    
+                import: solar.Shopping.BagMusic2,
             },
-           "bag-music": {
+            'bag-music': {
                 pascalName: 'BagMusic',
-                import: solar.Shopping.BagMusic    
+                import: solar.Shopping.BagMusic,
             },
-           "bag-5": {
+            'bag-5': {
                 pascalName: 'Bag5',
-                import: solar.Shopping.Bag5    
+                import: solar.Shopping.Bag5,
             },
-           "bag-check": {
+            'bag-check': {
                 pascalName: 'BagCheck',
-                import: solar.Shopping.BagCheck    
+                import: solar.Shopping.BagCheck,
             },
-           "shop": {
+            shop: {
                 pascalName: 'Shop',
-                import: solar.Shopping.Shop    
+                import: solar.Shopping.Shop,
             },
-           "bag-3": {
+            'bag-3': {
                 pascalName: 'Bag3',
-                import: solar.Shopping.Bag3    
+                import: solar.Shopping.Bag3,
             },
-           "cart-4": {
+            'cart-4': {
                 pascalName: 'Cart4',
-                import: solar.Shopping.Cart4    
+                import: solar.Shopping.Cart4,
             },
-           "shop-minimalistic": {
+            'shop-minimalistic': {
                 pascalName: 'ShopMinimalistic',
-                import: solar.Shopping.ShopMinimalistic    
+                import: solar.Shopping.ShopMinimalistic,
             },
-           "shop-2": {
+            'shop-2': {
                 pascalName: 'Shop2',
-                import: solar.Shopping.Shop2    
+                import: solar.Shopping.Shop2,
             },
-           "bag-4": {
+            'bag-4': {
                 pascalName: 'Bag4',
-                import: solar.Shopping.Bag4    
+                import: solar.Shopping.Bag4,
             },
-           "bag-smile": {
+            'bag-smile': {
                 pascalName: 'BagSmile',
-                import: solar.Shopping.BagSmile    
+                import: solar.Shopping.BagSmile,
             },
-           "bag-heart": {
+            'bag-heart': {
                 pascalName: 'BagHeart',
-                import: solar.Shopping.BagHeart    
-            }
+                import: solar.Shopping.BagHeart,
+            },
         },
     },
-    "nature": {
-        tags: ["nature","travel"],
+    nature: {
+        tags: ['nature', 'travel'],
         icons: {
-           "fire": {
+            fire: {
                 pascalName: 'Fire',
-                import: solar.Nature.Fire    
+                import: solar.Nature.Fire,
             },
-           "fire-minimalistic": {
+            'fire-minimalistic': {
                 pascalName: 'FireMinimalistic',
-                import: solar.Nature.FireMinimalistic    
+                import: solar.Nature.FireMinimalistic,
             },
-           "flame": {
+            flame: {
                 pascalName: 'Flame',
-                import: solar.Nature.Flame    
+                import: solar.Nature.Flame,
             },
-           "suitcase": {
+            suitcase: {
                 pascalName: 'Suitcase',
-                import: solar.Nature.Suitcase    
+                import: solar.Nature.Suitcase,
             },
-           "suitcase-lines": {
+            'suitcase-lines': {
                 pascalName: 'SuitcaseLines',
-                import: solar.Nature.SuitcaseLines    
+                import: solar.Nature.SuitcaseLines,
             },
-           "fire-square": {
+            'fire-square': {
                 pascalName: 'FireSquare',
-                import: solar.Nature.FireSquare    
+                import: solar.Nature.FireSquare,
             },
-           "leaf": {
+            leaf: {
                 pascalName: 'Leaf',
-                import: solar.Nature.Leaf    
+                import: solar.Nature.Leaf,
             },
-           "suitcase-tag": {
+            'suitcase-tag': {
                 pascalName: 'SuitcaseTag',
-                import: solar.Nature.SuitcaseTag    
+                import: solar.Nature.SuitcaseTag,
             },
-           "bonfire": {
+            bonfire: {
                 pascalName: 'Bonfire',
-                import: solar.Nature.Bonfire    
-            }
+                import: solar.Nature.Bonfire,
+            },
         },
     },
-    "school": {
-        tags: ["school"],
+    school: {
+        tags: ['school'],
         icons: {
-           "case-minimalistic": {
+            'case-minimalistic': {
                 pascalName: 'CaseMinimalistic',
-                import: solar.School.CaseMinimalistic    
+                import: solar.School.CaseMinimalistic,
             },
-           "case": {
+            case: {
                 pascalName: 'Case',
-                import: solar.School.Case    
+                import: solar.School.Case,
             },
-           "diploma": {
+            diploma: {
                 pascalName: 'Diploma',
-                import: solar.School.Diploma    
+                import: solar.School.Diploma,
             },
-           "case-round": {
+            'case-round': {
                 pascalName: 'CaseRound',
-                import: solar.School.CaseRound    
+                import: solar.School.CaseRound,
             },
-           "square-academic-cap": {
+            'square-academic-cap': {
                 pascalName: 'SquareAcademicCap',
-                import: solar.School.SquareAcademicCap    
+                import: solar.School.SquareAcademicCap,
             },
-           "notebook-square": {
+            'notebook-square': {
                 pascalName: 'NotebookSquare',
-                import: solar.School.NotebookSquare    
+                import: solar.School.NotebookSquare,
             },
-           "case-round-minimalistic": {
+            'case-round-minimalistic': {
                 pascalName: 'CaseRoundMinimalistic',
-                import: solar.School.CaseRoundMinimalistic    
+                import: solar.School.CaseRoundMinimalistic,
             },
-           "notebook-bookmark": {
+            'notebook-bookmark': {
                 pascalName: 'NotebookBookmark',
-                import: solar.School.NotebookBookmark    
+                import: solar.School.NotebookBookmark,
             },
-           "notebook-2": {
+            'notebook-2': {
                 pascalName: 'Notebook2',
-                import: solar.School.Notebook2    
+                import: solar.School.Notebook2,
             },
-           "square-academic-cap-2": {
+            'square-academic-cap-2': {
                 pascalName: 'SquareAcademicCap2',
-                import: solar.School.SquareAcademicCap2    
+                import: solar.School.SquareAcademicCap2,
             },
-           "book": {
+            book: {
                 pascalName: 'Book',
-                import: solar.School.Book    
+                import: solar.School.Book,
             },
-           "notebook-minimalistic": {
+            'notebook-minimalistic': {
                 pascalName: 'NotebookMinimalistic',
-                import: solar.School.NotebookMinimalistic    
+                import: solar.School.NotebookMinimalistic,
             },
-           "diploma-verified": {
+            'diploma-verified': {
                 pascalName: 'DiplomaVerified',
-                import: solar.School.DiplomaVerified    
+                import: solar.School.DiplomaVerified,
             },
-           "calculator": {
+            calculator: {
                 pascalName: 'Calculator',
-                import: solar.School.Calculator    
+                import: solar.School.Calculator,
             },
-           "backpack": {
+            backpack: {
                 pascalName: 'Backpack',
-                import: solar.School.Backpack    
+                import: solar.School.Backpack,
             },
-           "bookmark-square-minimalistic": {
+            'bookmark-square-minimalistic': {
                 pascalName: 'BookmarkSquareMinimalistic',
-                import: solar.School.BookmarkSquareMinimalistic    
+                import: solar.School.BookmarkSquareMinimalistic,
             },
-           "bookmark-circle": {
+            'bookmark-circle': {
                 pascalName: 'BookmarkCircle',
-                import: solar.School.BookmarkCircle    
+                import: solar.School.BookmarkCircle,
             },
-           "calculator-minimalistic": {
+            'calculator-minimalistic': {
                 pascalName: 'CalculatorMinimalistic',
-                import: solar.School.CalculatorMinimalistic    
+                import: solar.School.CalculatorMinimalistic,
             },
-           "book-bookmark": {
+            'book-bookmark': {
                 pascalName: 'BookBookmark',
-                import: solar.School.BookBookmark    
+                import: solar.School.BookBookmark,
             },
-           "plus-minus": {
+            'plus-minus': {
                 pascalName: 'PlusMinus',
-                import: solar.School.PlusMinus    
+                import: solar.School.PlusMinus,
             },
-           "book-bookmark-minimalistic": {
+            'book-bookmark-minimalistic': {
                 pascalName: 'BookBookmarkMinimalistic',
-                import: solar.School.BookBookmarkMinimalistic    
+                import: solar.School.BookBookmarkMinimalistic,
             },
-           "book-2": {
+            'book-2': {
                 pascalName: 'Book2',
-                import: solar.School.Book2    
+                import: solar.School.Book2,
             },
-           "passport-minimalistic": {
+            'passport-minimalistic': {
                 pascalName: 'PassportMinimalistic',
-                import: solar.School.PassportMinimalistic    
+                import: solar.School.PassportMinimalistic,
             },
-           "book-minimalistic": {
+            'book-minimalistic': {
                 pascalName: 'BookMinimalistic',
-                import: solar.School.BookMinimalistic    
+                import: solar.School.BookMinimalistic,
             },
-           "passport": {
+            passport: {
                 pascalName: 'Passport',
-                import: solar.School.Passport    
+                import: solar.School.Passport,
             },
-           "bookmark": {
+            bookmark: {
                 pascalName: 'Bookmark',
-                import: solar.School.Bookmark    
+                import: solar.School.Bookmark,
             },
-           "bookmark-opened": {
+            'bookmark-opened': {
                 pascalName: 'BookmarkOpened',
-                import: solar.School.BookmarkOpened    
+                import: solar.School.BookmarkOpened,
             },
-           "document-2": {
+            'document-2': {
                 pascalName: 'Document2',
-                import: solar.School.Document2    
+                import: solar.School.Document2,
             },
-           "bookmark-square": {
+            'bookmark-square': {
                 pascalName: 'BookmarkSquare',
-                import: solar.School.BookmarkSquare    
-            }
+                import: solar.School.BookmarkSquare,
+            },
         },
     },
-    "tools": {
-        tags: ["tools","design"],
+    tools: {
+        tags: ['tools', 'design'],
         icons: {
-           "ruler-pen": {
+            'ruler-pen': {
                 pascalName: 'RulerPen',
-                import: solar.Tools.RulerPen    
+                import: solar.Tools.RulerPen,
             },
-           "filters": {
+            filters: {
                 pascalName: 'Filters',
-                import: solar.Tools.Filters    
+                import: solar.Tools.Filters,
             },
-           "pipette": {
+            pipette: {
                 pascalName: 'Pipette',
-                import: solar.Tools.Pipette    
+                import: solar.Tools.Pipette,
             },
-           "flip-horizontal": {
+            'flip-horizontal': {
                 pascalName: 'FlipHorizontal',
-                import: solar.Tools.FlipHorizontal    
+                import: solar.Tools.FlipHorizontal,
             },
-           "three-squares": {
+            'three-squares': {
                 pascalName: 'ThreeSquares',
-                import: solar.Tools.ThreeSquares    
+                import: solar.Tools.ThreeSquares,
             },
-           "flip-vertical": {
+            'flip-vertical': {
                 pascalName: 'FlipVertical',
-                import: solar.Tools.FlipVertical    
+                import: solar.Tools.FlipVertical,
             },
-           "mirror-right": {
+            'mirror-right': {
                 pascalName: 'MirrorRight',
-                import: solar.Tools.MirrorRight    
+                import: solar.Tools.MirrorRight,
             },
-           "crop-minimalistic": {
+            'crop-minimalistic': {
                 pascalName: 'CropMinimalistic',
-                import: solar.Tools.CropMinimalistic    
+                import: solar.Tools.CropMinimalistic,
             },
-           "layers-minimalistic": {
+            'layers-minimalistic': {
                 pascalName: 'LayersMinimalistic',
-                import: solar.Tools.LayersMinimalistic    
+                import: solar.Tools.LayersMinimalistic,
             },
-           "ruler": {
+            ruler: {
                 pascalName: 'Ruler',
-                import: solar.Tools.Ruler    
+                import: solar.Tools.Ruler,
             },
-           "crop": {
+            crop: {
                 pascalName: 'Crop',
-                import: solar.Tools.Crop    
+                import: solar.Tools.Crop,
             },
-           "ruler-angular": {
+            'ruler-angular': {
                 pascalName: 'RulerAngular',
-                import: solar.Tools.RulerAngular    
+                import: solar.Tools.RulerAngular,
             },
-           "colour-tuneing": {
+            'colour-tuneing': {
                 pascalName: 'ColourTuneing',
-                import: solar.Tools.ColourTuneing    
+                import: solar.Tools.ColourTuneing,
             },
-           "palette-round": {
+            'palette-round': {
                 pascalName: 'PaletteRound',
-                import: solar.Tools.PaletteRound    
+                import: solar.Tools.PaletteRound,
             },
-           "mirror-left": {
+            'mirror-left': {
                 pascalName: 'MirrorLeft',
-                import: solar.Tools.MirrorLeft    
+                import: solar.Tools.MirrorLeft,
             },
-           "layers": {
+            layers: {
                 pascalName: 'Layers',
-                import: solar.Tools.Layers    
+                import: solar.Tools.Layers,
             },
-           "palette": {
+            palette: {
                 pascalName: 'Palette',
-                import: solar.Tools.Palette    
+                import: solar.Tools.Palette,
             },
-           "pallete-2": {
+            'pallete-2': {
                 pascalName: 'Pallete2',
-                import: solar.Tools.Pallete2    
+                import: solar.Tools.Pallete2,
             },
-           "paint-roller": {
+            'paint-roller': {
                 pascalName: 'PaintRoller',
-                import: solar.Tools.PaintRoller    
+                import: solar.Tools.PaintRoller,
             },
-           "align-top": {
+            'align-top': {
                 pascalName: 'AlignTop',
-                import: solar.Tools.AlignTop    
+                import: solar.Tools.AlignTop,
             },
-           "align-vertical-spacing": {
+            'align-vertical-spacing': {
                 pascalName: 'AlignVerticalSpacing',
-                import: solar.Tools.AlignVerticalSpacing    
+                import: solar.Tools.AlignVerticalSpacing,
             },
-           "align-horizontal-center": {
+            'align-horizontal-center': {
                 pascalName: 'AlignHorizontalCenter',
-                import: solar.Tools.AlignHorizontalCenter    
+                import: solar.Tools.AlignHorizontalCenter,
             },
-           "ruler-cross-pen": {
+            'ruler-cross-pen': {
                 pascalName: 'RulerCrossPen',
-                import: solar.Tools.RulerCrossPen    
+                import: solar.Tools.RulerCrossPen,
             },
-           "align-left": {
+            'align-left': {
                 pascalName: 'AlignLeft',
-                import: solar.Tools.AlignLeft    
+                import: solar.Tools.AlignLeft,
             },
-           "align-vertical-center": {
+            'align-vertical-center': {
                 pascalName: 'AlignVerticalCenter',
-                import: solar.Tools.AlignVerticalCenter    
+                import: solar.Tools.AlignVerticalCenter,
             },
-           "align-right": {
+            'align-right': {
                 pascalName: 'AlignRight',
-                import: solar.Tools.AlignRight    
+                import: solar.Tools.AlignRight,
             },
-           "align-horizonta-spacing": {
+            'align-horizonta-spacing': {
                 pascalName: 'AlignHorizontaSpacing',
-                import: solar.Tools.AlignHorizontaSpacing    
+                import: solar.Tools.AlignHorizontaSpacing,
             },
-           "align-bottom": {
+            'align-bottom': {
                 pascalName: 'AlignBottom',
-                import: solar.Tools.AlignBottom    
+                import: solar.Tools.AlignBottom,
             },
-           "radial-blur": {
+            'radial-blur': {
                 pascalName: 'RadialBlur',
-                import: solar.Tools.RadialBlur    
-            }
+                import: solar.Tools.RadialBlur,
+            },
         },
     },
-    "food": {
-        tags: ["food","kitchen"],
+    food: {
+        tags: ['food', 'kitchen'],
         icons: {
-           "cup-hot": {
+            'cup-hot': {
                 pascalName: 'CupHot',
-                import: solar.Food.CupHot    
+                import: solar.Food.CupHot,
             },
-           "mug": {
+            mug: {
                 pascalName: 'Mug',
-                import: solar.Food.Mug    
+                import: solar.Food.Mug,
             },
-           "tea-cup": {
+            'tea-cup': {
                 pascalName: 'TeaCup',
-                import: solar.Food.TeaCup    
+                import: solar.Food.TeaCup,
             },
-           "bottle": {
+            bottle: {
                 pascalName: 'Bottle',
-                import: solar.Food.Bottle    
+                import: solar.Food.Bottle,
             },
-           "donut": {
+            donut: {
                 pascalName: 'Donut',
-                import: solar.Food.Donut    
+                import: solar.Food.Donut,
             },
-           "chef-hat-minimalistic": {
+            'chef-hat-minimalistic': {
                 pascalName: 'ChefHatMinimalistic',
-                import: solar.Food.ChefHatMinimalistic    
+                import: solar.Food.ChefHatMinimalistic,
             },
-           "donut-bitten": {
+            'donut-bitten': {
                 pascalName: 'DonutBitten',
-                import: solar.Food.DonutBitten    
+                import: solar.Food.DonutBitten,
             },
-           "chef-hat-heart": {
+            'chef-hat-heart': {
                 pascalName: 'ChefHatHeart',
-                import: solar.Food.ChefHatHeart    
+                import: solar.Food.ChefHatHeart,
             },
-           "corkscrew": {
+            corkscrew: {
                 pascalName: 'Corkscrew',
-                import: solar.Food.Corkscrew    
+                import: solar.Food.Corkscrew,
             },
-           "chef-hat": {
+            'chef-hat': {
                 pascalName: 'ChefHat',
-                import: solar.Food.ChefHat    
+                import: solar.Food.ChefHat,
             },
-           "wineglass-triangle": {
+            'wineglass-triangle': {
                 pascalName: 'WineglassTriangle',
-                import: solar.Food.WineglassTriangle    
+                import: solar.Food.WineglassTriangle,
             },
-           "cup-paper": {
+            'cup-paper': {
                 pascalName: 'CupPaper',
-                import: solar.Food.CupPaper    
+                import: solar.Food.CupPaper,
             },
-           "oven-mitts": {
+            'oven-mitts': {
                 pascalName: 'OvenMitts',
-                import: solar.Food.OvenMitts    
+                import: solar.Food.OvenMitts,
             },
-           "rolling-pin": {
+            'rolling-pin': {
                 pascalName: 'RollingPin',
-                import: solar.Food.RollingPin    
+                import: solar.Food.RollingPin,
             },
-           "ladle": {
+            ladle: {
                 pascalName: 'Ladle',
-                import: solar.Food.Ladle    
+                import: solar.Food.Ladle,
             },
-           "wineglass": {
+            wineglass: {
                 pascalName: 'Wineglass',
-                import: solar.Food.Wineglass    
+                import: solar.Food.Wineglass,
             },
-           "oven-mitts-minimalistic": {
+            'oven-mitts-minimalistic': {
                 pascalName: 'OvenMittsMinimalistic',
-                import: solar.Food.OvenMittsMinimalistic    
+                import: solar.Food.OvenMittsMinimalistic,
             },
-           "whisk": {
+            whisk: {
                 pascalName: 'Whisk',
-                import: solar.Food.Whisk    
-            }
+                import: solar.Food.Whisk,
+            },
         },
     },
-    "like": {
-        tags: ["like"],
+    like: {
+        tags: ['like'],
         icons: {
-           "heart": {
+            heart: {
                 pascalName: 'Heart',
-                import: solar.Like.Heart    
+                import: solar.Like.Heart,
             },
-           "star": {
+            star: {
                 pascalName: 'Star',
-                import: solar.Like.Star    
+                import: solar.Like.Star,
             },
-           "heart-lock": {
+            'heart-lock': {
                 pascalName: 'HeartLock',
-                import: solar.Like.HeartLock    
+                import: solar.Like.HeartLock,
             },
-           "heart-unlock": {
+            'heart-unlock': {
                 pascalName: 'HeartUnlock',
-                import: solar.Like.HeartUnlock    
+                import: solar.Like.HeartUnlock,
             },
-           "medal-ribbon": {
+            'medal-ribbon': {
                 pascalName: 'MedalRibbon',
-                import: solar.Like.MedalRibbon    
+                import: solar.Like.MedalRibbon,
             },
-           "dislike": {
+            dislike: {
                 pascalName: 'Dislike',
-                import: solar.Like.Dislike    
+                import: solar.Like.Dislike,
             },
-           "star-shine": {
+            'star-shine': {
                 pascalName: 'StarShine',
-                import: solar.Like.StarShine    
+                import: solar.Like.StarShine,
             },
-           "hearts": {
+            hearts: {
                 pascalName: 'Hearts',
-                import: solar.Like.Hearts    
+                import: solar.Like.Hearts,
             },
-           "heart-shine": {
+            'heart-shine': {
                 pascalName: 'HeartShine',
-                import: solar.Like.HeartShine    
+                import: solar.Like.HeartShine,
             },
-           "heart-broken": {
+            'heart-broken': {
                 pascalName: 'HeartBroken',
-                import: solar.Like.HeartBroken    
+                import: solar.Like.HeartBroken,
             },
-           "medal-ribbons-star": {
+            'medal-ribbons-star': {
                 pascalName: 'MedalRibbonsStar',
-                import: solar.Like.MedalRibbonsStar    
+                import: solar.Like.MedalRibbonsStar,
             },
-           "medal-star-square": {
+            'medal-star-square': {
                 pascalName: 'MedalStarSquare',
-                import: solar.Like.MedalStarSquare    
+                import: solar.Like.MedalStarSquare,
             },
-           "medal-ribbon-star": {
+            'medal-ribbon-star': {
                 pascalName: 'MedalRibbonStar',
-                import: solar.Like.MedalRibbonStar    
+                import: solar.Like.MedalRibbonStar,
             },
-           "heart-angle": {
+            'heart-angle': {
                 pascalName: 'HeartAngle',
-                import: solar.Like.HeartAngle    
+                import: solar.Like.HeartAngle,
             },
-           "medal-star-circle": {
+            'medal-star-circle': {
                 pascalName: 'MedalStarCircle',
-                import: solar.Like.MedalStarCircle    
+                import: solar.Like.MedalStarCircle,
             },
-           "medal-star": {
+            'medal-star': {
                 pascalName: 'MedalStar',
-                import: solar.Like.MedalStar    
+                import: solar.Like.MedalStar,
             },
-           "like": {
+            like: {
                 pascalName: 'Like',
-                import: solar.Like.Like    
-            }
+                import: solar.Like.Like,
+            },
         },
     },
-    "arrows-action": {
-        tags: ["arrows-action"],
+    'arrows-action': {
+        tags: ['arrows-action'],
         icons: {
-           "send-twice-square": {
+            'send-twice-square': {
                 pascalName: 'SendTwiceSquare',
-                import: solar.ArrowsAction.SendTwiceSquare    
+                import: solar.ArrowsAction.SendTwiceSquare,
             },
-           "recive-twice-square": {
+            'recive-twice-square': {
                 pascalName: 'ReciveTwiceSquare',
-                import: solar.ArrowsAction.ReciveTwiceSquare    
+                import: solar.ArrowsAction.ReciveTwiceSquare,
             },
-           "upload-twice-square": {
+            'upload-twice-square': {
                 pascalName: 'UploadTwiceSquare',
-                import: solar.ArrowsAction.UploadTwiceSquare    
+                import: solar.ArrowsAction.UploadTwiceSquare,
             },
-           "recive-square": {
+            'recive-square': {
                 pascalName: 'ReciveSquare',
-                import: solar.ArrowsAction.ReciveSquare    
+                import: solar.ArrowsAction.ReciveSquare,
             },
-           "undo-left-round": {
+            'undo-left-round': {
                 pascalName: 'UndoLeftRound',
-                import: solar.ArrowsAction.UndoLeftRound    
+                import: solar.ArrowsAction.UndoLeftRound,
             },
-           "send-square": {
+            'send-square': {
                 pascalName: 'SendSquare',
-                import: solar.ArrowsAction.SendSquare    
+                import: solar.ArrowsAction.SendSquare,
             },
-           "upload-square": {
+            'upload-square': {
                 pascalName: 'UploadSquare',
-                import: solar.ArrowsAction.UploadSquare    
+                import: solar.ArrowsAction.UploadSquare,
             },
-           "undo-left": {
+            'undo-left': {
                 pascalName: 'UndoLeft',
-                import: solar.ArrowsAction.UndoLeft    
+                import: solar.ArrowsAction.UndoLeft,
             },
-           "download-twice-square": {
+            'download-twice-square': {
                 pascalName: 'DownloadTwiceSquare',
-                import: solar.ArrowsAction.DownloadTwiceSquare    
+                import: solar.ArrowsAction.DownloadTwiceSquare,
             },
-           "undo-left-square": {
+            'undo-left-square': {
                 pascalName: 'UndoLeftSquare',
-                import: solar.ArrowsAction.UndoLeftSquare    
+                import: solar.ArrowsAction.UndoLeftSquare,
             },
-           "undo-right-round-square": {
+            'undo-right-round-square': {
                 pascalName: 'UndoRightRoundSquare',
-                import: solar.ArrowsAction.UndoRightRoundSquare    
+                import: solar.ArrowsAction.UndoRightRoundSquare,
             },
-           "undo-left-round-square": {
+            'undo-left-round-square': {
                 pascalName: 'UndoLeftRoundSquare',
-                import: solar.ArrowsAction.UndoLeftRoundSquare    
+                import: solar.ArrowsAction.UndoLeftRoundSquare,
             },
-           "undo-right": {
+            'undo-right': {
                 pascalName: 'UndoRight',
-                import: solar.ArrowsAction.UndoRight    
+                import: solar.ArrowsAction.UndoRight,
             },
-           "scale": {
+            scale: {
                 pascalName: 'Scale',
-                import: solar.ArrowsAction.Scale    
+                import: solar.ArrowsAction.Scale,
             },
-           "download-square": {
+            'download-square': {
                 pascalName: 'DownloadSquare',
-                import: solar.ArrowsAction.DownloadSquare    
+                import: solar.ArrowsAction.DownloadSquare,
             },
-           "undo-right-square": {
+            'undo-right-square': {
                 pascalName: 'UndoRightSquare',
-                import: solar.ArrowsAction.UndoRightSquare    
+                import: solar.ArrowsAction.UndoRightSquare,
             },
-           "undo-right-round": {
+            'undo-right-round': {
                 pascalName: 'UndoRightRound',
-                import: solar.ArrowsAction.UndoRightRound    
+                import: solar.ArrowsAction.UndoRightRound,
             },
-           "square-top-up": {
+            'square-top-up': {
                 pascalName: 'SquareTopUp',
-                import: solar.ArrowsAction.SquareTopUp    
+                import: solar.ArrowsAction.SquareTopUp,
             },
-           "square-top-down": {
+            'square-top-down': {
                 pascalName: 'SquareTopDown',
-                import: solar.ArrowsAction.SquareTopDown    
+                import: solar.ArrowsAction.SquareTopDown,
             },
-           "maximize": {
+            maximize: {
                 pascalName: 'Maximize',
-                import: solar.ArrowsAction.Maximize    
+                import: solar.ArrowsAction.Maximize,
             },
-           "square-bottom-down": {
+            'square-bottom-down': {
                 pascalName: 'SquareBottomDown',
-                import: solar.ArrowsAction.SquareBottomDown    
+                import: solar.ArrowsAction.SquareBottomDown,
             },
-           "minimize": {
+            minimize: {
                 pascalName: 'Minimize',
-                import: solar.ArrowsAction.Minimize    
+                import: solar.ArrowsAction.Minimize,
             },
-           "circle-bottom-up": {
+            'circle-bottom-up': {
                 pascalName: 'CircleBottomUp',
-                import: solar.ArrowsAction.CircleBottomUp    
+                import: solar.ArrowsAction.CircleBottomUp,
             },
-           "square-bottom-up": {
+            'square-bottom-up': {
                 pascalName: 'SquareBottomUp',
-                import: solar.ArrowsAction.SquareBottomUp    
+                import: solar.ArrowsAction.SquareBottomUp,
             },
-           "circle-bottom-down": {
+            'circle-bottom-down': {
                 pascalName: 'CircleBottomDown',
-                import: solar.ArrowsAction.CircleBottomDown    
+                import: solar.ArrowsAction.CircleBottomDown,
             },
-           "reorder-2": {
+            'reorder-2': {
                 pascalName: 'Reorder2',
-                import: solar.ArrowsAction.Reorder2    
+                import: solar.ArrowsAction.Reorder2,
             },
-           "circle-top-up": {
+            'circle-top-up': {
                 pascalName: 'CircleTopUp',
-                import: solar.ArrowsAction.CircleTopUp    
+                import: solar.ArrowsAction.CircleTopUp,
             },
-           "circle-top-down": {
+            'circle-top-down': {
                 pascalName: 'CircleTopDown',
-                import: solar.ArrowsAction.CircleTopDown    
+                import: solar.ArrowsAction.CircleTopDown,
             },
-           "maximize-square-3": {
+            'maximize-square-3': {
                 pascalName: 'MaximizeSquare3',
-                import: solar.ArrowsAction.MaximizeSquare3    
+                import: solar.ArrowsAction.MaximizeSquare3,
             },
-           "maximize-square": {
+            'maximize-square': {
                 pascalName: 'MaximizeSquare',
-                import: solar.ArrowsAction.MaximizeSquare    
+                import: solar.ArrowsAction.MaximizeSquare,
             },
-           "minimize-square": {
+            'minimize-square': {
                 pascalName: 'MinimizeSquare',
-                import: solar.ArrowsAction.MinimizeSquare    
+                import: solar.ArrowsAction.MinimizeSquare,
             },
-           "minimize-square-3": {
+            'minimize-square-3': {
                 pascalName: 'MinimizeSquare3',
-                import: solar.ArrowsAction.MinimizeSquare3    
+                import: solar.ArrowsAction.MinimizeSquare3,
             },
-           "maximize-square-2": {
+            'maximize-square-2': {
                 pascalName: 'MaximizeSquare2',
-                import: solar.ArrowsAction.MaximizeSquare2    
+                import: solar.ArrowsAction.MaximizeSquare2,
             },
-           "logout-2": {
+            'logout-2': {
                 pascalName: 'Logout2',
-                import: solar.ArrowsAction.Logout2    
+                import: solar.ArrowsAction.Logout2,
             },
-           "minimize-square-minimalistic": {
+            'minimize-square-minimalistic': {
                 pascalName: 'MinimizeSquareMinimalistic',
-                import: solar.ArrowsAction.MinimizeSquareMinimalistic    
+                import: solar.ArrowsAction.MinimizeSquareMinimalistic,
             },
-           "login-2": {
+            'login-2': {
                 pascalName: 'Login2',
-                import: solar.ArrowsAction.Login2    
+                import: solar.ArrowsAction.Login2,
             },
-           "import": {
+            import: {
                 pascalName: 'Import',
-                import: solar.ArrowsAction.Import    
+                import: solar.ArrowsAction.Import,
             },
-           "download": {
+            download: {
                 pascalName: 'Download',
-                import: solar.ArrowsAction.Download    
+                import: solar.ArrowsAction.Download,
             },
-           "export": {
+            export: {
                 pascalName: 'Export',
-                import: solar.ArrowsAction.Export    
+                import: solar.ArrowsAction.Export,
             },
-           "upload": {
+            upload: {
                 pascalName: 'Upload',
-                import: solar.ArrowsAction.Upload    
+                import: solar.ArrowsAction.Upload,
             },
-           "minimize-square-2": {
+            'minimize-square-2': {
                 pascalName: 'MinimizeSquare2',
-                import: solar.ArrowsAction.MinimizeSquare2    
+                import: solar.ArrowsAction.MinimizeSquare2,
             },
-           "download-minimalistic": {
+            'download-minimalistic': {
                 pascalName: 'DownloadMinimalistic',
-                import: solar.ArrowsAction.DownloadMinimalistic    
+                import: solar.ArrowsAction.DownloadMinimalistic,
             },
-           "maximize-square-minimalistic": {
+            'maximize-square-minimalistic': {
                 pascalName: 'MaximizeSquareMinimalistic',
-                import: solar.ArrowsAction.MaximizeSquareMinimalistic    
+                import: solar.ArrowsAction.MaximizeSquareMinimalistic,
             },
-           "exit": {
+            exit: {
                 pascalName: 'Exit',
-                import: solar.ArrowsAction.Exit    
+                import: solar.ArrowsAction.Exit,
             },
-           "logout": {
+            logout: {
                 pascalName: 'Logout',
-                import: solar.ArrowsAction.Logout    
+                import: solar.ArrowsAction.Logout,
             },
-           "forward": {
+            forward: {
                 pascalName: 'Forward',
-                import: solar.ArrowsAction.Forward    
+                import: solar.ArrowsAction.Forward,
             },
-           "forward-2": {
+            'forward-2': {
                 pascalName: 'Forward2',
-                import: solar.ArrowsAction.Forward2    
+                import: solar.ArrowsAction.Forward2,
             },
-           "reply": {
+            reply: {
                 pascalName: 'Reply',
-                import: solar.ArrowsAction.Reply    
+                import: solar.ArrowsAction.Reply,
             },
-           "login-3": {
+            'login-3': {
                 pascalName: 'Login3',
-                import: solar.ArrowsAction.Login3    
+                import: solar.ArrowsAction.Login3,
             },
-           "upload-minimalistic": {
+            'upload-minimalistic': {
                 pascalName: 'UploadMinimalistic',
-                import: solar.ArrowsAction.UploadMinimalistic    
+                import: solar.ArrowsAction.UploadMinimalistic,
             },
-           "logout-3": {
+            'logout-3': {
                 pascalName: 'Logout3',
-                import: solar.ArrowsAction.Logout3    
+                import: solar.ArrowsAction.Logout3,
             },
-           "reply-2": {
+            'reply-2': {
                 pascalName: 'Reply2',
-                import: solar.ArrowsAction.Reply2    
+                import: solar.ArrowsAction.Reply2,
             },
-           "arrow-to-top-right": {
+            'arrow-to-top-right': {
                 pascalName: 'ArrowToTopRight',
-                import: solar.ArrowsAction.ArrowToTopRight    
+                import: solar.ArrowsAction.ArrowToTopRight,
             },
-           "arrow-to-down-right": {
+            'arrow-to-down-right': {
                 pascalName: 'ArrowToDownRight',
-                import: solar.ArrowsAction.ArrowToDownRight    
+                import: solar.ArrowsAction.ArrowToDownRight,
             },
-           "screen-share": {
+            'screen-share': {
                 pascalName: 'ScreenShare',
-                import: solar.ArrowsAction.ScreenShare    
+                import: solar.ArrowsAction.ScreenShare,
             },
-           "arrow-to-down-left": {
+            'arrow-to-down-left': {
                 pascalName: 'ArrowToDownLeft',
-                import: solar.ArrowsAction.ArrowToDownLeft    
+                import: solar.ArrowsAction.ArrowToDownLeft,
             },
-           "arrow-to-top-left": {
+            'arrow-to-top-left': {
                 pascalName: 'ArrowToTopLeft',
-                import: solar.ArrowsAction.ArrowToTopLeft    
+                import: solar.ArrowsAction.ArrowToTopLeft,
             },
-           "login": {
+            login: {
                 pascalName: 'Login',
-                import: solar.ArrowsAction.Login    
-            }
+                import: solar.ArrowsAction.Login,
+            },
         },
     },
-    "notes": {
-        tags: ["notes"],
+    notes: {
+        tags: ['notes'],
         icons: {
-           "clipboard-heart": {
+            'clipboard-heart': {
                 pascalName: 'ClipboardHeart',
-                import: solar.Notes.ClipboardHeart    
+                import: solar.Notes.ClipboardHeart,
             },
-           "document-text": {
+            'document-text': {
                 pascalName: 'DocumentText',
-                import: solar.Notes.DocumentText    
+                import: solar.Notes.DocumentText,
             },
-           "document": {
+            document: {
                 pascalName: 'Document',
-                import: solar.Notes.Document    
+                import: solar.Notes.Document,
             },
-           "document-add": {
+            'document-add': {
                 pascalName: 'DocumentAdd',
-                import: solar.Notes.DocumentAdd    
+                import: solar.Notes.DocumentAdd,
             },
-           "documents-minimalistic": {
+            'documents-minimalistic': {
                 pascalName: 'DocumentsMinimalistic',
-                import: solar.Notes.DocumentsMinimalistic    
+                import: solar.Notes.DocumentsMinimalistic,
             },
-           "clipboard": {
+            clipboard: {
                 pascalName: 'Clipboard',
-                import: solar.Notes.Clipboard    
+                import: solar.Notes.Clipboard,
             },
-           "notes": {
+            notes: {
                 pascalName: 'Notes',
-                import: solar.Notes.Notes    
+                import: solar.Notes.Notes,
             },
-           "documents": {
+            documents: {
                 pascalName: 'Documents',
-                import: solar.Notes.Documents    
+                import: solar.Notes.Documents,
             },
-           "clipboard-remove": {
+            'clipboard-remove': {
                 pascalName: 'ClipboardRemove',
-                import: solar.Notes.ClipboardRemove    
+                import: solar.Notes.ClipboardRemove,
             },
-           "document-medicine": {
+            'document-medicine': {
                 pascalName: 'DocumentMedicine',
-                import: solar.Notes.DocumentMedicine    
+                import: solar.Notes.DocumentMedicine,
             },
-           "notes-minimalistic": {
+            'notes-minimalistic': {
                 pascalName: 'NotesMinimalistic',
-                import: solar.Notes.NotesMinimalistic    
+                import: solar.Notes.NotesMinimalistic,
             },
-           "clipboard-text": {
+            'clipboard-text': {
                 pascalName: 'ClipboardText',
-                import: solar.Notes.ClipboardText    
+                import: solar.Notes.ClipboardText,
             },
-           "clipboard-check": {
+            'clipboard-check': {
                 pascalName: 'ClipboardCheck',
-                import: solar.Notes.ClipboardCheck    
+                import: solar.Notes.ClipboardCheck,
             },
-           "archive-down-minimlistic": {
+            'archive-down-minimlistic': {
                 pascalName: 'ArchiveDownMinimlistic',
-                import: solar.Notes.ArchiveDownMinimlistic    
+                import: solar.Notes.ArchiveDownMinimlistic,
             },
-           "clipboard-list": {
+            'clipboard-list': {
                 pascalName: 'ClipboardList',
-                import: solar.Notes.ClipboardList    
+                import: solar.Notes.ClipboardList,
             },
-           "archive-up-minimlistic": {
+            'archive-up-minimlistic': {
                 pascalName: 'ArchiveUpMinimlistic',
-                import: solar.Notes.ArchiveUpMinimlistic    
+                import: solar.Notes.ArchiveUpMinimlistic,
             },
-           "archive": {
+            archive: {
                 pascalName: 'Archive',
-                import: solar.Notes.Archive    
+                import: solar.Notes.Archive,
             },
-           "archive-check": {
+            'archive-check': {
                 pascalName: 'ArchiveCheck',
-                import: solar.Notes.ArchiveCheck    
+                import: solar.Notes.ArchiveCheck,
             },
-           "archive-up": {
+            'archive-up': {
                 pascalName: 'ArchiveUp',
-                import: solar.Notes.ArchiveUp    
+                import: solar.Notes.ArchiveUp,
             },
-           "archive-down": {
+            'archive-down': {
                 pascalName: 'ArchiveDown',
-                import: solar.Notes.ArchiveDown    
+                import: solar.Notes.ArchiveDown,
             },
-           "notebook": {
+            notebook: {
                 pascalName: 'Notebook',
-                import: solar.Notes.Notebook    
+                import: solar.Notes.Notebook,
             },
-           "archive-minimalistic": {
+            'archive-minimalistic': {
                 pascalName: 'ArchiveMinimalistic',
-                import: solar.Notes.ArchiveMinimalistic    
+                import: solar.Notes.ArchiveMinimalistic,
             },
-           "clipboard-add": {
+            'clipboard-add': {
                 pascalName: 'ClipboardAdd',
-                import: solar.Notes.ClipboardAdd    
-            }
+                import: solar.Notes.ClipboardAdd,
+            },
         },
     },
-    "notifications": {
-        tags: ["notifications"],
+    notifications: {
+        tags: ['notifications'],
         icons: {
-           "notification-unread": {
+            'notification-unread': {
                 pascalName: 'NotificationUnread',
-                import: solar.Notifications.NotificationUnread    
+                import: solar.Notifications.NotificationUnread,
             },
-           "notification-remove": {
+            'notification-remove': {
                 pascalName: 'NotificationRemove',
-                import: solar.Notifications.NotificationRemove    
+                import: solar.Notifications.NotificationRemove,
             },
-           "bell": {
+            bell: {
                 pascalName: 'Bell',
-                import: solar.Notifications.Bell    
+                import: solar.Notifications.Bell,
             },
-           "bell-bing": {
+            'bell-bing': {
                 pascalName: 'BellBing',
-                import: solar.Notifications.BellBing    
+                import: solar.Notifications.BellBing,
             },
-           "bell-off": {
+            'bell-off': {
                 pascalName: 'BellOff',
-                import: solar.Notifications.BellOff    
+                import: solar.Notifications.BellOff,
             },
-           "notification-lines-remove": {
+            'notification-lines-remove': {
                 pascalName: 'NotificationLinesRemove',
-                import: solar.Notifications.NotificationLinesRemove    
+                import: solar.Notifications.NotificationLinesRemove,
             },
-           "notification-unread-lines": {
+            'notification-unread-lines': {
                 pascalName: 'NotificationUnreadLines',
-                import: solar.Notifications.NotificationUnreadLines    
-            }
+                import: solar.Notifications.NotificationUnreadLines,
+            },
         },
     },
-    "security": {
-        tags: ["security"],
+    security: {
+        tags: ['security'],
         icons: {
-           "bomb-minimalistic": {
+            'bomb-minimalistic': {
                 pascalName: 'BombMinimalistic',
-                import: solar.Security.BombMinimalistic    
+                import: solar.Security.BombMinimalistic,
             },
-           "lock": {
+            lock: {
                 pascalName: 'Lock',
-                import: solar.Security.Lock    
+                import: solar.Security.Lock,
             },
-           "bomb-emoji": {
+            'bomb-emoji': {
                 pascalName: 'BombEmoji',
-                import: solar.Security.BombEmoji    
+                import: solar.Security.BombEmoji,
             },
-           "lock-password": {
+            'lock-password': {
                 pascalName: 'LockPassword',
-                import: solar.Security.LockPassword    
+                import: solar.Security.LockPassword,
             },
-           "lock-unlocked": {
+            'lock-unlocked': {
                 pascalName: 'LockUnlocked',
-                import: solar.Security.LockUnlocked    
+                import: solar.Security.LockUnlocked,
             },
-           "lock-password-unlocked": {
+            'lock-password-unlocked': {
                 pascalName: 'LockPasswordUnlocked',
-                import: solar.Security.LockPasswordUnlocked    
+                import: solar.Security.LockPasswordUnlocked,
             },
-           "lock-keyhole-minimalistic": {
+            'lock-keyhole-minimalistic': {
                 pascalName: 'LockKeyholeMinimalistic',
-                import: solar.Security.LockKeyholeMinimalistic    
+                import: solar.Security.LockKeyholeMinimalistic,
             },
-           "lock-keyhole": {
+            'lock-keyhole': {
                 pascalName: 'LockKeyhole',
-                import: solar.Security.LockKeyhole    
+                import: solar.Security.LockKeyhole,
             },
-           "bomb": {
+            bomb: {
                 pascalName: 'Bomb',
-                import: solar.Security.Bomb    
+                import: solar.Security.Bomb,
             },
-           "eye": {
+            eye: {
                 pascalName: 'Eye',
-                import: solar.Security.Eye    
+                import: solar.Security.Eye,
             },
-           "lock-keyhole-unlocked": {
+            'lock-keyhole-unlocked': {
                 pascalName: 'LockKeyholeUnlocked',
-                import: solar.Security.LockKeyholeUnlocked    
+                import: solar.Security.LockKeyholeUnlocked,
             },
-           "key": {
+            key: {
                 pascalName: 'Key',
-                import: solar.Security.Key    
+                import: solar.Security.Key,
             },
-           "eye-closed": {
+            'eye-closed': {
                 pascalName: 'EyeClosed',
-                import: solar.Security.EyeClosed    
+                import: solar.Security.EyeClosed,
             },
-           "password": {
+            password: {
                 pascalName: 'Password',
-                import: solar.Security.Password    
+                import: solar.Security.Password,
             },
-           "password-minimalistic": {
+            'password-minimalistic': {
                 pascalName: 'PasswordMinimalistic',
-                import: solar.Security.PasswordMinimalistic    
+                import: solar.Security.PasswordMinimalistic,
             },
-           "siren-rounded": {
+            'siren-rounded': {
                 pascalName: 'SirenRounded',
-                import: solar.Security.SirenRounded    
+                import: solar.Security.SirenRounded,
             },
-           "key-square-2": {
+            'key-square-2': {
                 pascalName: 'KeySquare2',
-                import: solar.Security.KeySquare2    
+                import: solar.Security.KeySquare2,
             },
-           "password-minimalistic-input": {
+            'password-minimalistic-input': {
                 pascalName: 'PasswordMinimalisticInput',
-                import: solar.Security.PasswordMinimalisticInput    
+                import: solar.Security.PasswordMinimalisticInput,
             },
-           "key-minimalistic": {
+            'key-minimalistic': {
                 pascalName: 'KeyMinimalistic',
-                import: solar.Security.KeyMinimalistic    
+                import: solar.Security.KeyMinimalistic,
             },
-           "key-minimalistic-square-2": {
+            'key-minimalistic-square-2': {
                 pascalName: 'KeyMinimalisticSquare2',
-                import: solar.Security.KeyMinimalisticSquare2    
+                import: solar.Security.KeyMinimalisticSquare2,
             },
-           "lock-keyhole-minimalistic-unlocked": {
+            'lock-keyhole-minimalistic-unlocked': {
                 pascalName: 'LockKeyholeMinimalisticUnlocked',
-                import: solar.Security.LockKeyholeMinimalisticUnlocked    
+                import: solar.Security.LockKeyholeMinimalisticUnlocked,
             },
-           "key-minimalistic-square": {
+            'key-minimalistic-square': {
                 pascalName: 'KeyMinimalisticSquare',
-                import: solar.Security.KeyMinimalisticSquare    
+                import: solar.Security.KeyMinimalisticSquare,
             },
-           "key-square": {
+            'key-square': {
                 pascalName: 'KeySquare',
-                import: solar.Security.KeySquare    
+                import: solar.Security.KeySquare,
             },
-           "siren": {
+            siren: {
                 pascalName: 'Siren',
-                import: solar.Security.Siren    
+                import: solar.Security.Siren,
             },
-           "key-minimalistic-square-3": {
+            'key-minimalistic-square-3': {
                 pascalName: 'KeyMinimalisticSquare3',
-                import: solar.Security.KeyMinimalisticSquare3    
+                import: solar.Security.KeyMinimalisticSquare3,
             },
-           "key-minimalistic-2": {
+            'key-minimalistic-2': {
                 pascalName: 'KeyMinimalistic2',
-                import: solar.Security.KeyMinimalistic2    
+                import: solar.Security.KeyMinimalistic2,
             },
-           "incognito": {
+            incognito: {
                 pascalName: 'Incognito',
-                import: solar.Security.Incognito    
+                import: solar.Security.Incognito,
             },
-           "shield": {
+            shield: {
                 pascalName: 'Shield',
-                import: solar.Security.Shield    
+                import: solar.Security.Shield,
             },
-           "shield-minimalistic": {
+            'shield-minimalistic': {
                 pascalName: 'ShieldMinimalistic',
-                import: solar.Security.ShieldMinimalistic    
+                import: solar.Security.ShieldMinimalistic,
             },
-           "shield-minus": {
+            'shield-minus': {
                 pascalName: 'ShieldMinus',
-                import: solar.Security.ShieldMinus    
+                import: solar.Security.ShieldMinus,
             },
-           "shield-star": {
+            'shield-star': {
                 pascalName: 'ShieldStar',
-                import: solar.Security.ShieldStar    
+                import: solar.Security.ShieldStar,
             },
-           "shield-plus": {
+            'shield-plus': {
                 pascalName: 'ShieldPlus',
-                import: solar.Security.ShieldPlus    
+                import: solar.Security.ShieldPlus,
             },
-           "shield-warning": {
+            'shield-warning': {
                 pascalName: 'ShieldWarning',
-                import: solar.Security.ShieldWarning    
+                import: solar.Security.ShieldWarning,
             },
-           "shield-cross": {
+            'shield-cross': {
                 pascalName: 'ShieldCross',
-                import: solar.Security.ShieldCross    
+                import: solar.Security.ShieldCross,
             },
-           "shield-user": {
+            'shield-user': {
                 pascalName: 'ShieldUser',
-                import: solar.Security.ShieldUser    
+                import: solar.Security.ShieldUser,
             },
-           "shield-up": {
+            'shield-up': {
                 pascalName: 'ShieldUp',
-                import: solar.Security.ShieldUp    
+                import: solar.Security.ShieldUp,
             },
-           "shield-network": {
+            'shield-network': {
                 pascalName: 'ShieldNetwork',
-                import: solar.Security.ShieldNetwork    
+                import: solar.Security.ShieldNetwork,
             },
-           "qr-code": {
+            'qr-code': {
                 pascalName: 'QrCode',
-                import: solar.Security.QrCode    
+                import: solar.Security.QrCode,
             },
-           "shield-keyhole-minimalistic": {
+            'shield-keyhole-minimalistic': {
                 pascalName: 'ShieldKeyholeMinimalistic',
-                import: solar.Security.ShieldKeyholeMinimalistic    
+                import: solar.Security.ShieldKeyholeMinimalistic,
             },
-           "scanner-2": {
+            'scanner-2': {
                 pascalName: 'Scanner2',
-                import: solar.Security.Scanner2    
+                import: solar.Security.Scanner2,
             },
-           "code-scan": {
+            'code-scan': {
                 pascalName: 'CodeScan',
-                import: solar.Security.CodeScan    
+                import: solar.Security.CodeScan,
             },
-           "shield-check": {
+            'shield-check': {
                 pascalName: 'ShieldCheck',
-                import: solar.Security.ShieldCheck    
+                import: solar.Security.ShieldCheck,
             },
-           "eye-scan": {
+            'eye-scan': {
                 pascalName: 'EyeScan',
-                import: solar.Security.EyeScan    
+                import: solar.Security.EyeScan,
             },
-           "object-scan": {
+            'object-scan': {
                 pascalName: 'ObjectScan',
-                import: solar.Security.ObjectScan    
+                import: solar.Security.ObjectScan,
             },
-           "scanner": {
+            scanner: {
                 pascalName: 'Scanner',
-                import: solar.Security.Scanner    
+                import: solar.Security.Scanner,
             },
-           "shield-keyhole": {
+            'shield-keyhole': {
                 pascalName: 'ShieldKeyhole',
-                import: solar.Security.ShieldKeyhole    
-            }
+                import: solar.Security.ShieldKeyhole,
+            },
         },
     },
-    "users": {
-        tags: ["users"],
+    users: {
+        tags: ['users'],
         icons: {
-           "user-check-rounded": {
+            'user-check-rounded': {
                 pascalName: 'UserCheckRounded',
-                import: solar.Users.UserCheckRounded    
+                import: solar.Users.UserCheckRounded,
             },
-           "users-group-two-rounded": {
+            'users-group-two-rounded': {
                 pascalName: 'UsersGroupTwoRounded',
-                import: solar.Users.UsersGroupTwoRounded    
+                import: solar.Users.UsersGroupTwoRounded,
             },
-           "user-plus-rounded": {
+            'user-plus-rounded': {
                 pascalName: 'UserPlusRounded',
-                import: solar.Users.UserPlusRounded    
+                import: solar.Users.UserPlusRounded,
             },
-           "user-rounded": {
+            'user-rounded': {
                 pascalName: 'UserRounded',
-                import: solar.Users.UserRounded    
+                import: solar.Users.UserRounded,
             },
-           "user-minus-rounded": {
+            'user-minus-rounded': {
                 pascalName: 'UserMinusRounded',
-                import: solar.Users.UserMinusRounded    
+                import: solar.Users.UserMinusRounded,
             },
-           "user-block-rounded": {
+            'user-block-rounded': {
                 pascalName: 'UserBlockRounded',
-                import: solar.Users.UserBlockRounded    
+                import: solar.Users.UserBlockRounded,
             },
-           "users-group-rounded": {
+            'users-group-rounded': {
                 pascalName: 'UsersGroupRounded',
-                import: solar.Users.UsersGroupRounded    
+                import: solar.Users.UsersGroupRounded,
             },
-           "user-cross-rounded": {
+            'user-cross-rounded': {
                 pascalName: 'UserCrossRounded',
-                import: solar.Users.UserCrossRounded    
+                import: solar.Users.UserCrossRounded,
             },
-           "user-speak-rounded": {
+            'user-speak-rounded': {
                 pascalName: 'UserSpeakRounded',
-                import: solar.Users.UserSpeakRounded    
+                import: solar.Users.UserSpeakRounded,
             },
-           "user-id": {
+            'user-id': {
                 pascalName: 'UserId',
-                import: solar.Users.UserId    
+                import: solar.Users.UserId,
             },
-           "user-heart-rounded": {
+            'user-heart-rounded': {
                 pascalName: 'UserHeartRounded',
-                import: solar.Users.UserHeartRounded    
+                import: solar.Users.UserHeartRounded,
             },
-           "user": {
+            user: {
                 pascalName: 'User',
-                import: solar.Users.User    
+                import: solar.Users.User,
             },
-           "user-check": {
+            'user-check': {
                 pascalName: 'UserCheck',
-                import: solar.Users.UserCheck    
+                import: solar.Users.UserCheck,
             },
-           "user-minus": {
+            'user-minus': {
                 pascalName: 'UserMinus',
-                import: solar.Users.UserMinus    
+                import: solar.Users.UserMinus,
             },
-           "user-cross": {
+            'user-cross': {
                 pascalName: 'UserCross',
-                import: solar.Users.UserCross    
+                import: solar.Users.UserCross,
             },
-           "user-block": {
+            'user-block': {
                 pascalName: 'UserBlock',
-                import: solar.Users.UserBlock    
+                import: solar.Users.UserBlock,
             },
-           "user-hands": {
+            'user-hands': {
                 pascalName: 'UserHands',
-                import: solar.Users.UserHands    
+                import: solar.Users.UserHands,
             },
-           "user-circle": {
+            'user-circle': {
                 pascalName: 'UserCircle',
-                import: solar.Users.UserCircle    
+                import: solar.Users.UserCircle,
             },
-           "user-speak": {
+            'user-speak': {
                 pascalName: 'UserSpeak',
-                import: solar.Users.UserSpeak    
+                import: solar.Users.UserSpeak,
             },
-           "user-plus": {
+            'user-plus': {
                 pascalName: 'UserPlus',
-                import: solar.Users.UserPlus    
+                import: solar.Users.UserPlus,
             },
-           "user-heart": {
+            'user-heart': {
                 pascalName: 'UserHeart',
-                import: solar.Users.UserHeart    
+                import: solar.Users.UserHeart,
             },
-           "user-hand-up": {
+            'user-hand-up': {
                 pascalName: 'UserHandUp',
-                import: solar.Users.UserHandUp    
-            }
+                import: solar.Users.UserHandUp,
+            },
         },
     },
-    "building": {
-        tags: ["building","infrastructure"],
+    building: {
+        tags: ['building', 'infrastructure'],
         icons: {
-           "buildings-2": {
+            'buildings-2': {
                 pascalName: 'Buildings2',
-                import: solar.Building.Buildings2    
+                import: solar.Building.Buildings2,
             },
-           "buildings": {
+            buildings: {
                 pascalName: 'Buildings',
-                import: solar.Building.Buildings    
+                import: solar.Building.Buildings,
             },
-           "city": {
+            city: {
                 pascalName: 'City',
-                import: solar.Building.City    
+                import: solar.Building.City,
             },
-           "buildings-3": {
+            'buildings-3': {
                 pascalName: 'Buildings3',
-                import: solar.Building.Buildings3    
+                import: solar.Building.Buildings3,
             },
-           "hospital": {
+            hospital: {
                 pascalName: 'Hospital',
-                import: solar.Building.Hospital    
+                import: solar.Building.Hospital,
             },
-           "house": {
+            house: {
                 pascalName: 'House',
-                import: solar.Building.House    
+                import: solar.Building.House,
             },
-           "garage": {
+            garage: {
                 pascalName: 'Garage',
-                import: solar.Building.Garage    
-            }
+                import: solar.Building.Garage,
+            },
         },
     },
-    "hands": {
-        tags: ["hands"],
+    hands: {
+        tags: ['hands'],
         icons: {
-           "hand-heart": {
+            'hand-heart': {
                 pascalName: 'HandHeart',
-                import: solar.Hands.HandHeart    
+                import: solar.Hands.HandHeart,
             },
-           "hand-pills": {
+            'hand-pills': {
                 pascalName: 'HandPills',
-                import: solar.Hands.HandPills    
+                import: solar.Hands.HandPills,
             },
-           "hand-money": {
+            'hand-money': {
                 pascalName: 'HandMoney',
-                import: solar.Hands.HandMoney    
+                import: solar.Hands.HandMoney,
             },
-           "hand-shake": {
+            'hand-shake': {
                 pascalName: 'HandShake',
-                import: solar.Hands.HandShake    
+                import: solar.Hands.HandShake,
             },
-           "hand-stars": {
+            'hand-stars': {
                 pascalName: 'HandStars',
-                import: solar.Hands.HandStars    
-            }
+                import: solar.Hands.HandStars,
+            },
         },
     },
-    "parts": {
-        tags: ["parts","service","transport"],
+    parts: {
+        tags: ['parts', 'service', 'transport'],
         icons: {
-           "electric-refueling": {
+            'electric-refueling': {
                 pascalName: 'ElectricRefueling',
-                import: solar.Parts.ElectricRefueling    
+                import: solar.Parts.ElectricRefueling,
             },
-           "gas-station": {
+            'gas-station': {
                 pascalName: 'GasStation',
-                import: solar.Parts.GasStation    
+                import: solar.Parts.GasStation,
             },
-           "shock-absorber": {
+            'shock-absorber': {
                 pascalName: 'ShockAbsorber',
-                import: solar.Parts.ShockAbsorber    
+                import: solar.Parts.ShockAbsorber,
             },
-           "accumulator": {
+            accumulator: {
                 pascalName: 'Accumulator',
-                import: solar.Parts.Accumulator    
+                import: solar.Parts.Accumulator,
             },
-           "transmission": {
+            transmission: {
                 pascalName: 'Transmission',
-                import: solar.Parts.Transmission    
+                import: solar.Parts.Transmission,
             },
-           "transmission-circle": {
+            'transmission-circle': {
                 pascalName: 'TransmissionCircle',
-                import: solar.Parts.TransmissionCircle    
+                import: solar.Parts.TransmissionCircle,
             },
-           "transmission-square": {
+            'transmission-square': {
                 pascalName: 'TransmissionSquare',
-                import: solar.Parts.TransmissionSquare    
+                import: solar.Parts.TransmissionSquare,
             },
-           "wheel-angle": {
+            'wheel-angle': {
                 pascalName: 'WheelAngle',
-                import: solar.Parts.WheelAngle    
+                import: solar.Parts.WheelAngle,
             },
-           "suspension-cross": {
+            'suspension-cross': {
                 pascalName: 'SuspensionCross',
-                import: solar.Parts.SuspensionCross    
+                import: solar.Parts.SuspensionCross,
             },
-           "suspension": {
+            suspension: {
                 pascalName: 'Suspension',
-                import: solar.Parts.Suspension    
+                import: solar.Parts.Suspension,
             },
-           "bus": {
+            bus: {
                 pascalName: 'Bus',
-                import: solar.Parts.Bus    
+                import: solar.Parts.Bus,
             },
-           "wheel": {
+            wheel: {
                 pascalName: 'Wheel',
-                import: solar.Parts.Wheel    
+                import: solar.Parts.Wheel,
             },
-           "spedometer-max": {
+            'spedometer-max': {
                 pascalName: 'SpedometerMax',
-                import: solar.Parts.SpedometerMax    
+                import: solar.Parts.SpedometerMax,
             },
-           "spedometer-low": {
+            'spedometer-low': {
                 pascalName: 'SpedometerLow',
-                import: solar.Parts.SpedometerLow    
+                import: solar.Parts.SpedometerLow,
             },
-           "spedometer-middle": {
+            'spedometer-middle': {
                 pascalName: 'SpedometerMiddle',
-                import: solar.Parts.SpedometerMiddle    
+                import: solar.Parts.SpedometerMiddle,
             },
-           "scooter": {
+            scooter: {
                 pascalName: 'Scooter',
-                import: solar.Parts.Scooter    
+                import: solar.Parts.Scooter,
             },
-           "suspension-bolt": {
+            'suspension-bolt': {
                 pascalName: 'SuspensionBolt',
-                import: solar.Parts.SuspensionBolt    
+                import: solar.Parts.SuspensionBolt,
             },
-           "tram": {
+            tram: {
                 pascalName: 'Tram',
-                import: solar.Parts.Tram    
+                import: solar.Parts.Tram,
             },
-           "kick-scooter": {
+            'kick-scooter': {
                 pascalName: 'KickScooter',
-                import: solar.Parts.KickScooter    
-            }
+                import: solar.Parts.KickScooter,
+            },
         },
     },
 }

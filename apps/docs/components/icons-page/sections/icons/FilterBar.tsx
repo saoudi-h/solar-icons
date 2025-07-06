@@ -32,7 +32,6 @@ export const FilterBar: React.FC = () => {
     const { value, setValue } = useSolar()
     const { resolvedTheme } = useTheme()
 
-
     const setWeight = (weight: IconWeight) => {
         setValue({
             ...value,

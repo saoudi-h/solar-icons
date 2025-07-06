@@ -12,7 +12,7 @@ export interface IconData {
     Icon: IconType
 }
 
-export const icons:IconData[] = [
+export const icons: IconData[] = [
     {
         name: 'chat-round-money',
         category: 'messages',
