@@ -1,4 +1,3 @@
-'use client'
 import { cn } from '@/lib/utils'
 import './global.css'
 import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
@@ -28,6 +27,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             lang="en"
             className={cn(heading.variable, body.variable, mono.variable, body.className)}
             suppressHydrationWarning>
+            <meta name="apple-mobile-web-app-title" content="Solar Icons" />
             <body className="flex flex-col min-h-screen">
                 <JotaiProvider>
                     <Providers>{children}</Providers>

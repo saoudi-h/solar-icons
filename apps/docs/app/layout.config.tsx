@@ -1,3 +1,4 @@
+import { Logo } from '@/components/ui-blocks/logo'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 /**
@@ -9,7 +10,8 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
  */
 export const baseOptions: BaseLayoutProps = {
     nav: {
-        title: 'Solar Icons',
+        title: <Logo />,
+
     },
     links: [
         {
