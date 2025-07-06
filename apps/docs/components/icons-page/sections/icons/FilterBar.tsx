@@ -68,11 +68,11 @@ export const FilterBar: React.FC = () => {
     }
 
     return (
-        <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-sm z-20">
+        <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-xs z-20">
             <div className="flex content-start justify-start flex-wrap flex-1 gap-2">
                 {/* Style selector */}
                 <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
-                    <SelectTrigger className="w-48 bg-default-100 h-10 rounded-lg !border-none !shadow-none">
+                    <SelectTrigger className="w-48 bg-default-100 h-10 rounded-lg border-none! shadow-none!">
                         <SelectValue placeholder="Select a weight" />
                     </SelectTrigger>
                     <SelectContent>
@@ -120,7 +120,7 @@ export const FilterBar: React.FC = () => {
                         placeholder="Search..."
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
-                        className="w-full border-0 h-10 bg-default-100 rounded-lg !border-none shadow-none placeholder:text-muted-foreground text-sm pl-10 focus-visible:ring-none focus-visible:ring-0"
+                        className="w-full border-0 h-10 bg-default-100 rounded-lg border-none! shadow-none placeholder:text-muted-foreground text-sm pl-10 focus-visible:ring-none focus-visible:ring-0"
                     />
                 </div>
 
@@ -129,12 +129,12 @@ export const FilterBar: React.FC = () => {
                     onClick={reset}
                     size="icon"
                     colors="accent"
-                    className="size-10 rounded-lg !border-none bg-default-100 text-foreground">
+                    className="size-10 rounded-lg border-none! bg-default-100 text-foreground">
                     <Restart className="w-4 h-4" mirrored />
                 </Button>
 
                 {/* Reset button */}
-                <div className="h-10 rounded-lg !border-none bg-default-100 text-muted-foreground flex flex-row gap-1 items-center justify-center p-1 text-xs font-bold px-3">
+                <div className="h-10 rounded-lg border-none! bg-default-100 text-muted-foreground flex flex-row gap-1 items-center justify-center p-1 text-xs font-bold px-3">
                     <Tooltip>
                         <TooltipTrigger>
                             <NumberTicker value={filteredCount} />
@@ -147,7 +147,7 @@ export const FilterBar: React.FC = () => {
             </div>
             {/* alternative to react Select */}
             <MultipleSelector
-                className="bg-default-100 min-h-10 rounded-lg !border-none !shadow-none"
+                className="bg-default-100 min-h-10 rounded-lg border-none! shadow-none!"
                 placeholder="Select categories"
                 options={categoryOptions}
                 onChange={onCategoryChange}

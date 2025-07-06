@@ -23,8 +23,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <section className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full">
             <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
                 <NoiseSvg className="absolute inset-0 pointer-events-none size-full opacity-30" />
-                <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-primary/80 to-transparent blur-3xl"></div>
-                <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-warning/50 to-transparent blur-3xl"></div>
+                <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-primary/80 to-transparent blur-3xl"></div>
+                <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-warning/50 to-transparent blur-3xl"></div>
                 <div
                     className="absolute inset-0"
                     style={{

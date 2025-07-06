@@ -83,7 +83,7 @@ export const FeaturesSection = () => {
                         className="pb-16"
                         custom={0}>
                         Why Choose{' '}
-                        <span className="decoration-primary decoration-clone underline-offset-8 underline">
+                        <span className="decoration-primary box-decoration-clone underline-offset-8 underline">
                             Solar Icons
                         </span>
                         ?
@@ -103,7 +103,7 @@ export const FeaturesSection = () => {
                                 <AnimatePresence>
                                     {hoveredIndex === idx && (
                                         <motion.span
-                                            className="absolute inset-0 h-full w-full border-primary/50 border-b-2 rounded-xl  block bg-gradient-to-t from-primary/20 to-transparent"
+                                            className="absolute inset-0 h-full w-full border-primary/50 border-b-2 rounded-xl  block bg-linear-to-t from-primary/20 to-transparent"
                                             layoutId="hoverBackground"
                                             initial={{ opacity: 0 }}
                                             animate={{
@@ -133,7 +133,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     Icon,
     hovered = false,
 }) => (
-    <Card className="relative z-20 bg-accent/20 backdrop-blur-sm w-full h-full">
+    <Card className="relative z-20 bg-accent/20 backdrop-blur-xs w-full h-full">
         <CardHeader>
             <CardTitle>
                 <Heading

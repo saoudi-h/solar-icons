@@ -13,8 +13,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                 <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden z-0">
                         <NoiseSvg className="absolute size-full inset-0 pointer-events-none opacity-30" />
-                        <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-teal-950/30 to-transparent blur-3xl"></div>
-                        <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-pink-700/20 to-transparent blur-3xl"></div>
+                        <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-teal-950/30 to-transparent blur-3xl"></div>
+                        <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-pink-700/20 to-transparent blur-3xl"></div>
                         <div
                             className="absolute inset-0"
                             style={{
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                 <li key={linkIndex}>
                                                     <Link
                                                         href={link.url}
-                                                        className="flex flex-row gap-3 items-center text-muted-foreground hover:text-primary transition-colors duration-100 ease-linear border-l-2 pl-2 py-1 border-transparent hover:border-primary rounded-md bg-gradient-to-r from-transparent to-transparent hover:from-primary/30">
+                                                        className="flex flex-row gap-3 items-center text-muted-foreground hover:text-primary transition-colors duration-100 ease-linear border-l-2 pl-2 py-1 border-transparent hover:border-primary rounded-md bg-linear-to-r from-transparent to-transparent hover:from-primary/30">
                                                         {link.icon && link.icon}
                                                         {link.label}
                                                         {link.external && (

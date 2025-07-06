@@ -111,7 +111,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                 {generateIcons(innerIcons, 185, selectedStyle, rotationInner)}
             </div>
             <Circle size={160} noGradient>
-                <div className="relative flex flex-col items-center justify-center size-full rounded-full bg-accent/50 dark:bg-gradient-to-b bg-gradient-to-t from-primary/50 to-transparent backdrop-contrast-150 z-50 overflow-hidden">
+                <div className="relative flex flex-col items-center justify-center size-full rounded-full bg-accent/50 dark:bg-linear-to-b bg-linear-to-t from-primary/50 to-transparent backdrop-contrast-150 z-50 overflow-hidden">
                     <button
                         className="size-full hover:bg-primary/30  hover:backdrop-contrast-125 text-heading text-md font-black text-foreground/70 hover:text-foreground transition-color duration-100 border-b border-primary/30 rounded-t-full"
                         onClick={() => setNextCategory()}>
@@ -231,7 +231,7 @@ export const HeroRotation: FC = () => {
     })
 
     return (
-        <div className="h-[25rem] w-full">
+        <div className="h-100 w-full">
             <RotatingCircles
                 selectedStyle={style}
                 outerIcons={outerIcons}

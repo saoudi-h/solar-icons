@@ -58,14 +58,14 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
+        "@tailwindcss/postcss": "^4.1.11",
         "@types/mdx": "^2.0.13",
         "@types/node": "24.0.10",
         "@types/react": "^19.1.8",
         "@types/react-dom": "^19.1.6",
         "@types/react-virtualized": "^9.22.0",
-        "autoprefixer": "^10.4.20",
         "postcss": "^8.5.6",
-        "tailwindcss": "^3.4.16",
+        "tailwindcss": "^4.1.11",
         "tsx": "^4.20.3"
     }
 }

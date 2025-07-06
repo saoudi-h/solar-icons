@@ -116,7 +116,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                             asChild
                             variant="default"
                             colors="secondary"
-                            className="w-full !p-0 !border-none bg-default-100">
+                            className="w-full p-0! border-none! bg-default-100">
                             <Input
                                 style={{
                                     backgroundColor: color,
