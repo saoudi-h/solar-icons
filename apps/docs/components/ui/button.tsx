@@ -38,6 +38,38 @@ const buttonVariants = cva(
             size: 'default',
             colors: 'default',
         },
+        compoundVariants: [
+            {
+                variant: 'outline',
+                colors: 'default',
+                className: 'border-primary text-primary/80 hover:text-primary hover:bg-primary/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'secondary',
+                className: 'border-secondary text-secondary/80 hover:text-secondary hover:bg-secondary/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'destructive',
+                className: 'border-destructive text-destructive/80 hover:text-destructive hover:bg-destructive/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'warning',
+                className: 'border-warning text-warning/80 hover:text-warning hover:bg-warning/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'muted',
+                className: 'border-muted text-muted/80 hover:text-muted hover:bg-muted/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'accent',
+                className: 'border-accent text-accent/80 hover:text-accent hover:bg-accent/80',
+            },
+        ]
     }
 )
 
