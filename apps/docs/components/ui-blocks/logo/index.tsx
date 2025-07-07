@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { LogoIcon } from './LogoIcon'
 import { motion } from 'framer-motion'
