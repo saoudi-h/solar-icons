@@ -1,0 +1,9 @@
+{
+    "title": "Community",
+    "icon": "UsersGroupTwoRounded",
+    "pages": [
+        "contributing",
+        "license"
+    ],
+    "defaultOpen": false
+}

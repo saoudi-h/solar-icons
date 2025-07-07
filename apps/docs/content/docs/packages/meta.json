@@ -1,0 +1,9 @@
+{
+    "title": "Packages",
+    "icon": "Widget2",
+    "pages": [
+        "react",
+        "react-perf"
+    ],
+    "defaultOpen": false
+}
