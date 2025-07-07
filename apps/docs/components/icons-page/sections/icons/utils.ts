@@ -1,9 +1,7 @@
 import icons, { IconData } from '@/core/generated/descriptions'
 import { Category } from '@/core/generated/utils'
 
-
 import Fuse from 'fuse.js'
-
 
 export type CategoryOption = {
     value: Category
@@ -27,7 +25,7 @@ export const searchIcons = ({
     if (keyword) {
         const fuseSearch = new Fuse(preFilteredIcons, {
             keys: ['name', 'tags', 'category', 'categoryTags'],
-            threshold: 0.3, 
+            threshold: 0.3,
         })
         return fuseSearch.search(keyword.toLowerCase()).map(r => r.item)
     }

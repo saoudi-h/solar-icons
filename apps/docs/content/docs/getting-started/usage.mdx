@@ -1,0 +1,96 @@
+---
+title: Basic Usage
+description: Learn how to import and use Solar Icons in your React projects.
+icon: MouseCircle
+---
+
+Solar Icons are designed to be intuitive and flexible. Here's how to integrate them into your projects after installation.
+
+## Standard Package (`@solar-icons/react`)
+
+This package is best for versatility. Each icon component contains all six styles, which you can switch between using the `weight` prop.
+
+### Importing Icons
+
+You can import any icon directly from the package:
+
+```jsx
+import { Home } from '@solar-icons/react'
+
+export default function MyComponent() {
+    return <Home />
+}
+```
+
+### Changing the Style (Weight)
+
+Use the `weight` prop to change the icon's appearance.
+
+```jsx
+import { Home } from '@solar-icons/react'
+
+export default function MyComponent() {
+    // This will render the "Bold" version of the Home icon.
+    return <Home weight="Bold" />
+}
+```
+
+The available weights are: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken`.
+
+### Common Properties
+
+All icons in this package accept the following props:
+
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon's color.                 |
+| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.      |
+| `weight`   | `IconWeight`       | `Linear`       | Sets the icon style.                   |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
+
+## Performance Package (`@solar-icons/react-perf`)
+
+This package is optimized for performance by providing single-style icons. This results in a smaller bundle size.
+
+### Importing Icons
+
+To use an icon, import its style-specific version. The component name is a combination of the icon name and its style (e.g., `Home` + `Bold` = `HomeBold`).
+
+```jsx
+import { HomeBold, HomeLinear } from '@solar-icons/react-perf'
+
+export default function MyComponent() {
+    return (
+        <div>
+            <HomeBold size={32} />
+            <HomeLinear size={32} color="blue" />
+        </div>
+    )
+}
+```
+
+You can also import directly from a style's entry point for cleaner imports:
+
+```jsx
+import { Home } from '@solar-icons/react-perf/bold'
+import { Settings } from '@solar-icons/react-perf/linear'
+
+export default function MyComponent() {
+    return (
+        <div>
+            <Home size={32} />
+            <Settings size={32} />
+        </div>
+    )
+}
+```
+
+### Common Properties
+
+Icons in this package accept a simpler set of props:
+
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon's color.                 |
+| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.      |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |

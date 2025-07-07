@@ -1,10 +1,11 @@
-'use client'
 import { cn } from '@/lib/utils'
 import './global.css'
 import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
 import { Provider as JotaiProvider } from 'jotai'
 import Providers from './Providers'
+import { baseUrl, createMetadata } from '@/lib/metadata'
+import { Viewport } from 'next'
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],
@@ -22,12 +23,29 @@ const mono = Victor_Mono({
     variable: '--font-mono',
 })
 
+export const metadata = createMetadata({
+    title: {
+      template: '%s | Solar Icons',
+      default: 'Solar Icons',
+    },
+    description: 'The icon library for React applications and more',
+    metadataBase: baseUrl,
+  });
+
+  export const viewport: Viewport = {
+    themeColor: [
+      { media: '(prefers-color-scheme: dark)', color: '#000000' },
+      { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    ],
+  };
+
 export default function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
             className={cn(heading.variable, body.variable, mono.variable, body.className)}
             suppressHydrationWarning>
+            <meta name="apple-mobile-web-app-title" content="Solar Icons" />
             <body className="flex flex-col min-h-screen">
                 <JotaiProvider>
                     <Providers>{children}</Providers>

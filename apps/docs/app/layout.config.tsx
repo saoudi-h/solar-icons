@@ -1,3 +1,5 @@
+import { Logo } from '@/components/ui-blocks/logo'
+import { Widget3 } from '@solar-icons/react/ssr'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 /**
@@ -9,7 +11,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
  */
 export const baseOptions: BaseLayoutProps = {
     nav: {
-        title: 'Solar Icons',
+        title: <Logo />,
     },
     links: [
         {
@@ -17,6 +19,23 @@ export const baseOptions: BaseLayoutProps = {
             url: '/docs',
             active: 'nested-url',
         },
+        {
+            text: 'Explore Icons',
+            url: '/icons',
+            active: 'nested-url',
+        }
     ],
     githubUrl: 'https://github.com/saoudi-h/solar-icons',
+}
+
+export const docsOptions: BaseLayoutProps = {
+    ...baseOptions,
+    links: [
+        {
+            text: 'Explore Icons',
+            url: '/icons',
+            active: 'url',
+            icon: <Widget3 weight='BoldDuotone' />
+        }
+    ],
 }

@@ -15,8 +15,8 @@ export default function IconsPage() {
             <div className="relative flex flex-col items-center max-w-fd-container self-center w-full">
                 <div className="absolute gap-2 bg-default-100 rounded-2xl md:rounded-3xl py-12 w-full max-w-fd-container self-center overflow-hidden px-3 md:px-4 mx-4 h-full">
                     <NoiseSvg className="absolute size-full inset-0 pointer-events-none opacity-30" />
-                    <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-primary/80 to-transparent blur-3xl"></div>
-                    <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-red-400/50 to-transparent blur-3xl"></div>
+                    <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-primary/80 to-transparent blur-3xl"></div>
+                    <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-red-400/50 to-transparent blur-3xl"></div>
                     <div
                         className="absolute inset-0"
                         style={{
@@ -43,7 +43,7 @@ function Loading() {
         <section className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full">
             <div className="relative gap-2 rounded-2xl md:rounded-3xl w-full">
                 <div className="relative flex flex-col gap-4 p-4 rounded-xl">
-                    <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-sm z-20">
+                    <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-xs z-20">
                         <div className="flex content-start justify-start flex-wrap flex-1 gap-2">
                             {/* Style selector */}
                             <Skeleton className="w-48 h-10 rounded-lg bg-default-100" />
@@ -61,7 +61,7 @@ function Loading() {
                             <Skeleton className="size-10 rounded-lg bg-default-100" />
 
                             {/* Reset button */}
-                            <Skeleton className="h-10 w-12 rounded-lg !border-none bg-default-100  flex flex-row gap-1 items-center justify-center p-1"></Skeleton>
+                            <Skeleton className="h-10 w-12 rounded-lg border-none! bg-default-100  flex flex-row gap-1 items-center justify-center p-1"></Skeleton>
                         </div>
                         {/* alternative to react Select */}
                         <Skeleton className="size-10 max-w-48 md:max-w-64 lg:max-w-72 w-full rounded-lg bg-default-100" />

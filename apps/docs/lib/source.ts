@@ -1,8 +1,22 @@
+import { docs } from '@/.source'
 import { loader } from 'fumadocs-core/source'
-import { createMDXSource } from 'fumadocs-mdx'
-import { meta, docs } from '@/.source'
+import { createElement } from 'react';
+import { SSR as icons } from '@solar-icons/react'
 
-export const source: ReturnType<typeof loader> = loader({
+
+
+// See https://fumadocs.vercel.app/docs/headless/source-api for more info
+export const source = loader({
+    // it assigns a URL to your pages
     baseUrl: '/docs',
-    source: createMDXSource(docs, meta),
+    source: docs.toFumadocsSource(),
+    icon(icon) {
+        if (!icon) {
+          // You may set a default icon
+          return;
+        }
+
+        if (icon in icons) return createElement(icons[icon as keyof typeof icons] || icons.File, { className: 'size-8', weight: 'BoldDuotone' });
+
+      },
 })

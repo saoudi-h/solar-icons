@@ -1,0 +1,58 @@
+---
+title: Server-Side Rendering (SSR)
+description: Learn how to use Solar Icons in a Server-Side Rendering (SSR) environment like Next.js or Remix.
+icon: Server
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+The `@solar-icons/react` package is designed to work seamlessly in both client-side and server-side rendering environments.
+
+<Callout title="Note">
+    This guide applies primarily to the [`@solar-icons/react`](/docs/packages/react) package. The
+    [`@solar-icons/react-perf`](/docs/packages/react-perf) package is simpler and generally works
+    out-of-the-box with SSR without special considerations.
+</Callout>
+
+## Standard vs. SSR Imports
+
+The `@solar-icons/react` package exports two main entry points:
+
+1.  **`@solar-icons/react`**: This is the standard entry point. It uses React's Context API (`SolarProvider` and `useSolar`) to manage global styles. This is ideal for client-side applications (CSR).
+
+2.  **`@solar-icons/react/ssr`**: This is a dedicated SSR entry point. The icon components exported from here **do not** use the React Context API.
+
+### Why the Difference?
+
+React's Context API is not designed to be used on the server for providing styles in the same way it is on the client, as the server renders a single pass of the component tree. The SSR components are pure, stateless components that take all their props directly. This makes them more predictable and performant in a server environment.
+
+## Usage in an SSR Application
+
+If you are using `SolarProvider` in your application, you should ensure that it is only rendered on the client side. For the icons themselves, you can use the standard import. Modern React frameworks like Next.js will handle this correctly.
+
+However, if you are not using `SolarProvider` and want the most optimized server render, you can import directly from the `ssr` entry point.
+
+### Example
+
+```jsx
+// This component is rendered on the server.
+// It imports from the 'ssr' entry point for optimal performance.
+import { ArrowUp } from '@solar-icons/react/ssr'
+
+// The props are passed directly, as there is no context.
+export default function ServerComponent() {
+    return (
+        <div>
+            <h1>My Page</h1>
+            <ArrowUp size={48} weight="BoldDuotone" />
+        </div>
+    )
+}
+```
+
+### When to use `@solar-icons/react/ssr`
+
+- You are rendering components on the server and are not using `SolarProvider` for global configuration.
+- You want to ensure your server-rendered HTML is as lean as possible.
+
+For most applications, especially those using a framework like Next.js, you can safely use the standard `@solar-icons/react` import, and everything will work as expected. The framework's hydration process will handle the client-side rendering correctly. The `ssr` entry point is an optimization for specific use cases.

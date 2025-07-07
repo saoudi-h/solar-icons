@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Heading } from '@/components/ui/heading'
-import MotionSection from '@/components/ui-blocks/animations/SectionMotion'
+import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Icon } from '@iconify/react'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { Button } from '@/components/ui/button'
@@ -27,7 +27,7 @@ export interface PackageSectionProps {
     packages: PackageCardProps[]
 }
 
-export const PackageSection: React.FC<PackageSectionProps> = ({ packages }) => {
+export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => {
     let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     const itemVariants = {
         hidden: { opacity: 0, y: 100 },
@@ -43,11 +43,11 @@ export const PackageSection: React.FC<PackageSectionProps> = ({ packages }) => {
     }
 
     return (
-        <MotionSection className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
+        <SectionMotion className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
             <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
                 <NoiseSvg className="absolute size-full inset-0 pointer-events-none opacity-30" />
-                <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-teal-950/80 to-transparent blur-3xl"></div>
-                <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-pink-700/50 to-transparent blur-3xl"></div>
+                <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-teal-950/80 to-transparent blur-3xl"></div>
+                <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-pink-700/50 to-transparent blur-3xl"></div>
                 <div
                     className="absolute inset-0"
                     style={{
@@ -62,10 +62,11 @@ export const PackageSection: React.FC<PackageSectionProps> = ({ packages }) => {
                         initial="hidden"
                         variants={itemVariants}
                         whileInView="visible"
+                        className="pb-16"
                         viewport={{ once: true, amount: 0.5 }}
                         custom={0}>
                         Available{' '}
-                        <span className="decoration-primary decoration-clone underline-offset-8 underline">
+                        <span className="decoration-primary box-decoration-clone underline-offset-8 underline">
                             Packages
                         </span>
                     </MotionHeading>
@@ -104,7 +105,7 @@ export const PackageSection: React.FC<PackageSectionProps> = ({ packages }) => {
                     </div>
                 </div>
             </div>
-        </MotionSection>
+        </SectionMotion>
     )
 }
 
@@ -161,7 +162,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     disabled={!link}
                     size="icon"
                     colors="secondary"
-                    className="rounded-l-xl !rounded-r-none w-10 border-r-border/50">
+                    className="rounded-l-xl rounded-r-none! w-10 border-r-border/50">
                     <ArrowRightUp className="size-full" />
                 </Button>
                 <Button
@@ -181,7 +182,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     disabled={!npmLink}
                     size="icon"
                     colors="secondary"
-                    className="rounded-r-xl !rounded-l-none border-l-border/50">
+                    className="rounded-r-xl rounded-l-none! border-l-border/50">
                     <Icon icon="devicon:npm" className="size-full" />
                 </Button>
             </CardFooter>

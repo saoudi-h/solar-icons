@@ -34,11 +34,11 @@ export const icons = {`
         const dataIcons = icons
             .map(
                 (icon: string) =>
-`           "${icon}": {
+                    `           "${icon}": {
                 pascalName: '${toPascalCase(icon)}',
                 import: solar.${categoryPascalCase}.${toPascalCase(icon)}    
             }`
-        )
+            )
             .join(',\n')
 
         data += `
@@ -60,12 +60,12 @@ export default icons
 
     utils += 'export type Category = typeof categories[number]'
 
-    return {data, utils}
+    return { data, utils }
 }
 
 const main = async () => {
     try {
-        const {data, utils} = generateIcons(metadata)
+        const { data, utils } = generateIcons(metadata)
         fs.writeFileSync(outputDataFilePath, data)
         console.log('The file has been generated with success !')
         fs.writeFileSync(outputUtilsFilePath, utils)

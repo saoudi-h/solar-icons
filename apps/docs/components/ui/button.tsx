@@ -4,21 +4,21 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-    'border-2 shadow-xs inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 transition-all duration-200 ease-in active:scale-95 [&_svg]:shrink-0 items-center justify-center',
+    'border-2 shadow-2xs inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 transition-all duration-200 ease-in active:scale-95 [&_svg]:shrink-0 items-center justify-center',
     {
         variants: {
             variant: {
                 default: '',
-                outline: '!bg-transparent',
-                ghost: '!bg-transparent !border-transparent',
-                link: '!bg-transparent !hover:bg-transparent !border-transparent !hover:border-transparent',
+                outline: 'bg-transparent!',
+                ghost: 'bg-transparent! border-transparent!',
+                link: 'bg-transparent! !hover:bg-transparent border-transparent! !hover:border-transparent',
             },
             size: {
                 default: 'h-9 px-5 py-2',
                 sm: 'h-8 rounded-md px-4 text-xs border',
                 lg: 'h-10 rounded-md px-9',
                 xl: 'h-12 rounded-md px-9',
-                icon: 'h-9 w-9 !border',
+                icon: 'h-9 w-9 border!',
             },
             colors: {
                 default:
@@ -38,6 +38,38 @@ const buttonVariants = cva(
             size: 'default',
             colors: 'default',
         },
+        compoundVariants: [
+            {
+                variant: 'outline',
+                colors: 'default',
+                className: 'border-primary text-primary/80 hover:text-primary hover:bg-primary/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'secondary',
+                className: 'border-secondary text-secondary/80 hover:text-secondary hover:bg-secondary/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'destructive',
+                className: 'border-destructive text-destructive/80 hover:text-destructive hover:bg-destructive/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'warning',
+                className: 'border-warning text-warning/80 hover:text-warning hover:bg-warning/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'muted',
+                className: 'border-muted text-muted/80 hover:text-muted hover:bg-muted/80',
+            },
+            {
+                variant: 'outline',
+                colors: 'accent',
+                className: 'border-accent text-accent/80 hover:text-accent hover:bg-accent/80',
+            },
+        ]
     }
 )
 

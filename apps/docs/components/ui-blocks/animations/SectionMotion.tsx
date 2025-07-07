@@ -10,9 +10,9 @@ const itemVariants = {
     },
 }
 
-type MotionSectionProps = MotionProps & React.HTMLAttributes<HTMLElement>
+type SectionMotionProps = MotionProps & React.HTMLAttributes<HTMLElement>
 
-export const MotionSection = forwardRef<HTMLElement, MotionSectionProps>(
+export const SectionMotion = forwardRef<HTMLElement, SectionMotionProps>(
     ({ children, ...props }, ref) => {
         return (
             <motion.section
@@ -28,5 +28,4 @@ export const MotionSection = forwardRef<HTMLElement, MotionSectionProps>(
     }
 )
 
-MotionSection.displayName = 'SectionMotion'
-export default MotionSection
+SectionMotion.displayName = 'SectionMotion'

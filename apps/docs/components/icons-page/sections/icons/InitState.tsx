@@ -7,7 +7,6 @@ import { CategoryOption } from './utils'
 import { useTheme } from 'next-themes'
 import { useSolar } from '@solar-icons/react'
 
-
 const INITIAL_DARK_COLOR = '#9fcfe6'
 const INITIAL_LIGHT_COLOR = '#0f4159'
 const isArrayEqual = (a: any[], b: any[]) => {

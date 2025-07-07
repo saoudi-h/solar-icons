@@ -2,8 +2,7 @@ import { IconData } from '@/core/generated/descriptions'
 import { motion } from 'framer-motion'
 import { forwardRef } from 'react'
 
-interface IconCardProps extends IconData {
-}
+interface IconCardProps extends IconData {}
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
     ({ name, Icon, tags, category, categoryTags, ...props }, ref) => {

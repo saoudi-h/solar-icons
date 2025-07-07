@@ -1,0 +1,9 @@
+{
+    "title": "Getting Started",
+    "icon": "Star2",
+    "defaultOpen": true,
+    "pages": [
+        "installation",
+        "choosing-a-package"
+    ]
+}

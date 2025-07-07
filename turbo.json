@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalEnv": ["FIGMA_FILE_ID", "FIGMA_API_TOKEN"],
+  "globalEnv": ["FIGMA_FILE_ID", "FIGMA_API_TOKEN", "GITHUB_APP_ID", "GITHUB_APP_PRIVATE_KEY"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

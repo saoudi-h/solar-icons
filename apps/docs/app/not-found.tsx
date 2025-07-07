@@ -1,9 +1,9 @@
+'use client'
 import React from 'react'
 import { Heading } from '@/components/ui/heading'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { config } from '@/config'
+import { SuperButton, SuperButtonProps } from '@/components/ui/SuperButton'
 
 export interface NotFoundProps {
     title: {
@@ -11,16 +11,8 @@ export interface NotFoundProps {
         part2: string
     }
     description: string
-    primaryAction: {
-        label: string
-        href: string
-        icon: React.ReactElement
-    }
-    secondaryAction: {
-        label: string
-        href: string
-        icon: React.ReactElement
-    }
+    primaryAction: SuperButtonProps
+    secondaryAction: SuperButtonProps
 }
 const notfound = () => {
     const { title, description, primaryAction, secondaryAction } = config.notFound
@@ -29,7 +21,7 @@ const notfound = () => {
             <section className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full">
                 <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
                     <NoiseSvg className="absolute inset-0 pointer-events-none size-full opacity-30" />
-                    <div className="absolute rounded-full w-2/3 h-2/3 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-destructive/80 to-transparent blur-3xl"></div>
+                    <div className="absolute rounded-full w-2/3 h-2/3 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-destructive/80 to-transparent blur-3xl"></div>
                     <div
                         className="absolute inset-0"
                         style={{
@@ -46,19 +38,12 @@ const notfound = () => {
                         <p className="text-center text-base text-muted-foreground sm:w-[466px] md:text-lg md:leading-6">
                             {description}
                         </p>
-                        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                            <Button asChild colors="secondary" className="rounded-full" size="xl">
-                                <Link href={secondaryAction.href || '#'}>
-                                    {secondaryAction.icon}
-                                    {secondaryAction.label}
-                                </Link>
-                            </Button>
-                            <Button asChild variant="default" className="rounded-full" size="xl">
-                                <Link href={primaryAction.href || '#'}>
-                                    {primaryAction.icon}
-                                    {primaryAction.label}
-                                </Link>
-                            </Button>
+                        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6 mt-6">
+                            <SuperButton
+                                label={primaryAction.label}
+                                onClick={() => history.back()}
+                                Icon={primaryAction.Icon}></SuperButton>
+                            <SuperButton {...secondaryAction}></SuperButton>
                         </div>
                     </div>
                 </div>

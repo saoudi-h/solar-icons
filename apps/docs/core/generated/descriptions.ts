@@ -12,7 +12,7 @@ export interface IconData {
     Icon: IconType
 }
 
-export const icons:IconData[] = [
+export const icons: IconData[] = [
     {
         name: 'chat-round-money',
         category: 'messages',
@@ -3319,7 +3319,7 @@ export const icons:IconData[] = [
         name: 'stars-line',
         category: 'astronomy',
         categoryTags: ['astronomy', 'geometric'],
-        tags: ['star outline', 'sky line'],
+        tags: ['star outline-solid', 'sky line'],
         Icon: solar.Astronomy.StarsLine,
     },
     {
@@ -3340,7 +3340,7 @@ export const icons:IconData[] = [
         name: 'star-ring',
         category: 'astronomy',
         categoryTags: ['astronomy', 'space', 'cosmology', 'astronomical object'],
-        tags: ['ringed star', 'stellar ring'],
+        tags: ['ringed star', 'stellar ring-3'],
         Icon: solar.Astronomy.StarRing,
     },
     {
@@ -3942,7 +3942,7 @@ export const icons:IconData[] = [
         name: 'body-shape',
         category: 'sports',
         categoryTags: ['sports', 'fashion', 'clothing', 'apparel'],
-        tags: ['underwear silhouette', 'bodysuit outline'],
+        tags: ['underwear silhouette', 'bodysuit outline-solid'],
         Icon: solar.Sports.BodyShape,
     },
     {
@@ -4887,7 +4887,7 @@ export const icons:IconData[] = [
         name: 'cat',
         category: 'ui',
         categoryTags: ['ui', 'essentional', 'animal', 'simplified', 'fashionable', 'essentials'],
-        tags: ['Cat outline', 'Minimalistic feline'],
+        tags: ['Cat outline-solid', 'Minimalistic feline'],
         Icon: solar.Ui.Cat,
     },
     {
@@ -5399,7 +5399,7 @@ export const icons:IconData[] = [
         name: 'body',
         category: 'ui',
         categoryTags: ['ui', 'essentional', 'apparel', 'symbol'],
-        tags: ['shirt silhouette', 'clothing outline', 'garment shape'],
+        tags: ['shirt silhouette', 'clothing outline-solid', 'garment shape'],
         Icon: solar.Ui.Body,
     },
     {
@@ -5630,7 +5630,7 @@ export const icons:IconData[] = [
         name: 'benzene-ring',
         category: 'medicine',
         categoryTags: ['medicine', 'chemistry', 'organic'],
-        tags: ['carbon ring', 'hexagon atom'],
+        tags: ['carbon ring-3', 'hexagon atom'],
         Icon: solar.Medicine.BenzeneRing,
     },
     {

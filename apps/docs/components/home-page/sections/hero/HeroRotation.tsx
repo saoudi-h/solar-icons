@@ -12,7 +12,13 @@ import {
     useVelocity,
 } from 'framer-motion'
 import type { Icon as SolarIcon } from '@solar-icons/react/lib/types'
-import { categories, getIconsByCategory, Style, styles, Category } from '@/core/generated/generatedHeroUtils'
+import {
+    categories,
+    getIconsByCategory,
+    Style,
+    styles,
+    Category,
+} from '@/core/generated/generatedHeroUtils'
 import { cn } from '@/lib/utils'
 import './heroSectionStyle.css'
 import { atom, useAtom } from 'jotai'
@@ -41,13 +47,13 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
     const setNextCategory = () => {
         const currentIndex = categories.indexOf(category)
         const nextIndex = (currentIndex + 1) % categories.length
-        if (categories[nextIndex]) setCategory(categories[nextIndex])
+        if (categories[nextIndex]) setCategory(categories[nextIndex]!)
     }
 
     const setNextStyle = () => {
         const currentIndex = styles.indexOf(style)
         const nextIndex = (currentIndex + 1) % styles.length
-        if (styles[nextIndex]) setStyle(styles[nextIndex])
+        if (styles[nextIndex]) setStyle(styles[nextIndex]!)
     }
 
     const generateIcons = (
@@ -72,12 +78,12 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                             <motion.div
                                 key={IconComponent.name}
                                 initial={{ opacity: 0, scale: 0 }}
-                                animate={{ opacity: 1, scale: 1 }}
+                                animate={{ opacity: 1, scale: [0, 1.5, 1] }}
                                 exit={{ opacity: 0, scale: 0 }}
                                 transition={{
                                     delay: index * 0.1,
-                                    duration: 0.3,
-                                    type: 'spring',
+                                    duration: 0.4,
+                                    type: 'easeInOut',
                                 }}
                                 custom={index}
                                 className="absolute flex items-center justify-center p-2"
@@ -86,7 +92,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                                     y,
                                     rotate: `${(-rad * 180) / Math.PI}deg`,
                                 }}>
-                                <IconComponent size={24} weight={selectedStyle} />
+                                <IconComponent size={32} weight={selectedStyle} />
                             </motion.div>
                         </AnimatePresence>
                     )
@@ -97,7 +103,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
 
     return (
         <div className="relative flex items-center justify-center w-full">
-            <Circle size={700} wrapperClassName="blur-3xl" />
+            <Circle size={700} wrapperClassName="opacity-50" />
             <Circle size={600} />
             <Circle size={450} />
             <div className="relative w-[700px] h-[700px]">
@@ -105,7 +111,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                 {generateIcons(innerIcons, 185, selectedStyle, rotationInner)}
             </div>
             <Circle size={160} noGradient>
-                <div className="relative flex flex-col items-center justify-center size-full rounded-full bg-accent/50 dark:bg-gradient-to-b bg-gradient-to-t from-primary/50 to-transparent backdrop-contrast-150 z-50 overflow-hidden">
+                <div className="relative flex flex-col items-center justify-center size-full rounded-full bg-accent/50 dark:bg-linear-to-b bg-linear-to-t from-primary/50 to-transparent backdrop-contrast-150 z-50 overflow-hidden">
                     <button
                         className="size-full hover:bg-primary/30  hover:backdrop-contrast-125 text-heading text-md font-black text-foreground/70 hover:text-foreground transition-color duration-100 border-b border-primary/30 rounded-t-full"
                         onClick={() => setNextCategory()}>
@@ -160,7 +166,7 @@ const Circle = forwardRef<HTMLDivElement, CircleProps>(
 
 Circle.displayName = 'Circle'
 
-export const HeroRotation = () => {
+export const HeroRotation: FC = () => {
     const [style, setStyle] = useAtom(styleAtom)
     const [category, setCategory] = useAtom(categoryAtom)
     const [outerIcons, setOuterIcons] = useState<SolarIcon[]>([])
@@ -225,7 +231,7 @@ export const HeroRotation = () => {
     })
 
     return (
-        <div className="h-[25rem] w-full">
+        <div className="h-100 w-full">
             <RotatingCircles
                 selectedStyle={style}
                 outerIcons={outerIcons}

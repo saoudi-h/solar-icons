@@ -1,0 +1,70 @@
+---
+title: '@solar-icons/react-perf'
+description: The performance-optimized package for Solar Icons in React, designed for minimal bundle size.
+icon: Rocket
+---
+
+The `@solar-icons/react-perf` package is tailored for developers who prioritize performance and reduced bundle sizes. Each icon component includes only a single style, making it significantly lighter than the standard `@solar-icons/react` package.
+
+```package-install
+@solar-icons/react-perf
+```
+
+## Key Features
+
+- **Performance-Oriented**: Each icon is a separate, lightweight component.
+- **Minimal Bundle Size**: Only the specific icon styles you import are added to your application.
+- **Explicit Imports**: Encourages deliberate choices about icon styles.
+- **TypeScript Ready**: Comes with full TypeScript support.
+
+## When to Use It
+
+You should use this package if your application's bundle size is a primary concern and you do not need to change icon styles dynamically at runtime. It's ideal for large-scale applications where performance is critical.
+
+For more guidance, see the [**Choosing a Package**](/docs/getting-started/choosing-a-package) guide.
+
+## Usage
+
+Import icons by their combined name and style (e.g., `IconName` + `Style` = `IconNameStyle`).
+
+```jsx
+import { HomeBold, SettingsLinear } from '@solar-icons/react-perf'
+
+function App() {
+    return (
+        <div>
+            <HomeBold color="green" size={24} />
+            <SettingsLinear color="orange" size={24} />
+        </div>
+    )
+}
+```
+
+### Importing by Style Path
+
+For cleaner code, you can import from style-specific entry points. This allows you to use the base icon name.
+
+```jsx
+import { Home } from '@solar-icons/react-perf/bold'
+import { Settings } from '@solar-icons/react-perf/linear'
+
+function App() {
+    return (
+        <div>
+            <Home size={24} />
+            <Settings size={24} />
+        </div>
+    )
+}
+```
+
+## Component Props
+
+Each icon component accepts the following props, in addition to all standard SVG attributes like `className` and `onClick`.
+
+| Prop       | Type               | Default        | Description                                |
+| ---------- | ------------------ | -------------- | ------------------------------------------ |
+| `color`    | `string`           | `currentColor` | Sets the icon's color.                     |
+| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.          |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`.     |
+| `alt`      | `string`           | `undefined`    | Provides an accessible title for the icon. |

@@ -1,9 +1,17 @@
 import { FooterProps } from '@/components/ui-blocks/footer/types'
-import { BugMinimalistic, Help, SmartphoneUpdate, Diploma, House, ArrowLeft } from '@solar-icons/react/ssr'
+import {
+    BugMinimalistic,
+    Help,
+    SmartphoneUpdate,
+    Diploma,
+    House,
+    ArrowLeft,
+} from '@solar-icons/react/ssr'
 import { Icon } from '@iconify/react'
-import { PackageSectionProps } from '@/components/home-page/sections/package'
+import { PackageSectionProps } from '@/components/home-page/sections/packages'
 import { HeroSectionProps } from '@/components/home-page/sections/hero'
 import { NotFoundProps } from '@/app/not-found'
+import * as solar from '@solar-icons/react/ssr/category'
 
 export interface Config {
     footer: FooterProps
@@ -78,10 +86,13 @@ export const config: Config = {
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',
+            Icon: <solar.Search.RoundedMagnifer size={20} />,
+            variant: 'outline',
         },
         getStarted: {
             label: 'Get Started',
             href: '/docs',
+            Icon: <solar.Astronomy.Rocket size={20} />,
         },
     },
     packageSection: {
@@ -99,8 +110,7 @@ export const config: Config = {
                 title: 'React Perf',
                 link: '/packages/react-perf',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-perf',
-                githubLink:
-                    'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-perf',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-perf',
                 content: 'React client and SSR library with size performance in mind',
                 iconify: 'devicon:react',
                 status: 'in-progress',
@@ -136,12 +146,13 @@ export const config: Config = {
         primaryAction: {
             label: 'Go Home',
             href: '/',
-            icon: <House size={20} />,
+            Icon: <House size={20} />,
         },
         secondaryAction: {
+            onClick: () => history.back(),
             label: 'Go Back',
-            href: 'javascript:history.back()',
-            icon: <ArrowLeft size={20} />,
+            Icon: <ArrowLeft size={20} />,
+            variant: 'outline',
         },
     },
 }
