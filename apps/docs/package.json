@@ -36,6 +36,7 @@
         "framer-motion": "^12.23.0",
         "fumadocs-core": "15.6.1",
         "fumadocs-mdx": "11.6.10",
+        "fumadocs-typescript": "^4.0.6",
         "fumadocs-ui": "15.6.1",
         "fuse.js": "^7.1.0",
         "jotai": "^2.12.5",
