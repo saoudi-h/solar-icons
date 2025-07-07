@@ -33,8 +33,18 @@ export function generate({
     return (
         <div
             style={{
+                position: 'relative',
+                display: 'flex',
+                width: '100%',
+                height: '100%',
+                padding: '1rem',
+                backgroundColor: 'rgb(0,0,0)',
+            }}>
+
+        <div
+            style={{
                 overflow: 'hidden',
-                borderRadius: '5rem',
+                borderRadius: '3rem',
                 position: 'relative',
                 fontFamily: 'body',
                 display: 'flex',
@@ -42,7 +52,7 @@ export function generate({
                 width: '100%',
                 height: '100%',
                 color: 'white',
-                backgroundColor: 'rgb(10,10,10)',
+                backgroundColor: 'rgb(15,15,15)',
             }}>
             <svg
                 style={{
@@ -130,6 +140,7 @@ export function generate({
                     </p>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

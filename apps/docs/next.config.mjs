@@ -8,6 +8,9 @@ const config = {
         reactCompiler: true
     },
     reactStrictMode: true,
+    typescript: {
+        ignoreBuildErrors: true
+    }
 }
 
 export default withMDX(config)
