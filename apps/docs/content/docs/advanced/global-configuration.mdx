@@ -1,0 +1,90 @@
+---
+title: Global Configuration
+description: Learn how to use the SolarProvider to apply consistent styles to all icons in your application.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+The `@solar-icons/react` package includes a powerful feature for managing icon styles globally: the `SolarProvider`. This allows you to set default props for all icons within a specific part of your application, ensuring consistency and reducing prop drilling.
+
+<Callout title="Note">
+    The `SolarProvider` and `useSolar` hook are only available in the
+    [`@solar-icons/react`](/docs/packages/react) package. They are not included in
+    `@solar-icons/react-perf`.
+</Callout>
+
+## Using `SolarProvider`
+
+To use it, wrap a component tree with `SolarProvider` and pass a `value` object containing the default props you want to apply.
+
+Any icon rendered inside this provider will now use these defaults unless a prop is explicitly overridden on the component itself.
+
+```jsx
+// In your App.js or layout file
+import { SolarProvider } from '@solar-icons/react'
+import { Home, Settings, User } from '@solar-icons/react'
+
+export default function App() {
+    return (
+        <SolarProvider
+            value={{
+                size: 24,
+                color: 'navy',
+                weight: 'Bold',
+            }}>
+            <Header />
+            <MainContent />
+        </SolarProvider>
+    )
+}
+
+function Header() {
+    return (
+        <nav>
+            {/* This Home icon will be size 24, navy, and bold */}
+            <Home />
+            {/* This Settings icon will also be size 24 and navy, but its weight is overridden to "Linear" */}
+            <Settings weight="Linear" />
+        </nav>
+    )
+}
+
+function MainContent() {
+    // This User icon will inherit all the global styles.
+    return <User />
+}
+```
+
+### Accepted Properties
+
+The `value` prop of `SolarProvider` accepts the following properties:
+
+- `color?: string`
+- `size?: string | number`
+- `weight?: IconWeight`
+- `mirrored?: boolean`
+
+## Using the `useSolar` Hook
+
+For more advanced use cases, you can access the current context value directly with the `useSolar` hook. This hook returns the context object, which includes the current default `value` and functions to update it.
+
+```jsx
+import { useSolar } from '@solar-icons/react'
+import { Sun, Moon } from '@solar-icons/react'
+
+function ThemeToggle() {
+    const { value, setValue } = useSolar()
+
+    const toggleTheme = () => {
+        const newWeight = value.weight === 'Bold' ? 'Linear' : 'Bold'
+        setValue({ weight: newWeight })
+    }
+
+    return (
+        <button onClick={toggleTheme}>
+            {value.weight === 'Bold' ? <Moon /> : <Sun />}
+            <span>Toggle Weight</span>
+        </button>
+    )
+}
+```

@@ -87,6 +87,7 @@ export const config: Config = {
             label: 'Explore Icons',
             href: '/icons',
             Icon: <solar.Search.RoundedMagnifer size={20} />,
+            variant: 'outline',
         },
         getStarted: {
             label: 'Get Started',
@@ -151,6 +152,7 @@ export const config: Config = {
             onClick: () => history.back(),
             label: 'Go Back',
             Icon: <ArrowLeft size={20} />,
+            variant: 'outline',
         },
     },
 }

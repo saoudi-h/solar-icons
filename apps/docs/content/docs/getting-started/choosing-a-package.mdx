@@ -1,0 +1,57 @@
+---
+title: Choosing a Package
+description: Understand the differences between @solar-icons/react and @solar-icons/react-perf to choose the right one for your project.
+---
+
+import { Cards, Card } from 'fumadocs-ui/components/card'
+
+Solar for React is offered in two distinct packages, each tailored to different needs. Understanding their trade-offs is key to making the right choice for your application.
+
+## Comparison
+
+Here is a high-level comparison of the two packages:
+
+| Feature                  | `@solar-icons/react`      | `@solar-icons/react-perf` |
+| ------------------------ | ------------------------- | ------------------------- |
+| **Dynamic Styles**       | ✅ Yes                    | ❌ No                     |
+| **Bundle Size**          | Larger                    | ✅ Smaller                |
+| **Global Configuration** | ✅ Yes (`SolarProvider`)  | ❌ No                     |
+| **Ease of Use**          | ✅ High                   | Good                      |
+| **Primary Use Case**     | Versatility & Development | Performance-critical apps |
+
+---
+
+## `@solar-icons/react`
+
+<Card
+    title="The Versatile Choice"
+    description="This is the standard package and the recommended choice for most applications. It offers the full range of features, including the ability to dynamically change icon styles via props."
+/>
+
+Each icon component in this package contains the SVG data for all six styles. This makes it incredibly flexible for prototyping and for applications where icon styles might need to change based on user interaction or application state.
+
+**Choose this package if:**
+
+- You want to dynamically change icon weights (e.g., `Linear` to `Bold` on hover).
+- You value ease of use and development speed.
+- You want to set global icon styles using a context provider.
+- Bundle size is not your primary concern.
+
+[**Learn more about `@solar-icons/react` &rarr;**](/docs/packages/react)
+
+## `@solar-icons/react-perf`
+
+<Card
+    title="The Performance Choice"
+    description="This package is highly optimized for performance. Each icon component only includes the SVG data for a single, specific style, resulting in a significantly smaller bundle size."
+/>
+
+If you are building a large-scale application where every kilobyte matters, this package is the ideal choice. It requires you to be more explicit about which icon style you are using, as each style is imported as a separate component (e.g., `HomeBold`, `HomeLinear`).
+
+**Choose this package if:**
+
+- Performance and minimal bundle size are critical requirements.
+- You know which icon styles you will use ahead of time and do not need to change them dynamically.
+- You do not need global configuration.
+
+[**Learn more about `@solar-icons/react-perf` &rarr;**](/docs/packages/react-perf)

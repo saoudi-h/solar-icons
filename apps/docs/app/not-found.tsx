@@ -39,11 +39,11 @@ const notfound = () => {
                             {description}
                         </p>
                         <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6 mt-6">
-                            <SuperButton {...secondaryAction}></SuperButton>
                             <SuperButton
                                 label={primaryAction.label}
                                 onClick={() => history.back()}
                                 Icon={primaryAction.Icon}></SuperButton>
+                            <SuperButton {...secondaryAction}></SuperButton>
                         </div>
                     </div>
                 </div>

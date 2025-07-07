@@ -1,0 +1,69 @@
+---
+title: '@solar-icons/react'
+description: The versatile, all-in-one package for using Solar Icons in React, with support for dynamic styles and global configuration.
+---
+
+The `@solar-icons/react` package is the most flexible and feature-rich way to use Solar Icons in a React application. It's designed for ease of use and supports dynamic style changes, global configuration, and both client-side and server-side rendering.
+
+```package-install
+@solar-icons/react
+```
+
+## Key Features
+
+- **Dynamic Weights**: Change the icon style on the fly using the `weight` prop.
+- **Global Configuration**: Use the `SolarProvider` to set default styles for all icons.
+- **Tree-Shakable**: Only the icons you import will be included in your final bundle.
+- **SSR Support**: Works seamlessly in server-rendered applications.
+- **TypeScript Ready**: Comes with full TypeScript support.
+
+## Usage
+
+Import any icon and use it as a standard React component.
+
+```jsx
+import { Home } from '@solar-icons/react'
+
+function App() {
+    return <Home weight="Bold" color="purple" size={32} />
+}
+```
+
+## Component Props
+
+Each icon component accepts the following props, in addition to all standard SVG attributes like `className` and `onClick`.
+
+| Prop       | Type                                                                            | Default        | Description                                                           |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------- |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon's color. Inherits from `SolarProvider`.                 |
+| `size`     | `string \| number`                                                              | `1em`          | Sets the icon's width and height. Inherits from `SolarProvider`.      |
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets the icon style. Inherits from `SolarProvider`.                   |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`. Inherits from `SolarProvider`. |
+| `alt`      | `string`                                                                        | `undefined`    | Provides an accessible title for the icon.                            |
+
+## Advanced Usage
+
+### Global Configuration
+
+For applying consistent styles across your app, see the [**Global Configuration guide**](/docs/advanced/global-configuration).
+
+### Server-Side Rendering
+
+For usage in SSR environments like Next.js, refer to the [**Server-Side Rendering guide**](/docs/advanced/server-side-rendering).
+
+### Category Imports
+
+You can also import all icons from a specific category as a single object.
+
+```jsx
+import { Arrows } from '@solar-icons/react/category'
+
+function App() {
+    return (
+        <div>
+            <Arrows.ArrowUp weight="Bold" />
+            <Arrows.ArrowDown weight="Linear" />
+        </div>
+    )
+}
+```
