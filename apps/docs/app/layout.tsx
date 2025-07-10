@@ -25,19 +25,19 @@ const mono = Victor_Mono({
 
 export const metadata = createMetadata({
     title: {
-      template: '%s | Solar Icons',
-      default: 'Solar Icons',
+        template: '%s | Solar Icons',
+        default: 'Solar Icons',
     },
     description: 'The icon library for React applications and more',
     metadataBase: baseUrl,
-  });
+})
 
-  export const viewport: Viewport = {
+export const viewport: Viewport = {
     themeColor: [
-      { media: '(prefers-color-scheme: dark)', color: '#000000' },
-      { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+        { media: '(prefers-color-scheme: dark)', color: '#000000' },
+        { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     ],
-  };
+}
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (

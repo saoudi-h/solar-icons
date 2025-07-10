@@ -2,7 +2,5 @@
     "title": "Icon Reference",
     "icon": "Notes",
     "defaultOpen": false,
-    "pages": [
-        "categories"
-    ]
+    "pages": ["categories"]
 }

@@ -1,5 +1,3 @@
 {
-    "pages": [
-        "index","getting-started","packages","icon-reference","advanced","community"
-    ]
+    "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
 }

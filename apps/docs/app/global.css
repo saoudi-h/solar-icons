@@ -91,7 +91,7 @@
         --foreground: 219 54% 0%;
         --muted: 219 12% 85%;
         --muted-foreground: 219 7% 38%;
-        --popover: 219 36% 98%;
+        --popover: 240 4.8% 95.9%;
         --popover-foreground: 0 0% 0%;
         --card: 219 36% 98%;
         --card-foreground: 0 0% 0%;
@@ -127,7 +127,7 @@
         --foreground: 219 22% 99%;
         --muted: 219 12% 15%;
         --muted-foreground: 219 7% 62%;
-        --popover: 0 0% 1%;
+        --popover: 240 5.9% 10%;
         --popover-foreground: 0 0% 100%;
         --card: 330 0% 9%;
         --card-foreground: 0 0% 100%;
@@ -186,7 +186,6 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(var(--muted-foreground));
 }
-
 
 /* used in MotionTabs */
 

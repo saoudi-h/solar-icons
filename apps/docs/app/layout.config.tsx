@@ -23,7 +23,7 @@ export const baseOptions: BaseLayoutProps = {
             text: 'Explore Icons',
             url: '/icons',
             active: 'nested-url',
-        }
+        },
     ],
     githubUrl: 'https://github.com/saoudi-h/solar-icons',
 }
@@ -35,7 +35,7 @@ export const docsOptions: BaseLayoutProps = {
             text: 'Explore Icons',
             url: '/icons',
             active: 'url',
-            icon: <Widget3 weight='BoldDuotone' />
-        }
+            icon: <Widget3 weight="BoldDuotone" />,
+        },
     ],
 }
