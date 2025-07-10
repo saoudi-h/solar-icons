@@ -129,7 +129,7 @@
         --muted-foreground: 219 7% 62%;
         --popover: 0 0% 1%;
         --popover-foreground: 0 0% 100%;
-        --card: 0 0% 1%;
+        --card: 330 0% 9%;
         --card-foreground: 0 0% 100%;
         --border: 219 9% 14%;
         --input: 219 9% 14%;
@@ -185,4 +185,17 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(var(--muted-foreground));
+}
+
+
+/* used in MotionTabs */
+
+.no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
 }

@@ -45,11 +45,20 @@ function DrawerOverlay({
   )
 }
 
+export interface DrawerContentType extends React.ComponentProps<typeof DrawerPrimitive.Content> {
+  /**
+   * Hides the handler that is used to drag the drawer
+   * @default false
+   */  
+  hideHandler?: boolean
+}
+
 function DrawerContent({
   className,
   children,
+  hideHandler = false,
   ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Content>) {
+}: DrawerContentType) {
   return (
     <DrawerPortal data-slot="drawer-portal">
       <DrawerOverlay />
@@ -65,7 +74,7 @@ function DrawerContent({
         )}
         {...props}
       >
-        <div className="bg-muted mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        {!hideHandler && <div className="bg-muted mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />}
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>

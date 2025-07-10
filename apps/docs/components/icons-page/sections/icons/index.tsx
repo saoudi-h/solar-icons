@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { IconGridVirtualized } from './IconGrid'
 import { InitState } from './InitState'
 import { ShowcaseProvider } from './context'
+import { IconDetail } from './icon-detail'
 
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     return (
@@ -18,6 +19,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                         <InitState />
                         <FilterBar />
                         <IconGridVirtualized />
+                        <IconDetail />
                     </div>
                 </div>
             </section>

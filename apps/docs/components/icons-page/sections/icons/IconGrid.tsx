@@ -60,7 +60,7 @@ export const IconGridVirtualized: React.FC = () => {
     }
 
     return (
-        <div ref={gridWrapperRef} style={{ width: '100%', height: gridHeight }}>
+        <div ref={gridWrapperRef} style={{ width: '100%', height: gridHeight }} className="test">
             <Grid
                 ref={gridRef}
                 className="*:relative *:mx-auto"
