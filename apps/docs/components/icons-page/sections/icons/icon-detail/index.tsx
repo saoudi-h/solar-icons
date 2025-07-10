@@ -77,7 +77,6 @@ const Content: FC = () => {
             { title: "Tags", value: "tags", content: <Tags /> },
             { title: "React", value: "react", content: <ReactCode /> },
             { title: "React Perf", value: "react-perf", content: <ReactPerfCode /> },
-            // { title: "Download", value: "download", content: <Download /> },
         ]} />
     </div>
     )

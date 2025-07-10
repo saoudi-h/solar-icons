@@ -7,6 +7,7 @@ import { ReactLenis } from 'lenis/react'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import { Toaster } from '@/components/ui/sonner'
 
 /**
  * Providers wraps the app in the following providers:
@@ -32,6 +33,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
                             prevent: node => node.classList.contains('ReactVirtualized__Grid'),
                         }}>
                         {children}
+                        <Toaster />
                     </ReactLenis>
                 </TooltipProvider>
             </NuqsAdapter>
