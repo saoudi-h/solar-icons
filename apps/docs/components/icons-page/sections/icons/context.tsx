@@ -11,6 +11,7 @@ export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
 export const keywordAtom = atom<string>('')
+export const selectedIconAtom = atom<IconData | null>(null)
 
 interface IconProviderWrapperProps {
     children: ReactNode
