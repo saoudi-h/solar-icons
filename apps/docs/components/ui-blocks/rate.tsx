@@ -1,18 +1,26 @@
 'use client'
-import { buttonVariants } from 'fumadocs-ui/components/ui/button'
-import { Like, Dislike } from '@solar-icons/react'
-import { type SyntheticEvent, useEffect, useState, useTransition } from 'react'
-import { Collapsible, CollapsibleContent } from 'fumadocs-ui/components/ui/collapsible'
-import { cva } from 'class-variance-authority'
-import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { Dislike, Like } from '@solar-icons/react'
+import { cva } from 'class-variance-authority'
+import { buttonVariants } from 'fumadocs-ui/components/ui/button'
+import { Collapsible, CollapsibleContent } from 'fumadocs-ui/components/ui/collapsible'
+import { usePathname } from 'next/navigation'
+import { type SyntheticEvent, useEffect, useState, useTransition } from 'react'
 
 const rateButtonVariants = cva(
-    'inline-flex items-center gap-2 px-3 py-2 rounded-full font-medium border text-sm [&_svg]:size-4 disabled:cursor-not-allowed',
+    `
+      inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm
+      font-medium
+      disabled:cursor-not-allowed
+      [&_svg]:size-4
+    `,
     {
         variants: {
             active: {
-                true: 'bg-fd-accent text-fd-accent-foreground [&_svg]:fill-current',
+                true: `
+                  bg-fd-accent text-fd-accent-foreground
+                  [&_svg]:fill-current
+                `,
                 false: 'text-fd-muted-foreground',
             },
         },
@@ -90,7 +98,7 @@ export function Rate({
             }}
             className="border-y py-3">
             <div className="flex flex-row items-center gap-2">
-                <p className="text-sm font-medium pe-2">How is this guide?</p>
+                <p className="pe-2 text-sm font-medium">How is this guide?</p>
                 <button
                     disabled={previous !== null}
                     className={cn(
@@ -120,7 +128,11 @@ export function Rate({
             </div>
             <CollapsibleContent className="mt-3">
                 {previous ? (
-                    <div className="px-3 py-6 flex flex-col items-center gap-3 bg-fd-card text-fd-muted-foreground text-sm text-center rounded-xl">
+                    <div
+                        className={`
+                          flex flex-col items-center gap-3 rounded-xl bg-fd-card
+                          px-3 py-6 text-center text-sm text-fd-muted-foreground
+                        `}>
                         <p>Thank you for your feedback!</p>
                         <div className="flex flex-row items-center gap-2">
                             <a
@@ -154,11 +166,17 @@ export function Rate({
                 ) : (
                     <form className="flex flex-col gap-3" onSubmit={submit}>
                         <textarea
+                            // eslint-disable-next-line jsx-a11y/no-autofocus
                             autoFocus
                             required
                             value={message}
                             onChange={e => setMessage(e.target.value)}
-                            className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 resize-none focus-visible:outline-none placeholder:text-fd-muted-foreground"
+                            className={`
+                              resize-none rounded-lg border bg-fd-secondary p-3
+                              text-fd-secondary-foreground
+                              placeholder:text-fd-muted-foreground
+                              focus-visible:outline-none
+                            `}
                             placeholder="Leave your feedback..."
                             onKeyDown={e => {
                                 if (!e.shiftKey && e.key === 'Enter') {
@@ -168,7 +186,9 @@ export function Rate({
                         />
                         <button
                             type="submit"
-                            className={cn(buttonVariants({ color: 'outline' }), 'w-fit px-3')}
+                            className={cn(buttonVariants({ color: 'outline' }), `
+                              w-fit px-3
+                            `)}
                             disabled={isPending}>
                             Submit
                         </button>

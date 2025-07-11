@@ -4,7 +4,12 @@ import { PackagesSection } from '@/components/home-page/sections/packages'
 import { config } from '@/config'
 export default function HomePage() {
     return (
-        <main className="relative flex min-h-dvh w-full gap-9 bg-background py-4 md:gap-12 md:px-10 md:py-[34px] flex-1 flex-col justify-center text-center">
+        <main
+            className={`
+              relative flex min-h-dvh w-full flex-1 flex-col justify-center
+              gap-9 bg-background py-4 text-center
+              md:gap-12 md:px-10 md:py-[34px]
+            `}>
             <HeroSection {...config.heroSection} />
             <FeaturesSection />
             <PackagesSection {...config.packageSection} />

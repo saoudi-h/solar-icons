@@ -1,6 +1,6 @@
 import { docs } from '@/.source'
-import { loader } from 'fumadocs-core/source'
 import { SSR as icons } from '@solar-icons/react'
+import { loader } from 'fumadocs-core/source'
 import { renderSolarIcon } from './solar'
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info

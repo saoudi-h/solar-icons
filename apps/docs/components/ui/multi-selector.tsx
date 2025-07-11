@@ -2,8 +2,8 @@
 
 'use client'
 
-import { Command as CommandPrimitive, useCommandState } from 'cmdk'
 import { AltArrowDown, CloseCircle } from '@solar-icons/react/ssr'
+import { Command as CommandPrimitive, useCommandState } from 'cmdk'
 
 import * as React from 'react'
 import { forwardRef, useEffect } from 'react'
@@ -161,6 +161,7 @@ const CommandEmpty = forwardRef<
         <div
             ref={forwardedRef}
             className={cn('py-6 text-center text-sm', className)}
+            // eslint-disable-next-line react/no-unknown-property
             cmdk-empty=""
             role="presentation"
             {...props}
@@ -428,7 +429,6 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         }, [creatable, commandProps?.filter])
 
         return (
-            // @ts-ignore
             <Command
                 ref={dropdownRef}
                 {...commandProps}
@@ -437,16 +437,30 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     commandProps?.onKeyDown?.(e)
                 }}
                 className={cn(
-                    'h-auto overflow-visible bg-transparent max-w-48 md:max-w-64 lg:max-w-72',
+                    `
+                      h-auto max-w-48 overflow-visible bg-transparent
+                      md:max-w-64
+                      lg:max-w-72
+                    `,
                     commandProps?.className
                 )}
                 shouldFilter={
                     commandProps?.shouldFilter !== undefined ? commandProps.shouldFilter : !onSearch
-                } // When onSearch is provided, we don't want to filter the options. You can still override it.
-                filter={commandFilter()}>
+                }
+                filter={commandFilter()!}>
+
+
+                   {/* 451:17  error    
+                   Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions   */}
                 <div
+                    role="button"
+                    tabIndex={disabled ? -1 : undefined}
+                    aria-label="Focus input field"
                     className={cn(
-                        'relative min-h-10 rounded-md border border-input text-sm',
+                        `
+                          relative min-h-10 rounded-md border border-input
+                          text-sm
+                        `,
                         {
                             'px-3 py-2': selected.length !== 0,
                             'cursor-text': !disabled && selected.length !== 0,
@@ -456,10 +470,20 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     onClick={() => {
                         if (disabled) return
                         inputRef?.current?.focus()
+                    }}
+                    onKeyDown={e => {
+                        if (e.key === 'Enter') {
+                            inputRef?.current?.focus()
+                        }
                     }}>
                     {selected.length < 1 ||
                     selected.filter(s => s.fixed).length === selected.length ? (
-                        <AltArrowDown className="h-4 w-4 opacity-50 absolute right-3 top-1/2 translate-y-[-50%] z-10" />
+                        <AltArrowDown
+                            className={`
+                              absolute top-1/2 right-3 z-10 h-4 w-4
+                              translate-y-[-50%] opacity-50
+                            `}
+                        />
                     ) : (
                         <Button
                             variant="link"
@@ -470,21 +494,34 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 onChange?.(selected.filter(s => s.fixed))
                             }}
                             className={cn(
-                                'absolute right-0 top-1/2 translate-y-[-50%] z-10 size-5 p-0',
+                                `
+                                  absolute top-1/2 right-0 z-10 size-5
+                                  translate-y-[-50%] p-0
+                                `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircle weight="Bold" size={24} className="drop-shadow-md" />
+                            <CloseCircle weight="Bold" size={24} className={`
+                              drop-shadow-md
+                            `} />
                         </Button>
                     )}
-                    <div className="relative flex flex-wrap gap-1 min-h-10">
+                    <div className="relative flex min-h-10 flex-wrap gap-1">
                         {selected.map(option => {
                             return (
                                 <Badge
                                     colors="secondary"
                                     key={option.value}
                                     className={cn(
-                                        'data-disabled:bg-muted-foreground data-disabled:text-muted data-disabled:hover:bg-muted-foreground',
-                                        'data-fixed:bg-muted-foreground data-fixed:hover:bg-muted-foreground p-1 pr-0.5 rounded-lg',
+                                        `
+                                          data-disabled:bg-muted-foreground
+                                          data-disabled:text-muted
+                                          data-disabled:hover:bg-muted-foreground
+                                        `,
+                                        `
+                                          rounded-lg p-1 pr-0.5
+                                          data-fixed:bg-muted-foreground
+                                          data-fixed:hover:bg-muted-foreground
+                                        `,
                                         badgeClassName
                                     )}
                                     data-fixed={option.fixed}
@@ -492,8 +529,16 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {option.label}
                                     <button
                                         className={cn(
-                                            'ml-1 rounded-full outline-hidden ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2',
-                                            (disabled || option.fixed) && 'hidden'
+                                            `
+                                              ml-1 rounded-full
+                                              ring-offset-background
+                                              outline-hidden
+                                              focus:ring-2 focus:ring-ring
+                                              focus:ring-offset-2
+                                            `,
+                                            (disabled || option.fixed) && `
+                                              hidden
+                                            `
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -506,7 +551,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                         }}
                                         onClick={() => handleUnselect(option)}>
                                         <CloseCircle
-                                            className="h-4 w-4 text-muted-foreground hover:text-foreground"
+                                            className={`
+                                              h-4 w-4 text-muted-foreground
+                                              hover:text-foreground
+                                            `}
                                             weight="BoldDuotone"
                                         />
                                     </button>
@@ -531,7 +579,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                             }}
                             onFocus={event => {
                                 setOpen(true)
-                                triggerSearchOnFocus && onSearch?.(debouncedSearchTerm)
+                                if( triggerSearchOnFocus && onSearch ) onSearch(debouncedSearchTerm)
                                 inputProps?.onFocus?.(event)
                             }}
                             placeholder={
@@ -540,7 +588,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     : placeholder
                             }
                             className={cn(
-                                'flex-1 bg-transparent outline-hidden placeholder:text-muted-foreground',
+                                `
+                                  flex-1 bg-transparent outline-hidden
+                                  placeholder:text-muted-foreground
+                                `,
                                 {
                                     'w-full': hidePlaceholderWhenSelected,
                                     'px-3 py-2': selected.length === 0,
@@ -554,7 +605,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div className="relative">
                     {open && (
                         <CommandList
-                            className="absolute z-50 top-1 max-h-96 w-full rounded-xl bg-popover border border-border/50 backdrop-blur-md text-popover-foreground shadow-md"
+                            className={`
+                              absolute top-1 z-50 max-h-96 w-full rounded-xl
+                              border border-border/50 bg-popover
+                              text-popover-foreground shadow-md backdrop-blur-md
+                            `}
                             // className="absolute top-1 z-10 w-full rounded-md border bg-popover text-popover-foreground shadow-md outline-hidden animate-in"
                             onMouseLeave={() => {
                                 setOnScrollbar(false)
@@ -572,7 +627,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem value="-" className="hidden" />
+                                        <CommandItem value="-" className={`
+                                          hidden
+                                        `} />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup
@@ -608,7 +665,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                                             className={cn(
                                                                 'cursor-pointer',
                                                                 option.disable &&
-                                                                    'cursor-default text-muted-foreground'
+                                                                    `
+                                                                      cursor-default
+                                                                      text-muted-foreground
+                                                                    `
                                                             )}>
                                                             {option.label}
                                                         </CommandItem>

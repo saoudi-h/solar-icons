@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs'
 import { source } from '@/lib/source'
 import { notFound } from 'next/navigation'
+import { readFileSync } from 'node:fs'
 import { generateOGImage } from './og'
 
 const body = readFileSync('./app/og/[...slug]/Poppins-Regular.ttf')

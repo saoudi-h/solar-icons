@@ -1,7 +1,7 @@
 'use client'
+import { motion } from 'framer-motion'
 import React from 'react'
 import { LogoIcon } from './LogoIcon'
-import { motion } from 'framer-motion'
 
 export const Logo: React.FC = () => (
     <div className="flex items-center justify-center gap-4 perspective-dramatic">
@@ -10,6 +10,6 @@ export const Logo: React.FC = () => (
             transition={{ type: 'spring', stiffness: 400 }}>
             <LogoIcon className="size-8" />
         </motion.div>
-        <span className="text-lg font-heading font-black">Solar Icons</span>
+        <span className="font-heading text-lg font-black">Solar Icons</span>
     </div>
 )

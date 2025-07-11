@@ -8,9 +8,12 @@ export const GridPlaceholder: React.FC = () => {
                 .map((_, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-center rounded-lg gap-2 p-2">
-                        <Skeleton className="size-8 rounded-3xl" />
-                        <Skeleton className="h-2 w-20" />
+                        className={`
+                          wrap flex flex-col items-center justify-center gap-4
+                          rounded-lg p-4
+                        `}>
+                        <Skeleton className="size-16 rounded-3xl" />
+                        <Skeleton className="h-3 w-24" />
                     </div>
                 ))}
         </>

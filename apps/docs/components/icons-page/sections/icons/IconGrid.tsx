@@ -1,11 +1,12 @@
 'use client'
+import type { IconData } from '@/core/generated/descriptions'
+import { useAtom } from 'jotai'
 import React, { useEffect, useRef, useState } from 'react'
+import type { GridProps } from 'react-virtualized';
+import { Grid } from 'react-virtualized'
+import { categoriesAtom, displayedIconsAtom, filteredIconsAtom, keywordAtom } from './context'
 import { IconCard } from './IconCard'
 import { searchIcons } from './utils'
-import { useAtom } from 'jotai'
-import { Grid } from 'react-virtualized'
-import { IconData } from '@/core/generated/descriptions'
-import { categoriesAtom, displayedIconsAtom, filteredIconsAtom, keywordAtom } from './context'
 
 export const IconGridVirtualized: React.FC = () => {
     const gridRef = useRef<Grid>(null)
@@ -46,12 +47,7 @@ export const IconGridVirtualized: React.FC = () => {
     const columnCount = Math.floor(gridWidth / columnWidth) || 1
     const rowCount = Math.ceil(filteredIcons.length / columnCount)
 
-    const cellRenderer: React.FC<{
-        key: string
-        columnIndex: number
-        rowIndex: number
-        style: React.CSSProperties
-    }> = ({ key, columnIndex, rowIndex, style }) => {
+    const cellRenderer: GridProps['cellRenderer'] = ({ key, columnIndex, rowIndex, style }) => {
         const index = rowIndex * columnCount + columnIndex
         const icon = filteredIcons[index]
         if (!icon) return null
@@ -60,7 +56,7 @@ export const IconGridVirtualized: React.FC = () => {
     }
 
     return (
-        <div ref={gridWrapperRef} style={{ width: '100%', height: gridHeight }} className="test">
+        <div ref={gridWrapperRef} style={{ width: '100%', height: gridHeight }}>
             <Grid
                 ref={gridRef}
                 className="*:relative *:mx-auto"

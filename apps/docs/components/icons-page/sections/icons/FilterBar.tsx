@@ -8,29 +8,38 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
+import type { IconWeight } from '@solar-icons/react'
+import { Settings, useSolar } from '@solar-icons/react'
 import { ColorPicker } from './ColorPicker'
-import { IconWeight, useSolar } from '@solar-icons/react'
 
-import { Restart, MinimalisticMagnifer, Dialog } from '@solar-icons/react/ssr'
-import { categories, styles } from '@/core/generated/utils'
 import { Button } from '@/components/ui/button'
-import { useTheme } from 'next-themes'
-import { useAtom } from 'jotai'
-import MultipleSelector, { Option } from '@/components/ui/multi-selector'
+import {
+    Drawer,
+    DrawerContent,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from '@/components/ui/drawer'
+import type { Option } from '@/components/ui/multi-selector'
+import MultipleSelector from '@/components/ui/multi-selector'
 import NumberTicker from '@/components/ui/number-ticker'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { categoriesAtom, filteredCountAtom, keywordAtom } from './context'
-import { CategoryOption } from './utils'
+import { categories, styles } from '@/core/generated/utils'
+import { useScreen } from '@/lib/screens'
+import { Dialog, MinimalisticMagnifer, Restart } from '@solar-icons/react/ssr'
+import { motion } from 'framer-motion'
+import { useAtom } from 'jotai'
+import { DEFAULT_VALUES, categoriesAtom, filteredCountAtom, keywordAtom } from './context'
+import type { CategoryOption } from './utils'
 
 const categoryOptions = categories.map(c => ({ value: c, label: c }))
 
-export const FilterBar: React.FC = () => {
+export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useAtom(keywordAtom)
     const [categories, setCategories] = useAtom(categoriesAtom)
 
     const { value, setValue } = useSolar()
-    const { resolvedTheme } = useTheme()
 
     const setWeight = (weight: IconWeight) => {
         setValue({
@@ -58,27 +67,32 @@ export const FilterBar: React.FC = () => {
     }
 
     const reset = () => {
-        setValue({
-            color: resolvedTheme === 'dark' ? '#ffffff' : '#000000',
-            size: 24,
-            weight: 'Linear',
-        })
+        setValue(DEFAULT_VALUES)
         setKeyword('')
         setCategories([])
     }
 
     return (
-        <div className="bg-default-300/50 rounded-xl flex flex-wrap justify-between gap-2 p-2 w-full shadow-xs z-20">
-            <div className="flex content-start justify-start flex-wrap flex-1 gap-2">
+        <>
+            <div className={`
+              flex flex-1 flex-wrap content-start justify-start gap-2
+            `}>
                 {/* Style selector */}
                 <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
-                    <SelectTrigger className="w-48 bg-default-100 h-10 rounded-lg border-none! shadow-none!">
+                    <SelectTrigger
+                        className={`
+                          h-10 w-48 rounded-lg border-none! bg-default-200
+                          shadow-none!
+                        `}>
                         <SelectValue placeholder="Select a weight" />
                     </SelectTrigger>
                     <SelectContent>
                         {styles.map(weight => (
                             <SelectItem key={weight} value={weight}>
-                                <div className="flex flex-row gap-2 items-center justify-center">
+                                <div className={`
+                                  flex flex-row items-center justify-center
+                                  gap-2
+                                `}>
                                     <Dialog
                                         className="mr-2 size-6"
                                         weight={weight}
@@ -92,8 +106,12 @@ export const FilterBar: React.FC = () => {
                     </SelectContent>
                 </Select>
 
-                {/* Slider pour la taille */}
-                <div className="flex items-center w-48 bg-default-100 h-10 rounded-lg p-4">
+                {/* Slider size */}
+                <div
+                    data-vaul-no-drag
+                    className={`
+                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
+                    `}>
                     <Slider
                         className=""
                         value={[parseInt((value.size || 24) + '')]}
@@ -102,25 +120,34 @@ export const FilterBar: React.FC = () => {
                         max={64}
                         step={1}
                     />
-                    <span className="ml-2 text-xs fon-light">{value.size}px</span>
+                    <span className="ml-2 text-xs font-light">{value.size}px</span>
                 </div>
 
                 {/* Color picker */}
                 <ColorPicker
                     color={value.color || '#000000'}
                     setColor={setColor}
-                    className="w-48 h-10"
+                    className="h-10 w-48"
                 />
 
                 {/* Search bar */}
-                <div className="flex w-48 h-10 relative">
-                    <MinimalisticMagnifer className="h-4 w-4 absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <div className="relative flex h-10 w-48">
+                    <MinimalisticMagnifer
+                        className={`
+                          absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2
+                          text-muted-foreground
+                        `}
+                    />
                     <Input
                         type="search"
                         placeholder="Search..."
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
-                        className="w-full border-0 h-10 bg-default-100 rounded-lg border-none! shadow-none placeholder:text-muted-foreground text-sm pl-10 focus-visible:ring-none focus-visible:ring-0"
+                        className={`
+                          h-10 w-full rounded-lg border-0 border-none!
+                          bg-default-200 pl-10 text-sm shadow-none
+                          placeholder:text-muted-foreground
+                        `}
                     />
                 </div>
 
@@ -129,12 +156,20 @@ export const FilterBar: React.FC = () => {
                     onClick={reset}
                     size="icon"
                     colors="accent"
-                    className="size-10 rounded-lg border-none! bg-default-100 text-foreground">
-                    <Restart className="w-4 h-4" mirrored />
+                    className={`
+                      size-10 rounded-lg border-none! bg-default-200
+                      text-foreground
+                    `}>
+                    <Restart className="h-4 w-4" mirrored />
                 </Button>
 
                 {/* Reset button */}
-                <div className="h-10 rounded-lg border-none! bg-default-100 text-muted-foreground flex flex-row gap-1 items-center justify-center p-1 text-xs font-bold px-3">
+                <div
+                    className={`
+                      flex h-10 flex-row items-center justify-center gap-1
+                      rounded-lg border-none! bg-default-200 p-1 px-3 text-xs
+                      font-bold text-muted-foreground
+                    `}>
                     <Tooltip>
                         <TooltipTrigger>
                             <NumberTicker value={filteredCount} />
@@ -147,11 +182,65 @@ export const FilterBar: React.FC = () => {
             </div>
             {/* alternative to react Select */}
             <MultipleSelector
-                className="bg-default-100 min-h-10 rounded-lg border-none! shadow-none!"
+                className={`
+                  min-h-10 rounded-lg border-none! bg-default-200 shadow-none!
+                `}
                 placeholder="Select categories"
                 options={categoryOptions}
                 onChange={onCategoryChange}
                 value={categories}></MultipleSelector>
-        </div>
+        </>
+    )
+}
+
+export const FilterBar = () => {
+    const isDesktop = useScreen('md')
+
+    if (isDesktop) {
+        return (
+            <div
+                className={`
+                  z-20 flex w-full flex-wrap justify-between gap-2 rounded-xl
+                  border border-border bg-default-50 p-2 shadow-xs
+                  dark:bg-default-100
+                `}>
+                <FilterBarContent />
+            </div>
+        )
+    }
+
+    return (
+        <Drawer direction="right" modal={true}>
+            <DrawerTrigger>
+                <motion.button
+                    initial={{ x: 0 }}
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ x: -10 }}
+                    className={`
+                      fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none
+                      rounded-l-full border border-border bg-default-200 p-2
+                      text-foreground/70 shadow-md transition-colors
+                      hover:text-foreground
+                    `}>
+                    <Settings className="size-8" weight="Linear" color="" />
+                </motion.button>
+                <span className="sr-only">Open settings</span>
+            </DrawerTrigger>
+            <DrawerContent
+                className={`
+                  !fixed !top-2 !right-2 !bottom-2 z-50 !flex !w-48
+                  overflow-hidden rounded-xl border border-border
+                  bg-default-50/90 p-2 shadow-xs backdrop-blur-sm !outline-none
+                  dark:bg-default-100/80
+                `}
+                style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>
+                <DrawerHeader>
+                    <DrawerTitle>Icon Filters</DrawerTitle>
+                </DrawerHeader>
+                <div className="flex flex-col gap-2">
+                    <FilterBarContent />
+                </div>
+            </DrawerContent>
+        </Drawer>
     )
 }

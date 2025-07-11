@@ -1,5 +1,6 @@
-import icons, { IconData } from '@/core/generated/descriptions'
-import { Category } from '@/core/generated/utils'
+import type { IconData } from '@/core/generated/descriptions'
+import icons from '@/core/generated/descriptions'
+import type { Category } from '@/core/generated/utils'
 
 import Fuse from 'fuse.js'
 

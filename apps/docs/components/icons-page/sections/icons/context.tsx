@@ -1,9 +1,10 @@
-import { ReactNode } from 'react'
-import { IconWeight, SolarProvider } from '@solar-icons/react'
+import type { IconProps, IconWeight } from '@solar-icons/react'
+import { SolarProvider } from '@solar-icons/react'
+import type { ReactNode } from 'react'
 
-import { IconData } from '@/core/generated/descriptions'
+import type { IconData } from '@/core/generated/descriptions'
 import { atom } from 'jotai'
-import { CategoryOption } from './utils'
+import type { CategoryOption } from './utils'
 
 export const colorIconDark = atom(false)
 export const categoriesAtom = atom<CategoryOption[]>([])
@@ -20,11 +21,17 @@ interface IconProviderWrapperProps {
     defaultWeight?: IconWeight
 }
 
+export const DEFAULT_VALUES: IconProps = {
+    color: '#9fcfe6',
+    size: 64,
+    weight: 'BoldDuotone',
+}
+
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
-    defaultColor = '#9fcfe6',
-    defaultSize = 64,
-    defaultWeight = 'BoldDuotone',
+    defaultColor = DEFAULT_VALUES.color,
+    defaultSize = DEFAULT_VALUES.size,
+    defaultWeight = DEFAULT_VALUES.weight!,
 }) => {
     return (
         <SolarProvider value={{ color: defaultColor, size: defaultSize, weight: defaultWeight }}>

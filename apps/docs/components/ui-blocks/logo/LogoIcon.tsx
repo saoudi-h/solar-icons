@@ -1,5 +1,5 @@
+import type { SVGProps } from 'react'
 import React from 'react'
-import { SVGProps } from 'react'
 
 export const LogoIcon: React.FC<SVGProps<SVGSVGElement>> = props => {
     return (

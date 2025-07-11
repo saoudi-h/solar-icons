@@ -1,11 +1,11 @@
+import { baseUrl, createMetadata } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
-import './global.css'
+import { Provider as JotaiProvider } from 'jotai'
+import type { Viewport } from 'next'
 import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
-import { Provider as JotaiProvider } from 'jotai'
+import './global.css'
 import Providers from './Providers'
-import { baseUrl, createMetadata } from '@/lib/metadata'
-import { Viewport } from 'next'
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],
@@ -46,7 +46,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             className={cn(heading.variable, body.variable, mono.variable, body.className)}
             suppressHydrationWarning>
             <meta name="apple-mobile-web-app-title" content="Solar Icons" />
-            <body className="flex flex-col min-h-screen">
+            <body className="flex min-h-screen flex-col">
                 <JotaiProvider>
                     <Providers>{children}</Providers>
                 </JotaiProvider>

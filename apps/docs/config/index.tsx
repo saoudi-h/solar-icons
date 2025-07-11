@@ -1,16 +1,16 @@
-import { FooterProps } from '@/components/ui-blocks/footer/types'
-import {
-    BugMinimalistic,
-    Help,
-    SmartphoneUpdate,
-    Diploma,
-    House,
-    ArrowLeft,
-} from '@solar-icons/react/ssr'
+import type { NotFoundProps } from '@/app/not-found'
+import type { HeroSectionProps } from '@/components/home-page/sections/hero'
+import type { PackageSectionProps } from '@/components/home-page/sections/packages'
+import type { FooterProps } from '@/components/ui-blocks/footer/types'
 import { Icon } from '@iconify/react'
-import { PackageSectionProps } from '@/components/home-page/sections/packages'
-import { HeroSectionProps } from '@/components/home-page/sections/hero'
-import { NotFoundProps } from '@/app/not-found'
+import {
+    ArrowLeft,
+    BugMinimalistic,
+    Diploma,
+    Help,
+    House,
+    SmartphoneUpdate,
+} from '@solar-icons/react/ssr'
 import * as solar from '@solar-icons/react/ssr/category'
 
 export interface Config {

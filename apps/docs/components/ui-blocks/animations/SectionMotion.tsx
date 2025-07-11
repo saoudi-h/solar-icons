@@ -1,5 +1,6 @@
+import type { MotionProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import React, { forwardRef } from 'react'
-import { motion, MotionProps } from 'framer-motion'
 
 const itemVariants = {
     hidden: { opacity: 0, y: 100 },

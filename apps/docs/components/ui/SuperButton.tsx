@@ -1,16 +1,16 @@
 'use client'
-import React from 'react'
-import { Button, ButtonProps } from './button'
+import { cn } from '@/lib/utils'
 import { motion, type HTMLMotionProps } from 'framer-motion'
 import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import React from 'react'
+import type { ButtonProps } from './button'
+import { Button } from './button'
 
 const MotionButton = motion(Button)
 
 interface BaseProps {
     Icon?: React.ReactNode
     label: string
-    iconSize?: number
     className?: string
     hoverRotation?: number
     hoverScale?: number
@@ -38,7 +38,6 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
             onClick,
             Icon,
             label,
-            iconSize = 24,
             className,
             hoverRotation = 6,
             hoverScale = 1.1,
@@ -57,7 +56,10 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
         ref
     ) => {
         const defaultClasses = cn(
-            'hover:shadow-md transform-origin-center px-4 transition-none',
+            `
+              px-4 transition-none
+              hover:shadow-md
+            `,
             {
                 'rounded-full': rounded === 'full',
                 'rounded-md': rounded === 'default',
@@ -97,7 +99,9 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
                     className={defaultClasses}
                     {...defaultMotionProps}
                     {...buttonProps}>
-                    <Link href={href} className="flex flex-row gap-4 items-center">
+                    <Link href={href} className={`
+                      flex flex-row items-center gap-4
+                    `}>
                         {buttonContent}
                     </Link>
                 </MotionButton>
@@ -110,7 +114,7 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
                 variant={variant}
                 size={size}
                 colors={colors}
-                className={cn(defaultClasses, 'flex flex-row gap-4 items-center')}
+                className={cn(defaultClasses, 'flex flex-row items-center gap-4')}
                 onClick={onClick}
                 {...defaultMotionProps}
                 {...buttonProps}>

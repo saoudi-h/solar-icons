@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs/promises'
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import path from 'path'
 import sharp from 'sharp'
 
@@ -35,7 +36,7 @@ export async function GET(request: NextRequest) {
         }
 
         return new NextResponse('Invalid format', { status: 400 })
-    } catch (error) {
+    } catch {
         return new NextResponse('Icon not found', { status: 404 })
     }
 }

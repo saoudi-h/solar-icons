@@ -1,5 +1,5 @@
-import fs from 'node:fs'
 import metadata from '@solar-icons/core/metadata.json' assert { type: 'json' }
+import fs from 'node:fs'
 
 const toPascalCase = (str: string) =>
     str

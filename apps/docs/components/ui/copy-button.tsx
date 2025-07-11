@@ -1,13 +1,13 @@
 'use client'
 
-import * as React from 'react'
-import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import type { ButtonProps } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Button, ButtonProps } from '@/components/ui/button'
+import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import * as React from 'react'
 
 interface CopyButtonProps extends ButtonProps {
     value: string
-    src?: string
 }
 
 export async function copyToClipboard(value: string) {
@@ -17,7 +17,6 @@ export async function copyToClipboard(value: string) {
 export function CopyButton({
     value,
     className,
-    src,
     variant = 'default',
     ...props
 }: CopyButtonProps) {

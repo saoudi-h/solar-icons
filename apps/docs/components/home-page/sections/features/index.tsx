@@ -1,15 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Heading } from '@/components/ui/heading'
+import { IconContainer } from '@/components/ui/icon-container'
+import { MotionHeading } from '@/components/ui/motion'
+import { cn } from '@/lib/utils'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
 import * as solar from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import { Heading } from '@/components/ui/heading'
-import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
+import React, { useState } from 'react'
 import { MotionShapeSvg } from './ShapeSvg'
-import { IconContainer } from '@/components/ui/icon-container'
-import { MotionHeading } from '@/components/ui/motion'
 
 export interface FeatureCardProps {
     title: string
@@ -50,7 +50,7 @@ export const FeaturesSection = () => {
 
     const y = useTransform(scrollYProgress, [0, 1], [-100, 300])
 
-    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     const itemVariants = {
         hidden: { opacity: 0, y: 100 },
         visible: (index: number) => ({
@@ -65,9 +65,17 @@ export const FeaturesSection = () => {
     }
 
     return (
-        <SectionMotion className="relative flex flex-col items-center px-3 md:px-0 max-w-fd-container self-center w-full gap-8 py-12">
+        <SectionMotion
+            className={`
+              relative flex w-full max-w-fd-container flex-col items-center
+              gap-8 self-center px-3 py-12
+              md:px-0
+            `}>
             <motion.div
-                className="absolute inset-0 overflow-hidden flex items-center justify-center"
+                className={`
+                  absolute inset-0 flex items-center justify-center
+                  overflow-hidden
+                `}
                 ref={ref}>
                 <MotionShapeSvg className="w-full text-primary blur-xs" style={{ y }} />
             </motion.div>
@@ -83,12 +91,18 @@ export const FeaturesSection = () => {
                         className="pb-16"
                         custom={0}>
                         Why Choose{' '}
-                        <span className="decoration-primary box-decoration-clone underline-offset-8 underline">
+                        <span
+                            className={`
+                              box-decoration-clone underline decoration-primary
+                              underline-offset-8
+                            `}>
                             Solar Icons
                         </span>
                         ?
                     </MotionHeading>
-                    <div className="flex flex-row gap-4 mt-8 items-stretch w-full flex-wrap">
+                    <div className={`
+                      mt-8 flex w-full flex-row flex-wrap items-stretch gap-4
+                    `}>
                         {features.map((item, idx) => (
                             <motion.div
                                 initial="hidden"
@@ -103,7 +117,12 @@ export const FeaturesSection = () => {
                                 <AnimatePresence>
                                     {hoveredIndex === idx && (
                                         <motion.span
-                                            className="absolute inset-0 h-full w-full border-primary/50 border-b-2 rounded-xl  block bg-linear-to-t from-primary/20 to-transparent"
+                                            className={`
+                                              absolute inset-0 block h-full
+                                              w-full rounded-xl border-b-2
+                                              border-primary/50 bg-linear-to-t
+                                              from-primary/20 to-transparent
+                                            `}
                                             layoutId="hoverBackground"
                                             initial={{ opacity: 0 }}
                                             animate={{
@@ -133,7 +152,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     Icon,
     hovered = false,
 }) => (
-    <Card className="relative z-20 bg-accent/20 backdrop-blur-xs w-full h-full">
+    <Card className="relative z-20 h-full w-full bg-accent/20 backdrop-blur-xs">
         <CardHeader>
             <CardTitle>
                 <Heading
@@ -141,7 +160,10 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
                     justify="center"
                     className={cn(
                         hovered && 'text-primary',
-                        'flex flex-row gap-4 items-start transition-colors duration-300 ease-in-out'
+                        `
+                          flex flex-row items-start gap-4 transition-colors
+                          duration-300 ease-in-out
+                        `
                     )}>
                     <IconContainer>
                         <Icon weight="BoldDuotone" size="32" />
@@ -151,7 +173,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
             </CardTitle>
         </CardHeader>
         <CardContent>
-            <span className="font-light text-sm">{content}</span>
+            <span className="text-sm font-light">{content}</span>
         </CardContent>
     </Card>
 )

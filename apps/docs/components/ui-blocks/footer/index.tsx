@@ -1,20 +1,50 @@
-import React from 'react'
-import { FooterProps } from './types'
-import Link from 'next/link'
-import { ArrowRightUp } from '@solar-icons/react/ssr'
-import { Logo } from '../logo'
 import { NoiseSvg } from '@/components/ui/noise-svg'
+import { ArrowRightUp } from '@solar-icons/react/ssr'
+import Link from 'next/link'
+import React from 'react'
 import { FooterMotion } from '../animations/FooterMotion'
+import { Logo } from '../logo'
+import type { FooterProps } from './types'
 
 export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
     return (
-        <FooterMotion className="relative flex w-full md:px-10 flex-1 flex-col">
-            <div className="relative flex flex-col items-center mt-24 max-w-fd-container self-center w-full gap-8 py-12 md:mx-10">
-                <div className="relative gap-2 bg-accent/30 rounded-2xl md:rounded-3xl py-12 w-full overflow-hidden">
-                    <div className="absolute inset-0 overflow-hidden z-0">
-                        <NoiseSvg className="absolute size-full inset-0 pointer-events-none opacity-30" />
-                        <div className="absolute rounded-full w-1/2 h-1/2 top-0 left-1/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-teal-950/30 to-transparent blur-3xl"></div>
-                        <div className="absolute rounded-full w-1/3 h-1/3 top-0 left-2/3 -translate-x-1/2 -translate-y-1/2 bg-linear-to-b from-pink-700/20 to-transparent blur-3xl"></div>
+        <FooterMotion className={`
+          relative flex w-full flex-1 flex-col
+          md:px-10
+        `}>
+            <div
+                className={`
+                  relative mt-6 flex w-full max-w-fd-container flex-col
+                  items-center gap-8 self-center py-0
+                  md:mx-10 md:mt-12 md:py-12
+                `}>
+                <div
+                    className={`
+                      relative w-full gap-2 overflow-hidden rounded-none
+                      bg-accent/30 py-12
+                      md:rounded-3xl
+                    `}>
+                    <div className="absolute inset-0 z-0 overflow-hidden">
+                        <NoiseSvg
+                            className={`
+                              pointer-events-none absolute inset-0 size-full
+                              opacity-30
+                            `}
+                        />
+                        <div
+                            className={`
+                              absolute top-0 left-1/3 h-1/2 w-1/2
+                              -translate-x-1/2 -translate-y-1/2 rounded-full
+                              bg-linear-to-b from-teal-950/30 to-transparent
+                              blur-3xl
+                            `}></div>
+                        <div
+                            className={`
+                              absolute top-0 left-2/3 h-1/3 w-1/3
+                              -translate-x-1/2 -translate-y-1/2 rounded-full
+                              bg-linear-to-b from-pink-700/20 to-transparent
+                              blur-3xl
+                            `}></div>
                         <div
                             className="absolute inset-0"
                             style={{
@@ -23,19 +53,32 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                             }}
                         />
                     </div>
-                    <div className="relative my-14 mt-16 flex flex-col lg:flex-row gap-12 lg:gap-2 px-12">
-                        <div className="space-y-4 md:pr-8">
+                    <div
+                        className={`
+                          relative my-14 mt-16 flex flex-col gap-12 px-12
+                          lg:flex-row lg:gap-2
+                        `}>
+                        <div className={`
+                          space-y-4
+                          md:pr-8
+                        `}>
                             <div className="flex items-center justify-start">
                                 <Logo />
                             </div>
-                            <p className="text-small text-muted-foreground">{bottomText}</p>
+                            <p className="text-base text-muted-foreground">{bottomText}</p>
                         </div>
 
-                        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div
+                            className={`
+                              container mx-auto grid grid-cols-1 gap-8 px-4
+                              md:grid-cols-3
+                            `}>
                             {sections.map((section, index) => {
                                 return (
                                     <div key={index}>
-                                        <h3 className="text-md font-bold mb-4 font-heading">
+                                        <h3 className={`
+                                          mb-4 font-heading text-base font-bold
+                                        `}>
                                             {section.title}
                                         </h3>
                                         <ul className="space-y-2">
@@ -43,7 +86,23 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                 <li key={linkIndex}>
                                                     <Link
                                                         href={link.url}
-                                                        className="flex flex-row gap-3 items-center text-muted-foreground hover:text-primary transition-colors duration-100 ease-linear border-l-2 pl-2 py-1 border-transparent hover:border-primary rounded-md bg-linear-to-r from-transparent to-transparent hover:from-primary/30">
+                                                        className={`
+                                                          flex flex-row
+                                                          items-center gap-3
+                                                          rounded-md border-l-2
+                                                          border-transparent
+                                                          bg-linear-to-r
+                                                          from-transparent
+                                                          to-transparent py-1
+                                                          pl-2
+                                                          text-muted-foreground
+                                                          transition-colors
+                                                          duration-100
+                                                          ease-linear
+                                                          hover:border-primary
+                                                          hover:from-primary/30
+                                                          hover:text-primary
+                                                        `}>
                                                         {link.icon && link.icon}
                                                         {link.label}
                                                         {link.external && (

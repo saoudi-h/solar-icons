@@ -1,7 +1,0 @@
-.hero-section-gradient {
-    background: radial-gradient(circle, rgb(117, 134, 164, 0.5) 0%, transparent 100%);
-}
-
-.dark .hero-section-gradient {
-    background: radial-gradient(circle, transparent 30%, rgb(74, 94, 129) 100%);
-}

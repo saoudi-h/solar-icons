@@ -1,11 +1,11 @@
-import { IconData } from '@/core/generated/descriptions'
+import type { IconData } from '@/core/generated/descriptions'
+import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { forwardRef } from 'react'
 import { selectedIconAtom } from './context'
-import clsx from 'clsx'
 
-interface IconCardProps extends IconData {}
+type IconCardProps = IconData
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
     ({ name, Icon, tags, category, categoryTags, ...props }, ref) => {
@@ -22,24 +22,30 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className={clsx(
-                    'flex flex-col items-center justify-center will-change-transform rounded-lg gap-2 py-4 px-2 transition-all duration-300 ease-in group cursor-pointer',
+                className={cn(
+                    `
+                      group flex cursor-pointer flex-col items-center
+                      justify-center gap-2 rounded-lg px-2 py-4 transition-all
+                      duration-300 ease-in will-change-transform
+                    `,
                     {
-                        'bg-primary/10 border border-primary': isSelected,
+                        'border border-primary bg-primary/10': isSelected,
                         'hover:bg-default-200/50': !isSelected,
                     }
-                )}
-            >
+                )}>
                 <Icon
-                    className={clsx(
-                        'transition-transform duration-300 ease-in',
-                        {
-                            'group-hover:scale-125': !isSelected,
-                            'scale-125 text-primary': isSelected,
-                        }
-                    )}
+                    className={cn('transition-transform duration-300 ease-in', {
+                        'group-hover:scale-125': !isSelected,
+                        'scale-125 text-primary': isSelected,
+                    })}
                 />
-                <p className="text-xs font-extralight text-center text-muted-foreground truncate w-full transition-transform duration-300 ease-in group-hover:translate-y-1">
+                <p
+                    className={`
+                      w-full truncate text-center text-xs font-extralight
+                      text-muted-foreground transition-transform duration-300
+                      ease-in
+                      group-hover:translate-y-1
+                    `}>
                     {name}
                 </p>
             </motion.div>

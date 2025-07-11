@@ -8,4 +8,5 @@ module.exports = {
   trailingComma: "es5",
   bracketSameLine: true,
   printWidth: 100,
+  plugins: ["prettier-plugin-organize-imports"],
 };

@@ -1,37 +1,64 @@
 'use client'
 
-import * as React from 'react'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
 const toggleVariants = cva(
-    'border-2 shadow-2xs inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 transition-all duration-200 ease-in active:scale-95 [&_svg]:shrink-0 items-center justify-center data-[state=on]:bg-primary data-[state=on]:text-primary-foreground',
+    `
+      inline-flex items-center justify-center gap-2 rounded-md border-2 text-sm
+      font-medium whitespace-nowrap shadow-2xs transition-all duration-200
+      ease-in
+      focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
+      active:scale-95
+      disabled:pointer-events-none disabled:opacity-50
+      data-[state=on]:bg-primary data-[state=on]:text-primary-foreground
+      [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+    `,
     {
         variants: {
             variant: {
                 default: '',
                 outline: 'border border-input bg-transparent',
-                ghost: 'bg-transparent border-transparent',
-                link: 'bg-transparent hover:bg-transparent border-transparent hover:border-transparent',
+                ghost: 'border-transparent bg-transparent',
+                link: `
+                  border-transparent bg-transparent
+                  hover:border-transparent hover:bg-transparent
+                `,
             },
             colors: {
-                default:
-                    'bg-primary text-primary-foreground/80 border-primary hover:text-primary-foreground hover:bg-primary/80',
-                secondary:
-                    'text-secondary-foreground/80 hover:text-secondary-foreground bg-secondary border-border hover:bg-secondary/80 hover:border-secondary/80',
-                destructive:
-                    'text-destructive-foreground bg-destructive border-destructive hover:bg-destructive/80 hover:border-destructive/80',
-                warning:
-                    'text-warning-foreground bg-warning border-warning hover:bg-warning/80 hover:border-warning/80',
-                muted: 'text-muted-foreground bg-muted border-muted hover:bg-muted/80 hover:border-muted/80',
-                accent: 'text-accent-foreground bg-accent border-accent hover:bg-accent/80 hover:border-accent/80',
+                default: `
+                  border-primary bg-primary text-primary-foreground/80
+                  hover:bg-primary/80 hover:text-primary-foreground
+                `,
+                secondary: `
+                  border-border bg-secondary text-secondary-foreground/80
+                  hover:border-secondary/80 hover:bg-secondary/80
+                  hover:text-secondary-foreground
+                `,
+                destructive: `
+                  border-destructive bg-destructive text-destructive-foreground
+                  hover:border-destructive/80 hover:bg-destructive/80
+                `,
+                warning: `
+                  border-warning bg-warning text-warning-foreground
+                  hover:border-warning/80 hover:bg-warning/80
+                `,
+                muted: `
+                  border-muted bg-muted text-muted-foreground
+                  hover:border-muted/80 hover:bg-muted/80
+                `,
+                accent: `
+                  border-accent bg-accent text-accent-foreground
+                  hover:border-accent/80 hover:bg-accent/80
+                `,
             },
             size: {
-                default: 'h-9 px-2 min-w-9',
-                sm: 'h-8 px-1.5 min-w-8',
-                lg: 'h-10 px-2.5 min-w-10',
+                default: 'h-9 min-w-9 px-2',
+                sm: 'h-8 min-w-8 px-1.5',
+                lg: 'h-10 min-w-10 px-2.5',
             },
         },
         defaultVariants: {

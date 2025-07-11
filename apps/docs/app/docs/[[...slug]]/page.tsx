@@ -1,10 +1,10 @@
-import { source } from '@/lib/source'
-import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
-import { notFound } from 'next/navigation'
-import { createRelativeLink } from 'fumadocs-ui/mdx'
-import { getMDXComponents } from '@/mdx-components'
 import { Rate } from '@/components/ui-blocks/rate'
 import { onRateAction } from '@/lib/github'
+import { source } from '@/lib/source'
+import { getMDXComponents } from '@/mdx-components'
+import { createRelativeLink } from 'fumadocs-ui/mdx'
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
+import { notFound } from 'next/navigation'
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
     const params = await props.params

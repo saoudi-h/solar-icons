@@ -32,7 +32,7 @@
         "generate:fix:descriptions": "tsx src/scripts/fix-descriptions.ts",
         "check:svgs": "tsx src/scripts/check-svgs.ts",
         "check:metadata": "tsx src/scripts/check-metadata.ts",
-        "clean": "node_modules dist",
+        "clean": "rm -rf node_modules dist",
         "clean:generated": "rimraf svgs src/metadata.json",
         "typecheck": "tsc"
     },
@@ -40,7 +40,7 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
-        "@types/node": "^24.0.10",
+        "@types/node": "^24.0.13",
         "@vitejs/plugin-react": "^4.6.0",
         "axios": "^1.10.0",
         "dotenv": "^17.0.1",
