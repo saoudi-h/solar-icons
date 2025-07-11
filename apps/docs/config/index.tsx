@@ -99,7 +99,7 @@ export const config: Config = {
         packages: [
             {
                 title: 'React',
-                link: '/packages/react',
+                link: '/docs/packages/react',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react',
                 content: 'React client library with provider and SSR support',
@@ -108,31 +108,31 @@ export const config: Config = {
             },
             {
                 title: 'React Perf',
-                link: '/packages/react-perf',
+                link: '/docs/packages/react-perf',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-perf',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-perf',
                 content: 'React client and SSR library with size performance in mind',
                 iconify: 'devicon:react',
-                status: 'in-progress',
+                status: 'released',
             },
             {
                 title: 'Angular',
-                status: 'coming-soon',
+                status: 'not-started',
                 iconify: 'devicon:angular',
             },
             {
                 title: 'Vue',
-                status: 'coming-soon',
+                status: 'not-started',
                 iconify: 'devicon:vuejs',
             },
             {
                 title: 'Svelte',
-                status: 'coming-soon',
+                status: 'not-started',
                 iconify: 'devicon:svelte',
             },
             {
                 title: 'Qwik',
-                status: 'coming-soon',
+                status: 'not-started',
                 iconify: 'devicon:qwik',
             },
         ],

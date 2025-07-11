@@ -1,7 +1,7 @@
 'use client'
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { ButtonWithTooltip } from '@/components/ui/button-with-tooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Heading } from '@/components/ui/heading'
 import { MotionHeading } from '@/components/ui/motion'
@@ -20,7 +20,7 @@ export interface PackageCardProps {
     content?: string
     iconify: string
     hovered?: boolean
-    status: 'released' | 'in-progress' | 'coming-soon'
+    status: 'released' | 'in-progress' | 'coming-soon' | 'not-started' | 'abandoned' | 'deprecated' | 'maintenance'
 }
 
 export interface PackageSectionProps {
@@ -216,7 +216,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                   relative flex w-full flex-row items-center justify-end
                   bg-accent/30 px-2 py-2 backdrop-blur-lg
                 `}>
-                <Button
+                <ButtonWithTooltip
+                    tooltip="Documentation"
                     onClick={() => {
                         if (link) router.push(link)
                     }}
@@ -227,8 +228,9 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                       w-10 rounded-l-xl rounded-r-none! border-r-border/50
                     `}>
                     <ArrowRightUp className="size-full" />
-                </Button>
-                <Button
+                </ButtonWithTooltip>
+                <ButtonWithTooltip
+                    tooltip="GitHub Repository"
                     onClick={() => {
                         if (githubLink) router.push(githubLink)
                     }}
@@ -237,8 +239,9 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     colors="secondary"
                     className="rounded-none border-x-transparent">
                     <Icon icon="mdi:github" className="size-full" />
-                </Button>
-                <Button
+                </ButtonWithTooltip>
+                <ButtonWithTooltip
+                    tooltip="NPM Package"
                     onClick={() => {
                         if (npmLink) router.push(npmLink)
                     }}
@@ -247,7 +250,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     colors="secondary"
                     className="rounded-l-none! rounded-r-xl border-l-border/50">
                     <Icon icon="devicon:npm" className="size-full" />
-                </Button>
+                </ButtonWithTooltip>
             </CardFooter>
 
             <motion.div
