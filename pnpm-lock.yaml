@@ -863,12 +863,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@esbuild/win32-x64@0.25.6':
-    resolution: {integrity: sha512-NgJPHHbEpLQgDH2MjQu90pzW/5vvXIZ7KOnPyNBm92A6WgZ/7b6fJyUBjoumLqeOQQGqY2QjQxRo97ah4Sj0cA==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [win32]
-
   '@eslint-community/eslint-utils@4.7.0':
     resolution: {integrity: sha512-dyybb3AcajC7uha6CvhdVRJqaKyn7w2YKqKyAN37NKYgZT36w+iRb0Dymmc5qEJ549c/S31cMMSFd75bteCpCw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2814,8 +2808,6 @@ packages:
     peerDependencies:
       eslint: '>=8.44.0'
 
-  eslint-plugin-storybook@9.0.16:
-    resolution: {integrity: sha512-A9kJaYBGYswo11t9coo1rpY5i8qPJx9JX5/6YWK3L3zT9lCxJWkYFAed/1Jt92yk7EkOzLrwrIIjMj/+7erlgw==}
   eslint-plugin-storybook@9.0.16:
     resolution: {integrity: sha512-A9kJaYBGYswo11t9coo1rpY5i8qPJx9JX5/6YWK3L3zT9lCxJWkYFAed/1Jt92yk7EkOzLrwrIIjMj/+7erlgw==}
     engines: {node: '>=20.0.0'}
@@ -5666,9 +5658,6 @@ snapshots:
   '@esbuild/win32-x64@0.25.6':
     optional: true
 
-  '@esbuild/win32-x64@0.25.6':
-    optional: true
-
   '@eslint-community/eslint-utils@4.7.0(eslint@9.30.1(jiti@2.4.2))':
     dependencies:
       eslint: 9.30.1(jiti@2.4.2)
@@ -7707,10 +7696,8 @@ snapshots:
       vfile-message: 4.0.2
 
   esbuild-register@3.6.0(esbuild@0.25.6):
-  esbuild-register@3.6.0(esbuild@0.25.6):
     dependencies:
       debug: 4.4.1
-      esbuild: 0.25.6
       esbuild: 0.25.6
     transitivePeerDependencies:
       - supports-color
@@ -10078,8 +10065,6 @@ snapshots:
       '@vitest/expect': 3.2.4
       '@vitest/spy': 3.2.4
       better-opn: 3.0.2
-      esbuild: 0.25.6
-      esbuild-register: 3.6.0(esbuild@0.25.6)
       esbuild: 0.25.6
       esbuild-register: 3.6.0(esbuild@0.25.6)
       recast: 0.23.11
