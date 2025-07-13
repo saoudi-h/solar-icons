@@ -1,4 +1,4 @@
-![Solar Icons](apps/docs/ressources/solar-icons-banner.png "Solar-icons Banner")
+[![Solar Icons](apps/docs/ressources/solar-icons-banner.png "Solar-icons Banner")](https://solar-icons.vercel.app)
 
 # Solar Icons
 
