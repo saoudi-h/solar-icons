@@ -1,4 +1,6 @@
-# Solar Project
+![Solar Icons](apps/docs/ressources/solar-icons-banner.png "Solar-icons Banner")
+
+# Solar Icons
 
 A comprehensive icon library offering multi-style icons designed to be modular, flexible, and adaptable to various frameworks. Solar is developed to meet the needs of modern web and mobile applications with 1,246 unique icons and over 7,476 total variations.
 
