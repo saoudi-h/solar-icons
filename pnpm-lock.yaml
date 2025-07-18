@@ -237,10 +237,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.62
-        version: 0.3.62
+        version: 0.3.65
       '@langchain/ollama':
         specifier: ^0.2.3
-        version: 0.2.3(@langchain/core@0.3.62)
+        version: 0.2.3(@langchain/core@0.3.65)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -1111,8 +1111,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@langchain/core@0.3.62':
-    resolution: {integrity: sha512-GqRTcoUPnozGRMUcA6QkP7LHL/OvanGdB51Jgb0w7IIPDI3wFugxMHZ4gphnGDtxsD1tQY5ykyEpYNxFK8kl1w==}
+  '@langchain/core@0.3.65':
+    resolution: {integrity: sha512-+XFh5o8uOzQMk8RMHsbsUXwBKqP0vWK6288pHbyogoI9BtC0yH+tlSje9Lk3md6J69VtbaImyLZ078uRauc3Dg==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.2.3':
@@ -3505,8 +3505,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  langsmith@0.3.42:
-    resolution: {integrity: sha512-M6aSTnQM6FaNXlxfTFEIQ1HRwpwX4d5qiSjdbk5EJ2UvAVTNTwV6ggpjLTqTueaed9SWtgDaPyq6uh7mZ0wVRQ==}
+  langsmith@0.3.46:
+    resolution: {integrity: sha512-Hhi4/cMjhWIGpu0DW5eQrXBbeeKQWPYYQyJCYzhFjod+xinMry4i8QR0gxrrgjGOgfMuU6nyK79YqjGTEPVbDA==}
     peerDependencies:
       '@opentelemetry/api': '*'
       '@opentelemetry/exporter-trace-otlp-proto': '*'
@@ -5867,14 +5867,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
 
-  '@langchain/core@0.3.62':
+  '@langchain/core@0.3.65':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.20
-      langsmith: 0.3.42
+      langsmith: 0.3.46
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -5887,9 +5887,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@langchain/ollama@0.2.3(@langchain/core@0.3.62)':
+  '@langchain/ollama@0.2.3(@langchain/core@0.3.65)':
     dependencies:
-      '@langchain/core': 0.3.62
+      '@langchain/core': 0.3.65
       ollama: 0.5.16
       uuid: 10.0.0
 
@@ -8599,7 +8599,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langsmith@0.3.42:
+  langsmith@0.3.46:
     dependencies:
       '@types/uuid': 10.0.0
       chalk: 4.1.2
