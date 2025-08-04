@@ -7,13 +7,15 @@
  * on the docs website.
  */
 
-import metadata from '../metadata.json' assert { type: 'json' }
 import path from 'node:path'
+import metadata from '../metadata.json' assert { type: 'json' }
 
 import {
-    processIcons,
-} from './workflows/processIcons'
-import { convertSvgToPngStep, getLinearSvgPathStep, iconsFromCategoriesExtractor } from './workflows'
+    convertSvgToPngStep,
+    getLinearSvgPathStep,
+    iconsFromCategoriesExtractor,
+} from './workflows'
+import { processIcons } from './workflows/processIcons'
 
 const __dirname = import.meta.dirname
 const SVGS_PATH = path.resolve(__dirname, '../../svgs')

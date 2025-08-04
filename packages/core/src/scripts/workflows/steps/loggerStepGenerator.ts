@@ -1,7 +1,6 @@
-import { isString } from '../utils'
 import { logger } from '../logger'
 import type { Context } from '../types'
-import { isArrayOfStrings } from '../utils'
+import { isArrayOfStrings, isString } from '../utils'
 
 /**
  * Returns a step that logs the specified values from the context object.

@@ -1,13 +1,13 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import axios from 'axios'
-import pc from 'picocolors'
 import dotenv from 'dotenv'
 import * as Figma from 'figma-api'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 import pLimit from 'p-limit'
-import { fixIconName, toKebabCase } from '../utils'
-import type { Metadata } from '../types'
+import pc from 'picocolors'
 import iconWeights from '../icon-weights.json' assert { type: 'json' }
+import type { Metadata } from '../types'
+import { fixIconName, toKebabCase } from '../utils'
 
 // Load environment variables
 dotenv.config()

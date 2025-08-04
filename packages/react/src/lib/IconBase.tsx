@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { useSolar } from './context'
 import type { IconProps, IconWeight } from './types'
 

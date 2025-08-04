@@ -13,4 +13,5 @@ export declare const configs: {
     react: FlatConfig.ConfigArray
     next: FlatConfig.ConfigArray
     storybook: FlatConfig.ConfigArray
+    tailwind: FlatConfig.ConfigArray
 }

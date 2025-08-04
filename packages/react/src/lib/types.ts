@@ -18,8 +18,11 @@ export interface IconBaseProps {
     mirrored?: boolean
 }
 
-export interface IconProps extends ComponentPropsWithoutRef<'svg'>, RefAttributes<SVGSVGElement>, Omit<IconBaseProps, 'color'> {
-    color?: string;
+export interface IconProps
+    extends ComponentPropsWithoutRef<'svg'>,
+        RefAttributes<SVGSVGElement>,
+        Omit<IconBaseProps, 'color'> {
+    color?: string
 }
 
 export type Icon = React.ForwardRefExoticComponent<

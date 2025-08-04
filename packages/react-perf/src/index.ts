@@ -1,6 +1,6 @@
 /* GENERATED FILE */
-export type { IconProps } from "./lib"
-export { IconBase } from "./lib"
-export * from "./icons/styled"
-import * as solar from "./icons"
+export * from './icons/styled'
+export { IconBase } from './lib'
+export type { IconProps } from './lib'
 export { solar }
+import * as solar from './icons'

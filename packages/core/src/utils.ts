@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type { CamelToPascal, Metadata } from './types'
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
+import type { CamelToPascal, Metadata } from './types'
 
 const __dirname = import.meta.dirname
 const METADATA_PATH = path.resolve(__dirname, './metadata.json')

@@ -1,15 +1,22 @@
-import { base } from './configs/base.js'
-import { next } from './configs/next.js'
-import { playwright } from './configs/playwright.js'
-import { react } from './configs/react.js'
-import { storybook } from './configs/storybook.js'
-
 export { defineConfig } from './utils.js'
 
 export const configs = {
-    base,
-    playwright,
-    react,
-    next,
-    storybook,
+    get base() {
+        return import('./configs/base.js').then(m => m.base)
+    },
+    get playwright() {
+        return import('./configs/playwright.js').then(m => m.playwright)
+    },
+    get react() {
+        return import('./configs/react.js').then(m => m.react)
+    },
+    get next() {
+        return import('./configs/next.js').then(m => m.next)
+    },
+    get storybook() {
+        return import('./configs/storybook.js').then(m => m.storybook)
+    },
+    get tailwind() {
+        return import('./configs/tailwind.js').then(m => m.tailwind)
+    },
 }

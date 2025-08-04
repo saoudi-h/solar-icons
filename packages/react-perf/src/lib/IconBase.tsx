@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import type { IconProps } from './types'
 
 const IconBase = forwardRef<SVGSVGElement, IconProps>((props, ref) => {

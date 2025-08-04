@@ -3,15 +3,15 @@
  *
  */
 
-import metadata from '../metadata.json' assert { type: 'json' }
 import path from 'node:path'
+import metadata from '../metadata.json' assert { type: 'json' }
 
 import {
-    getLinearPngPathStep,
-    processIcons,
-    iconsFromCategoriesExtractor,
-    saveDescriptionStepGenerator,
     generateMetadataStep,
+    getLinearPngPathStep,
+    iconsFromCategoriesExtractor,
+    processIcons,
+    saveDescriptionStepGenerator,
 } from './workflows'
 
 const __dirname = import.meta.dirname

@@ -1,23 +1,23 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Build",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "noEmit": false
-  },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.cts",
-    "./src/**/*.ctsx",
-    "./src/**/*.mts",
-    "./src/**/*.mtsx",
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.cjs",
-    "./src/**/*.cjsx",
-    "./src/**/*.mjs",
-    "./src/**/*.mjsx"
-  ]
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Build",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "noEmit": false
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./src/**/*.cts",
+        "./src/**/*.ctsx",
+        "./src/**/*.mts",
+        "./src/**/*.mtsx",
+        "./src/**/*.js",
+        "./src/**/*.jsx",
+        "./src/**/*.cjs",
+        "./src/**/*.cjsx",
+        "./src/**/*.mjs",
+        "./src/**/*.mjsx"
+    ]
 }

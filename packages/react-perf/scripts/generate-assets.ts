@@ -7,8 +7,8 @@ import type { SvgMap } from './utils'
 import {
     ICONS_PATH,
     INDEX_PATH,
-    toPascalCase,
     readSvgsFromDisk,
+    toPascalCase,
     verifyIcons,
     WEIGHTS,
 } from './utils'

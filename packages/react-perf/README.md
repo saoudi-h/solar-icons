@@ -53,17 +53,17 @@ function App() {
 
 ## Key Features
 
--   **Performance-Oriented**: Each icon is packaged individually, ensuring that only the required assets are included in the final bundle.
--   **Single-Style Icons**: Icons are separated by style (e.g., `Bold`, `Linear`), enabling more precise imports.
--   **Lightweight SVGs**: Each icon is optimized for minimal SVG size to reduce load times.
+- **Performance-Oriented**: Each icon is packaged individually, ensuring that only the required assets are included in the final bundle.
+- **Single-Style Icons**: Icons are separated by style (e.g., `Bold`, `Linear`), enabling more precise imports.
+- **Lightweight SVGs**: Each icon is optimized for minimal SVG size to reduce load times.
 
 ### Properties
 
 Each icon component supports the following properties:
 
--   **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
--   **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
--   **`mirrored`**: Flips the icon horizontally when set to `true`.
+- **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
+- **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
+- **`mirrored`**: Flips the icon horizontally when set to `true`.
 
 ## Advanced Usage
 

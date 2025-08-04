@@ -3,14 +3,14 @@
  *
  */
 
-import data from '../metadata-descriptions.json' assert { type: 'json' }
 import path from 'node:path'
+import data from '../metadata-descriptions.json' assert { type: 'json' }
 import type { Context } from './workflows'
 import {
-    iconsFromFlatArrayExtractor,
     filtersStepGenerator,
     generateMetadataStep,
     getLinearPngPathStep,
+    iconsFromFlatArrayExtractor,
     loggerStepGenerator,
     logStep,
     processIcons,

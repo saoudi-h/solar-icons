@@ -1,11 +1,11 @@
 {
-  "tailwindCSS.experimental.configFile": "apps/docs/app/global.css",
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
+    "tailwindCSS.experimental.configFile": "apps/docs/app/global.css",
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
     }
-  ],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
 }

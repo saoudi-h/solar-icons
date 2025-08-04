@@ -6,15 +6,15 @@ The `@solar/core` package is an internal utility within the Solar project monore
 
 ## Purpose
 
--   **Asset Management**: Centralizes the SVG assets and metadata required for generating framework-specific icon components.
--   **Build Support**: Provides scripts and configurations to streamline the build processes of dependent packages.
--   **Internal Use**: Supports the development workflow within the Solar monorepo.
+- **Asset Management**: Centralizes the SVG assets and metadata required for generating framework-specific icon components.
+- **Build Support**: Provides scripts and configurations to streamline the build processes of dependent packages.
+- **Internal Use**: Supports the development workflow within the Solar monorepo.
 
 ## Key Features
 
--   **Centralized SVG Repository**: Contains all source SVG files used across the Solar ecosystem.
--   **Metadata Generation**: Produces `metadata.json` to facilitate icon categorization and usage.
--   **Build Scripts**: Custom scripts for downloading, transforming and optimizing SVG files.
+- **Centralized SVG Repository**: Contains all source SVG files used across the Solar ecosystem.
+- **Metadata Generation**: Produces `metadata.json` to facilitate icon categorization and usage.
+- **Build Scripts**: Custom scripts for downloading, transforming and optimizing SVG files.
 
 ## Installation
 

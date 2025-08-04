@@ -1,71 +1,71 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Strictest",
-  "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Strictest",
+    "compilerOptions": {
+        "strict": true,
+        "strictNullChecks": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": false,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
 
-    "isolatedModules": true,
+        "isolatedModules": true,
 
-    "allowJs": true,
-    "checkJs": true,
+        "allowJs": true,
+        "checkJs": true,
 
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
 
-    "lib": ["es2023"],
-    "module": "esnext",
-    "target": "es2022",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "incremental": true,
+        "lib": ["es2023"],
+        "module": "esnext",
+        "target": "es2022",
+        "moduleResolution": "bundler",
+        "moduleDetection": "force",
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "incremental": true,
 
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "pretty": true,
-    "preserveWatchOutput": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "pretty": true,
+        "preserveWatchOutput": true,
 
-    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": [
-    "./.commitlintrc.ts",
-    "./.storybook/**/*",
-    "./**/*.ts",
-    "./**/*.tsx",
-    "./**/*.cts",
-    "./**/*.ctsx",
-    "./**/*.mts",
-    "./**/*.mtsx",
-    "./**/*.js",
-    "./**/*.jsx",
-    "./**/*.cjs",
-    "./**/*.cjsx",
-    "./**/*.mjs",
-    "./**/*.mjsx"
-  ],
-  "exclude": [
-    "./node_modules",
-    "./dist",
-    "./storybook-static",
-    "./playwright-report",
-    "./test-results"
-  ]
+        "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": [
+        "./.commitlintrc.ts",
+        "./.storybook/**/*",
+        "./**/*.ts",
+        "./**/*.tsx",
+        "./**/*.cts",
+        "./**/*.ctsx",
+        "./**/*.mts",
+        "./**/*.mtsx",
+        "./**/*.js",
+        "./**/*.jsx",
+        "./**/*.cjs",
+        "./**/*.cjsx",
+        "./**/*.mjs",
+        "./**/*.mjsx"
+    ],
+    "exclude": [
+        "./node_modules",
+        "./dist",
+        "./storybook-static",
+        "./playwright-report",
+        "./test-results"
+    ]
 }

@@ -1,6 +1,6 @@
-import type { ProcessorStep } from '../types'
 import fs from 'node:fs'
 import path from 'node:path'
+import type { ProcessorStep } from '../types'
 
 /**
  * Processes the context to determine the SVG path for a linear style icon.

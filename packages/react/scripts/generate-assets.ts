@@ -8,9 +8,9 @@ import {
     CSR_PATH,
     DEFS_PATH,
     INDEX_PATH,
+    readSvgsFromDisk,
     SSR_PATH,
     toPascalCase,
-    readSvgsFromDisk,
     verifyIcons,
 } from './utils'
 

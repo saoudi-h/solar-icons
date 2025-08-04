@@ -26,4 +26,3 @@ If you have any questions about contributing, feel free to open an issue or reac
 ---
 
 I appreciate your interest and efforts in contributing to this project!
-

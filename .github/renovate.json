@@ -1,25 +1,15 @@
 {
-  "extends": [
-    "config:recommended",
-    ":label(renovate)",
-    ":semanticCommitTypeAll(chore)"
-  ],
-  "automerge": true,
-  "automergeType": "pr",
-  "timezone": "Europe/Paris",
-  "schedule": [
-    "before 2am"
-  ],
-  "packageRules": [
-    {
-      "groupName": "all major dependencies",
-      "groupSlug": "all-major",
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "matchPackageNames": [
-        "*"
-      ]
-    }
-  ]
+    "extends": ["config:recommended", ":label(renovate)", ":semanticCommitTypeAll(chore)"],
+    "automerge": true,
+    "automergeType": "pr",
+    "timezone": "Europe/Paris",
+    "schedule": ["before 2am"],
+    "packageRules": [
+        {
+            "groupName": "all major dependencies",
+            "groupSlug": "all-major",
+            "matchUpdateTypes": ["major"],
+            "matchPackageNames": ["*"]
+        }
+    ]
 }

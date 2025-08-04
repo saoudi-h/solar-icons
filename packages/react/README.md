@@ -21,17 +21,17 @@ yarn add @solar-icons/react
 To use an icon in your React application, simply import it from the package:
 
 ```jsx
-import solar, { ArrowUp } from '@solar-icons/react';
-import { Arrows } from '@solar-icons/react/category';
+import solar, { ArrowUp } from '@solar-icons/react'
+import { Arrows } from '@solar-icons/react/category'
 
 function App() {
-  return (
-    <>
-        <ArrowUp size={24} weight="Outline" mirrored />
-        <solar.Arrows.ArrowDown size={32} weight="BoldDuotone"  />
-        <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
-    </>
-  );
+    return (
+        <>
+            <ArrowUp size={24} weight="Outline" mirrored />
+            <solar.Arrows.ArrowDown size={32} weight="BoldDuotone" />
+            <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
+        </>
+    )
 }
 ```
 
@@ -51,14 +51,14 @@ Each icon component supports the following properties:
 To apply consistent styles across multiple icons, use the `SolarProvider` component to wrap your application:
 
 ```jsx
-import { SolarProvider } from '@solar-icons/react';
+import { SolarProvider } from '@solar-icons/react'
 
 function App() {
-  return (
-    <SolarProvider value={{ size: '32', color: 'purple', weight: 'Linear' }}>
-      <YourComponents />
-    </SolarProvider>
-  );
+    return (
+        <SolarProvider value={{ size: '32', color: 'purple', weight: 'Linear' }}>
+            <YourComponents />
+        </SolarProvider>
+    )
 }
 ```
 
@@ -67,21 +67,19 @@ function App() {
 The `@solar-icons/react` package is optimized for SSR, ensuring that icons render correctly on both the client and server sides:
 
 ```jsx
-import solar, { ArrowUp } from '@solar-icons/react/ssr';
-import { Arrows } from '@solar-icons/react/ssr/category';
+import solar, { ArrowUp } from '@solar-icons/react/ssr'
+import { Arrows } from '@solar-icons/react/ssr/category'
 
 function App() {
-  return (
-    <>
-        <ArrowUp size={24} weight="Outline" />
-        <solar.Arrows.ArrowDown size={32} weight="BoldDuotone"  />
-        <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
-    </>
-  );
+    return (
+        <>
+            <ArrowUp size={24} weight="Outline" />
+            <solar.Arrows.ArrowDown size={32} weight="BoldDuotone" />
+            <Arrows.AltArrowLeft color="#fff" className="bg-black" weight="Bold" />
+        </>
+    )
 }
 ```
-
-
 
 ## Contributing
 
@@ -98,4 +96,3 @@ Special thanks to **480 Design** for creating the original Solar icon pack. Addi
 ---
 
 For detailed documentation and examples, refer to the [project's main documentation](../README.md).
-

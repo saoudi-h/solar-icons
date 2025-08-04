@@ -1,9 +1,9 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "React",
+    "display": "Vue",
     "extends": "./dom.json",
     "compilerOptions": {
-        "target": "ES2020",
-        "jsx": "react-jsx"
+        "jsx": "preserve",
+        "jsxImportSource": "vue"
     }
 }

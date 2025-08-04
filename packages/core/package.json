@@ -34,7 +34,8 @@
         "check:metadata": "tsx src/scripts/check-metadata.ts",
         "clean": "rm -rf node_modules dist",
         "clean:generated": "rimraf svgs src/metadata.json",
-        "typecheck": "tsc"
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
     },
     "devDependencies": {
         "@solar-icons/eslint": "workspace:*",

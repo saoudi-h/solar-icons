@@ -1,15 +1,15 @@
 {
-  "name": "@solar-icons/tsconfig",
-  "version": "1.0.0",
-  "private": true,
-  "description": "A package to share tsconfig presets around the workspace",
-  "license": "MIT",
-  "type": "module",
-  "files": [
-    "./base.json",
-    "./next.json",
-    "./react.json",
-    "./build.json",
-    "./dom.json"
-  ]
+    "name": "@solar-icons/tsconfig",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A package to share tsconfig presets around the workspace",
+    "license": "MIT",
+    "type": "module",
+    "files": [
+        "./base.json",
+        "./next.json",
+        "./react.json",
+        "./build.json",
+        "./dom.json"
+    ]
 }

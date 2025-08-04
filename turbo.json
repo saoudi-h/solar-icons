@@ -12,16 +12,22 @@
         "dist/**"
       ]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "clean": {
+  },
+  "clean": {
       "outputs": [],
       "cache": false
+  },
+  "format": {
+      "dependsOn": ["^format"]
+    },
+    "format:fix": {
+      "dependsOn": ["^format:fix"]
+    },
+    "pre-commit": {
+      "dependsOn": ["^pre-commit"]
     }
   }
 }

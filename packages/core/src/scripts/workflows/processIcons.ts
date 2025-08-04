@@ -1,7 +1,7 @@
 import pLimit from 'p-limit'
 import pc from 'picocolors'
-import type { IconDataExtractor, ProcessorStep, Context } from './types'
 import { StateManager } from './StateManager'
+import type { Context, IconDataExtractor, ProcessorStep } from './types'
 import { isString } from './utils'
 
 /**
@@ -28,7 +28,7 @@ export const processIcons = async ({
     tempPath,
 }: {
     stateId?: string
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     data: any
     extractor: IconDataExtractor
     steps: ProcessorStep[]

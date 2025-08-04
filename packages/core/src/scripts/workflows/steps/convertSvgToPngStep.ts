@@ -1,8 +1,8 @@
-import sharp from 'sharp'
-import { isString } from '../utils'
-import type { ProcessorStep } from '../types'
 import fs from 'node:fs'
 import path from 'node:path'
+import sharp from 'sharp'
+import type { ProcessorStep } from '../types'
+import { isString } from '../utils'
 
 /**
  * Converts an SVG file to a PNG file using the given context.

@@ -1,6 +1,6 @@
 import fs from 'node:fs'
-import { isNodeError, isString } from '../utils'
 import type { Context } from '../types'
+import { isNodeError, isString } from '../utils'
 
 /**
  * Generates a step function that saves icon descriptions to a metadata file.
@@ -46,7 +46,6 @@ export const saveDescriptionStepGenerator = (metadataPath: string) => async (con
         tags: Array.from(new Set(parsed.names)),
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const index = metadata.findIndex((item: any) => item.name === iconName)
     if (index >= 0) {
         metadata[index] = updatedEntry

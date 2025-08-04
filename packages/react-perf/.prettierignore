@@ -1,4 +1,7 @@
 .next
 node_modules
-src/icons/**/*
 src/index.ts
+src/
+!src/icons/**/*
+
+CHANGELOG.md

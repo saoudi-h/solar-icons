@@ -2,3 +2,9 @@
 node_modules
 src/
 !src/lib/**/*
+!src/ssr/**/*
+!src/csr/**/*
+!src/defs/**/*
+
+CHANGELOG.md
+

@@ -1,8 +1,8 @@
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { Ollama } from '@langchain/ollama'
-import { isString } from '../utils'
 import fs from 'node:fs'
 import type { ProcessorStep } from '../types'
+import { isString } from '../utils'
 
 /**
  * Processor step that generates metadata for an icon.

@@ -1,29 +1,29 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js",
-  "extends": "./react.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Next.js",
+    "extends": "./react.json",
+    "compilerOptions": {
+        "jsx": "preserve",
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": [
+        "./next-env.d.ts",
+        "./.next/types/**/*.ts",
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./src/**/*.cts",
+        "./src/**/*.ctsx",
+        "./src/**/*.mts",
+        "./src/**/*.mtsx",
+        "./src/**/*.js",
+        "./src/**/*.jsx",
+        "./src/**/*.cjs",
+        "./src/**/*.cjsx",
+        "./src/**/*.mjs",
+        "./src/**/*.mjsx"
     ]
-  },
-  "include": [
-    "./next-env.d.ts",
-    "./.next/types/**/*.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.cts",
-    "./src/**/*.ctsx",
-    "./src/**/*.mts",
-    "./src/**/*.mtsx",
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.cjs",
-    "./src/**/*.cjsx",
-    "./src/**/*.mjs",
-    "./src/**/*.mjsx"
-  ]
 }
