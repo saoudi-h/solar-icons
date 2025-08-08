@@ -14,7 +14,6 @@
     "type": "module",
     "sideEffects": false,
     "files": [
-        "runtime",
         "dist",
         "README.md",
         "LICENSE",
