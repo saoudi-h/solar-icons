@@ -65,7 +65,7 @@ export function createSolarIcons(partial: SolarIconsConfig = {}) {
  * Injects the Solar icons context
  * @returns The Solar icons context
  */
-export function useSolarIcons() {
+export function useSolar() {
     return inject(SOLAR_ICONS_CONFIG_KEY, DEFAULT_CONTEXT)
 }
 

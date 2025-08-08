@@ -37,7 +37,7 @@ async function getAllIconNames(): Promise<string[]> {
                 name !== 'default' &&
                 name !== 'SolarProvider' &&
                 name !== 'SolarIcon' &&
-                name !== 'useSolarIcons' &&
+                name !== 'useSolar' &&
                 name !== 'createSolarIcons' &&
                 name !== 'SolarIconsPlugin' &&
                 !name.startsWith('use') &&
@@ -116,7 +116,7 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
         }
 
         addImports({
-            name: 'useSolarIcons',
+            name: 'useSolar',
             from: `${packageName}/lib`,
         })
     },

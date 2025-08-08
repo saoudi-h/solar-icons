@@ -136,7 +136,7 @@ You can also access and modify the icon configuration using the Composition API:
 
     <div>
          <ArrowUp :size="iconSize" weight="Outline" /> <button @click="increaseSize">
-            Increase Size</button
+             Increase Size</button
         >
     </div>
 
@@ -144,9 +144,9 @@ You can also access and modify the icon configuration using the Composition API:
 
 <script setup>
 import { ref } from 'vue'
-import { ArrowUp, useSolarIcons } from '@solar-icons/vue'
+import { ArrowUp, useSolar } from '@solar-icons/vue'
 
-const { config, setSize } = useSolarIcons()
+const { config, setSize } = useSolar()
 const iconSize = ref(24)
 
 const increaseSize = () => {

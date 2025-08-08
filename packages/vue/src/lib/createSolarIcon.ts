@@ -1,6 +1,6 @@
 import type { FunctionalComponent } from 'vue'
 import { computed, h } from 'vue'
-import { DEFAULT_SOLAR, useSolarIcons } from './context'
+import { DEFAULT_SOLAR, useSolar } from './context'
 import SolarIcon from './SolarIcon.vue'
 import type { IconNode, IconProps } from './types'
 
@@ -18,7 +18,7 @@ export const createSolarIcon = (
 ): FunctionalComponent<IconProps> => {
     return (props, { attrs, slots }) => {
         const { weight, ...otherProps } = props
-        const { config } = useSolarIcons()
+        const { config } = useSolar()
 
         const finalWeight = computed(() => weight ?? config.weight ?? DEFAULT_SOLAR.weight)
 
