@@ -37,7 +37,8 @@ To use an icon in your Vue application, simply import it from the package:
 </template>
 
 <script setup>
-import solar, { ArrowUp } from '@solar-icons/vue'
+import { ArrowUp } from '@solar-icons/vue'
+import solar from '@solar-icons/vue/category'
 import { Arrows } from '@solar-icons/vue/category'
 </script>
 ```

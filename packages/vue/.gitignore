@@ -1,3 +1,5 @@
 node_modules
-src/icons
+src/icons/**/*
+!src/icons/category.ts
+!src/icons/index.ts
 dist

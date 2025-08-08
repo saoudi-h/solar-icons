@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { DEFAULT_SOLAR, useSolarIcons } from './context'
+import { DEFAULT_SOLAR, useSolar } from './context'
 import type { IconNode, SolarIcons } from './types'
 import SvgNodeRenderer from './SvgNodeRenderer.vue'
 
@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
     iconNodes: () => [],
 })
 
-const { config } = useSolarIcons()
+const { config } = useSolar()
 
 const finalColor = computed(() => props.color ?? config.color ?? DEFAULT_SOLAR.color)
 const finalSize = computed(() => props.size ?? config.size ?? DEFAULT_SOLAR.size)
