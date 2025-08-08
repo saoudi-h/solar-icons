@@ -78,7 +78,8 @@ function Loading() {
               self-center px-3
               md:px-0
             `}>
-            <div className={`
+            <div
+                className={`
               relative w-full gap-2 rounded-2xl
               md:rounded-3xl
             `}>
@@ -89,38 +90,51 @@ function Loading() {
                           rounded-xl border border-border bg-default-100 p-2
                           shadow-xs
                         `}>
-                        <div className={`
+                        <div
+                            className={`
                           flex flex-1 flex-wrap content-start justify-start
                           gap-2
                         `}>
                             {/* Style selector */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               h-10 w-48 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
 
                             {/* Size Slider */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               h-10 w-48 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
 
                             {/* Color picker */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               h-10 w-48 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
 
                             {/* Search bar */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               h-10 w-48 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
 
                             {/* Reset button */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               size-10 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
                             {/* Reset button */}
-                            <Skeleton className={`
+                            <Skeleton
+                                className={`
                               h-10 w-16 rounded-lg bg-default-200
-                            `} />
+                            `}
+                            />
 
                             {/* Reset button */}
                             <Skeleton

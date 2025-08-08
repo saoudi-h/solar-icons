@@ -448,9 +448,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     commandProps?.shouldFilter !== undefined ? commandProps.shouldFilter : !onSearch
                 }
                 filter={commandFilter()!}>
-
-
-                   {/* 451:17  error    
+                {/* 451:17  error    
                    Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions   */}
                 <div
                     role="button"
@@ -500,9 +498,13 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircle weight="Bold" size={24} className={`
+                            <CloseCircle
+                                weight="Bold"
+                                size={24}
+                                className={`
                               drop-shadow-md
-                            `} />
+                            `}
+                            />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -536,7 +538,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               focus:ring-2 focus:ring-ring
                                               focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) && `
+                                            (disabled || option.fixed) &&
+                                                `
                                               hidden
                                             `
                                         )}
@@ -579,7 +582,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                             }}
                             onFocus={event => {
                                 setOpen(true)
-                                if( triggerSearchOnFocus && onSearch ) onSearch(debouncedSearchTerm)
+                                if (triggerSearchOnFocus && onSearch) onSearch(debouncedSearchTerm)
                                 inputProps?.onFocus?.(event)
                             }}
                             placeholder={
@@ -627,9 +630,12 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem value="-" className={`
+                                        <CommandItem
+                                            value="-"
+                                            className={`
                                           hidden
-                                        `} />
+                                        `}
+                                        />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

@@ -33,9 +33,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   py-12
                   md:rounded-3xl
                 `}>
-                <NoiseSvg className={`
+                <NoiseSvg
+                    className={`
                   pointer-events-none absolute inset-0 size-full opacity-30
-                `} />
+                `}
+                />
                 <div
                     className={`
                       absolute top-0 left-1/3 h-1/2 w-1/2 -translate-x-1/2
@@ -73,7 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         `}>
                         {content}
                     </p>
-                    <div className={`
+                    <div
+                        className={`
                       flex flex-col items-center gap-3
                       sm:flex-row sm:gap-6
                     `}>

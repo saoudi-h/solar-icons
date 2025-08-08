@@ -74,7 +74,8 @@ export const FilterBarContent: React.FC = () => {
 
     return (
         <>
-            <div className={`
+            <div
+                className={`
               flex flex-1 flex-wrap content-start justify-start gap-2
             `}>
                 {/* Style selector */}
@@ -89,7 +90,8 @@ export const FilterBarContent: React.FC = () => {
                     <SelectContent>
                         {styles.map(weight => (
                             <SelectItem key={weight} value={weight}>
-                                <div className={`
+                                <div
+                                    className={`
                                   flex flex-row items-center justify-center
                                   gap-2
                                 `}>

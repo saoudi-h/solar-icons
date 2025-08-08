@@ -23,7 +23,8 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                       rounded-2xl
                       md:rounded-3xl
                     `}>
-                    <div className={`
+                    <div
+                        className={`
                       relative flex h-full flex-1 flex-col gap-4 rounded-xl p-4
                     `}>
                         <InitState />

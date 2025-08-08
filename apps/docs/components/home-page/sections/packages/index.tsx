@@ -20,7 +20,14 @@ export interface PackageCardProps {
     content?: string
     iconify: string
     hovered?: boolean
-    status: 'released' | 'in-progress' | 'coming-soon' | 'not-started' | 'abandoned' | 'deprecated' | 'maintenance'
+    status:
+        | 'released'
+        | 'in-progress'
+        | 'coming-soon'
+        | 'not-started'
+        | 'abandoned'
+        | 'deprecated'
+        | 'maintenance'
 }
 
 export interface PackageSectionProps {
@@ -55,9 +62,11 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                   py-12
                   md:rounded-3xl
                 `}>
-                <NoiseSvg className={`
+                <NoiseSvg
+                    className={`
                   pointer-events-none absolute inset-0 size-full opacity-30
-                `} />
+                `}
+                />
                 <div
                     className={`
                       absolute top-0 left-1/3 h-1/2 w-1/2 -translate-x-1/2
@@ -166,7 +175,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
               hover:bg-background/70
               md:min-h-64 md:min-w-64
             `}>
-            <div className={`
+            <div
+                className={`
               absolute bottom-0 left-0 size-24
               sm:size-32
             `}>

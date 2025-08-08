@@ -38,7 +38,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setInputColor(value)
-        // Capturing group number 1 is defined but never used 
+        // Capturing group number 1 is defined but never used
         // regexp/no-unused-capturing
         if (/^#[0-9A-F]{3}(?:[0-9A-F]{3})?$/i.test(value)) {
             setColor(value)

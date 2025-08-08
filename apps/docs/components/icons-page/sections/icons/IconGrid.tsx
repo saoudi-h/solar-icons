@@ -2,7 +2,7 @@
 import type { IconData } from '@/core/generated/descriptions'
 import { useAtom } from 'jotai'
 import React, { useEffect, useRef, useState } from 'react'
-import type { GridProps } from 'react-virtualized';
+import type { GridProps } from 'react-virtualized'
 import { Grid } from 'react-virtualized'
 import { categoriesAtom, displayedIconsAtom, filteredIconsAtom, keywordAtom } from './context'
 import { IconCard } from './IconCard'

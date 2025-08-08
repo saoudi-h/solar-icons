@@ -14,12 +14,7 @@ export async function copyToClipboard(value: string) {
     navigator.clipboard.writeText(value)
 }
 
-export function CopyButton({
-    value,
-    className,
-    variant = 'default',
-    ...props
-}: CopyButtonProps) {
+export function CopyButton({ value, className, variant = 'default', ...props }: CopyButtonProps) {
     const [hasCopied, setHasCopied] = React.useState(false)
 
     React.useEffect(() => {

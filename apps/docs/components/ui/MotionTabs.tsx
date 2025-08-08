@@ -41,7 +41,8 @@ export const MotionTabs = ({
     }
 
     return (
-        <div className={`
+        <div
+            className={`
           relative flex w-full grow-0 flex-col-reverse overflow-hidden
         `}>
             <div
@@ -87,7 +88,7 @@ export const MotionTabs = ({
                     `,
                     containerClassName
                 )}>
-                {propTabs.map((tab) => (
+                {propTabs.map(tab => (
                     <Button
                         variant="ghost"
                         size="sm"

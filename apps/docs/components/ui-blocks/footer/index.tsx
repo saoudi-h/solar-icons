@@ -8,7 +8,8 @@ import type { FooterProps } from './types'
 
 export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
     return (
-        <FooterMotion className={`
+        <FooterMotion
+            className={`
           relative flex w-full flex-1 flex-col
           md:px-10
         `}>
@@ -58,7 +59,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                           relative my-14 mt-16 flex flex-col gap-12 px-12
                           lg:flex-row lg:gap-2
                         `}>
-                        <div className={`
+                        <div
+                            className={`
                           space-y-4
                           md:pr-8
                         `}>
@@ -76,7 +78,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                             {sections.map((section, index) => {
                                 return (
                                     <div key={index}>
-                                        <h3 className={`
+                                        <h3
+                                            className={`
                                           mb-4 font-heading text-base font-bold
                                         `}>
                                             {section.title}

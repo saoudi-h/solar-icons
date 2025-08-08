@@ -186,9 +186,12 @@ export function Rate({
                         />
                         <button
                             type="submit"
-                            className={cn(buttonVariants({ color: 'outline' }), `
+                            className={cn(
+                                buttonVariants({ color: 'outline' }),
+                                `
                               w-fit px-3
-                            `)}
+                            `
+                            )}
                             disabled={isPending}>
                             Submit
                         </button>

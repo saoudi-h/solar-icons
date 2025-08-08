@@ -17,11 +17,15 @@ export const HoverEffect = ({
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     return (
-        <div className={cn(`
+        <div
+            className={cn(
+                `
           grid grid-cols-1 py-10
           md:grid-cols-2
           lg:grid-cols-3
-        `, className)}>
+        `,
+                className
+            )}>
             {items.map((item, idx) => (
                 <Link
                     href={item?.link}
@@ -103,9 +107,13 @@ export const CardDescription = ({
     children: React.ReactNode
 }) => {
     return (
-        <p className={cn(`
+        <p
+            className={cn(
+                `
           mt-8 text-sm leading-relaxed tracking-wide text-zinc-400
-        `, className)}>
+        `,
+                className
+            )}>
             {children}
         </p>
     )

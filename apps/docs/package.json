@@ -11,12 +11,13 @@
         "lint:fix": "eslint . --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "typecheck": "tsc",
+        "typecheck": "tsc --noEmit",
         "typecheck:scripts": "tsc -p tsconfig.scripts.json",
         "clean": "rimraf *.tsbuildinfo node_modules build dist .turbo .next",
         "generate:hero:utils": "tsx ./core/scripts/generateHeroUtils.ts",
         "generate:data": "tsx ./core/scripts/generate-data.ts",
-        "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts"
+        "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts",
+        "lint-staged": "lint-staged"
     },
     "dependencies": {
         "@radix-ui/react-dialog": "^1.1.14",
@@ -75,7 +76,6 @@
         "@types/react-virtualized": "^9.22.0",
         "eslint-plugin-better-tailwindcss": "^3.5.2",
         "postcss": "^8.5.6",
-        "prettier-plugin-tailwindcss": "^0.6.14",
         "sharp": "^0.34.2",
         "tailwindcss": "^4.1.11",
         "tsx": "^4.20.3"

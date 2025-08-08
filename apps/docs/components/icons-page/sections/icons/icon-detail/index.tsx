@@ -38,7 +38,8 @@ const Content: FC = () => {
     if (!selectedIcon) return null
 
     return (
-        <div className={`
+        <div
+            className={`
           flex h-full w-full flex-col p-4
           lg:flex-row
         `}>
@@ -51,14 +52,17 @@ const Content: FC = () => {
                       lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r
                       lg:pr-4
                     `}>
-                    <div className={`
+                    <div
+                        className={`
                       flex items-center justify-center
                       lg:size-56
                     `}>
-                        <selectedIcon.Icon className={`
+                        <selectedIcon.Icon
+                            className={`
                           size-12
                           lg:size-48
-                        `} />
+                        `}
+                        />
                     </div>
 
                     <div className="flex flex-col items-start justify-between">

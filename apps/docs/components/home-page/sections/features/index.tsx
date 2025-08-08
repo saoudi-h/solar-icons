@@ -100,7 +100,8 @@ export const FeaturesSection = () => {
                         </span>
                         ?
                     </MotionHeading>
-                    <div className={`
+                    <div
+                        className={`
                       mt-8 flex w-full flex-row flex-wrap items-stretch gap-4
                     `}>
                         {features.map((item, idx) => (

@@ -158,13 +158,21 @@ export const Actions: FC = () => {
                     color={value.color || ''}
                 />
             </div>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className={`
               p-1
             `}>
                 Get SVG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className={`
               p-1
             `}>
                 Get PNG
