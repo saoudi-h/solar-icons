@@ -8,5 +8,5 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    modules: ['@nuxt/eslint', '@nuxt/ui', '../../packages/vue/dist/module'],
+    modules: ['@nuxt/eslint', '@nuxt/ui'],
 })
