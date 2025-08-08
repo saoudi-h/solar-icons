@@ -3,19 +3,23 @@ description: 'Sets up Node.js and runs install'
 inputs:
     node-version:
         description: 'Version de Node.js'
-        required: true
-        default: '20.11'
-
+        required: false 
+        default: ''
 runs:
     using: composite
     steps:
+        - name: Read Node.js version from .nvmrc
+          id: nvmrc
+          shell: bash
+          run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+
         - name: Install dependencies
           uses: pnpm/action-setup@v4
 
-        - name: Set up Node.js ${{ inputs.node-version }}
+        - name: Set up Node.js
           uses: actions/setup-node@v4
           with:
-              node-version: ${{ inputs.node-version }}
+              node-version: ${{ steps.nvmrc.outputs.NODE_VERSION }}
               registry-url: 'https://registry.npmjs.org'
               cache: 'pnpm'
 

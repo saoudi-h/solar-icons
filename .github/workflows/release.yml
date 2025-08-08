@@ -4,6 +4,9 @@ on:
     push:
         branches:
             - main
+        paths-ignore:
+            - 'apps/nuxt/**'
+            - 'apps/vue-app/**'
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,21 +15,16 @@ jobs:
     release:
         name: Release
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [20.9]
-
         steps:
             - name: Checkout branch
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
-                  persist-credentials: false
 
-            - name: Install
+            - name: Install dependencies
               uses: ./.github/actions/install
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: ''
 
             - name: Build
               run: pnpm build
