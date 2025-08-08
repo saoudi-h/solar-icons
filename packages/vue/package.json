@@ -1,0 +1,78 @@
+{
+    "name": "@solar-icons/vue",
+    "version": "1.0.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Solar Icons for Vue",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/vue"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "runtime",
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "copy:runtime": "cp -r src/runtime dist/",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "build:nuxt": "tsdown --config tsdown.nuxt.config.ts",
+        "build": "tsdown && pnpm build:nuxt && pnpm copy:runtime && pnpm copy:licenses",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "module": "./dist/index.mjs",
+    "main": "./dist/index.cjs",
+    "types": "./dist/index.d.cts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        },
+        "./category": {
+            "import": "./dist/category.mjs",
+            "require": "./dist/category.cjs"
+        },
+        "./lib": {
+            "import": "./dist/lib/index.mjs",
+            "require": "./dist/lib/index.cjs"
+        },
+        "./package.json": "./package.json"
+    },
+    "peerDependencies": {
+        "vue": ">=3.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.21.8",
+        "@solar-icons/core": "workspace:*",
+        "@vitejs/plugin-vue": "^4.6.2",
+        "@vue/compiler-sfc": "3.3.4",
+        "@vue/test-utils": "^2.4.6",
+        "jsdom": "^26.1.0",
+        "picocolors": "^1.1.1",
+        "prettier-plugin-vue": "^1.1.6",
+        "unplugin-vue": "^7.0.1",
+        "vite": "^7.0.2",
+        "vite-plugin-static-copy": "^3.1.0",
+        "vitest": "^0.32.2",
+        "vue": "^3.3.4",
+        "vue-tsc": "3.0.5"
+    },
+    "license": "MIT"
+}

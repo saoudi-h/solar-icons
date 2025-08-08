@@ -1,0 +1,31 @@
+{
+    "extends": "@solar-icons/tsconfig/vue.json",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "rootDir": ".",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "types": ["node", "vite/client"],
+        "jsx": "preserve",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.d.ts",
+        "./src/**/*.tsx",
+        "./src/**/*.vue",
+        "tsdown.config.ts",
+        "tsdown.nuxt.config.ts",
+        "./scripts/**/*.ts",
+        "src/runtime/plugin.mjs",
+        "vitest.config.ts"
+    ],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+}

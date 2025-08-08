@@ -1,0 +1,23 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "noEmit": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "declarationDir": "dist/types",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES2020",
+        "baseUrl": ".",
+        "rootDir": "src",
+        "importHelpers": true,
+        "isolatedModules": true,
+        "sourceMap": false,
+        "declarationMap": false,
+        "types": ["node", "vite/client"]
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+    "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}
