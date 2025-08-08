@@ -12,7 +12,9 @@
         "rootDir": "src",
         "importHelpers": true,
         "isolatedModules": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "jsx": "preserve"
     },
     "include": ["./src/**/*"],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "./src/scripts"]

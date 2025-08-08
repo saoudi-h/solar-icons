@@ -50,4 +50,7 @@ export default defineConfig({
             '@': '/src',
         },
     },
+    esbuild: {
+        jsx: 'preserve',
+    },
 })
