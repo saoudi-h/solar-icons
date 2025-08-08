@@ -8,9 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build:strict": "run-p type-check \"build-only {@}\" --",
+    "build:skiped": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "build": "vite build",
+    "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
