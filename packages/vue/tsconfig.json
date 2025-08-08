@@ -25,7 +25,8 @@
         "tsdown.nuxt.config.ts",
         "./scripts/**/*.ts",
         "src/runtime/plugin.mjs",
-        "vitest.config.ts"
+        "vitest.config.ts",
+        "env.d.ts"
     ],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
 }
