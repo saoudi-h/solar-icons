@@ -29,8 +29,20 @@
             "path": "packages/react-perf",
         },
         {
+            "name": "vue",
+            "path": "packages/vue",
+        },
+        {
             "path": "apps/docs",
         },
+        {
+            "name": "nuxt",
+            "path": "apps/nuxt",
+        },
+        {
+            "name": "vue-app",
+            "path": "apps/vue-app",
+        }
     ],
     "settings": {
         "biome.enabled": false,
@@ -69,13 +81,16 @@
             "pino",
             "pngs",
             "Qwik",
+            "rolldown",
             "Saoudi",
             "Svgs",
             "tailwindcss",
             "tsbuildinfo",
             "typecheck",
+            "unplugin",
             "usehooks",
             "vuejs",
         ],
+        "typescript.tsdk": "solar/node_modules/typescript/lib",
     },
 }
