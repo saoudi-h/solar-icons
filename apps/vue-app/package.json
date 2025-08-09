@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
-    "@solar-icons/vue": "^1.0.0",
+    "@solar-icons/vue": "^1.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "@tanstack/vue-virtual": "^3.13.12",
     "@vueuse/core": "^13.6.0",
