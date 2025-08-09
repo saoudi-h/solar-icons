@@ -36,12 +36,16 @@
             "path": "apps/docs",
         },
         {
-            "name": "nuxt",
-            "path": "apps/nuxt",
+            "name": "nuxt-app",
+            "path": "apps/nuxt-app",
         },
         {
             "name": "vue-app",
             "path": "apps/vue-app",
+        },
+        {
+            "name": "nuxt",
+            "path": "packages/nuxt"
         }
     ],
     "settings": {

@@ -23,7 +23,7 @@ export const DEFAULT_CONTEXT: SolarIconContext = {
     setColor: () => {},
 }
 
-export const SOLAR_ICONS_CONFIG_KEY: InjectionKey<SolarIconContext> = Symbol('solar-icons-config')
+export const SOLAR_ICONS_CONFIG_KEY: InjectionKey<SolarIconContext> = Symbol.for('solar-icons-config')
 
 /**
  * Creates a reactive configuration for Solar icons

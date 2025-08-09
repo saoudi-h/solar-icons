@@ -1,0 +1,82 @@
+{
+  "name": "@solar-icons/nuxt",
+  "version": "0.0.0",
+  "description": "Nuxt module for easily integrating Solar Icons into your Nuxt 3+ applications.",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "icons",
+    "solar-icons",
+    "ui",
+    "design-system"
+  ],
+  "homepage": "https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt#readme",
+  "bugs": {
+    "url": "https://github.com/saoudi-h/solar-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saoudi-h/solar-icons.git",
+    "directory": "packages/nuxt"
+  },
+  "license": "MIT",
+  "author": "Hakim Saoudi <saoudihakim@gmail.com>",
+  "contributors": [],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "prepack": "nuxt-module-build build",
+    "dev": "pnpm dev:prepare && nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.0.1"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^2.6.2",
+    "@nuxt/eslint-config": "^1.7.1",
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.0.1",
+    "@nuxt/test-utils": "^3.19.2",
+    "@types/node": "latest",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.32.0",
+    "nuxt": "^4.0.1",
+    "typescript": "~5.8.3",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.4"
+  },
+  "peerDependencies": {
+    "@solar-icons/vue": "workspace:*"
+  }
+}

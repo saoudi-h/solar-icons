@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { DEFAULT_SOLAR, useSolar } from './context'
-import type { IconNode, SolarIcons } from './types'
+import type { IconNode, BaseSolarProps } from './types'
 import SvgNodeRenderer from './SvgNodeRenderer.vue'
 
-interface Props extends SolarIcons {
+interface Props extends BaseSolarProps {
     iconNodes?: IconNode[]
 }
 

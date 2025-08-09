@@ -17,16 +17,16 @@
         "forceConsistentCasingInFileNames": true
     },
     "include": [
-        "./src/**/*.ts",
-        "./src/**/*.d.ts",
-        "./src/**/*.tsx",
-        "./src/**/*.vue",
+        "./src/lib",
+        "./src/*.ts",
+        "./src/*.d.ts",
+        "./src/*.vue",
         "tsdown.config.ts",
         "tsdown.nuxt.config.ts",
         "./scripts/**/*.ts",
-        "src/runtime/plugin.mjs",
         "vitest.config.ts",
+        "lint-staged.config.mjs",
         "env.d.ts"
     ],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "src/icons/**/*.ts"]
 }
