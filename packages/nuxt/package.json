@@ -27,6 +27,9 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
     }
   },
   "main": "./dist/module.mjs",
@@ -38,7 +41,10 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE",
+    "LICENSE-THIRD-PARTY"
   ],
   "publishConfig": {
     "access": "public"
@@ -48,7 +54,8 @@
   },
   "scripts": {
     "prepack": "nuxt-module-build build --stub",
-    "build": "nuxt-module-build prepare && pnpm nuxt-module-build build",
+    "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+    "build": "nuxt-module-build prepare && pnpm nuxt-module-build build && pnpm copy:licenses",
     "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
