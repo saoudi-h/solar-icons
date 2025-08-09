@@ -26,12 +26,18 @@ To use an icon in your Vue application, simply import it from the package:
 <template>
 
     <div>
-         <ArrowUp :size="24" weight="Outline" :mirrored="true" /> <solar.Arrows.ArrowDown
+        <ArrowUp :size="24" weight="Outline" :mirrored="true" /> 
+         
+        <solar.Arrows.ArrowDown
             :size="32"
-            weight="BoldDuotone" /> <Arrows.AltArrowLeft
+            weight="BoldDuotone" 
+        />
+        
+        <Arrows.AltArrowLeft
             color="#fff"
             class="bg-black"
-            weight="Bold" />
+            weight="Bold" 
+        />
     </div>
 
 </template>

@@ -5,7 +5,7 @@ export default (async () => {
     return defineConfig(
         ...base,
         {
-            ignores: ['eslint.config.js', 'eslint-types.d.ts', 'prettier.config.js'],
+            ignores: ['eslint.config.js', 'eslint-types.d.ts', 'prettier.config.js', 'src/icons'],
         },
         {
             rules: {
