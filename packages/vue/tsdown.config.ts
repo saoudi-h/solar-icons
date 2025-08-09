@@ -17,7 +17,14 @@ const config: UserConfig = defineConfig({
     },
     format: ['esm', 'cjs'],
     publint: true,
-    exports: true,
+    exports: {
+        customExports(pkg) {
+            pkg['./package.json'] = {
+                default: './package.json',
+            }
+            return pkg
+        },
+    },
     fixedExtension: true,
     minify: true,
     unbundle: false,
