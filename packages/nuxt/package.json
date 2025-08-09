@@ -84,6 +84,6 @@
     "vue-tsc": "^3.0.4"
   },
   "peerDependencies": {
-    "@solar-icons/vue": "workspace:*"
+    "@solar-icons/vue": "^1.1.0"
   }
 }
