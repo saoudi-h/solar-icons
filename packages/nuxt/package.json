@@ -47,6 +47,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "build": "nuxt-module-build build",
     "prepack": "nuxt-module-build build",
     "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:build": "nuxi build playground",
