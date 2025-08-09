@@ -23,6 +23,10 @@
                 :label="`Size: ${config.size}`"
                 @update:model-value="handleSizeChange"
             />
+            <UButton
+                label="+"
+                @click="incSize"
+            >Inc Size</UButton>
             <USelect
                 :default-value="config.weight"
                 :items="WEIGHTS"
@@ -54,9 +58,9 @@
   <script setup lang="ts">
 
   
-  import * as solar from '@solar-icons/vue'
-  import { useSolar } from '@solar-icons/vue/lib'
-  import type { IconWeight } from '@solar-icons/vue/lib'
+  import * as solar from '#solar-icons'
+  import { useSolar } from '#solar-icons/lib'
+  import type { IconWeight } from '#solar-icons/lib'
   
   const { config, setConfig, setWeight, setSize } = useSolar()
   
@@ -87,6 +91,11 @@
     setSize(value?.[0] ?? 24)
   }
   
+
+  const incSize = () => {
+    setSize(config.size + 1)
+  }
+
   const handleWeightChange = (value: IconWeight) => {
     console.log("new weight : ", value)
     setWeight(value)

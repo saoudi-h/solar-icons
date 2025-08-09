@@ -12,7 +12,7 @@
   "dependencies": {
     "@nuxt/eslint": "1.8.0",
     "@nuxt/ui": "^3.3.0",
-    "@solar-icons/vue": "workspace:*",
+    "@solar-icons/nuxt": "workspace:*",
     "@tailwindcss/vite": "^4.1.11",
     "eslint": "^9.31.0",
     "nuxt": "^4.0.1",

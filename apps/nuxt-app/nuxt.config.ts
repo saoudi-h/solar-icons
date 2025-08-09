@@ -8,5 +8,9 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    modules: ['@nuxt/eslint', '@nuxt/ui', '@solar-icons/vue'],
+    modules: ['@nuxt/eslint', '@nuxt/ui', '@solar-icons/nuxt'],
+    solarIcons: {
+        size: 32,
+        weight: 'BoldDuotone',
+    },
 })
