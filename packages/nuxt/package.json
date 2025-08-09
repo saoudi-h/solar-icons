@@ -1,6 +1,6 @@
 {
   "name": "@solar-icons/nuxt",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Nuxt module for easily integrating Solar Icons into your Nuxt 3+ applications.",
   "keywords": [
     "nuxt",

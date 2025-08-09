@@ -1,5 +1,11 @@
 # @solar-icons/vue
 
+## 1.1.0
+
+### Minor Changes
+
+- [`b213337`](https://github.com/saoudi-h/solar-icons/commit/b2133371937f5000436eddeb64839ee01335656d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Removed unused Nuxt-specific code (simplifies package)
+
 ## 1.0.0
 
 ### Major Changes
