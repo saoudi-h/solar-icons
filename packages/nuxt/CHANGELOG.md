@@ -1,5 +1,11 @@
 # @solar-icons/nuxt
 
+## 1.1.1
+
+### Patch Changes
+
+- [`ce3045e`](https://github.com/saoudi-h/solar-icons/commit/ce3045ed198e9d958e6e3b4f9f98838be6d86a88) Thanks [@saoudi-h](https://github.com/saoudi-h)! - The --stub flag was causing build issues in the prepack script. This patch removes it to ensure proper package building during prepack phase.
+
 ## 1.1.0
 
 ### Minor Changes
