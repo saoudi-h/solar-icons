@@ -1,8 +1,7 @@
 {
   "name": "@solar-icons/vue",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
-  "nuxt": "dist/module.mjs",
   "publishConfig": {
     "access": "public"
   },
