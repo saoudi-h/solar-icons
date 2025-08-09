@@ -48,7 +48,7 @@ export interface SolarIconsConfig {
 /**
  * Basic properties for Solar Icons
  */
-export interface SolarIcons {
+export interface BaseSolarProps {
     color?: string
     size?: Numbrish
     mirrored?: boolean
