@@ -1,5 +1,11 @@
 # @solar-icons/nuxt
 
+## 1.1.0
+
+### Minor Changes
+
+- [`24e2273`](https://github.com/saoudi-h/solar-icons/commit/24e22739500ec66179f14499c3e39f58cd411df7) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Critical dependency bug fix
+
 ## 1.0.0
 
 ### Patch Changes
