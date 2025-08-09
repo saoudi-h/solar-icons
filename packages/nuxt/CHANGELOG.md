@@ -1,5 +1,11 @@
 # @solar-icons/nuxt
 
+## 1.1.2
+
+### Patch Changes
+
+- [`146ca7e`](https://github.com/saoudi-h/solar-icons/commit/146ca7e7e7de34d4d56a75b24bc0fb4a86ec6a2d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix runtime plugin reference after TS to JS build conversion
+
 ## 1.1.1
 
 ### Patch Changes
