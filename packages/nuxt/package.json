@@ -1,9 +1,27 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "name": "@solar-icons/nuxt",
+  "version": "0.0.0",
+  "description": "Nuxt module for easily integrating Solar Icons into your Nuxt 3+ applications.",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "icons",
+    "solar-icons",
+    "ui",
+    "design-system"
+  ],
+  "homepage": "https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt#readme",
+  "bugs": {
+    "url": "https://github.com/saoudi-h/solar-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saoudi-h/solar-icons.git",
+    "directory": "packages/nuxt"
+  },
   "license": "MIT",
+  "author": "Hakim Saoudi <saoudihakim@gmail.com>",
+  "contributors": [],
   "type": "module",
   "exports": {
     ".": {
@@ -22,20 +40,26 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxi dev playground",
+    "dev": "pnpm dev:prepare && nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.1",
-    "@solar-icons/vue": "^1.0.0"
+    "@nuxt/kit": "^4.0.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.6.2",
@@ -50,5 +74,8 @@
     "typescript": "~5.8.3",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.4"
+  },
+  "peerDependencies": {
+    "@solar-icons/vue": "workspace:*"
   }
 }

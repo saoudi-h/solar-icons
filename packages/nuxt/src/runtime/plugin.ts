@@ -1,5 +1,18 @@
 import { defineNuxtPlugin } from '#app'
 
-export default defineNuxtPlugin((_nuxtApp) => {
-  console.log('Plugin injected by my-module!')
+import { createSolarIcons, provideSolarIconsContextInApp } from '#solar-icons/lib'
+
+export default defineNuxtPlugin({
+  name: 'solar-icons',
+  setup(nuxtApp) {
+    const config = nuxtApp.$config.public?.solarIcons?.config || {
+      color: 'currentColor',
+      size: '24',
+      weight: 'Linear',
+      mirrored: false,
+    }
+
+    const solarContext = createSolarIcons(config)
+    provideSolarIconsContextInApp(nuxtApp.vueApp, solarContext)
+  },
 })
