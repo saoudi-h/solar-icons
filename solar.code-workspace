@@ -36,10 +36,6 @@
             "path": "apps/docs",
         },
         {
-            "name": "nuxt-app",
-            "path": "apps/nuxt-app",
-        },
-        {
             "name": "vue-app",
             "path": "apps/vue-app",
         },
