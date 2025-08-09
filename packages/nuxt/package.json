@@ -53,7 +53,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "prepack": "nuxt-module-build build --stub",
+    "prepack": "nuxt-module-build build",
     "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
     "build": "nuxt-module-build prepare && pnpm nuxt-module-build build && pnpm copy:licenses",
     "dev": "pnpm dev:prepare && nuxi dev playground",
