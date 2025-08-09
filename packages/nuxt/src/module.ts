@@ -105,7 +105,7 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
       }
 
       addPlugin({
-        src: await resolver.resolve('./runtime/plugin.ts'),
+        src: await resolver.resolve('./runtime/plugin.js'),
         mode: 'all',
       })
     }
