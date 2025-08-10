@@ -26,7 +26,10 @@
         "./scripts/**/*.ts",
         "vitest.config.ts",
         "lint-staged.config.mjs",
-        "env.d.ts"
+        "env.d.ts",
+        "vitest.setup.ts",
+        "__tests__/**/*.ts",
+        "__tests__/**/*.vue"
     ],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "src/icons/**/*.ts"]
 }
