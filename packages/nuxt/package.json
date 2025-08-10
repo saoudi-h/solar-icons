@@ -67,6 +67,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
+    "@solar-icons/vue": "^1.1.0",
     "@nuxt/kit": "^4.0.1"
   },
   "devDependencies": {
@@ -82,8 +83,5 @@
     "typescript": "~5.8.3",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.4"
-  },
-  "peerDependencies": {
-    "@solar-icons/vue": "^1.1.0"
   }
 }
