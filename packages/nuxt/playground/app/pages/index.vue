@@ -95,7 +95,6 @@ const incSize = () => {
 }
 
 const handleWeightChange = (value: IconWeight) => {
-  console.log('new weight : ', value)
   setWeight(value)
 }
 </script>

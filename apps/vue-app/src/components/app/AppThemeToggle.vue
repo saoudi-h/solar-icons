@@ -13,7 +13,6 @@ import { Button } from '@/components/ui/button'
 const mode = useColorMode()
 
 const toggleTheme = () => {
-    console.log(mode.value)
     mode.value = mode.value === 'light' ? 'dark' : 'light'
 }
 </script>

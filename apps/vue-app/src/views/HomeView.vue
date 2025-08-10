@@ -270,7 +270,6 @@ const toKebab = (input: string): string => {
 const copyIconName = (iconName: string) => {
   navigator.clipboard.writeText(toKebab(iconName))
     .then(() => {
-      console.log("Icon name copied: " + toKebab(iconName))
       toast('Icon name copied', {
         description: 'Name: ' + toKebab(iconName),
       })

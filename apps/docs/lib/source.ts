@@ -12,7 +12,6 @@ export const source = loader({
     icon(icon) {
         if (icon) {
             if(iconifyIcons.includes(icon)) {
-                console.log("iconify icon", icon)
                 return renderIconify(icon as IconifyFrameworkIcon)
     
             }

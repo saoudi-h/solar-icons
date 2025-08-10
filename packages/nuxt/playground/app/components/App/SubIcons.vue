@@ -4,7 +4,6 @@ const toggleWeight = () => {
   const weights = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone']
   const weightIndex = weights.indexOf(config.weight)
   const newWeight = weights[(weightIndex + 1) % weights.length]
-  console.log('new weight : ', newWeight)
   setWeight(newWeight)
 }
 </script>

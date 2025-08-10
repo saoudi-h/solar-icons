@@ -35,7 +35,6 @@ const emit = defineEmits<{
 }>()
 
 const onColorChange = (newColor: { hex: string } | string) => {
-  console.log(newColor)
   const hexColor = typeof newColor === 'string' ? newColor : newColor.hex
   emit('update:color', hexColor)
 }
