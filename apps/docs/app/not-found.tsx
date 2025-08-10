@@ -4,6 +4,7 @@ import { NoiseSvg } from '@/components/ui/noise-svg'
 import type { SuperButtonProps } from '@/components/ui/SuperButton'
 import { SuperButton } from '@/components/ui/SuperButton'
 import { config } from '@/config'
+import { useEffect, useState } from 'react'
 
 export interface NotFoundProps {
     title: {
@@ -14,8 +15,17 @@ export interface NotFoundProps {
     primaryAction: SuperButtonProps
     secondaryAction: SuperButtonProps
 }
-const notfound = () => {
+
+const NotFound = () => {
     const { title, description, primaryAction, secondaryAction } = config.notFound
+    const [hasHistory, setHasHistory] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.history) {
+            setHasHistory(window.history.length > 1);
+        }
+    }, []);
+
     return (
         <main
             className={`
@@ -77,11 +87,13 @@ const notfound = () => {
                               mt-6 flex flex-col items-center gap-3
                               sm:flex-row sm:gap-6
                             `}>
-                            {history && history.length > 1 && (
+                            {hasHistory && (
                                 <SuperButton
-                                label={secondaryAction.label}
-                                onClick={() => history.back()}
-                                Icon={secondaryAction.Icon}></SuperButton>)}
+                                    label={secondaryAction.label}
+                                    onClick={() => window.history.back()}
+                                    Icon={secondaryAction.Icon}
+                                />
+                            )}
                             <SuperButton {...primaryAction}></SuperButton>
                         </div>
                     </div>
@@ -91,4 +103,4 @@ const notfound = () => {
     )
 }
 
-export default notfound
+export default NotFound
