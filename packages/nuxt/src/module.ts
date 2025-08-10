@@ -1,4 +1,11 @@
-import { addComponent, addImports, addPlugin, addTypeTemplate, createResolver, defineNuxtModule } from '@nuxt/kit'
+import {
+  addComponent,
+  addImports,
+  addPlugin,
+  addTypeTemplate,
+  createResolver,
+  defineNuxtModule,
+} from '@nuxt/kit'
 import type { IconWeight, SolarIconsConfig } from '@solar-icons/vue/lib'
 
 export interface SolarNuxtModuleOptions extends Partial<SolarIconsConfig> {
@@ -7,7 +14,7 @@ export interface SolarNuxtModuleOptions extends Partial<SolarIconsConfig> {
   provider?: boolean
 }
 
-async function getAllIconNames(): Promise<string[]> {
+export async function getAllIconNames(): Promise<string[]> {
   try {
     const solarIcons = await import('@solar-icons/vue')
     const iconNames = Object.keys(solarIcons).filter(
@@ -105,7 +112,7 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
       }
 
       addPlugin({
-        src: await resolver.resolve('./runtime/plugin.js'),
+        src: await resolver.resolve('./runtime/plugin'),
         mode: 'all',
       })
     }
