@@ -1,6 +1,6 @@
 {
     "title": "Packages",
     "icon": "Widget2",
-    "pages": ["react", "react-perf"],
+    "pages": ["react", "react-perf", "vue", "nuxt"],
     "defaultOpen": false
 }

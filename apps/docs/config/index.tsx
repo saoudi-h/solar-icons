@@ -22,18 +22,15 @@ export interface Config {
 
 export const config: Config = {
     footer: {
-        bottomText: '© 2024 Solar Icons. All rights reserved. Released under the MIT License.',
+        bottomText: `© ${new Date().getFullYear()} Solar Icons — Code licensed MIT. Icons by 480 Design (CC BY 4.0).`,
         sections: [
             {
                 title: 'Documentation',
                 links: [
-                    { label: 'React', url: '/docs/react', icon: <Icon icon="devicon:react" /> },
-                    { label: 'Vue', url: '/docs/vue', icon: <Icon icon="devicon:vuejs" /> },
-                    {
-                        label: 'Angular',
-                        url: '/docs/angular',
-                        icon: <Icon icon="devicon:angular" />,
-                    },
+                    { label: 'React', url: '/docs/packages/react', icon: <Icon icon="devicon:react" /> },
+                    { label: 'React Perf', url: '/docs/packages/react-perf', icon: <Icon icon="devicon:react" /> },
+                    { label: 'Vue', url: '/docs/packages/vue', icon: <Icon icon="devicon:vuejs" /> },
+                    { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
                 ],
             },
             {
@@ -116,14 +113,27 @@ export const config: Config = {
                 status: 'released',
             },
             {
+                title: 'Vue',
+                link: '/docs/packages/vue',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/vue',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/vue',
+                content: 'A flexible and intuitive Vue component library for the Solar icon set, with global configuration and multi-style support',
+                status: 'released',
+                iconify: 'devicon:vuejs',
+            },
+            {
+                title: 'Nuxt',
+                link: '/docs/packages/nuxt',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/nuxt',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt',
+                content: 'Seamlessly integrate Solar Icons into your Nuxt projects with auto-import and global configuration',
+                status: 'released',
+                iconify: 'devicon:nuxtjs',
+            },
+            {
                 title: 'Angular',
                 status: 'not-started',
                 iconify: 'devicon:angular',
-            },
-            {
-                title: 'Vue',
-                status: 'not-started',
-                iconify: 'devicon:vuejs',
             },
             {
                 title: 'Svelte',

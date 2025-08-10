@@ -12,6 +12,7 @@ import { ArrowRightUp } from '@solar-icons/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+
 export interface PackageCardProps {
     title: string
     link?: string

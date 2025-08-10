@@ -1,0 +1,120 @@
+---
+title: '@solar-icons/vue'
+description: The versatile, all-in-one package for using Solar Icons in Vue, with support for dynamic styles and global configuration.
+icon: vue
+---
+The `@solar-icons/vue` package is the most flexible and feature-rich way to use Solar Icons in a Vue application. It's designed for ease of use and supports dynamic style changes, global configuration, and works seamlessly with Vue 3 and Nuxt.
+```package-install
+@solar-icons/vue
+```
+
+## Key Features
+- **Dynamic Weights**: Change the icon style on the fly using the `weight` prop
+- **Global Configuration**: Use the `SolarProvider` to set default styles for all icons
+- **Tree-Shakable**: Only the icons you import will be included in your final bundle
+- **Vue 3 Support**: Built specifically for Vue 3 with Composition API support
+- **Nuxt Compatible**: Works with Nuxt 3 (though dedicated `@solar-icons/nuxt` package recommended for deeper integration)
+- **TypeScript Ready**: Comes with full TypeScript support
+
+## Usage
+Import any icon and use it as a standard Vue component:
+```vue
+<template>
+  <div>
+    <Home weight="Bold" color="purple" :size="32" />
+  </div>
+</template>
+
+<script setup>
+import { Home } from '@solar-icons/vue'
+</script>
+```
+
+## Component Props
+Each icon component accepts the following props, in addition to all standard SVG attributes like `class` and `@click`.
+
+| Prop       | Type                                                                            | Default        | Description                                                           |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------- |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon's color. Inherits from `SolarProvider`.                 |
+| `size`     | `string \| number`                                                              | `24`           | Sets the icon's width and height. Inherits from `SolarProvider`.      |
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets the icon style. Inherits from `SolarProvider`.                   |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`. Inherits from `SolarProvider`. |
+| `alt`      | `string`                                                                        | `undefined`    | Provides an accessible title for the icon.                            |
+
+## Advanced Usage
+### Global Configuration with SolarProvider
+For applying consistent styles across your app, wrap your components with the `SolarProvider`:
+```vue
+<template>
+  <SolarProvider :size="32" color="purple" weight="Linear">
+    <YourComponents />
+  </SolarProvider>
+</template>
+
+<script setup>
+import { SolarProvider } from '@solar-icons/vue'
+</script>
+```
+
+### Vue Plugin Installation
+Alternatively, install the package as a Vue plugin for global configuration:
+```js
+import { createApp } from 'vue'
+import { SolarIconsPlugin } from '@solar-icons/vue'
+
+const app = createApp(App)
+app.use(SolarIconsPlugin, {
+  color: 'currentColor',
+  size: '24',
+  weight: 'Linear',
+  mirrored: false,
+})
+app.mount('#app')
+```
+
+### Composition API
+You can also access and modify the icon configuration using the Composition API:
+```vue
+<template>
+  <div>
+    <ArrowUp :size="iconSize" weight="Outline" />
+    <button @click="increaseSize">Increase Size</button>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { ArrowUp, useSolar } from '@solar-icons/vue'
+
+const { config, setSize } = useSolar()
+const iconSize = ref(24)
+
+const increaseSize = () => {
+  const newSize = parseInt(iconSize.value) + 4
+  iconSize.value = newSize
+  setSize(newSize)
+}
+</script>
+```
+
+### Category Imports
+You can also import all icons from a specific category as a single object:
+```vue
+<template>
+  <div>
+    <Arrows.ArrowUp weight="Bold" />
+    <Arrows.ArrowDown weight="Linear" />
+  </div>
+</template>
+
+<script setup>
+import { Arrows } from '@solar-icons/vue/category'
+</script>
+```
+
+## Nuxt Integration
+While `@solar-icons/vue` is compatible with Nuxt, we recommend using the dedicated `@solar-icons/nuxt` package for deeper integration with the Nuxt ecosystem, including auto-import capabilities and optimized performance.
+
+```shell
+nuxi module add @solar-icons/nuxt
+```
