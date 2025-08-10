@@ -6,24 +6,21 @@ import type { FC } from 'react'
 import { selectedIconAtom } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
-export const ReactCode: FC = () => {
+export const NuxtCode: FC = () => {
     const { value } = useSolar()
     const [selectedIcon] = useAtom(selectedIconAtom)
+    const prefix = "Solar"
 
     return (
         <>
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/packages/react">
-                    Get started with React <ArrowRightUp size={16} weight="Linear" color={''} />
+                <Link href="/docs/packages/nuxt">
+                    Get started with Nuxt <ArrowRightUp size={16} weight="Linear" color={''} />
                 </Link>
             </Button>
             <CodeBlockTemplate
-                lang="tsx"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react'`}
-            />
-            <CodeBlockTemplate
-                lang="tsx"
-                code={`<${selectedIcon?.Icon.displayName} weight={${value.weight}} size={${value.size}} color='${value.color}' />`}
+                lang="vue"
+                code={`<${prefix}${selectedIcon?.Icon.displayName} weight="${value.weight}" size="${value.size}" color='${value.color}' />`}
             />
         </>
     )

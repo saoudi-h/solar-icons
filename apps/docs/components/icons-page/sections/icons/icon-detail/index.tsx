@@ -13,6 +13,8 @@ import { FloatingDrawer } from './FloatingDrawer'
 import { IconVariants } from './IconVariants'
 import { ReactCode } from './ReactCode'
 import { ReactPerfCode } from './ReactPerf'
+import { VueCode } from './VueCode'
+import { NuxtCode } from './NuxtCode'
 import { Tags } from './Tags'
 
 export function IconDetail() {
@@ -97,6 +99,8 @@ const Content: FC = () => {
                     { title: 'Tags', value: 'tags', content: <Tags /> },
                     { title: 'React', value: 'react', content: <ReactCode /> },
                     { title: 'React Perf', value: 'react-perf', content: <ReactPerfCode /> },
+                    { title: 'Vue', value: 'vue', content: <VueCode /> },
+                    { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },
                 ]}
             />
         </div>

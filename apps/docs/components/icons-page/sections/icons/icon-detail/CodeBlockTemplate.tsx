@@ -9,7 +9,7 @@ const pre = (props: ComponentProps<'pre'>) => (
     </CodeBlock>
 )
 
-export const CodeBlockTemplate = ({ code }: { code: string }) => (
+export const CodeBlockTemplate = ({ code, lang }: { code: string, lang: string }) => (
     <DynamicCodeBlock
         options={{
             themes: {
@@ -17,11 +17,10 @@ export const CodeBlockTemplate = ({ code }: { code: string }) => (
                 dark: 'github-dark-high-contrast',
             },
             components: {
-                // @ts-expect-error pre type is too strict
                 pre,
             },
         }}
-        lang="tsx"
+        lang={lang}
         code={code}
     />
 )

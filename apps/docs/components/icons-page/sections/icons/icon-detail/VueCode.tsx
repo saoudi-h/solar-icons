@@ -6,24 +6,29 @@ import type { FC } from 'react'
 import { selectedIconAtom } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
-export const ReactCode: FC = () => {
+export const VueCode: FC = () => {
     const { value } = useSolar()
     const [selectedIcon] = useAtom(selectedIconAtom)
 
     return (
         <>
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/packages/react">
-                    Get started with React <ArrowRightUp size={16} weight="Linear" color={''} />
+                <Link href="/docs/packages/vue">
+                    Get started with Vue <ArrowRightUp size={16} weight="Linear" color={''} />
                 </Link>
             </Button>
             <CodeBlockTemplate
-                lang="tsx"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react'`}
+                lang="vue"
+                code={`<script setup>
+        import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/vue'
+</script>`}
             />
             <CodeBlockTemplate
-                lang="tsx"
-                code={`<${selectedIcon?.Icon.displayName} weight={${value.weight}} size={${value.size}} color='${value.color}' />`}
+                lang="vue"
+                code={
+`<template>
+    <${selectedIcon?.Icon.displayName} weight="${value.weight}" size="${value.size}" color="${value.color}" />
+</template>`}
             />
         </>
     )

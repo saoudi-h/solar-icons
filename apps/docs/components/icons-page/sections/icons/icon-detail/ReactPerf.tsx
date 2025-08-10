@@ -21,9 +21,11 @@ export const ReactPerfCode: FC = () => {
                 </Link>
             </Button>
             <CodeBlockTemplate
+                lang="tsx"
                 code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react-perf/${value.weight}'`}
             />
             <CodeBlockTemplate
+                lang="tsx"
                 code={`<${selectedIcon?.Icon.displayName} size={${value.size}} color='${value.color}' />`}
             />
         </>
