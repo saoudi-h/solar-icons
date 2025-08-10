@@ -1,6 +1,6 @@
 'use client'
 
-import { iconWeights } from '@/lib/solar'
+import { iconWeights } from '@/lib/resolveIconUtils'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { selectedIconAtom } from '../context'

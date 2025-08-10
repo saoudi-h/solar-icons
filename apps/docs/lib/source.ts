@@ -1,7 +1,8 @@
 import { docs } from '@/.source'
 import { SSR as icons } from '@solar-icons/react'
 import { loader } from 'fumadocs-core/source'
-import { renderSolarIcon } from './solar'
+import { IconifyFrameworkIcon, iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
+
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info
 export const source = loader({
@@ -9,12 +10,18 @@ export const source = loader({
     baseUrl: '/docs',
     source: docs.toFumadocsSource(),
     icon(icon) {
-        if (!icon) {
-            // You may set a default icon
-            return
+        if (icon) {
+            if(iconifyIcons.includes(icon)) {
+                console.log("iconify icon", icon)
+                return renderIconify(icon as IconifyFrameworkIcon)
+    
+            }
+    
+            if (icon in icons)
+                return renderSolarIcon(icon, { className: 'size-8', weight: 'BoldDuotone' })
         }
-
-        if (icon in icons)
-            return renderSolarIcon(icon, { className: 'size-8', weight: 'BoldDuotone' })
+        
+        return renderSolarIcon('AltArrowRight', { className: 'size-8', weight: 'BoldDuotone' }) 
+        
     },
 })
