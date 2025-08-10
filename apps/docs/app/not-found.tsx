@@ -77,11 +77,12 @@ const notfound = () => {
                               mt-6 flex flex-col items-center gap-3
                               sm:flex-row sm:gap-6
                             `}>
-                            <SuperButton
-                                label={primaryAction.label}
+                            {history && history.length > 1 && (
+                                <SuperButton
+                                label={secondaryAction.label}
                                 onClick={() => history.back()}
-                                Icon={primaryAction.Icon}></SuperButton>
-                            <SuperButton {...secondaryAction}></SuperButton>
+                                Icon={secondaryAction.Icon}></SuperButton>)}
+                            <SuperButton {...primaryAction}></SuperButton>
                         </div>
                     </div>
                 </div>
