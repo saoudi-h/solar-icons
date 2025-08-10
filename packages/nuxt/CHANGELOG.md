@@ -1,5 +1,11 @@
 # @solar-icons/nuxt
 
+## 1.1.3
+
+### Patch Changes
+
+- [`892835b`](https://github.com/saoudi-h/solar-icons/commit/892835b8a63f1db5a3f74037a79b79a6b1a410e3) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Moving @solar-icons/vue from peerDependency to direct dependency simplifies installation to a single package and ensures version compatibility, following Nuxt module best practices.
+
 ## 1.1.2
 
 ### Patch Changes
