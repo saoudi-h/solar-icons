@@ -361,10 +361,10 @@ importers:
     dependencies:
       '@langchain/core':
         specifier: ^0.3.62
-        version: 0.3.71
+        version: 0.3.72
       '@langchain/ollama':
         specifier: ^0.2.3
-        version: 0.2.3(@langchain/core@0.3.71)
+        version: 0.2.3(@langchain/core@0.3.72)
     devDependencies:
       '@solar-icons/eslint':
         specifier: workspace:*
@@ -2204,8 +2204,8 @@ packages:
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
 
-  '@langchain/core@0.3.71':
-    resolution: {integrity: sha512-ejArFmm/lZ9je2rbMLpkFZnva8jkvDhFCn370WAAVP8akbPOLgDA+S2e5jvj+G/oHraOwmviY8EnxbPXXcDvfw==}
+  '@langchain/core@0.3.72':
+    resolution: {integrity: sha512-WsGWVZYnlKffj2eEfDocPNiaTRoxyYiLSQdQ7oxZvxGZBqo/90vpjbC33UGK1uPNBM4kT+pkdaol/MnvKUh8TQ==}
     engines: {node: '>=18'}
 
   '@langchain/ollama@0.2.3':
@@ -12094,7 +12094,7 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
-  '@langchain/core@0.3.71':
+  '@langchain/core@0.3.72':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
@@ -12114,9 +12114,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@langchain/ollama@0.2.3(@langchain/core@0.3.71)':
+  '@langchain/ollama@0.2.3(@langchain/core@0.3.72)':
     dependencies:
-      '@langchain/core': 0.3.71
+      '@langchain/core': 0.3.72
       ollama: 0.5.16
       uuid: 10.0.0
 
