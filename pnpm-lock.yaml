@@ -234,7 +234,7 @@ importers:
         version: 19.1.6(@types/react@19.1.8)
       '@types/react-virtualized':
         specifier: ^9.22.0
-        version: 9.22.2
+        version: 9.22.3
       eslint-plugin-better-tailwindcss:
         specifier: ^3.5.2
         version: 3.7.6(eslint@9.33.0(jiti@2.6.0))(tailwindcss@4.1.11)
@@ -4790,8 +4790,8 @@ packages:
     peerDependencies:
       '@types/react': '*'
 
-  '@types/react-virtualized@9.22.2':
-    resolution: {integrity: sha512-0Eg/ME3OHYWGxs+/n4VelfYrhXssireZaa1Uqj5SEkTpSaBu5ctFGOCVxcOqpGXRiEdrk/7uho9tlZaryCIjHA==}
+  '@types/react-virtualized@9.22.3':
+    resolution: {integrity: sha512-UKRWeBIrECaKhE4O//TSFhlgwntMwyiEIOA7WZoVkr52Jahv0dH6YIOorqc358N2V3oKFclsq5XxPmx2PiYB5A==}
 
   '@types/react@19.1.8':
     resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
@@ -15549,7 +15549,7 @@ snapshots:
     dependencies:
       '@types/react': 19.1.8
 
-  '@types/react-virtualized@9.22.2':
+  '@types/react-virtualized@9.22.3':
     dependencies:
       '@types/prop-types': 15.7.15
       '@types/react': 19.1.8
