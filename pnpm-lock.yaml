@@ -62,7 +62,7 @@ importers:
         version: 6.0.1
       tsdown:
         specifier: ^0.13.3
-        version: 0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.2)
+        version: 0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.3)
       turbo:
         specifier: ^2.3.3
         version: 2.5.4
@@ -71,7 +71,7 @@ importers:
         version: 5.8.3
       unplugin-unused:
         specifier: ^0.5.1
-        version: 0.5.2
+        version: 0.5.3
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@7.1.9(@types/node@24.0.15)(jiti@2.6.0)(lightningcss@1.30.2)(terser@5.43.1)(tsx@4.20.6)(yaml@2.8.1))
@@ -2404,6 +2404,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@jridgewell/trace-mapping@0.3.31':
+    resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -10836,8 +10839,8 @@ packages:
     resolution: {integrity: sha512-6bc58dPYhCMHHuwxldQxO3RRNZ4eCogZ/st++0+fcC1nr0jiGUtAdBJ2qzmLQWSxbtz42pWt4QQMiZ9HvZf5cg==}
     engines: {node: '>=0.10.0'}
 
-  unplugin-unused@0.5.2:
-    resolution: {integrity: sha512-fn0DZrp96+NYo4U5UbLp1ZmZpBk/Z1RhjG2LvXfQxxw82dzciBxmx04ZgATxLZDD4HcGhdWlLIm2Gz1SVIBhDQ==}
+  unplugin-unused@0.5.3:
+    resolution: {integrity: sha512-YZ9xXe9UQDRwDg5X4nyptZgVQeHuT84GQBpf0tEap08XGwx5jCT29P1/LTuChqno/A9SFFG14LWE5Bg/YhKeBQ==}
     engines: {node: '>=20.18.0'}
 
   unplugin-utils@0.2.4:
@@ -13112,19 +13115,19 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/remapping@2.3.5':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/source-map@0.3.10':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/sourcemap-codec@1.5.4': {}
 
@@ -13136,6 +13139,11 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.4
 
   '@jridgewell/trace-mapping@0.3.30':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@jridgewell/trace-mapping@0.3.31':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -23131,7 +23139,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.2):
+  tsdown@0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.3):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -23150,7 +23158,7 @@ snapshots:
     optionalDependencies:
       publint: 0.3.14
       typescript: 5.8.3
-      unplugin-unused: 0.5.2
+      unplugin-unused: 0.5.3
     transitivePeerDependencies:
       - '@typescript/native-preview'
       - oxc-resolver
@@ -23443,12 +23451,12 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unplugin-unused@0.5.2:
+  unplugin-unused@0.5.3:
     dependencies:
       js-tokens: 9.0.1
       picocolors: 1.1.1
       pkg-types: 2.3.0
-      unplugin: 2.3.8
+      unplugin: 2.3.10
 
   unplugin-utils@0.2.4:
     dependencies:
