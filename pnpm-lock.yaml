@@ -62,7 +62,7 @@ importers:
         version: 6.0.1
       tsdown:
         specifier: ^0.13.3
-        version: 0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.3)
+        version: 0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.4)
       turbo:
         specifier: ^2.3.3
         version: 2.5.4
@@ -71,7 +71,7 @@ importers:
         version: 5.8.3
       unplugin-unused:
         specifier: ^0.5.1
-        version: 0.5.3
+        version: 0.5.4
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@7.1.9(@types/node@24.0.15)(jiti@2.6.0)(lightningcss@1.30.2)(terser@5.43.1)(tsx@4.20.6)(yaml@2.8.1))
@@ -10839,9 +10839,9 @@ packages:
     resolution: {integrity: sha512-6bc58dPYhCMHHuwxldQxO3RRNZ4eCogZ/st++0+fcC1nr0jiGUtAdBJ2qzmLQWSxbtz42pWt4QQMiZ9HvZf5cg==}
     engines: {node: '>=0.10.0'}
 
-  unplugin-unused@0.5.3:
-    resolution: {integrity: sha512-YZ9xXe9UQDRwDg5X4nyptZgVQeHuT84GQBpf0tEap08XGwx5jCT29P1/LTuChqno/A9SFFG14LWE5Bg/YhKeBQ==}
-    engines: {node: '>=20.18.0'}
+  unplugin-unused@0.5.4:
+    resolution: {integrity: sha512-R11StgC5j43CECdjHFbc6Ep4MgM97xuI7rku/nCw7OpIEw9sG4btxvR7Ld4RViwAF+eEQjSebesE+jTJTFFWmQ==}
+    engines: {node: '>=20.19.0'}
 
   unplugin-utils@0.2.4:
     resolution: {integrity: sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA==}
@@ -23139,7 +23139,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.3):
+  tsdown@0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.4):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -23158,7 +23158,7 @@ snapshots:
     optionalDependencies:
       publint: 0.3.14
       typescript: 5.8.3
-      unplugin-unused: 0.5.3
+      unplugin-unused: 0.5.4
     transitivePeerDependencies:
       - '@typescript/native-preview'
       - oxc-resolver
@@ -23451,10 +23451,9 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unplugin-unused@0.5.3:
+  unplugin-unused@0.5.4:
     dependencies:
       js-tokens: 9.0.1
-      picocolors: 1.1.1
       pkg-types: 2.3.0
       unplugin: 2.3.10
 
