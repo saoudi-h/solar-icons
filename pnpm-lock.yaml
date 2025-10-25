@@ -56,13 +56,13 @@ importers:
         version: 4.1.0(prettier@3.6.2)(typescript@5.8.3)
       publint:
         specifier: ^0.3.12
-        version: 0.3.14
+        version: 0.3.15
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
       tsdown:
         specifier: ^0.13.3
-        version: 0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.4)
+        version: 0.13.3(publint@0.3.15)(typescript@5.8.3)(unplugin-unused@0.5.4)
       turbo:
         specifier: ^2.3.3
         version: 2.5.4
@@ -9358,8 +9358,8 @@ packages:
   package-manager-detector@0.2.11:
     resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
 
-  package-manager-detector@1.4.0:
-    resolution: {integrity: sha512-rRZ+pR1Usc+ND9M2NkmCvE/LYJS+8ORVV9X0KuNSY/gFsp7RBHJM/ADh9LYq4Vvfq6QkKrW6/weuh8SMEtN5gw==}
+  package-manager-detector@1.5.0:
+    resolution: {integrity: sha512-uBj69dVlYe/+wxj8JOpr97XfsxH/eumMt6HqjNTmJDf/6NO9s+0uxeOneIz3AsPt2m6y9PqzDzd3ATcU17MNfw==}
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -9818,8 +9818,8 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  publint@0.3.14:
-    resolution: {integrity: sha512-14/VNBvWsrBeqWNDw8c/DK5ERcZBUwL1rnkVx18cQnF3zadr3GfoYtvD8mxi1dhkWpaPHp8kfi92MDbjMeW3qw==}
+  publint@0.3.15:
+    resolution: {integrity: sha512-xPbRAPW+vqdiaKy5sVVY0uFAu3LaviaPO3pZ9FaRx59l9+U/RKR1OEbLhkug87cwiVKxPXyB4txsv5cad67u+A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -11903,7 +11903,7 @@ snapshots:
 
   '@antfu/install-pkg@1.1.0':
     dependencies:
-      package-manager-detector: 1.4.0
+      package-manager-detector: 1.5.0
       tinyexec: 1.0.1
 
   '@asamuzakjp/css-color@3.2.0':
@@ -14112,7 +14112,7 @@ snapshots:
       git-url-parse: 16.1.0
       is-docker: 3.0.0
       ofetch: 1.4.1
-      package-manager-detector: 1.4.0
+      package-manager-detector: 1.5.0
       pathe: 2.0.3
       rc9: 2.1.2
       std-env: 3.9.0
@@ -21847,7 +21847,7 @@ snapshots:
     dependencies:
       quansync: 0.2.11
 
-  package-manager-detector@1.4.0: {}
+  package-manager-detector@1.5.0: {}
 
   parent-module@1.0.1:
     dependencies:
@@ -22311,10 +22311,10 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  publint@0.3.14:
+  publint@0.3.15:
     dependencies:
       '@publint/pack': 0.1.2
-      package-manager-detector: 1.4.0
+      package-manager-detector: 1.5.0
       picocolors: 1.1.1
       sade: 1.8.1
 
@@ -23619,7 +23619,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.13.3(publint@0.3.14)(typescript@5.8.3)(unplugin-unused@0.5.4):
+  tsdown@0.13.3(publint@0.3.15)(typescript@5.8.3)(unplugin-unused@0.5.4):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -23636,7 +23636,7 @@ snapshots:
       tree-kill: 1.2.2
       unconfig: 7.3.2
     optionalDependencies:
-      publint: 0.3.14
+      publint: 0.3.15
       typescript: 5.8.3
       unplugin-unused: 0.5.4
     transitivePeerDependencies:
