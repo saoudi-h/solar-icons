@@ -36,7 +36,7 @@
     "vue-sonner": "^2.0.2"
   },
   "devDependencies": {
-    "@prettier/plugin-oxc": "^0.0.4",
+    "@prettier/plugin-oxc": "^0.0.5",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.16.5",
     "@vitejs/plugin-vue": "^6.0.1",
