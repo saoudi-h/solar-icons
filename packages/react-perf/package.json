@@ -8,7 +8,7 @@
     "description": "Solar Icons for React with performance in mind",
     "repository": {
         "type": "git",
-        "url": "https://github.com/saoudi-h/solar-icons.git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
         "directory": "packages/react-perf"
     },
     "type": "module",
@@ -20,7 +20,7 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm copy:licenses && vite build && tsc --build tsconfig.build.json",
+        "build": "pnpm copy:licenses && tsdown",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
@@ -31,37 +31,66 @@
         "typecheck": "tsc --noEmit",
         "pre-commit": "lint-staged"
     },
-    "module": "./dist/esm/index.mjs",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "module": "./dist/index.mjs",
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
     "exports": {
+        "./package.json": "./package.json",
         ".": {
-            "import": "./dist/esm/index.mjs",
-            "require": "./dist/cjs/index.cjs",
-            "types": "./dist/types/index.d.ts"
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
         },
-        "./category": {
-            "import": "./dist/esm/icons/index.mjs",
-            "require": "./dist/cjs/icons/index.cjs",
-            "types": "./dist/types/icons/index.d.ts"
+        "./lib": {
+            "types": "./dist/lib/index.d.mts",
+            "import": "./dist/lib/index.mjs"
         },
-        "./category/*": {
-            "import": "./dist/esm/icons/*/index.mjs",
-            "require": "./dist/cjs/icons/*/index.cjs",
-            "types": "./dist/types/icons/*/index.d.ts"
+        "./Bold": {
+            "types": "./dist/icons/style/Bold.d.mts",
+            "import": "./dist/icons/style/Bold.mjs"
         },
-        "./*": {
-            "import": "./dist/esm/icons/style/*.mjs",
-            "require": "./dist/cjs/icons/style/*.cjs",
-            "types": "./dist/types/icons/style/*.d.ts"
+        "./category/*/Bold": {
+            "types": "./dist/icons/*/Bold.d.mts",
+            "import": "./dist/icons/*/Bold.mjs"
         },
-        "./lib/*": {
-            "import": "./dist/esm/lib/*.mjs",
-            "require": "./dist/cjs/lib/*.cjs",
-            "types": "./dist/types/lib/*.d.ts"
+        "./BoldDuotone": {
+            "types": "./dist/icons/style/BoldDuotone.d.mts",
+            "import": "./dist/icons/style/BoldDuotone.mjs"
         },
-        "./package.json": {
-            "default": "./package.json"
+        "./category/*/BoldDuotone": {
+            "types": "./dist/icons/*/BoldDuotone.d.mts",
+            "import": "./dist/icons/*/BoldDuotone.mjs"
+        },
+        "./Broken": {
+            "types": "./dist/icons/style/Broken.d.mts",
+            "import": "./dist/icons/style/Broken.mjs"
+        },
+        "./category/*/Broken": {
+            "types": "./dist/icons/*/Broken.d.mts",
+            "import": "./dist/icons/*/Broken.mjs"
+        },
+        "./LineDuotone": {
+            "types": "./dist/icons/style/LineDuotone.d.mts",
+            "import": "./dist/icons/style/LineDuotone.mjs"
+        },
+        "./category/*/LineDuotone": {
+            "types": "./dist/icons/*/LineDuotone.d.mts",
+            "import": "./dist/icons/*/LineDuotone.mjs"
+        },
+        "./Linear": {
+            "types": "./dist/icons/style/Linear.d.mts",
+            "import": "./dist/icons/style/Linear.mjs"
+        },
+        "./category/*/Linear": {
+            "types": "./dist/icons/*/Linear.d.mts",
+            "import": "./dist/icons/*/Linear.mjs"
+        },
+        "./Outline": {
+            "types": "./dist/icons/style/Outline.d.mts",
+            "import": "./dist/icons/style/Outline.mjs"
+        },
+        "./category/*/Outline": {
+            "types": "./dist/icons/*/Outline.d.mts",
+            "import": "./dist/icons/*/Outline.mjs"
         }
     },
     "devDependencies": {
@@ -81,7 +110,7 @@
         "rimraf": "^6.1.2",
         "tsx": "^4.20.3",
         "typescript": "^5.9.3",
-        "vite": "^7.2.4",
+        "tsdown": "^0.16.6",
         "vitest": "^4.0.13"
     },
     "peerDependencies": {
