@@ -1,6 +1,6 @@
 # @solar-icons/react
 
-The `@solar-icons/react` package provides a robust, flexible, and easy-to-use library of React components for the Solar icon set. This package enables developers to seamlessly integrate Solar's multi-style icons into React applications, supporting both client-side rendering (CSR) and server-side rendering (SSR).
+The `@solar-icons/react` package provides a robust, flexible, and easy-to-use library of React components for the Solar icon set.
 
 ## Installation
 
