@@ -18,37 +18,28 @@ yarn add @solar-icons/react-perf
 
 ## Usage
 
-To use an icon in your React application, import the specific icon directly for optimal performance:
+### Usage
+
+Import icons from the package:
 
 ```jsx
-import { ArrowUpBold, ArrowUpLinear } from '@solar-icons/react-perf'
+import { AltArrowLeft, CheckCircle } from '@solar-icons/react-perf/Linear'
 
 function App() {
     return (
         <div>
-            <ArrowUpBold size={24} color="#000" />
-            <ArrowUpLinear size={32} color="blue" />
+            <AltArrowLeft size={24} color="#000" />
+            <CheckCircle size={32} color="green" />
         </div>
     )
 }
 ```
 
-### Importing by Style
-
-For more modular imports, you can import icons by style:
+### Importing by Category
 
 ```jsx
-import { ArrowUp } from '@solar-icons/react-perf/linear'
-import { ArrowDown } from '@solar-icons/react-perf/bold'
-
-function App() {
-    return (
-        <div>
-            <ArrowUp size={24} />
-            <ArrowDown size={32} />
-        </div>
-    )
-}
+import { AltArrowLeft, ArrowUp } from '@solar-icons/react-perf/category/arrows/Linear'
+import { Cart, Bag } from '@solar-icons/react-perf/category/shopping/Bold'
 ```
 
 ## Key Features

@@ -124,17 +124,42 @@ ${iconName}.displayName = "${iconName}"
     }
     fs.writeFileSync(path.join(ICONS_PATH, 'index.ts'), iconsIndexContent, { flag: 'w' })
     fs.writeFileSync(path.join(ICONS_PATH, 'styled.ts'), iconsGlobalIndexContent, { flag: 'w' })
+    // Collect all icon names per style for explicit exports
+    const explicitExportsPerStyle: Record<string, string[]> = Object.fromEntries(
+        WEIGHTS.map(key => [key, []])
+    )
+
+    for (const category in icons) {
+        const styleInCategory = icons[category]
+        for (const style in styleInCategory) {
+            const iconsInStyle = styleInCategory[style]
+            for (const icon in iconsInStyle) {
+                const iconName = toPascalCase(icon)
+                explicitExportsPerStyle[style]!.push(iconName)
+            }
+        }
+    }
+
     for (const weight of WEIGHTS) {
         if (!styledStylesIndexContent[weight]) {
             throw new Error(`Missing styled index content for ${weight}`)
         }
-        fs.writeFileSync(
-            path.join(styledStylesPath, `${weight}.ts`),
-            styledStylesIndexContent[weight],
-            {
-                flag: 'w',
-            }
-        )
+
+        // Generate explicit named exports instead of export *
+        const iconNames = explicitExportsPerStyle[weight]
+        let explicitExports = styledStylesIndexContent[weight]
+
+        // Add re-export with explicit names for better tree-shaking
+        explicitExports += `\n// Explicit re-exports for optimal tree-shaking\n`
+        explicitExports += `export {\n`
+        iconNames.forEach((iconName, index) => {
+            explicitExports += `  ${iconName}${index < iconNames.length - 1 ? ',' : ''}\n`
+        })
+        explicitExports += `}\n`
+
+        fs.writeFileSync(path.join(styledStylesPath, `${weight}.ts`), explicitExports, {
+            flag: 'w',
+        })
         styledIndex += `export * as ${weight} from './${weight}';\n`
     }
 

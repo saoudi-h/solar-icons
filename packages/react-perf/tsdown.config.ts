@@ -66,6 +66,7 @@ const config: UserConfig = defineConfig({
                 import: './dist/lib/index.mjs',
             }
 
+            // Barrel exports (backward compatibility)
             for (const style of styles) {
                 pkg[`./${style}`] = {
                     types: `./dist/icons/style/${style}.d.mts`,
@@ -89,7 +90,7 @@ const config: UserConfig = defineConfig({
 
     minify: true,
 
-    unbundle: false,
+    unbundle: true,
 
     target: 'es2020',
 
