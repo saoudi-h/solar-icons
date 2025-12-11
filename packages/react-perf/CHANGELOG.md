@@ -1,5 +1,11 @@
 # @solar-icons/react-perf
 
+## 2.0.1
+
+### Patch Changes
+
+- [`a443619`](https://github.com/saoudi-h/solar-icons/commit/a443619233cdc6c0118529e49229a9846331917c) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Optimize tree-shaking with explicit exports and unbundle build.
+
 ## 2.0.0
 
 ### Major Changes
