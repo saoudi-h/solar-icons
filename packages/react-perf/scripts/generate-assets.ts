@@ -44,31 +44,25 @@ function cleanGeneratedDirectoriesAndFiles() {
  * representation and a preview image.
  */
 function generateIcons(icons: SvgMap) {
-    const styledStylesIndexContent = Object.fromEntries(WEIGHTS.map(key => [key, '']))
-    let styledIndex = ''
     const styledStylesPath = path.join(ICONS_PATH, 'style')
     fs.mkdirSync(styledStylesPath, { recursive: true })
-    let iconsIndexContent = ''
-    let iconsGlobalIndexContent = ''
-    for (const category in icons) {
-        const categoryPascalCase = toPascalCase(category)
+    const perWeightExports: Record<string, string[]> = Object.fromEntries(
+        WEIGHTS.map(key => [key, []])
+    )
+    for (const category of Object.keys(icons).sort()) {
         const categoryPath = path.join(ICONS_PATH, category)
         fs.mkdirSync(categoryPath, { recursive: true })
 
         const styleInCategory = icons[category]
-        let categoryIndexContent = ''
-        let categoryGlobalIndexContent = ''
 
-        for (const style in styleInCategory) {
+        for (const style of Object.keys(styleInCategory).sort()) {
             const stylePath = path.join(categoryPath, style)
             fs.mkdirSync(stylePath, { recursive: true })
             const iconsInStyle = styleInCategory[style]
             let styleIndexContent = ''
-            let styleGlobalIndexContent = ''
 
-            for (const icon in iconsInStyle) {
+            for (const icon of Object.keys(iconsInStyle).sort()) {
                 const iconName = toPascalCase(icon)
-                const iconNameGlobal = toPascalCase(`${icon}-${style}`)
                 const iconData = iconsInStyle[icon]
                 if (!iconData) {
                     throw new Error(`Missing icon data for ${icon}`)
@@ -97,73 +91,18 @@ ${iconName}.displayName = "${iconName}"
                     flag: 'w',
                 })
 
-                styleIndexContent += `export * from './${iconName}';\n`
-
-                styleGlobalIndexContent += `export { ${iconName} as ${iconNameGlobal} } from './${iconName}';\n`
+                styleIndexContent += `export { ${iconName} } from './${iconName}';\n`
+                perWeightExports[style]!.push(
+                    `export { ${iconName} } from "../${category}/${style}/${iconName}";\n`
+                )
             }
-            categoryGlobalIndexContent += `export * from './${style}/styled';\n`
-
-            fs.writeFileSync(path.join(stylePath, 'styled.ts'), styleGlobalIndexContent, {
-                flag: 'w',
-            })
-
             fs.writeFileSync(path.join(stylePath, 'index.ts'), styleIndexContent, { flag: 'w' })
-            categoryIndexContent += `export * as ${style} from './${style}';\n`
-        }
-
-        fs.writeFileSync(path.join(categoryPath, 'styled.ts'), categoryGlobalIndexContent, {
-            flag: 'w',
-        })
-
-        fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, { flag: 'w' })
-        iconsIndexContent += `export * as ${categoryPascalCase} from './${category}';\n`
-        iconsGlobalIndexContent += `export * from './${category}/styled';\n`
-        for (const weight of WEIGHTS) {
-            styledStylesIndexContent[weight] += `export * from '../${category}/${weight}';\n`
         }
     }
-    fs.writeFileSync(path.join(ICONS_PATH, 'index.ts'), iconsIndexContent, { flag: 'w' })
-    fs.writeFileSync(path.join(ICONS_PATH, 'styled.ts'), iconsGlobalIndexContent, { flag: 'w' })
-    // Collect all icon names per style for explicit exports
-    const explicitExportsPerStyle: Record<string, string[]> = Object.fromEntries(
-        WEIGHTS.map(key => [key, []])
-    )
-
-    for (const category in icons) {
-        const styleInCategory = icons[category]
-        for (const style in styleInCategory) {
-            const iconsInStyle = styleInCategory[style]
-            for (const icon in iconsInStyle) {
-                const iconName = toPascalCase(icon)
-                explicitExportsPerStyle[style]!.push(iconName)
-            }
-        }
-    }
-
     for (const weight of WEIGHTS) {
-        if (!styledStylesIndexContent[weight]) {
-            throw new Error(`Missing styled index content for ${weight}`)
-        }
-
-        // Generate explicit named exports instead of export *
-        const iconNames = explicitExportsPerStyle[weight]
-        let explicitExports = styledStylesIndexContent[weight]
-
-        // Add re-export with explicit names for better tree-shaking
-        explicitExports += `\n// Explicit re-exports for optimal tree-shaking\n`
-        explicitExports += `export {\n`
-        iconNames.forEach((iconName, index) => {
-            explicitExports += `  ${iconName}${index < iconNames.length - 1 ? ',' : ''}\n`
-        })
-        explicitExports += `}\n`
-
-        fs.writeFileSync(path.join(styledStylesPath, `${weight}.ts`), explicitExports, {
-            flag: 'w',
-        })
-        styledIndex += `export * as ${weight} from './${weight}';\n`
+        const content = perWeightExports[weight]!.join('')
+        fs.writeFileSync(path.join(styledStylesPath, `${weight}.ts`), content, { flag: 'w' })
     }
-
-    fs.writeFileSync(path.join(styledStylesPath, 'index.ts'), styledIndex, { flag: 'w' })
 }
 
 /**
@@ -202,9 +141,6 @@ function generateMainExports() {
 /* GENERATED FILE */
 export type { IconProps } from "./lib"
 export { IconBase } from "./lib"
-export * from "./icons/styled"
-import * as solar from "./icons"
-export { solar }
 `
 
     try {

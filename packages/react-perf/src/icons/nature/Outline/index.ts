@@ -1,9 +1,9 @@
-export * from './Bonfire';
-export * from './FireMinimalistic';
-export * from './FireSquare';
-export * from './Fire';
-export * from './Flame';
-export * from './Leaf';
-export * from './SuitcaseLines';
-export * from './SuitcaseTag';
-export * from './Suitcase';
+export { Bonfire } from './Bonfire';
+export { Fire } from './Fire';
+export { FireMinimalistic } from './FireMinimalistic';
+export { FireSquare } from './FireSquare';
+export { Flame } from './Flame';
+export { Leaf } from './Leaf';
+export { Suitcase } from './Suitcase';
+export { SuitcaseLines } from './SuitcaseLines';
+export { SuitcaseTag } from './SuitcaseTag';

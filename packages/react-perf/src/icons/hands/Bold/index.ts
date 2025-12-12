@@ -1,5 +1,5 @@
-export * from './HandHeart';
-export * from './HandMoney';
-export * from './HandPills';
-export * from './HandShake';
-export * from './HandStars';
+export { HandHeart } from './HandHeart';
+export { HandMoney } from './HandMoney';
+export { HandPills } from './HandPills';
+export { HandShake } from './HandShake';
+export { HandStars } from './HandStars';

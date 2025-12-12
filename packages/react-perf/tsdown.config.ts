@@ -16,7 +16,6 @@ function genEntries(styles: string[]) {
     const entries: Record<string, string> = {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
-        'icons/index': './src/icons/index.ts',
     }
 
     for (const style of styles) {
