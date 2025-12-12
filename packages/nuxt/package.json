@@ -67,21 +67,21 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.2.1",
+    "@nuxt/kit": "^4.2.2",
     "@solar-icons/vue": "^1.1.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.1.0",
-    "@nuxt/eslint-config": "^1.10.0",
+    "@nuxt/eslint-config": "^1.12.1",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.2.1",
-    "@nuxt/test-utils": "^3.20.1",
+    "@nuxt/schema": "^4.2.2",
+    "@nuxt/test-utils": "^3.21.0",
     "@types/node": "latest",
     "changelogen": "^0.6.2",
     "eslint": "^9.39.1",
-    "nuxt": "^4.2.1",
+    "nuxt": "^4.2.2",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.13",
-    "vue-tsc": "^3.1.5"
+    "vitest": "^4.0.15",
+    "vue-tsc": "^3.1.8"
   }
 }
