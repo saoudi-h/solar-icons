@@ -15,7 +15,7 @@ export const base = defineConfig(
         languageOptions: {
             parserOptions: {
                 projectService: {
-                    allowDefaultProject: ['*.js'],
+                    allowDefaultProject: ['*.js', '*.ts', '*.tsx'],
                 },
             },
         },
