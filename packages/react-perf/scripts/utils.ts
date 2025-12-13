@@ -13,8 +13,9 @@ export const SVGS_PATH = path.join(__dirname, '../../core/svgs')
 export const ICONS_PATH = path.join(__dirname, '../src/icons')
 export const INDEX_PATH = path.join(__dirname, '../src/index.ts')
 
+export type WeightType = IconStyle
 // Define supported icon styles (weights)
-export const WEIGHTS = [
+export const WEIGHTS: WeightType[] = [
     IconStyle.BROKEN,
     IconStyle.LINE_DUOTONE,
     IconStyle.LINEAR,
@@ -170,9 +171,7 @@ export function verifyIcons(icons: SvgMap): boolean {
                     !(
                         weightsPresent.length === WEIGHTS.length &&
                         weightsPresent.every(
-                            w =>
-                                WEIGHTS.includes(w as (typeof WEIGHTS)[number]) &&
-                                !!icons[category]?.[w]
+                            w => WEIGHTS.includes(w as WeightType) && !!icons[category]?.[w]
                         )
                     )
                 ) {

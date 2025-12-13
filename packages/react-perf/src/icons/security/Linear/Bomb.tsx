@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjkuNSIgY3k9IjE0LjUiIHI9IjcuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTcgN0wxNSA5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE3Ljk4MTEgMi4zNTMxNkMxOC4xNjY4IDEuODgyMjggMTguODMzMiAxLjg4MjI4IDE5LjAxODkgMi4zNTMxNkwxOS42NzMzIDQuMDEyNDJDMTkuNzMgNC4xNTYxOCAxOS44NDM4IDQuMjY5OTggMTkuOTg3NiA0LjMyNjY4TDIxLjY0NjggNC45ODEwOEMyMi4xMTc3IDUuMTY2NzkgMjIuMTE3NyA1LjgzMzIxIDIxLjY0NjggNi4wMTg5MkwxOS45ODc2IDYuNjczMzJDMTkuODQzOCA2LjczMDAyIDE5LjczIDYuODQzODIgMTkuNjczMyA2Ljk4NzU4TDE5LjAxODkgOC42NDY4NEMxOC44MzMyIDkuMTE3NzIgMTguMTY2OCA5LjExNzcyIDE3Ljk4MTEgOC42NDY4NEwxNy4zMjY3IDYuOTg3NThDMTcuMjcgNi44NDM4MiAxNy4xNTYyIDYuNzMwMDIgMTcuMDEyNCA2LjY3MzMyTDE1LjM1MzIgNi4wMTg5MkMxNC44ODIzIDUuODMzMjEgMTQuODgyMyA1LjE2Njc5IDE1LjM1MzIgNC45ODEwOEwxNy4wMTI0IDQuMzI2NjhDMTcuMTU2MiA0LjI2OTk4IDE3LjI3IDQuMTU2MTggMTcuMzI2NyA0LjAxMjQyTDE3Ljk4MTEgMi4zNTMxNloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
  */
-export const Bomb:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Bomb: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="9.5" cy="14.5" r="7.5" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M17 7L15 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

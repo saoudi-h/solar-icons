@@ -23,8 +23,24 @@ function genEntries(styles: string[]) {
     }
 
     for (const category of categories) {
+        // Category index (sibling file)
+        entries[`icons/${category}`] = `./src/icons/${category}.ts`
+
         for (const style of styles) {
-            entries[`icons/${category}/${style}`] = `./src/icons/${category}/${style}/index.ts`
+            const styleDir = join(iconsDir, category, style)
+
+            // Per-category + style index (sibling file)
+            entries[`icons/${category}/${style}`] = `./src/icons/${category}/${style}.ts`
+
+            // Individual icon entry points (one entry per icon component)
+            const iconFiles = readdirSync(styleDir)
+                .filter(name => name.endsWith('.tsx'))
+                .sort()
+            for (const file of iconFiles) {
+                const iconName = file.replace(/\.tsx$/, '')
+                entries[`icons/${category}/${style}/${iconName}`] =
+                    `./src/icons/${category}/${style}/${iconName}.tsx`
+            }
         }
     }
     return entries
@@ -39,10 +55,7 @@ const config: UserConfig = defineConfig({
 
     entry: genEntries(styles),
 
-    dts: {
-        sourcemap: false,
-        resolve: true,
-    },
+    dts: false,
 
     platform: 'node',
 
@@ -57,24 +70,27 @@ const config: UserConfig = defineConfig({
 
             pkg['./package.json'] = './package.json'
             pkg['.'] = {
-                types: './dist/index.d.mts',
+                types: './dist/types/index.d.ts',
                 import: './dist/index.mjs',
             }
             pkg['./lib'] = {
-                types: './dist/lib/index.d.mts',
+                types: './dist/types/lib/index.d.ts',
                 import: './dist/lib/index.mjs',
             }
 
-            // Barrel exports (backward compatibility)
-            for (const style of styles) {
-                pkg[`./${style}`] = {
-                    types: `./dist/icons/style/${style}.d.mts`,
-                    import: `./dist/icons/style/${style}.mjs`,
-                }
-                pkg[`./category/*/${style}`] = {
-                    types: `./dist/icons/*/${style}.d.mts`,
-                    import: `./dist/icons/*/${style}.mjs`,
-                }
+            pkg['./category'] = {
+                types: './dist/types/icons/index.d.ts',
+                import: './dist/icons/index.mjs',
+            }
+
+            pkg['./category/*'] = {
+                types: './dist/types/icons/*.d.ts',
+                import: './dist/icons/*.mjs',
+            }
+
+            pkg['./*'] = {
+                types: './dist/types/icons/style/*.d.ts',
+                import: './dist/icons/style/*.mjs',
             }
 
             return pkg
@@ -83,11 +99,13 @@ const config: UserConfig = defineConfig({
 
     format: ['esm'],
 
-    publint: true,
+    publint: false,
 
     fixedExtension: true,
 
     minify: true,
+
+    treeshake: true,
 
     unbundle: true,
 

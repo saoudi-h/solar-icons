@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iNSIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNyAxNEw5LjI5Mjg5IDExLjcwNzFDOS42ODM0MiAxMS4zMTY2IDEwLjMxNjYgMTEuMzE2NiAxMC43MDcxIDExLjcwNzFMMTIuMjkyOSAxMy4yOTI5QzEyLjY4MzQgMTMuNjgzNCAxMy4zMTY2IDEzLjY4MzQgMTMuNzA3MSAxMy4yOTI5TDE3IDEwTTE3IDEwVjEyLjVNMTcgMTBIMTQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxMC41VjEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgMTAuODcxNyAyIDkuODc4MzUgMi4wMjAwOCA5TTEzLjUgMkgxMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MzLjAyMzU1IDMuOTA1MzggMi43MTUzOCA0LjQyNzIgMi41IDUuMDY5OSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
  */
-export const GraphNewUp:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const GraphNewUp: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="19" cy="5" r="3" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M7 14L9.29289 11.7071C9.68342 11.3166 10.3166 11.3166 10.7071 11.7071L12.2929 13.2929C12.6834 13.6834 13.3166 13.6834 13.7071 13.2929L17 10M17 10V12.5M17 10H14.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

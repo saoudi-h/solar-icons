@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiA2TDEyIDhNMTIgOEwxMiAxME0xMiA4SDkuOTk5OThNMTIgOEwxNCA4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTggMTRIOU0xNiAxNEgxMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik05IDE4SDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTMgMTRWMTBDMyA2LjIyODc2IDMgNC4zNDMxNSA0LjE3MTU3IDMuMTcxNTdDNS4zNDMxNSAyIDcuMjI4NzYgMiAxMSAySDEzQzE2Ljc3MTIgMiAxOC42NTY5IDIgMTkuODI4NCAzLjE3MTU3QzIwLjQ4MTYgMy44MjQ3NiAyMC43NzA2IDQuNjk5ODkgMjAuODk4NSA2TTIxIDEwVjE0QzIxIDE3Ljc3MTIgMjEgMTkuNjU2OSAxOS44Mjg0IDIwLjgyODRDMTguNjU2OSAyMiAxNi43NzEyIDIyIDEzIDIySDExQzcuMjI4NzYgMjIgNS4zNDMxNSAyMiA0LjE3MTU3IDIwLjgyODRDMy41MTgzOSAyMC4xNzUyIDMuMjI5MzcgMTkuMzAwMSAzLjEwMTQ5IDE4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
  */
-export const DocumentMedicine:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const DocumentMedicine: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M12 6L12 8M12 8L12 10M12 8H9.99998M12 8L14 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M8 14H9M16 14H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

@@ -1,0 +1,14 @@
+export { AddFolder } from './LineDuotone/AddFolder';
+export { Folder } from './LineDuotone/Folder';
+export { Folder2 } from './LineDuotone/Folder2';
+export { FolderCheck } from './LineDuotone/FolderCheck';
+export { FolderCloud } from './LineDuotone/FolderCloud';
+export { FolderError } from './LineDuotone/FolderError';
+export { FolderFavouriteBookmark } from './LineDuotone/FolderFavouriteBookmark';
+export { FolderFavouriteStar } from './LineDuotone/FolderFavouriteStar';
+export { FolderOpen } from './LineDuotone/FolderOpen';
+export { FolderPathConnect } from './LineDuotone/FolderPathConnect';
+export { FolderSecurity } from './LineDuotone/FolderSecurity';
+export { FolderWithFiles } from './LineDuotone/FolderWithFiles';
+export { MoveToFolder } from './LineDuotone/MoveToFolder';
+export { RemoveFolder } from './LineDuotone/RemoveFolder';

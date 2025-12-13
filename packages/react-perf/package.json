@@ -20,7 +20,8 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm copy:licenses && tsdown",
+        "build": "pnpm copy:licenses && tsdown && pnpm build:types",
+        "build:types": "tsc --build --force tsconfig.build.json",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
@@ -33,64 +34,28 @@
     },
     "module": "./dist/index.mjs",
     "main": "./dist/index.mjs",
-    "types": "./dist/index.d.mts",
+    "types": "./dist/types/index.d.ts",
     "exports": {
         "./package.json": "./package.json",
         ".": {
-            "types": "./dist/index.d.mts",
+            "types": "./dist/types/index.d.ts",
             "import": "./dist/index.mjs"
         },
         "./lib": {
-            "types": "./dist/lib/index.d.mts",
+            "types": "./dist/types/lib/index.d.ts",
             "import": "./dist/lib/index.mjs"
         },
-        "./Bold": {
-            "types": "./dist/icons/style/Bold.d.mts",
-            "import": "./dist/icons/style/Bold.mjs"
+        "./category": {
+            "types": "./dist/types/icons/index.d.ts",
+            "import": "./dist/icons/index.mjs"
         },
-        "./category/*/Bold": {
-            "types": "./dist/icons/*/Bold.d.mts",
-            "import": "./dist/icons/*/Bold.mjs"
+        "./category/*": {
+            "types": "./dist/types/icons/*.d.ts",
+            "import": "./dist/icons/*.mjs"
         },
-        "./BoldDuotone": {
-            "types": "./dist/icons/style/BoldDuotone.d.mts",
-            "import": "./dist/icons/style/BoldDuotone.mjs"
-        },
-        "./category/*/BoldDuotone": {
-            "types": "./dist/icons/*/BoldDuotone.d.mts",
-            "import": "./dist/icons/*/BoldDuotone.mjs"
-        },
-        "./Broken": {
-            "types": "./dist/icons/style/Broken.d.mts",
-            "import": "./dist/icons/style/Broken.mjs"
-        },
-        "./category/*/Broken": {
-            "types": "./dist/icons/*/Broken.d.mts",
-            "import": "./dist/icons/*/Broken.mjs"
-        },
-        "./LineDuotone": {
-            "types": "./dist/icons/style/LineDuotone.d.mts",
-            "import": "./dist/icons/style/LineDuotone.mjs"
-        },
-        "./category/*/LineDuotone": {
-            "types": "./dist/icons/*/LineDuotone.d.mts",
-            "import": "./dist/icons/*/LineDuotone.mjs"
-        },
-        "./Linear": {
-            "types": "./dist/icons/style/Linear.d.mts",
-            "import": "./dist/icons/style/Linear.mjs"
-        },
-        "./category/*/Linear": {
-            "types": "./dist/icons/*/Linear.d.mts",
-            "import": "./dist/icons/*/Linear.mjs"
-        },
-        "./Outline": {
-            "types": "./dist/icons/style/Outline.d.mts",
-            "import": "./dist/icons/style/Outline.mjs"
-        },
-        "./category/*/Outline": {
-            "types": "./dist/icons/*/Outline.d.mts",
-            "import": "./dist/icons/*/Outline.mjs"
+        "./*": {
+            "types": "./dist/types/icons/style/*.d.ts",
+            "import": "./dist/icons/style/*.mjs"
         }
     },
     "devDependencies": {
@@ -99,19 +64,19 @@
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/node": "^24.10.1",
-        "@types/react": "^19.2.6",
+        "@types/react": "^19.2.7",
         "@types/react-dom": "^19.2.3",
-        "@vitejs/plugin-react": "^5.1.1",
+        "typescript": "^5.9.3",
+        "@vitejs/plugin-react": "^5.1.2",
         "dotenv": "^17.0.1",
         "picocolors": "^1.1.1",
-        "prettier": "^3.6.2",
-        "react": "19.2.0",
-        "react-dom": "^19.2.0",
+        "prettier": "^3.7.4",
+        "react": "19.2.3",
+        "react-dom": "^19.2.3",
         "rimraf": "^6.1.2",
-        "tsx": "^4.20.3",
-        "typescript": "^5.9.3",
-        "tsdown": "^0.16.6",
-        "vitest": "^4.0.13"
+        "tsdown": "^0.17.3",
+        "tsx": "^4.21.0",
+        "vitest": "^4.0.15"
     },
     "peerDependencies": {
         "react": ">= 16.8",

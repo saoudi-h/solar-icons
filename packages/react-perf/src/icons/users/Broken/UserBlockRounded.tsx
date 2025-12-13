@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTkuOTUwMiAxNi4wNDk4TDE2LjA1MDIgMTkuOTQ5NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEzIDIwLjk1OTVDMTIuNjczNCAyMC45ODYyIDEyLjMzOTUgMjEgMTIgMjFDOC4xMzQwMSAyMSA1IDE5LjIwOTEgNSAxN0M1IDE2LjY1NDcgNS4wNzY1NyAxNi4zMTk2IDUuMjIwNTMgMTZNMTQuNSAxMy4yNjI2QzEzLjcyMzYgMTMuMDkzIDEyLjg4MDggMTMgMTIgMTNDMTAuOTI2NCAxMyA5LjkwOTI2IDEzLjEzODEgOSAxMy4zODQ5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
  */
-export const UserBlockRounded:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const UserBlockRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M19.9502 16.0498L16.0502 19.9497" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

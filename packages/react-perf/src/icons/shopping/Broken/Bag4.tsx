@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE1IiBjeT0iOSIgcj0iMSIgZmlsbD0iIzFDMjc0QyIvPgo8Y2lyY2xlIGN4PSI5IiBjeT0iOSIgcj0iMSIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNOSA2VjVDOSAzLjM0MzE1IDEwLjM0MzEgMiAxMiAyQzEzLjY1NjkgMiAxNSAzLjM0MzE1IDE1IDVWNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMC4yMjM1IDEyLjUyNTdDMTkuNjM4MiA5LjQwNDUyIDE5LjM0NTYgNy44NDM5MyAxOC4yMzQ3IDYuOTIxOTZDMTcuMTIzOCA2IDE1LjUzNjEgNiAxMi4zNjA1IDZIMTEuNjM5M0M4LjQ2Mzc0IDYgNi44NzU5NiA2IDUuNzY1MDYgNi45MjE5NkM0LjY1NDE2IDcuODQzOTMgNC4zNjE1NSA5LjQwNDUyIDMuNzc2MzMgMTIuNTI1N0MyLjk1MzQgMTYuOTE0NiAyLjU0MTk0IDE5LjEwOTEgMy43NDE1NyAyMC41NTQ1QzQuOTQxMTkgMjIgNy4xNzM4OSAyMiAxMS42MzkzIDIySDEyLjM2MDVDMTYuODI1OSAyMiAxOS4wNTg2IDIyIDIwLjI1ODIgMjAuNTU0NUMyMC45NTQyIDE5LjcxNTkgMjEuMTA3OSAxOC42MjUyIDIwLjk1MzYgMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const Bag4:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Bag4: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="15" cy="9" r="1" fill="currentColor"/>
 <circle cx="9" cy="9" r="1" fill="currentColor"/>

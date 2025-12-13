@@ -1,0 +1,15 @@
+export { CloudFile } from './LineDuotone/CloudFile';
+export { CodeFile } from './LineDuotone/CodeFile';
+export { FigmaFile } from './LineDuotone/FigmaFile';
+export { File } from './LineDuotone/File';
+export { FileCheck } from './LineDuotone/FileCheck';
+export { FileCorrupted } from './LineDuotone/FileCorrupted';
+export { FileDownload } from './LineDuotone/FileDownload';
+export { FileFavourite } from './LineDuotone/FileFavourite';
+export { FileLeft } from './LineDuotone/FileLeft';
+export { FileRemove } from './LineDuotone/FileRemove';
+export { FileRight } from './LineDuotone/FileRight';
+export { FileSend } from './LineDuotone/FileSend';
+export { FileSmile } from './LineDuotone/FileSmile';
+export { FileText } from './LineDuotone/FileText';
+export { ZipFile } from './LineDuotone/ZipFile';

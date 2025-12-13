@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAyMkgyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMjEgMjJWMTQuNUMyMSAxMy42NzE2IDIwLjMyODQgMTMgMTkuNSAxM0gxNi41QzE1LjY3MTYgMTMgMTUgMTMuNjcxNiAxNSAxNC41VjIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNSAyMlY1QzE1IDMuNTg1NzkgMTUgMi44Nzg2OCAxNC41NjA3IDIuNDM5MzRDMTQuMTIxMyAyIDEzLjQxNDIgMiAxMiAyQzEwLjU4NTggMiA5Ljg3ODY4IDIgOS40MzkzNCAyLjQzOTM0QzkgMi44Nzg2OCA5IDMuNTg1NzkgOSA1VjIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTkgMjJWOS41QzkgOC42NzE1NyA4LjMyODQzIDggNy41IDhINC41QzMuNjcxNTcgOCAzIDguNjcxNTcgMyA5LjVWMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
  */
-export const Chart:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Chart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M22 22H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M21 22V14.5C21 13.6716 20.3284 13 19.5 13H16.5C15.6716 13 15 13.6716 15 14.5V22" stroke="currentColor" strokeWidth="1.5"/>

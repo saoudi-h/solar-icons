@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE0LjUiIGN5PSI0LjUiIHI9IjIuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTkgMjEuOTk1OVYxOC4wNDg5QzE5IDE2LjI3MyAxNy4zOTUgMTQuOTE5OSAxNS42MjY1IDE1LjIwNDdNNy45NDgwNiAxMy40MzQ4TDcuOTIzMjggMTMuNDEwOUM2Ljg4MTQzIDEyLjQwNCA3LjY4NjQgMTAuNzg1MiA4LjU5MzIgMTAuMTQyN0M5LjUgOS41MDAxNiAxMy4zNDUxIDguNTAwMTYgMTMuMzQ1MSAxMy40MzQ1QzEzLjM0NTEgMTguMTI5IDkuNjk0NDIgMjIuMDAwMyA1IDIyLjAwMDMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const StretchingRound:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const StretchingRound: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="14.5" cy="4.5" r="2.5" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M19 21.9959V18.0489C19 16.273 17.395 14.9199 15.6265 15.2047M7.94806 13.4348L7.92328 13.4109C6.88143 12.404 7.6864 10.7852 8.5932 10.1427C9.5 9.50016 13.3451 8.50016 13.3451 13.4345C13.3451 18.129 9.69442 22.0003 5 22.0003" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

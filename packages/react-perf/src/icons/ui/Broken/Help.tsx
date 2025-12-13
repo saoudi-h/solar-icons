@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE1IDlMMTkgNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNSAxOUw5IDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik05IDlMNSA1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xOSAxOUwxNSAxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNOS40MTIzNSAyLjMzODkyQzExLjA1MzMgMS44OTc3NSAxMi44Mjg5IDEuODY5MzYgMTQuNTg4MiAyLjM0MDc4QzE5LjkyMjkgMy43NzAyIDIzLjA4ODcgOS4yNTM1NyAyMS42NTkzIDE0LjU4ODJDMjAuMjI5OSAxOS45MjI5IDE0Ljc0NjUgMjMuMDg4NyA5LjQxMTg1IDIxLjY1OTNDNC4wNzcxOSAyMC4yMjk5IDAuOTExMzY0IDE0Ljc0NjUgMi4zNDA3OCA5LjQxMTg1QzIuODEyMiA3LjY1MjQ4IDMuNzI0NTcgNi4xMjkwMSA0LjkyNzExIDQuOTI4NDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const Help:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Help: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M15 9L19 5" stroke="currentColor" strokeWidth="1.5"/>

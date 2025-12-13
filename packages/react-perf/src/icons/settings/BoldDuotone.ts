@@ -1,0 +1,15 @@
+export { Settings } from './BoldDuotone/Settings';
+export { SettingsMinimalistic } from './BoldDuotone/SettingsMinimalistic';
+export { Tuning } from './BoldDuotone/Tuning';
+export { Tuning2 } from './BoldDuotone/Tuning2';
+export { Tuning3 } from './BoldDuotone/Tuning3';
+export { Tuning4 } from './BoldDuotone/Tuning4';
+export { TuningSquare } from './BoldDuotone/TuningSquare';
+export { TuningSquare2 } from './BoldDuotone/TuningSquare2';
+export { Widget } from './BoldDuotone/Widget';
+export { Widget2 } from './BoldDuotone/Widget2';
+export { Widget3 } from './BoldDuotone/Widget3';
+export { Widget4 } from './BoldDuotone/Widget4';
+export { Widget5 } from './BoldDuotone/Widget5';
+export { Widget6 } from './BoldDuotone/Widget6';
+export { WidgetAdd } from './BoldDuotone/WidgetAdd';

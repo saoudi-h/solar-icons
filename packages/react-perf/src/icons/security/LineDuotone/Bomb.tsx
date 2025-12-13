@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjkuNSIgY3k9IjE0LjUiIHI9IjcuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNyA3TDE1IDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTcuOTgxMSAyLjM1MzE2QzE4LjE2NjggMS44ODIyOCAxOC44MzMyIDEuODgyMjggMTkuMDE4OSAyLjM1MzE2TDE5LjY3MzMgNC4wMTI0MkMxOS43MyA0LjE1NjE4IDE5Ljg0MzggNC4yNjk5OCAxOS45ODc2IDQuMzI2NjhMMjEuNjQ2OCA0Ljk4MTA4QzIyLjExNzcgNS4xNjY3OSAyMi4xMTc3IDUuODMzMjEgMjEuNjQ2OCA2LjAxODkyTDE5Ljk4NzYgNi42NzMzMkMxOS44NDM4IDYuNzMwMDIgMTkuNzMgNi44NDM4MiAxOS42NzMzIDYuOTg3NThMMTkuMDE4OSA4LjY0Njg0QzE4LjgzMzIgOS4xMTc3MiAxOC4xNjY4IDkuMTE3NzIgMTcuOTgxMSA4LjY0Njg0TDE3LjMyNjcgNi45ODc1OEMxNy4yNyA2Ljg0MzgyIDE3LjE1NjIgNi43MzAwMiAxNy4wMTI0IDYuNjczMzJMMTUuMzUzMiA2LjAxODkyQzE0Ljg4MjMgNS44MzMyMSAxNC44ODIzIDUuMTY2NzkgMTUuMzUzMiA0Ljk4MTA4TDE3LjAxMjQgNC4zMjY2OEMxNy4xNTYyIDQuMjY5OTggMTcuMjcgNC4xNTYxOCAxNy4zMjY3IDQuMDEyNDJMMTcuOTgxMSAyLjM1MzE2WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
  */
-export const Bomb:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Bomb: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="9.5" cy="14.5" r="7.5" stroke="currentColor" strokeWidth="1.5"/>
 <path opacity="0.5" d="M17 7L15 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

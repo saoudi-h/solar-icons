@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIGN4PSIxOCIgY3k9IjE2IiByPSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNi42NjY1IDE2TDE3LjUgMTdMMTkuMzMzMiAxNS4xMTExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE1IDEzLjMyNzFDMTQuMDczNiAxMy4xMTYyIDEzLjA2MDkgMTMgMTIgMTNDNy41ODE3MiAxMyA0IDE1LjAxNDcgNCAxNy41QzQgMTkuOTg1MyA0IDIyIDEyIDIyQzE3LjY4NzQgMjIgMTkuMzMxNSAyMC45ODE3IDE5LjgwNjggMTkuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
  */
-export const UserCheck:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const UserCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <circle cx="18" cy="16" r="4" stroke="currentColor" strokeWidth="1.5"/>

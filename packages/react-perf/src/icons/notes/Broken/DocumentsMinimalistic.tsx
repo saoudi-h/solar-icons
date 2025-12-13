@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDEzSDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTkgOUgxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik05IDE3SDEyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIgMTlWNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxOVY1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE5IDE2QzE5IDE4LjgyODQgMTkgMjAuMjQyNiAxOC4xMjEzIDIxLjEyMTNDMTcuMjQyNiAyMiAxNS44Mjg0IDIyIDEzIDIySDExQzguMTcxNTcgMjIgNi43NTczNiAyMiA1Ljg3ODY4IDIxLjEyMTNDNSAyMC4yNDI2IDUgMTguODI4NCA1IDE2VjEyTTUgOEM1IDUuMTcxNTcgNSAzLjc1NzM2IDUuODc4NjggMi44Nzg2OEM2Ljc1NzM2IDIgOC4xNzE1NyAyIDExIDJIMTNDMTUuODI4NCAyIDE3LjI0MjYgMiAxOC4xMjEzIDIuODc4NjhDMTkgMy43NTczNiAxOSA1LjE3MTU3IDE5IDhWMTIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const DocumentsMinimalistic:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const DocumentsMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M9 13H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M9 9H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

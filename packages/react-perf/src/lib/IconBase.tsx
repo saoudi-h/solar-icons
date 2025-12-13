@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import type { IconProps } from './types'
 
-const IconBase = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+const IconBase: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>> = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     const {
         alt,
         color = 'currentColor',

@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC41IDE4LjVMMjIgMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOSAxMS41SDExLjVNMTEuNSAxMS41SDE0TTExLjUgMTEuNVYxNE0xMS41IDExLjVWOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik02Ljc1IDMuMjcwOTNDOC4xNDczMiAyLjQ2MjYyIDkuNzY5NjQgMiAxMS41IDJDMTYuNzQ2NyAyIDIxIDYuMjUzMjkgMjEgMTEuNUMyMSAxNi43NDY3IDE2Ljc0NjcgMjEgMTEuNSAyMUM2LjI1MzI5IDIxIDIgMTYuNzQ2NyAyIDExLjVDMiA5Ljc2OTY0IDIuNDYyNjIgOC4xNDczMiAzLjI3MDkzIDYuNzUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const MagniferZoomIn:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const MagniferZoomIn: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M18.5 18.5L22 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M9 11.5H11.5M11.5 11.5H14M11.5 11.5V14M11.5 11.5V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

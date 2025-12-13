@@ -3,6 +3,11 @@
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",
+        "declarationMap": true,
+        "allowJs": false,
+        "checkJs": false,
+        "incremental": true,
+        "isolatedDeclarations": true,
         "moduleResolution": "Bundler",
         "rootDir": ".",
         "baseUrl": "src",
@@ -10,6 +15,12 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["./src/**/*", "vite.config.ts", "./scripts/**/*", "tsdown.config.ts"],
+    "include": [
+        "./src/**/*",
+        "vite.config.ts",
+        "./scripts/**/*",
+        "tsdown.config.ts",
+        "./tests/**/*"
+    ],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
 }

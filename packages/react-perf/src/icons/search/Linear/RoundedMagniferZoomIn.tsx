@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTkgMTFIMTFNMTEgMTFIMTNNMTEgMTFWMTNNMTEgMTFWOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMS44MTIgMjAuOTc0OEMyMS43NDkzIDIxLjA2OTUgMjEuNjM2IDIxLjE4MjggMjEuNDA5NCAyMS40MDk0QzIxLjE4MjggMjEuNjM2IDIxLjA2OTUgMjEuNzQ5MyAyMC45NzQ4IDIxLjgxMkMyMC40MjAyIDIyLjE3OTMgMTkuNjY5OSAyMS45OSAxOS4zNTU5IDIxLjQwMzZDMTkuMzAyMyAyMS4zMDM1IDE5LjI1NjMgMjEuMTUgMTkuMTY0MyAyMC44NDNDMTkuMDYzOCAyMC41MDc2IDE5LjAxMzYgMjAuMzM5OCAxOS4wMDM4IDIwLjIyMThDMTguOTQ2NiAxOS41MjY4IDE5LjUyNjggMTguOTQ2NiAyMC4yMjE4IDE5LjAwMzhDMjAuMzM5OCAxOS4wMTM2IDIwLjUwNzUgMTkuMDYzOCAyMC44NDMgMTkuMTY0M0MyMS4xNSAxOS4yNTYzIDIxLjMwMzUgMTkuMzAyMyAyMS40MDM2IDE5LjM1NTlDMjEuOTkgMTkuNjY5OSAyMi4xNzkzIDIwLjQyMDIgMjEuODEyIDIwLjk3NDhaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
  */
-export const RoundedMagniferZoomIn:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const RoundedMagniferZoomIn: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="11" cy="11" r="9" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M9 11H11M11 11H13M11 11V13M11 11V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

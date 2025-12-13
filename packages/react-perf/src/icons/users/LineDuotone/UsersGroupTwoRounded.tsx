@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xOCA5QzE5LjY1NjkgOSAyMSA3Ljg4MDcxIDIxIDYuNUMyMSA1LjExOTI5IDE5LjY1NjkgNCAxOCA0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNiA5QzQuMzQzMTUgOSAzIDcuODgwNzEgMyA2LjVDMyA1LjExOTI5IDQuMzQzMTUgNCA2IDQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZWxsaXBzZSBjeD0iMTIiIGN5PSIxNyIgcng9IjYiIHJ5PSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIwIDE5QzIxLjc1NDIgMTguNjE1MyAyMyAxNy42NDExIDIzIDE2LjVDMjMgMTUuMzU4OSAyMS43NTQyIDE0LjM4NDcgMjAgMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik00IDE5QzIuMjQ1NzUgMTguNjE1MyAxIDE3LjY0MTEgMSAxNi41QzEgMTUuMzU4OSAyLjI0NTc1IDE0LjM4NDcgNCAxNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
  */
-export const UsersGroupTwoRounded:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const UsersGroupTwoRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path opacity="0.5" d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

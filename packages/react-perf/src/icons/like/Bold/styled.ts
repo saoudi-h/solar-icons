@@ -1,0 +1,17 @@
+export { Dislike as DislikeBold } from './Dislike';
+export { Heart as HeartBold } from './Heart';
+export { HeartAngle as HeartAngleBold } from './HeartAngle';
+export { HeartBroken as HeartBrokenBold } from './HeartBroken';
+export { HeartLock as HeartLockBold } from './HeartLock';
+export { HeartShine as HeartShineBold } from './HeartShine';
+export { HeartUnlock as HeartUnlockBold } from './HeartUnlock';
+export { Hearts as HeartsBold } from './Hearts';
+export { Like as LikeBold } from './Like';
+export { MedalRibbon as MedalRibbonBold } from './MedalRibbon';
+export { MedalRibbonStar as MedalRibbonStarBold } from './MedalRibbonStar';
+export { MedalRibbonsStar as MedalRibbonsStarBold } from './MedalRibbonsStar';
+export { MedalStar as MedalStarBold } from './MedalStar';
+export { MedalStarCircle as MedalStarCircleBold } from './MedalStarCircle';
+export { MedalStarSquare as MedalStarSquareBold } from './MedalStarSquare';
+export { Star as StarBold } from './Star';
+export { StarShine as StarShineBold } from './StarShine';

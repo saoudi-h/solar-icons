@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE1IiBjeT0iNCIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIGN4PSI2IiBjeT0iMTgiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGNpcmNsZSBjeD0iMTgiIGN5PSIxOCIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTguNSA5Ljk5OTUxSDE2LjQ3NDRDMTUuMjUzNCA5Ljk5OTUxIDE0LjY0MjkgOS45OTk1MSAxNC4wOTM0IDkuNzcyOTJDMTMuNTQ0IDkuNTQ2MzMgMTMuMTExIDkuMTE1OTcgMTIuMjQ0OSA4LjI1NTI0TDExLjY2NzYgNy42ODE0NUMxMC44ODI4IDYuOTAxNTIgMTAuNDkwNCA2LjUxMTU1IDEwLjAyNTcgNi41NTM5QzkuNTYxMDIgNi41OTYyNCA5LjI0NTU5IDcuMDUwNzEgOC42MTQ3MSA3Ljk1OTY0TTEyIDE3Ljk5OTVMMTIuMDU3MiAxNy42NDExQzEyLjI5MTggMTYuMTcxNSAxMi40MDkxIDE1LjQzNjggMTIuMDgxIDE0LjgzNjlDMTEuNzUyOSAxNC4yMzcgMTEuMDcwOSAxMy45Mzk0IDkuNzA2OTUgMTMuMzQ0M0w4LjIzMTI1IDEyLjcwMDRDNy4xOTg3IDEyLjI0OTggNi42ODI0MiAxMi4wMjQ2IDYuNTUzNDggMTEuNTY5OEM2LjUwMjYyIDExLjM5MDQgNi41MjE4IDExLjIwOTggNi42MDMxMyAxMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
  */
-export const Bicycling:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Bicycling: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="15" cy="4" r="2" stroke="currentColor" strokeWidth="1.5"/>
 <circle cx="6" cy="18" r="3" stroke="currentColor" strokeWidth="1.5"/>

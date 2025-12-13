@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgb3BhY2l0eT0iMC41IiBjeD0iMTIiIGN5PSIxMyIgcj0iOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTAgMkgxNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy44ODc2IDEwLjkzNDhDMTQuOTYyNSAxMS44MTE3IDE1LjUgMTIuMjUwMSAxNS41IDEzQzE1LjUgMTMuNzQ5OSAxNC45NjI1IDE0LjE4ODMgMTMuODg3NiAxNS4wNjUyQzEzLjU5MDkgMTUuMzA3MyAxMy4yOTY2IDE1LjUzNTIgMTMuMDI2MSAxNS43MjUxQzEyLjc4ODggMTUuODkxNyAxMi41MjAxIDE2LjA2NCAxMi4yNDE5IDE2LjIzMzJDMTEuMTY5NSAxNi44ODUzIDEwLjYzMzMgMTcuMjExNCAxMC4xNTI0IDE2Ljg1MDRDOS42NzE1IDE2LjQ4OTQgOS42Mjc3OSAxNS43MzM2IDkuNTQwMzggMTQuMjIyMkM5LjUxNTY2IDEzLjc5NDcgOS41IDEzLjM3NTcgOS41IDEzQzkuNSAxMi42MjQzIDkuNTE1NjYgMTIuMjA1MyA5LjU0MDM4IDExLjc3NzhDOS42Mjc3OSAxMC4yNjY0IDkuNjcxNSA5LjUxMDYxIDEwLjE1MjQgOS4xNDk2QzEwLjYzMzMgOC43ODg1OSAxMS4xNjk1IDkuMTE0NjYgMTIuMjQxOSA5Ljc2Njc5QzEyLjUyMDEgOS45MzU5NyAxMi43ODg4IDEwLjEwODMgMTMuMDI2MSAxMC4yNzQ5QzEzLjI5NjYgMTAuNDY0OCAxMy41OTA5IDEwLjY5MjcgMTMuODg3NiAxMC45MzQ4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
  */
-export const StopwatchPlay:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const StopwatchPlay: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle opacity="0.5" cx="12" cy="13" r="9" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M10 2H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCAxNkgzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTEwIDExSDMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTkuMTI1IDEwLjY4NTJDMjAuNzY3IDExLjYzMzIgMjEuNTg4IDEyLjEwNzIgMjEuODQ3OCAxMi43MzQ0QzIyLjA1MDcgMTMuMjI0NSAyMi4wNTA3IDEzLjc3NTEgMjEuODQ3OCAxNC4yNjUxQzIxLjU4OCAxNC44OTI0IDIwLjc2NyAxNS4zNjY0IDE5LjEyNSAxNi4zMTQ0QzE3LjQ4MyAxNy4yNjIzIDE2LjY2MiAxNy43MzYzIDE1Ljk4ODkgMTcuNjQ3N0MxNS40NjMxIDE3LjU3ODUgMTQuOTg2MiAxNy4zMDMyIDE0LjY2MzMgMTYuODgyNEMxNC4yNSAxNi4zNDM3IDE0LjI1IDE1LjM5NTggMTQuMjUgMTMuNDk5OEMxNC4yNSAxMS42MDM4IDE0LjI1IDEwLjY1NTggMTQuNjYzMyAxMC4xMTcyQzE0Ljk4NjIgOS42OTYzNyAxNS40NjMxIDkuNDIxMDYgMTUuOTg4OSA5LjM1MTgyQzE2LjY2MiA5LjI2MzIxIDE3LjQ4MyA5LjczNzIgMTkuMTI1IDEwLjY4NTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0yMCA2TDkuNSA2TTMgNkw1LjI1IDYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const PlaaylistMinimalistic:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const PlaaylistMinimalistic: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M10 16H3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M10 11H3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

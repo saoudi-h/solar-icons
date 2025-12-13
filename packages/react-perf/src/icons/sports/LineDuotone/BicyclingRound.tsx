@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE0IiBjeT0iNCIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIG9wYWNpdHk9IjAuNSIgY3g9IjYiIGN5PSIxOCIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIG9wYWNpdHk9IjAuNSIgY3g9IjE4IiBjeT0iMTgiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE4LjQ5OTkgOS45OTk5N0gxNC41ODIyQzE0LjIwNTIgOS45OTk5NyAxMy44MzkzIDkuODcyMTMgMTMuNTQ0NCA5LjYzNzMzTDExLjM4NiA3LjkxOTE2QzEwLjExOTMgNi45MTA4NCA4LjI1MTY4IDcuMjcxMDIgNy40NTA4MyA4LjY3ODA2QzYuNjc1NjIgMTAuMDQwMSA3LjI1MTkyIDExLjc3MzYgOC42ODgyOSAxMi40MDA0TDExLjc3OSAxMy43NDlDMTIuNzMxMiAxNC4xNjQ2IDEzLjE2OTUgMTUuMjcwOCAxMi43NjAzIDE2LjIyNThMMTEuOTk5OSAxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
  */
-export const BicyclingRound:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const BicyclingRound: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="14" cy="4" r="2" stroke="currentColor" strokeWidth="1.5"/>
 <circle opacity="0.5" cx="6" cy="18" r="3" stroke="currentColor" strokeWidth="1.5"/>

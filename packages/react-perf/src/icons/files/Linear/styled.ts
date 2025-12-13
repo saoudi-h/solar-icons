@@ -1,0 +1,15 @@
+export { CloudFile as CloudFileLinear } from './CloudFile';
+export { CodeFile as CodeFileLinear } from './CodeFile';
+export { FigmaFile as FigmaFileLinear } from './FigmaFile';
+export { File as FileLinear } from './File';
+export { FileCheck as FileCheckLinear } from './FileCheck';
+export { FileCorrupted as FileCorruptedLinear } from './FileCorrupted';
+export { FileDownload as FileDownloadLinear } from './FileDownload';
+export { FileFavourite as FileFavouriteLinear } from './FileFavourite';
+export { FileLeft as FileLeftLinear } from './FileLeft';
+export { FileRemove as FileRemoveLinear } from './FileRemove';
+export { FileRight as FileRightLinear } from './FileRight';
+export { FileSend as FileSendLinear } from './FileSend';
+export { FileSmile as FileSmileLinear } from './FileSmile';
+export { FileText as FileTextLinear } from './FileText';
+export { ZipFile as ZipFileLinear } from './ZipFile';

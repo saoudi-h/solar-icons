@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCAxNC4zQzEwLjUyMDcgMTQuNzY4NiAxMC44MTI2IDE1LjAzMTQgMTEuMzMzMyAxNS41TDE0IDEyLjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNOSA2VjVDOSAzLjM0MzE1IDEwLjM0MzEgMiAxMiAyQzEzLjY1NjkgMiAxNSAzLjM0MzE1IDE1IDVWNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMC4yMjM1IDEyLjUyNTdDMTkuNjM4MiA5LjQwNDUyIDE5LjM0NTYgNy44NDM5MyAxOC4yMzQ3IDYuOTIxOTZDMTcuMTIzOCA2IDE1LjUzNjEgNiAxMi4zNjA1IDZIMTEuNjM5M0M4LjQ2Mzc0IDYgNi44NzU5NiA2IDUuNzY1MDYgNi45MjE5NkM0LjY1NDE2IDcuODQzOTMgNC4zNjE1NSA5LjQwNDUyIDMuNzc2MzMgMTIuNTI1N0MyLjk1MzQgMTYuOTE0NiAyLjU0MTk0IDE5LjEwOTEgMy43NDE1NyAyMC41NTQ1QzQuOTQxMTkgMjIgNy4xNzM4OSAyMiAxMS42MzkzIDIySDEyLjM2MDVDMTYuODI1OSAyMiAxOS4wNTg2IDIyIDIwLjI1ODIgMjAuNTU0NUMyMC45NTQyIDE5LjcxNTkgMjEuMTA3OSAxOC42MjUyIDIwLjk1MzYgMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const BagCheck:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const BagCheck: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M10 14.3C10.5207 14.7686 10.8126 15.0314 11.3333 15.5L14 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M9 6V5C9 3.34315 10.3431 2 12 2C13.6569 2 15 3.34315 15 5V6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

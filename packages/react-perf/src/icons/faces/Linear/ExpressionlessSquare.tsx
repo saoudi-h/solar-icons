@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDE2QzEwIDE2IDEwLjg4NDYgMTYgMTIgMTZDMTMuMTE1NCAxNiAxNCAxNiAxNSAxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxlbGxpcHNlIGN4PSIxNSIgY3k9IjEwLjUiIHJ4PSIxIiByeT0iMS41IiBmaWxsPSIjMUMyNzRDIi8+CjxlbGxpcHNlIGN4PSI5IiBjeT0iMTAuNSIgcng9IjEiIHJ5PSIxLjUiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIgMTJDMiA3LjI4NTk1IDIgNC45Mjg5MyAzLjQ2NDQ3IDMuNDY0NDdDNC45Mjg5MyAyIDcuMjg1OTUgMiAxMiAyQzE2LjcxNCAyIDE5LjA3MTEgMiAyMC41MzU1IDMuNDY0NDdDMjIgNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
  */
-export const ExpressionlessSquare:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const ExpressionlessSquare: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M9 16C10 16 10.8846 16 12 16C13.1154 16 14 16 15 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <ellipse cx="15" cy="10.5" rx="1" ry="1.5" fill="currentColor"/>

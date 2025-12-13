@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNCAxMkwxMCAxNk05Ljk5OTk4IDEyTDE0IDE2IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTkgNlY1QzkgMy4zNDMxNSAxMC4zNDMxIDIgMTIgMkMxMy42NTY5IDIgMTUgMy4zNDMxNSAxNSA1VjYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjAuMjIzNSAxMi41MjU3QzE5LjYzODIgOS40MDQ1MiAxOS4zNDU2IDcuODQzOTMgMTguMjM0NyA2LjkyMTk2QzE3LjEyMzggNiAxNS41MzYxIDYgMTIuMzYwNSA2SDExLjYzOTNDOC40NjM3NCA2IDYuODc1OTYgNiA1Ljc2NTA2IDYuOTIxOTZDNC42NTQxNiA3Ljg0MzkzIDQuMzYxNTUgOS40MDQ1MiAzLjc3NjMzIDEyLjUyNTdDMi45NTM0IDE2LjkxNDYgMi41NDE5NCAxOS4xMDkxIDMuNzQxNTcgMjAuNTU0NUM0Ljk0MTE5IDIyIDcuMTczODkgMjIgMTEuNjM5MyAyMkgxMi4zNjA1QzE2LjgyNTkgMjIgMTkuMDU4NiAyMiAyMC4yNTgyIDIwLjU1NDVDMjAuOTU0MiAxOS43MTU5IDIxLjEwNzkgMTguNjI1MiAyMC45NTM2IDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
  */
-export const BagCross:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const BagCross: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M14 12L10 16M9.99998 12L14 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M9 6V5C9 3.34315 10.3431 2 12 2C13.6569 2 15 3.34315 15 5V6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>

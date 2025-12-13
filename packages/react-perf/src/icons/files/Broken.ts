@@ -1,0 +1,15 @@
+export { CloudFile } from './Broken/CloudFile';
+export { CodeFile } from './Broken/CodeFile';
+export { FigmaFile } from './Broken/FigmaFile';
+export { File } from './Broken/File';
+export { FileCheck } from './Broken/FileCheck';
+export { FileCorrupted } from './Broken/FileCorrupted';
+export { FileDownload } from './Broken/FileDownload';
+export { FileFavourite } from './Broken/FileFavourite';
+export { FileLeft } from './Broken/FileLeft';
+export { FileRemove } from './Broken/FileRemove';
+export { FileRight } from './Broken/FileRight';
+export { FileSend } from './Broken/FileSend';
+export { FileSmile } from './Broken/FileSmile';
+export { FileText } from './Broken/FileText';
+export { ZipFile } from './Broken/ZipFile';

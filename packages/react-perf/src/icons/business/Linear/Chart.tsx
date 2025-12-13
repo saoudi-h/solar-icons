@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAyMkgyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIxIDIyVjE0LjVDMjEgMTMuNjcxNiAyMC4zMjg0IDEzIDE5LjUgMTNIMTYuNUMxNS42NzE2IDEzIDE1IDEzLjY3MTYgMTUgMTQuNVYyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTUgMjJWNUMxNSAzLjU4NTc5IDE1IDIuODc4NjggMTQuNTYwNyAyLjQzOTM0QzE0LjEyMTMgMiAxMy40MTQyIDIgMTIgMkMxMC41ODU4IDIgOS44Nzg2OCAyIDkuNDM5MzQgMi40MzkzNEM5IDIuODc4NjggOSAzLjU4NTc5IDkgNVYyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNOSAyMlY5LjVDOSA4LjY3MTU3IDguMzI4NDMgOCA3LjUgOEg0LjVDMy42NzE1NyA4IDMgOC42NzE1NyAzIDkuNVYyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
  */
-export const Chart:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const Chart: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <path d="M22 22H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M21 22V14.5C21 13.6716 20.3284 13 19.5 13H16.5C15.6716 13 15 13.6716 15 14.5V22" stroke="currentColor" strokeWidth="1.5"/>

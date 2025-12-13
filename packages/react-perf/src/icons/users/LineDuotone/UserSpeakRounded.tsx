@@ -7,7 +7,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8ZWxsaXBzZSBvcGFjaXR5PSIwLjUiIGN4PSIxMCIgY3k9IjE3IiByeD0iNyIgcnk9IjQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE5IDJDMTkgMiAyMSAzLjIgMjEgNkMyMSA4LjggMTkgMTAgMTkgMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTcgNEMxNyA0IDE4IDQuNiAxOCA2QzE4IDcuNCAxNyA4IDE3IDgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
  */
-export const UserSpeakRounded:Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const UserSpeakRounded: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
     <IconBase ref={ref} {...props}>
         <circle cx="10" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <ellipse opacity="0.5" cx="10" cy="17" rx="7" ry="4" stroke="currentColor" strokeWidth="1.5"/>
