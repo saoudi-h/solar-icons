@@ -1,5 +1,11 @@
 # @solar-icons/react-perf
 
+## 2.0.2
+
+### Patch Changes
+
+- [`7b2cd99`](https://github.com/saoudi-h/solar-icons/commit/7b2cd9972cd11433dfe3b6aae84ae12ae8bd21c1) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Refactor icon generation system with improved file structure and naming
+
 ## 2.0.1
 
 ### Patch Changes
