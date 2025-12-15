@@ -1,5 +1,11 @@
 # @solar-icons/react-perf
 
+## 2.0.3
+
+### Patch Changes
+
+- [`5087588`](https://github.com/saoudi-h/solar-icons/commit/5087588f42724808f4b8914ae02806c9bcb601fc) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Update tsdown config to generate proper lib/\* exports structure
+
 ## 2.0.2
 
 ### Patch Changes
