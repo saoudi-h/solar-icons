@@ -41,9 +41,9 @@
             "types": "./dist/types/index.d.ts",
             "import": "./dist/index.mjs"
         },
-        "./lib": {
-            "types": "./dist/types/lib/index.d.ts",
-            "import": "./dist/lib/index.mjs"
+        "./lib/*": {
+            "types": "./dist/types/lib/*.d.ts",
+            "import": "./dist/lib/*.mjs"
         },
         "./category": {
             "types": "./dist/types/icons/index.d.ts",

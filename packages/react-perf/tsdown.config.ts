@@ -16,6 +16,7 @@ function genEntries(styles: string[]) {
     const entries: Record<string, string> = {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
+        'lib/types': './src/lib/types.ts',
     }
 
     for (const style of styles) {
@@ -73,9 +74,9 @@ const config: UserConfig = defineConfig({
                 types: './dist/types/index.d.ts',
                 import: './dist/index.mjs',
             }
-            pkg['./lib'] = {
-                types: './dist/types/lib/index.d.ts',
-                import: './dist/lib/index.mjs',
+            pkg['./lib/*'] = {
+                types: './dist/types/lib/*.d.ts',
+                import: './dist/lib/*.mjs',
             }
 
             pkg['./category'] = {
