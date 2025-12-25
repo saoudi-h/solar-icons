@@ -27,13 +27,6 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
      * @default false
      */
     mirrored?: boolean
-
-    /**
-     * Accessibility label
-     */
-    alt?: string
 }
 
-export type Icon = React.ForwardRefExoticComponent<
-    IconProps & React.RefAttributes<any>
->
+export type Icon = React.ForwardRefExoticComponent<IconProps & React.RefAttributes<any>>
