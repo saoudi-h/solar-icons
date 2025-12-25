@@ -6,10 +6,10 @@ import { IconContainer } from '@/components/ui/icon-container'
 import { MotionHeading } from '@/components/ui/motion'
 import { cn } from '@/lib/utils'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
-import * as solar from '@solar-icons/react/ssr/category'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import React, { useState } from 'react'
 import { MotionShapeSvg } from './ShapeSvg'
+import { Globus, Link, PaletteRound, PlugCircle } from '@solar-icons/react/ssr'
 
 export interface FeatureCardProps {
     title: string
@@ -22,22 +22,22 @@ const features: FeatureCardProps[] = [
     {
         title: 'Multi-Style Support',
         content: '7,000+ Unique Icons Across Diverse Categories',
-        Icon: solar.Tools.PaletteRound,
+        Icon: PaletteRound,
     },
     {
         title: 'Cross-Framework Compatibility',
         content: 'Multi-Style Variations: Bold, Linear, Outline, and more',
-        Icon: solar.TextFormatting.Link,
+        Icon: Link,
     },
     {
         title: 'Easy Integration',
         content: 'Optimized for Performance and Versatility',
-        Icon: solar.Devices.PlugCircle,
+        Icon: PlugCircle,
     },
     {
         title: 'Adaptations for Multiple Frameworks',
         content: 'Optimized for Performance and Versatility',
-        Icon: solar.Map.Globus,
+        Icon: Globus,
     },
 ]
 
