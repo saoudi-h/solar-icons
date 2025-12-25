@@ -64,7 +64,7 @@
         "picocolors": "^1.1.1",
         "prettier": "^3.7.4",
         "react": "19.2.3",
-        "react-native": "^0.76.6",
+        "react-native": "^0.83.1",
         "react-native-svg": "^15.15.1",
         "rimraf": "^6.1.2",
         "tsdown": "^0.18.3",
