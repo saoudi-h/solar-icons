@@ -58,18 +58,18 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
-        "@types/node": "^24.10.1",
+        "@types/node": "^25.0.3",
         "@types/react": "^19.2.7",
-        "typescript": "^5.9.3",
         "dotenv": "^17.0.1",
         "picocolors": "^1.1.1",
         "prettier": "^3.7.4",
         "react": "19.2.3",
         "react-native": "^0.76.6",
-        "react-native-svg": "^15.9.0",
+        "react-native-svg": "^15.15.1",
         "rimraf": "^6.1.2",
-        "tsdown": "^0.17.3",
-        "tsx": "^4.21.0"
+        "tsdown": "^0.18.3",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
     },
     "peerDependencies": {
         "react": ">= 16.8",
