@@ -18,12 +18,12 @@ export default function IconsPage() {
             `}>
             <div
                 className={`
-                  relative flex w-full max-w-fd-container flex-col items-center
+                  relative flex w-full container flex-col items-center
                   self-center
                 `}>
                 <div
                     className={`
-                      absolute mx-4 h-full w-full max-w-fd-container gap-2
+                      absolute mx-4 h-full w-full container gap-2
                       self-center overflow-hidden rounded-2xl bg-default-100
                       px-3 py-12
                       md:rounded-3xl md:px-4
@@ -74,7 +74,7 @@ function Loading() {
     return (
         <section
             className={`
-              relative flex w-full max-w-fd-container flex-col items-center
+              relative flex w-full container flex-col items-center
               self-center px-3
               md:px-0
             `}>

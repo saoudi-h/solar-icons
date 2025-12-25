@@ -12,7 +12,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
             <section
                 className={cn(
                     `
-                      relative flex h-full w-full max-w-fd-container flex-1
+                      relative flex h-full w-full container flex-1
                       flex-col items-center self-center px-0
                     `,
                     className

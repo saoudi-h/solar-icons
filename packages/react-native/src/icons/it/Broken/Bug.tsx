@@ -1,0 +1,27 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNCAyMS43MTAxQzEzLjM2NjMgMjEuODk4NyAxMi42OTUgMjIgMTIgMjJDOC4xMzQwMSAyMiA1IDE4Ljg2NiA1IDE1VjExLjkzNzVDNSA5Ljc2Mjg4IDYuNzYyODggOCA4LjkzNzUgOEgxNS4wNjI1QzE3LjIzNzEgOCAxOSA5Ljc2Mjg4IDE5IDExLjkzNzVWMTVDMTkgMTYuOTA3MyAxOC4yMzcyIDE4LjYzNjQgMTcgMTkuODk5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTguMjUgNy41QzguMjUgNy4wODU3OSA3LjkxNDIxIDYuNzUgNy41IDYuNzVDNy4wODU3OSA2Ljc1IDYuNzUgNy4wODU3OSA2Ljc1IDcuNUg4LjI1Wk03LjYzNDUyIDQuNTgyODFDNy40MDQxMSA0LjkyNzAyIDcuNDk2MzYgNS4zOTI4NSA3Ljg0MDU4IDUuNjIzMjZDOC4xODQ3OSA1Ljg1MzY3IDguNjUwNjIgNS43NjE0MSA4Ljg4MTAzIDUuNDE3MTlMNy42MzQ1MiA0LjU4MjgxWk0xNy4yNSA4LjVWNy41SDE1Ljc1VjguNUgxNy4yNVpNNi43NSA3LjVWOC41SDguMjVWNy41SDYuNzVaTTE3LjI1IDcuNUMxNy4yNSA0LjYwMDUxIDE0Ljg5OTUgMi4yNSAxMiAyLjI1VjMuNzVDMTQuMDcxMSAzLjc1IDE1Ljc1IDUuNDI4OTMgMTUuNzUgNy41SDE3LjI1Wk0xMiAyLjI1QzEwLjE3OSAyLjI1IDguNTc1MDYgMy4xNzc3MSA3LjYzNDUyIDQuNTgyODFMOC44ODEwMyA1LjQxNzE5QzkuNTU1MDEgNC40MTAzMiAxMC43MDA1IDMuNzUgMTIgMy43NVYyLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTkgMTRIMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNSAxNEgyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE0LjUgMy41TDE3IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOS41IDMuNUw3IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjAuNSAyMC4wMDAyTDE4LjUgMTkuMjAwMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMC41IDcuOTk5OEwxOC41IDguNzk5OCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zLjUgMjAuMDAwMkw1LjUgMTkuMjAwMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zLjUgNy45OTk4TDUuNSA4Ljc5OTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMjEuNVYxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const Bug: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M14 21.7101C13.3663 21.8987 12.695 22 12 22C8.13401 22 5 18.866 5 15V11.9375C5 9.76288 6.76288 8 8.9375 8H15.0625C17.2371 8 19 9.76288 19 11.9375V15C19 16.9073 18.2372 18.6364 17 19.899" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M8.25 7.5C8.25 7.08579 7.91421 6.75 7.5 6.75C7.08579 6.75 6.75 7.08579 6.75 7.5H8.25ZM7.63452 4.58281C7.40411 4.92702 7.49636 5.39285 7.84058 5.62326C8.18479 5.85367 8.65062 5.76141 8.88103 5.41719L7.63452 4.58281ZM17.25 8.5V7.5H15.75V8.5H17.25ZM6.75 7.5V8.5H8.25V7.5H6.75ZM17.25 7.5C17.25 4.60051 14.8995 2.25 12 2.25V3.75C14.0711 3.75 15.75 5.42893 15.75 7.5H17.25ZM12 2.25C10.179 2.25 8.57506 3.17771 7.63452 4.58281L8.88103 5.41719C9.55501 4.41032 10.7005 3.75 12 3.75V2.25Z" fill="currentColor"/>
+<Path d="M19 14H22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M5 14H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M14.5 3.5L17 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M9.5 3.5L7 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M20.5 20.0002L18.5 19.2002" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M20.5 7.9998L18.5 8.7998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M3.5 20.0002L5.5 19.2002" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M3.5 7.9998L5.5 8.7998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M12 21.5V15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+Bug.displayName = "Bug"

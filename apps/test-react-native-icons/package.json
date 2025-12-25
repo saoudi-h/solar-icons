@@ -1,0 +1,43 @@
+{
+  "name": "test-react-native-icons",
+  "version": "1.0.0",
+  "description": "Test application for @solar-icons/react-native package",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "pre-commit": ""
+  },
+  "dependencies": {
+    "@solar-icons/react-native": "file:../../packages/react-native",
+    "expo": "~54.0.30",
+    "expo-status-bar": "~3.0.9",
+    "react": "19.2.3",
+    "react-native": "0.83.1",
+    "react-native-svg": "^15.15.1"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.7",
+    "typescript": "~5.9.2"
+  },
+  "keywords": [
+    "solar-icons",
+    "react-native",
+    "expo",
+    "test",
+    "demo"
+  ],
+  "author": {
+    "name": "Saoudi Hakim",
+    "url": "https://hakimsaoudi.dev",
+    "email": "saoudihakim@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saoudi-h/solar-icons.git",
+    "directory": "apps/test-react-native-icons"
+  }
+}

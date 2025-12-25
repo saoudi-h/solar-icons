@@ -1,0 +1,24 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIyIDE2Ljc3MjhDMjAuNDEyMyAxNi4zOTg3IDE5LjU5NTUgMTUuNDc5NiAxOC45MTk5IDE0LjQ1NzRDMTguNDk2NSAxMy44MTY4IDE3LjU2NTUgMTMuODU1OCAxNy4xMDU1IDE0LjQ3MDZDMTYuMDU0MSAxNS44NzYyIDE0LjQ4NDQgMTcuMDAwNCAxMiAxNy4wMDA0QzkuNDkzNDUgMTcuMDAwNCA3LjkxODA2IDE1LjU3IDYuODY2NTEgMTQuMjIzOUM2LjQyNzIxIDEzLjY2MTYgNS41ODYxNyAxMy42NjkxIDUuMjAxNjggMTQuMjcwMkM0LjUwMDc4IDE1LjM2NiAzLjY4NDAyIDE2LjM3NiAyIDE2Ljc3MjgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjIgMjEuNzcyOEMyMC40MTIzIDIxLjM5ODcgMTkuNTk1NSAyMC40Nzk2IDE4LjkxOTkgMTkuNDU3NEMxOC40OTY1IDE4LjgxNjggMTcuNTY1NSAxOC44NTU4IDE3LjEwNTUgMTkuNDcwNkMxNi4wNTQxIDIwLjg3NjIgMTQuNDg0NCAyMi4wMDA0IDEyIDIyLjAwMDRDOS40OTM0NSAyMi4wMDA0IDcuOTE4MDYgMjAuNTcgNi44NjY1MSAxOS4yMjM5QzYuNDI3MjEgMTguNjYxNiA1LjU4NjE3IDE4LjY2OTEgNS4yMDE2OCAxOS4yNzAyQzQuNTAwNzggMjAuMzY2IDMuNjg0MDIgMjEuMzc2IDIgMjEuNzcyOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNy45MTcxIDExQzE3LjQ0MSA4LjE2MjI5IDE0Ljk3MyA2IDEyIDZDOS4wMjcwNSA2IDYuNTU5MDkgOC4xNjIyOSA2LjA4MzAxIDExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTEyIDJWMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxMkwyMSAxMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zIDEyTDIgMTIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xOS4wNzAzIDQuOTI5NjlMMTguNjc3NSA1LjMyMjUyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNS4zMjIyNyA1LjMyMjI3TDQuOTI5NDMgNC45Mjk0MyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const WaterSun: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path opacity="0.5" d="M22 16.7728C20.4123 16.3987 19.5955 15.4796 18.9199 14.4574C18.4965 13.8168 17.5655 13.8558 17.1055 14.4706C16.0541 15.8762 14.4844 17.0004 12 17.0004C9.49345 17.0004 7.91806 15.57 6.86651 14.2239C6.42721 13.6616 5.58617 13.6691 5.20168 14.2702C4.50078 15.366 3.68402 16.376 2 16.7728" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<Path d="M22 21.7728C20.4123 21.3987 19.5955 20.4796 18.9199 19.4574C18.4965 18.8168 17.5655 18.8558 17.1055 19.4706C16.0541 20.8762 14.4844 22.0004 12 22.0004C9.49345 22.0004 7.91806 20.57 6.86651 19.2239C6.42721 18.6616 5.58617 18.6691 5.20168 19.2702C4.50078 20.366 3.68402 21.376 2 21.7728" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<Path d="M17.9171 11C17.441 8.16229 14.973 6 12 6C9.02705 6 6.55909 8.16229 6.08301 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M12 2V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M22 12L21 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M3 12L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path opacity="0.5" d="M19.0703 4.92969L18.6775 5.32252" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path opacity="0.5" d="M5.32227 5.32227L4.92943 4.92943" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+WaterSun.displayName = "WaterSun"

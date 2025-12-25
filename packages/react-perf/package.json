@@ -63,10 +63,9 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
-        "@types/node": "^24.10.1",
+        "@types/node": "^25.0.3",
         "@types/react": "^19.2.7",
         "@types/react-dom": "^19.2.3",
-        "typescript": "^5.9.3",
         "@vitejs/plugin-react": "^5.1.2",
         "dotenv": "^17.0.1",
         "picocolors": "^1.1.1",
@@ -74,9 +73,10 @@
         "react": "19.2.3",
         "react-dom": "^19.2.3",
         "rimraf": "^6.1.2",
-        "tsdown": "^0.17.3",
+        "tsdown": "^0.18.3",
         "tsx": "^4.21.0",
-        "vitest": "^4.0.15"
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.16"
     },
     "peerDependencies": {
         "react": ">= 16.8",

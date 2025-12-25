@@ -4,9 +4,7 @@ const withMDX = createMDX()
 
 /** @type {import('next').NextConfig} */
 const config = {
-    experimental: {
-        reactCompiler: true,
-    },
+    reactCompiler: true,
     reactStrictMode: true,
     typescript: {
         ignoreBuildErrors: true,

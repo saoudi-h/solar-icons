@@ -1,0 +1,15 @@
+export { Settings as SettingsOutline } from './Settings';
+export { SettingsMinimalistic as SettingsMinimalisticOutline } from './SettingsMinimalistic';
+export { Tuning as TuningOutline } from './Tuning';
+export { Tuning2 as Tuning2Outline } from './Tuning2';
+export { Tuning3 as Tuning3Outline } from './Tuning3';
+export { Tuning4 as Tuning4Outline } from './Tuning4';
+export { TuningSquare as TuningSquareOutline } from './TuningSquare';
+export { TuningSquare2 as TuningSquare2Outline } from './TuningSquare2';
+export { Widget as WidgetOutline } from './Widget';
+export { Widget2 as Widget2Outline } from './Widget2';
+export { Widget3 as Widget3Outline } from './Widget3';
+export { Widget4 as Widget4Outline } from './Widget4';
+export { Widget5 as Widget5Outline } from './Widget5';
+export { Widget6 as Widget6Outline } from './Widget6';
+export { WidgetAdd as WidgetAddOutline } from './WidgetAdd';

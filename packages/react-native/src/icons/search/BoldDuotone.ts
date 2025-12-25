@@ -1,0 +1,12 @@
+export { Magnifer } from './BoldDuotone/Magnifer';
+export { MagniferBug } from './BoldDuotone/MagniferBug';
+export { MagniferZoomIn } from './BoldDuotone/MagniferZoomIn';
+export { MagniferZoomOut } from './BoldDuotone/MagniferZoomOut';
+export { MinimalisticMagnifer } from './BoldDuotone/MinimalisticMagnifer';
+export { MinimalisticMagniferBug } from './BoldDuotone/MinimalisticMagniferBug';
+export { MinimalisticMagniferZoomIn } from './BoldDuotone/MinimalisticMagniferZoomIn';
+export { MinimalisticMagniferZoomOut } from './BoldDuotone/MinimalisticMagniferZoomOut';
+export { RoundedMagnifer } from './BoldDuotone/RoundedMagnifer';
+export { RoundedMagniferBug } from './BoldDuotone/RoundedMagniferBug';
+export { RoundedMagniferZoomIn } from './BoldDuotone/RoundedMagniferZoomIn';
+export { RoundedMagniferZoomOut } from './BoldDuotone/RoundedMagniferZoomOut';

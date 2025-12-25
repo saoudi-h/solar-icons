@@ -1,0 +1,14 @@
+export { AddFolder as AddFolderLinear } from './AddFolder';
+export { Folder as FolderLinear } from './Folder';
+export { Folder2 as Folder2Linear } from './Folder2';
+export { FolderCheck as FolderCheckLinear } from './FolderCheck';
+export { FolderCloud as FolderCloudLinear } from './FolderCloud';
+export { FolderError as FolderErrorLinear } from './FolderError';
+export { FolderFavouriteBookmark as FolderFavouriteBookmarkLinear } from './FolderFavouriteBookmark';
+export { FolderFavouriteStar as FolderFavouriteStarLinear } from './FolderFavouriteStar';
+export { FolderOpen as FolderOpenLinear } from './FolderOpen';
+export { FolderPathConnect as FolderPathConnectLinear } from './FolderPathConnect';
+export { FolderSecurity as FolderSecurityLinear } from './FolderSecurity';
+export { FolderWithFiles as FolderWithFilesLinear } from './FolderWithFiles';
+export { MoveToFolder as MoveToFolderLinear } from './MoveToFolder';
+export { RemoveFolder as RemoveFolderLinear } from './RemoveFolder';

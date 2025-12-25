@@ -1,0 +1,19 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi41IDVDMTQuMzg1NiA1IDE1LjMyODQgNSAxNS45MTQyIDUuNTg1NzlDMTYuNSA2LjE3MTU3IDE2LjUgNy4xMTQzOCAxNi41IDlWMTVDMTYuNSAxNi44ODU2IDE2LjUgMTcuODI4NCAxNS45MTQyIDE4LjQxNDJDMTUuMzI4NCAxOSAxNC4zODU2IDE5IDEyLjUgMTlIMTEuNUM5LjYxNDM4IDE5IDguNjcxNTcgMTkgOC4wODU3OSAxOC40MTQyQzcuNSAxNy44Mjg0IDcuNSAxNi44ODU2IDcuNSAxNUw3LjUgOUM3LjUgNy4xMTQzOCA3LjUgNi4xNzE1NyA4LjA4NTc5IDUuNTg1NzlDOC42NzE1NyA1IDkuNjE0MzggNSAxMS41IDVMMTIuNSA1WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMjIgMTlIMjEuNUMyMC4xMTkzIDE5IDE5IDE3Ljg4MDcgMTkgMTYuNUwxOSA3LjVDMTkgNi4xMTkyOSAyMC4xMTkzIDUgMjEuNSA1TDIyIDUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxOUgyLjVDMy44ODA3MSAxOSA1IDE3Ljg4MDcgNSAxNi41TDUgNy41QzUgNi4xMTkyOSAzLjg4MDcxIDUgMi41IDVMMiA1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const PostsCarouselHorizontal: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M12.5 5C14.3856 5 15.3284 5 15.9142 5.58579C16.5 6.17157 16.5 7.11438 16.5 9V15C16.5 16.8856 16.5 17.8284 15.9142 18.4142C15.3284 19 14.3856 19 12.5 19H11.5C9.61438 19 8.67157 19 8.08579 18.4142C7.5 17.8284 7.5 16.8856 7.5 15L7.5 9C7.5 7.11438 7.5 6.17157 8.08579 5.58579C8.67157 5 9.61438 5 11.5 5L12.5 5Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M22 19H21.5C20.1193 19 19 17.8807 19 16.5L19 7.5C19 6.11929 20.1193 5 21.5 5L22 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M2 19H2.5C3.88071 19 5 17.8807 5 16.5L5 7.5C5 6.11929 3.88071 5 2.5 5L2 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+PostsCarouselHorizontal.displayName = "PostsCarouselHorizontal"

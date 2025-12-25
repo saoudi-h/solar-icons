@@ -1,0 +1,21 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDE5QzkgMjAuNjU2OSA3LjY1Njg1IDIyIDYgMjJDNC4zNDMxNSAyMiAzIDIwLjY1NjkgMyAxOUMzIDE3LjM0MzEgNC4zNDMxNSAxNiA2IDE2QzcuNjU2ODUgMTYgOSAxNy4zNDMxIDkgMTlaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0yMSAxN0MyMSAxOC42NTY5IDE5LjY1NjkgMjAgMTggMjBDMTYuMzQzMSAyMCAxNSAxOC42NTY5IDE1IDE3QzE1IDE1LjM0MzEgMTYuMzQzMSAxNCAxOCAxNEMxOS42NTY5IDE0IDIxIDE1LjM0MzEgMjEgMTdaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTkgMTlWOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0yMSAxN1Y2IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNS43MzUxIDMuNzU0NjZMMTEuNzM1MSA1LjA4Nzk5QzEwLjQxNTEgNS41MjgwMSA5Ljc1NTAzIDUuNzQ4MDEgOS4zNzc1MiA2LjI3MTc5QzkgNi43OTU1NiA5IDcuNDkxMjggOSA4Ljg4MjczVjExLjk5OTdMMjEgNy45OTk2OVY3LjU0OTM5QzIxIDUuMDE2OTMgMjEgMy43NTA3IDIwLjE2OTQgMy4xNTIwNkMxOS4zMzg4IDIuNTUzNDEgMTguMTM3NiAyLjk1MzgzIDE1LjczNTEgMy43NTQ2NloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const MusicNote: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M9 19C9 20.6569 7.65685 22 6 22C4.34315 22 3 20.6569 3 19C3 17.3431 4.34315 16 6 16C7.65685 16 9 17.3431 9 19Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M21 17C21 18.6569 19.6569 20 18 20C16.3431 20 15 18.6569 15 17C15 15.3431 16.3431 14 18 14C19.6569 14 21 15.3431 21 17Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path opacity="0.5" d="M9 19V8" stroke="currentColor" strokeWidth="1.5"/>
+<Path opacity="0.5" d="M21 17V6" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M15.7351 3.75466L11.7351 5.08799C10.4151 5.52801 9.75503 5.74801 9.37752 6.27179C9 6.79556 9 7.49128 9 8.88273V11.9997L21 7.99969V7.54939C21 5.01693 21 3.7507 20.1694 3.15206C19.3388 2.55341 18.1376 2.95383 15.7351 3.75466Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+MusicNote.displayName = "MusicNote"

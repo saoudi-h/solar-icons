@@ -1,0 +1,20 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path, Rect } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy4xNzE1NyAzLjQ2NDQ3QzQuMzQzMTUgMiA2LjIyODc2IDIgMTAgMkgxNEMxNy43NzEyIDIgMTkuNjU2OSAyIDIwLjgyODQgMy40NjQ0N0MyMiA0LjkyODkzIDIyIDcuMjg1OTUgMjIgMTJDMjIgMTYuNzE0IDIyIDE5LjA3MTEgMjAuODI4NCAyMC41MzU1QzE5LjY1NjkgMjIgMTcuNzcxMiAyMiAxNCAyMkgxMEM2LjIyODc2IDIyIDQuMzQzMTUgMjIgMy4xNzE1NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTUgMTdMMTUuODk0NCAxNi41NTI4QzE2LjU3MiAxNi4yMTQgMTcgMTUuNTIxNSAxNyAxNC43NjM5VjEwLjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cmVjdCB4PSI2IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiByeD0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTUuNSA5QzE1LjUgOC4xNzE1NyAxNi4xNzE2IDcuNSAxNyA3LjVDMTcuODI4NCA3LjUgMTguNSA4LjE3MTU3IDE4LjUgOUMxOC41IDkuODI4NDMgMTcuODI4NCAxMC41IDE3IDEwLjVDMTYuMTcxNiAxMC41IDE1LjUgOS44Mjg0MyAxNS41IDlaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const Turntable: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M2 12C2 7.28595 2 4.92893 3.17157 3.46447C4.34315 2 6.22876 2 10 2H14C17.7712 2 19.6569 2 20.8284 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.8284 20.5355C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M15 17L15.8944 16.5528C16.572 16.214 17 15.5215 17 14.7639V10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Rect x="6" y="8" width="8" height="8" rx="4" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M15.5 9C15.5 8.17157 16.1716 7.5 17 7.5C17.8284 7.5 18.5 8.17157 18.5 9C18.5 9.82843 17.8284 10.5 17 10.5C16.1716 10.5 15.5 9.82843 15.5 9Z" stroke="currentColor" strokeWidth="1.5"/>
+    </IconBase>
+))
+
+Turntable.displayName = "Turntable"

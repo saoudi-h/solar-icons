@@ -1,0 +1,19 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS41IDE1LjVDOS44NDMxNSAxNS41IDguNSAxNC4xNTY5IDguNSAxMi41VjEwLjVNMTEuNSAxNS41QzEzLjE1NjkgMTUuNSAxNC41IDE0LjE1NjkgMTQuNSAxMi41VjEwLjVNMTEuNSAxNS41VjEwLjVNMTQuNSAxMC41QzE0LjUgOC44NDMxNSAxMy4xNTY5IDcuNSAxMS41IDcuNUM5Ljg0MzE1IDcuNSA4LjUgOC44NDMxNSA4LjUgMTAuNU0xNC41IDEwLjVIOC41TTE0LjU3MTUgMTEuNUgxNk03IDExLjVIOC41TTE0LjUgMTRMMTUuNSAxNC41TTguNSAxNEw3LjUgMTQuNU0xNC41IDlMMTUuNSA4LjVNOC41IDlMNy41IDguNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMCAyMEwyMiAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik02Ljc1IDMuMjcwOTNDOC4xNDczMiAyLjQ2MjYyIDkuNzY5NjQgMiAxMS41IDJDMTYuNzQ2NyAyIDIxIDYuMjUzMjkgMjEgMTEuNUMyMSAxNi43NDY3IDE2Ljc0NjcgMjEgMTEuNSAyMUM2LjI1MzI5IDIxIDIgMTYuNzQ2NyAyIDExLjVDMiA5Ljc2OTY0IDIuNDYyNjIgOC4xNDczMiAzLjI3MDkzIDYuNzUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const MinimalisticMagniferBug: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M11.5 15.5C9.84315 15.5 8.5 14.1569 8.5 12.5V10.5M11.5 15.5C13.1569 15.5 14.5 14.1569 14.5 12.5V10.5M11.5 15.5V10.5M14.5 10.5C14.5 8.84315 13.1569 7.5 11.5 7.5C9.84315 7.5 8.5 8.84315 8.5 10.5M14.5 10.5H8.5M14.5715 11.5H16M7 11.5H8.5M14.5 14L15.5 14.5M8.5 14L7.5 14.5M14.5 9L15.5 8.5M8.5 9L7.5 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M20 20L22 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M6.75 3.27093C8.14732 2.46262 9.76964 2 11.5 2C16.7467 2 21 6.25329 21 11.5C21 16.7467 16.7467 21 11.5 21C6.25329 21 2 16.7467 2 11.5C2 9.76964 2.46262 8.14732 3.27093 6.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+MinimalisticMagniferBug.displayName = "MinimalisticMagniferBug"

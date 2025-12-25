@@ -13,6 +13,7 @@ import { FloatingDrawer } from './FloatingDrawer'
 import { IconVariants } from './IconVariants'
 import { ReactCode } from './ReactCode'
 import { ReactPerfCode } from './ReactPerf'
+import { ReactNativeCode } from './ReactNativeCode'
 import { VueCode } from './VueCode'
 import { NuxtCode } from './NuxtCode'
 import { Tags } from './Tags'
@@ -99,6 +100,7 @@ const Content: FC = () => {
                     { title: 'Tags', value: 'tags', content: <Tags /> },
                     { title: 'React', value: 'react', content: <ReactCode /> },
                     { title: 'React Perf', value: 'react-perf', content: <ReactPerfCode /> },
+                    { title: 'React Native', value: 'react-native', content: <ReactNativeCode /> },
                     { title: 'Vue', value: 'vue', content: <VueCode /> },
                     { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },
                 ]}

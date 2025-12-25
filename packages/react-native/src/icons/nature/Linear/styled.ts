@@ -1,0 +1,9 @@
+export { Bonfire as BonfireLinear } from './Bonfire';
+export { Fire as FireLinear } from './Fire';
+export { FireMinimalistic as FireMinimalisticLinear } from './FireMinimalistic';
+export { FireSquare as FireSquareLinear } from './FireSquare';
+export { Flame as FlameLinear } from './Flame';
+export { Leaf as LeafLinear } from './Leaf';
+export { Suitcase as SuitcaseLinear } from './Suitcase';
+export { SuitcaseLines as SuitcaseLinesLinear } from './SuitcaseLines';
+export { SuitcaseTag as SuitcaseTagLinear } from './SuitcaseTag';
