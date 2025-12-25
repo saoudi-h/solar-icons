@@ -1,0 +1,17 @@
+{
+    "extends": "@solar-icons/tsconfig/base.json",
+    "compilerOptions": {
+        "jsx": "react-native",
+        "types": [
+            "node"
+        ]
+    },
+    "include": [
+        "src",
+        "scripts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
