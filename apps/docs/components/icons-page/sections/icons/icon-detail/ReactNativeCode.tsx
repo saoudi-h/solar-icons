@@ -20,7 +20,6 @@ export const ReactNativeCode: FC = () => {
 
             <CodeBlockTemplate
                 lang="tsx"
-                title="Style Bundle"
                 code={`import { ${iconName} } from '@solar-icons/react-native/Bold'`}
             />
             <CodeBlockTemplate
@@ -30,7 +29,6 @@ export const ReactNativeCode: FC = () => {
 
             <CodeBlockTemplate
                 lang="tsx"
-                title="Global Styled"
                 code={`import { ${iconName}Bold } from '@solar-icons/react-native'`}
             />
             <CodeBlockTemplate
