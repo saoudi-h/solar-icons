@@ -22,7 +22,7 @@ const IconBase = forwardRef<any, IconProps>((props, ref) => {
             fill="none"
             {...restProps}>
             {mirrored ? (
-                <G transform={[{ scaleX: -1 }]} origin="12, 12">
+                <G transform={[{ translateX: 24 }, { scaleX: -1 }]}>
                     {children}
                 </G>
             ) : (
