@@ -3,14 +3,7 @@ import { G, Svg } from 'react-native-svg'
 import type { IconProps } from './types'
 
 const IconBase = forwardRef<any, IconProps>((props, ref) => {
-    const {
-        alt,
-        color = 'currentColor',
-        size = 24,
-        mirrored = false,
-        children,
-        ...restProps
-    } = props
+    const { color = 'currentColor', size = 24, mirrored = false, children, ...restProps } = props
 
     return (
         <Svg
@@ -22,9 +15,7 @@ const IconBase = forwardRef<any, IconProps>((props, ref) => {
             fill="none"
             {...restProps}>
             {mirrored ? (
-                <G transform={[{ translateX: 24 }, { scaleX: -1 }]}>
-                    {children}
-                </G>
+                <G transform={[{ translateX: 24 }, { scaleX: -1 }]}>{children}</G>
             ) : (
                 children
             )}
