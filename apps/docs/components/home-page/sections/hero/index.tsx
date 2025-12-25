@@ -23,7 +23,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <section
             className={`
-              relative flex w-full max-w-fd-container flex-col items-center
+              relative flex w-full container flex-col items-center
               self-center px-3
               md:px-0
             `}>

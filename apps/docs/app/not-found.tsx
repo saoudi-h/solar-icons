@@ -35,7 +35,7 @@ const NotFound = () => {
             `}>
             <section
                 className={`
-                  relative flex w-full max-w-fd-container flex-col items-center
+                  relative flex w-full max-w-7xl flex-col items-center
                   self-center px-3
                   md:px-0
                 `}>

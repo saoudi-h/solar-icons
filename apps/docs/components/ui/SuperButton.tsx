@@ -6,7 +6,7 @@ import React from 'react'
 import type { ButtonProps } from './button'
 import { Button } from './button'
 
-const MotionButton = motion(Button)
+const MotionButton = motion.create(Button)
 
 interface BaseProps {
     Icon?: React.ReactNode

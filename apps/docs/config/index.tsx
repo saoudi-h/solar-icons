@@ -9,9 +9,10 @@ import {
     Diploma,
     Help,
     House,
+    Rocket,
+    RoundedMagnifer,
     SmartphoneUpdate,
 } from '@solar-icons/react/ssr'
-import * as solar from '@solar-icons/react/ssr/category'
 
 export interface Config {
     footer: FooterProps
@@ -84,13 +85,13 @@ export const config: Config = {
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',
-            Icon: <solar.Search.RoundedMagnifer size={20} />,
+            Icon: <RoundedMagnifer size={20} />,
             variant: 'outline',
         },
         getStarted: {
             label: 'Get Started',
             href: '/docs',
-            Icon: <solar.Astronomy.Rocket size={20} />,
+            Icon: <Rocket size={20} />,
         },
     },
     packageSection: {

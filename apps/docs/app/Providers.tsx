@@ -2,7 +2,7 @@
 import { forcedThemeAtom } from '@/atom/forcedThemeAtom'
 import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@radix-ui/react-tooltip'
-import { RootProvider } from 'fumadocs-ui/provider'
+import { RootProvider } from 'fumadocs-ui/provider/next'
 import { useAtom } from 'jotai'
 import { ReactLenis } from 'lenis/react'
 import { usePathname } from 'next/navigation'

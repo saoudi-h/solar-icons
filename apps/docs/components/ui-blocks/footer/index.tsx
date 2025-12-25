@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
         `}>
             <div
                 className={`
-                  relative mt-6 flex w-full max-w-fd-container flex-col
+                  relative mt-6 flex w-full container flex-col
                   items-center gap-8 self-center py-0
                   md:mx-10 md:mt-12 md:py-12
                 `}>
