@@ -16,7 +16,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 
 - **Massive Collection** → 1,246 icons × 6 styles = **7,476 variations**  
 - **Consistent Multi-Style Design** → Bold, Linear, Outline, BoldDuotone, LineDuotone, Broken  
-- **Multi-Framework Support** → React, Vue, Nuxt (more coming soon)  
+- **Multi-Framework Support** → React, Vue, Nuxt, React Native
 - **DX Features** → IntelliSense previews, JSDoc hints, category imports, global config  
 - **Smart Search** → AI-generated tags for better discoverability  
 - **Performance Options** → Choose between full-featured and lightweight builds  
@@ -29,6 +29,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 |------------------------|-------------|
 | **`@solar-icons/react`**      | Full React integration with global provider, hooks, and live theming |
 | **`@solar-icons/react-perf`** | Lightweight React build, tree-shakeable, no runtime provider |
+| **`@solar-icons/react-native`**| Native SVG icons for React Native and Expo with multiple import strategies |
 | **`@solar-icons/vue`**        | Vue adaptation of the React package with the same rich features |
 | **`@solar-icons/nuxt`**       | Nuxt-optimized wrapper with auto-import, `nuxi` install, global config |
 
