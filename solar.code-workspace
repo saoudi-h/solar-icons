@@ -42,6 +42,14 @@
         {
             "name": "nuxt",
             "path": "packages/nuxt"
+        },
+        {
+            "name": "react-native",
+            "path": "packages/react-native"
+        },
+        {
+            "name": "test-react-native-icons",
+            "path": "apps/test-react-native-icons"
         }
     ],
     "settings": {
