@@ -1,0 +1,24 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Circle, Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02IDE3Ljk4MjdDNC40NDY1NSAxNy45MzU5IDMuNTE5OTggMTcuNzYyNiAyLjg3ODY4IDE3LjEyMTNDMiAxNi4yNDI2IDIgMTQuODI4NCAyIDEyQzIgOS4xNzE1NyAyIDcuNzU3MzYgMi44Nzg2OCA2Ljg3ODY4QzMuNzU3MzYgNiA1LjE3MTU3IDYgOCA2SDE2QzE4LjgyODQgNiAyMC4yNDI2IDYgMjEuMTIxMyA2Ljg3ODY4QzIyIDcuNzU3MzYgMjIgOS4xNzE1NyAyMiAxMkMyMiAxNC44Mjg0IDIyIDE2LjI0MjYgMjEuMTIxMyAxNy4xMjEzQzIwLjQ4IDE3Ljc2MjYgMTkuNTUzNSAxNy45MzU5IDE4IDE3Ljk4MjciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNOSAxMEg2IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE5IDE0TDUgMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTggMTRWMTZDMTggMTguODI4NCAxOCAyMC4yNDI2IDE3LjEyMTMgMjEuMTIxM0MxNi4yNDI2IDIyIDE0LjgyODQgMjIgMTIgMjJDOS4xNzE1NyAyMiA3Ljc1NzM2IDIyIDYuODc4NjggMjEuMTIxM0M2IDIwLjI0MjYgNiAxOC44Mjg0IDYgMTZWMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNy45ODI3IDZDMTcuOTM1OSA0LjQ0NjU1IDE3Ljc2MjYgMy41MTk5OCAxNy4xMjEzIDIuODc4NjhDMTYuMjQyNyAyIDE0LjgyODQgMiAxMiAyQzkuMTcxNTggMiA3Ljc1NzM3IDIgNi44Nzg2OSAyLjg3ODY4QzYuMjM3MzkgMy41MTk5OCA2LjA2NDE0IDQuNDQ2NTUgNi4wMTczMyA2IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxjaXJjbGUgb3BhY2l0eT0iMC41IiBjeD0iMTciIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNSAxNi41SDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xMyAxOUg5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const Printer: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M6 17.9827C4.44655 17.9359 3.51998 17.7626 2.87868 17.1213C2 16.2426 2 14.8284 2 12C2 9.17157 2 7.75736 2.87868 6.87868C3.75736 6 5.17157 6 8 6H16C18.8284 6 20.2426 6 21.1213 6.87868C22 7.75736 22 9.17157 22 12C22 14.8284 22 16.2426 21.1213 17.1213C20.48 17.7626 19.5535 17.9359 18 17.9827" stroke="currentColor" strokeWidth="1.5"/>
+<Path opacity="0.5" d="M9 10H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M19 14L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M18 14V16C18 18.8284 18 20.2426 17.1213 21.1213C16.2426 22 14.8284 22 12 22C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path opacity="0.5" d="M17.9827 6C17.9359 4.44655 17.7626 3.51998 17.1213 2.87868C16.2427 2 14.8284 2 12 2C9.17158 2 7.75737 2 6.87869 2.87868C6.23739 3.51998 6.06414 4.44655 6.01733 6" stroke="currentColor" strokeWidth="1.5"/>
+<Circle opacity="0.5" cx="17" cy="10" r="1" fill="currentColor"/>
+<Path opacity="0.5" d="M15 16.5H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path opacity="0.5" d="M13 19H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+Printer.displayName = "Printer"

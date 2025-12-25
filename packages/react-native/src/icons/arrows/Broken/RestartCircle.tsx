@@ -1,0 +1,18 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS45Nzc1IDguNzE0NTJMMTUuNTM1NSA4LjI2MjFDMTMuNTgyOSA2LjI2MzE4IDEwLjQxNzEgNi4yNjMxOCA4LjQ2NDQ3IDguMjYyMUM2LjUxMTg0IDEwLjI2MSA2LjUxMTg0IDEzLjUwMTkgOC40NjQ0NyAxNS41MDA4QzEwLjQxNzEgMTcuNDk5NyAxMy41ODI5IDE3LjQ5OTcgMTUuNTM1NSAxNS41MDA4QzE2LjY3MSAxNC4zMzg0IDE3LjE0NjIgMTIuNzU1OSAxNi45NjExIDExLjI0Mk0xNS45Nzc1IDguNzE0NTJIMTMuMzI1OE0xNS45Nzc1IDguNzE0NTJWNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik03IDMuMzM3ODJDOC40NzA4NyAyLjQ4Njk3IDEwLjE3ODYgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgMTAuMTc4NiAyLjQ4Njk3IDguNDcwODcgMy4zMzc4MiA3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const RestartCircle: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M15.9775 8.71452L15.5355 8.2621C13.5829 6.26318 10.4171 6.26318 8.46447 8.2621C6.51184 10.261 6.51184 13.5019 8.46447 15.5008C10.4171 17.4997 13.5829 17.4997 15.5355 15.5008C16.671 14.3384 17.1462 12.7559 16.9611 11.242M15.9775 8.71452H13.3258M15.9775 8.71452V6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<Path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+RestartCircle.displayName = "RestartCircle"

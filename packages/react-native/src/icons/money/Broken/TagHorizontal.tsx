@@ -1,0 +1,18 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy4zNTggMjFDMTUuNTg1NCAyMSAxNi42OTkyIDIxIDE3LjYyODkgMjAuNDY3MkMxOC41NTg2IDE5LjkzNDUgMTkuMTQ4OCAxOC45NTggMjAuMzI5NCAxNy4wMDVMMjEuMDEwMiAxNS44Nzg3QzIyLjAwMzQgMTQuMjM1NyAyMi41IDEzLjQxNDIgMjIuNSAxMi41QzIyLjUgMTEuNTg1OCAyMi4wMDM0IDEwLjc2NDMgMjEuMDEwMiA5LjEyMTI2TDIwLjMyOTQgNy45OTUwMUMxOS4xNDg4IDYuMDQyMDMgMTguNTU4NiA1LjA2NTU0IDE3LjYyODkgNC41MzI3N0MxNi42OTkyIDQgMTUuNTg1NCA0IDEzLjM1OCA0SDEwLjcyMUM5LjY4MjYzIDQgOC43ODMzMyA0IDggNC4wMjM5NU0zLjcwMzk0IDUuMjQ0OEMyLjUgNi40ODk1OSAyLjUgOC40OTMwNiAyLjUgMTIuNUMyLjUgMTYuNTA2OSAyLjUgMTguNTEwNCAzLjcwMzk0IDE5Ljc1NTJDNC43MDIzOSAyMC43ODc1IDYuMjA1NSAyMC45NjM3IDguODk5OTcgMjAuOTkzOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjUgNy45OTUxMlYxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const TagHorizontal: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M13.358 21C15.5854 21 16.6992 21 17.6289 20.4672C18.5586 19.9345 19.1488 18.958 20.3294 17.005L21.0102 15.8787C22.0034 14.2357 22.5 13.4142 22.5 12.5C22.5 11.5858 22.0034 10.7643 21.0102 9.12126L20.3294 7.99501C19.1488 6.04203 18.5586 5.06554 17.6289 4.53277C16.6992 4 15.5854 4 13.358 4H10.721C9.68263 4 8.78333 4 8 4.02395M3.70394 5.2448C2.5 6.48959 2.5 8.49306 2.5 12.5C2.5 16.5069 2.5 18.5104 3.70394 19.7552C4.70239 20.7875 6.2055 20.9637 8.89997 20.9938" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M7.5 7.99512V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+TagHorizontal.displayName = "TagHorizontal"

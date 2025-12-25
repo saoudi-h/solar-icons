@@ -1,0 +1,9 @@
+export { Bonfire } from './BoldDuotone/Bonfire';
+export { Fire } from './BoldDuotone/Fire';
+export { FireMinimalistic } from './BoldDuotone/FireMinimalistic';
+export { FireSquare } from './BoldDuotone/FireSquare';
+export { Flame } from './BoldDuotone/Flame';
+export { Leaf } from './BoldDuotone/Leaf';
+export { Suitcase } from './BoldDuotone/Suitcase';
+export { SuitcaseLines } from './BoldDuotone/SuitcaseLines';
+export { SuitcaseTag } from './BoldDuotone/SuitcaseTag';

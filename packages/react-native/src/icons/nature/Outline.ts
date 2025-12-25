@@ -1,0 +1,9 @@
+export { Bonfire } from './Outline/Bonfire';
+export { Fire } from './Outline/Fire';
+export { FireMinimalistic } from './Outline/FireMinimalistic';
+export { FireSquare } from './Outline/FireSquare';
+export { Flame } from './Outline/Flame';
+export { Leaf } from './Outline/Leaf';
+export { Suitcase } from './Outline/Suitcase';
+export { SuitcaseLines } from './Outline/SuitcaseLines';
+export { SuitcaseTag } from './Outline/SuitcaseTag';

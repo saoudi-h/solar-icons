@@ -1,0 +1,15 @@
+export { CloudFile as CloudFileBold } from './CloudFile';
+export { CodeFile as CodeFileBold } from './CodeFile';
+export { FigmaFile as FigmaFileBold } from './FigmaFile';
+export { File as FileBold } from './File';
+export { FileCheck as FileCheckBold } from './FileCheck';
+export { FileCorrupted as FileCorruptedBold } from './FileCorrupted';
+export { FileDownload as FileDownloadBold } from './FileDownload';
+export { FileFavourite as FileFavouriteBold } from './FileFavourite';
+export { FileLeft as FileLeftBold } from './FileLeft';
+export { FileRemove as FileRemoveBold } from './FileRemove';
+export { FileRight as FileRightBold } from './FileRight';
+export { FileSend as FileSendBold } from './FileSend';
+export { FileSmile as FileSmileBold } from './FileSmile';
+export { FileText as FileTextBold } from './FileText';
+export { ZipFile as ZipFileBold } from './ZipFile';

@@ -1,0 +1,9 @@
+export { Bonfire as BonfireOutline } from './Bonfire';
+export { Fire as FireOutline } from './Fire';
+export { FireMinimalistic as FireMinimalisticOutline } from './FireMinimalistic';
+export { FireSquare as FireSquareOutline } from './FireSquare';
+export { Flame as FlameOutline } from './Flame';
+export { Leaf as LeafOutline } from './Leaf';
+export { Suitcase as SuitcaseOutline } from './Suitcase';
+export { SuitcaseLines as SuitcaseLinesOutline } from './SuitcaseLines';
+export { SuitcaseTag as SuitcaseTagOutline } from './SuitcaseTag';

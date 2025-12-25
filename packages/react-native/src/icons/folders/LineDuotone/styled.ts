@@ -1,0 +1,14 @@
+export { AddFolder as AddFolderLineDuotone } from './AddFolder';
+export { Folder as FolderLineDuotone } from './Folder';
+export { Folder2 as Folder2LineDuotone } from './Folder2';
+export { FolderCheck as FolderCheckLineDuotone } from './FolderCheck';
+export { FolderCloud as FolderCloudLineDuotone } from './FolderCloud';
+export { FolderError as FolderErrorLineDuotone } from './FolderError';
+export { FolderFavouriteBookmark as FolderFavouriteBookmarkLineDuotone } from './FolderFavouriteBookmark';
+export { FolderFavouriteStar as FolderFavouriteStarLineDuotone } from './FolderFavouriteStar';
+export { FolderOpen as FolderOpenLineDuotone } from './FolderOpen';
+export { FolderPathConnect as FolderPathConnectLineDuotone } from './FolderPathConnect';
+export { FolderSecurity as FolderSecurityLineDuotone } from './FolderSecurity';
+export { FolderWithFiles as FolderWithFilesLineDuotone } from './FolderWithFiles';
+export { MoveToFolder as MoveToFolderLineDuotone } from './MoveToFolder';
+export { RemoveFolder as RemoveFolderLineDuotone } from './RemoveFolder';

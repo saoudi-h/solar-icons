@@ -1,0 +1,22 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Circle, Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMiAyMkwyMiAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy41IDcuNUMxMy41IDguMzI4NDMgMTIuODI4NCA5IDEyIDlDMTEuMTcxNiA5IDEwLjUgOC4zMjg0MyAxMC41IDcuNUMxMC41IDYuNjcxNTcgMTEuMTcxNiA2IDEyIDZDMTIuODI4NCA2IDEzLjUgNi42NzE1NyAxMy41IDcuNVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEzLjUgMTYuNUMxMy41IDE3LjMyODQgMTIuODI4NCAxOCAxMiAxOEMxMS4xNzE2IDE4IDEwLjUgMTcuMzI4NCAxMC41IDE2LjVDMTAuNSAxNS42NzE2IDExLjE3MTYgMTUgMTIgMTVDMTIuODI4NCAxNSAxMy41IDE1LjY3MTYgMTMuNSAxNi41WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNy41IDEwLjVDOC4zMjg0MyAxMC41IDkgMTEuMTcxNiA5IDEyQzkgMTIuODI4NCA4LjMyODQzIDEzLjUgNy41IDEzLjVDNi42NzE1NyAxMy41IDYgMTIuODI4NCA2IDEyQzYgMTEuMTcxNiA2LjY3MTU3IDEwLjUgNy41IDEwLjVaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNi41IDEwLjVDMTcuMzI4NCAxMC41IDE4IDExLjE3MTYgMTggMTJDMTggMTIuODI4NCAxNy4zMjg0IDEzLjUgMTYuNSAxMy41QzE1LjY3MTYgMTMuNSAxNSAxMi44Mjg0IDE1IDEyQzE1IDExLjE3MTYgMTUuNjcxNiAxMC41IDE2LjUgMTAuNVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const Reel: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M12 22L22 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M13.5 7.5C13.5 8.32843 12.8284 9 12 9C11.1716 9 10.5 8.32843 10.5 7.5C10.5 6.67157 11.1716 6 12 6C12.8284 6 13.5 6.67157 13.5 7.5Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M13.5 16.5C13.5 17.3284 12.8284 18 12 18C11.1716 18 10.5 17.3284 10.5 16.5C10.5 15.6716 11.1716 15 12 15C12.8284 15 13.5 15.6716 13.5 16.5Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M7.5 10.5C8.32843 10.5 9 11.1716 9 12C9 12.8284 8.32843 13.5 7.5 13.5C6.67157 13.5 6 12.8284 6 12C6 11.1716 6.67157 10.5 7.5 10.5Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M16.5 10.5C17.3284 10.5 18 11.1716 18 12C18 12.8284 17.3284 13.5 16.5 13.5C15.6716 13.5 15 12.8284 15 12C15 11.1716 15.6716 10.5 16.5 10.5Z" stroke="currentColor" strokeWidth="1.5"/>
+    </IconBase>
+))
+
+Reel.displayName = "Reel"

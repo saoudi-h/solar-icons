@@ -1,0 +1,17 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE3LjU3MzdMMiA2LjQyNjMyQzIgNC41Nzg5NSAzLjYwMDY0IDMuNDExMjIgNC45MDMxMiA0LjMwODM4TDEwLjk5OTggOC43Njg0NEwxMC45OTk4IDcuMTIzMDNDMTAuOTk5OCA1LjUwNjU4IDEyLjQ2NyA0LjQ4NDgyIDEzLjY2MSA1LjI2OTgzTDIxLjA3ODQgMTAuMTQ2OEMyMi4zMDY5IDEwLjk1NDUgMjIuMzA2OSAxMy4wNDU1IDIxLjA3ODQgMTMuODUzMkwxMy42NjEgMTguNzMwMkMxMi40NjcgMTkuNTE1MiAxMC45OTk4IDE4LjQ5MzQgMTAuOTk5OCAxNi44NzdWMTUuMjMxNkw0LjkwMzEzIDE5LjY5MTZDMy42MDA2NSAyMC41ODg4IDIgMTkuNDIxMSAyIDE3LjU3MzdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const RewindForward: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M2 17.5737L2 6.42632C2 4.57895 3.60064 3.41122 4.90312 4.30838L10.9998 8.76844L10.9998 7.12303C10.9998 5.50658 12.467 4.48482 13.661 5.26983L21.0784 10.1468C22.3069 10.9545 22.3069 13.0455 21.0784 13.8532L13.661 18.7302C12.467 19.5152 10.9998 18.4934 10.9998 16.877V15.2316L4.90313 19.6916C3.60065 20.5888 2 19.4211 2 17.5737Z" fill="currentColor"/>
+    </IconBase>
+))
+
+RewindForward.displayName = "RewindForward"

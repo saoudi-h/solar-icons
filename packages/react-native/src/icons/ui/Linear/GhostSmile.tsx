@@ -1,0 +1,20 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Ellipse, Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDE1QzkuODUwMzggMTUuNjMwMyAxMC44ODQ2IDE2IDEyIDE2QzEzLjExNTQgMTYgMTQuMTQ5NiAxNS42MzAzIDE1IDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjE1IiBjeT0iOS41IiByeD0iMSIgcnk9IjEuNSIgZmlsbD0iIzFDMjc0QyIvPgo8ZWxsaXBzZSBjeD0iOSIgY3k9IjkuNSIgcng9IjEiIHJ5PSIxLjUiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDE5LjcyM1YxMi4zMDA2QzIyIDYuNjExNzMgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi42MTE3MyAyIDEyLjMwMDZWMTkuNzIzQzIgMjEuMDQ1MyAzLjM1MDk4IDIxLjkwNTQgNC40OTkyIDIxLjMxNEM1LjQyNzI2IDIwLjgzNiA2LjUzMjggMjAuOTA2OSA3LjM5NjE0IDIxLjQ5OThDOC4zNjczNiAyMi4xNjY3IDkuNjMyNjQgMjIuMTY2NyAxMC42MDM5IDIxLjQ5OThMMTAuOTU2NSAyMS4yNTc2QzExLjU4ODQgMjAuODIzNyAxMi40MTE2IDIwLjgyMzcgMTMuMDQzNSAyMS4yNTc2TDEzLjM5NjEgMjEuNDk5OEMxNC4zNjc0IDIyLjE2NjcgMTUuNjMyNiAyMi4xNjY3IDE2LjYwMzkgMjEuNDk5OEMxNy40NjcyIDIwLjkwNjkgMTguNTcyNyAyMC44MzYgMTkuNTAwOCAyMS4zMTRDMjAuNjQ5IDIxLjkwNTQgMjIgMjEuMDQ1MyAyMiAxOS43MjNaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const GhostSmile: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M9 15C9.85038 15.6303 10.8846 16 12 16C13.1154 16 14.1496 15.6303 15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Ellipse cx="15" cy="9.5" rx="1" ry="1.5" fill="currentColor"/>
+<Ellipse cx="9" cy="9.5" rx="1" ry="1.5" fill="currentColor"/>
+<Path d="M22 19.723V12.3006C22 6.61173 17.5228 2 12 2C6.47715 2 2 6.61173 2 12.3006V19.723C2 21.0453 3.35098 21.9054 4.4992 21.314C5.42726 20.836 6.5328 20.9069 7.39614 21.4998C8.36736 22.1667 9.63264 22.1667 10.6039 21.4998L10.9565 21.2576C11.5884 20.8237 12.4116 20.8237 13.0435 21.2576L13.3961 21.4998C14.3674 22.1667 15.6326 22.1667 16.6039 21.4998C17.4672 20.9069 18.5727 20.836 19.5008 21.314C20.649 21.9054 22 21.0453 22 19.723Z" stroke="currentColor" strokeWidth="1.5"/>
+    </IconBase>
+))
+
+GhostSmile.displayName = "GhostSmile"

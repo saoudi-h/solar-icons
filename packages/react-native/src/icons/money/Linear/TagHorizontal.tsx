@@ -1,0 +1,18 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC43MjEgMjFIMTMuMzU4QzE1LjU4NTQgMjEgMTYuNjk5MiAyMSAxNy42Mjg5IDIwLjQ2NzJDMTguNTU4NiAxOS45MzQ1IDE5LjE0ODggMTguOTU4IDIwLjMyOTQgMTcuMDA1TDIxLjAxMDIgMTUuODc4N0MyMi4wMDM0IDE0LjIzNTcgMjIuNSAxMy40MTQyIDIyLjUgMTIuNUMyMi41IDExLjU4NTggMjIuMDAzNCAxMC43NjQzIDIxLjAxMDIgOS4xMjEyNkwyMC4zMjk0IDcuOTk1MDFDMTkuMTQ4OCA2LjA0MjAzIDE4LjU1ODYgNS4wNjU1NCAxNy42Mjg5IDQuNTMyNzdDMTYuNjk5MiA0IDE1LjU4NTQgNCAxMy4zNTggNEgxMC43MjFDNi44NDU2MSA0IDQuOTA3ODkgNCAzLjcwMzk0IDUuMjQ0OEMyLjUgNi40ODk1OSAyLjUgOC40OTMwNiAyLjUgMTIuNUMyLjUgMTYuNTA2OSAyLjUgMTguNTEwNCAzLjcwMzk0IDE5Ljc1NTJDNC45MDc4OSAyMSA2Ljg0NTYgMjEgMTAuNzIxIDIxWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjUgNy45OTUxMlYxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const TagHorizontal: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M10.721 21H13.358C15.5854 21 16.6992 21 17.6289 20.4672C18.5586 19.9345 19.1488 18.958 20.3294 17.005L21.0102 15.8787C22.0034 14.2357 22.5 13.4142 22.5 12.5C22.5 11.5858 22.0034 10.7643 21.0102 9.12126L20.3294 7.99501C19.1488 6.04203 18.5586 5.06554 17.6289 4.53277C16.6992 4 15.5854 4 13.358 4H10.721C6.84561 4 4.90789 4 3.70394 5.2448C2.5 6.48959 2.5 8.49306 2.5 12.5C2.5 16.5069 2.5 18.5104 3.70394 19.7552C4.90789 21 6.8456 21 10.721 21Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<Path d="M7.5 7.99512V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </IconBase>
+))
+
+TagHorizontal.displayName = "TagHorizontal"

@@ -1,0 +1,20 @@
+/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import { Path } from "react-native-svg"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC42NjY3IDExQzIwLjU1MTMgMTAuNzIxMyAyMiA5LjA0NTc0IDIyIDcuMDIwMzZDMjIgNC43OTk5OCAyMC4yNTg5IDMgMTguMTExMSAzSDUuODg4ODlDMy43NDExMiAzIDIgNC43OTk5OCAyIDcuMDIwMzZDMiA5LjA0NTc0IDMuNDQ4NzMgMTAuNzIxMyA1LjMzMzMzIDExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMiA2VjEzTTEyIDEzTDE0IDEwLjY2NjdNMTIgMTNMMTAgMTAuNjY2NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik01IDEwQzUgOC4xMTQzOCA1IDcuMTcxNTcgNS41ODU3OSA2LjU4NTc5QzYuMTcxNTcgNiA3LjExNDM4IDYgOSA2SDE1QzE2Ljg4NTYgNiAxNy44Mjg0IDYgMTguNDE0MiA2LjU4NTc5QzE5IDcuMTcxNTcgMTkgOC4xMTQzOCAxOSAxMFYxNkMxOSAxNy44ODU2IDE5IDE4LjgyODQgMTguNDE0MiAxOS40MTQyQzE3LjgyODQgMjAgMTYuODg1NiAyMCAxNSAyMEg5QzcuMTE0MzggMjAgNi4xNzE1NyAyMCA1LjU4NTc5IDE5LjQxNDJDNSAxOC44Mjg0IDUgMTcuODg1NiA1IDE2VjEwWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNSAxN0gxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const CashOut: Icon = forwardRef<any, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        <Path d="M18.6667 11C20.5513 10.7213 22 9.04574 22 7.02036C22 4.79998 20.2589 3 18.1111 3H5.88889C3.74112 3 2 4.79998 2 7.02036C2 9.04574 3.44873 10.7213 5.33333 11" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M12 6V13M12 13L14 10.6667M12 13L10 10.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<Path d="M5 10C5 8.11438 5 7.17157 5.58579 6.58579C6.17157 6 7.11438 6 9 6H15C16.8856 6 17.8284 6 18.4142 6.58579C19 7.17157 19 8.11438 19 10V16C19 17.8856 19 18.8284 18.4142 19.4142C17.8284 20 16.8856 20 15 20H9C7.11438 20 6.17157 20 5.58579 19.4142C5 18.8284 5 17.8856 5 16V10Z" stroke="currentColor" strokeWidth="1.5"/>
+<Path d="M5 17H19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </IconBase>
+))
+
+CashOut.displayName = "CashOut"
