@@ -1,0 +1,103 @@
+{
+    "name": "@solar-icons/react-native",
+    "version": "1.0.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Solar Icons for React Native",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/react-native"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "build": "pnpm copy:licenses && tsdown",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "module": "./dist/index.mjs",
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.mts",
+            "import": "./dist/lib/*.mjs"
+        },
+        "./*": {
+            "types": "./dist/icons/style/*.d.mts",
+            "import": "./dist/icons/style/*.mjs"
+        },
+        "./category/*": {
+            "types": "./dist/icons/*.d.mts",
+            "import": "./dist/icons/*.mjs"
+        }
+    },
+    "devDependencies": {
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
+        "@types/node": "^24.10.1",
+        "@types/react": "^19.2.7",
+        "typescript": "^5.9.3",
+        "dotenv": "^17.0.1",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.7.4",
+        "react": "19.2.3",
+        "react-native": "^0.76.6",
+        "react-native-svg": "^15.9.0",
+        "rimraf": "^6.1.2",
+        "tsdown": "^0.17.3",
+        "tsx": "^4.21.0"
+    },
+    "peerDependencies": {
+        "react": ">= 16.8",
+        "react-native": ">= 0.72.0",
+        "react-native-svg": ">= 13.0.0"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "keywords": [
+        "react-native",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "UI",
+        "UX",
+        "ios",
+        "android"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    }
+}
