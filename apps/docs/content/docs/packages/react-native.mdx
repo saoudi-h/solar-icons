@@ -1,0 +1,133 @@
+---
+title: '@solar-icons/react-native'
+description: Solar Icons for React Native applications with flexible import options.
+icon: react
+---
+
+Bring the complete Solar Icons collection to your React Native applications with native SVG support.
+
+```package-install
+@solar-icons/react-native
+```
+
+## Features
+
+- **1,320+ Icons** across 38 categories and 6 styles
+- **Native SVG Rendering** via react-native-svg
+- **Multiple Import Methods** to fit your workflow
+- **TypeScript Support** with full type definitions
+- **Expo Compatible** works seamlessly with Expo projects
+
+## Import Methods
+
+The package offers three ways to import icons, giving you flexibility in how you structure your code.
+
+### Style Bundle Imports
+
+Import multiple icons from a specific style.
+
+```tsx
+import { Home, User, Settings } from '@solar-icons/react-native/Bold'
+import { Heart, Star } from '@solar-icons/react-native/Linear'
+
+function App() {
+    return (
+        <>
+            <Home size={32} color="#000" />
+            <Heart size={24} color="#ff0000" />
+        </>
+    )
+}
+```
+
+---
+
+### Global Styled Imports
+
+Import icons with style-specific names from the main package.
+
+```tsx
+import { HomeBold, HomeLinear, UserBold, HeartLinear } from '@solar-icons/react-native'
+
+function App() {
+    return (
+        <>
+            <HomeBold size={32} color="#000" />
+            <HeartLinear size={24} color="#ff0000" />
+        </>
+    )
+}
+```
+
+---
+
+### Direct Icon Imports
+
+Import individual icon files directly.
+
+```tsx
+import { Home } from '@solar-icons/react-native/category/ui/Bold/Home'
+import { Heart } from '@solar-icons/react-native/category/like/Linear/Heart'
+
+function App() {
+    return (
+        <>
+            <Home size={32} color="#000" />
+            <Heart size={24} color="#ff0000" />
+        </>
+    )
+}
+```
+
+---
+
+## Component Props
+
+| Prop       | Type               | Default        | Description                           |
+| ---------- | ------------------ | -------------- | ------------------------------------- |
+| `size`     | `string \| number` | `24`           | Icon width and height                 |
+| `color`    | `string`           | `currentColor` | Icon color                            |
+| `mirrored` | `boolean`          | `false`        | Flip icon horizontally                |
+
+All standard SVG props are supported (e.g., `style`, `testID`).
+
+---
+
+## Usage with Expo
+
+```tsx
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, View } from 'react-native'
+import { HomeBold, UserLinear, HeartLinear } from '@solar-icons/react-native'
+
+export default function App() {
+    return (
+        <View style={styles.container}>
+            <HomeBold size={48} color="#007AFF" />
+            <UserLinear size={48} color="#34C759" />
+            <HeartLinear size={48} color="#FF3B30" />
+            <StatusBar style="auto" />
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 20,
+    },
+})
+```
+
+---
+
+## Requirements
+
+- React Native 0.72.0 or higher
+- react-native-svg 13.0.0 or higher
+- React 16.8 or higher
+
+Works with both Expo and bare React Native projects.

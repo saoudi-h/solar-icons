@@ -29,6 +29,7 @@ export const config: Config = {
                 links: [
                     { label: 'React', url: '/docs/packages/react', icon: <Icon icon="devicon:react" /> },
                     { label: 'React Perf', url: '/docs/packages/react-perf', icon: <Icon icon="devicon:react" /> },
+                    { label: 'React Native', url: '/docs/packages/react-native', icon: <Icon icon="devicon:react" /> },
                     { label: 'Vue', url: '/docs/packages/vue', icon: <Icon icon="devicon:vuejs" /> },
                     { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
                 ],
@@ -109,6 +110,15 @@ export const config: Config = {
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-perf',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-perf',
                 content: 'React client and SSR library with size performance in mind',
+                iconify: 'devicon:react',
+                status: 'released',
+            },
+            {
+                title: 'React Native',
+                link: '/docs/packages/react-native',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/react-native',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
+                content: 'Native Solar Icons for React Native and Expo with flexible import options',
                 iconify: 'devicon:react',
                 status: 'released',
             },
