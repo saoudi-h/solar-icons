@@ -21,6 +21,53 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react'
 const categoryAtom = atom<Category>('Devices')
 const styleAtom = atom<Style>('Bold')
 
+interface RotatingIconProps {
+    index: number
+    IconComponent: SolarIcon
+    radius: number
+    angleStep: number
+    selectedStyle: Style
+    parentRotation: MotionValue<number>
+}
+
+const RotatingIcon: FC<RotatingIconProps> = ({
+    index,
+    IconComponent,
+    radius,
+    angleStep,
+    selectedStyle,
+    parentRotation,
+}) => {
+    const rad = (index * angleStep * Math.PI) / 180
+    const x = radius * Math.cos(rad) - 24
+    const y = radius * Math.sin(rad) - 24
+
+    const rotate = useTransform(parentRotation, (r) => -r)
+
+    return (
+        <AnimatePresence mode="wait">
+            <motion.div
+                key={IconComponent.name}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: [0, 1.5, 1] }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{
+                    delay: index * 0.1,
+                    duration: 0.4,
+                    ease: 'easeInOut',
+                }}
+                className="absolute flex items-center justify-center p-2"
+                style={{
+                    x,
+                    y,
+                    rotate,
+                }}>
+                <IconComponent size={32} weight={selectedStyle} />
+            </motion.div>
+        </AnimatePresence>
+    )
+}
+
 interface RotatingCirclesProps {
     outerIcons: SolarIcon[]
     innerIcons: SolarIcon[]
@@ -66,37 +113,17 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                   -translate-y-1/2
                 `}
                 style={{ rotate: rotation }}>
-                {icons.map((IconComponent, index) => {
-                    const rad = (index * angleStep * Math.PI) / 180
-                    const x = radius * Math.cos(rad) - 24
-                    const y = radius * Math.sin(rad) - 24
-
-                    return (
-                        <AnimatePresence key={IconComponent.displayName}>
-                            <motion.div
-                                key={IconComponent.name}
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={{ opacity: 1, scale: [0, 1.5, 1] }}
-                                exit={{ opacity: 0, scale: 0 }}
-                                transition={{
-                                    delay: index * 0.1,
-                                    duration: 0.4,
-                                    ease: 'easeInOut',
-                                }}
-                                custom={index}
-                                className={`
-                                  absolute flex items-center justify-center p-2
-                                `}
-                                style={{
-                                    x,
-                                    y,
-                                    rotate: `${(-rad * 180) / Math.PI}deg`,
-                                }}>
-                                <IconComponent size={32} weight={selectedStyle} />
-                            </motion.div>
-                        </AnimatePresence>
-                    )
-                })}
+                {icons.map((IconComponent, index) => (
+                    <RotatingIcon
+                        key={IconComponent.displayName}
+                        index={index}
+                        IconComponent={IconComponent}
+                        radius={radius}
+                        angleStep={angleStep}
+                        selectedStyle={selectedStyle}
+                        parentRotation={rotation}
+                    />
+                ))}
             </motion.div>
         )
     }
