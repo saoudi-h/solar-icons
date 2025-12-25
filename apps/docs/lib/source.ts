@@ -1,4 +1,4 @@
-import { docs } from '@/.source'
+import { docs } from 'fumadocs-mdx:collections/server'
 import { SSR as icons } from '@solar-icons/react'
 import { loader } from 'fumadocs-core/source'
 import { IconifyFrameworkIcon, iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
