@@ -1,22 +1,23 @@
+import type { Config } from '@eslint/config-helpers'
 import js from '@eslint/js'
-import * as regexpPlugin from 'eslint-plugin-regexp'
-// import turboPlugin from 'eslint-plugin-turbo'
 import prettierConfig from 'eslint-config-prettier'
+import * as regexpPlugin from 'eslint-plugin-regexp'
+import { defineConfig } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
-import { defineConfig } from '../utils.js'
-
-export const base = defineConfig(
+export const base: Config[] = defineConfig([
     {
         ignores: ['.next', 'dist', 'storybook-static'],
     },
     {
         languageOptions: {
+            parser: tseslint.parser,
             parserOptions: {
                 projectService: {
-                    allowDefaultProject: ['*.js', '*.ts', '*.tsx'],
+                    allowDefaultProject: ['*.js', '*.mjs', '*.ts'],
                 },
+                tsconfigRootDir: __dirname,
             },
         },
     },
@@ -28,6 +29,7 @@ export const base = defineConfig(
     regexpPlugin.configs['flat/recommended'],
     {
         plugins: {
+            '@typescript-eslint': tseslint.plugin,
             // turbo: turboPlugin,
         },
     },
@@ -47,8 +49,12 @@ export const base = defineConfig(
             reportUnusedDisableDirectives: true,
         },
         languageOptions: {
+            parser: tseslint.parser,
             parserOptions: {
-                projectService: true,
+                projectService: {
+                    allowDefaultProject: ['*.js', '*.mjs', '*.ts'],
+                },
+                tsconfigRootDir: __dirname,
             },
             globals: {
                 ...globals.browser,
@@ -80,5 +86,5 @@ export const base = defineConfig(
                 },
             ],
         },
-    }
-)
+    },
+])

@@ -1,8 +1,8 @@
 import playwrightPlugin from 'eslint-plugin-playwright'
+import { defineConfig } from 'eslint/config'
+import type { Config } from 'typescript-eslint'
 
-import { defineConfig } from '../utils.js'
-
-export const playwright = defineConfig(
+export const playwright: Config = defineConfig(
     {
         files: ['e2e/**/*.{spec,test}.{ts}'],
         ...playwrightPlugin.configs['flat/recommended'],
