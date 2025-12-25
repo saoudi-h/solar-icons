@@ -1,6 +1,12 @@
 {
     "title": "Packages",
     "icon": "Widget2",
-    "pages": ["react", "react-perf", "vue", "nuxt"],
+    "pages": [
+        "react",
+        "react-perf",
+        "react-native",
+        "vue",
+        "nuxt"
+    ],
     "defaultOpen": false
 }
