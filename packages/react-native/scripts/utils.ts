@@ -142,10 +142,10 @@ function transformJSX(contents: string): { jsx: string; svgElements: Set<string>
     const svgElements = new Set<string>()
 
     let transformed = contents
-        .replace(/^.*<\?xml.*?\>/g, '') // Remove XML declaration
+        .replace(/^.*<\?xml.*?>/g, '') // Remove XML declaration
         .replace(/<svg.*?>/g, '') // Remove opening <svg> tag
         .replace(/<\/svg>/g, '') // Remove closing </svg> tag
-        .replace(/<rect width="24[\d,.]+\" height="24[\d,.]+\" fill="none".*?\/>/g, '') // Remove any empty <rect> elements
+        .replace(/<rect width="24[\d,.]+" height="24[\d,.]+" fill="none".*?\/>/g, '') // Remove any empty <rect> elements
         .replace(/<title.*?<\/title>/g, '') // Remove <title> tags
         .replace(/"#[0-9a-f]{6}"/gi, '"currentColor"') // Replace hardcoded colors with currentColor
         .replace(/fill-rule/g, 'fillRule')
