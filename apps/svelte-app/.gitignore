@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+*.tsbuildinfo
+.DS_Store
+.vscode
+.turbo
+.svelte-kit
+src/icons/
