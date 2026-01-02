@@ -10,6 +10,7 @@
         "./next.json",
         "./react.json",
         "./build.json",
-        "./dom.json"
+        "./dom.json",
+        "./svelte.json"
     ]
 }

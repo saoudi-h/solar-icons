@@ -39,16 +39,16 @@
     "types": "./dist/index.d.cts",
     "exports": {
         ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs"
         },
         "./category": {
-            "import": "./dist/category.mjs",
-            "require": "./dist/category.cjs"
+            "require": "./dist/category.cjs",
+            "import": "./dist/category.mjs"
         },
         "./lib": {
-            "import": "./dist/lib/index.mjs",
-            "require": "./dist/lib/index.cjs"
+            "require": "./dist/lib/index.cjs",
+            "import": "./dist/lib/index.mjs"
         },
         "./package.json": {
             "default": "./package.json"
