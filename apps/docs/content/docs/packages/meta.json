@@ -6,7 +6,8 @@
         "react-perf",
         "react-native",
         "vue",
-        "nuxt"
+        "nuxt",
+        "svelte"
     ],
     "defaultOpen": false
 }

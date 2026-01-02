@@ -1,0 +1,119 @@
+---
+title: '@solar-icons/svelte'
+description: Svelte 5 components for Solar Icons with optimal bundle size and tree-shaking support.
+icon: svelte
+---
+
+The `@solar-icons/svelte` package provides Svelte 5 components for Solar Icons. It's designed for performance with minimal bundle size and full tree-shaking support.
+
+```package-install
+@solar-icons/svelte
+```
+
+## Key Features
+
+- **Svelte 5 Ready**: Built with Svelte 5 runes for optimal performance.
+- **Tree-Shakable**: Only the icons you import are included in your bundle.
+- **Minimal Size**: Each icon component is ~360 bytes.
+- **TypeScript Ready**: Full TypeScript support with proper types.
+- **Multiple Import Patterns**: Import by style, by category, or individual icons.
+
+## Usage
+
+Import icons from a style and use them as Svelte components:
+
+```svelte
+<script>
+    import { Home } from '@solar-icons/svelte/Bold'
+</script>
+
+<Home size={32} color="purple" />
+```
+
+## Component Props
+
+Each icon component accepts the following props, in addition to all standard SVG attributes.
+
+| Prop       | Type               | Default        | Description                              |
+| ---------- | ------------------ | -------------- | ---------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon's color.                   |
+| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.        |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`.   |
+| `alt`      | `string`           | `undefined`    | Provides an accessible title for the icon. |
+
+## Import Patterns
+
+### By Style
+
+Import all icons from a specific style:
+
+```svelte
+<script>
+    import { Home, Settings, User } from '@solar-icons/svelte/Bold'
+    import { Home as HomeLinear } from '@solar-icons/svelte/Linear'
+</script>
+
+<Home size={24} />
+<HomeLinear size={24} />
+```
+
+Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`
+
+### By Category
+
+Import icons from a specific category:
+
+```svelte
+<script>
+    import { Bold, Linear } from '@solar-icons/svelte/category/arrows'
+</script>
+
+<Bold.ArrowUp size={24} />
+<Linear.ArrowDown size={24} />
+```
+
+### Direct Import
+
+For optimal tree-shaking, import individual icons directly:
+
+```svelte
+<script>
+    import Home from '@solar-icons/svelte/category/buildings/Bold/Home.svelte'
+</script>
+
+<Home size={24} color="#f59e0b" />
+```
+
+## Using with CSS
+
+Since the default color is `currentColor`, icons inherit the text color from their parent:
+
+```svelte
+<div class="text-blue-500">
+    <Home size={24} />
+</div>
+```
+
+## IconBase Component
+
+You can use the `IconBase` component to create custom icons:
+
+```svelte
+<script>
+    import { IconBase } from '@solar-icons/svelte'
+</script>
+
+<IconBase size={24} color="red">
+    <path d="M12 2L15.09 8.26..." fill="currentColor" />
+</IconBase>
+```
+
+## TypeScript
+
+Types are exported from the main package:
+
+```svelte
+<script lang="ts">
+    import type { IconProps, IconStyle } from '@solar-icons/svelte'
+</script>
+```
