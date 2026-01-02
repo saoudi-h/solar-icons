@@ -32,7 +32,7 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "publint": "^0.3.16",
         "rimraf": "^6.1.2",
-        "tsdown": "^0.18.3",
+        "tsdown": "^0.18.4",
         "turbo": "^2.7.2",
         "typescript": "^5.9.3",
         "unplugin-unused": "^0.5.6",

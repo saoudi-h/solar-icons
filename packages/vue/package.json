@@ -39,16 +39,16 @@
     "types": "./dist/index.d.cts",
     "exports": {
         ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs"
         },
         "./category": {
-            "import": "./dist/category.mjs",
-            "require": "./dist/category.cjs"
+            "require": "./dist/category.cjs",
+            "import": "./dist/category.mjs"
         },
         "./lib": {
-            "import": "./dist/lib/index.mjs",
-            "require": "./dist/lib/index.cjs"
+            "require": "./dist/lib/index.cjs",
+            "import": "./dist/lib/index.mjs"
         },
         "./package.json": {
             "default": "./package.json"
@@ -63,7 +63,7 @@
         "@vitejs/plugin-vue": "^6.0.3",
         "@vue/compiler-sfc": "3.5.26",
         "@vue/test-utils": "^2.4.6",
-        "jsdom": "^27.3.0",
+        "jsdom": "^27.4.0",
         "picocolors": "^1.1.1",
         "prettier-plugin-vue": "^1.1.6",
         "unplugin-vue": "^7.1.0",

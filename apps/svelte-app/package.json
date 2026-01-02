@@ -1,0 +1,38 @@
+{
+    "name": "svelte-app",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "clean": "rm -rf node_modules .svelt-kit",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "generate:icons": "tsx scripts/generate-icon-list.ts",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "devDependencies": {
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@sveltejs/adapter-auto": "^6.0.0",
+        "@sveltejs/kit": "^2.21.0",
+        "@sveltejs/vite-plugin-svelte": "^5.1.0",
+        "@tailwindcss/vite": "^4.1.8",
+        "prettier-plugin-svelte": "^3.4.1",
+        "svelte": "^5.33.0",
+        "svelte-check": "^4.2.1",
+        "tailwindcss": "^4.1.8",
+        "typescript": "^5.8.3",
+        "vite": "^7.0.0"
+    },
+    "type": "module",
+    "dependencies": {
+        "@solar-icons/svelte": "workspace:*"
+    }
+}

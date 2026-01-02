@@ -33,6 +33,7 @@ export const config: Config = {
                     { label: 'React Native', url: '/docs/packages/react-native', icon: <Icon icon="devicon:react" /> },
                     { label: 'Vue', url: '/docs/packages/vue', icon: <Icon icon="devicon:vuejs" /> },
                     { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
+                    { label: 'Svelte', url: '/docs/packages/svelte', icon: <Icon icon="devicon:svelte" /> },
                 ],
             },
             {
@@ -148,7 +149,11 @@ export const config: Config = {
             },
             {
                 title: 'Svelte',
-                status: 'not-started',
+                link: '/docs/packages/svelte',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/svelte',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/svelte',
+                content: 'Svelte 5 components with optimal bundle size and tree-shaking',
+                status: 'released',
                 iconify: 'devicon:svelte',
             },
             {

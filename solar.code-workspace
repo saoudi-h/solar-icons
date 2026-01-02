@@ -41,15 +41,23 @@
         },
         {
             "name": "nuxt",
-            "path": "packages/nuxt"
+            "path": "packages/nuxt",
         },
         {
             "name": "react-native",
-            "path": "packages/react-native"
+            "path": "packages/react-native",
         },
         {
             "name": "test-react-native-icons",
-            "path": "apps/test-react-native-icons"
+            "path": "apps/test-react-native-icons",
+        },
+        {
+            "name": "svelte",
+            "path": "packages/svelte",
+        },
+        {
+            "name": "svelte-app",
+            "path": "apps/svelte-app"
         }
     ],
     "settings": {
