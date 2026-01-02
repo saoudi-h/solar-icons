@@ -74,6 +74,7 @@
         "@types/node": "^25.0.3",
         "picocolors": "^1.1.1",
         "prettier": "^3.7.4",
+        "prettier-plugin-svelte": "^3.4.1",
         "rimraf": "^6.1.2",
         "rollup-plugin-svelte": "^7.2.3",
         "svelte-check": "^4.1.4",

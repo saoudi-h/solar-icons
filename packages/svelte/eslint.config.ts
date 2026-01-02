@@ -11,6 +11,9 @@ const config: Config[] = defineConfig([
             'lint-staged.config.mjs',
             'prettier.config.mjs',
             'src/icons',
+            'scripts/*',
+            '.svelte-kit/*',
+            'svelte.config.js',
         ],
     },
 ]);
