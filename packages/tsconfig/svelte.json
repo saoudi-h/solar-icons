@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Svelte",
+  "extends": "./dom.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "svelte"
+  }
+}

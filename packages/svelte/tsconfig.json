@@ -1,0 +1,18 @@
+{
+    "extends": "@solar-icons/tsconfig/svelte",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "module": "preserve",
+        "target": "esnext",
+        "moduleResolution": "bundler",
+        "declaration": true,
+        "declarationMap": false,
+        "emitDeclarationOnly": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true
+    },
+    "include": ["./src/**/*", "tsdown.config.ts", "./scripts/**/*", "./tests/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+}
