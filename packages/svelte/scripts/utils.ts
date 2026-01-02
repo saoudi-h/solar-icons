@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'picocolors';
-import { IconStyle } from '../src/lib/types';
 
 // Determine the directory of the current file
 const __filename = fileURLToPath(import.meta.url);
@@ -13,15 +12,15 @@ export const SVGS_PATH: string = path.join(__dirname, '../../core/svgs');
 export const ICONS_PATH: string = path.join(__dirname, '../src/icons');
 export const INDEX_PATH: string = path.join(__dirname, '../src/index.ts');
 
-export type WeightType = IconStyle;
+export type WeightType = 'Bold' | 'BoldDuotone' | 'Broken' | 'LineDuotone' | 'Linear' | 'Outline';
 // Define supported icon styles (weights)
 export const WEIGHTS: WeightType[] = [
-    IconStyle.BROKEN,
-    IconStyle.LINE_DUOTONE,
-    IconStyle.LINEAR,
-    IconStyle.OUTLINE,
-    IconStyle.BOLD,
-    IconStyle.BOLD_DUOTONE,
+    'Broken',
+    'LineDuotone',
+    'Linear',
+    'Outline',
+    'Bold',
+    'BoldDuotone',
 ] as const;
 
 // Type definition for svgs where each icon is mapped to its styles and associated data
@@ -141,15 +140,9 @@ function transformJSX(contents: string) {
         .replace(/<\/svg>/g, '') // Remove closing </svg> tag
         .replace(/<rect width="24[\d,.]+" height="24[\d,.]+" fill="none".*?\/>/g, '') // Remove any empty <rect> elements
         .replace(/<title.*?<\/title>/g, '') // Remove <title> tags
-        .replace(/"#[0-9a-f]{6}"/gi, '"currentColor"') // Replace hardcoded colors with {color}
-        .replace(/fill-rule/g, 'fillRule')
-        .replace(/clip-rule/g, 'clipRule')
-        .replace(/clip-path/g, 'clipPath')
-        .replace(/stroke-linecap/g, 'strokeLinecap')
-        .replace(/stroke-linejoin/g, 'strokeLinejoin')
-        .replace(/stroke-width/g, 'strokeWidth')
-        .replace(/stroke-miterlimit/g, 'strokeMiterlimit')
-        .replace(/stroke-dasharray/g, 'strokeDasharray');
+        .replace(/"#[0-9a-f]{6}"/gi, '"currentColor"'); // Replace hardcoded colors
+    // Note: Svelte uses native SVG attributes (kebab-case), not JSX camelCase
+    // So we do NOT convert fill-rule, clip-rule, stroke-width, etc.
 }
 
 /**

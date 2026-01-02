@@ -201,7 +201,7 @@ let props = $props()
 
     mainEntry: (): FileDefinition => {
         const content = `export type { IconProps } from "./lib"
-export { IconBase, IconStyle } from "./lib"
+export { IconBase, type IconStyle } from "./lib"
 export * from "./icons/styled"
 `;
         return {
