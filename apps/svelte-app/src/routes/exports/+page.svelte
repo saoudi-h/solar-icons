@@ -2,35 +2,32 @@
     // Test all export patterns
 
     // 1. Main exports from root
-    import { type IconStyle } from '@solar-icons/svelte/lib/types';
-    import { IconBase, type IconProps } from '@solar-icons/svelte';
+    import { type IconStyle } from '@solar-icons/svelte/lib/types'
+    import { IconBase, type IconProps } from '@solar-icons/svelte'
 
     // 2. Style imports (flat)
-    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/Bold';
-    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/Linear';
-    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/BoldDuotone';
-    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/LineDuotone';
-    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/Broken';
-    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/Outline';
+    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/Bold'
+    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/Linear'
+    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/BoldDuotone'
+    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/LineDuotone'
+    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/Broken'
+    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/Outline'
 
     // 3. Category imports (namespaced by style)
-    import {
-        Bold as ArrowsBold,
-        Linear as ArrowsLinear,
-    } from '@solar-icons/svelte/category/arrows';
+    import { Bold as ArrowsBold, Linear as ArrowsLinear } from '@solar-icons/svelte/category/arrows'
 
     // 4. Direct file imports
-    import { AltArrowUp } from '@solar-icons/svelte/category/arrows/Bold';
+    import { AltArrowUp } from '@solar-icons/svelte/category/arrows/Bold'
 
     // 5. import
-    import ArrowUp from '@solar-icons/svelte/category/arrows/Bold/ArrowUp.svelte';
+    import {ArrowUpBold } from '@solar-icons/svelte'
 
     // Test types work
     const testProps: IconProps = {
         size: 24,
         color: '#f59e0b',
         alt: 'Test icon',
-    };
+    }
 
     // Test IconStyle type
     const styles: IconStyle[] = [
@@ -40,7 +37,7 @@
         'Outline',
         'BoldDuotone',
         'LineDuotone',
-    ];
+    ]
 
     // Status tracking
     const tests = $derived([
@@ -55,9 +52,9 @@
         { name: 'Outline style import', pass: typeof OutlineArrow === 'function' },
         { name: 'Category namespace import', pass: typeof ArrowsBold.AltArrowDown === 'function' },
         { name: 'Direct category import', pass: typeof AltArrowUp === 'function' },
-    ]);
+    ])
 
-    const allPassed = $derived(tests.every((t) => t.pass));
+    const allPassed = $derived(tests.every(t => t.pass))
 </script>
 
 <svelte:head>
@@ -77,8 +74,7 @@
             class="px-6 py-3 rounded-full font-bold text-lg
                     {allPassed
                 ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                : 'bg-red-500/20 text-red-400 border border-red-500/30'}"
-        >
+                : 'bg-red-500/20 text-red-400 border border-red-500/30'}">
             {allPassed ? '✓ All tests passed' : '✗ Some tests failed'}
         </div>
     </div>
@@ -117,42 +113,36 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             <!-- Style imports -->
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center"><BoldArrow size={32} color="#f59e0b" /></div>
                 <p class="text-sm text-slate-400">Bold</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center"><LinearArrow size={32} color="#f59e0b" /></div>
                 <p class="text-sm text-slate-400">Linear</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center">
                     <BoldDuotoneArrow size={32} color="#f59e0b" />
                 </div>
                 <p class="text-sm text-slate-400">BoldDuotone</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center">
                     <LineDuotoneArrow size={32} color="#f59e0b" />
                 </div>
                 <p class="text-sm text-slate-400">LineDuotone</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center"><BrokenArrow size={32} color="#f59e0b" /></div>
                 <p class="text-sm text-slate-400">Broken</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center"><OutlineArrow size={32} color="#f59e0b" /></div>
                 <p class="text-sm text-slate-400">Outline</p>
             </div>
@@ -161,24 +151,21 @@
         <!-- Category imports -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center">
                     <ArrowsBold.AltArrowDown size={32} color="#10b981" />
                 </div>
                 <p class="text-sm text-slate-400">Category Namespace (Bold)</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center">
                     <ArrowsLinear.AltArrowDown size={32} color="#10b981" />
                 </div>
                 <p class="text-sm text-slate-400">Category Namespace (Linear)</p>
             </div>
             <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
+                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2">
                 <div class="flex justify-center"><AltArrowUp size={32} color="#3b82f6" /></div>
                 <p class="text-sm text-slate-400">Direct Import</p>
             </div>
@@ -191,8 +178,7 @@
                 <IconBase size={48} color="#ec4899">
                     <path
                         d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                        fill="currentColor"
-                    />
+                        fill="currentColor" />
                 </IconBase>
                 <span class="text-slate-400">Custom star icon using IconBase directly</span>
             </div>
@@ -201,7 +187,7 @@
         <div class="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30 mt-4">
             <h3 class="text-lg font-semibold text-white mb-4">ArrowUp</h3>
             <div class="flex items-center gap-4">
-                <ArrowUp size={48} color="#ec4899" />
+                <ArrowUpBold size={48} color="#ec4899" />
                 <span class="text-slate-400">ArrowUp</span>
             </div>
         </div>
