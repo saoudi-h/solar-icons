@@ -15,13 +15,12 @@
     "sideEffects": false,
     "files": [
         "dist",
-        "src",
         "README.md",
         "LICENSE",
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm copy:licenses && pnpm build:package",
+        "build": "pnpm generate:assets && pnpm copy:licenses && pnpm build:package",
         "build:package": "svelte-package --input ./src",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
