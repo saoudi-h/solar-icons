@@ -58,7 +58,7 @@
         "vue": ">=3.0.0"
     },
     "devDependencies": {
-        "@babel/core": "7.28.5",
+        "@babel/core": "7.28.6",
         "@solar-icons/core": "workspace:*",
         "@vitejs/plugin-vue": "^6.0.3",
         "@vue/compiler-sfc": "3.5.26",
