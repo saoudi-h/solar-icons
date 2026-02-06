@@ -9,9 +9,9 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M18.5211 4.41846L4.41797 18.5213C4.58006 18.7094 4.75031 18.8928 4.9287 19.0712C5.1071 19.2496 5.29057 19.4199 5.47863 19.582L19.5817 5.47914C19.4196 5.29103 19.2493 5.10752 19.0708 4.92908C18.8925 4.75073 18.7091 4.58052 18.5211 4.41846Z" fill="currentColor"/></>],
   ["Broken", <><path d="M18.5 5.5L5.50002 18.4998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><path d="M18.5 5.5L5.50002 18.4998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/></>],
   ["LineDuotone", <><path opacity="0.5" d="M18.5 5.5L5.50002 18.4998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/></>],
+  ["Linear", <><path d="M18.5 5.5L5.50002 18.4998" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75C14.2845 2.75 16.3756 3.57817 17.9894 4.95066C17.9827 4.95685 17.9762 4.96319 17.9697 4.96967L4.96969 17.9694C4.96317 17.976 4.95679 17.9826 4.95056 17.9893C3.57813 16.3755 2.75 14.2845 2.75 12ZM6.0105 19.0492C7.62432 20.4218 9.71544 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 9.7155 20.4218 7.62442 19.0493 6.01062C19.0431 6.01728 19.0368 6.02386 19.0303 6.03034L6.03034 19.0301C6.02382 19.0366 6.0172 19.043 6.0105 19.0492Z" fill="currentColor"/></>]
 ]);

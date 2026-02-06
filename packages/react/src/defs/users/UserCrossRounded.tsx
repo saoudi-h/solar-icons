@@ -12,12 +12,12 @@ export default new Map<IconWeight, ReactElement>([
   ["Broken", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M20 17.5L18 19.5M18 17.5L20 19.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M12 13C14.6083 13 16.8834 13.8152 18.0877 15.024M15.5841 20.4366C14.5358 20.7944 13.3099 21 12 21C8.13401 21 5 19.2091 5 17C5 15.6407 6.18652 14.4398 8 13.717" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" strokeWidth="1.5"/>
-<circle cx="17" cy="18" r="4" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M15.6665 16.6667L18.3332 19.3333M18.3335 16.6667L15.6668 19.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
   ["LineDuotone", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path opacity="0.5" d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" strokeWidth="1.5"/>
+<circle cx="17" cy="18" r="4" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M15.6665 16.6667L18.3332 19.3333M18.3335 16.6667L15.6668 19.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
+  ["Linear", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" strokeWidth="1.5"/>
 <circle cx="17" cy="18" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M15.6665 16.6667L18.3332 19.3333M18.3335 16.6667L15.6668 19.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C9.37665 1.25 7.25 3.37665 7.25 6C7.25 8.62335 9.37665 10.75 12 10.75C14.6234 10.75 16.75 8.62335 16.75 6C16.75 3.37665 14.6234 1.25 12 1.25ZM8.75 6C8.75 4.20507 10.2051 2.75 12 2.75C13.7949 2.75 15.25 4.20507 15.25 6C15.25 7.79493 13.7949 9.25 12 9.25C10.2051 9.25 8.75 7.79493 8.75 6Z" fill="currentColor"/>

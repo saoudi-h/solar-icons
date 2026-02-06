@@ -10,10 +10,10 @@ export default new Map<IconWeight, ReactElement>([
   ["Broken", <><path d="M12 7V13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="12" cy="16" r="1" fill="currentColor"/>
 <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+  ["LineDuotone", <><circle opacity="0.5" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M12 7V13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="12" cy="16" r="1" fill="currentColor"/></>],
-  ["LineDuotone", <><circle opacity="0.5" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M12 7V13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="12" cy="16" r="1" fill="currentColor"/></>],
   ["Outline", <><path d="M12 6.25C12.4142 6.25 12.75 6.58579 12.75 7V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V7C11.25 6.58579 11.5858 6.25 12 6.25Z" fill="currentColor"/>

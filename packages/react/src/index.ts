@@ -1,8 +1,8 @@
 /* GENERATED FILE */
-export * from './csr'
-export { IconBase, SolarProvider, useSolar } from './lib' // TODO: Delete this named solar named export for the next release
-export type { IconProps, IconWeight } from './lib' // TODO: Delete this named solar named export for the next release
-export * as SSR from './ssr' // TODO: Delete this named solar named export for the next release
-export { solar } // TODO: Delete this named solar named export for the next release
-import * as solar from './csr/category'
+export type { IconProps, IconWeight } from "./lib"
+export { SolarProvider, useSolar, IconBase } from "./lib"
+export * as SSR from "./ssr"
+export * from "./csr"
+import * as solar from "./csr/category"
+export { solar }
 export default solar

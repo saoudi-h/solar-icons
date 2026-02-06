@@ -13,14 +13,14 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M20 11.5H15M4 11.5H11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17 7L17 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17 14L17 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><path d="M4 10C4 6.22876 4 4.34315 5.17157 3.17157C6.34315 2 8.22876 2 12 2C15.7712 2 17.6569 2 18.8284 3.17157C20 4.34315 20 6.22876 20 10V13C20 16.7712 20 18.6569 18.8284 19.8284C17.6569 21 15.7712 21 12 21C8.22876 21 6.34315 21 5.17157 19.8284C4 18.6569 4 16.7712 4 13V10Z" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M17 21V22H16V21M8 21V22H7V21" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-<path d="M20 11.5H4" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M17 7L17 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M17 14L17 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["LineDuotone", <><path d="M4 10C4 6.22876 4 4.34315 5.17157 3.17157C6.34315 2 8.22876 2 12 2C15.7712 2 17.6569 2 18.8284 3.17157C20 4.34315 20 6.22876 20 10V13C20 16.7712 20 18.6569 18.8284 19.8284C17.6569 21 15.7712 21 12 21C8.22876 21 6.34315 21 5.17157 19.8284C4 18.6569 4 16.7712 4 13V10Z" stroke="currentColor" strokeWidth="1.5"/>
 <path opacity="0.5" d="M17 21V22H16V21M8 21V22H7V21" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
 <path opacity="0.5" d="M20 11.5H4" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M17 7L17 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M17 14L17 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
+  ["Linear", <><path d="M4 10C4 6.22876 4 4.34315 5.17157 3.17157C6.34315 2 8.22876 2 12 2C15.7712 2 17.6569 2 18.8284 3.17157C20 4.34315 20 6.22876 20 10V13C20 16.7712 20 18.6569 18.8284 19.8284C17.6569 21 15.7712 21 12 21C8.22876 21 6.34315 21 5.17157 19.8284C4 18.6569 4 16.7712 4 13V10Z" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M17 21V22H16V21M8 21V22H7V21" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+<path d="M20 11.5H4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M17 7L17 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17 14L17 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Outline", <><path d="M17.75 7C17.75 6.58579 17.4142 6.25 17 6.25C16.5858 6.25 16.25 6.58579 16.25 7V9C16.25 9.41422 16.5858 9.75 17 9.75C17.4142 9.75 17.75 9.41422 17.75 9V7Z" fill="currentColor"/>

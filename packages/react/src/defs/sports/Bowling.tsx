@@ -12,13 +12,13 @@ export default new Map<IconWeight, ReactElement>([
 <circle cx="12" cy="12" r="1.5" transform="rotate(-90 12 12)" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M8 8C8.82843 8 9.5 8.67157 9.5 9.5C9.5 10.3284 8.82843 11 8 11C7.17157 11 6.5 10.3284 6.5 9.5C6.5 8.67157 7.17157 8 8 8Z" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
-<circle cx="12" cy="7" r="1.5" transform="rotate(-90 12 7)" stroke="currentColor" strokeWidth="1.5"/>
-<circle cx="12" cy="12" r="1.5" transform="rotate(-90 12 12)" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M8 8C8.82843 8 9.5 8.67157 9.5 9.5C9.5 10.3284 8.82843 11 8 11C7.17157 11 6.5 10.3284 6.5 9.5C6.5 8.67157 7.17157 8 8 8Z" stroke="currentColor" strokeWidth="1.5"/></>],
   ["LineDuotone", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
 <circle opacity="0.5" cx="12" cy="7" r="1.5" transform="rotate(-90 12 7)" stroke="currentColor" strokeWidth="1.5"/>
 <circle opacity="0.5" cx="12" cy="12" r="1.5" transform="rotate(-90 12 12)" stroke="currentColor" strokeWidth="1.5"/>
 <path opacity="0.5" d="M8 8C8.82843 8 9.5 8.67157 9.5 9.5C9.5 10.3284 8.82843 11 8 11C7.17157 11 6.5 10.3284 6.5 9.5C6.5 8.67157 7.17157 8 8 8Z" stroke="currentColor" strokeWidth="1.5"/></>],
+  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+<circle cx="12" cy="7" r="1.5" transform="rotate(-90 12 7)" stroke="currentColor" strokeWidth="1.5"/>
+<circle cx="12" cy="12" r="1.5" transform="rotate(-90 12 12)" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M8 8C8.82843 8 9.5 8.67157 9.5 9.5C9.5 10.3284 8.82843 11 8 11C7.17157 11 6.5 10.3284 6.5 9.5C6.5 8.67157 7.17157 8 8 8Z" stroke="currentColor" strokeWidth="1.5"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 6.25C11.5858 6.25 11.25 6.58579 11.25 7C11.25 7.41421 11.5858 7.75 12 7.75C12.4142 7.75 12.75 7.41421 12.75 7C12.75 6.58579 12.4142 6.25 12 6.25ZM9.75 7C9.75 5.75736 10.7574 4.75 12 4.75C13.2426 4.75 14.25 5.75736 14.25 7C14.25 8.24264 13.2426 9.25 12 9.25C10.7574 9.25 9.75 8.24264 9.75 7ZM8 8.75C7.58579 8.75 7.25 9.08579 7.25 9.5C7.25 9.91421 7.58579 10.25 8 10.25C8.41421 10.25 8.75 9.91421 8.75 9.5C8.75 9.08579 8.41421 8.75 8 8.75ZM5.75 9.5C5.75 8.25736 6.75736 7.25 8 7.25C9.24264 7.25 10.25 8.25736 10.25 9.5C10.25 10.7426 9.24264 11.75 8 11.75C6.75736 11.75 5.75 10.7426 5.75 9.5ZM12 11.25C11.5858 11.25 11.25 11.5858 11.25 12C11.25 12.4142 11.5858 12.75 12 12.75C12.4142 12.75 12.75 12.4142 12.75 12C12.75 11.5858 12.4142 11.25 12 11.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z" fill="currentColor"/></>]
 ]);

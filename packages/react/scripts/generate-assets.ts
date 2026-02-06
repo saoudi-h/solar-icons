@@ -51,6 +51,7 @@ function generateReactComponents(
 ) {
     const BASE_PATH = type === 'csr' ? CSR_PATH : SSR_PATH
     const importBase = type === 'csr' ? 'IconBase' : 'SSRBase'
+    const useClientDirective = type === 'csr' ? `'use client'\n\n` : ''
 
     for (const category in groupedIcons) {
         const categoryPath = path.join(BASE_PATH, category)
@@ -68,7 +69,7 @@ ${Object.entries(iconsInCategory[iconName]!)
     .join('\n')}
  */`
 
-            const componentContent = `/* GENERATED FILE */
+            const componentContent = `${useClientDirective}/* GENERATED FILE */
 import React, { forwardRef } from "react"
 import type { IconProps, Icon } from "../../lib/types"
 import ${importBase} from "../../lib/${importBase}"

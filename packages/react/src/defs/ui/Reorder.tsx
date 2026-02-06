@@ -13,13 +13,13 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M5 18H13M19 18H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M19 14L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M19 6L5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><path d="M19 10L5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M19 14L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M19 6L5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M19 18L5 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["LineDuotone", <><path d="M19 10L5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M19 14L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M19 6L5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M19 18L5 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
+  ["Linear", <><path d="M19 10L5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M19 14L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M19 6L5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M19 18L5 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M19.75 10C19.75 10.4142 19.4142 10.75 19 10.75L5 10.75C4.58579 10.75 4.25 10.4142 4.25 10C4.25 9.58579 4.58579 9.25 5 9.25L19 9.25C19.4142 9.25 19.75 9.58579 19.75 10Z" fill="currentColor"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M19.75 14C19.75 14.4142 19.4142 14.75 19 14.75L5 14.75C4.58579 14.75 4.25 14.4142 4.25 14C4.25 13.5858 4.58579 13.25 5 13.25L19 13.25C19.4142 13.25 19.75 13.5858 19.75 14Z" fill="currentColor"/>

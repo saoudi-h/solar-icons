@@ -12,14 +12,14 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M16 12L14 10.5L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M15 16L14 15L13 16L12 15L11 16L10 15L9 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M8 12L10 10.5L8 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M16 12L14 10.5L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M16 16L14.6667 15L13.3333 16L12 15L10.6667 16L9.33333 15L8 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
   ["LineDuotone", <><circle opacity="0.5" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M8 12L10 10.5L8 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M16 12L14 10.5L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M15 16L14 15L13 16L12 15L11 16L10 15L9 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
+  ["Linear", <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M8 12L10 10.5L8 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M16 12L14 10.5L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M16 16L14.6667 15L13.3333 16L12 15L10.6667 16L9.33333 15L8 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12Z" fill="currentColor"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M7.4 8.55C7.64853 8.21863 8.11863 8.15147 8.45 8.4L10.45 9.9C10.6389 10.0416 10.75 10.2639 10.75 10.5C10.75 10.7361 10.6389 10.9584 10.45 11.1L8.45 12.6C8.11863 12.8485 7.64853 12.7814 7.4 12.45C7.15147 12.1186 7.21863 11.6485 7.55 11.4L8.75 10.5L7.55 9.6C7.21863 9.35147 7.15147 8.88137 7.4 8.55Z" fill="currentColor"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M16.6 8.55C16.3515 8.21863 15.8814 8.15147 15.55 8.4L13.55 9.9C13.3611 10.0416 13.25 10.2639 13.25 10.5C13.25 10.7361 13.3611 10.9584 13.55 11.1L15.55 12.6C15.8814 12.8485 16.3515 12.7814 16.6 12.45C16.8485 12.1186 16.7814 11.6485 16.45 11.4L15.25 10.5L16.45 9.6C16.7814 9.35147 16.8485 8.88137 16.6 8.55Z" fill="currentColor"/>
