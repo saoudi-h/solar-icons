@@ -18,17 +18,17 @@ export default new Map<IconWeight, ReactElement>([
 <circle cx="11.9999" cy="14.8286" r="1" transform="rotate(-45 11.9999 14.8286)" fill="currentColor"/>
 <circle cx="11.9999" cy="9.17139" r="1" transform="rotate(-45 11.9999 9.17139)" fill="currentColor"/>
 <circle cx="14.8285" cy="12" r="1" transform="rotate(-45 14.8285 12)" fill="currentColor"/></>],
-  ["Linear", <><path d="M12.765 20.4155L3.58447 11.235M12.765 20.4155C14.8777 22.5282 18.3029 22.5282 20.4155 20.4155C22.5282 18.3029 22.5282 14.8777 20.4155 12.765M12.765 20.4155L20.4155 12.765M20.4155 12.765L11.235 3.58447M11.235 3.58447C9.12233 1.47184 5.69709 1.47184 3.58447 3.58447C1.47184 5.69709 1.47184 9.12233 3.58447 11.235M11.235 3.58447L3.58447 11.235" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<circle cx="9.17154" cy="12" r="1" transform="rotate(-45 9.17154 12)" fill="currentColor"/>
-<circle cx="12.0002" cy="14.8286" r="1" transform="rotate(-45 12.0002 14.8286)" fill="currentColor"/>
-<circle cx="12.0002" cy="9.17139" r="1" transform="rotate(-45 12.0002 9.17139)" fill="currentColor"/>
-<circle cx="14.8283" cy="12" r="1" transform="rotate(-45 14.8283 12)" fill="currentColor"/></>],
   ["LineDuotone", <><path d="M20.4155 12.765L11.235 3.58447C9.12233 1.47184 5.69709 1.47184 3.58447 3.58447C1.47184 5.69709 1.47184 9.12233 3.58447 11.235L12.765 20.4155C14.8777 22.5282 18.3029 22.5282 20.4155 20.4155C22.5282 18.3029 22.5282 14.8777 20.4155 12.765Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M12.7651 20.4155L20.4155 12.7651M11.235 3.58447L3.58447 11.235" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="9.17154" cy="12" r="1" transform="rotate(-45 9.17154 12)" fill="currentColor"/>
 <circle cx="11.9999" cy="14.8286" r="1" transform="rotate(-45 11.9999 14.8286)" fill="currentColor"/>
 <circle cx="11.9999" cy="9.17139" r="1" transform="rotate(-45 11.9999 9.17139)" fill="currentColor"/>
 <circle cx="14.8285" cy="12" r="1" transform="rotate(-45 14.8285 12)" fill="currentColor"/></>],
+  ["Linear", <><path d="M12.765 20.4155L3.58447 11.235M12.765 20.4155C14.8777 22.5282 18.3029 22.5282 20.4155 20.4155C22.5282 18.3029 22.5282 14.8777 20.4155 12.765M12.765 20.4155L20.4155 12.765M20.4155 12.765L11.235 3.58447M11.235 3.58447C9.12233 1.47184 5.69709 1.47184 3.58447 3.58447C1.47184 5.69709 1.47184 9.12233 3.58447 11.235M11.235 3.58447L3.58447 11.235" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<circle cx="9.17154" cy="12" r="1" transform="rotate(-45 9.17154 12)" fill="currentColor"/>
+<circle cx="12.0002" cy="14.8286" r="1" transform="rotate(-45 12.0002 14.8286)" fill="currentColor"/>
+<circle cx="12.0002" cy="9.17139" r="1" transform="rotate(-45 12.0002 9.17139)" fill="currentColor"/>
+<circle cx="14.8283" cy="12" r="1" transform="rotate(-45 14.8283 12)" fill="currentColor"/></>],
   ["Outline", <><path d="M9.87864 11.2929C10.2692 11.6834 10.2692 12.3166 9.87864 12.7071C9.48812 13.0976 8.85496 13.0976 8.46443 12.7071C8.07391 12.3166 8.07391 11.6834 8.46443 11.2929C8.85496 10.9024 9.48812 10.9024 9.87864 11.2929Z" fill="currentColor"/>
 <path d="M12.7073 15.5355C13.0978 15.145 13.0978 14.5118 12.7073 14.1213C12.3167 13.7307 11.6836 13.7307 11.293 14.1213C10.9025 14.5118 10.9025 15.145 11.293 15.5355C11.6836 15.926 12.3167 15.926 12.7073 15.5355Z" fill="currentColor"/>
 <path d="M12.7073 8.46452C13.0978 8.85505 13.0978 9.48821 12.7073 9.87874C12.3167 10.2693 11.6836 10.2693 11.293 9.87874C10.9025 9.48821 10.9025 8.85505 11.293 8.46452C11.6836 8.074 12.3167 8.074 12.7073 8.46452Z" fill="currentColor"/>

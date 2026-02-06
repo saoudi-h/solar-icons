@@ -28,3 +28,15 @@ export interface IconProps
 export type Icon = React.ForwardRefExoticComponent<
     Omit<IconProps, 'ref'> & React.RefAttributes<SVGSVGElement>
 >
+
+export interface SolarContextType {
+    value: IconBaseProps
+    setValue: (props: Partial<IconBaseProps>) => void
+    svgProps?: ComponentPropsWithoutRef<'svg'>
+    setSvgProps: (props: Partial<ComponentPropsWithoutRef<'svg'>>) => void
+}
+
+export interface SolarProviderProps {
+    value?: IconBaseProps
+    svgProps?: ComponentPropsWithoutRef<'svg'>
+}

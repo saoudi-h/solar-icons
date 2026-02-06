@@ -12,13 +12,13 @@ export default new Map<IconWeight, ReactElement>([
   ["Broken", <><circle cx="10" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M21 10H19M19 10H17M19 10L19 8M19 10L19 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17.9975 18C18 17.8358 18 17.669 18 17.5C18 15.0147 14.4183 13 10 13C5.58172 13 2 15.0147 2 17.5C2 19.9853 2 22 10 22C12.231 22 13.8398 21.8433 15 21.5634" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M15 13.3271C14.0736 13.1162 13.0609 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C17.6874 22 19.3315 20.9817 19.8068 19.5" stroke="currentColor" strokeWidth="1.5"/>
+  ["LineDuotone", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
+<path opacity="0.5" d="M15 13.3271C14.0736 13.1162 13.0609 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C17.6874 22 19.3315 20.9817 19.8068 19.5" stroke="currentColor" strokeWidth="1.5"/>
 <circle cx="18" cy="16" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M18 14.6667V17.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M16.6665 16L19.3332 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],
-  ["LineDuotone", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
-<path opacity="0.5" d="M15 13.3271C14.0736 13.1162 13.0609 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C17.6874 22 19.3315 20.9817 19.8068 19.5" stroke="currentColor" strokeWidth="1.5"/>
+  ["Linear", <><circle cx="12" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M15 13.3271C14.0736 13.1162 13.0609 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C17.6874 22 19.3315 20.9817 19.8068 19.5" stroke="currentColor" strokeWidth="1.5"/>
 <circle cx="18" cy="16" r="4" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M18 14.6667V17.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M16.6665 16L19.3332 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></>],

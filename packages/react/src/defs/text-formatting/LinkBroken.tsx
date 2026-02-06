@@ -17,14 +17,14 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M6 4L8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M11 6.56252L14.7001 2.93755C16.1597 1.50753 18.7629 1.73938 20.5145 3.4554M18.1358 12L21.043 9.15178C21.6325 8.57431 21.9453 7.81414 21.9934 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M15 15.5866L10.9653 20.001C9.57254 21.5247 7.0887 21.2777 5.41744 19.4492C3.74618 17.6207 3.52038 14.9032 4.91309 13.3795L6.17395 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><path d="M2 8L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M6 4L8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M11 6.56252L14.7001 2.93755C16.1597 1.50753 18.7629 1.73938 20.5145 3.4554C22.266 5.17142 22.5027 7.72176 21.043 9.15178L18.1358 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M15 15.5866L10.9653 20.001C9.57254 21.5247 7.0887 21.2777 5.41744 19.4492C3.74618 17.6207 3.52038 14.9032 4.91309 13.3795L6.17395 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["LineDuotone", <><path d="M2 8L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M6 4L8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M11 6.56252L14.7001 2.93755C16.1597 1.50753 18.7629 1.73938 20.5145 3.4554C22.266 5.17142 22.5027 7.72176 21.043 9.15178L18.1358 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M15 15.5866L10.9653 20.001C9.57254 21.5247 7.0887 21.2777 5.41744 19.4492C3.74618 17.6207 3.52038 14.9032 4.91309 13.3795L6.17395 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
+  ["Linear", <><path d="M2 8L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M6 4L8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M11 6.56252L14.7001 2.93755C16.1597 1.50753 18.7629 1.73938 20.5145 3.4554C22.266 5.17142 22.5027 7.72176 21.043 9.15178L18.1358 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M15 15.5866L10.9653 20.001C9.57254 21.5247 7.0887 21.2777 5.41744 19.4492C3.74618 17.6207 3.52038 14.9032 4.91309 13.3795L6.17395 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Outline", <><path d="M19.9898 3.99115C18.4371 2.46996 16.3085 2.41193 15.2251 3.4733L11.5251 7.09827C11.2292 7.38815 10.7543 7.38328 10.4645 7.0874C10.1746 6.79152 10.1795 6.31667 10.4753 6.02679L14.1754 2.40182C16.0113 0.603153 19.0891 1.00883 21.0395 2.91967C22.9927 4.8332 23.4179 7.87522 21.5681 9.68753L18.6609 12.5357C18.365 12.8256 17.8902 12.8208 17.6003 12.5249C17.3104 12.229 17.3153 11.7542 17.6112 11.4643L20.5184 8.61605C21.5878 7.56832 21.5398 5.50967 19.9898 3.99115Z" fill="currentColor"/>
 <path d="M6.62424 3.58399C6.39448 3.23934 5.92882 3.14621 5.58418 3.37597C5.23953 3.60574 5.1464 4.07139 5.37617 4.41604L7.37617 7.41604C7.60593 7.76068 8.07158 7.85381 8.41623 7.62405C8.76088 7.39429 8.85401 6.92863 8.62424 6.58399L6.62424 3.58399Z" fill="currentColor"/>
 <path d="M2.23737 7.2885C1.84442 7.15751 1.41968 7.36988 1.28869 7.76284C1.15771 8.1558 1.37008 8.58054 1.76303 8.71152L7.76303 10.7115C8.15599 10.8425 8.58073 10.6301 8.71172 10.2372C8.8427 9.84422 8.63033 9.41949 8.23737 9.2885L2.23737 7.2885Z" fill="currentColor"/>

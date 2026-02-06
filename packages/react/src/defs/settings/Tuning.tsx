@@ -23,16 +23,16 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M17 11.0001L17 6.0001M17 3.00002L17 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17 22L17 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M7 2L7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
+  ["LineDuotone", <><path d="M10 9.5C10 11.1569 8.65685 12.5 7 12.5C5.34315 12.5 4 11.1569 4 9.5C4 7.84315 5.34315 6.5 7 6.5C8.65685 6.5 10 7.84315 10 9.5Z" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M20 14.5C20 12.8431 18.6569 11.5 17 11.5C15.3431 11.5 14 12.8431 14 14.5C14 16.1569 15.3431 17.5 17 17.5C18.6569 17.5 20 16.1569 20 14.5Z" stroke="currentColor" strokeWidth="1.5"/>
+<path opacity="0.5" d="M17 11L17.0415 2M7 2L7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path opacity="0.5" d="M7 13L7 22M17 22V18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Linear", <><path d="M14 14.5C14 12.8431 15.3431 11.5 17 11.5C18.6568 11.5 20 12.8431 20 14.5C20 16.1569 18.6568 17.5 17 17.5C15.3431 17.5 14 16.1569 14 14.5Z" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M3.99998 9.5C3.99998 11.1569 5.34312 12.5 6.99998 12.5C8.65683 12.5 9.99998 11.1569 9.99998 9.5C9.99998 7.84315 8.65683 6.5 6.99998 6.5C5.34312 6.5 3.99998 7.84315 3.99998 9.5Z" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M16.9585 9L16.9585 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M6.9585 15L6.9585 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M16.9585 22L16.9585 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M6.9585 2L6.9585 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["LineDuotone", <><path d="M10 9.5C10 11.1569 8.65685 12.5 7 12.5C5.34315 12.5 4 11.1569 4 9.5C4 7.84315 5.34315 6.5 7 6.5C8.65685 6.5 10 7.84315 10 9.5Z" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M20 14.5C20 12.8431 18.6569 11.5 17 11.5C15.3431 11.5 14 12.8431 14 14.5C14 16.1569 15.3431 17.5 17 17.5C18.6569 17.5 20 16.1569 20 14.5Z" stroke="currentColor" strokeWidth="1.5"/>
-<path opacity="0.5" d="M17 11L17.0415 2M7 2L7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path opacity="0.5" d="M7 13L7 22M17 22V18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Outline", <><path d="M16.9585 9.75C16.5443 9.75 16.2085 9.41421 16.2085 9L16.2085 2C16.2085 1.58579 16.5443 1.25 16.9585 1.25C17.3727 1.25 17.7085 1.58579 17.7085 2L17.7085 9C17.7085 9.41421 17.3727 9.75 16.9585 9.75Z" fill="currentColor"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M7 5.75C9.07107 5.75 10.75 7.42893 10.75 9.5C10.75 11.5711 9.07107 13.25 7 13.25C4.92893 13.25 3.25 11.5711 3.25 9.5C3.25 7.42893 4.92893 5.75 7 5.75ZM9.25 9.5C9.25 8.25736 8.24264 7.25 7 7.25C5.75736 7.25 4.75 8.25736 4.75 9.5C4.75 10.7426 5.75736 11.75 7 11.75C8.24264 11.75 9.25 10.7426 9.25 9.5Z" fill="currentColor"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M17 18.25C19.0711 18.25 20.75 16.5711 20.75 14.5C20.75 12.4289 19.0711 10.75 17 10.75C14.9289 10.75 13.25 12.4289 13.25 14.5C13.25 16.5711 14.9289 18.25 17 18.25ZM19.25 14.5C19.25 15.7426 18.2426 16.75 17 16.75C15.7574 16.75 14.75 15.7426 14.75 14.5C14.75 13.2574 15.7574 12.25 17 12.25C18.2426 12.25 19.25 13.2574 19.25 14.5Z" fill="currentColor"/>

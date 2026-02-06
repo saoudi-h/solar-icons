@@ -14,19 +14,19 @@ export default new Map<IconWeight, ReactElement>([
 <circle cx="12" cy="13" r="1" fill="currentColor"/>
 <circle cx="7" cy="12" r="1" fill="currentColor"/>
 <circle cx="17" cy="12" r="1" fill="currentColor"/></>],
-  ["Linear", <><path d="M17 8.21094C19.989 8.93258 22 10.2814 22 11.8262C22 14.1313 17.5228 15.9999 12 15.9999C6.47715 15.9999 2 14.1313 2 11.8262C2 10.2814 4.01099 8.93258 7 8.21094" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M7 8.72876C7 6.11714 9.11714 4 11.7288 4H12.2712C14.8829 4 17 6.11714 17 8.72876C17 8.90601 16.9458 9.07918 16.8003 9.18039C16.3862 9.4684 15.1898 10 12 10C8.81016 10 7.6138 9.4684 7.19972 9.18039C7.0542 9.07918 7 8.90601 7 8.72876Z" stroke="currentColor" strokeWidth="1.5"/>
-<path d="M12 16V19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M5.50036 15.5L4.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M18.4996 15.5L19.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<circle cx="12" cy="13" r="1" fill="currentColor"/>
-<circle cx="7" cy="12" r="1" fill="currentColor"/>
-<circle cx="17" cy="12" r="1" fill="currentColor"/></>],
   ["LineDuotone", <><path d="M5.50036 15.5L4.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M18.4996 15.5L19.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M17 8.21094C19.989 8.93258 22 10.2814 22 11.8262C22 14.1313 17.5228 15.9999 12 15.9999C6.47715 15.9999 2 14.1313 2 11.8262C2 10.2814 4.01099 8.93258 7 8.21094" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M7 8.72876C7 6.11714 9.11714 4 11.7288 4H12.2712C14.8829 4 17 6.11714 17 8.72876C17 8.90601 16.9458 9.07918 16.8003 9.18039C16.3862 9.4684 15.1898 10 12 10C8.81016 10 7.6138 9.4684 7.19972 9.18039C7.0542 9.07918 7 8.90601 7 8.72876Z" stroke="currentColor" strokeWidth="1.5"/>
 <path d="M12 16V19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<circle cx="12" cy="13" r="1" fill="currentColor"/>
+<circle cx="7" cy="12" r="1" fill="currentColor"/>
+<circle cx="17" cy="12" r="1" fill="currentColor"/></>],
+  ["Linear", <><path d="M17 8.21094C19.989 8.93258 22 10.2814 22 11.8262C22 14.1313 17.5228 15.9999 12 15.9999C6.47715 15.9999 2 14.1313 2 11.8262C2 10.2814 4.01099 8.93258 7 8.21094" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M7 8.72876C7 6.11714 9.11714 4 11.7288 4H12.2712C14.8829 4 17 6.11714 17 8.72876C17 8.90601 16.9458 9.07918 16.8003 9.18039C16.3862 9.4684 15.1898 10 12 10C8.81016 10 7.6138 9.4684 7.19972 9.18039C7.0542 9.07918 7 8.90601 7 8.72876Z" stroke="currentColor" strokeWidth="1.5"/>
+<path d="M12 16V19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M5.50036 15.5L4.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M18.4996 15.5L19.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <circle cx="12" cy="13" r="1" fill="currentColor"/>
 <circle cx="7" cy="12" r="1" fill="currentColor"/>
 <circle cx="17" cy="12" r="1" fill="currentColor"/></>],

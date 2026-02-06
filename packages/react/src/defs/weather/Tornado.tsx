@@ -18,18 +18,18 @@ export default new Map<IconWeight, ReactElement>([
 <path d="M11.7188 19.4609C12.103 19.4853 12.5297 19.5 13.0002 19.5C13.5738 19.5 14.0662 19.456 14.5002 19.3857" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M18 11C18 11 17.4848 12 12 12M6 11C6 11 6.21904 11.4251 7.8918 11.721" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M13 22C13 22 13.3047 22 13.5 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
-  ["Linear", <><path d="M12 3C7.02944 3 3 3.67157 3 4.5C3 5.32843 7.02944 6 12 6C16.9706 6 21 5.32843 21 4.5C21 3.97993 19.412 3.52168 17 3.25259" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M20 8C20 8 17.2089 9 11.7241 9C6.23938 9 4 8 4 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M16 14C16 14 14.7424 14.5 12 14.5C9.25762 14.5 8 14 8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M16 16.5C15.2525 16.7554 14.3516 17 13 17C11.6484 17 10.6575 16.8786 10 16.7554" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M11.7188 19.4609C12.103 19.4853 12.5297 19.5 13.0002 19.5C13.5738 19.5 14.0662 19.456 14.5002 19.3857" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M18 11C18 11 17.4848 12 12 12M6 11C6 11 6.21904 11.4251 7.8918 11.721" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-<path d="M13 22C13 22 13.3047 22 13.5 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["LineDuotone", <><path d="M12 3C7.02944 3 3 3.67157 3 4.5C3 5.32843 7.02944 6 12 6C16.9706 6 21 5.32843 21 4.5C21 3.97993 19.412 3.52168 17 3.25259" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M20 8C20 8 17.2089 9 11.7241 9C6.23938 9 4 8 4 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M16 14C16 14 14.7424 14.5 12 14.5C9.25762 14.5 8 14 8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M16 16.5C15.2525 16.7554 14.3516 17 13 17C11.6484 17 10.6575 16.8786 10 16.7554" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path opacity="0.5" d="M11.7188 19.4609C12.103 19.4853 12.5297 19.5 13.0002 19.5C13.5738 19.5 14.0662 19.456 14.5002 19.3857" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M18 11C18 11 17.4848 12 12 12M6 11C6 11 6.21904 11.4251 7.8918 11.721" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M13 22C13 22 13.3047 22 13.5 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
+  ["Linear", <><path d="M12 3C7.02944 3 3 3.67157 3 4.5C3 5.32843 7.02944 6 12 6C16.9706 6 21 5.32843 21 4.5C21 3.97993 19.412 3.52168 17 3.25259" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M20 8C20 8 17.2089 9 11.7241 9C6.23938 9 4 8 4 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M16 14C16 14 14.7424 14.5 12 14.5C9.25762 14.5 8 14 8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M16 16.5C15.2525 16.7554 14.3516 17 13 17C11.6484 17 10.6575 16.8786 10 16.7554" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M11.7188 19.4609C12.103 19.4853 12.5297 19.5 13.0002 19.5C13.5738 19.5 14.0662 19.456 14.5002 19.3857" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M18 11C18 11 17.4848 12 12 12M6 11C6 11 6.21904 11.4251 7.8918 11.721" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
 <path d="M13 22C13 22 13.3047 22 13.5 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></>],
   ["Outline", <><path fillRule="evenodd" clipRule="evenodd" d="M4.31274 4.5C4.67997 4.38779 5.16504 4.27819 5.75934 4.17914C7.33609 3.91634 9.54289 3.75 12 3.75C12.4142 3.75 12.75 3.41421 12.75 3C12.75 2.58579 12.4142 2.25 12 2.25C9.48655 2.25 7.19335 2.41944 5.51274 2.69954C4.67845 2.83859 3.95965 3.01055 3.43231 3.21835C3.17237 3.32078 2.91483 3.44871 2.70921 3.61618C2.51293 3.77605 2.25 4.0689 2.25 4.5C2.25 4.9311 2.51293 5.22395 2.70921 5.38382C2.91483 5.55129 3.17237 5.67922 3.43231 5.78165C3.95965 5.98945 4.67845 6.16141 5.51274 6.30046C7.19335 6.58056 9.48655 6.75 12 6.75C14.5135 6.75 16.8067 6.58056 18.4873 6.30046C19.3215 6.16141 20.0403 5.98945 20.5677 5.78165C20.8276 5.67922 21.0852 5.55129 21.2908 5.38382C21.4871 5.22395 21.75 4.9311 21.75 4.5C21.75 3.96462 21.3529 3.64298 21.1206 3.49321C20.8491 3.31812 20.4993 3.17957 20.1234 3.06485C19.361 2.83211 18.3088 2.64395 17.0832 2.50722C16.6715 2.46129 16.3006 2.75778 16.2546 3.16944C16.2087 3.58109 16.5052 3.95204 16.9168 3.99797C18.1032 4.13032 19.051 4.30583 19.6855 4.49951L19.6872 4.50002C19.32 4.61222 18.8349 4.72182 18.2407 4.82086C16.6639 5.08366 14.4571 5.25 12 5.25C9.54289 5.25 7.33609 5.08366 5.75934 4.82086C5.16504 4.72181 4.67997 4.61221 4.31274 4.5ZM20.3582 4.79149C20.3582 4.79149 20.3527 4.78778 20.3454 4.78004C20.3551 4.78757 20.3582 4.79149 20.3582 4.79149Z" fill="currentColor"/>

@@ -1,13 +1,8 @@
+'use client'
+
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import React, { createContext, useContext, useState } from 'react'
-import type { IconBaseProps } from './types'
-
-interface SolarContextType {
-    value: IconBaseProps
-    setValue: (props: Partial<IconBaseProps>) => void
-    svgProps?: ComponentPropsWithoutRef<'svg'>
-    setSvgProps: (props: Partial<ComponentPropsWithoutRef<'svg'>>) => void
-}
+import type { IconBaseProps, SolarContextType, SolarProviderProps } from './types'
 
 const defaultValue: IconBaseProps = {
     color: 'currentColor',
@@ -26,11 +21,6 @@ const SolarContext = createContext<SolarContextType>({
     setSvgProps: () => {},
 })
 
-interface ProviderProps {
-    value?: IconBaseProps
-    svgProps?: ComponentPropsWithoutRef<'svg'>
-}
-
 /**
  * SolarProvider component is a React functional component that supplies
  * the SolarContext to its child components. It manages and provides
@@ -42,7 +32,7 @@ interface ProviderProps {
  * @param props.children - The child components that will have access to the context.
  * @returns The context provider that wraps children components, providing icon customization capabilities.
  */
-export const SolarProvider: React.FC<ProviderProps & { children: ReactNode }> = ({
+export const SolarProvider: React.FC<SolarProviderProps & { children: ReactNode }> = ({
     children,
     value = defaultValue,
     svgProps = {},
