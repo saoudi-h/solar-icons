@@ -1,5 +1,11 @@
 # @solar-icons/react
 
+## 1.0.2
+
+### Patch Changes
+
+- [#371](https://github.com/saoudi-h/solar-icons/pull/371) [`7b2bb42`](https://github.com/saoudi-h/solar-icons/commit/7b2bb4202c6843b59d0a9f9aeb7a3afc6b611bc1) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add Next.js App Router support with "use client" directive for client components
+
 ## 1.0.1
 
 ### Patch Changes
