@@ -120,6 +120,7 @@ export const toKebabCase = (str: string): string => {
 /**
  * Dictionary of icon name corrections (typos from Figma source)
  */
+// cspell:disable - These are intentional typos that map to corrections
 export const ICON_RENAMES: Record<string, string> = {
     Magnifer: 'Magnifier',
     Infinity: 'Infinite',
@@ -136,6 +137,7 @@ export const ICON_RENAMES: Record<string, string> = {
     Clound: 'Cloud',
     Recive: 'Receive',
 }
+// cspell:enable
 
 //----------------------------------------------------------------------------------------------------------------
 

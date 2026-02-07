@@ -13,6 +13,7 @@
         "version": "changeset version",
         "release": "changeset publish",
         "typecheck": "tsc --noEmit",
+        "spell": "cspell \"**/*\" --no-progress",
         "prepare": "husky",
         "pre-commit": "turbo pre-commit --concurrency=1"
     },
@@ -25,6 +26,7 @@
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint": "^9.6.1",
         "@types/node": "^25.2.1",
+        "cspell": "^9.6.4",
         "eslint": "^9.39.2",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
