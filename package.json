@@ -15,6 +15,7 @@
         "typecheck": "tsc --noEmit",
         "spell": "cspell \"**/*\" --no-progress",
         "prepare": "husky",
+        "test": "turbo test",
         "pre-commit": "turbo pre-commit --concurrency=1"
     },
     "devDependencies": {
