@@ -18,13 +18,17 @@ The `@solar-icons/react` package is designed to work seamlessly in both client-s
 
 The `@solar-icons/react` package exports two main entry points:
 
-1.  **`@solar-icons/react`**: This is the standard entry point. It uses React's Context API (`SolarProvider` and `useSolar`) to manage global styles. This is ideal for client-side applications (CSR).
+1.  **`@solar-icons/react`**: This is the standard entry point. It uses React's Context API (`SolarProvider` and `useSolar`) to manage global styles. These components include the `"use client"` directive for Next.js App Router compatibility.
 
-2.  **`@solar-icons/react/ssr`**: This is a dedicated SSR entry point. The icon components exported from here **do not** use the React Context API.
+2.  **`@solar-icons/react/ssr`**: This is a dedicated SSR entry point. The icon components exported from here **do not** use the React Context API and remain as server components (no `"use client"` directive).
 
 ### Why the Difference?
 
 React's Context API is not designed to be used on the server for providing styles in the same way it is on the client, as the server renders a single pass of the component tree. The SSR components are pure, stateless components that take all their props directly. This makes them more predictable and performant in a server environment.
+
+### Next.js App Router
+
+With Next.js App Router (React Server Components), the standard `@solar-icons/react` imports work directly in server components thanks to the `"use client"` directive. For pure server components without any client-side JavaScript, use the `/ssr` imports.
 
 ## Usage in an SSR Application
 
