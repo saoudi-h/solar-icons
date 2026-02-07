@@ -1,5 +1,21 @@
 # @solar-icons/react
 
+## 1.0.3
+
+### Patch Changes
+
+- [#373](https://github.com/saoudi-h/solar-icons/pull/373) [`8d14035`](https://github.com/saoudi-h/solar-icons/commit/8d14035a28ab8ea97dae6778cbe8774bbbeeed16) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix(react): switch to automatic JSX runtime for React 17+ compatibility
+
+    This fixes a critical issue introduced in v1.0.2 where the build output used `React.createElement` without properly importing React, causing "React is not defined" errors in Next.js and other modern React frameworks.
+
+    **Root cause:** The update of build dependencies (`@vitejs/plugin-react` 4→5, `vite` 5→7) changed how the classic JSX runtime handled imports, resulting in broken builds.
+
+    **Changes:**
+    - Switch `jsxRuntime` from `'classic'` to `'automatic'` in Vite config
+    - Add `react/jsx-runtime` and `react/jsx-dev-runtime` to Rollup externals
+
+    The automatic JSX runtime (React 17+) generates `jsx()` calls instead of `React.createElement()`, eliminating the need for explicit React imports.
+
 ## 1.0.2
 
 ### Patch Changes
