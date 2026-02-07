@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 import pkg from './package.json'
 
 export default defineConfig({
-    plugins: [react({ jsxRuntime: 'classic' })],
+    plugins: [react({ jsxRuntime: 'automatic' })],
     build: {
         minify: true,
         target: 'ES2017',
@@ -12,7 +12,11 @@ export default defineConfig({
             entry: resolve(__dirname, 'src/index.ts'),
         },
         rollupOptions: {
-            external: Object.keys(pkg.peerDependencies),
+            external: [
+                ...Object.keys(pkg.peerDependencies),
+                'react/jsx-runtime',
+                'react/jsx-dev-runtime',
+            ],
             input: './src/index.ts',
             output: [
                 {
