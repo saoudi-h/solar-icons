@@ -43,12 +43,12 @@ export const MotionTabs = ({
     return (
         <div
             className={`
-          relative flex w-full grow-0 flex-col-reverse overflow-hidden
-        `}>
+              relative flex w-full grow-0 flex-col-reverse overflow-hidden
+            `}>
             <div
                 className={`
-                  relative h-full min-h-[200px] rounded-b-lg border
-                  border-border bg-default-100 px-2 py-4 text-left
+                  border-border bg-default-100 relative h-full min-h-[200px]
+                  rounded-b-lg border px-2 py-4 text-left
                 `}>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -119,8 +119,8 @@ export const MotionTabs = ({
                                 }}
                                 className={cn(
                                     `
-                                      absolute inset-0 rounded-t-lg border
-                                      border-b-0 border-border bg-default-100
+                                      border-border bg-default-100 absolute
+                                      inset-0 rounded-t-lg border border-b-0
                                       shadow-2xl
                                     `,
                                     activeTabClassName
@@ -135,8 +135,8 @@ export const MotionTabs = ({
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.2 }}
                                 className={`
-                                  absolute inset-0 rounded-t-lg bg-gradient-to-b
-                                  from-accent to-transparent
+                                  from-accent absolute inset-0 rounded-t-lg
+                                  bg-gradient-to-b to-transparent
                                 `}
                             />
                         )}

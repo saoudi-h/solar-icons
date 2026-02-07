@@ -76,13 +76,13 @@ export const FilterBarContent: React.FC = () => {
         <>
             <div
                 className={`
-              flex flex-1 flex-wrap content-start justify-start gap-2
-            `}>
+                  flex flex-1 flex-wrap content-start justify-start gap-2
+                `}>
                 {/* Style selector */}
                 <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
                     <SelectTrigger
                         className={`
-                          h-10 w-48 rounded-lg border-none! bg-default-200
+                          bg-default-200 h-10 w-48 rounded-lg border-none!
                           shadow-none!
                         `}>
                         <SelectValue placeholder="Select a weight" />
@@ -92,9 +92,9 @@ export const FilterBarContent: React.FC = () => {
                             <SelectItem key={weight} value={weight}>
                                 <div
                                     className={`
-                                  flex flex-row items-center justify-center
-                                  gap-2
-                                `}>
+                                      flex flex-row items-center justify-center
+                                      gap-2
+                                    `}>
                                     <Dialog
                                         className="mr-2 size-6"
                                         weight={weight}
@@ -112,7 +112,7 @@ export const FilterBarContent: React.FC = () => {
                 <div
                     data-vaul-no-drag
                     className={`
-                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
+                      bg-default-200 flex h-10 w-48 items-center rounded-lg p-4
                     `}>
                     <Slider
                         className=""
@@ -136,8 +136,8 @@ export const FilterBarContent: React.FC = () => {
                 <div className="relative flex h-10 w-48">
                     <MinimalisticMagnifer
                         className={`
-                          absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2
-                          text-muted-foreground
+                          text-muted-foreground absolute top-1/2 left-2.5 h-4
+                          w-4 -translate-y-1/2
                         `}
                     />
                     <Input
@@ -146,8 +146,8 @@ export const FilterBarContent: React.FC = () => {
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
                         className={`
-                          h-10 w-full rounded-lg border-0 border-none!
-                          bg-default-200 pl-10 text-sm shadow-none
+                          bg-default-200 h-10 w-full rounded-lg border-0
+                          border-none! pl-10 text-sm shadow-none
                           placeholder:text-muted-foreground
                         `}
                     />
@@ -159,8 +159,8 @@ export const FilterBarContent: React.FC = () => {
                     size="icon"
                     colors="accent"
                     className={`
-                      size-10 rounded-lg border-none! bg-default-200
-                      text-foreground
+                      bg-default-200 text-foreground size-10 rounded-lg
+                      border-none!
                     `}>
                     <Restart className="h-4 w-4" mirrored />
                 </Button>
@@ -168,9 +168,9 @@ export const FilterBarContent: React.FC = () => {
                 {/* Reset button */}
                 <div
                     className={`
-                      flex h-10 flex-row items-center justify-center gap-1
-                      rounded-lg border-none! bg-default-200 p-1 px-3 text-xs
-                      font-bold text-muted-foreground
+                      bg-default-200 text-muted-foreground flex h-10 flex-row
+                      items-center justify-center gap-1 rounded-lg border-none!
+                      p-1 px-3 text-xs font-bold
                     `}>
                     <Tooltip>
                         <TooltipTrigger>
@@ -185,7 +185,7 @@ export const FilterBarContent: React.FC = () => {
             {/* alternative to react Select */}
             <MultipleSelector
                 className={`
-                  min-h-10 rounded-lg border-none! bg-default-200 shadow-none!
+                  bg-default-200 min-h-10 rounded-lg border-none! shadow-none!
                 `}
                 placeholder="Select categories"
                 options={categoryOptions}
@@ -202,8 +202,8 @@ export const FilterBar = () => {
         return (
             <div
                 className={`
-                  z-20 flex w-full flex-wrap justify-between gap-2 rounded-xl
-                  border border-border bg-default-50 p-2 shadow-xs
+                  border-border bg-default-50 z-20 flex w-full flex-wrap
+                  justify-between gap-2 rounded-xl border p-2 shadow-xs
                   dark:bg-default-100
                 `}>
                 <FilterBarContent />
@@ -219,9 +219,9 @@ export const FilterBar = () => {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ x: -10 }}
                     className={`
-                      fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none
-                      rounded-l-full border border-border bg-default-200 p-2
-                      text-foreground/70 shadow-md transition-colors
+                      border-border bg-default-200 text-foreground/70 fixed
+                      top-80 right-[-20px] z-50 h-12 w-20 rounded-none
+                      rounded-l-full border p-2 shadow-md transition-colors
                       hover:text-foreground
                     `}>
                     <Settings className="size-8" weight="Linear" color="" />
@@ -230,9 +230,9 @@ export const FilterBar = () => {
             </DrawerTrigger>
             <DrawerContent
                 className={`
-                  !fixed !top-2 !right-2 !bottom-2 z-50 !flex !w-48
-                  overflow-hidden rounded-xl border border-border
-                  bg-default-50/90 p-2 shadow-xs backdrop-blur-sm !outline-none
+                  border-border bg-default-50/90 !fixed !top-2 !right-2
+                  !bottom-2 z-50 !flex !w-48 overflow-hidden rounded-xl border
+                  p-2 shadow-xs backdrop-blur-sm !outline-none
                   dark:bg-default-100/80
                 `}
                 style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>

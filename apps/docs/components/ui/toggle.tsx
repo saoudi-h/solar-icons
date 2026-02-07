@@ -8,20 +8,20 @@ import { cn } from '@/lib/utils'
 
 const toggleVariants = cva(
     `
+      focus-visible:ring-ring focus-visible:ring-1 focus-visible:outline-hidden
+      data-[state=on]:bg-primary data-[state=on]:text-primary-foreground
       inline-flex items-center justify-center gap-2 rounded-md border-2 text-sm
       font-medium whitespace-nowrap shadow-2xs transition-all duration-200
       ease-in
-      focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
       active:scale-95
       disabled:pointer-events-none disabled:opacity-50
-      data-[state=on]:bg-primary data-[state=on]:text-primary-foreground
       [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
     `,
     {
         variants: {
             variant: {
                 default: '',
-                outline: 'border border-input bg-transparent',
+                outline: 'border-input border bg-transparent',
                 ghost: 'border-transparent bg-transparent',
                 link: `
                   border-transparent bg-transparent

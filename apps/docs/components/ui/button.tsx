@@ -5,10 +5,10 @@ import * as React from 'react'
 
 const buttonVariants = cva(
     `
+      focus-visible:ring-ring focus-visible:ring-1 focus-visible:outline-hidden
       inline-flex w-fit items-center justify-center gap-2 rounded-md border-2
       text-sm font-medium whitespace-nowrap shadow-2xs transition-all
       duration-200 ease-in
-      focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
       active:scale-95
       disabled:pointer-events-none disabled:opacity-50
       [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0

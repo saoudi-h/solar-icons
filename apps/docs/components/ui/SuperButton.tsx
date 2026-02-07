@@ -101,9 +101,7 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
                     {...buttonProps}>
                     <Link
                         href={href}
-                        className={`
-                      flex flex-row items-center gap-4
-                    `}>
+                        className={`flex flex-row items-center gap-4`}>
                         {buttonContent}
                     </Link>
                 </MotionButton>

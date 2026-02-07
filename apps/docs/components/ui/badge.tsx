@@ -5,14 +5,14 @@ import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
     `
+      focus:ring-ring focus:ring-2 focus:ring-offset-2 focus:outline-hidden
       inline-flex items-center rounded-full border px-2.5 py-1 text-sm
       font-semibold text-nowrap transition-colors
-      focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden
     `,
     {
         variants: {
             variant: {
-                default: 'border-transparent text-background',
+                default: 'text-background border-transparent',
                 outline: 'bg-transparent',
                 ghost: 'border-transparent bg-transparent',
             },

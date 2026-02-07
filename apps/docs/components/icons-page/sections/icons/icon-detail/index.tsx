@@ -44,33 +44,33 @@ const Content: FC = () => {
     return (
         <div
             className={`
-          flex h-full w-full flex-col p-4
-          lg:flex-row
-        `}>
+              flex h-full w-full flex-col p-4
+              lg:flex-row
+            `}>
             <div>
                 <div
                     className={`
-                      flex h-full min-w-64 flex-row items-start justify-start
-                      gap-4 border-dashed border-border
+                      border-border flex h-full min-w-64 flex-row items-start
+                      justify-start gap-4 border-dashed
                       max-lg:mb-2 max-lg:border-b max-lg:pb-2
                       lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r
                       lg:pr-4
                     `}>
                     <div
                         className={`
-                      flex items-center justify-center
-                      lg:size-56
-                    `}>
+                          flex items-center justify-center
+                          lg:size-56
+                        `}>
                         <selectedIcon.Icon
                             className={`
-                          size-12
-                          lg:size-48
-                        `}
+                              size-12
+                              lg:size-48
+                            `}
                         />
                     </div>
 
                     <div className="flex flex-col items-start justify-between">
-                        <h3 className="text-left font-heading text-xl font-bold">
+                        <h3 className="font-heading text-left text-xl font-bold">
                             {selectedIcon?.name}
                         </h3>
                         <div className="flex gap-2">

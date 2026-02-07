@@ -1,6 +1,7 @@
 import type { IconProps, IconWeight } from '@solar-icons/react'
 import { SSR as icons } from '@solar-icons/react'
-import { createElement, ReactElement } from 'react'
+import type { ReactElement } from 'react';
+import { createElement } from 'react'
 import { Icon } from '@iconify/react'
 
 export const renderSolarIcon = (icon: string, solarIconParams?: IconProps): ReactElement | undefined => {

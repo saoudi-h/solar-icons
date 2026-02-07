@@ -24,7 +24,7 @@ export const Logo: React.FC = () => {
 
   return (
     <motion.div
-      className="flex items-center justify-center gap-4 cursor-pointer p-2"
+      className="flex cursor-pointer items-center justify-center gap-4 p-2"
       // Le secret est ici : on définit l'état nommé pour le groupe
       initial="initial"
       whileHover="hover"
@@ -43,7 +43,7 @@ export const Logo: React.FC = () => {
         <LogoIcon className="size-8" />
       </motion.div>
 
-      <span className="font-heading text-lg font-black pointer-events-none">
+      <span className="font-heading pointer-events-none text-lg font-black">
         Solar Icons
       </span>
     </motion.div>

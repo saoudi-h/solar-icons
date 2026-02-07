@@ -20,10 +20,10 @@ export const HoverEffect = ({
         <div
             className={cn(
                 `
-          grid grid-cols-1 py-10
-          md:grid-cols-2
-          lg:grid-cols-3
-        `,
+                  grid grid-cols-1 py-10
+                  md:grid-cols-2
+                  lg:grid-cols-3
+                `,
                 className
             )}>
             {items.map((item, idx) => (
@@ -109,9 +109,7 @@ export const CardDescription = ({
     return (
         <p
             className={cn(
-                `
-          mt-8 text-sm leading-relaxed tracking-wide text-zinc-400
-        `,
+                `mt-8 text-sm leading-relaxed tracking-wide text-zinc-400`,
                 className
             )}>
             {children}

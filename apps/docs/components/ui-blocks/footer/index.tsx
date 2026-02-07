@@ -10,19 +10,19 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
     return (
         <FooterMotion
             className={`
-          relative flex w-full flex-1 flex-col
-          md:px-10
-        `}>
+              relative flex w-full flex-1 flex-col
+              md:px-10
+            `}>
             <div
                 className={`
-                  relative mt-6 flex w-full container flex-col
-                  items-center gap-8 self-center py-0
+                  relative container mt-6 flex w-full flex-col items-center
+                  gap-8 self-center py-0
                   md:mx-10 md:mt-12 md:py-12
                 `}>
                 <div
                     className={`
-                      relative w-full gap-2 overflow-hidden rounded-none
-                      bg-accent/30 py-12
+                      bg-accent/30 relative w-full gap-2 overflow-hidden
+                      rounded-none py-12
                       md:rounded-3xl
                     `}>
                     <div className="absolute inset-0 z-0 overflow-hidden">
@@ -61,13 +61,13 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                         `}>
                         <div
                             className={`
-                          space-y-4
-                          md:pr-8
-                        `}>
+                              space-y-4
+                              md:pr-8
+                            `}>
                             <div className="flex items-center justify-start">
                                 <Logo />
                             </div>
-                            <p className="text-base text-muted-foreground">{bottomText}</p>
+                            <p className="text-muted-foreground text-base">{bottomText}</p>
                         </div>
 
                         <div
@@ -80,8 +80,9 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                     <div key={index}>
                                         <h3
                                             className={`
-                                          mb-4 font-heading text-base font-bold
-                                        `}>
+                                              font-heading mb-4 text-base
+                                              font-bold
+                                            `}>
                                             {section.title}
                                         </h3>
                                         <ul className="space-y-2">
@@ -90,6 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                     <Link
                                                         href={link.url}
                                                         className={`
+                                                          text-muted-foreground
                                                           flex flex-row
                                                           items-center gap-3
                                                           rounded-md border-l-2
@@ -97,9 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                           bg-linear-to-r
                                                           from-transparent
                                                           to-transparent py-1
-                                                          pl-2
-                                                          text-muted-foreground
-                                                          transition-colors
+                                                          pl-2 transition-colors
                                                           duration-100
                                                           ease-linear
                                                           hover:border-primary

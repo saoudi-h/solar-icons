@@ -23,32 +23,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <section
             className={`
-              relative flex w-full container flex-col items-center
-              self-center px-3
+              relative container flex w-full flex-col items-center self-center
+              px-3
               md:px-0
             `}>
             <div
                 className={`
-                  relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30
+                  bg-accent/30 relative w-full gap-2 overflow-hidden rounded-2xl
                   py-12
                   md:rounded-3xl
                 `}>
                 <NoiseSvg
                     className={`
-                  pointer-events-none absolute inset-0 size-full opacity-30
-                `}
+                      pointer-events-none absolute inset-0 size-full opacity-30
+                    `}
                 />
                 <div
                     className={`
-                      absolute top-0 left-1/3 h-1/2 w-1/2 -translate-x-1/2
-                      -translate-y-1/2 rounded-full bg-linear-to-b
-                      from-primary/80 to-transparent blur-3xl
+                      from-primary/80 absolute top-0 left-1/3 h-1/2 w-1/2
+                      -translate-x-1/2 -translate-y-1/2 rounded-full
+                      bg-linear-to-b to-transparent blur-3xl
                     `}></div>
                 <div
                     className={`
-                      absolute top-0 left-2/3 h-1/3 w-1/3 -translate-x-1/2
-                      -translate-y-1/2 rounded-full bg-linear-to-b
-                      from-warning/50 to-transparent blur-3xl
+                      from-warning/50 absolute top-0 left-2/3 h-1/3 w-1/3
+                      -translate-x-1/2 -translate-y-1/2 rounded-full
+                      bg-linear-to-b to-transparent blur-3xl
                     `}></div>
                 <div
                     className="absolute inset-0"
@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </Heading>
                     <p
                         className={`
-                          text-center text-base text-muted-foreground
+                          text-muted-foreground text-center text-base
                           sm:w-[466px]
                           md:text-lg md:leading-6
                         `}>
@@ -77,9 +77,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </p>
                     <div
                         className={`
-                      flex flex-col items-center gap-3
-                      sm:flex-row sm:gap-6
-                    `}>
+                          flex flex-col items-center gap-3
+                          sm:flex-row sm:gap-6
+                        `}>
                         <SuperButton {...getStarted}></SuperButton>
                         <SuperButton {...exploreIcons}></SuperButton>
                     </div>

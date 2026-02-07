@@ -48,9 +48,9 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                     <div className="relative h-full w-full">
                         <div
                             className={`
-                              h-full max-h-[calc(33vh)] w-full overflow-hidden
-                              rounded-xl border border-border bg-default-50/90
-                              shadow-lg backdrop-blur-lg
+                              border-border bg-default-50/90 h-full
+                              max-h-[calc(33vh)] w-full overflow-hidden
+                              rounded-xl border shadow-lg backdrop-blur-lg
                               dark:bg-default-100/80
                             `}>
                             {children}
@@ -67,7 +67,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                             <CloseCircle
                                 weight="Bold"
                                 className={`
-                                  size-full text-muted-foreground
+                                  text-muted-foreground size-full
                                   hover:text-foreground
                                 `}
                             />

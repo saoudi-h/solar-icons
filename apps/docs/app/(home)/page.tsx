@@ -6,8 +6,8 @@ export default function HomePage() {
     return (
         <main
             className={`
-              relative flex min-h-dvh w-full flex-1 flex-col justify-center
-              gap-9 bg-background py-4 text-center
+              bg-background relative flex min-h-dvh w-full flex-1 flex-col
+              justify-center gap-9 py-4 text-center
               md:gap-12 md:px-10 md:py-[34px]
             `}>
             <HeroSection {...config.heroSection} />

@@ -16,11 +16,9 @@ export const IconVariants: FC = () => {
                 {iconWeights.map(weight => (
                     <div
                         key={weight}
-                        className={`
-                      flex flex-col items-center gap-2
-                    `}>
+                        className={`flex flex-col items-center gap-2`}>
                         <selectedIcon.Icon weight={weight} size={32} />
-                        <span className="text-xs text-muted-foreground">{weight}</span>
+                        <span className="text-muted-foreground text-xs">{weight}</span>
                     </div>
                 ))}
             </div>

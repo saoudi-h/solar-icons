@@ -12,7 +12,7 @@ export const Tags: FC = () => {
         <>
             <div
                 className={`
-                  flex flex-col gap-2 border-b border-dashed border-border p-2
+                  border-border flex flex-col gap-2 border-b border-dashed p-2
                   max-lg:mb-2 max-lg:pb-2
                   lg:mr-4 lg:pr-4
                 `}>

@@ -161,7 +161,7 @@ const CommandEmpty = forwardRef<
         <div
             ref={forwardedRef}
             className={cn('py-6 text-center text-sm', className)}
-            // eslint-disable-next-line react/no-unknown-property
+             
             cmdk-empty=""
             role="presentation"
             {...props}
@@ -456,7 +456,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     aria-label="Focus input field"
                     className={cn(
                         `
-                          relative min-h-10 rounded-md border border-input
+                          border-input relative min-h-10 rounded-md border
                           text-sm
                         `,
                         {
@@ -501,9 +501,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                             <CloseCircle
                                 weight="Bold"
                                 size={24}
-                                className={`
-                              drop-shadow-md
-                            `}
+                                className={`drop-shadow-md`}
                             />
                         </Button>
                     )}
@@ -520,9 +518,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                           data-disabled:hover:bg-muted-foreground
                                         `,
                                         `
-                                          rounded-lg p-1 pr-0.5
                                           data-fixed:bg-muted-foreground
                                           data-fixed:hover:bg-muted-foreground
+                                          rounded-lg p-1 pr-0.5
                                         `,
                                         badgeClassName
                                     )}
@@ -532,16 +530,13 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     <button
                                         className={cn(
                                             `
-                                              ml-1 rounded-full
-                                              ring-offset-background
-                                              outline-hidden
-                                              focus:ring-2 focus:ring-ring
+                                              ring-offset-background ml-1
+                                              rounded-full outline-hidden
+                                              focus:ring-ring focus:ring-2
                                               focus:ring-offset-2
                                             `,
                                             (disabled || option.fixed) &&
-                                                `
-                                              hidden
-                                            `
+                                                `hidden`
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -555,7 +550,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                         onClick={() => handleUnselect(option)}>
                                         <CloseCircle
                                             className={`
-                                              h-4 w-4 text-muted-foreground
+                                              text-muted-foreground h-4 w-4
                                               hover:text-foreground
                                             `}
                                             weight="BoldDuotone"
@@ -592,8 +587,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                             }
                             className={cn(
                                 `
-                                  flex-1 bg-transparent outline-hidden
                                   placeholder:text-muted-foreground
+                                  flex-1 bg-transparent outline-hidden
                                 `,
                                 {
                                     'w-full': hidePlaceholderWhenSelected,
@@ -609,9 +604,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     {open && (
                         <CommandList
                             className={`
-                              absolute top-1 z-50 max-h-96 w-full rounded-xl
-                              border border-border/50 bg-popover
-                              text-popover-foreground shadow-md backdrop-blur-md
+                              border-border/50 bg-popover
+                              text-popover-foreground absolute top-1 z-50
+                              max-h-96 w-full rounded-xl border shadow-md
+                              backdrop-blur-md
                             `}
                             // className="absolute top-1 z-10 w-full rounded-md border bg-popover text-popover-foreground shadow-md outline-hidden animate-in"
                             onMouseLeave={() => {
@@ -632,9 +628,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {!selectFirstItem && (
                                         <CommandItem
                                             value="-"
-                                            className={`
-                                          hidden
-                                        `}
+                                            className={`hidden`}
                                         />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
@@ -672,8 +666,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                                                 'cursor-pointer',
                                                                 option.disable &&
                                                                     `
-                                                                      cursor-default
                                                                       text-muted-foreground
+                                                                      cursor-default
                                                                     `
                                                             )}>
                                                             {option.label}

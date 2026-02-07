@@ -7,7 +7,12 @@ const config: Config[] = defineConfig([
     {
         ignores: [
             '.next/',
+            '.source/',
             'next-env.d.ts',
+            'prettier.config.mjs',
+            'postcss.config.mjs',
+            'lint-staged.config.mjs',
+            'core/scripts/**',
         ],
     },
     {

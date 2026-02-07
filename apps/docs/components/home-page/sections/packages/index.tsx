@@ -53,20 +53,20 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
     return (
         <SectionMotion
             className={`
-              relative flex w-full container flex-col items-center
-              gap-8 self-center px-3 py-12
+              relative container flex w-full flex-col items-center gap-8
+              self-center px-3 py-12
               md:px-0
             `}>
             <div
                 className={`
-                  relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30
+                  bg-accent/30 relative w-full gap-2 overflow-hidden rounded-2xl
                   py-12
                   md:rounded-3xl
                 `}>
                 <NoiseSvg
                     className={`
-                  pointer-events-none absolute inset-0 size-full opacity-30
-                `}
+                      pointer-events-none absolute inset-0 size-full opacity-30
+                    `}
                 />
                 <div
                     className={`
@@ -104,7 +104,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                         Available{' '}
                         <span
                             className={`
-                              box-decoration-clone underline decoration-primary
+                              decoration-primary box-decoration-clone underline
                               underline-offset-8
                             `}>
                             Packages
@@ -130,9 +130,9 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                                     {hoveredIndex === idx && (
                                         <motion.span
                                             className={`
+                                              border-accent/50 bg-accent/40
                                               absolute inset-0 block h-full
                                               w-full rounded-none border
-                                              border-accent/50 bg-accent/40
                                             `}
                                             layoutId="hoverBackground"
                                             initial={{ opacity: 0 }}
@@ -171,16 +171,16 @@ export const PackageCard: React.FC<PackageCardProps> = ({
     return (
         <Card
             className={`
-              relative z-20 flex h-full min-h-48 w-full min-w-48 flex-col
-              overflow-hidden rounded-none bg-background/30
+              bg-background/30 relative z-20 flex h-full min-h-48 w-full
+              min-w-48 flex-col overflow-hidden rounded-none
               hover:bg-background/70
               md:min-h-64 md:min-w-64
             `}>
             <div
                 className={`
-              absolute bottom-0 left-0 size-24
-              sm:size-32
-            `}>
+                  absolute bottom-0 left-0 size-24
+                  sm:size-32
+                `}>
                 {
                     <Icon
                         icon={iconify}
@@ -217,15 +217,15 @@ export const PackageCard: React.FC<PackageCardProps> = ({
             </CardHeader>
             <CardContent
                 className={`
-                  relative flex-1 text-left text-sm font-light
-                  text-muted-foreground
+                  text-muted-foreground relative flex-1 text-left text-sm
+                  font-light
                 `}>
                 {content}
             </CardContent>
             <CardFooter
                 className={`
-                  relative flex w-full flex-row items-center justify-end
-                  bg-accent/30 px-2 py-2 backdrop-blur-lg
+                  bg-accent/30 relative flex w-full flex-row items-center
+                  justify-end px-2 py-2 backdrop-blur-lg
                 `}>
                 <ButtonWithTooltip
                     tooltip="Documentation"
@@ -236,7 +236,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     size="icon"
                     colors="secondary"
                     className={`
-                      w-10 rounded-l-xl rounded-r-none! border-r-border/50
+                      border-r-border/50 w-10 rounded-l-xl rounded-r-none!
                     `}>
                     <ArrowRightUp className="size-full" />
                 </ButtonWithTooltip>
@@ -259,7 +259,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     disabled={!npmLink}
                     size="icon"
                     colors="secondary"
-                    className="rounded-l-none! rounded-r-xl border-l-border/50">
+                    className="border-l-border/50 rounded-l-none! rounded-r-xl">
                     <Icon icon="devicon:npm" className="size-full" />
                 </ButtonWithTooltip>
             </CardFooter>

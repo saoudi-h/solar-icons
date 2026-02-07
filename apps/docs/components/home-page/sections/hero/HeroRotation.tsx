@@ -16,7 +16,7 @@ import {
 } from 'framer-motion'
 import { atom, useAtom } from 'jotai'
 import type { FC } from 'react'
-import React, { forwardRef, useEffect, useRef, useState } from 'react'
+import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
 
 const categoryAtom = atom<Category>('Devices')
 const styleAtom = atom<Style>('Bold')
@@ -42,7 +42,7 @@ const RotatingIcon: FC<RotatingIconProps> = ({
     const x = radius * Math.cos(rad) - 24
     const y = radius * Math.sin(rad) - 24
 
-    const rotate = useTransform(parentRotation, (r) => -r)
+    const rotate = useTransform(parentRotation, r => -r)
 
     return (
         <AnimatePresence mode="wait">
@@ -140,16 +140,16 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
             <Circle size={160} noGradient>
                 <div
                     className={`
-                      relative z-50 flex size-full flex-col items-center
-                      justify-center overflow-hidden rounded-full bg-accent/50
-                      bg-linear-to-t from-primary/50 to-transparent
+                      bg-accent/50 from-primary/50 relative z-50 flex size-full
+                      flex-col items-center justify-center overflow-hidden
+                      rounded-full bg-linear-to-t to-transparent
                       backdrop-contrast-150
                       dark:bg-linear-to-b
                     `}>
                     <button
                         className={`
-                          size-full rounded-t-full border-b border-primary/30
-                          font-heading text-base font-black text-foreground/70
+                          border-primary/30 font-heading text-foreground/70
+                          size-full rounded-t-full border-b text-base font-black
                           transition-colors duration-100
                           hover:bg-primary/30 hover:text-foreground
                           hover:backdrop-contrast-125
@@ -170,8 +170,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                     </button>
                     <button
                         className={`
-                          size-full rounded-b-full border-t border-primary/10
-                          font-heading text-base font-black text-foreground/70
+                          border-primary/10 font-heading text-foreground/70
+                          size-full rounded-b-full border-t text-base font-black
                           transition-colors duration-100
                           hover:bg-primary/30 hover:text-foreground
                           hover:backdrop-contrast-125
@@ -211,8 +211,8 @@ const Circle = forwardRef<HTMLDivElement, CircleProps>(
                 className={cn(
                     noGradient || 'hero-section-gradient',
                     `
-                      relative top-1/2 left-1/2 -translate-x-1/2
-                      -translate-y-1/2 rounded-full shadow-2xl shadow-primary/20
+                      shadow-primary/20 relative top-1/2 left-1/2
+                      -translate-x-1/2 -translate-y-1/2 rounded-full shadow-2xl
                       backdrop-contrast-150
                       dark:shadow-primary/20 dark:backdrop-contrast-150
                     `,
@@ -230,8 +230,12 @@ Circle.displayName = 'Circle'
 export const HeroRotation: FC = () => {
     const [style, setStyle] = useAtom(styleAtom)
     const [category, setCategory] = useAtom(categoryAtom)
-    const [outerIcons, setOuterIcons] = useState<SolarIcon[]>([])
-    const [innerIcons, setInnerIcons] = useState<SolarIcon[]>([])
+
+    // Using useMemo instead of useState + useEffect to avoid setState in effect
+    const { outerIcons, innerIcons } = useMemo(() => {
+        const { inner, outer } = getIconsByCategory(category)
+        return { outerIcons: outer, innerIcons: inner }
+    }, [category])
 
     const { scrollY } = useScroll()
     const scrollVelocity = useVelocity(scrollY)
@@ -255,12 +259,6 @@ export const HeroRotation: FC = () => {
     const directionFactor = useRef(1)
 
     useEffect(() => {
-        const { inner, outer } = getIconsByCategory(category)
-        setOuterIcons(outer)
-        setInnerIcons(inner)
-    }, [style, category])
-
-    useEffect(() => {
         const setRandom = () => {
             setStyle(styles[Math.floor(Math.random() * styles.length)] || 'Linear')
             setCategory(categories[Math.floor(Math.random() * categories.length)] || 'Devices')
@@ -271,7 +269,7 @@ export const HeroRotation: FC = () => {
         }, 5000)
 
         return () => clearInterval(interval)
-    }, [])
+    }, [setCategory, setStyle])
 
     useAnimationFrame((_, delta) => {
         const scrollDirection = scrollVelocity.get() < 0 ? -1 : 1

@@ -12,8 +12,8 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
             <section
                 className={cn(
                     `
-                      relative flex h-full w-full container flex-1
-                      flex-col items-center self-center px-0
+                      relative container flex h-full w-full flex-1 flex-col
+                      items-center self-center px-0
                     `,
                     className
                 )}>
@@ -25,8 +25,9 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                     `}>
                     <div
                         className={`
-                      relative flex h-full flex-1 flex-col gap-4 rounded-xl p-4
-                    `}>
+                          relative flex h-full flex-1 flex-col gap-4 rounded-xl
+                          p-4
+                        `}>
                         <InitState />
                         <FilterBar />
                         <IconGridVirtualized />

@@ -1,7 +1,8 @@
 import { docs } from 'fumadocs-mdx:collections/server'
 import { SSR as icons } from '@solar-icons/react'
 import { loader } from 'fumadocs-core/source'
-import { IconifyFrameworkIcon, iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
+import type { IconifyFrameworkIcon } from './resolveIconUtils';
+import { iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
 
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info

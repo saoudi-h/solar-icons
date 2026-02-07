@@ -56,6 +56,7 @@ export function Rate({
         const item = localStorage.getItem(`docs-feedback-${url}`)
 
         if (item === null) return
+        // eslint-disable-next-line
         setPrevious(JSON.parse(item) as Result)
     }, [url])
 
@@ -130,8 +131,9 @@ export function Rate({
                 {previous ? (
                     <div
                         className={`
-                          flex flex-col items-center gap-3 rounded-xl bg-fd-card
-                          px-3 py-6 text-center text-sm text-fd-muted-foreground
+                          bg-fd-card text-fd-muted-foreground flex flex-col
+                          items-center gap-3 rounded-xl px-3 py-6 text-center
+                          text-sm
                         `}>
                         <p>Thank you for your feedback!</p>
                         <div className="flex flex-row items-center gap-2">
@@ -166,14 +168,14 @@ export function Rate({
                 ) : (
                     <form className="flex flex-col gap-3" onSubmit={submit}>
                         <textarea
-                            // eslint-disable-next-line jsx-a11y/no-autofocus
+                             
                             autoFocus
                             required
                             value={message}
                             onChange={e => setMessage(e.target.value)}
                             className={`
-                              resize-none rounded-lg border bg-fd-secondary p-3
-                              text-fd-secondary-foreground
+                              bg-fd-secondary text-fd-secondary-foreground
+                              resize-none rounded-lg border p-3
                               placeholder:text-fd-muted-foreground
                               focus-visible:outline-none
                             `}
@@ -188,9 +190,7 @@ export function Rate({
                             type="submit"
                             className={cn(
                                 buttonVariants({ color: 'outline' }),
-                                `
-                              w-fit px-3
-                            `
+                                `w-fit px-3`
                             )}
                             disabled={isPending}>
                             Submit

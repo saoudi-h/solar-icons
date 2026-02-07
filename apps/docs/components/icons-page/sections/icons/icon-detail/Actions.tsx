@@ -162,9 +162,7 @@ export const Actions: FC = () => {
                 size="default"
                 variant="ghost"
                 onClick={handleDownloadSVG}
-                className={`
-              p-1
-            `}>
+                className={`p-1`}>
                 Get SVG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>
@@ -172,9 +170,7 @@ export const Actions: FC = () => {
                 size="default"
                 variant="ghost"
                 onClick={handleDownloadPNG}
-                className={`
-              p-1
-            `}>
+                className={`p-1`}>
                 Get PNG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>

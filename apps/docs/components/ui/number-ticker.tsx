@@ -24,24 +24,18 @@ export default function NumberTicker({
 }: NumberTickerProps) {
     const ref = useRef<HTMLSpanElement>(null)
     const isInView = useInView(ref, { once: true, margin: '0px' })
+    const hasAnimated = useRef(false)
 
-    const isFirstRender = useRef(true)
-
-    const initialMotionValue =
-        disableAnimationOnFirstRender && isFirstRender.current
-            ? value
-            : direction === 'down'
-              ? value
-              : 0
-
-    const motionValue = useMotionValue(initialMotionValue)
+    // Always start from 0 or value depending on direction, animation happens in effect
+    const motionValue = useMotionValue(direction === 'down' ? value : 0)
     const springValue = useSpring(motionValue, {
         damping: 60,
         stiffness: 600,
     })
 
     useEffect(() => {
-        if (disableAnimationOnFirstRender && isFirstRender.current && ref.current) {
+        if (disableAnimationOnFirstRender && !hasAnimated.current && ref.current) {
+            // On first render, just show the value without animation
             ref.current.textContent = Intl.NumberFormat('en-US', {
                 minimumFractionDigits: decimalPlaces,
                 maximumFractionDigits: decimalPlaces,
@@ -51,13 +45,13 @@ export default function NumberTicker({
 
     useEffect(() => {
         if (isInView) {
-            if (isFirstRender.current) {
+            if (!hasAnimated.current) {
                 if (!disableAnimationOnFirstRender) {
                     setTimeout(() => {
                         motionValue.set(direction === 'down' ? 0 : value)
                     }, delay * 1000)
                 }
-                isFirstRender.current = false
+                hasAnimated.current = true
             } else {
                 setTimeout(() => {
                     motionValue.set(direction === 'down' ? 0 : value)
