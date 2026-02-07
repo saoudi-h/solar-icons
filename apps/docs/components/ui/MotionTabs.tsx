@@ -23,7 +23,7 @@ export const MotionTabs = ({
     tabClassName?: string
     contentClassName?: string
 }) => {
-    const [active, setActive] = useState<MotionTab>(propTabs[0])
+    const [active, setActive] = useState<MotionTab>(() => propTabs[0]!)
     const [hoveredTab, setHoveredTab] = useState<string | null>(null)
 
     const handleTabClick = (tab: MotionTab) => {

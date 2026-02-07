@@ -6,10 +6,10 @@ import { IconContainer } from '@/components/ui/icon-container'
 import { MotionHeading } from '@/components/ui/motion'
 import { cn } from '@/lib/utils'
 import type { Icon as IconType } from '@solar-icons/react/lib/types'
+import { Globus, Link, PaletteRound, PlugCircle } from '@solar-icons/react/ssr'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import React, { useState } from 'react'
 import { MotionShapeSvg } from './ShapeSvg'
-import { Globus, Link, PaletteRound, PlugCircle } from '@solar-icons/react/ssr'
 
 export interface FeatureCardProps {
     title: string
@@ -57,7 +57,7 @@ export const FeaturesSection = () => {
             opacity: 1,
             y: 0,
             transition: {
-                ease: 'easeOut',
+                ease: 'easeOut' as const,
                 duration: 0.6,
                 delay: 0.1 * index,
             },

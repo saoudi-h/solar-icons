@@ -43,7 +43,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
             opacity: 1,
             y: 0,
             transition: {
-                ease: 'easeOut',
+                ease: 'easeOut' as const,
                 duration: 0.6,
                 delay: 0.1 * index,
             },
