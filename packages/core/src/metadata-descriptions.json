@@ -7892,13 +7892,13 @@
         "tags": ["tire", "wheels"]
     },
     {
-        "name": "spedometer-max",
+        "name": "speedometer-max",
         "category": "parts",
         "categoryTags": ["parts", "service", "transport", "transportation", "navigation", "travel"],
         "tags": ["sightseeing", "compass"]
     },
     {
-        "name": "spedometer-low",
+        "name": "speedometer-low",
         "category": "parts",
         "categoryTags": [
             "parts",
@@ -7911,7 +7911,7 @@
         "tags": ["speedometer", "measuring-tool"]
     },
     {
-        "name": "spedometer-middle",
+        "name": "speedometer-middle",
         "category": "parts",
         "categoryTags": [
             "parts",
