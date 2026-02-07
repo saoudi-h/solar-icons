@@ -7,5 +7,6 @@ export const storybook: Config[] = defineConfig([
     {
         ignores: ['!.storybook', 'storybook-static', '.turbo', 'node_modules', 'dist', '.vscode'],
     },
+    // @ts-expect-error wrong types
     ...storybookPlugin.configs['flat/recommended'],
 ])

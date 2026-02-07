@@ -56,7 +56,7 @@ export function Rate({
         const item = localStorage.getItem(`docs-feedback-${url}`)
 
         if (item === null) return
-        // eslint-disable-next-line
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPrevious(JSON.parse(item) as Result)
     }, [url])
 

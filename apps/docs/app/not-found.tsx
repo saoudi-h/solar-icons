@@ -18,14 +18,15 @@ export interface NotFoundProps {
 
 const NotFound = () => {
     const { title, description, primaryAction, secondaryAction } = config.notFound
-    const [hasHistory, setHasHistory] = useState(false);
+    const [hasHistory, setHasHistory] = useState(false)
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.history) {
             // eslint-disable-next-line
             setHasHistory(window.history.length > 1);
         }
-    }, []);
+        return undefined
+    }, [])
 
     return (
         <main

@@ -36,7 +36,7 @@ export interface IconData {
 
 export const icons: IconData[] = [
 `
-    const res = iconEntries.map((icon) => {
+    const res = iconEntries.map(icon => {
         return `    {
         name: '${icon.name}',
         category: '${icon.category}' as Category,

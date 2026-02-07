@@ -13,6 +13,7 @@ const config: Config[] = defineConfig([
             'postcss.config.mjs',
             'lint-staged.config.mjs',
             'core/scripts/**',
+            'core/generated/**',
         ],
     },
     {
