@@ -1,110 +1,110 @@
 # Solar Icons - Beta Release Workflow
 
-## Vue d'ensemble
+## Overview
 
-Ce document explique le processus de publication beta pour tester les nouvelles fonctionnalités avant une release stable.
+This document explains the beta publishing process to test new features before a stable release.
 
-## Pourquoi une branche `beta` ?
+## Why a `beta` branch?
 
-La convention d'une branche `beta` est courante dans les projets qui utilisent Changesets. Voici comment ça marche :
+Using a `beta` branch is a common convention in projects that use Changesets. Here's how it works:
 
-- **`main`** : Branche de production, publie les versions stables (ex: `1.0.4`)
-- **`beta`** : Branche de pré-production, publie les versions beta (ex: `1.0.5-beta.0`)
+- **`main`**: Production branch, publishes stable versions (e.g., `1.0.4`)
+- **`beta`**: Pre-production branch, publishes beta versions (e.g., `1.0.5-beta.0`)
 
-> **Note** : Certains projets utilisent `next` ou `canary` au lieu de `beta`. C'est une question de préférence.
+> **Note**: Some projects use `next` or `canary` instead of `beta`. It's a matter of preference.
 
-## Workflow de publication beta
+## Beta Publishing Workflow
 
-### 1. Préparer la branche beta
+### 1. Prepare the beta branch
 
 ```bash
-# Créer la branche beta à partir de main (une seule fois)
+# Create the beta branch from main (only once)
 git checkout main
 git pull
 git checkout -b beta
 
-# OU merger une feature branch dans beta
+# OR merge a feature branch into beta
 git checkout beta
 git merge feat/icon-naming-refactor
 ```
 
-### 2. Entrer en mode prerelease
+### 2. Enter prerelease mode
 
 ```bash
-# Activer le mode prerelease avec tag "beta"
+# Activate prerelease mode with "beta" tag
 pnpm changeset pre enter beta
 ```
 
-Cela crée un fichier `.changeset/pre.json` qui indique à Changesets de générer des versions `-beta.X`.
+This creates a `.changeset/pre.json` file that tells Changesets to generate `-beta.X` versions.
 
-### 3. Créer un changeset
+### 3. Create a changeset
 
 ```bash
 pnpm changeset
 ```
 
-Répondre aux prompts : packages affectés, type de changement, description.
+Answer the prompts: affected packages, change type, description.
 
-### 4. Versionner les packages
+### 4. Version the packages
 
 ```bash
 pnpm changeset version
 ```
 
-Cela met à jour les `package.json` avec des versions comme `1.0.5-beta.0`, `1.0.5-beta.1`, etc.
+This updates `package.json` files with versions like `1.0.5-beta.0`, `1.0.5-beta.1`, etc.
 
-### 5. Publier sur NPM
+### 5. Publish to NPM
 
 ```bash
-# Publier avec le tag "beta"
+# Publish with the "beta" tag
 pnpm changeset publish --tag beta
 ```
 
-Ou simplement pusher sur la branche `beta` si le workflow CI est configuré.
+Or simply push to the `beta` branch if the CI workflow is configured.
 
-### 6. Sortir du mode prerelease
+### 6. Exit prerelease mode
 
-Quand prêt pour la release stable :
+When ready for stable release:
 
 ```bash
 pnpm changeset pre exit
 ```
 
-Puis merger `beta` → `main` pour publier les versions stables.
+Then merge `beta` → `main` to publish stable versions.
 
-## Workflows GitHub Actions
+## GitHub Actions Workflows
 
-### release.yml (branche main)
-- Déclenché sur push vers `main`
-- Publie des versions stables
+### release.yml (main branch)
+- Triggered on push to `main`
+- Publishes stable versions
 
-### release-beta.yml (branche beta)
-- Déclenché sur push vers `beta`
-- Publie des versions beta avec `--tag beta`
+### release-beta.yml (beta branch)
+- Triggered on push to `beta`
+- Publishes beta versions with `--tag beta`
 
-## Utilisation des versions beta
+## Using beta versions
 
-Les utilisateurs peuvent installer les versions beta avec :
+Users can install beta versions with:
 
 ```bash
-# Installer la dernière beta
+# Install the latest beta
 npm install @solar-icons/react@beta
 
-# Installer une version spécifique
+# Install a specific version
 npm install @solar-icons/react@1.0.5-beta.0
 ```
 
-## Résumé des conventions
+## Convention Summary
 
-| Branche | Tag NPM | Versions | Public |
-|---------|---------|----------|--------|
-| `main` | `latest` | `1.0.4` | Oui, par défaut |
-| `beta` | `beta` | `1.0.5-beta.0` | Oui, optionnel |
+| Branch | NPM Tag | Versions | Public |
+|--------|---------|----------|--------|
+| `main` | `latest` | `1.0.4` | Yes, default |
+| `beta` | `beta` | `1.0.5-beta.0` | Yes, opt-in |
 
-## Alternatives à la branche beta
+## Alternatives to a beta branch
 
-Si tu préfères éviter une branche `beta` permanente :
+If you prefer to avoid a permanent `beta` branch:
 
-1. **Feature branch + prerelease** : Activer prerelease sur ta feature branch
-2. **Publish local** : `pnpm pack` pour tester localement
-3. **Verdaccio** : Registry NPM local pour tests internes
+1. **Feature branch + prerelease**: Activate prerelease on your feature branch
+2. **Local publish**: Use `pnpm pack` for local testing
+3. **Verdaccio**: Local NPM registry for internal testing
