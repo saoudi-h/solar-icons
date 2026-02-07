@@ -1,3 +1,4 @@
 #!/bin/sh
 
+export PATH="$HOME/.local/share/pnpm:$PATH"
 pnpm dlx commitlint --edit $1
