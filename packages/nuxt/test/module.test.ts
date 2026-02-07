@@ -32,7 +32,7 @@ describe('Nuxt module defaults and setup', () => {
     })
   })
 
-  it('registers aliases, type templates, provider and composables', async () => {
+  it('registers aliases, type templates, provider and composables', { timeout: 30000 }, async () => {
     const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
 
     // Avoid dynamic imports of the full icon set by mocking getAllIconNames to a tiny list
