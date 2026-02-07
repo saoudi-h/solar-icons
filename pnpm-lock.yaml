@@ -300,7 +300,7 @@ importers:
   apps/test-react-native-icons:
     dependencies:
       '@solar-icons/react-native':
-        specifier: file:../../packages/react-native
+        specifier: workspace:*
         version: link:../../packages/react-native
       expo:
         specifier: ~54.0.33
