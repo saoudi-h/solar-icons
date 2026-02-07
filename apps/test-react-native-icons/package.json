@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@solar-icons/react-native": "file:../../packages/react-native",
-    "expo": "~54.0.30",
+    "expo": "~54.0.33",
     "expo-status-bar": "~3.0.9",
-    "react": "19.2.3",
+    "react": "19.2.4",
     "react-native": "0.83.1",
-    "react-native-svg": "^15.15.1"
+    "react-native-svg": "^15.15.2"
   },
   "devDependencies": {
-    "@types/react": "~19.2.7",
+    "@types/react": "~19.2.13",
     "typescript": "~5.9.2"
   },
   "keywords": [

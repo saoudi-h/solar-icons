@@ -16,28 +16,28 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
-        "@next/eslint-plugin-next": "^16.1.1",
+        "@next/eslint-plugin-next": "^16.1.6",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint-config-prettier": "^6.11.3",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-        "@types/node": "^25.0.3",
-        "@typescript-eslint/utils": "^8.51.0",
+        "@types/node": "^25.2.1",
+        "@typescript-eslint/utils": "^8.54.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-jsx-a11y": "^6.10.2",
-        "eslint-plugin-playwright": "^2.3.0",
+        "eslint-plugin-playwright": "^2.5.1",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
-        "eslint-plugin-regexp": "^2.10.0",
-        "eslint-plugin-storybook": "^10.1.11",
+        "eslint-plugin-regexp": "^3.0.0",
+        "eslint-plugin-storybook": "^10.2.7",
         "eslint-plugin-tailwindcss": "^3.18.2",
-        "eslint-plugin-turbo": "^2.7.1",
-        "globals": "^16.5.0",
+        "eslint-plugin-turbo": "^2.8.3",
+        "globals": "^17.3.0",
         "tailwindcss": "^4.1.18",
-        "typescript-eslint": "^8.51.0"
+        "typescript-eslint": "^8.54.0"
     },
     "dependencies": {
-        "@eslint/config-helpers": "^0.5.0",
+        "@eslint/config-helpers": "^0.5.2",
         "eslint": "^9.39.2",
         "eslint-plugin-better-tailwindcss": "^3.8.0"
     }
