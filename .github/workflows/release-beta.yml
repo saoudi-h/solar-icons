@@ -33,7 +33,7 @@ jobs:
               id: changesets
               uses: changesets/action@v1
               with:
-                  publish: pnpm release --tag beta
+                  publish: pnpm release
                   title: "ci(changesets): 🧪 beta version packages"
                   commit: "ci(changesets): beta version packages"
                   setupGitUser: false
