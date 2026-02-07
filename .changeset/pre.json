@@ -18,6 +18,7 @@
     "@solar-icons/vue": "1.1.0"
   },
   "changesets": [
+    "fix-docs-deprecation",
     "refactor-naming-and-spell-fixes"
   ]
 }
