@@ -103,8 +103,18 @@ export default ${name}
             // Add aliases if they exist
             if (ICON_ALIASES[name]) {
                 ICON_ALIASES[name].forEach(alias => {
-                    categoryIndexContent += `/** @deprecated Use ${name} instead */\n`
-                    categoryIndexContent += `export { default as ${alias} } from './${name}'\n`
+                    const aliasContent = `import target from './${name}'
+/**
+ * @deprecated Use ${name} instead
+ */
+const ${alias} = target
+export default ${alias}
+`
+                    fs.writeFileSync(path.join(categoryPath, `${alias}.ts`), aliasContent, {
+                        flag: 'w',
+                    })
+
+                    categoryIndexContent += `export { default as ${alias} } from './${alias}'\n`
                 })
             }
         }
