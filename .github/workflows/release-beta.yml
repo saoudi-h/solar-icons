@@ -1,19 +1,16 @@
-name: Release
+name: Release Beta
 
 on:
     push:
         branches:
-            - main
-        paths-ignore:
-            - 'apps/nuxt/**'
-            - 'apps/vue-app/**'
+            - beta
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    release:
-        name: Release
+    release-beta:
+        name: Release Beta
         runs-on: ubuntu-latest
         steps:
             - name: Checkout branch
@@ -24,7 +21,7 @@ jobs:
             - name: Install dependencies
               uses: ./.github/actions/install
               with:
-                  node-version: ''
+                  node-version: ""
 
             - name: Build
               run: pnpm build
@@ -32,13 +29,13 @@ jobs:
             - name: Tests
               run: pnpm test
 
-            - name: Create Release Pull Request or Publish to NPM
+            - name: Publish Beta to NPM
               id: changesets
               uses: changesets/action@v1
               with:
-                  publish: pnpm release
-                  title: 'ci(changesets): :package: version packages'
-                  commit: 'ci(changesets): version packages'
+                  publish: pnpm release --tag beta
+                  title: "ci(changesets): 🧪 beta version packages"
+                  commit: "ci(changesets): beta version packages"
                   setupGitUser: false
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
