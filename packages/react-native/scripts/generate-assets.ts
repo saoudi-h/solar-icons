@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
+import { ICON_RENAMES } from '../../core/src/utils'
 import type { SvgMap } from './utils'
 import {
     ICONS_PATH,
@@ -12,6 +13,15 @@ import {
     verifyIcons,
     WEIGHTS,
 } from './utils'
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {}
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = []
+    }
+    ICON_ALIASES[correction].push(typo)
+}
 
 // --- Types ---
 
@@ -115,10 +125,18 @@ ${icon.pascalName}.displayName = "${icon.pascalName}"
         // We want .../category/style.ts
         const parentDir = path.dirname(folderPath)
 
-        const exports = icons
+        let exports = icons
             .map(icon => `export { ${icon.pascalName} } from './${style}/${icon.pascalName}';`)
             .sort()
             .join('\n')
+
+        // Add deprecated aliases
+        icons.forEach(icon => {
+            ICON_ALIASES[icon.pascalName]?.forEach(alias => {
+                exports += `\n/** @deprecated Use ${icon.pascalName} instead */`
+                exports += `\nexport { ${icon.pascalName} as ${alias} } from './${style}/${icon.pascalName}';`
+            })
+        })
 
         return {
             path: path.join(parentDir, `${style}.ts`),

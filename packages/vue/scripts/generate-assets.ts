@@ -1,9 +1,19 @@
 #!/usr/bin/env node
+import { ICON_RENAMES } from '../../core/src/utils'
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 import type { IconByStyle, IconsByName, SvgByName, SvgMap } from './utils'
 import { ICONS_PATH, readSvgsFromDisk, toPascalCase } from './utils'
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {}
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = []
+    }
+    ICON_ALIASES[correction].push(typo)
+}
 
 interface ComponentGenerator {
     cleanGeneratedFiles(): void
@@ -108,6 +118,14 @@ class IconComponentGenerator implements ComponentGenerator {
                 'utf-8'
             )
             categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
+
+            // Add aliases if they exist
+            if (ICON_ALIASES[componentName]) {
+                ICON_ALIASES[componentName].forEach(alias => {
+                    categoryIndexContent += `/** @deprecated Use ${componentName} instead */\n`
+                    categoryIndexContent += `export { default as ${alias} } from './${componentName}'\n`
+                })
+            }
         }
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, 'utf-8')
     }

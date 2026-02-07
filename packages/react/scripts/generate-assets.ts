@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
+import { ICON_RENAMES } from '../../core/src/utils'
 import type { SvgMap } from './utils'
 import {
     CSR_PATH,
@@ -13,6 +14,15 @@ import {
     toPascalCase,
     verifyIcons,
 } from './utils'
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {}
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = []
+    }
+    ICON_ALIASES[correction].push(typo)
+}
 
 /**
  * Clean generated directories and files to ensure a clean build.
@@ -89,6 +99,14 @@ export default ${name}
             })
 
             categoryIndexContent += `export { default as ${name} } from './${name}'\n`
+
+            // Add aliases if they exist
+            if (ICON_ALIASES[name]) {
+                ICON_ALIASES[name].forEach(alias => {
+                    categoryIndexContent += `/** @deprecated Use ${name} instead */\n`
+                    categoryIndexContent += `export { default as ${alias} } from './${name}'\n`
+                })
+            }
         }
 
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, { flag: 'w' })

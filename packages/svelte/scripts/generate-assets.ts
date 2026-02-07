@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
 
+import { ICON_RENAMES } from '../../core/src/utils';
 import type { SvgMap } from './utils';
 import {
     ICONS_PATH,
@@ -12,6 +13,15 @@ import {
     verifyIcons,
     WEIGHTS,
 } from './utils';
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {};
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = [];
+    }
+    ICON_ALIASES[correction].push(typo);
+}
 
 // --- Types ---
 
@@ -83,13 +93,21 @@ let props = $props()
 
     styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
         const parentDir = path.dirname(folderPath);
-        const exports = icons
+        let exports = icons
             .map(
                 (icon) =>
                     `export { default as ${icon.pascalName} } from './${style}/${icon.pascalName}.svelte';`
             )
             .sort()
             .join('\n');
+
+        // Add deprecated aliases
+        icons.forEach((icon) => {
+            ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+                exports += `\n/** @deprecated Use ${icon.pascalName} instead */`;
+                exports += `\nexport { default as ${alias} } from './${style}/${icon.pascalName}.svelte';`;
+            });
+        });
 
         return {
             path: path.join(parentDir, `${style}.ts`),
