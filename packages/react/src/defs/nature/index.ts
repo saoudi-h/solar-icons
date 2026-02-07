@@ -1,9 +1,0 @@
-export { default as Bonfire } from './Bonfire';
-export { default as FireMinimalistic } from './FireMinimalistic';
-export { default as FireSquare } from './FireSquare';
-export { default as Fire } from './Fire';
-export { default as Flame } from './Flame';
-export { default as Leaf } from './Leaf';
-export { default as SuitcaseLines } from './SuitcaseLines';
-export { default as SuitcaseTag } from './SuitcaseTag';
-export { default as Suitcase } from './Suitcase';
