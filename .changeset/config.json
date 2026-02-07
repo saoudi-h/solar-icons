@@ -1,6 +1,11 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-    "changelog": ["@changesets/changelog-github", { "repo": "saoudi-h/solar-icons" }],
+    "changelog": [
+        "@changesets/changelog-github",
+        {
+            "repo": "saoudi-h/solar-icons"
+        }
+    ],
     "commit": false,
     "fixed": [],
     "linked": [],
@@ -10,5 +15,7 @@
     "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
         "onlyUpdatePeerDependentsWhenOutOfRange": true
     },
-    "ignore": []
+    "ignore": [
+        "@solar-icons/docs"
+    ]
 }
