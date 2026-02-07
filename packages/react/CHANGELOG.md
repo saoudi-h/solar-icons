@@ -1,5 +1,11 @@
 # @solar-icons/react
 
+## 1.1.0-beta.0
+
+### Minor Changes
+
+- Fix spelling errors and rename icons across the monorepo. This includes correcting typos like Magnifer -> Magnifier and providing deprecated aliases for backwards compatibility.
+
 ## 1.0.3
 
 ### Patch Changes

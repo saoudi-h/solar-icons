@@ -1,0 +1,23 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@solar-icons/docs": "0.0.0",
+    "svelte-app": "0.0.2",
+    "test-react-native-icons": "1.0.0",
+    "vue-app": "0.0.0",
+    "@solar-icons/core": "1.0.1",
+    "@solar-icons/eslint": "1.0.0",
+    "@solar-icons/nuxt": "1.1.3",
+    "@solar-icons/prettier": "1.0.0",
+    "@solar-icons/react": "1.0.3",
+    "@solar-icons/react-native": "1.0.1",
+    "@solar-icons/react-perf": "2.0.3",
+    "@solar-icons/svelte": "1.0.1",
+    "@solar-icons/tsconfig": "1.0.0",
+    "@solar-icons/vue": "1.1.0"
+  },
+  "changesets": [
+    "refactor-naming-and-spell-fixes"
+  ]
+}
