@@ -20,7 +20,7 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown",
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
