@@ -20,7 +20,7 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown && pnpm build:types",
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error && pnpm build:types",
         "build:types": "tsc --build --force tsconfig.build.json",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",

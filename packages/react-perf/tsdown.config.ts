@@ -28,20 +28,8 @@ function genEntries(styles: string[]) {
         entries[`icons/${category}`] = `./src/icons/${category}.ts`
 
         for (const style of styles) {
-            const styleDir = join(iconsDir, category, style)
-
             // Per-category + style index (sibling file)
             entries[`icons/${category}/${style}`] = `./src/icons/${category}/${style}.ts`
-
-            // Individual icon entry points (one entry per icon component)
-            const iconFiles = readdirSync(styleDir)
-                .filter(name => name.endsWith('.tsx'))
-                .sort()
-            for (const file of iconFiles) {
-                const iconName = file.replace(/\.tsx$/, '')
-                entries[`icons/${category}/${style}/${iconName}`] =
-                    `./src/icons/${category}/${style}/${iconName}.tsx`
-            }
         }
     }
     return entries
