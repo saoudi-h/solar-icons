@@ -1,17 +1,17 @@
 # Solar Icons React Native - Test App
 
-Application de test pour valider le package `@solar-icons/react-native`.
+Test application to validate the `@solar-icons/react-native` package.
 
-## Fonctionnalités
+## Features
 
-Cette app de test permet de:
+This test app allows you to:
 
-- ✅ **Afficher toutes les icônes** importées par style
-- ✅ **Tester tous les styles** (Bold, Linear, Outline, Broken, BoldDuotone, LineDuotone)
-- ✅ **Contrôler les props** interactivement (size, color, mirrored)
-- ✅ **Valider les imports** depuis différents chemins
-- ✅ **Tester currentColor** et l'héritage de couleur
-- ✅ **Comparer les styles** côte à côte
+- ✅ **Display all icons** imported by style
+- ✅ **Test all styles** (Bold, Linear, Outline, Broken, BoldDuotone, LineDuotone)
+- ✅ **Control props** interactively (size, color, mirrored)
+- ✅ **Validate imports** from different paths
+- ✅ **Test currentColor** and color inheritance
+- ✅ **Compare styles** side by side
 
 ## Installation
 
@@ -19,9 +19,9 @@ Cette app de test permet de:
 npm install
 ```
 
-## Lancer l'app
+## Running the App
 
-### iOS (nécessite macOS)
+### iOS (requires macOS)
 
 ```bash
 npm run ios
@@ -33,17 +33,17 @@ npm run ios
 npm run android
 ```
 
-### Web (pour développement rapide)
+### Web (for quick development)
 
 ```bash
 npm run web
 ```
 
-## Tests Inclus
+## Tests Included
 
-### 1. Imports par Style
+### 1. Imports by Style
 
-L'app teste tous les chemins d'import:
+The app tests all import paths:
 
 ```tsx
 import { Home } from '@solar-icons/react-native/Bold';
@@ -54,39 +54,39 @@ import { Home as HomeBoldDuotone } from '@solar-icons/react-native/BoldDuotone';
 import { Home as HomeLineDuotone } from '@solar-icons/react-native/LineDuotone';
 ```
 
-### 2. Props par Défaut
+### 2. Default Props
 
 - Size: 24px
 - Color: currentColor
 
-### 3. Props Personnalisées
+### 3. Custom Props
 
-- Size: 16-96px (ajustable)
-- Color: Palette de couleurs
+- Size: 16-96px (adjustable)
+- Color: Color palette
 - Mirrored: ON/OFF
 
-### 4. Héritage de Couleur
+### 4. Color Inheritance
 
-Test de `currentColor` avec un parent coloré.
+Test of `currentColor` with a colored parent.
 
-### 5. Comparaison des Styles
+### 5. Style Comparison
 
-Affichage côte à côte de tous les styles pour la même icône.
+Side by side display of all styles for the same icon.
 
-## Checklist de Validation
+## Validation Checklist
 
-- [ ] Les icônes s'affichent correctement
-- [ ] Tous les styles fonctionnent (Bold, Linear, Outline, Broken, BoldDuotone, LineDuotone)
-- [ ] La taille par défaut (24) fonctionne
-- [ ] Les tailles personnalisées fonctionnent
-- [ ] Les couleurs personnalisées fonctionnent
-- [ ] currentColor fonctionne
-- [ ] Le mirroring fonctionne
-- [ ] TypeScript autocomplete fonctionne
-- [ ] Aucun warning dans la console
-- [ ] Aucune erreur dans la console
+- [ ] Icons display correctly
+- [ ] All styles work (Bold, Linear, Outline, Broken, BoldDuotone, LineDuotone)
+- [ ] Default size (24) works
+- [ ] Custom sizes work
+- [ ] Custom colors work
+- [ ] currentColor works
+- [ ] Mirroring works
+- [ ] TypeScript autocomplete works
+- [ ] No warnings in console
+- [ ] No errors in console
 
-## Structure de l'App
+## App Structure
 
 ```
 App.tsx
@@ -97,7 +97,7 @@ App.tsx
 │   ├── Color (palette)
 │   └── Mirrored (ON/OFF)
 ├── Icon Gallery
-│   └── Grille d'icônes du style sélectionné
+│   └── Icon grid for selected style
 └── Test Cases
     ├── Default Props
     ├── Custom Size
@@ -109,6 +109,6 @@ App.tsx
 
 ## Notes
 
-- L'app utilise le package local via `file:../../packages/react-native`
-- Toute modification du package nécessite un rebuild (`pnpm build` dans le package)
-- L'app teste un sous-ensemble d'icônes représentatif de chaque style
+- The app uses the local package via `file:../../packages/react-native`
+- Any package modification requires a rebuild (`pnpm build` in the package)
+- The app tests a representative subset of icons for each style

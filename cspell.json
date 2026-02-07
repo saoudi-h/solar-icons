@@ -102,7 +102,17 @@
         "facemask",
         "gameboy",
         "revote",
-        "nums"
+        "nums",
+        "oxlint",
+        "vueuse",
+        "reka",
+        "Vetur",
+        "radix",
+        "unstyled",
+        "popover",
+        "viewport",
+        "collapsible",
+        "themeable"
     ],
     "ignorePaths": [
         "node_modules",
@@ -128,7 +138,11 @@
         "**/*.tsbuildinfo",
         "*.code-workspace",
         "**/WORK_IN_PROGRESS.md",
-        "**/SESSION_SUMMARY.md"
+        "**/SESSION_SUMMARY.md",
+        "packages/core/src/metadata*.json",
+        "apps/vue-app/src/components/gal/**",
+        "packages/nuxt/playground/**",
+        "packages/core/src/scripts/**"
     ],
     "ignoreRegExpList": [
         "/import .* from .*/",

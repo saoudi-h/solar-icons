@@ -7,7 +7,7 @@
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-        "clean": "rm -rf node_modules .svelt-kit",
+        "clean": "rm -rf node_modules .svelte-kit",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",

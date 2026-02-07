@@ -91,7 +91,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                     initial="initial"
                                     animate="animate"
                                     exit="exit"
-                                    key="link-boken"
+                                    key="link-broken"
                                     className={`
                                       absolute inset-0 flex size-full
                                       items-center justify-center

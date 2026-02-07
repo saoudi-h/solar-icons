@@ -1,12 +1,14 @@
-export { Magnifer } from './Broken/Magnifer';
-export { MagniferBug } from './Broken/MagniferBug';
-export { MagniferZoomIn } from './Broken/MagniferZoomIn';
-export { MagniferZoomOut } from './Broken/MagniferZoomOut';
-export { MinimalisticMagnifer } from './Broken/MinimalisticMagnifer';
-export { MinimalisticMagniferBug } from './Broken/MinimalisticMagniferBug';
-export { MinimalisticMagniferZoomIn } from './Broken/MinimalisticMagniferZoomIn';
-export { MinimalisticMagniferZoomOut } from './Broken/MinimalisticMagniferZoomOut';
-export { RoundedMagnifer } from './Broken/RoundedMagnifer';
-export { RoundedMagniferBug } from './Broken/RoundedMagniferBug';
-export { RoundedMagniferZoomIn } from './Broken/RoundedMagniferZoomIn';
-export { RoundedMagniferZoomOut } from './Broken/RoundedMagniferZoomOut';
+export { Magnifier } from './Broken/Magnifier'
+export { MagnifierBug } from './Broken/MagnifierBug'
+export { MagnifierZoomIn } from './Broken/MagnifierZoomIn'
+export { MagnifierZoomOut } from './Broken/MagnifierZoomOut'
+export { MinimalisticMagnifier } from './Broken/MinimalisticMagnifier'
+export { MinimalisticMagnifierBug } from './Broken/MinimalisticMagnifierBug'
+export { MinimalisticMagnifierZoomIn } from './Broken/MinimalisticMagnifierZoomIn'
+export { MinimalisticMagnifierZoomOut } from './Broken/MinimalisticMagnifierZoomOut'
+export { RoundedMagnifier } from './Broken/RoundedMagnifier'
+export { RoundedMagnifierBug } from './Broken/RoundedMagnifierBug'
+export { RoundedMagnifierZoomIn } from './Broken/RoundedMagnifierZoomIn'
+export { RoundedMagnifierZoomOut } from './Broken/RoundedMagnifierZoomOut'
+/** @deprecated Use Magnifier instead */
+export { Magnifier as Magnifer } from './Broken/Magnifier'

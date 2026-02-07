@@ -1,12 +1,14 @@
-export { Magnifer } from './BoldDuotone/Magnifer';
-export { MagniferBug } from './BoldDuotone/MagniferBug';
-export { MagniferZoomIn } from './BoldDuotone/MagniferZoomIn';
-export { MagniferZoomOut } from './BoldDuotone/MagniferZoomOut';
-export { MinimalisticMagnifer } from './BoldDuotone/MinimalisticMagnifer';
-export { MinimalisticMagniferBug } from './BoldDuotone/MinimalisticMagniferBug';
-export { MinimalisticMagniferZoomIn } from './BoldDuotone/MinimalisticMagniferZoomIn';
-export { MinimalisticMagniferZoomOut } from './BoldDuotone/MinimalisticMagniferZoomOut';
-export { RoundedMagnifer } from './BoldDuotone/RoundedMagnifer';
-export { RoundedMagniferBug } from './BoldDuotone/RoundedMagniferBug';
-export { RoundedMagniferZoomIn } from './BoldDuotone/RoundedMagniferZoomIn';
-export { RoundedMagniferZoomOut } from './BoldDuotone/RoundedMagniferZoomOut';
+export { Magnifier } from './BoldDuotone/Magnifier'
+export { MagnifierBug } from './BoldDuotone/MagnifierBug'
+export { MagnifierZoomIn } from './BoldDuotone/MagnifierZoomIn'
+export { MagnifierZoomOut } from './BoldDuotone/MagnifierZoomOut'
+export { MinimalisticMagnifier } from './BoldDuotone/MinimalisticMagnifier'
+export { MinimalisticMagnifierBug } from './BoldDuotone/MinimalisticMagnifierBug'
+export { MinimalisticMagnifierZoomIn } from './BoldDuotone/MinimalisticMagnifierZoomIn'
+export { MinimalisticMagnifierZoomOut } from './BoldDuotone/MinimalisticMagnifierZoomOut'
+export { RoundedMagnifier } from './BoldDuotone/RoundedMagnifier'
+export { RoundedMagnifierBug } from './BoldDuotone/RoundedMagnifierBug'
+export { RoundedMagnifierZoomIn } from './BoldDuotone/RoundedMagnifierZoomIn'
+export { RoundedMagnifierZoomOut } from './BoldDuotone/RoundedMagnifierZoomOut'
+/** @deprecated Use Magnifier instead */
+export { Magnifier as Magnifer } from './BoldDuotone/Magnifier'

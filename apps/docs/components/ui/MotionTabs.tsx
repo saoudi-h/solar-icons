@@ -141,7 +141,7 @@ export const MotionTabs = ({
                             />
                         )}
 
-                        {/* Texte du tab */}
+                        {/* Tab text */}
                         <span
                             className={cn(
                                 'relative block transition-colors duration-200',
