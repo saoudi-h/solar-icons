@@ -43,6 +43,7 @@ packages/react/src/csr/
 packages/react/src/ssr/
 packages/react/src/defs/
 packages/react/src/index.ts
+packages/react/src/category.ts
 packages/react-perf/src/icons/
 packages/react-perf/src/index.ts
 packages/react-native/src/icons/

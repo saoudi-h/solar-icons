@@ -25,6 +25,27 @@ for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
 }
 
 /**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>()
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach(a => aliases.add(a))
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+         if (name.includes(correct) && name !== correct) {
+              typos.forEach(typo => {
+                   if (/[^a-zA-Z0-9]/.test(typo)) return
+                   aliases.add(name.replace(correct, typo))
+              })
+         }
+    })
+    return Array.from(aliases).filter(a => a !== name)
+}
+
+/**
  * Clean generated directories and files to ensure a clean build.
  *
  * The following directories and files are removed:
@@ -101,8 +122,9 @@ export default ${name}
             categoryIndexContent += `export { default as ${name} } from './${name}'\n`
 
             // Add aliases if they exist
-            if (ICON_ALIASES[name]) {
-                ICON_ALIASES[name].forEach(alias => {
+            const aliases = getAliasesForIcon(name)
+            if (aliases.length > 0) {
+                aliases.forEach(alias => {
                     const aliasContent = `import target from './${name}'
 /**
  * @deprecated Use ${name} instead
