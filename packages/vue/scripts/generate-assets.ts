@@ -119,14 +119,13 @@ class IconComponentGenerator implements ComponentGenerator {
             )
             categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
 
+            // function moved
             // Add aliases if they exist
-            // Add aliases if they exist
-            if (ICON_ALIASES[componentName]) {
-                ICON_ALIASES[componentName].forEach(alias => {
-                    this.generateAliasComponent(categoryPath, componentName, alias)
-                    categoryIndexContent += `export { ${alias} } from './${alias}'\n`
-                })
-            }
+            const aliases = getAliasesForIcon(componentName)
+            aliases.forEach(alias => {
+                this.generateAliasComponent(categoryPath, componentName, alias)
+                categoryIndexContent += `export { ${alias} } from './${alias}'\n`
+            })
         }
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, 'utf-8')
     }
@@ -208,6 +207,27 @@ ${styleDocs}
         fs.writeFileSync(path.join(ICONS_PATH, 'index.ts'), globalIndexContent, 'utf-8')
         fs.writeFileSync(path.join(ICONS_PATH, 'category.ts'), globalCategoryIndexContent, 'utf-8')
     }
+}
+
+/**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>()
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach(a => aliases.add(a))
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+        if (name.includes(correct) && name !== correct) {
+            typos.forEach(typo => {
+                if (/[^a-z0-9]/i.test(typo)) return
+                aliases.add(name.replace(correct, typo))
+            })
+        }
+    })
+    return Array.from(aliases).filter(a => a !== name)
 }
 
 /**

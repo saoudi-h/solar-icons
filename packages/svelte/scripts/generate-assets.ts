@@ -72,6 +72,27 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
     );
 }
 
+/**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>();
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach((a) => aliases.add(a));
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+        if (name.includes(correct) && name !== correct) {
+            typos.forEach((typo) => {
+                if (/[^a-zA-Z0-9]/.test(typo)) return;
+                aliases.add(name.replace(correct, typo));
+            });
+        }
+    });
+    return Array.from(aliases).filter((a) => a !== name);
+}
+
 // --- Generators ---
 
 const Generators = {
@@ -116,7 +137,8 @@ export const ${alias} = Original;
 
         // Add deprecated aliases
         icons.forEach((icon) => {
-            ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+            const aliases = getAliasesForIcon(icon.pascalName);
+            aliases.forEach((alias) => {
                 exports += `\nexport { ${alias} } from './${style}/${alias}';`;
             });
         });
@@ -211,7 +233,8 @@ export const ${alias} = Original;
 
             // Add aliases
             iconsForWeight.forEach((icon) => {
-                ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+                const aliases = getAliasesForIcon(icon.pascalName);
+                aliases.forEach((alias) => {
                     content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`;
                 });
             });
@@ -274,7 +297,8 @@ function generate(icons: Icon[]) {
             styleIcons.forEach((icon) => {
                 files.push(Generators.component(icon));
                 // Add aliases
-                ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+                const aliases = getAliasesForIcon(icon.pascalName);
+                aliases.forEach((alias) => {
                     files.push(Generators.aliasComponent(icon, alias));
                 });
             });
