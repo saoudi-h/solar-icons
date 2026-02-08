@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { ICON_RENAMES } from '../../core/src/utils'
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
+import { ICON_RENAMES } from '../../core/src/utils.ts'
 import type { IconByStyle, IconsByName, SvgByName, SvgMap } from './utils'
 import { ICONS_PATH, readSvgsFromDisk, toPascalCase } from './utils'
 
@@ -122,12 +122,30 @@ class IconComponentGenerator implements ComponentGenerator {
             // Add aliases if they exist
             if (ICON_ALIASES[componentName]) {
                 ICON_ALIASES[componentName].forEach(alias => {
-                    categoryIndexContent += `/** @deprecated Use ${componentName} instead */\n`
-                    categoryIndexContent += `export { default as ${alias} } from './${componentName}'\n`
+                    this.generateAliasComponent(categoryPath, componentName, alias)
+                    categoryIndexContent += `export { default as ${alias} } from './${alias}'\n`
                 })
             }
         }
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, 'utf-8')
+    }
+
+    /**
+     * Generates an alias component file
+     */
+    private generateAliasComponent(
+        categoryPath: string,
+        originalName: string,
+        aliasName: string
+    ): void {
+        const content = `import { default as ${originalName} } from './${originalName}'
+
+/**
+ * @deprecated Use ${originalName} instead
+ */
+export default ${originalName}
+`
+        fs.writeFileSync(path.join(categoryPath, `${aliasName}.ts`), content, 'utf-8')
     }
 
     /**

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
 
-import { ICON_RENAMES } from '../../core/src/utils';
+import { ICON_RENAMES } from '../../core/src/utils.ts';
 import type { SvgMap } from './utils';
 import {
     ICONS_PATH,
@@ -91,6 +91,19 @@ let props = $props()
         };
     },
 
+    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
+        const content = `import Original from './${icon.pascalName}.svelte';
+/**
+ * @deprecated Use ${icon.pascalName} instead
+ */
+export default Original;
+`;
+        return {
+            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.ts`),
+            content,
+        };
+    },
+
     styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
         const parentDir = path.dirname(folderPath);
         let exports = icons
@@ -104,8 +117,7 @@ let props = $props()
         // Add deprecated aliases
         icons.forEach((icon) => {
             ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
-                exports += `\n/** @deprecated Use ${icon.pascalName} instead */`;
-                exports += `\nexport { default as ${alias} } from './${style}/${icon.pascalName}.svelte';`;
+                exports += `\nexport { default as ${alias} } from './${style}/${alias}';`;
             });
         });
 
@@ -254,6 +266,10 @@ function generate(icons: Icon[]) {
             // Only .svelte components (no .ts re-exports)
             styleIcons.forEach((icon) => {
                 files.push(Generators.component(icon));
+                // Add aliases
+                ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+                    files.push(Generators.aliasComponent(icon, alias));
+                });
             });
 
             files.push(Generators.styleIndex(style, styleIcons, stylePath));

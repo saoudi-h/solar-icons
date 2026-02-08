@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 1.1.0-beta.1
+
+### Patch Changes
+
+- Fix: properly generate deprecated aliases as separate files to ensure they are exported correctly.
+
 ## 1.1.0-beta.0
 
 ### Minor Changes
