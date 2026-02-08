@@ -1,5 +1,11 @@
 # @solar-icons/react-perf
 
+## 2.1.0-beta.2
+
+### Patch Changes
+
+- Fix: properly generate deprecated aliases for JSDoc (force release).
+
 ## 2.1.0-beta.1
 
 ### Patch Changes
