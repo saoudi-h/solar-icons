@@ -16,7 +16,8 @@
         "spell": "cspell \"**/*\" --no-progress",
         "prepare": "husky",
         "test": "turbo test",
-        "pre-commit": "turbo pre-commit --concurrency=1"
+        "pre-commit": "turbo pre-commit --concurrency=1",
+        "postinstall": "turbo build --filter=./packages/*"
     },
     "devDependencies": {
         "@commitlint/cli": "^20.4.1",
