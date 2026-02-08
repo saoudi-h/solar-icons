@@ -37,3 +37,17 @@ yarn-error.log*
 .DS_Store
 *.pem
 packages/react-example
+
+# Generated icon files (regenerated at build time)
+packages/react/src/csr/
+packages/react/src/ssr/
+packages/react/src/defs/
+packages/react/src/index.ts
+packages/react/src/category.ts
+packages/react-perf/src/icons/
+packages/react-perf/src/index.ts
+packages/react-native/src/icons/
+packages/react-native/src/index.ts
+packages/vue/src/icons/
+packages/svelte/src/icons/
+packages/svelte/src/index.ts

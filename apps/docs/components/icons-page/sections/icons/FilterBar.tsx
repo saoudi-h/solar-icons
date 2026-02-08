@@ -26,7 +26,7 @@ import NumberTicker from '@/components/ui/number-ticker'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { categories, styles } from '@/core/generated/utils'
 import { useScreen } from '@/lib/screens'
-import { Dialog, MinimalisticMagnifer, Restart } from '@solar-icons/react/ssr'
+import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { DEFAULT_VALUES, categoriesAtom, filteredCountAtom, keywordAtom } from './context'
@@ -134,7 +134,7 @@ export const FilterBarContent: React.FC = () => {
 
                 {/* Search bar */}
                 <div className="relative flex h-10 w-48">
-                    <MinimalisticMagnifer
+                    <MinimalisticMagnifier
                         className={`
                           text-muted-foreground absolute top-1/2 left-2.5 h-4
                           w-4 -translate-y-1/2

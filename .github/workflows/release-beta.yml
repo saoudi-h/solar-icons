@@ -1,0 +1,43 @@
+name: Release Beta
+
+on:
+    push:
+        branches:
+            - beta
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    release-beta:
+        name: Release Beta
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ""
+
+            - name: Build
+              run: pnpm build
+
+            - name: Tests
+              run: pnpm test
+
+            - name: Publish Beta to NPM
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: pnpm release
+                  title: "ci(changesets): 🧪 beta version packages"
+                  commit: "ci(changesets): beta version packages"
+                  setupGitUser: false
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/react",
-    "version": "1.0.3",
+    "version": "1.1.0-beta.2",
     "private": false,
     "publishConfig": {
         "access": "public"
@@ -20,7 +20,7 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm copy:licenses && vite build && tsc --build tsconfig.build.json",
+        "build": "pnpm generate:assets && pnpm copy:licenses && vite build && tsc --build tsconfig.build.json",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
@@ -28,7 +28,8 @@
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "typecheck": "tsc"
+        "typecheck": "tsc",
+        "test": "vitest run"
     },
     "module": "./dist/esm/index.mjs",
     "main": "./dist/cjs/index.cjs",

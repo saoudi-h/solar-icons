@@ -25,7 +25,7 @@ export const deleteDescriptionStepGenerator =
             }
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+         
         const index = metadata.findIndex((item: any) => item.name === iconName)
         if (index >= 0) {
             metadata.splice(index, 1)

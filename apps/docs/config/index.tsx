@@ -10,7 +10,7 @@ import {
     Help,
     House,
     Rocket,
-    RoundedMagnifer,
+    RoundedMagnifier,
     SmartphoneUpdate,
 } from '@solar-icons/react/ssr'
 
@@ -86,7 +86,7 @@ export const config: Config = {
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',
-            Icon: <RoundedMagnifer size={20} />,
+            Icon: <RoundedMagnifier size={20} />,
             variant: 'outline',
         },
         getStarted: {

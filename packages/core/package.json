@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/core",
-    "version": "1.0.1",
+    "version": "1.1.0-beta.0",
     "private": true,
     "type": "module",
     "main": "src/index.ts",
@@ -24,6 +24,7 @@
     "scripts": {
         "build": "vite build && tsc --build tsconfig.build.json",
         "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --max-warnings 0 --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:svgs": "tsx src/scripts/generate-svgs.ts",

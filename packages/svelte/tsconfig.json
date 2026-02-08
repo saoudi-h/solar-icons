@@ -11,7 +11,9 @@
         "esModuleInterop": true,
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true
     },
     "include": ["./src/**/*", "tsdown.config.ts", "./scripts/**/*", "./tests/**/*"],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]

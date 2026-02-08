@@ -1,6 +1,6 @@
 {
   "name": "test-react-native-icons",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.1",
   "private": true,
   "description": "Test application for @solar-icons/react-native package",
   "main": "index.ts",
@@ -12,7 +12,7 @@
     "pre-commit": ""
   },
   "dependencies": {
-    "@solar-icons/react-native": "file:../../packages/react-native",
+    "@solar-icons/react-native": "workspace:*",
     "expo": "~54.0.33",
     "expo-status-bar": "~3.0.9",
     "react": "19.2.4",

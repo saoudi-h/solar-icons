@@ -1,6 +1,6 @@
 {
   "name": "vue-app",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.2",
   "private": true,
   "type": "module",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build:skiped": "run-p type-check \"build-only {@}\" --",
+    "build:skipped": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^10.3.0",
-    "@solar-icons/vue": "^1.1.0",
+    "@solar-icons/vue": "workspace:*",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/vue-virtual": "^3.13.18",
     "@vueuse/core": "^14.2.0",

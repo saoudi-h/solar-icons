@@ -1,5 +1,30 @@
 # @solar-icons/nuxt
 
+## 1.2.0-beta.2
+
+### Patch Changes
+
+- Updated dependencies []:
+    - @solar-icons/vue@1.2.0-beta.2
+
+## 1.2.0-beta.1
+
+### Patch Changes
+
+- Updated dependencies []:
+    - @solar-icons/vue@1.2.0-beta.1
+
+## 1.2.0-beta.0
+
+### Minor Changes
+
+- Fix spelling errors and rename icons across the monorepo. This includes correcting typos like Magnifer -> Magnifier and providing deprecated aliases for backwards compatibility.
+
+### Patch Changes
+
+- Updated dependencies []:
+    - @solar-icons/vue@1.2.0-beta.0
+
 ## 1.1.3
 
 ### Patch Changes

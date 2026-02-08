@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/react-perf",
-    "version": "2.0.3",
+    "version": "2.1.0-beta.3",
     "private": false,
     "publishConfig": {
         "access": "public"
@@ -20,7 +20,7 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm copy:licenses && tsdown && pnpm build:types",
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error && pnpm build:types",
         "build:types": "tsc --build --force tsconfig.build.json",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",

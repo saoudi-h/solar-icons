@@ -1,5 +1,29 @@
 # @solar-icons/react-perf
 
+## 2.1.0-beta.3
+
+### Patch Changes
+
+- fix: implement dynamic alias generation for compound names (e.g. MinimalisticMagnifer) and remove generated files from git tracking
+
+## 2.1.0-beta.2
+
+### Patch Changes
+
+- Fix: properly generate deprecated aliases for JSDoc (force release).
+
+## 2.1.0-beta.1
+
+### Patch Changes
+
+- Fix: properly generate @deprecated JSDoc for aliased icons and ensure they are exported.
+
+## 2.1.0-beta.0
+
+### Minor Changes
+
+- Fix spelling errors and rename icons across the monorepo. This includes correcting typos like Magnifer -> Magnifier and providing deprecated aliases for backwards compatibility.
+
 ## 2.0.3
 
 ### Patch Changes

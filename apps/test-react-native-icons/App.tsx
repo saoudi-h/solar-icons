@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 
 // Test different import methods
-import { Home, User, Settings, Heart, Star, Magnifer } from '@solar-icons/react-native/Bold';
+import { Home, User, Settings, Heart, Star, Magnifier } from '@solar-icons/react-native/Bold';
 import {
   Home as HomeLinear,
   User as UserLinear,
   Heart as HeartLinear,
   Star as StarLinear,
-  Magnifer as SearchLinear,
+  Magnifier as SearchLinear,
   ArrowRight,
   ArrowLeft,
   MenuDots as Menu,
@@ -53,7 +53,7 @@ import { AltArrowDown } from '@solar-icons/react-native/category/arrows/Linear/A
 import { AltArrowUp } from '@solar-icons/react-native/category/arrows/Linear/AltArrowUp'
 import { AltArrowLeft } from '@solar-icons/react-native/category/arrows/Bold/AltArrowLeft'
 import { AltArrowRight } from '@solar-icons/react-native/category/arrows/Bold/AltArrowRight'
-import { Magnifer as MagniferGranular } from '@solar-icons/react-native/category/search/Outline/Magnifer'
+import { Magnifier as MagnifierGranular } from '@solar-icons/react-native/category/search/Outline/Magnifier'
 import { Settings as SettingsGranular } from '@solar-icons/react-native/category/settings/BoldDuotone/Settings'
 
 
@@ -76,7 +76,7 @@ export default function App() {
       { name: 'Settings', Component: Settings },
       { name: 'Heart', Component: Heart },
       { name: 'Star', Component: Star },
-      { name: 'Search', Component: Magnifer },
+      { name: 'Search', Component: Magnifier },
     ],
     Linear: [
       { name: 'Home', Component: HomeLinear },
@@ -357,8 +357,8 @@ export default function App() {
                 <Text style={[appStyles.styleComparisonText, { fontSize: 8, color: '#999' }]}>Bold</Text>
               </View>
               <View style={appStyles.styleComparisonItem}>
-                <MagniferGranular size={32} color="#007AFF" />
-                <Text style={appStyles.styleComparisonText}>Magnifer</Text>
+                <MagnifierGranular size={32} color="#007AFF" />
+                <Text style={appStyles.styleComparisonText}>Magnifier</Text>
                 <Text style={[appStyles.styleComparisonText, { fontSize: 8, color: '#999' }]}>Outline</Text>
               </View>
               <View style={appStyles.styleComparisonItem}>

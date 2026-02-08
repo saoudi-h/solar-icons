@@ -118,12 +118,55 @@ export const toKebabCase = (str: string): string => {
 //----------------------------------------------------------------------------------------------------------------
 
 /**
- * Replaces occurrences of "4K" in the icon name string with "FourK".
+ * Dictionary of icon name corrections (typos from Figma source)
+ */
+// cspell:disable - These are intentional typos that map to corrections
+export const ICON_RENAMES: Record<string, string> = {
+    Magnifer: 'Magnifier',
+    Infinity: 'Infinite',
+    Condicioner: 'Conditioner',
+    Siderbar: 'Sidebar',
+    Plaaylist: 'Playlist',
+    Pallete: 'Palette',
+    Tuneing: 'Tuning',
+    // Only replace 'Horizonta' if it's NOT followed by an 'l'
+    'Horizonta(?![l])': 'Horizontal',
+    Minimlistic: 'Minimalistic',
+    Spedometer: 'Speedometer',
+    Happly: 'Happy',
+    Clound: 'Cloud',
+    Recive: 'Receive',
+}
+// cspell:enable
+
+//----------------------------------------------------------------------------------------------------------------
+
+/**
+ * Replaces typos and technical conflicts in the icon name string.
  * @param str - The icon name string to be fixed.
- * @returns The fixed icon name string with "4K" replaced by "FourK".
+ * @returns The fixed icon name string.
  */
 export const fixIconName = (str: string): string => {
-    return str.replace(/4K/g, 'FourK')
+    let fixed = str.replace(/4K/g, 'FourK')
+
+    // Apply specific renames from the dictionary
+    for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+        // Use a case-insensitive regex to find the typo
+        const regex = new RegExp(typo, 'gi')
+        fixed = fixed.replace(regex, match => {
+            // If the match is all lowercase (kebab-case), use the lowercase correction
+            if (match === match.toLowerCase()) {
+                return correction.toLowerCase()
+            }
+            // Otherwise use the correction as provided (PascalCase)
+            return correction
+        })
+    }
+
+    // Fix trailing dashes or other specific patterns
+    fixed = fixed.replace(/-$/, '')
+
+    return fixed
 }
 
 //----------------------------------------------------------------------------------------------------------------

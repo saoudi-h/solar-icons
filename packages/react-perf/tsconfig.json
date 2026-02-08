@@ -13,7 +13,9 @@
         "baseUrl": "src",
         "paths": {
             "@/*": ["src/*"]
-        }
+        },
+        "allowImportingTsExtensions": true,
+        "noEmit": true
     },
     "include": [
         "./src/**/*",

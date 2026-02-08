@@ -1,9 +1,0 @@
-export { Bonfire } from './LineDuotone/Bonfire';
-export { Fire } from './LineDuotone/Fire';
-export { FireMinimalistic } from './LineDuotone/FireMinimalistic';
-export { FireSquare } from './LineDuotone/FireSquare';
-export { Flame } from './LineDuotone/Flame';
-export { Leaf } from './LineDuotone/Leaf';
-export { Suitcase } from './LineDuotone/Suitcase';
-export { SuitcaseLines } from './LineDuotone/SuitcaseLines';
-export { SuitcaseTag } from './LineDuotone/SuitcaseTag';

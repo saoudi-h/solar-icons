@@ -2,8 +2,18 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
+import { ICON_RENAMES } from '../../core/src/utils.ts'
 import type { IconByStyle, IconsByName, SvgByName, SvgMap } from './utils'
 import { ICONS_PATH, readSvgsFromDisk, toPascalCase } from './utils'
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {}
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = []
+    }
+    ICON_ALIASES[correction].push(typo)
+}
 
 interface ComponentGenerator {
     cleanGeneratedFiles(): void
@@ -108,8 +118,34 @@ class IconComponentGenerator implements ComponentGenerator {
                 'utf-8'
             )
             categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
+
+            // function moved
+            // Add aliases if they exist
+            const aliases = getAliasesForIcon(componentName)
+            aliases.forEach(alias => {
+                this.generateAliasComponent(categoryPath, componentName, alias)
+                categoryIndexContent += `export { ${alias} } from './${alias}'\n`
+            })
         }
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, 'utf-8')
+    }
+
+    /**
+     * Generates an alias component file
+     */
+    private generateAliasComponent(
+        categoryPath: string,
+        originalName: string,
+        aliasName: string
+    ): void {
+        const content = `import { default as ${originalName} } from './${originalName}'
+
+/**
+ * @deprecated Use ${originalName} instead
+ */
+export const ${aliasName} = ${originalName}
+`
+        fs.writeFileSync(path.join(categoryPath, `${aliasName}.ts`), content, 'utf-8')
     }
 
     /**
@@ -171,6 +207,27 @@ ${styleDocs}
         fs.writeFileSync(path.join(ICONS_PATH, 'index.ts'), globalIndexContent, 'utf-8')
         fs.writeFileSync(path.join(ICONS_PATH, 'category.ts'), globalCategoryIndexContent, 'utf-8')
     }
+}
+
+/**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>()
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach(a => aliases.add(a))
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+        if (name.includes(correct) && name !== correct) {
+            typos.forEach(typo => {
+                if (/[^a-z0-9]/i.test(typo)) return
+                aliases.add(name.replace(correct, typo))
+            })
+        }
+    })
+    return Array.from(aliases).filter(a => a !== name)
 }
 
 /**

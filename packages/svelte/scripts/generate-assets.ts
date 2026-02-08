@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
 
+import { ICON_RENAMES } from '../../core/src/utils.ts';
 import type { SvgMap } from './utils';
 import {
     ICONS_PATH,
@@ -12,6 +13,15 @@ import {
     verifyIcons,
     WEIGHTS,
 } from './utils';
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {};
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = [];
+    }
+    ICON_ALIASES[correction].push(typo);
+}
 
 // --- Types ---
 
@@ -62,6 +72,27 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
     );
 }
 
+/**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>();
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach((a) => aliases.add(a));
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+        if (name.includes(correct) && name !== correct) {
+            typos.forEach((typo) => {
+                if (/[^a-zA-Z0-9]/.test(typo)) return;
+                aliases.add(name.replace(correct, typo));
+            });
+        }
+    });
+    return Array.from(aliases).filter((a) => a !== name);
+}
+
 // --- Generators ---
 
 const Generators = {
@@ -81,15 +112,36 @@ let props = $props()
         };
     },
 
+    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
+        const content = `import Original from './${icon.pascalName}.svelte';
+/**
+ * @deprecated Use ${icon.pascalName} instead
+ */
+export const ${alias} = Original;
+`;
+        return {
+            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.ts`),
+            content,
+        };
+    },
+
     styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
         const parentDir = path.dirname(folderPath);
-        const exports = icons
+        let exports = icons
             .map(
                 (icon) =>
                     `export { default as ${icon.pascalName} } from './${style}/${icon.pascalName}.svelte';`
             )
             .sort()
             .join('\n');
+
+        // Add deprecated aliases
+        icons.forEach((icon) => {
+            const aliases = getAliasesForIcon(icon.pascalName);
+            aliases.forEach((alias) => {
+                exports += `\nexport { ${alias} } from './${style}/${alias}';`;
+            });
+        });
 
         return {
             path: path.join(parentDir, `${style}.ts`),
@@ -171,13 +223,21 @@ let props = $props()
 
         for (const weight of WEIGHTS) {
             const iconsForWeight = byStyle[weight] || [];
-            const content = iconsForWeight
+            let content = iconsForWeight
                 .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
                 .map(
                     (icon) =>
                         `export { default as ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}.svelte';`
                 )
                 .join('\n');
+
+            // Add aliases
+            iconsForWeight.forEach((icon) => {
+                const aliases = getAliasesForIcon(icon.pascalName);
+                aliases.forEach((alias) => {
+                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`;
+                });
+            });
 
             files.push({
                 path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
@@ -236,6 +296,11 @@ function generate(icons: Icon[]) {
             // Only .svelte components (no .ts re-exports)
             styleIcons.forEach((icon) => {
                 files.push(Generators.component(icon));
+                // Add aliases
+                const aliases = getAliasesForIcon(icon.pascalName);
+                aliases.forEach((alias) => {
+                    files.push(Generators.aliasComponent(icon, alias));
+                });
             });
 
             files.push(Generators.styleIndex(style, styleIcons, stylePath));

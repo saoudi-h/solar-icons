@@ -1,6 +1,6 @@
 {
   "name": "@solar-icons/nuxt",
-  "version": "1.1.3",
+  "version": "1.2.0-beta.2",
   "description": "Nuxt module for easily integrating Solar Icons into your Nuxt 3+ applications.",
   "keywords": [
     "nuxt",
@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.3.0",
-    "@solar-icons/vue": "^1.1.0"
+    "@solar-icons/vue": "workspace:*"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.1.0",

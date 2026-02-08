@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/vue",
-    "version": "1.1.0",
+    "version": "1.2.0-beta.2",
     "private": false,
     "publishConfig": {
         "access": "public"
@@ -22,7 +22,7 @@
     "scripts": {
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
-        "build": "pnpm generate:assets && pnpm tsdown && pnpm copy:licenses",
+        "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
         "format:check": "prettier \"**/*\" --ignore-unknown --list-different",

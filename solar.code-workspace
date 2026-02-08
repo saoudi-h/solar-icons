@@ -40,6 +40,10 @@
             "path": "apps/vue-app",
         },
         {
+            "name": "react-perf-app",
+            "path": "apps/react-perf-app",
+        },
+        {
             "name": "nuxt",
             "path": "packages/nuxt",
         },

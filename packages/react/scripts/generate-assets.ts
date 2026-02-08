@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
+import { ICON_RENAMES } from '../../core/src/utils'
 import type { SvgMap } from './utils'
 import {
     CSR_PATH,
@@ -13,6 +14,36 @@ import {
     toPascalCase,
     verifyIcons,
 } from './utils'
+
+// Create a reverse mapping for aliases (Correction -> [Typos])
+const ICON_ALIASES: Record<string, string[]> = {}
+for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+    if (!ICON_ALIASES[correction]) {
+        ICON_ALIASES[correction] = []
+    }
+    ICON_ALIASES[correction].push(typo)
+}
+
+/**
+ * Returns a list of aliases (typos) for a given icon name, including partial matches.
+ */
+function getAliasesForIcon(name: string): string[] {
+    const aliases = new Set<string>()
+    // Exact matches
+    if (ICON_ALIASES[name]) {
+        ICON_ALIASES[name].forEach(a => aliases.add(a))
+    }
+    // Partial matches
+    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
+         if (name.includes(correct) && name !== correct) {
+              typos.forEach(typo => {
+                   if (/[^a-zA-Z0-9]/.test(typo)) return
+                   aliases.add(name.replace(correct, typo))
+              })
+         }
+    })
+    return Array.from(aliases).filter(a => a !== name)
+}
 
 /**
  * Clean generated directories and files to ensure a clean build.
@@ -89,6 +120,25 @@ export default ${name}
             })
 
             categoryIndexContent += `export { default as ${name} } from './${name}'\n`
+
+            // Add aliases if they exist
+            const aliases = getAliasesForIcon(name)
+            if (aliases.length > 0) {
+                aliases.forEach(alias => {
+                    const aliasContent = `import target from './${name}'
+/**
+ * @deprecated Use ${name} instead
+ */
+const ${alias} = target
+export default ${alias}
+`
+                    fs.writeFileSync(path.join(categoryPath, `${alias}.ts`), aliasContent, {
+                        flag: 'w',
+                    })
+
+                    categoryIndexContent += `export { default as ${alias} } from './${alias}'\n`
+                })
+            }
         }
 
         fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, { flag: 'w' })
