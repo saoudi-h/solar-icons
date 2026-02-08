@@ -120,10 +120,11 @@ class IconComponentGenerator implements ComponentGenerator {
             categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
 
             // Add aliases if they exist
+            // Add aliases if they exist
             if (ICON_ALIASES[componentName]) {
                 ICON_ALIASES[componentName].forEach(alias => {
                     this.generateAliasComponent(categoryPath, componentName, alias)
-                    categoryIndexContent += `export { default as ${alias} } from './${alias}'\n`
+                    categoryIndexContent += `export { ${alias} } from './${alias}'\n`
                 })
             }
         }
@@ -143,7 +144,7 @@ class IconComponentGenerator implements ComponentGenerator {
 /**
  * @deprecated Use ${originalName} instead
  */
-export default ${originalName}
+export const ${aliasName} = ${originalName}
 `
         fs.writeFileSync(path.join(categoryPath, `${aliasName}.ts`), content, 'utf-8')
     }

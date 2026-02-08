@@ -1,5 +1,6 @@
 export { Settings } from './Bold/Settings'
 export { SettingsMinimalistic } from './Bold/SettingsMinimalistic'
+export { Tuneing } from './Bold/Tuneing'
 export { Tuning } from './Bold/Tuning'
 export { Tuning2 } from './Bold/Tuning2'
 export { Tuning3 } from './Bold/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './Bold/Widget4'
 export { Widget5 } from './Bold/Widget5'
 export { Widget6 } from './Bold/Widget6'
 export { WidgetAdd } from './Bold/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './Bold/Tuning'

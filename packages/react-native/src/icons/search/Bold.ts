@@ -1,3 +1,4 @@
+export { Magnifer } from './Bold/Magnifer'
 export { Magnifier } from './Bold/Magnifier'
 export { MagnifierBug } from './Bold/MagnifierBug'
 export { MagnifierZoomIn } from './Bold/MagnifierZoomIn'
@@ -10,5 +11,3 @@ export { RoundedMagnifier } from './Bold/RoundedMagnifier'
 export { RoundedMagnifierBug } from './Bold/RoundedMagnifierBug'
 export { RoundedMagnifierZoomIn } from './Bold/RoundedMagnifierZoomIn'
 export { RoundedMagnifierZoomOut } from './Bold/RoundedMagnifierZoomOut'
-/** @deprecated Use Magnifier instead */
-export { Magnifier as Magnifer } from './Bold/Magnifier'

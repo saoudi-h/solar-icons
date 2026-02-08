@@ -1,5 +1,6 @@
 export { Settings } from './LineDuotone/Settings'
 export { SettingsMinimalistic } from './LineDuotone/SettingsMinimalistic'
+export { Tuneing } from './LineDuotone/Tuneing'
 export { Tuning } from './LineDuotone/Tuning'
 export { Tuning2 } from './LineDuotone/Tuning2'
 export { Tuning3 } from './LineDuotone/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './LineDuotone/Widget4'
 export { Widget5 } from './LineDuotone/Widget5'
 export { Widget6 } from './LineDuotone/Widget6'
 export { WidgetAdd } from './LineDuotone/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './LineDuotone/Tuning'

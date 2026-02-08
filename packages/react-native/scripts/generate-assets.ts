@@ -275,6 +275,10 @@ function generate(icons: Icon[]) {
             // Components
             styleIcons.forEach(icon => {
                 files.push(Generators.component(icon))
+                // Add aliases
+                ICON_ALIASES[icon.pascalName]?.forEach(alias => {
+                    files.push(Generators.aliasComponent(icon, alias))
+                })
             })
 
             // Style Indexes

@@ -1,5 +1,6 @@
 export { Settings } from './Broken/Settings'
 export { SettingsMinimalistic } from './Broken/SettingsMinimalistic'
+export { Tuneing } from './Broken/Tuneing'
 export { Tuning } from './Broken/Tuning'
 export { Tuning2 } from './Broken/Tuning2'
 export { Tuning3 } from './Broken/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './Broken/Widget4'
 export { Widget5 } from './Broken/Widget5'
 export { Widget6 } from './Broken/Widget6'
 export { WidgetAdd } from './Broken/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './Broken/Tuning'

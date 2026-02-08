@@ -1,3 +1,4 @@
+export { Magnifer } from './BoldDuotone/Magnifer'
 export { Magnifier } from './BoldDuotone/Magnifier'
 export { MagnifierBug } from './BoldDuotone/MagnifierBug'
 export { MagnifierZoomIn } from './BoldDuotone/MagnifierZoomIn'
@@ -10,5 +11,3 @@ export { RoundedMagnifier } from './BoldDuotone/RoundedMagnifier'
 export { RoundedMagnifierBug } from './BoldDuotone/RoundedMagnifierBug'
 export { RoundedMagnifierZoomIn } from './BoldDuotone/RoundedMagnifierZoomIn'
 export { RoundedMagnifierZoomOut } from './BoldDuotone/RoundedMagnifierZoomOut'
-/** @deprecated Use Magnifier instead */
-export { Magnifier as Magnifer } from './BoldDuotone/Magnifier'

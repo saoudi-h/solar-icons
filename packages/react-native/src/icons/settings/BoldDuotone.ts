@@ -1,5 +1,6 @@
 export { Settings } from './BoldDuotone/Settings'
 export { SettingsMinimalistic } from './BoldDuotone/SettingsMinimalistic'
+export { Tuneing } from './BoldDuotone/Tuneing'
 export { Tuning } from './BoldDuotone/Tuning'
 export { Tuning2 } from './BoldDuotone/Tuning2'
 export { Tuning3 } from './BoldDuotone/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './BoldDuotone/Widget4'
 export { Widget5 } from './BoldDuotone/Widget5'
 export { Widget6 } from './BoldDuotone/Widget6'
 export { WidgetAdd } from './BoldDuotone/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './BoldDuotone/Tuning'

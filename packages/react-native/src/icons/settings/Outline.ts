@@ -1,5 +1,6 @@
 export { Settings } from './Outline/Settings'
 export { SettingsMinimalistic } from './Outline/SettingsMinimalistic'
+export { Tuneing } from './Outline/Tuneing'
 export { Tuning } from './Outline/Tuning'
 export { Tuning2 } from './Outline/Tuning2'
 export { Tuning3 } from './Outline/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './Outline/Widget4'
 export { Widget5 } from './Outline/Widget5'
 export { Widget6 } from './Outline/Widget6'
 export { WidgetAdd } from './Outline/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './Outline/Tuning'

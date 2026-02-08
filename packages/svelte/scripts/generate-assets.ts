@@ -96,7 +96,7 @@ let props = $props()
 /**
  * @deprecated Use ${icon.pascalName} instead
  */
-export default Original;
+export const ${alias} = Original;
 `;
         return {
             path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.ts`),
@@ -117,7 +117,7 @@ export default Original;
         // Add deprecated aliases
         icons.forEach((icon) => {
             ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
-                exports += `\nexport { default as ${alias} } from './${style}/${alias}';`;
+                exports += `\nexport { ${alias} } from './${style}/${alias}';`;
             });
         });
 
@@ -201,13 +201,20 @@ export default Original;
 
         for (const weight of WEIGHTS) {
             const iconsForWeight = byStyle[weight] || [];
-            const content = iconsForWeight
+            let content = iconsForWeight
                 .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
                 .map(
                     (icon) =>
                         `export { default as ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}.svelte';`
                 )
                 .join('\n');
+
+            // Add aliases
+            iconsForWeight.forEach((icon) => {
+                ICON_ALIASES[icon.pascalName]?.forEach((alias) => {
+                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`;
+                });
+            });
 
             files.push({
                 path: path.join(ICONS_PATH, 'style', `${weight}.ts`),

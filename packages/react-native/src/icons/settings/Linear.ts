@@ -1,5 +1,6 @@
 export { Settings } from './Linear/Settings'
 export { SettingsMinimalistic } from './Linear/SettingsMinimalistic'
+export { Tuneing } from './Linear/Tuneing'
 export { Tuning } from './Linear/Tuning'
 export { Tuning2 } from './Linear/Tuning2'
 export { Tuning3 } from './Linear/Tuning3'
@@ -13,5 +14,3 @@ export { Widget4 } from './Linear/Widget4'
 export { Widget5 } from './Linear/Widget5'
 export { Widget6 } from './Linear/Widget6'
 export { WidgetAdd } from './Linear/WidgetAdd'
-/** @deprecated Use Tuning instead */
-export { Tuning as Tuneing } from './Linear/Tuning'

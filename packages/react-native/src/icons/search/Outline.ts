@@ -1,3 +1,4 @@
+export { Magnifer } from './Outline/Magnifer'
 export { Magnifier } from './Outline/Magnifier'
 export { MagnifierBug } from './Outline/MagnifierBug'
 export { MagnifierZoomIn } from './Outline/MagnifierZoomIn'
@@ -10,5 +11,3 @@ export { RoundedMagnifier } from './Outline/RoundedMagnifier'
 export { RoundedMagnifierBug } from './Outline/RoundedMagnifierBug'
 export { RoundedMagnifierZoomIn } from './Outline/RoundedMagnifierZoomIn'
 export { RoundedMagnifierZoomOut } from './Outline/RoundedMagnifierZoomOut'
-/** @deprecated Use Magnifier instead */
-export { Magnifier as Magnifer } from './Outline/Magnifier'

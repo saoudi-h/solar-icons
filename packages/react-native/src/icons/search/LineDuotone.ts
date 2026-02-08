@@ -1,3 +1,4 @@
+export { Magnifer } from './LineDuotone/Magnifer'
 export { Magnifier } from './LineDuotone/Magnifier'
 export { MagnifierBug } from './LineDuotone/MagnifierBug'
 export { MagnifierZoomIn } from './LineDuotone/MagnifierZoomIn'
@@ -10,5 +11,3 @@ export { RoundedMagnifier } from './LineDuotone/RoundedMagnifier'
 export { RoundedMagnifierBug } from './LineDuotone/RoundedMagnifierBug'
 export { RoundedMagnifierZoomIn } from './LineDuotone/RoundedMagnifierZoomIn'
 export { RoundedMagnifierZoomOut } from './LineDuotone/RoundedMagnifierZoomOut'
-/** @deprecated Use Magnifier instead */
-export { Magnifier as Magnifer } from './LineDuotone/Magnifier'
