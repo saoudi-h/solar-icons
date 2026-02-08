@@ -16,6 +16,10 @@
         "onlyUpdatePeerDependentsWhenOutOfRange": true
     },
     "ignore": [
-        "@solar-icons/docs"
+        "@solar-icons/docs",
+        "react-perf-app",
+        "svelte-app",
+        "vue-app",
+        "test-react-native-icons"
     ]
 }
