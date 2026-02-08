@@ -1,5 +1,15 @@
 # @solar-icons/core
 
+## 1.1.0
+
+### Minor Changes
+
+- [#379](https://github.com/saoudi-h/solar-icons/pull/379) [`9c9977c`](https://github.com/saoudi-h/solar-icons/commit/9c9977cd9011a51aa76d7bd2bce44962cf128702) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix spelling errors and rename icons across the monorepo. This includes correcting typos like Magnifer -> Magnifier and providing deprecated aliases for backwards compatibility.
+
+### Patch Changes
+
+- chore: graduation from beta to stable release
+
 ## 1.1.0-beta.0
 
 ### Minor Changes
