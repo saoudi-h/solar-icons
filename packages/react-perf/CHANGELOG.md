@@ -1,5 +1,11 @@
 # @solar-icons/react-perf
 
+## 2.1.0-beta.1
+
+### Patch Changes
+
+- Fix: properly generate @deprecated JSDoc for aliased icons and ensure they are exported.
+
 ## 2.1.0-beta.0
 
 ### Minor Changes

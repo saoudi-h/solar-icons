@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { ICON_RENAMES } from '../../core/src/utils'
+import { ICON_RENAMES } from '../../core/src/utils.ts'
 import type { SvgMap } from './utils'
 import {
     ICONS_PATH,
@@ -110,6 +110,22 @@ ${icon.pascalName}.displayName = "${icon.pascalName}"
         }
     },
 
+    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
+        const content = `/* GENERATED FILE */
+import { ${icon.pascalName} } from './${icon.pascalName}'
+import type { Icon } from '../../../lib/types'
+
+/**
+ * @deprecated Use ${icon.pascalName} instead
+ */
+export const ${alias}: Icon = ${icon.pascalName}
+`
+        return {
+            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.tsx`),
+            content,
+        }
+    },
+
     /**
      * Generates the index.ts for a specific style (e.g. icons/essentials/bold.ts).
      * Uses named exports instead of `export *`.
@@ -128,8 +144,7 @@ ${icon.pascalName}.displayName = "${icon.pascalName}"
         // Add deprecated aliases
         icons.forEach(icon => {
             ICON_ALIASES[icon.pascalName]?.forEach(alias => {
-                exports += `\n/** @deprecated Use ${icon.pascalName} instead */`
-                exports += `\nexport { ${icon.pascalName} as ${alias} } from './${style}/${icon.pascalName}';`
+                exports += `\nexport { ${alias} } from './${style}/${alias}';`
             })
         })
 
@@ -241,13 +256,20 @@ ${icon.pascalName}.displayName = "${icon.pascalName}"
 
             // Explicitly export each icon found in this weight to avoid "export *"
             // We export directly from the component file to be tree-shake friendly
-            const content = iconsForWeight
+            let content = iconsForWeight
                 .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
                 .map(
                     icon =>
                         `export { ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}';`
                 )
                 .join('\n')
+
+            // Add aliases to weight indexes too!
+            iconsForWeight.forEach(icon => {
+                ICON_ALIASES[icon.pascalName]?.forEach(alias => {
+                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`
+                })
+            })
 
             files.push({
                 path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
@@ -316,6 +338,10 @@ function generate(icons: Icon[]) {
             // Components
             styleIcons.forEach(icon => {
                 files.push(Generators.component(icon))
+                // Add aliases
+                ICON_ALIASES[icon.pascalName]?.forEach(alias => {
+                    files.push(Generators.aliasComponent(icon, alias))
+                })
             })
 
             // Style Indexes

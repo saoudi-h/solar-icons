@@ -19,6 +19,7 @@
   },
   "changesets": [
     "fix-docs-deprecation",
+    "fix-react-perf-aliases",
     "refactor-naming-and-spell-fixes"
   ]
 }
