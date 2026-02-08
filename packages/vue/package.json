@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/vue",
-    "version": "1.2.0-beta.1",
+    "version": "1.2.0-beta.2",
     "private": false,
     "publishConfig": {
         "access": "public"

@@ -15,10 +15,12 @@
     "@solar-icons/react-perf": "2.0.3",
     "@solar-icons/svelte": "1.0.1",
     "@solar-icons/tsconfig": "1.0.0",
-    "@solar-icons/vue": "1.1.0"
+    "@solar-icons/vue": "1.1.0",
+    "react-perf-app": "0.1.0"
   },
   "changesets": [
     "bump-react-perf",
+    "clean-and-fix-aliases",
     "fix-aliases-all",
     "fix-docs-deprecation",
     "fix-react-perf-aliases",

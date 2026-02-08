@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 1.1.0-beta.2
+
+### Patch Changes
+
+- fix: implement dynamic alias generation for compound names (e.g. MinimalisticMagnifer) and remove generated files from git tracking
+
 ## 1.1.0-beta.1
 
 ### Patch Changes

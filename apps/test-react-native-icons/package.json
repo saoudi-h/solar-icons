@@ -1,6 +1,6 @@
 {
   "name": "test-react-native-icons",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1-beta.1",
   "private": true,
   "description": "Test application for @solar-icons/react-native package",
   "main": "index.ts",
