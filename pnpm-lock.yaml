@@ -356,7 +356,7 @@ importers:
         version: 0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4)
       react-native-svg:
         specifier: ^15.15.2
-        version: 15.15.2(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4)
+        version: 15.15.3(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4)
     devDependencies:
       '@types/react':
         specifier: ~19.2.13
@@ -759,7 +759,7 @@ importers:
         version: 0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4)
       react-native-svg:
         specifier: ^15.15.2
-        version: 15.15.2(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4)
+        version: 15.15.3(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4)
       rimraf:
         specifier: ^6.1.2
         version: 6.1.2
@@ -11124,8 +11124,8 @@ packages:
     resolution: {integrity: sha512-Uu7ii+FQy4Qf82G4xu7ShHhjhGahEpCWc3x8UavY3CTcWV+ufmmCtwkr7ZKsX42jdL0kr1B5FKUeqJvAn51jzQ==}
     hasBin: true
 
-  qs@6.14.2:
-    resolution: {integrity: sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==}
+  qs@6.15.0:
+    resolution: {integrity: sha512-mAZTtNCeetKMH+pSjrb76NAM8V9a05I9aBZOHztWy/UqcJdQYNsf59vrRKWnojAT9Y+GbIvoTBC++CPHqpDBhQ==}
     engines: {node: '>=0.6'}
 
   quansync@0.2.11:
@@ -11203,8 +11203,8 @@ packages:
       react: '*'
       react-native: '*'
 
-  react-native-svg@15.15.2:
-    resolution: {integrity: sha512-lpaSwA2i+eLvcEdDZyGgMEInQW99K06zjJqfMFblE0yxI0SCN5E4x6in46f0IYi6i3w2t2aaq3oOnyYBe+bo4w==}
+  react-native-svg@15.15.3:
+    resolution: {integrity: sha512-/k4KYwPBLGcx2f5d4FjE+vCScK7QOX14cl2lIASJ28u4slHHtIhL0SZKU7u9qmRBHxTCKPoPBtN6haT1NENJNA==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -12251,6 +12251,7 @@ packages:
   tar@7.5.7:
     resolution: {integrity: sha512-fov56fJiRuThVFXD6o6/Q354S7pnWMJIVlDBYijsTNx6jKSE4pvrDTs6lUnmGvNyfJwFQQwWy3owKz1ucIhveQ==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   temp-dir@2.0.0:
     resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
@@ -24142,7 +24143,7 @@ snapshots:
       micro-api-client: 3.3.0
       node-fetch: 3.3.2
       p-wait-for: 5.0.2
-      qs: 6.14.2
+      qs: 6.15.0
     optional: true
 
   next-themes@0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
@@ -25523,7 +25524,7 @@ snapshots:
 
   qrcode-terminal@0.11.0: {}
 
-  qs@6.14.2:
+  qs@6.15.0:
     dependencies:
       side-channel: 1.1.0
     optional: true
@@ -25601,7 +25602,7 @@ snapshots:
       react: 19.2.4
       react-native: 0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4)
 
-  react-native-svg@15.15.2(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4):
+  react-native-svg@15.15.3(react-native@0.83.1(@babel/core@7.29.0)(@types/react@19.2.13)(react@19.2.4))(react@19.2.4):
     dependencies:
       css-select: 5.2.2
       css-tree: 1.1.3
