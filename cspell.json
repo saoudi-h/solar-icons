@@ -112,7 +112,8 @@
         "popover",
         "viewport",
         "collapsible",
-        "themeable"
+        "themeable",
+        "solidjs"
     ],
     "ignorePaths": [
         "node_modules",
