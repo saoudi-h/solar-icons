@@ -62,6 +62,10 @@
         {
             "name": "svelte-app",
             "path": "apps/svelte-app"
+        },
+        {
+            "name": "solid",
+            "path": "packages/solid"
         }
     ],
     "settings": {

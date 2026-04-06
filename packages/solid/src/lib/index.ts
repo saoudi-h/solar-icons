@@ -1,0 +1,6 @@
+export { createSolarIcons, SolarProvider, useSolar } from './context'
+export type { SolarIconContext } from './context'
+export { createSolarIcon } from './createSolarIcon'
+export { SolarIcon } from './SolarIcon'
+export { SvgNodeRenderer } from './SvgNodeRenderer'
+export type { IconNode, IconProps, IconWeight, Numberish, SolarIconComponent, SolarIconsConfig } from './types'
