@@ -1,0 +1,23 @@
+{
+    "name": "solid-app",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "clean": "rm -rf node_modules dist"
+    },
+    "dependencies": {
+        "@solar-icons/solid": "workspace:*",
+        "solid-js": "^1.9.7"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.1.8",
+        "tailwindcss": "^4.1.8",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.1",
+        "vite-plugin-solid": "^2.11.6"
+    }
+}

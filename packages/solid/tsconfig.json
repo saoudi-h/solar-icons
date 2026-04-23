@@ -1,0 +1,22 @@
+{
+    "extends": "@solar-icons/tsconfig/solid",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "declarationMap": true,
+        "allowJs": false,
+        "checkJs": false,
+        "incremental": true,
+        "isolatedDeclarations": true,
+        "moduleResolution": "Bundler",
+        "rootDir": ".",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "allowImportingTsExtensions": true,
+        "noEmit": true
+    },
+    "include": ["./src/**/*", "tsdown.config.ts", "./scripts/**/*", "./tests/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+}
