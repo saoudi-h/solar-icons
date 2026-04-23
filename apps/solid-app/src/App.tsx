@@ -1,4 +1,5 @@
 import { createSignal, createMemo, For, Show } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
 import type { Component } from 'solid-js';
 
 // Import all styles statically
@@ -9,8 +10,8 @@ import * as LineDuotone from '@solar-icons/solid/LineDuotone';
 import * as Broken from '@solar-icons/solid/Broken';
 import * as Outline from '@solar-icons/solid/Outline';
 
-const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const;
-type IconStyle = (typeof STYLES)[number];
+// Import icon list (same approach as svelte-app)
+import { ALL_ICONS, STYLES, type IconStyle } from './lib/icon-list';
 
 const styleModules: Record<IconStyle, Record<string, Component>> = {
     Bold,
@@ -20,9 +21,6 @@ const styleModules: Record<IconStyle, Record<string, Component>> = {
     Broken,
     Outline,
 };
-
-// Get all icon names from Bold style (they should all have the same names)
-const ALL_ICONS = Object.keys(Bold).sort();
 
 const App: Component = () => {
     const [selectedStyle, setSelectedStyle] = createSignal<IconStyle>('Bold');
@@ -132,9 +130,12 @@ const App: Component = () => {
                 <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
                     <For each={filteredIcons()}>
                         {(iconName) => {
-                            const IconComponent = getIcon(iconName);
+                            // Create a reactive signal for the icon component
+                            // This ensures it updates when selectedStyle changes
+                            const iconComponentSignal = createMemo(() => getIcon(iconName));
+                            
                             return (
-                                <Show when={IconComponent}>
+                                <Show when={iconComponentSignal()}>
                                     <div
                                         class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
                                         title={iconName}
@@ -143,7 +144,9 @@ const App: Component = () => {
                                             class="flex items-center justify-center"
                                             style={{ 'min-height': '64px' }}
                                         >
-                                            <IconComponent
+                                            {/* Use Dynamic for proper reactivity */}
+                                            <Dynamic
+                                                component={iconComponentSignal()}
                                                 size={iconSize()}
                                                 color={iconColor()}
                                             />
