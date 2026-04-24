@@ -133,7 +133,7 @@ const App: Component = () => {
                             // Create a reactive signal for the icon component
                             // This ensures it updates when selectedStyle changes
                             const iconComponentSignal = createMemo(() => getIcon(iconName));
-                            
+
                             return (
                                 <Show when={iconComponentSignal()}>
                                     <div
@@ -147,8 +147,7 @@ const App: Component = () => {
                                             {/* Use Dynamic for proper reactivity */}
                                             <Dynamic
                                                 component={iconComponentSignal()}
-                                                size={iconSize()}
-                                                color={iconColor()}
+                                                {...{ size: iconSize(), color: iconColor() }}
                                             />
                                         </div>
                                         <span class="text-xs text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">

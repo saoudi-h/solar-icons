@@ -1253,5 +1253,12 @@ export const ALL_ICONS = [
 
 export type IconName = (typeof ALL_ICONS)[number];
 
-export const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const;
+export const STYLES = [
+    'Bold',
+    'Linear',
+    'BoldDuotone',
+    'LineDuotone',
+    'Broken',
+    'Outline',
+] as const;
 export type IconStyle = (typeof STYLES)[number];
