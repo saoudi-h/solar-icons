@@ -34,6 +34,7 @@ export const config: Config = {
                     { label: 'Vue', url: '/docs/packages/vue', icon: <Icon icon="devicon:vuejs" /> },
                     { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
                     { label: 'Svelte', url: '/docs/packages/svelte', icon: <Icon icon="devicon:svelte" /> },
+                    { label: 'Solid', url: '/docs/packages/solid', icon: <Icon icon="devicon:solidjs" /> },
                 ],
             },
             {
@@ -155,6 +156,15 @@ export const config: Config = {
                 content: 'Svelte 5 components with optimal bundle size and tree-shaking',
                 status: 'released',
                 iconify: 'devicon:svelte',
+            },
+            {
+                title: 'Solid',
+                link: '/docs/packages/solid',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/solid',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/solid',
+                content: 'Lightweight SolidJS components with minimal bundle size',
+                status: 'released',
+                iconify: 'devicon:solidjs',
             },
             {
                 title: 'Qwik',
