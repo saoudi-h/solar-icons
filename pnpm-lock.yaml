@@ -303,12 +303,21 @@ importers:
         specifier: ^1.9.7
         version: 1.9.12
     devDependencies:
+      '@solar-icons/eslint':
+        specifier: workspace:*
+        version: link:../../packages/eslint
+      '@solar-icons/prettier':
+        specifier: workspace:*
+        version: link:../../packages/prettier
       '@tailwindcss/vite':
         specifier: ^4.1.8
         version: 4.1.18(vite@7.3.1(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       tailwindcss:
         specifier: ^4.1.8
         version: 4.1.18
+      tsx:
+        specifier: ^4.21.0
+        version: 4.21.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
