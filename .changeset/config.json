@@ -20,6 +20,7 @@
         "react-perf-app",
         "svelte-app",
         "vue-app",
-        "test-react-native-icons"
+        "test-react-native-icons",
+        "solid-app"
     ]
 }
