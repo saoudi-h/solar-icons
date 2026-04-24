@@ -430,7 +430,7 @@ importers:
         version: 6.0.6(rolldown-vite@7.3.1(@types/node@25.5.2)(esbuild@0.27.4)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
       '@vue/eslint-config-prettier':
         specifier: ^10.2.0
-        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1)
+        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.3)
       '@vue/eslint-config-typescript':
         specifier: ^14.6.0
         version: 14.6.0(eslint-plugin-vue@10.7.0(@stylistic/eslint-plugin@5.7.1(eslint@9.39.2(jiti@2.6.1)))(@typescript-eslint/parser@8.47.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@9.39.2(jiti@2.6.1))))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
@@ -456,8 +456,8 @@ importers:
         specifier: ~1.43.0
         version: 1.43.0
       prettier:
-        specifier: 3.8.1
-        version: 3.8.1
+        specifier: 3.8.3
+        version: 3.8.3
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -19654,12 +19654,12 @@ snapshots:
     dependencies:
       rfdc: 1.4.1
 
-  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1)':
+  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.3)':
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
       eslint-config-prettier: 10.1.8(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-prettier: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1)
-      prettier: 3.8.1
+      eslint-plugin-prettier: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.3)
+      prettier: 3.8.3
     transitivePeerDependencies:
       - '@types/eslint'
 
@@ -21752,10 +21752,10 @@ snapshots:
       eslint: 9.39.2(jiti@2.6.1)
       globals: 16.5.0
 
-  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1):
+  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.3):
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
-      prettier: 3.8.1
+      prettier: 3.8.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.12
     optionalDependencies:
