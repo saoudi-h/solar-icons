@@ -18,14 +18,29 @@ describe('Package Exports', () => {
         expect(fs.existsSync(typesPath)).toBe(true);
     });
 
-    it('should have a lib export', () => {
+    it('should have a lib index export', () => {
+        // Lib index export: "./lib" -> "./dist/lib/index.mjs"
+        const libIndexExport = exports['./lib'];
+        expect(libIndexExport).toBeDefined();
+
+        const importPath = path.resolve(rootDir, libIndexExport.import);
+        const typesPath = path.resolve(rootDir, libIndexExport.types);
+
+        expect(fs.existsSync(importPath)).toBe(true);
+        expect(fs.existsSync(typesPath)).toBe(true);
+    });
+
+    it('should have a lib wildcard export', () => {
         // Lib exports use wildcard: "./lib/*" -> "./dist/lib/*.mjs"
         const libExport = exports['./lib/*'];
         expect(libExport).toBeDefined();
 
         // Check IconBase exists via wildcard
         const importPath = path.resolve(rootDir, libExport.import.replace('*', 'IconBase'));
-        const typesPath = path.resolve(rootDir, libExport.types.replace('*.d.ts', 'IconBase.d.ts'));
+        const typesPath = path.resolve(
+            rootDir,
+            libExport.types.replace('*.d.mts', 'IconBase.d.mts')
+        );
 
         expect(fs.existsSync(importPath)).toBe(true);
         expect(fs.existsSync(typesPath)).toBe(true);
@@ -37,7 +52,7 @@ describe('Package Exports', () => {
         // Check if the source mapping pattern is valid for a sample file
         const sample = 'arrows/Bold/ArrowLeft';
 
-        const typesPattern = categoryExport.types.replace('*.d.ts', `${sample}.d.ts`);
+        const typesPattern = categoryExport.types.replace('*.d.mts', `${sample}.d.mts`);
         const importPattern = categoryExport.import.replace('*', sample);
 
         const typesPath = path.resolve(rootDir, typesPattern);
@@ -76,7 +91,7 @@ describe('Package Exports', () => {
     it('should have correct directory structure in dist', () => {
         expect(fs.existsSync(path.join(distPath, 'icons'))).toBe(true);
         expect(fs.existsSync(path.join(distPath, 'lib'))).toBe(true);
-        expect(fs.existsSync(path.join(distPath, 'types'))).toBe(true);
+        // Note: types are now co-located with .mjs files as .d.mts, no separate types/ folder
     });
 
     it('should resolve style index', () => {
@@ -96,7 +111,7 @@ describe('Package Exports', () => {
             const importPath = path.resolve(rootDir, wildcardExport.import.replace('*', style));
             const typesPath = path.resolve(
                 rootDir,
-                wildcardExport.types.replace('*.d.ts', `${style}.d.ts`)
+                wildcardExport.types.replace('*.d.mts', `${style}.d.mts`)
             );
             expect(fs.existsSync(importPath)).toBe(true);
             expect(fs.existsSync(typesPath)).toBe(true);

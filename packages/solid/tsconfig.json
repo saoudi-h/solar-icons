@@ -8,6 +8,7 @@
         "checkJs": false,
         "incremental": true,
         "isolatedDeclarations": true,
+        "isolatedModules": true,
         "moduleResolution": "Bundler",
         "rootDir": ".",
         "baseUrl": "src",

@@ -40,7 +40,7 @@ const config: UserConfig = defineConfig({
 
     entry: genEntries(styles),
 
-    dts: false,
+    dts: { sourcemap: false },
 
     platform: 'neutral',
 
@@ -55,26 +55,31 @@ const config: UserConfig = defineConfig({
 
             pkg['./package.json'] = './package.json';
             pkg['.'] = {
-                types: './dist/types/index.d.ts',
+                types: './dist/index.d.mts',
                 import: './dist/index.mjs',
             };
+            pkg['./lib'] = {
+                types: './dist/lib/index.d.mts',
+                import: './dist/lib/index.mjs',
+            };
+
             pkg['./lib/*'] = {
-                types: './dist/types/lib/*.d.ts',
+                types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
             };
 
             pkg['./category'] = {
-                types: './dist/types/icons/index.d.ts',
+                types: './dist/icons/index.d.mts',
                 import: './dist/icons/index.mjs',
             };
 
             pkg['./category/*'] = {
-                types: './dist/types/icons/*.d.ts',
+                types: './dist/icons/*.d.mts',
                 import: './dist/icons/*.mjs',
             };
 
             pkg['./*'] = {
-                types: './dist/types/icons/style/*.d.ts',
+                types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
             };
 
@@ -84,7 +89,7 @@ const config: UserConfig = defineConfig({
 
     format: ['esm'],
 
-    publint: false,
+    publint: true,
 
     fixedExtension: true,
 
