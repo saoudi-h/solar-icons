@@ -12,6 +12,23 @@ Thank you for considering contributing to my project! Here are some ways you can
 
 Please note that all contributors are expected to adhere to the [Code of Conduct](./code_of_conduct.md) to ensure a welcoming environment for everyone.
 
+## Development Setup
+
+1. Fork the repository and clone it locally.
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. **Build the workspace packages** (required before running apps or tests):
+   ```bash
+   pnpm build
+   ```
+   > **Note:** Packages are no longer built automatically during install. You must run `pnpm build` manually after installing dependencies.
+4. Alternatively, use the setup script to do both steps at once:
+   ```bash
+   pnpm setup
+   ```
+
 ## Pull Request Process
 
 1. Fork the repository and create your branch from `main`.

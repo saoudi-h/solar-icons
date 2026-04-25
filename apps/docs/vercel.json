@@ -1,0 +1,4 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "buildCommand": "cd ../.. && pnpm turbo run build --filter=@solar-icons/docs..."
+}

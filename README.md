@@ -32,6 +32,8 @@ Whether you want rich theming with global providers or the lightest possible bun
 | **`@solar-icons/react-native`**| Native SVG icons for React Native and Expo with multiple import strategies |
 | **`@solar-icons/vue`**        | Vue adaptation of the React package with the same rich features |
 | **`@solar-icons/nuxt`**       | Nuxt-optimized wrapper with auto-import, `nuxi` install, global config |
+| **`@solar-icons/svelte`**     | Svelte 5 components with runes, minimal bundle, tree-shakeable |
+| **`@solar-icons/solid`**      | Lightweight SolidJS components, minimal and tree-shakeable |
 
 ---
 

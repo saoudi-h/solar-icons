@@ -1,0 +1,107 @@
+{
+    "name": "@solar-icons/solid",
+    "version": "1.0.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Solar Icons for SolidJS",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/solid"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "pre-commit": "lint-staged"
+    },
+    "module": "./dist/index.mjs",
+    "main": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./lib": {
+            "types": "./dist/lib/index.d.mts",
+            "import": "./dist/lib/index.mjs"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.mts",
+            "import": "./dist/lib/*.mjs"
+        },
+        "./category": {
+            "types": "./dist/icons/index.d.mts",
+            "import": "./dist/icons/index.mjs"
+        },
+        "./category/*": {
+            "types": "./dist/icons/*.d.mts",
+            "import": "./dist/icons/*.mjs"
+        },
+        "./*": {
+            "types": "./dist/icons/style/*.d.mts",
+            "import": "./dist/icons/style/*.mjs"
+        }
+    },
+    "devDependencies": {
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
+        "@types/node": "^25.2.1",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.8.1",
+        "rimraf": "^6.1.2",
+        "solid-js": "^1.9.7",
+        "tsdown": "^0.18.4",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3",
+        "unplugin-solid": "^1.0.0",
+        "vitest": "^4.0.18"
+    },
+    "peerDependencies": {
+        "solid-js": ">= 1.6.0"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "keywords": [
+        "solid",
+        "solidjs",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "UI",
+        "UX"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    }
+}

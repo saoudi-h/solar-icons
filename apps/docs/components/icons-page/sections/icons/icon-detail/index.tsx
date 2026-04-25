@@ -17,6 +17,7 @@ import { ReactNativeCode } from './ReactNativeCode'
 import { VueCode } from './VueCode'
 import { NuxtCode } from './NuxtCode'
 import { SvelteCode } from './SvelteCode'
+import { SolidCode } from './SolidCode'
 import { Tags } from './Tags'
 
 export function IconDetail() {
@@ -105,6 +106,7 @@ const Content: FC = () => {
                     { title: 'Vue', value: 'vue', content: <VueCode /> },
                     { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },
                     { title: 'Svelte', value: 'svelte', content: <SvelteCode /> },
+                    { title: 'Solid', value: 'solid', content: <SolidCode /> },
                 ]}
             />
         </div>
