@@ -17,7 +17,7 @@
         "prepare": "husky",
         "test": "turbo test",
         "pre-commit": "turbo pre-commit --concurrency=1",
-        "postinstall": "turbo build --filter=./packages/*"
+        "setup": "pnpm install && pnpm build"
     },
     "devDependencies": {
         "@commitlint/cli": "^20.4.1",
