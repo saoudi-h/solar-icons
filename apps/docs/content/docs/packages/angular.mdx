@@ -4,7 +4,7 @@ description: Angular components for Solar Icons with modern signals and optimal 
 icon: angular
 ---
 
-The `@solar-icons/angular` package provides Angular components for Solar Icons. It's designed for Angular 17-21 with modern patterns including signals, standalone components, and optimal performance.
+The `@solar-icons/angular` package provides Angular components for Solar Icons. It's designed for Angular 17+ with modern patterns including signals, standalone components, and optimal performance.
 
 ## Installation
 
@@ -14,19 +14,19 @@ The `@solar-icons/angular` package provides Angular components for Solar Icons. 
 
 ## Features
 
-- **Modern Angular 17-21** → Uses signals (`input()`), standalone components, and `hostDirectives`
-- **Minimal Bundle** → Tree-shakeable with compile-time templates (no runtime parsing)
+- **Modern Angular 17+** → Uses signals (`input()`), standalone components, and `hostDirectives`
+- **Minimal Bundle** → Tree-shakeable, only imported icons are included
 - **Accessibility** → Built-in title support for screen readers
 - **TypeScript** → Full type safety with IntelliSense support
-- **Flexible Imports** → Import by style, category, or individual icons
+- **Flexible Selectors** → Use PascalCase or kebab-case selectors
 
 ## Basic Usage
 
-Import icons from the package and use them as Angular components:
+Import icon components and use them in your templates:
 
 ```tsx
 import { Component } from '@angular/core';
-import { HeartBold } from '@solar-icons/angular/Bold';
+import { HeartBold } from '@solar-icons/angular';
 
 @Component({
   selector: 'app-root',
@@ -41,39 +41,29 @@ export class AppComponent {}
 
 ## Import Patterns
 
-### By Style
-
-Import all icons of a specific style:
-
-```tsx
-import { HeartBold, StarBold, UserBold } from '@solar-icons/angular/Bold';
-import { HeartLinear, StarLinear } from '@solar-icons/angular/Linear';
-```
-
-### By Category
-
-Import icons from a specific category:
-
-```tsx
-import { Bold } from '@solar-icons/angular/like';
-
-// Use icons from the category
-@Component({
-  imports: [Bold.Heart, Bold.Star],
-  template: `
-    <svg solarHeartBold />
-    <svg solarStarBold />
-  `,
-})
-```
-
-### Global Import
-
-Import all icons with disambiguated names:
+Icons are exported with disambiguated names that include the style suffix:
 
 ```tsx
 import { HeartBold, HeartLinear, HeartOutline } from '@solar-icons/angular';
+import { StarBold, StarLinear } from '@solar-icons/angular';
+import { UserCircleBold, UserRoundedLinear } from '@solar-icons/angular';
 ```
+
+## Selector Formats
+
+Each icon supports two selector formats:
+
+```tsx
+// PascalCase with "solar" prefix
+<svg solarHeartBold />
+<svg solarAltArrowDownBold />
+
+// kebab-case with "solar-" prefix
+<svg solar-heart-bold />
+<svg solar-alt-arrow-down-bold />
+```
+
+Both formats work identically - use whichever matches your project's style.
 
 ## Props
 
@@ -128,31 +118,43 @@ Without `alt`, icons are automatically marked as decorative with `aria-hidden="t
 
 ## Dynamic Icons
 
-To load icons dynamically based on runtime data:
+To render icons dynamically based on runtime data, create a wrapper component:
 
 ```tsx
-import { Component, Type } from '@angular/core';
+import { Component, Input, Type, ViewContainerRef, OnInit } from '@angular/core';
 import * as solar from '@solar-icons/angular';
 
 @Component({
   selector: 'app-dynamic-icon',
   standalone: true,
-  template: `
-    @if (iconComponent) {
-      <svg [solarIcon]="iconComponent" [size]="size" [color]="color" />
-    }
-  `,
+  template: '', // Component is created dynamically
 })
-export class DynamicIconComponent {
-  iconComponent: Type<unknown> | undefined;
-  size = 24;
-  color = 'currentColor';
+export class DynamicIconComponent implements OnInit {
+  @Input() name!: string;
+  @Input() style!: string;
+  @Input() size = 24;
+  @Input() color = 'currentColor';
 
-  loadIcon(name: string, style: string) {
-    const globalName = name + style; // e.g., "HeartBold"
-    this.iconComponent = (solar as Record<string, unknown>)[globalName] as Type<unknown>;
+  constructor(private viewContainer: ViewContainerRef) {}
+
+  ngOnInit() {
+    const iconName = this.name + this.style; // e.g., "HeartBold"
+    const iconComponent = (solar as Record<string, unknown>)[iconName] as Type<unknown>;
+    
+    if (iconComponent) {
+      const componentRef = this.viewContainer.createComponent(iconComponent);
+      // Set inputs on the component instance
+      (componentRef.instance as any).size = this.size;
+      (componentRef.instance as any).color = this.color;
+    }
   }
 }
+```
+
+Usage:
+
+```tsx
+<app-dynamic-icon name="Heart" style="Bold" [size]="32" color="#ef4444" />
 ```
 
 ## TypeScript
@@ -173,7 +175,7 @@ const props: IconProps = {
 
 ## Angular Version Compatibility
 
-This package supports Angular 17.x through 21.x. It uses modern Angular features:
+This package supports **Angular 17+** (tested with Angular 17, 18, 19, 20, and 21). It uses modern Angular features:
 
 - **Signals** → `input()` instead of `@Input()`
 - **Standalone Components** → No NgModule required
@@ -184,10 +186,9 @@ This package supports Angular 17.x through 21.x. It uses modern Angular features
 
 Icons are optimized for performance:
 
-- **Compile-time templates** → SVG structure is compiled by Angular Ivy, not created at runtime
 - **Tree-shakeable** → Only imported icons are included in your bundle
-- **No runtime parsing** → Icon data is pre-processed at build time
 - **Minimal overhead** → Simple directive for title management
+- **Compiled templates** → SVG structure is part of the component template
 
 ## Package Size
 

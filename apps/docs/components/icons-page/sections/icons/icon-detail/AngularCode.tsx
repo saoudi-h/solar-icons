@@ -12,6 +12,9 @@ export const AngularCode: FC = () => {
 
     if (!selectedIcon) return null
 
+    // Angular icons use global names with style suffix (e.g., HeartBold, HeartLinear)
+    const iconName = selectedIcon.Icon.displayName + value.weight
+
     return (
         <>
             <Button variant="link" size="default" asChild>
@@ -22,11 +25,11 @@ export const AngularCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/angular/${value.weight}'`}
+                code={`import { ${iconName} } from '@solar-icons/angular'`}
             />
             <CodeBlockTemplate
                 lang="tsx"
-                code={`<svg solar${selectedIcon?.Icon.displayName}${value.weight} [size]="${value.size}" [color]="'${value.color}'" />`}
+                code={`<svg solar${iconName} [size]="${value.size}" [color]="'${value.color}'" />`}
             />
         </>
     )

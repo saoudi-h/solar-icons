@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { ALL_ICONS, STYLES, IconStyle } from './icon-list';
 import { DynamicIconComponent } from './dynamic-icon.component';
 
+
+
 // Import all styled icons from the main package
 // Icons are exported with global names: IconName + Style (e.g., ArrowLeftBold, ArrowLeftLinear)
 import * as solar from '@solar-icons/angular';
