@@ -34,6 +34,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 | **`@solar-icons/nuxt`**       | Nuxt-optimized wrapper with auto-import, `nuxi` install, global config |
 | **`@solar-icons/svelte`**     | Svelte 5 components with runes, minimal bundle, tree-shakeable |
 | **`@solar-icons/solid`**      | Lightweight SolidJS components, minimal and tree-shakeable |
+| **`@solar-icons/angular`**    | Angular 17-21 components with signals, minimal and tree-shakeable |
 
 ---
 

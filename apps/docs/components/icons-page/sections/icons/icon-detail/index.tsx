@@ -18,6 +18,7 @@ import { VueCode } from './VueCode'
 import { NuxtCode } from './NuxtCode'
 import { SvelteCode } from './SvelteCode'
 import { SolidCode } from './SolidCode'
+import { AngularCode } from './AngularCode'
 import { Tags } from './Tags'
 
 export function IconDetail() {
@@ -107,6 +108,7 @@ const Content: FC = () => {
                     { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },
                     { title: 'Svelte', value: 'svelte', content: <SvelteCode /> },
                     { title: 'Solid', value: 'solid', content: <SolidCode /> },
+                    { title: 'Angular', value: 'angular', content: <AngularCode /> },
                 ]}
             />
         </div>
