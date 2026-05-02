@@ -1,0 +1,111 @@
+{
+    "name": "@solar-icons/angular",
+    "version": "1.0.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Solar Icons for Angular",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/angular"
+    },
+    "sideEffects": false,
+    "scripts": {
+        "ng": "ng",
+        "build": "pnpm generate:assets && pnpm copy:licenses && NODE_OPTIONS='--max-old-space-size=8192' ng-packagr -p ng-package.json",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules dist out-tsc",
+        "typecheck": "tsc --noEmit -p tsconfig.lib.json",
+        "pre-commit": "lint-staged"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "^21.0.0",
+        "@angular/cli": "^21.0.0",
+        "@angular/common": "^21.0.0",
+        "@angular/compiler": "^21.0.0",
+        "@angular/compiler-cli": "^21.0.0",
+        "@angular/core": "^21.0.0",
+        "@angular/platform-browser": "^21.0.0",
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
+        "@types/node": "^25.2.1",
+        "@xmldom/xmldom": "^0.9.10",
+        "ng-packagr": "^21.0.0",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.8.1",
+        "rimraf": "^6.1.2",
+        "rxjs": "~7.8.0",
+        "tslib": "^2.3.0",
+        "tsx": "^4.21.0",
+        "typescript": "~5.9.2",
+        "vitest": "^4.0.18"
+    },
+    "peerDependencies": {
+        "@angular/common": "17.x - 21.x",
+        "@angular/core": "17.x - 21.x"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "keywords": [
+        "angular",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "UI",
+        "UX"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    },
+    "exports": {
+        "./package.json": {
+            "default": "./package.json"
+        },
+        ".": {
+            "types": "./dist/types/solar-icons-angular.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./Bold": {
+            "types": "./dist/types/icons/style/Bold.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./Linear": {
+            "types": "./dist/types/icons/style/Linear.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./BoldDuotone": {
+            "types": "./dist/types/icons/style/BoldDuotone.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./LineDuotone": {
+            "types": "./dist/types/icons/style/LineDuotone.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./Broken": {
+            "types": "./dist/types/icons/style/Broken.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        },
+        "./Outline": {
+            "types": "./dist/types/icons/style/Outline.d.ts",
+            "default": "./dist/fesm2022/solar-icons-angular.mjs"
+        }
+    }
+}
