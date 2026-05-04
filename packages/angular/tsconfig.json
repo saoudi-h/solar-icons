@@ -16,7 +16,11 @@
         "experimentalDecorators": true,
         "importHelpers": true,
         "target": "ES2022",
-        "module": "preserve"
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "useDefineForClassFields": true,
+        "lib": ["ES2022", "dom"],
+        "types": ["vitest/globals"]
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
@@ -25,9 +29,5 @@
         "strictTemplates": true
     },
     "files": [],
-    "references": [
-        {
-            "path": "./tsconfig.lib.json"
-        }
-    ]
+    "include": ["src/**/*.ts", "scripts/**/*.ts", "vitest.config.ts", "*.ts"]
 }
