@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
-import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from './icon-base'
+import { IconBase, SOLAR_ICON_HOST_BINDINGS, SOLAR_ICON_HOST_DIRECTIVES } from './icon-base'
 
 @Component({
     selector: 'svg[testIcon]',
@@ -8,17 +8,7 @@ import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from './icon-base'
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        xmlns: 'http://www.w3.org/2000/svg',
-        viewBox: '0 0 24 24',
-        fill: 'none',
-        class: 'solar-icon',
-        '[attr.width]': 'size()',
-        '[attr.height]': 'size()',
-        '[style.color]': 'color()',
-        '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
-        '[attr.aria-hidden]': 'alt() ? null : "true"',
-    },
+    host: SOLAR_ICON_HOST_BINDINGS,
     hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
 })
 class TestIcon extends IconBase {}

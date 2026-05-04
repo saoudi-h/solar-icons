@@ -1,32 +1,33 @@
 import { Directive, input } from '@angular/core';
-import type { Nullable } from './types';
-import { SolarTitleDirective } from './title.directive';
+import { SOLAR_ICON_HOST_DIRECTIVES } from './title.directive';
+
+export { SOLAR_ICON_HOST_DIRECTIVES };
 
 /**
- * @internal
- * Shared host directives for all Solar icon components.
- * Currently only handles the title element for accessibility.
- */
-export const SOLAR_ICON_HOST_DIRECTIVES = [
-    {
-        directive: SolarTitleDirective,
-        inputs: ['alt'],
-    },
-];
-
-/**
- * @internal
- * Abstract base class for all Solar icon components.
- * Provides the shared inputs and logic.
+ * Base class for all Solar Icon components.
+ * 
+ * It centralizes all shared SVG logic, including size, color, 
+ * orientation, and accessibility bindings.
  */
 @Directive({
     standalone: true,
+    host: {
+        'xmlns': 'http://www.w3.org/2000/svg',
+        'viewBox': '0 0 24 24',
+        'fill': 'none',
+        'class': 'solar-icon',
+        '[attr.width]': 'size()',
+        '[attr.height]': 'size()',
+        '[style.color]': 'color()',
+        '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
+        '[attr.aria-hidden]': 'alt() ? null : "true"',
+    },
 })
 export abstract class IconBase {
     /**
-     * An optional accessible label for the icon.
+     * Accessible label for the icon.
      */
-    readonly alt = input<Nullable<string>>();
+    readonly alt = input<string>();
 
     /**
      * Width and height.

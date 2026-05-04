@@ -63,7 +63,7 @@
         "tslib": "^2.3.0",
         "tsx": "^4.21.0",
         "typescript": "~5.9.2",
-        "vitest": "^4.0.18",
+        "vitest": "^4.1.5",
         "zone.js": "^0.16.1"
     },
     "peerDependencies": {
@@ -109,20 +109,10 @@
             "import": "./dist/lib/*.js",
             "default": "./dist/lib/*.js"
         },
-        "./category": {
-            "types": "./dist/icons/index.d.ts",
-            "import": "./dist/icons/index.js",
-            "default": "./dist/icons/index.js"
-        },
-        "./category/*": {
-            "types": "./dist/icons/*.d.ts",
-            "import": "./dist/icons/*.js",
-            "default": "./dist/icons/*.js"
-        },
         "./*": {
-            "types": "./dist/icons/*.d.ts",
-            "import": "./dist/icons/*.js",
-            "default": "./dist/icons/*.js"
+            "types": "./dist/icons/*/index.d.ts",
+            "import": "./dist/icons/*/index.js",
+            "default": "./dist/icons/*/index.js"
         }
     }
 }

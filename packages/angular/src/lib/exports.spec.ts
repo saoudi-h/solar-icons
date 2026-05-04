@@ -1,8 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
-import * as arrows from '../icons/arrows';
-import * as arrowsAction from '../icons/arrows-action';
 import '@angular/compiler';
 
 const pkgPath = resolve('package.json');

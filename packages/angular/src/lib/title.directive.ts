@@ -9,7 +9,7 @@ import { Directive, effect, ElementRef, inject, input } from '@angular/core';
  * Renderer2 is not needed here since we're explicitly targeting SVG elements.
  */
 @Directive({
-    selector: 'svg[solarIcon]',
+    selector: '[solarTitleHost]',
     standalone: true,
 })
 export class SolarTitleDirective {
@@ -33,3 +33,14 @@ export class SolarTitleDirective {
         });
     }
 }
+
+/**
+ * Shared host directives for all icon components.
+ * Includes SolarTitleDirective for accessibility support.
+ */
+export const SOLAR_ICON_HOST_DIRECTIVES = [
+    {
+        directive: SolarTitleDirective,
+        inputs: ['alt:alt'],
+    },
+];

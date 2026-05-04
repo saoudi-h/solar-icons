@@ -2,7 +2,10 @@
     "compileOnSave": false,
     "compilerOptions": {
         "paths": {
-            "@solar-icons/angular": ["./dist"]
+            "@solar-icons/angular": ["./src/public-api.ts"],
+            "@solar-icons/angular/lib": ["./src/lib/index.ts"],
+            "@solar-icons/angular/icons": ["./src/icons/index.ts"],
+            "@solar-icons/angular/icons/*": ["./src/icons/*"]
         },
         "strict": true,
         "noImplicitOverride": true,

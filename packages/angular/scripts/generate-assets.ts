@@ -152,17 +152,6 @@ import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from '../../../lib/icon-base';
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        xmlns: 'http://www.w3.org/2000/svg',
-        viewBox: '0 0 24 24',
-        fill: 'none',
-        class: 'solar-icon',
-        '[attr.width]': 'size()',
-        '[attr.height]': 'size()',
-        '[style.color]': 'color()',
-        '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
-        '[attr.aria-hidden]': 'alt() ? null : "true"',
-    },
     hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
 })
 export class ${icon.globalName} extends IconBase {}
@@ -253,6 +242,24 @@ export const ${aliasGlobal} = ${icon.globalName};
      * Note: no `import * as solar` re-export — that would create a circular
      * dependency since the barrel already re-exports everything flat.
      */
+    /**
+     * Generates a union type of all icon names for autocompletion.
+     */
+    iconNamesType: (icons: Icon[]): FileDefinition => {
+        const names = icons.map(i => `'${i.globalName}'`).sort().join(' | ');
+        const content = `/* GENERATED FILE */
+/**
+ * Union of all available icon names for the dynamic SolarIcon component.
+ * Provides IDE autocompletion without importing the actual components.
+ */
+export type SolarIconName = ${names};
+`;
+        return {
+            path: path.join(path.dirname(INDEX_PATH), 'lib', 'all-icons.types.ts'),
+            content,
+        };
+    },
+
     mainEntry: (): FileDefinition => {
         const content = `/* GENERATED FILE */
 export * from './lib';
@@ -304,7 +311,7 @@ function generate(icons: Icon[]) {
 
     const categories = Object.keys(byCategory)
     files.push(Generators.rootIndex(categories))
-
+    files.push(Generators.iconNamesType(icons))
     files.push(Generators.mainEntry())
 
     return files

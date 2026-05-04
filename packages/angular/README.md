@@ -76,6 +76,36 @@ Solar Icons provides 6 unique styles:
 | `alt`      | `string`           | `undefined`      | Accessible label for screen readers |
 | `mirrored` | `boolean`          | `false`          | Flip the icon horizontally          |
 
+## Dynamic Rendering
+
+If you need to render icons dynamically (e.g., from a database or a configuration list), use the `SolarDynamicIcon` directive.
+
+First, register the icons you want to make available in your component or app providers:
+
+```typescript
+import { provideSolarIcons } from '@solar-icons/angular'
+import { HeartBold, StarBold, HomeBold } from '@solar-icons/angular/lib'
+
+bootstrapApplication(App, {
+  providers: [
+    provideSolarIcons({ HeartBold, StarBold, HomeBold })
+  ]
+})
+```
+
+Then use the `solarIcon` directive in your template:
+
+```html
+<!-- Use by registered name -->
+<ng-container solarIcon="HeartBold" [size]="32" color="red" />
+
+<!-- Use by dynamic variable -->
+<ng-container [solarIcon]="currentIconName" />
+
+<!-- Use by component class directly -->
+<ng-container [solarIcon]="HeartBold" />
+```
+
 ## Accessibility
 
 For decorative icons (most cases), no additional configuration is needed. The icon will have `aria-hidden="true"` automatically.
