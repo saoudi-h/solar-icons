@@ -81,6 +81,11 @@
         </div>
 
         <!-- Icon Grid -->
+        @if (!loaded()) {
+            <div class="text-center py-16 text-slate-400">
+                Loading icons...
+            </div>
+        } @else {
         <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
             @for (iconName of filteredIcons(); track trackByIconName($index, iconName)) {
                 @if (getIcon(iconName)) {
@@ -107,6 +112,7 @@
             <div class="text-center py-16 text-slate-400">
                 No icons found matching "{{ searchQuery() }}"
             </div>
+        }
         }
     </div>
 </div>

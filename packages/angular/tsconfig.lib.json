@@ -1,12 +1,16 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "outDir": "./out-tsc/lib",
+        "outDir": "./dist",
         "declaration": true,
-        "declarationMap": true,
         "sourceMap": true,
         "inlineSources": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
         "types": []
+    },
+    "angularCompilerOptions": {
+        "compilationMode": "partial"
     },
     "include": ["src/**/*.ts"],
     "exclude": ["**/*.spec.ts"]

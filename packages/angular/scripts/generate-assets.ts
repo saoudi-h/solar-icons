@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import fs from 'node:fs';
-import path from 'node:path';
-import pc from 'picocolors';
+import fs from 'node:fs'
+import path from 'node:path'
+import pc from 'picocolors'
 
 /**
  * Dictionary of icon name corrections (typos from Figma source)
@@ -22,9 +22,9 @@ const ICON_RENAMES: Record<string, string> = {
     Happly: 'Happy',
     Clound: 'Cloud',
     Recive: 'Receive',
-};
+}
 // cspell:enable
-import type { SvgMap } from './utils';
+import type { SvgMap } from './utils'
 import {
     ICONS_PATH,
     INDEX_PATH,
@@ -33,32 +33,32 @@ import {
     toPascalCase,
     verifyIcons,
     WEIGHTS,
-} from './utils';
+} from './utils'
 
 // Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {};
+const ICON_ALIASES: Record<string, string[]> = {}
 for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
     if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = [];
+        ICON_ALIASES[correction] = []
     }
-    ICON_ALIASES[correction].push(typo);
+    ICON_ALIASES[correction].push(typo)
 }
 
 // --- Types ---
 
 interface Icon {
-    category: string;
-    style: string;
-    name: string; // kebab-case (e.g. arrow-left)
-    pascalName: string; // PascalCase (e.g. ArrowLeft)
-    globalName: string; // Disambiguated Name (e.g. ArrowLeftBold)
-    preview: string; // base64 preview
-    template: string; // Angular template string
+    category: string
+    style: string
+    name: string // kebab-case (e.g. arrow-left)
+    pascalName: string // PascalCase (e.g. ArrowLeft)
+    globalName: string // Disambiguated Name (e.g. ArrowLeftBold)
+    preview: string // base64 preview
+    template: string // Angular template string
 }
 
 interface FileDefinition {
-    path: string;
-    content: string;
+    path: string
+    content: string
 }
 
 // --- Helpers ---
@@ -67,14 +67,14 @@ interface FileDefinition {
  * Flattens the nested SvgMap into a list of Icon objects.
  */
 function getIcons(map: SvgMap): Icon[] {
-    const icons: Icon[] = [];
+    const icons: Icon[] = []
     for (const [category, styles] of Object.entries(map)) {
         for (const [style, names] of Object.entries(styles)) {
             for (const [name, data] of Object.entries(names)) {
                 // Parse the node string back to IconNode array to generate template
-                const nodeArray = eval(data.node); // Safe since we generated this ourselves
-                const template = nodesToTemplate(nodeArray);
-                
+                const nodeArray = eval(data.node) // Safe since we generated this ourselves
+                const template = nodesToTemplate(nodeArray)
+
                 icons.push({
                     category,
                     style,
@@ -83,11 +83,11 @@ function getIcons(map: SvgMap): Icon[] {
                     globalName: toPascalCase(`${name}-${style}`),
                     preview: data.preview,
                     template,
-                });
+                })
             }
         }
     }
-    return icons;
+    return icons
 }
 
 /**
@@ -96,40 +96,37 @@ function getIcons(map: SvgMap): Icon[] {
 function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
     return array.reduce(
         (acc, item) => {
-            const key = keySelector(item);
-            if (!acc[key]) acc[key] = [];
-            acc[key].push(item);
-            return acc;
+            const key = keySelector(item)
+            if (!acc[key]) acc[key] = []
+            acc[key].push(item)
+            return acc
         },
         {} as Record<string, T[]>
-    );
+    )
 }
 
 /**
  * Returns a list of aliases (typos) for a given icon name.
  */
 function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>();
+    const aliases = new Set<string>()
     if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach((a) => aliases.add(a));
+        ICON_ALIASES[name].forEach(a => aliases.add(a))
     }
     Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
         if (name.includes(correct) && name !== correct) {
-            typos.forEach((typo) => {
-                if (/[^a-z0-9]/i.test(typo)) return;
-                aliases.add(name.replace(correct, typo));
-            });
+            typos.forEach(typo => {
+                if (/[^a-z0-9]/i.test(typo)) return
+                aliases.add(name.replace(correct, typo))
+            })
         }
-    });
-    return Array.from(aliases).filter((a) => a !== name);
+    })
+    return Array.from(aliases).filter(a => a !== name)
 }
 
 // --- Generators ---
 
 const Generators = {
-    /**
-     * Generates the Angular component for a single icon.
-     */
     component: (icon: Icon): FileDefinition => {
         const content = `/* GENERATED FILE */
 import {
@@ -142,7 +139,12 @@ import { IconBase } from '../../../lib/icon-base';
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  *
- * @component ${icon.pascalName}
+ * @usage
+ * \`<svg solar${icon.globalName}></svg>\`
+ * <!-- or -->
+ * \`<svg solar-${icon.name}-${icon.style.toLowerCase()}></svg>\`
+ *
+ * @component ${icon.globalName}
  * @style ${icon.style}
  * @category ${icon.category}
  */
@@ -153,51 +155,52 @@ import { IconBase } from '../../../lib/icon-base';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ${icon.pascalName} extends IconBase {}
-`;
+export class ${icon.globalName} extends IconBase {}
+`
         return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${icon.pascalName}.ts`),
+            path: path.join(ICONS_PATH, icon.category, icon.style, `${icon.globalName}.ts`),
             content,
-        };
+        }
     },
 
     aliasComponent: (icon: Icon, alias: string): FileDefinition => {
+        const aliasGlobal = `${alias}${icon.style}`
         const content = `/* GENERATED FILE */
-import { ${icon.pascalName} } from './${icon.pascalName}';
+import { ${icon.globalName} } from './${icon.globalName}';
 
 /**
- * @deprecated Use ${icon.pascalName} instead
+ * @deprecated Use ${icon.globalName} instead
  */
-export const ${alias} = ${icon.pascalName};
-`;
+export const ${aliasGlobal} = ${icon.globalName};
+`
         return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.ts`),
+            path: path.join(ICONS_PATH, icon.category, icon.style, `${aliasGlobal}.ts`),
             content,
-        };
+        }
     },
 
     /**
      * Generates the index.ts for a specific style.
      */
     styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath);
+        const parentDir = path.dirname(folderPath)
 
         let exports = icons
-            .map((icon) => `export { ${icon.pascalName} } from './${style}/${icon.pascalName}';`)
+            .map(icon => `export { ${icon.pascalName} } from './${style}/${icon.pascalName}';`)
             .sort()
-            .join('\n');
+            .join('\n')
 
-        icons.forEach((icon) => {
-            const aliases = getAliasesForIcon(icon.pascalName);
-            aliases.forEach((alias) => {
-                exports += `\nexport { ${alias} } from './${style}/${alias}';`;
-            });
-        });
+        icons.forEach(icon => {
+            const aliases = getAliasesForIcon(icon.pascalName)
+            aliases.forEach(alias => {
+                exports += `\nexport { ${alias} } from './${style}/${alias}';`
+            })
+        })
 
         return {
             path: path.join(parentDir, `${style}.ts`),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
@@ -206,33 +209,43 @@ export const ${alias} = ${icon.pascalName};
     styleGlobalIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
         const exports = icons
             .map(
-                (icon) =>
+                icon =>
                     `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.pascalName}';`
             )
             .sort()
-            .join('\n');
+            .join('\n')
 
         return {
             path: path.join(folderPath, 'styled.ts'),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
      * Generates the index.ts for a category.
      */
-    categoryIndex: (category: string, styles: string[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath);
+    categoryIndex: (category: string, icons: Icon[], folderPath: string): FileDefinition => {
+        const parentDir = path.dirname(folderPath)
 
-        const exports = styles
-            .map((style) => `export * as ${style} from './${category}/${style}';`)
+        let exports = icons
+            .map(
+                icon =>
+                    `export { ${icon.globalName} } from './${category}/${icon.style}/${icon.globalName}';`
+            )
             .sort()
-            .join('\n');
+            .join('\n')
+
+        icons.forEach(icon => {
+            const aliases = getAliasesForIcon(icon.pascalName)
+            aliases.forEach(alias => {
+                exports += `\nexport { ${alias}${icon.style} } from './${category}/${icon.style}/${alias}${icon.style}';`
+            })
+        })
 
         return {
             path: path.join(parentDir, `${category}.ts`),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
@@ -244,14 +257,14 @@ export const ${alias} = ${icon.pascalName};
         folderPath: string
     ): FileDefinition => {
         const exports = styles
-            .map((style) => `export * from './${style}/styled';`)
+            .map(style => `export * from './${style}/styled';`)
             .sort()
-            .join('\n');
+            .join('\n')
 
         return {
             path: path.join(folderPath, 'styled.ts'),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
@@ -259,14 +272,14 @@ export const ${alias} = ${icon.pascalName};
      */
     rootIndex: (categories: string[]): FileDefinition => {
         const exports = categories
-            .map((category) => `export * as ${toPascalCase(category)} from './${category}';`)
+            .map(category => `export * from './${category}';`)
             .sort()
-            .join('\n');
+            .join('\n')
 
         return {
             path: path.join(ICONS_PATH, 'index.ts'),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
@@ -274,61 +287,61 @@ export const ${alias} = ${icon.pascalName};
      */
     rootGlobalIndex: (categories: string[]): FileDefinition => {
         const exports = categories
-            .map((category) => `export * from './${category}/styled';`)
+            .map(category => `export * from './${category}/styled';`)
             .sort()
-            .join('\n');
+            .join('\n')
 
         return {
             path: path.join(ICONS_PATH, 'styled.ts'),
             content: `${exports}\n`,
-        };
+        }
     },
 
     /**
      * Generates grouped indexes by weight.
      */
     weightIndexes: (icons: Icon[]): FileDefinition[] => {
-        const files: FileDefinition[] = [];
-        const byStyle = groupBy(icons, (i) => i.style);
+        const files: FileDefinition[] = []
+        const byStyle = groupBy(icons, i => i.style)
 
         for (const weight of WEIGHTS) {
-            const iconsForWeight = byStyle[weight] || [];
+            const iconsForWeight = byStyle[weight] || []
 
             let content = iconsForWeight
                 .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
                 .map(
-                    (icon) =>
+                    icon =>
                         `export { ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}';`
                 )
-                .join('\n');
+                .join('\n')
 
-            iconsForWeight.forEach((icon) => {
-                const aliases = getAliasesForIcon(icon.pascalName);
-                aliases.forEach((alias) => {
-                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`;
-                });
-            });
+            iconsForWeight.forEach(icon => {
+                const aliases = getAliasesForIcon(icon.pascalName)
+                aliases.forEach(alias => {
+                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`
+                })
+            })
 
             files.push({
                 path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
                 content: content ? `${content}\n` : '',
-            });
+            })
         }
-        return files;
+        return files
     },
 
     /**
      * Generates the index for styles directory.
      */
     stylesIndex: (): FileDefinition => {
-        const content = WEIGHTS.map((weight) => `export * as ${weight} from './${weight}';`).join(
+        const content = WEIGHTS.map(weight => `export * as ${weight} from './${weight}';`).join(
             '\n'
-        );
+        )
 
         return {
             path: path.join(ICONS_PATH, 'style', 'index.ts'),
             content: `${content}\n`,
-        };
+        }
     },
 
     /**
@@ -337,93 +350,85 @@ export const ${alias} = ${icon.pascalName};
     mainEntry: (): FileDefinition => {
         const content = `/* GENERATED FILE */
 export * from './lib';
-export * from './icons/styled';
+export * from './icons';
 import * as solar from './icons';
 export { solar };
-`;
+`
         return {
             path: INDEX_PATH,
             content,
-        };
+        }
     },
-};
+}
 
 // --- Stages ---
 
 function clean() {
-    const pathsToClean = [ICONS_PATH, INDEX_PATH];
-    pathsToClean.forEach((p) => {
+    const pathsToClean = [ICONS_PATH, INDEX_PATH]
+    pathsToClean.forEach(p => {
         if (fs.existsSync(p)) {
-            fs.rmSync(p, { recursive: true, force: true });
-            console.log(pc.blue(`Removed ${p}`));
+            fs.rmSync(p, { recursive: true, force: true })
+            console.log(pc.blue(`Removed ${p}`))
         }
-    });
+    })
 }
 
 function generate(icons: Icon[]) {
-    const files: FileDefinition[] = [];
+    const files: FileDefinition[] = []
 
-    const byCategory = groupBy(icons, (i) => i.category);
+    const byCategory = groupBy(icons, i => i.category)
 
     for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, (i) => i.style);
+        const byStyle = groupBy(catIcons, i => i.style)
 
         for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const stylePath = path.join(ICONS_PATH, category, style);
+            const stylePath = path.join(ICONS_PATH, category, style)
 
-            styleIcons.forEach((icon) => {
-                files.push(Generators.component(icon));
-                const aliases = getAliasesForIcon(icon.pascalName);
-                aliases.forEach((alias) => {
-                    files.push(Generators.aliasComponent(icon, alias));
-                });
-            });
-
-            files.push(Generators.styleIndex(style, styleIcons, stylePath));
-            files.push(Generators.styleGlobalIndex(style, styleIcons, stylePath));
+            styleIcons.forEach(icon => {
+                files.push(Generators.component(icon))
+                const aliases = getAliasesForIcon(icon.pascalName)
+                aliases.forEach(alias => {
+                    files.push(Generators.aliasComponent(icon, alias))
+                })
+            })
+            // We no longer generate style indexes
         }
 
-        const styles = Object.keys(byStyle);
-        const categoryPath = path.join(ICONS_PATH, category);
-        files.push(Generators.categoryIndex(category, styles, categoryPath));
-        files.push(Generators.categoryGlobalIndex(category, styles, categoryPath));
+        const categoryPath = path.join(ICONS_PATH, category)
+        files.push(Generators.categoryIndex(category, catIcons, categoryPath))
     }
 
-    const categories = Object.keys(byCategory);
-    files.push(Generators.rootIndex(categories));
-    files.push(Generators.rootGlobalIndex(categories));
+    const categories = Object.keys(byCategory)
+    files.push(Generators.rootIndex(categories))
 
-    files.push(...Generators.weightIndexes(icons));
-    files.push(Generators.stylesIndex());
+    files.push(Generators.mainEntry())
 
-    files.push(Generators.mainEntry());
-
-    return files;
+    return files
 }
 
 function writeFiles(files: FileDefinition[]) {
-    files.forEach((file) => {
-        fs.mkdirSync(path.dirname(file.path), { recursive: true });
-        fs.writeFileSync(file.path, file.content, { flag: 'w' });
-    });
-    console.log(pc.green(`Successfully generated ${files.length} files.`));
+    files.forEach(file => {
+        fs.mkdirSync(path.dirname(file.path), { recursive: true })
+        fs.writeFileSync(file.path, file.content, { flag: 'w' })
+    })
+    console.log(pc.green(`Successfully generated ${files.length} files.`))
 }
 
 // --- Main ---
 
 void (async () => {
     try {
-        clean();
-        const svgMap = readSvgsFromDisk();
+        clean()
+        const svgMap = readSvgsFromDisk()
         if (!verifyIcons(svgMap)) {
-            process.exit(1);
+            process.exit(1)
         }
-        const icons = getIcons(svgMap);
-        const files = generate(icons);
-        writeFiles(files);
+        const icons = getIcons(svgMap)
+        const files = generate(icons)
+        writeFiles(files)
     } catch (err) {
-        console.error(pc.red('Build failed'));
-        console.error(err);
-        process.exit(1);
+        console.error(pc.red('Build failed'))
+        console.error(err)
+        process.exit(1)
     }
-})();
+})()

@@ -31,23 +31,34 @@ export class ExampleComponent {}
 
 ### Import Icons
 
-Icons are exported with disambiguated names that include the style suffix:
+All icons are exported with an **explicit global name** that includes both the icon name and the style suffix. This makes Angular template selectors immediately predictable:
 
 ```typescript
-import { HeartBold, HeartLinear, HeartOutline } from '@solar-icons/angular'
-import { StarBold, StarLinear } from '@solar-icons/angular'
+// Global import — root entry point, ideal for a handful of icons
+import { ArrowLeftBold, HeartLinear, StarOutline } from '@solar-icons/angular'
 ```
+
+**Import by Category (Recommended for DX)**  
+Group icons from the same visual domain for a cleaner imports block:
+
+```typescript
+import { ArrowLeftBold, ArrowRightBold, AltArrowDownLinear } from '@solar-icons/angular/arrows'
+import { HeartBold, StarBold } from '@solar-icons/angular/like'
+```
+
+> ⚠️ **Why no per-style imports?**  
+> Unlike the other Solar Icons packages, Angular components are used via **attribute selectors** in templates (`<svg solarArrowLeftBold />`). The full global name — including the style suffix — is part of the selector. Importing `ArrowLeft` from `@solar-icons/angular/Bold` would create a false expectation that `<svg solarArrowLeft />` works, when the actual selector is `<svg solarArrowLeftBold />`. Explicit global names keep the developer experience honest.
 
 ### Selector Formats
 
 Each icon supports two selector formats:
 
 ```html
-<!-- PascalCase with "solar" prefix -->
+<!-- camelCase attribute with "solar" prefix (recommended) -->
 <svg solarHeartBold />
 <svg solarAltArrowDownBold />
 
-<!-- kebab-case with "solar-" prefix -->
+<!-- kebab-case attribute with "solar-" prefix -->
 <svg solar-heart-bold />
 <svg solar-alt-arrow-down-bold />
 ```

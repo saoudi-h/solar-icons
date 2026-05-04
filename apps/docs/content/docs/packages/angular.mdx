@@ -41,13 +41,21 @@ export class AppComponent {}
 
 ## Import Patterns
 
-Icons are exported with disambiguated names that include the style suffix:
+All icons use **explicit global names** that include the style suffix (e.g., `HeartBold`, `ArrowLeftLinear`). This maps directly to the attribute selector you use in templates.
 
+**From the root (any icon)**
 ```tsx
 import { HeartBold, HeartLinear, HeartOutline } from '@solar-icons/angular';
 import { StarBold, StarLinear } from '@solar-icons/angular';
-import { UserCircleBold, UserRoundedLinear } from '@solar-icons/angular';
 ```
+
+**By category (recommended for DX)**
+```tsx
+import { HeartBold, HeartLinear } from '@solar-icons/angular/like';
+import { ArrowLeftBold, ArrowRightLinear } from '@solar-icons/angular/arrows';
+```
+
+> **Note:** Per-style imports (`@solar-icons/angular/Bold`) are intentionally not provided. Angular icons are identified by their full global name in templates — importing `Heart` from `/Bold` would mislead you into writing `<svg solarHeart />` when the correct selector is `<svg solarHeartBold />`. Explicit names eliminate this ambiguity.
 
 ## Selector Formats
 
@@ -159,18 +167,12 @@ Usage:
 
 ## TypeScript
 
-The package includes full TypeScript definitions:
+The package includes full TypeScript definitions. Every icon component class is typed, so your IDE will autocomplete inputs and provide docs-on-hover:
 
 ```tsx
-import type { IconProps } from '@solar-icons/angular';
-
-// Icon props type
-const props: IconProps = {
-  size: 24,
-  color: '#ef4444',
-  alt: 'Heart icon',
-  mirrored: false,
-};
+import { HeartBold } from '@solar-icons/angular';
+// HeartBold is a strongly-typed Angular component class
+// Hovering over it in your IDE shows the JSDoc preview and usage selectors
 ```
 
 ## Angular Version Compatibility

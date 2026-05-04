@@ -7,17 +7,15 @@ import {
     ViewChild,
     Type,
     OnDestroy,
+    inject,
+    EnvironmentInjector,
 } from '@angular/core';
-
-// Type for icon component
-type IconComponentType = Type<unknown> & {
-    // Icons extend IconBase which has size and color inputs
-};
 
 /**
  * Dynamic icon component that can render any Solar icon.
- * This component dynamically creates the appropriate icon component
- * based on the icon name and style.
+ * Passes the EnvironmentInjector explicitly so that icon components
+ * compiled with ngc --partial can resolve their own DI dependencies
+ * (fixes NG0203 "inject() called outside injection context").
  */
 @Component({
     selector: 'app-dynamic-icon',
@@ -28,10 +26,11 @@ export class DynamicIconComponent implements OnChanges, OnDestroy {
     @ViewChild('iconHost', { read: ViewContainerRef, static: true })
     container!: ViewContainerRef;
 
-    @Input() icon!: IconComponentType;
+    @Input() icon!: Type<unknown>;
     @Input() size: number = 24;
     @Input() color: string = 'currentColor';
 
+    private readonly envInjector = inject(EnvironmentInjector);
     private componentRef: ReturnType<ViewContainerRef['createComponent']> | null = null;
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -41,18 +40,17 @@ export class DynamicIconComponent implements OnChanges, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        if (this.componentRef) {
-            this.componentRef.destroy();
-        }
+        this.componentRef?.destroy();
     }
 
     private renderIcon(): void {
         if (!this.icon) return;
 
         this.container.clear();
-        this.componentRef = this.container.createComponent(this.icon);
+        this.componentRef = this.container.createComponent(this.icon, {
+            environmentInjector: this.envInjector,
+        });
 
-        // Set inputs
         this.componentRef.setInput('size', this.size);
         this.componentRef.setInput('color', this.color);
     }
