@@ -6,12 +6,12 @@ const config: Config[] = defineConfig([
     ...base,
     {
         ignores: [
+            'coverage/**',
             'eslint.config.ts',
             'eslint-types.d.ts',
             'lint-staged.config.mjs',
             'prettier.config.mjs',
             'src/icons',
-            'src/lib/icon-base.ts',
             'scripts/*',
         ],
     },

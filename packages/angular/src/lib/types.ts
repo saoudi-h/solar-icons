@@ -32,7 +32,7 @@ export interface IconProps {
 }
 
 /** Icon component type */
-export interface IconComponent extends Type<IconProps> {}
+export type IconComponent = Type<IconProps>;
 
 /** Nullable type helper */
 export type Nullable<T> = T | null | undefined;
