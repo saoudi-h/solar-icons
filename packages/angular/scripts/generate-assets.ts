@@ -134,26 +134,36 @@ import {
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { IconBase } from '../../../lib/icon-base';
+import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from '../../../lib/icon-base';
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  *
  * @usage
  * \`<svg solar${icon.globalName}></svg>\`
- * <!-- or -->
- * \`<svg solar-${icon.name}-${icon.style.toLowerCase()}></svg>\`
  *
  * @component ${icon.globalName}
  * @style ${icon.style}
  * @category ${icon.category}
  */
 @Component({
-    selector: 'svg[solar${icon.globalName}], svg[solar-${icon.name}-${icon.style.toLowerCase()}]',
+    selector: 'svg[solar${icon.globalName}]',
     template: \`${icon.template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        xmlns: 'http://www.w3.org/2000/svg',
+        viewBox: '0 0 24 24',
+        fill: 'none',
+        class: 'solar-icon',
+        '[attr.width]': 'size()',
+        '[attr.height]': 'size()',
+        '[style.color]': 'color()',
+        '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
+        '[attr.aria-hidden]': 'alt() ? null : "true"',
+    },
+    hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
 })
 export class ${icon.globalName} extends IconBase {}
 `
@@ -180,57 +190,13 @@ export const ${aliasGlobal} = ${icon.globalName};
     },
 
     /**
-     * Generates the index.ts for a specific style.
-     */
-    styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath)
-
-        let exports = icons
-            .map(icon => `export { ${icon.pascalName} } from './${style}/${icon.pascalName}';`)
-            .sort()
-            .join('\n')
-
-        icons.forEach(icon => {
-            const aliases = getAliasesForIcon(icon.pascalName)
-            aliases.forEach(alias => {
-                exports += `\nexport { ${alias} } from './${style}/${alias}';`
-            })
-        })
-
-        return {
-            path: path.join(parentDir, `${style}.ts`),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
-     * Generates the styled.ts for a specific style with global names.
-     */
-    styleGlobalIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const exports = icons
-            .map(
-                icon =>
-                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.pascalName}';`
-            )
-            .sort()
-            .join('\n')
-
-        return {
-            path: path.join(folderPath, 'styled.ts'),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
      * Generates the index.ts for a category.
      */
     categoryIndex: (category: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath)
-
         let exports = icons
             .map(
                 icon =>
-                    `export { ${icon.globalName} } from './${category}/${icon.style}/${icon.globalName}';`
+                    `export { ${icon.globalName} } from './${icon.style}/${icon.globalName}';`
             )
             .sort()
             .join('\n')
@@ -238,12 +204,12 @@ export const ${aliasGlobal} = ${icon.globalName};
         icons.forEach(icon => {
             const aliases = getAliasesForIcon(icon.pascalName)
             aliases.forEach(alias => {
-                exports += `\nexport { ${alias}${icon.style} } from './${category}/${icon.style}/${alias}${icon.style}';`
+                exports += `\nexport { ${alias}${icon.style} } from './${icon.style}/${alias}${icon.style}';`
             })
         })
 
         return {
-            path: path.join(parentDir, `${category}.ts`),
+            path: path.join(folderPath, 'index.ts'),
             content: `${exports}\n`,
         }
     },
@@ -283,76 +249,14 @@ export const ${aliasGlobal} = ${icon.globalName};
     },
 
     /**
-     * Generates the root styled.ts.
-     */
-    rootGlobalIndex: (categories: string[]): FileDefinition => {
-        const exports = categories
-            .map(category => `export * from './${category}/styled';`)
-            .sort()
-            .join('\n')
-
-        return {
-            path: path.join(ICONS_PATH, 'styled.ts'),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
-     * Generates grouped indexes by weight.
-     */
-    weightIndexes: (icons: Icon[]): FileDefinition[] => {
-        const files: FileDefinition[] = []
-        const byStyle = groupBy(icons, i => i.style)
-
-        for (const weight of WEIGHTS) {
-            const iconsForWeight = byStyle[weight] || []
-
-            let content = iconsForWeight
-                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-                .map(
-                    icon =>
-                        `export { ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}';`
-                )
-                .join('\n')
-
-            iconsForWeight.forEach(icon => {
-                const aliases = getAliasesForIcon(icon.pascalName)
-                aliases.forEach(alias => {
-                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`
-                })
-            })
-
-            files.push({
-                path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
-                content: content ? `${content}\n` : '',
-            })
-        }
-        return files
-    },
-
-    /**
-     * Generates the index for styles directory.
-     */
-    stylesIndex: (): FileDefinition => {
-        const content = WEIGHTS.map(weight => `export * as ${weight} from './${weight}';`).join(
-            '\n'
-        )
-
-        return {
-            path: path.join(ICONS_PATH, 'style', 'index.ts'),
-            content: `${content}\n`,
-        }
-    },
-
-    /**
      * Generates the main entry point (public-api.ts).
+     * Note: no `import * as solar` re-export — that would create a circular
+     * dependency since the barrel already re-exports everything flat.
      */
     mainEntry: (): FileDefinition => {
         const content = `/* GENERATED FILE */
 export * from './lib';
 export * from './icons';
-import * as solar from './icons';
-export { solar };
 `
         return {
             path: INDEX_PATH,
