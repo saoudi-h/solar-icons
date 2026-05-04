@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core'
-import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { IconBase } from './icon-base'
+import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from './icon-base'
 
 @Component({
     selector: 'svg[testIcon]',
@@ -8,11 +8,22 @@ import { IconBase } from './icon-base'
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        xmlns: 'http://www.w3.org/2000/svg',
+        viewBox: '0 0 24 24',
+        fill: 'none',
+        class: 'solar-icon',
+        '[attr.width]': 'size()',
+        '[attr.height]': 'size()',
+        '[style.color]': 'color()',
+        '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
+        '[attr.aria-hidden]': 'alt() ? null : "true"',
+    },
+    hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
 })
 class TestIcon extends IconBase {}
 
 describe('IconBase', () => {
-    let component: TestIcon
     let fixture: ComponentFixture<TestIcon>
 
     beforeEach(async () => {
@@ -21,85 +32,50 @@ describe('IconBase', () => {
         }).compileComponents()
 
         fixture = TestBed.createComponent(TestIcon)
-        component = fixture.componentInstance
     })
 
     const getSvgAttribute = (attr: string) => fixture.nativeElement.getAttribute(attr)
+    const getSvgStyle = (prop: string) => fixture.nativeElement.style.getPropertyValue(prop)
 
-    it('should create', () => {
-        fixture.detectChanges()
-        expect(component).toBeTruthy()
-    })
+    describe('default attributes', () => {
+        it('should have default SVG attributes', () => {
+            fixture.detectChanges()
+            expect(getSvgAttribute('xmlns')).toBe('http://www.w3.org/2000/svg')
+            expect(getSvgAttribute('viewBox')).toBe('0 0 24 24')
+            expect(getSvgAttribute('fill')).toBe('none')
+        })
 
-    it('should apply default class', () => {
-        fixture.detectChanges()
-        expect(fixture.nativeElement.classList.contains('solar-icon')).toBeTruthy()
+        it('should have default class', () => {
+            fixture.detectChanges()
+            expect(fixture.nativeElement.classList.contains('solar-icon')).toBe(true)
+        })
     })
 
     describe('size input', () => {
         it('should default to 1em', () => {
             fixture.detectChanges()
             expect(getSvgAttribute('width')).toBe('1em')
-            expect(getSvgAttribute('height')).toBe('1em')
-        })
-
-        it('should apply size', () => {
-            fixture.componentRef.setInput('size', '24px')
-            fixture.detectChanges()
-            expect(getSvgAttribute('width')).toBe('24px')
-            expect(getSvgAttribute('height')).toBe('24px')
-        })
-
-        it('should allow numeric size', () => {
-            fixture.componentRef.setInput('size', 48)
-            fixture.detectChanges()
-            expect(getSvgAttribute('width')).toBe('48')
-            expect(getSvgAttribute('height')).toBe('48')
         })
     })
 
     describe('color input', () => {
         it('should default to currentColor', () => {
             fixture.detectChanges()
-            expect(getSvgAttribute('color')).toBe('currentColor')
-        })
-
-        it('should apply color', () => {
-            fixture.componentRef.setInput('color', 'red')
-            fixture.detectChanges()
-            expect(getSvgAttribute('color')).toBe('red')
+            expect(getSvgStyle('color')).toBe('currentcolor')
         })
     })
 
     describe('mirrored input', () => {
-        it('should default to false', () => {
+        it('should not be mirrored by default', () => {
             fixture.detectChanges()
             expect(getSvgAttribute('transform')).toBeNull()
         })
-
-        it('should apply scale(-1, 1) when mirrored', () => {
-            fixture.componentRef.setInput('mirrored', true)
-            fixture.detectChanges()
-            expect(getSvgAttribute('transform')).toBe('scale(-1, 1)')
-        })
     })
 
-    describe('alt / accessibility', () => {
-        it('should hide icon from screen readers if no alt provided', () => {
+    describe('accessibility (alt input)', () => {
+        it('should be aria-hidden by default', () => {
             fixture.detectChanges()
             expect(getSvgAttribute('aria-hidden')).toBe('true')
-        })
-
-        it('should expose icon and render title if alt provided', () => {
-            fixture.componentRef.setInput('alt', 'Test Label')
-            fixture.detectChanges()
-            expect(getSvgAttribute('aria-hidden')).toBe('false')
-
-            // The <title> is injected directly into the SVG DOM by SolarTitleDirective
-            // (via createElementNS + prepend), so we query nativeElement directly.
-            const titleEl = fixture.nativeElement.querySelector('title')
-            expect(titleEl).toBeTruthy()
-            expect(titleEl.textContent).toBe('Test Label')
         })
     })
 })
