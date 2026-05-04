@@ -118,6 +118,11 @@
             "types": "./dist/icons/*.d.ts",
             "import": "./dist/icons/*.js",
             "default": "./dist/icons/*.js"
+        },
+        "./*": {
+            "types": "./dist/icons/*.d.ts",
+            "import": "./dist/icons/*.js",
+            "default": "./dist/icons/*.js"
         }
     }
 }
