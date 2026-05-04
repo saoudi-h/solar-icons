@@ -49,18 +49,11 @@ import { HeartBold, StarBold } from '@solar-icons/angular/like'
 > ⚠️ **Why no per-style imports?**  
 > Unlike the other Solar Icons packages, Angular components are used via **attribute selectors** in templates (`<svg solarArrowLeftBold />`). The full global name — including the style suffix — is part of the selector. Importing `ArrowLeft` from `@solar-icons/angular/Bold` would create a false expectation that `<svg solarArrowLeft />` works, when the actual selector is `<svg solarArrowLeftBold />`. Explicit global names keep the developer experience honest.
 
-### Selector Formats
-
-Each icon supports two selector formats:
+Each icon uses a camelCase attribute selector with the "solar" prefix:
 
 ```html
-<!-- camelCase attribute with "solar" prefix (recommended) -->
 <svg solarHeartBold />
 <svg solarAltArrowDownBold />
-
-<!-- kebab-case attribute with "solar-" prefix -->
-<svg solar-heart-bold />
-<svg solar-alt-arrow-down-bold />
 ```
 
 ## Icon Styles
