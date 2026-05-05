@@ -18,7 +18,6 @@ The `@solar-icons/angular` package provides Angular components for Solar Icons. 
 - **Minimal Bundle** → Tree-shakeable, only imported icons are included
 - **Accessibility** → Built-in title support for screen readers
 - **TypeScript** → Full type safety with IntelliSense support
-- **Flexible Selectors** → Use PascalCase or kebab-case selectors
 
 ## Basic Usage
 
@@ -49,7 +48,7 @@ import { HeartBold, HeartLinear, HeartOutline } from '@solar-icons/angular';
 import { StarBold, StarLinear } from '@solar-icons/angular';
 ```
 
-**By category (recommended for DX)**
+**By category**
 ```tsx
 import { HeartBold, HeartLinear } from '@solar-icons/angular/like';
 import { ArrowLeftBold, ArrowRightLinear } from '@solar-icons/angular/arrows';
@@ -166,8 +165,25 @@ export class AppComponent {
 
 The package includes full TypeScript definitions. Every icon component class is typed, so your IDE will autocomplete inputs and provide docs-on-hover:
 
-```tsx
-import { HeartBold } from '@solar-icons/angular';
+```ts twoslash
+
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyLjgzMjQgMjEuODAxM0MxNS45NTgzIDIxLjE3NDcgMjAgMTguOTI2IDIwIDEzLjExMTJDMjAgNy44MTk2IDE2LjEyNjcgNC4yOTU5MyAxMy4zNDE1IDIuNjc2ODVDMTIuNzIzNSAyLjMxNzU3IDEyIDIuNzkwMDYgMTIgMy41MDQ5MlY1LjMzMzRDMTIgNi43NzUyNiAxMS4zOTM4IDkuNDA3MTEgOS43MDkzMiAxMC41MDE4QzguODQ5MzIgMTEuMDYwNyA3LjkyMDUyIDEwLjIyNDIgNy44MTYgOS4yMDM4OEw3LjczMDE3IDguMzY2MDRDNy42MzA0IDcuMzkyMDMgNi42Mzg0MSA2LjgwMDc1IDUuODU5OTYgNy4zOTQ2QzQuNDYxNDcgOC40NjE0NCAzIDEwLjMyOTYgMyAxMy4xMTEyQzMgMjAuMjIyMyA4LjI4ODg5IDIyLjAwMDEgMTAuOTMzMyAyMi4wMDAxQzExLjA4NzEgMjIuMDAwMSAxMS4yNDg4IDIxLjk5NTUgMTEuNDE3MSAyMS45ODU4QzExLjg2MyAyMS45Mjk2IDExLjQxNzEgMjIuMDg1IDEyLjgzMjQgMjEuODAxM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTggMTguNDQ0MkM4IDIxLjA2NCAxMC4xMTEzIDIxLjg3NDIgMTEuNDE3MSAyMS45ODU4QzExLjg2MyAyMS45Mjk2IDExLjQxNzEgMjIuMDg1IDEyLjgzMjQgMjEuODAxM0MxMy44NzEgMjEuNDM0MyAxNSAyMC40OTIyIDE1IDE4LjQ0NDJDMTUgMTcuMTQ2NSAxNC4xODE0IDE2LjM0NTkgMTMuNTQwMSAxNS45NzExQzEzLjM0MzkgMTUuODU2NCAxMy4xMTYxIDE2LjAwMDggMTMuMDk4NSAxNi4yMjczQzEzLjA0MjkgMTYuOTQ1NCAxMi4zNTM0IDE3LjUxNzQgMTEuODgzNiAxNi45NzE0QzExLjQ2ODUgMTYuNDg4OSAxMS4yOTQxIDE1Ljc4NCAxMS4yOTQxIDE1LjMzMzFWMTQuNzQzOUMxMS4yOTQxIDE0LjM4ODcgMTAuOTM2NSAxNC4xNTMzIDEwLjYzMSAxNC4zMzQ2QzkuNDk1MDcgMTUuMDA4NSA4IDE2LjM5NDkgOCAxOC40NDQyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ *
+ * @usage
+ * `<svg solarFireBoldDuotone></svg>`
+ *
+ * @component FireBoldDuotone
+ * @style BoldDuotone
+ * @category nature
+ */
+const FireBoldDuotone = () => {}
+const component = () => {}
+// ---cut---
+
+const a = FireBoldDuotone
+class App {}
+  
 // HeartBold is a strongly-typed Angular component class
 // Hovering over it in your IDE shows the JSDoc preview and usage selectors
 ```
@@ -191,12 +207,7 @@ Icons are optimized for performance:
 
 ## Package Size
 
-The package includes ~9,000 icon components (1,500 icons × 6 styles). However, with tree-shaking, only the icons you import will be included in your final bundle.
-
-Example bundle impact:
-- Single icon: ~1-2 KB
-- 10 icons: ~10-15 KB
-- 100 icons: ~100-120 KB
+The package includes ~7,476 icon components (1,246 icons × 6 styles). However, with tree-shaking, only the icons you import will be included in your final bundle.
 
 ## License
 

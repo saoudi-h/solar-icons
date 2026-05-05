@@ -167,7 +167,7 @@ export const config: Config = {
                 link: '/docs/packages/angular',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/angular',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/angular',
-                content: 'Angular 17-21 components with modern signals and minimal bundle size',
+                content: 'Angular 17+ components with modern signals and minimal bundle size',
                 status: 'released',
                 iconify: 'devicon:angular',
             },
