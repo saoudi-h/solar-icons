@@ -117,43 +117,49 @@ Without `alt`, icons are automatically marked as decorative with `aria-hidden="t
 
 ## Dynamic Icons
 
-To render icons dynamically based on runtime data, create a wrapper component:
+To render icons dynamically based on runtime strings (e.g., from a database), use the built-in `SolarDynamicIcon` directive.
+
+### 1. Register Icons
+
+First, provide the icons you want to make available for dynamic rendering in your component or app providers:
 
 ```tsx
-import { Component, Input, Type, ViewContainerRef, OnInit } from '@angular/core';
-import * as solar from '@solar-icons/angular';
+import { provideSolarIcons } from '@solar-icons/angular';
+import { HeartBold, StarBold, HomeBold } from '@solar-icons/angular/like';
 
-@Component({
-  selector: 'app-dynamic-icon',
-  standalone: true,
-  template: '', // Component is created dynamically
-})
-export class DynamicIconComponent implements OnInit {
-  @Input() name!: string;
-  @Input() style!: string;
-  @Input() size = 24;
-  @Input() color = 'currentColor';
-
-  constructor(private viewContainer: ViewContainerRef) {}
-
-  ngOnInit() {
-    const iconName = this.name + this.style; // e.g., "HeartBold"
-    const iconComponent = (solar as Record<string, unknown>)[iconName] as Type<unknown>;
-    
-    if (iconComponent) {
-      const componentRef = this.viewContainer.createComponent(iconComponent);
-      // Set inputs on the component instance
-      (componentRef.instance as any).size = this.size;
-      (componentRef.instance as any).color = this.color;
-    }
-  }
-}
+bootstrapApplication(App, {
+  providers: [
+    provideSolarIcons({ HeartBold, StarBold, HomeBold })
+  ]
+});
 ```
 
-Usage:
+### 2. Render the Icon
+
+Use the `solarIcon` directive in your template. It accepts either an icon name (string) or an icon component class.
 
 ```tsx
-<app-dynamic-icon name="Heart" style="Bold" [size]="32" color="#ef4444" />
+import { Component } from '@angular/core';
+import { SolarDynamicIcon } from '@solar-icons/angular';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [SolarDynamicIcon],
+  template: `
+    <!-- Render by registered name -->
+    <ng-container solarIcon="HeartBold" [size]="32" color="#ef4444" />
+
+    <!-- Render from a dynamic variable -->
+    <ng-container [solarIcon]="dynamicIconName" [size]="24" />
+
+    <!-- Render by component class directly -->
+    <ng-container [solarIcon]="HeartBold" />
+  `,
+})
+export class AppComponent {
+  dynamicIconName = 'StarBold';
+}
 ```
 
 ## TypeScript
