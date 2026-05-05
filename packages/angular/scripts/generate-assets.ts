@@ -15,8 +15,6 @@ const ICON_RENAMES: Record<string, string> = {
     Plaaylist: 'Playlist',
     Pallete: 'Palette',
     Tuneing: 'Tuning',
-    // Only replace 'Horizonta' if it's NOT followed by an 'l'
-    'Horizonta(?![l])': 'Horizontal',
     Minimlistic: 'Minimalistic',
     Spedometer: 'Speedometer',
     Happly: 'Happy',
@@ -24,6 +22,7 @@ const ICON_RENAMES: Record<string, string> = {
     Recive: 'Receive',
 }
 // cspell:enable
+
 import type { SvgMap } from './utils'
 import {
     ICONS_PATH,
@@ -32,17 +31,7 @@ import {
     readSvgsFromDisk,
     toPascalCase,
     verifyIcons,
-    WEIGHTS,
 } from './utils'
-
-// Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {}
-for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-    if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = []
-    }
-    ICON_ALIASES[correction].push(typo)
-}
 
 // --- Types ---
 
@@ -64,13 +53,35 @@ interface FileDefinition {
 // --- Helpers ---
 
 /**
+ * Applies name corrections to a string based on the ICON_RENAMES dictionary.
+ */
+function applyCorrections(name: string): string {
+    let corrected = name;
+    
+    // Standard renames
+    for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
+        const regex = new RegExp(typo, 'gi');
+        corrected = corrected.replace(regex, correction);
+    }
+    
+    // Special case for 'Horizonta' -> 'Horizontal' (only if not already followed by 'l')
+    corrected = corrected.replace(/Horizonta(?!l)/gi, 'Horizontal');
+    
+    return corrected;
+}
+
+/**
  * Flattens the nested SvgMap into a list of Icon objects.
+ * Applies name corrections early to avoid publishing typos.
  */
 function getIcons(map: SvgMap): Icon[] {
     const icons: Icon[] = []
     for (const [category, styles] of Object.entries(map)) {
         for (const [style, names] of Object.entries(styles)) {
             for (const [name, data] of Object.entries(names)) {
+                // Apply corrections to the icon name (kebab-case)
+                const correctedName = applyCorrections(name);
+                
                 // Parse the node string back to IconNode array to generate template
                 const nodeArray = eval(data.node) // Safe since we generated this ourselves
                 const template = nodesToTemplate(nodeArray)
@@ -78,9 +89,9 @@ function getIcons(map: SvgMap): Icon[] {
                 icons.push({
                     category,
                     style,
-                    name,
-                    pascalName: toPascalCase(name),
-                    globalName: toPascalCase(`${name}-${style}`),
+                    name: correctedName,
+                    pascalName: toPascalCase(correctedName),
+                    globalName: toPascalCase(`${correctedName}-${style}`),
                     preview: data.preview,
                     template,
                 })
@@ -103,25 +114,6 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
         },
         {} as Record<string, T[]>
     )
-}
-
-/**
- * Returns a list of aliases (typos) for a given icon name.
- */
-function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>()
-    if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach(a => aliases.add(a))
-    }
-    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-        if (name.includes(correct) && name !== correct) {
-            typos.forEach(typo => {
-                if (/[^a-z0-9]/i.test(typo)) return
-                aliases.add(name.replace(correct, typo))
-            })
-        }
-    })
-    return Array.from(aliases).filter(a => a !== name)
 }
 
 // --- Generators ---
@@ -162,27 +154,11 @@ export class ${icon.globalName} extends IconBase {}
         }
     },
 
-    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
-        const aliasGlobal = `${alias}${icon.style}`
-        const content = `/* GENERATED FILE */
-import { ${icon.globalName} } from './${icon.globalName}';
-
-/**
- * @deprecated Use ${icon.globalName} instead
- */
-export const ${aliasGlobal} = ${icon.globalName};
-`
-        return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${aliasGlobal}.ts`),
-            content,
-        }
-    },
-
     /**
      * Generates the index.ts for a category.
      */
     categoryIndex: (category: string, icons: Icon[], folderPath: string): FileDefinition => {
-        let exports = icons
+        const exports = icons
             .map(
                 icon =>
                     `export { ${icon.globalName} } from './${icon.style}/${icon.globalName}';`
@@ -190,34 +166,8 @@ export const ${aliasGlobal} = ${icon.globalName};
             .sort()
             .join('\n')
 
-        icons.forEach(icon => {
-            const aliases = getAliasesForIcon(icon.pascalName)
-            aliases.forEach(alias => {
-                exports += `\nexport { ${alias}${icon.style} } from './${icon.style}/${alias}${icon.style}';`
-            })
-        })
-
         return {
             path: path.join(folderPath, 'index.ts'),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
-     * Generates the styled.ts for a category.
-     */
-    categoryGlobalIndex: (
-        category: string,
-        styles: string[],
-        folderPath: string
-    ): FileDefinition => {
-        const exports = styles
-            .map(style => `export * from './${style}/styled';`)
-            .sort()
-            .join('\n')
-
-        return {
-            path: path.join(folderPath, 'styled.ts'),
             content: `${exports}\n`,
         }
     },
@@ -237,11 +187,6 @@ export const ${aliasGlobal} = ${icon.globalName};
         }
     },
 
-    /**
-     * Generates the main entry point (public-api.ts).
-     * Note: no `import * as solar` re-export — that would create a circular
-     * dependency since the barrel already re-exports everything flat.
-     */
     /**
      * Generates a union type of all icon names for autocompletion.
      */
@@ -293,16 +238,9 @@ function generate(icons: Icon[]) {
         const byStyle = groupBy(catIcons, i => i.style)
 
         for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const stylePath = path.join(ICONS_PATH, category, style)
-
             styleIcons.forEach(icon => {
                 files.push(Generators.component(icon))
-                const aliases = getAliasesForIcon(icon.pascalName)
-                aliases.forEach(alias => {
-                    files.push(Generators.aliasComponent(icon, alias))
-                })
             })
-            // We no longer generate style indexes
         }
 
         const categoryPath = path.join(ICONS_PATH, category)
