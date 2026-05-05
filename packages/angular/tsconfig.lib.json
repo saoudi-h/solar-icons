@@ -6,14 +6,12 @@
         "declaration": true,
         "sourceMap": false,
         "inlineSources": false,
+        "removeComments": true,
         "types": []
     },
     "angularCompilerOptions": {
         "compilationMode": "partial"
     },
     "include": ["src/**/*.ts"],
-    "exclude": [
-        "**/*.spec.ts",
-        "src/test-setup.ts"
-    ]
+    "exclude": ["**/*.spec.ts", "src/test-setup.ts"]
 }
