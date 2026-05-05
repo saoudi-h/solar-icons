@@ -6,7 +6,7 @@
         "declaration": true,
         "sourceMap": false,
         "inlineSources": false,
-        "removeComments": true,
+        "removeComments": false,
         "types": []
     },
     "angularCompilerOptions": {

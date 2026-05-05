@@ -23,7 +23,7 @@
     "types": "./dist/public-api.d.ts",
     "scripts": {
         "ng": "ng",
-        "build": "pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json",
+        "build": "pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "test": "vitest run",
