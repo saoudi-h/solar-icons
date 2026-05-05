@@ -16,7 +16,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 
 - **Massive Collection** → 1,246 icons × 6 styles = **7,476 variations**  
 - **Consistent Multi-Style Design** → Bold, Linear, Outline, BoldDuotone, LineDuotone, Broken  
-- **Multi-Framework Support** → React, Vue, Nuxt, React Native
+- **Multi-Framework Support** → React, Vue, Nuxt, Angular, React Native
 - **DX Features** → IntelliSense previews, JSDoc hints, category imports, global config  
 - **Smart Search** → AI-generated tags for better discoverability  
 - **Performance Options** → Choose between full-featured and lightweight builds  
