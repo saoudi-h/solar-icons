@@ -19,7 +19,8 @@
         "generate:data": "tsx ./core/scripts/generate-data.ts",
         "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts",
         "lint-staged": "lint-staged",
-        "lint:links": "fumadocs-mdx && bun scripts/lint.ts"
+        "lint:links": "fumadocs-mdx && bun scripts/lint.ts",
+        "analyze": "ANALYZE=true pnpm run build"
     },
     "dependencies": {
         "@radix-ui/react-dialog": "^1.1.15",
