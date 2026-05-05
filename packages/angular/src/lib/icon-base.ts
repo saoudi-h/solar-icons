@@ -1,7 +1,5 @@
 import { Directive, input } from '@angular/core';
-import { SOLAR_ICON_HOST_DIRECTIVES } from './title.directive';
 
-export { SOLAR_ICON_HOST_DIRECTIVES };
 
 /**
  * Base class for all Solar Icon components.

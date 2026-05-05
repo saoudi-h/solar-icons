@@ -126,7 +126,7 @@ import {
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from '../../../lib/icon-base';
+import { IconBase } from '../../../lib/icon-base';
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
@@ -140,11 +140,10 @@ import { IconBase, SOLAR_ICON_HOST_DIRECTIVES } from '../../../lib/icon-base';
  */
 @Component({
     selector: 'svg[solar${icon.globalName}]',
-    template: \`${icon.template}\`,
+    template: \`@if (alt(); as title) { <title>{{ title }}</title> }${icon.template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
 })
 export class ${icon.globalName} extends IconBase {}
 `

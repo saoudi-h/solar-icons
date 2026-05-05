@@ -1,14 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { type ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { SolarDynamicIcon, provideSolarIcons, IconBase, SOLAR_ICON_HOST_DIRECTIVES } from './index';
+import { SolarDynamicIcon, provideSolarIcons, IconBase } from './index';
 
 // Mock Icon component using the real base logic
 @Component({
     selector: 'svg[solarTestIcon]',
     standalone: true,
-    template: `<svg:path d="M0 0h24v24" />`,
-    hostDirectives: SOLAR_ICON_HOST_DIRECTIVES,
+    template: `@if (alt(); as title) { <title>{{ title }}</title> }<svg:path d="M0 0h24v24" />`,
 })
 class TestIcon extends IconBase {}
 
