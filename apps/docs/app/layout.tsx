@@ -2,23 +2,19 @@ import { baseUrl, createMetadata } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
 import { Provider as JotaiProvider } from 'jotai'
 import type { Viewport } from 'next'
-import { Bricolage_Grotesque, Poppins, Victor_Mono } from 'next/font/google'
+import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
 import './global.css'
 import Providers from './Providers'
+import { CalSansUI } from '@calcom/cal-sans-ui/ui'
+
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],
     variable: '--font-heading',
 })
 
-const body = Poppins({
-    subsets: ['latin'],
-    weight: '400',
-    variable: '--font-body',
-})
-
-const mono = Victor_Mono({
+const mono = JetBrains_Mono({
     subsets: ['latin'],
     variable: '--font-mono',
 })
@@ -43,7 +39,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
-            className={cn(heading.variable, body.variable, mono.variable, body.className)}
+            className={cn(heading.variable, CalSansUI.variable, mono.variable)}
             suppressHydrationWarning>
             <meta name="apple-mobile-web-app-title" content="Solar Icons" />
             <body className="flex min-h-screen flex-col">

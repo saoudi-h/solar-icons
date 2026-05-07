@@ -2,14 +2,14 @@
     "title": "Packages",
     "icon": "Widget2",
     "pages": [
-        "react",
         "react-perf",
+        "react",
+        "svelte",
+        "solid",
         "react-native",
         "vue",
         "nuxt",
-        "angular",
-        "svelte",
-        "solid"
+        "angular"
     ],
     "defaultOpen": false
 }

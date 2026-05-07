@@ -5,7 +5,7 @@ import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
-import { DocsPage } from 'fumadocs-ui/layouts/docs/page';
+import { DocsPage, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
 
 import {
   MarkdownCopyButton,
@@ -44,6 +44,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                 />
             </DocsBody>
             <Rate onRateAction={onRateAction} />
+            {page.data.lastModified && <PageLastUpdate date={page.data.lastModified} />}
         </DocsPage>
     )
 }
