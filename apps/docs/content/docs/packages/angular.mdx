@@ -50,9 +50,8 @@ export class App {}
 ## Dynamic Rendering
 When your icon names come from a database or need to be swapped at runtime, use the `SolarDynamicIcon` directive.
 
-<Steps>
-<Step>
-### Register your icons
+
+### Register your icons [step]
 To keep your bundle lean, you must explicitly register which icons should be available for dynamic lookup. You can do this at the application root or within a specific component.
 
 ```tsx
@@ -65,10 +64,8 @@ bootstrapApplication(App, {
   ]
 });
 ```
-</Step>
 
-<Step>
-### Use the directive
+### Use the directive [step]
 Import `SolarDynamicIcon` and pass the icon name or the component class to the `solarIcon` input.
 
 ```tsx
@@ -89,8 +86,6 @@ export class App {
   protected readonly Sun = SunBold;
 }
 ```
-</Step>
-</Steps>
 
 <Callout type="info" title="IDE Warnings">
 When passing a component class directly, the Angular compiler might warn you that the component is unused (`NG8113`). This is a known limitation of static analysis with dynamic references; you can safely ignore it.
@@ -109,13 +104,22 @@ Every icon component shares a consistent API for styling and accessibility:
 
 **Accessibility note:** When the `alt` input is provided, the component automatically renders a `<title>` element inside the SVG and makes it accessible to screen readers. Without `alt`, icons are marked as decorative with `aria-hidden="true"`.
 
-## Optimization Tips
+## Why Attribute Selectors?
 
-<Callout type="warn" title="Handling Large Grids">
-If you are building a dashboard or an icon picker with hundreds of icons (500+), we recommend using **Static Components** instead of the dynamic directive.
+Unlike many other icon libraries that wrap SVGs in custom component tags (like `<solar-icon-home />`), this package uses **Attribute Selectors** on native `<svg>` elements.
 
-For massive dynamic grids, always use `ChangeDetectionStrategy.OnPush` and pre-resolve your icon data into a `computed()` signal to keep your application fluid.
-</Callout>
+```html
+<!-- Clean, native DOM -->
+<svg solarHeartBold [size]="24" />
+
+<!-- Instead of cluttered custom tags -->
+<solar-heart-bold><svg>...</svg></solar-heart-bold>
+```
+
+### Key Benefits
+- **Clean DOM**: No unnecessary wrapper elements, keeping your inspector and accessibility tree lean.
+- **CSS Friendly**: You can target icons directly with standard CSS selectors.
+- **Native Performance**: Zero overhead from extra component lifecycle hooks or DOM nesting.
 
 ## Compatibility
 
