@@ -1,0 +1,17 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "src",
+        "declaration": true,
+        "sourceMap": false,
+        "inlineSources": false,
+        "removeComments": false,
+        "types": []
+    },
+    "angularCompilerOptions": {
+        "compilationMode": "partial"
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["**/*.spec.ts", "src/test-setup.ts"]
+}

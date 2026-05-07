@@ -35,6 +35,7 @@ export const config: Config = {
                     { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
                     { label: 'Svelte', url: '/docs/packages/svelte', icon: <Icon icon="devicon:svelte" /> },
                     { label: 'Solid', url: '/docs/packages/solid', icon: <Icon icon="devicon:solidjs" /> },
+                    { label: 'Angular', url: '/docs/packages/angular', icon: <Icon icon="devicon:angular" /> },
                 ],
             },
             {
@@ -144,11 +145,6 @@ export const config: Config = {
                 iconify: 'devicon:nuxtjs',
             },
             {
-                title: 'Angular',
-                status: 'not-started',
-                iconify: 'devicon:angular',
-            },
-            {
                 title: 'Svelte',
                 link: '/docs/packages/svelte',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/svelte',
@@ -165,6 +161,15 @@ export const config: Config = {
                 content: 'Lightweight SolidJS components with minimal bundle size',
                 status: 'released',
                 iconify: 'devicon:solidjs',
+            },
+            {
+                title: 'Angular',
+                link: '/docs/packages/angular',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/angular',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/angular',
+                content: 'Angular 17+ components with modern signals and minimal bundle size',
+                status: 'released',
+                iconify: 'devicon:angular',
             },
             {
                 title: 'Qwik',

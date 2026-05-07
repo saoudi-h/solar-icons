@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'fumadocs-ui/css/dusk.css';
+@import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
 @plugin 'tailwindcss-animate';
@@ -63,7 +63,8 @@
     --color-chart-5: hsl(var(--chart-5));
 
     --font-heading: var(--font-heading), sans-serif;
-    --font-body: var(--font-body), sans-serif;
+    /* --font-body: var(--font-body), sans-serif; */
+    --font-body: var(--font-cal-sans-ui), sans-serif;
     --font-mono: var(--font-mono), monospace;
 }
 

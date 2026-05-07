@@ -1,0 +1,17 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [],
+    "paths": {
+      "@solar-icons/angular": ["../../packages/angular/src/public-api.ts"],
+      "@solar-icons/angular/lib": ["../../packages/angular/src/lib/index.ts"],
+      "@solar-icons/angular/arrows": ["../../packages/angular/src/icons/arrows/index.ts"],
+      "@solar-icons/angular/icons/*": ["../../packages/angular/src/icons/*/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
+}

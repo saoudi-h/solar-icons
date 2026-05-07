@@ -20,24 +20,24 @@
         "setup": "pnpm install && pnpm build"
     },
     "devDependencies": {
-        "@commitlint/cli": "^20.4.1",
-        "@commitlint/config-conventional": "^20.4.1",
-        "@commitlint/types": "^20.4.0",
+        "@commitlint/cli": "^20.5.3",
+        "@commitlint/config-conventional": "^20.5.3",
+        "@commitlint/types": "^20.5.0",
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint": "^9.6.1",
-        "@types/node": "^25.2.1",
+        "@types/node": "^25.6.1",
         "cspell": "^9.6.4",
         "eslint": "^9.39.2",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
-        "prettier": "^3.8.1",
+        "prettier": "^3.8.3",
         "prettier-plugin-organize-imports": "^4.3.0",
         "publint": "^0.3.17",
         "rimraf": "^6.1.2",
         "tsdown": "^0.18.4",
-        "turbo": "^2.8.3",
+        "turbo": "^2.9.10",
         "typescript": "^5.9.3",
         "unplugin-unused": "^0.5.7",
         "vite-tsconfig-paths": "^6.0.5"
@@ -69,6 +69,6 @@
     "license": "MIT",
     "dependencies": {
         "@changesets/changelog-github": "^0.5.0",
-        "@changesets/cli": "^2.27.10"
+        "@changesets/cli": "^2.31.0"
     }
 }

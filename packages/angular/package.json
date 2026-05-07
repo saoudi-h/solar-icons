@@ -1,0 +1,119 @@
+{
+    "name": "@solar-icons/angular",
+    "version": "1.0.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Solar Icons for Angular",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/angular"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "module": "./dist/public-api.js",
+    "main": "./dist/public-api.js",
+    "types": "./dist/public-api.d.ts",
+    "scripts": {
+        "ng": "ng",
+        "build": "pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules dist out-tsc",
+        "typecheck": "tsc --noEmit -p tsconfig.lib.json",
+        "pre-commit": "lint-staged"
+    },
+    "devDependencies": {
+        "@analogjs/vite-plugin-angular": "^2.5.0",
+        "@angular-devkit/build-angular": "^21.2.10",
+        "@angular/cli": "^21.2.9",
+        "@angular/common": "^21.2.12",
+        "@angular/compiler": "^21.2.12",
+        "@angular/compiler-cli": "^21.2.11",
+        "@angular/core": "^21.2.12",
+        "@angular/platform-browser": "^21.2.12",
+        "@angular/platform-browser-dynamic": "^21.2.12",
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/eslint": "workspace:*",
+        "@solar-icons/prettier": "workspace:*",
+        "@solar-icons/tsconfig": "workspace:*",
+        "@types/jsdom": "^28.0.1",
+        "@types/node": "^25.6.1",
+        "@vitest/coverage-v8": "^4.1.5",
+        "@xmldom/xmldom": "^0.9.10",
+        "jsdom": "^27.4.0",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.8.3",
+        "rimraf": "^6.1.2",
+        "rxjs": "~7.8.0",
+        "tslib": "^2.3.0",
+        "tsx": "^4.21.0",
+        "typescript": "~5.9.2",
+        "vitest": "^4.1.5",
+        "zone.js": "^0.16.1"
+    },
+    "peerDependencies": {
+        "@angular/common": "17.x - 21.x",
+        "@angular/core": "17.x - 21.x"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "keywords": [
+        "angular",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "UI",
+        "UX"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/public-api.d.ts",
+            "import": "./dist/public-api.js",
+            "default": "./dist/public-api.js"
+        },
+        "./lib": {
+            "types": "./dist/lib/index.d.ts",
+            "import": "./dist/lib/index.js",
+            "default": "./dist/lib/index.js"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.ts",
+            "import": "./dist/lib/*.js",
+            "default": "./dist/lib/*.js"
+        },
+        "./*": {
+            "types": "./dist/icons/*/index.d.ts",
+            "import": "./dist/icons/*/index.js",
+            "default": "./dist/icons/*/index.js"
+        }
+    }
+}

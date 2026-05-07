@@ -1,10 +1,16 @@
 import { Rate } from '@/components/ui-blocks/rate'
-import { onRateAction } from '@/lib/github'
+import { onRateAction, owner, repo } from '@/lib/github'
 import { source } from '@/lib/source'
 import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
+import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
+import { DocsPage, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
+
+import {
+  MarkdownCopyButton,
+  ViewOptionsPopover,
+} from 'fumadocs-ui/layouts/docs/page';
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
     const params = await props.params
@@ -13,10 +19,22 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
     const MDXContent = page.data.body
 
+    // URL to fetch Markdown content, only need to append .mdx to URL if you have `*.mdx` configured.
+    const markdownUrl = `${page.url}.mdx`
+
+
     return (
-        <DocsPage toc={page.data.toc} full={!!page.data.full}>
+        <DocsPage tableOfContent={{ style: 'clerk' }} toc={page.data.toc} full={!!page.data.full}>
             <DocsTitle>{page.data.title}</DocsTitle>
             <DocsDescription>{page.data.description}</DocsDescription>
+            <div className="flex flex-row flex-wrap gap-2 items-center border-b pb-6">
+
+            <MarkdownCopyButton markdownUrl={markdownUrl} />
+        <ViewOptionsPopover
+          markdownUrl={markdownUrl}
+          githubUrl={`https://github.com/${owner}/${repo}/blob/main/apps/docs/content/docs/${page.path}`}
+          />
+          </div>
             <DocsBody>
                 <MDXContent
                     components={getMDXComponents({
@@ -26,6 +44,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                 />
             </DocsBody>
             <Rate onRateAction={onRateAction} />
+            {page.data.lastModified && <PageLastUpdate date={page.data.lastModified} />}
         </DocsPage>
     )
 }

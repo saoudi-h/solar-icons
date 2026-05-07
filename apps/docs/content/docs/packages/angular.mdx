@@ -1,0 +1,132 @@
+---
+title: 'Angular'
+description: Modern, signal-based components for Solar Icons. Optimized for Angular 17+ with native tree-shaking support.
+icon: angular
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+The `@solar-icons/angular` package brings the entire Solar Icon set to the Angular ecosystem. Built with modern primitives like **Signals** and **Standalone Components**, it offers a premium developer experience with near-zero bundle overhead.
+
+## Installation
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm add @solar-icons/angular
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm install @solar-icons/angular
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add @solar-icons/angular
+    ```
+  </Tab>
+</Tabs>
+
+## Usage
+
+### Static Components
+The most efficient way to use icons. By importing individual components, you ensure that only the SVGs you actually use are included in your production bundle.
+
+```tsx
+import { Component } from '@angular/core';
+import { HeartBold } from '@solar-icons/angular';
+
+@Component({
+  standalone: true,
+  imports: [HeartBold],
+  template: `<svg solarHeartBold [size]="24" color="#ef4444" />`
+})
+export class App {}
+```
+
+## Dynamic Rendering
+When your icon names come from a database or need to be swapped at runtime, use the `SolarDynamicIcon` directive.
+
+
+### Register your icons [step]
+To keep your bundle lean, you must explicitly register which icons should be available for dynamic lookup. You can do this at the application root or within a specific component.
+
+```tsx
+import { provideSolarIcons } from '@solar-icons/angular';
+import { HeartBold, StarBold } from '@solar-icons/angular/like';
+
+bootstrapApplication(App, {
+  providers: [
+    provideSolarIcons({ HeartBold, StarBold })
+  ]
+});
+```
+
+### Use the directive [step]
+Import `SolarDynamicIcon` and pass the icon name or the component class to the `solarIcon` input.
+
+```tsx
+import { SolarDynamicIcon, SunBold } from '@solar-icons/angular';
+
+@Component({
+  standalone: true,
+  imports: [SolarDynamicIcon],
+  template: `
+    <!-- Lookup by registered name -->
+    <ng-container [solarIcon]="'HeartBold'" />
+
+    <!-- Direct class reference (no registration needed) -->
+    <ng-container [solarIcon]="Sun" />
+  `
+})
+export class App {
+  protected readonly Sun = SunBold;
+}
+```
+
+<Callout type="info" title="IDE Warnings">
+When passing a component class directly, the Angular compiler might warn you that the component is unused (`NG8113`). This is a known limitation of static analysis with dynamic references; you can safely ignore it.
+</Callout>
+
+## Configuration & Props
+
+Every icon component shares a consistent API for styling and accessibility:
+
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `size` | `string \| number` | `'1em'` | Numeric pixels or any CSS unit (e.g., `32`, `'2rem'`). |
+| `color` | `string` | `'currentColor'` | Any valid CSS color value. |
+| `alt` | `string` | `undefined` | Providing this adds a `<title>` and makes the icon accessible. |
+| `mirrored` | `boolean` | `false` | Flip the icon horizontally. |
+
+**Accessibility note:** When the `alt` input is provided, the component automatically renders a `<title>` element inside the SVG and makes it accessible to screen readers. Without `alt`, icons are marked as decorative with `aria-hidden="true"`.
+
+## Why Attribute Selectors?
+
+Unlike many other icon libraries that wrap SVGs in custom component tags (like `<solar-icon-home />`), this package uses **Attribute Selectors** on native `<svg>` elements.
+
+```html
+<!-- Clean, native DOM -->
+<svg solarHeartBold [size]="24" />
+
+<!-- Instead of cluttered custom tags -->
+<solar-heart-bold><svg>...</svg></solar-heart-bold>
+```
+
+### Key Benefits
+- **Clean DOM**: No unnecessary wrapper elements, keeping your inspector and accessibility tree lean.
+- **CSS Friendly**: You can target icons directly with standard CSS selectors.
+- **Native Performance**: Zero overhead from extra component lifecycle hooks or DOM nesting.
+
+## Compatibility
+
+- **Angular 17+**: Fully supports Signals and the new control flow.
+- **Tree-shaking**: Optimized `sideEffects` configuration ensures minimal bundle size.
+- **Full Type Safety**: Get autocompletion and JSDoc previews directly in your IDE.
+
+## License
+- **Code**: MIT
+- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736)

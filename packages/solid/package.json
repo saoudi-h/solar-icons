@@ -67,16 +67,16 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
-        "@types/node": "^25.2.1",
+        "@types/node": "^25.6.1",
         "picocolors": "^1.1.1",
-        "prettier": "^3.8.1",
+        "prettier": "^3.8.3",
         "rimraf": "^6.1.2",
         "solid-js": "^1.9.7",
         "tsdown": "^0.18.4",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3",
         "unplugin-solid": "^1.0.0",
-        "vitest": "^4.0.18"
+        "vitest": "^4.1.5"
     },
     "peerDependencies": {
         "solid-js": ">= 1.6.0"

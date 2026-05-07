@@ -16,7 +16,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 
 - **Massive Collection** → 1,246 icons × 6 styles = **7,476 variations**  
 - **Consistent Multi-Style Design** → Bold, Linear, Outline, BoldDuotone, LineDuotone, Broken  
-- **Multi-Framework Support** → React, Vue, Nuxt, React Native
+- **Multi-Framework Support** → React, Vue, Nuxt, Angular, React Native
 - **DX Features** → IntelliSense previews, JSDoc hints, category imports, global config  
 - **Smart Search** → AI-generated tags for better discoverability  
 - **Performance Options** → Choose between full-featured and lightweight builds  
@@ -34,6 +34,7 @@ Whether you want rich theming with global providers or the lightest possible bun
 | **`@solar-icons/nuxt`**       | Nuxt-optimized wrapper with auto-import, `nuxi` install, global config |
 | **`@solar-icons/svelte`**     | Svelte 5 components with runes, minimal bundle, tree-shakeable |
 | **`@solar-icons/solid`**      | Lightweight SolidJS components, minimal and tree-shakeable |
+| **`@solar-icons/angular`**    | Angular 17+ components with signals, minimal and tree-shakeable |
 
 ---
 

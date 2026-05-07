@@ -38,10 +38,10 @@ export const InitState = () => {
     // synchronize query params
     useEffect(() => {
         if (searchParam !== keyword) setSearchParam(keyword === '' ? null : keyword)
-    }, [keyword])
+    }, [keyword, searchParam, setSearchParam])
     useEffect(() => {
         if (searchParam && searchParam !== keyword) setKeyword(searchParam)
-    }, [searchParam])
+    }, [keyword, searchParam, setKeyword])
 
     useEffect(() => {
         if (

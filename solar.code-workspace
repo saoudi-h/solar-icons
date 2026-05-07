@@ -70,6 +70,14 @@
         {
             "name": "solid-app",
             "path": "apps/solid-app"
+        },
+        {
+            "name": "angular",
+            "path": "packages/angular"
+        },
+        {
+            "name": "angular-app",
+            "path": "apps/angular-app"
         }
     ],
     "settings": {

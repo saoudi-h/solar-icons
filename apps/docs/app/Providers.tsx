@@ -30,7 +30,9 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
                         root
                         options={{
                             autoRaf: true,
-                            prevent: node => node.classList.contains('ReactVirtualized__Grid'),
+                            prevent: node =>
+                                node.classList.contains('ReactVirtualized__Grid') ||
+                                node.hasAttribute('data-radix-scroll-area-viewport'),
                         }}>
                         {children}
                         <Toaster />

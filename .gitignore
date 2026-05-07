@@ -51,3 +51,14 @@ packages/react-native/src/index.ts
 packages/vue/src/icons/
 packages/svelte/src/icons/
 packages/svelte/src/index.ts
+packages/angular/src/icons/
+packages/angular/src/public-api.ts
+
+# Kiro AI assistant files
+.kiro/
+
+# Temporary files
+tmp/
+
+# Playwright MCP
+.playwright-mcp/

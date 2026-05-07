@@ -1,0 +1,5 @@
+export * from './icon-base';
+export * from './types';
+export * from './icon-registry';
+export { SolarDynamicIcon } from './dynamic-icon.component';
+export * from './all-icons.types';

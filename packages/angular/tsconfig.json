@@ -1,0 +1,36 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "paths": {
+            "@solar-icons/angular": ["./src/public-api.ts"],
+            "@solar-icons/angular/lib": ["./src/lib/index.ts"],
+            "@solar-icons/angular/icons": ["./src/icons/index.ts"],
+            "@solar-icons/angular/icons/*": ["./src/icons/*"]
+        },
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "isolatedModules": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "useDefineForClassFields": true,
+        "lib": ["ES2022", "dom"],
+        "types": ["vitest/globals"]
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    },
+    "files": [],
+    "include": ["src/**/*.ts", "scripts/**/*.ts", "vitest.config.ts", "*.ts"]
+}
