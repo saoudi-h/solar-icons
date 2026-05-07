@@ -1,6 +1,6 @@
 # @solar-icons/angular
 
-Solar Icons for Angular - A comprehensive icon library with 6 unique styles.
+Solar Icons for Angular - A comprehensive icon library with 6 unique styles and +7,400 icons.
 
 ## Installation
 
@@ -14,52 +14,88 @@ yarn add @solar-icons/angular
 
 ## Usage
 
-### Basic Usage
+### 1. Static Components (Recommended)
+This is the most efficient way to use icons. Only the icons you import are included in your bundle.
 
 ```typescript
-import { Component } from '@angular/core'
-import { ArrowLeftBold } from '@solar-icons/angular'
+import { Component } from '@angular/core';
+import { ArrowLeftBold } from '@solar-icons/angular';
 
 @Component({
-    selector: 'app-example',
-    standalone: true,
-    imports: [ArrowLeftBold],
-    template: ` <svg solarArrowLeftBold [size]="24" [color]="'currentColor'" /> `,
+  selector: 'app-example',
+  standalone: true,
+  imports: [ArrowLeftBold],
+  template: `
+    <svg solarArrowLeftBold [size]="24" color="#ef4444" />
+  `,
 })
 export class ExampleComponent {}
 ```
 
-### Import Icons
+### 2. Dynamic Rendering
+If you need to render icons based on dynamic data (strings from a database, conditional logic, etc.), use the `SolarDynamicIcon` directive.
 
-All icons are exported with an **explicit global name** that includes both the icon name and the style suffix. This makes Angular template selectors immediately predictable:
-
-```typescript
-// Global import — root entry point, ideal for a handful of icons
-import { ArrowLeftBold, HeartLinear, StarOutline } from '@solar-icons/angular'
-```
-
-**Import by Category (Recommended for DX)**  
-Group icons from the same visual domain for a cleaner imports block:
+#### Pattern A: Using the Icon Registry (Global/Scoped)
+Register icons you want to make available by name. This is ideal when your icon names come from a database or API.
 
 ```typescript
-import { ArrowLeftBold, ArrowRightBold, AltArrowDownLinear } from '@solar-icons/angular/arrows'
-import { HeartBold, StarBold } from '@solar-icons/angular/like'
+// 1. Register icons in your providers (App-wide or Component-level)
+import { provideSolarIcons } from '@solar-icons/angular';
+import { HeartBold, StarBold } from '@solar-icons/angular/like';
+
+bootstrapApplication(App, {
+  providers: [
+    provideSolarIcons({ HeartBold, StarBold })
+  ]
+});
+
+// 2. Use them by string name in your template
+import { SolarDynamicIcon } from '@solar-icons/angular';
+
+@Component({
+  standalone: true,
+  imports: [SolarDynamicIcon],
+  template: `
+    <!-- By literal string -->
+    <ng-container solarIcon="HeartBold" [size]="32" />
+
+    <!-- By variable -->
+    <ng-container [solarIcon]="selectedIcon" />
+  `
+})
+export class App {
+  selectedIcon = 'StarBold';
+}
 ```
 
-> ⚠️ **Why no per-style imports?**  
-> Unlike the other Solar Icons packages, Angular components are used via **attribute selectors** in templates (`<svg solarArrowLeftBold />`). The full global name — including the style suffix — is part of the selector. Importing `ArrowLeft` from `@solar-icons/angular/Bold` would create a false expectation that `<svg solarArrowLeft />` works, when the actual selector is `<svg solarArrowLeftBold />`. Explicit global names keep the developer experience honest.
+#### Pattern B: Direct Class Reference
+You can pass the icon component class directly to `solarIcon`. This **does not** require registering them via `provideSolarIcons`, but the component must be in your `imports`.
 
-Each icon uses a camelCase attribute selector with the "solar" prefix:
+```typescript
+import { SolarDynamicIcon, SunBold, MoonBold } from '@solar-icons/angular';
 
-```html
-<svg solarHeartBold />
-<svg solarAltArrowDownBold />
+@Component({
+  standalone: true,
+  imports: [SolarDynamicIcon, SunBold, MoonBold],
+  template: `
+    <ng-container [solarIcon]="isDark ? Moon : Sun" [size]="32" />
+  `
+})
+export class App {
+  isDark = true;
+  // We must expose the classes to the template
+  protected readonly Sun = SunBold;
+  protected readonly Moon = MoonBold;
+}
 ```
+
+> [!TIP]
+> When using **Pattern B**, the Angular compiler might show a warning (`NG8113`) saying the icon component is not used in the template. This is expected as the compiler doesn't "see" the selector being used directly. You can safely ignore this or use Pattern A to avoid it.
+
+---
 
 ## Icon Styles
-
 Solar Icons provides 6 unique styles:
-
 - **Bold** - Bold and solid icons
 - **BoldDuotone** - Bold with duotone coloring
 - **Broken** - Broken/stylized icons
@@ -67,7 +103,7 @@ Solar Icons provides 6 unique styles:
 - **Linear** - Clean line icons
 - **Outline** - Outlined icons
 
-## Props
+## Properties
 
 | Prop       | Type               | Default          | Description                         |
 | ---------- | ------------------ | ---------------- | ----------------------------------- |
@@ -76,50 +112,15 @@ Solar Icons provides 6 unique styles:
 | `alt`      | `string`           | `undefined`      | Accessible label for screen readers |
 | `mirrored` | `boolean`          | `false`          | Flip the icon horizontally          |
 
-## Dynamic Rendering
-
-If you need to render icons dynamically (e.g., from a database or a configuration list), use the `SolarDynamicIcon` directive.
-
-First, register the icons you want to make available in your component or app providers:
-
-```typescript
-import { provideSolarIcons } from '@solar-icons/angular'
-import { HeartBold, StarBold, HomeBold } from '@solar-icons/angular/lib'
-
-bootstrapApplication(App, {
-  providers: [
-    provideSolarIcons({ HeartBold, StarBold, HomeBold })
-  ]
-})
-```
-
-Then use the `solarIcon` directive in your template:
-
-```html
-<!-- Use by registered name -->
-<ng-container solarIcon="HeartBold" [size]="32" color="red" />
-
-<!-- Use by dynamic variable -->
-<ng-container [solarIcon]="currentIconName" />
-
-<!-- Use by component class directly -->
-<ng-container [solarIcon]="HeartBold" />
-```
-
 ## Accessibility
-
-For decorative icons (most cases), no additional configuration is needed. The icon will have `aria-hidden="true"` automatically.
-
-For functional icons, provide an `alt` attribute:
+For decorative icons, no action is needed (`aria-hidden="true"` is automatic). For functional icons, provide an `alt` attribute:
 
 ```html
-<svg solarArrowLeftBold [alt]="'Go back'" />
+<svg solarArrowLeftBold alt="Go back" />
 ```
 
-## Angular Version
-
-This package supports **Angular 17+** and uses modern Angular features like signals, standalone components, and host directives.
+## Performance Note
+For large grids (e.g., icon pickers), we recommend using **Static Components** instead of `SolarDynamicIcon` for the best performance in Chromium-based browsers.
 
 ## License
-
 MIT © [Saoudi Hakim](https://hakimsaoudi.dev)
