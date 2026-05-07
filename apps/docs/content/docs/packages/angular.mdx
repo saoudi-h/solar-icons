@@ -1,5 +1,5 @@
 ---
-title: '@solar-icons/angular'
+title: 'Angular'
 description: Angular components for Solar Icons with modern signals and optimal bundle size.
 icon: angular
 ---
@@ -14,9 +14,9 @@ The `@solar-icons/angular` package provides Angular components for Solar Icons. 
 
 ## Features
 
-- **Modern Angular 17+** → Uses signals (`input()`), standalone components, and `hostDirectives`
+- **Modern Angular 17+** → Uses signals (`input()`), standalone components, and optimized control flow
 - **Minimal Bundle** → Tree-shakeable, only imported icons are included
-- **Accessibility** → Built-in title support for screen readers
+- **Accessibility** → Native `@if` control flow for efficient title rendering
 - **TypeScript** → Full type safety with IntelliSense support
 
 ## Basic Usage
@@ -32,7 +32,7 @@ import { HeartBold } from '@solar-icons/angular';
   standalone: true,
   imports: [HeartBold],
   template: `
-    <svg solarHeartBold [size]="24" [color]="'#ef4444'" />
+    <svg solarHeartBold [size]="24" color="#ef4444" />
   `,
 })
 export class AppComponent {}
@@ -106,70 +106,85 @@ For accessibility, use the `alt` input to provide a descriptive label:
 ```tsx
 <svg solarHeartBold [alt]="'Add to favorites'" />
 ```
+  template: `<svg solarHeartBold [size]="24" color="#ef4444" />`
+})
+export class App {}
+```
 
-This will:
-- Add a `<title>` element inside the SVG
-- Remove `aria-hidden="true"` attribute
-- Make the icon accessible to screen readers
+## Dynamic Rendering
+When your icon names come from a database or need to be swapped at runtime, use the `SolarDynamicIcon` directive.
 
-Without `alt`, icons are automatically marked as decorative with `aria-hidden="true"`.
-
-## Dynamic Icons
-
-To render icons dynamically based on runtime strings (e.g., from a database), use the built-in `SolarDynamicIcon` directive.
-
-### 1. Register Icons
-
-First, provide the icons you want to make available for dynamic rendering in your component or app providers:
+<Steps>
+### Register your icons
+To keep your bundle lean, you must explicitly register which icons should be available for dynamic lookup. You can do this at the application root or within a specific component.
 
 ```tsx
 import { provideSolarIcons } from '@solar-icons/angular';
-import { HeartBold, StarBold, HomeBold } from '@solar-icons/angular/like';
+import { HeartBold, StarBold } from '@solar-icons/angular/like';
 
 bootstrapApplication(App, {
   providers: [
-    provideSolarIcons({ HeartBold, StarBold, HomeBold })
+    provideSolarIcons({ HeartBold, StarBold })
   ]
 });
 ```
 
-### 2. Render the Icon
-
-Use the `solarIcon` directive in your template. It accepts either an icon name (string) or an icon component class.
+### Use the directive
+Import `SolarDynamicIcon` and pass the icon name or the component class to the `solarIcon` input.
 
 ```tsx
-import { Component } from '@angular/core';
-import { SolarDynamicIcon } from '@solar-icons/angular';
+import { SolarDynamicIcon, SunBold } from '@solar-icons/angular';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
   imports: [SolarDynamicIcon],
   template: `
-    <!-- Render by registered name -->
-    <ng-container solarIcon="HeartBold" [size]="32" color="#ef4444" />
+    <!-- Lookup by registered name -->
+    <ng-container [solarIcon]="'HeartBold'" />
 
-    <!-- Render from a dynamic variable -->
-    <ng-container [solarIcon]="dynamicIconName" [size]="24" />
-
-    <!-- Render by component class directly -->
-    <ng-container [solarIcon]="HeartBold" />
-  `,
+    <!-- Direct class reference (no registration needed) -->
+    <ng-container [solarIcon]="Sun" />
+  `
 })
-export class AppComponent {
-  dynamicIconName = 'StarBold';
+export class App {
+  protected readonly Sun = SunBold;
 }
 ```
+</Steps>
 
-## TypeScript
+<Callout type="info" title="IDE Warnings">
+When passing a component class directly, the Angular compiler might warn you that the component is unused (`NG8113`). This is a known limitation of static analysis with dynamic references; you can safely ignore it.
+</Callout>
 
-The package includes full TypeScript definitions. Every icon component class is typed, so your IDE will autocomplete inputs and provide docs-on-hover:
+## Configuration & Props
+
+Every icon component shares a consistent API for styling and accessibility:
+
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `size` | `string \| number` | `'1em'` | Numeric pixels or any CSS unit (e.g., `32`, `'2rem'`). |
+| `color` | `string` | `'currentColor'` | Any valid CSS color value. |
+| `alt` | `string` | `undefined` | Providing this adds a `<title>` and makes the icon accessible. |
+| `mirrored` | `boolean` | `false` | Flip the icon horizontally. |
+
+**Accessibility note:** When the `alt` input is provided, the component automatically renders a `<title>` element inside the SVG and removes `aria-hidden="true"`. Without `alt`, icons are marked as decorative with `aria-hidden="true"`.
+
+## Optimization Tips
+
+<Callout type="warn" title="Handling Large Grids">
+If you are building a dashboard or an icon picker with hundreds of icons (500+), we recommend using **Static Components** instead of the dynamic directive.
+
+For massive dynamic grids, always use `ChangeDetectionStrategy.OnPush` and pre-resolve your icon data into a `computed()` signal to keep your application fluid.
+</Callout>
+
+## Compatibility
+
+- **Angular 17+**: Fully supports Signals and the new control flow.
+- **Tree-shaking**: Optimized `sideEffects` configuration ensures minimal bundle size.
+- **Full Type Safety**: Get autocompletion and JSDoc previews directly in your IDE.
 
 ```ts twoslash
-
 /**
- * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyLjgzMjQgMjEuODAxM0MxNS45NTgzIDIxLjE3NDcgMjAgMTguOTI2IDIwIDEzLjExMTJDMjAgNy44MTk2IDE2LjEyNjcgNC4yOTU5MyAxMy4zNDE1IDIuNjc2ODVDMTIuNzIzNSAyLjMxNzU3IDEyIDIuNzkwMDYgMTIgMy41MDQ5MlY1LjMzMzRDMTIgNi43NzUyNiAxMS4zOTM4IDkuNDA3MTEgOS43MDkzMiAxMC41MDE4QzguODQ5MzIgMTEuMDYwNyA3LjkyMDUyIDEwLjIyNDIgNy44MTYgOS4yMDM4OEw3LjczMDE3IDguMzY2MDRDNy42MzA0IDcuMzkyMDMgNi42Mzg0MSA2LjgwMDc1IDUuODU5OTYgNy4zOTQ2QzQuNDYxNDcgOC40NjE0NCAzIDEwLjMyOTYgMyAxMy4xMTEyQzMgMjAuMjIyMyA4LjI4ODg5IDIyLjAwMDEgMTAuOTMzMyAyMi4wMDAxQzExLjA4NzEgMjIuMDAwMSAxMS4yNDg4IDIxLjk5NTUgMTEuNDE3MSAyMS45ODU4QzExLjg2MyAyMS45Mjk2IDExLjQxNzEgMjIuMDg1IDEyLjgzMjQgMjEuODAxM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTggMTguNDQ0MkM4IDIxLjA2NCAxMC4xMTEzIDIxLjg3NDIgMTEuNDE3MSAyMS45ODU4QzExLjg2MyAyMS45Mjk2IDExLjQxNzEgMjIuMDg1IDEyLjgzMjQgMjEuODAxM0MxMy44NzEgMjEuNDM0MyAxNSAyMC40OTIyIDE1IDE4LjQ0NDJDMTUgMTcuMTQ2NSAxNC4xODE0IDE2LjM0NTkgMTMuNTQwMSAxNS45NzExQzEzLjM0MzkgMTUuODU2NCAxMy4xMTYxIDE2LjAwMDggMTMuMDk4NSAxNi4yMjczQzEzLjA0MjkgMTYuOTQ1NCAxMi4zNTM0IDE3LjUxNzQgMTEuODgzNiAxNi45NzE0QzExLjQ2ODUgMTYuNDg4OSAxMS4yOTQxIDE1Ljc4NCAxMS4yOTQxIDE1LjMzMzFWMTQuNzQzOUMxMS4yOTQxIDE0LjM4ODcgMTAuOTM2NSAxNC4xNTMzIDEwLjYzMSAxNC4zMzQ2QzkuNDk1MDcgMTUuMDA4NSA4IDE2LjM5NDkgOCAxOC40NDQyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
- *
  * @usage
  * `<svg solarFireBoldDuotone></svg>`
  *
@@ -188,28 +203,6 @@ class App {}
 // Hovering over it in your IDE shows the JSDoc preview and usage selectors
 ```
 
-## Angular Version Compatibility
-
-This package supports **Angular 17+** (tested with Angular 17, 18, 19, 20, and 21). It uses modern Angular features:
-
-- **Signals** → `input()` instead of `@Input()`
-- **Standalone Components** → No NgModule required
-- **Host Directives** → Composition via `hostDirectives`
-- **Effect** → Reactive title management
-
-## Performance
-
-Icons are optimized for performance:
-
-- **Tree-shakeable** → Only imported icons are included in your bundle
-- **Minimal overhead** → Simple directive for title management
-- **Compiled templates** → SVG structure is part of the component template
-
-## Package Size
-
-The package includes ~7,476 icon components (1,246 icons × 6 styles). However, with tree-shaking, only the icons you import will be included in your final bundle.
-
 ## License
-
 - **Code**: MIT
 - **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736)
