@@ -1,59 +1,64 @@
-import { Component, signal, computed, inject, OnInit, Type } from '@angular/core';
+import { Component, signal, computed, OnInit, Type, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ALL_ICONS, STYLES, IconStyle } from './icon-list';
-import { SolarDynamicIcon } from '@solar-icons/angular/lib'
-import { IconBase } from '@solar-icons/angular/lib'
+import { provideSolarIcons, SolarDynamicIcon } from '@solar-icons/angular'
+import { MoonBold, SunBold } from '@solar-icons/angular'
 
-const CATEGORY_LOADERS: Record<string, () => Promise<Record<string, Type<IconBase>>>> = {
-    'arrows':           () => import('@solar-icons/angular/arrows') as any,
-    'arrows-action':    () => import('@solar-icons/angular/arrows-action') as any,
-    'astronomy':        () => import('@solar-icons/angular/astronomy') as any,
-    'building':         () => import('@solar-icons/angular/building') as any,
-    'business':         () => import('@solar-icons/angular/business') as any,
-    'call':             () => import('@solar-icons/angular/call') as any,
-    'devices':          () => import('@solar-icons/angular/devices') as any,
-    'faces':            () => import('@solar-icons/angular/faces') as any,
-    'files':            () => import('@solar-icons/angular/files') as any,
-    'folders':          () => import('@solar-icons/angular/folders') as any,
-    'food':             () => import('@solar-icons/angular/food') as any,
-    'hands':            () => import('@solar-icons/angular/hands') as any,
-    'home':             () => import('@solar-icons/angular/home') as any,
-    'it':               () => import('@solar-icons/angular/it') as any,
-    'like':             () => import('@solar-icons/angular/like') as any,
-    'list':             () => import('@solar-icons/angular/list') as any,
-    'map':              () => import('@solar-icons/angular/map') as any,
-    'medicine':         () => import('@solar-icons/angular/medicine') as any,
-    'messages':         () => import('@solar-icons/angular/messages') as any,
-    'money':            () => import('@solar-icons/angular/money') as any,
-    'nature':           () => import('@solar-icons/angular/nature') as any,
-    'notes':            () => import('@solar-icons/angular/notes') as any,
-    'notifications':    () => import('@solar-icons/angular/notifications') as any,
-    'parts':            () => import('@solar-icons/angular/parts') as any,
-    'school':           () => import('@solar-icons/angular/school') as any,
-    'search':           () => import('@solar-icons/angular/search') as any,
-    'security':         () => import('@solar-icons/angular/security') as any,
-    'settings':         () => import('@solar-icons/angular/settings') as any,
-    'shopping':         () => import('@solar-icons/angular/shopping') as any,
-    'sports':           () => import('@solar-icons/angular/sports') as any,
-    'text-formatting':  () => import('@solar-icons/angular/text-formatting') as any,
-    'time':             () => import('@solar-icons/angular/time') as any,
-    'tools':            () => import('@solar-icons/angular/tools') as any,
-    'ui':               () => import('@solar-icons/angular/ui') as any,
-    'users':            () => import('@solar-icons/angular/users') as any,
-    'video':            () => import('@solar-icons/angular/video') as any,
-    'weather':          () => import('@solar-icons/angular/weather') as any,
+const CATEGORY_LOADERS: Record<string, () => Promise<any>> = {
+    'arrows':           () => import('@solar-icons/angular/arrows'),
+    'arrows-action':    () => import('@solar-icons/angular/arrows-action'),
+    'astronomy':        () => import('@solar-icons/angular/astronomy'),
+    'building':         () => import('@solar-icons/angular/building'),
+    'business':         () => import('@solar-icons/angular/business'),
+    'call':             () => import('@solar-icons/angular/call'),
+    'devices':          () => import('@solar-icons/angular/devices'),
+    'faces':            () => import('@solar-icons/angular/faces'),
+    'files':            () => import('@solar-icons/angular/files'),
+    'folders':          () => import('@solar-icons/angular/folders'),
+    'food':             () => import('@solar-icons/angular/food'),
+    'hands':            () => import('@solar-icons/angular/hands'),
+    'home':             () => import('@solar-icons/angular/home'),
+    'it':               () => import('@solar-icons/angular/it'),
+    'like':             () => import('@solar-icons/angular/like'),
+    'list':             () => import('@solar-icons/angular/list'),
+    'map':              () => import('@solar-icons/angular/map'),
+    'medicine':         () => import('@solar-icons/angular/medicine'),
+    'messages':         () => import('@solar-icons/angular/messages'),
+    'money':            () => import('@solar-icons/angular/money'),
+    'nature':           () => import('@solar-icons/angular/nature'),
+    'notes':            () => import('@solar-icons/angular/notes'),
+    'notifications':    () => import('@solar-icons/angular/notifications'),
+    'parts':            () => import('@solar-icons/angular/parts'),
+    'school':           () => import('@solar-icons/angular/school'),
+    'search':           () => import('@solar-icons/angular/search'),
+    'security':         () => import('@solar-icons/angular/security'),
+    'settings':         () => import('@solar-icons/angular/settings'),
+    'shopping':         () => import('@solar-icons/angular/shopping'),
+    'sports':           () => import('@solar-icons/angular/sports'),
+    'text-formatting':  () => import('@solar-icons/angular/text-formatting'),
+    'time':             () => import('@solar-icons/angular/time'),
+    'tools':            () => import('@solar-icons/angular/tools'),
+    'ui':               () => import('@solar-icons/angular/ui'),
+    'users':            () => import('@solar-icons/angular/users'),
+    'video':            () => import('@solar-icons/angular/video'),
+    'weather':          () => import('@solar-icons/angular/weather'),
 };
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [FormsModule, SolarDynamicIcon],
+    imports: [FormsModule, SolarDynamicIcon, SunBold],
+    providers: [
+        provideSolarIcons({ MoonBold })
+    ],
     templateUrl: './app.html',
     styleUrl: './app.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App implements OnInit {
-    private readonly iconMap = new Map<string, Type<IconBase>>();
+    protected readonly icon = 'MoonBold';
+    protected readonly icon2 = SunBold;
     
     protected readonly styles = STYLES;
     protected readonly selectedStyle = signal<IconStyle>('Bold');
@@ -62,34 +67,47 @@ export class App implements OnInit {
     protected readonly searchQuery = signal('');
     protected readonly loadedCategories = signal(0);
     protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
+    
+    private readonly iconMap = signal<Map<string, Type<any>>>(new Map());
 
     async ngOnInit(): Promise<void> {
         const categories = Object.entries(CATEGORY_LOADERS);
+        const map = new Map<string, Type<any>>();
+        
         for (const [, loader] of categories) {
             const module = await loader();
             for (const [key, value] of Object.entries(module)) {
                 if (typeof value === 'function') {
-                    this.iconMap.set(key, value as Type<IconBase>);
+                    map.set(key, value as Type<any>);
                 }
             }
-            // Yield to browser
-            await new Promise(r => setTimeout(r, 0));
+            // Batch update every few categories to reduce re-renders
+            this.iconMap.set(new Map(map));
             this.loadedCategories.update(n => n + 1);
+            await new Promise(r => setTimeout(r, 0));
         }
     }
 
-    protected readonly filteredIcons = computed(() => {
+    protected readonly displayIcons = computed(() => {
         const query = this.searchQuery().toLowerCase();
-        if (!query) return ALL_ICONS;
-        return ALL_ICONS.filter((name) => name.toLowerCase().includes(query));
+        const style = this.selectedStyle();
+        const map = this.iconMap();
+        
+        const filteredNames = query 
+            ? ALL_ICONS.filter(name => name.toLowerCase().includes(query))
+            : ALL_ICONS;
+
+        const result: { name: string; component: Type<any> }[] = [];
+        for (const name of filteredNames) {
+            const component = map.get(name + style);
+            if (component) {
+                result.push({ name, component });
+            }
+        }
+        return result;
     });
 
-    protected getIcon(name: string): Type<IconBase> | undefined {
-        const style = this.selectedStyle();
-        return this.iconMap.get(name + style);
-    }
-
-    protected trackByIconName(index: number, name: string): string {
-        return name;
+    protected trackByIconName(index: number, item: { name: string }): string {
+        return item.name;
     }
 }

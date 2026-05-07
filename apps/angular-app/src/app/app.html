@@ -1,11 +1,14 @@
 <div class="min-h-screen bg-slate-900 text-slate-200 p-8">
     <div class="max-w-7xl mx-auto space-y-8">
 
+        <ng-container [solarIcon]="icon" [size]="32" [color]="iconColor()" />
+        <ng-container [solarIcon]="icon2" [size]="32" [color]="iconColor()" />
+
         <!-- Header -->
         <div class="text-center space-y-2">
             <h1 class="text-4xl font-bold text-white">Solar Icons — Angular</h1>
             <p class="text-slate-400">
-                Displaying {{ filteredIcons().length }} icons in
+                Displaying {{ displayIcons().length }} icons in
                 <span class="text-amber-400">{{ selectedStyle() }}</span> style
             </p>
             @if (loadedCategories() < totalCategories) {
@@ -95,28 +98,26 @@
 
         <!-- Icon Grid -->
         <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
-            @for (iconName of filteredIcons(); track trackByIconName($index, iconName)) {
-                @if (getIcon(iconName); as icon) {
-                    <div
-                        class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
-                        [title]="iconName"
-                    >
-                        <div class="flex items-center justify-center" style="min-height: 48px;">
-                            <ng-container
-                                [solarIcon]="icon"
-                                [size]="iconSize()"
-                                [color]="iconColor()"
-                            />
-                        </div>
-                        <span class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">
-                            {{ iconName }}
-                        </span>
+            @for (item of displayIcons(); track trackByIconName($index, item)) {
+                <div
+                    class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
+                    [title]="item.name"
+                >
+                    <div class="flex items-center justify-center" style="min-height: 48px;">
+                        <ng-container
+                            [solarIcon]="item.component"
+                            [size]="iconSize()"
+                            [color]="iconColor()"
+                        />
                     </div>
-                }
+                    <span class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">
+                        {{ item.name }}
+                    </span>
+                </div>
             }
         </div>
 
-        @if (filteredIcons().length === 0) {
+        @if (displayIcons().length === 0) {
             <div class="text-center py-20 text-slate-500 bg-slate-800/20 rounded-3xl border border-dashed border-slate-700">
                 <p class="text-lg italic">No icons found matching "{{ searchQuery() }}"</p>
                 <button (click)="searchQuery.set('')" class="mt-4 text-amber-500 hover:underline">Clear search</button>
