@@ -20,7 +20,7 @@
         "@solar-icons/eslint": "workspace:*",
         "@solar-icons/prettier": "workspace:*",
         "@sveltejs/adapter-auto": "^6.0.0",
-        "@sveltejs/kit": "^2.50.2",
+        "@sveltejs/kit": "^2.59.1",
         "@sveltejs/vite-plugin-svelte": "^5.1.0",
         "@tailwindcss/vite": "^4.2.4",
         "prettier-plugin-svelte": "^3.5.1",
@@ -28,7 +28,7 @@
         "svelte-check": "^4.4.8",
         "tailwindcss": "^4.2.4",
         "typescript": "^5.8.3",
-        "vite": "^8.0.10"
+        "vite": "^8.0.11"
     },
     "type": "module",
     "dependencies": {

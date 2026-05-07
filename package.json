@@ -27,7 +27,7 @@
         "@solar-icons/prettier": "workspace:*",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint": "^9.6.1",
-        "@types/node": "^25.6.0",
+        "@types/node": "^25.6.1",
         "cspell": "^9.6.4",
         "eslint": "^9.39.2",
         "husky": "^9.1.7",
@@ -37,7 +37,7 @@
         "publint": "^0.3.17",
         "rimraf": "^6.1.2",
         "tsdown": "^0.18.4",
-        "turbo": "^2.8.3",
+        "turbo": "^2.9.10",
         "typescript": "^5.9.3",
         "unplugin-unused": "^0.5.7",
         "vite-tsconfig-paths": "^6.0.5"
