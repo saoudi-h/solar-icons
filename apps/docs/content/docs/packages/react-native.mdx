@@ -28,21 +28,21 @@ The package provides three distinct import strategies to optimize your workflow 
 Ideal for rapid prototyping or when using many icons of the same style.
 
 ```tsx
-import { Home, User, Settings } from '@solar-icons/react-native/Bold'
+import { House, User, Settings } from '@solar-icons/react-native/Bold'
 ```
 
 ### 2. Global Styled Exports
 Perfect for mixing styles with descriptive component names.
 
 ```tsx
-import { HomeBold, HomeLinear, HeartBroken } from '@solar-icons/react-native'
+import { HouseBold, HouseLinear, HeartBroken } from '@solar-icons/react-native'
 ```
 
 ### 3. Granular Category Imports
 The most efficient method for production, ensuring maximum tree-shaking.
 
 ```tsx
-import { Home } from '@solar-icons/react-native/category/ui/Bold/Home'
+import { House } from '@solar-icons/react-native/category/buildings/Bold'
 ```
 
 ---
@@ -88,7 +88,7 @@ import { Svg } from 'react-native-svg'
 
 const MyComponent = () => {
   const iconRef = useRef<Svg>(null)
-  return <HomeBold ref={iconRef} />
+  return <HouseBold ref={iconRef} />
 }
 ```
 
