@@ -1,7 +1,8 @@
-import { splitProps, type JSX } from 'solid-js';
+import { mergeProps, splitProps, type JSX } from 'solid-js';
 import type { IconProps } from './types';
 
 function IconBase(props: IconProps): JSX.Element {
+    props = mergeProps({ size: '1em', color: 'currentColor' }, props);
     const [local, others] = splitProps(props, ['alt', 'color', 'size', 'mirrored']);
 
     const width = () => (typeof local.size === 'number' ? `${local.size}px` : local.size);
