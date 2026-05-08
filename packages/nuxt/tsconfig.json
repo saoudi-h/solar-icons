@@ -3,9 +3,10 @@
   "exclude": [
     "dist",
     "node_modules",
-    "playground",
+    "playground"
   ],
   "include": [
-    "types"
+    "types",
+    "test"
   ]
 }
