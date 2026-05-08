@@ -64,6 +64,17 @@ nuxi module add @solar-icons/nuxt
 
 ---
 
+## 🤖 AI/LLM Integration
+
+The documentation site exposes LLM-friendly routes for AI model consumption:
+
+- **`/llms.txt`** - Lightweight index of all documentation pages
+- **`/llms-full.txt`** - Complete documentation content for comprehensive AI context
+
+These routes make it easy for AI assistants to access and understand the Solar Icons documentation.
+
+---
+
 ## 📜 License
 
 - **Code:** MIT  
