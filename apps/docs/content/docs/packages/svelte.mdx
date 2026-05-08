@@ -74,7 +74,7 @@ Import icons from a specific category:
 
 ### Direct Import
 
-For optimal tree-shaking, import individual icons directly:
+Import individual icons directly from their category path:
 
 ```svelte
 <script>
@@ -83,6 +83,8 @@ For optimal tree-shaking, import individual icons directly:
 
 <House size={24} color="#f59e0b" />
 ```
+
+**Best for:** Explicit imports that make it easier to locate icon sources during development.
 
 ## Using with CSS
 

@@ -3,7 +3,7 @@
 
 # Solar Icons
 
-**1,200+ unique icons. 6 styles each. Multiple frameworks. One flexible library.**
+**1,246 unique icons. 6 styles each. Multiple frameworks. One flexible library.**
 
 Solar Icons is a modern, multi-style icon set built for the web and mobile era — designed to be **modular**, **adaptable**, and **a joy to use**.  
 Whether you want rich theming with global providers or the lightest possible bundle, Solar Icons fits right in.

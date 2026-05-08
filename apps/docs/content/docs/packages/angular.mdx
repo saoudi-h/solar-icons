@@ -33,7 +33,7 @@ The `@solar-icons/angular` package brings the entire Solar Icon set to the Angul
 ## Usage
 
 ### Static Components
-The most efficient way to use icons. By importing individual components, you ensure that only the SVGs you actually use are included in your production bundle.
+Import individual icon components for use in your templates.
 
 ```tsx
 import { Component } from '@angular/core';
@@ -46,6 +46,8 @@ import { HeartBold } from '@solar-icons/angular';
 })
 export class App {}
 ```
+
+All import methods are tree-shakeable, ensuring only the icons you use are included in your bundle.
 
 ## Dynamic Rendering
 When your icon names come from a database or need to be swapped at runtime, use the `SolarDynamicIcon` directive.

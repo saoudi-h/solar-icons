@@ -25,25 +25,33 @@ Bring the complete Solar Icons collection to your React Native applications with
 The package provides three distinct import strategies to optimize your workflow and bundle size.
 
 ### 1. Style Bundle Imports
-Ideal for rapid prototyping or when using many icons of the same style.
+Import multiple icons of the same style from a single entry point.
 
 ```tsx
 import { House, User, Settings } from '@solar-icons/react-native/Bold'
 ```
 
+**Best for:** Rapid prototyping or when using many icons of the same style.
+
 ### 2. Global Styled Exports
-Perfect for mixing styles with descriptive component names.
+Import icons with style-specific names from the main entry point.
 
 ```tsx
 import { HouseBold, HouseLinear, HeartBroken } from '@solar-icons/react-native'
 ```
 
+**Best for:** Mixing different styles in the same file with clear, descriptive names.
+
 ### 3. Granular Category Imports
-The most efficient method for production, ensuring maximum tree-shaking.
+Import icons directly from their category and style path.
 
 ```tsx
 import { House } from '@solar-icons/react-native/category/buildings/Bold'
 ```
+
+**Best for:** Explicit imports that make it easier to locate icon sources during development.
+
+> **Note:** All three import methods are tree-shakeable. Choose based on your development workflow preferences rather than bundle size concerns.
 
 ---
 

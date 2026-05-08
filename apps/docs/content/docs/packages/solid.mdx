@@ -82,7 +82,7 @@ function App() {
 
 ### Direct Import
 
-For optimal tree-shaking, import individual icons directly:
+Import individual icons directly from their category path:
 
 ```tsx
 import { House } from '@solar-icons/solid/category/building/Bold'
@@ -91,6 +91,8 @@ function App() {
     return <House size={24} color="#f59e0b" />
 }
 ```
+
+**Best for:** Explicit imports that make it easier to locate icon sources during development.
 
 ## Using with CSS
 
