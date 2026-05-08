@@ -21,7 +21,13 @@
         ".next/**",
         "!.next/cache/**",
         ".nuxt/**",
-        "dist/**"
+        "dist/**",
+        "src/icons/**",
+        "src/csr/**",
+        "src/ssr/**",
+        "src/defs/**",
+        "src/metadata*.json",
+        "svgs/**"
       ]
     },
     "dev": {
