@@ -112,7 +112,23 @@
         "popover",
         "viewport",
         "collapsible",
-        "themeable"
+        "themeable",
+        "llms",
+        "solidjs",
+        "twoslash",
+        "shiki",
+        "takumi",
+        "Magnifer",
+        "cbranch",
+        "cstat",
+        "constexpr",
+        "wantarray",
+        "bdsw",
+        "linenums",
+        "blinenums",
+        "nosort",
+        "Horizonta",
+        "parsererror"
     ],
     "ignorePaths": [
         "node_modules",
@@ -142,7 +158,8 @@
         "packages/core/src/metadata*.json",
         "apps/vue-app/src/components/gal/**",
         "packages/nuxt/playground/**",
-        "packages/core/src/scripts/**"
+        "packages/core/src/scripts/**",
+        "**/coverage/**"
     ],
     "ignoreRegExpList": [
         "/import .* from .*/",
