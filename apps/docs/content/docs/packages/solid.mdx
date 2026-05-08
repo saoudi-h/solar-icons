@@ -23,10 +23,10 @@ The `@solar-icons/solid` package provides SolidJS components for Solar Icons. It
 Import icons from a style and use them as SolidJS components:
 
 ```tsx
-import { Home } from '@solar-icons/solid/Bold'
+import { House } from '@solar-icons/solid/Bold'
 
 function App() {
-    return <Home size={32} color="purple" />
+    return <House size={32} color="purple" />
 }
 ```
 
@@ -48,14 +48,14 @@ Each icon component accepts the following props, in addition to all standard SVG
 Import all icons from a specific style:
 
 ```tsx
-import { Home, Settings, User } from '@solar-icons/solid/Bold'
-import { Home as HomeLinear } from '@solar-icons/solid/Linear'
+import { House, Settings, User } from '@solar-icons/solid/Bold'
+import { HouseLinear } from '@solar-icons/solid/Linear'
 
 function App() {
     return (
         <>
-            <Home size={24} />
-            <HomeLinear size={24} />
+            <House size={24} />
+            <HouseLinear size={24} />
         </>
     )
 }
@@ -85,10 +85,10 @@ function App() {
 For optimal tree-shaking, import individual icons directly:
 
 ```tsx
-import Home from '@solar-icons/solid/icons/building/Bold/Home'
+import { House } from '@solar-icons/solid/category/building/Bold'
 
 function App() {
-    return <Home size={24} color="#f59e0b" />
+    return <House size={24} color="#f59e0b" />
 }
 ```
 
@@ -100,7 +100,7 @@ Since the default color is `currentColor`, icons inherit the text color from the
 function App() {
     return (
         <div class="text-blue-500">
-            <Home size={24} />
+            <House size={24} />
         </div>
     )
 }
