@@ -256,8 +256,8 @@ const handleWeightChange = (value: IconWeight) => {
   setWeight(value)
 }
 
-const handleMirroredChange = (value: boolean) => {
-  setConfig({ mirrored: value })
+const handleMirroredChange = (value: boolean | 'indeterminate') => {
+  setConfig({ mirrored: value === 'indeterminate' ? false : value })
 }
 
 const toKebab = (input: string): string => {

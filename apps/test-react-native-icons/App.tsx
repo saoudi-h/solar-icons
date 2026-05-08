@@ -110,7 +110,7 @@ export default function App() {
   return (
     <View style={appStyles.container}>
       <StatusBar style="auto" />
-
+      
       <ScrollView style={appStyles.scrollView}>
         {/* Header */}
         <View style={appStyles.header}>
