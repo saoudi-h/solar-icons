@@ -1,44 +1,44 @@
 {
-  "name": "test-react-native-icons",
-  "version": "1.0.1-beta.1",
-  "private": true,
-  "description": "Test application for @solar-icons/react-native package",
-  "main": "index.ts",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "pre-commit": ""
-  },
-  "dependencies": {
-    "@solar-icons/react-native": "workspace:*",
-    "expo": "~54.0.33",
-    "expo-status-bar": "~3.0.9",
-    "react": "19.2.6",
-    "react-native": "0.83.1",
-    "react-native-svg": "^15.15.2"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.14",
-    "typescript": "~5.9.2"
-  },
-  "keywords": [
-    "solar-icons",
-    "react-native",
-    "expo",
-    "test",
-    "demo"
-  ],
-  "author": {
-    "name": "Saoudi Hakim",
-    "url": "https://hakimsaoudi.dev",
-    "email": "saoudihakim@gmail.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saoudi-h/solar-icons.git",
-    "directory": "apps/test-react-native-icons"
-  }
+    "name": "test-react-native-icons",
+    "version": "1.0.1-beta.1",
+    "private": true,
+    "description": "Test application for @solar-icons/react-native package",
+    "main": "index.ts",
+    "scripts": {
+        "start": "expo start",
+        "android": "expo start --android",
+        "ios": "expo start --ios",
+        "web": "expo start --web",
+        "pre-commit": ""
+    },
+    "dependencies": {
+        "@solar-icons/react-native": "workspace:*",
+        "expo": "~55.0.23",
+        "expo-status-bar": "~55.0.6",
+        "react": "19.2.6",
+        "react-native": "0.85.3",
+        "react-native-svg": "^15.15.2"
+    },
+    "devDependencies": {
+        "@types/react": "~19.2.14",
+        "typescript": "~6.0.3"
+    },
+    "keywords": [
+        "solar-icons",
+        "react-native",
+        "expo",
+        "test",
+        "demo"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "apps/test-react-native-icons"
+    }
 }

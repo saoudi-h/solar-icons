@@ -1,8 +1,8 @@
 <template>
-    <Button @click="toggleTheme" variant="outline">
-        <Sun v-if="mode === 'light'" />
-        <Moon v-else />
-    </Button>
+  <Button @click="toggleTheme" variant="outline">
+    <Sun v-if="mode === 'light'" />
+    <Moon v-else />
+  </Button>
 </template>
 
 <script setup lang="ts">
@@ -13,6 +13,6 @@ import { Button } from '@/components/ui/button'
 const mode = useColorMode()
 
 const toggleTheme = () => {
-    mode.value = mode.value === 'light' ? 'dark' : 'light'
+  mode.value = mode.value === 'light' ? 'dark' : 'light'
 }
 </script>

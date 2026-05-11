@@ -6,20 +6,20 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { InfoCircle } from '@solar-icons/react'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { categoriesAtom, selectedIconAtom } from '../context'
+import { selectedIconAtom, useSearchCategories } from '../context'
 import type { CategoryOption } from '../utils'
 import { Actions } from './Actions'
+import { AngularCode } from './AngularCode'
 import { FloatingDrawer } from './FloatingDrawer'
 import { IconVariants } from './IconVariants'
-import { ReactCode } from './ReactCode'
-import { ReactPerfCode } from './ReactPerf'
-import { ReactNativeCode } from './ReactNativeCode'
-import { VueCode } from './VueCode'
 import { NuxtCode } from './NuxtCode'
-import { SvelteCode } from './SvelteCode'
+import { ReactCode } from './ReactCode'
+import { ReactNativeCode } from './ReactNativeCode'
+import { ReactPerfCode } from './ReactPerf'
 import { SolidCode } from './SolidCode'
-import { AngularCode } from './AngularCode'
+import { SvelteCode } from './SvelteCode'
 import { Tags } from './Tags'
+import { VueCode } from './VueCode'
 
 export function IconDetail() {
     return (
@@ -31,7 +31,7 @@ export function IconDetail() {
 
 const Content: FC = () => {
     const [selectedIcon] = useAtom(selectedIconAtom)
-    const [categories, setCategories] = useAtom(categoriesAtom)
+    const [categories, setCategories] = useSearchCategories()
 
     const handleCategorySelection = (category: string) => {
         if (categories.some(c => c.value === category)) {
@@ -46,14 +46,14 @@ const Content: FC = () => {
     return (
         <div
             className={`
-              flex h-full w-full flex-col p-4
+              flex size-full flex-col p-4
               lg:flex-row
             `}>
             <div>
                 <div
                     className={`
-                      border-border flex h-full min-w-64 flex-row items-start
-                      justify-start gap-4 border-dashed
+                      flex h-full min-w-64 flex-row items-start justify-start
+                      gap-4 border-dashed border-border
                       max-lg:mb-2 max-lg:border-b max-lg:pb-2
                       lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r
                       lg:pr-4
@@ -72,7 +72,7 @@ const Content: FC = () => {
                     </div>
 
                     <div className="flex flex-col items-start justify-between">
-                        <h3 className="font-heading text-left text-xl font-bold">
+                        <h3 className="text-left font-heading text-xl font-bold">
                             {selectedIcon?.name}
                         </h3>
                         <div className="flex gap-2">

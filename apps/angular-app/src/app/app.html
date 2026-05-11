@@ -1,127 +1,132 @@
 <div class="min-h-screen bg-slate-900 text-slate-200 p-8">
-    <div class="max-w-7xl mx-auto space-y-8">
+  <div class="max-w-7xl mx-auto space-y-8">
+    <ng-container [solarIcon]="icon" [size]="32" [color]="iconColor()" />
+    <ng-container [solarIcon]="icon2" [size]="32" [color]="iconColor()" />
 
-        <ng-container [solarIcon]="icon" [size]="32" [color]="iconColor()" />
-        <ng-container [solarIcon]="icon2" [size]="32" [color]="iconColor()" />
-
-        <!-- Header -->
-        <div class="text-center space-y-2">
-            <h1 class="text-4xl font-bold text-white">Solar Icons — Angular</h1>
-            <p class="text-slate-400">
-                Displaying {{ displayIcons().length }} icons in
-                <span class="text-amber-400">{{ selectedStyle() }}</span> style
-            </p>
-            @if (loadedCategories() < totalCategories) {
-                <div class="flex flex-col items-center gap-2 mt-4">
-                    <div class="w-48 h-1 bg-slate-800 rounded-full overflow-hidden">
-                        <div 
-                            class="h-full bg-amber-500 transition-all duration-300" 
-                            [style.width.%]="(loadedCategories() / totalCategories) * 100"
-                        ></div>
-                    </div>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-                        Optimizing Engine: {{ loadedCategories() }} / {{ totalCategories }}
-                    </p>
-                </div>
-            }
+    <!-- Header -->
+    <div class="text-center space-y-2">
+      <h1 class="text-4xl font-bold text-white">Solar Icons — Angular</h1>
+      <p class="text-slate-400">
+        Displaying {{ displayIcons().length }} icons in
+        <span class="text-amber-400">{{ selectedStyle() }}</span> style
+      </p>
+      @if (loadedCategories() < totalCategories) {
+        <div class="flex flex-col items-center gap-2 mt-4">
+          <div class="w-48 h-1 bg-slate-800 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-amber-500 transition-all duration-300"
+              [style.width.%]="(loadedCategories() / totalCategories) * 100"
+            ></div>
+          </div>
+          <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+            Optimizing Engine: {{ loadedCategories() }} / {{ totalCategories }}
+          </p>
         </div>
-
-        <!-- Controls -->
-        <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 backdrop-blur-sm shadow-2xl">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Style Selector -->
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">Style</label>
-                    <div class="flex flex-wrap gap-2">
-                        @for (style of styles; track style) {
-                            <button
-                                class="px-3 py-1.5 rounded-lg text-sm font-medium transition-all"
-                                [class.bg-amber-500]="selectedStyle() === style"
-                                [class.text-slate-900]="selectedStyle() === style"
-                                [class.bg-slate-700]="selectedStyle() !== style"
-                                [class.text-slate-300]="selectedStyle() !== style"
-                                (click)="selectedStyle.set(style)"
-                            >
-                                {{ style }}
-                            </button>
-                        }
-                    </div>
-                </div>
-
-                <!-- Color Picker -->
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">Color</label>
-                    <div class="flex items-center gap-3">
-                        <input
-                            type="color"
-                            [ngModel]="iconColor()"
-                            (ngModelChange)="iconColor.set($event)"
-                            class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent"
-                        />
-                        <input
-                            type="text"
-                            [ngModel]="iconColor()"
-                            (ngModelChange)="iconColor.set($event)"
-                            class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-amber-500 outline-none"
-                        />
-                    </div>
-                </div>
-
-                <!-- Size Slider -->
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">
-                        Size: <span class="text-amber-400">{{ iconSize() }}px</span>
-                    </label>
-                    <input
-                        type="range"
-                        min="16"
-                        max="64"
-                        [ngModel]="iconSize()"
-                        (ngModelChange)="iconSize.set($event)"
-                        class="w-full accent-amber-500"
-                    />
-                </div>
-
-                <!-- Search -->
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">Search</label>
-                    <input
-                        type="text"
-                        placeholder="Filter icons..."
-                        [ngModel]="searchQuery()"
-                        (ngModelChange)="searchQuery.set($event)"
-                        class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 placeholder-slate-500 focus:border-amber-500 outline-none"
-                    />
-                </div>
-            </div>
-        </div>
-
-        <!-- Icon Grid -->
-        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
-            @for (item of displayIcons(); track trackByIconName($index, item)) {
-                <div
-                    class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
-                    [title]="item.name"
-                >
-                    <div class="flex items-center justify-center" style="min-height: 48px;">
-                        <ng-container
-                            [solarIcon]="item.component"
-                            [size]="iconSize()"
-                            [color]="iconColor()"
-                        />
-                    </div>
-                    <span class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">
-                        {{ item.name }}
-                    </span>
-                </div>
-            }
-        </div>
-
-        @if (displayIcons().length === 0) {
-            <div class="text-center py-20 text-slate-500 bg-slate-800/20 rounded-3xl border border-dashed border-slate-700">
-                <p class="text-lg italic">No icons found matching "{{ searchQuery() }}"</p>
-                <button (click)="searchQuery.set('')" class="mt-4 text-amber-500 hover:underline">Clear search</button>
-            </div>
-        }
+      }
     </div>
+
+    <!-- Controls -->
+    <div
+      class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 backdrop-blur-sm shadow-2xl"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Style Selector -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-300">Style</label>
+          <div class="flex flex-wrap gap-2">
+            @for (style of styles; track style) {
+              <button
+                class="px-3 py-1.5 rounded-lg text-sm font-medium transition-all"
+                [class.bg-amber-500]="selectedStyle() === style"
+                [class.text-slate-900]="selectedStyle() === style"
+                [class.bg-slate-700]="selectedStyle() !== style"
+                [class.text-slate-300]="selectedStyle() !== style"
+                (click)="selectedStyle.set(style)"
+              >
+                {{ style }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <!-- Color Picker -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-300">Color</label>
+          <div class="flex items-center gap-3">
+            <input
+              type="color"
+              [ngModel]="iconColor()"
+              (ngModelChange)="iconColor.set($event)"
+              class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent"
+            />
+            <input
+              type="text"
+              [ngModel]="iconColor()"
+              (ngModelChange)="iconColor.set($event)"
+              class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-amber-500 outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- Size Slider -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-300">
+            Size: <span class="text-amber-400">{{ iconSize() }}px</span>
+          </label>
+          <input
+            type="range"
+            min="16"
+            max="64"
+            [ngModel]="iconSize()"
+            (ngModelChange)="iconSize.set($event)"
+            class="w-full accent-amber-500"
+          />
+        </div>
+
+        <!-- Search -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-300">Search</label>
+          <input
+            type="text"
+            placeholder="Filter icons..."
+            [ngModel]="searchQuery()"
+            (ngModelChange)="searchQuery.set($event)"
+            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 placeholder-slate-500 focus:border-amber-500 outline-none"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Icon Grid -->
+    <div
+      class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4"
+    >
+      @for (item of displayIcons(); track trackByIconName($index, item)) {
+        <div
+          class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
+          [title]="item.name"
+        >
+          <div class="flex items-center justify-center" style="min-height: 48px">
+            <ng-container [solarIcon]="item.component" [size]="iconSize()" [color]="iconColor()" />
+          </div>
+          <span
+            class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors"
+          >
+            {{ item.name }}
+          </span>
+        </div>
+      }
+    </div>
+
+    @if (displayIcons().length === 0) {
+      <div
+        class="text-center py-20 text-slate-500 bg-slate-800/20 rounded-3xl border border-dashed border-slate-700"
+      >
+        <p class="text-lg italic">No icons found matching "{{ searchQuery() }}"</p>
+        <button (click)="searchQuery.set('')" class="mt-4 text-amber-500 hover:underline">
+          Clear search
+        </button>
+      </div>
+    }
+  </div>
 </div>

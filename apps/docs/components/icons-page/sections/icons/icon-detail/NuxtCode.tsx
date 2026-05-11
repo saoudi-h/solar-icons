@@ -9,7 +9,7 @@ import { CodeBlockTemplate } from './CodeBlockTemplate'
 export const NuxtCode: FC = () => {
     const { value } = useSolar()
     const [selectedIcon] = useAtom(selectedIconAtom)
-    const prefix = "Solar"
+    const prefix = 'Solar'
 
     return (
         <>

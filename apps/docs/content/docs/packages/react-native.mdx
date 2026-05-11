@@ -25,25 +25,36 @@ Bring the complete Solar Icons collection to your React Native applications with
 The package provides three distinct import strategies to optimize your workflow and bundle size.
 
 ### 1. Style Bundle Imports
-Ideal for rapid prototyping or when using many icons of the same style.
+
+Import multiple icons of the same style from a single entry point.
 
 ```tsx
-import { Home, User, Settings } from '@solar-icons/react-native/Bold'
+import { House, User, Settings } from '@solar-icons/react-native/Bold'
 ```
+
+**Best for:** Rapid prototyping or when using many icons of the same style.
 
 ### 2. Global Styled Exports
-Perfect for mixing styles with descriptive component names.
+
+Import icons with style-specific names from the main entry point.
 
 ```tsx
-import { HomeBold, HomeLinear, HeartBroken } from '@solar-icons/react-native'
+import { HouseBold, HouseLinear, HeartBroken } from '@solar-icons/react-native'
 ```
+
+**Best for:** Mixing different styles in the same file with clear, descriptive names.
 
 ### 3. Granular Category Imports
-The most efficient method for production, ensuring maximum tree-shaking.
+
+Import icons directly from their category and style path.
 
 ```tsx
-import { Home } from '@solar-icons/react-native/category/ui/Bold/Home'
+import { House } from '@solar-icons/react-native/category/buildings/Bold'
 ```
+
+**Best for:** Explicit imports that make it easier to locate icon sources during development.
+
+> **Note:** All three import methods are tree-shakeable. Choose based on your development workflow preferences rather than bundle size concerns.
 
 ---
 
@@ -53,11 +64,11 @@ import { Home } from '@solar-icons/react-native/category/ui/Bold/Home'
 
 All icon components accept the following props, extending `SvgProps` from `react-native-svg` (excluding `width`/`height`).
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `size` | `number \| string` | `24` | Width and height of the icon. |
-| `color` | `string` | `'currentColor'` | Icon fill/stroke color. |
-| `mirrored` | `boolean` | `false` | Flips the icon horizontally. |
+| Prop       | Type               | Default          | Description                   |
+| :--------- | :----------------- | :--------------- | :---------------------------- |
+| `size`     | `number \| string` | `24`             | Width and height of the icon. |
+| `color`    | `string`           | `'currentColor'` | Icon fill/stroke color.       |
+| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.  |
 
 ### `IconStyle`
 
@@ -87,8 +98,8 @@ import { useRef } from 'react'
 import { Svg } from 'react-native-svg'
 
 const MyComponent = () => {
-  const iconRef = useRef<Svg>(null)
-  return <HomeBold ref={iconRef} />
+    const iconRef = useRef<Svg>(null)
+    return <HouseBold ref={iconRef} />
 }
 ```
 
@@ -100,12 +111,12 @@ import * as Icons from '@solar-icons/react-native/Bold'
 import type { IconProps } from '@solar-icons/react-native'
 
 interface MyIconProps extends IconProps {
-  name: keyof typeof Icons
+    name: keyof typeof Icons
 }
 
 export const AppIcon = ({ name, ...props }: MyIconProps) => {
-  const IconComponent = Icons[name]
-  return <IconComponent {...props} />
+    const IconComponent = Icons[name]
+    return <IconComponent {...props} />
 }
 ```
 
@@ -115,12 +126,12 @@ export const AppIcon = ({ name, ...props }: MyIconProps) => {
 
 ### Package Entry Points
 
-| Entry Point | Content |
-| :--- | :--- |
-| `.` | Global styled exports + `IconStyle` |
-| `./[Style]` | Style specific bundles (Bold, Linear, etc.) |
-| `./category/*` | Direct access to individual icons |
-| `./lib/*` | Core logic, `IconBase`, and TypeScript types |
+| Entry Point    | Content                                      |
+| :------------- | :------------------------------------------- |
+| `.`            | Global styled exports + `IconStyle`          |
+| `./[Style]`    | Style specific bundles (Bold, Linear, etc.)  |
+| `./category/*` | Direct access to individual icons            |
+| `./lib/*`      | Core logic, `IconBase`, and TypeScript types |
 
 ### Requirements
 

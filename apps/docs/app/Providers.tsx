@@ -21,7 +21,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname()
     useEffect(() => {
         setForcedTheme(undefined)
-    }, [pathname])
+    }, [pathname, setForcedTheme])
     return (
         <RootProvider theme={{ forcedTheme: forcedTheme }}>
             <NuqsAdapter>

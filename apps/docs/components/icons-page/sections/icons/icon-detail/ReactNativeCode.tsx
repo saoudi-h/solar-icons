@@ -22,19 +22,13 @@ export const ReactNativeCode: FC = () => {
                 lang="tsx"
                 code={`import { ${iconName} } from '@solar-icons/react-native/Bold'`}
             />
-            <CodeBlockTemplate
-                lang="tsx"
-                code={`<${iconName} size={24} color="#000" />`}
-            />
+            <CodeBlockTemplate lang="tsx" code={`<${iconName} size={24} color="#000" />`} />
 
             <CodeBlockTemplate
                 lang="tsx"
                 code={`import { ${iconName}Bold } from '@solar-icons/react-native'`}
             />
-            <CodeBlockTemplate
-                lang="tsx"
-                code={`<${iconName}Bold size={24} color="#000" />`}
-            />
+            <CodeBlockTemplate lang="tsx" code={`<${iconName}Bold size={24} color="#000" />`} />
         </>
     )
 }

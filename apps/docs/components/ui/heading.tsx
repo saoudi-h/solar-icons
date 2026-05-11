@@ -45,8 +45,7 @@ const headingVariants = cva('font-heading text-foreground', {
 })
 
 export interface HeadingProps
-    extends React.HTMLAttributes<HTMLHeadingElement>,
-        VariantProps<typeof headingVariants> {
+    extends React.HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof headingVariants> {
     asChild?: boolean
 }
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(

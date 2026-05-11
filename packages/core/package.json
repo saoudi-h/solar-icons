@@ -25,7 +25,7 @@
         "build": "vite build && tsc --build tsconfig.build.json",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --max-warnings 0 --fix",
-        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:svgs": "tsx src/scripts/generate-svgs.ts",
         "generate:pngs": "tsx src/scripts/generate-pngs.ts",
@@ -39,14 +39,14 @@
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
-        "@solar-icons/eslint": "workspace:*",
-        "@solar-icons/prettier": "workspace:*",
-        "@solar-icons/tsconfig": "workspace:*",
-        "@types/node": "^25.6.1",
-        "@vitejs/plugin-react": "^5.1.3",
+        "@tala-tools/eslint": "0.1.0",
+        "@tala-tools/prettier": "0.0.2",
+        "@tala-tools/tsconfig": "0.0.1",
+        "@types/node": "^25.6.2",
+        "@vitejs/plugin-react": "^6.0.1",
         "axios": "^1.16.0",
         "dotenv": "^17.4.2",
-        "eslint": "^9.39.2",
+        "eslint": "^10.3.0",
         "figma-api": "^1.12.0",
         "globals": "^17.6.0",
         "p-limit": "^7.3.0",
@@ -57,9 +57,9 @@
         "rimraf": "^6.1.2",
         "sharp": "^0.34.5",
         "tsx": "^4.21.0",
-        "typescript": "^5.9.3",
+        "typescript": "^6.0.3",
         "vite": "^8.0.11",
-        "vite-plugin-static-copy": "^3.2.0"
+        "vite-plugin-static-copy": "^4.1.0"
     },
     "keywords": [
         "core",

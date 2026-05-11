@@ -42,7 +42,7 @@ Import icons from a style and use them as Svelte components:
 
 ```svelte
 <script>
-    import Home from '@solar-icons/svelte/category/buildings/Bold/Home.svelte';
+    import House from '@solar-icons/svelte/category/buildings/Bold/House.svelte';
 </script>
 ```
 

@@ -41,16 +41,16 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                     className={cn(
                         `
                           sticky flex min-h-48 w-full
-                          sm:bottom-4 sm:max-h-[calc(33vh)]
+                          sm:bottom-4 sm:max-h-[calc(40vh)]
                         `,
-                        'right-0 bottom-0 left-0 max-h-[calc(50vh)]'
+                        'inset-x-0 bottom-0 max-h-[calc(50vh)]'
                     )}>
-                    <div className="relative h-full w-full">
+                    <div className="relative size-full">
                         <div
                             className={`
-                              border-border bg-default-50/90 h-full
-                              max-h-[calc(33vh)] w-full overflow-hidden
-                              rounded-xl border shadow-lg backdrop-blur-lg
+                              size-full max-h-[calc(40vh)] overflow-hidden
+                              rounded-xl border border-border bg-default-50/90
+                              shadow-lg backdrop-blur-lg
                               dark:bg-default-100/80
                             `}>
                             {children}
@@ -67,7 +67,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                             <CloseCircle
                                 weight="Bold"
                                 className={`
-                                  text-muted-foreground size-full
+                                  size-full text-muted-foreground
                                   hover:text-foreground
                                 `}
                             />

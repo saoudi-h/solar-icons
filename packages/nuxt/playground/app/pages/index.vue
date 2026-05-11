@@ -42,9 +42,7 @@
     <!-- Divider -->
     <div class="border-b border-border border-dashed w-full py-4" />
 
-    <div
-      class="flex flex-row flex-wrap gap-4 w-full"
-    >
+    <div class="flex flex-row flex-wrap gap-4 w-full">
       <div
         v-for="icon in list"
         :key="icon[0]"
@@ -60,21 +58,14 @@
 
 <script setup lang="ts">
 import * as solar from '#solar-icons'
-import { useSolar } from '#solar-icons/lib'
 import type { IconWeight } from '#solar-icons/lib'
+import { useSolar } from '#solar-icons/lib'
 
 const { config, setConfig, setWeight, setSize } = useSolar()
 
 const list = Object.entries(solar).filter(([key]) => key !== 'default')
 
-const WEIGHTS: IconWeight[] = [
-  'Broken',
-  'LineDuotone',
-  'Linear',
-  'Outline',
-  'Bold',
-  'BoldDuotone',
-]
+const WEIGHTS: IconWeight[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone']
 
 // Existing functions
 const resetSettings = () => {

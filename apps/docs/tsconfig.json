@@ -1,12 +1,11 @@
 {
-    "extends": "@solar-icons/tsconfig/next.json",
+    "extends": "@tala-tools/tsconfig/nextjs.json",
     "compilerOptions": {
-        "baseUrl": ".",
         "paths": {
-            "fumadocs-mdx:collections/*": [".source/*"],
+            "fumadocs-mdx:collections/*": ["./.source/*"],
             "@/*": ["./*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.ts"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.mts"],
     "exclude": ["node_modules", "./core/scripts"]
 }

@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import process from 'node:process'
 import pc from 'picocolors'
 import type { CamelToPascal, Metadata } from './types'
 
@@ -26,7 +27,7 @@ export enum IconStyle {
  * Load the metadata from the JSON file
  * @returns The metadata object
  */
-export const loadMetadata = async (): Promise<object> => {
+export const loadMetadata = async () => {
     try {
         return JSON.parse(await fs.promises.readFile(METADATA_PATH, 'utf-8'))
     } catch (error) {

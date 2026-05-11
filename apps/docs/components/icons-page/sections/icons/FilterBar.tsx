@@ -22,22 +22,40 @@ import {
 } from '@/components/ui/drawer'
 import type { Option } from '@/components/ui/multi-selector'
 import MultipleSelector from '@/components/ui/multi-selector'
-import NumberTicker from '@/components/ui/number-ticker'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { categories, styles } from '@/core/generated/utils'
+import { categories as allCategories, styles } from '@/core/generated/utils'
 import { useScreen } from '@/lib/screens'
+import NumberFlow from '@number-flow/react'
 import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
-import { DEFAULT_VALUES, categoriesAtom, filteredCountAtom, keywordAtom } from './context'
+import { useEffect, useRef, useState } from 'react'
+import { DEFAULT_VALUES, filteredCountAtom, useSearchCategories, useSearchKeyword } from './context'
 import type { CategoryOption } from './utils'
 
-const categoryOptions = categories.map(c => ({ value: c, label: c }))
+const categoryOptions = allCategories.map(c => ({ value: c, label: c }))
 
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
-    const [keyword, setKeyword] = useAtom(keywordAtom)
-    const [categories, setCategories] = useAtom(categoriesAtom)
+    const [keyword, setKeyword] = useSearchKeyword()
+    const [categories, setCategories] = useSearchCategories()
+
+    const [inputValue, setInputValue] = useState(keyword)
+    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    const handleSearchChange = (value: string) => {
+        setInputValue(value)
+        if (debounceRef.current) clearTimeout(debounceRef.current)
+        debounceRef.current = setTimeout(() => {
+            setKeyword(value)
+        }, 300)
+    }
+
+    useEffect(() => {
+        return () => {
+            if (debounceRef.current) clearTimeout(debounceRef.current)
+        }
+    }, [])
 
     const { value, setValue } = useSolar()
 
@@ -69,6 +87,8 @@ export const FilterBarContent: React.FC = () => {
     const reset = () => {
         setValue(DEFAULT_VALUES)
         setKeyword('')
+        setInputValue('')
+        if (debounceRef.current) clearTimeout(debounceRef.current)
         setCategories([])
     }
 
@@ -82,7 +102,7 @@ export const FilterBarContent: React.FC = () => {
                 <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
                     <SelectTrigger
                         className={`
-                          bg-default-200 h-10 w-48 rounded-lg border-none!
+                          h-10 w-48 rounded-lg border-none! bg-default-200
                           shadow-none!
                         `}>
                         <SelectValue placeholder="Select a weight" />
@@ -112,7 +132,7 @@ export const FilterBarContent: React.FC = () => {
                 <div
                     data-vaul-no-drag
                     className={`
-                      bg-default-200 flex h-10 w-48 items-center rounded-lg p-4
+                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
                     `}>
                     <Slider
                         className=""
@@ -136,18 +156,18 @@ export const FilterBarContent: React.FC = () => {
                 <div className="relative flex h-10 w-48">
                     <MinimalisticMagnifier
                         className={`
-                          text-muted-foreground absolute top-1/2 left-2.5 h-4
-                          w-4 -translate-y-1/2
+                          absolute top-1/2 left-2.5 size-4 -translate-y-1/2
+                          text-muted-foreground
                         `}
                     />
                     <Input
                         type="search"
                         placeholder="Search..."
-                        value={keyword}
-                        onChange={e => setKeyword(e.target.value)}
+                        value={inputValue}
+                        onChange={e => handleSearchChange(e.target.value)}
                         className={`
-                          bg-default-200 h-10 w-full rounded-lg border-0
-                          border-none! pl-10 text-sm shadow-none
+                          h-10 w-full rounded-lg border-0 border-none!
+                          bg-default-200 pl-10 text-sm shadow-none
                           placeholder:text-muted-foreground
                         `}
                     />
@@ -159,22 +179,27 @@ export const FilterBarContent: React.FC = () => {
                     size="icon"
                     colors="accent"
                     className={`
-                      bg-default-200 text-foreground size-10 rounded-lg
-                      border-none!
+                      size-10 rounded-lg border-none! bg-default-200
+                      text-foreground
                     `}>
-                    <Restart className="h-4 w-4" mirrored />
+                    <Restart className="size-4" mirrored />
                 </Button>
 
                 {/* Reset button */}
                 <div
                     className={`
-                      bg-default-200 text-muted-foreground flex h-10 flex-row
-                      items-center justify-center gap-1 rounded-lg border-none!
-                      p-1 px-3 text-xs font-bold
+                      flex h-10 flex-row items-center justify-center gap-1
+                      rounded-lg border-none! bg-default-200 p-1 px-3 text-xs
+                      font-bold text-muted-foreground
                     `}>
                     <Tooltip>
                         <TooltipTrigger>
-                            <NumberTicker value={filteredCount} />
+                            <NumberFlow
+                                className="text-foreground/70"
+                                trend={-1}
+                                value={filteredCount}
+                                format={{ minimumIntegerDigits: 1 }}
+                            />
                         </TooltipTrigger>
                         <TooltipContent>
                             <span className="font-extralight">{filteredCount} icons founded</span>
@@ -185,7 +210,7 @@ export const FilterBarContent: React.FC = () => {
             {/* alternative to react Select */}
             <MultipleSelector
                 className={`
-                  bg-default-200 min-h-10 rounded-lg border-none! shadow-none!
+                  min-h-10 rounded-lg border-none! bg-default-200 shadow-none!
                 `}
                 placeholder="Select categories"
                 options={categoryOptions}
@@ -202,8 +227,8 @@ export const FilterBar = () => {
         return (
             <div
                 className={`
-                  border-border bg-default-50 z-20 flex w-full flex-wrap
-                  justify-between gap-2 rounded-xl border p-2 shadow-xs
+                  z-20 flex w-full flex-wrap justify-between gap-2 rounded-xl
+                  border border-border bg-default-50 p-2 shadow-xs
                   dark:bg-default-100
                 `}>
                 <FilterBarContent />
@@ -219,9 +244,9 @@ export const FilterBar = () => {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ x: -10 }}
                     className={`
-                      border-border bg-default-200 text-foreground/70 fixed
-                      top-80 right-[-20px] z-50 h-12 w-20 rounded-none
-                      rounded-l-full border p-2 shadow-md transition-colors
+                      fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none
+                      rounded-l-full border border-border bg-default-200 p-2
+                      text-foreground/70 shadow-md transition-colors
                       hover:text-foreground
                     `}>
                     <Settings className="size-8" weight="Linear" color="" />
@@ -230,9 +255,9 @@ export const FilterBar = () => {
             </DrawerTrigger>
             <DrawerContent
                 className={`
-                  border-border bg-default-50/90 !fixed !top-2 !right-2
-                  !bottom-2 z-50 !flex !w-48 overflow-hidden rounded-xl border
-                  p-2 shadow-xs backdrop-blur-sm !outline-none
+                  fixed! inset-y-2! right-2! z-50 flex! w-48! overflow-hidden
+                  rounded-xl border border-border bg-default-50/90 p-2 shadow-xs
+                  backdrop-blur-sm outline-none!
                   dark:bg-default-100/80
                 `}
                 style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>

@@ -3,9 +3,5 @@ node_modules
 dist
 src/
 !src/lib/**/*
-!src/ssr/**/*
-!src/csr/**/*
-!src/defs/**/*
 
 CHANGELOG.md
-

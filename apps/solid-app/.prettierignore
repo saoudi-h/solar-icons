@@ -1,3 +1,4 @@
 .next
 node_modules
-CHANGELOG.md
+dist
+.turbo

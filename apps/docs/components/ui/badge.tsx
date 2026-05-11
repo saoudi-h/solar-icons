@@ -5,14 +5,14 @@ import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
     `
-      focus:ring-ring focus:ring-2 focus:ring-offset-2 focus:outline-hidden
       inline-flex items-center rounded-full border px-2.5 py-1 text-sm
       font-semibold text-nowrap transition-colors
+      focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden
     `,
     {
         variants: {
             variant: {
-                default: 'text-background border-transparent',
+                default: 'border-transparent text-background',
                 outline: 'bg-transparent',
                 ghost: 'border-transparent bg-transparent',
             },
@@ -57,8 +57,7 @@ const badgeVariants = cva(
 )
 
 export interface BadgeProps
-    extends React.HTMLAttributes<HTMLDivElement>,
-        VariantProps<typeof badgeVariants> {}
+    extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, size, colors, ...props }: BadgeProps) {
     return <div className={cn(badgeVariants({ variant, size, colors }), className)} {...props} />

@@ -58,7 +58,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <!-- Style Selector -->
             <div class="space-y-2">
-                <label class="text-sm font-medium text-slate-300">Style</label>
+                <label class="text-sm font-medium text-slate-300" for="style-select">Style</label>
                 <div class="flex flex-wrap gap-2">
                     {#each STYLES as style}
                         <button
@@ -76,10 +76,11 @@
 
             <!-- Color Picker -->
             <div class="space-y-2">
-                <label class="text-sm font-medium text-slate-300">Color</label>
+                <label class="text-sm font-medium text-slate-300" for="color-picker">Color</label>
                 <div class="flex items-center gap-3">
                     <input
                         type="color"
+                        id="color-picker"
                         bind:value={iconColor}
                         class="w-10 h-10 rounded-lg cursor-pointer border-0"
                     />
@@ -94,11 +95,12 @@
 
             <!-- Size Slider -->
             <div class="space-y-2">
-                <label class="text-sm font-medium text-slate-300">
+                <label class="text-sm font-medium text-slate-300" for="size-slider">
                     Size: <span class="text-amber-400">{iconSize}px</span>
                 </label>
                 <input
                     type="range"
+                    id="size-slider"
                     min="16"
                     max="64"
                     bind:value={iconSize}
@@ -108,9 +110,10 @@
 
             <!-- Search -->
             <div class="space-y-2">
-                <label class="text-sm font-medium text-slate-300">Search</label>
+                <label class="text-sm font-medium text-slate-300" for="search-input">Search</label>
                 <input
                     type="text"
+                    id="search-input"
                     placeholder="Filter icons..."
                     bind:value={searchQuery}
                     class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2

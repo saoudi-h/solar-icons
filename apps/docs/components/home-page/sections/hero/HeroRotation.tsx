@@ -109,8 +109,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
         return (
             <motion.div
                 className={`
-                  absolute top-1/2 left-1/2 origin-center -translate-x-1/2
-                  -translate-y-1/2
+                  absolute top-1/2 left-1/2 origin-center -translate-1/2
                 `}
                 style={{ rotate: rotation }}>
                 {icons.map((IconComponent, index) => (
@@ -133,23 +132,23 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
             <Circle size={700} wrapperClassName="opacity-50" />
             <Circle size={600} />
             <Circle size={450} />
-            <div className="relative h-[700px] w-[700px]">
+            <div className="relative size-[700px]">
                 {generateIcons(outerIcons, 260, selectedStyle, rotationOuter)}
                 {generateIcons(innerIcons, 185, selectedStyle, rotationInner)}
             </div>
             <Circle size={160} noGradient>
                 <div
                     className={`
-                      bg-accent/50 from-primary/50 relative z-50 flex size-full
-                      flex-col items-center justify-center overflow-hidden
-                      rounded-full bg-linear-to-t to-transparent
+                      relative z-50 flex size-full flex-col items-center
+                      justify-center overflow-hidden rounded-full bg-accent/50
+                      bg-linear-to-t from-primary/50 to-transparent
                       backdrop-contrast-150
                       dark:bg-linear-to-b
                     `}>
                     <button
                         className={`
-                          border-primary/30 font-heading text-foreground/70
-                          size-full rounded-t-full border-b text-base font-black
+                          size-full rounded-t-full border-b border-primary/30
+                          font-heading text-base font-black text-foreground/70
                           transition-colors duration-100
                           hover:bg-primary/30 hover:text-foreground
                           hover:backdrop-contrast-125
@@ -170,8 +169,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                     </button>
                     <button
                         className={`
-                          border-primary/10 font-heading text-foreground/70
-                          size-full rounded-b-full border-t text-base font-black
+                          size-full rounded-b-full border-t border-primary/10
+                          font-heading text-base font-black text-foreground/70
                           transition-colors duration-100
                           hover:bg-primary/30 hover:text-foreground
                           hover:backdrop-contrast-125
@@ -211,9 +210,8 @@ const Circle = forwardRef<HTMLDivElement, CircleProps>(
                 className={cn(
                     noGradient || 'hero-section-gradient',
                     `
-                      shadow-primary/20 relative top-1/2 left-1/2
-                      -translate-x-1/2 -translate-y-1/2 rounded-full shadow-2xl
-                      backdrop-contrast-150
+                      relative top-1/2 left-1/2 -translate-1/2 rounded-full
+                      shadow-2xl shadow-primary/20 backdrop-contrast-150
                       dark:shadow-primary/20 dark:backdrop-contrast-150
                     `,
                     className

@@ -25,7 +25,7 @@ jobs:
             - name: Install dependencies
               uses: ./.github/actions/install
               with:
-                  node-version: ""
+                  node-version: ''
 
             - name: Build
               run: pnpm build
@@ -38,8 +38,8 @@ jobs:
               uses: changesets/action@v1
               with:
                   publish: pnpm release
-                  title: "ci(changesets): 🧪 beta version packages"
-                  commit: "ci(changesets): beta version packages"
+                  title: 'ci(changesets): 🧪 beta version packages'
+                  commit: 'ci(changesets): beta version packages'
                   setupGitUser: false
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

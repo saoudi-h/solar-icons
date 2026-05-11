@@ -2,14 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
     "version": "0.2",
     "language": "en",
-    "dictionaries": [
-        "typescript",
-        "node",
-        "npm",
-        "html",
-        "css",
-        "bash"
-    ],
+    "dictionaries": ["typescript", "node", "npm", "html", "css", "bash"],
     "words": [
         "saoudi",
         "hakim",
@@ -112,7 +105,25 @@
         "popover",
         "viewport",
         "collapsible",
-        "themeable"
+        "themeable",
+        "llms",
+        "solidjs",
+        "twoslash",
+        "shiki",
+        "takumi",
+        "Magnifer",
+        "cbranch",
+        "cstat",
+        "constexpr",
+        "wantarray",
+        "bdsw",
+        "linenums",
+        "blinenums",
+        "nosort",
+        "Horizonta",
+        "parsererror",
+        "calcom",
+        "analogjs"
     ],
     "ignorePaths": [
         "node_modules",
@@ -142,7 +153,8 @@
         "packages/core/src/metadata*.json",
         "apps/vue-app/src/components/gal/**",
         "packages/nuxt/playground/**",
-        "packages/core/src/scripts/**"
+        "packages/core/src/scripts/**",
+        "**/coverage/**"
     ],
     "ignoreRegExpList": [
         "/import .* from .*/",

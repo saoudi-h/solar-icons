@@ -1,26 +1,28 @@
 <template>
   <SectionWrapper>
     <div class="flex flex-col gap-8 w-full">
-      
-      <div class="flex flex-row items-center justify-between gap-2 w-full py-12"> 
+      <div class="flex flex-row items-center justify-between gap-2 w-full py-12">
         <div class="flex flex-col gap-2">
           <h1 class="text-4xl font-bold">Solar Icons Gallery</h1>
-          <p class="text-muted-foreground">Explore a collection of Solar Icons in different styles and sizes.</p>
+          <p class="text-muted-foreground">
+            Explore a collection of Solar Icons in different styles and sizes.
+          </p>
         </div>
       </div>
       <!-- Divider -->
       <div class="border-b border-border border-dashed w-full py-4"></div>
-      
+
       <Card class="w-full h-fit bg-muted/30 backdrop-blur-lg shadow-xs border-border/30">
         <CardContent class="space-y-6">
           <div class="flex flex-row gap-2 justify-between flex-wrap">
-            
             <!-- Color Setting -->
             <GalColorPicker :color="config.color" @update:color="setColor" />
-            
+
             <!-- Size Setting -->
             <div class="flex flex-col min-w-32 space-y-3">
-              <Label class="text-sm font-medium">Size: {{ typeof config.size === 'number' ? config.size : 24 }}px</Label>
+              <Label class="text-sm font-medium"
+                >Size: {{ typeof config.size === 'number' ? config.size : 24 }}px</Label
+              >
               <Slider
                 :model-value="[typeof config.size === 'number' ? config.size : 24]"
                 :min="16"
@@ -30,23 +32,20 @@
                 class="w-full"
               />
             </div>
-            
+
             <!-- Style Setting -->
-            <GalStyle     
-              :weight="config.weight" 
-              @update:weight="handleWeightChange" 
-            />
-            
+            <GalStyle :weight="config.weight" @update:weight="handleWeightChange" />
+
             <!-- Mirrored Setting -->
             <div class="flex items-center space-x-2">
-              <Checkbox 
-                id="mirrored" 
+              <Checkbox
+                id="mirrored"
                 :checked="config.mirrored"
                 @update:model-value="handleMirroredChange"
               />
               <Label for="mirrored" class="text-sm font-medium">Mirrored</Label>
             </div>
-            
+
             <!-- Reset Button -->
             <Button @click="resetSettings" variant="outline">
               <Restart class="mr-2 h-4 w-4" />
@@ -55,13 +54,13 @@
           </div>
         </CardContent>
       </Card>
-    
+
       <!-- Main Content - Virtualized Grid -->
       <div ref="mainContainerRef" class="flex-1 flex flex-col">
         <div class="text-sm text-muted-foreground mb-4">
           Showing {{ list.length }} icons ({{ columnsCount }} columns)
         </div>
-        
+
         <!-- Virtualized Container -->
         <div
           ref="parentRef"
@@ -92,11 +91,7 @@
               }"
             >
               <!-- Icons in this row -->
-              <div
-                v-for="colIndex in columnsCount"
-                :key="colIndex"
-                class="flex-1"
-              >
+              <div v-for="colIndex in columnsCount" :key="colIndex" class="flex-1">
                 <div
                   v-if="getIconAtPosition(virtualRow.index, colIndex - 1)"
                   class="hover:shadow-md transition-all cursor-pointer group size-28 rounded-md hover:border-fuchsia-800 bg-muted/30 backdrop-blur-lg border border-border/30 mx-auto"
@@ -105,12 +100,12 @@
                   <div class="flex flex-col items-center justify-between size-full">
                     <div class="w-full flex-1 flex items-center justify-center">
                       <div>
-                        <component 
-                          :is="getIconAtPosition(virtualRow.index, colIndex - 1)![1]" 
-                        />
+                        <component :is="getIconAtPosition(virtualRow.index, colIndex - 1)![1]" />
                       </div>
                     </div>
-                    <p class="text-xs text-center group-hover:text-foreground transition-colors font-extralight text-muted-foreground truncate p-1 w-full">
+                    <p
+                      class="text-xs text-center group-hover:text-foreground transition-colors font-extralight text-muted-foreground truncate p-1 w-full"
+                    >
                       {{ toKebab(getIconAtPosition(virtualRow.index, colIndex - 1)![0]) }}
                     </p>
                   </div>
@@ -120,15 +115,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </SectionWrapper>
 </template>
 
 <script setup lang="ts">
-import { 
-  Restart
-} from '@solar-icons/vue'
+import { Restart } from '@solar-icons/vue'
 
 import * as solar from '@solar-icons/vue'
 import { useSolar } from '@solar-icons/vue/lib'
@@ -190,7 +182,7 @@ onMounted(() => {
   // Setup container width observer
   if (parentRef.value) {
     containerWidth.value = parentRef.value.clientWidth
-    
+
     resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         containerWidth.value = entry.contentRect.width
@@ -202,7 +194,7 @@ onMounted(() => {
   // Setup dynamic height calculation
   if (mainContainerRef.value) {
     calculateGridHeight()
-    
+
     resizeObserverMain = new ResizeObserver(calculateGridHeight)
     resizeObserverMain.observe(mainContainerRef.value)
   }
@@ -222,12 +214,14 @@ onUnmounted(() => {
 })
 
 // Virtualizer setup
-const rowVirtualizer = computed(() => useVirtualizer({
-  count: totalRows.value,
-  getScrollElement: () => parentRef.value,
-  estimateSize: () => 136, // 28 * 4 (size-28) + padding
-  overscan: 5,
-}))
+const rowVirtualizer = computed(() =>
+  useVirtualizer({
+    count: totalRows.value,
+    getScrollElement: () => parentRef.value,
+    estimateSize: () => 136, // 28 * 4 (size-28) + padding
+    overscan: 5,
+  }),
+)
 
 const virtualItems = computed(() => rowVirtualizer.value.value.getVirtualItems())
 const totalSize = computed(() => rowVirtualizer.value.value.getTotalSize())
@@ -244,7 +238,7 @@ const resetSettings = () => {
     color: '#000000',
     size: 24,
     weight: 'Linear',
-    mirrored: false
+    mirrored: false,
   })
 }
 
@@ -256,8 +250,8 @@ const handleWeightChange = (value: IconWeight) => {
   setWeight(value)
 }
 
-const handleMirroredChange = (value: boolean) => {
-  setConfig({ mirrored: value })
+const handleMirroredChange = (value: boolean | 'indeterminate') => {
+  setConfig({ mirrored: value === 'indeterminate' ? false : value })
 }
 
 const toKebab = (input: string): string => {
@@ -268,7 +262,8 @@ const toKebab = (input: string): string => {
 }
 
 const copyIconName = (iconName: string) => {
-  navigator.clipboard.writeText(toKebab(iconName))
+  navigator.clipboard
+    .writeText(toKebab(iconName))
     .then(() => {
       toast('Icon name copied', {
         description: 'Name: ' + toKebab(iconName),

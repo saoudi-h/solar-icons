@@ -1,12 +1,5 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "exclude": [
-    "dist",
-    "node_modules",
-    "playground"
-  ],
-  "include": [
-    "types",
-    "test"
-  ]
+    "extends": "./.nuxt/tsconfig.json",
+    "exclude": ["dist", "node_modules", "playground"],
+    "include": ["types", "test"]
 }

@@ -8,10 +8,10 @@ import { SolarIconsPlugin } from '@solar-icons/vue/lib'
 const app = createApp(App)
 
 app.use(SolarIconsPlugin, {
-    color: 'red',
-    size: '64',
-    weight: 'BoldDuotone',
-    mirrored: false,
+  color: 'red',
+  size: '64',
+  weight: 'BoldDuotone',
+  mirrored: false,
 })
 app.use(router)
 

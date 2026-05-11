@@ -1,12 +1,12 @@
 {
-  "extends": ["@solar-icons/tsconfig/base.json"],
-  "include": ["tsconfig.json"],
-  "exclude": [
-    "apps",
-    "packages",
-    "node_modules",
-    ".turbo",
-    ".vscode",
-    "solar.code-workspace.json"
-  ]
+    "extends": ["@tala-tools/tsconfig/base.json"],
+    "include": ["tsconfig.json"],
+    "exclude": [
+        "apps",
+        "packages",
+        "node_modules",
+        ".turbo",
+        ".vscode",
+        "solar.code-workspace.json"
+    ]
 }

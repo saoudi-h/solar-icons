@@ -146,7 +146,7 @@ export const Actions: FC = () => {
     return (
         <div
             className={`
-              flex flex-row gap-2 border-dashed
+              flex shrink-0 flex-row gap-2 overflow-y-scroll border-dashed
               max-lg:mb-2 max-lg:border-b max-lg:pb-2
               lg:mr-4 lg:flex-col lg:border-r lg:pr-4
             `}>
@@ -158,19 +158,15 @@ export const Actions: FC = () => {
                     color={value.color || ''}
                 />
             </div>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadSVG}
-                className={`p-1`}>
+            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
+              p-1
+            `}>
                 Get SVG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadPNG}
-                className={`p-1`}>
+            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
+              p-1
+            `}>
                 Get PNG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>

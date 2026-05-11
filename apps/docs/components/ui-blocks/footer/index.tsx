@@ -21,8 +21,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                 `}>
                 <div
                     className={`
-                      bg-accent/30 relative w-full gap-2 overflow-hidden
-                      rounded-none py-12
+                      relative w-full gap-2 overflow-hidden rounded-none
+                      bg-accent/30 py-12
                       md:rounded-3xl
                     `}>
                     <div className="absolute inset-0 z-0 overflow-hidden">
@@ -34,17 +34,15 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                         />
                         <div
                             className={`
-                              absolute top-0 left-1/3 h-1/2 w-1/2
-                              -translate-x-1/2 -translate-y-1/2 rounded-full
-                              bg-linear-to-b from-teal-950/30 to-transparent
-                              blur-3xl
+                              absolute top-0 left-1/3 size-1/2 -translate-1/2
+                              rounded-full bg-linear-to-b from-teal-950/30
+                              to-transparent blur-3xl
                             `}></div>
                         <div
                             className={`
-                              absolute top-0 left-2/3 h-1/3 w-1/3
-                              -translate-x-1/2 -translate-y-1/2 rounded-full
-                              bg-linear-to-b from-pink-700/20 to-transparent
-                              blur-3xl
+                              absolute top-0 left-2/3 size-1/3 -translate-1/2
+                              rounded-full bg-linear-to-b from-pink-700/20
+                              to-transparent blur-3xl
                             `}></div>
                         <div
                             className="absolute inset-0"
@@ -67,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                             <div className="flex items-center justify-start">
                                 <Logo />
                             </div>
-                            <p className="text-muted-foreground text-base">{bottomText}</p>
+                            <p className="text-base text-muted-foreground">{bottomText}</p>
                         </div>
 
                         <div
@@ -80,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                     <div key={index}>
                                         <h3
                                             className={`
-                                              font-heading mb-4 text-base
+                                              mb-4 font-heading text-base
                                               font-bold
                                             `}>
                                             {section.title}
@@ -91,7 +89,6 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                     <Link
                                                         href={link.url}
                                                         className={`
-                                                          text-muted-foreground
                                                           flex flex-row
                                                           items-center gap-3
                                                           rounded-md border-l-2
@@ -99,7 +96,9 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                           bg-linear-to-r
                                                           from-transparent
                                                           to-transparent py-1
-                                                          pl-2 transition-colors
+                                                          pl-2
+                                                          text-muted-foreground
+                                                          transition-colors
                                                           duration-100
                                                           ease-linear
                                                           hover:border-primary

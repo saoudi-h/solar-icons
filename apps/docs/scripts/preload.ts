@@ -1,3 +1,3 @@
-import { createMdxPlugin } from 'fumadocs-mdx/bun';
+import { createMdxPlugin } from 'fumadocs-mdx/bun'
 
-Bun.plugin(createMdxPlugin());
+Bun.plugin(createMdxPlugin())

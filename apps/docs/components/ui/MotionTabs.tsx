@@ -47,8 +47,8 @@ export const MotionTabs = ({
             `}>
             <div
                 className={`
-                  border-border bg-default-100 relative h-full min-h-[200px]
-                  rounded-b-lg border px-2 py-4 text-left
+                  relative h-full min-h-[160px] rounded-b-lg border
+                  border-border bg-default-100 px-2 py-4 text-left
                 `}>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -81,7 +81,7 @@ export const MotionTabs = ({
             <div
                 className={cn(
                     `
-                      no-visible-scrollbar relative -bottom-[1px] flex w-full
+                      no-visible-scrollbar relative -bottom-px flex w-full
                       max-w-full flex-row items-center justify-start gap-2
                       overflow-auto
                       md:overflow-visible
@@ -119,8 +119,8 @@ export const MotionTabs = ({
                                 }}
                                 className={cn(
                                     `
-                                      border-border bg-default-100 absolute
-                                      inset-0 rounded-t-lg border border-b-0
+                                      absolute inset-0 rounded-t-lg border
+                                      border-b-0 border-border bg-default-100
                                       shadow-2xl
                                     `,
                                     activeTabClassName
@@ -135,8 +135,8 @@ export const MotionTabs = ({
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.2 }}
                                 className={`
-                                  from-accent absolute inset-0 rounded-t-lg
-                                  bg-gradient-to-b to-transparent
+                                  absolute inset-0 rounded-t-lg bg-linear-to-b
+                                  from-accent to-transparent
                                 `}
                             />
                         )}

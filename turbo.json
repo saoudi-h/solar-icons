@@ -1,63 +1,59 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
-  "globalEnv": [
-    "FIGMA_FILE_ID",
-    "FIGMA_API_TOKEN",
-    "GITHUB_APP_ID",
-    "GITHUB_APP_PRIVATE_KEY",
-    "VERCEL_URL"
-  ],
-  "tasks": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        ".nuxt/**",
-        "dist/**",
-        "src/icons/**",
-        "src/csr/**",
-        "src/ssr/**",
-        "src/defs/**",
-        "src/metadata*.json",
-        "svgs/**"
-      ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
-      "outputs": [],
-      "cache": false
-    },
-    "format": {
-      "dependsOn": [
-        "^format"
-      ]
-    },
-    "format:fix": {
-      "dependsOn": [
-        "^format:fix"
-      ]
-    },
-    "pre-commit": {
-      "dependsOn": [
-        "^pre-commit"
-      ]
-    },
-    "test": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": []
+    "$schema": "https://turbo.build/schema.json",
+    "ui": "tui",
+    "globalEnv": [
+        "FIGMA_FILE_ID",
+        "FIGMA_API_TOKEN",
+        "GITHUB_APP_ID",
+        "GITHUB_APP_PRIVATE_KEY",
+        "VERCEL_URL"
+    ],
+    "tasks": {
+        "build": {
+            "dependsOn": ["^build"],
+            "inputs": ["$TURBO_DEFAULT$", ".env*"],
+            "outputs": [
+                ".next/**",
+                "!.next/cache/**",
+                ".nuxt/**",
+                "dist/**",
+                "src/icons/**",
+                "src/csr/**",
+                "src/ssr/**",
+                "src/defs/**",
+                "src/metadata*.json",
+                "svgs/**"
+            ]
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "clean": {
+            "outputs": [],
+            "cache": false
+        },
+        "typecheck": {
+            "dependsOn": ["^typecheck"]
+        },
+        "lint": {
+            "dependsOn": ["^lint"]
+        },
+        "lint:fix": {
+            "dependsOn": ["^lint:fix"]
+        },
+        "format": {
+            "dependsOn": ["^format"]
+        },
+        "format:fix": {
+            "dependsOn": ["^format:fix"]
+        },
+        "pre-commit": {
+            "dependsOn": ["^pre-commit"]
+        },
+        "test": {
+            "dependsOn": ["^build"],
+            "outputs": []
+        }
     }
-  }
 }

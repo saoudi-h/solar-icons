@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import type { NavigationMenuViewportProps } from "reka-ui"
-import type { HTMLAttributes } from "vue"
-import { reactiveOmit } from "@vueuse/core"
-import {
-  NavigationMenuViewport,
+import type { NavigationMenuViewportProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
+import { NavigationMenuViewport, useForwardProps } from 'reka-ui'
+import { cn } from '@/lib/utils'
 
-  useForwardProps,
-} from "reka-ui"
-import { cn } from "@/lib/utils"
+const props = defineProps<NavigationMenuViewportProps & { class?: HTMLAttributes['class'] }>()
 
-const props = defineProps<NavigationMenuViewportProps & { class?: HTMLAttributes["class"] }>()
-
-const delegatedProps = reactiveOmit(props, "class")
+const delegatedProps = reactiveOmit(props, 'class')
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

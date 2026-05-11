@@ -35,12 +35,12 @@ function getAliasesForIcon(name: string): string[] {
     }
     // Partial matches
     Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-         if (name.includes(correct) && name !== correct) {
-              typos.forEach(typo => {
-                   if (/[^a-zA-Z0-9]/.test(typo)) return
-                   aliases.add(name.replace(correct, typo))
-              })
-         }
+        if (name.includes(correct) && name !== correct) {
+            typos.forEach(typo => {
+                if (/[^a-z0-9]/i.test(typo)) return
+                aliases.add(name.replace(correct, typo))
+            })
+        }
     })
     return Array.from(aliases).filter(a => a !== name)
 }

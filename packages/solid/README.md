@@ -21,12 +21,12 @@ pnpm add @solar-icons/solid
 Import icons from a style and use them as SolidJS components:
 
 ```tsx
-import { Home, Settings } from '@solar-icons/solid/Bold';
+import { House, Settings } from '@solar-icons/solid/Bold';
 
 function App() {
     return (
         <div>
-            <Home size={24} color="#000" />
+            <House size={24} color="#000" />
             <Settings size={32} color="blue" />
         </div>
     );
@@ -52,10 +52,10 @@ function App() {
 ### Direct Import (Optimal Tree-Shaking)
 
 ```tsx
-import Home from '@solar-icons/solid/icons/buildings/Bold/Home';
+import { House } from '@solar-icons/solid/category/building/Bold/House';
 
 function App() {
-    return <Home size={24} color="#000" />;
+    return <House size={24} color="#000" />;
 }
 ```
 

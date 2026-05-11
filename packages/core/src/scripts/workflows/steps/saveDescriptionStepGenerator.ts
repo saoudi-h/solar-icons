@@ -28,14 +28,14 @@ export const saveDescriptionStepGenerator = (metadataPath: string) => async (con
         throw new Error(`Invalid description format for icon: ${iconName}`)
     }
 
-    let metadata = []
+    let metadata: any[]
     try {
         metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'))
     } catch (error) {
         if (isNodeError(error) && error.code === 'ENOENT') {
             metadata = []
         } else {
-            throw new Error(`Error reading metadata file: ${(error as Error).message}`)
+            throw new Error(`Error reading metadata file`, { cause: error })
         }
     }
 

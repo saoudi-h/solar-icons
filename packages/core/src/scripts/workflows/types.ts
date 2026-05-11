@@ -1,4 +1,3 @@
- 
 /**
  * Interface representing an icon.
  */

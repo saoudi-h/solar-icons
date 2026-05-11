@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/react.json",
+    "extends": "@tala-tools/tsconfig/react-library.json",
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",
@@ -10,9 +10,8 @@
         "isolatedDeclarations": true,
         "moduleResolution": "Bundler",
         "rootDir": ".",
-        "baseUrl": "src",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./src/*"]
         },
         "allowImportingTsExtensions": true,
         "noEmit": true

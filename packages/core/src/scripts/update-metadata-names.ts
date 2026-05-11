@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { fixIconName } from '../utils'
 import pc from 'picocolors'
+import { fixIconName } from '../utils'
 
 const __dirname = import.meta.dirname
 const METADATA_PATH = path.resolve(__dirname, '../metadata.json')
@@ -11,7 +11,9 @@ async function updateMetadata() {
     const metadata = JSON.parse(content)
 
     for (const category in metadata.categories) {
-        metadata.categories[category].icons = metadata.categories[category].icons.map(icon => fixIconName(icon))
+        metadata.categories[category].icons = metadata.categories[category].icons.map(icon =>
+            fixIconName(icon)
+        )
         // Remove duplicates if any were created by renaming
         metadata.categories[category].icons = [...new Set(metadata.categories[category].icons)]
     }

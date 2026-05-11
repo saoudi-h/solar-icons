@@ -77,7 +77,7 @@ export const FeaturesSection = () => {
                   overflow-hidden
                 `}
                 ref={ref}>
-                <MotionShapeSvg className="text-primary w-full blur-xs" style={{ y }} />
+                <MotionShapeSvg className="w-full text-primary blur-xs" style={{ y }} />
             </motion.div>
             <div className="flex flex-col items-center py-24">
                 <div className="flex flex-col text-center">
@@ -93,7 +93,7 @@ export const FeaturesSection = () => {
                         Why Choose{' '}
                         <span
                             className={`
-                              decoration-primary box-decoration-clone underline
+                              box-decoration-clone underline decoration-primary
                               underline-offset-8
                             `}>
                             Solar Icons
@@ -120,10 +120,10 @@ export const FeaturesSection = () => {
                                     {hoveredIndex === idx && (
                                         <motion.span
                                             className={`
-                                              border-primary/50 from-primary/20
-                                              absolute inset-0 block h-full
-                                              w-full rounded-xl border-b-2
-                                              bg-linear-to-t to-transparent
+                                              absolute inset-0 block size-full
+                                              rounded-xl border-b-2
+                                              border-primary/50 bg-linear-to-t
+                                              from-primary/20 to-transparent
                                             `}
                                             layoutId="hoverBackground"
                                             initial={{ opacity: 0 }}
@@ -154,7 +154,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     Icon,
     hovered = false,
 }) => (
-    <Card className="bg-accent/20 relative z-20 h-full w-full backdrop-blur-xs">
+    <Card className="relative z-20 size-full bg-accent/20 backdrop-blur-xs">
         <CardHeader>
             <CardTitle>
                 <Heading

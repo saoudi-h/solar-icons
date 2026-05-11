@@ -1,6 +1,5 @@
 import type { IconDataExtractor } from '../types'
 
- 
 export const iconsFromFlatArrayExtractor: IconDataExtractor = function* (data: any) {
     if (!Array.isArray(data)) {
         throw new Error('Expected data to be an array of icons.')

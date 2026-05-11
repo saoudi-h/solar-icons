@@ -1,12 +1,14 @@
 {
-    "extends": "@solar-icons/tsconfig/solid",
+    "extends": "@solar-icons/tsconfig/dom",
+    "display": "Solid",
     "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
         "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "target": "ESNext",
         "rootDir": ".",
-        "baseUrl": ".",
         "paths": {
             "~/*": ["./src/*"]
         },

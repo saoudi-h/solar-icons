@@ -24,10 +24,10 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.2.9",
-    "@angular/cli": "^21.2.9",
-    "@angular/compiler-cli": "^21.2.11",
+    "@angular/build": "^21.2.10",
+    "@angular/cli": "^21.2.10",
+    "@angular/compiler-cli": "^21.2.12",
     "prettier": "^3.8.3",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.3"
   }
 }
