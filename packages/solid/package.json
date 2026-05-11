@@ -65,7 +65,7 @@
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
         "@solar-icons/eslint": "workspace:*",
-        "@solar-icons/prettier": "workspace:*",
+        "@tala-tools/prettier": "0.0.2",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/node": "^25.6.1",
         "picocolors": "^1.1.1",

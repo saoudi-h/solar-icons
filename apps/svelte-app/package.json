@@ -18,7 +18,7 @@
     },
     "devDependencies": {
         "@solar-icons/eslint": "workspace:*",
-        "@solar-icons/prettier": "workspace:*",
+        "@tala-tools/prettier": "0.0.2",
         "@sveltejs/adapter-auto": "^6.0.0",
         "@sveltejs/kit": "^2.59.1",
         "@sveltejs/vite-plugin-svelte": "^5.1.0",

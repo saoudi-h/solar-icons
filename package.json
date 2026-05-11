@@ -24,7 +24,7 @@
         "@commitlint/config-conventional": "^20.5.3",
         "@commitlint/types": "^20.5.0",
         "@solar-icons/eslint": "workspace:*",
-        "@solar-icons/prettier": "workspace:*",
+        "@tala-tools/prettier": "0.0.2",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint": "^9.6.1",
         "@types/node": "^25.6.1",
