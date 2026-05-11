@@ -47,7 +47,7 @@ export const MotionTabs = ({
             `}>
             <div
                 className={`
-                  border-border bg-default-100 relative h-full min-h-[200px]
+                  border-border bg-default-100 relative h-full min-h-[160px]
                   rounded-b-lg border px-2 py-4 text-left
                 `}>
                 <AnimatePresence mode="wait">

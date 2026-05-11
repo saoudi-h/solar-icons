@@ -28,6 +28,7 @@ import { useScreen } from '@/lib/screens'
 import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
+import { useEffect, useRef, useState } from 'react'
 import { DEFAULT_VALUES, filteredCountAtom, useSearchCategories, useSearchKeyword } from './context'
 import type { CategoryOption } from './utils'
 import NumberFlow from '@number-flow/react'
@@ -38,6 +39,23 @@ export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
     const [categories, setCategories] = useSearchCategories()
+
+    const [inputValue, setInputValue] = useState(keyword)
+    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    const handleSearchChange = (value: string) => {
+        setInputValue(value)
+        if (debounceRef.current) clearTimeout(debounceRef.current)
+        debounceRef.current = setTimeout(() => {
+            setKeyword(value)
+        }, 300)
+    }
+
+    useEffect(() => {
+        return () => {
+            if (debounceRef.current) clearTimeout(debounceRef.current)
+        }
+    }, [])
 
     const { value, setValue } = useSolar()
 
@@ -69,6 +87,8 @@ export const FilterBarContent: React.FC = () => {
     const reset = () => {
         setValue(DEFAULT_VALUES)
         setKeyword('')
+        setInputValue('')
+        if (debounceRef.current) clearTimeout(debounceRef.current)
         setCategories([])
     }
 
@@ -143,8 +163,8 @@ export const FilterBarContent: React.FC = () => {
                     <Input
                         type="search"
                         placeholder="Search..."
-                        value={keyword}
-                        onChange={e => setKeyword(e.target.value)}
+                        value={inputValue}
+                        onChange={e => handleSearchChange(e.target.value)}
                         className={`
                           bg-default-200 h-10 w-full rounded-lg border-0
                           border-none! pl-10 text-sm shadow-none

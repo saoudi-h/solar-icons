@@ -145,7 +145,7 @@ export const Actions: FC = () => {
 
     return (
         <div
-            className={`
+            className={` shrink-0 overflow-y-scroll
               flex flex-row gap-2 border-dashed
               max-lg:mb-2 max-lg:border-b max-lg:pb-2
               lg:mr-4 lg:flex-col lg:border-r lg:pr-4
