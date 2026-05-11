@@ -4,7 +4,7 @@ import { Provider as JotaiProvider } from 'jotai'
 import type { Viewport } from 'next'
 import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
-import './global.css'
+import './globals.css'
 import Providers from './Providers'
 import { CalSansUI } from '@calcom/cal-sans-ui/ui'
 

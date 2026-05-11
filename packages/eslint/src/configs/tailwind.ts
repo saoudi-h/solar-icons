@@ -9,7 +9,7 @@ export const tailwind: Config[] = defineConfig([
         },
         settings: {
             'better-tailwindcss': {
-                entryPoint: './app/global.css', // change this in each app
+                entryPoint: './app/globals.css', // change this in each app
                 variables: ['className', 'classNames', 'classes'],
             },
         },
