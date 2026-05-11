@@ -5,15 +5,45 @@ import type { ReactNode } from 'react'
 
 import type { IconData } from '@/core/generated/descriptions'
 import { atom } from 'jotai'
+import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
+import { useCallback } from 'react'
 import type { CategoryOption } from './utils'
 
 export const colorIconDark = atom(false)
-export const categoriesAtom = atom<CategoryOption[]>([])
 export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
-export const keywordAtom = atom<string>('')
 export const selectedIconAtom = atom<IconData | null>(null)
+
+export function useSearchKeyword(): readonly [string, (value: string) => void] {
+    const [param, setParam] = useQueryState('search')
+    const keyword = param ?? ''
+    const setKeyword = useCallback(
+        (value: string) => {
+            setParam(value === '' ? null : value)
+        },
+        [setParam]
+    )
+    return [keyword, setKeyword] as const
+}
+
+export function useSearchCategories(): readonly [CategoryOption[], (cats: CategoryOption[]) => void] {
+    const [params, setParams] = useQueryState(
+        'categories',
+        parseAsArrayOf(parseAsString, ';')
+    )
+
+    const categories = (params?.map(c => ({ value: c, label: c })) as CategoryOption[]) || []
+
+    const setCategories = useCallback(
+        (cats: CategoryOption[]) => {
+            setParams(cats.length === 0 ? null : cats.map(c => c.value))
+        },
+        [setParams]
+    )
+
+    return [categories, setCategories] as const
+}
 
 interface IconProviderWrapperProps {
     children: ReactNode

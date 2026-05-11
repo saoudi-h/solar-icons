@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { InfoCircle } from '@solar-icons/react'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { categoriesAtom, selectedIconAtom } from '../context'
+import { selectedIconAtom, useSearchCategories } from '../context'
 import type { CategoryOption } from '../utils'
 import { Actions } from './Actions'
 import { FloatingDrawer } from './FloatingDrawer'
@@ -31,7 +31,7 @@ export function IconDetail() {
 
 const Content: FC = () => {
     const [selectedIcon] = useAtom(selectedIconAtom)
-    const [categories, setCategories] = useAtom(categoriesAtom)
+    const [categories, setCategories] = useSearchCategories()
 
     const handleCategorySelection = (category: string) => {
         if (categories.some(c => c.value === category)) {

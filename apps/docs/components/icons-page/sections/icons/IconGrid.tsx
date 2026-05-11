@@ -4,15 +4,15 @@ import { useAtom } from 'jotai'
 import React, { useEffect, useRef, useState } from 'react'
 import type { GridProps } from 'react-virtualized'
 import { Grid } from 'react-virtualized'
-import { categoriesAtom, displayedIconsAtom, filteredIconsAtom, keywordAtom } from './context'
+import { displayedIconsAtom, filteredIconsAtom, useSearchCategories, useSearchKeyword } from './context'
 import { IconCard } from './IconCard'
 import { searchIcons } from './utils'
 
 export const IconGridVirtualized: React.FC = () => {
     const gridRef = useRef<Grid>(null)
     const gridWrapperRef = useRef<HTMLDivElement>(null)
-    const [keyword] = useAtom(keywordAtom)
-    const [categories] = useAtom(categoriesAtom)
+    const [keyword] = useSearchKeyword()
+    const [categories] = useSearchCategories()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
     const [gridWidth, setGridWidth] = useState(0)

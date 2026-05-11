@@ -23,21 +23,21 @@ import {
 import type { Option } from '@/components/ui/multi-selector'
 import MultipleSelector from '@/components/ui/multi-selector'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { categories, styles } from '@/core/generated/utils'
+import { categories as allCategories, styles } from '@/core/generated/utils'
 import { useScreen } from '@/lib/screens'
 import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
-import { DEFAULT_VALUES, categoriesAtom, filteredCountAtom, keywordAtom } from './context'
+import { DEFAULT_VALUES, filteredCountAtom, useSearchCategories, useSearchKeyword } from './context'
 import type { CategoryOption } from './utils'
 import NumberFlow from '@number-flow/react'
 
-const categoryOptions = categories.map(c => ({ value: c, label: c }))
+const categoryOptions = allCategories.map(c => ({ value: c, label: c }))
 
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
-    const [keyword, setKeyword] = useAtom(keywordAtom)
-    const [categories, setCategories] = useAtom(categoriesAtom)
+    const [keyword, setKeyword] = useSearchKeyword()
+    const [categories, setCategories] = useSearchCategories()
 
     const { value, setValue } = useSolar()
 
