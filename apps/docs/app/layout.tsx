@@ -1,13 +1,12 @@
 import { baseUrl, createMetadata } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
+import { CalSansUI } from '@calcom/cal-sans-ui/ui'
 import { Provider as JotaiProvider } from 'jotai'
 import type { Viewport } from 'next'
 import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
 import './globals.css'
 import Providers from './Providers'
-import { CalSansUI } from '@calcom/cal-sans-ui/ui'
-
 
 const heading = Bricolage_Grotesque({
     subsets: ['latin'],

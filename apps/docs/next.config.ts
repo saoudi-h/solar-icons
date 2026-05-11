@@ -1,9 +1,9 @@
-import createBundleAnalyzer from '@next/bundle-analyzer';
+import createBundleAnalyzer from '@next/bundle-analyzer'
 import { createMDX } from 'fumadocs-mdx/next'
 import type { NextConfig } from 'next'
 
 const withAnalyzer = createBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
+    enabled: process.env.ANALYZE === 'true',
 })
 
 const withMDX = createMDX()
@@ -21,15 +21,15 @@ const config: NextConfig = {
         'twoslash',
         'shiki',
         '@takumi-rs/image-response',
-  ],
+    ],
     async rewrites() {
-    return [
-      {
-        source: '/docs/:path*.mdx',
-        destination: '/llms.mdx/docs/:path*',
-      },
-    ];
-  },
+        return [
+            {
+                source: '/docs/:path*.mdx',
+                destination: '/llms.mdx/docs/:path*',
+            },
+        ]
+    },
 }
 
-export default withAnalyzer(withMDX(config));
+export default withAnalyzer(withMDX(config))

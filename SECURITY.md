@@ -18,4 +18,3 @@ We aim to resolve security vulnerabilities within 30 days. Once a vulnerability 
 
 - [GitHub Security Best Practices](https://docs.github.com/en/code-security/getting-started/github-security-features)
 - [Snyk Security Best Practices](https://snyk.io/learn/security-best-practices/)
-

@@ -34,7 +34,7 @@ describe('Generated Icon Components (smoke tests)', () => {
                 fixture.detectChanges()
                 expect(fixture.componentInstance).toBeTruthy()
                 expect(fixture.nativeElement.classList.contains('solar-icon')).toBe(true)
-                
+
                 const paths = fixture.nativeElement.querySelectorAll(
                     'path, circle, rect, line, polyline, polygon'
                 )
@@ -43,7 +43,9 @@ describe('Generated Icon Components (smoke tests)', () => {
 
             it('should have correct default SVG attributes', () => {
                 fixture.detectChanges()
-                expect(fixture.nativeElement.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg')
+                expect(fixture.nativeElement.getAttribute('xmlns')).toBe(
+                    'http://www.w3.org/2000/svg'
+                )
                 expect(fixture.nativeElement.getAttribute('viewBox')).toBe('0 0 24 24')
                 expect(fixture.nativeElement.getAttribute('width')).toBe('1em')
             })

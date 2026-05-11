@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { fixIconName } from '../utils'
 import pc from 'picocolors'
+import { fixIconName } from '../utils'
 
 const __dirname = import.meta.dirname
 const SVGS_PATH = path.resolve(__dirname, '../../svgs')
@@ -13,7 +13,7 @@ async function renameFiles(dir) {
         const fullPath = path.join(dir, entry.name)
         if (entry.isDirectory()) {
             await renameFiles(fullPath)
-            
+
             // Rename directory if needed (e.g. categories or weights if we ever add renames for them)
             const newDirName = fixIconName(entry.name)
             if (newDirName !== entry.name) {
@@ -24,7 +24,7 @@ async function renameFiles(dir) {
         } else if (entry.isFile() && entry.name.endsWith('.svg')) {
             const oldName = entry.name.replace('.svg', '')
             const newName = fixIconName(oldName)
-            
+
             if (oldName !== newName) {
                 const newPath = path.join(dir, `${newName}.svg`)
                 await fs.rename(fullPath, newPath)

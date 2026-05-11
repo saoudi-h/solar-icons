@@ -10,14 +10,11 @@ export default createConfigForNuxt({
     stylistic: true,
   },
   dirs: {
-    src: [
-      './playground',
-    ],
+    src: ['./playground'],
+  },
+}).append({
+  // your custom flat config here...
+  rules: {
+    'vue/multi-word-component-names': 'off',
   },
 })
-  .append({
-    // your custom flat config here...
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
-  })

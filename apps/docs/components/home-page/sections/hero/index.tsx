@@ -29,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             `}>
             <div
                 className={`
-                  bg-accent/30 relative w-full gap-2 overflow-hidden rounded-2xl
+                  relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30
                   py-12
                   md:rounded-3xl
                 `}>
@@ -40,15 +40,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 />
                 <div
                     className={`
-                      from-primary/80 absolute top-0 left-1/3 h-1/2 w-1/2
-                      -translate-x-1/2 -translate-y-1/2 rounded-full
-                      bg-linear-to-b to-transparent blur-3xl
+                      absolute top-0 left-1/3 size-1/2 -translate-1/2
+                      rounded-full bg-linear-to-b from-primary/80 to-transparent
+                      blur-3xl
                     `}></div>
                 <div
                     className={`
-                      from-warning/50 absolute top-0 left-2/3 h-1/3 w-1/3
-                      -translate-x-1/2 -translate-y-1/2 rounded-full
-                      bg-linear-to-b to-transparent blur-3xl
+                      absolute top-0 left-2/3 size-1/3 -translate-1/2
+                      rounded-full bg-linear-to-b from-warning/50 to-transparent
+                      blur-3xl
                     `}></div>
                 <div
                     className="absolute inset-0"
@@ -69,9 +69,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </Heading>
                     <p
                         className={`
-                          text-muted-foreground text-center text-base
+                          text-center text-base text-muted-foreground
                           sm:w-[466px]
-                          md:text-lg md:leading-6
+                          md:text-lg/6
                         `}>
                         {content}
                     </p>

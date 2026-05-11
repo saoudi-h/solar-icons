@@ -20,6 +20,7 @@ const config: Config[] = defineConfig([
         settings: {
             'better-tailwindcss': {
                 entryPoint: './app/globals.css',
+                detectComponentClasses: true,
             },
         },
     },

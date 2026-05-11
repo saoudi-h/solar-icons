@@ -30,15 +30,15 @@ export const HoverEffect = ({
                 <Link
                     href={item?.link}
                     key={item?.link}
-                    className="group relative block h-full w-full p-2"
+                    className="group relative block size-full p-2"
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}>
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
                                 className={`
-                                  absolute inset-0 block h-full w-full
-                                  rounded-3xl bg-neutral-200
+                                  absolute inset-0 block size-full rounded-3xl
+                                  bg-neutral-200
                                   dark:bg-slate-800/80
                                 `}
                                 layoutId="hoverBackground"
@@ -75,7 +75,7 @@ export const Card = ({
         <div
             className={cn(
                 `
-                  relative z-20 h-full w-full overflow-hidden rounded-2xl border
+                  relative z-20 size-full overflow-hidden rounded-2xl border
                   border-transparent bg-black p-4
                   group-hover:border-slate-700
                   dark:border-white/20
@@ -107,11 +107,7 @@ export const CardDescription = ({
     children: React.ReactNode
 }) => {
     return (
-        <p
-            className={cn(
-                `mt-8 text-sm leading-relaxed tracking-wide text-zinc-400`,
-                className
-            )}>
+        <p className={cn(`mt-8 text-sm/relaxed tracking-wide text-zinc-400`, className)}>
             {children}
         </p>
     )

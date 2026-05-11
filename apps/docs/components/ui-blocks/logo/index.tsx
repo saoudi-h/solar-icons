@@ -33,17 +33,14 @@ export const Logo: React.FC = () => {
                 transformPerspective: 300,
                 transformStyle: 'preserve-3d',
             }}>
-            <motion.div
-
-                variants={iconVariants}
-                style={{ pointerEvents: 'none' }}
-            >
+            <motion.div variants={iconVariants} style={{ pointerEvents: 'none' }}>
                 <LogoIcon className="size-8" />
             </motion.div>
 
-            <span className={`
-              font-heading pointer-events-none text-lg font-black
-            `}>Solar Icons</span>
+            <span
+                className={`pointer-events-none font-heading text-lg font-black`}>
+                Solar Icons
+            </span>
         </motion.div>
     )
 }

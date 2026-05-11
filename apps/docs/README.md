@@ -43,4 +43,3 @@ These routes are automatically generated from the Fumadocs source and are optimi
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Fumadocs Documentation](https://fumadocs.vercel.app)
 - [Solar Icons Repository](https://github.com/saoudi-h/solar-icons)
-

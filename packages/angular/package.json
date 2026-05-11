@@ -32,7 +32,7 @@
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
-        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules dist out-tsc",
         "typecheck": "tsc --noEmit -p tsconfig.lib.json",

@@ -16,18 +16,18 @@ Please note that all contributors are expected to adhere to the [Code of Conduct
 
 1. Fork the repository and clone it locally.
 2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+    ```bash
+    pnpm install
+    ```
 3. **Build the workspace packages** (required before running apps or tests):
-   ```bash
-   pnpm build
-   ```
-   > **Note:** Packages are no longer built automatically during install. You must run `pnpm build` manually after installing dependencies.
+    ```bash
+    pnpm build
+    ```
+    > **Note:** Packages are no longer built automatically during install. You must run `pnpm build` manually after installing dependencies.
 4. Alternatively, use the setup script to do both steps at once:
-   ```bash
-   pnpm setup
-   ```
+    ```bash
+    pnpm setup
+    ```
 
 ## Pull Request Process
 

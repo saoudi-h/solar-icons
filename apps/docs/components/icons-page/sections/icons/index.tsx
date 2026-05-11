@@ -12,15 +12,14 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
             <section
                 className={cn(
                     `
-                      relative container flex h-full w-full flex-1 flex-col
+                      relative container flex size-full flex-1 flex-col
                       items-center self-center px-0
                     `,
                     className
                 )}>
                 <div
                     className={`
-                      relative flex h-full w-full flex-1 flex-col gap-2
-                      rounded-2xl
+                      relative flex size-full flex-1 flex-col gap-2 rounded-2xl
                       md:rounded-3xl
                     `}>
                     <div

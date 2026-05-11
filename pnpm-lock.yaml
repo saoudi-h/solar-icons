@@ -1069,9 +1069,6 @@ importers:
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
-      prettier-plugin-vue:
-        specifier: ^1.1.6
-        version: 1.1.6
       unplugin-vue:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@25.6.1)(esbuild@0.28.0)(jiti@2.7.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.0)(tsx@4.21.0)(vue@3.5.34(typescript@5.9.3))(yaml@2.8.2)
@@ -14116,9 +14113,6 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
-
-  prettier-plugin-vue@1.1.6:
-    resolution: {integrity: sha512-trQ/oY+6hSsGe2zPIFThXMIM0TbxMEbk2VOrKjwHWuSz7OEo0rnumbz9a47OxVPCaAnGY9vZG8qDTiTmk9bq0A==}
 
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
@@ -32218,10 +32212,6 @@ snapshots:
     dependencies:
       prettier: 3.8.3
       svelte: 5.55.5(@typescript-eslint/types@8.59.2)
-
-  prettier-plugin-vue@1.1.6:
-    dependencies:
-      prettier: 2.8.8
 
   prettier@2.8.8: {}
 

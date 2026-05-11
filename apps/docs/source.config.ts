@@ -1,8 +1,8 @@
+import { remarkSteps } from 'fumadocs-core/mdx-plugins'
+import { metaSchema, pageSchema } from 'fumadocs-core/source/schema'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import lastModified from 'fumadocs-mdx/plugins/last-modified'
-import { z } from 'zod';
-import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
-import { remarkSteps } from 'fumadocs-core/mdx-plugins';
+import { z } from 'zod'
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.vercel.app/docs/mdx/collections#define-docs
@@ -21,7 +21,7 @@ export const docs = defineDocs({
             extractLinkReferences: true,
             valueToExport: ['elementIds'],
         },
-   },
+    },
     meta: {
         schema: metaSchema,
     },
@@ -30,8 +30,6 @@ export const docs = defineDocs({
 export default defineConfig({
     plugins: [lastModified()],
     mdxOptions: {
-        remarkPlugins: [
-          remarkSteps   
-        ]
-    }
-});
+        remarkPlugins: [remarkSteps],
+    },
+})

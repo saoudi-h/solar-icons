@@ -28,14 +28,46 @@ export const config: Config = {
             {
                 title: 'Documentation',
                 links: [
-                    { label: 'React', url: '/docs/packages/react', icon: <Icon icon="devicon:react" /> },
-                    { label: 'React Perf', url: '/docs/packages/react-perf', icon: <Icon icon="devicon:react" /> },
-                    { label: 'React Native', url: '/docs/packages/react-native', icon: <Icon icon="devicon:react" /> },
-                    { label: 'Vue', url: '/docs/packages/vue', icon: <Icon icon="devicon:vuejs" /> },
-                    { label: 'Nuxt', url: '/docs/packages/nuxt', icon: <Icon icon="devicon:nuxtjs" /> },
-                    { label: 'Svelte', url: '/docs/packages/svelte', icon: <Icon icon="devicon:svelte" /> },
-                    { label: 'Solid', url: '/docs/packages/solid', icon: <Icon icon="devicon:solidjs" /> },
-                    { label: 'Angular', url: '/docs/packages/angular', icon: <Icon icon="devicon:angular" /> },
+                    {
+                        label: 'React',
+                        url: '/docs/packages/react',
+                        icon: <Icon icon="devicon:react" />,
+                    },
+                    {
+                        label: 'React Perf',
+                        url: '/docs/packages/react-perf',
+                        icon: <Icon icon="devicon:react" />,
+                    },
+                    {
+                        label: 'React Native',
+                        url: '/docs/packages/react-native',
+                        icon: <Icon icon="devicon:react" />,
+                    },
+                    {
+                        label: 'Vue',
+                        url: '/docs/packages/vue',
+                        icon: <Icon icon="devicon:vuejs" />,
+                    },
+                    {
+                        label: 'Nuxt',
+                        url: '/docs/packages/nuxt',
+                        icon: <Icon icon="devicon:nuxtjs" />,
+                    },
+                    {
+                        label: 'Svelte',
+                        url: '/docs/packages/svelte',
+                        icon: <Icon icon="devicon:svelte" />,
+                    },
+                    {
+                        label: 'Solid',
+                        url: '/docs/packages/solid',
+                        icon: <Icon icon="devicon:solidjs" />,
+                    },
+                    {
+                        label: 'Angular',
+                        url: '/docs/packages/angular',
+                        icon: <Icon icon="devicon:angular" />,
+                    },
                 ],
             },
             {
@@ -121,8 +153,10 @@ export const config: Config = {
                 title: 'React Native',
                 link: '/docs/packages/react-native',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-native',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
-                content: 'Native Solar Icons for React Native and Expo with flexible import options',
+                githubLink:
+                    'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
+                content:
+                    'Native Solar Icons for React Native and Expo with flexible import options',
                 iconify: 'devicon:react',
                 status: 'released',
             },
@@ -131,7 +165,8 @@ export const config: Config = {
                 link: '/docs/packages/vue',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/vue',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/vue',
-                content: 'A flexible and intuitive Vue component library for the Solar icon set, with global configuration and multi-style support',
+                content:
+                    'A flexible and intuitive Vue component library for the Solar icon set, with global configuration and multi-style support',
                 status: 'released',
                 iconify: 'devicon:vuejs',
             },
@@ -140,7 +175,8 @@ export const config: Config = {
                 link: '/docs/packages/nuxt',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/nuxt',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt',
-                content: 'Seamlessly integrate Solar Icons into your Nuxt projects with auto-import and global configuration',
+                content:
+                    'Seamlessly integrate Solar Icons into your Nuxt projects with auto-import and global configuration',
                 status: 'released',
                 iconify: 'devicon:nuxtjs',
             },

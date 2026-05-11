@@ -1,5 +1,5 @@
 {
-    "extends": "@tala-tools/tsconfig/next",
+    "extends": "@tala-tools/tsconfig/nextjs.json",
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {

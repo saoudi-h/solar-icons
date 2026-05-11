@@ -29,20 +29,21 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                       duration-300 ease-in will-change-transform
                     `,
                     {
-                        'border-primary bg-primary/10 border': isSelected,
+                        'border border-primary bg-primary/10': isSelected,
                         'hover:bg-default-200/50': !isSelected,
                     }
                 )}>
                 <Icon
                     className={cn('transition-transform duration-300 ease-in', {
                         'group-hover:scale-125': !isSelected,
-                        'text-primary scale-125': isSelected,
+                        'scale-125 text-primary': isSelected,
                     })}
                 />
                 <p
                     className={`
-                      text-muted-foreground w-full truncate text-center text-xs
-                      font-extralight transition-transform duration-300 ease-in
+                      w-full truncate text-center text-xs font-extralight
+                      text-muted-foreground transition-transform duration-300
+                      ease-in
                       group-hover:translate-y-1
                     `}>
                     {name}

@@ -75,10 +75,12 @@ Then merge `beta` → `main` to publish stable versions.
 ## GitHub Actions Workflows
 
 ### release.yml (main branch)
+
 - Triggered on push to `main`
 - Publishes stable versions
 
 ### release-beta.yml (beta branch)
+
 - Triggered on push to `beta`
 - Publishes beta versions with `--tag beta`
 
@@ -96,10 +98,10 @@ npm install @solar-icons/react@1.0.5-beta.0
 
 ## Convention Summary
 
-| Branch | NPM Tag | Versions | Public |
-|--------|---------|----------|--------|
-| `main` | `latest` | `1.0.4` | Yes, default |
-| `beta` | `beta` | `1.0.5-beta.0` | Yes, opt-in |
+| Branch | NPM Tag  | Versions       | Public       |
+| ------ | -------- | -------------- | ------------ |
+| `main` | `latest` | `1.0.4`        | Yes, default |
+| `beta` | `beta`   | `1.0.5-beta.0` | Yes, opt-in  |
 
 ## Alternatives to a beta branch
 

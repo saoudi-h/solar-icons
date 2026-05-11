@@ -17,20 +17,20 @@ nuxi module add @solar-icons/nuxt
 ```js
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['@solar-icons/nuxt'],
-  solarIcons: {
-    // Prefix for auto-imported components (default: 'Solar')
-    namePrefix: 'Solar',
-    // Auto-import all icons as components (default: true)
-    autoImport: true,
-    // Inject global provider automatically (default: true)
-    provider: true,
-    // Default icon properties
-    color: 'currentColor',
-    size: 24,
-    weight: 'Linear',
-    mirrored: false,
-  },
+    modules: ['@solar-icons/nuxt'],
+    solarIcons: {
+        // Prefix for auto-imported components (default: 'Solar')
+        namePrefix: 'Solar',
+        // Auto-import all icons as components (default: true)
+        autoImport: true,
+        // Inject global provider automatically (default: true)
+        provider: true,
+        // Default icon properties
+        color: 'currentColor',
+        size: 24,
+        weight: 'Linear',
+        mirrored: false,
+    },
 })
 ```
 
@@ -42,11 +42,11 @@ With auto-import enabled (default), you can use any Solar icon directly in your 
 
 ```vue
 <template>
-  <div>
-    <SolarArrowUp :size="24" weight="Outline" :mirrored="true" />
-    <SolarArrowsArrowDown :size="32" weight="BoldDuotone" />
-    <SolarArrowsAltArrowLeft color="#fff" class="bg-black" weight="Bold" />
-  </div>
+    <div>
+        <SolarArrowUp :size="24" weight="Outline" :mirrored="true" />
+        <SolarArrowsArrowDown :size="32" weight="BoldDuotone" />
+        <SolarArrowsAltArrowLeft color="#fff" class="bg-black" weight="Bold" />
+    </div>
 </template>
 ```
 
@@ -56,11 +56,11 @@ For more control, you can manually import icons using the provided aliases:
 
 ```vue
 <template>
-  <div>
-    <ArrowUp :size="24" weight="Outline" />
-    <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
-    <Arrows.AltArrowLeft color="#fff" weight="Bold" />
-  </div>
+    <div>
+        <ArrowUp :size="24" weight="Outline" />
+        <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
+        <Arrows.AltArrowLeft color="#fff" weight="Bold" />
+    </div>
 </template>
 
 <script setup>
@@ -77,9 +77,9 @@ The module automatically provides a global configuration context. You can overri
 
 ```vue
 <template>
-  <SolarProvider :size="32" color="purple" weight="Linear">
-    <YourComponents />
-  </SolarProvider>
+    <SolarProvider :size="32" color="purple" weight="Linear">
+        <YourComponents />
+    </SolarProvider>
 </template>
 
 <script setup>
@@ -93,10 +93,10 @@ Access and modify icon configurations using the Composition API:
 
 ```vue
 <template>
-  <div>
-    <ArrowUp :size="iconSize" weight="Outline" />
-    <button @click="increaseSize">Increase Size</button>
-  </div>
+    <div>
+        <ArrowUp :size="iconSize" weight="Outline" />
+        <button @click="increaseSize">Increase Size</button>
+    </div>
 </template>
 
 <script setup>
@@ -107,9 +107,9 @@ const { config, setSize } = useSolar()
 const iconSize = ref(24)
 
 const increaseSize = () => {
-  const newSize = parseInt(iconSize.value) + 4
-  iconSize.value = newSize
-  setSize(newSize)
+    const newSize = parseInt(iconSize.value) + 4
+    iconSize.value = newSize
+    setSize(newSize)
 }
 </script>
 ```
@@ -118,19 +118,20 @@ const increaseSize = () => {
 
 The module offers the following configuration options in your `nuxt.config.ts`:
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `namePrefix` | string | `'Solar'` | Prefix for auto-imported components |
-| `autoImport` | boolean | `true` | Auto-import all icons as components |
-| `provider` | boolean | `true` | Inject global provider automatically |
-| `color` | string | `'currentColor'` | Default icon color |
-| `size` | number \| string | `24` | Default icon size |
-| `weight` | string | `'Linear'` | Default icon style |
-| `mirrored` | boolean | `false` | Default horizontal flip state |
+| Option       | Type             | Default          | Description                          |
+| ------------ | ---------------- | ---------------- | ------------------------------------ |
+| `namePrefix` | string           | `'Solar'`        | Prefix for auto-imported components  |
+| `autoImport` | boolean          | `true`           | Auto-import all icons as components  |
+| `provider`   | boolean          | `true`           | Inject global provider automatically |
+| `color`      | string           | `'currentColor'` | Default icon color                   |
+| `size`       | number \| string | `24`             | Default icon size                    |
+| `weight`     | string           | `'Linear'`       | Default icon style                   |
+| `mirrored`   | boolean          | `false`          | Default horizontal flip state        |
 
 ## Available Aliases
 
 The module provides these import aliases for convenience:
+
 - `#solar-icons` - Exports all icons and components from `@solar-icons/vue`
 - `#solar-icons/lib` - Exports library utilities like `SolarProvider`, `useSolar`
 - `#solar-icons/category` - Exports categorized icon collections
@@ -138,6 +139,7 @@ The module provides these import aliases for convenience:
 ## Compatibility
 
 This module is compatible with:
+
 - Nuxt 3.0.0 and higher
 - Node.js 18.0.0 and higher
 
@@ -150,4 +152,5 @@ This library is licensed under the [MIT License](./LICENSE), making it free for 
 Special thanks to **480 Design** for creating the original Solar icon pack. Additional appreciation goes to **Phosphor Icons** and **Lucide Icons** for their inspiration in shaping the structure and approach of the `@solar-icons` packages.
 
 ---
+
 For detailed documentation and examples, refer to the [project's main documentation](https://solar-icons.vercel.app/docs/packages/nuxt).

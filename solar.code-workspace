@@ -49,24 +49,24 @@
         },
         {
             "name": "svelte-app",
-            "path": "apps/svelte-app"
+            "path": "apps/svelte-app",
         },
         {
             "name": "solid",
-            "path": "packages/solid"
+            "path": "packages/solid",
         },
         {
             "name": "solid-app",
-            "path": "apps/solid-app"
+            "path": "apps/solid-app",
         },
         {
             "name": "angular",
-            "path": "packages/angular"
+            "path": "packages/angular",
         },
         {
             "name": "angular-app",
-            "path": "apps/angular-app"
-        }
+            "path": "apps/angular-app",
+        },
     ],
     "settings": {
         "biome.enabled": false,
@@ -87,7 +87,7 @@
             "titleBar.activeBackground": "#e4c8bb",
             "titleBar.activeForeground": "#15202b",
             "titleBar.inactiveBackground": "#e4c8bb99",
-            "titleBar.inactiveForeground": "#15202b99"
+            "titleBar.inactiveForeground": "#15202b99",
         },
         "peacock.color": "#e4c8bb",
         "cSpell.words": [

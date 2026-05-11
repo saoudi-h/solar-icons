@@ -19,7 +19,8 @@ export interface IconBaseProps {
 }
 
 export interface IconProps
-    extends ComponentPropsWithoutRef<'svg'>,
+    extends
+        ComponentPropsWithoutRef<'svg'>,
         RefAttributes<SVGSVGElement>,
         Omit<IconBaseProps, 'color'> {
     color?: string

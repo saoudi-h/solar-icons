@@ -27,11 +27,11 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
     return [keyword, setKeyword] as const
 }
 
-export function useSearchCategories(): readonly [CategoryOption[], (cats: CategoryOption[]) => void] {
-    const [params, setParams] = useQueryState(
-        'categories',
-        parseAsArrayOf(parseAsString, ';')
-    )
+export function useSearchCategories(): readonly [
+    CategoryOption[],
+    (cats: CategoryOption[]) => void,
+] {
+    const [params, setParams] = useQueryState('categories', parseAsArrayOf(parseAsString, ';'))
 
     const categories = (params?.map(c => ({ value: c, label: c })) as CategoryOption[]) || []
 

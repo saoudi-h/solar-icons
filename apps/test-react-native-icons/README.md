@@ -46,12 +46,12 @@ npm run web
 The app tests all import paths:
 
 ```tsx
-import { Home } from '@solar-icons/react-native/Bold';
-import { Home as HomeLinear } from '@solar-icons/react-native/Linear';
-import { Home as HomeOutline } from '@solar-icons/react-native/Outline';
-import { Home as HomeBroken } from '@solar-icons/react-native/Broken';
-import { Home as HomeBoldDuotone } from '@solar-icons/react-native/BoldDuotone';
-import { Home as HomeLineDuotone } from '@solar-icons/react-native/LineDuotone';
+import { Home } from '@solar-icons/react-native/Bold'
+import { Home as HomeLinear } from '@solar-icons/react-native/Linear'
+import { Home as HomeOutline } from '@solar-icons/react-native/Outline'
+import { Home as HomeBroken } from '@solar-icons/react-native/Broken'
+import { Home as HomeBoldDuotone } from '@solar-icons/react-native/BoldDuotone'
+import { Home as HomeLineDuotone } from '@solar-icons/react-native/LineDuotone'
 ```
 
 ### 2. Default Props

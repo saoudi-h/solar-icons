@@ -131,9 +131,8 @@ export function Rate({
                 {previous ? (
                     <div
                         className={`
-                          bg-fd-card text-fd-muted-foreground flex flex-col
-                          items-center gap-3 rounded-xl px-3 py-6 text-center
-                          text-sm
+                          flex flex-col items-center gap-3 rounded-xl bg-fd-card
+                          px-3 py-6 text-center text-sm text-fd-muted-foreground
                         `}>
                         <p>Thank you for your feedback!</p>
                         <div className="flex flex-row items-center gap-2">
@@ -168,14 +167,13 @@ export function Rate({
                 ) : (
                     <form className="flex flex-col gap-3" onSubmit={submit}>
                         <textarea
-                             
                             autoFocus
                             required
                             value={message}
                             onChange={e => setMessage(e.target.value)}
                             className={`
-                              bg-fd-secondary text-fd-secondary-foreground
-                              resize-none rounded-lg border p-3
+                              resize-none rounded-lg border bg-fd-secondary p-3
+                              text-fd-secondary-foreground
                               placeholder:text-fd-muted-foreground
                               focus-visible:outline-none
                             `}
@@ -188,10 +186,9 @@ export function Rate({
                         />
                         <button
                             type="submit"
-                            className={cn(
-                                buttonVariants({ color: 'outline' }),
-                                `w-fit px-3`
-                            )}
+                            className={cn(buttonVariants({ color: 'outline' }), `
+                              w-fit px-3
+                            `)}
                             disabled={isPending}>
                             Submit
                         </button>

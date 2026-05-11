@@ -19,9 +19,9 @@ const SelectTrigger = React.forwardRef<
         ref={ref}
         className={cn(
             `
-              border-input ring-offset-background flex h-9 w-full items-center
-              justify-between rounded-lg border bg-transparent px-3 py-2 text-sm
-              whitespace-nowrap shadow-xs
+              flex h-9 w-full items-center justify-between rounded-lg border
+              border-input bg-transparent px-3 py-2 text-sm whitespace-nowrap
+              shadow-xs ring-offset-background
               placeholder:text-muted-foreground
               disabled:cursor-not-allowed disabled:opacity-50
               [&>span]:line-clamp-1
@@ -31,7 +31,7 @@ const SelectTrigger = React.forwardRef<
         {...props}>
         {children}
         <SelectPrimitive.Icon asChild>
-            <AltArrowDown className="h-4 w-4 opacity-50" />
+            <AltArrowDown className="size-4 opacity-50" />
         </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
 ))
@@ -45,7 +45,7 @@ const SelectScrollUpButton = React.forwardRef<
         ref={ref}
         className={cn('flex cursor-default items-center justify-center py-1', className)}
         {...props}>
-        <AltArrowUp className="h-4 w-4" />
+        <AltArrowUp className="size-4" />
     </SelectPrimitive.ScrollUpButton>
 ))
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
@@ -58,7 +58,7 @@ const SelectScrollDownButton = React.forwardRef<
         ref={ref}
         className={cn('flex cursor-default items-center justify-center py-1', className)}
         {...props}>
-        <AltArrowDown className="h-4 w-4" />
+        <AltArrowDown className="size-4" />
     </SelectPrimitive.ScrollDownButton>
 ))
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName
@@ -72,17 +72,17 @@ const SelectContent = React.forwardRef<
             ref={ref}
             className={cn(
                 `
-                  border-border/50 bg-popover text-popover-foreground
+                  relative z-50 max-h-96 min-w-32 overflow-hidden rounded-xl
+                  border border-border/50 bg-popover text-popover-foreground
+                  shadow-md backdrop-blur-md
                   data-[side=bottom]:slide-in-from-top-2
                   data-[side=left]:slide-in-from-right-2
                   data-[side=right]:slide-in-from-left-2
                   data-[side=top]:slide-in-from-bottom-2
-                  data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
-                  data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
-                  relative z-50 max-h-96 min-w-32 overflow-hidden rounded-xl
-                  border shadow-md backdrop-blur-md
-                  data-[state=closed]:animate-out
-                  data-[state=open]:animate-in
+                  data-[state=closed]:animate-out data-[state=closed]:fade-out-0
+                  data-[state=closed]:zoom-out-95
+                  data-[state=open]:animate-in data-[state=open]:fade-in-0
+                  data-[state=open]:zoom-in-95
                 `,
                 position === 'popper' &&
                     `
@@ -133,9 +133,9 @@ const SelectItem = React.forwardRef<
         ref={ref}
         className={cn(
             `
-              focus:bg-accent/50 focus:text-accent-foreground
               relative flex w-full cursor-default items-center rounded-lg py-1.5
               pr-8 pl-2 text-sm outline-hidden select-none
+              focus:bg-accent/50 focus:text-accent-foreground
               data-disabled:pointer-events-none data-disabled:opacity-50
             `,
             className
@@ -143,10 +143,10 @@ const SelectItem = React.forwardRef<
         {...props}>
         <span
             className={`
-              absolute right-2 flex h-3.5 w-3.5 items-center justify-center
+              absolute right-2 flex size-3.5 items-center justify-center
             `}>
             <SelectPrimitive.ItemIndicator>
-                <CheckCircle className="h-4 w-4" />
+                <CheckCircle className="size-4" />
             </SelectPrimitive.ItemIndicator>
         </span>
         <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -160,7 +160,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <SelectPrimitive.Separator
         ref={ref}
-        className={cn('bg-muted -mx-1 my-1 h-px', className)}
+        className={cn('-mx-1 my-1 h-px bg-muted', className)}
         {...props}
     />
 ))

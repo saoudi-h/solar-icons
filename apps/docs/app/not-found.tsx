@@ -23,7 +23,7 @@ const NotFound = () => {
     useEffect(() => {
         if (typeof window !== 'undefined' && window.history) {
             // eslint-disable-next-line
-            setHasHistory(window.history.length > 1);
+            setHasHistory(window.history.length > 1)
         }
         return undefined
     }, [])
@@ -31,8 +31,8 @@ const NotFound = () => {
     return (
         <main
             className={`
-              bg-background relative flex min-h-dvh w-full flex-1 flex-col
-              justify-center gap-9 py-4 text-center
+              relative flex min-h-dvh w-full flex-1 flex-col justify-center
+              gap-9 bg-background py-4 text-center
               md:gap-12 md:px-10 md:py-[34px]
             `}>
             <section
@@ -43,8 +43,8 @@ const NotFound = () => {
                 `}>
                 <div
                     className={`
-                      bg-accent/30 relative w-full gap-2 overflow-hidden
-                      rounded-2xl py-12
+                      relative w-full gap-2 overflow-hidden rounded-2xl
+                      bg-accent/30 py-12
                       md:rounded-3xl
                     `}>
                     <NoiseSvg
@@ -55,9 +55,9 @@ const NotFound = () => {
                     />
                     <div
                         className={`
-                          from-destructive/80 absolute top-0 left-1/2 h-2/3
-                          w-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full
-                          bg-linear-to-b to-transparent blur-3xl
+                          absolute top-0 left-1/2 size-2/3 -translate-1/2
+                          rounded-full bg-linear-to-b from-destructive/80
+                          to-transparent blur-3xl
                         `}></div>
                     <div
                         className="absolute inset-0"
@@ -78,9 +78,9 @@ const NotFound = () => {
                         </Heading>
                         <p
                             className={`
-                              text-muted-foreground text-center text-base
+                              text-center text-base text-muted-foreground
                               sm:w-[466px]
-                              md:text-lg md:leading-6
+                              md:text-lg/6
                             `}>
                             {description}
                         </p>

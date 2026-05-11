@@ -5,10 +5,10 @@ import * as React from 'react'
 
 const buttonVariants = cva(
     `
-      focus-visible:ring-ring focus-visible:ring-1 focus-visible:outline-hidden
       inline-flex w-fit items-center justify-center gap-2 rounded-md border-2
       text-sm font-medium whitespace-nowrap shadow-2xs transition-all
       duration-200 ease-in
+      focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
       active:scale-95
       disabled:pointer-events-none disabled:opacity-50
       [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0
@@ -30,7 +30,7 @@ const buttonVariants = cva(
                 sm: 'h-8 rounded-md border px-4 text-xs',
                 lg: 'h-10 rounded-md px-9',
                 xl: 'h-12 rounded-md px-9',
-                icon: 'h-9 w-9 border!',
+                icon: 'size-9 border!',
             },
             colors: {
                 default: `
@@ -120,7 +120,7 @@ const buttonVariants = cva(
                 colors: 'default',
                 className: `
                   text-foreground/70
-                  hover:bg-default-200/50! hover:text-foreground/100
+                  hover:bg-default-200/50! hover:text-foreground
                 `,
             },
             {
@@ -128,7 +128,7 @@ const buttonVariants = cva(
                 colors: 'default',
                 className: `
                   text-foreground/70
-                  hover:text-foreground/100
+                  hover:text-foreground
                 `,
             },
         ],
@@ -136,8 +136,7 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-        VariantProps<typeof buttonVariants> {
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
     asChild?: boolean
 }
 

@@ -10,7 +10,7 @@
         "postinstall": "fumadocs-mdx",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
-        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "typecheck": "tsc --noEmit",
         "typecheck:scripts": "tsc -p tsconfig.scripts.json",

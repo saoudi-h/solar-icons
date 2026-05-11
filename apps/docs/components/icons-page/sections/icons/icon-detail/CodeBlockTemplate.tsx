@@ -9,7 +9,7 @@ const pre = (props: ComponentProps<'pre'>) => (
     </CodeBlock>
 )
 
-export const CodeBlockTemplate = ({ code, lang }: { code: string, lang: string }) => (
+export const CodeBlockTemplate = ({ code, lang }: { code: string; lang: string }) => (
     <DynamicCodeBlock
         options={{
             themes: {

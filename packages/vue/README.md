@@ -21,18 +21,11 @@ To use an icon in your Vue application, simply import it from the package:
 ```vue
 <template>
     <div>
-        <ArrowUp :size="24" weight="Outline" :mirrored="true" /> 
-         
-        <solar.Arrows.ArrowDown
-            :size="32"
-            weight="BoldDuotone" 
-        />
-        
-        <Arrows.AltArrowLeft
-            color="#fff"
-            class="bg-black"
-            weight="Bold" 
-        />
+        <ArrowUp :size="24" weight="Outline" :mirrored="true" />
+
+        <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
+
+        <Arrows.AltArrowLeft color="#fff" class="bg-black" weight="Bold" />
     </div>
 </template>
 <script setup>
@@ -45,6 +38,7 @@ import { Arrows } from '@solar-icons/vue/category'
 ## Properties
 
 Each icon component supports the following properties:
+
 - **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
 - **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
 - **`weight`**: Specifies the icon style. Options include `"Bold"`, `"Linear"`, `"Outline"`, `"BoldDuotone"`, `"LineDuotone"`, and `"Broken"`.
@@ -59,7 +53,7 @@ To apply consistent styles across multiple icons, use the `SolarProvider` compon
 
 ```vue
 <template>
-     <SolarProvider :size="32" color="purple" weight="Linear"> <YourComponents /> </SolarProvider>
+    <SolarProvider :size="32" color="purple" weight="Linear"> <YourComponents /> </SolarProvider>
 </template>
 <script setup>
 import { SolarProvider } from '@solar-icons/vue'
@@ -90,9 +84,8 @@ You can also access and modify the icon configuration using the Composition API:
 ```vue
 <template>
     <div>
-         <ArrowUp :size="iconSize" weight="Outline" /> <button @click="increaseSize">
-             Increase Size</button
-        >
+        <ArrowUp :size="iconSize" weight="Outline" />
+        <button @click="increaseSize">Increase Size</button>
     </div>
 </template>
 <script setup>
@@ -114,11 +107,12 @@ As an open-source project, contributions are welcome. However, please note that 
 
 ## License
 
-This library is licensed under the [MIT License](./LICENSE), making it free for both personal and commercial use. However, the Solar icon pack is licensed under **CC BY 4.0** by **480 Design**, which allows commercial use with attribution. Please visit [480 Design's Figma page](https://www.figma.com/community/file/1166831539721848736 ) to explore the original icon set or see the [LICENSE-THIRD-PARTY](./LICENSE-THIRD-PARTY) file.
+This library is licensed under the [MIT License](./LICENSE), making it free for both personal and commercial use. However, the Solar icon pack is licensed under **CC BY 4.0** by **480 Design**, which allows commercial use with attribution. Please visit [480 Design's Figma page](https://www.figma.com/community/file/1166831539721848736) to explore the original icon set or see the [LICENSE-THIRD-PARTY](./LICENSE-THIRD-PARTY) file.
 
 ## Acknowledgements
 
 Special thanks to **480 Design** for creating the original Solar icon pack. Additional appreciation goes to **Phosphor Icons** and **Lucide Icons** for their inspiration in shaping the structure and approach of the `@solar-icons` packages.
 
 ---
-For detailed documentation and examples, refer to the [project's main documentation](https://solar-icons.vercel.app/docs/packages/vue ).
+
+For detailed documentation and examples, refer to the [project's main documentation](https://solar-icons.vercel.app/docs/packages/vue).

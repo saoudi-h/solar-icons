@@ -25,8 +25,7 @@ export const VueCode: FC = () => {
             />
             <CodeBlockTemplate
                 lang="vue"
-                code={
-`<template>
+                code={`<template>
     <${selectedIcon?.Icon.displayName} weight="${value.weight}" size="${value.size}" color="${value.color}" />
 </template>`}
             />

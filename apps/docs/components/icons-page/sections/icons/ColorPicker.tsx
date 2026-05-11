@@ -79,8 +79,8 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                         variant="default"
                         colors="accent"
                         className={`
-                          bg-default-200 relative size-10 overflow-hidden
-                          rounded-l-lg rounded-r-none border-none
+                          relative size-10 overflow-hidden rounded-l-lg
+                          rounded-r-none border-none bg-default-200
                         `}
                         pressed={synched}
                         onPressedChange={setSynched}>
@@ -131,7 +131,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                             asChild
                             variant="default"
                             colors="secondary"
-                            className="bg-default-200 w-full border-none! p-0!">
+                            className="w-full border-none! bg-default-200 p-0!">
                             <Input
                                 style={{
                                     backgroundColor: color,
@@ -149,14 +149,14 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                         </Button>
                     </div>
                 </PopoverTrigger>
-                <PopoverContent className="bg-default-200 w-full p-0">
+                <PopoverContent className="w-full bg-default-200 p-0">
                     <HexColorPicker color={color} onChange={setColor} />
                 </PopoverContent>
             </Popover>
             <CopyButton
                 value={color}
                 className={`
-                  bg-default-200 h-10 rounded-l-none rounded-r-lg border-none
+                  h-10 rounded-l-none rounded-r-lg border-none bg-default-200
                 `}
                 colors="accent"
                 variant="default"></CopyButton>

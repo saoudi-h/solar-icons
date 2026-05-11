@@ -9,7 +9,7 @@ export const GridPlaceholder: React.FC = () => {
                     <div
                         key={index}
                         className={`
-                          wrap flex flex-col items-center justify-center gap-4
+                          flex flex-col items-center justify-center gap-4
                           rounded-lg p-4
                         `}>
                         <Skeleton className="size-16 rounded-3xl" />

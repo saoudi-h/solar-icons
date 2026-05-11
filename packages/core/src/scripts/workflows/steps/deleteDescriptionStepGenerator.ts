@@ -14,18 +14,17 @@ export const deleteDescriptionStepGenerator =
     (metadataPath: string) => async (context: Context) => {
         const { iconName } = context
 
-        let metadata = []
+        let metadata: any[]
         try {
             metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'))
         } catch (error) {
             if (isNodeError(error) && error.code === 'ENOENT') {
                 metadata = []
             } else {
-                throw new Error(`Error reading metadata file: ${(error as Error).message}`)
+                throw new Error(`Error reading metadata file`, { cause: error })
             }
         }
 
-         
         const index = metadata.findIndex((item: any) => item.name === iconName)
         if (index >= 0) {
             metadata.splice(index, 1)

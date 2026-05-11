@@ -4,7 +4,12 @@ import { useAtom } from 'jotai'
 import React, { useEffect, useRef, useState } from 'react'
 import type { GridProps } from 'react-virtualized'
 import { Grid } from 'react-virtualized'
-import { displayedIconsAtom, filteredIconsAtom, useSearchCategories, useSearchKeyword } from './context'
+import {
+    displayedIconsAtom,
+    filteredIconsAtom,
+    useSearchCategories,
+    useSearchKeyword,
+} from './context'
 import { IconCard } from './IconCard'
 import { searchIcons } from './utils'
 

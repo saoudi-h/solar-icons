@@ -4,3 +4,5 @@ build
 *.tsbuildinfo
 .turbo
 src/icons
+.svelte-kit
+

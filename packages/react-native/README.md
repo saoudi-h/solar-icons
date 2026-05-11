@@ -74,7 +74,6 @@ Plus all props from `react-native-svg`'s `SvgProps` (except `width` and `height`
 
 ```tsx
 import { Home } from '@solar-icons/react-native/Bold'
-
 ;<Home /> // 24x24, currentColor
 ```
 
@@ -82,7 +81,6 @@ import { Home } from '@solar-icons/react-native/Bold'
 
 ```tsx
 import { User } from '@solar-icons/react-native/Linear'
-
 ;<User size={48} color="#ff0000" />
 ```
 
@@ -90,7 +88,6 @@ import { User } from '@solar-icons/react-native/Linear'
 
 ```tsx
 import { Heart } from '@solar-icons/react-native/Bold'
-
 ;<View style={{ color: '#00ff00' }}>
     <Heart /> // Will be green
 </View>
@@ -100,7 +97,6 @@ import { Heart } from '@solar-icons/react-native/Bold'
 
 ```tsx
 import { ArrowRight } from '@solar-icons/react-native/Linear'
-
 ;<ArrowRight mirrored size={32} />
 ```
 
@@ -108,7 +104,6 @@ import { ArrowRight } from '@solar-icons/react-native/Linear'
 
 ```tsx
 import { Star } from '@solar-icons/react-native/Bold'
-
 ;<Star size={40} color="#ffd700" opacity={0.8} style={{ marginTop: 10 }} />
 ```
 

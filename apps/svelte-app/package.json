@@ -10,7 +10,7 @@
         "clean": "rm -rf node_modules .svelte-kit",
         "lint": "eslint . --max-warnings 0",
         "lint:fix": "eslint . --fix",
-        "format:check": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
         "typecheck": "tsc --noEmit",

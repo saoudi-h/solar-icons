@@ -56,18 +56,18 @@ interface FileDefinition {
  * Applies name corrections to a string based on the ICON_RENAMES dictionary.
  */
 function applyCorrections(name: string): string {
-    let corrected = name;
-    
+    let corrected = name
+
     // Standard renames
     for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-        const regex = new RegExp(typo, 'gi');
-        corrected = corrected.replace(regex, correction);
+        const regex = new RegExp(typo, 'gi')
+        corrected = corrected.replace(regex, correction)
     }
-    
+
     // Special case for 'Horizonta' -> 'Horizontal' (only if not already followed by 'l')
-    corrected = corrected.replace(/Horizonta(?!l)/gi, 'Horizontal');
-    
-    return corrected;
+    corrected = corrected.replace(/Horizonta(?!l)/gi, 'Horizontal')
+
+    return corrected
 }
 
 /**
@@ -80,8 +80,8 @@ function getIcons(map: SvgMap): Icon[] {
         for (const [style, names] of Object.entries(styles)) {
             for (const [name, data] of Object.entries(names)) {
                 // Apply corrections to the icon name (kebab-case)
-                const correctedName = applyCorrections(name);
-                
+                const correctedName = applyCorrections(name)
+
                 // Parse the node string back to IconNode array to generate template
                 const nodeArray = eval(data.node) // Safe since we generated this ourselves
                 const template = nodesToTemplate(nodeArray)
@@ -158,10 +158,7 @@ export class ${icon.globalName} extends IconBase {}
      */
     categoryIndex: (category: string, icons: Icon[], folderPath: string): FileDefinition => {
         const exports = icons
-            .map(
-                icon =>
-                    `export { ${icon.globalName} } from './${icon.style}/${icon.globalName}';`
-            )
+            .map(icon => `export { ${icon.globalName} } from './${icon.style}/${icon.globalName}';`)
             .sort()
             .join('\n')
 
@@ -190,18 +187,21 @@ export class ${icon.globalName} extends IconBase {}
      * Generates a union type of all icon names for autocompletion.
      */
     iconNamesType: (icons: Icon[]): FileDefinition => {
-        const names = icons.map(i => `'${i.globalName}'`).sort().join(' | ');
+        const names = icons
+            .map(i => `'${i.globalName}'`)
+            .sort()
+            .join(' | ')
         const content = `/* GENERATED FILE */
 /**
  * Union of all available icon names for the dynamic SolarIcon component.
  * Provides IDE autocompletion without importing the actual components.
  */
 export type SolarIconName = ${names};
-`;
+`
         return {
             path: path.join(path.dirname(INDEX_PATH), 'lib', 'all-icons.types.ts'),
             content,
-        };
+        }
     },
 
     mainEntry: (): FileDefinition => {

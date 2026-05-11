@@ -3,7 +3,7 @@ description: 'Sets up Node.js and runs install'
 inputs:
     node-version:
         description: 'Version de Node.js'
-        required: false 
+        required: false
         default: ''
 runs:
     using: composite
