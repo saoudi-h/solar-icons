@@ -9,7 +9,6 @@
         "moduleResolution": "Bundler",
         "target": "ESNext",
         "rootDir": ".",
-        "baseUrl": ".",
         "paths": {
             "~/*": ["./src/*"]
         },

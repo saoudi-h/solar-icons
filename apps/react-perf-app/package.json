@@ -14,18 +14,18 @@
     },
     "dependencies": {
         "@solar-icons/react-perf": "workspace:*",
-        "next": "16.2.5",
+        "next": "16.2.6",
         "react": "19.2.6",
         "react-dom": "19.2.6"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.2.4",
-        "@types/node": "^25.6.1",
+        "@tailwindcss/postcss": "^4.3.0",
+        "@types/node": "^25.6.2",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19",
-        "eslint": "^9",
-        "eslint-config-next": "16.2.5",
-        "tailwindcss": "^4.2.4",
-        "typescript": "^5"
+        "eslint": "^10.3.0",
+        "eslint-config-next": "16.2.6",
+        "tailwindcss": "^4.3.0",
+        "typescript": "^6.0.3"
     }
 }

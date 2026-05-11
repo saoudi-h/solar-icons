@@ -1,13 +1,12 @@
 {
-    "extends": "@tala-tools/tsconfig/react.json",
+    "extends": "@tala-tools/tsconfig/react-library.json",
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "rootDir": ".",
-        "baseUrl": "src",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./src/*"]
         }
     },
     "include": ["./src/**/*", "vite.config.ts", "./scripts/**/*"],

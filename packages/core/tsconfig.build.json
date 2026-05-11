@@ -1,14 +1,17 @@
 {
-    "extends": "@tala-tools/tsconfig/build.json",
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Core Build",
     "compilerOptions": {
+        "outDir": "./dist",
+        "noEmit": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "declarationDir": "dist/types",
         "declaration": true,
         "emitDeclarationOnly": true,
         "allowSyntheticDefaultImports": true,
-        "target": "ES2020",
-        "baseUrl": ".",
+        "target": "ESNext",
+        "types": ["node"],
         "rootDir": "src",
         "importHelpers": true,
         "isolatedModules": true,
@@ -17,5 +20,5 @@
         "jsx": "preserve"
     },
     "include": ["./src/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "./src/scripts"]
+    "exclude": ["dist", "build", "./src/scripts", "node_modules", ".vscode", ".turbo"]
 }

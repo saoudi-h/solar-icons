@@ -1,7 +1,6 @@
 {
     "extends": "@tala-tools/tsconfig/base.json",
     "compilerOptions": {
-        "baseUrl": ".",
         "paths": {
             "@/*": ["./*"]
         }

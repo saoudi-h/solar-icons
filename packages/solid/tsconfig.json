@@ -14,7 +14,6 @@
         "isolatedModules": true,
         "moduleResolution": "Bundler",
         "rootDir": ".",
-        "baseUrl": "src",
         "paths": {
             "@/*": ["src/*"]
         },

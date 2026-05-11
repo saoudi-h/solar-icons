@@ -17,17 +17,17 @@
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
-        "@tala-tools/eslint": "0.1.0",
-        "@tala-tools/prettier": "0.0.2",
         "@sveltejs/adapter-auto": "^6.0.0",
         "@sveltejs/kit": "^2.59.1",
         "@sveltejs/vite-plugin-svelte": "^5.1.0",
-        "@tailwindcss/vite": "^4.2.4",
+        "@tailwindcss/vite": "^4.3.0",
+        "@tala-tools/eslint": "0.1.0",
+        "@tala-tools/prettier": "0.0.2",
         "prettier-plugin-svelte": "^3.5.1",
         "svelte": "^5.55.5",
         "svelte-check": "^4.4.8",
-        "tailwindcss": "^4.2.4",
-        "typescript": "^5.8.3",
+        "tailwindcss": "^4.3.0",
+        "typescript": "^6.0.3",
         "vite": "^8.0.11"
     },
     "type": "module",

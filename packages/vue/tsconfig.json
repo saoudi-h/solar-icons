@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/dom",
+    "extends": "@tala-tools/tsconfig/base.json",
     "display": "Vue",
     "compilerOptions": {
         "jsx": "preserve",
@@ -8,9 +8,8 @@
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "rootDir": ".",
-        "baseUrl": "src",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./src/*"]
         },
         "types": ["node", "vite/client"],
         "strict": true,

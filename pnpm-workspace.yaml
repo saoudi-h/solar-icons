@@ -1,12 +1,22 @@
 packages:
-    - apps/*
-    - packages/*
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
+  sharp: false
+  svelte-preprocess: true
+  unrs-resolver: true
+  vue-demi: true
 
 onlyBuiltDependencies:
-    - '@parcel/watcher'
-    - '@tailwindcss/oxide'
-    - better-sqlite3
-    - esbuild
-    - sharp
-    - unrs-resolver
-    - vue-demi
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - better-sqlite3
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - vue-demi
