@@ -23,7 +23,7 @@
         "@commitlint/cli": "^20.5.3",
         "@commitlint/config-conventional": "^20.5.3",
         "@commitlint/types": "^20.5.0",
-        "@solar-icons/eslint": "workspace:*",
+        "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/eslint": "^9.6.1",

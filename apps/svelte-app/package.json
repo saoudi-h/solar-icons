@@ -17,7 +17,7 @@
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
-        "@solar-icons/eslint": "workspace:*",
+        "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",
         "@sveltejs/adapter-auto": "^6.0.0",
         "@sveltejs/kit": "^2.59.1",

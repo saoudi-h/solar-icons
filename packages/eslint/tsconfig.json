@@ -1,9 +1,0 @@
-{
-    "extends": "@solar-icons/tsconfig/base.json",
-    "compilerOptions": {
-        "target": "es5",
-        "baseUrl": "."
-    },
-    "include": ["./src/**/*.ts", "./*.ts"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".next", ".turbo"]
-}

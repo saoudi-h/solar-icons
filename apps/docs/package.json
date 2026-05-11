@@ -71,7 +71,7 @@
         "@iconify/react": "^6.0.0",
         "@next/bundle-analyzer": "^16.2.5",
         "@solar-icons/core": "workspace:*",
-        "@solar-icons/eslint": "workspace:*",
+        "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",
         "@solar-icons/tsconfig": "workspace:*",
         "@tailwindcss/postcss": "^4.2.4",

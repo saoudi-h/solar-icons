@@ -64,7 +64,7 @@
     },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
-        "@solar-icons/eslint": "workspace:*",
+        "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",
         "@solar-icons/tsconfig": "workspace:*",
         "@types/node": "^25.6.1",
