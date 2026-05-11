@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/next.json",
+    "extends": "@tala-tools/tsconfig/next",
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {

@@ -1,6 +1,9 @@
 {
-    "extends": "@solar-icons/tsconfig/vue.json",
+    "extends": "@solar-icons/tsconfig/dom",
+    "display": "Vue",
     "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
         "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
@@ -10,7 +13,6 @@
             "@/*": ["src/*"]
         },
         "types": ["node", "vite/client"],
-        "jsx": "preserve",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,

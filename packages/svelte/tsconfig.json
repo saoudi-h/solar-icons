@@ -1,6 +1,9 @@
 {
-    "extends": "@solar-icons/tsconfig/svelte",
+    "extends": "@solar-icons/tsconfig/dom",
+    "display": "Svelte",
     "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "svelte",
         "noUnusedLocals": false,
         "module": "preserve",
         "target": "esnext",

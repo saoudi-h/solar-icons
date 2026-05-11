@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/react.json",
+    "extends": "@tala-tools/tsconfig/react.json",
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",

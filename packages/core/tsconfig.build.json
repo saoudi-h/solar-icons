@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/build.json",
+    "extends": "@tala-tools/tsconfig/build.json",
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",

@@ -24,15 +24,15 @@ importers:
       '@commitlint/types':
         specifier: ^20.5.0
         version: 20.5.0
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:packages/tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.2(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
@@ -272,9 +272,6 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       '@tailwindcss/postcss':
         specifier: ^4.2.4
         version: 4.2.4
@@ -284,6 +281,9 @@ importers:
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -601,15 +601,15 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.4(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/jsdom':
         specifier: ^28.0.1
         version: 28.0.1
@@ -662,15 +662,15 @@ importers:
         specifier: ^0.2.3
         version: 0.2.4(@langchain/core@0.3.80)
     devDependencies:
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.2(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -777,15 +777,15 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.4(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -834,15 +834,15 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.4(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -885,15 +885,15 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.4(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -942,15 +942,15 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@tala-tools/eslint':
         specifier: 0.1.0
         version: 0.1.0(eslint@9.39.4(jiti@2.7.0))(oxlint@1.63.0)(tailwindcss@4.2.4)(typescript@5.9.3)
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -991,9 +991,6 @@ importers:
       '@solar-icons/core':
         specifier: workspace:*
         version: link:../core
-      '@solar-icons/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@sveltejs/package':
         specifier: ^2.3.10
         version: 2.5.7(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@5.9.3)
@@ -1006,6 +1003,9 @@ importers:
       '@tala-tools/prettier':
         specifier: 0.0.2
         version: 0.0.2(prettier@3.8.3)
+      '@tala-tools/tsconfig':
+        specifier: 0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^25.6.1
         version: 25.6.1
@@ -1045,8 +1045,6 @@ importers:
       vitest:
         specifier: ^4.1.5
         version: 4.1.5(@types/node@25.6.1)(@vitest/coverage-v8@4.1.5)(jsdom@27.4.0(postcss@8.5.14))(vite@8.0.11(@types/node@25.6.1)(esbuild@0.28.0)(jiti@2.7.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-
-  packages/tsconfig: {}
 
   packages/vue:
     devDependencies:
@@ -7617,6 +7615,9 @@ packages:
     resolution: {integrity: sha512-QJe2E7fX0oifDTQ5yTDpfqCjD0gUJiMXpgV77KlQpyLDPqSiU04II6iGC8MsJKXK+aXJBhlx4U8l8kv8vWel6Q==}
     peerDependencies:
       prettier: ^3.7.4
+
+  '@tala-tools/tsconfig@0.0.1':
+    resolution: {integrity: sha512-wUldFNVy5PrMBhH+yRzEYUuoA/+iG+md5zyJjRPc8xMuXfEFTQIPBgUS8Isw7LInOBBFgPhgBVbSl4/4Nowk8g==}
 
   '@tanstack/virtual-core@3.14.0':
     resolution: {integrity: sha512-JLANqGy/D6k4Ujmh8Tr25lGimuOXNiaVyXaCAZS0W+1390sADdGnyUdSWNIfd49gebtIxGMij4IktRVzrdr12Q==}
@@ -23832,6 +23833,8 @@ snapshots:
   '@tala-tools/prettier@0.0.2(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
+
+  '@tala-tools/tsconfig@0.0.1': {}
 
   '@tanstack/virtual-core@3.14.0': {}
 

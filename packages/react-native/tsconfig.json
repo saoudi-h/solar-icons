@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/base.json",
+    "extends": "@tala-tools/tsconfig/base.json",
     "compilerOptions": {
         "jsx": "react-native",
         "types": ["node"],
