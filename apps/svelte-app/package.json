@@ -17,9 +17,9 @@
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
-        "@sveltejs/adapter-auto": "^6.0.0",
+        "@sveltejs/adapter-auto": "^7.0.1",
         "@sveltejs/kit": "^2.59.1",
-        "@sveltejs/vite-plugin-svelte": "^5.1.0",
+        "@sveltejs/vite-plugin-svelte": "^7.1.2",
         "@tailwindcss/vite": "^4.3.0",
         "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",

@@ -66,7 +66,7 @@
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
         "@sveltejs/package": "^2.3.10",
-        "@sveltejs/vite-plugin-svelte": "^5.0.3",
+        "@sveltejs/vite-plugin-svelte": "^7.1.2",
         "@tala-tools/eslint": "0.1.0",
         "@tala-tools/prettier": "0.0.2",
         "@tala-tools/tsconfig": "0.0.1",

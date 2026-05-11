@@ -4,6 +4,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
-</script>
+<script setup lang="ts"></script>
