@@ -22,7 +22,6 @@ import {
 } from '@/components/ui/drawer'
 import type { Option } from '@/components/ui/multi-selector'
 import MultipleSelector from '@/components/ui/multi-selector'
-import NumberTicker from '@/components/ui/number-ticker'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { categories, styles } from '@/core/generated/utils'
 import { useScreen } from '@/lib/screens'
@@ -31,6 +30,7 @@ import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { DEFAULT_VALUES, categoriesAtom, filteredCountAtom, keywordAtom } from './context'
 import type { CategoryOption } from './utils'
+import NumberFlow from '@number-flow/react'
 
 const categoryOptions = categories.map(c => ({ value: c, label: c }))
 
@@ -174,7 +174,12 @@ export const FilterBarContent: React.FC = () => {
                     `}>
                     <Tooltip>
                         <TooltipTrigger>
-                            <NumberTicker value={filteredCount} />
+                            <NumberFlow
+                                        className='text-foreground/70'
+                                        trend={-1}
+                                        value={filteredCount}
+                                        format={{ minimumIntegerDigits: 1 }}
+                                    />
                         </TooltipTrigger>
                         <TooltipContent>
                             <span className="font-extralight">{filteredCount} icons founded</span>
