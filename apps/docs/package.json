@@ -12,7 +12,7 @@
         "lint:fix": "eslint . --fix",
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "tsgo --noEmit",
         "typecheck:scripts": "tsc -p tsconfig.scripts.json",
         "clean": "rimraf *.tsbuildinfo node_modules build dist .turbo .next",
         "generate:hero:utils": "tsx ./core/scripts/generateHeroUtils.ts",

@@ -28,7 +28,7 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
     "types": "./dist/index.d.mts",

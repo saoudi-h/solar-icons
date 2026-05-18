@@ -13,7 +13,7 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
     "devDependencies": {

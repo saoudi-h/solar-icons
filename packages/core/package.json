@@ -35,7 +35,7 @@
         "check:metadata": "tsx src/scripts/check-metadata.ts",
         "clean": "rm -rf node_modules dist",
         "clean:generated": "rimraf svgs src/metadata.json",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
     "devDependencies": {

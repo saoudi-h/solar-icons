@@ -39,6 +39,7 @@
         "rimraf": "^6.1.2",
         "tsdown": "^0.22.0",
         "turbo": "^2.9.12",
+        "@typescript/native-preview": "7.0.0-dev.20260427.1",
         "typescript": "^6.0.3",
         "unplugin-unused": "^0.5.7",
         "vite-tsconfig-paths": "^6.1.1"
