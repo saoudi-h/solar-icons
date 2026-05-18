@@ -52,7 +52,7 @@
             "dependsOn": ["^pre-commit"]
         },
         "test": {
-            "dependsOn": ["^build"],
+            "dependsOn": ["build"],
             "outputs": []
         }
     }
