@@ -18,15 +18,17 @@
         "allowImportingTsExtensions": true,
         "noEmit": true
     },
-    "include": ["./src/lib", "./src/*.ts", "./src/*.d.ts", "./src/*.vue", "env.d.ts"],
-    "exclude": [
-        "dist",
-        "build",
-        "node_modules",
-        ".vscode",
-        ".turbo",
-        "src/icons/**/*.ts",
-        "scripts",
-        "__tests__"
-    ]
+    "include": [
+        "./src/lib",
+        "./src/*.ts",
+        "./src/*.d.ts",
+        "./src/*.vue",
+        "env.d.ts",
+        "vitest.setup.ts",
+        "vitest.config.ts",
+        "tsdown.config.ts",
+        "__tests__/**/*.ts",
+        "scripts/**/*.ts"
+    ],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "src/icons/**/*.ts"]
 }
