@@ -17,7 +17,12 @@ export default defineConfig({
                 'react/jsx-runtime',
                 'react/jsx-dev-runtime',
             ],
-            input: './src/index.ts',
+            input: {
+                index: resolve(__dirname, 'src/index.ts'),
+                'ssr/index': resolve(__dirname, 'src/ssr/index.ts'),
+                'csr/category': resolve(__dirname, 'src/csr/category.ts'),
+                'ssr/category': resolve(__dirname, 'src/ssr/category.ts'),
+            },
             output: [
                 {
                     format: 'esm',
