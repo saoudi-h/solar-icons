@@ -6,7 +6,7 @@ import { fixIconName } from '../utils'
 const __dirname = import.meta.dirname
 const SVGS_PATH = path.resolve(__dirname, '../../svgs')
 
-async function renameFiles(dir) {
+async function renameFiles(dir: string) {
     const entries = await fs.readdir(dir, { withFileTypes: true })
 
     for (const entry of entries) {

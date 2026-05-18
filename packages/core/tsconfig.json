@@ -5,7 +5,7 @@
         "moduleResolution": "Bundler",
         "rootDir": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./src/*"]
         }
     },
     "include": ["./src/**/*", "./src/**/*.json", "vite.config.ts"],

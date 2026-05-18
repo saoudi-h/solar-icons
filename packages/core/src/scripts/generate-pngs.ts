@@ -8,7 +8,7 @@
  */
 
 import path from 'node:path'
-import metadata from '../metadata.json' assert { type: 'json' }
+import metadata from '../metadata.json' with { type: 'json' }
 
 import {
     convertSvgToPngStep,
