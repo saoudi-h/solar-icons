@@ -84,7 +84,6 @@
         "next-validate-link": "^1.6.6",
         "postcss": "^8.5.14",
         "sharp": "^0.34.5",
-        "tailwindcss": "^4.3.0",
-        "tsx": "^4.22.1"
+        "tailwindcss": "^4.3.0"
     }
 }
