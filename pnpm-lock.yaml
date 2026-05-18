@@ -60,6 +60,9 @@ importers:
       prettier-plugin-organize-imports:
         specifier: ^4.3.0
         version: 4.3.0(prettier@3.8.3)(typescript@6.0.3)(vue-tsc@3.2.9(typescript@6.0.3))
+      prettier-plugin-svelte:
+        specifier: ^3.5.2
+        version: 3.5.2(prettier@3.8.3)(svelte@5.55.7(@typescript-eslint/types@8.59.3))
       publint:
         specifier: ^0.3.21
         version: 0.3.21

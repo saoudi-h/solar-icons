@@ -38,6 +38,7 @@ jobs:
               uses: changesets/action@v1
               with:
                   publish: pnpm release
+                  version: pnpm version
                   title: 'ci(changesets): 🧪 beta version packages'
                   commit: 'ci(changesets): beta version packages'
                   setupGitUser: false
