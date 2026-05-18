@@ -7,7 +7,6 @@
         "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "rootDir": ".",
         "paths": {
             "@/*": ["./src/*"]
         },
@@ -19,20 +18,15 @@
         "allowImportingTsExtensions": true,
         "noEmit": true
     },
-    "include": [
-        "./src/lib",
-        "./src/*.ts",
-        "./src/*.d.ts",
-        "./src/*.vue",
-        "tsdown.config.ts",
-        "tsdown.nuxt.config.ts",
-        "./scripts/**/*.ts",
-        "vitest.config.ts",
-        "lint-staged.config.mjs",
-        "env.d.ts",
-        "vitest.setup.ts",
-        "__tests__/**/*.ts",
-        "__tests__/**/*.vue"
-    ],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "src/icons/**/*.ts"]
+    "include": ["./src/lib", "./src/*.ts", "./src/*.d.ts", "./src/*.vue", "env.d.ts"],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules",
+        ".vscode",
+        ".turbo",
+        "src/icons/**/*.ts",
+        "scripts",
+        "__tests__"
+    ]
 }

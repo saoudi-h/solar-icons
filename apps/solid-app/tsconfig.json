@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/dom",
+    "extends": "@tala-tools/tsconfig/base.json",
     "display": "Solid",
     "compilerOptions": {
         "jsx": "preserve",
@@ -13,6 +13,7 @@
             "~/*": ["./src/*"]
         },
         "allowImportingTsExtensions": true,
+        "types": ["vite/client"],
         "noEmit": true
     },
     "include": ["./src/**/*", "./vite.config.ts"],

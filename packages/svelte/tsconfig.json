@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/dom",
+    "extends": "@tala-tools/tsconfig/base.json",
     "display": "Svelte",
     "compilerOptions": {
         "jsx": "preserve",
@@ -18,6 +18,6 @@
         "allowImportingTsExtensions": true,
         "noEmit": true
     },
-    "include": ["./src/**/*", "tsdown.config.ts", "./scripts/**/*", "./tests/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+    "include": ["./src/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts", "tests"]
 }

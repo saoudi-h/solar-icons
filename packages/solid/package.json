@@ -32,8 +32,6 @@
         "test": "vitest run",
         "pre-commit": "lint-staged"
     },
-    "module": "./dist/index.mjs",
-    "main": "./dist/index.mjs",
     "types": "./dist/index.d.mts",
     "exports": {
         "./package.json": "./package.json",

@@ -1,5 +1,5 @@
 {
-    "extends": "@solar-icons/tsconfig/dom",
+    "extends": "@tala-tools/tsconfig/base.json",
     "display": "Solid",
     "compilerOptions": {
         "jsx": "preserve",
@@ -10,16 +10,15 @@
         "allowJs": false,
         "checkJs": false,
         "incremental": true,
-        "isolatedDeclarations": true,
+        "isolatedDeclarations": false,
         "isolatedModules": true,
         "moduleResolution": "Bundler",
-        "rootDir": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["./src/*"]
         },
         "allowImportingTsExtensions": true,
         "noEmit": true
     },
-    "include": ["./src/**/*", "tsdown.config.ts", "./scripts/**/*", "./tests/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+    "include": ["./src/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts", "tests"]
 }

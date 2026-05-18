@@ -173,7 +173,7 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@solar-icons/react':
-        specifier: 1.1.0
+        specifier: ^1.1.0
         version: 1.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@types/file-saver':
         specifier: ^2.0.7

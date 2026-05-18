@@ -13,7 +13,7 @@ export const AngularCode: FC = () => {
     if (!selectedIcon) return null
 
     // Angular icons use global names with style suffix (e.g., HeartBold, HeartLinear)
-    const iconName = selectedIcon.Icon.displayName + value.weight
+    const iconName = (selectedIcon.Icon.displayName ?? '') + (value.weight ?? '')
 
     return (
         <>

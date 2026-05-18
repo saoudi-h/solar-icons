@@ -72,5 +72,5 @@ export interface SolarIconContext {
 export type IconNode = [
     string, // tagName (e.g., 'path', 'g')
     Record<string, any>, // attributes
-    IconNode[], // children
+    IconNode[]?, // children
 ]
