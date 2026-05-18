@@ -42,7 +42,8 @@
         "turbo": "^2.9.14",
         "typescript": "^6.0.3",
         "unplugin-unused": "^0.5.7",
-        "vite-tsconfig-paths": "^6.1.1"
+        "vite-tsconfig-paths": "^6.1.1",
+        "tsx": "^4.22.1"
     },
     "packageManager": "pnpm@11.0.9",
     "engines": {
