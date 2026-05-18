@@ -11061,16 +11061,6 @@ packages:
       crossws:
         optional: true
 
-  h3@2.0.1-rc.22:
-    resolution: {integrity: sha512-Esv0DMIuPkCTSWCA0vO73vcTqwzH1wjSrAO1TXNu/K3up1sZHa9EKMapbmxCDYBeymC3fVTk4qxp7ogQWQ+KgA==}
-    engines: {node: '>=20.11.1'}
-    hasBin: true
-    peerDependencies:
-      crossws: ^0.4.1
-    peerDependenciesMeta:
-      crossws:
-        optional: true
-
   handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
@@ -15888,7 +15878,6 @@ packages:
 
   uuid@10.0.0:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
-    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uuid@7.0.3:
@@ -20875,7 +20864,6 @@ snapshots:
       get-port-please: 3.2.0
       h3: 1.15.11
       h3-next: h3@2.0.1-rc.22(crossws@0.4.5(srvx@0.11.15))
-      h3-next: h3@2.0.1-rc.22(crossws@0.4.5(srvx@0.11.15))
       local-pkg: 1.1.2
       magic-string: 0.30.21
       node-fetch-native: 1.6.7
@@ -23501,7 +23489,6 @@ snapshots:
 
   '@types/estree-jsx@1.0.5':
     dependencies:
-      '@types/estree': 1.0.9
       '@types/estree': 1.0.9
 
   '@types/estree@1.0.8': {}
@@ -26833,7 +26820,6 @@ snapshots:
   estree-util-value-to-estree@3.5.0:
     dependencies:
       '@types/estree': 1.0.9
-      '@types/estree': 1.0.9
 
   estree-util-visit@2.0.0:
     dependencies:
@@ -27616,13 +27602,6 @@ snapshots:
       uncrypto: 0.1.3
 
   h3@2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15)):
-    dependencies:
-      rou3: 0.8.1
-      srvx: 0.11.15
-    optionalDependencies:
-      crossws: 0.4.5(srvx@0.11.15)
-
-  h3@2.0.1-rc.22(crossws@0.4.5(srvx@0.11.15)):
     dependencies:
       rou3: 0.8.1
       srvx: 0.11.15
