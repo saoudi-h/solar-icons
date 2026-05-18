@@ -64,19 +64,19 @@
     },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/eslint": "0.1.0",
-        "@tala-tools/prettier": "0.0.2",
+        "@tala-tools/eslint": "0.1.1",
+        "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
-        "@types/node": "^25.6.2",
+        "@types/node": "^25.8.0",
         "picocolors": "^1.1.1",
         "prettier": "^3.8.3",
         "rimraf": "^6.1.2",
-        "solid-js": "^1.9.7",
+        "solid-js": "^1.9.13",
         "tsdown": "^0.22.0",
-        "tsx": "^4.21.0",
+        "tsx": "^4.22.1",
         "typescript": "^6.0.3",
         "unplugin-solid": "^1.0.0",
-        "vitest": "^4.1.5"
+        "vitest": "^4.1.6"
     },
     "peerDependencies": {
         "solid-js": ">= 1.6.0"
