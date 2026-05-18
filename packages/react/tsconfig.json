@@ -4,11 +4,10 @@
         "noUnusedLocals": false,
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "rootDir": ".",
         "paths": {
             "@/*": ["./src/*"]
         }
     },
-    "include": ["./src/**/*", "vite.config.ts", "./scripts/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+    "include": ["./src/**/*"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts"]
 }

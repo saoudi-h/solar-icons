@@ -11,22 +11,22 @@
   "private": true,
   "packageManager": "pnpm@10.28.2",
   "dependencies": {
-    "@angular/cdk": "^21.2.10",
-    "@angular/common": "^21.2.12",
-    "@angular/compiler": "^21.2.12",
-    "@angular/core": "^21.2.12",
-    "@angular/forms": "^21.2.12",
-    "@angular/material": "^21.2.10",
-    "@angular/platform-browser": "^21.2.12",
-    "@angular/router": "^21.2.12",
+    "@angular/cdk": "^21.2.11",
+    "@angular/common": "^21.2.13",
+    "@angular/compiler": "^21.2.13",
+    "@angular/core": "^21.2.13",
+    "@angular/forms": "^21.2.13",
+    "@angular/material": "^21.2.11",
+    "@angular/platform-browser": "^21.2.13",
+    "@angular/router": "^21.2.13",
     "@solar-icons/angular": "workspace:*",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.2.10",
-    "@angular/cli": "^21.2.10",
-    "@angular/compiler-cli": "^21.2.12",
+    "@angular/build": "^21.2.11",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.13",
     "prettier": "^3.8.3",
     "typescript": "~6.0.3"
   }

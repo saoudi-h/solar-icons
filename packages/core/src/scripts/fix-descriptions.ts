@@ -4,7 +4,7 @@
  */
 
 import path from 'node:path'
-import data from '../metadata-descriptions.json' assert { type: 'json' }
+import data from '../metadata-descriptions.json' with { type: 'json' }
 import type { Context } from './workflows'
 import {
     filtersStepGenerator,

@@ -11,8 +11,8 @@ async function updateMetadata() {
     const metadata = JSON.parse(content)
 
     for (const category in metadata.categories) {
-        metadata.categories[category].icons = metadata.categories[category].icons.map(icon =>
-            fixIconName(icon)
+        metadata.categories[category].icons = metadata.categories[category].icons.map(
+            (icon: string) => fixIconName(icon)
         )
         // Remove duplicates if any were created by renaming
         metadata.categories[category].icons = [...new Set(metadata.categories[category].icons)]
