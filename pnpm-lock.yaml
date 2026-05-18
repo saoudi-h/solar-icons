@@ -763,7 +763,7 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(@types/node@25.8.0)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1)(vite@8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.7.0)(less@4.4.2)(sass@1.97.3)(terser@5.47.1)(tsx@4.22.1)(yaml@2.9.0))
       vue-tsc:
-        specifier: ^3.3.0
+        specifier: 3.3.0
         version: 3.3.0(typescript@6.0.3)
 
   packages/react:

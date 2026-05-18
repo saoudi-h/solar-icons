@@ -14,4 +14,5 @@ allowBuilds:
   '@tailwindcss/oxide': true
   better-sqlite3: true
 enablePrePostScripts: true
+minimumReleaseAge: 0
 
