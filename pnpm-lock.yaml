@@ -179,8 +179,8 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@solar-icons/react':
-        specifier: ^1.1.0
-        version: 1.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@types/file-saver':
         specifier: ^2.0.7
         version: 2.0.7
@@ -7284,8 +7284,8 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@solar-icons/react@1.1.0':
-    resolution: {integrity: sha512-3DGDrolCV3ToaAqGHHHqambhveaTlAGv0h84bQTSUne6UbxJ95G3TiHW39w/43q1F53QylPwfS29Xa4Khy2p1w==}
+  '@solar-icons/react@1.1.1':
+    resolution: {integrity: sha512-7cuzHyfXKk+P4HyoW+EXbauiBm01AZzqcEqTsr/m0f77aDYPU0XayejV9IXscxiyYB+twh+UsSgqwIS/ap/rgA==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>= 16.8'
@@ -23115,7 +23115,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@solar-icons/react@1.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+  '@solar-icons/react@1.1.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
