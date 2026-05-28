@@ -21,7 +21,7 @@
         "@sveltejs/kit": "^2.60.1",
         "@sveltejs/vite-plugin-svelte": "^7.1.2",
         "@tailwindcss/vite": "^4.3.0",
-        "@tala-tools/eslint": "0.1.1",
+        "@tala-tools/eslint": "0.1.2",
         "@tala-tools/prettier": "0.0.3",
         "prettier-plugin-svelte": "^3.5.2",
         "svelte": "^5.55.7",
