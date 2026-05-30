@@ -479,7 +479,7 @@ importers:
         version: 4.3.0(rolldown-vite@7.3.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@25.8.0)(esbuild@0.27.7)(jiti@2.7.0)(less@4.4.2)(sass@1.97.3)(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0))
       '@tanstack/vue-virtual':
         specifier: ^3.13.24
-        version: 3.13.24(vue@3.5.34(typescript@6.0.3))
+        version: 3.13.26(vue@3.5.34(typescript@6.0.3))
       '@vueuse/core':
         specifier: ^14.3.0
         version: 14.3.0(vue@3.5.34(typescript@6.0.3))
@@ -7767,11 +7767,11 @@ packages:
   '@tala-tools/tsconfig@0.0.1':
     resolution: {integrity: sha512-wUldFNVy5PrMBhH+yRzEYUuoA/+iG+md5zyJjRPc8xMuXfEFTQIPBgUS8Isw7LInOBBFgPhgBVbSl4/4Nowk8g==}
 
-  '@tanstack/virtual-core@3.14.0':
-    resolution: {integrity: sha512-JLANqGy/D6k4Ujmh8Tr25lGimuOXNiaVyXaCAZS0W+1390sADdGnyUdSWNIfd49gebtIxGMij4IktRVzrdr12Q==}
+  '@tanstack/virtual-core@3.16.0':
+    resolution: {integrity: sha512-Er2N7q3WOiH6y2JLxsxNX+u2/sLqSsL0bxFgDjuiPiA7vKhZRm+IzcS17vRee3GNXr64UsesA5CAp9yTiIYw9A==}
 
-  '@tanstack/vue-virtual@3.13.24':
-    resolution: {integrity: sha512-A0k2qF0zFSUStXSZkGXABouXr2Tw2Ztl/cVIYG9qy84uR8W7UNjAcX3DvzBS3YnDcwvLxab8v7dbmYBZ39itDA==}
+  '@tanstack/vue-virtual@3.13.26':
+    resolution: {integrity: sha512-4TmREKi8rKiQC8E2XVEMMgzWbrgHNYolkBgYTXVK1kqXmXRGz6xPWgBq20GUYWUDDhit94+g0ricUQKpZhWRmg==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
 
@@ -24352,11 +24352,11 @@ snapshots:
 
   '@tala-tools/tsconfig@0.0.1': {}
 
-  '@tanstack/virtual-core@3.14.0': {}
+  '@tanstack/virtual-core@3.16.0': {}
 
-  '@tanstack/vue-virtual@3.13.24(vue@3.5.34(typescript@6.0.3))':
+  '@tanstack/vue-virtual@3.13.26(vue@3.5.34(typescript@6.0.3))':
     dependencies:
-      '@tanstack/virtual-core': 3.14.0
+      '@tanstack/virtual-core': 3.16.0
       vue: 3.5.34(typescript@6.0.3)
 
   '@testing-library/dom@10.4.1':
@@ -33247,7 +33247,7 @@ snapshots:
       '@floating-ui/vue': 1.1.11(vue@3.5.34(typescript@6.0.3))
       '@internationalized/date': 3.12.1
       '@internationalized/number': 3.6.6
-      '@tanstack/vue-virtual': 3.13.24(vue@3.5.34(typescript@6.0.3))
+      '@tanstack/vue-virtual': 3.13.26(vue@3.5.34(typescript@6.0.3))
       '@vueuse/core': 14.3.0(vue@3.5.34(typescript@6.0.3))
       '@vueuse/shared': 14.3.0(vue@3.5.34(typescript@6.0.3))
       aria-hidden: 1.2.6
