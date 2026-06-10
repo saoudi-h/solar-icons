@@ -1,36 +1,13 @@
 import { LogoIcon } from '@/components/ui-blocks/logo/LogoIcon'
-import type { ImageResponseOptions } from 'next/dist/compiled/@vercel/og/types'
-import { ImageResponse } from 'next/og'
-import type { ReactElement, ReactNode } from 'react'
+import { ImageResponse } from '@takumi-rs/image-response'
 
-interface GenerateProps {
-    title: ReactNode
-    description?: ReactNode
-    primaryTextColor?: string | undefined
+interface OGImageProps {
+    title: string
+    description?: string
 }
 
-export function generateOGImage(options: GenerateProps & ImageResponseOptions): ImageResponse {
-    const { title, description, primaryTextColor, ...rest } = options
-
+export function generateOGImage({ title, description }: OGImageProps) {
     return new ImageResponse(
-        generate({
-            title,
-            description,
-            primaryTextColor,
-        }),
-        {
-            width: 1200,
-            height: 630,
-            ...rest,
-        }
-    )
-}
-
-export function generate({
-    primaryTextColor = 'rgb(255,150,255)',
-    ...props
-}: GenerateProps): ReactElement {
-    return (
         <div
             style={{
                 position: 'relative',
@@ -45,7 +22,6 @@ export function generate({
                     overflow: 'hidden',
                     borderRadius: '3rem',
                     position: 'relative',
-                    fontFamily: 'body',
                     display: 'flex',
                     flexDirection: 'column',
                     width: '100%',
@@ -109,17 +85,18 @@ export function generate({
                         style={{
                             fontWeight: 700,
                             fontSize: '76px',
-                            fontFamily: 'heading',
                         }}>
-                        {props.title}
+                        {title}
                     </p>
-                    <p
-                        style={{
-                            fontSize: '48px',
-                            color: 'rgba(240,240,240,0.7)',
-                        }}>
-                        {props.description}
-                    </p>
+                    {description && (
+                        <p
+                            style={{
+                                fontSize: '48px',
+                                color: 'rgba(240,240,240,0.7)',
+                            }}>
+                            {description}
+                        </p>
+                    )}
                     <div
                         style={{
                             display: 'flex',
@@ -127,20 +104,24 @@ export function generate({
                             alignItems: 'center',
                             gap: '24px',
                             marginTop: 'auto',
-                            color: primaryTextColor,
+                            color: 'rgb(240,240,240)',
                         }}>
                         <LogoIcon width={64} height={64} color={'hsl(235 44% 59%)'} />
                         <p
                             style={{
                                 fontSize: '46px',
                                 fontWeight: 700,
-                                fontFamily: 'heading',
                             }}>
                             Solar Icons
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>,
+        {
+            width: 1200,
+            height: 630,
+            format: 'webp',
+        }
     )
 }
