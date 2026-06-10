@@ -1,3 +1,4 @@
+import { Analytics } from '@/components/analytics'
 import { baseUrl, createMetadata } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
 import { CalSansUI } from '@calcom/cal-sans-ui/ui'
@@ -45,6 +46,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <JotaiProvider>
                     <Providers>{children}</Providers>
                 </JotaiProvider>
+                <Analytics />
             </body>
         </html>
     )

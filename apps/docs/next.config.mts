@@ -25,6 +25,10 @@ const config: NextConfig = {
     async rewrites() {
         return [
             {
+                source: '/stats/:path*',
+                destination: 'https://cloud.umami.is/:path*',
+            },
+            {
                 source: '/docs/:path*.mdx',
                 destination: '/llms.mdx/docs/:path*',
             },
