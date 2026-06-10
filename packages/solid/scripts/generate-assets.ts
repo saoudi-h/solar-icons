@@ -106,7 +106,7 @@ function getAliasesForIcon(name: string): string[] {
 const Generators = {
     /**
      * Generates the SolidJS component for a single icon.
-     * SolidJS components are plain functions — no forwardRef needed.
+     * SolidJS components are plain functions, no forwardRef needed.
      */
     component: (icon: Icon): FileDefinition => {
         const content = `/* GENERATED FILE */

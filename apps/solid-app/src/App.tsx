@@ -45,7 +45,7 @@ const App: Component = () => {
             <div class="max-w-7xl mx-auto space-y-8">
                 {/* Header */}
                 <div class="text-center space-y-2">
-                    <h1 class="text-4xl font-bold text-white">Solar Icons — SolidJS</h1>
+                    <h1 class="text-4xl font-bold text-white">Solar Icons - SolidJS</h1>
                     <p class="text-slate-400">
                         Displaying {filteredIcons().length} icons in{' '}
                         <span class="text-amber-400">{selectedStyle()}</span> style
