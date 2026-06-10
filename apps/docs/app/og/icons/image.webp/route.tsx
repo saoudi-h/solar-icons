@@ -4,7 +4,8 @@ export const revalidate = false
 
 export async function GET() {
     return generateOGImage({
-        title: 'Solar Icons',
-        description: 'The icon library for React applications and more',
+        title: 'Explore Icons',
+        description: 'Browse and discover the complete Solar Icons collection',
+        badge: 'ICONS',
     })
 }

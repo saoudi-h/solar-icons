@@ -1,14 +1,15 @@
 import { ImageResponse } from '@takumi-rs/image-response'
 
-const LOGO_SVG_DATA_URI =
-    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCI+PHBhdGggZD0iTTIzMS41NjggODk1LjQ1OXMtLjA1Ny0zMTcuODY5IDEuMjktMzIzLjAyYy43NzQtMi45NiAyLjQ2LS44ODcgOC41NCAxMC40OTIgNTQuMjY0IDEwMS41NTcgMTc2LjIxIDE5Mi4yOTggMzE5LjExNCAyMzcuNDU1IDEzMi42NTUgNDEuOTE4IDIwMi4xMjktNDcuMTQxIDEyMy4wNDMtMTU3LjczMi0yNi43MDItMzcuMzQxLTM1LjEyNy00Ni4zMDMtMjg5LjI3NC0zMDcuNzA2LTQxLjY4OS00Mi44OC03MC40MzctNzUuODYzLTcwLjQzNy04MC44MTMgMC0uNTUzIDguNDE4IDMuMjE1IDE4LjcwNyA4LjM3NCAyMi40MTUgMTEuMjM4IDEyNC41NzIgNTcuMzEgMTg3LjUwOCA4NC41NjMgMTU0LjcxIDY2Ljk5NCAxNzQuMzI3IDc3LjgwMiAyMTQuOTA4IDExOC40MTFDODgwLjgyNiA2MjEuNDM2IDgxMy45ODQgODQ5LjAzIDYyNi42NCA4ODguMzhjLTUwLjc0MiAxMC42NTgtMzk1LjA3MiA3LjA3OS0zOTUuMDcyIDcuMDc5em00MjIuOTE1LTE2OS4xOGMtMjQuNDA2LTExLjAwNy02Mi43NzgtMjguMDg1LTg1LjI3LTM3Ljk1MS0xODIuNTk0LTgwLjA5NS0yMTkuOTUyLTk3LjkzMy0yNTQuOTQtMTIxLjczMy0xNjMuOTg2LTExMS41NDYtMTMyLjQ1LTM2Mi42MDMgNTMuMzU0LTQyNC43NDEgMzcuMzY1LTEyLjQ5NiAyNi44MTItMTEuOTMgMjM1Ljk1NS0xMi42NCA5OC43NDEtLjMzNSAxODkuMTMyLjUxMiAxODkuMTMyLjUxMnMtLjEwNCA3MyAuMDU1IDE0MC4zMTRjLjE4NCA3Ny44MDUtLjAyNSAxNTEuMDU3LjExNiAxNjIuNzgyLjMwMyAyNS4wNTYuMTg5IDI1LjE2OC04LjQ2NyA4LjMwOC01MS4wNjItOTkuNDY2LTE3NC42OTItMTkzLjc5My0zMTAuOTE2LTIzNy4yMjQtMTQ0LjI0NC00NS45ODctMjE3Ljg5NCA1MC43NS0xMjYuNjE0IDE2Ni4zMDMgMjUuNDA2IDMyLjE2MyA2Mi43MzQgNzIuMDIzIDE2Ny40MTIgMTc4Ljc3MiAxNTguODEyIDE2MS45NTMgMTkyLjY3OCAxOTcuOTExIDE4NS45MjUgMTk3LjQxMi0uNzUyLS4wNTUtMjEuMzM1LTkuMTA3LTQ1Ljc0Mi0yMC4xMTR6IiBmaWxsPSIjNjM2NmYxIi8+PC9zdmc+'
+const SOLAR_LOGO_PATH =
+    'M231.568 895.459s-.057-317.869 1.29-323.02c.774-2.96 2.46-.887 8.54 10.492 54.264 101.557 176.21 192.298 319.114 237.455 132.655 41.918 202.129-47.141 123.043-157.732-26.702-37.341-35.127-46.303-289.274-307.706-41.689-42.88-70.437-75.863-70.437-80.813 0-.553 8.418 3.215 18.707 8.374 22.415 11.238 124.572 57.31 187.508 84.563 154.71 66.994 174.327 77.802 214.908 118.411C880.826 621.436 813.984 849.03 626.64 888.38c-50.742 10.658-395.072 7.079-395.072 7.079zm422.915-169.18c-24.406-11.007-62.778-28.085-85.27-37.951-182.594-80.095-219.952-97.933-254.94-121.733-163.986-111.546-132.45-362.603 53.354-424.741 37.365-12.496 26.812-11.93 235.955-12.64 98.741-.335 189.132.512 189.132.512s-.104 73 .055 140.314c.184 77.805-.025 151.057.116 162.782.303 25.056.189 25.168-8.467 8.308-51.062-99.466-174.692-193.793-310.916-237.224-144.244-45.987-217.894 50.75-126.614 166.303 25.406 32.163 62.734 72.023 167.412 178.772 158.812 161.953 192.678 197.911 185.925 197.412-.752-.055-21.335-9.107-45.742-20.114z'
 
 interface OGImageProps {
     title: string
     description?: string
+    badge?: string
 }
 
-export function generateOGImage({ title, description }: OGImageProps) {
+export function generateOGImage({ title, description, badge = 'DOCS' }: OGImageProps) {
     return new ImageResponse(
         <div
             style={{
@@ -16,112 +17,241 @@ export function generateOGImage({ title, description }: OGImageProps) {
                 display: 'flex',
                 width: '100%',
                 height: '100%',
-                padding: '1rem',
-                backgroundColor: 'rgb(0,0,0)',
+                padding: '24px',
+                backgroundColor: '#030509',
             }}>
+            {/* Main Container Card */}
             <div
                 style={{
-                    overflow: 'hidden',
-                    borderRadius: '3rem',
                     position: 'relative',
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
                     width: '100%',
                     height: '100%',
-                    color: 'white',
-                    backgroundColor: 'rgb(15,15,15)',
+                    borderRadius: '32px',
+                    backgroundColor: '#080b11',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    padding: '72px',
+                    overflow: 'hidden',
                 }}>
-                <svg
-                    style={{
-                        filter: 'blur(1px)',
-                        position: 'absolute',
-                        inset: '0',
-                        width: '100%',
-                        height: '100%',
-                        opacity: 0.5,
-                    }}>
-                    <filter id="noise-filter">
-                        <feTurbulence
-                            type="fractalNoise"
-                            baseFrequency="30.54"
-                            numOctaves="10"
-                            stitchTiles="stitch"></feTurbulence>
-                        <feColorMatrix type="saturate" values="0"></feColorMatrix>
-                        <feComponentTransfer>
-                            <feFuncR type="linear" slope="0.61"></feFuncR>
-                            <feFuncG type="linear" slope="0.61"></feFuncG>
-                            <feFuncB type="linear" slope="0.61"></feFuncB>
-                            <feFuncA type="linear" slope="1"></feFuncA>
-                        </feComponentTransfer>
-                        <feComponentTransfer>
-                            <feFuncR type="linear" slope="3" intercept="-1.00" />
-                            <feFuncG type="linear" slope="3" intercept="-1.00" />
-                            <feFuncB type="linear" slope="3" intercept="-1.00" />
-                        </feComponentTransfer>
-                    </filter>
-                    <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
-                </svg>
+                {/* Background Glows */}
                 <div
                     style={{
                         position: 'absolute',
-                        top: '0',
-                        left: '50%',
-                        transform: 'translateX(-50%) translateY(-50%)',
-                        borderRadius: '9999px',
-                        width: '66.666667%',
-                        height: '66.666667%',
-                        backgroundColor: 'transparent',
-                        filter: 'blur(128px)',
-                        background:
-                            'linear-gradient(180deg, hsl(235, 44%, 59%) 0%, transparent 100%)',
-                    }}></div>
+                        top: '-150px',
+                        right: '-150px',
+                        width: '600px',
+                        height: '600px',
+                        borderRadius: '300px',
+                        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'absolute',
+                        bottom: '-150px',
+                        left: '-150px',
+                        width: '500px',
+                        height: '500px',
+                        borderRadius: '250px',
+                        background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)',
+                    }}
+                />
+
+                {/* Left Side: Text and Badges */}
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '100%',
+                        justifyContent: 'space-between',
+                        width: '640px',
                         height: '100%',
-                        padding: '4rem',
                     }}>
-                    <p
-                        style={{
-                            fontWeight: 700,
-                            fontSize: '76px',
-                            color: 'rgb(240,240,240)',
-                        }}>
-                        {title}
-                    </p>
-                    {description && (
-                        <p
-                            style={{
-                                fontSize: '48px',
-                                color: 'rgba(240,240,240,0.7)',
-                            }}>
-                            {description}
-                        </p>
-                    )}
+                    {/* Header: Brand Logo & Text */}
                     <div
                         style={{
                             display: 'flex',
                             flexDirection: 'row',
                             alignItems: 'center',
-                            gap: '24px',
-                            marginTop: 'auto',
+                            gap: '12px',
                         }}>
-                        <img
-                            src={LOGO_SVG_DATA_URI}
-                            width={64}
-                            height={64}
-                            style={{ objectFit: 'contain' }}
-                        />
-                        <p
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="36"
+                            height="36"
+                            viewBox="0 0 1024 1024"
+                            style={{ width: '36px', height: '36px' }}>
+                            <path d={SOLAR_LOGO_PATH} fill="#818cf8" />
+                        </svg>
+                        <span
                             style={{
-                                fontSize: '46px',
-                                fontWeight: 700,
-                                color: 'rgb(240,240,240)',
+                                fontSize: '24px',
+                                fontWeight: 800,
+                                color: '#ffffff',
+                                letterSpacing: '0.05em',
                             }}>
-                            Solar Icons
-                        </p>
+                            SOLAR ICONS
+                        </span>
+                    </div>
+
+                    {/* Middle: Title & Description */}
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            flexGrow: 1,
+                            marginTop: '32px',
+                            marginBottom: '32px',
+                        }}>
+                        <span
+                            style={{
+                                fontSize: '56px',
+                                fontWeight: 800,
+                                color: '#ffffff',
+                                letterSpacing: '-0.02em',
+                                lineHeight: 1.15,
+                            }}>
+                            {title}
+                        </span>
+                        {description && (
+                            <span
+                                style={{
+                                    fontSize: '24px',
+                                    color: '#94a3b8',
+                                    lineHeight: 1.4,
+                                    marginTop: '16px',
+                                }}>
+                                {description}
+                            </span>
+                        )}
+                    </div>
+
+                    {/* Footer: Badge and URL */}
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            gap: '20px',
+                        }}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                padding: '6px 16px',
+                                borderRadius: '9999px',
+                                backgroundColor: 'rgba(99, 102, 241, 0.12)',
+                                border: '1px solid rgba(99, 102, 241, 0.25)',
+                                color: '#a5b4fc',
+                                fontSize: '14px',
+                                fontWeight: 700,
+                                letterSpacing: '0.08em',
+                            }}>
+                            {badge.toUpperCase()}
+                        </div>
+                        <span
+                            style={{
+                                fontSize: '18px',
+                                color: 'rgba(255, 255, 255, 0.4)',
+                                letterSpacing: '0.02em',
+                            }}>
+                            solar-icons.vercel.app
+                        </span>
+                    </div>
+                </div>
+
+                {/* Right Side: Glowing Cosmic Emblem */}
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '360px',
+                        height: '100%',
+                        position: 'relative',
+                    }}>
+                    {/* Outer Orbiting Ring */}
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: '320px',
+                            height: '320px',
+                            borderRadius: '160px',
+                            border: '1px solid rgba(99, 102, 241, 0.15)',
+                            backgroundColor: 'rgba(99, 102, 241, 0.01)',
+                            position: 'relative',
+                        }}>
+                        {/* Orbiting Particle 1 */}
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: '40px',
+                                right: '40px',
+                                width: '12px',
+                                height: '12px',
+                                borderRadius: '6px',
+                                backgroundColor: '#818cf8',
+                            }}
+                        />
+
+                        {/* Middle Ring */}
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                width: '240px',
+                                height: '240px',
+                                borderRadius: '120px',
+                                border: '1px solid rgba(99, 102, 241, 0.25)',
+                                backgroundColor: 'rgba(99, 102, 241, 0.03)',
+                                position: 'relative',
+                            }}>
+                            {/* Orbiting Particle 2 */}
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '30px',
+                                    left: '30px',
+                                    width: '8px',
+                                    height: '8px',
+                                    borderRadius: '4px',
+                                    backgroundColor: '#c084fc',
+                                }}
+                            />
+
+                            {/* Inner Circle / Glowing Core */}
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '160px',
+                                    height: '160px',
+                                    borderRadius: '80px',
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                                    background: 'radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0.05) 100%)',
+                                }}>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="88"
+                                    height="88"
+                                    viewBox="0 0 1024 1024"
+                                    style={{ width: '88px', height: '88px' }}>
+                                    <defs>
+                                        <linearGradient id="logo-grad-emblem" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor="#818cf8" />
+                                            <stop offset="100%" stopColor="#c084fc" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d={SOLAR_LOGO_PATH} fill="url(#logo-grad-emblem)" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
