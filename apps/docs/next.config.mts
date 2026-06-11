@@ -20,13 +20,16 @@ const config: NextConfig = {
         'oxc-transform',
         'twoslash',
         'shiki',
-        '@takumi-rs/image-response',
     ],
     async rewrites() {
         return [
             {
-                source: '/stats/:path*',
-                destination: 'https://cloud.umami.is/:path*',
+                source: '/assets/js/system.js',
+                destination: 'https://cloud.umami.is/script.js',
+            },
+            {
+                source: '/assets/js/api/send',
+                destination: 'https://cloud.umami.is/api/send',
             },
             {
                 source: '/docs/:path*.mdx',

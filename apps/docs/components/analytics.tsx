@@ -9,8 +9,10 @@ export function Analytics() {
     return (
         <Script
             defer
-            src="/stats/script.js"
+            src="/assets/js/system.js"
             data-website-id={websiteId}
+            data-host-url="/assets/js"
+            data-performance="true"
             strategy="afterInteractive"
         />
     )
