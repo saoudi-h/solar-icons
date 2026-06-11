@@ -98,12 +98,12 @@ export const config: Config = {
         links: [
           {
             label: "License",
-            url: "/license",
+            url: "/docs/community/license",
             icon: <Diploma size={20} />,
           },
           {
             label: "Changelog",
-            url: "/changelog",
+            url: "/docs/community/changelog",
             icon: <SmartphoneUpdate size={20} />,
           },
         ],
