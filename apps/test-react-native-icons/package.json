@@ -13,10 +13,10 @@
     },
     "dependencies": {
         "@solar-icons/react-native": "workspace:*",
-        "expo": "~55.0.26",
-        "expo-status-bar": "~55.0.6",
-        "react": "19.2.6",
-        "react-native": "0.85.3",
+        "expo": "~56.0.11",
+        "expo-status-bar": "~56.0.4",
+        "react": "19.2.7",
+        "react-native": "0.86.0",
         "react-native-svg": "^15.15.5"
     },
     "devDependencies": {
