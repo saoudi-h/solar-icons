@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "next build",
+        "build": "tsx ./scripts/generate-changelog.ts && next build",
         "dev": "next dev --turbo",
         "start": "next start",
         "postinstall": "fumadocs-mdx",
