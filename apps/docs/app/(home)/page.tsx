@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Solar Icons',
         description: 'The icon library for React applications and more',
-        images: '/og/home/image.webp',
+        images: '/og/home/image.png',
     },
     twitter: {
-        images: '/og/home/image.webp',
+        images: '/og/home/image.png',
     },
 }
 

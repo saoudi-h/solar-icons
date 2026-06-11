@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Explore Icons',
         description: 'Browse and discover the complete Solar Icons collection',
-        images: '/og/icons/image.webp',
+        images: '/og/icons/image.png',
     },
     twitter: {
-        images: '/og/icons/image.webp',
+        images: '/og/icons/image.png',
     },
 }
 
