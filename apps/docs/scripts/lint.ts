@@ -34,7 +34,7 @@ async function checkLinks() {
 }
 
 function getHeadings({ data }: (typeof source)['$inferPage']): string[] {
-    return data.toc.map(item => item.url.slice(1))
+    return (data.toc ?? []).map(item => item.url.slice(1))
 }
 
 function getFiles() {

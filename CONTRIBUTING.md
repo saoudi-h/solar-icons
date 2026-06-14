@@ -10,7 +10,7 @@ Thank you for considering contributing to my project! Here are some ways you can
 
 ## Code of Conduct
 
-Please note that all contributors are expected to adhere to the [Code of Conduct](./code_of_conduct.md) to ensure a welcoming environment for everyone.
+Please note that all contributors are expected to adhere to the [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure a welcoming environment for everyone.
 
 ## Development Setup
 

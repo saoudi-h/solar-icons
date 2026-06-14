@@ -95,4 +95,4 @@ Special thanks to **480 Design** for creating the original Solar icon pack. Addi
 
 ---
 
-For detailed documentation and examples, refer to the [project's main documentation](../README.md).
+For detailed documentation and examples, refer to the [project's main documentation](../../README.md).

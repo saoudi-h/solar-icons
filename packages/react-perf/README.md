@@ -76,7 +76,7 @@ Unlike the versatile `@solar-icons/react` package, `@solar-icons/react-perf` foc
 
 ## Contributing
 
-Contributions to further optimize and expand the `@solar-icons/react-perf` package are welcome. If you wish to contribute, please follow our [contribution guidelines](../CONTRIBUTING.md).
+Contributions to further optimize and expand the `@solar-icons/react-perf` package are welcome. If you wish to contribute, please follow our [contribution guidelines](../../CONTRIBUTING.md).
 
 ## License
 
@@ -88,4 +88,4 @@ Special thanks to **480 Design** for creating the original Solar icon pack. Addi
 
 ---
 
-For more details on other packages and usage examples, refer to the [project's main documentation](../README.md).
+For more details on other packages and usage examples, refer to the [project's main documentation](../../README.md).

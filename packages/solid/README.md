@@ -101,7 +101,7 @@ Each icon component supports the following properties:
 
 ## Contributing
 
-Contributions to further optimize and expand the `@solar-icons/solid` package are welcome. If you wish to contribute, please follow our [contribution guidelines](../CONTRIBUTING.md).
+Contributions to further optimize and expand the `@solar-icons/solid` package are welcome. If you wish to contribute, please follow our [contribution guidelines](../../CONTRIBUTING.md).
 
 ## License
 
@@ -113,4 +113,4 @@ Special thanks to **480 Design** for creating the original Solar icon pack. Addi
 
 ---
 
-For more details on other packages and usage examples, refer to the [project's main documentation](../README.md).
+For more details on other packages and usage examples, refer to the [project's main documentation](../../README.md).
