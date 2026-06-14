@@ -1,6 +1,6 @@
 ---
 title: 'Angular'
-description: Modern, signal-based components for Solar Icons. Optimized for Angular 17+ with native tree-shaking support.
+description: Signal-based components for Solar Icons. Optimized for Angular 17+ with native tree-shaking.
 icon: angular
 ---
 
@@ -8,7 +8,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
 import { Steps, Step } from 'fumadocs-ui/components/steps'
 import { Callout } from 'fumadocs-ui/components/callout'
 
-The `@solar-icons/angular` package brings the entire Solar Icon set to the Angular ecosystem. Built with modern primitives like **Signals** and **Standalone Components**, it offers a premium developer experience with near-zero bundle overhead.
+Use `@solar-icons/angular` to integrate Solar icons into Angular 17+ applications. Built with Signals and Standalone Components.
 
 ## Installation
 
@@ -20,9 +20,9 @@ The `@solar-icons/angular` package brings the entire Solar Icon set to the Angul
 
 ## Usage
 
-### Static Components
+### Components
 
-Import individual icon components for use in your templates.
+Import individual icon components:
 
 ```tsx
 import { Component } from '@angular/core'
@@ -36,15 +36,13 @@ import { HeartBold } from '@solar-icons/angular'
 export class App {}
 ```
 
-All import methods are tree-shakeable, ensuring only the icons you use are included in your bundle.
-
 ## Dynamic Rendering
 
-When your icon names come from a database or need to be swapped at runtime, use the `SolarDynamicIcon` directive.
+For runtime lookup or dynamic name swapping, use the `SolarDynamicIcon` directive.
 
-### Register your icons [step]
+### 1. Register icons
 
-To keep your bundle lean, you must explicitly register which icons should be available for dynamic lookup. You can do this at the application root or within a specific component.
+Register icons to expose them to dynamic lookup:
 
 ```tsx
 import { provideSolarIcons } from '@solar-icons/angular'
@@ -55,9 +53,9 @@ bootstrapApplication(App, {
 })
 ```
 
-### Use the directive [step]
+### 2. Render dynamic icons
 
-Import `SolarDynamicIcon` and pass the icon name or the component class to the `solarIcon` input.
+Import `SolarDynamicIcon` and pass the name or component class to `solarIcon`:
 
 ```tsx
 import { SolarDynamicIcon, SunBold } from '@solar-icons/angular'
@@ -69,7 +67,7 @@ import { SolarDynamicIcon, SunBold } from '@solar-icons/angular'
         <!-- Lookup by registered name -->
         <ng-container [solarIcon]="'HeartBold'" />
 
-        <!-- Direct class reference (no registration needed) -->
+        <!-- Direct class reference -->
         <ng-container [solarIcon]="Sun" />
     `,
 })
@@ -79,49 +77,30 @@ export class App {
 ```
 
 <Callout type="info" title="IDE Warnings">
-    When passing a component class directly, the Angular compiler might warn you that the component
-    is unused (`NG8113`). This is a known limitation of static analysis with dynamic references; you
-    can safely ignore it.
+    Angular might warn that the component is unused (`NG8113`) when referencing classes directly. You can safely ignore this.
 </Callout>
 
-## Configuration & Props
+## Inputs & Props
 
-Every icon component shares a consistent API for styling and accessibility:
+Icon components support these inputs:
 
 | Input      | Type               | Default          | Description                                                    |
 | ---------- | ------------------ | ---------------- | -------------------------------------------------------------- |
-| `size`     | `string \| number` | `'1em'`          | Numeric pixels or any CSS unit (e.g., `32`, `'2rem'`).         |
-| `color`    | `string`           | `'currentColor'` | Any valid CSS color value.                                     |
-| `alt`      | `string`           | `undefined`      | Providing this adds a `<title>` and makes the icon accessible. |
-| `mirrored` | `boolean`          | `false`          | Flip the icon horizontally.                                    |
+| `size`     | `string \| number` | `'1em'`          | Pixels or CSS units (e.g., `32`, `'2rem'`).                    |
+| `color`    | `string`           | `'currentColor'` | CSS color value.                                               |
+| `alt`      | `string`           | `undefined`      | Adds `<title>` and accessibility label.                       |
+| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.                                   |
 
-**Accessibility note:** When the `alt` input is provided, the component automatically renders a `<title>` element inside the SVG and makes it accessible to screen readers. Without `alt`, icons are marked as decorative with `aria-hidden="true"`.
+When `alt` is set, the component renders a `<title>` tag for screen readers. Otherwise, it defaults to `aria-hidden="true"`.
 
-## Why Attribute Selectors?
+## Attribute Selectors
 
-Unlike many other icon libraries that wrap SVGs in custom component tags (like `<solar-icon-home />`), this package uses **Attribute Selectors** on native `<svg>` elements.
+This package targets SVGs using attribute selectors (e.g., `solarHeartBold` on `<svg>`) rather than custom wrapper tags.
 
 ```html
-<!-- Clean, native DOM -->
+<!-- Native SVG element -->
 <svg solarHeartBold [size]="24" />
-
-<!-- Instead of cluttered custom tags -->
-<solar-heart-bold><svg>...</svg></solar-heart-bold>
 ```
 
-### Key Benefits
+This keeps the DOM tree clean, permits direct CSS targeting, and avoids wrapper element overhead.
 
-- **Clean DOM**: No unnecessary wrapper elements, keeping your inspector and accessibility tree lean.
-- **CSS Friendly**: You can target icons directly with standard CSS selectors.
-- **Native Performance**: Zero overhead from extra component lifecycle hooks or DOM nesting.
-
-## Compatibility
-
-- **Angular 17+**: Fully supports Signals and the new control flow.
-- **Tree-shaking**: Optimized `sideEffects` configuration ensures minimal bundle size.
-- **Full Type Safety**: Get autocompletion and JSDoc previews directly in your IDE.
-
-## License
-
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736)

@@ -1,124 +1,62 @@
 ---
 title: 'React Native'
-description: Solar Icons for React Native applications with flexible import options and full TypeScript support.
+description: Solar Icons for React Native.
 icon: react
 ---
 
-Bring the complete Solar Icons collection to your React Native applications with native SVG support via `react-native-svg`.
+Use `@solar-icons/react-native` to integrate Solar icons into React Native and Expo applications. Requires `react-native-svg`.
 
 ```package-install
-@solar-icons/react-native
+@solar-icons/react-native react-native-svg
 ```
 
 ## Features
 
-- **7,476 Icon Components** across all styles.
-- **Native SVG Rendering** with `react-native-svg` integration.
-- **Tree-shaking Ready** with multiple entry points.
-- **Fully Typed** with TypeScript definitions for all icons and props.
-- **Expo Compatible** works out-of-the-box with Expo SDK.
+- **7,476 icons**: Every style variant compiled for React Native.
+- **Expo compatible**: Works out of the box in Expo environments.
+- **TypeScript ready**: Full type definitions included.
 
 ---
 
 ## Import Methods
 
-The package provides three distinct import strategies to optimize your workflow and bundle size.
+This package offers three import strategies. All methods are tree-shakeable.
 
-### 1. Style Bundle Imports
+### 1. Import by Style
 
-Import multiple icons of the same style from a single entry point.
+Import multiple icons of the same style:
 
 ```tsx
 import { House, User, Settings } from '@solar-icons/react-native/Bold'
 ```
 
-**Best for:** Rapid prototyping or when using many icons of the same style.
+### 2. Import globally by Name
 
-### 2. Global Styled Exports
-
-Import icons with style-specific names from the main entry point.
+Import icons with style suffixes from the root:
 
 ```tsx
 import { HouseBold, HouseLinear, HeartBroken } from '@solar-icons/react-native'
 ```
 
-**Best for:** Mixing different styles in the same file with clear, descriptive names.
+### 3. Import by Category
 
-### 3. Granular Category Imports
-
-Import icons directly from their category and style path.
+Import from the specific category and style path:
 
 ```tsx
 import { House } from '@solar-icons/react-native/category/buildings/Bold'
 ```
 
-**Best for:** Explicit imports that make it easier to locate icon sources during development.
-
-> **Note:** All three import methods are tree-shakeable. Choose based on your development workflow preferences rather than bundle size concerns.
-
 ---
 
-## API Reference
+## Props
 
-### `IconProps`
+All components accept standard props extending `SvgProps` from `react-native-svg` (except `width` and `height`):
 
-All icon components accept the following props, extending `SvgProps` from `react-native-svg` (excluding `width`/`height`).
-
-| Prop       | Type               | Default          | Description                   |
-| :--------- | :----------------- | :--------------- | :---------------------------- |
-| `size`     | `number \| string` | `24`             | Width and height of the icon. |
-| `color`    | `string`           | `'currentColor'` | Icon fill/stroke color.       |
-| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.  |
-
-### `IconStyle`
-
-An enum for icon styles, useful for dynamic logic.
-
-```tsx
-import { IconStyle } from '@solar-icons/react-native'
-
-// Values: 'Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline'
-```
-
-### `IconBase`
-
-The core component used by all icons. Exported from `@solar-icons/react-native/lib`.
-
----
-
-## TypeScript Integration
-
-### Advanced Type Usage
-
-Import types for your custom components or refs.
-
-```tsx
-import type { IconProps, Icon } from '@solar-icons/react-native'
-import { useRef } from 'react'
-import { Svg } from 'react-native-svg'
-
-const MyComponent = () => {
-    const iconRef = useRef<Svg>(null)
-    return <HouseBold ref={iconRef} />
-}
-```
-
-### Custom Icon Wrapper
-
-```tsx
-import React from 'react'
-import * as Icons from '@solar-icons/react-native/Bold'
-import type { IconProps } from '@solar-icons/react-native'
-
-interface MyIconProps extends IconProps {
-    name: keyof typeof Icons
-}
-
-export const AppIcon = ({ name, ...props }: MyIconProps) => {
-    const IconComponent = Icons[name]
-    return <IconComponent {...props} />
-}
-```
+| Prop       | Type               | Default          | Description                  |
+| :--------- | :----------------- | :--------------- | :--------------------------- |
+| `size`     | `number \| string` | `24`             | Icon width and height.       |
+| `color`    | `string`           | `'currentColor'` | Icon fill or stroke color.   |
+| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally. |
 
 ---
 
@@ -128,13 +66,8 @@ export const AppIcon = ({ name, ...props }: MyIconProps) => {
 
 | Entry Point    | Content                                      |
 | :------------- | :------------------------------------------- |
-| `.`            | Global styled exports + `IconStyle`          |
-| `./[Style]`    | Style specific bundles (Bold, Linear, etc.)  |
-| `./category/*` | Direct access to individual icons            |
-| `./lib/*`      | Core logic, `IconBase`, and TypeScript types |
+| `.`            | Global exports and types.                    |
+| `./[Style]`    | Style-specific bundles (e.g., `Bold`, `Linear`).|
+| `./category/*` | Direct imports for individual icons.         |
+| `./lib/*`      | Core logic, `IconBase`, and TypeScript types. |
 
-### Requirements
-
-- **React Native**: >= 0.72.0
-- **react-native-svg**: >= 13.0.0
-- **TypeScript**: >= 4.5

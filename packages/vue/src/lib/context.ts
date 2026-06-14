@@ -2,9 +2,7 @@ import type { App, InjectionKey } from 'vue'
 import { inject, provide, reactive } from 'vue'
 import type { IconWeight, Numbrish, SolarIconContext, SolarIconsConfig } from './types'
 
-/**
- * Default configuration for Solar icons
- */
+/** Default configuration values. */
 export const DEFAULT_SOLAR = {
     color: 'currentColor',
     size: '24',
@@ -12,9 +10,7 @@ export const DEFAULT_SOLAR = {
     mirrored: false,
 } as const
 
-/**
- * Default context for Solar icons
- */
+/** Default context state. */
 export const DEFAULT_CONTEXT: SolarIconContext = {
     config: DEFAULT_SOLAR,
     setConfig: () => {},
@@ -27,9 +23,7 @@ export const SOLAR_ICONS_CONFIG_KEY: InjectionKey<SolarIconContext> =
     Symbol.for('solar-icons-config')
 
 /**
- * Creates a reactive configuration for Solar icons
- * @param partial - Partial configuration to override default values
- * @returns An object containing the configuration and methods to update it
+ * Creates reactive context state and update methods.
  */
 export function createSolarIcons(partial: SolarIconsConfig = {}) {
     const config = reactive<SolarIconsConfig>({
@@ -63,18 +57,14 @@ export function createSolarIcons(partial: SolarIconsConfig = {}) {
 }
 
 /**
- * Injects the Solar icons context
- * @returns The Solar icons context
+ * Injects the configuration context.
  */
 export function useSolar() {
     return inject(SOLAR_ICONS_CONFIG_KEY, DEFAULT_CONTEXT)
 }
 
 /**
- * Provides the Solar icons context to a Vue application
- * @param app - The Vue application instance
- * @param context - The Solar icons context to provide
- * @returns The Vue application instance
+ * Registers the configuration context on the app instance.
  */
 export function provideSolarIconsContextInApp(
     app: App,
@@ -85,8 +75,7 @@ export function provideSolarIconsContextInApp(
 }
 
 /**
- * Provides the Solar icons context using the Composition API
- * @param context - The Solar icons context to provide
+ * Provides the configuration context to the component tree.
  */
 export function provideSolarIconsContext(context: ReturnType<typeof createSolarIcons>) {
     provide(SOLAR_ICONS_CONFIG_KEY, context)

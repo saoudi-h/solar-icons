@@ -1,27 +1,23 @@
 ---
 title: 'Vue'
-description: The versatile, all-in-one package for using Solar Icons in Vue, with support for dynamic styles and global configuration.
+description: Solar Icons for Vue. Supports dynamic styles and global configuration.
 icon: vue
 ---
 
-The `@solar-icons/vue` package is the most flexible and feature-rich way to use Solar Icons in a Vue application. It's designed for ease of use and supports dynamic style changes, global configuration, and works seamlessly with Vue 3 and Nuxt.
+Use `@solar-icons/vue` in Vue 3 applications. It supports dynamic styles, global configuration, and works with Vue 3 and Nuxt.
 
 ```package-install
 @solar-icons/vue
 ```
 
-## Key Features
+## Features
 
-- **Dynamic Weights**: Change the icon style on the fly using the `weight` prop
-- **Global Configuration**: Use the `SolarProvider` to set default styles for all icons
-- **Tree-Shakable**: Only the icons you import will be included in your final bundle
-- **Vue 3 Support**: Built specifically for Vue 3 with Composition API support
-- **Nuxt Compatible**: Works with Nuxt 3 (though dedicated `@solar-icons/nuxt` package recommended for deeper integration)
-- **TypeScript Ready**: Comes with full TypeScript support
+- **Dynamic weights**: Change styles at runtime using the `weight` prop.
+- **Global styling**: Set default styles using `SolarProvider` or a plugin.
+- **Tree-shakeable**: Bundles only the icons you import.
+- **TypeScript ready**: Full type definitions included.
 
 ## Usage
-
-Import any icon and use it as a standard Vue component:
 
 ```vue
 <template>
@@ -35,23 +31,25 @@ import { Home } from '@solar-icons/vue'
 </script>
 ```
 
-## Component Props
+## Props
 
-Each icon component accepts the following props, in addition to all standard SVG attributes like `class` and `@click`.
+Icon components accept standard SVG attributes alongside these props:
 
-| Prop       | Type                                                                            | Default        | Description                                                           |
-| ---------- | ------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------- |
-| `color`    | `string`                                                                        | `currentColor` | Sets the icon's color. Inherits from `SolarProvider`.                 |
-| `size`     | `string \| number`                                                              | `24`           | Sets the icon's width and height. Inherits from `SolarProvider`.      |
-| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets the icon style. Inherits from `SolarProvider`.                   |
-| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`. Inherits from `SolarProvider`. |
-| `alt`      | `string`                                                                        | `undefined`    | Provides an accessible title for the icon.                            |
+| Prop       | Type                                                                            | Default        | Description                                  |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | -------------------------------------------- |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon color. Inherits from provider. |
+| `size`     | `string \| number`                                                              | `24`           | Sets width and height. Inherits from provider.|
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style. Inherits from provider.     |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`.       |
+| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                         |
+
+---
 
 ## Advanced Usage
 
-### Global Configuration with SolarProvider
+### Global Configuration with `SolarProvider`
 
-For applying consistent styles across your app, wrap your components with the `SolarProvider`:
+Wrap components in `SolarProvider` to apply default settings:
 
 ```vue
 <template>
@@ -65,9 +63,9 @@ import { SolarProvider } from '@solar-icons/vue'
 </script>
 ```
 
-### Vue Plugin Installation
+### Vue Plugin
 
-Alternatively, install the package as a Vue plugin for global configuration:
+Alternatively, configure defaults globally via the Vue plugin:
 
 ```js
 import { createApp } from 'vue'
@@ -85,7 +83,7 @@ app.mount('#app')
 
 ### Composition API
 
-You can also access and modify the icon configuration using the Composition API:
+Access and modify settings dynamically using `useSolar`:
 
 ```vue
 <template>
@@ -112,7 +110,7 @@ const increaseSize = () => {
 
 ### Category Imports
 
-You can also import all icons from a specific category as a single object:
+Import categorized collections as a single object:
 
 ```vue
 <template>
@@ -129,8 +127,9 @@ import { Arrows } from '@solar-icons/vue/category'
 
 ## Nuxt Integration
 
-While `@solar-icons/vue` is compatible with Nuxt, we recommend using the dedicated `@solar-icons/nuxt` package for deeper integration with the Nuxt ecosystem, including auto-import capabilities and optimized performance.
+For Nuxt 3 projects, use the dedicated `@solar-icons/nuxt` package for auto-import support.
 
 ```shell
 nuxi module add @solar-icons/nuxt
 ```
+

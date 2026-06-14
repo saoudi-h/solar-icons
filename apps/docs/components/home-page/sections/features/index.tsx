@@ -21,23 +21,23 @@ export interface FeatureCardProps {
 const features: FeatureCardProps[] = [
     {
         title: 'Multi-Style Support',
-        content: '7,000+ Unique Icons Across Diverse Categories',
+        content: 'Each icon comes in six styles: Bold, Linear, Outline, BoldDuotone, LineDuotone, and Broken.',
         Icon: PaletteRound,
     },
     {
-        title: 'Cross-Framework Compatibility',
-        content: 'Multi-Style Variations: Bold, Linear, Outline, and more',
-        Icon: Link,
+        title: 'Modern Frameworks',
+        content: 'Native packages for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, and Angular.',
+        Icon: Globus,
     },
     {
-        title: 'Easy Integration',
-        content: 'Optimized for Performance and Versatility',
+        title: 'Performance Choices',
+        content: 'Choose standard components for dynamic styling, or performance packages (-perf) to reduce bundle size.',
         Icon: PlugCircle,
     },
     {
-        title: 'Adaptations for Multiple Frameworks',
-        content: 'Optimized for Performance and Versatility',
-        Icon: Globus,
+        title: 'Developer Experience',
+        content: 'Full TypeScript type safety, JSDoc hints, auto-import modules, and categorized entry points.',
+        Icon: Link,
     },
 ]
 

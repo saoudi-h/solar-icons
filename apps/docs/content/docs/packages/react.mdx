@@ -1,26 +1,23 @@
 ---
 title: 'React'
-description: The versatile, all-in-one package for using Solar Icons in React, with support for dynamic styles and global configuration.
+description: Solar Icons for React. Supports dynamic styles and global configuration.
 icon: react
 ---
 
-The `@solar-icons/react` package is the most flexible and feature-rich way to use Solar Icons in a React application. It's designed for ease of use and supports dynamic style changes, global configuration, and both client-side and server-side rendering.
+Use `@solar-icons/react` for standard React applications. It supports dynamic styles, global configuration context, and client/server rendering.
 
 ```package-install
 @solar-icons/react
 ```
 
-## Key Features
+## Features
 
-- **Dynamic Weights**: Change the icon style on the fly using the `weight` prop.
-- **Global Configuration**: Use the `SolarProvider` to set default styles for all icons.
-- **Tree-Shakable**: Only the icons you import will be included in your final bundle.
-- **SSR Support**: Works seamlessly in server-rendered applications.
-- **TypeScript Ready**: Comes with full TypeScript support.
+- **Dynamic weights**: Change styles at runtime using the `weight` prop.
+- **Global styling**: Set default styles using `SolarProvider`.
+- **Tree-shakeable**: Bundles only the icons you import.
+- **RSC & SSR ready**: Works with Server-Side Rendering (SSR) and Server Components.
 
 ## Usage
-
-Import any icon and use it as a standard React component.
 
 ```jsx
 import { Home } from '@solar-icons/react'
@@ -30,31 +27,23 @@ function App() {
 }
 ```
 
-## Component Props
+## Props
 
-Each icon component accepts the following props, in addition to all standard SVG attributes like `className` and `onClick`.
+Icon components accept all standard HTML SVG attributes alongside these props:
 
-| Prop       | Type                                                                            | Default        | Description                                                           |
-| ---------- | ------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------- |
-| `color`    | `string`                                                                        | `currentColor` | Sets the icon's color. Inherits from `SolarProvider`.                 |
-| `size`     | `string \| number`                                                              | `1em`          | Sets the icon's width and height. Inherits from `SolarProvider`.      |
-| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets the icon style. Inherits from `SolarProvider`.                   |
-| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`. Inherits from `SolarProvider`. |
-| `alt`      | `string`                                                                        | `undefined`    | Provides an accessible title for the icon.                            |
+| Prop       | Type                                                                            | Default        | Description                                  |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | -------------------------------------------- |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon color. Inherits from provider. |
+| `size`     | `string \| number`                                                              | `1em`          | Sets width and height. Inherits from provider.|
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style. Inherits from provider.     |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`.       |
+| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                         |
 
-## Advanced Usage
+---
 
-### Global Configuration
+## Category Imports
 
-For applying consistent styles across your app, see the [**Global Configuration guide**](/docs/advanced/global-configuration).
-
-### Server-Side Rendering
-
-For usage in SSR environments like Next.js, refer to the [**Server-Side Rendering guide**](/docs/advanced/server-side-rendering).
-
-### Category Imports
-
-You can also import all icons from a specific category as a single object.
+Import all icons in a category as a single object:
 
 ```jsx
 import { Arrows } from '@solar-icons/react/category'
@@ -68,3 +57,4 @@ function App() {
     )
 }
 ```
+

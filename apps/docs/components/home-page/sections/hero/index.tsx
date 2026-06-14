@@ -62,6 +62,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       relative my-14 mt-16 flex flex-col items-center
                       justify-center gap-6
                     `}>
+                    <a
+                        href="https://github.com/saoudi-h/solar-icons"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`
+                          inline-flex items-center gap-2 rounded-full border
+                          border-primary/20 bg-primary/5 px-4 py-1 text-xs
+                          text-primary transition-all duration-300
+                          hover:bg-primary/10 hover:border-primary/40 hover:-translate-y-0.5
+                        `}>
+                        <span>⭐ Star on GitHub</span>
+                        <span className="h-3 w-px bg-primary/20" />
+                        <span className="font-medium">Support the project!</span>
+                    </a>
                     <Heading size="h1" justify="center">
                         {title.part1}
                         <br />

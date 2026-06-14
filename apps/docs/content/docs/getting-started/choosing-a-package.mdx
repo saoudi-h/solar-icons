@@ -1,63 +1,38 @@
 ---
 title: Choosing a Package
-description: Learn how to choose between a standard Solar Icons package and its performance-oriented version.
+description: Compare standard vs. performance-optimized Solar Icon packages.
 icon: Palette
 ---
 
 import { Cards, Card } from 'fumadocs-ui/components/card'
 
-Solar Icons packages are sometimes available in **two variants**:
-
-- **Standard package**, maximizes flexibility and ease of use.
-- **Performance package** (suffix `-perf`), optimized for minimal bundle size.
-
-The best choice depends on your priorities: flexibility vs performance.
+Some framework packages come in two variants: **Standard** and **Performance** (`-perf`).
 
 ---
 
-## General Comparison
+## Comparison
 
 | Feature                  | Standard Package          | Performance Package (`-perf`) |
 | ------------------------ | ------------------------- | ----------------------------- |
 | **Dynamic Styles**       | ✅ Yes                    | ❌ No                         |
 | **Bundle Size**          | Larger                    | ✅ Smaller                    |
-| **Global Configuration** | ✅ Yes (if supported)     | ❌ No                         |
-| **Ease of Use**          | ✅ High                   | Good                          |
-| **Primary Use Case**     | Versatility & Development | Performance-critical apps     |
+| **Global Configuration** | ✅ Yes                    | ❌ No                         |
+| **Primary Use Case**     | Development, dynamic styling | Production, performance-critical apps |
 
 ---
 
-## How it works
+## How they work
 
-**Standard packages** include **all six icon styles** within each component.  
-This makes them ideal for:
-
-- Prototyping or applications where styles may change dynamically.
-- Projects that value ease of use over bundle size.
-- Global styling via a provider (when available).
-
-**Performance packages** include **only a single icon style** per component.  
-This is perfect for:
-
-- Applications where bundle size is critical.
-- Situations where you know the exact style you need in advance.
-- Environments without global configuration needs.
+- **Standard packages** bundle all six styles inside each component. You can swap styles at runtime using the `weight` prop, or configure defaults globally using a context provider.
+- **Performance packages** bundle only a single style per component (e.g., `HomeBold`). Unused styles are tree-shaken and excluded from the build.
 
 ---
 
-## Example: React
+## React Example
 
-For React, the two packages are:
+- `@solar-icons/react`: Standard package. All styles available in every icon. Supports global configuration.
+- `@solar-icons/react-perf`: Performance package. Every icon includes a single style, minimizing bundle size.
 
-<Card
-    title="@solar-icons/react"
-    description="The versatile choice, all styles available in each icon, with global configuration support."
-/>
+[**@solar-icons/react Docs →**](/docs/packages/react)  
+[**@solar-icons/react-perf Docs →**](/docs/packages/react-perf)
 
-<Card
-    title="@solar-icons/react-perf"
-    description="The performance choice, each icon includes only one style, drastically reducing bundle size."
-/>
-
-[**Learn more about @solar-icons/react →**](/docs/packages/react)  
-[**Learn more about @solar-icons/react-perf →**](/docs/packages/react-perf)

@@ -12,8 +12,7 @@ const defaultValue: IconBaseProps = {
 }
 
 /**
- * SolarContext is a React context used to provide default properties for icon components.
- * This allows consistent icon styling across the application.
+ * React context for sharing default icon properties.
  */
 const SolarContext = createContext<SolarContextType>({
     value: defaultValue,
@@ -22,15 +21,7 @@ const SolarContext = createContext<SolarContextType>({
 })
 
 /**
- * SolarProvider component is a React functional component that supplies
- * the SolarContext to its child components. It manages and provides
- * default properties for icon components, allowing consistent icon
- * styling across the application.
- * @param props - The props object.
- * @param [props.value] - The initial icon properties.
- * @param [props.svgProps] - The initial SVG properties.
- * @param props.children - The child components that will have access to the context.
- * @returns The context provider that wraps children components, providing icon customization capabilities.
+ * Context provider that wraps child components to supply default icon and SVG properties.
  */
 export const SolarProvider: React.FC<SolarProviderProps & { children: ReactNode }> = ({
     children,
@@ -63,9 +54,6 @@ export const SolarProvider: React.FC<SolarProviderProps & { children: ReactNode 
 }
 
 /**
- * useSolar hook allows access to the current icon context.
- * This hook can be used in any component that needs to read or modify
- * the default icon properties provided by the SolarProvider.
- * @returns The current context value for the icon properties.
+ * Hook to read or update the current icon configuration context.
  */
 export const useSolar = (): SolarContextType => useContext(SolarContext)

@@ -1,40 +1,33 @@
 ---
 title: 'Nuxt'
-description: The Nuxt module for seamless integration of Solar Icons with auto-import and global configuration.
+description: Solar Icons Nuxt module. Supports auto-import and global configuration.
 icon: nuxt
 ---
 
-The `@solar-icons/nuxt` package provides a specialized Nuxt module for integrating Solar icons into your Nuxt 3+ applications. This module acts as a wrapper around `@solar-icons/vue`, offering auto-import capabilities, global configuration, and optimized performance specifically designed for the Nuxt ecosystem.
+Use `@solar-icons/nuxt` to integrate Solar icons into Nuxt 3+ applications. It wraps `@solar-icons/vue` to enable auto-import, global configuration, and SSR optimization.
 
 ```shell
 nuxi module add @solar-icons/nuxt
 ```
 
-## Key Features
+## Features
 
-- **Auto-import Icons**: All icons are automatically available as components with a configurable prefix
-- **Global Configuration**: Set default styles for all icons through module configuration
-- **Optimized for Nuxt**: Built specifically for Nuxt 3 with SSR support and performance optimizations
-- **TypeScript Support**: Full TypeScript support with proper type definitions
-- **Flexible Usage**: Supports both auto-imported components and manual imports via aliases
-- **Runtime Configuration**: Access and modify icon configurations at runtime
+- **Auto-import**: Icons are registered as global Vue components with an optional prefix.
+- **Global styling**: Set default props directly in `nuxt.config.ts`.
+- **SSR optimization**: Pre-configured for Nuxt 3 server-side rendering.
 
 ## Configuration
 
-Configure the module in your `nuxt.config.ts` file:
+Configure options in `nuxt.config.ts`:
 
 ```js
 // nuxt.config.ts
 export default defineNuxtConfig({
     modules: ['@solar-icons/nuxt'],
     solarIcons: {
-        // Prefix for auto-imported components (default: 'Solar')
-        namePrefix: 'Solar',
-        // Auto-import all icons as components (default: true)
-        autoImport: true,
-        // Inject global provider automatically (default: true)
-        provider: true,
-        // Default icon properties
+        namePrefix: 'Solar',  // Component prefix (default: 'Solar')
+        autoImport: true,     // Auto-import all icons (default: true)
+        provider: true,       // Enable global provider context (default: true)
         color: 'currentColor',
         size: 24,
         weight: 'Linear',
@@ -45,9 +38,9 @@ export default defineNuxtConfig({
 
 ## Usage
 
-### Auto-imported Icons
+### Auto-imported Components
 
-With auto-import enabled (default), you can use any Solar icon directly in your templates without manual imports:
+With auto-import enabled, render icons directly using their prefixed names (default: `Solar` + Category + IconName):
 
 ```vue
 <template>
@@ -59,52 +52,38 @@ With auto-import enabled (default), you can use any Solar icon directly in your 
 </template>
 ```
 
-### Manual Import via Aliases
+### Manual Imports
 
-For more control, you can manually import icons using the provided aliases:
+You can also import manually using path aliases:
 
 ```vue
 <template>
     <div>
         <ArrowUp :size="24" weight="Outline" />
         <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
-        <Arrows.AltArrowLeft color="#fff" weight="Bold" />
     </div>
 </template>
 
 <script setup>
 import { ArrowUp } from '#solar-icons'
 import * as solar from '#solar-icons/category'
-import { Arrows } from '#solar-icons/category'
-import { SolarProvider } from '#solar-icons/lib'
 </script>
 ```
 
-### Global Configuration with SolarProvider
+Available aliases:
+- `#solar-icons` - Exports Vue components.
+- `#solar-icons/lib` - Exports utilities (e.g., `SolarProvider`, `useSolar`).
+- `#solar-icons/category` - Exports categorized icon sets.
 
-The module automatically provides a global configuration context. You can override these defaults using the `SolarProvider` component:
+### Composition API
 
-```vue
-<template>
-    <SolarProvider :size="32" color="purple" weight="Linear">
-        <YourComponents />
-    </SolarProvider>
-</template>
-
-<script setup>
-import { SolarProvider } from '#solar-icons/lib'
-</script>
-```
-
-### Using Composition API
-
-Access and modify icon configurations using the Composition API:
+Read or update default settings dynamically:
 
 ```vue
 <template>
     <div>
         <ArrowUp :size="iconSize" weight="Outline" />
-        <button @click="increaseSize">Increase Size</button>
+        <button @click="increaseSize">Resize</button>
     </div>
 </template>
 
@@ -123,44 +102,15 @@ const increaseSize = () => {
 </script>
 ```
 
-## Configuration Options
+## Props
 
-The module offers the following configuration options in your `nuxt.config.ts`:
-
-| Option       | Type             | Default          | Description                          |
-| ------------ | ---------------- | ---------------- | ------------------------------------ |
-| `namePrefix` | string           | `'Solar'`        | Prefix for auto-imported components  |
-| `autoImport` | boolean          | `true`           | Auto-import all icons as components  |
-| `provider`   | boolean          | `true`           | Inject global provider automatically |
-| `color`      | string           | `'currentColor'` | Default icon color                   |
-| `size`       | number \| string | `24`             | Default icon size                    |
-| `weight`     | string           | `'Linear'`       | Default icon style                   |
-| `mirrored`   | boolean          | `false`          | Default horizontal flip state        |
-
-## Available Aliases
-
-The module provides these import aliases for convenience:
-
-- `#solar-icons` - Exports all icons and components from `@solar-icons/vue`
-- `#solar-icons/lib` - Exports library utilities like `SolarProvider`, `useSolar`
-- `#solar-icons/category` - Exports categorized icon collections
-
-## Component Props
-
-Each icon component accepts the following props, in addition to all standard SVG attributes:
+Icon components accept standard SVG attributes alongside these props:
 
 | Prop       | Type                                                                            | Default        | Description                               |
 | ---------- | ------------------------------------------------------------------------------- | -------------- | ----------------------------------------- |
-| `color`    | `string`                                                                        | `currentColor` | Sets the icon's color                     |
-| `size`     | `string \| number`                                                              | `24`           | Sets the icon's width and height          |
-| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets the icon style                       |
-| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`     |
-| `alt`      | `string`                                                                        | `undefined`    | Provides an accessible title for the icon |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon color.                      |
+| `size`     | `string \| number`                                                              | `24`           | Sets width and height.                    |
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style.                          |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`.    |
+| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                      |
 
-## Compatibility
-
-This module is compatible with:
-
-- Nuxt 3.0.0 and higher
-- Node.js 18.0.0 and higher
-- Vue 3.0.0 and higher

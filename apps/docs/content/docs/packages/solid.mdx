@@ -1,26 +1,24 @@
 ---
 title: 'Solid'
-description: SolidJS components for Solar Icons with optimal bundle size and tree-shaking support.
+description: SolidJS components for Solar Icons.
 icon: solid
 ---
 
-The `@solar-icons/solid` package provides SolidJS components for Solar Icons. It's designed for performance with minimal bundle size and full tree-shaking support.
+Use `@solar-icons/solid` in SolidJS applications. It features reactive components optimized for minimal bundle size.
 
 ```package-install
 @solar-icons/solid
 ```
 
-## Key Features
+## Features
 
-- **SolidJS Ready**: Built with SolidJS reactivity for optimal performance.
-- **Tree-Shakable**: Only the icons you import are included in your bundle.
-- **Minimal Size**: Each icon component is ~360 bytes.
-- **TypeScript Ready**: Full TypeScript support with proper types.
-- **Multiple Import Patterns**: Import by style, by category, or individual icons.
+- **SolidJS ready**: Reactivity optimized.
+- **Tree-shakeable**: Bundles only the icons you import.
+- **TypeScript ready**: Full type definitions included.
 
 ## Usage
 
-Import icons from a style and use them as SolidJS components:
+Import icons from a style and use them as Solid components:
 
 ```tsx
 import { House } from '@solar-icons/solid/Bold'
@@ -30,26 +28,28 @@ function App() {
 }
 ```
 
-## Component Props
+## Props
 
-Each icon component accepts the following props, in addition to all standard SVG attributes.
+Icon components accept standard SVG attributes alongside these props:
 
-| Prop       | Type               | Default        | Description                                |
-| ---------- | ------------------ | -------------- | ------------------------------------------ |
-| `color`    | `string`           | `currentColor` | Sets the icon's color.                     |
-| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.          |
-| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`.     |
-| `alt`      | `string`           | `undefined`    | Provides an accessible title for the icon. |
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
+| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
+| `alt`      | `string`           | `undefined`    | Accessibility title.                   |
+
+---
 
 ## Import Patterns
 
-### By Style
+### Import by Style
 
-Import all icons from a specific style:
+Import all icons in a style:
 
 ```tsx
 import { House, Settings, User } from '@solar-icons/solid/Bold'
-import { HouseLinear } from '@solar-icons/solid/Linear'
+import { House as HouseLinear } from '@solar-icons/solid/Linear'
 
 function App() {
     return (
@@ -61,11 +61,11 @@ function App() {
 }
 ```
 
-Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`
+Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`.
 
-### By Category
+### Import by Category
 
-Import icons from a specific category:
+Import icons in a category:
 
 ```tsx
 import { Bold, Linear } from '@solar-icons/solid/category/arrows'
@@ -80,9 +80,9 @@ function App() {
 }
 ```
 
-### Direct Import
+### Direct Component Import
 
-Import individual icons directly from their category path:
+Import individual components directly:
 
 ```tsx
 import { House } from '@solar-icons/solid/category/building/Bold'
@@ -92,25 +92,11 @@ function App() {
 }
 ```
 
-**Best for:** Explicit imports that make it easier to locate icon sources during development.
-
-## Using with CSS
-
-Since the default color is `currentColor`, icons inherit the text color from their parent:
-
-```tsx
-function App() {
-    return (
-        <div class="text-blue-500">
-            <House size={24} />
-        </div>
-    )
-}
-```
+---
 
 ## IconBase Component
 
-You can use the `IconBase` component to create custom icons:
+Use `IconBase` to build custom icons:
 
 ```tsx
 import { IconBase } from '@solar-icons/solid'
@@ -124,10 +110,3 @@ function App() {
 }
 ```
 
-## TypeScript
-
-Types are exported from the main package:
-
-```tsx
-import type { IconProps, IconStyle } from '@solar-icons/solid'
-```

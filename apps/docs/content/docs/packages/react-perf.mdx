@@ -1,31 +1,24 @@
 ---
 title: 'React Performance'
-description: The performance-optimized package for Solar Icons in React, designed for minimal bundle size.
+description: Solar Icons for React, optimized for minimal bundle size.
 icon: react
 ---
 
-The `@solar-icons/react-perf` package is tailored for developers who prioritize performance and reduced bundle sizes. Each icon component includes only a single style, making it significantly lighter than the standard `@solar-icons/react` package.
+Use `@solar-icons/react-perf` for production builds where bundle size is critical. Each component bundles only one icon style.
 
 ```package-install
 @solar-icons/react-perf
 ```
 
-## Key Features
+## Features
 
-- **Performance-Oriented**: Each icon is a separate, lightweight component.
-- **Minimal Bundle Size**: Only the specific icon styles you import are added to your application.
-- **Explicit Imports**: Encourages deliberate choices about icon styles.
-- **TypeScript Ready**: Comes with full TypeScript support.
-
-## When to Use It
-
-You should use this package if your application's bundle size is a primary concern and you do not need to change icon styles dynamically at runtime. It's ideal for large-scale applications where performance is critical.
-
-For more guidance, see the [**Choosing a Package**](/docs/getting-started/choosing-a-package) guide.
+- **Performance-focused**: Each style variant is a separate component (e.g., `HomeBold`).
+- **Minimal bundle size**: Tree-shaking removes all unused styles from the build.
+- **TypeScript ready**: Full type definitions included.
 
 ## Usage
 
-Import icons by their combined name and style (e.g., `IconName` + `Style` = `IconNameStyle`).
+Import components using their combined name and weight:
 
 ```jsx
 import { HomeBold, SettingsLinear } from '@solar-icons/react-perf'
@@ -40,9 +33,9 @@ function App() {
 }
 ```
 
-### Importing by Style Path
+### Import by Style Path
 
-For cleaner code, you can import from style-specific entry points. This allows you to use the base icon name.
+For cleaner component names, import from the style-specific entry point:
 
 ```jsx
 import { Home } from '@solar-icons/react-perf/bold'
@@ -58,13 +51,14 @@ function App() {
 }
 ```
 
-## Component Props
+## Props
 
-Each icon component accepts the following props, in addition to all standard SVG attributes like `className` and `onClick`.
+Icon components accept standard HTML SVG attributes alongside these props:
 
-| Prop       | Type               | Default        | Description                                |
-| ---------- | ------------------ | -------------- | ------------------------------------------ |
-| `color`    | `string`           | `currentColor` | Sets the icon's color.                     |
-| `size`     | `string \| number` | `1em`          | Sets the icon's width and height.          |
-| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`.     |
-| `alt`      | `string`           | `undefined`    | Provides an accessible title for the icon. |
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
+| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
+| `alt`      | `string`           | `undefined`    | Accessibility title.                   |
+
