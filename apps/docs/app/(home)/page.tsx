@@ -1,3 +1,4 @@
+import { CommunitySection } from '@/components/home-page/sections/community'
 import { FeaturesSection } from '@/components/home-page/sections/features'
 import { HeroSection } from '@/components/home-page/sections/hero'
 import { PackagesSection } from '@/components/home-page/sections/packages'
@@ -28,6 +29,7 @@ export default function HomePage() {
             <HeroSection {...config.heroSection} />
             <FeaturesSection />
             <PackagesSection {...config.packageSection} />
+            <CommunitySection />
         </main>
     )
 }
