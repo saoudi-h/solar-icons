@@ -93,7 +93,7 @@ export const FeaturesSection = () => {
                     <BentoCard>
                         <BentoHeader
                             title="Explore and Search"
-                            description="Filter 1,200+ icons by category, search by keywords, adjust stroke weights, and copy code snippets for React, Svelte, or Vue."
+                            description="Filter 1,200+ icons by category, search by keywords, adjust size, weights, and copy code snippets for React, Svelte, Vue, etc."
                             href="/icons"
                             buttonText="Search"
                         />
@@ -220,12 +220,9 @@ const BentoHeader = ({
                 {title}
             </h3>
             {href && buttonText && (
-                <Button
-                    asChild
-                    size="sm"
-                    variant="default"
-                    colors="muted"
-                    className="rounded-full">
+                <Button asChild size="sm" variant="default" colors="muted" className="
+                  rounded-full
+                ">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRight />
