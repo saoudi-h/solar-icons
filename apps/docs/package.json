@@ -19,6 +19,7 @@
         "generate:data": "tsx ./core/scripts/generate-data.ts",
         "generate:descriptions": "tsx ./core/scripts/generate-descriptions.ts",
         "lint-staged": "lint-staged",
+        "pre-commit": "lint-staged",
         "lint:links": "fumadocs-mdx && bun scripts/lint.ts",
         "analyze": "ANALYZE=true pnpm run build"
     },

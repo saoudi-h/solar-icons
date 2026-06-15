@@ -29,7 +29,8 @@
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
         "typecheck": "tsc",
-        "test": "vitest run"
+        "test": "vitest run",
+        "pre-commit": "lint-staged"
     },
     "module": "./dist/esm/index.mjs",
     "main": "./dist/cjs/index.cjs",
