@@ -14,6 +14,7 @@ const config: Config[] = defineConfig([
             'lint-staged.config.mjs',
             'core/scripts/**',
             'core/generated/**',
+            'scripts/**',
         ],
     },
     {

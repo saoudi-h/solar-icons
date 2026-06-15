@@ -111,7 +111,12 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                             Packages
                         </span>
                     </MotionHeading>
-                    <p className="max-w-[620px] text-center text-sm/relaxed text-muted-foreground pb-12 md:text-base select-none">
+                    <p
+                        className="
+                          max-w-[620px] pb-12 text-center text-sm/relaxed
+                          text-muted-foreground select-none
+                          md:text-base
+                        ">
                         Install native icon packages built specifically for your framework.
                     </p>
                     <div

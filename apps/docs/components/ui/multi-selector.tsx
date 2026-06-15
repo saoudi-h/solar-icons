@@ -283,6 +283,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
 
         useEffect(() => {
             if (value) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setSelected(value)
             }
         }, [value])
@@ -294,6 +295,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
             }
             const newOption = transToGroupOption(arrayOptions || [], groupBy)
             if (JSON.stringify(newOption) !== JSON.stringify(options)) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setOptions(newOption)
             }
         }, [arrayDefaultOptions, arrayOptions, groupBy, onSearch, options])
@@ -412,10 +414,12 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
             [options, selected]
         )
 
+        const commandPropsFilter = commandProps?.filter
+
         /** Avoid Creatable Selector freezing or lagging when paste a long string. */
         const commandFilter = React.useCallback(() => {
-            if (commandProps?.filter) {
-                return commandProps.filter
+            if (commandPropsFilter) {
+                return commandPropsFilter
             }
 
             if (creatable) {
@@ -425,7 +429,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
             }
             // Using default filter in `cmdk`. We don't have to provide it.
             return undefined
-        }, [creatable, commandProps?.filter])
+        }, [creatable, commandPropsFilter])
 
         return (
             <Command
@@ -497,9 +501,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircle weight="Bold" size={24} className={`
-                              drop-shadow-md
-                            `} />
+                            <CloseCircle
+                                weight="Bold"
+                                size={24}
+                                className={`drop-shadow-md`}
+                            />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -533,9 +539,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               focus:ring-2 focus:ring-ring
                                               focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) && `
-                                              hidden
-                                            `
+                                            (disabled || option.fixed) &&
+                                                `hidden`
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -624,9 +629,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem value="-" className={`
-                                          hidden
-                                        `} />
+                                        <CommandItem
+                                            value="-"
+                                            className={`hidden`}
+                                        />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

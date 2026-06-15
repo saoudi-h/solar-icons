@@ -23,15 +23,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <section
             className={`
-              relative container flex w-full flex-col items-center self-center
-              px-3
-              md:px-0 h-[calc(100vh-84px)]
+              relative container flex h-[calc(100vh-84px)] w-full flex-col
+              items-center self-center px-3
+              md:px-0
             `}>
             <div
                 className={`
-                  relative w-full gap-2 flex flex-col justify-between overflow-hidden rounded-2xl bg-accent/30
-                  py-12
-                  md:rounded-3xl h-full mb-[34px]
+                  relative mb-[34px] flex size-full flex-col justify-between
+                  gap-2 overflow-hidden rounded-2xl bg-accent/30 py-12
+                  md:rounded-3xl
                 `}>
                 <NoiseSvg
                     className={`
@@ -62,7 +62,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       relative my-14 mt-16 flex flex-1 flex-col items-center
                       justify-center gap-6
                     `}>
-
                     <Heading size="h1" justify="center">
                         {title.part1}
                         <br />
