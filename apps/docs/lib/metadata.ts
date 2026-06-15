@@ -39,6 +39,9 @@ export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://local
  * @example 'https://solar-icons-git-feature.vercel.app' for preview deployments
  * @example 'https://solar-icons.vercel.app' for production (if matching siteUrl)
  */
-export const baseUrl = !process.env.VERCEL_URL
-    ? siteUrl
-    : new URL(`https://${process.env.VERCEL_URL}`)
+export const baseUrl =
+    process.env.VERCEL_ENV === 'production' ||
+    process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ||
+    !process.env.VERCEL_URL
+        ? siteUrl
+        : new URL(`https://${process.env.VERCEL_URL}`)
