@@ -1,0 +1,14 @@
+@keyframes float-up {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+@keyframes float-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+.badgeFloatUp {
+    animation: float-up 3.5s ease-in-out infinite;
+}
+.badgeFloatDown {
+    animation: float-down 3.5s ease-in-out infinite;
+}

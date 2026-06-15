@@ -2,21 +2,17 @@
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Heading } from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
-import {
-    Star,
-    Like,
-    ShieldCheck,
-    Globus,
-    Link as LinkIcon,
-    PaletteRound,
-    PlugCircle,
-    SettingsMinimalistic,
-    CodeScan,
-    Heart,
-} from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
-import { Icon } from '@iconify/react'
 import React from 'react'
+
+import { StylesShowcase } from './StylesShowcase'
+import { FrameworksShowcase } from './FrameworksShowcase'
+import { ExplorerShowcase } from './ExplorerShowcase'
+import { DocsShowcase } from './DocsShowcase'
+import { DxShowcase } from './DxShowcase'
+import Link from 'next/link'
+import { ArrowRight } from '@solar-icons/react/ssr'
+import { Button } from '@/components/ui/button'
 
 export const FeaturesSection = () => {
     // Stagger animation variants
@@ -53,77 +49,106 @@ export const FeaturesSection = () => {
               md:px-0
             "
         >
-            {/* Ambient Background Glows */}
-            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none opacity-40">
-                <div className="absolute top-1/4 left-1/4 size-72 rounded-full bg-primary/8 blur-3xl dark:bg-primary/4" />
-                <div className="absolute bottom-1/4 right-1/4 size-80 rounded-full bg-warning/4 blur-3xl" />
-            </div>
-
             {/* Title Block */}
-            <motion.div variants={itemVariants} className="flex flex-col items-center text-center gap-4">
-                <Heading size="h1" className="text-3xl font-extrabold tracking-tight md:text-5xl">
-                    Crafted for the{' '}
-                    <span className="box-decoration-clone underline decoration-primary underline-offset-8">
-                        Entire Team
-                    </span>
+            <motion.div variants={itemVariants} className="
+              flex flex-col items-center gap-4 text-center
+            ">
+                <Heading size="h1" className="
+                  text-3xl font-extrabold tracking-tight
+                  md:text-5xl
+                ">
+                    Built for{' '}
+                    <span className="
+                      box-decoration-clone underline decoration-primary
+                      underline-offset-8
+                    ">
+                        Teams
+                     </span>
                 </Heading>
-                <p className="max-w-[580px] text-muted-foreground text-sm md:text-base leading-relaxed">
-                    Discover how Solar Icons satisfies designers, developers, and product teams via premium visual options and outstanding developer ergonomics.
+                <p className="
+                  max-w-[580px] text-sm/relaxed text-muted-foreground
+                  md:text-base
+                ">
+                    A complete icon set with six visual styles, native frontend framework packages, autocomplete typings, and AI-ready documentation.
                 </p>
             </motion.div>
 
             {/* Bento Grid Layout */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 mt-4">
-                {/* Card 1: 6 Styles & 7,400+ Variations (md:col-span-7) */}
-                <motion.div variants={itemVariants} className="md:col-span-7 flex">
+            <div className="
+              mt-4 grid w-full grid-cols-1 gap-2
+              md:grid-cols-12
+            ">
+                {/* Card 1: Explore & Search (md:col-span-7) */}
+                <motion.div variants={itemVariants} className="
+                  flex
+                  md:col-span-7
+                ">
                     <BentoCard>
                         <BentoHeader 
-                            title="6 Visual Styles & 7,400+ Variations" 
-                            description="Visual flexibility at your fingertips. Every icon comes in Linear, Bold, Outline, BoldDuotone, LineDuotone, and Broken styles to align with any brand identity."
+                            title="Explore and Search" 
+                            description="Filter 1,200+ icons by category, search by keywords, adjust stroke weights, and copy code snippets for React, Svelte, or Vue."
+                            href="/icons"
+                            buttonText="Search"
                         />
-                        <StylesShowcase />
+                        <ExplorerShowcase />
                     </BentoCard>
                 </motion.div>
 
                 {/* Card 2: Native Frameworks (md:col-span-5) */}
-                <motion.div variants={itemVariants} className="md:col-span-5 flex">
+                <motion.div variants={itemVariants} className="
+                  flex
+                  md:col-span-5
+                ">
                     <BentoCard>
                         <BentoHeader 
-                            title="First-Class Framework Support" 
-                            description="Native integration for modern tools. Direct packages for React, React Native, Vue, Nuxt, Svelte, SolidJS, and Angular."
+                            title="Native Framework Packages" 
+                            description="Integrate icons directly into React, React Native, Vue, Nuxt, Svelte, SolidJS, or Angular projects without wrappers."
+                            href="#available-packages"
+                            buttonText="Packages"
                         />
                         <FrameworksShowcase />
                     </BentoCard>
                 </motion.div>
 
-                {/* Card 3: Pixel-Perfect 24px Grid (md:col-span-4) */}
-                <motion.div variants={itemVariants} className="md:col-span-4 flex">
+                {/* Card 3: Six Visual Styles (md:col-span-4) */}
+                <motion.div variants={itemVariants} className="
+                  flex
+                  md:col-span-4
+                ">
                     <BentoCard>
                         <BentoHeader 
-                            title="Pixel-Perfect 24px Grid" 
-                            description="Consistent vector geometry. Designed on a standard 24x24 pixel grid with uniform bounding boxes and stroke weights."
+                            title="Six Visual Styles" 
+                            description="Swap weights and styles on the fly. Each icon includes Linear, Bold, Outline, BoldDuotone, LineDuotone, and Broken variants."
                         />
-                        <GridShowcase />
+                        <StylesShowcase />
                     </BentoCard>
                 </motion.div>
 
-                {/* Card 4: Zero-Bloat Performance (md:col-span-4) */}
-                <motion.div variants={itemVariants} className="md:col-span-4 flex">
+                {/* Card 4: AI-Ready Documentation (md:col-span-4) */}
+                <motion.div variants={itemVariants} className="
+                  flex
+                  md:col-span-4
+                ">
                     <BentoCard>
                         <BentoHeader 
-                            title="Zero-Bloat Performance" 
-                            description="Only package what you use. optimized sub-packages (-perf) and direct imports strip bundle footprint."
+                            title="AI-Ready Documentation" 
+                            description="Includes llms.txt and llms-full.txt context files for AI agents. Copy any page as Markdown to load documentation into Claude, ChatGPT, or Cursor."
+                            href="/docs"
+                            buttonText="Docs"
                         />
-                        <PerformanceShowcase />
+                        <DocsShowcase />
                     </BentoCard>
                 </motion.div>
 
                 {/* Card 5: Type-Safe DX (md:col-span-4) */}
-                <motion.div variants={itemVariants} className="md:col-span-4 flex">
+                <motion.div variants={itemVariants} className="
+                  flex
+                  md:col-span-4
+                ">
                     <BentoCard>
                         <BentoHeader 
-                            title="Type-Safe IDE Autocomplete" 
-                            description="Developer-first ergonomics. Full TypeScript support, type safety, and JSDoc hints directly inside your editor."
+                            title="Type-Safe Autocomplete" 
+                            description="Get autocomplete suggestions for icon weights and parameters in VS Code or Cursor. Features inline JSDoc typings and syntax-highlighted previews."
                         />
                         <DxShowcase />
                     </BentoCard>
@@ -134,159 +159,42 @@ export const FeaturesSection = () => {
 }
 
 /* Base Bento Card Wrapper */
-const BentoCard = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={cn(
-        `
-          relative w-full flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200/50 
-          bg-neutral-50/50 p-6 shadow-xs transition-all duration-300 hover:shadow-md dark:border-neutral-800/40 
-          dark:bg-neutral-900/10 dark:hover:bg-neutral-900/20 backdrop-blur-2xs
-        `,
-        className
-    )}>
-        {children}
-    </div>
-)
+const BentoCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+    return (
+        <div className={cn(
+            `
+              relative flex w-full flex-col justify-between overflow-hidden
+              rounded-3xl bg-default-200/70 p-6
+              dark:bg-default-100
+            `,
+            className
+        )}>
+            {children}
+            {/* Gradient Veil overlay at the bottom to fade visual mockups into the card base */}
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-default-100 to-transparent dark:from-default-50/70 z-30" />
+        </div>
+    )
+}
 
 /* Consistent Card Header Component */
-const BentoHeader = ({ title, description }: { title: string; description: string }) => (
-    <div className="flex flex-col gap-1.5 text-left mb-6 select-none">
-        <h3 className="text-base font-bold text-foreground tracking-tight">{title}</h3>
-        <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
+const BentoHeader = ({ title, description, href, buttonText }: { title: string; description: string; href?: string; buttonText?: string }) => (
+    <div className="mb-6 flex flex-col gap-1.5 text-left select-none relative">
+        <div className="flex items-start justify-between gap-4">
+            <h3 className="
+              text-lg md:text-lg font-bold tracking-tight text-foreground
+            ">{title}</h3>
+            {href && buttonText && (
+                <Button asChild size="sm" variant="default" colors="muted" className="rounded-full">
+
+                <Link 
+                    href={href}
+                      >
+                    {buttonText}
+                    <ArrowRight />
+                </Link>
+                    </Button>
+            )}
+        </div>
+        <p className="text-xs/relaxed md:text-sm/relaxed text-muted-foreground font-light">{description}</p>
     </div>
 )
-
-/* Visual 1: Styles Showcase (PaletteRound in 6 weights) */
-const StylesShowcase = () => {
-    const styles = [
-        { id: 'Linear', name: 'Linear', icon: PaletteRound },
-        { id: 'Bold', name: 'Bold', icon: PaletteRound },
-        { id: 'Outline', name: 'Outline', icon: PaletteRound },
-        { id: 'BoldDuotone', name: 'Duotone', icon: PaletteRound },
-        { id: 'LineDuotone', name: 'LineDuo', icon: PaletteRound },
-        { id: 'Broken', name: 'Broken', icon: PaletteRound },
-    ] as const
-
-    return (
-        <div className="w-full grid grid-cols-3 sm:grid-cols-6 gap-3 mt-auto pt-4 border-t border-neutral-150 dark:border-neutral-850/60">
-            {styles.map(style => {
-                const IconComponent = style.icon
-                return (
-                    <div key={style.id} className="flex flex-col items-center gap-2 p-2 rounded-xl bg-neutral-100/40 dark:bg-neutral-950/20 border border-neutral-200/5 select-none">
-                        <div className="text-primary dark:text-primary-foreground p-1 flex items-center justify-center">
-                            <IconComponent size={24} weight={style.id} />
-                        </div>
-                        <span className="text-[10px] font-bold text-neutral-500">{style.name}</span>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
-
-/* Visual 2: Frameworks Showcase (Coloured tech badges) */
-const FrameworksShowcase = () => {
-    const frameworks = [
-        { name: 'React', icon: 'logos:react' },
-        { name: 'Vue', icon: 'logos:vue' },
-        { name: 'Svelte', icon: 'logos:svelte-icon' },
-        { name: 'Solid', icon: 'logos:solidjs-icon' },
-        { name: 'Angular', icon: 'logos:angular-icon' },
-        { name: 'Nuxt', icon: 'logos:nuxt-icon' },
-    ]
-
-    return (
-        <div className="w-full grid grid-cols-3 gap-3 mt-auto pt-4 border-t border-neutral-150 dark:border-neutral-850/60">
-            {frameworks.map(fw => (
-                <div key={fw.name} className="flex flex-col items-center gap-1.5 p-2 rounded-xl bg-neutral-100/40 dark:bg-neutral-950/20 border border-neutral-200/5 hover:scale-[1.03] transition-transform duration-250 cursor-pointer">
-                    <Icon icon={fw.icon} className="size-6" />
-                    <span className="text-[10px] font-bold text-neutral-500 select-none">{fw.name}</span>
-                </div>
-            ))}
-        </div>
-    )
-}
-
-/* Visual 3: Grid Showcase (SVG Technical Blueprint) */
-const GridShowcase = () => {
-    return (
-        <div className="w-full flex items-center justify-center py-4 mt-auto">
-            <svg viewBox="0 0 100 100" className="size-24 text-neutral-300 dark:text-neutral-800">
-                <defs>
-                    <pattern id="bento-grid-pat" width="10" height="10" patternUnits="userSpaceOnUse">
-                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                    </pattern>
-                </defs>
-                {/* Main grid boundary */}
-                <rect width="80" height="80" x="10" y="5" fill="url(#bento-grid-pat)" stroke="currentColor" strokeWidth="1" opacity="0.6" rx="4" />
-                
-                {/* Vector Icon inside grid */}
-                <path 
-                    d="M30 40 L50 60 L70 40 M50 20 L50 60" 
-                    stroke="var(--color-primary)" 
-                    strokeWidth="3.5" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    fill="none" 
-                />
-                
-                {/* Dimension line */}
-                <line x1="10" y1="92" x2="90" y2="92" stroke="currentColor" strokeWidth="1" opacity="0.8" />
-                <path d="M10 89 L10 95 M90 89 L90 95" stroke="currentColor" strokeWidth="1" opacity="0.8" />
-                <text x="50" y="100" textAnchor="middle" fontSize="7" fontWeight="bold" className="fill-neutral-500 font-sans tracking-wide">24px Grid</text>
-            </svg>
-        </div>
-    )
-}
-
-/* Visual 4: Performance Showcase */
-const PerformanceShowcase = () => {
-    return (
-        <div className="w-full flex flex-col gap-2.5 mt-auto pt-4 border-t border-neutral-150 dark:border-neutral-850/60 font-mono text-[10px] text-left">
-            <div className="rounded-xl border border-neutral-200/50 bg-white/40 dark:border-neutral-800/40 dark:bg-neutral-950/20 p-3 flex flex-col gap-1.5">
-                <div className="flex justify-between items-center text-neutral-500 select-none">
-                    <span>Direct SSR Import</span>
-                    <span className="text-primary font-bold">0.4 KB</span>
-                </div>
-                <div className="p-1.5 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 overflow-x-auto text-[9px] select-none">
-                    <span className="text-purple-500">import</span> {`{ Star }`} <span className="text-purple-500">from</span> <span className="text-green-600">"@solar-icons/react/ssr"</span>
-                </div>
-                
-                <div className="h-px bg-neutral-200/50 dark:bg-neutral-800/50 my-1" />
-
-                <div className="flex justify-between items-center text-neutral-500 select-none">
-                    <span>Performance Package</span>
-                    <span className="text-primary font-bold">0.3 KB</span>
-                </div>
-                <div className="p-1.5 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 overflow-x-auto text-[9px] select-none">
-                    <span className="text-purple-500">import</span> {`{ Star }`} <span className="text-purple-500">from</span> <span className="text-green-600">"@solar-icons/react-perf"</span>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-/* Visual 5: DX Showcase (Code snippets) */
-const DxShowcase = () => {
-    return (
-        <div className="w-full flex flex-col mt-auto pt-4 border-t border-neutral-150 dark:border-neutral-850/60 font-mono text-[10px] text-left">
-            <div className="rounded-xl border border-neutral-200/50 bg-white/40 dark:border-neutral-800/40 dark:bg-neutral-950/20 p-3 flex flex-col gap-1 select-none">
-                <div>
-                    &lt;<span className="text-red-500">Star</span>
-                </div>
-                <div>
-                    &nbsp;&nbsp;size={`{`}<span className="text-orange-500">24</span>{`}`}
-                </div>
-                {/* Autocomplete highlight */}
-                <div className="bg-primary/10 dark:bg-primary/20 rounded-xs px-1 text-primary font-bold border-l-2 border-primary">
-                    &nbsp;&nbsp;weight="BoldDuotone"
-                </div>
-                <div>
-                    &nbsp;&nbsp;className="text-warning"
-                </div>
-                <div>
-                    /&gt;
-                </div>
-            </div>
-        </div>
-    )
-}

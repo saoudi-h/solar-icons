@@ -73,7 +73,7 @@ const Content: FC = () => {
 
                     <div className="flex flex-col items-start justify-between">
                         <h3 className="text-left font-heading text-xl font-bold">
-                            {selectedIcon?.name}
+                            {selectedIcon.name}
                         </h3>
                         <div className="flex gap-2">
                             <Toggle

@@ -52,6 +52,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
 
     return (
         <SectionMotion
+            id="available-packages"
             className={`
               relative container flex w-full flex-col items-center gap-8
               self-center px-3 py-12
@@ -98,7 +99,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                         initial="hidden"
                         variants={itemVariants}
                         whileInView="visible"
-                        className="pb-16"
+                        className="pb-4"
                         viewport={{ once: true, amount: 0.5 }}
                         custom={0}>
                         Available{' '}
@@ -110,6 +111,9 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                             Packages
                         </span>
                     </MotionHeading>
+                    <p className="max-w-[620px] text-center text-sm/relaxed text-muted-foreground pb-12 md:text-base select-none">
+                        Install native icon packages built specifically for your framework.
+                    </p>
                     <div
                         className={`
                           mx-auto mt-8 flex w-full max-w-4xl flex-row flex-wrap
