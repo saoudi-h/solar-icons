@@ -19,9 +19,11 @@
         "prepare": "husky",
         "test": "turbo test",
         "pre-commit": "turbo pre-commit --concurrency=1",
-        "setup": "pnpm install && pnpm build"
+        "setup": "pnpm install && pnpm build",
+        "autonomos": "autonomos"
     },
     "devDependencies": {
+        "@autonomos/cli": "^0.3.3",
         "@commitlint/cli": "^21.0.2",
         "@commitlint/config-conventional": "^21.0.2",
         "@commitlint/types": "^21.0.1",

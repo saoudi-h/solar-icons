@@ -62,3 +62,7 @@ tmp/
 
 # Playwright MCP
 .playwright-mcp/
+
+# Autonomos — process files (worklogs, task board). AGENT.md and PROTOCOL.md are kept public.
+.autonomos/worklogs/
+.autonomos/TASKS.md
