@@ -1,7 +1,8 @@
 // ─── Renames (from issue saoudi-h/solar-icons#493) ─────────────────────────
-// Keys and values are kebab-case canonical icon names. The plugin converts
-// each side to the Figma form (PascalCase words separated by spaces) when
-// matching components and building the proposed new name.
+// Keys and values are kebab-case canonical icon names. The plugin does a
+// case-insensitive substring search of each `from` key inside the last
+// segment of every component's name, so compound names (e.g.
+// "Minimalistic Magnifer" -> "Minimalistic Magnifier") are caught too.
 //
 // Open issues / decisions deferred to the maintainer:
 //   - `trellis`: issue also proposes `vanity-table`, `dressing-table`.
@@ -32,100 +33,110 @@ const RENAMES = {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
 
-/**
- * Convert a Figma icon-name segment to its kebab-case form for matching
- * against the rename map.
- *   "Plain"                  -> "plain"
- *   "Plain 2"                -> "plain-2"
- *   "Minimalistic Magnifer"  -> "minimalistic-magnifer"
- *   "Wad Of Money"           -> "wad-of-money"
- */
-const toKebab = (s) =>
-  s
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    .replace(/[\s_]+/g, '-')
-    .toLowerCase();
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 /**
- * Convert a kebab-case string to the Figma form: each word capitalized,
- * separated by a single space. Matches the existing
- * `generate-svgs.ts` parseIconName convention.
- *   "plane-2"          -> "Plane 2"
- *   "money-roll"       -> "Money Roll"
- *   "car-battery"      -> "Car Battery"
+ * Replace every case-insensitive occurrence of `from` in `text` with `to`,
+ * preserving the casing of the original match:
+ *   "Magnifer"  ->  "Magnifier"   (title case preserved)
+ *   "MAGNIFER"  ->  "MAGNIFIER"   (uppercase preserved)
+ *   "magnifer"  ->  "magnifier"   (lowercase preserved)
+ *   "MiXeD"     ->  "NeWwOrD"     (best-effort: title case)
  */
-const toFigmaName = (kebab) =>
-  kebab
-    .split('-')
-    .map((w) => (w.length === 0 ? '' : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()))
-    .filter((w) => w.length > 0)
-    .join(' ');
+const replaceCased = (text, from, to) => {
+  const regex = new RegExp(escapeRegExp(from), 'gi')
+  return text.replace(regex, (match) => {
+    if (match === match.toUpperCase()) return to.toUpperCase()
+    if (match[0] === match[0].toUpperCase()) {
+      return to.charAt(0).toUpperCase() + to.slice(1).toLowerCase()
+    }
+    return to.toLowerCase()
+  })
+}
 
 /**
- * Walk the document, find every COMPONENT whose name follows the
- * `Style / Category / IconName` convention and whose IconName segment, in
- * kebab-case, matches a `from` key in RENAMES.
+ * Walk the document. For every COMPONENT whose last name segment contains
+ * a `from` key from RENAMES (case-insensitive), build a proposed rename
+ * where that substring is replaced with the corresponding `to` value.
  *
- * Returns a list of { id, oldName, newName } ready for the preview UI and
- * the apply step.
+ * Deduplication: a given node is matched at most once (the first
+ * `from`-key hit wins), so a component with two typos in its name is
+ * renamed in one pass; the user can re-run the plugin for the second.
+ *
+ * Returns a list of { id, oldName, newName, matchedBy }.
  */
 const findRenames = () => {
-  const out = [];
-  const components = figma.root.findAllWithCriteria({ types: ['COMPONENT'] });
+  const out = []
+  const seen = new Set()
+  const components = figma.root.findAllWithCriteria({ types: ['COMPONENT'] })
   for (const node of components) {
-    const parts = node.name.split('/').map((p) => p.trim());
-    if (parts.length < 3) continue;
-    const iconSegment = parts[parts.length - 1];
-    const iconKebab = toKebab(iconSegment);
-    const newKebab = RENAMES[iconKebab];
-    if (newKebab === undefined) continue;
-    const newIconSegment = toFigmaName(newKebab);
-    const newName = [...parts.slice(0, -1), newIconSegment].join(' / ');
-    out.push({ id: node.id, oldName: node.name, newName });
+    if (seen.has(node.id)) continue
+    const parts = node.name.split('/').map((p) => p.trim())
+    if (parts.length < 1) continue
+    const iconSegment = parts[parts.length - 1]
+    const iconLower = iconSegment.toLowerCase()
+
+    for (const [fromKebab, toKebab] of Object.entries(RENAMES)) {
+      const fromLower = fromKebab.toLowerCase()
+      if (!iconLower.includes(fromLower)) continue
+      if (iconLower === toKebab.toLowerCase()) continue
+
+      seen.add(node.id)
+      const newIconSegment = replaceCased(iconSegment, fromKebab, toKebab)
+      const newName = [...parts.slice(0, -1), newIconSegment].join(' / ')
+      out.push({
+        id: node.id,
+        oldName: node.name,
+        newName,
+        matchedBy: fromKebab,
+      })
+      break
+    }
   }
-  return out;
-};
+  return out
+}
 
 // ─── Main ─────────────────────────────────────────────────────────────────
 
-figma.showUI(__html__, { width: 560, height: 520 });
+figma.showUI(__html__, { width: 820, height: 620 })
 
-const renames = findRenames();
-figma.ui.postMessage({ type: 'preview', renames });
+const renames = findRenames()
+figma.ui.postMessage({ type: 'preview', renames })
 
 figma.ui.onmessage = async (msg) => {
-  if (!msg || typeof msg.type !== 'string') return;
+  if (!msg || typeof msg.type !== 'string') return
 
   if (msg.type === 'apply') {
-    figma.ui.postMessage({ type: 'progress', done: 0, total: renames.length });
-    for (let i = 0; i < renames.length; i++) {
-      const r = renames[i];
-      const node = await figma.getNodeByIdAsync(r.id);
+    const items = Array.isArray(msg.items) ? msg.items : []
+    figma.ui.postMessage({ type: 'progress', done: 0, total: items.length })
+    for (let i = 0; i < items.length; i++) {
+      const r = items[i]
+      const node = await figma.getNodeByIdAsync(r.id)
       if (!node) {
         figma.ui.postMessage({
           type: 'progress',
           done: i + 1,
-          total: renames.length,
+          total: items.length,
           error: 'Component not found: ' + r.id,
-        });
-        continue;
+        })
+        continue
       }
       try {
-        node.name = r.newName;
+        node.name = r.newName
       } catch (err) {
-        const message = err && err.message ? err.message : String(err);
+        const message = err && err.message ? err.message : String(err)
         figma.ui.postMessage({
           type: 'progress',
           done: i + 1,
-          total: renames.length,
+          total: items.length,
           error: 'Rename failed for ' + r.id + ': ' + message,
-        });
-        continue;
+        })
+        continue
       }
-      figma.ui.postMessage({ type: 'progress', done: i + 1, total: renames.length });
+      figma.ui.postMessage({ type: 'progress', done: i + 1, total: items.length })
     }
-    figma.ui.postMessage({ type: 'done', total: renames.length });
+    figma.ui.postMessage({ type: 'done', total: items.length })
   } else if (msg.type === 'cancel') {
-    figma.closePlugin();
+    figma.closePlugin()
   }
-};
+}
