@@ -36,32 +36,53 @@ const RENAMES = {
 const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 /**
- * Replace every case-insensitive occurrence of `from` in `text` with `to`,
- * preserving the casing of the original match:
- *   "Magnifer"  ->  "Magnifier"   (title case preserved)
- *   "MAGNIFER"  ->  "MAGNIFIER"   (uppercase preserved)
- *   "magnifer"  ->  "magnifier"   (lowercase preserved)
- *   "MiXeD"     ->  "NeWwOrD"     (best-effort: title case)
+ * Convert a Figma icon-name segment to its kebab-case form.
+ * This is the canonical form for matching against the RENAMES keys.
+ *   "Plain"                  -> "plain"
+ *   "Plain 2"                -> "plain-2"
+ *   "Minimalistic Magnifer"  -> "minimalistic-magnifer"
+ *   "Wad Of Money"           -> "wad-of-money"
+ *   "BellBing"               -> "bell-bing"
+ *   "BELL_BING"              -> "bell-bing"
  */
-const replaceCased = (text, from, to) => {
-  const regex = new RegExp(escapeRegExp(from), 'gi')
-  return text.replace(regex, (match) => {
-    if (match === match.toUpperCase()) return to.toUpperCase()
-    if (match[0] === match[0].toUpperCase()) {
-      return to.charAt(0).toUpperCase() + to.slice(1).toLowerCase()
-    }
-    return to.toLowerCase()
-  })
-}
+const toKebab = (s) =>
+  s
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .replace(/[^a-z0-9-]/gi, '')
+    .toLowerCase()
 
 /**
- * Walk the document. For every COMPONENT whose last name segment contains
- * a `from` key from RENAMES (case-insensitive), build a proposed rename
- * where that substring is replaced with the corresponding `to` value.
+ * Convert a kebab-case string to the Figma form: each word capitalized,
+ * separated by a single space. Matches the existing
+ * `generate-svgs.ts` parseIconName convention.
+ *   "plane-2"          -> "Plane 2"
+ *   "money-roll"       -> "Money Roll"
+ *   "minimalistic-magnifier" -> "Minimalistic Magnifier"
+ */
+const toFigmaName = (kebab) =>
+  kebab
+    .split('-')
+    .filter((w) => w.length > 0)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ')
+
+/**
+ * Walk the document. For every COMPONENT whose last name segment, in
+ * kebab-case, contains a `from` key from RENAMES as a substring, build
+ * a proposed rename. Both the segment and the from-key are normalized to
+ * kebab-case for matching, so hyphen/space/underscore variations are
+ * handled. Compound names (e.g. "Minimalistic Magnifer") are caught
+ * because the kebab form "minimalistic-magnifer" includes "magnifer".
+ *
+ * The rename is computed in the kebab form (replacing `from` with `to`
+ * via plain string replace) and then converted back to the Figma form.
+ * This loses the original case (e.g. "BELL BING" -> "Bell Ring"), but
+ * the existing file uses title case for icon names so this is the
+ * correct output. Components already in the target form are skipped.
  *
  * Deduplication: a given node is matched at most once (the first
- * `from`-key hit wins), so a component with two typos in its name is
- * renamed in one pass; the user can re-run the plugin for the second.
+ * `from`-key hit wins).
  *
  * Returns a list of { id, oldName, newName, matchedBy }.
  */
@@ -72,17 +93,21 @@ const findRenames = () => {
   for (const node of components) {
     if (seen.has(node.id)) continue
     const parts = node.name.split('/').map((p) => p.trim())
-    if (parts.length < 1) continue
+    if (parts.length < 3) continue
     const iconSegment = parts[parts.length - 1]
-    const iconLower = iconSegment.toLowerCase()
+    const iconKebab = toKebab(iconSegment)
+    if (!iconKebab) continue
 
     for (const [fromKebab, toKebab] of Object.entries(RENAMES)) {
-      const fromLower = fromKebab.toLowerCase()
-      if (!iconLower.includes(fromLower)) continue
-      if (iconLower === toKebab.toLowerCase()) continue
+      if (!iconKebab.includes(fromKebab)) continue
+      if (iconKebab === toKebab) continue
 
       seen.add(node.id)
-      const newIconSegment = replaceCased(iconSegment, fromKebab, toKebab)
+      const newIconKebab = iconKebab.replace(
+        new RegExp(escapeRegExp(fromKebab), 'g'),
+        toKebab
+      )
+      const newIconSegment = toFigmaName(newIconKebab)
       const newName = [...parts.slice(0, -1), newIconSegment].join(' / ')
       out.push({
         id: node.id,
