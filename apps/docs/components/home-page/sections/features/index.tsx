@@ -64,12 +64,12 @@ export const FeaturesSection = () => {
                           box-decoration-clone underline decoration-primary
                           underline-offset-8
                         ">
-                        Teams
+                        All
                     </span>
                 </Heading>
                 <p
                     className="
-                      max-w-[580px] text-sm/relaxed text-muted-foreground
+                      max-w-145 text-sm/relaxed text-muted-foreground
                       md:text-base
                     ">
                     A complete icon set with six visual styles, native frontend framework packages,

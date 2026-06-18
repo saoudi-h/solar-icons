@@ -26,6 +26,7 @@ const finalMirrored = computed(() => props.mirrored || config.mirrored || DEFAUL
         :height="finalSize"
         :color="finalColor"
         fill="none"
+        stroke-width="1.5"
         viewBox="0 0 24 24"
         :transform="finalMirrored ? 'scale(-1, 1)' : 'none'"
         v-bind="$attrs">

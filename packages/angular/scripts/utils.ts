@@ -170,6 +170,9 @@ function elementToIconNode(element: any): string | null {
     const attrs: Record<string, string> = {}
     if (element.attributes) {
         Array.from(element.attributes).forEach((attr: any) => {
+            if (attr.name === 'stroke-width' && attr.value === '1.5') {
+                return
+            }
             attrs[attr.name] = attr.value
         })
     }

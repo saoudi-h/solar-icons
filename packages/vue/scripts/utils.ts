@@ -83,11 +83,15 @@ function parseIconNodes(svgContent: string): SVGNode[] {
         const attrRegex = /(\w+(?:-\w+)*)=["']([^"']*)["']/g
         let attrMatch
         while ((attrMatch = attrRegex.exec(attributesStr)) !== null) {
+            const name = attrMatch[1]
             let value: any = attrMatch[2]
-            if (attrMatch[1] === 'fill' || attrMatch[1] === 'stroke') {
+            if (name === 'fill' || name === 'stroke') {
                 value = value.replace(/#[0-9a-f]{6}/gi, 'currentColor')
             }
-            attributes[attrMatch[1] as string] = value
+            if (name === 'stroke-width' && value === '1.5') {
+                continue
+            }
+            attributes[name as string] = value
         }
         return attributes
     }

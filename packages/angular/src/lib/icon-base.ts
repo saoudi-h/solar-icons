@@ -16,6 +16,7 @@ import { Directive, input } from '@angular/core'
         '[attr.width]': 'size()',
         '[attr.height]': 'size()',
         '[style.color]': 'color()',
+        '[attr.stroke-width]': 'strokeWidth()',
         '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
         '[attr.aria-hidden]': 'alt() ? null : "true"',
     },
@@ -37,6 +38,12 @@ export abstract class IconBase {
      * @default 'currentColor'
      */
     readonly color = input<string>('currentColor')
+
+    /**
+     * Stroke width.
+     * @default '1.5'
+     */
+    readonly strokeWidth = input<string | number>('1.5')
 
     /**
      * If set to true, the icon will be flipped horizontally.

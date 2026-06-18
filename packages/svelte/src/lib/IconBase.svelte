@@ -33,6 +33,7 @@
     {height}
     {color}
     fill="none"
+    stroke-width={1.5}
     viewBox="0 0 24 24"
     transform={mirrored ? 'scale(-1, 1)' : undefined}
     class={className}

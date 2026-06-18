@@ -147,6 +147,7 @@ function transformJSX(contents: string): { jsx: string; svgElements: Set<string>
         .replace(/<\/svg>/g, '') // Remove closing </svg> tag
         .replace(/<rect width="24[\d,.]+" height="24[\d,.]+" fill="none".*?\/>/g, '') // Remove any empty <rect> elements
         .replace(/<title.*?<\/title>/g, '') // Remove <title> tags
+        .replace(/\s+stroke-width=["']1\.5["']/g, '') // Remove default stroke-width="1.5"
         .replace(/"#[0-9a-f]{6}"/gi, '"currentColor"') // Replace hardcoded colors with currentColor
         .replace(/fill-rule/g, 'fillRule')
         .replace(/clip-rule/g, 'clipRule')

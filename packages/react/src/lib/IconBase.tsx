@@ -30,6 +30,7 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
             height={size ?? contextSize}
             color={color ?? contextColor}
             fill="none"
+            strokeWidth={1.5}
             viewBox="0 0 24 24"
             transform={mirrored || contextMirrored ? 'scale(-1, 1)' : undefined}
             {...svgProps}

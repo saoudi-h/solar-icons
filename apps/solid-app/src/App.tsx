@@ -26,6 +26,7 @@ const App: Component = () => {
     const [selectedStyle, setSelectedStyle] = createSignal<IconStyle>('Bold');
     const [iconSize, setIconSize] = createSignal(32);
     const [iconColor, setIconColor] = createSignal('#f59e0b'); // amber-500
+    const [strokeWidth, setStrokeWidth] = createSignal(1.5);
     const [searchQuery, setSearchQuery] = createSignal('');
 
     const filteredIcons = createMemo(() => {
@@ -54,7 +55,7 @@ const App: Component = () => {
 
                 {/* Controls */}
                 <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 backdrop-blur-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                         {/* Style Selector */}
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-slate-300">Style</label>
@@ -112,6 +113,23 @@ const App: Component = () => {
                             />
                         </div>
 
+                        {/* Stroke Width Slider */}
+                        <div class="space-y-2 transition-opacity duration-200" classList={{ 'opacity-30 pointer-events-none': !['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle()) }}>
+                            <label class="text-sm font-medium text-slate-300">
+                                Stroke Width: <span class="text-amber-400">{strokeWidth()}</span>
+                            </label>
+                            <input
+                                type="range"
+                                min="0.5"
+                                max="4"
+                                step="0.1"
+                                value={strokeWidth()}
+                                onInput={(e) => setStrokeWidth(parseFloat(e.currentTarget.value))}
+                                disabled={!['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle())}
+                                class="w-full accent-amber-500"
+                            />
+                        </div>
+
                         {/* Search */}
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-slate-300">Search</label>
@@ -147,7 +165,11 @@ const App: Component = () => {
                                             {/* Use Dynamic for proper reactivity */}
                                             <Dynamic
                                                 component={iconComponentSignal()}
-                                                {...{ size: iconSize(), color: iconColor() }}
+                                                {...{
+                                                    size: iconSize(),
+                                                    color: iconColor(),
+                                                    'stroke-width': ['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle()) ? strokeWidth() : undefined
+                                                }}
                                             />
                                         </div>
                                         <span class="text-xs text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">

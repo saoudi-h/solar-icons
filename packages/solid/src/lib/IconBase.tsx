@@ -19,6 +19,7 @@ function IconBase(props: IconProps): JSX.Element {
             height={height()}
             color={local.color ?? 'currentColor'}
             fill="none"
+            stroke-width={1.5}
             viewBox="0 0 24 24"
             style={style()}
             {...others}

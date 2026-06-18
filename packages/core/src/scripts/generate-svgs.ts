@@ -221,7 +221,8 @@ const fetchImageUrls = async (
                     {
                         ids: chunkIdsStr,
                         format: 'svg',
-                    }
+                        svg_simplify_stroke: true,
+                    } as any
                 ),
             8,
             5000,

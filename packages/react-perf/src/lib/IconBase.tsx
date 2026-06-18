@@ -20,6 +20,7 @@ const IconBase: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<
                 height={size}
                 color={color}
                 fill="none"
+                strokeWidth={1.5}
                 viewBox="0 0 24 24"
                 transform={mirrored ? 'scale(-1, 1)' : undefined}
                 {...restProps}>

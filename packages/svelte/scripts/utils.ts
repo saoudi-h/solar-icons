@@ -140,6 +140,7 @@ function transformJSX(contents: string) {
         .replace(/<\/svg>/g, '') // Remove closing </svg> tag
         .replace(/<rect width="24[\d,.]+" height="24[\d,.]+" fill="none".*?\/>/g, '') // Remove any empty <rect> elements
         .replace(/<title.*?<\/title>/g, '') // Remove <title> tags
+        .replace(/\s+stroke-width=["']1\.5["']/g, '') // Remove default stroke-width="1.5"
         .replace(/"#[0-9a-f]{6}"/gi, '"currentColor"'); // Replace hardcoded colors
     // Note: Svelte uses native SVG attributes (kebab-case), not JSX camelCase
     // So we do NOT convert fill-rule, clip-rule, stroke-width, etc.
