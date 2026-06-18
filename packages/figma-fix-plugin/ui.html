@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Icon Fixer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 12px;
+    background: #1e1e1e;
+    color: #e0e0e0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  .header {
+    padding: 12px 14px 10px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    flex: 1;
+  }
+  .header-sub {
+    font-size: 10px;
+    color: #666;
+  }
+
+  /* ── Action bar ── */
+  .actions {
+    display: flex;
+    gap: 6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+  }
+  .btn {
+    flex: 1;
+    padding: 7px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .15s;
+    letter-spacing: .02em;
+  }
+  .btn:hover { opacity: .85; }
+  .btn:active { opacity: .7; }
+  .btn-analyse { background: #3b82f6; color: #fff; }
+  .btn-preview  { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+  .btn-rebuild  { background: #16a34a; color: #fff; }
+  .btn-rebuild:disabled { background: #1e3a2a; color: #4a7a5a; cursor: not-allowed; }
+  .btn-clean    { background: #4b5563; color: #fff; border: 1px solid #5a6270; }
+  .btn-clean:disabled   { background: #252525; color: #555; border: 1px solid #333; cursor: not-allowed; }
+
+  /* ── Scroll area ── */
+  .scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .scroll::-webkit-scrollbar { width: 4px; }
+  .scroll::-webkit-scrollbar-track { background: transparent; }
+  .scroll::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+
+  /* ── Status badge ── */
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+  }
+  .status.idle    { background: #252525; color: #888; }
+  .status.ok      { background: #0f2e1a; color: #4ade80; border: 1px solid #16a34a44; }
+  .status.warn    { background: #2e1f0f; color: #fb923c; border: 1px solid #c2410c44; }
+  .status.error   { background: #2e0f0f; color: #f87171; border: 1px solid #dc262644; }
+  .status.info    { background: #0f1e2e; color: #60a5fa; border: 1px solid #3b82f644; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-ok   { background: #4ade80; }
+  .dot-warn { background: #fb923c; }
+  .dot-err  { background: #f87171; }
+  .dot-info { background: #60a5fa; }
+  .dot-idle { background: #555; }
+
+  /* ── Section ── */
+  .section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #555;
+    margin-bottom: 4px;
+  }
+
+  /* ── Vector card ── */
+  .vector-card {
+    background: #252525;
+    border-radius: 7px;
+    border: 1px solid #333;
+    overflow: hidden;
+  }
+  .vector-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-bottom: 1px solid #333;
+  }
+  .vector-card-header.ok   { background: #0d2318; }
+  .vector-card-header.warn { background: #231510; }
+  .vec-name { flex: 1; font-weight: 600; color: #e0e0e0; font-size: 11px; }
+  .badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .badge-ok   { background: #16a34a33; color: #4ade80; }
+  .badge-warn { background: #c2410c33; color: #fb923c; }
+  .badge-info { background: #3b82f633; color: #60a5fa; }
+
+  .reason-list {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .reason-item {
+    display: flex;
+    gap: 6px;
+    color: #aaa;
+    line-height: 1.4;
+  }
+  .reason-item::before { content: '→'; color: #555; flex-shrink: 0; }
+
+  /* ── SVG Analysis table ── */
+  .svg-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+  }
+  .svg-table th {
+    text-align: left;
+    color: #555;
+    padding: 4px 6px;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .svg-table td {
+    padding: 5px 6px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #ccc;
+    vertical-align: top;
+  }
+  .svg-table tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 600;
+  }
+  .pill-stroke { background: #16a34a33; color: #4ade80; }
+  .pill-fill   { background: #dc262633; color: #f87171; }
+  .pill-both   { background: #d97706aa; color: #fcd34d; }
+
+  /* ── SVG Preview ── */
+  .svg-preview-box {
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid #333;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    position: relative;
+  }
+  .svg-preview-box svg {
+    max-width: 100%;
+    max-height: 120px;
+  }
+  .svg-code {
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid #333;
+    padding: 8px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 9px;
+    color: #6b9a6b;
+    overflow-x: auto;
+    white-space: pre;
+    max-height: 120px;
+    overflow-y: auto;
+  }
+
+  /* ── Result cards ── */
+  .result-card {
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 7px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .result-card.success { border-color: #16a34a55; }
+  .result-card.failure { border-color: #dc262655; }
+  .result-name { font-weight: 600; color: #e0e0e0; }
+  .result-detail { color: #888; font-size: 10px; line-height: 1.5; }
+
+  /* ── Empty state ── */
+  .empty {
+    text-align: center;
+    color: #444;
+    padding: 32px 0;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .empty-icon { font-size: 24px; margin-bottom: 8px; }
+
+  /* ── Divider ── */
+  .divider { height: 1px; background: #2a2a2a; }
+
+  /* ── Loading ── */
+  .loading { color: #555; text-align: center; padding: 16px; font-size: 11px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border: 2px solid #333;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-title">☀️ Solar Icon Fixer</div>
+    <div class="header-sub">@solar-icons/* — SVG stroke diagnostic & rebuild</div>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="btn btn-analyse" onclick="send('ANALYSE')">🔍 Analyse</button>
+  <button class="btn btn-preview" onclick="send('PREVIEW')">👁 Preview SVG</button>
+  <button class="btn btn-rebuild" id="rebuildBtn" onclick="send('REBUILD')">⚡ Rebuild</button>
+  <button class="btn btn-clean" id="cleanBtn" onclick="send('CLEAN_ORIGINALS')" disabled>🧹 Clean</button>
+</div>
+
+<div style="padding: 6px 14px 8px; border-bottom: 1px solid #333; display: flex; align-items: center; justify-content: space-between; background: #1a1a1a;">
+  <label style="font-size: 10px; color: #aaa; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none; font-weight: 500;">
+    <input type="checkbox" id="strictMode" onchange="onStrictChange()" style="accent-color: #3b82f6; cursor: pointer; width: 12px; height: 12px;">
+    Strict Mode (flag fills / solid surfaces)
+  </label>
+</div>
+
+<div class="scroll" id="output">
+  <div class="empty">
+    <div class="empty-icon">🎯</div>
+    Select an icon frame or a vector node,<br>then click <strong>Analyse</strong>.
+  </div>
+</div>
+
+<script>
+  const out = document.getElementById('output');
+  const rebuildBtn = document.getElementById('rebuildBtn');
+  const cleanBtn = document.getElementById('cleanBtn');
+
+  let lastHasFixable = false;
+  let currentRequestId = 1;
+  let currentViewMode = 'analyse'; // 'analyse', 'preview', 'rebuild'
+
+  function send(type) {
+    currentRequestId++;
+    const reqId = currentRequestId;
+    if (type === 'ANALYSE') currentViewMode = 'analyse';
+    else if (type === 'PREVIEW') currentViewMode = 'preview';
+    else if (type === 'REBUILD') currentViewMode = 'rebuild';
+
+    const chk = document.getElementById('strictMode');
+    const strictMode = chk ? chk.checked : false;
+
+    showLoading(type);
+    parent.postMessage({ pluginMessage: { type, requestId: reqId, strictMode } }, '*');
+  }
+
+  function onStrictChange() {
+    const chk = document.getElementById('strictMode');
+    const strictMode = chk ? chk.checked : false;
+    parent.postMessage({ pluginMessage: { type: 'SAVE_SETTING', key: 'strictMode', value: strictMode } }, '*');
+    if (currentViewMode === 'preview') {
+      send('PREVIEW');
+    } else {
+      send('ANALYSE');
+    }
+  }
+
+  function showLoading(action) {
+    const labels = { ANALYSE: 'Analysing…', PREVIEW: 'Exporting SVG…', REBUILD: 'Rebuilding nodes…', CLEAN_ORIGINALS: 'Purging originals…' };
+    out.innerHTML = `<div class="loading"><span class="spinner"></span>${labels[action] || 'Working…'}</div>`;
+  }
+
+  // ── Pill helper ──────────────────────────────────────────────────────────
+  function pathPill(p) {
+    if (p.hasStroke && p.hasFill) return `<span class="pill pill-both">stroke+fill</span>`;
+    if (p.hasStroke) return `<span class="pill pill-stroke">✓ stroke</span>`;
+    if (p.hasFill)   return `<span class="pill pill-fill">✗ fill</span>`;
+    return `<span class="pill" style="background:#333;color:#888">none</span>`;
+  }
+
+  // ── SVG table ────────────────────────────────────────────────────────────
+  function svgTable(analysis, title) {
+    if (!analysis || analysis.length === 0) return '';
+    const allOk = analysis.every(p => p.hasStroke && !p.hasFill);
+    const rows = analysis.map((p, i) =>
+      `<tr>
+        <td style="color:#666">#${i+1}</td>
+        <td>${pathPill(p)}</td>
+        <td style="color:#555">${p.strokeWidth ? `sw=${p.strokeWidth}` : '—'}</td>
+      </tr>`
+    ).join('');
+    return `
+      <div class="section-title">${title}</div>
+      <div class="vector-card">
+        <table class="svg-table">
+          <thead><tr><th>#</th><th>Type</th><th>stroke-width</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }
+
+  // ── Receive messages ─────────────────────────────────────────────────────
+  window.onmessage = (event) => {
+    const msg = event.data.pluginMessage;
+    if (!msg) return;
+
+    if (msg.type === 'INIT_SETTINGS') {
+      const chk = document.getElementById('strictMode');
+      if (chk) chk.checked = msg.strictMode;
+      return;
+    }
+
+    // Handle selection changes from Figma automatically
+    if (msg.type === 'SELECTION_CHANGED') {
+      if (currentViewMode === 'preview') {
+        send('PREVIEW');
+      } else {
+        send('ANALYSE');
+      }
+      return;
+    }
+
+    // Verify matching requestId for all UI requests to prevent race conditions
+    if (msg.requestId !== undefined && msg.requestId !== currentRequestId) {
+      return;
+    }
+
+    if (msg.type === 'ERROR') {
+      out.innerHTML = `<div class="status error"><span class="dot dot-err"></span>${msg.message}</div>`;
+      return;
+    }
+
+    if (msg.type === 'SELECTION_EMPTY') {
+      rebuildBtn.disabled = true;
+      cleanBtn.disabled = true;
+      cleanBtn.innerText = "🧹 Clean";
+      out.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">🎯</div>
+          Select an icon frame or a vector node to begin.
+        </div>`;
+      return;
+    }
+
+    if (msg.type === 'SELECTION_NO_VECTORS') {
+      rebuildBtn.disabled = true;
+      cleanBtn.disabled = true;
+      cleanBtn.innerText = "🧹 Clean";
+      out.innerHTML = `
+        <div class="status info">
+          <span class="dot dot-info"></span>
+          <div><strong>${msg.nodeName}</strong><br>No vector paths found in selection.</div>
+        </div>`;
+      return;
+    }
+
+    // ── ANALYSIS RESULT ──────────────────────────────────────────────────
+    if (msg.type === 'ANALYSIS_RESULT') {
+      const { nodeName, vectorCount, diagnostics, svgAnalysis, originalsCount, strictMode } = msg;
+
+      // If the SVG exports perfectly as strokes (no fills), we override diagnostics to green/clean (unless in strict mode)
+      const isSvgExportClean = svgAnalysis && svgAnalysis.length > 0 && svgAnalysis.every(p => p.hasStroke && !p.hasFill);
+      if (isSvgExportClean && !strictMode) {
+        for (let i = 0; i < diagnostics.length; i++) {
+          diagnostics[i].isProblematic = false;
+          diagnostics[i].fixable = false;
+          diagnostics[i].reasons = [];
+        }
+      }
+
+      const problematic = diagnostics.filter(d => d.isProblematic);
+      const fixable     = diagnostics.filter(d => d.fixable);
+      const clean       = diagnostics.filter(d => !d.isProblematic);
+
+      // Check if there are strict mode violations in SVG
+      const svgFillsCount = svgAnalysis ? svgAnalysis.filter(p => p.hasFill).length : 0;
+      const hasStrictViolations = strictMode && svgFillsCount > 0;
+
+      const isClean = problematic.length === 0 && !hasStrictViolations;
+
+      lastHasFixable = diagnostics.length > 0;
+      rebuildBtn.disabled = !lastHasFixable;
+
+      // Update clean button based on hidden originals count
+      const count = originalsCount || 0;
+      cleanBtn.disabled = count === 0;
+      cleanBtn.innerText = count > 0 ? `🧹 Clean (${count})` : `🧹 Clean`;
+
+      const summaryClass = isClean ? 'ok' : ((fixable.length > 0 && !hasStrictViolations) ? 'warn' : 'error');
+      const summaryDot   = isClean ? 'dot-ok' : ((fixable.length > 0 && !hasStrictViolations) ? 'dot-warn' : 'dot-err');
+      
+      let summaryText = "";
+      if (isClean) {
+        summaryText = `All ${vectorCount} paths look clean — no issues detected.`;
+      } else if (hasStrictViolations) {
+        summaryText = `${svgFillsCount} surface(s) / fill(s) detected (prohibited in strict linear mode).`;
+      } else {
+        summaryText = `${problematic.length}/${vectorCount} paths have issues · ${fixable.length} auto-fixable`;
+      }
+
+      let html = `
+        <div class="status ${summaryClass}">
+          <span class="dot ${summaryDot}"></span>
+          <div><strong>${nodeName}</strong><br>${summaryText}</div>
+        </div>`;
+
+      // Per-vector diagnostics
+      if (diagnostics.length > 0) {
+        html += `<div class="section-title">Vector nodes (${vectorCount})</div>`;
+        for (const d of diagnostics) {
+          const cardClass = d.isProblematic ? 'warn' : 'ok';
+          const badge = d.isProblematic
+            ? (d.fixable
+               ? `<span class="badge badge-warn">fixable</span>`
+               : `<span class="badge" style="background:#dc262633;color:#f87171">baked</span>`)
+            : `<span class="badge badge-ok">clean</span>`;
+
+          const reasons = d.reasons.length > 0
+            ? `<div class="reason-list">${d.reasons.map(r => `<div class="reason-item">${r}</div>`).join('')}</div>`
+            : '';
+
+          html += `
+            <div class="vector-card">
+              <div class="vector-card-header ${cardClass}">
+                <span class="vec-name">${d.name || '(unnamed)'}</span>
+                ${badge}
+              </div>
+              ${reasons}
+            </div>`;
+        }
+      }
+
+      // SVG export analysis
+      if (svgAnalysis && svgAnalysis.length > 0) {
+        html += svgTable(svgAnalysis, 'Current SVG export — path types');
+      }
+
+      out.innerHTML = html;
+    }
+
+    // ── PREVIEW RESULT ───────────────────────────────────────────────────
+    if (msg.type === 'PREVIEW_RESULT') {
+      const { svg, analysis } = msg;
+      const allOk = analysis.every(p => p.hasStroke && !p.hasFill);
+
+      let html = `
+        <div class="status ${allOk ? 'ok' : 'warn'}">
+          <span class="dot ${allOk ? 'dot-ok' : 'dot-warn'}"></span>
+          ${allOk ? 'All paths use <strong>stroke</strong> — stroke-width is modifiable ✓' : 'Some paths are <strong>fills</strong> — stroke-width won\'t be editable'}
+        </div>
+        <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>SVG Preview</span>
+          <span id="sliderVal" style="color:var(--figma-color-text-secondary, #aaa);font-size:10px;text-transform:none;">stroke: 1.5px</span>
+        </div>
+        <div class="svg-preview-box">${svg}</div>
+        <div style="padding: 6px 10px; background: #252525; border-radius: 7px; border: 1px solid #333; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 10px; color: #888; white-space: nowrap;">Test Weight:</span>
+          <input type="range" min="0.5" max="6" step="0.5" value="1.5" id="strokeSlider" style="flex: 1; accent-color: #3b82f6; height: 3px; cursor: pointer;">
+        </div>`;
+
+      html += svgTable(analysis, 'Path analysis');
+
+      // Show stroke attributes snippet
+      const strokeMatch = svg.match(/stroke[^"]*="[^"]*"/g);
+      if (strokeMatch) {
+        const snippet = strokeMatch.slice(0, 8).join('\n');
+        html += `<div class="section-title">Stroke attributes in SVG</div><div class="svg-code">${escHtml(snippet)}</div>`;
+      }
+
+      out.innerHTML = html;
+      bindSlider();
+    }
+
+    // ── REBUILD RESULT ───────────────────────────────────────────────────
+    if (msg.type === 'REBUILD_RESULT') {
+      const { results, svgAfter, svg, originalsCount } = msg;
+      const succeeded = results.filter(r => r.success);
+      const failed    = results.filter(r => !r.success);
+
+      const allOk = svgAfter.every(p => p.hasStroke && !p.hasFill);
+
+      let html = `
+        <div class="status ${allOk ? 'ok' : 'info'}">
+          <span class="dot ${allOk ? 'dot-ok' : 'dot-info'}"></span>
+          ${succeeded.length} node(s) rebuilt · ${allOk ? 'SVG export now uses strokes ✓' : 'Check SVG — some fills may remain'}
+        </div>`;
+
+      if (succeeded.length > 0) {
+        html += `<div class="section-title">Rebuilt (${succeeded.length})</div>`;
+        for (const r of succeeded) {
+          html += `
+            <div class="result-card success">
+              <div class="result-name">✓ ${r.name || '(unnamed)'}</div>
+              <div class="result-detail">
+                strokeCap → <strong>${r.dominantCap}</strong>
+                ${r.capOverrideCount > 0 ? ` · ${r.capOverrideCount} per-vertex overrides removed` : ''}
+                · ${r.totalVertices} vertices
+              </div>
+            </div>`;
+        }
+      }
+
+      if (failed.length > 0) {
+        html += `<div class="section-title">Could not fix (${failed.length})</div>`;
+        for (const r of failed) {
+          html += `
+            <div class="result-card failure">
+              <div class="result-name">✗ ${r.name || '(unnamed)'}</div>
+              <div class="result-detail">${r.reason}</div>
+            </div>`;
+        }
+      }
+
+      if (svg) {
+        html += `
+          <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+            <span>Rebuilt SVG Preview</span>
+            <span id="sliderVal" style="color:var(--figma-color-text-secondary, #aaa);font-size:10px;text-transform:none;">stroke: 1.5px</span>
+          </div>
+          <div class="svg-preview-box">${svg}</div>
+          <div style="padding: 6px 10px; background: #252525; border-radius: 7px; border: 1px solid #333; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 10px; color: #888; white-space: nowrap;">Test Weight:</span>
+            <input type="range" min="0.5" max="6" step="0.5" value="1.5" id="strokeSlider" style="flex: 1; accent-color: #3b82f6; height: 3px; cursor: pointer;">
+          </div>`;
+      }
+
+      html += svgTable(svgAfter, 'SVG export after rebuild');
+
+      rebuildBtn.disabled = true;
+      lastHasFixable = false;
+
+      // Update clean button based on hidden originals count post-rebuild
+      const count = originalsCount || 0;
+      cleanBtn.disabled = count === 0;
+      cleanBtn.innerText = count > 0 ? `🧹 Clean (${count})` : `🧹 Clean`;
+
+      out.innerHTML = html;
+      bindSlider();
+    }
+
+    // ── CLEAN RESULT ─────────────────────────────────────────────────────
+    if (msg.type === 'CLEAN_RESULT') {
+      out.innerHTML = `
+        <div class="status ok">
+          <span class="dot dot-ok"></span>
+          <div><strong>Purge Complete</strong><br>${msg.count} hidden original layer(s) permanently removed.</div>
+        </div>`;
+      cleanBtn.disabled = true;
+      cleanBtn.innerText = `🧹 Clean`;
+    }
+  };
+
+  function bindSlider() {
+    const slider = document.getElementById('strokeSlider');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        const val = e.target.value;
+        const valLabel = document.getElementById('sliderVal');
+        if (valLabel) valLabel.innerText = `stroke: ${val}px`;
+        const svgEl = document.querySelector('.svg-preview-box svg');
+        if (svgEl) {
+          const paths = svgEl.querySelectorAll('path, circle, rect, line, polyline, polygon, ellipse');
+          paths.forEach(p => {
+            const stroke = p.getAttribute('stroke');
+            if (stroke && stroke !== 'none') {
+              p.setAttribute('stroke-width', val);
+            }
+          });
+        }
+      });
+    }
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // Signal that the UI is fully loaded and ready to receive messages
+  parent.postMessage({ pluginMessage: { type: 'UI_READY', requestId: currentRequestId } }, '*');
+</script>
+</body>
+</html>
