@@ -46,7 +46,8 @@ const iconPath = (name) => {
   if (parts.length < 3) return null
   const [rawStyle, categoriesRaw, ...rest] = parts
   const style = STYLE_CANONICAL[rawStyle] || rawStyle
-  const firstCategory = categoriesRaw.split(/[,&]+/)[0]?.trim() ?? ''
+  const categoryParts = categoriesRaw.split(/[,&]+/)
+  const firstCategory = (categoryParts[0] || '').trim()
   const iconName = rest.join(' ').trim()
   if (!style || !firstCategory || !iconName) return null
   const categoryKebab = toKebabCase(firstCategory)
