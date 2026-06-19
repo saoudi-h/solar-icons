@@ -50,15 +50,19 @@ const RENAMES = {
   'plaaylist': 'playlist',
   'pallete': 'palette',
   'tuneing': 'tuning',
-  // "horizontall" (the 2-l typo) MUST come before "horizonta" in the map.
-  // The kebab form "horizontall" contains the substring "horizonta", so
-  // if "horizonta" matched first it would replace the 9-char prefix with
-  // the 10-char "horizontal" and leave the trailing l in place, producing
-  // "horizontalll" (3 l's). With "horizontall" listed first the longer
-  // match wins, the 11-char typo is replaced by the 10-char correct
-  // form, and the extra l is removed.
+  // "horizontall" (the 2-l typo) -> "horizontal". This is the only entry
+  // we need for the "Horizontal" misspelling family. The shorter
+  // "horizonta" key is intentionally absent: a plain substring replace
+  // of "horizonta" with "horizontal" (10 chars vs 9 chars) is
+  // length-increasing and would corrupt any name that already contains
+  // "horizontal" by appending an extra l (e.g. "Sort Horizontal" ->
+  // "Sort Horizontall"). The V2 fixIconName used "Horizonta(?![l])"
+  // (negative lookahead) to avoid that; the plugin's plain substring
+  // match cannot express it, so we just don't ship the entry. If a
+  // future Figma export ever reintroduces the no-trailing-l variant,
+  // the fix is to add a regex-aware match in code.js, not to re-add
+  // this key.
   'horizontall': 'horizontal',
-  'horizonta': 'horizontal',
   'minimlistic': 'minimalistic',
   'spedometer': 'speedometer',
   'happly': 'happy',
