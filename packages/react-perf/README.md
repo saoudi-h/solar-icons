@@ -1,5 +1,7 @@
 # @solar-icons/react-perf
 
+> **DEPRECATED** — This package is superseded by `@solar-icons/react` v3, which now uses the same unit-per-style architecture. Migrate to `@solar-icons/react` for the same API with future updates.
+
 The `@solar-icons/react-perf` package provides a highly optimized, performance-focused library of React components for the Solar icon set. This package is tailored for developers who prioritize reduced bundle sizes and efficient rendering by focusing on single-style imports and simplified SVG structures.
 
 ## Installation

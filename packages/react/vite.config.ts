@@ -19,9 +19,8 @@ export default defineConfig({
             ],
             input: {
                 index: resolve(__dirname, 'src/index.ts'),
-                'ssr/index': resolve(__dirname, 'src/ssr/index.ts'),
-                'csr/category': resolve(__dirname, 'src/csr/category.ts'),
-                'ssr/category': resolve(__dirname, 'src/ssr/category.ts'),
+                'icons/index': resolve(__dirname, 'src/icons/index.ts'),
+                'icons/styled': resolve(__dirname, 'src/icons/styled.ts'),
             },
             output: [
                 {

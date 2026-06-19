@@ -1,83 +1,34 @@
-import type { ParsedIconGroup, IconContext } from '../../../core/src/parser.ts'
+import type { ParsedIcon, IconContext } from '../../../core/src/parser.ts'
 
 export interface FileDefinition {
     path: string
     content: string
 }
 
-export function reactComponentFile(ctx: IconContext<ParsedIconGroup>): FileDefinition {
-    const group = ctx.icon
-    const content = `'use client'
-
-/* GENERATED FILE */
-import React, { forwardRef } from "react"
-import type { IconProps, Icon } from "../../lib/types"
-import IconBase from "../../lib/IconBase"
-import weights from "../../defs/${group.category}/${group.name}"
+export function reactComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
+    const icon = ctx.icon
+    const body = icon.duotoneAccentInner
+        ? `${icon.duotoneAccentInner}\n        ${icon.inner.trim()}`
+        : icon.inner.trim()
+    const content = `/* GENERATED FILE */
+import React from "react"
+import { forwardRef } from "react"
+import IconBase from "../../../lib/IconBase"
+import type { IconProps, Icon } from "../../../lib/types"
 
 /**
-${Object.entries(group.styles)
-    .map(([style, icon]) => ` * ### ![img](data:image/svg+xml;base64,${icon.preview}) ${style}`)
-    .join('\n')}
+ * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-const ${group.pascalName}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <IconBase ref={ref} {...props} weights={weights} />
+export const ${icon.pascalName}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+    <IconBase ref={ref} {...props}>
+        ${body}
+    </IconBase>
 ))
 
-${group.pascalName}.displayName = "${group.pascalName}"
-export default ${group.pascalName}
+${icon.pascalName}.displayName = "${icon.pascalName}"
 `
     return {
-        path: `src/csr/${group.category}/${group.name}.tsx`,
-        content,
-    }
-}
-
-export function reactSsrComponentFile(ctx: IconContext<ParsedIconGroup>): FileDefinition {
-    const group = ctx.icon
-    const content = `/* GENERATED FILE */
-import React, { forwardRef } from "react"
-import type { IconProps, Icon } from "../../lib/types"
-import SSRBase from "../../lib/SSRBase"
-import weights from "../../defs/${group.category}/${group.name}"
-
-/**
-${Object.entries(group.styles)
-    .map(([style, icon]) => ` * ### ![img](data:image/svg+xml;base64,${icon.preview}) ${style}`)
-    .join('\n')}
- */
-const ${group.pascalName}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <SSRBase ref={ref} {...props} weights={weights} />
-))
-
-${group.pascalName}.displayName = "${group.pascalName}"
-export default ${group.pascalName}
-`
-    return {
-        path: `src/ssr/${group.category}/${group.name}.tsx`,
-        content,
-    }
-}
-
-export function reactDefsFile(ctx: IconContext<ParsedIconGroup>): FileDefinition {
-    const group = ctx.icon
-    const content = `/* GENERATED FILE */
-import React, { ReactElement } from "react"
-import type { IconWeight } from '../../lib'
-
-export default new Map<IconWeight, ReactElement>([
-${Object.entries(group.styles)
-    .map(([style, icon]) => {
-        const body = icon.duotoneAccentInner
-            ? `${icon.duotoneAccentInner}\n${icon.inner.trim()}`
-            : icon.inner.trim()
-        return `  ["${style}", <>${body}</>]`
-    })
-    .join(',\n')}
-]);
-`
-    return {
-        path: `src/defs/${group.category}/${group.name}.tsx`,
+        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.tsx`,
         content,
     }
 }

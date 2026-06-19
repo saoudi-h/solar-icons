@@ -1,46 +1,34 @@
-'use client'
-
-import type { ReactElement } from 'react'
 import { forwardRef } from 'react'
-import { useSolar } from './context'
-import type { IconProps, IconWeight } from './types'
+import type { IconProps } from './types'
 
-interface IconBaseProps extends IconProps {
-    weights: Map<IconWeight, ReactElement>
-}
+const IconBase: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>> =
+    forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+        const {
+            alt,
+            color = 'currentColor',
+            size = '1em',
+            mirrored = false,
+            children,
+            ...restProps
+        } = props
 
-const IconBase = forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
-    const { alt, color, size, weight, mirrored, children, weights, ...restProps } = props
-
-    const {
-        value: {
-            color: contextColor = 'currentColor',
-            size: contextSize,
-            weight: contextWeight = 'Linear',
-            mirrored: contextMirrored = false,
-        },
-        svgProps,
-    } = useSolar()
-
-    return (
-        <svg
-            ref={ref}
-            xmlns="http://www.w3.org/2000/svg"
-            width={size ?? contextSize}
-            height={size ?? contextSize}
-            color={color ?? contextColor}
-            fill="none"
-            strokeWidth={1.5}
-            viewBox="0 0 24 24"
-            transform={mirrored || contextMirrored ? 'scale(-1, 1)' : undefined}
-            {...svgProps}
-            {...restProps}>
-            {!!alt && <title>{alt}</title>}
-            {children}
-            {weights.get(weight ?? contextWeight)}
-        </svg>
-    )
-})
+        return (
+            <svg
+                ref={ref}
+                xmlns="http://www.w3.org/2000/svg"
+                width={size}
+                height={size}
+                color={color}
+                fill="none"
+                strokeWidth={1.5}
+                viewBox="0 0 24 24"
+                transform={mirrored ? 'scale(-1, 1)' : undefined}
+                {...restProps}>
+                {!!alt && <title>{alt}</title>}
+                {children}
+            </svg>
+        )
+    })
 
 IconBase.displayName = 'IconBase'
 
