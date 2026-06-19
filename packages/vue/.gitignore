@@ -1,5 +1,4 @@
 node_modules
-src/icons/**/*
-!src/icons/category.ts
-!src/icons/index.ts
 dist
+*.tsbuildinfo
+src/icons/
