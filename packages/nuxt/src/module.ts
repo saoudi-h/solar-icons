@@ -6,12 +6,11 @@ import {
   createResolver,
   defineNuxtModule,
 } from '@nuxt/kit'
-import type { IconWeight, SolarIconsConfig } from '@solar-icons/vue/lib'
+import type { IconWeight, SolarIconsConfig } from '@solar-icons/vue-reactive/lib'
 
 export interface SolarNuxtModuleOptions extends Partial<SolarIconsConfig> {
   namePrefix?: string
   autoImport?: boolean
-  provider?: boolean
 }
 
 export async function getAllIconNames(): Promise<string[]> {
@@ -20,15 +19,8 @@ export async function getAllIconNames(): Promise<string[]> {
     const iconNames = Object.keys(solarIcons).filter(
       name =>
         name !== 'default'
-        && name !== 'SolarProvider'
-        && name !== 'SolarIcon'
-        && name !== 'useSolar'
-        && name !== 'createSolarIcons'
-        && name !== 'SolarIconsPlugin'
-        && !name.startsWith('use')
-        && !name.startsWith('create')
-        && !name.endsWith('Plugin')
-        && !name.endsWith('Provider'),
+        && name !== 'solar'
+        && name !== 'IconStyle',
     )
     return iconNames
   }
@@ -61,6 +53,8 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
     nuxt.options.alias['#solar-icons'] = '@solar-icons/vue'
     nuxt.options.alias['#solar-icons/lib'] = '@solar-icons/vue/lib'
     nuxt.options.alias['#solar-icons/category'] = '@solar-icons/vue/category'
+    nuxt.options.alias['#solar-icons/reactive'] = '@solar-icons/vue-reactive'
+    nuxt.options.alias['#solar-icons/reactive/lib'] = '@solar-icons/vue-reactive/lib'
 
     addTypeTemplate({
       filename: 'types/solar-icons.d.ts',
@@ -75,6 +69,14 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
           
           declare module '#solar-icons/category' {
             export * from '@solar-icons/vue/category'
+          }
+          
+          declare module '#solar-icons/reactive' {
+            export * from '@solar-icons/vue-reactive'
+          }
+
+          declare module '#solar-icons/reactive/lib' {
+            export * from '@solar-icons/vue-reactive/lib'
           }
         `,
     })
@@ -93,12 +95,12 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
     addComponent({
       name: 'SolarProvider',
       export: 'SolarProvider',
-      filePath: '@solar-icons/vue/lib',
+      filePath: '@solar-icons/vue-reactive/lib',
     })
 
     addImports({
       name: 'useSolar',
-      from: '@solar-icons/vue/lib',
+      from: '@solar-icons/vue-reactive/lib',
     })
 
     if (options.provider) {

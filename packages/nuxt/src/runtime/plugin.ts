@@ -1,6 +1,6 @@
 import { defineNuxtPlugin } from '#app'
 
-import { createSolarIcons, provideSolarIconsContextInApp } from '#solar-icons/lib'
+import { createSolarIcons, provideSolarIconsContextInApp } from '#solar-icons/reactive/lib'
 
 export default defineNuxtPlugin({
   name: 'solar-icons',
