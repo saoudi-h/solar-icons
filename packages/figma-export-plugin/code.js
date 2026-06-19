@@ -34,10 +34,13 @@ const STYLE_CANONICAL = {
  * Build the on-disk path for an icon: `svgs/{category}/{style}/{icon}.svg`.
  * Parses the Figma component name (format: `Style / Category / IconName`).
  * - Style: canonicalized via STYLE_CANONICAL.
- * - Category: only the FIRST category from a comma/ampersand-separated list
- *   is used (e.g. "Messages, Conversation" -> "messages"), matching the
- *   behaviour of `generate-svgs.ts` parseIconName which picks the main
- *   category as the directory.
+ * - Category: when the Figma name carries several categories separated by
+ *   `,` or `&` (e.g. "UI, Essentional"), the SHORTEST one is picked as
+ *   the directory name. The others are kept as keywords in `metadata.json`
+ *   by the downstream `generate-svgs.ts` script. This matches the existing
+ *   `parseIconName` behaviour in packages/core/src/scripts/generate-svgs.ts
+ *   which sorts category parts by length and picks the first. Picking the
+ *   shortest keeps the package's category names stable across Figma edits.
  * - Icon name: kebab-cased.
  * Returns null if the name does not follow the convention.
  */
@@ -46,8 +49,11 @@ const iconPath = (name) => {
   if (parts.length < 3) return null
   const [rawStyle, categoriesRaw, ...rest] = parts
   const style = STYLE_CANONICAL[rawStyle] || rawStyle
-  const categoryParts = categoriesRaw.split(/[,&]+/)
-  const firstCategory = (categoryParts[0] || '').trim()
+  const categoryParts = categoriesRaw
+    .split(/[,&]+/)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0)
+  const firstCategory = (categoryParts.sort((a, b) => a.length - b.length)[0] || '').trim()
   const iconName = rest.join(' ').trim()
   if (!style || !firstCategory || !iconName) return null
   const categoryKebab = toKebabCase(firstCategory)

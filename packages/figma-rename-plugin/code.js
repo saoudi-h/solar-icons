@@ -56,6 +56,8 @@ const RENAMES = {
   'happly': 'happy',
   'clound': 'cloud',
   'recive': 'receive',
+  // From V3 follow-up after the rename plugin was first deployed.
+  'essentional': 'essential',
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────

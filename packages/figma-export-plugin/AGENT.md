@@ -36,6 +36,14 @@ svgs/
 
 Components whose name does not follow the `Style / Category / IconName` convention (e.g. stray frames, non-icon components) are counted as `skipped` and not exported.
 
+## Multi-name category convention
+
+The Figma component name's category segment can carry **several names separated by `,` or `&`** (e.g. `Linear / UI, Essentional / Some Icon`). The package system keeps **one** canonical name per category as the directory name; the others are kept as keyword tags in `metadata.json` by the downstream `generate-svgs.ts` script.
+
+The plugin resolves multi-name categories the same way the existing script does: **pick the shortest**. Sorting the parts by length and taking the first gives the canonical name (`UI` rather than `Essentional` in the example above). This is non-negotiable — picking the first or last in source order would make category names shift every time a maintainer re-orders the comma-separated list in Figma.
+
+**Critical**: do not change this to "first in source order" or "last in source order" without checking with the maintainer. The shortest-name rule is what makes the export layout match the existing `svgs/` directory.
+
 ## How the ZIP is built
 
 The UI contains a small ZIP writer (~80 lines of vanilla JS) that produces a valid uncompressed (stored) ZIP. The structure: local file headers, central directory, end-of-central-directory record. CRC-32 is computed per file. The whole archive is concatenated in memory into a `Uint8Array`, wrapped in a `Blob`, and offered for download via an object URL.
