@@ -1,4 +1,5 @@
-import type { ParsedIcon, IconContext } from '../../../core/src/parser.ts'
+import type { ParsedIconGroup, IconContext, ParsedIcon } from '../../../core/src/parser.ts'
+import type { IconWeight } from '../../../core/src/types.ts'
 
 export interface FileDefinition {
     path: string
@@ -21,7 +22,9 @@ function parseIconNodes(svgContent: string): SVGNode[] {
             if (name === 'fill' || name === 'stroke') {
                 value = value.replace(/#[0-9a-f]{6}/gi, 'currentColor')
             }
-            if (name === 'stroke-width' && value === '1.5') continue
+            if (name === 'stroke-width' && value === '1.5') {
+                continue
+            }
             attributes[name] = value
         }
         return attributes
@@ -38,7 +41,9 @@ function parseIconNodes(svgContent: string): SVGNode[] {
             if (nextCloseIndex === -1) return -1
             if (nextOpenIndex !== -1 && nextOpenIndex < nextCloseIndex) {
                 const charAfterTag = content.charAt(nextOpenIndex + openTag.length)
-                if (charAfterTag === ' ' || charAfterTag === '>' || charAfterTag === '/') depth++
+                if (charAfterTag === ' ' || charAfterTag === '>' || charAfterTag === '/') {
+                    depth++
+                }
                 searchIndex = nextOpenIndex + openTag.length
             } else {
                 depth--
@@ -49,7 +54,10 @@ function parseIconNodes(svgContent: string): SVGNode[] {
         return -1
     }
 
-    function parseElement(content: string, startIndex = 0): { node: SVGNode | null; nextIndex: number } {
+    function parseElement(
+        content: string,
+        startIndex = 0
+    ): { node: SVGNode | null; nextIndex: number } {
         const elementRegex = /<(\w+)([^>]*?)(\/>|>)/g
         elementRegex.lastIndex = startIndex
         const match = elementRegex.exec(content)
@@ -87,10 +95,16 @@ function parseIconNodes(svgContent: string): SVGNode[] {
                 }
             }
             if (children.length > 0) {
-                return { node: [tagName, attributes, children] as SVGNode, nextIndex: closeTagIndex + `</${tagName}>`.length }
+                return {
+                    node: [tagName, attributes, children] as SVGNode,
+                    nextIndex: closeTagIndex + `</${tagName}>`.length,
+                }
             }
         }
-        return { node: [tagName, attributes], nextIndex: closeTagIndex + `</${tagName}>`.length }
+        return {
+            node: [tagName, attributes],
+            nextIndex: closeTagIndex + `</${tagName}>`.length,
+        }
     }
 
     const nodes: SVGNode[] = []
@@ -99,7 +113,9 @@ function parseIconNodes(svgContent: string): SVGNode[] {
         const { node, nextIndex } = parseElement(cleanContent, currentIndex)
         if (node) {
             const [tagName] = node
-            if (!['defs', 'title'].includes(tagName)) nodes.push(node)
+            if (!['defs', 'title'].includes(tagName)) {
+                nodes.push(node)
+            }
             currentIndex = nextIndex
         } else {
             const nextElementIndex = cleanContent.indexOf('<', currentIndex)
@@ -110,52 +126,32 @@ function parseIconNodes(svgContent: string): SVGNode[] {
     return nodes
 }
 
-function nodeToH(node: SVGNode, indent: string): string {
-    const [tagName, attrs, children] = node
-    const attrsStr = Object.entries(attrs)
-        .map(([k, v]) => `${JSON.stringify(k)}: ${JSON.stringify(v)}`)
-        .join(', ')
-    if (children && children.length > 0) {
-        const childNodes = children.map(c => nodeToH(c, indent + '        ')).join(',\n')
-        return `${indent}h(${JSON.stringify(tagName)}, { ${attrsStr} }, [\n${childNodes}\n${indent}])`
-    }
-    return `${indent}h(${JSON.stringify(tagName)}, { ${attrsStr} })`
-}
-
-export function vueComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
-    const icon = ctx.icon
+function getIconNodes(icon: ParsedIcon): SVGNode[] {
     const body = icon.duotoneAccentInner
         ? `${icon.duotoneAccentInner}\n${icon.inner.trim()}`
         : icon.inner.trim()
-    const nodes = parseIconNodes(body)
-    const hChildren = nodes.map(n => nodeToH(n, '            ')).join(',\n')
-
-    const globalName = `${icon.pascalName}${icon.style}`
-    const content = `import { h, type FunctionalComponent } from 'vue'
-import type { IconProps } from '../../../lib/types'
-
-/**
- * ![img](data:image/svg+xml;base64,${icon.preview})
- */
-const ${globalName}: FunctionalComponent<IconProps> = () => {
-    return h('svg', {
-        xmlns: 'http://www.w3.org/2000/svg',
-        width: '1em',
-        height: '1em',
-        fill: 'none',
-        strokeWidth: '1.5',
-        viewBox: '0 0 24 24',
-    }, [
-${hChildren}
-    ])
+    return parseIconNodes(body)
 }
 
-${globalName}.displayName = '${globalName}'
+export function vueComponentFile(ctx: IconContext<ParsedIconGroup>): FileDefinition {
+    const group = ctx.icon
+    const iconNodesData: Record<string, SVGNode[]> = {}
+    const styleDocs: string[] = []
 
-export default ${globalName}
+    for (const [style, icon] of Object.entries(group.styles)) {
+        iconNodesData[style] = getIconNodes(icon)
+        styleDocs.push(` * ### ![img](data:image/svg+xml;base64,${icon.preview}) ${style}`)
+    }
+
+    const content = `import { createSolarIcon } from '../../lib/createSolarIcon'
+/**
+${styleDocs.join('\n')}
+ */
+const ${group.pascalName} = createSolarIcon('${group.name}', ${JSON.stringify(iconNodesData, null, 2)})
+export default ${group.pascalName}
 `
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.ts`,
+        path: `src/icons/${group.category}/${group.name}.ts`,
         content,
     }
 }
