@@ -5,6 +5,6 @@
 <path d="M3 9H21" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M15 15C15 16.6569 13.6569 18 12 18C10.3431 18 9 16.6569 9 15C9 13.3431 10.3431 12 12 12C13.6569 12 15 13.3431 15 15Z" stroke="#1C274C" stroke-width="1.5"/>
 <path d="M6.5 5.5H9.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M15.5 5.5C15.5 6.05228 15.0523 6.5 14.5 6.5C13.9477 6.5 13.5 6.05228 13.5 5.5C13.5 4.94772 13.9477 4.5 14.5 4.5C15.0523 4.5 15.5 4.94772 15.5 5.5Z" fill="#1C274C"/>
-<path d="M18.5 5.5C18.5 6.05228 18.0523 6.5 17.5 6.5C16.9477 6.5 16.5 6.05228 16.5 5.5C16.5 4.94772 16.9477 4.5 17.5 4.5C18.0523 4.5 18.5 4.94772 18.5 5.5Z" fill="#1C274C"/>
+<path d="M14.5 5.5H14.5001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.5 5.5H17.5001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
