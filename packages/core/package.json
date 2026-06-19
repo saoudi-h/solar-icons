@@ -28,6 +28,7 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "generate:svgs": "tsx src/scripts/generate-svgs.ts",
+        "refresh:zip": "bash scripts/refresh-from-figma-zip.sh",
         "generate:pngs": "tsx src/scripts/generate-pngs.ts",
         "generate:descriptions": "tsx src/scripts/generate-descriptions.ts",
         "generate:fix:descriptions": "tsx src/scripts/fix-descriptions.ts",
