@@ -5,7 +5,6 @@
  * `toKebabCase` helper in packages/core/src/utils.ts.
  *   "Arrow Down"          -> "arrow-down"
  *   "Wad Of Money"        -> "wad-of-money"
- *   "Arrows,Action"       -> "arrows-action"
  */
 const toKebabCase = (str) =>
   str
@@ -15,17 +14,42 @@ const toKebabCase = (str) =>
     .toLowerCase()
 
 /**
+ * Map a Figma style name to its canonical form (no spaces). The Figma
+ * file has a mix of "LineDuotone" and "Line Duotone" (and "BoldDuotone"
+ * vs "Bold Duotone"); this normalizes both to the canonical PascalCase
+ * one-word form used by `packages/core/src/scripts/generate-svgs.ts`.
+ */
+const STYLE_CANONICAL = {
+  'Bold': 'Bold',
+  'Bold Duotone': 'BoldDuotone',
+  'BoldDuotone': 'BoldDuotone',
+  'Broken': 'Broken',
+  'Linear': 'Linear',
+  'Line Duotone': 'LineDuotone',
+  'LineDuotone': 'LineDuotone',
+  'Outline': 'Outline',
+}
+
+/**
  * Build the on-disk path for an icon: `svgs/{category}/{style}/{icon}.svg`.
  * Parses the Figma component name (format: `Style / Category / IconName`).
+ * - Style: canonicalized via STYLE_CANONICAL.
+ * - Category: only the FIRST category from a comma/ampersand-separated list
+ *   is used (e.g. "Messages, Conversation" -> "messages"), matching the
+ *   behaviour of `generate-svgs.ts` parseIconName which picks the main
+ *   category as the directory.
+ * - Icon name: kebab-cased.
  * Returns null if the name does not follow the convention.
  */
 const iconPath = (name) => {
   const parts = name.split('/').map((p) => p.trim())
   if (parts.length < 3) return null
-  const [style, category, ...rest] = parts
+  const [rawStyle, categoriesRaw, ...rest] = parts
+  const style = STYLE_CANONICAL[rawStyle] || rawStyle
+  const firstCategory = categoriesRaw.split(/[,&]+/)[0]?.trim() ?? ''
   const iconName = rest.join(' ').trim()
-  if (!style || !category || !iconName) return null
-  const categoryKebab = toKebabCase(category)
+  if (!style || !firstCategory || !iconName) return null
+  const categoryKebab = toKebabCase(firstCategory)
   const iconKebab = toKebabCase(iconName)
   if (!categoryKebab || !iconKebab) return null
   return `svgs/${categoryKebab}/${style}/${iconKebab}.svg`
