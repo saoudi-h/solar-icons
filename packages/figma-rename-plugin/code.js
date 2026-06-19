@@ -105,21 +105,74 @@ const toFigmaName = (kebab) =>
     .join(' ')
 
 /**
- * Walk the document. For every COMPONENT whose last name segment, in
- * kebab-case, contains a `from` key from RENAMES as a substring, build
- * a proposed rename. Both the segment and the from-key are normalized to
- * kebab-case for matching, so hyphen/space/underscore variations are
- * handled. Compound names (e.g. "Minimalistic Magnifer") are caught
- * because the kebab form "minimalistic-magnifer" includes "magnifer".
+ * Apply the rename map to a single text segment (a category name or an
+ * icon name). Returns { newKebab, via } or null if no rename matched.
+ * The match is kebab-cased substring; the replace is done in the kebab
+ * form and the caller is responsible for converting back to Figma form
+ * with the right separator (comma for category multi-names, space for
+ * the icon name).
+ */
+const applyRenameToText = (text) => {
+  const textKebab = toKebab(text)
+  if (!textKebab) return null
+  for (const [fromKebab, toKebab] of Object.entries(RENAMES)) {
+    if (!textKebab.includes(fromKebab)) continue
+    if (textKebab === toKebab) continue
+    const newKebab = textKebab.replace(
+      new RegExp(escapeRegExp(fromKebab), 'g'),
+      toKebab
+    )
+    if (newKebab === textKebab) continue
+    return { newKebab, via: fromKebab }
+  }
+  return null
+}
+
+/**
+ * Apply renames to a category segment. Categories can be multi-name
+ * (e.g. "Messages, Conversation") separated by `,`. Each name is
+ * processed independently so the original casing of unaffected names
+ * is preserved (e.g. "UI, Essentional" -> "UI, Essential", not
+ * "Ui, Essential" or "UI, essential").
+ */
+const applyRenameToCategorySegment = (segment) => {
+  const names = segment.split(/,\s*/)
+  const vias = []
+  const newNames = names.map((name) => {
+    const result = applyRenameToText(name)
+    if (result) {
+      vias.push(result.via)
+      return toFigmaName(result.newKebab)
+    }
+    return name
+  })
+  if (vias.length === 0) return null
+  return { newSegment: newNames.join(', '), vias }
+}
+
+/**
+ * Apply renames to the icon segment (the last part of the name, with
+ * any middle parts joined by a space).
+ */
+const applyRenameToIconSegment = (segment) => {
+  const result = applyRenameToText(segment)
+  if (!result) return null
+  return { newSegment: toFigmaName(result.newKebab), via: result.via }
+}
+
+/**
+ * Walk the document. For every COMPONENT whose category segment (2nd
+ * part) or icon segment (last part) contains a rename key, build a
+ * proposed rename. The two segments are processed independently: a
+ * component with typos in both the category and the icon name gets
+ * both fixed in one pass.
  *
- * The rename is computed in the kebab form (replacing `from` with `to`
- * via plain string replace) and then converted back to the Figma form.
- * This loses the original case (e.g. "BELL BING" -> "Bell Ring"), but
- * the existing file uses title case for icon names so this is the
- * correct output. Components already in the target form are skipped.
+ * Both segments are normalized to kebab-case for matching, so
+ * hyphen/space/underscore variations are handled. Compound names
+ * (e.g. "Minimalistic Magnifer" in the icon segment) are caught
+ * because the kebab form includes the `from` key as a substring.
  *
- * Deduplication: a given node is matched at most once (the first
- * `from`-key hit wins).
+ * Deduplication: a given node is matched at most once.
  *
  * Returns a list of { id, oldName, newName, matchedBy }.
  */
@@ -131,28 +184,33 @@ const findRenames = () => {
     if (seen.has(node.id)) continue
     const parts = node.name.split('/').map((p) => p.trim())
     if (parts.length < 3) continue
-    const iconSegment = parts[parts.length - 1]
-    const iconKebab = toKebab(iconSegment)
-    if (!iconKebab) continue
 
-    for (const [fromKebab, toKebab] of Object.entries(RENAMES)) {
-      if (!iconKebab.includes(fromKebab)) continue
-      if (iconKebab === toKebab) continue
+    const newParts = parts.slice()
+    const allVias = []
 
+    const catResult = applyRenameToCategorySegment(parts[1])
+    if (catResult) {
+      newParts[1] = catResult.newSegment
+      for (const v of catResult.vias) allVias.push(v)
+    }
+
+    const iconSegment = parts.slice(2).join(' ').trim()
+    if (iconSegment) {
+      const iconResult = applyRenameToIconSegment(iconSegment)
+      if (iconResult) {
+        newParts.splice(2, parts.length - 2, iconResult.newSegment)
+        allVias.push(iconResult.via)
+      }
+    }
+
+    if (allVias.length > 0) {
       seen.add(node.id)
-      const newIconKebab = iconKebab.replace(
-        new RegExp(escapeRegExp(fromKebab), 'g'),
-        toKebab
-      )
-      const newIconSegment = toFigmaName(newIconKebab)
-      const newName = [...parts.slice(0, -1), newIconSegment].join(' / ')
       out.push({
         id: node.id,
         oldName: node.name,
-        newName,
-        matchedBy: fromKebab,
+        newName: newParts.join(' / '),
+        matchedBy: allVias.join(', '),
       })
-      break
     }
   }
   return out
