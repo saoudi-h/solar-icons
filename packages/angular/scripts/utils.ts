@@ -258,6 +258,24 @@ export function toPascalCase(str: string): string {
 }
 
 /**
+ * Converts a PascalCase string to kebab-case.
+ * @example
+ * toKebabCase('BoldDuotone') // 'bold-duotone'
+ */
+export function toKebabCase(str: string): string {
+    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+}
+
+export const WEIGHT_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    LineDuotone: 'line-duotone',
+    Linear: 'linear',
+    Outline: 'outline',
+}
+
+/**
  * Converts IconNode array to Angular template string.
  * This generates the compiled template that Angular will use at runtime.
  *

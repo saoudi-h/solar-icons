@@ -4,7 +4,7 @@ import path from 'node:path'
 import pc from 'picocolors'
 import { ICON_RENAMES } from '../../core/src/utils.ts'
 import type { IconByStyle, IconsByName, SvgByName, SvgMap } from './utils'
-import { ICONS_PATH, readSvgsFromDisk, toPascalCase } from './utils'
+import { ICONS_PATH, readSvgsFromDisk, toKebabCase, toPascalCase } from './utils'
 
 // Create a reverse mapping for aliases (Correction -> [Typos])
 const ICON_ALIASES: Record<string, string[]> = {}
@@ -113,11 +113,11 @@ class IconComponentGenerator implements ComponentGenerator {
             const componentName = toPascalCase(iconName)
             const componentContent = this.generateComponentContent(iconName, iconStyles)
             fs.writeFileSync(
-                path.join(categoryPath, `${componentName}.ts`),
+                path.join(categoryPath, `${iconName}.ts`),
                 componentContent,
                 'utf-8'
             )
-            categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
+            categoryIndexContent += `export { default as ${componentName} } from './${iconName}'\n`
 
             // function moved
             // Add aliases if they exist
@@ -138,7 +138,8 @@ class IconComponentGenerator implements ComponentGenerator {
         originalName: string,
         aliasName: string
     ): void {
-        const content = `import { default as ${originalName} } from './${originalName}'
+        const originalKebab = toKebabCase(originalName)
+        const content = `import { default as ${originalName} } from './${originalKebab}'
 
 /**
  * @deprecated Use ${originalName} instead

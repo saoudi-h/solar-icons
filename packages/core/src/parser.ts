@@ -40,6 +40,15 @@ const CANONICAL_STYLES: ReadonlyArray<IconWeight> = [
     'Outline',
 ]
 
+const STYLE_TO_KEBAB: Readonly<Record<IconWeight, string>> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
+
 const HEX_COLOR_REGEX = /"#[0-9a-f]{6}"/gi
 const XML_DECL_REGEX = /^[\s\S]*?<\?xml[\s\S]*?>\s*/
 const SVG_OPEN_REGEX = /<svg[^>]*>/
@@ -68,6 +77,7 @@ export interface ParsedIcon {
     readonly name: string
     readonly category: string
     readonly style: IconWeight
+    readonly styleKebab: string
     readonly kebabName: string
     readonly pascalName: string
     readonly inner: string
@@ -272,6 +282,7 @@ export const parseSvgs = async (options: ParseOptions = {}): Promise<ParseResult
                     name,
                     category,
                     style,
+                    styleKebab: STYLE_TO_KEBAB[style],
                     kebabName: name,
                     pascalName: toPascalCase(name),
                     inner,

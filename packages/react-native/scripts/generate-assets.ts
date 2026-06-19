@@ -12,6 +12,7 @@ import {
     toPascalCase,
     verifyIcons,
     WEIGHTS,
+    WEIGHT_KEBAB,
 } from './utils'
 
 // Create a reverse mapping for aliases (Correction -> [Typos])
@@ -131,14 +132,14 @@ export const ${icon.pascalName}: Icon = forwardRef<any, IconProps>((props, ref) 
 ${icon.pascalName}.displayName = "${icon.pascalName}"
 `
         return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${icon.pascalName}.tsx`),
+            path: path.join(ICONS_PATH, icon.category, WEIGHT_KEBAB[icon.style], `${icon.name}.tsx`),
             content,
         }
     },
 
     aliasComponent: (icon: Icon, alias: string): FileDefinition => {
         const content = `/* GENERATED FILE */
-import { ${icon.pascalName} } from './${icon.pascalName}'
+import { ${icon.pascalName} } from './${icon.name}'
 import type { Icon } from '../../../lib/types'
 
 /**
@@ -147,7 +148,7 @@ import type { Icon } from '../../../lib/types'
 export const ${alias}: Icon = ${icon.pascalName}
 `
         return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.tsx`),
+            path: path.join(ICONS_PATH, icon.category, WEIGHT_KEBAB[icon.style], `${alias}.tsx`),
             content,
         }
     },
@@ -158,38 +159,32 @@ export const ${alias}: Icon = ${icon.pascalName}
      * NOTE: Placed as a sibling to the style folder to support "clean" imports.
      */
     styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        // folderPath is .../category/style
-        // We want .../category/style.ts
         const parentDir = path.dirname(folderPath)
+        const styleKebab = WEIGHT_KEBAB[style]
 
         let exports = icons
-            .map(icon => `export { ${icon.pascalName} } from './${style}/${icon.pascalName}';`)
+            .map(icon => `export { ${icon.pascalName} } from './${styleKebab}/${icon.name}';`)
             .sort()
             .join('\n')
 
-        // Add deprecated aliases
         icons.forEach(icon => {
             const aliases = getAliasesForIcon(icon.pascalName)
             aliases.forEach(alias => {
-                exports += `\nexport { ${alias} } from './${style}/${alias}';`
+                exports += `\nexport { ${alias} } from './${styleKebab}/${alias}';`
             })
         })
 
         return {
-            path: path.join(parentDir, `${style}.ts`),
+            path: path.join(parentDir, `${styleKebab}.ts`),
             content: `${exports}\n`,
         }
     },
 
-    /**
-     * Generates the styled.ts for a specific style (e.g. icons/essentials/bold/styled.ts).
-     * Exports icons with their global unique names.
-     */
     styleGlobalIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
         const exports = icons
             .map(
                 icon =>
-                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.pascalName}';`
+                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.name}';`
             )
             .sort()
             .join('\n')
@@ -209,27 +204,25 @@ export const ${alias}: Icon = ${icon.pascalName}
 
         for (const weight of WEIGHTS) {
             const iconsForWeight = byStyle[weight] || []
+            const weightKebab = WEIGHT_KEBAB[weight]
 
-            // Explicitly export each icon found in this weight to avoid "export *"
-            // We export directly from the component file to be tree-shake friendly
             let content = iconsForWeight
                 .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
                 .map(
                     icon =>
-                        `export { ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}';`
+                        `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
                 )
                 .join('\n')
 
-            // Add aliases to weight indexes too!
             iconsForWeight.forEach(icon => {
                 const aliases = getAliasesForIcon(icon.pascalName)
                 aliases.forEach(alias => {
-                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`
+                    content += `\nexport { ${alias} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${alias}';`
                 })
             })
 
             files.push({
-                path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
+                path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
                 content: content ? `${content}\n` : '',
             })
         }
@@ -245,7 +238,7 @@ export const ${alias}: Icon = ${icon.pascalName}
             .sort((a, b) => a.globalName.localeCompare(b.globalName))
             .map(
                 icon =>
-                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.category}/${icon.style}/${icon.pascalName}';`
+                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
             )
             .join('\n')
 
@@ -293,7 +286,7 @@ function generate(icons: Icon[]) {
         const byStyle = groupBy(catIcons, i => i.style)
 
         for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const stylePath = path.join(ICONS_PATH, category, style)
+            const stylePath = path.join(ICONS_PATH, category, WEIGHT_KEBAB[style])
 
             // Components
             styleIcons.forEach(icon => {

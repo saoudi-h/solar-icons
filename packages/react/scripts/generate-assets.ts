@@ -115,17 +115,17 @@ ${name}.displayName = "${name}"
 export default ${name}
 `
 
-            fs.writeFileSync(path.join(categoryPath, `${name}.tsx`), componentContent, {
+            fs.writeFileSync(path.join(categoryPath, `${iconName}.tsx`), componentContent, {
                 flag: 'w',
             })
 
-            categoryIndexContent += `export { default as ${name} } from './${name}'\n`
+            categoryIndexContent += `export { default as ${name} } from './${iconName}'\n`
 
             // Add aliases if they exist
             const aliases = getAliasesForIcon(name)
             if (aliases.length > 0) {
                 aliases.forEach(alias => {
-                    const aliasContent = `import target from './${name}'
+                    const aliasContent = `import target from './${iconName}'
 /**
  * @deprecated Use ${name} instead
  */
@@ -198,9 +198,9 @@ ${Object.entries(iconStyles!)
 ]);
 `
 
-            fs.writeFileSync(path.join(categoryDefsPath, `${name}.tsx`), defContent, { flag: 'w' })
+            fs.writeFileSync(path.join(categoryDefsPath, `${iconName}.tsx`), defContent, { flag: 'w' })
 
-            categoryIndexContent += `export { default as ${name} } from './${name}';\n`
+            categoryIndexContent += `export { default as ${name} } from './${iconName}';\n`
         }
 
         fs.writeFileSync(path.join(categoryDefsPath, 'index.ts'), categoryIndexContent, {

@@ -31,6 +31,7 @@ import {
     readSvgsFromDisk,
     toPascalCase,
     verifyIcons,
+    WEIGHT_KEBAB,
 } from './utils'
 
 // --- Types ---
@@ -148,7 +149,12 @@ import { IconBase } from '../../../lib/icon-base';
 export class ${icon.globalName} extends IconBase {}
 `
         return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${icon.globalName}.ts`),
+            path: path.join(
+                ICONS_PATH,
+                icon.category,
+                WEIGHT_KEBAB[icon.style],
+                `${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`
+            ),
             content,
         }
     },
@@ -158,7 +164,10 @@ export class ${icon.globalName} extends IconBase {}
      */
     categoryIndex: (category: string, icons: Icon[], folderPath: string): FileDefinition => {
         const exports = icons
-            .map(icon => `export { ${icon.globalName} } from './${icon.style}/${icon.globalName}';`)
+            .map(
+                icon =>
+                    `export { ${icon.globalName} } from './${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}';`
+            )
             .sort()
             .join('\n')
 
