@@ -37,6 +37,7 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 | `packages/react`, `react-perf`, `vue`, `nuxt`, `svelte`, `solid`, `angular`, `react-native` | Public framework packages. |
 | `packages/figma-fix-plugin` | Figma plugin source. Not part of the pnpm workspace. |
 | `packages/figma-rename-plugin` | Figma plugin source (added in V3). Renames icon components in the local Figma file per issue #493. Runs in Figma's sandbox, no REST API calls. Not part of the pnpm workspace. |
+| `packages/figma-export-plugin` | Figma plugin source (added in V3). Exports every component as SVG via `node.exportAsync()`, bundles as ZIP, triggers browser download. The Figma-REST-free replacement for `pnpm generate:svgs` on the free plan. Not part of the pnpm workspace. |
 | `apps/docs` | Next.js + Fumadocs documentation site. |
 | `apps/*-app`, `apps/test-react-native-icons` | Demo/test apps. |
 | `.autonomos` | Autonomos AI workflow. `worklogs/` and `TASKS.md` are gitignored. |

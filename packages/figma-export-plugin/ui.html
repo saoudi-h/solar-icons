@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1e1e1e;
+    color: #e6e6e6;
+    font-size: 13px;
+  }
+  body { padding: 16px; }
+  h1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 14px;
+  }
+  .status {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 8px;
+    min-height: 16px;
+  }
+  .status.error { color: #f87171; }
+  .status.done { color: #4ade80; }
+  .progress-track {
+    height: 4px;
+    background: #2e2e2e;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: #2563eb;
+    width: 0%;
+    transition: width 0.15s ease;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  button {
+    background: #2e2e2e;
+    color: #e6e6e6;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  button:hover { background: #3e3e3e; }
+  button.primary {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+  button.primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+</style>
+</head>
+<body>
+  <h1>Solar Icon Exporter</h1>
+  <div class="subtitle">Export every component as SVG, bundle as ZIP. Runs in Figma's sandbox — zero REST API calls.</div>
+  <div class="status" id="status">Starting...</div>
+  <div class="progress-track"><div class="progress-bar" id="bar"></div></div>
+  <div class="actions">
+    <button id="cancel">Cancel</button>
+    <button id="download" class="primary" disabled>Download ZIP</button>
+  </div>
+
+<script>
+  // ── ZIP writer (stored / uncompressed, no dependencies) ──────────────
+  const CRC_TABLE = new Uint32Array(256)
+  for (let i = 0; i < 256; i++) {
+    let c = i
+    for (let j = 0; j < 8; j++) {
+      c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1
+    }
+    CRC_TABLE[i] = c
+  }
+  const crc32 = (data) => {
+    let crc = 0xffffffff
+    for (let i = 0; i < data.length; i++) {
+      crc = (crc >>> 8) ^ CRC_TABLE[(crc ^ data[i]) & 0xff]
+    }
+    return (crc ^ 0xffffffff) >>> 0
+  }
+  const buildZip = (files) => {
+    const encoder = new TextEncoder()
+    const chunks = []
+    const centralDirectory = []
+    let offset = 0
+    for (const file of files) {
+      const nameBytes = encoder.encode(file.path)
+      const data = file.bytes
+      const crc = crc32(data)
+      const size = data.length
+      const localHeader = new Uint8Array(30 + nameBytes.length)
+      const lv = new DataView(localHeader.buffer)
+      lv.setUint32(0, 0x04034b50, true)
+      lv.setUint16(4, 20, true)
+      lv.setUint16(6, 0, true)
+      lv.setUint16(8, 0, true)
+      lv.setUint16(10, 0, true)
+      lv.setUint16(12, 0, true)
+      lv.setUint32(14, crc, true)
+      lv.setUint32(18, size, true)
+      lv.setUint32(22, size, true)
+      lv.setUint16(26, nameBytes.length, true)
+      lv.setUint16(28, 0, true)
+      localHeader.set(nameBytes, 30)
+      chunks.push(localHeader, data)
+      const cdEntry = new Uint8Array(46 + nameBytes.length)
+      const cv = new DataView(cdEntry.buffer)
+      cv.setUint32(0, 0x02014b50, true)
+      cv.setUint16(4, 20, true)
+      cv.setUint16(6, 20, true)
+      cv.setUint16(8, 0, true)
+      cv.setUint16(10, 0, true)
+      cv.setUint16(12, 0, true)
+      cv.setUint16(14, 0, true)
+      cv.setUint32(16, crc, true)
+      cv.setUint32(20, size, true)
+      cv.setUint32(24, size, true)
+      cv.setUint16(28, nameBytes.length, true)
+      cv.setUint16(30, 0, true)
+      cv.setUint16(32, 0, true)
+      cv.setUint16(34, 0, true)
+      cv.setUint16(36, 0, true)
+      cv.setUint32(38, 0, true)
+      cv.setUint32(42, offset, true)
+      cdEntry.set(nameBytes, 46)
+      centralDirectory.push(cdEntry)
+      offset += localHeader.length + data.length
+    }
+    const cdSize = centralDirectory.reduce((sum, c) => sum + c.length, 0)
+    const cdOffset = offset
+    const eocd = new Uint8Array(22)
+    const ev = new DataView(eocd.buffer)
+    ev.setUint32(0, 0x06054b50, true)
+    ev.setUint16(4, 0, true)
+    ev.setUint16(6, 0, true)
+    ev.setUint16(8, files.length, true)
+    ev.setUint16(10, files.length, true)
+    ev.setUint32(12, cdSize, true)
+    ev.setUint32(16, cdOffset, true)
+    ev.setUint16(20, 0, true)
+    const all = [...chunks, ...centralDirectory, eocd]
+    const totalLen = all.reduce((s, c) => s + c.length, 0)
+    const out = new Uint8Array(totalLen)
+    let p = 0
+    for (const c of all) {
+      out.set(c, p)
+      p += c.length
+    }
+    return out
+  }
+
+  // ── UI state ──────────────────────────────────────────────────────────
+  const files = []
+  let total = 0
+  let done = 0
+  let failed = 0
+  let skipped = 0
+
+  const statusEl = document.getElementById('status')
+  const barEl = document.getElementById('bar')
+  const downloadBtn = document.getElementById('download')
+  const cancelBtn = document.getElementById('cancel')
+
+  const updateStatus = () => {
+    const pct = total === 0 ? 0 : (done / total) * 100
+    barEl.style.width = pct + '%'
+    let text = done + ' / ' + total
+    if (failed > 0) text += ' (' + failed + ' failed)'
+    if (skipped > 0) text += ' (' + skipped + ' skipped)'
+    statusEl.textContent = text
+  }
+
+  window.onmessage = (event) => {
+    const msg = event.data.pluginMessage
+    if (!msg) return
+    if (msg.type === 'start') {
+      total = msg.total
+      updateStatus()
+    } else if (msg.type === 'progress') {
+      done = msg.done
+      failed = msg.failed
+      skipped = msg.skipped
+      updateStatus()
+    } else if (msg.type === 'batch') {
+      for (const f of msg.files) files.push(f)
+    } else if (msg.type === 'done') {
+      done = msg.done
+      failed = msg.failed
+      skipped = msg.skipped
+      updateStatus()
+      statusEl.classList.remove('error')
+      statusEl.classList.add('done')
+      statusEl.textContent += ' - Done. Click Download ZIP to get the archive.'
+      downloadBtn.disabled = false
+    } else if (msg.type === 'error') {
+      statusEl.classList.add('error')
+      statusEl.textContent = 'Error: ' + msg.message
+    }
+  }
+
+  downloadBtn.onclick = () => {
+    if (files.length === 0) return
+    downloadBtn.disabled = true
+    downloadBtn.textContent = 'Building ZIP...'
+    statusEl.classList.remove('done')
+    statusEl.textContent = 'Building ZIP from ' + files.length + ' files...'
+    setTimeout(() => {
+      try {
+        const zipBytes = buildZip(files)
+        const blob = new Blob([zipBytes], { type: 'application/zip' })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'solar-icons-svgs.zip'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        URL.revokeObjectURL(url)
+        statusEl.classList.add('done')
+        statusEl.textContent = 'Downloaded. Unzip into packages/core/svgs/ and run pnpm generate:svgs --offline.'
+        downloadBtn.textContent = 'Downloaded'
+      } catch (err) {
+        statusEl.classList.add('error')
+        statusEl.textContent = 'ZIP build failed: ' + (err.message || String(err))
+        downloadBtn.disabled = false
+        downloadBtn.textContent = 'Download ZIP'
+      }
+    }, 0)
+  }
+
+  cancelBtn.onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+  }
+</script>
+</body>
+</html>
