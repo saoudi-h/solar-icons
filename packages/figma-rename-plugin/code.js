@@ -1,16 +1,29 @@
-// ─── Renames (from issue saoudi-h/solar-icons#493) ─────────────────────────
-// Keys and values are kebab-case canonical icon names. The plugin does a
-// case-insensitive substring search of each `from` key inside the last
-// segment of every component's name, so compound names (e.g.
-// "Minimalistic Magnifer" -> "Minimalistic Magnifier") are caught too.
+// ─── Renames ───────────────────────────────────────────────────────────────
+// Keys and values are kebab-case canonical icon names. The plugin converts
+// each component's last name segment to kebab-case and checks for inclusion
+// of each `from` key, so compound names (e.g. "Minimalistic Magnifer" ->
+// "Minimalistic Magnifier") are caught too.
 //
-// Open issues / decisions deferred to the maintainer:
-//   - `trellis`: issue also proposes `vanity-table`, `dressing-table`.
-//   - `accumulator`: issue also proposes `battery`.
-//   - `wad-of-money`: issue also proposes `banknotes-pack`.
-//   - `bell-bing`: issue also proposes `bell-ringing`, `bell-active`.
+// Two sources:
+//
+//   1. Issue saoudi-h/solar-icons#493 — the V3 source-of-truth fix.
+//      Open decisions deferred to the maintainer:
+//        - `trellis`: issue also proposes `vanity-table`, `dressing-table`.
+//        - `accumulator`: issue also proposes `battery`.
+//        - `wad-of-money`: issue also proposes `banknotes-pack`.
+//        - `bell-bing`: issue also proposes `bell-ringing`, `bell-active`.
+//
+//   2. ICON_RENAMES in packages/core/src/utils.ts — the V2 backward-compat
+//      shim. Most of these were already corrected in the Figma file in
+//      earlier passes; they are listed here for completeness so the
+//      plugin catches any future re-introduction. The "Horizonta" entry
+//      from the original (with a `(?![l])` negative lookahead) is
+//      represented as a plain `horizonta -> horizontal` here; the
+//      "already renamed" check (iconKebab === toKebab) prevents a
+//      "Horizontal" component from being re-flagged.
 
 const RENAMES = {
+  // From issue #493
   'plain': 'plane',
   'plain-2': 'plane-2',
   'plain-3': 'plane-3',
@@ -29,7 +42,21 @@ const RENAMES = {
   'trellis': 'vanity',
   'accumulator': 'car-battery',
   'bell-bing': 'bell-ring',
-};
+  // From ICON_RENAMES (V2 backward-compat)
+  'magnifer': 'magnifier',
+  'infinity': 'infinite',
+  'condicioner': 'conditioner',
+  'siderbar': 'sidebar',
+  'plaaylist': 'playlist',
+  'pallete': 'palette',
+  'tuneing': 'tuning',
+  'horizonta': 'horizontal',
+  'minimlistic': 'minimalistic',
+  'spedometer': 'speedometer',
+  'happly': 'happy',
+  'clound': 'cloud',
+  'recive': 'receive',
+}
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
 
