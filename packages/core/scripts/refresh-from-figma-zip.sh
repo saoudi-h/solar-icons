@@ -46,7 +46,8 @@ if [ ! -f "$ZIP_PATH" ]; then
     exit 1
 fi
 
-if ! unzip -l "$ZIP_PATH" | grep -q "[[:space:]]svgs/"; then
+_HAS_SVGS=$(unzip -Z1 "$ZIP_PATH" 2>/dev/null | grep -c '^svgs/' || true)
+if [ "$_HAS_SVGS" -eq 0 ]; then
     echo "Error: ZIP does not appear to contain a 'svgs/' directory at the root." >&2
     echo "       Is this the right file? (It should be the output of the" >&2
     echo "       Solar Icon Exporter Figma plugin.)" >&2
