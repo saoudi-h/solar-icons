@@ -50,6 +50,14 @@ const RENAMES = {
   'plaaylist': 'playlist',
   'pallete': 'palette',
   'tuneing': 'tuning',
+  // "horizontall" (the 2-l typo) MUST come before "horizonta" in the map.
+  // The kebab form "horizontall" contains the substring "horizonta", so
+  // if "horizonta" matched first it would replace the 9-char prefix with
+  // the 10-char "horizontal" and leave the trailing l in place, producing
+  // "horizontalll" (3 l's). With "horizontall" listed first the longer
+  // match wins, the 11-char typo is replaced by the 10-char correct
+  // form, and the extra l is removed.
+  'horizontall': 'horizontal',
   'horizonta': 'horizontal',
   'minimlistic': 'minimalistic',
   'spedometer': 'speedometer',
