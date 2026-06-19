@@ -51,7 +51,7 @@ Contains:
 ## ⚠️ Known Constraints
 
 - **`generate-svgs.ts` requires `FIGMA_API_TOKEN` and `FIGMA_FILE_ID`** at runtime. It is the only script that needs Figma credentials. Not invoked by CI.
-- **`metadata-descriptions.json` is hand-curated.** The `generate-descriptions` and `fix-descriptions` scripts are manual tools; they are not part of `pnpm build` or any `generate:assets` flow.
+- **`metadata-descriptions.json` is hand-curated source code.** NEVER auto-generate it. The `generate-descriptions` and `fix-descriptions` scripts are manual tools; they are not part of `pnpm build` or any `generate:assets` flow. Guard: `pnpm check:descriptions` validates the file's structure and fails if it's empty or corrupted. All edits to this file must be manual commits.
 - **Style order is canonical:** `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
-- **Each public framework package has its own `scripts/generate-assets.ts`** that reads from `core/svgs/`. The duplication is the codebase's current shape. **V3 replaces this with the central parser in `src/parser.ts`** — each framework's `generate-assets.ts` becomes a thin `forEachIcon(hook)` call (V3-03a/b/c, V3-04, V3-05, V3-06).
+- **Each public framework package now uses the parser** via `parser-hook.ts` + `generate-assets.ts`. The old per-package `scripts/utils.ts` files are deleted (V3-11). The parser is the single source of truth for SVG reading, normalization, and preview generation. `scripts/generate-assets.ts` in each package is a thin orchestrator: `parseSvgs()` → `forEachIcon(hook)` or `forEachIconGroupedBy(hook)` → write files.
 - **`tsdown`'s `exports: true` rewrites the `bin` field** of a `package.json` on every build (see `@autonomos/cli` DEBUG-01/02/03 in the worklog history). When `tsdown` is used and a `bin` is needed, declare it via `exports: { bin: { ... } }`.

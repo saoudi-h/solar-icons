@@ -34,6 +34,7 @@
         "generate:fix:descriptions": "tsx src/scripts/fix-descriptions.ts",
         "check:svgs": "tsx src/scripts/check-svgs.ts",
         "check:metadata": "tsx src/scripts/check-metadata.ts",
+        "check:descriptions": "tsx src/scripts/check-descriptions.ts",
         "clean": "rm -rf node_modules dist",
         "clean:generated": "rimraf svgs src/metadata.json",
         "typecheck": "tsgo --noEmit",
