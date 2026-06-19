@@ -3,74 +3,38 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { ICON_RENAMES } from '../../core/src/utils.ts'
-import type { SvgMap } from './utils'
-import {
-    ICONS_PATH,
-    INDEX_PATH,
-    readSvgsFromDisk,
-    toPascalCase,
-    verifyIcons,
-    WEIGHTS,
-    WEIGHT_KEBAB,
-} from './utils'
+import { parseSvgs, forEachIcon } from '../../core/src/parser.ts'
+import type { ParsedIcon } from '../../core/src/parser.ts'
+import { reactNativeComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
-// Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {}
-for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-    if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = []
-    }
-    ICON_ALIASES[correction].push(typo)
+const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
+const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
+
+const WEIGHTS = [
+    'Bold',
+    'BoldDuotone',
+    'Broken',
+    'Linear',
+    'LineDuotone',
+    'Outline',
+] as const
+
+const WEIGHT_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
 }
 
-// --- Types ---
-
-interface Icon {
-    category: string
-    style: string
-    name: string // kebab-case (e.g. arrow-left)
-    pascalName: string // PascalCase (e.g. ArrowLeft)
-    globalName: string // Disambiguated Name (e.g. ArrowLeftBold)
-    jsx: string
-    preview: string
-    svgElements: Set<string>
+function toPascalCase(str: string): string {
+    return str
+        .split('-')
+        .map(s => s.replace(/^\w/, c => c.toUpperCase()))
+        .join('')
 }
 
-interface FileDefinition {
-    path: string
-    content: string
-}
-
-// --- Helpers ---
-
-/**
- * Flattens the nested SvgMap into a list of Icon objects for easier processing.
- */
-function getIcons(map: SvgMap): Icon[] {
-    const icons: Icon[] = []
-    for (const [category, styles] of Object.entries(map)) {
-        for (const [style, names] of Object.entries(styles)) {
-            for (const [name, data] of Object.entries(names)) {
-                icons.push({
-                    category,
-                    style,
-                    name,
-                    pascalName: toPascalCase(name),
-                    globalName: toPascalCase(`${name}-${style}`),
-                    jsx: data.jsx,
-                    preview: data.preview,
-                    svgElements: data.svgElements,
-                })
-            }
-        }
-    }
-    return icons
-}
-
-/**
- * Utility to group icons by a specific key.
- */
 function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
     return array.reduce(
         (acc, item) => {
@@ -83,259 +47,115 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
     )
 }
 
-/**
- * Returns a list of aliases (typos) for a given icon name, including partial matches.
- */
-function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>()
-    // Exact matches
-    if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach(a => aliases.add(a))
-    }
-    // Partial matches
-    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-        if (name.includes(correct) && name !== correct) {
-            typos.forEach(typo => {
-                if (/[^a-z0-9]/i.test(typo)) return
-                aliases.add(name.replace(correct, typo))
-            })
-        }
-    })
-    return Array.from(aliases).filter(a => a !== name)
-}
-
-// --- Generators ---
-
-const Generators = {
-    /**
-     * Generates the React Native component for a single icon.
-     */
-    component: (icon: Icon): FileDefinition => {
-        // Generate imports for SVG elements used in this icon
-        const svgImports = Array.from(icon.svgElements).sort().join(', ')
-
-        const content = `/* GENERATED FILE */
-import React from "react"
-import { forwardRef } from "react"
-${svgImports ? `import { ${svgImports} } from "react-native-svg"\n` : ''}import IconBase from "../../../lib/IconBase"
-import type { IconProps, Icon } from "../../../lib/types"
-
-/**
- * ![img](data:image/svg+xml;base64,${icon.preview})
- */
-export const ${icon.pascalName}: Icon = forwardRef<any, IconProps>((props, ref) => (
-    <IconBase ref={ref} {...props}>
-        ${icon.jsx.trim()}
-    </IconBase>
-))
-
-${icon.pascalName}.displayName = "${icon.pascalName}"
-`
-        return {
-            path: path.join(ICONS_PATH, icon.category, WEIGHT_KEBAB[icon.style], `${icon.name}.tsx`),
-            content,
-        }
-    },
-
-    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
-        const content = `/* GENERATED FILE */
-import { ${icon.pascalName} } from './${icon.name}'
-import type { Icon } from '../../../lib/types'
-
-/**
- * @deprecated Use ${icon.pascalName} instead
- */
-export const ${alias}: Icon = ${icon.pascalName}
-`
-        return {
-            path: path.join(ICONS_PATH, icon.category, WEIGHT_KEBAB[icon.style], `${alias}.tsx`),
-            content,
-        }
-    },
-
-    /**
-     * Generates the index.ts for a specific style (e.g. icons/essentials/bold.ts).
-     * Uses named exports instead of `export *`.
-     * NOTE: Placed as a sibling to the style folder to support "clean" imports.
-     */
-    styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath)
-        const styleKebab = WEIGHT_KEBAB[style]
-
-        let exports = icons
-            .map(icon => `export { ${icon.pascalName} } from './${styleKebab}/${icon.name}';`)
-            .sort()
-            .join('\n')
-
-        icons.forEach(icon => {
-            const aliases = getAliasesForIcon(icon.pascalName)
-            aliases.forEach(alias => {
-                exports += `\nexport { ${alias} } from './${styleKebab}/${alias}';`
-            })
-        })
-
-        return {
-            path: path.join(parentDir, `${styleKebab}.ts`),
-            content: `${exports}\n`,
-        }
-    },
-
-    styleGlobalIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const exports = icons
-            .map(
-                icon =>
-                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.name}';`
-            )
-            .sort()
-            .join('\n')
-
-        return {
-            path: path.join(folderPath, 'styled.ts'),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
-     * Generates grouped indexes by weight (e.g. src/icons/style/Bold.ts).
-     */
-    weightIndexes: (icons: Icon[]): FileDefinition[] => {
-        const files: FileDefinition[] = []
-        const byStyle = groupBy(icons, i => i.style)
-
-        for (const weight of WEIGHTS) {
-            const iconsForWeight = byStyle[weight] || []
-            const weightKebab = WEIGHT_KEBAB[weight]
-
-            let content = iconsForWeight
-                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-                .map(
-                    icon =>
-                        `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
-                )
-                .join('\n')
-
-            iconsForWeight.forEach(icon => {
-                const aliases = getAliasesForIcon(icon.pascalName)
-                aliases.forEach(alias => {
-                    content += `\nexport { ${alias} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${alias}';`
-                })
-            })
-
-            files.push({
-                path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
-                content: content ? `${content}\n` : '',
-            })
-        }
-        return files
-    },
-
-    /**
-     * Generates a global styled export (src/icons/styled.ts)
-     * Exports all icons with disambiguated names (e.g., ArrowLeftBold, ArrowLeftLinear)
-     */
-    styledGlobalIndex: (icons: Icon[]): FileDefinition => {
-        const exports = icons
-            .sort((a, b) => a.globalName.localeCompare(b.globalName))
-            .map(
-                icon =>
-                    `export { ${icon.pascalName} as ${icon.globalName} } from './${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
-            )
-            .join('\n')
-
-        return {
-            path: path.join(ICONS_PATH, 'styled.ts'),
-            content: `${exports}\n`,
-        }
-    },
-
-    /**
-     * Generates the main entry point (src/index.ts).
-     */
-    mainEntry: (): FileDefinition => {
-        const content = `/* GENERATED FILE */
-export type { IconProps } from "./lib"
-export { IconBase, IconStyle } from "./lib"
-export * from "./icons/styled"
-`
-        return {
-            path: INDEX_PATH,
-            content,
-        }
-    },
-}
-
-// --- Stages ---
-
-function clean() {
-    const pathsToClean = [ICONS_PATH, INDEX_PATH]
-    pathsToClean.forEach(p => {
-        if (fs.existsSync(p)) {
-            fs.rmSync(p, { recursive: true, force: true })
-            console.log(pc.blue(`Removed ${p}`))
-        }
-    })
-}
-
-function generate(icons: Icon[]) {
+function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     const files: FileDefinition[] = []
-
-    // 1. Icon Components & Style Indexes
     const byCategory = groupBy(icons, i => i.category)
 
     for (const [category, catIcons] of Object.entries(byCategory)) {
         const byStyle = groupBy(catIcons, i => i.style)
 
         for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const stylePath = path.join(ICONS_PATH, category, WEIGHT_KEBAB[style])
+            const styleKebab = WEIGHT_KEBAB[style]
 
-            // Components
-            styleIcons.forEach(icon => {
-                files.push(Generators.component(icon))
-                // Add aliases
-                const aliases = getAliasesForIcon(icon.pascalName)
-                aliases.forEach(alias => {
-                    files.push(Generators.aliasComponent(icon, alias))
-                })
+            const styleIndexContent = styleIcons
+                .map(icon => `export { ${icon.pascalName} } from './${styleKebab}/${icon.name}';`)
+                .sort()
+                .join('\n')
+
+            files.push({
+                path: path.join(ICONS_PATH, category, `${styleKebab}.ts`),
+                content: `${styleIndexContent}\n`,
             })
 
-            // Style Indexes
-            files.push(Generators.styleIndex(style, styleIcons, stylePath))
-            files.push(Generators.styleGlobalIndex(style, styleIcons, stylePath))
+            const globalContent = styleIcons
+                .map(icon => {
+                    const globalName = toPascalCase(`${icon.name}-${style}`)
+                    return `export { ${icon.pascalName} as ${globalName} } from './${icon.name}';`
+                })
+                .sort()
+                .join('\n')
+
+            files.push({
+                path: path.join(ICONS_PATH, category, styleKebab, 'styled.ts'),
+                content: `${globalContent}\n`,
+            })
         }
     }
 
-    // 2. Weight/Style Indexes
-    files.push(...Generators.weightIndexes(icons))
+    for (const weight of WEIGHTS) {
+        const iconsForWeight = icons.filter(i => i.style === weight)
+        const weightKebab = WEIGHT_KEBAB[weight]
+        const content = iconsForWeight
+            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .map(
+                icon =>
+                    `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+            )
+            .join('\n')
 
-    // 3. Global Styled Export
-    files.push(Generators.styledGlobalIndex(icons))
+        files.push({
+            path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
+            content: content ? `${content}\n` : '',
+        })
+    }
 
-    // 4. Main Entry
-    files.push(Generators.mainEntry())
+    const styledGlobalContent = icons
+        .sort((a, b) => {
+            const ga = toPascalCase(`${a.name}-${a.style}`)
+            const gb = toPascalCase(`${b.name}-${b.style}`)
+            return ga.localeCompare(gb)
+        })
+        .map(icon => {
+            const globalName = toPascalCase(`${icon.name}-${icon.style}`)
+            return `export { ${icon.pascalName} as ${globalName} } from './${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+        })
+        .join('\n')
+
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: `${styledGlobalContent}\n`,
+    })
+
+    const mainEntryContent = `/* GENERATED FILE */
+export type { IconProps } from "./lib"
+export { IconBase, IconStyle } from "./lib"
+export * from "./icons/styled"
+`
+
+    files.push({
+        path: INDEX_PATH,
+        content: mainEntryContent,
+    })
 
     return files
 }
 
-function writeFiles(files: FileDefinition[]) {
-    files.forEach(file => {
-        fs.mkdirSync(path.dirname(file.path), { recursive: true })
-        fs.writeFileSync(file.path, file.content, { flag: 'w' })
-    })
-    console.log(pc.green(`Successfully generated ${files.length} files.`))
+function clean() {
+    for (const p of [ICONS_PATH, INDEX_PATH]) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p, { recursive: true, force: true })
+            console.log(pc.blue(`Removed ${p}`))
+        }
+    }
 }
 
-// --- Main ---
+function writeFiles(files: FileDefinition[]) {
+    for (const file of files) {
+        fs.mkdirSync(path.dirname(file.path), { recursive: true })
+        fs.writeFileSync(file.path, file.content, { flag: 'w' })
+    }
+    console.log(pc.green(`Successfully generated ${files.length} files.`))
+}
 
 const main = async () => {
     try {
         clean()
-        const svgMap = readSvgsFromDisk()
-        if (!verifyIcons(svgMap)) {
-            process.exit(1)
-        }
-        const icons = getIcons(svgMap)
-        const files = generate(icons)
-        writeFiles(files)
+        const result = await parseSvgs()
+        console.log(pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`))
+
+        const componentFiles = await forEachIcon(reactNativeComponentFile)
+        const indexFiles = generateIndexes(result.icons)
+        writeFiles([...componentFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))
         console.error(err)
