@@ -155,7 +155,7 @@
         "tags": ["mail", "envelope", "communication", "email"]
     },
     {
-        "name": "plain-2",
+        "name": "plane-2",
         "category": "messages",
         "categoryTags": ["messages", "conversation", "messaging", "communication"],
         "tags": ["single-paper-plane", "email-sending"]
@@ -197,7 +197,7 @@
         "tags": ["forward", "send"]
     },
     {
-        "name": "plain-3",
+        "name": "plane-3",
         "category": "messages",
         "categoryTags": [
             "messages",
@@ -306,7 +306,7 @@
         "tags": ["mailbox", "post box"]
     },
     {
-        "name": "plain",
+        "name": "plane",
         "category": "messages",
         "categoryTags": ["messages", "conversation", "networking", "communication"],
         "tags": ["signal", "connectivity"]
@@ -732,7 +732,7 @@
         "tags": ["remove marker", "delete location pin"]
     },
     {
-        "name": "map-point-favourite",
+        "name": "map-point-favorite",
         "category": "map",
         "categoryTags": ["map", "location", "navigation", "marking"],
         "tags": ["heart", "favorite"]
@@ -918,7 +918,7 @@
         "tags": ["compass", "directions"]
     },
     {
-        "name": "globus",
+        "name": "globe",
         "category": "map",
         "categoryTags": ["map", "location", "Science", "Education"],
         "tags": ["Globus", "Planet Earth"]
@@ -1387,7 +1387,7 @@
         "tags": ["play", "media", "frame"]
     },
     {
-        "name": "gallery-favourite",
+        "name": "gallery-favorite",
         "category": "video",
         "categoryTags": ["video", "audio", "sound", "media"],
         "tags": ["Favourite", "Saved"]
@@ -1749,7 +1749,7 @@
         "tags": ["cash", "currency"]
     },
     {
-        "name": "wad-of-money",
+        "name": "money-roll",
         "category": "money",
         "categoryTags": ["money", "currency", "finance", "economy"],
         "tags": ["cash", "banknote"]
@@ -2408,7 +2408,7 @@
         "tags": ["SIM card", "SIM module"]
     },
     {
-        "name": "weigher",
+        "name": "scale",
         "category": "devices",
         "categoryTags": ["devices", "electronic", "appliance", "electronics", "measurement"],
         "tags": ["balance", "scales"]
@@ -2750,7 +2750,7 @@
         "tags": ["file", "paper", "document"]
     },
     {
-        "name": "file-favourite",
+        "name": "file-favorite",
         "category": "files",
         "categoryTags": ["files", "media", "favorites"],
         "tags": ["Document Favorite", "Starred Document"]
@@ -2989,7 +2989,7 @@
         "tags": ["checkmark", "validation", "approval"]
     },
     {
-        "name": "folder-favourite-star",
+        "name": "folder-favorite-star",
         "category": "folders",
         "categoryTags": ["folders", "favorites", "icons"],
         "tags": ["Starred Folder", "Favorite Folder"]
@@ -3019,7 +3019,7 @@
         "tags": ["plus-folder", "file-addition"]
     },
     {
-        "name": "folder-favourite-bookmark",
+        "name": "folder-favorite-bookmark",
         "category": "folders",
         "categoryTags": ["folders", "filetypes", "bookmarks", "organization"],
         "tags": ["bookmarked folder", "favourited file"]
@@ -3741,7 +3741,7 @@
         "tags": ["minimalist", "iconography", "signifier"]
     },
     {
-        "name": "sort-by-alphabet",
+        "name": "sort-alphabetically",
         "category": "list",
         "categoryTags": ["list", "dataorganization", "alphabetical_ordering"],
         "tags": ["alphabet", "order"]
@@ -3845,139 +3845,139 @@
     {
         "name": "check-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icons", "symbols", "verification"],
+        "categoryTags": ["ui", "essential", "icons", "symbols", "verification"],
         "tags": ["approval", "confirmation"]
     },
     {
         "name": "close-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "interface", "navigation", "essential"],
+        "categoryTags": ["ui", "essential", "interface", "navigation", "essential"],
         "tags": ["circle-close", "x-sign"]
     },
     {
         "name": "info-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "support"],
+        "categoryTags": ["ui", "essential", "navigation", "support"],
         "tags": ["information", "help"]
     },
     {
         "name": "add-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "interface", "element"],
+        "categoryTags": ["ui", "essential", "interface", "element"],
         "tags": ["plus-circle", "addition", "symbol-addition"]
     },
     {
         "name": "question-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "help", "user-interface", "indicative"],
+        "categoryTags": ["ui", "essential", "navigation", "help", "user-interface", "indicative"],
         "tags": ["query", "symbol-question"]
     },
     {
         "name": "danger-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "safety", "warning"],
+        "categoryTags": ["ui", "essential", "safety", "warning"],
         "tags": ["exclamation-circle", "alert-sign"]
     },
     {
         "name": "danger-triangle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "warning", "symbol"],
+        "categoryTags": ["ui", "essential", "warning", "symbol"],
         "tags": ["warning triangle", "exclamation mark triangle"]
     },
     {
         "name": "danger",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential"],
+        "categoryTags": ["ui", "essential", "essential"],
         "tags": ["warning sign", "caution symbol"]
     },
     {
         "name": "forbidden",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "signage", "symbolic", "warning"],
+        "categoryTags": ["ui", "essential", "essential", "signage", "symbolic", "warning"],
         "tags": ["prohibition", "halt"]
     },
     {
         "name": "forbidden-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "symbol", "traffic"],
+        "categoryTags": ["ui", "essential", "symbol", "traffic"],
         "tags": ["prohibition symbol", "no sign"]
     },
     {
         "name": "close-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "action"],
+        "categoryTags": ["ui", "essential", "navigation", "action"],
         "tags": ["cross", "square-close"]
     },
     {
         "name": "add-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "ui-elements", "symbol"],
+        "categoryTags": ["ui", "essential", "navigation", "ui-elements", "symbol"],
         "tags": ["plus square", "square plus", "input icon"]
     },
     {
         "name": "question-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "symbol"],
+        "categoryTags": ["ui", "essential", "communication", "symbol"],
         "tags": ["query", "inquiry"]
     },
     {
         "name": "danger-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "symbols", "attention"],
+        "categoryTags": ["ui", "essential", "symbols", "attention"],
         "tags": ["warning-sign", "exclamation-square"]
     },
     {
         "name": "check-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icon", "symbolic"],
+        "categoryTags": ["ui", "essential", "icon", "symbolic"],
         "tags": ["approval", "confirmation"]
     },
     {
         "name": "menu-dots-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "user-interface"],
+        "categoryTags": ["ui", "essential", "navigation", "user-interface"],
         "tags": ["circle-dot", "button-menu"]
     },
     {
         "name": "menu-dots-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icon", "representation"],
+        "categoryTags": ["ui", "essential", "icon", "representation"],
         "tags": ["dots", "square"]
     },
     {
         "name": "revote",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "Icon", "Navigation", "Approval"],
+        "categoryTags": ["ui", "essential", "Icon", "Navigation", "Approval"],
         "tags": ["Checkmark Circle", "Verification Mark"]
     },
     {
         "name": "menu-dots",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "minimalist", "essential"],
+        "categoryTags": ["ui", "essential", "navigation", "minimalist", "essential"],
         "tags": ["dots", "icon"]
     },
     {
         "name": "home-add",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "building", "utility"],
+        "categoryTags": ["ui", "essential", "building", "utility"],
         "tags": ["house-plus", "add-home"]
     },
     {
         "name": "smart-home",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "security", "connectivity"],
+        "categoryTags": ["ui", "essential", "security", "connectivity"],
         "tags": ["home-security", "remote-access"]
     },
     {
         "name": "info-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "navigation"],
+        "categoryTags": ["ui", "essential", "essential", "navigation"],
         "tags": ["information", "square"]
     },
     {
         "name": "minus-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "mathematical", "navigation"],
+        "categoryTags": ["ui", "essential", "mathematical", "navigation"],
         "tags": ["Minus circle", "Circle minus sign"]
     },
     {
@@ -3985,7 +3985,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "architecture",
             "housing",
             "design",
@@ -3997,97 +3997,97 @@
     {
         "name": "home-smile",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "living", "architecture", "emotional"],
+        "categoryTags": ["ui", "essential", "living", "architecture", "emotional"],
         "tags": ["house", "smiley home"]
     },
     {
         "name": "home-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "building", "architecture"],
+        "categoryTags": ["ui", "essential", "building", "architecture"],
         "tags": ["house icon", "dwelling symbol"]
     },
     {
         "name": "home-angle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "architecture", "building"],
+        "categoryTags": ["ui", "essential", "architecture", "building"],
         "tags": ["house", "roof"]
     },
     {
         "name": "home-add-angle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "housing"],
+        "categoryTags": ["ui", "essential", "navigation", "housing"],
         "tags": ["house-plus", "add-housing"]
     },
     {
         "name": "home-angle-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "housing", "architecture", "simplistic"],
+        "categoryTags": ["ui", "essential", "housing", "architecture", "simplistic"],
         "tags": ["house", "roof"]
     },
     {
         "name": "battery-half-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "power", "status", "user-interface"],
+        "categoryTags": ["ui", "essential", "power", "status", "user-interface"],
         "tags": ["battery-low", "charge-indicator"]
     },
     {
         "name": "home-wi-fi-angle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "connectivity"],
+        "categoryTags": ["ui", "essential", "communication", "connectivity"],
         "tags": ["wifi-angle", "network-symbol"]
     },
     {
         "name": "smart-home-angle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "communication", "smart-home"],
+        "categoryTags": ["ui", "essential", "essential", "communication", "smart-home"],
         "tags": ["home", "network"]
     },
     {
         "name": "battery-charge-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icons", "utility", "charging"],
+        "categoryTags": ["ui", "essential", "icons", "utility", "charging"],
         "tags": ["battery", "charge"]
     },
     {
         "name": "minus-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "mathematical"],
+        "categoryTags": ["ui", "essential", "navigation", "mathematical"],
         "tags": ["subtract button", "negative sign square"]
     },
     {
         "name": "battery-low-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "status", "electronics"],
+        "categoryTags": ["ui", "essential", "status", "electronics"],
         "tags": ["low-battery", "minimal-battery"]
     },
     {
         "name": "battery-low",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "status", "electronic"],
+        "categoryTags": ["ui", "essential", "status", "electronic"],
         "tags": ["battery", "low"]
     },
     {
         "name": "home-wi-fi",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "connectivity", "electronics"],
+        "categoryTags": ["ui", "essential", "communication", "connectivity", "electronics"],
         "tags": ["Wi-Fi", "signal", "network"]
     },
     {
         "name": "battery-full",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "energy", "electronics"],
+        "categoryTags": ["ui", "essential", "energy", "electronics"],
         "tags": ["powerful", "full battery"]
     },
     {
         "name": "home-smile-angle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "building", "emotions"],
+        "categoryTags": ["ui", "essential", "building", "emotions"],
         "tags": ["house", "smile"]
     },
     {
         "name": "slider-vertical",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "input controls", "interface components"],
+        "categoryTags": ["ui", "essential", "input controls", "interface components"],
         "tags": ["vertical slider", "control slider"]
     },
     {
@@ -4095,7 +4095,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "ui-elements",
             "user-interface",
             "interactive-components"
@@ -4105,224 +4105,217 @@
     {
         "name": "database",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "technology", "storage"],
+        "categoryTags": ["ui", "essential", "technology", "storage"],
         "tags": ["database", "datastore"]
     },
     {
         "name": "crown-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "royalty", "symbolism"],
+        "categoryTags": ["ui", "essential", "essential", "royalty", "symbolism"],
         "tags": ["Crown", "Minimal Crown"]
     },
     {
         "name": "slider-horizontal",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "input", "user-interface"],
+        "categoryTags": ["ui", "essential", "input", "user-interface"],
         "tags": ["horizontal-interface", "swipe-bar"]
     },
     {
         "name": "battery-charge",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "energy", "technology", "charging"],
+        "categoryTags": ["ui", "essential", "energy", "technology", "charging"],
         "tags": ["charger", "electricity", "power-source"]
     },
     {
         "name": "battery-full-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icons", "energy", "electronics", "sustainability"],
+        "categoryTags": ["ui", "essential", "icons", "energy", "electronics", "sustainability"],
         "tags": ["charger", "electricity", "energy"]
     },
     {
         "name": "traffic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "infrastructure", "transportation"],
+        "categoryTags": ["ui", "essential", "infrastructure", "transportation"],
         "tags": ["traffic_sign", "street_traffic"]
     },
     {
         "name": "pin",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "office", "stationery"],
+        "categoryTags": ["ui", "essential", "office", "stationery"],
         "tags": ["pushpin", "tacks"]
     },
     {
         "name": "slider-vertical-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "user-interface", "minimalistic"],
+        "categoryTags": ["ui", "essential", "navigation", "user-interface", "minimalistic"],
         "tags": ["sliding", "rectangle"]
     },
     {
         "name": "crown-star",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "decorative", "badge", "achievement"],
+        "categoryTags": ["ui", "essential", "decorative", "badge", "achievement"],
         "tags": ["crowned", "starred"]
     },
     {
         "name": "crown-line",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "status", "emblem"],
+        "categoryTags": ["ui", "essential", "essential", "status", "emblem"],
         "tags": ["crown", "regal"]
     },
     {
         "name": "pin-list",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tool", "organization", "stationery"],
+        "categoryTags": ["ui", "essential", "tool", "organization", "stationery"],
         "tags": ["nail", "list", "pinboard"]
     },
     {
         "name": "trash-bin-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "waste disposal", "sanitation"],
+        "categoryTags": ["ui", "essential", "waste disposal", "sanitation"],
         "tags": ["trash can", "garbage bin"]
     },
     {
         "name": "trash-bin-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "digital"],
+        "categoryTags": ["ui", "essential", "essential", "digital"],
         "tags": ["Wastebasket", "Trash Can"]
     },
     {
         "name": "pin-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "webtools", "navigation"],
+        "categoryTags": ["ui", "essential", "webtools", "navigation"],
         "tags": ["pushpin", "circle pin"]
     },
     {
         "name": "trash-bin-minimalistic-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "kitchenware", "utensils"],
+        "categoryTags": ["ui", "essential", "kitchenware", "utensils"],
         "tags": ["pot", "cooking-pot"]
     },
     {
         "name": "share",
         "category": "ui",
-        "categoryTags": [
-            "ui",
-            "essentional",
-            "networking",
-            "communication",
-            "social",
-            "connection"
-        ],
+        "categoryTags": ["ui", "essential", "networking", "communication", "social", "connection"],
         "tags": ["split", "branch", "divided"]
     },
     {
         "name": "traffic-economy",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "transportation", "economic", "navigation"],
+        "categoryTags": ["ui", "essential", "transportation", "economic", "navigation"],
         "tags": ["car", "road", "economy"]
     },
     {
         "name": "share-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "networking", "communication"],
+        "categoryTags": ["ui", "essential", "networking", "communication"],
         "tags": ["connect", "collaborate"]
     },
     {
         "name": "trash-bin-trash",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "storage", "disposal"],
+        "categoryTags": ["ui", "essential", "essential", "storage", "disposal"],
         "tags": ["trashcan", "wastebasket"]
     },
     {
         "name": "target",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "surveillance", "utility"],
+        "categoryTags": ["ui", "essential", "navigation", "surveillance", "utility"],
         "tags": ["aiming", "sight", "focus"]
     },
     {
         "name": "crown",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "symbolism", "accessories"],
+        "categoryTags": ["ui", "essential", "symbolism", "accessories"],
         "tags": ["royalty", "regality"]
     },
     {
         "name": "plate",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "utensil", "kitchen"],
+        "categoryTags": ["ui", "essential", "utensil", "kitchen"],
         "tags": ["food plate", "dishware"]
     },
     {
         "name": "subtitles",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "payments", "technology"],
+        "categoryTags": ["ui", "essential", "payments", "technology"],
         "tags": ["card", "chip card", "credit card", "payment method"]
     },
     {
         "name": "cat",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "animal", "simplified", "fashionable", "essentials"],
+        "categoryTags": ["ui", "essential", "animal", "simplified", "fashionable", "essentials"],
         "tags": ["Cat outline", "Minimalistic feline"]
     },
     {
         "name": "waterdrop",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "liquid", "natural", "minimalist"],
+        "categoryTags": ["ui", "essential", "liquid", "natural", "minimalist"],
         "tags": ["water", "droplet"]
     },
     {
         "name": "posts-carousel-vertical",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "web_design", "navigation", "posts_list"],
+        "categoryTags": ["ui", "essential", "web_design", "navigation", "posts_list"],
         "tags": ["Vertical carousel", "Post carousel"]
     },
     {
         "name": "bolt",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "energy", "engineering", "technology"],
+        "categoryTags": ["ui", "essential", "energy", "engineering", "technology"],
         "tags": ["electricity", "power"]
     },
     {
         "name": "posts-carousel-horizontal",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "interface", "photography"],
+        "categoryTags": ["ui", "essential", "interface", "photography"],
         "tags": ["horizontal carousel", "post slider", "carousel view"]
     },
     {
         "name": "umbrella",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "weather", "tools", "accessories"],
+        "categoryTags": ["ui", "essential", "weather", "tools", "accessories"],
         "tags": ["open umbrella", "black umbrella"]
     },
     {
         "name": "bolt-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "energy", "symbols"],
+        "categoryTags": ["ui", "essential", "energy", "symbols"],
         "tags": ["electricity", "power"]
     },
     {
         "name": "ghost-smile",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "ghost", "spiritual"],
+        "categoryTags": ["ui", "essential", "ghost", "spiritual"],
         "tags": ["smiling ghost", "joyful spirit"]
     },
     {
         "name": "power",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "utility"],
+        "categoryTags": ["ui", "essential", "utility"],
         "tags": ["power button", "on sign"]
     },
     {
         "name": "broom",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "home", "utility", "maintenance"],
+        "categoryTags": ["ui", "essential", "home", "utility", "maintenance"],
         "tags": ["cleaning tool", "house cleaning"]
     },
     {
         "name": "figma",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "sports", "basketball"],
+        "categoryTags": ["ui", "essential", "sports", "basketball"],
         "tags": ["fiba", "fiba logo"]
     },
     {
         "name": "paw",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "animal", "symbolic"],
+        "categoryTags": ["ui", "essential", "animal", "symbolic"],
         "tags": ["Pawprint", "Footprint"]
     },
     {
         "name": "balloon",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "objects", "lighting", "decorative"],
+        "categoryTags": ["ui", "essential", "objects", "lighting", "decorative"],
         "tags": ["balloon", "lightbulb"]
     },
     {
@@ -4330,7 +4323,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "essential",
             "software",
             "networking",
@@ -4341,55 +4334,55 @@
     {
         "name": "flag",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "networking", "communications"],
+        "categoryTags": ["ui", "essential", "networking", "communications"],
         "tags": ["signal", "connectivity"]
     },
     {
         "name": "fuel",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "consumption", "utility"],
+        "categoryTags": ["ui", "essential", "consumption", "utility"],
         "tags": ["tank", "liquid container"]
     },
     {
         "name": "cup",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "awards", "celebration", "sports"],
+        "categoryTags": ["ui", "essential", "awards", "celebration", "sports"],
         "tags": ["trophy", "victory"]
     },
     {
         "name": "cup-music",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "prize", "awards", "success"],
+        "categoryTags": ["ui", "essential", "prize", "awards", "success"],
         "tags": ["trophy", "music"]
     },
     {
         "name": "cup-star",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "sports", "awards"],
+        "categoryTags": ["ui", "essential", "sports", "awards"],
         "tags": ["trophy", "prize"]
     },
     {
         "name": "battery-half",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "status", "essential"],
+        "categoryTags": ["ui", "essential", "status", "essential"],
         "tags": ["battery", "power"]
     },
     {
         "name": "help",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "safety", "emergency", "navigation"],
+        "categoryTags": ["ui", "essential", "safety", "emergency", "navigation"],
         "tags": ["lifebuoy", "rescue", "assistance"]
     },
     {
         "name": "explicit",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "graphic", "simple"],
+        "categoryTags": ["ui", "essential", "graphic", "simple"],
         "tags": ["square", "symbol"]
     },
     {
         "name": "xxx",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icons", "content_moderation"],
+        "categoryTags": ["ui", "essential", "icons", "content_moderation"],
         "tags": ["censored", "obscured"]
     },
     {
@@ -4397,7 +4390,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "entertainment",
             "software",
             "media-effects",
@@ -4408,109 +4401,109 @@
     {
         "name": "cup-first",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "awards", "achievement", "success"],
+        "categoryTags": ["ui", "essential", "awards", "achievement", "success"],
         "tags": ["trophy", "first-place"]
     },
     {
         "name": "high-definition",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "media", "technology"],
+        "categoryTags": ["ui", "essential", "media", "technology"],
         "tags": ["High Definition", "HD Video"]
     },
     {
         "name": "flag-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "symbols", "geopolitics"],
+        "categoryTags": ["ui", "essential", "symbols", "geopolitics"],
         "tags": ["horizontal flag", "single pole"]
     },
     {
         "name": "augmented-reality",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tech", "mobile", "software"],
+        "categoryTags": ["ui", "essential", "tech", "mobile", "software"],
         "tags": ["AR app", "Augmented reality"]
     },
     {
         "name": "reorder",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "menu-button"],
+        "categoryTags": ["ui", "essential", "navigation", "menu-button"],
         "tags": ["three horizontal lines", "menu", "organize"]
     },
     {
         "name": "ghost",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "fantasy", "spiritual"],
+        "categoryTags": ["ui", "essential", "fantasy", "spiritual"],
         "tags": ["skeeter", "specter"]
     },
     {
         "name": "high-quality",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "logo", "mark", "icon"],
+        "categoryTags": ["ui", "essential", "logo", "mark", "icon"],
         "tags": ["HQ", "quality"]
     },
     {
         "name": "creative-commons",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "icon", "symbol", "law", "intellectual property"],
+        "categoryTags": ["ui", "essential", "icon", "symbol", "law", "intellectual property"],
         "tags": ["Creative Commons", "Copyright"]
     },
     {
         "name": "copyright",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "intellectual property", "license", "legal"],
+        "categoryTags": ["ui", "essential", "intellectual property", "license", "legal"],
         "tags": ["copy right", "creative copyright"]
     },
     {
         "name": "scissors",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tools", "office supplies"],
+        "categoryTags": ["ui", "essential", "tools", "office supplies"],
         "tags": ["scissor", "cutting tool"]
     },
     {
         "name": "filter",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "utility", "data"],
+        "categoryTags": ["ui", "essential", "utility", "data"],
         "tags": ["funnel", "filtration"]
     },
     {
         "name": "glasses",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "accessories", "vision aid"],
+        "categoryTags": ["ui", "essential", "accessories", "vision aid"],
         "tags": ["eyeglasses", "spectacles"]
     },
     {
         "name": "sort",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "data", "organization"],
+        "categoryTags": ["ui", "essential", "data", "organization"],
         "tags": ["list", "ranking"]
     },
     {
         "name": "box-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "geometric", "minimalist"],
+        "categoryTags": ["ui", "essential", "geometric", "minimalist"],
         "tags": ["cube", "prism"]
     },
     {
         "name": "copy",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "file", "action", "utility"],
+        "categoryTags": ["ui", "essential", "file", "action", "utility"],
         "tags": ["copied", "transfer", "duplicate"]
     },
     {
         "name": "box",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "logistics", "transportation"],
+        "categoryTags": ["ui", "essential", "essential", "logistics", "transportation"],
         "tags": ["container", "storage"]
     },
     {
         "name": "ferris-wheel",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "circus", "travel", "fun"],
+        "categoryTags": ["ui", "essential", "circus", "travel", "fun"],
         "tags": ["wheel", "amusement", "entertainment"]
     },
     {
         "name": "four-k",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "display", "media"],
+        "categoryTags": ["ui", "essential", "display", "media"],
         "tags": ["Ultra HD", "4K resolution"]
     },
     {
@@ -4518,7 +4511,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "cosmetics",
             "fragrance",
             "consumables",
@@ -4529,51 +4522,51 @@
     {
         "name": "paper-bin",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "trashcan", "waste"],
+        "categoryTags": ["ui", "essential", "trashcan", "waste"],
         "tags": ["trash can", "wastepaper basket"]
     },
     {
         "name": "scissors-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tools", "cutting", "utility"],
+        "categoryTags": ["ui", "essential", "tools", "cutting", "utility"],
         "tags": ["scissors", "square-cutting-tool"]
     },
     {
         "name": "sleeping",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "lodging", "wellness"],
+        "categoryTags": ["ui", "essential", "lodging", "wellness"],
         "tags": ["bed", "rest"]
     },
     {
         "name": "delivery",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "commerce", "transportation"],
+        "categoryTags": ["ui", "essential", "commerce", "transportation"],
         "tags": ["cart", "shopping"]
     },
     {
         "name": "feed",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "media", "data", "storage"],
+        "categoryTags": ["ui", "essential", "media", "data", "storage"],
         "tags": ["file", "folder"]
     },
     {
         "name": "gift",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "giving"],
+        "categoryTags": ["ui", "essential", "communication", "giving"],
         "tags": ["ribbon", "present"]
     },
     {
-        "name": "magic-stick",
+        "name": "magic-wand",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "accessory", "fantasy", "tools"],
+        "categoryTags": ["ui", "essential", "accessory", "fantasy", "tools"],
         "tags": ["wand", "magical stick"]
     },
     {
-        "name": "magic-stick-3",
+        "name": "magic-wand-3",
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "education",
             "magical items",
             "tools",
@@ -4584,73 +4577,73 @@
     {
         "name": "sledgehammer",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tools", "construction"],
+        "categoryTags": ["ui", "essential", "tools", "construction"],
         "tags": ["mallet", "hammer", "building tool"]
     },
     {
-        "name": "magic-stick-2",
+        "name": "magic-wand-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "magical", "fantasy"],
+        "categoryTags": ["ui", "essential", "magical", "fantasy"],
         "tags": ["Magic Stick", "Fantasy Wand"]
     },
     {
         "name": "flashlight-on",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "home", "electricity", "energy"],
+        "categoryTags": ["ui", "essential", "home", "electricity", "energy"],
         "tags": ["lamp", "lightbulb"]
     },
     {
         "name": "flashlight",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "tools", "utility"],
+        "categoryTags": ["ui", "essential", "tools", "utility"],
         "tags": ["lamp", "spotlight"]
     },
     {
         "name": "magnet-wave",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "scientific", "magnetic", "sleek design"],
+        "categoryTags": ["ui", "essential", "scientific", "magnetic", "sleek design"],
         "tags": ["wave magnet", "magnetic wave"]
     },
     {
         "name": "magnet",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "physics", "engineering", "hardware"],
+        "categoryTags": ["ui", "essential", "physics", "engineering", "hardware"],
         "tags": ["magnetic", "retractable", "suspension"]
     },
     {
         "name": "cursor-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "symbolic", "action"],
+        "categoryTags": ["ui", "essential", "symbolic", "action"],
         "tags": ["pointer", "navigation"]
     },
     {
         "name": "cosmetic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "beauty", "personal care"],
+        "categoryTags": ["ui", "essential", "beauty", "personal care"],
         "tags": ["lipstick", "mirror"]
     },
     {
         "name": "cursor",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "input"],
+        "categoryTags": ["ui", "essential", "navigation", "input"],
         "tags": ["pointer", "arrow pointer", "scroll arrow"]
     },
     {
         "name": "confetti-minimalistic",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "decoration", "festival"],
+        "categoryTags": ["ui", "essential", "decoration", "festival"],
         "tags": ["party", "celebration"]
     },
     {
         "name": "mask-happy",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "entertainment", "art"],
+        "categoryTags": ["ui", "essential", "entertainment", "art"],
         "tags": ["theater", "masks"]
     },
     {
         "name": "mirror-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "essential", "mirror", "glass", "light"],
+        "categoryTags": ["ui", "essential", "essential", "mirror", "glass", "light"],
         "tags": ["reflection", "surface"]
     },
     {
@@ -4658,7 +4651,7 @@
         "category": "ui",
         "categoryTags": [
             "ui",
-            "essentional",
+            "essential",
             "Clothing",
             "Fashion",
             "Garment",
@@ -4670,67 +4663,67 @@
     {
         "name": "confetti",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "events", "festivities"],
+        "categoryTags": ["ui", "essential", "events", "festivities"],
         "tags": ["explosion", "celebration"]
     },
     {
         "name": "accessibility",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "iconography", "humanity"],
+        "categoryTags": ["ui", "essential", "iconography", "humanity"],
         "tags": ["stick figure", "inclusive"]
     },
     {
         "name": "t-shirt",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "apparel", "clothing"],
+        "categoryTags": ["ui", "essential", "apparel", "clothing"],
         "tags": ["shirt", "top"]
     },
     {
         "name": "mention-square",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "social_media"],
+        "categoryTags": ["ui", "essential", "communication", "social_media"],
         "tags": ["reply square", "at symbol", "message inbox"]
     },
     {
         "name": "body",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "apparel", "symbol"],
+        "categoryTags": ["ui", "essential", "apparel", "symbol"],
         "tags": ["shirt silhouette", "clothing outline", "garment shape"]
     },
     {
         "name": "mask-sad",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "expression", "emotion"],
+        "categoryTags": ["ui", "essential", "expression", "emotion"],
         "tags": ["sad", "emoticon"]
     },
     {
         "name": "mention-circle",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "communication", "message"],
+        "categoryTags": ["ui", "essential", "communication", "message"],
         "tags": ["mention", "symbol"]
     },
     {
         "name": "hanger",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "accessories", "clothing"],
+        "categoryTags": ["ui", "essential", "accessories", "clothing"],
         "tags": ["clothing hanger", "wardrobe accessory", "hangar hook"]
     },
     {
         "name": "hanger-2",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "household", "fashion", "organization"],
+        "categoryTags": ["ui", "essential", "household", "fashion", "organization"],
         "tags": ["clothing hanger", "wardrobe accessory"]
     },
     {
         "name": "masks",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "arts", "communication"],
+        "categoryTags": ["ui", "essential", "arts", "communication"],
         "tags": ["theater", "expression"]
     },
     {
         "name": "hamburger-menu",
         "category": "ui",
-        "categoryTags": ["ui", "essentional", "navigation", "accessory", "icon"],
+        "categoryTags": ["ui", "essential", "navigation", "accessory", "icon"],
         "tags": ["hamburger", "menu"]
     },
     {
@@ -5180,7 +5173,7 @@
         "tags": ["lamp", "lighting"]
     },
     {
-        "name": "trellis",
+        "name": "vanity",
         "category": "home",
         "categoryTags": ["home", "furniture", "entertainment", "electronics"],
         "tags": ["wall", "screen"]
@@ -7258,7 +7251,7 @@
         "tags": ["bell", "sound"]
     },
     {
-        "name": "bell-bing",
+        "name": "bell-ring",
         "category": "notifications",
         "categoryTags": ["notifications", "communication"],
         "tags": ["notification bell", "bells icon", "alert notification"]
@@ -7809,7 +7802,7 @@
         "tags": ["suspension", "engine-lift-supporter"]
     },
     {
-        "name": "accumulator",
+        "name": "car-battery",
         "category": "parts",
         "categoryTags": ["parts", "service", "transport", "vehicle", "electronics", "energy"],
         "tags": ["battery", "power source"]
