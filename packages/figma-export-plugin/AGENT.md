@@ -53,6 +53,7 @@ Once per V3 release cycle, after the rename plugin (or any other Figma-side mass
 - **No network calls.** The plugin does not contact the Figma REST API or any external server. The whole flow is local: sandbox export -> sandbox message -> browser download.
 - **No geometry changes.** The plugin only reads and exports. It does not modify the Figma document.
 - **`ui.html` is Figma-sandboxed HTML.** No external script tags. All JS/CSS is inline.
+- **QuickJS sandbox — no optional chaining or nullish coalescing.** The Figma plugin main thread runs in QuickJS, which does not support the `?.` or `??` operators. Use `const x = (a && a.b) || defaultValue` style. (See commit 51f2aa73 for the trap I fell into.)
 
 ## Related
 

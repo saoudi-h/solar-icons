@@ -37,6 +37,7 @@ Once per V3 release cycle, after deciding to apply the rename map. The maintaine
 - **Read-only until Apply.** The plugin scans and shows a preview; nothing changes until the user clicks Apply in the UI.
 - **Undoable.** Each rename is a single Figma edit, fully reversible via `Cmd/Ctrl+Z`.
 - **`ui.html` is Figma-sandboxed HTML.** No external script tags. All JS/CSS is inline.
+- **QuickJS sandbox — no optional chaining or nullish coalescing.** The Figma plugin main thread runs in QuickJS, which does not support the `?.` or `??` operators. Use `const x = (a && a.b) || defaultValue` style.
 
 ## Deferred decisions (per issue #493)
 
