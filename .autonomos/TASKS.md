@@ -44,18 +44,26 @@
 
 ## V3 — Phase 4: Duotone
 
-- [x] **[V3-09]** Add duotone CSS-var customization to the web framework hooks (React, Vue, Solid, Svelte, Angular). The duotone-accent path emits `style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5);"`. Pre-req: Figma cleanup done in V3-06. `Priority: 🔵` `Complexity: M` *Depends on: V3-03a, V3-03b, V3-03c, V3-04, V3-05*
+- [x] **[V3-09]** Add duotone CSS-var customization to the web framework hooks (React, Vue, Solid, Svelte, Angular). The duotone-accent path emits `style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5);"`. Also fixed: double-opacity bug (groupDepth tracking in applyDuotoneStyle), broader DUOTONE_ACCENT_REGEX for `<g>`, `<circle>`, `<ellipse>`, `<rect>`, trailing-separator handling in toCamelCase. `Priority: 🔵` `Complexity: M` *See: .autonomos/worklogs/2026-06-20-V3-09-duotone-css-vars.md*
 
 ## V3 — Hardening
 
 - [x] **[V3-10]** Sanctify `packages/core/src/metadata-descriptions.json`
 - [x] **[V3-11]** Delete the now-unused `scripts/generate-assets.ts` and `scripts/utils.ts`
+- [x] **[V3-14]** ESM-only: drop CJS output from React, Vue, Vue-reactive. All packages now ESM-only with `.mjs` extensions. `Priority: 🟠` `Complexity: S`
+- [x] **[V3-15]** Migrate React from Vite+tsc to tsdown (unify build pipeline with Solid, Vue, React Native). Removed vite.config.ts and tsconfig.build.json. `Priority: 🟠` `Complexity: S`
+
+## V3 — Next
+
+- [ ] **[V3-16]** Generalize CSS-vars to all SVG style attributes (fill, stroke, stroke-width). Replace hardcoded attributes with `var(--solar-fill, currentColor)`, `var(--solar-stroke, none)`, `var(--solar-stroke-width, 1.5)`. This enables global theming via CSS cascade without framework re-renders. Requires design discussion: how props interact with CSS vars, conflict resolution, default behavior. `Priority: 🔵` `Complexity: L` *See: discussion about CSS-native reactivity for icon styling*
+- [ ] **[V3-17]** Create `SolarTheme` provider component for React (and possibly Vue). A component that sets CSS custom properties on a wrapper element, allowing reactive theme changes via framework state while leveraging browser-native CSS cascade for performance. Example: `<SolarTheme primaryColor="#ccc" duotoneColor="#f00">`. Reduces the need for react-reactive/vue-reactive for theming use cases. `Priority: 🔵` `Complexity: M`
+- [ ] **[V3-18]** Re-evaluate the role of `react-reactive` and `vue-reactive`. With CSS-vars providing theming and the `SolarTheme` provider handling reactive customization, reactive-style packages may only be needed for dynamic style switching (changing icon style at runtime). Document the scope reduction or consider deprecation path. `Priority: ⚪` `Complexity: M`
+- [ ] **[V3-19]** Update demo apps (vue-app, svelte-app, angular-app) with duotone CSS-var controls like the SolidJS demo. Import paths must use kebab-case (`@solar-icons/vue/bold` not `@solar-icons/vue/Bold`). `Priority: 🔵` `Complexity: S`
+- [ ] **[V3-20]** Audit all demo apps for broken imports. V3-13 renamed style directories to kebab-case; any app importing PascalCase paths (`/Bold`, `/LineDuotone`) must be updated to kebab-case (`/bold`, `/line-duotone`). `Priority: 🟠` `Complexity: S`
 
 ## Post-V3 (follow-up, not part of V3.0)
 
 - [ ] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/` — one canonical data layer. `Priority: ⚪` `Complexity: M`
 - [ ] **[POST-02]** Fix Angular peer-dep range: `peerDependencies` says `"17.x - 21.x"`, dev deps pin `22.x`. Widen to match. `Priority: ⚪` `Complexity: S`
-
-## 🔮 Backlog
 
 *(add future tasks here)*
