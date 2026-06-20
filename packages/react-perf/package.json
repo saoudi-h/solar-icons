@@ -20,8 +20,8 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error && pnpm build:types",
-        "build:types": "tsc --build --force tsconfig.build.json",
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "build:types": "tsgo --noEmit",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
@@ -32,27 +32,19 @@
         "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
-    "types": "./dist/types/index.d.ts",
+    "types": "./dist/index.d.mts",
     "exports": {
         "./package.json": "./package.json",
         ".": {
-            "types": "./dist/types/index.d.ts",
+            "types": "./dist/index.d.mts",
             "import": "./dist/index.mjs"
         },
         "./lib/*": {
-            "types": "./dist/types/lib/*.d.ts",
+            "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
-        "./category": {
-            "types": "./dist/types/icons/index.d.ts",
-            "import": "./dist/icons/index.mjs"
-        },
-        "./category/*": {
-            "types": "./dist/types/icons/*.d.ts",
-            "import": "./dist/icons/*.mjs"
-        },
         "./*": {
-            "types": "./dist/types/icons/style/*.d.ts",
+            "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"
         }
     },

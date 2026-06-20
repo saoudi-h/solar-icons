@@ -57,19 +57,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         for (const [style, styleIcons] of Object.entries(byStyle)) {
             const styleKebab = WEIGHT_KEBAB[style]
 
-            const styleIndexContent = styleIcons
-                .map(
-                    icon =>
-                        `export { ${icon.pascalName} } from './${styleKebab}/${icon.name}';`
-                )
-                .sort()
-                .join('\n')
-
-            files.push({
-                path: path.join(ICONS_PATH, category, `${styleKebab}.ts`),
-                content: `${styleIndexContent}\n`,
-            })
-
             const globalContent = styleIcons
                 .map(icon => {
                     const globalName = toPascalCase(`${icon.name}-${style}`)
@@ -83,56 +70,44 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
                 content: `${globalContent}\n`,
             })
         }
-
-        const styles = Object.keys(byStyle)
-        const catIndexContent = styles
-            .map(style => `export * as ${style} from './${category}/${WEIGHT_KEBAB[style]}';`)
-            .sort()
-            .join('\n')
-
-        files.push({
-            path: path.join(ICONS_PATH, `${category}.ts`),
-            content: `${catIndexContent}\n`,
-        })
-
-        const catGlobalContent = styles
-            .map(style => `export * from './${WEIGHT_KEBAB[style]}/styled';`)
-            .sort()
-            .join('\n')
-
-        files.push({
-            path: path.join(ICONS_PATH, category, 'styled.ts'),
-            content: `${catGlobalContent}\n`,
-        })
     }
 
     const categories = Object.keys(byCategory)
 
-    const rootIndexContent = categories
-        .map(cat => `export * as ${toPascalCase(cat)} from './${cat}';`)
-        .sort()
-        .join('\n')
-
-    files.push({
-        path: path.join(ICONS_PATH, 'index.ts'),
-        content: `${rootIndexContent}\n`,
-    })
-
-    const rootGlobalContent = categories
-        .map(cat => `export * from './${cat}/styled';`)
-        .sort()
-        .join('\n')
+    // Generate styled.ts root with deduplicated named exports
+    const seenGlobal = new Set<string>()
+    const rootGlobalLines: string[] = []
+    for (const [category, catIcons] of Object.entries(byCategory)) {
+        const byStyle = groupBy(catIcons, i => i.style)
+        for (const [style, styleIcons] of Object.entries(byStyle)) {
+            for (const icon of styleIcons) {
+                const globalName = toPascalCase(`${icon.name}-${style}`)
+                if (seenGlobal.has(globalName)) continue
+                seenGlobal.add(globalName)
+                rootGlobalLines.push(
+                    `export { ${icon.pascalName} as ${globalName} } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
+                )
+            }
+        }
+    }
+    rootGlobalLines.sort()
 
     files.push({
         path: path.join(ICONS_PATH, 'styled.ts'),
-        content: `${rootGlobalContent}\n`,
+        content: rootGlobalLines.join('\n') + '\n',
     })
 
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_KEBAB[weight]
+        const seen = new Set<string>()
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
+                return true
+            })
             .map(
                 icon =>
                     `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
@@ -158,8 +133,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 export type { IconProps } from "./lib"
 export { IconBase } from "./lib"
 export * from "./icons/styled"
-import * as solar from "./icons"
-export { solar }
 `
 
     files.push({
