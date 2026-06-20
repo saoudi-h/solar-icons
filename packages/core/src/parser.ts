@@ -56,7 +56,8 @@ const SVG_CLOSE_REGEX = /<\/svg>/g
 const EMPTY_RECT_REGEX = /<rect\s+width="24[\d,.]+"\s+height="24[\d,.]+"\s+fill="none"[^>]*\/>\s*/g
 const TITLE_REGEX = /<title[\s\S]*?<\/title>\s*/g
 const DEFAULT_STROKE_WIDTH_REGEX = /\s+stroke-width=["']1\.5["']/g
-const DUOTONE_ACCENT_REGEX = /<path[^>]*\sopacity="0\.5"[^>]*\/>\s*/g
+const DUOTONE_ACCENT_REGEX =
+    /(?:<g[^>]*\sopacity="0\.5"[^>]*>[\s\S]*?<\/g>|<\w[^>]*\sopacity="0\.5"[^>]*\/>)\s*/g
 
 /**
  * Single icon, fully parsed and normalized.
@@ -274,7 +275,7 @@ export const parseSvgs = async (options: ParseOptions = {}): Promise<ParseResult
             const files = fs.readdirSync(styleDir, 'utf-8')
             for (const filename of files) {
                 if (!filename.endsWith('.svg')) continue
-                const name = filename.slice(0, -'.svg'.length)
+                const name = filename.slice(0, -'.svg'.length).replace(/[\s\-_]+$/g, '')
                 const filePath = path.join(styleDir, filename)
                 const raw = fs.readFileSync(filePath, 'utf-8')
                 const { inner, duotoneAccentInner, preview } = normalizeBody(raw, withPreview)
@@ -369,6 +370,45 @@ export const loadIcon = (category: string, style: IconWeight, name: string): Par
         )
     }
     return icon
+}
+
+const DUOTONE_CSS_VARS_HTML =
+    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
+const DUOTONE_CSS_VARS_JSX =
+    'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
+
+/**
+ * Transforms a duotone-accent string so that `opacity="0.5"` is replaced
+ * with CSS custom properties, giving consumers full control over the accent
+ * color and opacity.
+ *
+ * @param accent    The raw `duotoneAccentInner` value from a {@link ParsedIcon}.
+ *                  May be `null`. Each element in the string has already been
+ *                  extracted by {@link DUOTONE_ACCENT_REGEX} — it is either a
+ *                  self-closing element (`<path … />`, `<circle … />`,
+ *                  `<ellipse … />`, `<rect … />`) or a `<g>…</g>` group.
+ * @param jsxStyle  When `true`, emits the JSX object syntax
+ *                  (`style={{ … }}`) for React / Solid. When `false`,
+ *                  emits the HTML string syntax (`style="…"`) for Vue,
+ *                  Svelte, Angular, and framework-agnostic templates.
+ *
+ * @returns The transformed accent string, or `null` if the input was `null`.
+ */
+export function transformDuotoneAccent(accent: string | null, jsxStyle = false): string | null {
+    if (!accent) return null
+    const styleAttr = jsxStyle ? DUOTONE_CSS_VARS_JSX : DUOTONE_CSS_VARS_HTML
+    return accent
+        .split('\n')
+        .map(line => {
+            const trimmed = line.trim()
+            if (!trimmed || trimmed.startsWith('</')) return line
+            const withoutOpacity = trimmed.replace(/\s+opacity="0\.5"/g, '')
+            if (withoutOpacity.endsWith('/>')) {
+                return withoutOpacity.slice(0, -2) + ` ${styleAttr}/>`
+            }
+            return withoutOpacity.replace('>', ` ${styleAttr}>`)
+        })
+        .join('\n')
 }
 
 /**
