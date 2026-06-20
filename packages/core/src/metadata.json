@@ -1199,7 +1199,6 @@
         "ui"
       ],
       "icons": [
-        "4k",
         "accessibility",
         "add-circle",
         "add-square",
@@ -1257,6 +1256,7 @@
         "flashlight-on",
         "forbidden",
         "forbidden-circle",
+        "four-k",
         "fuel",
         "ghost",
         "ghost-smile",
