@@ -3,12 +3,12 @@ import { Dynamic } from 'solid-js/web';
 import type { Component } from 'solid-js';
 
 // Import all styles statically
-import * as Bold from '@solar-icons/solid/Bold';
-import * as Linear from '@solar-icons/solid/Linear';
-import * as BoldDuotone from '@solar-icons/solid/BoldDuotone';
-import * as LineDuotone from '@solar-icons/solid/LineDuotone';
-import * as Broken from '@solar-icons/solid/Broken';
-import * as Outline from '@solar-icons/solid/Outline';
+import * as Bold from '@solar-icons/solid/bold';
+import * as Linear from '@solar-icons/solid/linear';
+import * as BoldDuotone from '@solar-icons/solid/bold-duotone';
+import * as LineDuotone from '@solar-icons/solid/line-duotone';
+import * as Broken from '@solar-icons/solid/broken';
+import * as Outline from '@solar-icons/solid/outline';
 
 // Import icon list (same approach as svelte-app)
 import { ALL_ICONS, STYLES, type IconStyle } from './lib/icon-list';
@@ -28,6 +28,12 @@ const App: Component = () => {
     const [iconColor, setIconColor] = createSignal('#f59e0b'); // amber-500
     const [strokeWidth, setStrokeWidth] = createSignal(1.5);
     const [searchQuery, setSearchQuery] = createSignal('');
+    const [duotoneColor, setDuotoneColor] = createSignal('#60a5fa'); // blue-400
+    const [duotoneOpacity, setDuotoneOpacity] = createSignal(0.5);
+
+    const isDuotone = createMemo(() =>
+        selectedStyle() === 'BoldDuotone' || selectedStyle() === 'LineDuotone'
+    );
 
     const filteredIcons = createMemo(() => {
         const query = searchQuery().toLowerCase();
@@ -142,10 +148,94 @@ const App: Component = () => {
                             />
                         </div>
                     </div>
+
+                    {/* Duotone Controls — visible only for BoldDuotone / LineDuotone */}
+                    <Show when={isDuotone()}>
+                        <div class="mt-6 pt-6 border-t border-slate-700/50">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-sm font-semibold text-blue-400 uppercase tracking-wide">
+                                    Duotone CSS-vars
+                                </span>
+                                <span class="text-xs text-slate-500 bg-slate-700/50 px-2 py-0.5 rounded">
+                                    --solar-duotone-color / --solar-duotone-opacity
+                                </span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {/* Duotone Color */}
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-300">
+                                        Accent Color:{' '}
+                                        <span class="text-blue-400 font-mono text-xs">
+                                            {duotoneColor()}
+                                        </span>
+                                    </label>
+                                    <div class="flex items-center gap-3">
+                                        <input
+                                            type="color"
+                                            value={duotoneColor()}
+                                            onInput={(e) =>
+                                                setDuotoneColor(e.currentTarget.value)
+                                            }
+                                            class="w-10 h-10 rounded-lg cursor-pointer border-0"
+                                        />
+                                        <input
+                                            type="text"
+                                            value={duotoneColor()}
+                                            onInput={(e) =>
+                                                setDuotoneColor(e.currentTarget.value)
+                                            }
+                                            class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
+                                        />
+                                        <button
+                                            class="px-2 py-1.5 text-xs text-slate-400 hover:text-slate-200 bg-slate-700 rounded-lg border border-slate-600 transition-colors"
+                                            title="Reset to default (currentColor)"
+                                            onClick={() =>
+                                                setDuotoneColor(iconColor())
+                                            }
+                                        >
+                                            reset
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Duotone Opacity */}
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-300">
+                                        Accent Opacity:{' '}
+                                        <span class="text-blue-400">{duotoneOpacity()}</span>
+                                    </label>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="1"
+                                        step="0.05"
+                                        value={duotoneOpacity()}
+                                        onInput={(e) =>
+                                            setDuotoneOpacity(
+                                                parseFloat(e.currentTarget.value)
+                                            )
+                                        }
+                                        class="w-full accent-blue-400"
+                                    />
+                                    <div class="flex justify-between text-xs text-slate-500">
+                                        <span>0</span>
+                                        <span>0.5 (default)</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Show>
                 </div>
 
                 {/* Icon Grid */}
-                <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
+                <div
+                    class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4"
+                    style={{
+                        '--solar-duotone-color': duotoneColor(),
+                        '--solar-duotone-opacity': duotoneOpacity().toString(),
+                    }}
+                >
                     <For each={filteredIcons()}>
                         {(iconName) => {
                             // Create a reactive signal for the icon component

@@ -1,5 +1,31 @@
-import type { ParsedIconGroup, IconContext, ParsedIcon } from '../../../core/src/parser.ts'
-import type { IconWeight } from '../../../core/src/types.ts'
+import type { ParsedIconGroup, IconContext, ParsedIcon } from '../../core/src/parser.ts'
+import type { IconWeight } from '../../core/src/types.ts'
+
+const DUOTONE_CSS_VARS_HTML =
+    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
+
+function applyDuotoneStyle(accent: string | null): string | null {
+    if (!accent) return null
+    let groupDepth = 0
+    return accent
+        .replace(/\s+opacity="0\.5"/g, '')
+        .split('\n')
+        .map(line => {
+            const trimmed = line.trim()
+            if (!trimmed) return line
+            if (trimmed.startsWith('</')) {
+                if (trimmed.startsWith('</g')) groupDepth--
+                return line
+            }
+            if (groupDepth > 0) return line
+            if (trimmed.startsWith('<g')) groupDepth++
+            if (trimmed.endsWith('/>')) {
+                return trimmed.slice(0, -2) + ` ${DUOTONE_CSS_VARS_HTML}/>`
+            }
+            return trimmed.replace('>', ` ${DUOTONE_CSS_VARS_HTML}>`)
+        })
+        .join('\n')
+}
 
 export interface FileDefinition {
     path: string
@@ -127,8 +153,9 @@ function parseIconNodes(svgContent: string): SVGNode[] {
 }
 
 function getIconNodes(icon: ParsedIcon): SVGNode[] {
-    const body = icon.duotoneAccentInner
-        ? `${icon.duotoneAccentInner}\n${icon.inner.trim()}`
+    const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
+    const body = duotone
+        ? `${duotone}\n${icon.inner.trim()}`
         : icon.inner.trim()
     return parseIconNodes(body)
 }
