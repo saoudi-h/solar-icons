@@ -131,8 +131,15 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_KEBAB[weight]
+        const seen = new Set<string>()
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                const globalName = `${icon.pascalName}${weight}`
+                if (seen.has(globalName)) return false
+                seen.add(globalName)
+                return true
+            })
             .map(icon => {
                 const globalName = `${icon.pascalName}${weight}`
                 return `export { default as ${globalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`

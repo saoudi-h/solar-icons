@@ -21,6 +21,21 @@ interface IconContext<T> {
 const DUOTONE_CSS_VARS_JSX =
     'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
 
+const SVG_ATTR_MAP: [RegExp, string][] = [
+    [/fill-rule/g, 'fillRule'],
+    [/clip-rule/g, 'clipRule'],
+    [/clip-path/g, 'clipPath'],
+    [/stroke-linecap/g, 'strokeLinecap'],
+    [/stroke-linejoin/g, 'strokeLinejoin'],
+    [/stroke-width/g, 'strokeWidth'],
+    [/stroke-miterlimit/g, 'strokeMiterlimit'],
+    [/stroke-dasharray/g, 'strokeDasharray'],
+]
+
+function transformSvgAttrs(inner: string): string {
+    return SVG_ATTR_MAP.reduce((s, [re, replacement]) => s.replace(re, replacement), inner)
+}
+
 function applyDuotoneStyle(accent: string | null): string | null {
     if (!accent) return null
     let groupDepth = 0
@@ -52,9 +67,10 @@ export interface FileDefinition {
 export function reactComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
-    const body = duotone
-        ? `${duotone}\n        ${icon.inner.trim()}`
-        : icon.inner.trim()
+    const duotoneConverted = duotone ? transformSvgAttrs(duotone) : null
+    const body = duotoneConverted
+        ? `${duotoneConverted}\n        ${transformSvgAttrs(icon.inner.trim())}`
+        : transformSvgAttrs(icon.inner.trim())
     const content = `/* GENERATED FILE */
 import React from "react"
 import { forwardRef } from "react"

@@ -128,8 +128,14 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_KEBAB[weight]
+        const seen = new Set<string>()
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
+                return true
+            })
             .map(
                 icon =>
                     `export { default as ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}.svelte';`
