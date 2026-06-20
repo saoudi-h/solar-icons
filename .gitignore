@@ -66,3 +66,5 @@ tmp/
 # Autonomos — process files (worklogs, task board). AGENT.md and PROTOCOL.md are kept public.
 .autonomos/worklogs/
 .autonomos/TASKS.md
+packages/core/src/*.d.ts
+packages/core/src/*.d.ts.map
