@@ -44,7 +44,7 @@
 
 ## V3 — Phase 4: Duotone
 
-- [ ] **[V3-09]** Add duotone CSS-var customization to the web framework hooks (React, Vue, Solid, Svelte, Angular). The duotone-accent path emits `style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5);"`. Pre-req: Figma cleanup done in V3-06. `Priority: 🔵` `Complexity: M` *Depends on: V3-03a, V3-03b, V3-03c, V3-04, V3-05*
+- [x] **[V3-09]** Add duotone CSS-var customization to the web framework hooks (React, Vue, Solid, Svelte, Angular). The duotone-accent path emits `style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5);"`. Pre-req: Figma cleanup done in V3-06. `Priority: 🔵` `Complexity: M` *Depends on: V3-03a, V3-03b, V3-03c, V3-04, V3-05*
 
 ## V3 — Hardening
 
