@@ -69,19 +69,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
                 path: path.join(ICONS_PATH, category, `${styleKebab}.ts`),
                 content: `${styleIndexContent}\n`,
             })
-
-            const globalContent = styleIcons
-                .map(icon => {
-                    const globalName = toPascalCase(`${icon.name}-${style}`)
-                    return `export { ${icon.pascalName} as ${globalName} } from './${icon.name}';`
-                })
-                .sort()
-                .join('\n')
-
-            files.push({
-                path: path.join(ICONS_PATH, category, styleKebab, 'styled.ts'),
-                content: `${globalContent}\n`,
-            })
         }
 
         const styles = Object.keys(byStyle)
@@ -93,16 +80,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         files.push({
             path: path.join(ICONS_PATH, `${category}.ts`),
             content: `${catIndexContent}\n`,
-        })
-
-        const catGlobalContent = styles
-            .map(style => `export * from './${WEIGHT_KEBAB[style]}/styled';`)
-            .sort()
-            .join('\n')
-
-        files.push({
-            path: path.join(ICONS_PATH, category, 'styled.ts'),
-            content: `${catGlobalContent}\n`,
         })
     }
 
@@ -118,21 +95,17 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         content: `${rootIndexContent}\n`,
     })
 
-    const rootGlobalContent = categories
-        .map(cat => `export * from './${cat}/styled';`)
-        .sort()
-        .join('\n')
-
-    files.push({
-        path: path.join(ICONS_PATH, 'styled.ts'),
-        content: `${rootGlobalContent}\n`,
-    })
-
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_KEBAB[weight]
+        const seen = new Set<string>()
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
+                return true
+            })
             .map(
                 icon =>
                     `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
@@ -157,7 +130,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib"
 export { IconBase } from "./lib"
-export * from "./icons/styled"
 import * as solar from "./icons"
 export { solar }
 `
