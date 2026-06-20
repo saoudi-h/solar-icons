@@ -17,6 +17,7 @@ function genEntries(styles: string[]) {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
+        'icons/styled': './src/icons/styled.ts',
     }
 
     for (const style of styles) {

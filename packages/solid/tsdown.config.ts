@@ -1,6 +1,4 @@
 import solid from 'unplugin-solid/rolldown';
-import { readdirSync, statSync } from 'fs';
-import { join } from 'path';
 import type { UserConfig } from 'tsdown/config';
 import { defineConfig } from 'tsdown/config';
 
@@ -14,18 +12,12 @@ const STYLE_KEBAB: Record<string, string> = {
     LineDuotone: 'line-duotone',
     Outline: 'outline',
 };
-
 function genEntries(styles: string[]) {
-    const iconsDir = join(process.cwd(), 'src/icons');
-    const categories = readdirSync(iconsDir).filter((name) => {
-        const filePath = join(iconsDir, name);
-        return statSync(filePath).isDirectory() && name !== 'style';
-    });
-
     const entries: Record<string, string> = {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
+        'icons/styled': './src/icons/styled.ts',
     };
 
     for (const style of styles) {
@@ -33,14 +25,6 @@ function genEntries(styles: string[]) {
         entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`;
     }
 
-    for (const category of categories) {
-        entries[`icons/${category}`] = `./src/icons/${category}.ts`;
-
-        for (const style of styles) {
-            const kebab = STYLE_KEBAB[style];
-            entries[`icons/${category}/${kebab}`] = `./src/icons/${category}/${kebab}.ts`;
-        }
-    }
     return entries;
 }
 
@@ -75,16 +59,6 @@ const config: UserConfig = defineConfig({
             pkg['./lib/*'] = {
                 types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
-            };
-
-            pkg['./category'] = {
-                types: './dist/icons/index.d.mts',
-                import: './dist/icons/index.mjs',
-            };
-
-            pkg['./category/*'] = {
-                types: './dist/icons/*.d.mts',
-                import: './dist/icons/*.mjs',
             };
 
             pkg['./*'] = {

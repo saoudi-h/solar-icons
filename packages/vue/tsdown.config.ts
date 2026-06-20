@@ -7,7 +7,6 @@ const config: UserConfig = defineConfig({
     entry: [
         './src/index.ts', // Principal export
         './src/lib/index.ts', // Utils export
-        './src/category.ts', // Icons By category export
     ],
     dts: { vue: true, sourcemap: false },
     platform: 'node',

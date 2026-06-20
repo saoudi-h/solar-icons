@@ -57,16 +57,6 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         for (const [style, styleIcons] of Object.entries(byStyle)) {
             const styleKebab = WEIGHT_KEBAB[style]
 
-            const styleIndexContent = styleIcons
-                .map(icon => `export { ${icon.pascalName} } from './${styleKebab}/${icon.name}';`)
-                .sort()
-                .join('\n')
-
-            files.push({
-                path: path.join(ICONS_PATH, category, `${styleKebab}.ts`),
-                content: `${styleIndexContent}\n`,
-            })
-
             const globalContent = styleIcons
                 .map(icon => {
                     const globalName = toPascalCase(`${icon.name}-${style}`)
@@ -105,11 +95,18 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         })
     }
 
+    const seenGlobal = new Set<string>()
     const styledGlobalContent = icons
         .sort((a, b) => {
             const ga = toPascalCase(`${a.name}-${a.style}`)
             const gb = toPascalCase(`${b.name}-${b.style}`)
             return ga.localeCompare(gb)
+        })
+        .filter(icon => {
+            const globalName = toPascalCase(`${icon.name}-${icon.style}`)
+            if (seenGlobal.has(globalName)) return false
+            seenGlobal.add(globalName)
+            return true
         })
         .map(icon => {
             const globalName = toPascalCase(`${icon.name}-${icon.style}`)
