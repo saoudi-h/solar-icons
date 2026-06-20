@@ -3,6 +3,15 @@ import { defineConfig } from 'tsdown/config'
 
 const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline']
 
+const STYLE_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
+
 function genEntries(styles: string[]) {
     const entries: Record<string, string> = {
         index: './src/index.ts',
@@ -11,7 +20,8 @@ function genEntries(styles: string[]) {
     }
 
     for (const style of styles) {
-        entries[`icons/style/${style}`] = `./src/icons/style/${style}.ts`
+        const kebab = STYLE_KEBAB[style]
+        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`
     }
 
     return entries

@@ -1,1 +1,1 @@
-export * from './icons/category'
+export * from './icons'

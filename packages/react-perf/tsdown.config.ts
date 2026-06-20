@@ -6,6 +6,15 @@ import { defineConfig } from 'tsdown/config'
 
 const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline']
 
+const STYLE_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
+
 function genEntries(styles: string[]) {
     const iconsDir = join(process.cwd(), 'src/icons')
     const categories = readdirSync(iconsDir).filter(name => {
@@ -20,16 +29,16 @@ function genEntries(styles: string[]) {
     }
 
     for (const style of styles) {
-        entries[`icons/style/${style}`] = `./src/icons/style/${style}.ts`
+        const kebab = STYLE_KEBAB[style]
+        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`
     }
 
     for (const category of categories) {
-        // Category index (sibling file)
         entries[`icons/${category}`] = `./src/icons/${category}.ts`
 
         for (const style of styles) {
-            // Per-category + style index (sibling file)
-            entries[`icons/${category}/${style}`] = `./src/icons/${category}/${style}.ts`
+            const kebab = STYLE_KEBAB[style]
+            entries[`icons/${category}/${kebab}`] = `./src/icons/${category}/${kebab}.ts`
         }
     }
     return entries
