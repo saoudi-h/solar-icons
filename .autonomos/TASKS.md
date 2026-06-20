@@ -61,7 +61,7 @@
 - [x] **[V3-19]** Update demo apps (vue-app, svelte-app, angular-app) with duotone CSS-var controls like the SolidJS demo. Import paths must use kebab-case (`@solar-icons/vue/bold` not `@solar-icons/vue/Bold`). `Priority: 🔵` `Complexity: S`
 - [x] **[V3-20]** Audit all demo apps for broken imports. V3-13 renamed style directories to kebab-case; any app importing PascalCase paths (`/Bold`, `/LineDuotone`) must be updated to kebab-case (`/bold`, `/line-duotone`). `Priority: 🟠` `Complexity: S`
 - [x] **[V3-21]** Rename `arrows-action/scale` → `arrows-action/scaling` in Figma, re-export SVGs, update `metadata.json` and `metadata-descriptions.json`, rebuild all packages. The kitchen scale icon in `devices/scale` keeps its name. `Priority: 🟠` `Complexity: S`
-- [ ] **[V3-22]** Simplify export structure in remaining packages (react, solid, vue, svelte, react-native): remove `solar` namespace, remove category-level exports, switch to native tsdown `dts`, deduplicate `styled.ts` root with named exports. Follow the react-perf model established in V3-21. `Priority: 🟠` `Complexity: L`
+- [x] **[V3-22]** Simplify export structure in remaining packages (react, solid, vue, svelte, react-native): remove `solar` namespace, remove category-level exports, switch to native tsdown `dts`, deduplicate `styled.ts` root with named exports. Follow the react-perf model established in V3-21. `Priority: 🟠` `Complexity: L`
 
 ## Post-V3 (follow-up, not part of V3.0)
 

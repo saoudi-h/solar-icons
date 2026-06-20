@@ -47,14 +47,6 @@
             "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
-        "./category": {
-            "types": "./dist/icons/index.d.mts",
-            "import": "./dist/icons/index.mjs"
-        },
-        "./category/*": {
-            "types": "./dist/icons/*.d.mts",
-            "import": "./dist/icons/*.mjs"
-        },
         "./*": {
             "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"
