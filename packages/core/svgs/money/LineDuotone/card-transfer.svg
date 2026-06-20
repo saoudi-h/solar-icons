@@ -3,5 +3,5 @@
 <path opacity="0.5" d="M20 20V14M18 16L20 14L22 16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M15.5 14V20M13.5 18L15.5 20L17.5 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path opacity="0.5" d="M10 16H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.4" d="M2 10L22 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M2 10L22 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

@@ -4,7 +4,7 @@
 <path opacity="0.5" d="M6 20L5 22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M8.5 15C8.5 15.8284 7.82843 16.5 7 16.5C6.17157 16.5 5.5 15.8284 5.5 15C5.5 14.1716 6.17157 13.5 7 13.5C7.82843 13.5 8.5 14.1716 8.5 15Z" stroke="#1C274C" stroke-width="1.5"/>
 <path opacity="0.5" d="M12 15H18.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.4" d="M21.5833 5.39702C20.7574 3.40286 18.7924 2 16.4996 2C14.2069 2 12.2419 3.40286 11.416 5.39702" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.7" d="M19.3806 6.65811C19.0167 5.41107 17.865 4.5 16.5004 4.5C15.1358 4.5 13.984 5.41107 13.6201 6.65811" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M21.5833 5.39702C20.7574 3.40286 18.7924 2 16.4996 2C14.2069 2 12.2419 3.40286 11.416 5.39702" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M19.3806 6.65811C19.0167 5.41107 17.865 4.5 16.5004 4.5C15.1358 4.5 13.984 5.41107 13.6201 6.65811" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M16.5 7H16.5001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

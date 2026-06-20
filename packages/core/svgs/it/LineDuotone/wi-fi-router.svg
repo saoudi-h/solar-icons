@@ -3,8 +3,8 @@
 <path d="M7 11L3 4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M17 11L21 4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path opacity="0.5" d="M14 15L18 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.4" d="M17.1673 5.39702C16.3414 3.40286 14.3763 2 12.0836 2C9.79092 2 7.82586 3.40286 7 5.39702" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.7" d="M14.9646 6.65811C14.6007 5.41107 13.4489 4.5 12.0844 4.5C10.7198 4.5 9.568 5.41107 9.2041 6.65811" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M17.1673 5.39702C16.3414 3.40286 14.3763 2 12.0836 2C9.79092 2 7.82586 3.40286 7 5.39702" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M14.9646 6.65811C14.6007 5.41107 13.4489 4.5 12.0844 4.5C10.7198 4.5 9.568 5.41107 9.2041 6.65811" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M12 7H12.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path opacity="0.5" d="M9 15H9.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path opacity="0.5" d="M6 15H6.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
