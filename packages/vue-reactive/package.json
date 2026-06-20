@@ -1,78 +1,67 @@
 {
-    "name": "@solar-icons/vue-reactive",
-    "version": "3.0.0",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "description": "Solar Icons for Vue (reactive-style — runtime weight switching)",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/saoudi-h/solar-icons.git",
-        "directory": "packages/vue-reactive"
-    },
-    "type": "module",
-    "sideEffects": false,
-    "files": [
-        "dist",
-        "README.md",
-        "LICENSE",
-        "LICENSE-THIRD-PARTY"
-    ],
-    "scripts": {
-        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "generate:assets": "tsx scripts/generate-assets.ts",
-        "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
-        "lint": "eslint . --max-warnings 10",
-        "lint:fix": "eslint . --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "test:coverage": "vitest run --coverage",
-        "typecheck": "tsgo --noEmit",
-        "pre-commit": "lint-staged"
-    },
-    "module": "./dist/index.mjs",
-    "main": "./dist/index.cjs",
-    "types": "./dist/index.d.cts",
-    "exports": {
-        ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
-        },
-        "./category": {
-            "import": "./dist/category.mjs",
-            "require": "./dist/category.cjs"
-        },
-        "./lib": {
-            "import": "./dist/lib/index.mjs",
-            "require": "./dist/lib/index.cjs"
-        },
-        "./package.json": {
-            "default": "./package.json"
-        }
-    },
-    "peerDependencies": {
-        "vue": ">=3.0.0"
-    },
-    "devDependencies": {
-        "@solar-icons/core": "workspace:*",
-        "@tala-tools/eslint": "0.1.4",
-        "@vitejs/plugin-vue": "^6.0.7",
-        "@vue/compiler-sfc": "3.5.38",
-        "@vue/test-utils": "^2.4.11",
-        "eslint": "^10.5.0",
-        "jsdom": "^29.1.1",
-        "picocolors": "^1.1.1",
-        "prettier": "^3.8.4",
-        "tsdown": "^0.22.2",
-        "unplugin-vue": "^7.2.0",
-        "vite": "^8.0.16",
-        "vitest": "^4.1.9",
-        "vue": "^3.5.38",
-        "vue-tsc": "3.3.5"
-    },
-    "license": "MIT"
+  "name": "@solar-icons/vue-reactive",
+  "version": "3.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Solar Icons for Vue (reactive-style — runtime weight switching)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saoudi-h/solar-icons.git",
+    "directory": "packages/vue-reactive"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "LICENSE-THIRD-PARTY"
+  ],
+  "scripts": {
+    "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+    "generate:assets": "tsx scripts/generate-assets.ts",
+    "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
+    "lint": "eslint . --max-warnings 10",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier \"**/*\" --ignore-unknown --list-different",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+    "clean": "rimraf *.tsbuildinfo node_modules build dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsgo --noEmit",
+    "pre-commit": "lint-staged"
+  },
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./category": "./dist/category.mjs",
+    "./lib": "./dist/lib/index.mjs",
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@solar-icons/core": "workspace:*",
+    "@tala-tools/eslint": "0.1.4",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/compiler-sfc": "3.5.38",
+    "@vue/test-utils": "^2.4.11",
+    "eslint": "^10.5.0",
+    "jsdom": "^29.1.1",
+    "picocolors": "^1.1.1",
+    "prettier": "^3.8.4",
+    "tsdown": "^0.22.2",
+    "unplugin-vue": "^7.2.0",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9",
+    "vue": "^3.5.38",
+    "vue-tsc": "3.3.5"
+  },
+  "license": "MIT"
 }

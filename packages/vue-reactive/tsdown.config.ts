@@ -15,7 +15,7 @@ const config: UserConfig = defineConfig({
         level: 'error',
         ignore: ['typescript'],
     },
-    format: ['esm', 'cjs'],
+    format: ['esm'],
     publint: true,
     exports: {
         customExports(pkg) {
