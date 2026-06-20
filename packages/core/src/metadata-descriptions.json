@@ -6820,10 +6820,10 @@
         "tags": ["reverse", "rewind", "backwards"]
     },
     {
-        "name": "scale",
+        "name": "scaling",
         "category": "arrows-action",
         "categoryTags": ["arrows-action", "navigation", "software-tools", "action-icon"],
-        "tags": ["arrow-up", "update"]
+        "tags": ["resize", "expand", "enlarge", "growth", "scale"]
     },
     {
         "name": "download-square",
