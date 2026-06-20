@@ -83,6 +83,23 @@
           />
         </div>
 
+        <!-- Stroke Width Slider -->
+        <div class="space-y-2" [class.opacity-30]="!isLinearLike()" [class.pointer-events-none]="!isLinearLike()">
+          <label class="text-sm font-medium text-slate-300">
+            Stroke Width: <span class="text-amber-400">{{ strokeWidth() }}</span>
+          </label>
+          <input
+            type="range"
+            min="0.5"
+            max="4"
+            step="0.1"
+            [ngModel]="strokeWidth()"
+            (ngModelChange)="strokeWidth.set($event)"
+            [disabled]="!isLinearLike()"
+            class="w-full accent-amber-500"
+          />
+        </div>
+
         <!-- Search -->
         <div class="space-y-2">
           <label class="text-sm font-medium text-slate-300">Search</label>
@@ -95,11 +112,73 @@
           />
         </div>
       </div>
+
+      <!-- Duotone Controls -->
+      @if (isDuotone()) {
+        <div class="mt-6 pt-6 border-t border-slate-700/50">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-sm font-semibold text-blue-400 uppercase tracking-wide">
+              Duotone CSS-vars
+            </span>
+            <span class="text-xs text-slate-500 bg-slate-700/50 px-2 py-0.5 rounded">
+              --solar-duotone-color / --solar-duotone-opacity
+            </span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-slate-300">
+                Accent Color: <span class="text-blue-400 font-mono text-xs">{{ duotoneColor() }}</span>
+              </label>
+              <div class="flex items-center gap-3">
+                <input
+                  type="color"
+                  [ngModel]="duotoneColor()"
+                  (ngModelChange)="duotoneColor.set($event)"
+                  class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent"
+                />
+                <input
+                  type="text"
+                  [ngModel]="duotoneColor()"
+                  (ngModelChange)="duotoneColor.set($event)"
+                  class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-blue-400 outline-none"
+                />
+                <button
+                  class="px-2 py-1.5 text-xs text-slate-400 hover:text-slate-200 bg-slate-700 rounded-lg border border-slate-600 transition-colors cursor-pointer"
+                  (click)="duotoneColor.set(iconColor())"
+                >
+                  reset
+                </button>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-slate-300">
+                Accent Opacity: <span class="text-blue-400">{{ duotoneOpacity() }}</span>
+              </label>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.05"
+                [ngModel]="duotoneOpacity()"
+                (ngModelChange)="duotoneOpacity.set($event)"
+                class="w-full accent-blue-400"
+              />
+              <div class="flex justify-between text-xs text-slate-500">
+                <span>0</span>
+                <span>0.5 (default)</span>
+                <span>1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
     </div>
 
     <!-- Icon Grid -->
     <div
       class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4"
+      [style.--solar-duotone-color]="duotoneColor()"
+      [style.--solar-duotone-opacity]="duotoneOpacity()"
     >
       @for (item of displayIcons(); track trackByIconName($index, item)) {
         <div
@@ -107,7 +186,7 @@
           [title]="item.name"
         >
           <div class="flex items-center justify-center" style="min-height: 48px">
-            <ng-container [solarIcon]="item.component" [size]="iconSize()" [color]="iconColor()" />
+            <ng-container [solarIcon]="item.component" [size]="iconSize()" [color]="iconColor()" [strokeWidth]="isLinearLike() ? strokeWidth() : undefined" />
           </div>
           <span
             class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors"

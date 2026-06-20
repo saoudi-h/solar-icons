@@ -58,13 +58,24 @@ export class App implements OnInit {
   protected readonly icon = 'MoonBold';
   protected readonly icon2 = SunBold;
 
-  protected readonly styles = STYLES;
-  protected readonly selectedStyle = signal<IconStyle>('Bold');
-  protected readonly iconSize = signal(32);
-  protected readonly iconColor = signal('#f59e0b');
-  protected readonly searchQuery = signal('');
-  protected readonly loadedCategories = signal(0);
-  protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
+    protected readonly styles = STYLES;
+    protected readonly selectedStyle = signal<IconStyle>('Bold');
+    protected readonly iconSize = signal(32);
+    protected readonly iconColor = signal('#f59e0b');
+    protected readonly searchQuery = signal('');
+    protected readonly duotoneColor = signal('#60a5fa');
+    protected readonly duotoneOpacity = signal(0.5);
+    protected readonly strokeWidth = signal(1.5);
+    protected readonly loadedCategories = signal(0);
+    protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
+
+    protected readonly isDuotone = computed(() =>
+        this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'
+    );
+
+    protected readonly isLinearLike = computed(() =>
+        this.selectedStyle() === 'Linear' || this.selectedStyle() === 'LineDuotone' || this.selectedStyle() === 'Broken'
+    );
 
   private readonly iconMap = signal<Map<string, Type<any>>>(new Map());
 

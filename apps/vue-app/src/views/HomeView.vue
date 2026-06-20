@@ -33,6 +33,20 @@
               />
             </div>
 
+            <!-- Stroke Width Setting -->
+            <div class="flex flex-col min-w-32 space-y-3" :class="{ 'opacity-30 pointer-events-none': !isLinearLike }">
+              <Label class="text-sm font-medium">Stroke Width: {{ strokeWidth }}</Label>
+              <Slider
+                :model-value="[strokeWidth]"
+                :min="0.5"
+                :max="4"
+                :step="0.1"
+                :disabled="!isLinearLike"
+                @update:model-value="strokeWidth = ($event[0] ?? 1.5)"
+                class="w-full"
+              />
+            </div>
+
             <!-- Style Setting -->
             <GalStyle :weight="config.weight" @update:weight="handleWeightChange" />
 
@@ -46,11 +60,67 @@
               <Label for="mirrored" class="text-sm font-medium">Mirrored</Label>
             </div>
 
-            <!-- Reset Button -->
+             <!-- Reset Button -->
             <Button @click="resetSettings" variant="outline">
               <Restart class="mr-2 h-4 w-4" />
               Reset Settings
             </Button>
+          </div>
+
+          <!-- Duotone Controls -->
+          <div v-if="isDuotone" class="mt-6 pt-6 border-t border-border/30">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-sm font-semibold text-blue-400 uppercase tracking-wide">
+                Duotone CSS-vars
+              </span>
+              <span class="text-xs text-muted-foreground bg-muted/50 px-2 py-0.5 rounded">
+                --solar-duotone-color / --solar-duotone-opacity
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="flex flex-col space-y-2">
+                <Label class="text-sm font-medium">
+                  Accent Color: <span class="text-blue-400 font-mono text-xs">{{ duotoneColor }}</span>
+                </Label>
+                <div class="flex items-center gap-3">
+                  <input
+                    v-model="duotoneColor"
+                    type="color"
+                    class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent"
+                  />
+                  <input
+                    v-model="duotoneColor"
+                    type="text"
+                    class="flex-1 bg-background/50 border border-border/50 rounded-lg px-3 py-2 text-foreground text-sm font-mono"
+                  />
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    class="text-xs"
+                    @click="duotoneColor = typeof config.color === 'string' ? config.color : '#000000'"
+                  >
+                    reset
+                  </Button>
+                </div>
+              </div>
+              <div class="flex flex-col space-y-2">
+                <Label class="text-sm font-medium">
+                  Accent Opacity: <span class="text-blue-400">{{ duotoneOpacity }}</span>
+                </Label>
+                <Slider
+                  :model-value="[duotoneOpacity]"
+                  :min="0"
+                  :max="1"
+                  :step="0.05"
+                  @update:model-value="duotoneOpacity = ($event[0] ?? 0.5)"
+                />
+                <div class="flex justify-between text-xs text-muted-foreground">
+                  <span>0</span>
+                  <span>0.5 (default)</span>
+                  <span>1</span>
+                </div>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -65,7 +135,11 @@
         <div
           ref="parentRef"
           class="w-full overflow-auto border border-border/30 rounded-lg"
-          :style="{ height: `${gridHeight}px` }"
+          :style="{
+            height: `${gridHeight}px`,
+            '--solar-duotone-color': duotoneColor,
+            '--solar-duotone-opacity': duotoneOpacity,
+          }"
         >
           <div
             :style="{
@@ -100,7 +174,7 @@
                   <div class="flex flex-col items-center justify-between size-full">
                     <div class="w-full flex-1 flex items-center justify-center">
                       <div>
-                        <component :is="getIconAtPosition(virtualRow.index, colIndex - 1)![1]" />
+                        <component :is="getIconAtPosition(virtualRow.index, colIndex - 1)![1]" :stroke-width="isLinearLike ? strokeWidth : undefined" />
                       </div>
                     </div>
                     <p
@@ -140,6 +214,17 @@ import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { toast } from 'vue-sonner'
 
 const { config, setConfig, setWeight, setSize, setColor } = useSolar()
+
+const duotoneColor = ref('#60a5fa')
+const duotoneOpacity = ref(0.5)
+const strokeWidth = ref(1.5)
+
+const isDuotone = computed(
+    () => config.value.weight === 'BoldDuotone' || config.value.weight === 'LineDuotone',
+)
+const isLinearLike = computed(
+    () => config.value.weight === 'Linear' || config.value.weight === 'LineDuotone' || config.value.weight === 'Broken',
+)
 
 const list = Object.entries(solar).filter(([key]) => key !== 'default')
 

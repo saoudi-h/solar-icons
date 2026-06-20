@@ -277,6 +277,14 @@
   cursor: pointer;
 }
 
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .placeholder-slate-500::placeholder {
   color: #64748b;
 }

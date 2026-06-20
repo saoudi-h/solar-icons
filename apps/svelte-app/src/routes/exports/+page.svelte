@@ -6,12 +6,12 @@
     import { IconBase, type IconProps } from '@solar-icons/svelte';
 
     // 2. Style imports (flat)
-    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/Bold';
-    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/Linear';
-    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/BoldDuotone';
-    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/LineDuotone';
-    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/Broken';
-    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/Outline';
+    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/bold';
+    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/linear';
+    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/bold-duotone';
+    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/line-duotone';
+    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/broken';
+    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/outline';
 
     // 3. Category imports (namespaced by style)
     import {
@@ -20,7 +20,7 @@
     } from '@solar-icons/svelte/category/arrows';
 
     // 4. Direct file imports
-    import { AltArrowUp } from '@solar-icons/svelte/category/arrows/Bold';
+    import { AltArrowUp } from '@solar-icons/svelte/category/arrows/bold';
 
     // 5. import
     import { ArrowUpBold } from '@solar-icons/svelte';
