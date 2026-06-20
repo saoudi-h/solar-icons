@@ -527,4 +527,4 @@ figma.ui.onmessage = async (msg) => {
   } catch (err) {
     figma.ui.postMessage({ type: 'ERROR', message: 'Plugin crashed: ' + err.message, requestId: msg.requestId });
   }
-};s91
+};
