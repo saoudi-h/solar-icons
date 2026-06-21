@@ -1,7 +1,5 @@
 <div class="min-h-screen bg-slate-900 text-slate-200 p-8">
   <div class="max-w-7xl mx-auto space-y-8">
-    <ng-container [solarIcon]="icon" [size]="32" [color]="iconColor()" />
-    <ng-container [solarIcon]="icon2" [size]="32" [color]="iconColor()" />
 
     <!-- Header -->
     <div class="text-center space-y-2">
@@ -207,5 +205,96 @@
         </button>
       </div>
     }
+
+    <!-- ===== 2. CSS Custom Properties ===== -->
+    <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+      <h2 class="text-xl font-bold text-white mb-1">2. CSS Custom Properties</h2>
+      <p class="text-slate-400 text-sm mb-4">Control icons via CSS custom properties on parent elements.</p>
+      <div class="flex items-center gap-4 mb-4">
+        <div class="space-y-1">
+          <span class="text-xs text-slate-400">Color</span>
+          <input type="color" [ngModel]="cssColor()" (ngModelChange)="cssColor.set($event)" class="w-10 h-10 rounded cursor-pointer border-0 bg-transparent" />
+        </div>
+        <div class="space-y-1">
+          <span class="text-xs text-slate-400">Size ({{ cssSize() }}px)</span>
+          <input type="range" min="16" max="64" [ngModel]="cssSize()" (ngModelChange)="cssSize.set($event)" class="w-32 accent-amber-500" />
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <code class="text-xs text-slate-500 block">style="--solar-icon-color: ..."</code>
+          <div class="bg-slate-900 rounded-lg p-4 flex gap-4" [style.--solar-icon-color]="cssColor()" [style.--solar-icon-size.px]="cssSize()">
+            <svg solarHomeBold></svg>
+            <svg solarSettingsBold></svg>
+            <svg solarUserBold></svg>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <code class="text-xs text-slate-500 block">Tailwind [--solar-icon-color:...]</code>
+          <div class="bg-slate-900 rounded-lg p-4 flex gap-4" [style.--solar-icon-color]="cssColor()" [style.--solar-icon-size.px]="cssSize()">
+            <svg solarHeartBold></svg>
+            <svg solarStarBold></svg>
+            <svg solarBellBold></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 3. SolarProvider + useSolar ===== -->
+    <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+      <h2 class="text-xl font-bold text-white mb-1">3. SolarProvider + useSolar</h2>
+      <p class="text-slate-400 text-sm mb-4">Wrap icons in a provider. The hook mutates CSS custom properties on the wrapper div.</p>
+      <div class="flex items-center gap-4 mb-4">
+        <div class="space-y-1">
+          <span class="text-xs text-slate-400">Color</span>
+          <input type="color" [ngModel]="providerColor()" (ngModelChange)="providerColor.set($event)" class="w-10 h-10 rounded cursor-pointer border-0 bg-transparent" />
+        </div>
+        <div class="space-y-1">
+          <span class="text-xs text-slate-400">Size ({{ providerSize() }}px)</span>
+          <input type="range" min="16" max="64" [ngModel]="providerSize()" (ngModelChange)="providerSize.set($event)" class="w-32 accent-amber-500" />
+        </div>
+        <div class="space-y-1">
+          <span class="text-xs text-slate-400">Stroke ({{ providerStroke() }})</span>
+          <input type="range" min="0.5" max="3" step="0.1" [ngModel]="providerStroke()" (ngModelChange)="providerStroke.set($event)" class="w-32 accent-amber-500" />
+        </div>
+      </div>
+      <solar-provider [color]="providerColor()" [size]="providerSize()" [strokeWidth]="providerStroke()">
+        <div class="bg-slate-900 rounded-lg p-4">
+          <app-provider-demo />
+        </div>
+      </solar-provider>
+    </div>
+
+    <!-- ===== 4. CSS Class Styling ===== -->
+    <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+      <h2 class="text-xl font-bold text-white mb-1">4. CSS Class Styling</h2>
+      <p class="text-slate-400 text-sm mb-4">Every icon has class 'solar-icon' and 'solar-&#123;name&#125;'.</p>
+      <code class="text-xs text-slate-500 block mb-4">.solar-icon {'{'} color: var(--solar-icon-color, currentColor); {'}'}</code>
+      <div class="bg-slate-900 rounded-lg p-4 flex gap-4">
+        <svg solarHomeBold></svg>
+        <svg solarStarBold style="color: #60a5fa"></svg>
+        <svg solarHeartBold></svg>
+      </div>
+    </div>
+
+    <!-- ===== 5. Accessibility ===== -->
+    <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+      <h2 class="text-xl font-bold text-white mb-1">5. Accessibility</h2>
+      <p class="text-slate-400 text-sm mb-4">Icons have aria-hidden="true" by default. Pass alt, aria-label, or title to make them accessible.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+          <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
+          <svg solarInfoCircleBold></svg>
+        </div>
+        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+          <code class="text-xs text-green-400 block">alt="Information"</code>
+          <svg solarInfoCircleBold alt="Information"></svg>
+        </div>
+        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+          <code class="text-xs text-green-400 block">aria-label</code>
+          <svg solarInfoCircleBold aria-label="Information about this icon"></svg>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

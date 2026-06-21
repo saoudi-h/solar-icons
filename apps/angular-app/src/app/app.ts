@@ -2,8 +2,8 @@ import { Component, signal, computed, OnInit, Type, ChangeDetectionStrategy } fr
 import { FormsModule } from '@angular/forms';
 
 import { ALL_ICONS, STYLES, IconStyle } from './icon-list';
-import { provideSolarIcons, SolarDynamicIcon } from '@solar-icons/angular';
-import { MoonBold, SunBold } from '@solar-icons/angular';
+import { provideSolarIcons, SolarDynamicIcon, SolarProviderComponent, HomeBold, StarBold, HeartBold, InfoCircleBold, SettingsBold, UserBold, BellBold } from '@solar-icons/angular';
+import { ProviderDemoComponent } from './provider-demo';
 
 const CATEGORY_LOADERS: Record<string, () => Promise<any>> = {
   arrows: () => import('@solar-icons/angular/arrows'),
@@ -48,16 +48,13 @@ const CATEGORY_LOADERS: Record<string, () => Promise<any>> = {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, SolarDynamicIcon, SunBold],
-  providers: [provideSolarIcons({ MoonBold })],
+  imports: [FormsModule, SolarDynamicIcon, SolarProviderComponent, ProviderDemoComponent, HomeBold, StarBold, HeartBold, InfoCircleBold],
+  providers: [provideSolarIcons({ HomeBold, StarBold, HeartBold, InfoCircleBold, SettingsBold, UserBold, BellBold })],
   templateUrl: './app.html',
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App implements OnInit {
-  protected readonly icon = 'MoonBold';
-  protected readonly icon2 = SunBold;
-
     protected readonly styles = STYLES;
     protected readonly selectedStyle = signal<IconStyle>('Bold');
     protected readonly iconSize = signal(32);
@@ -68,6 +65,15 @@ export class App implements OnInit {
     protected readonly strokeWidth = signal(1.5);
     protected readonly loadedCategories = signal(0);
     protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
+
+    // CSS vars demo
+    protected readonly cssColor = signal('#f59e0b');
+    protected readonly cssSize = signal(40);
+
+    // Provider demo
+    protected readonly providerColor = signal('#f59e0b');
+    protected readonly providerSize = signal(36);
+    protected readonly providerStroke = signal(1.5);
 
     protected readonly isDuotone = computed(() =>
         this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'

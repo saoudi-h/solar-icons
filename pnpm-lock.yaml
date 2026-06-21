@@ -327,7 +327,7 @@ importers:
         specifier: ^4.3.1
         version: 4.3.1
 
-  apps/react-perf-app:
+  apps/react-app:
     dependencies:
       '@solar-icons/react':
         specifier: workspace:*
