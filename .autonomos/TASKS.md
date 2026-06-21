@@ -55,24 +55,17 @@
 
 ## V3 — Next
 
-- [ ] **[V3-16]** Solar CSS-vars + classes: implement on react-perf, test extensively, then generalize. `Priority: 🔵` `Complexity: L`
-  - Add CSS classes `solar` + `solar-{kebab}` on every SVG.
-  - CSS custom properties via `??` pattern: `color: color ?? "var(--solar-icon-color, currentColor)"`, same for size, strokeWidth (conditional on Linear/Broken/LineDuotone).
-  - Add `secondaryColor`/`secondaryOpacity` props wrapping duotone CSS vars.
-  - `aria-hidden="true"` by default, removed if `alt`/`title`/`aria-label`.
-  - Optional `<SolarProvider>` (poses CSS vars on wrapper div, no React context).
-  - Optional `useSolar()` hook (DOM ref mutation, no re-render of icons).
-  - `mirrored` stays prop-only (no CSS var).
-- [ ] **[V3-17]** Create `SolarTheme` provider component for React (and possibly Vue). A component that sets CSS custom properties on a wrapper element, allowing reactive theme changes via framework state while leveraging browser-native CSS cascade for performance. Example: `<SolarTheme primaryColor="#ccc" duotoneColor="#f00">`. Reduces the need for react-reactive/vue-reactive for theming use cases. `Priority: 🔵` `Complexity: M`
-- [ ] **[V3-18]** Re-evaluate the role of `react-reactive` and `vue-reactive`. With CSS-vars providing theming and the `SolarTheme` provider handling reactive customization, reactive-style packages may only be needed for dynamic style switching (changing icon style at runtime). Document the scope reduction or consider deprecation path. `Priority: ⚪` `Complexity: M`
-- [x] **[V3-19]** Update demo apps (vue-app, svelte-app, angular-app) with duotone CSS-var controls like the SolidJS demo. Import paths must use kebab-case (`@solar-icons/vue/bold` not `@solar-icons/vue/Bold`). `Priority: 🔵` `Complexity: S`
-- [x] **[V3-20]** Audit all demo apps for broken imports. V3-13 renamed style directories to kebab-case; any app importing PascalCase paths (`/Bold`, `/LineDuotone`) must be updated to kebab-case (`/bold`, `/line-duotone`). `Priority: 🟠` `Complexity: S`
-- [x] **[V3-21]** Rename `arrows-action/scale` → `arrows-action/scaling` in Figma, re-export SVGs, update `metadata.json` and `metadata-descriptions.json`, rebuild all packages. The kitchen scale icon in `devices/scale` keeps its name. `Priority: 🟠` `Complexity: S`
-- [x] **[V3-22]** Simplify export structure in remaining packages (react, solid, vue, svelte, react-native): remove `solar` namespace, remove category-level exports, switch to native tsdown `dts`, deduplicate `styled.ts` root with named exports. Follow the react-perf model established in V3-21. `Priority: 🟠` `Complexity: L`
+- [/] **[V3-16a]** Solar CSS-vars + classes on react-perf (DONE). Implemented: CSS classes `solar` + `solar-{kebab}`, CSS custom properties via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` props, `aria-hidden=true` by default, `<SolarProvider>` (CSS vars on wrapper div, no React context for values), `useSolar()` hook (DOM ref mutation). `Priority: 🔵` `Complexity: L` *Done on react-perf.*
+- [ ] **[V3-16b]** Apply the same CSS-vars + classes + provider pattern to solid, svelte, angular. Each framework adapts the provider to its own paradigm (Solid signal, Svelte store, Angular DI). `Priority: 🔵` `Complexity: M`
+- [ ] **[V3-23]** Rename packages for V3.0:
+  - `@solar-icons/react-perf` → `@solar-icons/react` (recommended, classic mode)
+  - `@solar-icons/react` → `@solar-icons/react-reactive` (niche: dynamic style switching, kept for existing users during V3, deprecated in V4)
+  - `@solar-icons/vue` → rewrite in classic mode (like react-perf), no `vue-reactive` package (too few users — 700/week for Vue doesn't justify 2 packages)
+  - `@solar-icons/nuxt` → align with new Vue classic mode
+  `Priority: 🟠` `Complexity: L`
 
 ## Post-V3 (follow-up, not part of V3.0)
 
 - [ ] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/` — one canonical data layer. `Priority: ⚪` `Complexity: M`
 - [ ] **[POST-02]** Fix Angular peer-dep range: `peerDependencies` says `"17.x - 21.x"`, dev deps pin `22.x`. Widen to match. `Priority: ⚪` `Complexity: S`
-
-*(add future tasks here)*
+- [ ] **[POST-03]** In V4: remove `@solar-icons/react-reactive` (if migration to classic mode is sufficient). Merge `vue-reactive` never existed. One package per framework. `Priority: ⚪` `Complexity: S`
