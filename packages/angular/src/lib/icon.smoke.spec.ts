@@ -47,7 +47,7 @@ describe('Generated Icon Components (smoke tests)', () => {
                     'http://www.w3.org/2000/svg'
                 )
                 expect(fixture.nativeElement.getAttribute('viewBox')).toBe('0 0 24 24')
-                expect(fixture.nativeElement.getAttribute('width')).toBe('1em')
+                expect(fixture.nativeElement.style.width).toBe('var(--solar-icon-size, 24px)')
             })
         })
     }

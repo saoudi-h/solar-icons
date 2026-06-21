@@ -1,10 +1,10 @@
-import { Directive, input } from '@angular/core'
+import { Directive, computed, input } from '@angular/core'
 
 /**
  * Base class for all Solar Icon components.
  *
  * It centralizes all shared SVG logic, including size, color,
- * orientation, and accessibility bindings.
+ * orientation, accessibility bindings, and CSS custom property fallbacks.
  */
 @Directive({
     standalone: true,
@@ -12,41 +12,58 @@ import { Directive, input } from '@angular/core'
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',
         fill: 'none',
-        class: 'solar-icon',
-        '[attr.width]': 'size()',
-        '[attr.height]': 'size()',
-        '[style.color]': 'color()',
-        '[attr.stroke-width]': 'strokeWidth()',
+        '[style.width]': 'computedWidth()',
+        '[style.height]': 'computedHeight()',
+        '[style.color]': 'computedColor()',
+        '[attr.stroke-width]': 'computedStrokeWidth()',
         '[attr.transform]': 'mirrored() ? "scale(-1, 1)" : null',
-        '[attr.aria-hidden]': 'alt() ? null : "true"',
+        '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
+        '[style.--solar-duotone-color]': 'secondaryColor()',
+        '[style.--solar-duotone-opacity]': 'secondaryOpacityStr()',
     },
 })
 export abstract class IconBase {
-    /**
-     * Accessible label for the icon.
-     */
     readonly alt = input<string>()
 
-    /**
-     * Width and height.
-     * @default '1em'
-     */
-    readonly size = input<string | number>('1em')
+    readonly color = input<string>()
 
-    /**
-     * Color.
-     * @default 'currentColor'
-     */
-    readonly color = input<string>('currentColor')
+    readonly size = input<string | number>()
 
-    /**
-     * Stroke width.
-     * @default '1.5'
-     */
-    readonly strokeWidth = input<string | number>('1.5')
+    readonly strokeWidth = input<string | number>()
 
-    /**
-     * If set to true, the icon will be flipped horizontally.
-     */
     readonly mirrored = input<boolean>(false)
+
+    readonly secondaryColor = input<string>()
+
+    readonly secondaryOpacity = input<number>()
+
+    readonly computedWidth = computed(() => {
+        const s = this.size()
+        if (s === undefined) return 'var(--solar-icon-size, 24px)'
+        return typeof s === 'number' ? `${s}px` : s
+    })
+
+    readonly computedHeight = computed(() => {
+        const s = this.size()
+        if (s === undefined) return 'var(--solar-icon-size, 24px)'
+        return typeof s === 'number' ? `${s}px` : s
+    })
+
+    readonly computedColor = computed(() => {
+        return this.color() ?? 'var(--solar-icon-color, currentColor)'
+    })
+
+    readonly computedStrokeWidth = computed(() => {
+        return this.strokeWidth() ?? 'var(--solar-stroke-width, 1.5)'
+    })
+
+    readonly secondaryOpacityStr = computed(() => {
+        const o = this.secondaryOpacity()
+        if (o == null) return null
+        return String(o)
+    })
+
+    readonly ariaLabel = input<string>()
+
+    readonly titleAttr = input<string>()
 }

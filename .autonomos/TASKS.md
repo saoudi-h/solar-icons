@@ -56,7 +56,7 @@
 ## V3 — Next
 
 - [/] **[V3-16a]** Solar CSS-vars + classes on react-perf (DONE). Implemented: CSS classes `solar` + `solar-{kebab}`, CSS custom properties via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` props, `aria-hidden=true` by default, `<SolarProvider>` (CSS vars on wrapper div, no React context for values), `useSolar()` hook (DOM ref mutation). `Priority: 🔵` `Complexity: L` *Done on react-perf.*
-- [ ] **[V3-16b]** Apply the same CSS-vars + classes + provider pattern to solid, svelte, angular. Each framework adapts the provider to its own paradigm (Solid signal, Svelte store, Angular DI). `Priority: 🔵` `Complexity: M`
+- [x] **[V3-16b]** Apply the same CSS-vars + classes + provider pattern to solid, svelte, angular. Each framework adapts the provider to its own paradigm (Solid signal, Svelte store, Angular DI). `Priority: 🔵` `Complexity: M`
 - [ ] **[V3-23]** Rename packages for V3.0:
   - `@solar-icons/react-perf` → `@solar-icons/react` (recommended, classic mode)
   - `@solar-icons/react` → `@solar-icons/react-reactive` (niche: dynamic style switching, kept for existing users during V3, deprecated in V4)

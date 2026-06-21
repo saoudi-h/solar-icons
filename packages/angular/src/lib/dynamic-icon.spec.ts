@@ -57,16 +57,14 @@ describe('SolarDynamicIcon', () => {
     it('should apply size and color to the dynamic component via host bindings', () => {
         const svg = fixture.debugElement.query(By.css('svg')).nativeElement
 
-        // Initial values (size 24, color red)
-        expect(svg.getAttribute('width')).toBe('24')
+        expect(svg.style.width).toBe('24px')
         expect(svg.style.color).toBe('red')
 
-        // Update signals
         host.size.set(48)
         host.color.set('blue')
         fixture.detectChanges()
 
-        expect(svg.getAttribute('width')).toBe('48')
+        expect(svg.style.width).toBe('48px')
         expect(svg.style.color).toBe('blue')
     })
 

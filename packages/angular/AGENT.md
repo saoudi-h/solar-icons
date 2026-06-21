@@ -41,8 +41,16 @@ The folder-per-icon shape is required by Angular's compiler and module resolutio
 - Vitest + `jsdom` + `@vitest/coverage-v8` for tests.
 - `tsc --noEmit -p tsconfig.lib.json` for typecheck (not `tsgo`).
 
+## 🔧 V3-16b: CSS vars + classes + provider
+
+- **`src/lib/icon-base.ts`**: CSS vars via `computed()` signals and `??` pattern. Host bindings use `[style.width]`, `[style.height]`, `[style.color]` (not `[attr.*]`) so `var()` CSS function works. `secondaryColor`/`secondaryOpacity` inputs set `[style.--solar-duotone-*]` host bindings. `aria-hidden` computed from `alt`, `ariaLabel`, `titleAttr` inputs. `class: 'solar-icon'` REMOVED from IconBase host — each generated component sets its own `class: 'solar-icon solar-{kebab}'` via `host:` in `@Component` metadata.
+- **`src/lib/solar-provider.ts`**: `SolarProviderComponent` (selector `solar-provider`) wraps content in `<div>` with CSS custom properties. `SolarService` (`@Injectable()`) scoped to the component-level provider, exposes `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. `useSolar()` function calls `inject(SolarService)` — must be called in injection context (constructor/property initializer).
+- **`src/parser-hook.ts`**: Generated `@Component` decorators include `host: { 'class': 'solar-icon solar-{icon.kebabName}' }`.
+- **Pitfall**: `input()` signals must NOT have defaults — `undefined` falls through to CSS var. `[style.width]` (not `[attr.width]`) because `var()` only works in CSS properties.
+
 ## ⚠️ Known Constraints
 
+- **ngc rootDir error (pre-existing, V3-16b)**: `ngc -p tsconfig.lib.json` fails with `TS6059` because `parser-hook.ts` imports from `../../core/src/parser.ts` which is outside `rootDir: "src"`. The `generate:assets` step (tsx) works fine; only the `ngc` pass fails. This was pre-existing before V3-16b.
 - **Peer-dep range mismatch**: `peerDependencies` declares `@angular/common` and `@angular/core` as `"17.x - 21.x"`, but the dev deps pin to 22.x.
 - **Two `ngc` passes** required because type emit and JS emit need different `tsconfig` settings.
 - **`@xmldom/xmldom` is a devDep** — used by tests to parse generated SVGs without a real DOM.

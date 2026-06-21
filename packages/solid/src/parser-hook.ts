@@ -45,7 +45,7 @@ import type { IconProps, Icon } from "../../../lib/types"
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
 export const ${icon.pascalName}: Icon = (props: IconProps) => (
-    <IconBase {...props}>
+    <IconBase {...props} iconName="${icon.kebabName}">
         ${body}
     </IconBase>
 )

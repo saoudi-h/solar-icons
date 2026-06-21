@@ -57,3 +57,4 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 - **Core `tsconfig.json` and `tsconfig.build.json`** must exclude `**/*.test.ts` and `src/scripts` to avoid typecheck errors from vitest globals (`beforeAll`) and ollama scripts.
 - **`toCamelCase` now strips leading/trailing separators** (`.replace(/^[\s\-_]+|[\s\-_]+$/g, '')`) to avoid `FileSmile-` from `file-smile-`.
 - **Icon name collisions across categories (`Scale` in `arrows-action` + `devices`)** break `styled.ts` barrel re-exports. React's `generate-assets.ts` now deduplicates style-level index exports by `pascalName`.
+- **Angular `ngc` build fails with TS6059 (pre-existing)**: `parser-hook.ts`'s `import type { ParsedIcon } from '../../core/src/parser.ts'` causes ngc to resolve files outside `rootDir: "src"`. The `generate:assets` step (tsx) works, but the `ngc -p tsconfig.lib.json` pass fails. Solid (tsdown) and Svelte (svelte-package) don't have this issue.

@@ -1,43 +1,75 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
+    import { getContext } from 'svelte';
 
     interface Props {
         alt?: string;
         color?: string;
         size?: string | number;
+        strokeWidth?: string | number;
         mirrored?: boolean;
+        secondaryColor?: string;
+        secondaryOpacity?: number;
+        iconName?: string;
         children?: Snippet;
         class?: string;
         style?: string;
+        'aria-label'?: string;
+        title?: string;
         [key: string]: unknown;
     }
 
     let {
         alt,
-        color = 'currentColor',
-        size = '1em',
+        color,
+        size,
+        strokeWidth,
         mirrored = false,
+        secondaryColor,
+        secondaryOpacity,
+        iconName,
         children,
-        class: className,
-        style,
+        class: userClass = '',
+        style: userStyle,
         ...restProps
     }: Props = $props();
 
-    const width = $derived(typeof size === 'number' ? `${size}px` : size);
-    const height = $derived(typeof size === 'number' ? `${size}px` : size);
+    const SOLAR_CLASS = 'solar';
+    const iconClass = $derived(iconName ? `${SOLAR_CLASS} solar-${iconName}` : SOLAR_CLASS);
+    const className = $derived(userClass ? `${iconClass} ${userClass}` : iconClass);
+
+    const isAccessible = $derived(
+        !!alt || restProps['aria-label'] != null || restProps['title'] != null
+    );
+
+    const baseStyle = $derived(
+        [
+            `color: ${color ?? 'var(--solar-icon-color, currentColor)'}`,
+            `width: ${typeof size === 'number' ? `${size}px` : (size ?? 'var(--solar-icon-size, 24px)')}`,
+            `height: ${typeof size === 'number' ? `${size}px` : (size ?? 'var(--solar-icon-size, 24px)')}`,
+            secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
+            secondaryOpacity != null
+                ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
+                : null,
+            userStyle ?? null,
+        ]
+            .filter(Boolean)
+            .join('; ')
+    );
+
+    const computedStrokeWidth = $derived(strokeWidth ?? 'var(--solar-stroke-width, 1.5)');
+    const transformValue = $derived(mirrored ? 'scale(-1, 1)' : undefined);
 </script>
 
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    {width}
-    {height}
-    {color}
-    fill="none"
-    stroke-width={1.5}
-    viewBox="0 0 24 24"
-    transform={mirrored ? 'scale(-1, 1)' : undefined}
     class={className}
-    {style}
+    style={baseStyle}
+    fill="none"
+    viewBox="0 0 24 24"
+    transform={transformValue}
+    stroke-width={computedStrokeWidth}
+    aria-hidden={isAccessible ? undefined : 'true'}
     {...restProps}
 >
     {#if alt}<title>{alt}</title>{/if}

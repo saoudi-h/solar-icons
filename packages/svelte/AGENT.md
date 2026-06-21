@@ -1,8 +1,9 @@
 ---
-name: "@solar-icons/svelte"
-type: "package"
-status: "active"
+name: '@solar-icons/svelte'
+type: 'package'
+status: 'active'
 ---
+
 # AGENT CONTEXT: packages/svelte
 
 ## 🧠 Role
@@ -20,14 +21,14 @@ status: "active"
 
 ## 📁 Key Directories
 
-| Path | Description |
-|---|---|
-| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces SFCs. |
-| `scripts/compile-svelte.mjs`, `scripts/copy-svelte.mjs` | Pre-svelte-package shims. |
-| `scripts/utils.ts` | Local helpers. |
-| `src/icons/style/` | Generated: one folder per style, one file per icon. |
-| `src/lib/` | Hand-written helpers. |
-| `src/index.ts` | Barrel re-export. |
+| Path                                                    | Description                                         |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| `scripts/generate-assets.ts`                            | Reads from `core/svgs/`, produces SFCs.             |
+| `scripts/compile-svelte.mjs`, `scripts/copy-svelte.mjs` | Pre-svelte-package shims.                           |
+| `scripts/utils.ts`                                      | Local helpers.                                      |
+| `src/icons/style/`                                      | Generated: one folder per style, one file per icon. |
+| `src/lib/`                                              | Hand-written helpers.                               |
+| `src/index.ts`                                          | Barrel re-export.                                   |
 
 ## 🏗 Stack
 
@@ -36,6 +37,14 @@ status: "active"
 - `svelte2tsx` + `svelte-check` for typecheck.
 - `tsdown` available as a devDep (currently unused at build time).
 - `prettier-plugin-svelte` for formatting.
+
+## 🔧 V3-16b: CSS vars + classes + provider
+
+- **`src/lib/IconBase.svelte`**: CSS classes `solar` + `solar-{iconName}`, CSS vars via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` duotone props, `aria-hidden="true"` by default unless `alt`/`aria-label`/`title` set. User `class` and `style` merged after CSS vars (user can override).
+- **`src/lib/SolarProvider.svelte`**: Wrapper `<div>` with CSS custom properties via `solar.css`. Svelte 5 `setContext` provides a ref with `setProperty()`. Renders children via `{@render children()}`.
+- **`src/lib/useSolar.ts`**: Standalone module using `getContext(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. Shared context key with `SolarProvider.svelte`.
+- **`src/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated Svelte components.
+- **Pitfall**: `$props()` destructuring must NOT use defaults for `color`, `size`, `strokeWidth` — the `??` in `$derived` must fall through to CSS var.
 
 ## ⚠️ Known Constraints
 

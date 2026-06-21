@@ -1,34 +1,34 @@
-import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
+import type { ParsedIcon, IconContext } from '../../core/src/parser.ts';
 
 const DUOTONE_CSS_VARS_HTML =
-    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
+    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"';
 
 function applyDuotoneStyle(accent: string | null): string | null {
-    if (!accent) return null
-    let groupDepth = 0
+    if (!accent) return null;
+    let groupDepth = 0;
     return accent
         .replace(/\s+opacity="0\.5"/g, '')
         .split('\n')
-        .map(line => {
-            const trimmed = line.trim()
-            if (!trimmed) return line
+        .map((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return line;
             if (trimmed.startsWith('</')) {
-                if (trimmed.startsWith('</g')) groupDepth--
-                return line
+                if (trimmed.startsWith('</g')) groupDepth--;
+                return line;
             }
-            if (groupDepth > 0) return line
-            if (trimmed.startsWith('<g')) groupDepth++
+            if (groupDepth > 0) return line;
+            if (trimmed.startsWith('<g')) groupDepth++;
             if (trimmed.endsWith('/>')) {
-                return trimmed.slice(0, -2) + ` ${DUOTONE_CSS_VARS_HTML}/>`
+                return trimmed.slice(0, -2) + ` ${DUOTONE_CSS_VARS_HTML}/>`;
             }
-            return trimmed.replace('>', ` ${DUOTONE_CSS_VARS_HTML}>`)
+            return trimmed.replace('>', ` ${DUOTONE_CSS_VARS_HTML}>`);
         })
-        .join('\n')
+        .join('\n');
 }
 
 export interface FileDefinition {
-    path: string
-    content: string
+    path: string;
+    content: string;
 }
 
 /**
@@ -38,22 +38,20 @@ export interface FileDefinition {
  * (already base64-encoded) — no local transformJSX needed.
  */
 export function svelteComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
-    const icon = ctx.icon
-    const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
-    const body = duotone
-        ? `${duotone}\n${icon.inner.trim()}`
-        : icon.inner.trim()
+    const icon = ctx.icon;
+    const duotone = applyDuotoneStyle(icon.duotoneAccentInner);
+    const body = duotone ? `${duotone}\n${icon.inner.trim()}` : icon.inner.trim();
     const content = `<script lang="ts">
 import Icon from '../../../lib/IconBase.svelte'
 let props = $props()
 </script>
 
-<Icon {...props}>
+<Icon {...props} iconName="${icon.kebabName}">
     ${body}
 </Icon>
-`
+`;
     return {
         path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.svelte`,
         content,
-    }
+    };
 }

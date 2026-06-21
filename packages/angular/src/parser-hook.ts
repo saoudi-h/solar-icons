@@ -139,6 +139,9 @@ import { IconBase } from '../../../lib/icon-base';
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        'class': 'solar-icon solar-${icon.kebabName}',
+    },
 })
 export class ${globalName} extends IconBase {}
 `
