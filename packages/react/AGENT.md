@@ -1,41 +1,37 @@
 ---
-name: "@solar-icons/react"
-type: "package"
-status: "active"
+name: '@solar-icons/react'
+type: 'package'
+status: 'active'
 ---
-# AGENT CONTEXT: packages/react
+
+# AGENT CONTEXT: packages/react (formerly react-perf)
 
 ## 🧠 Role
 
-`@solar-icons/react@1.1.1`. Standard React distribution of Solar Icons. Ships a reactive multi-style component: a single `<SolarIcon name="..." />` resolves the active style via React context, supporting dynamic weight switching (Provider + hooks model).
+`@solar-icons/react@3.0.0`. The **recommended** React package. Ships unit-per-style components with CSS custom properties, CSS classes (`solar`/`solar-{kebab}`), `<SolarProvider>`, and `useSolar()` hook. One component per icon, statically importable.
 
 ## ⚙️ Conventions
 
-- React 19 (peer ≥ 16.8). `forwardRef` on the multi-style component.
-- `sideEffects: false` for tree-shaking.
-- Build = `pnpm generate:assets && pnpm copy:licenses && vite build && tsc --build tsconfig.build.json`.
-- `scripts/generate-assets.ts` reads SVGs from `core/svgs/`, normalizes JSX attribute names to camelCase, and emits a `csr/` tree, a `ssr/` tree, a `defs/` tree, and a top-level `index.ts`. All four outputs are gitignored.
-- Dual ESM + CJS via Vite `rollupOptions.output[]`.
-
-## 📁 Key Directories
-
-| Path | Description |
-|---|---|
-| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces per-style React components. |
-| `scripts/utils.ts` | Local helpers: `readSvgsFromDisk`, `toPascalCase`, `verifyIcons`, path constants. |
-| `src/csr/`, `src/ssr/`, `src/defs/` | Generated, gitignored. |
-| `src/category.ts`, `src/index.ts` | Generated, gitignored. |
-| `src/lib/` | Hand-written helpers. |
+- React 19 (peer ≥ 16.8). Plain function components, no `forwardRef`.
+- Build = `pnpm generate:assets && pnpm copy:licenses && tsdown -l error && pnpm build:types`.
+- `scripts/generate-assets.ts` produces a flat `dist/icons/style/<name>.mjs` tree — one ESM file per icon per style.
+- `scripts/utils.ts` re-implements `readSvgsFromDisk`, `toPascalCase`, `verifyIcons`, the `WEIGHTS` array, and path constants.
 
 ## 🏗 Stack
 
-- React 19, Vite 8, `@vitejs/plugin-react` 6.
-- TypeScript 6, `tsc` for typecheck (not `tsgo`).
+- React 19, `tsdown` 0.22 for the ESM bundle.
+- `tsc --build` for types.
 - Vitest 4 when tests are added.
-- React Compiler-compatible (the docs app enables `reactCompiler: true`).
+
+## 🔧 CSS vars + classes + provider (V3-16a)
+
+- **`lib/IconBase.tsx`**: Classes `solar` + `solar-{kebab}`, CSS vars `??` pattern (color, size, strokeWidth), `strokeWidth` as SVG attribute, `aria-hidden="true"` by default, `secondaryColor`/`secondaryOpacity` props, user `className` merged, user `style` overrides CSS vars.
+- **`lib/SolarProvider.tsx`**: Wrapper `<div>` with CSS custom properties on `style`. No React context for values — CSS cascade does the work. `useSolar()` hook mutates DOM via `style.setProperty()` (no re-render of icons).
+- **`parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated components.
+- **Pitfall**: No default on `size`/`color` — `??` must fall through to CSS var. `--solar-icon-size` must be in px.
 
 ## ⚠️ Known Constraints
 
-- **Two parallel trees** (`csr/` and `ssr/`) are emitted. The `./category` export is exposed in both.
-- **Exports subpaths:** `./csr/*`, `./ssr/*`, `./ssr`, `./lib/*`, `./category`, `./icons/*`. They reflect the V2 dual-tree design.
-- **`scripts/generate-assets.ts` re-implements logic that is also in `core/src/utils.ts`** (kebab-case → PascalCase, alias mapping). The two are not deduplicated.
+- **Output is `dist/icons/style/<name>.mjs`** — the cleanest output in the monorepo and the reference shape for what a unit-per-style package looks like.
+- **Vite is not used in this package** — `tsdown` is the only bundler.
+- **`tsdown` regression (DEBUG-01/02/03 in worklogs)**: this package has no `bin` today, so it is not affected, but the same `exports: { bin: { ... } }` idiom applies if a bin is ever added.

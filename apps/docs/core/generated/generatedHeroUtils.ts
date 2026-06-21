@@ -493,7 +493,7 @@ import {
     Wineglass,
     WineglassTriangle,
     Women,
-} from '@solar-icons/react'
+} from '@solar-icons/react-reactive'
 
 export const styles = ['Broken', 'Outline', 'Linear', 'Bold', 'LineDuotone', 'BoldDuotone'] as const
 export type Style = (typeof styles)[number]

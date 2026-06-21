@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import * as Solar from '@solar-icons/react-perf'
-import { SolarProvider, useSolar } from '@solar-icons/react-perf'
+import * as Solar from '@solar-icons/react'
+import { SolarProvider, useSolar } from '@solar-icons/react'
 import { ALL_ICONS, STYLES, type IconStyle } from './icon-list'
 
 // --- Helpers ---

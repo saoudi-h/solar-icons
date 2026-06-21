@@ -3,21 +3,14 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { parseSvgs, forEachIcon } from '../../core/src/parser.ts'
 import type { ParsedIcon } from '../../core/src/parser.ts'
-import { reactComponentFile, type FileDefinition } from '../src/parser-hook.ts'
+import { forEachIcon, parseSvgs } from '../../core/src/parser.ts'
+import { reactPerfComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
-const WEIGHTS = [
-    'Bold',
-    'BoldDuotone',
-    'Broken',
-    'Linear',
-    'LineDuotone',
-    'Outline',
-] as const
+const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 const WEIGHT_KEBAB: Record<string, string> = {
     Bold: 'bold',
@@ -129,7 +122,8 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib"
-export { IconBase } from "./lib"
+export { IconBase, SolarProvider, useSolar } from "./lib"
+export type { SolarProviderProps } from "./lib"
 export * from "./icons/styled"
 `
 
@@ -143,15 +137,6 @@ export * from "./icons/styled"
 
 function clean() {
     for (const p of [ICONS_PATH, INDEX_PATH]) {
-        if (fs.existsSync(p)) {
-            fs.rmSync(p, { recursive: true, force: true })
-            console.log(pc.blue(`Removed ${p}`))
-        }
-    }
-    const csrPath = path.resolve(import.meta.dirname, '../src/csr')
-    const ssrPath = path.resolve(import.meta.dirname, '../src/ssr')
-    const defsPath = path.resolve(import.meta.dirname, '../src/defs')
-    for (const p of [csrPath, ssrPath, defsPath]) {
         if (fs.existsSync(p)) {
             fs.rmSync(p, { recursive: true, force: true })
             console.log(pc.blue(`Removed ${p}`))
@@ -171,9 +156,11 @@ const main = async () => {
     try {
         clean()
         const result = await parseSvgs()
-        console.log(pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`))
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        )
 
-        const componentFiles = await forEachIcon(reactComponentFile)
+        const componentFiles = await forEachIcon(reactPerfComponentFile)
         const indexFiles = generateIndexes(result.icons)
         writeFiles([...componentFiles, ...indexFiles])
     } catch (err) {

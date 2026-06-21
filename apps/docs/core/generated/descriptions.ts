@@ -1247,8 +1247,8 @@ import {
     Women,
     Xxx,
     ZipFile,
-} from '@solar-icons/react'
-import type { Icon as IconType } from '@solar-icons/react/lib/types'
+} from '@solar-icons/react-reactive'
+import type { Icon as IconType } from '@solar-icons/react-reactive/lib/types'
 import type { Category } from './utils'
 
 export interface IconData {

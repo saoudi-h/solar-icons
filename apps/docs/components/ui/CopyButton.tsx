@@ -1,5 +1,5 @@
 'use client'
-import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import { CheckCircle, Copy } from '@solar-icons/react-reactive/ssr'
 import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button'
 import React from 'react'
 import type { ButtonProps } from './button'

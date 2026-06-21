@@ -1,30 +1,38 @@
 ---
-name: "@solar-icons/vue"
-type: "package"
-status: "active"
+name: '@solar-icons/vue'
+type: 'package'
+status: 'active'
 ---
+
 # AGENT CONTEXT: packages/vue
 
 ## 🧠 Role
 
-`@solar-icons/vue@1.2.1`. Vue 3 distribution of Solar Icons. Ships a reactive multi-style component (single `<SolarIcon name="..." />`, dynamic style switching via Vue reactivity), analogous to the V2 `@solar-icons/react` model.
+`@solar-icons/vue@3.0.0`. Vue 3 distribution of Solar Icons — **classic mode** (unit-per-style). One component per icon, statically importable. Includes `<SolarProvider>` (CSS custom properties on wrapper div), `useSolar()` composable, and CSS classes (`solar`/`solar-{kebab}`).
 
 ## ⚙️ Conventions
 
-- Vue 3.5+ (peer ≥ 3.0). Composition API. SFC templates (not JSX).
-- Build = `pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses`. Dual ESM + CJS.
-- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits SFC files.
-- `scripts/utils.ts` is the local helper module.
-- `lint` allows up to 10 warnings (`--max-warnings 10`); the other public packages use 0.
+- Vue 3.5+ (peer ≥ 3.0). Composition API.
+- Build = `pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses`.
+- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits `.ts` files with `h()` calls.
+- Generated components wrap `IconBase.vue` via `h(IconBase, { ...props, iconName }, { default: () => [...] })`.
+
+## 🔧 CSS vars + classes + provider (V3-23)
+
+- **`lib/IconBase.vue`**: CSS classes `solar` + `solar-{iconName}`, CSS vars via `??` pattern, `secondaryColor`/`secondaryOpacity` props, `aria-hidden="true"` by default, user `style` merged via `v-bind="$attrs"`.
+- **`lib/SolarProvider.vue`**: Wrapper `<div>` with CSS custom properties on `:style`. Uses `provide(SOLAR_CONTEXT_KEY, solarRef)`. `solarRef` exposes `setProperty()` for DOM mutation.
+- **`lib/useSolar.ts`**: Composable using `inject(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`.
+- **`lib/context-key.ts`**: Shared `SOLAR_CONTEXT_KEY = Symbol('solar')` used by both SolarProvider and useSolar (cannot export from `<script setup>`).
+- **`parser-hook.ts`**: Generates `h(IconBase, { ...attrs, ...props, iconName }, { default: () => [...h() calls...] })`.
 
 ## 📁 Key Directories
 
-| Path | Description |
-|---|---|
-| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces SFCs. |
-| `scripts/utils.ts` | Local helpers. |
-| `src/` | Hand-written code. |
-| `dist/` | Build output. |
+| Path                         | Description                                                                         |
+| ---------------------------- | ----------------------------------------------------------------------------------- |
+| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces functional components.                            |
+| `src/lib/`                   | Hand-written helpers: IconBase.vue, SolarProvider.vue, useSolar.ts, context-key.ts. |
+| `src/icons/`                 | Generated unit-per-style icon components.                                           |
+| `dist/`                      | Build output.                                                                       |
 
 ## 🏗 Stack
 
@@ -35,5 +43,6 @@ status: "active"
 ## ⚠️ Known Constraints
 
 - **`@solar-icons/nuxt` depends on this package** (`workspace:*`).
-- **The V2 component uses a single-color model** (no duotone customization).
+- **`IconBase.vue` cannot be imported directly by users** — icons are generated as `.ts` files that wrap it via `h()`.
+- **`SOLAR_CONTEXT_KEY` is in a separate `.ts` file** because `<script setup>` cannot contain ES module exports.
 - **`tsdown` regression (DEBUG-01/02/03)**: same `exports: { bin: { ... } }` idiom as `@autonomos/cli` if a `bin` is ever added.

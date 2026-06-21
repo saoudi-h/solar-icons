@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/CopyButton'
-import { DownloadMinimalistic as DownloadIcon, useSolar } from '@solar-icons/react'
+import { DownloadMinimalistic as DownloadIcon, useSolar } from '@solar-icons/react-reactive'
 import { saveAs } from 'file-saver'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
@@ -158,15 +158,19 @@ export const Actions: FC = () => {
                     color={value.color || ''}
                 />
             </div>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className={`p-1`}>
                 Get SVG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className={`p-1`}>
                 Get PNG
                 <DownloadIcon size={16} weight="Linear" color={''} />
             </Button>

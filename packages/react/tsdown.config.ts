@@ -40,7 +40,7 @@ const config: UserConfig = defineConfig({
 
     dts: { sourcemap: false },
 
-    platform: 'neutral',
+    platform: 'node',
 
     unused: {
         level: 'error',
@@ -56,16 +56,10 @@ const config: UserConfig = defineConfig({
                 types: './dist/index.d.mts',
                 import: './dist/index.mjs',
             }
-            pkg['./lib'] = {
-                types: './dist/lib/index.d.mts',
-                import: './dist/lib/index.mjs',
-            }
-
             pkg['./lib/*'] = {
                 types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
             }
-
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
@@ -77,7 +71,7 @@ const config: UserConfig = defineConfig({
 
     format: ['esm'],
 
-    publint: true,
+    publint: false,
 
     fixedExtension: true,
 
@@ -90,12 +84,12 @@ const config: UserConfig = defineConfig({
     target: 'es2020',
 
     onSuccess() {
-        console.info('✨ @solar-icons/react build succeeded!')
+        console.info(`✨ @solar-icons/react build succeeded!`)
     },
 
     clean: true,
 
-    external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+    external: ['react', 'react-dom', 'react/jsx-runtime'],
 })
 
 export default config

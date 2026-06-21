@@ -13,7 +13,7 @@
         "clean": "rimraf *.tsbuildinfo node_modules .next"
     },
     "dependencies": {
-        "@solar-icons/react-perf": "workspace:*",
+        "@solar-icons/react": "workspace:*",
         "next": "16.2.9",
         "react": "19.2.7",
         "react-dom": "19.2.7"

@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { CloseCircle } from '@solar-icons/react'
+import { CloseCircle } from '@solar-icons/react-reactive'
 import * as React from 'react'
 
 const Dialog = DialogPrimitive.Root

@@ -1,5 +1,0 @@
-export { default as IconBase } from './IconBase'
-export { SolarProvider } from './SolarProvider'
-export { useSolar } from './SolarProvider'
-export type { SolarProviderProps } from './SolarProvider'
-export type { Icon, IconProps } from './types'

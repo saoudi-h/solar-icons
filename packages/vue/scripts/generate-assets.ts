@@ -116,7 +116,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib/types"
-export { IconStyle } from "./lib/types"
+export { IconBase, SolarProvider, useSolar, IconStyle } from "./lib"
 export * from "./icons/styled"
 `
 

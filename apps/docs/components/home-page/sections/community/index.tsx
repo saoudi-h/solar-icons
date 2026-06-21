@@ -29,7 +29,7 @@ import {
     Star,
     Unread,
     Widget,
-} from '@solar-icons/react/ssr'
+} from '@solar-icons/react-reactive/ssr'
 import { motion, useInView } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -47,7 +47,7 @@ const DEFAULT_DOWNLOADS = 15200
 
 const NPM_PACKAGES = [
     '@solar-icons/react',
-    '@solar-icons/react-perf',
+    '@solar-icons/react',
     '@solar-icons/react-native',
     '@solar-icons/vue',
     '@solar-icons/nuxt',
@@ -189,9 +189,9 @@ export const CommunitySection = () => {
                           md:col-span-7
                         ">
                         {/* Title & Copy */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-col gap-4">
+                        <motion.div variants={itemVariants} className="
+                          flex flex-col gap-4
+                        ">
                             <Heading
                                 size="h1"
                                 className="
@@ -222,21 +222,21 @@ export const CommunitySection = () => {
                         {/* Stats Dashboard Grid */}
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Weekly Downloads" value={stats.downloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Icons" value={7476} />
                             </motion.div>
                             {/* Stat Card 3: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Packages" value={8} />
                             </motion.div>
                         </div>
@@ -331,12 +331,9 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
                     {gridIcons.map((row, rowIndex) =>
                         row.map((IconComponent, colIndex) => {
                             if (IconComponent === null) {
-                                return (
-                                    <div
-                                        key="center-placeholder"
-                                        className="size-full"
-                                    />
-                                )
+                                return <div key="center-placeholder" className="
+                                  size-full
+                                " />
                             }
 
                             return (

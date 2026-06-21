@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import * as SelectPrimitive from '@radix-ui/react-select'
-import { AltArrowDown, AltArrowUp, CheckCircle } from '@solar-icons/react/ssr'
+import { AltArrowDown, AltArrowUp, CheckCircle } from '@solar-icons/react-reactive/ssr'
 import * as React from 'react'
 
 const Select = SelectPrimitive.Root

@@ -1,25 +1,9 @@
-type IconWeight = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
+import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
 
-interface ParsedIcon {
-    readonly name: string
-    readonly category: string
-    readonly style: IconWeight
-    readonly styleKebab: string
-    readonly kebabName: string
-    readonly pascalName: string
-    readonly inner: string
-    readonly duotoneAccentInner: string | null
-    readonly preview: string
+export interface FileDefinition {
+    path: string
+    content: string
 }
-
-interface IconContext<T> {
-    readonly icon: T
-    readonly index: number
-    readonly total: number
-}
-
-const DUOTONE_CSS_VARS_JSX =
-    'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
 
 const SVG_ATTR_MAP: [RegExp, string][] = [
     [/fill-rule/g, 'fillRule'],
@@ -35,6 +19,9 @@ const SVG_ATTR_MAP: [RegExp, string][] = [
 function transformSvgAttrs(inner: string): string {
     return SVG_ATTR_MAP.reduce((s, [re, replacement]) => s.replace(re, replacement), inner)
 }
+
+const DUOTONE_CSS_VARS_JSX =
+    'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
 
 function applyDuotoneStyle(accent: string | null): string | null {
     if (!accent) return null
@@ -59,12 +46,7 @@ function applyDuotoneStyle(accent: string | null): string | null {
         .join('\n')
 }
 
-export interface FileDefinition {
-    path: string
-    content: string
-}
-
-export function reactComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
+export function reactPerfComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
     const duotoneConverted = duotone ? transformSvgAttrs(duotone) : null
@@ -81,7 +63,7 @@ import type { IconProps, Icon } from "../../../lib/types"
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
 export const ${icon.pascalName}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <IconBase ref={ref} {...props}>
+    <IconBase ref={ref} {...props} iconName="${icon.kebabName}">
         ${body}
     </IconBase>
 ))

@@ -90,7 +90,7 @@ export interface ParsedIcon {
  * All 6 styles for a single logical icon, grouped by name.
  *
  * Consumed by reactive-style packages (the new `@solar-icons/react-reactive`
- * and `@solar-icons/vue-reactive`) that emit one component per logical icon
+ * and `@solar-icons/vue`) that emit one component per logical icon
  * and let the consumer pick the style at runtime.
  *
  * `styles` is guaranteed to contain all 6 entries — {@link parseSvgs} throws
@@ -337,7 +337,7 @@ export const forEachIcon = async <R>(
  *
  * Use this for **reactive-style** packages: one component per logical icon,
  * with the style picked at runtime (the new `@solar-icons/react-reactive`
- * after V3-07, the new `@solar-icons/vue-reactive` after V3-08a).
+ * after V3-07, `@solar-icons/vue` after V3-23).
  *
  * Throws if called before {@link parseSvgs}.
  */

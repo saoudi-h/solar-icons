@@ -1,2 +1,5 @@
-export type { IconProps } from './types'
+export { default as IconBase } from './IconBase.vue'
+export { default as SolarProvider } from './SolarProvider.vue'
 export { IconStyle } from './types'
+export type { IconProps } from './types'
+export { useSolar } from './useSolar'

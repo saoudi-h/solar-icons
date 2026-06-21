@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CloseCircle } from '@solar-icons/react'
+import { CloseCircle } from '@solar-icons/react-reactive'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'

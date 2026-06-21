@@ -1,4 +1,4 @@
-import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
+import type { IconContext, ParsedIcon } from '../../core/src/parser.ts'
 
 const DUOTONE_CSS_VARS_HTML =
     'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
@@ -75,7 +75,11 @@ function parseIconNodes(svgContent: string): SVGNode[] {
         return -1
     }
 
-    function parseElement(content: string, startIndex = 0): { node: SVGNode | null; nextIndex: number } {
+    function parseElement(
+        content: string,
+        startIndex = 0
+    ): { node: SVGNode | null; nextIndex: number } {
+        // eslint-disable-next-line regexp/no-super-linear-backtracking
         const elementRegex = /<(\w+)([^>]*?)(\/>|>)/g
         elementRegex.lastIndex = startIndex
         const match = elementRegex.exec(content)
@@ -113,10 +117,16 @@ function parseIconNodes(svgContent: string): SVGNode[] {
                 }
             }
             if (children.length > 0) {
-                return { node: [tagName, attributes, children] as SVGNode, nextIndex: closeTagIndex + `</${tagName}>`.length }
+                return {
+                    node: [tagName, attributes, children] as SVGNode,
+                    nextIndex: closeTagIndex + `</${tagName}>`.length,
+                }
             }
         }
-        return { node: [tagName, attributes], nextIndex: closeTagIndex + `</${tagName}>`.length }
+        return {
+            node: [tagName, attributes],
+            nextIndex: closeTagIndex + `</${tagName}>`.length,
+        }
     }
 
     const nodes: SVGNode[] = []
@@ -142,7 +152,7 @@ function nodeToH(node: SVGNode, indent: string): string {
         .map(([k, v]) => `${JSON.stringify(k)}: ${JSON.stringify(v)}`)
         .join(', ')
     if (children && children.length > 0) {
-        const childNodes = children.map(c => nodeToH(c, indent + '        ')).join(',\n')
+        const childNodes = children.map(c => nodeToH(c, indent + '            ')).join(',\n')
         return `${indent}h(${JSON.stringify(tagName)}, { ${attrsStr} }, [\n${childNodes}\n${indent}])`
     }
     return `${indent}h(${JSON.stringify(tagName)}, { ${attrsStr} })`
@@ -151,30 +161,27 @@ function nodeToH(node: SVGNode, indent: string): string {
 export function vueComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
-    const body = duotone
-        ? `${duotone}\n${icon.inner.trim()}`
-        : icon.inner.trim()
+    const body = duotone ? `${duotone}\n${icon.inner.trim()}` : icon.inner.trim()
     const nodes = parseIconNodes(body)
     const hChildren = nodes.map(n => nodeToH(n, '            ')).join(',\n')
 
     const globalName = `${icon.pascalName}${icon.style}`
-    const content = `import { h, type FunctionalComponent } from 'vue'
-import type { IconProps } from '../../../lib/types'
+    const content = `import { h } from 'vue'
+import IconBase from '../../../lib/IconBase.vue'
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-const ${globalName}: FunctionalComponent<IconProps> = () => {
-    return h('svg', {
-        xmlns: 'http://www.w3.org/2000/svg',
-        width: '1em',
-        height: '1em',
-        fill: 'none',
-        strokeWidth: '1.5',
-        viewBox: '0 0 24 24',
-    }, [
+const ${globalName} = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
+    return h(IconBase, {
+        ...attrs,
+        ...props,
+        iconName: ${JSON.stringify(icon.kebabName)},
+    }, {
+        default: () => [
 ${hChildren}
-    ])
+        ],
+    })
 }
 
 ${globalName}.displayName = '${globalName}'

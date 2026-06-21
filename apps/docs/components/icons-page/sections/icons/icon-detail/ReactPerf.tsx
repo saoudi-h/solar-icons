@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRightUp, useSolar } from '@solar-icons/react'
+import { ArrowRightUp, useSolar } from '@solar-icons/react-reactive'
 import { useAtom } from 'jotai'
 import Link from 'next/link'
 import type { FC } from 'react'
@@ -22,7 +22,7 @@ export const ReactPerfCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react-perf/${value.weight}'`}
+                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react/${value.weight}'`}
             />
             <CodeBlockTemplate
                 lang="tsx"

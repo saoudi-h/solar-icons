@@ -1,5 +1,5 @@
 'use client'
-import { useSolar } from '@solar-icons/react'
+import { useSolar } from '@solar-icons/react-reactive'
 import { useTheme } from 'next-themes'
 import { useLayoutEffect } from 'react'
 

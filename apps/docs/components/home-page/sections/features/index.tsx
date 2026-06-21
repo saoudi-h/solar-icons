@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from '@solar-icons/react/ssr'
+import { ArrowRight } from '@solar-icons/react-reactive/ssr'
 import Link from 'next/link'
 import { DocsShowcase } from './DocsShowcase'
 import { DxShowcase } from './DxShowcase'
@@ -220,9 +220,12 @@ const BentoHeader = ({
                 {title}
             </h3>
             {href && buttonText && (
-                <Button asChild size="sm" variant="default" colors="muted" className="
-                  rounded-full
-                ">
+                <Button
+                    asChild
+                    size="sm"
+                    variant="default"
+                    colors="muted"
+                    className="rounded-full">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRight />

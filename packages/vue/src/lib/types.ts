@@ -10,6 +10,9 @@ export enum IconStyle {
 export interface IconProps {
     size?: string | number
     color?: string
+    strokeWidth?: string | number
     mirrored?: boolean
     alt?: string
+    secondaryColor?: string
+    secondaryOpacity?: number
 }

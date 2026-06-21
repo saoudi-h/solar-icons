@@ -7,7 +7,7 @@ status: "active"
 
 ## 🧠 Role
 
-`@solar-icons/nuxt@1.2.1`. Nuxt 3/4 module that wires `@solar-icons/vue` into a Nuxt app: auto-imports, module options, runtime config. Built on `@nuxt/kit` and `@nuxt/module-builder`.
+`@solar-icons/nuxt@1.2.1`. Nuxt 3/4 module that wires `@solar-icons/vue` (classic mode) into a Nuxt app: auto-imports icon components, `SolarProvider`, and `useSolar`. Built on `@nuxt/kit` and `@nuxt/module-builder`.
 
 ## ⚙️ Conventions
 
@@ -34,7 +34,8 @@ status: "active"
 
 ## ⚠️ Known Constraints
 
-- **Depends on `@solar-icons/vue` (`workspace:*`).** Breaking changes to `@solar-icons/vue` propagate here.
+- **`@solar-icons/vue-reactive` dependency removed in V3-23.** All Solar Icons functionality now comes from `@solar-icons/vue` (classic mode). `useSolar` and `SolarProvider` are auto-imported from `@solar-icons/vue/lib`.
+- **No runtime plugin needed.** `SolarProvider` uses Vue's `provide`/`inject` scoped to the component tree. No global app-level context required.
 - **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`, not `peerDependencies`.** This is unusual for a Nuxt module.
 - **`pnpm dev:prepare` must run before `nuxi dev playground`** — the module needs to be built in stub mode for Nuxt's auto-import scanner.
 - **Nuxt 4 schema is in use** (`@nuxt/kit` 4, `@nuxt/schema` 4). Supports Nuxt 3.12+ via compatibility modes; the dev playground targets Nuxt 4.

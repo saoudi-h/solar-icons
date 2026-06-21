@@ -68,8 +68,7 @@
     },
     "dependencies": {
         "@nuxt/kit": "^4.4.8",
-        "@solar-icons/vue": "workspace:*",
-        "@solar-icons/vue-reactive": "workspace:*"
+        "@solar-icons/vue": "workspace:*"
     },
     "devDependencies": {
         "@nuxt/devtools": "4.0.0-alpha.7",

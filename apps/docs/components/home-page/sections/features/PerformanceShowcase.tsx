@@ -29,16 +29,13 @@ export const PerformanceShowcase = () => {
                     ">
                     <div>
                         <span className="text-pink-500">import</span> {`{ Star }`}{' '}
-                        <span
-                            className="text-pink-500">
-                            from
-                        </span>{' '}
+                        <span className="text-pink-500">from</span>{' '}
                         <span
                             className="
                               text-emerald-600
                               dark:text-emerald-400
                             ">
-                            "@solar-icons/react"
+                            "@solar-icons/react-reactive"
                         </span>
                     </div>
                     <div className="mt-1 text-neutral-400">
@@ -46,11 +43,7 @@ export const PerformanceShowcase = () => {
                     </div>
                     <div className="text-neutral-500">
                         &lt;<span className="text-rose-500">Star</span>{' '}
-                        <span
-                            className="text-orange-500">
-                            weight
-                        </span>
-                        ={`{currentWeight}`} /&gt;
+                        <span className="text-orange-500">weight</span>={`{currentWeight}`} /&gt;
                     </div>
                 </div>
             </div>
@@ -77,11 +70,8 @@ export const PerformanceShowcase = () => {
                     ">
                     <div>
                         <span className="text-pink-500">import</span> {`{ StarBold }`}{' '}
-                        <span
-                            className="text-pink-500">
-                            from
-                        </span>{' '}
-                        <span className="text-primary">"@solar-icons/react-perf"</span>
+                        <span className="text-pink-500">from</span>{' '}
+                        <span className="text-primary">"@solar-icons/react"</span>
                     </div>
                     <div className="mt-1 text-neutral-400">
                         {`// Bundles only the Bold style for minimal weight`}

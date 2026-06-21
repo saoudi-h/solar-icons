@@ -3,7 +3,7 @@
 import type { ButtonProps } from '@/components/ui/button'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import { CheckCircle, Copy } from '@solar-icons/react-reactive/ssr'
 import * as React from 'react'
 
 interface CopyButtonProps extends ButtonProps {

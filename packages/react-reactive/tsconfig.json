@@ -1,0 +1,13 @@
+{
+    "extends": "@tala-tools/tsconfig/react-library.json",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": ["./src/**/*", "./scripts/**/*", "./tsdown.config.ts"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
+}
