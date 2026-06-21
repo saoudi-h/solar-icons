@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, provide } from 'vue'
+import { ref, provide, watch } from 'vue'
 import { SOLAR_CONTEXT_KEY } from './context-key'
 
 interface SolarRef {
@@ -31,23 +31,55 @@ const solarRef: SolarRef = {
 
 provide(SOLAR_CONTEXT_KEY, solarRef)
 
-const styleVars = computed(() => {
-    const s: Record<string, string> = {}
-    if (props.color) s['--solar-icon-color'] = props.color
-    if (props.size != null)
-        s['--solar-icon-size'] =
-            typeof props.size === 'number' ? `${props.size}px` : props.size
-    if (props.strokeWidth != null)
-        s['--solar-stroke-width'] = String(props.strokeWidth)
-    if (props.duotoneColor) s['--solar-duotone-color'] = props.duotoneColor
-    if (props.duotoneOpacity != null)
-        s['--solar-duotone-opacity'] = String(props.duotoneOpacity)
-    return s
-})
+watch(
+    () => props.color,
+    (c) => {
+        if (c != null) wrapperEl.value?.style.setProperty('--solar-icon-color', c)
+    },
+    { immediate: true },
+)
+
+watch(
+    () => props.size,
+    (s) => {
+        if (s != null)
+            wrapperEl.value?.style.setProperty(
+                '--solar-icon-size',
+                typeof s === 'number' ? `${s}px` : s,
+            )
+    },
+    { immediate: true },
+)
+
+watch(
+    () => props.strokeWidth,
+    (sw) => {
+        if (sw != null)
+            wrapperEl.value?.style.setProperty('--solar-stroke-width', String(sw))
+    },
+    { immediate: true },
+)
+
+watch(
+    () => props.duotoneColor,
+    (dc) => {
+        if (dc) wrapperEl.value?.style.setProperty('--solar-duotone-color', dc)
+    },
+    { immediate: true },
+)
+
+watch(
+    () => props.duotoneOpacity,
+    (d) => {
+        if (d != null)
+            wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(d))
+    },
+    { immediate: true },
+)
 </script>
 
 <template>
-    <div ref="wrapperEl" :style="styleVars">
+    <div ref="wrapperEl">
         <slot />
     </div>
 </template>

@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useRef, type ReactNode, useCallback } from 'react'
+import { createContext, useContext, useRef, useEffect, type ReactNode, useCallback } from 'react'
 
 interface SolarRef {
     setProperty: (prop: string, value: string) => void
@@ -64,16 +64,41 @@ export function SolarProvider({
         element: ref.current,
     })
 
-    const style: Record<string, string> = {}
-    if (color) style['--solar-icon-color'] = color
-    if (size != null) style['--solar-icon-size'] = typeof size === 'number' ? `${size}px` : size
-    if (strokeWidth != null) style['--solar-stroke-width'] = String(strokeWidth)
-    if (duotoneColor) style['--solar-duotone-color'] = duotoneColor
-    if (duotoneOpacity != null) style['--solar-duotone-opacity'] = String(duotoneOpacity)
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        if (color !== undefined) el.style.setProperty('--solar-icon-color', color)
+    }, [color])
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        if (size != null)
+            el.style.setProperty('--solar-icon-size', typeof size === 'number' ? `${size}px` : size)
+    }, [size])
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        if (strokeWidth != null) el.style.setProperty('--solar-stroke-width', String(strokeWidth))
+    }, [strokeWidth])
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        if (duotoneColor) el.style.setProperty('--solar-duotone-color', duotoneColor)
+    }, [duotoneColor])
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        if (duotoneOpacity != null)
+            el.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
+    }, [duotoneOpacity])
 
     return (
         <SolarContext.Provider value={ctxRef.current}>
-            <div ref={ref} style={style}>
+            <div ref={ref}>
                 {children}
             </div>
         </SolarContext.Provider>

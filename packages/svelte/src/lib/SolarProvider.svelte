@@ -16,20 +16,6 @@
 
     let wrapperEl: HTMLDivElement | undefined;
 
-    const styleVars = $derived(
-        [
-            color ? `--solar-icon-color: ${color}` : null,
-            size != null
-                ? `--solar-icon-size: ${typeof size === 'number' ? `${size}px` : size}`
-                : null,
-            strokeWidth != null ? `--solar-stroke-width: ${String(strokeWidth)}` : null,
-            duotoneColor ? `--solar-duotone-color: ${duotoneColor}` : null,
-            duotoneOpacity != null ? `--solar-duotone-opacity: ${String(duotoneOpacity)}` : null,
-        ]
-            .filter(Boolean)
-            .join('; ')
-    );
-
     const solarRef = {
         setProperty: (prop: string, value: string) => {
             wrapperEl?.style.setProperty(prop, value);
@@ -40,8 +26,34 @@
     };
 
     setContext(SOLAR_CONTEXT_KEY, solarRef);
+
+    $effect(() => {
+        if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', color);
+    });
+
+    $effect(() => {
+        if (size != null)
+            wrapperEl?.style.setProperty(
+                '--solar-icon-size',
+                typeof size === 'number' ? `${size}px` : size
+            );
+    });
+
+    $effect(() => {
+        if (strokeWidth != null)
+            wrapperEl?.style.setProperty('--solar-stroke-width', String(strokeWidth));
+    });
+
+    $effect(() => {
+        if (duotoneColor) wrapperEl?.style.setProperty('--solar-duotone-color', duotoneColor);
+    });
+
+    $effect(() => {
+        if (duotoneOpacity != null)
+            wrapperEl?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity));
+    });
 </script>
 
-<div bind:this={wrapperEl} style={styleVars}>
+<div bind:this={wrapperEl}>
     {@render children()}
 </div>
