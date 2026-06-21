@@ -55,7 +55,14 @@
 
 ## V3 — Next
 
-- [ ] **[V3-16]** Generalize CSS-vars to all SVG style attributes (fill, stroke, stroke-width). Replace hardcoded attributes with `var(--solar-fill, currentColor)`, `var(--solar-stroke, none)`, `var(--solar-stroke-width, 1.5)`. This enables global theming via CSS cascade without framework re-renders. Requires design discussion: how props interact with CSS vars, conflict resolution, default behavior. `Priority: 🔵` `Complexity: L` *See: discussion about CSS-native reactivity for icon styling*
+- [ ] **[V3-16]** Solar CSS-vars + classes: implement on react-perf, test extensively, then generalize. `Priority: 🔵` `Complexity: L`
+  - Add CSS classes `solar` + `solar-{kebab}` on every SVG.
+  - CSS custom properties via `??` pattern: `color: color ?? "var(--solar-icon-color, currentColor)"`, same for size, strokeWidth (conditional on Linear/Broken/LineDuotone).
+  - Add `secondaryColor`/`secondaryOpacity` props wrapping duotone CSS vars.
+  - `aria-hidden="true"` by default, removed if `alt`/`title`/`aria-label`.
+  - Optional `<SolarProvider>` (poses CSS vars on wrapper div, no React context).
+  - Optional `useSolar()` hook (DOM ref mutation, no re-render of icons).
+  - `mirrored` stays prop-only (no CSS var).
 - [ ] **[V3-17]** Create `SolarTheme` provider component for React (and possibly Vue). A component that sets CSS custom properties on a wrapper element, allowing reactive theme changes via framework state while leveraging browser-native CSS cascade for performance. Example: `<SolarTheme primaryColor="#ccc" duotoneColor="#f00">`. Reduces the need for react-reactive/vue-reactive for theming use cases. `Priority: 🔵` `Complexity: M`
 - [ ] **[V3-18]** Re-evaluate the role of `react-reactive` and `vue-reactive`. With CSS-vars providing theming and the `SolarTheme` provider handling reactive customization, reactive-style packages may only be needed for dynamic style switching (changing icon style at runtime). Document the scope reduction or consider deprecation path. `Priority: ⚪` `Complexity: M`
 - [x] **[V3-19]** Update demo apps (vue-app, svelte-app, angular-app) with duotone CSS-var controls like the SolidJS demo. Import paths must use kebab-case (`@solar-icons/vue/bold` not `@solar-icons/vue/Bold`). `Priority: 🔵` `Complexity: S`
