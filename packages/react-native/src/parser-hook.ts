@@ -6,27 +6,30 @@ export interface FileDefinition {
 }
 
 const ELEMENT_MAP: Record<string, string> = {
-    path: 'Path',
-    g: 'G',
-    circle: 'Circle',
-    rect: 'Rect',
-    line: 'Line',
-    polyline: 'Polyline',
-    polygon: 'Polygon',
-    ellipse: 'Ellipse',
-    defs: 'Defs',
-    clipPath: 'ClipPath',
-    linearGradient: 'LinearGradient',
-    radialGradient: 'RadialGradient',
-    stop: 'Stop',
-    mask: 'Mask',
+    path: 'Path', g: 'G', circle: 'Circle', rect: 'Rect', line: 'Line',
+    polyline: 'Polyline', polygon: 'Polygon', ellipse: 'Ellipse', defs: 'Defs',
+    clipPath: 'ClipPath', linearGradient: 'LinearGradient',
+    radialGradient: 'RadialGradient', stop: 'Stop', mask: 'Mask',
 }
 
-function transformToRN(inner: string, duotoneAccent: string | null): { jsx: string; svgElements: Set<string> } {
-    const body = duotoneAccent ? `${duotoneAccent}\n${inner.trim()}` : inner.trim()
+function transformToRN(inner: string, duotoneAccent: string | null): {
+    jsx: string
+    svgElements: Set<string>
+    hasDuotone: boolean
+} {
     const svgElements = new Set<string>()
 
-    let transformed = body.replace(/fill-rule/g, 'fillRule')
+    let accentJsx = ''
+    if (duotoneAccent) {
+        accentJsx = duotoneAccent
+            .replace(/\bopacity="0\.5"/g, 'opacity={secondaryOpacity ?? 0.5}')
+            .replace(/\b(fill|stroke)="currentColor"/g, '$1={secondaryColor ?? color ?? "currentColor"}')
+    }
+
+    const fullBody = accentJsx ? `${accentJsx}\n${inner.trim()}` : inner.trim()
+
+    let transformed = fullBody
+        .replace(/fill-rule/g, 'fillRule')
         .replace(/clip-rule/g, 'clipRule')
         .replace(/clip-path/g, 'clipPath')
         .replace(/stroke-linecap/g, 'strokeLinecap')
@@ -38,7 +41,6 @@ function transformToRN(inner: string, duotoneAccent: string | null): { jsx: stri
     for (const [htmlElement, rnElement] of Object.entries(ELEMENT_MAP)) {
         const openTagRegex = new RegExp(`<${htmlElement}([\\s>])`, 'g')
         const closeTagRegex = new RegExp(`</${htmlElement}>`, 'g')
-
         if (openTagRegex.test(transformed) || closeTagRegex.test(transformed)) {
             svgElements.add(rnElement)
             transformed = transformed
@@ -47,13 +49,23 @@ function transformToRN(inner: string, duotoneAccent: string | null): { jsx: stri
         }
     }
 
-    return { jsx: transformed, svgElements }
+    return { jsx: transformed, svgElements, hasDuotone: !!duotoneAccent }
 }
 
 export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon
-    const { jsx, svgElements } = transformToRN(icon.inner, icon.duotoneAccentInner)
+    const { jsx, svgElements, hasDuotone } = transformToRN(
+        icon.inner,
+        icon.duotoneAccentInner,
+    )
     const svgImports = Array.from(svgElements).sort().join(', ')
+
+    const duotoneDestructure = hasDuotone
+        ? `    const { secondaryColor, secondaryOpacity, color, ...rest } = props
+`
+        : ''
+
+    const spreadProps = hasDuotone ? '{ ...rest, color }' : 'props'
 
     const content = `/* GENERATED FILE */
 import React from "react"
@@ -64,11 +76,13 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-export const ${icon.pascalName}: Icon = forwardRef<any, IconProps>((props, ref) => (
-    <IconBase ref={ref} {...props}>
-        ${jsx.trim()}
-    </IconBase>
-))
+export const ${icon.pascalName}: Icon = forwardRef<any, IconProps>((props, ref) => {
+${duotoneDestructure}    return (
+        <IconBase ref={ref} {...${spreadProps}}>
+            ${jsx.trim()}
+        </IconBase>
+    )
+})
 
 ${icon.pascalName}.displayName = "${icon.pascalName}"
 `

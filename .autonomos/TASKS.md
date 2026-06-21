@@ -72,7 +72,7 @@
 
 ## 🚀 Current Sprint
 
-- [/] **[POST-04]** Update demo apps with V3 features (SolarProvider, useSolar, CSS vars, duotone controls). Rename `react-perf-app` → `react-app`. Apps: svelte-app, solid-app, angular-app, react-app. Pattern already done on react-perf-app (now react-app). `Priority: 🟠` `Complexity: M`
-- [ ] **[POST-05]** Add V3 features to `@solar-icons/react-reactive`: `secondaryColor`/`secondaryOpacity` duotone props, `strokeWidth` prop for Linear/Broken/LineDuotone styles. The reactive package must support all the same props as the classic package. `Priority: 🟠` `Complexity: M`
-- [ ] **[POST-06]** Integrate V3 features into `@solar-icons/react-native`: `secondaryColor`/`secondaryOpacity`, `strokeWidth`. Solve the provider problem — CSS custom properties don't exist in React Native. Options: React Context-based provider with props propagation, or a different approach. `Priority: 🟠` `Complexity: L`
+- [x] **[POST-04]** Update demo apps with V3 features (SolarProvider, useSolar, CSS vars, duotone controls). Rename `react-perf-app` → `react-app`. `Priority: 🟠` `Complexity: M`
+- [x] **[POST-05]** Add V3 features to `@solar-icons/react-reactive`: `secondaryColor`/`secondaryOpacity` duotone props, `strokeWidth` prop for Linear/Broken/LineDuotone styles. `Priority: 🟠` `Complexity: M`
+- [x] **[POST-06]** Integrate V3 features into `@solar-icons/react-native`: `secondaryColor`/`secondaryOpacity`, `strokeWidth`. React Context-based SolarProvider with useState (no CSS vars in RN). Duotone accent paths use JSX expressions. `Priority: 🟠` `Complexity: L`
 - [ ] **[POST-07]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, duotone customization, strokeWidth). Remove obsolete content (vue-reactive, old package names). Prepare changelog and migration guide for publication. `Priority: 🟠` `Complexity: L`

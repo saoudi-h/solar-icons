@@ -3,21 +3,14 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { parseSvgs, forEachIcon } from '../../core/src/parser.ts'
 import type { ParsedIcon } from '../../core/src/parser.ts'
+import { forEachIcon, parseSvgs } from '../../core/src/parser.ts'
 import { reactNativeComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
-const WEIGHTS = [
-    'Bold',
-    'BoldDuotone',
-    'Broken',
-    'Linear',
-    'LineDuotone',
-    'Outline',
-] as const
+const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 const WEIGHT_KEBAB: Record<string, string> = {
     Bold: 'bold',
@@ -121,7 +114,8 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib"
-export { IconBase, IconStyle } from "./lib"
+export { IconBase, IconStyle, SolarProvider, useSolar } from "./lib"
+export type { SolarProviderProps } from "./lib"
 export * from "./icons/styled"
 `
 
@@ -154,7 +148,9 @@ const main = async () => {
     try {
         clean()
         const result = await parseSvgs()
-        console.log(pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`))
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        )
 
         const componentFiles = await forEachIcon(reactNativeComponentFile)
         const indexFiles = generateIndexes(result.icons)

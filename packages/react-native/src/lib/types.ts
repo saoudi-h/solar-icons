@@ -17,16 +17,34 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
     size?: number
 
     /**
-     * Icon color. Supports any valid React Native color.
+     * Icon color.
      * @default 'currentColor'
      */
     color?: string
+
+    /**
+     * Stroke width of the icon lines.
+     * @default 1.5
+     */
+    strokeWidth?: number | string
 
     /**
      * Mirror the icon horizontally
      * @default false
      */
     mirrored?: boolean
+
+    /**
+     * Secondary color for duotone icons (accent layer).
+     * Falls back to `color` if not set.
+     */
+    secondaryColor?: string
+
+    /**
+     * Opacity of the secondary/duotone layer.
+     * @default 0.5
+     */
+    secondaryOpacity?: number
 }
 
 export type Icon = React.ForwardRefExoticComponent<IconProps & React.RefAttributes<any>>

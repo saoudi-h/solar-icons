@@ -81,7 +81,7 @@ import type { IconProps, Icon } from "../../../lib/types"
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
 export const ${icon.pascalName}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <IconBase ref={ref} {...props}>
+    <IconBase ref={ref} {...props} iconName="${icon.kebabName}">
         ${body}
     </IconBase>
 ))
