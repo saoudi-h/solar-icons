@@ -53,7 +53,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             const globalContent = styleIcons
                 .map(icon => {
                     const globalName = toPascalCase(`${icon.name}-${style}`)
-                    return `export { ${icon.pascalName} as ${globalName} } from './${icon.name}';`
+                    return `export { ${icon.pascalName}Icon as ${globalName} } from './${icon.name}';`
                 })
                 .sort()
                 .join('\n')
@@ -76,7 +76,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
                 if (seenGlobal.has(globalName)) continue
                 seenGlobal.add(globalName)
                 rootGlobalLines.push(
-                    `export { ${icon.pascalName} as ${globalName} } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
+                    `export { ${icon.pascalName}Icon as ${globalName} } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
                 )
             }
         }
@@ -101,7 +101,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             })
             .map(
                 icon =>
-                    `export { ${icon.pascalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+                    `export { ${icon.pascalName}Icon } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
             )
             .join('\n')
 

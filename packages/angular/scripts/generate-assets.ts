@@ -3,8 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { parseSvgs, forEachIcon } from '../../core/src/parser.ts'
 import type { ParsedIcon } from '../../core/src/parser.ts'
+import { forEachIcon, parseSvgs } from '../../core/src/parser.ts'
 import { angularComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -47,7 +47,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             .map(icon => {
                 const globalName = toPascalCase(`${icon.name}-${icon.style}`)
                 const sk = WEIGHT_KEBAB[icon.style]
-                return `export { ${globalName} } from './${sk}/${icon.name}-${sk}';`
+                return `export { ${globalName}Icon } from './${sk}/${icon.name}-${sk}';`
             })
             .sort()
             .join('\n')
@@ -60,9 +60,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
     const categories = Object.keys(byCategory).sort()
 
-    const rootIndexContent = categories
-        .map(c => `export * from './${c}';`)
-        .join('\n')
+    const rootIndexContent = categories.map(c => `export * from './${c}';`).join('\n')
 
     files.push({
         path: path.join(ICONS_PATH, 'index.ts'),
@@ -70,7 +68,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     })
 
     const allNames = icons
-        .map(i => `'${toPascalCase(`${i.name}-${i.style}`)}'`)
+        .map(i => `'${toPascalCase(`${i.name}-${i.style}`)}Icon'`)
         .sort()
         .join(' | ')
 
@@ -121,7 +119,9 @@ const main = async () => {
     try {
         clean()
         const result = await parseSvgs()
-        console.log(pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`))
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        )
 
         const componentFiles = await forEachIcon(angularComponentFile)
         const indexFiles = generateIndexes(result.icons)

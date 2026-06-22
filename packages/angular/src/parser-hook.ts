@@ -154,7 +154,7 @@ import { IconBase } from '../../../lib/icon-base';
  * @category ${icon.category}
  */
 @Component({
-    selector: 'svg[solar${globalName}]',
+    selector: 'svg[solar${globalName}Icon]',
     template: \`@if (alt(); as title) { <title>{{ title }}</title> }${template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,
@@ -163,7 +163,7 @@ import { IconBase } from '../../../lib/icon-base';
         'class': 'solar-icon solar-${icon.kebabName}',
     },
 })
-export class ${globalName} extends IconBase {}
+export class ${globalName}Icon extends IconBase {}
 `
     return {
         path: `src/icons/${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`,

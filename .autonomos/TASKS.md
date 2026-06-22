@@ -76,3 +76,7 @@
 - [x] **[POST-05]** Add V3 features to `@solar-icons/react-reactive`: `secondaryColor`/`secondaryOpacity` duotone props, `strokeWidth` prop for Linear/Broken/LineDuotone styles. `Priority: 🟠` `Complexity: M`
 - [x] **[POST-06]** Integrate V3 features into `@solar-icons/react-native`: `secondaryColor`/`secondaryOpacity`, `strokeWidth`. React Context-based SolarProvider with useState (no CSS vars in RN). Duotone accent paths use JSX expressions. `Priority: 🟠` `Complexity: L`
 - [ ] **[POST-07]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, duotone customization, strokeWidth). Remove obsolete content (vue-reactive, old package names). Prepare changelog and migration guide for publication. `Priority: 🟠` `Complexity: L`
+- [/] **[POST-08]** Add `Icon` suffix to all component names (`HomeBold` → `HomeBoldIcon`). Breaking change. No aliases. Affects all 7 frameworks. `Priority: 🟠` `Complexity: M`
+- [ ] **[POST-09]** Update `@solar-icons/react-native` with full V3 features: Provider (React Context), strokeWidth, secondaryColor/secondaryOpacity, Icon suffix. `Priority: 🟠` `Complexity: M`
+- [ ] **[POST-10]** Review and update `@solar-icons/react-reactive`: verify it works with new Icon suffix, check if it needs any Provider/hook updates. `Priority: 🔵` `Complexity: S`
+- [ ] **[POST-11]** Create V3 migration guide: AI-assisted codemod instructions, breaking changes summary, package rename map. `Priority: 🔵` `Complexity: M`

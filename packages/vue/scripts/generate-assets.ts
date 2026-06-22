@@ -46,7 +46,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             const globalContent = styleIcons
                 .map(icon => {
                     const globalName = `${icon.pascalName}${style}`
-                    return `export { default as ${globalName} } from './${icon.name}';`
+                    return `export { default as ${globalName}Icon } from './${icon.name}';`
                 })
                 .sort()
                 .join('\n')
@@ -69,7 +69,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
                 if (seenGlobal.has(globalName)) continue
                 seenGlobal.add(globalName)
                 rootGlobalLines.push(
-                    `export { default as ${globalName} } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
+                    `export { default as ${globalName}Icon } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
                 )
             }
         }
@@ -95,7 +95,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             })
             .map(icon => {
                 const globalName = `${icon.pascalName}${weight}`
-                return `export { default as ${globalName} } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+                return `export { default as ${globalName}Icon } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
             })
             .join('\n')
 

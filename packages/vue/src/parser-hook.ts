@@ -172,7 +172,7 @@ import IconBase from '../../../lib/IconBase.vue'
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-const ${globalName} = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
+const ${globalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
     return h(IconBase, {
         ...attrs,
         ...props,
@@ -184,9 +184,9 @@ ${hChildren}
     })
 }
 
-${globalName}.displayName = '${globalName}'
+${globalName}Icon.displayName = '${globalName}Icon'
 
-export default ${globalName}
+export default ${globalName}Icon
 `
     return {
         path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.ts`,

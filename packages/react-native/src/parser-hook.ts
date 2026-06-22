@@ -76,7 +76,7 @@ import type { IconProps, Icon } from "../../../lib/types"
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-export const ${icon.pascalName}: Icon = forwardRef<any, IconProps>((props, ref) => {
+export const ${icon.pascalName}Icon: Icon = forwardRef<any, IconProps>((props, ref) => {
 ${duotoneDestructure}    return (
         <IconBase ref={ref} {...${spreadProps}}>
             ${jsx.trim()}
@@ -84,7 +84,7 @@ ${duotoneDestructure}    return (
     )
 })
 
-${icon.pascalName}.displayName = "${icon.pascalName}"
+${icon.pascalName}Icon.displayName = "${icon.pascalName}Icon"
 `
     return {
         path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.tsx`,
