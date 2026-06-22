@@ -13,7 +13,6 @@ function IconBase(allProps: IconProps): JSX.Element {
         'alt',
         'color',
         'size',
-        'mirrored',
         'strokeWidth',
         'secondaryColor',
         'secondaryOpacity',
@@ -47,7 +46,6 @@ function IconBase(allProps: IconProps): JSX.Element {
                 typeof local.size === 'number'
                     ? `${local.size}px`
                     : (local.size ?? 'var(--solar-icon-size, 24px)'),
-            transform: local.mirrored ? 'scale(-1, 1)' : 'var(--solar-icon-mirrored)',
         };
         if (local.secondaryColor) s['--solar-duotone-color'] = local.secondaryColor;
         if (local.secondaryOpacity != null)

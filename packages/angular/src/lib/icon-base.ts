@@ -16,7 +16,7 @@ import { Directive, computed, input } from '@angular/core'
         '[style.height]': 'computedHeight()',
         '[style.color]': 'computedColor()',
         '[attr.stroke-width]': 'computedStrokeWidth()',
-        '[style.transform]': 'mirrored() ? "scale(-1, 1)" : "var(--solar-icon-mirrored)"',
+
         '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
         '[style.--solar-duotone-color]': 'secondaryColor()',
         '[style.--solar-duotone-opacity]': 'secondaryOpacityStr()',
@@ -30,8 +30,6 @@ export abstract class IconBase {
     readonly size = input<string | number>()
 
     readonly strokeWidth = input<string | number>()
-
-    readonly mirrored = input<boolean>()
 
     readonly secondaryColor = input<string>()
 

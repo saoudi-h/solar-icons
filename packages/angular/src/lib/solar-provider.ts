@@ -18,7 +18,6 @@ export class SolarService {
     readonly strokeWidth = signal<number | undefined>(undefined)
     readonly duotoneColor = signal<string | undefined>(undefined)
     readonly duotoneOpacity = signal<number | undefined>(undefined)
-    readonly mirrored = signal<boolean | undefined>(undefined)
 
     registerWrapper(el: HTMLDivElement) {
         this.wrapperEl = el
@@ -51,11 +50,6 @@ export class SolarService {
         this.duotoneOpacity.set(val)
         this.wrapperEl?.style.setProperty('--solar-duotone-opacity', String(val))
     }
-
-    setMirrored(val: boolean) {
-        this.mirrored.set(val)
-        this.wrapperEl?.style.setProperty('--solar-icon-mirrored', val ? 'scale(-1, 1)' : 'none')
-    }
 }
 
 export function useSolar(): SolarService {
@@ -74,7 +68,6 @@ export class SolarProviderComponent {
     readonly strokeWidth = input<number>()
     readonly duotoneColor = input<string>()
     readonly duotoneOpacity = input<number>()
-    readonly mirrored = input<boolean>()
 
     private readonly wrapperRef = viewChild<ElementRef<HTMLDivElement>>('wrapper')
     private readonly solarService = inject(SolarService)
@@ -127,15 +120,6 @@ export class SolarProviderComponent {
             if (d != null) {
                 this.solarService.duotoneOpacity.set(d)
                 el?.style.setProperty('--solar-duotone-opacity', String(d))
-            }
-        })
-
-        effect(() => {
-            const m = this.mirrored()
-            const el = this.wrapperRef()?.nativeElement
-            if (m !== undefined) {
-                this.solarService.mirrored.set(m)
-                el?.style.setProperty('--solar-icon-mirrored', m ? 'scale(-1, 1)' : 'none')
             }
         })
     }

@@ -172,8 +172,6 @@
       }
       <div class="mt-4 pt-4 border-t border-slate-700/50 flex items-center gap-2">
         <label class="text-sm text-slate-300 cursor-pointer flex items-center gap-2">
-          <input type="checkbox" [ngModel]="mirrored()" (ngModelChange)="mirrored.set($event)" class="accent-amber-500" />
-          Mirror all icons
         </label>
       </div>
     </div>
@@ -185,7 +183,6 @@
       [strokeWidth]="strokeWidth()"
       [duotoneColor]="duotoneColor()"
       [duotoneOpacity]="duotoneOpacity()"
-      [mirrored]="mirrored()"
     >
     <div
       class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4"

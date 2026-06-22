@@ -63,7 +63,6 @@ export class App implements OnInit {
     protected readonly duotoneColor = signal('#60a5fa');
     protected readonly duotoneOpacity = signal(0.5);
     protected readonly strokeWidth = signal(1.5);
-    protected readonly mirrored = signal(false);
     protected readonly loadedCategories = signal(0);
     protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
 

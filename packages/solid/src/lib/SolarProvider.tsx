@@ -18,8 +18,6 @@ interface SolarState {
     setDuotoneColor: (val: string) => void;
     duotoneOpacity: Accessor<number | undefined>;
     setDuotoneOpacity: (val: number) => void;
-    mirrored: Accessor<boolean | undefined>;
-    setMirrored: (val: boolean) => void;
 }
 
 const SolarContext = createContext<SolarState>();
@@ -36,7 +34,6 @@ export interface SolarProviderProps {
     strokeWidth?: number;
     duotoneColor?: string;
     duotoneOpacity?: number;
-    mirrored?: boolean;
     children: JSX.Element;
 }
 
@@ -49,13 +46,11 @@ export function SolarProvider(props: SolarProviderProps) {
     const [strokeWidth, setStrokeWidthSignal] = createSignal(props.strokeWidth);
     const [duotoneColor, setDuotoneColorSignal] = createSignal(props.duotoneColor);
     const [duotoneOpacity, setDuotoneOpacitySignal] = createSignal(props.duotoneOpacity);
-    const [mirrored, setMirroredSignal] = createSignal(props.mirrored);
 
     const setSize = (val: string | number) => setSizeSignal(val);
     const setStrokeWidth = (val: number) => setStrokeWidthSignal(val);
     const setDuotoneColor = (val: string) => setDuotoneColorSignal(val);
     const setDuotoneOpacity = (val: number) => setDuotoneOpacitySignal(val);
-    const setMirrored = (val: boolean) => setMirroredSignal(val);
 
     createEffect(() => {
         const el = wrapperEl;
@@ -93,14 +88,6 @@ export function SolarProvider(props: SolarProviderProps) {
         if (d != null) el.style.setProperty('--solar-duotone-opacity', String(d));
     });
 
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
-        const m = mirrored();
-        if (m !== undefined)
-            el.style.setProperty('--solar-icon-mirrored', m ? 'scale(-1, 1)' : 'none');
-    });
-
     const state: SolarState = {
         color,
         setColor: setColorSignal,
@@ -112,8 +99,6 @@ export function SolarProvider(props: SolarProviderProps) {
         setDuotoneColor,
         duotoneOpacity,
         setDuotoneOpacity,
-        mirrored,
-        setMirrored,
     };
 
     return (

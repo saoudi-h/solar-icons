@@ -5,7 +5,6 @@
     let providerColor = $state('#f59e0b');
     let providerSize = $state(36);
     let providerStroke = $state(1.5);
-    let providerMirrored = $state(false);
 </script>
 
 <div>
@@ -41,19 +40,11 @@
         </div>
         <div class="space-y-1">
             <span class="text-xs text-slate-400">Mirror</span>
-            <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" bind:checked={providerMirrored} class="accent-amber-500" />
-                <span class="text-sm text-slate-300">{providerMirrored ? 'On' : 'Off'}</span>
-            </label>
+            <label class="flex items-center gap-2 cursor-pointer"> </label>
         </div>
     </div>
 
-    <SolarProvider
-        color={providerColor}
-        size={providerSize}
-        strokeWidth={providerStroke}
-        mirrored={providerMirrored}
-    >
+    <SolarProvider color={providerColor} size={providerSize} strokeWidth={providerStroke}>
         <div class="bg-slate-900 rounded-lg p-4">
             <ProviderDemoInner />
         </div>

@@ -32,7 +32,6 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
      * Mirror the icon horizontally
      * @default false
      */
-    mirrored?: boolean
 
     /**
      * Secondary color for duotone icons (accent layer).

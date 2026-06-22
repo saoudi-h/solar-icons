@@ -9,7 +9,6 @@
         strokeWidth?: number;
         duotoneColor?: string;
         duotoneOpacity?: number;
-        mirrored?: boolean;
         children: Snippet;
     }
 
@@ -19,7 +18,6 @@
         strokeWidth = $bindable(),
         duotoneColor = $bindable(),
         duotoneOpacity = $bindable(),
-        mirrored = $bindable(),
         children,
     }: Props = $props();
 
@@ -30,7 +28,6 @@
     const setStrokeWidth = (val: number) => (strokeWidth = val);
     const setDuotoneColor = (val: string) => (duotoneColor = val);
     const setDuotoneOpacity = (val: number) => (duotoneOpacity = val);
-    const setMirrored = (val: boolean) => (mirrored = val);
 
     const state = {
         get color() {
@@ -53,10 +50,6 @@
             return duotoneOpacity;
         },
         setDuotoneOpacity,
-        get mirrored() {
-            return mirrored;
-        },
-        setMirrored,
     };
 
     setContext(SOLAR_CONTEXT_KEY, state);
@@ -85,14 +78,6 @@
     $effect(() => {
         if (duotoneOpacity != null)
             wrapperEl?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity));
-    });
-
-    $effect(() => {
-        if (mirrored !== undefined)
-            wrapperEl?.style.setProperty(
-                '--solar-icon-mirrored',
-                mirrored ? 'scale(-1, 1)' : 'none'
-            );
     });
 </script>
 

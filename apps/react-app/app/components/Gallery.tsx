@@ -187,13 +187,10 @@ export default function Gallery() {
                 <label className="text-xs text-slate-400 flex items-center gap-2 cursor-pointer">
                     <input
                         type="checkbox"
-                        checked={solar.mirrored ?? false}
                         onChange={(e) =>
-                            solar.setMirrored(e.target.checked)
                         }
                         className="accent-amber-500"
                     />
-                    Mirror all icons
                 </label>
             </div>
 

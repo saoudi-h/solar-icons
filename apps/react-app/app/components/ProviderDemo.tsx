@@ -14,11 +14,8 @@ function ProviderDemoInner() {
                 <button className="px-3 py-1.5 bg-green-500 text-white rounded-lg text-sm" onClick={() => solar.setColor('#22c55e')}>Green</button>
                 <button className="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm" onClick={() => solar.setSize(48)}>48px</button>
                 <button className="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm" onClick={() => solar.setSize(24)}>24px</button>
-                <button className="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm" onClick={() => solar.setMirrored(!solar.mirrored)}>
-                    {solar.mirrored ? 'Unmirror' : 'Mirror'}
                 </button>
                 <span className="text-xs text-slate-500">
-                    size: {solar.size ?? 'default'} | mirrored: {solar.mirrored ? 'yes' : 'no'}
                 </span>
             </div>
             <div className="flex gap-4">
@@ -34,7 +31,6 @@ export default function ProviderDemo() {
     const [providerSize, setProviderSize] = useState(36)
     const [providerColor, setProviderColor] = useState('#f59e0b')
     const [providerStroke, setProviderStroke] = useState(1.5)
-    const [providerMirrored, setProviderMirrored] = useState(false)
 
     return (
         <div>
@@ -52,14 +48,10 @@ export default function ProviderDemo() {
                     <input type="range" min="0.5" max="3" step="0.1" value={providerStroke} onChange={(e) => setProviderStroke(parseFloat(e.target.value))} className="w-32 accent-amber-500" />
                 </div>
                 <div className="space-y-1">
-                    <label className="text-xs text-slate-400">Mirror</label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                        <input type="checkbox" checked={providerMirrored} onChange={(e) => setProviderMirrored(e.target.checked)} className="accent-amber-500" />
-                        <span className="text-sm text-slate-300">{providerMirrored ? 'On' : 'Off'}</span>
                     </label>
                 </div>
             </div>
-            <SolarProvider color={providerColor} size={providerSize} strokeWidth={providerStroke} mirrored={providerMirrored}>
                 <ProviderDemoInner />
             </SolarProvider>
         </div>

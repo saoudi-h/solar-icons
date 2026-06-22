@@ -23,7 +23,6 @@ const props = withDefaults(
         strokeWidth?: number
         duotoneColor?: string
         duotoneOpacity?: number
-        mirrored?: boolean
     }>(),
     {},
 )
@@ -35,14 +34,12 @@ const size = ref(props.size)
 const strokeWidth = ref(props.strokeWidth)
 const duotoneColor = ref(props.duotoneColor)
 const duotoneOpacity = ref(props.duotoneOpacity)
-const mirrored = ref(props.mirrored)
 
 const setColor = (val: string) => { color.value = val }
 const setSize = (val: string | number) => { size.value = val }
 const setStrokeWidth = (val: number) => { strokeWidth.value = val }
 const setDuotoneColor = (val: string) => { duotoneColor.value = val }
 const setDuotoneOpacity = (val: number) => { duotoneOpacity.value = val }
-const setMirrored = (val: boolean) => { mirrored.value = val }
 
 const state: SolarState = {
     color, setColor,
@@ -50,7 +47,6 @@ const state: SolarState = {
     strokeWidth, setStrokeWidth,
     duotoneColor, setDuotoneColor,
     duotoneOpacity, setDuotoneOpacity,
-    mirrored, setMirrored,
 }
 
 provide(SOLAR_CONTEXT_KEY, state)
@@ -81,13 +77,6 @@ watch(duotoneOpacity, (d) => {
         wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(d))
 }, { immediate: true })
 
-watch(mirrored, (m) => {
-    if (m !== undefined)
-        wrapperEl.value?.style.setProperty(
-            '--solar-icon-mirrored',
-            m ? 'scale(-1, 1)' : 'none',
-        )
-}, { immediate: true })
 </script>
 
 <template>

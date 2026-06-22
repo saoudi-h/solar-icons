@@ -8,7 +8,6 @@ const IconBase = forwardRef<any, IconProps>((props, ref) => {
         color: propColor,
         size: propSize,
         strokeWidth: propStrokeWidth,
-        mirrored = false,
         children,
         ...restProps
     } = props

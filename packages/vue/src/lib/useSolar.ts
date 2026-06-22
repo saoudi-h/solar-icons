@@ -12,8 +12,6 @@ interface SolarState {
     setDuotoneColor: (val: string) => void
     duotoneOpacity: Ref<number | undefined>
     setDuotoneOpacity: (val: number) => void
-    mirrored: Ref<boolean | undefined>
-    setMirrored: (val: boolean) => void
 }
 
 export function useSolar(): SolarState {

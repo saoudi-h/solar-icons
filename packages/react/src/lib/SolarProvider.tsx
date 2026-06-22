@@ -13,8 +13,6 @@ interface SolarState {
     setDuotoneColor: (val: string) => void
     duotoneOpacity: number | undefined
     setDuotoneOpacity: (val: number) => void
-    mirrored: boolean | undefined
-    setMirrored: (val: boolean) => void
 }
 
 const SolarContext = createContext<SolarState | null>(null)
@@ -31,7 +29,6 @@ export interface SolarProviderProps {
     strokeWidth?: number
     duotoneColor?: string
     duotoneOpacity?: number
-    mirrored?: boolean
     children: ReactNode
 }
 
@@ -41,7 +38,6 @@ export function SolarProvider({
     strokeWidth: initialStrokeWidth,
     duotoneColor: initialDuotoneColor,
     duotoneOpacity: initialDuotoneOpacity,
-    mirrored: initialMirrored,
     children,
 }: SolarProviderProps) {
     const ref = useRef<HTMLDivElement>(null)
@@ -50,7 +46,6 @@ export function SolarProvider({
     const [strokeWidth, setStrokeWidth] = useState(initialStrokeWidth)
     const [duotoneColor, setDuotoneColor] = useState(initialDuotoneColor)
     const [duotoneOpacity, setDuotoneOpacity] = useState(initialDuotoneOpacity)
-    const [mirrored, setMirrored] = useState(initialMirrored)
 
     useEffect(() => {
         if (color !== undefined) ref.current?.style.setProperty('--solar-icon-color', color)
@@ -67,19 +62,13 @@ export function SolarProvider({
     useEffect(() => {
         if (duotoneOpacity != null) ref.current?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
     }, [duotoneOpacity])
-    useEffect(() => {
-        if (mirrored !== undefined)
-            ref.current?.style.setProperty('--solar-icon-mirrored', mirrored ? 'scale(-1, 1)' : 'none')
-    }, [mirrored])
-
     const state = useMemo<SolarState>(() => ({
         color, setColor,
         size, setSize,
         strokeWidth, setStrokeWidth,
         duotoneColor, setDuotoneColor,
         duotoneOpacity, setDuotoneOpacity,
-        mirrored, setMirrored,
-    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity, mirrored])
+    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity])
 
     return (
         <SolarContext.Provider value={state}>

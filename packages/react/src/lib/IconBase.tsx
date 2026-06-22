@@ -16,7 +16,6 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>(
             alt,
             color,
             size,
-            mirrored,
             strokeWidth,
             secondaryColor,
             secondaryOpacity,
@@ -38,9 +37,6 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>(
             color: color ?? 'var(--solar-icon-color, currentColor)',
             width: size ?? 'var(--solar-icon-size, 24px)',
             height: size ?? 'var(--solar-icon-size, 24px)',
-            transform: mirrored
-                ? 'scale(-1, 1)'
-                : 'var(--solar-icon-mirrored)',
             ...(secondaryColor ? { '--solar-duotone-color': secondaryColor } : {}),
             ...(secondaryOpacity != null ? { '--solar-duotone-opacity': String(secondaryOpacity) } : {}),
             ...userStyle,

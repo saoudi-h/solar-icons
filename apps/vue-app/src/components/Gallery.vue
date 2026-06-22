@@ -86,8 +86,6 @@ const filteredIcons = computed(() => {
         </div>
 
         <label class="flex items-center gap-2 text-xs cursor-pointer">
-            <input type="checkbox" :checked="solar.mirrored.value ?? false" @change="solar.setMirrored(($event.target as HTMLInputElement).checked)" />
-            Mirror all icons
         </label>
 
         <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-3">

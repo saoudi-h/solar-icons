@@ -163,13 +163,7 @@
 
     <div class="flex items-center gap-2">
         <label class="text-xs text-slate-400 flex items-center gap-2 cursor-pointer">
-            <input
-                type="checkbox"
-                checked={solar.mirrored ?? false}
-                onchange={(e) => solar.setMirrored(e.currentTarget.checked)}
-                class="accent-amber-500"
-            />
-            Mirror all icons
+            <input type="checkbox" class="accent-amber-500" />
         </label>
     </div>
 

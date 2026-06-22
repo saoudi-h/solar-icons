@@ -7,7 +7,6 @@
         color?: string;
         size?: string | number;
         strokeWidth?: string | number;
-        mirrored?: boolean;
         secondaryColor?: string;
         secondaryOpacity?: number;
         iconName?: string;
@@ -24,7 +23,6 @@
         color,
         size,
         strokeWidth,
-        mirrored,
         secondaryColor,
         secondaryOpacity,
         iconName,
@@ -51,7 +49,6 @@
             secondaryOpacity != null
                 ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
                 : null,
-            `transform: ${mirrored ? 'scale(-1, 1)' : 'var(--solar-icon-mirrored)'}`,
             userStyle ?? null,
         ]
             .filter(Boolean)

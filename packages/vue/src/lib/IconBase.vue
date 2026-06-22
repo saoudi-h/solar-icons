@@ -6,7 +6,6 @@ interface Props {
     color?: string
     size?: string | number
     strokeWidth?: string | number
-    mirrored?: boolean
     secondaryColor?: string
     secondaryOpacity?: number
     iconName?: string
@@ -35,9 +34,6 @@ const baseStyle = computed(() => {
     if (props.secondaryColor) s['--solar-duotone-color'] = props.secondaryColor
     if (props.secondaryOpacity != null)
         s['--solar-duotone-opacity'] = String(props.secondaryOpacity)
-    s.transform = props.mirrored
-        ? 'scale(-1, 1)'
-        : 'var(--solar-icon-mirrored)'
     return s
 })
 
