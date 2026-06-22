@@ -11,6 +11,8 @@ interface SolarState {
     setDuotoneColor(val: string): void;
     readonly duotoneOpacity: number | undefined;
     setDuotoneOpacity(val: number): void;
+    readonly mirrored: boolean | undefined;
+    setMirrored(val: boolean): void;
 }
 
 export const SOLAR_CONTEXT_KEY = Symbol('solar');

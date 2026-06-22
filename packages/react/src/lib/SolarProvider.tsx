@@ -13,6 +13,8 @@ interface SolarState {
     setDuotoneColor: (val: string) => void
     duotoneOpacity: number | undefined
     setDuotoneOpacity: (val: number) => void
+    mirrored: boolean | undefined
+    setMirrored: (val: boolean) => void
 }
 
 const SolarContext = createContext<SolarState | null>(null)
@@ -29,6 +31,7 @@ export interface SolarProviderProps {
     strokeWidth?: number
     duotoneColor?: string
     duotoneOpacity?: number
+    mirrored?: boolean
     children: ReactNode
 }
 
@@ -38,6 +41,7 @@ export function SolarProvider({
     strokeWidth: initialStrokeWidth,
     duotoneColor: initialDuotoneColor,
     duotoneOpacity: initialDuotoneOpacity,
+    mirrored: initialMirrored,
     children,
 }: SolarProviderProps) {
     const ref = useRef<HTMLDivElement>(null)
@@ -46,38 +50,27 @@ export function SolarProvider({
     const [strokeWidth, setStrokeWidth] = useState(initialStrokeWidth)
     const [duotoneColor, setDuotoneColor] = useState(initialDuotoneColor)
     const [duotoneOpacity, setDuotoneOpacity] = useState(initialDuotoneOpacity)
+    const [mirrored, setMirrored] = useState(initialMirrored)
 
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        if (color !== undefined) el.style.setProperty('--solar-icon-color', color)
+        if (color !== undefined) ref.current?.style.setProperty('--solar-icon-color', color)
     }, [color])
-
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        if (size != null)
-            el.style.setProperty('--solar-icon-size', typeof size === 'number' ? `${size}px` : size)
+        if (size != null) ref.current?.style.setProperty('--solar-icon-size', typeof size === 'number' ? `${size}px` : size)
     }, [size])
-
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        if (strokeWidth != null) el.style.setProperty('--solar-stroke-width', String(strokeWidth))
+        if (strokeWidth != null) ref.current?.style.setProperty('--solar-stroke-width', String(strokeWidth))
     }, [strokeWidth])
-
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        if (duotoneColor) el.style.setProperty('--solar-duotone-color', duotoneColor)
+        if (duotoneColor) ref.current?.style.setProperty('--solar-duotone-color', duotoneColor)
     }, [duotoneColor])
-
     useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        if (duotoneOpacity != null)
-            el.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
+        if (duotoneOpacity != null) ref.current?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
     }, [duotoneOpacity])
+    useEffect(() => {
+        if (mirrored !== undefined)
+            ref.current?.style.setProperty('--solar-icon-mirrored', mirrored ? 'scale(-1, 1)' : 'none')
+    }, [mirrored])
 
     const state = useMemo<SolarState>(() => ({
         color, setColor,
@@ -85,13 +78,12 @@ export function SolarProvider({
         strokeWidth, setStrokeWidth,
         duotoneColor, setDuotoneColor,
         duotoneOpacity, setDuotoneOpacity,
-    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity])
+        mirrored, setMirrored,
+    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity, mirrored])
 
     return (
         <SolarContext.Provider value={state}>
-            <div ref={ref}>
-                {children}
-            </div>
+            <div ref={ref}>{children}</div>
         </SolarContext.Provider>
     )
 }

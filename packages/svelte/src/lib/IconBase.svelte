@@ -24,7 +24,7 @@
         color,
         size,
         strokeWidth,
-        mirrored = false,
+        mirrored,
         secondaryColor,
         secondaryOpacity,
         iconName,
@@ -51,6 +51,7 @@
             secondaryOpacity != null
                 ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
                 : null,
+            `transform: ${mirrored ? 'scale(-1, 1)' : 'var(--solar-icon-mirrored)'}`,
             userStyle ?? null,
         ]
             .filter(Boolean)
@@ -58,7 +59,6 @@
     );
 
     const computedStrokeWidth = $derived(strokeWidth ?? 'var(--solar-stroke-width, 1.5)');
-    const transformValue = $derived(mirrored ? 'scale(-1, 1)' : undefined);
 </script>
 
 <svg
@@ -67,7 +67,6 @@
     style={baseStyle}
     fill="none"
     viewBox="0 0 24 24"
-    transform={transformValue}
     stroke-width={computedStrokeWidth}
     aria-hidden={isAccessible ? undefined : 'true'}
     {...restProps}

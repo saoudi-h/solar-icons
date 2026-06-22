@@ -12,9 +12,7 @@ interface Props {
     iconName?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
-    mirrored: false,
-})
+const props = withDefaults(defineProps<Props>(), {})
 
 const SOLAR_CLASS = 'solar'
 
@@ -37,15 +35,14 @@ const baseStyle = computed(() => {
     if (props.secondaryColor) s['--solar-duotone-color'] = props.secondaryColor
     if (props.secondaryOpacity != null)
         s['--solar-duotone-opacity'] = String(props.secondaryOpacity)
+    s.transform = props.mirrored
+        ? 'scale(-1, 1)'
+        : 'var(--solar-icon-mirrored)'
     return s
 })
 
 const svgStrokeWidth = computed(
     () => props.strokeWidth ?? 'var(--solar-stroke-width, 1.5)',
-)
-
-const transform = computed(() =>
-    props.mirrored ? 'scale(-1, 1)' : undefined,
 )
 </script>
 
@@ -56,7 +53,6 @@ const transform = computed(() =>
         :style="baseStyle"
         fill="none"
         viewBox="0 0 24 24"
-        :transform="transform"
         :stroke-width="svgStrokeWidth"
         :aria-hidden="isAccessible ? undefined : 'true'"
         v-bind="$attrs"

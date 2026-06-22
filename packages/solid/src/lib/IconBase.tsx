@@ -4,10 +4,7 @@ import type { IconProps } from './types';
 const SOLAR_CLASS = 'solar';
 
 function hasA11yProp(props: Record<string, unknown>): boolean {
-    return (
-        props['aria-label'] !== undefined ||
-        props['title'] !== undefined
-    );
+    return props['aria-label'] !== undefined || props['title'] !== undefined;
 }
 
 function IconBase(allProps: IconProps): JSX.Element {
@@ -42,19 +39,25 @@ function IconBase(allProps: IconProps): JSX.Element {
     const baseStyle = () => {
         const s: Record<string, string | undefined> = {
             color: local.color ?? 'var(--solar-icon-color, currentColor)',
-            width: typeof local.size === 'number' ? `${local.size}px` : local.size ?? 'var(--solar-icon-size, 24px)',
-            height: typeof local.size === 'number' ? `${local.size}px` : local.size ?? 'var(--solar-icon-size, 24px)',
+            width:
+                typeof local.size === 'number'
+                    ? `${local.size}px`
+                    : (local.size ?? 'var(--solar-icon-size, 24px)'),
+            height:
+                typeof local.size === 'number'
+                    ? `${local.size}px`
+                    : (local.size ?? 'var(--solar-icon-size, 24px)'),
+            transform: local.mirrored ? 'scale(-1, 1)' : 'var(--solar-icon-mirrored)',
         };
         if (local.secondaryColor) s['--solar-duotone-color'] = local.secondaryColor;
-        if (local.secondaryOpacity != null) s['--solar-duotone-opacity'] = String(local.secondaryOpacity);
+        if (local.secondaryOpacity != null)
+            s['--solar-duotone-opacity'] = String(local.secondaryOpacity);
         return { ...s, ...userStyle() };
     };
 
     const strokeW = () => local.strokeWidth ?? 'var(--solar-stroke-width, 1.5)';
 
-    const transform = () => local.mirrored ? 'scale(-1, 1)' : undefined;
-
-    const ariaHidden = () => isAccessible() ? undefined : 'true';
+    const ariaHidden = () => (isAccessible() ? undefined : 'true');
 
     return (
         <svg
@@ -63,7 +66,6 @@ function IconBase(allProps: IconProps): JSX.Element {
             style={baseStyle()}
             fill="none"
             viewBox="0 0 24 24"
-            transform={transform()}
             stroke-width={strokeW()}
             aria-hidden={ariaHidden()}
             {...others}
