@@ -40,31 +40,23 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
 
 function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     const files: FileDefinition[] = []
-    const byCategory = groupBy(icons, i => i.category)
 
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const exports = catIcons
-            .map(icon => {
-                const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-                const sk = WEIGHT_KEBAB[icon.style]
-                return `export { ${globalName}Icon } from './${sk}/${icon.name}-${sk}';`
-            })
-            .sort()
-            .join('\n')
-
-        files.push({
-            path: path.join(ICONS_PATH, category, 'index.ts'),
-            content: `${exports}\n`,
-        })
+    const seenStyled = new Set<string>()
+    const styledLines: string[] = []
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`)
+        if (seenStyled.has(globalName)) continue
+        seenStyled.add(globalName)
+        const sk = WEIGHT_KEBAB[icon.style]
+        styledLines.push(
+            `export { ${globalName}Icon } from './${icon.category}/${sk}/${icon.name}-${sk}';`
+        )
     }
-
-    const categories = Object.keys(byCategory).sort()
-
-    const rootIndexContent = categories.map(c => `export * from './${c}';`).join('\n')
+    styledLines.sort()
 
     files.push({
-        path: path.join(ICONS_PATH, 'index.ts'),
-        content: `${rootIndexContent}\n`,
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: styledLines.join('\n') + '\n',
     })
 
     const allNames = icons
@@ -87,7 +79,7 @@ export type SolarIconName = ${allNames};
 
     const mainEntryContent = `/* GENERATED FILE */
 export * from './lib';
-export * from './icons';
+export * from './icons/styled';
 `
 
     files.push({

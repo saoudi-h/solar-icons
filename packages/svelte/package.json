@@ -47,16 +47,6 @@
             "svelte": "./dist/lib/*",
             "default": "./dist/lib/*.js"
         },
-        "./category": {
-            "types": "./dist/icons/index.d.ts",
-            "svelte": "./dist/icons/index.js",
-            "default": "./dist/icons/index.js"
-        },
-        "./category/*": {
-            "types": "./dist/icons/*.d.ts",
-            "svelte": "./dist/icons/*",
-            "default": "./dist/icons/*.js"
-        },
         "./*": {
             "types": "./dist/icons/style/*.d.ts",
             "svelte": "./dist/icons/style/*.js",

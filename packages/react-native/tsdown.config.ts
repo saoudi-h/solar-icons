@@ -61,11 +61,6 @@ const config: UserConfig = defineConfig({
                 import: './dist/icons/style/*.mjs',
             }
 
-            pkg['./category/*'] = {
-                types: './dist/icons/*.d.mts',
-                import: './dist/icons/*.mjs',
-            }
-
             return pkg
         },
     },

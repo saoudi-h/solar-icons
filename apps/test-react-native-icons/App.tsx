@@ -32,9 +32,6 @@ import {
 // Provider + hook
 import { SolarProvider, useSolar } from '@solar-icons/react-native'
 
-// Granular import
-import { AltArrowLeftIcon } from '@solar-icons/react-native/category/arrows/Bold/AltArrowLeft'
-
 // --- Section component ---
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
@@ -280,21 +277,16 @@ function ImportTests() {
         <View>
             <Text style={styles.subtitle}>Import patterns</Text>
             <View style={styles.iconRow}>
-                <AltArrowLeftIcon size={24} color="#64748b" />
                 <HomeBoldGlobalIcon size={24} color="#64748b" />
                 <UserBoldGlobalIcon size={24} color="#64748b" />
             </View>
             <Text style={styles.code}>
-                Style-bundle: import {'{ HomeBoldIcon }'} from
-                '@solar-icons/react-native/Bold'
-            </Text>
-            <Text style={styles.code}>
-                Global: import {'{ HomeBoldIcon }'} from
+                Root: import {'{ HomeBoldIcon }'} from
                 '@solar-icons/react-native'
             </Text>
             <Text style={styles.code}>
-                Granular: import {'{ AltArrowLeftIcon }'} from
-                '@solar-icons/react-native/category/...'
+                Style: import {'{ HomeIcon }'} from
+                '@solar-icons/react-native/bold'
             </Text>
         </View>
     )

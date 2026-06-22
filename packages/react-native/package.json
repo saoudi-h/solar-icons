@@ -45,10 +45,6 @@
         "./*": {
             "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"
-        },
-        "./category/*": {
-            "types": "./dist/icons/*.d.mts",
-            "import": "./dist/icons/*.mjs"
         }
     },
     "devDependencies": {
