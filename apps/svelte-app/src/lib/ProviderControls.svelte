@@ -5,8 +5,8 @@
     const solar = useSolar();
 </script>
 
-<div class="flex flex-wrap gap-4 items-center">
-    <div class="flex gap-2">
+<div class="space-y-2">
+    <div class="flex flex-wrap gap-2 items-center">
         <button
             class="px-3 py-1.5 bg-red-500 text-white rounded-lg text-sm font-medium"
             onclick={() => solar.setColor('#ef4444')}>Red</button
@@ -27,8 +27,11 @@
             class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"
             onclick={() => solar.setSize(24)}>24px</button
         >
+        <span class="text-xs text-slate-500">
+            size: {solar.size ?? 'default'} | color: {solar.color ?? 'default'}
+        </span>
     </div>
-    <div class="flex gap-4 ml-auto">
+    <div class="flex gap-4">
         <Bold.Home />
         <Bold.Star color="#ef4444" />
         <Bold.Heart />

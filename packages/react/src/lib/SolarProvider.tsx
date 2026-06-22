@@ -1,41 +1,26 @@
 'use client'
 
-import { createContext, useContext, useRef, useEffect, type ReactNode, useCallback } from 'react'
+import { createContext, useContext, useRef, useEffect, useState, type ReactNode, useMemo } from 'react'
 
-interface SolarRef {
-    setProperty: (prop: string, value: string) => void
-    element: HTMLDivElement | null
+interface SolarState {
+    color: string | undefined
+    setColor: (val: string) => void
+    size: string | number | undefined
+    setSize: (val: string | number) => void
+    strokeWidth: number | undefined
+    setStrokeWidth: (val: number) => void
+    duotoneColor: string | undefined
+    setDuotoneColor: (val: string) => void
+    duotoneOpacity: number | undefined
+    setDuotoneOpacity: (val: number) => void
 }
 
-const SolarContext = createContext<SolarRef | null>(null)
+const SolarContext = createContext<SolarState | null>(null)
 
 export function useSolar() {
     const ctx = useContext(SolarContext)
     if (!ctx) throw new Error('useSolar() must be used inside a <SolarProvider>')
-
-    const { setProperty } = ctx
-
-    return {
-        setColor: useCallback((val: string) => setProperty('--solar-icon-color', val), [setProperty]),
-        setSize: useCallback(
-            (val: string | number) => {
-                setProperty('--solar-icon-size', typeof val === 'number' ? `${val}px` : val)
-            },
-            [setProperty],
-        ),
-        setStrokeWidth: useCallback(
-            (val: number) => setProperty('--solar-stroke-width', String(val)),
-            [setProperty],
-        ),
-        setDuotoneColor: useCallback(
-            (val: string) => setProperty('--solar-duotone-color', val),
-            [setProperty],
-        ),
-        setDuotoneOpacity: useCallback(
-            (val: number) => setProperty('--solar-duotone-opacity', String(val)),
-            [setProperty],
-        ),
-    }
+    return ctx
 }
 
 export interface SolarProviderProps {
@@ -48,21 +33,19 @@ export interface SolarProviderProps {
 }
 
 export function SolarProvider({
-    color,
-    size,
-    strokeWidth,
-    duotoneColor,
-    duotoneOpacity,
+    color: initialColor,
+    size: initialSize,
+    strokeWidth: initialStrokeWidth,
+    duotoneColor: initialDuotoneColor,
+    duotoneOpacity: initialDuotoneOpacity,
     children,
 }: SolarProviderProps) {
     const ref = useRef<HTMLDivElement>(null)
-
-    const ctxRef = useRef<SolarRef>({
-        setProperty: (prop, value) => {
-            ref.current?.style.setProperty(prop, value)
-        },
-        element: ref.current,
-    })
+    const [color, setColor] = useState(initialColor)
+    const [size, setSize] = useState(initialSize)
+    const [strokeWidth, setStrokeWidth] = useState(initialStrokeWidth)
+    const [duotoneColor, setDuotoneColor] = useState(initialDuotoneColor)
+    const [duotoneOpacity, setDuotoneOpacity] = useState(initialDuotoneOpacity)
 
     useEffect(() => {
         const el = ref.current
@@ -96,8 +79,16 @@ export function SolarProvider({
             el.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
     }, [duotoneOpacity])
 
+    const state = useMemo<SolarState>(() => ({
+        color, setColor,
+        size, setSize,
+        strokeWidth, setStrokeWidth,
+        duotoneColor, setDuotoneColor,
+        duotoneOpacity, setDuotoneOpacity,
+    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity])
+
     return (
-        <SolarContext.Provider value={ctxRef.current}>
+        <SolarContext.Provider value={state}>
             <div ref={ref}>
                 {children}
             </div>

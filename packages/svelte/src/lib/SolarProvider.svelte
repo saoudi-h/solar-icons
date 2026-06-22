@@ -1,7 +1,6 @@
 <script lang="ts">
     import { setContext } from 'svelte';
     import type { Snippet } from 'svelte';
-    import { SOLAR_CONTEXT_KEY } from './useSolar';
 
     interface Props {
         color?: string;
@@ -12,30 +11,57 @@
         children: Snippet;
     }
 
-    let { color, size, strokeWidth, duotoneColor, duotoneOpacity, children }: Props = $props();
+    let {
+        color = $bindable(),
+        size = $bindable(),
+        strokeWidth = $bindable(),
+        duotoneColor = $bindable(),
+        duotoneOpacity = $bindable(),
+        children,
+    }: Props = $props();
 
     let wrapperEl: HTMLDivElement | undefined;
 
-    const solarRef = {
-        setProperty: (prop: string, value: string) => {
-            wrapperEl?.style.setProperty(prop, value);
+    const setColor = (val: string) => (color = val);
+    const setSize = (val: string | number) => (size = val);
+    const setStrokeWidth = (val: number) => (strokeWidth = val);
+    const setDuotoneColor = (val: string) => (duotoneColor = val);
+    const setDuotoneOpacity = (val: number) => (duotoneOpacity = val);
+
+    const state = {
+        get color() {
+            return color;
         },
-        get element() {
-            return wrapperEl ?? null;
+        setColor,
+        get size() {
+            return size;
         },
+        setSize,
+        get strokeWidth() {
+            return strokeWidth;
+        },
+        setStrokeWidth,
+        get duotoneColor() {
+            return duotoneColor;
+        },
+        setDuotoneColor,
+        get duotoneOpacity() {
+            return duotoneOpacity;
+        },
+        setDuotoneOpacity,
     };
 
-    setContext(SOLAR_CONTEXT_KEY, solarRef);
+    setContext('solar', state);
 
     $effect(() => {
-        if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', color);
+        if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', String(color));
     });
 
     $effect(() => {
         if (size != null)
             wrapperEl?.style.setProperty(
                 '--solar-icon-size',
-                typeof size === 'number' ? `${size}px` : size
+                typeof size === 'number' ? `${size}px` : String(size)
             );
     });
 

@@ -4,6 +4,7 @@ import {
     inject,
     Injectable,
     input,
+    signal,
     viewChild,
     type ElementRef,
 } from '@angular/core'
@@ -12,15 +13,23 @@ import {
 export class SolarService {
     private wrapperEl: HTMLDivElement | null = null
 
+    readonly color = signal<string | undefined>(undefined)
+    readonly size = signal<string | number | undefined>(undefined)
+    readonly strokeWidth = signal<number | undefined>(undefined)
+    readonly duotoneColor = signal<string | undefined>(undefined)
+    readonly duotoneOpacity = signal<number | undefined>(undefined)
+
     registerWrapper(el: HTMLDivElement) {
         this.wrapperEl = el
     }
 
     setColor(val: string) {
+        this.color.set(val)
         this.wrapperEl?.style.setProperty('--solar-icon-color', val)
     }
 
     setSize(val: string | number) {
+        this.size.set(val)
         this.wrapperEl?.style.setProperty(
             '--solar-icon-size',
             typeof val === 'number' ? `${val}px` : val
@@ -28,14 +37,17 @@ export class SolarService {
     }
 
     setStrokeWidth(val: number) {
+        this.strokeWidth.set(val)
         this.wrapperEl?.style.setProperty('--solar-stroke-width', String(val))
     }
 
     setDuotoneColor(val: string) {
+        this.duotoneColor.set(val)
         this.wrapperEl?.style.setProperty('--solar-duotone-color', val)
     }
 
     setDuotoneOpacity(val: number) {
+        this.duotoneOpacity.set(val)
         this.wrapperEl?.style.setProperty('--solar-duotone-opacity', String(val))
     }
 }
@@ -60,10 +72,6 @@ export class SolarProviderComponent {
     private readonly wrapperRef = viewChild<ElementRef<HTMLDivElement>>('wrapper')
     private readonly solarService = inject(SolarService)
 
-    private get el(): HTMLDivElement | undefined {
-        return this.wrapperRef()?.nativeElement
-    }
-
     constructor() {
         effect(() => {
             const el = this.wrapperRef()?.nativeElement
@@ -72,31 +80,47 @@ export class SolarProviderComponent {
 
         effect(() => {
             const c = this.color()
-            if (c != null) this.el?.style.setProperty('--solar-icon-color', c)
+            const el = this.wrapperRef()?.nativeElement
+            if (c != null) {
+                this.solarService.color.set(c)
+                el?.style.setProperty('--solar-icon-color', c)
+            }
         })
 
         effect(() => {
             const s = this.size()
-            if (s != null)
-                this.el?.style.setProperty(
-                    '--solar-icon-size',
-                    typeof s === 'number' ? `${s}px` : s
-                )
+            const el = this.wrapperRef()?.nativeElement
+            if (s != null) {
+                this.solarService.size.set(s)
+                el?.style.setProperty('--solar-icon-size', typeof s === 'number' ? `${s}px` : s)
+            }
         })
 
         effect(() => {
             const sw = this.strokeWidth()
-            if (sw != null) this.el?.style.setProperty('--solar-stroke-width', String(sw))
+            const el = this.wrapperRef()?.nativeElement
+            if (sw != null) {
+                this.solarService.strokeWidth.set(sw)
+                el?.style.setProperty('--solar-stroke-width', String(sw))
+            }
         })
 
         effect(() => {
             const dc = this.duotoneColor()
-            if (dc) this.el?.style.setProperty('--solar-duotone-color', dc)
+            const el = this.wrapperRef()?.nativeElement
+            if (dc) {
+                this.solarService.duotoneColor.set(dc)
+                el?.style.setProperty('--solar-duotone-color', dc)
+            }
         })
 
         effect(() => {
             const d = this.duotoneOpacity()
-            if (d != null) this.el?.style.setProperty('--solar-duotone-opacity', String(d))
+            const el = this.wrapperRef()?.nativeElement
+            if (d != null) {
+                this.solarService.duotoneOpacity.set(d)
+                el?.style.setProperty('--solar-duotone-opacity', String(d))
+            }
         })
     }
 }

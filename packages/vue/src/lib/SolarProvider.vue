@@ -1,10 +1,19 @@
 <script setup lang="ts">
 import { ref, provide, watch } from 'vue'
+import type { Ref } from 'vue'
 import { SOLAR_CONTEXT_KEY } from './context-key'
 
-interface SolarRef {
-    setProperty: (prop: string, value: string) => void
-    element: HTMLDivElement | null
+interface SolarState {
+    color: Ref<string | undefined>
+    setColor: (val: string) => void
+    size: Ref<string | number | undefined>
+    setSize: (val: string | number) => void
+    strokeWidth: Ref<number | undefined>
+    setStrokeWidth: (val: number) => void
+    duotoneColor: Ref<string | undefined>
+    setDuotoneColor: (val: string) => void
+    duotoneOpacity: Ref<number | undefined>
+    setDuotoneOpacity: (val: number) => void
 }
 
 const props = withDefaults(
@@ -20,62 +29,53 @@ const props = withDefaults(
 
 const wrapperEl = ref<HTMLDivElement>()
 
-const solarRef: SolarRef = {
-    setProperty: (prop, value) => {
-        wrapperEl.value?.style.setProperty(prop, value)
-    },
-    get element() {
-        return wrapperEl.value ?? null
-    },
+const color = ref(props.color)
+const size = ref(props.size)
+const strokeWidth = ref(props.strokeWidth)
+const duotoneColor = ref(props.duotoneColor)
+const duotoneOpacity = ref(props.duotoneOpacity)
+
+const setColor = (val: string) => { color.value = val }
+const setSize = (val: string | number) => { size.value = val }
+const setStrokeWidth = (val: number) => { strokeWidth.value = val }
+const setDuotoneColor = (val: string) => { duotoneColor.value = val }
+const setDuotoneOpacity = (val: number) => { duotoneOpacity.value = val }
+
+const state: SolarState = {
+    color, setColor,
+    size, setSize,
+    strokeWidth, setStrokeWidth,
+    duotoneColor, setDuotoneColor,
+    duotoneOpacity, setDuotoneOpacity,
 }
 
-provide(SOLAR_CONTEXT_KEY, solarRef)
+provide(SOLAR_CONTEXT_KEY, state)
 
-watch(
-    () => props.color,
-    (c) => {
-        if (c != null) wrapperEl.value?.style.setProperty('--solar-icon-color', c)
-    },
-    { immediate: true },
-)
+watch(color, (c) => {
+    if (c != null) wrapperEl.value?.style.setProperty('--solar-icon-color', c)
+}, { immediate: true })
 
-watch(
-    () => props.size,
-    (s) => {
-        if (s != null)
-            wrapperEl.value?.style.setProperty(
-                '--solar-icon-size',
-                typeof s === 'number' ? `${s}px` : s,
-            )
-    },
-    { immediate: true },
-)
+watch(size, (s) => {
+    if (s != null)
+        wrapperEl.value?.style.setProperty(
+            '--solar-icon-size',
+            typeof s === 'number' ? `${s}px` : s,
+        )
+}, { immediate: true })
 
-watch(
-    () => props.strokeWidth,
-    (sw) => {
-        if (sw != null)
-            wrapperEl.value?.style.setProperty('--solar-stroke-width', String(sw))
-    },
-    { immediate: true },
-)
+watch(strokeWidth, (sw) => {
+    if (sw != null)
+        wrapperEl.value?.style.setProperty('--solar-stroke-width', String(sw))
+}, { immediate: true })
 
-watch(
-    () => props.duotoneColor,
-    (dc) => {
-        if (dc) wrapperEl.value?.style.setProperty('--solar-duotone-color', dc)
-    },
-    { immediate: true },
-)
+watch(duotoneColor, (dc) => {
+    if (dc) wrapperEl.value?.style.setProperty('--solar-duotone-color', dc)
+}, { immediate: true })
 
-watch(
-    () => props.duotoneOpacity,
-    (d) => {
-        if (d != null)
-            wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(d))
-    },
-    { immediate: true },
-)
+watch(duotoneOpacity, (d) => {
+    if (d != null)
+        wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(d))
+}, { immediate: true })
 </script>
 
 <template>

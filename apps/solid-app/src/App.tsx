@@ -444,8 +444,8 @@ const App: Component = () => {
 function ProviderDemoInner() {
     const solar = useSolar();
     return (
-        <div class="bg-slate-900 rounded-lg p-4 flex flex-wrap gap-4 items-center">
-            <div class="flex gap-2">
+        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+            <div class="flex gap-2 items-center flex-wrap">
                 <button
                     class="px-3 py-1.5 bg-amber-500 text-slate-900 rounded-lg text-sm font-medium"
                     onClick={() => solar.setColor('#ef4444')}
@@ -476,8 +476,11 @@ function ProviderDemoInner() {
                 >
                     24px
                 </button>
+                <span class="text-xs text-slate-500">
+                    size: {solar.size() ?? 'default'} | color: {solar.color() ?? 'default'}
+                </span>
             </div>
-            <div class="flex gap-4 ml-auto">
+            <div class="flex gap-4">
                 <Dynamic component={getIcon('Bold', 'Home')!} />
                 <Dynamic component={getIcon('Bold', 'Star')!} color="#ef4444" />
                 <Dynamic component={getIcon('Bold', 'Heart')!} />
