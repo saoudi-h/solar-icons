@@ -3,7 +3,7 @@
     <PopoverTrigger as-child>
       <div class="flex items-center w-24">
         <Button variant="outline" class="rounded-r-none h-10">
-          <Palette class="h-4 w-4" />
+          <PaletteBold class="h-4 w-4" />
         </Button>
         <div
           :style="{ backgroundColor: props.color }"
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-import { Palette } from '@solar-icons/vue'
+import { PaletteBold } from '@solar-icons/vue'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { ChromePicker } from 'vue-color'
 
