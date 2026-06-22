@@ -245,12 +245,9 @@
                     class="bg-slate-900 rounded-lg p-4 flex gap-4"
                     style="--solar-icon-color: {cssColor}; --solar-icon-size: {cssSize}px;"
                 >
-                    {@const HomeIcon = getIcon('Home')}
-                    {#if HomeIcon}<HomeIcon />{/if}
-                    {@const SettingsIcon = getIcon('Settings')}
-                    {#if SettingsIcon}<SettingsIcon />{/if}
-                    {@const UserIcon = getIcon('User')}
-                    {#if UserIcon}<UserIcon />{/if}
+                    <svelte:component this={getIcon('Home')} />
+                    <svelte:component this={getIcon('Settings')} />
+                    <svelte:component this={getIcon('User')} />
                 </div>
             </div>
             <div class="space-y-2">
@@ -259,12 +256,9 @@
                     class="bg-slate-900 rounded-lg p-4 flex gap-4 [--solar-icon-color:var(--d-color)] [--solar-icon-size:var(--d-size)]"
                     style="--d-color: {cssColor}; --d-size: {cssSize}px;"
                 >
-                    {@const HeartIcon = getIcon('Heart')}
-                    {#if HeartIcon}<HeartIcon />{/if}
-                    {@const StarIcon = getIcon('Star')}
-                    {#if StarIcon}<StarIcon />{/if}
-                    {@const BellIcon = getIcon('Bell')}
-                    {#if BellIcon}<BellIcon />{/if}
+                    <svelte:component this={getIcon('Heart')} />
+                    <svelte:component this={getIcon('Star')} />
+                    <svelte:component this={getIcon('Bell')} />
                 </div>
             </div>
         </div>
@@ -329,12 +323,9 @@
         <div
             class="bg-slate-900 rounded-lg p-4 flex gap-4 [&_.solar]:text-amber-500 [&_.solar-star]:text-blue-400"
         >
-            {@const HomeIcon = getIcon('Home')}
-            {#if HomeIcon}<HomeIcon />{/if}
-            {@const StarIcon = getIcon('Star')}
-            {#if StarIcon}<StarIcon />{/if}
-            {@const HeartIcon = getIcon('Heart')}
-            {#if HeartIcon}<HeartIcon />{/if}
+            <svelte:component this={getIcon('Home')} />
+            <svelte:component this={getIcon('Star')} />
+            <svelte:component this={getIcon('Heart')} />
         </div>
     </div>
 
@@ -348,16 +339,19 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="bg-slate-900 rounded-lg p-4 space-y-2">
                 <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
-                {@const InfoIcon = getIcon('InfoCircle')}
-                {#if InfoIcon}<InfoIcon size={32} />{/if}
+                <svelte:component this={getIcon('InfoCircle')} size={32} />
             </div>
             <div class="bg-slate-900 rounded-lg p-4 space-y-2">
                 <code class="text-xs text-green-400 block">alt="Information"</code>
-                {#if InfoIcon}<InfoIcon size={32} alt="Information" />{/if}
+                <svelte:component this={getIcon('InfoCircle')} size={32} alt="Information" />
             </div>
             <div class="bg-slate-900 rounded-lg p-4 space-y-2">
                 <code class="text-xs text-green-400 block">aria-label</code>
-                {#if InfoIcon}<InfoIcon size={32} aria-label="Information about this icon" />{/if}
+                <svelte:component
+                    this={getIcon('InfoCircle')}
+                    size={32}
+                    aria-label="Information about this icon"
+                />
             </div>
         </div>
     </div>
