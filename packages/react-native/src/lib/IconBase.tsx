@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext } from 'react'
-import { G, Svg } from 'react-native-svg'
+import { Svg } from 'react-native-svg'
 import type { IconProps } from './types'
 import { SolarContext } from './SolarProvider'
 
@@ -28,11 +28,7 @@ const IconBase = forwardRef<any, IconProps>((props, ref) => {
             fill="none"
             strokeWidth={Number(strokeWidth)}
             {...restProps}>
-            {mirrored ? (
-                <G transform={[{ translateX: 24 }, { scaleX: -1 }]}>{children}</G>
-            ) : (
-                children
-            )}
+            {children}
         </Svg>
     )
 })

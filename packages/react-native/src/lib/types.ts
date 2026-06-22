@@ -29,11 +29,6 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
     strokeWidth?: number | string
 
     /**
-     * Mirror the icon horizontally
-     * @default false
-     */
-
-    /**
      * Secondary color for duotone icons (accent layer).
      * Falls back to `color` if not set.
      */
