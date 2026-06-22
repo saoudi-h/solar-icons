@@ -1,669 +1,551 @@
 import { StatusBar } from 'expo-status-bar'
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Switch } from 'react-native'
 
-// Test different import methods
-import { Heart, Home, Magnifier, Settings, Star, User } from '@solar-icons/react-native/Bold'
+// --- V3 imports with Icon suffix ---
+
+// Style-bundle imports
+import { HeartBoldIcon, HomeBoldIcon, StarBoldIcon, UserBoldIcon } from '@solar-icons/react-native/Bold'
 import {
-    Home as HomeBoldDuotone,
-    User as UserBoldDuotone,
+    HomeBoldDuotoneIcon,
+    UserBoldDuotoneIcon,
 } from '@solar-icons/react-native/BoldDuotone'
-import { Home as HomeBroken, User as UserBroken } from '@solar-icons/react-native/Broken'
+import { HomeBrokenIcon, UserBrokenIcon } from '@solar-icons/react-native/Broken'
 import {
-    ArrowLeft,
-    ArrowRight,
-    CloseCircle,
-    Heart as HeartLinear,
-    Home as HomeLinear,
-    MenuDots as Menu,
-    Magnifier as SearchLinear,
-    Star as StarLinear,
-    User as UserLinear,
+    HeartLinearIcon,
+    HomeLinearIcon,
+    StarLinearIcon,
+    UserLinearIcon,
 } from '@solar-icons/react-native/Linear'
 import {
-    Home as HomeLineDuotone,
-    User as UserLineDuotone,
+    HomeLineDuotoneIcon,
+    UserLineDuotoneIcon,
 } from '@solar-icons/react-native/LineDuotone'
-import { Home as HomeOutline, User as UserOutline } from '@solar-icons/react-native/Outline'
+import { HomeOutlineIcon, UserOutlineIcon } from '@solar-icons/react-native/Outline'
 
-// Test global styled imports (new feature)
+// Global imports
 import {
-    HeartBold as HeartBoldGlobal,
-    HomeBold as HomeBoldGlobal,
-    HomeLinear as HomeLinearGlobal,
-    StarLinear as StarLinearGlobal,
-    UserBold as UserBoldGlobal,
-    UserLinear as UserLinearGlobal,
+    HomeBoldIcon as HomeBoldGlobalIcon,
+    UserBoldIcon as UserBoldGlobalIcon,
 } from '@solar-icons/react-native'
 
-// Test granular per-icon imports (maximum tree-shaking)
-import { AltArrowLeft } from '@solar-icons/react-native/category/arrows/Bold/AltArrowLeft'
-import { AltArrowRight } from '@solar-icons/react-native/category/arrows/Bold/AltArrowRight'
-import { AltArrowDown } from '@solar-icons/react-native/category/arrows/Linear/AltArrowDown'
-import { AltArrowUp } from '@solar-icons/react-native/category/arrows/Linear/AltArrowUp'
-import { Magnifier as MagnifierGranular } from '@solar-icons/react-native/category/search/Outline/Magnifier'
-import { Settings as SettingsGranular } from '@solar-icons/react-native/category/settings/BoldDuotone/Settings'
+// Provider + hook
+import { SolarProvider, useSolar } from '@solar-icons/react-native'
 
-type IconStyle = 'Bold' | 'Linear' | 'Outline' | 'Broken' | 'BoldDuotone' | 'LineDuotone'
+// Granular import
+import { AltArrowLeftIcon } from '@solar-icons/react-native/category/arrows/Bold/AltArrowLeft'
 
-export default function App() {
-    const [selectedStyle, setSelectedStyle] = useState<IconStyle>('Bold')
-    const [iconSize, setIconSize] = useState(32)
-    const [iconColor, setIconColor] = useState('#000000')
-    const [mirrored, setMirrored] = useState(false)
-
-    const styles: IconStyle[] = [
-        'Bold',
-        'Linear',
-        'Outline',
-        'Broken',
-        'BoldDuotone',
-        'LineDuotone',
-    ]
-
-    // Icon components by style
-    const iconsByStyle = {
-        Bold: [
-            { name: 'Home', Component: Home },
-            { name: 'User', Component: User },
-            { name: 'Settings', Component: Settings },
-            { name: 'Heart', Component: Heart },
-            { name: 'Star', Component: Star },
-            { name: 'Search', Component: Magnifier },
-        ],
-        Linear: [
-            { name: 'Home', Component: HomeLinear },
-            { name: 'User', Component: UserLinear },
-            { name: 'Heart', Component: HeartLinear },
-            { name: 'Star', Component: StarLinear },
-            { name: 'Search', Component: SearchLinear },
-            { name: 'ArrowRight', Component: ArrowRight },
-            { name: 'ArrowLeft', Component: ArrowLeft },
-            { name: 'Menu', Component: Menu },
-            { name: 'Close', Component: CloseCircle },
-        ],
-        Outline: [
-            { name: 'Home', Component: HomeOutline },
-            { name: 'User', Component: UserOutline },
-        ],
-        Broken: [
-            { name: 'Home', Component: HomeBroken },
-            { name: 'User', Component: UserBroken },
-        ],
-        BoldDuotone: [
-            { name: 'Home', Component: HomeBoldDuotone },
-            { name: 'User', Component: UserBoldDuotone },
-        ],
-        LineDuotone: [
-            { name: 'Home', Component: HomeLineDuotone },
-            { name: 'User', Component: UserLineDuotone },
-        ],
-    }
-
+// --- Section component ---
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <View style={appStyles.container}>
-            <StatusBar style="auto" />
-
-            <ScrollView style={appStyles.scrollView}>
-                {/* Header */}
-                <View style={appStyles.header}>
-                    <Text style={appStyles.title}>Solar Icons Test</Text>
-                    <Text style={appStyles.subtitle}>React Native Package ✅</Text>
-                </View>
-
-                {/* Style Selector */}
-                <View style={appStyles.section}>
-                    <Text style={appStyles.sectionTitle}>Icon Style</Text>
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                        {styles.map(style => (
-                            <TouchableOpacity
-                                key={style}
-                                style={[
-                                    appStyles.styleButton,
-                                    selectedStyle === style && appStyles.styleButtonActive,
-                                ]}
-                                onPress={() => setSelectedStyle(style)}>
-                                <Text
-                                    style={[
-                                        appStyles.styleButtonText,
-                                        selectedStyle === style && appStyles.styleButtonTextActive,
-                                    ]}>
-                                    {style}
-                                </Text>
-                            </TouchableOpacity>
-                        ))}
-                    </ScrollView>
-                </View>
-
-                {/* Controls */}
-                <View style={appStyles.section}>
-                    <Text style={appStyles.sectionTitle}>Controls</Text>
-
-                    {/* Size Control */}
-                    <View style={appStyles.control}>
-                        <Text style={appStyles.controlLabel}>Size: {iconSize}px</Text>
-                        <View style={appStyles.buttonGroup}>
-                            <TouchableOpacity
-                                style={appStyles.controlButton}
-                                onPress={() => setIconSize(Math.max(16, iconSize - 8))}>
-                                <Text>-</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                style={appStyles.controlButton}
-                                onPress={() => setIconSize(Math.min(96, iconSize + 8))}>
-                                <Text>+</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-
-                    {/* Color Control */}
-                    <View style={appStyles.control}>
-                        <Text style={appStyles.controlLabel}>Color</Text>
-                        <View style={appStyles.buttonGroup}>
-                            {['#000000', '#ff0000', '#00ff00', '#0000ff', '#ff00ff'].map(color => (
-                                <TouchableOpacity
-                                    key={color}
-                                    style={[
-                                        appStyles.colorButton,
-                                        { backgroundColor: color },
-                                        iconColor === color && appStyles.colorButtonActive,
-                                    ]}
-                                    onPress={() => setIconColor(color)}
-                                />
-                            ))}
-                        </View>
-                    </View>
-
-                    {/* Mirrored Control */}
-                    <View style={appStyles.control}>
-                        <Text style={appStyles.controlLabel}>Mirrored</Text>
-                        <TouchableOpacity
-                            style={[
-                                appStyles.toggleButton,
-                                mirrored && appStyles.toggleButtonActive,
-                            ]}
-                            onPress={() => setMirrored(!mirrored)}>
-                            <Text style={appStyles.toggleButtonText}>
-                                {mirrored ? 'ON' : 'OFF'}
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
-                {/* Icon Gallery */}
-                <View style={appStyles.section}>
-                    <Text style={appStyles.sectionTitle}>
-                        Icons ({iconsByStyle[selectedStyle].length})
-                    </Text>
-                    <View style={appStyles.iconGrid}>
-                        {iconsByStyle[selectedStyle].map(({ name, Component }) => (
-                            <View key={name} style={appStyles.iconCard}>
-                                <View style={appStyles.iconWrapper}>
-                                    <Component
-                                        size={iconSize}
-                                        color={iconColor}
-                                        mirrored={mirrored}
-                                    />
-                                </View>
-                                <Text style={appStyles.iconName}>{name}</Text>
-                            </View>
-                        ))}
-                    </View>
-                </View>
-
-                {/* Test Cases */}
-                <View style={appStyles.section}>
-                    <Text style={appStyles.sectionTitle}>Test Cases</Text>
-
-                    {/* Default Props */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>1. Default Props</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <Home />
-                            <Text style={appStyles.testCaseText}>
-                                Size: 24, Color: currentColor
-                            </Text>
-                        </View>
-                    </View>
-
-                    {/* Custom Size */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>2. Custom Size</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <User size={48} />
-                            <Text style={appStyles.testCaseText}>Size: 48</Text>
-                        </View>
-                    </View>
-
-                    {/* Custom Color */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>3. Custom Color</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <Heart size={40} color="#ff0000" />
-                            <Text style={appStyles.testCaseText}>Color: #ff0000</Text>
-                        </View>
-                    </View>
-
-                    {/* Mirrored */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>4. Mirrored Icon</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <ArrowRight size={40} />
-                            <ArrowRight size={40} mirrored />
-                            <Text style={appStyles.testCaseText}>Normal vs Mirrored</Text>
-                        </View>
-                    </View>
-
-                    {/* Multiple Styles */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>5. All Styles (Home Icon)</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <View style={appStyles.styleComparison}>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <Home size={32} />
-                                    <Text style={appStyles.styleComparisonText}>Bold</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeLinear size={32} />
-                                    <Text style={appStyles.styleComparisonText}>Linear</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeOutline size={32} />
-                                    <Text style={appStyles.styleComparisonText}>Outline</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeBroken size={32} />
-                                    <Text style={appStyles.styleComparisonText}>Broken</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeBoldDuotone size={32} />
-                                    <Text style={appStyles.styleComparisonText}>BoldDuo</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeLineDuotone size={32} />
-                                    <Text style={appStyles.styleComparisonText}>LineDuo</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-
-                    {/* Global Styled Imports */}
-                    <View style={appStyles.testCase}>
-                        <Text style={appStyles.testCaseTitle}>6. Global Styled Imports (New!)</Text>
-                        <View style={appStyles.testCaseContent}>
-                            <View style={appStyles.styleComparison}>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeBoldGlobal size={32} />
-                                    <Text style={appStyles.styleComparisonText}>HomeBold</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HomeLinearGlobal size={32} />
-                                    <Text style={appStyles.styleComparisonText}>HomeLinear</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <UserBoldGlobal size={32} />
-                                    <Text style={appStyles.styleComparisonText}>UserBold</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <UserLinearGlobal size={32} />
-                                    <Text style={appStyles.styleComparisonText}>UserLinear</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <HeartBoldGlobal size={32} color="#ff0000" />
-                                    <Text style={appStyles.styleComparisonText}>HeartBold</Text>
-                                </View>
-                                <View style={appStyles.styleComparisonItem}>
-                                    <StarLinearGlobal size={32} color="#ffd700" />
-                                    <Text style={appStyles.styleComparisonText}>StarLinear</Text>
-                                </View>
-                            </View>
-                            <Text style={[appStyles.testCaseText, { marginTop: 12 }]}>
-                                ✨ Import from root: import {'{ HomeBold, UserLinear }'} from
-                                '@solar-icons/react-native'
-                            </Text>
-                        </View>
-                    </View>
-                </View>
-
-                {/* Granular Per-Icon Imports */}
-                <View style={appStyles.testCase}>
-                    <Text style={appStyles.testCaseTitle}>
-                        7. Granular Per-Icon Imports (Maximum Tree-Shaking)
-                    </Text>
-                    <View style={appStyles.testCaseContent}>
-                        <View style={appStyles.styleComparison}>
-                            <View style={appStyles.styleComparisonItem}>
-                                <AltArrowDown size={32} />
-                                <Text style={appStyles.styleComparisonText}>AltArrowDown</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    Linear
-                                </Text>
-                            </View>
-                            <View style={appStyles.styleComparisonItem}>
-                                <AltArrowUp size={32} />
-                                <Text style={appStyles.styleComparisonText}>AltArrowUp</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    Linear
-                                </Text>
-                            </View>
-                            <View style={appStyles.styleComparisonItem}>
-                                <AltArrowLeft size={32} />
-                                <Text style={appStyles.styleComparisonText}>AltArrowLeft</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    Bold
-                                </Text>
-                            </View>
-                            <View style={appStyles.styleComparisonItem}>
-                                <AltArrowRight size={32} />
-                                <Text style={appStyles.styleComparisonText}>AltArrowRight</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    Bold
-                                </Text>
-                            </View>
-                            <View style={appStyles.styleComparisonItem}>
-                                <MagnifierGranular size={32} color="#007AFF" />
-                                <Text style={appStyles.styleComparisonText}>Magnifier</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    Outline
-                                </Text>
-                            </View>
-                            <View style={appStyles.styleComparisonItem}>
-                                <SettingsGranular size={32} color="#666" />
-                                <Text style={appStyles.styleComparisonText}>Settings</Text>
-                                <Text
-                                    style={[
-                                        appStyles.styleComparisonText,
-                                        { fontSize: 8, color: '#999' },
-                                    ]}>
-                                    BoldDuotone
-                                </Text>
-                            </View>
-                        </View>
-                        <Text style={[appStyles.testCaseText, { marginTop: 12 }]}>
-                            🎯 Direct imports: import {'{ AltArrowDown }'} from
-                            '@solar-icons/react-native/category/arrows/Linear/AltArrowDown'
-                        </Text>
-                        <Text
-                            style={[appStyles.testCaseText, { marginTop: 4, fontStyle: 'italic' }]}>
-                            ✅ Best for tree-shaking - only loads the exact icon needed
-                        </Text>
-                    </View>
-                </View>
-
-                {/* Import Methods Summary */}
-                <View style={appStyles.section}>
-                    <Text style={appStyles.sectionTitle}>📚 Import Methods Summary</Text>
-
-                    <View style={appStyles.importMethodCard}>
-                        <Text style={appStyles.importMethodTitle}>1️⃣ Style Bundle Imports</Text>
-                        <Text style={appStyles.importMethodCode}>
-                            import {'{ Home, User }'} from '@solar-icons/react-native/Bold'
-                        </Text>
-                        <Text style={appStyles.importMethodDescription}>
-                            ✅ Simple and clean{'\n'}
-                            ⚠️ Loads entire style bundle
-                        </Text>
-                    </View>
-
-                    <View style={appStyles.importMethodCard}>
-                        <Text style={appStyles.importMethodTitle}>2️⃣ Global Styled Imports</Text>
-                        <Text style={appStyles.importMethodCode}>
-                            import {'{ HomeBold, UserLinear }'} from '@solar-icons/react-native'
-                        </Text>
-                        <Text style={appStyles.importMethodDescription}>
-                            ✅ Intuitive naming{'\n'}✅ Mix styles in one import{'\n'}
-                            ⚠️ Loads all icons (relies on bundler tree-shaking)
-                        </Text>
-                    </View>
-
-                    <View style={appStyles.importMethodCard}>
-                        <Text style={appStyles.importMethodTitle}>
-                            3️⃣ Granular Per-Icon Imports
-                        </Text>
-                        <Text style={appStyles.importMethodCode}>
-                            import {'{ Home }'} from
-                            '@solar-icons/react-native/category/ui/Bold/Home'
-                        </Text>
-                        <Text style={appStyles.importMethodDescription}>
-                            ✅ Maximum tree-shaking{'\n'}✅ Only loads exact icon{'\n'}
-                            ⚠️ Longer import paths
-                        </Text>
-                    </View>
-                </View>
-
-                {/* Success Message */}
-                <View style={appStyles.successSection}>
-                    <Text style={appStyles.successTitle}>🎉 Package Working!</Text>
-                    <Text style={appStyles.successText}>
-                        All imports successful. Icons rendering correctly.
-                    </Text>
-                </View>
-
-                <View style={{ height: 40 }} />
-            </ScrollView>
+        <View style={styles.section}>
+            <Text style={styles.sectionTitle}>{title}</Text>
+            {children}
         </View>
     )
 }
 
-const appStyles = StyleSheet.create({
+// --- Provider demo inner ---
+function ProviderDemoInner() {
+    const solar = useSolar()
+    return (
+        <View style={styles.providerInner}>
+            <Text style={styles.subtitle}>Provider State</Text>
+            <Text style={styles.code}>
+                color: {solar.color ?? 'default'} | size:{' '}
+                {solar.size ?? 24} | stroke:{' '}
+                {solar.strokeWidth ?? 1.5}
+                {solar.duotoneColor
+                    ? ` | duotone: ${solar.duotoneColor}`
+                    : ''}
+            </Text>
+            <View style={styles.buttonRow}>
+                <TouchableOpacity
+                    style={[styles.btn, { backgroundColor: '#ef4444' }]}
+                    onPress={() => solar.setColor('#ef4444')}
+                >
+                    <Text style={styles.btnText}>Red</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.btn, { backgroundColor: '#3b82f6' }]}
+                    onPress={() => solar.setColor('#3b82f6')}
+                >
+                    <Text style={styles.btnText}>Blue</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.btn, { backgroundColor: '#22c55e' }]}
+                    onPress={() => solar.setColor('#22c55e')}
+                >
+                    <Text style={styles.btnText}>Green</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.btnSmall]}
+                    onPress={() => solar.setSize(48)}
+                >
+                    <Text style={styles.btnText}>48px</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.btnSmall]}
+                    onPress={() => solar.setSize(24)}
+                >
+                    <Text style={styles.btnText}>24px</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.iconRow}>
+                <HomeBoldIcon size={32} />
+                <StarBoldIcon size={32} color="#ef4444" />
+                <HeartBoldIcon size={32} />
+            </View>
+        </View>
+    )
+}
+
+// --- Gallery inner ---
+function GalleryInner() {
+    const solar = useSolar()
+    const STYLES = [
+        'Bold' as const,
+        'BoldDuotone' as const,
+        'Linear' as const,
+        'LineDuotone' as const,
+        'Broken' as const,
+        'Outline' as const,
+    ]
+    const [selectedStyle, setSelectedStyle] = useState<
+        (typeof STYLES)[number]
+    >('Bold')
+
+    const isDuotone =
+        selectedStyle === 'BoldDuotone' ||
+        selectedStyle === 'LineDuotone'
+
+    const icons =
+        selectedStyle === 'Bold'
+            ? [HomeBoldIcon, StarBoldIcon, HeartBoldIcon, UserBoldIcon]
+            : selectedStyle === 'BoldDuotone'
+              ? [HomeBoldDuotoneIcon, UserBoldDuotoneIcon]
+              : selectedStyle === 'Linear'
+                ? [
+                      HomeLinearIcon,
+                      StarLinearIcon,
+                      HeartLinearIcon,
+                      UserLinearIcon,
+                  ]
+                : selectedStyle === 'LineDuotone'
+                  ? [HomeLineDuotoneIcon, UserLineDuotoneIcon]
+                  : selectedStyle === 'Broken'
+                    ? [HomeBrokenIcon, UserBrokenIcon]
+                    : [HomeOutlineIcon, UserOutlineIcon]
+
+    return (
+        <View>
+            {/* Style selector */}
+            <ScrollView
+                horizontal
+                style={styles.styleRow}
+                showsHorizontalScrollIndicator={false}
+            >
+                {STYLES.map((s) => (
+                    <TouchableOpacity
+                        key={s}
+                        style={[
+                            styles.styleBtn,
+                            selectedStyle === s &&
+                                styles.styleBtnActive,
+                        ]}
+                        onPress={() => setSelectedStyle(s)}
+                    >
+                        <Text
+                            style={[
+                                styles.styleBtnText,
+                                selectedStyle === s &&
+                                    styles.styleBtnTextActive,
+                            ]}
+                        >
+                            {s}
+                        </Text>
+                    </TouchableOpacity>
+                ))}
+            </ScrollView>
+
+            {/* Duotone controls */}
+            {isDuotone && (
+                <View style={styles.duotoneControls}>
+                    <Text style={styles.subtitle}>
+                        Duotone Accent
+                    </Text>
+                    <View style={styles.buttonRow}>
+                        <TouchableOpacity
+                            style={[
+                                styles.btn,
+                                { backgroundColor: '#ef4444' },
+                            ]}
+                            onPress={() =>
+                                solar.setDuotoneColor('#ef4444')
+                            }
+                        >
+                            <Text style={styles.btnText}>
+                                Red accent
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[
+                                styles.btn,
+                                { backgroundColor: '#3b82f6' },
+                            ]}
+                            onPress={() =>
+                                solar.setDuotoneColor('#3b82f6')
+                            }
+                        >
+                            <Text style={styles.btnText}>
+                                Blue accent
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() =>
+                                solar.setDuotoneOpacity(0.2)
+                            }
+                        >
+                            <Text style={styles.btnText}>
+                                Opacity .2
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() =>
+                                solar.setDuotoneOpacity(0.8)
+                            }
+                        >
+                            <Text style={styles.btnText}>
+                                Opacity .8
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={styles.code}>
+                        duotone: {solar.duotoneColor ?? 'default'} @{' '}
+                        {solar.duotoneOpacity ?? 0.5}
+                    </Text>
+                </View>
+            )}
+
+            {/* Stroke width */}
+            <View style={styles.sliderRow}>
+                <Text style={styles.subtitle}>
+                    Stroke: {solar.strokeWidth ?? 1.5}
+                </Text>
+                <View style={styles.buttonRow}>
+                    {[0.5, 1, 1.5, 2, 3].map((v) => (
+                        <TouchableOpacity
+                            key={v}
+                            style={[
+                                styles.btnSmall,
+                                (solar.strokeWidth ?? 1.5) === v &&
+                                    styles.btnSmallActive,
+                            ]}
+                            onPress={() => solar.setStrokeWidth(v)}
+                        >
+                            <Text style={styles.btnText}>{v}</Text>
+                        </TouchableOpacity>
+                    ))}
+                </View>
+            </View>
+
+            {/* Current state */}
+            <Text style={styles.code}>
+                style: {selectedStyle} | size:{' '}
+                {solar.size ?? 24} | color:{' '}
+                {solar.color ?? 'default'}
+            </Text>
+
+            {/* Icon grid */}
+            <View style={styles.iconGrid}>
+                {icons.map((Icon, i) => (
+                    <View key={i} style={styles.iconCard}>
+                        <Icon size={48} />
+                        <Text style={styles.iconLabel}>
+                            {Icon.displayName?.replace('Icon', '') ??
+                                'Icon'}
+                        </Text>
+                    </View>
+                ))}
+            </View>
+        </View>
+    )
+}
+
+// --- Import test section ---
+function ImportTests() {
+    return (
+        <View>
+            <Text style={styles.subtitle}>Import patterns</Text>
+            <View style={styles.iconRow}>
+                <AltArrowLeftIcon size={24} color="#64748b" />
+                <HomeBoldGlobalIcon size={24} color="#64748b" />
+                <UserBoldGlobalIcon size={24} color="#64748b" />
+            </View>
+            <Text style={styles.code}>
+                Style-bundle: import {'{ HomeBoldIcon }'} from
+                '@solar-icons/react-native/Bold'
+            </Text>
+            <Text style={styles.code}>
+                Global: import {'{ HomeBoldIcon }'} from
+                '@solar-icons/react-native'
+            </Text>
+            <Text style={styles.code}>
+                Granular: import {'{ AltArrowLeftIcon }'} from
+                '@solar-icons/react-native/category/...'
+            </Text>
+        </View>
+    )
+}
+
+// --- Main App ---
+export default function App() {
+    const [providerColor, setProviderColor] = useState('#f59e0b')
+    const [providerSize, setProviderSize] = useState(32)
+    const [providerStroke, setProviderStroke] = useState(1.5)
+
+    return (
+        <SolarProvider
+            color={providerColor}
+            size={providerSize}
+            strokeWidth={providerStroke}
+        >
+            <ScrollView style={styles.container}>
+                <StatusBar style="light" />
+                <Text style={styles.title}>
+                    Solar Icons — React Native V3
+                </Text>
+
+                <Section title="1. Icon Gallery">
+                    <GalleryInner />
+                </Section>
+
+                <Section title="2. SolarProvider + useSolar">
+                    <View style={styles.controlsRow}>
+                        <TouchableOpacity
+                            style={[
+                                styles.btn,
+                                { backgroundColor: '#f59e0b' },
+                            ]}
+                            onPress={() =>
+                                setProviderColor('#f59e0b')
+                            }
+                        >
+                            <Text style={styles.btnText}>
+                                Amber
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[
+                                styles.btn,
+                                { backgroundColor: '#ef4444' },
+                            ]}
+                            onPress={() =>
+                                setProviderColor('#ef4444')
+                            }
+                        >
+                            <Text style={styles.btnText}>Red</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() => setProviderSize(24)}
+                        >
+                            <Text style={styles.btnText}>Size 24</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() => setProviderSize(48)}
+                        >
+                            <Text style={styles.btnText}>Size 48</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() => setProviderStroke(0.5)}
+                        >
+                            <Text style={styles.btnText}>
+                                Stroke .5
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.btnSmall]}
+                            onPress={() => setProviderStroke(3)}
+                        >
+                            <Text style={styles.btnText}>
+                                Stroke 3
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <ProviderDemoInner />
+                </Section>
+
+                <Section title="3. Import Patterns">
+                    <ImportTests />
+                </Section>
+
+                <Section title="4. Per-icon Override">
+                    <Text style={styles.code}>
+                        Explicit props override provider defaults
+                    </Text>
+                    <View style={styles.iconRow}>
+                        <HomeBoldIcon
+                            size={48}
+                            color="#22c55e"
+                            strokeWidth={3}
+                        />
+                        <StarBoldIcon
+                            size={24}
+                            color="#ef4444"
+                            strokeWidth={0.5}
+                        />
+                        <HeartBoldIcon
+                            size={36}
+                            color="#3b82f6"
+                            strokeWidth={1}
+                        />
+                    </View>
+                </Section>
+
+                <View style={{ height: 80 }} />
+            </ScrollView>
+        </SolarProvider>
+    )
+}
+
+// --- Styles ---
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
-        paddingTop: 40,
-    },
-    scrollView: {
-        flex: 1,
-    },
-    header: {
-        padding: 20,
-        backgroundColor: '#fff',
-        borderBottomWidth: 1,
-        borderBottomColor: '#e0e0e0',
+        backgroundColor: '#0f172a',
+        paddingHorizontal: 16,
     },
     title: {
-        fontSize: 28,
+        fontSize: 24,
         fontWeight: 'bold',
-        color: '#333',
-    },
-    subtitle: {
-        fontSize: 16,
-        color: '#666',
-        marginTop: 4,
+        color: '#f8fafc',
+        textAlign: 'center',
+        marginTop: 60,
+        marginBottom: 24,
     },
     section: {
-        padding: 20,
-        backgroundColor: '#fff',
-        marginTop: 10,
+        backgroundColor: '#1e293b',
+        borderRadius: 16,
+        padding: 16,
+        marginBottom: 16,
+        borderWidth: 1,
+        borderColor: '#334155',
     },
     sectionTitle: {
-        fontSize: 18,
-        fontWeight: '600',
-        color: '#333',
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#f8fafc',
         marginBottom: 12,
     },
-    styleButton: {
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 20,
-        backgroundColor: '#f0f0f0',
-        marginRight: 8,
+    subtitle: {
+        fontSize: 13,
+        fontWeight: '600',
+        color: '#94a3b8',
+        marginBottom: 8,
     },
-    styleButtonActive: {
-        backgroundColor: '#007AFF',
+    code: {
+        fontSize: 11,
+        fontFamily: 'monospace',
+        color: '#64748b',
+        marginBottom: 8,
     },
-    styleButtonText: {
-        fontSize: 14,
-        color: '#333',
-    },
-    styleButtonTextActive: {
-        color: '#fff',
-    },
-    control: {
+    styleRow: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         marginBottom: 12,
     },
-    controlLabel: {
-        fontSize: 14,
-        color: '#666',
+    styleBtn: {
+        paddingHorizontal: 12,
+        paddingVertical: 6,
+        borderRadius: 8,
+        backgroundColor: '#334155',
+        marginRight: 6,
     },
-    buttonGroup: {
-        flexDirection: 'row',
-        gap: 8,
+    styleBtnActive: {
+        backgroundColor: '#f59e0b',
     },
-    controlButton: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        backgroundColor: '#f0f0f0',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    colorButton: {
-        width: 32,
-        height: 32,
-        borderRadius: 16,
-        borderWidth: 2,
-        borderColor: 'transparent',
-    },
-    colorButtonActive: {
-        borderColor: '#007AFF',
-    },
-    toggleButton: {
-        paddingHorizontal: 20,
-        paddingVertical: 8,
-        borderRadius: 16,
-        backgroundColor: '#f0f0f0',
-    },
-    toggleButtonActive: {
-        backgroundColor: '#007AFF',
-    },
-    toggleButtonText: {
-        fontSize: 14,
+    styleBtnText: {
+        fontSize: 12,
         fontWeight: '600',
+        color: '#94a3b8',
+    },
+    styleBtnTextActive: {
+        color: '#0f172a',
+    },
+    duotoneControls: {
+        marginBottom: 12,
+        padding: 12,
+        backgroundColor: '#0f172a',
+        borderRadius: 8,
+    },
+    buttonRow: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 6,
+        marginBottom: 8,
+    },
+    btn: {
+        paddingHorizontal: 12,
+        paddingVertical: 6,
+        borderRadius: 8,
+    },
+    btnSmall: {
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 8,
+        backgroundColor: '#475569',
+    },
+    btnSmallActive: {
+        backgroundColor: '#f59e0b',
+    },
+    btnText: {
+        fontSize: 11,
+        fontWeight: '600',
+        color: '#f8fafc',
+    },
+    controlsRow: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 6,
+        marginBottom: 12,
+    },
+    sliderRow: {
+        marginBottom: 12,
+        padding: 12,
+        backgroundColor: '#0f172a',
+        borderRadius: 8,
     },
     iconGrid: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         gap: 12,
+        justifyContent: 'center',
     },
     iconCard: {
-        width: 80,
         alignItems: 'center',
-    },
-    iconWrapper: {
-        width: 60,
-        height: 60,
+        padding: 12,
+        backgroundColor: '#0f172a',
         borderRadius: 12,
-        backgroundColor: '#f9f9f9',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 6,
+        minWidth: 80,
     },
-    iconName: {
-        fontSize: 11,
-        color: '#666',
-        textAlign: 'center',
+    iconLabel: {
+        fontSize: 9,
+        color: '#475569',
+        marginTop: 8,
     },
-    testCase: {
-        marginBottom: 20,
-        padding: 16,
-        backgroundColor: '#f9f9f9',
-        borderRadius: 8,
-    },
-    testCaseTitle: {
-        fontSize: 14,
-        fontWeight: '600',
-        color: '#333',
-        marginBottom: 12,
-    },
-    testCaseContent: {
+    iconRow: {
         flexDirection: 'row',
-        alignItems: 'center',
-        gap: 12,
-    },
-    testCaseText: {
-        fontSize: 12,
-        color: '#666',
-    },
-    styleComparison: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
         gap: 16,
-    },
-    styleComparisonItem: {
         alignItems: 'center',
+        marginBottom: 8,
     },
-    styleComparisonText: {
-        fontSize: 10,
-        color: '#666',
-        marginTop: 4,
-    },
-    successSection: {
-        margin: 20,
-        padding: 20,
-        backgroundColor: '#d4edda',
+    providerInner: {
+        padding: 12,
+        backgroundColor: '#0f172a',
         borderRadius: 8,
-        borderWidth: 1,
-        borderColor: '#c3e6cb',
-    },
-    successTitle: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#155724',
-        marginBottom: 8,
-    },
-    successText: {
-        fontSize: 14,
-        color: '#155724',
-    },
-    importMethodCard: {
-        backgroundColor: '#f9f9f9',
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 12,
-        borderLeftWidth: 4,
-        borderLeftColor: '#007AFF',
-    },
-    importMethodTitle: {
-        fontSize: 16,
-        fontWeight: '600',
-        color: '#333',
-        marginBottom: 8,
-    },
-    importMethodCode: {
-        fontFamily: 'monospace',
-        fontSize: 12,
-        backgroundColor: '#fff',
-        padding: 8,
-        borderRadius: 4,
-        marginBottom: 8,
-        color: '#007AFF',
-    },
-    importMethodDescription: {
-        fontSize: 12,
-        color: '#666',
-        lineHeight: 18,
     },
 })
