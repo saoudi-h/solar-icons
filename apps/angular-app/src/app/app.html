@@ -170,13 +170,25 @@
           </div>
         </div>
       }
+      <div class="mt-4 pt-4 border-t border-slate-700/50 flex items-center gap-2">
+        <label class="text-sm text-slate-300 cursor-pointer flex items-center gap-2">
+          <input type="checkbox" [ngModel]="mirrored()" (ngModelChange)="mirrored.set($event)" class="accent-amber-500" />
+          Mirror all icons
+        </label>
+      </div>
     </div>
 
     <!-- Icon Grid -->
+    <solar-provider
+      [color]="iconColor()"
+      [size]="iconSize()"
+      [strokeWidth]="strokeWidth()"
+      [duotoneColor]="duotoneColor()"
+      [duotoneOpacity]="duotoneOpacity()"
+      [mirrored]="mirrored()"
+    >
     <div
       class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4"
-      [style.--solar-duotone-color]="duotoneColor()"
-      [style.--solar-duotone-opacity]="duotoneOpacity()"
     >
       @for (item of displayIcons(); track trackByIconName($index, item)) {
         <div
@@ -184,7 +196,7 @@
           [title]="item.name"
         >
           <div class="flex items-center justify-center" style="min-height: 48px">
-            <ng-container [solarIcon]="item.component" [size]="iconSize()" [color]="iconColor()" [strokeWidth]="isLinearLike() ? strokeWidth() : undefined" />
+            <ng-container [solarIcon]="item.component" [strokeWidth]="isLinearLike() ? strokeWidth() : undefined" />
           </div>
           <span
             class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors"
@@ -194,6 +206,7 @@
         </div>
       }
     </div>
+    </solar-provider>
 
     @if (displayIcons().length === 0) {
       <div
