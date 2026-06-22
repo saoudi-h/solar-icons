@@ -1,5 +1,24 @@
-import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
 import xmldom from '@xmldom/xmldom'
+
+type IconWeight = 'Broken' | 'LineDuotone' | 'Linear' | 'Outline' | 'Bold' | 'BoldDuotone'
+
+interface ParsedIcon {
+    readonly name: string
+    readonly category: string
+    readonly style: IconWeight
+    readonly styleKebab: string
+    readonly kebabName: string
+    readonly pascalName: string
+    readonly inner: string
+    readonly duotoneAccentInner: string | null
+    readonly preview: string
+}
+
+interface IconContext<TParsed> {
+    readonly icon: TParsed
+    readonly index: number
+    readonly total: number
+}
 
 const DUOTONE_CSS_VARS_HTML =
     'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
@@ -47,7 +66,8 @@ function nodeToTemplate(node: IconNode): string {
         .map(([key, value]) => `${key}="${String(value)}"`)
         .join(' ')
     const openTag = attrsStr ? `<svg:${tagName} ${attrsStr}>` : `<svg:${tagName}>`
-    const innerContent = children && children.length > 0 ? children.map(nodeToTemplate).join('') : ''
+    const innerContent =
+        children && children.length > 0 ? children.map(nodeToTemplate).join('') : ''
     return `${openTag}${innerContent}</svg:${tagName}>`
 }
 
