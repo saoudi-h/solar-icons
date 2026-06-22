@@ -245,9 +245,18 @@
                     class="bg-slate-900 rounded-lg p-4 flex gap-4"
                     style="--solar-icon-color: {cssColor}; --solar-icon-size: {cssSize}px;"
                 >
-                    <svelte:component this={getIcon('Home')} />
-                    <svelte:component this={getIcon('Settings')} />
-                    <svelte:component this={getIcon('User')} />
+                    {#if getIcon('Home')}
+                        {@const Icon = getIcon('Home')}
+                        <Icon />
+                    {/if}
+                    {#if getIcon('Settings')}
+                        {@const Icon = getIcon('Settings')}
+                        <Icon />
+                    {/if}
+                    {#if getIcon('User')}
+                        {@const Icon = getIcon('User')}
+                        <Icon />
+                    {/if}
                 </div>
             </div>
             <div class="space-y-2">
@@ -256,9 +265,18 @@
                     class="bg-slate-900 rounded-lg p-4 flex gap-4 [--solar-icon-color:var(--d-color)] [--solar-icon-size:var(--d-size)]"
                     style="--d-color: {cssColor}; --d-size: {cssSize}px;"
                 >
-                    <svelte:component this={getIcon('Heart')} />
-                    <svelte:component this={getIcon('Star')} />
-                    <svelte:component this={getIcon('Bell')} />
+                    {#if getIcon('Heart')}
+                        {@const Icon = getIcon('Heart')}
+                        <Icon />
+                    {/if}
+                    {#if getIcon('Star')}
+                        {@const Icon = getIcon('Star')}
+                        <Icon />
+                    {/if}
+                    {#if getIcon('Bell')}
+                        {@const Icon = getIcon('Bell')}
+                        <Icon />
+                    {/if}
                 </div>
             </div>
         </div>
@@ -323,9 +341,18 @@
         <div
             class="bg-slate-900 rounded-lg p-4 flex gap-4 [&_.solar]:text-amber-500 [&_.solar-star]:text-blue-400"
         >
-            <svelte:component this={getIcon('Home')} />
-            <svelte:component this={getIcon('Star')} />
-            <svelte:component this={getIcon('Heart')} />
+            {#if getIcon('Home')}
+                {@const Icon = getIcon('Home')}
+                <Icon />
+            {/if}
+            {#if getIcon('Star')}
+                {@const Icon = getIcon('Star')}
+                <Icon />
+            {/if}
+            {#if getIcon('Heart')}
+                {@const Icon = getIcon('Heart')}
+                <Icon />
+            {/if}
         </div>
     </div>
 
@@ -336,23 +363,22 @@
             Icons have aria-hidden="true" by default. Pass alt, aria-label, or title to make them
             accessible.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="bg-slate-900 rounded-lg p-4 space-y-2">
-                <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
-                <svelte:component this={getIcon('InfoCircle')} size={32} />
+        {#if getIcon('InfoCircle')}
+            {@const Icon = getIcon('InfoCircle')}
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                    <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
+                    <Icon size={32} />
+                </div>
+                <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                    <code class="text-xs text-green-400 block">alt="Information"</code>
+                    <Icon size={32} alt="Information" />
+                </div>
+                <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                    <code class="text-xs text-green-400 block">aria-label</code>
+                    <Icon size={32} aria-label="Information about this icon" />
+                </div>
             </div>
-            <div class="bg-slate-900 rounded-lg p-4 space-y-2">
-                <code class="text-xs text-green-400 block">alt="Information"</code>
-                <svelte:component this={getIcon('InfoCircle')} size={32} alt="Information" />
-            </div>
-            <div class="bg-slate-900 rounded-lg p-4 space-y-2">
-                <code class="text-xs text-green-400 block">aria-label</code>
-                <svelte:component
-                    this={getIcon('InfoCircle')}
-                    size={32}
-                    aria-label="Information about this icon"
-                />
-            </div>
-        </div>
+        {/if}
     </div>
 </div>

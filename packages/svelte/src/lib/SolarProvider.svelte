@@ -1,6 +1,7 @@
 <script lang="ts">
     import { setContext } from 'svelte';
     import type { Snippet } from 'svelte';
+    import { SOLAR_CONTEXT_KEY } from './useSolar';
 
     interface Props {
         color?: string;
@@ -51,7 +52,7 @@
         setDuotoneOpacity,
     };
 
-    setContext('solar', state);
+    setContext(SOLAR_CONTEXT_KEY, state);
 
     $effect(() => {
         if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', String(color));
