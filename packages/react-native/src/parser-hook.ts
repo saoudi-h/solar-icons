@@ -22,8 +22,8 @@ function transformToRN(inner: string, duotoneAccent: string | null): {
     let accentJsx = ''
     if (duotoneAccent) {
         accentJsx = duotoneAccent
-            .replace(/\bopacity="0\.5"/g, 'opacity={secondaryOpacity ?? 0.5}')
-            .replace(/\b(fill|stroke)="currentColor"/g, '$1={secondaryColor ?? color ?? "currentColor"}')
+            .replace(/\bopacity="0\.5"/g, 'opacity={secondaryOpacity}')
+            .replace(/\b(fill|stroke)="currentColor"/g, '$1={secondaryColor}')
     }
 
     const fullBody = accentJsx ? `${accentJsx}\n${inner.trim()}` : inner.trim()
@@ -60,8 +60,14 @@ export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefi
     )
     const svgImports = Array.from(svgElements).sort().join(', ')
 
+    const duotoneImports = hasDuotone ? `import { useContext } from "react"\nimport { SolarContext } from "../../../lib/SolarProvider"\n` : ''
+
     const duotoneDestructure = hasDuotone
-        ? `    const { secondaryColor, secondaryOpacity, color, ...rest } = props
+        ? `    const ctx = useContext(SolarContext)
+    const { secondaryColor: secondaryColorProp, secondaryOpacity: secondaryOpacityProp, color: colorProp, ...rest } = props
+    const color = colorProp ?? ctx?.color
+    const secondaryColor = secondaryColorProp ?? ctx?.secondaryColor ?? color ?? "currentColor"
+    const secondaryOpacity = secondaryOpacityProp ?? ctx?.secondaryOpacity ?? 0.5
 `
         : ''
 
@@ -70,7 +76,7 @@ export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefi
     const content = `/* GENERATED FILE */
 import React from "react"
 import { forwardRef } from "react"
-${svgImports ? `import { ${svgImports} } from "react-native-svg"\n` : ''}import IconBase from "../../../lib/IconBase"
+${duotoneImports}${svgImports ? `import { ${svgImports} } from "react-native-svg"\n` : ''}import IconBase from "../../../lib/IconBase"
 import type { IconProps, Icon } from "../../../lib/types"
 
 /**

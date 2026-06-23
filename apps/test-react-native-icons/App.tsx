@@ -1,543 +1,226 @@
 import { StatusBar } from 'expo-status-bar'
-import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Switch } from 'react-native'
-
-// --- V3 imports with Icon suffix ---
-
-// Style-bundle imports
-import { HeartBoldIcon, HomeBoldIcon, StarBoldIcon, UserBoldIcon } from '@solar-icons/react-native/Bold'
-import {
-    HomeBoldDuotoneIcon,
-    UserBoldDuotoneIcon,
-} from '@solar-icons/react-native/BoldDuotone'
-import { HomeBrokenIcon, UserBrokenIcon } from '@solar-icons/react-native/Broken'
-import {
-    HeartLinearIcon,
-    HomeLinearIcon,
-    StarLinearIcon,
-    UserLinearIcon,
-} from '@solar-icons/react-native/Linear'
-import {
-    HomeLineDuotoneIcon,
-    UserLineDuotoneIcon,
-} from '@solar-icons/react-native/LineDuotone'
-import { HomeOutlineIcon, UserOutlineIcon } from '@solar-icons/react-native/Outline'
-
-// Global imports
-import {
-    HomeBoldIcon as HomeBoldGlobalIcon,
-    UserBoldIcon as UserBoldGlobalIcon,
-} from '@solar-icons/react-native'
-
-// Provider + hook
+import React, { useState, useMemo, useCallback } from 'react'
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SolarProvider, useSolar } from '@solar-icons/react-native'
+import { ALL_ICONS, STYLES, type IconStyle } from './icon-list'
 
-// --- Section component ---
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{title}</Text>
-            {children}
-        </View>
-    )
+import * as BoldIcons from '@solar-icons/react-native/bold'
+import * as BoldDuotoneIcons from '@solar-icons/react-native/bold-duotone'
+import * as BrokenIcons from '@solar-icons/react-native/broken'
+import * as LinearIcons from '@solar-icons/react-native/linear'
+import * as LineDuotoneIcons from '@solar-icons/react-native/line-duotone'
+import * as OutlineIcons from '@solar-icons/react-native/outline'
+
+const STYLE_MODULES: Record<IconStyle, Record<string, React.ComponentType<any>>> = {
+    Bold: BoldIcons,
+    BoldDuotone: BoldDuotoneIcons,
+    Broken: BrokenIcons,
+    Linear: LinearIcons,
+    LineDuotone: LineDuotoneIcons,
+    Outline: OutlineIcons,
 }
 
-// --- Provider demo inner ---
-function ProviderDemoInner() {
-    const solar = useSolar()
-    return (
-        <View style={styles.providerInner}>
-            <Text style={styles.subtitle}>Provider State</Text>
-            <Text style={styles.code}>
-                color: {solar.color ?? 'default'} | size:{' '}
-                {solar.size ?? 24} | stroke:{' '}
-                {solar.strokeWidth ?? 1.5}
-                {solar.duotoneColor
-                    ? ` | duotone: ${solar.duotoneColor}`
-                    : ''}
-            </Text>
-            <View style={styles.buttonRow}>
-                <TouchableOpacity
-                    style={[styles.btn, { backgroundColor: '#ef4444' }]}
-                    onPress={() => solar.setColor('#ef4444')}
-                >
-                    <Text style={styles.btnText}>Red</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.btn, { backgroundColor: '#3b82f6' }]}
-                    onPress={() => solar.setColor('#3b82f6')}
-                >
-                    <Text style={styles.btnText}>Blue</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.btn, { backgroundColor: '#22c55e' }]}
-                    onPress={() => solar.setColor('#22c55e')}
-                >
-                    <Text style={styles.btnText}>Green</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.btnSmall]}
-                    onPress={() => solar.setSize(48)}
-                >
-                    <Text style={styles.btnText}>48px</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.btnSmall]}
-                    onPress={() => solar.setSize(24)}
-                >
-                    <Text style={styles.btnText}>24px</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.iconRow}>
-                <HomeBoldIcon size={32} />
-                <StarBoldIcon size={32} color="#ef4444" />
-                <HeartBoldIcon size={32} />
-            </View>
-        </View>
-    )
+function isLinearLike(s: IconStyle) { return s === 'Linear' || s === 'LineDuotone' || s === 'Broken' }
+function isDuotone(s: IconStyle) { return s === 'BoldDuotone' || s === 'LineDuotone' }
+
+function getIcon(name: string, style: IconStyle): React.ComponentType<any> | null {
+    const mod = STYLE_MODULES[style]
+    return mod?.[name + 'Icon'] ?? null
 }
 
-// --- Gallery inner ---
-function GalleryInner() {
-    const solar = useSolar()
-    const STYLES = [
-        'Bold' as const,
-        'BoldDuotone' as const,
-        'Linear' as const,
-        'LineDuotone' as const,
-        'Broken' as const,
-        'Outline' as const,
-    ]
-    const [selectedStyle, setSelectedStyle] = useState<
-        (typeof STYLES)[number]
-    >('Bold')
+const QUICK_COLORS = ['#f8fafc', '#ef4444', '#f59e0b', '#22c55e', '#3b82f6', '#06b6d4', '#a855f7', '#ec4899', '#84cc16', '#f97316']
+const SIZE_PRESETS = [12, 16, 20, 24, 28, 32, 40, 48, 64, 96]
+const STROKE_PRESETS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3, 4]
+const OPACITY_PRESETS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
-    const isDuotone =
-        selectedStyle === 'BoldDuotone' ||
-        selectedStyle === 'LineDuotone'
-
-    const icons =
-        selectedStyle === 'Bold'
-            ? [HomeBoldIcon, StarBoldIcon, HeartBoldIcon, UserBoldIcon]
-            : selectedStyle === 'BoldDuotone'
-              ? [HomeBoldDuotoneIcon, UserBoldDuotoneIcon]
-              : selectedStyle === 'Linear'
-                ? [
-                      HomeLinearIcon,
-                      StarLinearIcon,
-                      HeartLinearIcon,
-                      UserLinearIcon,
-                  ]
-                : selectedStyle === 'LineDuotone'
-                  ? [HomeLineDuotoneIcon, UserLineDuotoneIcon]
-                  : selectedStyle === 'Broken'
-                    ? [HomeBrokenIcon, UserBrokenIcon]
-                    : [HomeOutlineIcon, UserOutlineIcon]
-
+function ChipRow({ values, selected, onSelect, getLabel, type = 'chip' }: {
+    values: (string | number)[]
+    selected: string | number | undefined
+    onSelect: (v: any) => void
+    getLabel?: (v: any) => string
+    type?: 'chip' | 'color'
+}) {
     return (
-        <View>
-            {/* Style selector */}
-            <ScrollView
-                horizontal
-                style={styles.styleRow}
-                showsHorizontalScrollIndicator={false}
-            >
-                {STYLES.map((s) => (
+        <View style={s.row}>
+            {values.map(v => {
+                const isActive = selected === v
+                if (type === 'color') {
+                    return (
+                        <TouchableOpacity
+                            key={String(v)}
+                            style={[s.colorChip, { backgroundColor: String(v) }, isActive && s.colorChipActive]}
+                            onPress={() => onSelect(v)}
+                        />
+                    )
+                }
+                return (
                     <TouchableOpacity
-                        key={s}
-                        style={[
-                            styles.styleBtn,
-                            selectedStyle === s &&
-                                styles.styleBtnActive,
-                        ]}
-                        onPress={() => setSelectedStyle(s)}
+                        key={String(v)}
+                        style={[s.chip, isActive && s.chipActive]}
+                        onPress={() => onSelect(v)}
                     >
-                        <Text
-                            style={[
-                                styles.styleBtnText,
-                                selectedStyle === s &&
-                                    styles.styleBtnTextActive,
-                            ]}
-                        >
-                            {s}
+                        <Text style={[s.chipText, isActive && s.chipTextActive]}>
+                            {getLabel ? getLabel(v) : String(v)}
                         </Text>
                     </TouchableOpacity>
-                ))}
-            </ScrollView>
+                )
+            })}
+        </View>
+    )
+}
+
+function Gallery() {
+    const solar = useSolar()
+    const [style, setStyle] = useState<IconStyle>('Bold')
+    const [search, setSearch] = useState('')
+    const [customColor, setCustomColor] = useState('')
+    const [customSize, setCustomSize] = useState('')
+    const [customStroke, setCustomStroke] = useState('')
+    const [customOpacity, setCustomOpacity] = useState('')
+
+    const filtered = useMemo(() => {
+        const q = search.toLowerCase()
+        if (!q) return ALL_ICONS.slice(0, 60)
+        return ALL_ICONS.filter(n => n.toLowerCase().includes(q))
+    }, [search])
+
+    const effectiveColor = customColor || solar.color
+    const effectiveSize = customSize ? Number(customSize) || solar.size : solar.size
+    const effectiveStroke = customStroke ? Number(customStroke) || solar.strokeWidth : solar.strokeWidth
+    const effectiveOpacity = customOpacity ? Number(customOpacity) || solar.secondaryOpacity : solar.secondaryOpacity
+
+    const renderIcon = useCallback(({ item: name }: { item: string }) => {
+        const Icon = getIcon(name, style)
+        if (!Icon) return <View style={s.iconCard} />
+        return (
+            <View style={s.iconCard}>
+                <Icon
+                    color={effectiveColor as string}
+                    size={Number(effectiveSize)}
+                    strokeWidth={isLinearLike(style) ? Number(effectiveStroke) : undefined}
+                    secondaryColor={isDuotone(style) ? (solar.secondaryColor || effectiveColor) : undefined}
+                    secondaryOpacity={isDuotone(style) ? Number(effectiveOpacity) : undefined}
+                />
+                <Text style={s.iconLabel} numberOfLines={1}>{name}</Text>
+            </View>
+        )
+    }, [style, effectiveColor, effectiveSize, effectiveStroke, effectiveOpacity, solar.secondaryColor])
+
+    return (
+        <View style={s.galleryContainer}>
+            {/* Style */}
+            <Text style={s.label}>Style</Text>
+            <FlatList horizontal data={STYLES as unknown as string[]} keyExtractor={x => x}
+                contentContainerStyle={{ gap: 6 }}
+                renderItem={({ item: st }) => {
+                    const s2 = st as IconStyle
+                    return (
+                        <TouchableOpacity style={[s.chip, style === s2 && s.chipActive]} onPress={() => setStyle(s2)}>
+                            <Text style={[s.chipText, style === s2 && s.chipTextActive]}>{s2}</Text>
+                        </TouchableOpacity>
+                    )
+                }}
+            />
+
+            {/* Color */}
+            <View style={s.controlBlock}>
+                <Text style={s.label}>Color</Text>
+                <ChipRow values={QUICK_COLORS} selected={effectiveColor} onSelect={(c: string) => { solar.setColor(c); setCustomColor('') }} type="color" />
+                <TextInput style={s.input} placeholder="Hex (#ff0000) or custom" placeholderTextColor="#475569"
+                    value={customColor} onChangeText={setCustomColor} onSubmitEditing={() => { if (customColor) solar.setColor(customColor) }} />
+            </View>
+
+            {/* Size */}
+            <View style={s.controlBlock}>
+                <Text style={s.label}>Size: {effectiveSize ?? 24}px</Text>
+                <ChipRow values={SIZE_PRESETS} selected={Number(effectiveSize)} onSelect={(v: number) => { solar.setSize(v); setCustomSize('') }} />
+                <TextInput style={s.input} placeholder="Custom size..." placeholderTextColor="#475569"
+                    value={customSize} onChangeText={setCustomSize} keyboardType="numeric" />
+            </View>
+
+            {/* Stroke */}
+            <View style={[s.controlBlock, !isLinearLike(style) && s.disabled]}>
+                <Text style={s.label}>Stroke: {effectiveStroke ?? 1.5}</Text>
+                <ChipRow values={STROKE_PRESETS} selected={Number(effectiveStroke)} onSelect={(v: number) => { solar.setStrokeWidth(v); setCustomStroke('') }} />
+                <TextInput style={s.input} placeholder="Custom stroke..." placeholderTextColor="#475569"
+                    value={customStroke} onChangeText={setCustomStroke} keyboardType="numeric" editable={isLinearLike(style)} />
+            </View>
 
             {/* Duotone controls */}
-            {isDuotone && (
-                <View style={styles.duotoneControls}>
-                    <Text style={styles.subtitle}>
-                        Duotone Accent
-                    </Text>
-                    <View style={styles.buttonRow}>
-                        <TouchableOpacity
-                            style={[
-                                styles.btn,
-                                { backgroundColor: '#ef4444' },
-                            ]}
-                            onPress={() =>
-                                solar.setDuotoneColor('#ef4444')
-                            }
-                        >
-                            <Text style={styles.btnText}>
-                                Red accent
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[
-                                styles.btn,
-                                { backgroundColor: '#3b82f6' },
-                            ]}
-                            onPress={() =>
-                                solar.setDuotoneColor('#3b82f6')
-                            }
-                        >
-                            <Text style={styles.btnText}>
-                                Blue accent
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() =>
-                                solar.setDuotoneOpacity(0.2)
-                            }
-                        >
-                            <Text style={styles.btnText}>
-                                Opacity .2
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() =>
-                                solar.setDuotoneOpacity(0.8)
-                            }
-                        >
-                            <Text style={styles.btnText}>
-                                Opacity .8
-                            </Text>
-                        </TouchableOpacity>
+            {isDuotone(style) && (
+                <>
+                    <View style={s.controlBlock}>
+                        <Text style={s.label}>Secondary color: {solar.secondaryColor || effectiveColor}</Text>
+                        <ChipRow values={QUICK_COLORS} selected={solar.secondaryColor} onSelect={(c: string) => solar.setSecondaryColor(c)} type="color" />
                     </View>
-                    <Text style={styles.code}>
-                        duotone: {solar.duotoneColor ?? 'default'} @{' '}
-                        {solar.duotoneOpacity ?? 0.5}
-                    </Text>
-                </View>
+                    <View style={s.controlBlock}>
+                        <Text style={s.label}>Secondary opacity</Text>
+                        <ChipRow values={OPACITY_PRESETS} selected={Number(effectiveOpacity)} onSelect={(v: number) => { solar.setSecondaryOpacity(v); setCustomOpacity('') }} />
+                        <TextInput style={s.input} placeholder="Custom opacity (0-1)..." placeholderTextColor="#475569"
+                            value={customOpacity} onChangeText={setCustomOpacity} keyboardType="numeric" />
+                    </View>
+                </>
             )}
 
-            {/* Stroke width */}
-            <View style={styles.sliderRow}>
-                <Text style={styles.subtitle}>
-                    Stroke: {solar.strokeWidth ?? 1.5}
-                </Text>
-                <View style={styles.buttonRow}>
-                    {[0.5, 1, 1.5, 2, 3].map((v) => (
-                        <TouchableOpacity
-                            key={v}
-                            style={[
-                                styles.btnSmall,
-                                (solar.strokeWidth ?? 1.5) === v &&
-                                    styles.btnSmallActive,
-                            ]}
-                            onPress={() => solar.setStrokeWidth(v)}
-                        >
-                            <Text style={styles.btnText}>{v}</Text>
-                        </TouchableOpacity>
-                    ))}
-                </View>
-            </View>
+            {/* Search */}
+            <TextInput style={s.searchInput} placeholder={`Search all ${ALL_ICONS.length} icons...`} placeholderTextColor="#64748b"
+                value={search} onChangeText={setSearch} />
+            <Text style={s.countLabel}>Showing {filtered.length} icon{filtered.length !== 1 ? 's' : ''}</Text>
 
-            {/* Current state */}
-            <Text style={styles.code}>
-                style: {selectedStyle} | size:{' '}
-                {solar.size ?? 24} | color:{' '}
-                {solar.color ?? 'default'}
-            </Text>
-
-            {/* Icon grid */}
-            <View style={styles.iconGrid}>
-                {icons.map((Icon, i) => (
-                    <View key={i} style={styles.iconCard}>
-                        <Icon size={48} />
-                        <Text style={styles.iconLabel}>
-                            {Icon.displayName?.replace('Icon', '') ??
-                                'Icon'}
-                        </Text>
-                    </View>
-                ))}
-            </View>
+            {/* Grid */}
+            <FlatList
+                data={filtered}
+                numColumns={4}
+                keyExtractor={item => item}
+                renderItem={renderIcon}
+                initialNumToRender={16}
+                maxToRenderPerBatch={8}
+                windowSize={7}
+                removeClippedSubviews
+            />
         </View>
     )
 }
 
-// --- Import test section ---
-function ImportTests() {
-    return (
-        <View>
-            <Text style={styles.subtitle}>Import patterns</Text>
-            <View style={styles.iconRow}>
-                <HomeBoldGlobalIcon size={24} color="#64748b" />
-                <UserBoldGlobalIcon size={24} color="#64748b" />
-            </View>
-            <Text style={styles.code}>
-                Root: import {'{ HomeBoldIcon }'} from
-                '@solar-icons/react-native'
-            </Text>
-            <Text style={styles.code}>
-                Style: import {'{ HomeIcon }'} from
-                '@solar-icons/react-native/bold'
-            </Text>
-        </View>
-    )
-}
-
-// --- Main App ---
 export default function App() {
-    const [providerColor, setProviderColor] = useState('#f59e0b')
-    const [providerSize, setProviderSize] = useState(32)
-    const [providerStroke, setProviderStroke] = useState(1.5)
-
     return (
-        <SolarProvider
-            color={providerColor}
-            size={providerSize}
-            strokeWidth={providerStroke}
-        >
-            <ScrollView style={styles.container}>
+        <SolarProvider color="#f59e0b" size={32} strokeWidth={1.5} secondaryOpacity={0.5}>
+            <View style={s.container}>
                 <StatusBar style="light" />
-                <Text style={styles.title}>
-                    Solar Icons — React Native V3
-                </Text>
-
-                <Section title="1. Icon Gallery">
-                    <GalleryInner />
-                </Section>
-
-                <Section title="2. SolarProvider + useSolar">
-                    <View style={styles.controlsRow}>
-                        <TouchableOpacity
-                            style={[
-                                styles.btn,
-                                { backgroundColor: '#f59e0b' },
-                            ]}
-                            onPress={() =>
-                                setProviderColor('#f59e0b')
-                            }
-                        >
-                            <Text style={styles.btnText}>
-                                Amber
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[
-                                styles.btn,
-                                { backgroundColor: '#ef4444' },
-                            ]}
-                            onPress={() =>
-                                setProviderColor('#ef4444')
-                            }
-                        >
-                            <Text style={styles.btnText}>Red</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() => setProviderSize(24)}
-                        >
-                            <Text style={styles.btnText}>Size 24</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() => setProviderSize(48)}
-                        >
-                            <Text style={styles.btnText}>Size 48</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() => setProviderStroke(0.5)}
-                        >
-                            <Text style={styles.btnText}>
-                                Stroke .5
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={[styles.btnSmall]}
-                            onPress={() => setProviderStroke(3)}
-                        >
-                            <Text style={styles.btnText}>
-                                Stroke 3
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <ProviderDemoInner />
-                </Section>
-
-                <Section title="3. Import Patterns">
-                    <ImportTests />
-                </Section>
-
-                <Section title="4. Per-icon Override">
-                    <Text style={styles.code}>
-                        Explicit props override provider defaults
-                    </Text>
-                    <View style={styles.iconRow}>
-                        <HomeBoldIcon
-                            size={48}
-                            color="#22c55e"
-                            strokeWidth={3}
-                        />
-                        <StarBoldIcon
-                            size={24}
-                            color="#ef4444"
-                            strokeWidth={0.5}
-                        />
-                        <HeartBoldIcon
-                            size={36}
-                            color="#3b82f6"
-                            strokeWidth={1}
-                        />
-                    </View>
-                </Section>
-
-                <View style={{ height: 80 }} />
-            </ScrollView>
+                <FlatList
+                    data={[]}
+                    renderItem={() => null}
+                    ListHeaderComponent={
+                        <View>
+                            <Text style={s.title}>Solar Icons — React Native</Text>
+                            <Text style={s.subtitle}>{ALL_ICONS.length} icons × 6 styles = {ALL_ICONS.length * 6} variants</Text>
+                            <Gallery />
+                        </View>
+                    }
+                />
+            </View>
         </SolarProvider>
     )
 }
 
-// --- Styles ---
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#0f172a',
-        paddingHorizontal: 16,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#f8fafc',
-        textAlign: 'center',
-        marginTop: 60,
-        marginBottom: 24,
-    },
-    section: {
-        backgroundColor: '#1e293b',
-        borderRadius: 16,
-        padding: 16,
-        marginBottom: 16,
-        borderWidth: 1,
-        borderColor: '#334155',
-    },
-    sectionTitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: '#f8fafc',
-        marginBottom: 12,
-    },
-    subtitle: {
-        fontSize: 13,
-        fontWeight: '600',
-        color: '#94a3b8',
-        marginBottom: 8,
-    },
-    code: {
-        fontSize: 11,
-        fontFamily: 'monospace',
-        color: '#64748b',
-        marginBottom: 8,
-    },
-    styleRow: {
-        flexDirection: 'row',
-        marginBottom: 12,
-    },
-    styleBtn: {
-        paddingHorizontal: 12,
-        paddingVertical: 6,
-        borderRadius: 8,
-        backgroundColor: '#334155',
-        marginRight: 6,
-    },
-    styleBtnActive: {
-        backgroundColor: '#f59e0b',
-    },
-    styleBtnText: {
-        fontSize: 12,
-        fontWeight: '600',
-        color: '#94a3b8',
-    },
-    styleBtnTextActive: {
-        color: '#0f172a',
-    },
-    duotoneControls: {
-        marginBottom: 12,
-        padding: 12,
-        backgroundColor: '#0f172a',
-        borderRadius: 8,
-    },
-    buttonRow: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 6,
-        marginBottom: 8,
-    },
-    btn: {
-        paddingHorizontal: 12,
-        paddingVertical: 6,
-        borderRadius: 8,
-    },
-    btnSmall: {
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        borderRadius: 8,
-        backgroundColor: '#475569',
-    },
-    btnSmallActive: {
-        backgroundColor: '#f59e0b',
-    },
-    btnText: {
-        fontSize: 11,
-        fontWeight: '600',
-        color: '#f8fafc',
-    },
-    controlsRow: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 6,
-        marginBottom: 12,
-    },
-    sliderRow: {
-        marginBottom: 12,
-        padding: 12,
-        backgroundColor: '#0f172a',
-        borderRadius: 8,
-    },
-    iconGrid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 12,
-        justifyContent: 'center',
-    },
-    iconCard: {
-        alignItems: 'center',
-        padding: 12,
-        backgroundColor: '#0f172a',
-        borderRadius: 12,
-        minWidth: 80,
-    },
-    iconLabel: {
-        fontSize: 9,
-        color: '#475569',
-        marginTop: 8,
-    },
-    iconRow: {
-        flexDirection: 'row',
-        gap: 16,
-        alignItems: 'center',
-        marginBottom: 8,
-    },
-    providerInner: {
-        padding: 12,
-        backgroundColor: '#0f172a',
-        borderRadius: 8,
-    },
+const s = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#0f172a' },
+    title: { fontSize: 22, fontWeight: 'bold', color: '#f8fafc', textAlign: 'center', marginTop: 60 },
+    subtitle: { fontSize: 13, color: '#64748b', textAlign: 'center', marginBottom: 16 },
+    galleryContainer: { paddingHorizontal: 10 },
+    label: { fontSize: 12, fontWeight: '600', color: '#94a3b8', marginBottom: 6, marginTop: 8 },
+    countLabel: { fontSize: 11, color: '#475569', marginBottom: 8, textAlign: 'right' },
+    controlBlock: { marginBottom: 4 },
+    row: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginBottom: 4 },
+    chip: { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 7, backgroundColor: '#334155' },
+    chipActive: { backgroundColor: '#f59e0b' },
+    chipText: { fontSize: 11, fontWeight: '600', color: '#94a3b8' },
+    chipTextActive: { color: '#0f172a' },
+    colorChip: { width: 26, height: 26, borderRadius: 13, borderWidth: 2, borderColor: 'transparent' },
+    colorChipActive: { borderColor: '#f8fafc' },
+    input: { backgroundColor: '#1e293b', borderRadius: 7, paddingHorizontal: 10, paddingVertical: 6, color: '#f8fafc', fontSize: 12, borderWidth: 1, borderColor: '#334155', marginTop: 2, marginBottom: 2 },
+    searchInput: { backgroundColor: '#1e293b', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 8, color: '#f8fafc', fontSize: 14, borderWidth: 1, borderColor: '#334155', marginTop: 8 },
+    disabled: { opacity: 0.3 },
+    iconCard: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 8, margin: 2, backgroundColor: '#0f172a', borderRadius: 8, minHeight: 90 },
+    iconLabel: { fontSize: 8, color: '#475569', marginTop: 6, textAlign: 'center' },
 })

@@ -52,7 +52,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
             const globalContent = styleIcons
                 .map(icon => {
-                    const globalName = toPascalCase(`${icon.name}-${style}`)
+                    const globalName = toPascalCase(`${icon.name}-${style}`) + 'Icon'
                     return `export { ${icon.pascalName}Icon as ${globalName} } from './${icon.name}';`
                 })
                 .sort()
@@ -96,13 +96,13 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             return ga.localeCompare(gb)
         })
         .filter(icon => {
-            const globalName = toPascalCase(`${icon.name}-${icon.style}`)
+            const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
             if (seenGlobal.has(globalName)) return false
             seenGlobal.add(globalName)
             return true
         })
         .map(icon => {
-            const globalName = toPascalCase(`${icon.name}-${icon.style}`)
+            const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
             return `export { ${icon.pascalName}Icon as ${globalName} } from './${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
         })
         .join('\n')
