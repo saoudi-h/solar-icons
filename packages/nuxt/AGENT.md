@@ -39,3 +39,9 @@ status: "active"
 - **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`, not `peerDependencies`.** This is unusual for a Nuxt module.
 - **`pnpm dev:prepare` must run before `nuxi dev playground`** — the module needs to be built in stub mode for Nuxt's auto-import scanner.
 - **Nuxt 4 schema is in use** (`@nuxt/kit` 4, `@nuxt/schema` 4). Supports Nuxt 3.12+ via compatibility modes; the dev playground targets Nuxt 4.
+
+## V3 Propagation (2026-06-24)
+
+- `mirrored` option removed from `SolarNuxtModuleOptions` (propagated from Vue's removed `mirrored` prop).
+- `DynamicIcon` added to auto-import filter in `getAllIconNames()`.
+- Stale `#solar-icons/category` alias removed from `types/aliases.d.ts` (flat structure — no categories).

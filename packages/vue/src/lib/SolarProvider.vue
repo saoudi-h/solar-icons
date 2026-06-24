@@ -10,10 +10,10 @@ interface SolarState {
     setSize: (val: string | number) => void
     strokeWidth: Ref<number | undefined>
     setStrokeWidth: (val: number) => void
-    duotoneColor: Ref<string | undefined>
-    setDuotoneColor: (val: string) => void
-    duotoneOpacity: Ref<number | undefined>
-    setDuotoneOpacity: (val: number) => void
+    secondaryColor: Ref<string | undefined>
+    setSecondaryColor: (val: string) => void
+    secondaryOpacity: Ref<number | undefined>
+    setSecondaryOpacity: (val: number) => void
 }
 
 const props = withDefaults(
@@ -21,8 +21,8 @@ const props = withDefaults(
         color?: string
         size?: string | number
         strokeWidth?: number
-        duotoneColor?: string
-        duotoneOpacity?: number
+        secondaryColor?: string
+        secondaryOpacity?: number
     }>(),
     {},
 )
@@ -32,21 +32,21 @@ const wrapperEl = ref<HTMLDivElement>()
 const color = ref(props.color)
 const size = ref(props.size)
 const strokeWidth = ref(props.strokeWidth)
-const duotoneColor = ref(props.duotoneColor)
-const duotoneOpacity = ref(props.duotoneOpacity)
+const secondaryColor = ref(props.secondaryColor)
+const secondaryOpacity = ref(props.secondaryOpacity)
 
 const setColor = (val: string) => { color.value = val }
 const setSize = (val: string | number) => { size.value = val }
 const setStrokeWidth = (val: number) => { strokeWidth.value = val }
-const setDuotoneColor = (val: string) => { duotoneColor.value = val }
-const setDuotoneOpacity = (val: number) => { duotoneOpacity.value = val }
+const setSecondaryColor = (val: string) => { secondaryColor.value = val }
+const setSecondaryOpacity = (val: number) => { secondaryOpacity.value = val }
 
 const state: SolarState = {
     color, setColor,
     size, setSize,
     strokeWidth, setStrokeWidth,
-    duotoneColor, setDuotoneColor,
-    duotoneOpacity, setDuotoneOpacity,
+    secondaryColor, setSecondaryColor,
+    secondaryOpacity, setSecondaryOpacity,
 }
 
 provide(SOLAR_CONTEXT_KEY, state)
@@ -68,13 +68,13 @@ watch(strokeWidth, (sw) => {
         wrapperEl.value?.style.setProperty('--solar-stroke-width', String(sw))
 }, { immediate: true })
 
-watch(duotoneColor, (dc) => {
-    if (dc) wrapperEl.value?.style.setProperty('--solar-duotone-color', dc)
+watch(secondaryColor, (sc) => {
+    if (sc) wrapperEl.value?.style.setProperty('--solar-duotone-color', sc)
 }, { immediate: true })
 
-watch(duotoneOpacity, (d) => {
-    if (d != null)
-        wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(d))
+watch(secondaryOpacity, (so) => {
+    if (so != null)
+        wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(so))
 }, { immediate: true })
 
 </script>

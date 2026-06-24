@@ -8,10 +8,10 @@ interface SolarState {
     setSize: (val: string | number) => void
     strokeWidth: Ref<number | undefined>
     setStrokeWidth: (val: number) => void
-    duotoneColor: Ref<string | undefined>
-    setDuotoneColor: (val: string) => void
-    duotoneOpacity: Ref<number | undefined>
-    setDuotoneOpacity: (val: number) => void
+    secondaryColor: Ref<string | undefined>
+    setSecondaryColor: (val: string) => void
+    secondaryOpacity: Ref<number | undefined>
+    setSecondaryOpacity: (val: number) => void
 }
 
 export function useSolar(): SolarState {

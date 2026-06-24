@@ -14,11 +14,9 @@ describe('getAllIconNames', () => {
       Home: {},
       SolarProvider: {},
       useSolar: () => ({}),
-      createSolarIcons: () => ({}),
-      SolarIconsPlugin: {},
-      SomeProvider: {},
-      useSomething: () => ({}),
-      createSomething: () => ({}),
+      IconBase: {},
+      IconStyle: {},
+      DynamicIcon: {},
     }))
 
     const names = await getAllIconNames()

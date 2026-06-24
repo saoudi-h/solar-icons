@@ -165,14 +165,13 @@ export function vueComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const nodes = parseIconNodes(body)
     const hChildren = nodes.map(n => nodeToH(n, '            ')).join(',\n')
 
-    const globalName = `${icon.pascalName}${icon.style}`
     const content = `import { h } from 'vue'
-import IconBase from '../../../lib/IconBase.vue'
+import IconBase from '../../lib/IconBase.vue'
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-const ${globalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
+const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
     return h(IconBase, {
         ...attrs,
         ...props,
@@ -184,12 +183,10 @@ ${hChildren}
     })
 }
 
-${globalName}Icon.displayName = '${globalName}Icon'
-
-export default ${globalName}Icon
+export default ${icon.pascalName}Icon
 `
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.ts`,
+        path: `src/icons/${icon.styleKebab}/${icon.name}.ts`,
         content,
     }
 }

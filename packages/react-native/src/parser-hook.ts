@@ -60,7 +60,7 @@ export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefi
     )
     const svgImports = Array.from(svgElements).sort().join(', ')
 
-    const duotoneImports = hasDuotone ? `import { useContext } from "react"\nimport { SolarContext } from "../../../lib/SolarProvider"\n` : ''
+    const duotoneImports = hasDuotone ? `import { useContext } from "react"\nimport { SolarContext } from "../../lib/SolarProvider"\n` : ''
 
     const duotoneDestructure = hasDuotone
         ? `    const ctx = useContext(SolarContext)
@@ -74,10 +74,9 @@ export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefi
     const spreadProps = hasDuotone ? '{ ...rest, color }' : 'props'
 
     const content = `/* GENERATED FILE */
-import React from "react"
 import { forwardRef } from "react"
-${duotoneImports}${svgImports ? `import { ${svgImports} } from "react-native-svg"\n` : ''}import IconBase from "../../../lib/IconBase"
-import type { IconProps, Icon } from "../../../lib/types"
+${duotoneImports}${svgImports ? `import { ${svgImports} } from "react-native-svg"\n` : ''}import IconBase from "../../lib/IconBase"
+import type { IconProps, Icon } from "../../lib/types"
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
@@ -89,11 +88,9 @@ ${duotoneDestructure}    return (
         </IconBase>
     )
 })
-
-${icon.pascalName}Icon.displayName = "${icon.pascalName}Icon"
 `
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.tsx`,
+        path: `src/icons/${icon.styleKebab}/${icon.name}.tsx`,
         content,
     }
 }

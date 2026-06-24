@@ -12,7 +12,6 @@ export interface SolarNuxtModuleOptions {
   color?: string
   size?: string | number
   strokeWidth?: number
-  mirrored?: boolean
 }
 
 export async function getAllIconNames(): Promise<string[]> {
@@ -24,7 +23,8 @@ export async function getAllIconNames(): Promise<string[]> {
         && name !== 'IconBase'
         && name !== 'SolarProvider'
         && name !== 'useSolar'
-        && name !== 'IconStyle',
+        && name !== 'IconStyle'
+        && name !== 'DynamicIcon',
     )
     return iconNames
   }
@@ -48,7 +48,6 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
     color: 'currentColor',
     size: 24,
     strokeWidth: 1.5,
-    mirrored: false,
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)

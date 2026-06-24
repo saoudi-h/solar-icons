@@ -46,8 +46,6 @@ export class SolarDynamicIcon {
     readonly color = input<string>()
     /** Stroke width of the icon */
     readonly strokeWidth = input<string | number>()
-    /** Whether to mirror the icon horizontally */
-    readonly mirrored = input<boolean>()
     /** Accessibility label for the icon */
     readonly alt = input<string>()
 
@@ -69,14 +67,12 @@ export class SolarDynamicIcon {
             const size = this.size()
             const color = this.color()
             const strokeWidth = this.strokeWidth()
-            const mirrored = this.mirrored()
             const alt = this.alt()
 
             untracked(() => {
                 if (size !== undefined) ref.setInput('size', size)
                 if (color !== undefined) ref.setInput('color', color)
                 if (strokeWidth !== undefined) ref.setInput('strokeWidth', strokeWidth)
-                if (mirrored !== undefined) ref.setInput('mirrored', mirrored)
                 if (alt !== undefined) ref.setInput('alt', alt)
             })
         })

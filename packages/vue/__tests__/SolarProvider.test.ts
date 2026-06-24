@@ -14,13 +14,13 @@ describe('SolarProvider', () => {
         })
 
         const wrapper = mount(SolarProvider, {
-            props: { color: 'red', size: '24', weight: 'Linear', mirrored: false },
+            props: { color: 'red', size: '24', secondaryColor: 'blue' },
             slots: { default: () => h(Consumer) },
         })
 
         expect(wrapper.find('#slot').exists()).toBe(true)
 
-        await wrapper.setProps({ color: 'blue', mirrored: true })
+        await wrapper.setProps({ color: 'blue', secondaryOpacity: 0.8 })
         // No direct DOM reflection, but ensure component updates without errors
         expect(wrapper.emitted()).toBeTruthy()
     })

@@ -9,35 +9,21 @@ export enum IconStyle {
     OUTLINE = 'Outline',
 }
 
-export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
-    /**
-     * Icon size (width and height). Numeric value in pixels.
-     * @default 24
-     */
-    size?: number
-
-    /**
-     * Icon color.
-     * @default 'currentColor'
-     */
+export interface IconBaseProps {
+    alt?: string
     color?: string
-
-    /**
-     * Stroke width of the icon lines.
-     * @default 1.5
-     */
+    size?: number
     strokeWidth?: number | string
-
-    /**
-     * Secondary color for duotone icons (accent layer).
-     * Falls back to `color` if not set.
-     */
     secondaryColor?: string
+    secondaryOpacity?: number
+    children?: any
+}
 
-    /**
-     * Opacity of the secondary/duotone layer.
-     * @default 0.5
-     */
+export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
+    size?: number
+    color?: string
+    strokeWidth?: number | string
+    secondaryColor?: string
     secondaryOpacity?: number
 }
 

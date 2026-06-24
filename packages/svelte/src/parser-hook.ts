@@ -42,7 +42,7 @@ export function svelteComponentFile(ctx: IconContext<ParsedIcon>): FileDefinitio
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner);
     const body = duotone ? `${duotone}\n${icon.inner.trim()}` : icon.inner.trim();
     const content = `<script lang="ts">
-import Icon from '../../../lib/IconBase.svelte'
+import Icon from '../../lib/IconBase.svelte'
 let props = $props()
 </script>
 
@@ -51,7 +51,7 @@ let props = $props()
 </Icon>
 `;
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.svelte`,
+        path: `src/icons/${icon.styleKebab}/${icon.name}.svelte`,
         content,
     };
 }

@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
 
-import { parseSvgs, forEachIcon } from '../../core/src/parser.ts';
-import type { ParsedIcon } from '../../core/src/parser.ts';
+import { parseSvgs, forEachIcon, forEachIconGroupedBy } from '../../core/src/parser.ts';
+import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts';
 import { svelteComponentFile, type FileDefinition } from '../src/parser-hook';
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons');
@@ -21,71 +21,18 @@ const WEIGHT_KEBAB: Record<string, string> = {
     Outline: 'outline',
 };
 
-function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
-    return array.reduce(
-        (acc, item) => {
-            const key = keySelector(item);
-            if (!acc[key]) acc[key] = [];
-            acc[key].push(item);
-            return acc;
-        },
-        {} as Record<string, T[]>
-    );
+function toPascalCase(str: string): string {
+    return str
+        .split('-')
+        .map((s) => s.replace(/^\w/, (c) => c.toUpperCase()))
+        .join('');
 }
 
-function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
     const files: FileDefinition[] = [];
-    const byCategory = groupBy(icons, (i) => i.category);
-
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, (i) => i.style);
-
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const styleKebab = WEIGHT_KEBAB[style];
-
-            const globalContent = styleIcons
-                .map(
-                    (icon) =>
-                        `export { default as ${icon.pascalName}Icon } from './${icon.name}.svelte';`
-                )
-                .sort()
-                .join('\n');
-
-            files.push({
-                path: path.join(ICONS_PATH, category, styleKebab, 'styled.ts'),
-                content: `${globalContent}\n`,
-            });
-        }
-    }
-
-    const toPascalCase = (str: string): string =>
-        str
-            .split('-')
-            .map((s) => s.replace(/^\w/, (c) => c.toUpperCase()))
-            .join('');
-
-    // Generate styled.ts root with deduplicated named exports
-    const seenGlobal = new Set<string>();
-    const rootGlobalLines: string[] = [];
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, (i) => i.style);
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            for (const icon of styleIcons) {
-                const globalName = toPascalCase(`${icon.name}-${style}`);
-                if (seenGlobal.has(globalName)) continue;
-                seenGlobal.add(globalName);
-                rootGlobalLines.push(
-                    `export { default as ${globalName}Icon } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}.svelte';`
-                );
-            }
-        }
-    }
-    rootGlobalLines.sort();
-
-    files.push({
-        path: path.join(ICONS_PATH, 'styled.ts'),
-        content: rootGlobalLines.join('\n') + '\n',
-    });
 
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter((i) => i.style === weight);
@@ -100,7 +47,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             })
             .map(
                 (icon) =>
-                    `export { default as ${icon.pascalName}Icon } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}.svelte';`
+                    `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_KEBAB[icon.style]}/${icon.name}.svelte';`
             )
             .join('\n');
 
@@ -109,6 +56,23 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             content: content ? `${content}\n` : '',
         });
     }
+
+    const seenGlobal = new Set<string>();
+    const rootGlobalLines: string[] = [];
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`);
+        if (seenGlobal.has(globalName)) continue;
+        seenGlobal.add(globalName);
+        rootGlobalLines.push(
+            `export { default as ${globalName}Icon } from './${WEIGHT_KEBAB[icon.style]}/${icon.name}.svelte';`
+        );
+    }
+    rootGlobalLines.sort();
+
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
+    });
 
     const stylesIndexContent = WEIGHTS.map(
         (w) => `export * as ${w} from './${WEIGHT_KEBAB[w]}';`
@@ -120,13 +84,24 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
     });
 
     const mainEntryContent = `export type { IconProps } from "./lib"
-export { IconBase, SolarProvider, useSolar, type IconStyle } from "./lib"
+export { IconBase, SolarProvider, DynamicIcon, useSolar, type IconStyle } from "./lib"
 export * from "./icons/styled"
 `;
 
     files.push({
         path: INDEX_PATH,
         content: mainEntryContent,
+    });
+
+    const dynamicBarrelContent = groups
+        .map((g) => {
+            return `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'\nexport type { ${g.pascalName}IconProps } from './${g.name}.svelte'`;
+        })
+        .join('\n');
+
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
     });
 
     return files;
@@ -139,6 +114,63 @@ function clean() {
             console.log(pc.blue(`Removed ${p}`));
         }
     }
+}
+
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles;
+
+    const styleImports = WEIGHTS.filter((w) => groups[w])
+        .map((w) => {
+            const icon = groups[w]!;
+            const kebab = WEIGHT_KEBAB[w];
+            return `import ${w} from '../${kebab}/${icon.name}.svelte'`;
+        })
+        .join('\n');
+
+    const stylesObj = WEIGHTS.filter((w) => groups[w])
+    .map((w) => {
+        const kebab = WEIGHT_KEBAB[w];
+        const key = kebab.includes('-') ? `'${kebab}'` : kebab;
+        return `        ${key}: ${w},`;
+    })
+        .join('\n');
+
+    const name = group.name;
+    const pascalName = group.pascalName;
+
+    const previews = WEIGHTS.filter((w) => groups[w])
+        .map((w) => {
+            const icon = groups[w]!;
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`;
+        })
+        .join('\n *\n');
+
+    const content = `<!-- GENERATED FILE -->
+<script lang="ts">
+import DynamicIcon from '../../lib/dynamic-icon.svelte'
+${styleImports}
+
+export type ${pascalName}IconProps = {
+    weight?: 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
+    [key: string]: any
+}
+</script>
+
+<!--
+${previews}
+-->
+<DynamicIcon
+    styles={{
+${stylesObj}
+    }}
+    {...$$restProps}
+/>
+`;
+
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.svelte`),
+        content,
+    };
 }
 
 function writeFiles(files: FileDefinition[]) {
@@ -157,9 +189,16 @@ const main = async () => {
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         );
 
-        const componentFiles = await forEachIcon(svelteComponentFile);
-        const indexFiles = generateIndexes(result.icons);
-        writeFiles([...componentFiles, ...indexFiles]);
+        const allComponentFiles = await forEachIcon(svelteComponentFile);
+        const seenPaths = new Set<string>();
+        const componentFiles = allComponentFiles.filter((f) => {
+            if (seenPaths.has(f.path)) return false;
+            seenPaths.add(f.path);
+            return true;
+        });
+        const dynamicFiles = await forEachIconGroupedBy((ctx) => generateDynamicFile(ctx.icon));
+        const indexFiles = generateIndexes(result.icons, result.groups);
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles]);
     } catch (err) {
         console.error(pc.red('Build failed'));
         console.error(err);

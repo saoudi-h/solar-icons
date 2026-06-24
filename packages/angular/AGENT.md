@@ -1,8 +1,9 @@
 ---
-name: "@solar-icons/angular"
-type: "package"
-status: "active"
+name: '@solar-icons/angular'
+type: 'package'
+status: 'active'
 ---
+
 # AGENT CONTEXT: packages/angular
 
 ## 🧠 Role
@@ -56,3 +57,9 @@ The folder-per-icon shape is required by Angular's compiler and module resolutio
 - **`@xmldom/xmldom` is a devDep** — used by tests to parse generated SVGs without a real DOM.
 - **Standalone components only.** No NgModule wrappers.
 - **Signals-based inputs** (`input()`), not `@Input()` decorators, in the generated code.
+
+## V3 Propagation (2026-06-24)
+
+- Directory structure is now flat (no categories). Icon component files live directly under `src/icons/<style>/<kebab-name>-<style>.ts`.
+- `mirrored` prop removed from `SolarDynamicIcon`.
+- Dynamic per-icon components added: `src/icons/dynamic/<name>-dynamic.ts` with `weight` input.

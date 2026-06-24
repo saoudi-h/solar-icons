@@ -36,8 +36,8 @@ export function solidComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner);
     const body = duotone ? `${duotone}\n        ${icon.inner.trim()}` : icon.inner.trim();
     const content = `/* GENERATED FILE */
-import IconBase from "../../../lib/IconBase"
-import type { IconProps, Icon } from "../../../lib/types"
+import IconBase from "../../lib/IconBase"
+import type { IconProps, Icon } from "../../lib/types"
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
@@ -49,7 +49,7 @@ export const ${icon.pascalName}Icon: Icon = (props: IconProps) => (
 )
 `;
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.tsx`,
+        path: `src/icons/${icon.styleKebab}/${icon.name}.tsx`,
         content,
     };
 }

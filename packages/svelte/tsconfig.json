@@ -18,6 +18,6 @@
         "allowImportingTsExtensions": true,
         "noEmit": true
     },
-    "include": ["./src/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts", "tests"]
+    "include": ["./src/**/*", "./tests/**/*", "./svelte.config.js", "./vitest.config.ts"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts"]
 }

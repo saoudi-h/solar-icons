@@ -43,3 +43,11 @@ status: 'active'
 - **No CSS vars in RN** — duotone customization uses React Context + JSX expressions instead of `var(--solar-*)`.
 - **Source SVG `<g>` grouping matters for duotone**: paths tagged as the duotone accent layer must be groupable in Figma so the generator can target them.
 - **`tsdown` regression (DEBUG-01/02/03)**: same caveat as other packages if a `bin` is ever added.
+
+## V3 Propagation (2026-06-24)
+
+- Directory structure is now flat (no categories). All icon files live directly under `src/icons/<style>/`.
+- `forwardRef` removed; components now use the `ref` prop directly (React 19 pattern).
+- `displayName` removed from generated components.
+- `Icon` type simplified (no `ForwardRefExoticComponent`).
+- Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.

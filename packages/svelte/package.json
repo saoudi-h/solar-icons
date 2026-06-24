@@ -29,6 +29,7 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "test": "vitest run",
         "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },

@@ -2,12 +2,12 @@ import type { FC, RefAttributes } from 'react'
 import type { IconProps } from './types'
 
 interface StyleComponents {
-    bold: FC<IconProps & RefAttributes<SVGSVGElement>>
-    'bold-duotone': FC<IconProps & RefAttributes<SVGSVGElement>>
-    broken: FC<IconProps & RefAttributes<SVGSVGElement>>
-    linear: FC<IconProps & RefAttributes<SVGSVGElement>>
-    'line-duotone': FC<IconProps & RefAttributes<SVGSVGElement>>
-    outline: FC<IconProps & RefAttributes<SVGSVGElement>>
+    bold: FC<IconProps & RefAttributes<any>>
+    'bold-duotone': FC<IconProps & RefAttributes<any>>
+    broken: FC<IconProps & RefAttributes<any>>
+    linear: FC<IconProps & RefAttributes<any>>
+    'line-duotone': FC<IconProps & RefAttributes<any>>
+    outline: FC<IconProps & RefAttributes<any>>
 }
 
 type Weight = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'

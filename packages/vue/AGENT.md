@@ -46,3 +46,11 @@ status: 'active'
 - **`IconBase.vue` cannot be imported directly by users** — icons are generated as `.ts` files that wrap it via `h()`.
 - **`SOLAR_CONTEXT_KEY` is in a separate `.ts` file** because `<script setup>` cannot contain ES module exports.
 - **`tsdown` regression (DEBUG-01/02/03)**: same `exports: { bin: { ... } }` idiom as `@autonomos/cli` if a `bin` is ever added.
+
+## V3 Propagation (2026-06-24)
+
+- Directory structure is now flat (no categories). All icon components live directly under `src/icons/<style>/`.
+- `displayName` removed from generated components.
+- `mirrored` prop removed from `IconProps`.
+- Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.
+- `duotoneColor`/`duotoneOpacity` renamed to `secondaryColor`/`secondaryOpacity` in SolarProvider and useSolar.

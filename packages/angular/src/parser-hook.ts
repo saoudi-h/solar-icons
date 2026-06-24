@@ -141,7 +141,7 @@ import {
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { IconBase } from '../../../lib/icon-base';
+import { IconBase } from '../../lib/icon-base';
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
@@ -151,7 +151,6 @@ import { IconBase } from '../../../lib/icon-base';
  *
  * @component ${globalName}
  * @style ${icon.style}
- * @category ${icon.category}
  */
 @Component({
     selector: 'svg[solar${globalName}Icon]',
@@ -166,7 +165,7 @@ import { IconBase } from '../../../lib/icon-base';
 export class ${globalName}Icon extends IconBase {}
 `
     return {
-        path: `src/icons/${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`,
+        path: `src/icons/${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`,
         content,
     }
 }

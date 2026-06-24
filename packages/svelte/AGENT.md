@@ -51,3 +51,8 @@ status: 'active'
 - **`peerDependencies.svelte: ">= 4.0.0"`** — the source uses Svelte 5 runes, so Svelte 4 users may see compatibility issues.
 - **Svelte 5 runes are required in the generated code** (`$props()` destructuring, not legacy `export let`).
 - **`scripts/compile-svelte.mjs` and `scripts/copy-svelte.mjs`** are holdovers; verify by running `pnpm build` with them disabled before deletion.
+
+## V3 Propagation (2026-06-24)
+
+- Directory structure is now flat (no categories). All icon files live directly under `src/icons/<style>/`.
+- Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.

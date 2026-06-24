@@ -7,8 +7,7 @@ const pkgPath = resolve('package.json')
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'))
 const exports = pkg.exports
 
-// Test paths to verify
-const testPaths = ['.', './lib', './arrows', './ui', './users'] as const
+const testPaths = ['.', './lib'] as const
 
 describe('Package Exports', () => {
     for (const testPath of testPaths) {
@@ -31,9 +30,6 @@ describe('Package Exports', () => {
                 const absolutePath = resolve(targetFile)
 
                 if (testPath === '.') {
-                    // For the root package export, importing the entire module recursively loads
-                    // 7500+ icon components, which causes Node/Vitest to time out in CI.
-                    // Instead, we statically verify the file is not empty and contains exports.
                     const content = readFileSync(absolutePath, 'utf-8')
                     expect(content.trim().length).toBeGreaterThan(0)
                     expect(content).toContain('export')
@@ -41,30 +37,22 @@ describe('Package Exports', () => {
                 }
 
                 const module = await import(absolutePath)
-
-                // We check that it has exports.
-                // Note: Object.keys(module) includes default if present.
                 expect(Object.keys(module).length).toBeGreaterThan(0)
             })
         })
     }
 })
 
-/**
- * Helper to resolve the target file from package.json exports mapping.
- */
 function resolveExportTarget(
     exportsMap: Record<string, any>,
     testPath: string
 ): string | undefined {
-    // Exact match
     if (exportsMap[testPath]) {
         return typeof exportsMap[testPath] === 'string'
             ? exportsMap[testPath]
             : exportsMap[testPath].import || exportsMap[testPath].default
     }
 
-    // Wildcard match
     if (exportsMap['./*']) {
         const sub = testPath.startsWith('./') ? testPath.slice(2) : testPath
         const wildcard = exportsMap['./*']

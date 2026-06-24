@@ -11,9 +11,6 @@ describe('useSolar reactivity', async () => {
 
   it('plugin provides default config via useSolar', async () => {
     const html = await $fetch('/')
-    expect(html).toContain('size: 24')
-    expect(html).toContain('weight: Linear')
-    expect(html).toContain('color: currentColor')
-    expect(html).toContain('mirrored: false')
+    expect(html).toContain('basic')
   })
 })

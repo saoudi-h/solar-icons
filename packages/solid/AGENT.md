@@ -48,3 +48,8 @@ status: "active"
 - **No `forwardRef`** — Solid components are plain functions.
 - **`mergeProps` no longer used for defaults** — `IconBase.tsx` uses `??` with CSS var fallbacks instead of `mergeProps({ size: '1em', color: 'currentColor' })`.
 - **`tsdown` regression (DEBUG-01/02/03)**: same caveat as other packages if a `bin` is ever added.
+
+## V3 Propagation (2026-06-24)
+
+- Directory structure is now flat (no categories). All icon files live directly under `src/icons/<style>/`.
+- Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.

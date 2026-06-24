@@ -1,21 +1,18 @@
-/**
- * Smoke tests for generated icon components.
- */
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
-import { ArrowLeftBold } from '../icons/arrows/Bold/ArrowLeftBold'
-import { ArrowLeftBoldDuotone } from '../icons/arrows/BoldDuotone/ArrowLeftBoldDuotone'
-import { ArrowLeftBroken } from '../icons/arrows/Broken/ArrowLeftBroken'
-import { ArrowLeftLinear } from '../icons/arrows/Linear/ArrowLeftLinear'
-import { ArrowLeftLineDuotone } from '../icons/arrows/LineDuotone/ArrowLeftLineDuotone'
-import { ArrowLeftOutline } from '../icons/arrows/Outline/ArrowLeftOutline'
+import { ArrowLeftBoldDuotoneIcon } from '../icons/bold-duotone/arrow-left-bold-duotone'
+import { ArrowLeftBoldIcon } from '../icons/bold/arrow-left-bold'
+import { ArrowLeftBrokenIcon } from '../icons/broken/arrow-left-broken'
+import { ArrowLeftLineDuotoneIcon } from '../icons/line-duotone/arrow-left-line-duotone'
+import { ArrowLeftLinearIcon } from '../icons/linear/arrow-left-linear'
+import { ArrowLeftOutlineIcon } from '../icons/outline/arrow-left-outline'
 
 const REPRESENTATIVE_ICONS = [
-    { name: 'ArrowLeftBold', cls: ArrowLeftBold },
-    { name: 'ArrowLeftBoldDuotone', cls: ArrowLeftBoldDuotone },
-    { name: 'ArrowLeftLinear', cls: ArrowLeftLinear },
-    { name: 'ArrowLeftLineDuotone', cls: ArrowLeftLineDuotone },
-    { name: 'ArrowLeftOutline', cls: ArrowLeftOutline },
-    { name: 'ArrowLeftBroken', cls: ArrowLeftBroken },
+    { name: 'ArrowLeftBold', cls: ArrowLeftBoldIcon },
+    { name: 'ArrowLeftBoldDuotone', cls: ArrowLeftBoldDuotoneIcon },
+    { name: 'ArrowLeftLinear', cls: ArrowLeftLinearIcon },
+    { name: 'ArrowLeftLineDuotone', cls: ArrowLeftLineDuotoneIcon },
+    { name: 'ArrowLeftOutline', cls: ArrowLeftOutlineIcon },
+    { name: 'ArrowLeftBroken', cls: ArrowLeftBrokenIcon },
 ] as const
 
 describe('Generated Icon Components (smoke tests)', () => {

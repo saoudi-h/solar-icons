@@ -9,7 +9,7 @@ import { IconBase } from './icon-base'
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
-        'class': 'solar-icon solar-test-icon',
+        class: 'solar-icon solar-test-icon',
     },
 })
 class TestIcon extends IconBase {}
@@ -53,14 +53,7 @@ describe('IconBase', () => {
     describe('color input', () => {
         it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgStyle('color')).toBe('var(--solar-icon-color, currentcolor)')
-        })
-    })
-
-    describe('mirrored input', () => {
-        it('should not be mirrored by default', () => {
-            fixture.detectChanges()
-            expect(getSvgAttribute('transform')).toBeNull()
+            expect(getSvgStyle('color')).toBe('var(--solar-icon-color, currentColor)')
         })
     })
 

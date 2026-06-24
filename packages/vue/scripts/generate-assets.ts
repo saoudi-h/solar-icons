@@ -3,8 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import type { ParsedIcon } from '../../core/src/parser.ts'
-import { forEachIcon, parseSvgs } from '../../core/src/parser.ts'
+import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts'
+import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '../../core/src/parser.ts'
 import { vueComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -21,65 +21,18 @@ const WEIGHT_KEBAB: Record<string, string> = {
     Outline: 'outline',
 }
 
-function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
-    return array.reduce(
-        (acc, item) => {
-            const key = keySelector(item)
-            if (!acc[key]) acc[key] = []
-            acc[key].push(item)
-            return acc
-        },
-        {} as Record<string, T[]>
-    )
+function toPascalCase(str: string): string {
+    return str
+        .split('-')
+        .map(s => s.replace(/^\w/, c => c.toUpperCase()))
+        .join('')
 }
 
-function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
     const files: FileDefinition[] = []
-    const byCategory = groupBy(icons, i => i.category)
-
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, i => i.style)
-
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const styleKebab = WEIGHT_KEBAB[style]
-
-            const globalContent = styleIcons
-                .map(icon => {
-                    const globalName = `${icon.pascalName}${style}`
-                    return `export { default as ${globalName}Icon } from './${icon.name}';`
-                })
-                .sort()
-                .join('\n')
-
-            files.push({
-                path: path.join(ICONS_PATH, category, styleKebab, 'styled.ts'),
-                content: `${globalContent}\n`,
-            })
-        }
-    }
-
-    // Generate styled.ts root with deduplicated named exports
-    const seenGlobal = new Set<string>()
-    const rootGlobalLines: string[] = []
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, i => i.style)
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            for (const icon of styleIcons) {
-                const globalName = `${icon.pascalName}${style}`
-                if (seenGlobal.has(globalName)) continue
-                seenGlobal.add(globalName)
-                rootGlobalLines.push(
-                    `export { default as ${globalName}Icon } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
-                )
-            }
-        }
-    }
-    rootGlobalLines.sort()
-
-    files.push({
-        path: path.join(ICONS_PATH, 'styled.ts'),
-        content: rootGlobalLines.join('\n') + '\n',
-    })
 
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
@@ -88,15 +41,14 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
             .filter(icon => {
-                const globalName = `${icon.pascalName}${weight}`
-                if (seen.has(globalName)) return false
-                seen.add(globalName)
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
                 return true
             })
-            .map(icon => {
-                const globalName = `${icon.pascalName}${weight}`
-                return `export { default as ${globalName}Icon } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
-            })
+            .map(
+                icon =>
+                    `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+            )
             .join('\n')
 
         files.push({
@@ -104,6 +56,23 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
             content: content ? `${content}\n` : '',
         })
     }
+
+    const seenGlobal = new Set<string>()
+    const rootGlobalLines: string[] = []
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
+        if (seenGlobal.has(globalName)) continue
+        seenGlobal.add(globalName)
+        rootGlobalLines.push(
+            `export { default as ${globalName} } from './${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+        )
+    }
+    rootGlobalLines.sort()
+
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
+    })
 
     const stylesIndexContent = WEIGHTS.map(
         w => `export * as ${w} from './${WEIGHT_KEBAB[w]}';`
@@ -116,13 +85,24 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib/types"
-export { IconBase, SolarProvider, useSolar, IconStyle } from "./lib"
+export { IconBase, SolarProvider, DynamicIcon, useSolar, IconStyle } from "./lib"
 export * from "./icons/styled"
 `
 
     files.push({
         path: INDEX_PATH,
         content: mainEntryContent,
+    })
+
+    const dynamicBarrelContent = groups
+        .map(g => {
+            return `export { default as ${g.pascalName}Icon } from './${g.name}'\nexport type { ${g.pascalName}IconProps } from './${g.name}'`
+        })
+        .join('\n')
+
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
     })
 
     return files
@@ -134,6 +114,49 @@ function clean() {
             fs.rmSync(p, { recursive: true, force: true })
             console.log(pc.blue(`Removed ${p}`))
         }
+    }
+}
+
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles
+
+    const styleImports = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            const kebab = WEIGHT_KEBAB[w]
+            return `import ${w} from '../${kebab}/${icon.name}'`
+        })
+        .join('\n')
+
+    const name = group.name
+    const pascalName = group.pascalName
+
+    const previews = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`
+        })
+        .join('\n *\n')
+
+    const content = `/* GENERATED FILE */
+import DynamicIcon from '../../lib/dynamic-icon.vue'
+${styleImports}
+
+export interface ${pascalName}IconProps {
+    weight?: 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
+}
+
+/**
+${previews}
+ */
+const ${pascalName}Icon = DynamicIcon
+
+export default ${pascalName}Icon
+`
+
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.ts`),
+        content,
     }
 }
 
@@ -153,9 +176,16 @@ const main = async () => {
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         )
 
-        const componentFiles = await forEachIcon(vueComponentFile)
-        const indexFiles = generateIndexes(result.icons)
-        writeFiles([...componentFiles, ...indexFiles])
+        const allComponentFiles = await forEachIcon(vueComponentFile)
+        const seenPaths = new Set<string>()
+        const componentFiles = allComponentFiles.filter(f => {
+            if (seenPaths.has(f.path)) return false
+            seenPaths.add(f.path)
+            return true
+        })
+        const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
+        const indexFiles = generateIndexes(result.icons, result.groups)
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))
         console.error(err)
