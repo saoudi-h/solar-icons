@@ -155,11 +155,11 @@ import { DynamicIcon } from '../../lib/dynamic-icon'
 import type { IconProps } from '../../lib/types'
 ${styleImports}
 
+export type ${pascalName}IconProps = Omit<IconProps, 'ref'>
+
 /**
 ${previews}
  */
-export type ${pascalName}IconProps = Omit<IconProps, 'ref'>
-
 export const ${pascalName}Icon = (props: ${pascalName}IconProps) => (
     <DynamicIcon
         {...props}
