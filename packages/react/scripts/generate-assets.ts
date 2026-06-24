@@ -3,8 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import type { ParsedIcon } from '../../core/src/parser.ts'
-import { forEachIcon, parseSvgs } from '../../core/src/parser.ts'
+import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts'
+import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '../../core/src/parser.ts'
 import { reactPerfComponentFile, type FileDefinition } from '../src/parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -40,7 +40,10 @@ function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string
     )
 }
 
-function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
     const files: FileDefinition[] = []
     const byCategory = groupBy(icons, i => i.category)
 
@@ -133,6 +136,18 @@ export * as SSR from "./icons/styled"
         content: mainEntryContent,
     })
 
+    // Generate dynamic barrel index
+    const dynamicBarrelContent = groups
+        .map(g => {
+            return `export { ${g.pascalName}Icon } from './${g.name}'\nexport type { ${g.pascalName}IconProps } from './${g.name}'`
+        })
+        .join('\n')
+
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
+    })
+
     return files
 }
 
@@ -142,6 +157,54 @@ function clean() {
             fs.rmSync(p, { recursive: true, force: true })
             console.log(pc.blue(`Removed ${p}`))
         }
+    }
+}
+
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles
+
+    const styleImports = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            const kebab = WEIGHT_KEBAB[w]
+            return `import { ${icon.pascalName}Icon as ${icon.pascalName}${w} } from '../${icon.category}/${kebab}/${icon.name}'`
+        })
+        .join('\n')
+
+    const stylesObj = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            const kebab = WEIGHT_KEBAB[w]
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab
+            return `        ${key}: ${icon.pascalName}${w},`
+        })
+        .join('\n')
+
+    const name = group.name
+    const pascalName = group.pascalName
+
+    const content = `/* GENERATED FILE */
+import { DynamicIcon } from '../../lib/dynamic-icon'
+import type { IconProps } from '../../lib/types'
+${styleImports}
+
+export type ${pascalName}IconProps = Omit<IconProps, 'ref'>
+
+export const ${pascalName}Icon = (props: ${pascalName}IconProps) => (
+    <DynamicIcon
+        {...props}
+        styles={{
+${stylesObj}
+        }}
+    />
+)
+
+${pascalName}Icon.displayName = "${pascalName}Icon"
+`
+
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.tsx`),
+        content,
     }
 }
 
@@ -162,8 +225,9 @@ const main = async () => {
         )
 
         const componentFiles = await forEachIcon(reactPerfComponentFile)
-        const indexFiles = generateIndexes(result.icons)
-        writeFiles([...componentFiles, ...indexFiles])
+        const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
+        const indexFiles = generateIndexes(result.icons, result.groups)
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))
         console.error(err)

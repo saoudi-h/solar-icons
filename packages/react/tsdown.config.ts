@@ -20,6 +20,7 @@ function genEntries(styles: string[]) {
         'lib/types': './src/lib/types.ts',
         'lib/ssr': './src/lib/ssr.ts',
         'icons/styled': './src/icons/styled.ts',
+        'icons/dynamic/index': './src/icons/dynamic/index.ts',
     }
 
     for (const style of styles) {
@@ -65,6 +66,11 @@ const config: UserConfig = defineConfig({
             pkg['./ssr'] = {
                 types: './dist/lib/ssr.d.mts',
                 import: './dist/lib/ssr.mjs',
+            }
+
+            pkg['./dynamic/*'] = {
+                types: './dist/icons/dynamic/*.d.mts',
+                import: './dist/icons/dynamic/*.mjs',
             }
 
             pkg['./*'] = {
