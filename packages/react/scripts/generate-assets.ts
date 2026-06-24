@@ -155,7 +155,9 @@ import { DynamicIcon } from '../../lib/dynamic-icon'
 import type { IconProps } from '../../lib/types'
 ${styleImports}
 
-export type ${pascalName}IconProps = Omit<IconProps, 'ref'>
+export type ${pascalName}IconProps = Omit<IconProps, 'ref'> & {
+    weight?: 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
+}
 
 /**
 ${previews}

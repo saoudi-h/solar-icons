@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { SolarProvider, useSolar } from '@solar-icons/react'
-import * as Solar from '@solar-icons/react'
+import { HomeBoldIcon, StarBoldIcon, HeartBoldIcon } from '@solar-icons/react'
 
 function ProviderDemoInner() {
     const solar = useSolar()
@@ -14,14 +14,11 @@ function ProviderDemoInner() {
                 <button className="px-3 py-1.5 bg-green-500 text-white rounded-lg text-sm" onClick={() => solar.setColor('#22c55e')}>Green</button>
                 <button className="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm" onClick={() => solar.setSize(48)}>48px</button>
                 <button className="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm" onClick={() => solar.setSize(24)}>24px</button>
-                </button>
-                <span className="text-xs text-slate-500">
-                </span>
             </div>
             <div className="flex gap-4">
-                <Solar.HomeBold />
-                <Solar.StarBold color="#ef4444" />
-                <Solar.HeartBold />
+                <HomeBoldIcon />
+                <StarBoldIcon color="#ef4444" />
+                <HeartBoldIcon />
             </div>
         </div>
     )
@@ -47,11 +44,8 @@ export default function ProviderDemo() {
                     <label className="text-xs text-slate-400">Stroke ({providerStroke})</label>
                     <input type="range" min="0.5" max="3" step="0.1" value={providerStroke} onChange={(e) => setProviderStroke(parseFloat(e.target.value))} className="w-32 accent-amber-500" />
                 </div>
-                <div className="space-y-1">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                    </label>
-                </div>
             </div>
+            <SolarProvider color={providerColor} size={providerSize} strokeWidth={providerStroke}>
                 <ProviderDemoInner />
             </SolarProvider>
         </div>

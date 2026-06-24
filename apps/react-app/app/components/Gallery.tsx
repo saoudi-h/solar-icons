@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import * as Solar from '@solar-icons/react'
 import { useSolar } from '@solar-icons/react'
+import { DynamicIcon } from '@solar-icons/react/lib/dynamic-icon'
+import * as Solar from '@solar-icons/react'
 import { ALL_ICONS, STYLES, type IconStyle } from '../icon-list'
 
 const STYLE_SUFFIX: Record<IconStyle, string> = {
@@ -22,9 +23,15 @@ function isDuotone(s: IconStyle): boolean {
     return s === 'BoldDuotone' || s === 'LineDuotone'
 }
 
-function getIcon(name: string, style: IconStyle) {
-    const globalName = name + STYLE_SUFFIX[style]
-    return (Solar as any)[globalName]
+function getIconStyles(name: string) {
+    return {
+        bold: (Solar as any)[name + 'Bold'],
+        'bold-duotone': (Solar as any)[name + 'BoldDuotone'],
+        broken: (Solar as any)[name + 'Broken'],
+        linear: (Solar as any)[name + 'Linear'],
+        'line-duotone': (Solar as any)[name + 'LineDuotone'],
+        outline: (Solar as any)[name + 'Outline'],
+    }
 }
 
 export default function Gallery() {
@@ -136,23 +143,23 @@ export default function Gallery() {
                             <label className="text-sm font-medium text-slate-300">
                                 Accent Color:{' '}
                                 <span className="text-blue-400 font-mono text-xs">
-                                    {solar.duotoneColor ?? '#60a5fa'}
+                                    {solar.secondaryColor ?? '#60a5fa'}
                                 </span>
                             </label>
                             <div className="flex items-center gap-3">
                                 <input
                                     type="color"
-                                    value={solar.duotoneColor ?? '#60a5fa'}
+                                    value={solar.secondaryColor ?? '#60a5fa'}
                                     onChange={(e) =>
-                                        solar.setDuotoneColor(e.target.value)
+                                        solar.setSecondaryColor(e.target.value)
                                     }
                                     className="w-10 h-10 rounded-lg cursor-pointer border-0"
                                 />
                                 <input
                                     type="text"
-                                    value={solar.duotoneColor ?? '#60a5fa'}
+                                    value={solar.secondaryColor ?? '#60a5fa'}
                                     onChange={(e) =>
-                                        solar.setDuotoneColor(e.target.value)
+                                        solar.setSecondaryColor(e.target.value)
                                     }
                                     className="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
                                 />
@@ -162,7 +169,7 @@ export default function Gallery() {
                             <label className="text-sm font-medium text-slate-300">
                                 Accent Opacity:{' '}
                                 <span className="text-blue-400">
-                                    {solar.duotoneOpacity ?? 0.5}
+                                    {solar.secondaryOpacity ?? 0.5}
                                 </span>
                             </label>
                             <input
@@ -170,9 +177,9 @@ export default function Gallery() {
                                 min="0"
                                 max="1"
                                 step="0.05"
-                                value={solar.duotoneOpacity ?? 0.5}
+                                value={solar.secondaryOpacity ?? 0.5}
                                 onChange={(e) =>
-                                    solar.setDuotoneOpacity(
+                                    solar.setSecondaryOpacity(
                                         parseFloat(e.target.value),
                                     )
                                 }
@@ -183,21 +190,15 @@ export default function Gallery() {
                 </div>
             )}
 
-            <div className="flex items-center gap-2">
-                <label className="text-xs text-slate-400 flex items-center gap-2 cursor-pointer">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                        }
-                        className="accent-amber-500"
-                    />
-                </label>
-            </div>
+            <p className="text-xs text-slate-500">
+                Rendering {filteredIcons.length} icons with{' '}
+                <code className="text-amber-400 bg-slate-700 px-1 rounded">{'<DynamicIcon weight={...}>'}</code>
+            </p>
 
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
                 {filteredIcons.map((name) => {
-                    const IconComponent = getIcon(name, selectedStyle)
-                    if (!IconComponent) return null
+                    const styles = getIconStyles(name)
+                    if (!styles.bold) return null
                     return (
                         <div
                             key={name}
@@ -208,7 +209,9 @@ export default function Gallery() {
                                 className="flex items-center justify-center"
                                 style={{ minHeight: '64px' }}
                             >
-                                <IconComponent
+                                <DynamicIcon
+                                    weight={selectedStyle}
+                                    styles={styles}
                                     strokeWidth={
                                         isLinearLike(selectedStyle)
                                             ? Number(solar.strokeWidth)
