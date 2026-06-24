@@ -67,8 +67,8 @@
         "zone.js": "^0.16.2"
     },
     "peerDependencies": {
-        "@angular/common": "17.x - 21.x",
-        "@angular/core": "17.x - 21.x"
+        "@angular/common": "17.x - 22.x",
+        "@angular/core": "17.x - 22.x"
     },
     "engines": {
         "node": ">=18"
