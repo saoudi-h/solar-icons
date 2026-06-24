@@ -81,7 +81,10 @@
 
 ## 🎯 V3 Beta — Remaining Tasks
 
-- [ ] **[DROP-RR]** Remove `@solar-icons/react-reactive` package. One React package. Update all imports (docs, demo apps, generated files). Delete `packages/react-reactive/`. `Priority: 🔴` `Complexity: M`
+- [x] **[DROP-RR]** Remove `@solar-icons/react-reactive` package. One React package. Update all imports (docs, demo apps, generated files). Delete `packages/react-reactive/`. `Priority: 🔴` `Complexity: M`
+- [x] **[REACT-CLEANUP]** React package modernized: flatten directory structure (no categories), drop forwardRef → ref prop (React 19), remove SSR completely, add dynamic exports with 6-style JSDoc previews, short import aliases, add children type to IconBaseProps. `Priority: 🔴` `Complexity: L`
+- [ ] **[REACT-COMPAT]** Evaluate React 19 vs 18 compatibility. `ref` prop works in React 18.3+ but not 18.0-18.2. `forwardRef` deprecated in 19. Decision: support 19+ only, or add backward compat? Document in migration guide. `Priority: 🟠` `Complexity: S`
+- [ ] **[PROPAGATE]** Apply same transformations to all other packages (Vue, Solid, Svelte, Angular, React Native): flatten directories, dynamic exports, Icon suffix everywhere, secondaryColor naming, remove any SSR/forwardRef/mirrored patterns. Follow same architecture as React. `Priority: 🔴` `Complexity: L`
 - [ ] **[DOCS-V3]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, secondaryColor, strokeWidth). Remove obsolete content (react-reactive, old package names, mirrored). Update package pages. `Priority: 🟠` `Complexity: L`
 - [ ] **[MIGRATION]** Create V3 migration guide: breaking changes summary, package rename map, before/after code examples, AI-assisted codemod instructions. `Priority: 🟠` `Complexity: M`
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta`. `Priority: 🔴` `Complexity: M`
