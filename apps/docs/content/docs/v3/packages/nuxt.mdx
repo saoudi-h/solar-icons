@@ -25,9 +25,9 @@ Configure options in `nuxt.config.ts`:
 export default defineNuxtConfig({
     modules: ['@solar-icons/nuxt'],
     solarIcons: {
-        namePrefix: 'Solar',  // Component prefix (default: 'Solar')
-        autoImport: true,     // Auto-import all icons (default: true)
-        provider: true,       // Enable global provider context (default: true)
+        namePrefix: 'Solar', // Component prefix (default: 'Solar')
+        autoImport: true, // Auto-import all icons (default: true)
+        provider: true, // Enable global provider context (default: true)
         color: 'currentColor',
         size: 24,
         weight: 'Linear',
@@ -71,6 +71,7 @@ import * as solar from '#solar-icons/category'
 ```
 
 Available aliases:
+
 - `#solar-icons` - Exports Vue components.
 - `#solar-icons/lib` - Exports utilities (e.g., `SolarProvider`, `useSolar`).
 - `#solar-icons/category` - Exports categorized icon sets.
@@ -106,11 +107,10 @@ const increaseSize = () => {
 
 Icon components accept standard SVG attributes alongside these props:
 
-| Prop       | Type                                                                            | Default        | Description                               |
-| ---------- | ------------------------------------------------------------------------------- | -------------- | ----------------------------------------- |
-| `color`    | `string`                                                                        | `currentColor` | Sets the icon color.                      |
-| `size`     | `string \| number`                                                              | `24`           | Sets width and height.                    |
-| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style.                          |
-| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`.    |
-| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                      |
-
+| Prop       | Type                                                                            | Default        | Description                            |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | -------------------------------------- |
+| `color`    | `string`                                                                        | `currentColor` | Sets the icon color.                   |
+| `size`     | `string \| number`                                                              | `24`           | Sets width and height.                 |
+| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style.                       |
+| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`. |
+| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                   |

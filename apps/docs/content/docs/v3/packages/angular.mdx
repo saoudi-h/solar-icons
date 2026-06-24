@@ -77,19 +77,20 @@ export class App {
 ```
 
 <Callout type="info" title="IDE Warnings">
-    Angular might warn that the component is unused (`NG8113`) when referencing classes directly. You can safely ignore this.
+    Angular might warn that the component is unused (`NG8113`) when referencing classes directly.
+    You can safely ignore this.
 </Callout>
 
 ## Inputs & Props
 
 Icon components support these inputs:
 
-| Input      | Type               | Default          | Description                                                    |
-| ---------- | ------------------ | ---------------- | -------------------------------------------------------------- |
-| `size`     | `string \| number` | `'1em'`          | Pixels or CSS units (e.g., `32`, `'2rem'`).                    |
-| `color`    | `string`           | `'currentColor'` | CSS color value.                                               |
-| `alt`      | `string`           | `undefined`      | Adds `<title>` and accessibility label.                       |
-| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.                                   |
+| Input      | Type               | Default          | Description                                 |
+| ---------- | ------------------ | ---------------- | ------------------------------------------- |
+| `size`     | `string \| number` | `'1em'`          | Pixels or CSS units (e.g., `32`, `'2rem'`). |
+| `color`    | `string`           | `'currentColor'` | CSS color value.                            |
+| `alt`      | `string`           | `undefined`      | Adds `<title>` and accessibility label.     |
+| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.                |
 
 When `alt` is set, the component renders a `<title>` tag for screen readers. Otherwise, it defaults to `aria-hidden="true"`.
 
@@ -103,4 +104,3 @@ This package targets SVGs using attribute selectors (e.g., `solarHeartBold` on `
 ```
 
 This keeps the DOM tree clean, permits direct CSS targeting, and avoids wrapper element overhead.
-
