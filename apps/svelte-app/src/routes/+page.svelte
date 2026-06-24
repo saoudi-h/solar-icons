@@ -29,8 +29,8 @@
             color="#f59e0b"
             size={32}
             strokeWidth={1.5}
-            duotoneColor="#60a5fa"
-            duotoneOpacity={0.5}
+            secondaryColor="#60a5fa"
+            secondaryOpacity={0.5}
         >
             <Gallery />
         </SolarProvider>

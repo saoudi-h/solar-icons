@@ -7,8 +7,8 @@
         color?: string;
         size?: string | number;
         strokeWidth?: number;
-        duotoneColor?: string;
-        duotoneOpacity?: number;
+        secondaryColor?: string;
+        secondaryOpacity?: number;
         children: Snippet;
     }
 
@@ -16,8 +16,8 @@
         color = $bindable(),
         size = $bindable(),
         strokeWidth = $bindable(),
-        duotoneColor = $bindable(),
-        duotoneOpacity = $bindable(),
+        secondaryColor = $bindable(),
+        secondaryOpacity = $bindable(),
         children,
     }: Props = $props();
 
@@ -26,30 +26,20 @@
     const setColor = (val: string) => (color = val);
     const setSize = (val: string | number) => (size = val);
     const setStrokeWidth = (val: number) => (strokeWidth = val);
-    const setDuotoneColor = (val: string) => (duotoneColor = val);
-    const setDuotoneOpacity = (val: number) => (duotoneOpacity = val);
+    const setSecondaryColor = (val: string) => (secondaryColor = val);
+    const setSecondaryOpacity = (val: number) => (secondaryOpacity = val);
 
     const state = {
-        get color() {
-            return color;
-        },
+        get color() { return color; },
         setColor,
-        get size() {
-            return size;
-        },
+        get size() { return size; },
         setSize,
-        get strokeWidth() {
-            return strokeWidth;
-        },
+        get strokeWidth() { return strokeWidth; },
         setStrokeWidth,
-        get duotoneColor() {
-            return duotoneColor;
-        },
-        setDuotoneColor,
-        get duotoneOpacity() {
-            return duotoneOpacity;
-        },
-        setDuotoneOpacity,
+        get secondaryColor() { return secondaryColor; },
+        setSecondaryColor,
+        get secondaryOpacity() { return secondaryOpacity; },
+        setSecondaryOpacity,
     };
 
     setContext(SOLAR_CONTEXT_KEY, state);
@@ -57,7 +47,6 @@
     $effect(() => {
         if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', String(color));
     });
-
     $effect(() => {
         if (size != null)
             wrapperEl?.style.setProperty(
@@ -65,19 +54,16 @@
                 typeof size === 'number' ? `${size}px` : String(size)
             );
     });
-
     $effect(() => {
         if (strokeWidth != null)
             wrapperEl?.style.setProperty('--solar-stroke-width', String(strokeWidth));
     });
-
     $effect(() => {
-        if (duotoneColor) wrapperEl?.style.setProperty('--solar-duotone-color', duotoneColor);
+        if (secondaryColor) wrapperEl?.style.setProperty('--solar-duotone-color', secondaryColor);
     });
-
     $effect(() => {
-        if (duotoneOpacity != null)
-            wrapperEl?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity));
+        if (secondaryOpacity != null)
+            wrapperEl?.style.setProperty('--solar-duotone-opacity', String(secondaryOpacity));
     });
 </script>
 

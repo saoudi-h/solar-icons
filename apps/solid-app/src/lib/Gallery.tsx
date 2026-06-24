@@ -1,7 +1,6 @@
 import { createSignal, createMemo, For, Show } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
 import type { Component } from 'solid-js';
-import { useSolar } from '@solar-icons/solid';
+import { useSolar, DynamicIcon } from '@solar-icons/solid';
 
 import * as Bold from '@solar-icons/solid/bold';
 import * as Linear from '@solar-icons/solid/linear';
@@ -28,13 +27,8 @@ function isDuotone(s: IconStyle): boolean {
     return s === 'BoldDuotone' || s === 'LineDuotone';
 }
 
-function getIcon(style: IconStyle, name: string): Component | undefined {
-    return styleModules[style][name];
-}
-
 export default function Gallery() {
     const solar = useSolar();
-
     const [selectedStyle, setSelectedStyle] = createSignal<IconStyle>('Bold');
     const [searchQuery, setSearchQuery] = createSignal('');
 
@@ -43,6 +37,15 @@ export default function Gallery() {
         if (!q) return ALL_ICONS;
         return ALL_ICONS.filter((n) => n.toLowerCase().includes(q));
     });
+
+    const styleKebab: Record<IconStyle, string> = {
+        Bold: 'bold',
+        Linear: 'linear',
+        BoldDuotone: 'bold-duotone',
+        LineDuotone: 'line-duotone',
+        Broken: 'broken',
+        Outline: 'outline',
+    };
 
     return (
         <div class="space-y-4">
@@ -53,12 +56,11 @@ export default function Gallery() {
                         <For each={STYLES}>
                             {(s) => (
                                 <button
-                                    class="px-3 py-1.5 rounded-lg text-sm font-medium transition-all"
-                                    classList={{
-                                        'bg-amber-500 text-slate-900': selectedStyle() === s,
-                                        'bg-slate-700 text-slate-300 hover:bg-slate-600':
-                                            selectedStyle() !== s,
-                                    }}
+                                    class={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                                        selectedStyle() === s
+                                            ? 'bg-amber-500 text-slate-900'
+                                            : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                                    }`}
                                     onClick={() => setSelectedStyle(s)}
                                 >
                                     {s}
@@ -72,13 +74,13 @@ export default function Gallery() {
                     <div class="flex items-center gap-3">
                         <input
                             type="color"
-                            value={solar.color() ?? '#f59e0b'}
+                            value={solar.color ?? '#f59e0b'}
                             onInput={(e) => solar.setColor(e.currentTarget.value)}
                             class="w-10 h-10 rounded-lg cursor-pointer border-0"
                         />
                         <input
                             type="text"
-                            value={solar.color() ?? '#f59e0b'}
+                            value={solar.color ?? '#f59e0b'}
                             onInput={(e) => solar.setColor(e.currentTarget.value)}
                             class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
                         />
@@ -86,30 +88,30 @@ export default function Gallery() {
                 </div>
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-slate-300">
-                        Size: <span class="text-amber-400">{solar.size() ?? 32}px</span>
+                        Size: <span class="text-amber-400">{solar.size ?? 32}px</span>
                     </label>
                     <input
                         type="range"
                         min="16"
                         max="64"
-                        value={Number(solar.size()) || 32}
+                        value={Number(solar.size) || 32}
                         onInput={(e) => solar.setSize(parseInt(e.currentTarget.value))}
                         class="w-full accent-amber-500"
                     />
                 </div>
                 <div
-                    class="space-y-2"
-                    classList={{ 'opacity-30 pointer-events-none': !isLinearLike(selectedStyle()) }}
+                    class={`space-y-2 ${!isLinearLike(selectedStyle()) ? 'opacity-30 pointer-events-none' : ''}`}
                 >
                     <label class="text-sm font-medium text-slate-300">
-                        Stroke: <span class="text-amber-400">{solar.strokeWidth() ?? 1.5}</span>
+                        Stroke:{' '}
+                        <span class="text-amber-400">{solar.strokeWidth ?? 1.5}</span>
                     </label>
                     <input
                         type="range"
                         min="0.5"
                         max="4"
                         step="0.1"
-                        value={solar.strokeWidth() ?? 1.5}
+                        value={solar.strokeWidth ?? 1.5}
                         onInput={(e) => solar.setStrokeWidth(parseFloat(e.currentTarget.value))}
                         disabled={!isLinearLike(selectedStyle())}
                         class="w-full accent-amber-500"
@@ -142,20 +144,20 @@ export default function Gallery() {
                             <label class="text-sm font-medium text-slate-300">
                                 Accent Color:{' '}
                                 <span class="text-blue-400 font-mono text-xs">
-                                    {solar.duotoneColor() ?? '#60a5fa'}
+                                    {solar.secondaryColor ?? '#60a5fa'}
                                 </span>
                             </label>
                             <div class="flex items-center gap-3">
                                 <input
                                     type="color"
-                                    value={solar.duotoneColor() ?? '#60a5fa'}
-                                    onInput={(e) => solar.setDuotoneColor(e.currentTarget.value)}
+                                    value={solar.secondaryColor ?? '#60a5fa'}
+                                    onInput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
                                     class="w-10 h-10 rounded-lg cursor-pointer border-0"
                                 />
                                 <input
                                     type="text"
-                                    value={solar.duotoneColor() ?? '#60a5fa'}
-                                    onInput={(e) => solar.setDuotoneColor(e.currentTarget.value)}
+                                    value={solar.secondaryColor ?? '#60a5fa'}
+                                    onInput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
                                     class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
                                 />
                             </div>
@@ -163,17 +165,15 @@ export default function Gallery() {
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-slate-300">
                                 Accent Opacity:{' '}
-                                <span class="text-blue-400">{solar.duotoneOpacity() ?? 0.5}</span>
+                                <span class="text-blue-400">{solar.secondaryOpacity ?? 0.5}</span>
                             </label>
                             <input
                                 type="range"
                                 min="0"
                                 max="1"
                                 step="0.05"
-                                value={solar.duotoneOpacity() ?? 0.5}
-                                onInput={(e) =>
-                                    solar.setDuotoneOpacity(parseFloat(e.currentTarget.value))
-                                }
+                                value={solar.secondaryOpacity ?? 0.5}
+                                onInput={(e) => solar.setSecondaryOpacity(parseFloat(e.currentTarget.value))}
                                 class="w-full accent-blue-400"
                             />
                         </div>
@@ -181,40 +181,45 @@ export default function Gallery() {
                 </div>
             </Show>
 
-            <div class="flex items-center gap-2">
-                <label class="text-xs text-slate-400 flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" class="accent-amber-500" />
-                </label>
-            </div>
+            <p class="text-xs text-slate-500">
+                Rendering {filteredIcons().length} icons with{' '}
+                <code class="text-amber-400 bg-slate-700 px-1 rounded">{'<DynamicIcon weight={...}>'}</code>
+            </p>
 
             <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
                 <For each={filteredIcons()}>
                     {(name) => {
-                        const comp = createMemo(() => getIcon(selectedStyle(), name));
+                        const styles = {
+                            bold: (Bold as any)[name + 'Icon'],
+                            'bold-duotone': (BoldDuotone as any)[name + 'Icon'],
+                            broken: (Broken as any)[name + 'Icon'],
+                            linear: (Linear as any)[name + 'Icon'],
+                            'line-duotone': (LineDuotone as any)[name + 'Icon'],
+                            outline: (Outline as any)[name + 'Icon'],
+                        };
                         return (
-                            <Show when={comp()}>
+                            <div
+                                class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
+                                title={name}
+                            >
                                 <div
-                                    class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
-                                    title={name}
+                                    class="flex items-center justify-center"
+                                    style={{ 'min-height': '64px' }}
                                 >
-                                    <div
-                                        class="flex items-center justify-center"
-                                        style={{ 'min-height': '64px' }}
-                                    >
-                                        <Dynamic
-                                            component={comp()!}
-                                            {...{
-                                                'stroke-width': isLinearLike(selectedStyle())
-                                                    ? solar.strokeWidth()
-                                                    : undefined,
-                                            }}
-                                        />
-                                    </div>
-                                    <span class="text-xs text-slate-500 truncate w-full text-center">
-                                        {name}
-                                    </span>
+                                    <DynamicIcon
+                                        weight={selectedStyle()}
+                                        styles={styles}
+                                        strokeWidth={
+                                            isLinearLike(selectedStyle())
+                                                ? Number(solar.strokeWidth)
+                                                : undefined
+                                        }
+                                    />
                                 </div>
-                            </Show>
+                                <span class="text-xs text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">
+                                    {name}
+                                </span>
+                            </div>
                         );
                     }}
                 </For>

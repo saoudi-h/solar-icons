@@ -14,10 +14,10 @@ interface SolarState {
     setSize: (val: string | number) => void;
     strokeWidth: Accessor<number | undefined>;
     setStrokeWidth: (val: number) => void;
-    duotoneColor: Accessor<string | undefined>;
-    setDuotoneColor: (val: string) => void;
-    duotoneOpacity: Accessor<number | undefined>;
-    setDuotoneOpacity: (val: number) => void;
+    secondaryColor: Accessor<string | undefined>;
+    setSecondaryColor: (val: string) => void;
+    secondaryOpacity: Accessor<number | undefined>;
+    setSecondaryOpacity: (val: number) => void;
 }
 
 const SolarContext = createContext<SolarState>();
@@ -32,8 +32,8 @@ export interface SolarProviderProps {
     color?: string;
     size?: string | number;
     strokeWidth?: number;
-    duotoneColor?: string;
-    duotoneOpacity?: number;
+    secondaryColor?: string;
+    secondaryOpacity?: number;
     children: JSX.Element;
 }
 
@@ -44,13 +44,13 @@ export function SolarProvider(props: SolarProviderProps) {
     const [color, setColorSignal] = createSignal(props.color);
     const [size, setSizeSignal] = createSignal(props.size);
     const [strokeWidth, setStrokeWidthSignal] = createSignal(props.strokeWidth);
-    const [duotoneColor, setDuotoneColorSignal] = createSignal(props.duotoneColor);
-    const [duotoneOpacity, setDuotoneOpacitySignal] = createSignal(props.duotoneOpacity);
+    const [secondaryColor, setSecondaryColorSignal] = createSignal(props.secondaryColor);
+    const [secondaryOpacity, setSecondaryOpacitySignal] = createSignal(props.secondaryOpacity);
 
     const setSize = (val: string | number) => setSizeSignal(val);
     const setStrokeWidth = (val: number) => setStrokeWidthSignal(val);
-    const setDuotoneColor = (val: string) => setDuotoneColorSignal(val);
-    const setDuotoneOpacity = (val: number) => setDuotoneOpacitySignal(val);
+    const setSecondaryColor = (val: string) => setSecondaryColorSignal(val);
+    const setSecondaryOpacity = (val: number) => setSecondaryOpacitySignal(val);
 
     createEffect(() => {
         const el = wrapperEl;
@@ -77,15 +77,15 @@ export function SolarProvider(props: SolarProviderProps) {
     createEffect(() => {
         const el = wrapperEl;
         if (!el) return;
-        const dc = duotoneColor();
-        if (dc) el.style.setProperty('--solar-duotone-color', dc);
+        const sc = secondaryColor();
+        if (sc) el.style.setProperty('--solar-duotone-color', sc);
     });
 
     createEffect(() => {
         const el = wrapperEl;
         if (!el) return;
-        const d = duotoneOpacity();
-        if (d != null) el.style.setProperty('--solar-duotone-opacity', String(d));
+        const so = secondaryOpacity();
+        if (so != null) el.style.setProperty('--solar-duotone-opacity', String(so));
     });
 
     const state: SolarState = {
@@ -95,10 +95,10 @@ export function SolarProvider(props: SolarProviderProps) {
         setSize,
         strokeWidth,
         setStrokeWidth,
-        duotoneColor,
-        setDuotoneColor,
-        duotoneOpacity,
-        setDuotoneOpacity,
+        secondaryColor,
+        setSecondaryColor,
+        secondaryOpacity,
+        setSecondaryOpacity,
     };
 
     return (

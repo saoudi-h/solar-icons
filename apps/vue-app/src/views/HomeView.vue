@@ -27,7 +27,7 @@ const cssSize = ref(40)
                 <CardContent class="space-y-4">
                     <h2 class="text-xl font-bold">1. Icon Gallery</h2>
                     <p class="text-sm text-muted-foreground">Browse all icons. Controls use SolarProvider + useSolar().</p>
-                    <SolarProvider color="#f59e0b" :size="32" :stroke-width="1.5" duotone-color="#60a5fa" :duotone-opacity="0.5">
+                    <SolarProvider color="#f59e0b" :size="32" :stroke-width="1.5" secondary-color="#60a5fa" :secondary-opacity="0.5">
                         <Gallery />
                     </SolarProvider>
                 </CardContent>
