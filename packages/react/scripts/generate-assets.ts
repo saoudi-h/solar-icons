@@ -143,11 +143,21 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
     const name = group.name
     const pascalName = group.pascalName
 
+    const previews = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            return ` * ${w}\n * ![img](data:image/svg+xml;base64,${icon.preview})`
+        })
+        .join('\n *\n')
+
     const content = `/* GENERATED FILE */
 import { DynamicIcon } from '../../lib/dynamic-icon'
 import type { IconProps } from '../../lib/types'
 ${styleImports}
 
+/**
+${previews}
+ */
 export type ${pascalName}IconProps = Omit<IconProps, 'ref'>
 
 export const ${pascalName}Icon = (props: ${pascalName}IconProps) => (
