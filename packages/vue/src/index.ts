@@ -1,4 +1,5 @@
 /* GENERATED FILE */
 export type { IconProps } from "./lib/types"
-export { IconBase, SolarProvider, DynamicIcon, useSolar, IconStyle } from "./lib"
+export { IconBase, SolarProvider, useSolar, IconStyle } from "./lib"
+export * from "./icons/dynamic"
 export * from "./icons/styled"

@@ -61,15 +61,25 @@ const config: UserConfig = defineConfig({
                 types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
             }
-
+            pkg['./dynamic'] = {
+                types: './dist/icons/dynamic/index.d.mts',
+                import: './dist/icons/dynamic/index.mjs',
+            }
             pkg['./dynamic/*'] = {
                 types: './dist/icons/dynamic/*.d.mts',
                 import: './dist/icons/dynamic/*.mjs',
             }
-
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
+            }
+
+            for (const style of styles) {
+                const kebab = STYLE_KEBAB[style]
+                pkg[`./${kebab}/*`] = {
+                    types: `./dist/icons/${kebab}/*.d.mts`,
+                    import: `./dist/icons/${kebab}/*.mjs`,
+                }
             }
 
             return pkg

@@ -47,9 +47,41 @@
             "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.mts",
+            "import": "./dist/icons/dynamic/index.mjs"
+        },
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.mts",
+            "import": "./dist/icons/dynamic/*.mjs"
+        },
         "./*": {
             "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.d.mts",
+            "import": "./dist/icons/bold/*.mjs"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.d.mts",
+            "import": "./dist/icons/bold-duotone/*.mjs"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.d.mts",
+            "import": "./dist/icons/broken/*.mjs"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.d.mts",
+            "import": "./dist/icons/line-duotone/*.mjs"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.d.mts",
+            "import": "./dist/icons/linear/*.mjs"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.d.mts",
+            "import": "./dist/icons/outline/*.mjs"
         }
     },
     "devDependencies": {

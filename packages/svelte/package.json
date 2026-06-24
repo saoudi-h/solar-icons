@@ -43,15 +43,60 @@
             "svelte": "./dist/index.js",
             "default": "./dist/index.js"
         },
+        "./lib": {
+            "types": "./dist/lib/index.d.ts",
+            "svelte": "./dist/lib/index.js",
+            "default": "./dist/lib/index.js"
+        },
         "./lib/*": {
             "types": "./dist/lib/*.d.ts",
             "svelte": "./dist/lib/*",
             "default": "./dist/lib/*.js"
         },
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.ts",
+            "svelte": "./dist/icons/dynamic/index.js",
+            "default": "./dist/icons/dynamic/index.js"
+        },
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.ts",
+            "svelte": "./dist/icons/dynamic/*.svelte",
+            "default": "./dist/icons/dynamic/*.js"
+        },
         "./*": {
             "types": "./dist/icons/style/*.d.ts",
             "svelte": "./dist/icons/style/*.js",
             "default": "./dist/icons/style/*.js"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.svelte.d.ts",
+            "svelte": "./dist/icons/bold/*.svelte",
+            "default": "./dist/icons/bold/*.js"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.svelte.d.ts",
+            "svelte": "./dist/icons/bold-duotone/*.svelte",
+            "default": "./dist/icons/bold-duotone/*.js"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.svelte.d.ts",
+            "svelte": "./dist/icons/broken/*.svelte",
+            "default": "./dist/icons/broken/*.js"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.svelte.d.ts",
+            "svelte": "./dist/icons/linear/*.svelte",
+            "default": "./dist/icons/linear/*.js"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.svelte.d.ts",
+            "svelte": "./dist/icons/line-duotone/*.svelte",
+            "default": "./dist/icons/line-duotone/*.js"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.svelte.d.ts",
+            "svelte": "./dist/icons/outline/*.svelte",
+            "default": "./dist/icons/outline/*.js"
         }
     },
     "devDependencies": {

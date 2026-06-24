@@ -86,6 +86,7 @@ function generateIndexes(
     const mainEntryContent = `/* GENERATED FILE */
 export type { IconProps } from "./lib/types"
 export { IconBase, SolarProvider, useSolar, IconStyle } from "./lib"
+export * from "./icons/dynamic"
 export * from "./icons/styled"
 `
 
@@ -139,6 +140,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .join('\n *\n')
 
     const content = `/* GENERATED FILE */
+import { h } from 'vue'
 import DynamicIcon from '../../lib/dynamic-icon.vue'
 ${styleImports}
 
@@ -149,7 +151,9 @@ export interface ${pascalName}IconProps {
 /**
 ${previews}
  */
-const ${pascalName}Icon = DynamicIcon
+const ${pascalName}Icon = (props: ${pascalName}IconProps, { attrs }: { attrs: Record<string, unknown> }) => {
+    return h(DynamicIcon, { ...attrs, ...props })
+}
 
 export default ${pascalName}Icon
 `

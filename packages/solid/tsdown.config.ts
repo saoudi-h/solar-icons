@@ -18,6 +18,7 @@ function genEntries(styles: string[]) {
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
         'icons/styled': './src/icons/styled.ts',
+        'icons/dynamic/index': './src/icons/dynamic/index.ts',
     };
 
     for (const style of styles) {
@@ -61,10 +62,28 @@ const config: UserConfig = defineConfig({
                 import: './dist/lib/*.mjs',
             };
 
+            pkg['./dynamic'] = {
+                types: './dist/icons/dynamic/index.d.mts',
+                import: './dist/icons/dynamic/index.mjs',
+            };
+
+            pkg['./dynamic/*'] = {
+                types: './dist/icons/dynamic/*.d.mts',
+                import: './dist/icons/dynamic/*.mjs',
+            };
+
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
             };
+
+            for (const style of styles) {
+                const kebab = STYLE_KEBAB[style];
+                pkg[`./${kebab}/*`] = {
+                    types: `./dist/icons/${kebab}/*.d.mts`,
+                    import: `./dist/icons/${kebab}/*.mjs`,
+                };
+            }
 
             return pkg;
         },
