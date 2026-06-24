@@ -1,6 +1,5 @@
 export { default as IconBase } from './IconBase.vue'
 export { default as SolarProvider } from './SolarProvider.vue'
-export { default as DynamicIcon } from './dynamic-icon.vue'
 export { IconStyle } from './types'
 export type { IconProps } from './types'
 export { useSolar } from './useSolar'

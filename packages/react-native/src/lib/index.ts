@@ -1,5 +1,4 @@
 export { default as IconBase } from './IconBase'
 export { SolarProvider, useSolar, type SolarProviderProps, type SolarContextValue } from './SolarProvider'
-export { DynamicIcon } from './dynamic-icon'
 export { IconStyle } from './types'
 export type { Icon, IconProps } from './types'

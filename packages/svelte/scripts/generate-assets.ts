@@ -84,7 +84,7 @@ function generateIndexes(
     });
 
     const mainEntryContent = `export type { IconProps } from "./lib"
-export { IconBase, SolarProvider, DynamicIcon, useSolar, type IconStyle } from "./lib"
+export { IconBase, SolarProvider, useSolar, type IconStyle } from "./lib"
 export * from "./icons/styled"
 `;
 
