@@ -146,7 +146,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
     const previews = WEIGHTS.filter(w => groups[w])
         .map(w => {
             const icon = groups[w]!
-            return ` * ${w}\n * ![img](data:image/svg+xml;base64,${icon.preview})`
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`
         })
         .join('\n *\n')
 
