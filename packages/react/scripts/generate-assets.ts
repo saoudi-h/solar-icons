@@ -28,69 +28,13 @@ function toPascalCase(str: string): string {
         .join('')
 }
 
-function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
-    return array.reduce(
-        (acc, item) => {
-            const key = keySelector(item)
-            if (!acc[key]) acc[key] = []
-            acc[key].push(item)
-            return acc
-        },
-        {} as Record<string, T[]>
-    )
-}
-
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
     groups: ReadonlyArray<ParsedIconGroup>
 ): FileDefinition[] {
     const files: FileDefinition[] = []
-    const byCategory = groupBy(icons, i => i.category)
 
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, i => i.style)
-
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const styleKebab = WEIGHT_KEBAB[style]
-
-            const globalContent = styleIcons
-                .map(icon => {
-                    const globalName = toPascalCase(`${icon.name}-${style}`) + 'Icon'
-                    return `export { ${icon.pascalName}Icon as ${globalName} } from './${icon.name}';`
-                })
-                .sort()
-                .join('\n')
-
-            files.push({
-                path: path.join(ICONS_PATH, category, styleKebab, 'styled.ts'),
-                content: `${globalContent}\n`,
-            })
-        }
-    }
-
-    // Generate styled.ts root with deduplicated named exports
-    const seenGlobal = new Set<string>()
-    const rootGlobalLines: string[] = []
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, i => i.style)
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            for (const icon of styleIcons) {
-                const globalName = toPascalCase(`${icon.name}-${style}`) + 'Icon'
-                if (seenGlobal.has(globalName)) continue
-                seenGlobal.add(globalName)
-                rootGlobalLines.push(
-                    `export { ${icon.pascalName}Icon as ${globalName} } from './${category}/${WEIGHT_KEBAB[style]}/${icon.name}';`
-                )
-            }
-        }
-    }
-    rootGlobalLines.sort()
-
-    files.push({
-        path: path.join(ICONS_PATH, 'styled.ts'),
-        content: rootGlobalLines.join('\n') + '\n',
-    })
-
+    // Per-style barrels
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_KEBAB[weight]
@@ -104,7 +48,7 @@ function generateIndexes(
             })
             .map(
                 icon =>
-                    `export { ${icon.pascalName}Icon } from '../${icon.category}/${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
             )
             .join('\n')
 
@@ -113,6 +57,24 @@ function generateIndexes(
             content: content ? `${content}\n` : '',
         })
     }
+
+    // Generate styled.ts root with deduplicated named exports
+    const seenGlobal = new Set<string>()
+    const rootGlobalLines: string[] = []
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
+        if (seenGlobal.has(globalName)) continue
+        seenGlobal.add(globalName)
+        rootGlobalLines.push(
+            `export { ${icon.pascalName}Icon as ${globalName} } from './${WEIGHT_KEBAB[icon.style]}/${icon.name}';`
+        )
+    }
+    rootGlobalLines.sort()
+
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
+    })
 
     const stylesIndexContent = WEIGHTS.map(
         w => `export * as ${w} from './${WEIGHT_KEBAB[w]}';`
@@ -166,7 +128,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .map(w => {
             const icon = groups[w]!
             const kebab = WEIGHT_KEBAB[w]
-            return `import { ${icon.pascalName}Icon as ${icon.pascalName}${w} } from '../${icon.category}/${kebab}/${icon.name}'`
+            return `import { ${icon.pascalName}Icon as ${icon.pascalName}${w} } from '../${kebab}/${icon.name}'`
         })
         .join('\n')
 
@@ -223,7 +185,13 @@ const main = async () => {
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         )
 
-        const componentFiles = await forEachIcon(reactPerfComponentFile)
+        const allComponentFiles = await forEachIcon(reactPerfComponentFile)
+        const seenPaths = new Set<string>()
+        const componentFiles = allComponentFiles.filter(f => {
+            if (seenPaths.has(f.path)) return false
+            seenPaths.add(f.path)
+            return true
+        })
         const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
         const indexFiles = generateIndexes(result.icons, result.groups)
         writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])

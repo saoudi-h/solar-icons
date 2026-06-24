@@ -56,8 +56,8 @@ export function reactPerfComponentFile(ctx: IconContext<ParsedIcon>): FileDefini
     const content = `/* GENERATED FILE */
 import React from "react"
 import { forwardRef } from "react"
-import IconBase from "../../../lib/IconBase"
-import type { IconProps, Icon } from "../../../lib/types"
+import IconBase from "../../lib/IconBase"
+import type { IconProps, Icon } from "../../lib/types"
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
@@ -71,7 +71,7 @@ export const ${icon.pascalName}Icon: Icon = forwardRef<SVGSVGElement, IconProps>
 ${icon.pascalName}Icon.displayName = "${icon.pascalName}Icon"
 `
     return {
-        path: `src/icons/${icon.category}/${icon.styleKebab}/${icon.name}.tsx`,
+        path: `src/icons/${icon.styleKebab}/${icon.name}.tsx`,
         content,
     }
 }
