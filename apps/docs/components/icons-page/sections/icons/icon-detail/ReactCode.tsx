@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRightUp, useSolar } from '@solar-icons/react-reactive'
+import { ArrowRightUp, useSolar } from '@solar-icons/react'
 import { useAtom } from 'jotai'
 import Link from 'next/link'
 import type { FC } from 'react'
@@ -19,7 +19,7 @@ export const ReactCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react-reactive'`}
+                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/react'`}
             />
             <CodeBlockTemplate
                 lang="tsx"

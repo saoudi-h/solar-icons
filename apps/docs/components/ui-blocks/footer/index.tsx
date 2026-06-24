@@ -1,5 +1,5 @@
 import { NoiseSvg } from '@/components/ui/noise-svg'
-import { ArrowRightUp } from '@solar-icons/react-reactive/ssr'
+import { ArrowRightUp } from '@solar-icons/react/ssr'
 import Link from 'next/link'
 import React from 'react'
 import { FooterMotion } from '../animations/FooterMotion'

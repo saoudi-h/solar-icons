@@ -3,7 +3,7 @@
 import { MotionTabs } from '@/components/ui/MotionTabs'
 import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { InfoCircle } from '@solar-icons/react-reactive'
+import { InfoCircle } from '@solar-icons/react'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { selectedIconAtom, useSearchCategories } from '../context'

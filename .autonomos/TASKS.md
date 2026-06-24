@@ -66,17 +66,23 @@
 
 ## Post-V3 (follow-up, not part of V3.0)
 
-- [ ] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/` — one canonical data layer. `Priority: ⚪` `Complexity: M`
-- [ ] **[POST-02]** Fix Angular peer-dep range: `peerDependencies` says `"17.x - 21.x"`, dev deps pin `22.x`. Widen to match. `Priority: ⚪` `Complexity: S`
-- [ ] **[POST-03]** In V4: remove `@solar-icons/react-reactive` (if migration to classic mode is sufficient). Merge `vue-reactive` never existed. One package per framework. `Priority: ⚪` `Complexity: S`
+- [x] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/` — one canonical data layer. `Priority: ⚪` `Complexity: M`
+- [x] **[POST-02]** Fix Angular peer-dep range: `peerDependencies` says `"17.x - 21.x"`, dev deps pin `22.x`. Widen to match. `Priority: ⚪` `Complexity: S`
+- [x] **[POST-03]** ~~In V4: remove `@solar-icons/react-reactive`~~ → Promoted to V3: **[DROP-RR]**
 
 ## 🚀 Current Sprint
 
 - [x] **[POST-04]** Update demo apps with V3 features (SolarProvider, useSolar, CSS vars, duotone controls). Rename `react-perf-app` → `react-app`. `Priority: 🟠` `Complexity: M`
 - [x] **[POST-05]** Add V3 features to `@solar-icons/react-reactive`: `secondaryColor`/`secondaryOpacity` duotone props, `strokeWidth` prop for Linear/Broken/LineDuotone styles. `Priority: 🟠` `Complexity: M`
 - [x] **[POST-06]** Integrate V3 features into `@solar-icons/react-native`: `secondaryColor`/`secondaryOpacity`, `strokeWidth`. React Context-based SolarProvider with useState (no CSS vars in RN). Duotone accent paths use JSX expressions. `Priority: 🟠` `Complexity: L`
-- [ ] **[POST-07]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, duotone customization, strokeWidth). Remove obsolete content (vue-reactive, old package names). Prepare changelog and migration guide for publication. `Priority: 🟠` `Complexity: L`
 - [x] **[POST-08]** Add `Icon` suffix to all component names (`HomeBold` → `HomeBoldIcon`). Packages done. Demos + docs pending. `Priority: 🟠` `Complexity: M`
 - [x] **[POST-09]** Update `@solar-icons/react-native` with full V3 features: Provider (React Context), strokeWidth, secondaryColor/secondaryOpacity, Icon suffix. `Priority: 🟠` `Complexity: M`
 - [x] **[POST-10]** Review and update `@solar-icons/react-reactive`: added SolarProvider + useSolar, same as react. `Priority: 🔵` `Complexity: S`
-- [ ] **[POST-11]** Create V3 migration guide: AI-assisted codemod instructions, breaking changes summary, package rename map. `Priority: 🔵` `Complexity: M`
+
+## 🎯 V3 Beta — Remaining Tasks
+
+- [ ] **[DROP-RR]** Remove `@solar-icons/react-reactive` package. One React package. Update all imports (docs, demo apps, generated files). Delete `packages/react-reactive/`. `Priority: 🔴` `Complexity: M`
+- [ ] **[DOCS-V3]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, secondaryColor, strokeWidth). Remove obsolete content (react-reactive, old package names, mirrored). Update package pages. `Priority: 🟠` `Complexity: L`
+- [ ] **[MIGRATION]** Create V3 migration guide: breaking changes summary, package rename map, before/after code examples, AI-assisted codemod instructions. `Priority: 🟠` `Complexity: M`
+- [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta`. `Priority: 🔴` `Complexity: M`
+- [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`

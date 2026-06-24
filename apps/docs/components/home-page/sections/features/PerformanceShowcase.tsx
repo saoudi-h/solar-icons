@@ -35,7 +35,7 @@ export const PerformanceShowcase = () => {
                               text-emerald-600
                               dark:text-emerald-400
                             ">
-                            "@solar-icons/react-reactive"
+                            "@solar-icons/react"
                         </span>
                     </div>
                     <div className="mt-1 text-neutral-400">

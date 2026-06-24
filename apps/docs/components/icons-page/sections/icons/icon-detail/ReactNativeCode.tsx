@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRightUp } from '@solar-icons/react-reactive'
+import { ArrowRightUp } from '@solar-icons/react'
 import { useAtom } from 'jotai'
 import Link from 'next/link'
 import type { FC } from 'react'

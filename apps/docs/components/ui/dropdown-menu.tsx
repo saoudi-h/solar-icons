@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import * as React from 'react'
 // import { CheckIcon, AltArrowRight, AltArrowLeft } from "@radix-ui/react-icons"
-import { AltArrowLeft, AltArrowRight, Unread } from '@solar-icons/react-reactive/ssr'
+import { AltArrowLeft, AltArrowRight, Unread } from '@solar-icons/react/ssr'
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 

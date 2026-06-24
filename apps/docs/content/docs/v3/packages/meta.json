@@ -1,15 +1,6 @@
 {
     "title": "Packages",
     "icon": "Widget2",
-    "pages": [
-        "react",
-        "react-reactive",
-        "svelte",
-        "solid",
-        "react-native",
-        "vue",
-        "nuxt",
-        "angular"
-    ],
+    "pages": ["react", "svelte", "solid", "react-native", "vue", "nuxt", "angular"],
     "defaultOpen": false
 }

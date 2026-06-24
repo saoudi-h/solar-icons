@@ -43,6 +43,10 @@
             "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
+        "./ssr": {
+            "types": "./dist/lib/ssr.d.mts",
+            "import": "./dist/lib/ssr.mjs"
+        },
         "./*": {
             "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"

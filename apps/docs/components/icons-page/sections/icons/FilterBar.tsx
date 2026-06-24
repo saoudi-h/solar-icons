@@ -8,8 +8,8 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
-import type { IconWeight } from '@solar-icons/react-reactive'
-import { Settings, useSolar } from '@solar-icons/react-reactive'
+import type { IconWeight } from '@solar-icons/react'
+import { Settings, useSolar } from '@solar-icons/react'
 import { ColorPicker } from './ColorPicker'
 
 import { Button } from '@/components/ui/button'
@@ -26,7 +26,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { useScreen } from '@/lib/screens'
 import NumberFlow from '@number-flow/react'
 import { CATEGORIES as allCategories, STYLES as styles } from '@solar-icons/core'
-import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react-reactive/ssr'
+import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { useEffect, useRef, useState } from 'react'

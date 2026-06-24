@@ -3,7 +3,7 @@
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 import { type DialogProps } from '@radix-ui/react-dialog'
-import { MinimalisticMagnifier } from '@solar-icons/react-reactive/ssr'
+import { MinimalisticMagnifier } from '@solar-icons/react/ssr'
 import { Command as CommandPrimitive } from 'cmdk'
 import * as React from 'react'
 
@@ -155,9 +155,10 @@ CommandItem.displayName = CommandPrimitive.Item.displayName
 const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
     return (
         <span
-            className={cn(`
-              ml-auto text-xs tracking-widest text-muted-foreground
-            `, className)}
+            className={cn(
+                `ml-auto text-xs tracking-widest text-muted-foreground`,
+                className
+            )}
             {...props}
         />
     )

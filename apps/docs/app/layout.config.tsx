@@ -1,5 +1,5 @@
 import { Logo } from '@/components/ui-blocks/logo'
-import { Widget3 } from '@solar-icons/react-reactive/ssr'
+import { Widget3 } from '@solar-icons/react/ssr'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 /**

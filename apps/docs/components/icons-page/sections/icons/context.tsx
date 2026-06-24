@@ -1,6 +1,6 @@
-import type { IconProps, IconWeight } from '@solar-icons/react-reactive'
-import { SolarProvider } from '@solar-icons/react-reactive'
-import type { IconBaseProps } from '@solar-icons/react-reactive/lib/types'
+import type { IconProps, IconWeight } from '@solar-icons/react'
+import { SolarProvider } from '@solar-icons/react'
+import type { IconBaseProps } from '@solar-icons/react/lib/types'
 import type { ReactNode } from 'react'
 
 import type { IconData } from '@/generated/descriptions'

@@ -3,7 +3,6 @@ import { join } from 'node:path'
 
 const PACKAGES = [
     { id: 'react', label: 'React', pkg: '@solar-icons/react' },
-    { id: 'react-reactive', label: 'React Reactive', pkg: '@solar-icons/react-reactive' },
     { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
     { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },

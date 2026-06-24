@@ -12,7 +12,7 @@ import {
     Rocket,
     RoundedMagnifier,
     SmartphoneUpdate,
-} from '@solar-icons/react-reactive/ssr'
+} from '@solar-icons/react/ssr'
 
 export interface Config {
     footer: FooterProps
@@ -137,16 +137,6 @@ export const config: Config = {
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react',
                 content:
                     'Recommended React package. CSS custom properties, SolarProvider, unit-per-style.',
-                iconify: 'devicon:react',
-                status: 'released',
-            },
-            {
-                title: 'React Reactive',
-                link: '/docs/packages/react-reactive',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/react-reactive',
-                githubLink:
-                    'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-reactive',
-                content: 'Niche React package for dynamic style switching. Deprecated in V4.',
                 iconify: 'devicon:react',
                 status: 'released',
             },

@@ -6,7 +6,7 @@ import {
     InfoCircle,
     ShieldCross,
     ShieldWarning,
-} from '@solar-icons/react-reactive/ssr'
+} from '@solar-icons/react/ssr'
 import { useTheme } from 'next-themes'
 import type { ToasterProps } from 'sonner'
 import { Toaster as Sonner } from 'sonner'

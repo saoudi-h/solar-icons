@@ -493,7 +493,7 @@ import {
     UserPlusRounded,
     Whisk,
     Wineglass,
-} from '@solar-icons/react-reactive'
+} from '@solar-icons/react'
 
 export const styles = ['Broken', 'Outline', 'Linear', 'Bold', 'LineDuotone', 'BoldDuotone'] as const
 export type Style = (typeof styles)[number]

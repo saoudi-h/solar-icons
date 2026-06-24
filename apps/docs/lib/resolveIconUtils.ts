@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
-import type { IconProps, IconWeight } from '@solar-icons/react-reactive'
-import { SSR as icons } from '@solar-icons/react-reactive'
+import type { IconProps, IconWeight } from '@solar-icons/react'
+import { SSR as icons } from '@solar-icons/react'
 import type { ReactElement } from 'react'
 import { createElement } from 'react'
 

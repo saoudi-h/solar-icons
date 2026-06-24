@@ -7,7 +7,7 @@ import {
     SettingsMinimalistic,
     ShieldCheck,
     Star,
-} from '@solar-icons/react-reactive/ssr'
+} from '@solar-icons/react/ssr'
 import { motion } from 'framer-motion'
 
 export const StylesShowcase = () => {
