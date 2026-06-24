@@ -52,7 +52,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
 
             const globalContent = styleIcons
                 .map((icon) => {
-                    const globalName = toPascalCase(`${icon.name}-${style}`);
+                    const globalName = toPascalCase(`${icon.name}-${style}`) + 'Icon';
                     return `export { ${icon.pascalName}Icon as ${globalName} } from './${icon.name}';`;
                 })
                 .sort()
@@ -72,7 +72,7 @@ function generateIndexes(icons: ReadonlyArray<ParsedIcon>): FileDefinition[] {
         const byStyle = groupBy(catIcons, (i) => i.style);
         for (const [style, styleIcons] of Object.entries(byStyle)) {
             for (const icon of styleIcons) {
-                const globalName = toPascalCase(`${icon.name}-${style}`);
+                const globalName = toPascalCase(`${icon.name}-${style}`) + 'Icon';
                 if (seenGlobal.has(globalName)) continue;
                 seenGlobal.add(globalName);
                 rootGlobalLines.push(
