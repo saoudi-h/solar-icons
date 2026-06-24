@@ -1,4 +1,4 @@
-import type { IconData } from '@/core/generated/descriptions'
+import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'

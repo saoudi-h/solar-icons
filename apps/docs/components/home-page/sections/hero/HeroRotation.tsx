@@ -1,6 +1,6 @@
 'use client'
-import type { Category, Style } from '@/core/generated/generatedHeroUtils'
-import { categories, getIconsByCategory, styles } from '@/core/generated/generatedHeroUtils'
+import type { Category, Style } from '@/generated/generatedHeroUtils'
+import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
 import { cn } from '@/lib/utils'
 import type { Icon as SolarIcon } from '@solar-icons/react-reactive/lib/types'
 import type { MotionValue } from 'framer-motion'

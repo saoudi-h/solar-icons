@@ -5,6 +5,6 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["core/scripts/*.ts"],
+    "include": ["scripts/*.ts"],
     "exclude": ["node_modules"]
 }

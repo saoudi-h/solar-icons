@@ -1,5 +1,5 @@
 'use client'
-import type { IconData } from '@/core/generated/descriptions'
+import type { IconData } from '@/generated/descriptions'
 import { useAtom } from 'jotai'
 import React, { useEffect, useRef, useState } from 'react'
 import type { GridProps } from 'react-virtualized'

@@ -7,7 +7,7 @@ const toPascalCase = (str: string) =>
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join('')
 
-const outputFilePath = './core/generated/generatedHeroUtils.ts'
+const outputFilePath = './generated/generatedHeroUtils.ts'
 const generateIconsByCategory = (data: any) => {
     const categories = data.categories
     const categoryList: string[] = []
@@ -70,9 +70,7 @@ const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)
         fs.writeFileSync(outputFilePath, outputContent)
-        console.log(
-            'The file core/generated/generatedHeroUtils.ts has been generated successfully !'
-        )
+        console.log('The file generated/generatedHeroUtils.ts has been generated successfully !')
     } catch (error) {
         console.error('Error generating file :', error)
     }

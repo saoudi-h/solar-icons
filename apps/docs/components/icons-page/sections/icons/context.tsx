@@ -3,7 +3,7 @@ import { SolarProvider } from '@solar-icons/react-reactive'
 import type { IconBaseProps } from '@solar-icons/react-reactive/lib/types'
 import type { ReactNode } from 'react'
 
-import type { IconData } from '@/core/generated/descriptions'
+import type { IconData } from '@/generated/descriptions'
 import { atom } from 'jotai'
 import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
 import { useCallback } from 'react'

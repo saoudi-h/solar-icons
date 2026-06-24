@@ -15,10 +15,10 @@
             "default": "./package.json"
         },
         "./metadata.json": {
-            "default": "./dist/metadata.json"
+            "default": "./dist/src/metadata.json"
         },
         "./metadata-descriptions.json": {
-            "default": "./dist/metadata-descriptions.json"
+            "default": "./dist/src/metadata-descriptions.json"
         }
     },
     "scripts": {
