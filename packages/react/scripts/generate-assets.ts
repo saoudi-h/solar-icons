@@ -128,16 +128,15 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .map(w => {
             const icon = groups[w]!
             const kebab = WEIGHT_KEBAB[w]
-            return `import { ${icon.pascalName}Icon as ${icon.pascalName}${w} } from '../${kebab}/${icon.name}'`
+            return `import { ${icon.pascalName}Icon as ${w} } from '../${kebab}/${icon.name}'`
         })
         .join('\n')
 
     const stylesObj = WEIGHTS.filter(w => groups[w])
         .map(w => {
-            const icon = groups[w]!
             const kebab = WEIGHT_KEBAB[w]
             const key = kebab.includes('-') ? `'${kebab}'` : kebab
-            return `        ${key}: ${icon.pascalName}${w},`
+            return `        ${key}: ${w},`
         })
         .join('\n')
 
@@ -159,8 +158,6 @@ ${stylesObj}
         }}
     />
 )
-
-${pascalName}Icon.displayName = "${pascalName}Icon"
 `
 
     return {

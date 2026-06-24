@@ -43,10 +43,6 @@
             "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
-        "./ssr": {
-            "types": "./dist/lib/ssr.d.mts",
-            "import": "./dist/lib/ssr.mjs"
-        },
         "./dynamic/*": {
             "types": "./dist/icons/dynamic/*.d.mts",
             "import": "./dist/icons/dynamic/*.mjs"

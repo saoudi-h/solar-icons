@@ -18,7 +18,6 @@ function genEntries(styles: string[]) {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
-        'lib/ssr': './src/lib/ssr.ts',
         'icons/styled': './src/icons/styled.ts',
         'icons/dynamic/index': './src/icons/dynamic/index.ts',
     }
@@ -61,11 +60,6 @@ const config: UserConfig = defineConfig({
             pkg['./lib/*'] = {
                 types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
-            }
-
-            pkg['./ssr'] = {
-                types: './dist/lib/ssr.d.mts',
-                import: './dist/lib/ssr.mjs',
             }
 
             pkg['./dynamic/*'] = {

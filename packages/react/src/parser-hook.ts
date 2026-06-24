@@ -54,21 +54,18 @@ export function reactPerfComponentFile(ctx: IconContext<ParsedIcon>): FileDefini
         ? `${duotoneConverted}\n        ${transformSvgAttrs(icon.inner.trim())}`
         : transformSvgAttrs(icon.inner.trim())
     const content = `/* GENERATED FILE */
-import React from "react"
-import { forwardRef } from "react"
+import { type Ref } from "react"
 import IconBase from "../../lib/IconBase"
-import type { IconProps, Icon } from "../../lib/types"
+import type { IconProps } from "../../lib/types"
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-export const ${icon.pascalName}Icon: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
+export const ${icon.pascalName}Icon = ({ ref, ...props }: IconProps & { ref?: Ref<SVGSVGElement> }) => (
     <IconBase ref={ref} {...props} iconName="${icon.kebabName}">
         ${body}
     </IconBase>
-))
-
-${icon.pascalName}Icon.displayName = "${icon.pascalName}Icon"
+)
 `
     return {
         path: `src/icons/${icon.styleKebab}/${icon.name}.tsx`,
