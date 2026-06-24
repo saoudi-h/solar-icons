@@ -9,10 +9,10 @@ interface SolarState {
     setSize: (val: string | number) => void
     strokeWidth: number | undefined
     setStrokeWidth: (val: number) => void
-    duotoneColor: string | undefined
-    setDuotoneColor: (val: string) => void
-    duotoneOpacity: number | undefined
-    setDuotoneOpacity: (val: number) => void
+    secondaryColor: string | undefined
+    setSecondaryColor: (val: string) => void
+    secondaryOpacity: number | undefined
+    setSecondaryOpacity: (val: number) => void
 }
 
 const SolarContext = createContext<SolarState | null>(null)
@@ -27,8 +27,8 @@ export interface SolarProviderProps {
     color?: string
     size?: string | number
     strokeWidth?: number
-    duotoneColor?: string
-    duotoneOpacity?: number
+    secondaryColor?: string
+    secondaryOpacity?: number
     children: ReactNode
 }
 
@@ -36,16 +36,16 @@ export function SolarProvider({
     color: initialColor,
     size: initialSize,
     strokeWidth: initialStrokeWidth,
-    duotoneColor: initialDuotoneColor,
-    duotoneOpacity: initialDuotoneOpacity,
+    secondaryColor: initialSecondaryColor,
+    secondaryOpacity: initialSecondaryOpacity,
     children,
 }: SolarProviderProps) {
     const ref = useRef<HTMLDivElement>(null)
     const [color, setColor] = useState(initialColor)
     const [size, setSize] = useState(initialSize)
     const [strokeWidth, setStrokeWidth] = useState(initialStrokeWidth)
-    const [duotoneColor, setDuotoneColor] = useState(initialDuotoneColor)
-    const [duotoneOpacity, setDuotoneOpacity] = useState(initialDuotoneOpacity)
+    const [secondaryColor, setSecondaryColor] = useState(initialSecondaryColor)
+    const [secondaryOpacity, setSecondaryOpacity] = useState(initialSecondaryOpacity)
 
     useEffect(() => {
         if (color !== undefined) ref.current?.style.setProperty('--solar-icon-color', color)
@@ -57,18 +57,18 @@ export function SolarProvider({
         if (strokeWidth != null) ref.current?.style.setProperty('--solar-stroke-width', String(strokeWidth))
     }, [strokeWidth])
     useEffect(() => {
-        if (duotoneColor) ref.current?.style.setProperty('--solar-duotone-color', duotoneColor)
-    }, [duotoneColor])
+        if (secondaryColor) ref.current?.style.setProperty('--solar-duotone-color', secondaryColor)
+    }, [secondaryColor])
     useEffect(() => {
-        if (duotoneOpacity != null) ref.current?.style.setProperty('--solar-duotone-opacity', String(duotoneOpacity))
-    }, [duotoneOpacity])
+        if (secondaryOpacity != null) ref.current?.style.setProperty('--solar-duotone-opacity', String(secondaryOpacity))
+    }, [secondaryOpacity])
     const state = useMemo<SolarState>(() => ({
         color, setColor,
         size, setSize,
         strokeWidth, setStrokeWidth,
-        duotoneColor, setDuotoneColor,
-        duotoneOpacity, setDuotoneOpacity,
-    }), [color, size, strokeWidth, duotoneColor, duotoneOpacity])
+        secondaryColor, setSecondaryColor,
+        secondaryOpacity, setSecondaryOpacity,
+    }), [color, size, strokeWidth, secondaryColor, secondaryOpacity])
 
     return (
         <SolarContext.Provider value={state}>

@@ -16,7 +16,6 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>(
             alt,
             color,
             size,
-            mirrored = false,
             strokeWidth,
             secondaryColor,
             secondaryOpacity,
@@ -51,7 +50,6 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps>(
                 style={baseStyle}
                 fill="none"
                 viewBox="0 0 24 24"
-                transform={mirrored ? 'scale(-1, 1)' : undefined}
                 {...restProps}
                 strokeWidth={strokeWidth ?? 'var(--solar-stroke-width, 1.5)'}
                 {...(!isAccessible && { 'aria-hidden': 'true' as const })}
