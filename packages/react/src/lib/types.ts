@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, RefAttributes } from 'react'
+import type { ComponentPropsWithoutRef, ReactNode, RefAttributes } from 'react'
 
 export enum IconStyle {
     BROKEN = 'Broken',
@@ -10,6 +10,7 @@ export enum IconStyle {
 }
 
 export interface IconBaseProps {
+    children?: ReactNode
     alt?: string
     color?: string
     size?: string | number
