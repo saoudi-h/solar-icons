@@ -1,35 +1,19 @@
 <script lang="ts">
-import type { ComponentType } from 'svelte'
+    import type { ComponentType } from 'svelte';
+    import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core';
+    import type { IconProps } from './types';
 
-interface StyleComponents {
-    bold: ComponentType<any>
-    'bold-duotone': ComponentType<any>
-    broken: ComponentType<any>
-    linear: ComponentType<any>
-    'line-duotone': ComponentType<any>
-    outline: ComponentType<any>
-}
+    type StyleComponents = StyleComponentsMap<ComponentType<IconProps>>;
 
-type Weight = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
+    interface DynamicIconProps {
+        weight?: Weight;
+        styles: StyleComponents;
+        [key: string]: any;
+    }
 
-const WEIGHT_MAP: Record<Weight, keyof StyleComponents> = {
-    Bold: 'bold',
-    BoldDuotone: 'bold-duotone',
-    Broken: 'broken',
-    Linear: 'linear',
-    LineDuotone: 'line-duotone',
-    Outline: 'outline',
-}
+    let { weight, styles, ...restProps }: DynamicIconProps = $props();
 
-interface DynamicIconProps {
-    weight?: Weight
-    styles: StyleComponents
-    [key: string]: any
-}
-
-let { weight, styles, ...restProps }: DynamicIconProps = $props()
-
-let component = $derived(styles[weight ? WEIGHT_MAP[weight] : 'bold'])
+    let component = $derived(styles[weight ? WEIGHT_MAP[weight] : 'bold']);
 </script>
 
 <svelte:component this={component} {...restProps} />

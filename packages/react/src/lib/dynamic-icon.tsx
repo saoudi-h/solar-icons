@@ -1,25 +1,9 @@
 import type { FC, RefAttributes } from 'react'
 import type { IconProps } from './types'
+import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core'
 
-interface StyleComponents {
-    bold: FC<IconProps & RefAttributes<SVGSVGElement>>
-    'bold-duotone': FC<IconProps & RefAttributes<SVGSVGElement>>
-    broken: FC<IconProps & RefAttributes<SVGSVGElement>>
-    linear: FC<IconProps & RefAttributes<SVGSVGElement>>
-    'line-duotone': FC<IconProps & RefAttributes<SVGSVGElement>>
-    outline: FC<IconProps & RefAttributes<SVGSVGElement>>
-}
-
-type Weight = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
-
-const WEIGHT_MAP: Record<Weight, keyof StyleComponents> = {
-    Bold: 'bold',
-    BoldDuotone: 'bold-duotone',
-    Broken: 'broken',
-    Linear: 'linear',
-    LineDuotone: 'line-duotone',
-    Outline: 'outline',
-}
+type IconComponent = FC<IconProps & RefAttributes<SVGSVGElement>>
+type StyleComponents = StyleComponentsMap<IconComponent>
 
 interface DynamicIconProps extends IconProps {
     weight?: Weight

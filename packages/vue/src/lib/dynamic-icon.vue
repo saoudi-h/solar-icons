@@ -1,25 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, type Component } from 'vue'
+import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core'
+import type { IconProps } from './types'
 
-interface StyleComponents {
-    bold: any
-    'bold-duotone': any
-    broken: any
-    linear: any
-    'line-duotone': any
-    outline: any
-}
-
-type Weight = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
-
-const WEIGHT_MAP: Record<Weight, keyof StyleComponents> = {
-    Bold: 'bold',
-    BoldDuotone: 'bold-duotone',
-    Broken: 'broken',
-    Linear: 'linear',
-    LineDuotone: 'line-duotone',
-    Outline: 'outline',
-}
+type StyleComponents = StyleComponentsMap<Component>
 
 const props = defineProps<{
     weight?: Weight
