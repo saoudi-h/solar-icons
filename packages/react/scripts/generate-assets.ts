@@ -89,8 +89,8 @@ function generateIndexes(
 export type { IconProps } from "./lib"
 export { IconBase, SolarProvider, useSolar } from "./lib"
 export type { SolarProviderProps } from "./lib"
-export * from "./icons/dynamic"
 export * from "./icons/styled"
+export * from "./icons/dynamic"
 `
 
     files.push({
