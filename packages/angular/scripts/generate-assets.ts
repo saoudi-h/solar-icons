@@ -39,7 +39,7 @@ function generateIndexes(
             })
             .map(icon => {
                 const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-                return `export { ${globalName}Icon } from '../${weightKebab}/${icon.name}-${weightKebab}';`
+                return `export { ${globalName} } from '../${weightKebab}/${icon.name}-${weightKebab}';`
             })
             .join('\n')
 
@@ -56,7 +56,7 @@ function generateIndexes(
         if (seenStyled.has(globalName)) continue
         seenStyled.add(globalName)
         const sk = WEIGHT_MAP[icon.style]
-        styledLines.push(`export { ${globalName}Icon } from './${sk}/${icon.name}-${sk}';`)
+        styledLines.push(`export { ${globalName} } from './${sk}/${icon.name}-${sk}';`)
     }
     styledLines.sort()
 
@@ -66,7 +66,7 @@ function generateIndexes(
     })
 
     const allNames = icons
-        .map(i => `'${toPascalCase(`${i.name}-${i.style}`)}Icon'`)
+        .map(i => `'${toPascalCase(`${i.name}-${i.style}`)}'`)
         .sort()
         .join(' | ')
 
@@ -103,7 +103,7 @@ export * from './icons/styled';
     })
 
     const dynamicBarrelContent = groups
-        .map(g => `export { ${g.pascalName}Icon } from './${g.name}-dynamic'`)
+        .map(g => `export { ${g.pascalName}Dynamic } from './${g.name}-dynamic'`)
         .join('\n')
 
     files.push({
@@ -134,7 +134,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
             const icon = groups[w]!
             const sk = WEIGHT_MAP[w]
             const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-            return `import { ${globalName}Icon } from '../${sk}/${icon.name}-${sk}'`
+            return `import { ${globalName} } from '../${sk}/${icon.name}-${sk}'`
         })
         .join('\n')
 
@@ -143,7 +143,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
             const globalName = toPascalCase(`${name}-${w}`)
             const prefix = i === 0 ? '@if (!weight() || weight() ===' : '@else if (weight() ==='
             return `        ${prefix} ${JSON.stringify(w)}) {
-            <svg solar${globalName}Icon [size]="size()" [color]="color()" [strokeWidth]="strokeWidth()"
+            <svg solar${globalName} [size]="size()" [color]="color()" [strokeWidth]="strokeWidth()"
                 [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()" [alt]="alt()" />
         }`
         })
@@ -170,7 +170,7 @@ ${imports}
 ${previews}
  */
 @Component({
-    selector: 'svg[solar${pascalName}Icon]',
+    selector: 'svg[solar${pascalName}Dynamic]',
     template: \`
 ${conditions}
     \`,
@@ -178,13 +178,13 @@ ${conditions}
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [${WEIGHTS.filter(w => groups[w])
-        .map(w => `${toPascalCase(`${name}-${w}`)}Icon`)
+        .map(w => `${toPascalCase(`${name}-${w}`)}`)
         .join(', ')}],
     host: {
         'class': 'solar-icon solar-${name}',
     },
 })
-export class ${pascalName}Icon extends IconBase {
+export class ${pascalName}Dynamic extends IconBase {
     readonly weight = input<${weightUnion}>()
 }
 `

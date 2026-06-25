@@ -102,13 +102,13 @@ import { IconBase } from '../../lib/icon-base';
  * ![img](data:image/svg+xml;base64,${icon.preview})
  *
  * @usage
- * \`<svg solar${globalName}></svg>\`
+ * \`<svg solar${globalName} [size]="24" color="#ef4444" />\`
  *
  * @component ${globalName}
  * @style ${icon.style}
  */
 @Component({
-    selector: 'svg[solar${globalName}Icon]',
+    selector: 'svg[solar${globalName}]',
     template: \`@if (alt(); as title) { <title>{{ title }}</title> }${template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,
@@ -117,7 +117,7 @@ import { IconBase } from '../../lib/icon-base';
         'class': 'solar-icon solar-${icon.kebabName}',
     },
 })
-export class ${globalName}Icon extends IconBase {}
+export class ${globalName} extends IconBase {}
 `
     return {
         path: `src/icons/${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`,

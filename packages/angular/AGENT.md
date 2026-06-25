@@ -69,7 +69,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 
 ## 🧠 Design rationale — why attribute selector on `<svg>`
 
-Angular is the only package in this monorepo that does NOT render its own `<svg>` element. Every generated icon component is a `@Component` whose selector is `svg[solarNameIcon]` — the user writes `<svg solarNameIcon [size]="24"></svg>` and the component injects the SVG paths as children. The DOM contains a native `<svg>` element, not a custom wrapper tag.
+Angular is the only package in this monorepo that does NOT render its own `<svg>` element. Every generated icon component is a `@Component` whose selector is `svg[solarName]` (e.g. `svg[solarHomeBold]`) — the user writes `<svg solarHomeBold [size]="24"></svg>` and the component injects the SVG paths as children. The DOM contains a native `<svg>` element, not a custom wrapper tag.
 
 ### Why this design, not the others (Component-renders-svg like React/Vue/Solid/Svelte)
 
@@ -83,7 +83,7 @@ This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`
 
 - The selector pattern is not as discoverable as `<HomeBoldIcon />` (which is what 6 other packages do). A user coming from React/Vue may write `<HomeBoldIcon></HomeBoldIcon>` and be confused. **This is an intentional cross-package divergence** — Lucide-style native DOM is preferred over consistency.
 - Each generated component is heavier in bytes (selector string in metadata) than a tag-name selector would be. Negligible.
-- The selector includes the full icon name including style (e.g. `solarHomeBoldIcon` for `<HomeBoldIcon />`). Importing the component class is the only way to discover the selector name; the JSDoc on each generated component shows the correct selector.
+- The selector is the PascalCase icon name with the `solar` prefix: `solarHomeBold` for the static `HomeBold` class, `solarHomeDynamic` for the dynamic `HomeDynamic` class. The `Icon` suffix was dropped in V3 (2026-06-25) because the `solar` prefix already namespaces and Angular's tooling does not surface selector collisions the way bundlers for the other packages do. The dynamic component uses the `Dynamic` suffix instead of `Icon` to differentiate from the static style components. Importing the component class is the only way to discover the selector name; the JSDoc on each generated component shows the correct selector.
 
 ### Public V3 features in the `IconBase` inputs
 
