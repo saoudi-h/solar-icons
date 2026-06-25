@@ -3,30 +3,21 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import type { ParsedIcon, ParsedIconGroup, IconWeight } from '@solar-icons/core'
-import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '@solar-icons/core'
+import {
+    forEachIcon,
+    forEachIconGroupedBy,
+    parseSvgs,
+    toPascalCase,
+    WEIGHT_MAP,
+    type ParsedIcon,
+    type ParsedIconGroup,
+} from '@solar-icons/core'
 import { angularComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/public-api.ts')
 
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
-
-const WEIGHT_KEBAB: Record<IconWeight, string> = {
-    Bold: 'bold',
-    BoldDuotone: 'bold-duotone',
-    Broken: 'broken',
-    Linear: 'linear',
-    LineDuotone: 'line-duotone',
-    Outline: 'outline',
-}
-
-function toPascalCase(str: string): string {
-    return str
-        .split('-')
-        .map(s => s.replace(/^\w/, c => c.toUpperCase()))
-        .join('')
-}
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
@@ -36,7 +27,7 @@ function generateIndexes(
 
     for (const weight of WEIGHTS) {
         const iconsForWeight = icons.filter(i => i.style === weight)
-        const weightKebab = WEIGHT_KEBAB[weight]
+        const weightKebab = WEIGHT_MAP[weight]
         const seen = new Set<string>()
         const content = iconsForWeight
             .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
@@ -64,7 +55,7 @@ function generateIndexes(
         const globalName = toPascalCase(`${icon.name}-${icon.style}`)
         if (seenStyled.has(globalName)) continue
         seenStyled.add(globalName)
-        const sk = WEIGHT_KEBAB[icon.style]
+        const sk = WEIGHT_MAP[icon.style]
         styledLines.push(`export { ${globalName}Icon } from './${sk}/${icon.name}-${sk}';`)
     }
     styledLines.sort()
@@ -102,9 +93,9 @@ export * from './icons/styled';
         content: mainEntryContent,
     })
 
-    const stylesIndexContent = WEIGHTS.map(
-        w => `export * as ${w} from './${WEIGHT_KEBAB[w]}';`
-    ).join('\n')
+    const stylesIndexContent = WEIGHTS.map(w => `export * as ${w} from './${WEIGHT_MAP[w]}';`).join(
+        '\n'
+    )
 
     files.push({
         path: path.join(ICONS_PATH, 'style', 'index.ts'),
@@ -141,7 +132,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
     const imports = WEIGHTS.filter(w => groups[w])
         .map(w => {
             const icon = groups[w]!
-            const sk = WEIGHT_KEBAB[w]
+            const sk = WEIGHT_MAP[w]
             const globalName = toPascalCase(`${icon.name}-${icon.style}`)
             return `import { ${globalName}Icon } from '../${sk}/${icon.name}-${sk}'`
         })
@@ -215,7 +206,9 @@ function writeFiles(files: FileDefinition[]) {
 const main = async () => {
     try {
         clean()
-        const result = await parseSvgs({ svgsDir: path.resolve(import.meta.dirname, '../../core/svgs') })
+        const result = await parseSvgs({
+            svgsDir: path.resolve(import.meta.dirname, '../../core/svgs'),
+        })
         console.log(
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         )
