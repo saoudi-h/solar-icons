@@ -116,7 +116,7 @@ These were broken before the 2026-06-25 cleanup. **Not fixed in this session** (
 - **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
 - **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** core architecture decision (Path A: build-as-contract, or Path B: source-only).
 - **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
-- **[CORE-ARCH]** Decide core package architecture: Path A (build-as-contract, current build becomes the source for consumers) or Path B (drop dist, source-only via `package.json#exports`). Currently half-done: dist exists but unused, framework packages use `.ts` path imports with `allowImportingTsExtensions`. **All of CLEAN-05/06/07/08/10 follow from this decision.**
+- [/] **[CORE-ARCH]** **Path A decided 2026-06-25**: make `dist/` the source of truth for consumers, switch framework packages to clean `from "@solar-icons/core"` imports. Implementation in 7 sub-tasks (A1–A7).
 
 ## 🧹 V3 — Technical debt cleanup (2026-06-25)
 
@@ -136,4 +136,4 @@ Identified during the 2026-06-25 technical audit. Each task is one commit, scope
 - **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
 - **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** core architecture decision (Path A: build-as-contract, or Path B: source-only).
 - **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
-- **[CORE-ARCH]** Decide core package architecture: Path A (build-as-contract, current build becomes the source for consumers) or Path B (drop dist, source-only via `package.json#exports`). Currently half-done: dist exists but unused, framework packages use `.ts` path imports with `allowImportingTsExtensions`. **All of CLEAN-05/06/07/08/10 follow from this decision.**
+- [/] **[CORE-ARCH]** **Path A decided 2026-06-25**: make `dist/` the source of truth for consumers, switch framework packages to clean `from "@solar-icons/core"` imports. Implementation in 7 sub-tasks (A1–A7).
