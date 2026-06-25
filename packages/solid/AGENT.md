@@ -39,7 +39,16 @@ status: 'active'
 
 - **`src/lib/IconBase.tsx`**: CSS classes `solar` + `solar-{kebabName}`, CSS vars via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` duotone props, `aria-hidden="true"` by default unless `alt`/`aria-label`/`title` set. User `class` merged with solar classes, user `style` spread AFTER CSS vars.
 - **`src/lib/SolarProvider.tsx`**: Wrapper `<div>` with CSS custom properties on `style`. SolidJS `createContext`/`useContext` provides a ref with `setProperty()` — no re-render of icons. `useSolar()` hook returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`.
-- **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated components.
+- **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` and `iconBody={\`...\`}`to generated components. The body is passed as a **string prop** (not as JSX children) to bypass the Solid template compiler's`<svg>` namespace wrapping. See "Solid nested-`<svg>` workaround" below.
+
+## ⚠️ Solid nested-`<svg>` workaround (CLEAN-09, 2026-06-25)
+
+The Solid compiler wraps any single SVG-element child in an `<svg>...</svg>` template to set the namespace. When a generated icon component renders `<IconBase><path d="..." /></IconBase>`, the compiler emits `template('<svg><path .../></svg>', false, true, false)`. Since `IconBase` itself renders an `<svg>`, the runtime produces nested `<svg>` elements — invalid HTML/SVG.
+
+**The fix**: introduced `iconBody?: string` on `IconBaseProps`. IconBase mounts the body via `<g innerHTML={iconBody} />`. The generated component now passes the body as a string prop, which the Solid compiler does not wrap.
+
+**Do not** change generated icons back to JSX children without first testing that the new template approach is used. The pattern is verified by inspecting the dist: no `template()` import in `dist/icons/*/*.mjs`, the body is a string prop.
+
 - **Pitfall**: No default on `size`/`color`/`strokeWidth` in `IconBase` — the `??` operator must fall through to CSS var. `--solar-icon-size` must be in pixels (`24px`), bare numbers won't work with `var()` in CSS.
 
 ## ⚠️ Known Constraints
