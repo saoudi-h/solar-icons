@@ -925,7 +925,7 @@ importers:
   packages/svelte:
     dependencies:
       svelte:
-        specifier: '>= 4.0.0'
+        specifier: '>= 5.0.0'
         version: 5.56.3(@typescript-eslint/types@8.61.0)
     devDependencies:
       '@solar-icons/core':
