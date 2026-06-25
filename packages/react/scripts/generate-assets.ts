@@ -3,16 +3,16 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts'
-import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '../../core/src/parser.ts'
-import { reactPerfComponentFile, type FileDefinition } from './parser-hook.ts'
+import type { ParsedIcon, ParsedIconGroup, IconWeight } from '@solar-icons/core'
+import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '@solar-icons/core'
+import { reactPerfComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
-const WEIGHT_KEBAB: Record<string, string> = {
+const WEIGHT_KEBAB: Record<IconWeight, string> = {
     Bold: 'bold',
     BoldDuotone: 'bold-duotone',
     Broken: 'broken',
@@ -189,7 +189,7 @@ function writeFiles(files: FileDefinition[]) {
 const main = async () => {
     try {
         clean()
-        const result = await parseSvgs()
+        const result = await parseSvgs({ svgsDir: path.resolve(import.meta.dirname, '../../core/svgs') })
         console.log(
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         )
