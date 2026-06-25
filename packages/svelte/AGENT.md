@@ -15,20 +15,18 @@ status: 'active'
 - Svelte 5 with runes (`$props`, `$state`, `$derived`).
 - Build = `pnpm generate:assets && pnpm copy:licenses && pnpm build:package` where `build:package` is `svelte-package --input ./src`.
 - `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits `.svelte` files.
-- `scripts/compile-svelte.mjs` and `scripts/copy-svelte.mjs` are pre-`@sveltejs/package` shims.
-- `scripts/utils.ts` is the local helper module.
+- `scripts/parser-hook.ts` (V3) is the build-time codegen template imported by `generate-assets.ts`.
 - `prettier-plugin-svelte` is a dev dep; the shared `@tala-tools/prettier` does not include Svelte formatting.
 
 ## 📁 Key Directories
 
-| Path                                                    | Description                                         |
-| ------------------------------------------------------- | --------------------------------------------------- |
-| `scripts/generate-assets.ts`                            | Reads from `core/svgs/`, produces SFCs.             |
-| `scripts/compile-svelte.mjs`, `scripts/copy-svelte.mjs` | Pre-svelte-package shims.                           |
-| `scripts/utils.ts`                                      | Local helpers.                                      |
-| `src/icons/style/`                                      | Generated: one folder per style, one file per icon. |
-| `src/lib/`                                              | Hand-written helpers.                               |
-| `src/index.ts`                                          | Barrel re-export.                                   |
+| Path                         | Description                                         |
+| ---------------------------- | --------------------------------------------------- |
+| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces SFCs.             |
+| `scripts/parser-hook.ts`     | Build-time codegen template.                        |
+| `src/icons/style/`           | Generated: one folder per style, one file per icon. |
+| `src/lib/`                   | Hand-written helpers.                               |
+| `src/index.ts`               | Barrel re-export.                                   |
 
 ## 🏗 Stack
 
@@ -50,7 +48,6 @@ status: 'active'
 
 - **`peerDependencies.svelte: ">= 4.0.0"`** — the source uses Svelte 5 runes, so Svelte 4 users may see compatibility issues.
 - **Svelte 5 runes are required in the generated code** (`$props()` destructuring, not legacy `export let`).
-- **`scripts/compile-svelte.mjs` and `scripts/copy-svelte.mjs`** are holdovers; verify by running `pnpm build` with them disabled before deletion.
 
 ## V3 Propagation (2026-06-24)
 

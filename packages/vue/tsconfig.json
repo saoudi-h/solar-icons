@@ -24,7 +24,6 @@
         "./src/*.d.ts",
         "./src/*.vue",
         "env.d.ts",
-        "vitest.setup.ts",
         "vitest.config.ts",
         "tsdown.config.ts",
         "__tests__/**/*.ts",
