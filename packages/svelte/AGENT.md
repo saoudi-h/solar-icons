@@ -43,7 +43,7 @@ status: 'active'
 - **`src/lib/IconBase.svelte`**: CSS classes `solar` + `solar-{iconName}`, CSS vars via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` duotone props, `aria-hidden="true"` by default unless `alt`/`aria-label`/`title` set. User `class` and `style` merged after CSS vars (user can override).
 - **`src/lib/SolarProvider.svelte`**: Wrapper `<div>` with CSS custom properties via `solar.css`. Svelte 5 `setContext` provides a ref with `setProperty()`. Renders children via `{@render children()}`.
 - **`src/lib/useSolar.ts`**: Standalone module using `getContext(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. Shared context key with `SolarProvider.svelte`.
-- **`src/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated Svelte components.
+- **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated Svelte components.
 - **Pitfall**: `$props()` destructuring must NOT use defaults for `color`, `size`, `strokeWidth` — the `??` in `$derived` must fall through to CSS var.
 
 ## ⚠️ Known Constraints

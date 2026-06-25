@@ -5,7 +5,7 @@ import pc from 'picocolors';
 
 import { parseSvgs, forEachIcon, forEachIconGroupedBy } from '../../core/src/parser.ts';
 import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts';
-import { svelteComponentFile, type FileDefinition } from '../src/parser-hook';
+import { svelteComponentFile, type FileDefinition } from './parser-hook.ts';
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons');
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts');
@@ -128,11 +128,11 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .join('\n');
 
     const stylesObj = WEIGHTS.filter((w) => groups[w])
-    .map((w) => {
-        const kebab = WEIGHT_KEBAB[w];
-        const key = kebab.includes('-') ? `'${kebab}'` : kebab;
-        return `        ${key}: ${w},`;
-    })
+        .map((w) => {
+            const kebab = WEIGHT_KEBAB[w];
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab;
+            return `        ${key}: ${w},`;
+        })
         .join('\n');
 
     const name = group.name;

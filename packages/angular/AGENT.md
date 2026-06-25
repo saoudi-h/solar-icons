@@ -46,7 +46,7 @@ The folder-per-icon shape is required by Angular's compiler and module resolutio
 
 - **`src/lib/icon-base.ts`**: CSS vars via `computed()` signals and `??` pattern. Host bindings use `[style.width]`, `[style.height]`, `[style.color]` (not `[attr.*]`) so `var()` CSS function works. `secondaryColor`/`secondaryOpacity` inputs set `[style.--solar-duotone-*]` host bindings. `aria-hidden` computed from `alt`, `ariaLabel`, `titleAttr` inputs. `class: 'solar-icon'` REMOVED from IconBase host — each generated component sets its own `class: 'solar-icon solar-{kebab}'` via `host:` in `@Component` metadata.
 - **`src/lib/solar-provider.ts`**: `SolarProviderComponent` (selector `solar-provider`) wraps content in `<div>` with CSS custom properties. `SolarService` (`@Injectable()`) scoped to the component-level provider, exposes `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. `useSolar()` function calls `inject(SolarService)` — must be called in injection context (constructor/property initializer).
-- **`src/parser-hook.ts`**: Generated `@Component` decorators include `host: { 'class': 'solar-icon solar-{icon.kebabName}' }`.
+- **`scripts/parser-hook.ts`**: Generated `@Component` decorators include `host: { 'class': 'solar-icon solar-{icon.kebabName}' }`.
 - **Pitfall**: `input()` signals must NOT have defaults — `undefined` falls through to CSS var. `[style.width]` (not `[attr.width]`) because `var()` only works in CSS properties.
 
 ## ⚠️ Known Constraints

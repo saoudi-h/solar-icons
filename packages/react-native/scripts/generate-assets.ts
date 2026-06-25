@@ -5,7 +5,7 @@ import pc from 'picocolors'
 
 import type { ParsedIcon, ParsedIconGroup } from '../../core/src/parser.ts'
 import { forEachIcon, forEachIconGroupedBy, parseSvgs } from '../../core/src/parser.ts'
-import { reactNativeComponentFile, type FileDefinition } from '../src/parser-hook.ts'
+import { reactNativeComponentFile, type FileDefinition } from './parser-hook.ts'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')

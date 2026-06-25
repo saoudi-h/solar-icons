@@ -1,4 +1,4 @@
-import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
+import type { IconContext, ParsedIcon } from '../../core/src/parser.ts'
 
 export interface FileDefinition {
     path: string

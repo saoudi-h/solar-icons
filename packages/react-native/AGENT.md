@@ -26,7 +26,7 @@ status: 'active'
 | Path                         | Description                                                |
 | ---------------------------- | ---------------------------------------------------------- |
 | `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces TSX.                     |
-| `src/parser-hook.ts`         | SVG → React Native JSX transform + codegen templates.      |
+| `scripts/parser-hook.ts`     | SVG → React Native JSX transform + codegen templates.      |
 | `src/icons/style/`           | Generated: one folder per style, one `.tsx` file per icon. |
 | `src/lib/`                   | IconBase, SolarProvider, useSolar, types.                  |
 | `src/index.ts`               | Barrel re-export.                                          |

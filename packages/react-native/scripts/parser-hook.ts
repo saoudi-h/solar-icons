@@ -1,4 +1,4 @@
-import type { ParsedIcon, IconContext } from '../../core/src/parser.ts'
+import type { IconContext, ParsedIcon } from '../../core/src/parser.ts'
 
 export interface FileDefinition {
     path: string
@@ -6,13 +6,26 @@ export interface FileDefinition {
 }
 
 const ELEMENT_MAP: Record<string, string> = {
-    path: 'Path', g: 'G', circle: 'Circle', rect: 'Rect', line: 'Line',
-    polyline: 'Polyline', polygon: 'Polygon', ellipse: 'Ellipse', defs: 'Defs',
-    clipPath: 'ClipPath', linearGradient: 'LinearGradient',
-    radialGradient: 'RadialGradient', stop: 'Stop', mask: 'Mask',
+    path: 'Path',
+    g: 'G',
+    circle: 'Circle',
+    rect: 'Rect',
+    line: 'Line',
+    polyline: 'Polyline',
+    polygon: 'Polygon',
+    ellipse: 'Ellipse',
+    defs: 'Defs',
+    clipPath: 'ClipPath',
+    linearGradient: 'LinearGradient',
+    radialGradient: 'RadialGradient',
+    stop: 'Stop',
+    mask: 'Mask',
 }
 
-function transformToRN(inner: string, duotoneAccent: string | null): {
+function transformToRN(
+    inner: string,
+    duotoneAccent: string | null
+): {
     jsx: string
     svgElements: Set<string>
     hasDuotone: boolean
@@ -54,13 +67,12 @@ function transformToRN(inner: string, duotoneAccent: string | null): {
 
 export function reactNativeComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon
-    const { jsx, svgElements, hasDuotone } = transformToRN(
-        icon.inner,
-        icon.duotoneAccentInner,
-    )
+    const { jsx, svgElements, hasDuotone } = transformToRN(icon.inner, icon.duotoneAccentInner)
     const svgImports = Array.from(svgElements).sort().join(', ')
 
-    const duotoneImports = hasDuotone ? `import { useContext } from "react"\nimport { SolarContext } from "../../lib/SolarProvider"\n` : ''
+    const duotoneImports = hasDuotone
+        ? `import { useContext } from "react"\nimport { SolarContext } from "../../lib/SolarProvider"\n`
+        : ''
 
     const duotoneDestructure = hasDuotone
         ? `    const ctx = useContext(SolarContext)

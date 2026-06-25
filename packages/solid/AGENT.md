@@ -1,8 +1,9 @@
 ---
-name: "@solar-icons/solid"
-type: "package"
-status: "active"
+name: '@solar-icons/solid'
+type: 'package'
+status: 'active'
 ---
+
 # AGENT CONTEXT: packages/solid
 
 ## 🧠 Role
@@ -18,13 +19,13 @@ status: "active"
 
 ## 📁 Key Directories
 
-| Path | Description |
-|---|---|
-| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces TSX. |
-| `scripts/utils.ts` | Local helpers. |
-| `src/icons/style/` | Generated: one folder per style, one `.tsx` file per icon. |
-| `src/lib/` | Hand-written helpers. |
-| `src/index.ts` | Barrel re-export. |
+| Path                         | Description                                                |
+| ---------------------------- | ---------------------------------------------------------- |
+| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces TSX.                     |
+| `scripts/utils.ts`           | Local helpers.                                             |
+| `src/icons/style/`           | Generated: one folder per style, one `.tsx` file per icon. |
+| `src/lib/`                   | Hand-written helpers.                                      |
+| `src/index.ts`               | Barrel re-export.                                          |
 
 ## 🏗 Stack
 
@@ -38,7 +39,7 @@ status: "active"
 
 - **`src/lib/IconBase.tsx`**: CSS classes `solar` + `solar-{kebabName}`, CSS vars via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` duotone props, `aria-hidden="true"` by default unless `alt`/`aria-label`/`title` set. User `class` merged with solar classes, user `style` spread AFTER CSS vars.
 - **`src/lib/SolarProvider.tsx`**: Wrapper `<div>` with CSS custom properties on `style`. SolidJS `createContext`/`useContext` provides a ref with `setProperty()` — no re-render of icons. `useSolar()` hook returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`.
-- **`src/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated components.
+- **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated components.
 - **Pitfall**: No default on `size`/`color`/`strokeWidth` in `IconBase` — the `??` operator must fall through to CSS var. `--solar-icon-size` must be in pixels (`24px`), bare numbers won't work with `var()` in CSS.
 
 ## ⚠️ Known Constraints
