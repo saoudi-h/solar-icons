@@ -16,7 +16,6 @@
         "paths": {
             "@/*": ["./src/*"]
         },
-        "allowImportingTsExtensions": true,
         "noEmit": true
     },
     "include": ["./src/**/*", "./tests/**/*", "./tsdown.config.ts"],

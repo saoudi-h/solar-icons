@@ -15,7 +15,6 @@
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
         "skipLibCheck": true,
-        "allowImportingTsExtensions": true,
         "noEmit": true
     },
     "include": ["./src/**/*", "./tests/**/*", "./svelte.config.js", "./vitest.config.ts"],

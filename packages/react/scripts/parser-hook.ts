@@ -1,4 +1,4 @@
-import type { IconContext, ParsedIcon } from '../../core/src/parser.ts'
+import type { IconContext, ParsedIcon } from '@solar-icons/core'
 
 export interface FileDefinition {
     path: string

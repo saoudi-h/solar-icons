@@ -1,4 +1,4 @@
-import type { IconContext, ParsedIcon } from '../../core/src/parser.ts'
+import type { IconContext, ParsedIcon } from '@solar-icons/core'
 
 const DUOTONE_CSS_VARS_HTML =
     'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'

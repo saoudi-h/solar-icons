@@ -1,24 +1,5 @@
 import xmldom from '@xmldom/xmldom'
-
-type IconWeight = 'Broken' | 'LineDuotone' | 'Linear' | 'Outline' | 'Bold' | 'BoldDuotone'
-
-interface ParsedIcon {
-    readonly name: string
-    readonly category: string
-    readonly style: IconWeight
-    readonly styleKebab: string
-    readonly kebabName: string
-    readonly pascalName: string
-    readonly inner: string
-    readonly duotoneAccentInner: string | null
-    readonly preview: string
-}
-
-interface IconContext<TParsed> {
-    readonly icon: TParsed
-    readonly index: number
-    readonly total: number
-}
+import type { IconContext, ParsedIcon } from '@solar-icons/core'
 
 const DUOTONE_CSS_VARS_HTML =
     'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
