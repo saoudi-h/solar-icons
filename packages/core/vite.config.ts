@@ -3,6 +3,17 @@ import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import pkg from './package.json'
 
+const NODE_BUILTINS = [
+    'node:fs',
+    'node:path',
+    'node:process',
+    'node:url',
+    'fs',
+    'path',
+    'process',
+    'url',
+]
+
 export default defineConfig({
     plugins: [
         viteStaticCopy({
@@ -20,12 +31,12 @@ export default defineConfig({
     ],
     build: {
         minify: true,
-        target: 'ES2017',
+        target: 'ES2020',
         lib: {
             entry: resolve(__dirname, 'src/index.ts'),
         },
         rollupOptions: {
-            external: Object.keys(pkg.peerDependencies),
+            external: [...Object.keys(pkg.peerDependencies), ...NODE_BUILTINS],
             input: './src/index.ts',
             output: [
                 {
