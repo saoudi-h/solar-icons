@@ -89,3 +89,51 @@
 - [ ] **[MIGRATION]** Create V3 migration guide: breaking changes summary, package rename map, before/after code examples, AI-assisted codemod instructions. `Priority: 🟠` `Complexity: M`
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta`. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
+
+## 🧹 V3 — Technical debt cleanup (2026-06-25)
+
+Identified during the 2026-06-25 technical audit. Each task is one commit, scoped per package.
+
+- [x] **[CLEAN-01]** Move `parser-hook.ts` from `src/` to `scripts/` in 6 packages. ✅ Commit `f5bbbf07`
+- [x] **[CLEAN-02]** Delete dead files: `vue/src/category.ts`, `angular/src/default-attributes.ts`, svelte mjs shims, MD notes, tsconfig.build.json files, `vitest.setup.ts` stub. ✅ Commit `2d7222a7`
+- [x] **[CLEAN-03]** Kill dead deps: Vue `@babel/core`, `vite-plugin-static-copy`; Svelte `tsdown`, `rollup-plugin-svelte`, `svelte-preprocess`, `svelte2tsx`. ✅ Commit `2790e08a`
+- [x] **[CLEAN-04]** Align package versions to 3.0.0: Svelte, RN, Angular, Solid, Nuxt all bumped. ✅ Commit `396f2deb`
+- [x] **[CLEAN-09]** Fix Solid nested `<svg>` bug (use `iconBody` string prop + `<g innerHTML>` in IconBase) + fix RN generated main entry re-exporting `DynamicIcon` (pre-existing from f16e8ae1). ✅ Commit `5b4b7607`
+- [/] **[CLEAN-11]** Push `v3` branch to `origin/v3` (29 unpushed commits after cleanup). `Priority: 🔴` `Complexity: S`
+- [/] **[CLEAN-12]** Verify `pnpm turbo run build` end-to-end. **8/8 packages build successfully.** Demo apps have pre-existing breakages (see below). `Priority: 🔴` `Complexity: M`
+
+## ⚠️ Pre-existing breakages found during CLEAN-12
+
+These were broken before the 2026-06-25 cleanup. **Not fixed in this session** (separate scope).
+
+- **[ANGULAR-APP-MIGRATE]** `apps/angular-app` still uses V2 API: imports `HomeBold` etc. (no `Icon` suffix), uses `@solar-icons/angular/arrows` (category path, removed). Last touched in `d348aad6` (remove mirrored), before POST-08 (Icon suffix). **Tracked for separate migration.**
+- **[DOCS-MIGRATE]** `apps/docs` references `@solar-icons/react/ssr` (removed in 306698ef/623b89b8) and still uses V2 component names in MDX. Last touched in `bfcfa5a2` (set up v2/v3 structure), partial migration only.
+- **`vue-app`, `svelte-app`, `test-react-native-icons`**: no `build` script — these are dev apps that use `esbuild`/`build-only` directly. Not in turbo's default `build` task.
+
+## ⏸️ Deferred (pending core architecture decision)
+
+- **[CLEAN-05]** Fix Svelte `peerDependencies.svelte: ">= 4.0.0"` (source uses Svelte 5 runes, peerDep is false).
+- **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
+- **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** core architecture decision (Path A: build-as-contract, or Path B: source-only).
+- **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
+- **[CORE-ARCH]** Decide core package architecture: Path A (build-as-contract, current build becomes the source for consumers) or Path B (drop dist, source-only via `package.json#exports`). Currently half-done: dist exists but unused, framework packages use `.ts` path imports with `allowImportingTsExtensions`. **All of CLEAN-05/06/07/08/10 follow from this decision.**
+
+## 🧹 V3 — Technical debt cleanup (2026-06-25)
+
+Identified during the 2026-06-25 technical audit. Each task is one commit, scoped per package.
+
+- [/] **[CLEAN-01]** Move `parser-hook.ts` from `src/` to `scripts/` in 6 packages (react, vue, solid, svelte, angular, react-native). Update imports in `generate-assets.ts`. Remove from each package's tsconfig `include` (where applicable). `Priority: 🟠` `Complexity: S`
+- [ ] **[CLEAN-02]** Delete dead files: `vue/src/category.ts`, `angular/src/default-attributes.ts`, `svelte/scripts/compile-svelte.mjs`, `svelte/scripts/copy-svelte.mjs`, `svelte/SESSION_SUMMARY.md`, `svelte/WORK_IN_PROGRESS.md`, `vue/tsconfig.build.json`, `vue/vitest.setup.ts` (1-line stub), `svelte/tsconfig.build.json`. Also clean stale `.d.ts` artifacts in `core/src/`. `Priority: 🟠` `Complexity: S`
+- [ ] **[CLEAN-03]** Kill dead dependencies after verification: Vue `@babel/core`, `@vitejs/plugin-vue`, `vite-plugin-static-copy`. Svelte `tsdown` (no longer used), `rollup-plugin-svelte`, `svelte-preprocess`, `svelte2tsx`, `@sveltejs/vite-plugin-svelte` (verify). `Priority: 🟠` `Complexity: S`
+- [ ] **[CLEAN-04]** Align package versions: Svelte `1.1.1 → 3.0.0`, React-Native `1.1.1 → 3.0.0`, Angular `1.0.1 → 3.0.0`. React and Vue already at 3.0.0. `Priority: 🟠` `Complexity: S`
+- [ ] **[CLEAN-09]** Fix Solid `dynamic` icon nested `<svg>` bug: generated `template('<svg>...</svg>', ...)` produces nested SVG when passed as children to IconBase (which already renders `<svg>`). Either change parser-hook to emit only the inner, or use a non-template approach. `Priority: 🔴` `Complexity: M`
+- [ ] **[CLEAN-11]** Push `v3` branch to `origin/v3` (23 unpushed commits). `Priority: 🔴` `Complexity: S`
+- [ ] **[CLEAN-12]** Verify `pnpm turbo run build` end-to-end on the full monorepo. Catch regressions from CLEAN-01 to CLEAN-09. `Priority: 🔴` `Complexity: M`
+
+## ⏸️ Deferred (pending core architecture decision)
+
+- **[CLEAN-05]** Fix Svelte `peerDependencies.svelte: ">= 4.0.0"` (source uses Svelte 5 runes, peerDep is false).
+- **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
+- **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** core architecture decision (Path A: build-as-contract, or Path B: source-only).
+- **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
+- **[CORE-ARCH]** Decide core package architecture: Path A (build-as-contract, current build becomes the source for consumers) or Path B (drop dist, source-only via `package.json#exports`). Currently half-done: dist exists but unused, framework packages use `.ts` path imports with `allowImportingTsExtensions`. **All of CLEAN-05/06/07/08/10 follow from this decision.**
