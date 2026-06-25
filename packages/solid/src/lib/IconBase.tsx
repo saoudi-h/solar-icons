@@ -17,6 +17,7 @@ function IconBase(allProps: IconProps): JSX.Element {
         'secondaryColor',
         'secondaryOpacity',
         'iconName',
+        'iconBody',
         'children',
     ]);
 
@@ -69,7 +70,7 @@ function IconBase(allProps: IconProps): JSX.Element {
             {...others}
         >
             {local.alt && <title>{local.alt}</title>}
-            {local.children}
+            {local.iconBody ? <g innerHTML={local.iconBody} /> : local.children}
         </svg>
     );
 }
