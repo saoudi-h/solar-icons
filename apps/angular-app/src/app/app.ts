@@ -1,60 +1,50 @@
-import { Component, signal, computed, OnInit, Type, ChangeDetectionStrategy } from '@angular/core';
+import {
+    Component,
+    signal,
+    computed,
+    ChangeDetectionStrategy,
+    effect,
+    type Type,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { ALL_ICONS, STYLES, IconStyle } from './icon-list';
-import { provideSolarIcons, SolarDynamicIcon, SolarProviderComponent, HomeBold, StarBold, HeartBold, InfoCircleBold, SettingsBold, UserBold, BellBold } from '@solar-icons/angular';
+import { ALL_ICONS, STYLES, type IconStyle } from './icon-list';
+import {
+    SolarDynamicIcon,
+    SolarProviderComponent,
+    useSolar,
+    type IconBase,
+} from '@solar-icons/angular';
 import { ProviderDemoComponent } from './provider-demo';
 
-const CATEGORY_LOADERS: Record<string, () => Promise<any>> = {
-  arrows: () => import('@solar-icons/angular/arrows'),
-  'arrows-action': () => import('@solar-icons/angular/arrows-action'),
-  astronomy: () => import('@solar-icons/angular/astronomy'),
-  building: () => import('@solar-icons/angular/building'),
-  business: () => import('@solar-icons/angular/business'),
-  call: () => import('@solar-icons/angular/call'),
-  devices: () => import('@solar-icons/angular/devices'),
-  faces: () => import('@solar-icons/angular/faces'),
-  files: () => import('@solar-icons/angular/files'),
-  folders: () => import('@solar-icons/angular/folders'),
-  food: () => import('@solar-icons/angular/food'),
-  hands: () => import('@solar-icons/angular/hands'),
-  home: () => import('@solar-icons/angular/home'),
-  it: () => import('@solar-icons/angular/it'),
-  like: () => import('@solar-icons/angular/like'),
-  list: () => import('@solar-icons/angular/list'),
-  map: () => import('@solar-icons/angular/map'),
-  medicine: () => import('@solar-icons/angular/medicine'),
-  messages: () => import('@solar-icons/angular/messages'),
-  money: () => import('@solar-icons/angular/money'),
-  nature: () => import('@solar-icons/angular/nature'),
-  notes: () => import('@solar-icons/angular/notes'),
-  notifications: () => import('@solar-icons/angular/notifications'),
-  parts: () => import('@solar-icons/angular/parts'),
-  school: () => import('@solar-icons/angular/school'),
-  search: () => import('@solar-icons/angular/search'),
-  security: () => import('@solar-icons/angular/security'),
-  settings: () => import('@solar-icons/angular/settings'),
-  shopping: () => import('@solar-icons/angular/shopping'),
-  sports: () => import('@solar-icons/angular/sports'),
-  'text-formatting': () => import('@solar-icons/angular/text-formatting'),
-  time: () => import('@solar-icons/angular/time'),
-  tools: () => import('@solar-icons/angular/tools'),
-  ui: () => import('@solar-icons/angular/ui'),
-  users: () => import('@solar-icons/angular/users'),
-  video: () => import('@solar-icons/angular/video'),
-  weather: () => import('@solar-icons/angular/weather'),
+/**
+ * Lazy imports of the per-style icon barrels. Replaces the V2
+ * `CATEGORY_LOADERS` (37 categories) with the V3 flat structure (6 styles).
+ * Each barrel re-exports 1246 icon components for that style.
+ */
+const STYLE_BARRELS: Record<IconStyle, () => Promise<Record<string, unknown>>> = {
+    Bold: () => import('@solar-icons/angular/style/bold'),
+    BoldDuotone: () => import('@solar-icons/angular/style/bold-duotone'),
+    Broken: () => import('@solar-icons/angular/style/broken'),
+    Linear: () => import('@solar-icons/angular/style/linear'),
+    LineDuotone: () => import('@solar-icons/angular/style/line-duotone'),
+    Outline: () => import('@solar-icons/angular/style/outline'),
 };
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [FormsModule, SolarDynamicIcon, SolarProviderComponent, ProviderDemoComponent, HomeBold, StarBold, HeartBold, InfoCircleBold],
-  providers: [provideSolarIcons({ HomeBold, StarBold, HeartBold, InfoCircleBold, SettingsBold, UserBold, BellBold })],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+        FormsModule,
+        SolarDynamicIcon,
+        SolarProviderComponent,
+        ProviderDemoComponent,
+    ],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App implements OnInit {
+export class App {
     protected readonly styles = STYLES;
     protected readonly selectedStyle = signal<IconStyle>('Bold');
     protected readonly iconSize = signal(32);
@@ -63,8 +53,13 @@ export class App implements OnInit {
     protected readonly duotoneColor = signal('#60a5fa');
     protected readonly duotoneOpacity = signal(0.5);
     protected readonly strokeWidth = signal(1.5);
-    protected readonly loadedCategories = signal(0);
-    protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
+
+    /**
+     * Map of `name + style` -> Component class. Lazy loaded per style.
+     * Cleared and re-populated when the user changes `selectedStyle`.
+     */
+    protected readonly iconMap = signal<Map<string, Type<IconBase>>>(new Map());
+    protected readonly isStyleLoading = signal(false);
 
     // CSS vars demo
     protected readonly cssColor = signal('#f59e0b');
@@ -75,54 +70,56 @@ export class App implements OnInit {
     protected readonly providerSize = signal(36);
     protected readonly providerStroke = signal(1.5);
 
-    protected readonly isDuotone = computed(() =>
-        this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'
+    protected readonly isDuotone = computed(
+        () => this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'
     );
 
-    protected readonly isLinearLike = computed(() =>
-        this.selectedStyle() === 'Linear' || this.selectedStyle() === 'LineDuotone' || this.selectedStyle() === 'Broken'
+    protected readonly isLinearLike = computed(
+        () =>
+            this.selectedStyle() === 'Linear' ||
+            this.selectedStyle() === 'LineDuotone' ||
+            this.selectedStyle() === 'Broken'
     );
 
-  private readonly iconMap = signal<Map<string, Type<any>>>(new Map());
+    constructor() {
+        // Lazy-load the icon barrel for the currently selected style.
+        effect(() => {
+            const style = this.selectedStyle();
+            this.isStyleLoading.set(true);
+            this.iconMap.set(new Map());
+            STYLE_BARRELS[style]().then((module) => {
+                const map = new Map<string, Type<IconBase>>();
+                for (const [name, component] of Object.entries(module)) {
+                    if (typeof component === 'function') {
+                        map.set(name + style, component as Type<IconBase>);
+                    }
+                }
+                this.iconMap.set(map);
+                this.isStyleLoading.set(false);
+            });
+        });
+    }
 
-  async ngOnInit(): Promise<void> {
-    const categories = Object.entries(CATEGORY_LOADERS);
-    const map = new Map<string, Type<any>>();
+    protected readonly displayIcons = computed(() => {
+        const query = this.searchQuery().toLowerCase();
+        const style = this.selectedStyle();
+        const map = this.iconMap();
 
-    for (const [, loader] of categories) {
-      const module = await loader();
-      for (const [key, value] of Object.entries(module)) {
-        if (typeof value === 'function') {
-          map.set(key, value as Type<any>);
+        const filteredNames = query
+            ? ALL_ICONS.filter((name) => name.toLowerCase().includes(query))
+            : ALL_ICONS;
+
+        const result: { name: string; component: Type<IconBase> }[] = [];
+        for (const name of filteredNames) {
+            const component = map.get(name + style);
+            if (component) {
+                result.push({ name, component });
+            }
         }
-      }
-      // Batch update every few categories to reduce re-renders
-      this.iconMap.set(new Map(map));
-      this.loadedCategories.update((n) => n + 1);
-      await new Promise((r) => setTimeout(r, 0));
+        return result;
+    });
+
+    protected trackByIconName(_index: number, item: { name: string }): string {
+        return item.name;
     }
-  }
-
-  protected readonly displayIcons = computed(() => {
-    const query = this.searchQuery().toLowerCase();
-    const style = this.selectedStyle();
-    const map = this.iconMap();
-
-    const filteredNames = query
-      ? ALL_ICONS.filter((name) => name.toLowerCase().includes(query))
-      : ALL_ICONS;
-
-    const result: { name: string; component: Type<any> }[] = [];
-    for (const name of filteredNames) {
-      const component = map.get(name + style);
-      if (component) {
-        result.push({ name, component });
-      }
-    }
-    return result;
-  });
-
-  protected trackByIconName(index: number, item: { name: string }): string {
-    return item.name;
-  }
 }

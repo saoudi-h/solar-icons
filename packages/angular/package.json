@@ -109,6 +109,11 @@
             "import": "./dist/lib/*.js",
             "default": "./dist/lib/*.js"
         },
+        "./style/*": {
+            "types": "./dist/icons/style/*.d.ts",
+            "import": "./dist/icons/style/*.js",
+            "default": "./dist/icons/style/*.js"
+        },
         "./*": {
             "types": "./dist/icons/*/index.d.ts",
             "import": "./dist/icons/*/index.js",

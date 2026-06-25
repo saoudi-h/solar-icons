@@ -7,20 +7,10 @@
       <p class="text-slate-400">
         Displaying {{ displayIcons().length }} icons in
         <span class="text-amber-400">{{ selectedStyle() }}</span> style
+        @if (isStyleLoading()) {
+          <span class="text-slate-500 text-xs ml-2">loading…</span>
+        }
       </p>
-      @if (loadedCategories() < totalCategories) {
-        <div class="flex flex-col items-center gap-2 mt-4">
-          <div class="w-48 h-1 bg-slate-800 rounded-full overflow-hidden">
-            <div
-              class="h-full bg-amber-500 transition-all duration-300"
-              [style.width.%]="(loadedCategories() / totalCategories) * 100"
-            ></div>
-          </div>
-          <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-            Optimizing Engine: {{ loadedCategories() }} / {{ totalCategories }}
-          </p>
-        </div>
-      }
     </div>
 
     <!-- Controls -->
