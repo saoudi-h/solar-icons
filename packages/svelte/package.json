@@ -116,7 +116,7 @@
         "vitest": "^4.1.9"
     },
     "peerDependencies": {
-        "svelte": ">= 4.0.0"
+        "svelte": ">= 5.0.0"
     },
     "engines": {
         "node": ">=16"

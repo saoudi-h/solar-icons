@@ -30,7 +30,7 @@ status: 'active'
 
 ## 🏗 Stack
 
-- Svelte ≥ 4 (peer); the source targets Svelte 5 runes.
+- Svelte 5+ required (peer). The source and generated code use Svelte 5 runes (`$props`, `$derived`, `$effect`, `{@render}`).
 - `@sveltejs/package` for the package build, `@sveltejs/vite-plugin-svelte` for dev.
 - `svelte2tsx` + `svelte-check` for typecheck.
 - `tsdown` available as a devDep (currently unused at build time).
@@ -46,8 +46,8 @@ status: 'active'
 
 ## ⚠️ Known Constraints
 
-- **`peerDependencies.svelte: ">= 4.0.0"`** — the source uses Svelte 5 runes, so Svelte 4 users may see compatibility issues.
-- **Svelte 5 runes are required in the generated code** (`$props()` destructuring, not legacy `export let`).
+- **Svelte 5 runes are mandatory** in both source and generated code (`$props()` destructuring, not legacy `export let`). Consumers must be on Svelte ≥ 5.0.0.
+- The peer dependency is now correctly set to `">= 5.0.0"` (fixed in CLEAN-05, 2026-06-25; the previous `">= 4.0.0"` was a lie — the code was never Svelte 4 compatible).
 
 ## V3 Propagation (2026-06-24)
 
