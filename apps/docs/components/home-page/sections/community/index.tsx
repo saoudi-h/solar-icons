@@ -3,33 +3,31 @@ import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
 import { Heading } from '@/components/ui/heading'
 import NumberFlow from '@number-flow/react'
-import {
-    AltArrowDown,
-    AltArrowUp,
-    ArrowRightUp,
-    Buildings,
-    CheckCircle,
-    CloseCircle,
-    CodeScan,
-    Copy,
-    Dialog,
-    Globus,
-    Heart,
-    Key,
-    Like,
-    LinkBroken,
-    Link as LinkIcon,
-    Lock,
-    MinimalisticMagnifier,
-    PaletteRound,
-    PlugCircle,
-    Restart,
-    SettingsMinimalistic,
-    ShieldCheck,
-    Star,
-    Unread,
-    Widget,
-} from '@solar-icons/react/ssr'
+import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
+import { AltArrowUpIcon } from '@solar-icons/react/dynamic/alt-arrow-up'
+import { ArrowRightUpIcon } from '@solar-icons/react/dynamic/arrow-right-up'
+import { BuildingsIcon } from '@solar-icons/react/dynamic/buildings'
+import { CheckCircleIcon } from '@solar-icons/react/dynamic/check-circle'
+import { CloseCircleIcon } from '@solar-icons/react/dynamic/close-circle'
+import { CodeScanIcon } from '@solar-icons/react/dynamic/code-scan'
+import { CopyIcon } from '@solar-icons/react/dynamic/copy'
+import { DialogIcon } from '@solar-icons/react/dynamic/dialog'
+import { GlobalIcon } from '@solar-icons/react/dynamic/global'
+import { HeartIcon } from '@solar-icons/react/dynamic/heart'
+import { KeyIcon } from '@solar-icons/react/dynamic/key'
+import { LikeIcon } from '@solar-icons/react/dynamic/like'
+import { LinkIcon } from '@solar-icons/react/dynamic/link'
+import { LinkBrokenIcon } from '@solar-icons/react/dynamic/link-broken'
+import { LockIcon } from '@solar-icons/react/dynamic/lock'
+import { MinimalisticMagnifierIcon } from '@solar-icons/react/dynamic/minimalistic-magnifier'
+import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
+import { PlugCircleIcon } from '@solar-icons/react/dynamic/plug-circle'
+import { RestartIcon } from '@solar-icons/react/dynamic/restart'
+import { SettingsMinimalisticIcon } from '@solar-icons/react/dynamic/settings-minimalistic'
+import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
+import { StarIcon } from '@solar-icons/react/dynamic/star'
+import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
+import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
 import { motion, useInView } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -189,9 +187,9 @@ export const CommunitySection = () => {
                           md:col-span-7
                         ">
                         {/* Title & Copy */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-col gap-4">
+                        <motion.div variants={itemVariants} className="
+                          flex flex-col gap-4
+                        ">
                             <Heading
                                 size="h1"
                                 className="
@@ -222,21 +220,21 @@ export const CommunitySection = () => {
                         {/* Stats Dashboard Grid */}
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Weekly Downloads" value={stats.downloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Icons" value={7476} />
                             </motion.div>
                             {/* Stat Card 3: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Packages" value={8} />
                             </motion.div>
                         </div>
@@ -295,10 +293,17 @@ const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
 
 // Geometric Icon Grid layout (5x5, middle column 2 row 2 is empty for the button)
 const gridIcons = [
-    [Heart, Like, ShieldCheck, Globus, LinkIcon, MinimalisticMagnifier],
-    [PaletteRound, PlugCircle, SettingsMinimalistic, CodeScan, CheckCircle, Widget],
-    [Copy, AltArrowDown, Buildings, AltArrowUp, CloseCircle, Star],
-    [Unread, ArrowRightUp, Restart, LinkBroken, Dialog, Lock, Key],
+    [HeartIcon, LikeIcon, ShieldCheckIcon, GlobalIcon, LinkIcon, MinimalisticMagnifierIcon],
+    [
+        PaletteRoundIcon,
+        PlugCircleIcon,
+        SettingsMinimalisticIcon,
+        CodeScanIcon,
+        CheckCircleIcon,
+        WidgetIcon,
+    ],
+    [CopyIcon, AltArrowDownIcon, BuildingsIcon, AltArrowUpIcon, CloseCircleIcon, StarIcon],
+    [UnreadIcon, ArrowRightUpIcon, RestartIcon, LinkBrokenIcon, DialogIcon, LockIcon, KeyIcon],
 ]
 
 interface CommunityIconGridProps {
@@ -331,12 +336,9 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
                     {gridIcons.map((row, rowIndex) =>
                         row.map((IconComponent, colIndex) => {
                             if (IconComponent === null) {
-                                return (
-                                    <div
-                                        key="center-placeholder"
-                                        className="size-full"
-                                    />
-                                )
+                                return <div key="center-placeholder" className="
+                                  size-full
+                                " />
                             }
 
                             return (

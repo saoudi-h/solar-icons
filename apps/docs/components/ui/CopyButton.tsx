@@ -1,5 +1,6 @@
 'use client'
-import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import { CheckCircleIcon } from '@solar-icons/react/linear/check-circle'
+import { CopyIcon } from '@solar-icons/react/linear/copy'
 import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button'
 import React from 'react'
 import type { ButtonProps } from './button'
@@ -16,7 +17,7 @@ export const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
         return (
             <Button ref={ref} {...props} onClick={onClick}>
                 {children}
-                {checked ? <CheckCircle /> : <Copy />}
+                {checked ? <CheckCircleIcon /> : <CopyIcon />}
             </Button>
         )
     }

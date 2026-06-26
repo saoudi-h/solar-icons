@@ -3,7 +3,7 @@
 import { MotionTabs } from '@/components/ui/MotionTabs'
 import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { InfoCircle } from '@solar-icons/react'
+import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { selectedIconAtom, useSearchCategories } from '../context'
@@ -87,7 +87,7 @@ const Content: FC = () => {
                             </Toggle>
                             <Tooltip>
                                 <TooltipTrigger>
-                                    <InfoCircle size={16} color={''} weight="Linear" />
+                                    <InfoCircleIcon size={16} />
                                 </TooltipTrigger>
                                 <TooltipContent>Category</TooltipContent>
                             </Tooltip>

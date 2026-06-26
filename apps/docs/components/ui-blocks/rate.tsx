@@ -1,6 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
-import { Dislike, Like } from '@solar-icons/react'
+import { DislikeIcon } from '@solar-icons/react/linear/dislike'
+import { LikeIcon } from '@solar-icons/react/linear/like'
 import { cva } from 'class-variance-authority'
 import { buttonVariants } from 'fumadocs-ui/components/ui/button'
 import { Collapsible, CollapsibleContent } from 'fumadocs-ui/components/ui/collapsible'
@@ -110,7 +111,7 @@ export function Rate({
                     onClick={() => {
                         setOpinion('good')
                     }}>
-                    <Like />
+                    <LikeIcon />
                     Good
                 </button>
                 <button
@@ -123,7 +124,7 @@ export function Rate({
                     onClick={() => {
                         setOpinion('bad')
                     }}>
-                    <Dislike />
+                    <DislikeIcon />
                     Bad
                 </button>
             </div>
@@ -186,9 +187,10 @@ export function Rate({
                         />
                         <button
                             type="submit"
-                            className={cn(buttonVariants({ color: 'outline' }), `
-                              w-fit px-3
-                            `)}
+                            className={cn(
+                                buttonVariants({ color: 'outline' }),
+                                `w-fit px-3`
+                            )}
                             disabled={isPending}>
                             Submit
                         </button>

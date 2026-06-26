@@ -1,12 +1,10 @@
 'use client'
 
-import {
-    CheckCircle,
-    CloseCircle,
-    InfoCircle,
-    ShieldCross,
-    ShieldWarning,
-} from '@solar-icons/react/ssr'
+import { CheckCircleIcon } from '@solar-icons/react/linear/check-circle'
+import { CloseCircleIcon } from '@solar-icons/react/linear/close-circle'
+import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
+import { ShieldCrossIcon } from '@solar-icons/react/linear/shield-cross'
+import { ShieldWarningIcon } from '@solar-icons/react/linear/shield-warning'
 import { useTheme } from 'next-themes'
 import type { ToasterProps } from 'sonner'
 import { Toaster as Sonner } from 'sonner'
@@ -19,11 +17,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
             theme={(theme as ToasterProps['theme']) || 'system'}
             className=""
             icons={{
-                success: <CheckCircle size={20} weight="Linear" color={''} />,
-                error: <ShieldCross size={20} weight="Linear" color={''} />,
-                warning: <ShieldWarning size={20} weight="Linear" color={''} />,
-                info: <InfoCircle size={20} weight="Linear" color={''} />,
-                close: <CloseCircle size={20} weight="Linear" color={''} />,
+                success: <CheckCircleIcon size={20} />,
+                error: <ShieldCrossIcon size={20} />,
+                warning: <ShieldWarningIcon size={20} />,
+                info: <InfoCircleIcon size={20} />,
+                close: <CloseCircleIcon size={20} />,
             }}
             style={
                 {

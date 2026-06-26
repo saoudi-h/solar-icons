@@ -1,5 +1,5 @@
 import { Logo } from '@/components/ui-blocks/logo'
-import { Widget3 } from '@solar-icons/react/ssr'
+import { Widget3Icon } from '@solar-icons/react/dynamic/widget-3'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 /**
@@ -35,7 +35,7 @@ export const docsOptions: BaseLayoutProps = {
             text: 'Explore Icons',
             url: '/icons',
             active: 'url',
-            icon: <Widget3 weight="BoldDuotone" />,
+            icon: <Widget3Icon weight="BoldDuotone" />,
         },
     ],
 }

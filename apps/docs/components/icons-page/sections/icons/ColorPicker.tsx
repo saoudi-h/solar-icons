@@ -7,7 +7,8 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { Link, LinkBroken } from '@solar-icons/react/ssr'
+import { LinkIcon } from '@solar-icons/react/linear/link'
+import { LinkBrokenIcon } from '@solar-icons/react/linear/link-broken'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
@@ -96,7 +97,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                       absolute inset-0 flex size-full
                                       items-center justify-center
                                     `}>
-                                    <LinkBroken size={24} />
+                                    <LinkBrokenIcon size={24} />
                                 </motion.div>
                             ) : (
                                 <motion.div
@@ -109,7 +110,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                       absolute inset-0 flex size-full
                                       items-center justify-center
                                     `}>
-                                    <Link size={24} />
+                                    <LinkIcon size={24} />
                                 </motion.div>
                             )}
                         </AnimatePresence>

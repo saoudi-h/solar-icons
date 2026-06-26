@@ -1,26 +1,14 @@
 import { cn } from '@/lib/utils'
-import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock'
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock'
-import type { ComponentProps } from 'react'
-
-const pre = (props: ComponentProps<'pre'>) => (
-    <CodeBlock {...props} className={cn('my-0', props.className)} keepBackground={true}>
-        <Pre>{props.children}</Pre>
-    </CodeBlock>
-)
 
 export const CodeBlockTemplate = ({ code, lang }: { code: string; lang: string }) => (
-    <DynamicCodeBlock
-        options={{
-            themes: {
-                light: 'github-light',
-                dark: 'github-dark-high-contrast',
-            },
-            components: {
-                pre,
-            },
-        }}
-        lang={lang}
-        code={code}
-    />
+    <pre
+        data-lang={lang}
+        className={cn(
+            `
+              my-0 overflow-x-auto rounded-lg border bg-fd-card p-3 font-mono
+              text-xs text-fd-card-foreground
+            `
+        )}>
+        <code>{code}</code>
+    </pre>
 )

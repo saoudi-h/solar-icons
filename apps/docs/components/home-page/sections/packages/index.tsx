@@ -8,7 +8,7 @@ import { MotionHeading } from '@/components/ui/motion'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
-import { ArrowRightUp } from '@solar-icons/react'
+import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
@@ -247,7 +247,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     className={`
                       w-10 rounded-l-xl rounded-r-none! border-r-border/50
                     `}>
-                    <ArrowRightUp className="size-full" />
+                    <ArrowRightUpIcon className="size-full" />
                 </ButtonWithTooltip>
                 <ButtonWithTooltip
                     tooltip="GitHub Repository"

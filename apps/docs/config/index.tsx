@@ -3,16 +3,14 @@ import type { HeroSectionProps } from '@/components/home-page/sections/hero'
 import type { PackageSectionProps } from '@/components/home-page/sections/packages'
 import type { FooterProps } from '@/components/ui-blocks/footer/types'
 import { Icon } from '@iconify/react'
-import {
-    ArrowLeft,
-    BugMinimalistic,
-    Diploma,
-    Help,
-    House,
-    Rocket,
-    RoundedMagnifier,
-    SmartphoneUpdate,
-} from '@solar-icons/react/ssr'
+import { ArrowLeftIcon } from '@solar-icons/react/linear/arrow-left'
+import { BugMinimalisticIcon } from '@solar-icons/react/linear/bug-minimalistic'
+import { DiplomaIcon } from '@solar-icons/react/linear/diploma'
+import { HelpIcon } from '@solar-icons/react/linear/help'
+import { HouseIcon } from '@solar-icons/react/linear/house'
+import { RocketIcon } from '@solar-icons/react/linear/rocket'
+import { RoundedMagnifierIcon } from '@solar-icons/react/linear/rounded-magnifier'
+import { SmartphoneUpdateIcon } from '@solar-icons/react/linear/smartphone-update'
 
 export interface Config {
     footer: FooterProps
@@ -76,13 +74,13 @@ export const config: Config = {
                     {
                         label: 'Contribute',
                         url: 'https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md',
-                        icon: <Help size={20} />,
+                        icon: <HelpIcon size={20} />,
                         external: true,
                     },
                     {
                         label: 'Issues',
                         url: 'https://github.com/saoudi-h/solar-icons/issues',
-                        icon: <BugMinimalistic size={20} />,
+                        icon: <BugMinimalisticIcon size={20} />,
                         external: true,
                     },
                     {
@@ -99,12 +97,12 @@ export const config: Config = {
                     {
                         label: 'License',
                         url: '/docs/community/license',
-                        icon: <Diploma size={20} />,
+                        icon: <DiplomaIcon size={20} />,
                     },
                     {
                         label: 'Changelog',
                         url: '/docs/community/changelog',
-                        icon: <SmartphoneUpdate size={20} />,
+                        icon: <SmartphoneUpdateIcon size={20} />,
                     },
                 ],
             },
@@ -119,13 +117,13 @@ export const config: Config = {
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',
-            Icon: <RoundedMagnifier size={20} />,
+            Icon: <RoundedMagnifierIcon size={20} />,
             variant: 'outline',
         },
         getStarted: {
             label: 'Get Started',
             href: '/docs',
-            Icon: <Rocket size={20} />,
+            Icon: <RocketIcon size={20} />,
         },
     },
     packageSection: {
@@ -211,12 +209,12 @@ export const config: Config = {
         primaryAction: {
             label: 'Go Home',
             href: '/',
-            Icon: <House size={20} />,
+            Icon: <HouseIcon size={20} />,
         },
         secondaryAction: {
             onClick: () => history.back(),
             label: 'Go Back',
-            Icon: <ArrowLeft size={20} />,
+            Icon: <ArrowLeftIcon size={20} />,
             variant: 'outline',
         },
     },

@@ -1,10 +1,10 @@
 'use client'
 import { cn } from '@/lib/utils'
+import { ShowcaseProvider } from './context'
 import { FilterBar } from './FilterBar'
+import { IconDetail } from './icon-detail'
 import { IconGridVirtualized } from './IconGrid'
 import { InitState } from './InitState'
-import { ShowcaseProvider } from './context'
-import { IconDetail } from './icon-detail'
 
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     return (

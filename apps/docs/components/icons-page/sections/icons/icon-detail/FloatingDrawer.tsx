@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CloseCircle } from '@solar-icons/react'
+import { CloseCircleIcon } from '@solar-icons/react/bold/close-circle'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
@@ -64,8 +64,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                               -translate-y-1/2 rounded-full p-0
                               [&_svg]:size-8
                             `}>
-                            <CloseCircle
-                                weight="Bold"
+                            <CloseCircleIcon
                                 className={`
                                   size-full text-muted-foreground
                                   hover:text-foreground

@@ -8,8 +8,8 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
-import type { IconWeight } from '@solar-icons/react'
-import { Settings, useSolar } from '@solar-icons/react'
+import { useSolar } from '@solar-icons/react'
+import { SettingsIcon } from '@solar-icons/react/linear/settings'
 import { ColorPicker } from './ColorPicker'
 
 import { Button } from '@/components/ui/button'
@@ -25,12 +25,20 @@ import MultipleSelector from '@/components/ui/multi-selector'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { useScreen } from '@/lib/screens'
 import NumberFlow from '@number-flow/react'
-import { CATEGORIES as allCategories, STYLES as styles } from '@solar-icons/core'
-import { Dialog, MinimalisticMagnifier, Restart } from '@solar-icons/react/ssr'
+import { CATEGORIES as allCategories, STYLES as styles } from '@solar-icons/core/runtime'
+import { DialogIcon } from '@solar-icons/react/dynamic/dialog'
+import { MinimalisticMagnifierIcon } from '@solar-icons/react/linear/minimalistic-magnifier'
+import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
-import { DEFAULT_VALUES, filteredCountAtom, useSearchCategories, useSearchKeyword } from './context'
+import {
+    DEFAULT_VALUES,
+    filteredCountAtom,
+    useSearchCategories,
+    useSearchKeyword,
+    weightAtom,
+} from './context'
 import type { CategoryOption } from './utils'
 
 const categoryOptions = allCategories.map(c => ({ value: c, label: c }))
@@ -39,6 +47,7 @@ export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
     const [categories, setCategories] = useSearchCategories()
+    const [weight, setWeight] = useAtom(weightAtom)
 
     const [inputValue, setInputValue] = useState(keyword)
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -57,35 +66,17 @@ export const FilterBarContent: React.FC = () => {
         }
     }, [])
 
-    const { value, setValue } = useSolar()
-
-    const setWeight = (weight: IconWeight) => {
-        setValue({
-            ...value,
-            weight,
-        })
-    }
-
-    const setColor = (color: string) => {
-        setValue({
-            ...value,
-            color,
-        })
-    }
-
-    const setSize = (size: number) => {
-        setValue({
-            ...value,
-            size,
-        })
-    }
+    const { color: solarColor, size: solarSize, setColor, setSize } = useSolar()
+    const color = solarColor ?? DEFAULT_VALUES.color
+    const size = solarSize ?? DEFAULT_VALUES.size
 
     const onCategoryChange = (categories: Option[]) => {
         setCategories(categories as CategoryOption[])
     }
 
     const reset = () => {
-        setValue(DEFAULT_VALUES)
+        setColor(DEFAULT_VALUES.color)
+        setSize(DEFAULT_VALUES.size)
         setKeyword('')
         setInputValue('')
         if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -99,7 +90,7 @@ export const FilterBarContent: React.FC = () => {
                   flex flex-1 flex-wrap content-start justify-start gap-2
                 `}>
                 {/* Style selector */}
-                <Select value={value.weight || 'Linear'} onValueChange={setWeight}>
+                <Select value={weight} onValueChange={v => setWeight(v as typeof weight)}>
                     <SelectTrigger
                         className={`
                           h-10 w-48 rounded-lg border-none! bg-default-200
@@ -108,20 +99,15 @@ export const FilterBarContent: React.FC = () => {
                         <SelectValue placeholder="Select a weight" />
                     </SelectTrigger>
                     <SelectContent>
-                        {styles.map(weight => (
-                            <SelectItem key={weight} value={weight}>
+                        {styles.map(w => (
+                            <SelectItem key={w} value={w}>
                                 <div
                                     className={`
                                       flex flex-row items-center justify-center
                                       gap-2
                                     `}>
-                                    <Dialog
-                                        className="mr-2 size-6"
-                                        weight={weight}
-                                        size={16}
-                                        color={value.color || '#000000'}
-                                    />
-                                    {weight}
+                                    <DialogIcon className="mr-2 size-6" weight={w} size={16} />
+                                    {w}
                                 </div>
                             </SelectItem>
                         ))}
@@ -136,25 +122,25 @@ export const FilterBarContent: React.FC = () => {
                     `}>
                     <Slider
                         className=""
-                        value={[parseInt((value.size || 24) + '')]}
+                        value={[parseInt(String(size) || '24')]}
                         onValueChange={value => setSize(value[0] || 24)}
                         min={16}
                         max={64}
                         step={1}
                     />
-                    <span className="ml-2 text-xs font-light">{value.size}px</span>
+                    <span className="ml-2 text-xs font-light">{size}px</span>
                 </div>
 
                 {/* Color picker */}
                 <ColorPicker
-                    color={value.color || '#000000'}
+                    color={color}
                     setColor={setColor}
                     className="h-10 w-48"
                 />
 
                 {/* Search bar */}
                 <div className="relative flex h-10 w-48">
-                    <MinimalisticMagnifier
+                    <MinimalisticMagnifierIcon
                         className={`
                           absolute top-1/2 left-2.5 size-4 -translate-y-1/2
                           text-muted-foreground
@@ -182,7 +168,7 @@ export const FilterBarContent: React.FC = () => {
                       size-10 rounded-lg border-none! bg-default-200
                       text-foreground
                     `}>
-                    <Restart className="size-4" mirrored />
+                    <RestartIcon className="size-4" />
                 </Button>
 
                 {/* Reset button */}
@@ -249,7 +235,7 @@ export const FilterBar = () => {
                       text-foreground/70 shadow-md transition-colors
                       hover:text-foreground
                     `}>
-                    <Settings className="size-8" weight="Linear" color="" />
+                    <SettingsIcon className="size-8" />
                 </motion.button>
                 <span className="sr-only">Open settings</span>
             </DrawerTrigger>

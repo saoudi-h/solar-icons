@@ -1,4 +1,3 @@
-import { SSR as icons } from '@solar-icons/react'
 import { loader } from 'fumadocs-core/source'
 import { docs } from 'fumadocs-mdx:collections/server'
 import type { IconifyFrameworkIcon } from './resolveIconUtils'
@@ -13,8 +12,7 @@ export const source = loader({
                 return renderIconify(icon as IconifyFrameworkIcon)
             }
 
-            if (icon in icons)
-                return renderSolarIcon(icon, { className: 'size-8', weight: 'BoldDuotone' })
+            return renderSolarIcon(icon, { className: 'size-8', weight: 'BoldDuotone' })
         }
 
         return renderSolarIcon('AltArrowRight', { className: 'size-8', weight: 'BoldDuotone' })

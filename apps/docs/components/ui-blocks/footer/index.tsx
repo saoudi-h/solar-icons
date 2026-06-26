@@ -1,5 +1,5 @@
 import { NoiseSvg } from '@/components/ui/noise-svg'
-import { ArrowRightUp } from '@solar-icons/react/ssr'
+import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import React from 'react'
 import { FooterMotion } from '../animations/FooterMotion'
@@ -108,7 +108,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
                                                         {link.icon && link.icon}
                                                         {link.label}
                                                         {link.external && (
-                                                            <ArrowRightUp size={16} />
+                                                            <ArrowRightUpIcon size={16} />
                                                         )}
                                                     </Link>
                                                 </li>

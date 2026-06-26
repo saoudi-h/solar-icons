@@ -2,7 +2,8 @@
 
 'use client'
 
-import { AltArrowDown, CloseCircle } from '@solar-icons/react/ssr'
+import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
+import { CloseCircleIcon } from '@solar-icons/react/dynamic/close-circle'
 import { Command as CommandPrimitive, useCommandState } from 'cmdk'
 
 import * as React from 'react'
@@ -479,7 +480,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     }}>
                     {selected.length < 1 ||
                     selected.filter(s => s.fixed).length === selected.length ? (
-                        <AltArrowDown
+                        <AltArrowDownIcon
                             className={`
                               absolute top-1/2 right-3 z-10 size-4
                               translate-y-[-50%] opacity-50
@@ -501,11 +502,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircle
-                                weight="Bold"
-                                size={24}
-                                className={`drop-shadow-md`}
-                            />
+                            <CloseCircleIcon weight="Bold" size={24} className={`
+                              drop-shadow-md
+                            `} />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -552,7 +551,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                             e.stopPropagation()
                                         }}
                                         onClick={() => handleUnselect(option)}>
-                                        <CloseCircle
+                                        <CloseCircleIcon
                                             className={`
                                               size-4 text-muted-foreground
                                               hover:text-foreground
@@ -629,10 +628,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem
-                                            value="-"
-                                            className={`hidden`}
-                                        />
+                                        <CommandItem value="-" className={`
+                                          hidden
+                                        `} />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

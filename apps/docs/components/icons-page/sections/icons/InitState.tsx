@@ -8,12 +8,10 @@ const INITIAL_LIGHT_COLOR = '#0f4159'
 
 export const InitState = () => {
     const { resolvedTheme } = useTheme()
-    const { setValue } = useSolar()
+    const { setColor } = useSolar()
 
     useLayoutEffect(() => {
-        setValue({
-            color: resolvedTheme == 'dark' ? INITIAL_LIGHT_COLOR : INITIAL_DARK_COLOR,
-        })
+        setColor(resolvedTheme == 'dark' ? INITIAL_LIGHT_COLOR : INITIAL_DARK_COLOR)
     }, [])
 
     return null
