@@ -10,7 +10,7 @@ interface DynamicIconProps extends IconProps {
 }
 
 export const DynamicIcon = ({ weight, styles, ...props }: DynamicIconProps) => {
-    const key = weight ? WEIGHT_MAP[weight] : 'bold'
+    const key = weight ? WEIGHT_MAP[weight] : 'linear'
     const Component = styles[key]
     return <Component {...(props as any)} />
 }

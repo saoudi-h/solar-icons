@@ -11,7 +11,7 @@ interface DynamicIconProps extends IconProps {
 }
 
 export const DynamicIcon: FC<DynamicIconProps> = ({ weight, styles, ...props }) => {
-    const key = weight ? WEIGHT_MAP[weight] : 'bold'
+    const key = weight ? WEIGHT_MAP[weight] : 'linear'
     const Component = styles[key]
     return <Component {...(props as any)} />
 }

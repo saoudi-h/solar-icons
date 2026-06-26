@@ -11,7 +11,7 @@ const props = defineProps<{
 }>()
 
 const component = computed(() => {
-    const key = props.weight ? WEIGHT_MAP[props.weight] : 'bold'
+    const key = props.weight ? WEIGHT_MAP[props.weight] : 'linear'
     return props.styles[key] ?? null
 })
 </script>

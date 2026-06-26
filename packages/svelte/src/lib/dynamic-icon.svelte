@@ -13,7 +13,7 @@
 
     let { weight, styles, ...restProps }: DynamicIconProps = $props();
 
-    let component = $derived(styles[weight ? WEIGHT_MAP[weight] : 'bold']);
+    let component = $derived(styles[weight ? WEIGHT_MAP[weight] : 'linear']);
 </script>
 
 <svelte:component this={component} {...restProps} />
