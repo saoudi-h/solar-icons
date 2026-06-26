@@ -37,7 +37,10 @@ export default defineConfig({
         },
         rollupOptions: {
             external: [...Object.keys(pkg.peerDependencies), ...NODE_BUILTINS],
-            input: './src/index.ts',
+            input: {
+                index: resolve(__dirname, 'src/index.ts'),
+                runtime: resolve(__dirname, 'src/runtime.ts'),
+            },
             output: [
                 {
                     format: 'esm',

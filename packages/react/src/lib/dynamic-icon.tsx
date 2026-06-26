@@ -1,6 +1,6 @@
 import type { FC, RefAttributes } from 'react'
 import type { IconProps } from './types'
-import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core'
+import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime'
 
 type IconComponent = FC<IconProps & RefAttributes<SVGSVGElement>>
 type StyleComponents = StyleComponentsMap<IconComponent>

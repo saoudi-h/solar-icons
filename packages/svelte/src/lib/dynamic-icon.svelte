@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { ComponentType } from 'svelte';
-    import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core';
+    import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime';
     import type { IconProps } from './types';
 
     type StyleComponents = StyleComponentsMap<ComponentType<IconProps>>;

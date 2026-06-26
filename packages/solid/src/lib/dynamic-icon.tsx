@@ -1,6 +1,6 @@
 import { type Component } from 'solid-js';
 import type { IconProps } from './types';
-import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core';
+import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime';
 
 type StyleComponents = StyleComponentsMap<Component<IconProps>>;
 

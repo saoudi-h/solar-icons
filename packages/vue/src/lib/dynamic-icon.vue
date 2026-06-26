@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type Component } from 'vue'
-import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core'
+import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime'
 import type { IconProps } from './types'
 
 type StyleComponents = StyleComponentsMap<Component>

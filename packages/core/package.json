@@ -11,6 +11,11 @@
             "import": "./dist/esm/index.mjs",
             "require": "./dist/cjs/index.cjs"
         },
+        "./runtime": {
+            "types": "./dist/types/runtime.d.ts",
+            "import": "./dist/esm/runtime.mjs",
+            "require": "./dist/cjs/runtime.cjs"
+        },
         "./package.json": {
             "default": "./package.json"
         },
