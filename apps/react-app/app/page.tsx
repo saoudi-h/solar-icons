@@ -169,16 +169,16 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <code className="text-xs text-slate-500 block">{'style={{"--solar-icon-color": ...}}'}</code>
-                            <div className="bg-slate-900 rounded-lg p-4 flex gap-4" style={{ '--solar-icon-color': cssColor, '--solar-icon-size': `${cssSize}px` } as React.CSSProperties}>
+                            <code className="text-xs text-slate-500 block">{'style={{"--solar-color": ...}}'}</code>
+                            <div className="bg-slate-900 rounded-lg p-4 flex gap-4" style={{ '--solar-color': cssColor, '--solar-size': `${cssSize}px` } as React.CSSProperties}>
                                 <HomeBoldIcon />
                                 <SettingsBoldIcon />
                                 <UserBoldIcon />
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <code className="text-xs text-slate-500 block">Tailwind [--solar-icon-color:...]</code>
-                            <div className="bg-slate-900 rounded-lg p-4 flex gap-4 [--solar-icon-color:var(--demo-color)] [--solar-icon-size:var(--demo-size)]" style={{ '--demo-color': cssColor, '--demo-size': `${cssSize}px` } as React.CSSProperties}>
+                            <code className="text-xs text-slate-500 block">Tailwind [--solar-color:...]</code>
+                            <div className="bg-slate-900 rounded-lg p-4 flex gap-4 [--solar-color:var(--demo-color)] [--solar-size:var(--demo-size)]" style={{ '--demo-color': cssColor, '--demo-size': `${cssSize}px` } as React.CSSProperties}>
                                 <HeartBoldIcon />
                                 <StarBoldIcon />
                                 <BellBoldIcon />
@@ -192,7 +192,7 @@ export default function Home() {
                 </Section>
 
                 <Section number={6} title="CSS Class Styling" desc="Every icon has class 'solar' and 'solar-{'{name}'}'. Target them with CSS selectors.">
-                    <code className="text-xs text-slate-500 block mb-2">{'.solar { color: var(--solar-icon-color, currentColor); }'}</code>
+                    <code className="text-xs text-slate-500 block mb-2">{'.solar { color: var(--solar-color, currentColor); }'}</code>
                     <code className="text-xs text-slate-500 block mb-4">{'.solar-home { /* specific icon */ }'}</code>
                     <div className="bg-slate-900 rounded-lg p-4 flex gap-4 [&_.solar]:text-amber-500 [&_.solar-star]:text-blue-400">
                         <HomeBoldIcon />
