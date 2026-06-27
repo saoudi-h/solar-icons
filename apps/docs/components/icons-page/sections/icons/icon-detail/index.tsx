@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { selectedIconAtom, useSearchCategories } from '../context'
+import { selectedIconAtom, useSearchCategories, weightAtom } from '../context'
 import type { CategoryOption } from '../utils'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
@@ -31,6 +31,7 @@ export function IconDetail() {
 
 const Content: FC = () => {
     const [selectedIcon] = useAtom(selectedIconAtom)
+    const [weight] = useAtom(weightAtom)
     const [categories, setCategories] = useSearchCategories()
 
     const handleCategorySelection = (category: string) => {
@@ -64,6 +65,7 @@ const Content: FC = () => {
                           lg:size-56
                         `}>
                         <selectedIcon.Icon
+                            weight={weight}
                             className={`
                               size-12
                               lg:size-48

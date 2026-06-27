@@ -3,13 +3,14 @@ import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { forwardRef } from 'react'
-import { selectedIconAtom } from './context'
+import { selectedIconAtom, weightAtom } from './context'
 
 type IconCardProps = IconData
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
     ({ name, Icon, tags, category, categoryTags, ...props }, ref) => {
         const [selectedIcon, setSelectedIcon] = useAtom(selectedIconAtom)
+        const [weight] = useAtom(weightAtom)
         const isSelected = selectedIcon?.name === name
         const iconData = { name, Icon, tags, category, categoryTags }
 
@@ -34,6 +35,7 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                     }
                 )}>
                 <Icon
+                    weight={weight}
                     className={cn('transition-transform duration-300 ease-in', {
                         'group-hover:scale-125': !isSelected,
                         'scale-125 text-primary': isSelected,
