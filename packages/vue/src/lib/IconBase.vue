@@ -9,6 +9,7 @@ interface Props {
     secondaryColor?: string
     secondaryOpacity?: number
     iconName?: string
+    isolated?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {})
@@ -22,36 +23,55 @@ const iconClass = computed(() =>
 const isAccessible = computed(() => !!props.alt)
 
 const baseStyle = computed(() => {
-    const s: Record<string, string> = {
-        color: props.color ?? 'var(--solar-icon-color, currentColor)',
+    const s: Record<string, string> = {}
+    if (props.isolated) {
+        s['--solar-duotone-color'] = 'initial'
+        s['--solar-duotone-opacity'] = 'initial'
     }
-    const sz =
-        typeof props.size === 'number'
-            ? `${props.size}px`
-            : props.size ?? 'var(--solar-icon-size, 24px)'
-    s.width = sz
-    s.height = sz
+    if (props.color !== undefined) s.color = props.color
+    if (props.size !== undefined) {
+        const sz = typeof props.size === 'number' ? `${props.size}px` : props.size
+        s.width = sz
+        s.height = sz
+    }
+    if (props.strokeWidth !== undefined) s['stroke-width'] = String(props.strokeWidth)
     if (props.secondaryColor) s['--solar-duotone-color'] = props.secondaryColor
     if (props.secondaryOpacity != null)
         s['--solar-duotone-opacity'] = String(props.secondaryOpacity)
     return s
 })
 
-const svgStrokeWidth = computed(
-    () => props.strokeWidth ?? 'var(--solar-stroke-width, 1.5)',
-)
+const svgWidth = computed(() => {
+    if (props.size !== undefined) return undefined
+    return props.isolated ? '24px' : 'var(--solar-size, 24px)'
+})
+const svgHeight = computed(() => {
+    if (props.size !== undefined) return undefined
+    return props.isolated ? '24px' : 'var(--solar-size, 24px)'
+})
+const svgColor = computed(() => {
+    if (props.color !== undefined) return undefined
+    return props.isolated ? 'currentColor' : 'var(--solar-color, currentColor)'
+})
+const svgStrokeWidth = computed(() => {
+    if (props.strokeWidth !== undefined) return undefined
+    return props.isolated ? '1.5' : 'var(--solar-stroke-width, 1.5)'
+})
 </script>
 
 <template>
     <svg
         xmlns="http://www.w3.org/2000/svg"
+        v-bind="$attrs"
         :class="iconClass"
-        :style="baseStyle"
+        :style="Object.keys(baseStyle).length > 0 ? baseStyle : undefined"
         fill="none"
         viewBox="0 0 24 24"
+        :width="svgWidth"
+        :height="svgHeight"
+        :color="svgColor"
         :stroke-width="svgStrokeWidth"
         :aria-hidden="isAccessible ? undefined : 'true'"
-        v-bind="$attrs"
     >
         <title v-if="alt">{{ alt }}</title>
         <slot />

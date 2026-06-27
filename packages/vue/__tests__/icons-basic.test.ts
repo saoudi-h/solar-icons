@@ -15,4 +15,67 @@ describe('Icon component basics', () => {
         expect(svg.attributes('style')).toContain('width')
         expect(svg.attributes('style')).toContain('color')
     })
+
+    it('uses CSS var fallbacks as defaults on SVG attributes', () => {
+        const wrapper = mount(defineComponent({
+            render() {
+                return h(ArrowUpIcon)
+            },
+        }))
+        const svg = wrapper.find('svg')
+        expect(svg.attributes('width')).toBe('var(--solar-size, 24px)')
+        expect(svg.attributes('color')).toBe('var(--solar-color, currentColor)')
+        expect(svg.attributes('stroke-width')).toBe('var(--solar-stroke-width, 1.5)')
+    })
+
+    it('applies explicit props to inline style', () => {
+        const wrapper = mount(defineComponent({
+            render() {
+                return h(ArrowUpIcon, { size: 48, color: '#000', strokeWidth: 3 })
+            },
+        }))
+        const svg = wrapper.find('svg')
+        const style = svg.attributes('style')
+        expect(style).toContain('width: 48px')
+        expect(style).toContain('height: 48px')
+        expect(style).toContain('color: rgb(0, 0, 0)')
+        expect(style).toContain('stroke-width: 3')
+    })
+
+    it('isolated prop bypasses CSS vars with hardcoded defaults', () => {
+        const wrapper = mount(defineComponent({
+            render() {
+                return h(ArrowUpIcon, { isolated: true })
+            },
+        }))
+        const svg = wrapper.find('svg')
+        expect(svg.attributes('width')).toBe('24px')
+        expect(svg.attributes('color')).toBe('currentColor')
+        expect(svg.attributes('stroke-width')).toBe('1.5')
+        expect(svg.attributes('style')).toContain('--solar-duotone-color: initial')
+        expect(svg.attributes('style')).toContain('--solar-duotone-opacity: initial')
+    })
+
+    it('isolated + explicit color writes color to style and keeps duotone initial', () => {
+        const wrapper = mount(defineComponent({
+            render() {
+                return h(ArrowUpIcon, { isolated: true, color: 'blue' })
+            },
+        }))
+        const svg = wrapper.find('svg')
+        expect(svg.attributes('style')).toContain('color: blue')
+        expect(svg.attributes('style')).toContain('--solar-duotone-color: initial')
+    })
+
+    it('merges external class with the icon base class', () => {
+        const wrapper = mount(defineComponent({
+            render() {
+                return h(ArrowUpIcon, { class: 'my-extra' })
+            },
+        }))
+        const svg = wrapper.find('svg')
+        expect(svg.classes()).toContain('solar')
+        expect(svg.classes()).toContain('solar-arrow-up')
+        expect(svg.classes()).toContain('my-extra')
+    })
 })

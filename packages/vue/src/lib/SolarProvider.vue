@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, provide, watch } from 'vue'
+import { ref, provide, watch, computed } from 'vue'
 import type { Ref } from 'vue'
 import { SOLAR_CONTEXT_KEY } from './context-key'
 
@@ -18,16 +18,19 @@ interface SolarState {
 
 const props = withDefaults(
     defineProps<{
+        /** Default icon color. Sets `--solar-color` on the wrapper. */
         color?: string
+        /** Default icon size. Sets `--solar-size`. */
         size?: string | number
+        /** Default stroke width. Sets `--solar-stroke-width`. */
         strokeWidth?: number
+        /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
         secondaryColor?: string
+        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
         secondaryOpacity?: number
     }>(),
     {},
 )
-
-const wrapperEl = ref<HTMLDivElement>()
 
 const color = ref(props.color)
 const size = ref(props.size)
@@ -51,36 +54,21 @@ const state: SolarState = {
 
 provide(SOLAR_CONTEXT_KEY, state)
 
-watch(color, (c) => {
-    if (c != null) wrapperEl.value?.style.setProperty('--solar-icon-color', c)
-}, { immediate: true })
-
-watch(size, (s) => {
-    if (s != null)
-        wrapperEl.value?.style.setProperty(
-            '--solar-icon-size',
-            typeof s === 'number' ? `${s}px` : s,
-        )
-}, { immediate: true })
-
-watch(strokeWidth, (sw) => {
-    if (sw != null)
-        wrapperEl.value?.style.setProperty('--solar-stroke-width', String(sw))
-}, { immediate: true })
-
-watch(secondaryColor, (sc) => {
-    if (sc) wrapperEl.value?.style.setProperty('--solar-duotone-color', sc)
-}, { immediate: true })
-
-watch(secondaryOpacity, (so) => {
-    if (so != null)
-        wrapperEl.value?.style.setProperty('--solar-duotone-opacity', String(so))
-}, { immediate: true })
-
+const wrapperStyle = computed(() => {
+    const s: Record<string, string> = {}
+    if (color.value !== undefined) s['--solar-color'] = color.value
+    if (size.value != null)
+        s['--solar-size'] = typeof size.value === 'number' ? `${size.value}px` : size.value
+    if (strokeWidth.value != null) s['--solar-stroke-width'] = String(strokeWidth.value)
+    if (secondaryColor.value) s['--solar-duotone-color'] = secondaryColor.value
+    if (secondaryOpacity.value != null)
+        s['--solar-duotone-opacity'] = String(secondaryOpacity.value)
+    return s
+})
 </script>
 
 <template>
-    <div ref="wrapperEl">
+    <div :style="wrapperStyle">
         <slot />
     </div>
 </template>
