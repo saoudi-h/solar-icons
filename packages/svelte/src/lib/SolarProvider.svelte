@@ -4,10 +4,15 @@
     import { SOLAR_CONTEXT_KEY } from './useSolar';
 
     interface Props {
+        /** Default icon color. Sets `--solar-color` on the wrapper. */
         color?: string;
+        /** Default icon size. Sets `--solar-size`. */
         size?: string | number;
+        /** Default stroke width. Sets `--solar-stroke-width`. */
         strokeWidth?: number;
+        /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
         secondaryColor?: string;
+        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
         secondaryOpacity?: number;
         children: Snippet;
     }
@@ -20,8 +25,6 @@
         secondaryOpacity = $bindable(),
         children,
     }: Props = $props();
-
-    let wrapperEl: HTMLDivElement | undefined;
 
     const setColor = (val: string) => (color = val);
     const setSize = (val: string | number) => (size = val);
@@ -44,29 +47,19 @@
 
     setContext(SOLAR_CONTEXT_KEY, state);
 
-    $effect(() => {
-        if (color != null) wrapperEl?.style.setProperty('--solar-icon-color', String(color));
-    });
-    $effect(() => {
-        if (size != null)
-            wrapperEl?.style.setProperty(
-                '--solar-icon-size',
-                typeof size === 'number' ? `${size}px` : String(size)
-            );
-    });
-    $effect(() => {
-        if (strokeWidth != null)
-            wrapperEl?.style.setProperty('--solar-stroke-width', String(strokeWidth));
-    });
-    $effect(() => {
-        if (secondaryColor) wrapperEl?.style.setProperty('--solar-duotone-color', secondaryColor);
-    });
-    $effect(() => {
-        if (secondaryOpacity != null)
-            wrapperEl?.style.setProperty('--solar-duotone-opacity', String(secondaryOpacity));
-    });
+    const wrapperStyle = $derived(
+        [
+            color != null ? `--solar-color: ${color}` : null,
+            size != null ? `--solar-size: ${typeof size === 'number' ? `${size}px` : size}` : null,
+            strokeWidth != null ? `--solar-stroke-width: ${String(strokeWidth)}` : null,
+            secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
+            secondaryOpacity != null ? `--solar-duotone-opacity: ${String(secondaryOpacity)}` : null,
+        ]
+            .filter(Boolean)
+            .join('; ')
+    );
 </script>
 
-<div bind:this={wrapperEl}>
+<div style={wrapperStyle || undefined}>
     {@render children()}
 </div>

@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
-    import { getContext } from 'svelte';
 
     interface Props {
         alt?: string;
@@ -10,6 +9,7 @@
         secondaryColor?: string;
         secondaryOpacity?: number;
         iconName?: string;
+        isolated?: boolean;
         children?: Snippet;
         class?: string;
         style?: string;
@@ -26,6 +26,7 @@
         secondaryColor,
         secondaryOpacity,
         iconName,
+        isolated,
         children,
         class: userClass = '',
         style: userStyle,
@@ -42,9 +43,12 @@
 
     const baseStyle = $derived(
         [
-            `color: ${color ?? 'var(--solar-icon-color, currentColor)'}`,
-            `width: ${typeof size === 'number' ? `${size}px` : (size ?? 'var(--solar-icon-size, 24px)')}`,
-            `height: ${typeof size === 'number' ? `${size}px` : (size ?? 'var(--solar-icon-size, 24px)')}`,
+            isolated ? '--solar-duotone-color: initial' : null,
+            isolated ? '--solar-duotone-opacity: initial' : null,
+            color !== undefined ? `color: ${color}` : null,
+            size !== undefined ? `width: ${typeof size === 'number' ? `${size}px` : size}` : null,
+            size !== undefined ? `height: ${typeof size === 'number' ? `${size}px` : size}` : null,
+            strokeWidth !== undefined ? `stroke-width: ${String(strokeWidth)}` : null,
             secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
             secondaryOpacity != null
                 ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
@@ -55,15 +59,37 @@
             .join('; ')
     );
 
-    const computedStrokeWidth = $derived(strokeWidth ?? 'var(--solar-stroke-width, 1.5)');
+    const svgWidth = $derived(
+        size !== undefined ? undefined
+        : isolated ? '24px'
+        : 'var(--solar-size, 24px)'
+    );
+    const svgHeight = $derived(
+        size !== undefined ? undefined
+        : isolated ? '24px'
+        : 'var(--solar-size, 24px)'
+    );
+    const svgColor = $derived(
+        color !== undefined ? undefined
+        : isolated ? 'currentColor'
+        : 'var(--solar-color, currentColor)'
+    );
+    const computedStrokeWidth = $derived(
+        strokeWidth !== undefined ? undefined
+        : isolated ? '1.5'
+        : 'var(--solar-stroke-width, 1.5)'
+    );
 </script>
 
 <svg
     xmlns="http://www.w3.org/2000/svg"
     class={className}
-    style={baseStyle}
+    style={baseStyle || undefined}
     fill="none"
     viewBox="0 0 24 24"
+    width={svgWidth}
+    height={svgHeight}
+    color={svgColor}
     stroke-width={computedStrokeWidth}
     aria-hidden={isAccessible ? undefined : 'true'}
     {...restProps}
