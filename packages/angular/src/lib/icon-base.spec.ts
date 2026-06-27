@@ -46,14 +46,14 @@ describe('IconBase', () => {
     describe('size input', () => {
         it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgStyle('width')).toBe('var(--solar-icon-size, 24px)')
+            expect(getSvgAttribute('width')).toBe('var(--solar-size, 24px)')
         })
     })
 
     describe('color input', () => {
         it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgStyle('color')).toBe('var(--solar-icon-color, currentColor)')
+            expect(getSvgAttribute('color')).toBe('var(--solar-color, currentColor)')
         })
     })
 

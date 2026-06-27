@@ -92,6 +92,7 @@ This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`
 - `size` — width/height in CSS units (defaults to `24px` via `--solar-icon-size`).
 - `strokeWidth` — line width, only meaningful for `Linear`, `Broken`, `LineDuotone` styles.
 - `secondaryColor` / `secondaryOpacity` — duotone accent customization (CSS vars `--solar-duotone-color`, `--solar-duotone-opacity`).
+- `isolated` — when `true`, bypasses all `SolarProvider` CSS vars; SVG attrs use hardcoded defaults (`24px`, `currentColor`, `1.5`), and duotone vars are set to `initial`.
 - `ariaLabel`, `titleAttr` — explicit a11y overrides; `aria-hidden` is auto-set to `"true"` if none of these are provided.
 
 The CSS class `solar-icon solar-{kebabName}` is set per-component (in the generated `@Component.host`), not in `IconBase` — so each icon gets its specific kebab class for fine-grained CSS targeting.

@@ -1,18 +1,18 @@
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
-import { ArrowLeftBoldDuotoneIcon } from '../icons/bold-duotone/arrow-left-bold-duotone'
-import { ArrowLeftBoldIcon } from '../icons/bold/arrow-left-bold'
-import { ArrowLeftBrokenIcon } from '../icons/broken/arrow-left-broken'
-import { ArrowLeftLineDuotoneIcon } from '../icons/line-duotone/arrow-left-line-duotone'
-import { ArrowLeftLinearIcon } from '../icons/linear/arrow-left-linear'
-import { ArrowLeftOutlineIcon } from '../icons/outline/arrow-left-outline'
+import { ArrowLeftBoldDuotone } from '../icons/bold-duotone/arrow-left-bold-duotone'
+import { ArrowLeftBold } from '../icons/bold/arrow-left-bold'
+import { ArrowLeftBroken } from '../icons/broken/arrow-left-broken'
+import { ArrowLeftLineDuotone } from '../icons/line-duotone/arrow-left-line-duotone'
+import { ArrowLeftLinear } from '../icons/linear/arrow-left-linear'
+import { ArrowLeftOutline } from '../icons/outline/arrow-left-outline'
 
 const REPRESENTATIVE_ICONS = [
-    { name: 'ArrowLeftBold', cls: ArrowLeftBoldIcon },
-    { name: 'ArrowLeftBoldDuotone', cls: ArrowLeftBoldDuotoneIcon },
-    { name: 'ArrowLeftLinear', cls: ArrowLeftLinearIcon },
-    { name: 'ArrowLeftLineDuotone', cls: ArrowLeftLineDuotoneIcon },
-    { name: 'ArrowLeftOutline', cls: ArrowLeftOutlineIcon },
-    { name: 'ArrowLeftBroken', cls: ArrowLeftBrokenIcon },
+    { name: 'ArrowLeftBold', cls: ArrowLeftBold },
+    { name: 'ArrowLeftBoldDuotone', cls: ArrowLeftBoldDuotone },
+    { name: 'ArrowLeftLinear', cls: ArrowLeftLinear },
+    { name: 'ArrowLeftLineDuotone', cls: ArrowLeftLineDuotone },
+    { name: 'ArrowLeftOutline', cls: ArrowLeftOutline },
+    { name: 'ArrowLeftBroken', cls: ArrowLeftBroken },
 ] as const
 
 describe('Generated Icon Components (smoke tests)', () => {
@@ -44,7 +44,7 @@ describe('Generated Icon Components (smoke tests)', () => {
                     'http://www.w3.org/2000/svg'
                 )
                 expect(fixture.nativeElement.getAttribute('viewBox')).toBe('0 0 24 24')
-                expect(fixture.nativeElement.style.width).toBe('var(--solar-icon-size, 24px)')
+                expect(fixture.nativeElement.getAttribute('width')).toBe('var(--solar-size, 24px)')
             })
         })
     }

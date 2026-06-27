@@ -1,64 +1,58 @@
 import {
     Component,
-    effect,
     inject,
     Injectable,
     input,
     signal,
-    viewChild,
-    type ElementRef,
+    computed,
 } from '@angular/core'
 
+/**
+ * Injectable service that holds Solar icon theming state.
+ * Used internally by `SolarProviderComponent` and exposed via `useSolar()`.
+ */
 @Injectable()
 export class SolarService {
-    private wrapperEl: HTMLDivElement | null = null
-
     readonly color = signal<string | undefined>(undefined)
     readonly size = signal<string | number | undefined>(undefined)
     readonly strokeWidth = signal<number | undefined>(undefined)
     readonly duotoneColor = signal<string | undefined>(undefined)
     readonly duotoneOpacity = signal<number | undefined>(undefined)
 
-    registerWrapper(el: HTMLDivElement) {
-        this.wrapperEl = el
-    }
+    private wrapperStyle: Record<string, string> = {}
 
     setColor(val: string) {
         this.color.set(val)
-        this.wrapperEl?.style.setProperty('--solar-icon-color', val)
     }
 
     setSize(val: string | number) {
         this.size.set(val)
-        this.wrapperEl?.style.setProperty(
-            '--solar-icon-size',
-            typeof val === 'number' ? `${val}px` : val
-        )
     }
 
     setStrokeWidth(val: number) {
         this.strokeWidth.set(val)
-        this.wrapperEl?.style.setProperty('--solar-stroke-width', String(val))
     }
 
     setDuotoneColor(val: string) {
         this.duotoneColor.set(val)
-        this.wrapperEl?.style.setProperty('--solar-duotone-color', val)
     }
 
     setDuotoneOpacity(val: number) {
         this.duotoneOpacity.set(val)
-        this.wrapperEl?.style.setProperty('--solar-duotone-opacity', String(val))
     }
 }
 
+/**
+ * Access the nearest `<solar-provider>` state and setters.
+ * Must be called inside a component that is a descendant of `<solar-provider>`.
+ */
 export function useSolar(): SolarService {
     return inject(SolarService)
 }
 
 @Component({
     selector: 'solar-provider',
-    template: `<div #wrapper><ng-content /></div>`,
+    template: `<div [style]="wrapperStyle()"><ng-content /></div>`,
     standalone: true,
     providers: [SolarService],
 })
@@ -69,58 +63,32 @@ export class SolarProviderComponent {
     readonly duotoneColor = input<string>()
     readonly duotoneOpacity = input<number>()
 
-    private readonly wrapperRef = viewChild<ElementRef<HTMLDivElement>>('wrapper')
     private readonly solarService = inject(SolarService)
 
+    readonly wrapperStyle = computed(() => {
+        const s: Record<string, string> = {}
+        this.solarService.color.set(this.color())
+        this.solarService.size.set(this.size())
+        this.solarService.strokeWidth.set(this.strokeWidth())
+        this.solarService.duotoneColor.set(this.duotoneColor())
+        this.solarService.duotoneOpacity.set(this.duotoneOpacity())
+
+        const c = this.solarService.color()
+        const sz = this.solarService.size()
+        const sw = this.solarService.strokeWidth()
+        const dc = this.solarService.duotoneColor()
+        const dco = this.solarService.duotoneOpacity()
+
+        if (c !== undefined) s['--solar-color'] = c
+        if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz
+        if (sw != null) s['--solar-stroke-width'] = String(sw)
+        if (dc) s['--solar-duotone-color'] = dc
+        if (dco != null) s['--solar-duotone-opacity'] = String(dco)
+        return s
+    })
+
+    // Sync inputs to service on init
     constructor() {
-        effect(() => {
-            const el = this.wrapperRef()?.nativeElement
-            if (el) this.solarService.registerWrapper(el)
-        })
-
-        effect(() => {
-            const c = this.color()
-            const el = this.wrapperRef()?.nativeElement
-            if (c != null) {
-                this.solarService.color.set(c)
-                el?.style.setProperty('--solar-icon-color', c)
-            }
-        })
-
-        effect(() => {
-            const s = this.size()
-            const el = this.wrapperRef()?.nativeElement
-            if (s != null) {
-                this.solarService.size.set(s)
-                el?.style.setProperty('--solar-icon-size', typeof s === 'number' ? `${s}px` : s)
-            }
-        })
-
-        effect(() => {
-            const sw = this.strokeWidth()
-            const el = this.wrapperRef()?.nativeElement
-            if (sw != null) {
-                this.solarService.strokeWidth.set(sw)
-                el?.style.setProperty('--solar-stroke-width', String(sw))
-            }
-        })
-
-        effect(() => {
-            const dc = this.duotoneColor()
-            const el = this.wrapperRef()?.nativeElement
-            if (dc) {
-                this.solarService.duotoneColor.set(dc)
-                el?.style.setProperty('--solar-duotone-color', dc)
-            }
-        })
-
-        effect(() => {
-            const d = this.duotoneOpacity()
-            const el = this.wrapperRef()?.nativeElement
-            if (d != null) {
-                this.solarService.duotoneOpacity.set(d)
-                el?.style.setProperty('--solar-duotone-opacity', String(d))
-            }
-        })
+        // Inputs are read reactively in the wrapperStyle computed above
     }
 }

@@ -1,10 +1,15 @@
 import { Directive, computed, input } from '@angular/core'
 
 /**
- * Base class for all Solar Icon components.
+ * Base directive for all Solar Icon components.
  *
- * It centralizes all shared SVG logic, including size, color,
- * orientation, accessibility bindings, and CSS custom property fallbacks.
+ * Sets up every SVG attribute on the host element (`<svg>`) through
+ * host bindings so the icon component template only needs to contain
+ * the icon's inner markup.
+ *
+ * Defaults (color, size, strokeWidth) use `[attr.*]` (SVG presentation
+ * attributes, CSS specificity 0) so that CSS classes from the user can
+ * override them. Explicit props use `[style.*]` for maximum priority.
  */
 @Directive({
     standalone: true,
@@ -12,14 +17,22 @@ import { Directive, computed, input } from '@angular/core'
         xmlns: 'http://www.w3.org/2000/svg',
         viewBox: '0 0 24 24',
         fill: 'none',
-        '[style.width]': 'computedWidth()',
-        '[style.height]': 'computedHeight()',
-        '[style.color]': 'computedColor()',
-        '[attr.stroke-width]': 'computedStrokeWidth()',
+
+        // Defaults via SVG presentation attributes (specificity 0)
+        '[attr.width]': 'defaultWidth()',
+        '[attr.height]': 'defaultHeight()',
+        '[attr.color]': 'defaultColor()',
+        '[attr.stroke-width]': 'defaultStrokeWidth()',
+
+        // Explicit props via inline style (highest priority)
+        '[style.width]': 'explicitWidth()',
+        '[style.height]': 'explicitHeight()',
+        '[style.color]': 'explicitColor()',
+        '[style.stroke-width]': 'explicitStrokeWidth()',
 
         '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
-        '[style.--solar-duotone-color]': 'secondaryColor()',
-        '[style.--solar-duotone-opacity]': 'secondaryOpacityStr()',
+        '[style.--solar-duotone-color]': 'duotoneColor()',
+        '[style.--solar-duotone-opacity]': 'duotoneOpacityStr()',
     },
 })
 export abstract class IconBase {
@@ -35,27 +48,57 @@ export abstract class IconBase {
 
     readonly secondaryOpacity = input<number>()
 
-    readonly computedWidth = computed(() => {
+    readonly isolated = input<boolean>()
+
+    readonly defaultWidth = computed(() => {
+        if (this.size() !== undefined) return undefined
+        return this.isolated() ? '24px' : 'var(--solar-size, 24px)'
+    })
+
+    readonly defaultHeight = computed(() => {
+        if (this.size() !== undefined) return undefined
+        return this.isolated() ? '24px' : 'var(--solar-size, 24px)'
+    })
+
+    readonly defaultColor = computed(() => {
+        if (this.color() !== undefined) return undefined
+        return this.isolated() ? 'currentColor' : 'var(--solar-color, currentColor)'
+    })
+
+    readonly defaultStrokeWidth = computed(() => {
+        if (this.strokeWidth() !== undefined) return undefined
+        return this.isolated() ? '1.5' : 'var(--solar-stroke-width, 1.5)'
+    })
+
+    readonly explicitWidth = computed(() => {
         const s = this.size()
-        if (s === undefined) return 'var(--solar-icon-size, 24px)'
+        if (s === undefined) return null
         return typeof s === 'number' ? `${s}px` : s
     })
 
-    readonly computedHeight = computed(() => {
+    readonly explicitHeight = computed(() => {
         const s = this.size()
-        if (s === undefined) return 'var(--solar-icon-size, 24px)'
+        if (s === undefined) return null
         return typeof s === 'number' ? `${s}px` : s
     })
 
-    readonly computedColor = computed(() => {
-        return this.color() ?? 'var(--solar-icon-color, currentColor)'
+    readonly explicitColor = computed(() => {
+        return this.color() ?? null
     })
 
-    readonly computedStrokeWidth = computed(() => {
-        return this.strokeWidth() ?? 'var(--solar-stroke-width, 1.5)'
+    readonly explicitStrokeWidth = computed(() => {
+        const sw = this.strokeWidth()
+        if (sw === undefined) return null
+        return String(sw)
     })
 
-    readonly secondaryOpacityStr = computed(() => {
+    readonly duotoneColor = computed(() => {
+        if (this.isolated() && !this.secondaryColor()) return 'initial'
+        return this.secondaryColor() || null
+    })
+
+    readonly duotoneOpacityStr = computed(() => {
+        if (this.isolated() && this.secondaryOpacity() == null) return 'initial'
         const o = this.secondaryOpacity()
         if (o == null) return null
         return String(o)
