@@ -55,7 +55,7 @@ const state: SolarState = {
 provide(SOLAR_CONTEXT_KEY, state)
 
 const wrapperStyle = computed(() => {
-    const s: Record<string, string> = {}
+    const s: Record<string, string> = { display: 'contents' }
     if (color.value !== undefined) s['--solar-color'] = color.value
     if (size.value != null)
         s['--solar-size'] = typeof size.value === 'number' ? `${size.value}px` : size.value

@@ -1,10 +1,4 @@
-import {
-    createContext,
-    useContext,
-    createSignal,
-    type JSX,
-    type Accessor,
-} from 'solid-js';
+import { createContext, useContext, createSignal, type JSX, type Accessor } from 'solid-js';
 
 interface SolarState {
     color: Accessor<string | undefined>;
@@ -61,7 +55,7 @@ export function SolarProvider(props: SolarProviderProps) {
     const setSecondaryOpacity = (val: number) => setSecondaryOpacitySignal(val);
 
     const wrapperStyle = () => {
-        const s: Record<string, string> = {};
+        const s: Record<string, string> = { display: 'contents' };
         const c = color();
         const sz = size();
         const sw = strokeWidth();

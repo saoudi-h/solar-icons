@@ -1,11 +1,4 @@
-import {
-    Component,
-    inject,
-    Injectable,
-    input,
-    signal,
-    computed,
-} from '@angular/core'
+import { Component, computed, inject, Injectable, input, signal } from '@angular/core'
 
 /**
  * Injectable service that holds Solar icon theming state.
@@ -66,7 +59,7 @@ export class SolarProviderComponent {
     private readonly solarService = inject(SolarService)
 
     readonly wrapperStyle = computed(() => {
-        const s: Record<string, string> = {}
+        const s: Record<string, string> = { display: 'contents' }
         this.solarService.color.set(this.color())
         this.solarService.size.set(this.size())
         this.solarService.strokeWidth.set(this.strokeWidth())

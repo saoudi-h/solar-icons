@@ -33,15 +33,25 @@
     const setSecondaryOpacity = (val: number) => (secondaryOpacity = val);
 
     const state = {
-        get color() { return color; },
+        get color() {
+            return color;
+        },
         setColor,
-        get size() { return size; },
+        get size() {
+            return size;
+        },
         setSize,
-        get strokeWidth() { return strokeWidth; },
+        get strokeWidth() {
+            return strokeWidth;
+        },
         setStrokeWidth,
-        get secondaryColor() { return secondaryColor; },
+        get secondaryColor() {
+            return secondaryColor;
+        },
         setSecondaryColor,
-        get secondaryOpacity() { return secondaryOpacity; },
+        get secondaryOpacity() {
+            return secondaryOpacity;
+        },
         setSecondaryOpacity,
     };
 
@@ -49,11 +59,14 @@
 
     const wrapperStyle = $derived(
         [
+            'display: contents',
             color != null ? `--solar-color: ${color}` : null,
             size != null ? `--solar-size: ${typeof size === 'number' ? `${size}px` : size}` : null,
             strokeWidth != null ? `--solar-stroke-width: ${String(strokeWidth)}` : null,
             secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
-            secondaryOpacity != null ? `--solar-duotone-opacity: ${String(secondaryOpacity)}` : null,
+            secondaryOpacity != null
+                ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
+                : null,
         ]
             .filter(Boolean)
             .join('; ')

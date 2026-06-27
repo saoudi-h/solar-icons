@@ -65,7 +65,7 @@ export function SolarProvider({
     const [secondaryColor, setSecondaryColor] = useState(initialSecondaryColor)
     const [secondaryOpacity, setSecondaryOpacity] = useState(initialSecondaryOpacity)
 
-    const wrapperStyle: Record<string, string> = {}
+    const wrapperStyle: Record<string, string> = { display: 'contents' }
     if (color !== undefined) wrapperStyle['--solar-color'] = color
     if (size != null) wrapperStyle['--solar-size'] = typeof size === 'number' ? `${size}px` : size
     if (strokeWidth != null) wrapperStyle['--solar-stroke-width'] = String(strokeWidth)
