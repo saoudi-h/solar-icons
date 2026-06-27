@@ -67,6 +67,9 @@ interface IconProviderWrapperProps {
 export const DEFAULT_VALUES = {
     color: '#9fcfe6',
     size: 64,
+    strokeWidth: 1.5,
+    secondaryColor: '#f59e0b',
+    secondaryOpacity: 0.5,
 } as const
 
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
@@ -76,7 +79,12 @@ export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     _defaultWeight = 'BoldDuotone',
 }) => {
     return (
-        <SolarProvider color={defaultColor} size={defaultSize}>
+        <SolarProvider
+            color={defaultColor}
+            size={defaultSize}
+            strokeWidth={DEFAULT_VALUES.strokeWidth}
+            secondaryColor={DEFAULT_VALUES.secondaryColor}
+            secondaryOpacity={DEFAULT_VALUES.secondaryOpacity}>
             {children}
         </SolarProvider>
     )

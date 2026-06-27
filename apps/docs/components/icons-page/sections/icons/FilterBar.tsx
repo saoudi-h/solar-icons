@@ -66,9 +66,26 @@ export const FilterBarContent: React.FC = () => {
         }
     }, [])
 
-    const { color: solarColor, size: solarSize, setColor, setSize } = useSolar()
+    const {
+        color: solarColor,
+        size: solarSize,
+        setColor,
+        setSize,
+        secondaryColor,
+        setSecondaryColor,
+        secondaryOpacity,
+        setSecondaryOpacity,
+        strokeWidth: solarStrokeWidth,
+        setStrokeWidth,
+    } = useSolar()
     const color = solarColor ?? DEFAULT_VALUES.color
     const size = solarSize ?? DEFAULT_VALUES.size
+    const strokeWidth = solarStrokeWidth ?? DEFAULT_VALUES.strokeWidth
+    const duotoneColor = secondaryColor ?? DEFAULT_VALUES.secondaryColor
+    const duotoneOpacity = secondaryOpacity ?? DEFAULT_VALUES.secondaryOpacity
+
+    const isDuotone = weight.includes('Duotone')
+    const hasStroke = weight === 'Linear' || weight === 'Broken' || weight === 'LineDuotone'
 
     const onCategoryChange = (categories: Option[]) => {
         setCategories(categories as CategoryOption[])
@@ -77,6 +94,9 @@ export const FilterBarContent: React.FC = () => {
     const reset = () => {
         setColor(DEFAULT_VALUES.color)
         setSize(DEFAULT_VALUES.size)
+        setStrokeWidth(DEFAULT_VALUES.strokeWidth)
+        setSecondaryColor(DEFAULT_VALUES.secondaryColor)
+        setSecondaryOpacity(DEFAULT_VALUES.secondaryOpacity)
         setKeyword('')
         setInputValue('')
         if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -137,9 +157,59 @@ export const FilterBarContent: React.FC = () => {
                 </div>
 
                 {/* Color picker */}
-                <ColorPicker color={color} setColor={setColor} className="
-                  h-10 w-48
-                " />
+                <ColorPicker
+                    color={color}
+                    setColor={setColor}
+                    className="h-10 w-48"
+                />
+
+                {/* Stroke width slider */}
+                <div
+                    data-vaul-no-drag
+                    className={`
+                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
+                      ${!hasStroke ? 'pointer-events-none opacity-30' : ''}
+                    `}>
+                    <Slider
+                        value={[strokeWidth as number]}
+                        onValueChange={value =>
+                            setStrokeWidth(value[0] || DEFAULT_VALUES.strokeWidth)
+                        }
+                        min={0.5}
+                        max={4}
+                        step={0.1}
+                    />
+                    <span className="ml-2 text-xs font-light">{strokeWidth}px</span>
+                </div>
+
+                {/* Secondary color picker */}
+                <ColorPicker
+                    color={duotoneColor ?? DEFAULT_VALUES.secondaryColor}
+                    setColor={setSecondaryColor}
+                    className={`
+                      h-10 w-48
+                      ${!isDuotone ? 'pointer-events-none opacity-30' : ''}
+                    `}
+                />
+
+                {/* Secondary opacity slider */}
+                <div
+                    data-vaul-no-drag
+                    className={`
+                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
+                      ${!isDuotone ? 'pointer-events-none opacity-30' : ''}
+                    `}>
+                    <Slider
+                        value={[duotoneOpacity ?? DEFAULT_VALUES.secondaryOpacity]}
+                        onValueChange={value =>
+                            setSecondaryOpacity(value[0] ?? DEFAULT_VALUES.secondaryOpacity)
+                        }
+                        min={0}
+                        max={1}
+                        step={0.05}
+                    />
+                    <span className="ml-2 text-xs font-light">{duotoneOpacity}</span>
+                </div>
 
                 {/* Search bar */}
                 <div className="relative flex h-10 w-48">
