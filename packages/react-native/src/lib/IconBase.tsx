@@ -10,15 +10,22 @@ const IconBase = forwardRef<any, IconBaseProps>((props, ref) => {
         strokeWidth,
         secondaryColor: _secondaryColor,
         secondaryOpacity: _secondaryOpacity,
+        isolated,
         children,
         ...restProps
     } = props
 
     const ctx = useContext(SolarContext)
 
-    const resolvedColor = color ?? ctx?.color ?? 'currentColor'
-    const resolvedSize = size ?? ctx?.size ?? 24
-    const resolvedStrokeWidth = strokeWidth ?? ctx?.strokeWidth ?? 1.5
+    const resolvedColor = isolated
+        ? color ?? 'currentColor'
+        : color ?? ctx?.color ?? 'currentColor'
+    const resolvedSize = isolated
+        ? size ?? 24
+        : size ?? ctx?.size ?? 24
+    const resolvedStrokeWidth = isolated
+        ? strokeWidth ?? 1.5
+        : strokeWidth ?? ctx?.strokeWidth ?? 1.5
 
     return (
         <Svg

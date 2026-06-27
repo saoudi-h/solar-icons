@@ -18,12 +18,20 @@ export interface SolarContextValue extends SolarConfig {
 
 export const SolarContext = createContext<SolarContextValue | null>(null)
 
+/**
+ * Access the nearest `<SolarProvider>` state and setters.
+ * Must be called inside a component that is a descendant of `<SolarProvider>`.
+ */
 export function useSolar(): SolarContextValue {
     const ctx = useContext(SolarContext)
     if (!ctx) throw new Error('useSolar() must be used inside a <SolarProvider>')
     return ctx
 }
 
+/**
+ * Props for `<SolarProvider>`, the global theming wrapper for Solar icons.
+ * Values set here become defaults for all icons inside the provider.
+ */
 export interface SolarProviderProps extends SolarConfig {
     children: ReactNode
 }
