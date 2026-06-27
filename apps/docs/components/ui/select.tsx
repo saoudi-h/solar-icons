@@ -33,7 +33,7 @@ const SelectTrigger = React.forwardRef<
         {...props}>
         {children}
         <SelectPrimitive.Icon asChild>
-            <AltArrowDownIcon className="size-4 opacity-50" />
+            <AltArrowDownIcon className="size-4 opacity-50" isolated />
         </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
 ))
@@ -60,7 +60,7 @@ const SelectScrollDownButton = React.forwardRef<
         ref={ref}
         className={cn('flex cursor-default items-center justify-center py-1', className)}
         {...props}>
-        <AltArrowDownIcon className="size-4" />
+        <AltArrowDownIcon className="size-4" isolated />
     </SelectPrimitive.ScrollDownButton>
 ))
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName

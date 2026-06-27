@@ -153,21 +153,17 @@ export const Actions: FC = () => {
             <div className="-z-50 hidden">
                 <selectedIcon.Icon ref={ref} size={16} weight={weight} />
             </div>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadSVG}
-                className={`p-1`}>
+            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
+              p-1
+            `}>
                 Get SVG
-                <DownloadMinimalisticIcon size={16} />
+                <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadPNG}
-                className={`p-1`}>
+            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
+              p-1
+            `}>
                 Get PNG
-                <DownloadMinimalisticIcon size={16} />
+                <DownloadMinimalisticIcon size={16} isolated />
             </Button>
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopySVG}>
                 Copy SVG

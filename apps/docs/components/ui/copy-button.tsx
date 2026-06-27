@@ -36,9 +36,9 @@ export function CopyButton({ value, className, variant = 'default', ...props }: 
             {...props}>
             <span className="sr-only">Copy</span>
             {hasCopied ? (
-                <CheckCircleIcon weight="Bold" size={24} />
+                <CheckCircleIcon weight="Bold" isolated />
             ) : (
-                <CopyIcon size={24} weight="Bold" />
+                <CopyIcon weight="Bold" isolated />
             )}
         </Button>
     )

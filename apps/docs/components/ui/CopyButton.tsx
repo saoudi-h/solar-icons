@@ -17,7 +17,7 @@ export const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
         return (
             <Button ref={ref} {...props} onClick={onClick}>
                 {children}
-                {checked ? <CheckCircleIcon /> : <CopyIcon />}
+                {checked ? <CheckCircleIcon isolated /> : <CopyIcon isolated />}
             </Button>
         )
     }

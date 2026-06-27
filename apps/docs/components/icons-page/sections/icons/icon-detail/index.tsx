@@ -87,7 +87,7 @@ const Content: FC = () => {
                             </Toggle>
                             <Tooltip>
                                 <TooltipTrigger>
-                                    <InfoCircleIcon size={16} />
+                                    <InfoCircleIcon size={16} isolated />
                                 </TooltipTrigger>
                                 <TooltipContent>Category</TooltipContent>
                             </Tooltip>

@@ -97,7 +97,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                       absolute inset-0 flex size-full
                                       items-center justify-center
                                     `}>
-                                    <LinkBrokenIcon size={24} />
+                                    <LinkBrokenIcon isolated />
                                 </motion.div>
                             ) : (
                                 <motion.div
@@ -110,7 +110,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                       absolute inset-0 flex size-full
                                       items-center justify-center
                                     `}>
-                                    <LinkIcon size={24} />
+                                    <LinkIcon isolated />
                                 </motion.div>
                             )}
                         </AnimatePresence>

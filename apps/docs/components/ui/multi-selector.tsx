@@ -502,9 +502,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircleIcon weight="Bold" size={24} className={`
-                              drop-shadow-md
-                            `} />
+                            <CloseCircleIcon
+                                weight="Bold"
+                                isolated
+                                className={`drop-shadow-md`}
+                            />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -538,8 +540,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               focus:ring-2 focus:ring-ring
                                               focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) &&
-                                                `hidden`
+                                            (disabled || option.fixed) && `
+                                              hidden
+                                            `
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -557,6 +560,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               hover:text-foreground
                                             `}
                                             weight="BoldDuotone"
+                                            isolated
                                         />
                                     </button>
                                 </Badge>
@@ -628,9 +632,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem value="-" className={`
-                                          hidden
-                                        `} />
+                                        <CommandItem
+                                            value="-"
+                                            className={`hidden`}
+                                        />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

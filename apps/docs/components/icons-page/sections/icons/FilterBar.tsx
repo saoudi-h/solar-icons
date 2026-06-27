@@ -106,7 +106,12 @@ export const FilterBarContent: React.FC = () => {
                                       flex flex-row items-center justify-center
                                       gap-2
                                     `}>
-                                    <DialogIcon className="mr-2 size-6" weight={w} size={16} />
+                                    <DialogIcon
+                                        className="mr-2 size-6"
+                                        weight={w}
+                                        size={16}
+                                        isolated
+                                    />
                                     {w}
                                 </div>
                             </SelectItem>
@@ -132,11 +137,9 @@ export const FilterBarContent: React.FC = () => {
                 </div>
 
                 {/* Color picker */}
-                <ColorPicker
-                    color={color}
-                    setColor={setColor}
-                    className="h-10 w-48"
-                />
+                <ColorPicker color={color} setColor={setColor} className="
+                  h-10 w-48
+                " />
 
                 {/* Search bar */}
                 <div className="relative flex h-10 w-48">
@@ -145,6 +148,7 @@ export const FilterBarContent: React.FC = () => {
                           absolute top-1/2 left-2.5 size-4 -translate-y-1/2
                           text-muted-foreground
                         `}
+                        isolated
                     />
                     <Input
                         type="search"
@@ -168,7 +172,7 @@ export const FilterBarContent: React.FC = () => {
                       size-10 rounded-lg border-none! bg-default-200
                       text-foreground
                     `}>
-                    <RestartIcon className="size-4" />
+                    <RestartIcon className="size-4 scale-x-[-1]" isolated />
                 </Button>
 
                 {/* Reset button */}
@@ -235,7 +239,7 @@ export const FilterBar = () => {
                       text-foreground/70 shadow-md transition-colors
                       hover:text-foreground
                     `}>
-                    <SettingsIcon className="size-8" />
+                    <SettingsIcon className="size-8" isolated />
                 </motion.button>
                 <span className="sr-only">Open settings</span>
             </DrawerTrigger>
