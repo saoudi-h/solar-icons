@@ -4,7 +4,7 @@
     "description": "Solar Icons",
     "type": "module",
     "scripts": {
-        "build": "turbo build",
+        "build": "turbo build --concurrency=1",
         "dev": "turbo dev",
         "lint": "turbo lint",
         "lint:fix": "turbo lint:fix",
