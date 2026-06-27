@@ -2,7 +2,6 @@ import {
     createContext,
     useContext,
     createSignal,
-    createEffect,
     type JSX,
     type Accessor,
 } from 'solid-js';
@@ -22,25 +21,34 @@ interface SolarState {
 
 const SolarContext = createContext<SolarState>();
 
+/**
+ * Access the nearest `<SolarProvider>` state and setters.
+ * Must be called inside a component that is a descendant of `<SolarProvider>`.
+ */
 export function useSolar() {
     const ctx = useContext(SolarContext);
     if (!ctx) throw new Error('useSolar() must be used inside a <SolarProvider>');
     return ctx;
 }
 
+/**
+ * Props for `<SolarProvider>`, the global theming wrapper for Solar icons.
+ */
 export interface SolarProviderProps {
+    /** Default icon color. Sets `--solar-color` on the wrapper. */
     color?: string;
+    /** Default icon size. Sets `--solar-size`. */
     size?: string | number;
+    /** Default stroke width. Sets `--solar-stroke-width`. */
     strokeWidth?: number;
+    /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
     secondaryColor?: string;
+    /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
     secondaryOpacity?: number;
     children: JSX.Element;
 }
 
 export function SolarProvider(props: SolarProviderProps) {
-    // eslint-disable-next-line no-unassigned-vars
-    let wrapperEl: HTMLDivElement | undefined;
-
     const [color, setColorSignal] = createSignal(props.color);
     const [size, setSizeSignal] = createSignal(props.size);
     const [strokeWidth, setStrokeWidthSignal] = createSignal(props.strokeWidth);
@@ -52,41 +60,20 @@ export function SolarProvider(props: SolarProviderProps) {
     const setSecondaryColor = (val: string) => setSecondaryColorSignal(val);
     const setSecondaryOpacity = (val: number) => setSecondaryOpacitySignal(val);
 
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
+    const wrapperStyle = () => {
+        const s: Record<string, string> = {};
         const c = color();
-        if (c !== undefined) el.style.setProperty('--solar-icon-color', c);
-    });
-
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
-        const s = size();
-        if (s != null)
-            el.style.setProperty('--solar-icon-size', typeof s === 'number' ? `${s}px` : s);
-    });
-
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
+        const sz = size();
         const sw = strokeWidth();
-        if (sw != null) el.style.setProperty('--solar-stroke-width', String(sw));
-    });
-
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
         const sc = secondaryColor();
-        if (sc) el.style.setProperty('--solar-duotone-color', sc);
-    });
-
-    createEffect(() => {
-        const el = wrapperEl;
-        if (!el) return;
         const so = secondaryOpacity();
-        if (so != null) el.style.setProperty('--solar-duotone-opacity', String(so));
-    });
+        if (c !== undefined) s['--solar-color'] = c;
+        if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz;
+        if (sw != null) s['--solar-stroke-width'] = String(sw);
+        if (sc) s['--solar-duotone-color'] = sc;
+        if (so != null) s['--solar-duotone-opacity'] = String(so);
+        return s;
+    };
 
     const state: SolarState = {
         color,
@@ -103,7 +90,7 @@ export function SolarProvider(props: SolarProviderProps) {
 
     return (
         <SolarContext.Provider value={state}>
-            <div ref={wrapperEl}>{props.children}</div>
+            <div style={wrapperStyle()}>{props.children}</div>
         </SolarContext.Provider>
     );
 }

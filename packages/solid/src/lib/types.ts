@@ -17,11 +17,11 @@ export interface IconBaseProps {
     secondaryColor?: string;
     secondaryOpacity?: number;
     iconName?: string;
+    /** When `true`, the icon ignores all `SolarProvider` values and uses hardcoded defaults. */
+    isolated?: boolean;
     /**
      * Raw SVG body string, used to bypass the Solid template compiler's
-     * `<svg>` namespace wrapping (which would otherwise produce nested
-     * `<svg>` elements when a generated icon is passed as children to
-     * IconBase). The body is mounted via a `<g innerHTML>` wrapper.
+     * `<svg>` namespace wrapping.
      */
     iconBody?: string;
 }

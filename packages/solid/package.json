@@ -85,11 +85,14 @@
         }
     },
     "devDependencies": {
+        "@babel/core": "^8.0.1",
         "@solar-icons/core": "workspace:*",
         "@tala-tools/eslint": "0.1.4",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
+        "@testing-library/jest-dom": "^6.9.1",
         "@types/node": "^25.9.3",
+        "babel-preset-solid": "^1.9.12",
         "picocolors": "^1.1.1",
         "prettier": "^3.8.4",
         "rimraf": "^6.1.3",

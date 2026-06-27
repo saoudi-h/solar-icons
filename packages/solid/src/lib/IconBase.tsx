@@ -18,6 +18,7 @@ function IconBase(allProps: IconProps): JSX.Element {
         'secondaryOpacity',
         'iconName',
         'iconBody',
+        'isolated',
         'children',
     ]);
 
@@ -38,36 +39,57 @@ function IconBase(allProps: IconProps): JSX.Element {
 
     const baseStyle = () => {
         const s: Record<string, string | undefined> = {
-            color: local.color ?? 'var(--solar-icon-color, currentColor)',
-            width:
-                typeof local.size === 'number'
-                    ? `${local.size}px`
-                    : (local.size ?? 'var(--solar-icon-size, 24px)'),
-            height:
-                typeof local.size === 'number'
-                    ? `${local.size}px`
-                    : (local.size ?? 'var(--solar-icon-size, 24px)'),
+            ...userStyle(),
         };
+        if (local.isolated) {
+            s['--solar-duotone-color'] = 'initial';
+            s['--solar-duotone-opacity'] = 'initial';
+        }
+        if (local.color !== undefined) s.color = local.color;
+        if (local.size !== undefined) {
+            const sv = typeof local.size === 'number' ? `${local.size}px` : local.size;
+            s.width = sv;
+            s.height = sv;
+        }
+        if (local.strokeWidth !== undefined) s['stroke-width'] = String(local.strokeWidth);
         if (local.secondaryColor) s['--solar-duotone-color'] = local.secondaryColor;
         if (local.secondaryOpacity != null)
             s['--solar-duotone-opacity'] = String(local.secondaryOpacity);
-        return { ...s, ...userStyle() };
+        return s;
     };
 
-    const strokeW = () => local.strokeWidth ?? 'var(--solar-stroke-width, 1.5)';
+    const widthAttr = () => {
+        if (local.size !== undefined) return undefined;
+        return local.isolated ? '24px' : 'var(--solar-size, 24px)';
+    };
+    const heightAttr = () => {
+        if (local.size !== undefined) return undefined;
+        return local.isolated ? '24px' : 'var(--solar-size, 24px)';
+    };
+    const colorAttr = () => {
+        if (local.color !== undefined) return undefined;
+        return local.isolated ? 'currentColor' : 'var(--solar-color, currentColor)';
+    };
+    const strokeWidthAttr = () => {
+        if (local.strokeWidth !== undefined) return undefined;
+        return local.isolated ? '1.5' : 'var(--solar-stroke-width, 1.5)';
+    };
 
     const ariaHidden = () => (isAccessible() ? undefined : 'true');
 
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            class={className()}
-            style={baseStyle()}
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width={strokeW()}
-            aria-hidden={ariaHidden()}
             {...others}
+            class={className()}
+            style={baseStyle()}
+            width={widthAttr()}
+            height={heightAttr()}
+            color={colorAttr()}
+            stroke-width={strokeWidthAttr()}
+            aria-hidden={ariaHidden()}
         >
             {local.alt && <title>{local.alt}</title>}
             {local.iconBody ? <g innerHTML={local.iconBody} /> : local.children}
