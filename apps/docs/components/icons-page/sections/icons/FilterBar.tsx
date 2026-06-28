@@ -24,6 +24,7 @@ import { Divider } from './Divider'
 import { GeometryControl } from './GeometryControl'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
+import { ViewModeToggle } from './ViewModeToggle'
 import {
     DEFAULT_VALUES,
     filteredCountAtom,
@@ -146,7 +147,10 @@ export const FilterBarContent: React.FC = () => {
 
                 <Divider />
 
-                {/* Section D — Search */}
+                {/* Section D — View */}
+                <ViewModeToggle />
+
+                {/* Section E — Search */}
                 <SearchInput
                     value={inputValue}
                     onChange={handleSearchChange}

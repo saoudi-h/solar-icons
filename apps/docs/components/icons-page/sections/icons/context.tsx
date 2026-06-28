@@ -14,6 +14,20 @@ export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
 export const selectedIconAtom = atom<IconData | null>(null)
 
 /**
+ * Grid view mode on `/icons`. `'grouped'` renders the icons clustered by
+ * category with section headers (Lucide-style); `'flat'` keeps the
+ * single uniform grid. Default is `'grouped'`.
+ */
+export const viewModeAtom = atom<'grouped' | 'flat'>('grouped')
+
+/**
+ * Last category the user navigated to from the sidebar. Used to
+ * highlight the active row in the sidebar and to scroll-target the
+ * corresponding section header in the grid.
+ */
+export const activeCategoryAtom = atom<string | null>(null)
+
+/**
  * Global weight (icon style) for the icons page. Managed in Jotai,
  * not via the V3 SolarProvider, because:
  *  - Weight is not in the V3 SolarProvider (deliberate — propagating
