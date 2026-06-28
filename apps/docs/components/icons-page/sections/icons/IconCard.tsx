@@ -1,6 +1,6 @@
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { forwardRef } from 'react'
 import { splitFullIconName, useSelectedIcon, useSelectedIconName, useStyleURL } from './context'
 
@@ -26,20 +26,28 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
             }
         }
 
+        // A 150ms opacity-only fade is much less fatiguing on a grid of
+        // 200+ icons than the previous scale+opacity pop (300ms). The
+        // scale transform was also causing a small stutter on Firefox
+        // because it forces a new compositing layer on every mount.
+        // We skip the animation entirely (duration: 0) when the user
+        // has the OS-level "reduce motion" preference enabled.
+        const reduceMotion = useReducedMotion()
+        const enterDuration = reduceMotion ? 0 : 0.15
+
         return (
             <motion.div
                 {...props}
                 ref={ref}
                 onClick={handleClick}
-                exit={{ scale: 0, opacity: 0 }}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: enterDuration, ease: 'easeOut' }}
                 className={cn(
                     `
                       group flex cursor-pointer flex-col items-center
-                      justify-center gap-2 rounded-lg px-2 py-4 transition-all
-                      duration-300 ease-in will-change-transform
+                      justify-center gap-2 rounded-lg px-2 py-4
+                      transition-colors duration-200
                     `,
                     {
                         'border border-primary bg-primary/10': isSelected,
@@ -48,18 +56,20 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 )}>
                 <Icon
                     weight={weight}
-                    className={cn('transition-transform duration-300 ease-in', {
+                    className={cn('transition-transform duration-300 ease-out', {
                         'group-hover:scale-125': !isSelected,
                         'scale-125 text-primary': isSelected,
                     })}
                 />
                 <p
-                    className={`
-                      w-full truncate text-center text-xs font-extralight
-                      text-muted-foreground transition-transform duration-300
-                      ease-in
-                      group-hover:translate-y-1
-                    `}>
+                    className={cn(
+                        `
+                          w-full truncate text-center text-xs font-extralight
+                          text-muted-foreground
+                        `,
+                        'transition-transform duration-300 ease-out',
+                        'group-hover:translate-y-1'
+                    )}>
                     {name}
                 </p>
             </motion.div>
