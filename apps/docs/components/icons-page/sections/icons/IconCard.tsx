@@ -1,9 +1,8 @@
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { useAtom } from 'jotai'
 import { forwardRef } from 'react'
-import { useSelectedIcon, useSelectedIconName, weightAtom } from './context'
+import { splitFullIconName, useSelectedIcon, useSelectedIconName, useStyleURL } from './context'
 
 type IconCardProps = IconData
 
@@ -14,14 +13,18 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
     ) => {
         const [, setIconName] = useSelectedIconName()
         const selectedIcon = useSelectedIcon()
-        const [weight] = useAtom(weightAtom)
+        const [weight] = useStyleURL()
         const isSelected = selectedIcon?.name === name
+        const handleClick = () => {
+            const split = splitFullIconName(name)
+            setIconName(split ? split.base : name)
+        }
 
         return (
             <motion.div
                 {...props}
                 ref={ref}
-                onClick={() => setIconName(name)}
+                onClick={handleClick}
                 exit={{ scale: 0, opacity: 0 }}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

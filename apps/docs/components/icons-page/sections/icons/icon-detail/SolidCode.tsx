@@ -1,14 +1,13 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import { useAtom } from 'jotai'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { useSelectedIcon, weightAtom } from '../context'
+import { useSelectedIcon, useStyleURL } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const SolidCode: FC = () => {
     const selectedIcon = useSelectedIcon()
-    const [weight] = useAtom(weightAtom)
+    const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
     const bare = selectedIcon.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'

@@ -21,12 +21,12 @@ import { GeometryControl } from './GeometryControl'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
 import { ViewModeToggle } from './ViewModeToggle'
-import { DEFAULT_VALUES, filteredCountAtom, useSearchKeyword, weightAtom } from './context'
+import { DEFAULT_VALUES, filteredCountAtom, useSearchKeyword, useStyleURL } from './context'
 
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
-    const [weight, setWeight] = useAtom(weightAtom)
+    const [weight, setWeight] = useStyleURL()
 
     const [inputValue, setInputValue] = useState(keyword)
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
