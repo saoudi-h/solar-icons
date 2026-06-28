@@ -17,7 +17,6 @@ import { useAtom } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
-import { Divider } from './Divider'
 import { GeometryControl } from './GeometryControl'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
@@ -87,8 +86,6 @@ export const FilterBarContent: React.FC = () => {
             {/* Section A — Style */}
             <StylePicker value={weight} onChange={setWeight} />
 
-            <Divider />
-
             {/* Section B — Geometry */}
             <GeometryControl
                 label="Size"
@@ -113,8 +110,6 @@ export const FilterBarContent: React.FC = () => {
                 disabled={!hasStroke}
             />
 
-            <Divider />
-
             {/* Section C — Color */}
             <ColorPicker color={color} setColor={setColor} tooltip="Primary color" />
             <ColorPickerSimple
@@ -126,13 +121,16 @@ export const FilterBarContent: React.FC = () => {
                 disabled={!isDuotone}
             />
 
-            <Divider />
-
             {/* Section D — View */}
             <ViewModeToggle />
 
-            {/* Section E — Search */}
-            <SearchInput value={inputValue} onChange={handleSearchChange} count={filteredCount} />
+            {/* Section E — Search (pushed to the right) */}
+            <SearchInput
+                value={inputValue}
+                onChange={handleSearchChange}
+                count={filteredCount}
+                className="ml-auto"
+            />
 
             {/* Section F — Reset */}
             <Tooltip>

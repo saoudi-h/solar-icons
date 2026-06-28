@@ -50,7 +50,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                 className="
                                   sticky top-4 hidden w-50 shrink-0 self-start
                                   pr-1
-                                  lg:block
+                                  md:block
                                 ">
                                 <CategoryNav />
                             </aside>
