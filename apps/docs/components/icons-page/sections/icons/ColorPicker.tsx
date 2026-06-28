@@ -44,60 +44,53 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     const isDark = getContrastingColor(color)
 
     return (
-        <Popover>
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <PopoverTrigger asChild>
-                        <button
-                            type="button"
-                            data-vaul-no-drag
-                            className={cn(
-                                `
-                                  flex size-10 items-center justify-center
-                                  rounded-lg border-none p-0 transition-opacity
-                                `,
-                                'hover:ring-2 hover:ring-foreground/20',
-                                className
-                            )}
-                            style={{ backgroundColor: color }}
-                            aria-label={tooltip ?? 'Color'}
-                        />
-                    </PopoverTrigger>
-                </TooltipTrigger>
-                {tooltip && (
-                    <TooltipContent>
-                        <p>{tooltip}</p>
-                    </TooltipContent>
-                )}
-            </Tooltip>
-            <PopoverContent className="w-72 space-y-3 bg-default-200 p-3">
-                <div className="flex items-center gap-2">
-                    <Input
-                        type="text"
-                        value={inputColor}
-                        onChange={handleInputChange}
-                        placeholder="#000000"
-                        maxLength={7}
-                        style={{
-                            backgroundColor: color,
-                            color: isDark ? '#ffffff' : '#000000',
-                        }}
-                        className="h-8 rounded-md text-center text-xs"
+        <div className={cn('flex h-10 w-48 items-center', className)}>
+            <Popover>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <PopoverTrigger asChild>
+                            <Input
+                                type="text"
+                                value={inputColor}
+                                onChange={handleInputChange}
+                                placeholder="#000000"
+                                maxLength={7}
+                                data-vaul-no-drag
+                                style={{
+                                    backgroundColor: color,
+                                    color: isDark ? '#ffffff' : '#000000',
+                                }}
+                                aria-label={tooltip ?? 'Color'}
+                                className="
+                                  h-10 w-full rounded-l-lg rounded-r-none
+                                  border-none! text-center text-xs shadow-none!
+                                "
+                            />
+                        </PopoverTrigger>
+                    </TooltipTrigger>
+                    {tooltip && (
+                        <TooltipContent>
+                            <p>{tooltip}</p>
+                        </TooltipContent>
+                    )}
+                </Tooltip>
+                <PopoverContent align="start" sideOffset={6} className="
+                  w-72 bg-default-200 p-3
+                ">
+                    <HexColorPicker
+                        color={color}
+                        onChange={setColor}
+                        style={{ width: '100%', height: '160px' }}
                     />
-                    <CopyButton
-                        value={color}
-                        size="icon"
-                        colors="accent"
-                        variant="default"
-                        className="size-8 rounded-md border-none"
-                    />
-                </div>
-                <HexColorPicker
-                    color={color}
-                    onChange={setColor}
-                    style={{ width: '100%', height: '150px' }}
-                />
-            </PopoverContent>
-        </Popover>
+                </PopoverContent>
+            </Popover>
+            <CopyButton
+                value={color}
+                size="icon"
+                colors="accent"
+                variant="default"
+                className="size-10 rounded-l-none rounded-r-lg border-none"
+            />
+        </div>
     )
 }
