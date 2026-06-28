@@ -13,7 +13,7 @@ import { useSolar } from '@solar-icons/react'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { SettingsIcon } from '@solar-icons/react/linear/settings'
 import { motion } from 'framer-motion'
-import { useAtom } from 'jotai'
+import { useAtom, useSetAtom } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
@@ -21,12 +21,19 @@ import { GeometryControl } from './GeometryControl'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
 import { ViewModeToggle } from './ViewModeToggle'
-import { DEFAULT_VALUES, filteredCountAtom, useSearchKeyword, useStyleURL } from './context'
+import {
+    activeCategoryAtom,
+    DEFAULT_VALUES,
+    filteredCountAtom,
+    useSearchKeyword,
+    useStyleURL,
+} from './context'
 
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
     const [weight, setWeight] = useStyleURL()
+    const setActiveCategory = useSetAtom(activeCategoryAtom)
 
     const [inputValue, setInputValue] = useState(keyword)
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -74,6 +81,7 @@ export const FilterBarContent: React.FC = () => {
         setSecondaryOpacity(DEFAULT_VALUES.secondaryOpacity)
         setKeyword('')
         setInputValue('')
+        setActiveCategory(null)
         if (debounceRef.current) clearTimeout(debounceRef.current)
     }
 

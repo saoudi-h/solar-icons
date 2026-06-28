@@ -119,7 +119,20 @@ export const IconGridVirtualized: React.FC = () => {
 
     useEffect(() => {
         if (viewMode === 'grouped') {
-            listRef.current?.scrollToPosition(0)
+            // The `List` from `react-virtualized` caches row heights and
+            // rendered cells. When `filteredIcons` changes (e.g. after a
+            // search-then-Reset sequence), the `rows` array is recomputed
+            // but the `List`'s internal positions are stale — it
+            // re-renders the new row content at the OLD positions, which
+            // is why icons appear to overlap after a Reset. Forcing a
+            // `recomputeRowHeights()` invalidates the height cache and
+            // makes the next render use the new positions. Deferred to
+            // the next frame so the `rows` memo has been applied first.
+            const rafId = requestAnimationFrame(() => {
+                listRef.current?.recomputeRowHeights()
+                listRef.current?.scrollToPosition(0)
+            })
+            return () => cancelAnimationFrame(rafId)
         } else {
             gridRef.current?.scrollToPosition({ scrollTop: 0, scrollLeft: 0 })
         }
