@@ -88,13 +88,34 @@ export const IconGridVirtualized: React.FC = () => {
         return map
     }, [rows])
 
+    const rowPositions = useMemo(() => {
+        const positions: number[] = []
+        let acc = 0
+        for (const row of rows) {
+            positions.push(acc)
+            acc += row.kind === 'header' ? SECTION_HEADER : ICON_CELL
+        }
+        return positions
+    }, [rows])
+
     useEffect(() => {
         if (viewMode !== 'grouped') return
         if (!activeCategory) return
         const idx = categoryToRowIndex.get(activeCategory)
         if (idx === undefined) return
-        listRef.current?.scrollToRow(idx)
-    }, [activeCategory, categoryToRowIndex, viewMode])
+        const scrollTop = rowPositions[idx] ?? 0
+
+        // Defer to the next frame so the List has finished its first
+        // render with the correct row positions before we scroll. The
+        // `scrollToRow` helper is unreliable on first mount: it computes
+        // the scroll position from internal state that may be stale or
+        // wrong. `scrollToPosition` with our manually-computed cumulative
+        // positions always lands the header at the very top.
+        const rafId = requestAnimationFrame(() => {
+            listRef.current?.scrollToPosition(scrollTop)
+        })
+        return () => cancelAnimationFrame(rafId)
+    }, [activeCategory, categoryToRowIndex, rowPositions, viewMode])
 
     useEffect(() => {
         if (viewMode === 'grouped') {

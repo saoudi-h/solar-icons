@@ -78,8 +78,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                     align="start"
                     sideOffset={6}
                     className="
-                      w-72 overflow-hidden border-none bg-transparent p-0
-                      shadow-md
+                      w-72 overflow-hidden bg-default-200 p-3 shadow-md
                     ">
                     <HexColorPicker
                         color={color}
