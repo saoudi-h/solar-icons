@@ -1,9 +1,7 @@
 'use client'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Slider } from '@/components/ui/slider'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 interface GeometryControlProps {
     label: string
@@ -20,6 +18,8 @@ interface GeometryControlProps {
     className?: string
 }
 
+const DRAG_THRESHOLD_PX = 3
+
 export const GeometryControl: React.FC<GeometryControlProps> = ({
     label,
     tooltip,
@@ -34,98 +34,145 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
     disabled,
     className,
 }) => {
-    const [open, setOpen] = useState(false)
+    const chipRef = useRef<HTMLDivElement>(null)
+    const startXRef = useRef(0)
+    const startValueRef = useRef(0)
+    const widthRef = useRef(144)
+    const movedRef = useRef(false)
+    const [isDragging, setIsDragging] = useState(false)
 
     const displayValue = value.toFixed(decimals)
+    const fillPercent = ((value - min) / (max - min)) * 100
     const isModified = value !== defaultValue
 
-    const trigger = (
-        <PopoverTrigger asChild>
-            <button
-                type="button"
-                disabled={disabled}
-                data-vaul-no-drag
-                onClick={() => !disabled && setOpen(o => !o)}
-                className={cn(
-                    `
-                      flex h-10 w-28 items-center justify-center gap-1.5
-                      rounded-lg border-none bg-default-200 px-3 text-sm
-                      shadow-none transition-colors
-                    `,
-                    !disabled && 'hover:bg-default-300',
-                    `
-                      focus-visible:ring-1 focus-visible:ring-ring
-                      focus-visible:outline-hidden
-                    `,
-                    disabled && 'pointer-events-none opacity-30',
-                    className
-                )}
-                aria-label={`${label}: ${displayValue}${unit}`}>
-                <span className="text-xs font-medium text-muted-foreground">{label}</span>
-                <span
-                    className={cn(
-                        'font-mono text-sm tabular-nums',
-                        isModified ? 'text-foreground' : 'text-foreground/80'
-                    )}>
-                    {displayValue}
-                    {unit}
-                </span>
-            </button>
-        </PopoverTrigger>
+    const commit = useCallback(
+        (raw: number) => {
+            const clamped = Math.max(min, Math.min(max, raw))
+            const stepped = Math.round(clamped / step) * step
+            onChange(Number(stepped.toFixed(decimals)))
+        },
+        [min, max, step, decimals, onChange]
     )
 
+    const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (disabled) return
+        e.currentTarget.setPointerCapture(e.pointerId)
+        startXRef.current = e.clientX
+        startValueRef.current = value
+        widthRef.current = chipRef.current?.offsetWidth || 144
+        movedRef.current = false
+    }
+
+    const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (e.buttons === 0) return
+        const delta = e.clientX - startXRef.current
+        if (!movedRef.current && Math.abs(delta) < DRAG_THRESHOLD_PX) return
+        movedRef.current = true
+        if (!isDragging) setIsDragging(true)
+        const range = max - min
+        const sensitivity = range / widthRef.current
+        commit(startValueRef.current + delta * sensitivity)
+    }
+
+    const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+        e.currentTarget.releasePointerCapture(e.pointerId)
+        if (isDragging) {
+            setIsDragging(false)
+        }
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (disabled) return
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+            e.preventDefault()
+            commit(value - step)
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+            e.preventDefault()
+            commit(value + step)
+        } else if (e.key === 'Home') {
+            e.preventDefault()
+            commit(min)
+        } else if (e.key === 'End') {
+            e.preventDefault()
+            commit(max)
+        } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            commit(defaultValue)
+        }
+    }
+
+    const handleDoubleClick = () => {
+        if (disabled) return
+        commit(defaultValue)
+    }
+
     return (
-        <Popover open={open} onOpenChange={setOpen}>
-            <Tooltip>
-                <TooltipTrigger asChild>{trigger}</TooltipTrigger>
-                <TooltipContent>
-                    <p>{tooltip}</p>
-                </TooltipContent>
-            </Tooltip>
-            <PopoverContent
-                align="start"
-                className="w-72 space-y-2 bg-default-200 p-3">
-                <div className="flex items-center justify-between text-xs">
-                    <span className="font-medium text-muted-foreground">{label}</span>
-                    <span className="font-mono tabular-nums">
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <div
+                    ref={chipRef}
+                    role="slider"
+                    tabIndex={disabled ? -1 : 0}
+                    aria-label={`${label}: ${displayValue}${unit}`}
+                    aria-valuenow={value}
+                    aria-valuemin={min}
+                    aria-valuemax={max}
+                    aria-disabled={disabled}
+                    data-vaul-no-drag
+                    onPointerDown={handlePointerDown}
+                    onPointerMove={handlePointerMove}
+                    onPointerUp={handlePointerUp}
+                    onPointerCancel={handlePointerUp}
+                    onKeyDown={handleKeyDown}
+                    onDoubleClick={handleDoubleClick}
+                    className={cn(
+                        `
+                          relative flex h-10 w-36 items-center justify-center
+                          gap-1.5 overflow-hidden rounded-lg bg-default-200
+                          select-none
+                        `,
+                        !disabled &&
+                            `
+                              cursor-ew-resize
+                              hover:bg-default-300
+                              focus-visible:ring-1 focus-visible:ring-ring
+                              focus-visible:outline-hidden
+                            `,
+                        disabled && 'pointer-events-none opacity-30',
+                        className
+                    )}>
+                    <div
+                        aria-hidden="true"
+                        className={cn(
+                            `
+                              pointer-events-none absolute inset-y-0 left-0
+                              bg-foreground/10
+                            `,
+                            !isDragging && 'transition-[width] duration-150'
+                        )}
+                        style={{ width: `${fillPercent}%` }}
+                    />
+                    <span
+                        className="
+                          relative text-xs font-medium text-muted-foreground
+                        ">
+                        {label}
+                    </span>
+                    <span
+                        className={cn(
+                            'relative font-mono text-sm tabular-nums',
+                            isModified
+                                ? 'text-foreground'
+                                : `text-foreground/80`
+                        )}>
                         {displayValue}
                         {unit}
                     </span>
                 </div>
-                <Slider
-                    value={[value]}
-                    onValueChange={v => onChange(v[0] ?? defaultValue)}
-                    min={min}
-                    max={max}
-                    step={step}
-                />
-                <div
-                    className="
-                      flex items-center justify-between text-[10px]
-                      text-muted-foreground
-                    ">
-                    <span className="font-mono">
-                        {min}
-                        {unit}
-                    </span>
-                    <button
-                        type="button"
-                        onClick={() => onChange(defaultValue)}
-                        className={cn(
-                            'rounded-sm px-1.5 py-0.5 transition-colors',
-                            'hover:bg-default-300 hover:text-foreground',
-                            isModified
-                                ? 'text-muted-foreground'
-                                : `pointer-events-none opacity-0`
-                        )}>
-                        reset
-                    </button>
-                    <span className="font-mono">
-                        {max}
-                        {unit}
-                    </span>
-                </div>
-            </PopoverContent>
-        </Popover>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p>{tooltip}</p>
+            </TooltipContent>
+        </Tooltip>
     )
 }
