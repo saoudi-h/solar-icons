@@ -10,7 +10,6 @@ import {
     activeCategoryAtom,
     displayedIconsAtom,
     filteredIconsAtom,
-    useSearchCategories,
     useSearchKeyword,
     viewModeAtom,
 } from './context'
@@ -30,7 +29,6 @@ export const IconGridVirtualized: React.FC = () => {
     const listRef = useRef<List>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
     const [keyword] = useSearchKeyword()
-    const [categories] = useSearchCategories()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
     const viewMode = useAtomValue(viewModeAtom)
@@ -39,10 +37,10 @@ export const IconGridVirtualized: React.FC = () => {
     const [height, setHeight] = useState(0)
 
     useEffect(() => {
-        const results = searchIcons({ keyword, categories })
+        const results = searchIcons({ keyword, categories: [] })
         setFilteredIcons(results)
         setDisplayedIcons(results)
-    }, [keyword, categories, setFilteredIcons, setDisplayedIcons])
+    }, [keyword, setFilteredIcons, setDisplayedIcons])
 
     useEffect(() => {
         const el = wrapperRef.current
@@ -159,6 +157,7 @@ export const IconGridVirtualized: React.FC = () => {
                                     display: 'grid',
                                     gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
                                     height: ICON_CELL,
+                                    justifyContent: 'center',
                                 }}
                                 data-grid-row={row.category}>
                                 {row.icons.map(icon => (

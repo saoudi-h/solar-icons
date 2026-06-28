@@ -4,9 +4,8 @@ import type { ReactNode } from 'react'
 
 import type { IconData } from '@/generated/descriptions'
 import { atom } from 'jotai'
-import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
+import { useQueryState } from 'nuqs'
 import { useCallback } from 'react'
-import type { CategoryOption } from './utils'
 
 export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
@@ -52,24 +51,6 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
     return [keyword, setKeyword] as const
 }
 
-export function useSearchCategories(): readonly [
-    CategoryOption[],
-    (cats: CategoryOption[]) => void,
-] {
-    const [params, setParams] = useQueryState('categories', parseAsArrayOf(parseAsString, ';'))
-
-    const categories = (params?.map(c => ({ value: c, label: c })) as CategoryOption[]) || []
-
-    const setCategories = useCallback(
-        (cats: CategoryOption[]) => {
-            setParams(cats.length === 0 ? null : cats.map(c => c.value))
-        },
-        [setParams]
-    )
-
-    return [categories, setCategories] as const
-}
-
 interface IconProviderWrapperProps {
     children: ReactNode
     defaultColor?: string
@@ -91,7 +72,6 @@ export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
     defaultColor = DEFAULT_VALUES.color,
     defaultSize = DEFAULT_VALUES.size,
-    _defaultWeight = 'BoldDuotone',
 }) => {
     return (
         <SolarProvider

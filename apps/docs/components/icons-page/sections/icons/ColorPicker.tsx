@@ -44,7 +44,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     const isDark = getContrastingColor(color)
 
     return (
-        <div className={cn('flex h-10 w-48 items-center', className)}>
+        <div className={cn('flex h-10 w-32 items-center', className)}>
             <Popover>
                 <Tooltip>
                     <TooltipTrigger asChild>
@@ -74,9 +74,13 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                         </TooltipContent>
                     )}
                 </Tooltip>
-                <PopoverContent align="start" sideOffset={6} className="
-                  w-72 bg-default-200 p-3
-                ">
+                <PopoverContent
+                    align="start"
+                    sideOffset={6}
+                    className="
+                      w-72 overflow-hidden border-none bg-transparent p-0
+                      shadow-md
+                    ">
                     <HexColorPicker
                         color={color}
                         onChange={setColor}
@@ -89,7 +93,9 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                 size="icon"
                 colors="accent"
                 variant="default"
-                className="size-10 rounded-l-none rounded-r-lg border-none"
+                className="
+                  size-10 shrink-0 rounded-l-none rounded-r-lg border-none
+                "
             />
         </div>
     )

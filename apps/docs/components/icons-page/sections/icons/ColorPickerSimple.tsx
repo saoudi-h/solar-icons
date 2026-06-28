@@ -56,7 +56,7 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     return (
         <div
             className={cn(
-                'flex h-10 w-48 items-center transition-opacity',
+                'flex h-10 w-32 items-center transition-opacity',
                 disabled && 'pointer-events-none opacity-30',
                 className
             )}>
@@ -93,7 +93,10 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                 <PopoverContent
                     align="start"
                     sideOffset={6}
-                    className="w-72 space-y-3 bg-default-200 p-3">
+                    className="
+                      w-72 space-y-3 overflow-hidden border-none bg-transparent
+                      p-3 shadow-md
+                    ">
                     <HexColorPicker
                         color={color}
                         onChange={setColor}
@@ -127,7 +130,9 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                 size="icon"
                 colors="accent"
                 variant="default"
-                className="size-10 rounded-l-none rounded-r-lg border-none"
+                className="
+                  size-10 shrink-0 rounded-l-none rounded-r-lg border-none
+                "
             />
         </div>
     )

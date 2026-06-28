@@ -1,13 +1,11 @@
 'use client'
 
 import { MotionTabs } from '@/components/ui/MotionTabs'
-import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { selectedIconAtom, useSearchCategories, weightAtom } from '../context'
-import type { CategoryOption } from '../utils'
+import { activeCategoryAtom, selectedIconAtom, viewModeAtom, weightAtom } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { FloatingDrawer } from './FloatingDrawer'
@@ -32,14 +30,12 @@ export function IconDetail() {
 const Content: FC = () => {
     const [selectedIcon] = useAtom(selectedIconAtom)
     const [weight] = useAtom(weightAtom)
-    const [categories, setCategories] = useSearchCategories()
+    const [viewMode, setViewMode] = useAtom(viewModeAtom)
+    const [, setActiveCategory] = useAtom(activeCategoryAtom)
 
-    const handleCategorySelection = (category: string) => {
-        if (categories.some(c => c.value === category)) {
-            setCategories([])
-        } else {
-            setCategories([{ value: category, label: category } as CategoryOption])
-        }
+    const handleCategoryClick = (category: string) => {
+        if (viewMode !== 'grouped') setViewMode('grouped')
+        setActiveCategory(category)
     }
 
     if (!selectedIcon) return null
@@ -78,20 +74,23 @@ const Content: FC = () => {
                             {selectedIcon.name}
                         </h3>
                         <div className="flex gap-2">
-                            <Toggle
-                                pressed={categories.some(c => c.value === selectedIcon?.category)}
-                                onClick={() => handleCategorySelection(selectedIcon?.category)}
-                                variant="outline"
-                                size="default"
-                                colors="accent"
-                                className="font-heading capitalize">
-                                {selectedIcon?.category}
-                            </Toggle>
+                            <button
+                                type="button"
+                                onClick={() => handleCategoryClick(selectedIcon.category)}
+                                className="
+                                  rounded-md border border-accent bg-accent px-3
+                                  py-1 font-heading text-xs
+                                  text-accent-foreground capitalize
+                                  transition-colors
+                                  hover:bg-accent/80
+                                ">
+                                {selectedIcon.category}
+                            </button>
                             <Tooltip>
                                 <TooltipTrigger>
                                     <InfoCircleIcon size={16} isolated />
                                 </TooltipTrigger>
-                                <TooltipContent>Category</TooltipContent>
+                                <TooltipContent>Jump to category</TooltipContent>
                             </Tooltip>
                         </div>
                     </div>
