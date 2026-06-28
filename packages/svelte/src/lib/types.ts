@@ -1,4 +1,5 @@
 import type { SVGAttributes } from 'svelte/elements';
+import type { Weight } from '@solar-icons/core/runtime';
 
 export type IconStyle = 'Bold' | 'BoldDuotone' | 'Broken' | 'LineDuotone' | 'Linear' | 'Outline';
 
@@ -27,3 +28,10 @@ export interface IconBaseProps {
 export type SvgAttributes = SVGAttributes<SVGSVGElement>;
 
 export interface IconProps extends IconBaseProps, Omit<SvgAttributes, 'color'> {}
+
+/**
+ * Props accepted by every dynamic Solar icon component.
+ */
+export interface DynamicIconProps extends IconProps {
+    weight?: Weight;
+}

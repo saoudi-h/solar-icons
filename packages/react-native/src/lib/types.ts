@@ -45,3 +45,8 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
 }
 
 export type Icon = React.ForwardRefExoticComponent<IconProps & React.RefAttributes<any>>
+
+/**
+ * Props accepted by every dynamic Solar icon component.
+ */
+export type DynamicIconProps = Omit<IconProps, 'ref'>

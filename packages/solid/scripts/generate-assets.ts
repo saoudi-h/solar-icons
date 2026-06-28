@@ -89,7 +89,7 @@ export * from "./icons/styled"
 
     const dynamicBarrelContent = groups
         .map((g) => {
-            return `export { ${g.pascalName}Icon } from './${g.name}'\nexport type { ${g.pascalName}IconProps } from './${g.name}'`;
+            return `export { ${g.pascalName}Icon } from './${g.name}'`;
         })
         .join('\n');
 
@@ -140,16 +140,13 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .join('\n *\n');
 
     const content = `/* GENERATED FILE */
-import { DynamicIcon } from '../../lib/dynamic-icon'
-import type { IconProps } from '../../lib/types'
+import { DynamicIcon, type DynamicIconProps } from '../../lib/dynamic-icon'
 ${styleImports}
-
-export type ${pascalName}IconProps = Omit<IconProps, 'weight' | 'styles'>
 
 /**
 ${previews}
  */
-export const ${pascalName}Icon = (props: ${pascalName}IconProps) => (
+export const ${pascalName}Icon = (props: DynamicIconProps) => (
     <DynamicIcon
         {...props}
         styles={{

@@ -87,7 +87,7 @@ export * from "./icons/styled"
 
     const dynamicBarrelContent = groups
         .map(g => {
-            return `export { default as ${g.pascalName}Icon } from './${g.name}'\nexport type { ${g.pascalName}IconProps } from './${g.name}'`
+            return `export { default as ${g.pascalName}Icon } from './${g.name}'`
         })
         .join('\n')
 
@@ -132,16 +132,13 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
     const content = `/* GENERATED FILE */
 import { h } from 'vue'
 import DynamicIcon from '../../lib/dynamic-icon.vue'
+import type { DynamicIconProps } from '../../lib/types'
 ${styleImports}
-
-export interface ${pascalName}IconProps {
-    weight?: 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
-}
 
 /**
 ${previews}
  */
-const ${pascalName}Icon = (props: ${pascalName}IconProps, { attrs }: { attrs: Record<string, unknown> }) => {
+const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }) => {
     return h(DynamicIcon, { ...attrs, ...props })
 }
 

@@ -87,7 +87,7 @@ export * from "./icons/styled"
 
     const dynamicBarrelContent = groups
         .map((g) => {
-            return `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'\nexport type { ${g.pascalName}IconProps } from './${g.name}.svelte'`;
+            return `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'`;
         })
         .join('\n');
 
@@ -139,13 +139,9 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
 
     const content = `<!-- GENERATED FILE -->
 <script lang="ts">
+import type { DynamicIconProps } from '../../lib/types'
 import DynamicIcon from '../../lib/dynamic-icon.svelte'
 ${styleImports}
-
-export type ${pascalName}IconProps = {
-    weight?: 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
-    [key: string]: any
-}
 </script>
 
 <!--

@@ -1,3 +1,5 @@
+import type { Weight } from '@solar-icons/core/runtime'
+
 export enum IconStyle {
     BROKEN = 'Broken',
     LINE_DUOTONE = 'LineDuotone',
@@ -25,4 +27,12 @@ export interface IconProps {
     secondaryOpacity?: number
     /** When `true`, the icon ignores all `SolarProvider` values and uses hardcoded defaults. */
     isolated?: boolean
+}
+
+/**
+ * Props accepted by every dynamic Solar icon component.
+ * Extends standard IconProps plus an optional `weight` to switch styles at runtime.
+ */
+export interface DynamicIconProps extends IconProps {
+    weight?: Weight
 }
