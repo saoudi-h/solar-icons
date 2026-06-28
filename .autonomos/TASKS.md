@@ -90,6 +90,10 @@
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta`. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
 
+## 🎨 Docs UI redesign
+
+- [/] **[DOCS-UI-01]** FilterBar redesign plan (page `/icons`, `apps/docs/components/icons-page/sections/icons/FilterBar.tsx`). Plan only — no implementation this session. Covers: dual ColorPicker theme conflict (sync-theme toggle must live on primary only), unlabeled controls (tooltips + icons + popovers), bar saturation (group by section), categories replacement (exhaustive checkbox list behind a "Categories" trigger). See `.autonomos/worklogs/2026-06-28-DOCS-UI-01-filterbar-redesign-plan.md`. `Priority: 🟠` `Complexity: M`
+
 ## 🧹 V3 — Technical debt cleanup (2026-06-25)
 
 Identified during the 2026-06-25 technical audit. Each task is one commit, scoped per package.

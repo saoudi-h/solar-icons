@@ -1,6 +1,5 @@
 'use client'
 import { forcedThemeAtom } from '@/atom/forcedThemeAtom'
-import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/copy-button'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -14,6 +13,7 @@ import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { useEffect, useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
+import { getContrastingColor } from './color-utils'
 import { colorIconDark } from './context'
 
 const variants = {
@@ -27,20 +27,25 @@ interface ColorPickerProps {
     color: string
     setColor: (color: string) => void
     className?: string
+    tooltip?: string
 }
 
 const synchedThemeStorageAtom = atomWithStorage('synched', true)
 
-export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, className }) => {
+export const ColorPicker: React.FC<ColorPickerProps> = ({
+    color,
+    setColor,
+    className,
+    tooltip,
+}) => {
     const [isDark, setIsDark] = useAtom(colorIconDark)
     const [synched, setSynched] = useAtom(synchedThemeStorageAtom)
     const [forcedTheme, setForcedTheme] = useAtom(forcedThemeAtom)
     const [inputColor, setInputColor] = useState<string>(color)
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setInputColor(value)
-        // Capturing group number 1 is defined but never used
-        // regexp/no-unused-capturing
         if (/^#[0-9A-F]{3}(?:[0-9A-F]{3})?$/i.test(value)) {
             setColor(value)
         }
@@ -64,7 +69,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
             }
         }, 10000)
         return () => clearTimeout(timer)
-    }, [inputColor])
+    }, [color, inputColor])
 
     useEffect(() => {
         if (color) {
@@ -73,18 +78,83 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
     }, [color])
 
     return (
-        <div className={cn('flex items-center', className)}>
+        <Popover>
             <Tooltip>
                 <TooltipTrigger asChild>
+                    <PopoverTrigger asChild>
+                        <button
+                            type="button"
+                            data-vaul-no-drag
+                            className={cn(
+                                `
+                                  flex size-10 items-center justify-center
+                                  rounded-lg border-none p-0 transition-opacity
+                                `,
+                                'hover:ring-2 hover:ring-foreground/20',
+                                className
+                            )}
+                            style={{ backgroundColor: color }}
+                            aria-label={tooltip ?? 'Color'}
+                        />
+                    </PopoverTrigger>
+                </TooltipTrigger>
+                {tooltip && (
+                    <TooltipContent>
+                        <p>{tooltip}</p>
+                    </TooltipContent>
+                )}
+            </Tooltip>
+            <PopoverContent className="w-72 space-y-3 bg-default-200 p-3">
+                <div className="flex items-center gap-2">
+                    <Input
+                        type="text"
+                        value={inputColor}
+                        onChange={handleInputChange}
+                        placeholder="#000000"
+                        maxLength={7}
+                        style={{
+                            backgroundColor: color,
+                            color: isDark ? '#ffffff' : '#000000',
+                        }}
+                        className="h-8 rounded-md text-center text-xs"
+                    />
+                    <CopyButton
+                        value={color}
+                        size="icon"
+                        colors="accent"
+                        variant="default"
+                        className="size-8 rounded-md border-none"
+                    />
+                </div>
+                <HexColorPicker
+                    color={color}
+                    onChange={setColor}
+                    style={{ width: '100%', height: '150px' }}
+                />
+                <div
+                    className={cn(
+                        `
+                          flex items-center justify-between rounded-md
+                          bg-default-100 px-3 py-2
+                        `
+                    )}>
+                    <div className="flex flex-col">
+                        <span className="text-xs font-medium">Sync theme</span>
+                        <span className="text-[10px] text-muted-foreground">
+                            {synched ? 'Contrast forced' : 'Free choice'}
+                        </span>
+                    </div>
                     <Toggle
                         variant="default"
                         colors="accent"
-                        className={`
-                          relative size-10 overflow-hidden rounded-l-lg
-                          rounded-r-none border-none bg-default-200
-                        `}
                         pressed={synched}
-                        onPressedChange={setSynched}>
+                        onPressedChange={setSynched}
+                        className={cn(
+                            `
+                              relative size-7 overflow-hidden rounded-md
+                              border-none bg-default-300 p-0
+                            `
+                        )}>
                         <AnimatePresence>
                             {synched ? (
                                 <motion.div
@@ -93,11 +163,11 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                     animate="animate"
                                     exit="exit"
                                     key="link-broken"
-                                    className={`
+                                    className="
                                       absolute inset-0 flex size-full
                                       items-center justify-center
-                                    `}>
-                                    <LinkBrokenIcon isolated />
+                                    ">
+                                    <LinkBrokenIcon className="size-3.5" isolated />
                                 </motion.div>
                             ) : (
                                 <motion.div
@@ -106,71 +176,17 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, class
                                     animate="animate"
                                     exit="exit"
                                     key="link"
-                                    className={`
+                                    className="
                                       absolute inset-0 flex size-full
                                       items-center justify-center
-                                    `}>
-                                    <LinkIcon isolated />
+                                    ">
+                                    <LinkIcon className="size-3.5" isolated />
                                 </motion.div>
                             )}
                         </AnimatePresence>
                     </Toggle>
-                </TooltipTrigger>
-                <TooltipContent>
-                    <p>Sync Theme</p>
-                </TooltipContent>
-            </Tooltip>
-
-            <Popover>
-                <PopoverTrigger asChild>
-                    <div
-                        className={`
-                          flex flex-1 flex-row flex-nowrap items-center
-                          justify-center gap-0
-                        `}>
-                        <Button
-                            asChild
-                            variant="default"
-                            colors="secondary"
-                            className="w-full border-none! bg-default-200 p-0!">
-                            <Input
-                                style={{
-                                    backgroundColor: color,
-                                    color: isDark ? '#ffffff' : '#000000',
-                                }}
-                                type="text"
-                                value={inputColor}
-                                onChange={handleChange}
-                                placeholder="#000000"
-                                maxLength={7}
-                                className={`
-                                  h-10 w-full rounded-none text-center
-                                `}
-                            />
-                        </Button>
-                    </div>
-                </PopoverTrigger>
-                <PopoverContent className="w-full bg-default-200 p-0">
-                    <HexColorPicker color={color} onChange={setColor} />
-                </PopoverContent>
-            </Popover>
-            <CopyButton
-                value={color}
-                className={`
-                  h-10 rounded-l-none rounded-r-lg border-none bg-default-200
-                `}
-                colors="accent"
-                variant="default"></CopyButton>
-        </div>
+                </div>
+            </PopoverContent>
+        </Popover>
     )
-}
-
-function getContrastingColor(hexColor: string): boolean {
-    const color = hexColor.replace('#', '')
-    const r = parseInt(color.substring(0, 2), 16)
-    const g = parseInt(color.substring(2, 4), 16)
-    const b = parseInt(color.substring(4, 6), 16)
-
-    const brightness = 0.299 * r + 0.587 * g + 0.114 * b
-    return brightness < 150
 }

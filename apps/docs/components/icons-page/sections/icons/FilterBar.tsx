@@ -1,17 +1,4 @@
 'use client'
-import { Input } from '@/components/ui/input'
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from '@/components/ui/select'
-import { Slider } from '@/components/ui/slider'
-import { useSolar } from '@solar-icons/react'
-import { SettingsIcon } from '@solar-icons/react/linear/settings'
-import { ColorPicker } from './ColorPicker'
-
 import { Button } from '@/components/ui/button'
 import {
     Drawer,
@@ -24,14 +11,19 @@ import type { Option } from '@/components/ui/multi-selector'
 import MultipleSelector from '@/components/ui/multi-selector'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { useScreen } from '@/lib/screens'
-import NumberFlow from '@number-flow/react'
-import { CATEGORIES as allCategories, STYLES as styles } from '@solar-icons/core/runtime'
-import { DialogIcon } from '@solar-icons/react/dynamic/dialog'
-import { MinimalisticMagnifierIcon } from '@solar-icons/react/linear/minimalistic-magnifier'
+import { CATEGORIES as allCategories } from '@solar-icons/core/runtime'
+import { useSolar } from '@solar-icons/react'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
+import { SettingsIcon } from '@solar-icons/react/linear/settings'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
+import { ColorPicker } from './ColorPicker'
+import { ColorPickerSimple } from './ColorPickerSimple'
+import { Divider } from './Divider'
+import { GeometryControl } from './GeometryControl'
+import { SearchInput } from './SearchInput'
+import { StylePicker } from './StylePicker'
 import {
     DEFAULT_VALUES,
     filteredCountAtom,
@@ -79,16 +71,16 @@ export const FilterBarContent: React.FC = () => {
         setStrokeWidth,
     } = useSolar()
     const color = solarColor ?? DEFAULT_VALUES.color
-    const size = solarSize ?? DEFAULT_VALUES.size
-    const strokeWidth = solarStrokeWidth ?? DEFAULT_VALUES.strokeWidth
+    const size = Number(solarSize ?? DEFAULT_VALUES.size)
+    const strokeWidth = Number(solarStrokeWidth ?? DEFAULT_VALUES.strokeWidth)
     const duotoneColor = secondaryColor ?? DEFAULT_VALUES.secondaryColor
-    const duotoneOpacity = secondaryOpacity ?? DEFAULT_VALUES.secondaryOpacity
+    const duotoneOpacity = Number(secondaryOpacity ?? DEFAULT_VALUES.secondaryOpacity)
 
     const isDuotone = weight.includes('Duotone')
     const hasStroke = weight === 'Linear' || weight === 'Broken' || weight === 'LineDuotone'
 
-    const onCategoryChange = (categories: Option[]) => {
-        setCategories(categories as CategoryOption[])
+    const onCategoryChange = (next: Option[]) => {
+        setCategories(next as CategoryOption[])
     }
 
     const reset = () => {
@@ -106,176 +98,90 @@ export const FilterBarContent: React.FC = () => {
     return (
         <>
             <div
-                className={`
-                  flex flex-1 flex-wrap content-start justify-start gap-2
-                `}>
-                {/* Style selector */}
-                <Select value={weight} onValueChange={v => setWeight(v as typeof weight)}>
-                    <SelectTrigger
-                        className={`
-                          h-10 w-48 rounded-lg border-none! bg-default-200
-                          shadow-none!
-                        `}>
-                        <SelectValue placeholder="Select a weight" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        {styles.map(w => (
-                            <SelectItem key={w} value={w}>
-                                <div
-                                    className={`
-                                      flex flex-row items-center justify-center
-                                      gap-2
-                                    `}>
-                                    <DialogIcon
-                                        className="mr-2 size-6"
-                                        weight={w}
-                                        size={16}
-                                        isolated
-                                    />
-                                    {w}
-                                </div>
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
+                className="
+                  flex flex-1 flex-wrap content-start items-center justify-start
+                  gap-2
+                ">
+                {/* Section A — Style */}
+                <StylePicker value={weight} onChange={setWeight} />
 
-                {/* Slider size */}
-                <div
-                    data-vaul-no-drag
-                    className={`
-                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
-                    `}>
-                    <Slider
-                        className=""
-                        value={[parseInt(String(size) || '24')]}
-                        onValueChange={value => setSize(value[0] || 24)}
-                        min={16}
-                        max={64}
-                        step={1}
-                    />
-                    <span className="ml-2 text-xs font-light">{size}px</span>
-                </div>
+                <Divider />
 
-                {/* Color picker */}
-                <ColorPicker
-                    color={color}
-                    setColor={setColor}
-                    className="h-10 w-48"
+                {/* Section B — Geometry */}
+                <GeometryControl
+                    label="Size"
+                    tooltip="Icon size"
+                    value={size}
+                    onChange={setSize}
+                    min={16}
+                    max={64}
+                    step={1}
+                    defaultValue={DEFAULT_VALUES.size}
+                />
+                <GeometryControl
+                    label="Stroke"
+                    tooltip="Stroke width"
+                    value={strokeWidth}
+                    onChange={setStrokeWidth}
+                    min={0.5}
+                    max={4}
+                    step={0.1}
+                    defaultValue={DEFAULT_VALUES.strokeWidth}
+                    decimals={1}
+                    disabled={!hasStroke}
                 />
 
-                {/* Stroke width slider */}
-                <div
-                    data-vaul-no-drag
-                    className={`
-                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
-                      ${!hasStroke ? 'pointer-events-none opacity-30' : ''}
-                    `}>
-                    <Slider
-                        value={[strokeWidth as number]}
-                        onValueChange={value =>
-                            setStrokeWidth(value[0] || DEFAULT_VALUES.strokeWidth)
-                        }
-                        min={0.5}
-                        max={4}
-                        step={0.1}
-                    />
-                    <span className="ml-2 text-xs font-light">{strokeWidth}px</span>
-                </div>
+                <Divider />
 
-                {/* Secondary color picker */}
-                <ColorPicker
-                    color={duotoneColor ?? DEFAULT_VALUES.secondaryColor}
+                {/* Section C — Color */}
+                <ColorPicker color={color} setColor={setColor} tooltip="Primary color" />
+                <ColorPickerSimple
+                    color={duotoneColor}
                     setColor={setSecondaryColor}
-                    className={`
-                      h-10 w-48
-                      ${!isDuotone ? 'pointer-events-none opacity-30' : ''}
-                    `}
+                    opacity={duotoneOpacity}
+                    setOpacity={setSecondaryOpacity}
+                    tooltip="Duotone color"
+                    disabled={!isDuotone}
                 />
 
-                {/* Secondary opacity slider */}
-                <div
-                    data-vaul-no-drag
-                    className={`
-                      flex h-10 w-48 items-center rounded-lg bg-default-200 p-4
-                      ${!isDuotone ? 'pointer-events-none opacity-30' : ''}
-                    `}>
-                    <Slider
-                        value={[duotoneOpacity ?? DEFAULT_VALUES.secondaryOpacity]}
-                        onValueChange={value =>
-                            setSecondaryOpacity(value[0] ?? DEFAULT_VALUES.secondaryOpacity)
-                        }
-                        min={0}
-                        max={1}
-                        step={0.05}
-                    />
-                    <span className="ml-2 text-xs font-light">{duotoneOpacity}</span>
-                </div>
+                <Divider />
 
-                {/* Search bar */}
-                <div className="relative flex h-10 w-48">
-                    <MinimalisticMagnifierIcon
-                        className={`
-                          absolute top-1/2 left-2.5 size-4 -translate-y-1/2
-                          text-muted-foreground
-                        `}
-                        isolated
-                    />
-                    <Input
-                        type="search"
-                        placeholder="Search..."
-                        value={inputValue}
-                        onChange={e => handleSearchChange(e.target.value)}
-                        className={`
-                          h-10 w-full rounded-lg border-0 border-none!
-                          bg-default-200 pl-10 text-sm shadow-none
-                          placeholder:text-muted-foreground
-                        `}
-                    />
-                </div>
+                {/* Section D — Search */}
+                <SearchInput
+                    value={inputValue}
+                    onChange={handleSearchChange}
+                    count={filteredCount}
+                />
 
-                {/* Reset button */}
-                <Button
-                    onClick={reset}
-                    size="icon"
-                    colors="accent"
-                    className={`
-                      size-10 rounded-lg border-none! bg-default-200
-                      text-foreground
-                    `}>
-                    <RestartIcon className="size-4 scale-x-[-1]" isolated />
-                </Button>
-
-                {/* Reset button */}
-                <div
-                    className={`
-                      flex h-10 flex-row items-center justify-center gap-1
-                      rounded-lg border-none! bg-default-200 p-1 px-3 text-xs
-                      font-bold text-muted-foreground
-                    `}>
-                    <Tooltip>
-                        <TooltipTrigger>
-                            <NumberFlow
-                                className="text-foreground/70"
-                                trend={-1}
-                                value={filteredCount}
-                                format={{ minimumIntegerDigits: 1 }}
-                            />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                            <span className="font-extralight">{filteredCount} icons founded</span>
-                        </TooltipContent>
-                    </Tooltip>
-                </div>
+                {/* Section E — Reset */}
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Button
+                            onClick={reset}
+                            size="icon"
+                            colors="accent"
+                            className="
+                              size-10 rounded-lg border-none! bg-default-200
+                              text-foreground
+                            "
+                            aria-label="Reset filters">
+                            <RestartIcon className="size-4 scale-x-[-1]" isolated />
+                        </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Reset filters</p>
+                    </TooltipContent>
+                </Tooltip>
             </div>
-            {/* alternative to react Select */}
             <MultipleSelector
-                className={`
+                className="
                   min-h-10 rounded-lg border-none! bg-default-200 shadow-none!
-                `}
+                "
                 placeholder="Select categories"
                 options={categoryOptions}
                 onChange={onCategoryChange}
-                value={categories}></MultipleSelector>
+                value={categories}
+            />
         </>
     )
 }
