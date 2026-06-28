@@ -1,45 +1,36 @@
-"use client";
-import { forcedThemeAtom } from "@/atom/forcedThemeAtom";
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
-import { RootProvider } from "fumadocs-ui/provider/next";
-import { useAtom } from "jotai";
-import { ReactLenis } from "lenis/react";
-import { usePathname } from "next/navigation";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import React, { useEffect } from "react";
+'use client'
+import { Toaster } from '@/components/ui/sonner'
+import { TooltipProvider } from '@radix-ui/react-tooltip'
+import { RootProvider } from 'fumadocs-ui/provider/next'
+import { ReactLenis } from 'lenis/react'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import React from 'react'
 
 /**
  * Providers wraps the app in the following providers:
- * - JotaiProvider for state management
- * - RootProvider to provide the theme
+ * - RootProvider to provide the theme (toggle always visible in the header)
+ * - NuqsAdapter for URL-persistent state
  * - TooltipProvider to provide tooltips
- * - ReactLenis to provide smooth scrolling
+ * - ReactLenis for smooth scrolling
  */
 const Providers = ({ children }: { children: React.ReactNode }) => {
-  const [forcedTheme, setForcedTheme] = useAtom(forcedThemeAtom);
-  const pathname = usePathname();
-  useEffect(() => {
-    setForcedTheme(undefined);
-  }, [pathname, setForcedTheme]);
-  return (
-    <RootProvider theme={{ forcedTheme: forcedTheme }}>
-      <NuqsAdapter>
-        <TooltipProvider>
-          <ReactLenis
-            root
-            options={{
-              allowNestedScroll: true,
-              autoRaf: true,
-            }}
-          >
-            {children}
-            <Toaster />
-          </ReactLenis>
-        </TooltipProvider>
-      </NuqsAdapter>
-    </RootProvider>
-  );
-};
+    return (
+        <RootProvider>
+            <NuqsAdapter>
+                <TooltipProvider>
+                    <ReactLenis
+                        root
+                        options={{
+                            allowNestedScroll: true,
+                            autoRaf: true,
+                        }}>
+                        {children}
+                        <Toaster />
+                    </ReactLenis>
+                </TooltipProvider>
+            </NuqsAdapter>
+        </RootProvider>
+    )
+}
 
-export default Providers;
+export default Providers

@@ -8,7 +8,6 @@ import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
 import { useCallback } from 'react'
 import type { CategoryOption } from './utils'
 
-export const colorIconDark = atom(false)
 export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
@@ -65,7 +64,9 @@ interface IconProviderWrapperProps {
 }
 
 export const DEFAULT_VALUES = {
-    color: '#9fcfe6',
+    // #3b82f6 (Tailwind blue-500): ~50% luminance, saturated enough to read
+    // on both light and dark page backgrounds without theme syncing.
+    color: '#3b82f6',
     size: 64,
     strokeWidth: 1.5,
     secondaryColor: '#f59e0b',
