@@ -1,3 +1,4 @@
+import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef } from 'react'
 import type { IconBaseProps } from './types'
 
@@ -10,7 +11,7 @@ function hasA11yProp(props: Record<string, unknown>): boolean {
     )
 }
 
-const IconBase = forwardRef<SVGSVGElement, IconBaseProps & { className?: string; style?: Record<string, string> }>(
+const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithoutRef<'svg'>>(
     ({ alt, color, size, strokeWidth, secondaryColor, secondaryOpacity, iconName, isolated, children, ...restProps }, ref) => {
         const iconClass = iconName ? `${SOLAR_CLASS} solar-${iconName}` : SOLAR_CLASS
         const userClassName = (restProps as any).className
