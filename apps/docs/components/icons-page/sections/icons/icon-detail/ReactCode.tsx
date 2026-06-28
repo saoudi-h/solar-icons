@@ -1,13 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import { useAtom } from 'jotai'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const ReactCode: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
+    const selectedIcon = useSelectedIcon()
     const componentName = selectedIcon?.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'
 
     return (

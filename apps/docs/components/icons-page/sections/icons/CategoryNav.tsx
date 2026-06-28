@@ -3,14 +3,14 @@ import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
 import { useAtom, useAtomValue } from 'jotai'
 import { useMemo } from 'react'
-import { activeCategoryAtom, filteredIconsAtom, viewModeAtom } from './context'
+import { activeCategoryAtom, filteredIconsAtom, useViewModeURL } from './context'
 
 interface CategoryNavProps {
     className?: string
 }
 
 export const CategoryNav: React.FC<CategoryNavProps> = ({ className }) => {
-    const [viewMode, setViewMode] = useAtom(viewModeAtom)
+    const [viewMode, setViewMode] = useViewModeURL()
     const [activeCategory, setActiveCategory] = useAtom(activeCategoryAtom)
     const filteredIcons = useAtomValue(filteredIconsAtom)
 

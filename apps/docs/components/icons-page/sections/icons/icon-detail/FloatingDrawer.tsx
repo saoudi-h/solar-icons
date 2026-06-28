@@ -3,20 +3,20 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CloseCircleIcon } from '@solar-icons/react/bold/close-circle'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { useEffect } from 'react'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon, useSelectedIconName } from '../context'
 
 export interface FloatingDrawerProps {
     children: React.ReactNode
 }
 
 export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
-    const [selectedIcon, setSelectedIcon] = useAtom(selectedIconAtom)
+    const selectedIcon = useSelectedIcon()
+    const [, setIconName] = useSelectedIconName()
 
     const handleClose = () => {
-        setSelectedIcon(null)
+        setIconName(null)
     }
 
     useEffect(() => {
@@ -27,6 +27,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
         }
         document.addEventListener('keydown', handleKeyDown)
         return () => document.removeEventListener('keydown', handleKeyDown)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

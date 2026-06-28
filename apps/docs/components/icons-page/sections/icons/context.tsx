@@ -1,28 +1,22 @@
+import type { IconData } from '@/generated/descriptions'
 import type { Weight } from '@solar-icons/core/runtime'
 import { SolarProvider } from '@solar-icons/react'
-import type { ReactNode } from 'react'
-
-import type { IconData } from '@/generated/descriptions'
 import { atom } from 'jotai'
-import { useQueryState } from 'nuqs'
-import { useCallback } from 'react'
+import { parseAsStringLiteral, useQueryState } from 'nuqs'
+import type { ReactNode } from 'react'
+import { useCallback, useMemo } from 'react'
+import { getAllIcons } from './utils'
 
 export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
-export const selectedIconAtom = atom<IconData | null>(null)
 
 /**
- * Grid view mode on `/icons`. `'grouped'` renders the icons clustered by
- * category with section headers (Lucide-style); `'flat'` keeps the
- * single uniform grid. Default is `'grouped'`.
- */
-export const viewModeAtom = atom<'grouped' | 'flat'>('grouped')
-
-/**
- * Last category the user navigated to from the sidebar. Used to
- * highlight the active row in the sidebar and to scroll-target the
- * corresponding section header in the grid.
+ * Last category the user navigated to from the sidebar. UI-only
+ * navigation state (sidebar scroll target + active highlight), not
+ * persisted in the URL — the URL is for the *resource* (the icon
+ * being viewed) and the search/viewMode, not for transient
+ * navigation positions within the page.
  */
 export const activeCategoryAtom = atom<string | null>(null)
 
@@ -49,6 +43,35 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
         [setParam]
     )
     return [keyword, setKeyword] as const
+}
+
+/**
+ * Grid view mode in the URL (`?view=grouped|flat`). Default
+ * `'grouped'`. The view is part of the resource description (it's
+ * how the user wants to browse the icon set), not transient UI
+ * state, so it lives in the URL.
+ */
+export function useViewModeURL() {
+    return useQueryState('view', parseAsStringLiteral(['grouped', 'flat']).withDefault('grouped'))
+}
+
+/**
+ * Name of the icon currently open in the detail panel
+ * (`?icon=home-bold`). The URL is the source of truth — the
+ * `IconData` is derived from the icons list below via
+ * `useSelectedIcon`. Click handlers in `IconCard` and the close
+ * button in `FloatingDrawer` write to this query param.
+ */
+export function useSelectedIconName() {
+    return useQueryState('icon')
+}
+
+export function useSelectedIcon(): IconData | null {
+    const [iconName] = useSelectedIconName()
+    return useMemo(() => {
+        if (!iconName) return null
+        return getAllIcons().find(i => i.name === iconName) ?? null
+    }, [iconName])
 }
 
 interface IconProviderWrapperProps {

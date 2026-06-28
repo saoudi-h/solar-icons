@@ -3,22 +3,25 @@ import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { forwardRef } from 'react'
-import { selectedIconAtom, weightAtom } from './context'
+import { useSelectedIcon, useSelectedIconName, weightAtom } from './context'
 
 type IconCardProps = IconData
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
-    ({ name, Icon, tags, category, categoryTags, ...props }, ref) => {
-        const [selectedIcon, setSelectedIcon] = useAtom(selectedIconAtom)
+    (
+        { name, Icon, tags: _tags, category: _category, categoryTags: _categoryTags, ...props },
+        ref
+    ) => {
+        const [, setIconName] = useSelectedIconName()
+        const selectedIcon = useSelectedIcon()
         const [weight] = useAtom(weightAtom)
         const isSelected = selectedIcon?.name === name
-        const iconData = { name, Icon, tags, category, categoryTags }
 
         return (
             <motion.div
                 {...props}
                 ref={ref}
-                onClick={() => setSelectedIcon(iconData)}
+                onClick={() => setIconName(name)}
                 exit={{ scale: 0, opacity: 0 }}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

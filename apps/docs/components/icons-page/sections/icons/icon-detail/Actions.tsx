@@ -2,12 +2,13 @@
 import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/CopyButton'
 import { DownloadMinimalisticIcon } from '@solar-icons/react/linear/download-minimalistic'
+import { LinkMinimalistic2Icon } from '@solar-icons/react/linear/link-minimalistic-2'
 import { saveAs } from 'file-saver'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { useRef } from 'react'
 import { toast } from 'sonner'
-import { selectedIconAtom, weightAtom } from '../context'
+import { useSelectedIcon, weightAtom } from '../context'
 
 const downloadData = (filename: string, data: string) => {
     const link = document.createElement('a')
@@ -18,7 +19,7 @@ const downloadData = (filename: string, data: string) => {
 
 export const Actions: FC = () => {
     const ref = useRef<SVGSVGElement>(null)
-    const [selectedIcon] = useAtom(selectedIconAtom)
+    const selectedIcon = useSelectedIcon()
     const [weight] = useAtom(weightAtom)
 
     if (!selectedIcon) return null
@@ -143,6 +144,16 @@ export const Actions: FC = () => {
         }
     }
 
+    const handleShare = async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href)
+            toast.success('Link copied to clipboard')
+        } catch (error) {
+            console.error('Share error:', error)
+            toast.error('Failed to copy link to clipboard')
+        }
+    }
+
     return (
         <div
             className={`
@@ -153,15 +164,19 @@ export const Actions: FC = () => {
             <div className="-z-50 hidden">
                 <selectedIcon.Icon ref={ref} size={16} weight={weight} />
             </div>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className="p-1">
                 Get SVG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className="p-1">
                 Get PNG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
@@ -171,6 +186,14 @@ export const Actions: FC = () => {
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
                 Copy PNG
             </CopyButton>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleShare}
+                className="p-1">
+                Share
+                <LinkMinimalistic2Icon size={16} isolated />
+            </Button>
         </div>
     )
 }

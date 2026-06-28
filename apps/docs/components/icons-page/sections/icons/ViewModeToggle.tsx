@@ -1,11 +1,10 @@
 'use client'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { useAtom } from 'jotai'
-import { viewModeAtom } from './context'
+import { useViewModeURL } from './context'
 
 export const ViewModeToggle: React.FC<{ className?: string }> = ({ className }) => {
-    const [viewMode, setViewMode] = useAtom(viewModeAtom)
+    const [viewMode, setViewMode] = useViewModeURL()
 
     return (
         <div

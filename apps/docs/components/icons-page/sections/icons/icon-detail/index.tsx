@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { activeCategoryAtom, selectedIconAtom, viewModeAtom, weightAtom } from '../context'
+import { activeCategoryAtom, useSelectedIcon, useViewModeURL, weightAtom } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { FloatingDrawer } from './FloatingDrawer'
@@ -28,9 +28,9 @@ export function IconDetail() {
 }
 
 const Content: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
+    const selectedIcon = useSelectedIcon()
     const [weight] = useAtom(weightAtom)
-    const [viewMode, setViewMode] = useAtom(viewModeAtom)
+    const [viewMode, setViewMode] = useViewModeURL()
     const [, setActiveCategory] = useAtom(activeCategoryAtom)
 
     const handleCategoryClick = (category: string) => {

@@ -1,10 +1,9 @@
 import { Badge } from '@/components/ui/badge'
-import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon } from '../context'
 
 export const Tags: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
+    const selectedIcon = useSelectedIcon()
 
     if (!selectedIcon) return null
 

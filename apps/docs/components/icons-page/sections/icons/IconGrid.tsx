@@ -11,7 +11,7 @@ import {
     displayedIconsAtom,
     filteredIconsAtom,
     useSearchKeyword,
-    viewModeAtom,
+    useViewModeURL,
 } from './context'
 import { IconCard } from './IconCard'
 import { searchIcons } from './utils'
@@ -31,7 +31,7 @@ export const IconGridVirtualized: React.FC = () => {
     const [keyword] = useSearchKeyword()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
-    const viewMode = useAtomValue(viewModeAtom)
+    const viewMode = useViewModeURL()[0]
     const activeCategory = useAtomValue(activeCategoryAtom)
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)

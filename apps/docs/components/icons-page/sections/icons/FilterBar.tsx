@@ -103,7 +103,7 @@ export const FilterBarContent: React.FC = () => {
                 value={strokeWidth}
                 onChange={setStrokeWidth}
                 min={0.5}
-                max={4}
+                max={3}
                 step={0.1}
                 defaultValue={DEFAULT_VALUES.strokeWidth}
                 decimals={1}
