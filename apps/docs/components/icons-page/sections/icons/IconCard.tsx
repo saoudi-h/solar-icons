@@ -12,12 +12,18 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
         ref
     ) => {
         const [, setIconName] = useSelectedIconName()
+        const [, setStyleURL] = useStyleURL()
         const selectedIcon = useSelectedIcon()
         const [weight] = useStyleURL()
         const isSelected = selectedIcon?.name === name
         const handleClick = () => {
             const split = splitFullIconName(name)
-            setIconName(split ? split.base : name)
+            if (split) {
+                setIconName(split.base)
+                setStyleURL(split.weight)
+            } else {
+                setIconName(name)
+            }
         }
 
         return (
