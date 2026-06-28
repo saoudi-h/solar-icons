@@ -18,7 +18,7 @@ export const ReactCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${componentName} } from '@solar-icons/react/linear/${selectedIcon?.name}'`}
+                code={`import { ${componentName} } from '@solar-icons/react/linear/${selectedIcon?.fullName}'`}
             />
             <CodeBlockTemplate
                 lang="tsx"

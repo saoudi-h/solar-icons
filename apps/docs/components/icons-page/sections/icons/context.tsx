@@ -120,13 +120,27 @@ export function useSelectedIconName() {
     return useQueryState('icon')
 }
 
-export function useSelectedIcon(): IconData | null {
+/**
+ * The selected icon, augmented with a computed `fullName` (the
+ * base name + the current style's slug, e.g. `home-bold`). The
+ * icon data is keyed by base name only — the `Icon` component
+ * is generic and takes the weight as a prop — so the lookup is
+ * by base name and the full name is computed on the fly. Use
+ * `selectedIcon.name` for the base name (matching the
+ * `IconCard`'s `isSelected` check), and `selectedIcon.fullName`
+ * for anything that needs the weight-suffixed name (display
+ * title, code-example import path, SVG download URL).
+ */
+export type SelectedIcon = IconData & { fullName: string }
+
+export function useSelectedIcon(): SelectedIcon | null {
     const [iconBase] = useSelectedIconName()
     const [weight] = useStyleURL()
     return useMemo(() => {
         if (!iconBase) return null
-        const fullName = buildFullIconName(iconBase, weight)
-        return getAllIcons().find(i => i.name === fullName) ?? null
+        const icon = getAllIcons().find(i => i.name === iconBase)
+        if (!icon) return null
+        return { ...icon, fullName: buildFullIconName(iconBase, weight) }
     }, [iconBase, weight])
 }
 

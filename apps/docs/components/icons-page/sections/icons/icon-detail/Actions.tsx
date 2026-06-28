@@ -25,7 +25,7 @@ export const Actions: FC = () => {
 
     const handleDownloadSVG = async () => {
         try {
-            const url = `https://raw.githubusercontent.com/saoudi-h/solar-icons/main/packages/core/svgs/${selectedIcon?.category}/${weight}/${selectedIcon.name}.svg`
+            const url = `https://raw.githubusercontent.com/saoudi-h/solar-icons/main/packages/core/svgs/${selectedIcon?.category}/${weight}/${selectedIcon.fullName}.svg`
 
             const response = await fetch(url, { method: 'HEAD' })
 
@@ -33,7 +33,7 @@ export const Actions: FC = () => {
                 throw new Error('Failed to download SVG')
             }
 
-            saveAs(url, `${selectedIcon?.name}.svg`)
+            saveAs(url, `${selectedIcon?.fullName}.svg`)
             toast.success('SVG downloaded')
         } catch {
             console.error('SVG download error')
@@ -77,7 +77,7 @@ export const Actions: FC = () => {
             })
 
             const pngData = canvas.toDataURL('image/png')
-            downloadData(`${selectedIcon?.name}.png`, pngData)
+            downloadData(`${selectedIcon?.fullName}.png`, pngData)
             toast.success('PNG downloaded')
         } catch (error) {
             console.error('PNG generation error:', error)
@@ -163,15 +163,19 @@ export const Actions: FC = () => {
             <div className="-z-50 hidden">
                 <selectedIcon.Icon ref={ref} size={16} weight={weight} />
             </div>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className="p-1">
                 Get SVG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className="p-1">
                 Get PNG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
@@ -181,9 +185,11 @@ export const Actions: FC = () => {
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
                 Copy PNG
             </CopyButton>
-            <Button size="default" variant="ghost" onClick={handleShare} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleShare}
+                className="p-1">
                 Share
                 <LinkMinimalistic2Icon size={16} isolated />
             </Button>
