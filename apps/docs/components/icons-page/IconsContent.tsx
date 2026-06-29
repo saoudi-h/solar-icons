@@ -83,72 +83,73 @@ function Loading() {
                   md:rounded-3xl
                 `}>
                 <div className="relative flex flex-col gap-4 rounded-xl p-4">
+                    {/* Top bar — mirrors the FilterBar layout: style, size,
+                        stroke, two color pickers, view-mode, search (pushed
+                        right), reset. Widths match the real components. */}
                     <div
                         className={`
-                          z-20 flex w-full flex-wrap justify-between gap-2
+                          z-20 flex w-full flex-wrap items-center gap-2
                           rounded-xl border border-border bg-default-100 p-2
                           shadow-xs
                         `}>
+                        <Skeleton
+                            className="h-10 w-[220px] rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="h-10 w-36 rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="h-10 w-36 rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="h-10 w-32 rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="h-10 w-32 rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="h-10 w-28 rounded-lg bg-default-200"
+                        />
+                        <Skeleton
+                            className="
+                              ml-auto h-10 w-72 rounded-lg bg-default-200
+                            "
+                        />
+                        <Skeleton className="size-10 rounded-lg bg-default-200" />
+                    </div>
+
+                    {/* Sidebar + grid — same flex layout as the real page. */}
+                    <div className="flex flex-1 gap-4">
+                        <div
+                            className="
+                              sticky top-4 hidden w-50 shrink-0 self-start pr-1
+                              md:block
+                            ">
+                            <div className="flex flex-col gap-1">
+                                {Array(20)
+                                    .fill(0)
+                                    .map((_, i) => (
+                                        <Skeleton
+                                            key={i}
+                                            className="
+                                              h-7 w-full rounded-md
+                                              bg-default-200
+                                            "
+                                        />
+                                    ))}
+                            </div>
+                        </div>
                         <div
                             className={`
-                              flex flex-1 flex-wrap content-start justify-start
-                              gap-2
+                              grid min-w-0 flex-1 grid-cols-2 gap-2
+                              text-muted-foreground
+                              sm:grid-cols-3
+                              md:grid-cols-4
+                              lg:grid-cols-5
+                              xl:grid-cols-7
                             `}>
-                            {/* Style selector */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Size Slider */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Color picker */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Search bar */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Reset button */}
-                            <Skeleton className={`
-                              size-10 rounded-lg bg-default-200
-                            `} />
-                            {/* Reset button */}
-                            <Skeleton className={`
-                              h-10 w-16 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Reset button */}
-                            <Skeleton
-                                className={`
-                                  flex h-10 w-12 flex-row items-center
-                                  justify-center gap-1 rounded-lg border-none!
-                                  bg-default-100 p-1
-                                `}></Skeleton>
+                            <GridPlaceholder />
                         </div>
-                        {/* alternative to react Select */}
-                        <Skeleton
-                            className={`
-                              size-10 w-full max-w-48 rounded-lg bg-default-200
-                              md:max-w-64
-                            `}
-                        />
-                    </div>
-                    <div
-                        className={`
-                          grid grid-cols-2 gap-2 rounded-xl p-4
-                          text-muted-foreground
-                          sm:grid-cols-3
-                          md:grid-cols-4
-                          lg:grid-cols-5
-                          xl:grid-cols-7
-                        `}>
-                        <GridPlaceholder />
                     </div>
                 </div>
             </div>
