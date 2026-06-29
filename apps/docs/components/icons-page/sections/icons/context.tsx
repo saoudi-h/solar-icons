@@ -101,12 +101,15 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
 
 /**
  * Grid view mode in the URL (`?view=grouped|flat`). Default
- * `'grouped'`. The view is part of the resource description (it's
- * how the user wants to browse the icon set), not transient UI
+ * `'flat'` — the first view of the icon set is a 200-icon
+ * smorgasbord across all categories, much more representative
+ * than the first alphabetical section ('Arrows') in grouped
+ * mode. The view is part of the resource description (it's how
+ * the user wants to browse the icon set), not transient UI
  * state, so it lives in the URL.
  */
 export function useViewModeURL() {
-    return useQueryState('view', parseAsStringLiteral(['grouped', 'flat']).withDefault('grouped'))
+    return useQueryState('view', parseAsStringLiteral(['grouped', 'flat']).withDefault('flat'))
 }
 
 /**
