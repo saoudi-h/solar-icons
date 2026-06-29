@@ -1,5 +1,8 @@
 'use client'
-import { GridPlaceholder } from '@/components/icons-page/sections/icons/GridPlaceholder'
+import {
+    CategoryRowPlaceholder,
+    GridPlaceholder,
+} from '@/components/icons-page/sections/icons/GridPlaceholder'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { Skeleton } from '@/components/ui/skeleton'
 import dynamic from 'next/dynamic'
@@ -92,24 +95,24 @@ function Loading() {
                           rounded-xl border border-border bg-default-100 p-2
                           shadow-xs
                         `}>
-                        <Skeleton
-                            className="h-10 w-[220px] rounded-lg bg-default-200"
-                        />
-                        <Skeleton
-                            className="h-10 w-36 rounded-lg bg-default-200"
-                        />
-                        <Skeleton
-                            className="h-10 w-36 rounded-lg bg-default-200"
-                        />
-                        <Skeleton
-                            className="h-10 w-32 rounded-lg bg-default-200"
-                        />
-                        <Skeleton
-                            className="h-10 w-32 rounded-lg bg-default-200"
-                        />
-                        <Skeleton
-                            className="h-10 w-28 rounded-lg bg-default-200"
-                        />
+                        <Skeleton className="
+                          h-10 w-[220px] rounded-lg bg-default-200
+                        " />
+                        <Skeleton className="
+                          h-10 w-36 rounded-lg bg-default-200
+                        " />
+                        <Skeleton className="
+                          h-10 w-36 rounded-lg bg-default-200
+                        " />
+                        <Skeleton className="
+                          h-10 w-32 rounded-lg bg-default-200
+                        " />
+                        <Skeleton className="
+                          h-10 w-32 rounded-lg bg-default-200
+                        " />
+                        <Skeleton className="
+                          h-10 w-28 rounded-lg bg-default-200
+                        " />
                         <Skeleton
                             className="
                               ml-auto h-10 w-72 rounded-lg bg-default-200
@@ -125,17 +128,11 @@ function Loading() {
                               sticky top-4 hidden w-50 shrink-0 self-start pr-1
                               md:block
                             ">
-                            <div className="flex flex-col gap-1">
-                                {Array(20)
+                            <div className="flex flex-col gap-0.5">
+                                {Array(37)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <Skeleton
-                                            key={i}
-                                            className="
-                                              h-7 w-full rounded-md
-                                              bg-default-200
-                                            "
-                                        />
+                                        <CategoryRowPlaceholder key={i} />
                                     ))}
                             </div>
                         </div>
