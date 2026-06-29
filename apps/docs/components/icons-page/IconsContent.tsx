@@ -4,12 +4,17 @@ import { IconShowcase } from './sections/icons'
 
 export function IconsContent() {
     return (
+        // h-dvh + overflow-hidden pins the page to exactly the
+        // viewport — no page-level scroll. The two scrollable
+        // frames (categories sidebar + icon grid) handle their
+        // own scrolling inside this fixed box. Below the fold is
+        // empty padding only, never content.
         <main
-            className={`
-              relative flex min-h-dvh w-full flex-1 flex-col justify-start gap-9
-              bg-background p-4 text-center
+            className="
+              relative flex h-dvh w-full flex-1 flex-col justify-start gap-9
+              overflow-hidden bg-background p-4 text-center
               md:gap-12 md:px-10 md:py-[34px]
-            `}>
+            ">
             <div
                 className={`
                   relative container flex w-full flex-col items-center
