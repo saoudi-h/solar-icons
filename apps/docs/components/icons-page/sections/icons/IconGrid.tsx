@@ -1,4 +1,5 @@
 'use client'
+import { ScrollFade } from '@/components/ui/scroll-fade'
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
@@ -195,71 +196,75 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
     if (viewMode === 'grouped') {
         return (
             <div ref={wrapperRef} style={{ width: '100%', height }}>
-                <List
-                    ref={listRef}
-                    className="*:relative *:mx-auto"
-                    width={width}
-                    height={height}
-                    rowCount={rows.length}
-                    rowHeight={({ index }) =>
-                        rows[index]?.kind === 'header' ? SECTION_HEADER : ICON_CELL
-                    }
-                    rowRenderer={({ index, key, style }) => {
-                        const row = rows[index]
-                        if (!row) return null
-                        if (row.kind === 'header') {
+                <ScrollFade fadeSize={20} className="h-full">
+                    <List
+                        ref={listRef}
+                        className="*:relative *:mx-auto"
+                        width={width}
+                        height={height}
+                        rowCount={rows.length}
+                        rowHeight={({ index }) =>
+                            rows[index]?.kind === 'header' ? SECTION_HEADER : ICON_CELL
+                        }
+                        rowRenderer={({ index, key, style }) => {
+                            const row = rows[index]
+                            if (!row) return null
+                            if (row.kind === 'header') {
+                                return (
+                                    <div
+                                        key={key}
+                                        data-cat-section={row.category}
+                                        style={{
+                                            ...style,
+                                            height: SECTION_HEADER - GAP,
+                                            paddingTop: GAP,
+                                        }}
+                                        className={cn(
+                                            `
+                                              flex items-end gap-2 px-1 pb-2
+                                              text-sm font-semibold
+                                              tracking-wide
+                                            `,
+                                            activeCategory === row.category
+                                                ? 'text-foreground'
+                                                : 'text-muted-foreground'
+                                        )}>
+                                        <span className="uppercase">{row.category}</span>
+                                        <span
+                                            className="
+                                              font-mono text-xs font-normal
+                                              text-muted-foreground/70
+                                              tabular-nums
+                                            ">
+                                            {row.count}
+                                        </span>
+                                    </div>
+                                )
+                            }
                             return (
                                 <div
                                     key={key}
-                                    data-cat-section={row.category}
                                     style={{
                                         ...style,
-                                        height: SECTION_HEADER - GAP,
-                                        paddingTop: GAP,
+                                        display: 'grid',
+                                        gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
+                                        height: ICON_CELL,
+                                        justifyContent: 'center',
                                     }}
-                                    className={cn(
-                                        `
-                                          flex items-end gap-2 px-1 pb-2 text-sm
-                                          font-semibold tracking-wide
-                                        `,
-                                        activeCategory === row.category
-                                            ? 'text-foreground'
-                                            : 'text-muted-foreground'
-                                    )}>
-                                    <span className="uppercase">{row.category}</span>
-                                    <span
-                                        className="
-                                          font-mono text-xs font-normal
-                                          text-muted-foreground/70 tabular-nums
-                                        ">
-                                        {row.count}
-                                    </span>
+                                    data-grid-row={row.category}>
+                                    {row.icons.map(icon => (
+                                        <div
+                                            key={icon.name}
+                                            style={{ width: ICON_CELL, height: ICON_CELL }}>
+                                            <IconCard {...icon} />
+                                        </div>
+                                    ))}
                                 </div>
                             )
-                        }
-                        return (
-                            <div
-                                key={key}
-                                style={{
-                                    ...style,
-                                    display: 'grid',
-                                    gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
-                                    height: ICON_CELL,
-                                    justifyContent: 'center',
-                                }}
-                                data-grid-row={row.category}>
-                                {row.icons.map(icon => (
-                                    <div
-                                        key={icon.name}
-                                        style={{ width: ICON_CELL, height: ICON_CELL }}>
-                                        <IconCard {...icon} />
-                                    </div>
-                                ))}
-                            </div>
-                        )
-                    }}
-                    overscanRowCount={2}
-                />
+                        }}
+                        overscanRowCount={2}
+                    />
+                </ScrollFade>
             </div>
         )
     }
@@ -274,18 +279,20 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
 
     return (
         <div ref={wrapperRef} style={{ width: '100%', height }}>
-            <Grid
-                ref={gridRef}
-                className="*:relative *:mx-auto"
-                cellRenderer={cellRenderer}
-                columnCount={columnCount}
-                columnWidth={ICON_CELL}
-                height={height}
-                rowCount={rowCount}
-                rowHeight={ICON_CELL}
-                width={width}
-                overscanRowCount={0}
-            />
+            <ScrollFade fadeSize={20} className="h-full">
+                <Grid
+                    ref={gridRef}
+                    className="*:relative *:mx-auto"
+                    cellRenderer={cellRenderer}
+                    columnCount={columnCount}
+                    columnWidth={ICON_CELL}
+                    height={height}
+                    rowCount={rowCount}
+                    rowHeight={ICON_CELL}
+                    width={width}
+                    overscanRowCount={0}
+                />
+            </ScrollFade>
         </div>
     )
 }
