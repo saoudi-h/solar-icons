@@ -8,7 +8,6 @@ import { Skeleton } from '@/components/ui/skeleton'
 import dynamic from 'next/dynamic'
 
 const IconShowcase = dynamic(() => import('./sections/icons'), {
-    ssr: false,
     loading: () => <Loading />,
 })
 
