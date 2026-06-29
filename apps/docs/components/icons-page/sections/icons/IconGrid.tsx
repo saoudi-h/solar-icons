@@ -101,22 +101,26 @@ export const IconGridVirtualized: React.FC = () => {
         return positions
     }, [rows])
 
-    // When the user opens a shared link (`?icon=home&style=bold`),
-    // the selected icon's category is set as the active one on the
-    // first render that has a selected icon. The scroll-to-category
-    // useEffect below then scrolls the `List` so the icon's section
-    // is in view (and the sidebar highlights the right entry). We
-    // track the last scrolled `fullName` to avoid re-scrolling on
-    // every render — only on a real change (new URL, new icon).
-    const lastScrolledIconRef = useRef<string | null>(null)
+    // Capture the icon that was in the URL on first render (the
+    // 'shared link' case). The scroll-to-icon useEffect below only
+    // triggers when the *current* selected icon matches this
+    // initial value — meaning the user opened a link to that
+    // specific icon, not that they clicked it themselves (in which
+    // case it's already on screen). `useState` with an initializer
+    // runs exactly once on the first render and never updates.
+    const [initialIconName] = useState<string | null>(() => selectedIcon?.fullName ?? null)
     const hasMountedRef = useRef(false)
+
     useEffect(() => {
         if (viewMode !== 'grouped') return
         if (!selectedIcon) return
-        if (lastScrolledIconRef.current === selectedIcon.fullName) return
-        lastScrolledIconRef.current = selectedIcon.fullName
+        // Only scroll when the current icon is the same as the
+        // initial one (i.e. the page was opened with that icon in
+        // the URL). User clicks on other icons won't trigger a
+        // scroll — they're already looking at them.
+        if (selectedIcon.fullName !== initialIconName) return
         setActiveCategory(selectedIcon.category)
-    }, [selectedIcon, setActiveCategory, viewMode])
+    }, [selectedIcon, setActiveCategory, viewMode, initialIconName])
 
     useEffect(() => {
         if (viewMode !== 'grouped') return
