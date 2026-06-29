@@ -2,7 +2,7 @@
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
-import { useAtom, useAtomValue } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import type { GridProps, ListProps } from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
@@ -11,6 +11,7 @@ import {
     displayedIconsAtom,
     filteredIconsAtom,
     useSearchKeyword,
+    useSelectedIcon,
     useViewModeURL,
 } from './context'
 import { IconCard } from './IconCard'
@@ -33,6 +34,8 @@ export const IconGridVirtualized: React.FC = () => {
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
     const viewMode = useViewModeURL()[0]
     const activeCategory = useAtomValue(activeCategoryAtom)
+    const selectedIcon = useSelectedIcon()
+    const setActiveCategory = useSetAtom(activeCategoryAtom)
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
 
@@ -98,6 +101,23 @@ export const IconGridVirtualized: React.FC = () => {
         return positions
     }, [rows])
 
+    // When the user opens a shared link (`?icon=home&style=bold`),
+    // the selected icon's category is set as the active one on the
+    // first render that has a selected icon. The scroll-to-category
+    // useEffect below then scrolls the `List` so the icon's section
+    // is in view (and the sidebar highlights the right entry). We
+    // track the last scrolled `fullName` to avoid re-scrolling on
+    // every render — only on a real change (new URL, new icon).
+    const lastScrolledIconRef = useRef<string | null>(null)
+    const hasMountedRef = useRef(false)
+    useEffect(() => {
+        if (viewMode !== 'grouped') return
+        if (!selectedIcon) return
+        if (lastScrolledIconRef.current === selectedIcon.fullName) return
+        lastScrolledIconRef.current = selectedIcon.fullName
+        setActiveCategory(selectedIcon.category)
+    }, [selectedIcon, setActiveCategory, viewMode])
+
     useEffect(() => {
         if (viewMode !== 'grouped') return
         if (!activeCategory) return
@@ -128,6 +148,15 @@ export const IconGridVirtualized: React.FC = () => {
             // `recomputeRowHeights()` invalidates the height cache and
             // makes the next render use the new positions. Deferred to
             // the next frame so the `rows` memo has been applied first.
+            //
+            // Skip on the initial mount: the scroll-to-icon useEffect
+            // already handles the initial scroll (to the icon's
+            // section). Otherwise we'd briefly flash to position 0
+            // before scrolling to the section.
+            if (!hasMountedRef.current) {
+                hasMountedRef.current = true
+                return
+            }
             const rafId = requestAnimationFrame(() => {
                 listRef.current?.recomputeRowHeights()
                 listRef.current?.scrollToPosition(0)
