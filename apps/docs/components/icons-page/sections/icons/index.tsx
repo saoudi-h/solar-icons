@@ -1,4 +1,5 @@
 'use client'
+import { ScrollFade } from '@/components/ui/scroll-fade'
 import { cn } from '@/lib/utils'
 import { CategoryNav } from './CategoryNav'
 import { ShowcaseProvider, useStyleURL, WeightNamespaceProvider } from './context'
@@ -53,13 +54,15 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                       sticky top-4 hidden w-50 shrink-0 pr-1
                                       md:block
                                     ">
-                                    <div
-                                        className="
-                                          max-h-[calc(100dvh-7rem)]
-                                          overflow-y-auto pr-1
-                                        ">
+                                    {/* h-full fills the aside (which is
+                                        stretched to the flex row's height
+                                        by align-items: stretch). The
+                                        content scrolls inside. */}
+                                    <ScrollFade fadeSize={20} className="
+                                      h-full pr-1
+                                    ">
                                         <CategoryNav />
-                                    </div>
+                                    </ScrollFade>
                                 </aside>
                                 <div className="min-w-0 flex-1">
                                     <IconGridVirtualized />
