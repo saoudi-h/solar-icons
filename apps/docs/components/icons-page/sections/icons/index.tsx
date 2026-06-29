@@ -50,11 +50,16 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                 <aside
                                     aria-label="Categories navigation"
                                     className="
-                                      sticky top-4 hidden w-50 shrink-0
-                                      self-start pr-1
+                                      sticky top-4 hidden w-50 shrink-0 pr-1
                                       md:block
                                     ">
-                                    <CategoryNav />
+                                    <div
+                                        className="
+                                          max-h-[calc(100dvh-7rem)]
+                                          overflow-y-auto pr-1
+                                        ">
+                                        <CategoryNav />
+                                    </div>
                                 </aside>
                                 <div className="min-w-0 flex-1">
                                     <IconGridVirtualized />
