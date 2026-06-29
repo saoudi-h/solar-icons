@@ -146,29 +146,28 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                         className={cn(
                             `
                               pointer-events-none absolute inset-y-0 left-0
-                              bg-foreground/10 text-center
+                              bg-foreground/10
                             `,
                             !isDragging && 'transition-[width] duration-150'
                         )}
                         style={{ width: `${fillPercent}%` }}
                     />
-                    <span
+                    <div
                         className="
-                          relative inline-block text-xs font-medium
-                          text-muted-foreground
+                          relative text-xs font-medium text-muted-foreground
                         ">
                         {label}
-                    </span>
-                    <span
+                    </div>
+                    <div
                         className={cn(
-                            'relative font-mono text-sm tabular-nums',
-                            isModified ? 'text-foreground' : `
-                              text-foreground/80
-                            `
+                            `relative font-mono text-sm tabular-nums`,
+                            isModified
+                                ? 'text-foreground'
+                                : `text-foreground/80`
                         )}>
                         {displayValue}
                         {unit}
-                    </span>
+                    </div>
                 </div>
             </TooltipTrigger>
             <TooltipContent>

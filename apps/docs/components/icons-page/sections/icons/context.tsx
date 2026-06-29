@@ -112,6 +112,12 @@ export function useViewModeURL() {
     return useQueryState('view', parseAsStringLiteral(['grouped', 'flat']).withDefault('flat'))
 }
 
+export {
+    useWeightNamespace,
+    useWeightNamespaceContext,
+    WeightNamespaceProvider,
+} from './weight-namespace'
+
 /**
  * Base name of the icon currently open in the detail panel
  * (`?icon=home`). The URL is the source of truth — the full

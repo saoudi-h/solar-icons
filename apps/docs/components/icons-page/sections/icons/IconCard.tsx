@@ -2,19 +2,40 @@ import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { forwardRef } from 'react'
-import { splitFullIconName, useSelectedIcon, useSelectedIconName, useStyleURL } from './context'
+import {
+    splitFullIconName,
+    useSelectedIcon,
+    useSelectedIconName,
+    useStyleURL,
+    useWeightNamespaceContext,
+} from './context'
 
-type IconCardProps = IconData
+type IconCardProps = Omit<IconData, 'Icon'>
+
+/**
+ * Convert an icon base name (kebab-case, e.g. `home-add`) to the
+ * component name as exported by the per-weight namespaces
+ * (PascalCase + `Icon` suffix, e.g. `HomeAddIcon`). The namespace
+ * object exposes them as `Namespace.HomeAddIcon`, so the lookup
+ * is `Namespace[toComponentName(name)]`.
+ */
+function toComponentName(name: string): string {
+    return (
+        name
+            .split('-')
+            .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+            .join('') + 'Icon'
+    )
+}
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
-    (
-        { name, Icon, tags: _tags, category: _category, categoryTags: _categoryTags, ...props },
-        ref
-    ) => {
+    ({ name, tags: _tags, category: _category, categoryTags: _categoryTags, ...props }, ref) => {
         const [, setIconName] = useSelectedIconName()
         const [, setStyleURL] = useStyleURL()
         const selectedIcon = useSelectedIcon()
         const [weight] = useStyleURL()
+        const ns = useWeightNamespaceContext()
+        const Icon = ns?.[toComponentName(name)]
         const isSelected = selectedIcon?.name === name
         const handleClick = () => {
             const split = splitFullIconName(name)
@@ -26,14 +47,25 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
             }
         }
 
-        // A 150ms opacity-only fade is much less fatiguing on a grid of
-        // 200+ icons than the previous scale+opacity pop (300ms). The
-        // scale transform was also causing a small stutter on Firefox
-        // because it forces a new compositing layer on every mount.
-        // We skip the animation entirely (duration: 0) when the user
-        // has the OS-level "reduce motion" preference enabled.
         const reduceMotion = useReducedMotion()
         const enterDuration = reduceMotion ? 0 : 0.15
+
+        // The namespace chunk for the current weight hasn't loaded
+        // yet (first render or weight switch). Render a skeleton
+        // placeholder of the same shape so the grid doesn't shift
+        // when the real icon lands.
+        if (!Icon) {
+            return (
+                <div
+                    ref={ref}
+                    style={{ width: 120, height: 120 }}
+                    className="
+                      flex flex-col items-center justify-center gap-2 rounded-lg
+                    "
+                    aria-hidden="true"
+                />
+            )
+        }
 
         return (
             <motion.div
