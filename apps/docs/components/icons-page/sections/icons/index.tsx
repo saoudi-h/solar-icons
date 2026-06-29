@@ -5,7 +5,6 @@ import { ShowcaseProvider } from './context'
 import { FilterBar } from './FilterBar'
 import { IconDetail } from './icon-detail'
 import { IconGridVirtualized } from './IconGrid'
-import { InitState } from './InitState'
 
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     return (
@@ -28,7 +27,6 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                           relative flex h-full flex-1 flex-col gap-4 rounded-xl
                           p-4
                         `}>
-                        <InitState />
                         <FilterBar
                             drawerExtras={
                                 <>
