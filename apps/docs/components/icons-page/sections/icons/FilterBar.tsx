@@ -172,13 +172,12 @@ export const FilterBarContent: React.FC = () => {
 export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
     return (
         <>
-            <div
-                className={`
-                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl
-                  border border-border bg-default-50 p-2 shadow-xs
-                  md:flex
-                  dark:bg-default-100
-                `}>
+            <div className="
+              z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl border
+              border-border bg-default-50 p-2 shadow-xs
+              md:flex
+              dark:bg-default-100
+            ">
                 <FilterBarContent />
             </div>
 
@@ -189,25 +188,25 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                             initial={{ x: 0 }}
                             whileTap={{ scale: 0.9 }}
                             whileHover={{ x: -10 }}
-                            className={`
+                            className="
                               fixed top-80 right-[-20px] z-50 h-12 w-20
                               rounded-none rounded-l-full border border-border
                               bg-default-200 p-2 text-foreground/70 shadow-md
                               transition-colors
                               hover:text-foreground
-                            `}>
+                            ">
                             <SettingsIcon className="size-8" isolated />
                         </motion.button>
                         <span className="sr-only">Open settings</span>
                     </DrawerTrigger>
                     <DrawerContent
-                        className={`
+                        className="
                           fixed! inset-y-2! right-2! z-50 flex! w-72!
                           overflow-y-auto rounded-xl border border-border
                           bg-default-50/90 p-2 shadow-xs backdrop-blur-sm
                           outline-none!
                           dark:bg-default-100/80
-                        `}
+                        "
                         style={
                             { '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties
                         }>

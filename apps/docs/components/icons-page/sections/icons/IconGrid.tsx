@@ -36,8 +36,14 @@ export const IconGridVirtualized: React.FC = () => {
     const activeCategory = useAtomValue(activeCategoryAtom)
     const selectedIcon = useSelectedIcon()
     const setActiveCategory = useSetAtom(activeCategoryAtom)
-    const [width, setWidth] = useState(0)
-    const [height, setHeight] = useState(0)
+    // Default to a viewport-friendly height on the server so the
+    // grid container doesn't render at 0px and cause a layout
+    // shift when the client-side `useEffect` measures the real
+    // viewport. The client `handleResize` refines the value on
+    // mount to the actual `window.innerHeight - top - 20`; the
+    // residual shift is small (and zero on common viewports).
+    const [width, setWidth] = useState(1024)
+    const [height, setHeight] = useState(600)
 
     useEffect(() => {
         const results = searchIcons({ keyword, categories: [] })

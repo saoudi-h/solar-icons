@@ -146,7 +146,7 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                         className={cn(
                             `
                               pointer-events-none absolute inset-y-0 left-0
-                              bg-foreground/10
+                              bg-foreground/10 text-center
                             `,
                             !isDragging && 'transition-[width] duration-150'
                         )}
@@ -154,16 +154,17 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                     />
                     <span
                         className="
-                          relative text-xs font-medium text-muted-foreground
+                          relative inline-block text-xs font-medium
+                          text-muted-foreground
                         ">
                         {label}
                     </span>
                     <span
                         className={cn(
                             'relative font-mono text-sm tabular-nums',
-                            isModified
-                                ? 'text-foreground'
-                                : `text-foreground/80`
+                            isModified ? 'text-foreground' : `
+                              text-foreground/80
+                            `
                         )}>
                         {displayValue}
                         {unit}
