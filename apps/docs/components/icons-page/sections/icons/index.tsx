@@ -47,17 +47,28 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                     </>
                                 }
                             />
-                            <div className="flex flex-1 gap-4">
+                            {/* Fixed-height frame for the sidebar + grid
+                                row. The previous `flex-1` let the
+                                container grow with the content
+                                (categories list > viewport -> no
+                                scroll), defeating the whole point of
+                                the layout. A fixed height capped at
+                                `100dvh - 7rem` (viewport minus the
+                                FilterBar + wrapper padding + gap)
+                                gives the sidebar and the grid the
+                                same constrained frame; both scroll
+                                internally when their content overflows. */}
+                            <div
+                                className="
+                                  flex h-[calc(100dvh-7rem)] gap-4
+                                  overflow-hidden
+                                ">
                                 <aside
                                     aria-label="Categories navigation"
                                     className="
                                       sticky top-4 hidden w-50 shrink-0 pr-1
                                       md:block
                                     ">
-                                    {/* h-full fills the aside (which is
-                                        stretched to the flex row's height
-                                        by align-items: stretch). The
-                                        content scrolls inside. */}
                                     <ScrollFade fadeSize={20} className="
                                       h-full pr-1
                                     ">
