@@ -25,7 +25,19 @@ type GridRow =
     | { kind: 'header'; category: string; count: number }
     | { kind: 'icons'; category: string; icons: IconData[] }
 
-export const IconGridVirtualized: React.FC = () => {
+interface IconGridVirtualizedProps {
+    /**
+     * Called whenever the grid wrapper's measured height changes
+     * (mount, resize, etc.). The height is
+     * `window.innerHeight - <wrapper top> - 20` — the same value
+     * the wrapper uses internally for its scroll viewport. Lets a
+     * sibling (the categories sidebar) match the grid height
+     * exactly without a magic number.
+     */
+    onHeightChange?: (height: number) => void
+}
+
+export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeightChange }) => {
     const gridRef = useRef<Grid>(null)
     const listRef = useRef<List>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
@@ -55,13 +67,16 @@ export const IconGridVirtualized: React.FC = () => {
         const el = wrapperRef.current
         if (!el) return
         const handleResize = () => {
+            const rect = el.getBoundingClientRect()
             setWidth(el.offsetWidth)
-            setHeight(window.innerHeight - el.getBoundingClientRect().top - 20)
+            const h = window.innerHeight - rect.top - 20
+            setHeight(h)
+            onHeightChange?.(h)
         }
         handleResize()
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    }, [onHeightChange])
 
     const columnCount = Math.max(1, Math.floor(width / ICON_CELL))
 

@@ -1,6 +1,7 @@
 'use client'
 import { ScrollFade } from '@/components/ui/scroll-fade'
 import { cn } from '@/lib/utils'
+import { useState } from 'react'
 import { CategoryNav } from './CategoryNav'
 import { ShowcaseProvider, useStyleURL, WeightNamespaceProvider } from './context'
 import { FilterBar } from './FilterBar'
@@ -9,6 +10,13 @@ import { IconGridVirtualized } from './IconGrid'
 
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [weight] = useStyleURL()
+    // The grid measures its own height
+    // (`window.innerHeight - <wrapper top> - 20`) and reports it
+    // back via `onHeightChange`. We use that exact value as the
+    // height of the sidebar+grid row so the two scrollable panels
+    // are pixel-identical — no `calc(100dvh - 7rem)` magic
+    // number, no 3-categories-too-tall mismatch.
+    const [gridHeight, setGridHeight] = useState(0)
 
     return (
         <WeightNamespaceProvider weight={weight}>
@@ -47,22 +55,11 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                     </>
                                 }
                             />
-                            {/* Fixed-height frame for the sidebar + grid
-                                row. The previous `flex-1` let the
-                                container grow with the content
-                                (categories list > viewport -> no
-                                scroll), defeating the whole point of
-                                the layout. A fixed height capped at
-                                `100dvh - 7rem` (viewport minus the
-                                FilterBar + wrapper padding + gap)
-                                gives the sidebar and the grid the
-                                same constrained frame; both scroll
-                                internally when their content overflows. */}
                             <div
-                                className="
-                                  flex h-[calc(100dvh-7rem)] gap-4
-                                  overflow-hidden
-                                ">
+                                className="flex gap-4 overflow-hidden"
+                                style={{
+                                    height: gridHeight > 0 ? `${gridHeight}px` : undefined,
+                                }}>
                                 <aside
                                     aria-label="Categories navigation"
                                     className="
@@ -76,7 +73,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                     </ScrollFade>
                                 </aside>
                                 <div className="min-w-0 flex-1">
-                                    <IconGridVirtualized />
+                                    <IconGridVirtualized onHeightChange={setGridHeight} />
                                 </div>
                             </div>
                             <IconDetail />
