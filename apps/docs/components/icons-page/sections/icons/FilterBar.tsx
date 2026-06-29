@@ -8,13 +8,12 @@ import {
     DrawerTrigger,
 } from '@/components/ui/drawer'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { useScreen } from '@/lib/screens'
 import { useSolar } from '@solar-icons/react'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { SettingsIcon } from '@solar-icons/react/linear/settings'
 import { motion } from 'framer-motion'
 import { useAtom, useSetAtom } from 'jotai'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
 import { GeometryControl } from './GeometryControl'
@@ -163,8 +162,32 @@ export const FilterBarContent: React.FC = () => {
     )
 }
 
+/**
+ * Default to `true` (desktop) for the first render — the FilterBar's
+ * mobile variant is a side drawer with a trigger button. The
+ * previous `useScreen('md')` defaulted to `false` (no matchMedia
+ * on the server), so the SSR shipped the mobile variant and the
+ * drawer trigger flashed on the right edge for one frame on
+ * desktop before the client measured the viewport and switched
+ * to the inline desktop variant. Defaulting to desktop hides
+ * the flash for the majority of users; mobile users get the
+ * inverse flash (desktop → mobile) which is the same duration
+ * and far less common on a docs site.
+ */
+function useIsDesktop(breakpointPx = 768) {
+    return useSyncExternalStore(
+        callback => {
+            const mq = window.matchMedia(`(min-width: ${breakpointPx}px)`)
+            mq.addEventListener('change', callback)
+            return () => mq.removeEventListener('change', callback)
+        },
+        () => window.matchMedia(`(min-width: ${breakpointPx}px)`).matches,
+        () => true // SSR default: render the desktop variant
+    )
+}
+
 export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
-    const isDesktop = useScreen('md')
+    const isDesktop = useIsDesktop()
 
     if (isDesktop) {
         return (
