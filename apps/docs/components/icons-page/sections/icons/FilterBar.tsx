@@ -13,7 +13,7 @@ import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { SettingsIcon } from '@solar-icons/react/linear/settings'
 import { motion } from 'framer-motion'
 import { useAtom, useSetAtom } from 'jotai'
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
 import { GeometryControl } from './GeometryControl'
@@ -163,78 +163,64 @@ export const FilterBarContent: React.FC = () => {
 }
 
 /**
- * Default to `true` (desktop) for the first render — the FilterBar's
- * mobile variant is a side drawer with a trigger button. The
- * previous `useScreen('md')` defaulted to `false` (no matchMedia
- * on the server), so the SSR shipped the mobile variant and the
- * drawer trigger flashed on the right edge for one frame on
- * desktop before the client measured the viewport and switched
- * to the inline desktop variant. Defaulting to desktop hides
- * the flash for the majority of users; mobile users get the
- * inverse flash (desktop → mobile) which is the same duration
- * and far less common on a docs site.
+ * Both variants are in the DOM; CSS picks the visible one
+ * (`hidden md:flex` for the desktop bar, `md:hidden` for the
+ * mobile drawer + trigger). No JS to read the viewport, no flash
+ * on the first render, no hydration mismatch — the server and
+ * the first client render produce the same markup.
  */
-function useIsDesktop(breakpointPx = 768) {
-    return useSyncExternalStore(
-        callback => {
-            const mq = window.matchMedia(`(min-width: ${breakpointPx}px)`)
-            mq.addEventListener('change', callback)
-            return () => mq.removeEventListener('change', callback)
-        },
-        () => window.matchMedia(`(min-width: ${breakpointPx}px)`).matches,
-        () => true // SSR default: render the desktop variant
-    )
-}
-
 export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
-    const isDesktop = useIsDesktop()
-
-    if (isDesktop) {
-        return (
+    return (
+        <>
             <div
                 className={`
-                  z-20 flex w-full flex-wrap items-center gap-2 rounded-xl
+                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl
                   border border-border bg-default-50 p-2 shadow-xs
+                  md:flex
                   dark:bg-default-100
                 `}>
                 <FilterBarContent />
             </div>
-        )
-    }
 
-    return (
-        <Drawer direction="right" modal={true}>
-            <DrawerTrigger>
-                <motion.button
-                    initial={{ x: 0 }}
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ x: -10 }}
-                    className={`
-                      fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none
-                      rounded-l-full border border-border bg-default-200 p-2
-                      text-foreground/70 shadow-md transition-colors
-                      hover:text-foreground
-                    `}>
-                    <SettingsIcon className="size-8" isolated />
-                </motion.button>
-                <span className="sr-only">Open settings</span>
-            </DrawerTrigger>
-            <DrawerContent
-                className={`
-                  fixed! inset-y-2! right-2! z-50 flex! w-72! overflow-y-auto
-                  rounded-xl border border-border bg-default-50/90 p-2 shadow-xs
-                  backdrop-blur-sm outline-none!
-                  dark:bg-default-100/80
-                `}
-                style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>
-                <DrawerHeader>
-                    <DrawerTitle>Icon Filters</DrawerTitle>
-                </DrawerHeader>
-                <div className="flex flex-col gap-2">
-                    <FilterBarContent />
-                    {drawerExtras}
-                </div>
-            </DrawerContent>
-        </Drawer>
+            <div className="md:hidden">
+                <Drawer direction="right" modal={true}>
+                    <DrawerTrigger>
+                        <motion.button
+                            initial={{ x: 0 }}
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ x: -10 }}
+                            className={`
+                              fixed top-80 right-[-20px] z-50 h-12 w-20
+                              rounded-none rounded-l-full border border-border
+                              bg-default-200 p-2 text-foreground/70 shadow-md
+                              transition-colors
+                              hover:text-foreground
+                            `}>
+                            <SettingsIcon className="size-8" isolated />
+                        </motion.button>
+                        <span className="sr-only">Open settings</span>
+                    </DrawerTrigger>
+                    <DrawerContent
+                        className={`
+                          fixed! inset-y-2! right-2! z-50 flex! w-72!
+                          overflow-y-auto rounded-xl border border-border
+                          bg-default-50/90 p-2 shadow-xs backdrop-blur-sm
+                          outline-none!
+                          dark:bg-default-100/80
+                        `}
+                        style={
+                            { '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties
+                        }>
+                        <DrawerHeader>
+                            <DrawerTitle>Icon Filters</DrawerTitle>
+                        </DrawerHeader>
+                        <div className="flex flex-col gap-2">
+                            <FilterBarContent />
+                            {drawerExtras}
+                        </div>
+                    </DrawerContent>
+                </Drawer>
+            </div>
+        </>
     )
 }
