@@ -93,16 +93,42 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   for free.
 - The categories sidebar and the icon grid sit in a row
   with height driven by the grid's measured
-  `window.innerHeight - <top> - 56` (the `- 56` is the
-  Fumadocs header height, the user's manual fix; tighter
-  than the previous `- 20` padding guess). The row is
-  `flex gap-4 overflow-hidden` and the height is
+  `window.innerHeight - <top> - 56 - detailHeight`. The
+  `56` is the Fumadocs header height (the user's manual
+  fix; tighter than the previous `- 20` padding guess).
+  The `detailHeight` is the live pixel height of the
+  bottom `<IconDetail>` panel, reported by its
+  `FloatingDrawer`'s `ResizeObserver` (DOCS-UI-02). The row
+  is `flex gap-4 overflow-hidden` and the height is
   communicated from the grid up to the parent via an
   `onHeightChange` prop on `<IconGridVirtualized>` — no
   magic number on the row itself. The sidebar has
   `overflow-y-auto` for its internal scroll, the grid
   uses `<List>` (grouped) or `<Grid>` (flat) from
   `react-virtualized`.
+- **`<IconDetail>` floating drawer height reconciliation
+  (DOCS-UI-02).** The detail panel is rendered at the
+  bottom of the page (sticky + `max-h-[calc(50vh)]`,
+  `min-h-48`). It is in normal flow, so opening it
+  historically grew the page beyond the available space
+  and either (a) added a page-level scroll on the
+  `<main>`, or (b) clipped the bottom of the grid +
+  sidebar when forced into a fixed-height shell. The fix:
+  the `FloatingDrawer` measures its own height with a
+  `ResizeObserver` and reports it via an `onHeightChange`
+  prop, which the `IconShowcase` stores as
+  `detailHeight` and passes to `<IconGridVirtualized>`.
+  The grid subtracts it from its
+  `window.innerHeight - top - 56` measurement, so the
+  grid + categories sidebar shrink by exactly the
+  panel's height when it opens — both remain fully
+  scrollable and the last row of icons + the last
+  category stay reachable. The `IconGrid` re-measures on
+  every `detailHeight` change via a `requestAnimationFrame`
+  to avoid stale `rect.top` values during the layout
+  shift. The drawer also reports `0` on close (via a
+  separate `useEffect` watching `selectedIcon`) so the
+  grid can reclaim the space.
 - No fade affordance on the icons page. A previous
   `ScrollFade` component (`components/ui/scroll-fade.tsx`,
   since deleted) used `mask-image` with dynamic opacity;

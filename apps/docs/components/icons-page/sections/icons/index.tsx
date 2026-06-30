@@ -10,12 +10,18 @@ import { IconGridVirtualized } from './IconGrid'
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [weight] = useStyleURL()
     // The grid measures its own height
-    // (`window.innerHeight - <wrapper top> - 56` in IconGrid)
-    // and reports it back via `onHeightChange`. We use that exact
-    // value as the height of the sidebar+grid row so the two
-    // scrollable panels are pixel-identical — no `calc(100dvh -
-    // 7rem)` magic number, no 3-categories-too-tall mismatch.
+    // (`window.innerHeight - <wrapper top> - 56 - detailHeight` in
+    // `IconGrid`) and reports it back via `onHeightChange`. We use
+    // that exact value as the height of the sidebar+grid row so the
+    // two scrollable panels are pixel-identical — no
+    // `calc(100dvh - 7rem)` magic number, no 3-categories-too-tall
+    // mismatch. The `detailHeight` offset is reported by the
+    // `IconDetail`'s `FloatingDrawer` via a `ResizeObserver`; when
+    // the drawer opens, the grid shrinks by exactly its height so
+    // the last row of icons + the last sidebar category stay
+    // reachable inside the row's native scroll. See DOCS-UI-02.
     const [gridHeight, setGridHeight] = useState(0)
+    const [detailHeight, setDetailHeight] = useState(0)
 
     return (
         <WeightNamespaceProvider weight={weight}>
@@ -69,10 +75,13 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                     <CategoryNav />
                                 </aside>
                                 <div className="min-w-0 flex-1">
-                                    <IconGridVirtualized onHeightChange={setGridHeight} />
+                                    <IconGridVirtualized
+                                        onHeightChange={setGridHeight}
+                                        detailHeight={detailHeight}
+                                    />
                                 </div>
                             </div>
-                            <IconDetail />
+                            <IconDetail onHeightChange={setDetailHeight} />
                         </div>
                     </div>
                 </section>

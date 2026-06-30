@@ -19,9 +19,20 @@ import { SvelteCode } from './SvelteCode'
 import { Tags } from './Tags'
 import { VueCode } from './VueCode'
 
-export function IconDetail() {
+export interface IconDetailProps {
+    /**
+     * Forwarded to {@link FloatingDrawer}. The parent uses the
+     * drawer's measured height to shrink the icon grid + categories
+     * sidebar by the same amount, keeping both fully scrollable
+     * when the detail panel is open at the bottom of the layout.
+     * See DOCS-UI-02 in `.autonomos/TASKS.md`.
+     */
+    onHeightChange?: (height: number) => void
+}
+
+export function IconDetail({ onHeightChange }: IconDetailProps = {}) {
     return (
-        <FloatingDrawer>
+        <FloatingDrawer onHeightChange={onHeightChange}>
             <Content />
         </FloatingDrawer>
     )

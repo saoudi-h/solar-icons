@@ -3,7 +3,7 @@ import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { GridProps, ListProps } from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
 import {
@@ -28,16 +28,30 @@ type GridRow =
 interface IconGridVirtualizedProps {
     /**
      * Called whenever the grid wrapper's measured height changes
-     * (mount, resize, etc.). The height is
-     * `window.innerHeight - <wrapper top> - 20` — the same value
-     * the wrapper uses internally for its scroll viewport. Lets a
-     * sibling (the categories sidebar) match the grid height
-     * exactly without a magic number.
+     * (mount, resize, detail panel open/close). The height is
+     * `window.innerHeight - <wrapper top> - 56 - detailHeight` —
+     * the same value the wrapper uses internally for its scroll
+     * viewport, minus the floating detail panel's height (when
+     * open) so the grid + categories sidebar shrink by the
+     * exact amount the panel needs. Lets a sibling (the
+     * categories sidebar) match the grid height exactly
+     * without a magic number. See DOCS-UI-02.
      */
     onHeightChange?: (height: number) => void
+    /**
+     * Pixel height of the bottom `<IconDetail>` panel, reported
+     * by its `FloatingDrawer`'s `ResizeObserver`. Subtracted
+     * from the grid's available height so the last row of icons
+     * stays reachable inside the grid's native scroll even when
+     * the detail panel is open. 0 when the panel is closed.
+     */
+    detailHeight?: number
 }
 
-export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeightChange }) => {
+export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
+    onHeightChange,
+    detailHeight = 0,
+}) => {
     const gridRef = useRef<Grid>(null)
     const listRef = useRef<List>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
@@ -51,11 +65,23 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
     // Default to a viewport-friendly height on the server so the
     // grid container doesn't render at 0px and cause a layout
     // shift when the client-side `useEffect` measures the real
-    // viewport. The client `handleResize` refines the value on
-    // mount to the actual `window.innerHeight - top - 20`; the
-    // residual shift is small (and zero on common viewports).
+    // viewport. The client `measure` callback refines the value on
+    // mount to the actual
+    // `window.innerHeight - top - 56 - detailHeight`; the residual
+    // shift is small (and zero on common viewports).
     const [width, setWidth] = useState(1024)
     const [height, setHeight] = useState(1024)
+
+    // Mirror `detailHeight` into a ref so the resize listener
+    // (registered once on mount) can read the latest value without
+    // forcing a re-subscribe on every panel height change. The
+    // `useEffect` on `[detailHeight, measure]` below handles the
+    // actual re-measure by calling `measure` directly with the
+    // current prop value.
+    const detailHeightRef = useRef(detailHeight)
+    useEffect(() => {
+        detailHeightRef.current = detailHeight
+    }, [detailHeight])
 
     useEffect(() => {
         const results = searchIcons({ keyword, categories: [] })
@@ -63,20 +89,42 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
         setDisplayedIcons(results)
     }, [keyword, setFilteredIcons, setDisplayedIcons])
 
-    useEffect(() => {
+    // The measure callback is the single source of truth for the
+    // grid's height. Called on mount, on `window.resize`, and
+    // imperatively from the `[detailHeight, measure]` effect below
+    // when the floating detail panel opens / closes / animates.
+    // The `56` is the Fumadocs header height (the user's manual
+    // fix, tighter than the previous `- 20` padding guess). The
+    // `detailHeight` offset is the live height of the bottom
+    // detail panel — subtracting it from the available height
+    // keeps the grid + categories sidebar fully scrollable when
+    // the panel is open.
+    const measure = useCallback(() => {
         const el = wrapperRef.current
         if (!el) return
-        const handleResize = () => {
-            const rect = el.getBoundingClientRect()
-            setWidth(el.offsetWidth)
-            const h = window.innerHeight - rect.top - 56
-            setHeight(h)
-            onHeightChange?.(h)
-        }
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+        const rect = el.getBoundingClientRect()
+        setWidth(el.offsetWidth)
+        const h = window.innerHeight - rect.top - 56 - detailHeightRef.current
+        setHeight(h)
+        onHeightChange?.(h)
     }, [onHeightChange])
+
+    useEffect(() => {
+        measure()
+        window.addEventListener('resize', measure)
+        return () => window.removeEventListener('resize', measure)
+    }, [measure])
+
+    // Re-measure whenever the detail panel's height changes
+    // (open, close, animation, weight switch, resize, content
+    // swap). Deferred to the next frame so the parent's state
+    // update from the panel's `ResizeObserver` has settled into
+    // the DOM, otherwise the grid's `rect.top` could be read on
+    // the layout shift frame and report a stale value.
+    useEffect(() => {
+        const rafId = requestAnimationFrame(measure)
+        return () => cancelAnimationFrame(rafId)
+    }, [detailHeight, measure])
 
     const columnCount = Math.max(1, Math.floor(width / ICON_CELL))
 

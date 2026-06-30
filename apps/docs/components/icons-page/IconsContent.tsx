@@ -4,11 +4,17 @@ import { IconShowcase } from './sections/icons'
 
 export function IconsContent() {
     return (
-        // h-dvh + overflow-hidden pins the page to exactly the
-        // viewport — no page-level scroll. The two scrollable
+        // `flex-1` (in a flex-col parent — the HomeLayout) plus
+        // `overflow-hidden` pins the page to exactly its parent
+        // height — no page-level scroll. The two scrollable
         // frames (categories sidebar + icon grid) handle their
-        // own scrolling inside this fixed box. Below the fold is
-        // empty padding only, never content.
+        // own scrolling inside this fixed box. The bottom
+        // `<IconDetail>` is also rendered inside this fixed box
+        // and reports its height to the grid, which subtracts
+        // it from its measured height so the grid + sidebar
+        // shrink by the exact amount the panel needs (see
+        // DOCS-UI-02). Below the fold is empty padding only,
+        // never content.
         <main
             className="
               relative flex w-full flex-1 flex-col justify-start gap-9
