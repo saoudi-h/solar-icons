@@ -1,68 +1,103 @@
 ---
 title: React Migration
-description: Upgrade @solar-icons/react to v3.
+description: Upgrade from @solar-icons/react or @solar-icons/react-perf to v3.
 icon: react
 ---
 
-## Package
+Pick your starting point:
 
-`@solar-icons/react-perf` becomes `@solar-icons/react`. The old `@solar-icons/react` (dynamic-switching) is now accessed via `@solar-icons/react/dynamic`.
+## From `@solar-icons/react-perf`
+
+`react-perf` was the classic package — one style per component, tree-shakable, no dynamic switching. In v3, this model becomes the default.
+
+### Package
 
 ```bash
 npm uninstall @solar-icons/react-perf
 npm install @solar-icons/react
 ```
 
-## Import paths
+### Component naming
 
-Kebab-case style directories:
+Add `Icon` suffix. The style suffix depends on the import path:
 
-**Before:**
+**Before (top-level):**
 
 ```jsx
-import { Home } from '@solar-icons/react/Bold'
+import { HomeBold, SettingsLinear } from '@solar-icons/react-perf'
+;<HomeBold color="green" size={24} />
+```
+
+**After (top-level):**
+
+```jsx
+import { HomeBoldIcon } from '@solar-icons/react'
+;<HomeBoldIcon color="green" size={24} />
+```
+
+**Before (per-style):**
+
+```jsx
+import { Home } from '@solar-icons/react-perf/bold'
+;<Home size={24} />
 ```
 
 **After (per-style):**
 
 ```jsx
 import { HomeIcon } from '@solar-icons/react/bold'
+;<HomeIcon size={24} />
 ```
 
-**After (top-level, all styles):**
+### Import paths
+
+Style directories use kebab-case: `Bold` → `bold`, `BoldDuotone` → `bold-duotone`.
+
+### `mirrored` removed
 
 ```jsx
-import { HomeBoldIcon } from '@solar-icons/react'
+// Before
+<ArrowRight mirrored />
+
+// After
+<ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
 ```
 
-## Component naming
+### `size` default changed
 
-When the style is in the import path, the name drops the style suffix:
+Default was `1em`, now `24px`. Explicit sizes work as before.
 
-| Before       | After                                                            |
-| ------------ | ---------------------------------------------------------------- |
-| `Home`       | `HomeIcon` (per-style) or `HomeBoldIcon` (top-level)             |
-| `ArrowRight` | `ArrowRightIcon` (per-style) or `ArrowRightBoldIcon` (top-level) |
+### New features
 
-## `weight` prop removed
+`SolarProvider`, `secondaryColor`/`secondaryOpacity` for duotone, and `strokeWidth` are now available. See the [React package page](/docs/v3/packages/react).
 
-Use dynamic import for runtime switching:
+---
 
-**Before:**
+## From `@solar-icons/react` (dynamic)
+
+The old `@solar-icons/react` was the dynamic package — all six styles per component, runtime switching via `weight`. In v3, this is accessed from the `dynamic` import path.
+
+### Package
+
+Same package, different import path:
 
 ```jsx
+// Before
 import { Heart } from '@solar-icons/react'
 ;<Heart weight="Bold" />
 ```
 
-**After:**
-
 ```jsx
+// After
 import { HeartIcon } from '@solar-icons/react/dynamic'
 ;<HeartIcon weight="Bold" />
 ```
 
-## Category imports removed
+### Component naming
+
+Add `Icon` suffix: `Home` → `HomeIcon`.
+
+### Category imports removed
 
 **Before:**
 
@@ -74,25 +109,11 @@ import { Arrows } from '@solar-icons/react/category'
 **After:**
 
 ```jsx
-import { ArrowUpIcon } from '@solar-icons/react/bold/arrow-up'
-;<ArrowUpIcon />
+import { ArrowUpIcon } from '@solar-icons/react/dynamic/arrow-up'
+;<ArrowUpIcon weight="Bold" />
 ```
 
-## `mirrored` prop removed
-
-**Before:**
-
-```jsx
-<ArrowRight mirrored />
-```
-
-**After:**
-
-```jsx
-<ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
-```
-
-## SSR subpath removed
+### SSR subpath removed
 
 **Before:**
 
@@ -106,19 +127,6 @@ import { Home } from '@solar-icons/react/ssr'
 import { HomeIcon } from '@solar-icons/react/bold'
 ```
 
-## New: SolarProvider
+### New features
 
-```jsx
-import { SolarProvider } from '@solar-icons/react'
-
-;<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
-    <App />
-</SolarProvider>
-```
-
-## New: Duotone and stroke width
-
-```jsx
-<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
-<SettingsIcon strokeWidth={2} />
-```
+`SolarProvider`, `secondaryColor`/`secondaryOpacity`, and `strokeWidth` are now available. See the [React package page](/docs/v3/packages/react).
