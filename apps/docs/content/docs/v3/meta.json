@@ -6,7 +6,7 @@
     "pages": [
         "index",
         "getting-started",
-        "migration",
+        "migration-to-v3",
         "packages",
         "icon-reference",
         "advanced",

@@ -1,8 +1,0 @@
-{
-    "title": "Migration",
-    "description": "Upgrade from earlier versions to Solar Icons v3.",
-    "icon": "ArrowRightUpIcon",
-    "defaultOpen": true,
-    "root": false,
-    "pages": ["index", "react", "vue", "svelte", "solid", "angular", "react-native", "nuxt"]
-}

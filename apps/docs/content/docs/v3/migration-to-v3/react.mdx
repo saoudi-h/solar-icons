@@ -1,0 +1,63 @@
+---
+title: react → react
+description: Migrate from @solar-icons/react to the v3 dynamic import path.
+icon: react
+---
+
+The old `@solar-icons/react` was the dynamic package — all six styles per component, runtime switching via `weight`. In v3, this is accessed from the `dynamic` import path.
+
+## Import path
+
+Same package, different import path:
+
+**Before:**
+
+```jsx
+import { Heart } from '@solar-icons/react'
+;<Heart weight="Bold" />
+```
+
+**After:**
+
+```jsx
+import { HeartIcon } from '@solar-icons/react/dynamic'
+;<HeartIcon weight="Bold" />
+```
+
+## Component naming
+
+Add `Icon` suffix: `Home` → `HomeIcon`, `ArrowRight` → `ArrowRightIcon`.
+
+## Category imports removed
+
+**Before:**
+
+```jsx
+import { Arrows } from '@solar-icons/react/category'
+;<Arrows.ArrowUp weight="Bold" />
+```
+
+**After:**
+
+```jsx
+import { ArrowUpIcon } from '@solar-icons/react/dynamic/arrow-up'
+;<ArrowUpIcon weight="Bold" />
+```
+
+## SSR subpath removed
+
+**Before:**
+
+```jsx
+import { Home } from '@solar-icons/react/ssr'
+```
+
+**After:**
+
+```jsx
+import { HomeIcon } from '@solar-icons/react/bold'
+```
+
+## New features available
+
+`SolarProvider`, `secondaryColor`/`secondaryOpacity`, and `strokeWidth`. See the [React package page](/docs/v3/packages/react).

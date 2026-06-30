@@ -1,0 +1,68 @@
+---
+title: react-perf → react
+description: Migrate from @solar-icons/react-perf to @solar-icons/react v3.
+icon: react
+---
+
+`react-perf` was the classic package — one style per component, tree-shakable, no dynamic switching, no provider. In v3, this model becomes the default.
+
+## Package
+
+```bash
+npm uninstall @solar-icons/react-perf
+npm install @solar-icons/react
+```
+
+## Component naming
+
+Add `Icon` suffix. The style suffix depends on the import path.
+
+**Before (top-level, style suffix in name):**
+
+```jsx
+import { HomeBold, SettingsLinear } from '@solar-icons/react-perf'
+;<HomeBold color="green" size={24} />
+```
+
+**After:**
+
+```jsx
+import { HomeBoldIcon } from '@solar-icons/react'
+;<HomeBoldIcon color="green" size={24} />
+```
+
+**Before (per-style, no style suffix in name):**
+
+```jsx
+import { Home } from '@solar-icons/react-perf/bold'
+;<Home size={24} />
+```
+
+**After:**
+
+```jsx
+import { HomeIcon } from '@solar-icons/react/bold'
+;<HomeIcon size={24} />
+```
+
+## Import paths
+
+Style directories use kebab-case: `Bold` → `bold`, `LineDuotone` → `line-duotone`.
+
+## `mirrored` removed
+
+```jsx
+// Before
+<ArrowRight mirrored />
+
+// After
+<ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
+```
+
+## `size` default changed
+
+Default was `1em`, now `24px`. Explicit sizes work as before.
+
+## New features available
+
+`SolarProvider`, `secondaryColor`/`secondaryOpacity` for duotone, and `strokeWidth` are now available. See the [React package page](/docs/v3/packages/react).
