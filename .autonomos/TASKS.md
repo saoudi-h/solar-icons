@@ -92,7 +92,7 @@
 
 ## 🎨 Docs UI redesign
 
-- [/] **[DOCS-UI-01]** FilterBar redesign plan (page `/icons`, `apps/docs/components/icons-page/sections/icons/FilterBar.tsx`). Plan only — no implementation this session. Covers: dual ColorPicker theme conflict (sync-theme toggle must live on primary only), unlabeled controls (tooltips + icons + popovers), bar saturation (group by section), categories replacement (exhaustive checkbox list behind a "Categories" trigger). See `.autonomos/worklogs/2026-06-28-DOCS-UI-01-filterbar-redesign-plan.md`. `Priority: 🟠` `Complexity: M`
+- [x] **[DOCS-UI-01]** FilterBar redesign plan (page `/icons`, `apps/docs/components/icons-page/sections/icons/FilterBar.tsx`). Plan only — no implementation this session. Covers: dual ColorPicker theme conflict (sync-theme toggle must live on primary only), unlabeled controls (tooltips + icons + popovers), bar saturation (group by section), categories replacement (exhaustive checkbox list behind a "Categories" trigger). See `.autonomos/worklogs/2026-06-28-DOCS-UI-01-filterbar-redesign-plan.md` for the plan, the 2026-06-30 worklog for the final state (FilterBar rebuild, style picker, geometry control, color pickers, view mode, sidebar, grouped view, search, URL state, animation simplification, removed `InitState`, fix layouts and ScrollFade). `Priority: 🟠` `Complexity: M`
 
 ## 🧹 V3 — Technical debt cleanup (2026-06-25)
 

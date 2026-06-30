@@ -73,3 +73,40 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
     - `CategoryNav` — the lucide-style categories navigation. Single component used twice: as a sticky `w-50` `<aside>` on the left of the grid on `lg+`, and as a section at the bottom of the mobile drawer (no internal scroll, the drawer scrolls). Clicking a category switches `viewModeAtom` to `'grouped'` and sets `activeCategoryAtom`; the IconGrid's existing `scrollToRow` useEffect handles the scroll. Each row shows the count of icons in that category that match the current keyword (empty categories hidden).
     - Shared helper: `color-utils.ts` exports `getContrastingColor` (used by both pickers to decide input text color).
 - **`useSolar()` size is `string | number | undefined`** (`packages/react/src/lib/SolarProvider.tsx:5-16`). The new `FilterBar.tsx` coerces with `Number()` before passing to `GeometryControl` (which expects `number`). Same for `strokeWidth` and `secondaryOpacity`.
+
+## 📐 /icons page layout (final state)
+
+- `<main>` in `components/icons-page/IconsContent.tsx` is
+  `relative flex w-full flex-1 flex-col overflow-hidden ...` —
+  `flex-1` is what gives it the right height (the parent
+  HomeLayout is a flex column), `overflow-hidden` kills the
+  page-level scroll. **Don't add `h-dvh` on top of `flex-1`**:
+  it's redundant and the user already flagged it. The two
+  internal-scroll panels (categories sidebar + icon grid) do
+  the rest of the work.
+- The `SidebarIcon` on the right of the bar is the mobile
+  drawer trigger — it is rendered **always in the DOM** but
+  the drawer is `hidden` on `md+`, so the trigger is just
+  CSS-hidden on desktop. The `useScreen`/`useIsDesktop`
+  indirection that used to pick the variant is gone; the
+  CSS-based split (`hidden md:flex` / `md:hidden`) does it
+  for free.
+- The categories sidebar and the icon grid sit in a row
+  with height driven by the grid's measured
+  `window.innerHeight - <top> - 56` (the `- 56` is the
+  Fumadocs header height, the user's manual fix; tighter
+  than the previous `- 20` padding guess). The row is
+  `flex gap-4 overflow-hidden` and the height is
+  communicated from the grid up to the parent via an
+  `onHeightChange` prop on `<IconGridVirtualized>` — no
+  magic number on the row itself. The sidebar has
+  `overflow-y-auto` for its internal scroll, the grid
+  uses `<List>` (grouped) or `<Grid>` (flat) from
+  `react-virtualized`.
+- No fade affordance on the icons page. A previous
+  `ScrollFade` component (`components/ui/scroll-fade.tsx`,
+  since deleted) used `mask-image` with dynamic opacity;
+  it interfered with the native scroll of the two panels.
+  If a fade affordance is wanted later, it should be on a
+  top-level scroll container, not nested inside a
+  `sticky aside` and a `flex-1` grid.
