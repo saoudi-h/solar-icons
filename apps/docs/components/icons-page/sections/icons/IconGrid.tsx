@@ -20,6 +20,16 @@ import { searchIcons } from './utils'
 const ICON_CELL = 120
 const SECTION_HEADER = 56
 const GAP = 8
+// The `gap-4` (1rem) on the inner `<div>` of `IconShowcase`
+// (`relative flex h-full flex-1 flex-col gap-4 rounded-xl p-4`)
+// sits between the sidebar+grid row and the bottom `<IconDetail>`
+// panel. It is *not* in the grid's `rect.top` (the gap is below
+// the grid), so the original `window.innerHeight - rect.top - 56`
+// measurement missed it by exactly 16px and the page gained a
+// small vertical scroll whenever the panel opened. Subtracted
+// here in the measure callback. See DOCS-UI-02 + the user's
+// follow-up.
+const ROW_TO_DETAIL_GAP = 16
 
 type GridRow =
     | { kind: 'header'; category: string; count: number }
@@ -29,13 +39,14 @@ interface IconGridVirtualizedProps {
     /**
      * Called whenever the grid wrapper's measured height changes
      * (mount, resize, detail panel open/close). The height is
-     * `window.innerHeight - <wrapper top> - 56 - detailHeight` —
+     * `window.innerHeight - <wrapper top> - 56 - detailHeight - ROW_TO_DETAIL_GAP` —
      * the same value the wrapper uses internally for its scroll
      * viewport, minus the floating detail panel's height (when
-     * open) so the grid + categories sidebar shrink by the
-     * exact amount the panel needs. Lets a sibling (the
-     * categories sidebar) match the grid height exactly
-     * without a magic number. See DOCS-UI-02.
+     * open) and minus the `gap-4` between the row and the
+     * detail panel inside `IconShowcase` (so the page does not
+     * gain a small vertical scroll when the panel opens). Lets
+     * a sibling (the categories sidebar) match the grid height
+     * exactly without a magic number. See DOCS-UI-02.
      */
     onHeightChange?: (height: number) => void
     /**
@@ -67,8 +78,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     // shift when the client-side `useEffect` measures the real
     // viewport. The client `measure` callback refines the value on
     // mount to the actual
-    // `window.innerHeight - top - 56 - detailHeight`; the residual
-    // shift is small (and zero on common viewports).
+    // `window.innerHeight - top - 56 - detailHeight - ROW_TO_DETAIL_GAP`;
+    // the residual shift is small (and zero on common viewports).
     const [width, setWidth] = useState(1024)
     const [height, setHeight] = useState(1024)
 
@@ -98,13 +109,17 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     // `detailHeight` offset is the live height of the bottom
     // detail panel — subtracting it from the available height
     // keeps the grid + categories sidebar fully scrollable when
-    // the panel is open.
+    // the panel is open. The `ROW_TO_DETAIL_GAP` (16px) is the
+    // `gap-4` between the row and the detail panel inside the
+    // inner div of `IconShowcase` — the gap is below the grid
+    // (not in `rect.top`), so the page gained a small vertical
+    // scroll when the panel opened until it was subtracted here.
     const measure = useCallback(() => {
         const el = wrapperRef.current
         if (!el) return
         const rect = el.getBoundingClientRect()
         setWidth(el.offsetWidth)
-        const h = window.innerHeight - rect.top - 56 - detailHeightRef.current
+        const h = window.innerHeight - rect.top - 56 - detailHeightRef.current - ROW_TO_DETAIL_GAP
         setHeight(h)
         onHeightChange?.(h)
     }, [onHeightChange])

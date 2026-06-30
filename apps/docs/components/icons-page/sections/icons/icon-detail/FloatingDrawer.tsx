@@ -52,14 +52,25 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children, onHeightChan
     useEffect(() => {
         if (!selectedIcon || !drawerRef.current) return
         const el = drawerRef.current
+        // Use `offsetHeight` (the actual layout height) rather
+        // than `getBoundingClientRect().height` (which includes
+        // transforms). The motion.div animates with
+        // `initial={{ y: 50, scale: 0.95 }}`, so during the
+        // animation `getBoundingClientRect` reports the scaled
+        // height (~95% of the natural size, i.e. 219 instead of
+        // 231) and the `ResizeObserver` does not fire on the
+        // transform change — it would only fire on real layout
+        // changes. `offsetHeight` ignores the transform and
+        // returns the natural height from the first paint.
         const report = () => {
-            onHeightChange?.(el.getBoundingClientRect().height)
+            onHeightChange?.(el.offsetHeight)
         }
         const observer = new ResizeObserver(report)
         observer.observe(el)
-        // Initial measurement on the next frame so the element has
-        // its animated-in height (Framer Motion's initial styles
-        // can briefly report 0 on the very first paint).
+        // Initial measurement on the next frame so the element
+        // is in the DOM with its natural size (the very first
+        // paint can briefly report 0 before Framer Motion
+        // applies the initial transform).
         const rafId = requestAnimationFrame(report)
         return () => {
             cancelAnimationFrame(rafId)

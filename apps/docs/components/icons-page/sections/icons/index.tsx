@@ -10,8 +10,8 @@ import { IconGridVirtualized } from './IconGrid'
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [weight] = useStyleURL()
     // The grid measures its own height
-    // (`window.innerHeight - <wrapper top> - 56 - detailHeight` in
-    // `IconGrid`) and reports it back via `onHeightChange`. We use
+    // (`window.innerHeight - <wrapper top> - 56 - detailHeight - ROW_TO_DETAIL_GAP`
+    // in `IconGrid`) and reports it back via `onHeightChange`. We use
     // that exact value as the height of the sidebar+grid row so the
     // two scrollable panels are pixel-identical — no
     // `calc(100dvh - 7rem)` magic number, no 3-categories-too-tall
@@ -19,7 +19,11 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
     // `IconDetail`'s `FloatingDrawer` via a `ResizeObserver`; when
     // the drawer opens, the grid shrinks by exactly its height so
     // the last row of icons + the last sidebar category stay
-    // reachable inside the row's native scroll. See DOCS-UI-02.
+    // reachable inside the row's native scroll. The
+    // `ROW_TO_DETAIL_GAP` (16px) is the `gap-4` between the row
+    // and the detail panel inside this showcase's inner div —
+    // without it, opening the panel adds 16px to the page's
+    // vertical extent and a small scroll appears. See DOCS-UI-02.
     const [gridHeight, setGridHeight] = useState(0)
     const [detailHeight, setDetailHeight] = useState(0)
 

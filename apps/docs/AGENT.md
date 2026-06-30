@@ -93,13 +93,19 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   for free.
 - The categories sidebar and the icon grid sit in a row
   with height driven by the grid's measured
-  `window.innerHeight - <top> - 56 - detailHeight`. The
-  `56` is the Fumadocs header height (the user's manual
+  `window.innerHeight - <top> - 56 - detailHeight - ROW_TO_DETAIL_GAP`.
+  The `56` is the Fumadocs header height (the user's manual
   fix; tighter than the previous `- 20` padding guess).
   The `detailHeight` is the live pixel height of the
   bottom `<IconDetail>` panel, reported by its
-  `FloatingDrawer`'s `ResizeObserver` (DOCS-UI-02). The row
-  is `flex gap-4 overflow-hidden` and the height is
+  `FloatingDrawer`'s `ResizeObserver` (DOCS-UI-02). The
+  `ROW_TO_DETAIL_GAP` (16px) is the `gap-4` between the
+  row and the detail panel inside the inner
+  `flex-col gap-4` of `<IconShowcase>` — that gap is
+  below the grid (not in `rect.top`), so without the
+  explicit subtraction the page gains a small vertical
+  scroll whenever the panel opens. The row is
+  `flex gap-4 overflow-hidden` and the height is
   communicated from the grid up to the parent via an
   `onHeightChange` prop on `<IconGridVirtualized>` — no
   magic number on the row itself. The sidebar has
@@ -118,8 +124,8 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   `ResizeObserver` and reports it via an `onHeightChange`
   prop, which the `IconShowcase` stores as
   `detailHeight` and passes to `<IconGridVirtualized>`.
-  The grid subtracts it from its
-  `window.innerHeight - top - 56` measurement, so the
+  The grid subtracts it (and the `ROW_TO_DETAIL_GAP`) from
+  its `window.innerHeight - top - 56` measurement, so the
   grid + categories sidebar shrink by exactly the
   panel's height when it opens — both remain fully
   scrollable and the last row of icons + the last
