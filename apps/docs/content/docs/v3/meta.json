@@ -3,5 +3,13 @@
     "description": "Latest version with CSS variables, duotone, and one package per framework.",
     "icon": "InfoSquareIcon",
     "root": true,
-    "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
+    "pages": [
+        "index",
+        "getting-started",
+        "migration",
+        "packages",
+        "icon-reference",
+        "advanced",
+        "community"
+    ]
 }

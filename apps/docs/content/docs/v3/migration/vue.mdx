@@ -1,0 +1,79 @@
+---
+title: Vue Migration
+description: Upgrade @solar-icons/vue to v3.
+icon: vuejs
+---
+
+## Import paths
+
+Kebab-case style directories:
+
+**Before:**
+
+```js
+import { Home } from '@solar-icons/vue/Bold'
+```
+
+**After (per-style):**
+
+```js
+import { HomeIcon } from '@solar-icons/vue/bold'
+```
+
+**After (top-level):**
+
+```js
+import { HomeBoldIcon } from '@solar-icons/vue'
+```
+
+## Component naming
+
+When the style is in the import path, the name drops the style suffix. See the [React migration](/docs/v3/migration/react#component-naming) for the naming table.
+
+## `weight` prop removed
+
+**Before:**
+
+```js
+import { Heart } from '@solar-icons/vue'
+```
+
+```vue
+<Heart weight="Bold" />
+```
+
+**After:**
+
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/dynamic'
+</script>
+<template>
+    <HeartIcon weight="Bold" />
+</template>
+```
+
+## Category imports removed
+
+Import individually per style.
+
+## `mirrored` prop removed
+
+Use CSS `scaleX(-1)` instead.
+
+## New: SolarProvider
+
+```vue
+<SolarProvider color="#3b82f6" :size="24" :stroke-width="1.5">
+  <App />
+</SolarProvider>
+```
+
+Vue template props use kebab-case: `stroke-width`, `secondary-color`, `secondary-opacity`.
+
+## New: Duotone and stroke width
+
+```vue
+<HeartIcon secondary-color="#f59e0b" :secondary-opacity="0.4" />
+<SettingsIcon :stroke-width="2" />
+```

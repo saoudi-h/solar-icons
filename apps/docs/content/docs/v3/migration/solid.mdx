@@ -1,0 +1,49 @@
+---
+title: SolidJS Migration
+description: Upgrade @solar-icons/solid to v3.
+icon: solidjs
+---
+
+## Import paths
+
+**Before:**
+
+```jsx
+import { Home } from '@solar-icons/solid/Bold'
+```
+
+**After (per-style):**
+
+```jsx
+import { HomeIcon } from '@solar-icons/solid/bold'
+```
+
+## Component naming
+
+See the [React migration](/docs/v3/migration/react#component-naming).
+
+## New: SolarProvider
+
+```jsx
+import { SolarProvider } from '@solar-icons/solid'
+
+;<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+    <App />
+</SolarProvider>
+```
+
+## useSolar
+
+Returns Solid `Accessor`s:
+
+```jsx
+const { color, setColor } = useSolar()
+// ✅ color() — call as function
+```
+
+## New: Duotone and stroke width
+
+```jsx
+<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+<SettingsIcon strokeWidth={2} />
+```

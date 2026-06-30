@@ -1,0 +1,57 @@
+---
+title: Angular Migration
+description: Upgrade @solar-icons/angular to v3.
+icon: angular
+---
+
+## Standalone components
+
+v3 components are standalone. Remove the old `SolarIconsModule`.
+
+**Before:**
+
+```ts
+import { SolarIconsModule } from '@solar-icons/angular'
+@NgModule({ imports: [SolarIconsModule] })
+```
+
+**After:**
+
+```ts
+import { HeartIcon } from '@solar-icons/angular/bold'
+@Component({ standalone: true, imports: [HeartIcon] })
+```
+
+## Component names
+
+v3 uses PascalCase imports, kebab-case template selectors:
+
+**Before:**
+
+```html
+<i-solar-home-bold />
+```
+
+**After:**
+
+```ts
+import { HomeIcon } from '@solar-icons/angular/bold'
+```
+
+```html
+<home-icon />
+```
+
+## New: SolarProvider
+
+```html
+<solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
+    <heart-icon />
+</solar-provider>
+```
+
+## New: Duotone and stroke width
+
+```html
+<heart-icon secondaryColor="#f59e0b" [secondaryOpacity]="0.4" /> <settings-icon [strokeWidth]="2" />
+```

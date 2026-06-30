@@ -1,0 +1,63 @@
+---
+title: Svelte Migration
+description: Upgrade @solar-icons/svelte to v3.
+icon: svelte
+---
+
+## Requirements
+
+v3 requires Svelte 5.0+ (runes). If you are on Svelte 4, upgrade Svelte first.
+
+## Import paths
+
+Kebab-case directories, `.svelte` extension on single-icon imports:
+
+**Before:**
+
+```svelte
+import Home from '@solar-icons/svelte/Bold/Home.svelte'
+```
+
+**After (single icon):**
+
+```svelte
+import HomeIcon from '@solar-icons/svelte/bold/home'
+```
+
+**After (per-style barrel):**
+
+```svelte
+import { HomeIcon } from '@solar-icons/svelte/bold'
+```
+
+**After (top-level):**
+
+```svelte
+import { HomeBoldIcon } from '@solar-icons/svelte'
+```
+
+## Component naming
+
+See the [React migration](/docs/v3/migration/react#component-naming) for the naming table.
+
+## New: SolarProvider
+
+```svelte
+<script>
+import { SolarProvider } from '@solar-icons/svelte'
+import HomeIcon from '@solar-icons/svelte/bold/home'
+</script>
+
+<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+  <HomeIcon />
+</SolarProvider>
+```
+
+Provider props are `$bindable()` for two-way binding.
+
+## New: Duotone and stroke width
+
+```svelte
+<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+<SettingsIcon strokeWidth={2} />
+```

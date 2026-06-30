@@ -1,0 +1,39 @@
+---
+title: React Native Migration
+description: Upgrade @solar-icons/react-native to v3.
+icon: mobile
+---
+
+## Import paths
+
+**After:**
+
+```jsx
+import { HomeIcon } from '@solar-icons/react-native/bold'
+```
+
+## `size` is always number
+
+**Before:** `size="32"`  
+**After:** `size={32}`
+
+## No CSS variables
+
+Values resolve through props or SolarProvider (React Context).
+
+## New: SolarProvider
+
+```jsx
+import { SolarProvider } from '@solar-icons/react-native'
+
+;<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+    <App />
+</SolarProvider>
+```
+
+## New: Duotone and stroke width
+
+```jsx
+<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+<SettingsIcon strokeWidth={2} />
+```

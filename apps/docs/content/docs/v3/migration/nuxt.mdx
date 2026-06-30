@@ -1,0 +1,38 @@
+---
+title: Nuxt Migration
+description: Upgrade @solar-icons/nuxt to v3.
+icon: nuxt
+---
+
+## Module config
+
+**Before:**
+
+```ts
+solarIcons: {
+    prefix: 'Solar'
+}
+```
+
+**After:**
+
+```ts
+solarIcons: {
+    namePrefix: 'Solar'
+}
+```
+
+## Auto-import names
+
+Auto-imported components include the style suffix:
+
+**Before:** `<SolarHome />`  
+**After:** `<SolarHomeBoldIcon />`
+
+## Scoped context
+
+`useSolar()` must be called inside a `<SolarProvider>` tree. There is no global context.
+
+## Vue migration
+
+The Nuxt module wraps `@solar-icons/vue`. See the [Vue migration guide](/docs/v3/migration/vue) for component API changes.
