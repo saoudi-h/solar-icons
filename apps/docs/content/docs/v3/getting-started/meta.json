@@ -2,5 +2,5 @@
     "title": "Getting Started",
     "icon": "Star2Icon",
     "defaultOpen": true,
-    "pages": ["installation", "usage", "choosing-a-package"]
+    "pages": ["installation", "usage"]
 }
