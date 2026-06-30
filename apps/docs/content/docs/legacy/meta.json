@@ -1,0 +1,7 @@
+{
+    "title": "Legacy",
+    "description": "Documentation for Solar Icons v2.x and earlier.",
+    "icon": "HistoryIcon",
+    "root": true,
+    "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
+}

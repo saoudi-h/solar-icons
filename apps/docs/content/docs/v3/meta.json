@@ -1,4 +1,7 @@
 {
-    "title": "Solar Icons v3",
+    "title": "V3 (Beta)",
+    "description": "Latest version with CSS variables, duotone, and one package per framework.",
+    "icon": "InfoSquareIcon",
+    "root": true,
     "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
 }

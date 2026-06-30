@@ -1,41 +1,72 @@
 ---
 title: Solar Icons
-description: 1,246 icons in 6 styles, packaged for modern web and mobile frameworks.
-icon: HandShake
+description: 1,246 icons in 6 styles. One package per framework. CSS variables, duotone, and tree-shakable imports.
+icon: HandShakeIcon
 ---
 
 import { Cards, Card } from 'fumadocs-ui/components/card'
 
-Solar provides 1,246 unique icons in six styles, giving you 7,476 variations. The library offers packages optimized for React, Vue, Svelte, Solid, and Angular.
+<Callout type="warn">
+    Solar Icons v3 is in beta. [Report issues on
+    GitHub](https://github.com/saoudi-h/solar-icons/issues).
+</Callout>
+
+Solar Icons gives you 1,246 distinct icons in six styles: **Bold**, **Linear**, **Outline**, **BoldDuotone**, **LineDuotone**, and **Broken**. With 7,476 total variations and packages for React, Vue, Svelte, Solid, Angular, and React Native.
+
+## What changed in v3
+
+The v3 release unifies the library under a single API across every framework.
+
+- **One package per framework.** `@solar-icons/react`, `@solar-icons/vue`, `@solar-icons/svelte`, `@solar-icons/solid`, `@solar-icons/angular`, `@solar-icons/react-native`, and `@solar-icons/nuxt`. No more `-perf` and `-reactive` variants.
+- **Classic mode by default.** Every icon ships with a single style per component, tree-shakable at the import level. Dynamic style switching uses a separate `dynamic` import path.
+- **CSS variable cascade.** A `SolarProvider` at the root sets `--solar-color`, `--solar-size`, `--solar-stroke-width`, and duotone variables. Icons inherit these without re-rendering.
+- **Duotone built in.** `secondaryColor` and `secondaryOpacity` props control the duotone accent path. No wrapper components or hacky CSS overrides.
+- **Stroke width control.** Linear, Broken, and LineDuotone icons accept `strokeWidth`. Defaults to `1.5`.
+- **Icon suffix on component names.** `HomeBoldIcon`, not `Home`. Makes multi-style imports unambiguous.
+- **Kebab-case import paths.** `@solar-icons/react/bold/heart`, not `@solar-icons/react/Bold/Heart`. Matches ecosystem conventions.
 
 <Cards>
     <Card
-        href="/docs/getting-started/installation"
-        title="Getting Started"
-        description="Install and configure Solar Icons for your framework."
+        href="/docs/v3/getting-started/installation"
+        title="Installation"
+        description="Install the package for your framework."
     />
     <Card
-        href="/docs/icon-reference/categories"
-        title="Browse Icons"
-        description="Explore the full collection of 1,246 icons organized by category."
+        href="/docs/v3/getting-started/usage"
+        title="Usage"
+        description="Import patterns, naming conventions, and quick examples."
+    />
+    <Card
+        href="/docs/v3/packages/react"
+        title="React"
+        description="SolarProvider, useSolar, CSS variables, duotone, and stroke width."
     />
 </Cards>
 
-## Features
+## Framework packages
 
-- **7,476 variations**: 1,246 unique icons across 30+ categories, each in six styles (`Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken`).
-- **Optimization choices**: Choose standard packages for dynamic style switching, or performance packages (`-perf`) for minimal bundle sizes.
-- **Framework support**: Native packages for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, and Angular.
-- **SSR & Next.js ready**: Works in Server-Side Rendering (SSR) and React Server Components (RSC) environments.
+| Framework     | Package                     | Version    |
+| ------------- | --------------------------- | ---------- |
+| React         | `@solar-icons/react`        | 3.0.0-beta |
+| Vue           | `@solar-icons/vue`          | 3.0.0-beta |
+| Svelte 5      | `@solar-icons/svelte`       | 3.0.0-beta |
+| SolidJS       | `@solar-icons/solid`        | 3.0.0-beta |
+| Angular (17+) | `@solar-icons/angular`      | 3.0.0-beta |
+| React Native  | `@solar-icons/react-native` | 3.0.0-beta |
+| Nuxt          | `@solar-icons/nuxt`         | 3.0.0-beta |
+
+## Icons page
+
+Browse and search all 1,246 icons with live style previews, color controls, and duotone configuration.
+
+[Explore Icons →](/icons)
+
+## Migration
+
+If you are upgrading from an older version, follow the [migration guide](/docs/v3/advanced/migration) for a step-by-step walkthrough of every breaking change.
 
 ## Acknowledgements
 
-This project wraps the **Solar Icon Set** created by **480 Design** and licensed under [CC BY 4.0](https://www.figma.com/community/file/1166831539721848736).
+This project wraps the **Solar Icon Set** created by **480 Design**, licensed under [CC BY 4.0](https://www.figma.com/community/file/1166831539721848736).
 
-We also draw inspiration from **Phosphor Icons** and **Lucide Icons** for their clean packaging and structure.
-
----
-
-## Support the Project
-
-If Solar Icons helps your project, please consider [starring the repository on GitHub](https://github.com/saoudi-h/solar-icons). Every star makes the library more visible to other developers.
+Design inspiration comes from **Phosphor Icons** and **Lucide Icons**.

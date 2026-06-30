@@ -1,106 +1,125 @@
 ---
-title: 'Angular'
-description: Signal-based components for Solar Icons. Optimized for Angular 17+ with native tree-shaking.
+title: Angular
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Angular 17+.
 icon: angular
 ---
 
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
-import { Steps, Step } from 'fumadocs-ui/components/steps'
-import { Callout } from 'fumadocs-ui/components/callout'
+```package-install
+@solar-icons/angular
+```
 
-Use `@solar-icons/angular` to integrate Solar icons into Angular 17+ applications. Built with Signals and Standalone Components.
+Standalone components with signal-based inputs. PascalCase component names, kebab-case selectors in templates.
 
-## Installation
+## Import patterns
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-    <Tab value="pnpm">```bash pnpm add @solar-icons/angular ```</Tab>
-    <Tab value="npm">```bash npm install @solar-icons/angular ```</Tab>
-    <Tab value="yarn">```bash yarn add @solar-icons/angular ```</Tab>
-</Tabs>
+```ts
+// Per-style (no style suffix in name)
+import { HeartIcon } from '@solar-icons/angular/bold'
 
-## Usage
+// Single icon
+import { HeartIcon } from '@solar-icons/angular/bold/heart'
 
-### Components
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/angular'
+```
 
-Import individual icon components:
+Add icons to your component's `imports`:
 
-```tsx
+```ts
 import { Component } from '@angular/core'
-import { HeartBold } from '@solar-icons/angular'
+import { HeartIcon } from '@solar-icons/angular/bold'
 
 @Component({
     standalone: true,
-    imports: [HeartBold],
-    template: `<svg solarHeartBold [size]="24" color="#ef4444" />`,
+    imports: [HeartIcon],
+    template: '<heart-icon color="#ef4444" [size]="32" />',
 })
-export class App {}
+export class AppComponent {}
 ```
 
-## Dynamic Rendering
+## Duotone
 
-For runtime lookup or dynamic name swapping, use the `SolarDynamicIcon` directive.
-
-### 1. Register icons
-
-Register icons to expose them to dynamic lookup:
-
-```tsx
-import { provideSolarIcons } from '@solar-icons/angular'
-import { HeartBold, StarBold } from '@solar-icons/angular/like'
-
-bootstrapApplication(App, {
-    providers: [provideSolarIcons({ HeartBold, StarBold })],
-})
+```html
+<heart-icon color="#3b82f6" secondaryColor="#f59e0b" [secondaryOpacity]="0.4" [size]="48" />
 ```
 
-### 2. Render dynamic icons
+## Stroke width
 
-Import `SolarDynamicIcon` and pass the name or component class to `solarIcon`:
+```html
+<settings-icon [strokeWidth]="2" [size]="24" />
+```
 
-```tsx
-import { SolarDynamicIcon, SunBold } from '@solar-icons/angular'
+## SolarProvider
+
+Angular uses `<solar-provider>`. Provider duotone props are `duotoneColor`/`duotoneOpacity`.
+
+```ts
+import { SolarProviderComponent } from '@solar-icons/angular'
+import { HeartIcon } from '@solar-icons/angular/bold'
+
+@Component({
+    standalone: true,
+    imports: [SolarProviderComponent, HeartIcon],
+    template: `
+        <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
+            <heart-icon />
+        </solar-provider>
+    `,
+})
+export class AppComponent {}
+```
+
+| Input            | CSS Variable              | Default        |
+| ---------------- | ------------------------- | -------------- |
+| `color`          | `--solar-color`           | `currentColor` |
+| `size`           | `--solar-size`            | `24px`         |
+| `strokeWidth`    | `--solar-stroke-width`    | `1.5`          |
+| `duotoneColor`   | `--solar-duotone-color`   | —              |
+| `duotoneOpacity` | `--solar-duotone-opacity` | —              |
+
+Note: individual icons use `secondaryColor`/`secondaryOpacity`. The provider uses `duotoneColor`/`duotoneOpacity`.
+
+## useSolar
+
+Returns Angular `Signal`s.
+
+```ts
+import { useSolar } from '@solar-icons/angular'
+
+const solar = useSolar()
+solar.setColor('#ef4444')
+```
+
+## Dynamic icon
+
+```ts
+import { SolarDynamicIcon, provideSolarIcons } from '@solar-icons/angular'
+import { HeartIcon } from '@solar-icons/angular/bold'
 
 @Component({
     standalone: true,
     imports: [SolarDynamicIcon],
-    template: `
-        <!-- Lookup by registered name -->
-        <ng-container [solarIcon]="'HeartBold'" />
-
-        <!-- Direct class reference -->
-        <ng-container [solarIcon]="Sun" />
-    `,
+    providers: [provideSolarIcons({ HeartIcon })],
+    template: '<ng-container [solarIcon]="iconName" [size]="24" color="red" />',
 })
-export class App {
-    protected readonly Sun = SunBold
+export class AppComponent {
+    iconName = 'HeartIcon'
 }
 ```
 
-<Callout type="info" title="IDE Warnings">
-    Angular might warn that the component is unused (`NG8113`) when referencing classes directly.
-    You can safely ignore this.
-</Callout>
+## Icon props
 
-## Inputs & Props
+| Input              | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
+| `ariaLabel`        | `string`           | `aria-label` attribute |
 
-Icon components support these inputs:
+## CSS variables
 
-| Input      | Type               | Default          | Description                                 |
-| ---------- | ------------------ | ---------------- | ------------------------------------------- |
-| `size`     | `string \| number` | `'1em'`          | Pixels or CSS units (e.g., `32`, `'2rem'`). |
-| `color`    | `string`           | `'currentColor'` | CSS color value.                            |
-| `alt`      | `string`           | `undefined`      | Adds `<title>` and accessibility label.     |
-| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.                |
-
-When `alt` is set, the component renders a `<title>` tag for screen readers. Otherwise, it defaults to `aria-hidden="true"`.
-
-## Attribute Selectors
-
-This package targets SVGs using attribute selectors (e.g., `solarHeartBold` on `<svg>`) rather than custom wrapper tags.
-
-```html
-<!-- Native SVG element -->
-<svg solarHeartBold [size]="24" />
-```
-
-This keeps the DOM tree clean, permits direct CSS targeting, and avoids wrapper element overhead.
+Same five as [React](/docs/v3/packages/react#css-variables), applied via `[style.--solar-*]` host bindings.

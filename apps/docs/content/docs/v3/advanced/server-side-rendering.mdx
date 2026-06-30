@@ -1,52 +1,69 @@
 ---
-title: Server-Side Rendering (SSR)
-description: Use Solar Icons in SSR environments like Next.js or Remix.
-icon: Server
+title: Server-Side Rendering
+description: Use Solar Icons in SSR, RSC, and server components.
+icon: ServerIcon
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout'
+Solar Icons v3 works in server-side rendering environments without configuration.
 
-The `@solar-icons/react` package supports client-side and server-side rendering.
+## React Server Components
 
-<Callout title="Note">
-    This guide applies to `@solar-icons/react`. The `@solar-icons/react-perf` package works with SSR
-    out of the box.
-</Callout>
+```tsx
+import { HeartIcon } from '@solar-icons/react/bold/heart'
 
-## Standard vs. SSR Entry Points
+export default function ServerComponent() {
+    return <HeartIcon color="#ef4444" size={24} />
+}
+```
 
-The `@solar-icons/react` package provides two entry points:
+## Next.js
 
-1. **`@solar-icons/react`**: Standard entry point. Uses the React Context API (`SolarProvider` and `useSolar`) to manage default styles. These components use the `"use client"` directive for compatibility with the Next.js App Router.
-2. **`@solar-icons/react/ssr`**: Dedicated SSR entry point. Components do not use the React Context API and remain Server Components (no `"use client"` directive).
+No special setup required. Icons render on the server and hydrate on the client.
 
-### Why the difference?
-
-React Server Components cannot use the Context API. The `/ssr` entry point exports stateless components that read props directly. This keeps the server build lean and predictable.
-
----
-
-## Next.js App Router Usage
-
-If you use `SolarProvider`, render it in a client component. For individual icons, use standard imports.
-
-To render icons as pure Server Components without client-side JavaScript, import from `/ssr`:
-
-```jsx
-// Renders on the server.
-import { ArrowUp } from '@solar-icons/react/ssr'
+```tsx
+import { SettingsIcon } from '@solar-icons/react/outline'
 
 export default function Page() {
+    return <SettingsIcon strokeWidth={2} size={24} />
+}
+```
+
+## SolarProvider and RSC
+
+`SolarProvider` uses React Context and CSS variables. Use it in a client component.
+
+```tsx
+'use client'
+import { SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold'
+
+export function IconProvider({ children }: { children: React.ReactNode }) {
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <ArrowUp size={48} weight="BoldDuotone" />
-        </div>
+        <SolarProvider color="#3b82f6" size={24}>
+            {children}
+        </SolarProvider>
     )
 }
 ```
 
-### When to use `@solar-icons/react/ssr`
+Icons used without a provider work in server components.
 
-- You render icons on the server and do not use `SolarProvider` for global styling.
-- You want to minimize client-side JavaScript.
+## Vue SSR (Nuxt)
+
+```vue
+<template>
+    <HeartIcon color="#ef4444" :size="32" />
+</template>
+
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold/heart'
+</script>
+```
+
+## SvelteKit
+
+Svelte icons work in SvelteKit SSR. Import in your server-side components.
+
+## No more `/ssr` subpath
+
+The legacy `@solar-icons/react/ssr` path no longer exists. Import directly from the style path.

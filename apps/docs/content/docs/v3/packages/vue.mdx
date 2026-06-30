@@ -1,134 +1,128 @@
 ---
-title: 'Vue'
-description: Solar Icons for Vue. Supports dynamic styles and global configuration.
+title: Vue
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Vue 3.0+.
 icon: vue
 ---
-
-Use `@solar-icons/vue` in Vue 3 applications. It supports dynamic styles, global configuration, and works with Vue 3 and Nuxt.
 
 ```package-install
 @solar-icons/vue
 ```
 
-## Features
-
-- **Dynamic weights**: Change styles at runtime using the `weight` prop.
-- **Global styling**: Set default styles using `SolarProvider` or a plugin.
-- **Tree-shakeable**: Bundles only the icons you import.
-- **TypeScript ready**: Full type definitions included.
-
-## Usage
-
-```vue
-<template>
-    <div>
-        <Home weight="Bold" color="purple" :size="32" />
-    </div>
-</template>
-
-<script setup>
-import { Home } from '@solar-icons/vue'
-</script>
-```
-
-## Props
-
-Icon components accept standard SVG attributes alongside these props:
-
-| Prop       | Type                                                                            | Default        | Description                                    |
-| ---------- | ------------------------------------------------------------------------------- | -------------- | ---------------------------------------------- |
-| `color`    | `string`                                                                        | `currentColor` | Sets the icon color. Inherits from provider.   |
-| `size`     | `string \| number`                                                              | `24`           | Sets width and height. Inherits from provider. |
-| `weight`   | `'Bold' \| 'Linear' \| 'Outline' \| 'BoldDuotone' \| 'LineDuotone' \| 'Broken'` | `Linear`       | Sets icon style. Inherits from provider.       |
-| `mirrored` | `boolean`                                                                       | `false`        | Flips the icon horizontally if `true`.         |
-| `alt`      | `string`                                                                        | `undefined`    | Accessibility title.                           |
-
----
-
-## Advanced Usage
-
-### Global Configuration with `SolarProvider`
-
-Wrap components in `SolarProvider` to apply default settings:
-
-```vue
-<template>
-    <SolarProvider :size="32" color="purple" weight="Linear">
-        <YourComponents />
-    </SolarProvider>
-</template>
-
-<script setup>
-import { SolarProvider } from '@solar-icons/vue'
-</script>
-```
-
-### Vue Plugin
-
-Alternatively, configure defaults globally via the Vue plugin:
+## Import patterns
 
 ```js
-import { createApp } from 'vue'
-import { SolarIconsPlugin } from '@solar-icons/vue'
+// Per-style (no style suffix in name - style is in the path)
+import { HeartIcon } from '@solar-icons/vue/bold'
 
-const app = createApp(App)
-app.use(SolarIconsPlugin, {
-    color: 'currentColor',
-    size: '24',
-    weight: 'Linear',
-    mirrored: false,
-})
-app.mount('#app')
+// Single icon (tree-shakable)
+import { HeartIcon } from '@solar-icons/vue/bold/heart'
+
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/vue'
+
+// Dynamic (runtime style switching)
+import { HeartIcon } from '@solar-icons/vue/dynamic'
 ```
 
-### Composition API
+## Basic usage
 
-Access and modify settings dynamically using `useSolar`:
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
+
+<template>
+    <HeartIcon color="#ef4444" :size="32" />
+</template>
+```
+
+## Duotone
 
 ```vue
 <template>
-    <div>
-        <ArrowUp :size="iconSize" weight="Outline" />
-        <button @click="increaseSize">Increase Size</button>
-    </div>
+    <HeartIcon color="#3b82f6" secondary-color="#f59e0b" :secondary-opacity="0.4" :size="48" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { ArrowUp, useSolar } from '@solar-icons/vue'
-
-const { config, setSize } = useSolar()
-const iconSize = ref(24)
-
-const increaseSize = () => {
-    const newSize = parseInt(iconSize.value) + 4
-    iconSize.value = newSize
-    setSize(newSize)
-}
+import { HeartIcon } from '@solar-icons/vue/bold-duotone'
 </script>
 ```
 
-### Category Imports
-
-Import categorized collections as a single object:
+## Stroke width
 
 ```vue
 <template>
-    <div>
-        <Arrows.ArrowUp weight="Bold" />
-        <Arrows.ArrowDown weight="Linear" />
-    </div>
+    <SettingsIcon :stroke-width="2" :size="24" />
 </template>
 
 <script setup>
-import { Arrows } from '@solar-icons/vue/category'
+import { SettingsIcon } from '@solar-icons/vue/linear'
 </script>
 ```
 
-## Nuxt Integration
+## SolarProvider
 
-For Nuxt 3 projects, use the dedicated `@solar-icons/nuxt` package for auto-import support.
+```vue
+<script setup>
+import { SolarProvider } from '@solar-icons/vue'
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
 
-```shell
-nuxi module add @solar-icons/nuxt
+<template>
+    <SolarProvider color="#3b82f6" :size="24" :stroke-width="1.5">
+        <HeartIcon />
+    </SolarProvider>
+</template>
 ```
+
+| Prop                | CSS Variable              | Default        |
+| ------------------- | ------------------------- | -------------- |
+| `color`             | `--solar-color`           | `currentColor` |
+| `size`              | `--solar-size`            | `24px`         |
+| `stroke-width`      | `--solar-stroke-width`    | `1.5`          |
+| `secondary-color`   | `--solar-duotone-color`   | —              |
+| `secondary-opacity` | `--solar-duotone-opacity` | —              |
+
+## useSolar
+
+Returns reactive `Ref`s.
+
+```vue
+<script setup>
+import { useSolar } from '@solar-icons/vue'
+
+const { color, setColor } = useSolar()
+</script>
+
+<template>
+    <button @click="setColor('#ef4444')">Current: {{ color }}</button>
+</template>
+```
+
+## Dynamic icons
+
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/dynamic'
+</script>
+
+<template>
+    <HeartIcon weight="BoldDuotone" color="#3b82f6" :size="32" />
+</template>
+```
+
+## Icon props
+
+| Prop                | Type               | Description            |
+| ------------------- | ------------------ | ---------------------- |
+| `color`             | `string`           | Icon color             |
+| `size`              | `string \| number` | Width and height       |
+| `stroke-width`      | `string \| number` | Stroke width           |
+| `secondary-color`   | `string`           | Duotone accent color   |
+| `secondary-opacity` | `number`           | Duotone accent opacity |
+| `isolated`          | `boolean`          | Ignores provider       |
+| `alt`               | `string`           | Accessibility label    |
+
+## CSS variables
+
+Same five variables as [React](/docs/v3/packages/react#css-variables).

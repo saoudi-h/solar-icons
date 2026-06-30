@@ -1,37 +1,44 @@
 ---
 title: Choosing a Package
-description: Compare standard vs. performance-optimized Solar Icon packages.
-icon: Palette
+description: Which package fits your project.
+icon: PaletteIcon
 ---
 
-import { Cards, Card } from 'fumadocs-ui/components/card'
+Solar Icons v3 ships one package per framework. Pick the one that matches your stack.
 
-Some framework packages come in two variants: **Standard** and **Performance** (`-perf`).
+## React
 
----
+`@solar-icons/react` covers React 16.8+. Use it with Next.js, Remix, Vite, or any React setup. Supports RSC and SSR out of the box.
 
-## Comparison
+## Vue
 
-| Feature                  | Standard Package             | Performance Package (`-perf`)         |
-| ------------------------ | ---------------------------- | ------------------------------------- |
-| **Dynamic Styles**       | ✅ Yes                       | ❌ No                                 |
-| **Bundle Size**          | Larger                       | ✅ Smaller                            |
-| **Global Configuration** | ✅ Yes                       | ❌ No                                 |
-| **Primary Use Case**     | Development, dynamic styling | Production, performance-critical apps |
+`@solar-icons/vue` covers Vue 3.0+. Works with Vite, Nuxt, and any Vue project. The Nuxt module wraps this package and adds auto-import.
 
----
+## Svelte
 
-## How they work
+`@solar-icons/svelte` covers Svelte 5.0+. Uses Svelte 5 runes (`$props`, `$derived`, `$bindable`).
 
-- **Standard packages** bundle all six styles inside each component. You can swap styles at runtime using the `weight` prop, or configure defaults globally using a context provider.
-- **Performance packages** bundle only a single style per component (e.g., `HomeBold`). Unused styles are tree-shaken and excluded from the build.
+## SolidJS
 
----
+`@solar-icons/solid` covers SolidJS 1.6+. Leverages Solid's signals for reactive state.
 
-## React Example
+## Angular
 
-- `@solar-icons/react`: Standard package. All styles available in every icon. Supports global configuration.
-- `@solar-icons/react-perf`: Performance package. Every icon includes a single style, minimizing bundle size.
+`@solar-icons/angular` covers Angular 17+. Uses signals, standalone components, and DI-based provider.
 
-[**@solar-icons/react Docs →**](/docs/packages/react)  
-[**@solar-icons/react-perf Docs →**](/docs/packages/react-perf)
+## React Native
+
+`@solar-icons/react-native` covers React Native 0.72+. Requires `react-native-svg` as a peer dependency.
+
+## Nuxt
+
+`@solar-icons/nuxt` wraps `@solar-icons/vue` for Nuxt 3+. Adds auto-import of all icon components with a configurable name prefix.
+
+## One package, two modes
+
+Every package includes both classic and dynamic imports.
+
+- **Classic imports** (`/bold/heart`): One style per import. Tree-shakable. Smallest bundle.
+- **Dynamic imports** (`/dynamic/heart`): Accept a `weight` prop for runtime style switching. Larger bundle.
+
+No separate `-perf` or `-reactive` packages. Choose the import path that matches your needs.

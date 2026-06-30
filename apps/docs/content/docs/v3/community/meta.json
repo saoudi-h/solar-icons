@@ -1,6 +1,5 @@
 {
     "title": "Community",
-    "icon": "UsersGroupTwoRounded",
-    "pages": ["contributing", "license", "changelog"],
-    "defaultOpen": false
+    "icon": "UsersGroupTwoRoundedIcon",
+    "pages": ["contributing", "license", "changelog"]
 }

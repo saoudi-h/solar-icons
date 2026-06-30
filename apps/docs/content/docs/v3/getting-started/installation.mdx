@@ -1,34 +1,22 @@
 ---
 title: Installation
-description: Install the package for your framework.
-icon: Diskette
+description: Install Solar Icons for your framework.
+icon: DisketteIcon
 ---
 
-Install the package for your framework.
+Install the package for your framework. Every framework gets one package. No separate performance or reactive variant.
 
 ## React
 
-Choose standard or performance-optimized components depending on your needs.
-
-### Standard
-
-Includes all six styles in each component. Best for dynamic style changes.
+Requires React 16.8+.
 
 ```package-install
 @solar-icons/react
 ```
 
-### Performance
-
-Includes one style per component. Best for minimal bundle sizes.
-
-```package-install
-@solar-icons/react-perf
-```
-
 ## Vue
 
-Includes multi-style components, global configuration, and category imports.
+Requires Vue 3.0+.
 
 ```package-install
 @solar-icons/vue
@@ -36,23 +24,35 @@ Includes multi-style components, global configuration, and category imports.
 
 ## Nuxt
 
-Nuxt 3+ module with auto-import and configuration support.
+Nuxt 3+ module with auto-import and configuration.
 
 ```shell
-nuxi module add @solar-icons/nuxt
+npx nuxi module add @solar-icons/nuxt
+```
+
+Add the module to `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+    modules: ['@solar-icons/nuxt'],
+    solarIcons: {
+        namePrefix: 'Solar',
+        autoImport: true,
+    },
+})
 ```
 
 ## Svelte
 
-Svelte 5 components using runes.
+Svelte 5 components using runes. Requires Svelte 5.0+.
 
 ```package-install
 @solar-icons/svelte
 ```
 
-## Solid
+## SolidJS
 
-Lightweight SolidJS components.
+Requires SolidJS 1.6+.
 
 ```package-install
 @solar-icons/solid
@@ -60,8 +60,16 @@ Lightweight SolidJS components.
 
 ## Angular
 
-Angular 17+ components using signals.
+Requires Angular 17+.
 
 ```package-install
 @solar-icons/angular
+```
+
+## React Native
+
+Requires React 16.8+, React Native 0.72+, and `react-native-svg` 13.0+.
+
+```package-install
+@solar-icons/react-native react-native-svg
 ```

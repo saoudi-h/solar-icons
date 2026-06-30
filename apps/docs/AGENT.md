@@ -142,3 +142,13 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   If a fade affordance is wanted later, it should be on a
   top-level scroll container, not nested inside a
   `sticky aside` and a `flex-1` grid.
+
+## 📚 Documentation versioning (2026-06-30)
+
+- **Strategy:** Partial versioning via folder separation. Single app, single deployment.
+- **Content directories:** `content/docs/v3/` (current) and `content/docs/legacy/` (pre-V3). Never refer to "v2" — there is no v2. Pre-V3 content is called "Legacy".
+- **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
+- **Redirect:** `/docs` → `/docs/v3` via `next.config.mts` `redirects()`.
+- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`.
+- **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
+- **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.

@@ -1,68 +1,152 @@
 ---
 title: Global Configuration
-description: Configure default icon styles globally.
-icon: Global
+description: Configure default icon styles with SolarProvider and useSolar.
+icon: Settings2Icon
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout'
+`SolarProvider` sets CSS custom properties that cascade to every icon inside it. Icons inherit defaults without re-rendering.
 
-Use `SolarProvider` in `@solar-icons/react` to set default styles for nested icons.
+## Provider cascade
 
-<Callout title="Note">
-    `SolarProvider` and the `useSolar` hook are only available in the `@solar-icons/react` package.
-    They are not supported in `@solar-icons/react-perf`.
-</Callout>
-
-## Usage
-
-Wrap your component tree with `SolarProvider` and pass the default values. Nested icons use these defaults unless you override props on the component itself.
+Place `SolarProvider` near the root. Nest providers to override for subtrees.
 
 ```jsx
-import { SolarProvider, Home, Settings } from '@solar-icons/react'
+import { SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold'
+import { SettingsIcon } from '@solar-icons/react/bold'
 
-export default function App() {
+function App() {
     return (
-        <SolarProvider
-            value={{
-                size: 24,
-                color: 'navy',
-                weight: 'Bold',
-            }}>
-            <Home /> {/* Renders size: 24, color: navy, weight: Bold */}
-            <Settings weight="Linear" /> {/* Overrides weight to Linear */}
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <Header />
+            <SolarProvider color="#ef4444">
+                <HeartIcon />
+            </SolarProvider>
+            <SettingsIcon />
         </SolarProvider>
     )
 }
 ```
 
-### Accepted Properties
+## CSS variables
 
-`SolarProvider` accepts the following configuration properties:
+| Provider prop      | CSS Variable              | Role                                       |
+| ------------------ | ------------------------- | ------------------------------------------ |
+| `color`            | `--solar-color`           | Fill and stroke color                      |
+| `size`             | `--solar-size`            | Width and height                           |
+| `strokeWidth`      | `--solar-stroke-width`    | Stroke width for Linear/Broken/LineDuotone |
+| `secondaryColor`   | `--solar-duotone-color`   | Duotone accent color                       |
+| `secondaryOpacity` | `--solar-duotone-opacity` | Duotone accent opacity                     |
 
-{/* TODO DOCS-3: restore AutoTypeTable when the V3 props file is authored. */}
-{/* <AutoTypeTable path="./content/docs/advanced/props.ts" name="SolarProviderProps" /> */}
-{/* <AutoTypeTable path="./content/docs/advanced/props.ts" name="IconBaseProps" /> */}
+Overriding a variable on an individual icon takes precedence over the provider.
 
-## Custom Configurations with `useSolar`
+## Dynamic color themes
 
-Use the `useSolar` hook to read or update the current configuration context dynamically.
+Build a theme switcher with `useSolar`.
 
 ```jsx
-import { useSolar, Sun, Moon } from '@solar-icons/react'
+import { useSolar, SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold-duotone'
 
-function ThemeToggle() {
-    const { value, setValue } = useSolar()
-
-    const toggleTheme = () => {
-        const newWeight = value.weight === 'Bold' ? 'Linear' : 'Bold'
-        setValue({ weight: newWeight })
-    }
+function ThemeSwitcher() {
+    const { setColor, setSecondaryColor } = useSolar()
 
     return (
-        <button onClick={toggleTheme}>
-            {value.weight === 'Bold' ? <Moon /> : <Sun />}
-            <span>Toggle Weight</span>
-        </button>
+        <div>
+            <button
+                onClick={() => {
+                    setColor('#3b82f6')
+                    setSecondaryColor('#f59e0b')
+                }}>
+                Light
+            </button>
+            <button
+                onClick={() => {
+                    setColor('#93c5fd')
+                    setSecondaryColor('#fcd34d')
+                }}>
+                Dark
+            </button>
+        </div>
+    )
+}
+
+function App() {
+    return (
+        <SolarProvider>
+            <ThemeSwitcher />
+            <HeartIcon />
+        </SolarProvider>
     )
 }
 ```
+
+## Framework patterns
+
+### Vue
+
+```vue
+<SolarProvider color="#3b82f6" :size="24" :stroke-width="1.5">
+  <HeartIcon />
+</SolarProvider>
+```
+
+### Svelte
+
+Provider props are `$bindable()`:
+
+```svelte
+<script>
+import { SolarProvider } from '@solar-icons/svelte'
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+
+let color = $state('#3b82f6')
+</script>
+
+<SolarProvider bind:color>
+  <input type="color" bind:value={color} />
+  <HeartIcon />
+</SolarProvider>
+```
+
+### Angular
+
+```html
+<solar-provider [color]="'#3b82f6'" [size]="24">
+    <heart-icon />
+</solar-provider>
+```
+
+### React Native
+
+Uses React Context instead of CSS variables.
+
+```jsx
+import { SolarProvider } from '@solar-icons/react-native'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24}>
+            <YourApp />
+        </SolarProvider>
+    )
+}
+```
+
+## Isolated icons
+
+Set `isolated` to bypass the provider entirely.
+
+```jsx
+import { HeartIcon } from '@solar-icons/react/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6">
+            <HeartIcon isolated color="#ef4444" size={32} />
+        </SolarProvider>
+    )
+}
+```
+
+The icon uses hardcoded defaults (`24px`, `currentColor`, `1.5`) and ignores the CSS variable cascade.

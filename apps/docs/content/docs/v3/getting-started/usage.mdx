@@ -1,95 +1,127 @@
 ---
-title: Basic Usage
-description: Import and use Solar Icons in React.
-icon: MouseCircle
+title: Usage
+description: Import patterns, component naming, and style selection.
+icon: DocumentTextIcon
 ---
 
-## Standard Package (`@solar-icons/react`)
+Import paths use kebab-case. The icon component name follows the import path: when the style is in the path, the name drops the style suffix.
 
-Standard package components bundle all six styles. Swap styles using the `weight` prop.
+## Import patterns
 
-### Import and Use
+Three levels of specificity.
 
-Import any icon directly:
+### All icons (top-level)
+
+Every icon from every style, with style suffixes in the component name.
 
 ```jsx
-import { Home } from '@solar-icons/react'
+import { HeartBoldIcon, SettingsOutlineIcon } from '@solar-icons/react'
+```
 
-export default function App() {
-    return <Home />
+The component name carries the style suffix because the import path does not specify one.
+
+### Per-style
+
+All icons from one style. The component name drops the style suffix.
+
+```jsx
+import { HeartIcon, BellIcon } from '@solar-icons/react/bold'
+```
+
+The style is in the path (`/bold`), so the name is just `HeartIcon`.
+
+### Single icon (tree-shakable)
+
+One icon from one style. Your bundler removes everything else.
+
+```jsx
+import { HeartIcon } from '@solar-icons/react/bold/heart'
+import { HeartIcon } from '@solar-icons/vue/bold/heart'
+import { HeartIcon } from '@solar-icons/solid/bold/heart'
+```
+
+```svelte
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+```
+
+Svelte uses a default export for single-icon imports.
+
+## Styles
+
+Six styles, each a separate import path segment.
+
+| Directory      | Style       | Description                  |
+| -------------- | ----------- | ---------------------------- |
+| `bold`         | Bold        | Solid fill                   |
+| `bold-duotone` | BoldDuotone | Two-tone filled with accent  |
+| `broken`       | Broken      | Outline with broken segments |
+| `line-duotone` | LineDuotone | Two-tone outline with accent |
+| `linear`       | Linear      | Outline with stroke          |
+| `outline`      | Outline     | Outline, no stroke           |
+
+## Basic usage
+
+```jsx
+import { HeartIcon } from '@solar-icons/react/bold'
+
+function App() {
+    return <HeartIcon color="#ef4444" size={32} />
 }
 ```
 
-### Style (Weight)
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
 
-Use the `weight` prop to change styles. The options are: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken` (default: `Linear`).
-
-```jsx
-import { Home } from '@solar-icons/react'
-
-export default function App() {
-    return <Home weight="Bold" />
-}
+<template>
+    <HeartIcon color="#ef4444" :size="32" />
+</template>
 ```
 
-### Props
+```svelte
+<script>
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+</script>
 
-Standard components accept the following props in addition to standard HTML SVG properties:
+<HeartIcon color="#ef4444" size={32} />
+```
 
-| Prop       | Type               | Default        | Description                            |
-| ---------- | ------------------ | -------------- | -------------------------------------- |
-| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
-| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
-| `weight`   | `IconWeight`       | `Linear`       | Sets the icon style.                   |
-| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
-| `alt`      | `string`           | `undefined`    | Accessibility label.                   |
+## Dynamic style switching
 
----
-
-## Performance Package (`@solar-icons/react-perf`)
-
-Performance package components bundle only a single style.
-
-### Import and Use
-
-Import style-specific icons. The component name combines the icon name and style (e.g., `Home` + `Bold` = `HomeBold`).
+Import from the `dynamic` path for runtime style changes. These components accept a `weight` prop that switches between all six styles.
 
 ```jsx
-import { HomeBold, HomeLinear } from '@solar-icons/react-perf'
+import { HeartIcon } from '@solar-icons/react/dynamic'
 
-export default function App() {
+function App() {
     return (
-        <div>
-            <HomeBold size={32} />
-            <HomeLinear size={32} color="blue" />
-        </div>
+        <>
+            <HeartIcon weight="Bold" />
+            <HeartIcon weight="Linear" color="#3b82f6" size={32} />
+        </>
     )
 }
 ```
 
-You can also import from style-specific entry points to use base icon names:
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/dynamic'
+</script>
 
-```jsx
-import { Home } from '@solar-icons/react-perf/bold'
-import { Settings } from '@solar-icons/react-perf/linear'
-
-export default function App() {
-    return (
-        <div>
-            <Home size={32} />
-            <Settings size={32} />
-        </div>
-    )
-}
+<template>
+    <HeartIcon weight="Bold" />
+    <HeartIcon weight="Linear" color="#3b82f6" :size="32" />
+</template>
 ```
 
-### Props
+Dynamic icons are also available per-icon for finer tree-shaking:
 
-These components accept a simpler set of props:
+```jsx
+import { HeartIcon } from '@solar-icons/react/dynamic/heart'
+```
 
-| Prop       | Type               | Default        | Description                            |
-| ---------- | ------------------ | -------------- | -------------------------------------- |
-| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
-| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
-| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
-| `alt`      | `string`           | `undefined`    | Accessibility label.                   |
+## Next steps
+
+- Set global defaults with [SolarProvider and useSolar](/docs/v3/advanced/global-configuration)
+- See full API details: [React](/docs/v3/packages/react), [Vue](/docs/v3/packages/vue), [Svelte](/docs/v3/packages/svelte)

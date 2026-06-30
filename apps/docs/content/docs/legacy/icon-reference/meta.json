@@ -1,5 +1,6 @@
 {
     "title": "Icon Reference",
-    "icon": "Book2Icon",
+    "icon": "NotesIcon",
+    "defaultOpen": false,
     "pages": ["categories"]
 }

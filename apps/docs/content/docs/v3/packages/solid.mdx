@@ -1,111 +1,101 @@
 ---
-title: 'Solid'
-description: SolidJS components for Solar Icons.
+title: SolidJS
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for SolidJS 1.6+.
 icon: solid
 ---
-
-Use `@solar-icons/solid` in SolidJS applications. It features reactive components optimized for minimal bundle size.
 
 ```package-install
 @solar-icons/solid
 ```
 
-## Features
+## Import patterns
 
-- **SolidJS ready**: Reactivity optimized.
-- **Tree-shakeable**: Bundles only the icons you import.
-- **TypeScript ready**: Full type definitions included.
+```jsx
+// Per-style (no style suffix - style in path)
+import { HeartIcon } from '@solar-icons/solid/bold'
 
-## Usage
+// Single icon
+import { HeartIcon } from '@solar-icons/solid/bold/heart'
 
-Import icons from a style and use them as Solid components:
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/solid'
+```
 
-```tsx
-import { House } from '@solar-icons/solid/Bold'
+## Basic usage
+
+```jsx
+import { HeartIcon } from '@solar-icons/solid/bold'
 
 function App() {
-    return <House size={32} color="purple" />
+    return <HeartIcon color="#ef4444" size={32} />
 }
 ```
 
-## Props
+## Duotone
 
-Icon components accept standard SVG attributes alongside these props:
+```jsx
+import { HeartIcon } from '@solar-icons/solid/bold-duotone'
 
-| Prop       | Type               | Default        | Description                            |
-| ---------- | ------------------ | -------------- | -------------------------------------- |
-| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
-| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
-| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
-| `alt`      | `string`           | `undefined`    | Accessibility title.                   |
+function App() {
+    return <HeartIcon color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} size={48} />
+}
+```
 
----
+## Stroke width
 
-## Import Patterns
+```jsx
+import { SettingsIcon } from '@solar-icons/solid/linear'
 
-### Import by Style
+function App() {
+    return <SettingsIcon strokeWidth={2} size={24} />
+}
+```
 
-Import all icons in a style:
+## SolarProvider
 
-```tsx
-import { House, Settings, User } from '@solar-icons/solid/Bold'
-import { House as HouseLinear } from '@solar-icons/solid/Linear'
+Uses Solid signals internally.
+
+```jsx
+import { SolarProvider } from '@solar-icons/solid'
+import { HeartIcon } from '@solar-icons/solid/bold'
 
 function App() {
     return (
-        <>
-            <House size={24} />
-            <HouseLinear size={24} />
-        </>
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <HeartIcon />
+        </SolarProvider>
     )
 }
 ```
 
-Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`.
+## useSolar
 
-### Import by Category
+Returns Solid `Accessor`s.
 
-Import icons in a category:
+```jsx
+import { useSolar } from '@solar-icons/solid'
 
-```tsx
-import { Bold, Linear } from '@solar-icons/solid/category/arrows'
+function ColorToggle() {
+    const { color, setColor } = useSolar()
 
-function App() {
-    return (
-        <>
-            <Bold.ArrowUp size={24} />
-            <Linear.ArrowDown size={24} />
-        </>
-    )
+    return <button onClick={() => setColor('#ef4444')}>Current: {color()}</button>
 }
 ```
 
-### Direct Component Import
+## Icon props
 
-Import individual components directly:
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
 
-```tsx
-import { House } from '@solar-icons/solid/category/building/Bold'
+All standard SVG attributes pass through.
 
-function App() {
-    return <House size={24} color="#f59e0b" />
-}
-```
+## CSS variables
 
----
-
-## IconBase Component
-
-Use `IconBase` to build custom icons:
-
-```tsx
-import { IconBase } from '@solar-icons/solid'
-
-function App() {
-    return (
-        <IconBase size={24} color="red">
-            <path d="M12 2L15.09 8.26..." fill="currentColor" />
-        </IconBase>
-    )
-}
-```
+Same as [React](/docs/v3/packages/react#css-variables).

@@ -37,6 +37,15 @@ const config: NextConfig = {
             },
         ]
     },
+    async redirects() {
+        return [
+            {
+                source: '/docs',
+                destination: '/docs/v3',
+                permanent: false,
+            },
+        ]
+    },
 }
 
 export default withAnalyzer(withMDX(config))

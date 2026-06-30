@@ -1,0 +1,52 @@
+---
+title: Server-Side Rendering (SSR)
+description: Use Solar Icons in SSR environments like Next.js or Remix.
+icon: ServerIcon
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+The `@solar-icons/react` package supports client-side and server-side rendering.
+
+<Callout title="Note">
+    This guide applies to `@solar-icons/react`. The `@solar-icons/react-perf` package works with SSR
+    out of the box.
+</Callout>
+
+## Standard vs. SSR Entry Points
+
+The `@solar-icons/react` package provides two entry points:
+
+1. **`@solar-icons/react`**: Standard entry point. Uses the React Context API (`SolarProvider` and `useSolar`) to manage default styles. These components use the `"use client"` directive for compatibility with the Next.js App Router.
+2. **`@solar-icons/react/ssr`**: Dedicated SSR entry point. Components do not use the React Context API and remain Server Components (no `"use client"` directive).
+
+### Why the difference?
+
+React Server Components cannot use the Context API. The `/ssr` entry point exports stateless components that read props directly. This keeps the server build lean and predictable.
+
+---
+
+## Next.js App Router Usage
+
+If you use `SolarProvider`, render it in a client component. For individual icons, use standard imports.
+
+To render icons as pure Server Components without client-side JavaScript, import from `/ssr`:
+
+```jsx
+// Renders on the server.
+import { ArrowUp } from '@solar-icons/react/ssr'
+
+export default function Page() {
+    return (
+        <div>
+            <h1>Dashboard</h1>
+            <ArrowUp size={48} weight="BoldDuotone" />
+        </div>
+    )
+}
+```
+
+### When to use `@solar-icons/react/ssr`
+
+- You render icons on the server and do not use `SolarProvider` for global styling.
+- You want to minimize client-side JavaScript.

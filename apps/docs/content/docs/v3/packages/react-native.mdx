@@ -1,72 +1,111 @@
 ---
-title: 'React Native'
-description: Solar Icons for React Native.
+title: React Native
+description: React Context-based SolarProvider, duotone, and stroke width for React Native 0.72+. Requires react-native-svg.
 icon: react
 ---
-
-Use `@solar-icons/react-native` to integrate Solar icons into React Native and Expo applications. Requires `react-native-svg`.
 
 ```package-install
 @solar-icons/react-native react-native-svg
 ```
 
-## Features
+Renders `<Svg>` from `react-native-svg`. No CSS variables — values resolve in JavaScript.
 
-- **7,476 icons**: Every style variant compiled for React Native.
-- **Expo compatible**: Works out of the box in Expo environments.
-- **TypeScript ready**: Full type definitions included.
+## Import patterns
 
----
+```jsx
+// Per-style (no style suffix in name)
+import { HeartIcon } from '@solar-icons/react-native/bold'
 
-## Import Methods
+// Single icon
+import { HeartIcon } from '@solar-icons/react-native/bold/heart'
 
-This package offers three import strategies. All methods are tree-shakeable.
-
-### 1. Import by Style
-
-Import multiple icons of the same style:
-
-```tsx
-import { House, User, Settings } from '@solar-icons/react-native/Bold'
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/react-native'
 ```
 
-### 2. Import globally by Name
+## Basic usage
 
-Import icons with style suffixes from the root:
+```jsx
+import { HeartIcon } from '@solar-icons/react-native/bold'
 
-```tsx
-import { HouseBold, HouseLinear, HeartBroken } from '@solar-icons/react-native'
+function App() {
+    return <HeartIcon color="#ef4444" size={32} />
+}
 ```
 
-### 3. Import by Category
+`size` is always a number (pixels).
 
-Import from the specific category and style path:
+## Duotone
 
-```tsx
-import { House } from '@solar-icons/react-native/category/buildings/Bold'
+```jsx
+import { HeartIcon } from '@solar-icons/react-native/bold-duotone'
+
+function App() {
+    return <HeartIcon color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} size={48} />
+}
 ```
 
----
+## Stroke width
 
-## Props
+```jsx
+import { SettingsIcon } from '@solar-icons/react-native/linear'
 
-All components accept standard props extending `SvgProps` from `react-native-svg` (except `width` and `height`):
+function App() {
+    return <SettingsIcon strokeWidth={2} size={24} />
+}
+```
 
-| Prop       | Type               | Default          | Description                  |
-| :--------- | :----------------- | :--------------- | :--------------------------- |
-| `size`     | `number \| string` | `24`             | Icon width and height.       |
-| `color`    | `string`           | `'currentColor'` | Icon fill or stroke color.   |
-| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally. |
+## SolarProvider
 
----
+Uses React Context.
 
-## Technical Details
+```jsx
+import { SolarProvider } from '@solar-icons/react-native'
+import { HeartIcon } from '@solar-icons/react-native/bold'
 
-### Package Entry Points
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <HeartIcon />
+        </SolarProvider>
+    )
+}
+```
 
-| Entry Point    | Content                                          |
-| :------------- | :----------------------------------------------- |
-| `.`            | Global exports and types.                        |
-| `./[Style]`    | Style-specific bundles (e.g., `Bold`, `Linear`). |
-| `./category/*` | Direct imports for individual icons.             |
-| `./lib/*`      | Core logic, `IconBase`, and TypeScript types.    |
+| Prop               | Default          | Description               |
+| ------------------ | ---------------- | ------------------------- |
+| `color`            | `'currentColor'` | Default color             |
+| `size`             | `24`             | Default size (px, number) |
+| `strokeWidth`      | `1.5`            | Default stroke            |
+| `secondaryColor`   | —                | Default duotone accent    |
+| `secondaryOpacity` | —                | Default duotone opacity   |
+
+## useSolar
+
+```jsx
+import { useSolar } from '@solar-icons/react-native'
+
+function ColorToggle() {
+    const { color, setColor } = useSolar()
+
+    return <Button title={`Color: ${color}`} onPress={() => setColor('#ef4444')} />
+}
+```
+
+## Icon props
+
+| Prop               | Type               | Description                  |
+| ------------------ | ------------------ | ---------------------------- |
+| `color`            | `string`           | Icon color                   |
+| `size`             | `number`           | Size in pixels (number only) |
+| `strokeWidth`      | `number \| string` | Stroke width                 |
+| `secondaryColor`   | `string`           | Duotone accent color         |
+| `secondaryOpacity` | `number`           | Duotone accent opacity       |
+| `isolated`         | `boolean`          | Ignores provider             |
+| `alt`              | `string`           | Accessibility label          |
+
+## Differences from web React
+
+- No CSS variables. Resolution: `prop → context → default`.
+- `size` is `number` only (pixels).
+- Renders `<Svg>` from `react-native-svg`.
