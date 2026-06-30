@@ -135,7 +135,7 @@ function App() {
 
 ## Isolated icons
 
-Set `isolated` to bypass the provider entirely.
+Set `isolated` to disconnect the icon from `SolarProvider`. The icon then reads `currentColor` from its CSS parent and uses hardcoded defaults for size and stroke.
 
 ```jsx
 import { HeartIcon } from '@solar-icons/react/bold'
@@ -149,4 +149,4 @@ function App() {
 }
 ```
 
-The icon uses hardcoded defaults (`24px`, `currentColor`, `1.5`) and ignores the CSS variable cascade.
+See the [Global Styling page](/docs/v3/advanced/global-styling#isolated-mode) for the full list of values `isolated` sets.

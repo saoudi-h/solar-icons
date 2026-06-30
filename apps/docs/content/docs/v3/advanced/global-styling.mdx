@@ -4,11 +4,11 @@ description: How Solar Icons handles styling behind the scenes — CSS variable 
 icon: CodeIcon
 ---
 
-Solar Icons v3 uses CSS custom properties instead of React Context or runtime props to pass default values. This design keeps icons server-renderable and removes the cost of prop drilling.
+Solar Icons v3 uses CSS custom properties instead of React Context or runtime props to pass default values. The wrapper element does not update on prop change — the browser's native CSS cascade handles propagation.
 
 ## CSS variable cascade
 
-`SolarProvider` sets CSS custom properties on a `<div>` with `display: contents`. Every icon inside reads these variables through the normal CSS cascade.
+`SolarProvider` sets CSS custom properties on a `<div>` with `display: contents`. Every icon inside reads these variables through normal CSS inheritance.
 
 ```jsx
 import { SolarProvider } from '@solar-icons/react'
@@ -18,7 +18,7 @@ import { HeartIcon } from '@solar-icons/react/bold'
 </SolarProvider>
 ```
 
-The provider sets `--solar-color: #3b82f6` on the wrapper. The icon reads `var(--solar-color, currentColor)` for its fill and stroke. No props. No re-renders.
+The provider sets `--solar-color: #3b82f6` on the wrapper. The icon reads `var(--solar-color, currentColor)` for its fill and stroke.
 
 ## Priority rules
 
@@ -100,7 +100,7 @@ The CSS variable cascade handles the nesting. The innermost provider's wrapper `
 
 ## SSR and Server Components
 
-Because the provider uses CSS variables, the wrapper `<div>` is a static element. The provider and its icons render on the server as plain HTML. Only `useSolar` — the hook that reads and writes provider state — requires a client component.
+Because the provider uses CSS variables, the wrapper `<div>` does not change after mount. The provider and its icons render on the server as plain HTML. Only `useSolar` — the hook that reads and writes provider state — requires a client component.
 
 ```tsx
 // Server Component: ✅
@@ -123,8 +123,8 @@ export function ThemeToggle() {
 
 Duotone icons (`BoldDuotone`, `LineDuotone`) have a secondary accent path. The CSS variables for this accent have built-in fallbacks:
 
-- `--solar-duotone-color` defaults to `currentColor` — meaning without a provider, the accent inherits the icon's primary color
-- `--solar-duotone-opacity` defaults to `0.5` — the standard Solar duotone look
+- `--solar-duotone-color` defaults to `currentColor`. Without a provider, the accent inherits the icon's primary color.
+- `--solar-duotone-opacity` defaults to `0.5`. This is the standard Solar duotone look.
 
 Set `secondaryColor` and `secondaryOpacity` on the provider or individual icons to override.
 
