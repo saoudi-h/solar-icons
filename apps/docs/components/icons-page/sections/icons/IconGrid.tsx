@@ -56,7 +56,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
     // mount to the actual `window.innerHeight - top - 20`; the
     // residual shift is small (and zero on common viewports).
     const [width, setWidth] = useState(1024)
-    const [height, setHeight] = useState(600)
+    const [height, setHeight] = useState(1024)
 
     useEffect(() => {
         const results = searchIcons({ keyword, categories: [] })
@@ -70,7 +70,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
         const handleResize = () => {
             const rect = el.getBoundingClientRect()
             setWidth(el.offsetWidth)
-            const h = window.innerHeight - rect.top - 20
+            const h = window.innerHeight - rect.top - 56
             setHeight(h)
             onHeightChange?.(h)
         }
@@ -196,75 +196,71 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
     if (viewMode === 'grouped') {
         return (
             <div ref={wrapperRef} style={{ width: '100%', height }}>
-                <ScrollFade fadeSize={20} className="h-full">
-                    <List
-                        ref={listRef}
-                        className="*:relative *:mx-auto"
-                        width={width}
-                        height={height}
-                        rowCount={rows.length}
-                        rowHeight={({ index }) =>
-                            rows[index]?.kind === 'header' ? SECTION_HEADER : ICON_CELL
-                        }
-                        rowRenderer={({ index, key, style }) => {
-                            const row = rows[index]
-                            if (!row) return null
-                            if (row.kind === 'header') {
-                                return (
-                                    <div
-                                        key={key}
-                                        data-cat-section={row.category}
-                                        style={{
-                                            ...style,
-                                            height: SECTION_HEADER - GAP,
-                                            paddingTop: GAP,
-                                        }}
-                                        className={cn(
-                                            `
-                                              flex items-end gap-2 px-1 pb-2
-                                              text-sm font-semibold
-                                              tracking-wide
-                                            `,
-                                            activeCategory === row.category
-                                                ? 'text-foreground'
-                                                : 'text-muted-foreground'
-                                        )}>
-                                        <span className="uppercase">{row.category}</span>
-                                        <span
-                                            className="
-                                              font-mono text-xs font-normal
-                                              text-muted-foreground/70
-                                              tabular-nums
-                                            ">
-                                            {row.count}
-                                        </span>
-                                    </div>
-                                )
-                            }
+                <List
+                    ref={listRef}
+                    className="*:relative *:mx-auto"
+                    width={width}
+                    height={height}
+                    rowCount={rows.length}
+                    rowHeight={({ index }) =>
+                        rows[index]?.kind === 'header' ? SECTION_HEADER : ICON_CELL
+                    }
+                    rowRenderer={({ index, key, style }) => {
+                        const row = rows[index]
+                        if (!row) return null
+                        if (row.kind === 'header') {
                             return (
                                 <div
                                     key={key}
+                                    data-cat-section={row.category}
                                     style={{
                                         ...style,
-                                        display: 'grid',
-                                        gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
-                                        height: ICON_CELL,
-                                        justifyContent: 'center',
+                                        height: SECTION_HEADER - GAP,
+                                        paddingTop: GAP,
                                     }}
-                                    data-grid-row={row.category}>
-                                    {row.icons.map(icon => (
-                                        <div
-                                            key={icon.name}
-                                            style={{ width: ICON_CELL, height: ICON_CELL }}>
-                                            <IconCard {...icon} />
-                                        </div>
-                                    ))}
+                                    className={cn(
+                                        `
+                                          flex items-end gap-2 px-1 pb-2 text-sm
+                                          font-semibold tracking-wide
+                                        `,
+                                        activeCategory === row.category
+                                            ? 'text-foreground'
+                                            : 'text-muted-foreground'
+                                    )}>
+                                    <span className="uppercase">{row.category}</span>
+                                    <span
+                                        className="
+                                          font-mono text-xs font-normal
+                                          text-muted-foreground/70 tabular-nums
+                                        ">
+                                        {row.count}
+                                    </span>
                                 </div>
                             )
-                        }}
-                        overscanRowCount={2}
-                    />
-                </ScrollFade>
+                        }
+                        return (
+                            <div
+                                key={key}
+                                style={{
+                                    ...style,
+                                    display: 'grid',
+                                    gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
+                                    height: ICON_CELL,
+                                    justifyContent: 'center',
+                                }}
+                                data-grid-row={row.category}>
+                                {row.icons.map(icon => (
+                                    <div
+                                        key={icon.name}
+                                        style={{ width: ICON_CELL, height: ICON_CELL }}>
+                                        <IconCard {...icon} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    }}
+                    overscanRowCount={2}
+                />
             </div>
         )
     }

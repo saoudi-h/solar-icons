@@ -1,5 +1,4 @@
 'use client'
-import { ScrollFade } from '@/components/ui/scroll-fade'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 import { CategoryNav } from './CategoryNav'
@@ -11,11 +10,11 @@ import { IconGridVirtualized } from './IconGrid'
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [weight] = useStyleURL()
     // The grid measures its own height
-    // (`window.innerHeight - <wrapper top> - 20`) and reports it
-    // back via `onHeightChange`. We use that exact value as the
-    // height of the sidebar+grid row so the two scrollable panels
-    // are pixel-identical — no `calc(100dvh - 7rem)` magic
-    // number, no 3-categories-too-tall mismatch.
+    // (`window.innerHeight - <wrapper top> - 56` in IconGrid)
+    // and reports it back via `onHeightChange`. We use that exact
+    // value as the height of the sidebar+grid row so the two
+    // scrollable panels are pixel-identical — no `calc(100dvh -
+    // 7rem)` magic number, no 3-categories-too-tall mismatch.
     const [gridHeight, setGridHeight] = useState(0)
 
     return (
@@ -24,8 +23,8 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                 <section
                     className={cn(
                         `
-                          relative container flex size-full flex-1 flex-col
-                          items-center self-center px-0
+                          relative flex size-full flex-1 flex-col items-center
+                          self-center px-0
                         `,
                         className
                     )}>
@@ -63,14 +62,11 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                 <aside
                                     aria-label="Categories navigation"
                                     className="
-                                      sticky top-4 hidden w-50 shrink-0 pr-1
+                                      sticky top-4 hidden w-50 shrink-0
+                                      overflow-y-auto pr-1
                                       md:block
                                     ">
-                                    <ScrollFade fadeSize={20} className="
-                                      h-full pr-1
-                                    ">
-                                        <CategoryNav />
-                                    </ScrollFade>
+                                    <CategoryNav />
                                 </aside>
                                 <div className="min-w-0 flex-1">
                                     <IconGridVirtualized onHeightChange={setGridHeight} />
