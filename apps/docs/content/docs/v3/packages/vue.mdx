@@ -85,7 +85,7 @@ import { HeartIcon } from '@solar-icons/vue/bold'
 
 ## useSolar
 
-Returns reactive `Ref`s.
+Returns reactive `Ref`s. Must be called inside a `<SolarProvider>`.
 
 ```vue
 <script setup>
@@ -126,3 +126,11 @@ import { HeartIcon } from '@solar-icons/vue/dynamic'
 ## CSS variables
 
 Same five variables as [React](/docs/v3/packages/react#css-variables).
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}` (e.g., `solar-heart`). See the [React page](/docs/v3/packages/react#css-classes) for examples.
+
+## ESM only
+
+`@solar-icons/vue` is ESM-only. `require()` does not work.

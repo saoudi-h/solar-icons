@@ -79,7 +79,7 @@ export class AppComponent {}
 
 ## useSolar
 
-Returns Angular `Signal`s.
+Returns Angular `Signal`s. Must be called inside a `<solar-provider>` component tree.
 
 ```ts
 import { useSolar } from '@solar-icons/angular'
@@ -121,3 +121,11 @@ export class AppComponent {
 ## CSS variables
 
 Same five as [React](/docs/v3/packages/react#css-variables), applied via `[style.--solar-*]` host bindings.
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}`.
+
+## ESM only
+
+`@solar-icons/angular` is ESM-only.

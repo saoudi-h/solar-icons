@@ -64,6 +64,23 @@ import { HeartIcon } from '@solar-icons/vue/bold/heart'
 
 Svelte icons work in SvelteKit SSR. Import in your server-side components.
 
+## Dynamic icons (RSC)
+
+Dynamic icons are also server-compatible. `DynamicIcon` is a pure component with no hooks and no `'use client'` directive.
+
+```tsx
+import { HeartIcon } from '@solar-icons/react/dynamic'
+
+export default function Page() {
+    return (
+        <>
+            <HeartIcon weight="Bold" color="#ef4444" />
+            <HeartIcon weight="Linear" color="#3b82f6" size={32} />
+        </>
+    )
+}
+```
+
 ## No more `/ssr` subpath
 
 The legacy `@solar-icons/react/ssr` path no longer exists. Import directly from the style path.

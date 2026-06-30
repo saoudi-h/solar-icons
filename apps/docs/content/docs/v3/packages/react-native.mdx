@@ -82,6 +82,8 @@ function App() {
 
 ## useSolar
 
+Must be called inside a `<SolarProvider>`.
+
 ```jsx
 import { useSolar } from '@solar-icons/react-native'
 
@@ -109,3 +111,11 @@ function ColorToggle() {
 - No CSS variables. Resolution: `prop → context → default`.
 - `size` is `number` only (pixels).
 - Renders `<Svg>` from `react-native-svg`.
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}`.
+
+## ESM only
+
+`@solar-icons/react-native` is ESM-only.

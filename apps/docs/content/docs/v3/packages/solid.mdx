@@ -70,7 +70,7 @@ function App() {
 
 ## useSolar
 
-Returns Solid `Accessor`s.
+Returns Solid `Accessor`s. Must be called inside a `<SolarProvider>`.
 
 ```jsx
 import { useSolar } from '@solar-icons/solid'
@@ -99,3 +99,11 @@ All standard SVG attributes pass through.
 ## CSS variables
 
 Same as [React](/docs/v3/packages/react#css-variables).
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}`. See the [React page](/docs/v3/packages/react#css-classes).
+
+## ESM only
+
+`@solar-icons/solid` is ESM-only. `require()` does not work.
