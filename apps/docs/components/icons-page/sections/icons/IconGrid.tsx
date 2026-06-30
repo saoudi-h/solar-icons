@@ -1,5 +1,4 @@
 'use client'
-import { ScrollFade } from '@/components/ui/scroll-fade'
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
@@ -275,20 +274,18 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({ onHeig
 
     return (
         <div ref={wrapperRef} style={{ width: '100%', height }}>
-            <ScrollFade fadeSize={20} className="h-full">
-                <Grid
-                    ref={gridRef}
-                    className="*:relative *:mx-auto"
-                    cellRenderer={cellRenderer}
-                    columnCount={columnCount}
-                    columnWidth={ICON_CELL}
-                    height={height}
-                    rowCount={rowCount}
-                    rowHeight={ICON_CELL}
-                    width={width}
-                    overscanRowCount={0}
-                />
-            </ScrollFade>
+            <Grid
+                ref={gridRef}
+                className="*:relative *:mx-auto"
+                cellRenderer={cellRenderer}
+                columnCount={columnCount}
+                columnWidth={ICON_CELL}
+                height={height}
+                rowCount={rowCount}
+                rowHeight={ICON_CELL}
+                width={width}
+                overscanRowCount={0}
+            />
         </div>
     )
 }

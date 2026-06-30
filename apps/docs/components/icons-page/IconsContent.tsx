@@ -11,7 +11,7 @@ export function IconsContent() {
         // empty padding only, never content.
         <main
             className="
-              relative flex h-dvh w-full flex-1 flex-col justify-start gap-9
+              relative flex w-full flex-1 flex-col justify-start gap-9
               overflow-hidden bg-background p-4 text-center
               md:gap-12 md:px-10 md:py-[34px]
             ">
