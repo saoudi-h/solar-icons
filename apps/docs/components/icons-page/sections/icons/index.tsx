@@ -46,8 +46,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                         `}>
                         <div
                             className={`
-                              relative flex h-full flex-1 flex-col gap-4
-                              rounded-xl p-4
+                              relative flex flex-1 flex-col gap-4 rounded-xl p-4
                             `}>
                             <FilterBar
                                 drawerExtras={

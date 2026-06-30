@@ -23,7 +23,7 @@ export function IconsContent() {
             ">
             <div
                 className={`
-                  relative container flex w-full flex-col items-center
+                  relative container flex w-full flex-1 flex-col items-center
                   self-center
                 `}>
                 <div

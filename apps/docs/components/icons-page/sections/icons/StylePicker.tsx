@@ -17,10 +17,9 @@ export const StylePicker: React.FC<StylePickerProps> = ({ value, onChange, class
 
     return (
         <div
-            className={cn(
-                `flex h-10 items-center gap-1 rounded-lg bg-default-200 p-1`,
-                className
-            )}
+            className={cn(`
+              flex h-10 items-center gap-1 rounded-lg bg-default-200 p-1
+            `, className)}
             role="radiogroup"
             aria-label="Style">
             {validStyles.map(style => {
@@ -52,7 +51,7 @@ export const StylePicker: React.FC<StylePickerProps> = ({ value, onChange, class
                                           ring-foreground/20
                                         `
                                 )}>
-                                <DialogIcon className="size-5" weight={style} size={20} isolated />
+                                <DialogIcon className="size-5" weight={style} size={24} />
                             </button>
                         </TooltipTrigger>
                         <TooltipContent>
