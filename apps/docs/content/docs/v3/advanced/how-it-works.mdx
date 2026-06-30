@@ -13,7 +13,6 @@ Solar Icons v3 uses CSS custom properties instead of React Context or runtime pr
 ```jsx
 import { SolarProvider } from '@solar-icons/react'
 import { HeartIcon } from '@solar-icons/react/bold'
-
 ;<SolarProvider color="#3b82f6">
     <HeartIcon />
 </SolarProvider>
@@ -23,28 +22,33 @@ The provider sets `--solar-color: #3b82f6` on the wrapper. The icon reads `var(-
 
 ## Priority rules
 
-When multiple sources set the same property, the winner follows standard CSS specificity:
+When multiple sources set the same property, the winner follows the rules below.
 
-1. **Explicit prop on the icon** (highest priority)
-2. **Direct parent element** (e.g., a `<button>` with `color: red`)
-3. **SolarProvider** (sets CSS variables on its wrapper)
-4. **System default** (`24px`, `currentColor`, `1.5`)
+1. **Explicit prop on the icon** (highest priority). Sets inline style on the SVG.
+2. **SolarProvider** (CSS variables). The icon reads `var(--solar-color, currentColor)`. When the provider sets the var, it is defined and the icon uses it.
+3. **Direct CSS parent** (only when the icon is `isolated` or no provider exists). The `isolated` prop forces `currentColor` on the icon, which resolves to the closest CSS ancestor's `color` property.
+4. **System default** (`24px`, `currentColor`, `1.5`).
 
 ### Example
 
 ```jsx
 <SolarProvider color="red">
     <button className="text-blue-600">
-        <ArrowUpIcon /> {/* → blue (button wins over provider) */}
-        <ArrowDownIcon isolated /> {/* → blue (isolated resets provider, inherits from button) */}
+        <ArrowUpIcon /> {/* → red (provider) */}
+        <ArrowDownIcon isolated />{' '}
+        {/* → blue (isolated resets var, inherits currentColor from button) */}
         <ArrowLeftIcon color="yellow" /> {/* → yellow (prop wins over everything) */}
     </button>
 </SolarProvider>
 ```
 
+- `ArrowUpIcon` reads `var(--solar-color, currentColor)`. The provider sets `--solar-color: red`. The var is defined, so the icon uses **red**.
+- `ArrowDownIcon isolated` skips the provider's CSS var entirely. The SVG's `color` attribute is set to `currentColor`, which resolves to the button's `color: blue`. The icon uses **blue**.
+- `ArrowLeftIcon color="yellow"` sets inline `color: yellow` on the SVG. Inline style beats everything. The icon uses **yellow**.
+
 ## Isolated mode
 
-Set `isolated` on an icon to reset all provider CSS variables. The icon inherits from its direct parent instead.
+Set `isolated` on an icon to disconnect it from `SolarProvider`. The icon then reads its values from its CSS parent (via `currentColor` for color) and uses hardcoded defaults for size and stroke.
 
 ```jsx
 <SolarProvider color="red">
@@ -52,12 +56,17 @@ Set `isolated` on an icon to reset all provider CSS variables. The icon inherits
 </SolarProvider>
 ```
 
-When `isolated` is `true`, the icon uses hardcoded defaults (`24px`, `currentColor`, `1.5`) as its base, and then reads from the parent element's CSS — not from the provider.
+When `isolated` is `true`:
+
+- Color: `currentColor` — resolves to the closest CSS ancestor's `color` property
+- Size: `24px` (hardcoded)
+- Stroke width: `1.5` (hardcoded)
+- Duotone CSS variables: `initial` (re-initialized to browser default)
 
 Use `isolated` when:
 
 - An icon sits inside a styled parent (button, link, card) and should match that parent's color
-- An icon is rendered in a portal or shadow DOM where CSS variables break
+- An icon is rendered in a portal or shadow DOM where CSS variable inheritance breaks
 - You want a subtree of icons to diverge from the global theme
 
 ## Provider nesting
