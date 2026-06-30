@@ -1,6 +1,6 @@
 ---
 title: React
-description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for React 16.8+.
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for React 18.3+.
 icon: react
 ---
 
@@ -85,8 +85,8 @@ The provider sets CSS custom properties on a `<div>` with `display: contents`. C
 | `color`            | `--solar-color`           | `currentColor` |
 | `size`             | `--solar-size`            | `24px`         |
 | `strokeWidth`      | `--solar-stroke-width`    | `1.5`          |
-| `secondaryColor`   | `--solar-duotone-color`   | —              |
-| `secondaryOpacity` | `--solar-duotone-opacity` | —              |
+| `secondaryColor`   | `--solar-duotone-color`   | `currentColor` |
+| `secondaryOpacity` | `--solar-duotone-opacity` | `0.5`          |
 
 ## useSolar
 
@@ -139,3 +139,25 @@ Icons resolve styling through CSS custom properties.
 | `--solar-stroke-width`    | Stroke width for Linear/Broken/LineDuotone |
 | `--solar-duotone-color`   | Secondary color for duotone styles         |
 | `--solar-duotone-opacity` | Secondary opacity for duotone styles       |
+
+## CSS classes
+
+Every icon renders with two classes:
+
+| Class          | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `solar`        | Present on every icon. Use for global styling. |
+| `solar-{name}` | Specific to the icon (e.g., `solar-heart`).    |
+
+```css
+.solar {
+    vertical-align: middle;
+}
+.solar-heart {
+    color: #ef4444;
+}
+```
+
+## ESM only
+
+`@solar-icons/react` is ESM-only. `require()` does not work. Use `import` syntax or `await import()`. All V3 packages follow this convention.

@@ -1,0 +1,78 @@
+---
+title: Accessibility
+description: ARIA attributes, alt text, and how Solar Icons handles accessibility by default.
+icon: AccessibilityIcon
+---
+
+Solar Icons renders `<svg>` elements with sensible defaults and provides props for full control.
+
+## Default behavior
+
+Every icon is **decorative by default**. If you do not pass an accessibility label, the SVG renders with `aria-hidden="true"` and `role="img"`. Screen readers skip it.
+
+```jsx
+<HeartIcon color="#ef4444" size={24} />
+// Renders: <svg aria-hidden="true" role="img" ...>
+```
+
+This matches the [WAI-ARIA recommendation](https://www.w3.org/WAI/tutorials/images/decorative/) for decorative images.
+
+## Providing a label
+
+Pass `alt` to turn the icon into a meaningful element. The SVG gets a `<title>` child and `aria-hidden` is removed.
+
+```jsx
+<HeartIcon alt="Add to favorites" color="#ef4444" />
+// Renders: <svg role="img"><title>Add to favorites</title>...</svg>
+```
+
+Screen readers announce "Add to favorites, image".
+
+### Additional attributes
+
+Use `aria-label` or `title` for finer control. Both prevent `aria-hidden`:
+
+```jsx
+<HeartIcon aria-label="Favorite this item" />
+<HeartIcon title="Favorite" />
+```
+
+## Color contrast
+
+Icons inherit their color from the CSS cascade. They default to `currentColor`, which means the icon matches the surrounding text color. Use standard CSS color contrast techniques for text, and the icons follow.
+
+```jsx
+<p className="text-gray-900 dark:text-gray-100">
+    <HeartIcon /> Add to favorites
+</p>
+```
+
+When setting explicit colors with the `color` prop, verify the contrast ratio against the background:
+
+```jsx
+// Good: blue-500 on white = 4.5:1 contrast ratio
+<HeartIcon color="#3b82f6" />
+
+// Bad: yellow-200 on white = insufficient contrast
+<HeartIcon color="#fef08a" />
+```
+
+## Focus and interaction
+
+Icons are not focusable by default. They pass through any event handlers you attach:
+
+```jsx
+<HeartIcon onClick={() => addFavorite()} className="cursor-pointer" alt="Favorite" />
+```
+
+For icons that act as interactive elements, wrap them in a semantic button:
+
+```jsx
+<button onClick={() => addFavorite()} aria-label="Add to favorites">
+    <HeartIcon aria-hidden="true" />
+</button>
+```
+
+## SVG attributes
+
+Every icon accepts standard SVG attributes (`className`, `style`, `onClick`, `onFocus`, etc.). These pass through to the `<svg>` element. Use them for any additional ARIA or styling needs.

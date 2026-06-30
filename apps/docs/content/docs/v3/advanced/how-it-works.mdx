@@ -1,0 +1,169 @@
+---
+title: How It Works
+description: How Solar Icons handles styling behind the scenes — CSS variable cascade, priority rules, Provider nesting, and isolated mode.
+icon: CodeIcon
+---
+
+Solar Icons v3 uses CSS custom properties instead of React Context or runtime props to pass default values. This design keeps icons server-renderable and removes the cost of prop drilling.
+
+## CSS variable cascade
+
+`SolarProvider` sets CSS custom properties on a `<div>` with `display: contents`. Every icon inside reads these variables through the normal CSS cascade.
+
+```jsx
+import { SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold'
+
+;<SolarProvider color="#3b82f6">
+    <HeartIcon />
+</SolarProvider>
+```
+
+The provider sets `--solar-color: #3b82f6` on the wrapper. The icon reads `var(--solar-color, currentColor)` for its fill and stroke. No props. No re-renders.
+
+## Priority rules
+
+When multiple sources set the same property, the winner follows standard CSS specificity:
+
+1. **Explicit prop on the icon** (highest priority)
+2. **Direct parent element** (e.g., a `<button>` with `color: red`)
+3. **SolarProvider** (sets CSS variables on its wrapper)
+4. **System default** (`24px`, `currentColor`, `1.5`)
+
+### Example
+
+```jsx
+<SolarProvider color="red">
+    <button className="text-blue-600">
+        <ArrowUpIcon /> {/* → blue (button wins over provider) */}
+        <ArrowDownIcon isolated /> {/* → blue (isolated resets provider, inherits from button) */}
+        <ArrowLeftIcon color="yellow" /> {/* → yellow (prop wins over everything) */}
+    </button>
+</SolarProvider>
+```
+
+## Isolated mode
+
+Set `isolated` on an icon to reset all provider CSS variables. The icon inherits from its direct parent instead.
+
+```jsx
+<SolarProvider color="red">
+    <HeartIcon isolated />
+</SolarProvider>
+```
+
+When `isolated` is `true`, the icon uses hardcoded defaults (`24px`, `currentColor`, `1.5`) as its base, and then reads from the parent element's CSS — not from the provider.
+
+Use `isolated` when:
+
+- An icon sits inside a styled parent (button, link, card) and should match that parent's color
+- An icon is rendered in a portal or shadow DOM where CSS variables break
+- You want a subtree of icons to diverge from the global theme
+
+## Provider nesting
+
+Nest `SolarProvider` components to override values for a subtree.
+
+```jsx
+<SolarProvider color="#3b82f6" size={24}>
+    <Header />
+    {/* Icons here: blue, 24px */}
+
+    <SolarProvider color="#ef4444" size={16}>
+        <Sidebar />
+        {/* Icons here: red, 16px */}
+    </SolarProvider>
+
+    <Footer />
+    {/* Icons here: blue, 24px — back to the outer provider */}
+</SolarProvider>
+```
+
+The CSS variable cascade handles the nesting. The innermost provider's wrapper `<div>` has higher specificity for the icons inside it than the outer provider, because it sits closer in the DOM tree.
+
+## Provider is optional
+
+`SolarProvider` is not required. Every icon resolves its style from props first, then CSS variables, then system defaults. Leave the provider out and pass props directly:
+
+```jsx
+<HeartIcon color="#ef4444" size={32} />
+```
+
+## SSR and Server Components
+
+Because the provider uses CSS variables, the wrapper `<div>` is a static element. The provider and its icons render on the server as plain HTML. Only `useSolar` — the hook that reads and writes provider state — requires a client component.
+
+```tsx
+// Server Component: ✅
+import { HeartIcon } from '@solar-icons/react/bold'
+export default function Page() {
+    return <HeartIcon color="#ef4444" />
+}
+
+// Client Component (only if you need useSolar):
+;('use client')
+import { useSolar } from '@solar-icons/react'
+
+export function ThemeToggle() {
+    const { setColor } = useSolar()
+    return <button onClick={() => setColor('#ef4444')}>Red</button>
+}
+```
+
+## Duotone defaults
+
+Duotone icons (`BoldDuotone`, `LineDuotone`) have a secondary accent path. The CSS variables for this accent have built-in fallbacks:
+
+- `--solar-duotone-color` defaults to `currentColor` — meaning without a provider, the accent inherits the icon's primary color
+- `--solar-duotone-opacity` defaults to `0.5` — the standard Solar duotone look
+
+Set `secondaryColor` and `secondaryOpacity` on the provider or individual icons to override.
+
+## CSS classes
+
+Every icon renders with two CSS classes:
+
+| Class          | Applies to                                                |
+| -------------- | --------------------------------------------------------- |
+| `solar`        | Every icon                                                |
+| `solar-{name}` | The specific icon (e.g., `solar-heart`, `solar-settings`) |
+
+Use `.solar` for global icon styling. Use `.solar-heart` for per-icon overrides.
+
+```css
+.solar {
+    vertical-align: middle;
+}
+
+.solar-heart {
+    color: #ef4444;
+}
+```
+
+## Framework notes
+
+### React, Vue, Solid
+
+`SolarProvider` renders a `<div>` with `display: contents` and sets CSS variables as inline `style` values. `useSolar()` returns setters that update these variables.
+
+### Svelte
+
+Provider props are `$bindable()`. Two-way binding lets you drive the provider from external state:
+
+```svelte
+<script>
+let color = $state('#3b82f6')
+</script>
+<SolarProvider bind:color>
+  <input type="color" bind:value={color} />
+  <HeartIcon />
+</SolarProvider>
+```
+
+### Angular
+
+`<solar-provider>` is a standalone component with signal-based inputs. It injects `SolarService` which holds the values as Angular `signal`s. The `useSolar()` function returns the same `SolarService` instance.
+
+### React Native
+
+React Native has no CSS variables. `SolarProvider` uses React Context and `useState`. Values resolve through `prop → context → default`. The cascade model does not apply — each icon reads its value explicitly from the nearest ancestor provider.

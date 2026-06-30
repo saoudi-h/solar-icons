@@ -9,8 +9,8 @@ export class SolarService {
     readonly color = signal<string | undefined>(undefined)
     readonly size = signal<string | number | undefined>(undefined)
     readonly strokeWidth = signal<number | undefined>(undefined)
-    readonly duotoneColor = signal<string | undefined>(undefined)
-    readonly duotoneOpacity = signal<number | undefined>(undefined)
+    readonly secondaryColor = signal<string | undefined>(undefined)
+    readonly secondaryOpacity = signal<number | undefined>(undefined)
 
     private wrapperStyle: Record<string, string> = {}
 
@@ -26,12 +26,12 @@ export class SolarService {
         this.strokeWidth.set(val)
     }
 
-    setDuotoneColor(val: string) {
-        this.duotoneColor.set(val)
+    setSecondaryColor(val: string) {
+        this.secondaryColor.set(val)
     }
 
-    setDuotoneOpacity(val: number) {
-        this.duotoneOpacity.set(val)
+    setSecondaryOpacity(val: number) {
+        this.secondaryOpacity.set(val)
     }
 }
 
@@ -53,8 +53,8 @@ export class SolarProviderComponent {
     readonly color = input<string>()
     readonly size = input<string | number>()
     readonly strokeWidth = input<number>()
-    readonly duotoneColor = input<string>()
-    readonly duotoneOpacity = input<number>()
+    readonly secondaryColor = input<string>()
+    readonly secondaryOpacity = input<number>()
 
     private readonly solarService = inject(SolarService)
 
@@ -63,14 +63,14 @@ export class SolarProviderComponent {
         this.solarService.color.set(this.color())
         this.solarService.size.set(this.size())
         this.solarService.strokeWidth.set(this.strokeWidth())
-        this.solarService.duotoneColor.set(this.duotoneColor())
-        this.solarService.duotoneOpacity.set(this.duotoneOpacity())
+        this.solarService.secondaryColor.set(this.secondaryColor())
+        this.solarService.secondaryOpacity.set(this.secondaryOpacity())
 
         const c = this.solarService.color()
         const sz = this.solarService.size()
         const sw = this.solarService.strokeWidth()
-        const dc = this.solarService.duotoneColor()
-        const dco = this.solarService.duotoneOpacity()
+        const dc = this.solarService.secondaryColor()
+        const dco = this.solarService.secondaryOpacity()
 
         if (c !== undefined) s['--solar-color'] = c
         if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz

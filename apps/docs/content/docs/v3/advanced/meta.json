@@ -2,5 +2,11 @@
     "title": "Advanced",
     "icon": "Settings2Icon",
     "defaultOpen": false,
-    "pages": ["migration", "server-side-rendering", "global-configuration"]
+    "pages": [
+        "migration",
+        "how-it-works",
+        "accessibility",
+        "server-side-rendering",
+        "global-configuration"
+    ]
 }
