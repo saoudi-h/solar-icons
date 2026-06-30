@@ -28,7 +28,21 @@ import { HeartIcon } from '@solar-icons/react/dynamic'
 
 Add `Icon` suffix: `Home` → `HomeIcon`, `ArrowRight` → `ArrowRightIcon`.
 
+## Default namespace export removed
+
+The old `@solar-icons/react` exported a default namespace object pulling every icon into the bundle:
+
+```jsx
+// Before — all 7000+ icons in the bundle
+import solar from '@solar-icons/react'
+;<solar.ArrowUp weight="Bold" />
+```
+
+This no longer exists. Import icons individually per style.
+
 ## Category imports removed
+
+Importing an entire category also defeated tree-shaking:
 
 **Before:**
 

@@ -38,7 +38,21 @@ import { HomeBoldIcon } from '@solar-icons/svelte'
 
 ## Component naming
 
-See the [React migration](/docs/v3/migration/react#component-naming) for the naming table.
+See the [react migration](/docs/v3/migration-to-v3/react#component-naming).
+
+## Category imports removed
+
+**Before:**
+
+```svelte
+import { Bold } from '@solar-icons/svelte/category/arrows'
+```
+
+**After:**
+
+```svelte
+import ArrowUpIcon from '@solar-icons/svelte/bold/arrow-up'
+```
 
 ## New: SolarProvider
 

@@ -33,6 +33,17 @@ Auto-imported components include the style suffix:
 
 `useSolar()` must be called inside a `<SolarProvider>` tree. There is no global context.
 
+## Category and namespace imports removed
+
+**Before:**
+
+```ts
+import * as solar from '#solar-icons/category'
+// <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
+```
+
+`#solar-icons/category` and the `solar.*` namespace no longer exist. Import icons individually.
+
 ## Vue migration
 
-The Nuxt module wraps `@solar-icons/vue`. See the [Vue migration guide](/docs/v3/migration/vue) for component API changes.
+The Nuxt module wraps `@solar-icons/vue`. See the [Vue migration guide](/docs/v3/migration-to-v3/vue) for component API changes.

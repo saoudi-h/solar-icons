@@ -17,6 +17,20 @@ import { HomeIcon } from '@solar-icons/react-native/bold'
 **Before:** `size="32"`  
 **After:** `size={32}`
 
+## Category imports removed
+
+**Before:**
+
+```jsx
+import { House } from '@solar-icons/react-native/category/buildings/Bold'
+```
+
+**After:**
+
+```jsx
+import { HouseIcon } from '@solar-icons/react-native/bold/house'
+```
+
 ## No CSS variables
 
 Values resolve through props or SolarProvider (React Context).

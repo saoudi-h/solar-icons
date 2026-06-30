@@ -28,7 +28,21 @@ import { HomeBoldIcon } from '@solar-icons/vue'
 
 ## Component naming
 
-When the style is in the import path, the name drops the style suffix. See the [React migration](/docs/v3/migration/react#component-naming) for the naming table.
+When the style is in the import path, the name drops the style suffix. See the [react migration](/docs/v3/migration-to-v3/react#component-naming).
+
+## Category imports removed
+
+**Before:**
+
+```js
+import { Arrows } from '@solar-icons/vue/category'
+```
+
+**After:**
+
+```js
+import { ArrowUpIcon } from '@solar-icons/vue/dynamic/arrow-up'
+```
 
 ## `weight` prop removed
 
@@ -52,10 +66,6 @@ import { HeartIcon } from '@solar-icons/vue/dynamic'
     <HeartIcon weight="Bold" />
 </template>
 ```
-
-## Category imports removed
-
-Import individually per style.
 
 ## `mirrored` prop removed
 
