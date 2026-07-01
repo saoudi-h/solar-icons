@@ -87,8 +87,9 @@
 - [x] **[PROPAGATE]** Apply same transformations to all other packages (Vue, Solid, Svelte, Angular, React Native): flatten directories, dynamic exports, Icon suffix everywhere, secondaryColor naming, remove any SSR/forwardRef/mirrored patterns. Follow same architecture as React. `Priority: 🔴` `Complexity: L`
 - [x] **[DOCS-V3]** Update documentation for V3.0: document all V3 features (CSS vars, classes, SolarProvider, useSolar, secondaryColor, strokeWidth). Remove obsolete content (react-reactive, old package names, mirrored). Update package pages. `Priority: 🟠` `Complexity: L`
 - [x] **[MIGRATION]** Create V3 migration guide: breaking changes summary, package rename map, before/after code examples, AI-assisted codemod instructions. `Priority: 🟠` `Complexity: M`
-- [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta`. `Priority: 🔴` `Complexity: M`
+- [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta` on the `beta` branch. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
+- [x] **[ICON-RENAMES]** Document V3 icon renames (31 names) in `/docs/v3/migration-to-v3/icon-renames`. 18 from issue #493, 13 dropped from V2 ICON_RENAMES shim. `Priority: 🟠` `Complexity: S`
 
 ## 🎨 Docs UI redesign
 

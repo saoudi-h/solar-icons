@@ -146,9 +146,10 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 📚 Documentation versioning (2026-06-30)
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
-- **Content directories:** `content/docs/v3/` (current) and `content/docs/legacy/` (pre-V3). Never refer to "v2" — there is no v2. Pre-V3 content is called "Legacy".
+- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v3/` (beta, on `beta` branch). Never refer to "v2" — there is no v2. Pre-V3 content is called "Legacy".
+- **Default tab:** Legacy. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. V3 is opt-in via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
-- **Redirect:** `/docs` → `/docs/v3` via `next.config.mts` `redirects()`.
-- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`.
+- **Redirect:** `/docs` → `/docs/legacy` via `next.config.mts` `redirects()`.
+- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v3/*` via the `V3BetaBanner` wrapper.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.

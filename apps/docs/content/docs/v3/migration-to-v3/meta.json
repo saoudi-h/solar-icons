@@ -2,5 +2,15 @@
     "title": "Migration to v3",
     "icon": "ArrowRightUpIcon",
     "defaultOpen": true,
-    "pages": ["react-perf", "react", "vue", "svelte", "solid", "angular", "react-native", "nuxt"]
+    "pages": [
+        "react-perf",
+        "react",
+        "vue",
+        "svelte",
+        "solid",
+        "angular",
+        "react-native",
+        "nuxt",
+        "icon-renames"
+    ]
 }
