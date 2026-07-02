@@ -38,7 +38,7 @@ function generateIndexes(
             })
             .map(
                 icon =>
-                    `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
             )
             .join('\n')
 
@@ -55,7 +55,7 @@ function generateIndexes(
         if (seenGlobal.has(globalName)) continue
         seenGlobal.add(globalName)
         rootGlobalLines.push(
-            `export { default as ${globalName} } from './${WEIGHT_MAP[icon.style]}/${icon.name}';`
+            `export { ${icon.pascalName}Icon as ${globalName} } from './${WEIGHT_MAP[icon.style]}/${icon.name}';`
         )
     }
     rootGlobalLines.sort()
@@ -87,7 +87,7 @@ export * from "./icons/styled"
 
     const dynamicBarrelContent = groups
         .map(g => {
-            return `export { default as ${g.pascalName}Icon } from './${g.name}'`
+            return `export { ${g.pascalName}Icon } from './${g.name}'`
         })
         .join('\n')
 
@@ -110,17 +110,24 @@ function clean() {
 
 function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
     const groups = group.styles
+    const name = group.name
+    const pascalName = group.pascalName
 
     const styleImports = WEIGHTS.filter(w => groups[w])
         .map(w => {
             const icon = groups[w]!
             const kebab = WEIGHT_MAP[w]
-            return `import ${w} from '../${kebab}/${icon.name}'`
+            return `import { ${pascalName}Icon as ${w} } from '../${kebab}/${icon.name}'`
         })
         .join('\n')
 
-    const name = group.name
-    const pascalName = group.pascalName
+    const stylesObj = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const kebab = WEIGHT_MAP[w]
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab
+            return `            ${key}: ${w},`
+        })
+        .join('\n')
 
     const previews = WEIGHTS.filter(w => groups[w])
         .map(w => {
@@ -138,11 +145,15 @@ ${styleImports}
 /**
 ${previews}
  */
-const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }) => {
-    return h(DynamicIcon, { ...attrs, ...props })
+export const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }) => {
+    return h(DynamicIcon, {
+        ...attrs,
+        ...props,
+        styles: {
+${stylesObj}
+        },
+    })
 }
-
-export default ${pascalName}Icon
 `
 
     return {

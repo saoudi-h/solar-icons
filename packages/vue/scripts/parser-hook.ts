@@ -145,7 +145,7 @@ import IconBase from '../../lib/IconBase.vue'
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
+export const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
     return h(IconBase, {
         ...attrs,
         ...props,
@@ -156,8 +156,6 @@ ${hChildren}
         ],
     })
 }
-
-export default ${icon.pascalName}Icon
 `
     return {
         path: `src/icons/${icon.styleKebab}/${icon.name}.ts`,

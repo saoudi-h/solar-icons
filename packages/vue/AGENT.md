@@ -54,3 +54,17 @@ status: 'active'
 - `mirrored` prop removed from `IconProps`.
 - Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.
 - `duotoneColor`/`duotoneOpacity` renamed to `secondaryColor`/`secondaryOpacity` in SolarProvider and useSolar.
+
+## Dynamic icon generator (VUE-DYNAMIC-BROKEN, 2026-07-01)
+
+- `lib/dynamic-icon.vue` requires a `styles: StyleComponents` prop (the map of `bold` / `bold-duotone` / `broken` / `linear` / `line-duotone` / `outline` → component). It picks the right one at runtime via `WEIGHT_MAP[weight]`.
+- `scripts/generate-assets.ts:generateDynamicFile` emits `h(DynamicIcon, { ...attrs, ...props, styles: { bold: Bold, 'bold-duotone': BoldDuotone, ... } })` so the 6 style components are actually fed to `DynamicIcon`. Earlier (pre-`f9204fbc5` follow-up, fixed 2026-07-01) the generator built the 6 style imports but did not pass them as `styles`, so the dynamic icon rendered nothing.
+- Canonical reference: React's `generateDynamicFile` in `packages/react/scripts/generate-assets.ts:115-167`.
+
+## Icon export shape (VUE-NAMED-EXPORTS, 2026-07-01)
+
+- All per-style and dynamic files use **named exports** (`export const XxxIcon = ...`), not default. Matches React/Solid/Svelte. Public API stays the same: barrel re-exports still expose `XxxIcon` as a named export.
+- Per-style generator (`scripts/parser-hook.ts:vueComponentFile`) emits `export const ${icon.pascalName}Icon = ...` (and `import IconBase from '../../lib/IconBase.vue'` stays default — Vue SFC convention).
+- Dynamic generator (`scripts/generate-assets.ts:generateDynamicFile`) emits `import { ${pascalName}Icon as ${w} } from '../${kebab}/${icon.name}'` for each of the 6 styles, then `export const ${pascalName}Icon = ...` at the bottom.
+- Barrel re-exports in `style/*.ts`, `styled.ts`, and `dynamic/index.ts` use `export { ${name}Icon } from ...` (no `default as` indirection). Cleaner and more tree-shake-friendly.
+- Breaking change for users who used the per-file default import (`import HomeBold from '@solar-icons/vue/bold/home-bold'`). The new pattern is `import { HomeBoldIcon } from '@solar-icons/vue/bold/home-bold'`. The V3 docs already document the named pattern.
