@@ -5,7 +5,7 @@
         Icon Gallery
       </h1>
       <p class="text-slate-400 mt-1">
-        1246 icons × 6 styles = 7476 variants. Uses explicit style imports (<code class="text-amber-400">@solar-icons/vue/bold</code> etc.) for dynamic browsing — auto-imports can't resolve <code class="text-amber-400">&lt;component :is="string"&gt;</code> at runtime.
+        1246 icons × 6 styles = 7476 variants. All imports from <code class="text-amber-400">@solar-icons/nuxt/icons</code>.
       </p>
     </div>
 
@@ -126,13 +126,13 @@
 </template>
 
 <script setup lang="ts">
-import * as Bold from '@solar-icons/vue/bold'
-import * as BoldDuotone from '@solar-icons/vue/bold-duotone'
-import * as Broken from '@solar-icons/vue/broken'
-import * as Linear from '@solar-icons/vue/linear'
-import * as LineDuotone from '@solar-icons/vue/line-duotone'
-import * as Outline from '@solar-icons/vue/outline'
-import ICON_NAMES, { STYLES, type IconStyle } from '~/lib/icon-names'
+import * as Bold from '@solar-icons/nuxt/icons/bold'
+import * as BoldDuotone from '@solar-icons/nuxt/icons/bold-duotone'
+import * as Broken from '@solar-icons/nuxt/icons/broken'
+import * as Linear from '@solar-icons/nuxt/icons/linear'
+import * as LineDuotone from '@solar-icons/nuxt/icons/line-duotone'
+import * as Outline from '@solar-icons/nuxt/icons/outline'
+import { STYLES, type IconStyle } from '~/lib/icon-names'
 
 const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
 
@@ -146,14 +146,18 @@ const styleModules: Record<IconStyle, Record<string, any>> = {
   Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline,
 }
 
+const ICON_NAMES = Object.keys(Bold)
+  .filter(k => k.endsWith('Icon'))
+  .map(k => k.replace('Icon', ''))
+  .sort()
+
 function getIcon(name: string) {
   return styleModules[selectedStyle.value][name + 'Icon'] ?? null
 }
 
 const filteredIcons = computed(() => {
   const q = searchQuery.value.toLowerCase()
-  const names = ICON_NAMES as readonly string[]
-  if (!q) return names
-  return names.filter(n => n.toLowerCase().includes(q))
+  if (!q) return ICON_NAMES
+  return ICON_NAMES.filter(n => n.toLowerCase().includes(q))
 })
 </script>

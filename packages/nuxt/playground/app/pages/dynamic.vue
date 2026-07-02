@@ -5,7 +5,7 @@
         Dynamic Icons
       </h1>
       <p class="text-slate-400 mt-1">
-        1246 dynamic icons from <code class="text-amber-400">@solar-icons/vue/dynamic</code>. Each icon wraps all 6 styles and switches at runtime via the <code class="text-amber-400">weight</code> prop. Uses explicit import for dynamic <code class="text-amber-400">&lt;component :is&gt;</code> rendering.
+        Dynamic icons from <code class="text-amber-400">@solar-icons/nuxt/dynamic</code>. Each icon wraps all 6 styles and switches at runtime via the <code class="text-amber-400">weight</code> prop.
       </p>
     </div>
 
@@ -51,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import * as dynamic from '@solar-icons/vue/dynamic'
+import * as dynamic from '@solar-icons/nuxt/dynamic'
 
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 

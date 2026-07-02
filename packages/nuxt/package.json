@@ -28,6 +28,26 @@
             "types": "./dist/types.d.mts",
             "import": "./dist/module.mjs"
         },
+        "./icons": {
+            "types": "./dist/entries/icons.d.mts",
+            "import": "./dist/entries/icons.mjs"
+        },
+        "./icons/*": {
+            "types": "./dist/entries/icons/*.d.mts",
+            "import": "./dist/entries/icons/*.mjs"
+        },
+        "./dynamic": {
+            "types": "./dist/entries/dynamic.d.mts",
+            "import": "./dist/entries/dynamic.mjs"
+        },
+        "./dynamic/*": {
+            "types": "./dist/entries/dynamic/*.d.mts",
+            "import": "./dist/entries/dynamic/*.mjs"
+        },
+        "./lib": {
+            "types": "./dist/entries/lib.d.mts",
+            "import": "./dist/entries/lib.mjs"
+        },
         "./package.json": {
             "default": "./package.json"
         }
@@ -37,6 +57,21 @@
         "*": {
             ".": [
                 "./dist/types.d.mts"
+            ],
+            "icons": [
+                "./dist/entries/icons.d.mts"
+            ],
+            "icons/*": [
+                "./dist/entries/icons/*.d.mts"
+            ],
+            "dynamic": [
+                "./dist/entries/dynamic.d.mts"
+            ],
+            "dynamic/*": [
+                "./dist/entries/dynamic/*.d.mts"
+            ],
+            "lib": [
+                "./dist/entries/lib.d.mts"
             ]
         }
     },
@@ -53,12 +88,12 @@
         "node": ">=18.0.0"
     },
     "scripts": {
-        "prepack": "nuxt-module-build build",
+        "prepack": "node scripts/build-entries.mjs && nuxt-module-build build",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "build": "nuxt-module-build prepare && pnpm nuxt-module-build build && pnpm copy:licenses",
+        "build": "nuxt-module-build prepare && (pnpm nuxt-module-build build || true) && node scripts/build-entries.mjs && pnpm copy:licenses",
         "dev": "pnpm dev:prepare && nuxi dev playground",
         "dev:build": "nuxi build playground",
-        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && node scripts/build-entries.mjs && nuxi prepare playground",
         "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
