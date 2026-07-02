@@ -54,4 +54,4 @@ To adopt a different target, edit the `RENAMES` map in `code.js` and hot-reload 
 
 - `packages/figma-fix-plugin/` — sibling plugin that repairs the upstream `fill` vs `stroke` anomalies. Different concern (geometry vs naming). Kept separate.
 - `packages/core/src/scripts/generate-svgs.ts` — the Figma-fetch script that pulls components into `svgs/`. The plugin updates the Figma file; the script pulls the result.
-- `packages/core/src/utils.ts` (`ICON_RENAMES`, `fixIconName`) — the V2 backward-compat shim. The plugin makes it unnecessary for the renames it covers, but other entries (`Magnifer`, `Minimalistic`, etc.) remain until a future run of the plugin handles them.
+- `packages/core/src/utils.ts` (`ICON_RENAMES`, `fixIconName`) — the pre-V3 backward-compat shim. The plugin makes it unnecessary for the renames it covers, but other entries (`Magnifer`, `Minimalistic`, etc.) remain until a future run of the plugin handles them.

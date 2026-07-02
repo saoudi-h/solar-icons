@@ -70,10 +70,10 @@ import { ScaleBoldIcon } from '@solar-icons/react/bold/scale'
 import BellBingBoldIcon from '@solar-icons/vue/bold/bell-bing'
 
 // After
-import BellRingBoldIcon from '@solar-icons/vue/bold/bell-ring'
+import { BellRingBoldIcon } from '@solar-icons/vue/bold/bell-ring'
 </script>
 ```
 
 ## Why not aliases?
 
-V2 kept deprecated alias exports for renames (so old code kept compiling). V3 drops them: the rename is a hard break, the new name is the only valid one. This keeps the package surface clean and removes ambiguity about which name to use.
+pre-V3 kept deprecated alias exports for renames (so old code kept compiling). V3 drops them: the rename is a hard break, the new name is the only valid one. This keeps the package surface clean and removes ambiguity about which name to use.

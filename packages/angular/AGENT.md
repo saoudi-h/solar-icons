@@ -63,7 +63,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 ## V3 Propagation (2026-06-24)
 
 - Directory structure is now flat (no categories). Icon component files live directly under `src/icons/<style>/<name>-<style>.ts`.
-- `mirrored` prop removed (was V2, never worked as a CSS var, removed in `d348aad6`).
+- `mirrored` prop removed (was pre-V3, never worked as a CSS var, removed in `d348aad6`).
 - Dynamic per-icon components added: `src/icons/dynamic/<name>-dynamic.ts` with `weight` input.
 - All V3 features implemented: `strokeWidth`, `secondaryColor`/`secondaryOpacity`, `ariaLabel`, `titleAttr`, CSS vars (`--solar-icon-color`, `--solar-icon-size`, `--solar-stroke-width`, `--solar-duotone-color`, `--solar-duotone-opacity`), CSS classes (`solar-icon solar-{kebab}`).
 
@@ -73,11 +73,11 @@ Angular is the only package in this monorepo that does NOT render its own `<svg>
 
 ### Why this design, not the others (Component-renders-svg like React/Vue/Solid/Svelte)
 
-This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`, May 2026, when the V2 Component+hostDirectives+icon-template architecture was simplified to the current Directive+Component pattern). Two reasons:
+This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`, May 2026, when the pre-V3 Component+hostDirectives+icon-template architecture was simplified to the current Directive+Component pattern). Two reasons:
 
 1. **DOM cleanliness**. The rendered tree is a real `<svg>`, not `<solar-icon><svg>...</svg></solar-icon>`. This is the same choice Lucide made (`<svg lucideFileText />` — see [lucide.dev](https://lucide.dev)). Direct CSS targeting, accessibility tree, browser devtools, and screen readers see one element, not two. `<svg>` is the canonical HTML element for an icon.
 
-2. **SVG namespace safety**. Angular's template compiler is opinionated about SVG. Some V2 attempts to put `<svg>` inside a Component template produced nested-svg or missing-namespace bugs. Using an attribute selector on a user-authored `<svg>` avoids the entire class of problems.
+2. **SVG namespace safety**. Angular's template compiler is opinionated about SVG. Some pre-V3 attempts to put `<svg>` inside a Component template produced nested-svg or missing-namespace bugs. Using an attribute selector on a user-authored `<svg>` avoids the entire class of problems.
 
 ### Trade-offs accepted
 
