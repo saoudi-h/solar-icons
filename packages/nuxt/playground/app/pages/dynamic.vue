@@ -5,7 +5,7 @@
         Dynamic Icons
       </h1>
       <p class="text-slate-400 mt-1">
-        1246 dynamic icons from <code class="text-amber-400">@solar-icons/vue/dynamic</code>. Each icon wraps all 6 styles and switches at runtime via the <code class="text-amber-400">weight</code> prop.
+        1246 dynamic icons from <code class="text-amber-400">@solar-icons/vue/dynamic</code>. Each icon wraps all 6 styles and switches at runtime via the <code class="text-amber-400">weight</code> prop. Uses explicit import for dynamic <code class="text-amber-400">&lt;component :is&gt;</code> rendering.
       </p>
     </div>
 

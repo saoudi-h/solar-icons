@@ -8,6 +8,13 @@
           class="text-sm text-slate-400 hover:text-slate-100 transition-colors"
           active-class="!text-amber-400"
         >
+          Module Test
+        </NuxtLink>
+        <NuxtLink
+          to="/gallery"
+          class="text-sm text-slate-400 hover:text-slate-100 transition-colors"
+          active-class="!text-amber-400"
+        >
           Gallery
         </NuxtLink>
         <NuxtLink
