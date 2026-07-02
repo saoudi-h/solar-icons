@@ -93,6 +93,7 @@
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta` on the `beta` branch. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
 - [x] **[ICON-RENAMES]** Document V3 icon renames (31 names) in `/docs/v3/migration-to-v3/icon-renames`. 18 from issue #493, 13 dropped from pre-V3 ICON_RENAMES shim. `Priority: 🟠` `Complexity: S`
+- [x] **[NUXT-PLAYGROUND-FIX]** Fix `@solar-icons/nuxt` playground — broken since pre-V3. `pnpm dev` failed with `Could not load @nuxt/eslint`. Root cause: playground `nuxt.config.ts` referenced `@nuxt/eslint` and `@nuxt/ui` modules + `@tailwindcss/vite`, none installed. Playground was over-engineered (layouts, Nuxt UI components, Tailwind) for a module test app. **Fix:** stripped playground to plain HTML — removed `@nuxt/eslint`, `@nuxt/ui`, `@tailwindcss/vite` from config, replaced Nuxt UI components with native HTML, removed layouts/components/assets dirs, fixed `index.vue` (removed `mirrored` from `setConfig`, replaced `IconWeight` with `Weight` from `@solar-icons/core/runtime`), added `provider.vue` test page for `SolarProvider` scoping. Module code (`src/module.ts`) was already V3-compliant — no changes needed. Verified: `pnpm dev` starts clean, `pnpm build` succeeds, 9/9 tests pass. `Priority: 🟠` `Complexity: S`
 
 ## 🎨 Docs UI redesign
 
