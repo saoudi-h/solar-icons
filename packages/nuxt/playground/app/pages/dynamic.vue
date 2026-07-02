@@ -42,7 +42,7 @@
         :title="name"
       >
         <div class="flex items-center justify-center" style="min-height: 48px">
-          <component :is="dynamic[name + 'Icon']" :weight="selectedWeight" />
+          <component :is="(dynamic as Record<string, any>)[name + 'Icon']" :weight="selectedWeight" />
         </div>
         <span class="text-[10px] text-slate-600 group-hover:text-slate-400 truncate w-full text-center">{{ name }}</span>
       </div>
@@ -51,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import * as dynamic from '@solar-icons/nuxt/dynamic'
+import * as dynamic from '#solar-icons/dynamic'
 
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 

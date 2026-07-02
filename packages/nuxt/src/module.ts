@@ -2,7 +2,6 @@ import {
   addComponent,
   addImports,
   addTypeTemplate,
-  createResolver,
   defineNuxtModule,
 } from '@nuxt/kit'
 
@@ -40,6 +39,8 @@ export async function getDynamicBarrelIconNames(): Promise<string[]> {
   }
 }
 
+const STYLES = ['bold', 'bold-duotone', 'broken', 'linear', 'line-duotone', 'outline'] as const
+
 export default defineNuxtModule<SolarNuxtModuleOptions>({
   meta: {
     name: '@solar-icons/nuxt',
@@ -55,6 +56,10 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
   async setup(options, nuxt) {
     nuxt.options.alias['#solar-icons'] = '@solar-icons/vue'
     nuxt.options.alias['#solar-icons/lib'] = '@solar-icons/vue/lib'
+    nuxt.options.alias['#solar-icons/dynamic'] = '@solar-icons/vue/dynamic'
+    for (const style of STYLES) {
+      nuxt.options.alias[`#solar-icons/${style}`] = `@solar-icons/vue/${style}`
+    }
 
     addTypeTemplate({
       filename: 'types/solar-icons.d.ts',
@@ -66,6 +71,14 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
           declare module '#solar-icons/lib' {
             export * from '@solar-icons/vue/lib'
           }
+
+          declare module '#solar-icons/dynamic' {
+            export * from '@solar-icons/vue/dynamic'
+          }
+
+          ${STYLES.map(s => `declare module '#solar-icons/${s}' {
+            export * from '@solar-icons/vue/${s}'
+          }`).join('\n')}
         `,
     })
 

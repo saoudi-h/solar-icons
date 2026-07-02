@@ -5,7 +5,7 @@
         Icon Gallery
       </h1>
       <p class="text-slate-400 mt-1">
-        1246 icons × 6 styles = 7476 variants. All imports from <code class="text-amber-400">@solar-icons/nuxt/icons</code>.
+        1246 icons × 6 styles = 7476 variants. Imports via <code class="text-amber-400">#solar-icons/{style}</code> aliases.
       </p>
     </div>
 
@@ -126,12 +126,12 @@
 </template>
 
 <script setup lang="ts">
-import * as Bold from '@solar-icons/nuxt/icons/bold'
-import * as BoldDuotone from '@solar-icons/nuxt/icons/bold-duotone'
-import * as Broken from '@solar-icons/nuxt/icons/broken'
-import * as Linear from '@solar-icons/nuxt/icons/linear'
-import * as LineDuotone from '@solar-icons/nuxt/icons/line-duotone'
-import * as Outline from '@solar-icons/nuxt/icons/outline'
+import * as Bold from '#solar-icons/bold'
+import * as BoldDuotone from '#solar-icons/bold-duotone'
+import * as Broken from '#solar-icons/broken'
+import * as Linear from '#solar-icons/linear'
+import * as LineDuotone from '#solar-icons/line-duotone'
+import * as Outline from '#solar-icons/outline'
 import { STYLES, type IconStyle } from '~/lib/icon-names'
 
 const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
