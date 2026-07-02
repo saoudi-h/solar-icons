@@ -5,7 +5,7 @@
         Icon Gallery
       </h1>
       <p class="text-slate-400 mt-1">
-        1246 icons × 6 styles = 7476 variants. All auto-imported by <code class="text-amber-400">@solar-icons/nuxt</code>.
+        1246 icons × 6 styles = 7476 variants. All from <code class="text-amber-400">@solar-icons/vue</code>.
       </p>
     </div>
 
@@ -115,7 +115,7 @@
       >
         <div class="flex items-center justify-center" style="min-height: 48px">
           <component
-            :is="`Solar${name}${selectedStyle}Icon`"
+            :is="getIcon(name)"
             :stroke-width="isLinearLike ? Number(strokeWidth) : undefined"
           />
         </div>
@@ -126,6 +126,12 @@
 </template>
 
 <script setup lang="ts">
+import * as Bold from '@solar-icons/vue/bold'
+import * as BoldDuotone from '@solar-icons/vue/bold-duotone'
+import * as Broken from '@solar-icons/vue/broken'
+import * as Linear from '@solar-icons/vue/linear'
+import * as LineDuotone from '@solar-icons/vue/line-duotone'
+import * as Outline from '@solar-icons/vue/outline'
 import ICON_NAMES, { STYLES, type IconStyle } from '~/lib/icon-names'
 
 const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
@@ -135,6 +141,14 @@ const searchQuery = ref('')
 
 const isLinearLike = computed(() => ['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle.value))
 const isDuotone = computed(() => ['BoldDuotone', 'LineDuotone'].includes(selectedStyle.value))
+
+const styleModules: Record<IconStyle, Record<string, any>> = {
+  Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline,
+}
+
+function getIcon(name: string) {
+  return styleModules[selectedStyle.value][name + 'Icon'] ?? null
+}
 
 const filteredIcons = computed(() => {
   const q = searchQuery.value.toLowerCase()

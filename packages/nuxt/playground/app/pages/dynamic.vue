@@ -42,7 +42,7 @@
         :title="name"
       >
         <div class="flex items-center justify-center" style="min-height: 48px">
-          <component :is="`Solar${name}Icon`" :weight="selectedWeight" />
+          <component :is="dynamic[name + 'Icon']" :weight="selectedWeight" />
         </div>
         <span class="text-[10px] text-slate-600 group-hover:text-slate-400 truncate w-full text-center">{{ name }}</span>
       </div>
@@ -51,27 +51,17 @@
 </template>
 
 <script setup lang="ts">
+import * as dynamic from '@solar-icons/vue/dynamic'
+
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 const selectedWeight = ref<(typeof WEIGHTS)[number]>('Linear')
 const searchQuery = ref('')
 
-const DYNAMIC_NAMES = [
-  'AltArrowDown', 'AltArrowLeft', 'AltArrowRight', 'AltArrowUp',
-  'ArrowDown', 'ArrowLeft', 'ArrowLeftDown', 'ArrowLeftUp',
-  'ArrowRight', 'ArrowRightDown', 'ArrowRightUp', 'ArrowUp',
-  'DoubleAltArrowDown', 'DoubleAltArrowLeft', 'DoubleAltArrowRight', 'DoubleAltArrowUp',
-  'Refresh', 'RefreshCircle', 'RefreshSquare',
-  'Restart', 'RestartCircle', 'RestartSquare',
-  'RoundAltArrowDown', 'RoundAltArrowLeft', 'RoundAltArrowRight', 'RoundAltArrowUp',
-  'RoundArrowDown', 'RoundArrowLeft', 'RoundArrowLeftDown', 'RoundArrowLeftUp',
-  'RoundArrowRight', 'RoundArrowRightDown', 'RoundArrowRightUp', 'RoundArrowUp',
-  'RoundDoubleAltArrowDown', 'RoundDoubleAltArrowLeft', 'RoundDoubleAltArrowRight', 'RoundDoubleAltArrowUp',
-  'SquareAltArrowDown', 'SquareAltArrowLeft', 'SquareAltArrowRight', 'SquareAltArrowUp',
-  'SquareArrowDown', 'SquareArrowLeft', 'SquareArrowLeftDown', 'SquareArrowLeftUp',
-  'SquareArrowRight', 'SquareArrowRightDown', 'SquareArrowRightUp', 'SquareArrowUp',
-  'SquareDoubleAltArrowDown', 'SquareDoubleAltArrowLeft', 'SquareDoubleAltArrowRight', 'SquareDoubleAltArrowUp',
-] as const
+const DYNAMIC_NAMES = Object.keys(dynamic)
+  .filter(k => k.endsWith('Icon'))
+  .map(k => k.replace('Icon', ''))
+  .sort()
 
 const filteredIcons = computed(() => {
   const q = searchQuery.value.toLowerCase()
