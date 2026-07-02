@@ -50,14 +50,14 @@ const cssSize = ref(40)
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="bg-muted/20 rounded-lg p-4 flex gap-4" :style="{ '--solar-icon-color': cssColor, '--solar-icon-size': `${cssSize}px` }">
-                            <solarIcons.HomeBold />
-                            <solarIcons.SettingsBold />
-                            <solarIcons.UserBold />
+                            <solarIcons.HomeBoldIcon />
+                            <solarIcons.SettingsBoldIcon />
+                            <solarIcons.UserBoldIcon />
                         </div>
                         <div class="bg-muted/20 rounded-lg p-4 flex gap-4" :style="{ '--solar-icon-color': cssColor, '--solar-icon-size': `${cssSize}px` }">
-                            <solarIcons.HeartBold />
-                            <solarIcons.StarBold />
-                            <solarIcons.BellBold />
+                            <solarIcons.HeartBoldIcon />
+                            <solarIcons.StarBoldIcon />
+                            <solarIcons.BellBoldIcon />
                         </div>
                     </div>
                 </CardContent>
@@ -78,9 +78,9 @@ const cssSize = ref(40)
                     <h2 class="text-xl font-bold">4. CSS Class Styling</h2>
                     <p class="text-sm text-muted-foreground">Every icon has class 'solar' and 'solar-&#123;name&#125;'.</p>
                     <div class="bg-muted/20 rounded-lg p-4 flex gap-4">
-                        <solarIcons.HomeBold />
-                        <solarIcons.StarBold style="color: #60a5fa" />
-                        <solarIcons.HeartBold />
+                        <solarIcons.HomeBoldIcon />
+                        <solarIcons.StarBoldIcon style="color: #60a5fa" />
+                        <solarIcons.HeartBoldIcon />
                     </div>
                 </CardContent>
             </Card>
@@ -93,15 +93,15 @@ const cssSize = ref(40)
                     <div class="grid grid-cols-3 gap-4">
                         <div class="bg-muted/20 rounded-lg p-4 space-y-2">
                             <code class="text-xs text-green-500 block">Default (aria-hidden)</code>
-                            <solarIcons.InfoCircleBold :size="32" />
+                            <solarIcons.InfoCircleBoldIcon :size="32" />
                         </div>
                         <div class="bg-muted/20 rounded-lg p-4 space-y-2">
                             <code class="text-xs text-green-500 block">alt="Information"</code>
-                            <solarIcons.InfoCircleBold :size="32" alt="Information" />
+                            <solarIcons.InfoCircleBoldIcon :size="32" alt="Information" />
                         </div>
                         <div class="bg-muted/20 rounded-lg p-4 space-y-2">
                             <code class="text-xs text-green-500 block">aria-label</code>
-                            <solarIcons.InfoCircleBold :size="32" aria-label="Information" />
+                            <solarIcons.InfoCircleBoldIcon :size="32" aria-label="Information" />
                         </div>
                     </div>
                 </CardContent>

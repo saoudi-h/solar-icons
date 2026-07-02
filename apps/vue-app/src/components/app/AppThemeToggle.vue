@@ -1,13 +1,13 @@
 <template>
   <Button @click="toggleTheme" variant="outline">
-    <SunBold v-if="mode === 'light'" />
-    <MoonBold v-else />
+    <SunBoldIcon v-if="mode === 'light'" />
+    <MoonBoldIcon v-else />
   </Button>
 </template>
 
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core'
-import { SunBold, MoonBold } from '@solar-icons/vue'
+import { SunBoldIcon, MoonBoldIcon } from '@solar-icons/vue'
 import { Button } from '@/components/ui/button'
 
 const mode = useColorMode()

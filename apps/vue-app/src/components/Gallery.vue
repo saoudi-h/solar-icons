@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, shallowRef, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useSolar } from '@solar-icons/vue'
-import { ALL_ICONS, STYLES, type IconStyle } from '@/lib/icon-list'
+import { STYLES, type IconStyle, getIconNames } from '@/lib/icon-list'
 import * as Bold from '@solar-icons/vue/bold'
 import * as Linear from '@solar-icons/vue/linear'
 import * as BoldDuotone from '@solar-icons/vue/bold-duotone'
@@ -19,10 +19,12 @@ const isDuotone = computed(() => ['BoldDuotone', 'LineDuotone'].includes(selecte
 
 const styleModules: Record<IconStyle, any> = { Bold, Linear, BoldDuotone, LineDuotone, Broken, Outline }
 
+const currentIconNames = computed(() => getIconNames(styleModules[selectedStyle.value]))
+
 const filteredIcons = computed(() => {
     const q = searchQuery.value.toLowerCase()
-    if (!q) return ALL_ICONS
-    return ALL_ICONS.filter((n) => n.toLowerCase().includes(q))
+    if (!q) return currentIconNames.value
+    return currentIconNames.value.filter((n) => n.toLowerCase().includes(q))
 })
 
 function getIcon(name: string) {
@@ -42,13 +44,13 @@ function getIcon(name: string) {
             <div class="space-y-2">
                 <label class="text-sm font-medium text-slate-300">Color</label>
                 <div class="flex items-center gap-3">
-                    <input type="color" :value="solar.color ?? '#f59e0b'" @input="solar.setColor(($event.target as HTMLInputElement).value)" class="w-10 h-10 rounded-lg cursor-pointer border-0" />
-                    <input type="text" :value="solar.color ?? '#f59e0b'" @input="solar.setColor(($event.target as HTMLInputElement).value)" class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono" />
+                    <input type="color" :value="solar.color.value ?? '#f59e0b'" @input="solar.setColor(($event.target as HTMLInputElement).value)" class="w-10 h-10 rounded-lg cursor-pointer border-0 shrink-0" />
+                    <input type="text" :value="solar.color.value ?? '#f59e0b'" @input="solar.setColor(($event.target as HTMLInputElement).value)" class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono" />
                 </div>
             </div>
             <div class="space-y-2">
-                <label class="text-sm font-medium text-slate-300">Size: <span class="text-amber-400">{{ solar.size ?? 32 }}px</span></label>
-                <input type="range" min="16" max="64" :value="Number(solar.size) || 32" @input="solar.setSize(parseInt(($event.target as HTMLInputElement).value))" class="w-full accent-amber-500" />
+                <label class="text-sm font-medium text-slate-300">Size: <span class="text-amber-400">{{ solar.size.value ?? 32 }}px</span></label>
+                <input type="range" min="16" max="64" :value="Number(solar.size.value) || 32" @input="solar.setSize(parseInt(($event.target as HTMLInputElement).value))" class="w-full accent-amber-500" />
             </div>
             <div class="space-y-2" :class="{ 'opacity-30 pointer-events-none': !isLinearLike }">
                 <label class="text-sm font-medium text-slate-300">Stroke: <span class="text-amber-400">{{ solar.strokeWidth ?? 1.5 }}</span></label>
