@@ -22,10 +22,13 @@ describe('Nuxt module defaults and setup', () => {
     expect(Module.defaults).toMatchObject({
       namePrefix: 'Solar',
       autoImport: true,
-      color: 'currentColor',
-      size: 24,
-      strokeWidth: 1.5,
     })
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.color).toBeUndefined()
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.size).toBeUndefined()
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.strokeWidth).toBeUndefined()
   })
 
   it('registers aliases, type templates and composables', { timeout: 30000 }, async () => {
@@ -35,9 +38,6 @@ describe('Nuxt module defaults and setup', () => {
       {
         namePrefix: 'Solar',
         autoImport: true,
-        color: 'red',
-        size: 16,
-        strokeWidth: 2,
       },
       nuxt,
     )
@@ -64,6 +64,9 @@ describe('Nuxt module defaults and setup', () => {
 
     expect(kit.addComponent).not.toHaveBeenCalledWith(
       expect.objectContaining({ filePath: '@solar-icons/vue' }),
+    )
+    expect(kit.addComponent).not.toHaveBeenCalledWith(
+      expect.objectContaining({ filePath: '@solar-icons/vue/dynamic' }),
     )
   })
 })

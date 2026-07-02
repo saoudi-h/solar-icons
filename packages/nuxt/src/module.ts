@@ -9,27 +9,33 @@ import {
 export interface SolarNuxtModuleOptions {
   namePrefix?: string
   autoImport?: boolean
-  color?: string
-  size?: string | number
-  strokeWidth?: number
 }
 
-export async function getAllIconNames(): Promise<string[]> {
+export async function getMainBarrelIconNames(): Promise<string[]> {
   try {
     const solarIcons = await import('@solar-icons/vue')
-    const iconNames = Object.keys(solarIcons).filter(
+    return Object.keys(solarIcons).filter(
       name =>
         name !== 'default'
         && name !== 'IconBase'
         && name !== 'SolarProvider'
         && name !== 'useSolar'
-        && name !== 'IconStyle'
-        && name !== 'DynamicIcon',
+        && name !== 'IconStyle',
     )
-    return iconNames
   }
   catch (error) {
-    console.error('Solar Icons: Error getting icon names:', error)
+    console.error('Solar Icons: Error loading main barrel:', error)
+    return []
+  }
+}
+
+export async function getDynamicBarrelIconNames(): Promise<string[]> {
+  try {
+    const dynamicIcons = await import('@solar-icons/vue/dynamic')
+    return Object.keys(dynamicIcons).filter(name => name !== 'default')
+  }
+  catch (error) {
+    console.error('Solar Icons: Error loading dynamic barrel:', error)
     return []
   }
 }
@@ -45,13 +51,8 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
   defaults: {
     namePrefix: 'Solar',
     autoImport: true,
-    color: 'currentColor',
-    size: 24,
-    strokeWidth: 1.5,
   },
   async setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
-
     nuxt.options.alias['#solar-icons'] = '@solar-icons/vue'
     nuxt.options.alias['#solar-icons/lib'] = '@solar-icons/vue/lib'
 
@@ -61,7 +62,7 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
           declare module '#solar-icons' {
             export * from '@solar-icons/vue'
           }
-          
+
           declare module '#solar-icons/lib' {
             export * from '@solar-icons/vue/lib'
           }
@@ -69,12 +70,21 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
     })
 
     if (options.autoImport) {
-      const iconNames = await getAllIconNames()
-      iconNames.forEach((iconName) => {
+      const mainIcons = await getMainBarrelIconNames()
+      mainIcons.forEach((iconName) => {
         addComponent({
           name: `${options.namePrefix}${iconName}`,
           export: iconName,
           filePath: '@solar-icons/vue',
+        })
+      })
+
+      const dynamicIcons = await getDynamicBarrelIconNames()
+      dynamicIcons.forEach((iconName) => {
+        addComponent({
+          name: `${options.namePrefix}${iconName}`,
+          export: iconName,
+          filePath: '@solar-icons/vue/dynamic',
         })
       })
     }
