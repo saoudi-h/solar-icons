@@ -4973,10 +4973,10 @@
         "tags": ["test tube", "chemistry"]
     },
     {
-        "name": "bone-broken",
+        "name": "bone-fracture",
         "category": "medicine",
         "categoryTags": ["medicine", "healthcare", "injury", "surgery"],
-        "tags": ["Broken bone", "Bone fracture"]
+        "tags": ["Broken bone", "Bone fracture", "fractured bone", "skeletal injury"]
     },
     {
         "name": "heart-pulse",
@@ -5708,10 +5708,10 @@
         "tags": ["crossbar", "horizontal line"]
     },
     {
-        "name": "text",
+        "name": "text-format",
         "category": "text-formatting",
-        "categoryTags": ["text-formatting", "typography", "writing-tools"],
-        "tags": ["T sign", "Vertical text"]
+        "categoryTags": ["text-formatting", "typography", "writing-tools", "formatting"],
+        "tags": ["T sign", "Vertical text", "formatting", "text style", "typography"]
     },
     {
         "name": "text-underline",
@@ -5750,10 +5750,10 @@
         "tags": ["link", "connectivity"]
     },
     {
-        "name": "link-broken-minimalistic",
+        "name": "unlink-minimalistic",
         "category": "text-formatting",
         "categoryTags": ["text-formatting", "internet-connectivity", "communication-tech"],
-        "tags": ["broken-link", "invalid-url"]
+        "tags": ["broken-link", "invalid-url", "unlink", "disconnect", "remove link"]
     },
     {
         "name": "link-round",
@@ -5815,10 +5815,10 @@
         "tags": ["input-field", "focus-field"]
     },
     {
-        "name": "link-broken",
+        "name": "unlink",
         "category": "text-formatting",
         "categoryTags": ["text-formatting", "web-browsing", "connectivity"],
-        "tags": ["broken link", "URL error", "invalid URL"]
+        "tags": ["broken link", "URL error", "invalid URL", "disconnect", "remove link", "unlink"]
     },
     {
         "name": "link-minimalistic",
@@ -6694,10 +6694,10 @@
         "tags": ["radiant heart", "celebratory symbol"]
     },
     {
-        "name": "heart-broken",
+        "name": "heart-crack",
         "category": "like",
         "categoryTags": ["like", "emotional", "relationship", "heartbreak"],
-        "tags": ["broken heart", "sad love"]
+        "tags": ["broken heart", "sad love", "crack", "split heart", "emotional"]
     },
     {
         "name": "medal-ribbons-star",
