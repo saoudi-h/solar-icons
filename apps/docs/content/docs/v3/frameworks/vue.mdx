@@ -95,8 +95,28 @@ const { color, setColor } = useSolar()
 </script>
 
 <template>
-    <button @click="setColor('#ef4444')">Current: {{ color }}</button>
+    <button @click="setColor('#ef4444')">Current: { color }</button>
 </template>
+```
+
+## Vue Plugin
+
+Configure defaults globally via the Vue plugin. No `<SolarProvider>` needed.
+
+```ts
+import { createApp } from 'vue'
+import { SolarIconsPlugin } from '@solar-icons/vue/lib'
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(SolarIconsPlugin, {
+    color: 'currentColor',
+    size: 24,
+    strokeWidth: 1.5,
+    secondaryColor: '#3b82f6',
+    secondaryOpacity: 0.5,
+})
+app.mount('#app')
 ```
 
 ## Dynamic icons

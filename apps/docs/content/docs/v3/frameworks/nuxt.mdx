@@ -13,16 +13,22 @@ icon: nuxt
 The module wraps `@solar-icons/vue` and provides:
 
 - **Auto-imported icons** — all 7,476 static icons + 1,246 dynamic icons
-- **`SolarProvider`** and **`useSolar`** — auto-imported from `@solar-icons/vue/lib`
+- **`SolarProvider`** and **`useSolar`** — auto-imported
 - **`#solar-icons` aliases** — for explicit imports with full TypeScript support
-- **Entry point re-exports** — `@solar-icons/nuxt/icons`, `/dynamic`, `/lib`
+- **Provider defaults** — configure default color, size, stroke width from `nuxt.config.ts`
 
 ## Module options
 
-| Option       | Type      | Default   | Description                                    |
-| ------------ | --------- | --------- | ---------------------------------------------- |
-| `namePrefix` | `string`  | `'Solar'` | Prefix for auto-imported component names       |
-| `autoImport` | `boolean` | `'true'`  | Register all icons as auto-imported components |
+| Option             | Type               | Default   | Description                                          |
+| ------------------ | ------------------ | --------- | ---------------------------------------------------- |
+| `namePrefix`       | `string`           | `'Solar'`  | Prefix for auto-imported component names             |
+| `autoImport`       | `boolean`          | `'true'`   | Register all icons as auto-imported components       |
+| `provider`         | `boolean`          | `'true'`   | Inject global SolarProvider wrapping the app         |
+| `color`            | `string`           | —         | Default icon color                                   |
+| `size`             | `string \| number` | —         | Default icon size                                    |
+| `strokeWidth`      | `number`           | —         | Default stroke width                                 |
+| `secondaryColor`   | `string`           | —         | Default duotone accent color                         |
+| `secondaryOpacity` | `number`           | —         | Default duotone accent opacity (0–1)                 |
 
 ```ts
 // nuxt.config.ts
@@ -31,8 +37,27 @@ export default defineNuxtConfig({
     solarIcons: {
         namePrefix: 'Solar',
         autoImport: true,
+        provider: true,
+        color: 'currentColor',
+        size: 24,
+        strokeWidth: 1.5,
+        secondaryColor: '#3b82f6',
+        secondaryOpacity: 0.5,
     },
 })
+```
+
+When `provider: true` (default), the module automatically wraps your app in a `<SolarProvider>` with the configured defaults. No need to add `<SolarProvider>` in `app.vue`.
+
+When `provider: false`, you must add `<SolarProvider>` manually:
+
+```vue
+<!-- app.vue -->
+<template>
+    <SolarProvider>
+        <NuxtPage />
+    </SolarProvider>
+</template>
 ```
 
 ## Auto-import
