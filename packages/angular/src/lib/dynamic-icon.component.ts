@@ -21,7 +21,7 @@ import type { IconComponent, SolarIconName } from './types'
  * @example
  * ```html
  * <!-- Render by registered name -->
- * <ng-container solarIcon="ArrowLeftBold" [size]="24" color="red" />
+ *  <ng-container solarIcon="SolarArrowLeftBold" [size]="24" color="red" />
  *
  * <!-- Render by component class directly -->
  * <ng-container [solarIcon]="ArrowLeftBold" [size]="24" />
@@ -46,6 +46,12 @@ export class SolarDynamicIcon {
     readonly color = input<string>()
     /** Stroke width of the icon */
     readonly strokeWidth = input<string | number>()
+    /** Weight/style for dynamic icons (e.g. 'Bold', 'Linear') */
+    readonly weight = input<string>()
+    /** Secondary color for duotone icons */
+    readonly secondaryColor = input<string>()
+    /** Secondary opacity for duotone icons */
+    readonly secondaryOpacity = input<string | number>()
     /** Accessibility label for the icon */
     readonly alt = input<string>()
 
@@ -67,12 +73,19 @@ export class SolarDynamicIcon {
             const size = this.size()
             const color = this.color()
             const strokeWidth = this.strokeWidth()
+            const weight = this.weight()
+            const secondaryColor = this.secondaryColor()
+            const secondaryOpacity = this.secondaryOpacity()
             const alt = this.alt()
 
             untracked(() => {
                 if (size !== undefined) ref.setInput('size', size)
                 if (color !== undefined) ref.setInput('color', color)
                 if (strokeWidth !== undefined) ref.setInput('strokeWidth', strokeWidth)
+                if (weight !== undefined) ref.setInput('weight', weight)
+                if (secondaryColor !== undefined) ref.setInput('secondaryColor', secondaryColor)
+                if (secondaryOpacity !== undefined)
+                    ref.setInput('secondaryOpacity', secondaryOpacity)
                 if (alt !== undefined) ref.setInput('alt', alt)
             })
         })

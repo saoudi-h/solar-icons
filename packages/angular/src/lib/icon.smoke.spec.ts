@@ -1,18 +1,18 @@
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
-import { ArrowLeftBoldDuotone } from '../icons/bold-duotone/arrow-left-bold-duotone'
-import { ArrowLeftBold } from '../icons/bold/arrow-left-bold'
-import { ArrowLeftBroken } from '../icons/broken/arrow-left-broken'
-import { ArrowLeftLineDuotone } from '../icons/line-duotone/arrow-left-line-duotone'
-import { ArrowLeftLinear } from '../icons/linear/arrow-left-linear'
-import { ArrowLeftOutline } from '../icons/outline/arrow-left-outline'
+import { SolarArrowLeftBold } from '../icons/arrow-left-bold'
+import { SolarArrowLeftBoldDuotone } from '../icons/arrow-left-bold-duotone'
+import { SolarArrowLeftBroken } from '../icons/arrow-left-broken'
+import { SolarArrowLeftLineDuotone } from '../icons/arrow-left-line-duotone'
+import { SolarArrowLeftLinear } from '../icons/arrow-left-linear'
+import { SolarArrowLeftOutline } from '../icons/arrow-left-outline'
 
 const REPRESENTATIVE_ICONS = [
-    { name: 'ArrowLeftBold', cls: ArrowLeftBold },
-    { name: 'ArrowLeftBoldDuotone', cls: ArrowLeftBoldDuotone },
-    { name: 'ArrowLeftLinear', cls: ArrowLeftLinear },
-    { name: 'ArrowLeftLineDuotone', cls: ArrowLeftLineDuotone },
-    { name: 'ArrowLeftOutline', cls: ArrowLeftOutline },
-    { name: 'ArrowLeftBroken', cls: ArrowLeftBroken },
+    { name: 'SolarArrowLeftBold', cls: SolarArrowLeftBold },
+    { name: 'SolarArrowLeftBoldDuotone', cls: SolarArrowLeftBoldDuotone },
+    { name: 'SolarArrowLeftLinear', cls: SolarArrowLeftLinear },
+    { name: 'SolarArrowLeftLineDuotone', cls: SolarArrowLeftLineDuotone },
+    { name: 'SolarArrowLeftOutline', cls: SolarArrowLeftOutline },
+    { name: 'SolarArrowLeftBroken', cls: SolarArrowLeftBroken },
 ] as const
 
 describe('Generated Icon Components (smoke tests)', () => {
@@ -30,7 +30,7 @@ describe('Generated Icon Components (smoke tests)', () => {
             it('should create and render basic SVG structure', () => {
                 fixture.detectChanges()
                 expect(fixture.componentInstance).toBeTruthy()
-                expect(fixture.nativeElement.classList.contains('solar-icon')).toBe(true)
+                expect(fixture.nativeElement.classList.contains('solar')).toBe(true)
 
                 const paths = fixture.nativeElement.querySelectorAll(
                     'path, circle, rect, line, polyline, polygon'

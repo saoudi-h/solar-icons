@@ -1,4 +1,4 @@
-import { Component, computed, inject, Injectable, input, signal } from '@angular/core'
+import { Component, computed, effect, inject, Injectable, input, signal } from '@angular/core'
 
 /**
  * Injectable service that holds Solar icon theming state.
@@ -11,8 +11,6 @@ export class SolarService {
     readonly strokeWidth = signal<number | undefined>(undefined)
     readonly secondaryColor = signal<string | undefined>(undefined)
     readonly secondaryOpacity = signal<number | undefined>(undefined)
-
-    private wrapperStyle: Record<string, string> = {}
 
     setColor(val: string) {
         this.color.set(val)
@@ -60,18 +58,11 @@ export class SolarProviderComponent {
 
     readonly wrapperStyle = computed(() => {
         const s: Record<string, string> = { display: 'contents' }
-        this.solarService.color.set(this.color())
-        this.solarService.size.set(this.size())
-        this.solarService.strokeWidth.set(this.strokeWidth())
-        this.solarService.secondaryColor.set(this.secondaryColor())
-        this.solarService.secondaryOpacity.set(this.secondaryOpacity())
-
         const c = this.solarService.color()
         const sz = this.solarService.size()
         const sw = this.solarService.strokeWidth()
         const dc = this.solarService.secondaryColor()
         const dco = this.solarService.secondaryOpacity()
-
         if (c !== undefined) s['--solar-color'] = c
         if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz
         if (sw != null) s['--solar-stroke-width'] = String(sw)
@@ -80,8 +71,21 @@ export class SolarProviderComponent {
         return s
     })
 
-    // Sync inputs to service on init
     constructor() {
-        // Inputs are read reactively in the wrapperStyle computed above
+        effect(() => {
+            this.solarService.color.set(this.color())
+        })
+        effect(() => {
+            this.solarService.size.set(this.size())
+        })
+        effect(() => {
+            this.solarService.strokeWidth.set(this.strokeWidth())
+        })
+        effect(() => {
+            this.solarService.secondaryColor.set(this.secondaryColor())
+        })
+        effect(() => {
+            this.solarService.secondaryOpacity.set(this.secondaryOpacity())
+        })
     }
 }

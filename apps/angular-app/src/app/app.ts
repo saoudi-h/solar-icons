@@ -1,125 +1,121 @@
-import {
-    Component,
-    signal,
-    computed,
-    ChangeDetectionStrategy,
-    effect,
-    type Type,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { ALL_ICONS, STYLES, type IconStyle } from './icon-list';
 import {
-    SolarDynamicIcon,
-    SolarProviderComponent,
-    useSolar,
-    type IconBase,
+    SolarHomeBold,
+    SolarSettingsBold,
+    SolarUserBold,
+    SolarHeartBold,
+    SolarStarBold,
+    SolarBellBold,
+    SolarInfoCircleBold,
 } from '@solar-icons/angular';
+import { IconGridComponent } from './icon-grid';
 import { ProviderDemoComponent } from './provider-demo';
-
-/**
- * Lazy imports of the per-style icon barrels. Replaces the V2
- * `CATEGORY_LOADERS` (37 categories) with the V3 flat structure (6 styles).
- * Each barrel re-exports 1246 icon components for that style.
- */
-const STYLE_BARRELS: Record<IconStyle, () => Promise<Record<string, unknown>>> = {
-    Bold: () => import('@solar-icons/angular/style/bold'),
-    BoldDuotone: () => import('@solar-icons/angular/style/bold-duotone'),
-    Broken: () => import('@solar-icons/angular/style/broken'),
-    Linear: () => import('@solar-icons/angular/style/linear'),
-    LineDuotone: () => import('@solar-icons/angular/style/line-duotone'),
-    Outline: () => import('@solar-icons/angular/style/outline'),
-};
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [
         FormsModule,
-        SolarDynamicIcon,
-        SolarProviderComponent,
+        IconGridComponent,
         ProviderDemoComponent,
+        SolarHomeBold,
+        SolarSettingsBold,
+        SolarUserBold,
+        SolarHeartBold,
+        SolarStarBold,
+        SolarBellBold,
+        SolarInfoCircleBold,
     ],
-    templateUrl: './app.html',
     styleUrl: './app.css',
+    encapsulation: ViewEncapsulation.None,
+    template: `
+        <div class="min-h-screen bg-slate-900 text-slate-200 p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+
+                <!-- ===== 1. Icon Grid ===== -->
+                <app-icon-grid />
+
+                <!-- ===== 2. CSS Custom Properties ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">2. CSS Custom Properties</h2>
+                    <p class="text-slate-400 text-sm mb-4">Control icons via CSS custom properties on parent elements.</p>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400">Color</span>
+                            <input type="color" [value]="cssColor()" (input)="cssColor.set(($any($event.target).value))"
+                                class="w-10 h-10 rounded cursor-pointer border-0 bg-transparent" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400">Size ({{ cssSize() }}px)</span>
+                            <input type="range" min="16" max="64" [value]="cssSize()" (input)="cssSize.set(parseInt(($any($event.target).value)))"
+                                class="w-32 accent-amber-500" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <code class="text-xs text-slate-500 block">style="--solar-color: \u2026; --solar-size: \u2026;"</code>
+                            <div class="bg-slate-900 rounded-lg p-4 flex gap-4"
+                                [style.--solar-color]="cssColor()" [style.--solar-size.px]="cssSize()">
+                                <svg solarHomeBold></svg>
+                                <svg solarSettingsBold></svg>
+                                <svg solarUserBold></svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <code class="text-xs text-slate-500 block">Tailwind [style.--solar-color="..."]</code>
+                            <div class="bg-slate-900 rounded-lg p-4 flex gap-4"
+                                [style.--solar-color]="cssColor()" [style.--solar-size.px]="cssSize()">
+                                <svg solarHeartBold></svg>
+                                <svg solarStarBold></svg>
+                                <svg solarBellBold></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 3. SolarProvider + useSolar ===== -->
+                <app-provider-demo />
+
+                <!-- ===== 4. CSS Class Styling ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">4. CSS Class Styling</h2>
+                    <p class="text-slate-400 text-sm mb-4">Each icon is targetable via CSS class selectors.</p>
+                    <div class="bg-slate-900 rounded-lg p-4 flex gap-4">
+                        <svg solarHomeBold></svg>
+                        <svg solarStarBold style="color: #60a5fa"></svg>
+                        <svg solarHeartBold></svg>
+                    </div>
+                </div>
+
+                <!-- ===== 5. Accessibility ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">5. Accessibility</h2>
+                    <p class="text-slate-400 text-sm mb-4">Icons have aria-hidden="true" by default. Pass alt, aria-label, or title to make them accessible.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
+                            <svg solarInfoCircleBold></svg>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">alt="Information"</code>
+                            <svg solarInfoCircleBold alt="Information"></svg>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">aria-label</code>
+                            <svg solarInfoCircleBold aria-label="Information about this icon"></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    `,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-    protected readonly styles = STYLES;
-    protected readonly selectedStyle = signal<IconStyle>('Bold');
-    protected readonly iconSize = signal(32);
-    protected readonly iconColor = signal('#f59e0b');
-    protected readonly searchQuery = signal('');
-    protected readonly duotoneColor = signal('#60a5fa');
-    protected readonly duotoneOpacity = signal(0.5);
-    protected readonly strokeWidth = signal(1.5);
+    readonly cssColor = signal('#f59e0b');
+    readonly cssSize = signal(40);
 
-    /**
-     * Map of `name + style` -> Component class. Lazy loaded per style.
-     * Cleared and re-populated when the user changes `selectedStyle`.
-     */
-    protected readonly iconMap = signal<Map<string, Type<IconBase>>>(new Map());
-    protected readonly isStyleLoading = signal(false);
-
-    // CSS vars demo
-    protected readonly cssColor = signal('#f59e0b');
-    protected readonly cssSize = signal(40);
-
-    // Provider demo
-    protected readonly providerColor = signal('#f59e0b');
-    protected readonly providerSize = signal(36);
-    protected readonly providerStroke = signal(1.5);
-
-    protected readonly isDuotone = computed(
-        () => this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'
-    );
-
-    protected readonly isLinearLike = computed(
-        () =>
-            this.selectedStyle() === 'Linear' ||
-            this.selectedStyle() === 'LineDuotone' ||
-            this.selectedStyle() === 'Broken'
-    );
-
-    constructor() {
-        // Lazy-load the icon barrel for the currently selected style.
-        effect(() => {
-            const style = this.selectedStyle();
-            this.isStyleLoading.set(true);
-            this.iconMap.set(new Map());
-            STYLE_BARRELS[style]().then((module) => {
-                const map = new Map<string, Type<IconBase>>();
-                for (const [name, component] of Object.entries(module)) {
-                    if (typeof component === 'function') {
-                        map.set(name + style, component as Type<IconBase>);
-                    }
-                }
-                this.iconMap.set(map);
-                this.isStyleLoading.set(false);
-            });
-        });
-    }
-
-    protected readonly displayIcons = computed(() => {
-        const query = this.searchQuery().toLowerCase();
-        const style = this.selectedStyle();
-        const map = this.iconMap();
-
-        const filteredNames = query
-            ? ALL_ICONS.filter((name) => name.toLowerCase().includes(query))
-            : ALL_ICONS;
-
-        const result: { name: string; component: Type<IconBase> }[] = [];
-        for (const name of filteredNames) {
-            const component = map.get(name + style);
-            if (component) {
-                result.push({ name, component });
-            }
-        }
-        return result;
-    });
-
-    protected trackByIconName(_index: number, item: { name: string }): string {
-        return item.name;
-    }
+    protected parseInt(v: string): number { return Number.parseInt(v, 10); }
 }

@@ -109,15 +109,20 @@
             "import": "./dist/lib/*.js",
             "default": "./dist/lib/*.js"
         },
-        "./style/*": {
-            "types": "./dist/icons/style/*.d.ts",
-            "import": "./dist/icons/style/*.js",
-            "default": "./dist/icons/style/*.js"
+        "./dynamic": {
+            "types": "./dist/dynamic/index.d.ts",
+            "import": "./dist/dynamic/index.js",
+            "default": "./dist/dynamic/index.js"
+        },
+        "./dynamic/*": {
+            "types": "./dist/dynamic/*.d.ts",
+            "import": "./dist/dynamic/*.js",
+            "default": "./dist/dynamic/*.js"
         },
         "./*": {
-            "types": "./dist/icons/*/index.d.ts",
-            "import": "./dist/icons/*/index.js",
-            "default": "./dist/icons/*/index.js"
+            "types": "./dist/icons/*.d.ts",
+            "import": "./dist/icons/*.js",
+            "default": "./dist/icons/*.js"
         }
     }
 }

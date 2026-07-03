@@ -15,6 +15,7 @@ import {
 import { angularComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
+const DYNAMIC_PATH = path.resolve(import.meta.dirname, '../src/dynamic')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/public-api.ts')
 
 const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
@@ -25,50 +26,43 @@ function generateIndexes(
 ): FileDefinition[] {
     const files: FileDefinition[] = []
 
-    for (const weight of WEIGHTS) {
-        const iconsForWeight = icons.filter(i => i.style === weight)
-        const weightKebab = WEIGHT_MAP[weight]
-        const seen = new Set<string>()
-        const content = iconsForWeight
-            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-            .filter(icon => {
-                const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-                if (seen.has(globalName)) return false
-                seen.add(globalName)
-                return true
-            })
-            .map(icon => {
-                const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-                return `export { ${globalName} } from '../${weightKebab}/${icon.name}-${weightKebab}';`
-            })
-            .join('\n')
+    // icons/index.ts — barrel for all static icon components
+    const seenIcons = new Set<string>()
+    const iconLines: string[] = []
 
-        files.push({
-            path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
-            content: content ? `${content}\n` : '',
-        })
-    }
-
-    const seenStyled = new Set<string>()
-    const styledLines: string[] = []
     for (const icon of icons) {
         const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-        if (seenStyled.has(globalName)) continue
-        seenStyled.add(globalName)
+        if (seenIcons.has(globalName)) continue
+        seenIcons.add(globalName)
         const sk = WEIGHT_MAP[icon.style]
-        styledLines.push(`export { ${globalName} } from './${sk}/${icon.name}-${sk}';`)
+        iconLines.push(`export { Solar${globalName} } from './${icon.name}-${sk}';`)
     }
-    styledLines.sort()
+
+    iconLines.sort()
 
     files.push({
-        path: path.join(ICONS_PATH, 'styled.ts'),
-        content: styledLines.join('\n') + '\n',
+        path: path.join(ICONS_PATH, 'index.ts'),
+        content: iconLines.join('\n') + '\n',
     })
 
-    const allNames = icons
-        .map(i => `'${toPascalCase(`${i.name}-${i.style}`)}'`)
-        .sort()
-        .join(' | ')
+    // dynamic/index.ts — barrel for all dynamic wrapper components
+    const dynamicLines: string[] = []
+
+    for (const group of groups) {
+        dynamicLines.push(`export { Solar${group.pascalName} } from './${group.name}';`)
+    }
+
+    dynamicLines.sort()
+
+    files.push({
+        path: path.join(DYNAMIC_PATH, 'index.ts'),
+        content: dynamicLines.join('\n') + '\n',
+    })
+
+    // all-icons.types.ts — union of all icon names with Solar prefix
+    const allStaticNames = icons.map(i => `'Solar${toPascalCase(`${i.name}-${i.style}`)}'`).sort()
+    const allDynamicNames = groups.map(g => `'Solar${g.pascalName}'`).sort()
+    const allNames = [...allStaticNames, ...allDynamicNames].join(' | ')
 
     const typeContent = `/* GENERATED FILE */
 /**
@@ -85,7 +79,8 @@ export type SolarIconName = ${allNames};
 
     const mainEntryContent = `/* GENERATED FILE */
 export * from './lib';
-export * from './icons/styled';
+export * from './icons';
+export * from './dynamic';
 `
 
     files.push({
@@ -93,29 +88,11 @@ export * from './icons/styled';
         content: mainEntryContent,
     })
 
-    const stylesIndexContent = WEIGHTS.map(w => `export * as ${w} from './${WEIGHT_MAP[w]}';`).join(
-        '\n'
-    )
-
-    files.push({
-        path: path.join(ICONS_PATH, 'style', 'index.ts'),
-        content: `${stylesIndexContent}\n`,
-    })
-
-    const dynamicBarrelContent = groups
-        .map(g => `export { ${g.pascalName}Dynamic } from './${g.name}-dynamic'`)
-        .join('\n')
-
-    files.push({
-        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
-        content: dynamicBarrelContent + '\n',
-    })
-
     return files
 }
 
 function clean() {
-    for (const p of [ICONS_PATH, INDEX_PATH]) {
+    for (const p of [ICONS_PATH, DYNAMIC_PATH, INDEX_PATH]) {
         if (fs.existsSync(p)) {
             fs.rmSync(p, { recursive: true, force: true })
             console.log(pc.blue(`Removed ${p}`))
@@ -134,7 +111,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
             const icon = groups[w]!
             const sk = WEIGHT_MAP[w]
             const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-            return `import { ${globalName} } from '../${sk}/${icon.name}-${sk}'`
+            return `import { Solar${globalName} } from '../icons/${icon.name}-${sk}'`
         })
         .join('\n')
 
@@ -156,6 +133,8 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         })
         .join('\n *\n')
 
+    const componentName = `Solar${pascalName}`
+
     const content = `/* GENERATED FILE */
 import {
     ChangeDetectionStrategy,
@@ -163,14 +142,14 @@ import {
     input,
     ViewEncapsulation,
 } from '@angular/core'
-import { IconBase } from '../../lib/icon-base'
+import { IconBase } from '../lib/icon-base'
 ${imports}
 
 /**
 ${previews}
  */
 @Component({
-    selector: 'svg[solar${pascalName}Dynamic]',
+    selector: 'svg[solar${pascalName}]',
     template: \`
 ${conditions}
     \`,
@@ -178,19 +157,19 @@ ${conditions}
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [${WEIGHTS.filter(w => groups[w])
-        .map(w => `${toPascalCase(`${name}-${w}`)}`)
+        .map(w => `Solar${toPascalCase(`${name}-${w}`)}`)
         .join(', ')}],
     host: {
-        'class': 'solar-icon solar-${name}',
+        'class': 'solar solar-${name}',
     },
 })
-export class ${pascalName}Dynamic extends IconBase {
+export class ${componentName} extends IconBase {
     readonly weight = input<${weightUnion}>()
 }
 `
 
     return {
-        path: path.join(ICONS_PATH, 'dynamic', `${name}-dynamic.ts`),
+        path: path.join(DYNAMIC_PATH, `${name}.ts`),
         content,
     }
 }

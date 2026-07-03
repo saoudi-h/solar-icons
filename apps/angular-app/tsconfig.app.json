@@ -8,8 +8,7 @@
     "paths": {
       "@solar-icons/angular": ["../../packages/angular/src/public-api.ts"],
       "@solar-icons/angular/lib": ["../../packages/angular/src/lib/index.ts"],
-      "@solar-icons/angular/arrows": ["../../packages/angular/src/icons/arrows/index.ts"],
-      "@solar-icons/angular/icons/*": ["../../packages/angular/src/icons/*/index.ts"]
+      "@solar-icons/angular/style/*": ["../../packages/angular/src/icons/style/*.ts"]
     }
   },
   "include": ["src/**/*.ts"],

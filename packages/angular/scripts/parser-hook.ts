@@ -90,22 +90,22 @@ export function angularComponentFile(ctx: IconContext<ParsedIcon>): FileDefiniti
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
     const template = iconToTemplate(icon.inner, duotone)
 
+    const componentName = `Solar${globalName}`
+    const styleKebab = WEIGHT_KEBAB[icon.style]
+
     const content = `/* GENERATED FILE */
 import {
     ChangeDetectionStrategy,
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { IconBase } from '../../lib/icon-base';
+import { IconBase } from '../lib/icon-base';
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  *
  * @usage
  * \`<svg solar${globalName} [size]="24" color="#ef4444" />\`
- *
- * @component ${globalName}
- * @style ${icon.style}
  */
 @Component({
     selector: 'svg[solar${globalName}]',
@@ -114,13 +114,13 @@ import { IconBase } from '../../lib/icon-base';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
-        'class': 'solar-icon solar-${icon.kebabName}',
+        'class': 'solar solar-${icon.kebabName}-${styleKebab}',
     },
 })
-export class ${globalName} extends IconBase {}
+export class ${componentName} extends IconBase {}
 `
     return {
-        path: `src/icons/${WEIGHT_KEBAB[icon.style]}/${icon.name}-${WEIGHT_KEBAB[icon.style]}.ts`,
+        path: `src/icons/${icon.name}-${styleKebab}.ts`,
         content,
     }
 }
