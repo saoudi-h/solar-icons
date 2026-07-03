@@ -34,9 +34,7 @@
       </div>
     </nav>
     <main class="max-w-7xl mx-auto p-6">
-      <SolarProvider color="#f59e0b" :size="32" :stroke-width="1.5">
-        <NuxtPage />
-      </SolarProvider>
+      <NuxtPage />
     </main>
   </div>
 </template>

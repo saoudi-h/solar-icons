@@ -1,13 +1,21 @@
 import {
   addComponent,
   addImports,
+  addPlugin,
   addTypeTemplate,
+  createResolver,
   defineNuxtModule,
 } from '@nuxt/kit'
 
 export interface SolarNuxtModuleOptions {
   namePrefix?: string
   autoImport?: boolean
+  provider?: boolean
+  color?: string
+  size?: string | number
+  strokeWidth?: number
+  secondaryColor?: string
+  secondaryOpacity?: number
 }
 
 export async function getMainBarrelIconNames(): Promise<string[]> {
@@ -19,7 +27,8 @@ export async function getMainBarrelIconNames(): Promise<string[]> {
         && name !== 'IconBase'
         && name !== 'SolarProvider'
         && name !== 'useSolar'
-        && name !== 'IconStyle',
+        && name !== 'IconStyle'
+        && name !== 'SOLAR_DEFAULTS_KEY',
     )
   }
   catch (error) {
@@ -52,8 +61,11 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
   defaults: {
     namePrefix: 'Solar',
     autoImport: true,
+    provider: true,
   },
   async setup(options, nuxt) {
+    const resolver = createResolver(import.meta.url)
+
     nuxt.options.alias['#solar-icons'] = '@solar-icons/vue'
     nuxt.options.alias['#solar-icons/lib'] = '@solar-icons/vue/lib'
     nuxt.options.alias['#solar-icons/dynamic'] = '@solar-icons/vue/dynamic'
@@ -102,15 +114,40 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
       })
     }
 
-    addComponent({
-      name: 'SolarProvider',
-      export: 'SolarProvider',
-      filePath: '@solar-icons/vue/lib',
-    })
-
     addImports({
       name: 'useSolar',
       from: '@solar-icons/vue/lib',
     })
+
+    if (options.provider) {
+      const providerConfig: Record<string, unknown> = {}
+      if (options.color !== undefined) providerConfig.color = options.color
+      if (options.size !== undefined) providerConfig.size = options.size
+      if (options.strokeWidth !== undefined) providerConfig.strokeWidth = options.strokeWidth
+      if (options.secondaryColor !== undefined) providerConfig.secondaryColor = options.secondaryColor
+      if (options.secondaryOpacity !== undefined) providerConfig.secondaryOpacity = options.secondaryOpacity
+
+      if (Object.keys(providerConfig).length > 0) {
+        nuxt.options.runtimeConfig.public.solarIcons = providerConfig
+      }
+
+      addComponent({
+        name: 'SolarProvider',
+        filePath: resolver.resolve('./runtime/SolarProviderWrapper'),
+        priority: 999,
+      })
+
+      addPlugin({
+        src: resolver.resolve('./runtime/plugin'),
+        mode: 'all',
+      })
+    }
+    else {
+      addComponent({
+        name: 'SolarProvider',
+        export: 'SolarProvider',
+        filePath: '@solar-icons/vue/lib',
+      })
+    }
   },
 })

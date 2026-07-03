@@ -5,6 +5,7 @@ import Module from '../src/module'
 vi.mock('@nuxt/kit', () => ({
   addComponent: vi.fn(),
   addImports: vi.fn(),
+  addPlugin: vi.fn(),
   addTypeTemplate: vi.fn(),
   createResolver: () => ({ resolve: async (p: string) => p }),
   defineNuxtModule: (def: any) => def,
@@ -22,6 +23,7 @@ describe('Nuxt module defaults and setup', () => {
     expect(Module.defaults).toMatchObject({
       namePrefix: 'Solar',
       autoImport: true,
+      provider: true,
     })
     // @ts-expect-error defaults does not exist on type 'typeof Module'
     expect(Module.defaults.color).toBeUndefined()
@@ -68,5 +70,39 @@ describe('Nuxt module defaults and setup', () => {
     expect(kit.addComponent).not.toHaveBeenCalledWith(
       expect.objectContaining({ filePath: '@solar-icons/vue/dynamic' }),
     )
+  })
+
+  it('passes provider defaults to runtimeConfig', async () => {
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup(
+      {
+        namePrefix: 'Solar',
+        autoImport: true,
+        provider: true,
+        color: '#ef4444',
+        size: 48,
+        strokeWidth: 2,
+        secondaryColor: '#3b82f6',
+        secondaryOpacity: 0.5,
+      },
+      nuxt,
+    )
+
+    expect(nuxt.options.runtimeConfig.public.solarIcons).toEqual({
+      color: '#ef4444',
+      size: 48,
+      strokeWidth: 2,
+      secondaryColor: '#3b82f6',
+      secondaryOpacity: 0.5,
+    })
+  })
+
+  it('does not set runtimeConfig when provider is disabled', async () => {
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup({ namePrefix: 'Solar', autoImport: true, provider: false }, nuxt)
+
+    expect(nuxt.options.runtimeConfig.public.solarIcons).toBeUndefined()
   })
 })

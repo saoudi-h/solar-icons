@@ -1,4 +1,6 @@
 <template>
+  <SolarArrowUpIcon />
+  <SolarAlignVerticalCenterLinearIcon />
   <div class="space-y-6">
     <div>
       <h1 class="text-3xl font-bold">
@@ -136,7 +138,7 @@ import { STYLES, type IconStyle } from '~/lib/icon-names'
 
 const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
 
-const selectedStyle = ref<IconStyle>('Bold')
+const selectedStyle = ref<IconStyle>('LineDuotone')
 const searchQuery = ref('')
 
 const isLinearLike = computed(() => ['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle.value))

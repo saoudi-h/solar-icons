@@ -11,5 +11,9 @@ export default defineNuxtConfig({
   solarIcons: {
     namePrefix: 'Solar',
     autoImport: true,
+    provider: true,
+    color: '#f59e0b',
+    size: 32,
+    strokeWidth: 1.5,
   },
 })
