@@ -84,6 +84,20 @@ let color = $state('#3b82f6')
 | `secondaryColor`   | `--solar-duotone-color`   | `currentColor` |
 | `secondaryOpacity` | `--solar-duotone-opacity` | `0.5`          |
 
+## Dynamic icons
+
+The `@solar-icons/svelte/dynamic` path exports runtime-switchable icons (single component per logical icon with a `weight` prop):
+
+```svelte
+<script>
+import { HeartIcon } from '@solar-icons/svelte/dynamic'
+</script>
+
+<HeartIcon weight="Bold" color="#ef4444" size={32} />
+```
+
+Available weights: `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
+
 ## useSolar
 
 Must be called inside a `<SolarProvider>`.
@@ -113,6 +127,7 @@ const { color, setColor } = useSolar()
 | `alt`              | `string`           | Accessibility label                    |
 | `class`            | `string`           | CSS class (merged with `solar-{name}`) |
 | `style`            | `string`           | Inline style                           |
+
 
 ## CSS variables
 

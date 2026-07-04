@@ -38,7 +38,9 @@ import { HomeBoldIcon } from '@solar-icons/svelte'
 
 ## Component naming
 
-See the [react migration](/docs/v3/migration-to-v3/react#component-naming).
+All components now use an `Icon` suffix (e.g. `HomeIcon`, `HeartBoldIcon`). Per-style barrel imports (`@solar-icons/svelte/bold`) use the short name (`HomeIcon`), top-level imports use the disambiguated name (`HomeBoldIcon`).
+
+Single-file imports use the default export (Svelte convention). Replace PascalCase with kebab-case — `@solar-icons/svelte/bold/home` (the `.svelte` extension is resolved automatically).
 
 ## Category imports removed
 
@@ -52,6 +54,36 @@ import { Bold } from '@solar-icons/svelte/category/arrows'
 
 ```svelte
 import ArrowUpIcon from '@solar-icons/svelte/bold/arrow-up'
+```
+
+## Deprecated: `mirrored` prop removed
+
+The `mirrored` prop was removed. Use CSS `transform: scaleX(-1)` instead.
+
+## New: `useSolar` hook
+
+```svelte
+<script>
+import { useSolar } from '@solar-icons/svelte'
+
+const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
+</script>
+
+<button onclick={() => setColor('#ef4444')}>Red</button>
+```
+
+Must be called inside a `<SolarProvider>`.
+
+## New: Dynamic imports
+
+Runtime-switchable icons via `@solar-icons/svelte/dynamic`:
+
+```svelte
+<script>
+import { HeartIcon } from '@solar-icons/svelte/dynamic'
+</script>
+
+<HeartIcon weight="BoldDuotone" color="#3b82f6" />
 ```
 
 ## New: SolarProvider
@@ -68,6 +100,18 @@ import HomeIcon from '@solar-icons/svelte/bold/home'
 ```
 
 Provider props are `$bindable()` for two-way binding.
+
+
+
+## CSS variable cascade
+
+`SolarProvider` sets CSS custom properties on a wrapper `<div style="display: contents">`. Icons read these values via `var()` fallbacks. You can override any value on a parent element:
+
+```svelte
+<div style="--solar-color: #ef4444; --solar-size: 48px;">
+  <HomeIcon />
+</div>
+```
 
 ## New: Duotone and stroke width
 

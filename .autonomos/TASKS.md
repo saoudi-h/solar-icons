@@ -18,6 +18,10 @@
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta` on the `beta` branch. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
 
+### V3 — Svelte audit & fix
+
+- [x] **[SVELTE-FIX]** Fix `apps/svelte-app` (broken: `Home is not a function` at runtime) and audit `packages/svelte` for full V3 compliance, incl. docs pages. `Priority: 🔴` `Complexity: M`
+
 ### V3 — Known regressions (pre-existing)
 
 - [ ] **[ANGULAR-APP-MIGRATE]** `apps/angular-app` uses pre-V3 API: `HomeBold` etc. (no `Icon` suffix), `@solar-icons/angular/arrows` (category path, removed). `Priority: 🟠` `Complexity: S`
