@@ -2,7 +2,7 @@ import { Component, computed, effect, inject, Injectable, input, signal } from '
 
 /**
  * Injectable service that holds Solar icon theming state.
- * Used internally by `SolarProviderComponent` and exposed via `useSolar()`.
+ * Used internally by `SolarProvider` and exposed via `useSolar()`.
  */
 @Injectable()
 export class SolarService {
@@ -47,7 +47,7 @@ export function useSolar(): SolarService {
     standalone: true,
     providers: [SolarService],
 })
-export class SolarProviderComponent {
+export class SolarProvider {
     readonly color = input<string>()
     readonly size = input<string | number>()
     readonly strokeWidth = input<number>()
@@ -73,19 +73,24 @@ export class SolarProviderComponent {
 
     constructor() {
         effect(() => {
-            this.solarService.color.set(this.color())
+            const val = this.color()
+            if (val !== undefined) this.solarService.color.set(val)
         })
         effect(() => {
-            this.solarService.size.set(this.size())
+            const val = this.size()
+            if (val != null) this.solarService.size.set(val)
         })
         effect(() => {
-            this.solarService.strokeWidth.set(this.strokeWidth())
+            const val = this.strokeWidth()
+            if (val != null) this.solarService.strokeWidth.set(val)
         })
         effect(() => {
-            this.solarService.secondaryColor.set(this.secondaryColor())
+            const val = this.secondaryColor()
+            if (val !== undefined) this.solarService.secondaryColor.set(val)
         })
         effect(() => {
-            this.solarService.secondaryOpacity.set(this.secondaryOpacity())
+            const val = this.secondaryOpacity()
+            if (val != null) this.solarService.secondaryOpacity.set(val)
         })
     }
 }

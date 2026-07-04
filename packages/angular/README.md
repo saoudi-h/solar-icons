@@ -33,12 +33,12 @@ Wrap a subtree to share icon styling via CSS custom properties:
 
 ```typescript
 import { Component } from '@angular/core'
-import { SolarProviderComponent, SolarHomeBold, SolarStarBold } from '@solar-icons/angular'
+import { SolarProvider, SolarHomeBold, SolarStarBold } from '@solar-icons/angular'
 
 @Component({
     selector: 'app-demo',
     standalone: true,
-    imports: [SolarProviderComponent, SolarHomeBold, SolarStarBold],
+    imports: [SolarProvider, SolarHomeBold, SolarStarBold],
     template: `
         <solar-provider color="#3b82f6" [size]="32" [strokeWidth]="1.5">
             <svg solarHomeBold></svg>
@@ -63,7 +63,7 @@ For child-driven control, call `useSolar()` inside a component that is a descend
 
 ```typescript
 import { Component } from '@angular/core'
-import { useSolar, SolarProviderComponent, SolarHomeBold } from '@solar-icons/angular'
+import { useSolar, SolarProvider, SolarHomeBold } from '@solar-icons/angular'
 
 @Component({
     selector: 'app-controls',

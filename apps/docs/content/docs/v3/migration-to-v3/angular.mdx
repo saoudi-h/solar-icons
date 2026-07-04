@@ -6,13 +6,13 @@ icon: angular
 
 ## Standalone components
 
-v3 components are standalone. This was already true in v2 — no module removal needed.
+v3 components are standalone. This was already true before v3 — no module removal needed.
 
 ## Component names
 
-v3 uses `Solar`-prefixed PascalCase imports with style suffixes. v2 used style-suffixed names without prefix.
+v3 uses `Solar`-prefixed PascalCase imports with style suffixes. Before v3, icons used style-suffixed names without prefix.
 
-**Before (v2):**
+**Before (pre-v3):**
 
 ```ts
 import { HeartBold } from '@solar-icons/angular'
@@ -28,7 +28,7 @@ import { SolarHeartBold } from '@solar-icons/angular'
 
 Attribute selectors on `<svg>` remain the same pattern but with `Solar` prefix in the name:
 
-**Before (v2):**
+**Before (pre-v3):**
 
 ```html
 <svg solarHeartBold [size]="24" color="#ef4444" />
@@ -47,11 +47,11 @@ The selector name (`solarHeartBold`) is identical — only the import changes.
 v3 adds `<solar-provider>` for sharing styling via CSS custom properties:
 
 ```ts
-import { SolarProviderComponent, SolarHomeBold } from '@solar-icons/angular'
+import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [SolarProviderComponent, SolarHomeBold],
+    imports: [SolarProvider, SolarHomeBold],
     template: `
         <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
             <svg solarHomeBold></svg>
@@ -97,7 +97,7 @@ v3 icons accept additional inputs:
 | `ariaLabel`        | `string`           | `aria-label` attribute            |
 | `titleAttr`        | `string`           | Explicit `<title>` text           |
 
-v2 only had: `size`, `color`, `alt`, `mirrored`.
+Before v3, only `size`, `color`, `alt`, `mirrored` were available.
 
 ## Dynamic rendering (pre-v3)
 
@@ -151,4 +151,4 @@ v3 adds a base CSS class `solar` plus a per-icon variant `solar-{kebab}-{style}`
 <!-- renders with: class="solar solar-home-bold" -->
 ```
 
-v2 had no CSS classes on icon elements.
+Before v3, icons had no CSS classes.

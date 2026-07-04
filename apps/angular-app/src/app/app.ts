@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, signal, ViewEncapsulation } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import {
+    SolarProvider,
     SolarHomeBold,
     SolarSettingsBold,
     SolarUserBold,
@@ -16,9 +16,9 @@ import { ProviderDemoComponent } from './provider-demo';
     selector: 'app-root',
     standalone: true,
     imports: [
-        FormsModule,
         IconGridComponent,
         ProviderDemoComponent,
+    SolarProvider,
         SolarHomeBold,
         SolarSettingsBold,
         SolarUserBold,
@@ -34,7 +34,9 @@ import { ProviderDemoComponent } from './provider-demo';
             <div class="max-w-7xl mx-auto space-y-8">
 
                 <!-- ===== 1. Icon Grid ===== -->
-                <app-icon-grid />
+                <solar-provider>
+                    <app-icon-grid />
+                </solar-provider>
 
                 <!-- ===== 2. CSS Custom Properties ===== -->
                 <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
@@ -75,7 +77,9 @@ import { ProviderDemoComponent } from './provider-demo';
                 </div>
 
                 <!-- ===== 3. SolarProvider + useSolar ===== -->
-                <app-provider-demo />
+                <solar-provider>
+                    <app-provider-demo />
+                </solar-provider>
 
                 <!-- ===== 4. CSS Class Styling ===== -->
                 <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
