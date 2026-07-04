@@ -12,7 +12,8 @@ export const AngularCode: FC = () => {
     if (!selectedIcon) return null
 
     const bare = selectedIcon.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'
-    const iconName = bare + weight
+    const importName = 'Solar' + bare
+    const selectorName = 'solar' + bare
 
     return (
         <>
@@ -24,11 +25,11 @@ export const AngularCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${iconName} } from '@solar-icons/angular'`}
+                code={`import { ${importName} } from '@solar-icons/angular'`}
             />
             <CodeBlockTemplate
                 lang="tsx"
-                code={`<svg solar${iconName} size="24" color="currentColor" />`}
+                code={`<svg ${selectorName} size="24" color="currentColor" />`}
             />
         </>
     )

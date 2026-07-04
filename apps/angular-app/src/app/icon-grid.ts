@@ -5,8 +5,7 @@ import {
     ChangeDetectionStrategy,
     ViewEncapsulation,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { SolarDynamicIcon, SolarProviderComponent } from '@solar-icons/angular';
+import { SolarIcon, useSolar } from '@solar-icons/angular';
 import * as icons from '@solar-icons/angular/dynamic';
 import type { IconComponent } from '@solar-icons/angular';
 import { STYLES, type IconStyle } from './icon-list';
@@ -30,7 +29,7 @@ function toKebabCase(pascal: string): string {
 @Component({
     selector: 'app-icon-grid',
     standalone: true,
-    imports: [FormsModule, SolarDynamicIcon, SolarProviderComponent],
+    imports: [SolarIcon],
     encapsulation: ViewEncapsulation.None,
     template: `
         <div class="text-center space-y-2">
@@ -62,21 +61,21 @@ function toKebabCase(pascal: string): string {
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-slate-300">Color</label>
                     <div class="flex items-center gap-3">
-                        <input type="color" [value]="iconColor()" (input)="iconColor.set(($any($event.target).value))"
+                        <input type="color" [value]="solar.color()" (input)="solar.setColor(($any($event.target).value))"
                             class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent" />
-                        <input type="text" [value]="iconColor()" (input)="iconColor.set(($any($event.target).value))"
+                        <input type="text" [value]="solar.color()" (input)="solar.setColor(($any($event.target).value))"
                             class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-amber-500 outline-none" />
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300">Size: <span class="text-amber-400">{{ iconSize() }}px</span></label>
-                    <input type="range" min="16" max="64" [value]="iconSize()" (input)="iconSize.set(parseInt(($any($event.target).value)))" class="w-full accent-amber-500" />
+                    <label class="text-sm font-medium text-slate-300">Size: <span class="text-amber-400">{{ solar.size() }}px</span></label>
+                    <input type="range" min="16" max="64" [value]="solar.size()" (input)="solar.setSize(parseInt(($any($event.target).value)))" class="w-full accent-amber-500" />
                 </div>
 
                 <div class="space-y-2" [class.opacity-30]="!isLinearLike()">
-                    <label class="text-sm font-medium text-slate-300">Stroke Width: <span class="text-amber-400">{{ strokeWidth() }}</span></label>
-                    <input type="range" min="0.5" max="4" step="0.1" [value]="strokeWidth()" (input)="strokeWidth.set(parseFloat(($any($event.target).value)))" [disabled]="!isLinearLike()" class="w-full accent-amber-500" />
+                    <label class="text-sm font-medium text-slate-300">Stroke Width: <span class="text-amber-400">{{ solar.strokeWidth() }}</span></label>
+                    <input type="range" min="0.5" max="4" step="0.1" [value]="solar.strokeWidth()" (input)="solar.setStrokeWidth(parseFloat(($any($event.target).value)))" [disabled]="!isLinearLike()" class="w-full accent-amber-500" />
                 </div>
 
                 <div class="space-y-2">
@@ -94,16 +93,16 @@ function toKebabCase(pascal: string): string {
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Accent Color: <span class="text-blue-400 font-mono text-xs">{{ secondaryColor() }}</span></label>
+                            <label class="text-sm font-medium text-slate-300">Accent Color: <span class="text-blue-400 font-mono text-xs">{{ solar.secondaryColor() }}</span></label>
                             <div class="flex items-center gap-3">
-                                <input type="color" [value]="secondaryColor()" (input)="secondaryColor.set(($any($event.target).value))" class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent" />
-                                <input type="text" [value]="secondaryColor()" (input)="secondaryColor.set(($any($event.target).value))" class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-blue-400 outline-none" />
-                                <button class="px-2 py-1.5 text-xs text-slate-400 hover:text-slate-200 bg-slate-700 rounded-lg border border-slate-600 transition-colors cursor-pointer" (click)="secondaryColor.set('#60a5fa')">reset</button>
+                                <input type="color" [value]="solar.secondaryColor()" (input)="solar.setSecondaryColor(($any($event.target).value))" class="w-10 h-10 rounded-lg cursor-pointer border-0 bg-transparent" />
+                                <input type="text" [value]="solar.secondaryColor()" (input)="solar.setSecondaryColor(($any($event.target).value))" class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono focus:border-blue-400 outline-none" />
+                                <button class="px-2 py-1.5 text-xs text-slate-400 hover:text-slate-200 bg-slate-700 rounded-lg border border-slate-600 transition-colors cursor-pointer" (click)="solar.setSecondaryColor('#60a5fa')">reset</button>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Accent Opacity: <span class="text-blue-400">{{ secondaryOpacity() }}</span></label>
-                            <input type="range" min="0" max="1" step="0.05" [value]="secondaryOpacity()" (input)="secondaryOpacity.set(parseFloat(($any($event.target).value)))" class="w-full accent-blue-400" />
+                            <label class="text-sm font-medium text-slate-300">Accent Opacity: <span class="text-blue-400">{{ solar.secondaryOpacity() }}</span></label>
+                            <input type="range" min="0" max="1" step="0.05" [value]="solar.secondaryOpacity()" (input)="solar.setSecondaryOpacity(parseFloat(($any($event.target).value)))" class="w-full accent-blue-400" />
                             <div class="flex justify-between text-xs text-slate-500"><span>0</span><span>0.5 (default)</span><span>1</span></div>
                         </div>
                     </div>
@@ -111,22 +110,19 @@ function toKebabCase(pascal: string): string {
             }
         </div>
 
-        <solar-provider [color]="iconColor()" [size]="iconSize()" [strokeWidth]="strokeWidth()"
-            [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()">
-            <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
-                @for (item of iconList(); track item.name) {
-                    <div class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer" [title]="item.name">
-                        <div class="flex items-center justify-center" style="min-height: 48px">
-                            <ng-container [solarIcon]="item.component" [weight]="selectedStyle()" [size]="iconSize()" [color]="iconColor()"
-                                [strokeWidth]="isLinearLike() ? strokeWidth() : undefined"
-                                [secondaryColor]="isDuotone() ? secondaryColor() : undefined"
-                                [secondaryOpacity]="isDuotone() ? secondaryOpacity() : undefined" />
-                        </div>
-                        <span class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">{{ item.name }}</span>
+        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
+            @for (item of iconList(); track item.name) {
+                <div class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer" [title]="item.name">
+                    <div class="flex items-center justify-center" style="min-height: 48px">
+                        <ng-container [solarIcon]="item.component" [weight]="selectedStyle()" [size]="solar.size()" [color]="solar.color()"
+                            [strokeWidth]="isLinearLike() ? solar.strokeWidth() : undefined"
+                            [secondaryColor]="isDuotone() ? solar.secondaryColor() : undefined"
+                            [secondaryOpacity]="isDuotone() ? solar.secondaryOpacity() : undefined" />
                     </div>
-                }
-            </div>
-        </solar-provider>
+                    <span class="text-[10px] text-slate-500 group-hover:text-slate-300 truncate w-full text-center transition-colors">{{ item.name }}</span>
+                </div>
+            }
+        </div>
 
         @if (iconList().length === 0) {
             <div class="text-center py-20 text-slate-500 bg-slate-800/20 rounded-3xl border border-dashed border-slate-700">
@@ -138,14 +134,11 @@ function toKebabCase(pascal: string): string {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconGridComponent {
+    readonly solar = useSolar();
+
     protected readonly styles = STYLES;
     protected readonly selectedStyle = signal<IconStyle>('Bold');
-    protected readonly iconSize = signal(32);
-    protected readonly iconColor = signal('#f59e0b');
     protected readonly searchQuery = signal('');
-    protected readonly secondaryColor = signal('#60a5fa');
-    protected readonly secondaryOpacity = signal(0.5);
-    protected readonly strokeWidth = signal(1.5);
 
     protected readonly isDuotone = computed(
         () => this.selectedStyle() === 'BoldDuotone' || this.selectedStyle() === 'LineDuotone'
@@ -175,6 +168,14 @@ export class IconGridComponent {
     });
 
     protected readonly totalIcons = computed(() => this.iconList().length);
+
+    constructor() {
+        this.solar.setColor('#f59e0b');
+        this.solar.setSize(32);
+        this.solar.setStrokeWidth(1.5);
+        this.solar.setSecondaryColor('#60a5fa');
+        this.solar.setSecondaryOpacity(0.5);
+    }
 
     protected parseFloat(v: string): number {
         return Number.parseFloat(v);
