@@ -105,15 +105,15 @@ The component using `useSolar()` must be projected into `<solar-provider>` (the 
 
 ## Dynamic icons
 
-Use `SolarDynamicIcon` to render icons by component class reference:
+Use `SolarIcon` to render icons dynamically by component class reference:
 
 ```ts
-import { SolarDynamicIcon } from '@solar-icons/angular'
+import { SolarIcon } from '@solar-icons/angular'
 import { SolarHome } from '@solar-icons/angular/dynamic'
 
 @Component({
     standalone: true,
-    imports: [SolarDynamicIcon],
+    imports: [SolarIcon],
     template: '<ng-container [solarIcon]="icon" [size]="24" color="red" />',
 })
 export class AppComponent {

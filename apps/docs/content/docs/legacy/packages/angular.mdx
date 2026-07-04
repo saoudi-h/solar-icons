@@ -38,7 +38,7 @@ export class App {}
 
 ## Dynamic Rendering
 
-For runtime lookup or dynamic name swapping, use the `SolarDynamicIcon` directive.
+For runtime lookup or dynamic name swapping, use the `SolarIcon` directive.
 
 ### 1. Register icons
 
@@ -55,14 +55,14 @@ bootstrapApplication(App, {
 
 ### 2. Render dynamic icons
 
-Import `SolarDynamicIcon` and pass the name or component class to `solarIcon`:
+Import `SolarIcon` and pass the name or component class to `solarIcon`:
 
 ```tsx
-import { SolarDynamicIcon, SunBold } from '@solar-icons/angular'
+import { SolarIcon, SunBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [SolarDynamicIcon],
+    imports: [SolarIcon],
     template: `
         <!-- Lookup by registered name -->
         <ng-container [solarIcon]="'HeartBold'" />

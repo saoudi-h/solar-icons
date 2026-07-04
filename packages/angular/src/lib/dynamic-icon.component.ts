@@ -14,7 +14,7 @@ import { SOLAR_ICON_REGISTRY } from './icon-registry'
 import type { IconComponent, SolarIconName } from './types'
 
 /**
- * A lightweight directive that dynamically renders a Solar Icon component by its name or class.
+ * A lightweight directive that renders a Solar Icon component dynamically by its name or class.
  *
  * To use icons by name, you must first register them using `provideSolarIcons`.
  *
@@ -24,14 +24,14 @@ import type { IconComponent, SolarIconName } from './types'
  *  <ng-container solarIcon="SolarArrowLeftBold" [size]="24" color="red" />
  *
  * <!-- Render by component class directly -->
- * <ng-container [solarIcon]="ArrowLeftBold" [size]="24" />
+ * <ng-container [solarIcon]="SomeIconComponent" [size]="24" />
  * ```
  */
 @Directive({
     selector: '[solarIcon]',
     standalone: true,
 })
-export class SolarDynamicIcon {
+export class SolarIcon {
     private readonly vcr = inject(ViewContainerRef)
     private readonly registry = inject(SOLAR_ICON_REGISTRY, { optional: true })
 
@@ -100,11 +100,11 @@ export class SolarDynamicIcon {
             if (this.registry) {
                 component = this.registry[icon]
                 if (!component) {
-                    console.warn(`[SolarDynamicIcon] Icon "${icon}" not found in registry.`)
+                    console.warn(`[SolarIcon] Icon "${icon}" not found in registry.`)
                 }
             } else {
                 console.warn(
-                    `[SolarDynamicIcon] No icon registry found. Did you forget to call provideSolarIcons()?`
+                    `[SolarIcon] No icon registry found. Did you forget to call provideSolarIcons()?`
                 )
             }
         } else {

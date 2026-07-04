@@ -101,15 +101,15 @@ v2 only had: `size`, `color`, `alt`, `mirrored`.
 
 ## Dynamic icons
 
-`SolarDynamicIcon` works similarly but adds `weight`, `secondaryColor`, `secondaryOpacity` inputs:
+`SolarIcon` works similarly but adds `weight`, `secondaryColor`, `secondaryOpacity` inputs:
 
 ```ts
-import { SolarDynamicIcon } from '@solar-icons/angular'
+import { SolarIcon } from '@solar-icons/angular'
 import { SolarHome } from '@solar-icons/angular/dynamic'
 
 @Component({
     standalone: true,
-    imports: [SolarDynamicIcon],
+    imports: [SolarIcon],
     template: '<ng-container [solarIcon]="icon" [weight]="\'Bold\'" [size]="24" />',
 })
 export class AppComponent {

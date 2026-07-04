@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
-import { IconBase, SolarDynamicIcon, provideSolarIcons } from './index'
+import { IconBase, SolarIcon, provideSolarIcons } from './index'
 
 // Mock Icon component using the real base logic
 @Component({
@@ -16,7 +16,7 @@ class TestIcon extends IconBase {}
 
 @Component({
     standalone: true,
-    imports: [SolarDynamicIcon],
+    imports: [SolarIcon],
     template: ` <ng-container [solarIcon]="iconName()" [size]="size()" [color]="color()" /> `,
 })
 class TestHost {
@@ -25,7 +25,7 @@ class TestHost {
     color = signal<string>('red')
 }
 
-describe('SolarDynamicIcon', () => {
+describe('SolarIcon', () => {
     let fixture: ComponentFixture<TestHost>
     let host: TestHost
 

@@ -57,7 +57,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 - **`@xmldom/xmldom` is a devDep** — used by `scripts/parser-hook.ts` to re-parse generated SVG bodies into h() trees.
 - **Standalone components only.** No NgModule wrappers.
 - **Signals-based inputs** (`input()`), not `@Input()` decorators, in the generated code.
-- **`SolarDynamicIcon` directive** (selector `[solarIcon]`) is implemented and exported. The `solarIcon` input accepts a `SolarIconName` string (from `all-icons.types.ts`) or a component class. Components are looked up in the `SOLAR_ICON_REGISTRY` token; if not registered, a `console.warn` fires.
+- **`SolarIcon` directive** (selector `[solarIcon]`) is implemented and exported. The `solarIcon` input accepts a `SolarIconName` string (from `all-icons.types.ts`) or a component class. Components are looked up in the `SOLAR_ICON_REGISTRY` token; if not registered, a `console.warn` fires.
 - **ngc rootDir no longer conflicts** with `@solar-icons/core` (Path A, 2026-06-25). The import resolves to `node_modules/@solar-icons/core/dist/...`, which is outside the package source tree — no TS6059.
 
 ## V3 Propagation (2026-06-24)
