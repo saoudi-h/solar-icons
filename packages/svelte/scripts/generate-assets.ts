@@ -142,6 +142,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
 import type { DynamicIconProps } from '../../lib/types'
 import DynamicIcon from '../../lib/dynamic-icon.svelte'
 ${styleImports}
+let { ...restProps }: DynamicIconProps = $props()
 </script>
 
 <!--
@@ -151,7 +152,7 @@ ${previews}
     styles={{
 ${stylesObj}
     }}
-    {...$$restProps}
+    {...restProps}
 />
 `;
 

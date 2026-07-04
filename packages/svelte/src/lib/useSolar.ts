@@ -7,10 +7,10 @@ interface SolarState {
     setSize(val: string | number): void;
     readonly strokeWidth: number | undefined;
     setStrokeWidth(val: number): void;
-    readonly duotoneColor: string | undefined;
-    setDuotoneColor(val: string): void;
-    readonly duotoneOpacity: number | undefined;
-    setDuotoneOpacity(val: number): void;
+    readonly secondaryColor: string | undefined;
+    setSecondaryColor(val: string): void;
+    readonly secondaryOpacity: number | undefined;
+    setSecondaryOpacity(val: number): void;
 }
 
 export const SOLAR_CONTEXT_KEY = Symbol('solar');

@@ -1,5 +1,12 @@
 <script lang="ts">
-    import * as Bold from '@solar-icons/svelte/bold';
+    import {
+        HomeIcon,
+        SettingsIcon,
+        UserIcon,
+        HeartIcon,
+        StarIcon,
+        BellIcon,
+    } from '@solar-icons/svelte/bold';
 
     let cssColor = $state('#f59e0b');
     let cssSize = $state(40);
@@ -33,9 +40,9 @@
                 class="bg-slate-900 rounded-lg p-4 flex gap-4"
                 style="--solar-icon-color: {cssColor}; --solar-icon-size: {cssSize}px;"
             >
-                <Bold.Home />
-                <Bold.Settings />
-                <Bold.User />
+                <HomeIcon />
+                <SettingsIcon />
+                <UserIcon />
             </div>
         </div>
         <div class="space-y-2">
@@ -44,9 +51,9 @@
                 class="bg-slate-900 rounded-lg p-4 flex gap-4 [--solar-icon-color:var(--d-color)] [--solar-icon-size:var(--d-size)]"
                 style="--d-color: {cssColor}; --d-size: {cssSize}px;"
             >
-                <Bold.Heart />
-                <Bold.Star />
-                <Bold.Bell />
+                <HeartIcon />
+                <StarIcon />
+                <BellIcon />
             </div>
         </div>
     </div>

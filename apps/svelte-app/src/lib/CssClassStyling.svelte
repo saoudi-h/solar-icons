@@ -1,5 +1,5 @@
 <script lang="ts">
-    import * as Bold from '@solar-icons/svelte/bold';
+    import { HomeIcon, StarIcon, HeartIcon } from '@solar-icons/svelte/bold';
 </script>
 
 <div class="space-y-2">
@@ -10,8 +10,8 @@
     <div
         class="bg-slate-900 rounded-lg p-4 flex gap-4 [&_.solar]:text-amber-500 [&_.solar-star]:text-blue-400"
     >
-        <Bold.Home />
-        <Bold.Star />
-        <Bold.Heart />
+        <HomeIcon />
+        <StarIcon />
+        <HeartIcon />
     </div>
 </div>

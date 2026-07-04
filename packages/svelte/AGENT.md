@@ -44,6 +44,14 @@ status: 'active'
 - **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated Svelte components.
 - **Pitfall**: `$props()` destructuring must NOT use defaults for `color`, `size`, `strokeWidth` — the `??` in `$derived` must fall through to CSS var.
 
+## SVELTE-FIX session (2026-07-04)
+
+- **Root cause of `Home is not a function`**: svelte-app used `Bold.Home` but barrel files export `HomeIcon` (with `Icon` suffix). Fixed all app files to use `Icon` suffix.
+- **SolarState interface mismatch**: `useSolar.ts` declared `duotoneColor/duotoneOpacity` but `SolarProvider.svelte` provides `secondaryColor/secondaryOpacity`. Fixed to match.
+- **Dynamic icons**: generator used legacy `$$restProps` (Svelte 4) instead of `$props()` runes. Fixed `generateDynamicFile` to use `let { ...restProps }: DynamicIconProps = $props()`.
+- **Docs updated**: svelte V3 framework doc (added dynamic imports, IconBase, children prop). Migration guide (added useSolar, dynamic imports, mirrored removal, CSS var cascade, IconBase changes).
+- **Legacy react-perf doc**: fixed `@solar-icons/svelte` → `@solar-icons/react-perf` in install command.
+
 ## ⚠️ Known Constraints
 
 - **Svelte 5 runes are mandatory** in both source and generated code (`$props()` destructuring, not legacy `export let`). Consumers must be on Svelte ≥ 5.0.0.

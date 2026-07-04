@@ -2,14 +2,14 @@
     import { type IconStyle } from '@solar-icons/svelte/lib/types';
     import { IconBase, type IconProps } from '@solar-icons/svelte';
 
-    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/bold';
-    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/linear';
-    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/bold-duotone';
-    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/line-duotone';
-    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/broken';
-    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/outline';
+    import { AltArrowDownIcon as BoldArrow } from '@solar-icons/svelte/bold';
+    import { AltArrowDownIcon as LinearArrow } from '@solar-icons/svelte/linear';
+    import { AltArrowDownIcon as BoldDuotoneArrow } from '@solar-icons/svelte/bold-duotone';
+    import { AltArrowDownIcon as LineDuotoneArrow } from '@solar-icons/svelte/line-duotone';
+    import { AltArrowDownIcon as BrokenArrow } from '@solar-icons/svelte/broken';
+    import { AltArrowDownIcon as OutlineArrow } from '@solar-icons/svelte/outline';
 
-    import { ArrowUpBold } from '@solar-icons/svelte';
+    import { ArrowUpBoldIcon } from '@solar-icons/svelte';
 
     // Test types work
     const testProps: IconProps = {
@@ -39,7 +39,7 @@
         { name: 'LineDuotone style import', pass: typeof LineDuotoneArrow === 'function' },
         { name: 'Broken style import', pass: typeof BrokenArrow === 'function' },
         { name: 'Outline style import', pass: typeof OutlineArrow === 'function' },
-        { name: 'Global name import', pass: typeof ArrowUpBold === 'function' },
+        { name: 'Global name import', pass: typeof ArrowUpBoldIcon === 'function' },
     ]);
 
     const allPassed = $derived(tests.every((t) => t.pass));
@@ -149,7 +149,7 @@
                 class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
             >
                 <div class="flex justify-center">
-                    <ArrowUpBold size={32} color="#10b981" />
+                    <ArrowUpBoldIcon size={32} color="#10b981" />
                 </div>
                 <p class="text-sm text-slate-400">Global name import</p>
             </div>
@@ -185,7 +185,7 @@
         <div class="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30 mt-4">
             <h3 class="text-lg font-semibold text-white mb-4">ArrowUp</h3>
             <div class="flex items-center gap-4">
-                <ArrowUpBold size={48} color="#ec4899" />
+                <ArrowUpBoldIcon size={48} color="#ec4899" />
                 <span class="text-slate-400">ArrowUp</span>
             </div>
         </div>

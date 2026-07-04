@@ -1,6 +1,6 @@
 <script lang="ts">
     import { useSolar } from '@solar-icons/svelte';
-    import * as Bold from '@solar-icons/svelte/bold';
+    import { HomeIcon, StarIcon, HeartIcon } from '@solar-icons/svelte/bold';
 
     const solar = useSolar();
 </script>
@@ -31,8 +31,8 @@
         <span class="text-xs text-slate-500"> </span>
     </div>
     <div class="flex gap-4">
-        <Bold.Home />
-        <Bold.Star color="#ef4444" />
-        <Bold.Heart />
+        <HomeIcon />
+        <StarIcon color="#ef4444" />
+        <HeartIcon />
     </div>
 </div>
