@@ -6,52 +6,124 @@ icon: angular
 
 ## Standalone components
 
-v3 components are standalone. Remove the old `SolarIconsModule`.
-
-**Before:**
-
-```ts
-import { SolarIconsModule } from '@solar-icons/angular'
-@NgModule({ imports: [SolarIconsModule] })
-```
-
-**After:**
-
-```ts
-import { HeartIcon } from '@solar-icons/angular/bold'
-@Component({ standalone: true, imports: [HeartIcon] })
-```
+v3 components are standalone. This was already true in v2 — no module removal needed.
 
 ## Component names
 
-v3 uses PascalCase imports, kebab-case template selectors:
+v3 uses `Solar`-prefixed PascalCase imports with style suffixes. v2 used style-suffixed names without prefix.
 
-**Before:**
-
-```html
-<i-solar-home-bold />
-```
-
-**After:**
+**Before (v2):**
 
 ```ts
-import { HomeIcon } from '@solar-icons/angular/bold'
+import { HeartBold } from '@solar-icons/angular'
 ```
 
-```html
-<home-icon />
+**After (v3):**
+
+```ts
+import { SolarHeartBold } from '@solar-icons/angular'
 ```
+
+## Template selectors
+
+Attribute selectors on `<svg>` remain the same pattern but with `Solar` prefix in the name:
+
+**Before (v2):**
+
+```html
+<svg solarHeartBold [size]="24" color="#ef4444" />
+```
+
+**After (v3):**
+
+```html
+<svg solarHeartBold [size]="24" color="#ef4444" />
+```
+
+The selector name (`solarHeartBold`) is identical — only the import changes.
 
 ## New: SolarProvider
 
-```html
-<solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
-    <heart-icon />
-</solar-provider>
+v3 adds `<solar-provider>` for sharing styling via CSS custom properties:
+
+```ts
+import { SolarProviderComponent, SolarHomeBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarProviderComponent, SolarHomeBold],
+    template: `
+        <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
+            <svg solarHomeBold></svg>
+        </solar-provider>
+    `,
+})
+export class AppComponent {}
+```
+
+## New: useSolar
+
+Child-driven API for components inside `<solar-provider>`:
+
+```ts
+import { useSolar } from '@solar-icons/angular'
+
+function MyComponent() {
+    const solar = useSolar()
+    solar.setColor('#ef4444')
+}
 ```
 
 ## New: Duotone and stroke width
 
+v3 adds duotone support and stroke width control for linear styles:
+
 ```html
-<heart-icon secondaryColor="#f59e0b" [secondaryOpacity]="0.4" /> <settings-icon [strokeWidth]="2" />
+<svg solarHeartBoldDuotone secondaryColor="#f59e0b" [secondaryOpacity]="0.4" />
+<svg solarSettingsLinear [strokeWidth]="2" />
 ```
+
+## New inputs
+
+v3 icons accept additional inputs:
+
+| Input              | Type               | Description                       |
+| ------------------ | ------------------ | --------------------------------- |
+| `strokeWidth`      | `string \| number` | Stroke width (linear styles only) |
+| `secondaryColor`   | `string`           | Duotone accent color              |
+| `secondaryOpacity` | `number`           | Duotone accent opacity            |
+| `isolated`         | `boolean`          | Ignores provider CSS variables    |
+| `alt`              | `string`           | Accessibility label               |
+| `ariaLabel`        | `string`           | `aria-label` attribute            |
+| `titleAttr`        | `string`           | Explicit `<title>` text           |
+
+v2 only had: `size`, `color`, `alt`, `mirrored`.
+
+## Dynamic icons
+
+`SolarDynamicIcon` works similarly but adds `weight`, `secondaryColor`, `secondaryOpacity` inputs:
+
+```ts
+import { SolarDynamicIcon } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+
+@Component({
+    standalone: true,
+    imports: [SolarDynamicIcon],
+    template: '<ng-container [solarIcon]="icon" [weight]="\'Bold\'" [size]="24" />',
+})
+export class AppComponent {
+    icon = SolarHome
+}
+```
+
+## CSS classes
+
+v3 adds a base CSS class `solar` plus a per-icon variant `solar-{kebab}-{style}` on every icon:
+
+```html
+<svg solarHomeBold></svg>
+<!-- renders with: class="solar solar-home-bold" -->
+```
+
+v2 had no CSS classes on icon elements.

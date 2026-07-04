@@ -8,31 +8,29 @@ icon: angular
 @solar-icons/angular
 ```
 
-Standalone components with signal-based inputs. PascalCase component names, kebab-case selectors in templates.
+Standalone components with signal-based inputs. `Solar`-prefixed PascalCase component names with attribute selectors on `<svg>`.
 
 ## Import patterns
 
 ```ts
-// Per-style (no style suffix in name)
-import { HeartIcon } from '@solar-icons/angular/bold'
+// Top-level (all icons + lib)
+import { SolarHeartBold, SolarProviderComponent, useSolar } from '@solar-icons/angular'
 
-// Single icon
-import { HeartIcon } from '@solar-icons/angular/bold/heart'
-
-// Top-level (style suffix in name)
-import { HeartBoldIcon } from '@solar-icons/angular'
+// Dynamic icons
+import * as dynamicIcons from '@solar-icons/angular/dynamic'
+import { SolarHome } from '@solar-icons/angular/dynamic'
 ```
 
-Add icons to your component's `imports`:
+## Static components
 
 ```ts
 import { Component } from '@angular/core'
-import { HeartIcon } from '@solar-icons/angular/bold'
+import { SolarHeartBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [HeartIcon],
-    template: '<heart-icon color="#ef4444" [size]="32" />',
+    imports: [SolarHeartBold],
+    template: '<svg solarHeartBold color="#ef4444" [size]="32" />',
 })
 export class AppComponent {}
 ```
@@ -40,29 +38,35 @@ export class AppComponent {}
 ## Duotone
 
 ```html
-<heart-icon color="#3b82f6" secondaryColor="#f59e0b" [secondaryOpacity]="0.4" [size]="48" />
+<svg
+    solarHeartBoldDuotone
+    color="#3b82f6"
+    secondaryColor="#f59e0b"
+    [secondaryOpacity]="0.4"
+    [size]="48" />
 ```
 
 ## Stroke width
 
+Linear, LineDuotone, and Broken styles support `strokeWidth`:
+
 ```html
-<settings-icon [strokeWidth]="2" [size]="24" />
+<svg solarSettingsLinear [strokeWidth]="2" [size]="24" />
 ```
 
 ## SolarProvider
 
-Angular uses `<solar-provider>`.
+Wrap a subtree to share icon styling via CSS custom properties:
 
 ```ts
-import { SolarProviderComponent } from '@solar-icons/angular'
-import { HeartIcon } from '@solar-icons/angular/bold'
+import { SolarProviderComponent, SolarHomeBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [SolarProviderComponent, HeartIcon],
+    imports: [SolarProviderComponent, SolarHomeBold],
     template: `
         <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
-            <heart-icon />
+            <svg solarHomeBold></svg>
         </solar-provider>
     `,
 })
@@ -79,52 +83,79 @@ export class AppComponent {}
 
 ## useSolar
 
-Returns Angular `Signal`s. Must be called inside a `<solar-provider>` component tree.
+Call `useSolar()` inside a component that is a **descendant** of `<solar-provider>` to access the provider state. The provider must be an ancestor in the template, not a child.
 
 ```ts
 import { useSolar } from '@solar-icons/angular'
 
 const solar = useSolar()
 solar.setColor('#ef4444')
+solar.setSize(32)
+solar.setSecondaryColor('#f59e0b')
+solar.setSecondaryOpacity(0.4)
 ```
 
-## Dynamic icon
+The component using `useSolar()` must be projected into `<solar-provider>` (the provider wraps it):
+
+```html
+<solar-provider>
+    <app-controls />
+</solar-provider>
+```
+
+## Dynamic icons
+
+Use `SolarDynamicIcon` to render icons by component class reference:
 
 ```ts
-import { SolarDynamicIcon, provideSolarIcons } from '@solar-icons/angular'
-import { HeartIcon } from '@solar-icons/angular/bold'
+import { SolarDynamicIcon } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
 
 @Component({
     standalone: true,
     imports: [SolarDynamicIcon],
-    providers: [provideSolarIcons({ HeartIcon })],
-    template: '<ng-container [solarIcon]="iconName" [size]="24" color="red" />',
+    template: '<ng-container [solarIcon]="icon" [size]="24" color="red" />',
 })
 export class AppComponent {
-    iconName = 'HeartIcon'
+    icon = SolarHome
 }
+```
+
+Pass style as `weight` input:
+
+```html
+<ng-container [solarIcon]="icon" [weight]="'Bold'" [size]="24" />
 ```
 
 ## Icon props
 
-| Input              | Type               | Description            |
-| ------------------ | ------------------ | ---------------------- |
-| `color`            | `string`           | Icon color             |
-| `size`             | `string \| number` | Width and height       |
-| `strokeWidth`      | `string \| number` | Stroke width           |
-| `secondaryColor`   | `string`           | Duotone accent color   |
-| `secondaryOpacity` | `number`           | Duotone accent opacity |
-| `isolated`         | `boolean`          | Ignores provider       |
-| `alt`              | `string`           | Accessibility label    |
-| `ariaLabel`        | `string`           | `aria-label` attribute |
+| Input              | Type               | Description             |
+| ------------------ | ------------------ | ----------------------- |
+| `color`            | `string`           | Icon color              |
+| `size`             | `string \| number` | Width and height        |
+| `strokeWidth`      | `string \| number` | Stroke width            |
+| `secondaryColor`   | `string`           | Duotone accent color    |
+| `secondaryOpacity` | `number`           | Duotone accent opacity  |
+| `isolated`         | `boolean`          | Ignores provider        |
+| `alt`              | `string`           | Accessibility label     |
+| `ariaLabel`        | `string`           | `aria-label` attribute  |
+| `titleAttr`        | `string`           | Explicit `<title>` text |
 
 ## CSS variables
 
-Same five as [React](/docs/v3/frameworks/react#css-variables), applied via `[style.--solar-*]` host bindings.
+Icons read from CSS custom properties when explicit inputs are omitted:
+
+```css
+:host {
+    --solar-color: #ef4444;
+    --solar-size: 32px;
+    --solar-stroke-width: 2;
+}
+```
 
 ## CSS classes
 
-Every icon renders with class `solar` plus `solar-{name}`.
+Every icon renders with class `solar` plus `solar-{kebab-name}-{style}`. For example, `SolarHeartBold` renders with `solar solar-heart-bold`.
 
 ## ESM only
 

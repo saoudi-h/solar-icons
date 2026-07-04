@@ -130,14 +130,14 @@ Set `secondaryColor` and `secondaryOpacity` on the provider or individual icons 
 
 ## CSS classes
 
-Every icon renders with two CSS classes:
+Every icon renders with two CSS classes (Angular static components add the style suffix):
 
-| Class          | Applies to                                                |
-| -------------- | --------------------------------------------------------- |
-| `solar`        | Every icon                                                |
-| `solar-{name}` | The specific icon (e.g., `solar-heart`, `solar-settings`) |
+| Class                                    | Applies to                                                |
+| ---------------------------------------- | --------------------------------------------------------- |
+| `solar`                                  | Every icon                                                |
+| `solar-{name}` or `solar-{name}-{style}` | The icon, with style suffix for Angular static components |
 
-Use `.solar` for global icon styling. Use `.solar-heart` for per-icon overrides.
+Use `.solar` for global icon styling. Use `.solar-heart` or `.solar-heart-bold` for per-icon overrides.
 
 ```css
 .solar {
