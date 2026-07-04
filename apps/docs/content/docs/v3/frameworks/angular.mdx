@@ -105,27 +105,56 @@ The component using `useSolar()` must be projected into `<solar-provider>` (the 
 
 ## Dynamic icons
 
-Use `SolarIcon` to render icons dynamically by component class reference:
+Two complementary features share this name but solve different problems.
+
+### Multi-style components
+
+Import a component that bundles all 6 styles and switches via `weight`. Use it directly in your template — no directive needed.
 
 ```ts
-import { SolarIcon } from '@solar-icons/angular'
+import { Component } from '@angular/core'
 import { SolarHome } from '@solar-icons/angular/dynamic'
 
 @Component({
     standalone: true,
+    imports: [SolarHome],
+    template: '<svg solarHome weight="Bold" [size]="24" color="#ef4444" />',
+})
+export class AppComponent {}
+```
+
+Available from `@solar-icons/angular/dynamic` (barrel) or `@solar-icons/angular/dynamic/home` (single).
+
+### Dynamic rendering with `SolarIcon`
+
+The `SolarIcon` directive creates icons at runtime from a component class or registered name. Use it when the icon to render is only known at runtime (data-driven, CMS, user config).
+
+```ts
+import { Component } from '@angular/core'
+import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+import { SolarHeartBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
     imports: [SolarIcon],
-    template: '<ng-container [solarIcon]="icon" [size]="24" color="red" />',
+    template: `
+        <ng-container [solarIcon]="icon" [weight]="'Bold'" [size]="24" color="red" />
+        <ng-container solarIcon="SolarHeartBold" [size]="24" />
+    `,
+    providers: [provideSolarIcons({ SolarHeartBold })],
 })
 export class AppComponent {
     icon = SolarHome
 }
 ```
 
-Pass style as `weight` input:
+| Usage                        | Import          | Requires registry   |
+| ---------------------------- | --------------- | ------------------- |
+| `[solarIcon]="SomeClass"`    | Class reference | No                  |
+| `solarIcon="'RegisterName'"` | String name     | `provideSolarIcons` |
 
-```html
-<ng-container [solarIcon]="icon" [weight]="'Bold'" [size]="24" />
-```
+`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, `alt` — all forwarded to the created icon.
 
 ## Icon props
 

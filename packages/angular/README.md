@@ -90,34 +90,46 @@ Wrap the component in a `<solar-provider>` ancestor:
 </solar-provider>
 ```
 
-### Dynamic icons
+### Multi-style dynamic components
 
-Use `SolarIcon` to render icons dynamically by component class reference:
+Import components that bundle all 6 styles and switch via `weight`:
 
 ```typescript
 import { Component } from '@angular/core'
-import { SolarIcon } from '@solar-icons/angular'
-import * as icons from '@solar-icons/angular/dynamic'
-import type { IconComponent } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
 
 @Component({
-    selector: 'app-grid',
+    selector: 'app-example',
+    standalone: true,
+    imports: [SolarHome],
+    template: `<svg solarHome weight="Bold" [size]="32" color="#ef4444" />`,
+})
+export class ExampleComponent {}
+```
+
+Available from `@solar-icons/angular/dynamic` (barrel) or `@solar-icons/angular/dynamic/home` (single).
+
+### Dynamic rendering with `SolarIcon`
+
+The `SolarIcon` directive renders icons at runtime from a class or registered name. Use it for data-driven scenarios.
+
+```typescript
+import { Component } from '@angular/core'
+import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+
+@Component({
+    selector: 'app-example',
     standalone: true,
     imports: [SolarIcon],
-    template: `
-        <ng-container
-            [solarIcon]="iconComponent"
-            [weight]="selectedWeight"
-            [size]="32"
-            color="#f59e0b" />
-    `,
+    template: ` <ng-container [solarIcon]="myIcon" [weight]="'Bold'" [size]="32" /> `,
 })
-export class GridComponent {
-    iconComponent: IconComponent = icons.SolarHome
+export class ExampleComponent {
+    myIcon = SolarHome
 }
 ```
 
-`SolarIcon` accepts these inputs: `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, `alt`.
+`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, `alt` — all forwarded to the created icon.
 
 ### CSS variables
 

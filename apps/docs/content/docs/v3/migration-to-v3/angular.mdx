@@ -99,23 +99,48 @@ v3 icons accept additional inputs:
 
 v2 only had: `size`, `color`, `alt`, `mirrored`.
 
-## Dynamic icons
+## Dynamic rendering (pre-v3)
 
-`SolarIcon` works similarly but adds `weight`, `secondaryColor`, `secondaryOpacity` inputs:
+The old `SolarDynamicIcon` directive + `provideSolarIcons` registry is still available, renamed to `SolarIcon`. Works identically — register icons by name, then render by string or class reference.
 
 ```ts
-import { SolarIcon } from '@solar-icons/angular'
-import { SolarHome } from '@solar-icons/angular/dynamic'
+import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
+import { SolarHeartBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
     imports: [SolarIcon],
-    template: '<ng-container [solarIcon]="icon" [weight]="\'Bold\'" [size]="24" />',
+    template: '<ng-container solarIcon="SolarHeartBold" [size]="24" />',
+    providers: [provideSolarIcons({ SolarHeartBold })],
 })
-export class AppComponent {
-    icon = SolarHome
-}
+export class AppComponent {}
 ```
+
+## New: Multi-style dynamic components
+
+v3 adds a distinct feature — multi-style components that bundle all 6 styles in one component and switch via `weight` input.
+
+Import from the new `@solar-icons/angular/dynamic` entry point:
+
+```ts
+import { SolarHome } from '@solar-icons/angular/dynamic'
+```
+
+Use them directly in the template:
+
+```html
+<svg solarHome weight="Bold" [size]="24" color="#ef4444" />
+```
+
+These components are independent of `SolarIcon` — no directive, no registry, no provider needed.
+
+### Which to choose
+
+| Need                                     | Solution                                             |
+| ---------------------------------------- | ---------------------------------------------------- |
+| One style, one file, minimal bundle      | Static component (`SolarHomeBold`)                   |
+| Switch styles at runtime on a known icon | Multi-style component (`SolarHome` from `./dynamic`) |
+| Icons from API / CMS / user config       | `SolarIcon` directive + `provideSolarIcons`          |
 
 ## CSS classes
 
