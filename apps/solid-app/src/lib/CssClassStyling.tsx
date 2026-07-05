@@ -11,9 +11,9 @@ export default function CssClassStyling() {
                 {'.solar-home { /* specific icon */ }'}
             </code>
             <div class="bg-slate-900 rounded-lg p-4 flex gap-4 [&_.solar]:text-amber-500 [&_.solar-star]:text-blue-400">
-                <Dynamic component={Bold.Home} />
-                <Dynamic component={Bold.Star} />
-                <Dynamic component={Bold.Heart} />
+                <Dynamic component={Bold.HomeIcon} />
+                <Dynamic component={Bold.StarIcon} />
+                <Dynamic component={Bold.HeartIcon} />
             </div>
         </div>
     );

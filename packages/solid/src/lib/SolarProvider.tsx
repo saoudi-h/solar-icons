@@ -1,4 +1,4 @@
-import { createContext, useContext, createSignal, type JSX, type Accessor } from 'solid-js';
+import { createContext, useContext, createSignal, createEffect, type JSX, type Accessor } from 'solid-js';
 
 interface SolarState {
     color: Accessor<string | undefined>;
@@ -48,6 +48,12 @@ export function SolarProvider(props: SolarProviderProps) {
     const [strokeWidth, setStrokeWidthSignal] = createSignal(props.strokeWidth);
     const [secondaryColor, setSecondaryColorSignal] = createSignal(props.secondaryColor);
     const [secondaryOpacity, setSecondaryOpacitySignal] = createSignal(props.secondaryOpacity);
+
+    createEffect(() => setColorSignal(() => props.color));
+    createEffect(() => setSizeSignal(() => props.size));
+    createEffect(() => setStrokeWidthSignal(() => props.strokeWidth));
+    createEffect(() => setSecondaryColorSignal(() => props.secondaryColor));
+    createEffect(() => setSecondaryOpacitySignal(() => props.secondaryOpacity));
 
     const setSize = (val: string | number) => setSizeSignal(val);
     const setStrokeWidth = (val: number) => setStrokeWidthSignal(val);

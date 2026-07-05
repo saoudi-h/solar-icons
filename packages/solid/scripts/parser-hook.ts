@@ -12,7 +12,7 @@ export interface FileDefinition {
 
 export function solidComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const icon = ctx.icon;
-    const duotone = applyDuotoneStyle(icon.duotoneAccentInner, 'jsx');
+    const duotone = applyDuotoneStyle(icon.duotoneAccentInner, 'html');
     const body = duotone ? `${duotone}\n        ${icon.inner.trim()}` : icon.inner.trim();
     const content = `/* GENERATED FILE */
 import IconBase from "../../lib/IconBase"

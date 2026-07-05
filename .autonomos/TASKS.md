@@ -22,6 +22,10 @@
 
 - [x] **[SVELTE-FIX]** Fix `apps/svelte-app` (broken: `Home is not a function` at runtime) and audit `packages/svelte` for full V3 compliance, incl. docs pages. `Priority: 🔴` `Complexity: M`
 
+### V3 — Solid audit & fix
+
+- [x] **[SOLID-FIX]** Fix `apps/solid-app` (broken: `solar.mirrored is not a function` at runtime) and audit `packages/solid` for full V3 compliance, incl. docs pages. `Priority: 🔴` `Complexity: M`
+
 ### V3 — Known regressions (pre-existing)
 
 - [ ] **[ANGULAR-APP-MIGRATE]** `apps/angular-app` uses pre-V3 API: `HomeBold` etc. (no `Icon` suffix), `@solar-icons/angular/arrows` (category path, removed). `Priority: 🟠` `Complexity: S`

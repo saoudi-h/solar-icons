@@ -20,20 +20,35 @@ import { HomeIcon } from '@solar-icons/solid/bold'
 
 ## Component naming
 
-See the [react migration](/docs/v3/migration-to-v3/react#component-naming).
+All components now use an `Icon` suffix (e.g. `HomeIcon`, `HeartBoldIcon`). Per-style barrel imports (`@solar-icons/solid/bold`) use the short name (`HomeIcon`), top-level imports use the disambiguated name (`HomeBoldIcon`).
+
+Single-file imports use the named export — `@solar-icons/solid/bold/home` exports `HomeIcon`.
+
+## Deprecated: `mirrored` prop removed
+
+The `mirrored` prop was removed. Use CSS `transform: scaleX(-1)` instead.
 
 ## Category imports removed
 
 **Before:**
 
 ```jsx
-import { Bold } from '@solar-icons/solid/category/arrows'
+import { Bold, Linear } from '@solar-icons/solid/category/arrows'
+
+// Usage:
+<Bold.ArrowUp size={24} />
+<Linear.ArrowDown size={24} />
 ```
 
 **After:**
 
 ```jsx
 import { ArrowUpIcon } from '@solar-icons/solid/bold/arrow-up'
+import { ArrowDownIcon } from '@solar-icons/solid/linear/arrow-down'
+
+// Usage:
+<ArrowUpIcon size={24} />
+<ArrowDownIcon size={24} />
 ```
 
 ## New: SolarProvider

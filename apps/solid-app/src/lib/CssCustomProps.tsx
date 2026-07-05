@@ -5,12 +5,12 @@ import type { Component } from 'solid-js';
 import * as Bold from '@solar-icons/solid/bold';
 
 const DEMO_ICONS: Record<string, Component> = {
-    Home: Bold.Home,
-    Settings: Bold.Settings,
-    User: Bold.User,
-    Heart: Bold.Heart,
-    Star: Bold.Star,
-    Bell: Bold.Bell,
+    Home: Bold.HomeIcon,
+    Settings: Bold.SettingsIcon,
+    User: Bold.UserIcon,
+    Heart: Bold.HeartIcon,
+    Star: Bold.StarIcon,
+    Bell: Bold.BellIcon,
 };
 
 export default function CssCustomProps() {

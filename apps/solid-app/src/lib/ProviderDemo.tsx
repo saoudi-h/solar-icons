@@ -5,9 +5,9 @@ import { SolarProvider, useSolar } from '@solar-icons/solid';
 import * as Bold from '@solar-icons/solid/bold';
 
 const DEMO_ICONS = {
-    Home: Bold.Home,
-    Star: Bold.Star,
-    Heart: Bold.Heart,
+    Home: Bold.HomeIcon,
+    Star: Bold.StarIcon,
+    Heart: Bold.HeartIcon,
 };
 
 function ProviderDemoInner() {
@@ -45,14 +45,8 @@ function ProviderDemoInner() {
                 >
                     24px
                 </button>
-                <button
-                    class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"
-                    onClick={() => solar.setMirrored(!solar.mirrored())}
-                >
-                    {solar.mirrored() ? 'Unmirror' : 'Mirror'}
-                </button>
                 <span class="text-xs text-slate-500">
-                    size: {solar.size() ?? 'default'} | mirrored: {solar.mirrored() ? 'yes' : 'no'}
+                    size: {solar.size() ?? 'default'}
                 </span>
             </div>
             <div class="flex gap-4">
@@ -68,8 +62,6 @@ export default function ProviderDemo() {
     const [providerSize, setProviderSize] = createSignal(36);
     const [providerColor, setProviderColor] = createSignal('#f59e0b');
     const [providerStroke, setProviderStroke] = createSignal(1.5);
-    const [providerMirrored, setProviderMirrored] = createSignal(false);
-
     return (
         <div>
             <div class="flex items-center gap-6 mb-4">
@@ -105,27 +97,13 @@ export default function ProviderDemo() {
                         class="w-32 accent-amber-500"
                     />
                 </div>
-                <div class="space-y-1">
-                    <label class="text-xs text-slate-400">Mirror</label>
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input
-                            type="checkbox"
-                            checked={providerMirrored()}
-                            onChange={(e) => setProviderMirrored(e.currentTarget.checked)}
-                            class="accent-amber-500"
-                        />
-                        <span class="text-sm text-slate-300">
-                            {providerMirrored() ? 'On' : 'Off'}
-                        </span>
-                    </label>
-                </div>
             </div>
             <SolarProvider
                 color={providerColor()}
                 size={providerSize()}
                 strokeWidth={providerStroke()}
-                mirrored={providerMirrored()}
             >
+                size: {providerSize()}
                 <ProviderDemoInner />
             </SolarProvider>
         </div>
