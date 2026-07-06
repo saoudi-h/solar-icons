@@ -106,13 +106,15 @@ Must be called inside a `<SolarProvider>`.
 <script>
 import { useSolar } from '@solar-icons/svelte'
 
-const { color, setColor } = useSolar()
+const solar = useSolar()
 </script>
 
-<button onclick={() => setColor('#ef4444')}>
-  Current: {color}
+<button onclick={() => solar.setColor('#ef4444')}>
+  Current: {solar.color}
 </button>
 ```
+
+Keep `solar` as a single object. Reading `solar.color` is reactive because the provider's getter re-evaluates the prop on every access. Destructuring (`const { color } = useSolar()`) snapshots the initial value and loses reactivity.
 
 ## Icon props
 

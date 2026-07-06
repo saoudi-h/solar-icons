@@ -91,13 +91,15 @@ Returns reactive `Ref`s. Must be called inside a `<SolarProvider>`.
 <script setup>
 import { useSolar } from '@solar-icons/vue'
 
-const { color, setColor } = useSolar()
+const solar = useSolar()
 </script>
 
 <template>
-    <button @click="setColor('#ef4444')">Current: { color }</button>
+    <button @click="solar.setColor('#ef4444')">Current: {{ solar.color }}</button>
 </template>
 ```
+
+Keep `solar` as a single object. Vue auto-unwraps the `Ref`s when you read them through `solar.color` in the template. Destructuring (`const { color } = useSolar()`) loses reactivity in the template.
 
 ## Vue Plugin
 
