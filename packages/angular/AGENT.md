@@ -97,4 +97,6 @@ This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`
 - `isolated` — when `true`, bypasses all `SolarProvider` CSS vars; SVG attrs use hardcoded defaults (`24px`, `currentColor`, `1.5`), and duotone vars are set to `initial`.
 - `ariaLabel`, `titleAttr` — explicit a11y overrides; `aria-hidden` is auto-set to `"true"` if none of these are provided.
 
-The CSS class `solar-icon solar-{kebabName}` is set per-component (in the generated `@Component.host`), not in `IconBase` — so each icon gets its specific kebab class for fine-grained CSS targeting.
+The CSS class `solar solar-{kebabName}-{kebabStyle}` is set per-component on the static component's `host.class` binding (in the generated `@Component`), not in `IconBase` — so each icon gets its specific kebab class + style suffix for fine-grained CSS targeting. The dynamic component drops its own host class (D-NORM-ANG-1, 2026-07-06): the static child component already carries the suffix and a wrapper `host.class` only doubled the class names on nested elements.
+
+The four other web packages (React, Vue, Svelte, Solid) follow the same convention after D-NORM-1 (2026-07-06, commit `1a98684bb`): static icons emit `solar solar-{kebabName}-{kebabStyle}`, dynamic icons keep `solar solar-{kebabName}` (no style, since the weight changes at runtime). Before that commit, only Angular applied the suffix; React/Vue/Svelte/Solid emitted `solar solar-{kebabName}` and the asymmetry was undocumented. See `.autonomos/worklogs/2026-07-05-DOCS-AUDIT-FINDINGS.md` → D-NORM-1.
