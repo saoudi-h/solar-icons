@@ -103,6 +103,10 @@ The component using `useSolar()` must be projected into `<solar-provider>` (the 
 </solar-provider>
 ```
 
+<Callout type="warn">
+Set defaults with `<solar-provider>` props. In child components, read from `useSolar()` and write to it **only** in response to user events. Initial writes in a child constructor are overridden by the provider's inputs. Avoid them.
+</Callout>
+
 ## Dynamic icons
 
 Two complementary features share this name but solve different problems.

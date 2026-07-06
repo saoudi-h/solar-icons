@@ -56,6 +56,10 @@ function MyComponent() {
 }
 ```
 
+<Callout type="warn">
+Set defaults with `<solar-provider>` props. In child components, read from `useSolar()` and write to it **only** in response to user events. Initial writes in a child constructor are overridden by the provider's inputs. Avoid them.
+</Callout>
+
 ## New: Duotone and stroke width
 
 v3 adds duotone support and stroke width control for linear styles:
