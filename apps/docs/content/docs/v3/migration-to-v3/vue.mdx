@@ -1,26 +1,37 @@
 ---
 title: Vue Migration
-description: Upgrade @solar-icons/vue to v3.
+description: Migrate from @solar-icons/vue to v3. Pick the per-style import path by default, the dynamic path for runtime style switching.
 icon: vue
 ---
 
+v3 splits the package into two import paths. Pick the one that matches your usage.
+
+- **Per-style path** (default): one style per component, tree-shakable at the import level. Use this for most apps.
+- **Dynamic path**: a single component that bundles all six styles and switches via `weight`. Use it only when you swap styles at runtime.
+
 ## Import paths
 
-Kebab-case style directories:
+Kebab-case style directories.
 
-**Before:**
+**Before (pre-v3):**
 
 ```js
 import { Home } from '@solar-icons/vue/Bold'
 ```
 
-**After (per-style):**
+**After (recommended — per-style):**
 
 ```js
 import { HomeIcon } from '@solar-icons/vue/bold'
 ```
 
-**After (top-level):**
+**After (only for runtime switching — dynamic):**
+
+```js
+import { HomeIcon } from '@solar-icons/vue/dynamic'
+```
+
+Top-level barrel exports disambiguated names:
 
 ```js
 import { HomeBoldIcon } from '@solar-icons/vue'
@@ -28,17 +39,22 @@ import { HomeBoldIcon } from '@solar-icons/vue'
 
 ## Component naming
 
-When the style is in the import path, the name drops the style suffix. See the [react migration](/docs/v3/migration-to-v3/react#component-naming).
+When the style is in the import path, the name drops the style suffix and gains an `Icon` suffix (`Home` → `HomeIcon`). See the [React migration](/docs/v3/migration-to-v3/react#component-naming) for the full naming rules. Separate icon names were also renamed in v3 — see the [Icon Renames page](/docs/v3/migration-to-v3/icon-renames).
 
 ## Category imports removed
 
-**Before:**
-
 ```js
+// Before — imports the entire category
 import { Arrows } from '@solar-icons/vue/category'
 ```
 
-**After:**
+**After (recommended — per-style):**
+
+```js
+import { ArrowUpIcon } from '@solar-icons/vue/bold/arrow-up'
+```
+
+**After (only for runtime switching — dynamic):**
 
 ```js
 import { ArrowUpIcon } from '@solar-icons/vue/dynamic/arrow-up'
@@ -46,22 +62,39 @@ import { ArrowUpIcon } from '@solar-icons/vue/dynamic/arrow-up'
 
 ## `weight` prop removed
 
+The pre-v3 single package bundled six styles per component and switched via `weight`. v3 drops `weight` from the per-style path. The dynamic path keeps it.
+
 **Before:**
 
-```js
+```vue
+<script setup>
 import { Heart } from '@solar-icons/vue'
+</script>
+
+<template>
+    <Heart weight="Bold" />
+</template>
 ```
+
+**After (recommended — per-style, no `weight`):**
 
 ```vue
-<Heart weight="Bold" />
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
+
+<template>
+    <HeartIcon />
+</template>
 ```
 
-**After:**
+**After (only for runtime switching — dynamic, keeps `weight`):**
 
 ```vue
 <script setup>
 import { HeartIcon } from '@solar-icons/vue/dynamic'
 </script>
+
 <template>
     <HeartIcon weight="Bold" />
 </template>

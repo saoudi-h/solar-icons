@@ -62,11 +62,15 @@ import { SolarProvider } from '@solar-icons/solid'
 
 ## useSolar
 
-Returns Solid `Accessor`s:
+Returns Solid `Accessor`s. Keep `solar` as a single object. Calling `solar.color()` re-evaluates the signal. Destructuring (`const { color } = useSolar()`) snapshots the value and loses reactivity.
 
 ```jsx
-const { color, setColor } = useSolar()
-// color() is an Accessor — call as a function
+import { useSolar } from '@solar-icons/solid'
+
+function ColorToggle() {
+    const solar = useSolar()
+    return <button onClick={() => solar.setColor('#ef4444')}>Current: {solar.color()}</button>
+}
 ```
 
 ## New: Duotone and stroke width
@@ -75,3 +79,15 @@ const { color, setColor } = useSolar()
 <HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
 <SettingsIcon strokeWidth={2} />
 ```
+
+## Dynamic imports (optional)
+
+Use `@solar-icons/solid/dynamic` only when you swap styles at runtime. For most apps, the per-style path on the previous lines is the right choice.
+
+```jsx
+import { HeartIcon } from '@solar-icons/solid/dynamic'
+
+<HeartIcon weight="BoldDuotone" size={32} />
+```
+
+The dynamic component bundles all six styles. Render one or six, the bundle is the same.

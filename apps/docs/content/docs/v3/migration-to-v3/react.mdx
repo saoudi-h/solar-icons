@@ -1,39 +1,55 @@
 ---
-title: react → react
-description: Migrate from @solar-icons/react to the v3 dynamic import path.
+title: React Migration
+description: Migrate from @solar-icons/react to v3. Pick the per-style import path by default, the dynamic path for runtime style switching.
 icon: react
 ---
 
-The old `@solar-icons/react` was the dynamic package — all six styles per component, runtime switching via `weight`. In v3, this is accessed from the `dynamic` import path.
+The old `@solar-icons/react` bundled every icon with all six styles and switched via `weight="Bold"`. v3 splits the package into two import paths. Pick the one that matches your usage.
+
+- **Per-style path** (default): one style per component, tree-shakable at the import level. Use this for the vast majority of cases. Most apps render an icon in a single style and never switch at runtime.
+- **Dynamic path**: a single component per icon that bundles all six styles and switches via `weight`. Use it only when you genuinely swap styles at runtime.
 
 ## Import path
 
-Same package, different import path:
+Same package, different import paths.
 
-**Before:**
+**Before (pre-v3):**
 
 ```jsx
 import { Heart } from '@solar-icons/react'
 ;<Heart weight="Bold" />
 ```
 
-**After:**
+**After (recommended — per-style):**
+
+```jsx
+// One component, one style. The lightest bundle you can get.
+// Add `Icon` suffix to the component name (API rename, applies everywhere).
+import { HeartIcon } from '@solar-icons/react/bold'
+;<HeartIcon />
+```
+
+**After (only if you switch styles at runtime — dynamic):**
 
 ```jsx
 import { HeartIcon } from '@solar-icons/react/dynamic'
 ;<HeartIcon weight="Bold" />
 ```
 
+The full set of styles is `'Bold' | 'Linear' | 'Outline' | 'BoldDuotone' | 'LineDuotone' | 'Broken'`. The dynamic import bundles all six. If you render five of them or one, the bundle is the same.
+
 ## Component naming
 
-Add `Icon` suffix: `Home` → `HomeIcon`, `ArrowRight` → `ArrowRightIcon`.
+All v3 components gain an `Icon` suffix.
+
+- Per-style barrel (`@solar-icons/react/bold`) exports `HeartIcon`.
+- Top-level barrel (`@solar-icons/react`) exports `HeartBoldIcon` (disambiguated).
+- Dynamic barrel (`@solar-icons/react/dynamic`) exports `HeartIcon`.
 
 ## Default namespace export removed
 
-The old `@solar-icons/react` exported a default namespace object pulling every icon into the bundle:
-
 ```jsx
-// Before — all 7000+ icons in the bundle
+// Before — pulls all 7000+ icons into the bundle
 import solar from '@solar-icons/react'
 ;<solar.ArrowUp weight="Bold" />
 ```
@@ -42,16 +58,20 @@ This no longer exists. Import icons individually per style.
 
 ## Category imports removed
 
-Importing an entire category also defeated tree-shaking:
-
-**Before:**
-
 ```jsx
+// Before — imports the entire arrows category, defeats tree-shaking
 import { Arrows } from '@solar-icons/react/category'
 ;<Arrows.ArrowUp weight="Bold" />
 ```
 
-**After:**
+**After (recommended — per-style):**
+
+```jsx
+import { ArrowUpIcon } from '@solar-icons/react/bold/arrow-up'
+;<ArrowUpIcon />
+```
+
+**After (only for runtime switching — dynamic):**
 
 ```jsx
 import { ArrowUpIcon } from '@solar-icons/react/dynamic/arrow-up'
@@ -60,13 +80,12 @@ import { ArrowUpIcon } from '@solar-icons/react/dynamic/arrow-up'
 
 ## SSR subpath removed
 
-**Before:**
-
 ```jsx
+// Before
 import { Home } from '@solar-icons/react/ssr'
 ```
 
-**After:**
+The `/ssr` subpath is gone. All icons render on the server by default.
 
 ```jsx
 import { HomeIcon } from '@solar-icons/react/bold'
@@ -74,4 +93,4 @@ import { HomeIcon } from '@solar-icons/react/bold'
 
 ## New features available
 
-`SolarProvider`, `secondaryColor`/`secondaryOpacity`, and `strokeWidth`. See the [React package page](/docs/v3/frameworks/react).
+`SolarProvider`, `secondaryColor` / `secondaryOpacity`, and `strokeWidth` are now part of every web framework package. See the [React package page](/docs/v3/frameworks/react) for the full API.
