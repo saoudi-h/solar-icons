@@ -75,13 +75,13 @@ import { HeartIcon } from '@solar-icons/vue/bold'
 </template>
 ```
 
-| Prop                | CSS Variable              | Default        |
-| ------------------- | ------------------------- | -------------- |
-| `color`             | `--solar-color`           | `currentColor` |
-| `size`              | `--solar-size`            | `24px`         |
-| `stroke-width`      | `--solar-stroke-width`    | `1.5`          |
-| `secondary-color`   | `--solar-duotone-color`   | `currentColor` |
-| `secondary-opacity` | `--solar-duotone-opacity` | `0.5`          |
+| Prop                | CSS Variable                | Default        |
+| ------------------- | --------------------------- | -------------- |
+| `color`             | `--solar-color`             | `currentColor` |
+| `size`              | `--solar-size`              | `24px`         |
+| `stroke-width`      | `--solar-stroke-width`      | `1.5`          |
+| `secondary-color`   | `--solar-secondary-color`   | `currentColor` |
+| `secondary-opacity` | `--solar-secondary-opacity` | `0.5`          |
 
 ## useSolar
 
@@ -135,15 +135,15 @@ import { HeartIcon } from '@solar-icons/vue/dynamic'
 
 ## Icon props
 
-| Prop                | Type               | Description            |
-| ------------------- | ------------------ | ---------------------- |
-| `color`             | `string`           | Icon color             |
-| `size`              | `string \| number` | Width and height       |
-| `strokeWidth`       | `string \| number` | Stroke width           |
-| `secondaryColor`    | `string`           | Duotone accent color   |
-| `secondaryOpacity`  | `number`           | Duotone accent opacity |
-| `isolated`          | `boolean`          | Ignores provider       |
-| `alt`               | `string`           | Accessibility label    |
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
 
 In Vue templates, kebab-case attribute names map to camelCase props (e.g. `:stroke-width="2"` targets `strokeWidth`). Either form works in templates. Use kebab-case in `<template>`, camelCase in `<script setup>`.
 

@@ -5,19 +5,28 @@ import type { IconBaseProps } from './types'
 const SOLAR_CLASS = 'solar'
 
 function hasA11yProp(props: Record<string, unknown>): boolean {
-    return (
-        props['aria-label'] !== undefined ||
-        props['title'] !== undefined
-    )
+    return props['aria-label'] !== undefined || props['title'] !== undefined
 }
 
 const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithoutRef<'svg'>>(
-    ({ alt, color, size, strokeWidth, secondaryColor, secondaryOpacity, iconName, isolated, children, ...restProps }, ref) => {
+    (
+        {
+            alt,
+            color,
+            size,
+            strokeWidth,
+            secondaryColor,
+            secondaryOpacity,
+            iconName,
+            isolated,
+            children,
+            ...restProps
+        },
+        ref
+    ) => {
         const iconClass = iconName ? `${SOLAR_CLASS} solar-${iconName}` : SOLAR_CLASS
         const userClassName = (restProps as any).className
-        const className = userClassName
-            ? `${iconClass} ${userClassName}`
-            : iconClass
+        const className = userClassName ? `${iconClass} ${userClassName}` : iconClass
 
         const isAccessible = !!alt || hasA11yProp(restProps as Record<string, unknown>)
 
@@ -26,8 +35,8 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
             ...userStyle,
         }
         if (isolated) {
-            baseStyle['--solar-duotone-color'] = 'initial'
-            baseStyle['--solar-duotone-opacity'] = 'initial'
+            baseStyle['--solar-secondary-color'] = 'initial'
+            baseStyle['--solar-secondary-opacity'] = 'initial'
         }
         if (color !== undefined) baseStyle.color = color
         if (size !== undefined) {
@@ -36,29 +45,26 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
             baseStyle.height = sizeValue
         }
         if (strokeWidth !== undefined) baseStyle.strokeWidth = String(strokeWidth)
-        if (secondaryColor) baseStyle['--solar-duotone-color'] = secondaryColor
-        if (secondaryOpacity != null) baseStyle['--solar-duotone-opacity'] = String(secondaryOpacity)
+        if (secondaryColor) baseStyle['--solar-secondary-color'] = secondaryColor
+        if (secondaryOpacity != null)
+            baseStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
 
-        const widthAttr = size !== undefined
-            ? undefined
-            : isolated
-                ? '24px'
-                : 'var(--solar-size, 24px)'
-        const heightAttr = size !== undefined
-            ? undefined
-            : isolated
-                ? '24px'
-                : 'var(--solar-size, 24px)'
-        const colorAttr = color !== undefined
-            ? undefined
-            : isolated
-                ? 'currentColor'
-                : 'var(--solar-color, currentColor)'
-        const strokeWidthAttr = strokeWidth !== undefined
-            ? undefined
-            : isolated
-                ? '1.5'
-                : 'var(--solar-stroke-width, 1.5)'
+        const widthAttr =
+            size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
+        const heightAttr =
+            size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
+        const colorAttr =
+            color !== undefined
+                ? undefined
+                : isolated
+                  ? 'currentColor'
+                  : 'var(--solar-color, currentColor)'
+        const strokeWidthAttr =
+            strokeWidth !== undefined
+                ? undefined
+                : isolated
+                  ? '1.5'
+                  : 'var(--solar-stroke-width, 1.5)'
 
         return (
             <svg
@@ -73,8 +79,7 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
                 height={heightAttr}
                 color={colorAttr}
                 strokeWidth={strokeWidthAttr}
-                {...(!isAccessible && { 'aria-hidden': 'true' as const })}
-            >
+                {...(!isAccessible && { 'aria-hidden': 'true' as const })}>
                 {!!alt && <title>{alt}</title>}
                 {children}
             </svg>

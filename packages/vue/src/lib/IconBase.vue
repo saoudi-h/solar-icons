@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {})
 const SOLAR_CLASS = 'solar'
 
 const iconClass = computed(() =>
-    props.iconName ? `${SOLAR_CLASS} solar-${props.iconName}` : SOLAR_CLASS,
+    props.iconName ? `${SOLAR_CLASS} solar-${props.iconName}` : SOLAR_CLASS
 )
 
 const isAccessible = computed(() => !!props.alt)
@@ -25,8 +25,8 @@ const isAccessible = computed(() => !!props.alt)
 const baseStyle = computed(() => {
     const s: Record<string, string> = {}
     if (props.isolated) {
-        s['--solar-duotone-color'] = 'initial'
-        s['--solar-duotone-opacity'] = 'initial'
+        s['--solar-secondary-color'] = 'initial'
+        s['--solar-secondary-opacity'] = 'initial'
     }
     if (props.color !== undefined) s.color = props.color
     if (props.size !== undefined) {
@@ -35,9 +35,9 @@ const baseStyle = computed(() => {
         s.height = sz
     }
     if (props.strokeWidth !== undefined) s['stroke-width'] = String(props.strokeWidth)
-    if (props.secondaryColor) s['--solar-duotone-color'] = props.secondaryColor
+    if (props.secondaryColor) s['--solar-secondary-color'] = props.secondaryColor
     if (props.secondaryOpacity != null)
-        s['--solar-duotone-opacity'] = String(props.secondaryOpacity)
+        s['--solar-secondary-opacity'] = String(props.secondaryOpacity)
     return s
 })
 
@@ -71,8 +71,7 @@ const svgStrokeWidth = computed(() => {
         :height="svgHeight"
         :color="svgColor"
         :stroke-width="svgStrokeWidth"
-        :aria-hidden="isAccessible ? undefined : 'true'"
-    >
+        :aria-hidden="isAccessible ? undefined : 'true'">
         <title v-if="alt">{{ alt }}</title>
         <slot />
     </svg>

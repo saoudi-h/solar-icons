@@ -61,8 +61,8 @@ describe('Icon component basics', () => {
         expect(svg.attributes('width')).toBe('24px')
         expect(svg.attributes('color')).toBe('currentColor')
         expect(svg.attributes('stroke-width')).toBe('1.5')
-        expect(svg.attributes('style')).toContain('--solar-duotone-color: initial')
-        expect(svg.attributes('style')).toContain('--solar-duotone-opacity: initial')
+        expect(svg.attributes('style')).toContain('--solar-secondary-color: initial')
+        expect(svg.attributes('style')).toContain('--solar-secondary-opacity: initial')
     })
 
     it('isolated + explicit color writes color to style and keeps duotone initial', () => {
@@ -75,7 +75,7 @@ describe('Icon component basics', () => {
         )
         const svg = wrapper.find('svg')
         expect(svg.attributes('style')).toContain('color: blue')
-        expect(svg.attributes('style')).toContain('--solar-duotone-color: initial')
+        expect(svg.attributes('style')).toContain('--solar-secondary-color: initial')
     })
 
     it('merges external class with the icon base class', () => {

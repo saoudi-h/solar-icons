@@ -66,8 +66,8 @@ export class SolarProvider {
         if (c !== undefined) s['--solar-color'] = c
         if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz
         if (sw != null) s['--solar-stroke-width'] = String(sw)
-        if (dc) s['--solar-duotone-color'] = dc
-        if (dco != null) s['--solar-duotone-opacity'] = String(dco)
+        if (dc) s['--solar-secondary-color'] = dc
+        if (dco != null) s['--solar-secondary-opacity'] = String(dco)
         return s
     })
 

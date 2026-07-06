@@ -65,7 +65,7 @@ function getIcon(name: string) {
         <div v-if="isDuotone" class="pt-6 border-t border-slate-700/50">
             <div class="flex items-center gap-2 mb-4">
                 <span class="text-sm font-semibold text-blue-400 uppercase tracking-wide">Duotone</span>
-                <span class="text-xs text-slate-500 bg-slate-700/50 px-2 py-0.5 rounded">--solar-duotone-color / --solar-duotone-opacity</span>
+                <span class="text-xs text-slate-500 bg-slate-700/50 px-2 py-0.5 rounded">--solar-secondary-color / --solar-secondary-opacity</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div class="space-y-2">

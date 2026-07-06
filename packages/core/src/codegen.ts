@@ -40,10 +40,10 @@ export const WEIGHT_MAP: Readonly<Record<Weight, StyleKey>> = {
 }
 
 const DUOTONE_CSS_VARS_HTML =
-    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
+    'style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"'
 
 const DUOTONE_CSS_VARS_JSX =
-    'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
+    'style={{ color: "var(--solar-secondary-color, currentColor)", opacity: "var(--solar-secondary-opacity, 0.5)" }}'
 
 export type DuotoneFormat = 'html' | 'jsx'
 

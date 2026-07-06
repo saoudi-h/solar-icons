@@ -49,13 +49,13 @@ import { SolarProvider, SolarHomeBold, SolarStarBold } from '@solar-icons/angula
 export class DemoComponent {}
 ```
 
-| Input              | CSS Variable              | Default        |
-| ------------------ | ------------------------- | -------------- |
-| `color`            | `--solar-color`           | `currentColor` |
-| `size`             | `--solar-size`            | `24px`         |
-| `strokeWidth`      | `--solar-stroke-width`    | `1.5`          |
-| `secondaryColor`   | `--solar-duotone-color`   | `currentColor` |
-| `secondaryOpacity` | `--solar-duotone-opacity` | `0.5`          |
+| Input              | CSS Variable                | Default        |
+| ------------------ | --------------------------- | -------------- |
+| `color`            | `--solar-color`             | `currentColor` |
+| `size`             | `--solar-size`              | `24px`         |
+| `strokeWidth`      | `--solar-stroke-width`      | `1.5`          |
+| `secondaryColor`   | `--solar-secondary-color`   | `currentColor` |
+| `secondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
 
 ### useSolar
 

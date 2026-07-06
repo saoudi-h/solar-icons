@@ -46,7 +46,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 
 ## 🔧 V3-16b: CSS vars + classes + provider
 
-- **`src/lib/icon-base.ts`**: CSS vars via `computed()` signals and `??` pattern. Host bindings use `[style.width]`, `[style.height]`, `[style.color]` (not `[attr.*]`) so `var()` CSS function works. `secondaryColor`/`secondaryOpacity` inputs set `[style.--solar-duotone-*]` host bindings. `aria-hidden` computed from `alt`, `ariaLabel`, `titleAttr` inputs. `class: 'solar'` is NOT in IconBase host — each generated component sets its own `class: 'solar solar-{kebabName}-{styleKebab}'` (e.g. `solar solar-heart-bold`) via `host:` in `@Component` metadata.
+- **`src/lib/icon-base.ts`**: CSS vars via `computed()` signals and `??` pattern. Host bindings use `[style.width]`, `[style.height]`, `[style.color]` (not `[attr.*]`) so `var()` CSS function works. `secondaryColor`/`secondaryOpacity` inputs set `[style.--solar-secondary-*]` host bindings. `aria-hidden` computed from `alt`, `ariaLabel`, `titleAttr` inputs. `class: 'solar'` is NOT in IconBase host — each generated component sets its own `class: 'solar solar-{kebabName}-{styleKebab}'` (e.g. `solar solar-heart-bold`) via `host:` in `@Component` metadata.
 - **`src/lib/solar-provider.ts`**: `SolarProvider` (selector `solar-provider`) wraps content in `<div>` with CSS custom properties. `SolarService` (`@Injectable()`) scoped to the component-level provider, exposes `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. `useSolar()` function calls `inject(SolarService)` — must be called in injection context (constructor/property initializer).
 - **`scripts/parser-hook.ts`**: Generated `@Component` decorators include `host: { 'class': 'solar solar-{icon.kebabName}-{styleKebab}' }`.
 - **Pitfall**: `input()` signals must NOT have defaults — `undefined` falls through to CSS var. `[style.width]` (not `[attr.width]`) because `var()` only works in CSS properties.
@@ -67,7 +67,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 - Directory structure is now flat (no categories). Icon component files live directly under `src/icons/<style>/<name>-<style>.ts`.
 - `mirrored` prop removed (was pre-V3, never worked as a CSS var, removed in `d348aad6`).
 - Dynamic per-icon components added: `src/icons/dynamic/<name>-dynamic.ts` with `weight` input.
-- All V3 features implemented: `strokeWidth`, `secondaryColor`/`secondaryOpacity`, `ariaLabel`, `titleAttr`, CSS vars (`--solar-icon-color`, `--solar-icon-size`, `--solar-stroke-width`, `--solar-duotone-color`, `--solar-duotone-opacity`), CSS classes (`solar-icon solar-{kebab}`).
+- All V3 features implemented: `strokeWidth`, `secondaryColor`/`secondaryOpacity`, `ariaLabel`, `titleAttr`, CSS vars (`--solar-icon-color`, `--solar-icon-size`, `--solar-stroke-width`, `--solar-secondary-color`, `--solar-secondary-opacity`), CSS classes (`solar-icon solar-{kebab}`).
 
 ## 🧠 Design rationale — why attribute selector on `<svg>`
 
@@ -93,7 +93,7 @@ This is **deliberate and predates V3** (the pattern was stabilized in `0549a41c`
 - `color` — CSS color (defaults to `currentColor` via `--solar-icon-color` CSS var).
 - `size` — width/height in CSS units (defaults to `24px` via `--solar-icon-size`).
 - `strokeWidth` — line width, only meaningful for `Linear`, `Broken`, `LineDuotone` styles.
-- `secondaryColor` / `secondaryOpacity` — duotone accent customization (CSS vars `--solar-duotone-color`, `--solar-duotone-opacity`).
+- `secondaryColor` / `secondaryOpacity` — duotone accent customization (CSS vars `--solar-secondary-color`, `--solar-secondary-opacity`).
 - `isolated` — when `true`, bypasses all `SolarProvider` CSS vars; SVG attrs use hardcoded defaults (`24px`, `currentColor`, `1.5`), and duotone vars are set to `initial`.
 - `ariaLabel`, `titleAttr` — explicit a11y overrides; `aria-hidden` is auto-set to `"true"` if none of these are provided.
 

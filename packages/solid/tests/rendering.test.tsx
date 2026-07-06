@@ -36,14 +36,14 @@ describe('ArrowUpIcon rendering', () => {
         expect(html).toContain('width="24px"');
         expect(html).toContain('height="24px"');
         expect(html).toContain('color="currentColor"');
-        expect(html).toContain('--solar-duotone-color:initial');
+        expect(html).toContain('--solar-secondary-color:initial');
     });
 
     it('isolated + explicit color does not override duotone', () => {
         const html = renderToString(() => <ArrowUpIcon isolated={true} color="red" />);
 
         expect(html).toContain('color:red');
-        expect(html).toContain('--solar-duotone-color:initial');
+        expect(html).toContain('--solar-secondary-color:initial');
     });
 
     it('merges className with base solar class', () => {

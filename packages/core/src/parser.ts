@@ -373,9 +373,9 @@ export const loadIcon = (category: string, style: IconWeight, name: string): Par
 }
 
 const DUOTONE_CSS_VARS_HTML =
-    'style="color: var(--solar-duotone-color, currentColor); opacity: var(--solar-duotone-opacity, 0.5)"'
+    'style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"'
 const DUOTONE_CSS_VARS_JSX =
-    'style={{ color: "var(--solar-duotone-color, currentColor)", opacity: "var(--solar-duotone-opacity, 0.5)" }}'
+    'style={{ color: "var(--solar-secondary-color, currentColor)", opacity: "var(--solar-secondary-opacity, 0.5)" }}'
 
 /**
  * Transforms a duotone-accent string so that `opacity="0.5"` is replaced

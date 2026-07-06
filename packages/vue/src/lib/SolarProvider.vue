@@ -24,9 +24,9 @@ const props = withDefaults(
         size?: string | number
         /** Default stroke width. Sets `--solar-stroke-width`. */
         strokeWidth?: number
-        /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
+        /** Default secondary color for duotone styles. Sets `--solar-secondary-color`. */
         secondaryColor?: string
-        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
+        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-secondary-opacity`. */
         secondaryOpacity?: number
     }>(),
     {},
@@ -60,9 +60,9 @@ const wrapperStyle = computed(() => {
     if (size.value != null)
         s['--solar-size'] = typeof size.value === 'number' ? `${size.value}px` : size.value
     if (strokeWidth.value != null) s['--solar-stroke-width'] = String(strokeWidth.value)
-    if (secondaryColor.value) s['--solar-duotone-color'] = secondaryColor.value
+    if (secondaryColor.value) s['--solar-secondary-color'] = secondaryColor.value
     if (secondaryOpacity.value != null)
-        s['--solar-duotone-opacity'] = String(secondaryOpacity.value)
+        s['--solar-secondary-opacity'] = String(secondaryOpacity.value)
     return s
 })
 </script>

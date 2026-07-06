@@ -42,8 +42,8 @@ function IconBase(allProps: IconProps): JSX.Element {
             ...userStyle(),
         };
         if (local.isolated) {
-            s['--solar-duotone-color'] = 'initial';
-            s['--solar-duotone-opacity'] = 'initial';
+            s['--solar-secondary-color'] = 'initial';
+            s['--solar-secondary-opacity'] = 'initial';
         }
         if (local.color !== undefined) s.color = local.color;
         if (local.size !== undefined) {
@@ -52,9 +52,9 @@ function IconBase(allProps: IconProps): JSX.Element {
             s.height = sv;
         }
         if (local.strokeWidth !== undefined) s['stroke-width'] = String(local.strokeWidth);
-        if (local.secondaryColor) s['--solar-duotone-color'] = local.secondaryColor;
+        if (local.secondaryColor) s['--solar-secondary-color'] = local.secondaryColor;
         if (local.secondaryOpacity != null)
-            s['--solar-duotone-opacity'] = String(local.secondaryOpacity);
+            s['--solar-secondary-opacity'] = String(local.secondaryOpacity);
         return s;
     };
 

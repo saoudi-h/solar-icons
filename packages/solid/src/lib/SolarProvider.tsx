@@ -1,4 +1,11 @@
-import { createContext, useContext, createSignal, createEffect, type JSX, type Accessor } from 'solid-js';
+import {
+    createContext,
+    useContext,
+    createSignal,
+    createEffect,
+    type JSX,
+    type Accessor,
+} from 'solid-js';
 
 interface SolarState {
     color: Accessor<string | undefined>;
@@ -35,9 +42,9 @@ export interface SolarProviderProps {
     size?: string | number;
     /** Default stroke width. Sets `--solar-stroke-width`. */
     strokeWidth?: number;
-    /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
+    /** Default secondary color for duotone styles. Sets `--solar-secondary-color`. */
     secondaryColor?: string;
-    /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
+    /** Default secondary opacity for duotone styles (0–1). Sets `--solar-secondary-opacity`. */
     secondaryOpacity?: number;
     children: JSX.Element;
 }
@@ -70,8 +77,8 @@ export function SolarProvider(props: SolarProviderProps) {
         if (c !== undefined) s['--solar-color'] = c;
         if (sz != null) s['--solar-size'] = typeof sz === 'number' ? `${sz}px` : sz;
         if (sw != null) s['--solar-stroke-width'] = String(sw);
-        if (sc) s['--solar-duotone-color'] = sc;
-        if (so != null) s['--solar-duotone-opacity'] = String(so);
+        if (sc) s['--solar-secondary-color'] = sc;
+        if (so != null) s['--solar-secondary-opacity'] = String(so);
         return s;
     };
 

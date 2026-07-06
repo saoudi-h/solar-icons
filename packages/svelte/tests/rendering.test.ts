@@ -71,17 +71,17 @@ describe('Linear icon rendering', () => {
             expect(body).toContain('stroke-width="1.5"');
         });
 
-        it('applies --solar-duotone-color:initial in style', () => {
-            expect(body).toContain('--solar-duotone-color: initial');
+        it('applies --solar-secondary-color:initial in style', () => {
+            expect(body).toContain('--solar-secondary-color: initial');
         });
     });
 
     describe('isolated + explicit props', () => {
         const body = renderIcon({ isolated: true, secondaryColor: 'red' });
 
-        it('contains both --solar-duotone-color entries in style', () => {
-            expect(body).toContain('--solar-duotone-color: initial');
-            expect(body).toContain('--solar-duotone-color: red');
+        it('contains both --solar-secondary-color entries in style', () => {
+            expect(body).toContain('--solar-secondary-color: initial');
+            expect(body).toContain('--solar-secondary-color: red');
         });
     });
 

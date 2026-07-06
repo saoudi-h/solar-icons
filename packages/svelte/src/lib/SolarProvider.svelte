@@ -10,9 +10,9 @@
         size?: string | number;
         /** Default stroke width. Sets `--solar-stroke-width`. */
         strokeWidth?: number;
-        /** Default secondary color for duotone styles. Sets `--solar-duotone-color`. */
+        /** Default secondary color for duotone styles. Sets `--solar-secondary-color`. */
         secondaryColor?: string;
-        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
+        /** Default secondary opacity for duotone styles (0–1). Sets `--solar-secondary-opacity`. */
         secondaryOpacity?: number;
         children: Snippet;
     }
@@ -63,9 +63,9 @@
             color != null ? `--solar-color: ${color}` : null,
             size != null ? `--solar-size: ${typeof size === 'number' ? `${size}px` : size}` : null,
             strokeWidth != null ? `--solar-stroke-width: ${String(strokeWidth)}` : null,
-            secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
+            secondaryColor ? `--solar-secondary-color: ${secondaryColor}` : null,
             secondaryOpacity != null
-                ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
+                ? `--solar-secondary-opacity: ${String(secondaryOpacity)}`
                 : null,
         ]
             .filter(Boolean)

@@ -31,8 +31,8 @@ import { Directive, computed, input } from '@angular/core'
         '[style.stroke-width]': 'explicitStrokeWidth()',
 
         '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
-        '[style.--solar-duotone-color]': 'duotoneColor()',
-        '[style.--solar-duotone-opacity]': 'duotoneOpacityStr()',
+        '[style.--solar-secondary-color]': 'duotoneColor()',
+        '[style.--solar-secondary-opacity]': 'duotoneOpacityStr()',
     },
 })
 export abstract class IconBase {

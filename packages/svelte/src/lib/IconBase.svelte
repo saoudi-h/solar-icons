@@ -43,15 +43,15 @@
 
     const baseStyle = $derived(
         [
-            isolated ? '--solar-duotone-color: initial' : null,
-            isolated ? '--solar-duotone-opacity: initial' : null,
+            isolated ? '--solar-secondary-color: initial' : null,
+            isolated ? '--solar-secondary-opacity: initial' : null,
             color !== undefined ? `color: ${color}` : null,
             size !== undefined ? `width: ${typeof size === 'number' ? `${size}px` : size}` : null,
             size !== undefined ? `height: ${typeof size === 'number' ? `${size}px` : size}` : null,
             strokeWidth !== undefined ? `stroke-width: ${String(strokeWidth)}` : null,
-            secondaryColor ? `--solar-duotone-color: ${secondaryColor}` : null,
+            secondaryColor ? `--solar-secondary-color: ${secondaryColor}` : null,
             secondaryOpacity != null
-                ? `--solar-duotone-opacity: ${String(secondaryOpacity)}`
+                ? `--solar-secondary-opacity: ${String(secondaryOpacity)}`
                 : null,
             userStyle ?? null,
         ]
@@ -60,24 +60,20 @@
     );
 
     const svgWidth = $derived(
-        size !== undefined ? undefined
-        : isolated ? '24px'
-        : 'var(--solar-size, 24px)'
+        size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
     );
     const svgHeight = $derived(
-        size !== undefined ? undefined
-        : isolated ? '24px'
-        : 'var(--solar-size, 24px)'
+        size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
     );
     const svgColor = $derived(
-        color !== undefined ? undefined
-        : isolated ? 'currentColor'
-        : 'var(--solar-color, currentColor)'
+        color !== undefined
+            ? undefined
+            : isolated
+              ? 'currentColor'
+              : 'var(--solar-color, currentColor)'
     );
     const computedStrokeWidth = $derived(
-        strokeWidth !== undefined ? undefined
-        : isolated ? '1.5'
-        : 'var(--solar-stroke-width, 1.5)'
+        strokeWidth !== undefined ? undefined : isolated ? '1.5' : 'var(--solar-stroke-width, 1.5)'
     );
 </script>
 

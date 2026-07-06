@@ -15,9 +15,9 @@ export interface IconBaseProps {
     size?: string | number;
     /** Stroke width for Linear, Broken, and LineDuotone styles. */
     strokeWidth?: string | number;
-    /** Secondary color for BoldDuotone and LineDuotone styles. Sets `--solar-duotone-color`. */
+    /** Secondary color for BoldDuotone and LineDuotone styles. Sets `--solar-secondary-color`. */
     secondaryColor?: string;
-    /** Opacity of the secondary duotone layer (0–1). Sets `--solar-duotone-opacity`. */
+    /** Opacity of the secondary duotone layer (0–1). Sets `--solar-secondary-opacity`. */
     secondaryOpacity?: number;
     /** Internal: kebab-case name for the `solar-{name}` CSS class. */
     iconName?: string;

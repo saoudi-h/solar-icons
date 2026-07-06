@@ -45,8 +45,8 @@ describe('ArrowUpIcon', () => {
         expect(html).not.toContain('var(--solar-color')
         expect(html).not.toContain('var(--solar-stroke-width')
 
-        expect(html).toContain('--solar-duotone-color:initial')
-        expect(html).toContain('--solar-duotone-opacity:initial')
+        expect(html).toContain('--solar-secondary-color:initial')
+        expect(html).toContain('--solar-secondary-opacity:initial')
     })
 
     it('isolated + explicit color does not override duotone', () => {
@@ -54,7 +54,7 @@ describe('ArrowUpIcon', () => {
 
         expect(html).toContain('color:red')
         expect(html).not.toContain('var(--solar-color')
-        expect(html).toContain('--solar-duotone-color:initial')
+        expect(html).toContain('--solar-secondary-color:initial')
     })
 
     it('merges className with solar prefix', () => {

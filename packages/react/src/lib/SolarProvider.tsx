@@ -44,9 +44,9 @@ export interface SolarProviderProps {
     size?: string | number
     /** Default stroke width for Linear/Broken/LineDuotone styles. Sets `--solar-stroke-width`. */
     strokeWidth?: number
-    /** Default secondary color for BoldDuotone/LineDuotone styles. Sets `--solar-duotone-color`. */
+    /** Default secondary color for BoldDuotone/LineDuotone styles. Sets `--solar-secondary-color`. */
     secondaryColor?: string
-    /** Default secondary opacity for duotone styles (0–1). Sets `--solar-duotone-opacity`. */
+    /** Default secondary opacity for duotone styles (0–1). Sets `--solar-secondary-opacity`. */
     secondaryOpacity?: number
     children: ReactNode
 }
@@ -69,8 +69,8 @@ export function SolarProvider({
     if (color !== undefined) wrapperStyle['--solar-color'] = color
     if (size != null) wrapperStyle['--solar-size'] = typeof size === 'number' ? `${size}px` : size
     if (strokeWidth != null) wrapperStyle['--solar-stroke-width'] = String(strokeWidth)
-    if (secondaryColor) wrapperStyle['--solar-duotone-color'] = secondaryColor
-    if (secondaryOpacity != null) wrapperStyle['--solar-duotone-opacity'] = String(secondaryOpacity)
+    if (secondaryColor) wrapperStyle['--solar-secondary-color'] = secondaryColor
+    if (secondaryOpacity != null) wrapperStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
 
     const state = useMemo<SolarState>(() => ({
         color, setColor,
