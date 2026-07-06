@@ -139,11 +139,13 @@ import { HeartIcon } from '@solar-icons/vue/dynamic'
 | ------------------- | ------------------ | ---------------------- |
 | `color`             | `string`           | Icon color             |
 | `size`              | `string \| number` | Width and height       |
-| `stroke-width`      | `string \| number` | Stroke width           |
-| `secondary-color`   | `string`           | Duotone accent color   |
-| `secondary-opacity` | `number`           | Duotone accent opacity |
+| `strokeWidth`       | `string \| number` | Stroke width           |
+| `secondaryColor`    | `string`           | Duotone accent color   |
+| `secondaryOpacity`  | `number`           | Duotone accent opacity |
 | `isolated`          | `boolean`          | Ignores provider       |
 | `alt`               | `string`           | Accessibility label    |
+
+In Vue templates, kebab-case attribute names map to camelCase props (e.g. `:stroke-width="2"` targets `strokeWidth`). Either form works in templates. Use kebab-case in `<template>`, camelCase in `<script setup>`.
 
 ## CSS variables
 
