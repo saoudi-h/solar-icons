@@ -3,6 +3,7 @@
     "icon": "ArrowRightUpIcon",
     "defaultOpen": true,
     "pages": [
+        "index",
         "react-perf",
         "react",
         "vue",
