@@ -8,6 +8,8 @@ icon: react
 @solar-icons/react-native react-native-svg
 ```
 
+`react-native-svg` is a peer dependency. Install it manually if your project does not already use it.
+
 Renders `<Svg>` from `react-native-svg`. No CSS variables — values resolve in JavaScript.
 
 ## Import patterns
@@ -96,15 +98,17 @@ function ColorToggle() {
 
 ## Icon props
 
-| Prop               | Type               | Description                  |
-| ------------------ | ------------------ | ---------------------------- |
-| `color`            | `string`           | Icon color                   |
-| `size`             | `number`           | Size in pixels (number only) |
-| `strokeWidth`      | `number \| string` | Stroke width                 |
-| `secondaryColor`   | `string`           | Duotone accent color         |
-| `secondaryOpacity` | `number`           | Duotone accent opacity       |
-| `isolated`         | `boolean`          | Ignores provider             |
-| `alt`              | `string`           | Accessibility label          |
+| Prop               | Type               | Default | Description                  |
+| ------------------ | ------------------ | ------- | ---------------------------- |
+| `color`            | `string`           | `currentColor` | Icon color           |
+| `size`             | `number`           | `24`    | Size in pixels (number only) |
+| `strokeWidth`      | `number \| string` | `1.5`   | Stroke width                 |
+| `secondaryColor`   | `string`           | —       | Duotone accent color         |
+| `secondaryOpacity` | `number`           | —       | Duotone accent opacity       |
+| `isolated`         | `boolean`          | `false` | Ignores provider             |
+| `alt`              | `string`           | —       | Accessibility label          |
+
+Omit a prop to fall back to the `SolarProvider` value, then to the hardcoded default listed above.
 
 ## Differences from web React
 
