@@ -19,16 +19,16 @@ The module wraps `@solar-icons/vue` and provides:
 
 ## Module options
 
-| Option             | Type               | Default   | Description                                          |
-| ------------------ | ------------------ | --------- | ---------------------------------------------------- |
-| `namePrefix`       | `string`           | `'Solar'`  | Prefix for auto-imported component names             |
-| `autoImport`       | `boolean`          | `'true'`   | Register all icons as auto-imported components       |
-| `provider`         | `boolean`          | `'true'`   | Inject global SolarProvider wrapping the app         |
-| `color`            | `string`           | —         | Default icon color                                   |
-| `size`             | `string \| number` | —         | Default icon size                                    |
-| `strokeWidth`      | `number`           | —         | Default stroke width                                 |
-| `secondaryColor`   | `string`           | —         | Default duotone accent color                         |
-| `secondaryOpacity` | `number`           | —         | Default duotone accent opacity (0–1)                 |
+| Option             | Type               | Default          | Description                                    |
+| ------------------ | ------------------ | ---------------- | ---------------------------------------------- |
+| `namePrefix`       | `string`           | `'Solar'`        | Prefix for auto-imported component names       |
+| `autoImport`       | `boolean`          | `true`           | Register all icons as auto-imported components |
+| `provider`         | `boolean`          | `true`           | Inject global provider state wrapping the app  |
+| `color`            | `string`           | `'currentColor'` | Default icon color                             |
+| `size`             | `string \| number` | `24`             | Default icon size                              |
+| `strokeWidth`      | `number`           | `1.5`            | Default stroke width                           |
+| `secondaryColor`   | `string`           | —                | Default duotone accent color                   |
+| `secondaryOpacity` | `number`           | —                | Default duotone accent opacity (0–1)           |
 
 ```ts
 // nuxt.config.ts
@@ -47,9 +47,9 @@ export default defineNuxtConfig({
 })
 ```
 
-When `provider: true` (default), the module automatically wraps your app in a `<SolarProvider>` with the configured defaults. No need to add `<SolarProvider>` in `app.vue`.
+When `provider: true` (default), the module injects a global `SolarState` into the Nuxt Vue app and writes the configured defaults as `--solar-*` CSS variables on `document.body` (client side). `useSolar()` works in any component without a wrapping `<SolarProvider>`.
 
-When `provider: false`, you must add `<SolarProvider>` manually:
+When `provider: false`, set up the state manually. Either call `createSolarIcons` from a Nuxt plugin, or wrap `app.vue` in `<SolarProvider>`:
 
 ```vue
 <!-- app.vue -->
