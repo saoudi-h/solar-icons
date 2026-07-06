@@ -144,16 +144,16 @@ Icons resolve styling through CSS custom properties.
 
 Every icon renders with two classes:
 
-| Class          | Description                                    |
-| -------------- | ---------------------------------------------- |
-| `solar`        | Present on every icon. Use for global styling. |
-| `solar-{name}` | Specific to the icon (e.g., `solar-heart`).    |
+| Class                  | Description                                                |
+| ---------------------- | ---------------------------------------------------------- |
+| `solar`                | Present on every icon. Use for global styling.             |
+| `solar-{name}-{style}` | Specific to the icon and style (e.g., `solar-heart-bold`). |
 
 ```css
 .solar {
     vertical-align: middle;
 }
-.solar-heart {
+.solar-heart-bold {
     color: #ef4444;
 }
 ```

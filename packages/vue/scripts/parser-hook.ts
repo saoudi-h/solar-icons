@@ -149,7 +149,7 @@ export const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }
     return h(IconBase, {
         ...attrs,
         ...props,
-        iconName: ${JSON.stringify(icon.kebabName)},
+        iconName: ${JSON.stringify(`${icon.kebabName}-${icon.styleKebab}`)},
     }, {
         default: () => [
 ${hChildren}

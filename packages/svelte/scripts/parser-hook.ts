@@ -25,7 +25,7 @@ import Icon from '../../lib/IconBase.svelte'
 let props = $props()
 </script>
 
-<Icon {...props} iconName="${icon.kebabName}">
+<Icon {...props} iconName="${icon.kebabName}-${icon.styleKebab}">
     ${body}
 </Icon>
 `;

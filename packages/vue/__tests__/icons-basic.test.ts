@@ -88,7 +88,7 @@ describe('Icon component basics', () => {
         )
         const svg = wrapper.find('svg')
         expect(svg.classes()).toContain('solar')
-        expect(svg.classes()).toContain('solar-arrow-up')
+        expect(svg.classes()).toContain('solar-arrow-up-linear')
         expect(svg.classes()).toContain('my-extra')
     })
 

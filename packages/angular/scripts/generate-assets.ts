@@ -159,9 +159,6 @@ ${conditions}
     imports: [${WEIGHTS.filter(w => groups[w])
         .map(w => `Solar${toPascalCase(`${name}-${w}`)}`)
         .join(', ')}],
-    host: {
-        'class': 'solar solar-${name}',
-    },
 })
 export class ${componentName} extends IconBase {
     readonly weight = input<${weightUnion}>()

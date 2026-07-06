@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
 import { renderToStaticMarkup } from 'react-dom/server'
+import { describe, expect, it } from 'vitest'
 import { ArrowUpIcon } from '../dist/icons/linear/arrow-up.mjs'
 
 describe('ArrowUpIcon', () => {
@@ -7,7 +7,7 @@ describe('ArrowUpIcon', () => {
         const html = renderToStaticMarkup(<ArrowUpIcon />)
 
         expect(html).toContain('<svg')
-        expect(html).toContain('class="solar solar-arrow-up"')
+        expect(html).toContain('class="solar solar-arrow-up-linear"')
         expect(html).toContain('xmlns="http://www.w3.org/2000/svg"')
         expect(html).toContain('viewBox="0 0 24 24"')
         expect(html).toContain('fill="none"')
@@ -60,6 +60,6 @@ describe('ArrowUpIcon', () => {
     it('merges className with solar prefix', () => {
         const html = renderToStaticMarkup(<ArrowUpIcon className="my-extra" />)
 
-        expect(html).toContain('class="solar solar-arrow-up my-extra"')
+        expect(html).toContain('class="solar solar-arrow-up-linear my-extra"')
     })
 })

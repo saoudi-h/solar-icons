@@ -16,7 +16,7 @@ describe('Linear icon rendering', () => {
 
         it('has the solar class with icon name', () => {
             const body = renderIcon();
-            expect(body).toContain('class="solar solar-arrow-up"');
+            expect(body).toContain('class="solar solar-arrow-up-linear"');
         });
 
         it('has the correct SVG attributes', () => {
@@ -88,7 +88,7 @@ describe('Linear icon rendering', () => {
     describe('className merge', () => {
         it('merges custom class with solar classes', () => {
             const body = renderIcon({ class: 'my-extra' });
-            expect(body).toContain('class="solar solar-arrow-up my-extra"');
+            expect(body).toContain('class="solar solar-arrow-up-linear my-extra"');
         });
     });
 });

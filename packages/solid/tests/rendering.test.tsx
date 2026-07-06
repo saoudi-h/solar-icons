@@ -7,7 +7,7 @@ describe('ArrowUpIcon rendering', () => {
         const html = renderToString(() => <ArrowUpIcon />);
 
         expect(html).toContain('<svg');
-        expect(html).toContain('class="solar solar-arrow-up');
+        expect(html).toContain('class="solar solar-arrow-up-linear');
         expect(html).toContain('xmlns="http://www.w3.org/2000/svg"');
         expect(html).toContain('viewBox="0 0 24 24"');
         expect(html).toContain('fill="none"');
@@ -49,6 +49,6 @@ describe('ArrowUpIcon rendering', () => {
     it('merges className with base solar class', () => {
         const html = renderToString(() => <ArrowUpIcon class="my-extra" />);
 
-        expect(html).toContain('class="solar solar-arrow-up my-extra');
+        expect(html).toContain('class="solar solar-arrow-up-linear my-extra');
     });
 });

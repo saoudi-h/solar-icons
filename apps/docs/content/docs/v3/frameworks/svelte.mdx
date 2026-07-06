@@ -116,18 +116,17 @@ const { color, setColor } = useSolar()
 
 ## Icon props
 
-| Prop               | Type               | Description                            |
-| ------------------ | ------------------ | -------------------------------------- |
-| `color`            | `string`           | Icon color                             |
-| `size`             | `string \| number` | Width and height                       |
-| `strokeWidth`      | `string \| number` | Stroke width                           |
-| `secondaryColor`   | `string`           | Duotone accent color                   |
-| `secondaryOpacity` | `number`           | Duotone accent opacity                 |
-| `isolated`         | `boolean`          | Ignores provider                       |
-| `alt`              | `string`           | Accessibility label                    |
-| `class`            | `string`           | CSS class (merged with `solar-{name}`) |
-| `style`            | `string`           | Inline style                           |
-
+| Prop               | Type               | Description                                    |
+| ------------------ | ------------------ | ---------------------------------------------- |
+| `color`            | `string`           | Icon color                                     |
+| `size`             | `string \| number` | Width and height                               |
+| `strokeWidth`      | `string \| number` | Stroke width                                   |
+| `secondaryColor`   | `string`           | Duotone accent color                           |
+| `secondaryOpacity` | `number`           | Duotone accent opacity                         |
+| `isolated`         | `boolean`          | Ignores provider                               |
+| `alt`              | `string`           | Accessibility label                            |
+| `class`            | `string`           | CSS class (merged with `solar-{name}-{style}`) |
+| `style`            | `string`           | Inline style                                   |
 
 ## CSS variables
 
@@ -135,7 +134,7 @@ Same as [React](/docs/v3/frameworks/react#css-variables).
 
 ## CSS classes
 
-Every icon renders with class `solar` plus `solar-{name}`. See the [React page](/docs/v3/frameworks/react#css-classes).
+Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [React page](/docs/v3/frameworks/react#css-classes).
 
 ## ESM only
 
