@@ -73,13 +73,15 @@ import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
 export class AppComponent {}
 ```
 
-| Input              | CSS Variable                | Default        |
+| Input              | CSS Variable                | Fallback       |
 | ------------------ | --------------------------- | -------------- |
 | `color`            | `--solar-color`             | `currentColor` |
 | `size`             | `--solar-size`              | `24px`         |
 | `strokeWidth`      | `--solar-stroke-width`      | `1.5`          |
 | `secondaryColor`   | `--solar-secondary-color`   | `currentColor` |
 | `secondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
+
+The provider does not set defaults. Icons fall back to these values through CSS when no provider or input is specified.
 
 ## useSolar
 

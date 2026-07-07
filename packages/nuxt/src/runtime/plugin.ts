@@ -9,6 +9,8 @@ export default defineNuxtPlugin({
             color: 'currentColor',
             size: 24,
             strokeWidth: 1.5,
+            secondaryColor: 'currentColor',
+            secondaryOpacity: 0.5,
         }
 
         const ctx = createSolarIcons(config)

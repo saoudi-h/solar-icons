@@ -74,13 +74,15 @@ function App() {
 }
 ```
 
-| Prop               | Default          | Description               |
-| ------------------ | ---------------- | ------------------------- |
-| `color`            | `'currentColor'` | Default color             |
-| `size`             | `24`             | Default size (px, number) |
-| `strokeWidth`      | `1.5`            | Default stroke            |
-| `secondaryColor`   | —                | Duotone accent color      |
-| `secondaryOpacity` | —                | Duotone accent opacity    |
+| Prop               | Fallback         | Description             |
+| ------------------ | ---------------- | ----------------------- |
+| `color`            | `'currentColor'` | Icon color              |
+| `size`             | `24`             | Size in pixels (number) |
+| `strokeWidth`      | `1.5`            | Stroke width            |
+| `secondaryColor`   | `'currentColor'` | Duotone accent color    |
+| `secondaryOpacity` | `0.5`            | Duotone accent opacity  |
+
+The provider does not set defaults. Icons fall back to these values when no provider or prop is specified.
 
 ## useSolar
 
@@ -98,17 +100,17 @@ function ColorToggle() {
 
 ## Icon props
 
-| Prop               | Type               | Default        | Description                  |
+| Prop               | Type               | Fallback       | Description                  |
 | ------------------ | ------------------ | -------------- | ---------------------------- |
 | `color`            | `string`           | `currentColor` | Icon color                   |
 | `size`             | `number`           | `24`           | Size in pixels (number only) |
 | `strokeWidth`      | `number \| string` | `1.5`          | Stroke width                 |
-| `secondaryColor`   | `string`           | —              | Duotone accent color         |
-| `secondaryOpacity` | `number`           | —              | Duotone accent opacity       |
+| `secondaryColor`   | `string`           | `currentColor` | Duotone accent color         |
+| `secondaryOpacity` | `number`           | `0.5`          | Duotone accent opacity       |
 | `isolated`         | `boolean`          | `false`        | Ignores provider             |
 | `alt`              | `string`           | —              | Accessibility label          |
 
-Omit a prop to fall back to the `SolarProvider` value, then to the hardcoded default listed above.
+Omit a prop to fall back to the `SolarProvider` value, then to the fallback listed above.
 
 ## Differences from web React
 
