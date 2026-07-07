@@ -105,6 +105,32 @@ describe('Icon component basics', () => {
         expect(svg.findAll('path').length).toBeGreaterThan(0)
     })
 
+    it('dynamic icon renders with correct CSS class for default weight', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpDynamic)
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.classes()).toContain('solar')
+        expect(svg.classes()).toContain('solar-arrow-up-linear')
+    })
+
+    it('dynamic icon renders with correct CSS class for explicit weight', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpDynamic, { weight: 'Bold' })
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.classes()).toContain('solar')
+        expect(svg.classes()).toContain('solar-arrow-up-bold')
+    })
+
     it('dynamic icon switches style on weight change', () => {
         const linear = mount(
             defineComponent({
@@ -121,5 +147,33 @@ describe('Icon component basics', () => {
             })
         )
         expect(linear.find('svg').html()).not.toBe(bold.find('svg').html())
+    })
+
+    it('dynamic icon merges external class with solar classes', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpDynamic, { class: 'text-blue-500' })
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.classes()).toContain('solar')
+        expect(svg.classes()).toContain('solar-arrow-up-linear')
+        expect(svg.classes()).toContain('text-blue-500')
+    })
+
+    it('dynamic icon merges external class with solar classes for explicit weight', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpDynamic, { weight: 'Bold', class: 'text-blue-500' })
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.classes()).toContain('solar')
+        expect(svg.classes()).toContain('solar-arrow-up-bold')
+        expect(svg.classes()).toContain('text-blue-500')
     })
 })

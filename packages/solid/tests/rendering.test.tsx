@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'solid-js/web';
 import { ArrowUpIcon } from '../src/icons/linear/arrow-up';
+import { ArrowUpIcon as ArrowUpDynamic } from '../src/icons/dynamic/arrow-up';
 
 describe('ArrowUpIcon rendering', () => {
     it('renders default SVG attributes', () => {
@@ -50,5 +51,42 @@ describe('ArrowUpIcon rendering', () => {
         const html = renderToString(() => <ArrowUpIcon class="my-extra" />);
 
         expect(html).toContain('class="solar solar-arrow-up-linear my-extra');
+    });
+});
+
+describe('ArrowUpDynamic (dynamic icon)', () => {
+    it('renders with default weight (linear) and correct CSS class', () => {
+        const html = renderToString(() => <ArrowUpDynamic />);
+
+        expect(html).toContain('<svg');
+        expect(html).toContain('class="solar solar-arrow-up-linear');
+    });
+
+    it('renders with explicit weight and correct CSS class', () => {
+        const html = renderToString(() => <ArrowUpDynamic weight="Bold" />);
+
+        expect(html).toContain('class="solar solar-arrow-up-bold');
+    });
+
+    it('switches CSS class when weight changes', () => {
+        const linear = renderToString(() => <ArrowUpDynamic />);
+        const bold = renderToString(() => <ArrowUpDynamic weight="Bold" />);
+        const outline = renderToString(() => <ArrowUpDynamic weight="Outline" />);
+
+        expect(linear).toContain('class="solar solar-arrow-up-linear');
+        expect(bold).toContain('class="solar solar-arrow-up-bold');
+        expect(outline).toContain('class="solar solar-arrow-up-outline');
+    });
+
+    it('merges className with solar prefix on dynamic icon', () => {
+        const html = renderToString(() => <ArrowUpDynamic class="text-blue-500" />);
+
+        expect(html).toContain('class="solar solar-arrow-up-linear text-blue-500');
+    });
+
+    it('merges className with solar prefix on dynamic icon with explicit weight', () => {
+        const html = renderToString(() => <ArrowUpDynamic weight="Bold" class="text-blue-500" />);
+
+        expect(html).toContain('class="solar solar-arrow-up-bold text-blue-500');
     });
 });

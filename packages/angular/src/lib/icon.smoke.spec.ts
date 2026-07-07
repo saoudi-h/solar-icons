@@ -1,3 +1,4 @@
+import { Component } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { SolarArrowLeftBold } from '../icons/arrow-left-bold'
 import { SolarArrowLeftBoldDuotone } from '../icons/arrow-left-bold-duotone'
@@ -14,6 +15,13 @@ const REPRESENTATIVE_ICONS = [
     { name: 'SolarArrowLeftOutline', cls: SolarArrowLeftOutline },
     { name: 'SolarArrowLeftBroken', cls: SolarArrowLeftBroken },
 ] as const
+
+@Component({
+    standalone: true,
+    imports: [SolarArrowLeftBold],
+    template: `<svg solarArrowLeftBold class="text-blue-500" />`,
+})
+class WrapperWithUserClass {}
 
 describe('Generated Icon Components (smoke tests)', () => {
     for (const { name, cls } of REPRESENTATIVE_ICONS) {
@@ -48,4 +56,24 @@ describe('Generated Icon Components (smoke tests)', () => {
             })
         })
     }
+})
+
+describe('Static icon class merge', () => {
+    let fixture: ComponentFixture<WrapperWithUserClass>
+
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [WrapperWithUserClass],
+        }).compileComponents()
+        fixture = TestBed.createComponent(WrapperWithUserClass)
+        fixture.detectChanges()
+    })
+
+    it('should merge user class with host.class on the same element', () => {
+        const svg = fixture.nativeElement.querySelector('svg')
+        expect(svg).toBeTruthy()
+        expect(svg.classList.contains('solar')).toBe(true)
+        expect(svg.classList.contains('solar-arrow-left-bold')).toBe(true)
+        expect(svg.classList.contains('text-blue-500')).toBe(true)
+    })
 })

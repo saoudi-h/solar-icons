@@ -61,6 +61,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
     - **Multi-style components** (from `@solar-icons/angular/dynamic`): regular Angular components (`svg[solar{pascalName}]`) that bundle all 6 styles and switch via `weight` input. Used directly in templates, no directive needed.
     - **`SolarIcon` directive** (selector `[solarIcon]`): renders icons at runtime from a class (no registry) or a registered string name (via `provideSolarIcons`). The `solarIcon` input accepts `IconComponent | SolarIconName | string`.
 - **ngc rootDir no longer conflicts** with `@solar-icons/core` (Path A, 2026-06-25). The import resolves to `node_modules/@solar-icons/core/dist/...`, which is outside the package source tree — no TS6059.
+- **Angular dynamic default weight must be `Linear`** (D-ANGULAR-DEFAULT-WEIGHT, 2026-07-07). The `generate-assets.ts` reorders the `@if/@else if` chain so `Linear` is first. The other frameworks default to `linear` via `const key = weight ? WEIGHT_MAP[weight] : 'linear'`. If the generator is modified, verify the default weight remains `Linear` — the `WEIGHTS` array starts with `Bold`, so naively iterating it puts `Bold` first.
 
 ## V3 Propagation (2026-06-24)
 

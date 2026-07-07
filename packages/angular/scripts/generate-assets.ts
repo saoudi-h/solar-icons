@@ -115,7 +115,14 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         })
         .join('\n')
 
-    const conditions = WEIGHTS.filter(w => groups[w])
+    const sortedWeights = WEIGHTS.filter(w => groups[w])
+    // Move Linear to the front so it's the default (matching other frameworks)
+    const linearIdx = sortedWeights.indexOf('Linear')
+    if (linearIdx > 0) {
+        sortedWeights.splice(linearIdx, 1)
+        sortedWeights.unshift('Linear')
+    }
+    const conditions = sortedWeights
         .map((w, i) => {
             const globalName = toPascalCase(`${name}-${w}`)
             const prefix = i === 0 ? '@if (!weight() || weight() ===' : '@else if (weight() ==='

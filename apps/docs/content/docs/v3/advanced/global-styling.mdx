@@ -132,13 +132,14 @@ Set `secondaryColor` and `secondaryOpacity` on the provider or individual icons 
 
 Every icon renders with two classes:
 
-| Class                   | Applies to                                            |
-| ----------------------- | ----------------------------------------------------- |
-| `solar`                 | Every icon                                            |
-| `solar-{name}-{style}`  | Static icons in every framework                       |
-| `solar-{name}-{weight}` | Dynamic icons; the suffix matches the rendered weight |
+| Class                  | Applies to                     |
+| ---------------------- | ------------------------------ |
+| `solar`                | Every icon                     |
+| `solar-{name}-{style}` | Every icon (static or dynamic) |
 
-**All frameworks follow the same convention.** Static imports pass the style name in the import path (`@solar-icons/react/bold`) and the class carries the suffix (`solar-heart-bold`). Dynamic imports switch styles at runtime via a `weight` prop; the rendered class reflects the active weight, so `weight="Linear"` produces `solar-heart-linear`.
+**Static icons** carry the style from the import path: `@solar-icons/react/bold` produces `solar solar-heart-bold`.
+
+**Dynamic icons** (`@solar-icons/react/dynamic`) don't add their own class. Internally, they render a static component that carries the class matching the active weight. So `<HeartIcon weight="Linear" />` produces `solar solar-heart-linear`, and switching to `weight="Bold"` changes it to `solar solar-heart-bold`.
 
 Use `.solar` for global icon styling. Use `.solar-heart-bold` to target a specific icon in a specific style.
 
@@ -147,7 +148,7 @@ Use `.solar` for global icon styling. Use `.solar-heart-bold` to target a specif
     vertical-align: middle;
 }
 
-.solar-heart {
+.solar-heart-bold {
     color: #ef4444;
 }
 ```

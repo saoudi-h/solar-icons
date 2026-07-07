@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from 'svelte/server';
 import ArrowUp from '../src/icons/linear/arrow-up.svelte';
+import ArrowUpDynamic from '../src/icons/dynamic/arrow-up.svelte';
 
 function renderIcon(props = {}) {
     const { body } = render(ArrowUp, { props });
@@ -89,6 +90,48 @@ describe('Linear icon rendering', () => {
         it('merges custom class with solar classes', () => {
             const body = renderIcon({ class: 'my-extra' });
             expect(body).toContain('class="solar solar-arrow-up-linear my-extra"');
+        });
+    });
+});
+
+describe('Dynamic icon rendering', () => {
+    function renderDynamic(props = {}) {
+        const { body } = render(ArrowUpDynamic, { props });
+        return body;
+    }
+
+    describe('default rendering', () => {
+        it('renders with default weight (linear) and correct CSS class', () => {
+            const body = renderDynamic();
+            expect(body).toContain('<svg');
+            expect(body).toContain('class="solar solar-arrow-up-linear"');
+        });
+
+        it('renders with explicit weight and correct CSS class', () => {
+            const body = renderDynamic({ weight: 'Bold' });
+            expect(body).toContain('class="solar solar-arrow-up-bold"');
+        });
+
+        it('switches CSS class when weight changes', () => {
+            const linear = renderDynamic();
+            const bold = renderDynamic({ weight: 'Bold' });
+            const outline = renderDynamic({ weight: 'Outline' });
+
+            expect(linear).toContain('class="solar solar-arrow-up-linear"');
+            expect(bold).toContain('class="solar solar-arrow-up-bold"');
+            expect(outline).toContain('class="solar solar-arrow-up-outline"');
+        });
+    });
+
+    describe('className merge', () => {
+        it('merges custom class with solar classes on dynamic icon', () => {
+            const body = renderDynamic({ class: 'text-blue-500' });
+            expect(body).toContain('class="solar solar-arrow-up-linear text-blue-500"');
+        });
+
+        it('merges custom class with solar classes on dynamic icon with explicit weight', () => {
+            const body = renderDynamic({ weight: 'Bold', class: 'text-blue-500' });
+            expect(body).toContain('class="solar solar-arrow-up-bold text-blue-500"');
         });
     });
 });
