@@ -17,7 +17,7 @@
 
 - [ ] **[BETA]** Publish all packages as `3.0.0-beta.1`: bump versions, create changesets, verify all builds, publish to npm with `--tag beta` on the `beta` branch. `Priority: 🔴` `Complexity: M`
 - [ ] **[CHANGELOG]** Generate V3.0 changelog from commits. `Priority: 🔵` `Complexity: S`
-- [/] **[DOCS-AUDIT]** Critical review of all V3 docs: version naming (legacy/v3-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L`
+- [/] **[DOCS-AUDIT]** Critical review of all V3 docs: version naming (legacy/v3-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
 
 ### V3 — Svelte audit & fix
 
