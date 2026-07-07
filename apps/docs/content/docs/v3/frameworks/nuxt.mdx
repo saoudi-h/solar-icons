@@ -12,10 +12,10 @@ icon: nuxt
 
 The module wraps `@solar-icons/vue` and provides:
 
-- **Auto-imported icons** — all 7,476 static icons + 1,246 dynamic icons
-- **`SolarProvider`** and **`useSolar`** — auto-imported
-- **`#solar-icons` aliases** — for explicit imports with full TypeScript support
-- **Provider defaults** — configure default color, size, stroke width from `nuxt.config.ts`
+- **Auto-imported icons:** all 7,476 static icons + 1,246 dynamic icons
+- **`SolarProvider`** and **`useSolar`:** auto-imported
+- **`#solar-icons` aliases:** for explicit imports with full TypeScript support
+- **Provider defaults:** configure default color, size, stroke width from `nuxt.config.ts`
 
 ## Module options
 
@@ -62,7 +62,7 @@ When `provider: false`, set up the state manually. Either call `createSolarIcons
 
 ## Auto-import
 
-With `autoImport: true` (default), every icon is available in templates without explicit imports. Two sets of components are registered:
+With `autoImport: true` (default), every icon is available in templates without explicit imports. The module registers two sets of components:
 
 ### Main barrel (disambiguated names)
 
@@ -129,13 +129,13 @@ For consumers outside Nuxt (scripts, tests, other frameworks), the package also 
 | `@solar-icons/nuxt/dynamic`       | `@solar-icons/vue/dynamic`       |
 | `@solar-icons/nuxt/lib`           | `@solar-icons/vue/lib`           |
 
-In a Nuxt app, prefer the `#solar-icons` aliases — they resolve at build time and have TypeScript support via the generated tsconfig.
+In a Nuxt app, prefer the `#solar-icons` aliases. They resolve at build time and have TypeScript support via the generated tsconfig.
 
 ## SolarProvider and useSolar
 
 The provider and composable work identically to the Vue package. See the [Vue documentation](/docs/v3/frameworks/vue#solarprovider) for props, CSS variables, and usage examples.
 
-`useSolar()` must be called inside a `<SolarProvider>` tree. The provider uses scoped `provide`/`inject` — no global context.
+`useSolar()` must be called inside a `<SolarProvider>` tree. The provider uses scoped `provide`/`inject`. No global context.
 
 ## ESM only
 

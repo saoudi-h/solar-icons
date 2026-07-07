@@ -153,3 +153,11 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v3/*` via the `V3BetaBanner` wrapper.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.
+
+## Prose conventions (stop-slop)
+
+- **No `## New:` section headers.** In migration guides, the entire page is about what changed. `## SolarProvider` beats `## New: SolarProvider`.
+- **Active voice.** "V3 drops the `mirrored` prop" beats "The `mirrored` prop was removed." Use "V3" as the actor for breaking changes.
+- **No em-dashes in prose.** Use periods, commas, or colons. Em-dashes in code comments and bold label patterns (`After (recommended — per-style):`) are acceptable.
+- **No adverbs.** Cut "genuinely", "simply", "actually", etc.
+- **No vague declaratives.** "This keeps the package surface clean" adds nothing. State the fact, trust the reader.

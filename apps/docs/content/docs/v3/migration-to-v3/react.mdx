@@ -7,7 +7,7 @@ icon: react
 The old `@solar-icons/react` bundled every icon with all six styles and switched via `weight="Bold"`. v3 splits the package into two import paths. Pick the one that matches your usage.
 
 - **Per-style path** (default): one style per component, tree-shakable at the import level. Use this for the vast majority of cases. Most apps render an icon in a single style and never switch at runtime.
-- **Dynamic path**: a single component per icon that bundles all six styles and switches via `weight`. Use it only when you genuinely swap styles at runtime.
+- **Dynamic path**: a single component per icon that bundles all six styles and switches via `weight`. Use it only when you swap styles at runtime.
 
 ## Import path
 
@@ -85,12 +85,12 @@ import { ArrowUpIcon } from '@solar-icons/react/dynamic/arrow-up'
 import { Home } from '@solar-icons/react/ssr'
 ```
 
-The `/ssr` subpath is gone. All icons render on the server by default.
+V3 drops the `/ssr` subpath. All icons render on the server by default.
 
 ```jsx
 import { HomeIcon } from '@solar-icons/react/bold'
 ```
 
-## New features available
+## New features
 
 `SolarProvider`, `secondaryColor` / `secondaryOpacity`, and `strokeWidth` are now part of every web framework package. See the [React package page](/docs/v3/frameworks/react) for the full API.

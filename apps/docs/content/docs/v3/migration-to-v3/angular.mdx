@@ -6,7 +6,7 @@ icon: angular
 
 ## Standalone components
 
-v3 components are standalone. This was already true before v3 — no module removal needed.
+v3 components are standalone. They were already standalone before v3. No module removal needed.
 
 ## Component names
 
@@ -24,7 +24,7 @@ import { HeartBold } from '@solar-icons/angular'
 import { SolarHeartBold } from '@solar-icons/angular'
 ```
 
-## New: SolarProvider
+## SolarProvider
 
 v3 adds `<solar-provider>` for sharing styling via CSS custom properties:
 
@@ -43,7 +43,7 @@ import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
 export class AppComponent {}
 ```
 
-## New: useSolar
+## useSolar
 
 Child-driven API for components inside `<solar-provider>`:
 
@@ -60,7 +60,7 @@ function MyComponent() {
 Set defaults with `<solar-provider>` props. In child components, read from `useSolar()` and write to it **only** in response to user events. Initial writes in a child constructor are overridden by the provider's inputs. Avoid them.
 </Callout>
 
-## New: Duotone and stroke width
+## Duotone and stroke width
 
 v3 adds duotone support and stroke width control for linear styles:
 
@@ -69,7 +69,7 @@ v3 adds duotone support and stroke width control for linear styles:
 <svg solarSettingsLinear [strokeWidth]="2" />
 ```
 
-## New inputs
+## Additional inputs
 
 v3 icons accept additional inputs:
 
@@ -83,11 +83,11 @@ v3 icons accept additional inputs:
 | `ariaLabel`        | `string`           | `aria-label` attribute            |
 | `titleAttr`        | `string`           | Explicit `<title>` text           |
 
-Before v3, only `size`, `color`, `alt`, `mirrored` were available.
+Before v3, only `size`, `color`, `alt`, and `mirrored` were available.
 
 ## Dynamic rendering (pre-v3)
 
-The old `SolarDynamicIcon` directive + `provideSolarIcons` registry is still available, renamed to `SolarIcon`. Works identically — register icons by name, then render by string or class reference.
+The old `SolarDynamicIcon` directive + `provideSolarIcons` registry is still available, renamed to `SolarIcon`. Works identically. Register icons by name, then render by string or class reference.
 
 ```ts
 import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
@@ -102,9 +102,9 @@ import { SolarHeartBold } from '@solar-icons/angular'
 export class AppComponent {}
 ```
 
-## New: Multi-style dynamic components
+## Multi-style dynamic components
 
-v3 adds a distinct feature — multi-style components that bundle all 6 styles in one component and switch via `weight` input.
+v3 adds multi-style components that bundle all 6 styles in one component and switch via `weight` input.
 
 Import from the new `@solar-icons/angular/dynamic` entry point:
 
@@ -118,7 +118,7 @@ Use them directly in the template:
 <svg solarHome weight="Bold" [size]="24" color="#ef4444" />
 ```
 
-These components are independent of `SolarIcon` — no directive, no registry, no provider needed.
+These components are independent of `SolarIcon`. No directive, no registry, no provider needed.
 
 ### Which to choose
 

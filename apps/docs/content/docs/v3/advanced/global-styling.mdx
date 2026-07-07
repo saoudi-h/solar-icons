@@ -1,10 +1,10 @@
 ---
 title: Global Styling
-description: How Solar Icons handles styling behind the scenes — CSS variable cascade, priority rules, provider nesting, and isolated mode.
+description: How Solar Icons handles styling: CSS variable cascade, priority rules, provider nesting, and isolated mode.
 icon: CodeIcon
 ---
 
-Solar Icons v3 uses CSS custom properties instead of React Context or runtime props to pass default values. The wrapper element does not update on prop change — the browser's native CSS cascade handles propagation.
+Solar Icons v3 uses CSS custom properties instead of React Context or runtime props to pass default values. The wrapper element does not update on prop change. The browser's native CSS cascade handles propagation.
 
 ## CSS variable cascade
 
@@ -58,7 +58,7 @@ Set `isolated` on an icon to disconnect it from `SolarProvider`. The icon then r
 
 When `isolated` is `true`:
 
-- Color: `currentColor` — resolves to the closest CSS ancestor's `color` property
+- Color: `currentColor`. Resolves to the closest CSS ancestor's `color` property
 - Size: `24px` (hardcoded)
 - Stroke width: `1.5` (hardcoded)
 - Duotone CSS variables: `initial` (re-initialized to browser default)
@@ -100,7 +100,7 @@ The CSS variable cascade handles the nesting. The innermost provider's wrapper `
 
 ## SSR and Server Components
 
-Because the provider uses CSS variables, the wrapper `<div>` does not change after mount. The provider and its icons render on the server as plain HTML. Only `useSolar` — the hook that reads and writes provider state — requires a client component.
+Because the provider uses CSS variables, the wrapper `<div>` does not change after mount. The provider and its icons render on the server as plain HTML. Only `useSolar`, the hook that reads and writes provider state, requires a client component.
 
 ```tsx
 // Server Component: ✅
@@ -179,4 +179,4 @@ let color = $state('#3b82f6')
 
 ### React Native
 
-React Native has no CSS variables. `SolarProvider` uses React Context and `useState`. Values resolve through `prop → context → default`. The cascade model does not apply — each icon reads its value explicitly from the nearest ancestor provider.
+React Native has no CSS variables. `SolarProvider` uses React Context and `useState`. Values resolve through `prop → context → default`. The cascade model does not apply. Each icon reads its value explicitly from the nearest ancestor provider.

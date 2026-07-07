@@ -33,7 +33,7 @@ These were typos and inconsistent naming in the Figma source, fixed in V3.
 
 ## Renames from the V2 backward-compat shim
 
-These were deprecated aliases in V2 (`@deprecated` exports pointing to the correct name). The aliases are dropped in V3.
+These were deprecated aliases in V2 (`@deprecated` exports pointing to the correct name). V3 drops the aliases.
 
 | Old name      | New name       |
 | ------------- | -------------- |
@@ -88,4 +88,4 @@ import { BellRingBoldIcon } from '@solar-icons/vue/bold/bell-ring'
 
 ## Why not aliases?
 
-pre-V3 kept deprecated alias exports for renames (so old code kept compiling). V3 drops them: the rename is a hard break, the new name is the only valid one. This keeps the package surface clean and removes ambiguity about which name to use.
+pre-V3 kept deprecated alias exports for renames (so old code kept compiling). V3 drops them: the rename is a hard break, the new name is the only valid one.
