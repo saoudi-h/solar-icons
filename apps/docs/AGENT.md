@@ -146,8 +146,8 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 📚 Documentation versioning (2026-06-30)
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
-- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v3/` (beta, on `beta` branch). Never refer to "v2" — there is no v2. Pre-V3 content is called "Legacy".
-- **Default tab:** Legacy. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. V3 is opt-in via its tab.
+- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v3/` (beta, on `beta` branch). Never refer to "v2" — there is no v2. Pre-V3 content is called "Current" (tab title) while V3 is in beta. When V3 becomes stable, rename the tab to "Legacy".
+- **Default tab:** Current. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. V3 is opt-in via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
 - **Redirect:** `/docs` → `/docs/legacy` via `next.config.mts` `redirects()`.
 - **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v3/*` via the `V3BetaBanner` wrapper.
@@ -161,3 +161,5 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **No em-dashes in prose.** Use periods, commas, or colons. Em-dashes in code comments and bold label patterns (`After (recommended — per-style):`) are acceptable.
 - **No adverbs.** Cut "genuinely", "simply", "actually", etc.
 - **No vague declaratives.** "This keeps the package surface clean" adds nothing. State the fact, trust the reader.
+- **Terminology: "pre-v3", not "v2".** Some packages were at v1.x, others at v2.x — there is no single "v2". Use "pre-v3" to describe the old API.
+- **Version tab naming.** The tab for current stable docs is "Current" (not "Legacy") while V3 is in beta. Only rename to "Legacy" when V3 becomes the stable release.
