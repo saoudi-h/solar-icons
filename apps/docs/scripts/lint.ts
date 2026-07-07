@@ -41,7 +41,7 @@ async function getHeadings(page: (typeof source)['$inferPage']): Promise<string[
     // Fallback: extract heading IDs from raw MDX content
     if (typeof data.getText === 'function') {
         try {
-            const raw = await data.getText('raw') as string
+            const raw = (await data.getText('raw')) as string
             if (raw) return extractHeadingIds(raw)
         } catch {
             // ignore
@@ -61,10 +61,10 @@ function extractHeadingIds(mdx: string): string[] {
         // Generate GitHub-style heading ID
         const id = plain
             .toLowerCase()
-            .replace(/[^\w\s-]/g, '')   // remove special chars
-            .replace(/\s+/g, '-')        // spaces to hyphens
-            .replace(/-+/g, '-')         // collapse hyphens
-            .replace(/^-+|-+$/g, '')     // trim leading/trailing hyphens
+            .replace(/[^\w\s-]/g, '') // remove special chars
+            .replace(/\s+/g, '-') // spaces to hyphens
+            .replace(/-+/g, '-') // collapse hyphens
+            .replace(/^-+|-+$/g, '') // trim leading/trailing hyphens
         if (id) ids.push(id)
     }
     return ids

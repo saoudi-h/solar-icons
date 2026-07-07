@@ -2,12 +2,11 @@ import { Button } from '@/components/ui/button'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { useSelectedIcon, useStyleURL } from '../context'
+import { useSelectedIcon } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const AngularCode: FC = () => {
     const selectedIcon = useSelectedIcon()
-    const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
 

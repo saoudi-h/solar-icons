@@ -172,12 +172,13 @@ export const FilterBarContent: React.FC = () => {
 export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
     return (
         <>
-            <div className="
-              z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl border
-              border-border bg-default-50 p-2 shadow-xs
-              md:flex
-              dark:bg-default-100
-            ">
+            <div
+                className="
+                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl
+                  border border-border bg-default-50 p-2 shadow-xs
+                  md:flex
+                  dark:bg-default-100
+                ">
                 <FilterBarContent />
             </div>
 

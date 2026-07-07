@@ -17,7 +17,6 @@ import { HeartIcon } from '@solar-icons/react/dynamic/heart'
 import { KeyIcon } from '@solar-icons/react/dynamic/key'
 import { LikeIcon } from '@solar-icons/react/dynamic/like'
 import { LinkIcon } from '@solar-icons/react/dynamic/link'
-import { LinkBrokenIcon } from '@solar-icons/react/dynamic/link-broken'
 import { LockIcon } from '@solar-icons/react/dynamic/lock'
 import { MinimalisticMagnifierIcon } from '@solar-icons/react/dynamic/minimalistic-magnifier'
 import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
@@ -26,6 +25,7 @@ import { RestartIcon } from '@solar-icons/react/dynamic/restart'
 import { SettingsMinimalisticIcon } from '@solar-icons/react/dynamic/settings-minimalistic'
 import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
+import { UnlinkIcon } from '@solar-icons/react/dynamic/unlink'
 import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
 import { motion, useInView } from 'framer-motion'
@@ -303,7 +303,7 @@ const gridIcons = [
         WidgetIcon,
     ],
     [CopyIcon, AltArrowDownIcon, BuildingsIcon, AltArrowUpIcon, CloseCircleIcon, StarIcon],
-    [UnreadIcon, ArrowRightUpIcon, RestartIcon, LinkBrokenIcon, DialogIcon, LockIcon, KeyIcon],
+    [UnreadIcon, ArrowRightUpIcon, RestartIcon, UnlinkIcon, DialogIcon, LockIcon, KeyIcon],
 ]
 
 interface CommunityIconGridProps {

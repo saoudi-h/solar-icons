@@ -14,13 +14,7 @@ const config: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    serverExternalPackages: [
-        'ts-morph',
-        'typescript',
-        'oxc-transform',
-        'twoslash',
-        'shiki',
-    ],
+    serverExternalPackages: ['ts-morph', 'typescript', 'oxc-transform', 'twoslash', 'shiki'],
     async rewrites() {
         return [
             {
