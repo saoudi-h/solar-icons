@@ -63,6 +63,23 @@ describe('ArrowUpIcon', () => {
 
         expect(html).toContain('class="solar solar-arrow-up-linear my-extra"')
     })
+
+    it('passes through standard SVG attributes', () => {
+        const html = renderToStaticMarkup(
+            <ArrowUpIcon data-testid="my-icon" role="img" tabIndex={0} />
+        )
+
+        expect(html).toContain('data-testid="my-icon"')
+        expect(html).toContain('role="img"')
+        expect(html).toContain('tabindex="0"')
+    })
+
+    it('passes through aria attributes', () => {
+        const html = renderToStaticMarkup(<ArrowUpIcon aria-label="Arrow up" aria-hidden="false" />)
+
+        expect(html).toContain('aria-label="Arrow up"')
+        expect(html).not.toContain('aria-hidden="true"')
+    })
 })
 
 describe('ArrowUpDynamic (dynamic icon)', () => {

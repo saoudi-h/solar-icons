@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, useAttrs } from 'vue'
 
 interface Props {
     alt?: string
@@ -14,13 +14,15 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {})
 
+const attrs = useAttrs()
+
 const SOLAR_CLASS = 'solar'
 
 const iconClass = computed(() =>
     props.iconName ? `${SOLAR_CLASS} solar-${props.iconName}` : SOLAR_CLASS
 )
 
-const isAccessible = computed(() => !!props.alt)
+const isAccessible = computed(() => !!props.alt || attrs['aria-label'] !== undefined || attrs['title'] !== undefined)
 
 const baseStyle = computed(() => {
     const s: Record<string, string> = {}

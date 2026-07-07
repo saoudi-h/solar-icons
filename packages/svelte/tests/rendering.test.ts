@@ -92,6 +92,21 @@ describe('Linear icon rendering', () => {
             expect(body).toContain('class="solar solar-arrow-up-linear my-extra"');
         });
     });
+
+    describe('SVG attribute passthrough', () => {
+        it('passes through standard SVG attributes', () => {
+            const body = renderIcon({ 'data-testid': 'my-icon', role: 'img', tabindex: 0 });
+            expect(body).toContain('data-testid="my-icon"');
+            expect(body).toContain('role="img"');
+            expect(body).toContain('tabindex="0"');
+        });
+
+        it('passes through aria attributes', () => {
+            const body = renderIcon({ 'aria-label': 'Arrow up' });
+            expect(body).toContain('aria-label="Arrow up"');
+            expect(body).not.toContain('aria-hidden="true"');
+        });
+    });
 });
 
 describe('Dynamic icon rendering', () => {

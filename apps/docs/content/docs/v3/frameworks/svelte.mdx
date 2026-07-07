@@ -120,17 +120,17 @@ Keep `solar` as a single object. Reading `solar.color` is reactive because the p
 
 ## Icon props
 
-| Prop               | Type               | Description                                    |
-| ------------------ | ------------------ | ---------------------------------------------- |
-| `color`            | `string`           | Icon color                                     |
-| `size`             | `string \| number` | Width and height                               |
-| `strokeWidth`      | `string \| number` | Stroke width                                   |
-| `secondaryColor`   | `string`           | Duotone accent color                           |
-| `secondaryOpacity` | `number`           | Duotone accent opacity                         |
-| `isolated`         | `boolean`          | Ignores provider                               |
-| `alt`              | `string`           | Accessibility label                            |
-| `class`            | `string`           | CSS class (merged with `solar-{name}-{style}`) |
-| `style`            | `string`           | Inline style                                   |
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
+
+All standard SVG attributes pass through to the `<svg>` element (`class`, `style`, `data-*`, `role`, `aria-*`, etc.).
 
 ## CSS variables
 

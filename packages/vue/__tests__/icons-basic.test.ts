@@ -92,6 +92,33 @@ describe('Icon component basics', () => {
         expect(svg.classes()).toContain('my-extra')
     })
 
+    it('passes through standard SVG attributes', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpIcon, { 'data-testid': 'my-icon', role: 'img', tabindex: 0 })
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.attributes('data-testid')).toBe('my-icon')
+        expect(svg.attributes('role')).toBe('img')
+        expect(svg.attributes('tabindex')).toBe('0')
+    })
+
+    it('passes through aria attributes', () => {
+        const wrapper = mount(
+            defineComponent({
+                render() {
+                    return h(ArrowUpIcon, { 'aria-label': 'Arrow up' })
+                },
+            })
+        )
+        const svg = wrapper.find('svg')
+        expect(svg.attributes('aria-label')).toBe('Arrow up')
+        expect(svg.attributes('aria-hidden')).toBeUndefined()
+    })
+
     it('dynamic icon renders SVG content for the default weight (linear)', () => {
         const wrapper = mount(
             defineComponent({
