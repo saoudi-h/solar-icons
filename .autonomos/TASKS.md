@@ -67,7 +67,6 @@
 ### V3 — Phase 3: Package renames
 
 - [x] **[V3-07]** Migrate `@solar-icons/react` to unit-per-style
-- [x] **[V3-08a]** Create `@solar-icons/vue-reactive`
 - [x] **[V3-08b]** Migrate `@solar-icons/vue` to unit-per-style
 - [x] **[V3-08c]** Update `@solar-icons/nuxt`
 
@@ -79,18 +78,17 @@
 
 - [x] **[V3-10]** Sanctify `packages/core/src/metadata-descriptions.json`
 - [x] **[V3-11]** Delete unused `scripts/generate-assets.ts` and `scripts/utils.ts`
-- [x] **[V3-14]** ESM-only: drop CJS from React, Vue, Vue-reactive. All packages ESM-only with `.mjs`.
+- [x] **[V3-14]** ESM-only: drop CJS from React, Vue. All packages ESM-only with `.mjs`.
 - [x] **[V3-15]** Migrate React from Vite+tsc to tsdown.
 
 ### V3 — Next (CSS vars, classes, provider)
 
 - [x] **[V3-16a]** Solar CSS-vars + classes on react (formerly react-perf). `Priority: 🔵` `Complexity: L`
 - [x] **[V3-16b]** Same pattern for solid, svelte, angular. `Priority: 🔵` `Complexity: M`
-- [x] **[V3-23]** Rename packages: `react-perf`→`react`, `react`→`react-reactive`, `vue`→classic mode, `nuxt`→aligns with Vue. `Priority: 🟠` `Complexity: L` *See: worklogs/2026-06-21-V3-23-session*
+2026-06-21-V3-23-session*
 
 ### V3 — Beta tasks
 
-- [x] **[DROP-RR]** Remove `@solar-icons/react-reactive`. `Priority: 🔴` `Complexity: M` *See: worklogs/2026-06-24-react-cleanup-propagation*
 - [x] **[REACT-CLEANUP]** Flatten React directory structure, drop forwardRef, remove SSR, dynamic exports with JSDoc. `Priority: 🔴` `Complexity: L` *See: worklogs/2026-06-24-react-cleanup-propagation*
 - [x] **[REACT-COMPAT]** Keep `forwardRef` for React 18 compat (React 19 peer ≥ 16.8). `Priority: 🟠` `Complexity: S` *See: worklogs/2026-06-24-react-compat-test-audit*
 - [x] **[PROPAGATE]** Same transformations (flatten dirs, dynamic exports, Icon suffix, secondaryColor) to Vue, Solid, Svelte, Angular, React Native. `Priority: 🔴` `Complexity: L` *See: worklogs/2026-06-24-react-cleanup-propagation*
@@ -106,13 +104,10 @@
 
 - [x] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/`. `Priority: ⚪`
 - [x] **[POST-02]** Fix Angular peer-dep range: `"17.x - 22.x"`. `Priority: ⚪`
-- [x] **[POST-03]** (was: In V4 remove react-reactive) → Promoted to **[DROP-RR]**
 - [x] **[POST-04]** Update demo apps (V3 features, rename `react-perf-app`→`react-app`). `Priority: 🟠`
-- [x] **[POST-05]** V3 features on react-reactive (secondaryColor, strokeWidth). `Priority: 🟠`
 - [x] **[POST-06]** V3 features on react-native (secondaryColor, secondaryOpacity, strokeWidth). `Priority: 🟠`
 - [x] **[POST-08]** Add `Icon` suffix to all component names. `Priority: 🟠`
 - [x] **[POST-09]** Full V3 features on react-native (Provider, strokeWidth, secondaryColor/Opacity, Icon suffix). `Priority: 🟠`
-- [x] **[POST-10]** Review react-reactive: add SolarProvider + useSolar. `Priority: 🔵`
 
 ### Docs UI redesign
 
