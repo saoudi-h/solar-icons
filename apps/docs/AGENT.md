@@ -54,7 +54,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 🎨 Icons page (FilterBar)
 
 - `components/icons-page/sections/icons/FilterBar.tsx` is the toolbar on `/icons`. Two variants from `useScreen('md')` (`@/lib/screens`, re-exported from `tw-screens`): inline row on desktop, right-edge `vaul` drawer on mobile. Same content in both.
-- Style state lives in Jotai (`weightAtom`, default `BoldDuotone`) — **not** in the V3 `SolarProvider`, because weight is shared by static and dynamic icons and putting it in context would force every icon into a client component. (`components/icons-page/sections/icons/context.tsx:18-28`.)
+- Style state lives in Jotai (`weightAtom`, default `BoldDuotone`) — **not** in the v2 `SolarProvider`, because weight is shared by static and dynamic icons and putting it in context would force every icon into a client component. (`components/icons-page/sections/icons/context.tsx:18-28`.)
 - `useSearchKeyword` / `useSearchCategories` are `nuqs`-backed (`search` and `categories` query params, `;`-separated array). Any new URL-persistent control should follow the same pattern.
 - 37 categories come from `CATEGORIES` in `@solar-icons/core/runtime` (re-exported from `packages/core/src/constants.ts:9`).
 - **Categories are navigation, not filter** (DOCS-UI-01, follow-up). The previous `MultipleSelector` filter row was removed. Clicking a category in `CategoryNav` (or in the icon detail's category button) sets `viewModeAtom` to `'grouped'` and `activeCategoryAtom` to the category name; the `IconGrid`'s existing `scrollToRow` useEffect handles the scroll. The `useSearchCategories` hook and the `categories` URL param are gone.
@@ -146,23 +146,23 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 📚 Documentation versioning (2026-06-30)
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
-- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v3/` (beta, on `beta` branch). Never refer to "v2" — there is no v2. Pre-V3 content is called "Current" (tab title) while V3 is in beta. When V3 becomes stable, rename the tab to "Legacy".
-- **Default tab:** Current. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. V3 is opt-in via its tab.
+- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v2/` (beta, on `beta` branch). The beta docs describe v2. Pre-v2 content is called "Current" (tab title) while v2 is in beta. When v2 becomes stable, rename the tab to "Legacy".
+- **Default tab:** Current. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. v2 is opt-in via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
 - **Redirect:** `/docs` → `/docs/legacy` via `next.config.mts` `redirects()`.
-- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v3/*` via the `V3BetaBanner` wrapper.
+- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v2/*` via the `V2BetaBanner` wrapper.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.
 
 ## Prose conventions (stop-slop)
 
 - **No `## New:` section headers.** In migration guides, the entire page is about what changed. `## SolarProvider` beats `## New: SolarProvider`.
-- **Active voice.** "V3 drops the `mirrored` prop" beats "The `mirrored` prop was removed." Use "V3" as the actor for breaking changes.
+- **Active voice.** "v2 drops the `mirrored` prop" beats "The `mirrored` prop was removed." Use "v2" as the actor for breaking changes.
 - **No em-dashes in prose.** Use periods, commas, or colons. Em-dashes in code comments and bold label patterns (`After (recommended — per-style):`) are acceptable.
 - **No adverbs.** Cut "genuinely", "simply", "actually", etc.
 - **No vague declaratives.** "This keeps the package surface clean" adds nothing. State the fact, trust the reader.
-- **Terminology: "pre-v3", not "v2".** Some packages were at v1.x, others at v2.x — there is no single "v2". Use "pre-v3" to describe the old API.
-- **Version tab naming.** The tab for current stable docs is "Current" (not "Legacy") while V3 is in beta. Only rename to "Legacy" when V3 becomes the stable release.
+- **Terminology: "pre-v2".** The old API line was mixed (some packages at v1.x, `react-perf` at 2.x). Since the unified release is v2.0.0, use "pre-v2" to describe the old API.
+- **Version tab naming.** The tab for current stable docs is "Current" (not "Legacy") while v2 is in beta. Only rename to "Legacy" when v2 becomes the stable release.
 - **Single-icon imports are for dev server performance, not tree-shaking.** Both barrel (`@solar-icons/react/bold`) and single-icon (`@solar-icons/react/bold/heart`) imports tree-shake equally in production. The single-icon path helps the dev server by avoiding resolving ~8k modules when you only need one icon. Do not label single-icon imports as "tree-shakable" in docs — it implies barrel imports are not.
 - **Provider props tables use "Fallback", not "Default".** Providers set no defaults — all props are `undefined` until set. Icons fall back to CSS variable values (`var(--solar-color, currentColor)`, etc.) defined in IconBase. Use "Fallback" as the column header in Provider props tables.
 - **All web frameworks pass through standard SVG attributes.** React (`...restProps`), Vue (`v-bind="$attrs"`), Svelte (`...restProps`), Solid (`splitProps` + `{...others}`) all spread extra attributes onto the `<svg>` element. `data-*`, `role`, `tabindex`, `aria-*` all work.

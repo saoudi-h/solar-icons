@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { SolarProvider, useSolar } from './solar-provider'
 
 /**
- * Regression test for the documented pattern in apps/docs/content/docs/v3/frameworks/angular.mdx:
+ * Regression test for the documented pattern in apps/docs/content/docs/v2/frameworks/angular.mdx:
  *
  *     @Component({
  *         template: `
@@ -71,10 +71,10 @@ describe('SolarProvider — projection of content using useSolar()', () => {
     it('should expose solar state and setters on the projected component', () => {
         fixture.detectChanges()
 
-        const controls: ControlsComponent =
+        const _controls: ControlsComponent =
             fixture.componentInstance as unknown as ControlsComponent
         // Access the projected component instance through the debug element
-        const debugEl = (fixture.debugElement.children[0] || fixture.debugEl.childNodes[0]) as any
+        const _debugEl = (fixture.debugElement.children[0] || fixture.debugEl.childNodes[0]) as any
         // The simpler and direct test: the host built without throwing, and the
         // ControlsComponent's constructor already exercised setColor/size/strokeWidth.
         // Confirm the provider's underlying wrapper exists.
@@ -82,7 +82,10 @@ describe('SolarProvider — projection of content using useSolar()', () => {
         const div = wrapperEl.querySelector('div')
         expect(div).not.toBeNull()
         // The provider applies --solar-color from the input prop
-        expect(div!.getAttribute('style')?.includes('--solar-color') || div!.style.getPropertyValue('--solar-color')).toBeTruthy()
+        expect(
+            div!.getAttribute('style')?.includes('--solar-color') ||
+                div!.style.getPropertyValue('--solar-color')
+        ).toBeTruthy()
     })
 
     it('should let the projected component write to solar state after init', () => {
@@ -92,7 +95,7 @@ describe('SolarProvider — projection of content using useSolar()', () => {
         // Angular may surface the projected component more than once in the
         // debug element graph; we only care that at least one exists.
         const controlsDebugEl = fixture.debugElement.queryAll(
-            (node: any) => node.componentInstance instanceof ControlsComponent,
+            (node: any) => node.componentInstance instanceof ControlsComponent
         )
         expect(controlsDebugEl.length).toBeGreaterThan(0)
         const controls = controlsDebugEl[0].componentInstance as ControlsComponent
@@ -122,7 +125,7 @@ describe('SolarProvider — projection of content using useSolar()', () => {
         fixture.detectChanges()
 
         const controlsDebugEl = fixture.debugElement.queryAll(
-            (node: any) => node.componentInstance instanceof ControlsComponent,
+            (node: any) => node.componentInstance instanceof ControlsComponent
         )
         const controls = controlsDebugEl[0].componentInstance as ControlsComponent
 

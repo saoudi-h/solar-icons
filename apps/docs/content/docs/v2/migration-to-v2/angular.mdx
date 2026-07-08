@@ -1,24 +1,24 @@
 ---
 title: Angular Migration
-description: Upgrade @solar-icons/angular to v3.
+description: Upgrade @solar-icons/angular to v2.
 icon: angular
 ---
 
 ## Standalone components
 
-v3 components are standalone. They were already standalone before v3. No module removal needed.
+v2 components are standalone. They were already standalone before v2. No module removal needed.
 
 ## Component names
 
-v3 uses `Solar`-prefixed PascalCase imports with style suffixes. Before v3, icons used style-suffixed names without prefix.
+v2 uses `Solar`-prefixed PascalCase imports with style suffixes. Before v2, icons used style-suffixed names without prefix.
 
-**Before (pre-v3):**
+**Before (pre-v2):**
 
 ```ts
 import { HeartBold } from '@solar-icons/angular'
 ```
 
-**After (v3):**
+**After (v2):**
 
 ```ts
 import { SolarHeartBold } from '@solar-icons/angular'
@@ -26,7 +26,7 @@ import { SolarHeartBold } from '@solar-icons/angular'
 
 ## SolarProvider
 
-v3 adds `<solar-provider>` for sharing styling via CSS custom properties:
+v2 adds `<solar-provider>` for sharing styling via CSS custom properties:
 
 ```ts
 import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
@@ -62,7 +62,7 @@ Set defaults with `<solar-provider>` props. In child components, read from `useS
 
 ## Duotone and stroke width
 
-v3 adds duotone support and stroke width control for linear styles:
+v2 adds duotone support and stroke width control for linear styles:
 
 ```html
 <svg solarHeartBoldDuotone secondaryColor="#f59e0b" [secondaryOpacity]="0.4" />
@@ -71,7 +71,7 @@ v3 adds duotone support and stroke width control for linear styles:
 
 ## Additional inputs
 
-v3 icons accept additional inputs:
+v2 icons accept additional inputs:
 
 | Input              | Type               | Description                       |
 | ------------------ | ------------------ | --------------------------------- |
@@ -83,9 +83,9 @@ v3 icons accept additional inputs:
 | `ariaLabel`        | `string`           | `aria-label` attribute            |
 | `titleAttr`        | `string`           | Explicit `<title>` text           |
 
-Before v3, only `size`, `color`, `alt`, and `mirrored` were available.
+Before v2, only `size`, `color`, `alt`, and `mirrored` were available.
 
-## Dynamic rendering (pre-v3)
+## Dynamic rendering (pre-v2)
 
 The old `SolarDynamicIcon` directive + `provideSolarIcons` registry is still available, renamed to `SolarIcon`. Works identically. Register icons by name, then render by string or class reference.
 
@@ -104,7 +104,7 @@ export class AppComponent {}
 
 ## Multi-style dynamic components
 
-v3 adds multi-style components that bundle all 6 styles in one component and switch via `weight` input.
+v2 adds multi-style components that bundle all 6 styles in one component and switch via `weight` input.
 
 Import from the new `@solar-icons/angular/dynamic` entry point:
 
@@ -130,11 +130,11 @@ These components are independent of `SolarIcon`. No directive, no registry, no p
 
 ## CSS classes
 
-v3 adds a base CSS class `solar` plus a per-icon variant `solar-{kebab}-{style}` on every icon:
+v2 adds a base CSS class `solar` plus a per-icon variant `solar-{kebab}-{style}` on every icon:
 
 ```html
 <svg solarHomeBold></svg>
 <!-- renders with: class="solar solar-home-bold" -->
 ```
 
-Before v3, icons had no CSS classes.
+Before v2, icons had no CSS classes.

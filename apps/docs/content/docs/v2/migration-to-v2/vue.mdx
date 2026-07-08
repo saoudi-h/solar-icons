@@ -1,10 +1,10 @@
 ---
 title: Vue Migration
-description: Migrate from @solar-icons/vue to v3. Pick the per-style import path by default, the dynamic path for runtime style switching.
+description: Migrate from @solar-icons/vue to v2. Pick the per-style import path by default, the dynamic path for runtime style switching.
 icon: vue
 ---
 
-v3 splits the package into two import paths. Pick the one that matches your usage.
+v2 splits the package into two import paths. Pick the one that matches your usage.
 
 - **Per-style path** (default): one style per component, tree-shakable at the import level. Use this for most apps.
 - **Dynamic path**: a single component that bundles all six styles and switches via `weight`. Use it only when you swap styles at runtime.
@@ -13,7 +13,7 @@ v3 splits the package into two import paths. Pick the one that matches your usag
 
 Kebab-case style directories.
 
-**Before (pre-v3):**
+**Before (pre-v2):**
 
 ```js
 import { Home } from '@solar-icons/vue/Bold'
@@ -39,7 +39,7 @@ import { HomeBoldIcon } from '@solar-icons/vue'
 
 ## Component naming
 
-When the style is in the import path, the name drops the style suffix and gains an `Icon` suffix (`Home` → `HomeIcon`). See the [React migration](/docs/v3/migration-to-v3/react#component-naming) for the full naming rules. Separate icon names were also renamed in v3. See the [Icon Renames page](/docs/v3/migration-to-v3/icon-renames).
+When the style is in the import path, the name drops the style suffix and gains an `Icon` suffix (`Home` → `HomeIcon`). See the [React migration](/docs/v2/migration-to-v2/react#component-naming) for the full naming rules. Separate icon names were also renamed in v2. See the [Icon Renames page](/docs/v2/migration-to-v2/icon-renames).
 
 ## Category imports removed
 
@@ -62,7 +62,7 @@ import { ArrowUpIcon } from '@solar-icons/vue/dynamic/arrow-up'
 
 ## `weight` prop removed
 
-The pre-v3 single package bundled six styles per component and switched via `weight`. v3 drops `weight` from the per-style path. The dynamic path keeps it.
+The pre-v2 single package bundled six styles per component and switched via `weight`. v2 drops `weight` from the per-style path. The dynamic path keeps it.
 
 **Before:**
 

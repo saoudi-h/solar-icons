@@ -3,13 +3,13 @@
 import { Banner } from 'fumadocs-ui/components/banner'
 import { usePathname } from 'next/navigation'
 
-export function V3BetaBanner() {
+export function V2BetaBanner() {
     const pathname = usePathname()
-    if (!pathname.startsWith('/docs/v3')) return null
+    if (!pathname.startsWith('/docs/v2')) return null
 
     return (
-        <Banner id="v3-beta" variant="rainbow">
-            Solar Icons v3 is in beta. APIs may change before the stable release.{' '}
+        <Banner id="v2-beta" variant="rainbow">
+            Solar Icons v2 is in beta. APIs may change before the stable release.{' '}
             <a href="https://github.com/saoudi-h/solar-icons/issues" className="
               underline
             ">
