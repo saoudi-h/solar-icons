@@ -15,15 +15,15 @@
 
 ### V2 — Release
 
-- [/] **[BETA]** Publish all packages as `2.0.0-beta.1`. `Priority: 🔴` `Complexity: M` *(readiness study 2026-07-08 — `worklogs/2026-07-08-BETA-READINESS.md`)*
-  - **CORRECTION MAJEURE (2026-07-08):** la cible est **`2.0.0`, pas `3.0.0`** (le "V3" était injustifié; justification = fusion react/react-perf). Tout le repo renommé v3→v2 (branche, docs, code, AGENT/TASKS).
-  - ✅ (1) Reset versions → bases `1.x` de `main` (commit `ec1368a5d`).
-  - ✅ (2) `changeset pre enter beta` (tag beta) + changeset major 7 pkgs (commit `ce17fd452`). `changeset status` confirme le bump major.
-  - ⚠️ **La branche `beta` N'EXISTE PAS sur le remote** (vérifié 2026-07-08). Elle devra être CRÉÉE (depuis `v2`) et poussée → déclenche `release-beta.yml` (build → test → version `2.0.0-beta.x` → publish `--tag beta`).
-  - ⚠️ **Risque nuxt:** build nuxt échoue en LOCAL (`@oxc-parser/binding-linux-x64-gnu@0.133.0` manquant) et le script a `(... || true)` qui masque l'échec → un dist nuxt stale pourrait être publié. À vérifier en CI ou corriger avant push.
-  - **Process souhaité (user):** PRs ciblant `beta` + issues liées (doc publique). Pas de merge local direct. β n'existant pas, création nécessaire.
-  - **Risque `main`:** `release.yml` sur push `main` → merger V2 dans `main` = stable `2.0.0` involontaire. Doc build depuis `main` : mettre à jour via `main` SANS déclencher la stable.
-  - Sous-tâches restantes: (3) issue GitHub "Release 2.0.0-beta.1" + créer/pousser `beta` (depuis v2) — FEU VERT requis; (4) vérifier build/test CI (surtout nuxt); (5) publish `2.0.0-beta.1` tag `beta`; (6) doc via `main` prudemment; (7) déprecier `@solar-icons/react-perf@2.1.1` sur npm.
+ - [x] **[BETA]** Publish all packages as `2.0.0-beta.0` (tag `beta`). `Priority: 🔴` `Complexity: M` *(readiness study 2026-07-08 — `worklogs/2026-07-08-BETA-READINESS.md`)*
+   - **CORRECTION MAJEURE (2026-07-08):** cible = **`2.0.0`** (le "V3" était injustifié; justification = fusion react/react-perf). Repo renommé v3→v2.
+   - ✅ (1) Reset versions → bases `1.x` (commit `ec1368a5d`).
+   - ✅ (2) `changeset pre enter beta` (tag beta) + changeset major 7 pkgs (commit `ce17fd452`).
+   - ✅ (3) Issue #495 + branches `beta`/`v2` créées et poussées. Version réelle générée par changesets = **`2.0.0-beta.0`** (le 1er prerelease est `beta.0`, pas `beta.1`). Issues liées à #495 : #494 (suffixe `Icon`), #493 (noms), #486 (strokeWidth).
+   - ✅ (4) CI build+tests OK. Fix nuxt (commit `a21d92e2d`: entries émis depuis `src/runtime`) + fix test nuxt mock `@solar-icons/vue` (commit `a6a68f5db`).
+   - ✅ (5) Publish `2.0.0-beta.0` tag `beta` — run `28942432333` (rerun après correction du secret `NPM_TOKEN`). 7 pkgs publiés, `latest` reste `1.x` (beta-first OK).
+   - ⚠️ (6) Doc via `main` prudemment (pas de changeset package → pas de stable involontaire via `release.yml`).
+   - ⚠️ (7) **RESTANT (user, besoin auth npm):** déprecier `@solar-icons/react-perf@2.1.1` → pointer vers `@solar-icons/react`. Commande : `npm deprecate @solar-icons/react-perf@2.1.1 "Discontinued. Use @solar-icons/react (>=2.0.0) instead."` (échec ici : `npm whoami` → E401, pas d'auth agent).
 - [ ] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S`
 - [/] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
 
