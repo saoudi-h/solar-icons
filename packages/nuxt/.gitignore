@@ -54,3 +54,6 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Generated entry points (built by nuxt-module-build from src/runtime)
+src/runtime/icons

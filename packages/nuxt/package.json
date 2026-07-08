@@ -29,24 +29,20 @@
             "import": "./dist/module.mjs"
         },
         "./icons": {
-            "types": "./dist/entries/icons.d.mts",
-            "import": "./dist/entries/icons.mjs"
+            "types": "./dist/runtime/icons.d.ts",
+            "import": "./dist/runtime/icons.js"
         },
         "./icons/*": {
-            "types": "./dist/entries/icons/*.d.mts",
-            "import": "./dist/entries/icons/*.mjs"
+            "types": "./dist/runtime/icons/*.d.ts",
+            "import": "./dist/runtime/icons/*.js"
         },
         "./dynamic": {
-            "types": "./dist/entries/dynamic.d.mts",
-            "import": "./dist/entries/dynamic.mjs"
-        },
-        "./dynamic/*": {
-            "types": "./dist/entries/dynamic/*.d.mts",
-            "import": "./dist/entries/dynamic/*.mjs"
+            "types": "./dist/runtime/dynamic.d.ts",
+            "import": "./dist/runtime/dynamic.js"
         },
         "./lib": {
-            "types": "./dist/entries/lib.d.mts",
-            "import": "./dist/entries/lib.mjs"
+            "types": "./dist/runtime/lib.d.ts",
+            "import": "./dist/runtime/lib.js"
         },
         "./package.json": {
             "default": "./package.json"
@@ -59,19 +55,16 @@
                 "./dist/types.d.mts"
             ],
             "icons": [
-                "./dist/entries/icons.d.mts"
+                "./dist/runtime/icons.d.ts"
             ],
             "icons/*": [
-                "./dist/entries/icons/*.d.mts"
+                "./dist/runtime/icons/*.d.ts"
             ],
             "dynamic": [
-                "./dist/entries/dynamic.d.mts"
-            ],
-            "dynamic/*": [
-                "./dist/entries/dynamic/*.d.mts"
+                "./dist/runtime/dynamic.d.ts"
             ],
             "lib": [
-                "./dist/entries/lib.d.mts"
+                "./dist/runtime/lib.d.ts"
             ]
         }
     },
@@ -90,16 +83,17 @@
     "scripts": {
         "prepack": "node scripts/build-entries.mjs && nuxt-module-build build",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "build": "nuxt-module-build prepare && (pnpm nuxt-module-build build || true) && node scripts/build-entries.mjs && pnpm copy:licenses",
+        "build": "nuxt-module-build prepare && node scripts/build-entries.mjs && nuxt-module-build build && pnpm copy:licenses",
         "dev": "pnpm dev:prepare && nuxi dev playground",
         "dev:build": "nuxi build playground",
-        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && node scripts/build-entries.mjs && nuxi prepare playground",
+        "dev:prepare": "node scripts/build-entries.mjs && nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
         "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "test": "vitest run",
         "test:watch": "vitest watch",
-        "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+        "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+        "clean": "rm -rf node_modules .nuxt dist"
     },
     "dependencies": {
         "@nuxt/kit": "^4.4.8",
@@ -113,10 +107,10 @@
         "@nuxt/test-utils": "^4.0.3",
         "@types/node": "latest",
         "changelogen": "^0.6.2",
-        "eslint": "^10.5.0",
+        "eslint": "^10.6.0",
         "nuxt": "^4.4.8",
         "typescript": "~6.0.3",
-        "vitest": "^4.1.9",
-        "vue-tsc": "3.3.5"
+        "vitest": "^4.1.10",
+        "vue-tsc": "3.3.7"
     }
 }
