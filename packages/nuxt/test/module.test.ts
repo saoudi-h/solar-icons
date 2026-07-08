@@ -11,6 +11,19 @@ vi.mock('@nuxt/kit', () => ({
   defineNuxtModule: (def: any) => def,
 }))
 
+vi.mock('@solar-icons/vue', () => ({
+  Home: () => null,
+  IconBase: () => null,
+  SolarProvider: () => null,
+  useSolar: () => ({}),
+  IconStyle: () => null,
+  SOLAR_DEFAULTS_KEY: 'solar-defaults',
+}))
+
+vi.mock('@solar-icons/vue/dynamic', () => ({
+  HomeDynamic: () => null,
+}))
+
 const kit = await import('@nuxt/kit')
 
 describe('Nuxt module defaults and setup', () => {
