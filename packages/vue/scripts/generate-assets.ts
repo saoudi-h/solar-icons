@@ -2,240 +2,199 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
-import { ICON_RENAMES } from '../../core/src/utils.ts'
-import type { IconByStyle, IconsByName, SvgByName, SvgMap } from './utils'
-import { ICONS_PATH, readSvgsFromDisk, toPascalCase } from './utils'
 
-// Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {}
-for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-    if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = []
-    }
-    ICON_ALIASES[correction].push(typo)
-}
+import {
+    forEachIcon,
+    forEachIconGroupedBy,
+    parseSvgs,
+    toPascalCase,
+    WEIGHT_MAP,
+    type ParsedIcon,
+    type ParsedIconGroup,
+} from '@solar-icons/core'
+import { vueComponentFile, type FileDefinition } from './parser-hook'
 
-interface ComponentGenerator {
-    cleanGeneratedFiles(): void
-    generateComponents(icons: SvgMap): Promise<void>
-}
+const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
+const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
-/**
- * Generates icon components from SVG files
- */
-class IconComponentGenerator implements ComponentGenerator {
-    /**
-     * Main execution method that orchestrates the component generation process
-     */
-    async run(): Promise<void> {
-        try {
-            console.log(pc.blue('Cleaning generated files...'))
-            this.cleanGeneratedFiles()
-            console.log(pc.blue('Reading SVG files...'))
-            const icons = readSvgsFromDisk()
-            console.log(pc.blue('Generating Solar components...'))
-            await this.generateComponents(icons)
-            console.log(pc.green('Successfully generated Solar components!'))
-        } catch (error) {
-            console.error(pc.red('Error generating assets:'), error)
-            process.exit(1)
-        }
-    }
+const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
-    /**
-     * Cleans up previously generated files
-     */
-    cleanGeneratedFiles(): void {
-        const pathsToClean = [ICONS_PATH]
-        pathsToClean.forEach(pathToClean => {
-            if (fs.existsSync(pathToClean)) {
-                fs.rmSync(pathToClean, { recursive: true, force: true })
-                console.log(pc.blue(`Removed ${pathToClean}`))
-            }
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
+    const files: FileDefinition[] = []
+
+    for (const weight of WEIGHTS) {
+        const iconsForWeight = icons.filter(i => i.style === weight)
+        const weightKebab = WEIGHT_MAP[weight]
+        const seen = new Set<string>()
+        const content = iconsForWeight
+            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
+                return true
+            })
+            .map(
+                icon =>
+                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+            )
+            .join('\n')
+
+        files.push({
+            path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
+            content: content ? `${content}\n` : '',
         })
     }
 
-    /**
-     * Generates components from SVG icons
-     * @param icons Map of SVG icons organized by category and style
-     */
-    async generateComponents(icons: SvgMap): Promise<void> {
-        const groupedIcons = this.groupIconsByName(icons)
-        await this.generateSolarComponents(groupedIcons)
-    }
-
-    /**
-     * Groups icons by their name across different styles
-     * @param icons Map of SVG icons
-     * @returns Icons grouped by name
-     */
-    private groupIconsByName(icons: SvgMap): SvgByName {
-        const groupedIcons: SvgByName = {}
-        for (const [category, styles] of Object.entries(icons)) {
-            groupedIcons[category] = {}
-            for (const [style, iconsInStyle] of Object.entries(styles)) {
-                for (const [iconName, iconData] of Object.entries(iconsInStyle)) {
-                    if (!groupedIcons[category][iconName]) {
-                        groupedIcons[category][iconName] = {}
-                    }
-                    groupedIcons[category][iconName][style] = iconData
-                }
-            }
-        }
-        return groupedIcons
-    }
-
-    /**
-     * Generates Solar components from grouped icons
-     * @param groupedIcons Icons grouped by name
-     */
-    private async generateSolarComponents(groupedIcons: SvgByName): Promise<void> {
-        fs.mkdirSync(ICONS_PATH, { recursive: true })
-        for (const [category, iconsInCategory] of Object.entries(groupedIcons)) {
-            await this.generateCategoryComponents(category, iconsInCategory)
-        }
-        await this.generateIndexFiles(groupedIcons)
-    }
-
-    /**
-     * Generates components for a specific category
-     * @param category Category name
-     * @param iconsInCategory Icons in the category
-     */
-    private async generateCategoryComponents(
-        category: string,
-        iconsInCategory: IconsByName
-    ): Promise<void> {
-        const categoryPath = path.join(ICONS_PATH, category)
-        fs.mkdirSync(categoryPath, { recursive: true })
-        let categoryIndexContent = ''
-        for (const [iconName, iconStyles] of Object.entries(iconsInCategory)) {
-            const componentName = toPascalCase(iconName)
-            const componentContent = this.generateComponentContent(iconName, iconStyles)
-            fs.writeFileSync(
-                path.join(categoryPath, `${componentName}.ts`),
-                componentContent,
-                'utf-8'
-            )
-            categoryIndexContent += `export { default as ${componentName} } from './${componentName}'\n`
-
-            // function moved
-            // Add aliases if they exist
-            const aliases = getAliasesForIcon(componentName)
-            aliases.forEach(alias => {
-                this.generateAliasComponent(categoryPath, componentName, alias)
-                categoryIndexContent += `export { ${alias} } from './${alias}'\n`
-            })
-        }
-        fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, 'utf-8')
-    }
-
-    /**
-     * Generates an alias component file
-     */
-    private generateAliasComponent(
-        categoryPath: string,
-        originalName: string,
-        aliasName: string
-    ): void {
-        const content = `import { default as ${originalName} } from './${originalName}'
-
-/**
- * @deprecated Use ${originalName} instead
- */
-export const ${aliasName} = ${originalName}
-`
-        fs.writeFileSync(path.join(categoryPath, `${aliasName}.ts`), content, 'utf-8')
-    }
-
-    /**
-     * Generates content for an individual icon component
-     * @param iconName Name of the icon
-     * @param iconStyles Icon styles data
-     * @returns Component content as string
-     */
-    private generateComponentContent(iconName: string, iconStyles: IconByStyle): string {
-        const componentName = toPascalCase(iconName)
-        const doc = this.generateDocumentation(componentName, iconStyles)
-        const iconNodesData = Object.entries(iconStyles).reduce(
-            (acc, [style, data]) => {
-                acc[style] = data.iconNodes
-                return acc
-            },
-            {} as Record<string, Array<[string, Record<string, any>]>>
+    const seenGlobal = new Set<string>()
+    const rootGlobalLines: string[] = []
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
+        if (seenGlobal.has(globalName)) continue
+        seenGlobal.add(globalName)
+        rootGlobalLines.push(
+            `export { ${icon.pascalName}Icon as ${globalName} } from './${WEIGHT_MAP[icon.style]}/${icon.name}';`
         )
-        return `import { createSolarIcon } from '../../lib/createSolarIcon'
-${doc}
-const ${componentName} = createSolarIcon('${iconName}', ${JSON.stringify(iconNodesData, null, 2)})
-export default ${componentName}
-`
     }
+    rootGlobalLines.sort()
 
-    /**
-     * Generates documentation for an icon component
-     * @param componentName Component name
-     * @param iconStyles Icon styles data
-     * @returns Documentation string
-     */
-    private generateDocumentation(componentName: string, iconStyles: IconByStyle): string {
-        const styleDocs = Object.entries(iconStyles)
-            .map(
-                ([style, { preview }]) =>
-                    ` * ### ![img](data:image/svg+xml;base64,${preview}) ${style}`
-            )
-            .join('\n')
-        return `/**
-${styleDocs}
-*/`
-    }
-
-    /**
-     * Generates index files for the components
-     * @param groupedIcons Icons grouped by name
-     */
-    private async generateIndexFiles(groupedIcons: SvgByName): Promise<void> {
-        const categories = Object.keys(groupedIcons)
-        const globalIndexContent = categories
-            .map(category => `export * from './${category}';`)
-            .join('\n')
-        const globalCategoryIndexContent = categories
-            .map(category => {
-                const categoryName = toPascalCase(category)
-                return `export * as ${categoryName} from './${category}'`
-            })
-            .join('\n')
-        fs.writeFileSync(path.join(ICONS_PATH, 'index.ts'), globalIndexContent, 'utf-8')
-        fs.writeFileSync(path.join(ICONS_PATH, 'category.ts'), globalCategoryIndexContent, 'utf-8')
-    }
-}
-
-/**
- * Returns a list of aliases (typos) for a given icon name, including partial matches.
- */
-function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>()
-    // Exact matches
-    if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach(a => aliases.add(a))
-    }
-    // Partial matches
-    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-        if (name.includes(correct) && name !== correct) {
-            typos.forEach(typo => {
-                if (/[^a-z0-9]/i.test(typo)) return
-                aliases.add(name.replace(correct, typo))
-            })
-        }
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
     })
-    return Array.from(aliases).filter(a => a !== name)
+
+    const stylesIndexContent = WEIGHTS.map(w => `export * as ${w} from './${WEIGHT_MAP[w]}';`).join(
+        '\n'
+    )
+
+    files.push({
+        path: path.join(ICONS_PATH, 'style', 'index.ts'),
+        content: `${stylesIndexContent}\n`,
+    })
+
+    const mainEntryContent = `/* GENERATED FILE */
+export type { IconProps } from "./lib/types"
+export { IconBase, SolarProvider, useSolar, IconStyle } from "./lib"
+export * from "./icons/styled"
+`
+
+    files.push({
+        path: INDEX_PATH,
+        content: mainEntryContent,
+    })
+
+    const dynamicBarrelContent = groups
+        .map(g => {
+            return `export { ${g.pascalName}Icon } from './${g.name}'`
+        })
+        .join('\n')
+
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
+    })
+
+    return files
 }
+
+function clean() {
+    for (const p of [ICONS_PATH, INDEX_PATH]) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p, { recursive: true, force: true })
+            console.log(pc.blue(`Removed ${p}`))
+        }
+    }
+}
+
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles
+    const name = group.name
+    const pascalName = group.pascalName
+
+    const styleImports = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            const kebab = WEIGHT_MAP[w]
+            return `import { ${pascalName}Icon as ${w} } from '../${kebab}/${icon.name}'`
+        })
+        .join('\n')
+
+    const stylesObj = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const kebab = WEIGHT_MAP[w]
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab
+            return `            ${key}: ${w},`
+        })
+        .join('\n')
+
+    const previews = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`
+        })
+        .join('\n *\n')
+
+    const content = `/* GENERATED FILE */
+import { h } from 'vue'
+import DynamicIcon from '../../lib/dynamic-icon.vue'
+import type { DynamicIconProps } from '../../lib/types'
+${styleImports}
 
 /**
- * Main execution function
+${previews}
  */
-async function main(): Promise<void> {
-    const generator = new IconComponentGenerator()
-    await generator.run()
+export const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }) => {
+    return h(DynamicIcon, {
+        ...attrs,
+        ...props,
+        styles: {
+${stylesObj}
+        },
+    })
+}
+`
+
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.ts`),
+        content,
+    }
 }
 
-main()
+function writeFiles(files: FileDefinition[]) {
+    for (const file of files) {
+        fs.mkdirSync(path.dirname(file.path), { recursive: true })
+        fs.writeFileSync(file.path, file.content, { flag: 'w' })
+    }
+    console.log(pc.green(`Successfully generated ${files.length} files.`))
+}
+
+const main = async () => {
+    try {
+        clean()
+        const result = await parseSvgs({
+            svgsDir: path.resolve(import.meta.dirname, '../../core/svgs'),
+        })
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        )
+
+        const allComponentFiles = await forEachIcon(vueComponentFile)
+        const seenPaths = new Set<string>()
+        const componentFiles = allComponentFiles.filter(f => {
+            if (seenPaths.has(f.path)) return false
+            seenPaths.add(f.path)
+            return true
+        })
+        const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
+        const indexFiles = generateIndexes(result.icons, result.groups)
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
+    } catch (err) {
+        console.error(pc.red('Build failed'))
+        console.error(err)
+        process.exit(1)
+    }
+}
+
+await main()

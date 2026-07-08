@@ -1,0 +1,92 @@
+---
+title: SolidJS Migration
+description: Upgrade @solar-icons/solid to v2.
+icon: solid
+---
+
+## Import paths
+
+**Before:**
+
+```jsx
+import { Home } from '@solar-icons/solid/Bold'
+```
+
+**After (per-style):**
+
+```jsx
+import { HomeIcon } from '@solar-icons/solid/bold'
+```
+
+## Component naming
+
+All components now use an `Icon` suffix (e.g. `HomeIcon`, `HeartBoldIcon`). Per-style barrel imports (`@solar-icons/solid/bold`) use the short name (`HomeIcon`), top-level imports use the disambiguated name (`HomeBoldIcon`).
+
+Single-file imports use the named export: `@solar-icons/solid/bold/home` exports `HomeIcon`.
+
+## Deprecated: `mirrored` prop removed
+
+V2 drops the `mirrored` prop. Use CSS `transform: scaleX(-1)` instead.
+
+## Category imports removed
+
+**Before:**
+
+```jsx
+import { Bold, Linear } from '@solar-icons/solid/category/arrows'
+
+// Usage:
+<Bold.ArrowUp size={24} />
+<Linear.ArrowDown size={24} />
+```
+
+**After:**
+
+```jsx
+import { ArrowUpIcon } from '@solar-icons/solid/bold/arrow-up'
+import { ArrowDownIcon } from '@solar-icons/solid/linear/arrow-down'
+
+// Usage:
+<ArrowUpIcon size={24} />
+<ArrowDownIcon size={24} />
+```
+
+## New: SolarProvider
+
+```jsx
+import { SolarProvider } from '@solar-icons/solid'
+;<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+    <App />
+</SolarProvider>
+```
+
+## useSolar
+
+Returns Solid `Accessor`s. Keep `solar` as a single object. Calling `solar.color()` re-evaluates the signal. Destructuring (`const { color } = useSolar()`) snapshots the value and loses reactivity.
+
+```jsx
+import { useSolar } from '@solar-icons/solid'
+
+function ColorToggle() {
+    const solar = useSolar()
+    return <button onClick={() => solar.setColor('#ef4444')}>Current: {solar.color()}</button>
+}
+```
+
+## New: Duotone and stroke width
+
+```jsx
+<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+<SettingsIcon strokeWidth={2} />
+```
+
+## Dynamic imports (optional)
+
+Use `@solar-icons/solid/dynamic` only when you swap styles at runtime. For most apps, the per-style path on the previous lines is the right choice.
+
+```jsx
+import { HeartIcon } from '@solar-icons/solid/dynamic'
+;<HeartIcon weight="BoldDuotone" size={32} />
+```
+
+The dynamic component bundles all six styles. Render one or six, the bundle is the same.

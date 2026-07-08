@@ -8,7 +8,7 @@
     "description": "Solar Icons for React",
     "repository": {
         "type": "git",
-        "url": "https://github.com/saoudi-h/solar-icons.git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
         "directory": "packages/react"
     },
     "type": "module",
@@ -20,7 +20,8 @@
         "LICENSE-THIRD-PARTY"
     ],
     "scripts": {
-        "build": "pnpm generate:assets && pnpm copy:licenses && vite build && tsc --build tsconfig.build.json",
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "build:types": "tsgo --noEmit",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate-assets.ts",
         "lint": "eslint . --max-warnings 0",
@@ -28,61 +29,56 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "typecheck": "tsc",
         "test": "vitest run",
+        "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
-    "module": "./dist/esm/index.mjs",
-    "main": "./dist/cjs/index.cjs",
-    "types": "./dist/types/index.d.ts",
+    "types": "./dist/index.d.mts",
     "exports": {
+        "./package.json": "./package.json",
         ".": {
-            "import": "./dist/esm/index.mjs",
-            "require": "./dist/cjs/index.cjs",
-            "types": "./dist/types/index.d.ts"
-        },
-        "./category": {
-            "import": "./dist/esm/csr/category.mjs",
-            "require": "./dist/cjs/csr/category.cjs",
-            "types": "./dist/types/csr/category.d.ts"
-        },
-        "./ssr/category": {
-            "import": "./dist/esm/ssr/category.mjs",
-            "require": "./dist/cjs/ssr/category.cjs",
-            "types": "./dist/types/ssr/category.d.ts"
-        },
-        "./icons/*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
-        },
-        "./csr/*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
         },
         "./lib/*": {
-            "import": "./dist/esm/lib/*.mjs",
-            "require": "./dist/cjs/lib/*.cjs",
-            "types": "./dist/types/lib/*.d.ts"
+            "types": "./dist/lib/*.d.mts",
+            "import": "./dist/lib/*.mjs"
         },
-        "./ssr": {
-            "import": "./dist/esm/ssr/index.mjs",
-            "require": "./dist/cjs/ssr/index.cjs",
-            "types": "./dist/types/ssr/index.d.ts"
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.mts",
+            "import": "./dist/icons/dynamic/index.mjs"
         },
-        "./ssr/*": {
-            "import": "./dist/esm/ssr/*.mjs",
-            "require": "./dist/cjs/ssr/*.cjs",
-            "types": "./dist/types/ssr/*.d.ts"
-        },
-        "./package.json": {
-            "default": "./package.json"
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.mts",
+            "import": "./dist/icons/dynamic/*.mjs"
         },
         "./*": {
-            "import": "./dist/esm/csr/*.mjs",
-            "require": "./dist/cjs/csr/*.cjs",
-            "types": "./dist/types/csr/*.d.ts"
+            "types": "./dist/icons/style/*.d.mts",
+            "import": "./dist/icons/style/*.mjs"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.d.mts",
+            "import": "./dist/icons/bold/*.mjs"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.d.mts",
+            "import": "./dist/icons/bold-duotone/*.mjs"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.d.mts",
+            "import": "./dist/icons/broken/*.mjs"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.d.mts",
+            "import": "./dist/icons/line-duotone/*.mjs"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.d.mts",
+            "import": "./dist/icons/linear/*.mjs"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.d.mts",
+            "import": "./dist/icons/outline/*.mjs"
         }
     },
     "devDependencies": {
@@ -90,19 +86,19 @@
         "@tala-tools/eslint": "0.1.4",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
-        "@types/node": "^25.9.3",
+        "@types/node": "^26.1.1",
         "@types/react": "^19.2.17",
         "@types/react-dom": "^19.2.3",
-        "@vitejs/plugin-react": "^6.0.2",
+        "@vitejs/plugin-react": "^6.0.3",
         "dotenv": "^17.4.2",
         "picocolors": "^1.1.1",
-        "prettier": "^3.8.4",
+        "prettier": "^3.9.4",
         "react": "^19.2.7",
         "react-dom": "^19.2.7",
         "rimraf": "^6.1.3",
+        "tsdown": "^0.22.4",
         "typescript": "^6.0.3",
-        "vite": "^8.0.16",
-        "vitest": "^4.1.9"
+        "vitest": "^4.1.10"
     },
     "peerDependencies": {
         "react": ">= 16.8",

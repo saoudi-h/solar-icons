@@ -18,15 +18,15 @@
     },
     "dependencies": {
         "@solar-icons/solid": "workspace:*",
-        "solid-js": "^1.9.13"
+        "solid-js": "^1.9.14"
     },
     "devDependencies": {
-        "@tailwindcss/vite": "^4.3.1",
+        "@tailwindcss/vite": "^4.3.2",
         "@tala-tools/eslint": "0.1.4",
         "@tala-tools/prettier": "0.0.3",
-        "tailwindcss": "^4.3.1",
+        "tailwindcss": "^4.3.2",
         "typescript": "^6.0.3",
-        "vite": "^8.0.16",
+        "vite": "^8.1.3",
         "vite-plugin-solid": "^2.11.12"
     }
 }

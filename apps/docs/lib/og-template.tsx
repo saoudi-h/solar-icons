@@ -260,11 +260,25 @@ export function generateOGImage({ title, description, badge = 'DOCS' }: OGImageP
                                     }}>
                                     <defs>
                                         <radialGradient id="glow-core" cx="50%" cy="50%" r="50%">
-                                            <stop offset="0%" stopColor="#6366f1" stopOpacity="0.25" />
-                                            <stop offset="100%" stopColor="#6366f1" stopOpacity="0.05" />
+                                            <stop
+                                                offset="0%"
+                                                stopColor="#6366f1"
+                                                stopOpacity="0.25"
+                                            />
+                                            <stop
+                                                offset="100%"
+                                                stopColor="#6366f1"
+                                                stopOpacity="0.05"
+                                            />
                                         </radialGradient>
                                     </defs>
-                                    <rect width="160" height="160" rx="80" ry="80" fill="url(#glow-core)" />
+                                    <rect
+                                        width="160"
+                                        height="160"
+                                        rx="80"
+                                        ry="80"
+                                        fill="url(#glow-core)"
+                                    />
                                 </svg>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +292,12 @@ export function generateOGImage({ title, description, badge = 'DOCS' }: OGImageP
                                         zIndex: 10,
                                     }}>
                                     <defs>
-                                        <linearGradient id="logo-grad-emblem" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <linearGradient
+                                            id="logo-grad-emblem"
+                                            x1="0%"
+                                            y1="0%"
+                                            x2="100%"
+                                            y2="100%">
                                             <stop offset="0%" stopColor="#818cf8" />
                                             <stop offset="100%" stopColor="#c084fc" />
                                         </linearGradient>

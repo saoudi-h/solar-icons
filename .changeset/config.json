@@ -17,7 +17,7 @@
     },
     "ignore": [
         "@solar-icons/docs",
-        "react-perf-app",
+        "react-app",
         "svelte-app",
         "vue-app",
         "test-react-native-icons",

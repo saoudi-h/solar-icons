@@ -3,349 +3,201 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 
-import { ICON_RENAMES } from '../../core/src/utils'
-import type { SvgMap } from './utils'
 import {
-    CSR_PATH,
-    DEFS_PATH,
-    INDEX_PATH,
-    readSvgsFromDisk,
-    SSR_PATH,
+    forEachIcon,
+    forEachIconGroupedBy,
+    parseSvgs,
     toPascalCase,
-    verifyIcons,
-} from './utils'
+    WEIGHT_MAP,
+    type ParsedIcon,
+    type ParsedIconGroup,
+} from '@solar-icons/core'
+import { reactPerfComponentFile, type FileDefinition } from './parser-hook'
 
-// Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {}
-for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-    if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = []
-    }
-    ICON_ALIASES[correction].push(typo)
-}
+const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
+const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
-/**
- * Returns a list of aliases (typos) for a given icon name, including partial matches.
- */
-function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>()
-    // Exact matches
-    if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach(a => aliases.add(a))
-    }
-    // Partial matches
-    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-        if (name.includes(correct) && name !== correct) {
-            typos.forEach(typo => {
-                if (/[^a-z0-9]/i.test(typo)) return
-                aliases.add(name.replace(correct, typo))
+const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
+
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
+    const files: FileDefinition[] = []
+
+    // Per-style barrels
+    for (const weight of WEIGHTS) {
+        const iconsForWeight = icons.filter(i => i.style === weight)
+        const weightKebab = WEIGHT_MAP[weight]
+        const seen = new Set<string>()
+        const content = iconsForWeight
+            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter(icon => {
+                if (seen.has(icon.pascalName)) return false
+                seen.add(icon.pascalName)
+                return true
             })
-        }
+            .map(
+                icon =>
+                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+            )
+            .join('\n')
+
+        files.push({
+            path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
+            content: content ? `${content}\n` : '',
+        })
+    }
+
+    // Generate styled.ts root with deduplicated named exports
+    const seenGlobal = new Set<string>()
+    const rootGlobalLines: string[] = []
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`) + 'Icon'
+        if (seenGlobal.has(globalName)) continue
+        seenGlobal.add(globalName)
+        rootGlobalLines.push(
+            `export { ${icon.pascalName}Icon as ${globalName} } from './${WEIGHT_MAP[icon.style]}/${icon.name}';`
+        )
+    }
+    rootGlobalLines.sort()
+
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
     })
-    return Array.from(aliases).filter(a => a !== name)
-}
 
-/**
- * Clean generated directories and files to ensure a clean build.
- *
- * The following directories and files are removed:
- * - src/csr
- * - src/ssr
- * - src/defs
- * - src/index.ts
- */
-function cleanGeneratedDirectoriesAndFiles() {
-    const pathsToClean = [CSR_PATH, SSR_PATH, DEFS_PATH, INDEX_PATH]
+    const stylesIndexContent = WEIGHTS.map(w => `export * as ${w} from './${WEIGHT_MAP[w]}';`).join(
+        '\n'
+    )
 
-    pathsToClean.forEach(pathToClean => {
-        if (fs.existsSync(pathToClean)) {
-            fs.rmSync(pathToClean, { recursive: true, force: true })
-            console.log(pc.blue(`Removed ${pathToClean}`))
-        }
+    files.push({
+        path: path.join(ICONS_PATH, 'style', 'index.ts'),
+        content: `${stylesIndexContent}\n`,
     })
-}
 
-/**
- * Generates React components for icons based on the given grouping and type.
- * @param groupedIcons - An object representing icons grouped by category.
- * Each category contains icons with different styles.
- * @param type - The type of component to generate, either 'csr' (Client Side Rendering)
- * or 'ssr' (Server Side Rendering), which determines the base component and path used.
- *
- * The function creates TypeScript files for each icon, including a forwardRef
- * component for rendering the icon with different styles. It also generates index
- * files for each category and a global index file.
- */
-function generateReactComponents(
-    groupedIcons: ReturnType<typeof groupIconsByName>,
-    type: 'csr' | 'ssr'
-) {
-    const BASE_PATH = type === 'csr' ? CSR_PATH : SSR_PATH
-    const importBase = type === 'csr' ? 'IconBase' : 'SSRBase'
-    const useClientDirective = type === 'csr' ? `'use client'\n\n` : ''
-
-    for (const category in groupedIcons) {
-        const categoryPath = path.join(BASE_PATH, category)
-        fs.mkdirSync(categoryPath, { recursive: true })
-
-        const iconsInCategory = groupedIcons[category]
-        let categoryIndexContent = ''
-
-        for (const iconName in iconsInCategory) {
-            const name = toPascalCase(iconName)
-
-            const doc = `/**
-${Object.entries(iconsInCategory[iconName]!)
-    .map(([style, { preview }]) => ` * ### ![img](data:image/svg+xml;base64,${preview}) ${style}`)
-    .join('\n')}
- */`
-
-            const componentContent = `${useClientDirective}/* GENERATED FILE */
-import React, { forwardRef } from "react"
-import type { IconProps, Icon } from "../../lib/types"
-import ${importBase} from "../../lib/${importBase}"
-import weights from "../../defs/${category}/${name}"
-
-${doc}
-const ${name}: Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <${importBase} ref={ref} {...props} weights={weights} />
-))
-
-${name}.displayName = "${name}"
-export default ${name}
+    const mainEntryContent = `/* GENERATED FILE */
+export type { IconProps } from "./lib"
+export { IconBase, SolarProvider, useSolar } from "./lib"
+export type { SolarProviderProps } from "./lib"
+export * from "./icons/styled"
 `
 
-            fs.writeFileSync(path.join(categoryPath, `${name}.tsx`), componentContent, {
-                flag: 'w',
-            })
+    files.push({
+        path: INDEX_PATH,
+        content: mainEntryContent,
+    })
 
-            categoryIndexContent += `export { default as ${name} } from './${name}'\n`
-
-            // Add aliases if they exist
-            const aliases = getAliasesForIcon(name)
-            if (aliases.length > 0) {
-                aliases.forEach(alias => {
-                    const aliasContent = `import target from './${name}'
-/**
- * @deprecated Use ${name} instead
- */
-const ${alias} = target
-export default ${alias}
-`
-                    fs.writeFileSync(path.join(categoryPath, `${alias}.ts`), aliasContent, {
-                        flag: 'w',
-                    })
-
-                    categoryIndexContent += `export { default as ${alias} } from './${alias}'\n`
-                })
-            }
-        }
-
-        fs.writeFileSync(path.join(categoryPath, 'index.ts'), categoryIndexContent, { flag: 'w' })
-    }
-
-    // Generate global index
-    let globalIndexContent = Object.keys(groupedIcons)
-        .map(category => {
-            return `export * from './${category}'`
+    // Generate dynamic barrel index
+    const dynamicBarrelContent = groups
+        .map(g => {
+            return `export { ${g.pascalName}Icon } from './${g.name}'`
         })
         .join('\n')
 
-    globalIndexContent += '\nexport * as category from "./category"'
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
+    })
 
-    fs.writeFileSync(path.join(BASE_PATH, 'index.ts'), globalIndexContent, { flag: 'w' })
+    return files
+}
 
-    // Generate category index
-    const globalCategoryIndexContent = Object.keys(groupedIcons)
-        .map(category => {
-            const categoryName = toPascalCase(category)
-            return `export * as ${categoryName} from './${category}'`
+function clean() {
+    for (const p of [ICONS_PATH, INDEX_PATH]) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p, { recursive: true, force: true })
+            console.log(pc.blue(`Removed ${p}`))
+        }
+    }
+}
+
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles
+
+    const styleImports = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            const kebab = WEIGHT_MAP[w]
+            return `import { ${icon.pascalName}Icon as ${w} } from '../${kebab}/${icon.name}'`
         })
         .join('\n')
 
-    fs.writeFileSync(path.join(BASE_PATH, 'category.ts'), globalCategoryIndexContent, { flag: 'w' })
-}
-
-/**
- * Generates TypeScript definition files for icons based on the given grouping.
- *
- * This function iterates over grouped icons by category and creates TypeScript
- * files for each icon, storing their style-specific JSX representations in a Map.
- * It also generates index files for each category and a global index file.
- * @param groupedIcons - An object with icons grouped by category and name,
- * each containing style-specific properties, including JSX representation.
- */
-function generateIconDefinitions(groupedIcons: ReturnType<typeof groupIconsByName>) {
-    for (const category in groupedIcons) {
-        const categoryDefsPath = path.join(DEFS_PATH, category)
-        fs.mkdirSync(categoryDefsPath, { recursive: true })
-
-        const iconsInCategory = groupedIcons[category]
-        let categoryIndexContent = ''
-
-        for (const iconName in iconsInCategory) {
-            const iconStyles = iconsInCategory[iconName]
-            const name = toPascalCase(iconName)
-
-            const defContent = `/* GENERATED FILE */
-import React, { ReactElement } from "react"
-import type { IconWeight } from '../../lib'
-
-export default new Map<IconWeight, ReactElement>([
-${Object.entries(iconStyles!)
-    .map(([style, { jsx }]) => `  ["${style}", <>${jsx.trim()}</>]`)
-    .join(',\n')}
-]);
-`
-
-            fs.writeFileSync(path.join(categoryDefsPath, `${name}.tsx`), defContent, { flag: 'w' })
-
-            categoryIndexContent += `export { default as ${name} } from './${name}';\n`
-        }
-
-        fs.writeFileSync(path.join(categoryDefsPath, 'index.ts'), categoryIndexContent, {
-            flag: 'w',
-        })
-    }
-
-    // Generate global index
-    const globalIndexContent = Object.keys(groupedIcons)
-        .map(category => {
-            return `export * from './${category}';`
+    const stylesObj = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const kebab = WEIGHT_MAP[w]
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab
+            return `        ${key}: ${w},`
         })
         .join('\n')
 
-    fs.writeFileSync(path.join(DEFS_PATH, 'index.ts'), globalIndexContent, { flag: 'w' })
-}
+    const name = group.name
+    const pascalName = group.pascalName
+
+    const previews = WEIGHTS.filter(w => groups[w])
+        .map(w => {
+            const icon = groups[w]!
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`
+        })
+        .join('\n *\n')
+
+    const content = `/* GENERATED FILE */
+import { DynamicIcon } from '../../lib/dynamic-icon'
+import type { DynamicIconProps } from '../../lib/dynamic-icon'
+${styleImports}
 
 /**
- * Groups icons by their name within each category and style.
- *
- * This function takes an SvgMap of icons organized by category and style,
- * and reorganizes it into a nested structure where icons are grouped by their
- * names within each category. Each icon retains its style-specific properties,
- * including a preview and jsx representation.
- * @param icons - The SvgMap containing icons organized by category and style.
- * @returns A nested object where icons are grouped by name within each category,
- *          with style-specific properties for each icon.
+${previews}
  */
-function groupIconsByName(icons: SvgMap) {
-    const groupedIcons: Record<
-        string, // Category
-        Record<
-            string, // Name
-            Record<
-                string, // Style
-                { preview: string; jsx: string }
-            >
-        >
-    > = {}
-
-    for (const category in icons) {
-        groupedIcons[category] = {}
-
-        const styles = icons[category]
-        for (const style in styles) {
-            const iconsInStyle = styles[style]
-            for (const iconName in iconsInStyle) {
-                if (!groupedIcons[category][iconName]) {
-                    groupedIcons[category][iconName] = {}
-                }
-                groupedIcons[category][iconName][style] = iconsInStyle[iconName]!
-            }
-        }
-    }
-
-    return groupedIcons
-}
-
-/**
- * Generates React components and TypeScript definitions for each icon.
- *
- * This function groups icons by name within each category and generates
- * React components and TypeScript definitions for each icon. It also generates
- * index files for each category and a global index file.
- * @param icons - The SvgMap containing icons organized by category and style.
- */
-function generateComponents(icons: SvgMap) {
-    // Create directories if they don't exist
-    fs.mkdirSync(CSR_PATH, { recursive: true })
-    fs.mkdirSync(SSR_PATH, { recursive: true })
-    fs.mkdirSync(DEFS_PATH, { recursive: true })
-
-    // Group icons by name
-    const groupedIcons = groupIconsByName(icons)
-
-    // Generate icon definitions
-    generateIconDefinitions(groupedIcons)
-
-    // Generate React components
-    generateReactComponents(groupedIcons, 'csr')
-    generateReactComponents(groupedIcons, 'ssr')
-
-    console.log('Generated assets successfully')
-}
-
-/**
- * Generates the main export index file for the library.
- *
- * This function creates a TypeScript index file that exports essential types,
- * contexts, and components from the library's source directories. It includes:
- * - Type exports for IconProps and IconWeight.
- * - Named exports for IconContext and IconBase.
- * - Namespace export for server-side rendering components (SSR).
- * - All exports from client-side rendering components (CSR).
- *
- * The generated file is written to the path specified by INDEX_PATH.
- * Logs the success or failure of the export operation.
- */
-function generateMainExports() {
-    const mainIndexContent = `\
-/* GENERATED FILE */
-export type { IconProps, IconWeight } from "./lib"
-export { SolarProvider, useSolar, IconBase } from "./lib"
-export * as SSR from "./ssr"
-export * from "./csr"
-import * as solar from "./csr/category"
-export { solar }
-export default solar
+export const ${pascalName}Icon = (props: DynamicIconProps) => (
+    <DynamicIcon
+        {...props}
+        styles={{
+${stylesObj}
+        }}
+    />
+)
 `
 
-    try {
-        // Write the main export index
-        fs.writeFileSync(INDEX_PATH, mainIndexContent, { flag: 'w' })
-        console.log(pc.green('Main index export success'))
-    } catch (err) {
-        console.error(pc.red('Main index export failed'))
-        console.group()
-        console.error(err)
-        console.groupEnd()
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.tsx`),
+        content,
     }
 }
 
-/**
- * Main function to generate the entire library.
- *
- * This function does the following in order:
- * 1. Deletes old files and directories before starting the build.
- * 2. Reads icon data from disk and verifies integrity.
- * 3. Generates components for each icon.
- * 4. Generates main export index.
- *
- * Exits the process if icon integrity verification fails.
- */
+function writeFiles(files: FileDefinition[]) {
+    for (const file of files) {
+        fs.mkdirSync(path.dirname(file.path), { recursive: true })
+        fs.writeFileSync(file.path, file.content, { flag: 'w' })
+    }
+    console.log(pc.green(`Successfully generated ${files.length} files.`))
+}
+
 const main = async () => {
-    // Delete old files and directories before starting the build
-    cleanGeneratedDirectoriesAndFiles()
+    try {
+        clean()
+        const result = await parseSvgs({
+            svgsDir: path.resolve(import.meta.dirname, '../../core/svgs'),
+        })
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        )
 
-    // Read icon data from disk and verify integrity
-    const icons = readSvgsFromDisk()
-    if (!verifyIcons(icons)) {
+        const allComponentFiles = await forEachIcon(reactPerfComponentFile)
+        const seenPaths = new Set<string>()
+        const componentFiles = allComponentFiles.filter(f => {
+            if (seenPaths.has(f.path)) return false
+            seenPaths.add(f.path)
+            return true
+        })
+        const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
+        const indexFiles = generateIndexes(result.icons, result.groups)
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
+    } catch (err) {
+        console.error(pc.red('Build failed'))
+        console.error(err)
         process.exit(1)
     }
-
-    generateComponents(icons) // Generate components for each icon
-    generateMainExports() // Generate main export index
 }
 
 await main()

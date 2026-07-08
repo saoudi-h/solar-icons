@@ -1,9 +1,8 @@
 'use client'
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Icon } from '@iconify/react'
 import { cn } from '@/lib/utils'
-import styles from "./FrameworksShowcase.module.css"
+import { Icon } from '@iconify/react'
+import { motion } from 'framer-motion'
+import styles from './FrameworksShowcase.module.css'
 
 export const FrameworksShowcase = () => {
     const frameworks = [
@@ -31,11 +30,10 @@ export const FrameworksShowcase = () => {
                                     type: 'spring',
                                     stiffness: 100,
                                     damping: 14,
-                                    delay: idx * 0.08
-                                }
+                                    delay: idx * 0.08,
+                                },
                             }}
-                            viewport={{ once: true, margin: "-50px" }}
-                        >
+                            viewport={{ once: true, margin: '-50px' }}>
                             <div
                                 className={cn(
                                     `
@@ -45,13 +43,12 @@ export const FrameworksShowcase = () => {
                                       duration-300 select-none
                                       hover:scale-125 hover:shadow-xl
                                     `,
-                                    isEven ? styles.badgeFloatUp: styles.badgeFloatDown,
+                                    isEven ? styles.badgeFloatUp : styles.badgeFloatDown,
                                     fw.color
                                 )}
                                 style={{
-                                    animationDelay: `${idx * 0.25}s`
-                                }}
-                            >
+                                    animationDelay: `${idx * 0.25}s`,
+                                }}>
                                 <Icon icon={fw.icon} className="size-9" />
                             </div>
                         </motion.div>

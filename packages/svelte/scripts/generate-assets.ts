@@ -3,346 +3,193 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
 
-import { ICON_RENAMES } from '../../core/src/utils.ts';
-import type { SvgMap } from './utils';
 import {
-    ICONS_PATH,
-    INDEX_PATH,
-    readSvgsFromDisk,
+    parseSvgs,
+    forEachIcon,
+    forEachIconGroupedBy,
     toPascalCase,
-    verifyIcons,
-    WEIGHTS,
-} from './utils';
+    WEIGHT_MAP,
+    type IconWeight,
+    type ParsedIcon,
+    type ParsedIconGroup,
+} from '@solar-icons/core';
+import { svelteComponentFile, type FileDefinition } from './parser-hook';
 
-// Create a reverse mapping for aliases (Correction -> [Typos])
-const ICON_ALIASES: Record<string, string[]> = {};
-for (const [typo, correction] of Object.entries(ICON_RENAMES)) {
-    if (!ICON_ALIASES[correction]) {
-        ICON_ALIASES[correction] = [];
-    }
-    ICON_ALIASES[correction].push(typo);
-}
+const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons');
+const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts');
 
-// --- Types ---
+const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const;
 
-interface Icon {
-    category: string;
-    style: string;
-    name: string;
-    pascalName: string;
-    globalName: string;
-    jsx: string;
-}
+function generateIndexes(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>
+): FileDefinition[] {
+    const files: FileDefinition[] = [];
 
-interface FileDefinition {
-    path: string;
-    content: string;
-}
-
-// --- Helpers ---
-
-function getIcons(map: SvgMap): Icon[] {
-    const icons: Icon[] = [];
-    for (const [category, styles] of Object.entries(map)) {
-        for (const [style, names] of Object.entries(styles)) {
-            for (const [name, data] of Object.entries(names)) {
-                icons.push({
-                    category,
-                    style,
-                    name,
-                    pascalName: toPascalCase(name),
-                    globalName: toPascalCase(`${name}-${style}`),
-                    jsx: data.jsx,
-                });
-            }
-        }
-    }
-    return icons;
-}
-
-function groupBy<T>(array: T[], keySelector: (item: T) => string): Record<string, T[]> {
-    return array.reduce(
-        (acc, item) => {
-            const key = keySelector(item);
-            if (!acc[key]) acc[key] = [];
-            acc[key].push(item);
-            return acc;
-        },
-        {} as Record<string, T[]>
-    );
-}
-
-/**
- * Returns a list of aliases (typos) for a given icon name, including partial matches.
- */
-function getAliasesForIcon(name: string): string[] {
-    const aliases = new Set<string>();
-    // Exact matches
-    if (ICON_ALIASES[name]) {
-        ICON_ALIASES[name].forEach((a) => aliases.add(a));
-    }
-    // Partial matches
-    Object.entries(ICON_ALIASES).forEach(([correct, typos]) => {
-        if (name.includes(correct) && name !== correct) {
-            typos.forEach((typo) => {
-                if (/[^a-zA-Z0-9]/.test(typo)) return;
-                aliases.add(name.replace(correct, typo));
-            });
-        }
-    });
-    return Array.from(aliases).filter((a) => a !== name);
-}
-
-// --- Generators ---
-
-const Generators = {
-    component: (icon: Icon): FileDefinition => {
-        const content = `<script lang="ts">
-import Icon from '../../../lib/IconBase.svelte'
-let props = $props()
-</script>
-
-<Icon {...props}>
-    ${icon.jsx.trim()}
-</Icon>
-`;
-        return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${icon.pascalName}.svelte`),
-            content,
-        };
-    },
-
-    aliasComponent: (icon: Icon, alias: string): FileDefinition => {
-        const content = `import Original from './${icon.pascalName}.svelte';
-/**
- * @deprecated Use ${icon.pascalName} instead
- */
-export const ${alias} = Original;
-`;
-        return {
-            path: path.join(ICONS_PATH, icon.category, icon.style, `${alias}.ts`),
-            content,
-        };
-    },
-
-    styleIndex: (style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath);
-        let exports = icons
+    for (const weight of WEIGHTS) {
+        const iconsForWeight = icons.filter((i) => i.style === weight);
+        const weightKebab = WEIGHT_MAP[weight];
+        const seen = new Set<string>();
+        const content = iconsForWeight
+            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+            .filter((icon) => {
+                if (seen.has(icon.pascalName)) return false;
+                seen.add(icon.pascalName);
+                return true;
+            })
             .map(
                 (icon) =>
-                    `export { default as ${icon.pascalName} } from './${style}/${icon.pascalName}.svelte';`
+                    `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}.svelte';`
             )
-            .sort()
             .join('\n');
 
-        // Add deprecated aliases
-        icons.forEach((icon) => {
-            const aliases = getAliasesForIcon(icon.pascalName);
-            aliases.forEach((alias) => {
-                exports += `\nexport { ${alias} } from './${style}/${alias}';`;
-            });
+        files.push({
+            path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
+            content: content ? `${content}\n` : '',
         });
+    }
 
-        return {
-            path: path.join(parentDir, `${style}.ts`),
-            content: `${exports}\n`,
-        };
-    },
-
-    styleGlobalIndex: (_style: string, icons: Icon[], folderPath: string): FileDefinition => {
-        const exports = icons
-            .map(
-                (icon) =>
-                    `export { default as ${icon.globalName} } from './${icon.pascalName}.svelte';`
-            )
-            .sort()
-            .join('\n');
-
-        return {
-            path: path.join(folderPath, 'styled.ts'),
-            content: `${exports}\n`,
-        };
-    },
-
-    categoryIndex: (category: string, styles: string[], folderPath: string): FileDefinition => {
-        const parentDir = path.dirname(folderPath);
-        const exports = styles
-            .map((style) => `export * as ${style} from './${category}/${style}';`)
-            .sort()
-            .join('\n');
-
-        return {
-            path: path.join(parentDir, `${category}.ts`),
-            content: `${exports}\n`,
-        };
-    },
-
-    categoryGlobalIndex: (
-        _category: string,
-        styles: string[],
-        folderPath: string
-    ): FileDefinition => {
-        const exports = styles
-            .map((style) => `export * from './${style}/styled';`)
-            .sort()
-            .join('\n');
-
-        return {
-            path: path.join(folderPath, 'styled.ts'),
-            content: `${exports}\n`,
-        };
-    },
-
-    rootIndex: (categories: string[]): FileDefinition => {
-        const exports = categories
-            .map((category) => `export * as ${toPascalCase(category)} from './${category}';`)
-            .sort()
-            .join('\n');
-
-        return {
-            path: path.join(ICONS_PATH, 'index.ts'),
-            content: `${exports}\n`,
-        };
-    },
-
-    rootGlobalIndex: (categories: string[]): FileDefinition => {
-        const exports = categories
-            .map((category) => `export * from './${category}/styled';`)
-            .sort()
-            .join('\n');
-
-        return {
-            path: path.join(ICONS_PATH, 'styled.ts'),
-            content: `${exports}\n`,
-        };
-    },
-
-    weightIndexes: (icons: Icon[]): FileDefinition[] => {
-        const files: FileDefinition[] = [];
-        const byStyle = groupBy(icons, (i) => i.style);
-
-        for (const weight of WEIGHTS) {
-            const iconsForWeight = byStyle[weight] || [];
-            let content = iconsForWeight
-                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-                .map(
-                    (icon) =>
-                        `export { default as ${icon.pascalName} } from '../${icon.category}/${icon.style}/${icon.pascalName}.svelte';`
-                )
-                .join('\n');
-
-            // Add aliases
-            iconsForWeight.forEach((icon) => {
-                const aliases = getAliasesForIcon(icon.pascalName);
-                aliases.forEach((alias) => {
-                    content += `\nexport { ${alias} } from '../${icon.category}/${icon.style}/${alias}';`;
-                });
-            });
-
-            files.push({
-                path: path.join(ICONS_PATH, 'style', `${weight}.ts`),
-                content: content ? `${content}\n` : '',
-            });
-        }
-
-        return files;
-    },
-
-    stylesIndex: (): FileDefinition => {
-        const exports = WEIGHTS.map((weight) => `export * as ${weight} from './${weight}';`).join(
-            '\n'
+    const seenGlobal = new Set<string>();
+    const rootGlobalLines: string[] = [];
+    for (const icon of icons) {
+        const globalName = toPascalCase(`${icon.name}-${icon.style}`);
+        if (seenGlobal.has(globalName)) continue;
+        seenGlobal.add(globalName);
+        rootGlobalLines.push(
+            `export { default as ${globalName}Icon } from './${WEIGHT_MAP[icon.style]}/${icon.name}.svelte';`
         );
+    }
+    rootGlobalLines.sort();
 
-        return {
-            path: path.join(ICONS_PATH, 'style', 'index.ts'),
-            content: `${exports}\n`,
-        };
-    },
+    files.push({
+        path: path.join(ICONS_PATH, 'styled.ts'),
+        content: rootGlobalLines.join('\n') + '\n',
+    });
 
-    mainEntry: (): FileDefinition => {
-        const content = `export type { IconProps } from "./lib"
-export { IconBase, type IconStyle } from "./lib"
+    const stylesIndexContent = WEIGHTS.map(
+        (w) => `export * as ${w} from './${WEIGHT_MAP[w]}';`
+    ).join('\n');
+
+    files.push({
+        path: path.join(ICONS_PATH, 'style', 'index.ts'),
+        content: `${stylesIndexContent}\n`,
+    });
+
+    const mainEntryContent = `export type { IconProps } from "./lib"
+export { IconBase, SolarProvider, useSolar, type IconStyle } from "./lib"
 export * from "./icons/styled"
 `;
-        return {
-            path: INDEX_PATH,
-            content,
-        };
-    },
-};
 
-// --- Stages ---
-
-function clean() {
-    const pathsToClean = [ICONS_PATH, INDEX_PATH];
-    pathsToClean.forEach((p) => {
-        if (fs.existsSync(p)) {
-            fs.rmSync(p, { recursive: true, force: true });
-            console.log(pc.blue(`Removed ${p}`));
-        }
+    files.push({
+        path: INDEX_PATH,
+        content: mainEntryContent,
     });
-}
 
-function generate(icons: Icon[]) {
-    const files: FileDefinition[] = [];
-    const byCategory = groupBy(icons, (i) => i.category);
+    const dynamicBarrelContent = groups
+        .map((g) => {
+            return `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'`;
+        })
+        .join('\n');
 
-    for (const [category, catIcons] of Object.entries(byCategory)) {
-        const byStyle = groupBy(catIcons, (i) => i.style);
-
-        for (const [style, styleIcons] of Object.entries(byStyle)) {
-            const stylePath = path.join(ICONS_PATH, category, style);
-
-            // Only .svelte components (no .ts re-exports)
-            styleIcons.forEach((icon) => {
-                files.push(Generators.component(icon));
-                // Add aliases
-                const aliases = getAliasesForIcon(icon.pascalName);
-                aliases.forEach((alias) => {
-                    files.push(Generators.aliasComponent(icon, alias));
-                });
-            });
-
-            files.push(Generators.styleIndex(style, styleIcons, stylePath));
-            files.push(Generators.styleGlobalIndex(style, styleIcons, stylePath));
-        }
-
-        const styles = Object.keys(byStyle);
-        const categoryPath = path.join(ICONS_PATH, category);
-        files.push(Generators.categoryIndex(category, styles, categoryPath));
-        files.push(Generators.categoryGlobalIndex(category, styles, categoryPath));
-    }
-
-    const categories = Object.keys(byCategory);
-    files.push(Generators.rootIndex(categories));
-    files.push(Generators.rootGlobalIndex(categories));
-    files.push(...Generators.weightIndexes(icons));
-    files.push(Generators.stylesIndex());
-    files.push(Generators.mainEntry());
+    files.push({
+        path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
+        content: dynamicBarrelContent + '\n',
+    });
 
     return files;
 }
 
-function writeFiles(files: FileDefinition[]) {
-    files.forEach((file) => {
-        fs.mkdirSync(path.dirname(file.path), { recursive: true });
-        fs.writeFileSync(file.path, file.content, { flag: 'w' });
-    });
-    console.log(pc.green(`Successfully generated ${files.length} files.`));
+function clean() {
+    for (const p of [ICONS_PATH, INDEX_PATH]) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p, { recursive: true, force: true });
+            console.log(pc.blue(`Removed ${p}`));
+        }
+    }
 }
 
-// --- Main ---
+function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+    const groups = group.styles;
+
+    const styleImports = WEIGHTS.filter((w) => groups[w])
+        .map((w) => {
+            const icon = groups[w]!;
+            const kebab = WEIGHT_MAP[w];
+            return `import ${w} from '../${kebab}/${icon.name}.svelte'`;
+        })
+        .join('\n');
+
+    const stylesObj = WEIGHTS.filter((w) => groups[w])
+        .map((w) => {
+            const kebab = WEIGHT_MAP[w];
+            const key = kebab.includes('-') ? `'${kebab}'` : kebab;
+            return `        ${key}: ${w},`;
+        })
+        .join('\n');
+
+    const name = group.name;
+    const pascalName = group.pascalName;
+
+    const previews = WEIGHTS.filter((w) => groups[w])
+        .map((w) => {
+            const icon = groups[w]!;
+            return ` * ![img](data:image/svg+xml;base64,${icon.preview}) ${w}`;
+        })
+        .join('\n *\n');
+
+    const content = `<!-- GENERATED FILE -->
+<script lang="ts">
+import type { DynamicIconProps } from '../../lib/types'
+import DynamicIcon from '../../lib/dynamic-icon.svelte'
+${styleImports}
+let { ...restProps }: DynamicIconProps = $props()
+</script>
+
+<!--
+${previews}
+-->
+<DynamicIcon
+    styles={{
+${stylesObj}
+    }}
+    {...restProps}
+/>
+`;
+
+    return {
+        path: path.join(ICONS_PATH, 'dynamic', `${name}.svelte`),
+        content,
+    };
+}
+
+function writeFiles(files: FileDefinition[]) {
+    for (const file of files) {
+        fs.mkdirSync(path.dirname(file.path), { recursive: true });
+        fs.writeFileSync(file.path, file.content, { flag: 'w' });
+    }
+    console.log(pc.green(`Successfully generated ${files.length} files.`));
+}
 
 const main = async () => {
     try {
         clean();
-        const svgMap = readSvgsFromDisk();
-        if (!verifyIcons(svgMap)) {
-            process.exit(1);
-        }
-        const icons = getIcons(svgMap);
-        const files = generate(icons);
-        writeFiles(files);
+        const result = await parseSvgs({
+            svgsDir: path.resolve(import.meta.dirname, '../../core/svgs'),
+        });
+        console.log(
+            pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
+        );
+
+        const allComponentFiles = await forEachIcon(svelteComponentFile);
+        const seenPaths = new Set<string>();
+        const componentFiles = allComponentFiles.filter((f) => {
+            if (seenPaths.has(f.path)) return false;
+            seenPaths.add(f.path);
+            return true;
+        });
+        const dynamicFiles = await forEachIconGroupedBy((ctx) => generateDynamicFile(ctx.icon));
+        const indexFiles = generateIndexes(result.icons, result.groups);
+        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles]);
     } catch (err) {
         console.error(pc.red('Build failed'));
         console.error(err);

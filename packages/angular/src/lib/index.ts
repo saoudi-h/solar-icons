@@ -1,5 +1,6 @@
 export * from './all-icons.types'
-export { SolarDynamicIcon } from './dynamic-icon.component'
+export { SolarIcon } from './dynamic-icon.component'
 export * from './icon-base'
 export * from './icon-registry'
+export * from './solar-provider'
 export * from './types'

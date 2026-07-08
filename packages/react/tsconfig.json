@@ -3,11 +3,17 @@
     "compilerOptions": {
         "noUnusedLocals": false,
         "module": "ESNext",
+        "declarationMap": true,
+        "allowJs": false,
+        "checkJs": false,
+        "incremental": true,
+        "isolatedDeclarations": false,
         "moduleResolution": "Bundler",
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "noEmit": true
     },
-    "include": ["./src/**/*"],
-    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts"]
+    "include": ["./src/**/*", "./scripts/**/*", "./tests/**/*", "./tsdown.config.ts", "./vitest.config.ts"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
 }

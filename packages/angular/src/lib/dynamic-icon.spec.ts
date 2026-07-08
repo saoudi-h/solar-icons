@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
-import { IconBase, SolarDynamicIcon, provideSolarIcons } from './index'
+import { IconBase, SolarIcon, provideSolarIcons } from './index'
 
 // Mock Icon component using the real base logic
 @Component({
@@ -16,7 +16,7 @@ class TestIcon extends IconBase {}
 
 @Component({
     standalone: true,
-    imports: [SolarDynamicIcon],
+    imports: [SolarIcon],
     template: ` <ng-container [solarIcon]="iconName()" [size]="size()" [color]="color()" /> `,
 })
 class TestHost {
@@ -25,7 +25,7 @@ class TestHost {
     color = signal<string>('red')
 }
 
-describe('SolarDynamicIcon', () => {
+describe('SolarIcon', () => {
     let fixture: ComponentFixture<TestHost>
     let host: TestHost
 
@@ -57,16 +57,14 @@ describe('SolarDynamicIcon', () => {
     it('should apply size and color to the dynamic component via host bindings', () => {
         const svg = fixture.debugElement.query(By.css('svg')).nativeElement
 
-        // Initial values (size 24, color red)
-        expect(svg.getAttribute('width')).toBe('24')
+        expect(svg.style.width).toBe('24px')
         expect(svg.style.color).toBe('red')
 
-        // Update signals
         host.size.set(48)
         host.color.set('blue')
         fixture.detectChanges()
 
-        expect(svg.getAttribute('width')).toBe('48')
+        expect(svg.style.width).toBe('48px')
         expect(svg.style.color).toBe('blue')
     })
 

@@ -13,9 +13,11 @@
             "backgroundColor": "#ffffff"
         },
         "ios": {
+            "bundleIdentifier": "com.solaricons.test",
             "supportsTablet": true
         },
         "android": {
+            "package": "com.solaricons.test",
             "adaptiveIcon": {
                 "foregroundImage": "./assets/adaptive-icon.png",
                 "backgroundColor": "#ffffff"

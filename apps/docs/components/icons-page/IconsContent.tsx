@@ -1,25 +1,29 @@
 'use client'
-import { GridPlaceholder } from '@/components/icons-page/sections/icons/GridPlaceholder'
 import { NoiseSvg } from '@/components/ui/noise-svg'
-import { Skeleton } from '@/components/ui/skeleton'
-import dynamic from 'next/dynamic'
-
-const IconShowcase = dynamic(() => import('./sections/icons'), {
-    ssr: false,
-    loading: () => <Loading />,
-})
+import { IconShowcase } from './sections/icons'
 
 export function IconsContent() {
     return (
+        // `flex-1` (in a flex-col parent — the HomeLayout) plus
+        // `overflow-hidden` pins the page to exactly its parent
+        // height — no page-level scroll. The two scrollable
+        // frames (categories sidebar + icon grid) handle their
+        // own scrolling inside this fixed box. The bottom
+        // `<IconDetail>` is also rendered inside this fixed box
+        // and reports its height to the grid, which subtracts
+        // it from its measured height so the grid + sidebar
+        // shrink by the exact amount the panel needs (see
+        // DOCS-UI-02). Below the fold is empty padding only,
+        // never content.
         <main
-            className={`
-              relative flex min-h-dvh w-full flex-1 flex-col justify-start gap-9
-              bg-background p-4 text-center
+            className="
+              relative flex w-full flex-1 flex-col justify-start gap-9
+              overflow-hidden bg-background p-4 text-center
               md:gap-12 md:px-10 md:py-[34px]
-            `}>
+            ">
             <div
                 className={`
-                  relative container flex w-full flex-col items-center
+                  relative container flex w-full flex-1 flex-col items-center
                   self-center
                 `}>
                 <div
@@ -66,92 +70,5 @@ export function IconsContent() {
                 <IconShowcase />
             </div>
         </main>
-    )
-}
-
-function Loading() {
-    return (
-        <section
-            className={`
-              relative container flex w-full flex-col items-center self-center
-              px-3
-              md:px-0
-            `}>
-            <div
-                className={`
-                  relative w-full gap-2 rounded-2xl
-                  md:rounded-3xl
-                `}>
-                <div className="relative flex flex-col gap-4 rounded-xl p-4">
-                    <div
-                        className={`
-                          z-20 flex w-full flex-wrap justify-between gap-2
-                          rounded-xl border border-border bg-default-100 p-2
-                          shadow-xs
-                        `}>
-                        <div
-                            className={`
-                              flex flex-1 flex-wrap content-start justify-start
-                              gap-2
-                            `}>
-                            {/* Style selector */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Size Slider */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Color picker */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Search bar */}
-                            <Skeleton className={`
-                              h-10 w-48 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Reset button */}
-                            <Skeleton className={`
-                              size-10 rounded-lg bg-default-200
-                            `} />
-                            {/* Reset button */}
-                            <Skeleton className={`
-                              h-10 w-16 rounded-lg bg-default-200
-                            `} />
-
-                            {/* Reset button */}
-                            <Skeleton
-                                className={`
-                                  flex h-10 w-12 flex-row items-center
-                                  justify-center gap-1 rounded-lg border-none!
-                                  bg-default-100 p-1
-                                `}></Skeleton>
-                        </div>
-                        {/* alternative to react Select */}
-                        <Skeleton
-                            className={`
-                              size-10 w-full max-w-48 rounded-lg bg-default-200
-                              md:max-w-64
-                            `}
-                        />
-                    </div>
-                    <div
-                        className={`
-                          grid grid-cols-2 gap-2 rounded-xl p-4
-                          text-muted-foreground
-                          sm:grid-cols-3
-                          md:grid-cols-4
-                          lg:grid-cols-5
-                          xl:grid-cols-7
-                        `}>
-                        <GridPlaceholder />
-                    </div>
-                </div>
-            </div>
-        </section>
     )
 }

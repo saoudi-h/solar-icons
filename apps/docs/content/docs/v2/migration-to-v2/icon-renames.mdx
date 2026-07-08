@@ -1,0 +1,87 @@
+---
+title: Icon Renames
+description: Icons renamed in v2. Old names are no longer exported.
+icon: ArrowLeftRightIcon
+---
+
+V2 removed 36 icon names without keeping deprecated aliases. Code that imports one of the old names will fail to compile.
+
+## Renames from issue #493
+
+These were typos and inconsistent naming in the Figma source, fixed in V2.
+
+| Old name                    | New name                   |
+| --------------------------- | -------------------------- |
+| `plain`                     | `plane`                    |
+| `plain-2`                   | `plane-2`                  |
+| `plain-3`                   | `plane-3`                  |
+| `file-favourite`            | `file-favorite`            |
+| `folder-favourite-star`     | `folder-favorite-star`     |
+| `folder-favourite-bookmark` | `folder-favorite-bookmark` |
+| `gallery-favourite`         | `gallery-favorite`         |
+| `map-point-favourite`       | `map-point-favorite`       |
+| `magic-stick`               | `magic-wand`               |
+| `magic-stick-2`             | `magic-wand-2`             |
+| `magic-stick-3`             | `magic-wand-3`             |
+| `weigher`                   | `scale`                    |
+| `sort-by-alphabet`          | `sort-alphabetically`      |
+| `wad-of-money`              | `money-roll`               |
+| `globus`                    | `globe`                    |
+| `trellis`                   | `vanity`                   |
+| `accumulator`               | `car-battery`              |
+| `bell-bing`                 | `bell-ring`                |
+
+## Renames from the V2 backward-compat shim
+
+These were deprecated aliases in V2 (`@deprecated` exports pointing to the correct name). V2 drops the aliases.
+
+| Old name      | New name       |
+| ------------- | -------------- |
+| `magnifer`    | `magnifier`    |
+| `infinity`    | `infinite`     |
+| `condicioner` | `conditioner`  |
+| `siderbar`    | `sidebar`      |
+| `plaaylist`   | `playlist`     |
+| `pallete`     | `palette`      |
+| `tuneing`     | `tuning`       |
+| `horizontall` | `horizontal`   |
+| `minimlistic` | `minimalistic` |
+| `spedometer`  | `speedometer`  |
+| `happly`      | `happy`        |
+| `clound`      | `cloud`        |
+| `recive`      | `receive`      |
+| `essentional` | `essential`    |
+
+## Barrel collision renames
+
+These icons had names ending with a style word (`bold`, `broken`), which caused naming collisions between the main barrel and the dynamic barrel in Nuxt auto-imports. Renamed to eliminate ambiguity.
+
+| Old name                   | New name              |
+| -------------------------- | --------------------- |
+| `bone-broken`              | `bone-fracture`       |
+| `heart-broken`             | `heart-crack`         |
+| `link-broken`              | `unlink`              |
+| `link-broken-minimalistic` | `unlink-minimalistic` |
+| `text`                     | `text-format`         |
+
+## Migration
+
+In your codebase, replace each old name with the new one in both the import path and the component name.
+
+```jsx
+// Before
+import { WeigherBoldIcon } from '@solar-icons/react/bold/weigher'
+
+// After
+import { ScaleBoldIcon } from '@solar-icons/react/bold/scale'
+```
+
+```vue
+<script setup>
+// Before
+import BellBingBoldIcon from '@solar-icons/vue/bold/bell-bing'
+
+// After
+import { BellRingBoldIcon } from '@solar-icons/vue/bold/bell-ring'
+</script>
+```

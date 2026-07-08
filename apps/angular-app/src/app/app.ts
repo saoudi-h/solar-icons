@@ -1,111 +1,125 @@
-import { Component, signal, computed, OnInit, Type, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-import { ALL_ICONS, STYLES, IconStyle } from './icon-list';
-import { provideSolarIcons, SolarDynamicIcon } from '@solar-icons/angular';
-import { MoonBold, SunBold } from '@solar-icons/angular';
-
-const CATEGORY_LOADERS: Record<string, () => Promise<any>> = {
-  arrows: () => import('@solar-icons/angular/arrows'),
-  'arrows-action': () => import('@solar-icons/angular/arrows-action'),
-  astronomy: () => import('@solar-icons/angular/astronomy'),
-  building: () => import('@solar-icons/angular/building'),
-  business: () => import('@solar-icons/angular/business'),
-  call: () => import('@solar-icons/angular/call'),
-  devices: () => import('@solar-icons/angular/devices'),
-  faces: () => import('@solar-icons/angular/faces'),
-  files: () => import('@solar-icons/angular/files'),
-  folders: () => import('@solar-icons/angular/folders'),
-  food: () => import('@solar-icons/angular/food'),
-  hands: () => import('@solar-icons/angular/hands'),
-  home: () => import('@solar-icons/angular/home'),
-  it: () => import('@solar-icons/angular/it'),
-  like: () => import('@solar-icons/angular/like'),
-  list: () => import('@solar-icons/angular/list'),
-  map: () => import('@solar-icons/angular/map'),
-  medicine: () => import('@solar-icons/angular/medicine'),
-  messages: () => import('@solar-icons/angular/messages'),
-  money: () => import('@solar-icons/angular/money'),
-  nature: () => import('@solar-icons/angular/nature'),
-  notes: () => import('@solar-icons/angular/notes'),
-  notifications: () => import('@solar-icons/angular/notifications'),
-  parts: () => import('@solar-icons/angular/parts'),
-  school: () => import('@solar-icons/angular/school'),
-  search: () => import('@solar-icons/angular/search'),
-  security: () => import('@solar-icons/angular/security'),
-  settings: () => import('@solar-icons/angular/settings'),
-  shopping: () => import('@solar-icons/angular/shopping'),
-  sports: () => import('@solar-icons/angular/sports'),
-  'text-formatting': () => import('@solar-icons/angular/text-formatting'),
-  time: () => import('@solar-icons/angular/time'),
-  tools: () => import('@solar-icons/angular/tools'),
-  ui: () => import('@solar-icons/angular/ui'),
-  users: () => import('@solar-icons/angular/users'),
-  video: () => import('@solar-icons/angular/video'),
-  weather: () => import('@solar-icons/angular/weather'),
-};
+import { Component, ChangeDetectionStrategy, signal, ViewEncapsulation } from '@angular/core';
+import {
+    SolarProvider,
+    SolarHomeBold,
+    SolarSettingsBold,
+    SolarUserBold,
+    SolarHeartBold,
+    SolarStarBold,
+    SolarBellBold,
+    SolarInfoCircleBold,
+} from '@solar-icons/angular';
+import { IconGridComponent } from './icon-grid';
+import { ProviderDemoComponent } from './provider-demo';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [FormsModule, SolarDynamicIcon, SunBold],
-  providers: [provideSolarIcons({ MoonBold })],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+        IconGridComponent,
+        ProviderDemoComponent,
+    SolarProvider,
+        SolarHomeBold,
+        SolarSettingsBold,
+        SolarUserBold,
+        SolarHeartBold,
+        SolarStarBold,
+        SolarBellBold,
+        SolarInfoCircleBold,
+    ],
+    styleUrl: './app.css',
+    encapsulation: ViewEncapsulation.None,
+    template: `
+        <div class="min-h-screen bg-slate-900 text-slate-200 p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+
+                <!-- ===== 1. Icon Grid ===== -->
+                <solar-provider>
+                    <app-icon-grid />
+                </solar-provider>
+
+                <!-- ===== 2. CSS Custom Properties ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">2. CSS Custom Properties</h2>
+                    <p class="text-slate-400 text-sm mb-4">Control icons via CSS custom properties on parent elements.</p>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400">Color</span>
+                            <input type="color" [value]="cssColor()" (input)="cssColor.set(($any($event.target).value))"
+                                class="w-10 h-10 rounded cursor-pointer border-0 bg-transparent" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400">Size ({{ cssSize() }}px)</span>
+                            <input type="range" min="16" max="64" [value]="cssSize()" (input)="cssSize.set(parseInt(($any($event.target).value)))"
+                                class="w-32 accent-amber-500" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <code class="text-xs text-slate-500 block">style="--solar-color: \u2026; --solar-size: \u2026;"</code>
+                            <div class="bg-slate-900 rounded-lg p-4 flex gap-4"
+                                [style.--solar-color]="cssColor()" [style.--solar-size.px]="cssSize()">
+                                <svg solarHomeBold></svg>
+                                <svg solarSettingsBold></svg>
+                                <svg solarUserBold></svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <code class="text-xs text-slate-500 block">Tailwind [style.--solar-color="..."]</code>
+                            <div class="bg-slate-900 rounded-lg p-4 flex gap-4"
+                                [style.--solar-color]="cssColor()" [style.--solar-size.px]="cssSize()">
+                                <svg solarHeartBold></svg>
+                                <svg solarStarBold></svg>
+                                <svg solarBellBold></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 3. SolarProvider + useSolar ===== -->
+                <solar-provider>
+                    <app-provider-demo />
+                </solar-provider>
+
+                <!-- ===== 4. CSS Class Styling ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">4. CSS Class Styling</h2>
+                    <p class="text-slate-400 text-sm mb-4">Each icon is targetable via CSS class selectors.</p>
+                    <div class="bg-slate-900 rounded-lg p-4 flex gap-4">
+                        <svg solarHomeBold></svg>
+                        <svg solarStarBold style="color: #60a5fa"></svg>
+                        <svg solarHeartBold></svg>
+                    </div>
+                </div>
+
+                <!-- ===== 5. Accessibility ===== -->
+                <div class="bg-slate-800/30 rounded-2xl p-6 border border-slate-700/50">
+                    <h2 class="text-xl font-bold text-white mb-1">5. Accessibility</h2>
+                    <p class="text-slate-400 text-sm mb-4">Icons have aria-hidden="true" by default. Pass alt, aria-label, or title to make them accessible.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">Default (aria-hidden)</code>
+                            <svg solarInfoCircleBold></svg>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">alt="Information"</code>
+                            <svg solarInfoCircleBold alt="Information"></svg>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg p-4 space-y-2">
+                            <code class="text-xs text-green-400 block">aria-label</code>
+                            <svg solarInfoCircleBold aria-label="Information about this icon"></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App implements OnInit {
-  protected readonly icon = 'MoonBold';
-  protected readonly icon2 = SunBold;
+export class App {
+    readonly cssColor = signal('#f59e0b');
+    readonly cssSize = signal(40);
 
-  protected readonly styles = STYLES;
-  protected readonly selectedStyle = signal<IconStyle>('Bold');
-  protected readonly iconSize = signal(32);
-  protected readonly iconColor = signal('#f59e0b');
-  protected readonly searchQuery = signal('');
-  protected readonly loadedCategories = signal(0);
-  protected readonly totalCategories = Object.keys(CATEGORY_LOADERS).length;
-
-  private readonly iconMap = signal<Map<string, Type<any>>>(new Map());
-
-  async ngOnInit(): Promise<void> {
-    const categories = Object.entries(CATEGORY_LOADERS);
-    const map = new Map<string, Type<any>>();
-
-    for (const [, loader] of categories) {
-      const module = await loader();
-      for (const [key, value] of Object.entries(module)) {
-        if (typeof value === 'function') {
-          map.set(key, value as Type<any>);
-        }
-      }
-      // Batch update every few categories to reduce re-renders
-      this.iconMap.set(new Map(map));
-      this.loadedCategories.update((n) => n + 1);
-      await new Promise((r) => setTimeout(r, 0));
-    }
-  }
-
-  protected readonly displayIcons = computed(() => {
-    const query = this.searchQuery().toLowerCase();
-    const style = this.selectedStyle();
-    const map = this.iconMap();
-
-    const filteredNames = query
-      ? ALL_ICONS.filter((name) => name.toLowerCase().includes(query))
-      : ALL_ICONS;
-
-    const result: { name: string; component: Type<any> }[] = [];
-    for (const name of filteredNames) {
-      const component = map.get(name + style);
-      if (component) {
-        result.push({ name, component });
-      }
-    }
-    return result;
-  });
-
-  protected trackByIconName(index: number, item: { name: string }): string {
-    return item.name;
-  }
+    protected parseInt(v: string): number { return Number.parseInt(v, 10); }
 }

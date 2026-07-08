@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1e1e1e;
+    color: #e6e6e6;
+    font-size: 13px;
+  }
+  body { padding: 16px; }
+  h1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .toolbar input[type=text] {
+    flex: 1;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #e6e6e6;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: inherit;
+  }
+  .toolbar input[type=text]:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+  .toolbar button {
+    background: #2e2e2e;
+    color: #e6e6e6;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .toolbar button:hover { background: #3e3e3e; }
+  .summary {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 6px;
+  }
+  .rename-list {
+    max-height: 380px;
+    overflow-y: auto;
+    border: 1px solid #2e2e2e;
+    border-radius: 6px;
+    background: #252525;
+    margin-bottom: 12px;
+  }
+  .rename-row {
+    display: grid;
+    grid-template-columns: 20px 1fr 16px 1fr 80px;
+    gap: 10px;
+    padding: 7px 12px;
+    border-bottom: 1px solid #2e2e2e;
+    align-items: center;
+  }
+  .rename-row:last-child { border-bottom: none; }
+  .rename-row input[type=checkbox] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #2563eb;
+  }
+  .rename-row .arrow { color: #555; text-align: center; font-size: 11px; }
+  .rename-row .old, .rename-row .new, .rename-row .reason {
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    word-break: break-all;
+  }
+  .rename-row .old { color: #f87171; }
+  .rename-row .new { color: #4ade80; }
+  .rename-row .reason { color: #666; font-size: 10px; text-align: right; }
+  .empty {
+    padding: 32px 16px;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  button.action {
+    background: #2e2e2e;
+    color: #e6e6e6;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  button.action:hover { background: #3e3e3e; }
+  button.primary {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+  button.primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .progress-track {
+    height: 3px;
+    background: #2e2e2e;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: #2563eb;
+    width: 0%;
+    transition: width 0.2s ease;
+  }
+  .status {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #888;
+    min-height: 14px;
+  }
+  .status.error { color: #f87171; }
+  .status.done { color: #4ade80; }
+</style>
+</head>
+<body>
+  <h1>Solar Icon Renamer</h1>
+  <div class="subtitle">Rename icon components per the V3 source-of-truth fix (issue #493). Uncheck false positives before applying.</div>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Filter (e.g. 'magnifer', 'plain', 'weigher')...">
+    <button id="select-all">Select all</button>
+    <button id="select-none">Select none</button>
+  </div>
+
+  <div class="summary" id="summary">Scanning document...</div>
+
+  <div class="rename-list" id="list">
+    <div class="empty">Scanning...</div>
+  </div>
+
+  <div class="actions">
+    <button id="cancel" class="action">Cancel</button>
+    <button id="apply" class="primary" disabled>Apply (0)</button>
+  </div>
+
+  <div class="progress-track"><div class="progress-bar" id="bar"></div></div>
+  <div class="status" id="status"></div>
+
+<script>
+  const list = document.getElementById('list')
+  const summary = document.getElementById('summary')
+  const applyBtn = document.getElementById('apply')
+  const cancelBtn = document.getElementById('cancel')
+  const status = document.getElementById('status')
+  const bar = document.getElementById('bar')
+  const searchInput = document.getElementById('search')
+  const selectAllBtn = document.getElementById('select-all')
+  const selectNoneBtn = document.getElementById('select-none')
+
+  let renames = []
+  const selected = new Set()
+
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    })[c])
+
+  const keyOf = (r) => r.id + '|' + r.matchedBy
+
+  const matchesSearch = (r, query) => {
+    if (!query) return true
+    const q = query.toLowerCase()
+    return (
+      r.oldName.toLowerCase().includes(q) ||
+      r.newName.toLowerCase().includes(q) ||
+      r.matchedBy.toLowerCase().includes(q)
+    )
+  }
+
+  const updateApplyButton = () => {
+    const count = renames.filter((r) => selected.has(keyOf(r))).length
+    applyBtn.textContent = 'Apply (' + count + ')'
+    applyBtn.disabled = count === 0
+  }
+
+  const renderList = () => {
+    const query = searchInput.value.trim()
+    const filtered = renames.filter((r) => matchesSearch(r, query))
+
+    if (renames.length === 0) {
+      list.innerHTML = '<div class="empty">No matching components found.<br>Nothing to rename.</div>'
+      summary.textContent = '0 candidates.'
+      updateApplyButton()
+      return
+    }
+
+    if (filtered.length === 0) {
+      list.innerHTML =
+        '<div class="empty">No matches for &ldquo;' + escapeHtml(query) + '&rdquo;.</div>'
+    } else {
+      list.innerHTML = filtered
+        .map((r) => {
+          const k = keyOf(r)
+          const checked = selected.has(k) ? 'checked' : ''
+          return (
+            '<div class="rename-row">' +
+              '<input type="checkbox" data-key="' + escapeHtml(k) + '" ' + checked + '>' +
+              '<span class="old" title="' + escapeHtml(r.oldName) + '">' + escapeHtml(r.oldName) + '</span>' +
+              '<span class="arrow">&rarr;</span>' +
+              '<span class="new" title="' + escapeHtml(r.newName) + '">' + escapeHtml(r.newName) + '</span>' +
+              '<span class="reason">via &ldquo;' + escapeHtml(r.matchedBy) + '&rdquo;</span>' +
+            '</div>'
+          )
+        })
+        .join('')
+
+      list.querySelectorAll('input[type=checkbox]').forEach((cb) => {
+        cb.onchange = (e) => {
+          const k = e.target.dataset.key
+          if (e.target.checked) selected.add(k)
+          else selected.delete(k)
+          updateApplyButton()
+        }
+      })
+    }
+
+    const shown = filtered.length
+    const total = renames.length
+    const sel = renames.filter((r) => selected.has(keyOf(r))).length
+    summary.textContent =
+      total + ' candidate' + (total === 1 ? '' : 's') +
+      (shown !== total ? ' (' + shown + ' shown)' : '') +
+      ' - ' + sel + ' selected'
+    updateApplyButton()
+  }
+
+  window.onmessage = (event) => {
+    const msg = event.data.pluginMessage
+    if (!msg) return
+    if (msg.type === 'preview') {
+      renames = msg.renames
+      renames.forEach((r) => selected.add(keyOf(r)))
+      renderList()
+    } else if (msg.type === 'progress') {
+      const pct = msg.total === 0 ? 100 : (msg.done / msg.total) * 100
+      bar.style.width = pct + '%'
+      status.textContent = 'Renamed ' + msg.done + ' of ' + msg.total + '...'
+      if (msg.error) {
+        status.classList.add('error')
+        status.textContent += ' (' + msg.error + ')'
+      }
+    } else if (msg.type === 'done') {
+      bar.style.width = '100%'
+      status.classList.remove('error')
+      status.classList.add('done')
+      status.textContent =
+        'Done. ' + msg.total + ' component' + (msg.total === 1 ? '' : 's') + ' renamed.'
+      applyBtn.disabled = true
+      applyBtn.textContent = 'Done'
+    }
+  }
+
+  searchInput.oninput = renderList
+  selectAllBtn.onclick = () => {
+    renames.forEach((r) => selected.add(keyOf(r)))
+    renderList()
+  }
+  selectNoneBtn.onclick = () => {
+    selected.clear()
+    renderList()
+  }
+
+  applyBtn.onclick = () => {
+    const items = renames.filter((r) => selected.has(keyOf(r)))
+    if (items.length === 0) return
+    applyBtn.disabled = true
+    applyBtn.textContent = 'Applying...'
+    cancelBtn.disabled = true
+    parent.postMessage({ pluginMessage: { type: 'apply', items } }, '*')
+  }
+
+  cancelBtn.onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+  }
+</script>
+</body>
+</html>

@@ -8,6 +8,9 @@ import { IconBase } from './icon-base'
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        class: 'solar-icon solar-test-icon',
+    },
 })
 class TestIcon extends IconBase {}
 
@@ -36,27 +39,21 @@ describe('IconBase', () => {
         it('should have default class', () => {
             fixture.detectChanges()
             expect(fixture.nativeElement.classList.contains('solar-icon')).toBe(true)
+            expect(fixture.nativeElement.classList.contains('solar-test-icon')).toBe(true)
         })
     })
 
     describe('size input', () => {
-        it('should default to 1em', () => {
+        it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgAttribute('width')).toBe('1em')
+            expect(getSvgAttribute('width')).toBe('var(--solar-size, 24px)')
         })
     })
 
     describe('color input', () => {
-        it('should default to currentColor', () => {
+        it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgStyle('color')).toBe('currentcolor')
-        })
-    })
-
-    describe('mirrored input', () => {
-        it('should not be mirrored by default', () => {
-            fixture.detectChanges()
-            expect(getSvgAttribute('transform')).toBeNull()
+            expect(getSvgAttribute('color')).toBe('var(--solar-color, currentColor)')
         })
     })
 

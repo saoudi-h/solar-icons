@@ -1,9 +1,8 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const PACKAGES = [
     { id: 'react', label: 'React', pkg: '@solar-icons/react' },
-    { id: 'react-perf', label: 'React Perf', pkg: '@solar-icons/react-perf' },
     { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
     { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },

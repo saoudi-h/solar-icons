@@ -1,6 +1,6 @@
-import type { IconData } from '@/core/generated/descriptions'
-import icons from '@/core/generated/descriptions'
-import type { Category } from '@/core/generated/utils'
+import type { IconData } from '@/generated/descriptions'
+import icons from '@/generated/descriptions'
+import type { Category } from '@solar-icons/core'
 
 import Fuse from 'fuse.js'
 

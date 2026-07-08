@@ -13,10 +13,6 @@
             "path": "packages/react",
         },
         {
-            "name": "react-perf",
-            "path": "packages/react-perf",
-        },
-        {
             "name": "vue",
             "path": "packages/vue",
         },
@@ -28,8 +24,8 @@
             "path": "apps/vue-app",
         },
         {
-            "name": "react-perf-app",
-            "path": "apps/react-perf-app",
+            "name": "react-app",
+            "path": "apps/react-app",
         },
         {
             "name": "nuxt",

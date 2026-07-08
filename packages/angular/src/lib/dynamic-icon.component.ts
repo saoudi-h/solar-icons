@@ -14,24 +14,24 @@ import { SOLAR_ICON_REGISTRY } from './icon-registry'
 import type { IconComponent, SolarIconName } from './types'
 
 /**
- * A lightweight directive that dynamically renders a Solar Icon component by its name or class.
+ * A lightweight directive that renders a Solar Icon component dynamically by its name or class.
  *
  * To use icons by name, you must first register them using `provideSolarIcons`.
  *
  * @example
  * ```html
  * <!-- Render by registered name -->
- * <ng-container solarIcon="ArrowLeftBold" [size]="24" color="red" />
+ *  <ng-container solarIcon="SolarArrowLeftBold" [size]="24" color="red" />
  *
  * <!-- Render by component class directly -->
- * <ng-container [solarIcon]="ArrowLeftBold" [size]="24" />
+ * <ng-container [solarIcon]="SomeIconComponent" [size]="24" />
  * ```
  */
 @Directive({
     selector: '[solarIcon]',
     standalone: true,
 })
-export class SolarDynamicIcon {
+export class SolarIcon {
     private readonly vcr = inject(ViewContainerRef)
     private readonly registry = inject(SOLAR_ICON_REGISTRY, { optional: true })
 
@@ -44,8 +44,14 @@ export class SolarDynamicIcon {
     readonly size = input<string | number>()
     /** Color of the icon (CSS color value) */
     readonly color = input<string>()
-    /** Whether to mirror the icon horizontally */
-    readonly mirrored = input<boolean>()
+    /** Stroke width of the icon */
+    readonly strokeWidth = input<string | number>()
+    /** Weight/style for dynamic icons (e.g. 'Bold', 'Linear') */
+    readonly weight = input<string>()
+    /** Secondary color for duotone icons */
+    readonly secondaryColor = input<string>()
+    /** Secondary opacity for duotone icons */
+    readonly secondaryOpacity = input<string | number>()
     /** Accessibility label for the icon */
     readonly alt = input<string>()
 
@@ -66,13 +72,20 @@ export class SolarDynamicIcon {
 
             const size = this.size()
             const color = this.color()
-            const mirrored = this.mirrored()
+            const strokeWidth = this.strokeWidth()
+            const weight = this.weight()
+            const secondaryColor = this.secondaryColor()
+            const secondaryOpacity = this.secondaryOpacity()
             const alt = this.alt()
 
             untracked(() => {
                 if (size !== undefined) ref.setInput('size', size)
                 if (color !== undefined) ref.setInput('color', color)
-                if (mirrored !== undefined) ref.setInput('mirrored', mirrored)
+                if (strokeWidth !== undefined) ref.setInput('strokeWidth', strokeWidth)
+                if (weight !== undefined) ref.setInput('weight', weight)
+                if (secondaryColor !== undefined) ref.setInput('secondaryColor', secondaryColor)
+                if (secondaryOpacity !== undefined)
+                    ref.setInput('secondaryOpacity', secondaryOpacity)
                 if (alt !== undefined) ref.setInput('alt', alt)
             })
         })
@@ -87,11 +100,11 @@ export class SolarDynamicIcon {
             if (this.registry) {
                 component = this.registry[icon]
                 if (!component) {
-                    console.warn(`[SolarDynamicIcon] Icon "${icon}" not found in registry.`)
+                    console.warn(`[SolarIcon] Icon "${icon}" not found in registry.`)
                 }
             } else {
                 console.warn(
-                    `[SolarDynamicIcon] No icon registry found. Did you forget to call provideSolarIcons()?`
+                    `[SolarIcon] No icon registry found. Did you forget to call provideSolarIcons()?`
                 )
             }
         } else {

@@ -1,0 +1,145 @@
+---
+title: Svelte
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Svelte 5.
+icon: svelte
+---
+
+```package-install
+@solar-icons/svelte
+```
+
+Requires Svelte 5.0+. Uses runes (`$props`, `$derived`, `$bindable`).
+
+## Import patterns
+
+```svelte
+// Per-style (named, no style suffix - style is in the path)
+import { HeartIcon } from '@solar-icons/svelte/bold'
+
+// Single icon (default export, lighter on the dev server)
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+
+// Top-level (named, style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/svelte'
+```
+
+## Basic usage
+
+```svelte
+<script>
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+</script>
+
+<HeartIcon color="#ef4444" size={32} />
+```
+
+## Duotone
+
+```svelte
+<script>
+import HeartIcon from '@solar-icons/svelte/bold-duotone/heart'
+</script>
+
+<HeartIcon
+  color="#3b82f6"
+  secondaryColor="#f59e0b"
+  secondaryOpacity={0.4}
+  size={48}
+/>
+```
+
+## Stroke width
+
+```svelte
+<script>
+import SettingsIcon from '@solar-icons/svelte/linear/settings'
+</script>
+
+<SettingsIcon strokeWidth={2} size={24} />
+```
+
+## SolarProvider
+
+Provider props support two-way binding (`$bindable`).
+
+```svelte
+<script>
+import { SolarProvider } from '@solar-icons/svelte'
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+
+let color = $state('#3b82f6')
+</script>
+
+<SolarProvider bind:color size={24} strokeWidth={1.5}>
+  <input type="color" bind:value={color} />
+  <HeartIcon />
+</SolarProvider>
+```
+
+| Prop               | CSS Variable                | Fallback       |
+| ------------------ | --------------------------- | -------------- |
+| `color`            | `--solar-color`             | `currentColor` |
+| `size`             | `--solar-size`              | `24px`         |
+| `strokeWidth`      | `--solar-stroke-width`      | `1.5`          |
+| `secondaryColor`   | `--solar-secondary-color`   | `currentColor` |
+| `secondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
+
+The provider does not set defaults. Icons fall back to these values through CSS when no provider or prop is specified.
+
+## Dynamic icons
+
+The `@solar-icons/svelte/dynamic` path exports runtime-switchable icons (single component per logical icon with a `weight` prop):
+
+```svelte
+<script>
+import { HeartIcon } from '@solar-icons/svelte/dynamic'
+</script>
+
+<HeartIcon weight="Bold" color="#ef4444" size={32} />
+```
+
+Available weights: `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
+
+## useSolar
+
+Must be called inside a `<SolarProvider>`.
+
+```svelte
+<script>
+import { useSolar } from '@solar-icons/svelte'
+
+const solar = useSolar()
+</script>
+
+<button onclick={() => solar.setColor('#ef4444')}>
+  Current: {solar.color}
+</button>
+```
+
+Keep `solar` as a single object. Reading `solar.color` is reactive because the provider's getter re-evaluates the prop on every access. Destructuring (`const { color } = useSolar()`) snapshots the initial value and loses reactivity.
+
+## Icon props
+
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
+
+All standard SVG attributes pass through to the `<svg>` element (`class`, `style`, `data-*`, `role`, `aria-*`, etc.).
+
+## CSS variables
+
+Same as [React](/docs/v2/frameworks/react#css-variables).
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [React page](/docs/v2/frameworks/react#css-classes).
+
+## ESM only
+
+`@solar-icons/svelte` is ESM-only. `require()` does not work.

@@ -15,7 +15,6 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "allowImportingTsExtensions": true,
         "noEmit": true
     },
     "include": [
@@ -24,7 +23,6 @@
         "./src/*.d.ts",
         "./src/*.vue",
         "env.d.ts",
-        "vitest.setup.ts",
         "vitest.config.ts",
         "tsdown.config.ts",
         "__tests__/**/*.ts",

@@ -14,13 +14,7 @@ const config: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    serverExternalPackages: [
-        'ts-morph',
-        'typescript',
-        'oxc-transform',
-        'twoslash',
-        'shiki',
-    ],
+    serverExternalPackages: ['ts-morph', 'typescript', 'oxc-transform', 'twoslash', 'shiki'],
     async rewrites() {
         return [
             {
@@ -34,6 +28,15 @@ const config: NextConfig = {
             {
                 source: '/docs/:path*.mdx',
                 destination: '/llms.mdx/docs/:path*',
+            },
+        ]
+    },
+    async redirects() {
+        return [
+            {
+                source: '/docs',
+                destination: '/docs/legacy',
+                permanent: false,
             },
         ]
     },

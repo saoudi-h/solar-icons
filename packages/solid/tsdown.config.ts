@@ -1,37 +1,31 @@
 import solid from 'unplugin-solid/rolldown';
-import { readdirSync, statSync } from 'fs';
-import { join } from 'path';
 import type { UserConfig } from 'tsdown/config';
 import { defineConfig } from 'tsdown/config';
 
 const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline'];
 
+const STYLE_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+};
 function genEntries(styles: string[]) {
-    const iconsDir = join(process.cwd(), 'src/icons');
-    const categories = readdirSync(iconsDir).filter((name) => {
-        const filePath = join(iconsDir, name);
-        return statSync(filePath).isDirectory() && name !== 'style';
-    });
-
     const entries: Record<string, string> = {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
+        'icons/styled': './src/icons/styled.ts',
+        'icons/dynamic/index': './src/icons/dynamic/index.ts',
     };
 
     for (const style of styles) {
-        entries[`icons/style/${style}`] = `./src/icons/style/${style}.ts`;
+        const kebab = STYLE_KEBAB[style];
+        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`;
     }
 
-    for (const category of categories) {
-        // Category index (sibling file)
-        entries[`icons/${category}`] = `./src/icons/${category}.ts`;
-
-        for (const style of styles) {
-            // Per-category + style index (sibling file)
-            entries[`icons/${category}/${style}`] = `./src/icons/${category}/${style}.ts`;
-        }
-    }
     return entries;
 }
 
@@ -68,20 +62,28 @@ const config: UserConfig = defineConfig({
                 import: './dist/lib/*.mjs',
             };
 
-            pkg['./category'] = {
-                types: './dist/icons/index.d.mts',
-                import: './dist/icons/index.mjs',
+            pkg['./dynamic'] = {
+                types: './dist/icons/dynamic/index.d.mts',
+                import: './dist/icons/dynamic/index.mjs',
             };
 
-            pkg['./category/*'] = {
-                types: './dist/icons/*.d.mts',
-                import: './dist/icons/*.mjs',
+            pkg['./dynamic/*'] = {
+                types: './dist/icons/dynamic/*.d.mts',
+                import: './dist/icons/dynamic/*.mjs',
             };
 
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
             };
+
+            for (const style of styles) {
+                const kebab = STYLE_KEBAB[style];
+                pkg[`./${kebab}/*`] = {
+                    types: `./dist/icons/${kebab}/*.d.mts`,
+                    import: `./dist/icons/${kebab}/*.mjs`,
+                };
+            }
 
             return pkg;
         },

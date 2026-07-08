@@ -9,5 +9,9 @@
     },
     "dependencies": {
         "nuxt": "^4.0.1"
+    },
+    "devDependencies": {
+        "tailwindcss": "^4.3.1",
+        "@tailwindcss/vite": "^4.3.1"
     }
 }

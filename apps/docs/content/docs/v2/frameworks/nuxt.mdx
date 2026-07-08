@@ -1,0 +1,142 @@
+---
+title: Nuxt
+description: Solar Icons Nuxt module. Auto-import of all icon components with a configurable name prefix.
+icon: nuxt
+---
+
+```package-install
+@solar-icons/nuxt
+```
+
+## Installation
+
+The module wraps `@solar-icons/vue` and provides:
+
+- **Auto-imported icons:** all 7,476 static icons + 1,246 dynamic icons
+- **`SolarProvider`** and **`useSolar`:** auto-imported
+- **`#solar-icons` aliases:** for explicit imports with full TypeScript support
+- **Provider defaults:** configure default color, size, stroke width from `nuxt.config.ts`
+
+## Module options
+
+| Option             | Type               | Default          | Description                                    |
+| ------------------ | ------------------ | ---------------- | ---------------------------------------------- |
+| `namePrefix`       | `string`           | `'Solar'`        | Prefix for auto-imported component names       |
+| `autoImport`       | `boolean`          | `true`           | Register all icons as auto-imported components |
+| `provider`         | `boolean`          | `true`           | Inject global provider state wrapping the app  |
+| `color`            | `string`           | `'currentColor'` | Default icon color                             |
+| `size`             | `string \| number` | `24`             | Default icon size                              |
+| `strokeWidth`      | `number`           | `1.5`            | Default stroke width                           |
+| `secondaryColor`   | `string`           | —                | Default duotone accent color                   |
+| `secondaryOpacity` | `number`           | —                | Default duotone accent opacity (0–1)           |
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+    modules: ['@solar-icons/nuxt'],
+    solarIcons: {
+        namePrefix: 'Solar',
+        autoImport: true,
+        provider: true,
+        color: 'currentColor',
+        size: 24,
+        strokeWidth: 1.5,
+        secondaryColor: '#3b82f6',
+        secondaryOpacity: 0.5,
+    },
+})
+```
+
+When `provider: true` (default), the module injects a global `SolarState` into the Nuxt Vue app and writes the configured defaults as `--solar-*` CSS variables on `document.body` (client side). `useSolar()` works in any component without a wrapping `<SolarProvider>`.
+
+When `provider: false`, set up the state manually. Either call `createSolarIcons` from a Nuxt plugin, or wrap `app.vue` in `<SolarProvider>`:
+
+```vue
+<!-- app.vue -->
+<template>
+    <SolarProvider>
+        <NuxtPage />
+    </SolarProvider>
+</template>
+```
+
+## Auto-import
+
+With `autoImport: true` (default), every icon is available in templates without explicit imports. The module registers two sets of components:
+
+### Main barrel (disambiguated names)
+
+Pattern: `{prefix}{IconName}{Style}Icon`. Style is always explicit in the name.
+
+```vue
+<template>
+    <SolarHeartBoldIcon color="#ef4444" :size="32" />
+    <SolarSettingsOutlineIcon :stroke-width="2" />
+    <SolarHomeBoldDuotoneIcon secondary-color="#3b82f6" :secondary-opacity="0.4" />
+</template>
+```
+
+### Dynamic icons (runtime style switching)
+
+Pattern: `{prefix}{IconName}Icon` (no style suffix). These wrap all 6 styles and accept a `weight` prop.
+
+```vue
+<template>
+    <SolarArrowUpIcon weight="Bold" />
+    <SolarHeartIcon :weight="selectedWeight" />
+</template>
+```
+
+`SolarProvider` and `useSolar` are auto-imported regardless of the `autoImport` setting.
+
+## Explicit imports with #solar-icons aliases
+
+The module registers Nuxt aliases that resolve to `@solar-icons/vue` sub-paths. These work in both `<script>` and `<template>` and have full TypeScript support.
+
+| Alias                       | Resolves to                     | Content                   |
+| --------------------------- | ------------------------------- | ------------------------- |
+| `#solar-icons`              | `@solar-icons/vue`              | Main barrel (7,476 icons) |
+| `#solar-icons/lib`          | `@solar-icons/vue/lib`          | SolarProvider, useSolar   |
+| `#solar-icons/dynamic`      | `@solar-icons/vue/dynamic`      | Dynamic icons (1,246)     |
+| `#solar-icons/bold`         | `@solar-icons/vue/bold`         | Bold style barrel         |
+| `#solar-icons/bold-duotone` | `@solar-icons/vue/bold-duotone` | BoldDuotone style barrel  |
+| `#solar-icons/broken`       | `@solar-icons/vue/broken`       | Broken style barrel       |
+| `#solar-icons/linear`       | `@solar-icons/vue/linear`       | Linear style barrel       |
+| `#solar-icons/line-duotone` | `@solar-icons/vue/line-duotone` | LineDuotone style barrel  |
+| `#solar-icons/outline`      | `@solar-icons/vue/outline`      | Outline style barrel      |
+
+```vue
+<script setup>
+import { HeartIcon } from '#solar-icons/bold'
+import { HeartIcon as DynamicHeart } from '#solar-icons/dynamic'
+import { useSolar } from '#solar-icons/lib'
+</script>
+
+<template>
+    <HeartIcon color="#ef4444" :size="32" />
+    <DynamicHeart weight="Outline" />
+</template>
+```
+
+## Entry points
+
+For consumers outside Nuxt (scripts, tests, other frameworks), the package also exports standard entry points:
+
+| Import path                       | Re-exports                       |
+| --------------------------------- | -------------------------------- |
+| `@solar-icons/nuxt/icons`         | `@solar-icons/vue` (main barrel) |
+| `@solar-icons/nuxt/icons/{style}` | `@solar-icons/vue/{style}`       |
+| `@solar-icons/nuxt/dynamic`       | `@solar-icons/vue/dynamic`       |
+| `@solar-icons/nuxt/lib`           | `@solar-icons/vue/lib`           |
+
+In a Nuxt app, prefer the `#solar-icons` aliases. They resolve at build time and have TypeScript support via the generated tsconfig.
+
+## SolarProvider and useSolar
+
+The provider and composable work identically to the Vue package. See the [Vue documentation](/docs/v2/frameworks/vue#solarprovider) for props, CSS variables, and usage examples.
+
+`useSolar()` must be called inside a `<SolarProvider>` tree. The provider uses scoped `provide`/`inject`. No global context.
+
+## ESM only
+
+`@solar-icons/nuxt` is ESM-only.

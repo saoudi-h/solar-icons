@@ -1,0 +1,140 @@
+---
+title: Angular Migration
+description: Upgrade @solar-icons/angular to v2.
+icon: angular
+---
+
+## Standalone components
+
+v2 components are standalone. They were already standalone before v2. No module removal needed.
+
+## Component names
+
+v2 uses `Solar`-prefixed PascalCase imports with style suffixes. Before v2, icons used style-suffixed names without prefix.
+
+**Before (pre-v2):**
+
+```ts
+import { HeartBold } from '@solar-icons/angular'
+```
+
+**After (v2):**
+
+```ts
+import { SolarHeartBold } from '@solar-icons/angular'
+```
+
+## SolarProvider
+
+v2 adds `<solar-provider>` for sharing styling via CSS custom properties:
+
+```ts
+import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarProvider, SolarHomeBold],
+    template: `
+        <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
+            <svg solarHomeBold></svg>
+        </solar-provider>
+    `,
+})
+export class AppComponent {}
+```
+
+## useSolar
+
+Child-driven API for components inside `<solar-provider>`:
+
+```ts
+import { useSolar } from '@solar-icons/angular'
+
+function MyComponent() {
+    const solar = useSolar()
+    solar.setColor('#ef4444')
+}
+```
+
+<Callout type="warn">
+Set defaults with `<solar-provider>` props. In child components, read from `useSolar()` and write to it **only** in response to user events. Initial writes in a child constructor are overridden by the provider's inputs. Avoid them.
+</Callout>
+
+## Duotone and stroke width
+
+v2 adds duotone support and stroke width control for linear styles:
+
+```html
+<svg solarHeartBoldDuotone secondaryColor="#f59e0b" [secondaryOpacity]="0.4" />
+<svg solarSettingsLinear [strokeWidth]="2" />
+```
+
+## Additional inputs
+
+v2 icons accept additional inputs:
+
+| Input              | Type               | Description                       |
+| ------------------ | ------------------ | --------------------------------- |
+| `strokeWidth`      | `string \| number` | Stroke width (linear styles only) |
+| `secondaryColor`   | `string`           | Duotone accent color              |
+| `secondaryOpacity` | `number`           | Duotone accent opacity            |
+| `isolated`         | `boolean`          | Ignores provider CSS variables    |
+| `alt`              | `string`           | Accessibility label               |
+| `ariaLabel`        | `string`           | `aria-label` attribute            |
+| `titleAttr`        | `string`           | Explicit `<title>` text           |
+
+Before v2, only `size`, `color`, `alt`, and `mirrored` were available.
+
+## Dynamic rendering (pre-v2)
+
+The old `SolarDynamicIcon` directive + `provideSolarIcons` registry is still available, renamed to `SolarIcon`. Works identically. Register icons by name, then render by string or class reference.
+
+```ts
+import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
+import { SolarHeartBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarIcon],
+    template: '<ng-container solarIcon="SolarHeartBold" [size]="24" />',
+    providers: [provideSolarIcons({ SolarHeartBold })],
+})
+export class AppComponent {}
+```
+
+## Multi-style dynamic components
+
+v2 adds multi-style components that bundle all 6 styles in one component and switch via `weight` input.
+
+Import from the new `@solar-icons/angular/dynamic` entry point:
+
+```ts
+import { SolarHome } from '@solar-icons/angular/dynamic'
+```
+
+Use them directly in the template:
+
+```html
+<svg solarHome weight="Bold" [size]="24" color="#ef4444" />
+```
+
+These components are independent of `SolarIcon`. No directive, no registry, no provider needed.
+
+### Which to choose
+
+| Need                                     | Solution                                             |
+| ---------------------------------------- | ---------------------------------------------------- |
+| One style, one file, minimal bundle      | Static component (`SolarHomeBold`)                   |
+| Switch styles at runtime on a known icon | Multi-style component (`SolarHome` from `./dynamic`) |
+| Icons from API / CMS / user config       | `SolarIcon` directive + `provideSolarIcons`          |
+
+## CSS classes
+
+v2 adds a base CSS class `solar` plus a per-icon variant `solar-{kebab}-{style}` on every icon:
+
+```html
+<svg solarHomeBold></svg>
+<!-- renders with: class="solar solar-home-bold" -->
+```
+
+Before v2, icons had no CSS classes.

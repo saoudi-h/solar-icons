@@ -16,7 +16,7 @@ export const SOLAR_ICON_REGISTRY = new InjectionToken<SolarIconRegistry>('SOLAR_
  *
  * @example
  * providers: [
- *   provideSolarIcons({ HeartBold, StarBold })
+ *   provideSolarIcons({ SolarHeartBold, SolarStarBold })
  * ]
  */
 export function provideSolarIcons(registry: Record<string, Type<IconBase>>): Provider {

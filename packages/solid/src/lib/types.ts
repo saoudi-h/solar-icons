@@ -13,10 +13,19 @@ export interface IconBaseProps {
     alt?: string;
     color?: string;
     size?: string | number;
-    mirrored?: boolean;
+    strokeWidth?: string | number;
+    secondaryColor?: string;
+    secondaryOpacity?: number;
+    iconName?: string;
+    /** When `true`, the icon ignores all `SolarProvider` values and uses hardcoded defaults. */
+    isolated?: boolean;
+    /**
+     * Raw SVG body string, used to bypass the Solid template compiler's
+     * `<svg>` namespace wrapping.
+     */
+    iconBody?: string;
 }
 
-// SolidJS JSX types for SVG elements
 export type SvgSVGAttributes = JSX.SvgSVGAttributes<SVGSVGElement>;
 
 export interface IconProps extends IconBaseProps {

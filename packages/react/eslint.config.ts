@@ -11,7 +11,6 @@ const config: Config[] = defineConfig([
             'lint-staged.config.mjs',
             'prettier.config.mjs',
             'src/icons',
-            'src/defs',
         ],
     },
 ])

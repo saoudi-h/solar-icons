@@ -1,91 +1,96 @@
 <template>
-  <div class="flex flex-col gap-8 w-full">
-    <div class="flex flex-row items-center justify-between gap-2 w-full py-12">
-      <div class="flex flex-col gap-2">
-        <h1 class="text-4xl font-bold">
-          Solar Icons Gallery
-        </h1>
-        <p class="text-muted-foreground">
-          Explore a collection of Solar Icons in different styles and sizes.
-        </p>
+  <div class="space-y-8">
+    <div>
+      <h1 class="text-3xl font-bold">
+        Module Test
+      </h1>
+      <p class="text-slate-400 mt-1">
+        This page tests <code class="text-amber-400">@solar-icons/nuxt</code> auto-imports. Every icon below is rendered via <code class="text-amber-400">&lt;SolarXxxIcon /&gt;</code> — no explicit import from <code class="text-amber-400">@solar-icons/vue</code>.
+      </p>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold text-slate-200">
+        Auto-imported Icons (main barrel)
+      </h2>
+      <p class="text-slate-400 text-sm">
+        These components are registered by the module via <code>addComponent()</code> from <code>@solar-icons/vue</code>. Nuxt resolves them at compile time.
+      </p>
+      <div class="flex flex-wrap gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
+        <SolarHomeBoldIcon />
+        <SolarStarBoldIcon />
+        <SolarHeartBoldIcon />
+        <SolarSettingsBoldIcon />
+        <SolarUserBoldIcon />
+        <SolarBellBoldIcon />
+        <SolarCalendarBoldIcon />
+        <SolarCameraBoldIcon />
       </div>
-    </div>
+    </section>
 
-    <div class="w-full flex flex-row items-center justify-between gap-2">
-      <UButton
-        label="Reset"
-        variant="outline"
-        @click="resetSettings"
-      />
-      <USlider
-        class="max-w-24"
-        :default-value="Number(config.size) || 24"
-        :min="16"
-        :max="64"
-        :step="1"
-        :label="`Size: ${config.size}`"
-        @update:model-value="handleSizeChange"
-      />
-      <UButton
-        label="+"
-        @click="incSize"
-      >
-        Inc Size
-      </UButton>
-      <USelect
-        :default-value="config.weight"
-        :items="WEIGHTS"
-        :label="`Weight: ${config.weight}`"
-        @update:model-value="handleWeightChange"
-      />
-    </div>
-    <!-- Divider -->
-    <div class="border-b border-border border-dashed w-full py-4" />
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold text-slate-200">
+        All 6 Styles (auto-imported)
+      </h2>
+      <p class="text-slate-400 text-sm">
+        Same icon, 6 different style components — all auto-imported from the main barrel.
+      </p>
+      <div class="flex flex-wrap gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
+        <SolarHomeBoldIcon />
+        <SolarHomeBoldDuotoneIcon />
+        <SolarHomeBrokenIcon />
+        <SolarHomeLinearIcon />
+        <SolarHomeLineDuotoneIcon />
+        <SolarHomeOutlineIcon />
+      </div>
+    </section>
 
-    <div class="flex flex-row flex-wrap gap-4 w-full">
-      <div
-        v-for="icon in list"
-        :key="icon[0]"
-      >
-        <div class="flex flex-col gap-2 size-32">
-          <component :is="icon[1]" />
-          {{ icon[0] }}
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold text-slate-200">
+        Auto-imported Dynamic Icons
+      </h2>
+      <p class="text-slate-400 text-sm">
+        These are from the dynamic barrel (<code>@solar-icons/vue/dynamic</code>). Also auto-imported by the module.
+      </p>
+      <div class="flex flex-wrap gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
+        <SolarArrowUpIcon />
+        <SolarArrowDownIcon />
+        <SolarRefreshIcon />
+        <SolarRestartIcon />
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold text-slate-200">
+        Auto-imported Utilities
+      </h2>
+      <p class="text-slate-400 text-sm">
+        <code>SolarProvider</code> (component) and <code>useSolar</code> (composable) are also auto-imported from <code>@solar-icons/vue/lib</code>.
+      </p>
+      <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800/50 space-y-3">
+        <p class="text-sm text-slate-300">
+          Current size: <span class="text-amber-400 font-mono">{{ size }}</span> —
+          Color: <span class="text-amber-400 font-mono">{{ color }}</span>
+        </p>
+        <div class="flex gap-2">
+          <button
+            class="px-3 py-1.5 rounded-lg text-sm bg-slate-700 text-slate-300 hover:bg-slate-600 cursor-pointer"
+            @click="setSize((Number(size) || 32) - 4)"
+          >
+            Size -
+          </button>
+          <button
+            class="px-3 py-1.5 rounded-lg text-sm bg-slate-700 text-slate-300 hover:bg-slate-600 cursor-pointer"
+            @click="setSize((Number(size) || 32) + 4)"
+          >
+            Size +
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import * as solar from '#solar-icons'
-import type { IconWeight } from '#solar-icons/lib'
-import { useSolar } from '#solar-icons/lib'
-
-const { config, setConfig, setWeight, setSize } = useSolar()
-
-const list = Object.entries(solar).filter(([key]) => key !== 'default')
-
-const WEIGHTS: IconWeight[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'Bold', 'BoldDuotone']
-
-// Existing functions
-const resetSettings = () => {
-  setConfig({
-    color: '#000000',
-    size: 24,
-    weight: 'Linear',
-    mirrored: false,
-  })
-}
-
-const handleSizeChange = (value: number[] | undefined) => {
-  setSize(value?.[0] ?? 24)
-}
-
-const incSize = () => {
-  setSize((config.size as number) + 1)
-}
-
-const handleWeightChange = (value: IconWeight) => {
-  setWeight(value)
-}
+const { color, size, setSize } = useSolar()
 </script>

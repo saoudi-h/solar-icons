@@ -1,13 +1,11 @@
 'use client'
 
 import { MotionTabs } from '@/components/ui/MotionTabs'
-import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { InfoCircle } from '@solar-icons/react'
+import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { selectedIconAtom, useSearchCategories } from '../context'
-import type { CategoryOption } from '../utils'
+import { activeCategoryAtom, useSelectedIcon, useStyleURL, useViewModeURL } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { FloatingDrawer } from './FloatingDrawer'
@@ -21,24 +19,34 @@ import { SvelteCode } from './SvelteCode'
 import { Tags } from './Tags'
 import { VueCode } from './VueCode'
 
-export function IconDetail() {
+export interface IconDetailProps {
+    /**
+     * Forwarded to {@link FloatingDrawer}. The parent uses the
+     * drawer's measured height to shrink the icon grid + categories
+     * sidebar by the same amount, keeping both fully scrollable
+     * when the detail panel is open at the bottom of the layout.
+     * See DOCS-UI-02 in `.autonomos/TASKS.md`.
+     */
+    onHeightChange?: (height: number) => void
+}
+
+export function IconDetail({ onHeightChange }: IconDetailProps = {}) {
     return (
-        <FloatingDrawer>
+        <FloatingDrawer onHeightChange={onHeightChange}>
             <Content />
         </FloatingDrawer>
     )
 }
 
 const Content: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
-    const [categories, setCategories] = useSearchCategories()
+    const selectedIcon = useSelectedIcon()
+    const [weight] = useStyleURL()
+    const [viewMode, setViewMode] = useViewModeURL()
+    const [, setActiveCategory] = useAtom(activeCategoryAtom)
 
-    const handleCategorySelection = (category: string) => {
-        if (categories.some(c => c.value === category)) {
-            setCategories([])
-        } else {
-            setCategories([{ value: category, label: category } as CategoryOption])
-        }
+    const handleCategoryClick = (category: string) => {
+        if (viewMode !== 'grouped') setViewMode('grouped')
+        setActiveCategory(category)
     }
 
     if (!selectedIcon) return null
@@ -64,6 +72,7 @@ const Content: FC = () => {
                           lg:size-56
                         `}>
                         <selectedIcon.Icon
+                            weight={weight}
                             className={`
                               size-12
                               lg:size-48
@@ -73,23 +82,26 @@ const Content: FC = () => {
 
                     <div className="flex flex-col items-start justify-between">
                         <h3 className="text-left font-heading text-xl font-bold">
-                            {selectedIcon.name}
+                            {selectedIcon.fullName}
                         </h3>
                         <div className="flex gap-2">
-                            <Toggle
-                                pressed={categories.some(c => c.value === selectedIcon?.category)}
-                                onClick={() => handleCategorySelection(selectedIcon?.category)}
-                                variant="outline"
-                                size="default"
-                                colors="accent"
-                                className="font-heading capitalize">
-                                {selectedIcon?.category}
-                            </Toggle>
+                            <button
+                                type="button"
+                                onClick={() => handleCategoryClick(selectedIcon.category)}
+                                className="
+                                  rounded-md border border-accent bg-accent px-3
+                                  py-1 font-heading text-xs
+                                  text-accent-foreground capitalize
+                                  transition-colors
+                                  hover:bg-accent/80
+                                ">
+                                {selectedIcon.category}
+                            </button>
                             <Tooltip>
                                 <TooltipTrigger>
-                                    <InfoCircle size={16} color={''} weight="Linear" />
+                                    <InfoCircleIcon size={16} isolated />
                                 </TooltipTrigger>
-                                <TooltipContent>Category</TooltipContent>
+                                <TooltipContent>Jump to category</TooltipContent>
                             </Tooltip>
                         </div>
                     </div>

@@ -1,35 +1,34 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRightUp, useSolar } from '@solar-icons/react'
-import { useAtom } from 'jotai'
+import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const AngularCode: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
-    const { value } = useSolar()
+    const selectedIcon = useSelectedIcon()
 
     if (!selectedIcon) return null
 
-    // Angular icons use global names with style suffix (e.g., HeartBold, HeartLinear)
-    const iconName = (selectedIcon.Icon.displayName ?? '') + (value.weight ?? '')
+    const bare = selectedIcon.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'
+    const importName = 'Solar' + bare
+    const selectorName = 'solar' + bare
 
     return (
         <>
             <Button variant="link" size="default" asChild>
                 <Link href="/docs/packages/angular">
                     Get started with <span className="font-heading">Angular</span>{' '}
-                    <ArrowRightUp size={16} weight="Linear" color={''} />
+                    <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>
             <CodeBlockTemplate
                 lang="tsx"
-                code={`import { ${iconName} } from '@solar-icons/angular'`}
+                code={`import { ${importName} } from '@solar-icons/angular'`}
             />
             <CodeBlockTemplate
                 lang="tsx"
-                code={`<svg solar${iconName} [size]="${value.size}" [color]="'${value.color}'" />`}
+                code={`<svg ${selectorName} size="24" color="currentColor" />`}
             />
         </>
     )

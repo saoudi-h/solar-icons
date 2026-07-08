@@ -1,0 +1,199 @@
+---
+title: Angular
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Angular 17+.
+icon: angular
+---
+
+```package-install
+@solar-icons/angular
+```
+
+Standalone components with signal-based inputs. `Solar`-prefixed PascalCase component names with attribute selectors on `<svg>`.
+
+## Import patterns
+
+```ts
+// Top-level (all icons + lib)
+import { SolarHeartBold, SolarProvider, useSolar } from '@solar-icons/angular'
+
+// Dynamic icons
+import * as dynamicIcons from '@solar-icons/angular/dynamic'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+```
+
+## Static components
+
+```ts
+import { Component } from '@angular/core'
+import { SolarHeartBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarHeartBold],
+    template: '<svg solarHeartBold color="#ef4444" [size]="32" />',
+})
+export class AppComponent {}
+```
+
+## Duotone
+
+```html
+<svg
+    solarHeartBoldDuotone
+    color="#3b82f6"
+    secondaryColor="#f59e0b"
+    [secondaryOpacity]="0.4"
+    [size]="48" />
+```
+
+## Stroke width
+
+Linear, LineDuotone, and Broken styles support `strokeWidth`:
+
+```html
+<svg solarSettingsLinear [strokeWidth]="2" [size]="24" />
+```
+
+## SolarProvider
+
+Wrap a subtree to share icon styling via CSS custom properties:
+
+```ts
+import { SolarProvider, SolarHomeBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarProvider, SolarHomeBold],
+    template: `
+        <solar-provider color="#3b82f6" [size]="24" [strokeWidth]="1.5">
+            <svg solarHomeBold></svg>
+        </solar-provider>
+    `,
+})
+export class AppComponent {}
+```
+
+| Input              | CSS Variable                | Fallback       |
+| ------------------ | --------------------------- | -------------- |
+| `color`            | `--solar-color`             | `currentColor` |
+| `size`             | `--solar-size`              | `24px`         |
+| `strokeWidth`      | `--solar-stroke-width`      | `1.5`          |
+| `secondaryColor`   | `--solar-secondary-color`   | `currentColor` |
+| `secondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
+
+The provider does not set defaults. Icons fall back to these values through CSS when no provider or input is specified.
+
+## useSolar
+
+Call `useSolar()` inside a component that is a **descendant** of `<solar-provider>` to access the provider state. The provider must be an ancestor in the template, not a child.
+
+```ts
+import { useSolar } from '@solar-icons/angular'
+
+const solar = useSolar()
+solar.setColor('#ef4444')
+solar.setSize(32)
+solar.setSecondaryColor('#f59e0b')
+solar.setSecondaryOpacity(0.4)
+```
+
+The component using `useSolar()` must be projected into `<solar-provider>` (the provider wraps it):
+
+```html
+<solar-provider>
+    <app-controls />
+</solar-provider>
+```
+
+<Callout type="warn">
+Set defaults with `<solar-provider>` props. In child components, read from `useSolar()` and write to it **only** in response to user events. Initial writes in a child constructor are overridden by the provider's inputs. Avoid them.
+</Callout>
+
+## Dynamic icons
+
+Two complementary features share this name but solve different problems.
+
+### Multi-style components
+
+Import a component that bundles all 6 styles and switches via `weight`. Use it directly in your template. No directive needed.
+
+```ts
+import { Component } from '@angular/core'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+
+@Component({
+    standalone: true,
+    imports: [SolarHome],
+    template: '<svg solarHome weight="Bold" [size]="24" color="#ef4444" />',
+})
+export class AppComponent {}
+```
+
+Available from `@solar-icons/angular/dynamic` (barrel) or `@solar-icons/angular/dynamic/home` (single).
+
+### Dynamic rendering with `SolarIcon`
+
+The `SolarIcon` directive creates icons at runtime from a component class or registered name. Use it when the icon to render is only known at runtime (data-driven, CMS, user config).
+
+```ts
+import { Component } from '@angular/core'
+import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
+import { SolarHome } from '@solar-icons/angular/dynamic'
+import { SolarHeartBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarIcon],
+    template: `
+        <ng-container [solarIcon]="icon" [weight]="'Bold'" [size]="24" color="red" />
+        <ng-container solarIcon="SolarHeartBold" [size]="24" />
+    `,
+    providers: [provideSolarIcons({ SolarHeartBold })],
+})
+export class AppComponent {
+    icon = SolarHome
+}
+```
+
+| Usage                        | Import          | Requires registry   |
+| ---------------------------- | --------------- | ------------------- |
+| `[solarIcon]="SomeClass"`    | Class reference | No                  |
+| `solarIcon="'RegisterName'"` | String name     | `provideSolarIcons` |
+
+`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, and `alt`. All forward to the created icon.
+
+## Icon props
+
+| Input              | Type               | Description             |
+| ------------------ | ------------------ | ----------------------- |
+| `color`            | `string`           | Icon color              |
+| `size`             | `string \| number` | Width and height        |
+| `strokeWidth`      | `string \| number` | Stroke width            |
+| `secondaryColor`   | `string`           | Duotone accent color    |
+| `secondaryOpacity` | `number`           | Duotone accent opacity  |
+| `isolated`         | `boolean`          | Ignores provider        |
+| `alt`              | `string`           | Accessibility label     |
+| `ariaLabel`        | `string`           | `aria-label` attribute  |
+| `titleAttr`        | `string`           | Explicit `<title>` text |
+
+Angular inputs are camelCase. Bind them in templates with `[strokeWidth]="2"`, not `[stroke-width]`.
+
+## CSS variables
+
+Icons read from CSS custom properties when explicit inputs are omitted:
+
+```css
+:host {
+    --solar-color: #ef4444;
+    --solar-size: 32px;
+    --solar-stroke-width: 2;
+}
+```
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{kebab-name}-{style}`. For example, `SolarHeartBold` renders with `solar solar-heart-bold`.
+
+## ESM only
+
+`@solar-icons/angular` is ESM-only.

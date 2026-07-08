@@ -1,0 +1,162 @@
+---
+title: Vue
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Vue 3.0+.
+icon: vue
+---
+
+```package-install
+@solar-icons/vue
+```
+
+## Import patterns
+
+```js
+// Per-style (no style suffix in name - style is in the path)
+import { HeartIcon } from '@solar-icons/vue/bold'
+
+// Single icon (lighter on the dev server — avoids resolving ~8k modules)
+import { HeartIcon } from '@solar-icons/vue/bold/heart'
+
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/vue'
+
+// Dynamic (runtime style switching)
+import { HeartIcon } from '@solar-icons/vue/dynamic'
+```
+
+## Basic usage
+
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
+
+<template>
+    <HeartIcon color="#ef4444" :size="32" />
+</template>
+```
+
+## Duotone
+
+```vue
+<template>
+    <HeartIcon color="#3b82f6" secondary-color="#f59e0b" :secondary-opacity="0.4" :size="48" />
+</template>
+
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/bold-duotone'
+</script>
+```
+
+## Stroke width
+
+```vue
+<template>
+    <SettingsIcon :stroke-width="2" :size="24" />
+</template>
+
+<script setup>
+import { SettingsIcon } from '@solar-icons/vue/linear'
+</script>
+```
+
+## SolarProvider
+
+```vue
+<script setup>
+import { SolarProvider } from '@solar-icons/vue'
+import { HeartIcon } from '@solar-icons/vue/bold'
+</script>
+
+<template>
+    <SolarProvider color="#3b82f6" :size="24" :stroke-width="1.5">
+        <HeartIcon />
+    </SolarProvider>
+</template>
+```
+
+| Prop                | CSS Variable                | Fallback       |
+| ------------------- | --------------------------- | -------------- |
+| `color`             | `--solar-color`             | `currentColor` |
+| `size`              | `--solar-size`              | `24px`         |
+| `stroke-width`      | `--solar-stroke-width`      | `1.5`          |
+| `secondary-color`   | `--solar-secondary-color`   | `currentColor` |
+| `secondary-opacity` | `--solar-secondary-opacity` | `0.5`          |
+
+The provider does not set defaults. Icons fall back to these values through CSS when no provider or prop is specified.
+
+## useSolar
+
+Returns reactive `Ref`s. Must be called inside a `<SolarProvider>`.
+
+```vue
+<script setup>
+import { useSolar } from '@solar-icons/vue'
+
+const solar = useSolar()
+</script>
+
+<template>
+    <button @click="solar.setColor('#ef4444')">Current: {{ solar.color }}</button>
+</template>
+```
+
+Keep `solar` as a single object. Vue auto-unwraps the `Ref`s when you read them through `solar.color` in the template. Destructuring (`const { color } = useSolar()`) loses reactivity in the template.
+
+## Vue Plugin
+
+Configure defaults globally via the Vue plugin. No `<SolarProvider>` needed.
+
+```ts
+import { createApp } from 'vue'
+import { SolarIconsPlugin } from '@solar-icons/vue/lib'
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(SolarIconsPlugin, {
+    color: 'currentColor',
+    size: 24,
+    strokeWidth: 1.5,
+    secondaryColor: '#3b82f6',
+    secondaryOpacity: 0.5,
+})
+app.mount('#app')
+```
+
+## Dynamic icons
+
+```vue
+<script setup>
+import { HeartIcon } from '@solar-icons/vue/dynamic'
+</script>
+
+<template>
+    <HeartIcon weight="BoldDuotone" color="#3b82f6" :size="32" />
+</template>
+```
+
+## Icon props
+
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
+
+In Vue templates, kebab-case attribute names map to camelCase props (e.g. `:stroke-width="2"` targets `strokeWidth`). Either form works in templates. Use kebab-case in `<template>`, camelCase in `<script setup>`.
+
+## CSS variables
+
+Same five variables as [React](/docs/v2/frameworks/react#css-variables).
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}-{style}` (e.g., `solar-heart-bold`). See the [React page](/docs/v2/frameworks/react#css-classes) for examples.
+
+## ESM only
+
+`@solar-icons/vue` is ESM-only. `require()` does not work.

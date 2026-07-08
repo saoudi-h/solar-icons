@@ -1,22 +1,19 @@
 'use client'
 import { cn } from '@/lib/utils'
-import {
-    Globus,
-    Heart,
-    PaletteRound,
-    SettingsMinimalistic,
-    ShieldCheck,
-    Star,
-} from '@solar-icons/react/ssr'
+import { GlobalIcon } from '@solar-icons/react/dynamic/global'
+import { HeartIcon } from '@solar-icons/react/dynamic/heart'
+import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
+import { SettingsMinimalisticIcon } from '@solar-icons/react/dynamic/settings-minimalistic'
+import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
+import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { motion } from 'framer-motion'
 
 export const StylesShowcase = () => {
     const styles = ['Linear', 'Bold', 'Outline', 'BoldDuotone', 'LineDuotone', 'Broken'] as const
 
-    // Fully static shades to ensure Tailwind CSS parses classes correctly during purge
     const rows = [
         {
-            icon: PaletteRound,
+            Icon: PaletteRoundIcon,
             shades: [
                 'text-rose-300 dark:text-rose-800',
                 'text-rose-400 dark:text-rose-700',
@@ -27,7 +24,7 @@ export const StylesShowcase = () => {
             ] as const,
         },
         {
-            icon: SettingsMinimalistic,
+            Icon: SettingsMinimalisticIcon,
             shades: [
                 'text-emerald-300 dark:text-emerald-800',
                 'text-emerald-400 dark:text-emerald-700',
@@ -38,7 +35,7 @@ export const StylesShowcase = () => {
             ] as const,
         },
         {
-            icon: Heart,
+            Icon: HeartIcon,
             shades: [
                 'text-sky-300 dark:text-sky-800',
                 'text-sky-400 dark:text-sky-700',
@@ -49,7 +46,7 @@ export const StylesShowcase = () => {
             ] as const,
         },
         {
-            icon: ShieldCheck,
+            Icon: ShieldCheckIcon,
             shades: [
                 'text-violet-300 dark:text-violet-800',
                 'text-violet-400 dark:text-violet-700',
@@ -60,7 +57,7 @@ export const StylesShowcase = () => {
             ] as const,
         },
         {
-            icon: Star,
+            Icon: StarIcon,
             shades: [
                 'text-pink-300 dark:text-pink-800',
                 'text-pink-400 dark:text-pink-700',
@@ -71,7 +68,7 @@ export const StylesShowcase = () => {
             ] as const,
         },
         {
-            icon: Globus,
+            Icon: GlobalIcon,
             shades: [
                 'text-amber-300 dark:text-amber-800',
                 'text-amber-400 dark:text-amber-700',
@@ -103,7 +100,7 @@ export const StylesShowcase = () => {
                         WebkitMaskImage: 'radial-gradient(circle, black 55%, transparent 95%)',
                     }}>
                     <div className="flex w-full flex-col gap-1">
-                        {rows.map(({ icon: IconComponent, shades }, r) => (
+                        {rows.map(({ Icon, shades }, r) => (
                             <motion.div
                                 key={r}
                                 initial={{ opacity: 0, y: 10 }}
@@ -145,7 +142,7 @@ export const StylesShowcase = () => {
                                               relative flex size-10 items-center
                                               justify-center
                                             ">
-                                            <IconComponent
+                                            <Icon
                                                 size={28}
                                                 weight={style}
                                                 className={cn(

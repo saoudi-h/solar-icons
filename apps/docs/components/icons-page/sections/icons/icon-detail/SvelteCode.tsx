@@ -1,33 +1,30 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRightUp, useSolar } from '@solar-icons/react'
-import { useAtom } from 'jotai'
+import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon, useStyleURL } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const SvelteCode: FC = () => {
-    const [selectedIcon] = useAtom(selectedIconAtom)
-    const { value } = useSolar()
+    const selectedIcon = useSelectedIcon()
+    const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
+    const bare = selectedIcon.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'
 
     return (
         <>
             <Button variant="link" size="default" asChild>
                 <Link href="/docs/packages/svelte">
                     Get started with <span className="font-heading">Svelte</span>{' '}
-                    <ArrowRightUp size={16} weight="Linear" color={''} />
+                    <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>
             <CodeBlockTemplate
                 lang="svelte"
-                code={`import { ${selectedIcon?.Icon.displayName} } from '@solar-icons/svelte/${value.weight}'`}
+                code={`import { ${bare} } from '@solar-icons/svelte/${weight.toLowerCase()}'`}
             />
-            <CodeBlockTemplate
-                lang="svelte"
-                code={`<${selectedIcon?.Icon.displayName} size={${value.size}} color="${value.color}" />`}
-            />
+            <CodeBlockTemplate lang="svelte" code={`<${bare} size={24} color="currentColor" />`} />
         </>
     )
 }

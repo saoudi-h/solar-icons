@@ -31,5 +31,10 @@ export default defineConfig({
     plugins: [lastModified()],
     mdxOptions: {
         remarkPlugins: [remarkSteps],
+        remarkNpmOptions: {
+            persist: {
+                id: 'package-manager',
+            },
+        },
     },
 })

@@ -1,0 +1,7 @@
+{
+    "title": "Current",
+    "description": "Documentation for the current stable release of Solar Icons.",
+    "icon": "HistoryIcon",
+    "root": true,
+    "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
+}

@@ -3,7 +3,7 @@
 import type { ButtonProps } from '@/components/ui/button'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CheckCircle, Copy } from '@solar-icons/react/ssr'
+import { CheckCircleIcon, CopyIcon } from '@solar-icons/react/dynamic'
 import * as React from 'react'
 
 interface CopyButtonProps extends ButtonProps {
@@ -35,7 +35,11 @@ export function CopyButton({ value, className, variant = 'default', ...props }: 
             }}
             {...props}>
             <span className="sr-only">Copy</span>
-            {hasCopied ? <CheckCircle weight="Bold" size={24} /> : <Copy size={24} weight="Bold" />}
+            {hasCopied ? (
+                <CheckCircleIcon weight="Bold" isolated />
+            ) : (
+                <CopyIcon weight="Bold" isolated />
+            )}
         </Button>
     )
 }

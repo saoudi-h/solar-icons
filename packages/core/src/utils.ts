@@ -184,9 +184,11 @@ export const fixIconName = (str: string): string => {
  * @returns The camel case representation of the string
  */
 export const toCamelCase = <T extends string>(string: T) =>
-    string.replace(/^([A-Z])|[\s\-_]+(\w)/g, (_, p1, p2) =>
-        p2 ? p2.toUpperCase() : p1.toLowerCase()
-    )
+    string
+        .replace(/^[\s\-_]+|[\s\-_]+$/g, '')
+        .replace(/^([A-Z])|[\s\-_]+(\w)/g, (_, p1, p2) =>
+            p2 ? p2.toUpperCase() : p1.toLowerCase()
+        )
 
 //----------------------------------------------------------------------------------------------------------------
 

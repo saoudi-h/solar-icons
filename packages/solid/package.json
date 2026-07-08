@@ -47,33 +47,60 @@
             "types": "./dist/lib/*.d.mts",
             "import": "./dist/lib/*.mjs"
         },
-        "./category": {
-            "types": "./dist/icons/index.d.mts",
-            "import": "./dist/icons/index.mjs"
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.mts",
+            "import": "./dist/icons/dynamic/index.mjs"
         },
-        "./category/*": {
-            "types": "./dist/icons/*.d.mts",
-            "import": "./dist/icons/*.mjs"
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.mts",
+            "import": "./dist/icons/dynamic/*.mjs"
         },
         "./*": {
             "types": "./dist/icons/style/*.d.mts",
             "import": "./dist/icons/style/*.mjs"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.d.mts",
+            "import": "./dist/icons/bold/*.mjs"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.d.mts",
+            "import": "./dist/icons/bold-duotone/*.mjs"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.d.mts",
+            "import": "./dist/icons/broken/*.mjs"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.d.mts",
+            "import": "./dist/icons/line-duotone/*.mjs"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.d.mts",
+            "import": "./dist/icons/linear/*.mjs"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.d.mts",
+            "import": "./dist/icons/outline/*.mjs"
         }
     },
     "devDependencies": {
+        "@babel/core": "^8.0.1",
         "@solar-icons/core": "workspace:*",
         "@tala-tools/eslint": "0.1.4",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
-        "@types/node": "^25.9.3",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@types/node": "^26.1.1",
+        "babel-preset-solid": "^1.9.12",
         "picocolors": "^1.1.1",
-        "prettier": "^3.8.4",
+        "prettier": "^3.9.4",
         "rimraf": "^6.1.3",
-        "solid-js": "^1.9.13",
-        "tsdown": "^0.22.2",
+        "solid-js": "^1.9.14",
+        "tsdown": "^0.22.4",
         "typescript": "^6.0.3",
         "unplugin-solid": "^1.0.0",
-        "vitest": "^4.1.9"
+        "vitest": "^4.1.10"
     },
     "peerDependencies": {
         "solid-js": ">= 1.6.0"

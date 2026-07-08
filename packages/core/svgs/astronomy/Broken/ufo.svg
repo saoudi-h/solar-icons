@@ -3,7 +3,7 @@
 <path d="M12 16V19" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M5.50036 15.5L4.5 17.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M18.4996 15.5L19.5 17.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<circle cx="12" cy="13" r="1" fill="#1C274C"/>
-<circle cx="7" cy="12" r="1" fill="#1C274C"/>
-<circle cx="17" cy="12" r="1" fill="#1C274C"/>
+<path d="M17 12.0059H17.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.9878 13H11.9879" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.98828 12.001H6.98838" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

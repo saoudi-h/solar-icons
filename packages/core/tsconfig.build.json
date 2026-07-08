@@ -20,5 +20,13 @@
         "jsx": "preserve"
     },
     "include": ["./src/**/*"],
-    "exclude": ["dist", "build", "./src/scripts", "node_modules", ".vscode", ".turbo"]
+    "exclude": [
+        "dist",
+        "build",
+        "./src/scripts",
+        "node_modules",
+        ".vscode",
+        ".turbo",
+        "**/*.test.ts"
+    ]
 }

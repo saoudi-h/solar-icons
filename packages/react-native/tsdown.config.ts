@@ -3,15 +3,26 @@ import { defineConfig } from 'tsdown/config'
 
 const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline']
 
+const STYLE_KEBAB: Record<string, string> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
+
 function genEntries(styles: string[]) {
     const entries: Record<string, string> = {
         index: './src/index.ts',
         'lib/index': './src/lib/index.ts',
         'lib/types': './src/lib/types.ts',
+        'icons/styled': './src/icons/styled.ts',
     }
 
     for (const style of styles) {
-        entries[`icons/style/${style}`] = `./src/icons/style/${style}.ts`
+        const kebab = STYLE_KEBAB[style]
+        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`
     }
 
     return entries
@@ -48,11 +59,6 @@ const config: UserConfig = defineConfig({
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
-            }
-
-            pkg['./category/*'] = {
-                types: './dist/icons/*.d.mts',
-                import: './dist/icons/*.mjs',
             }
 
             return pkg

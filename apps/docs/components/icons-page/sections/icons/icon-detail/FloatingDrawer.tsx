@@ -1,22 +1,32 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CloseCircle } from '@solar-icons/react'
+import { CloseCircleIcon } from '@solar-icons/react/bold/close-circle'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useAtom } from 'jotai'
 import type { FC } from 'react'
-import { useEffect } from 'react'
-import { selectedIconAtom } from '../context'
+import { useEffect, useRef } from 'react'
+import { useSelectedIcon, useSelectedIconName } from '../context'
 
 export interface FloatingDrawerProps {
     children: React.ReactNode
+    /**
+     * Fires whenever the drawer's measured pixel height changes
+     * (mount, content swap, resize). The parent uses this to
+     * subtract the drawer's height from the icon grid + categories
+     * sidebar so they stay fully scrollable even when the drawer
+     * is open at the bottom of the layout. See the DOCS-UI-02
+     * worklog for the reasoning.
+     */
+    onHeightChange?: (height: number) => void
 }
 
-export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
-    const [selectedIcon, setSelectedIcon] = useAtom(selectedIconAtom)
+export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children, onHeightChange }) => {
+    const selectedIcon = useSelectedIcon()
+    const [, setIconName] = useSelectedIconName()
+    const drawerRef = useRef<HTMLDivElement>(null)
 
     const handleClose = () => {
-        setSelectedIcon(null)
+        setIconName(null)
     }
 
     useEffect(() => {
@@ -27,12 +37,52 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
         }
         document.addEventListener('keydown', handleKeyDown)
         return () => document.removeEventListener('keydown', handleKeyDown)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    // Reset the reported height to 0 when the drawer is closed so
+    // the grid + sidebar can reclaim the space the drawer was
+    // occupying. Mounting a new observer (below) re-syncs on every
+    // open; this effect handles the close case which doesn't
+    // trigger the observer.
+    useEffect(() => {
+        if (!selectedIcon) onHeightChange?.(0)
+    }, [selectedIcon, onHeightChange])
+
+    useEffect(() => {
+        if (!selectedIcon || !drawerRef.current) return
+        const el = drawerRef.current
+        // Use `offsetHeight` (the actual layout height) rather
+        // than `getBoundingClientRect().height` (which includes
+        // transforms). The motion.div animates with
+        // `initial={{ y: 50, scale: 0.95 }}`, so during the
+        // animation `getBoundingClientRect` reports the scaled
+        // height (~95% of the natural size, i.e. 219 instead of
+        // 231) and the `ResizeObserver` does not fire on the
+        // transform change — it would only fire on real layout
+        // changes. `offsetHeight` ignores the transform and
+        // returns the natural height from the first paint.
+        const report = () => {
+            onHeightChange?.(el.offsetHeight)
+        }
+        const observer = new ResizeObserver(report)
+        observer.observe(el)
+        // Initial measurement on the next frame so the element
+        // is in the DOM with its natural size (the very first
+        // paint can briefly report 0 before Framer Motion
+        // applies the initial transform).
+        const rafId = requestAnimationFrame(report)
+        return () => {
+            cancelAnimationFrame(rafId)
+            observer.disconnect()
+        }
+    }, [selectedIcon, onHeightChange])
 
     return (
         <AnimatePresence>
             {selectedIcon && (
                 <motion.div
+                    ref={drawerRef}
                     key="drawer"
                     initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -64,8 +114,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children }) => {
                               -translate-y-1/2 rounded-full p-0
                               [&_svg]:size-8
                             `}>
-                            <CloseCircle
-                                weight="Bold"
+                            <CloseCircleIcon
                                 className={`
                                   size-full text-muted-foreground
                                   hover:text-foreground

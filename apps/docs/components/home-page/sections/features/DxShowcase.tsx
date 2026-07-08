@@ -1,4 +1,4 @@
-import { Star } from '@solar-icons/react/ssr'
+import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { motion, useInView } from 'framer-motion'
 import React from 'react'
 
@@ -77,8 +77,7 @@ export const DxShowcase = () => {
                                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ delay: 0.15, duration: 0.3 }}>
                                 <span className="text-[#c586c0]">import</span>{' '}
-                                <span
-                                    className="text-[#abb2bf]">{`{`}</span>{' '}
+                                <span className="text-[#abb2bf]">{`{`}</span>{' '}
                                 <span
                                     className="
                                       border-b border-dashed border-[#e06c75]/85
@@ -87,10 +86,7 @@ export const DxShowcase = () => {
                                     Star
                                 </span>{' '}
                                 <span className="text-[#abb2bf]">{`}`}</span>{' '}
-                                <span
-                                    className="text-[#c586c0]">
-                                    from
-                                </span>{' '}
+                                <span className="text-[#c586c0]">from</span>{' '}
                                 <span className="text-[#98c379]">"@solar-icons/react/ssr"</span>
                             </motion.div>
                             <div className="text-[#5c6370]"> </div>
@@ -99,19 +95,10 @@ export const DxShowcase = () => {
                                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ delay: 0.25, duration: 0.3 }}>
                                 <span className="text-[#e06c75]">const</span>{' '}
-                                <span
-                                    className="text-[#61afef]">
-                                    App
-                                </span>{' '}
+                                <span className="text-[#61afef]">App</span>{' '}
                                 <span className="text-[#56b6c2]">=</span>{' '}
-                                <span
-                                    className="text-[#abb2bf]">
-                                    ()
-                                </span>{' '}
-                                <span
-                                    className="font-bold text-[#c586c0]">
-                                    =&gt;
-                                </span>{' '}
+                                <span className="text-[#abb2bf]">()</span>{' '}
+                                <span className="font-bold text-[#c586c0]">=&gt;</span>{' '}
                                 <span className="text-[#abb2bf]">{`(`}</span>
                             </motion.div>
                             <motion.div
@@ -120,20 +107,11 @@ export const DxShowcase = () => {
                                 transition={{ delay: 0.35, duration: 0.3 }}
                                 className="pl-4">
                                 <span className="text-[#56b6c2]">&lt;</span>
-                                <span
-                                    className="text-[#e06c75]">
-                                    Star
-                                </span>{' '}
+                                <span className="text-[#e06c75]">Star</span>{' '}
                                 <span className="text-[#d19a66]">size</span>
-                                <span
-                                    className="text-[#56b6c2]">
-                                    =
-                                </span>
+                                <span className="text-[#56b6c2]">=</span>
                                 <span className="text-[#abb2bf]">{`{`}</span>
-                                <span
-                                    className="text-[#d19a66]">
-                                    24
-                                </span>
+                                <span className="text-[#d19a66]">24</span>
                                 <span className="text-[#abb2bf]">{`}`}</span>
                             </motion.div>
                             <motion.div
@@ -146,10 +124,7 @@ export const DxShowcase = () => {
                                   pl-8
                                 ">
                                 <span className="text-[#d19a66]">weight</span>
-                                <span
-                                    className="text-[#56b6c2]">
-                                    =
-                                </span>
+                                <span className="text-[#56b6c2]">=</span>
                                 <span className="text-[#98c379]">""</span>
                                 <span
                                     className="
@@ -275,15 +250,9 @@ export const DxShowcase = () => {
                                   font-mono leading-snug text-[#56b6c2]
                                 ">
                                 <span className="font-sans text-[#858585]">alias</span>{' '}
-                                <span
-                                    className="text-[#c586c0]">
-                                    const
-                                </span>{' '}
-                                <span
-                                    className="font-bold text-[#61afef]">
-                                    Star
-                                </span>
-                                : <span className="text-[#4ec9b0]">Icon</span>
+                                <span className="text-[#c586c0]">const</span>{' '}
+                                <span className="font-bold text-[#61afef]">Star</span>:{' '}
+                                <span className="text-[#4ec9b0]">Icon</span>
                                 <div
                                     className="
                                       font-sans text-[8.5px] text-[#858585]
@@ -294,15 +263,13 @@ export const DxShowcase = () => {
                             <div className="my-0.5 border-t border-[#454545]" />
                             <div className="flex flex-col gap-1 pl-1">
                                 <div className="flex items-center gap-2">
-                                    <Star
-                                        size={13}
-                                        weight="Bold"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Bold" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Bold</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Star
+                                    <StarIcon
                                         size={13}
                                         weight="BoldDuotone"
                                         className="text-white"
@@ -310,15 +277,13 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">BoldDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Star
-                                        size={13}
-                                        weight="Broken"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Broken" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Broken</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Star
+                                    <StarIcon
                                         size={13}
                                         weight="LineDuotone"
                                         className="text-white"
@@ -326,19 +291,15 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">LineDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Star
-                                        size={13}
-                                        weight="Linear"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Linear" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Linear</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Star
-                                        size={13}
-                                        weight="Outline"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Outline" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Outline</span>
                                 </div>
                             </div>

@@ -1,19 +1,91 @@
-import type { IconProps, IconWeight } from '@solar-icons/react'
+import type { IconData } from '@/generated/descriptions'
+import { STYLES, type Weight } from '@solar-icons/core/runtime'
 import { SolarProvider } from '@solar-icons/react'
-import type { IconBaseProps } from '@solar-icons/react/lib/types'
-import type { ReactNode } from 'react'
-
-import type { IconData } from '@/core/generated/descriptions'
 import { atom } from 'jotai'
-import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
-import { useCallback } from 'react'
-import type { CategoryOption } from './utils'
+import { parseAsStringLiteral, useQueryState } from 'nuqs'
+import type { ReactNode } from 'react'
+import { useCallback, useMemo } from 'react'
+import { getAllIcons } from './utils'
 
-export const colorIconDark = atom(false)
 export const displayedIconsAtom = atom<IconData[]>([])
 export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
-export const selectedIconAtom = atom<IconData | null>(null)
+
+/**
+ * Last category the user navigated to from the sidebar. UI-only
+ * navigation state (sidebar scroll target + active highlight), not
+ * persisted in the URL — the URL is for the *resource* (the icon
+ * being viewed) and the search/viewMode/style, not for transient
+ * navigation positions within the page.
+ */
+export const activeCategoryAtom = atom<string | null>(null)
+
+const STYLE_SLUGS = ['bold', 'bold-duotone', 'broken', 'linear', 'line-duotone', 'outline'] as const
+type StyleSlug = (typeof STYLE_SLUGS)[number]
+
+const STYLE_SLUG_TO_WEIGHT: Record<StyleSlug, Weight> = {
+    bold: 'Bold',
+    'bold-duotone': 'BoldDuotone',
+    broken: 'Broken',
+    linear: 'Linear',
+    'line-duotone': 'LineDuotone',
+    outline: 'Outline',
+}
+
+const WEIGHT_TO_STYLE_SLUG: Record<Weight, StyleSlug> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
+
+/**
+ * Build the full icon name from a base name + weight. The icon data
+ * stores names as `${base}-${style-slug}` (e.g. `home-bold`,
+ * `arrow-right-linear`), so the full name is just a concatenation.
+ */
+export function buildFullIconName(base: string, weight: Weight): string {
+    return `${base}-${WEIGHT_TO_STYLE_SLUG[weight]}`
+}
+
+/**
+ * Inverse of {@link buildFullIconName}. Strips the weight suffix
+ * from a full icon name. Returns `null` if no known suffix matches
+ * — the icon's weight is unknown and we can't route it via the
+ * `?icon=base&style=slug` shape.
+ */
+export function splitFullIconName(fullName: string): { base: string; weight: Weight } | null {
+    for (const weight of STYLES) {
+        const suffix = `-${WEIGHT_TO_STYLE_SLUG[weight]}`
+        if (fullName.endsWith(suffix)) {
+            return { base: fullName.slice(0, -suffix.length), weight }
+        }
+    }
+    return null
+}
+
+/**
+ * Style (icon weight) in the URL (`?style=bold|linear|...`). The
+ * URL value is the kebab-case slug; the hook exposes the
+ * PascalCase `Weight` used by the icon components. Default
+ * `'bold-duotone'` to match the previous `weightAtom` default.
+ */
+export function useStyleURL(): readonly [Weight, (value: Weight) => void] {
+    const [slug, setSlug] = useQueryState(
+        'style',
+        parseAsStringLiteral(STYLE_SLUGS).withDefault('bold-duotone')
+    )
+    const weight = STYLE_SLUG_TO_WEIGHT[slug]
+    const setWeight = useCallback(
+        (value: Weight) => {
+            setSlug(WEIGHT_TO_STYLE_SLUG[value])
+        },
+        [setSlug]
+    )
+    return [weight, setWeight] as const
+}
 
 export function useSearchKeyword(): readonly [string, (value: string) => void] {
     const [param, setParam] = useQueryState('search')
@@ -27,47 +99,90 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
     return [keyword, setKeyword] as const
 }
 
-export function useSearchCategories(): readonly [
-    CategoryOption[],
-    (cats: CategoryOption[]) => void,
-] {
-    const [params, setParams] = useQueryState('categories', parseAsArrayOf(parseAsString, ';'))
+/**
+ * Grid view mode in the URL (`?view=grouped|flat`). Default
+ * `'flat'` — the first view of the icon set is a 200-icon
+ * smorgasbord across all categories, much more representative
+ * than the first alphabetical section ('Arrows') in grouped
+ * mode. The view is part of the resource description (it's how
+ * the user wants to browse the icon set), not transient UI
+ * state, so it lives in the URL.
+ */
+export function useViewModeURL() {
+    return useQueryState('view', parseAsStringLiteral(['grouped', 'flat']).withDefault('flat'))
+}
 
-    const categories = (params?.map(c => ({ value: c, label: c })) as CategoryOption[]) || []
+export {
+    useWeightNamespace,
+    useWeightNamespaceContext,
+    WeightNamespaceProvider,
+} from './weight-namespace'
 
-    const setCategories = useCallback(
-        (cats: CategoryOption[]) => {
-            setParams(cats.length === 0 ? null : cats.map(c => c.value))
-        },
-        [setParams]
-    )
+/**
+ * Base name of the icon currently open in the detail panel
+ * (`?icon=home`). The URL is the source of truth — the full
+ * `IconData` is derived from the base name + the current style
+ * (see {@link useSelectedIcon}). Click handlers in `IconCard` and
+ * the close button in `FloatingDrawer` write to this query param.
+ */
+export function useSelectedIconName() {
+    return useQueryState('icon')
+}
 
-    return [categories, setCategories] as const
+/**
+ * The selected icon, augmented with a computed `fullName` (the
+ * base name + the current style's slug, e.g. `home-bold`). The
+ * icon data is keyed by base name only — the `Icon` component
+ * is generic and takes the weight as a prop — so the lookup is
+ * by base name and the full name is computed on the fly. Use
+ * `selectedIcon.name` for the base name (matching the
+ * `IconCard`'s `isSelected` check), and `selectedIcon.fullName`
+ * for anything that needs the weight-suffixed name (display
+ * title, code-example import path, SVG download URL).
+ */
+export type SelectedIcon = IconData & { fullName: string }
+
+export function useSelectedIcon(): SelectedIcon | null {
+    const [iconBase] = useSelectedIconName()
+    const [weight] = useStyleURL()
+    return useMemo(() => {
+        if (!iconBase) return null
+        const icon = getAllIcons().find(i => i.name === iconBase)
+        if (!icon) return null
+        return { ...icon, fullName: buildFullIconName(iconBase, weight) }
+    }, [iconBase, weight])
 }
 
 interface IconProviderWrapperProps {
     children: ReactNode
     defaultColor?: string
     defaultSize?: number
-    defaultWeight?: IconWeight
+    defaultWeight?: Weight
 }
 
-export const DEFAULT_VALUES: IconProps = {
-    color: '#9fcfe6',
+export const DEFAULT_VALUES = {
+    // #3b82f6 (Tailwind blue-500): ~50% luminance, saturated enough to read
+    // on both light and dark page backgrounds without theme syncing.
+    color: '#3b82f6',
     size: 64,
-    weight: 'BoldDuotone',
-}
+    strokeWidth: 1.5,
+    secondaryColor: '#f59e0b',
+    secondaryOpacity: 0.5,
+} as const
 
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
     defaultColor = DEFAULT_VALUES.color,
     defaultSize = DEFAULT_VALUES.size,
-    defaultWeight = DEFAULT_VALUES.weight!,
 }) => {
-    const providerValue: IconBaseProps = {
-        color: defaultColor ?? '#9fcfe6',
-        size: defaultSize ?? 64,
-        weight: defaultWeight,
-    }
-    return <SolarProvider value={providerValue}>{children}</SolarProvider>
+    return (
+        <SolarProvider
+            color={defaultColor}
+            size={defaultSize}
+            strokeWidth={DEFAULT_VALUES.strokeWidth}
+            secondaryColor={DEFAULT_VALUES.secondaryColor}
+            secondaryOpacity={DEFAULT_VALUES.secondaryOpacity}>
+            {children}
+        </SolarProvider>
+    )
 }

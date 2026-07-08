@@ -1,15 +1,17 @@
 # @solar-icons/react-native
 
-Solar Icons for React Native - A comprehensive icon library with 1246 icons in 6 styles.
+Solar Icons for React Native — 1,246 icons across 6 styles, built on `react-native-svg`.
 
 ## Features
 
-- 🎨 **1246 Icons** across 37 categories
+- 🎨 **1,246 Icons** across 37 categories
 - 🎭 **6 Styles**: Bold, BoldDuotone, Broken, LineDuotone, Linear, Outline
-- 📦 **Tree-shakeable** - Only bundle the icons you use
-- 🔧 **TypeScript** - Full type safety
-- ⚡ **ESM-only** - Modern and optimized
-- 📱 **React Native Native** - iOS & Android support (no web)
+- 🎨 **Duotone customization** — `secondaryColor` / `secondaryOpacity` per icon or via `<SolarProvider>`
+- 🖊 **Adjustable stroke width** — per icon or via `<SolarProvider>`
+- 📦 **Tree-shakeable** — one `.tsx` per icon per style
+- 🔧 **Full TypeScript** — `Icon`, `IconProps`, `IconStyle`
+- ⚡ **ESM-only**
+- 📱 **iOS & Android** via `react-native-svg`
 
 ## Installation
 
@@ -25,146 +27,124 @@ pnpm add @solar-icons/react-native react-native-svg
 
 ## Usage
 
-### Import by Style
-
-The recommended way to import icons for optimal tree-shaking:
+### Per-style import (recommended)
 
 ```tsx
-import { Home, User, Settings } from '@solar-icons/react-native/Bold'
-import { Heart, Star } from '@solar-icons/react-native/Linear'
+import { HomeIcon, UserIcon, SettingsIcon } from '@solar-icons/react-native/bold'
+import { HeartIcon, StarIcon } from '@solar-icons/react-native/linear'
 
 function App() {
     return (
-        <View>
-            <Home size={24} color="#000" />
-            <User size={32} color="#ff0000" />
-            <Heart size={40} color="currentColor" />
+        <View style={{ flexDirection: 'row', gap: 8 }}>
+            <HomeIcon size={24} color="#000" />
+            <UserIcon size={32} color="#ff0000" />
+            <HeartIcon size={40} color="#22c55e" />
         </View>
     )
 }
 ```
 
-### Available Styles
+### Available styles
 
 ```tsx
-import { IconName } from '@solar-icons/react-native/Bold'
-import { IconName } from '@solar-icons/react-native/BoldDuotone'
-import { IconName } from '@solar-icons/react-native/Broken'
-import { IconName } from '@solar-icons/react-native/LineDuotone'
-import { IconName } from '@solar-icons/react-native/Linear'
-import { IconName } from '@solar-icons/react-native/Outline'
+import { IconName } from '@solar-icons/react-native/bold'
+import { IconName } from '@solar-icons/react-native/bold-duotone'
+import { IconName } from '@solar-icons/react-native/broken'
+import { IconName } from '@solar-icons/react-native/line-duotone'
+import { IconName } from '@solar-icons/react-native/linear'
+import { IconName } from '@solar-icons/react-native/outline'
+```
+
+### With SolarProvider (global defaults)
+
+```tsx
+import { SolarProvider } from '@solar-icons/react-native'
+import { HomeIcon, StarIcon } from '@solar-icons/react-native/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={32} strokeWidth={2} secondaryColor="#ef4444">
+            <HomeIcon /> {/* blue, 32px, stroke 2 */}
+            <StarIcon color="#22c55e" /> {/* overrides to green */}
+        </SolarProvider>
+    )
+}
+```
+
+### Using useSolar
+
+```tsx
+import { SolarProvider, useSolar } from '@solar-icons/react-native'
+
+function Controls() {
+    const { color, setColor, size, setSize, secondaryColor, setSecondaryColor } = useSolar()
+
+    return (
+        <View>
+            <TouchableOpacity onPress={() => setColor('#ef4444')}>
+                <Text>Red theme</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSecondaryColor('#f59e0b')}>
+                <Text>Amber duotone accent</Text>
+            </TouchableOpacity>
+        </View>
+    )
+}
+```
+
+### Duotone icons
+
+Duotone icons (BoldDuotone, LineDuotone) use `secondaryColor` for the accent layer. Set it per icon or via `<SolarProvider>`:
+
+```tsx
+import { HomeBoldDuotoneIcon } from '@solar-icons/react-native/bold-duotone'
+
+;<HomeBoldDuotoneIcon size={48} color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} />
 ```
 
 ## Props
 
-All icons accept the following props:
+| Prop               | Type               | Default               | Description                                             |
+| ------------------ | ------------------ | --------------------- | ------------------------------------------------------- |
+| `size`             | `number`           | `24`                  | Icon width and height in pixels                         |
+| `color`            | `string`           | `'currentColor'`      | Icon primary color                                      |
+| `strokeWidth`      | `number \| string` | `1.5`                 | Stroke width (Linear, Broken, LineDuotone, Bold styles) |
+| `secondaryColor`   | `string`           | falls back to `color` | Duotone accent layer color                              |
+| `secondaryOpacity` | `number`           | `0.5`                 | Duotone accent layer opacity                            |
 
-| Prop       | Type      | Default          | Description                               |
-| ---------- | --------- | ---------------- | ----------------------------------------- |
-| `size`     | `number`  | `24`             | Icon size in pixels (width and height)    |
-| `color`    | `string`  | `'currentColor'` | Icon color (any valid React Native color) |
-| `mirrored` | `boolean` | `false`          | Mirror the icon horizontally              |
-| `alt`      | `string`  | `undefined`      | Accessibility label                       |
+All icons also accept any prop from `react-native-svg`'s `SvgProps` (except `width` and `height`, which are derived from `size`).
 
-Plus all props from `react-native-svg`'s `SvgProps` (except `width` and `height`).
+## SolarProvider props
 
-## Examples
-
-### Basic Usage
-
-```tsx
-import { Home } from '@solar-icons/react-native/Bold'
-;<Home /> // 24x24, currentColor
-```
-
-### Custom Size and Color
-
-```tsx
-import { User } from '@solar-icons/react-native/Linear'
-;<User size={48} color="#ff0000" />
-```
-
-### Color Inheritance
-
-```tsx
-import { Heart } from '@solar-icons/react-native/Bold'
-;<View style={{ color: '#00ff00' }}>
-    <Heart /> // Will be green
-</View>
-```
-
-### Mirrored Icon
-
-```tsx
-import { ArrowRight } from '@solar-icons/react-native/Linear'
-;<ArrowRight mirrored size={32} />
-```
-
-### With Additional SVG Props
-
-```tsx
-import { Star } from '@solar-icons/react-native/Bold'
-;<Star size={40} color="#ffd700" opacity={0.8} style={{ marginTop: 10 }} />
-```
-
-## Icon Categories
-
-- **Arrows** - Directional arrows and navigation
-- **Arrows Action** - Action-related arrows (undo, redo, forward, reply)
-- **Astronomy** - Space and celestial objects
-- **Building** - Architecture and structures
-- **Business** - Business and finance
-- **Call** - Phone and communication
-- **Devices** - Electronics and gadgets
-- **Faces** - Emotions and expressions
-- **Files** - Documents and file types
-- **Folders** - Folder management
-- **Food** - Food and beverages
-- **Hands** - Hand gestures
-- **Home** - Home and furniture
-- **IT** - Technology and programming
-- **Like** - Reactions and feedback
-- **List** - Lists and organization
-- **Map** - Location and navigation
-- **Medicine** - Healthcare and medical
-- **Messages** - Messaging and chat
-- **Money** - Currency and payments
-- **Nature** - Plants and environment
-- **Notes** - Note-taking and writing
-- **Notifications** - Alerts and notifications
-- **Parts** - Components and parts
-- **School** - Education and learning
-- **Search** - Search and discovery
-- **Security** - Security and privacy
-- **Settings** - Configuration and preferences
-- **Shopping** - E-commerce and retail
-- **Sports** - Sports and fitness
-- **Text Formatting** - Text editing tools
-- **Time** - Time and calendar
-- **Tools** - Utilities and tools
-- **UI** - User interface elements
-- **Users** - People and profiles
-- **Video** - Video and media
-- **Weather** - Weather conditions
+| Prop               | Type        | Default | Description                         |
+| ------------------ | ----------- | ------- | ----------------------------------- |
+| `color`            | `string`    | —       | Default primary color for all icons |
+| `size`             | `number`    | —       | Default size for all icons          |
+| `strokeWidth`      | `number`    | —       | Default stroke width                |
+| `secondaryColor`   | `string`    | —       | Default duotone accent color        |
+| `secondaryOpacity` | `number`    | —       | Default duotone accent opacity      |
+| `children`         | `ReactNode` | —       | Wrapped content                     |
 
 ## TypeScript
 
-Full TypeScript support with proper types:
-
 ```tsx
-import type { IconProps } from '@solar-icons/react-native'
-import { Home } from '@solar-icons/react-native/Bold'
+import type { IconProps, Icon, IconStyle } from '@solar-icons/react-native'
+import { HomeIcon } from '@solar-icons/react-native/bold'
 
-const MyIcon: React.FC<IconProps> = props => {
-    return <Home {...props} />
-}
+// IconStyle enum
+IconStyle.BOLD // 'Bold'
+IconStyle.BOLD_DUOTONE // 'BoldDuotone'
+IconStyle.BROKEN // 'Broken'
+IconStyle.LINE_DUOTONE // 'LineDuotone'
+IconStyle.LINEAR // 'Linear'
+IconStyle.OUTLINE // 'Outline'
 ```
 
 ## Requirements
 
 - React Native >= 0.72.0
 - React >= 16.8
-- react-native-svg >= 13.0.0
+- `react-native-svg` >= 13.0.0
 
 ## License
 
@@ -172,18 +152,9 @@ MIT © [Saoudi Hakim](https://hakimsaoudi.dev)
 
 ## Related Packages
 
-- [@solar-icons/react](https://www.npmjs.com/package/@solar-icons/react) - Solar Icons for React (web)
-- [@solar-icons/react-perf](https://www.npmjs.com/package/@solar-icons/react-perf) - Performance-optimized React icons
-- [@solar-icons/vue](https://www.npmjs.com/package/@solar-icons/vue) - Solar Icons for Vue
-- [@solar-icons/nuxt](https://www.npmjs.com/package/@solar-icons/nuxt) - Solar Icons for Nuxt
-- [@solar-icons/svelte](https://www.npmjs.com/package/@solar-icons/svelte) - Solar Icons for Svelte
-
-## Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](../../CONTRIBUTING.md) for details.
-
-## Support
-
-- 🐛 [Report a bug](https://github.com/saoudi-h/solar-icons/issues)
-- 💡 [Request a feature](https://github.com/saoudi-h/solar-icons/issues)
-- 📖 [Documentation](https://github.com/saoudi-h/solar-icons)
+- [@solar-icons/react](https://www.npmjs.com/package/@solar-icons/react) — React (web), CSS-vars + provider
+- [@solar-icons/vue](https://www.npmjs.com/package/@solar-icons/vue) — Vue 3
+- [@solar-icons/nuxt](https://www.npmjs.com/package/@solar-icons/nuxt) — Nuxt module
+- [@solar-icons/svelte](https://www.npmjs.com/package/@solar-icons/svelte) — Svelte 5
+- [@solar-icons/solid](https://www.npmjs.com/package/@solar-icons/solid) — SolidJS
+- [@solar-icons/angular](https://www.npmjs.com/package/@solar-icons/angular) — Angular 17+

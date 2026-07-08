@@ -1,7 +1,0 @@
-.next
-node_modules
-src/index.ts
-src/
-!src/icons/**/*
-
-CHANGELOG.md

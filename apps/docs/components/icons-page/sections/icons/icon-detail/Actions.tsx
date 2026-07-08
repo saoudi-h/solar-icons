@@ -1,13 +1,13 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/CopyButton'
-import { DownloadMinimalistic as DownloadIcon, useSolar } from '@solar-icons/react'
+import { DownloadMinimalisticIcon } from '@solar-icons/react/linear/download-minimalistic'
+import { LinkMinimalistic2Icon } from '@solar-icons/react/linear/link-minimalistic-2'
 import { saveAs } from 'file-saver'
-import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import { useRef } from 'react'
 import { toast } from 'sonner'
-import { selectedIconAtom } from '../context'
+import { useSelectedIcon, useStyleURL } from '../context'
 
 const downloadData = (filename: string, data: string) => {
     const link = document.createElement('a')
@@ -18,14 +18,14 @@ const downloadData = (filename: string, data: string) => {
 
 export const Actions: FC = () => {
     const ref = useRef<SVGSVGElement>(null)
-    const [selectedIcon] = useAtom(selectedIconAtom)
-    const { value } = useSolar()
+    const selectedIcon = useSelectedIcon()
+    const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
 
     const handleDownloadSVG = async () => {
         try {
-            const url = `https://raw.githubusercontent.com/saoudi-h/solar-icons/main/packages/core/svgs/${selectedIcon?.category}/${value.weight}/${selectedIcon.name}.svg`
+            const url = `https://raw.githubusercontent.com/saoudi-h/solar-icons/main/packages/core/svgs/${selectedIcon?.category}/${weight}/${selectedIcon.fullName}.svg`
 
             const response = await fetch(url, { method: 'HEAD' })
 
@@ -33,7 +33,7 @@ export const Actions: FC = () => {
                 throw new Error('Failed to download SVG')
             }
 
-            saveAs(url, `${selectedIcon?.name}.svg`)
+            saveAs(url, `${selectedIcon?.fullName}.svg`)
             toast.success('SVG downloaded')
         } catch {
             console.error('SVG download error')
@@ -77,7 +77,7 @@ export const Actions: FC = () => {
             })
 
             const pngData = canvas.toDataURL('image/png')
-            downloadData(`${selectedIcon?.name}.png`, pngData)
+            downloadData(`${selectedIcon?.fullName}.png`, pngData)
             toast.success('PNG downloaded')
         } catch (error) {
             console.error('PNG generation error:', error)
@@ -143,6 +143,16 @@ export const Actions: FC = () => {
         }
     }
 
+    const handleShare = async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href)
+            toast.success('Link copied to clipboard')
+        } catch (error) {
+            console.error('Share error:', error)
+            toast.error('Failed to copy link to clipboard')
+        }
+    }
+
     return (
         <div
             className={`
@@ -151,24 +161,23 @@ export const Actions: FC = () => {
               lg:mr-4 lg:flex-col lg:border-r lg:pr-4
             `}>
             <div className="-z-50 hidden">
-                <selectedIcon.Icon
-                    ref={ref}
-                    size={value.size || 16}
-                    weight={value.weight || 'Linear'}
-                    color={value.color || ''}
-                />
+                <selectedIcon.Icon ref={ref} size={16} weight={weight} />
             </div>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className="p-1">
                 Get SVG
-                <DownloadIcon size={16} weight="Linear" color={''} />
+                <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className={`
-              p-1
-            `}>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className="p-1">
                 Get PNG
-                <DownloadIcon size={16} weight="Linear" color={''} />
+                <DownloadMinimalisticIcon size={16} isolated />
             </Button>
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopySVG}>
                 Copy SVG
@@ -176,6 +185,14 @@ export const Actions: FC = () => {
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
                 Copy PNG
             </CopyButton>
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleShare}
+                className="p-1">
+                Share
+                <LinkMinimalistic2Icon size={16} isolated />
+            </Button>
         </div>
     )
 }

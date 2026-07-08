@@ -1,11 +1,7 @@
 .next
 node_modules
-dist
+src/index.ts
 src/
-!src/lib/**/*
-!src/ssr/**/*
-!src/csr/**/*
-!src/defs/**/*
+!src/icons/**/*
 
 CHANGELOG.md
-

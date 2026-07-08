@@ -2,5 +2,5 @@
 <path d="M4 17H11" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M4 12L11 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M4 7L11 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17 4L17 20M17 4L14 8M17 4L20 8M17 20L20 16M17 20L14 16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 4L17 20M20 8L17 4L14 8M14 16L17 20L20 16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

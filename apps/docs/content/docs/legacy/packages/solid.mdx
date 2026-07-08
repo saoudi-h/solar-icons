@@ -1,0 +1,111 @@
+---
+title: 'Solid'
+description: SolidJS components for Solar Icons.
+icon: solid
+---
+
+Use `@solar-icons/solid` in SolidJS applications. It features reactive components optimized for minimal bundle size.
+
+```package-install
+@solar-icons/solid
+```
+
+## Features
+
+- **SolidJS ready**: Reactivity optimized.
+- **Tree-shakeable**: Bundles only the icons you import.
+- **TypeScript ready**: Full type definitions included.
+
+## Usage
+
+Import icons from a style and use them as Solid components:
+
+```tsx
+import { House } from '@solar-icons/solid/Bold'
+
+function App() {
+    return <House size={32} color="purple" />
+}
+```
+
+## Props
+
+Icon components accept standard SVG attributes alongside these props:
+
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
+| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
+| `alt`      | `string`           | `undefined`    | Accessibility title.                   |
+
+---
+
+## Import Patterns
+
+### Import by Style
+
+Import all icons in a style:
+
+```tsx
+import { House, Settings, User } from '@solar-icons/solid/Bold'
+import { House as HouseLinear } from '@solar-icons/solid/Linear'
+
+function App() {
+    return (
+        <>
+            <House size={24} />
+            <HouseLinear size={24} />
+        </>
+    )
+}
+```
+
+Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`.
+
+### Import by Category
+
+Import icons in a category:
+
+```tsx
+import { Bold, Linear } from '@solar-icons/solid/category/arrows'
+
+function App() {
+    return (
+        <>
+            <Bold.ArrowUp size={24} />
+            <Linear.ArrowDown size={24} />
+        </>
+    )
+}
+```
+
+### Direct Component Import
+
+Import individual components directly:
+
+```tsx
+import { House } from '@solar-icons/solid/category/building/Bold'
+
+function App() {
+    return <House size={24} color="#f59e0b" />
+}
+```
+
+---
+
+## IconBase Component
+
+Use `IconBase` to build custom icons:
+
+```tsx
+import { IconBase } from '@solar-icons/solid'
+
+function App() {
+    return (
+        <IconBase size={24} color="red">
+            <path d="M12 2L15.09 8.26..." fill="currentColor" />
+        </IconBase>
+    )
+}
+```

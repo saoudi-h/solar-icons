@@ -1,0 +1,121 @@
+---
+title: Svelte Migration
+description: Upgrade @solar-icons/svelte to v2.
+icon: svelte
+---
+
+## Requirements
+
+v2 requires Svelte 5.0+ (runes). If you are on Svelte 4, upgrade Svelte first.
+
+## Import paths
+
+Kebab-case directories, `.svelte` extension on single-icon imports:
+
+**Before:**
+
+```ts
+import Home from '@solar-icons/svelte/Bold/Home.svelte'
+```
+
+**After (single icon):**
+
+```ts
+import HomeIcon from '@solar-icons/svelte/bold/home'
+```
+
+**After (per-style barrel):**
+
+```ts
+import { HomeIcon } from '@solar-icons/svelte/bold'
+```
+
+**After (top-level):**
+
+```ts
+import { HomeBoldIcon } from '@solar-icons/svelte'
+```
+
+## Component naming
+
+All components now use an `Icon` suffix (e.g. `HomeIcon`, `HeartBoldIcon`). Per-style barrel imports (`@solar-icons/svelte/bold`) use the short name (`HomeIcon`), top-level imports use the disambiguated name (`HomeBoldIcon`).
+
+Single-file imports use the default export (Svelte convention). Replace PascalCase with kebab-case: `@solar-icons/svelte/bold/home` (the `.svelte` extension is resolved automatically).
+
+## Category imports removed
+
+**Before:**
+
+```ts
+import { Bold } from '@solar-icons/svelte/category/arrows'
+```
+
+**After:**
+
+```ts
+import ArrowUpIcon from '@solar-icons/svelte/bold/arrow-up'
+```
+
+## Deprecated: `mirrored` prop removed
+
+V2 drops the `mirrored` prop. Use CSS `transform: scaleX(-1)` instead.
+
+## useSolar
+
+```ts
+<script>
+import { useSolar } from '@solar-icons/svelte'
+
+const solar = useSolar()
+</script>
+
+<button onclick={() => solar.setColor('#ef4444')}>Red</button>
+```
+
+Must be called inside a `<SolarProvider>`. Keep `solar` as a single object; reading `solar.color` is reactive. Destructuring snapshots the value and loses reactivity.
+
+## Dynamic imports
+
+Runtime-switchable icons via `@solar-icons/svelte/dynamic`. Use this only when you swap styles at runtime. For most apps, the per-style path on the previous lines is the right choice.
+
+```ts
+<script>
+import { HeartIcon } from '@solar-icons/svelte/dynamic'
+</script>
+
+<HeartIcon weight="BoldDuotone" color="#3b82f6" />
+```
+
+The dynamic component bundles all six styles. Render one or six, the bundle is the same.
+
+## SolarProvider
+
+```ts
+<script>
+import { SolarProvider } from '@solar-icons/svelte'
+import HomeIcon from '@solar-icons/svelte/bold/home'
+</script>
+
+<SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+  <HomeIcon />
+</SolarProvider>
+```
+
+Provider props are `$bindable()` for two-way binding.
+
+## CSS variable cascade
+
+`SolarProvider` sets CSS custom properties on a wrapper `<div style="display: contents">`. Icons read these values via `var()` fallbacks. You can override any value on a parent element:
+
+```ts
+<div style="--solar-color: #ef4444; --solar-size: 48px;">
+  <HomeIcon />
+</div>
+```
+
+## Duotone and stroke width
+
+```ts
+<HeartIcon secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+<SettingsIcon strokeWidth={2} />
+```

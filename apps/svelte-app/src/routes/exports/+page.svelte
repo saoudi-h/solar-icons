@@ -1,29 +1,15 @@
 <script lang="ts">
-    // Test all export patterns
-
-    // 1. Main exports from root
     import { type IconStyle } from '@solar-icons/svelte/lib/types';
     import { IconBase, type IconProps } from '@solar-icons/svelte';
 
-    // 2. Style imports (flat)
-    import { AltArrowDown as BoldArrow } from '@solar-icons/svelte/Bold';
-    import { AltArrowDown as LinearArrow } from '@solar-icons/svelte/Linear';
-    import { AltArrowDown as BoldDuotoneArrow } from '@solar-icons/svelte/BoldDuotone';
-    import { AltArrowDown as LineDuotoneArrow } from '@solar-icons/svelte/LineDuotone';
-    import { AltArrowDown as BrokenArrow } from '@solar-icons/svelte/Broken';
-    import { AltArrowDown as OutlineArrow } from '@solar-icons/svelte/Outline';
+    import { AltArrowDownIcon as BoldArrow } from '@solar-icons/svelte/bold';
+    import { AltArrowDownIcon as LinearArrow } from '@solar-icons/svelte/linear';
+    import { AltArrowDownIcon as BoldDuotoneArrow } from '@solar-icons/svelte/bold-duotone';
+    import { AltArrowDownIcon as LineDuotoneArrow } from '@solar-icons/svelte/line-duotone';
+    import { AltArrowDownIcon as BrokenArrow } from '@solar-icons/svelte/broken';
+    import { AltArrowDownIcon as OutlineArrow } from '@solar-icons/svelte/outline';
 
-    // 3. Category imports (namespaced by style)
-    import {
-        Bold as ArrowsBold,
-        Linear as ArrowsLinear,
-    } from '@solar-icons/svelte/category/arrows';
-
-    // 4. Direct file imports
-    import { AltArrowUp } from '@solar-icons/svelte/category/arrows/Bold';
-
-    // 5. import
-    import { ArrowUpBold } from '@solar-icons/svelte';
+    import { ArrowUpBoldIcon } from '@solar-icons/svelte';
 
     // Test types work
     const testProps: IconProps = {
@@ -53,8 +39,7 @@
         { name: 'LineDuotone style import', pass: typeof LineDuotoneArrow === 'function' },
         { name: 'Broken style import', pass: typeof BrokenArrow === 'function' },
         { name: 'Outline style import', pass: typeof OutlineArrow === 'function' },
-        { name: 'Category namespace import', pass: typeof ArrowsBold.AltArrowDown === 'function' },
-        { name: 'Direct category import', pass: typeof AltArrowUp === 'function' },
+        { name: 'Global name import', pass: typeof ArrowUpBoldIcon === 'function' },
     ]);
 
     const allPassed = $derived(tests.every((t) => t.pass));
@@ -158,29 +143,28 @@
             </div>
         </div>
 
-        <!-- Category imports -->
+        <!-- Additional imports -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
             <div
                 class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
             >
                 <div class="flex justify-center">
-                    <ArrowsBold.AltArrowDown size={32} color="#10b981" />
+                    <ArrowUpBoldIcon size={32} color="#10b981" />
                 </div>
-                <p class="text-sm text-slate-400">Category Namespace (Bold)</p>
+                <p class="text-sm text-slate-400">Global name import</p>
             </div>
             <div
                 class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
             >
                 <div class="flex justify-center">
-                    <ArrowsLinear.AltArrowDown size={32} color="#10b981" />
+                    <IconBase size={24} color="#f59e0b"
+                        ><path d="M0 0h24v24H0z" fill="none" /><path
+                            d="M12 2L2 22h20L12 2z"
+                            fill="currentColor"
+                        /></IconBase
+                    >
                 </div>
-                <p class="text-sm text-slate-400">Category Namespace (Linear)</p>
-            </div>
-            <div
-                class="bg-slate-800/30 rounded-xl p-4 border border-slate-700/30 text-center space-y-2"
-            >
-                <div class="flex justify-center"><AltArrowUp size={32} color="#3b82f6" /></div>
-                <p class="text-sm text-slate-400">Direct Import</p>
+                <p class="text-sm text-slate-400">IconBase wrapper</p>
             </div>
         </div>
 
@@ -201,7 +185,7 @@
         <div class="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30 mt-4">
             <h3 class="text-lg font-semibold text-white mb-4">ArrowUp</h3>
             <div class="flex items-center gap-4">
-                <ArrowUpBold size={48} color="#ec4899" />
+                <ArrowUpBoldIcon size={48} color="#ec4899" />
                 <span class="text-slate-400">ArrowUp</span>
             </div>
         </div>

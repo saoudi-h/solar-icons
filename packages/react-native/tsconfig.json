@@ -3,7 +3,6 @@
     "compilerOptions": {
         "jsx": "react-native",
         "types": ["node"],
-        "allowImportingTsExtensions": true,
         "noEmit": true
     },
     "include": ["src", "scripts"],

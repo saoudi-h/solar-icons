@@ -1,0 +1,106 @@
+---
+title: 'Angular'
+description: Signal-based components for Solar Icons. Optimized for Angular 17+ with native tree-shaking.
+icon: angular
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
+import { Steps, Step } from 'fumadocs-ui/components/steps'
+import { Callout } from 'fumadocs-ui/components/callout'
+
+Use `@solar-icons/angular` to integrate Solar icons into Angular 17+ applications. Built with Signals and Standalone Components.
+
+## Installation
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+    <Tab value="pnpm">```bash pnpm add @solar-icons/angular ```</Tab>
+    <Tab value="npm">```bash npm install @solar-icons/angular ```</Tab>
+    <Tab value="yarn">```bash yarn add @solar-icons/angular ```</Tab>
+</Tabs>
+
+## Usage
+
+### Components
+
+Import individual icon components:
+
+```tsx
+import { Component } from '@angular/core'
+import { HeartBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [HeartBold],
+    template: `<svg solarHeartBold [size]="24" color="#ef4444" />`,
+})
+export class App {}
+```
+
+## Dynamic Rendering
+
+For runtime lookup or dynamic name swapping, use the `SolarIcon` directive.
+
+### 1. Register icons
+
+Register icons to expose them to dynamic lookup:
+
+```tsx
+import { provideSolarIcons } from '@solar-icons/angular'
+import { HeartBold, StarBold } from '@solar-icons/angular/like'
+
+bootstrapApplication(App, {
+    providers: [provideSolarIcons({ HeartBold, StarBold })],
+})
+```
+
+### 2. Render dynamic icons
+
+Import `SolarIcon` and pass the name or component class to `solarIcon`:
+
+```tsx
+import { SolarIcon, SunBold } from '@solar-icons/angular'
+
+@Component({
+    standalone: true,
+    imports: [SolarIcon],
+    template: `
+        <!-- Lookup by registered name -->
+        <ng-container [solarIcon]="'HeartBold'" />
+
+        <!-- Direct class reference -->
+        <ng-container [solarIcon]="Sun" />
+    `,
+})
+export class App {
+    protected readonly Sun = SunBold
+}
+```
+
+<Callout type="info" title="IDE Warnings">
+    Angular might warn that the component is unused (`NG8113`) when referencing classes directly.
+    You can safely ignore this.
+</Callout>
+
+## Inputs & Props
+
+Icon components support these inputs:
+
+| Input      | Type               | Default          | Description                                 |
+| ---------- | ------------------ | ---------------- | ------------------------------------------- |
+| `size`     | `string \| number` | `'1em'`          | Pixels or CSS units (e.g., `32`, `'2rem'`). |
+| `color`    | `string`           | `'currentColor'` | CSS color value.                            |
+| `alt`      | `string`           | `undefined`      | Adds `<title>` and accessibility label.     |
+| `mirrored` | `boolean`          | `false`          | Flips the icon horizontally.                |
+
+When `alt` is set, the component renders a `<title>` tag for screen readers. Otherwise, it defaults to `aria-hidden="true"`.
+
+## Attribute Selectors
+
+This package targets SVGs using attribute selectors (e.g., `solarHeartBold` on `<svg>`) rather than custom wrapper tags.
+
+```html
+<!-- Native SVG element -->
+<svg solarHeartBold [size]="24" />
+```
+
+This keeps the DOM tree clean, permits direct CSS targeting, and avoids wrapper element overhead.

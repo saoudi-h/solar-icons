@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from '@solar-icons/react/ssr'
+import { ArrowRightIcon } from '@solar-icons/react/linear/arrow-right'
 import Link from 'next/link'
 import { DocsShowcase } from './DocsShowcase'
 import { DxShowcase } from './DxShowcase'
@@ -64,12 +64,12 @@ export const FeaturesSection = () => {
                           box-decoration-clone underline decoration-primary
                           underline-offset-8
                         ">
-                        Teams
+                        All
                     </span>
                 </Heading>
                 <p
                     className="
-                      max-w-[580px] text-sm/relaxed text-muted-foreground
+                      max-w-145 text-sm/relaxed text-muted-foreground
                       md:text-base
                     ">
                     A complete icon set with six visual styles, native frontend framework packages,
@@ -93,7 +93,7 @@ export const FeaturesSection = () => {
                     <BentoCard>
                         <BentoHeader
                             title="Explore and Search"
-                            description="Filter 1,200+ icons by category, search by keywords, adjust stroke weights, and copy code snippets for React, Svelte, or Vue."
+                            description="Filter 1,200+ icons by category, search by keywords, adjust size, weights, and copy code snippets for React, Svelte, Vue, etc."
                             href="/icons"
                             buttonText="Search"
                         />
@@ -228,7 +228,7 @@ const BentoHeader = ({
                     className="rounded-full">
                     <Link href={href}>
                         {buttonText}
-                        <ArrowRight />
+                        <ArrowRightIcon />
                     </Link>
                 </Button>
             )}

@@ -1,15 +1,19 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '../src/module'],
+  modules: ['../src/module'],
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
+  css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
   },
   solarIcons: {
+    namePrefix: 'Solar',
+    autoImport: true,
+    provider: true,
+    color: '#f59e0b',
     size: 32,
-    weight: 'BoldDuotone',
+    strokeWidth: 1.5,
   },
 })

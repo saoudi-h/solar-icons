@@ -6,6 +6,6 @@
 <path d="M12 2H19C20.6569 2 22 3.34315 22 5C22 6.65685 20.6569 8 19 8H5C3.34315 8 2 6.65685 2 5C2 3.34315 3.34315 2 5 2H8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M13 5L19 5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M13 11L19 11" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<circle cx="6" cy="5" r="1" fill="#1C274C"/>
-<circle cx="6" cy="11" r="1" fill="#1C274C"/>
+<path d="M6 5H6.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 11H6.0001" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -1,0 +1,131 @@
+# PROJECT TASKS & ROADMAP
+
+> **LEGEND**
+> **Priority:** [🔴 Critical] [🟠 High] [🔵 Medium] [⚪ Low]
+> **Complexity:** [S] Small (1h), [M] Medium (4h), [L] Large (1-2 days), [XL] Huge (Planning req.)
+> **Status:** [ ] Todo, [/] In Progress, [x] Done, [!] Blocked
+
+> **V2 plan source:** `packages/core/V2_roadmap.md` (untracked, French, internal working draft). TASKS.md is the canonical task list — new tasks can be added, removed, or refined as discoveries are made. The roadmap is not a strict contract.
+
+## 🚧 Active
+
+### V2 — Phase 1: Foundation
+
+- [x] **[V2-13]** Standardize import segment casing to kebab-case across all packages. ✅ Commit `84c875b40` (19 Jun). Style directories use kebab-case (`bold`, `bold-duotone`), generated imports use kebab-case paths, all demo apps updated. Zero PascalCase paths remaining. The "open decision" (lowercase vs kebab-case) was resolved to kebab-case at implementation time. `Priority: 🟠` `Complexity: M`
+
+### V2 — Release
+
+ - [x] **[BETA]** Publish all packages as `2.0.0-beta.0` (tag `beta`). `Priority: 🔴` `Complexity: M` *(readiness study 2026-07-08 — `worklogs/2026-07-08-BETA-READINESS.md`)*
+   - **CORRECTION MAJEURE (2026-07-08):** cible = **`2.0.0`** (le "V3" était injustifié; justification = fusion react/react-perf). Repo renommé v3→v2.
+   - ✅ (1) Reset versions → bases `1.x` (commit `ec1368a5d`).
+   - ✅ (2) `changeset pre enter beta` (tag beta) + changeset major 7 pkgs (commit `ce17fd452`).
+   - ✅ (3) Issue #495 + branches `beta`/`v2` créées et poussées. Version réelle générée par changesets = **`2.0.0-beta.0`** (le 1er prerelease est `beta.0`, pas `beta.1`). Issues liées à #495 : #494 (suffixe `Icon`), #493 (noms), #486 (strokeWidth).
+   - ✅ (4) CI build+tests OK. Fix nuxt (commit `a21d92e2d`: entries émis depuis `src/runtime`) + fix test nuxt mock `@solar-icons/vue` (commit `a6a68f5db`).
+   - ✅ (5) Publish `2.0.0-beta.0` tag `beta` — run `28942432333` (rerun après correction du secret `NPM_TOKEN`). 7 pkgs publiés, `latest` reste `1.x` (beta-first OK).
+   - ⚠️ (6) Doc via `main` prudemment (pas de changeset package → pas de stable involontaire via `release.yml`).
+   - ⚠️ (7) **RESTANT (user, besoin auth npm):** déprecier `@solar-icons/react-perf@2.1.1` → pointer vers `@solar-icons/react`. Commande : `npm deprecate @solar-icons/react-perf@2.1.1 "Discontinued. Use @solar-icons/react (>=2.0.0) instead."` (échec ici : `npm whoami` → E401, pas d'auth agent).
+- [ ] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S`
+- [/] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
+
+### V2 — Svelte audit & fix
+
+- [x] **[SVELTE-FIX]** Fix `apps/svelte-app` (broken: `Home is not a function` at runtime) and audit `packages/svelte` for full V2 compliance, incl. docs pages. `Priority: 🔴` `Complexity: M`
+
+### V2 — Solid audit & fix
+
+- [x] **[SOLID-FIX]** Fix `apps/solid-app` (broken: `solar.mirrored is not a function` at runtime) and audit `packages/solid` for full V2 compliance, incl. docs pages. `Priority: 🔴` `Complexity: M`
+
+### V2 — Known regressions (pre-existing)
+
+- [ ] **[ANGULAR-APP-MIGRATE]** `apps/angular-app` uses pre-V2 API: `HomeBold` etc. (no `Icon` suffix), `@solar-icons/angular/arrows` (category path, removed). `Priority: 🟠` `Complexity: S`
+- [ ] **[DOCS-MIGRATE]** `apps/docs` references `@solar-icons/react/ssr` (removed) and pre-V2 component names in MDX. `Priority: 🟠` `Complexity: S`
+
+## ⏸️ Deferred
+
+- [ ] **[CLEAN-05]** Fix Svelte `peerDependencies.svelte: ">= 4.0.0"` (source uses Svelte 5 runes, peerDep is false).
+- [ ] **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
+- [ ] **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** CORE-ARCH.
+- [ ] **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
+- [/] **[CORE-ARCH]** Path A decided 2026-06-25: make `dist/` the source of truth for consumers. Implementation in 7 sub-tasks (A1–A7). Already done: core exports helpers (`codegen.ts`), framework packages import from `@solar-icons/core`. Remaining: verify all 6 packages use core imports only.
+
+## ✅ Completed
+
+### V2 — Init & Planning
+
+- [x] **[INIT-01]** Review project context and structure. `Priority: 🔵` `Complexity: S` *See: worklogs/2026-06-18-INIT-01*
+- [x] **[DEBUG-01/02/03]** Fix `pnpm autonomos` regression, tsdown `exports: true` bug — published `@autonomos/cli@0.3.2`, `0.3.3`. `Priority: 🔴` *See: worklogs/2026-06-18-DEBUG-01, worklogs/2026-06-18-DEBUG-03*
+- [x] **[PLAN-V2]** Transform V2 roadmap into structured task list. `Priority: 🟠` `Complexity: S` *See: worklogs/2026-06-18-PLAN-V2*
+- [x] **[TEST-V2]** Audit all package tests post-V2. 71 tests pass across 7 packages (16 test files). `Priority: 🟠` `Complexity: M` *See: worklogs/2026-06-24-react-compat-test-audit*
+
+### V2 — Phase 1: Foundation
+
+- [x] **[V2-01]** Parser implementation — reads `svgs/`, normalizes, duotone extraction, base64 preview, two iteration modes, sync `loadIcon` cache, integrity check. *See: worklogs/2026-06-18-V2-01*
+- [x] **[V2-02]** Parser validation — Vitest tests for cleanup rules, duotone extraction, integrity check, cache lifecycle. Depends on V2-01.
+- [x] **[V2-12]** Icon renames per issue #493 (plain→plane, etc.) via Figma rename plugin + figma-export-plugin + metadata remap. *Reference: saoudi-h/solar-icons#493*
+
+### V2 — Phase 2: Framework hooks
+
+- [x] **[V2-03a]** Svelte parser hook
+- [x] **[V2-03b]** Solid parser hook
+- [x] **[V2-03c]** Angular parser hook
+- [x] **[V2-04]** React parser hook
+- [x] **[V2-05]** Vue parser hook
+- [x] **[V2-06]** React Native parser hook
+
+### V2 — Phase 3: Package renames
+
+- [x] **[V2-07]** Migrate `@solar-icons/react` to unit-per-style
+- [x] **[V2-08b]** Migrate `@solar-icons/vue` to unit-per-style
+- [x] **[V2-08c]** Update `@solar-icons/nuxt`
+
+### V2 — Phase 4: Duotone
+
+- [x] **[V2-09]** Duotone CSS-var customization on all web framework hooks. Also fixed: double-opacity bug, DUOTONE_ACCENT_REGEX, trailing-separator handling. *See: worklogs/2026-06-19-V2-09-handover, worklogs/2026-06-20-V2-09-duotone-css-vars, worklogs/2026-06-20-V2-09-session*
+
+### V2 — Hardening
+
+- [x] **[V2-10]** Sanctify `packages/core/src/metadata-descriptions.json`
+- [x] **[V2-11]** Delete unused `scripts/generate-assets.ts` and `scripts/utils.ts`
+- [x] **[V2-14]** ESM-only: drop CJS from React, Vue. All packages ESM-only with `.mjs`.
+- [x] **[V2-15]** Migrate React from Vite+tsc to tsdown.
+
+### V2 — Next (CSS vars, classes, provider)
+
+- [x] **[V2-16a]** Solar CSS-vars + classes on react (formerly react-perf). `Priority: 🔵` `Complexity: L`
+- [x] **[V2-16b]** Same pattern for solid, svelte, angular. `Priority: 🔵` `Complexity: M`
+2026-06-21-V2-23-session*
+
+### V2 — Beta tasks
+
+- [x] **[REACT-CLEANUP]** Flatten React directory structure, drop forwardRef, remove SSR, dynamic exports with JSDoc. `Priority: 🔴` `Complexity: L` *See: worklogs/2026-06-24-react-cleanup-propagation*
+- [x] **[REACT-COMPAT]** Keep `forwardRef` for React 18 compat (React 19 peer ≥ 16.8). `Priority: 🟠` `Complexity: S` *See: worklogs/2026-06-24-react-compat-test-audit*
+- [x] **[PROPAGATE]** Same transformations (flatten dirs, dynamic exports, Icon suffix, secondaryColor) to Vue, Solid, Svelte, Angular, React Native. `Priority: 🔴` `Complexity: L` *See: worklogs/2026-06-24-react-cleanup-propagation*
+- [x] **[DOCS-V2]** Update documentation for V2.0: CSS vars, SolarProvider, useSolar, secondaryColor, strokeWidth. Remove obsolete content. `Priority: 🟠` `Complexity: L`
+- [x] **[MIGRATION]** Create V2 migration guide (breaking changes, package rename map, before/after code examples, codemod instructions). `Priority: 🟠` `Complexity: M`
+- [x] **[VUE-DYNAMIC-BROKEN]** Fix Vue dynamic icons: generator was not passing `styles` prop to `DynamicIcon` — rendered nothing. *See: worklogs/2026-07-01-VUE-DYNAMIC-BROKEN*
+- [x] **[VUE-APP-FIX]** Fix `apps/vue-app` template parse errors (orphan tags, pre-V2 icon names). *See: worklogs/2026-07-01-VUE-APP-FIX*
+- [x] **[VUE-NAMED-EXPORTS]** Switch `@solar-icons/vue` from `export default` to named exports. *See: worklogs/2026-07-01-VUE-NAMED-EXPORTS*
+- [x] **[ICON-RENAMES]** Document V2 icon renames (31 names) in `/docs/v2/migration-to-v2/icon-renames`. `Priority: 🟠` `Complexity: S`
+- [x] **[NUXT-PLAYGROUND-FIX]** Fix `@solar-icons/nuxt` playground (broken nuxt.config, stale deps, pre-V2 icon names). `Priority: 🟠` `Complexity: S`
+
+### Post-V2
+
+- [x] **[POST-01]** Consolidate `apps/docs/core/` into `packages/core/`. `Priority: ⚪`
+- [x] **[POST-02]** Fix Angular peer-dep range: `"17.x - 22.x"`. `Priority: ⚪`
+- [x] **[POST-04]** Update demo apps (V2 features, rename `react-perf-app`→`react-app`). `Priority: 🟠`
+- [x] **[POST-06]** V2 features on react-native (secondaryColor, secondaryOpacity, strokeWidth). `Priority: 🟠`
+- [x] **[POST-08]** Add `Icon` suffix to all component names. `Priority: 🟠`
+- [x] **[POST-09]** Full V2 features on react-native (Provider, strokeWidth, secondaryColor/Opacity, Icon suffix). `Priority: 🟠`
+
+### Docs UI redesign
+
+- [x] **[DOCS-UI-01]** FilterBar redesign — style picker, geometry control, color pickers, view mode, sidebar, search, URL state, animation simplification. *See: worklogs/2026-06-28-DOCS-UI-01, 2026-06-30*
+- [x] **[DOCS-UI-02]** `/icons` page: IconDetail bottom panel height reconciliation (FloatingDrawer ResizeObserver, ROW_TO_DETAIL_GAP). *See: worklogs/2026-06-30-DOCS-UI-02*
+
+### Tech debt cleanup (committed)
+
+- [x] **[CLEAN-01]** Move `parser-hook.ts` from `src/` to `scripts/` in 6 packages. ✅ Commit `f5bbbf07` *See: worklogs/2026-06-25-V2-cleanup*
+- [x] **[CLEAN-02]** Delete dead files (vue category.ts, angular default-attributes.ts, svelte mjs shims, MD notes, tsconfig.build.json files). ✅ Commit `2d7222a7` *See: worklogs/2026-06-25-V2-cleanup*
+- [x] **[CLEAN-03]** Kill dead deps (Vue `@babel/core`, `vite-plugin-static-copy`; Svelte `tsdown`, `rollup-plugin-svelte`, etc.). ✅ Commit `2790e08a` *See: worklogs/2026-06-25-V2-cleanup*
+- [x] **[CLEAN-04]** Align package versions to 3.0.0 (Svelte, RN, Angular, Solid, Nuxt). ✅ Commit `396f2deb` *See: worklogs/2026-06-25-V2-cleanup*
+- [x] **[CLEAN-09]** Fix Solid nested `<svg>` bug (iconBody string prop + `<g innerHTML>`) + RN DynamicIcon re-export fix. ✅ Commit `5b4b7607` *See: worklogs/2026-06-25-V2-cleanup*

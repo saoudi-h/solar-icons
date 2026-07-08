@@ -1,0 +1,152 @@
+---
+title: Global Configuration
+description: Configure default icon styles with SolarProvider and useSolar.
+icon: Settings2Icon
+---
+
+`SolarProvider` sets CSS custom properties that cascade to every icon inside it. Icons inherit defaults without re-rendering.
+
+## Provider cascade
+
+Place `SolarProvider` near the root. Nest providers to override for subtrees.
+
+```jsx
+import { SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold'
+import { SettingsIcon } from '@solar-icons/react/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <Header />
+            <SolarProvider color="#ef4444">
+                <HeartIcon />
+            </SolarProvider>
+            <SettingsIcon />
+        </SolarProvider>
+    )
+}
+```
+
+## CSS variables
+
+| Provider prop      | CSS Variable                | Role                                       |
+| ------------------ | --------------------------- | ------------------------------------------ |
+| `color`            | `--solar-color`             | Fill and stroke color                      |
+| `size`             | `--solar-size`              | Width and height                           |
+| `strokeWidth`      | `--solar-stroke-width`      | Stroke width for Linear/Broken/LineDuotone |
+| `secondaryColor`   | `--solar-secondary-color`   | Duotone accent color                       |
+| `secondaryOpacity` | `--solar-secondary-opacity` | Duotone accent opacity                     |
+
+Overriding a variable on an individual icon takes precedence over the provider.
+
+## Dynamic color themes
+
+Build a theme switcher with `useSolar`.
+
+```jsx
+import { useSolar, SolarProvider } from '@solar-icons/react'
+import { HeartIcon } from '@solar-icons/react/bold-duotone'
+
+function ThemeSwitcher() {
+    const { setColor, setSecondaryColor } = useSolar()
+
+    return (
+        <div>
+            <button
+                onClick={() => {
+                    setColor('#3b82f6')
+                    setSecondaryColor('#f59e0b')
+                }}>
+                Light
+            </button>
+            <button
+                onClick={() => {
+                    setColor('#93c5fd')
+                    setSecondaryColor('#fcd34d')
+                }}>
+                Dark
+            </button>
+        </div>
+    )
+}
+
+function App() {
+    return (
+        <SolarProvider>
+            <ThemeSwitcher />
+            <HeartIcon />
+        </SolarProvider>
+    )
+}
+```
+
+## Framework patterns
+
+### Vue
+
+```vue
+<SolarProvider color="#3b82f6" :size="24" :stroke-width="1.5">
+  <HeartIcon />
+</SolarProvider>
+```
+
+### Svelte
+
+Provider props are `$bindable()`:
+
+```svelte
+<script>
+import { SolarProvider } from '@solar-icons/svelte'
+import HeartIcon from '@solar-icons/svelte/bold/heart'
+
+let color = $state('#3b82f6')
+</script>
+
+<SolarProvider bind:color>
+  <input type="color" bind:value={color} />
+  <HeartIcon />
+</SolarProvider>
+```
+
+### Angular
+
+```html
+<solar-provider color="#3b82f6" [size]="24">
+    <svg solarHeartBold></svg>
+</solar-provider>
+```
+
+### React Native
+
+Uses React Context instead of CSS variables.
+
+```jsx
+import { SolarProvider } from '@solar-icons/react-native'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24}>
+            <YourApp />
+        </SolarProvider>
+    )
+}
+```
+
+## Isolated icons
+
+Set `isolated` to disconnect the icon from `SolarProvider`. The icon then reads `currentColor` from its CSS parent and uses hardcoded defaults for size and stroke.
+
+```jsx
+import { HeartIcon } from '@solar-icons/react/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6">
+            <HeartIcon isolated color="#ef4444" size={32} />
+        </SolarProvider>
+    )
+}
+```
+
+See the [Global Styling page](/docs/v2/advanced/global-styling#isolated-mode) for the full list of values `isolated` sets.

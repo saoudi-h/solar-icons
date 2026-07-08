@@ -1,0 +1,17 @@
+{
+    "title": "Migration to v2",
+    "icon": "ArrowRightUpIcon",
+    "defaultOpen": true,
+    "pages": [
+        "index",
+        "react-perf",
+        "react",
+        "vue",
+        "svelte",
+        "solid",
+        "angular",
+        "react-native",
+        "nuxt",
+        "icon-renames"
+    ]
+}

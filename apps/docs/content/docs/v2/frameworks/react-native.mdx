@@ -1,0 +1,127 @@
+---
+title: React Native
+description: React Context-based SolarProvider, duotone, and stroke width for React Native 0.72+. Requires react-native-svg.
+icon: react
+---
+
+```package-install
+@solar-icons/react-native react-native-svg
+```
+
+`react-native-svg` is a peer dependency. Install it manually if your project does not already use it.
+
+Renders `<Svg>` from `react-native-svg`. No CSS variables. Values resolve in JavaScript.
+
+## Import patterns
+
+```jsx
+// Per-style (no style suffix in name)
+import { HeartIcon } from '@solar-icons/react-native/bold'
+
+// Single icon
+import { HeartIcon } from '@solar-icons/react-native/bold/heart'
+
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/react-native'
+```
+
+## Basic usage
+
+```jsx
+import { HeartIcon } from '@solar-icons/react-native/bold'
+
+function App() {
+    return <HeartIcon color="#ef4444" size={32} />
+}
+```
+
+`size` is always a number (pixels).
+
+## Duotone
+
+```jsx
+import { HeartIcon } from '@solar-icons/react-native/bold-duotone'
+
+function App() {
+    return <HeartIcon color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} size={48} />
+}
+```
+
+## Stroke width
+
+```jsx
+import { SettingsIcon } from '@solar-icons/react-native/linear'
+
+function App() {
+    return <SettingsIcon strokeWidth={2} size={24} />
+}
+```
+
+## SolarProvider
+
+Uses React Context.
+
+```jsx
+import { SolarProvider } from '@solar-icons/react-native'
+import { HeartIcon } from '@solar-icons/react-native/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <HeartIcon />
+        </SolarProvider>
+    )
+}
+```
+
+| Prop               | Fallback         | Description             |
+| ------------------ | ---------------- | ----------------------- |
+| `color`            | `'currentColor'` | Icon color              |
+| `size`             | `24`             | Size in pixels (number) |
+| `strokeWidth`      | `1.5`            | Stroke width            |
+| `secondaryColor`   | `'currentColor'` | Duotone accent color    |
+| `secondaryOpacity` | `0.5`            | Duotone accent opacity  |
+
+The provider does not set defaults. Icons fall back to these values when no provider or prop is specified.
+
+## useSolar
+
+Must be called inside a `<SolarProvider>`.
+
+```jsx
+import { useSolar } from '@solar-icons/react-native'
+
+function ColorToggle() {
+    const { color, setColor } = useSolar()
+
+    return <Button title={`Color: ${color}`} onPress={() => setColor('#ef4444')} />
+}
+```
+
+## Icon props
+
+| Prop               | Type               | Fallback       | Description                  |
+| ------------------ | ------------------ | -------------- | ---------------------------- |
+| `color`            | `string`           | `currentColor` | Icon color                   |
+| `size`             | `number`           | `24`           | Size in pixels (number only) |
+| `strokeWidth`      | `number \| string` | `1.5`          | Stroke width                 |
+| `secondaryColor`   | `string`           | `currentColor` | Duotone accent color         |
+| `secondaryOpacity` | `number`           | `0.5`          | Duotone accent opacity       |
+| `isolated`         | `boolean`          | `false`        | Ignores provider             |
+| `alt`              | `string`           | —              | Accessibility label          |
+
+Omit a prop to fall back to the `SolarProvider` value, then to the fallback listed above.
+
+## Differences from web React
+
+- No CSS variables. Resolution: `prop → context → default`.
+- `size` is `number` only (pixels).
+- Renders `<Svg>` from `react-native-svg`.
+
+## CSS classes
+
+React Native does not use CSS classes. Styling is done through props (`color`, `size`, `strokeWidth`) and `SolarProvider` context.
+
+## ESM only
+
+`@solar-icons/react-native` is ESM-only.

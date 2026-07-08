@@ -34,43 +34,75 @@
         "typecheck": "tsgo --noEmit",
         "pre-commit": "lint-staged"
     },
-    "module": "./dist/index.mjs",
-    "main": "./dist/index.cjs",
-    "types": "./dist/index.d.cts",
+    "types": "./dist/index.d.mts",
     "exports": {
-        ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
-        },
-        "./category": {
-            "import": "./dist/category.mjs",
-            "require": "./dist/category.cjs"
-        },
-        "./lib": {
-            "import": "./dist/lib/index.mjs",
-            "require": "./dist/lib/index.cjs"
-        },
         "./package.json": {
             "default": "./package.json"
+        },
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./lib": {
+            "types": "./dist/lib/index.d.mts",
+            "import": "./dist/lib/index.mjs"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.mts",
+            "import": "./dist/lib/*.mjs"
+        },
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.mts",
+            "import": "./dist/icons/dynamic/index.mjs"
+        },
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.mts",
+            "import": "./dist/icons/dynamic/*.mjs"
+        },
+        "./*": {
+            "types": "./dist/icons/style/*.d.mts",
+            "import": "./dist/icons/style/*.mjs"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.d.mts",
+            "import": "./dist/icons/bold/*.mjs"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.d.mts",
+            "import": "./dist/icons/bold-duotone/*.mjs"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.d.mts",
+            "import": "./dist/icons/broken/*.mjs"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.d.mts",
+            "import": "./dist/icons/line-duotone/*.mjs"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.d.mts",
+            "import": "./dist/icons/linear/*.mjs"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.d.mts",
+            "import": "./dist/icons/outline/*.mjs"
         }
     },
     "peerDependencies": {
         "vue": ">=3.0.0"
     },
     "devDependencies": {
-        "@babel/core": "7.29.7",
         "@solar-icons/core": "workspace:*",
         "@vitejs/plugin-vue": "^6.0.7",
-        "@vue/compiler-sfc": "3.5.38",
+        "@vue/compiler-sfc": "3.5.39",
         "@vue/test-utils": "^2.4.11",
         "jsdom": "^29.1.1",
         "picocolors": "^1.1.1",
         "unplugin-vue": "^7.2.0",
-        "vite": "^8.0.16",
-        "vite-plugin-static-copy": "^4.1.1",
-        "vitest": "^4.1.9",
-        "vue": "^3.5.38",
-        "vue-tsc": "3.3.5"
+        "vite": "^8.1.3",
+        "vitest": "^4.1.10",
+        "vue": "^3.5.39",
+        "vue-tsc": "3.3.7"
     },
     "license": "MIT"
 }

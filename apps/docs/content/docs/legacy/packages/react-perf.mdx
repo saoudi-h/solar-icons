@@ -1,0 +1,63 @@
+---
+title: 'React Performance'
+description: Solar Icons for React, optimized for minimal bundle size.
+icon: react
+---
+
+Use `@solar-icons/react-perf` for production builds where bundle size is critical. Each component bundles only one icon style.
+
+```package-install
+@solar-icons/react-perf
+```
+
+## Features
+
+- **Performance-focused**: Each style variant is a separate component (e.g., `HomeBold`).
+- **Minimal bundle size**: Tree-shaking removes all unused styles from the build.
+- **TypeScript ready**: Full type definitions included.
+
+## Usage
+
+Import components using their combined name and weight:
+
+```jsx
+import { HomeBold, SettingsLinear } from '@solar-icons/react-perf'
+
+function App() {
+    return (
+        <div>
+            <HomeBold color="green" size={24} />
+            <SettingsLinear color="orange" size={24} />
+        </div>
+    )
+}
+```
+
+### Import by Style Path
+
+For cleaner component names, import from the style-specific entry point:
+
+```jsx
+import { Home } from '@solar-icons/react-perf/bold'
+import { Settings } from '@solar-icons/react-perf/linear'
+
+function App() {
+    return (
+        <div>
+            <Home size={24} />
+            <Settings size={24} />
+        </div>
+    )
+}
+```
+
+## Props
+
+Icon components accept standard HTML SVG attributes alongside these props:
+
+| Prop       | Type               | Default        | Description                            |
+| ---------- | ------------------ | -------------- | -------------------------------------- |
+| `color`    | `string`           | `currentColor` | Sets the icon color.                   |
+| `size`     | `string \| number` | `1em`          | Sets width and height.                 |
+| `mirrored` | `boolean`          | `false`        | Flips the icon horizontally if `true`. |
+| `alt`      | `string`           | `undefined`    | Accessibility title.                   |

@@ -2,7 +2,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import Module from '../src/module'
 
-// Mock @nuxt/kit APIs used by the module
 vi.mock('@nuxt/kit', () => ({
   addComponent: vi.fn(),
   addImports: vi.fn(),
@@ -10,6 +9,19 @@ vi.mock('@nuxt/kit', () => ({
   addTypeTemplate: vi.fn(),
   createResolver: () => ({ resolve: async (p: string) => p }),
   defineNuxtModule: (def: any) => def,
+}))
+
+vi.mock('@solar-icons/vue', () => ({
+  Home: () => null,
+  IconBase: () => null,
+  SolarProvider: () => null,
+  useSolar: () => ({}),
+  IconStyle: () => null,
+  SOLAR_DEFAULTS_KEY: 'solar-defaults',
+}))
+
+vi.mock('@solar-icons/vue/dynamic', () => ({
+  HomeDynamic: () => null,
 }))
 
 const kit = await import('@nuxt/kit')
@@ -25,84 +37,85 @@ describe('Nuxt module defaults and setup', () => {
       namePrefix: 'Solar',
       autoImport: true,
       provider: true,
-      color: 'currentColor',
-      size: 24,
-      weight: 'Linear',
-      mirrored: false,
     })
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.color).toBeUndefined()
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.size).toBeUndefined()
+    // @ts-expect-error defaults does not exist on type 'typeof Module'
+    expect(Module.defaults.strokeWidth).toBeUndefined()
   })
 
-  it(
-    'registers aliases, type templates, provider and composables',
-    { timeout: 30000 },
-    async () => {
-      const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+  it('registers aliases, type templates and composables', { timeout: 30000 }, async () => {
+    const nuxt: any = { options: { alias: {} } }
 
-      // Avoid dynamic imports of the full icon set by mocking getAllIconNames to a tiny list
-      vi.doMock('../src/module', async (orig) => {
-        const original: any = await orig()
-        return { ...original, getAllIconNames: async () => ['ArrowUp'] }
-      })
+    await Module.setup(
+      {
+        namePrefix: 'Solar',
+        autoImport: true,
+      },
+      nuxt,
+    )
 
-      // Re-import module to pick up the mock above
-      const ReModule = (await import('../src/module')).default as any
+    expect(nuxt.options.alias['#solar-icons']).toBe('@solar-icons/vue')
+    expect(nuxt.options.alias['#solar-icons/lib']).toBe('@solar-icons/vue/lib')
+    expect(kit.addTypeTemplate).toHaveBeenCalled()
+    expect(kit.addComponent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: 'SolarProvider',
+        export: 'SolarProvider',
+        filePath: '@solar-icons/vue/lib',
+      }),
+    )
+    expect(kit.addImports).toHaveBeenCalledWith(
+      expect.objectContaining({ name: 'useSolar', from: '@solar-icons/vue/lib' }),
+    )
+  })
 
-      await ReModule.setup(
-        {
-          namePrefix: 'Solar',
-          autoImport: true,
-          provider: true,
-          color: 'red',
-          size: 16,
-          weight: 'Bold',
-          mirrored: true,
-        },
-        nuxt,
-      )
+  it('skips auto-import when disabled', async () => {
+    const nuxt: any = { options: { alias: {} } }
 
-      expect(nuxt.options.alias['#solar-icons']).toBe('@solar-icons/vue')
-      expect(nuxt.options.alias['#solar-icons/lib']).toBe('@solar-icons/vue/lib')
-      expect(nuxt.options.alias['#solar-icons/category']).toBe('@solar-icons/vue/category')
-
-      expect(kit.addTypeTemplate).toHaveBeenCalled()
-      expect(kit.addComponent).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: 'SolarArrowUp',
-          export: 'ArrowUp',
-          filePath: '@solar-icons/vue',
-        }),
-      )
-      expect(kit.addComponent).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: 'SolarProvider',
-          export: 'SolarProvider',
-          filePath: '@solar-icons/vue/lib',
-        }),
-      )
-      expect(kit.addImports).toHaveBeenCalledWith(
-        expect.objectContaining({ name: 'useSolar', from: '@solar-icons/vue/lib' }),
-      )
-      expect(kit.addPlugin).toHaveBeenCalled()
-
-      expect(nuxt.options.runtimeConfig.public.solarIcons.config).toEqual({
-        color: 'red',
-        size: 16,
-        weight: 'Bold',
-        mirrored: true,
-      })
-    },
-  )
-
-  it('skips auto-import when disabled and does not inject provider when disabled', async () => {
-    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
-    const ReModule = (await import('../src/module')).default as any
-
-    await ReModule.setup({ autoImport: false, provider: false }, nuxt)
+    await Module.setup({ autoImport: false }, nuxt)
 
     expect(kit.addComponent).not.toHaveBeenCalledWith(
       expect.objectContaining({ filePath: '@solar-icons/vue' }),
     )
-    expect(kit.addPlugin).not.toHaveBeenCalled()
+    expect(kit.addComponent).not.toHaveBeenCalledWith(
+      expect.objectContaining({ filePath: '@solar-icons/vue/dynamic' }),
+    )
+  })
+
+  it('passes provider defaults to runtimeConfig', async () => {
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup(
+      {
+        namePrefix: 'Solar',
+        autoImport: true,
+        provider: true,
+        color: '#ef4444',
+        size: 48,
+        strokeWidth: 2,
+        secondaryColor: '#3b82f6',
+        secondaryOpacity: 0.5,
+      },
+      nuxt,
+    )
+
+    expect(nuxt.options.runtimeConfig.public.solarIcons).toEqual({
+      color: '#ef4444',
+      size: 48,
+      strokeWidth: 2,
+      secondaryColor: '#3b82f6',
+      secondaryOpacity: 0.5,
+    })
+  })
+
+  it('does not set runtimeConfig when provider is disabled', async () => {
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup({ namePrefix: 'Solar', autoImport: true, provider: false }, nuxt)
+
     expect(nuxt.options.runtimeConfig.public.solarIcons).toBeUndefined()
   })
 })

@@ -2,7 +2,8 @@
 
 'use client'
 
-import { AltArrowDown, CloseCircle } from '@solar-icons/react/ssr'
+import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
+import { CloseCircleIcon } from '@solar-icons/react/dynamic/close-circle'
 import { Command as CommandPrimitive, useCommandState } from 'cmdk'
 
 import * as React from 'react'
@@ -479,7 +480,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     }}>
                     {selected.length < 1 ||
                     selected.filter(s => s.fixed).length === selected.length ? (
-                        <AltArrowDown
+                        <AltArrowDownIcon
                             className={`
                               absolute top-1/2 right-3 z-10 size-4
                               translate-y-[-50%] opacity-50
@@ -501,9 +502,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircle
+                            <CloseCircleIcon
                                 weight="Bold"
-                                size={24}
+                                isolated
                                 className={`drop-shadow-md`}
                             />
                         </Button>
@@ -539,8 +540,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               focus:ring-2 focus:ring-ring
                                               focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) &&
-                                                `hidden`
+                                            (disabled || option.fixed) && `
+                                              hidden
+                                            `
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -552,12 +554,13 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                             e.stopPropagation()
                                         }}
                                         onClick={() => handleUnselect(option)}>
-                                        <CloseCircle
+                                        <CloseCircleIcon
                                             className={`
                                               size-4 text-muted-foreground
                                               hover:text-foreground
                                             `}
                                             weight="BoldDuotone"
+                                            isolated
                                         />
                                     </button>
                                 </Badge>

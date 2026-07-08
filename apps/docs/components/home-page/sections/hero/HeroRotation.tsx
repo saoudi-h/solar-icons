@@ -1,6 +1,6 @@
 'use client'
-import type { Category, Style } from '@/core/generated/generatedHeroUtils'
-import { categories, getIconsByCategory, styles } from '@/core/generated/generatedHeroUtils'
+import type { Category, Style } from '@/generated/generatedHeroUtils'
+import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
 import { cn } from '@/lib/utils'
 import type { Icon as SolarIcon } from '@solar-icons/react/lib/types'
 import type { MotionValue } from 'framer-motion'
@@ -47,7 +47,7 @@ const RotatingIcon: FC<RotatingIconProps> = ({
     return (
         <AnimatePresence mode="wait">
             <motion.div
-                key={IconComponent.name}
+                key={`${index}-${selectedStyle}`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: [0, 1.5, 1] }}
                 exit={{ opacity: 0, scale: 0 }}
@@ -114,7 +114,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                 style={{ rotate: rotation }}>
                 {icons.map((IconComponent, index) => (
                     <RotatingIcon
-                        key={IconComponent.displayName}
+                        key={`${index}-${selectedStyle}`}
                         index={index}
                         IconComponent={IconComponent}
                         radius={radius}

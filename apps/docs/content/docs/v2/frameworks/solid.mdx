@@ -1,0 +1,109 @@
+---
+title: SolidJS
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for SolidJS 1.6+.
+icon: solid
+---
+
+```package-install
+@solar-icons/solid
+```
+
+## Import patterns
+
+```jsx
+// Per-style (no style suffix - style in path)
+import { HeartIcon } from '@solar-icons/solid/bold'
+
+// Single icon
+import { HeartIcon } from '@solar-icons/solid/bold/heart'
+
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/solid'
+```
+
+## Basic usage
+
+```jsx
+import { HeartIcon } from '@solar-icons/solid/bold'
+
+function App() {
+    return <HeartIcon color="#ef4444" size={32} />
+}
+```
+
+## Duotone
+
+```jsx
+import { HeartIcon } from '@solar-icons/solid/bold-duotone'
+
+function App() {
+    return <HeartIcon color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} size={48} />
+}
+```
+
+## Stroke width
+
+```jsx
+import { SettingsIcon } from '@solar-icons/solid/linear'
+
+function App() {
+    return <SettingsIcon strokeWidth={2} size={24} />
+}
+```
+
+## SolarProvider
+
+Uses Solid signals internally.
+
+```jsx
+import { SolarProvider } from '@solar-icons/solid'
+import { HeartIcon } from '@solar-icons/solid/bold'
+
+function App() {
+    return (
+        <SolarProvider color="#3b82f6" size={24} strokeWidth={1.5}>
+            <HeartIcon />
+        </SolarProvider>
+    )
+}
+```
+
+## useSolar
+
+Returns Solid `Accessor`s. Must be called inside a `<SolarProvider>`.
+
+```jsx
+import { useSolar } from '@solar-icons/solid'
+
+function ColorToggle() {
+    const { color, setColor } = useSolar()
+
+    return <button onClick={() => setColor('#ef4444')}>Current: {color()}</button>
+}
+```
+
+## Icon props
+
+| Prop               | Type               | Description            |
+| ------------------ | ------------------ | ---------------------- |
+| `color`            | `string`           | Icon color             |
+| `size`             | `string \| number` | Width and height       |
+| `strokeWidth`      | `string \| number` | Stroke width           |
+| `secondaryColor`   | `string`           | Duotone accent color   |
+| `secondaryOpacity` | `number`           | Duotone accent opacity |
+| `isolated`         | `boolean`          | Ignores provider       |
+| `alt`              | `string`           | Accessibility label    |
+
+All standard SVG attributes pass through.
+
+## CSS variables
+
+Same as [React](/docs/v2/frameworks/react#css-variables).
+
+## CSS classes
+
+Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [React page](/docs/v2/frameworks/react#css-classes).
+
+## ESM only
+
+`@solar-icons/solid` is ESM-only. `require()` does not work.

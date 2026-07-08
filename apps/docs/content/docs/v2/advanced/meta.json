@@ -1,0 +1,6 @@
+{
+    "title": "Advanced",
+    "icon": "Settings2Icon",
+    "defaultOpen": false,
+    "pages": ["global-styling", "accessibility", "global-configuration"]
+}

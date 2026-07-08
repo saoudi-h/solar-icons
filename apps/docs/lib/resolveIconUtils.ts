@@ -1,20 +1,37 @@
 import { Icon } from '@iconify/react'
-import type { IconProps, IconWeight } from '@solar-icons/react'
-import { SSR as icons } from '@solar-icons/react'
+import type { Weight } from '@solar-icons/core/runtime'
+import * as dynamicIcons from '@solar-icons/react/dynamic'
+import type { IconProps } from '@solar-icons/react/lib/types'
 import type { ReactElement } from 'react'
 import { createElement } from 'react'
 
+/**
+ * Map of kebab/camel icon names -> dynamic icon component. The V2
+ * `SSR` barrel was removed in V3-23; the dynamic subpath is the
+ * replacement for runtime name-based rendering. Each dynamic icon
+ * embeds all 6 styles and accepts a `weight` prop.
+ */
+function resolveDynamicIcon(
+    name: string
+): React.ComponentType<{ weight: Weight } & IconProps> | undefined {
+    const Component = (
+        dynamicIcons as Record<string, React.ComponentType<{ weight: Weight } & IconProps>>
+    )[name]
+    return Component
+}
+
 export const renderSolarIcon = (
     icon: string,
-    solarIconParams?: IconProps
+    solarIconParams?: IconProps & { weight?: Weight }
 ): ReactElement | undefined => {
-    if (icon in icons)
-        // @ts-expect-error No overload matches this call.
-        return createElement(icons[icon as keyof typeof icons] || icons.File, solarIconParams)
+    const Component = resolveDynamicIcon(icon) ?? resolveDynamicIcon('File')
+    if (Component) {
+        return createElement(Component, solarIconParams)
+    }
     return undefined
 }
 
-export const iconWeights: IconWeight[] = [
+export const iconWeights: Weight[] = [
     'Bold',
     'BoldDuotone',
     'Linear',

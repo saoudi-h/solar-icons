@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { CloseCircle } from '@solar-icons/react'
+import { CloseCircleIcon } from '@solar-icons/react/linear/close-circle'
 import * as React from 'react'
 
 const Dialog = DialogPrimitive.Root
@@ -70,7 +70,7 @@ const DialogContent = React.forwardRef<
                   data-[state=open]:bg-accent
                   data-[state=open]:text-muted-foreground
                 `}>
-                <CloseCircle className="size-4" />
+                <CloseCircleIcon className="size-4" />
                 <span className="sr-only">Close</span>
             </DialogPrimitive.Close>
         </DialogPrimitive.Content>
