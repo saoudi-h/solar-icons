@@ -1,0 +1,22 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "angular-app": "0.0.1",
+    "@solar-icons/docs": "0.0.1-beta.1",
+    "react-app": "0.1.0",
+    "solid-app": "0.0.1",
+    "svelte-app": "0.0.3-beta.2",
+    "test-react-native-icons": "1.0.1-beta.1",
+    "vue-app": "0.0.1",
+    "@solar-icons/angular": "1.0.1",
+    "@solar-icons/core": "1.1.1",
+    "@solar-icons/nuxt": "1.2.1",
+    "@solar-icons/react": "1.1.1",
+    "@solar-icons/react-native": "1.1.1",
+    "@solar-icons/solid": "1.0.1",
+    "@solar-icons/svelte": "1.1.1",
+    "@solar-icons/vue": "1.2.1"
+  },
+  "changesets": []
+}
