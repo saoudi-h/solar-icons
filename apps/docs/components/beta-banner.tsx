@@ -11,9 +11,9 @@ export function V2BetaBanner() {
     return (
         <Banner id="v2-beta" variant="rainbow">
             Solar Icons v2 is in beta. APIs may change before the stable release.{' '}
-            <a href="https://github.com/saoudi-h/solar-icons/issues" className="
-              underline
-            ">
+            <a
+                href="https://github.com/saoudi-h/solar-icons/issues"
+                className="underline">
                 Report issues
             </a>
         </Banner>
@@ -26,8 +26,8 @@ export function V1Banner() {
 
     return (
         <Banner id="v1-stable" variant="rainbow">
-            You are reading the v1 docs. Solar Icons v2 (beta) brings CSS variables,
-            built-in duotone, and one package per framework.{' '}
+            Still on v1? Solar Icons v2 (beta) brings CSS variables, built-in duotone, and one
+            package per framework.{' '}
             <Link href="/docs/v2" className="underline">
                 Explore v2
             </Link>
