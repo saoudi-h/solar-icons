@@ -51,6 +51,14 @@ export function buildFullIconName(base: string, weight: Weight): string {
 }
 
 /**
+ * Kebab-case style slug for a given weight (e.g. `BoldDuotone` -> `bold-duotone`).
+ * Used by the icon-detail code snippets to render v2 per-style import paths.
+ */
+export function weightToStyleSlug(weight: Weight): StyleSlug {
+    return WEIGHT_TO_STYLE_SLUG[weight]
+}
+
+/**
  * Inverse of {@link buildFullIconName}. Strips the weight suffix
  * from a full icon name. Returns `null` if no known suffix matches
  * — the icon's weight is unknown and we can't route it via the

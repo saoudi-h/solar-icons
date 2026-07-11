@@ -33,6 +33,7 @@ import { SettingsBoldIcon } from '@solar-icons/react'
 import { StarBoldIcon } from '@solar-icons/react'
 import { UserBoldIcon } from '@solar-icons/react'
 
+
 const DYNAMIC_ICONS = [
     { Icon: AccessibilityIcon, name: 'Accessibility' },
     { Icon: AlarmIcon, name: 'Alarm' },
