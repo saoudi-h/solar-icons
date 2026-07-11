@@ -1,3 +1,4 @@
+import { V2BetaHeaderWidget } from '@/components/header-v2-widget'
 import { Logo } from '@/components/ui-blocks/logo'
 import { Widget3Icon } from '@solar-icons/react/dynamic/widget-3'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
@@ -26,6 +27,14 @@ export const baseOptions: BaseLayoutProps = {
         },
     ],
     githubUrl: 'https://github.com/saoudi-h/solar-icons',
+}
+
+export const homeOptions: BaseLayoutProps = {
+    ...baseOptions,
+    nav: {
+        ...baseOptions.nav,
+        children: <V2BetaHeaderWidget />,
+    },
 }
 
 export const docsOptions: BaseLayoutProps = {

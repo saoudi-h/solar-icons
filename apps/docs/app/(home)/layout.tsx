@@ -1,5 +1,5 @@
 'use client'
-import { baseOptions } from '@/app/layout.config'
+import { homeOptions } from '@/app/layout.config'
 import { Footer } from '@/components/ui-blocks/footer'
 import { config } from '@/config'
 import { HomeLayout } from 'fumadocs-ui/layouts/home'
@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }): React.Rea
     const isIconsPage = pathname === '/icons' || pathname?.startsWith('/icons/')
 
     return (
-        <HomeLayout {...baseOptions}>
+        <HomeLayout {...homeOptions}>
             {isIconsPage ? (
                 children
             ) : (
