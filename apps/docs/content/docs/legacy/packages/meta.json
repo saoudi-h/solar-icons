@@ -1,6 +1,0 @@
-{
-    "title": "Packages",
-    "icon": "Widget2Icon",
-    "pages": ["react-perf", "react", "svelte", "solid", "react-native", "vue", "nuxt", "angular"],
-    "defaultOpen": false
-}

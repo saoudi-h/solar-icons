@@ -8,11 +8,10 @@ export function V2BetaHeaderWidget() {
         <Link
             href="/docs/v2"
             className="
-              hidden items-center gap-1.5 rounded-full border border-fd-border
-              bg-fd-card px-3 py-1 text-xs font-medium text-fd-foreground
+              hidden items-center gap-1.5 rounded-full bg-fd-primary px-3 py-1
+              text-xs font-semibold text-fd-primary-foreground shadow-sm
               transition-colors
-              hover:border-fd-ring hover:bg-fd-accent
-              hover:text-fd-accent-foreground
+              hover:bg-fd-primary/90
               lg:inline-flex
             ">
             <RocketIcon weight="BoldDuotone" className="size-3.5" />
