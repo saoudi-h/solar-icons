@@ -27,7 +27,7 @@ const config: NextConfig = {
         return [
             {
                 source: '/docs',
-                destination: '/docs/legacy',
+                destination: '/docs/v1',
                 permanent: false,
             },
         ]

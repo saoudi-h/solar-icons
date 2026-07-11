@@ -1,0 +1,7 @@
+{
+    "title": "V1",
+    "description": "Documentation for Solar Icons v1, the current stable release.",
+    "icon": "HistoryIcon",
+    "root": true,
+    "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
+}
