@@ -74,8 +74,9 @@ const Content: FC = () => {
                             weight={weight}
                             className={`
                               size-12
-                              lg:size-48
+                              lg:size-44
                             `}
+                            isolated
                         />
                     </div>
 

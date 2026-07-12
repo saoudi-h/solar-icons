@@ -17,11 +17,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
             theme={(theme as ToasterProps['theme']) || 'system'}
             className=""
             icons={{
-                success: <CheckCircleIcon size={20} />,
-                error: <ShieldCrossIcon size={20} />,
-                warning: <ShieldWarningIcon size={20} />,
-                info: <InfoCircleIcon size={20} />,
-                close: <CloseCircleIcon size={20} />,
+                success: <CheckCircleIcon size={20} isolated />,
+                error: <ShieldCrossIcon size={20} isolated />,
+                warning: <ShieldWarningIcon size={20} isolated />,
+                info: <InfoCircleIcon size={20} isolated />,
+                close: <CloseCircleIcon size={20} isolated />,
             }}
             style={
                 {
