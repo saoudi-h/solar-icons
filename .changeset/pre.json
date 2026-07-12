@@ -18,5 +18,7 @@
     "@solar-icons/svelte": "1.1.1",
     "@solar-icons/vue": "1.2.1"
   },
-  "changesets": []
+  "changesets": [
+    "2.0.0"
+  ]
 }
