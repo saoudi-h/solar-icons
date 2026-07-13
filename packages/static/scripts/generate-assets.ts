@@ -41,7 +41,7 @@ function buildFullSvg(icon: ParsedIcon): string {
     const accent = icon.duotoneAccentInner
         ? transformDuotoneAccent(icon.duotoneAccentInner, false)
         : null
-    const body = icon.inner + (accent ?? '')
+    const body = (accent ?? '') + icon.inner
     const cls = `solar solar-${icon.kebabName}-${icon.styleKebab}`
     return `${SVG_OPEN} class="${cls}">${body}</svg>`
 }
