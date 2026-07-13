@@ -12,6 +12,7 @@ export const FrameworksShowcase = () => {
         { name: 'Solid', icon: 'logos:solidjs-icon', color: 'hover:shadow-blue-500/20' },
         { name: 'Angular', icon: 'logos:angular-icon', color: 'hover:shadow-red-500/20' },
         { name: 'Nuxt', icon: 'logos:nuxt-icon', color: 'hover:shadow-green-500/20' },
+        { name: 'static', icon: 'vscode-icons:file-type-svg', color: 'hover:shadow-[#ffb13b]/20' },
     ]
 
     return (

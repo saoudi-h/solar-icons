@@ -66,6 +66,16 @@ export const config: Config = {
                         url: '/docs/packages/angular',
                         icon: <Icon icon="devicon:angular" />,
                     },
+                    {
+                        label: 'Angular',
+                        url: '/docs/packages/angular',
+                        icon: <Icon icon="devicon:angular" />,
+                    },
+                    {
+                        label: 'static',
+                        url: '/docs/packages/static',
+                        icon: <Icon icon="vscode-icons:file-type-svg" />,
+                    },
                 ],
             },
             {
@@ -194,9 +204,13 @@ export const config: Config = {
                 iconify: 'devicon:angular',
             },
             {
-                title: 'Qwik',
-                status: 'not-started',
-                iconify: 'devicon:qwik',
+                title: 'Static',
+                link: '/docs/packages/static',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
+                content: 'Static SVGs',
+                status: 'released',
+                iconify: 'vscode-icons:file-type-svg',
             },
         ],
     },

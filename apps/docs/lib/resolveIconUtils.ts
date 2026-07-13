@@ -51,6 +51,7 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
         svelte: 'devicon:svelte',
         solid: 'devicon:solidjs',
         angular: 'devicon:angular',
+        static: 'vscode-icons:file-type-svg',
     }
     const iconName = iconifyMap[icon as keyof typeof iconifyMap]
     return createElement(Icon, { icon: iconName })

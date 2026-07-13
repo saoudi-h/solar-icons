@@ -1,5 +1,5 @@
 {
-    "title": "Frameworks",
+    "title": "Packages",
     "icon": "Widget3Icon",
     "defaultOpen": true,
     "pages": ["react", "vue", "svelte", "solid", "angular", "react-native", "nuxt", "static"]

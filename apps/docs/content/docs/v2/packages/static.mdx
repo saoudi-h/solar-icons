@@ -1,7 +1,7 @@
 ---
 title: Static
 description: Static assets and utilities for Solar Icons that work without JavaScript frameworks. This package provides individual SVG files, an SVG sprite, and Node.js utilities for server-side string templating.
-icon: file-type-html
+icon: static
 ---
 
 ```package-install
@@ -35,54 +35,62 @@ The package includes a pre-built sprite containing all the icons.
 
 If you'd prefer, you can use CSS to hold your base SVG properties. Unlike standard SVG properties, Solar Icons rely on specific CSS variables to control their rendering, especially for duotone styles.
 
-`icon.css`:
+<CodeBlockTabs defaultValue="icon.css">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="icon.css">icon.css</CodeBlockTabsTrigger>
+    <CodeBlockTabsTrigger value="index.html">index.html</CodeBlockTabsTrigger>
+    <CodeBlockTabsTrigger value="index.js">index.js</CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+  <CodeBlockTab value="icon.css">
+    ```css
+    .solar-icon {
+        /* Default variables */
+        --solar-color: currentColor;
+        --solar-size: 24px;
 
-```css
-.solar-icon {
-    /* Default variables */
-    --solar-color: currentColor;
-    --solar-size: 24px;
+        /* For Linear, Broken and LineDuotone */
+        --solar-stroke-width: 1.5;
 
-    /* For Linear, Broken and LineDuotone */
-    --solar-stroke-width: 1.5;
+        /* For duotone styles */
+        --solar-secondary-color: currentColor;
+        --solar-secondary-opacity: 0.5;
 
-    /* For duotone styles */
-    --solar-secondary-color: currentColor;
-    --solar-secondary-opacity: 0.5;
+        width: var(--solar-size);
+        height: var(--solar-size);
+    }
+    ```
 
-    width: var(--solar-size);
-    height: var(--solar-size);
-}
-```
+  </CodeBlockTab>
+  <CodeBlockTab value="index.html">
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <body>
+            <!-- Use the CSS helper class along with the icon-specific class -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="solar-icon solar-heart-bold-duotone">
+                <use href="#heart-bold-duotone" />
+            </svg>
 
-`index.html`:
+            <!-- Inject the sprite here -->
+            <div id="sprite" style="display: none;"></div>
 
-```html
-<!DOCTYPE html>
-<html>
-    <body>
-        <!-- Use the CSS helper class along with the icon-specific class -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="solar-icon solar-heart-bold-duotone">
-            <use href="#heart-bold-duotone" />
-        </svg>
+            <script type="module" src="index.js"></script>
+        </body>
+    </html>
+    ```
 
-        <!-- Inject the sprite here -->
-        <div id="sprite" style="display: none;"></div>
+  </CodeBlockTab>
+  <CodeBlockTab value="index.js">
+    ```js
+    import './icon.css'
+    // With bundlers like Vite, import the raw SVG string
+    import sprite from '@solar-icons/static/sprite?raw'
 
-        <script type="module" src="index.js"></script>
-    </body>
-</html>
-```
+    document.getElementById('sprite').innerHTML = sprite
+    ```
 
-`index.js`:
-
-```js
-import './icon.css'
-// With bundlers like Vite, import the raw SVG string
-import sprite from '@solar-icons/static/sprite?raw'
-
-document.getElementById('sprite').innerHTML = sprite
-```
+  </CodeBlockTab>
+</CodeBlockTabs>
 
 ## SVG file as string
 
@@ -113,7 +121,10 @@ import { HeartBoldIcon } from '@solar-icons/static'
 import { HeartIcon } from '@solar-icons/static/bold'
 ```
 
-> Note: Each icon export name is in PascalCase and includes the style suffix (e.g. `BoldIcon`, `LinearIcon`) when imported from the top level.
+<Callout type="info">
+    Each icon export name is in PascalCase and includes the style suffix (e.g. `BoldIcon`,
+    `LinearIcon`) when imported from the top level.
+</Callout>
 
 #### Example with Node.js
 
