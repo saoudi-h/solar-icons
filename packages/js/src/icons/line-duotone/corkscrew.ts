@@ -1,0 +1,36 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const CorkscrewLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M14.3895 9.6106L13.0652 10.9348C12.7067 11.2934 12.6412 11.8512 12.9069 12.2831L13.5529 13.3328C13.8641 13.8385 13.2606 14.4085 12.7735 14.069L7.22572 10.2023C6.72427 9.85283 6.11394 10.4632 6.46344 10.9646L12.0559 18.9886C12.3979 19.4792 11.818 20.0845 11.3132 19.7639L4.60611 15.5047C4.1427 15.2104 3.58275 15.7052 3.81775 16.2013L4.767 18.2052C4.96511 18.6235 4.87951 19.1205 4.55227 19.4478L2 22",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M22.0591 11.9028C22.0591 13.0902 21.0965 14.0528 19.9091 14.0528C18.7217 14.0528 17.7591 13.0902 17.7591 11.9028C17.7591 10.7154 18.7217 9.75283 19.9091 9.75283C21.0965 9.75283 22.0591 10.7154 22.0591 11.9028Z",
+      "stroke": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "rect",
+    {
+      "x": "12.1128",
+      "y": "1",
+      "width": "15.3426",
+      "height": "4.40444",
+      "rx": "2.20222",
+      "transform": "rotate(44.9701 12.1128 1)",
+      "stroke": "currentColor"
+    }
+  ]
+];
+
+export { CorkscrewLineDuotoneIcon as default };

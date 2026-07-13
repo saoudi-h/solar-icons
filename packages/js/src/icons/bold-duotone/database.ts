@@ -1,0 +1,30 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const DatabaseBoldDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M12 22C16.4183 22 20 20.2091 20 18V12V6C20 8.20914 16.4183 10 12 10C7.58172 10 4 8.20914 4 6V12V18C4 20.2091 7.58172 22 12 22Z",
+      "fill": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M4 6V12C4 14.2091 7.58172 16 12 16C16.4183 16 20 14.2091 20 12V6C20 8.20914 16.4183 10 12 10C7.58172 10 4 8.20914 4 6Z",
+      "fill": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M12 10C16.4183 10 20 8.20914 20 6C20 3.79086 16.4183 2 12 2C7.58172 2 4 3.79086 4 6C4 8.20914 7.58172 10 12 10Z",
+      "fill": "currentColor"
+    }
+  ]
+];
+
+export { DatabaseBoldDuotoneIcon as default };

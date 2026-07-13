@@ -1,0 +1,47 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const SsdSquareBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M19 17V18",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16.5 17V18",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M14 17V18",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M11.5 17V18",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M21.8515 14.9557L20.4258 10.0367M2.14849 14.9557L5 5.11765C5.5 3.52941 6.39543 3 7.5 3H16.5C17.6046 3 18.5 3.52941 19 5.11765L19.3564 6.34741M12 21H18.5C19.9045 21 20.6067 21 21.1111 20.6431C21.3295 20.4886 21.517 20.2901 21.6629 20.0589C22 19.5247 22 18.7812 22 17.2941C22 15.807 22 15.0635 21.6629 14.5294C21.517 14.2982 21.3295 14.0996 21.1111 13.9451C20.6067 13.5882 19.9045 13.5882 18.5 13.5882H5.5C4.09554 13.5882 3.39331 13.5882 2.88886 13.9451C2.67048 14.0996 2.48298 14.2982 2.33706 14.5294C2 15.0635 2 15.807 2 17.2941C2 18.7812 2 19.5247 2.33706 20.0589C2.48298 20.2901 2.67048 20.4886 2.88886 20.6431C3.39331 21 4.09554 21 5.5 21H8",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { SsdSquareBrokenIcon as default };

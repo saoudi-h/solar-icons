@@ -16,6 +16,7 @@ import { ReactNativeCode } from './ReactNativeCode'
 import { SolidCode } from './SolidCode'
 import { StaticCode } from './StaticCode'
 import { SvelteCode } from './SvelteCode'
+import { JsCode } from './JsCode'
 import { Tags } from './Tags'
 import { VueCode } from './VueCode'
 
@@ -122,6 +123,7 @@ const Content: FC = () => {
                     { title: 'Solid', value: 'solid', content: <SolidCode /> },
                     { title: 'Angular', value: 'angular', content: <AngularCode /> },
                     { title: 'Static', value: 'static', content: <StaticCode /> },
+                    { title: 'Vanilla JS', value: 'js', content: <JsCode /> },
                 ]}
             />
         </div>

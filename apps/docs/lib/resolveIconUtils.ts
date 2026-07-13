@@ -41,8 +41,8 @@ export const iconWeights: Weight[] = [
 ]
 
 export type IconifyFrameworkIcon =
-    'react' | 'vue' | 'nuxt' | 'svelte' | 'solid' | 'angular' | 'static'
-export const iconifyIcons = ['react', 'vue', 'nuxt', 'svelte', 'solid', 'angular', 'static']
+    'react' | 'vue' | 'nuxt' | 'svelte' | 'solid' | 'angular' | 'static' | 'js'
+export const iconifyIcons = ['react', 'vue', 'nuxt', 'svelte', 'solid', 'angular', 'static', 'js']
 
 export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
     const iconifyMap = {
@@ -53,6 +53,7 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
         solid: 'devicon:solidjs',
         angular: 'devicon:angular',
         static: 'vscode-icons:file-type-svg',
+        js: 'devicon:javascript',
     }
     const iconName = iconifyMap[icon as keyof typeof iconifyMap]
     return createElement(Icon, { icon: iconName })

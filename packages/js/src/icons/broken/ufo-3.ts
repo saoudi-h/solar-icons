@@ -1,0 +1,66 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const Ufo3BrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M3.636 20.3635L7.75732 16.2422",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M9.99976 21.9995L12.707 19.7781",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M2.00024 14L4.22192 11.293",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M7.85635 4C9.00545 4.0891 10.4349 4.63632 11.9467 5.56025M5.27368 6.58267C5.4389 8.71337 7.1792 11.8079 9.97569 14.6044C13.8821 18.5108 18.3701 20.3563 20 18.7264C20.8256 17.9008 20.7596 16.3421 19.9858 14.497C19.7357 13.9007 19.4116 13.2745 19.0199 12.6334M14.2184 10.362C11.9622 8.10581 11.4919 6.88372 11.4026 6.38717C11.3713 6.21268 11.4554 6.05189 11.5807 5.92656C13.4274 4.07986 16.4219 4.0803 18.2692 5.92754L18.6529 6.31124C20.5001 8.15848 20.5006 11.153 18.6539 12.9997C18.5285 13.125 18.3674 13.2091 18.1929 13.1777C17.8559 13.1171 17.1854 12.8811 16.0851 12.0319",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16.5642 15.4004H16.5643",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M12.3381 12.584H12.3382",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M9.49902 8.3252H9.49912",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { Ufo3BrokenIcon as default };

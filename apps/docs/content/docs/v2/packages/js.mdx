@@ -1,0 +1,85 @@
+---
+title: Vanilla JS
+description: Vanilla JavaScript library for dynamic DOM injection of Solar Icons using lightweight ASTs.
+icon: javascript
+---
+
+```package-install
+@solar-icons/js@2.0.0-beta.0
+```
+
+**What you can accomplish:**
+
+- Replace DOM placeholders with Solar Icons dynamically at runtime
+- Pass CSS properties, stroke weights, and colors dynamically
+- Build applications without complex framework setups or VDOM overhead
+
+This package uses a highly performant, Lucide-style AST approach to build DOM elements natively via `document.createElementNS()`, avoiding any slow `DOMParser` or `innerHTML` injections.
+
+## Basic Usage
+
+Include placeholders in your HTML. Use the `data-solar` attribute with the icon's kebab-case name and style:
+
+```html
+<i data-solar="heart-bold"></i>
+<span data-solar="accessibility-line-duotone"></span>
+```
+
+Then, initialize them in your JavaScript by passing the imported icons to `createIcons`:
+
+```ts
+import { createIcons, HeartBoldIcon, AccessibilityLineDuotoneIcon } from '@solar-icons/js'
+
+// This replaces the <i> and <span> tags with fully rendered <svg> elements
+createIcons({
+  icons: {
+    HeartBoldIcon,
+    AccessibilityLineDuotoneIcon
+  }
+})
+```
+
+## Styling and Attributes
+
+Any attributes or classes placed on the placeholder element will be preserved and merged onto the injected SVG element.
+
+### Custom Classes
+
+```html
+<i data-solar="heart-bold" class="text-red-500 w-8 h-8"></i>
+```
+
+### Duotone Customization
+
+You can use CSS variables to override duotone styles inline or via a stylesheet:
+
+```html
+<i 
+  data-solar="home-angle-bold-duotone" 
+  style="--solar-secondary-color: #3b82f6; --solar-secondary-opacity: 0.5;"
+></i>
+```
+
+## API Reference
+
+### `createIcons(options)`
+
+- `icons` (Object): Map of PascalCase icon names to their imported AST structures. **Required**.
+- `nameAttr` (string): The HTML attribute used to identify placeholders. Defaults to `'data-solar'`.
+- `attrs` (Object): Additional attributes to apply to *every* injected SVG (e.g., `{ 'stroke-width': 2 }`).
+
+```ts
+import { createIcons, HeartBoldIcon } from '@solar-icons/js'
+
+createIcons({
+  icons: { HeartBoldIcon },
+  nameAttr: 'data-custom-icon',
+  attrs: {
+    class: 'my-custom-icon-class'
+  }
+})
+```
+
+<Callout type="warn">
+    Because this package dynamically constructs DOM nodes, tree-shaking is fully supported. Only the icons you explicitly import and pass to `createIcons` will be included in your final bundle.
+</Callout>

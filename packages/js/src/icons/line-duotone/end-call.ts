@@ -1,0 +1,22 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const EndCallLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M8.00009 12.8617C8.00009 12.8617 8.00009 11.3963 12.0001 11.3963C16.0001 11.3963 16.0001 12.8617 16.0001 12.8617M2.44092 10.7889C3.44036 9.58269 6.2515 7 12.0001 7C17.4209 7 20.2297 8.83732 21.3704 9.85601",
+      "stroke": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M8 12.8617L8 13.4782C8 14.3304 7.42329 15.0823 6.57997 15.3294L4.57997 15.9155C3.29561 16.2919 2 15.3623 2 14.0643L2 12.1414C2 11.6525 2.1247 11.1704 2.44083 10.7889M21.3703 9.85596C21.8162 10.2541 22 10.8313 22 11.4182V13.5429C22 14.7266 20.9105 15.6329 19.7004 15.4555L17.7004 15.1624C16.7227 15.0192 16 14.2063 16 13.2499V12.8617",
+      "stroke": "currentColor"
+    }
+  ]
+];
+
+export { EndCallLineDuotoneIcon as default };

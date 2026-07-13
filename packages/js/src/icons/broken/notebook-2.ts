@@ -1,0 +1,56 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const Notebook2BrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M12 5.854V20.9999",
+      "stroke": "currentColor",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M5 9L9 10",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M19 9L15 10",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M5 13L9 14",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M19 13L15 14",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M22 10.5384V16.1436C22 17.2546 21.094 18.1535 19.9851 18.2228C19.0157 18.2835 17.8767 18.402 17 18.6334C15.9185 18.9187 14.6271 19.5365 13.6276 20.0692C12.6148 20.6091 11.3852 20.6091 10.3724 20.0692C9.37293 19.5365 8.08145 18.9187 7 18.6334C6.12329 18.402 4.98428 18.2835 4.01486 18.2228C2.90605 18.1535 2 17.2546 2 16.1436V14M22 7V4.93319C22 3.86075 21.1538 2.98041 20.082 3.01775C18.9534 3.05706 17.5469 3.17403 16.5 3.48744C15.5924 3.75916 14.5353 4.30418 13.6738 4.80275C12.6355 5.40367 11.3428 5.43624 10.2823 4.87546C9.29611 4.35401 8.04921 3.76431 7 3.48744C6.11349 3.25351 4.95877 3.1349 3.9824 3.07489C2.8863 3.00752 2 3.89963 2 4.9978V10.5707",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { Notebook2BrokenIcon as default };

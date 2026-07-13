@@ -68,8 +68,13 @@ export const config: Config = {
                     },
                     {
                         label: 'static',
-                        url: '/docs/packages/static',
+                        url: '/docs/v2/packages/static',
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
+                    },
+                    {
+                        label: 'Vanilla JS',
+                        url: '/docs/v2/packages/js',
+                        icon: <Icon icon="devicon:javascript" />,
                     },
                 ],
             },
@@ -207,6 +212,16 @@ export const config: Config = {
                     'Framework-agnostic static assets. Includes individual SVGs, an SVG sprite, and Node.js string templates.',
                 status: 'new',
                 iconify: 'vscode-icons:file-type-svg',
+            },
+            {
+                title: 'Vanilla JS',
+                link: '/docs/v2/packages/js',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/js',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/js',
+                content:
+                    'Vanilla JavaScript library for dynamic DOM injection using lightweight ASTs. Zero-dependency alternative to Lucide.',
+                status: 'new',
+                iconify: 'devicon:javascript',
             },
         ],
     },

@@ -1,0 +1,38 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const FiltersBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M12 20.2832C13.0615 21.2333 14.4633 21.811 16 21.811C19.3137 21.811 22 19.1247 22 15.811C22 13.0152 20.0878 10.6661 17.5 10",
+      "stroke": "currentColor"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M9 2.80269C9.88252 2.29218 10.9071 2 12 2C15.3137 2 18 4.68629 18 8C18 11.3137 15.3137 14 12 14C8.68629 14 6 11.3137 6 8C6 7.29873 6.12031 6.62556 6.34141 6",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M13.6063 13.8579C13.8607 14.5232 14 15.2453 14 16C14 19.3138 11.3137 22 8 22C7.29873 22 6.62556 21.8797 6 21.6586",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M6.39837 10.2162C3.86225 10.9169 2 13.241 2 16C2 17.0929 2.29218 18.1175 2.80269 19",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { FiltersBrokenIcon as default };

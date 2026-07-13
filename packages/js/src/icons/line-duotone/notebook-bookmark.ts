@@ -1,0 +1,59 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const NotebookBookmarkLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M12 5.854V20.9999",
+      "stroke": "currentColor",
+      "stroke-linejoin": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M5 9L9 10",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M5 13L9 14",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M19 13L15 14",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M2 4.99792V16.1437C2 17.2547 2.90605 18.1536 4.01486 18.2229C4.98428 18.2836 6.12329 18.4021 7 18.6335C8.08145 18.9189 9.37293 19.5366 10.3724 20.0694C11.3852 20.6092 12.6148 20.6092 13.6276 20.0694C14.6271 19.5366 15.9185 18.9189 17 18.6335C17.8767 18.4021 19.0157 18.2836 19.9851 18.2229C21.094 18.1536 22 17.2547 22 16.1437V4.93332C22 3.86087 21.1538 2.98053 20.082 3.01787C18.9534 3.05718 17.5469 3.17415 16.5 3.48757C15.5924 3.75929 14.5353 4.30431 13.6738 4.80287C12.6355 5.40379 11.3428 5.43636 10.2823 4.87558C9.29611 4.35413 8.04921 3.76443 7 3.48757C6.11349 3.25363 4.95877 3.13502 3.9824 3.07501C2.8863 3.00764 2 3.89975 2 4.99792Z",
+      "stroke": "currentColor",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M19 5.5V9.51029C19 9.78587 19 9.92366 18.9051 9.97935C18.8103 10.035 18.6806 9.97343 18.4211 9.85018L17.1789 9.26011C17.0911 9.21842 17.0472 9.19757 17 9.19757C16.9528 9.19757 16.9089 9.21842 16.8211 9.26011L15.5789 9.85018C15.3194 9.97343 15.1897 10.035 15.0949 9.97935C15 9.92366 15 9.78587 15 9.51029V6.95002",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { NotebookBookmarkLineDuotoneIcon as default };

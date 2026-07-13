@@ -1,0 +1,33 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const RoundSortHorizontalBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M16 9.5L8 9.5M10.75 12L8 9.5L10.75 7",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M8 14.5L16 14.5M13.25 17L16 14.5L13.25 12",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { RoundSortHorizontalBrokenIcon as default };

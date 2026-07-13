@@ -1,0 +1,16 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const HeartAngleBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M14 7.49991L12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371C2 10.639 2.38338 11.9242 3 13.0516M12 5.50063C16.4998 0.825464 22 4.27416 22 9.1371C22 14 17.9806 16.5914 15.0383 18.9109C14 19.7294 13 20.5 12 20.5C11 20.5 10 19.7294 8.96173 18.9109C8.19243 18.3044 7.34949 17.6794 6.52401 17",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { HeartAngleBrokenIcon as default };

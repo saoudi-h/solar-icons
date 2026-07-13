@@ -1,0 +1,24 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const WomenBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M11.9997 16V18.5M11.9997 18.5H9.5M11.9997 18.5H14.5M11.9997 18.5L12 22",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M8.5 2.93648C9.52961 2.34088 10.725 2 12 2C15.866 2 19 5.13401 19 9C19 12.866 15.866 16 12 16C8.13401 16 5 12.866 5 9C5 7.72499 5.34088 6.52961 5.93648 5.5",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { WomenBrokenIcon as default };

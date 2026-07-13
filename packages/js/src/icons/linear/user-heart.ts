@@ -1,0 +1,31 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const UserHeartLinearIcon: IconNode = [
+  [
+    "circle",
+    {
+      "cx": "10",
+      "cy": "6",
+      "r": "4",
+      "stroke": "currentColor"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M18 17.5C18 19.9853 18 22 10 22C2 22 2 19.9853 2 17.5C2 15.0147 5.58172 13 10 13C14.4183 13 18 15.0147 18 17.5Z",
+      "stroke": "currentColor"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16 9.69973C16 11.1121 17.2058 11.8648 18.0885 12.5385C18.4 12.7762 18.7 13 19 13C19.3 13 19.6 12.7762 19.9115 12.5385C20.7942 11.8648 22 11.1121 22 9.69973C22 8.28732 20.35 7.28567 19 8.64354C17.65 7.28567 16 8.28732 16 9.69973Z",
+      "stroke": "currentColor",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { UserHeartLinearIcon as default };

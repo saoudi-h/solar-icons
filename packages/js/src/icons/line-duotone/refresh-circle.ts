@@ -1,0 +1,51 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const RefreshCircleLineDuotoneIcon: IconNode = [
+  [
+    "circle",
+    {
+      "cx": "12",
+      "cy": "12",
+      "r": "10",
+      "stroke": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M7.37769 11.6296C7.37769 9.07276 9.46679 7 12.0438 7C13.4046 7 14.6294 7.57797 15.4824 8.5",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M9 11L7.37756 12.5556L6 11M7.37756 12.5556L7.37756 11.6296",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16.6188 12.3701C16.6188 14.927 14.5217 16.9997 11.9348 16.9997C10.5777 16.9997 9.35544 16.4293 8.5 15.5178",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M15 12.999L16.6188 11.4443L18 12.999M16.6188 11.4443V12.3703",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { RefreshCircleLineDuotoneIcon as default };

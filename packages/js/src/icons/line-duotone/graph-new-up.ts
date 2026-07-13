@@ -1,0 +1,34 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const GraphNewUpLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "circle",
+    {
+      "cx": "19",
+      "cy": "5",
+      "r": "3",
+      "stroke": "currentColor"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M7 14L9.29289 11.7071C9.68342 11.3166 10.3166 11.3166 10.7071 11.7071L12.2929 13.2929C12.6834 13.6834 13.3166 13.6834 13.7071 13.2929L17 10M14.5 10H17V12.5",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { GraphNewUpLineDuotoneIcon as default };

@@ -1,0 +1,59 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const CloudFileLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M10.3333 14.571C10.5419 14.506 10.7662 14.4706 11 14.4706C11.2291 14.4706 11.4493 14.5046 11.6543 14.5672M8.33333 15.5758C8.17185 15.4804 7.9882 15.412 7.79066 15.3778C7.69662 15.3615 7.59944 15.3529 7.5 15.3529C6.67157 15.3529 6 15.9455 6 16.6765C6 17.4074 6.67157 18 7.5 18H11C12.1046 18 13 17.2099 13 16.2353C13 15.4629 12.4375 14.8063 11.6543 14.5672M7.79066 15.3778C7.71047 15.1868 7.66667 14.9803 7.66667 14.7647C7.66667 13.7901 8.5621 13 9.66667 13C10.6956 13 11.543 13.6855 11.6543 14.5672",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M13 2.5V5C13 7.35702 13 8.53553 13.7322 9.26777C14.4645 10 15.643 10 18 10H21.5",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M10.0296 2C6.23851 2 4.34296 2 3.17139 3.17157C1.99981 4.34315 2 6.22876 2 10V14C2 17.7712 2 19.6569 3.17157 20.8284",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M3.17139 20.8281C4.34296 21.9997 6.22858 21.9997 9.99981 21.9997L14 22C17.7712 22 19.6569 21.9997 20.8284 20.8281C22 19.6566 22 17.7712 22 14V13.5625",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M19.3516 7.61621C20.6558 8.78998 21.3078 9.3774 21.6538 10.1543C21.9998 10.9312 21.9998 11.8085 21.9998 13.5631",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M10.0298 2C11.5548 2 12.3173 2.00011 13.0093 2.26562C13.7012 2.53114 14.2651 3.03857 15.3929 4.05365L19.3516 7.61621",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  ]
+];
+
+export { CloudFileLineDuotoneIcon as default };

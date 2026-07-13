@@ -1,0 +1,23 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const PaperclipLineDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M15.8084 6.9694C14.861 6.06254 13.325 6.06253 12.3776 6.9694L4.54388 14.4679C2.74384 16.191 2.74384 18.9846 4.54388 20.7076C6.34393 22.4306 9.26239 22.4306 11.0624 20.7076L19.0105 13.0996C21.6632 10.5604 21.6632 6.44351 19.0105 3.9043",
+      "stroke": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M7.9175 17.8068L15.8084 10.2535C16.7558 9.34668 16.7558 7.87637 15.8084 6.96951M3 10.0346L9.40419 3.90441C12.0569 1.3652 16.3578 1.3652 19.0105 3.90441",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { PaperclipLineDuotoneIcon as default };

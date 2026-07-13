@@ -1,0 +1,39 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const MailboxBrokenIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M10.5 22V20M14.5 22V20",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M2 12V11.25C2 8.35051 4.01472 6 6.5 6C8.98528 6 11 8.35051 11 11.25V17V20H4.23256C2.99955 20 2 18.8339 2 17.3953V16M14 20H19.7931C21.0119 20 22 18.8473 22 17.4253V15M22 11.25C22 8.35051 19.9853 6 17.5 6M7 6H18M9 20H15",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M5 16H8",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16 5.41121V2.63519C16 2.39905 16.1676 2.19612 16.3994 2.15144L16.8855 2.05779C17.4738 1.94443 18.0821 1.99855 18.6412 2.214L18.7203 2.24451C19.2746 2.4581 19.8807 2.498 20.4582 2.35891C20.7343 2.2924 21 2.50168 21 2.78573V5.00723C21 5.2442 20.8376 5.45031 20.6073 5.5058L20.5407 5.52184C19.9095 5.67387 19.247 5.63026 18.6412 5.39679C18.0821 5.18135 17.4738 5.12722 16.8855 5.24058L16 5.41121ZM16 5.41121V9.88432",
+      "stroke": "currentColor",
+      "stroke-linecap": "round"
+    }
+  ]
+];
+
+export { MailboxBrokenIcon as default };

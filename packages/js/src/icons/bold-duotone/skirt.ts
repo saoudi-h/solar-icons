@@ -1,0 +1,38 @@
+/* GENERATED FILE — @solar-icons/js */
+import type { IconNode } from '../../types';
+
+const SkirtBoldDuotoneIcon: IconNode = [
+  [
+    "path",
+    {
+      "d": "M21.9195 17.9529C22.1354 18.6686 21.9179 19.4379 21.2656 19.8293C20.2806 20.4203 18.5473 21.2337 15.9607 21.6781C14.8119 21.8754 13.4942 22 11.9995 22C10.5045 22 9.18707 21.8754 8.03809 21.6779C5.45192 21.2335 3.71948 20.4202 2.7345 19.8293C2.08222 19.4379 1.86473 18.6686 2.08066 17.9529L5.83756 5.5H9.99937H14H18.1626L21.9195 17.9529Z",
+      "fill": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M9.99937 5.5H13.9994H18.1626L21.9195 17.9529C22.1354 18.6686 21.9179 19.4379 21.2656 19.8293C20.2806 20.4203 18.5467 21.2337 15.96 21.6781C14.8113 21.8754 13.4942 22 11.9995 22C10.5045 22 9.18707 21.8754 8.03809 21.6779L9.99937 5.5Z",
+      "fill": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M21.2656 19.8293C21.9179 19.4379 22.1354 18.6686 21.9195 17.9529L18.1626 5.5H14L15.9607 21.6781C18.5473 21.2337 20.2806 20.4203 21.2656 19.8293Z",
+      "fill": "currentColor",
+      "style": "color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"
+    }
+  ],
+  [
+    "path",
+    {
+      "d": "M16.1086 2H7.89204C6.9237 2 6.43954 2 6.13871 2.29289C5.83789 2.58579 5.83789 3.05719 5.83789 4V5.5H10.0002H14.0002H18.1628V4C18.1628 3.05719 18.1628 2.58579 17.862 2.29289C17.5611 2 17.077 2 16.1086 2Z",
+      "fill": "currentColor"
+    }
+  ]
+];
+
+export { SkirtBoldDuotoneIcon as default };

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Icons - JS Test App</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 2rem;
+        background: #111;
+        color: #fff;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: #222;
+        border-radius: 8px;
+      }
+      .icon-box p {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .test-red {
+        color: #ef4444;
+      }
+      .test-blue {
+        color: #3b82f6;
+        width: 48px;
+        height: 48px;
+      }
+      .test-duotone {
+        --solar-secondary-color: #3b82f6;
+        --solar-secondary-opacity: 0.5;
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>@solar-icons/js Test App</h1>
+    <p>Testing vanilla DOM injection.</p>
+
+    <div class="grid">
+      <div class="icon-box">
+        <i data-solar="heart-bold"></i>
+        <p>Basic (Bold)</p>
+      </div>
+      
+      <div class="icon-box">
+        <i data-solar="accessibility-line-duotone" class="test-blue"></i>
+        <p>Custom Class (Size/Color)</p>
+      </div>
+      
+      <div class="icon-box">
+        <!-- Testing duotone CSS variables and inline styles -->
+        <i data-solar="home-angle-bold-duotone" class="test-duotone" style="stroke-width: 2"></i>
+        <p>Duotone Customization</p>
+      </div>
+
+      <div class="icon-box">
+        <i data-solar="arrow-right-linear" stroke="yellow"></i>
+        <p>Direct Attributes</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
