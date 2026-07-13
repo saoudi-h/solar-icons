@@ -31,6 +31,18 @@ The package includes a pre-built sprite containing all the icons.
 <img src="@solar-icons/static/sprite.svg#heart-bold" />
 ```
 
+#### Using a CDN
+
+Since `@solar-icons/static` is published on npm, you can load the sprite or individual SVGs directly from a CDN like unpkg or jsDelivr:
+
+```html
+<!-- Load the sprite from unpkg -->
+<img src="https://unpkg.com/@solar-icons/static/dist/sprite.svg#heart-bold" />
+
+<!-- Load an individual SVG -->
+<img src="https://unpkg.com/@solar-icons/static/dist/icons/bold/heart.svg" />
+```
+
 #### Inline with CSS helper class
 
 If you'd prefer, you can use CSS to hold your base SVG properties. Unlike standard SVG properties, Solar Icons rely on specific CSS variables to control their rendering, especially for duotone styles.

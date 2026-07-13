@@ -208,7 +208,8 @@ export const config: Config = {
                 link: '/docs/packages/static',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
-                content: 'Static SVGs',
+                content:
+                    'Framework-agnostic static assets. Includes individual SVGs, an SVG sprite, and Node.js string templates.',
                 status: 'released',
                 iconify: 'vscode-icons:file-type-svg',
             },
