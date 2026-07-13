@@ -146,13 +146,15 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 📚 Documentation versioning (2026-06-30)
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
-- **Content directories:** `content/docs/legacy/` (current stable, on `main`) and `content/docs/v2/` (beta, on `beta` branch). The beta docs describe v2. Pre-v2 content is called "Current" (tab title) while v2 is in beta. When v2 becomes stable, rename the tab to "Legacy".
-- **Default tab:** Current. `/docs` redirects to `/docs/legacy`. The header "Documentation" link points to `/docs/legacy`. v2 is opt-in via its tab.
+- **Content directories:** `content/docs/v1/` (v1, the current stable release, on `main`) and `content/docs/v2/` (beta, on `beta` branch). The beta docs describe v2. v1 content is labelled "V1" (tab title) while v2 is in beta. The "Legacy" label is never used: v1 is the sufficient name until v2 stabilizes.
+- **Default tab:** V1. `/docs` redirects to `/docs/v1`. The header "Documentation" link points to `/docs/v1`. v2 is opt-in via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
-- **Redirect:** `/docs` → `/docs/legacy` via `next.config.mts` `redirects()`.
-- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner` from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`, only renders on `/docs/v2/*` via the `V2BetaBanner` wrapper.
+- **Redirect:** `/docs` → `/docs/v1` via `next.config.mts` `redirects()`.
+- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`. `V2BetaBanner` renders only on `/docs/v2/*`; `V1Banner` renders only on `/docs/v1/*` and invites readers to the v2-beta docs.
+- **v2-beta Header widget:** A "v2 is in beta" pill on the landing (`/`) and icons (`/icons`) pages, injected via the Fumadocs `nav.children` slot of `HomeLayout` (see `homeOptions` in `app/layout.config.tsx` and `components/header-v2-widget.tsx`). It is `hidden lg:inline-flex` so it never appears on small screens. The Header keeps a fixed `h-14` (56px) height regardless, so the hero (`calc(100vh - header)`) and the icons page (which already budgets 56px) are unaffected. Scoped to `homeOptions`, not `baseOptions`/`docsOptions`, so the docs header (already carrying its own banners) stays clean.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.
+- **v2-beta install snippets MUST pin the beta version.** The ` ```package-install ` blocks in `content/docs/v2/frameworks/*.mdx` (and the raw `npm install` in `migration-to-v2/react-perf.mdx`) carry the explicit prerelease version, e.g. `@solar-icons/react@2.0.0-beta.0` (not bare `@solar-icons/react`, which would resolve to the stable `1.x` line). `remark-npm` turns the block's bare package spec into `npm install <spec>` and derives the pnpm/yarn/bun variants, so appending `@<version>` is enough. Bump this pin on every new beta prerelease (e.g. `beta.1`) so the docs never point users at a stale install. v1 docs stay unpinned (stable).
 
 ## Prose conventions (stop-slop)
 
@@ -162,7 +164,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **No adverbs.** Cut "genuinely", "simply", "actually", etc.
 - **No vague declaratives.** "This keeps the package surface clean" adds nothing. State the fact, trust the reader.
 - **Terminology: "pre-v2".** The old API line was mixed (some packages at v1.x, `react-perf` at 2.x). Since the unified release is v2.0.0, use "pre-v2" to describe the old API.
-- **Version tab naming.** The tab for current stable docs is "Current" (not "Legacy") while v2 is in beta. Only rename to "Legacy" when v2 becomes the stable release.
+- **Version tab naming.** The tab for the current stable docs is "V1" (never "Legacy") while v2 is in beta.
 - **Single-icon imports are for dev server performance, not tree-shaking.** Both barrel (`@solar-icons/react/bold`) and single-icon (`@solar-icons/react/bold/heart`) imports tree-shake equally in production. The single-icon path helps the dev server by avoiding resolving ~8k modules when you only need one icon. Do not label single-icon imports as "tree-shakable" in docs — it implies barrel imports are not.
 - **Provider props tables use "Fallback", not "Default".** Providers set no defaults — all props are `undefined` until set. Icons fall back to CSS variable values (`var(--solar-color, currentColor)`, etc.) defined in IconBase. Use "Fallback" as the column header in Provider props tables.
 - **All web frameworks pass through standard SVG attributes.** React (`...restProps`), Vue (`v-bind="$attrs"`), Svelte (`...restProps`), Solid (`splitProps` + `{...others}`) all spread extra attributes onto the `<svg>` element. `data-*`, `role`, `tabindex`, `aria-*` all work.

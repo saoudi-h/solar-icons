@@ -70,7 +70,7 @@ const DialogContent = React.forwardRef<
                   data-[state=open]:bg-accent
                   data-[state=open]:text-muted-foreground
                 `}>
-                <CloseCircleIcon className="size-4" />
+                <CloseCircleIcon className="size-4" isolated />
                 <span className="sr-only">Close</span>
             </DialogPrimitive.Close>
         </DialogPrimitive.Content>

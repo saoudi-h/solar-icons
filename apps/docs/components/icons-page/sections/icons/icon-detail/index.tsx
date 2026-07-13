@@ -13,7 +13,6 @@ import { IconVariants } from './IconVariants'
 import { NuxtCode } from './NuxtCode'
 import { ReactCode } from './ReactCode'
 import { ReactNativeCode } from './ReactNativeCode'
-import { ReactPerfCode } from './ReactPerf'
 import { SolidCode } from './SolidCode'
 import { StaticCode } from './StaticCode'
 import { SvelteCode } from './SvelteCode'
@@ -76,8 +75,9 @@ const Content: FC = () => {
                             weight={weight}
                             className={`
                               size-12
-                              lg:size-48
+                              lg:size-44
                             `}
+                            isolated
                         />
                     </div>
 
@@ -115,7 +115,6 @@ const Content: FC = () => {
                     { title: 'Icon Variants', value: 'variants', content: <IconVariants /> },
                     { title: 'Tags', value: 'tags', content: <Tags /> },
                     { title: 'React', value: 'react', content: <ReactCode /> },
-                    { title: 'React Perf', value: 'react-perf', content: <ReactPerfCode /> },
                     { title: 'React Native', value: 'react-native', content: <ReactNativeCode /> },
                     { title: 'Vue', value: 'vue', content: <VueCode /> },
                     { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },

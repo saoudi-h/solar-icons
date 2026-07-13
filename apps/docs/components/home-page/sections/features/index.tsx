@@ -146,7 +146,7 @@ export const FeaturesSection = () => {
                         <BentoHeader
                             title="AI-Ready Documentation"
                             description="Includes llms.txt and llms-full.txt context files for AI agents. Copy any page as Markdown to load documentation into Claude, ChatGPT, or Cursor."
-                            href="/docs"
+                            href="/docs/v2"
                             buttonText="Docs"
                         />
                         <DocsShowcase />

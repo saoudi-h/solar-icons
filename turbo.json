@@ -6,7 +6,8 @@
         "FIGMA_API_TOKEN",
         "GITHUB_APP_ID",
         "GITHUB_APP_PRIVATE_KEY",
-        "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
+        "NEXT_PUBLIC_UMAMI_ID",
+        "NEXT_PUBLIC_UMAMI_URL",
         "VERCEL_URL"
     ],
     "tasks": {

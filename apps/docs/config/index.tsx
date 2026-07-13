@@ -28,42 +28,37 @@ export const config: Config = {
                 links: [
                     {
                         label: 'React',
-                        url: '/docs/packages/react',
-                        icon: <Icon icon="devicon:react" />,
-                    },
-                    {
-                        label: 'React Perf',
-                        url: '/docs/packages/react-perf',
+                        url: '/docs/v2/frameworks/react',
                         icon: <Icon icon="devicon:react" />,
                     },
                     {
                         label: 'React Native',
-                        url: '/docs/packages/react-native',
+                        url: '/docs/v2/frameworks/react-native',
                         icon: <Icon icon="devicon:react" />,
                     },
                     {
                         label: 'Vue',
-                        url: '/docs/packages/vue',
+                        url: '/docs/v2/frameworks/vue',
                         icon: <Icon icon="devicon:vuejs" />,
                     },
                     {
                         label: 'Nuxt',
-                        url: '/docs/packages/nuxt',
+                        url: '/docs/v2/frameworks/nuxt',
                         icon: <Icon icon="devicon:nuxtjs" />,
                     },
                     {
                         label: 'Svelte',
-                        url: '/docs/packages/svelte',
+                        url: '/docs/v2/frameworks/svelte',
                         icon: <Icon icon="devicon:svelte" />,
                     },
                     {
                         label: 'Solid',
-                        url: '/docs/packages/solid',
+                        url: '/docs/v2/frameworks/solid',
                         icon: <Icon icon="devicon:solidjs" />,
                     },
                     {
                         label: 'Angular',
-                        url: '/docs/packages/angular',
+                        url: '/docs/v2/frameworks/angular',
                         icon: <Icon icon="devicon:angular" />,
                     },
                     {
@@ -106,12 +101,12 @@ export const config: Config = {
                 links: [
                     {
                         label: 'License',
-                        url: '/docs/community/license',
+                        url: '/docs/v2/community/license',
                         icon: <DiplomaIcon size={20} />,
                     },
                     {
                         label: 'Changelog',
-                        url: '/docs/community/changelog',
+                        url: '/docs/v2/community/changelog',
                         icon: <SmartphoneUpdateIcon size={20} />,
                     },
                 ],
@@ -132,7 +127,7 @@ export const config: Config = {
         },
         getStarted: {
             label: 'Get Started',
-            href: '/docs',
+            href: '/docs/v2',
             Icon: <RocketIcon size={20} />,
         },
     },
@@ -140,7 +135,7 @@ export const config: Config = {
         packages: [
             {
                 title: 'React',
-                link: '/docs/packages/react',
+                link: '/docs/v2/frameworks/react',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react',
                 content:
@@ -150,7 +145,7 @@ export const config: Config = {
             },
             {
                 title: 'React Native',
-                link: '/docs/packages/react-native',
+                link: '/docs/v2/frameworks/react-native',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-native',
                 githubLink:
                     'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
@@ -160,7 +155,7 @@ export const config: Config = {
             },
             {
                 title: 'Vue',
-                link: '/docs/packages/vue',
+                link: '/docs/v2/frameworks/vue',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/vue',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/vue',
                 content: 'Vue 3 package. Supports global configuration and dynamic weights.',
@@ -169,7 +164,7 @@ export const config: Config = {
             },
             {
                 title: 'Nuxt',
-                link: '/docs/packages/nuxt',
+                link: '/docs/v2/frameworks/nuxt',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/nuxt',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt',
                 content: 'Nuxt 3 module with auto-import and configuration support.',
@@ -178,7 +173,7 @@ export const config: Config = {
             },
             {
                 title: 'Svelte',
-                link: '/docs/packages/svelte',
+                link: '/docs/v2/frameworks/svelte',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/svelte',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/svelte',
                 content: 'Svelte 5 components using runes.',
@@ -187,7 +182,7 @@ export const config: Config = {
             },
             {
                 title: 'Solid',
-                link: '/docs/packages/solid',
+                link: '/docs/v2/frameworks/solid',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/solid',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/solid',
                 content: 'Lightweight SolidJS components.',
@@ -196,7 +191,7 @@ export const config: Config = {
             },
             {
                 title: 'Angular',
-                link: '/docs/packages/angular',
+                link: '/docs/v2/frameworks/angular',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/angular',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/angular',
                 content: 'Angular 17+ standalone components using Signals.',

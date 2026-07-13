@@ -18,14 +18,6 @@ const config: NextConfig = {
     async rewrites() {
         return [
             {
-                source: '/assets/js/system.js',
-                destination: 'https://cloud.umami.is/script.js',
-            },
-            {
-                source: '/assets/js/api/send',
-                destination: 'https://cloud.umami.is/api/send',
-            },
-            {
                 source: '/docs/:path*.mdx',
                 destination: '/llms.mdx/docs/:path*',
             },
@@ -35,7 +27,7 @@ const config: NextConfig = {
         return [
             {
                 source: '/docs',
-                destination: '/docs/legacy',
+                destination: '/docs/v1',
                 permanent: false,
             },
         ]

@@ -119,6 +119,7 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children, onHeightChan
                                   size-full text-muted-foreground
                                   hover:text-foreground
                                 `}
+                                isolated
                             />
                         </Button>
                     </div>
