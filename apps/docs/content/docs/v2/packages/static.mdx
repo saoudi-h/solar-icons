@@ -96,19 +96,20 @@ If you'd prefer, you can use CSS to hold your base SVG properties. Unlike standa
 
 To import an SVG as a string (e.g., for templating):
 
-::: code-group
-
-```js [Webpack]
-// Specific icon style
-import heartIcon from '@solar-icons/static/dist/icons/bold/heart.svg'
-```
-
-```js [Vite]
-// Specific icon style
-import heartIcon from '@solar-icons/static/dist/icons/bold/heart.svg?raw'
-```
-
-:::
+<CodeBlockTabs defaultValue="Webpack">
+    <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="Webpack">Webpack</CodeBlockTabsTrigger>
+        <CodeBlockTabsTrigger value="Vite">Vite</CodeBlockTabsTrigger>
+    </CodeBlockTabsList>
+    <CodeBlockTab value="Webpack">
+        ```js // Specific icon style import heartIcon from
+        '@solar-icons/static/dist/icons/bold/heart.svg' ```
+    </CodeBlockTab>
+    <CodeBlockTab value="Vite">
+        ```js // Specific icon style import heartIcon from
+        '@solar-icons/static/dist/icons/bold/heart.svg?raw' ```
+    </CodeBlockTab>
+</CodeBlockTabs>
 
 ## Node.js
 
