@@ -6,11 +6,16 @@ import {
   ArrowRightLinearIcon 
 } from '@solar-icons/js'
 
-createIcons({
-  icons: {
-    HeartBoldIcon,
-    AccessibilityLineDuotoneIcon,
-    HomeAngleBoldDuotoneIcon,
-    ArrowRightLinearIcon
-  }
-})
+try {
+  createIcons({
+    icons: {
+      HeartBoldIcon,
+      AccessibilityLineDuotoneIcon,
+      HomeAngleBoldDuotoneIcon,
+      ArrowRightLinearIcon
+    }
+  })
+  console.log('createIcons executed successfully!')
+} catch (e) {
+  console.error('Error executing createIcons:', e)
+}

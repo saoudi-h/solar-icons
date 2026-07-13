@@ -76,6 +76,8 @@ export const createIcons = (
             return
         }
 
+        console.log('DEBUG:', componentName, iconNode)
+
         const elementAttrs = getAttrs(element)
         const ariaProps =
             elementAttrs['aria-label'] || elementAttrs['title'] ? {} : { 'aria-hidden': 'true' }
