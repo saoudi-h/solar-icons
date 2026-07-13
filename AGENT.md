@@ -16,7 +16,7 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 - **One focused commit per change.** Split a session's work across multiple commits when it spans several dimensions.
 - **Versioning & publishing:** Changesets. `.changeset/config.json` lists the docs app and the demo apps under `ignore`.
 - **PR base branch:** `main`. Beta releases flow through the `beta` branch via `.github/workflows/`.
-- **Language:** English only. The repo contains no tracked French content.
+- **Language: English only — no exceptions.** Every file in this repo, including gitignored worklogs, AGENT.md files, TASKS.md, comments, commit messages, and documentation MUST be in English. Never write French (or any other language) anywhere in the codebase, regardless of what language the maintainer uses in conversation with you. This applies to all agents and all sessions. If you discover pre-existing non-English content, fix it immediately.
 - **Pre-commit:** Husky + lint-staged at the root, per-package `lint-staged.config.mjs`.
 
 ## 🏗 Stack & Architecture
