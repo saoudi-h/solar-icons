@@ -1,0 +1,106 @@
+---
+title: Static (HTML & Vanilla)
+description: SVG sprite, raw SVGs, and tree-shakable ESM strings for Vanilla JS, HTML, or any environment without framework constraints.
+icon: file-type-html
+---
+
+```package-install
+@solar-icons/static
+```
+
+The `@solar-icons/static` package is a universal solution when you don't use a specific framework (like React or Vue) or when you want raw access to the SVG paths.
+
+It provides three different ways to consume the icons:
+1. **ESM Strings**: Tree-shakable string exports for JavaScript injection.
+2. **SVG Sprite**: A single file containing all icons, perfect for `<use>` references.
+3. **JSON Metadata**: Comprehensive lists and searchable tags.
+
+## 1. ESM Strings
+
+Every icon is exported as a raw string containing the full `<svg>` markup. This is perfect for vanilla JavaScript applications, Web Components, or server-side string templating.
+
+```ts
+// Top-level (all styles available)
+import { HeartBoldIcon } from '@solar-icons/static'
+
+// Per-style
+import { HeartIcon } from '@solar-icons/static/bold'
+
+const container = document.getElementById('icon-container')
+container.innerHTML = HeartBoldIcon
+```
+
+## 2. SVG Sprite
+
+The package includes a pre-built sprite containing all 7,000+ icons. You can use it directly in HTML without any JavaScript.
+
+```html
+<!-- Reference a specific icon by its ID (name-style) -->
+<svg class="solar solar-heart-bold" viewBox="0 0 24 24">
+    <use href="/path/to/dist/sprite.svg#heart-bold" />
+</svg>
+```
+
+### Sprite with Vite/Webpack
+
+If you use a bundler like Vite, you can import the sprite's URL or its raw content to inject it dynamically:
+
+```ts
+// Inject the sprite hidden in the DOM for local <use> resolution
+import spriteSvg from '@solar-icons/static/sprite?raw'
+
+const div = document.createElement('div')
+div.style.display = 'none'
+div.innerHTML = spriteSvg
+document.body.prepend(div)
+```
+
+Then in your HTML:
+```html
+<svg viewBox="0 0 24 24"><use href="#heart-bold" /></svg>
+```
+
+## CSS variables
+
+Like the framework packages, static icons are controlled entirely via CSS custom properties. By default, they inherit from the environment.
+
+| Variable                    | Role                                       |
+| --------------------------- | ------------------------------------------ |
+| `--solar-color`             | Fill and stroke color                      |
+| `--solar-size`              | Width and height                           |
+| `--solar-stroke-width`      | Stroke width for Linear/Broken/LineDuotone |
+| `--solar-secondary-color`   | Secondary color for duotone styles         |
+| `--solar-secondary-opacity` | Secondary opacity for duotone styles       |
+
+You can set these globally or per-element:
+
+```css
+:root {
+    --solar-size: 24px;
+    --solar-stroke-width: 1.5;
+    --solar-color: #333;
+    --solar-secondary-color: #3b82f6;
+    --solar-secondary-opacity: 0.5;
+}
+
+.icon-large {
+    --solar-size: 48px;
+    --solar-color: #ef4444;
+}
+```
+
+## Metadata & Collections
+
+If you are building an icon picker or need a searchable list, you can import the metadata JSON files.
+
+```ts
+// Complete metadata with tags and categories
+import metadata from '@solar-icons/static/metadata.json'
+
+// Just the list of icon names and styles
+import icons from '@solar-icons/static/icons.json'
+```
+
+## ESM only
+
+`@solar-icons/static` is ESM-only. `require()` does not work. Use `import` syntax or `await import()`.
