@@ -17,7 +17,7 @@ export const NuxtCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/nuxt">
+                <Link href="/docs/v2/packages/nuxt">
                     Get started with Nuxt <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>

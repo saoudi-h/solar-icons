@@ -29,6 +29,7 @@ export interface PackageCardProps {
         | 'abandoned'
         | 'deprecated'
         | 'maintenance'
+        | 'new'
 }
 
 export interface PackageSectionProps {

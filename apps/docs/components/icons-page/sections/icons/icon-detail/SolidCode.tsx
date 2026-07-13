@@ -18,7 +18,7 @@ export const SolidCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/solid">
+                <Link href="/docs/v2/packages/solid">
                     Get started with <span className="font-heading">Solid</span>{' '}
                     <ArrowRightUpIcon size={16} />
                 </Link>

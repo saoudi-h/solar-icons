@@ -28,37 +28,37 @@ export const config: Config = {
                 links: [
                     {
                         label: 'React',
-                        url: '/docs/v2/frameworks/react',
+                        url: '/docs/v2/packages/react',
                         icon: <Icon icon="devicon:react" />,
                     },
                     {
                         label: 'React Native',
-                        url: '/docs/v2/frameworks/react-native',
+                        url: '/docs/v2/packages/react-native',
                         icon: <Icon icon="devicon:react" />,
                     },
                     {
                         label: 'Vue',
-                        url: '/docs/v2/frameworks/vue',
+                        url: '/docs/v2/packages/vue',
                         icon: <Icon icon="devicon:vuejs" />,
                     },
                     {
                         label: 'Nuxt',
-                        url: '/docs/v2/frameworks/nuxt',
+                        url: '/docs/v2/packages/nuxt',
                         icon: <Icon icon="devicon:nuxtjs" />,
                     },
                     {
                         label: 'Svelte',
-                        url: '/docs/v2/frameworks/svelte',
+                        url: '/docs/v2/packages/svelte',
                         icon: <Icon icon="devicon:svelte" />,
                     },
                     {
                         label: 'Solid',
-                        url: '/docs/v2/frameworks/solid',
+                        url: '/docs/v2/packages/solid',
                         icon: <Icon icon="devicon:solidjs" />,
                     },
                     {
                         label: 'Angular',
-                        url: '/docs/v2/frameworks/angular',
+                        url: '/docs/v2/packages/angular',
                         icon: <Icon icon="devicon:angular" />,
                     },
                     {
@@ -135,7 +135,7 @@ export const config: Config = {
         packages: [
             {
                 title: 'React',
-                link: '/docs/v2/frameworks/react',
+                link: '/docs/v2/packages/react',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react',
                 content:
@@ -145,7 +145,7 @@ export const config: Config = {
             },
             {
                 title: 'React Native',
-                link: '/docs/v2/frameworks/react-native',
+                link: '/docs/v2/packages/react-native',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/react-native',
                 githubLink:
                     'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
@@ -155,7 +155,7 @@ export const config: Config = {
             },
             {
                 title: 'Vue',
-                link: '/docs/v2/frameworks/vue',
+                link: '/docs/v2/packages/vue',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/vue',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/vue',
                 content: 'Vue 3 package. Supports global configuration and dynamic weights.',
@@ -164,7 +164,7 @@ export const config: Config = {
             },
             {
                 title: 'Nuxt',
-                link: '/docs/v2/frameworks/nuxt',
+                link: '/docs/v2/packages/nuxt',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/nuxt',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt',
                 content: 'Nuxt 3 module with auto-import and configuration support.',
@@ -173,7 +173,7 @@ export const config: Config = {
             },
             {
                 title: 'Svelte',
-                link: '/docs/v2/frameworks/svelte',
+                link: '/docs/v2/packages/svelte',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/svelte',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/svelte',
                 content: 'Svelte 5 components using runes.',
@@ -182,7 +182,7 @@ export const config: Config = {
             },
             {
                 title: 'Solid',
-                link: '/docs/v2/frameworks/solid',
+                link: '/docs/v2/packages/solid',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/solid',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/solid',
                 content: 'Lightweight SolidJS components.',
@@ -191,7 +191,7 @@ export const config: Config = {
             },
             {
                 title: 'Angular',
-                link: '/docs/v2/frameworks/angular',
+                link: '/docs/v2/packages/angular',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/angular',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/angular',
                 content: 'Angular 17+ standalone components using Signals.',
@@ -205,7 +205,7 @@ export const config: Config = {
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
                 content:
                     'Framework-agnostic static assets. Includes individual SVGs, an SVG sprite, and Node.js string templates.',
-                status: 'released',
+                status: 'new',
                 iconify: 'vscode-icons:file-type-svg',
             },
         ],

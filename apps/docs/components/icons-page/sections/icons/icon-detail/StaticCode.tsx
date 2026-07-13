@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button'
+import { toPascalCase } from '@/lib/utils'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { useSelectedIcon, useStyleURL } from '../context'
+import { useSelectedIcon, useStyleURL, weightToStyleSlug } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
 export const StaticCode: FC = () => {
@@ -10,7 +11,9 @@ export const StaticCode: FC = () => {
     const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
-    const bare = selectedIcon.Icon.displayName?.replace(/Icon$/, '') ?? 'Icon'
+    const importName = toPascalCase(selectedIcon.name) + 'Icon'
+    const styleSlug = weightToStyleSlug(weight)
+    const iconName = selectedIcon.name + `-${styleSlug}`
 
     return (
         <>
@@ -22,11 +25,11 @@ export const StaticCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="js"
-                code={`import { ${bare}Icon } from '@solar-icons/static/${weight.toLowerCase()}'`}
+                code={`import { ${importName} } from '@solar-icons/static/${styleSlug}'`}
             />
             <CodeBlockTemplate
                 lang="html"
-                code={`<!-- SVG Sprite -->\n<img src="@solar-icons/static/sprite.svg#${selectedIcon.metadata.name}-${weight.toLowerCase()}" />`}
+                code={`<img src="@solar-icons/static/sprite.svg#${iconName}" />`}
             />
         </>
     )

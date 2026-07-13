@@ -18,7 +18,7 @@ export const ReactNativeCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/react-native">
+                <Link href="/docs/v2/packages/react-native">
                     Get started with React Native <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>

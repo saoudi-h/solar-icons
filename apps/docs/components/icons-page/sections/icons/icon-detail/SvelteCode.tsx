@@ -18,7 +18,7 @@ export const SvelteCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/svelte">
+                <Link href="/docs/v2/packages/svelte">
                     Get started with <span className="font-heading">Svelte</span>{' '}
                     <ArrowRightUpIcon size={16} />
                 </Link>
