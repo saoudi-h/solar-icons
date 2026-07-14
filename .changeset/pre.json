@@ -23,7 +23,6 @@
     "static-app": "2.0.0-beta.0"
   },
   "changesets": [
-    "js-package",
-    "static-package"
+    "enrich-metadata-search"
   ]
 }

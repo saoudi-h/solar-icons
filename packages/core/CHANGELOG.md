@@ -1,5 +1,11 @@
 # @solar-icons/core
 
+## 2.0.0-beta.1
+
+### Minor Changes
+
+- [#508](https://github.com/saoudi-h/solar-icons/pull/508) [`55f7893`](https://github.com/saoudi-h/solar-icons/commit/55f7893f7dcd0888bb0efe606e84da10e2f205b2) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Enrich icon metadata with specific tags to improve search accuracy
+
 ## 1.1.1
 
 ### Patch Changes
