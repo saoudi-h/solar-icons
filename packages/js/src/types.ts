@@ -11,6 +11,9 @@ export interface SVGProps extends Record<string, string | number | undefined> {
   'stroke-linecap'?: string
   'stroke-linejoin'?: string
   class?: string
-}
+  size?: string | number
+  color?: string
+  'secondary-color'?: string
+  'secondary-opacity'?: string | number
 
 export type Icons = Record<string, IconNode>

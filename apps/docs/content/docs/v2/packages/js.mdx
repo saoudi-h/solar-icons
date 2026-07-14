@@ -41,23 +41,46 @@ createIcons({
 
 ## Styling and Attributes
 
-Any attributes or classes placed on the placeholder element will be preserved and merged onto the injected SVG element.
+You can style the icons directly by passing attributes to the placeholder element. 
 
-### Custom Classes
+### Custom Attributes (Recommended)
 
-```html
-<i data-solar="heart-bold" class="text-red-500 w-8 h-8"></i>
-```
-
-### Duotone Customization
-
-You can use CSS variables to override duotone styles inline or via a stylesheet:
+Just like our React or Vue packages, you can pass custom attributes directly to the placeholder. These are automatically mapped to inline styles on the injected SVG:
 
 ```html
 <i 
   data-solar="home-angle-bold-duotone" 
-  style="--solar-secondary-color: #3b82f6; --solar-secondary-opacity: 0.5;"
+  size="48" 
+  color="red" 
+  secondary-color="blue" 
+  secondary-opacity="0.6" 
+  stroke-width="0.5"
 ></i>
+```
+
+### CSS Classes and Global Styling
+
+Any classes placed on the placeholder element will be preserved and merged. Furthermore, the injected SVG automatically receives both a generic \`solar\` class and a specific class like \`solar-heart-bold\`.
+
+```html
+<i data-solar="heart-bold" class="text-red-500 my-custom-class"></i>
+```
+
+This generates:
+
+```html
+<svg class="solar solar-heart-bold text-red-500 my-custom-class" ...></svg>
+```
+
+You can target the \`solar\` class in your global CSS to define default sizing or stroke widths:
+
+```css
+.solar {
+  /* Default styles for all Solar Icons */
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
 ```
 
 ## API Reference

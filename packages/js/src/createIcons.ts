@@ -87,6 +87,44 @@ export const createIcons = (
             ...elementAttrs,
         }
 
+        const styleDeclarations: string[] = []
+
+        if (iconAttrs.size !== undefined) {
+            const sizeValue = isNaN(Number(iconAttrs.size))
+                ? iconAttrs.size
+                : `${iconAttrs.size}px`
+            styleDeclarations.push(`width: ${sizeValue}; height: ${sizeValue}`)
+            delete iconAttrs.size
+        }
+
+        if (iconAttrs.color !== undefined) {
+            styleDeclarations.push(`color: ${iconAttrs.color}`)
+            delete iconAttrs.color
+        }
+
+        if (iconAttrs['secondary-color'] !== undefined) {
+            styleDeclarations.push(`--solar-secondary-color: ${iconAttrs['secondary-color']}`)
+            delete iconAttrs['secondary-color']
+        }
+
+        if (iconAttrs['secondary-opacity'] !== undefined) {
+            styleDeclarations.push(`--solar-secondary-opacity: ${iconAttrs['secondary-opacity']}`)
+            delete iconAttrs['secondary-opacity']
+        }
+
+        if (iconAttrs['stroke-width'] !== undefined) {
+            styleDeclarations.push(`stroke-width: ${iconAttrs['stroke-width']}`)
+            delete iconAttrs['stroke-width']
+        }
+
+        if (iconAttrs.style) {
+            styleDeclarations.unshift(String(iconAttrs.style))
+        }
+
+        if (styleDeclarations.length > 0) {
+            iconAttrs.style = styleDeclarations.join('; ')
+        }
+
         const elementClasses = getClassNames(elementAttrs)
         const attrsClasses = getClassNames(attrs)
 
