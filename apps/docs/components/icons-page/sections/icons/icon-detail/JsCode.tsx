@@ -13,7 +13,7 @@ export const JsCode: FC = () => {
     if (!selectedIcon) return null
     const importName = toPascalCase(selectedIcon.name) + 'Icon'
     const styleSlug = weightToStyleSlug(weight)
-    const iconName = selectedIcon.name + \`-\${styleSlug}\`
+    const iconName = selectedIcon.name + `-${styleSlug}`
 
     return (
         <>
@@ -25,11 +25,11 @@ export const JsCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="js"
-                code={\`import { \${importName} } from '@solar-icons/js'\`}
+                code={`import { ${importName} } from '@solar-icons/js'`}
             />
             <CodeBlockTemplate
                 lang="html"
-                code={\`<i data-solar="\${iconName}"></i>\`}
+                code={`<i data-solar="${iconName}"></i>`}
             />
         </>
     )

@@ -62,11 +62,6 @@ export const config: Config = {
                         icon: <Icon icon="devicon:angular" />,
                     },
                     {
-                        label: 'Angular',
-                        url: '/docs/packages/angular',
-                        icon: <Icon icon="devicon:angular" />,
-                    },
-                    {
                         label: 'static',
                         url: '/docs/v2/packages/static',
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
@@ -205,11 +200,11 @@ export const config: Config = {
             },
             {
                 title: 'Static',
-                link: '/docs/packages/static',
+                link: '/docs/v2/packages/static',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
                 content:
-                    'Framework-agnostic static assets. Includes individual SVGs, an SVG sprite, and Node.js string templates.',
+                    'Framework-agnostic static assets. Use individual SVGs, SVG sprites, or Node.js string templates to integrate icons anywhere.',
                 status: 'new',
                 iconify: 'vscode-icons:file-type-svg',
             },
@@ -219,7 +214,7 @@ export const config: Config = {
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/js',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/js',
                 content:
-                    'Vanilla JavaScript library for dynamic DOM injection using lightweight ASTs. Zero-dependency alternative to Lucide.',
+                    'Lightweight JavaScript runtime for dynamic DOM injection. Build interfaces natively without VDOM overhead using performant ASTs.',
                 status: 'new',
                 iconify: 'devicon:javascript',
             },

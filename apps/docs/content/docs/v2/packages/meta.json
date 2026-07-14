@@ -2,5 +2,5 @@
     "title": "Packages",
     "icon": "Widget3Icon",
     "defaultOpen": true,
-    "pages": ["react", "vue", "svelte", "solid", "angular", "react-native", "nuxt", "static"]
+    "pages": ["react", "vue", "svelte", "solid", "angular", "react-native", "nuxt", "static", "js"]
 }
