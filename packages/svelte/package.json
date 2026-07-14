@@ -1,144 +1,144 @@
 {
-  "name": "@solar-icons/svelte",
-  "version": "2.0.0-beta.0",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Solar Icons for Svelte",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saoudi-h/solar-icons.git",
-    "directory": "packages/svelte"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "LICENSE-THIRD-PARTY"
-  ],
-  "scripts": {
-    "build": "pnpm generate:assets && pnpm copy:licenses && pnpm build:package",
-    "build:package": "svelte-package --input ./src",
-    "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-    "generate:assets": "tsx scripts/generate-assets.ts",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier \"**/*\" --ignore-unknown --list-different",
-    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-    "clean": "rimraf *.tsbuildinfo node_modules build dist",
-    "test": "vitest run",
-    "typecheck": "tsgo --noEmit",
-    "pre-commit": "lint-staged"
-  },
-  "module": "./dist/index.js",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js",
-      "default": "./dist/index.js"
+    "name": "@solar-icons/svelte",
+    "version": "2.0.0-beta.1",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
     },
-    "./lib": {
-      "types": "./dist/lib/index.d.ts",
-      "svelte": "./dist/lib/index.js",
-      "default": "./dist/lib/index.js"
+    "description": "Solar Icons for Svelte",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/svelte"
     },
-    "./lib/*": {
-      "types": "./dist/lib/*.d.ts",
-      "svelte": "./dist/lib/*",
-      "default": "./dist/lib/*.js"
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "build": "pnpm generate:assets && pnpm copy:licenses && pnpm build:package",
+        "build:package": "svelte-package --input ./src",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "test": "vitest run",
+        "typecheck": "tsgo --noEmit",
+        "pre-commit": "lint-staged"
     },
-    "./dynamic": {
-      "types": "./dist/icons/dynamic/index.d.ts",
-      "svelte": "./dist/icons/dynamic/index.js",
-      "default": "./dist/icons/dynamic/index.js"
+    "module": "./dist/index.js",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "svelte": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./lib": {
+            "types": "./dist/lib/index.d.ts",
+            "svelte": "./dist/lib/index.js",
+            "default": "./dist/lib/index.js"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.ts",
+            "svelte": "./dist/lib/*",
+            "default": "./dist/lib/*.js"
+        },
+        "./dynamic": {
+            "types": "./dist/icons/dynamic/index.d.ts",
+            "svelte": "./dist/icons/dynamic/index.js",
+            "default": "./dist/icons/dynamic/index.js"
+        },
+        "./dynamic/*": {
+            "types": "./dist/icons/dynamic/*.d.ts",
+            "svelte": "./dist/icons/dynamic/*.svelte",
+            "default": "./dist/icons/dynamic/*.js"
+        },
+        "./*": {
+            "types": "./dist/icons/style/*.d.ts",
+            "svelte": "./dist/icons/style/*.js",
+            "default": "./dist/icons/style/*.js"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.svelte.d.ts",
+            "svelte": "./dist/icons/bold/*.svelte",
+            "default": "./dist/icons/bold/*.js"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.svelte.d.ts",
+            "svelte": "./dist/icons/bold-duotone/*.svelte",
+            "default": "./dist/icons/bold-duotone/*.js"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.svelte.d.ts",
+            "svelte": "./dist/icons/broken/*.svelte",
+            "default": "./dist/icons/broken/*.js"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.svelte.d.ts",
+            "svelte": "./dist/icons/linear/*.svelte",
+            "default": "./dist/icons/linear/*.js"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.svelte.d.ts",
+            "svelte": "./dist/icons/line-duotone/*.svelte",
+            "default": "./dist/icons/line-duotone/*.js"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.svelte.d.ts",
+            "svelte": "./dist/icons/outline/*.svelte",
+            "default": "./dist/icons/outline/*.js"
+        }
     },
-    "./dynamic/*": {
-      "types": "./dist/icons/dynamic/*.d.ts",
-      "svelte": "./dist/icons/dynamic/*.svelte",
-      "default": "./dist/icons/dynamic/*.js"
+    "devDependencies": {
+        "@solar-icons/core": "workspace:*",
+        "@sveltejs/package": "^2.5.8",
+        "@sveltejs/vite-plugin-svelte": "^7.2.0",
+        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/prettier": "0.0.3",
+        "@tala-tools/tsconfig": "0.0.1",
+        "@types/node": "^26.1.1",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.9.4",
+        "prettier-plugin-svelte": "^4.1.1",
+        "rimraf": "^6.1.3",
+        "svelte-check": "^4.7.2",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.10"
     },
-    "./*": {
-      "types": "./dist/icons/style/*.d.ts",
-      "svelte": "./dist/icons/style/*.js",
-      "default": "./dist/icons/style/*.js"
+    "peerDependencies": {
+        "svelte": ">= 5.0.0"
     },
-    "./bold/*": {
-      "types": "./dist/icons/bold/*.svelte.d.ts",
-      "svelte": "./dist/icons/bold/*.svelte",
-      "default": "./dist/icons/bold/*.js"
+    "engines": {
+        "node": ">=16"
     },
-    "./bold-duotone/*": {
-      "types": "./dist/icons/bold-duotone/*.svelte.d.ts",
-      "svelte": "./dist/icons/bold-duotone/*.svelte",
-      "default": "./dist/icons/bold-duotone/*.js"
+    "keywords": [
+        "svelte",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "phosphor",
+        "UI",
+        "UX"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
     },
-    "./broken/*": {
-      "types": "./dist/icons/broken/*.svelte.d.ts",
-      "svelte": "./dist/icons/broken/*.svelte",
-      "default": "./dist/icons/broken/*.js"
-    },
-    "./linear/*": {
-      "types": "./dist/icons/linear/*.svelte.d.ts",
-      "svelte": "./dist/icons/linear/*.svelte",
-      "default": "./dist/icons/linear/*.js"
-    },
-    "./line-duotone/*": {
-      "types": "./dist/icons/line-duotone/*.svelte.d.ts",
-      "svelte": "./dist/icons/line-duotone/*.svelte",
-      "default": "./dist/icons/line-duotone/*.js"
-    },
-    "./outline/*": {
-      "types": "./dist/icons/outline/*.svelte.d.ts",
-      "svelte": "./dist/icons/outline/*.svelte",
-      "default": "./dist/icons/outline/*.js"
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
-  },
-  "devDependencies": {
-    "@solar-icons/core": "workspace:*",
-    "@sveltejs/package": "^2.5.8",
-    "@sveltejs/vite-plugin-svelte": "^7.2.0",
-    "@tala-tools/eslint": "0.1.4",
-    "@tala-tools/prettier": "0.0.3",
-    "@tala-tools/tsconfig": "0.0.1",
-    "@types/node": "^26.1.1",
-    "picocolors": "^1.1.1",
-    "prettier": "^3.9.4",
-    "prettier-plugin-svelte": "^4.1.1",
-    "rimraf": "^6.1.3",
-    "svelte-check": "^4.7.2",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
-  },
-  "peerDependencies": {
-    "svelte": ">= 5.0.0"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "keywords": [
-    "svelte",
-    "icons",
-    "svg",
-    "solar",
-    "design",
-    "interface",
-    "phosphor",
-    "UI",
-    "UX"
-  ],
-  "author": {
-    "name": "Saoudi Hakim",
-    "url": "https://hakimsaoudi.dev",
-    "email": "saoudihakim@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/saoudi-h/solar-icons/issues"
-  }
 }

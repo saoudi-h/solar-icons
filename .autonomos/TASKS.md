@@ -27,6 +27,7 @@
    - ⚠️ (6) Doc via `main` carefully (no changeset package → no accidental stable via `release.yml`).
    - ⚠️ (7) **REMAINING (user, needs npm auth):** deprecate `@solar-icons/react-perf@2.1.1` → point to `@solar-icons/react`. Command: `npm deprecate @solar-icons/react-perf@2.1.1 "Discontinued. Use @solar-icons/react (>=2.0.0) instead."` (failed here: `npm whoami` → E401, no agent auth).
 - [ ] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S`
+- [x] **[BETA-ICONS-UPDATE]** Publish new beta version for core icon updates. `Priority: 🟠` `Complexity: S`
 - [/] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
 
 ### V2 — Svelte audit & fix

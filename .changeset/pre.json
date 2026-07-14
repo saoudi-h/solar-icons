@@ -22,5 +22,8 @@
     "js-app": "2.0.0-beta.0",
     "static-app": "2.0.0-beta.0"
   },
-  "changesets": []
+  "changesets": [
+    "js-package",
+    "static-package"
+  ]
 }

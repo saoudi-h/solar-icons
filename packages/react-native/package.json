@@ -1,97 +1,97 @@
 {
-  "name": "@solar-icons/react-native",
-  "version": "2.0.0-beta.0",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Solar Icons for React Native",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saoudi-h/solar-icons.git",
-    "directory": "packages/react-native"
-  },
-  "type": "module",
-  "sideEffects": false,
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "LICENSE-THIRD-PARTY"
-  ],
-  "scripts": {
-    "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
-    "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-    "generate:assets": "tsx scripts/generate-assets.ts",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier \"**/*\" --ignore-unknown --list-different",
-    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-    "clean": "rimraf *.tsbuildinfo node_modules build dist",
-    "typecheck": "tsgo --noEmit",
-    "pre-commit": "lint-staged"
-  },
-  "types": "./dist/index.d.mts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
+    "name": "@solar-icons/react-native",
+    "version": "2.0.0-beta.1",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
     },
-    "./lib/*": {
-      "types": "./dist/lib/*.d.mts",
-      "import": "./dist/lib/*.mjs"
+    "description": "Solar Icons for React Native",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/react-native"
     },
-    "./*": {
-      "types": "./dist/icons/style/*.d.mts",
-      "import": "./dist/icons/style/*.mjs"
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "typecheck": "tsgo --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "types": "./dist/index.d.mts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./lib/*": {
+            "types": "./dist/lib/*.d.mts",
+            "import": "./dist/lib/*.mjs"
+        },
+        "./*": {
+            "types": "./dist/icons/style/*.d.mts",
+            "import": "./dist/icons/style/*.mjs"
+        }
+    },
+    "devDependencies": {
+        "@solar-icons/core": "workspace:*",
+        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/prettier": "0.0.3",
+        "@tala-tools/tsconfig": "0.0.1",
+        "@types/node": "^26.1.1",
+        "@types/react": "^19.2.17",
+        "dotenv": "^17.4.2",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.9.4",
+        "react": "^19.2.7",
+        "react-native": "^0.86.0",
+        "react-native-svg": "^15.15.5",
+        "rimraf": "^6.1.3",
+        "tsdown": "^0.22.4",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.10"
+    },
+    "peerDependencies": {
+        "react": ">= 16.8",
+        "react-native": ">= 0.72.0",
+        "react-native-svg": ">= 13.0.0"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "keywords": [
+        "react-native",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "UI",
+        "UX",
+        "ios",
+        "android"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
-  },
-  "devDependencies": {
-    "@solar-icons/core": "workspace:*",
-    "@tala-tools/eslint": "0.1.4",
-    "@tala-tools/prettier": "0.0.3",
-    "@tala-tools/tsconfig": "0.0.1",
-    "@types/node": "^26.1.1",
-    "@types/react": "^19.2.17",
-    "dotenv": "^17.4.2",
-    "picocolors": "^1.1.1",
-    "prettier": "^3.9.4",
-    "react": "^19.2.7",
-    "react-native": "^0.86.0",
-    "react-native-svg": "^15.15.5",
-    "rimraf": "^6.1.3",
-    "tsdown": "^0.22.4",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
-  },
-  "peerDependencies": {
-    "react": ">= 16.8",
-    "react-native": ">= 0.72.0",
-    "react-native-svg": ">= 13.0.0"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "keywords": [
-    "react-native",
-    "icons",
-    "svg",
-    "solar",
-    "design",
-    "interface",
-    "UI",
-    "UX",
-    "ios",
-    "android"
-  ],
-  "author": {
-    "name": "Saoudi Hakim",
-    "url": "https://hakimsaoudi.dev",
-    "email": "saoudihakim@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/saoudi-h/solar-icons/issues"
-  }
 }
