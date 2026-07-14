@@ -204,7 +204,7 @@ export const config: Config = {
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
                 content:
-                    'Framework-agnostic static assets. Use individual SVGs, SVG sprites, or Node.js string templates to integrate icons anywhere.',
+                    'Framework-agnostic SVGs, sprites, and string templates. Drop icons anywhere, zero JS required.',
                 status: 'new',
                 iconify: 'vscode-icons:file-type-svg',
             },
@@ -214,7 +214,7 @@ export const config: Config = {
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/js',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/js',
                 content:
-                    'Lightweight JavaScript runtime for dynamic DOM injection. Build interfaces natively without VDOM overhead using performant ASTs.',
+                    'Native DOM injection with zero VDOM overhead. Just SVG, no framework required.',
                 status: 'new',
                 iconify: 'devicon:javascript',
             },
