@@ -1,5 +1,5 @@
 ---
-"@solar-icons/static": minor
+"@solar-icons/static": major
 ---
 
 Add `@solar-icons/static`: framework-free static assets generated from the same

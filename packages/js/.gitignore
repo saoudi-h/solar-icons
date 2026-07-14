@@ -1,0 +1,7 @@
+node_modules
+.vscode
+dist
+build
+*.tsbuildinfo
+src/icons/
+src/index.ts

@@ -10,33 +10,33 @@ icon: js
 
 ## Using a CDN (No Bundler)
 
-Since Solar Icons contains over 10,000 icons across different styles, a traditional global script (UMD) would be massive. Instead, the package is distributed natively as ES Modules (ESM).
+Since Solar Icons contains exactly 7,476 icons across different styles, a traditional global script (UMD) would be massive. Instead, the package is distributed natively as ES Modules (ESM).
 
 You can use it directly in the browser using a modern CDN like [esm.sh](https://esm.sh/):
 
 ```html
 <!DOCTYPE html>
 <html>
-<body>
-  <i data-solar="heart-bold"></i>
-  <span data-solar="accessibility-line-duotone"></span>
+    <body>
+        <i data-solar="heart-bold"></i>
+        <span data-solar="accessibility-line-duotone"></span>
 
-  <script type="module">
-    // Import only the icons you need, directly from the CDN!
-    import { 
-      createIcons, 
-      HeartBoldIcon, 
-      AccessibilityLineDuotoneIcon 
-    } from 'https://esm.sh/@solar-icons/js@2.0.0-beta.0'
+        <script type="module">
+            // Import only the icons you need, directly from the CDN!
+            import {
+                createIcons,
+                HeartBoldIcon,
+                AccessibilityLineDuotoneIcon,
+            } from 'https://esm.sh/@solar-icons/js@2.0.0-beta.0'
 
-    createIcons({
-      icons: {
-        HeartBoldIcon,
-        AccessibilityLineDuotoneIcon
-      }
-    })
-  </script>
-</body>
+            createIcons({
+                icons: {
+                    HeartBoldIcon,
+                    AccessibilityLineDuotoneIcon,
+                },
+            })
+        </script>
+    </body>
 </html>
 ```
 
@@ -57,8 +57,7 @@ This package uses a highly performant, Lucide-style AST approach to build DOM el
 Include placeholders in your HTML. Use the `data-solar` attribute with the icon's kebab-case name and style:
 
 ```html
-<i data-solar="heart-bold"></i>
-<span data-solar="accessibility-line-duotone"></span>
+<i data-solar="heart-bold"></i> <span data-solar="accessibility-line-duotone"></span>
 ```
 
 Then, initialize them in your JavaScript by passing the imported icons to `createIcons`:
@@ -68,30 +67,29 @@ import { createIcons, HeartBoldIcon, AccessibilityLineDuotoneIcon } from '@solar
 
 // This replaces the <i> and <span> tags with fully rendered <svg> elements
 createIcons({
-  icons: {
-    HeartBoldIcon,
-    AccessibilityLineDuotoneIcon
-  }
+    icons: {
+        HeartBoldIcon,
+        AccessibilityLineDuotoneIcon,
+    },
 })
 ```
 
 ## Styling and Attributes
 
-You can style the icons directly by passing attributes to the placeholder element. 
+You can style the icons directly by passing attributes to the placeholder element.
 
 ### Custom Attributes (Recommended)
 
 Just like our React or Vue packages, you can pass custom attributes directly to the placeholder. These are automatically mapped to inline styles on the injected SVG:
 
 ```html
-<i 
-  data-solar="home-angle-bold-duotone" 
-  size="48" 
-  color="red" 
-  secondary-color="blue" 
-  secondary-opacity="0.6" 
-  stroke-width="0.5"
-></i>
+<i
+    data-solar="home-angle-bold-duotone"
+    size="48"
+    color="red"
+    secondary-color="blue"
+    secondary-opacity="0.6"
+    stroke-width="0.5"></i>
 ```
 
 ### CSS Classes and Global Styling
@@ -112,10 +110,10 @@ You can target the \`solar\` class in your global CSS to define default sizing o
 
 ```css
 .solar {
-  /* Default styles for all Solar Icons */
-  width: 24px;
-  height: 24px;
-  stroke-width: 1.5;
+    /* Default styles for all Solar Icons */
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
 }
 ```
 
@@ -125,28 +123,29 @@ You can target the \`solar\` class in your global CSS to define default sizing o
 
 - `icons` (Object): Map of PascalCase icon names to their imported AST structures. **Required**.
 - `nameAttr` (string): The HTML attribute used to identify placeholders. Defaults to `'data-solar'`.
-- `attrs` (Object): Additional attributes to apply to *every* injected SVG. This is fully typed and supports custom Solar properties. **Note: CSS classes provided here are merged, not overwritten. The default `solar` classes are preserved.**
+- `attrs` (Object): Additional attributes to apply to _every_ injected SVG. This is fully typed and supports custom Solar properties. **Note: CSS classes provided here are merged, not overwritten. The default `solar` classes are preserved.**
 
 ```ts
 import { createIcons, HeartBoldIcon } from '@solar-icons/js'
 
 createIcons({
-  icons: { HeartBoldIcon },
-  nameAttr: 'data-custom-icon', // Optional
-  attrs: {
-    // Classes are safely appended alongside "solar solar-heart-bold"
-    class: 'my-custom-icon-class',
-    
-    // Fully typed properties that map directly to SVG inline styles
-    size: 48,
-    color: '#ef4444',
-    'secondary-color': '#fca5a5',
-    'secondary-opacity': 0.8,
-    'stroke-width': 2
-  }
+    icons: { HeartBoldIcon },
+    nameAttr: 'data-custom-icon', // Optional
+    attrs: {
+        // Classes are safely appended alongside "solar solar-heart-bold"
+        class: 'my-custom-icon-class',
+
+        // Fully typed properties that map directly to SVG inline styles
+        size: 48,
+        color: '#ef4444',
+        'secondary-color': '#fca5a5',
+        'secondary-opacity': 0.8,
+        'stroke-width': 2,
+    },
 })
 ```
 
 <Callout type="warn">
-    Because this package dynamically constructs DOM nodes, tree-shaking is fully supported. Only the icons you explicitly import and pass to `createIcons` will be included in your final bundle.
+    Because this package dynamically constructs DOM nodes, tree-shaking is fully supported. Only the
+    icons you explicitly import and pass to `createIcons` will be included in your final bundle.
 </Callout>
