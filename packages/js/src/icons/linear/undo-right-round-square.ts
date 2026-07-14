@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UndoRightRoundSquareLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxNi43MTQgMiAxOS4wNzExIDIgMjAuNTM1NSAzLjQ2NDQ3QzIyIDQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMkMyMiAxNi43MTQgMjIgMTkuMDcxMSAyMC41MzU1IDIwLjUzNTVDMTkuMDcxMSAyMiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyODkzIDIyIDMuNDY0NDcgMjAuNTM1NUMyIDE5LjA3MTEgMiAxNi43MTQgMiAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE3LjUgOS41MDAyNkg5Ljk2MTU1QzguMDQ5NzkgOS41MDAyNiA2LjUgMTEuMDUgNi41IDEyLjk2MThDNi41IDE0Ljg3MzYgOC4wNDk3OCAxNi40MjMzIDkuOTYxNTQgMTYuNDIzM0gxNC41TTE1LjI1IDExLjU3NzJMMTcuNSA5LjUwMDI2TDE1LjI1IDcuNDIzMzQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const UndoRightRoundSquareLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const UndoRightRoundSquareLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { UndoRightRoundSquareLinearIcon as default };

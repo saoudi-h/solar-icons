@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MapPointBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDJDNy41ODE3MiAyIDQgNi4wMDI1OCA0IDEwLjVDNCAxNC45NjIyIDYuNTUzMzIgMTkuODEyNCAxMC41MzcxIDIxLjY3NDRDMTEuNDY1NyAyMi4xMDg1IDEyLjUzNDMgMjIuMTA4NSAxMy40NjI5IDIxLjY3NDRDMTcuNDQ2NyAxOS44MTI0IDIwIDE0Ljk2MjIgMjAgMTAuNUMyMCA2LjAwMjU4IDE2LjQxODMgMiAxMiAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMTIuNUMxMy4zODA3IDEyLjUgMTQuNSAxMS4zODA3IDE0LjUgMTBDMTQuNSA4LjYxOTI5IDEzLjM4MDcgNy41IDEyIDcuNUMxMC42MTkzIDcuNSA5LjUgOC42MTkyOSA5LjUgMTBDOS41IDExLjM4MDcgMTAuNjE5MyAxMi41IDEyIDEyLjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const MapPointBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const MapPointBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MapPointBoldDuotoneIcon as default };

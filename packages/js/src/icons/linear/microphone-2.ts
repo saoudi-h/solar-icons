@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Microphone2LinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDhDNyA1LjIzODU4IDkuMjM4NTggMyAxMiAzQzE0Ljc2MTQgMyAxNyA1LjIzODU4IDE3IDhWMTFDMTcgMTMuNzYxNCAxNC43NjE0IDE2IDEyIDE2QzkuMjM4NTggMTYgNyAxMy43NjE0IDcgMTFWOFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEzLjUgOEwxNyA4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTEzLjUgMTFMMTcgMTEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNyA4TDkgOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03IDExTDkgMTEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjAgMTBWMTFDMjAgMTUuNDE4MyAxNi40MTgzIDE5IDEyIDE5QzcuNTgxNzIgMTkgNCAxNS40MTgzIDQgMTFWMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMTlWMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const Microphone2LinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -58,5 +61,3 @@ const Microphone2LinearIcon: IconNode = [
     }
   ]
 ];
-
-export { Microphone2LinearIcon as default };

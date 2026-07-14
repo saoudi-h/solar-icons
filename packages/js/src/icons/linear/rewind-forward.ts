@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RewindForwardLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMC45OTk4IDguNzY4NDRMNC45MDMxMiA0LjMwODM4QzMuNjAwNjQgMy40MTEyMiAyIDQuNTc4OTUgMiA2LjQyNjMyTDIgMTcuNTczN0MyIDE5LjQyMTEgMy42MDA2NSAyMC41ODg4IDQuOTAzMTMgMTkuNjkxNkwxMC45OTk4IDE1LjIzMTYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTIxLjA3ODYgMTAuMTQ2OEMyMi4zMDcxIDEwLjk1NDUgMjIuMzA3MSAxMy4wNDU1IDIxLjA3ODYgMTMuODUzMkwxMy42NjEyIDE4LjczMDJDMTIuNDY3MyAxOS41MTUyIDExIDE4LjQ5MzQgMTEgMTYuODc3TDExIDcuMTIzMDNDMTEgNS41MDY1OCAxMi40NjczIDQuNDg0ODIgMTMuNjYxMiA1LjI2OTgzTDIxLjA3ODYgMTAuMTQ2OFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const RewindForwardLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -17,5 +20,3 @@ const RewindForwardLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { RewindForwardLinearIcon as default };

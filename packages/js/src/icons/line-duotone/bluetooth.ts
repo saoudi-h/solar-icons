@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BluetoothLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi4yNjMzIDguMjYyMzhMMTEgMTJWNS4yMjQ1N0MxMSAzLjMzODE2IDExIDIuMzk0OTYgMTEuNjA0NyAyLjA4NTYxQzEyLjIwOTMgMS43NzYyNSAxMi45ODEzIDIuMzI0NDggMTQuNTI1MyAzLjQyMDkzTDE2LjI2MzMgNC42NTUxQzE3LjQyMTEgNS40NzczMSAxOCA1Ljg4ODQyIDE4IDYuNDU4NzRDMTggNy4wMjkwNyAxNy40MjExIDcuNDQwMTcgMTYuMjYzMyA4LjI2MjM4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTYuMjYzMyAxOS4zNDQ5TDE0LjUyNTMgMjAuNTc5MUMxMi45ODEzIDIxLjY3NTUgMTIuMjA5MyAyMi4yMjM4IDExLjYwNDcgMjEuOTE0NEMxMSAyMS42MDUgMTEgMjAuNjYxOCAxMSAxOC43NzU0VjEyTDE2LjI2MzMgMTUuNzM3NkMxNy40MjExIDE2LjU1OTggMTggMTYuOTcwOSAxOCAxNy41NDEzQzE4IDE4LjExMTYgMTcuNDIxMSAxOC41MjI3IDE2LjI2MzMgMTkuMzQ0OVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNiAxNS41TDExIDEyTDYgOC41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const BluetoothLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -26,5 +29,3 @@ const BluetoothLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { BluetoothLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BarChairLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjAzMTUgNi45Mzc1MUM0Ljc1NzMxIDQuNzI4NTcgNi4zMDE5MiAyLjY5NzY2IDguNTQyMDcgMi4zMjE2OEw4LjkzOTYzIDIuMjU0OTZDMTAuOTY1MSAxLjkxNTAxIDEzLjAzNDkgMS45MTUwMSAxNS4wNjA0IDIuMjU0OTZMMTUuNDU3OSAyLjMyMTY4QzE3LjY5ODEgMi42OTc2NiAxOS4yNDI3IDQuNzI4NTcgMTguOTY4NSA2LjkzNzUxTDE4Ljk1MDUgNy4wODI3M0MxOC44ODU1IDcuNjA2MyAxOC40MzE1IDggMTcuODkyOCA4SDYuMTA3MTlDNS41Njg0NyA4IDUuMTE0NTIgNy42MDYzIDUuMDQ5NTMgNy4wODI3M0w1LjAzMTUgNi45Mzc1MVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTkgOEw2IDIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE1IDhMMTggMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNi41IDE3SDcuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const BarChairLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -35,5 +38,3 @@ const BarChairLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { BarChairLineDuotoneIcon as default };

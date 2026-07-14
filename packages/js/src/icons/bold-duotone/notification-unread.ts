@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const NotificationUnreadBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIyIDEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyIDQuOTI4OTMgMy40NjQ0NyAzLjQ2NDQ3QzQuOTI4OTMgMiA3LjI4NTk1IDIgMTIgMkMxNi43MTQgMiAxOS4wNzExIDIgMjAuNTM1NSAzLjQ2NDQ3QzIyIDQuOTI4OTMgMjIgNy4yODU5NSAyMiAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTIyIDVDMjIgNi42NTY4NSAyMC42NTY5IDggMTkgOEMxNy4zNDMxIDggMTYgNi42NTY4NSAxNiA1QzE2IDMuMzQzMTUgMTcuMzQzMSAyIDE5IDJDMjAuNjU2OSAyIDIyIDMuMzQzMTUgMjIgNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const NotificationUnreadBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const NotificationUnreadBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { NotificationUnreadBoldDuotoneIcon as default };

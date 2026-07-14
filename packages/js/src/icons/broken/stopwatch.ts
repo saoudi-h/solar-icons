@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StopwatchBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxM1Y5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEwIDJIMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNy41IDUuMjA0MDRDOC44MjM3OCA0LjQzODI3IDEwLjM2MDcgNCAxMiA0QzE2Ljk3MDYgNCAyMSA4LjAyOTQ0IDIxIDEzQzIxIDE3Ljk3MDYgMTYuOTcwNiAyMiAxMiAyMkM3LjAyOTQ0IDIyIDMgMTcuOTcwNiAzIDEzQzMgMTEuMzYwNyAzLjQzODI3IDkuODIzNzggNC4yMDQwNCA4LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const StopwatchBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const StopwatchBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { StopwatchBrokenIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LaptopMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDlDMyA2LjE3MTU3IDMgNC43NTczNiAzLjg3ODY4IDMuODc4NjhDNC43NTczNiAzIDYuMTcxNTcgMyA5IDNIMTVDMTcuODI4NCAzIDE5LjI0MjYgMyAyMC4xMjEzIDMuODc4NjhDMjEgNC43NTczNiAyMSA2LjE3MTU3IDIxIDlWMTRDMjEgMTUuODg1NiAyMSAxNi44Mjg0IDIwLjQxNDIgMTcuNDE0MkMxOS44Mjg0IDE4IDE4Ljg4NTYgMTggMTcgMThIN0M1LjExNDM4IDE4IDQuMTcxNTcgMTggMy41ODU3OSAxNy40MTQyQzMgMTYuODI4NCAzIDE1Ljg4NTYgMyAxNFY5WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0yMiAyMUgyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTUgMTVIOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const LaptopMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const LaptopMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LaptopMinimalisticLineDuotoneIcon as default };

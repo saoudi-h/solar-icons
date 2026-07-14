@@ -94,12 +94,12 @@ const main = async () => {
             fs.mkdirSync(path.dirname(tsPath), { recursive: true })
             fs.writeFileSync(
                 tsPath,
-                `/* GENERATED FILE — @solar-icons/static */\nconst ${pascalName}: string = \`${svg.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`;\n\nexport { ${pascalName} as default };\n`
+                `/* GENERATED FILE — @solar-icons/static */\n\n/**\n * ![img](data:image/svg+xml;base64,${icon.preview})\n */\nexport const ${pascalName}: string = \`${svg.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`;\n`
             )
 
             // Barrel line
             barrelLines.push(
-                `export { default as ${pascalName} } from "./icons/${icon.styleKebab}/${icon.kebabName}";`
+                `export { ${pascalName} } from "./icons/${icon.styleKebab}/${icon.kebabName}";`
             )
         }
 

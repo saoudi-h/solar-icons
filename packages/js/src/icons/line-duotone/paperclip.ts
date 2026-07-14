@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PaperclipLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03LjkxNzUgMTcuODA2OEwxNS44MDg0IDEwLjI1MzVDMTYuNzU1OCA5LjM0NjY4IDE2Ljc1NTggNy44NzYzNyAxNS44MDg0IDYuOTY5NTFNMyAxMC4wMzQ2TDkuNDA0MTkgMy45MDQ0MUMxMi4wNTY5IDEuMzY1MiAxNi4zNTc4IDEuMzY1MiAxOS4wMTA1IDMuOTA0NDEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNS44MDg0IDYuOTY5NEMxNC44NjEgNi4wNjI1NCAxMy4zMjUgNi4wNjI1MyAxMi4zNzc2IDYuOTY5NEw0LjU0Mzg4IDE0LjQ2NzlDMi43NDM4NCAxNi4xOTEgMi43NDM4NCAxOC45ODQ2IDQuNTQzODggMjAuNzA3NkM2LjM0MzkzIDIyLjQzMDYgOS4yNjIzOSAyMi40MzA2IDExLjA2MjQgMjAuNzA3NkwxOS4wMTA1IDEzLjA5OTZDMjEuNjYzMiAxMC41NjA0IDIxLjY2MzIgNi40NDM1MSAxOS4wMTA1IDMuOTA0MyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const PaperclipLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const PaperclipLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { PaperclipLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LightbulbMinimalisticLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCAxOS41SDE0TTEwLjY2NjcgMjJIMTMuMzMzMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjQxMDU4IDEzLjY4MDVMOC41MTQ2MyAxNC43MTk2QzguODI0MzcgMTUuMDExMiA5IDE1LjQxNzcgOSAxNS44NDNDOSAxNi40ODIgOS41MTggMTcgMTAuMTU3IDE3SDEzLjg0M0MxNC40ODIgMTcgMTUgMTYuNDgyIDE1IDE1Ljg0M0MxNSAxNS40MTc3IDE1LjE3NTYgMTUuMDExMiAxNS40ODU0IDE0LjcxOTZMMTYuNTg5NCAxMy42ODA1QzE4LjEzMDYgMTIuMjE4NyAxOC45OTEyIDEwLjI5ODQgMTguOTk5OSA4LjMwMTkzTDE5IDguMjE4MDdDMTkgNC44MDY5IDE1Ljg2NiAyIDEyIDJDOC4xMzQwMSAyIDUgNC44MDY5IDUgOC4yMTgwN0w1LjAwMDA3IDguMzAxOTNDNS4wMDg3NSAxMC4yOTg0IDUuODY5MzkgMTIuMjE4NyA3LjQxMDU4IDEzLjY4MDVaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const LightbulbMinimalisticLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const LightbulbMinimalisticLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { LightbulbMinimalisticLinearIcon as default };

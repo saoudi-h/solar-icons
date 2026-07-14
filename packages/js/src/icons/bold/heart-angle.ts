@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HeartAngleBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjEwNjI3IDE4LjI0NjhDNS4yOTgxOSAxNi4wODMzIDIgMTMuNTQyMiAyIDkuMTM3MUMyIDQuMjc0MTYgNy41MDAxNiAwLjgyNTQ2NCAxMiA1LjUwMDYzTDE0IDcuNDk5MjhDMTQuMjkyOSA3Ljc5MjEyIDE0Ljc2NzggNy43OTIwMyAxNS4wNjA3IDcuNDk5MDhDMTUuMzUzNSA3LjIwNjE0IDE1LjM1MzQgNi43MzEyNyAxNS4wNjA1IDYuNDM4NDNMMTMuMTI4NSA0LjUwNzEyQzE3LjM2ODUgMS40MDMwOSAyMiA0LjY3NDY1IDIyIDkuMTM3MUMyMiAxMy41NDIyIDE4LjcwMTggMTYuMDgzMyAxNS44OTM3IDE4LjI0NjhDMTUuNjAxOSAxOC40NzE3IDE1LjMxNTMgMTguNjkyNSAxNS4wMzgzIDE4LjkxMDlDMTQgMTkuNzI5NCAxMyAyMC41IDEyIDIwLjVDMTEgMjAuNSAxMCAxOS43Mjk0IDguOTYxNzMgMTguOTEwOUM4LjY4NDcxIDE4LjY5MjUgOC4zOTgxNCAxOC40NzE3IDguMTA2MjcgMTguMjQ2OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const HeartAngleBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -10,5 +13,3 @@ const HeartAngleBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { HeartAngleBoldIcon as default };

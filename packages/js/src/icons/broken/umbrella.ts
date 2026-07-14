@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UmbrellaBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDE5VjIwQzggMjEuMTA0NiA4Ljg5NTQzIDIyIDEwIDIyQzExLjEwNDYgMjIgMTIgMjEuMTA0NiAxMiAyMEMxMiAyMCAxMiAxNy41NjIxIDEyIDE2TTIxLjUyMzggMTJIMTJIMi40NzYxOUMyLjIxMzIgMTIgMiAxMS43ODY4IDIgMTEuNTIzOEMyIDYuMjYzOTYgNi4yNjM5NSAyIDExLjUyMzggMkgxMi40NzYyQzE3LjczNiAyIDIyIDYuMjYzOTYgMjIgMTEuNTIzOEMyMiAxMS43ODY4IDIxLjc4NjggMTIgMjEuNTIzOCAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYuOTE0MyAxMkMxNi42MzUxIDkuMjg4NzQgMTUuNTU0MSAyIDEyIDJDOC40NDU4NiAyIDcuMzY0ODYgOS4yODg3NCA3LjA4NTY5IDEyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const UmbrellaBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const UmbrellaBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { UmbrellaBrokenIcon as default };

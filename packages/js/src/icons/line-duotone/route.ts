@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RouteLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTYuMTQyMTQgNi4xNDIxNEM4LjkwMzU2IDMuMzgwNzEgMTAuMjg0MyAyIDEyIDJDMTMuNzE1NyAyIDE1LjA5NjQgMy4zODA3MSAxNy44NTc5IDYuMTQyMTRDMjAuNjE5MyA4LjkwMzU2IDIyIDEwLjI4NDMgMjIgMTJDMjIgMTMuNzE1NyAyMC42MTkzIDE1LjA5NjQgMTcuODU3OSAxNy44NTc5QzE1LjA5NjQgMjAuNjE5MyAxMy43MTU3IDIyIDEyIDIyQzEwLjI4NDMgMjIgOC45MDM1NiAyMC42MTkzIDYuMTQyMTQgMTcuODU3OUMzLjM4MDcxIDE1LjA5NjQgMiAxMy43MTU3IDIgMTJDMiAxMC4yODQzIDMuMzgwNzEgOC45MDM1NiA2LjE0MjE0IDYuMTQyMTRaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik05IDE0QzkgMTMuMDU3MiA5IDEyLjU4NTggOS4yOTI4OSAxMi4yOTI5QzkuNTg1NzkgMTIgMTAuMDU3MiAxMiAxMSAxMkgxNU0xMyAxNEwxNSAxMkwxMyAxMCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RouteLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const RouteLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { RouteLineDuotoneIcon as default };

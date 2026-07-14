@@ -7,6 +7,6 @@
         "types": ["node"],
         "allowImportingTsExtensions": true
     },
-    "include": ["./scripts/**/*", "./tests/**/*", "./vitest.config.ts", "./tsdown.config.ts"],
+    "include": ["./scripts/**/*", "./src/**/*", "./tests/**/*", "./vitest.config.ts", "./tsdown.config.ts"],
     "exclude": ["dist", "node_modules", "LICENSE", "LICENSE-THIRD-PARTY"]
 }

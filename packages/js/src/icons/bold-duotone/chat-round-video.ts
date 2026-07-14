@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ChatRoundVideoBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDEzLjU5OTcgMi4zNzU2MiAxNS4xMTE2IDMuMDQzNDYgMTYuNDUyNUMzLjIyMDk0IDE2LjgwODggMy4yODAwMSAxNy4yMTYxIDMuMTc3MTIgMTcuNjAwNkwyLjU4MTUxIDE5LjgyNjdDMi4zMjI5NSAyMC43OTMgMy4yMDcwMSAyMS42NzcgNC4xNzMzNSAyMS40MTg1TDYuMzk5MzkgMjAuODIyOUM2Ljc4MzkzIDIwLjcyIDcuMTkxMjEgMjAuNzc5MSA3LjU0NzUzIDIwLjk1NjVDOC44ODgzNyAyMS42MjQ0IDEwLjQwMDMgMjIgMTIgMjJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMy4yMTk2IDkuNDQ2OTVDMTUuMDczMiAxMC41ODYgMTYgMTEuMTU1NSAxNiAxMkMxNiAxMi44NDQ1IDE1LjA3MzIgMTMuNDE0IDEzLjIxOTYgMTQuNTUzMUMxMS4zNDA2IDE1LjcwNzcgMTAuNDAxMSAxNi4yODUgOS43MDA1NiAxNS44NjExQzkgMTUuNDM3MiA5IDE0LjI5MTUgOSAxMkM5IDkuNzA4NTMgOSA4LjU2Mjc5IDkuNzAwNTYgOC4xMzg5MUMxMC40MDExIDcuNzE1MDQgMTEuMzQwNiA4LjI5MjM0IDEzLjIxOTYgOS40NDY5NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const ChatRoundVideoBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const ChatRoundVideoBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { ChatRoundVideoBoldDuotoneIcon as default };

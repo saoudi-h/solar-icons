@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StopCircleBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk04LjU4NTc5IDguNTg1NzlDOCA5LjE3MTU3IDggMTAuMTE0NCA4IDEyQzggMTMuODg1NiA4IDE0LjgyODQgOC41ODU3OSAxNS40MTQyQzkuMTcxNTcgMTYgMTAuMTE0NCAxNiAxMiAxNkMxMy44ODU2IDE2IDE0LjgyODQgMTYgMTUuNDE0MiAxNS40MTQyQzE2IDE0LjgyODQgMTYgMTMuODg1NiAxNiAxMkMxNiAxMC4xMTQ0IDE2IDkuMTcxNTcgMTUuNDE0MiA4LjU4NTc5QzE0LjgyODQgOCAxMy44ODU2IDggMTIgOEMxMC4xMTQ0IDggOS4xNzE1NyA4IDguNTg1NzkgOC41ODU3OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const StopCircleBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const StopCircleBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { StopCircleBoldIcon as default };

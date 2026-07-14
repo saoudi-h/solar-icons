@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SkateboardLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgN0wyLjgxMjUzIDguMjE4OEMzLjU1NDQgOS4zMzE2IDQuODAzMzIgMTAgNi4xNDA3MyAxMEgxNy44NTkzQzE5LjE5NjcgMTAgMjAuNDQ1NiA5LjMzMTU5IDIxLjE4NzUgOC4yMTg4TDIyIDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI3IiBjeT0iMTUiIHI9IjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGNpcmNsZSBjeD0iMTciIGN5PSIxNSIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const SkateboardLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -30,5 +33,3 @@ const SkateboardLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { SkateboardLineDuotoneIcon as default };

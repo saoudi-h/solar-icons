@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SkipNextBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIyLjc1IDVDMjIuNzUgNC41ODU3OSAyMi40MTQyIDQuMjUgMjIgNC4yNUMyMS41ODU4IDQuMjUgMjEuMjUgNC41ODU3OSAyMS4yNSA1VjE5QzIxLjI1IDE5LjQxNDIgMjEuNTg1OCAxOS43NSAyMiAxOS43NUMyMi40MTQyIDE5Ljc1IDIyLjc1IDE5LjQxNDIgMjIuNzUgMTlWNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE2LjY1OTggMTQuNjQ3NEMxOC40NDY3IDEzLjQ5MzUgMTguNDQ2NyAxMC41MDY1IDE2LjY1OTggOS4zNTI1OEw1Ljg3MDgzIDIuMzg1NDhDNC4xMzQxOSAxLjI2NDAyIDIgMi43MjM2OCAyIDUuMDMyOVYxOC45NjcxQzIgMjEuMjc2MyA0LjEzNDE5IDIyLjczNiA1Ljg3MDgzIDIxLjYxNDVMMTYuNjU5OCAxNC42NDc0WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const SkipNextBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const SkipNextBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { SkipNextBoldDuotoneIcon as default };

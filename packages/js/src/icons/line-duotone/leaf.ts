@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LeafLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDkuMDAwMDZMMTYuNSA0LjUwMDA2TTEyIDE0LjUwMDFMMTguNSA4LjAwMDA2TTEyIDE5LjUwMDFMMTkuNSAxMi4wMDAxIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMiAyMkMxNi40MTgzIDIyIDIwIDE4LjM1NDEgMjAgMTMuODU2N0MyMCA5LjM5NDUzIDE3LjQ0NjcgNC4xODc1OSAxMy40NjI5IDIuMzI1NTVDMTIuOTk4NiAyLjEwODUyIDEyLjQ5OTMgMiAxMiAyTTEyIDIyQzcuNTgxNzIgMjIgNCAxOC4zNTQxIDQgMTMuODU2N0M0IDkuMzk0NTMgNi41NTMzMiA0LjE4NzU5IDEwLjUzNzEgMi4zMjU1NUMxMS4wMDE0IDIuMTA4NTIgMTEuNTAwNyAyIDEyIDJNMTIgMjJWMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const LeafLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const LeafLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LeafLineDuotoneIcon as default };

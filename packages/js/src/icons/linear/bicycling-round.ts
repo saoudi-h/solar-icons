@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BicyclingRoundLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE0IiBjeT0iNCIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIGN4PSI2IiBjeT0iMTgiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGNpcmNsZSBjeD0iMTgiIGN5PSIxOCIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTguNTAwMiA5Ljk5OTk3SDE0LjU4MjRDMTQuMjA1NCA5Ljk5OTk3IDEzLjgzOTYgOS44NzIxMyAxMy41NDQ2IDkuNjM3MzNMMTEuMzg2MiA3LjkxOTE2QzEwLjExOTYgNi45MTA4NCA4LjI1MTkyIDcuMjcxMDIgNy40NTEwOCA4LjY3ODA2QzYuNjc1ODcgMTAuMDQwMSA3LjI1MjE2IDExLjc3MzYgOC42ODg1MyAxMi40MDA0TDExLjc3OTIgMTMuNzQ5QzEyLjczMTUgMTQuMTY0NiAxMy4xNjk4IDE1LjI3MDggMTIuNzYwNSAxNi4yMjU4TDEyLjAwMDIgMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const BicyclingRoundLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -38,5 +41,3 @@ const BicyclingRoundLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { BicyclingRoundLinearIcon as default };

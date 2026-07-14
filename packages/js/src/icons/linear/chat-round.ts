@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ChatRoundLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxMy41OTk3IDIuMzc1NjIgMTUuMTExNiAzLjA0MzQ2IDE2LjQ1MjVDMy4yMjA5NCAxNi44MDg4IDMuMjgwMDEgMTcuMjE2MSAzLjE3NzEyIDE3LjYwMDZMMi41ODE1MSAxOS44MjY3QzIuMzIyOTUgMjAuNzkzIDMuMjA3MDEgMjEuNjc3IDQuMTczMzUgMjEuNDE4NUw2LjM5OTM5IDIwLjgyMjlDNi43ODM5MyAyMC43MiA3LjE5MTIxIDIwLjc3OTEgNy41NDc1MyAyMC45NTY1QzguODg4MzcgMjEuNjI0NCAxMC40MDAzIDIyIDEyIDIyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const ChatRoundLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -10,5 +13,3 @@ const ChatRoundLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { ChatRoundLinearIcon as default };

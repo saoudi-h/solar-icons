@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LogoutBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDIwQzcuNTgxNzIgMjAgNCAxNi40MTgzIDQgMTJDNCA3LjU4MTcyIDcuNTgxNzIgNCAxMiA0VjIwWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE2LjQ2OTcgOC40Njk2N0MxNi4xNzY4IDguNzYyNTYgMTYuMTc2OCA5LjIzNzQ0IDE2LjQ2OTcgOS41MzAzM0wxOC4xODkzIDExLjI1SDEwQzkuNTg1NzkgMTEuMjUgOS4yNSAxMS41ODU4IDkuMjUgMTJDOS4yNSAxMi40MTQyIDkuNTg1NzkgMTIuNzUgMTAgMTIuNzVIMTguMTg5M0wxNi40Njk3IDE0LjQ2OTdDMTYuMTc2OCAxNC43NjI2IDE2LjE3NjggMTUuMjM3NCAxNi40Njk3IDE1LjUzMDNDMTYuNzYyNiAxNS44MjMyIDE3LjIzNzQgMTUuODIzMiAxNy41MzAzIDE1LjUzMDNMMjAuNTMwMyAxMi41MzAzQzIwLjgyMzIgMTIuMjM3NCAyMC44MjMyIDExLjc2MjYgMjAuNTMwMyAxMS40Njk3TDE3LjUzMDMgOC40Njk2N0MxNy4yMzc0IDguMTc2NzggMTYuNzYyNiA4LjE3Njc4IDE2LjQ2OTcgOC40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const LogoutBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const LogoutBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LogoutBoldDuotoneIcon as default };

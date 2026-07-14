@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HealthLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDkuMzE3NUMyIDEzLjA0NjggNi4wMTk0MyAxNi45OTEgOC45NjE3MyAxOS4zNzg2QzEwLjI5MzcgMjAuNDU5NSAxMC45NTk3IDIxIDEyIDIxQzEzLjA0MDMgMjEgMTMuNzA2MyAyMC40NTk2IDE1LjAzODMgMTkuMzc4N0MxNy45ODA2IDE2Ljk5MSAyMiAxMy4wNDY4IDIyIDkuMzE3NDdDMjIgMy4wODc0OCAxNi40OTk4IDAuNzYxNDk4IDEyIDUuNTc0MTJDNy41MDAxNiAwLjc2MTQ5OCAyIDMuMDg3NDggMiA5LjMxNzVaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOC41IDkuMDAwMDJIMTYuNU0xNi41IDkuMDAwMDJMMTQuNSA5LjAwMDAyTTE2LjUgOS4wMDAwMkwxNi41IDdNMTYuNSA5LjAwMDAyTDE2LjUgMTEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const HealthLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const HealthLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { HealthLinearIcon as default };

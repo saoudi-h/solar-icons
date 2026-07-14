@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const GalleryCircleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE1IiBjeT0iOSIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMjAuMDAwMSAxNy42MDAxTDE3Ljc3NjYgMTUuNTk5QzE2LjczNzEgMTQuNjYzNCAxNS4xODkgMTQuNTcwMiAxNC4wNDQ3IDE1LjM3NDRMMTMuNzQ2NSAxNS41ODM5QzEyLjk1MTQgMTYuMTQyOCAxMS44Njk2IDE2LjA0OTEgMTEuMTgyMyAxNS4zNjE4TDYuODkyNjIgMTEuMDcyMUM2LjAzNjQxIDEwLjIxNTkgNC42NjI5OSAxMC4xNzAyIDMuNzUxNzIgMTAuOTY3NUwyLjI4MTI1IDEyLjI1NDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const GalleryCircleLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -29,5 +32,3 @@ const GalleryCircleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { GalleryCircleLinearIcon as default };

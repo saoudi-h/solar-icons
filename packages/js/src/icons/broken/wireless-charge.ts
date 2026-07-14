@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WirelessChargeBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMVYyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMi44NTcxIDdMMTAgMTBIMTRMMTEuMTQyOSAxMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy41IDE4VjE5LjVDMTMuNSAxOS45NjU5IDEzLjUgMjAuMTk4OSAxMy40MjM5IDIwLjM4MjdDMTMuMzIyNCAyMC42Mjc3IDEzLjEyNzcgMjAuODIyNCAxMi44ODI3IDIwLjkyMzlDMTIuNjk4OSAyMSAxMi40NjU5IDIxIDEyIDIxQzExLjUzNDEgMjEgMTEuMzAxMSAyMSAxMS4xMTczIDIwLjkyMzlDMTAuODcyMyAyMC44MjI0IDEwLjY3NzYgMjAuNjI3NyAxMC41NzYxIDIwLjM4MjdDMTAuNSAyMC4xOTg5IDEwLjUgMTkuOTY1OSAxMC41IDE5LjVWMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTQuNTgxNTIgN0M0LjIwNjUxIDcuOTI2NDMgNCA4LjkzOTEgNCAxMEM0IDE0LjQxODMgNy41ODE3MiAxOCAxMiAxOEMxNi40MTgzIDE4IDIwIDE0LjQxODMgMjAgMTBDMjAgNS41ODE3MiAxNi40MTgzIDIgMTIgMkMxMC45MzkxIDIgOS45MjY0MyAyLjIwNjUxIDkgMi41ODE1MiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const WirelessChargeBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -35,5 +38,3 @@ const WirelessChargeBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { WirelessChargeBrokenIcon as default };

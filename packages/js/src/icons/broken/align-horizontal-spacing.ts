@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const AlignHorizontalSpacingBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDJMMyAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMSAxMEwyMSAyMk0yMSAyTDIxIDYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOCAxNUw4IDE2QzggMTcuODg1NiA4IDE4LjgyODQgOC41ODU3OSAxOS40MTQyQzkuMTcxNTcgMjAgMTAuMTE0NCAyMCAxMiAyMEMxMy44ODU2IDIwIDE0LjgyODQgMjAgMTUuNDE0MiAxOS40MTQyQzE2IDE4LjgyODQgMTYgMTcuODg1NiAxNiAxNlY4QzE2IDYuMTE0MzkgMTYgNS4xNzE1NyAxNS40MTQyIDQuNTg1NzlDMTQuODI4NCA0IDEzLjg4NTYgNCAxMiA0QzEwLjExNDQgNCA5LjE3MTU3IDQgOC41ODU3OSA0LjU4NTc5QzggNS4xNzE1NyA4IDYuMTE0MzggOCA4TDggMTEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const AlignHorizontalSpacingBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const AlignHorizontalSpacingBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { AlignHorizontalSpacingBrokenIcon as default };

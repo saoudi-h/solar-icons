@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SmartHomeAngleBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMS42MzU5IDEyLjk1NzlMMjEuMzU3MiAxNC44OTUyQzIwLjg2OTcgMTguMjgyNyAyMC42MjYgMTkuOTc2NCAxOS40NTEgMjAuOTg4MkMxOC4zODIyIDIxLjkwODUgMTYuODU5OSAyMS45OTE3IDE0IDIxLjk5OTNNMjEuNjY0NiA3Ljg3NDk1QzIxLjEyNDIgNi43NDc2IDE5Ljk3MzggNi4wNjIzMyAxNy42NzMxIDQuNjkxODFMMTYuMjg4MiAzLjg2Njg3QzE0LjE5OSAyLjYyMjI5IDEzLjE1NDMgMiAxMiAyQzEwLjg0NTcgMiA5LjgwMTA0IDIuNjIyMjkgNy43MTE3NSAzLjg2Njg3TDYuMzI2OTEgNC42OTE4MUM0LjAyNjE5IDYuMDYyMzQgMi44NzU4MyA2Ljc0NzYgMi4zMzUzNyA3Ljg3NDk1QzIuMDQ4NTIgOC40NzMyNyAxLjk2NzM2IDkuMTI1NDQgMi4wMTEwOCAxMCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMSAyMkMxMSAxNy4wMjk0IDYuOTcwNTYgMTMgMiAxMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik04IDIyQzggMTguNjg2MyA1LjMxMzcxIDE2IDIgMTYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNSAyMkM1IDIwLjM0MzEgMy42NTY4NSAxOSAyIDE5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const SmartHomeAngleBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -35,5 +38,3 @@ const SmartHomeAngleBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { SmartHomeAngleBrokenIcon as default };

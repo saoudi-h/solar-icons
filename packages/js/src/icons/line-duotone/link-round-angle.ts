@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LinkRoundAngleLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi43OTE3IDE1Ljc5OTFMMTQuMjIyMyAxNC4zNjc2QzE2LjU5MjYgMTEuOTk1OSAxNi41OTI2IDguMTUwNTQgMTQuMjIyMyA1Ljc3ODhDMTEuODUyMSAzLjQwNzA3IDguMDA5MSAzLjQwNzA3IDUuNjM4ODUgNS43Nzg4TDIuNzc3NjkgOC42NDE3NEMwLjQwNzQzNiAxMS4wMTM1IDAuNDA3NDM2IDE0Ljg1ODggMi43Nzc2OSAxNy4yMzA2QzMuODc2ODggMTguMzMwNCA1LjI5Mjc5IDE4LjkyMDIgNi43MzE2NSAxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTExLjIwODMgOC4yMDA5Mkw5Ljc3NzY5IDkuNjMyMzlDNy40MDc0NCAxMi4wMDQxIDcuNDA3NDQgMTUuODQ5NSA5Ljc3NzY5IDE4LjIyMTJDMTIuMTQ3OSAyMC41OTI5IDE1Ljk5MDkgMjAuNTkyOSAxOC4zNjEyIDE4LjIyMTJMMjEuMjIyMyAxNS4zNTgzQzIzLjU5MjYgMTIuOTg2NSAyMy41OTI2IDkuMTQxMTggMjEuMjIyMyA2Ljc2OTQ1QzIwLjEyMzEgNS42Njk1NyAxOC43MDcyIDUuMDc5NzYgMTcuMjY4MyA1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const LinkRoundAngleLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const LinkRoundAngleLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LinkRoundAngleLineDuotoneIcon as default };

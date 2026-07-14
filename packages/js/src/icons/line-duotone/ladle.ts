@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LadleLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgNS42ODQyMUMyIDMuNjQ5NDggMy42NDk0OCAyIDUuNjg0MjEgMkM3LjcxODk0IDIgOS4zNjg0MiAzLjY0OTQ4IDkuMzY4NDIgNS42ODQyMVYxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxNC41VjE1LjY4NDJDMjIgMTkuMTcyMyAxOS4xNzIzIDIyIDE1LjY4NDIgMjJDMTIuMTk2MSAyMiA5LjM2ODQxIDE5LjE3MjMgOS4zNjg0MSAxNS42ODQyVjE0LjYzMTZNMjIgMTQuNUMyMiAxNS44ODA3IDE5LjA1MzkgMTcgMTYgMTdDMTIuOTQ2MSAxNyA5LjM2ODQxIDE2LjAxMjMgOS4zNjg0MSAxNC42MzE2TTIyIDE0LjVDMjIgMTMuMTE5MyAxOS4wNTM5IDEyIDE2IDEyQzEyLjk0NjEgMTIgOS4zNjg0MSAxMy4yNTA5IDkuMzY4NDEgMTQuNjMxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const LadleLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const LadleLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LadleLineDuotoneIcon as default };

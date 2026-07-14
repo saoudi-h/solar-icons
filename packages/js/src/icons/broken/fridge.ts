@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const FridgeBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDEwVjEzQzQgMTYuNzcxMiA0IDE4LjY1NjkgNS4xNzE1NyAxOS44Mjg0QzYuMzQzMTUgMjEgOC4yMjg3NiAyMSAxMiAyMUMxNS43NzEyIDIxIDE3LjY1NjkgMjEgMTguODI4NCAxOS44Mjg0QzIwIDE4LjY1NjkgMjAgMTYuNzcxMiAyMCAxM1YxMEMyMCA2LjIyODc2IDIwIDQuMzQzMTUgMTguODI4NCAzLjE3MTU3QzE3LjY1NjkgMiAxNS43NzEyIDIgMTIgMkM4LjIyODc2IDIgNi4zNDMxNSAyIDUuMTcxNTcgMy4xNzE1N0M0LjUxODM5IDMuODI0NzUgNC4yMjkzNyA0LjY5OTg5IDQuMTAxNDkgNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNyAyMVYyMkgxNlYyMU04IDIxVjIySDdWMjEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTIwIDExLjVIMTVNNCAxMS41SDExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE3IDdMMTcgOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNyAxNEwxNyAxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const FridgeBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -43,5 +46,3 @@ const FridgeBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { FridgeBrokenIcon as default };

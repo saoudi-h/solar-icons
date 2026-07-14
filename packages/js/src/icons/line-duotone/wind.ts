@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WindLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDhIOS41QzEwLjg4MDcgOCAxMiA2Ljg4MDcxIDEyIDUuNUMxMiA0LjExOTI5IDEwLjg4MDcgMyA5LjUgM0M4LjExOTI5IDMgNyA0LjExOTI5IDcgNS41VjUuODU3MTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNCAxNEgxOC41QzIwLjQzMyAxNCAyMiAxNS41NjcgMjIgMTcuNUMyMiAxOS40MzMgMjAuNDMzIDIxIDE4LjUgMjFDMTYuNTY3IDIxIDE1IDE5LjQzMyAxNSAxNy41VjE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMiAxMUgxOC41QzIwLjQzMyAxMSAyMiA5LjQzMyAyMiA3LjVDMjIgNS41NjcgMjAuNDMzIDQgMTguNSA0QzE2LjU2NyA0IDE1IDUuNTY3IDE1IDcuNVY4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const WindLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const WindLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { WindLineDuotoneIcon as default };

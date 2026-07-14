@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const CopyrightLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTQgMTUuNjY3MkMxMy40NzUgMTUuODgxMiAxMi44OTUyIDE2IDEyLjI4NTcgMTZDOS45MTg3OCAxNiA4IDE0LjIwOTEgOCAxMkM4IDkuNzkwODYgOS45MTg3OCA4IDEyLjI4NTcgOEMxMi44OTUyIDggMTMuNDc1IDguMTE4NzYgMTQgOC4zMzI4MyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const CopyrightLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const CopyrightLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { CopyrightLineDuotoneIcon as default };

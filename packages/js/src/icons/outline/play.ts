@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PlayOutlineIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy4yMzgzMiAzLjA0NDQ1QzUuNjUxOTYgMi4xODE4IDMuNzUgMy4zMTk1NyAzLjc1IDUuMDMyOTlMMy43NSAxOC45NjcyQzMuNzUgMjAuNjgwNiA1LjY1MTk2IDIxLjgxODQgNy4yMzgzMiAyMC45NTU3TDIwLjA1MDMgMTMuOTg4NkMyMS42NDk5IDEzLjExODggMjEuNjQ5OSAxMC44ODE0IDIwLjA1MDMgMTAuMDExNkw3LjIzODMyIDMuMDQ0NDVaTTIuMjUgNS4wMzI5OUMyLjI1IDIuMTI3OTggNS40MTY3NCAwLjM0NjQzOCA3Ljk1NDkxIDEuNzI2NjlMMjAuNzY2OSA4LjY5MzhDMjMuNDExIDEwLjEzMTcgMjMuNDExIDEzLjg2ODUgMjAuNzY2OSAxNS4zMDY0TDcuOTU0OTEgMjIuMjczNUM1LjQxNjc0IDIzLjY1MzcgMi4yNSAyMS44NzIyIDIuMjUgMTguOTY3MkwyLjI1IDUuMDMyOTlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const PlayOutlineIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const PlayOutlineIcon: IconNode = [
     }
   ]
 ];
-
-export { PlayOutlineIcon as default };

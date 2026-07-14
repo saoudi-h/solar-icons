@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const FlagLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDIyVjE0TTUgMTRWNE01IDE0TDcuNDcwNjcgMTMuNTA1OUM5LjEyMTIgMTMuMTc1OCAxMC44MzIxIDEzLjMzMjggMTIuMzk0OSAxMy45NThDMTQuMDg4NSAxNC42MzU0IDE1Ljk1MjQgMTQuNzYxOSAxNy43MjIgMTQuMzE5NUwxNy45MzY0IDE0LjI2NTlDMTguNTYxNSAxNC4xMDk2IDE5IDEzLjU0OCAxOSAxMi45MDM3VjUuNTM2NjlDMTkgNC43NTYxMyAxOC4yNjY1IDQuMTgzMzkgMTcuNTA5MiA0LjM3MjdDMTUuODc4IDQuNzgwNTEgMTQuMTU5NyA0LjY2Mzg5IDEyLjU5ODYgNC4wMzk0M0wxMi4zOTQ5IDMuOTU3OTdDMTAuODMyMSAzLjMzMjg0IDkuMTIxMiAzLjE3NTc2IDcuNDcwNjcgMy41MDU4N0w1IDRNNSA0VjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const FlagLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const FlagLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { FlagLinearIcon as default };

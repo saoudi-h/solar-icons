@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const FlagLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDIyVjE0VjRWMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTUgMTRMNy40NzA2NyAxMy41MDU5QzkuMTIxMiAxMy4xNzU4IDEwLjgzMjEgMTMuMzMyOSAxMi4zOTQ5IDEzLjk1OEMxNC4wODg1IDE0LjYzNTQgMTUuOTUyNCAxNC43NjE5IDE3LjcyMiAxNC4zMTk1TDE3LjkzNjQgMTQuMjY1OUMxOC41NjE1IDE0LjEwOTcgMTkgMTMuNTQ4IDE5IDEyLjkwMzhWNS41MzY3M0MxOSA0Ljc1NjE3IDE4LjI2NjUgNC4xODM0MyAxNy41MDkyIDQuMzcyNzRDMTUuODc4IDQuNzgwNTUgMTQuMTU5NyA0LjY2MzkzIDEyLjU5ODYgNC4wMzk0N0wxMi4zOTQ5IDMuOTU4MDFDMTAuODMyMSAzLjMzMjg4IDkuMTIxMiAzLjE3NTggNy40NzA2NyAzLjUwNTkxTDUgNC4wMDAwNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const FlagLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const FlagLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { FlagLineDuotoneIcon as default };

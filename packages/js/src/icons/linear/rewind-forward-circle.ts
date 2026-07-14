@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RewindForwardCircleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMyA4LjA3MTQxTDE2LjIyMTUgMTAuMzcyNUMxNy4zMzgyIDExLjE3MDIgMTcuMzM4MiAxMi44Mjk4IDE2LjIyMTUgMTMuNjI3NEwxMyAxNS45Mjg2TTcuNSAxNS4wNTY4VjguOTQzMTdDNy41IDguMTI5OCA4LjQxOTM3IDcuNjU2NjcgOS4wODEyNCA4LjEyOTQ0TDEzLjM2MDggMTEuMTg2MkMxMy45MTkxIDExLjU4NTEgMTMuOTE5MSAxMi40MTQ5IDEzLjM2MDggMTIuODEzN0w5LjA4MTI0IDE1Ljg3MDVDOC40MTkzNyAxNi4zNDMzIDcuNSAxNS44NzAyIDcuNSAxNS4wNTY4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RewindForwardCircleLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -20,5 +23,3 @@ const RewindForwardCircleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { RewindForwardCircleLinearIcon as default };

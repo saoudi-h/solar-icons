@@ -16,7 +16,6 @@ export interface CreateIconsOptions {
     attrs?: SVGProps
 }
 
-const toKebabCase = (string: string) => string.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
 
 const toPascalCase = (string: string) =>
     string
@@ -31,7 +30,7 @@ const getAttrs = (element: Element): Record<string, string> =>
 
 const getClassNames = (attrs: Record<string, any> | string): string[] => {
     if (typeof attrs === 'string') return attrs.split(' ')
-    if (!attrs || !attrs.class) return []
+    if (!attrs.class) return []
     if (typeof attrs.class === 'string') return attrs.class.split(' ')
     if (Array.isArray(attrs.class)) return attrs.class
     return []
@@ -76,7 +75,6 @@ export const createIcons = (
             return
         }
 
-        console.log('DEBUG:', componentName, iconNode)
 
         const elementAttrs = getAttrs(element)
         const ariaProps =
@@ -100,8 +98,6 @@ export const createIcons = (
             iconAttrs.class = classNames
         }
 
-        // We assume iconNode is actually the children array since our generator exports the inner AST
-        // wait, let's verify what generate.ts exports. It exports `ast` which is an array of children.
         const svgElement = createElement(iconNode as any, iconAttrs as SVGProps)
 
         element.parentNode?.replaceChild(svgElement, element)

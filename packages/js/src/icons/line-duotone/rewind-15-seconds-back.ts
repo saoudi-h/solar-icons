@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Rewind15SecondsBackLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE0IDQuNUwxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNy44OTkzNiA0LjQ2ODE5IDQuMzc1MiA4IDIuODMyMDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYuNSA4LjVIMTMuODYwNEMxMy42NDUyIDguNSAxMy40NTQxIDguNjM3NzIgMTMuMzg2IDguODQxODlMMTIuNzE5NCAxMC44NDE5QzEyLjYxMTQgMTEuMTY1NyAxMi44NTI0IDExLjUgMTMuMTkzNyAxMS41SDE0LjVDMTUuNjA0NiAxMS41IDE2LjUgMTIuMzk1NCAxNi41IDEzLjVDMTYuNSAxNC42MDQ2IDE1LjYwNDYgMTUuNSAxNC41IDE1LjVIMTIuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjUgMTAuNUwxMCA4LjVWMTUuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const Rewind15SecondsBackLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -30,5 +33,3 @@ const Rewind15SecondsBackLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { Rewind15SecondsBackLineDuotoneIcon as default };

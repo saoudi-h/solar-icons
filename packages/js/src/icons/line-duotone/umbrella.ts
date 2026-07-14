@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UmbrellaLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxMkgyMS41MjM4QzIxLjc4NjggMTIgMjIgMTEuNzg2OCAyMiAxMS41MjM4QzIyIDYuMjYzOTYgMTcuNzM2IDIgMTIuNDc2MiAySDExLjUyMzhDNi4yNjM5NSAyIDIgNi4yNjM5NiAyIDExLjUyMzhDMiAxMS43ODY4IDIuMjEzMiAxMiAyLjQ3NjE5IDEySDEyWk0xMiAxMlYyMEMxMiAyMS4xMDQ2IDExLjEwNDYgMjIgMTAgMjJDOC44OTU0MyAyMiA4IDIxLjEwNDYgOCAyMFYxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE2LjkxNDUgMTJDMTYuNjM1NCA5LjI4ODc0IDE1LjU1NDQgMiAxMi4wMDAyIDJDOC40NDYxIDIgNy4zNjUxIDkuMjg4NzQgNy4wODU5NCAxMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const UmbrellaLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const UmbrellaLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { UmbrellaLineDuotoneIcon as default };

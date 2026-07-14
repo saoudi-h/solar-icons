@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const CalculatorMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjQ2NDQ3IDIwLjUzNTVDNC45Mjg5MyAyMiA3LjI4NTk1IDIyIDEyIDIyQzE2LjcxNCAyMiAxOS4wNzExIDIyIDIwLjUzNTUgMjAuNTM1NUMyMiAxOS4wNzExIDIyIDE2LjcxNCAyMiAxMkMyMiA3LjI4NTk1IDIyIDQuOTI4OTMgMjAuNTM1NSAzLjQ2NDQ3QzE5LjA3MTEgMiAxNi43MTQgMiAxMiAyQzcuMjg1OTUgMiA0LjkyODkzIDIgMy40NjQ0NyAzLjQ2NDQ3QzIgNC45Mjg5MyAyIDcuMjg1OTUgMiAxMkMyIDE2LjcxNCAyIDE5LjA3MTEgMy40NjQ0NyAyMC41MzU1WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xOCA4LjQ5OTk4SDE0TTE4IDE0LjVIMTRNMTggMTcuNUgxNE0xMCA4LjQ5OTk5SDhNOCA4LjQ5OTk5TDYgOC40OTk5OU04IDguNDk5OTlMOCA2LjQ5OTk4TTggOC40OTk5OUw4IDEwLjVNOS41IDE0LjVMOC4wMDAwMSAxNk04LjAwMDAxIDE2TDYuNTAwMDEgMTcuNU04LjAwMDAxIDE2TDYuNSAxNC41TTguMDAwMDEgMTZMOS40OTk5OSAxNy41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const CalculatorMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const CalculatorMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { CalculatorMinimalisticLineDuotoneIcon as default };

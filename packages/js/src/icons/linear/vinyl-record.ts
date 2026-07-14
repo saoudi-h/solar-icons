@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const VinylRecordLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTQuOTI4OTMgMTkuMDcxMUM4LjgzNDE4IDIyLjk3NjMgMTUuMTY1OCAyMi45NzYzIDE5LjA3MTEgMTkuMDcxMUMyMi45NzYzIDE1LjE2NTggMjIuOTc2MyA4LjgzNDE4IDE5LjA3MTEgNC45Mjg5M0MxNS4xNjU4IDEuMDIzNjkgOC44MzQxOCAxLjAyMzY5IDQuOTI4OTMgNC45Mjg5M0MxLjAyMzY5IDguODM0MTggMS4wMjM2OSAxNS4xNjU4IDQuOTI4OTMgMTkuMDcxMVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNy40MDM4MSAxNi41OTY3QzQuODY1NCAxNC4wNTgzIDQuODY1NCA5Ljk0MjcxIDcuNDAzODEgNy40MDQzTTE2LjU5NjIgNy40MDQzQzE5LjEzNDYgOS45NDI3MSAxOS4xMzQ2IDE0LjA1ODMgMTYuNTk2MiAxNi41OTY3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const VinylRecordLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -28,5 +31,3 @@ const VinylRecordLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { VinylRecordLinearIcon as default };

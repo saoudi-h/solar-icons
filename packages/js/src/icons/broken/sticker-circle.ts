@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StickerCircleBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDMuMzM3ODJDOC40NzA4NyAyLjQ4Njk3IDEwLjE3ODYgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDEyLjY0NzcgMjEuNzAwNCAxMy4yNTAzIDIxLjI0MjQgMTMuNzA4M0wxMy43MDgzIDIxLjI0MjRDMTMuMjUwMyAyMS43MDA0IDEyLjY0NzcgMjIgMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDEwLjE3ODYgMi40ODY5NyA4LjQ3MDg3IDMuMzM3ODIgNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiAyMkMxMiAxOS4yMDcxIDEyIDE3LjgxMDcgMTIuMzkyOCAxNi42ODhDMTMuMDk2NCAxNC42NzczIDE0LjY3NzMgMTMuMDk2NCAxNi42ODggMTIuMzkyOEMxNy44MTA3IDEyIDE5LjIwNzEgMTIgMjIgMTIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const StickerCircleBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const StickerCircleBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { StickerCircleBrokenIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LockPasswordLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE2QzIgMTMuMTcxNiAyIDExLjc1NzQgMi44Nzg2OCAxMC44Nzg3QzMuNzU3MzYgMTAgNS4xNzE1NyAxMCA4IDEwSDE2QzE4LjgyODQgMTAgMjAuMjQyNiAxMCAyMS4xMjEzIDEwLjg3ODdDMjIgMTEuNzU3NCAyMiAxMy4xNzE2IDIyIDE2QzIyIDE4LjgyODQgMjIgMjAuMjQyNiAyMS4xMjEzIDIxLjEyMTNDMjAuMjQyNiAyMiAxOC44Mjg0IDIyIDE2IDIySDhDNS4xNzE1NyAyMiAzLjc1NzM2IDIyIDIuODc4NjggMjEuMTIxM0MyIDIwLjI0MjYgMiAxOC44Mjg0IDIgMTZaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik02IDEwVjhDNiA0LjY4NjI5IDguNjg2MjkgMiAxMiAyQzE1LjMxMzcgMiAxOCA0LjY4NjI5IDE4IDhWMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOCAxNkg4LjAwOU0xMS45OTEgMTZIMTJNMTUuOTkxIDE2SDE2IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZIOC4wMDlNMTEuOTkxIDE2SDEyTTE1Ljk5MSAxNkgxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const LockPasswordLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -36,5 +39,3 @@ const LockPasswordLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { LockPasswordLinearIcon as default };

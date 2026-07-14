@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Smartphone2LinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDEwQzQgNi4yMjg3NiA0IDQuMzQzMTUgNS4xNzE1NyAzLjE3MTU3QzYuMzQzMTUgMiA4LjIyODc2IDIgMTIgMkMxNS43NzEyIDIgMTcuNjU2OSAyIDE4LjgyODQgMy4xNzE1N0MyMCA0LjM0MzE1IDIwIDYuMjI4NzYgMjAgMTBWMTRDMjAgMTcuNzcxMiAyMCAxOS42NTY5IDE4LjgyODQgMjAuODI4NEMxNy42NTY5IDIyIDE1Ljc3MTIgMjIgMTIgMjJDOC4yMjg3NiAyMiA2LjM0MzE1IDIyIDUuMTcxNTcgMjAuODI4NEM0IDE5LjY1NjkgNCAxNy43NzEyIDQgMTRWMTBaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNSA1SDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjE5IiByPSIxIiBzdHJva2U9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const Smartphone2LinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const Smartphone2LinearIcon: IconNode = [
     }
   ]
 ];
-
-export { Smartphone2LinearIcon as default };

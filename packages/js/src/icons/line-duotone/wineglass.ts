@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WineglassLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS43NSAyMC45OTk5SDEySDguMjVNNSA0Ljg5NDc0QzUgMy44NDgzIDUuODQ4MyAzIDYuODk0NzQgM0gxNy4xMDUzQzE4LjE1MTcgMyAxOSAzLjg0ODMgMTkgNC44OTQ3NFY4QzE5IDExLjg2NiAxNS44NjYgMTUgMTIgMTVDOC4xMzQwMSAxNSA1IDExLjg2NiA1IDhWNC44OTQ3NFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xMiAxNS4yODU2VjIwLjk5OTkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik01LjUgOS4wMDAxQzUuNSA5LjAwMDEgNy41ODExNSA4LjA4NzM2IDkgOC4wMDAxQzExLjQ2NTIgNy44NDg0NyAxMi41MzQ4IDEwLjE1MTcgMTUgMTAuMDAwMUMxNi40MTg4IDkuOTEyODMgMTguNSA5LjAwMDEgMTguNSA5LjAwMDEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const WineglassLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -29,5 +32,3 @@ const WineglassLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { WineglassLineDuotoneIcon as default };

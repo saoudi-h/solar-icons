@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserHandUpBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDEzSDE2QzE3LjcxMDcgMTMgMTkuMTUwNiAxNC4yODA0IDE5LjM1MDUgMTUuOTc5NUwyMCAyMS41TTggMTNDNS4yNDIxIDEyLjM4NzEgMy4wNjcxNyAxMC4yNjg3IDIuMzgxOTcgNy41Mjc4N0wyIDZNOCAxM1YxOEM4IDE5Ljg4NTYgOCAyMC44Mjg0IDguNTg1NzkgMjEuNDE0MkM5LjE3MTU3IDIyIDEwLjExNDQgMjIgMTIgMjJDMTMuODg1NiAyMiAxNC44Mjg0IDIyIDE1LjQxNDIgMjEuNDE0MkMxNiAyMC44Mjg0IDE2IDE5Ljg4NTYgMTYgMThWMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjYiIHI9IjQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const UserHandUpBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const UserHandUpBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { UserHandUpBrokenIcon as default };

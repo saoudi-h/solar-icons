@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BatteryChargeLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgOC4yMjg3NiAyIDYuMzQzMTUgMy4xNzE1NyA1LjE3MTU3QzQuMzQzMTUgNCA2LjIyODc2IDQgMTAgNEgxMS41QzE1LjI3MTIgNCAxNy4xNTY5IDQgMTguMzI4NCA1LjE3MTU3QzE5LjUgNi4zNDMxNSAxOS41IDguMjI4NzYgMTkuNSAxMkMxOS41IDE1Ljc3MTIgMTkuNSAxNy42NTY5IDE4LjMyODQgMTguODI4NEMxNy4xNTY5IDIwIDE1LjI3MTIgMjAgMTEuNSAyMEgxMEM2LjIyODc2IDIwIDQuMzQzMTUgMjAgMy4xNzE1NyAxOC44Mjg0QzIgMTcuNjU2OSAyIDE1Ljc3MTIgMiAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTIwIDEwQzIwLjk0MjggMTAgMjEuNDE0MiAxMCAyMS43MDcxIDEwLjI5MjlDMjIgMTAuNTg1OCAyMiAxMS4wNTcyIDIyIDEyQzIyIDEyLjk0MjggMjIgMTMuNDE0MiAyMS43MDcxIDEzLjcwNzFDMjEuNDE0MiAxNCAyMC45NDI4IDE0IDIwIDE0VjEwWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTEuNSA5TDkgMTJIMTIuNUwxMCAxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const BatteryChargeLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -26,5 +29,3 @@ const BatteryChargeLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { BatteryChargeLinearIcon as default };

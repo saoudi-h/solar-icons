@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RadioMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE0QzIgMTAuMjI4OCAyIDguMzQzMTUgMy4xNzE1NyA3LjE3MTU3QzQuMzQzMTUgNiA2LjIyODc2IDYgMTAgNkgxNEMxNy43NzEyIDYgMTkuNjU2OSA2IDIwLjgyODQgNy4xNzE1N0MyMiA4LjM0MzE1IDIyIDEwLjIyODggMjIgMTRDMjIgMTcuNzcxMiAyMiAxOS42NTY5IDIwLjgyODQgMjAuODI4NEMxOS42NTY5IDIyIDE3Ljc3MTIgMjIgMTQgMjJIMTBDNi4yMjg3NiAyMiA0LjM0MzE1IDIyIDMuMTcxNTcgMjAuODI4NEMyIDE5LjY1NjkgMiAxNy43NzEyIDIgMTRaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxjaXJjbGUgb3BhY2l0eT0iMC41IiBjeD0iOCIgY3k9IjE0IiByPSIzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMy41IDExSDE5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTMuNSAxNEgxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy41IDE3SDE5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTYuNSA2TDE1IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const RadioMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "circle",
     {
@@ -53,5 +56,3 @@ const RadioMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { RadioMinimalisticLineDuotoneIcon as default };

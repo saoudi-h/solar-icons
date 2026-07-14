@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TextSquare2BrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAzQzcuNzQ4ODIgMyA1LjYyMzIzIDMgNC4zMDI1NiA0LjMxODAyQzMuMjk4IDUuMzIwNTYgMy4wNTc1NSA2Ljc4Nzg3IDMgOS4zTTIxIDkuM0MyMC45NDI0IDYuNzg3ODcgMjAuNzAyIDUuMzIwNTYgMTkuNjk3NCA0LjMxODAyQzE4Ljg3ODkgMy41MDExNiAxNy43NTEzIDMuMTkwNTYgMTYgMy4wNzI0Nk0yMSAxNC43QzIwLjk0MjQgMTcuMjEyMSAyMC43MDIgMTguNjc5NCAxOS42OTc0IDE5LjY4MkMxOC4zNzY4IDIxIDE2LjI1MTIgMjEgMTIgMjFDNy43NDg4MiAyMSA1LjYyMzIzIDIxIDQuMzAyNTYgMTkuNjgyQzMuMjk4MDEgMTguNjc5NCAzLjA1NzU2IDE3LjIxMjEgMyAxNC43IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTggOEgxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiAxNkwxMiA4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIyIDEySDIwIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTQgMTJIMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const TextSquare2BrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -43,5 +46,3 @@ const TextSquare2BrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { TextSquare2BrokenIcon as default };

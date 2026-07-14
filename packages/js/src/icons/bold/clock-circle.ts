@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ClockCircleBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMkMyMiAxNy41MjI4IDE3LjUyMjggMjIgMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJaTTEyIDcuMjVDMTEuNTg1OCA3LjI1IDExLjI1IDcuNTg1NzkgMTEuMjUgOFYxMkMxMS4yNSAxMi4xOTg5IDExLjMyOTEgMTIuMzg5NiAxMS40Njk3IDEyLjUzMDNMMTMuOTY5NyAxNS4wMzAzQzE0LjI2MjYgMTUuMzIzMiAxNC43Mzc0IDE1LjMyMzIgMTUuMDMwMyAxNS4wMzAzQzE1LjMyMzIgMTQuNzM3NCAxNS4zMjMyIDE0LjI2MjYgMTUuMDMwMyAxMy45Njk3TDEyLjc1IDExLjY4OTVWOEMxMi43NSA3LjU4NTc5IDEyLjQxNDIgNy4yNSAxMiA3LjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const ClockCircleBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const ClockCircleBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { ClockCircleBoldIcon as default };

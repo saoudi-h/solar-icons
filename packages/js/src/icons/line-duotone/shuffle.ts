@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ShuffleLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDE3SDUuNjAyODZDNy4yNjIxMyAxNyA4LjA5MTc3IDE3IDguNzc5NTMgMTYuNjEwNkM5LjQ2NzI4IDE2LjIyMTIgOS44OTQxMyAxNS41MDk4IDEwLjc0NzggMTQuMDg3TDEzLjI1MjIgOS45MTMwM0MxNC4xMDU5IDguNDkwMjEgMTQuNTMyNyA3Ljc3ODggMTUuMjIwNSA3LjM4OTRDMTUuOTA4MiA3IDE2LjczNzkgNyAxOC4zOTcxIDdIMjJNMjAgNUwyMiA3TDIwIDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0yIDdINS42MDI4NkM3LjI2MjEzIDcgOC4wOTE3NyA3IDguNzc5NTMgNy4zODk0QzkuNDY3MjggNy43Nzg4IDkuODk0MTMgOC40OTAyMSAxMC43NDc4IDkuOTEzMDNMMTMuMjUyMiAxNC4wODdDMTQuMTA1OSAxNS41MDk4IDE0LjUzMjcgMTYuMjIxMiAxNS4yMjA1IDE2LjYxMDZDMTUuOTA4MiAxNyAxNi43Mzc5IDE3IDE4LjM5NzEgMTdIMjJNMjAgMTlMMjIgMTdMMjAgMTUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const ShuffleLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -22,5 +25,3 @@ const ShuffleLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { ShuffleLineDuotoneIcon as default };

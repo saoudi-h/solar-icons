@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LockKeyholeUnlockedBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTYiIHI9IjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTExIDIySDhDNS4xNzE1NyAyMiAzLjc1NzM2IDIyIDIuODc4NjggMjEuMTIxM0MyIDIwLjI0MjYgMiAxOC44Mjg0IDIgMTZDMiAxMy4xNzE2IDIgMTEuNzU3NCAyLjg3ODY4IDEwLjg3ODdDMy43NTczNiAxMCA1LjE3MTU3IDEwIDggMTBIMTZDMTguODI4NCAxMCAyMC4yNDI2IDEwIDIxLjEyMTMgMTAuODc4N0MyMiAxMS43NTc0IDIyIDEzLjE3MTYgMjIgMTZDMjIgMTguODI4NCAyMiAyMC4yNDI2IDIxLjEyMTMgMjEuMTIxM0MyMC4yNDI2IDIyIDE4LjgyODQgMjIgMTYgMjJIMTUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNiAxMFY4QzYgNy42NTkyOSA2LjAyODQgNy4zMjUyMSA2LjA4Mjk2IDdNMTcuODExIDYuNUMxNy4xNDQ5IDMuOTEyMTYgMTQuNzk1OCAyIDEyIDJDMTAuMjIzIDIgOC42MjY0MyAyLjc3MjUgNy41Mjc3OSA0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const LockKeyholeUnlockedBrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -28,5 +31,3 @@ const LockKeyholeUnlockedBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { LockKeyholeUnlockedBrokenIcon as default };

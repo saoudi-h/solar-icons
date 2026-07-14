@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SpeakerMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTQgMTBDNCA2LjIyODc2IDQgNC4zNDMxNSA1LjE3MTU3IDMuMTcxNTdDNi4zNDMxNSAyIDguMjI4NzYgMiAxMiAyQzE1Ljc3MTIgMiAxNy42NTY5IDIgMTguODI4NCAzLjE3MTU3QzIwIDQuMzQzMTUgMjAgNi4yMjg3NiAyMCAxMFYxNEMyMCAxNy43NzEyIDIwIDE5LjY1NjkgMTguODI4NCAyMC44Mjg0QzE3LjY1NjkgMjIgMTUuNzcxMiAyMiAxMiAyMkM4LjIyODc2IDIyIDYuMzQzMTUgMjIgNS4xNzE1NyAyMC44Mjg0QzQgMTkuNjU2OSA0IDE3Ljc3MTIgNCAxNFYxMFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE2IDE0QzE2IDE2LjIwOTEgMTQuMjA5MSAxOCAxMiAxOEM5Ljc5MDg2IDE4IDggMTYuMjA5MSA4IDE0QzggMTEuNzkwOSA5Ljc5MDg2IDEwIDEyIDEwQzE0LjIwOTEgMTAgMTYgMTEuNzkwOSAxNiAxNFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEwIDZIMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const SpeakerMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -26,5 +29,3 @@ const SpeakerMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { SpeakerMinimalisticLineDuotoneIcon as default };

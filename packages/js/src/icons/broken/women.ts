@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WomenBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMS45OTk3IDE2VjE4LjVNMTEuOTk5NyAxOC41SDkuNU0xMS45OTk3IDE4LjVIMTQuNU0xMS45OTk3IDE4LjVMMTIgMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNOC41IDIuOTM2NDhDOS41Mjk2MSAyLjM0MDg4IDEwLjcyNSAyIDEyIDJDMTUuODY2IDIgMTkgNS4xMzQwMSAxOSA5QzE5IDEyLjg2NiAxNS44NjYgMTYgMTIgMTZDOC4xMzQwMSAxNiA1IDEyLjg2NiA1IDlDNSA3LjcyNDk5IDUuMzQwODggNi41Mjk2MSA1LjkzNjQ4IDUuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const WomenBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const WomenBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { WomenBrokenIcon as default };

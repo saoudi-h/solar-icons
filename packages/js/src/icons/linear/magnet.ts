@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MagnetLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNyAySDE5LjVDMjAuMzI4NCAyIDIxIDIuNjcxNTcgMjEgMy41VjUuNUMyMSA2LjMyODQzIDIwLjMyODQgNyAxOS41IDdIMTdNMTcgMkgxM0M3LjQ3NzE1IDIgMyA2LjQ3NzE1IDMgMTJDMyAxNy41MjI4IDcuNDc3MTUgMjIgMTMgMjJIMTdNMTcgMlY3TTE3IDdIMTNDMTAuMjM4NiA3IDggOS4yMzg1OCA4IDEyQzggMTQuNzYxNCAxMC4yMzg2IDE3IDEzIDE3SDE3TTE3IDE3SDE5LjVDMjAuMzI4NCAxNyAyMSAxNy42NzE2IDIxIDE4LjVWMjAuNUMyMSAyMS4zMjg0IDIwLjMyODQgMjIgMTkuNSAyMkgxN00xNyAxN1YyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const MagnetLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const MagnetLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { MagnetLinearIcon as default };

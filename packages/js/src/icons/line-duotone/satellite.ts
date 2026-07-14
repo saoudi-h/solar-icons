@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SatelliteLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE2LjE2MDIgNy44NDAxQzE4LjYyMjkgMTAuMzAyNyAyMC40Njk5IDEwLjkxODIgMjAuNDY5OSAxMC45MTgyTDE0LjMxMzIgMjIuMDAwMk0xNi4xNjAyIDcuODQwMUMxMy42OTc2IDUuMzc3NDcgMTMuMDgyIDMuNTMwMjcgMTMuMDgyIDMuNTMwMjdMMiA5LjY4NzA4TTE2LjE2MDIgNy44NDAxTDUgMTkuMDAwMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy4wODE4IDEwLjkxOEMxNS4xMjIgMTIuOTU4MSAxOC40Mjk3IDEyLjk1ODEgMjAuNDY5OCAxMC45MThDMjIuNTA5OSA4Ljg3Nzg1IDIyLjUwOTkgNS41NzAxOSAyMC40Njk4IDMuNTMwMDhDMTguNDI5NyAxLjQ4OTk3IDE1LjEyMiAxLjQ4OTk3IDEzLjA4MTggMy41MzAwOEMxMS4wNDE3IDUuNTcwMTkgMTEuMDQxNyA4Ljg3Nzg1IDEzLjA4MTggMTAuOTE4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const SatelliteLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const SatelliteLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { SatelliteLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SatelliteLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMC40Njk5IDEwLjkxOEMxOC40Mjk4IDEyLjk1ODEgMTUuMTIyMSAxMi45NTgxIDEzLjA4MiAxMC45MThDMTEuMDQxOCA4Ljg3Nzg1IDExLjA0MTggNS41NzAxOSAxMy4wODIgMy41MzAwOE0yMC40Njk5IDEwLjkxOEMyMi41MSA4Ljg3Nzg1IDIyLjUxIDUuNTcwMTkgMjAuNDY5OSAzLjUzMDA4QzE4LjQyOTggMS40ODk5NyAxNS4xMjIxIDEuNDg5OTcgMTMuMDgyIDMuNTMwMDhNMjAuNDY5OSAxMC45MThDMjAuNDY5OSAxMC45MTggMTguNjIyOSAxMC4zMDI1IDE2LjE2MDIgNy44Mzk5TTIwLjQ2OTkgMTAuOTE4TDE0LjMxMzIgMjJNMTMuMDgyIDMuNTMwMDhDMTMuMDgyIDMuNTMwMDggMTMuNjk3NiA1LjM3NzI4IDE2LjE2MDIgNy44Mzk5TTEzLjA4MiAzLjUzMDA4TDIgOS42ODY4N00xNi4xNjAyIDcuODM5OUw1IDE5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const SatelliteLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const SatelliteLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { SatelliteLinearIcon as default };

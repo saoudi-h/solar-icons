@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HealthLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgOS4zMTc1QzIgMTMuMDQ2OCA2LjAxOTQzIDE2Ljk5MSA4Ljk2MTczIDE5LjM3ODZDMTAuMjkzNyAyMC40NTk1IDEwLjk1OTcgMjEgMTIgMjFDMTMuMDQwMyAyMSAxMy43MDYzIDIwLjQ1OTYgMTUuMDM4MyAxOS4zNzg3QzE3Ljk4MDYgMTYuOTkxIDIyIDEzLjA0NjggMjIgOS4zMTc0N0MyMiAzLjA4NzQ4IDE2LjQ5OTggMC43NjE0OTggMTIgNS41NzQxMkM3LjUwMDE2IDAuNzYxNDk4IDIgMy4wODc0OCAyIDkuMzE3NVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE4LjUgOS4wMDAwMkgxNi41TTE2LjUgOS4wMDAwMkwxNC41IDkuMDAwMDJNMTYuNSA5LjAwMDAyTDE2LjUgN00xNi41IDkuMDAwMDJMMTYuNSAxMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const HealthLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const HealthLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { HealthLineDuotoneIcon as default };

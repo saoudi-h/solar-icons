@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PillLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjk5MDU3IDEzLjYwMTlDMS4zMzY0OCAxMC45NDc4IDEuMzM2NDggNi42NDQ2NiAzLjk5MDU3IDMuOTkwNTdDNi42NDQ2NiAxLjMzNjQ4IDEwLjk0NzggMS4zMzY0OCAxMy42MDE5IDMuOTkwNTdMMjAuMDA5NCAxMC4zOTgxQzIyLjY2MzUgMTMuMDUyMiAyMi42NjM1IDE3LjM1NTMgMjAuMDA5NCAyMC4wMDk0QzE3LjM1NTMgMjIuNjYzNSAxMy4wNTIyIDIyLjY2MzUgMTAuMzk4MSAyMC4wMDk0TDMuOTkwNTcgMTMuNjAxOVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE2LjgwNTcgNy4xOTQzNEMxNi44MDU3IDcuMTk0MzQgMTYuMjY0OSA5Ljk5OTk5IDEzLjEzMjIgMTMuMTMyN0M5Ljk5OTUyIDE2LjI2NTMgNy4xOTQzNCAxNi44MDU3IDcuMTk0MzQgMTYuODA1NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const PillLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -17,5 +20,3 @@ const PillLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { PillLinearIcon as default };

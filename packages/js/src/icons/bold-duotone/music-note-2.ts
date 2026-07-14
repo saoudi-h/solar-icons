@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MusicNote2BoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05IDEzLjI1QzYuMzc2NjUgMTMuMjUgNC4yNSAxNS4zNzY2IDQuMjUgMThDNC4yNSAyMC42MjM0IDYuMzc2NjUgMjIuNzUgOSAyMi43NUMxMS42MjM0IDIyLjc1IDEzLjc1IDIwLjYyMzQgMTMuNzUgMThDMTMuNzUgMTUuMzc2NiAxMS42MjM0IDEzLjI1IDkgMTMuMjVaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMgMS4yNUMxMy40MTQyIDEuMjUgMTMuNzUgMS41ODU3OSAxMy43NSAyQzEzLjc1IDQuODk5NSAxNi4xMDA1IDcuMjUgMTkgNy4yNUMxOS40MTQyIDcuMjUgMTkuNzUgNy41ODU3OSAxOS43NSA4QzE5Ljc1IDguNDE0MjEgMTkuNDE0MiA4Ljc1IDE5IDguNzVDMTUuMjcyMSA4Ljc1IDEyLjI1IDUuNzI3OTIgMTIuMjUgMkMxMi4yNSAxLjU4NTc5IDEyLjU4NTggMS4yNSAxMyAxLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xMi4yNSAxNC41MzU5VjJDMTIuMjUgMy42MDc0NyAxMi44MTE5IDUuMDgzNzEgMTMuNzUgNi4yNDNWMThDMTMuNzUgMTYuNjMzOSAxMy4xNzMzIDE1LjQwMjQgMTIuMjUgMTQuNTM1OVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const MusicNote2BoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const MusicNote2BoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MusicNote2BoldDuotoneIcon as default };

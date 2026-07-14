@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TennisBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMy4xOTU4IDIuMDcxMjlDMTMuMTk1OCAyLjA3MTI5IDEyLjk2NDEgNS42NyAxNS40NjQxIDEwLjAwMDFDMTcuOTY0MSAxNC4zMzAzIDIxLjE5NjUgMTUuOTI5IDIxLjE5NjUgMTUuOTI5TTIuODAzNDcgOC4wNzEyOUMyLjgwMzQ3IDguMDcxMjkgNi4wMzU4OCA5LjY3IDguNTM1ODggMTQuMDAwMUMxMS4wMzU5IDE4LjMzMDMgMTAuODA0MiAyMS45MjkgMTAuODA0MiAyMS45MjkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTcgMy4zMzc4MkM4LjQ3MDg3IDIuNDg2OTcgMTAuMTc4NiAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiAxMC4xNzg2IDIuNDg2OTcgOC40NzA4NyAzLjMzNzgyIDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const TennisBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const TennisBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { TennisBrokenIcon as default };

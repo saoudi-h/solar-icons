@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TextUnderlineBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDNDNSAyLjQ0NzcyIDQuNTUyMjggMiA0IDJDMy40NDc3MiAyIDMgMi40NDc3MiAzIDNWOUMzIDEzLjk3MDYgNy4wMjk0NCAxOCAxMiAxOEMxNi45NzA2IDE4IDIxIDEzLjk3MDYgMjEgOVYzQzIxIDIuNDQ3NzIgMjAuNTUyMyAyIDIwIDJDMTkuNDQ3NyAyIDE5IDIuNDQ3NzIgMTkgM1Y5QzE5IDEyLjg2NiAxNS44NjYgMTYgMTIgMTZDOC4xMzQwMSAxNiA1IDEyLjg2NiA1IDlWM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTQgMjBDMy40NDc3MiAyMCAzIDIwLjQ0NzcgMyAyMUMzIDIxLjU1MjMgMy40NDc3MiAyMiA0IDIySDIwQzIwLjU1MjMgMjIgMjEgMjEuNTUyMyAyMSAyMUMyMSAyMC40NDc3IDIwLjU1MjMgMjAgMjAgMjBINFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const TextUnderlineBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -17,5 +20,3 @@ const TextUnderlineBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { TextUnderlineBoldIcon as default };

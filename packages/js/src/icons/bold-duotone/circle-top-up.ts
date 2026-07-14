@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const CircleTopUpBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi40Njk3IDExLjUzMDNDMTIuMTc2OCAxMS4yMzc0IDEyLjE3NjggMTAuNzYyNiAxMi40Njk3IDEwLjQ2OTdMMjAuMTg5MyAyLjc1SDE2LjY1NjJDMTYuMjQyIDIuNzUgMTUuOTA2MiAyLjQxNDIxIDE1LjkwNjIgMkMxNS45MDYyIDEuNTg1NzkgMTYuMjQyIDEuMjUgMTYuNjU2MiAxLjI1SDIyQzIyLjQxNDIgMS4yNSAyMi43NSAxLjU4NTc5IDIyLjc1IDJWNy4zNDM3NUMyMi43NSA3Ljc1Nzk2IDIyLjQxNDIgOC4wOTM3NSAyMiA4LjA5Mzc1QzIxLjU4NTggOC4wOTM3NSAyMS4yNSA3Ljc1Nzk2IDIxLjI1IDcuMzQzNzVWMy44MTA2NkwxMy41MzAzIDExLjUzMDNDMTMuMjM3NCAxMS44MjMyIDEyLjc2MjYgMTEuODIzMiAxMi40Njk3IDExLjUzMDNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const CircleTopUpBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const CircleTopUpBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { CircleTopUpBoldDuotoneIcon as default };

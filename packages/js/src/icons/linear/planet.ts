@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PlanetLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCAxMkMyMCAxNi40MTgzIDE2LjQxODMgMjAgMTIgMjBDNy41ODE3MiAyMCA0IDE2LjQxODMgNCAxMkM0IDcuNTgxNzIgNy41ODE3MiA0IDEyIDRDMTYuNDE4MyA0IDIwIDcuNTgxNzIgMjAgMTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNy44NDg2IDYuMTkwODVDMTkuODYwNSA1LjgxOTI5IDIxLjMzOTEgNS45ODAwMSAyMS44MjkxIDYuNzYzMjdDMjIuODQwMyA4LjM3OTQ3IDE5LjI1OTQgMTIuMDM0MiAxMy44MzA5IDE0LjkyNjRDOC40MDI0MiAxNy44MTg1IDMuMTgyMDMgMTguODUyOSAyLjE3MDg1IDE3LjIzNjdDMS42Mzc1OCAxNi4zODQ0IDIuMzgxNDggMTQuOTY1MSA0IDEzLjM4OTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const PlanetLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -17,5 +20,3 @@ const PlanetLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { PlanetLinearIcon as default };

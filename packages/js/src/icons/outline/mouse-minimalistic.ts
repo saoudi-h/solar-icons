@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MouseMinimalisticOutlineIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4yNSA5QzQuMjUgNC43MTk3OSA3LjcxOTc5IDEuMjUgMTIgMS4yNUMxNi4yODAyIDEuMjUgMTkuNzUgNC43MTk3OSAxOS43NSA5VjE1QzE5Ljc1IDE5LjI4MDIgMTYuMjgwMiAyMi43NSAxMiAyMi43NUM3LjcxOTc5IDIyLjc1IDQuMjUgMTkuMjgwMiA0LjI1IDE1VjlaTTEyIDIuNzVDOC41NDgyMiAyLjc1IDUuNzUgNS41NDgyMiA1Ljc1IDlWMTVDNS43NSAxOC40NTE4IDguNTQ4MjIgMjEuMjUgMTIgMjEuMjVDMTUuNDUxOCAyMS4yNSAxOC4yNSAxOC40NTE4IDE4LjI1IDE1VjlDMTguMjUgNS41NDgyMiAxNS40NTE4IDIuNzUgMTIgMi43NVpNMTIgNC4yNUMxMi40MTQyIDQuMjUgMTIuNzUgNC41ODU3OSAxMi43NSA1VjhDMTIuNzUgOC40MTQyMSAxMi40MTQyIDguNzUgMTIgOC43NUMxMS41ODU4IDguNzUgMTEuMjUgOC40MTQyMSAxMS4yNSA4VjVDMTEuMjUgNC41ODU3OSAxMS41ODU4IDQuMjUgMTIgNC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const MouseMinimalisticOutlineIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const MouseMinimalisticOutlineIcon: IconNode = [
     }
   ]
 ];
-
-export { MouseMinimalisticOutlineIcon as default };

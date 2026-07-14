@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StationLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOS4xNDE0IDIuMDc4MTZDMjAuOTA5NyAzLjg4MTkxIDIyIDYuMzUyNyAyMiA5LjA3ODE2QzIyIDExLjgzNiAyMC44ODM2IDE0LjMzMyAxOS4wNzgyIDE2LjE0MjFNNSAxNi4yMTk2QzMuMTQ4NjQgMTQuNDA0NyAyIDExLjg3NTYgMiA5LjA3ODE2QzIgNi4zMTMxMyAzLjEyMjIyIDMuODEwMiA0LjkzNjAzIDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYuMjg0OSA1LjEyMjFDMTcuMzQ1OCA2LjEzNjg5IDE4IDcuNTI2OTcgMTggOS4wNjAzM0MxOCAxMC42MTE5IDE3LjMzMDIgMTIuMDE2NyAxNi4yNDY5IDEzLjAzNDVNNy44IDEzLjA3ODFDNi42ODkxOCAxMi4wNTcgNiAxMC42MzQyIDYgOS4wNjAzM0M2IDcuNTA0NzEgNi42NzMzMyA2LjA5NjU1IDcuNzYxNjIgNS4wNzgxMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOS4wNzgxMiIgcj0iMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTIuNSAxMUwxNiAyMkwxMC41IDE1LjVNMTEuNSAxMUw4IDIyTDEzLjUgMTUuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const StationLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -39,5 +42,3 @@ const StationLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { StationLinearIcon as default };

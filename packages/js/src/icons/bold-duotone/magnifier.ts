@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MagnifierBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIwLjMxMzMgMTEuMTU2NkMyMC4zMTMzIDE2LjIxMzcgMTYuMjEzNyAyMC4zMTMzIDExLjE1NjYgMjAuMzEzM0M2LjA5OTU2IDIwLjMxMzMgMiAxNi4yMTM3IDIgMTEuMTU2NkMyIDYuMDk5NTYgNi4wOTk1NiAyIDExLjE1NjYgMkMxNi4yMTM3IDIgMjAuMzEzMyA2LjA5OTU2IDIwLjMxMzMgMTEuMTU2NloiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3LjEwMDEgMTguMTIxOUwyMC43NjY0IDIxLjc4ODJDMjEuMDQ4NyAyMi4wNzA1IDIxLjUwNjQgMjIuMDcwNSAyMS43ODg3IDIxLjc4ODJDMjIuMDcxIDIxLjUwNTkgMjIuMDcxIDIxLjA0ODIgMjEuNzg4NyAyMC43NjU5TDE4LjEyMjQgMTcuMDk5NkMxNy44MDkgMTcuNDY2NiAxNy40NjcxIDE3LjgwODUgMTcuMTAwMSAxOC4xMjE5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const MagnifierBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const MagnifierBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MagnifierBoldDuotoneIcon as default };

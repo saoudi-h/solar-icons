@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RoundedMagnifierLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgb3BhY2l0eT0iMC41IiBjeD0iMTEiIGN5PSIxMSIgcj0iOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMjEuODEyIDIwLjk3NDhDMjEuNzQ5MyAyMS4wNjk1IDIxLjYzNiAyMS4xODI4IDIxLjQwOTQgMjEuNDA5NEMyMS4xODI4IDIxLjYzNiAyMS4wNjk1IDIxLjc0OTMgMjAuOTc0OCAyMS44MTJDMjAuNDIwMiAyMi4xNzkzIDE5LjY2OTkgMjEuOTkgMTkuMzU1OSAyMS40MDM2QzE5LjMwMjMgMjEuMzAzNSAxOS4yNTYzIDIxLjE1IDE5LjE2NDMgMjAuODQzQzE5LjA2MzggMjAuNTA3NiAxOS4wMTM2IDIwLjMzOTggMTkuMDAzOCAyMC4yMjE4QzE4Ljk0NjYgMTkuNTI2OCAxOS41MjY4IDE4Ljk0NjYgMjAuMjIxOCAxOS4wMDM4QzIwLjMzOTggMTkuMDEzNiAyMC41MDc1IDE5LjA2MzggMjAuODQzIDE5LjE2NDNDMjEuMTUgMTkuMjU2MyAyMS4zMDM1IDE5LjMwMjMgMjEuNDAzNiAxOS4zNTU5QzIxLjk5IDE5LjY2OTkgMjIuMTc5MyAyMC40MjAyIDIxLjgxMiAyMC45NzQ4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RoundedMagnifierLineDuotoneIcon: IconNode[] = [
   [
     "circle",
     {
@@ -21,5 +24,3 @@ const RoundedMagnifierLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { RoundedMagnifierLineDuotoneIcon as default };

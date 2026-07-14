@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TextItalicBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOSAxLjAwMDAySDE0Ljk3NjhDMTQuOTkyIDAuOTk5NjY5IDE1LjAwNzIgMC45OTk2NjcgMTUuMDIyNSAxLjAwMDAySDIxQzIxLjU1MjMgMS4wMDAwMiAyMiAxLjQ0NzczIDIyIDIuMDAwMDJDMjIgMi41NTIzIDIxLjU1MjMgMy4wMDAwMiAyMSAzLjAwMDAySDE1Ljc0NEgxMy42NTZIOUM4LjQ0NzcyIDMuMDAwMDIgOCAyLjU1MjMgOCAyLjAwMDAyQzggMS40NDc3MyA4LjQ0NzcyIDEuMDAwMDIgOSAxLjAwMDAyWk04LjI1NTk3IDIxSDNDMi40NDc3MiAyMSAyIDIxLjQ0NzcgMiAyMkMyIDIyLjU1MjMgMi40NDc3MiAyMyAzIDIzSDguOTc3NTNDOC45OTI4MSAyMy4wMDA0IDkuMDA4MDUgMjMuMDAwNCA5LjAyMzI1IDIzSDE1QzE1LjU1MjMgMjMgMTYgMjIuNTUyMyAxNiAyMkMxNiAyMS40NDc3IDE1LjU1MjMgMjEgMTUgMjFIMTAuMzQ0SDguMjU1OTdaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEzLjY1NTkgM0w4LjI1NTg2IDIxSDEwLjM0MzlMMTUuNzQzOSAzSDEzLjY1NTlaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const TextItalicBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const TextItalicBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { TextItalicBoldDuotoneIcon as default };

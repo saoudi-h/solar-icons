@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BatteryLowMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgMTJDMiA4LjIyODc2IDIgNi4zNDMxNSAzLjE3MTU3IDUuMTcxNTdDNC4zNDMxNSA0IDYuMjI4NzYgNCAxMCA0SDExLjVDMTUuMjcxMiA0IDE3LjE1NjkgNCAxOC4zMjg0IDUuMTcxNTdDMTkuNSA2LjM0MzE1IDE5LjUgOC4yMjg3NiAxOS41IDEyQzE5LjUgMTUuNzcxMiAxOS41IDE3LjY1NjkgMTguMzI4NCAxOC44Mjg0QzE3LjE1NjkgMjAgMTUuMjcxMiAyMCAxMS41IDIwSDEwQzYuMjI4NzYgMjAgNC4zNDMxNSAyMCAzLjE3MTU3IDE4LjgyODRDMiAxNy42NTY5IDIgMTUuNzcxMiAyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNyA5QzcgOSA3LjUgOS45IDcuNSAxMkM3LjUgMTQuMSA3IDE1IDcgMTUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjIgMTRMMjIgMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const BatteryLowMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const BatteryLowMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { BatteryLowMinimalisticLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WheelAngleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41IDIyQzE4Ljk4NTMgMjIgMjEgMTcuNTIyOCAyMSAxMkMyMSA2LjQ3NzE1IDE4Ljk4NTMgMiAxNi41IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEyIDEyQzEyIDE3LjUyMjggOS45ODUyOCAyMiA3LjUgMjJDNS4wMTQ3MiAyMiAzIDE3LjUyMjggMyAxMkMzIDYuNDc3MTUgNS4wMTQ3MiAyIDcuNSAyQzkuOTg1MjggMiAxMiA2LjQ3NzE1IDEyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNy41IDIyQzkuOTg1MjggMjIgMTIgMTcuNTIyOCAxMiAxMkMxMiA2LjQ3NzE1IDkuOTg1MjggMiA3LjUgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNOSAxMkM5IDE1LjMxMzcgOC4zMjg0MyAxOCA3LjUgMThDNi42NzE1NyAxOCA2IDE1LjMxMzcgNiAxMkM2IDguNjg2MjkgNi42NzE1NyA2IDcuNSA2QzguMzI4NDMgNiA5IDguNjg2MjkgOSAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTcuNSAyTDE2LjUgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNy41IDIyTDE2LjUgMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTkgMTJIOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const WheelAngleLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -53,5 +56,3 @@ const WheelAngleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { WheelAngleLinearIcon as default };

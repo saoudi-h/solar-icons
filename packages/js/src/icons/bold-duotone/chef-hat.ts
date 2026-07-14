@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ChefHatBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC45OTg2IDE4SDUuMDAxOTVDNS4wMTIxNCAxOS4zOTY5IDUuMDgzNjkgMjAuOTExOSA1LjU4NjA1IDIxLjQxNDJDNi4xNzE4MyAyMiA3LjExNDY0IDIyIDkuMDAwMjYgMjJIMTUuMDAwM0MxNi44ODU5IDIyIDE3LjgyODcgMjIgMTguNDE0NSAyMS40MTQyQzE4LjkxNjggMjAuOTExOSAxOC45ODg0IDE5LjM5NjkgMTguOTk4NiAxOFoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNyA1QzQuMjM4NTggNSAyIDcuMjM4NTggMiAxMEMyIDEyLjA1MDMgMy4yMzQxIDEzLjgxMjQgNSAxNC41ODRWMThIMTlMMTkgMTQuNTg0QzIwLjc2NTkgMTMuODEyNCAyMiAxMi4wNTAzIDIyIDEwQzIyIDcuMjM4NTggMTkuNzYxNCA1IDE3IDVDMTYuNzQ5NSA1IDE2LjUwMzMgNS4wMTg0MiAxNi4yNjI2IDUuMDUzOTlDMTUuNjYwNCAzLjI3ODA2IDEzLjk3OTQgMiAxMiAyQzEwLjAyMDYgMiA4LjMzOTYxIDMuMjc4MDYgNy43MzczNiA1LjA1Mzk5QzcuNDk2NzMgNS4wMTg0MiA3LjI1MDUyIDUgNyA1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const ChefHatBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const ChefHatBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { ChefHatBoldDuotoneIcon as default };

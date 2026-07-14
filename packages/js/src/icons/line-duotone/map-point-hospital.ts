@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MapPointHospitalLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTQgMTAuMTQzM0M0IDUuNjQ1ODggNy41ODE3MiAyIDEyIDJDMTYuNDE4MyAyIDIwIDUuNjQ1ODggMjAgMTAuMTQzM0MyMCAxNC42MDU1IDE3LjQ0NjcgMTkuODEyNCAxMy40NjI5IDIxLjY3NDRDMTIuNTM0MyAyMi4xMDg1IDExLjQ2NTcgMjIuMTA4NSAxMC41MzcxIDIxLjY3NDRDNi41NTMzMiAxOS44MTI0IDQgMTQuNjA1NSA0IDEwLjE0MzNaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEwLjUgMTBIMTMuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiAxMS41TDEyIDguNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const MapPointHospitalLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -36,5 +39,3 @@ const MapPointHospitalLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MapPointHospitalLineDuotoneIcon as default };

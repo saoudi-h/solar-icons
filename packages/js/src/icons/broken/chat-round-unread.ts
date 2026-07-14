@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ChatRoundUnreadBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjMiIGN5PSIzIiByPSIzIiB0cmFuc2Zvcm09Im1hdHJpeCgtMSAwIDAgMSAyMiAyKSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTQgMi4yMDAwNEMxMy4zNTM4IDIuMDY4ODYgMTIuNjg0OSAyIDEyIDJDMTAuMTc4NiAyIDguNDcwODcgMi40ODY5NyA3IDMuMzM3ODJNMjEuOCAxMEMyMS45MzExIDEwLjY0NjIgMjIgMTEuMzE1MSAyMiAxMkMyMiAxNy41MjI4IDE3LjUyMjggMjIgMTIgMjJDMTAuNDAwMyAyMiA4Ljg4ODM3IDIxLjYyNDQgNy41NDc1MyAyMC45NTY1QzcuMTkxMjEgMjAuNzc5MSA2Ljc4MzkzIDIwLjcyIDYuMzk5MzkgMjAuODIyOUw0LjE3MzM1IDIxLjQxODVDMy4yMDcwMSAyMS42NzcgMi4zMjI5NSAyMC43OTMgMi41ODE1MSAxOS44MjY3TDMuMTc3MTIgMTcuNjAwNkMzLjI4MDAxIDE3LjIxNjEgMy4yMjA5NCAxNi44MDg4IDMuMDQzNDYgMTYuNDUyNUMyLjM3NTYyIDE1LjExMTYgMiAxMy41OTk3IDIgMTJDMiAxMC4xNzg2IDIuNDg2OTcgOC40NzA4NyAzLjMzNzgyIDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const ChatRoundUnreadBrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -21,5 +24,3 @@ const ChatRoundUnreadBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { ChatRoundUnreadBrokenIcon as default };

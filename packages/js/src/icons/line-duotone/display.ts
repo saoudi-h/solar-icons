@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const DisplayLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDlDMiA2LjE3MTU3IDIgNC43NTczNiAyLjg3ODY4IDMuODc4NjhDMy43NTczNiAzIDUuMTcxNTcgMyA4IDNIMTZDMTguODI4NCAzIDIwLjI0MjYgMyAyMS4xMjEzIDMuODc4NjhDMjIgNC43NTczNiAyMiA2LjE3MTU3IDIyIDlWMTBDMjIgMTIuODI4NCAyMiAxNC4yNDI2IDIxLjEyMTMgMTUuMTIxM0MyMC4yNDI2IDE2IDE4LjgyODQgMTYgMTYgMTZIOEM1LjE3MTU3IDE2IDMuNzU3MzYgMTYgMi44Nzg2OCAxNS4xMjEzQzIgMTQuMjQyNiAyIDEyLjgyODQgMiAxMFY5WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xMiAxOVYxNi41TTEyIDE5TDE4IDIxTTEyIDE5TDYgMjEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const DisplayLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const DisplayLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { DisplayLineDuotoneIcon as default };

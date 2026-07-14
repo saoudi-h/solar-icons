@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const DocumentsMinimalisticLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01IDhDNSA1LjE3MTU3IDUgMy43NTczNiA1Ljg3ODY4IDIuODc4NjhDNi43NTczNiAyIDguMTcxNTcgMiAxMSAySDEzQzE1LjgyODQgMiAxNy4yNDI2IDIgMTguMTIxMyAyLjg3ODY4QzE5IDMuNzU3MzYgMTkgNS4xNzE1NyAxOSA4VjE2QzE5IDE4LjgyODQgMTkgMjAuMjQyNiAxOC4xMjEzIDIxLjEyMTNDMTcuMjQyNiAyMiAxNS44Mjg0IDIyIDEzIDIySDExQzguMTcxNTcgMjIgNi43NTczNiAyMiA1Ljg3ODY4IDIxLjEyMTNDNSAyMC4yNDI2IDUgMTguODI4NCA1IDE2VjhaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik05IDEzSDE1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTkgOUgxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik05IDE3SDEyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIgMTlWNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxOVY1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const DocumentsMinimalisticLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -50,5 +53,3 @@ const DocumentsMinimalisticLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { DocumentsMinimalisticLinearIcon as default };

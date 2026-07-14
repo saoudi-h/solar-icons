@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PaletteRoundLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDZDMiAzLjc5MDg2IDMuNzkwODYgMiA2IDJDOC4yMDkxNCAyIDEwIDMuNzkwODYgMTAgNlYxOEMxMCAyMC4yMDkxIDguMjA5MTQgMjIgNiAyMkMzLjc5MDg2IDIyIDIgMjAuMjA5MSAyIDE4VjZaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik05Ljk5OTc3IDguMjQyNjhMMTMuMzEzNCA0LjkyOTAyQzE0Ljg3NTUgMy4zNjY5MiAxNy40MDgyIDMuMzY2OTIgMTguOTcwMyA0LjkyOTAyQzIwLjUzMjQgNi40OTExMiAyMC41MzI0IDkuMDIzNzggMTguOTcwMyAxMC41ODU5TDkuMzA2MTUgMjAuMjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTYgMjJMMTggMjJDMjAuMjA5MSAyMiAyMiAyMC4yMDkxIDIyIDE4QzIyIDE1Ljc5MDkgMjAuMjA5MSAxNCAxOCAxNEwxNS41IDE0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik03IDE4QzcgMTguNTUyMyA2LjU1MjI4IDE5IDYgMTlDNS40NDc3MiAxOSA1IDE4LjU1MjMgNSAxOEM1IDE3LjQ0NzcgNS40NDc3MiAxNyA2IDE3QzYuNTUyMjggMTcgNyAxNy40NDc3IDcgMThaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const PaletteRoundLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -31,5 +34,3 @@ const PaletteRoundLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { PaletteRoundLinearIcon as default };

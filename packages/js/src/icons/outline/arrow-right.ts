@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ArrowRightOutlineIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuNDY5NyA1LjQ2OTY3QzEzLjc2MjYgNS4xNzY3OCAxNC4yMzc0IDUuMTc2NzggMTQuNTMwMyA1LjQ2OTY3TDIwLjUzMDMgMTEuNDY5N0MyMC44MjMyIDExLjc2MjYgMjAuODIzMiAxMi4yMzc0IDIwLjUzMDMgMTIuNTMwM0wxNC41MzAzIDE4LjUzMDNDMTQuMjM3NCAxOC44MjMyIDEzLjc2MjYgMTguODIzMiAxMy40Njk3IDE4LjUzMDNDMTMuMTc2OCAxOC4yMzc0IDEzLjE3NjggMTcuNzYyNiAxMy40Njk3IDE3LjQ2OTdMMTguMTg5MyAxMi43NUg0QzMuNTg1NzkgMTIuNzUgMy4yNSAxMi40MTQyIDMuMjUgMTJDMy4yNSAxMS41ODU4IDMuNTg1NzkgMTEuMjUgNCAxMS4yNUgxOC4xODkzTDEzLjQ2OTcgNi41MzAzM0MxMy4xNzY4IDYuMjM3NDQgMTMuMTc2OCA1Ljc2MjU2IDEzLjQ2OTcgNS40Njk2N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const ArrowRightOutlineIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const ArrowRightOutlineIcon: IconNode = [
     }
   ]
 ];
-
-export { ArrowRightOutlineIcon as default };

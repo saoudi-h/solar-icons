@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TuningLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMCA5LjVDMTAgMTEuMTU2OSA4LjY1Njg1IDEyLjUgNyAxMi41QzUuMzQzMTUgMTIuNSA0IDExLjE1NjkgNCA5LjVDNCA3Ljg0MzE1IDUuMzQzMTUgNi41IDcgNi41QzguNjU2ODUgNi41IDEwIDcuODQzMTUgMTAgOS41WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMjAgMTQuNUMyMCAxMi44NDMxIDE4LjY1NjkgMTEuNSAxNyAxMS41QzE1LjM0MzEgMTEuNSAxNCAxMi44NDMxIDE0IDE0LjVDMTQgMTYuMTU2OSAxNS4zNDMxIDE3LjUgMTcgMTcuNUMxOC42NTY5IDE3LjUgMjAgMTYuMTU2OSAyMCAxNC41WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNyAxMUwxNy4wNDE1IDJNNyAyTDcgNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTcgMTNMNyAyMk0xNyAyMlYxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const TuningLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -35,5 +38,3 @@ const TuningLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { TuningLineDuotoneIcon as default };

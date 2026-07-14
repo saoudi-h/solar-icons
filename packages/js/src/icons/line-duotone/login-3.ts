@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Login3LineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDE2QzggMTguODI4NCA4IDIwLjI0MjYgOC44Nzg2OCAyMS4xMjEzQzkuNzU3MzYgMjIgMTEuMTcxNiAyMiAxNCAyMkgxNUMxNy44Mjg0IDIyIDE5LjI0MjYgMjIgMjAuMTIxMyAyMS4xMjEzQzIxIDIwLjI0MjYgMjEgMTguODI4NCAyMSAxNlY4QzIxIDUuMTcxNTcgMjEgMy43NTczNiAyMC4xMjEzIDIuODc4NjhDMTkuMjQyNiAyIDE3LjgyODQgMiAxNSAySDE0QzExLjE3MTYgMiA5Ljc1NzM2IDIgOC44Nzg2OCAyLjg3ODY4QzggMy43NTczNiA4IDUuMTcxNTcgOCA4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNOCAxOS41QzUuNjQyOTggMTkuNSA0LjQ2NDQ3IDE5LjUgMy43MzIyMyAxOC43Njc4QzMgMTguMDM1NSAzIDE2Ljg1NyAzIDE0LjVWOS41QzMgNy4xNDI5OCAzIDUuOTY0NDcgMy43MzIyMyA1LjIzMjIzQzQuNDY0NDcgNC41IDUuNjQyOTggNC41IDggNC41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik02IDEyTDE1IDEyTTEyLjUgOS41TDE1IDEyTDEyLjUgMTQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const Login3LineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const Login3LineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { Login3LineDuotoneIcon as default };

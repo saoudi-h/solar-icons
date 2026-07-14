@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TextBoldBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy42MDg3IDFDNS42MTU2NyAxIDQgMi42MTU2NyA0IDQuNjA4N1YxOS45NDEyQzQgMjEuNjMwNSA1LjM2OTQ4IDIzIDcuMDU4ODIgMjNIMTRDMTcuMzEzNyAyMyAyMCAyMC4zMTM3IDIwIDE3QzIwIDE0LjQyNTkgMTguMzc5MSAxMi4yMzA0IDE2LjEwMjIgMTEuMzc4NkMxNy4yNzAyIDEwLjI4MzkgMTggOC43MjcxNSAxOCA3QzE4IDMuNjg2MjkgMTUuMzEzNyAxIDEyIDFINy42MDg3Wk0xMiAxMUMxNC4yMDkxIDExIDE2IDkuMjA5MTQgMTYgN0MxNiA0Ljc5MDg2IDE0LjIwOTEgMyAxMiAzSDcuNjA4N0M2LjcyMDI0IDMgNiAzLjcyMDI0IDYgNC42MDg3VjExSDEyWk02IDEzVjE5Ljk0MTJDNiAyMC41MjU5IDYuNDc0MDUgMjEgNy4wNTg4MiAyMUgxNEMxNi4yMDkxIDIxIDE4IDE5LjIwOTEgMTggMTdDMTggMTQuNzkwOSAxNi4yMDkxIDEzIDE0IDEzSDZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const TextBoldBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const TextBoldBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { TextBoldBoldIcon as default };

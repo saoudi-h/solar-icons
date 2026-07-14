@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WheelAngleLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNi41IDIyQzE4Ljk4NTMgMjIgMjEgMTcuNTIyOCAyMSAxMkMyMSA2LjQ3NzE1IDE4Ljk4NTMgMiAxNi41IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEyIDEyQzEyIDE3LjUyMjggOS45ODUyOCAyMiA3LjUgMjJDNS4wMTQ3MiAyMiAzIDE3LjUyMjggMyAxMkMzIDYuNDc3MTUgNS4wMTQ3MiAyIDcuNSAyQzkuOTg1MjggMiAxMiA2LjQ3NzE1IDEyIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNy41IDJMMTYuNSAyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik03LjUgMjJMMTYuNSAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik05IDEyQzkgMTUuMzEzNyA4LjMyODQzIDE4IDcuNSAxOEM2LjY3MTU3IDE4IDYgMTUuMzEzNyA2IDEyQzYgOC42ODYyOSA2LjY3MTU3IDYgNy41IDZDOC4zMjg0MyA2IDkgOC42ODYyOSA5IDEyWk05IDEySDgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const WheelAngleLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -40,5 +43,3 @@ const WheelAngleLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { WheelAngleLineDuotoneIcon as default };

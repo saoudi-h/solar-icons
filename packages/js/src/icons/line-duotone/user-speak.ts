@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserSpeakLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xOCAxNy41QzE4IDE5Ljk4NTMgMTggMjIgMTAgMjJDMiAyMiAyIDE5Ljk4NTMgMiAxNy41QzIgMTUuMDE0NyA1LjU4MTcyIDEzIDEwIDEzQzE0LjQxODMgMTMgMTggMTUuMDE0NyAxOCAxNy41WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTkgMkMxOSAyIDIxIDMuMiAyMSA2QzIxIDguOCAxOSAxMCAxOSAxMCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNyA0QzE3IDQgMTggNC42IDE4IDZDMTggNy40IDE3IDggMTcgOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const UserSpeakLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -36,5 +39,3 @@ const UserSpeakLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { UserSpeakLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const AlignVerticalSpacingLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIyIDNMMiAzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMjIgMjFMMiAyMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMCAxMkMyMCAxMC4xMTQ0IDIwIDkuMTcxNTcgMTkuNDE0MiA4LjU4NTc5QzE4LjgyODQgOCAxNy44ODU2IDggMTYgOEw4IDhDNi4xMTQzOCA4IDUuMTcxNTcgOCA0LjU4NTc5IDguNTg1NzlDNCA5LjE3MTU3IDQgMTAuMTE0NCA0IDEyQzQgMTMuODg1NiA0IDE0LjgyODQgNC41ODU3OSAxNS40MTQyQzUuMTcxNTcgMTYgNi4xMTQzOCAxNiA4IDE2SDE2QzE3Ljg4NTYgMTYgMTguODI4NCAxNiAxOS40MTQyIDE1LjQxNDJDMjAgMTQuODI4NCAyMCAxMy44ODU2IDIwIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const AlignVerticalSpacingLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const AlignVerticalSpacingLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { AlignVerticalSpacingLineDuotoneIcon as default };

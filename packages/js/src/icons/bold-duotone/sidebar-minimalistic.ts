@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SidebarMinimalisticBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zLjE3MTU3IDQuMTcxNkMyIDUuMzQzMTggMiA3LjIyODggMiAxMVYxM0MyIDE2Ljc3MTMgMiAxOC42NTY5IDMuMTcxNTcgMTkuODI4NUM0LjM0MzE1IDIxIDYuMjI4NzYgMjEgMTAgMjFIMTRDMTQuMDg0MyAyMSAxNC45MTc2IDIxLjAwMDEgMTUgMjEuMDAwMUwxNSAzLjAwMDA2QzE0LjkxNzYgMy4wMDAwNSAxNC4wODQzIDMuMDAwMDMgMTQgMy4wMDAwM0gxMEM2LjIyODc2IDMuMDAwMDMgNC4zNDMxNSAzLjAwMDAzIDMuMTcxNTcgNC4xNzE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMjIgMTNWMTFDMjIgNy4yMjg3NiAyMiA1LjM0MzE1IDIwLjgyODQgNC4xNzE1N0MxOS44NTQxIDMuMTk3MjQgMTcuNjM1OSAzLjAzMzIxIDE1IDMuMDA1NTlWMjAuOTk0NEMxNy42MzU5IDIwLjk2NjggMTkuODU0MSAyMC44MDI4IDIwLjgyODQgMTkuODI4NEMyMiAxOC42NTY5IDIyIDE2Ljc3MTIgMjIgMTNaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const SidebarMinimalisticBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const SidebarMinimalisticBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { SidebarMinimalisticBoldDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserMinusRoundedLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIGN4PSIxNyIgY3k9IjE4IiByPSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNiAxOEwxOCAxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNCAyMC44MzQ0QzEzLjM2NjMgMjAuOTQyMSAxMi42OTUgMjEgMTIgMjFDOC4xMzQwMSAyMSA1IDE5LjIwOTEgNSAxN0M1IDE0Ljc5MDkgOC4xMzQwMSAxMyAxMiAxM0MxMy43MTM1IDEzIDE1LjI4MzIgMTMuMzUxOCAxNi41IDEzLjkzNTkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const UserMinusRoundedLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -37,5 +40,3 @@ const UserMinusRoundedLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { UserMinusRoundedLinearIcon as default };

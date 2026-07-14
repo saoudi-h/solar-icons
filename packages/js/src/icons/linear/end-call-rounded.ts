@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const EndCallRoundedLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjYwNzIgMTYuODk3M0w2Ljk0NjkgMTYuNTE3M0M4LjE1NTkxIDE2LjE3NDQgOSAxNC45ODI2IDkgMTMuNjE4NUM5IDEzLjYxODUgOSAxMS45NjM5IDEyIDExLjk2MzlDMTUgMTEuOTYzOSAxNSAxMy42MTg1IDE1IDEzLjYxODVDMTUgMTQuOTgyNiAxNS44NDQxIDE2LjE3NDQgMTcuMDUzMSAxNi41MTczTDE4LjM5MjggMTYuODk3M0MyMC4yMTg0IDE3LjQxNTEgMjIgMTUuOTEwMiAyMiAxMy44NTA0QzIyIDEyLjYxMjcgMjEuNzIzNCAxMS4zNzMgMjAuOTE3MSAxMC41MDMyQzE5LjU1OTggOS4wMzg4OSAxNi44MDY4IDcgMTIgN0M3LjE5MzIyIDcgNC40NDAyMyA5LjAzODg4IDMuMDgyODkgMTAuNTAzMkMyLjI3NjU5IDExLjM3MyAyIDEyLjYxMjcgMiAxMy44NTA0QzIgMTUuOTEwMiAzLjc4MTU4IDE3LjQxNTEgNS42MDcyIDE2Ljg5NzNaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const EndCallRoundedLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const EndCallRoundedLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { EndCallRoundedLinearIcon as default };

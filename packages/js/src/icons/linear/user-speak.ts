@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserSpeakLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTggMTcuNUMxOCAxOS45ODUzIDE4IDIyIDEwIDIyQzIgMjIgMiAxOS45ODUzIDIgMTcuNUMyIDE1LjAxNDcgNS41ODE3MiAxMyAxMCAxM0MxNC40MTgzIDEzIDE4IDE1LjAxNDcgMTggMTcuNVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTE5IDJDMTkgMiAyMSAzLjIgMjEgNkMyMSA4LjggMTkgMTAgMTkgMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTcgNEMxNyA0IDE4IDQuNiAxOCA2QzE4IDcuNCAxNyA4IDE3IDgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const UserSpeakLinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -35,5 +38,3 @@ const UserSpeakLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { UserSpeakLinearIcon as default };

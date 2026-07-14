@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MedalRibbonLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOSIgcj0iNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik03LjM1MTExIDE1TDYuNzE0MjQgMTcuMzIzQzYuMDg1OSAxOS42MTQ4IDUuNzcxNzMgMjAuNzYwNyA2LjE5MDk3IDIxLjM4ODFDNi4zMzc5IDIxLjYwNzkgNi41MzUgMjEuNzg0NCA2Ljc2MzcyIDIxLjkwMDhDNy40MTYzNSAyMi4yMzMxIDguNDI0MDEgMjEuNzA4MSAxMC40MzkzIDIwLjY1OEMxMS4xMDk5IDIwLjMwODYgMTEuNDQ1MiAyMC4xMzM5IDExLjgwMTQgMjAuMDk1OUMxMS45MzM1IDIwLjA4MTggMTIuMDY2NSAyMC4wODE4IDEyLjE5ODYgMjAuMDk1OUMxMi41NTQ4IDIwLjEzMzkgMTIuODkwMSAyMC4zMDg2IDEzLjU2MDcgMjAuNjU4QzE1LjU3NiAyMS43MDgxIDE2LjU4MzcgMjIuMjMzMSAxNy4yMzYzIDIxLjkwMDhDMTcuNDY1IDIxLjc4NDQgMTcuNjYyMSAyMS42MDc5IDE3LjgwOSAyMS4zODgxQzE4LjIyODMgMjAuNzYwNyAxNy45MTQxIDE5LjYxNDggMTcuMjg1OCAxNy4zMjNMMTYuNjQ4OSAxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const MedalRibbonLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -21,5 +24,3 @@ const MedalRibbonLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MedalRibbonLineDuotoneIcon as default };

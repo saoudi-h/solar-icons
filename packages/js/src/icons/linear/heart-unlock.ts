@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HeartUnlockLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDdDNyAzLjY4NjI5IDguOTM2NTggMiAxMS44NzE4IDJDMTMuNzI0MiAyIDE1LjE3ODggMi42NzE2IDE2IDQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMTJWMTQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zIDEyLjA5OTJDMyAxNi4zMzY0IDYuNjE3NDggMTguNTk0MyA5LjI2NTU2IDIwLjYxNTRDMTAuMiAyMS4zMjg1IDExLjEgMjIgMTIgMjJDMTIuOSAyMiAxMy44IDIxLjMyODUgMTQuNzM0NCAyMC42MTU0QzE3LjM4MjUgMTguNTk0MyAyMSAxNi4zMzY0IDIxIDEyLjA5OTJDMjEgNy44NjE5NiAxNi4wNDk5IDQuODU3MDEgMTIgOC45MzA2MkM3Ljk1MDE0IDQuODU3MDEgMyA3Ljg2MTk2IDMgMTIuMDk5MloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const HeartUnlockLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const HeartUnlockLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { HeartUnlockLinearIcon as default };

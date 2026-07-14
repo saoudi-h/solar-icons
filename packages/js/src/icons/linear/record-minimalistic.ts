@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RecordMinimalisticLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMkMyMiAxNC4yMDkxIDIwLjIwOTEgMTYgMTggMTZDMTUuNzkwOSAxNiAxNCAxNC4yMDkxIDE0IDEyQzE0IDkuNzkwODYgMTUuNzkwOSA4IDE4IDhDMjAuMjA5MSA4IDIyIDkuNzkwODYgMjIgMTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMCAxMkMxMCAxNC4yMDkxIDguMjA5MTQgMTYgNiAxNkMzLjc5MDg2IDE2IDIgMTQuMjA5MSAyIDEyQzIgOS43OTA4NiAzLjc5MDg2IDggNiA4QzguMjA5MTQgOCAxMCA5Ljc5MDg2IDEwIDEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNiAxNkgxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RecordMinimalisticLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -25,5 +28,3 @@ const RecordMinimalisticLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { RecordMinimalisticLinearIcon as default };

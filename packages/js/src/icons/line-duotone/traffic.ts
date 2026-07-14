@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TrafficLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIyIDEyQzIyIDEzLjk3NzggMjEuNDEzNSAxNS45MTEyIDIwLjMxNDcgMTcuNTU1N0MxOS4yMTU5IDE5LjIwMDIgMTcuNjU0MSAyMC40ODE5IDE1LjgyNjggMjEuMjM4OEMxMy45OTk2IDIxLjk5NTcgMTEuOTg4OSAyMi4xOTM3IDEwLjA0OTEgMjEuODA3OUM4LjEwOTI5IDIxLjQyMiA2LjMyNzQ2IDIwLjQ2OTYgNC45Mjg5MyAxOS4wNzExQzMuNTMwNDEgMTcuNjcyNSAyLjU3OCAxNS44OTA3IDIuMTkyMTUgMTMuOTUwOUMxLjgwNjI5IDEyLjAxMTEgMi4wMDQzMyAxMC4wMDA0IDIuNzYxMiA4LjE3MzE3QzMuNTE4MDggNi4zNDU5IDQuNzk5ODEgNC43ODQxMiA2LjQ0NDMgMy42ODUzQzguMDg4NzkgMi41ODY0OSAxMC4wMjIyIDIgMTIgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNC41IDIuMzE0OTRDMTguMDE0IDMuMjE5MzkgMjAuNzgwNSA1Ljk4NTg4IDIxLjY4NSA5LjQ5OTkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const TrafficLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const TrafficLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { TrafficLineDuotoneIcon as default };

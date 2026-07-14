@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const DatabaseBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDIyQzE2LjQxODMgMjIgMjAgMjAuMjA5MSAyMCAxOFYxMlY2QzIwIDguMjA5MTQgMTYuNDE4MyAxMCAxMiAxMEM3LjU4MTcyIDEwIDQgOC4yMDkxNCA0IDZWMTJWMThDNCAyMC4yMDkxIDcuNTgxNzIgMjIgMTIgMjJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMiAxMEMxNi40MTgzIDEwIDIwIDguMjA5MTQgMjAgNkMyMCAzLjc5MDg2IDE2LjQxODMgMiAxMiAyQzcuNTgxNzIgMiA0IDMuNzkwODYgNCA2QzQgOC4yMDkxNCA3LjU4MTcyIDEwIDEyIDEwWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik00IDZWMTJDNCAxNC4yMDkxIDcuNTgxNzIgMTYgMTIgMTZDMTYuNDE4MyAxNiAyMCAxNC4yMDkxIDIwIDEyVjZDMjAgOC4yMDkxNCAxNi40MTgzIDEwIDEyIDEwQzcuNTgxNzIgMTAgNCA4LjIwOTE0IDQgNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+ */
+export const DatabaseBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -26,5 +29,3 @@ const DatabaseBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { DatabaseBoldDuotoneIcon as default };

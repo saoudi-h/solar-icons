@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StickerCircleLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyQzEyLjY0NzcgMjIgMTMuMjUwMyAyMS43MDA0IDEzLjcwODMgMjEuMjQyNEwyMS4yNDI0IDEzLjcwODNDMjEuNzAwNCAxMy4yNTAzIDIyIDEyLjY0NzcgMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEyIDIyQzEyIDE5LjIwNzEgMTIgMTcuODEwNyAxMi4zOTI4IDE2LjY4OEMxMy4wOTY0IDE0LjY3NzMgMTQuNjc3MyAxMy4wOTY0IDE2LjY4OCAxMi4zOTI4QzE3LjgxMDcgMTIgMTkuMjA3MSAxMiAyMiAxMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const StickerCircleLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const StickerCircleLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { StickerCircleLineDuotoneIcon as default };

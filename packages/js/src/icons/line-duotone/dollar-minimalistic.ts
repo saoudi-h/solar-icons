@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const DollarMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgb3BhY2l0eT0iMC41IiBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEyIDE3VjE3LjVWMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgNlY2LjVWNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNSA5LjVDMTUgOC4xMTkyOSAxMy42NTY5IDcgMTIgN0MxMC4zNDMxIDcgOSA4LjExOTI5IDkgOS41QzkgMTAuODgwNyAxMC4zNDMxIDEyIDEyIDEyQzEzLjY1NjkgMTIgMTUgMTMuMTE5MyAxNSAxNC41QzE1IDE1Ljg4MDcgMTMuNjU2OSAxNyAxMiAxN0MxMC4zNDMxIDE3IDkgMTUuODgwNyA5IDE0LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const DollarMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "circle",
     {
@@ -37,5 +40,3 @@ const DollarMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { DollarMinimalisticLineDuotoneIcon as default };

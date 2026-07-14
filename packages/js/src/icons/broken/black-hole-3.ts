@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BlackHole3BrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEyIDEwQzE3IDEwIDE2LjYgMjIgOSAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMi4zMTE1IDE0QzcuMzExNTIgMTQgNy43MTE1MiAyIDE1LjMxMTUgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMCAxMi4zMTE1QzEwIDkuNTMyNTkgMTMuNzA2OCA4LjQyMTcxIDE3IDkuMjg3OTFNMjIgMTUuMzExNUMyMiAxMy4zNDIgMjEuMTk0MSAxMS44NTYgMjAgMTAuODIyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNCAxMkMxNCAxNC43Nzg5IDEwLjI5MzIgMTUuODg5OCA3IDE1LjAyMzZNMiA5QzIgMTAuNjgwMSAyLjU4NjQzIDEyLjAwODMgMy41IDEzLjAwNDEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const BlackHole3BrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -44,5 +47,3 @@ const BlackHole3BrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { BlackHole3BrokenIcon as default };

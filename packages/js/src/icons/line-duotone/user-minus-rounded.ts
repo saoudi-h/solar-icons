@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserMinusRoundedLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8Y2lyY2xlIGN4PSIxNyIgY3k9IjE4IiByPSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xNiAxOEwxOCAxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE0IDIwLjgzNDRDMTMuMzY2MyAyMC45NDIxIDEyLjY5NSAyMSAxMiAyMUM4LjEzNDAxIDIxIDUgMTkuMjA5MSA1IDE3QzUgMTQuNzkwOSA4LjEzNDAxIDEzIDEyIDEzQzEzLjcxMzUgMTMgMTUuMjgzMiAxMy4zNTE4IDE2LjUgMTMuOTM1OSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const UserMinusRoundedLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -38,5 +41,3 @@ const UserMinusRoundedLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { UserMinusRoundedLineDuotoneIcon as default };

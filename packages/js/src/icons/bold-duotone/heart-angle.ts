@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HeartAngleBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yIDkuMTM3MUMyIDEzLjU0MjIgNS4yOTgxOSAxNi4wODMzIDguMTA2MjcgMTguMjQ2OEM4LjM5ODE0IDE4LjQ3MTcgOC42ODQ3MSAxOC42OTI1IDguOTYxNzMgMTguOTEwOUMxMCAxOS43Mjk0IDExIDIwLjUgMTIgMjAuNVY1LjUwMDYzQzcuNTAwMTYgMC44MjU0NjQgMiA0LjI3NDE2IDIgOS4xMzcxWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTQgNy40OTkyOEwxMiA1LjUwMDYzVjIwLjVDMTMgMjAuNSAxNCAxOS43Mjk0IDE1LjAzODMgMTguOTEwOUMxNS4zMTUzIDE4LjY5MjUgMTUuNjAxOSAxOC40NzE3IDE1Ljg5MzcgMTguMjQ2OEMxOC43MDE4IDE2LjA4MzMgMjIgMTMuNTQyMiAyMiA5LjEzNzFDMjIgNC42NzQ2NSAxNy4zNjg1IDEuNDAzMDkgMTMuMTI4NSA0LjUwNzEyTDE1LjA2MDUgNi40Mzg0M0MxNS4zNTM0IDYuNzMxMjcgMTUuMzUzNSA3LjIwNjE0IDE1LjA2MDcgNy40OTkwOEMxNC43Njc4IDcuNzkyMDMgMTQuMjkyOSA3Ljc5MjEyIDE0IDcuNDk5MjhaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const HeartAngleBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const HeartAngleBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { HeartAngleBoldDuotoneIcon as default };

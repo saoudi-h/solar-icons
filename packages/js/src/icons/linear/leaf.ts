@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LeafLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiA5LjAwMDA2TDE2LjUgNC41MDAwNk0xMiAxNC41MDAxTDE4LjUgOC4wMDAwNk0xMiAxOS41MDAxTDE5LjUgMTIuMDAwMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTIgMjJDMTYuNDE4MyAyMiAyMCAxOC4zNTQxIDIwIDEzLjg1NjdDMjAgOS4zOTQ1MyAxNy40NDY3IDQuMTg3NTkgMTMuNDYyOSAyLjMyNTU1QzEyLjk5ODYgMi4xMDg1MiAxMi40OTkzIDIgMTIgMk0xMiAyMkM3LjU4MTcyIDIyIDQgMTguMzU0MSA0IDEzLjg1NjdDNCA5LjM5NDUzIDYuNTUzMzIgNC4xODc1OSAxMC41MzcxIDIuMzI1NTVDMTEuMDAxNCAyLjEwODUyIDExLjUwMDcgMiAxMiAyTTEyIDIyVjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const LeafLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -17,5 +20,3 @@ const LeafLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { LeafLinearIcon as default };

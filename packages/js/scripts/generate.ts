@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { parseSvgs, transformDuotoneAccent, type ParsedIcon } from '@solar-icons/core'
-import { Node, parse } from 'node-html-parser'
+import { parse, type Node } from 'node-html-parser'
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
@@ -78,15 +78,16 @@ const main = async () => {
             const fileContent = `/* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ${pascalName}: IconNode = ${JSON.stringify(ast, null, 2)};
-
-export { ${pascalName} as default };
+/**
+ * ![img](data:image/svg+xml;base64,${icon.preview})
+ */
+export const ${pascalName}: IconNode[] = ${JSON.stringify(ast, null, 2)};
 `
             fs.writeFileSync(tsPath, fileContent)
 
             // Add to barrel index
             barrelLines.push(
-                `export { default as ${pascalName} } from "./icons/${icon.styleKebab}/${icon.kebabName}";`
+                `export { ${pascalName} } from "./icons/${icon.styleKebab}/${icon.kebabName}";`
             )
         }
 

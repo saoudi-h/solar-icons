@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SquareBottomDownLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi45OTk5IDIxLjk5OTRDMTcuMDU1IDIxLjk5MjEgMTkuMTc4NCAyMS44OTI2IDIwLjUzNTQgMjAuNTM1NUMyMS45OTk5IDE5LjA3MTEgMjEuOTk5OSAxNi43MTQgMjEuOTk5OSAxMkMyMS45OTk5IDcuMjg1OTUgMjEuOTk5OSA0LjkyODkzIDIwLjUzNTQgMy40NjQ0N0MxOS4wNzEgMiAxNi43MTQgMiAxMS45OTk5IDJDNy4yODU4NyAyIDQuOTI4ODQgMiAzLjQ2NDM4IDMuNDY0NDdDMi4xMDczNCA0LjgyMTUgMi4wMDc3OSA2Ljk0NDkzIDIuMDAwNDkgMTEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTEgMTNMMyAyMU0zIDE1VjIxSDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const SquareBottomDownLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const SquareBottomDownLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { SquareBottomDownLinearIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LetterBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMkMyMiAxNS43NzEyIDIyIDE3LjY1NjkgMjAuODI4NCAxOC44Mjg0QzE5LjY1NjkgMjAgMTcuNzcxMiAyMCAxNCAyMEgxMEM2LjIyODc2IDIwIDQuMzQzMTUgMjAgMy4xNzE1NyAxOC44Mjg0QzIgMTcuNjU2OSAyIDE1Ljc3MTIgMiAxMkMyIDguMjI4NzYgMiA2LjM0MzE1IDMuMTcxNTcgNS4xNzE1N0M0LjM0MzE1IDQgNi4yMjg3NiA0IDEwIDRIMTRDMTcuNzcxMiA0IDE5LjY1NjkgNCAyMC44Mjg0IDUuMTcxNTdDMjEuNDgxNiA1LjgyNDc1IDIxLjc3MDYgNi42OTk4OSAyMS44OTg1IDgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTggOEwxNS44NDExIDkuNzk5MDhDMTQuMDA0NSAxMS4zMjk2IDEzLjA4NjEgMTIuMDk0OSAxMiAxMi4wOTQ5QzExLjM1MDcgMTIuMDk0OSAxMC43NjE0IDExLjgyMTQgMTAgMTEuMjc0NE02IDhMNi45IDguNzVMNy44IDkuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const LetterBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const LetterBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { LetterBrokenIcon as default };

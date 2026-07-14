@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HangerLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjUzNTg5IDYuOTA5MDlDOS41MzU4OSA1Ljg1NDczIDEwLjQ4NjggNSAxMS42NTk5IDVDMTIuODMyOSA1IDEzLjc4MzkgNS44NTQ3MyAxMy43ODM5IDYuOTA5MDlDMTMuNzgzOSA3LjQwNTMyIDEzLjYwNDYgNy44NTczMyAxMy4yOTI1IDguMTk2ODJDMTIuNjk0OCA4Ljg0NzA2IDExLjgwMTUgOS41MDE5NyAxMS44MDE1IDEwLjM0NTVWMTAuNjI5OU0xMS44MDE1IDEwLjYyOTlDMTIuNTMzIDEwLjYyMTQgMTMuMjY3NCAxMC44MjQ2IDEzLjg4NDUgMTEuMjQwNkwyMS4zMTcgMTYuMjUwOUMyMi42MjM0IDE3LjEzMTUgMjEuOTMwNSAxOSAyMC4yOTc1IDE5SDMuNzAyNTRDMi4wODcyMSAxOSAxLjM4MzIyIDE3LjE2NDggMi42NTUzMSAxNi4yN0w5Ljc1MSAxMS4yNzg3QzEwLjM1MzQgMTAuODU1IDExLjA3NiAxMC42MzgzIDExLjgwMTUgMTAuNjI5OVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const HangerLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const HangerLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { HangerLineDuotoneIcon as default };

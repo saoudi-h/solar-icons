@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PlanetLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCAxMkMyMCAxNi40MTgzIDE2LjQxODMgMjAgMTIgMjBDNy41ODE3MiAyMCA0IDE2LjQxODMgNCAxMkM0IDcuNTgxNzIgNy41ODE3MiA0IDEyIDRDMTYuNDE4MyA0IDIwIDcuNTgxNzIgMjAgMTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE3Ljg0ODYgNi4xOTA4NUMxOS44NjA1IDUuODE5MjkgMjEuMzM5MSA1Ljk4MDAxIDIxLjgyOTEgNi43NjMyN0MyMi44NDAzIDguMzc5NDcgMTkuMjU5NCAxMi4wMzQyIDEzLjgzMDkgMTQuOTI2NEM4LjQwMjQyIDE3LjgxODUgMy4xODIwMyAxOC44NTI5IDIuMTcwODUgMTcuMjM2N0MxLjYzNzU4IDE2LjM4NDQgMi4zODE0OCAxNC45NjUxIDQgMTMuMzg5NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const PlanetLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const PlanetLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { PlanetLineDuotoneIcon as default };

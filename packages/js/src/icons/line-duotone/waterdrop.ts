@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WaterdropLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTMgMTMuMTkyOEMzIDE4LjA1NjkgNi44NTU0OSAyMiAxMS42MTE1IDIySDEyLjM4ODVDMTcuMTQ0NSAyMiAyMSAxOC4wNTY5IDIxIDEzLjE5MjhWMTIuOTI4MUMyMSA4LjMxNjUxIDE4LjI3MTUgNC4xNjM0NyAxNC4wOTY3IDIuNDIwNzdDMTIuNzUyNyAxLjg1OTc0IDExLjI0NzMgMS44NTk3NCA5LjkwMzI5IDIuNDIwNzdDNS43Mjg1NCA0LjE2MzQ3IDMgOC4zMTY1MSAzIDEyLjkyODFWMTMuMTkyOFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTcuNjE0NzUgMTAuNzIzN0M4LjI0OTUgOC43MTgyNiA5LjYzMDYyIDcuMDg4MDUgMTEuMzg1OCA2LjI3NjM3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const WaterdropLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const WaterdropLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { WaterdropLineDuotoneIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TextBoldCircleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMkMyMiAxNy41MjI4IDE3LjUyMjggMjIgMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTggNy41MjE3NEM4IDYuNjgxMzEgOC42ODEzMSA2IDkuNTIxNzQgNkgxMkMxMy42NTY5IDYgMTUgNy4zNDMxNSAxNSA5QzE1IDEwLjY1NjkgMTMuNjU2OSAxMiAxMiAxMkg4VjcuNTIxNzRaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik04IDEySDEzQzE0LjY1NjkgMTIgMTYgMTMuMzQzMSAxNiAxNUMxNiAxNi42NTY5IDE0LjY1NjkgMTggMTMgMThIOS4xNzY0N0M4LjUyNjcyIDE4IDggMTcuNDczMyA4IDE2LjgyMzVWMTJaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=)
+ */
+export const TextBoldCircleLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -24,5 +27,3 @@ const TextBoldCircleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { TextBoldCircleLinearIcon as default };

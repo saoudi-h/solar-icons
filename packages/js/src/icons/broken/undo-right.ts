@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UndoRightBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCA3SDkuMDAwMDFDNy4xMzA3NyA3IDYuMTk2MTUgNyA1LjUgNy40MDE5M0M1LjA0Mzk1IDcuNjY1MjMgNC42NjUyNCA4LjA0Mzk0IDQuNDAxOTMgOC40OTk5OUM0IDkuMTk2MTUgNCAxMC4xMzA4IDQgMTJDNCAxMy44NjkyIDQgMTQuODAzOCA0LjQwMTkyIDE1LjVDNC42NjUyMyAxNS45NTYxIDUuMDQzOTQgMTYuMzM0OCA1LjUgMTYuNTk4MUM2LjE5NjE1IDE3IDcuMTMwNzcgMTcgOSAxN0gxNk0xNyAxMEwyMCA3TDE3IDQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const UndoRightBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const UndoRightBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { UndoRightBrokenIcon as default };

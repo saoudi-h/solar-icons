@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StretchingLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE0LjUiIGN5PSI0LjUiIHI9IjIuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik01IDIyLjAwMDJMOC44NDg1NiAyMC42Mjc0QzkuMzA0MzcgMjAuNDY0OCA5LjY4NTc2IDIwLjE0MjUgOS45MjIwNCAxOS43MjAyTDEyLjYzNDMgMTQuODcyQzEyLjgwMTIgMTQuNTczNiAxMi44ODg5IDE0LjIzNzQgMTIuODg4OSAxMy44OTU1VjExLjI3NTFDMTIuODg4OSAxMC4xOTgyIDExLjc4NzggOS40NzIxMyAxMC43OTggOS44OTYzNEw4LjM0MjIxIDEwLjk0ODhDNy4zNTkzNSAxMS4zNyA3LjEyMDMxIDEyLjY1NSA3Ljg4NTk0IDEzLjQwMTVMOC41IDE0LjAwMDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTkuMDAwMSAyMi4wMDAyVjE2Ljc2ODFDMTkuMDAwMSAxNS41MzU1IDE3Ljg5NTkgMTQuNTk2MiAxNi42NzkzIDE0Ljc5MzlMMTUuNjY2NyAxNC45NTg1IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const StretchingLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -31,5 +34,3 @@ const StretchingLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { StretchingLineDuotoneIcon as default };

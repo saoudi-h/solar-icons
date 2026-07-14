@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Routing3LinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSIzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iMTkiIHI9IjMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTExLjAwMDIgNUgxNi4xMzIxQzE4LjEzMyA1IDE4Ljg5MzkgNy42MTMwOSAxNy4yMDU5IDguNjg3MzJMNi43OTQ1OSAxNS4zMTI3QzUuMTA2NTEgMTYuMzg2OSA1Ljg2NzQ0IDE5IDcuODY4MzMgMTlIMTMuMDAwMk0xMS41MDAyIDIwLjVMMTMuMDAwMiAxOUwxMS41MDAyIDE3LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const Routing3LinearIcon: IconNode[] = [
   [
     "circle",
     {
@@ -30,5 +33,3 @@ const Routing3LinearIcon: IconNode = [
     }
   ]
 ];
-
-export { Routing3LinearIcon as default };

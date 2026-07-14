@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PaperclipRounded2LineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi45NTAyIDExLjAwODdMMTAuMDEwNCAxMy45MzUxQzguMzg2ODcgMTUuNTUxMyA4LjM4Njg3IDE4LjE3MTYgMTAuMDEwNCAxOS43ODc5QzExLjYzNCAyMS40MDQxIDE0LjI2NjQgMjEuNDA0MSAxNS44ODk5IDE5Ljc4NzlMMTkuNTY0NiAxNi4xMjk5QzIyLjgxMTggMTIuODk3NSAyMi44MTE4IDcuNjU2NyAxOS41NjQ2IDQuNDI0M0MxNi4zMTc1IDEuMTkxOSAxMS4wNTI4IDEuMTkxOSA3LjgwNTYzIDQuNDI0M0w0LjEzMDk1IDguMDgyMjlDMS4yODk2OCAxMC45MTA2IDEuMjg5NjggMTUuNDk2MyA0LjEzMDk1IDE4LjMyNDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const PaperclipRounded2LineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const PaperclipRounded2LineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { PaperclipRounded2LineDuotoneIcon as default };

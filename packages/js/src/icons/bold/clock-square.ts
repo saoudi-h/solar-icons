@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ClockSquareBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMkMxNi43MTQgMiAxOS4wNzA3IDIuMDAwMzggMjAuNTM1MiAzLjQ2NDg0QzIxLjk5OTYgNC45MjkzMSAyMiA3LjI4NTk1IDIyIDEyQzIyIDE2LjcxNCAyMS45OTk2IDE5LjA3MDcgMjAuNTM1MiAyMC41MzUyQzE5LjA3MDcgMjEuOTk5NiAxNi43MTQgMjIgMTIgMjJDNy4yODU5NSAyMiA0LjkyOTMxIDIxLjk5OTYgMy40NjQ4NCAyMC41MzUyQzIuMDAwMzggMTkuMDcwNyAyIDE2LjcxNCAyIDEyQzIgNy4yODU5NSAyLjAwMDM4IDQuOTI5MzEgMy40NjQ4NCAzLjQ2NDg0QzQuOTI5MzEgMi4wMDAzOCA3LjI4NTk1IDIgMTIgMlpNMTIgNy4yNUMxMS41ODU4IDcuMjUgMTEuMjUgNy41ODU3OSAxMS4yNSA4VjEyQzExLjI1IDEyLjE5ODkgMTEuMzI5MSAxMi4zODk2IDExLjQ2OTcgMTIuNTMwM0wxMy45Njk3IDE1LjAzMDNDMTQuMjYyNiAxNS4zMjMyIDE0LjczNzQgMTUuMzIzMiAxNS4wMzAzIDE1LjAzMDNDMTUuMzIzMiAxNC43Mzc0IDE1LjMyMzIgMTQuMjYyNiAxNS4wMzAzIDEzLjk2OTdMMTIuNzUgMTEuNjg5NVY4QzEyLjc1IDcuNTg1NzkgMTIuNDE0MiA3LjI1IDEyIDcuMjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const ClockSquareBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const ClockSquareBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { ClockSquareBoldIcon as default };

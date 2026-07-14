@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserHeartRoundedBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTYgOS42OTY3M0MxNiAxMC42ODEyIDE3LjE2NDkgMTEuNzIxMyAxOC4wNDI5IDEyLjM2NTZDMTguNDYyNiAxMi42NzM2IDE4LjY3MjUgMTIuODI3NiAxOSAxMi44Mjc2QzE5LjMyNzUgMTIuODI3NiAxOS41Mzc0IDEyLjY3MzYgMTkuOTU3MSAxMi4zNjU2QzIwLjgzNTIgMTEuNzIxNCAyMiAxMC42ODEyIDIyIDkuNjk2NzJDMjIgOC4wMjM1IDIwLjM1IDcuMzk4NzkgMTkgOC42OTEzNUMxNy42NSA3LjM5ODc5IDE2IDguMDIzNSAxNiA5LjY5NjczWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTMgMjAuNjE1MUMxMi4wOTA3IDIwLjg2MTkgMTEuMDczNiAyMSAxMCAyMUM2LjEzNDAxIDIxIDMgMTkuMjA5MSAzIDE3QzMgMTQuNzkwOSA2LjEzNDAxIDEzIDEwIDEzQzEzLjg2NiAxMyAxNyAxNC43OTA5IDE3IDE3QzE3IDE3LjM0NTMgMTYuOTIzNCAxNy42ODA0IDE2Ljc3OTUgMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const UserHeartRoundedBrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -28,5 +31,3 @@ const UserHeartRoundedBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { UserHeartRoundedBrokenIcon as default };

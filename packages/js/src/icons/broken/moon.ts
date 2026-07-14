@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MoonBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03IDIwLjY2MjJDOC40NzA4NyAyMS41MTMgMTAuMTc4NiAyMiAxMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgMTEuNTM3MyAyMS4zMDY1IDExLjQ2MDggMjEuMDY3MiAxMS44NTY4QzE5LjkyODkgMTMuNzQwNiAxNy44NjE1IDE1IDE1LjUgMTVDMTEuOTEwMSAxNSA5IDEyLjA4OTkgOSA4LjVDOSA2LjEzODQ1IDEwLjI1OTQgNC4wNzEwNSAxMi4xNDMyIDIuOTMyNzZDMTIuNTM5MiAyLjY5MzQ3IDEyLjQ2MjcgMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDEzLjgyMTQgMi40ODY5NyAxNS41MjkxIDMuMzM3ODIgMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const MoonBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const MoonBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { MoonBrokenIcon as default };

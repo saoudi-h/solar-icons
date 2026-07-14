@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const AirbudsCaseMinimalisticBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zIDEzVjExQzMgNy4yNTAyNyAzIDUuMzc1NCAzLjk1NDkxIDQuMDYxMDdDNC4yNjMzMSAzLjYzNjYgNC42MzY2IDMuMjYzMzEgNS4wNjEwNyAyLjk1NDkxQzYuMzc1NCAyIDguMjUwMjcgMiAxMiAyQzE1Ljc0OTcgMiAxNy42MjQ2IDIgMTguOTM4OSAyLjk1NDkxQzE5LjM2MzQgMy4yNjMzMSAxOS43MzY3IDMuNjM2NiAyMC4wNDUxIDQuMDYxMDdDMjEgNS4zNzU0IDIxIDcuMjUwMjcgMjEgMTFWMTNDMjEgMTYuNzQ5NyAyMSAxOC42MjQ2IDIwLjA0NTEgMTkuOTM4OUMxOS43MzY3IDIwLjM2MzQgMTkuMzYzNCAyMC43MzY3IDE4LjkzODkgMjEuMDQ1MUMxNy42MjQ2IDIyIDE1Ljc0OTcgMjIgMTIgMjJDOC4yNTAyNyAyMiA2LjM3NTQgMjIgNS4wNjEwNyAyMS4wNDUxQzQuNjM2NiAyMC43MzY3IDQuMjYzMzEgMjAuMzYzNCAzLjk1NDkxIDE5LjkzODlDMy40MjM4NiAxOS4yMDggMy4xODgxNCAxOC4zMDM3IDMuMDgzNTEgMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNyA5SDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const AirbudsCaseMinimalisticBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const AirbudsCaseMinimalisticBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { AirbudsCaseMinimalisticBrokenIcon as default };

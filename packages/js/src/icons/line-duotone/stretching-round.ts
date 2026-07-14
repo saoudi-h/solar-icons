@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const StretchingRoundLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE0LjUiIGN5PSI0LjUiIHI9IjIuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik03Ljk0ODA2IDEzLjQzNDhMNy45MjMyOCAxMy40MTA5QzYuODgxNDMgMTIuNDA0IDcuNjg2NCAxMC43ODUyIDguNTkzMiAxMC4xNDI3QzkuNSA5LjUwMDE2IDEzLjM0NTEgOC41MDAxNiAxMy4zNDUxIDEzLjQzNDVDMTMuMzQ1MSAxOC4xMjkgOS42OTQ0MiAyMi4wMDAzIDUgMjIuMDAwMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOSAyMS45OTYyVjE4LjA0OTJDMTkgMTYuMjczMyAxNy4zOTUgMTQuOTIwMSAxNS42MjY1IDE1LjIwNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const StretchingRoundLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -29,5 +32,3 @@ const StretchingRoundLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { StretchingRoundLineDuotoneIcon as default };

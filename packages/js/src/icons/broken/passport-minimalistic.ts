@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PassportMinimalisticBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxN0MxMy42NTY5IDE3IDE1IDE1LjY1NjkgMTUgMTRDMTUgMTIuMzQzMSAxMy42NTY5IDExIDEyIDExQzEwLjM0MzEgMTEgOSAxMi4zNDMxIDkgMTQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTggNi4wMDAwMkg1LjA3MTA3QzQuNDc5NTMgNi4wMDAwMiA0IDUuNTIwNDkgNCA0LjkyODk1QzQgNC4zOTU5NCA0LjM5MTkzIDMuOTQ0MDMgNC45MTk1OSAzLjg2ODY1TDE1LjcxNzIgMi4zMjYxNEMxNi45MjIgMi4xNTQwMiAxOCAzLjA4ODk0IDE4IDQuMzA2MDRWNi4wMDAwMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTQgNlYxOUM0IDIwLjY1NjkgNS4zNDMxNSAyMiA3IDIySDE3QzE4LjY1NjkgMjIgMjAgMjAuNjU2OSAyMCAxOVYxNE00IDZWNU00IDZIMTdDMTguNjU2OSA2IDIwIDcuMzQzMTUgMjAgOVYxMCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const PassportMinimalisticBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -28,5 +31,3 @@ const PassportMinimalisticBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { PassportMinimalisticBrokenIcon as default };

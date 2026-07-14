@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RecordMinimalisticBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMiAxMkMyMiAxNC4yMDkxIDIwLjIwOTEgMTYgMTggMTZDMTUuNzkwOSAxNiAxNCAxNC4yMDkxIDE0IDEyQzE0IDkuNzkwODYgMTUuNzkwOSA4IDE4IDhDMjAuMjA5MSA4IDIyIDkuNzkwODYgMjIgMTJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMCAxMkMxMCAxNC4yMDkxIDguMjA5MTQgMTYgNiAxNkMzLjc5MDg2IDE2IDIgMTQuMjA5MSAyIDEyQzIgOS43OTA4NiAzLjc5MDg2IDggNiA4QzguMjA5MTQgOCAxMCA5Ljc5MDg2IDEwIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik02IDE2SDE4QzE2Ljk4NTYgMTYgMTYuMDU5MyAxNS42MjI0IDE1LjM1NDIgMTVIOC42NDU4MkM3Ljk0MDY5IDE1LjYyMjQgNy4wMTQ0NSAxNiA2IDE2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const RecordMinimalisticBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -25,5 +28,3 @@ const RecordMinimalisticBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { RecordMinimalisticBoldDuotoneIcon as default };

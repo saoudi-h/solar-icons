@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SquareAcademicCapLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05Ljc4MjcyIDMuNDk5NjVDMTEuMjAzNyAyLjgzMzQ1IDEyLjc5NjIgMi44MzM0NSAxNC4yMTcyIDMuNDk5NjVMMjAuOTA4NCA2LjYzNjY0QzIyLjM2MzkgNy4zMTg5OSAyMi4zNjM5IDkuNjgxMDUgMjAuOTA4NCAxMC4zNjM0TDE0LjIxNzMgMTMuNTAwNEMxMi43OTYzIDE0LjE2NjUgMTEuMjAzOCAxNC4xNjY1IDkuNzgyODEgMTMuNTAwNEwzLjA5MTYgMTAuMzYzNEMxLjYzNjEzIDkuNjgxMDEgMS42MzYxNCA3LjMxODk1IDMuMDkxNiA2LjYzNjU5TDkuNzgyNzIgMy40OTk2NVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTIgOC41VjE0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE5IDExLjVWMTYuNjI1NEMxOSAxNy42MzM0IDE4LjQ5NjUgMTguNTc3MiAxNy42MTQ3IDE5LjA2NTZDMTYuMTQ2MyAxOS44Nzg3IDEzLjc5NiAyMSAxMiAyMUMxMC4yMDQgMjEgNy44NTM3IDE5Ljg3ODcgNi4zODUzMyAxOS4wNjU2QzUuNTAzNSAxOC41NzcyIDUgMTcuNjMzNCA1IDE2LjYyNTRWMTEuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const SquareAcademicCapLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -26,5 +29,3 @@ const SquareAcademicCapLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { SquareAcademicCapLinearIcon as default };

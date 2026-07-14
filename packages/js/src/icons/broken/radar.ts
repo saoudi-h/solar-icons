@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RadarBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik05LjQxMTg1IDIxLjY1ODhDOS45NDExNCAyMS44MDA2IDEwLjQ3MTkgMjEuODk3MiAxMSAyMS45NTA5QzE1Ljc5NDcgMjIuNDM4NyAyMC4zNzE3IDE5LjM5MzEgMjEuNjU5MyAxNC41ODc3QzIzLjA4ODcgOS4yNTMwOCAxOS45MjI5IDMuNzY5NzEgMTQuNTg4MiAyLjM0MDI5QzExLjk1NTYgMS42MzQ4OSA5LjI4Njg0IDIuMDQ4NTcgNy4wODY5IDMuMjg5NzJNMTIgMTEuOTk5Nkw1LjAwMTk3IDYuMzM1NDZDNC41NzI4NSA1Ljk4ODEzIDMuOTM4NjkgNi4wNTE4MiAzLjYzNTk5IDYuNTEzNUMzLjA2Njc4IDcuMzgxNjMgMi42MjQxMyA4LjM1Mzg5IDIuMzQwNzggOS40MTEzNkMxLjM3MzIyIDEzLjAyMjQgMi41MTExMyAxNi43MDE1IDUuMDAxOTcgMTkuMTQ1MyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RadarBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const RadarBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { RadarBrokenIcon as default };

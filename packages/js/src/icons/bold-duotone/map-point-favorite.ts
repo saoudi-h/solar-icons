@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MapPointFavoriteBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEwLjUzNzEgMjEuNjc0NEMxMS40NjU3IDIyLjEwODUgMTIuNTM0MyAyMi4xMDg1IDEzLjQ2MjkgMjEuNjc0NEMxNy40NDY3IDE5LjgxMjQgMjAgMTQuNjA1NSAyMCAxMC4xNDMzQzIwIDUuNjQ1ODggMTYuNDE4MyAyIDEyIDJDNy41ODE3MiAyIDQgNS42NDU4OCA0IDEwLjE0MzNDNCAxNC42MDU1IDYuNTUzMzIgMTkuODEyNCAxMC41MzcxIDIxLjY3NDRaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMC43MjM4IDEzLjMzMDFDOS41NTMxNCAxMi4zOTYgOCAxMC44ODc3IDggOS40NjAyN0M4IDcuMDM0MDcgMTAuMjAwMSA2LjEyODI0IDEyIDguMDAyNDZDMTMuNzk5OSA2LjEyODI0IDE2IDcuMDM0MDcgMTYgOS40NjAyNkMxNiAxMC44ODc3IDE0LjQ0NjkgMTIuMzk2IDEzLjI3NjIgMTMuMzMwMUMxMi43MTY1IDEzLjc3NjcgMTIuNDM2NyAxNCAxMiAxNEMxMS41NjMzIDE0IDExLjI4MzUgMTMuNzc2NyAxMC43MjM4IDEzLjMzMDFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+ */
+export const MapPointFavoriteBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const MapPointFavoriteBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MapPointFavoriteBoldDuotoneIcon as default };

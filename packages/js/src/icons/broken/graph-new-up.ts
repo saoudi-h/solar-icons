@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const GraphNewUpBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iNSIgcj0iMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNNyAxNEw5LjI5Mjg5IDExLjcwNzFDOS42ODM0MiAxMS4zMTY2IDEwLjMxNjYgMTEuMzE2NiAxMC43MDcxIDExLjcwNzFMMTIuMjkyOSAxMy4yOTI5QzEyLjY4MzQgMTMuNjgzNCAxMy4zMTY2IDEzLjY4MzQgMTMuNzA3MSAxMy4yOTI5TDE3IDEwTTE0LjUgMTBIMTdWMTIuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMiAxMC41VjEyQzIyIDE2LjcxNCAyMiAxOS4wNzExIDIwLjUzNTUgMjAuNTM1NUMxOS4wNzExIDIyIDE2LjcxNCAyMiAxMiAyMkM3LjI4NTk1IDIyIDQuOTI4OTMgMjIgMy40NjQ0NyAyMC41MzU1QzIgMTkuMDcxMSAyIDE2LjcxNCAyIDEyQzIgMTAuODcxNyAyIDkuODc4MzUgMi4wMjAwOCA5TTEzLjUgMkgxMkM3LjI4NTk1IDIgNC45Mjg5MyAyIDMuNDY0NDcgMy40NjQ0N0MzLjAyMzU1IDMuOTA1MzggMi43MTUzOCA0LjQyNzIgMi41IDUuMDY5OSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const GraphNewUpBrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -29,5 +32,3 @@ const GraphNewUpBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { GraphNewUpBrokenIcon as default };

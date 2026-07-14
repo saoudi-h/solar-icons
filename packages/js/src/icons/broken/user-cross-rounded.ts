@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UserCrossRoundedBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMjAgMTcuNUwxOCAxOS41TTE4IDE3LjVMMjAgMTkuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiAxM0MxNC42MDgzIDEzIDE2Ljg4MzQgMTMuODE1MiAxOC4wODc3IDE1LjAyNE0xNS41ODQxIDIwLjQzNjZDMTQuNTM1OCAyMC43OTQ0IDEzLjMwOTkgMjEgMTIgMjFDOC4xMzQwMSAyMSA1IDE5LjIwOTEgNSAxN0M1IDE1LjY0MDcgNi4xODY1MiAxNC40Mzk4IDggMTMuNzE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const UserCrossRoundedBrokenIcon: IconNode[] = [
   [
     "circle",
     {
@@ -28,5 +31,3 @@ const UserCrossRoundedBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { UserCrossRoundedBrokenIcon as default };

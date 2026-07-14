@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const SkipPreviousLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik03LjM0MDE2IDkuMzUyNThDNS41NTMyOCAxMC41MDY1IDUuNTUzMjggMTMuNDkzNSA3LjM0MDE1IDE0LjY0NzRMMTguMTI5MiAyMS42MTQ1QzE5Ljg2NTggMjIuNzM2IDIyIDIxLjI3NjMgMjIgMTguOTY3MUwyMiA1LjAzMjlDMjIgMi43MjM2OCAxOS44NjU4IDEuMjY0MDIgMTguMTI5MiAyLjM4NTQ4TDcuMzQwMTYgOS4zNTI1OFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTIgNVYxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const SkipPreviousLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const SkipPreviousLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { SkipPreviousLinearIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const CopyLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02IDExQzYgOC4xNzE1NyA2IDYuNzU3MzYgNi44Nzg2OCA1Ljg3ODY4QzcuNzU3MzYgNSA5LjE3MTU3IDUgMTIgNUgxNUMxNy44Mjg0IDUgMTkuMjQyNiA1IDIwLjEyMTMgNS44Nzg2OEMyMSA2Ljc1NzM2IDIxIDguMTcxNTcgMjEgMTFWMTZDMjEgMTguODI4NCAyMSAyMC4yNDI2IDIwLjEyMTMgMjEuMTIxM0MxOS4yNDI2IDIyIDE3LjgyODQgMjIgMTUgMjJIMTJDOS4xNzE1NyAyMiA3Ljc1NzM2IDIyIDYuODc4NjggMjEuMTIxM0M2IDIwLjI0MjYgNiAxOC44Mjg0IDYgMTZWMTFaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTYgMTlDNC4zNDMxNSAxOSAzIDE3LjY1NjkgMyAxNlYxMEMzIDYuMjI4NzYgMyA0LjM0MzE1IDQuMTcxNTcgMy4xNzE1N0M1LjM0MzE1IDIgNy4yMjg3NiAyIDExIDJIMTVDMTYuNjU2OSAyIDE4IDMuMzQzMTUgMTggNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K)
+ */
+export const CopyLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -18,5 +21,3 @@ const CopyLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { CopyLineDuotoneIcon as default };

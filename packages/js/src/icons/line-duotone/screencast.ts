@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const ScreencastLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTExIDIwSDE0QzE3Ljc3MTIgMjAgMTkuNjU2OSAyMCAyMC44Mjg0IDE4LjgyODRDMjIgMTcuNjU2OSAyMiAxNS43NzEyIDIyIDEyQzIyIDguMjI4NzYgMjIgNi4zNDMxNSAyMC44Mjg0IDUuMTcxNTdDMTkuNjU2OSA0IDE3Ljc3MTIgNCAxNCA0SDYuNUM2LjAzNTY2IDQgNS44MDM0OSA0IDUuNjA3OTMgNC4wMTkyNkMzLjcwODgyIDQuMjA2MzEgMi4yMDYzMSA1LjcwODgyIDIuMDE5MjYgNy42MDc5M0MyIDcuODAzNDkgMiA4LjAzNTY2IDIgOC41VjExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTExIDIwQzExIDE1LjAyOTQgNi45NzA1NiAxMSAyIDExIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTggMjBDOCAxNi42ODYzIDUuMzEzNzEgMTQgMiAxNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik01IDIwQzUgMTguMzQzMSAzLjY1Njg1IDE3IDIgMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const ScreencastLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -37,5 +40,3 @@ const ScreencastLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { ScreencastLineDuotoneIcon as default };

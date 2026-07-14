@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MapArrowLeftLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC40NzMxIDEyQzE4LjQ3MzEgMTIuMjQ5OSAxOC41MzQ0IDEyLjQ5OTggMTguNjU3IDEyLjcyOTRMMjEuODA5IDE4LjYzMzFDMjIuNTQ5OSAyMC4wMjA5IDIwLjk5ODQgMjEuNTAyMSAxOS41MDI1IDIwLjgzNUwyLjk5MjgxIDEzLjQ3MjVDMi4zMzA5NCAxMy4xNzc0IDIgMTIuNTg4NyAyIDEyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTguNDczMSAxMkMxOC40NzMxIDExLjc1MDEgMTguNTM0NCAxMS41MDAyIDE4LjY1NyAxMS4yNzA2TDIxLjgwOSA1LjM2Njg5QzIyLjU0OTkgMy45NzkxNCAyMC45OTg0IDIuNDk3ODkgMTkuNTAyNSAzLjE2NDk2TDIuOTkyODEgMTAuNTI3NUMyLjMzMDk0IDEwLjgyMjYgMiAxMS40MTEzIDIgMTIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const MapArrowLeftLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const MapArrowLeftLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MapArrowLeftLineDuotoneIcon as default };

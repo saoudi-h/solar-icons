@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const UndoLeftLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDdIMTVDMTYuODY5MiA3IDE3LjgwMzkgNyAxOC41IDcuNDAxOTNDMTguOTU2MSA3LjY2NTIzIDE5LjMzNDggOC4wNDM5NCAxOS41OTgxIDguNDk5OTlDMjAgOS4xOTYxNSAyMCAxMC4xMzA4IDIwIDEyQzIwIDEzLjg2OTIgMjAgMTQuODAzOCAxOS41OTgxIDE1LjVDMTkuMzM0OCAxNS45NTYxIDE4Ljk1NjEgMTYuMzM0OCAxOC41IDE2LjU5ODFDMTcuODAzOSAxNyAxNi44NjkyIDE3IDE1IDE3SDguMDAwMDFNNyAxMEw0IDdMNyA0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const UndoLeftLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -12,5 +15,3 @@ const UndoLeftLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { UndoLeftLinearIcon as default };

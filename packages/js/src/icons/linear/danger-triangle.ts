@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const DangerTriangleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik01LjMxMTcxIDEwLjc2MTVDOC4yMzAwNyA1LjU4NzE2IDkuNjg5MjUgMyAxMiAzQzE0LjMxMDcgMyAxNS43Njk5IDUuNTg3MTYgMTguNjg4MyAxMC43NjE1TDE5LjA1MTkgMTEuNDA2M0MyMS40NzcxIDE1LjcwNjEgMjIuNjg5NyAxNy44NTYgMjEuNTkzNyAxOS40MjhDMjAuNDk3OCAyMSAxNy43ODY0IDIxIDEyLjM2MzcgMjFIMTEuNjM2M0M2LjIxMzU2IDIxIDMuNTAyMTcgMjEgMi40MDYyNiAxOS40MjhDMS4zMTAzNCAxNy44NTYgMi41MjI5MSAxNS43MDYxIDQuOTQ4MDUgMTEuNDA2M0w1LjMxMTcxIDEwLjc2MTVaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIGQ9Ik0xMiA4VjEzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTEyIDE2SDEyLjAwMDEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const DangerTriangleLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -27,5 +30,3 @@ const DangerTriangleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { DangerTriangleLinearIcon as default };

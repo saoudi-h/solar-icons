@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WatchSquareMinimalisticChargeBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMi44NTcxIDlMMTAgMTJIMTRMMTEuMTQyOSAxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik03IDJIMTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNyAyMkgxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOC45NjE0IDkuMkMxOC44ODQ5IDcuNjY0NTkgMTguNjU2NSA2LjcwNjc0IDE3Ljk3NDkgNi4wMjUxM0MxNi45NDk3IDUgMTUuMjk5OCA1IDEyIDVDOC43MDAxNyA1IDcuMDUwMjUgNSA2LjAyNTEzIDYuMDI1MTNDNSA3LjA1MDI1IDUgOC43MDAxNyA1IDEyQzUgMTUuMjk5OCA1IDE2Ljk0OTcgNi4wMjUxMyAxNy45NzQ5QzcuMDUwMjUgMTkgOC43MDAxNyAxOSAxMiAxOUMxNS4yOTk4IDE5IDE2Ljk0OTcgMTkgMTcuOTc0OSAxNy45NzQ5QzE4Ljc2NzggMTcuMTgxOSAxOC45NDc0IDE2LjAxNTEgMTguOTg4MSAxNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const WatchSquareMinimalisticChargeBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -36,5 +39,3 @@ const WatchSquareMinimalisticChargeBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { WatchSquareMinimalisticChargeBrokenIcon as default };

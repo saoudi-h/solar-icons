@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RefreshLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0zLjY3OTgxIDEzTDMuNjc5ODEgMTEuMzMzM0MzLjY3OTgxIDYuNzMwOTYgNy40NDAyIDMgMTIuMDc4OSAzQzE1LjExNzggMyAxNy43Nzk5IDQuNjAxMzYgMTkuMjU0NSA3TTIgMTEuMzMzM0wzLjY3OTgxIDEzTDUuMzU5NjIgMTEuMzMzMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIwLjMxMzcgMTFWMTIuNjY2N0MyMC4zMTM3IDE3LjI2OSAxNi41Mzg5IDIxIDExLjg4MjUgMjFDOC44MzE4OSAyMSA2LjE1OTcgMTkuMzk4NiA0LjY3OTQ0IDE3TTIxLjk5OTkgMTIuNjY2N0wyMC4zMTM3IDExTDE4LjYyNzQgMTIuNjY2NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RefreshLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -22,5 +25,3 @@ const RefreshLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { RefreshLineDuotoneIcon as default };

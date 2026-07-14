@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const EndCallBoldIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04IDEzLjQ3ODJMOCAxMi44NjE3QzggMTIuODYxNyA4IDExLjM5NjMgMTIgMTEuMzk2M0MxNiAxMS4zOTYzIDE2IDEyLjg2MTcgMTYgMTIuODYxN1YxMy4yNUMxNiAxNC4yMDY0IDE2LjcyMjcgMTUuMDE5MiAxNy43MDA0IDE1LjE2MjVMMTkuNzAwNCAxNS40NTU2QzIwLjkxMDUgMTUuNjMyOSAyMiAxNC43MjY3IDIyIDEzLjU0MjlWMTEuNDE4M0MyMiAxMC44MzEzIDIxLjgxNjIgMTAuMjU0MiAyMS4zNzAzIDkuODU2MDFDMjAuMjI5NiA4LjgzNzMyIDE3LjQyMDggNyAxMiA3QzYuMjUxNDEgNyAzLjQ0MDI3IDkuNTgyNjkgMi40NDA4MyAxMC43ODg5QzIuMTI0NyAxMS4xNzA0IDIgMTEuNjUyNSAyIDEyLjE0MTRMMiAxNC4wNjQzQzIgMTUuMzYyMyAzLjI5NTYxIDE2LjI5MiA0LjU3OTk3IDE1LjkxNTZMNi41Nzk5NyAxNS4zMjk1QzcuNDIzMjkgMTUuMDgyMyA4IDE0LjMzMDUgOCAxMy40NzgyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const EndCallBoldIcon: IconNode[] = [
   [
     "path",
     {
@@ -10,5 +13,3 @@ const EndCallBoldIcon: IconNode = [
     }
   ]
 ];
-
-export { EndCallBoldIcon as default };

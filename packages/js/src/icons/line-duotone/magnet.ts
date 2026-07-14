@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const MagnetLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMSAxOC41VjIwLjVDMjEgMjEuMzI4NCAyMC4zMjg0IDIyIDE5LjUgMjJIMTdIMTNDNy40NzcxNSAyMiAzIDE3LjUyMjggMyAxMkMzIDYuNDc3MTUgNy40NzcxNSAyIDEzIDJIMTdIMTkuNUMyMC4zMjg0IDIgMjEgMi42NzE1NyAyMSAzLjVWNS41QzIxIDYuMzI4NDMgMjAuMzI4NCA3IDE5LjUgN0gxN0gxM0MxMC4yMzg2IDcgOCA5LjIzODU4IDggMTJDOCAxNC43NjE0IDEwLjIzODYgMTcgMTMgMTdIMTdIMTkuNUMyMC4zMjg0IDE3IDIxIDE3LjY3MTYgMjEgMTguNVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0xNyAyVjdNMTcgMTdWMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const MagnetLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -22,5 +25,3 @@ const MagnetLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { MagnetLineDuotoneIcon as default };

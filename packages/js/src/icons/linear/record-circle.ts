@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const RecordCircleLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xOC41IDEyQzE4LjUgMTMuMzgwNyAxNy4zODA3IDE0LjUgMTYgMTQuNUMxNC42MTkzIDE0LjUgMTMuNSAxMy4zODA3IDEzLjUgMTJDMTMuNSAxMC42MTkzIDE0LjYxOTMgOS41IDE2IDkuNUMxNy4zODA3IDkuNSAxOC41IDEwLjYxOTMgMTguNSAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTEwLjUgMTJDMTAuNSAxMy4zODA3IDkuMzgwNzEgMTQuNSA4IDE0LjVDNi42MTkyOSAxNC41IDUuNSAxMy4zODA3IDUuNSAxMkM1LjUgMTAuNjE5MyA2LjYxOTI5IDkuNSA4IDkuNUM5LjM4MDcxIDkuNSAxMC41IDEwLjYxOTMgMTAuNSAxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTggMTQuNUgxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const RecordCircleLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -32,5 +35,3 @@ const RecordCircleLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { RecordCircleLinearIcon as default };

@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const LightbulbMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTEwIDE5LjVIMTRNMTAuNjY2NyAyMkgxMy4zMzMzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTcuNDEwNTggMTMuNjgwNUw4LjUxNDYzIDE0LjcxOTZDOC44MjQzNyAxNS4wMTEyIDkgMTUuNDE3NyA5IDE1Ljg0M0M5IDE2LjQ4MiA5LjUxOCAxNyAxMC4xNTcgMTdIMTMuODQzQzE0LjQ4MiAxNyAxNSAxNi40ODIgMTUgMTUuODQzQzE1IDE1LjQxNzcgMTUuMTc1NiAxNS4wMTEyIDE1LjQ4NTQgMTQuNzE5NkwxNi41ODk0IDEzLjY4MDVDMTguMTMwNiAxMi4yMTg3IDE4Ljk5MTIgMTAuMjk4NCAxOC45OTk5IDguMzAxOTNMMTkgOC4yMTgwN0MxOSA0LjgwNjkgMTUuODY2IDIgMTIgMkM4LjEzNDAxIDIgNSA0LjgwNjkgNSA4LjIxODA3TDUuMDAwMDcgOC4zMDE5M0M1LjAwODc1IDEwLjI5ODQgNS44NjkzOSAxMi4yMTg3IDcuNDEwNTggMTMuNjgwNVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==)
+ */
+export const LightbulbMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const LightbulbMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { LightbulbMinimalisticLineDuotoneIcon as default };

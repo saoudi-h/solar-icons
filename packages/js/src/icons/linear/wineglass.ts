@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const WineglassLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAxNS4yODU2VjIwLjk5OTlNMTIgMjAuOTk5OUgxNS43NU0xMiAyMC45OTk5SDguMjVNNSA0Ljg5NDc0QzUgMy44NDgzIDUuODQ4MyAzIDYuODk0NzQgM0gxNy4xMDUzQzE4LjE1MTcgMyAxOSAzLjg0ODMgMTkgNC44OTQ3NFY4QzE5IDExLjg2NiAxNS44NjYgMTUgMTIgMTVDOC4xMzQwMSAxNSA1IDExLjg2NiA1IDhWNC44OTQ3NFoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNS41IDkuMDAwMUM1LjUgOS4wMDAxIDcuNTgxMTUgOC4wODczNiA5IDguMDAwMUMxMS40NjUyIDcuODQ4NDcgMTIuNTM0OCAxMC4xNTE3IDE1IDEwLjAwMDFDMTYuNDE4OCA5LjkxMjgzIDE4LjUgOS4wMDAxIDE4LjUgOS4wMDAxIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const WineglassLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const WineglassLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { WineglassLinearIcon as default };

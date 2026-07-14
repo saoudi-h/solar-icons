@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const HistoryLinearIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiA4VjEyTDE0LjUgMTQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik00LjMzNzc2IDYuODcwNTJMNS42MDQxNCA1LjYwNDE0QzkuMTAxMTUgMi4xMDcxMyAxNC43OTk2IDIuMTM1NzYgMTguMzMxOSA1LjY2ODFDMjEuODY0MiA5LjIwMDQ0IDIxLjg5MjkgMTQuODk4OCAxOC4zOTU5IDE4LjM5NTlDMTQuODk4OCAyMS44OTI5IDkuMjAwNDQgMjEuODY0MiA1LjY2ODEgMTguMzMxOUMzLjU3NTg5IDE2LjIzOTcgMi43MTI4NSAxMy4zODc2IDMuMDgzNTUgMTAuNjgzMU00LjMyNDk3IDQuMzI0OTdMNC4zMzc3NiA2Ljg3MDUyTDYuODgzMzEgNi44ODMzMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const HistoryLinearIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const HistoryLinearIcon: IconNode = [
     }
   ]
 ];
-
-export { HistoryLinearIcon as default };

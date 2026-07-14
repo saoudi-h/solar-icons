@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TrashBinMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTkuMTcwNjUgNEM5LjU4MjQ5IDIuODM0ODEgMTAuNjkzNyAyIDExLjk5OTkgMkMxMy4zMDYyIDIgMTQuNDE3NCAyLjgzNDgxIDE0LjgyOTIgNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMC41MDAxIDZIMy41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE4LjgzMzQgOC41TDE4LjM3MzUgMTUuMzk5MUMxOC4xOTY1IDE4LjA1NCAxOC4xMDggMTkuMzgxNSAxNy4yNDMgMjAuMTkwN0MxNi4zNzggMjEgMTUuMDQ3NiAyMSAxMi4zODY4IDIxSDExLjYxMzRDOC45NTI2IDIxIDcuNjIyMiAyMSA2Ljc1NzE5IDIwLjE5MDdDNS44OTIxOCAxOS4zODE1IDUuODAzNjggMTguMDU0IDUuNjI2NjkgMTUuMzk5MUw1LjE2Njc1IDguNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTkuNSAxMUwxMCAxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE0LjUgMTFMMTQgMTYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const TrashBinMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -46,5 +49,3 @@ const TrashBinMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { TrashBinMinimalisticLineDuotoneIcon as default };

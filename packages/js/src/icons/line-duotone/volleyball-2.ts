@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Volleyball2LineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMlpNMTIgMkwxMS4zMTQyIDMuNjQ1ODZDMTAuMTc2MSA2LjM3NzI2IDEwLjQzMTcgOS40OTA3NSAxMiAxMk0xMiAxMkgxMi4wOTE3QzE1LjQ3MDUgMTIgMTguNjI1OCAxMy42ODg3IDIwLjUgMTYuNU0xMiAxMkwxMS41Njk3IDEyLjU1MzJDOS42MzI4NSAxNS4wNDM1IDYuNjU0NzggMTYuNSAzLjUgMTYuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIxLjk4NzcgMTEuNTAwMUwyMS4yNDI2IDEwLjc0MjdDMTkuMjQ0NSA4Ljc0NDY0IDE2LjcyMjggNy4zOTA1NiAxNCA2LjgxNDFNNS43MzI2NyAxOS43OTI5QzguOTk1OTQgMTkuNzkyOSAxMi4yOTE2IDE4LjYyODQgMTUgMTYuNzEwNU03LjQ5OTk3IDMuMDY3MzhDNi4zMDczOCA1LjkyOTYgNi4wMDM3MSA5LjAyMTExIDYuNTg4OTYgMTIuMDAwMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+ */
+export const Volleyball2LineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -22,5 +25,3 @@ const Volleyball2LineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { Volleyball2LineDuotoneIcon as default };

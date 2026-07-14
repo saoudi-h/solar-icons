@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const TestTubeMinimalisticBrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik02LjgwMDggMTEuNzgzNEw4LjA3NTAyIDExLjkyNTZDOS4wOTc3MiAxMi4wMzk4IDkuOTA1MDYgMTIuODUwNyAxMC4wMTg3IDEzLjg3NzlDMTAuMTA2MiAxNC42Njg5IDEwLjYxMDQgMTUuMzUxNSAxMS4zMzg3IDE1LjY2NUwxMyAxNi4zNTQ3TTE2IDEzLjM0MTRMMTMgMTYuMzU0N0w5LjQ4ODM4IDE5Ljg4MThDOC4wMDQwNyAyMS4zNzI3IDUuNTk3NTQgMjEuMzcyNyA0LjExMzIzIDE5Ljg4MThDMi42Mjg5MiAxOC4zOTEgMi42Mjg5MiAxNS45NzM4IDQuMTEzMjMgMTQuNDgyOUwxNC44NjM1IDMuNjg1MDRMMjAuMjM4NyA5LjA4Mzk4TDE4LjQyOSAxMC45MDE3TTIxIDkuODQ4NjdMMTQuMTgxNSAzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
+ */
+export const TestTubeMinimalisticBrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const TestTubeMinimalisticBrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { TestTubeMinimalisticBrokenIcon as default };

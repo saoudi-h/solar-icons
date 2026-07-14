@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const PlayCircleBoldDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNS40MTM3IDEzLjA1OUwxMC42OTM1IDE1Ljg0NThDOS45MzM3MSAxNi4yOTQ0IDkgMTUuNzEwNSA5IDE0Ljc4NjhWOS4yMTMxNkM5IDguMjg5NDcgOS45MzM3MSA3LjcwNTYxIDEwLjY5MzUgOC4xNTQxOUwxNS40MTM3IDEwLjk0MUMxNi4xOTU0IDExLjQwMjYgMTYuMTk1NCAxMi41OTc0IDE1LjQxMzcgMTMuMDU5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+ */
+export const PlayCircleBoldDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -20,5 +23,3 @@ const PlayCircleBoldDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { PlayCircleBoldDuotoneIcon as default };

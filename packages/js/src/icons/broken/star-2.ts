@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const Star2BrokenIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xMiAyMFYxNy42TTEyIDYuNFY0TTIwIDEySDE3LjZNNi40IDEySDRNMTcuNjU2OSA2LjM0MzE1TDE1Ljk1OTggOC4wNDAyTTguMDQwMiAxNS45NTk4TDYuMzQzMTUgMTcuNjU2OU02LjM0MjkzIDYuMzQzMzJMOC4wMzk5OSA4LjA0MDM4TTE1Ljk1OTYgMTUuOTZMMTcuNjU2NiAxNy42NTciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const Star2BrokenIcon: IconNode[] = [
   [
     "path",
     {
@@ -11,5 +14,3 @@ const Star2BrokenIcon: IconNode = [
     }
   ]
 ];
-
-export { Star2BrokenIcon as default };

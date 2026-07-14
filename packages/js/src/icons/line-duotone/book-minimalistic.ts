@@ -1,7 +1,10 @@
 /* GENERATED FILE — @solar-icons/js */
 import type { IconNode } from '../../types';
 
-const BookMinimalisticLineDuotoneIcon: IconNode = [
+/**
+ * ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik00IDhDNCA1LjE3MTU3IDQgMy43NTczNiA0Ljg3ODY4IDIuODc4NjhDNS43NTczNiAyIDcuMTcxNTcgMiAxMCAySDE0QzE2LjgyODQgMiAxOC4yNDI2IDIgMTkuMTIxMyAyLjg3ODY4QzIwIDMuNzU3MzYgMjAgNS4xNzE1NyAyMCA4VjE2QzIwIDE4LjgyODQgMjAgMjAuMjQyNiAxOS4xMjEzIDIxLjEyMTNDMTguMjQyNiAyMiAxNi44Mjg0IDIyIDE0IDIySDEwQzcuMTcxNTcgMjIgNS43NTczNiAyMiA0Ljg3ODY4IDIxLjEyMTNDNCAyMC4yNDI2IDQgMTguODI4NCA0IDE2VjhaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41Ii8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE5Ljg5NzggMTZINy44OTc3OEM2Ljk2NzgxIDE2IDYuNTAyODIgMTYgNi4xMjEzMiAxNi4xMDIyQzUuMDg2MDQgMTYuMzc5NiA0LjI3NzQgMTcuMTg4MyA0IDE4LjIyMzVNNyAxNlYyLjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+ */
+export const BookMinimalisticLineDuotoneIcon: IconNode[] = [
   [
     "path",
     {
@@ -19,5 +22,3 @@ const BookMinimalisticLineDuotoneIcon: IconNode = [
     }
   ]
 ];
-
-export { BookMinimalisticLineDuotoneIcon as default };
