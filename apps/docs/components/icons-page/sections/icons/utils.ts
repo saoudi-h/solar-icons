@@ -26,9 +26,14 @@ export const searchIcons = ({
     if (keyword) {
         const fuseSearch = new Fuse(preFilteredIcons, {
             keys: ['name', 'tags', 'category', 'categoryTags'],
-            threshold: 0.3,
+            threshold: 0.2, // Stricter threshold to compensate for ignoreLocation
+            ignoreLocation: true, // Essential for multi-word matching out of order
         })
-        return fuseSearch.search(keyword.toLowerCase()).map(r => r.item)
+
+        const terms = keyword.toLowerCase().trim().split(/\s+/).filter(Boolean)
+        const query = terms.length > 1 ? { $and: terms } : terms[0]
+
+        return fuseSearch.search(query).map(r => r.item)
     }
 
     return preFilteredIcons

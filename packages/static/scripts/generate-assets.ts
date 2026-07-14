@@ -152,8 +152,16 @@ export default descriptions\nexport { descriptions }\n`
         )
 
         // --- metadata from core (public source of truth) ---
+        const SRC_DIR = path.resolve(import.meta.dirname, '../src')
+        // Copy to dist/ (for actual package output)
         fs.copyFileSync(path.join(CORE_SRC, 'metadata.json'), META_PATH)
         fs.copyFileSync(path.join(CORE_SRC, 'metadata-descriptions.json'), META_DESC_PATH)
+        // Copy to src/ (so git tracks it and changeset detects package modifications)
+        fs.copyFileSync(path.join(CORE_SRC, 'metadata.json'), path.join(SRC_DIR, 'metadata.json'))
+        fs.copyFileSync(
+            path.join(CORE_SRC, 'metadata-descriptions.json'),
+            path.join(SRC_DIR, 'metadata-descriptions.json')
+        )
 
         console.log(
             pc.green(
