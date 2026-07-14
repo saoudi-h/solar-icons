@@ -22,5 +22,8 @@
     "js-app": "0.0.0",
     "static-app": "0.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "js-package",
+    "static-package"
+  ]
 }
