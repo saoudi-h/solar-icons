@@ -53,7 +53,7 @@ describe('@solar-icons/static build output', () => {
 
     it('per-icon ESM module is importable and returns an SVG string', async () => {
         const mod = await import(`../dist/icons/linear/login.mjs`)
-        const svg: string = mod.default
+        const svg: string = mod.LoginLinearIcon
         expect(svg).toContain('<svg')
         expect(svg).toContain('login')
         expect(svg).not.toContain('LoginLinearIcon') // variable name is mangled by tsdown minify
@@ -61,9 +61,9 @@ describe('@solar-icons/static build output', () => {
 
     it('barrel .d.mts declares every icon with Icon suffix', () => {
         const dts = fs.readFileSync(path.join(DIST, 'index.d.mts'), 'utf-8')
-        expect(dts).toContain('import AccessibilityBoldIcon')
-        expect(dts).toContain('import LoginLinearIcon')
-        expect(dts).toContain('import HomeBoldIcon')
+        expect(dts).toContain('import { AccessibilityBoldIcon }')
+        expect(dts).toContain('import { LoginLinearIcon }')
+        expect(dts).toContain('import { HomeBoldIcon }')
         expect(dts).toContain('export')
         expect(dts).toContain('AccessibilityBoldIcon')
     })
@@ -71,7 +71,7 @@ describe('@solar-icons/static build output', () => {
     it('per-icon .d.mts declares PascalCase name with Icon suffix', () => {
         const dts = fs.readFileSync(path.join(DIST, 'icons/linear/login.d.mts'), 'utf-8')
         expect(dts).toContain('LoginLinearIcon')
-        expect(dts).toContain('export { LoginLinearIcon as default }')
+        expect(dts).toContain('export { LoginLinearIcon }')
     })
 
     it('ships metadata.json (source of truth for external consumers)', () => {
