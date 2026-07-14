@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [x] **[DOCS-SEARCH-FIX]** Fix Fuse.js search logic for multi-word queries. `Priority: 🟠` `Complexity: S`
+
 ### V2 — Phase 1: Foundation
 
 - [x] **[V2-13]** Standardize import segment casing to kebab-case across all packages. ✅ Commit `84c875b40` (19 Jun). Style directories use kebab-case (`bold`, `bold-duotone`), generated imports use kebab-case paths, all demo apps updated. Zero PascalCase paths remaining. The "open decision" (lowercase vs kebab-case) was resolved to kebab-case at implementation time. `Priority: 🟠` `Complexity: M`
