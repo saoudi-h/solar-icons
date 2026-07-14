@@ -11,9 +11,9 @@ export const StaticCode: FC = () => {
     const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
-    const importName = toPascalCase(selectedIcon.name) + 'Icon'
     const styleSlug = weightToStyleSlug(weight)
     const iconName = selectedIcon.name + `-${styleSlug}`
+    const importName = toPascalCase(iconName) + 'Icon'
 
     return (
         <>
@@ -25,7 +25,11 @@ export const StaticCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="js"
-                code={`import { ${importName} } from '@solar-icons/static/${styleSlug}'`}
+                code={`// ESM (Node.js)
+import { ${importName} } from '@solar-icons/static'
+
+// Raw SVG (Bundlers)
+import ${toPascalCase(selectedIcon.name)}Svg from '@solar-icons/static/dist/icons/${styleSlug}/${selectedIcon.name}.svg?raw'`}
             />
             <CodeBlockTemplate
                 lang="html"

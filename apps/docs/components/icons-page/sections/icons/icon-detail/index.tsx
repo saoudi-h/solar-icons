@@ -123,7 +123,7 @@ const Content: FC = () => {
                     { title: 'Solid', value: 'solid', content: <SolidCode /> },
                     { title: 'Angular', value: 'angular', content: <AngularCode /> },
                     { title: 'Static', value: 'static', content: <StaticCode /> },
-                    { title: 'Vanilla JS', value: 'js', content: <JsCode /> },
+                    { title: 'JS', value: 'js', content: <JsCode /> },
                 ]}
             />
         </div>

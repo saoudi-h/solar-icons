@@ -67,7 +67,7 @@ export const config: Config = {
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
                     },
                     {
-                        label: 'Vanilla JS',
+                        label: 'JS',
                         url: '/docs/v2/packages/js',
                         icon: <Icon icon="devicon:javascript" />,
                     },
@@ -209,7 +209,7 @@ export const config: Config = {
                 iconify: 'vscode-icons:file-type-svg',
             },
             {
-                title: 'Vanilla JS',
+                title: 'JS',
                 link: '/docs/v2/packages/js',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/js',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/js',

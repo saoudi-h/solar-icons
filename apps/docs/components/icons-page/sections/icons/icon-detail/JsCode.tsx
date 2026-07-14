@@ -11,15 +11,15 @@ export const JsCode: FC = () => {
     const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
-    const importName = toPascalCase(selectedIcon.name) + 'Icon'
     const styleSlug = weightToStyleSlug(weight)
     const iconName = selectedIcon.name + `-${styleSlug}`
+    const importName = toPascalCase(iconName) + 'Icon'
 
     return (
         <>
             <Button variant="link" size="default" asChild>
                 <Link href="/docs/v2/packages/js">
-                    Get started with <span className="font-heading">Vanilla JS</span>{' '}
+                    Get started with <span className="font-heading">JS</span>{' '}
                     <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>
