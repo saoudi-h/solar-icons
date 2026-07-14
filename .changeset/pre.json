@@ -23,6 +23,7 @@
     "static-app": "0.0.1"
   },
   "changesets": [
+    "fix-icons-stroke",
     "js-package",
     "static-package"
   ]

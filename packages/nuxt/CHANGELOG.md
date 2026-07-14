@@ -1,5 +1,14 @@
 # @solar-icons/nuxt
 
+## 1.2.2-beta.0
+
+### Patch Changes
+
+- [#504](https://github.com/saoudi-h/solar-icons/pull/504) [`3723c12`](https://github.com/saoudi-h/solar-icons/commit/3723c12f5e096ff2670067a0d3df9960990c31dc) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: update airbuds and radial-blur icons (fix stroke width and styles)
+
+- Updated dependencies [[`3723c12`](https://github.com/saoudi-h/solar-icons/commit/3723c12f5e096ff2670067a0d3df9960990c31dc)]:
+    - @solar-icons/vue@1.2.2-beta.0
+
 ## 1.2.1
 
 ### Patch Changes
