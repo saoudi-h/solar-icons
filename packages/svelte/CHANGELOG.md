@@ -1,5 +1,11 @@
 # @solar-icons/svelte
 
+## 2.0.0-beta.1
+
+### Patch Changes
+
+- [#504](https://github.com/saoudi-h/solar-icons/pull/504) [`3723c12`](https://github.com/saoudi-h/solar-icons/commit/3723c12f5e096ff2670067a0d3df9960990c31dc) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: update airbuds and radial-blur icons (fix stroke width and styles)
+
 ## 1.1.1
 
 ### Patch Changes
