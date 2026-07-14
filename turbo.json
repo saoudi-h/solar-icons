@@ -23,6 +23,7 @@
                 "src/csr/**",
                 "src/ssr/**",
                 "src/defs/**",
+                "src/dynamic/**",
                 "src/metadata*.json",
                 "svgs/**"
             ]
