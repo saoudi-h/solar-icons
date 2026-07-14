@@ -1,108 +1,108 @@
 {
-    "name": "@solar-icons/vue",
-    "version": "1.2.1",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
+  "name": "@solar-icons/vue",
+  "version": "2.0.0-beta.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Solar Icons for Vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saoudi-h/solar-icons.git",
+    "directory": "packages/vue"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "LICENSE-THIRD-PARTY"
+  ],
+  "scripts": {
+    "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+    "generate:assets": "tsx scripts/generate-assets.ts",
+    "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
+    "lint": "eslint . --max-warnings 10",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier \"**/*\" --ignore-unknown --list-different",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+    "clean": "rimraf *.tsbuildinfo node_modules build dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsgo --noEmit",
+    "pre-commit": "lint-staged"
+  },
+  "types": "./dist/index.d.mts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
     },
-    "description": "Solar Icons for Vue",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/saoudi-h/solar-icons.git",
-        "directory": "packages/vue"
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
     },
-    "type": "module",
-    "sideEffects": false,
-    "files": [
-        "dist",
-        "README.md",
-        "LICENSE",
-        "LICENSE-THIRD-PARTY"
-    ],
-    "scripts": {
-        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "generate:assets": "tsx scripts/generate-assets.ts",
-        "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
-        "lint": "eslint . --max-warnings 10",
-        "lint:fix": "eslint . --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "test:coverage": "vitest run --coverage",
-        "typecheck": "tsgo --noEmit",
-        "pre-commit": "lint-staged"
+    "./lib": {
+      "types": "./dist/lib/index.d.mts",
+      "import": "./dist/lib/index.mjs"
     },
-    "types": "./dist/index.d.mts",
-    "exports": {
-        "./package.json": {
-            "default": "./package.json"
-        },
-        ".": {
-            "types": "./dist/index.d.mts",
-            "import": "./dist/index.mjs"
-        },
-        "./lib": {
-            "types": "./dist/lib/index.d.mts",
-            "import": "./dist/lib/index.mjs"
-        },
-        "./lib/*": {
-            "types": "./dist/lib/*.d.mts",
-            "import": "./dist/lib/*.mjs"
-        },
-        "./dynamic": {
-            "types": "./dist/icons/dynamic/index.d.mts",
-            "import": "./dist/icons/dynamic/index.mjs"
-        },
-        "./dynamic/*": {
-            "types": "./dist/icons/dynamic/*.d.mts",
-            "import": "./dist/icons/dynamic/*.mjs"
-        },
-        "./*": {
-            "types": "./dist/icons/style/*.d.mts",
-            "import": "./dist/icons/style/*.mjs"
-        },
-        "./bold/*": {
-            "types": "./dist/icons/bold/*.d.mts",
-            "import": "./dist/icons/bold/*.mjs"
-        },
-        "./bold-duotone/*": {
-            "types": "./dist/icons/bold-duotone/*.d.mts",
-            "import": "./dist/icons/bold-duotone/*.mjs"
-        },
-        "./broken/*": {
-            "types": "./dist/icons/broken/*.d.mts",
-            "import": "./dist/icons/broken/*.mjs"
-        },
-        "./line-duotone/*": {
-            "types": "./dist/icons/line-duotone/*.d.mts",
-            "import": "./dist/icons/line-duotone/*.mjs"
-        },
-        "./linear/*": {
-            "types": "./dist/icons/linear/*.d.mts",
-            "import": "./dist/icons/linear/*.mjs"
-        },
-        "./outline/*": {
-            "types": "./dist/icons/outline/*.d.mts",
-            "import": "./dist/icons/outline/*.mjs"
-        }
+    "./lib/*": {
+      "types": "./dist/lib/*.d.mts",
+      "import": "./dist/lib/*.mjs"
     },
-    "peerDependencies": {
-        "vue": ">=3.0.0"
+    "./dynamic": {
+      "types": "./dist/icons/dynamic/index.d.mts",
+      "import": "./dist/icons/dynamic/index.mjs"
     },
-    "devDependencies": {
-        "@solar-icons/core": "workspace:*",
-        "@vitejs/plugin-vue": "^6.0.7",
-        "@vue/compiler-sfc": "3.5.39",
-        "@vue/test-utils": "^2.4.11",
-        "jsdom": "^29.1.1",
-        "picocolors": "^1.1.1",
-        "unplugin-vue": "^7.2.0",
-        "vite": "^8.1.3",
-        "vitest": "^4.1.10",
-        "vue": "^3.5.39",
-        "vue-tsc": "3.3.7"
+    "./dynamic/*": {
+      "types": "./dist/icons/dynamic/*.d.mts",
+      "import": "./dist/icons/dynamic/*.mjs"
     },
-    "license": "MIT"
+    "./*": {
+      "types": "./dist/icons/style/*.d.mts",
+      "import": "./dist/icons/style/*.mjs"
+    },
+    "./bold/*": {
+      "types": "./dist/icons/bold/*.d.mts",
+      "import": "./dist/icons/bold/*.mjs"
+    },
+    "./bold-duotone/*": {
+      "types": "./dist/icons/bold-duotone/*.d.mts",
+      "import": "./dist/icons/bold-duotone/*.mjs"
+    },
+    "./broken/*": {
+      "types": "./dist/icons/broken/*.d.mts",
+      "import": "./dist/icons/broken/*.mjs"
+    },
+    "./line-duotone/*": {
+      "types": "./dist/icons/line-duotone/*.d.mts",
+      "import": "./dist/icons/line-duotone/*.mjs"
+    },
+    "./linear/*": {
+      "types": "./dist/icons/linear/*.d.mts",
+      "import": "./dist/icons/linear/*.mjs"
+    },
+    "./outline/*": {
+      "types": "./dist/icons/outline/*.d.mts",
+      "import": "./dist/icons/outline/*.mjs"
+    }
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@solar-icons/core": "workspace:*",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/compiler-sfc": "3.5.39",
+    "@vue/test-utils": "^2.4.11",
+    "jsdom": "^29.1.1",
+    "picocolors": "^1.1.1",
+    "unplugin-vue": "^7.2.0",
+    "vite": "^8.1.3",
+    "vitest": "^4.1.10",
+    "vue": "^3.5.39",
+    "vue-tsc": "3.3.7"
+  },
+  "license": "MIT"
 }

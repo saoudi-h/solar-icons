@@ -1,103 +1,103 @@
 {
-    "name": "@solar-icons/core",
-    "version": "1.1.1",
-    "private": true,
-    "type": "module",
-    "main": "./dist/esm/index.mjs",
-    "types": "./dist/types/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/types/index.d.ts",
-            "import": "./dist/esm/index.mjs",
-            "require": "./dist/cjs/index.cjs"
-        },
-        "./runtime": {
-            "types": "./dist/types/runtime.d.ts",
-            "import": "./dist/esm/runtime.mjs",
-            "require": "./dist/cjs/runtime.cjs"
-        },
-        "./package.json": {
-            "default": "./package.json"
-        },
-        "./metadata.json": {
-            "default": "./dist/src/metadata.json"
-        },
-        "./metadata-descriptions.json": {
-            "default": "./dist/src/metadata-descriptions.json"
-        }
+  "name": "@solar-icons/core",
+  "version": "2.0.0-beta.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
     },
-    "scripts": {
-        "build": "vite build && tsc --build tsconfig.build.json",
-        "lint": "eslint . --max-warnings 0",
-        "lint:fix": "eslint . --max-warnings 0 --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "generate:svgs": "tsx src/scripts/generate-svgs.ts",
-        "refresh:zip": "bash scripts/refresh-from-figma-zip.sh",
-        "generate:pngs": "tsx src/scripts/generate-pngs.ts",
-        "generate:descriptions": "tsx src/scripts/generate-descriptions.ts",
-        "generate:fix:descriptions": "tsx src/scripts/fix-descriptions.ts",
-        "check:svgs": "tsx src/scripts/check-svgs.ts",
-        "check:metadata": "tsx src/scripts/check-metadata.ts",
-        "check:descriptions": "tsx src/scripts/check-descriptions.ts",
-        "clean": "rm -rf node_modules dist",
-        "clean:generated": "rimraf svgs src/metadata.json",
-        "typecheck": "tsgo --noEmit",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "pre-commit": "lint-staged"
+    "./runtime": {
+      "types": "./dist/types/runtime.d.ts",
+      "import": "./dist/esm/runtime.mjs",
+      "require": "./dist/cjs/runtime.cjs"
     },
-    "devDependencies": {
-        "@tala-tools/eslint": "0.1.4",
-        "@tala-tools/prettier": "0.0.3",
-        "@tala-tools/tsconfig": "0.0.1",
-        "@types/node": "^26.1.1",
-        "@vitejs/plugin-react": "^6.0.3",
-        "axios": "^1.18.1",
-        "dotenv": "^17.4.2",
-        "eslint": "^10.6.0",
-        "figma-api": "2.2.1-beta",
-        "globals": "^17.7.0",
-        "p-limit": "^7.3.0",
-        "picocolors": "^1.1.1",
-        "pino": "^10.3.1",
-        "pino-pretty": "^13.1.3",
-        "prettier": "^3.9.4",
-        "rimraf": "^6.1.3",
-        "sharp": "^0.35.3",
-        "typescript": "^6.0.3",
-        "vite": "^8.1.3",
-        "vite-plugin-static-copy": "^4.1.1",
-        "vitest": "^4.1.10"
+    "./package.json": {
+      "default": "./package.json"
     },
-    "keywords": [
-        "core",
-        "icons",
-        "svg",
-        "solar",
-        "design",
-        "interface",
-        "utility",
-        "UI",
-        "UX"
-    ],
-    "author": {
-        "name": "Saoudi Hakim",
-        "url": "https://hakimsaoudi.dev",
-        "email": "saoudihakim@gmail.com"
+    "./metadata.json": {
+      "default": "./dist/src/metadata.json"
     },
-    "peerDependencies": {
-        "picocolors": "^1.1.1"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/saoudi-h/solar-icons/issues"
-    },
-    "engines": {
-        "node": ">=16"
-    },
-    "dependencies": {
-        "@langchain/core": "^1.2.1",
-        "@langchain/ollama": "^1.3.0"
+    "./metadata-descriptions.json": {
+      "default": "./dist/src/metadata-descriptions.json"
     }
+  },
+  "scripts": {
+    "build": "vite build && tsc --build tsconfig.build.json",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --max-warnings 0 --fix",
+    "format": "prettier \"**/*\" --ignore-unknown --list-different",
+    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+    "generate:svgs": "tsx src/scripts/generate-svgs.ts",
+    "refresh:zip": "bash scripts/refresh-from-figma-zip.sh",
+    "generate:pngs": "tsx src/scripts/generate-pngs.ts",
+    "generate:descriptions": "tsx src/scripts/generate-descriptions.ts",
+    "generate:fix:descriptions": "tsx src/scripts/fix-descriptions.ts",
+    "check:svgs": "tsx src/scripts/check-svgs.ts",
+    "check:metadata": "tsx src/scripts/check-metadata.ts",
+    "check:descriptions": "tsx src/scripts/check-descriptions.ts",
+    "clean": "rm -rf node_modules dist",
+    "clean:generated": "rimraf svgs src/metadata.json",
+    "typecheck": "tsgo --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "@tala-tools/eslint": "0.1.4",
+    "@tala-tools/prettier": "0.0.3",
+    "@tala-tools/tsconfig": "0.0.1",
+    "@types/node": "^26.1.1",
+    "@vitejs/plugin-react": "^6.0.3",
+    "axios": "^1.18.1",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.6.0",
+    "figma-api": "2.2.1-beta",
+    "globals": "^17.7.0",
+    "p-limit": "^7.3.0",
+    "picocolors": "^1.1.1",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.3",
+    "prettier": "^3.9.4",
+    "rimraf": "^6.1.3",
+    "sharp": "^0.35.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3",
+    "vite-plugin-static-copy": "^4.1.1",
+    "vitest": "^4.1.10"
+  },
+  "keywords": [
+    "core",
+    "icons",
+    "svg",
+    "solar",
+    "design",
+    "interface",
+    "utility",
+    "UI",
+    "UX"
+  ],
+  "author": {
+    "name": "Saoudi Hakim",
+    "url": "https://hakimsaoudi.dev",
+    "email": "saoudihakim@gmail.com"
+  },
+  "peerDependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saoudi-h/solar-icons/issues"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/ollama": "^1.3.0"
+  }
 }
