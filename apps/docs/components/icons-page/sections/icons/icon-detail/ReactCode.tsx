@@ -19,7 +19,7 @@ export const ReactCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/react">
+                <Link href="/docs/v2/packages/react">
                     Get started with React <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>

@@ -63,6 +63,23 @@
             "name": "angular-app",
             "path": "apps/angular-app",
         },
+        {
+            "hame": "static",
+            "path": "packages/static"
+        },
+        {
+            "name": "static-app",
+            "path": "apps/static-app",
+        },
+        {
+            "hame": "js",
+            "path": "packages/js"
+        },
+        {
+            "name": "js-app",
+            "path": "apps/js-app",
+        },
+        
     ],
     "settings": {
         "biome.enabled": false,

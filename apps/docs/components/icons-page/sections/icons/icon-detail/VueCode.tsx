@@ -18,7 +18,7 @@ export const VueCode: FC = () => {
     return (
         <div className="flex flex-col gap-2">
             <Button variant="link" size="default" asChild>
-                <Link href="/docs/v2/frameworks/vue">
+                <Link href="/docs/v2/packages/vue">
                     Get started with Vue <ArrowRightUpIcon size={16} />
                 </Link>
             </Button>

@@ -16,7 +16,11 @@
     "@solar-icons/react-native": "1.1.1",
     "@solar-icons/solid": "1.0.1",
     "@solar-icons/svelte": "1.1.1",
-    "@solar-icons/vue": "1.2.1"
+    "@solar-icons/vue": "1.2.1",
+    "@solar-icons/js": "1.1.1",
+    "@solar-icons/static": "1.1.1",
+    "js-app": "0.0.0",
+    "static-app": "0.0.1"
   },
   "changesets": []
 }

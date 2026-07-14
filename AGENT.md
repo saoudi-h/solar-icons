@@ -16,7 +16,7 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 - **One focused commit per change.** Split a session's work across multiple commits when it spans several dimensions.
 - **Versioning & publishing:** Changesets. `.changeset/config.json` lists the docs app and the demo apps under `ignore`.
 - **PR base branch:** `main`. Beta releases flow through the `beta` branch via `.github/workflows/`.
-- **Language:** English only. The repo contains no tracked French content.
+- **Language: English only — no exceptions.** Every file in this repo, including gitignored worklogs, AGENT.md files, TASKS.md, comments, commit messages, and documentation MUST be in English. Never write French (or any other language) anywhere in the codebase, regardless of what language the maintainer uses in conversation with you. This applies to all agents and all sessions. If you discover pre-existing non-English content, fix it immediately.
 - **Pre-commit:** Husky + lint-staged at the root, per-package `lint-staged.config.mjs`.
 
 ## 🏗 Stack & Architecture
@@ -35,6 +35,8 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 |---|---|
 | `packages/core` | Private source-of-truth for SVGs, metadata, types, utils. |
 | `packages/react`, `vue`, `nuxt`, `svelte`, `solid`, `angular`, `react-native` | Public framework packages. (`@solar-icons/react-perf` was merged into `@solar-icons/react` and is discontinued — see Release governance.) |
+| `packages/static` | Public non-framework package (`@solar-icons/static`): static assets from `core/svgs` — individual SVGs, SVG sprite, string map. No runtime, no framework. `scripts/generate-assets.ts` consumes `parseSvgs` + `transformDuotoneAccent` from `@solar-icons/core`. |
+| `packages/js` | **Planned** (`@solar-icons/js`): vanilla-JS runtime DOM injection (Lucide `lucide` equivalent). Not yet created. |
 | `packages/figma-fix-plugin` | Figma plugin source. Not part of the pnpm workspace. |
 | `packages/figma-rename-plugin` | Figma plugin source (added for v2). Renames icon components in the local Figma file per issue #493. Runs in Figma's sandbox, no REST API calls. Not part of the pnpm workspace. |
 | `packages/figma-export-plugin` | Figma plugin source (added for v2). Exports every component as SVG via `node.exportAsync()`, bundles as ZIP, triggers browser download. The Figma-REST-free replacement for `pnpm generate:svgs` on the free plan. Not part of the pnpm workspace. |
@@ -64,9 +66,14 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 - **Angular `all-icons.types.ts` is a codegen-emitted file serialized on a single line** by `packages/angular/scripts/generate-assets.ts:62-78` (`allNames.join(' | ')`). The previous multi-line format in the repo was an artifact of an older codegen. After running `pnpm generate:assets`, the file is rewritten as one line — this is expected; do not commit a manual multi-line reformat (it will be erased on the next codegen run). See `.autonomos/worklogs/2026-07-05-DOCS-AUDIT-FINDINGS.md`.
 - **Nuxt module defaults match the underlying `@solar-icons/vue` package** (D-1, 2026-07-06): `autoImport: true`, `provider: true` (booleans, not strings), `color: 'currentColor'`, `size: 24`, `strokeWidth: 1.5`. The module injects `SolarState` and writes `--solar-*` CSS variables on `document.body`, not a `<SolarProvider>` wrapper. `provider: false` requires the user to call `createSolarIcons` from a Nuxt plugin or to add `<SolarProvider>` in `app.vue`.
 - **Angular `useSolar()` race condition** (B-3, 2026-07-06): a child component projected into `<solar-provider>` can call `useSolar().setColor(...)` in its constructor, but the provider's `effect()` for `color="..."` runs after the child constructor completes and overrides the child's write. The regression test `packages/angular/src/lib/solar-provider.spec.ts` pins this behaviour. Children must initialise state in `ngOnInit` or in event handlers (not in the constructor) to keep their writes. Docs expose this in the `<Callout type="warn">` of `frameworks/angular.mdx` and `migration-to-v2/angular.mdx`.
+- **Non-framework packages share one branch** (2026-07-12): `@solar-icons/static` and `@solar-icons/js` are developed together on `feat/non-framework-packages` (off `v2`) and will likely be released together. Issue: #500. Build `static` first (SVGs already in `core/svgs`); `js` after (needs `createIcons` + style selector codegen).
+- **Testing two layers** (2026-07-12, user directive): (1) unit tests with Vitest on codegen/build output; (2) *visual* confidence via the demo apps (`apps/react-app`, `apps/svelte-app`, …) — the human maintainer eyeballs real rendered icons there because many visual regressions can't be caught programmatically. Favour both when shipping a package.
 - **`react-native` package has no `test` npm script** (2026-07-06). The standard `pnpm --filter @solar-icons/react-native run test` returns `ERR_PNPM_NO_SCRIPT`. Run RN tests with `npx vitest run` directly from `packages/react-native/` (the local `vitest.config.ts` picks up `tests/**/*.test.tsx`). The other 5 web packages expose a `test` script. The 13 existing RN tests pass with `vitest run`.
 - **Angular dynamic default weight must be `Linear`** (D-ANGULAR-DEFAULT-WEIGHT, 2026-07-07). The `generate-assets.ts` reorders the `@if/@else if` chain so `Linear` is first. The other frameworks default to `linear` via `const key = weight ? WEIGHT_MAP[weight] : 'linear'`. If the generator is modified, verify the default weight remains `Linear` — the `WEIGHTS` array starts with `Bold`, so naively iterating it puts `Bold` first. See `packages/angular/AGENT.md`.
 - **Angular test pitfalls** (2026-07-07): `fixture.nativeElement` is a wrapper `<div>`, not the component's host element. To target the host SVG: `fixture.nativeElement.querySelector('svg[solarArrowUp]')`. `classList` on SVG elements in jsdom returns `SVGAnimatedString`, not `DOMTokenList` — use `getAttribute('class')?.split(/\s+/).filter(Boolean)` instead. See `packages/angular/src/lib/dynamic-smoke.spec.ts` for the canonical pattern.
+
+## ⚙️ Workflow & Preferences
+- **Clone repos for ground truth:** When docs are thin or unclear, clone the official repo and read the source. Trust the code over summaries.
 
 ## 🚀 Release governance (beta)
 

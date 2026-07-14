@@ -1,0 +1,118 @@
+{
+    "name": "@solar-icons/js",
+    "version": "1.1.1",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "description": "Vanilla JavaScript runtime DOM injection for Solar Icons",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/js"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "scripts": {
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "build:types": "tsgo --noEmit",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate.ts",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist src/icons src/index.ts",
+        "test": "vitest run",
+        "typecheck": "tsgo --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "types": "./dist/index.d.mts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./bold/*": {
+            "types": "./dist/icons/bold/*.d.mts",
+            "import": "./dist/icons/bold/*.mjs"
+        },
+        "./bold-duotone/*": {
+            "types": "./dist/icons/bold-duotone/*.d.mts",
+            "import": "./dist/icons/bold-duotone/*.mjs"
+        },
+        "./broken/*": {
+            "types": "./dist/icons/broken/*.d.mts",
+            "import": "./dist/icons/broken/*.mjs"
+        },
+        "./linear/*": {
+            "types": "./dist/icons/linear/*.d.mts",
+            "import": "./dist/icons/linear/*.mjs"
+        },
+        "./line-duotone/*": {
+            "types": "./dist/icons/line-duotone/*.d.mts",
+            "import": "./dist/icons/line-duotone/*.mjs"
+        },
+        "./outline/*": {
+            "types": "./dist/icons/outline/*.d.mts",
+            "import": "./dist/icons/outline/*.mjs"
+        },
+        "./sprite": {
+            "types": "./dist/sprite.d.mts",
+            "import": "./dist/sprite.svg"
+        },
+        "./icons.json": {
+            "types": "./dist/icons.d.mts",
+            "import": "./dist/icons.json"
+        },
+        "./metadata.json": {
+            "types": "./dist/metadata.d.mts",
+            "import": "./dist/metadata.json"
+        },
+        "./metadata-descriptions.json": {
+            "types": "./dist/metadata-descriptions.d.mts",
+            "import": "./dist/metadata-descriptions.json"
+        }
+    },
+    "devDependencies": {
+        "@solar-icons/core": "workspace:*",
+        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/prettier": "0.0.3",
+        "@tala-tools/tsconfig": "0.0.1",
+        "@types/node": "^26.1.1",
+        "dotenv": "^17.4.2",
+        "jsdom": "^25.0.1",
+        "node-html-parser": "^6.1.13",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.9.4",
+        "rimraf": "^6.1.3",
+        "tsdown": "^0.22.4",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.10"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "keywords": [
+        "vanilla",
+        "js",
+        "javascript",
+        "icons",
+        "svg",
+        "solar",
+        "DOM"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "license": "MIT"
+}

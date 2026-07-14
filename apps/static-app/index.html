@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Solar Icons — Static Package Visual Test</title>
+        <link rel="stylesheet" href="/src/style.css" />
+    </head>
+    <body class="bg-black text-white font-sans antialiased">
+        <main class="max-w-6xl mx-auto px-6 py-12 space-y-16">
+            <header>
+                <h1 class="text-3xl font-bold tracking-tight">
+                    <span class="text-yellow-400">@solar-icons/static</span>
+                    <span class="opacity-40"> — Visual Confidence Test</span>
+                </h1>
+                <p class="mt-2 text-sm opacity-50">
+                    Framework-free static assets: individual SVGs, SVG sprite, per-icon ESM modules,
+                    metadata JSON. All consumed from the dist output, no runtime.
+                </p>
+            </header>
+
+            <!-- Metadata Stats -->
+            <section>
+                <h2 class="text-lg font-semibold mb-4 opacity-80">Package Metadata</h2>
+                <div id="metadata-info" class="flex gap-6 flex-wrap"></div>
+            </section>
+
+            <!-- Section 1: Per-icon ESM imports -->
+            <section>
+                <h2 class="text-lg font-semibold mb-4 opacity-80">
+                    1. Per-icon ESM Modules
+                    <span class="text-sm font-normal opacity-50">
+                        — import from @solar-icons/static, tree-shakable
+                    </span>
+                </h2>
+                <div id="per-icon-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+            </section>
+
+            <!-- Section 2: SVG Sprite -->
+            <section>
+                <h2 class="text-lg font-semibold mb-4 opacity-80">
+                    2. SVG Sprite
+                    <span class="text-sm font-normal opacity-50">
+                        — svg xmlns=&quot;http://www.w3.org/2000/svg&quot;... &lt;use href=&quot;sprite.svg#id&quot; /&gt;
+                    </span>
+                </h2>
+                <div id="sprite-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+            </section>
+
+            <!-- Section 3: data: URLs -->
+            <section>
+                <h2 class="text-lg font-semibold mb-4 opacity-80">
+                    3. &lt;img&gt; with data: URLs
+                    <span class="text-sm font-normal opacity-50">
+                        — SVG string → data:image/svg+xml;utf8 URI
+                    </span>
+                </h2>
+                <div id="img-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+            </section>
+
+            <!-- Section 4: CSS variable theming -->
+            <section>
+                <h2 class="text-lg font-semibold mb-4 opacity-80">
+                    4. CSS Variable Theming
+                    <span class="text-sm font-normal opacity-50">
+                        — --solar-{color,size,stroke-width,secondary-color,secondary-opacity}
+                    </span>
+                </h2>
+
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-4 flex-wrap">
+                        <div class="theme-panel">
+                            <label>--solar-color</label>
+                            <input id="theme-color" type="color" value="#ffffff" />
+                        </div>
+                        <div class="theme-panel">
+                            <label>--solar-size</label>
+                            <input id="theme-size" type="range" min="12" max="48" value="24" />
+                        </div>
+                        <div class="theme-panel">
+                            <label>--solar-stroke-width</label>
+                            <input id="theme-stroke" type="range" min="0.5" max="3" step="0.1" value="1.5" />
+                        </div>
+                        <div class="theme-panel">
+                            <label>--solar-secondary-color</label>
+                            <input id="theme-secondary-color" type="color" value="#ffffff" />
+                        </div>
+                        <div class="theme-panel">
+                            <label>--solar-secondary-opacity</label>
+                            <input id="theme-secondary-opacity" type="range" min="0" max="1" step="0.05" value="0.4" />
+                        </div>
+                    </div>
+
+                    <!-- Grid of all icons for theming -->
+                    <div class="theme-row mt-4">
+                        <select id="style-select" class="bg-white/5 border border-white/10 text-white rounded px-3 py-2 text-sm outline-none cursor-pointer">
+                            <option value="line-duotone">LineDuotone</option>
+                            <option value="bold">Bold</option>
+                            <option value="bold-duotone">BoldDuotone</option>
+                            <option value="broken">Broken</option>
+                            <option value="linear">Linear</option>
+                            <option value="outline">Outline</option>
+                        </select>
+                    </div>
+                    <div id="theme-grid" class="solar-icons-demo" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 1rem; padding-top: 1.5rem; max-height: 500px; overflow-y: auto;">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

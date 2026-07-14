@@ -220,9 +220,12 @@ const BentoHeader = ({
                 {title}
             </h3>
             {href && buttonText && (
-                <Button asChild size="sm" variant="default" colors="muted" className="
-                  rounded-full
-                ">
+                <Button
+                    asChild
+                    size="sm"
+                    variant="default"
+                    colors="muted"
+                    className="rounded-full">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRightIcon />

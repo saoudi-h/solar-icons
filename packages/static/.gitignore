@@ -1,0 +1,10 @@
+node_modules
+.vscode
+dist
+build
+*.tsbuildinfo
+src/icons/
+src/index.ts
+src/types.ts
+LICENSE
+LICENSE-THIRD-PARTY

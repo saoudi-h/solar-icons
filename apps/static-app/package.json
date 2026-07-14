@@ -1,0 +1,29 @@
+{
+    "name": "static-app",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "clean": "rm -rf node_modules dist",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "dependencies": {
+        "@solar-icons/static": "workspace:*"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.2",
+        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/prettier": "0.0.3",
+        "tailwindcss": "^4.3.2",
+        "typescript": "^6.0.3",
+        "vite": "^8.1.4"
+    }
+}

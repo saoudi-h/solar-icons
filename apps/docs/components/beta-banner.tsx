@@ -11,9 +11,9 @@ export function V2BetaBanner() {
     return (
         <Banner id="v2-beta" variant="rainbow">
             Solar Icons v2 is in beta. APIs may change before the stable release.{' '}
-            <a
-                href="https://github.com/saoudi-h/solar-icons/issues"
-                className="underline">
+            <a href="https://github.com/saoudi-h/solar-icons/issues" className="
+              underline
+            ">
                 Report issues
             </a>
         </Banner>
