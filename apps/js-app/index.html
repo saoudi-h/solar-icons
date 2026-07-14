@@ -3,75 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solar Icons - JS Test App</title>
+    <title>Solar Icons - Exhaustive JS Test App</title>
     <style>
-      body {
-        font-family: system-ui, sans-serif;
-        padding: 2rem;
-        background: #111;
-        color: #fff;
+      :root {
+        --icon-size: 32px;
+        --icon-color: #ffffff;
+        --icon-stroke-width: 1.5;
+        --solar-secondary-color: #3b82f6;
+        --solar-secondary-opacity: 0.5;
+        --bg-color: #111111;
+        --panel-bg: #1a1a1a;
+        --border-color: #333333;
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: var(--bg-color);
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        width: 300px;
+        background: var(--panel-bg);
+        border-right: 1px solid var(--border-color);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        overflow-y: auto;
+      }
+
+      .sidebar h1 {
+        font-size: 1.25rem;
+        margin: 0 0 1rem 0;
+        color: #e5e7eb;
+      }
+
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .control-group label {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .control-group input[type="range"] {
+        width: 100%;
+        accent-color: #3b82f6;
+      }
+
+      .control-group input[type="color"] {
+        width: 100%;
+        height: 36px;
+        padding: 0;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .control-group select {
+        width: 100%;
+        padding: 0.5rem;
+        background: #000;
+        color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 0.875rem;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .header {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg-color);
+      }
+
+      .header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .stats {
+        color: #9ca3af;
+        font-size: 0.875rem;
+      }
+
+      .icon-grid-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 2rem;
+      }
+
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1.5rem;
       }
+
       .icon-box {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
-        background: #222;
+        padding: 1.5rem 1rem;
+        background: var(--panel-bg);
+        border: 1px solid var(--border-color);
         border-radius: 8px;
+        transition: transform 0.2s, border-color 0.2s;
+        cursor: pointer;
       }
-      .icon-box p {
-        margin-top: 0.5rem;
-        font-size: 0.8rem;
-        color: #888;
+
+      .icon-box:hover {
+        transform: translateY(-2px);
+        border-color: #4b5563;
       }
-      .test-red {
-        color: #ef4444;
+
+      .icon-box i, .icon-box svg {
+        width: var(--icon-size) !important;
+        height: var(--icon-size) !important;
+        color: var(--icon-color) !important;
+        stroke-width: var(--icon-stroke-width) !important;
       }
-      .test-blue {
-        color: #3b82f6;
-        width: 48px;
-        height: 48px;
+
+      .icon-name {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: #9ca3af;
+        text-align: center;
+        word-break: break-word;
+        line-height: 1.4;
       }
-      .test-duotone {
-        --solar-secondary-color: #3b82f6;
-        --solar-secondary-opacity: 0.5;
-        color: #ef4444;
+      
+      .pagination {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        padding: 1rem;
+      }
+      
+      button {
+        background: #333;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     </style>
   </head>
   <body>
-    <h1>@solar-icons/js Test App</h1>
-    <p>Testing vanilla DOM injection.</p>
-
-    <div class="grid">
-      <div class="icon-box">
-        <i data-solar="heart-bold"></i>
-        <p>Basic (Bold)</p>
-      </div>
+    <aside class="sidebar">
+      <h1>Solar Icons JS</h1>
       
-      <div class="icon-box">
-        <i data-solar="accessibility-line-duotone" class="test-blue"></i>
-        <p>Custom Class (Size/Color)</p>
-      </div>
-      
-      <div class="icon-box">
-        <!-- Testing duotone CSS variables and inline styles -->
-        <i data-solar="home-angle-bold-duotone" class="test-duotone" style="stroke-width: 2"></i>
-        <p>Duotone Customization</p>
+      <div class="control-group">
+        <label>Style</label>
+        <select id="style-select">
+          <option value="All">All Styles</option>
+          <option value="Bold">Bold</option>
+          <option value="BoldDuotone">Bold Duotone</option>
+          <option value="Broken">Broken</option>
+          <option value="LineDuotone" selected>Line Duotone</option>
+          <option value="Linear">Linear</option>
+          <option value="Outline">Outline</option>
+        </select>
       </div>
 
-      <div class="icon-box">
-        <i data-solar="arrow-right-linear" stroke="yellow"></i>
-        <p>Direct Attributes</p>
+      <div class="control-group">
+        <label>Size <span id="size-val">32px</span></label>
+        <input type="range" id="size-input" min="16" max="96" value="32" />
       </div>
-    </div>
+
+      <div class="control-group">
+        <label>Color</label>
+        <input type="color" id="color-input" value="#ffffff" />
+      </div>
+
+      <div class="control-group">
+        <label>Stroke Width <span id="stroke-val">1.5</span></label>
+        <input type="range" id="stroke-input" min="0.5" max="3" step="0.1" value="1.5" />
+      </div>
+
+      <div class="control-group">
+        <label>Duotone Color (Secondary)</label>
+        <input type="color" id="duotone-color-input" value="#3b82f6" />
+      </div>
+
+      <div class="control-group">
+        <label>Duotone Opacity <span id="opacity-val">0.5</span></label>
+        <input type="range" id="opacity-input" min="0" max="1" step="0.1" value="0.5" />
+      </div>
+      
+      <div class="control-group">
+        <label>Background</label>
+        <input type="color" id="bg-color-input" value="#111111" />
+      </div>
+      
+      <div class="control-group">
+        <label>Search</label>
+        <input type="text" id="search-input" placeholder="Search icons..." style="padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background: #000; color: #fff;" />
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h2 id="current-style-title">Line Duotone</h2>
+        <div class="stats" id="icon-count">Loading...</div>
+      </header>
+
+      <div class="icon-grid-container">
+        <div class="grid" id="icon-grid"></div>
+        <div class="pagination">
+          <button id="prev-page">Previous</button>
+          <span id="page-info" style="align-self: center">Page 1</span>
+          <button id="next-page">Next</button>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
