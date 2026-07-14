@@ -23,6 +23,7 @@
     "static-app": "2.0.0-beta.0"
   },
   "changesets": [
-    "enrich-metadata-search"
+    "enrich-metadata-search",
+    "warm-camels-pick"
   ]
 }

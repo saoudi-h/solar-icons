@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 2.0.0-beta.2
+
+### Patch Changes
+
+- [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
+
 ## 2.0.0-beta.1
 
 ### Patch Changes
