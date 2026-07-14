@@ -1,75 +1,54 @@
 # @solar-icons/svelte
 
-Solar Icons for Svelte 5. Built with runes for optimal performance and minimal bundle size.
+Svelte components for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Svelte applications.
 
-## Installation
+## Features
 
-```bash
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
+- **Customizable:** Override size, color, and stroke width per icon via props or CSS variables.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and props.
+
+## Install
+
+```sh
 npm install @solar-icons/svelte
 ```
 
 ## Usage
 
-Import and render components:
+```svelte
+<script>
+    import { HomeIcon, LoginIcon } from '@solar-icons/svelte/linear';
+</script>
+
+<div>
+    <HomeIcon />
+    <LoginIcon color="#3b82f6" size={32} strokeWidth={2} />
+</div>
+```
+
+### Global Configuration (Provider)
+
+Wrap your layout in `<SolarProvider>` to set default properties:
 
 ```svelte
 <script>
-    import { Home, Settings } from '@solar-icons/svelte/Bold';
+    import { SolarProvider } from '@solar-icons/svelte';
+    import { HomeIcon } from '@solar-icons/svelte/linear';
 </script>
 
-<Home size={24} color="#000" />
-<Settings size={32} color="blue" />
+<SolarProvider size={24} color="currentColor" strokeWidth={1.5}>
+    <HomeIcon />
+</SolarProvider>
 ```
 
-### Import Patterns
+## Documentation
 
-#### Import by Style
-
-Import multiple icons of the same style:
-
-```svelte
-<script>
-    import { Home, Settings } from '@solar-icons/svelte/Bold';
-    import { Home as HomeLinear } from '@solar-icons/svelte/Linear';
-</script>
-```
-
-Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`.
-
-#### Import by Category
-
-Import categorized icons directly:
-
-```svelte
-<script>
-    import { AltArrowLeft, ArrowUp } from '@solar-icons/svelte/category/arrows/Bold';
-</script>
-```
-
-#### Direct Component Import
-
-Import individual components directly:
-
-```svelte
-<script>
-    import House from '@solar-icons/svelte/category/buildings/Bold/House.svelte';
-</script>
-```
-
-### Props
-
-Icon components accept standard SVG attributes alongside these props:
-
-- **`size`**: Width and height (e.g., `24`, `"1.5em"`, default: `"1em"`).
-- **`color`**: Icon color (e.g., `"#000"`, `"currentColor"`, default: `"currentColor"`).
-- **`mirrored`**: Flips the icon horizontally when `true` (default: `false`).
-- **`alt`**: Accessibility title.
+For installation guides, API reference, and a searchable icon catalog, visit the [Svelte Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/svelte).
 
 ## License
 
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736) (requires attribution)
-
----
-
-For detailed documentation, visit [solar-icons.vercel.app](https://solar-icons.vercel.app).
+MIT License. Icons by 480 Design (CC BY 4.0).

@@ -1,109 +1,58 @@
 # @solar-icons/vue
 
-Solar Icons for Vue 3. Supports dynamic styles and global configuration.
+Vue components for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Vue applications.
 
-## Installation
+## Features
 
-```bash
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
+- **Customizable:** Override size, color, and stroke width per icon via props or CSS variables.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and props.
+
+## Install
+
+```sh
 npm install @solar-icons/vue
 ```
 
 ## Usage
 
-Import and render components:
-
 ```vue
+<script setup>
+import { HomeIcon, LoginIcon } from '@solar-icons/vue/linear'
+</script>
+
 <template>
     <div>
-        <ArrowUp :size="24" weight="Outline" :mirrored="true" />
-        <Arrows.AltArrowLeft color="#fff" class="bg-black" weight="Bold" />
+        <HomeIcon />
+        <LoginIcon color="#3b82f6" :size="32" :strokeWidth="2" />
     </div>
 </template>
-
-<script setup>
-import { ArrowUp } from '@solar-icons/vue'
-import { Arrows } from '@solar-icons/vue/category'
-</script>
 ```
 
-### Props
+### Global Configuration (Provider)
 
-Icon components accept standard HTML SVG attributes alongside these props:
-
-- **`size`**: Width and height (e.g., `24`, `"1.5em"`, default: `24`).
-- **`color`**: Icon color (e.g., `"#000"`, `"currentColor"`, default: `"currentColor"`).
-- **`weight`**: Icon style variant (`"Bold"`, `"Linear"`, `"Outline"`, `"BoldDuotone"`, `"LineDuotone"`, or `"Broken"`, default: `"Linear"`).
-- **`mirrored`**: Flips the icon horizontally when `true` (default: `false`).
-- **`alt`**: Accessibility title.
-
-## Advanced Usage
-
-### Global Configuration
-
-Set default styles globally using `SolarProvider`:
+Wrap your application root in `<SolarProvider>` to set default properties:
 
 ```vue
-<template>
-    <SolarProvider :size="32" color="purple" weight="Linear">
-        <YourComponents />
-    </SolarProvider>
-</template>
-
 <script setup>
 import { SolarProvider } from '@solar-icons/vue'
+import { HomeIcon } from '@solar-icons/vue/linear'
 </script>
-```
 
-### Vue Plugin
-
-Alternatively, configure defaults globally via the Vue plugin:
-
-```js
-import { createApp } from 'vue'
-import { SolarIconsPlugin } from '@solar-icons/vue'
-
-const app = createApp(App)
-app.use(SolarIconsPlugin, {
-    color: 'currentColor',
-    size: '24',
-    weight: 'Linear',
-    mirrored: false,
-})
-app.mount('#app')
-```
-
-### Composition API
-
-Access and modify settings dynamically using `useSolar`:
-
-```vue
 <template>
-    <div>
-        <ArrowUp :size="iconSize" weight="Outline" />
-        <button @click="increaseSize">Resize</button>
-    </div>
+    <SolarProvider :size="24" color="currentColor" :strokeWidth="1.5">
+        <HomeIcon />
+    </SolarProvider>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { ArrowUp, useSolar } from '@solar-icons/vue'
-
-const { config, setSize } = useSolar()
-const iconSize = ref(24)
-
-const increaseSize = () => {
-    const newSize = parseInt(iconSize.value) + 4
-    iconSize.value = newSize
-    setSize(newSize)
-}
-</script>
 ```
+
+## Documentation
+
+For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/vue).
 
 ## License
 
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736) (requires attribution)
-
----
-
-For detailed documentation, visit [solar-icons.vercel.app](https://solar-icons.vercel.app).
+MIT License. Icons by 480 Design (CC BY 4.0).

@@ -1,87 +1,58 @@
 # @solar-icons/solid
 
-Solar Icons for SolidJS. Built for performance and minimal bundle size.
+SolidJS components for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Solid applications.
 
-## Installation
+## Features
 
-```bash
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
+- **Customizable:** Override size, color, and stroke width per icon via props or CSS variables.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and props.
+
+## Install
+
+```sh
 npm install @solar-icons/solid
 ```
 
 ## Usage
 
-Import and render components:
-
 ```tsx
-import { House, Settings } from '@solar-icons/solid/Bold';
+import { HomeIcon, LoginIcon } from '@solar-icons/solid/linear';
 
 function App() {
     return (
         <div>
-            <House size={24} color="#000" />
-            <Settings size={32} color="blue" />
+            <HomeIcon />
+            <LoginIcon color="#3b82f6" size={32} strokeWidth={2} />
         </div>
     );
 }
 ```
 
-### Import Patterns
+### Global Configuration (Provider)
 
-#### Import by Style
-
-Import multiple icons of the same style:
+Wrap your application in `<SolarProvider>` to set default properties:
 
 ```tsx
-import { House, Settings } from '@solar-icons/solid/Bold';
-import { House as HouseLinear } from '@solar-icons/solid/Linear';
-```
+import { SolarProvider } from '@solar-icons/solid';
+import { HomeIcon } from '@solar-icons/solid/linear';
 
-Available styles: `Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, `Broken`.
-
-#### Import by Category
-
-Import categorized icons directly:
-
-```tsx
-import { AltArrowLeft, ArrowUp } from '@solar-icons/solid/category/arrows/Bold';
-```
-
-#### Direct Component Import
-
-Import individual components directly:
-
-```tsx
-import { House } from '@solar-icons/solid/category/building/Bold/House';
-```
-
-#### Using IconBase
-
-```tsx
-import { IconBase } from '@solar-icons/solid/lib/IconBase';
-
-function CustomIcon() {
+function App() {
     return (
-        <IconBase size={24} color="red">
-            <path d="M12 2L15.09 8.26..." fill="currentColor" />
-        </IconBase>
+        <SolarProvider size={24} color="currentColor" strokeWidth={1.5}>
+            <HomeIcon />
+        </SolarProvider>
     );
 }
 ```
 
-### Props
+## Documentation
 
-Icon components accept standard SVG attributes alongside these props:
-
-- **`size`**: Width and height (e.g., `24`, `"1.5em"`, default: `"1em"`).
-- **`color`**: Icon color (e.g., `"#000"`, `"currentColor"`, default: `"currentColor"`).
-- **`mirrored`**: Flips the icon horizontally when `true` (default: `false`).
-- **`alt`**: Accessibility title.
+For installation guides, API reference, and a searchable icon catalog, visit the [Solid Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/solid).
 
 ## License
 
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736) (requires attribution)
-
----
-
-For detailed documentation, visit [solar-icons.vercel.app](https://solar-icons.vercel.app).
+MIT License. Icons by 480 Design (CC BY 4.0).

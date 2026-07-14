@@ -1,93 +1,58 @@
-# @solar-icons/react-perf
+# @solar-icons/react
 
-> **DEPRECATED** — This package is superseded by `@solar-icons/react` v3, which now uses the same unit-per-style architecture. Migrate to `@solar-icons/react` for the same API with future updates.
+React components for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for React applications.
 
-The `@solar-icons/react-perf` package provides a highly optimized, performance-focused library of React components for the Solar icon set. This package is tailored for developers who prioritize reduced bundle sizes and efficient rendering by focusing on single-style imports and simplified SVG structures.
+## Features
 
-## Installation
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
+- **Customizable:** Override size, color, and stroke width per icon via props or CSS variables.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and props.
 
-Install the package using npm or yarn:
+## Install
 
-```bash
-npm install @solar-icons/react-perf
-```
-
-or
-
-```bash
-yarn add @solar-icons/react-perf
+```sh
+npm install @solar-icons/react
 ```
 
 ## Usage
 
-### Usage
-
-Import icons from the package:
-
-```jsx
-import { AltArrowLeft, CheckCircle } from '@solar-icons/react-perf/Linear'
+```tsx
+import { HomeIcon, LoginIcon } from '@solar-icons/react/linear'
 
 function App() {
     return (
         <div>
-            <AltArrowLeft size={24} color="#000" />
-            <CheckCircle size={32} color="green" />
+            <HomeIcon />
+            <LoginIcon color="#3b82f6" size={32} strokeWidth={2} />
         </div>
     )
 }
 ```
 
-### Importing by Category
+### Global Configuration (Provider)
 
-```jsx
-import { AltArrowLeft, ArrowUp } from '@solar-icons/react-perf/category/arrows/Linear'
-import { Cart, Bag } from '@solar-icons/react-perf/category/shopping/Bold'
-```
+Wrap your application in `<SolarProvider>` to set default properties:
 
-## Key Features
+```tsx
+import { SolarProvider } from '@solar-icons/react'
+import { HomeIcon } from '@solar-icons/react/linear'
 
-- **Performance-Oriented**: Each icon is packaged individually, ensuring that only the required assets are included in the final bundle.
-- **Single-Style Icons**: Icons are separated by style (e.g., `Bold`, `Linear`), enabling more precise imports.
-- **Lightweight SVGs**: Each icon is optimized for minimal SVG size to reduce load times.
-
-### Properties
-
-Each icon component supports the following properties:
-
-- **`size`**: Defines the size of the icon (e.g., `24`, `"1.5em"`).
-- **`color`**: Sets the color of the icon (e.g., `"#000"`, `"currentColor"`).
-- **`mirrored`**: Flips the icon horizontally when set to `true`.
-
-## Advanced Usage
-
-### Custom Styling
-
-Customize icons using standard React properties or additional CSS classes:
-
-```jsx
-import { ArrowUpBold } from '@solar-icons/react-perf'
-
-function CustomIcon() {
-    return <ArrowUpBold size="48" className="custom-class" />
+function App() {
+    return (
+        <SolarProvider size={24} color="currentColor" strokeWidth={1.5}>
+            <HomeIcon />
+        </SolarProvider>
+    )
 }
 ```
 
-## Performance Benefits
+## Documentation
 
-Unlike the versatile `@solar-icons/react` package, `@solar-icons/react-perf` focuses solely on direct imports for enhanced performance and reduced overhead. This package avoids using a provider or dual SSR/CSR support to ensure lightweight integration.
-
-## Contributing
-
-Contributions to further optimize and expand the `@solar-icons/react-perf` package are welcome. If you wish to contribute, please follow our [contribution guidelines](../../CONTRIBUTING.md).
+For installation guides, API reference, and a searchable icon catalog, visit the [React Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/react).
 
 ## License
 
-The `@solar-icons/react-perf` code and library are licensed under the [MIT License](./LICENSE). The Solar icon pack itself is licensed under **CC BY 4.0** by **480 Design**, which requires attribution for any use. For more information and to view the original icon set, visit [480 Design's Figma page](https://www.figma.com/community/file/1166831539721848736).
-
-## Acknowledgements
-
-Special thanks to **480 Design** for creating the original Solar icon pack. Additional appreciation goes to **Phosphor Icons** and **Lucide Icons** for their inspiration in shaping the design and approach of the Solar icon packages.
-
----
-
-For more details on other packages and usage examples, refer to the [project's main documentation](../../README.md).
+MIT License. Icons by 480 Design (CC BY 4.0).

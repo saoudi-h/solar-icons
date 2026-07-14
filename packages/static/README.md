@@ -1,6 +1,14 @@
 # @solar-icons/static
 
-Static Solar Icons assets — no framework required. Individual SVG files, an SVG sprite, an SVG string map, and tree-shakable per-icon ESM modules. Generated from the same source as every other `@solar-icons/*` package.
+Static SVG assets and ESM string modules for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone) for use without any JavaScript framework.
+
+## Features
+
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Multiple formats:** `.svg` files, combined SVG sprite, JSON map, and tree-shakeable ESM string modules.
+- **Server-side ready:** Can be used in static site generators or Node.js.
+- **Global configuration:** Override size, color, and stroke width globally via CSS variables (`--solar-color`, `--solar-size`).
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
 
 ## Install
 
@@ -8,66 +16,38 @@ Static Solar Icons assets — no framework required. Individual SVG files, an SV
 npm install @solar-icons/static
 ```
 
-## What you get
-
-| Format                 | Path / import                     | Use it for                                          |
-| ---------------------- | --------------------------------- | --------------------------------------------------- |
-| Individual SVGs        | `dist/icons/<style>/<name>.svg`   | `<img>`, CSS `background-image`                     |
-| SVG sprite             | `@solar-icons/static/sprite`      | `<use href="...sprite.svg#<name>-<style>">`         |
-| Full string map (JSON) | `@solar-icons/static/icons.json`  | Server-side file read, Node without import          |
-| Per-icon ESM modules   | `@solar-icons/static/linear/home` | Tree-shakable string import (bundler / SSR)         |
-| Barrel (named exports) | `@solar-icons/static`             | `import { LoginLinear } from '@solar-icons/static'` |
-
-Styles: `bold`, `bold-duotone`, `broken`, `linear`, `line-duotone`, `outline`.
-
 ## Usage
 
-### As an image or background
+### As HTML Images
 
 ```html
 <img src="@solar-icons/static/dist/icons/linear/home.svg" width="24" height="24" />
 ```
 
-### From the barrel (named PascalCase)
+### SVG String Import (ESM)
+
+Import the raw SVG string to inject manually or use in SSR templates:
 
 ```js
-import { LoginLinear, HomeBold } from '@solar-icons/static'
+import { HomeLinear } from '@solar-icons/static'
 
-document.body.innerHTML = LoginLinear
+document.body.innerHTML = HomeLinear
 ```
 
-### Per-icon (tree-shakable)
+### SVG Sprite
 
-```js
-import loginLinear from '@solar-icons/static/linear/login'
-```
-
-### Sprite
+Reference the combined sprite file in your HTML:
 
 ```html
-<svg><use href="@solar-icons/static/dist/sprite.svg#login-linear" /></svg>
+<svg>
+    <use href="@solar-icons/static/dist/sprite.svg#home-linear" />
+</svg>
 ```
 
-### Full JSON map (Node / file read)
+## Documentation
 
-```js
-import icons from '@solar-icons/static/icons.json'
+For installation guides, API reference, and a searchable icon catalog, visit the [Static Documentation](https://solar-icons.vercel.app/docs/v2/packages/static).
 
-const svg = icons['login-linear']
-```
+## License
 
-## Theming
-
-Every icon inherits CSS custom properties, so color, size, stroke width and duotone accent work the same as in the framework packages:
-
-```css
-.solar {
-    --solar-color: #3b82f6;
-    --solar-size: 32px;
-    --solar-secondary-color: #93c5fd;
-}
-```
-
-`stroke-width` only affects stroke-based styles (`linear`, `broken`, `line-duotone`). `bold` / `bold-duotone` are fill-based and ignore it.
-
-Unlike the framework packages, there is no Provider component — set the CSS variables on any ancestor.
+MIT License. Icons by 480 Design (CC BY 4.0).

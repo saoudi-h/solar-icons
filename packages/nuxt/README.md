@@ -1,105 +1,60 @@
 # @solar-icons/nuxt
 
-Nuxt 3+ module for Solar Icons. Supports auto-import and global configuration.
+Nuxt module for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Nuxt applications.
 
-## Installation
+## Features
 
-```bash
-nuxi module add @solar-icons/nuxt
-```
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Auto-injected configuration:** The module injects CSS variables globally for consistent sizing and coloring.
+- **Customizable:** Override size, color, and stroke width per icon.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and props.
 
-## Configuration
+## Install
 
-Configure options in `nuxt.config.ts`:
-
-```js
-// nuxt.config.ts
-export default defineNuxtConfig({
-    modules: ['@solar-icons/nuxt'],
-    solarIcons: {
-        namePrefix: 'Solar',  // Prefix for auto-imported components (default: 'Solar')
-        autoImport: true,     // Auto-import all icons (default: true)
-        provider: true,       // Inject global provider context (default: true)
-        color: 'currentColor',
-        size: 24,
-        weight: 'Linear',
-        mirrored: false,
-    },
-})
+```sh
+npm install @solar-icons/nuxt
 ```
 
 ## Usage
 
-### Auto-imported Components
-
-With auto-import enabled, render icons directly using their prefixed names (default: `Solar` + Category + IconName):
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@solar-icons/nuxt']
+})
+```
 
 ```vue
 <template>
-    <div>
-        <SolarArrowUp :size="24" weight="Outline" :mirrored="true" />
-        <SolarArrowsArrowDown :size="32" weight="BoldDuotone" />
-        <SolarArrowsAltArrowLeft color="#fff" class="bg-black" weight="Bold" />
-    </div>
+  <div>
+    <SolarHomeIcon />
+    <SolarLoginIcon color="#3b82f6" :size="32" :strokeWidth="2" />
+  </div>
 </template>
 ```
 
-### Manual Imports
+### Global Configuration (Module Options)
 
-You can also import manually using path aliases:
+Configure global defaults in your `nuxt.config.ts`:
 
-```vue
-<template>
-    <div>
-        <ArrowUp :size="24" weight="Outline" />
-        <solar.Arrows.ArrowDown :size="32" weight="BoldDuotone" />
-    </div>
-</template>
-
-<script setup>
-import { ArrowUp } from '#solar-icons'
-import * as solar from '#solar-icons/category'
-</script>
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@solar-icons/nuxt'],
+  solarIcons: {
+    size: 24,
+    color: 'currentColor',
+    strokeWidth: 1.5,
+  }
+})
 ```
 
-Available aliases:
-- `#solar-icons` - Exports Vue components.
-- `#solar-icons/lib` - Exports utilities (e.g., `SolarProvider`, `useSolar`).
-- `#solar-icons/category` - Exports categorized icon sets.
+## Documentation
 
-### Composition API
-
-Access and modify settings dynamically:
-
-```vue
-<template>
-    <div>
-        <ArrowUp :size="iconSize" weight="Outline" />
-        <button @click="increaseSize">Resize</button>
-    </div>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-import { ArrowUp, useSolar } from '#solar-icons/lib'
-
-const { config, setSize } = useSolar()
-const iconSize = ref(24)
-
-const increaseSize = () => {
-    const newSize = parseInt(iconSize.value) + 4
-    iconSize.value = newSize
-    setSize(newSize)
-}
-</script>
-```
+For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/nuxt).
 
 ## License
 
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736) (requires attribution)
-
----
-
-For detailed documentation, visit [solar-icons.vercel.app](https://solar-icons.vercel.app).
-
+MIT License. Icons by 480 Design (CC BY 4.0).

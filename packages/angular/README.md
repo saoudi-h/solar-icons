@@ -1,170 +1,66 @@
 # @solar-icons/angular
 
-Solar Icons for Angular 17+. Standalone components with signal-based inputs.
+Angular components for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Angular applications.
 
-## Installation
+## Features
 
-```bash
+- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **Tree-shakeable:** Import only the icons you use.
+- **Global configuration:** Set defaults for size, color, and stroke width using `<solar-provider>`.
+- **Customizable:** Override size, color, and stroke width per icon via inputs or CSS variables.
+- **Duotone support:** Secondary color controls for `bold-duotone` and `line-duotone` styles.
+- **TypeScript:** Typed components and inputs.
+
+## Install
+
+```sh
 npm install @solar-icons/angular
 ```
 
 ## Usage
 
-### Static components
-
-Import icons with the `Solar` prefix and style suffix, then use attribute selectors on `<svg>`:
-
-```typescript
+```ts
 import { Component } from '@angular/core'
-import { SolarHomeBold } from '@solar-icons/angular'
+import { HomeIcon, LoginIcon } from '@solar-icons/angular/linear'
 
 @Component({
-    selector: 'app-example',
     standalone: true,
-    imports: [SolarHomeBold],
-    template: ` <svg solarHomeBold [size]="32" color="#ef4444" /> `,
+    imports: [HomeIcon, LoginIcon],
+    template: `
+        <div>
+            <svg solarHomeIcon></svg>
+            <svg solarLoginIcon color="#3b82f6" size="32" strokeWidth="2"></svg>
+        </div>
+    `,
 })
-export class ExampleComponent {}
+export class AppComponent {}
 ```
 
-### SolarProvider
+### Global Configuration (Provider)
 
-Wrap a subtree to share icon styling via CSS custom properties:
+Wrap your components in `<solar-provider>` to set default properties:
 
-```typescript
+```ts
 import { Component } from '@angular/core'
-import { SolarProvider, SolarHomeBold, SolarStarBold } from '@solar-icons/angular'
+import { SolarProvider } from '@solar-icons/angular'
+import { HomeIcon } from '@solar-icons/angular/linear'
 
 @Component({
-    selector: 'app-demo',
     standalone: true,
-    imports: [SolarProvider, SolarHomeBold, SolarStarBold],
+    imports: [SolarProvider, HomeIcon],
     template: `
-        <solar-provider color="#3b82f6" [size]="32" [strokeWidth]="1.5">
-            <svg solarHomeBold></svg>
-            <svg solarStarBold></svg>
+        <solar-provider size="24" color="currentColor" strokeWidth="1.5">
+            <svg solarHomeIcon></svg>
         </solar-provider>
     `,
 })
-export class DemoComponent {}
+export class AppComponent {}
 ```
 
-| Input              | CSS Variable                | Default        |
-| ------------------ | --------------------------- | -------------- |
-| `color`            | `--solar-color`             | `currentColor` |
-| `size`             | `--solar-size`              | `24px`         |
-| `strokeWidth`      | `--solar-stroke-width`      | `1.5`          |
-| `secondaryColor`   | `--solar-secondary-color`   | `currentColor` |
-| `secondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
+## Documentation
 
-### useSolar
-
-For child-driven control, call `useSolar()` inside a component that is a descendant of `<solar-provider>`:
-
-```typescript
-import { Component } from '@angular/core'
-import { useSolar, SolarProvider, SolarHomeBold } from '@solar-icons/angular'
-
-@Component({
-    selector: 'app-controls',
-    standalone: true,
-    imports: [SolarHomeBold],
-    template: `
-        <svg solarHomeBold></svg>
-        <input
-            type="color"
-            [value]="solar.color()"
-            (input)="solar.setColor($any($event.target).value)" />
-    `,
-})
-export class ControlsComponent {
-    readonly solar = useSolar()
-}
-```
-
-Wrap the component in a `<solar-provider>` ancestor:
-
-```html
-<solar-provider>
-    <app-controls />
-</solar-provider>
-```
-
-### Multi-style dynamic components
-
-Import components that bundle all 6 styles and switch via `weight`:
-
-```typescript
-import { Component } from '@angular/core'
-import { SolarHome } from '@solar-icons/angular/dynamic'
-
-@Component({
-    selector: 'app-example',
-    standalone: true,
-    imports: [SolarHome],
-    template: `<svg solarHome weight="Bold" [size]="32" color="#ef4444" />`,
-})
-export class ExampleComponent {}
-```
-
-Available from `@solar-icons/angular/dynamic` (barrel) or `@solar-icons/angular/dynamic/home` (single).
-
-### Dynamic rendering with `SolarIcon`
-
-The `SolarIcon` directive renders icons at runtime from a class or registered name. Use it for data-driven scenarios.
-
-```typescript
-import { Component } from '@angular/core'
-import { SolarIcon, provideSolarIcons } from '@solar-icons/angular'
-import { SolarHome } from '@solar-icons/angular/dynamic'
-
-@Component({
-    selector: 'app-example',
-    standalone: true,
-    imports: [SolarIcon],
-    template: ` <ng-container [solarIcon]="myIcon" [weight]="'Bold'" [size]="32" /> `,
-})
-export class ExampleComponent {
-    myIcon = SolarHome
-}
-```
-
-`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, `alt` — all forwarded to the created icon.
-
-### CSS variables
-
-Icons read from CSS custom properties when explicit inputs are omitted:
-
-```css
-:host {
-    --solar-color: #ef4444;
-    --solar-size: 32px;
-    --solar-stroke-width: 2;
-}
-```
-
-### Accessibility
-
-Icons have `aria-hidden="true"` by default. Provide `alt` or `ariaLabel` to make them accessible:
-
-```html
-<svg solarHomeBold alt="Home" /> <svg solarHomeBold ariaLabel="Navigate to home page" />
-```
-
-## Inputs
-
-| Input              | Type               | Description                    |
-| ------------------ | ------------------ | ------------------------------ |
-| `color`            | `string`           | Icon color                     |
-| `size`             | `string \| number` | Width and height               |
-| `strokeWidth`      | `string \| number` | Stroke width                   |
-| `secondaryColor`   | `string`           | Duotone accent color           |
-| `secondaryOpacity` | `number`           | Duotone accent opacity         |
-| `isolated`         | `boolean`          | Ignores provider CSS variables |
-| `alt`              | `string`           | Accessibility label            |
-| `ariaLabel`        | `string`           | `aria-label` attribute         |
+For installation guides, API reference, and a searchable icon catalog, visit the [Angular Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/angular).
 
 ## License
 
-- **Code**: MIT
-- **Icons**: CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736) (requires attribution)
+MIT License. Icons by 480 Design (CC BY 4.0).
