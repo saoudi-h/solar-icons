@@ -17,4 +17,4 @@ export interface SVGProps extends Record<string, string | number | undefined> {
     'secondary-opacity'?: string | number
 }
 
-export type Icons = Record<string, IconNode>
+export type Icons = Record<string, IconNode[]>
