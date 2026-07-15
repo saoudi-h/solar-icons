@@ -10,6 +10,7 @@
 ## 🚧 Active
 
 - [x] **[DOCS-SEARCH-FIX]** Fix Fuse.js search logic for multi-word queries. `Priority: 🟠` `Complexity: S`
+- [/] **[DOCS-ICON-ACTIONS]** Fix SVG/PNG download and copy actions on the `/icons` detail panel. SVG download fails (fetches from GitHub raw, 404s). PNG download/copy renders transparent 24×24 (canvas can't resolve CSS vars). Define UX strategy for parametrized vs neutral output. Leverage `@solar-icons/static` CDN for clean SVG source. `Priority: 🔴` `Complexity: M`
 
 ### V2 — Phase 1: Foundation
 

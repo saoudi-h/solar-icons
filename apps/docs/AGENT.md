@@ -169,3 +169,11 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **Provider props tables use "Fallback", not "Default".** Providers set no defaults — all props are `undefined` until set. Icons fall back to CSS variable values (`var(--solar-color, currentColor)`, etc.) defined in IconBase. Use "Fallback" as the column header in Provider props tables.
 - **All web frameworks pass through standard SVG attributes.** React (`...restProps`), Vue (`v-bind="$attrs"`), Svelte (`...restProps`), Solid (`splitProps` + `{...others}`) all spread extra attributes onto the `<svg>` element. `data-*`, `role`, `tabindex`, `aria-*` all work.
 - **Vue IconBase accessibility check** uses `useAttrs()` to detect `aria-label` and `title`, matching React/Svelte/Solid behavior. Before the fix (2026-07-07), only `alt` was checked.
+
+## 🔽 Icon detail panel actions (DOCS-ICON-ACTIONS, 2026-07-15)
+
+- **Strategy: SVG = clean source, PNG = customized snapshot.** SVG actions (Get SVG, Copy SVG) serve the unmodified SVG from `@solar-icons/static` via CDN. PNG actions (Get PNG, Copy PNG) rasterize the SVG with the user's current filter-bar settings (color, size, stroke-width, duotone color/opacity).
+- **CDN:** `https://cdn.jsdelivr.net/npm/@solar-icons/static@{version}/dist/icons/{styleSlug}/{iconName}.svg`. The version is pinned in `STATIC_CDN_BASE` constant in `Actions.tsx`. **Bump on each `@solar-icons/static` release** — same protocol as the v2-beta install snippet pins in the docs MDX files.
+- **SVG content:** Clean source from `@solar-icons/static` — `currentColor` strokes/fills, `24×24`, `stroke-width="1.5"`, `class="solar solar-{name}-{style}"`. No CSS variable references (except duotone accent elements which use `var(--solar-secondary-color)` and `var(--solar-secondary-opacity)`).
+- **PNG resolution:** `resolveSvgForRaster()` takes the clean SVG string, replaces `currentColor` with the user's color, sets dimensions/stroke-width, and resolves duotone CSS vars to concrete values. The resolved SVG is loaded into an `<img>` via blob URL and drawn onto a `<canvas>`. No DOM ref element needed.
+- **No hidden SVG element.** The previous approach rendered a hidden `<selectedIcon.Icon ref={ref} />` in the DOM for serialization. The new approach fetches the source SVG from CDN, which avoids CSS-variable-in-image-context issues entirely.
