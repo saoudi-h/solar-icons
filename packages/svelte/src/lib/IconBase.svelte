@@ -53,6 +53,7 @@
             secondaryOpacity != null
                 ? `--solar-secondary-opacity: ${String(secondaryOpacity)}`
                 : null,
+            size === undefined && !isolated ? 'font-size: var(--solar-size, 24px)' : null,
             userStyle ?? null,
         ]
             .filter(Boolean)
@@ -60,10 +61,10 @@
     );
 
     const svgWidth = $derived(
-        size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
+        size !== undefined ? undefined : isolated ? '24px' : '1em'
     );
     const svgHeight = $derived(
-        size !== undefined ? undefined : isolated ? '24px' : 'var(--solar-size, 24px)'
+        size !== undefined ? undefined : isolated ? '24px' : '1em'
     );
     const svgColor = $derived(
         color !== undefined
