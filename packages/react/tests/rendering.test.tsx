@@ -18,8 +18,9 @@ describe('ArrowUpIcon', () => {
     it('uses CSS var fallbacks for size, color, and stroke-width by default', () => {
         const html = renderToStaticMarkup(<ArrowUpIcon />)
 
-        expect(html).toContain('width:var(--solar-size, 24px)')
-        expect(html).toContain('height:var(--solar-size, 24px)')
+        expect(html).toContain('font-size:var(--solar-size, 24px)')
+        expect(html).toContain('width="1em"')
+        expect(html).toContain('height="1em"')
         expect(html).not.toContain(' width="var(')
         expect(html).not.toContain(' height="var(')
         expect(html).toContain('color="var(--solar-color, currentColor)"')

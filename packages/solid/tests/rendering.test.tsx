@@ -18,8 +18,9 @@ describe('ArrowUpIcon rendering', () => {
     it('renders default CSS var fallbacks as SVG attrs', () => {
         const html = renderToString(() => <ArrowUpIcon />);
 
-        expect(html).toContain('width="var(--solar-size, 24px)"');
-        expect(html).toContain('height="var(--solar-size, 24px)"');
+        expect(html).toContain('font-size:var(--solar-size, 24px)');
+        expect(html).toContain('width="1em"');
+        expect(html).toContain('height="1em"');
         expect(html).toContain('color="var(--solar-color, currentColor)"');
     });
 

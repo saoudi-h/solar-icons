@@ -52,7 +52,10 @@ describe('Generated Icon Components (smoke tests)', () => {
                     'http://www.w3.org/2000/svg'
                 )
                 expect(fixture.nativeElement.getAttribute('viewBox')).toBe('0 0 24 24')
-                expect(fixture.nativeElement.getAttribute('width')).toBe('var(--solar-size, 24px)')
+                expect(fixture.nativeElement.getAttribute('width')).toBe('1em')
+                expect(fixture.nativeElement.style.getPropertyValue('font-size')).toBe(
+                    'var(--solar-size, 24px)'
+                )
             })
         })
     }

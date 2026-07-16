@@ -50,13 +50,12 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
             baseStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
 
         const widthAttr =
-            size !== undefined ? undefined : isolated ? '24px' : undefined
+            size !== undefined ? undefined : isolated ? '24px' : '1em'
         const heightAttr =
-            size !== undefined ? undefined : isolated ? '24px' : undefined
+            size !== undefined ? undefined : isolated ? '24px' : '1em'
 
         if (size === undefined && !isolated) {
-            baseStyle.width ??= 'var(--solar-size, 24px)'
-            baseStyle.height ??= 'var(--solar-size, 24px)'
+            baseStyle.fontSize ??= 'var(--solar-size, 24px)'
         }
 
         const colorAttr =
