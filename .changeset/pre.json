@@ -24,6 +24,7 @@
   },
   "changesets": [
     "enrich-metadata-search",
+    "fix-css-specificity",
     "warm-camels-pick"
   ]
 }
