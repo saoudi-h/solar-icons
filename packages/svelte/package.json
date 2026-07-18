@@ -103,7 +103,7 @@
         "@solar-icons/core": "workspace:*",
         "@sveltejs/package": "^2.5.8",
         "@sveltejs/vite-plugin-svelte": "^7.2.0",
-        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/eslint": "0.1.5",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
         "@types/node": "^26.1.1",

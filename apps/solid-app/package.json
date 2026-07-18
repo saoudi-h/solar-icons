@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
-    "@tala-tools/eslint": "0.1.4",
+    "@tala-tools/eslint": "0.1.5",
     "@tala-tools/prettier": "0.0.3",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3",

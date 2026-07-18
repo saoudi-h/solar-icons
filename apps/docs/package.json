@@ -74,7 +74,7 @@
         "@next/bundle-analyzer": "^16.2.10",
         "@solar-icons/core": "workspace:*",
         "@tailwindcss/postcss": "^4.3.2",
-        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/eslint": "0.1.5",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
         "@types/mdx": "^2.0.14",

@@ -27,7 +27,7 @@
         "@commitlint/cli": "^21.2.1",
         "@commitlint/config-conventional": "^21.2.0",
         "@commitlint/types": "^21.2.0",
-        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/eslint": "0.1.5",
         "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.1",
         "@types/eslint": "^9.6.1",
