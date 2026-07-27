@@ -40,4 +40,19 @@ describe('transformReactPerf', () => {
             "import { ScaleBoldIcon as WeigherBold } from '@solar-icons/react'"
         )
     })
+
+    it('reports the removed mirrored prop at its source location', () => {
+        const result = transformReactPerf(
+            "import { ArrowRight } from '@solar-icons/react-perf/Bold'\n\nexport const App = () => <ArrowRight mirrored />",
+            'App.tsx'
+        )
+
+        expect(result.diagnostics).toMatchObject([
+            {
+                code: 'REACT_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                line: 3,
+                column: 38,
+            },
+        ])
+    })
 })

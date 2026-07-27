@@ -15,6 +15,7 @@ const weightToStyle: Record<string, string> = {
 interface ImportUse {
     dynamic: boolean
     dynamicWeightAttributes: ts.JsxAttribute[]
+    mirroredAttributes: ts.JsxAttribute[]
     styles: Set<string>
     tagNames: ts.Identifier[]
     weightAttributes: ts.JsxAttribute[]
@@ -56,6 +57,11 @@ function applyEdits(source: string, edits: Edit[]): string {
         )
 }
 
+function diagnosticLocation(sourceFile: ts.SourceFile, node: ts.Node) {
+    const location = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile))
+    return { column: location.character + 1, line: location.line + 1 }
+}
+
 /**
  * Migrates React v1 imports when every imported icon has a determinable style.
  * Dynamic or mixed weight usage moves to the v2 dynamic entry point.
@@ -77,6 +83,7 @@ export function transformReact(
         if (moduleSpecifier === '@solar-icons/react/category') {
             diagnostics.push({
                 code: 'REACT_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message:
                     'Skipped a React category import. Replace each category member with an individual v2 icon import.',
                 file: fileName,
@@ -93,6 +100,7 @@ export function transformReact(
         if (hasDefaultImport) {
             diagnostics.push({
                 code: 'UNSUPPORTED_REACT_IMPORT',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message:
                     'Skipped a default React namespace import. Convert it to individual icon imports manually.',
                 file: fileName,
@@ -102,6 +110,7 @@ export function transformReact(
             if (!hasDefaultImport) {
                 diagnostics.push({
                     code: 'UNSUPPORTED_REACT_IMPORT',
+                    ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                     message:
                         'Skipped a default or namespace React import. Convert it to individual icon imports manually.',
                     file: fileName,
@@ -117,6 +126,7 @@ export function transformReact(
         if (legacyContextImports.length > 0) {
             diagnostics.push({
                 code: 'REACT_PROVIDER_REQUIRES_MANUAL_MIGRATION',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message:
                     'Skipped a legacy SolarProvider or useSolar import. Its v1 context API and weight inheritance require manual migration.',
                 file: fileName,
@@ -139,6 +149,7 @@ export function transformReact(
             uses.set(specifier.name.text, {
                 dynamic: false,
                 dynamicWeightAttributes: [],
+                mirroredAttributes: [],
                 styles: new Set(),
                 tagNames: [],
                 weightAttributes: [],
@@ -151,6 +162,11 @@ export function transformReact(
                 if (usage) {
                     usage.tagNames.push(node.tagName)
                     const weightAttribute = getWeightAttribute(node)
+                    const mirroredAttribute = node.attributes.properties.find(
+                        attribute =>
+                            ts.isJsxAttribute(attribute) && attribute.name.getText() === 'mirrored'
+                    ) as ts.JsxAttribute | undefined
+                    if (mirroredAttribute) usage.mirroredAttributes.push(mirroredAttribute)
                     const weight = getStaticWeight(weightAttribute)
                     const style = weight && weightToStyle[weight]
                     if (!style) {
@@ -175,6 +191,7 @@ export function transformReact(
         if (unused.length > 0) {
             diagnostics.push({
                 code: 'REACT_IMPORT_REQUIRES_REVIEW',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message: `Skipped React import because ${unused.map(([name]) => name).join(', ')} is not used as JSX in this file.`,
                 file: fileName,
             })
@@ -210,15 +227,21 @@ export function transformReact(
             if (mode === 'static' && usage.dynamicWeightAttributes.length > 0) {
                 const attribute = usage.dynamicWeightAttributes[0]
                 if (!attribute) continue
-                const location = sourceFile.getLineAndCharacterOfPosition(
-                    attribute.getStart(sourceFile)
-                )
                 diagnostics.push({
                     code: 'REACT_DYNAMIC_WEIGHT_FALLBACK',
-                    column: location.character + 1,
                     file: fileName,
-                    line: location.line + 1,
+                    ...diagnosticLocation(sourceFile, attribute),
                     message: `${localName} has a dynamic weight, so it was migrated to @solar-icons/react/dynamic instead of a static style path.`,
+                    severity: 'warning',
+                })
+            }
+
+            for (const attribute of usage.mirroredAttributes) {
+                diagnostics.push({
+                    code: 'REACT_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                    file: fileName,
+                    ...diagnosticLocation(sourceFile, attribute),
+                    message: `${localName} uses the removed mirrored prop. Replace it with style={{ transform: 'scaleX(-1)' }}.`,
                     severity: 'warning',
                 })
             }

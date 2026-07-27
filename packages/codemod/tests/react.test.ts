@@ -34,6 +34,18 @@ describe('transformReact', () => {
         )
     })
 
+    it('honors the explicit dynamic strategy even for static weights', () => {
+        const result = transformReact(
+            'import { Heart } from \'@solar-icons/react\'\n\nexport const App = () => <Heart weight="Bold" />',
+            'App.tsx',
+            'dynamic'
+        )
+
+        expect(result.code).toBe(
+            'import { HeartIcon } from \'@solar-icons/react/dynamic\'\n\nexport const App = () => <HeartIcon weight="Bold" />'
+        )
+    })
+
     it('uses Linear when v1 omitted the weight prop', () => {
         const result = transformReact(
             "import { Heart } from '@solar-icons/react'\n\nexport const App = () => <Heart />"
@@ -90,8 +102,23 @@ describe('transformReact', () => {
         ].join('\n')
 
         expect(transformReact(source).diagnostics).toMatchObject([
-            { code: 'REACT_PROVIDER_REQUIRES_MANUAL_MIGRATION' },
-            { code: 'REACT_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION' },
+            { code: 'REACT_PROVIDER_REQUIRES_MANUAL_MIGRATION', line: 1, column: 37 },
+            { code: 'REACT_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION', line: 2, column: 24 },
+        ])
+    })
+
+    it('reports the removed mirrored prop at its source location', () => {
+        const result = transformReact(
+            "import { ArrowRight } from '@solar-icons/react'\n\nexport const App = () => <ArrowRight mirrored />",
+            'App.tsx'
+        )
+
+        expect(result.diagnostics).toMatchObject([
+            {
+                code: 'REACT_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                line: 3,
+                column: 38,
+            },
         ])
     })
 })

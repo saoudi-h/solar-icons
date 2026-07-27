@@ -62,6 +62,11 @@ function applyEdits(source: string, edits: Edit[]): string {
         )
 }
 
+function diagnosticLocation(sourceFile: ts.SourceFile, node: ts.Node) {
+    const location = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile))
+    return { column: location.character + 1, line: location.line + 1 }
+}
+
 /** Migrates deterministic `@solar-icons/react-perf` imports without changing local bindings. */
 export function transformReactPerf(source: string, fileName = 'source.tsx'): TransformResult {
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
@@ -81,6 +86,7 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
         if (remainder && !style) {
             diagnostics.push({
                 code: 'UNSUPPORTED_REACT_PERF_SUBPATH',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message: `Skipped unsupported react-perf subpath: ${moduleSpecifier}.`,
                 file: fileName,
             })
@@ -91,6 +97,7 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
         if (!namedBindings || !ts.isNamedImports(namedBindings)) {
             diagnostics.push({
                 code: 'UNSUPPORTED_REACT_PERF_IMPORT',
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
                 message: `Skipped non-named import from ${moduleSpecifier}.`,
                 file: fileName,
             })
@@ -114,6 +121,30 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
                 text: replacementForSpecifier(specifier, targetName),
             })
         }
+
+        const importedNames = new Set(namedBindings.elements.map(specifier => specifier.name.text))
+        const visit = (node: ts.Node) => {
+            if (ts.isJsxOpeningLikeElement(node) && ts.isIdentifier(node.tagName)) {
+                if (importedNames.has(node.tagName.text)) {
+                    for (const attribute of node.attributes.properties) {
+                        if (
+                            !ts.isJsxAttribute(attribute) ||
+                            attribute.name.getText() !== 'mirrored'
+                        )
+                            continue
+                        diagnostics.push({
+                            code: 'REACT_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                            file: fileName,
+                            ...diagnosticLocation(sourceFile, attribute),
+                            message: `${node.tagName.text} uses the removed mirrored prop. Replace it with style={{ transform: 'scaleX(-1)' }}.`,
+                            severity: 'warning',
+                        })
+                    }
+                }
+            }
+            ts.forEachChild(node, visit)
+        }
+        ts.forEachChild(sourceFile, visit)
     }
 
     const code = applyEdits(source, edits)

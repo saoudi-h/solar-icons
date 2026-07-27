@@ -9,6 +9,12 @@ import { runMigration } from '../src/cli.js'
 const fixtureDirectory = join(dirname(fileURLToPath(import.meta.url)), '..', 'fixtures')
 const fixtures = [
     { buildMigrated: true, name: 'react-v1' },
+    {
+        buildMigrated: true,
+        directory: 'react-v1',
+        name: 'react-v1-dynamic-strategy',
+        reactV1Mode: 'dynamic' as const,
+    },
     { buildMigrated: true, name: 'react-perf-v1' },
     {
         buildMigrated: false,
@@ -34,7 +40,9 @@ function run(command: string, args: string[], cwd: string): Promise<void> {
 for (const fixture of fixtures) {
     const temporaryDirectory = await mkdtemp(join(tmpdir(), `solar-icons-${fixture.name}-`))
     try {
-        await cp(join(fixtureDirectory, fixture.name), temporaryDirectory, { recursive: true })
+        await cp(join(fixtureDirectory, fixture.directory ?? fixture.name), temporaryDirectory, {
+            recursive: true,
+        })
 
         console.info(`\n→ ${fixture.name}: building the v1 application`)
         await run('pnpm', ['install', '--ignore-scripts'], temporaryDirectory)
@@ -43,6 +51,7 @@ for (const fixture of fixtures) {
         console.info(`→ ${fixture.name}: applying the v2 migration`)
         const report = await runMigration({
             cwd: temporaryDirectory,
+            reactV1Mode: fixture.reactV1Mode,
             targetVersion: '2.0.0-beta.2',
             write: true,
         })
