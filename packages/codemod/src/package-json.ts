@@ -54,6 +54,7 @@ export function transformPackageJson(source: string, targetVersion = '^2.0.0'): 
             '@solar-icons/vue',
             '@solar-icons/nuxt',
             '@solar-icons/svelte',
+            '@solar-icons/solid',
         ]) {
             const version = dependencies[packageName]
             if (

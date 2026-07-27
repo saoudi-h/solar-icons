@@ -1,0 +1,15 @@
+{
+    "name": "solid-v1-migration-fixture",
+    "private": true,
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@solar-icons/solid": "1.0.1",
+        "solid-js": "1.9.14"
+    },
+    "devDependencies": {
+        "vite": "6.1.0",
+        "vite-plugin-solid": "2.11.12"
+    }
+}
