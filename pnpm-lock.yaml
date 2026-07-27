@@ -711,6 +711,9 @@ importers:
 
   packages/codemod:
     dependencies:
+      '@vue/compiler-sfc':
+        specifier: ^3.5.39
+        version: 3.5.39
       typescript:
         specifier: ^6.0.3
         version: 6.0.3

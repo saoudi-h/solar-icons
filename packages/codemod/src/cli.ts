@@ -9,9 +9,10 @@ import { transformPackageJson } from './package-json.js'
 import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
 import { transformReact } from './transforms/react.js'
+import { transformVue } from './transforms/vue.js'
 import type { Diagnostic, MigrationOptions, MigrationReport, ReactV1Mode } from './types.js'
 
-const sourceExtensions = new Set(['.js', '.jsx', '.mjs', '.ts', '.tsx'])
+const sourceExtensions = new Set(['.js', '.jsx', '.mjs', '.ts', '.tsx', '.vue'])
 const ignoredDirectories = new Set([
     '.git',
     '.next',
@@ -44,6 +45,7 @@ export async function runMigration({
     cwd,
     reactV1Mode = 'static',
     targetVersion,
+    vueV1Mode = 'static',
     write = false,
 }: MigrationOptions): Promise<MigrationReport> {
     const frameworks = await detectFrameworks(cwd)
@@ -56,15 +58,23 @@ export async function runMigration({
         const reactPerfResult = transformReactPerf(source, file)
         const reactResult = transformReact(reactPerfResult.code, file, reactV1Mode)
         const reactNativeResult = transformReactNative(reactResult.code, file)
+        const vueResult = transformVue(reactNativeResult.code, file, vueV1Mode)
         diagnostics.push(
             ...reactPerfResult.diagnostics,
             ...reactResult.diagnostics,
-            ...reactNativeResult.diagnostics
+            ...reactNativeResult.diagnostics,
+            ...vueResult.diagnostics
         )
-        if (!reactPerfResult.changed && !reactResult.changed && !reactNativeResult.changed) continue
+        if (
+            !reactPerfResult.changed &&
+            !reactResult.changed &&
+            !reactNativeResult.changed &&
+            !vueResult.changed
+        )
+            continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, reactNativeResult.code)
+        if (write) await writeFile(file, vueResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')
@@ -87,6 +97,7 @@ async function main() {
 Options:
   --cwd <path>                    Project directory (default: current directory)
   --react-v1-mode <static|dynamic> React v1 strategy (default: static)
+  --vue-v1-mode <static|dynamic>   Vue v1 strategy (default: static)
   --target-version <version>      Solar Icons v2 version to install (default: ^2.0.0)
   --write                         Apply changes; otherwise show a dry-run
   -h, --help                      Show this help message`)
@@ -95,12 +106,17 @@ Options:
     const cwd = resolve(option('--cwd') ?? process.cwd())
     const write = process.argv.includes('--write')
     const reactV1ModeOption = option('--react-v1-mode')
+    const vueV1ModeOption = option('--vue-v1-mode')
     const targetVersion = option('--target-version')
     if (reactV1ModeOption && reactV1ModeOption !== 'static' && reactV1ModeOption !== 'dynamic') {
         throw new Error('--react-v1-mode must be either static or dynamic.')
     }
+    if (vueV1ModeOption && vueV1ModeOption !== 'static' && vueV1ModeOption !== 'dynamic') {
+        throw new Error('--vue-v1-mode must be either static or dynamic.')
+    }
     const reactV1Mode = reactV1ModeOption as ReactV1Mode | undefined
-    const report = await runMigration({ cwd, reactV1Mode, targetVersion, write })
+    const vueV1Mode = vueV1ModeOption as ReactV1Mode | undefined
+    const report = await runMigration({ cwd, reactV1Mode, targetVersion, vueV1Mode, write })
 
     console.info(`Detected frameworks: ${report.detectedFrameworks.join(', ') || 'none'}`)
     console.info(`${write ? 'Migrated' : 'Would migrate'} ${report.changedFiles.length} file(s).`)

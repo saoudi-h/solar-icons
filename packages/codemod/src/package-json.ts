@@ -14,7 +14,7 @@ const dependencySections: DependencySection[] = [
     'peerDependencies',
 ]
 
-/** Updates React v1 and react-perf dependencies to the requested v2 version. */
+/** Updates supported Solar Icons v1 dependencies to the requested v2 version. */
 export function transformPackageJson(source: string, targetVersion = '^2.0.0'): TransformResult {
     const packageJson = JSON.parse(source) as PackageJson
     let changed = false
@@ -48,6 +48,18 @@ export function transformPackageJson(source: string, targetVersion = '^2.0.0'): 
         ) {
             dependencies['@solar-icons/react-native'] = targetVersion
             changed = true
+        }
+
+        for (const packageName of ['@solar-icons/vue', '@solar-icons/nuxt']) {
+            const version = dependencies[packageName]
+            if (
+                version?.startsWith('1.') ||
+                version?.startsWith('^1.') ||
+                version?.startsWith('~1.')
+            ) {
+                dependencies[packageName] = targetVersion
+                changed = true
+            }
         }
     }
 

@@ -6,6 +6,7 @@ Run a preview first. It never writes files unless `--write` is passed.
 
 ```bash
 npx @solar-icons/codemod --react-v1-mode static
+npx @solar-icons/codemod --vue-v1-mode static
 npx @solar-icons/codemod --react-v1-mode static --write
 ```
 
@@ -17,9 +18,13 @@ npx @solar-icons/codemod --react-v1-mode static --write
 
 If a `weight` expression cannot be resolved while using `static`, the codemod safely uses `dynamic` for that icon and prints a file, line, column, code, and explanation.
 
+## Vue v1 strategy
+
+`--vue-v1-mode static` follows the same per-style default for Vue single-file components. It rewrites supported `<script>` or `<script setup>` imports and their template tags. `--vue-v1-mode dynamic` preserves `weight` bindings through `@solar-icons/vue/dynamic`.
+
 ## Manual follow-ups
 
-The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, and default namespace imports. These need an application-level decision and are linked to the v2 migration guide.
+The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, default namespace imports, and removed `mirrored` props. These need an application-level decision and are linked to the v2 migration guide.
 
 All 37 removed icon names are converted through an explicit v1-to-v2 mapping.
 

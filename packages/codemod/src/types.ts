@@ -24,6 +24,7 @@ export interface MigrationReport {
 export interface MigrationOptions {
     cwd: string
     reactV1Mode?: ReactV1Mode
+    vueV1Mode?: ReactV1Mode
     targetVersion?: string
     write?: boolean
 }

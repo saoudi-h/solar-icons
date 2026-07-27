@@ -43,6 +43,7 @@
         }
     },
     "dependencies": {
+        "@vue/compiler-sfc": "^3.5.39",
         "typescript": "^6.0.3"
     },
     "devDependencies": {
