@@ -50,7 +50,11 @@ export function transformPackageJson(source: string, targetVersion = '^2.0.0'): 
             changed = true
         }
 
-        for (const packageName of ['@solar-icons/vue', '@solar-icons/nuxt']) {
+        for (const packageName of [
+            '@solar-icons/vue',
+            '@solar-icons/nuxt',
+            '@solar-icons/svelte',
+        ]) {
             const version = dependencies[packageName]
             if (
                 version?.startsWith('1.') ||

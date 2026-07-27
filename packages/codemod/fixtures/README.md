@@ -7,3 +7,5 @@ Each fixture is a small, pinned v1 application. `pnpm test:fixtures` copies it t
 `vue-v1` exercises a `.vue` single-file component with static, dynamic, aliased, and renamed icon imports.
 
 `nuxt-v1-config` validates the Nuxt module configuration migration in a real Nuxt build.
+
+`svelte-v1` validates style imports, aliases, and removed icon names in a Svelte component.

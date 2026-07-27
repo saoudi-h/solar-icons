@@ -5,6 +5,7 @@ export { transformNuxt } from './transforms/nuxt.js'
 export { transformReactNative } from './transforms/react-native.js'
 export { transformReactPerf } from './transforms/react-perf.js'
 export { transformReact } from './transforms/react.js'
+export { transformSvelte } from './transforms/svelte.js'
 export { transformVue } from './transforms/vue.js'
 export type {
     Diagnostic,

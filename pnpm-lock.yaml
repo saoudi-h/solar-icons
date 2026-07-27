@@ -714,6 +714,9 @@ importers:
       '@vue/compiler-sfc':
         specifier: ^3.5.39
         version: 3.5.39
+      svelte:
+        specifier: ^5.56.4
+        version: 5.56.4(@typescript-eslint/types@8.63.0)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3

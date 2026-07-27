@@ -44,6 +44,7 @@
     },
     "dependencies": {
         "@vue/compiler-sfc": "^3.5.39",
+        "svelte": "^5.56.4",
         "typescript": "^6.0.3"
     },
     "devDependencies": {

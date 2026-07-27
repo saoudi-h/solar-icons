@@ -17,6 +17,7 @@ const fixtures = [
     },
     { buildMigrated: true, name: 'vue-v1' },
     { buildMigrated: true, name: 'nuxt-v1-config' },
+    { buildMigrated: true, name: 'svelte-v1' },
     { buildMigrated: true, name: 'react-perf-v1' },
     {
         buildMigrated: false,

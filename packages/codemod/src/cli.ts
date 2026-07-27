@@ -10,6 +10,7 @@ import { transformNuxt } from './transforms/nuxt.js'
 import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
 import { transformReact } from './transforms/react.js'
+import { transformSvelte } from './transforms/svelte.js'
 import { transformVue } from './transforms/vue.js'
 import type { Diagnostic, MigrationOptions, MigrationReport, ReactV1Mode } from './types.js'
 
@@ -61,24 +62,27 @@ export async function runMigration({
         const reactNativeResult = transformReactNative(reactResult.code, file)
         const vueResult = transformVue(reactNativeResult.code, file, vueV1Mode)
         const nuxtResult = transformNuxt(vueResult.code, file)
+        const svelteResult = transformSvelte(nuxtResult.code, file)
         diagnostics.push(
             ...reactPerfResult.diagnostics,
             ...reactResult.diagnostics,
             ...reactNativeResult.diagnostics,
             ...vueResult.diagnostics,
-            ...nuxtResult.diagnostics
+            ...nuxtResult.diagnostics,
+            ...svelteResult.diagnostics
         )
         if (
             !reactPerfResult.changed &&
             !reactResult.changed &&
             !reactNativeResult.changed &&
             !vueResult.changed &&
-            !nuxtResult.changed
+            !nuxtResult.changed &&
+            !svelteResult.changed
         )
             continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, nuxtResult.code)
+        if (write) await writeFile(file, svelteResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')

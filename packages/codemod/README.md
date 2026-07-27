@@ -26,6 +26,10 @@ If a `weight` expression cannot be resolved while using `static`, the codemod sa
 
 The Nuxt adapter renames `solarIcons.prefix` to `solarIcons.namePrefix` and upgrades the Nuxt module dependency. The removed `#solar-icons/category` alias is reported with its source location because the replacement depends on the individual icons and styles used by the application.
 
+## Svelte v1 imports
+
+The Svelte adapter migrates per-style imports and deterministic direct category component imports. Category barrels and removed `mirrored` props are reported with source locations for manual follow-up.
+
 ## Manual follow-ups
 
 The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, default namespace imports, and removed `mirrored` props. These need an application-level decision and are linked to the v2 migration guide.
