@@ -1,7 +1,7 @@
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'
-import type { TransformResult } from '../types.js'
+import type { Diagnostic, TransformResult } from '../types.js'
 
 const styles: Record<string, string> = {
     bold: 'bold',
@@ -58,10 +58,16 @@ function applyEdits(source: string, edits: Edit[]): string {
         )
 }
 
+function diagnosticLocation(sourceFile: ts.SourceFile, node: ts.Node) {
+    const location = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile))
+    return { column: location.character + 1, line: location.line + 1 }
+}
+
 /** Migrates the v1 React Native root, style, and category imports. */
 export function transformReactNative(source: string, fileName = 'source.tsx'): TransformResult {
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const edits: Edit[] = []
+    const diagnostics: Diagnostic[] = []
 
     for (const statement of sourceFile.statements) {
         if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier))
@@ -69,7 +75,15 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
         const moduleSpecifier = statement.moduleSpecifier.text
         if (!moduleSpecifier.startsWith('@solar-icons/react-native')) continue
         const namedBindings = statement.importClause?.namedBindings
-        if (!namedBindings || !ts.isNamedImports(namedBindings)) continue
+        if (!namedBindings || !ts.isNamedImports(namedBindings)) {
+            diagnostics.push({
+                code: 'UNSUPPORTED_REACT_NATIVE_IMPORT',
+                file: fileName,
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
+                message: `Skipped non-named import from ${moduleSpecifier}. Convert it to individual icon imports manually.`,
+            })
+            continue
+        }
 
         const remainder = moduleSpecifier.slice('@solar-icons/react-native'.length)
         if (!remainder) {
@@ -90,7 +104,15 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
         const style = categoryMatch?.[1]
             ? styleFromSpecifier(categoryMatch[1])
             : styleFromSpecifier(moduleSpecifier)
-        if (!style) continue
+        if (!style) {
+            diagnostics.push({
+                code: 'UNSUPPORTED_REACT_NATIVE_SUBPATH',
+                file: fileName,
+                ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
+                message: `Skipped unsupported React Native subpath: ${moduleSpecifier}.`,
+            })
+            continue
+        }
 
         if (categoryMatch) {
             const imports = namedBindings.elements.map(specifier => {
@@ -120,8 +142,53 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
                 ),
             })
         }
+
+        const importedNames = new Set(namedBindings.elements.map(specifier => specifier.name.text))
+        const visit = (node: ts.Node) => {
+            if (ts.isJsxOpeningLikeElement(node) && ts.isIdentifier(node.tagName)) {
+                if (importedNames.has(node.tagName.text)) {
+                    for (const attribute of node.attributes.properties) {
+                        if (!ts.isJsxAttribute(attribute)) continue
+                        if (attribute.name.getText() === 'mirrored') {
+                            diagnostics.push({
+                                code: 'REACT_NATIVE_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                                file: fileName,
+                                ...diagnosticLocation(sourceFile, attribute),
+                                message: `${node.tagName.text} uses the removed mirrored prop. Replace it with style={{ transform: [{ scaleX: -1 }] }}.`,
+                                severity: 'warning',
+                            })
+                        }
+                        const initializer = attribute.initializer
+                        if (
+                            attribute.name.getText() === 'size' &&
+                            initializer &&
+                            ts.isStringLiteral(initializer)
+                        ) {
+                            const size = Number(initializer.text)
+                            if (Number.isFinite(size)) {
+                                edits.push({
+                                    start: initializer.getStart(sourceFile),
+                                    end: initializer.getEnd(),
+                                    text: `{${size}}`,
+                                })
+                            } else {
+                                diagnostics.push({
+                                    code: 'REACT_NATIVE_SIZE_REQUIRES_NUMBER',
+                                    file: fileName,
+                                    ...diagnosticLocation(sourceFile, attribute),
+                                    message: `${node.tagName.text} has a string size. React Native v2 requires a number.`,
+                                    severity: 'warning',
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+            ts.forEachChild(node, visit)
+        }
+        ts.forEachChild(sourceFile, visit)
     }
 
     const code = applyEdits(source, edits)
-    return { code, changed: code !== source, diagnostics: [] }
+    return { code, changed: code !== source, diagnostics }
 }

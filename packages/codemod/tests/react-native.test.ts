@@ -32,4 +32,32 @@ describe('transformReactNative', () => {
             "import { HouseIcon as House } from '@solar-icons/react-native/bold/house'\nimport { ScaleIcon as Weigher } from '@solar-icons/react-native/bold/scale'"
         )
     })
+
+    it('converts numeric sizes and reports the removed mirrored prop', () => {
+        const result = transformReactNative(
+            'import { House } from \'@solar-icons/react-native/Bold\'\n\nexport const App = () => <House size="32" mirrored />',
+            'App.tsx'
+        )
+
+        expect(result.code).toContain('<House size={32} mirrored />')
+        expect(result.diagnostics).toMatchObject([
+            {
+                code: 'REACT_NATIVE_MIRRORED_REQUIRES_MANUAL_MIGRATION',
+                line: 3,
+                column: 43,
+            },
+        ])
+    })
+
+    it('reports imports and paths it cannot safely migrate', () => {
+        const result = transformReactNative(
+            "import * as solar from '@solar-icons/react-native/category'",
+            'App.tsx'
+        )
+
+        expect(result.changed).toBe(false)
+        expect(result.diagnostics).toMatchObject([
+            { code: 'UNSUPPORTED_REACT_NATIVE_IMPORT', line: 1, column: 24 },
+        ])
+    })
 })
