@@ -22,6 +22,10 @@ If a `weight` expression cannot be resolved while using `static`, the codemod sa
 
 `--vue-v1-mode static` follows the same per-style default for Vue single-file components. It rewrites supported `<script>` or `<script setup>` imports and their template tags. `--vue-v1-mode dynamic` preserves `weight` bindings through `@solar-icons/vue/dynamic`.
 
+## Nuxt v1 configuration
+
+The Nuxt adapter renames `solarIcons.prefix` to `solarIcons.namePrefix` and upgrades the Nuxt module dependency. The removed `#solar-icons/category` alias is reported with its source location because the replacement depends on the individual icons and styles used by the application.
+
 ## Manual follow-ups
 
 The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, default namespace imports, and removed `mirrored` props. These need an application-level decision and are linked to the v2 migration guide.

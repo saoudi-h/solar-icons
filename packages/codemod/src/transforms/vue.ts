@@ -108,6 +108,7 @@ export function transformVue(
     fileName = 'source.vue',
     mode: ReactV1Mode = 'static'
 ): TransformResult {
+    if (!fileName.endsWith('.vue')) return { changed: false, code: source, diagnostics: [] }
     const parsed = parse(source, { filename: fileName })
     const template = parsed.descriptor.template
     const scripts = [parsed.descriptor.script, parsed.descriptor.scriptSetup].filter(

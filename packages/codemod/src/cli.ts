@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url'
 
 import { detectFrameworks } from './detect.js'
 import { transformPackageJson } from './package-json.js'
+import { transformNuxt } from './transforms/nuxt.js'
 import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
 import { transformReact } from './transforms/react.js'
@@ -59,22 +60,25 @@ export async function runMigration({
         const reactResult = transformReact(reactPerfResult.code, file, reactV1Mode)
         const reactNativeResult = transformReactNative(reactResult.code, file)
         const vueResult = transformVue(reactNativeResult.code, file, vueV1Mode)
+        const nuxtResult = transformNuxt(vueResult.code, file)
         diagnostics.push(
             ...reactPerfResult.diagnostics,
             ...reactResult.diagnostics,
             ...reactNativeResult.diagnostics,
-            ...vueResult.diagnostics
+            ...vueResult.diagnostics,
+            ...nuxtResult.diagnostics
         )
         if (
             !reactPerfResult.changed &&
             !reactResult.changed &&
             !reactNativeResult.changed &&
-            !vueResult.changed
+            !vueResult.changed &&
+            !nuxtResult.changed
         )
             continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, vueResult.code)
+        if (write) await writeFile(file, nuxtResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')

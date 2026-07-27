@@ -16,6 +16,7 @@ const fixtures = [
         reactV1Mode: 'dynamic' as const,
     },
     { buildMigrated: true, name: 'vue-v1' },
+    { buildMigrated: true, name: 'nuxt-v1-config' },
     { buildMigrated: true, name: 'react-perf-v1' },
     {
         buildMigrated: false,

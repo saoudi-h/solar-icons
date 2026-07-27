@@ -5,3 +5,5 @@ Each fixture is a small, pinned v1 application. `pnpm test:fixtures` copies it t
 `react-v1-manual` is intentionally different: it builds only as v1, then verifies diagnostics for providers, namespaces, and category imports. It proves that the codemod stops safely when an application-level decision is required.
 
 `vue-v1` exercises a `.vue` single-file component with static, dynamic, aliased, and renamed icon imports.
+
+`nuxt-v1-config` validates the Nuxt module configuration migration in a real Nuxt build.
