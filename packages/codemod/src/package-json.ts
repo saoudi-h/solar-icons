@@ -39,6 +39,16 @@ export function transformPackageJson(source: string, targetVersion = '^2.0.0'): 
             dependencies['@solar-icons/react'] = targetVersion
             changed = true
         }
+
+        const reactNativeVersion = dependencies['@solar-icons/react-native']
+        if (
+            reactNativeVersion?.startsWith('1.') ||
+            reactNativeVersion?.startsWith('^1.') ||
+            reactNativeVersion?.startsWith('~1.')
+        ) {
+            dependencies['@solar-icons/react-native'] = targetVersion
+            changed = true
+        }
     }
 
     return {

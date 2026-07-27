@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url'
 
 import { detectFrameworks } from './detect.js'
 import { transformPackageJson } from './package-json.js'
+import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
 import { transformReact } from './transforms/react.js'
 import type { Diagnostic, MigrationOptions, MigrationReport, ReactV1Mode } from './types.js'
@@ -54,11 +55,16 @@ export async function runMigration({
         const source = await readFile(file, 'utf8')
         const reactPerfResult = transformReactPerf(source, file)
         const reactResult = transformReact(reactPerfResult.code, file, reactV1Mode)
-        diagnostics.push(...reactPerfResult.diagnostics, ...reactResult.diagnostics)
-        if (!reactPerfResult.changed && !reactResult.changed) continue
+        const reactNativeResult = transformReactNative(reactResult.code, file)
+        diagnostics.push(
+            ...reactPerfResult.diagnostics,
+            ...reactResult.diagnostics,
+            ...reactNativeResult.diagnostics
+        )
+        if (!reactPerfResult.changed && !reactResult.changed && !reactNativeResult.changed) continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, reactResult.code)
+        if (write) await writeFile(file, reactNativeResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')
