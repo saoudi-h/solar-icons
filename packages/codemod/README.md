@@ -30,6 +30,10 @@ The Nuxt adapter renames `solarIcons.prefix` to `solarIcons.namePrefix` and upgr
 
 The Svelte adapter migrates per-style imports and deterministic direct category component imports. Category barrels and removed `mirrored` props are reported with source locations for manual follow-up.
 
+## Angular v1 imports
+
+The Angular adapter renames static icon exports to their `Solar`-prefixed v2 names, updates TypeScript references and deterministic inline-template selectors. It reports external templates and removed `mirrored` inputs for manual review.
+
 ## Manual follow-ups
 
 The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, default namespace imports, and removed `mirrored` props. These need an application-level decision and are linked to the v2 migration guide.

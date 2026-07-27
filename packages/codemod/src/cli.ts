@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url'
 
 import { detectFrameworks } from './detect.js'
 import { transformPackageJson } from './package-json.js'
+import { transformAngular } from './transforms/angular.js'
 import { transformNuxt } from './transforms/nuxt.js'
 import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
@@ -65,6 +66,7 @@ export async function runMigration({
         const nuxtResult = transformNuxt(vueResult.code, file)
         const svelteResult = transformSvelte(nuxtResult.code, file)
         const solidResult = transformSolid(svelteResult.code, file)
+        const angularResult = transformAngular(solidResult.code, file)
         diagnostics.push(
             ...reactPerfResult.diagnostics,
             ...reactResult.diagnostics,
@@ -72,7 +74,8 @@ export async function runMigration({
             ...vueResult.diagnostics,
             ...nuxtResult.diagnostics,
             ...svelteResult.diagnostics,
-            ...solidResult.diagnostics
+            ...solidResult.diagnostics,
+            ...angularResult.diagnostics
         )
         if (
             !reactPerfResult.changed &&
@@ -81,12 +84,13 @@ export async function runMigration({
             !vueResult.changed &&
             !nuxtResult.changed &&
             !svelteResult.changed &&
-            !solidResult.changed
+            !solidResult.changed &&
+            !angularResult.changed
         )
             continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, solidResult.code)
+        if (write) await writeFile(file, angularResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')
