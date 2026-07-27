@@ -1,0 +1,49 @@
+import type { TransformResult } from './types.js'
+
+type DependencySection = 'dependencies' | 'devDependencies' | 'peerDependencies'
+
+interface PackageJson {
+    dependencies?: Record<string, string>
+    devDependencies?: Record<string, string>
+    peerDependencies?: Record<string, string>
+}
+
+const dependencySections: DependencySection[] = [
+    'dependencies',
+    'devDependencies',
+    'peerDependencies',
+]
+
+/** Updates React v1 and react-perf dependencies to the requested v2 version. */
+export function transformPackageJson(source: string, targetVersion = '^2.0.0'): TransformResult {
+    const packageJson = JSON.parse(source) as PackageJson
+    let changed = false
+
+    for (const sectionName of dependencySections) {
+        const dependencies = packageJson[sectionName]
+        if (!dependencies) continue
+
+        if ('@solar-icons/react-perf' in dependencies) {
+            delete dependencies['@solar-icons/react-perf']
+            dependencies['@solar-icons/react'] = targetVersion
+            changed = true
+            continue
+        }
+
+        const reactVersion = dependencies['@solar-icons/react']
+        if (
+            reactVersion?.startsWith('1.') ||
+            reactVersion?.startsWith('^1.') ||
+            reactVersion?.startsWith('~1.')
+        ) {
+            dependencies['@solar-icons/react'] = targetVersion
+            changed = true
+        }
+    }
+
+    return {
+        code: changed ? `${JSON.stringify(packageJson, null, 4)}\n` : source,
+        changed,
+        diagnostics: [],
+    }
+}
