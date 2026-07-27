@@ -16,6 +16,7 @@ interface ImportUse {
     dynamic: boolean
     dynamicWeightAttributes: ts.JsxAttribute[]
     styles: Set<string>
+    tagNames: ts.Identifier[]
     weightAttributes: ts.JsxAttribute[]
 }
 
@@ -139,6 +140,7 @@ export function transformReact(
                 dynamic: false,
                 dynamicWeightAttributes: [],
                 styles: new Set(),
+                tagNames: [],
                 weightAttributes: [],
             })
         }
@@ -147,6 +149,7 @@ export function transformReact(
             if (ts.isJsxOpeningLikeElement(node) && ts.isIdentifier(node.tagName)) {
                 const usage = uses.get(node.tagName.text)
                 if (usage) {
+                    usage.tagNames.push(node.tagName)
                     const weightAttribute = getWeightAttribute(node)
                     const weight = getStaticWeight(weightAttribute)
                     const style = weight && weightToStyle[weight]
@@ -158,6 +161,9 @@ export function transformReact(
                         if (weightAttribute) usage.weightAttributes.push(weightAttribute)
                     }
                 }
+            }
+            if (ts.isJsxClosingElement(node) && ts.isIdentifier(node.tagName)) {
+                uses.get(node.tagName.text)?.tagNames.push(node.tagName)
             }
             ts.forEachChild(node, visit)
         }
@@ -185,8 +191,21 @@ export function transformReact(
                     ? 'dynamic'
                     : [...usage.styles][0]
             const targetName = addIconSuffix(renameIcon(importedName))
-            const binding = localName === targetName ? targetName : `${targetName} as ${localName}`
+            const hasExplicitAlias = Boolean(specifier.propertyName)
+            const outputLocalName = hasExplicitAlias ? localName : targetName
+            const binding =
+                outputLocalName === targetName ? targetName : `${targetName} as ${outputLocalName}`
             imports.push(`import { ${binding} } from '@solar-icons/react/${style}'`)
+
+            if (!hasExplicitAlias && localName !== targetName) {
+                for (const tagName of usage.tagNames) {
+                    edits.push({
+                        end: tagName.getEnd(),
+                        start: tagName.getStart(sourceFile),
+                        text: targetName,
+                    })
+                }
+            }
 
             if (mode === 'static' && usage.dynamicWeightAttributes.length > 0) {
                 const attribute = usage.dynamicWeightAttributes[0]

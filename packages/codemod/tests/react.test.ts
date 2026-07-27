@@ -9,7 +9,7 @@ describe('transformReact', () => {
         )
 
         expect(result.code).toBe(
-            "import { HeartIcon as Heart } from '@solar-icons/react/bold'\n\nexport const App = () => <Heart />"
+            "import { HeartIcon } from '@solar-icons/react/bold'\n\nexport const App = () => <HeartIcon />"
         )
     })
 
@@ -18,7 +18,7 @@ describe('transformReact', () => {
             'import { Heart } from \'@solar-icons/react\'\n\nexport const App = () => <Heart weight="Bold" />'
         )
 
-        expect(result.code).not.toContain('<Heart  />')
+        expect(result.code).not.toContain('<HeartIcon  />')
     })
 
     it('uses the v2 dynamic import when a weight is dynamic', () => {
@@ -30,7 +30,7 @@ describe('transformReact', () => {
         ])
 
         expect(result.code).toBe(
-            "import { HeartIcon as Heart } from '@solar-icons/react/dynamic'\n\nexport const App = ({ weight }) => <Heart weight={weight} />"
+            "import { HeartIcon } from '@solar-icons/react/dynamic'\n\nexport const App = ({ weight }) => <HeartIcon weight={weight} />"
         )
     })
 
@@ -79,9 +79,8 @@ describe('transformReact', () => {
             "import { Weigher } from '@solar-icons/react'\n\nexport const App = () => <Weigher />"
         )
 
-        expect(result.code).toContain(
-            "import { ScaleIcon as Weigher } from '@solar-icons/react/linear'"
-        )
+        expect(result.code).toContain("import { ScaleIcon } from '@solar-icons/react/linear'")
+        expect(result.code).toContain('<ScaleIcon />')
     })
 
     it('reports legacy providers and category imports for manual migration', () => {

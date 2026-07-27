@@ -75,6 +75,17 @@ export async function runMigration({
 }
 
 async function main() {
+    if (process.argv.includes('--help') || process.argv.includes('-h')) {
+        console.info(`Usage: solar-icons-migrate [options]
+
+Options:
+  --cwd <path>                    Project directory (default: current directory)
+  --react-v1-mode <static|dynamic> React v1 strategy (default: static)
+  --target-version <version>      Solar Icons v2 version to install (default: ^2.0.0)
+  --write                         Apply changes; otherwise show a dry-run
+  -h, --help                      Show this help message`)
+        return
+    }
     const cwd = resolve(option('--cwd') ?? process.cwd())
     const write = process.argv.includes('--write')
     const reactV1ModeOption = option('--react-v1-mode')
