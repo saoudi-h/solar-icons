@@ -40,16 +40,21 @@ const baseStyle = computed(() => {
     if (props.secondaryColor) s['--solar-secondary-color'] = props.secondaryColor
     if (props.secondaryOpacity != null)
         s['--solar-secondary-opacity'] = String(props.secondaryOpacity)
+    if (props.size === undefined && !props.isolated) {
+        if (!s.fontSize && !s['font-size']) {
+            s.fontSize = 'var(--solar-size, 24px)'
+        }
+    }
     return s
 })
 
 const svgWidth = computed(() => {
     if (props.size !== undefined) return undefined
-    return props.isolated ? '24px' : 'var(--solar-size, 24px)'
+    return props.isolated ? '24px' : '1em'
 })
 const svgHeight = computed(() => {
     if (props.size !== undefined) return undefined
-    return props.isolated ? '24px' : 'var(--solar-size, 24px)'
+    return props.isolated ? '24px' : '1em'
 })
 const svgColor = computed(() => {
     if (props.color !== undefined) return undefined

@@ -33,6 +33,7 @@ import { Directive, computed, input } from '@angular/core'
         '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
         '[style.--solar-secondary-color]': 'duotoneColor()',
         '[style.--solar-secondary-opacity]': 'duotoneOpacityStr()',
+        '[style.font-size]': 'defaultFontSize()',
     },
 })
 export abstract class IconBase {
@@ -52,12 +53,17 @@ export abstract class IconBase {
 
     readonly defaultWidth = computed(() => {
         if (this.size() !== undefined) return undefined
-        return this.isolated() ? '24px' : 'var(--solar-size, 24px)'
+        return this.isolated() ? '24px' : '1em'
     })
 
     readonly defaultHeight = computed(() => {
         if (this.size() !== undefined) return undefined
-        return this.isolated() ? '24px' : 'var(--solar-size, 24px)'
+        return this.isolated() ? '24px' : '1em'
+    })
+
+    readonly defaultFontSize = computed(() => {
+        if (this.size() !== undefined) return null
+        return this.isolated() ? null : 'var(--solar-size, 24px)'
     })
 
     readonly defaultColor = computed(() => {

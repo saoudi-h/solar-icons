@@ -32,7 +32,8 @@ describe('Linear icon rendering', () => {
     describe('default CSS variable fallbacks', () => {
         it('uses CSS var fallbacks for size', () => {
             const body = renderIcon();
-            expect(body).toContain('width="var(--solar-size, 24px)"');
+            expect(body).toContain('width="1em"');
+            expect(body).toContain('font-size: var(--solar-size, 24px)');
         });
 
         it('uses CSS var fallbacks for color', () => {

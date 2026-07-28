@@ -46,7 +46,8 @@ describe('IconBase', () => {
     describe('size input', () => {
         it('should default to CSS var fallback', () => {
             fixture.detectChanges()
-            expect(getSvgAttribute('width')).toBe('var(--solar-size, 24px)')
+            expect(getSvgAttribute('width')).toBe('1em')
+            expect(getSvgStyle('font-size')).toBe('var(--solar-size, 24px)')
         })
     })
 

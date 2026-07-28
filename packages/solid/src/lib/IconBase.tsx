@@ -55,16 +55,19 @@ function IconBase(allProps: IconProps): JSX.Element {
         if (local.secondaryColor) s['--solar-secondary-color'] = local.secondaryColor;
         if (local.secondaryOpacity != null)
             s['--solar-secondary-opacity'] = String(local.secondaryOpacity);
+        if (local.size === undefined && !local.isolated) {
+            s['font-size'] = s['font-size'] ?? 'var(--solar-size, 24px)';
+        }
         return s;
     };
 
     const widthAttr = () => {
         if (local.size !== undefined) return undefined;
-        return local.isolated ? '24px' : 'var(--solar-size, 24px)';
+        return local.isolated ? '24px' : '1em';
     };
     const heightAttr = () => {
         if (local.size !== undefined) return undefined;
-        return local.isolated ? '24px' : 'var(--solar-size, 24px)';
+        return local.isolated ? '24px' : '1em';
     };
     const colorAttr = () => {
         if (local.color !== undefined) return undefined;
