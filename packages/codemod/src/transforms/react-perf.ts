@@ -1,6 +1,7 @@
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'
+import { renameImportedBindingReferences } from '../import-bindings.js'
 import type { Diagnostic, TransformResult } from '../types.js'
 
 const styles: Record<string, string> = {
@@ -50,11 +51,6 @@ function importedName(specifier: ts.ImportSpecifier): string {
     return (specifier.propertyName ?? specifier.name).text
 }
 
-function replacementForSpecifier(specifier: ts.ImportSpecifier, targetName: string): string {
-    const localName = specifier.name.text
-    return localName === targetName ? targetName : `${targetName} as ${localName}`
-}
-
 function applyEdits(source: string, edits: Edit[]): string {
     return edits
         .sort((left, right) => right.start - left.start)
@@ -69,11 +65,12 @@ function diagnosticLocation(sourceFile: ts.SourceFile, node: ts.Node) {
     return { column: location.character + 1, line: location.line + 1 }
 }
 
-/** Migrates deterministic `@solar-icons/react-perf` imports without changing local bindings. */
+/** Migrates deterministic `@solar-icons/react-perf` imports and modernizes default local names. */
 export function transformReactPerf(source: string, fileName = 'source.tsx'): TransformResult {
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const edits: Edit[] = []
     const diagnostics: Diagnostic[] = []
+    const bindingRenames = new Map<string, string>()
 
     for (const statement of sourceFile.statements) {
         if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier))
@@ -150,10 +147,18 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
             const targetName = style
                 ? iconNameForStyle(sourceName, style)
                 : iconNameForRoot(sourceName)
+            const localName = specifier.name.text
+            const hasExplicitAlias = Boolean(specifier.propertyName)
+            const outputLocalName = hasExplicitAlias ? localName : targetName
+            if (!hasExplicitAlias && localName !== targetName)
+                bindingRenames.set(localName, targetName)
             edits.push({
                 start: specifier.getStart(sourceFile),
                 end: specifier.getEnd(),
-                text: replacementForSpecifier(specifier, targetName),
+                text:
+                    outputLocalName === targetName
+                        ? targetName
+                        : `${targetName} as ${outputLocalName}`,
             })
         }
 
@@ -197,6 +202,8 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
         ts.forEachChild(node, visitPackageReferences)
     }
     ts.forEachChild(sourceFile, visitPackageReferences)
+
+    edits.push(...renameImportedBindingReferences(source, fileName, bindingRenames))
 
     const code = applyEdits(source, edits)
     return { code, changed: code !== source, diagnostics }

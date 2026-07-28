@@ -1,6 +1,7 @@
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'
+import { renameImportedBindingReferences } from '../import-bindings.js'
 import type { Diagnostic, ReactV1Mode, TransformResult } from '../types.js'
 
 const weightToStyle: Record<string, string> = {
@@ -62,6 +63,43 @@ function diagnosticLocation(sourceFile: ts.SourceFile, node: ts.Node) {
     return { column: location.character + 1, line: location.line + 1 }
 }
 
+function removeGeneratedV2Aliases(source: string, sourceFile: ts.SourceFile): Edit[] {
+    const edits: Edit[] = []
+    const bindingRenames = new Map<string, string>()
+
+    for (const statement of sourceFile.statements) {
+        if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier))
+            continue
+        if (!statement.moduleSpecifier.text.startsWith('@solar-icons/react')) continue
+        const bindings = statement.importClause?.namedBindings
+        if (!bindings || !ts.isNamedImports(bindings)) continue
+
+        for (const specifier of bindings.elements) {
+            if (!specifier.propertyName) continue
+            const importedName = specifier.propertyName.text
+            const localName = specifier.name.text
+            const baseName = importedName.slice(0, -4)
+            if (
+                !importedName.endsWith('Icon') ||
+                (localName !== baseName && renameIcon(localName) !== baseName)
+            )
+                continue
+
+            edits.push({
+                end: specifier.getEnd(),
+                start: specifier.getStart(sourceFile),
+                text: importedName,
+            })
+            bindingRenames.set(localName, importedName)
+        }
+    }
+
+    return [
+        ...edits,
+        ...renameImportedBindingReferences(source, sourceFile.fileName, bindingRenames),
+    ]
+}
+
 /**
  * Migrates React v1 imports when every imported icon has a determinable style.
  * Dynamic or mixed weight usage moves to the v2 dynamic entry point.
@@ -74,6 +112,7 @@ export function transformReact(
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const diagnostics: Diagnostic[] = []
     const edits: Edit[] = []
+    const bindingRenames = new Map<string, string>()
 
     for (const statement of sourceFile.statements) {
         if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier)) {
@@ -214,15 +253,8 @@ export function transformReact(
                 outputLocalName === targetName ? targetName : `${targetName} as ${outputLocalName}`
             imports.push(`import { ${binding} } from '@solar-icons/react/${style}'`)
 
-            if (!hasExplicitAlias && localName !== targetName) {
-                for (const tagName of usage.tagNames) {
-                    edits.push({
-                        end: tagName.getEnd(),
-                        start: tagName.getStart(sourceFile),
-                        text: targetName,
-                    })
-                }
-            }
+            if (!hasExplicitAlias && localName !== targetName)
+                bindingRenames.set(localName, targetName)
 
             if (mode === 'static' && usage.dynamicWeightAttributes.length > 0) {
                 const attribute = usage.dynamicWeightAttributes[0]
@@ -266,6 +298,9 @@ export function transformReact(
             text: imports.join('\n'),
         })
     }
+
+    edits.push(...renameImportedBindingReferences(source, fileName, bindingRenames))
+    edits.push(...removeGeneratedV2Aliases(source, sourceFile))
 
     const code = applyEdits(source, edits)
     return { code, changed: code !== source, diagnostics }

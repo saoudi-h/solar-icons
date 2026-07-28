@@ -3,13 +3,13 @@ import { describe, expect, it } from 'vitest'
 import { transformReactPerf } from '../src/transforms/react-perf.js'
 
 describe('transformReactPerf', () => {
-    it('migrates top-level imports while preserving local bindings', () => {
+    it('migrates top-level imports and modernizes non-aliased local bindings', () => {
         const result = transformReactPerf(
             "import { HomeBold, SettingsLinear as Settings } from '@solar-icons/react-perf'\n\n<HomeBold /><Settings />"
         )
 
         expect(result.code).toBe(
-            "import { HomeBoldIcon as HomeBold, SettingsLinearIcon as Settings } from '@solar-icons/react'\n\n<HomeBold /><Settings />"
+            "import { HomeBoldIcon, SettingsLinearIcon as Settings } from '@solar-icons/react'\n\n<HomeBoldIcon /><Settings />"
         )
         expect(result.changed).toBe(true)
     })
@@ -20,7 +20,27 @@ describe('transformReactPerf', () => {
         )
 
         expect(result.code).toBe(
-            "import { HomeIcon as Home, SettingsLinearIcon as SettingsLinear } from '@solar-icons/react/line-duotone'"
+            "import { HomeIcon, SettingsLinearIcon } from '@solar-icons/react/line-duotone'"
+        )
+    })
+
+    it('removes an alias made redundant by the Icon suffix', () => {
+        const result = transformReactPerf(
+            "import { FullScreen as FullScreenIcon } from '@solar-icons/react-perf/Linear'\n\n<FullScreenIcon />"
+        )
+
+        expect(result.code).toBe(
+            "import { FullScreenIcon } from '@solar-icons/react/linear'\n\n<FullScreenIcon />"
+        )
+    })
+
+    it('does not rename a nested binding that shadows an imported icon', () => {
+        const result = transformReactPerf(
+            "import { ArrowUp } from '@solar-icons/react-perf/Linear'\n\nconst icon = ArrowUp\nconst wrap = (ArrowUp: string) => ArrowUp"
+        )
+
+        expect(result.code).toBe(
+            "import { ArrowUpIcon } from '@solar-icons/react/linear'\n\nconst icon = ArrowUpIcon\nconst wrap = (ArrowUp: string) => ArrowUp"
         )
     })
 
@@ -66,9 +86,7 @@ describe('transformReactPerf', () => {
     it('renames icons before restoring a react-perf root style suffix', () => {
         const result = transformReactPerf("import { WeigherBold } from '@solar-icons/react-perf'")
 
-        expect(result.code).toBe(
-            "import { ScaleBoldIcon as WeigherBold } from '@solar-icons/react'"
-        )
+        expect(result.code).toBe("import { ScaleBoldIcon } from '@solar-icons/react'")
     })
 
     it('reports the removed mirrored prop at its source location', () => {
