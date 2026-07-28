@@ -26,7 +26,7 @@ status: 'active'
 ## 🔧 CSS vars + classes + provider (V3-16a)
 
 - **`lib/IconBase.tsx`**: Classes `solar` + `solar-{kebab}`, `aria-hidden="true"` by default, `secondaryColor`/`secondaryOpacity` props, user `className` merged (our computed className comes AFTER `{...restProps}` so the `solar` prefix is never dropped), user `style` merged.
-    - **Color/size**: set as **SVG presentation attributes** with `var()` fallback (e.g. `width="var(--solar-size, 24px)"`, `color="var(--solar-color, currentColor)"`). SVG attrs have CSS specificity 0, so Tailwind/className overrides (`text-blue-500`, `w-8`) **work freely** without conflict.
+    - **Color/size**: set as **SVG presentation attributes** with `var()` fallback for color and `font-size` inheritance for size. e.g. `width="1em"` and `style={{ fontSize: 'var(--solar-size, 24px)' }}`. SVG attrs have CSS specificity 0, so Tailwind/className overrides (`text-blue-500`, `w-8`) **work freely** without conflict.
     - **Explicit props** (`color`, `size`, `strokeWidth`): converted to inline `style` (highest specificity) when directly provided — the escape hatch.
     - **Duotone**: `--solar-secondary-color`/`--solar-secondary-opacity` remain as inline style (they target specific SVG child paths, not the root).
     - **`isolated` prop** (`IconBaseProps`, defaults to `false`): when `true`, the icon ignores all Provider CSS custom properties. SVG attrs use hardcoded defaults (`width="24px"`, `color="currentColor"`, `strokeWidth="1.5"`) instead of `var()`. Duotone vars are set to `initial` on the `<svg>` style to block inheritance from the Provider; explicit `secondaryColor`/`secondaryOpacity` props still work because they override `initial`.
