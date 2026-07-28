@@ -39,6 +39,30 @@ export const iconRenames: Record<string, string> = {
     Weigher: 'Scale',
 }
 
+/**
+ * Typo corrections which can also occur inside a compound icon name, such as
+ * `MinimalisticMagnifer`. Renames that change an icon's meaning stay exact.
+ */
+const compoundIconRenames: Record<string, string> = {
+    Clound: 'Cloud',
+    Condicioner: 'Conditioner',
+    Essentional: 'Essential',
+    Happly: 'Happy',
+    Magnifer: 'Magnifier',
+    Minimlistic: 'Minimalistic',
+    Pallete: 'Palette',
+    Plaaylist: 'Playlist',
+    Recive: 'Receive',
+    Siderbar: 'Sidebar',
+    Spedometer: 'Speedometer',
+    Tuneing: 'Tuning',
+}
+
 export function renameIcon(name: string): string {
-    return iconRenames[name] ?? name
+    if (iconRenames[name]) return iconRenames[name]
+
+    return Object.entries(compoundIconRenames).reduce(
+        (renamed, [legacyName, nextName]) => renamed.replaceAll(legacyName, nextName),
+        name
+    )
 }

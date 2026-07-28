@@ -33,6 +33,26 @@ describe('transformReactPerf', () => {
         expect(result.diagnostics).toMatchObject([{ code: 'UNSUPPORTED_REACT_PERF_SUBPATH' }])
     })
 
+    it('migrates supported type-only exports from the legacy internal path', () => {
+        const result = transformReactPerf(
+            "import type { Icon as IconType, IconProps } from '@solar-icons/react-perf/lib/types'"
+        )
+
+        expect(result.code).toBe(
+            "import type { Icon as IconType, IconProps } from '@solar-icons/react'"
+        )
+        expect(result.diagnostics).toEqual([])
+    })
+
+    it('reports unsupported exports from the legacy internal type path', () => {
+        const result = transformReactPerf(
+            "import type { IconBaseProps } from '@solar-icons/react-perf/lib/types'"
+        )
+
+        expect(result.changed).toBe(false)
+        expect(result.diagnostics).toMatchObject([{ code: 'UNSUPPORTED_REACT_PERF_TYPE_EXPORT' }])
+    })
+
     it('renames icons before restoring a react-perf root style suffix', () => {
         const result = transformReactPerf("import { WeigherBold } from '@solar-icons/react-perf'")
 

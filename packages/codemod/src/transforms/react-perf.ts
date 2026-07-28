@@ -12,6 +12,8 @@ const styles: Record<string, string> = {
     outline: 'outline',
 }
 
+const supportedReactPerfTypeExports = new Set(['Icon', 'IconProps'])
+
 interface Edit {
     end: number
     start: number
@@ -82,6 +84,39 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
 
         const remainder = moduleSpecifier.slice('@solar-icons/react-perf'.length)
         const style = remainder ? styleFromSpecifier(moduleSpecifier) : undefined
+
+        if (remainder === '/lib/types') {
+            const namedBindings = statement.importClause?.namedBindings
+            if (!namedBindings || !ts.isNamedImports(namedBindings)) {
+                diagnostics.push({
+                    code: 'UNSUPPORTED_REACT_PERF_IMPORT',
+                    ...diagnosticLocation(sourceFile, statement.moduleSpecifier),
+                    message: `Skipped non-named import from ${moduleSpecifier}.`,
+                    file: fileName,
+                })
+                continue
+            }
+
+            const unsupportedType = namedBindings.elements.find(
+                specifier => !supportedReactPerfTypeExports.has(importedName(specifier))
+            )
+            if (unsupportedType) {
+                diagnostics.push({
+                    code: 'UNSUPPORTED_REACT_PERF_TYPE_EXPORT',
+                    ...diagnosticLocation(sourceFile, unsupportedType),
+                    message: `Skipped unsupported react-perf type export: ${importedName(unsupportedType)}.`,
+                    file: fileName,
+                })
+                continue
+            }
+
+            edits.push({
+                start: statement.moduleSpecifier.getStart(sourceFile) + 1,
+                end: statement.moduleSpecifier.getEnd() - 1,
+                text: '@solar-icons/react',
+            })
+            continue
+        }
 
         if (remainder && !style) {
             diagnostics.push({
