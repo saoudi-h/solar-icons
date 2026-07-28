@@ -3,21 +3,48 @@ title: V2 Codemod
 description: Preview and apply conservative source migrations from Solar Icons v1 to v2.
 ---
 
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Steps, Step } from 'fumadocs-ui/components/steps'
+
 `@solar-icons/codemod` helps move a project from v1 to v2. It rewrites deterministic imports and component names, then reports patterns that need a manual decision. It is a migration aid, not a guarantee that every application is fully migrated.
 
-## Start with a preview
+<Callout type="warn" title="Review the migration diff">
+    The codemod cannot prove that an application behaves correctly. Run it from a clean working
+    tree, inspect the diff, then run your typecheck, tests, and production build.
+</Callout>
 
-Run the codemod from the root of your project. It is read-only by default, so the first run shows the proposed changes and diagnostics without modifying files.
+## Migrate a project
+
+<Steps>
+    <Step>
+        ### Preview the migration
+
+        Run the codemod from the root of your project. The first run is read-only: it prints the files it would change and every diagnostic.
 
 ```bash
-npx --package @solar-icons/codemod@beta solar-icons-migrate --react-v1-mode static
+npx @solar-icons/codemod@beta --react-v1-mode static
 ```
 
-Use `--write` only after reviewing the preview. Commit or stash your work first so the generated diff remains easy to inspect.
+    </Step>
+
+    <Step>
+        ### Apply the reviewed changes
+
+        Add `--write` only after reviewing the preview. Commit or stash your work first so the generated diff remains easy to inspect.
 
 ```bash
-npx --package @solar-icons/codemod@beta solar-icons-migrate --react-v1-mode static --write
+npx @solar-icons/codemod@beta --react-v1-mode static --write
 ```
+
+    </Step>
+
+    <Step>
+        ### Install and verify v2
+
+        Install the v2 dependencies, remove packages such as `@solar-icons/react-perf` that no longer exist in v2, and run your project's checks.
+    </Step>
+
+</Steps>
 
 The command scans application source files and ignores generated folders and dependencies such as `node_modules`, `dist`, and `.git`.
 
@@ -65,7 +92,7 @@ Use the framework migration guide to complete those cases manually. The codemod 
 
 ## Verify the result
 
-Review the diff, install the v2 dependencies, and run your project's typecheck, tests, and production build. A successful codemod run is not a replacement for application-level verification: templates, providers, dynamic component usage, and bundle size still need to be checked in the project that uses them.
+A successful codemod run is not a replacement for application-level verification. Check templates, providers, dynamic component usage, and bundle size in the project that uses them.
 
 ## Framework guides
 
