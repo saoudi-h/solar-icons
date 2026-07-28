@@ -26,6 +26,7 @@
   "changesets": [
     "codemod-v2-migration-cli",
     "enrich-metadata-search",
+    "fix-codemod-npx-entrypoint",
     "fix-css-specificity",
     "warm-camels-pick"
   ]
