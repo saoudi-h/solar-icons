@@ -1,5 +1,11 @@
 # @solar-icons/codemod
 
+## 2.0.0-beta.4
+
+### Patch Changes
+
+- [#519](https://github.com/saoudi-h/solar-icons/pull/519) [`cf41cec`](https://github.com/saoudi-h/solar-icons/commit/cf41cec9da326df09e16d8d7e48b852ba21173d8) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Run the migration CLI correctly when installed through npm or invoked with `npx @solar-icons/codemod`.
+
 ## 2.0.0-beta.3
 
 ### Patch Changes
