@@ -53,6 +53,16 @@ describe('transformReactPerf', () => {
         expect(result.diagnostics).toMatchObject([{ code: 'UNSUPPORTED_REACT_PERF_TYPE_EXPORT' }])
     })
 
+    it('migrates an exact package reference in tooling configuration', () => {
+        const result = transformReactPerf(
+            "export default { optimizePackageImports: ['@solar-icons/react-perf'] }"
+        )
+
+        expect(result.code).toBe(
+            "export default { optimizePackageImports: ['@solar-icons/react'] }"
+        )
+    })
+
     it('renames icons before restoring a react-perf root style suffix', () => {
         const result = transformReactPerf("import { WeigherBold } from '@solar-icons/react-perf'")
 

@@ -182,6 +182,22 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
         ts.forEachChild(sourceFile, visit)
     }
 
+    const visitPackageReferences = (node: ts.Node) => {
+        if (
+            ts.isStringLiteral(node) &&
+            node.text === '@solar-icons/react-perf' &&
+            !ts.isImportDeclaration(node.parent)
+        ) {
+            edits.push({
+                start: node.getStart(sourceFile) + 1,
+                end: node.getEnd() - 1,
+                text: '@solar-icons/react',
+            })
+        }
+        ts.forEachChild(node, visitPackageReferences)
+    }
+    ts.forEachChild(sourceFile, visitPackageReferences)
+
     const code = applyEdits(source, edits)
     return { code, changed: code !== source, diagnostics }
 }
