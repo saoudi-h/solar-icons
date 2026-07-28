@@ -39,7 +39,7 @@ describe('transformReactPerf', () => {
         )
 
         expect(result.code).toBe(
-            "import type { Icon as IconType, IconProps } from '@solar-icons/react'"
+            "import type { Icon as IconType, IconProps } from '@solar-icons/react/lib/index'"
         )
         expect(result.diagnostics).toEqual([])
     })

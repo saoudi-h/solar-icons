@@ -113,7 +113,7 @@ export function transformReactPerf(source: string, fileName = 'source.tsx'): Tra
             edits.push({
                 start: statement.moduleSpecifier.getStart(sourceFile) + 1,
                 end: statement.moduleSpecifier.getEnd() - 1,
-                text: '@solar-icons/react',
+                text: '@solar-icons/react/lib/index',
             })
             continue
         }
