@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { realpathSync } from 'node:fs'
 import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { extname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -268,4 +269,5 @@ async function main() {
     await program.parseAsync()
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) void main()
+const entryPoint = process.argv[1] ? realpathSync(process.argv[1]) : undefined
+if (entryPoint && import.meta.url === pathToFileURL(entryPoint).href) void main()

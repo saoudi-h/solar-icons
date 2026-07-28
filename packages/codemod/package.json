@@ -13,6 +13,7 @@
     },
     "type": "module",
     "bin": {
+        "codemod": "./dist/cli.mjs",
         "solar-icons-migrate": "./dist/cli.mjs"
     },
     "files": [
