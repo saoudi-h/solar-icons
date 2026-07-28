@@ -49,4 +49,19 @@ describe('transformSvelte', () => {
         ])
         expect(result.code).toContain("import { ArrowRightIcon } from '@solar-icons/svelte/linear'")
     })
+
+    it('reports a legacy namespace category even when Svelte 5 cannot parse its tag syntax', () => {
+        const result = transformSvelte(`
+<script>
+    import { Bold } from '@solar-icons/svelte/category/arrows'
+</script>
+
+<Bold.ArrowUp size={24} />
+`)
+
+        expect(result.diagnostics).toMatchObject([
+            { code: 'SVELTE_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION', line: 3 },
+        ])
+        expect(result.diagnostics).not.toMatchObject([{ code: 'SVELTE_PARSE_ERROR' }])
+    })
 })

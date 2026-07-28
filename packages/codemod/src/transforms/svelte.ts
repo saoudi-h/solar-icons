@@ -71,22 +71,42 @@ function mirroredDiagnostics(source: string, localName: string, fileName: string
     })
 }
 
+function categoryDiagnosticsInUnparsedSource(source: string, fileName: string): Diagnostic[] {
+    const importPattern = /from\s+['"](@solar-icons\/svelte\/category\/[^'"]+)['"]/g
+    return [...source.matchAll(importPattern)].map(match => {
+        const moduleSpecifier = match[1]!
+        const offset = match.index + match[0].indexOf(moduleSpecifier)
+        return {
+            code: 'SVELTE_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION',
+            file: fileName,
+            ...sourceLocation(source, offset),
+            message:
+                'Skipped a Svelte category import. Replace each required icon with a v2 single-icon import.',
+        }
+    })
+}
+
 /** Migrates Svelte v1 style and direct icon imports. */
 export function transformSvelte(source: string, fileName = 'source.svelte'): TransformResult {
     if (!fileName.endsWith('.svelte')) return { changed: false, code: source, diagnostics: [] }
     try {
         parse(source)
     } catch {
+        const categoryDiagnostics = categoryDiagnosticsInUnparsedSource(source, fileName)
         return {
             changed: false,
             code: source,
-            diagnostics: [
-                {
-                    code: 'SVELTE_PARSE_ERROR',
-                    file: fileName,
-                    message: 'Skipped this Svelte component because it could not be parsed.',
-                },
-            ],
+            diagnostics:
+                categoryDiagnostics.length > 0
+                    ? categoryDiagnostics
+                    : [
+                          {
+                              code: 'SVELTE_PARSE_ERROR',
+                              file: fileName,
+                              message:
+                                  'Skipped this Svelte component because it could not be parsed.',
+                          },
+                      ],
         }
     }
 
