@@ -43,7 +43,10 @@
         }
     },
     "dependencies": {
+        "@clack/prompts": "^1.7.0",
         "@vue/compiler-sfc": "^3.5.39",
+        "commander": "^15.0.0",
+        "picocolors": "^1.1.1",
         "svelte": "^5.56.4",
         "typescript": "^6.0.3"
     },

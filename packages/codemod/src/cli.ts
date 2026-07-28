@@ -4,6 +4,10 @@ import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { extname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
+import * as prompts from '@clack/prompts'
+import { Command, InvalidArgumentError } from 'commander'
+import pc from 'picocolors'
+
 import { detectFrameworks } from './detect.js'
 import { transformPackageJson } from './package-json.js'
 import {
@@ -42,11 +46,6 @@ async function sourceFiles(directory: string): Promise<string[]> {
         })
     )
     return nested.flat()
-}
-
-function option(name: string): string | undefined {
-    const index = process.argv.indexOf(name)
-    return index === -1 ? undefined : process.argv[index + 1]
 }
 
 export async function runMigration({
@@ -126,47 +125,147 @@ export async function runMigration({
     return { changedFiles, diagnostics, detectedFrameworks: frameworks }
 }
 
-async function main() {
-    if (process.argv.includes('--help') || process.argv.includes('-h')) {
-        console.info(`Usage: solar-icons-migrate [options]
+function parseMode(value: string): ReactV1Mode {
+    if (value === 'static' || value === 'dynamic') return value
+    throw new InvalidArgumentError('Expected either "static" or "dynamic".')
+}
 
-Options:
-  --cwd <path>                    Project directory (default: current directory)
-  --react-v1-mode <static|dynamic> React v1 strategy (default: static)
-  --vue-v1-mode <static|dynamic>   Vue v1 strategy (default: static)
-  --target-version <version>      Solar Icons v2 version to install (default: ^2.0.0)
-  --write                         Apply changes; otherwise show a dry-run
-  -h, --help                      Show this help message`)
-        return
-    }
-    const cwd = resolve(option('--cwd') ?? process.cwd())
-    const write = process.argv.includes('--write')
-    const reactV1ModeOption = option('--react-v1-mode')
-    const vueV1ModeOption = option('--vue-v1-mode')
-    const targetVersion = option('--target-version')
-    if (reactV1ModeOption && reactV1ModeOption !== 'static' && reactV1ModeOption !== 'dynamic') {
-        throw new Error('--react-v1-mode must be either static or dynamic.')
-    }
-    if (vueV1ModeOption && vueV1ModeOption !== 'static' && vueV1ModeOption !== 'dynamic') {
-        throw new Error('--vue-v1-mode must be either static or dynamic.')
-    }
-    const reactV1Mode = reactV1ModeOption as ReactV1Mode | undefined
-    const vueV1Mode = vueV1ModeOption as ReactV1Mode | undefined
-    const report = await runMigration({ cwd, reactV1Mode, targetVersion, vueV1Mode, write })
+function formatDiagnostic(diagnostic: Diagnostic): string {
+    const location =
+        diagnostic.file && diagnostic.line
+            ? `${diagnostic.file}:${diagnostic.line}:${diagnostic.column ?? 1}`
+            : diagnostic.file
+    const severity = diagnostic.severity === 'error' ? pc.red('error') : pc.yellow('warning')
+    return `${pc.dim(location ?? 'solar-icons')} ${severity} ${pc.bold(`[${diagnostic.code}]`)} ${diagnostic.message}`
+}
 
-    console.info(`Detected frameworks: ${report.detectedFrameworks.join(', ') || 'none'}`)
-    console.info(`${write ? 'Migrated' : 'Would migrate'} ${report.changedFiles.length} file(s).`)
+function printReport(report: MigrationReport, write: boolean) {
+    console.info(
+        `${pc.cyan('Detected frameworks:')} ${report.detectedFrameworks.join(', ') || 'none'}`
+    )
+    console.info(
+        `${write ? pc.green('Migrated') : pc.cyan('Would migrate')} ${pc.bold(String(report.changedFiles.length))} file(s).`
+    )
     for (const diagnostic of report.diagnostics) {
-        const location =
-            diagnostic.file && diagnostic.line
-                ? `${diagnostic.file}:${diagnostic.line}:${diagnostic.column ?? 1}`
-                : diagnostic.file
-        console.warn(
-            `${location ?? 'solar-icons'}: ${diagnostic.severity ?? 'warning'} [${diagnostic.code}] ${diagnostic.message}`
-        )
+        console.warn(formatDiagnostic(diagnostic))
     }
     if (!write && report.changedFiles.length > 0)
-        console.info('Run again with --write to apply these changes.')
+        console.info(pc.dim('Run again with --write to apply these changes.'))
+}
+
+async function selectMode(label: string): Promise<ReactV1Mode | undefined> {
+    const result = await prompts.select({
+        message: `${label} migration strategy`,
+        options: [
+            {
+                value: 'static',
+                label: 'Static (recommended)',
+                hint: 'one style per import and the smallest bundle',
+            },
+            {
+                value: 'dynamic',
+                label: 'Dynamic',
+                hint: 'preserve runtime style switching',
+            },
+        ],
+    })
+    if (prompts.isCancel(result)) return undefined
+    return result as ReactV1Mode
+}
+
+async function interactiveOptions(cwd: string): Promise<Omit<MigrationOptions, 'cwd'> | undefined> {
+    prompts.intro(pc.bgCyan(pc.black(' Solar Icons v2 migration ')))
+    const frameworks = await detectFrameworks(cwd)
+    prompts.log.info(`Detected: ${frameworks.join(', ') || 'no supported framework'}`)
+
+    const reactV1Mode = frameworks.includes('react') ? await selectMode('React') : undefined
+    if (frameworks.includes('react') && !reactV1Mode) {
+        prompts.cancel('Migration cancelled.')
+        return undefined
+    }
+
+    const vueV1Mode = frameworks.includes('vue') ? await selectMode('Vue') : undefined
+    if (frameworks.includes('vue') && !vueV1Mode) {
+        prompts.cancel('Migration cancelled.')
+        return undefined
+    }
+
+    const action = await prompts.select({
+        message: 'Choose an action',
+        options: [
+            { value: 'preview', label: 'Preview changes', hint: 'does not modify files' },
+            { value: 'write', label: 'Apply changes', hint: 'writes the migration to disk' },
+        ],
+    })
+    if (prompts.isCancel(action)) {
+        prompts.cancel('Migration cancelled.')
+        return undefined
+    }
+
+    const write = action === 'write'
+    if (write) {
+        const confirmed = await prompts.confirm({
+            message: 'Write the migration to this project?',
+            initialValue: false,
+        })
+        if (prompts.isCancel(confirmed) || !confirmed) {
+            prompts.cancel('Migration cancelled.')
+            return undefined
+        }
+    }
+
+    return { reactV1Mode, vueV1Mode, write }
+}
+
+interface CliOptions {
+    cwd?: string
+    interactive?: boolean
+    json?: boolean
+    reactV1Mode?: ReactV1Mode
+    targetVersion?: string
+    vueV1Mode?: ReactV1Mode
+    write?: boolean
+}
+
+async function main() {
+    const program = new Command()
+        .name('solar-icons-migrate')
+        .description('Migrate a Solar Icons project from the pre-v2 API to v2.')
+        .argument('[directory]', 'project directory, defaults to the current directory')
+        .option('-C, --cwd <path>', 'project directory, kept for backwards compatibility')
+        .option('-i, --interactive', 'guide the migration with prompts')
+        .option('-w, --write', 'apply changes instead of previewing them')
+        .option('--react-v1-mode <mode>', 'React strategy: static or dynamic', parseMode)
+        .option('--vue-v1-mode <mode>', 'Vue strategy: static or dynamic', parseMode)
+        .option('--target-version <version>', 'Solar Icons v2 version to add to package.json')
+        .option('--json', 'write a machine-readable report to stdout')
+        .showHelpAfterError()
+        .showSuggestionAfterError()
+
+    program.action(async (directory: string | undefined, options: CliOptions) => {
+        if (directory && options.cwd)
+            program.error('Use either [directory] or --cwd, not both.', { exitCode: 2 })
+        if (options.interactive && options.json)
+            program.error('--interactive cannot be combined with --json.', { exitCode: 2 })
+
+        const cwd = resolve(options.cwd ?? directory ?? process.cwd())
+        const interactive = options.interactive ? await interactiveOptions(cwd) : undefined
+        if (options.interactive && !interactive) return
+
+        const migrationOptions: MigrationOptions = {
+            cwd,
+            reactV1Mode: interactive?.reactV1Mode ?? options.reactV1Mode,
+            targetVersion: options.targetVersion,
+            vueV1Mode: interactive?.vueV1Mode ?? options.vueV1Mode,
+            write: interactive?.write ?? options.write,
+        }
+        const report = await runMigration(migrationOptions)
+        if (options.json) console.info(JSON.stringify(report, null, 2))
+        else printReport(report, Boolean(migrationOptions.write))
+        if (options.interactive) prompts.outro('Migration complete.')
+    })
+
+    await program.parseAsync()
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) void main()

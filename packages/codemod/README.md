@@ -2,13 +2,23 @@
 
 Conservative, opt-in migrations for Solar Icons v2.
 
-Run a preview first. It never writes files unless `--write` is passed.
+## Run a migration
+
+Use the interactive assistant when running the migration by hand. It detects supported frameworks, asks for the React and Vue strategy when relevant, and requires confirmation before it writes files.
 
 ```bash
-npx @solar-icons/codemod --react-v1-mode static
-npx @solar-icons/codemod --vue-v1-mode static
-npx @solar-icons/codemod --react-v1-mode static --write
+npx @solar-icons/codemod@beta --interactive
 ```
+
+Use arguments for scripts, CI, or repeatable migrations. The command previews changes unless `--write` is passed.
+
+```bash
+npx @solar-icons/codemod@beta --react-v1-mode static
+npx @solar-icons/codemod@beta ./apps/web --react-v1-mode static --write
+npx @solar-icons/codemod@beta --json > solar-icons-migration.json
+```
+
+Run `npx @solar-icons/codemod@beta --help` for every option. `--cwd <path>` remains available for existing scripts, but a directory argument is shorter.
 
 ## React v1 strategy
 

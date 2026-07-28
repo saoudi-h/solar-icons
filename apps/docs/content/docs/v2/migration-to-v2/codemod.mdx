@@ -48,6 +48,21 @@ npx @solar-icons/codemod@beta --react-v1-mode static --write
 
 The command scans application source files and ignores generated folders and dependencies such as `node_modules`, `dist`, and `.git`.
 
+## Use the interactive assistant
+
+When migrating by hand, let the assistant detect the project and guide the choices. It asks for a React or Vue strategy only when that framework is present, and asks for confirmation before it writes files.
+
+```bash
+npx @solar-icons/codemod@beta --interactive
+```
+
+For scripts and CI, use arguments instead. The positional directory is optional, `--cwd` remains available for existing scripts, and `--json` writes a machine-readable report.
+
+```bash
+npx @solar-icons/codemod@beta ./apps/web --react-v1-mode static --write
+npx @solar-icons/codemod@beta --json > solar-icons-migration.json
+```
+
 ## Choose the migration mode
 
 React and Vue v1 components can become either a per-style v2 import or a dynamic v2 import.
