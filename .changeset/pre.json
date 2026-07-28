@@ -20,9 +20,11 @@
     "@solar-icons/js": "2.0.0-beta.0",
     "@solar-icons/static": "2.0.0-beta.0",
     "js-app": "2.0.0-beta.0",
-    "static-app": "2.0.0-beta.0"
+    "static-app": "2.0.0-beta.0",
+    "@solar-icons/codemod": "2.0.0-beta.2"
   },
   "changesets": [
+    "codemod-v2-migration-cli",
     "enrich-metadata-search",
     "fix-css-specificity",
     "warm-camels-pick"
