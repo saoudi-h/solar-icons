@@ -1,0 +1,72 @@
+---
+title: V2 Codemod
+description: Preview and apply conservative source migrations from Solar Icons v1 to v2.
+---
+
+`@solar-icons/codemod` helps move a project from v1 to v2. It rewrites deterministic imports and component names, then reports patterns that need a manual decision. It is a migration aid, not a guarantee that every application is fully migrated.
+
+## Start with a preview
+
+Run the codemod from the root of your project. It is read-only by default, so the first run shows the proposed changes and diagnostics without modifying files.
+
+```bash
+npx --package @solar-icons/codemod@beta solar-icons-migrate --react-v1-mode static
+```
+
+Use `--write` only after reviewing the preview. Commit or stash your work first so the generated diff remains easy to inspect.
+
+```bash
+npx --package @solar-icons/codemod@beta solar-icons-migrate --react-v1-mode static --write
+```
+
+The command scans application source files and ignores generated folders and dependencies such as `node_modules`, `dist`, and `.git`.
+
+## Choose the migration mode
+
+React and Vue v1 components can become either a per-style v2 import or a dynamic v2 import.
+
+- `--react-v1-mode static` is the default. Literal `weight` values become a per-style import, which keeps only that style in the bundle.
+- `--react-v1-mode dynamic` keeps a dynamic icon component and its `weight` prop. Choose this when the style genuinely changes at runtime.
+- `--vue-v1-mode static` and `--vue-v1-mode dynamic` provide the same choice for Vue.
+
+For example, the static React migration turns this:
+
+```tsx
+import { ArrowUp } from '@solar-icons/react'
+
+;<ArrowUp weight="Bold" />
+```
+
+into this:
+
+```tsx
+import { ArrowUpIcon } from '@solar-icons/react/bold'
+
+;<ArrowUpIcon />
+```
+
+## What it can migrate
+
+The codemod has adapters for React, React-Perf, React Native, Vue, Nuxt, Svelte, Solid, and Angular. It handles known icon renames, common v1 import paths, the React-Perf package consolidation, Nuxt's `namePrefix` configuration, and deterministic Angular selectors in inline and resolvable external templates.
+
+It also updates matching v1 package ranges in `package.json`. Install the v2 packages afterward, then remove packages such as `@solar-icons/react-perf` that no longer exist in v2.
+
+## Review every diagnostic
+
+Some v1 patterns have no single safe v2 equivalent. The codemod leaves those decisions to you and prints a warning with a file, line, and column. Pay particular attention to:
+
+- category and namespace imports that could include far more icons than intended;
+- providers and context APIs whose v2 design differs from v1;
+- runtime-dependent styles when using static mode;
+- the removed `mirrored` prop;
+- Angular templates that cannot be resolved from their component source.
+
+Use the framework migration guide to complete those cases manually. The codemod intentionally prefers a clear warning over guessing and silently changing application behavior.
+
+## Verify the result
+
+Review the diff, install the v2 dependencies, and run your project's typecheck, tests, and production build. A successful codemod run is not a replacement for application-level verification: templates, providers, dynamic component usage, and bundle size still need to be checked in the project that uses them.
+
+## Framework guides
+
+Follow the matching [migration guide](/docs/v2/migration-to-v2) after the automated pass. It documents the API changes and manual steps for each framework.
