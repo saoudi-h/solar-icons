@@ -16,7 +16,7 @@ import { transformSvelte } from './transforms/svelte.js'
 import { transformVue } from './transforms/vue.js'
 import type { Diagnostic, MigrationOptions, MigrationReport, ReactV1Mode } from './types.js'
 
-const sourceExtensions = new Set(['.js', '.jsx', '.mjs', '.ts', '.tsx', '.vue'])
+const sourceExtensions = new Set(['.js', '.jsx', '.mjs', '.ts', '.tsx', '.svelte', '.vue'])
 const ignoredDirectories = new Set([
     '.git',
     '.next',

@@ -25,4 +25,60 @@ describe('runMigration', () => {
             "from '@solar-icons/react'"
         )
     })
+
+    it('collects manual-migration diagnostics across framework adapters', async () => {
+        const cwd = await mkdtemp(join(tmpdir(), 'solar-icons-codemod-manual-'))
+        await writeFile(cwd + '/package.json', '{"dependencies":{"vue":"3.5.39"}}')
+        await Promise.all([
+            writeFile(
+                cwd + '/React.tsx',
+                "import { SolarProvider } from '@solar-icons/react'\nexport const App = () => <SolarProvider />"
+            ),
+            writeFile(
+                cwd + '/App.vue',
+                "<script setup>\nimport { Arrows } from '@solar-icons/vue/category'\n</script>\n<template><Arrows.ArrowUp /></template>"
+            ),
+            writeFile(
+                cwd + '/App.svelte',
+                "<script>\nimport { Bold } from '@solar-icons/svelte/category/arrows'\n</script>\n<div />"
+            ),
+            writeFile(
+                cwd + '/app.component.ts',
+                "@Component({ templateUrl: './app.component.html' })\nexport class AppComponent {}"
+            ),
+            writeFile(
+                cwd + '/native.tsx',
+                "import * as solar from '@solar-icons/react-native/category'"
+            ),
+            writeFile(cwd + '/nuxt.config.ts', "import * as solar from '#solar-icons/category'"),
+        ])
+
+        const report = await runMigration({ cwd, write: false })
+
+        expect(report.diagnostics).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({
+                    code: 'REACT_PROVIDER_REQUIRES_MANUAL_MIGRATION',
+                    line: 1,
+                }),
+                expect.objectContaining({
+                    code: 'VUE_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION',
+                    line: 2,
+                }),
+                expect.objectContaining({
+                    code: 'SVELTE_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION',
+                    line: 2,
+                }),
+                expect.objectContaining({
+                    code: 'ANGULAR_EXTERNAL_TEMPLATE_REQUIRES_MANUAL_MIGRATION',
+                    line: 1,
+                }),
+                expect.objectContaining({ code: 'UNSUPPORTED_REACT_NATIVE_IMPORT', line: 1 }),
+                expect.objectContaining({
+                    code: 'NUXT_CATEGORY_IMPORT_REQUIRES_MANUAL_MIGRATION',
+                    line: 1,
+                }),
+            ])
+        )
+    })
 })
