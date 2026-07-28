@@ -6,7 +6,11 @@ import { pathToFileURL } from 'node:url'
 
 import { detectFrameworks } from './detect.js'
 import { transformPackageJson } from './package-json.js'
-import { transformAngular } from './transforms/angular.js'
+import {
+    collectAngularSelectorRenames,
+    transformAngular,
+    transformAngularTemplate,
+} from './transforms/angular.js'
 import { transformNuxt } from './transforms/nuxt.js'
 import { transformReactNative } from './transforms/react-native.js'
 import { transformReactPerf } from './transforms/react-perf.js'
@@ -16,7 +20,7 @@ import { transformSvelte } from './transforms/svelte.js'
 import { transformVue } from './transforms/vue.js'
 import type { Diagnostic, MigrationOptions, MigrationReport, ReactV1Mode } from './types.js'
 
-const sourceExtensions = new Set(['.js', '.jsx', '.mjs', '.ts', '.tsx', '.svelte', '.vue'])
+const sourceExtensions = new Set(['.html', '.js', '.jsx', '.mjs', '.ts', '.tsx', '.svelte', '.vue'])
 const ignoredDirectories = new Set([
     '.git',
     '.next',
@@ -54,11 +58,21 @@ export async function runMigration({
 }: MigrationOptions): Promise<MigrationReport> {
     const frameworks = await detectFrameworks(cwd)
     const files = await sourceFiles(cwd)
+    const sources = new Map<string, string>(
+        await Promise.all(files.map(async file => [file, await readFile(file, 'utf8')] as const))
+    )
+    const angularSelectorRenames = new Map<string, string>()
+    for (const [file, source] of sources) {
+        for (const [legacySelector, nextSelector] of collectAngularSelectorRenames(source, file)) {
+            angularSelectorRenames.set(legacySelector, nextSelector)
+        }
+    }
+    const existingFiles = new Set(files)
     const changedFiles: string[] = []
     const diagnostics: Diagnostic[] = []
 
     for (const file of files) {
-        const source = await readFile(file, 'utf8')
+        const source = sources.get(file)!
         const reactPerfResult = transformReactPerf(source, file)
         const reactResult = transformReact(reactPerfResult.code, file, reactV1Mode)
         const reactNativeResult = transformReactNative(reactResult.code, file)
@@ -66,7 +80,11 @@ export async function runMigration({
         const nuxtResult = transformNuxt(vueResult.code, file)
         const svelteResult = transformSvelte(nuxtResult.code, file)
         const solidResult = transformSolid(svelteResult.code, file)
-        const angularResult = transformAngular(solidResult.code, file)
+        const angularResult = transformAngular(solidResult.code, file, existingFiles)
+        const angularTemplateResult = transformAngularTemplate(
+            angularResult.code,
+            angularSelectorRenames
+        )
         diagnostics.push(
             ...reactPerfResult.diagnostics,
             ...reactResult.diagnostics,
@@ -75,7 +93,8 @@ export async function runMigration({
             ...nuxtResult.diagnostics,
             ...svelteResult.diagnostics,
             ...solidResult.diagnostics,
-            ...angularResult.diagnostics
+            ...angularResult.diagnostics,
+            ...angularTemplateResult.diagnostics
         )
         if (
             !reactPerfResult.changed &&
@@ -85,12 +104,13 @@ export async function runMigration({
             !nuxtResult.changed &&
             !svelteResult.changed &&
             !solidResult.changed &&
-            !angularResult.changed
+            !angularResult.changed &&
+            !angularTemplateResult.changed
         )
             continue
 
         changedFiles.push(file)
-        if (write) await writeFile(file, angularResult.code)
+        if (write) await writeFile(file, angularTemplateResult.code)
     }
 
     const packageJsonPath = join(cwd, 'package.json')

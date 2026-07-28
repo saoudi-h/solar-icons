@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { transformAngular } from '../src/transforms/angular.js'
+import {
+    collectAngularSelectorRenames,
+    transformAngular,
+    transformAngularTemplate,
+} from '../src/transforms/angular.js'
 
 describe('transformAngular', () => {
     it('renames icon imports, TypeScript references, and inline selectors', () => {
@@ -49,5 +53,24 @@ export class AppComponent {}
             { code: 'ANGULAR_EXTERNAL_TEMPLATE_REQUIRES_MANUAL_MIGRATION', line: 3 },
             { code: 'ANGULAR_MIRRORED_REQUIRES_MANUAL_MIGRATION', line: 4 },
         ])
+    })
+
+    it('migrates selectors in an external template when it is part of the project', () => {
+        const componentSource =
+            "import { WeigherBold } from '@solar-icons/angular'\n@Component({ templateUrl: './app.html' })"
+        const templateSource = '<svg solarWeigherBold></svg>'
+        const componentPath = '/project/src/app.component.ts'
+        const templatePath = '/project/src/app.html'
+        const selectorRenames = collectAngularSelectorRenames(componentSource, componentPath)
+
+        const component = transformAngular(
+            componentSource,
+            componentPath,
+            new Set([componentPath, templatePath])
+        )
+        const template = transformAngularTemplate(templateSource, selectorRenames)
+
+        expect(component.diagnostics).toEqual([])
+        expect(template.code).toBe('<svg solarScaleBold></svg>')
     })
 })

@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'
@@ -36,8 +37,50 @@ function selectorName(exportName: string): string {
     return `solar${exportName.slice('Solar'.length)}`
 }
 
+export function collectAngularSelectorRenames(source: string, fileName = 'source.ts') {
+    const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
+    const renames = new Map<string, string>()
+    for (const statement of sourceFile.statements) {
+        if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier))
+            continue
+        if (statement.moduleSpecifier.text !== '@solar-icons/angular') continue
+        const namedBindings = statement.importClause?.namedBindings
+        if (!namedBindings || !ts.isNamedImports(namedBindings)) continue
+        for (const specifier of namedBindings.elements) {
+            const importedName = (specifier.propertyName ?? specifier.name).text
+            const targetName = targetExport(importedName)
+            if (!targetName) continue
+            renames.set(selectorName(`Solar${importedName}`), selectorName(targetName))
+        }
+    }
+    return renames
+}
+
+export function transformAngularTemplate(
+    source: string,
+    selectorRenames: ReadonlyMap<string, string>
+): TransformResult {
+    const edits: Edit[] = []
+    for (const [legacySelector, nextSelector] of selectorRenames) {
+        const selectorPattern = new RegExp(`\\b${legacySelector}\\b`, 'g')
+        for (const match of source.matchAll(selectorPattern)) {
+            edits.push({
+                start: match.index!,
+                end: match.index! + legacySelector.length,
+                text: nextSelector,
+            })
+        }
+    }
+    const code = applyEdits(source, edits)
+    return { code, changed: code !== source, diagnostics: [] }
+}
+
 /** Migrates Angular v1 icon imports and deterministic inline-template selectors. */
-export function transformAngular(source: string, fileName = 'source.ts'): TransformResult {
+export function transformAngular(
+    source: string,
+    fileName = 'source.ts',
+    existingFiles = new Set<string>()
+): TransformResult {
     if (!fileName.endsWith('.ts')) return { changed: false, code: source, diagnostics: [] }
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const edits: Edit[] = []
@@ -83,29 +126,31 @@ export function transformAngular(source: string, fileName = 'source.ts'): Transf
                 ts.forEachChild(sourceFile, visit)
             }
 
-            const legacySelector = selectorName(`Solar${importedName}`)
-            const nextSelector = selectorName(targetName)
-            const selectorPattern = new RegExp(`\\b${legacySelector}\\b`, 'g')
-            for (const match of source.matchAll(selectorPattern)) {
-                edits.push({
-                    start: match.index!,
-                    end: match.index! + legacySelector.length,
-                    text: nextSelector,
-                })
-            }
+            edits.push(
+                ...editsForSelectorRename(
+                    source,
+                    selectorName(`Solar${importedName}`),
+                    selectorName(targetName)
+                )
+            )
         }
     }
 
     const visitTemplates = (node: ts.Node) => {
         if (ts.isPropertyAssignment(node) && ts.isIdentifier(node.name)) {
             if (node.name.text === 'templateUrl') {
-                diagnostics.push({
-                    code: 'ANGULAR_EXTERNAL_TEMPLATE_REQUIRES_MANUAL_MIGRATION',
-                    file: fileName,
-                    ...diagnosticLocation(sourceFile, node.name),
-                    message:
-                        'Skipped an external Angular template. Review icon selector renames in the referenced HTML file.',
-                })
+                const templatePath = ts.isStringLiteral(node.initializer)
+                    ? resolve(fileName, '..', node.initializer.text)
+                    : undefined
+                if (!templatePath || !existingFiles.has(templatePath)) {
+                    diagnostics.push({
+                        code: 'ANGULAR_EXTERNAL_TEMPLATE_REQUIRES_MANUAL_MIGRATION',
+                        file: fileName,
+                        ...diagnosticLocation(sourceFile, node.name),
+                        message:
+                            'Skipped an external Angular template that could not be found. Review its icon selector renames manually.',
+                    })
+                }
             }
             if (
                 node.name.text === 'template' &&
@@ -129,4 +174,17 @@ export function transformAngular(source: string, fileName = 'source.ts'): Transf
 
     const code = applyEdits(source, edits)
     return { code, changed: code !== source, diagnostics }
+}
+
+function editsForSelectorRename(
+    source: string,
+    legacySelector: string,
+    nextSelector: string
+): Edit[] {
+    const selectorPattern = new RegExp(`\\b${legacySelector}\\b`, 'g')
+    return [...source.matchAll(selectorPattern)].map(match => ({
+        start: match.index!,
+        end: match.index! + legacySelector.length,
+        text: nextSelector,
+    }))
 }
