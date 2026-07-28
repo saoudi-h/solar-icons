@@ -1,0 +1,15 @@
+{
+    "name": "svelte-v1-migration-fixture",
+    "private": true,
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@solar-icons/svelte": "1.1.1",
+        "svelte": "5.56.4"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "5.1.0",
+        "vite": "6.1.0"
+    }
+}

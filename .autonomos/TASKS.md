@@ -18,7 +18,8 @@
 
 ### V2 — Release
 
- - [x] **[BETA]** Publish all packages as `2.0.0-beta.0` (tag `beta`). `Priority: 🔴` `Complexity: M` *(readiness study 2026-07-08 — `worklogs/2026-07-08-BETA-READINESS.md`)*
+- [x] **[V2-CODEMOD-STUDY]** Define the viable scope and release strategy for a V2 migration codemod. Cover safe AST transforms, intentionally manual migrations, React/Vue provider migration risk, `react-perf` consolidation, dry-run/reporting, and documentation. **Decision (2026-07-26): build it as an opt-in, conservative AST codemod before stable; automatic changes only when deterministic, with dry-run/reporting and manual follow-ups for category namespaces/providers.** `Priority: 🔴` `Complexity: M`
+- [x] **[BETA]** Publish all packages as `2.0.0-beta.0` (tag `beta`). `Priority: 🔴` `Complexity: M` *(readiness study 2026-07-08 — `worklogs/2026-07-08-BETA-READINESS.md`)*
    - **MAJOR CORRECTION (2026-07-08):** target = **`2.0.0`** ("V3" was unjustified; justification = react/react-perf merge). Repo renamed v3→v2.
    - ✅ (1) Reset versions → `1.x` bases (commit `ec1368a5d`).
    - ✅ (2) `changeset pre enter beta` (tag beta) + changeset major 7 pkgs (commit `ce17fd452`).

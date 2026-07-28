@@ -4,6 +4,7 @@
     "defaultOpen": true,
     "pages": [
         "index",
+        "codemod",
         "react-perf",
         "react",
         "vue",

@@ -9,6 +9,10 @@ The old `@solar-icons/react` bundled every icon with all six styles and switched
 - **Per-style path** (default): one style per component, tree-shakable at the import level. Use this for the vast majority of cases. Most apps render an icon in a single style and never switch at runtime.
 - **Dynamic path**: a single component per icon that bundles all six styles and switches via `weight`. Use it only when you swap styles at runtime.
 
+## Try the codemod first
+
+The [V2 codemod](/docs/v2/migration-to-v2/codemod) can migrate deterministic React imports in preview mode and report ambiguous cases. Run it with `--react-v1-mode static` for the recommended per-style output, or choose `dynamic` when weights change at runtime. Complete this guide for provider, SSR, and reported manual changes.
+
 ## Import path
 
 Same package, different import paths.

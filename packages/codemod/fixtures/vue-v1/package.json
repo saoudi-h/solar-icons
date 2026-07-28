@@ -1,0 +1,17 @@
+{
+    "name": "vue-v1-migration-fixture",
+    "private": true,
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@solar-icons/vue": "1.2.1",
+        "vue": "3.5.39"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "5.2.4",
+        "typescript": "5.7.3",
+        "vite": "6.1.0",
+        "vue-tsc": "2.2.0"
+    }
+}

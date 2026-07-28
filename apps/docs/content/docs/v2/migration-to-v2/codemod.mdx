@@ -1,0 +1,114 @@
+---
+title: V2 Codemod
+description: Preview and apply conservative source migrations from Solar Icons v1 to v2.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Steps, Step } from 'fumadocs-ui/components/steps'
+
+`@solar-icons/codemod` helps move a project from v1 to v2. It rewrites deterministic imports and component names, then reports patterns that need a manual decision. It is a migration aid, not a guarantee that every application is fully migrated.
+
+<Callout type="warn" title="Review the migration diff">
+    The codemod cannot prove that an application behaves correctly. Run it from a clean working
+    tree, inspect the diff, then run your typecheck, tests, and production build.
+</Callout>
+
+## Migrate a project
+
+<Steps>
+    <Step>
+        ### Preview the migration
+
+        Run the codemod from the root of your project. The first run is read-only: it prints the files it would change and every diagnostic.
+
+```bash
+npx @solar-icons/codemod@beta --react-v1-mode static
+```
+
+    </Step>
+
+    <Step>
+        ### Apply the reviewed changes
+
+        Add `--write` only after reviewing the preview. Commit or stash your work first so the generated diff remains easy to inspect.
+
+```bash
+npx @solar-icons/codemod@beta --react-v1-mode static --write
+```
+
+    </Step>
+
+    <Step>
+        ### Install and verify v2
+
+        Install the v2 dependencies, remove packages such as `@solar-icons/react-perf` that no longer exist in v2, and run your project's checks.
+    </Step>
+
+</Steps>
+
+The command scans application source files and ignores generated folders and dependencies such as `node_modules`, `dist`, and `.git`.
+
+## Use the interactive assistant
+
+When migrating by hand, let the assistant detect the project and guide the choices. It asks for a React or Vue strategy only when that framework is present, and asks for confirmation before it writes files.
+
+```bash
+npx @solar-icons/codemod@beta --interactive
+```
+
+For scripts and CI, use arguments instead. The positional directory is optional, `--cwd` remains available for existing scripts, and `--json` writes a machine-readable report.
+
+```bash
+npx @solar-icons/codemod@beta ./apps/web --react-v1-mode static --write
+npx @solar-icons/codemod@beta --json > solar-icons-migration.json
+```
+
+## Choose the migration mode
+
+React and Vue v1 components can become either a per-style v2 import or a dynamic v2 import.
+
+- `--react-v1-mode static` is the default. Literal `weight` values become a per-style import, which keeps only that style in the bundle.
+- `--react-v1-mode dynamic` keeps a dynamic icon component and its `weight` prop. Choose this when the style genuinely changes at runtime.
+- `--vue-v1-mode static` and `--vue-v1-mode dynamic` provide the same choice for Vue.
+
+For example, the static React migration turns this:
+
+```tsx
+import { ArrowUp } from '@solar-icons/react'
+
+;<ArrowUp weight="Bold" />
+```
+
+into this:
+
+```tsx
+import { ArrowUpIcon } from '@solar-icons/react/bold'
+
+;<ArrowUpIcon />
+```
+
+## What it can migrate
+
+The codemod has adapters for React, React-Perf, React Native, Vue, Nuxt, Svelte, Solid, and Angular. It handles known icon renames, common v1 import paths, the React-Perf package consolidation, Nuxt's `namePrefix` configuration, and deterministic Angular selectors in inline and resolvable external templates.
+
+It also updates matching v1 package ranges in `package.json`. Install the v2 packages afterward, then remove packages such as `@solar-icons/react-perf` that no longer exist in v2.
+
+## Review every diagnostic
+
+Some v1 patterns have no single safe v2 equivalent. The codemod leaves those decisions to you and prints a warning with a file, line, and column. Pay particular attention to:
+
+- category and namespace imports that could include far more icons than intended;
+- providers and context APIs whose v2 design differs from v1;
+- runtime-dependent styles when using static mode;
+- the removed `mirrored` prop;
+- Angular templates that cannot be resolved from their component source.
+
+Use the framework migration guide to complete those cases manually. The codemod intentionally prefers a clear warning over guessing and silently changing application behavior.
+
+## Verify the result
+
+A successful codemod run is not a replacement for application-level verification. Check templates, providers, dynamic component usage, and bundle size in the project that uses them.
+
+## Framework guides
+
+Follow the matching [migration guide](/docs/v2/migration-to-v2) after the automated pass. It documents the API changes and manual steps for each framework.

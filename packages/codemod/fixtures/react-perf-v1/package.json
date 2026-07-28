@@ -1,0 +1,19 @@
+{
+    "name": "react-perf-v1-migration-fixture",
+    "private": true,
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@solar-icons/react-perf": "2.1.1",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+    },
+    "devDependencies": {
+        "@types/react": "18.3.18",
+        "@types/react-dom": "18.3.5",
+        "@vitejs/plugin-react": "4.3.4",
+        "typescript": "5.7.3",
+        "vite": "6.1.0"
+    }
+}

@@ -79,6 +79,10 @@
             "name": "js-app",
             "path": "apps/js-app",
         },
+        {
+            "name": "codemod",
+            "path": "packages/codemod",
+        }
         
     ],
     "settings": {
