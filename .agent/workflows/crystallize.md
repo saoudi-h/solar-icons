@@ -28,12 +28,10 @@ Ask yourself silently — do NOT ask the user:
 
 Mark the task `[x]` (or `[!]` if blocked) in `.autonomos/TASKS.md`.
 
-## STEP 4 — Report
+## STEP 4 — User response
 
-RESPOND with exactly:
+First, deliver a self-contained answer to the original request: outcome, evidence, limitations, and relevant next step. Do not replace it with crystallization status.
 
-- `Task: [x] / [!] — [ID]`
-- `Worklog: .autonomos/worklogs/...`
-- `AGENT.md updated: [yes / no — reason]`
+Then append this supplementary handoff:
 
-If you cannot produce these 3 lines, resume from Step 1.
+`Crystallization — Task: [x] / [!] — [ID] | Worklog: .autonomos/worklogs/... | AGENT.md updated: [yes / no — reason]`

@@ -1,4 +1,4 @@
-# AUTONOMOS PROTOCOL (v0.3.0-alpha)
+# AUTONOMOS PROTOCOL (v0.3.1-alpha)
 
 > This file defines the project's AI workflow contract. The workflows execute it. Do not duplicate workflow steps here.
 
