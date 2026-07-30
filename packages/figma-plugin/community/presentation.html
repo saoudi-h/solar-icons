@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Icons Community assets</title>
+    <style>
+        @font-face {
+            font-family: 'Cal Sans UI';
+            src: url('../node_modules/@calcom/cal-sans-ui/dist/fonts/CalSansUI-Regular.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Cal Sans UI';
+            src: url('../node_modules/@calcom/cal-sans-ui/dist/fonts/CalSansUI-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'Bricolage Grotesque';
+            src: url('../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');
+            font-weight: 200 800;
+        }
+
+        :root {
+            --brand: #6870c4;
+            --ink: #11142b;
+            --muted: #656982;
+            --line: #dcddeb;
+            --paper: #f6f6fb;
+            --white: #fff;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { width: 1920px; height: 1080px; margin: 0; overflow: hidden; }
+        body { color: var(--ink); background: var(--paper); font-family: 'Cal Sans UI', sans-serif; }
+        .page { position: relative; display: none; width: 1920px; height: 1080px; overflow: hidden; }
+        body[data-page='thumbnail'] .thumbnail,
+        body[data-page='explore'] .explore,
+        body[data-page='customize'] .customize,
+        body[data-page='ecosystem'] .ecosystem { display: block; }
+
+        .brand-lockup { display: flex; align-items: center; gap: 22px; }
+        .brand-mark { width: 64px; height: 64px; }
+        .brand-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 650; letter-spacing: -0.03em; }
+        .eyebrow { margin: 0 0 24px; color: var(--brand); font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+        h1 { max-width: 900px; margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 104px; font-weight: 650; letter-spacing: -0.055em; line-height: 0.96; }
+        .lede { max-width: 760px; margin: 38px 0 0; color: var(--muted); font-size: 34px; line-height: 1.35; }
+        .facts { display: flex; align-items: center; gap: 20px; margin-top: 48px; color: var(--ink); font-size: 24px; }
+        .facts span + span::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin: 0 20px 5px 0; background: var(--brand); }
+
+        .plugin-window { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); }
+        .plugin-titlebar { display: flex; height: 54px; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding: 0 16px; color: #222432; font-size: 15px; }
+        .plugin-titlebar img { width: 24px; height: 24px; }
+        .plugin-titlebar .close { width: 14px; height: 14px; margin-left: auto; }
+        .plugin-titlebar .close::before,
+        .plugin-titlebar .close::after { content: ''; position: absolute; width: 17px; height: 1px; background: #353641; transform: rotate(45deg); }
+        .plugin-titlebar .close::after { transform: rotate(-45deg); }
+        .plugin-shot { display: block; width: 100%; height: auto; }
+
+        .thumbnail::before { content: ''; position: absolute; top: 0; right: 0; width: 700px; height: 1080px; background: var(--brand); }
+        .thumbnail-copy { position: absolute; top: 104px; left: 112px; z-index: 1; }
+        .thumbnail .brand-lockup { margin-bottom: 112px; }
+        .thumbnail .plugin-window { position: absolute; top: 97px; right: 110px; z-index: 1; width: 480px; box-shadow: 0 28px 80px rgba(26, 28, 59, 0.2); }
+        .thumbnail .style-row { position: absolute; bottom: 68px; left: 112px; display: flex; gap: 28px; color: var(--muted); font-size: 20px; }
+        .thumbnail .style-row span:first-child { color: var(--brand); }
+
+        .slide-header { position: absolute; top: 62px; right: 78px; left: 78px; display: flex; align-items: center; justify-content: space-between; }
+        .slide-header .brand-mark { width: 52px; height: 52px; }
+        .slide-header .brand-name { font-size: 28px; }
+        .slide-index { color: var(--muted); font-size: 19px; letter-spacing: 0.08em; }
+        .slide-copy { position: absolute; top: 246px; left: 118px; width: 760px; }
+        .slide-copy h1 { font-size: 86px; }
+        .slide-copy .lede { font-size: 30px; }
+        .feature-list { display: grid; gap: 24px; margin-top: 54px; color: var(--ink); font-size: 25px; }
+        .feature-list span { display: flex; align-items: center; gap: 15px; }
+        .feature-list span::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); }
+        .slide-stage { position: absolute; top: 150px; right: 118px; }
+        .slide-stage .plugin-window { width: 480px; }
+
+        .customize { background: #11131f; color: #f8f8fc; }
+        .customize .slide-index, .customize .lede { color: #aeb1c8; }
+        .customize .slide-copy { width: 650px; }
+        .customize .slide-copy h1 { color: #f8f8fc; }
+        .customize .feature-list { color: #f8f8fc; }
+        .customize .feature-list span::before { background: #8990e4; }
+        .customize-stage { position: absolute; top: 166px; right: 100px; display: flex; align-items: flex-start; gap: 34px; }
+        .customize-stage .plugin-window { width: 430px; border-color: #3a3d50; }
+        .customize-stage .plugin-window:last-child { margin-top: 70px; }
+
+        .ecosystem .slide-copy { width: 780px; }
+        .package-lines { display: grid; grid-template-columns: repeat(3, auto); gap: 20px 36px; margin-top: 56px; color: var(--muted); font-size: 24px; }
+        .ecosystem .slide-stage .plugin-window { border-color: #343746; background: #11131f; }
+        .ecosystem .plugin-titlebar { border-color: #343746; color: #f8f8fc; background: #11131f; }
+        .ecosystem .plugin-titlebar img { filter: brightness(0) invert(1); }
+        .ecosystem .plugin-titlebar .close::before,
+        .ecosystem .plugin-titlebar .close::after { background: #b9bbca; }
+        .offline-note { position: absolute; bottom: 62px; left: 118px; width: 880px; color: var(--muted); font-size: 22px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <section class="page thumbnail">
+        <div class="thumbnail-copy">
+            <div class="brand-lockup">
+                <img class="brand-mark" src="plugin-icon.svg" alt="">
+                <span class="brand-name">Solar Icons</span>
+            </div>
+            <p class="eyebrow">Figma plugin</p>
+            <h1>The complete<br>Solar icon set.</h1>
+            <p class="lede">Browse, preview and insert production-ready SVG icons directly into Figma.</p>
+            <div class="facts"><span>1,246 icons</span><span>6 styles</span><span>Editable strokes</span></div>
+        </div>
+        <div class="plugin-window">
+            <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+            <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+        </div>
+        <div class="style-row"><span>Linear</span><span>Broken</span><span>Line Duotone</span><span>Outline</span><span>Bold</span><span>Bold Duotone</span></div>
+    </section>
+
+    <section class="page explore">
+        <header class="slide-header">
+            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
+            <span class="slide-index">01 / 03</span>
+        </header>
+        <div class="slide-copy">
+            <p class="eyebrow">Explore</p>
+            <h1>Find the right icon without leaving Figma.</h1>
+            <p class="lede">Search the entire set by name, category and related metadata.</p>
+            <div class="feature-list"><span>All 1,246 icons</span><span>Six consistent styles</span><span>Instant or multi-selection insertion</span></div>
+        </div>
+        <div class="slide-stage">
+            <div class="plugin-window">
+                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="page customize">
+        <header class="slide-header">
+            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
+            <span class="slide-index">02 / 03</span>
+        </header>
+        <div class="slide-copy">
+            <p class="eyebrow">Control</p>
+            <h1>Preview the geometry you will insert.</h1>
+            <p class="lede">Scrub size and stroke width with familiar Figma-style controls.</p>
+            <div class="feature-list"><span>Live stroke previews</span><span>Editable vector strokes</span><span>Light, dark and system themes</span></div>
+        </div>
+        <div class="customize-stage">
+            <div class="plugin-window">
+                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                <img class="plugin-shot" src="screens/02-settings-light.png" alt="">
+            </div>
+            <div class="plugin-window">
+                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="page ecosystem">
+        <header class="slide-header">
+            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
+            <span class="slide-index">03 / 03</span>
+        </header>
+        <div class="slide-copy">
+            <p class="eyebrow">One source</p>
+            <h1>Consistent assets across design and code.</h1>
+            <p class="lede">The SVGs inserted in Figma match the maintained Solar Icons packages.</p>
+            <div class="package-lines"><span>React</span><span>Vue</span><span>Svelte</span><span>Solid</span><span>Angular</span><span>Nuxt</span><span>React Native</span><span>JavaScript</span><span>Static</span></div>
+        </div>
+        <div class="slide-stage">
+            <div class="plugin-window">
+                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                <img class="plugin-shot" src="screens/03-info-dark.png" alt="">
+            </div>
+        </div>
+        <p class="offline-note">The complete library is embedded in the plugin. No CDN, account or external API is required.</p>
+    </section>
+
+    <script>
+        document.body.dataset.page = new URLSearchParams(location.search).get('page') || 'thumbnail'
+    </script>
+</body>
+</html>
