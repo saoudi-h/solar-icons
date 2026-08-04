@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { DocsShowcase } from './DocsShowcase'
 import { DxShowcase } from './DxShowcase'
 import { ExplorerShowcase } from './ExplorerShowcase'
+import { FigmaPluginShowcase } from './FigmaPluginShowcase'
 import { FrameworksShowcase } from './FrameworksShowcase'
 import { StylesShowcase } from './StylesShowcase'
 
@@ -168,6 +169,23 @@ export const FeaturesSection = () => {
                         <DxShowcase />
                     </BentoCard>
                 </motion.div>
+
+                <motion.div
+                    variants={itemVariants}
+                    className="
+                      flex
+                      md:col-span-12
+                    ">
+                    <BentoCard>
+                        <BentoHeader
+                            title="Solar Icons for Figma"
+                            description="Search the complete collection, preview editable strokes, and insert the same standardized SVGs used by Solar Icons packages."
+                            href="https://www.figma.com/community/plugin/1664759238792120976"
+                            buttonText="Get the plugin"
+                        />
+                        <FigmaPluginShowcase />
+                    </BentoCard>
+                </motion.div>
             </div>
         </SectionMotion>
     )
@@ -220,12 +238,9 @@ const BentoHeader = ({
                 {title}
             </h3>
             {href && buttonText && (
-                <Button
-                    asChild
-                    size="sm"
-                    variant="default"
-                    colors="muted"
-                    className="rounded-full">
+                <Button asChild size="sm" variant="default" colors="muted" className="
+                  rounded-full
+                ">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRightIcon />

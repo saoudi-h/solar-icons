@@ -42,25 +42,27 @@
 
 ### V2 — Known regressions (pre-existing)
 
-- [ ] **[ANGULAR-APP-MIGRATE]** `apps/angular-app` uses pre-V2 API: `HomeBold` etc. (no `Icon` suffix), `@solar-icons/angular/arrows` (category path, removed). `Priority: 🟠` `Complexity: S`
-- [ ] **[DOCS-MIGRATE]** `apps/docs` references `@solar-icons/react/ssr` (removed) and pre-V2 component names in MDX. `Priority: 🟠` `Complexity: S`
+- [x] **[ANGULAR-APP-MIGRATE]** Verified 2026-07-29: the demo imports the current root exports (`SolarHomeBold`, etc.) and `@solar-icons/angular/dynamic`; no removed category path remains. `Priority: 🟠` `Complexity: S`
+- [x] **[DOCS-MIGRATE]** Verified 2026-07-29: references to `@solar-icons/react/ssr` and `@solar-icons/react-perf` are either V1 documentation or intentional pre-v2 examples in V2 migration guides. `Priority: 🟠` `Complexity: S`
 
 ### V2 — New package studies (user-defined)
 
 - [x] **[STUDY-JS-STATIC]** Study adding two non-framework packages (vanilla + static). **DECISION (2026-07-12): BUILD BOTH.** Not legacy (Lucide static README actively scopes SSR/static; 781k+308k/wk downloads > Angular 22k/wk). Complementary, not competing. v2 theming (color/size/duotone) passes free via CSS vars; only `strokeWidth` is fill-vs-stroke nuanced; provider reimplementable as ~10-line CSS-var helper. Both driven by core codegen → low maintenance. Names: `@solar-icons/js` (vanilla), `@solar-icons/static`. Priority: static first, then js. See `worklogs/2026-07-12-STUDY-JS-STATIC.md`. `Priority: 🔵` `Complexity: M`
+- [x] **[FIGMA-PLUGIN-STUDY]** Evaluate a public Figma browser/inserter for the maintained Solar Icons distribution. Result (2026-07-29): the upstream Solar plugin has real adoption, but its current maintenance and source fidelity cannot be verified from public metrics. Solar has a distinct value if it inserts the standardized SVGs with editable strokes. `Priority: 🔵` `Complexity: S`
 
 ### V2 — New packages (decided 2026-07-12)
 
-- [ ] **[JS-PKG]** Add `@solar-icons/js` (vanilla, Lucide `lucide`-equivalent). Runtime DOM injection: `createIcons({ icons, nameAttr='data-solar', attrs, root })` + `createElement(iconNode, attrs)`; per-style `icons` map for tree-shaking; style selector via `data-solar-style` (default `linear`). Duotone via `transformDuotoneAccent(accent,'html')` from core parser. Zero runtime deps, ESM-only, codegen from `@solar-icons/core`. `Priority: 🟠` `Complexity: M`
-- [/] **[STATIC-PKG]** Add `@solar-icons/static` (Lucide `lucide-static`-equivalent). Build-time assets from `core/svgs/`: individual `icons/<style>/<name>.svg`, `sprite.svg` (per-style or combined), `icon-nodes.json` string map, per-icon JS string modules, deliberate `files` allowlist. **Icon font deferred** to a follow-up (svg→font one-shot cost). `Priority: 🟠` `Complexity: S/M` — **IN PROGRESS (2026-07-12):** package scaffolded on `feat/non-framework-packages`; build + 6 Vitest tests green; lint/typecheck clean. Issue #500. Remaining: visual check in a demo app + changeset before PR.
+- [x] **[JS-PKG]** Published and visually validated in the JS demo app. `Priority: 🟠` `Complexity: M`
+- [x] **[STATIC-PKG]** Published and visually validated in the static demo app. Individual SVG assets, sprite, metadata, and per-icon ESM modules ship with a deliberate files allowlist. **Icon font deferred** to a follow-up. `Priority: 🟠` `Complexity: S/M`
+- [x] **[FIGMA-PLUGIN]** Public Solar Icons Figma browser and inserter. The production build uses Vite, React, TypeScript, Base UI, Fuse, and plain CSS; it embeds all 7,476 SVGs, product fonts, and exact Iconify package marks locally. Virtualized grid, live stroke-width preview, horizontal scrubbing, fuzzy search, custom accessible selects, persistent modes, multi-insert, and dark/light themes. Approved on Figma Community: [plugin 1664759238792120976](https://www.figma.com/community/plugin/1664759238792120976). Documentation integrated on docs site. `Priority: 🟠` `Complexity: L`
 
 ## ⏸️ Deferred
 
-- [ ] **[CLEAN-05]** Fix Svelte `peerDependencies.svelte: ">= 4.0.0"` (source uses Svelte 5 runes, peerDep is false).
-- [ ] **[CLEAN-06]** Retyper the 4 `StyleComponents` interfaces (Vue, Svelte, RN, Solid) — currently `any`.
+- [x] **[CLEAN-05]** Svelte now declares `peerDependencies.svelte: ">= 5.0.0"`, matching its Runes-based source. Verified 2026-07-29.
+- [x] **[CLEAN-06]** Vue, Svelte, React Native, and Solid dynamic icons now use `StyleComponentsMap<T>` from `@solar-icons/core/runtime`. Verified 2026-07-29.
 - [ ] **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** CORE-ARCH.
-- [ ] **[CLEAN-10]** Unify Angular's directive-on-`<svg>` API to match the 6 other packages (render their own `<svg>`).
-- [/] **[CORE-ARCH]** Path A decided 2026-06-25: make `dist/` the source of truth for consumers. Implementation in 7 sub-tasks (A1–A7). Already done: core exports helpers (`codegen.ts`), framework packages import from `@solar-icons/core`. Remaining: verify all 6 packages use core imports only.
+- [x] **[CLEAN-10]** Closed 2026-07-29: Angular retains its directive-on-`<svg>` API as an intentional framework-native divergence. No unification is planned.
+- [x] **[CORE-ARCH]** Path A decided 2026-06-25: core exports codegen helpers and all six framework generators import from `@solar-icons/core`; no generator imports `core/src`. Verified 2026-07-29.
 
 ## ✅ Completed
 
