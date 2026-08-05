@@ -16,6 +16,7 @@ status: "active"
 - Dev workflow uses a local `playground/` Nuxt app: `pnpm dev:prepare` (build the module in stub mode + run `nuxi prepare`) then `nuxi dev playground`.
 - Test = `vitest run` (module-level); `test:types` runs `vue-tsc` against both the module and the playground.
 - **Has its own release script** (`pnpm release`) using `changelogen`, separate from the root repo's changesets flow.
+- **Module export must be explicitly annotated** (`const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<...>(...)` with `import type { NuxtModule } from '@nuxt/schema'`). Without it, `nuxt-module-build build` fails with TS2883: the inferred type of the default export references `NuxtModule` (from `@nuxt/schema`), which `@nuxt/kit` imports but does not re-export, so the emitted `dist/types.d.mts` cannot name it portably.
 
 ## 📁 Key Directories
 
