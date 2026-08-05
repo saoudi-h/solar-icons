@@ -1,6 +1,6 @@
 {
-    "title": "V2 (Beta)",
-    "description": "Latest version with CSS variables, duotone, and one package per framework.",
+    "title": "V2",
+    "description": "Current version with CSS variables, duotone, and one package per framework.",
     "icon": "InfoSquareIcon",
     "root": true,
     "pages": [

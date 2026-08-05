@@ -13,7 +13,7 @@ import { DEFAULT_VALUES, useSelectedIcon, useStyleURL, weightToStyleSlug } from 
  * CDN base for fetching clean SVGs from @solar-icons/static.
  * Pinned to a specific beta version for predictability.
  */
-const STATIC_CDN_BASE = 'https://cdn.jsdelivr.net/npm/@solar-icons/static@2.0.0-beta.3/dist/icons'
+const STATIC_CDN_BASE = 'https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons'
 
 function buildCdnUrl(iconName: string, styleSlug: string): string {
     return `${STATIC_CDN_BASE}/${styleSlug}/${iconName}.svg`
@@ -228,15 +228,19 @@ export const Actions: FC = () => {
               max-lg:mb-2 max-lg:border-b max-lg:pb-2
               lg:mr-4 lg:flex-col lg:border-r lg:pr-4
             `}>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadSVG}
+                className="p-1">
                 Get SVG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleDownloadPNG}
+                className="p-1">
                 Get PNG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
@@ -246,9 +250,11 @@ export const Actions: FC = () => {
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
                 Copy PNG
             </CopyButton>
-            <Button size="default" variant="ghost" onClick={handleShare} className="
-              p-1
-            ">
+            <Button
+                size="default"
+                variant="ghost"
+                onClick={handleShare}
+                className="p-1">
                 Share
                 <LinkMinimalistic2Icon size={16} isolated />
             </Button>
