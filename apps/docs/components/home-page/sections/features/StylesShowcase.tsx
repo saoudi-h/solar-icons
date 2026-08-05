@@ -6,7 +6,7 @@ import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
 import { SettingsMinimalisticIcon } from '@solar-icons/react/dynamic/settings-minimalistic'
 import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export const StylesShowcase = () => {
     const styles = ['Linear', 'Bold', 'Outline', 'BoldDuotone', 'LineDuotone', 'Broken'] as const

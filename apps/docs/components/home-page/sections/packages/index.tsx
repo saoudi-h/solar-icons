@@ -9,7 +9,7 @@ import { NoiseSvg } from '@/components/ui/noise-svg'
 import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 

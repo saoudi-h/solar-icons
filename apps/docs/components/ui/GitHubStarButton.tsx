@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
 import NumberFlow from '@number-flow/react'
 import { StarIcon } from '@solar-icons/react/linear/star'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React from 'react'
 
 export interface GitHubStarButtonProps {
@@ -108,9 +108,9 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                           duration-300 ease-out
                           group-hover:scale-120 group-hover:rotate-12
                         `,
-                        starCount !== null ? 'text-warning' : `
-                          text-muted-foreground
-                        `
+                        starCount !== null
+                            ? 'text-warning'
+                            : `text-muted-foreground`
                     )}>
                     <StarIcon size={18} weight={starCount !== null ? 'Bold' : 'Linear'} />
                 </span>

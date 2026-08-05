@@ -1,6 +1,6 @@
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'motion/react'
 import { forwardRef } from 'react'
 import {
     splitFullIconName,

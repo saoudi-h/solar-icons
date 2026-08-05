@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { AnimatePresence, motion, useInView } from 'framer-motion'
+import { AnimatePresence, motion, useInView } from 'motion/react'
 import React from 'react'
 
 export const DocsShowcase = () => {
@@ -26,9 +26,9 @@ export const DocsShowcase = () => {
     ] as const
 
     return (
-        <div
-            ref={containerRef}
-            className="mt-auto flex w-full flex-col gap-4 font-sans text-xs">
+        <div ref={containerRef} className="
+          mt-auto flex w-full flex-col gap-4 font-sans text-xs
+        ">
             {/* Document Header mockup */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -62,10 +62,9 @@ export const DocsShowcase = () => {
                           dark:border-neutral-800 dark:bg-neutral-900
                           dark:text-neutral-300
                         ">
-                        <Icon
-                            icon="mdi:content-copy"
-                            className="size-3.5 text-neutral-400"
-                        />
+                        <Icon icon="mdi:content-copy" className="
+                          size-3.5 text-neutral-400
+                        " />
                         Copy Markdown
                     </motion.button>
 

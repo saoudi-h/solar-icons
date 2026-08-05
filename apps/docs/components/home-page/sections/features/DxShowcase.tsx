@@ -1,5 +1,5 @@
 import { StarIcon } from '@solar-icons/react/dynamic/star'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'motion/react'
 import React from 'react'
 
 export const DxShowcase = () => {
@@ -263,9 +263,11 @@ export const DxShowcase = () => {
                             <div className="my-0.5 border-t border-[#454545]" />
                             <div className="flex flex-col gap-1 pl-1">
                                 <div className="flex items-center gap-2">
-                                    <StarIcon size={13} weight="Bold" className="
-                                      text-white
-                                    " />
+                                    <StarIcon
+                                        size={13}
+                                        weight="Bold"
+                                        className="text-white"
+                                    />
                                     <span className="font-mono text-[8.5px]">Bold</span>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -277,9 +279,11 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">BoldDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon size={13} weight="Broken" className="
-                                      text-white
-                                    " />
+                                    <StarIcon
+                                        size={13}
+                                        weight="Broken"
+                                        className="text-white"
+                                    />
                                     <span className="font-mono text-[8.5px]">Broken</span>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -291,15 +295,19 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">LineDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon size={13} weight="Linear" className="
-                                      text-white
-                                    " />
+                                    <StarIcon
+                                        size={13}
+                                        weight="Linear"
+                                        className="text-white"
+                                    />
                                     <span className="font-mono text-[8.5px]">Linear</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon size={13} weight="Outline" className="
-                                      text-white
-                                    " />
+                                    <StarIcon
+                                        size={13}
+                                        weight="Outline"
+                                        className="text-white"
+                                    />
                                     <span className="font-mono text-[8.5px]">Outline</span>
                                 </div>
                             </div>

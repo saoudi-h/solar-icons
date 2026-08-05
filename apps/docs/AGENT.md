@@ -14,7 +14,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 
 - Next.js 16 App Router, React 19, React Compiler enabled (`reactCompiler: true`).
 - Tailwind CSS 4 (via `@tailwindcss/postcss`).
-- UI primitives: Radix UI, `cmdk`, `framer-motion`, `vaul`.
+- UI primitives: Radix UI, `cmdk`, `motion`, `vaul`.
 - Search: Fumadocs built-in search over MDX content.
 - LLMs: `/llms.txt` and `/llms-full.txt` are first-class deliverables.
 - Build = `tsx ./scripts/generate-changelog.ts && next build`. The pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
@@ -37,7 +37,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 
 - Next.js 16, React 19, TypeScript 6.
 - Fumadocs 16.x.
-- Radix UI + `cmdk` + `vaul` + `framer-motion`.
+- Radix UI + `cmdk` + `vaul` + `motion` (package formerly `framer-motion`; import from `motion/react`).
 - `@number-flow/react` for animated numbers.
 - `@calcom/cal-sans-ui` for the Cal Sans font.
 - `bun` for the link-check script runtime.
