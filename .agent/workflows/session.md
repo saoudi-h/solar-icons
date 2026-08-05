@@ -5,28 +5,29 @@ description: 'Mandatory bootstrap for any new session. Invoke before any work be
 
 # /session — Start
 
-**You MUST complete Steps 1–3 before writing any code.**
+> **Authority:** The protocol never expands the user's requested scope. Answer-only, read-only, and diagnosis-without-fix requests remain non-mutating.
 
-## STEP 1 — Load context
+## STEP 1 — Orient
 
-1. Run `find . -name AGENT.md -not -path '*/node_modules/*'` and read every file found, root-first.
-2. Read the most recent file in `.autonomos/worklogs/` (if any).
-3. Read `.autonomos/TASKS.md`.
+1. Read the root `AGENT.md`.
+2. Read `.autonomos/TASKS.md`.
 
-RESPOND with a **3-line max** summary of what you retained. Do not continue without this response.
+RESPOND with a **3-line max** summary of relevant project context. Do not continue without this response.
 
-## STEP 2 — Select task
+## STEP 2 — Resolve the objective
 
-Pick the highest-priority task not marked `[x]` or `[!]`. If none, ask the user.
+1. If the user supplied an objective, it takes precedence. Match a task, use `/issue` for untriaged signals, or register a task for a clear authorized change.
+2. For non-mutating work, load only the context needed, answer, and do not start a task.
+3. Without a user objective, resume a `[/]` task; otherwise pick the highest-priority `[ ]` task. If none exists, ask the user.
 
-RESPOND: `Task: [ID] — [title]. Starting.`
+RESPOND: `Task: [ID] — [title]. Starting.` when a task will run.
 
-## STEP 3 — Mark and begin
+## STEP 3 — Begin
 
-Set the task to `[/]` in `.autonomos/TASKS.md`. Now you may work.
+Invoke `/task`; it owns scoped context, planning, and the `[/]` transition.
 
-## Session rules (apply until session ends)
+## Session rules
 
-1. **Before every non-trivial decision:** check if an AGENT.md says something about it.
-2. **Every time you learn something new** (user correction, discovered convention, technical choice): write it to the relevant AGENT.md **now**, not later.
-3. **When the session ends:** invoke the `/crystallize` workflow. You cannot close without it.
+1. Before non-trivial decisions, consult the applicable root → target `AGENT.md` chain.
+2. Capture durable knowledge according to `/crystallize`, within user authority.
+3. When authorized task work ends, invoke `/crystallize`.

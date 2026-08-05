@@ -16,8 +16,8 @@ importers:
         version: 2.31.0(@types/node@26.1.1)
     devDependencies:
       '@autonomos/cli':
-        specifier: ^0.3.5
-        version: 0.3.5(@types/node@26.1.1)
+        specifier: ^0.4.1
+        version: 0.4.1(@types/node@26.1.1)
       '@commitlint/cli':
         specifier: ^21.2.1
         version: 21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.0.1)(typescript@6.0.3)
@@ -1568,12 +1568,12 @@ packages:
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
 
-  '@autonomos/cli@0.3.5':
-    resolution: {integrity: sha512-cnVuSyWaoexnsolDT2T7wMvAzs2GUzoGuiSpZLO/J5HS04kiUBoFwRLhLbgnsINlQvFqMRizCRFx3YhUQuaxdQ==}
+  '@autonomos/cli@0.4.1':
+    resolution: {integrity: sha512-qEMGJhHqegh6T3yN8IzIEBnxbz0nG4sJacVoYxfy+SSeVQNdD1k5QsU1ZRfzCwBBxiMJl+soDhb7/i/ONPhYrA==}
     hasBin: true
 
-  '@autonomos/core@0.3.3':
-    resolution: {integrity: sha512-FA6ygYyXC5bVFuQVpp7/ohzkT6nZnetFROanKHDzH7ERkypEvfq9Da2rtF1uMa7leUxgcUv5UyCTXzim6LA/qA==}
+  '@autonomos/core@0.4.0':
+    resolution: {integrity: sha512-mA+q+8t8uiAsVnM+sTtQx67LmyrNg4YmYLsgPSFpe3hdWkYhS+7VTM2rIYuK8UuXYUp9rD+doCdPZz53+4PvqA==}
 
   '@babel/code-frame@7.29.7':
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
@@ -17858,16 +17858,16 @@ snapshots:
 
   '@asamuzakjp/nwsapi@2.3.9': {}
 
-  '@autonomos/cli@0.3.5(@types/node@26.1.1)':
+  '@autonomos/cli@0.4.1(@types/node@26.1.1)':
     dependencies:
-      '@autonomos/core': 0.3.3
+      '@autonomos/core': 0.4.0
       '@inquirer/prompts': 7.10.1(@types/node@26.1.1)
       commander: 14.0.3
       picocolors: 1.1.1
     transitivePeerDependencies:
       - '@types/node'
 
-  '@autonomos/core@0.3.3':
+  '@autonomos/core@0.4.0':
     dependencies:
       js-yaml: 4.1.0
       zod: 3.24.1
