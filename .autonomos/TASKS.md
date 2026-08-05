@@ -9,6 +9,7 @@
 
 ## 🚧 Active
 
+- [x] **[NUXT-BUILD-FIX]** Fix `packages/nuxt` build failure after the 4.5.x dep bump: TS2883 "inferred type of 'default' cannot be named without a reference to 'NuxtModule'". Fixed by explicitly annotating the module (`const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<...>(...)`) with `import type { NuxtModule } from '@nuxt/schema'`. `pnpm build` + 13 tests green. `test:types`/package-wide lint failures are pre-existing (verified identical before/after the fix). `Priority: 🟠` `Complexity: S`
 - [x] **[DOCS-SEARCH-FIX]** Fix Fuse.js search logic for multi-word queries. `Priority: 🟠` `Complexity: S`
 - [x] **[DOCS-ICON-ACTIONS]** Fix SVG/PNG download and copy actions on the `/icons` detail panel. SVG download fails (fetches from GitHub raw, 404s). PNG download/copy renders transparent 24×24 (canvas can't resolve CSS vars). Define UX strategy for parametrized vs neutral output. Leverage `@solar-icons/static` CDN for clean SVG source. `Priority: 🔴` `Complexity: M` *Closed 2026-08-05: code committed on main (`d5859e148`), strategy = SVG clean source + PNG customized snapshot. See worklogs/2026-07-15-DOCS-ICON-ACTIONS.md.*
 
