@@ -31,7 +31,12 @@
    - ⚠️ (7) **REMAINING (user, needs npm auth):** deprecate `@solar-icons/react-perf@2.1.1` → point to `@solar-icons/react`. Command: `npm deprecate @solar-icons/react-perf@2.1.1 "Discontinued. Use @solar-icons/react (>=2.0.0) instead."` (failed here: `npm whoami` → E401, no agent auth).
 - [x] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S` *Closed 2026-08-05: false task. Changesets auto-generates per-package CHANGELOG.md; `apps/docs/scripts/generate-changelog.ts` aggregates them into the docs changelog page. Nothing to hand-write.*
 - [x] **[BETA-ICONS-UPDATE]** Publish new beta version for core icon updates. `Priority: 🟠` `Complexity: S`
-- [/] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
+- [x] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produced the global findings + fix plan in `.autonomos/worklogs/2026-08-05-DOCS-AUDIT.md`; product fixes remain separate. `Priority: 🔴` `Complexity: L`
+- [x] **[V2-PACKAGE-EXPORTS]** Repair and pack-smoke-test the Svelte, React Native, and JS public export maps; add export coverage for every documented entry point. `Priority: 🔴` `Complexity: M` *See worklogs/2026-08-06-V2-PACKAGE-EXPORTS.md*
+- [ ] **[V2-RELEASE-GATES]** Fix package/docs typecheck and lint failures, make generated-artifact dependencies explicit, and add typecheck/lint/export validation to release CI. `Priority: 🔴` `Complexity: L`
+- [ ] **[V2-DOCS-RELEASE-CONSISTENCY]** Align stable/beta messaging, npm dist-tags, install snippets, generated changelog routing/content, current-facing examples, and package README documentation. `Priority: 🔴` `Complexity: M`
+- [ ] **[V2-API-DOCS-HARDENING]** Resolve Vue plugin, Nuxt provider, Angular accessibility/dynamic-input, React Native accessibility, static-package documentation, and V2 named-import discrepancies. `Priority: 🟠` `Complexity: M`
+- [ ] **[V2-CODEMOD-HARDENING]** Fix multi-framework package dependency migration and add a regression fixture. `Priority: 🟠` `Complexity: S`
 
 ### V2 — Svelte audit & fix
 

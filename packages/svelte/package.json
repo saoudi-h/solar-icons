@@ -59,9 +59,9 @@
             "default": "./dist/icons/dynamic/index.js"
         },
         "./dynamic/*": {
-            "types": "./dist/icons/dynamic/*.d.ts",
+            "types": "./dist/icons/dynamic/*.svelte.d.ts",
             "svelte": "./dist/icons/dynamic/*.svelte",
-            "default": "./dist/icons/dynamic/*.js"
+            "default": "./dist/icons/dynamic/*.svelte"
         },
         "./*": {
             "types": "./dist/icons/style/*.d.ts",
@@ -71,32 +71,32 @@
         "./bold/*": {
             "types": "./dist/icons/bold/*.svelte.d.ts",
             "svelte": "./dist/icons/bold/*.svelte",
-            "default": "./dist/icons/bold/*.js"
+            "default": "./dist/icons/bold/*.svelte"
         },
         "./bold-duotone/*": {
             "types": "./dist/icons/bold-duotone/*.svelte.d.ts",
             "svelte": "./dist/icons/bold-duotone/*.svelte",
-            "default": "./dist/icons/bold-duotone/*.js"
+            "default": "./dist/icons/bold-duotone/*.svelte"
         },
         "./broken/*": {
             "types": "./dist/icons/broken/*.svelte.d.ts",
             "svelte": "./dist/icons/broken/*.svelte",
-            "default": "./dist/icons/broken/*.js"
+            "default": "./dist/icons/broken/*.svelte"
         },
         "./linear/*": {
             "types": "./dist/icons/linear/*.svelte.d.ts",
             "svelte": "./dist/icons/linear/*.svelte",
-            "default": "./dist/icons/linear/*.js"
+            "default": "./dist/icons/linear/*.svelte"
         },
         "./line-duotone/*": {
             "types": "./dist/icons/line-duotone/*.svelte.d.ts",
             "svelte": "./dist/icons/line-duotone/*.svelte",
-            "default": "./dist/icons/line-duotone/*.js"
+            "default": "./dist/icons/line-duotone/*.svelte"
         },
         "./outline/*": {
             "types": "./dist/icons/outline/*.svelte.d.ts",
             "svelte": "./dist/icons/outline/*.svelte",
-            "default": "./dist/icons/outline/*.js"
+            "default": "./dist/icons/outline/*.svelte"
         }
     },
     "devDependencies": {

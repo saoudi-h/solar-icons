@@ -63,22 +63,6 @@
         "./outline/*": {
             "types": "./dist/icons/outline/*.d.mts",
             "import": "./dist/icons/outline/*.mjs"
-        },
-        "./sprite": {
-            "types": "./dist/sprite.d.mts",
-            "import": "./dist/sprite.svg"
-        },
-        "./icons.json": {
-            "types": "./dist/icons.d.mts",
-            "import": "./dist/icons.json"
-        },
-        "./metadata.json": {
-            "types": "./dist/metadata.d.mts",
-            "import": "./dist/metadata.json"
-        },
-        "./metadata-descriptions.json": {
-            "types": "./dist/metadata-descriptions.d.mts",
-            "import": "./dist/metadata-descriptions.json"
         }
     },
     "devDependencies": {

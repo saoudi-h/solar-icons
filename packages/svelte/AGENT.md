@@ -56,6 +56,7 @@ status: 'active'
 
 - **Svelte 5 runes are mandatory** in both source and generated code (`$props()` destructuring, not legacy `export let`). Consumers must be on Svelte ≥ 5.0.0.
 - The peer dependency is now correctly set to `">= 5.0.0"` (fixed in CLEAN-05, 2026-06-25; the previous `">= 4.0.0"` was a lie — the code was never Svelte 4 compatible).
+- **Published subpath targets must preserve Svelte source extensions:** generated output is `.svelte` plus `.svelte.d.ts`; `exports` conditions must not point the default or type targets at nonexistent `.js`/`.d.ts` files.
 
 ## V3 Propagation (2026-06-24)
 
