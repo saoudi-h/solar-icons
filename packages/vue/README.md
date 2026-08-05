@@ -51,7 +51,7 @@ import { HomeIcon } from '@solar-icons/vue/linear'
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/vue).
+For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/packages/vue).
 
 ## License
 

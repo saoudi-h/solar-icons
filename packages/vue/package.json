@@ -104,5 +104,27 @@
         "vue": "^3.5.41",
         "vue-tsc": "3.3.9"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "keywords": [
+        "vue",
+        "icons",
+        "svg",
+        "solar",
+        "design",
+        "interface",
+        "phosphor",
+        "UI",
+        "UX"
+    ],
+    "author": {
+        "name": "Saoudi Hakim",
+        "url": "https://hakimsaoudi.dev",
+        "email": "saoudihakim@gmail.com"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    }
 }

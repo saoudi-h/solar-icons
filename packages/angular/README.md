@@ -21,19 +21,29 @@ npm install @solar-icons/angular
 
 ```ts
 import { Component } from '@angular/core'
-import { HomeIcon, LoginIcon } from '@solar-icons/angular/linear'
+import { SolarHomeLinear, SolarLoginBold } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [HomeIcon, LoginIcon],
+    imports: [SolarHomeLinear, SolarLoginBold],
     template: `
         <div>
-            <svg solarHomeIcon></svg>
-            <svg solarLoginIcon color="#3b82f6" size="32" strokeWidth="2"></svg>
+            <svg solarHomeLinear></svg>
+            <svg solarLoginBold color="#3b82f6" [size]="32" [strokeWidth]="2"></svg>
         </div>
     `,
 })
 export class AppComponent {}
+```
+
+## Import patterns
+
+```ts
+// Top-level (all icons + lib)
+import { SolarHeartBold, SolarProvider, useSolar } from '@solar-icons/angular'
+
+// Dynamic icons
+import { SolarHome } from '@solar-icons/angular/dynamic'
 ```
 
 ### Global Configuration (Provider)
@@ -43,14 +53,14 @@ Wrap your components in `<solar-provider>` to set default properties:
 ```ts
 import { Component } from '@angular/core'
 import { SolarProvider } from '@solar-icons/angular'
-import { HomeIcon } from '@solar-icons/angular/linear'
+import { SolarHomeLinear } from '@solar-icons/angular'
 
 @Component({
     standalone: true,
-    imports: [SolarProvider, HomeIcon],
+    imports: [SolarProvider, SolarHomeLinear],
     template: `
-        <solar-provider size="24" color="currentColor" strokeWidth="1.5">
-            <svg solarHomeIcon></svg>
+        <solar-provider [size]="24" color="currentColor" [strokeWidth]="1.5">
+            <svg solarHomeLinear></svg>
         </solar-provider>
     `,
 })
@@ -59,7 +69,7 @@ export class AppComponent {}
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Angular Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/angular).
+For installation guides, API reference, and a searchable icon catalog, visit the [Angular Documentation](https://solar-icons.vercel.app/docs/v2/packages/angular).
 
 ## License
 

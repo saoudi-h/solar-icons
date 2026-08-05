@@ -51,7 +51,7 @@ function App() {
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [React Native Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/react-native).
+For installation guides, API reference, and a searchable icon catalog, visit the [React Native Documentation](https://solar-icons.vercel.app/docs/v2/packages/react-native).
 
 ## License
 

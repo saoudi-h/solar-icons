@@ -26,34 +26,40 @@ export default defineNuxtConfig({
 })
 ```
 
+The module auto-imports icon components with a `Solar` prefix. `SolarHomeIcon` and `SolarHomeBoldIcon` come from the main barrel; `SolarHomeIcon` from `@solar-icons/vue/dynamic` is the runtime-switchable variant.
+
 ```vue
 <template>
   <div>
-    <SolarHomeIcon />
-    <SolarLoginIcon color="#3b82f6" :size="32" :strokeWidth="2" />
+    <SolarHomeBoldIcon />
+    <SolarLoginLinearIcon color="#3b82f6" :size="32" :strokeWidth="2" />
   </div>
 </template>
 ```
 
-### Global Configuration (Module Options)
+### Module Options
 
-Configure global defaults in your `nuxt.config.ts`:
+Configure in your `nuxt.config.ts`:
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['@solar-icons/nuxt'],
   solarIcons: {
-    size: 24,
-    color: 'currentColor',
-    strokeWidth: 1.5,
+    namePrefix: 'Solar',
+    autoImport: true,
   }
 })
 ```
 
+- `namePrefix`: prefix for auto-imported icon components (default `Solar`).
+- `autoImport`: register icon components and `SolarProvider`/`useSolar` as auto-imports (default `true`).
+
+Global icon defaults are set at runtime with `<SolarProvider>` in your app, not through module options.
+
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/nuxt).
+For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/packages/nuxt).
 
 ## License
 
