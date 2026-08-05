@@ -143,16 +143,16 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   top-level scroll container, not nested inside a
   `sticky aside` and a `flex-1` grid.
 
-## 📚 Documentation versioning (2026-06-30, updated 2026-08-05 for stable)
+## 📚 Documentation versioning
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
 - **Content directories:** `content/docs/v1/` (previous release) and `content/docs/v2/` (current stable). v1 is labelled "V1" in its tab; the "Legacy" label is never used. v2 is the default.
 - **Default tab:** V2. `/docs` redirects to `/docs/v2`. The header "Documentation" link points to `/docs/v2`. v1 is reachable via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
 - **Redirect:** `/docs` → `/docs/v2` via `next.config.mts` `redirects()`.
-- **Version banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`, rendered in `app/docs/layout.tsx` before `children`. The component lives in `components/version-banner.tsx` (renamed from `beta-banner.tsx` in 2026-08-05). `V1Banner` renders only on `/docs/v1/*` and points readers to the v2 docs.
-- **Install snippets are unpinned for stable releases.** The ` ```package-install ` blocks in `content/docs/v2/packages/*.mdx`, the raw `npm install` in `migration-to-v2/react-perf.mdx`, the `npx @solar-icons/codemod` invocations, and the `esm.sh` URL in `packages/js.mdx` carry no version (bare package spec, resolves to `latest`). `remark-npm` turns the bare package spec into `npm install <spec>` and derives the pnpm/yarn/bun variants. During a beta phase these MUST be pinned to the prerelease version (e.g. `@solar-icons/react@2.0.0-beta.0`); revert to unpinned once stable is published. Do not reintroduce pins while stable is current.
-
+- **Version banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`, rendered in `app/docs/layout.tsx` before `children`. The component lives in `components/version-banner.tsx` and exports `V1Banner`, which renders only on `/docs/v1/*` and points readers to the v2 docs.
+- **Header widget:** `components/header-v2-widget.tsx` renders a "v2 is now stable" pill in the home header (`homeOptions.nav.children` in `app/layout.config.tsx`). It is `hidden lg:inline-flex`. The Header keeps a fixed `h-14` (56px) height regardless, so the hero (`calc(100vh - header)`) and the icons page (which already budgets 56px) are unaffected. Scoped to `homeOptions`, not `baseOptions`/`docsOptions`.
+- **Install snippets are unpinned while v2 is stable.** The ` ```package-install ` blocks in `content/docs/v2/packages/*.mdx`, the raw `npm install` in `migration-to-v2/react-perf.mdx`, the `npx @solar-icons/codemod` invocations, and the `esm.sh` URL in `packages/js.mdx` carry no version (bare package spec, resolves to `latest`). `remark-npm` turns the bare package spec into `npm install <spec>` and derives the pnpm/yarn/bun variants. Reintroduce pins when the packages are in a prerelease phase; remove them again for stable.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.
 
@@ -173,7 +173,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 🔽 Icon detail panel actions (DOCS-ICON-ACTIONS, 2026-07-15)
 
 - **Strategy: SVG = clean source, PNG = customized snapshot.** SVG actions (Get SVG, Copy SVG) serve the unmodified SVG from `@solar-icons/static` via CDN. PNG actions (Get PNG, Copy PNG) rasterize the SVG with the user's current filter-bar settings (color, size, stroke-width, duotone color/opacity).
-- **CDN:** `https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons/{styleSlug}/{iconName}.svg` (no version — resolves to `latest`, so it follows stable releases automatically). The base is defined in `STATIC_CDN_BASE` in `Actions.tsx`. During a beta phase it was pinned to the prerelease version (e.g. `@2.0.0-beta.3`); the pin was removed for the stable release.
+- **CDN:** `https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons/{styleSlug}/{iconName}.svg` (no version — resolves to `latest`, so it follows stable releases automatically). The base is defined in `STATIC_CDN_BASE` in `Actions.tsx`.
 - **SVG content:** Clean source from `@solar-icons/static` — `currentColor` strokes/fills, `24×24`, `stroke-width="1.5"`, `class="solar solar-{name}-{style}"`. No CSS variable references (except duotone accent elements which use `var(--solar-secondary-color)` and `var(--solar-secondary-opacity)`).
 - **PNG resolution:** `resolveSvgForRaster()` takes the clean SVG string, replaces `currentColor` with the user's color, sets dimensions/stroke-width, and resolves duotone CSS vars to concrete values. The resolved SVG is loaded into an `<img>` via blob URL and drawn onto a `<canvas>`. No DOM ref element needed.
 - **No hidden SVG element.** The previous approach rendered a hidden `<selectedIcon.Icon ref={ref} />` in the DOM for serialization. The new approach fetches the source SVG from CDN, which avoids CSS-variable-in-image-context issues entirely.

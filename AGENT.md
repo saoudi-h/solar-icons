@@ -15,7 +15,8 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 - **Commit scopes:** the `apps/*` or `packages/*` name. Omit when the change touches 3+ apps/packages or the root tooling. No subject-based scopes.
 - **One focused commit per change.** Split a session's work across multiple commits when it spans several dimensions.
 - **Versioning & publishing:** Changesets. `.changeset/config.json` lists the docs app and the demo apps under `ignore`.
-- **PR base branch:** `main`. Beta releases flow through the `beta` branch via `.github/workflows/`.
+- **PR base branch:** `main`. Prerelease versions flow through changesets `pre` mode on `main` (`.changeset/pre.json`, tag `beta`) — the `beta` branch is historical and not used for development. `release.yml` publishes on push to `main`.
+- **AGENT.md files are not journals (maintainer directive, 2026-08-05):** keep them to current facts, stack, and conventions only. No dated history entries. Session history belongs in `.autonomos/worklogs/YYYY-MM-DD-[TASK_ID].md` (gitignored), task state in `.autonomos/TASKS.md`.
 - **Language: English only — no exceptions.** Every file in this repo, including gitignored worklogs, AGENT.md files, TASKS.md, comments, commit messages, and documentation MUST be in English. Never write French (or any other language) anywhere in the codebase, regardless of what language the maintainer uses in conversation with you. This applies to all agents and all sessions. If you discover pre-existing non-English content, fix it immediately.
 - **Pre-commit:** Husky + lint-staged at the root, per-package `lint-staged.config.mjs`.
 
@@ -78,14 +79,14 @@ Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, Bold
 ## ⚙️ Workflow & Preferences
 - **Clone repos for ground truth:** When docs are thin or unclear, clone the official repo and read the source. Trust the code over summaries.
 
-## 🚀 Release governance (beta)
+## 🚀 Release governance
 
 - **Product version is `2.0.0`, NOT `3.0.0`.** The "V3" premise was a mistake (2026-07-08): nothing justified a major v3. The real justification for a major bump is the **unification of `@solar-icons/react` + `@solar-icons/react-perf`** into a single `@solar-icons/react` package (`react-perf` is discontinued; last published `2.1.1`, already removed from the repo). All surviving packages sit at `1.x` (react 1.1.1, vue 1.2.1, solid 1.0.1, svelte 1.1.1, angular 1.0.1, react-native 1.1.1, nuxt 1.2.1), so a `major` changeset from `1.x` yields `2.0.0` **naturally** — no manual version anchor needed.
 - **Beta-first, never direct stable.** V2 carries breaking changes (react/react-perf merge, `Icon` suffix, per-style paths, removed `/ssr` & category imports, duotone API). Publishing stable on `main` would force users into breakage via auto-update. All packages ship as `2.0.0-beta.x` (npm `beta` dist-tag) first.
 - **`beta` branch already exists** (remote `origin/beta`), used sporadically before — the beta process is NOT yet routine.
-- **Workflow:** changes go via **PRs targeting `beta`**, each **linked to a GitHub issue**. Issues/PRs double as public documentation of *why* decisions were made. No local direct pushes/merges to `beta`.
-- **`release.yml` (stable) triggers on push to `main`** via changesets (`version-packages` + `release`). Merging V2 package changes (version 2.0.0) into `main` publishes stable v2 involuntarily — the core risk when touching `main`.
-- **Docs deploy:** the docs site (`apps/docs`) builds from `main`'s docs source. Updating docs requires touching `main` but must NOT trigger a stable package publish (merge only docs content; keep package versions at their released `1.x` on `main`; no package changesets there until stable is intended).
+- **Workflow:** changes go via **PRs targeting `main`**, each **linked to a GitHub issue**. Issues/PRs double as public documentation of *why* decisions were made. No local direct pushes/merges to `main` (release PRs from changesets are the exception).
+- **`release.yml` (stable) triggers on push to `main`** via changesets (`version-packages` + `release`). While `.changeset/pre.json` is in `pre` mode (tag `beta`), pushes to `main` publish only `2.0.0-beta.x`. Exiting `pre` mode makes the next version/publish round produce stable `2.0.0` on `latest` — this is the intended transition, not an accident.
+- **Docs deploy:** the docs site (`apps/docs`) builds from `main`'s docs source. Docs and package publishes are therefore synchronized: merge docs + package changes to `main` in the same release round.
 - **Internal "v3" naming vs product `2.0.0` — DECIDED (2026-07-08): rename everything to "v2".** Branch `v3`→`v2`, docs routes `/docs/v3`→`/docs/v2`, `TASKS.md` "V3"→"V2", `AGENT.md` labels, and the `migration-to-v3`→`migration-to-v2` slug are all being renamed to v2 for consistency with the published `2.0.0`. Internal session/worklog codes (e.g. `V3-09`) and their gitignored worklog filenames are kept as historical provenance.
 - **`react-perf` deprecation:** the package is gone from the repo but `2.1.1` remains published on npm. Before/at stable, publish a deprecation notice on `@solar-icons/react-perf` pointing to `@solar-icons/react`.
 - **V2 migration codemod strategy (2026-07-26):** ship an opt-in, framework-aware codemod before stable. Limit automatic edits to deterministic import/package/specifier/component-name rewrites, including `@solar-icons/react-perf` → `@solar-icons/react`. Do not automatically rewrite category namespace usage or React/Vue provider architecture: report these as actionable manual follow-ups. The command must default to dry-run, report untouched/ambiguous occurrences, and retain a documented manual migration path.
