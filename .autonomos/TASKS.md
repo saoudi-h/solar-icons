@@ -10,7 +10,7 @@
 ## 🚧 Active
 
 - [x] **[DOCS-SEARCH-FIX]** Fix Fuse.js search logic for multi-word queries. `Priority: 🟠` `Complexity: S`
-- [/] **[DOCS-ICON-ACTIONS]** Fix SVG/PNG download and copy actions on the `/icons` detail panel. SVG download fails (fetches from GitHub raw, 404s). PNG download/copy renders transparent 24×24 (canvas can't resolve CSS vars). Define UX strategy for parametrized vs neutral output. Leverage `@solar-icons/static` CDN for clean SVG source. `Priority: 🔴` `Complexity: M`
+- [x] **[DOCS-ICON-ACTIONS]** Fix SVG/PNG download and copy actions on the `/icons` detail panel. SVG download fails (fetches from GitHub raw, 404s). PNG download/copy renders transparent 24×24 (canvas can't resolve CSS vars). Define UX strategy for parametrized vs neutral output. Leverage `@solar-icons/static` CDN for clean SVG source. `Priority: 🔴` `Complexity: M` *Closed 2026-08-05: code committed on main (`d5859e148`), strategy = SVG clean source + PNG customized snapshot. See worklogs/2026-07-15-DOCS-ICON-ACTIONS.md.*
 
 ### V2 — Phase 1: Foundation
 
@@ -28,7 +28,7 @@
    - ✅ (5) Publish `2.0.0-beta.0` tag `beta` — run `28942432333` (rerun after fixing `NPM_TOKEN` secret). 7 pkgs published, `latest` stays `1.x` (beta-first OK).
    - ⚠️ (6) Doc via `main` carefully (no changeset package → no accidental stable via `release.yml`).
    - ⚠️ (7) **REMAINING (user, needs npm auth):** deprecate `@solar-icons/react-perf@2.1.1` → point to `@solar-icons/react`. Command: `npm deprecate @solar-icons/react-perf@2.1.1 "Discontinued. Use @solar-icons/react (>=2.0.0) instead."` (failed here: `npm whoami` → E401, no agent auth).
-- [ ] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S`
+- [x] **[CHANGELOG]** Generate V2.0 changelog from commits. `Priority: 🔵` `Complexity: S` *Closed 2026-08-05: false task. Changesets auto-generates per-package CHANGELOG.md; `apps/docs/scripts/generate-changelog.ts` aggregates them into the docs changelog page. Nothing to hand-write.*
 - [x] **[BETA-ICONS-UPDATE]** Publish new beta version for core icon updates. `Priority: 🟠` `Complexity: S`
 - [/] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produce a global findings + fix plan, not the fixes themselves. `Priority: 🔴` `Complexity: L` *(resumed 2026-07-07, focus: AI slop patterns)*
 
