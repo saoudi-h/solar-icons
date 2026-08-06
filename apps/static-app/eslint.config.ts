@@ -8,12 +8,9 @@ const config: Config[] = defineConfig([
         ignores: [
             'eslint.config.ts',
             'eslint-types.d.ts',
-            'prettier.config.mjs',
             'lint-staged.config.mjs',
-            'lowercase-script.ts',
-            'vitest.config.ts',
-            'src/**/*.d.ts',
-            'src/**/*.test.ts',
+            'prettier.config.mjs',
+            'public/*',
         ],
     },
 ])

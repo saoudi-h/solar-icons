@@ -2,7 +2,7 @@
 import type { Category, Style } from '@/generated/generatedHeroUtils'
 import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
 import { cn } from '@/lib/utils'
-import type { Icon as SolarIcon } from '@solar-icons/react/lib/types'
+import type { DynamicIconProps } from '@solar-icons/react/lib/dynamic-icon'
 import { atom, useAtom } from 'jotai'
 import type { MotionValue } from 'motion/react'
 import {
@@ -17,6 +17,8 @@ import {
 } from 'motion/react'
 import type { FC } from 'react'
 import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
+
+type SolarIcon = FC<DynamicIconProps>
 
 const categoryAtom = atom<Category>('Devices')
 const styleAtom = atom<Style>('Bold')

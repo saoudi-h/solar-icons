@@ -31,7 +31,8 @@ export const searchIcons = ({
         })
 
         const terms = keyword.toLowerCase().trim().split(/\s+/).filter(Boolean)
-        const query = terms.length > 1 ? { $and: terms } : terms[0]
+        const query: string | { $and: string[] } =
+            terms.length > 1 ? { $and: terms } : (terms[0] as string)
 
         return fuseSearch.search(query).map(r => r.item)
     }

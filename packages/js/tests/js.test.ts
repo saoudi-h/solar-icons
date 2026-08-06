@@ -33,8 +33,8 @@ describe('@solar-icons/js', () => {
 
             // Children should be present
             expect(svg.children.length).toBe(1)
-            expect(svg.children[0].tagName.toLowerCase()).toBe('path')
-            expect(svg.children[0].getAttribute('fill')).toBe('currentColor')
+            expect(svg.children[0]!.tagName.toLowerCase()).toBe('path')
+            expect(svg.children[0]!.getAttribute('fill')).toBe('currentColor')
         })
 
         it('merges custom attributes into the SVG wrapper', () => {
@@ -63,7 +63,7 @@ describe('@solar-icons/js', () => {
 
             expect(iElements.length).toBe(0) // The placeholder was replaced
             expect(svgElements.length).toBe(1) // With an SVG
-            expect(svgElements[0].getAttribute('data-solar')).toBe('heart-bold')
+            expect(svgElements[0]!.getAttribute('data-solar')).toBe('heart-bold')
         })
 
         it('adds standard "solar" and "solar-{name}" classes to the SVG', () => {

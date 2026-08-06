@@ -1,9 +1,8 @@
 {
     "extends": "@tala-tools/tsconfig/base.json",
     "compilerOptions": {
-        "outDir": "dist",
-        "rootDir": "src"
+        "outDir": "dist"
     },
-    "include": ["src"],
+    "include": ["src", "vite.config.ts"],
     "exclude": ["node_modules", "dist"]
 }

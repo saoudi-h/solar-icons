@@ -3,6 +3,7 @@
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 import { type DialogProps } from '@radix-ui/react-dialog'
+import { MinimalisticMagnifierIcon } from '@solar-icons/react/dynamic/minimalistic-magnifier'
 import { Command as CommandPrimitive } from 'cmdk'
 import * as React from 'react'
 
@@ -52,7 +53,7 @@ const CommandInput = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
     <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-        <MinimalisticMagnifier className="mr-2 size-4 shrink-0 opacity-50" />
+        <MinimalisticMagnifierIcon className="mr-2 size-4 shrink-0 opacity-50" />
         <CommandPrimitive.Input
             ref={ref}
             className={cn(
@@ -154,9 +155,10 @@ CommandItem.displayName = CommandPrimitive.Item.displayName
 const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
     return (
         <span
-            className={cn(`
-              ml-auto text-xs tracking-widest text-muted-foreground
-            `, className)}
+            className={cn(
+                `ml-auto text-xs tracking-widest text-muted-foreground`,
+                className
+            )}
             {...props}
         />
     )

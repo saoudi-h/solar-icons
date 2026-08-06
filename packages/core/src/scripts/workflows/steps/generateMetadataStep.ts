@@ -29,8 +29,6 @@ export const generateMetadataStep: ProcessorStep = async context => {
         baseUrl: 'http://localhost:11434',
         model: 'minicpm-v',
         format: 'json',
-    }).bind({
-        images: [imageData.toString('base64')],
     })
 
     const promptForJsonMode = ChatPromptTemplate.fromMessages([
@@ -48,11 +46,13 @@ Ensure the output is always valid JSON and consistent with this format. Do not u
         ],
     ])
 
-    const chainForJsonMode = promptForJsonMode.pipe(llm)
-
-    const description = await chainForJsonMode.invoke({
+    const messages = await promptForJsonMode.formatMessages({
         file_name: iconName,
         categories: JSON.stringify(tags),
+    })
+
+    const description = await llm.invoke(messages, {
+        images: [imageData.toString('base64')],
     })
 
     return { ...context, description: description }

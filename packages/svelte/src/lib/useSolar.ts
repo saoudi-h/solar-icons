@@ -16,7 +16,7 @@ interface SolarState {
 export const SOLAR_CONTEXT_KEY = Symbol('solar');
 
 export function useSolar(): SolarState {
-    const ctx = getContext<SolarState>(SOLAR_CONTEXT_KEY);
+    const ctx = getContext<SolarState | undefined>(SOLAR_CONTEXT_KEY);
     if (!ctx) throw new Error('useSolar() must be used inside a <SolarProvider>');
     return ctx;
 }

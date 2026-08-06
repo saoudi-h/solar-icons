@@ -11,6 +11,7 @@ import {
     WEIGHT_MAP,
     type ParsedIcon,
     type ParsedIconGroup,
+    type Weight,
 } from '@solar-icons/core'
 import { reactNativeComponentFile, type FileDefinition } from './parser-hook'
 
@@ -110,7 +111,7 @@ function clean() {
 }
 
 function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
-    const groups = group.styles
+    const groups = group.styles as Readonly<Partial<Record<Weight, ParsedIcon>>>
 
     const styleImports = WEIGHTS.filter(w => groups[w])
         .map(w => {

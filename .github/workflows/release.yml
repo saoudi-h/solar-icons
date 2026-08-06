@@ -33,8 +33,17 @@ jobs:
             - name: Build
               run: pnpm build
 
+            - name: Typecheck
+              run: pnpm typecheck
+
+            - name: Lint
+              run: pnpm lint
+
             - name: Tests
               run: pnpm test
+
+            - name: Validate package exports
+              run: pnpm check:exports
 
             - name: Create Release Pull Request or Publish to NPM
               id: changesets

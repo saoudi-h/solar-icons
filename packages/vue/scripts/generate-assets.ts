@@ -11,6 +11,7 @@ import {
     WEIGHT_MAP,
     type ParsedIcon,
     type ParsedIconGroup,
+    type Weight,
 } from '@solar-icons/core'
 import { vueComponentFile, type FileDefinition } from './parser-hook'
 
@@ -109,7 +110,7 @@ function clean() {
 }
 
 function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
-    const groups = group.styles
+    const groups = group.styles as Readonly<Partial<Record<Weight, ParsedIcon>>>
     const name = group.name
     const pascalName = group.pascalName
 

@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     return (
         <>
             <V1Banner />
-            <DocsLayout tree={source.pageTree} {...docsOptions} tabs>
+            <DocsLayout tree={source.pageTree} {...docsOptions}>
                 {children}
             </DocsLayout>
         </>

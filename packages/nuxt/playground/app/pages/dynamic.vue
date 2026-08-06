@@ -41,8 +41,14 @@
         class="group flex flex-col items-center justify-center gap-1.5 p-3 bg-slate-900/50 rounded-xl border border-slate-800/50 hover:bg-slate-800/50 hover:border-amber-500/30 transition-all cursor-pointer"
         :title="name"
       >
-        <div class="flex items-center justify-center" style="min-height: 48px">
-          <component :is="(dynamic as Record<string, any>)[name + 'Icon']" :weight="selectedWeight" />
+        <div
+          class="flex items-center justify-center"
+          style="min-height: 48px"
+        >
+          <component
+            :is="(dynamic as Record<string, any>)[name + 'Icon']"
+            :weight="selectedWeight"
+          />
         </div>
         <span class="text-[10px] text-slate-600 group-hover:text-slate-400 truncate w-full text-center">{{ name }}</span>
       </div>

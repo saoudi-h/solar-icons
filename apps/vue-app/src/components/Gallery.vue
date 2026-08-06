@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import type { Component } from 'vue'
 import { useSolar } from '@solar-icons/vue'
 import { STYLES, type IconStyle, getIconNames } from '@/lib/icon-list'
 import * as Bold from '@solar-icons/vue/bold'
@@ -17,7 +18,7 @@ const searchQuery = ref('')
 const isLinearLike = computed(() => ['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle.value))
 const isDuotone = computed(() => ['BoldDuotone', 'LineDuotone'].includes(selectedStyle.value))
 
-const styleModules: Record<IconStyle, any> = { Bold, Linear, BoldDuotone, LineDuotone, Broken, Outline }
+const styleModules: Record<IconStyle, Record<string, Component>> = { Bold, Linear, BoldDuotone, LineDuotone, Broken, Outline }
 
 const currentIconNames = computed(() => getIconNames(styleModules[selectedStyle.value]))
 

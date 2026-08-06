@@ -15,6 +15,7 @@
         "version-packages": "changeset version && pnpm install --no-frozen-lockfile",
         "release": "changeset publish",
         "typecheck": "turbo typecheck",
+        "check:exports": "node scripts/check-exports.mjs",
         "spell": "cspell \"**/*\" --no-progress",
         "prepare": "husky",
         "test": "turbo test",

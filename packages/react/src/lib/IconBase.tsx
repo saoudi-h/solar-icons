@@ -55,7 +55,9 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
             size !== undefined ? undefined : isolated ? '24px' : '1em'
 
         if (size === undefined && !isolated) {
-            baseStyle.fontSize ??= 'var(--solar-size, 24px)'
+            if (!('fontSize' in baseStyle)) {
+                baseStyle.fontSize = 'var(--solar-size, 24px)'
+            }
         }
 
         const colorAttr =
