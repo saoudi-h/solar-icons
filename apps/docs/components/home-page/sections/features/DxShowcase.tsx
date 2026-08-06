@@ -83,11 +83,13 @@ export const DxShowcase = () => {
                                       border-b border-dashed border-[#e06c75]/85
                                       text-[#e06c75]
                                     ">
-                                    Star
+                                    StarIcon
                                 </span>{' '}
                                 <span className="text-[#abb2bf]">{`}`}</span>{' '}
                                 <span className="text-[#c586c0]">from</span>{' '}
-                                <span className="text-[#98c379]">"@solar-icons/react/ssr"</span>
+                                <span className="text-[#98c379]">
+                                    "@solar-icons/react/dynamic/star"
+                                </span>
                             </motion.div>
                             <div className="text-[#5c6370]"> </div>
                             <motion.div
@@ -107,7 +109,7 @@ export const DxShowcase = () => {
                                 transition={{ delay: 0.35, duration: 0.3 }}
                                 className="pl-4">
                                 <span className="text-[#56b6c2]">&lt;</span>
-                                <span className="text-[#e06c75]">Star</span>{' '}
+                                <span className="text-[#e06c75]">StarIcon</span>{' '}
                                 <span className="text-[#d19a66]">size</span>
                                 <span className="text-[#56b6c2]">=</span>
                                 <span className="text-[#abb2bf]">{`{`}</span>
@@ -263,11 +265,9 @@ export const DxShowcase = () => {
                             <div className="my-0.5 border-t border-[#454545]" />
                             <div className="flex flex-col gap-1 pl-1">
                                 <div className="flex items-center gap-2">
-                                    <StarIcon
-                                        size={13}
-                                        weight="Bold"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Bold" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Bold</span>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -279,11 +279,9 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">BoldDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon
-                                        size={13}
-                                        weight="Broken"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Broken" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Broken</span>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -295,19 +293,15 @@ export const DxShowcase = () => {
                                     <span className="font-mono text-[8.5px]">LineDuotone</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon
-                                        size={13}
-                                        weight="Linear"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Linear" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Linear</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon
-                                        size={13}
-                                        weight="Outline"
-                                        className="text-white"
-                                    />
+                                    <StarIcon size={13} weight="Outline" className="
+                                      text-white
+                                    " />
                                     <span className="font-mono text-[8.5px]">Outline</span>
                                 </div>
                             </div>

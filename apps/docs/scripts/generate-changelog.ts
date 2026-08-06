@@ -3,12 +3,15 @@ import { join } from 'node:path'
 
 const PACKAGES = [
     { id: 'react', label: 'React', pkg: '@solar-icons/react' },
-    { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
-    { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },
     { id: 'svelte', label: 'Svelte', pkg: '@solar-icons/svelte' },
     { id: 'solid', label: 'Solid', pkg: '@solar-icons/solid' },
     { id: 'angular', label: 'Angular', pkg: '@solar-icons/angular' },
+    { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
+    { id: 'js', label: 'JavaScript', pkg: '@solar-icons/js' },
+    { id: 'static', label: 'Static', pkg: '@solar-icons/static' },
+    { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },
+    { id: 'codemod', label: 'Codemod', pkg: '@solar-icons/codemod' },
 ]
 
 interface ParsedEntry {
@@ -34,6 +37,10 @@ function parseChangelog(content: string): ParsedEntry[] {
             if (!versionLine?.match(/^## .+$/)) return null
 
             const version = versionLine.slice(3).trim()
+
+            // The v2 changelog documents the stable release line. Exclude prerelease
+            // entries (alpha/beta/rc/next) so the aggregated page lists only published
+            // stable versions once the per-package changelogs graduate to stable.
             if (/-(?:alpha|beta|rc|next)\./i.test(version)) return null
 
             const body = lines.slice(1).join('\n')
@@ -94,6 +101,33 @@ const lines: string[] = [
     'icon: ClipboardList',
     '---',
     '',
+    '## v2.0.0',
+    '',
+    'Unified major version across all packages. First release with a single package per framework, CSS variable cascade, built-in duotone, and stroke width control.',
+    '',
+    '### Breaking changes',
+    '',
+    '- One package per framework. V2 merges `@solar-icons/react-perf` into `@solar-icons/react`.',
+    '- Import paths use kebab-case (`bold-duotone`, not `BoldDuotone`).',
+    '- Component names include the `Icon` suffix (`HeartIcon`, not `Heart`). Style suffix is in the name only when the import path does not specify the style.',
+    '- V2 drops category imports (`@solar-icons/react/category`). Import per-icon per-style.',
+    '- V2 drops the `/ssr` subpath. Icons work in SSR by default.',
+    '- V2 drops the `mirrored` prop.',
+    '',
+    '### New features',
+    '',
+    '- `SolarProvider` and `useSolar` in every web framework. Defaults cascade through CSS variables.',
+    '- `secondaryColor` and `secondaryOpacity` for duotone accent control.',
+    '- `strokeWidth` prop for Linear, Broken, and LineDuotone styles.',
+    '- `isolated` prop to bypass provider defaults.',
+    '- Dynamic style switching via `dynamic` import path with `weight` prop.',
+    '',
+    '### Previous versions',
+    '',
+    'For changes before v2, see the [GitHub releases page](https://github.com/saoudi-h/solar-icons/releases) or the [v1 changelog](/docs/v1/community/changelog).',
+    '',
+    '---',
+    '',
 ]
 
 for (const pkg of PACKAGES) {
@@ -136,8 +170,18 @@ for (const pkg of PACKAGES) {
 
 const output = lines.join('\n')
 
-const outPath = join(import.meta.dirname, '..', 'content', 'docs', 'community', 'changelog.mdx')
-mkdirSync(join(import.meta.dirname, '..', 'content', 'docs', 'community'), { recursive: true })
+const outPath = join(
+    import.meta.dirname,
+    '..',
+    'content',
+    'docs',
+    'v2',
+    'community',
+    'changelog.mdx'
+)
+mkdirSync(join(import.meta.dirname, '..', 'content', 'docs', 'v2', 'community'), {
+    recursive: true,
+})
 writeFileSync(outPath, output)
 
 console.log(`Generated changelog.mdx with ${PACKAGES.length} packages`)

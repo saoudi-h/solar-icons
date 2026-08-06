@@ -1,4 +1,4 @@
-# @solar-icons/react-perf
+# @solar-icons/react
 
 ## 2.0.0-beta.3
 
