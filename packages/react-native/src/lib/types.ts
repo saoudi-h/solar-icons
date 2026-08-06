@@ -42,6 +42,8 @@ export interface IconProps extends Omit<SvgProps, 'width' | 'height'> {
     secondaryOpacity?: number
     /** When `true`, the icon ignores all `SolarProvider` values and uses hardcoded defaults. */
     isolated?: boolean
+    /** Accessibility label. Sets `accessible` and `accessibilityLabel` on the SVG. */
+    alt?: string
 }
 
 export type Icon = React.ForwardRefExoticComponent<IconProps & React.RefAttributes<any>>

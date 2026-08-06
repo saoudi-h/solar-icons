@@ -57,7 +57,10 @@
         >
       </div>
 
-      <div class="space-y-1.5" :class="{ 'opacity-30 pointer-events-none': !isLinearLike }">
+      <div
+        class="space-y-1.5"
+        :class="{ 'opacity-30 pointer-events-none': !isLinearLike }"
+      >
         <label class="text-sm font-medium text-slate-300">Stroke: <span class="text-amber-400">{{ strokeWidth ?? 1.5 }}</span></label>
         <input
           type="range"
@@ -82,7 +85,10 @@
       <span class="text-xs text-slate-500">{{ filteredIcons.length }} icons</span>
     </div>
 
-    <div v-if="isDuotone" class="flex items-center gap-6 pt-4 border-t border-slate-800">
+    <div
+      v-if="isDuotone"
+      class="flex items-center gap-6 pt-4 border-t border-slate-800"
+    >
       <div class="space-y-1.5">
         <label class="text-sm font-medium text-blue-400">Accent Color</label>
         <div class="flex items-center gap-2">
@@ -115,7 +121,10 @@
         class="group flex flex-col items-center justify-center gap-1.5 p-3 bg-slate-900/50 rounded-xl border border-slate-800/50 hover:bg-slate-800/50 hover:border-amber-500/30 transition-all cursor-pointer"
         :title="name"
       >
-        <div class="flex items-center justify-center" style="min-height: 48px">
+        <div
+          class="flex items-center justify-center"
+          style="min-height: 48px"
+        >
           <component
             :is="getIcon(name)"
             :stroke-width="isLinearLike ? Number(strokeWidth) : undefined"
@@ -134,6 +143,7 @@ import * as Broken from '#solar-icons/broken'
 import * as Linear from '#solar-icons/linear'
 import * as LineDuotone from '#solar-icons/line-duotone'
 import * as Outline from '#solar-icons/outline'
+import type { Component } from 'vue'
 import { STYLES, type IconStyle } from '~/lib/icon-names'
 
 const { color, setColor, size, setSize, strokeWidth, setStrokeWidth, secondaryColor, setSecondaryColor, secondaryOpacity, setSecondaryOpacity } = useSolar()
@@ -144,7 +154,7 @@ const searchQuery = ref('')
 const isLinearLike = computed(() => ['Linear', 'LineDuotone', 'Broken'].includes(selectedStyle.value))
 const isDuotone = computed(() => ['BoldDuotone', 'LineDuotone'].includes(selectedStyle.value))
 
-const styleModules: Record<IconStyle, Record<string, any>> = {
+const styleModules: Record<IconStyle, Record<string, Component>> = {
   Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline,
 }
 

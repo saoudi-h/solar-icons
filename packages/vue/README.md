@@ -49,9 +49,30 @@ import { HomeIcon } from '@solar-icons/vue/linear'
 </template>
 ```
 
+### Global Configuration (Plugin)
+
+The plugin sets the same defaults app-wide without a provider wrapper. It writes the five CSS variables on `document.body` and makes `useSolar()` available in every component. The variables are applied client-side.
+
+```ts
+import { createApp } from 'vue'
+import { SolarIconsPlugin } from '@solar-icons/vue/lib'
+
+const app = createApp(App)
+app.use(SolarIconsPlugin, {
+    color: '#ef4444',
+    size: 24,
+    strokeWidth: 1.5,
+    secondaryColor: '#f59e0b',
+    secondaryOpacity: 0.5,
+})
+app.mount('#app')
+```
+
+For server-rendered apps, prefer `<SolarProvider>` for an exact first paint.
+
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/vue).
+For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/packages/vue).
 
 ## License
 

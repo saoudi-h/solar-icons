@@ -1,7 +1,6 @@
 import { createSignal, createMemo, For, Show } from 'solid-js';
-import type { Component } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { useSolar } from '@solar-icons/solid';
+import { useSolar, type Icon } from '@solar-icons/solid';
 
 import * as Bold from '@solar-icons/solid/bold';
 import * as Linear from '@solar-icons/solid/linear';
@@ -12,7 +11,7 @@ import * as Outline from '@solar-icons/solid/outline';
 
 import { ALL_ICONS, STYLES, type IconStyle } from './icon-list';
 
-const styleModules: Record<IconStyle, Record<string, Component>> = {
+const styleModules: Record<IconStyle, Record<string, Icon>> = {
     Bold,
     Linear,
     BoldDuotone,
@@ -177,7 +176,8 @@ export default function Gallery() {
             <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
                 <For each={filteredIcons()}>
                     {(name) => {
-                        const IconComponent = () => styleModules[selectedStyle()][name + 'Icon'];
+                        const IconComponent = () =>
+                            styleModules[selectedStyle()][name + 'Icon'] as Icon;
                         return (
                             <div
                                 class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"

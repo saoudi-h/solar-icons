@@ -1,4 +1,5 @@
-import { createElement, isValidElement } from 'react'
+import React, { createElement, isValidElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('react-native-svg')
@@ -16,9 +17,7 @@ describe('Package Structure', () => {
         // Import directly from lib re-exports instead of src/index
         // to avoid loading the massive icons/styled module
         const { IconBase } = await import('../src/lib/index')
-        const { SolarProvider, useSolar, IconStyle } = await import(
-            '../src/lib/index'
-        )
+        const { SolarProvider, useSolar, IconStyle } = await import('../src/lib/index')
         expect(IconBase).toBeDefined()
         expect(SolarProvider).toBeDefined()
         expect(useSolar).toBeDefined()
@@ -65,18 +64,14 @@ describe('IconBase Component', () => {
 
 describe('Generated Icon', () => {
     it('should exist and be a valid React component', async () => {
-        const { AccessibilityIcon } = await import(
-            '../src/icons/linear/accessibility'
-        )
+        const { AccessibilityIcon } = await import('../src/icons/linear/accessibility')
         expect(AccessibilityIcon).toBeDefined()
         expect(typeof AccessibilityIcon).toBe('object')
         expect(AccessibilityIcon).not.toBeNull()
     })
 
     it('should produce a valid React element when called with props', async () => {
-        const { AccessibilityIcon } = await import(
-            '../src/icons/linear/accessibility'
-        )
+        const { AccessibilityIcon } = await import('../src/icons/linear/accessibility')
         const element = createElement(AccessibilityIcon, {
             color: '#ff0000',
             size: 64,
@@ -88,9 +83,7 @@ describe('Generated Icon', () => {
     })
 
     it('should pass through the isolated prop', async () => {
-        const { AccessibilityIcon } = await import(
-            '../src/icons/linear/accessibility'
-        )
+        const { AccessibilityIcon } = await import('../src/icons/linear/accessibility')
         const element = createElement(AccessibilityIcon, {
             isolated: true,
         })
@@ -127,6 +120,39 @@ describe('IconBase Resolution Logic', () => {
     })
 })
 
+describe('IconBase accessibility (alt)', () => {
+    it('maps alt to accessibilityLabel and does not leak the alt attribute', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(React.createElement(IconBase, { alt: 'Add a circle' }))
+
+        expect(html).toContain('accessibilityLabel="Add a circle"')
+        expect(html).not.toContain('alt="Add a circle"')
+    })
+
+    it('does not set accessibility props when alt is omitted', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(React.createElement(IconBase, {}))
+
+        expect(html).not.toContain('accessibilityLabel')
+    })
+
+    it('lets alt win over a user accessibilityLabel', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(
+            React.createElement(IconBase as any, {
+                alt: 'Alt label',
+                accessibilityLabel: 'User label',
+            })
+        )
+
+        expect(html).toContain('accessibilityLabel="Alt label"')
+        expect(html).not.toContain('accessibilityLabel="User label"')
+    })
+})
+
 describe('SolarProvider', () => {
     it('should be a valid React component', async () => {
         const { SolarProvider } = await import('../src/lib/SolarProvider')
@@ -139,6 +165,7 @@ describe('SolarProvider', () => {
         const element = createElement(SolarProvider, {
             color: 'red',
             size: 32,
+            children: null,
         })
         expect(isValidElement(element)).toBe(true)
         expect(element.type).toBe(SolarProvider)

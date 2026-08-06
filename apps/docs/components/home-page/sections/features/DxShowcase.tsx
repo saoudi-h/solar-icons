@@ -1,5 +1,5 @@
 import { StarIcon } from '@solar-icons/react/dynamic/star'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'motion/react'
 import React from 'react'
 
 export const DxShowcase = () => {
@@ -83,11 +83,13 @@ export const DxShowcase = () => {
                                       border-b border-dashed border-[#e06c75]/85
                                       text-[#e06c75]
                                     ">
-                                    Star
+                                    StarIcon
                                 </span>{' '}
                                 <span className="text-[#abb2bf]">{`}`}</span>{' '}
                                 <span className="text-[#c586c0]">from</span>{' '}
-                                <span className="text-[#98c379]">"@solar-icons/react/ssr"</span>
+                                <span className="text-[#98c379]">
+                                    "@solar-icons/react/dynamic/star"
+                                </span>
                             </motion.div>
                             <div className="text-[#5c6370]"> </div>
                             <motion.div
@@ -107,7 +109,7 @@ export const DxShowcase = () => {
                                 transition={{ delay: 0.35, duration: 0.3 }}
                                 className="pl-4">
                                 <span className="text-[#56b6c2]">&lt;</span>
-                                <span className="text-[#e06c75]">Star</span>{' '}
+                                <span className="text-[#e06c75]">StarIcon</span>{' '}
                                 <span className="text-[#d19a66]">size</span>
                                 <span className="text-[#56b6c2]">=</span>
                                 <span className="text-[#abb2bf]">{`{`}</span>

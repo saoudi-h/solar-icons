@@ -45,21 +45,21 @@
     },
     "dependencies": {
         "@clack/prompts": "^1.7.0",
-        "@vue/compiler-sfc": "^3.5.39",
+        "@vue/compiler-sfc": "^3.5.41",
         "commander": "^15.0.0",
         "picocolors": "^1.1.1",
-        "svelte": "^5.56.4",
+        "svelte": "^5.56.8",
         "typescript": "^6.0.3"
     },
     "devDependencies": {
-        "@tala-tools/eslint": "0.1.4",
+        "@tala-tools/eslint": "0.1.5",
         "@tala-tools/prettier": "0.0.3",
-        "@tala-tools/tsconfig": "0.0.1",
-        "@types/node": "^26.1.1",
-        "prettier": "^3.9.4",
+        "@tala-tools/tsconfig": "0.0.2",
+        "@types/node": "^26.1.2",
+        "prettier": "^3.9.6",
         "rimraf": "^6.1.3",
-        "tsdown": "^0.22.4",
-        "tsx": "^4.23.0",
+        "tsdown": "^0.22.14",
+        "tsx": "^4.23.8",
         "vitest": "^4.1.10"
     },
     "engines": {

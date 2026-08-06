@@ -2,6 +2,8 @@
 
 Core logic, SVGs, metadata, and parser utilities for Solar Icons. This package serves as the definitive source of truth for the entire ecosystem.
 
+> **Private package.** `@solar-icons/core` is not published to npm. It is consumed as a workspace dependency at build time by the framework packages and embedded into their output. Install the framework package for your stack instead.
+
 ## Features
 
 - **Source of truth:** Contains the original optimized SVG paths and metadata for all 1,246 icons in 6 styles.
@@ -9,15 +11,9 @@ Core logic, SVGs, metadata, and parser utilities for Solar Icons. This package s
 - **TypeScript:** Shared interfaces (`StyleComponentsMap`, `Weight`) used by all framework packages.
 - **Agnostic:** Build-time and metadata dependency only. No UI components.
 
-## Install
-
-```sh
-npm install @solar-icons/core
-```
-
 ## Usage
 
-This package is generally consumed internally by other `@solar-icons` libraries or for custom code-generation pipelines.
+This package is consumed internally by other `@solar-icons` libraries or for custom code-generation pipelines.
 
 ```js
 import { loadIcon, transformDuotoneAccent } from '@solar-icons/core'
@@ -25,10 +21,6 @@ import metadata from '@solar-icons/core/metadata.json'
 
 console.log(`Total icons: ${metadata.length}`)
 ```
-
-## Documentation
-
-For deep technical dives into the core utilities and a searchable icon catalog, visit the [Core Documentation](https://solar-icons.vercel.app/docs/v2/packages/core).
 
 ## License
 

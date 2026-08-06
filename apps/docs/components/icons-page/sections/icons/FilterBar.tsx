@@ -11,8 +11,8 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { useSolar } from '@solar-icons/react'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { SettingsIcon } from '@solar-icons/react/linear/settings'
-import { motion } from 'framer-motion'
 import { useAtom, useSetAtom } from 'jotai'
+import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
@@ -184,7 +184,7 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
 
             <div className="md:hidden">
                 <Drawer direction="right" modal={true}>
-                    <DrawerTrigger>
+                    <DrawerTrigger asChild>
                         <motion.button
                             initial={{ x: 0 }}
                             whileTap={{ scale: 0.9 }}
@@ -197,8 +197,8 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                               hover:text-foreground
                             ">
                             <SettingsIcon className="size-8" isolated />
+                            <span className="sr-only">Open settings</span>
                         </motion.button>
-                        <span className="sr-only">Open settings</span>
                     </DrawerTrigger>
                     <DrawerContent
                         className="

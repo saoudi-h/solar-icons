@@ -13,9 +13,9 @@ import { createElement } from 'react'
  */
 function resolveDynamicIcon(
     name: string
-): React.ComponentType<{ weight: Weight } & IconProps> | undefined {
+): React.ComponentType<{ weight?: Weight } & IconProps> | undefined {
     const Component = (
-        dynamicIcons as Record<string, React.ComponentType<{ weight: Weight } & IconProps>>
+        dynamicIcons as Record<string, React.ComponentType<{ weight?: Weight } & IconProps>>
     )[name]
     return Component
 }
@@ -26,7 +26,7 @@ export const renderSolarIcon = (
 ): ReactElement | undefined => {
     const Component = resolveDynamicIcon(icon) ?? resolveDynamicIcon('File')
     if (Component) {
-        return createElement(Component, solarIconParams)
+        return createElement(Component, solarIconParams as { weight?: Weight } & IconProps)
     }
     return undefined
 }

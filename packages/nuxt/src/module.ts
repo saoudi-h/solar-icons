@@ -6,6 +6,7 @@ import {
   createResolver,
   defineNuxtModule,
 } from '@nuxt/kit'
+import type { NuxtModule } from '@nuxt/schema'
 
 export interface SolarNuxtModuleOptions {
   namePrefix?: string
@@ -50,7 +51,7 @@ export async function getDynamicBarrelIconNames(): Promise<string[]> {
 
 const STYLES = ['bold', 'bold-duotone', 'broken', 'linear', 'line-duotone', 'outline'] as const
 
-export default defineNuxtModule<SolarNuxtModuleOptions>({
+const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<SolarNuxtModuleOptions>({
   meta: {
     name: '@solar-icons/nuxt',
     configKey: 'solarIcons',
@@ -143,6 +144,13 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
       })
     }
     else {
+      const ignored = ['color', 'size', 'strokeWidth', 'secondaryColor', 'secondaryOpacity']
+        .filter(key => options[key as keyof SolarNuxtModuleOptions] !== undefined)
+      if (ignored.length > 0) {
+        console.warn(
+          `[solar-icons] provider is disabled; ignoring styling options: ${ignored.join(', ')}. Set them on a <SolarProvider> in your app instead.`,
+        )
+      }
       addComponent({
         name: 'SolarProvider',
         export: 'SolarProvider',
@@ -151,3 +159,5 @@ export default defineNuxtModule<SolarNuxtModuleOptions>({
     }
   },
 })
+
+export default module

@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CloseCircleIcon } from '@solar-icons/react/bold/close-circle'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
 import { useSelectedIcon, useSelectedIconName } from '../context'

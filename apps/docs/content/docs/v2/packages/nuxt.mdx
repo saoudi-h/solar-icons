@@ -5,7 +5,7 @@ icon: nuxt
 ---
 
 ```package-install
-@solar-icons/nuxt@2.0.0-beta.0
+@solar-icons/nuxt
 ```
 
 ## Installation
@@ -19,16 +19,16 @@ The module wraps `@solar-icons/vue` and provides:
 
 ## Module options
 
-| Option             | Type               | Default          | Description                                    |
-| ------------------ | ------------------ | ---------------- | ---------------------------------------------- |
-| `namePrefix`       | `string`           | `'Solar'`        | Prefix for auto-imported component names       |
-| `autoImport`       | `boolean`          | `true`           | Register all icons as auto-imported components |
-| `provider`         | `boolean`          | `true`           | Inject global provider state wrapping the app  |
-| `color`            | `string`           | `'currentColor'` | Default icon color                             |
-| `size`             | `string \| number` | `24`             | Default icon size                              |
-| `strokeWidth`      | `number`           | `1.5`            | Default stroke width                           |
-| `secondaryColor`   | `string`           | —                | Default duotone accent color                   |
-| `secondaryOpacity` | `number`           | —                | Default duotone accent opacity (0–1)           |
+| Option             | Type               | Default          | Description                                                |
+| ------------------ | ------------------ | ---------------- | ---------------------------------------------------------- |
+| `namePrefix`       | `string`           | `'Solar'`        | Prefix for auto-imported component names                   |
+| `autoImport`       | `boolean`          | `true`           | Register all icons as auto-imported components             |
+| `provider`         | `boolean`          | `true`           | Inject global provider state wrapping the app              |
+| `color`            | `string`           | `'currentColor'` | Default icon color (requires `provider: true`)             |
+| `size`             | `string \| number` | `24`             | Default icon size (requires `provider: true`)              |
+| `strokeWidth`      | `number`           | `1.5`            | Default stroke width (requires `provider: true`)           |
+| `secondaryColor`   | `string`           | `'currentColor'` | Default duotone accent color (requires `provider: true`)   |
+| `secondaryOpacity` | `number`           | `0.5`            | Default duotone accent opacity (requires `provider: true`) |
 
 ```ts
 // nuxt.config.ts
@@ -47,14 +47,14 @@ export default defineNuxtConfig({
 })
 ```
 
-When `provider: true` (default), the module injects a global `SolarState` into the Nuxt Vue app and writes the configured defaults as `--solar-*` CSS variables on `document.body` (client side). `useSolar()` works in any component without a wrapping `<SolarProvider>`.
+When `provider: true` (default), the module injects a global `SolarState` into the Nuxt Vue app and writes the configured defaults as `--solar-*` CSS variables on `document.body` (client side). `useSolar()` works in any component without a wrapping `<SolarProvider>`. Options you do not set fall back to the module defaults above.
 
-When `provider: false`, set up the state manually. Either call `createSolarIcons` from a Nuxt plugin, or wrap `app.vue` in `<SolarProvider>`:
+When `provider: false`, the styling options are ignored and the module warns about it. Set up the state manually: either call `createSolarIcons` from a Nuxt plugin, or wrap `app.vue` in `<SolarProvider>`:
 
 ```vue
 <!-- app.vue -->
 <template>
-    <SolarProvider>
+    <SolarProvider color="#ef4444" :size="24">
         <NuxtPage />
     </SolarProvider>
 </template>
@@ -135,7 +135,9 @@ In a Nuxt app, prefer the `#solar-icons` aliases. They resolve at build time and
 
 The provider and composable work identically to the Vue package. See the [Vue documentation](/docs/v2/packages/vue#solarprovider) for props, CSS variables, and usage examples.
 
-`useSolar()` must be called inside a `<SolarProvider>` tree. The provider uses scoped `provide`/`inject`. No global context.
+With `provider: true` (default), `useSolar()` works anywhere in the app: the module provides a global context through the runtime plugin, and the defaults live on `document.body` as CSS variables.
+
+With `provider: false`, `useSolar()` must be called inside a `<SolarProvider>` tree that you place yourself. The provider uses scoped `provide`/`inject`; there is no global context.
 
 ## ESM only
 

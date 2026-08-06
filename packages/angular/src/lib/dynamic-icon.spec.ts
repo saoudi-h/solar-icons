@@ -17,12 +17,21 @@ class TestIcon extends IconBase {}
 @Component({
     standalone: true,
     imports: [SolarIcon],
-    template: ` <ng-container [solarIcon]="iconName()" [size]="size()" [color]="color()" /> `,
+    template: `
+        <ng-container
+            [solarIcon]="iconName()"
+            [size]="size()"
+            [color]="color()"
+            [weight]="weight()"
+            [alt]="alt()" />
+    `,
 })
 class TestHost {
     iconName = signal<any>('TestIcon')
-    size = signal<number | string>(24)
-    color = signal<string>('red')
+    size = signal<number | string | undefined>(24)
+    color = signal<string | undefined>('red')
+    weight = signal<string | undefined>(undefined)
+    alt = signal<string | undefined>(undefined)
 }
 
 describe('SolarIcon', () => {
@@ -73,6 +82,47 @@ describe('SolarIcon', () => {
         fixture.detectChanges()
 
         const svg = fixture.debugElement.query(By.css('svg'))
+        expect(svg).toBeTruthy()
+    })
+
+    it('should reset size and color to defaults when inputs are cleared', () => {
+        const svg = fixture.debugElement.query(By.css('svg')).nativeElement
+        expect(svg.style.width).toBe('24px')
+        expect(svg.style.color).toBe('red')
+
+        host.size.set(undefined)
+        host.color.set(undefined)
+        fixture.detectChanges()
+
+        expect(svg.getAttribute('width')).toBe('1em')
+        expect(svg.getAttribute('color')).toBe('var(--solar-color, currentColor)')
+        expect(svg.style.width).toBe('')
+        expect(svg.style.color).toBe('')
+    })
+
+    it('should forward alt and clear it when unset', () => {
+        host.alt.set('Add a circle')
+        fixture.detectChanges()
+
+        const svg = fixture.debugElement.query(By.css('svg')).nativeElement
+        expect(svg.querySelector('title')?.textContent).toBe('Add a circle')
+
+        host.alt.set(undefined)
+        fixture.detectChanges()
+
+        expect(svg.querySelector('title')).toBeFalsy()
+    })
+
+    it('should forward weight without erroring on icons without a weight input', () => {
+        host.weight.set('Bold')
+        fixture.detectChanges()
+
+        const svg = fixture.debugElement.query(By.css('svg')).nativeElement
+        expect(svg).toBeTruthy()
+
+        host.weight.set(undefined)
+        fixture.detectChanges()
+
         expect(svg).toBeTruthy()
     })
 })

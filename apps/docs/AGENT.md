@@ -14,7 +14,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 
 - Next.js 16 App Router, React 19, React Compiler enabled (`reactCompiler: true`).
 - Tailwind CSS 4 (via `@tailwindcss/postcss`).
-- UI primitives: Radix UI, `cmdk`, `framer-motion`, `vaul`.
+- UI primitives: Radix UI, `cmdk`, `motion`, `vaul`.
 - Search: Fumadocs built-in search over MDX content.
 - LLMs: `/llms.txt` and `/llms-full.txt` are first-class deliverables.
 - Build = `tsx ./scripts/generate-changelog.ts && next build`. The pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
@@ -37,7 +37,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 
 - Next.js 16, React 19, TypeScript 6.
 - Fumadocs 16.x.
-- Radix UI + `cmdk` + `vaul` + `framer-motion`.
+- Radix UI + `cmdk` + `vaul` + `motion` (package formerly `framer-motion`; import from `motion/react`).
 - `@number-flow/react` for animated numbers.
 - `@calcom/cal-sans-ui` for the Cal Sans font.
 - `bun` for the link-check script runtime.
@@ -143,18 +143,18 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   top-level scroll container, not nested inside a
   `sticky aside` and a `flex-1` grid.
 
-## 📚 Documentation versioning (2026-06-30)
+## 📚 Documentation versioning
 
 - **Strategy:** Partial versioning via folder separation. Single app, single deployment.
-- **Content directories:** `content/docs/v1/` (v1, the current stable release, on `main`) and `content/docs/v2/` (beta, on `beta` branch). The beta docs describe v2. v1 content is labelled "V1" (tab title) while v2 is in beta. The "Legacy" label is never used: v1 is the sufficient name until v2 stabilizes.
-- **Default tab:** V1. `/docs` redirects to `/docs/v1`. The header "Documentation" link points to `/docs/v1`. v2 is opt-in via its tab.
+- **Content directories:** `content/docs/v1/` (previous release) and `content/docs/v2/` (current stable). v1 is labelled "V1" in its tab; the "Legacy" label is never used. v2 is the default.
+- **Default tab:** V2. `/docs` redirects to `/docs/v2`. The header "Documentation" link points to `/docs/v2`. v1 is reachable via its tab.
 - **Version tabs:** Each version folder has `"root": true` in its `meta.json`. The `DocsLayout` uses the `tabs` prop to render them as sidebar tabs. Follows the same Fumadocs pattern as their Framework/UI/Headless sections.
-- **Redirect:** `/docs` → `/docs/v1` via `next.config.mts` `redirects()`.
-- **Beta banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`. Placed in `app/docs/layout.tsx` before `children`. `V2BetaBanner` renders only on `/docs/v2/*`; `V1Banner` renders only on `/docs/v1/*` and invites readers to the v2-beta docs.
-- **v2-beta Header widget:** A "v2 is in beta" pill on the landing (`/`) and icons (`/icons`) pages, injected via the Fumadocs `nav.children` slot of `HomeLayout` (see `homeOptions` in `app/layout.config.tsx` and `components/header-v2-widget.tsx`). It is `hidden lg:inline-flex` so it never appears on small screens. The Header keeps a fixed `h-14` (56px) height regardless, so the hero (`calc(100vh - header)`) and the icons page (which already budgets 56px) are unaffected. Scoped to `homeOptions`, not `baseOptions`/`docsOptions`, so the docs header (already carrying its own banners) stays clean.
+- **Redirect:** `/docs` → `/docs/v2` via `next.config.mts` `redirects()`.
+- **Version banner:** Uses the native `Banner` component from `fumadocs-ui/components/banner`, rendered in `app/docs/layout.tsx` before `children`. The component lives in `components/version-banner.tsx` and exports `V1Banner`, which renders only on `/docs/v1/*` and points readers to the v2 docs.
+- **Header widget:** `components/header-v2-widget.tsx` renders a "v2 is now stable" pill in the home header (`homeOptions.nav.children` in `app/layout.config.tsx`). It is `hidden lg:inline-flex`. The Header keeps a fixed `h-14` (56px) height regardless, so the hero (`calc(100vh - header)`) and the icons page (which already budgets 56px) are unaffected. Scoped to `homeOptions`, not `baseOptions`/`docsOptions`.
+- **Install snippets are unpinned while v2 is stable.** The ` ```package-install ` blocks in `content/docs/v2/packages/*.mdx`, the raw `npm install` in `migration-to-v2/react-perf.mdx`, the `npx @solar-icons/codemod` invocations, and the `esm.sh` URL in `packages/js.mdx` carry no version (bare package spec, resolves to `latest`). `remark-npm` turns the bare package spec into `npm install <spec>` and derives the pnpm/yarn/bun variants. Reintroduce pins when the packages are in a prerelease phase; remove them again for stable.
 - **Callouts:** Always use `<Callout type="warn|info">` instead of `> [!NOTE]` / `> [!WARNING]` blockquote syntax. Fumadocs registers `blockquote: Callout` in their MDX components, but explicit `<Callout>` is safer.
 - **Package manager tabs:** `remarkNpmOptions.persist: { id: 'package-manager' }` configured in `source.config.ts` makes ` ```package-install ` persistent across pages.
-- **v2-beta install snippets MUST pin the beta version.** The ` ```package-install ` blocks in `content/docs/v2/packages/*.mdx` (and the raw `npm install` in `migration-to-v2/react-perf.mdx`) carry the explicit prerelease version, e.g. `@solar-icons/react@2.0.0-beta.0` (not bare `@solar-icons/react`, which would resolve to the stable `1.x` line). `remark-npm` turns the block's bare package spec into `npm install <spec>` and derives the pnpm/yarn/bun variants, so appending `@<version>` is enough. Bump this pin on every new beta prerelease (e.g. `beta.1`) so the docs never point users at a stale install. v1 docs stay unpinned (stable).
 
 ## Prose conventions (stop-slop)
 
@@ -164,7 +164,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **No adverbs.** Cut "genuinely", "simply", "actually", etc.
 - **No vague declaratives.** "This keeps the package surface clean" adds nothing. State the fact, trust the reader.
 - **Terminology: "pre-v2".** The old API line was mixed (some packages at v1.x, `react-perf` at 2.x). Since the unified release is v2.0.0, use "pre-v2" to describe the old API.
-- **Version tab naming.** The tab for the current stable docs is "V1" (never "Legacy") while v2 is in beta.
+- **Version tab naming.** The current stable docs are "V2" and the previous release tab is "V1" (never "Legacy").
 - **Single-icon imports are for dev server performance, not tree-shaking.** Both barrel (`@solar-icons/react/bold`) and single-icon (`@solar-icons/react/bold/heart`) imports tree-shake equally in production. The single-icon path helps the dev server by avoiding resolving ~8k modules when you only need one icon. Do not label single-icon imports as "tree-shakable" in docs — it implies barrel imports are not.
 - **Provider props tables use "Fallback", not "Default".** Providers set no defaults — all props are `undefined` until set. Icons fall back to CSS variable values (`var(--solar-color, currentColor)`, etc.) defined in IconBase. Use "Fallback" as the column header in Provider props tables.
 - **All web frameworks pass through standard SVG attributes.** React (`...restProps`), Vue (`v-bind="$attrs"`), Svelte (`...restProps`), Solid (`splitProps` + `{...others}`) all spread extra attributes onto the `<svg>` element. `data-*`, `role`, `tabindex`, `aria-*` all work.
@@ -173,7 +173,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 ## 🔽 Icon detail panel actions (DOCS-ICON-ACTIONS, 2026-07-15)
 
 - **Strategy: SVG = clean source, PNG = customized snapshot.** SVG actions (Get SVG, Copy SVG) serve the unmodified SVG from `@solar-icons/static` via CDN. PNG actions (Get PNG, Copy PNG) rasterize the SVG with the user's current filter-bar settings (color, size, stroke-width, duotone color/opacity).
-- **CDN:** `https://cdn.jsdelivr.net/npm/@solar-icons/static@{version}/dist/icons/{styleSlug}/{iconName}.svg`. The version is pinned in `STATIC_CDN_BASE` constant in `Actions.tsx`. **Bump on each `@solar-icons/static` release** — same protocol as the v2-beta install snippet pins in the docs MDX files.
+- **CDN:** `https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons/{styleSlug}/{iconName}.svg` (no version — resolves to `latest`, so it follows stable releases automatically). The base is defined in `STATIC_CDN_BASE` in `Actions.tsx`.
 - **SVG content:** Clean source from `@solar-icons/static` — `currentColor` strokes/fills, `24×24`, `stroke-width="1.5"`, `class="solar solar-{name}-{style}"`. No CSS variable references (except duotone accent elements which use `var(--solar-secondary-color)` and `var(--solar-secondary-opacity)`).
 - **PNG resolution:** `resolveSvgForRaster()` takes the clean SVG string, replaces `currentColor` with the user's color, sets dimensions/stroke-width, and resolves duotone CSS vars to concrete values. The resolved SVG is loaded into an `<img>` via blob URL and drawn onto a `<canvas>`. No DOM ref element needed.
 - **No hidden SVG element.** The previous approach rendered a hidden `<selectedIcon.Icon ref={ref} />` in the DOM for serialization. The new approach fetches the source SVG from CDN, which avoids CSS-variable-in-image-context issues entirely.

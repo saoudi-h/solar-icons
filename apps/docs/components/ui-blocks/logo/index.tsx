@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React from 'react'
 import { LogoIcon } from './LogoIcon'
 
@@ -37,8 +37,9 @@ export const Logo: React.FC = () => {
                 <LogoIcon className="size-8" />
             </motion.div>
 
-            <span
-                className={`pointer-events-none font-heading text-lg font-black`}>
+            <span className={`
+              pointer-events-none font-heading text-lg font-black
+            `}>
                 Solar Icons
             </span>
         </motion.div>

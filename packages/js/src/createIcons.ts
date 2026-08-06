@@ -16,7 +16,6 @@ export interface CreateIconsOptions {
     attrs?: SVGProps
 }
 
-
 const toPascalCase = (string: string) =>
     string
         .replace(/^[a-z]/, m => m.toUpperCase())
@@ -75,12 +74,11 @@ export const createIcons = (
             return
         }
 
-
         const elementAttrs = getAttrs(element)
         const ariaProps =
             elementAttrs['aria-label'] || elementAttrs['title'] ? {} : { 'aria-hidden': 'true' }
 
-        const iconAttrs = {
+        const iconAttrs: Record<string, string | number | undefined> = {
             [nameAttr]: iconName,
             ...ariaProps,
             ...attrs,
@@ -90,9 +88,7 @@ export const createIcons = (
         const styleDeclarations: string[] = []
 
         if (iconAttrs.size !== undefined) {
-            const sizeValue = isNaN(Number(iconAttrs.size))
-                ? iconAttrs.size
-                : `${iconAttrs.size}px`
+            const sizeValue = isNaN(Number(iconAttrs.size)) ? iconAttrs.size : `${iconAttrs.size}px`
             styleDeclarations.push(`width: ${sizeValue}; height: ${sizeValue}`)
             delete iconAttrs.size
         }

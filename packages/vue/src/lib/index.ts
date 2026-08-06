@@ -4,6 +4,7 @@ export { IconStyle } from './types'
 export type { IconProps } from './types'
 export {
     SolarIconsPlugin,
+    applySolarCssVariables,
     createSolarIcons,
     provideSolarIconsContextInApp,
     useSolar,

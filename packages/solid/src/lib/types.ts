@@ -28,7 +28,7 @@ export interface IconBaseProps {
 
 export type SvgSVGAttributes = JSX.SvgSVGAttributes<SVGSVGElement>;
 
-export interface IconProps extends IconBaseProps {
+export interface IconProps extends SvgSVGAttributes, IconBaseProps {
     color?: string;
     children?: JSX.Element;
 }

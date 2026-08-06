@@ -22,7 +22,7 @@ import { Steps, Step } from 'fumadocs-ui/components/steps'
         Run the codemod from the root of your project. The first run is read-only: it prints the files it would change and every diagnostic.
 
 ```bash
-npx @solar-icons/codemod@beta --react-v1-mode static
+npx @solar-icons/codemod --react-v1-mode static
 ```
 
     </Step>
@@ -33,7 +33,7 @@ npx @solar-icons/codemod@beta --react-v1-mode static
         Add `--write` only after reviewing the preview. Commit or stash your work first so the generated diff remains easy to inspect.
 
 ```bash
-npx @solar-icons/codemod@beta --react-v1-mode static --write
+npx @solar-icons/codemod --react-v1-mode static --write
 ```
 
     </Step>
@@ -53,14 +53,14 @@ The command scans application source files and ignores generated folders and dep
 When migrating by hand, let the assistant detect the project and guide the choices. It asks for a React or Vue strategy only when that framework is present, and asks for confirmation before it writes files.
 
 ```bash
-npx @solar-icons/codemod@beta --interactive
+npx @solar-icons/codemod --interactive
 ```
 
 For scripts and CI, use arguments instead. The positional directory is optional, `--cwd` remains available for existing scripts, and `--json` writes a machine-readable report.
 
 ```bash
-npx @solar-icons/codemod@beta ./apps/web --react-v1-mode static --write
-npx @solar-icons/codemod@beta --json > solar-icons-migration.json
+npx @solar-icons/codemod ./apps/web --react-v1-mode static --write
+npx @solar-icons/codemod --json > solar-icons-migration.json
 ```
 
 ## Choose the migration mode

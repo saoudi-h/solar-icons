@@ -20,6 +20,7 @@ const fixtures = [
     { buildMigrated: true, name: 'svelte-v1' },
     { buildMigrated: true, name: 'solid-v1' },
     { buildMigrated: true, name: 'react-perf-v1' },
+    { buildMigrated: true, name: 'multi-framework-v1' },
     {
         buildMigrated: false,
         expectedDiagnostics: [

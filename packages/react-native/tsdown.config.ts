@@ -61,6 +61,14 @@ const config: UserConfig = defineConfig({
                 import: './dist/icons/style/*.mjs',
             }
 
+            for (const style of styles) {
+                const kebab = STYLE_KEBAB[style]
+                pkg[`./${kebab}/*`] = {
+                    types: `./dist/icons/${kebab}/*.d.mts`,
+                    import: `./dist/icons/${kebab}/*.mjs`,
+                }
+            }
+
             return pkg
         },
     },

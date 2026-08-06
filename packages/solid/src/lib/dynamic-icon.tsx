@@ -1,4 +1,4 @@
-import type { JSX } from 'solid-js';
+import { createComponent, type JSX } from 'solid-js';
 import type { IconProps } from './types';
 import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime';
 
@@ -16,7 +16,6 @@ export function DynamicIcon(
     props: { weight?: Weight; styles: StyleComponentsMap<IconComponent> } & IconProps
 ): JSX.Element {
     const key = () => (props.weight ? WEIGHT_MAP[props.weight] : 'linear');
-    const Component = () => (props.styles as Record<string, IconComponent>)[key()];
-    const Comp = Component();
-    return <Comp {...props} />;
+    const Component = () => props.styles[key()];
+    return createComponent(Component(), props as IconProps);
 }

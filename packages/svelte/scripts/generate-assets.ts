@@ -8,6 +8,7 @@ import {
     forEachIcon,
     forEachIconGroupedBy,
     toPascalCase,
+    WEIGHTS,
     WEIGHT_MAP,
     type IconWeight,
     type ParsedIcon,
@@ -17,8 +18,6 @@ import { svelteComponentFile, type FileDefinition } from './parser-hook';
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons');
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts');
-
-const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const;
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,

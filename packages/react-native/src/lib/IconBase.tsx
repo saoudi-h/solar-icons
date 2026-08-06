@@ -5,6 +5,7 @@ import { SolarContext } from './SolarProvider'
 
 const IconBase = forwardRef<any, IconBaseProps>((props, ref) => {
     const {
+        alt,
         color,
         size,
         strokeWidth,
@@ -36,7 +37,8 @@ const IconBase = forwardRef<any, IconBaseProps>((props, ref) => {
             viewBox="0 0 24 24"
             fill="none"
             strokeWidth={Number(resolvedStrokeWidth)}
-            {...restProps}>
+            {...restProps}
+            {...(alt !== undefined ? { accessible: true, accessibilityLabel: alt } : {})}>
             {children}
         </Svg>
     )

@@ -12,10 +12,9 @@ status: 'active'
 
 ## ⚙️ Conventions
 
-- React 19 (peer ≥ 16.8). Plain function components, no `forwardRef`.
+- React 19 (peer ≥ 16.8). Generated components use `forwardRef` for React 18 compatibility.
 - Build = `pnpm generate:assets && pnpm copy:licenses && tsdown -l error && pnpm build:types`.
-- `scripts/generate-assets.ts` produces a flat `dist/icons/style/<name>.mjs` tree — one ESM file per icon per style.
-- `scripts/utils.ts` re-implements `readSvgsFromDisk`, `toPascalCase`, `verifyIcons`, the `WEIGHTS` array, and path constants.
+- `scripts/generate-assets.ts` produces a flat `dist/icons/style/<name>.mjs` tree — one ESM file per icon per style. It imports `parseSvgs`, `forEachIcon*`, `toPascalCase`, `WEIGHTS`, `WEIGHT_MAP`, and the types from `@solar-icons/core` (no local `utils.ts`).
 
 ## 🏗 Stack
 

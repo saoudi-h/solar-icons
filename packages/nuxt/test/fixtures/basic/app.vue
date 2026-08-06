@@ -1,5 +1,9 @@
 <template>
-  <SolarProvider :color="'currentColor'" :size="24" :stroke-width="1.5">
+  <SolarProvider
+    :color="'currentColor'"
+    :size="24"
+    :stroke-width="1.5"
+  >
     <div>basic</div>
   </SolarProvider>
 </template>

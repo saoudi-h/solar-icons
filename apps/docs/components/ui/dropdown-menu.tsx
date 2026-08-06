@@ -2,6 +2,8 @@
 
 import { cn } from '@/lib/utils'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import { AltArrowRightIcon } from '@solar-icons/react/dynamic/alt-arrow-right'
+import { CheckCircleIcon } from '@solar-icons/react/dynamic/check-circle'
 import * as React from 'react'
 // import { CheckIcon, AltArrowRight, AltArrowLeft } from "@radix-ui/react-icons"
 
@@ -38,7 +40,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
         )}
         {...props}>
         {children}
-        <AltArrowRight className="ml-auto" />
+        <AltArrowRightIcon className="ml-auto" />
     </DropdownMenuPrimitive.SubTrigger>
 ))
 DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName
@@ -145,7 +147,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
               absolute left-2 flex size-3.5 items-center justify-center
             `}>
             <DropdownMenuPrimitive.ItemIndicator>
-                <Unread className="size-4" />
+                <CheckCircleIcon className="size-4" />
             </DropdownMenuPrimitive.ItemIndicator>
         </span>
         {children}
@@ -174,7 +176,7 @@ const DropdownMenuRadioItem = React.forwardRef<
               absolute left-2 flex size-3.5 items-center justify-center
             `}>
             <DropdownMenuPrimitive.ItemIndicator>
-                <AltArrowLeft className="size-2" />
+                <CheckCircleIcon className="size-2" />
             </DropdownMenuPrimitive.ItemIndicator>
         </span>
         {children}

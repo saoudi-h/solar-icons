@@ -1,5 +1,6 @@
+import type { IconWeight } from '@solar-icons/core'
 import type { SolarProvider } from '@solar-icons/react'
-import type { IconBaseProps, IconWeight } from '@solar-icons/react/lib/types'
+import type { IconBaseProps } from '@solar-icons/react/lib/types'
 
 export type SolarProviderProps = Parameters<typeof SolarProvider>[0]
 

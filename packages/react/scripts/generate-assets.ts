@@ -9,15 +9,15 @@ import {
     parseSvgs,
     toPascalCase,
     WEIGHT_MAP,
+    WEIGHTS,
     type ParsedIcon,
     type ParsedIconGroup,
+    type Weight,
 } from '@solar-icons/core'
 import { reactPerfComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
-
-const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
@@ -113,7 +113,7 @@ function clean() {
 }
 
 function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
-    const groups = group.styles
+    const groups = group.styles as Readonly<Partial<Record<Weight, ParsedIcon>>>
 
     const styleImports = WEIGHTS.filter(w => groups[w])
         .map(w => {

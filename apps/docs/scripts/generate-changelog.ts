@@ -3,12 +3,15 @@ import { join } from 'node:path'
 
 const PACKAGES = [
     { id: 'react', label: 'React', pkg: '@solar-icons/react' },
-    { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
-    { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },
     { id: 'svelte', label: 'Svelte', pkg: '@solar-icons/svelte' },
     { id: 'solid', label: 'Solid', pkg: '@solar-icons/solid' },
     { id: 'angular', label: 'Angular', pkg: '@solar-icons/angular' },
+    { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
+    { id: 'js', label: 'JavaScript', pkg: '@solar-icons/js' },
+    { id: 'static', label: 'Static', pkg: '@solar-icons/static' },
+    { id: 'nuxt', label: 'Nuxt', pkg: '@solar-icons/nuxt' },
+    { id: 'codemod', label: 'Codemod', pkg: '@solar-icons/codemod' },
 ]
 
 interface ParsedEntry {
@@ -136,8 +139,18 @@ for (const pkg of PACKAGES) {
 
 const output = lines.join('\n')
 
-const outPath = join(import.meta.dirname, '..', 'content', 'docs', 'community', 'changelog.mdx')
-mkdirSync(join(import.meta.dirname, '..', 'content', 'docs', 'community'), { recursive: true })
+const outPath = join(
+    import.meta.dirname,
+    '..',
+    'content',
+    'docs',
+    'v2',
+    'community',
+    'changelog.mdx'
+)
+mkdirSync(join(import.meta.dirname, '..', 'content', 'docs', 'v2', 'community'), {
+    recursive: true,
+})
 writeFileSync(outPath, output)
 
 console.log(`Generated changelog.mdx with ${PACKAGES.length} packages`)

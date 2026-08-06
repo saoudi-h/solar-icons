@@ -2,7 +2,7 @@
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Heading } from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import React from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -238,9 +238,12 @@ const BentoHeader = ({
                 {title}
             </h3>
             {href && buttonText && (
-                <Button asChild size="sm" variant="default" colors="muted" className="
-                  rounded-full
-                ">
+                <Button
+                    asChild
+                    size="sm"
+                    variant="default"
+                    colors="muted"
+                    className="rounded-full">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRightIcon />

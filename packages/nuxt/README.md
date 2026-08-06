@@ -26,34 +26,48 @@ export default defineNuxtConfig({
 })
 ```
 
+The module auto-imports icon components with a `Solar` prefix. `SolarHomeIcon` and `SolarHomeBoldIcon` come from the main barrel; `SolarHomeIcon` from `@solar-icons/vue/dynamic` is the runtime-switchable variant.
+
 ```vue
 <template>
   <div>
-    <SolarHomeIcon />
-    <SolarLoginIcon color="#3b82f6" :size="32" :strokeWidth="2" />
+    <SolarHomeBoldIcon />
+    <SolarLoginLinearIcon color="#3b82f6" :size="32" :strokeWidth="2" />
   </div>
 </template>
 ```
 
-### Global Configuration (Module Options)
+### Module Options
 
-Configure global defaults in your `nuxt.config.ts`:
+Configure in your `nuxt.config.ts`:
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['@solar-icons/nuxt'],
   solarIcons: {
-    size: 24,
+    namePrefix: 'Solar',
+    autoImport: true,
+    provider: true,
     color: 'currentColor',
+    size: 24,
     strokeWidth: 1.5,
+    secondaryColor: 'currentColor',
+    secondaryOpacity: 0.5,
   }
 })
 ```
 
+- `namePrefix`: prefix for auto-imported icon components (default `Solar`).
+- `autoImport`: register icon components and `SolarProvider`/`useSolar` as auto-imports (default `true`).
+- `provider`: inject a global provider (default `true`). When enabled, the module provides a global `SolarState`, writes the styling defaults as `--solar-*` CSS variables on `document.body` (client side), and `useSolar()` works in any component.
+- `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity`: global icon defaults, applied when `provider: true` (only the options you set override the defaults above).
+
+When `provider: false`, the styling options are ignored. Wrap `app.vue` in `<SolarProvider>` yourself, or call `createSolarIcons` from a Nuxt plugin.
+
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/nuxt).
+For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/packages/nuxt).
 
 ## License
 

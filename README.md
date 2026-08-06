@@ -12,8 +12,10 @@
 
 - **7,476 variations**: 1,246 unique icons across 30+ categories, each available in six styles (`Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken`).
 - **Framework support**: Native packages for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, and Angular.
-- **Optimization choices**: Choose standard packages for dynamic style switching, or performance packages (`-perf`) for minimal bundle sizes.
-- **Developer-friendly**: TypeScript types, JSDoc definitions, and categorized imports.
+- **CSS variable cascade**: `SolarProvider` + `useSolar` set global defaults for size, color, and stroke width.
+- **Built-in duotone**: `secondaryColor` and `secondaryOpacity` control the duotone accent path.
+- **Framework-free options**: `@solar-icons/static` (raw SVGs, sprite, string modules) and `@solar-icons/js` (vanilla DOM injection).
+- **TypeScript**: Typed components and props everywhere.
 
 ---
 
@@ -21,21 +23,23 @@
 
 | Package                         | Description                                                                |
 | ------------------------------- | -------------------------------------------------------------------------- |
-| **`@solar-icons/react`**        | Standard React package. Supports global configuration and dynamic weights. |
-| **`@solar-icons/react-perf`**   | Performance React package. Includes one style per component.              |
+| **`@solar-icons/react`**        | React 18+ components. One component per icon per style, tree-shakable.     |
 | **`@solar-icons/react-native`** | React Native and Expo SVG components.                                      |
-| **`@solar-icons/vue`**          | Standard Vue 3 package. Supports global configuration and dynamic weights. |
+| **`@solar-icons/vue`**          | Vue 3 components. One component per icon per style, tree-shakable.         |
 | **`@solar-icons/nuxt`**         | Nuxt 3 module with auto-import and configuration support.                  |
 | **`@solar-icons/svelte`**       | Svelte 5 components using runes.                                           |
-| **`@solar-icons/solid`**        | Lightweight SolidJS components.                                            |
+| **`@solar-icons/solid`**        | SolidJS components.                                                        |
 | **`@solar-icons/angular`**      | Angular 17+ standalone components using Signals.                           |
+| **`@solar-icons/static`**       | Framework-free static assets: individual SVGs, SVG sprite, string modules. |
+| **`@solar-icons/js`**           | Vanilla JavaScript DOM injection, no framework required.                   |
+| **`@solar-icons/codemod`**      | Opt-in migration CLI for the v2 breaking changes.                          |
 
 ---
 
 ## Quick Install
 
 ```sh
-# Install standard React components
+# Install React components
 npm install @solar-icons/react
 ```
 
@@ -44,6 +48,16 @@ For Nuxt:
 ```sh
 nuxi module add @solar-icons/nuxt
 ```
+
+Migrating from v1? Run the [codemod](https://solar-icons.vercel.app/docs/v2/migration-to-v2/codemod) to rewrite imports and component names automatically.
+
+---
+
+## Figma plugin
+
+Browse the complete Solar Icons collection in Figma, preview editable strokes, and insert the same SVGs used by the packages.
+
+[Install the Figma plugin](https://www.figma.com/community/plugin/1664759238792120976)
 
 ---
 

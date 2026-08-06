@@ -21,9 +21,18 @@ status: 'active'
 
 - **`lib/IconBase.vue`**: CSS classes `solar` + `solar-{iconName}`, CSS vars via `??` pattern, `secondaryColor`/`secondaryOpacity` props, `aria-hidden="true"` by default, user `style` merged via `v-bind="$attrs"`.
 - **`lib/SolarProvider.vue`**: Wrapper `<div>` with CSS custom properties on `:style`. Uses `provide(SOLAR_CONTEXT_KEY, solarRef)`. `solarRef` exposes `setProperty()` for DOM mutation.
-- **`lib/useSolar.ts`**: Composable using `inject(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`.
+- **`lib/useSolar.ts`**: Composable using `inject(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. Throws outside a `<SolarProvider>` or without the plugin.
 - **`lib/context-key.ts`**: Shared `SOLAR_CONTEXT_KEY = Symbol('solar')` used by both SolarProvider and useSolar (cannot export from `<script setup>`).
 - **`parser-hook.ts`**: Generates `h(IconBase, { ...attrs, ...props, iconName }, { default: () => [...h() calls...] })`.
+
+## SolarIconsPlugin (2026-08-06)
+
+- `SolarIconsPlugin.install()` does two things: `createSolarIcons(options)` + `app.provide(SOLAR_CONTEXT_KEY, state)` (state/context, SSR-safe), and `applySolarCssVariables(state)` which watches the five state refs and writes `--solar-*` on `document.body` client-side (`typeof document === 'undefined'` guard). This matches the Nuxt module pattern (`packages/nuxt/src/runtime/plugin.ts`).
+- `useSolar()` therefore works app-wide with the plugin, without `<SolarProvider>`. `setColor()` etc. update the body variables and restyle all icons.
+- **Icons never consume the context.** `IconBase.vue` reads props or CSS vars only. The plugin styles icons purely through the body-level variables.
+- **SSR caveat:** the body variables are client-only, so server-rendered output falls back to CSS defaults until hydration. `<SolarProvider>` (inline `:style` from props) is SSR-exact and scopes to its subtree, overriding the plugin's body vars there.
+- `createSolarIcons` and `provideSolarIconsContextInApp` are pure (no DOM); the Nuxt module reuses them and implements its own body-var watcher. `applySolarCssVariables` is exported from `lib/index.ts` but Nuxt does not use it.
+- Canonical reference for the var-watch logic: `packages/nuxt/src/runtime/plugin.ts:19-53` (same setProperty/removeProperty semantics; `--solar-secondary-color` is truthy-checked, the others `!= null`, `--solar-size` numbers get `px`).
 
 ## 📁 Key Directories
 

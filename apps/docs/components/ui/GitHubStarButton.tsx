@@ -2,8 +2,8 @@
 import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
 import NumberFlow from '@number-flow/react'
-import { StarIcon } from '@solar-icons/react/linear/star'
-import { motion } from 'framer-motion'
+import { StarIcon } from '@solar-icons/react/dynamic/star'
+import { motion } from 'motion/react'
 import React from 'react'
 
 export interface GitHubStarButtonProps {

@@ -1,6 +1,6 @@
 'use client'
 import { cn } from '@/lib/utils'
-import { motion, type HTMLMotionProps } from 'framer-motion'
+import { motion, type HTMLMotionProps } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 import type { ButtonProps } from './button'
@@ -99,9 +99,9 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
                     className={defaultClasses}
                     {...defaultMotionProps}
                     {...buttonProps}>
-                    <Link href={href} className={`
-                      flex flex-row items-center gap-4
-                    `}>
+                    <Link
+                        href={href}
+                        className={`flex flex-row items-center gap-4`}>
                         {buttonContent}
                     </Link>
                 </MotionButton>

@@ -13,6 +13,7 @@ export interface SVGProps extends Record<string, string | number | undefined> {
     class?: string
     size?: string | number
     color?: string
+    style?: string
     'secondary-color'?: string
     'secondary-opacity'?: string | number
 }

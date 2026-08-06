@@ -39,8 +39,10 @@ status: 'active'
 
 ## ⚠️ Known Constraints
 
-- **No Vitest in this package.** RN output is validated manually via the test app `apps/test-react-native-icons`.
+- **Vitest runs via `npx vitest run` from the package root** (no `test` npm script; `tests/*.test.tsx` — exports map guards + rendering checks). Rendering assertions use `react-dom/server` `renderToStaticMarkup` with the `__mocks__/react-native-svg.tsx` mock; `react-test-renderer` is unusable under Vitest here (renderer never commits). Visual confidence comes from `apps/test-react-native-icons`.
 - **No CSS vars in RN** — duotone customization uses React Context + JSX expressions instead of `var(--solar-*)`.
+- **`alt` maps to `accessible` + `accessibilityLabel`** on the `<Svg>` (after `{...restProps}` so `alt` wins over a user-provided `accessibilityLabel`). `alt` lives on both `IconBaseProps` and `IconProps`.
+- **Published single-icon subpaths must mirror the generated style directories:** use `./bold/*`, `./bold-duotone/*`, `./broken/*`, `./linear/*`, `./line-duotone/*`, and `./outline/*` export patterns; a generic wildcard must not map to a nonexistent `dist/icons/style` directory.
 - **Source SVG `<g>` grouping matters for duotone**: paths tagged as the duotone accent layer must be groupable in Figma so the generator can target them.
 - **`tsdown` regression (DEBUG-01/02/03)**: same caveat as other packages if a `bin` is ever added.
 

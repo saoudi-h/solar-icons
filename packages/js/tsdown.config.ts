@@ -48,26 +48,6 @@ const config: UserConfig = defineConfig({
                 }
             }
 
-            pkg['./sprite'] = {
-                types: './dist/sprite.d.mts',
-                import: './dist/sprite.svg',
-            }
-
-            pkg['./icons.json'] = {
-                types: './dist/icons.d.mts',
-                import: './dist/icons.json',
-            }
-
-            pkg['./metadata.json'] = {
-                types: './dist/metadata.d.mts',
-                import: './dist/metadata.json',
-            }
-
-            pkg['./metadata-descriptions.json'] = {
-                types: './dist/metadata-descriptions.d.mts',
-                import: './dist/metadata-descriptions.json',
-            }
-
             return pkg
         },
     },

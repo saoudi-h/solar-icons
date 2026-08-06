@@ -1,4 +1,4 @@
-import { V2BetaHeaderWidget } from '@/components/header-v2-widget'
+import { V2StableHeaderWidget } from '@/components/header-v2-widget'
 import { Logo } from '@/components/ui-blocks/logo'
 import { Widget3Icon } from '@solar-icons/react/dynamic/widget-3'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
@@ -17,7 +17,7 @@ export const baseOptions: BaseLayoutProps = {
     links: [
         {
             text: 'Documentation',
-            url: '/docs/v1',
+            url: '/docs/v2',
             active: 'nested-url',
         },
         {
@@ -33,7 +33,7 @@ export const homeOptions: BaseLayoutProps = {
     ...baseOptions,
     nav: {
         ...baseOptions.nav,
-        children: <V2BetaHeaderWidget />,
+        children: <V2StableHeaderWidget />,
     },
 }
 

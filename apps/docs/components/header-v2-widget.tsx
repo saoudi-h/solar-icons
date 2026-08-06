@@ -3,7 +3,7 @@
 import { RocketIcon } from '@solar-icons/react/dynamic/rocket'
 import Link from 'next/link'
 
-export function V2BetaHeaderWidget() {
+export function V2StableHeaderWidget() {
     return (
         <Link
             href="/docs/v2"
@@ -15,7 +15,7 @@ export function V2BetaHeaderWidget() {
               lg:inline-flex
             ">
             <RocketIcon weight="BoldDuotone" className="size-3.5" />
-            v2 is in beta
+            v2 is now stable
         </Link>
     )
 }

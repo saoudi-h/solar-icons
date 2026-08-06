@@ -1,0 +1,17 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+# image-size@0.5.5 (CVE-2025-71329/71330) is an optional dependency of
+# less@4.6.7, hard-pinned by the Angular CLI toolchain
+# (@angular-devkit/build-angular@22.1.3 pins less exactly; no patched 0.5.x
+# release exists and the fix lives outside less's ~0.5.0 range). Build-time
+# only, never loaded at runtime. Revisit when Angular CLI 22.2.0 becomes
+# stable (it pins less@4.8.1, which drops image-size).
+version: v1.25.0
+ignore:
+  SNYK-JS-IMAGESIZE-17295814:
+    - '*':
+        reason: Build-time optional dep of less, hard-pinned by Angular CLI; no patched 0.5.x release. Revisit at Angular CLI 22.2.0.
+        expires: 2027-01-01T00:00:00.000Z
+  SNYK-JS-IMAGESIZE-17295816:
+    - '*':
+        reason: Build-time optional dep of less, hard-pinned by Angular CLI; no patched 0.5.x release. Revisit at Angular CLI 22.2.0.
+        expires: 2027-01-01T00:00:00.000Z

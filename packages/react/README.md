@@ -51,7 +51,7 @@ function App() {
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [React Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/react).
+For installation guides, API reference, and a searchable icon catalog, visit the [React Documentation](https://solar-icons.vercel.app/docs/v2/packages/react).
 
 ## License
 

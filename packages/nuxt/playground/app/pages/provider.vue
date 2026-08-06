@@ -24,7 +24,10 @@
       <h2 class="text-lg font-semibold text-slate-200">
         color="red" :size="48"
       </h2>
-      <SolarProvider color="red" :size="48">
+      <SolarProvider
+        color="red"
+        :size="48"
+      >
         <div class="flex gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
           <SolarHomeBoldIcon />
           <SolarStarBoldIcon />
@@ -37,14 +40,20 @@
       <h2 class="text-lg font-semibold text-slate-200">
         Nested: blue/64 → green/32
       </h2>
-      <SolarProvider color="#3b82f6" :size="64">
+      <SolarProvider
+        color="#3b82f6"
+        :size="64"
+      >
         <div class="space-y-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
           <div class="flex gap-4">
             <SolarHomeBoldIcon />
             <SolarStarBoldIcon />
           </div>
 
-          <SolarProvider color="#22c55e" :size="32">
+          <SolarProvider
+            color="#22c55e"
+            :size="32"
+          >
             <div class="flex gap-4 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
               <SolarHomeBoldIcon />
               <SolarStarBoldIcon />
@@ -61,7 +70,10 @@
       <p class="text-slate-400 text-sm">
         Dynamic icons also respect the provider's color/size.
       </p>
-      <SolarProvider color="#f59e0b" :size="48">
+      <SolarProvider
+        color="#f59e0b"
+        :size="48"
+      >
         <div class="flex gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
           <SolarArrowUpIcon />
           <SolarArrowDownIcon />

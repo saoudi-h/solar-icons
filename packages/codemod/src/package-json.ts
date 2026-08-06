@@ -27,7 +27,6 @@ export function transformPackageJson(source: string, targetVersion = '^2.0.0'): 
             delete dependencies['@solar-icons/react-perf']
             dependencies['@solar-icons/react'] = targetVersion
             changed = true
-            continue
         }
 
         const reactVersion = dependencies['@solar-icons/react']

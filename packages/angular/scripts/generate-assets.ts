@@ -9,6 +9,7 @@ import {
     parseSvgs,
     toPascalCase,
     WEIGHT_MAP,
+    WEIGHTS,
     type ParsedIcon,
     type ParsedIconGroup,
 } from '@solar-icons/core'
@@ -17,8 +18,6 @@ import { angularComponentFile, type FileDefinition } from './parser-hook'
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const DYNAMIC_PATH = path.resolve(import.meta.dirname, '../src/dynamic')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/public-api.ts')
-
-const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
@@ -128,7 +127,8 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
             const prefix = i === 0 ? '@if (!weight() || weight() ===' : '@else if (weight() ==='
             return `        ${prefix} ${JSON.stringify(w)}) {
             <svg solar${globalName} [size]="size()" [color]="color()" [strokeWidth]="strokeWidth()"
-                [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()" [alt]="alt()" />
+                [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()" [alt]="alt()"
+                [titleAttr]="titleAttr()" [ariaLabel]="ariaLabel()" />
         }`
         })
         .join('\n')

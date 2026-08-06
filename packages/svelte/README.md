@@ -47,7 +47,7 @@ Wrap your layout in `<SolarProvider>` to set default properties:
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Svelte Documentation](https://solar-icons.vercel.app/docs/v2/frameworks/svelte).
+For installation guides, API reference, and a searchable icon catalog, visit the [Svelte Documentation](https://solar-icons.vercel.app/docs/v2/packages/svelte).
 
 ## License
 

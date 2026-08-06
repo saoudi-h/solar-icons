@@ -37,6 +37,29 @@ describe('Package Exports', () => {
         }
     });
 
+    it('should resolve per-icon subpaths to .svelte source and .svelte.d.ts types', () => {
+        const styles = ['bold', 'linear', 'outline', 'bold-duotone', 'line-duotone', 'broken'];
+        for (const style of styles) {
+            const key = `./${style}/*`;
+            const sub = exports[key];
+            expect(sub, `missing ${key}`).toBeDefined();
+            const sveltePath = path.resolve(rootDir, sub.default.replace('*', 'heart'));
+            const typesPath = path.resolve(rootDir, sub.types.replace('*', 'heart'));
+            expect(fs.existsSync(sveltePath)).toBe(true);
+            expect(fs.existsSync(typesPath)).toBe(true);
+            expect(sveltePath.endsWith('.svelte')).toBe(true);
+            expect(fs.existsSync(sveltePath.replace(/\.svelte$/, '.svelte.d.ts'))).toBe(true);
+        }
+    });
+
+    it('should expose dynamic subpaths to .svelte files', () => {
+        const dynamic = exports['./dynamic/*'];
+        expect(dynamic).toBeDefined();
+        const dynamicSvelte = path.resolve(rootDir, dynamic.default.replace('*', 'heart'));
+        expect(fs.existsSync(dynamicSvelte)).toBe(true);
+        expect(dynamicSvelte.endsWith('.svelte')).toBe(true);
+    });
+
     it('should have correct directory structure in dist', () => {
         expect(fs.existsSync(path.join(distPath, 'icons'))).toBe(true);
         expect(fs.existsSync(path.join(distPath, 'lib'))).toBe(true);
