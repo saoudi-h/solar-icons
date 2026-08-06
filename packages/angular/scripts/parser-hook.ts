@@ -109,7 +109,7 @@ import { IconBase } from '../lib/icon-base';
  */
 @Component({
     selector: 'svg[solar${globalName}]',
-    template: \`@if (alt(); as title) { <title>{{ title }}</title> }${template}\`,
+    template: \`@if (titleAttr(); as title) { <title>{{ title }}</title> }@else if (alt(); as title) { <title>{{ title }}</title> }${template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,

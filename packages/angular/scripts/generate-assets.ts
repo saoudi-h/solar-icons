@@ -128,7 +128,8 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
             const prefix = i === 0 ? '@if (!weight() || weight() ===' : '@else if (weight() ==='
             return `        ${prefix} ${JSON.stringify(w)}) {
             <svg solar${globalName} [size]="size()" [color]="color()" [strokeWidth]="strokeWidth()"
-                [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()" [alt]="alt()" />
+                [secondaryColor]="secondaryColor()" [secondaryOpacity]="secondaryOpacity()" [alt]="alt()"
+                [titleAttr]="titleAttr()" [ariaLabel]="ariaLabel()" />
         }`
         })
         .join('\n')

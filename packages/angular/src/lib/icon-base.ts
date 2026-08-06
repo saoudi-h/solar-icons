@@ -31,6 +31,7 @@ import { Directive, computed, input } from '@angular/core'
         '[style.stroke-width]': 'explicitStrokeWidth()',
 
         '[attr.aria-hidden]': 'alt() || ariaLabel() || titleAttr() ? null : "true"',
+        '[attr.aria-label]': 'ariaLabel() || null',
         '[style.--solar-secondary-color]': 'duotoneColor()',
         '[style.--solar-secondary-opacity]': 'duotoneOpacityStr()',
         '[style.font-size]': 'defaultFontSize()',

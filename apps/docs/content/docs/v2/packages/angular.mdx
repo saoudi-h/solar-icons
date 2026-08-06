@@ -159,21 +159,21 @@ export class AppComponent {
 | `[solarIcon]="SomeClass"`    | Class reference | No                  |
 | `solarIcon="'RegisterName'"` | String name     | `provideSolarIcons` |
 
-`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, and `alt`. All forward to the created icon.
+`SolarIcon` accepts `size`, `color`, `strokeWidth`, `weight`, `secondaryColor`, `secondaryOpacity`, `alt`, `ariaLabel`, and `titleAttr`. All forward to the created icon. Clearing an input (setting it to `undefined`) resets the icon to its defaults.
 
 ## Icon props
 
-| Input              | Type               | Description             |
-| ------------------ | ------------------ | ----------------------- |
-| `color`            | `string`           | Icon color              |
-| `size`             | `string \| number` | Width and height        |
-| `strokeWidth`      | `string \| number` | Stroke width            |
-| `secondaryColor`   | `string`           | Duotone accent color    |
-| `secondaryOpacity` | `number`           | Duotone accent opacity  |
-| `isolated`         | `boolean`          | Ignores provider        |
-| `alt`              | `string`           | Accessibility label     |
-| `ariaLabel`        | `string`           | `aria-label` attribute  |
-| `titleAttr`        | `string`           | Explicit `<title>` text |
+| Input              | Type               | Description                                    |
+| ------------------ | ------------------ | ---------------------------------------------- |
+| `color`            | `string`           | Icon color                                     |
+| `size`             | `string \| number` | Width and height                               |
+| `strokeWidth`      | `string \| number` | Stroke width                                   |
+| `secondaryColor`   | `string`           | Duotone accent color                           |
+| `secondaryOpacity` | `number`           | Duotone accent opacity                         |
+| `isolated`         | `boolean`          | Ignores provider                               |
+| `alt`              | `string`           | Accessibility label. Renders `<title>` in SVG. |
+| `ariaLabel`        | `string`           | `aria-label` attribute                         |
+| `titleAttr`        | `string`           | Explicit `<title>` text                        |
 
 Angular inputs are camelCase. Bind them in templates with `[strokeWidth]="2"`, not `[stroke-width]`.
 

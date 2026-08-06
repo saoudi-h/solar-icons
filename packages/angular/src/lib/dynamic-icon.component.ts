@@ -54,6 +54,10 @@ export class SolarIcon {
     readonly secondaryOpacity = input<string | number>()
     /** Accessibility label for the icon */
     readonly alt = input<string>()
+    /** `aria-label` attribute on the rendered icon */
+    readonly ariaLabel = input<string>()
+    /** Explicit `<title>` text on the rendered icon */
+    readonly titleAttr = input<string>()
 
     /** Internal reference to the currently rendered component */
     private readonly componentRef = signal<ComponentRef<IconBase> | undefined>(undefined)
@@ -66,6 +70,8 @@ export class SolarIcon {
         })
 
         // Effect 2: Sync properties to the rendered component instance.
+        // Undefined values are forwarded too so clearing an input resets the
+        // child icon to its defaults (regression: values used to stick).
         effect(() => {
             const ref = this.componentRef()
             if (!ref) return
@@ -77,16 +83,23 @@ export class SolarIcon {
             const secondaryColor = this.secondaryColor()
             const secondaryOpacity = this.secondaryOpacity()
             const alt = this.alt()
+            const ariaLabel = this.ariaLabel()
+            const titleAttr = this.titleAttr()
 
             untracked(() => {
-                if (size !== undefined) ref.setInput('size', size)
-                if (color !== undefined) ref.setInput('color', color)
-                if (strokeWidth !== undefined) ref.setInput('strokeWidth', strokeWidth)
-                if (weight !== undefined) ref.setInput('weight', weight)
-                if (secondaryColor !== undefined) ref.setInput('secondaryColor', secondaryColor)
-                if (secondaryOpacity !== undefined)
-                    ref.setInput('secondaryOpacity', secondaryOpacity)
-                if (alt !== undefined) ref.setInput('alt', alt)
+                ref.setInput('size', size)
+                ref.setInput('color', color)
+                ref.setInput('strokeWidth', strokeWidth)
+                ref.setInput('secondaryColor', secondaryColor)
+                ref.setInput('secondaryOpacity', secondaryOpacity)
+                ref.setInput('alt', alt)
+                ref.setInput('ariaLabel', ariaLabel)
+                ref.setInput('titleAttr', titleAttr)
+                // Only dynamic icon components declare a weight input; a static
+                // icon would log a dev-mode error for the unknown input.
+                if ('weight' in ref.instance) {
+                    ref.setInput('weight', weight)
+                }
             })
         })
     }
