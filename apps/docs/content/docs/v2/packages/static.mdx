@@ -23,25 +23,46 @@ This package includes the following implementations of Solar Icons:
 
 ## SVG Sprite
 
-The package includes a pre-built sprite containing all the icons.
+The package includes a pre-built sprite containing all the icons. Symbols are named `{kebab-name}-{style}` (e.g. `heart-bold`). The sprite is an external symbol file: inline it on the page, then reference symbols with `<use>`.
 
 #### Basic sprite usage:
 
 ```html
-<img src="@solar-icons/static/sprite.svg#heart-bold" />
+<!-- Inline the sprite somewhere in the page, then reference symbols -->
+<div id="sprite" style="display: none;"></div>
+
+<svg class="solar-icon solar-heart-bold" aria-hidden="true">
+    <use href="#heart-bold" />
+</svg>
+
+<script>
+    const res = await fetch('https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/sprite.svg')
+    document.getElementById('sprite').innerHTML = await res.text()
+</script>
 ```
 
 #### Using a CDN
 
-Since `@solar-icons/static` is published on npm, you can load the sprite or individual SVGs directly from a CDN like unpkg or jsDelivr:
+Since `@solar-icons/static` is published on npm, you can load individual SVGs or the sprite directly from a CDN like jsDelivr or unpkg:
 
 ```html
-<!-- Load the sprite from unpkg -->
-<img src="https://unpkg.com/@solar-icons/static/dist/sprite.svg#heart-bold" />
+<!-- Load an individual SVG in an <img> -->
+<img
+    src="https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons/bold/heart.svg"
+    alt="Heart"
+    width="24"
+    height="24" />
 
-<!-- Load an individual SVG -->
-<img src="https://unpkg.com/@solar-icons/static/dist/icons/bold/heart.svg" />
+<!-- Load an individual SVG in a <figure> -->
+<figure>
+    <img
+        src="https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons/bold/heart.svg"
+        alt="Heart" />
+    <figcaption>Solar heart icon</figcaption>
+</figure>
 ```
+
+`<img>` cannot navigate to a symbol inside an external sprite. Use the inline `<svg><use>` pattern above for symbols.
 
 #### Inline with CSS helper class
 
@@ -106,26 +127,17 @@ If you'd prefer, you can use CSS to hold your base SVG properties. Unlike standa
 
 ## SVG file as string
 
-To import an SVG as a string (e.g., for templating):
+To import an SVG as a string (e.g., for templating). Works in Node.js and in bundlers like Vite and Webpack:
 
-<CodeBlockTabs defaultValue="Webpack">
-    <CodeBlockTabsList>
-        <CodeBlockTabsTrigger value="Webpack">Webpack</CodeBlockTabsTrigger>
-        <CodeBlockTabsTrigger value="Vite">Vite</CodeBlockTabsTrigger>
-    </CodeBlockTabsList>
-    <CodeBlockTab value="Webpack">
-        ```js 
-          // Specific icon style import import heartIcon from
-          '@solar-icons/static/dist/icons/bold/heart.svg' 
-        ```
-    </CodeBlockTab>
-    <CodeBlockTab value="Vite">
-        ```js 
-          // Specific icon style import import heartIcon from
-          '@solar-icons/static/dist/icons/bold/heart.svg?raw' 
-        ```
-    </CodeBlockTab>
-</CodeBlockTabs>
+```js
+// Per-icon import: style is in the path, the export keeps the style suffix
+import { HeartBoldIcon } from '@solar-icons/static/bold/heart'
+
+// Top-level import: same export name
+import { HeartBoldIcon } from '@solar-icons/static'
+```
+
+The raw `.svg` files themselves are not importable from the package (only the exported subpaths resolve). To embed an SVG file directly, use the CDN URL in an `<img>` as shown above.
 
 ## Node.js
 
@@ -134,13 +146,13 @@ You can import Solar Icons as SVG strings directly in Node.js projects. `@solar-
 ```js [ESM]
 import { HeartBoldIcon } from '@solar-icons/static'
 
-// You can also import specific styles for lighter resolution
-import { HeartIcon } from '@solar-icons/static/bold'
+// Per-icon import for lighter resolution
+import { HeartBoldIcon } from '@solar-icons/static/bold/heart'
 ```
 
 <Callout type="info">
-    Each icon export name is in PascalCase and includes the style suffix (e.g. `BoldIcon`,
-    `LinearIcon`) when imported from the top level.
+    Every icon export name is PascalCase and includes the style suffix (e.g. `HeartBoldIcon`,
+    `HeartLinearIcon`), whether imported from the top level or from a style subpath.
 </Callout>
 
 #### Example with Node.js
