@@ -5,12 +5,17 @@ import { watch } from 'vue'
 export default defineNuxtPlugin({
   name: 'solar-icons',
   setup(nuxtApp) {
-    const config = nuxtApp.$config.public?.solarIcons || {
+    const DEFAULTS = {
       color: 'currentColor',
       size: 24,
       strokeWidth: 1.5,
       secondaryColor: 'currentColor',
       secondaryOpacity: 0.5,
+    }
+
+    const config = {
+      ...DEFAULTS,
+      ...(nuxtApp.$config.public?.solarIcons || {}),
     }
 
     const ctx = createSolarIcons(config)

@@ -144,6 +144,13 @@ const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<SolarNuxtMod
       })
     }
     else {
+      const ignored = ['color', 'size', 'strokeWidth', 'secondaryColor', 'secondaryOpacity']
+        .filter(key => options[key as keyof SolarNuxtModuleOptions] !== undefined)
+      if (ignored.length > 0) {
+        console.warn(
+          `[solar-icons] provider is disabled; ignoring styling options: ${ignored.join(', ')}. Set them on a <SolarProvider> in your app instead.`,
+        )
+      }
       addComponent({
         name: 'SolarProvider',
         export: 'SolarProvider',

@@ -48,14 +48,22 @@ export default defineNuxtConfig({
   solarIcons: {
     namePrefix: 'Solar',
     autoImport: true,
+    provider: true,
+    color: 'currentColor',
+    size: 24,
+    strokeWidth: 1.5,
+    secondaryColor: 'currentColor',
+    secondaryOpacity: 0.5,
   }
 })
 ```
 
 - `namePrefix`: prefix for auto-imported icon components (default `Solar`).
 - `autoImport`: register icon components and `SolarProvider`/`useSolar` as auto-imports (default `true`).
+- `provider`: inject a global provider (default `true`). When enabled, the module provides a global `SolarState`, writes the styling defaults as `--solar-*` CSS variables on `document.body` (client side), and `useSolar()` works in any component.
+- `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity`: global icon defaults, applied when `provider: true` (only the options you set override the defaults above).
 
-Global icon defaults are set at runtime with `<SolarProvider>` in your app, not through module options.
+When `provider: false`, the styling options are ignored. Wrap `app.vue` in `<SolarProvider>` yourself, or call `createSolarIcons` from a Nuxt plugin.
 
 ## Documentation
 

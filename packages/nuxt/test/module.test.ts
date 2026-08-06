@@ -118,4 +118,28 @@ describe('Nuxt module defaults and setup', () => {
 
     expect(nuxt.options.runtimeConfig.public.solarIcons).toBeUndefined()
   })
+
+  it('does not set runtimeConfig when provider is enabled without styling options', async () => {
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup({ namePrefix: 'Solar', autoImport: true, provider: true }, nuxt)
+
+    expect(nuxt.options.runtimeConfig.public.solarIcons).toBeUndefined()
+  })
+
+  it('warns and ignores styling options when provider is disabled', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const nuxt: any = { options: { alias: {}, runtimeConfig: { public: {} } } }
+
+    await Module.setup(
+      { namePrefix: 'Solar', autoImport: true, provider: false, color: '#ef4444', size: 48 },
+      nuxt,
+    )
+
+    expect(nuxt.options.runtimeConfig.public.solarIcons).toBeUndefined()
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('provider is disabled'),
+    )
+    warnSpy.mockRestore()
+  })
 })

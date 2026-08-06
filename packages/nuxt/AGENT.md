@@ -35,8 +35,10 @@ status: "active"
 ## ⚠️ Known Constraints
 
 - **Two barrels registered for auto-import:** Main barrel (`@solar-icons/vue`) provides disambiguated names (`SolarArrowUpBoldIcon`, `SolarArrowUpLinearIcon`, …). Dynamic barrel (`@solar-icons/vue/dynamic`) provides runtime-switchable icons (`SolarArrowUpIcon`, `SolarHomeIcon`, …). No collisions after the V3 icon renames (bone-broken→bone-fracture, heart-broken→heart-crack, link-broken→unlink, link-broken-minimalistic→unlink-minimalistic, text→text-format).
-- **`SolarNuxtModuleOptions` only has `namePrefix` and `autoImport`.** The `color`, `size`, `strokeWidth`, `weight` options were removed — the provider CSS handles these via `<SolarProvider>` props in the app, not via module config.
-- **No runtime plugin needed.** `SolarProvider` uses Vue's `provide`/`inject` scoped to the component tree. No global app-level context required.
+- **`SolarNuxtModuleOptions`**: `namePrefix`, `autoImport`, `provider`, `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity`. The five styling options only apply when `provider: true`; with `provider: false` the module warns and ignores them.
+- **`provider: true` (default)**: registers a runtime plugin (`src/runtime/plugin.ts`) that creates the solar state from `runtimeConfig.public.solarIcons` and `provide`s it on the Nuxt Vue app (global context, SSR-safe), writing `--solar-*` on `document.body` client-side via a `watch`. `useSolar()` works anywhere. Also registers `SolarProvider` as a wrapper component (`src/runtime/SolarProviderWrapper.vue`) that re-renders the Vue provider with the runtime defaults.
+- **`provider: false`**: registers the plain `SolarProvider` from `@solar-icons/vue/lib` (scoped `provide`/`inject`, no global context). `useSolar()` needs a manual provider: wrap `app.vue` or call `createSolarIcons` from a Nuxt plugin.
+- **Default merge**: `plugin.ts` and `SolarProviderWrapper.vue` spread runtime config over the module defaults (`currentColor`/`24`/`1.5`/`currentColor`/`0.5`) instead of `||`, so a partial config keeps the defaults for unset options. Same body-var write semantics as the Vue plugin's `applySolarCssVariables` (`packages/vue/src/lib/useSolar.ts`); the Nuxt runtime does not call that helper, it inlines the same logic.
 - **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`, not `peerDependencies`.** This is unusual for a Nuxt module.
 - **`pnpm dev:prepare` must run before `nuxi dev playground`** — the module needs to be built in stub mode for Nuxt's auto-import scanner.
 - **Nuxt 4 schema is in use** (`@nuxt/kit` 4, `@nuxt/schema` 4). Supports Nuxt 3.12+ via compatibility modes; the dev playground targets Nuxt 4.
@@ -49,7 +51,7 @@ status: "active"
 
 ## V3 Module Restructure (2026-07-02)
 
-- `weight`, `color`, `size`, `strokeWidth` removed from `SolarNuxtModuleOptions` and defaults.
+- `weight` removed from `SolarNuxtModuleOptions` (the weight is a per-icon prop).
 - `getAllIconNames()` split into `getMainBarrelIconNames()` (main barrel) and `getDynamicBarrelIconNames()` (dynamic barrel).
 - Both barrels registered via `addComponent` with the `Solar` prefix.
 - 5 icon renames to resolve naming collisions between barrels.
