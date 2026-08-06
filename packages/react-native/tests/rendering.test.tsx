@@ -1,4 +1,5 @@
-import { createElement, isValidElement } from 'react'
+import React, { createElement, isValidElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('react-native-svg')
@@ -116,6 +117,39 @@ describe('IconBase Resolution Logic', () => {
         expect(element.props.color).toBe('green')
         expect(element.props.size).toBe(100)
         expect(element.props.strokeWidth).toBe(3)
+    })
+})
+
+describe('IconBase accessibility (alt)', () => {
+    it('maps alt to accessibilityLabel and does not leak the alt attribute', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(React.createElement(IconBase, { alt: 'Add a circle' }))
+
+        expect(html).toContain('accessibilityLabel="Add a circle"')
+        expect(html).not.toContain('alt="Add a circle"')
+    })
+
+    it('does not set accessibility props when alt is omitted', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(React.createElement(IconBase, {}))
+
+        expect(html).not.toContain('accessibilityLabel')
+    })
+
+    it('lets alt win over a user accessibilityLabel', async () => {
+        const { default: IconBase } = await import('../src/lib/IconBase')
+
+        const html = renderToStaticMarkup(
+            React.createElement(IconBase as any, {
+                alt: 'Alt label',
+                accessibilityLabel: 'User label',
+            })
+        )
+
+        expect(html).toContain('accessibilityLabel="Alt label"')
+        expect(html).not.toContain('accessibilityLabel="User label"')
     })
 })
 

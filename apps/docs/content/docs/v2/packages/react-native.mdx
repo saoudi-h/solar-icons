@@ -100,15 +100,15 @@ function ColorToggle() {
 
 ## Icon props
 
-| Prop               | Type               | Fallback       | Description                  |
-| ------------------ | ------------------ | -------------- | ---------------------------- |
-| `color`            | `string`           | `currentColor` | Icon color                   |
-| `size`             | `number`           | `24`           | Size in pixels (number only) |
-| `strokeWidth`      | `number \| string` | `1.5`          | Stroke width                 |
-| `secondaryColor`   | `string`           | `currentColor` | Duotone accent color         |
-| `secondaryOpacity` | `number`           | `0.5`          | Duotone accent opacity       |
-| `isolated`         | `boolean`          | `false`        | Ignores provider             |
-| `alt`              | `string`           | —              | Accessibility label          |
+| Prop               | Type               | Fallback       | Description                                                                 |
+| ------------------ | ------------------ | -------------- | --------------------------------------------------------------------------- |
+| `color`            | `string`           | `currentColor` | Icon color                                                                  |
+| `size`             | `number`           | `24`           | Size in pixels (number only)                                                |
+| `strokeWidth`      | `number \| string` | `1.5`          | Stroke width                                                                |
+| `secondaryColor`   | `string`           | `currentColor` | Duotone accent color                                                        |
+| `secondaryOpacity` | `number`           | `0.5`          | Duotone accent opacity                                                      |
+| `isolated`         | `boolean`          | `false`        | Ignores provider                                                            |
+| `alt`              | `string`           | —              | Accessibility label. Maps to `accessible` + `accessibilityLabel` on the SVG |
 
 Omit a prop to fall back to the `SolarProvider` value, then to the fallback listed above.
 
