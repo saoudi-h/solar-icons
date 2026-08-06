@@ -34,8 +34,7 @@
 - [x] **[DOCS-AUDIT]** Critical review of all V2 docs: version naming (legacy/v2-beta terminology), migration guides, prose quality (stop-slop), Diátaxis structure, code examples. Produced the global findings + fix plan in `.autonomos/worklogs/2026-08-05-DOCS-AUDIT.md`; product fixes remain separate. `Priority: 🔴` `Complexity: L`
 - [x] **[V2-PACKAGE-EXPORTS]** Repair and pack-smoke-test the Svelte, React Native, and JS public export maps; add export coverage for every documented entry point. `Priority: 🔴` `Complexity: M` *See worklogs/2026-08-06-V2-PACKAGE-EXPORTS.md*
 - [x] **[V2-RELEASE-GATES]** Fix package/docs typecheck and lint failures, make generated-artifact dependencies explicit, and add typecheck/lint/export validation to release CI. `Priority: 🔴` `Complexity: L` *See worklogs/2026-08-06-V2-RELEASE-GATES.md*
-- [ ] **[V2-DOCS-RELEASE-CONSISTENCY]** Align stable/beta messaging, npm dist-tags, install snippets, generated changelog routing/content, current-facing examples, and package README documentation. `Priority: 🔴` `Complexity: M`
-- [ ] **[V2-API-DOCS-HARDENING]** Resolve Vue plugin, Nuxt provider, Angular accessibility/dynamic-input, React Native accessibility, static-package documentation, and V2 named-import discrepancies. `Priority: 🟠` `Complexity: M`
+- [/] **[V2-API-DOCS-HARDENING]** Resolve Vue plugin, Nuxt provider, Angular accessibility/dynamic-input, React Native accessibility, static-package documentation, and V2 named-import discrepancies. `Priority: 🟠` `Complexity: M` *(Vue plugin item done 2026-08-06: `SolarIconsPlugin` now writes the `--solar-*` vars on `document.body` client-side, Nuxt pattern; docs/README updated; 5 new tests. Remaining: Nuxt provider, Angular a11y/dynamic-input, RN a11y, static docs, named-import guide.)*
 - [ ] **[V2-CODEMOD-HARDENING]** Fix multi-framework package dependency migration and add a regression fixture. `Priority: 🟠` `Complexity: S`
 
 ### V2 — Svelte audit & fix

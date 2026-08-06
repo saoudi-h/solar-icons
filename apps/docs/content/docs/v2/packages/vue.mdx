@@ -87,7 +87,7 @@ The provider does not set defaults. Icons fall back to these values through CSS 
 
 ## useSolar
 
-Returns reactive `Ref`s. Must be called inside a `<SolarProvider>`.
+Returns reactive `Ref`s. Must be called inside a `<SolarProvider>` or after installing `SolarIconsPlugin`.
 
 ```vue
 <script setup>
@@ -105,7 +105,7 @@ Keep `solar` as a single object. Vue auto-unwraps the `Ref`s when you read them 
 
 ## Vue Plugin
 
-Configure defaults globally via the Vue plugin. No `<SolarProvider>` needed.
+The plugin sets global defaults for every icon in the app without a `<SolarProvider>` wrapper. It writes the five CSS variables on `document.body` and makes `useSolar()` available in every component.
 
 ```ts
 import { createApp } from 'vue'
@@ -114,14 +114,24 @@ import App from './App.vue'
 
 const app = createApp(App)
 app.use(SolarIconsPlugin, {
-    color: 'currentColor',
+    color: '#ef4444',
     size: 24,
     strokeWidth: 1.5,
-    secondaryColor: '#3b82f6',
+    secondaryColor: '#f59e0b',
     secondaryOpacity: 0.5,
 })
 app.mount('#app')
 ```
+
+Calling `useSolar().setColor(...)` anywhere in the app updates the variables on `document.body` and restyles every icon.
+
+<Callout type="info">
+    The variables are written client-side. In server-rendered apps the first paint uses the CSS
+    fallbacks and the values apply after hydration. For an exact first paint, wrap your app in a
+    global `<SolarProvider>` instead, or set the variables in your global CSS.
+</Callout>
+
+`<SolarProvider>` is the scoped alternative: its variables apply to its subtree and win over the plugin's for that subtree. The plugin and a provider can be used together.
 
 ## Dynamic icons
 
