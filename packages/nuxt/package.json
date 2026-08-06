@@ -100,7 +100,7 @@
     "@solar-icons/vue": "workspace:*"
   },
   "devDependencies": {
-    "@nuxt/devtools": "4.0.0-alpha.7",
+    "@nuxt/devtools": "4.0.0-alpha.10",
     "@nuxt/eslint-config": "^1.16.0",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.5.2",
