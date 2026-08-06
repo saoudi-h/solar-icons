@@ -23,6 +23,16 @@ import type { IconWeight } from './types.js'
 /** Alias for {@link IconWeight} for use in the codegen layer. */
 export type Weight = IconWeight
 
+/** The six weights in canonical order (Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline). */
+export const WEIGHTS: readonly Weight[] = [
+    'Bold',
+    'BoldDuotone',
+    'Broken',
+    'Linear',
+    'LineDuotone',
+    'Outline',
+]
+
 /** The kebab-case directory name (and styles-object key) for each style. */
 export type StyleKey = 'bold' | 'bold-duotone' | 'broken' | 'linear' | 'line-duotone' | 'outline'
 

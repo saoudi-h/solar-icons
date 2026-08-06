@@ -57,9 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import { WEIGHTS } from '@solar-icons/core/runtime'
 import * as dynamic from '#solar-icons/dynamic'
-
-const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 const selectedWeight = ref<(typeof WEIGHTS)[number]>('Linear')
 const searchQuery = ref('')

@@ -9,6 +9,7 @@ import {
     parseSvgs,
     toPascalCase,
     WEIGHT_MAP,
+    WEIGHTS,
     type ParsedIcon,
     type ParsedIconGroup,
 } from '@solar-icons/core'
@@ -17,8 +18,6 @@ import { angularComponentFile, type FileDefinition } from './parser-hook'
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const DYNAMIC_PATH = path.resolve(import.meta.dirname, '../src/dynamic')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/public-api.ts')
-
-const WEIGHTS = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline'] as const
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,

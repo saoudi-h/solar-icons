@@ -14,15 +14,13 @@ status: 'active'
 
 - SolidJS ≥ 1.6 (peer).
 - Build = `pnpm generate:assets && pnpm copy:licenses && tsdown -l error`. Pure ESM, no CJS.
-- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits `.tsx` files.
-- `scripts/utils.ts` is the local helper module.
+- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits `.tsx` files, importing `parseSvgs`, `forEachIcon*`, `WEIGHTS`, `WEIGHT_MAP`, and the types from `@solar-icons/core` (no local `utils.ts`).
 
 ## 📁 Key Directories
 
 | Path                         | Description                                                |
 | ---------------------------- | ---------------------------------------------------------- |
 | `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces TSX.                     |
-| `scripts/utils.ts`           | Local helpers.                                             |
 | `src/icons/style/`           | Generated: one folder per style, one `.tsx` file per icon. |
 | `src/lib/`                   | Hand-written helpers.                                      |
 | `src/index.ts`               | Barrel re-export.                                          |

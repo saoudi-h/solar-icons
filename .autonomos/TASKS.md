@@ -65,7 +65,7 @@
 
 - [x] **[CLEAN-05]** Svelte now declares `peerDependencies.svelte: ">= 5.0.0"`, matching its Runes-based source. Verified 2026-07-29.
 - [x] **[CLEAN-06]** Vue, Svelte, React Native, and Solid dynamic icons now use `StyleComponentsMap<T>` from `@solar-icons/core/runtime`. Verified 2026-07-29.
-- [ ] **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** CORE-ARCH.
+- [x] **[CLEAN-07+08]** Move `applyDuotoneStyle`, `StyleComponents`, `Weight` types, and `dynamic-icon` template into `@solar-icons/core` for cross-package reuse. **Depends on:** CORE-ARCH. *(Closed 2026-08-06: audit found `applyDuotoneStyle`, `Weight`, `StyleComponentsMap<T>`, `WEIGHT_MAP` were already core-owned and consumed by all packages (CLEAN-06/CORE-ARCH verification); the last real duplication was the `WEIGHTS` array (6 identical copies in the generators + 1 in the Nuxt playground). Added `WEIGHTS` to `packages/core/src/codegen.ts` (canonical order, `readonly Weight[]`), switched all 6 `generate-assets.ts` + the Nuxt playground to import it (nuxt gains `@solar-icons/core` as devDependency). All 6 packages regenerated; tests/typecheck/lint/build green (monorepo 18/18, lint 26/26).)*
 - [x] **[CLEAN-10]** Closed 2026-07-29: Angular retains its directive-on-`<svg>` API as an intentional framework-native divergence. No unification is planned.
 - [x] **[CORE-ARCH]** Path A decided 2026-06-25: core exports codegen helpers and all six framework generators import from `@solar-icons/core`; no generator imports `core/src`. Verified 2026-07-29.
 
