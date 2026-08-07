@@ -1,5 +1,28 @@
 # @solar-icons/solid
 
+## 2.0.0
+
+### Breaking Changes
+
+- **`Icon` suffix on every component name.** `Home` is now `HomeIcon`.
+- **Per-style import paths.** Category imports are gone. Import per style (`@solar-icons/solid/bold`) or per icon (`@solar-icons/solid/bold/home`).
+- **`mirrored` prop removed.**
+- **Duotone props renamed.** `duotoneColor`/`duotoneOpacity` → `secondaryColor`/`secondaryOpacity`.
+- **Icon renames.** Some icon names changed (`weigher` → `scale`, ...). See the [migration guide](https://solar-icons.vercel.app/docs/v2/migration-to-v2/icon-renames).
+- **ESM-only.** `require()` no longer works.
+
+### What's New
+
+- **`<SolarProvider>` + `useSolar()`** with CSS-variable theming (`--solar-color`, `--solar-size`, `--solar-stroke-width`, `--solar-secondary-color`, `--solar-secondary-opacity`).
+- **Dynamic icons** (`@solar-icons/solid/dynamic`) with runtime `weight` switching.
+- **Migration codemod**: `npx @solar-icons/codemod` migrates v1 projects automatically.
+
+### Patch Changes
+
+- [#513](https://github.com/saoudi-h/solar-icons/pull/513) [`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: resolve inline style specificity preventing utility classes from overriding icon size
+
+- [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
+
 ## 2.0.0-beta.3
 
 ### Patch Changes
