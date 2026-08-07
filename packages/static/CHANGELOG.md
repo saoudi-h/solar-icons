@@ -1,5 +1,15 @@
 # @solar-icons/static
 
+## 2.0.0
+
+### Minor Changes
+
+- [#508](https://github.com/saoudi-h/solar-icons/pull/508) [`55f7893`](https://github.com/saoudi-h/solar-icons/commit/55f7893f7dcd0888bb0efe606e84da10e2f205b2) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Enrich icon metadata with specific tags to improve search accuracy
+
+### Patch Changes
+
+- [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
+
 ## 2.0.0-beta.3
 
 ### Patch Changes

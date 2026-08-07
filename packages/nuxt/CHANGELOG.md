@@ -1,5 +1,16 @@
 # @solar-icons/nuxt
 
+## 2.0.0
+
+### Patch Changes
+
+- [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Keep the module defaults (color `currentColor`, size 24, stroke width 1.5, secondary color `currentColor`, secondary opacity 0.5) when only some styling options are set on `solarIcons`, instead of dropping the unset ones. The module now also warns when styling options are ignored because `provider: false` is set.
+
+- [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
+
+- Updated dependencies [[`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7), [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d), [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820)]:
+    - @solar-icons/vue@2.0.0
+
 ## 2.0.0-beta.3
 
 ### Patch Changes

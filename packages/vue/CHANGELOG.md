@@ -1,5 +1,15 @@
 # @solar-icons/vue
 
+## 2.0.0
+
+### Patch Changes
+
+- [#513](https://github.com/saoudi-h/solar-icons/pull/513) [`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: resolve inline style specificity preventing utility classes from overriding icon size
+
+- [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - SolarIconsPlugin now applies the configured defaults as `--solar-*` CSS variables on `document.body` (client side), so icons pick up the plugin config without a `<SolarProvider>`. `useSolar()` works in any component after installing the plugin, and calling `setColor`/`setSize` updates every icon.
+
+- [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
+
 ## 2.0.0-beta.3
 
 ### Patch Changes
