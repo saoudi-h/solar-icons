@@ -200,7 +200,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         }: MultipleSelectorProps,
         ref: React.Ref<MultipleSelectorRef>
     ) => {
-        const inputRef = React.useRef<HTMLInputElement>(null)
+        const inputRef = React.useRef<HTMLInputElement | null>(null)
         const [open, setOpen] = React.useState(false)
         const [onScrollbar, setOnScrollbar] = React.useState(false)
         const [isLoading, setIsLoading] = React.useState(false)
@@ -218,7 +218,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
             () => ({
                 selectedValue: [...selected],
                 input: inputRef.current as HTMLInputElement,
-                focus: () => inputRef?.current?.focus(),
+                focus: () => inputRef.current?.focus(),
                 reset: () => setSelected([]),
             }),
             [selected]
@@ -294,7 +294,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
             if (!arrayOptions || onSearch) {
                 return
             }
-            const newOption = transToGroupOption(arrayOptions || [], groupBy)
+            const newOption = transToGroupOption(arrayOptions, groupBy)
             if (JSON.stringify(newOption) !== JSON.stringify(options)) {
                 // eslint-disable-next-line react-hooks/set-state-in-effect
                 setOptions(newOption)
@@ -471,11 +471,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     )}
                     onClick={() => {
                         if (disabled) return
-                        inputRef?.current?.focus()
+                        inputRef.current?.focus()
                     }}
                     onKeyDown={e => {
                         if (e.key === 'Enter') {
-                            inputRef?.current?.focus()
+                            inputRef.current?.focus()
                         }
                     }}>
                     {selected.length < 1 ||
@@ -502,11 +502,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 `,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircleIcon
-                                weight="Bold"
-                                isolated
-                                className={`drop-shadow-md`}
-                            />
+                            <CloseCircleIcon weight="Bold" isolated className={`
+                              drop-shadow-md
+                            `} />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -540,9 +538,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                               focus:ring-2 focus:ring-ring
                                               focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) && `
-                                              hidden
-                                            `
+                                            (disabled || option.fixed) &&
+                                                `hidden`
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -623,7 +620,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 setOnScrollbar(true)
                             }}
                             onMouseUp={() => {
-                                inputRef?.current?.focus()
+                                inputRef.current?.focus()
                             }}>
                             {isLoading ? (
                                 <>{loadingIndicator}</>
@@ -632,10 +629,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem
-                                            value="-"
-                                            className={`hidden`}
-                                        />
+                                        <CommandItem value="-" className={`
+                                          hidden
+                                        `} />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

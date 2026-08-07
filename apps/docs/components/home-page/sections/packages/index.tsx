@@ -132,7 +132,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 custom={idx}
-                                key={item?.title}
+                                key={item.title}
                                 className="relative flex-1 p-2"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}>
@@ -217,7 +217,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                             `
                         )}>
                         {title}
-                        {status && status !== 'released' && (
+                        {status !== 'released' && (
                             <Badge variant="default" colors="default" size="sm">
                                 {status}
                             </Badge>

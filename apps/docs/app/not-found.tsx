@@ -21,7 +21,7 @@ const NotFound = () => {
     const [hasHistory, setHasHistory] = useState(false)
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.history) {
+        if (typeof window !== 'undefined') {
             // eslint-disable-next-line
             setHasHistory(window.history.length > 1)
         }

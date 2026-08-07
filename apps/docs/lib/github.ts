@@ -74,8 +74,6 @@ export async function onRateAction(url: string, feedback: Feedback): Promise<Act
     'use server'
     const octokit = await getOctokit()
     const destination = await getFeedbackDestination()
-    if (!octokit || !destination) throw new Error('GitHub comment integration is not configured.')
-
     const category = destination.discussionCategories.nodes.find(
         category => category.name === DocsCategory
     )

@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: ReactNode }): React.Rea
     // the icons frame to reach the bottom of the document —
     // breaking the immersive, two-internal-scrolls layout. Drop
     // the Footer on the icons route only.
-    const isIconsPage = pathname === '/icons' || pathname?.startsWith('/icons/')
+    const isIconsPage = pathname === '/icons' || pathname.startsWith('/icons/')
 
     return (
         <HomeLayout {...homeOptions}>

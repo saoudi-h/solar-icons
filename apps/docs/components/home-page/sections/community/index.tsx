@@ -3,6 +3,7 @@ import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
 import { Heading } from '@/components/ui/heading'
 import NumberFlow from '@number-flow/react'
+import type { IconWeight } from '@solar-icons/core/runtime'
 import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
 import { AltArrowUpIcon } from '@solar-icons/react/dynamic/alt-arrow-up'
 import { ArrowRightUpIcon } from '@solar-icons/react/dynamic/arrow-right-up'
@@ -187,9 +188,9 @@ export const CommunitySection = () => {
                           md:col-span-7
                         ">
                         {/* Title & Copy */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-col gap-4">
+                        <motion.div variants={itemVariants} className="
+                          flex flex-col gap-4
+                        ">
                             <Heading
                                 size="h1"
                                 className="
@@ -220,21 +221,21 @@ export const CommunitySection = () => {
                         {/* Stats Dashboard Grid */}
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Weekly Downloads" value={stats.downloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Icons" value={7476} />
                             </motion.div>
                             {/* Stat Card 3: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="
+                              flex-1
+                            ">
                                 <StatCard title="Total Packages" value={8} />
                             </motion.div>
                         </div>
@@ -292,7 +293,9 @@ const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
 }
 
 // Geometric Icon Grid layout (5x5, middle column 2 row 2 is empty for the button)
-const gridIcons = [
+type GridIcon = React.ComponentType<{ size?: number; weight?: IconWeight }> | null
+
+const gridIcons: GridIcon[][] = [
     [HeartIcon, LikeIcon, ShieldCheckIcon, GlobalIcon, LinkIcon, MinimalisticMagnifierIcon],
     [
         PaletteRoundIcon,
@@ -336,12 +339,9 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
                     {gridIcons.map((row, rowIndex) =>
                         row.map((IconComponent, colIndex) => {
                             if (IconComponent === null) {
-                                return (
-                                    <div
-                                        key="center-placeholder"
-                                        className="size-full"
-                                    />
-                                )
+                                return <div key="center-placeholder" className="
+                                  size-full
+                                " />
                             }
 
                             return (
