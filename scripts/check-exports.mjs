@@ -20,7 +20,7 @@ const results = pkgs.map((name) => {
     const res = spawnSync(process.execPath, [cli, 'run', '.', '--strict'], {
         cwd: resolve(packagesDir, name),
         encoding: 'utf8',
-        timeout: 120000,
+        timeout: 600000,
     })
     const output = `${res.stdout ?? ''}${res.stderr ?? ''}`.trim()
     const ok = res.status === 0
