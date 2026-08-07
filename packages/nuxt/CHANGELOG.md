@@ -2,6 +2,18 @@
 
 ## 2.0.0
 
+### Breaking Changes
+
+- **Module options reworked.** `color`, `size`, `strokeWidth`, `weight` were removed from `SolarNuxtModuleOptions` in early v2 betas; the final API is `namePrefix`, `autoImport`, `provider` (default `true`), and the styling options `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity` (applied when `provider: true`).
+- **Auto-imported names changed.** `{prefix}{IconName}{Style}Icon` for the main barrel, `{prefix}{IconName}Icon` for dynamic icons.
+- **`mirrored` option removed.**
+
+### What's New
+
+- **Global provider mode** (`provider: true`): the module provides a global `SolarState` and writes `--solar-*` variables on `document.body` (client side). `useSolar()` works anywhere.
+- **Dynamic icons** auto-imported with runtime `weight` switching.
+- **`#solar-icons` aliases** for explicit imports with full TypeScript support.
+
 ### Patch Changes
 
 - [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Keep the module defaults (color `currentColor`, size 24, stroke width 1.5, secondary color `currentColor`, secondary opacity 0.5) when only some styling options are set on `solarIcons`, instead of dropping the unset ones. The module now also warns when styling options are ignored because `provider: false` is set.

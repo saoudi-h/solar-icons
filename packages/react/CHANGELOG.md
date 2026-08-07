@@ -2,6 +2,23 @@
 
 ## 2.0.0
 
+### Breaking Changes
+
+- **`@solar-icons/react-perf` is merged into `@solar-icons/react` and discontinued.** Replace `@solar-icons/react-perf` imports with `@solar-icons/react`. The migration codemod does this automatically.
+- **`/ssr` entry removed.** Use dynamic icons (`@solar-icons/react/dynamic`) for runtime weight switching.
+- **Per-style import paths.** Category imports and the top-level `styled` export are gone. Import per style (`@solar-icons/react/bold`) or per icon (`@solar-icons/react/bold/home`).
+- **`Icon` suffix on every component name.** `Home` is now `HomeIcon`.
+- **`mirrored` prop removed.**
+- **Duotone props renamed.** `duotoneColor`/`duotoneOpacity` → `secondaryColor`/`secondaryOpacity`.
+- **Icon renames.** Some icon names changed (`weigher` → `scale`, ...). See the [migration guide](https://solar-icons.vercel.app/docs/v2/migration-to-v2/icon-renames).
+- **ESM-only.** `require()` no longer works.
+
+### What's New
+
+- **`<SolarProvider>` + `useSolar()`** with CSS-variable theming (`--solar-color`, `--solar-size`, `--solar-stroke-width`, `--solar-secondary-color`, `--solar-secondary-opacity`).
+- **Dynamic icons** (`@solar-icons/react/dynamic`) with runtime `weight` switching.
+- **Migration codemod**: `npx @solar-icons/codemod` migrates v1 projects automatically.
+
 ### Patch Changes
 
 - [#513](https://github.com/saoudi-h/solar-icons/pull/513) [`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: resolve inline style specificity preventing utility classes from overriding icon size

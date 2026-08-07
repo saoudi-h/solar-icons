@@ -2,6 +2,10 @@
 
 ## 2.0.0
 
+### What's New
+
+New package: vanilla-JS DOM injection with `createIcons` and style selector helpers. No framework required.
+
 ### Patch Changes
 
 - [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`9fa6eeb`](https://github.com/saoudi-h/solar-icons/commit/9fa6eeb4e6bada001510bc7804756f401f99379f) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix the public export maps so every documented entry point resolves to a real published file:

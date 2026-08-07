@@ -2,6 +2,24 @@
 
 ## 2.0.0
 
+### Breaking Changes
+
+- **No CSS variables.** Theming goes through `<SolarProvider>` (React context) and props: `prop → provider → default`.
+- **`size` is a number only** (pixels).
+- **`alt` maps to `accessible` + `accessibilityLabel`** on the SVG.
+- **`Icon` suffix on every component name.** `Home` is now `HomeIcon`.
+- **Per-style import paths.** Category imports are gone. Import per style (`@solar-icons/react-native/bold`) or per icon (`@solar-icons/react-native/bold/home`).
+- **`mirrored` prop removed.**
+- **Duotone props renamed.** `duotoneColor`/`duotoneOpacity` → `secondaryColor`/`secondaryOpacity`.
+- **Icon renames.** Some icon names changed (`weigher` → `scale`, ...). See the [migration guide](https://solar-icons.vercel.app/docs/v2/migration-to-v2/icon-renames).
+- **ESM-only.** `require()` no longer works.
+
+### What's New
+
+- **`<SolarProvider>` + `useSolar()`** (React context) for global defaults.
+- **Dynamic icons** (`@solar-icons/react-native/dynamic`) with runtime `weight` switching.
+- **Migration codemod**: `npx @solar-icons/codemod` migrates v1 projects automatically.
+
 ### Patch Changes
 
 - [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`9fa6eeb`](https://github.com/saoudi-h/solar-icons/commit/9fa6eeb4e6bada001510bc7804756f401f99379f) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix the public export maps so every documented entry point resolves to a real published file:

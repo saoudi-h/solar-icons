@@ -2,6 +2,10 @@
 
 ## 2.0.0
 
+### What's New
+
+New package: conservative v1 → v2 migration CLI (`npx @solar-icons/codemod`), framework-aware, dry-run by default.
+
 ### Patch Changes
 
 - [#523](https://github.com/saoudi-h/solar-icons/pull/523) [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Migrate every Solar Icons v1 dependency in a section, not just `@solar-icons/react-perf`: projects with react-perf plus Vue, React, React Native, or other framework packages in the same dependency section were previously left partially migrated.
