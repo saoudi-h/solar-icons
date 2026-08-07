@@ -1,5 +1,11 @@
 # @solar-icons/vue
 
+## 2.0.1
+
+### Patch Changes
+
+- [`db82d4a`](https://github.com/saoudi-h/solar-icons/commit/db82d4ae32ffa2df1caf037dfa744037f08ebbff) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Publish the stable release as 2.0.1: the `2.0.0` version string cannot be republished because an unpublished 2025 build left a permanent tombstone on the npm registry (E400 "Cannot publish over previously published version").
+
 ## 2.0.0
 
 ### Breaking Changes
