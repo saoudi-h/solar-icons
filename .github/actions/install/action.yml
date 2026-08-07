@@ -23,6 +23,9 @@ runs:
               registry-url: 'https://registry.npmjs.org'
               cache: 'pnpm'
 
+        - name: Set up Bun
+          uses: oven-sh/setup-bun@v2
+
         - name: Setup Git User
           shell: bash
           run: |
