@@ -8,7 +8,7 @@ import { Cards, Card } from 'fumadocs-ui/components/card'
 
 Solar Icons gives you 1,246 distinct icons in six styles: **Bold**, **Linear**, **Outline**, **BoldDuotone**, **LineDuotone**, and **Broken**. With 7,476 total variations.
 
-## Frameworks
+## Packages
 
 <Cards>
     <Card
@@ -46,13 +46,23 @@ Solar Icons gives you 1,246 distinct icons in six styles: **Bold**, **Linear**, 
         title="Nuxt"
         description="Nuxt 3+ module with auto-import and configurable prefix."
     />
+    <Card
+        href="/docs/v2/packages/static"
+        title="Static"
+        description="Framework-agnostic SVGs, sprites, and string modules. Zero JS required."
+    />
+    <Card
+        href="/docs/v2/packages/js"
+        title="JS"
+        description="Vanilla DOM injection with zero VDOM overhead. No framework required."
+    />
 </Cards>
 
 ## What changed in v2
 
 The v2 release unifies the library under a single API across every framework.
 
-- **One package per framework.** `@solar-icons/react`, `@solar-icons/vue`, `@solar-icons/svelte`, `@solar-icons/solid`, `@solar-icons/angular`, `@solar-icons/react-native`, and `@solar-icons/nuxt`. V2 merges `@solar-icons/react-perf` into `@solar-icons/react`.
+- **One package per framework.** `@solar-icons/react`, `@solar-icons/vue`, `@solar-icons/svelte`, `@solar-icons/solid`, `@solar-icons/angular`, `@solar-icons/react-native`, and `@solar-icons/nuxt`. Framework-free options: `@solar-icons/static` and `@solar-icons/js`. V2 merges `@solar-icons/react-perf` into `@solar-icons/react`.
 - **Classic mode by default.** Every icon ships with a single style per component, tree-shakable at the import level. Dynamic style switching uses a separate `dynamic` import path.
 - **CSS variable cascade.** `SolarProvider` sets `--solar-color`, `--solar-size`, `--solar-stroke-width`, and duotone variables on a wrapper element. Icons inherit these through normal CSS inheritance, no re-renders on change.
 - **Duotone built in.** `secondaryColor` and `secondaryOpacity` props control the duotone accent path.
