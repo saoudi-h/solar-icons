@@ -1,5 +1,14 @@
 # @solar-icons/nuxt
 
+## 2.0.1
+
+### Patch Changes
+
+- [`db82d4a`](https://github.com/saoudi-h/solar-icons/commit/db82d4ae32ffa2df1caf037dfa744037f08ebbff) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Republish as 2.0.1 so the pinned `@solar-icons/vue` dependency resolves: the published 2.0.0 pinned `@solar-icons/vue` at the exact (unavailable) `2.0.0` version.
+
+- Updated dependencies [[`db82d4a`](https://github.com/saoudi-h/solar-icons/commit/db82d4ae32ffa2df1caf037dfa744037f08ebbff)]:
+    - @solar-icons/vue@2.0.1
+
 ## 2.0.0
 
 ### Breaking Changes
