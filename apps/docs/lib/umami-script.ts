@@ -17,9 +17,21 @@ export const revalidate = SCRIPT_CACHE_SECONDS
 type UmamiScript = 'loader.js' | 'recorder.js'
 
 export async function getUmamiScript(script: UmamiScript) {
-    const scriptUrl = new URL(`/${script}`, env.NEXT_PUBLIC_UMAMI_URL)
+    const umamiUrl = env.NEXT_PUBLIC_UMAMI_URL
+
+    if (!umamiUrl) {
+        return new Response('Umami is not configured', {
+            status: 503,
+            headers: {
+                'Cache-Control': ERROR_CACHE_CONTROL,
+                'Content-Type': 'text/plain; charset=utf-8',
+            },
+        })
+    }
 
     try {
+        const scriptUrl = new URL(`/${script}`, umamiUrl)
+
         const response = await fetch(scriptUrl, {
             headers: {
                 Accept: 'application/javascript, text/javascript;q=0.9, */*;q=0.1',
