@@ -8,14 +8,16 @@ export function Analytics() {
         <>
             <Script
                 defer
-                src={`${env.NEXT_PUBLIC_UMAMI_URL}/loader.js`}
+                src="/p.js"
+                data-host-url={env.NEXT_PUBLIC_UMAMI_URL}
                 data-website-id={env.NEXT_PUBLIC_UMAMI_ID}
                 data-performance="true"
                 strategy="afterInteractive"
             />
             <Script
                 defer
-                src={`${env.NEXT_PUBLIC_UMAMI_URL}/recorder.js`}
+                src="/r.js"
+                data-host-url={env.NEXT_PUBLIC_UMAMI_URL}
                 data-website-id={env.NEXT_PUBLIC_UMAMI_ID}
                 data-sample-rate="0.15"
                 data-mask-level="moderate"
