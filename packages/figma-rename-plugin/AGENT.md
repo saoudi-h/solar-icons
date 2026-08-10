@@ -1,16 +1,16 @@
 # AGENT: packages/figma-rename-plugin
 
 - **Type:** Figma plugin source. Not a pnpm workspace member (no `package.json`).
-- **Role:** Renames icon components in the local Figma file according to the V3 source-of-truth fix (issue saoudi-h/solar-icons#493). Runs inside Figma's plugin sandbox, never from the command line.
+- **Role:** Renames icon components in the local Figma file according to the v2 icon-rename fix (issue saoudi-h/solar-icons#493). Runs inside Figma's plugin sandbox, never from the command line.
 
 ## Files
 
-| File | Role |
-|---|---|
-| `code.js` | Plugin entrypoint. Holds the `RENAMES` map (kebab-case keys and values). Walks the document with `figma.root.findAllWithCriteria({ types: ['COMPONENT'] })`, converts each `IconName` segment to kebab-case via `toKebab`, matches against `RENAMES`, and computes the new Figma-form name via `toFigmaName`. Applies renames on user confirmation, with per-component try/catch and progress reporting. |
-| `ui.html` | Plugin UI. Lists every planned rename (`Old name → New name`) before applying. Apply and Cancel buttons. Progress bar during application. |
-| `manifest.json` | Figma plugin manifest. `id: "solar-icon-renamer"`. |
-| `README.md` | Install + use instructions, rename map table, post-plugin workflow. |
+| File            | Role                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `code.js`       | Plugin entrypoint. Holds the `RENAMES` map (kebab-case keys and values). Walks the document with `figma.root.findAllWithCriteria({ types: ['COMPONENT'] })`, converts each `IconName` segment to kebab-case via `toKebab`, matches against `RENAMES`, and computes the new Figma-form name via `toFigmaName`. Applies renames on user confirmation, with per-component try/catch and progress reporting. |
+| `ui.html`       | Plugin UI. Lists every planned rename (`Old name → New name`) before applying. Apply and Cancel buttons. Progress bar during application.                                                                                                                                                                                                                                                                |
+| `manifest.json` | Figma plugin manifest. `id: "solar-icon-renamer"`.                                                                                                                                                                                                                                                                                                                                                       |
+| `README.md`     | Install + use instructions, rename map table, post-plugin workflow.                                                                                                                                                                                                                                                                                                                                      |
 
 ## Rename matching
 
@@ -26,7 +26,7 @@ The new Figma-form is `toFigmaName(newKebab)`: each kebab word capitalized, join
 
 ## When to use
 
-Once per V3 release cycle, after deciding to apply the rename map. The maintainer opens the local Figma file (`Solar Icons Set - Fixed`), runs the plugin, reviews the preview, clicks Apply. After the plugin finishes, the maintainer runs `pnpm generate:svgs` in `packages/core` to refresh `svgs/` and `metadata.json`. `src/metadata-descriptions.json` is remapped manually (separate task).
+Once per release cycle, after deciding to apply the rename map. The maintainer opens the local Figma file (`Solar Icons Set - Fixed`), runs the plugin, reviews the preview, clicks Apply. After the plugin finishes, the maintainer runs `pnpm generate:svgs` in `packages/core` to refresh `svgs/` and `metadata.json`. `src/metadata-descriptions.json` is remapped manually (separate task).
 
 ## Constraints
 
@@ -54,4 +54,4 @@ To adopt a different target, edit the `RENAMES` map in `code.js` and hot-reload 
 
 - `packages/figma-fix-plugin/` — sibling plugin that repairs the upstream `fill` vs `stroke` anomalies. Different concern (geometry vs naming). Kept separate.
 - `packages/core/src/scripts/generate-svgs.ts` — the Figma-fetch script that pulls components into `svgs/`. The plugin updates the Figma file; the script pulls the result.
-- `packages/core/src/utils.ts` (`ICON_RENAMES`, `fixIconName`) — the pre-V3 backward-compat shim. The plugin makes it unnecessary for the renames it covers, but other entries (`Magnifer`, `Minimalistic`, etc.) remain until a future run of the plugin handles them.
+- `packages/core/src/utils.ts` (`ICON_RENAMES`, `fixIconName`) — the pre-v2 backward-compat shim. The plugin makes it unnecessary for the renames it covers, but other entries (`Magnifer`, `Minimalistic`, etc.) remain until a future run of the plugin handles them.

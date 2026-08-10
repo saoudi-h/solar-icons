@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/react-native@1.1.1`. React Native distribution of Solar Icons, built on `react-native-svg`. Ships unit-per-style components: one `.tsx` file per icon per style, statically importable.
+`@solar-icons/react-native` (v2 stable). React Native distribution of Solar Icons, built on `react-native-svg`. Ships unit-per-style components: one `.tsx` file per icon per style, statically importable. Dynamic icons (runtime-switchable) live under `src/icons/dynamic/`.
 
 ## ⚙️ Conventions
 
@@ -19,7 +19,7 @@ status: 'active'
 - Duotone icons read `secondaryColor`/`secondaryOpacity` from both props and `SolarContext` (no CSS vars in RN).
 - `IconBase` reads `color`, `size`, `strokeWidth` defaults from `SolarContext` (React Context).
 - Props use `secondaryColor`/`secondaryOpacity` consistently everywhere (SolarProvider context, IconProps, generated code).
-- `mirrored` prop is removed (V3 decision).
+- `mirrored` prop is removed (v2).
 
 ## 📁 Key Directories
 
@@ -44,12 +44,11 @@ status: 'active'
 - **`alt` maps to `accessible` + `accessibilityLabel`** on the `<Svg>` (after `{...restProps}` so `alt` wins over a user-provided `accessibilityLabel`). `alt` lives on both `IconBaseProps` and `IconProps`.
 - **Published single-icon subpaths must mirror the generated style directories:** use `./bold/*`, `./bold-duotone/*`, `./broken/*`, `./linear/*`, `./line-duotone/*`, and `./outline/*` export patterns; a generic wildcard must not map to a nonexistent `dist/icons/style` directory.
 - **Source SVG `<g>` grouping matters for duotone**: paths tagged as the duotone accent layer must be groupable in Figma so the generator can target them.
-- **`tsdown` regression (DEBUG-01/02/03)**: same caveat as other packages if a `bin` is ever added.
+- **`tsdown` `exports: true` rewrites the `bin` field on every build**: if a `bin` is ever added, declare it via `exports: { bin: { ... } }`.
 
-## V3 Propagation (2026-06-24)
+## v2 API shape
 
-- Directory structure is now flat (no categories). All icon files live directly under `src/icons/<style>/`.
-- `forwardRef` removed; components now use the `ref` prop directly (React 19 pattern).
+- Flat `src/icons/<style>/` tree (no category dirs).
+- `forwardRef` removed — components use the `ref` prop directly (React 19 pattern).
 - `displayName` removed from generated components.
 - `Icon` type simplified (no `ForwardRefExoticComponent`).
-- Dynamic exports added: `src/icons/dynamic/` with 1246 per-icon files and `DynamicIcon` component.

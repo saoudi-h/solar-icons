@@ -5,18 +5,16 @@
 
 ## Why this exists
 
-The Figma REST API rate limit on the free plan is 6 GET requests per month. The existing `packages/core/src/scripts/generate-svgs.ts` script needs one `getFile` call plus one `getImages` call per 1 000 icons — far over the budget. After the V3 icon rename in Figma (issue #493), the local `svgs/` directory is stale and the script cannot refresh it.
-
-This plugin does the same export work via `node.exportAsync({ format: 'SVG' })`, which runs locally in the Figma sandbox. No network, no rate limit.
+The Figma REST API rate limit on the free plan is 6 GET requests per month, far under what `packages/core/src/scripts/generate-svgs.ts` needs (one `getFile` call plus one `getImages` call per 1 000 icons). This plugin does the same export work via `node.exportAsync({ format: 'SVG' })`, which runs locally in the Figma sandbox. No network, no rate limit.
 
 ## Files
 
-| File | Role |
-|---|---|
-| `code.js` | Walks `figma.root.findAllWithCriteria({ types: ['COMPONENT'] })`. For each, parses the name (convention `Style / Category / IconName`), builds the target on-disk path `svgs/{kebab-category}/{Style}/{kebab-icon}.svg`, exports the component as SVG bytes, and batches the result to the UI in chunks of 50. |
-| `ui.html` | Receives SVG batches, shows a progress bar, and on demand builds a ZIP file using a minimal in-page ZIP writer (no dependencies, no JSZip). Triggers a download via a temporary `<a download>` link. |
-| `manifest.json` | Figma plugin manifest. `id: "solar-icon-exporter"`. |
-| `README.md` | Install + use instructions, workflow. |
+| File            | Role                                                                                                                                                                                                                                                                                                           |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `code.js`       | Walks `figma.root.findAllWithCriteria({ types: ['COMPONENT'] })`. For each, parses the name (convention `Style / Category / IconName`), builds the target on-disk path `svgs/{kebab-category}/{Style}/{kebab-icon}.svg`, exports the component as SVG bytes, and batches the result to the UI in chunks of 50. |
+| `ui.html`       | Receives SVG batches, shows a progress bar, and on demand builds a ZIP file using a minimal in-page ZIP writer (no dependencies, no JSZip). Triggers a download via a temporary `<a download>` link.                                                                                                           |
+| `manifest.json` | Figma plugin manifest. `id: "solar-icon-exporter"`.                                                                                                                                                                                                                                                            |
+| `README.md`     | Install + use instructions, workflow.                                                                                                                                                                                                                                                                          |
 
 ## Name parsing and path
 
@@ -52,7 +50,7 @@ The UI contains a small ZIP writer (~80 lines of vanilla JS) that produces a val
 
 ## When to use
 
-Once per V3 release cycle, after the rename plugin (or any other Figma-side mass edit) has been applied. The maintainer opens the local Figma file, runs this plugin, downloads the ZIP, unzips it into `packages/core/svgs/`, and runs `pnpm generate:svgs --offline` to rebuild `metadata.json` from the new files.
+Once per release cycle, after the rename plugin (or any other Figma-side mass edit) has been applied. The maintainer opens the local Figma file, runs this plugin, downloads the ZIP, unzips it into `packages/core/svgs/`, and runs `pnpm generate:svgs --offline` to rebuild `metadata.json` from the new files.
 
 ## Constraints
 
@@ -67,5 +65,5 @@ Once per V3 release cycle, after the rename plugin (or any other Figma-side mass
 
 - `packages/figma-rename-plugin/` — sibling plugin. Rename the components in Figma first, then use this plugin to export the result.
 - `packages/core/src/scripts/generate-svgs.ts` — the REST-API-based script this plugin replaces for the local refresh. Still used in `--offline` mode (after the ZIP is unzipped) to rebuild `metadata.json`.
-- `packages/core/src/parser.ts` — the V3 parser that consumes the SVGs from `svgs/`.
+- `packages/core/src/parser.ts` — the parser that consumes the SVGs from `svgs/`.
 - `packages/core/src/utils.ts` (`toKebabCase`) — the kebab-case helper duplicated in `code.js` because Figma plugins cannot `require` from the workspace.

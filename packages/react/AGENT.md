@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/react@3.0.0`. The **recommended** React package. Ships unit-per-style components with CSS custom properties, CSS classes (`solar`/`solar-{kebab}`), `<SolarProvider>`, and `useSolar()` hook. One component per icon, statically importable.
+`@solar-icons/react` (v2 stable). The **recommended** React package. Ships unit-per-style components with CSS custom properties, CSS classes (`solar`/`solar-{kebab}`), `<SolarProvider>`, and `useSolar()` hook. One component per icon, statically importable.
 
 ## ⚙️ Conventions
 
@@ -22,7 +22,7 @@ status: 'active'
 - `tsc --build` for types.
 - Vitest 4 when tests are added.
 
-## 🔧 CSS vars + classes + provider (V3-16a)
+## 🔧 CSS vars + classes + provider
 
 - **`lib/IconBase.tsx`**: Classes `solar` + `solar-{kebab}`, `aria-hidden="true"` by default, `secondaryColor`/`secondaryOpacity` props, user `className` merged (our computed className comes AFTER `{...restProps}` so the `solar` prefix is never dropped), user `style` merged.
     - **Color/size**: set as **SVG presentation attributes** with `var()` fallback for color and `font-size` inheritance for size. e.g. `width="1em"` and `style={{ fontSize: 'var(--solar-size, 24px)' }}`. SVG attrs have CSS specificity 0, so Tailwind/className overrides (`text-blue-500`, `w-8`) **work freely** without conflict.
@@ -39,4 +39,4 @@ status: 'active'
 
 - **Output is `dist/icons/style/<name>.mjs`** — the cleanest output in the monorepo and the reference shape for what a unit-per-style package looks like.
 - **Vite is not used in this package** — `tsdown` is the only bundler.
-- **`tsdown` regression (DEBUG-01/02/03 in worklogs)**: this package has no `bin` today, so it is not affected, but the same `exports: { bin: { ... } }` idiom applies if a bin is ever added.
+- **`tsdown` `exports: true` rewrites the `bin` field on every build**: this package has no `bin` today, so it is not affected, but if a `bin` is ever added, declare it via `exports: { bin: { ... } }`.
