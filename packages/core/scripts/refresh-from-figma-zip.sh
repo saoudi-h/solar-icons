@@ -17,10 +17,14 @@
 #   1. Sanity-checks the ZIP (exists, contains a 'svgs/' directory).
 #   2. Wipes packages/core/svgs/.
 #   3. Unzips the contents (the ZIP root is the 'svgs/' directory).
-#   4. Runs `pnpm generate:svgs --offline` to rebuild
+#   4. Runs the icon metadata gate (`pnpm check:icons-metadata`) — new icons
+#      without hand-curated metadata (or without an explicit `origin`) abort
+#      the refresh; run `pnpm fix:icons-metadata` for draft entries, then
+#      re-run this script.
+#   5. Runs `pnpm generate:svgs --offline` to rebuild
 #      src/metadata.json from the new files.
-#   5. Removes the ZIP.
-#   6. Prints a `git status` summary of the changes.
+#   6. Removes the ZIP.
+#   7. Prints a `git status` summary of the changes.
 #
 # After running, the typical follow-up is:
 #   - `git diff svgs/ src/metadata.json` to inspect the changes.
@@ -65,6 +69,9 @@ unzip -q "$ZIP_PATH"
 # Quick sanity check
 SVG_COUNT=$(find "$SVGS_DIR" -name "*.svg" | wc -l | tr -d ' ')
 echo "    Extracted $SVG_COUNT SVG files."
+
+echo "==> Checking icon metadata coverage (gate) ..."
+pnpm check:icons-metadata
 
 echo "==> Rebuilding metadata ..."
 pnpm generate:svgs --offline
