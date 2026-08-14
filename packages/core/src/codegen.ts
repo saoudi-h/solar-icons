@@ -19,7 +19,6 @@
  */
 
 import type { IconDescription, IconWeight } from './types.js'
-import { toPascalCase } from './utils.js'
 
 /** Alias for {@link IconWeight} for use in the codegen layer. */
 export type Weight = IconWeight
@@ -59,15 +58,22 @@ export const WEIGHT_MAP: Readonly<Record<Weight, StyleKey>> = {
  * dynamic barrels, so `import { AddIcon }` resolves to the `plus`
  * component. The schema (`check:descriptions`) guarantees aliases do
  * not collide with real icon names or other entries' aliases.
+ *
+ * IMPORTANT: this module is re-exported by `core/runtime` (consumed in
+ * browser contexts, e.g. the docs icon explorer). It must stay free of
+ * Node-only imports — hence the inline pascal conversion instead of
+ * `toPascalCase` from `utils.ts` (which pulls `node:fs`).
  */
 export function buildAliasMap(descriptions: readonly IconDescription[]): Map<string, string[]> {
     const aliasMap = new Map<string, string[]>()
+    const toPascalAlias = (alias: string): string =>
+        alias
+            .split('-')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+            .join('')
     for (const entry of descriptions) {
         if (!entry.aliases?.length) continue
-        aliasMap.set(
-            entry.name,
-            entry.aliases.map(alias => toPascalCase(alias))
-        )
+        aliasMap.set(entry.name, entry.aliases.map(toPascalAlias))
     }
     return aliasMap
 }
