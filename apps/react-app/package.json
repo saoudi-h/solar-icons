@@ -3,9 +3,10 @@
   "version": "2.0.0-beta.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm generate:icons && next dev",
+    "build": "pnpm generate:icons && next build",
     "start": "next start",
+    "generate:icons": "tsx scripts/generate-icon-list.ts",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "format": "prettier \"**/*\" --ignore-unknown --list-different",

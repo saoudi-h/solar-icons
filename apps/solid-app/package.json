@@ -4,8 +4,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
+        "dev": "pnpm generate:icons && vite",
+        "build": "pnpm generate:icons && vite build",
         "preview": "vite preview",
         "clean": "rm -rf node_modules dist",
         "lint": "eslint . --max-warnings 0",

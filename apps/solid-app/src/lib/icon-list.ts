@@ -1,9 +1,10 @@
 // AUTO-GENERATED FILE - DO NOT EDIT
 // Generated from @solar-icons/core SVGs
-// Total icons: 1246
+// Total icons: 1247
 
 export const ALL_ICONS = [
     'Accessibility',
+    'Add',
     'AddCircle',
     'AddFolder',
     'AddSquare',
@@ -1253,5 +1254,12 @@ export const ALL_ICONS = [
 
 export type IconName = (typeof ALL_ICONS)[number];
 
-export const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const;
+export const STYLES = [
+    'Bold',
+    'Linear',
+    'BoldDuotone',
+    'LineDuotone',
+    'Broken',
+    'Outline',
+] as const;
 export type IconStyle = (typeof STYLES)[number];
