@@ -15120,5 +15120,15 @@
         "category": "parts",
         "categoryTags": ["automotive", "car", "vehicle", "engine", "mechanic", "transport"],
         "tags": ["scooter", "kick scooter", "moped", "motorcycle", "vespa", "ride"]
+    },
+    {
+        "name": "add",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["plus", "new", "increase", "addition", "create", "positive", "math", "more"],
+        "origin": "extended",
+        "addedAt": "2026-08-14",
+        "author": "Hakim Saoudi",
+        "state": "beta"
     }
 ]

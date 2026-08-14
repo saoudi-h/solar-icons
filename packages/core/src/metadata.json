@@ -1109,6 +1109,7 @@
             "tags": ["ui"],
             "icons": [
                 "accessibility",
+                "add",
                 "add-circle",
                 "add-square",
                 "augmented-reality",

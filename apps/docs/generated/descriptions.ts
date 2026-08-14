@@ -5,6 +5,7 @@ import {
     AccessibilityIcon,
     AddCircleIcon,
     AddFolderIcon,
+    AddIcon,
     AddSquareIcon,
     AdhesivePlaster2Icon,
     AdhesivePlasterIcon,
@@ -18657,6 +18658,18 @@ export const icons: IconData[] = [
         tags: ['scooter', 'kick scooter', 'moped', 'motorcycle', 'vespa', 'ride'],
         isNew: false,
         Icon: KickScooterIcon,
+    },
+    {
+        name: 'add',
+        category: 'ui' as Category,
+        categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+        tags: ['plus', 'new', 'increase', 'addition', 'create', 'positive', 'math', 'more'],
+        origin: 'extended',
+        addedAt: '2026-08-14',
+        author: 'Hakim Saoudi',
+        state: 'beta',
+        isNew: true,
+        Icon: AddIcon,
     },
 ]
 
