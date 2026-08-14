@@ -18,7 +18,8 @@
  *     files must use it, not duplicate it.
  */
 
-import type { IconWeight } from './types.js'
+import type { IconDescription, IconWeight } from './types.js'
+import { toPascalCase } from './utils.js'
 
 /** Alias for {@link IconWeight} for use in the codegen layer. */
 export type Weight = IconWeight
@@ -47,6 +48,28 @@ export const WEIGHT_MAP: Readonly<Record<Weight, StyleKey>> = {
     Linear: 'linear',
     LineDuotone: 'line-duotone',
     Outline: 'outline',
+}
+
+/**
+ * Build a map from icon name to its PascalCase aliases, from the
+ * hand-curated `metadata-descriptions.json` entries.
+ *
+ * Aliases are name synonyms (e.g. `add` for `plus`, issue #430). Each
+ * framework generator emits extra exports for them in its style and
+ * dynamic barrels, so `import { AddIcon }` resolves to the `plus`
+ * component. The schema (`check:descriptions`) guarantees aliases do
+ * not collide with real icon names or other entries' aliases.
+ */
+export function buildAliasMap(descriptions: readonly IconDescription[]): Map<string, string[]> {
+    const aliasMap = new Map<string, string[]>()
+    for (const entry of descriptions) {
+        if (!entry.aliases?.length) continue
+        aliasMap.set(
+            entry.name,
+            entry.aliases.map(alias => toPascalCase(alias))
+        )
+    }
+    return aliasMap
 }
 
 const DUOTONE_CSS_VARS_HTML =

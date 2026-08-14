@@ -4,6 +4,7 @@ import path from 'node:path'
 import pc from 'picocolors'
 
 import {
+    buildAliasMap,
     forEachIcon,
     forEachIconGroupedBy,
     parseSvgs,
@@ -14,6 +15,7 @@ import {
     type ParsedIconGroup,
     type Weight,
 } from '@solar-icons/core'
+import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { reactPerfComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -21,7 +23,8 @@ const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
-    groups: ReadonlyArray<ParsedIconGroup>
+    groups: ReadonlyArray<ParsedIconGroup>,
+    aliases: ReadonlyMap<string, string[]>
 ): FileDefinition[] {
     const files: FileDefinition[] = []
 
@@ -30,18 +33,27 @@ function generateIndexes(
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_MAP[weight]
         const seen = new Set<string>()
-        const content = iconsForWeight
-            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-            .filter(icon => {
-                if (seen.has(icon.pascalName)) return false
-                seen.add(icon.pascalName)
-                return true
-            })
-            .map(
-                icon =>
-                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
-            )
-            .join('\n')
+        const content = [
+            ...iconsForWeight
+                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+                .filter(icon => {
+                    if (seen.has(icon.pascalName)) return false
+                    seen.add(icon.pascalName)
+                    return true
+                })
+                .map(
+                    icon =>
+                        `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+                ),
+            ...iconsForWeight
+                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+                .flatMap(icon =>
+                    (aliases.get(icon.name) ?? []).map(
+                        alias =>
+                            `export { ${icon.pascalName}Icon as ${alias}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+                    )
+                ),
+        ].join('\n')
 
         files.push({
             path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
@@ -89,11 +101,16 @@ export * from "./icons/styled"
     })
 
     // Generate dynamic barrel index
-    const dynamicBarrelContent = groups
-        .map(g => {
+    const dynamicBarrelContent = [
+        ...groups.map(g => {
             return `export { ${g.pascalName}Icon } from './${g.name}'`
-        })
-        .join('\n')
+        }),
+        ...groups.flatMap(g =>
+            (aliases.get(g.name) ?? []).map(
+                alias => `export { ${g.pascalName}Icon as ${alias}Icon } from './${g.name}'`
+            )
+        ),
+    ].join('\n')
 
     files.push({
         path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
@@ -191,7 +208,8 @@ const main = async () => {
             return true
         })
         const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
-        const indexFiles = generateIndexes(result.icons, result.groups)
+        const aliases = buildAliasMap(descriptions)
+        const indexFiles = generateIndexes(result.icons, result.groups, aliases)
         writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))
