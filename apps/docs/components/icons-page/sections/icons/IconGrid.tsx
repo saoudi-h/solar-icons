@@ -9,6 +9,7 @@ import { Grid, List } from 'react-virtualized'
 import {
     activeCategoryAtom,
     displayedIconsAtom,
+    extendedOnlyAtom,
     filteredIconsAtom,
     useSearchKeyword,
     useSelectedIcon,
@@ -69,6 +70,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     const [keyword] = useSearchKeyword()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
+    const [extendedOnly] = useAtom(extendedOnlyAtom)
     const viewMode = useViewModeURL()[0]
     const activeCategory = useAtomValue(activeCategoryAtom)
     const selectedIcon = useSelectedIcon()
@@ -96,9 +98,11 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
 
     useEffect(() => {
         const results = searchIcons({ keyword, categories: [] })
-        setFilteredIcons(results)
+        setFilteredIcons(
+            extendedOnly ? results.filter(icon => icon.origin === 'extended') : results
+        )
         setDisplayedIcons(results)
-    }, [keyword, setFilteredIcons, setDisplayedIcons])
+    }, [keyword, extendedOnly, setFilteredIcons, setDisplayedIcons])
 
     // The measure callback is the single source of truth for the
     // grid's height. Called on mount, on `window.resize`, and
@@ -333,6 +337,21 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         const icon = filteredIcons[index]
         if (!icon) return null
         return <IconCard key={key} {...{ ...icon, style }} />
+    }
+
+    if (extendedOnly && filteredIcons.length === 0 && !keyword) {
+        return (
+            <div ref={wrapperRef} className="
+              flex size-full items-center justify-center
+            ">
+                <p className="
+                  max-w-sm text-center text-sm text-muted-foreground
+                ">
+                    No extended icons yet — they will appear here as the set grows beyond the
+                    original 480 Design collection.
+                </p>
+            </div>
+        )
     }
 
     return (

@@ -29,7 +29,22 @@ function toComponentName(name: string): string {
 }
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
-    ({ name, tags: _tags, category: _category, categoryTags: _categoryTags, ...props }, ref) => {
+    (
+        {
+            name,
+            tags: _tags,
+            category: _category,
+            categoryTags: _categoryTags,
+            origin: _origin,
+            addedAt: _addedAt,
+            author: _author,
+            state: _state,
+            aliases: _aliases,
+            isNew,
+            ...props
+        },
+        ref
+    ) => {
         const [, setIconName] = useSelectedIconName()
         const [, setStyleURL] = useStyleURL()
         const selectedIcon = useSelectedIcon()
@@ -77,7 +92,7 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 transition={{ duration: enterDuration, ease: 'easeOut' }}
                 className={cn(
                     `
-                      group flex cursor-pointer flex-col items-center
+                      group relative flex cursor-pointer flex-col items-center
                       justify-center gap-2 rounded-lg px-2 py-4
                       transition-colors duration-200
                     `,
@@ -86,6 +101,16 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                         'hover:bg-default-200/50': !isSelected,
                     }
                 )}>
+                {isNew && (
+                    <span
+                        title="Recently added"
+                        aria-label="Recently added"
+                        className="
+                          absolute top-2 right-2 size-2 rounded-full
+                          bg-green-500
+                        "
+                    />
+                )}
                 <Icon
                     weight={weight}
                     className={cn('transition-transform duration-300 ease-out', {

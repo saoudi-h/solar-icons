@@ -1258,6 +1258,12 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    aliases?: string[]
+    isNew: boolean
     Icon: ComponentType<{ weight?: Weight } & IconProps>
 }
 
@@ -1275,6 +1281,7 @@ export const icons: IconData[] = [
             'dollar',
             'finance',
         ],
+        isNew: false,
         Icon: ChatRoundMoneyIcon,
     },
     {
@@ -1282,6 +1289,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble', 'message notification'],
+        isNew: false,
         Icon: ChatUnreadIcon,
     },
     {
@@ -1289,6 +1297,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['envelope', 'unopened letter', 'mail', 'notification', 'new', 'post'],
+        isNew: false,
         Icon: LetterUnreadIcon,
     },
     {
@@ -1296,6 +1305,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech-bubble', 'message-bubble'],
+        isNew: false,
         Icon: ChatLineIcon,
     },
     {
@@ -1303,6 +1313,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['email', 'mailbox', 'mail', 'storage', 'save', 'box', 'drawer', 'files', 'keep'],
+        isNew: false,
         Icon: InboxArchiveIcon,
     },
     {
@@ -1310,6 +1321,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['video-chat', 'round-discussion'],
+        isNew: false,
         Icon: ChatRoundVideoIcon,
     },
     {
@@ -1326,6 +1338,7 @@ export const icons: IconData[] = [
             'draft',
             'author',
         ],
+        isNew: false,
         Icon: Pen2Icon,
     },
     {
@@ -1333,6 +1346,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['upload', 'share'],
+        isNew: false,
         Icon: InboxOutIcon,
     },
     {
@@ -1348,6 +1362,7 @@ export const icons: IconData[] = [
             'link',
             'pin',
         ],
+        isNew: false,
         Icon: PaperclipRounded2Icon,
     },
     {
@@ -1355,6 +1370,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubbles', 'chat', 'bubbles', 'conversation', 'talk', 'discussion', 'speak'],
+        isNew: false,
         Icon: DialogIcon,
     },
     {
@@ -1375,6 +1391,7 @@ export const icons: IconData[] = [
             'upvote',
             'approve',
         ],
+        isNew: false,
         Icon: ChatSquareLikeIcon,
     },
     {
@@ -1382,6 +1399,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['message-loop', 'dialogue-arrow'],
+        isNew: false,
         Icon: ChatSquareArrowIcon,
     },
     {
@@ -1389,6 +1407,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['share', 'send'],
+        isNew: false,
         Icon: SquareShareLineIcon,
     },
     {
@@ -1396,6 +1415,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['verified', 'tickmark', 'ticks', 'seen', 'delivered', 'done', 'double-check'],
+        isNew: false,
         Icon: CheckReadIcon,
     },
     {
@@ -1403,6 +1423,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble', 'round chat'],
+        isNew: false,
         Icon: ChatRoundIcon,
     },
     {
@@ -1410,6 +1431,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble pause', 'message pause circle'],
+        isNew: false,
         Icon: ChatRoundCallIcon,
     },
     {
@@ -1417,6 +1439,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['unread', 'message-center'],
+        isNew: false,
         Icon: InboxUnreadIcon,
     },
     {
@@ -1424,6 +1447,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['forward left arrow', 'navigation right'],
+        isNew: false,
         Icon: MultipleForwardLeftIcon,
     },
     {
@@ -1431,6 +1455,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubbles', 'communication', 'dialogue icon'],
+        isNew: false,
         Icon: ChatRoundDotsIcon,
     },
     {
@@ -1438,6 +1463,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['right arrow', 'advance sign'],
+        isNew: false,
         Icon: ForwardRightIcon,
     },
     {
@@ -1445,6 +1471,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech-bubble', 'dots'],
+        isNew: false,
         Icon: ChatDotsIcon,
     },
     {
@@ -1452,6 +1479,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble round', 'message circle'],
+        isNew: false,
         Icon: ChatRoundUnreadIcon,
     },
     {
@@ -1459,6 +1487,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['mail', 'envelope', 'communication', 'email'],
+        isNew: false,
         Icon: InboxIcon,
     },
     {
@@ -1474,6 +1503,7 @@ export const icons: IconData[] = [
             'telegram',
             'message',
         ],
+        isNew: false,
         Icon: Plane2Icon,
     },
     {
@@ -1481,6 +1511,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['mail', 'envelope', 'write', 'edit', 'pencil', 'draw', 'draft', 'author'],
+        isNew: false,
         Icon: LetterOpenedIcon,
     },
     {
@@ -1497,6 +1528,7 @@ export const icons: IconData[] = [
             'draft',
             'author',
         ],
+        isNew: false,
         Icon: PenIcon,
     },
     {
@@ -1504,6 +1536,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['pause', 'mute'],
+        isNew: false,
         Icon: ChatSquareCallIcon,
     },
     {
@@ -1511,6 +1544,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['email', 'message'],
+        isNew: false,
         Icon: InboxLineIcon,
     },
     {
@@ -1518,6 +1552,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['pen', 'writing tool', 'write', 'edit', 'pencil', 'draw', 'draft', 'author'],
+        isNew: false,
         Icon: PenNewRoundIcon,
     },
     {
@@ -1525,6 +1560,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['forward', 'send'],
+        isNew: false,
         Icon: SquareForwardIcon,
     },
     {
@@ -1532,6 +1568,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['arrow', 'symbol', 'sign', 'send', 'paper-plane', 'fly', 'telegram', 'message'],
+        isNew: false,
         Icon: Plane3Icon,
     },
     {
@@ -1539,6 +1576,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['checkmark chat bubble', 'approval message'],
+        isNew: false,
         Icon: ChatSquareCheckIcon,
     },
     {
@@ -1555,6 +1593,7 @@ export const icons: IconData[] = [
             'upvote',
             'approve',
         ],
+        isNew: false,
         Icon: ChatRoundLikeIcon,
     },
     {
@@ -1562,6 +1601,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['loop', 'curl', 'attach', 'file', 'document', 'link', 'pin'],
+        isNew: false,
         Icon: PaperclipIcon,
     },
     {
@@ -1577,6 +1617,7 @@ export const icons: IconData[] = [
             'discussion',
             'speak',
         ],
+        isNew: false,
         Icon: Dialog2Icon,
     },
     {
@@ -1584,6 +1625,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['rounded-paperclip', 'loop-symbol', 'attach', 'file', 'document', 'link', 'pin'],
+        isNew: false,
         Icon: PaperclipRoundedIcon,
     },
     {
@@ -1591,6 +1633,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['download', 'message-pocket'],
+        isNew: false,
         Icon: InboxInIcon,
     },
     {
@@ -1598,6 +1641,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['code-chat-icon', 'developer-discussion', 'programming-conversation'],
+        isNew: false,
         Icon: ChatSquareCodeIcon,
     },
     {
@@ -1605,6 +1649,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['stationery', 'clipping', 'attach', 'file', 'document', 'link', 'pin'],
+        isNew: false,
         Icon: Paperclip2Icon,
     },
     {
@@ -1612,6 +1657,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['unread-mail', 'mail-inbox-unseen'],
+        isNew: false,
         Icon: UnreadIcon,
     },
     {
@@ -1619,6 +1665,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['new-pen', 'writing-tool', 'write', 'edit', 'pencil', 'draw', 'draft', 'author'],
+        isNew: false,
         Icon: PenNewSquareIcon,
     },
     {
@@ -1626,6 +1673,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble', 'dialogue box', 'message balloon'],
+        isNew: false,
         Icon: ChatRoundLineIcon,
     },
     {
@@ -1633,6 +1681,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['speech bubble', 'message icon', 'communication symbol'],
+        isNew: false,
         Icon: ChatSquareIcon,
     },
     {
@@ -1640,6 +1689,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['check-mark', 'approval-discussion', 'verified-speech-bubble'],
+        isNew: false,
         Icon: ChatRoundCheckIcon,
     },
     {
@@ -1647,6 +1697,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['envelope', 'mail', 'post'],
+        isNew: false,
         Icon: LetterIcon,
     },
     {
@@ -1654,6 +1705,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['forward', 'next', 'arrow forward'],
+        isNew: false,
         Icon: MultipleForwardRightIcon,
     },
     {
@@ -1661,6 +1713,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['mailbox', 'post box', 'post', 'letter', 'delivery', 'receive', 'box'],
+        isNew: false,
         Icon: MailboxIcon,
     },
     {
@@ -1668,6 +1721,7 @@ export const icons: IconData[] = [
         category: 'messages' as Category,
         categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
         tags: ['signal', 'connectivity', 'send', 'paper-plane', 'fly', 'telegram', 'message'],
+        isNew: false,
         Icon: PlaneIcon,
     },
     {
@@ -1694,6 +1748,7 @@ export const icons: IconData[] = [
             'double-down',
             'bottom',
         ],
+        isNew: false,
         Icon: SquareDoubleAltArrowDownIcon,
     },
     {
@@ -1710,6 +1765,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['back', 'previous', 'box', 'two', 'west', 'chevron', 'double-left'],
+        isNew: false,
         Icon: SquareDoubleAltArrowLeftIcon,
     },
     {
@@ -1736,6 +1792,7 @@ export const icons: IconData[] = [
             'chevron',
             'double-right',
         ],
+        isNew: false,
         Icon: SquareDoubleAltArrowRightIcon,
     },
     {
@@ -1752,6 +1809,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['arrow', 'navigation', 'box', 'forward', 'next', 'chevron', 'east'],
+        isNew: false,
         Icon: SquareAltArrowRightIcon,
     },
     {
@@ -1778,6 +1836,7 @@ export const icons: IconData[] = [
             'chevron',
             'west',
         ],
+        isNew: false,
         Icon: SquareAltArrowLeftIcon,
     },
     {
@@ -1802,6 +1861,7 @@ export const icons: IconData[] = [
             'chevron',
             'bottom',
         ],
+        isNew: false,
         Icon: SquareAltArrowDownIcon,
     },
     {
@@ -1827,6 +1887,7 @@ export const icons: IconData[] = [
             'pointer',
             'direction',
         ],
+        isNew: false,
         Icon: SquareArrowLeftIcon,
     },
     {
@@ -1852,6 +1913,7 @@ export const icons: IconData[] = [
             'direction',
             'bottom',
         ],
+        isNew: false,
         Icon: SquareArrowDownIcon,
     },
     {
@@ -1868,6 +1930,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['Left arrow in square', 'Navigation left'],
+        isNew: false,
         Icon: SquareArrowLeftUpIcon,
     },
     {
@@ -1891,6 +1954,7 @@ export const icons: IconData[] = [
             'diagonal',
             'bottom-left',
         ],
+        isNew: false,
         Icon: SquareArrowLeftDownIcon,
     },
     {
@@ -1907,6 +1971,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['rightward arrow', 'right direction', 'box', 'forward', 'next', 'east', 'pointer'],
+        isNew: false,
         Icon: SquareArrowRightIcon,
     },
     {
@@ -1933,6 +1998,7 @@ export const icons: IconData[] = [
             'double-up',
             'top',
         ],
+        isNew: false,
         Icon: SquareDoubleAltArrowUpIcon,
     },
     {
@@ -1958,6 +2024,7 @@ export const icons: IconData[] = [
             'direction',
             'top',
         ],
+        isNew: false,
         Icon: SquareArrowUpIcon,
     },
     {
@@ -1984,6 +2051,7 @@ export const icons: IconData[] = [
             'up-down',
             'transaction',
         ],
+        isNew: false,
         Icon: SquareTransferVerticalIcon,
     },
     {
@@ -2000,6 +2068,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['upward arrow', 'square step', 'box', 'ascend', 'north', 'chevron', 'top'],
+        isNew: false,
         Icon: SquareAltArrowUpIcon,
     },
     {
@@ -2016,6 +2085,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['upward arrow', 'right square', 'box', 'north-east', 'diagonal', 'top-right'],
+        isNew: false,
         Icon: SquareArrowRightUpIcon,
     },
     {
@@ -2039,6 +2109,7 @@ export const icons: IconData[] = [
             'diagonal',
             'bottom-right',
         ],
+        isNew: false,
         Icon: SquareArrowRightDownIcon,
     },
     {
@@ -2065,6 +2136,7 @@ export const icons: IconData[] = [
             'chevron',
             'east',
         ],
+        isNew: false,
         Icon: RoundAltArrowRightIcon,
     },
     {
@@ -2081,6 +2153,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['left', 'return', 'circle', 'back', 'previous', 'west', 'pointer'],
+        isNew: false,
         Icon: RoundArrowLeftIcon,
     },
     {
@@ -2108,6 +2181,7 @@ export const icons: IconData[] = [
             'up-down',
             'list',
         ],
+        isNew: false,
         Icon: SquareSortVerticalIcon,
     },
     {
@@ -2133,6 +2207,7 @@ export const icons: IconData[] = [
             'chevron',
             'west',
         ],
+        isNew: false,
         Icon: RoundAltArrowLeftIcon,
     },
     {
@@ -2160,6 +2235,7 @@ export const icons: IconData[] = [
             'up-down',
             'list',
         ],
+        isNew: false,
         Icon: RoundSortVerticalIcon,
     },
     {
@@ -2186,6 +2262,7 @@ export const icons: IconData[] = [
             'left-right',
             'transaction',
         ],
+        isNew: false,
         Icon: SquareTransferHorizontalIcon,
     },
     {
@@ -2209,6 +2286,7 @@ export const icons: IconData[] = [
             'diagonal',
             'bottom-left',
         ],
+        isNew: false,
         Icon: RoundArrowLeftDownIcon,
     },
     {
@@ -2235,6 +2313,7 @@ export const icons: IconData[] = [
             'double-down',
             'bottom',
         ],
+        isNew: false,
         Icon: RoundDoubleAltArrowDownIcon,
     },
     {
@@ -2259,6 +2338,7 @@ export const icons: IconData[] = [
             'east',
             'pointer',
         ],
+        isNew: false,
         Icon: RoundArrowRightIcon,
     },
     {
@@ -2286,6 +2366,7 @@ export const icons: IconData[] = [
             'left-right',
             'list',
         ],
+        isNew: false,
         Icon: SquareSortHorizontalIcon,
     },
     {
@@ -2310,6 +2391,7 @@ export const icons: IconData[] = [
             'pointer',
             'bottom',
         ],
+        isNew: false,
         Icon: RoundArrowDownIcon,
     },
     {
@@ -2326,6 +2408,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['left-up arrow', 'circle left-up', 'circle', 'north-west', 'diagonal', 'top-left'],
+        isNew: false,
         Icon: RoundArrowLeftUpIcon,
     },
     {
@@ -2350,6 +2433,7 @@ export const icons: IconData[] = [
             'chevron',
             'top',
         ],
+        isNew: false,
         Icon: RoundAltArrowUpIcon,
     },
     {
@@ -2374,6 +2458,7 @@ export const icons: IconData[] = [
             'chevron',
             'bottom',
         ],
+        isNew: false,
         Icon: RoundAltArrowDownIcon,
     },
     {
@@ -2400,6 +2485,7 @@ export const icons: IconData[] = [
             'chevron',
             'double-left',
         ],
+        isNew: false,
         Icon: RoundDoubleAltArrowLeftIcon,
     },
     {
@@ -2427,6 +2513,7 @@ export const icons: IconData[] = [
             'left-right',
             'list',
         ],
+        isNew: false,
         Icon: RoundSortHorizontalIcon,
     },
     {
@@ -2455,6 +2542,7 @@ export const icons: IconData[] = [
             'up-down',
             'transaction',
         ],
+        isNew: false,
         Icon: RoundTransferVerticalIcon,
     },
     {
@@ -2480,6 +2568,7 @@ export const icons: IconData[] = [
             'diagonal',
             'cross',
         ],
+        isNew: false,
         Icon: RoundTransferDiagonalIcon,
     },
     {
@@ -2503,6 +2592,7 @@ export const icons: IconData[] = [
             'diagonal',
             'top-right',
         ],
+        isNew: false,
         Icon: RoundArrowRightUpIcon,
     },
     {
@@ -2526,6 +2616,7 @@ export const icons: IconData[] = [
             'diagonal',
             'bottom-right',
         ],
+        isNew: false,
         Icon: RoundArrowRightDownIcon,
     },
     {
@@ -2551,6 +2642,7 @@ export const icons: IconData[] = [
             'up-down',
             'transaction',
         ],
+        isNew: false,
         Icon: TransferVerticalIcon,
     },
     {
@@ -2577,6 +2669,7 @@ export const icons: IconData[] = [
             'chevron',
             'double-right',
         ],
+        isNew: false,
         Icon: RoundDoubleAltArrowRightIcon,
     },
     {
@@ -2603,6 +2696,7 @@ export const icons: IconData[] = [
             'left-right',
             'transaction',
         ],
+        isNew: false,
         Icon: RoundTransferHorizontalIcon,
     },
     {
@@ -2630,6 +2724,7 @@ export const icons: IconData[] = [
             'up-down',
             'list',
         ],
+        isNew: false,
         Icon: SortVerticalIcon,
     },
     {
@@ -2656,6 +2751,7 @@ export const icons: IconData[] = [
             'double-right',
             'fast-forward',
         ],
+        isNew: false,
         Icon: DoubleAltArrowRightIcon,
     },
     {
@@ -2682,6 +2778,7 @@ export const icons: IconData[] = [
             'left-right',
             'transaction',
         ],
+        isNew: false,
         Icon: TransferHorizontalIcon,
     },
     {
@@ -2706,6 +2803,7 @@ export const icons: IconData[] = [
             'direction',
             'bottom',
         ],
+        isNew: false,
         Icon: ArrowDownIcon,
     },
     {
@@ -2731,6 +2829,7 @@ export const icons: IconData[] = [
             'double-down',
             'bottom',
         ],
+        isNew: false,
         Icon: DoubleAltArrowDownIcon,
     },
     {
@@ -2757,6 +2856,7 @@ export const icons: IconData[] = [
             'left-right',
             'list',
         ],
+        isNew: false,
         Icon: SortHorizontalIcon,
     },
     {
@@ -2773,6 +2873,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['double-up', 'double-forward', 'circle', 'two', 'ascend', 'north', 'chevron', 'top'],
+        isNew: false,
         Icon: RoundDoubleAltArrowUpIcon,
     },
     {
@@ -2799,6 +2900,7 @@ export const icons: IconData[] = [
             'double-up',
             'top',
         ],
+        isNew: false,
         Icon: DoubleAltArrowUpIcon,
     },
     {
@@ -2815,6 +2917,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['leftdown', 'downleft', 'south-west', 'diagonal', 'bottom-left'],
+        isNew: false,
         Icon: ArrowLeftDownIcon,
     },
     {
@@ -2837,6 +2940,7 @@ export const icons: IconData[] = [
             'diagonal',
             'bottom-right',
         ],
+        isNew: false,
         Icon: ArrowRightDownIcon,
     },
     {
@@ -2861,6 +2965,7 @@ export const icons: IconData[] = [
             'pointer',
             'direction',
         ],
+        isNew: false,
         Icon: ArrowLeftIcon,
     },
     {
@@ -2877,6 +2982,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['upward arrow', 'arrow circle up', 'circle', 'ascend', 'north', 'pointer', 'top'],
+        isNew: false,
         Icon: RoundArrowUpIcon,
     },
     {
@@ -2893,6 +2999,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['upward arrow', 'rightwards arrow', 'north-east', 'diagonal', 'top-right'],
+        isNew: false,
         Icon: ArrowRightUpIcon,
     },
     {
@@ -2909,6 +3016,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['directional', 'navigation', 'forward', 'next', 'east', 'pointer', 'direction'],
+        isNew: false,
         Icon: ArrowRightIcon,
     },
     {
@@ -2935,6 +3043,7 @@ export const icons: IconData[] = [
             'double-left',
             'rewind',
         ],
+        isNew: false,
         Icon: DoubleAltArrowLeftIcon,
     },
     {
@@ -2951,6 +3060,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['left up arrow', 'upward turn left', 'north-west', 'diagonal', 'top-left'],
+        isNew: false,
         Icon: ArrowLeftUpIcon,
     },
     {
@@ -2975,6 +3085,7 @@ export const icons: IconData[] = [
             'chevron',
             'east',
         ],
+        isNew: false,
         Icon: AltArrowRightIcon,
     },
     {
@@ -2991,6 +3102,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['upward arrow', 'single direction up', 'ascend', 'north', 'chevron', 'top'],
+        isNew: false,
         Icon: AltArrowUpIcon,
     },
     {
@@ -3015,6 +3127,7 @@ export const icons: IconData[] = [
             'direction',
             'top',
         ],
+        isNew: false,
         Icon: ArrowUpIcon,
     },
     {
@@ -3043,6 +3156,7 @@ export const icons: IconData[] = [
             'spin',
             'rotate',
         ],
+        isNew: false,
         Icon: RefreshCircleIcon,
     },
     {
@@ -3070,6 +3184,7 @@ export const icons: IconData[] = [
             'spin',
             'rotate',
         ],
+        isNew: false,
         Icon: RestartIcon,
     },
     {
@@ -3097,6 +3212,7 @@ export const icons: IconData[] = [
             'spin',
             'arrows',
         ],
+        isNew: false,
         Icon: RefreshIcon,
     },
     {
@@ -3125,6 +3241,7 @@ export const icons: IconData[] = [
             'spin',
             'rotate',
         ],
+        isNew: false,
         Icon: RestartCircleIcon,
     },
     {
@@ -3152,6 +3269,7 @@ export const icons: IconData[] = [
             'spin',
             'rotate',
         ],
+        isNew: false,
         Icon: RefreshSquareIcon,
     },
     {
@@ -3168,6 +3286,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['checkmark', 'down arrow', 'descend', 'south', 'chevron', 'bottom'],
+        isNew: false,
         Icon: AltArrowDownIcon,
     },
     {
@@ -3184,6 +3303,7 @@ export const icons: IconData[] = [
             'movement',
         ],
         tags: ['left arrow', 'backward pointer', 'back', 'previous', 'chevron', 'west'],
+        isNew: false,
         Icon: AltArrowLeftIcon,
     },
     {
@@ -3212,6 +3332,7 @@ export const icons: IconData[] = [
             'spin',
             'rotate',
         ],
+        isNew: false,
         Icon: RestartSquareIcon,
     },
     {
@@ -3228,6 +3349,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointWaveIcon,
     },
     {
@@ -3244,6 +3366,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointIcon,
     },
     {
@@ -3260,6 +3383,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointRemoveIcon,
     },
     {
@@ -3267,6 +3391,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['heart', 'favorite', 'pin', 'marker', 'location', 'here', 'destination', 'drop'],
+        isNew: false,
         Icon: MapPointFavoriteIcon,
     },
     {
@@ -3283,6 +3408,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointHospitalIcon,
     },
     {
@@ -3299,6 +3425,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointSchoolIcon,
     },
     {
@@ -3315,6 +3442,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointSearchIcon,
     },
     {
@@ -3331,6 +3459,7 @@ export const icons: IconData[] = [
             'explorer',
             'magnetic',
         ],
+        isNew: false,
         Icon: CompassIcon,
     },
     {
@@ -3338,6 +3467,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['navigation', 'direction', 'north', 'south', 'navigate', 'explorer', 'magnetic'],
+        isNew: false,
         Icon: CompassSquareIcon,
     },
     {
@@ -3345,6 +3475,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['person symbol', 'near-by figure'],
+        isNew: false,
         Icon: PeopleNearbyIcon,
     },
     {
@@ -3352,6 +3483,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['left-arrow', 'navigation-arrow'],
+        isNew: false,
         Icon: MapArrowLeftIcon,
     },
     {
@@ -3369,6 +3501,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointAddIcon,
     },
     {
@@ -3376,6 +3509,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['play-button', 'navigation-arrow'],
+        isNew: false,
         Icon: MapArrowRightIcon,
     },
     {
@@ -3383,6 +3517,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['splitting', 'diverging', 'split arrows'],
+        isNew: false,
         Icon: BranchingPathsDownIcon,
     },
     {
@@ -3390,6 +3525,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['directional', 'pathway'],
+        isNew: false,
         Icon: BranchingPathsUpIcon,
     },
     {
@@ -3397,6 +3533,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['geolocation', 'navigation marker'],
+        isNew: false,
         Icon: PointOnMapIcon,
     },
     {
@@ -3404,6 +3541,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['compass', 'directions'],
+        isNew: false,
         Icon: MapIcon,
     },
     {
@@ -3411,6 +3549,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['map pointer', 'navigation arrow'],
+        isNew: false,
         Icon: MapArrowSquareIcon,
     },
     {
@@ -3418,6 +3557,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['rewind', 'reverse route', 'path', 'way', 'directions', 'journey', 'trip', 'road'],
+        isNew: false,
         Icon: RouteIcon,
     },
     {
@@ -3425,6 +3565,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['road sign', 'directions'],
+        isNew: false,
         Icon: SignpostIcon,
     },
     {
@@ -3432,6 +3573,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['world', 'globe'],
+        isNew: false,
         Icon: GlobalIcon,
     },
     {
@@ -3439,6 +3581,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['network-ban', 'connection-blocked'],
+        isNew: false,
         Icon: StreetsNavigationIcon,
     },
     {
@@ -3456,6 +3599,7 @@ export const icons: IconData[] = [
             'destination',
             'drop',
         ],
+        isNew: false,
         Icon: MapPointRotateIcon,
     },
     {
@@ -3463,6 +3607,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['downward-pointing map arrow', 'arrow pointing down on a map'],
+        isNew: false,
         Icon: MapArrowDownIcon,
     },
     {
@@ -3470,6 +3615,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['compass', 'directions'],
+        isNew: false,
         Icon: Signpost2Icon,
     },
     {
@@ -3477,6 +3623,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['navigation arrow', 'point up sign'],
+        isNew: false,
         Icon: MapArrowUpIcon,
     },
     {
@@ -3484,6 +3631,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['navigation', 'compass', 'pin', 'marker', 'location', 'here', 'destination', 'drop'],
+        isNew: false,
         Icon: StreetsMapPointIcon,
     },
     {
@@ -3491,6 +3639,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['target', 'pointer', 'scan', 'detect', 'sonar', 'tracking', 'signal', 'waves'],
+        isNew: false,
         Icon: Radar2Icon,
     },
     {
@@ -3498,6 +3647,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['street', 'road'],
+        isNew: false,
         Icon: StreetsIcon,
     },
     {
@@ -3505,6 +3655,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['route', 'guide'],
+        isNew: false,
         Icon: RoutingIcon,
     },
     {
@@ -3512,6 +3663,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['pin', 'geolocation'],
+        isNew: false,
         Icon: PointOnMapPerspectiveIcon,
     },
     {
@@ -3519,6 +3671,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['target', 'bullseye'],
+        isNew: false,
         Icon: GpsIcon,
     },
     {
@@ -3526,6 +3679,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['arrow', 'ringroad'],
+        isNew: false,
         Icon: Routing3Icon,
     },
     {
@@ -3542,6 +3696,7 @@ export const icons: IconData[] = [
             'explorer',
             'magnetic',
         ],
+        isNew: false,
         Icon: CompassBigIcon,
     },
     {
@@ -3558,6 +3713,7 @@ export const icons: IconData[] = [
             'international',
             'sphere',
         ],
+        isNew: false,
         Icon: GlobeIcon,
     },
     {
@@ -3574,6 +3730,7 @@ export const icons: IconData[] = [
             'signal',
             'waves',
         ],
+        isNew: false,
         Icon: RadarIcon,
     },
     {
@@ -3581,6 +3738,7 @@ export const icons: IconData[] = [
         category: 'map' as Category,
         categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
         tags: ['navigation', 'directions'],
+        isNew: false,
         Icon: Routing2Icon,
     },
     {
@@ -3598,6 +3756,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: MusicNote4Icon,
     },
     {
@@ -3614,6 +3773,7 @@ export const icons: IconData[] = [
             'action',
             'scene',
         ],
+        isNew: false,
         Icon: ClapperboardIcon,
     },
     {
@@ -3621,6 +3781,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['rewind', 'time-travel', 'undo', 'back', 'previous', 'reverse', 'media'],
+        isNew: false,
         Icon: Rewind5SecondsBackIcon,
     },
     {
@@ -3628,6 +3789,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['microphone', 'recording device', 'save', 'capture', 'media', 'red-button'],
+        isNew: false,
         Icon: RecordAudioCircleIcon,
     },
     {
@@ -3635,6 +3797,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['square', 'picture'],
+        isNew: false,
         Icon: VideoFrameIcon,
     },
     {
@@ -3642,6 +3805,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['data', 'database', 'save', 'capture', 'media', 'red-button'],
+        isNew: false,
         Icon: RecordIcon,
     },
     {
@@ -3649,6 +3813,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['folder', 'library'],
+        isNew: false,
         Icon: LibraryIcon,
     },
     {
@@ -3656,6 +3821,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['Image', 'Icon', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GalleryIcon,
     },
     {
@@ -3663,6 +3829,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['microphone', 'speaker', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
+        isNew: false,
         Icon: Microphone2Icon,
     },
     {
@@ -3670,6 +3837,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['cut-video', 'split-screen', 'horizontal-split'],
+        isNew: false,
         Icon: VideoFrameCutIcon,
     },
     {
@@ -3677,6 +3845,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['speaker', 'loudness', 'noise', 'sound', 'audio', 'loud', 'quiet', 'level'],
+        isNew: false,
         Icon: VolumeLoudIcon,
     },
     {
@@ -3684,6 +3853,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['musical', 'note', 'staff', 'melody', 'audio', 'sound', 'song', 'tune', 'listen'],
+        isNew: false,
         Icon: MusicNote3Icon,
     },
     {
@@ -3701,6 +3871,7 @@ export const icons: IconData[] = [
             'skip',
             'advance',
         ],
+        isNew: false,
         Icon: Rewind5SecondsForwardIcon,
     },
     {
@@ -3708,6 +3879,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['equalizer', 'audiogram', 'sound bar', 'waveform'],
+        isNew: false,
         Icon: SoundwaveIcon,
     },
     {
@@ -3727,6 +3899,7 @@ export const icons: IconData[] = [
             'media',
             'red-button',
         ],
+        isNew: false,
         Icon: VinylRecordIcon,
     },
     {
@@ -3734,6 +3907,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['loop', 'rewind', 'playback', 'replay', 'again', 'media'],
+        isNew: false,
         Icon: RepeatOneIcon,
     },
     {
@@ -3752,6 +3926,7 @@ export const icons: IconData[] = [
             'go',
             'media',
         ],
+        isNew: false,
         Icon: ClapperboardPlayIcon,
     },
     {
@@ -3759,6 +3934,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['refresh', 'revise', 'loop', 'replay', 'again', 'media'],
+        isNew: false,
         Icon: RepeatIcon,
     },
     {
@@ -3766,6 +3942,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['stop', 'power-off'],
+        isNew: false,
         Icon: SoundwaveSquareIcon,
     },
     {
@@ -3773,6 +3950,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['picture', 'image', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GalleryMinimalisticIcon,
     },
     {
@@ -3790,6 +3968,7 @@ export const icons: IconData[] = [
             'record',
             'cd',
         ],
+        isNew: false,
         Icon: AlbumIcon,
     },
     {
@@ -3797,6 +3976,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['speaker', 'sound', 'audio level', 'audio', 'loud', 'quiet', 'level'],
+        isNew: false,
         Icon: VolumeSmallIcon,
     },
     {
@@ -3813,6 +3993,7 @@ export const icons: IconData[] = [
             'action',
             'scene',
         ],
+        isNew: false,
         Icon: ClapperboardOpenIcon,
     },
     {
@@ -3820,6 +4001,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['traffic', 'sign'],
+        isNew: false,
         Icon: StopIcon,
     },
     {
@@ -3827,6 +4009,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['microphone', 'speaker', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
+        isNew: false,
         Icon: Microphone3Icon,
     },
     {
@@ -3844,6 +4027,7 @@ export const icons: IconData[] = [
             'karaoke',
             'mic',
         ],
+        isNew: false,
         Icon: MicrophoneIcon,
     },
     {
@@ -3851,6 +4035,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['mute', 'silence'],
+        isNew: false,
         Icon: MutedIcon,
     },
     {
@@ -3858,6 +4043,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['refresh', 'rerun', 'loop', 'replay', 'again', 'media'],
+        isNew: false,
         Icon: RepeatOneMinimalisticIcon,
     },
     {
@@ -3865,6 +4051,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'next', 'start', 'go', 'action', 'media'],
+        isNew: false,
         Icon: PlayIcon,
     },
     {
@@ -3872,6 +4059,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['Download', 'Save', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GalleryDownloadIcon,
     },
     {
@@ -3879,6 +4067,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['power', 'pause'],
+        isNew: false,
         Icon: SoundwaveCircleIcon,
     },
     {
@@ -3886,6 +4075,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'start', 'stop', 'halt', 'wait', 'media'],
+        isNew: false,
         Icon: PauseIcon,
     },
     {
@@ -3902,6 +4092,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryWideIcon,
     },
     {
@@ -3909,6 +4100,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['split-screen', 'media-split'],
+        isNew: false,
         Icon: VideoFrameCut2Icon,
     },
     {
@@ -3916,6 +4108,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['disc', 'record', 'audio', 'sound', 'song', 'retro', 'dj'],
+        isNew: false,
         Icon: VinylIcon,
     },
     {
@@ -3923,6 +4116,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['note', 'musical note', 'audio', 'sound', 'song', 'tune', 'listen', 'melody'],
+        isNew: false,
         Icon: MusicNote2Icon,
     },
     {
@@ -3941,6 +4135,7 @@ export const icons: IconData[] = [
             'skip',
             'advance',
         ],
+        isNew: false,
         Icon: Rewind15SecondsForwardIcon,
     },
     {
@@ -3948,6 +4143,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['frame', 'replacement'],
+        isNew: false,
         Icon: VideoFrameReplaceIcon,
     },
     {
@@ -3955,6 +4151,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['streaming', 'media-player', 'play-arrow', 'start', 'go', 'action', 'media'],
+        isNew: false,
         Icon: PlayStreamIcon,
     },
     {
@@ -3962,6 +4159,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play-video', 'library-folder'],
+        isNew: false,
         Icon: VideoLibraryIcon,
     },
     {
@@ -3981,6 +4179,7 @@ export const icons: IconData[] = [
             'go',
             'media',
         ],
+        isNew: false,
         Icon: ClapperboardOpenPlayIcon,
     },
     {
@@ -3988,6 +4187,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['rewind', 'reverse', 'fast forward', 'back', 'previous', 'media'],
+        isNew: false,
         Icon: Rewind15SecondsBackIcon,
     },
     {
@@ -4005,6 +4205,7 @@ export const icons: IconData[] = [
             'quiet',
             'level',
         ],
+        isNew: false,
         Icon: VolumeIcon,
     },
     {
@@ -4012,6 +4213,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['musical', 'note', 'audio', 'sound', 'song', 'tune', 'listen', 'melody'],
+        isNew: false,
         Icon: MusicNoteIcon,
     },
     {
@@ -4029,6 +4231,7 @@ export const icons: IconData[] = [
             'skip',
             'advance',
         ],
+        isNew: false,
         Icon: RewindForwardIcon,
     },
     {
@@ -4036,6 +4239,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['upload', 'send', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GallerySendIcon,
     },
     {
@@ -4055,6 +4259,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryAddIcon,
     },
     {
@@ -4062,6 +4267,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'cinema', 'movie'],
+        isNew: false,
         Icon: VideoFrame2Icon,
     },
     {
@@ -4077,6 +4283,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryRemoveIcon,
     },
     {
@@ -4084,6 +4291,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'picture frame', 'image', 'photo', 'background', 'desktop', 'screen'],
+        isNew: false,
         Icon: WallpaperIcon,
     },
     {
@@ -4091,6 +4299,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['Digital music', 'Audio file', 'audio', 'sound', 'song', 'tune', 'listen', 'melody'],
+        isNew: false,
         Icon: MusicLibrary2Icon,
     },
     {
@@ -4107,6 +4316,7 @@ export const icons: IconData[] = [
             'karaoke',
             'mic',
         ],
+        isNew: false,
         Icon: MicrophoneLargeIcon,
     },
     {
@@ -4114,6 +4324,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['clapper', 'film slate', 'film', 'movie', 'cinema', 'director', 'action', 'scene'],
+        isNew: false,
         Icon: ClapperboardEditIcon,
     },
     {
@@ -4129,6 +4340,7 @@ export const icons: IconData[] = [
             'reverse',
             'media',
         ],
+        isNew: false,
         Icon: RewindBackIcon,
     },
     {
@@ -4136,6 +4348,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['upload-video', 'record-audio'],
+        isNew: false,
         Icon: UploadTrack2Icon,
     },
     {
@@ -4154,6 +4367,7 @@ export const icons: IconData[] = [
             'level',
             'speaker',
         ],
+        isNew: false,
         Icon: VolumeCrossIcon,
     },
     {
@@ -4170,6 +4384,7 @@ export const icons: IconData[] = [
             'action',
             'scene',
         ],
+        isNew: false,
         Icon: ClapperboardTextIcon,
     },
     {
@@ -4187,6 +4402,7 @@ export const icons: IconData[] = [
             'skip',
             'advance',
         ],
+        isNew: false,
         Icon: Rewind10SecondsForwardIcon,
     },
     {
@@ -4194,6 +4410,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play-button', 'film-strip', 'vertical-video', 'start', 'go', 'action', 'media'],
+        isNew: false,
         Icon: VideoFramePlayVerticalIcon,
     },
     {
@@ -4210,6 +4427,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: MusicLibraryIcon,
     },
     {
@@ -4217,6 +4435,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['headphones', 'radio', 'earbuds', 'audio', 'sound', 'talk', 'broadcast', 'show'],
+        isNew: false,
         Icon: PodcastIcon,
     },
     {
@@ -4238,6 +4457,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: MusicNoteSlider2Icon,
     },
     {
@@ -4253,6 +4473,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryEditIcon,
     },
     {
@@ -4260,6 +4481,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['upload', 'track'],
+        isNew: false,
         Icon: UploadTrackIcon,
     },
     {
@@ -4267,6 +4489,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'viewfinder'],
+        isNew: false,
         Icon: PanoramaIcon,
     },
     {
@@ -4274,6 +4497,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'next'],
+        isNew: false,
         Icon: SkipNextIcon,
     },
     {
@@ -4295,6 +4519,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryCheckIcon,
     },
     {
@@ -4316,6 +4541,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: MusicNoteSliderIcon,
     },
     {
@@ -4332,6 +4558,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: MusicNotesIcon,
     },
     {
@@ -4339,6 +4566,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'media', 'frame', 'start', 'go', 'action'],
+        isNew: false,
         Icon: VideoFramePlayHorizontalIcon,
     },
     {
@@ -4346,6 +4574,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['Favourite', 'Saved', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GalleryFavoriteIcon,
     },
     {
@@ -4353,6 +4582,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['pause', 'stop', 'halt', 'wait', 'media'],
+        isNew: false,
         Icon: PauseCircleIcon,
     },
     {
@@ -4368,6 +4598,7 @@ export const icons: IconData[] = [
             'collection',
             'pictures',
         ],
+        isNew: false,
         Icon: GalleryCircleIcon,
     },
     {
@@ -4375,6 +4606,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'circle', 'start', 'go', 'action', 'media'],
+        isNew: false,
         Icon: PlayCircleIcon,
     },
     {
@@ -4392,6 +4624,7 @@ export const icons: IconData[] = [
             'skip',
             'advance',
         ],
+        isNew: false,
         Icon: RewindForwardCircleIcon,
     },
     {
@@ -4399,6 +4632,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['previous', 'backward'],
+        isNew: false,
         Icon: SkipPreviousIcon,
     },
     {
@@ -4406,6 +4640,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'recorder'],
+        isNew: false,
         Icon: VideocameraIcon,
     },
     {
@@ -4413,6 +4648,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['picture', 'visuals', 'images', 'photos', 'album', 'collection', 'pictures'],
+        isNew: false,
         Icon: GalleryRoundIcon,
     },
     {
@@ -4420,6 +4656,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'recording device', 'save', 'capture', 'media', 'red-button'],
+        isNew: false,
         Icon: VideocameraRecordIcon,
     },
     {
@@ -4427,6 +4664,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['rewind', 'backwards', 'playback', 'back', 'previous', 'reverse', 'media'],
+        isNew: false,
         Icon: RewindBackCircleIcon,
     },
     {
@@ -4434,6 +4672,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['square', 'camera', 'photo', 'picture', 'shoot', 'capture', 'image', 'lens'],
+        isNew: false,
         Icon: CameraSquareIcon,
     },
     {
@@ -4441,6 +4680,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['upload', 'transmission'],
+        isNew: false,
         Icon: StreamIcon,
     },
     {
@@ -4448,6 +4688,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['circle', 'stop'],
+        isNew: false,
         Icon: StopCircleIcon,
     },
     {
@@ -4455,6 +4696,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['add-video-camera', 'camera-plus', 'plus', 'new', 'create', 'insert'],
+        isNew: false,
         Icon: VideocameraAddIcon,
     },
     {
@@ -4475,6 +4717,7 @@ export const icons: IconData[] = [
             'image',
             'lens',
         ],
+        isNew: false,
         Icon: CameraAddIcon,
     },
     {
@@ -4482,6 +4725,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['Camera', 'Capture', 'photo', 'picture', 'shoot', 'capture', 'image', 'lens'],
+        isNew: false,
         Icon: CameraMinimalisticIcon,
     },
     {
@@ -4498,6 +4742,7 @@ export const icons: IconData[] = [
             'image',
             'lens',
         ],
+        isNew: false,
         Icon: CameraIcon,
     },
     {
@@ -4505,6 +4750,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['rewind', 'fastforward-rewind', 'back', 'previous', 'reverse', 'media'],
+        isNew: false,
         Icon: Rewind10SecondsBackIcon,
     },
     {
@@ -4512,6 +4758,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['play', 'speed-up'],
+        isNew: false,
         Icon: PlaybackSpeedIcon,
     },
     {
@@ -4519,6 +4766,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['playlist', 'shuffle', 'repeat', 'random', 'mix', 'order', 'media'],
+        isNew: false,
         Icon: ShuffleIcon,
     },
     {
@@ -4526,6 +4774,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['camera', 'picture', 'photo', 'shoot', 'capture', 'image', 'lens'],
+        isNew: false,
         Icon: CameraRotateIcon,
     },
     {
@@ -4533,6 +4782,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['settings', 'icons', 'tool', 'gear'],
+        isNew: false,
         Icon: ToPipIcon,
     },
     {
@@ -4540,6 +4790,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['fountain pen', 'inkwell'],
+        isNew: false,
         Icon: PipIcon,
     },
     {
@@ -4547,6 +4798,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['film_reel', 'camera_film'],
+        isNew: false,
         Icon: Reel2Icon,
     },
     {
@@ -4554,6 +4806,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['film', 'movie', 'videoclip', 'filmmark', 'camera'],
+        isNew: false,
         Icon: ReelIcon,
     },
     {
@@ -4561,6 +4814,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['pipicon', 'downloadicon'],
+        isNew: false,
         Icon: Pip2Icon,
     },
     {
@@ -4568,6 +4822,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['arrow', 'square'],
+        isNew: false,
         Icon: QuitPipIcon,
     },
     {
@@ -4575,6 +4830,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['square', 'boxed', 'maximize', 'expand', 'enlarge', 'display'],
+        isNew: false,
         Icon: FullScreenSquareIcon,
     },
     {
@@ -4582,6 +4838,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['screen full', 'maximize window', 'maximize', 'expand', 'enlarge', 'display'],
+        isNew: false,
         Icon: FullScreenIcon,
     },
     {
@@ -4596,6 +4853,7 @@ export const icons: IconData[] = [
             'enlarge',
             'display',
         ],
+        isNew: false,
         Icon: QuitFullScreenIcon,
     },
     {
@@ -4611,6 +4869,7 @@ export const icons: IconData[] = [
             'enlarge',
             'display',
         ],
+        isNew: false,
         Icon: QuitFullScreenCircleIcon,
     },
     {
@@ -4618,6 +4877,7 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
         tags: ['square-border', 'screen-edge', 'maximize', 'expand', 'enlarge', 'display'],
+        isNew: false,
         Icon: QuitFullScreenSquareIcon,
     },
     {
@@ -4632,6 +4892,7 @@ export const icons: IconData[] = [
             'enlarge',
             'display',
         ],
+        isNew: false,
         Icon: FullScreenCircleIcon,
     },
     {
@@ -4650,6 +4911,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardholderIcon,
     },
     {
@@ -4657,6 +4919,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['wallet', 'cash', 'billfold', 'purse', 'cards', 'holder', 'pocket', 'savings'],
+        isNew: false,
         Icon: WalletMoneyIcon,
     },
     {
@@ -4664,6 +4927,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['billfold', 'pocketbook', 'purse', 'cash', 'cards', 'holder', 'pocket', 'savings'],
+        isNew: false,
         Icon: WalletIcon,
     },
     {
@@ -4680,6 +4944,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: TickerStarIcon,
     },
     {
@@ -4697,6 +4962,7 @@ export const icons: IconData[] = [
             'voucher',
             'entry',
         ],
+        isNew: false,
         Icon: TicketSaleIcon,
     },
     {
@@ -4714,6 +4980,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardTransferIcon,
     },
     {
@@ -4721,6 +4988,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['credit', 'debit', 'bank', 'pay', 'plastic', 'visa', 'mastercard'],
+        isNew: false,
         Icon: Card2Icon,
     },
     {
@@ -4739,6 +5007,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardReceiveIcon,
     },
     {
@@ -4757,6 +5026,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardSendIcon,
     },
     {
@@ -4764,6 +5034,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['wallet', 'cash', 'purse', 'cards', 'holder', 'pocket', 'savings'],
+        isNew: false,
         Icon: Wallet2Icon,
     },
     {
@@ -4782,6 +5053,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardSearchIcon,
     },
     {
@@ -4789,6 +5061,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['discount', 'sale'],
+        isNew: false,
         Icon: SaleIcon,
     },
     {
@@ -4796,6 +5069,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['discount', 'sale', 'price', 'label', 'offer', 'shopping'],
+        isNew: false,
         Icon: TagIcon,
     },
     {
@@ -4812,6 +5086,7 @@ export const icons: IconData[] = [
             'voucher',
             'entry',
         ],
+        isNew: false,
         Icon: TicketIcon,
     },
     {
@@ -4829,6 +5104,7 @@ export const icons: IconData[] = [
             'visa',
             'mastercard',
         ],
+        isNew: false,
         Icon: CardIcon,
     },
     {
@@ -4836,6 +5112,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['Euro sign', 'Currency symbol'],
+        isNew: false,
         Icon: EuroIcon,
     },
     {
@@ -4852,6 +5129,7 @@ export const icons: IconData[] = [
             'offer',
             'shopping',
         ],
+        isNew: false,
         Icon: TagPriceIcon,
     },
     {
@@ -4859,6 +5137,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['discount', 'percentage'],
+        isNew: false,
         Icon: SaleSquareIcon,
     },
     {
@@ -4866,6 +5145,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['RUB', 'Russian Ruble', 'Currency Symbol'],
+        isNew: false,
         Icon: RubleIcon,
     },
     {
@@ -4873,6 +5153,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['bankroll', 'currency', 'cash', 'bill', 'paper', 'money', 'dollar'],
+        isNew: false,
         Icon: BanknoteIcon,
     },
     {
@@ -4880,6 +5161,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['approval', 'certification', 'checkmark'],
+        isNew: false,
         Icon: VerifiedCheckIcon,
     },
     {
@@ -4887,6 +5169,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['cash', 'currency', 'bill', 'paper', 'money', 'dollar'],
+        isNew: false,
         Icon: Banknote2Icon,
     },
     {
@@ -4894,6 +5177,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['cash', 'banknote'],
+        isNew: false,
         Icon: MoneyRollIcon,
     },
     {
@@ -4911,6 +5195,7 @@ export const icons: IconData[] = [
             'protect',
             'treasure',
         ],
+        isNew: false,
         Icon: SafeSquareIcon,
     },
     {
@@ -4918,6 +5203,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['circle-check', 'validation-mark'],
+        isNew: false,
         Icon: SafeCircleIcon,
     },
     {
@@ -4925,6 +5211,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['security', 'protection'],
+        isNew: false,
         Icon: Safe2Icon,
     },
     {
@@ -4932,6 +5219,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['coin symbol', 'currency mark'],
+        isNew: false,
         Icon: DollarMinimalisticIcon,
     },
     {
@@ -4939,6 +5227,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['coin', 'finance symbol'],
+        isNew: false,
         Icon: DollarIcon,
     },
     {
@@ -4946,6 +5235,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['receipt', 'invoice'],
+        isNew: false,
         Icon: BillListIcon,
     },
     {
@@ -4962,6 +5252,7 @@ export const icons: IconData[] = [
             'offer',
             'shopping',
         ],
+        isNew: false,
         Icon: TagHorizontalIcon,
     },
     {
@@ -4969,6 +5260,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['crossed bill', 'bill cancellation'],
+        isNew: false,
         Icon: BillCrossIcon,
     },
     {
@@ -4976,6 +5268,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['approval', 'receipt', 'payment confirmation'],
+        isNew: false,
         Icon: BillCheckIcon,
     },
     {
@@ -4992,6 +5285,7 @@ export const icons: IconData[] = [
             'investment',
             'stash',
         ],
+        isNew: false,
         Icon: MoneyBagIcon,
     },
     {
@@ -4999,6 +5293,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['receipt', 'purchase order'],
+        isNew: false,
         Icon: BillIcon,
     },
     {
@@ -5006,6 +5301,7 @@ export const icons: IconData[] = [
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: ['deposit', 'transfer'],
+        isNew: false,
         Icon: CashOutIcon,
     },
     {
@@ -5013,6 +5309,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['controller', 'gaming', 'game joystick', 'play', 'console', 'videogame', 'joystick'],
+        isNew: false,
         Icon: GamepadIcon,
     },
     {
@@ -5029,6 +5326,7 @@ export const icons: IconData[] = [
             'battery',
             'plug',
         ],
+        isNew: false,
         Icon: GamepadChargeIcon,
     },
     {
@@ -5036,6 +5334,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['controller', 'play', 'gaming', 'console', 'simple'],
+        isNew: false,
         Icon: GamepadMinimalisticIcon,
     },
     {
@@ -5052,6 +5351,7 @@ export const icons: IconData[] = [
             'retro',
             'classic',
         ],
+        isNew: false,
         Icon: GamepadOldIcon,
     },
     {
@@ -5068,6 +5368,7 @@ export const icons: IconData[] = [
             'portrait',
             'turn',
         ],
+        isNew: false,
         Icon: SmartphoneRotateOrientationIcon,
     },
     {
@@ -5075,6 +5376,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['update', 'smartphone', 'app', 'upgrade'],
+        isNew: false,
         Icon: SmartphoneUpdateIcon,
     },
     {
@@ -5092,6 +5394,7 @@ export const icons: IconData[] = [
             'turn',
             'arrows',
         ],
+        isNew: false,
         Icon: SmartphoneRotate2Icon,
     },
     {
@@ -5099,6 +5402,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['cellular', 'handheld', 'phone', 'mobile', 'cellphone', 'device', 'screen'],
+        isNew: false,
         Icon: SmartphoneIcon,
     },
     {
@@ -5115,6 +5419,7 @@ export const icons: IconData[] = [
             'ring',
             'notification',
         ],
+        isNew: false,
         Icon: SmartphoneVibrationIcon,
     },
     {
@@ -5131,6 +5436,7 @@ export const icons: IconData[] = [
             'battery-low',
             'unplugged',
         ],
+        isNew: false,
         Icon: GamepadNoChargeIcon,
     },
     {
@@ -5147,6 +5453,7 @@ export const icons: IconData[] = [
             'headset',
             'box',
         ],
+        isNew: false,
         Icon: HeadphonesSquareIcon,
     },
     {
@@ -5164,6 +5471,7 @@ export const icons: IconData[] = [
             'portrait',
             'turn',
         ],
+        isNew: false,
         Icon: SmartphoneRotateAngleIcon,
     },
     {
@@ -5171,6 +5479,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['smartphone', 'cell phone'],
+        isNew: false,
         Icon: IPhoneIcon,
     },
     {
@@ -5187,6 +5496,7 @@ export const icons: IconData[] = [
             'screen',
             'alt',
         ],
+        isNew: false,
         Icon: Smartphone2Icon,
     },
     {
@@ -5194,6 +5504,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['earphones', 'audio headset', 'audio', 'music', 'listen', 'headset', 'circle'],
+        isNew: false,
         Icon: HeadphonesRoundIcon,
     },
     {
@@ -5201,6 +5512,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['audio', 'earphones', 'music', 'listen', 'headset', 'circle', 'waves', 'playing'],
+        isNew: false,
         Icon: HeadphonesRoundSoundIcon,
     },
     {
@@ -5208,6 +5520,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['Tablet', 'Digital Device', 'ipad', 'device', 'screen', 'mobile', 'pad'],
+        isNew: false,
         Icon: TabletIcon,
     },
     {
@@ -5215,6 +5528,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['server', 'datacenter', 'database', 'hosting', 'network', 'rack', 'storage'],
+        isNew: false,
         Icon: ServerIcon,
     },
     {
@@ -5231,6 +5545,7 @@ export const icons: IconData[] = [
             'storage',
             'datacenter',
         ],
+        isNew: false,
         Icon: Server2Icon,
     },
     {
@@ -5248,6 +5563,7 @@ export const icons: IconData[] = [
             'waves',
             'playing',
         ],
+        isNew: false,
         Icon: HeadphonesSquareSoundIcon,
     },
     {
@@ -5255,6 +5571,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['Server', 'Servers', 'database', 'hosting', 'network', 'rack', 'storage', 'simple'],
+        isNew: false,
         Icon: ServerMinimalisticIcon,
     },
     {
@@ -5262,6 +5579,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['server', 'computers', 'database', 'hosting', 'network', 'rack', 'storage', 'box'],
+        isNew: false,
         Icon: ServerSquareIcon,
     },
     {
@@ -5279,6 +5597,7 @@ export const icons: IconData[] = [
             'nodes',
             'connection',
         ],
+        isNew: false,
         Icon: ServerPathIcon,
     },
     {
@@ -5294,6 +5613,7 @@ export const icons: IconData[] = [
             'cursor',
             'hardware',
         ],
+        isNew: false,
         Icon: MouseIcon,
     },
     {
@@ -5312,6 +5632,7 @@ export const icons: IconData[] = [
             'sync',
             'refresh',
         ],
+        isNew: false,
         Icon: ServerSquareUpdateIcon,
     },
     {
@@ -5328,6 +5649,7 @@ export const icons: IconData[] = [
             'hardware',
             'simple',
         ],
+        isNew: false,
         Icon: MouseMinimalisticIcon,
     },
     {
@@ -5345,6 +5667,7 @@ export const icons: IconData[] = [
             'headphones',
             'box',
         ],
+        isNew: false,
         Icon: AirbudsCaseIcon,
     },
     {
@@ -5361,6 +5684,7 @@ export const icons: IconData[] = [
             'delete',
             'minus',
         ],
+        isNew: false,
         Icon: AirbudsRemoveIcon,
     },
     {
@@ -5378,6 +5702,7 @@ export const icons: IconData[] = [
             'battery',
             'plug',
         ],
+        isNew: false,
         Icon: AirbudsCaseChargeIcon,
     },
     {
@@ -5394,6 +5719,7 @@ export const icons: IconData[] = [
             'hardware',
             'circle',
         ],
+        isNew: false,
         Icon: MouseCircleIcon,
     },
     {
@@ -5411,6 +5737,7 @@ export const icons: IconData[] = [
             'box',
             'online',
         ],
+        isNew: false,
         Icon: ServerSquareCloudIcon,
     },
     {
@@ -5428,6 +5755,7 @@ export const icons: IconData[] = [
             'box',
             'lid',
         ],
+        isNew: false,
         Icon: AirbudsCaseOpenIcon,
     },
     {
@@ -5443,6 +5771,7 @@ export const icons: IconData[] = [
             'headphones',
             'earbuds',
         ],
+        isNew: false,
         Icon: AirbudsIcon,
     },
     {
@@ -5459,6 +5788,7 @@ export const icons: IconData[] = [
             'screen',
             'simple',
         ],
+        isNew: false,
         Icon: LaptopMinimalisticIcon,
     },
     {
@@ -5476,6 +5806,7 @@ export const icons: IconData[] = [
             'earbuds',
             'R',
         ],
+        isNew: false,
         Icon: AirbudsRightIcon,
     },
     {
@@ -5494,6 +5825,7 @@ export const icons: IconData[] = [
             'tick',
             'done',
         ],
+        isNew: false,
         Icon: AirbudsCheckIcon,
     },
     {
@@ -5511,6 +5843,7 @@ export const icons: IconData[] = [
             'earbuds',
             'L',
         ],
+        isNew: false,
         Icon: AirbudsLeftIcon,
     },
     {
@@ -5518,6 +5851,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['computer', 'laptop', 'device', 'pc', 'macbook', 'screen'],
+        isNew: false,
         Icon: LaptopIcon,
     },
     {
@@ -5534,6 +5868,7 @@ export const icons: IconData[] = [
             'power',
             'energy',
         ],
+        isNew: false,
         Icon: CpuBoltIcon,
     },
     {
@@ -5551,6 +5886,7 @@ export const icons: IconData[] = [
             'box',
             'simple',
         ],
+        isNew: false,
         Icon: AirbudsCaseMinimalisticIcon,
     },
     {
@@ -5567,6 +5903,7 @@ export const icons: IconData[] = [
             'headphones',
             'battery',
         ],
+        isNew: false,
         Icon: AirbudsChargeIcon,
     },
     {
@@ -5574,6 +5911,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['computer', 'laptop', 'pc', 'macbook', 'device', 'screen'],
+        isNew: false,
         Icon: Laptop3Icon,
     },
     {
@@ -5581,6 +5919,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['central', 'processor', 'chip', 'hardware', 'computer', 'microchip'],
+        isNew: false,
         Icon: CpuIcon,
     },
     {
@@ -5588,6 +5927,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['laptop', 'notebook', 'computer', 'pc', 'macbook', 'device', 'screen'],
+        isNew: false,
         Icon: Laptop2Icon,
     },
     {
@@ -5604,6 +5944,7 @@ export const icons: IconData[] = [
             'audio',
             'retro',
         ],
+        isNew: false,
         Icon: TurntableIcon,
     },
     {
@@ -5611,6 +5952,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['music', 'disc', 'record-player', 'vinyl', 'dj', 'audio', 'melody', 'song'],
+        isNew: false,
         Icon: TurntableMusicNoteIcon,
     },
     {
@@ -5626,6 +5968,7 @@ export const icons: IconData[] = [
             'desktop',
             'tv',
         ],
+        isNew: false,
         Icon: MonitorIcon,
     },
     {
@@ -5643,6 +5986,7 @@ export const icons: IconData[] = [
             'retro',
             'tape',
         ],
+        isNew: false,
         Icon: BoomboxIcon,
     },
     {
@@ -5650,6 +5994,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['audio', 'recorder', 'tape', 'music', 'retro', 'recording', 'vintage'],
+        isNew: false,
         Icon: CassetteIcon,
     },
     {
@@ -5657,6 +6002,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['camera', 'screen', 'display', 'computer', 'desktop', 'webcam', 'video-call'],
+        isNew: false,
         Icon: MonitorCameraIcon,
     },
     {
@@ -5674,6 +6020,7 @@ export const icons: IconData[] = [
             'responsive',
             'mobile',
         ],
+        isNew: false,
         Icon: MonitorSmartphoneIcon,
     },
     {
@@ -5690,6 +6037,7 @@ export const icons: IconData[] = [
             'machine',
             'simple',
         ],
+        isNew: false,
         Icon: PrinterMinimalisticIcon,
     },
     {
@@ -5697,6 +6045,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['cassette', 'audio', 'tape', 'music', 'retro', 'recording', 'vintage', 'alt'],
+        isNew: false,
         Icon: Cassette2Icon,
     },
     {
@@ -5704,6 +6053,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['print', 'printer', 'document', 'paper', 'hardware', 'machine', 'office'],
+        isNew: false,
         Icon: PrinterIcon,
     },
     {
@@ -5711,6 +6061,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['printer', 'office', 'desktop', 'print', 'document', 'paper', 'hardware', 'machine'],
+        isNew: false,
         Icon: Printer2Icon,
     },
     {
@@ -5718,6 +6069,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['monitor', 'screen', 'tv', 'presentation'],
+        isNew: false,
         Icon: DisplayIcon,
     },
     {
@@ -5725,6 +6077,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['Bluetooth', 'Icon', 'wireless', 'connection', 'pairing', 'network', 'device'],
+        isNew: false,
         Icon: BluetoothIcon,
     },
     {
@@ -5741,6 +6094,7 @@ export const icons: IconData[] = [
             'device',
             'round',
         ],
+        isNew: false,
         Icon: BluetoothCircleIcon,
     },
     {
@@ -5757,6 +6111,7 @@ export const icons: IconData[] = [
             'computer',
             'board',
         ],
+        isNew: false,
         Icon: KeyboardIcon,
     },
     {
@@ -5764,6 +6119,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['record-player', 'music-control', 'vinyl', 'music', 'dj', 'audio', 'simple'],
+        isNew: false,
         Icon: TurntableMinimalisticIcon,
     },
     {
@@ -5771,6 +6127,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['voice-activated', 'audio-device', 'audio', 'voice', 'assistant', 'home', 'device'],
+        isNew: false,
         Icon: SmartSpeakerIcon,
     },
     {
@@ -5787,6 +6144,7 @@ export const icons: IconData[] = [
             'discovery',
             'lens',
         ],
+        isNew: false,
         Icon: TelescopeIcon,
     },
     {
@@ -5794,6 +6152,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['speaker', 'audio-device', 'audio', 'voice', 'assistant', 'home', 'device', 'alt'],
+        isNew: false,
         Icon: SmartSpeaker2Icon,
     },
     {
@@ -5811,6 +6170,7 @@ export const icons: IconData[] = [
             'device',
             'box',
         ],
+        isNew: false,
         Icon: BluetoothSquareIcon,
     },
     {
@@ -5818,6 +6178,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['television', 'screen', 'monitor', 'display', 'video', 'broadcast'],
+        isNew: false,
         Icon: TvIcon,
     },
     {
@@ -5834,6 +6195,7 @@ export const icons: IconData[] = [
             'device',
             'signal',
         ],
+        isNew: false,
         Icon: BluetoothWaveIcon,
     },
     {
@@ -5850,6 +6212,7 @@ export const icons: IconData[] = [
             'portable',
             'videogame',
         ],
+        isNew: false,
         Icon: GameboyIcon,
     },
     {
@@ -5857,6 +6220,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['audio', 'player', 'music', 'broadcast', 'fm', 'am', 'tuner', 'simple'],
+        isNew: false,
         Icon: RadioMinimalisticIcon,
     },
     {
@@ -5864,6 +6228,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['radioreceiver', 'portableradio'],
+        isNew: false,
         Icon: RadioIcon,
     },
     {
@@ -5880,6 +6245,7 @@ export const icons: IconData[] = [
             'movie',
             'film',
         ],
+        isNew: false,
         Icon: ProjectorIcon,
     },
     {
@@ -5887,6 +6253,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['speaker', 'audio', 'stereo', 'voice', 'assistant', 'home', 'device', 'simple'],
+        isNew: false,
         Icon: SmartSpeakerMinimalisticIcon,
     },
     {
@@ -5894,6 +6261,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['floppy', 'drive', 'save', 'storage', 'retro', 'data', 'disk'],
+        isNew: false,
         Icon: DisketteIcon,
     },
     {
@@ -5901,6 +6269,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['electricity', 'charging', 'power', 'connection', 'cable', 'energy', 'round'],
+        isNew: false,
         Icon: PlugCircleIcon,
     },
     {
@@ -5908,6 +6277,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['microSD card', 'memory card', 'memory', 'storage', 'data', 'chip', 'flash'],
+        isNew: false,
         Icon: SdCardIcon,
     },
     {
@@ -5924,6 +6294,7 @@ export const icons: IconData[] = [
             'chip',
             'simple',
         ],
+        isNew: false,
         Icon: SimCardMinimalisticIcon,
     },
     {
@@ -5940,6 +6311,7 @@ export const icons: IconData[] = [
             'chip',
             'multiple',
         ],
+        isNew: false,
         Icon: SimCardsIcon,
     },
     {
@@ -5955,6 +6327,7 @@ export const icons: IconData[] = [
             'induction',
             'pad',
         ],
+        isNew: false,
         Icon: WirelessChargeIcon,
     },
     {
@@ -5962,6 +6335,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['USB', 'flash drive', 'usb', 'storage', 'memory', 'data', 'pen-drive'],
+        isNew: false,
         Icon: FlashDriveIcon,
     },
     {
@@ -5969,6 +6343,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['storage', 'hard-disk'],
+        isNew: false,
         Icon: SsdRoundIcon,
     },
     {
@@ -5986,6 +6361,7 @@ export const icons: IconData[] = [
             'charge',
             'cable',
         ],
+        isNew: false,
         Icon: LightningIcon,
     },
     {
@@ -5993,6 +6369,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['SIM card', 'SIM module', 'mobile', 'phone', 'network', 'cellular', 'chip'],
+        isNew: false,
         Icon: SimCardIcon,
     },
     {
@@ -6000,6 +6377,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['balance', 'scales', 'weight', 'mass', 'measure', 'diet', 'fitness'],
+        isNew: false,
         Icon: ScaleIcon,
     },
     {
@@ -6007,6 +6385,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['lamp', 'idea', 'light', 'energy', 'power', 'bright', 'simple'],
+        isNew: false,
         Icon: LightbulbMinimalisticIcon,
     },
     {
@@ -6014,6 +6393,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['thought', 'idea', 'energy', 'power', 'light', 'bright', 'fast', 'electric'],
+        isNew: false,
         Icon: LightbulbBoltIcon,
     },
     {
@@ -6030,6 +6410,7 @@ export const icons: IconData[] = [
             'hard-drive',
             'box',
         ],
+        isNew: false,
         Icon: SsdSquareIcon,
     },
     {
@@ -6046,6 +6427,7 @@ export const icons: IconData[] = [
             'drive',
             'network',
         ],
+        isNew: false,
         Icon: CloudStorageIcon,
     },
     {
@@ -6053,6 +6435,7 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
         tags: ['database', 'documentation', 'phone', 'tablet', 'responsive', 'screens', 'multiple'],
+        isNew: false,
         Icon: DevicesIcon,
     },
     {
@@ -6069,6 +6452,7 @@ export const icons: IconData[] = [
             'bright',
             'creative',
         ],
+        isNew: false,
         Icon: LightbulbIcon,
     },
     {
@@ -6085,6 +6469,7 @@ export const icons: IconData[] = [
             'wall',
             'energy',
         ],
+        isNew: false,
         Icon: SocketIcon,
     },
     {
@@ -6092,6 +6477,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['Cloud Icon', 'Weather Symbol'],
+        isNew: false,
         Icon: CloudsIcon,
     },
     {
@@ -6111,6 +6497,7 @@ export const icons: IconData[] = [
             'electricity',
             'flash',
         ],
+        isNew: false,
         Icon: CloudBoltIcon,
     },
     {
@@ -6118,6 +6505,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['cloud x', 'crossed-out cloud', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudCrossIcon,
     },
     {
@@ -6138,6 +6526,7 @@ export const icons: IconData[] = [
             'weather',
             'atmosphere',
         ],
+        isNew: false,
         Icon: CloudCheckIcon,
     },
     {
@@ -6145,6 +6534,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['cloudy', 'sky', 'mist', 'haze', 'low-visibility'],
+        isNew: false,
         Icon: FogIcon,
     },
     {
@@ -6152,6 +6542,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['Cloud', 'Plus', 'Digital Storage', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudPlusIcon,
     },
     {
@@ -6172,6 +6563,7 @@ export const icons: IconData[] = [
             'clear',
             'morning',
         ],
+        isNew: false,
         Icon: CloudSun2Icon,
     },
     {
@@ -6190,6 +6582,7 @@ export const icons: IconData[] = [
             'shower',
             'precipitation',
         ],
+        isNew: false,
         Icon: CloudRainIcon,
     },
     {
@@ -6211,6 +6604,7 @@ export const icons: IconData[] = [
             'clear',
             'morning',
         ],
+        isNew: false,
         Icon: CloudSunIcon,
     },
     {
@@ -6230,6 +6624,7 @@ export const icons: IconData[] = [
             'electricity',
             'flash',
         ],
+        isNew: false,
         Icon: CloudBoltMinimalisticIcon,
     },
     {
@@ -6249,6 +6644,7 @@ export const icons: IconData[] = [
             'extreme',
             'disaster',
         ],
+        isNew: false,
         Icon: CloudStormIcon,
     },
     {
@@ -6256,6 +6652,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['cloudy', 'skyline', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudIcon,
     },
     {
@@ -6274,6 +6671,7 @@ export const icons: IconData[] = [
             'weather',
             'atmosphere',
         ],
+        isNew: false,
         Icon: CloudMinusIcon,
     },
     {
@@ -6281,6 +6679,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['water cloud', 'rain cloud', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudWaterdropIcon,
     },
     {
@@ -6288,6 +6687,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['water droplets', 'rain cloud', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudWaterdropsIcon,
     },
     {
@@ -6295,6 +6695,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['crescent', 'night', 'half moon', 'dark', 'evening', 'sleep', 'lunar'],
+        isNew: false,
         Icon: MoonIcon,
     },
     {
@@ -6302,6 +6703,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['night', 'starlight', 'dark', 'evening', 'sleep', 'lunar', 'crescent'],
+        isNew: false,
         Icon: MoonStarsIcon,
     },
     {
@@ -6309,6 +6711,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['Cloud', 'Snowflakes', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudSnowfallMinimalisticIcon,
     },
     {
@@ -6316,6 +6719,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['cyclone', 'twister', 'danger', 'wind', 'extreme', 'disaster'],
+        isNew: false,
         Icon: TornadoIcon,
     },
     {
@@ -6323,6 +6727,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['upload-cloud', 'data-transmission', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudUploadIcon,
     },
     {
@@ -6330,6 +6735,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['snowflake', 'cloudy', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudSnowfallIcon,
     },
     {
@@ -6337,6 +6743,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['solar', 'heliosphere', 'day', 'light', 'bright', 'hot', 'warm', 'clear', 'morning'],
+        isNew: false,
         Icon: Sun2Icon,
     },
     {
@@ -6344,6 +6751,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['cloud download', 'data transfer', 'sky', 'overcast', 'weather', 'atmosphere'],
+        isNew: false,
         Icon: CloudDownloadIcon,
     },
     {
@@ -6361,6 +6769,7 @@ export const icons: IconData[] = [
             'lunar',
             'crescent',
         ],
+        isNew: false,
         Icon: CloudyMoonIcon,
     },
     {
@@ -6381,6 +6790,7 @@ export const icons: IconData[] = [
             'cloudy',
             'low-visibility',
         ],
+        isNew: false,
         Icon: MoonFogIcon,
     },
     {
@@ -6388,6 +6798,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['sunny', 'radiant', 'day', 'light', 'bright', 'hot', 'warm', 'clear', 'morning'],
+        isNew: false,
         Icon: SunIcon,
     },
     {
@@ -6395,6 +6806,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['solar', 'sunrise', 'dawn', 'day', 'morning', 'early'],
+        isNew: false,
         Icon: SunriseIcon,
     },
     {
@@ -6402,6 +6814,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['droplets', 'raindrop trio'],
+        isNew: false,
         Icon: WaterdropsIcon,
     },
     {
@@ -6423,6 +6836,7 @@ export const icons: IconData[] = [
             'cloudy',
             'low-visibility',
         ],
+        isNew: false,
         Icon: SunFogIcon,
     },
     {
@@ -6430,6 +6844,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['snowflake', 'winter symbol'],
+        isNew: false,
         Icon: SnowflakeIcon,
     },
     {
@@ -6437,6 +6852,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['wind symbol', 'airplane tail', 'weather symbol', 'breeze', 'blow', 'air', 'gale'],
+        isNew: false,
         Icon: WindIcon,
     },
     {
@@ -6444,6 +6860,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['sun', 'sunset', 'evening', 'dusk', 'twilight', 'late'],
+        isNew: false,
         Icon: SunsetIcon,
     },
     {
@@ -6451,6 +6868,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['sleep', 'rest', 'night', 'dark', 'evening', 'lunar', 'crescent'],
+        isNew: false,
         Icon: MoonSleepIcon,
     },
     {
@@ -6458,6 +6876,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['twister', 'cyclone', 'danger', 'wind', 'extreme', 'disaster'],
+        isNew: false,
         Icon: TornadoSmallIcon,
     },
     {
@@ -6465,6 +6884,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['thermometer', 'heat', 'cold', 'climate', 'degree'],
+        isNew: false,
         Icon: TemperatureIcon,
     },
     {
@@ -6472,6 +6892,7 @@ export const icons: IconData[] = [
         category: 'weather' as Category,
         categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
         tags: ['star', 'sparkle'],
+        isNew: false,
         Icon: StarsIcon,
     },
     {
@@ -6489,6 +6910,7 @@ export const icons: IconData[] = [
             'tick',
             'success',
         ],
+        isNew: false,
         Icon: FileCheckIcon,
     },
     {
@@ -6506,6 +6928,7 @@ export const icons: IconData[] = [
             'writing',
             'content',
         ],
+        isNew: false,
         Icon: FileTextIcon,
     },
     {
@@ -6513,6 +6936,7 @@ export const icons: IconData[] = [
         category: 'files' as Category,
         categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
         tags: ['document', 'paperwork', 'page', 'paper', 'blank', 'sheet'],
+        isNew: false,
         Icon: FileIcon,
     },
     {
@@ -6529,6 +6953,7 @@ export const icons: IconData[] = [
             'import',
             'back',
         ],
+        isNew: false,
         Icon: FileLeftIcon,
     },
     {
@@ -6536,6 +6961,7 @@ export const icons: IconData[] = [
         category: 'files' as Category,
         categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
         tags: ['document', 'copy', 'download', 'page', 'paper', 'arrow-right', 'export', 'forward'],
+        isNew: false,
         Icon: FileRightIcon,
     },
     {
@@ -6552,6 +6978,7 @@ export const icons: IconData[] = [
             'emoji',
             'good',
         ],
+        isNew: false,
         Icon: FileSmileIcon,
     },
     {
@@ -6570,6 +6997,7 @@ export const icons: IconData[] = [
             'torn',
             'damage',
         ],
+        isNew: false,
         Icon: FileCorruptedIcon,
     },
     {
@@ -6577,6 +7005,7 @@ export const icons: IconData[] = [
         category: 'files' as Category,
         categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
         tags: ['upload', 'data-transfer', 'document', 'page', 'paper', 'arrow-up', 'submit'],
+        isNew: false,
         Icon: FileSendIcon,
     },
     {
@@ -6595,6 +7024,7 @@ export const icons: IconData[] = [
             'x',
             'cancel',
         ],
+        isNew: false,
         Icon: FileRemoveIcon,
     },
     {
@@ -6612,6 +7042,7 @@ export const icons: IconData[] = [
             'script',
             'brackets',
         ],
+        isNew: false,
         Icon: CodeFileIcon,
     },
     {
@@ -6629,6 +7060,7 @@ export const icons: IconData[] = [
             'zipper',
             'bundle',
         ],
+        isNew: false,
         Icon: ZipFileIcon,
     },
     {
@@ -6636,6 +7068,7 @@ export const icons: IconData[] = [
         category: 'files' as Category,
         categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
         tags: ['file', 'paper', 'document', 'page', 'design', 'ui', 'prototype', 'figma-logo'],
+        isNew: false,
         Icon: FigmaFileIcon,
     },
     {
@@ -6653,6 +7086,7 @@ export const icons: IconData[] = [
             'saved',
             'important',
         ],
+        isNew: false,
         Icon: FileFavoriteIcon,
     },
     {
@@ -6660,6 +7094,7 @@ export const icons: IconData[] = [
         category: 'files' as Category,
         categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
         tags: ['download', 'save', 'document', 'page', 'paper', 'arrow-down', 'fetch'],
+        isNew: false,
         Icon: FileDownloadIcon,
     },
     {
@@ -6677,6 +7112,7 @@ export const icons: IconData[] = [
             'sync',
             'drive',
         ],
+        isNew: false,
         Icon: CloudFileIcon,
     },
     {
@@ -6704,6 +7140,7 @@ export const icons: IconData[] = [
             'boy',
             'man',
         ],
+        isNew: false,
         Icon: MenIcon,
     },
     {
@@ -6730,6 +7167,7 @@ export const icons: IconData[] = [
             'wormhole',
             'vortex',
         ],
+        isNew: false,
         Icon: BlackHole3Icon,
     },
     {
@@ -6758,6 +7196,7 @@ export const icons: IconData[] = [
             'vortex',
             'space-time',
         ],
+        isNew: false,
         Icon: BlackHoleIcon,
     },
     {
@@ -6785,6 +7224,7 @@ export const icons: IconData[] = [
             'girl',
             'woman',
         ],
+        isNew: false,
         Icon: WomenIcon,
     },
     {
@@ -6802,6 +7242,7 @@ export const icons: IconData[] = [
             'outer-space',
         ],
         tags: ['satellite', 'spacecraft', 'saturn', 'rings', 'orbit', 'sphere', 'globe'],
+        isNew: false,
         Icon: Planet2Icon,
     },
     {
@@ -6828,6 +7269,7 @@ export const icons: IconData[] = [
             'boost',
             'takeoff',
         ],
+        isNew: false,
         Icon: Rocket2Icon,
     },
     {
@@ -6854,6 +7296,7 @@ export const icons: IconData[] = [
             'meteorite',
             'shooting-star',
         ],
+        isNew: false,
         Icon: AsteroidIcon,
     },
     {
@@ -6881,6 +7324,7 @@ export const icons: IconData[] = [
             'mission',
             'spacecraft',
         ],
+        isNew: false,
         Icon: RocketIcon,
     },
     {
@@ -6909,6 +7353,7 @@ export const icons: IconData[] = [
             'quantum',
             'molecule',
         ],
+        isNew: false,
         Icon: AtomIcon,
     },
     {
@@ -6926,6 +7371,7 @@ export const icons: IconData[] = [
             'outer-space',
         ],
         tags: ['world', 'globe', 'planet', 'terra', 'geography', 'global', 'nature', 'map'],
+        isNew: false,
         Icon: EarthIcon,
     },
     {
@@ -6953,6 +7399,7 @@ export const icons: IconData[] = [
             'boundless',
             'math',
         ],
+        isNew: false,
         Icon: InfiniteIcon,
     },
     {
@@ -6970,6 +7417,7 @@ export const icons: IconData[] = [
             'outer-space',
         ],
         tags: ['Saturn', 'Ringed Planet', 'mars', 'venus', 'sphere', 'globe', 'surface', 'crater'],
+        isNew: false,
         Icon: Planet4Icon,
     },
     {
@@ -6997,6 +7445,7 @@ export const icons: IconData[] = [
             'premium',
             'quality',
         ],
+        isNew: false,
         Icon: StarCircleIcon,
     },
     {
@@ -7025,6 +7474,7 @@ export const icons: IconData[] = [
             'radar',
             'space-station',
         ],
+        isNew: false,
         Icon: SatelliteIcon,
     },
     {
@@ -7051,6 +7501,7 @@ export const icons: IconData[] = [
             'wormhole',
             'vortex',
         ],
+        isNew: false,
         Icon: BlackHole2Icon,
     },
     {
@@ -7079,6 +7530,7 @@ export const icons: IconData[] = [
             'falling-star',
             'stardust',
         ],
+        isNew: false,
         Icon: StarFallIcon,
     },
     {
@@ -7106,6 +7558,7 @@ export const icons: IconData[] = [
             'shooting-star',
             'trail',
         ],
+        isNew: false,
         Icon: StarRainbowIcon,
     },
     {
@@ -7123,6 +7576,7 @@ export const icons: IconData[] = [
             'outer-space',
         ],
         tags: ['orb', 'sphere', 'cosmic body', 'gas-giant', 'jupiter', 'stripes', 'globe'],
+        isNew: false,
         Icon: Planet3Icon,
     },
     {
@@ -7150,6 +7604,7 @@ export const icons: IconData[] = [
             'rating',
             'magic',
         ],
+        isNew: false,
         Icon: Star2Icon,
     },
     {
@@ -7176,6 +7631,7 @@ export const icons: IconData[] = [
             'shine',
             'burst',
         ],
+        isNew: false,
         Icon: StarsLineIcon,
     },
     {
@@ -7202,6 +7658,7 @@ export const icons: IconData[] = [
             'globe',
             'astrophysics',
         ],
+        isNew: false,
         Icon: PlanetIcon,
     },
     {
@@ -7228,6 +7685,7 @@ export const icons: IconData[] = [
             'constellation',
             'galaxy',
         ],
+        isNew: false,
         Icon: Stars2Icon,
     },
     {
@@ -7253,6 +7711,7 @@ export const icons: IconData[] = [
             'magic',
             'rotation',
         ],
+        isNew: false,
         Icon: StarRingIcon,
     },
     {
@@ -7279,6 +7738,7 @@ export const icons: IconData[] = [
             'constellation',
             'simple-stars',
         ],
+        isNew: false,
         Icon: StarsMinimalisticIcon,
     },
     {
@@ -7304,6 +7764,7 @@ export const icons: IconData[] = [
             'comet',
             'falling-star',
         ],
+        isNew: false,
         Icon: StarFall2Icon,
     },
     {
@@ -7332,6 +7793,7 @@ export const icons: IconData[] = [
             'flying-saucer',
             'sci-fi',
         ],
+        isNew: false,
         Icon: UfoIcon,
     },
     {
@@ -7357,6 +7819,7 @@ export const icons: IconData[] = [
             'flying-saucer',
             'sci-fi',
         ],
+        isNew: false,
         Icon: Ufo2Icon,
     },
     {
@@ -7382,6 +7845,7 @@ export const icons: IconData[] = [
             'falling-star',
             'simple-star',
         ],
+        isNew: false,
         Icon: StarFallMinimalisticIcon,
     },
     {
@@ -7399,6 +7863,7 @@ export const icons: IconData[] = [
             'outer-space',
         ],
         tags: ['sky', 'falling', 'stars', 'shooting-star', 'meteor', 'comet', 'falling-star'],
+        isNew: false,
         Icon: StarFallMinimalistic2Icon,
     },
     {
@@ -7425,6 +7890,7 @@ export const icons: IconData[] = [
             'rotation',
             'vortex',
         ],
+        isNew: false,
         Icon: StarRingsIcon,
     },
     {
@@ -7452,6 +7918,7 @@ export const icons: IconData[] = [
             'celestial-body',
             'angular-star',
         ],
+        isNew: false,
         Icon: StarAngleIcon,
     },
     {
@@ -7479,6 +7946,7 @@ export const icons: IconData[] = [
             'sci-fi',
             'abduction',
         ],
+        isNew: false,
         Icon: Ufo3Icon,
     },
     {
@@ -7486,6 +7954,7 @@ export const icons: IconData[] = [
         category: 'folders' as Category,
         categoryTags: ['folders', 'directories', 'organization', 'storage'],
         tags: ['directory', 'file Cabinet', 'binder', 'organize', 'files'],
+        isNew: false,
         Icon: FolderIcon,
     },
     {
@@ -7501,6 +7970,7 @@ export const icons: IconData[] = [
             'files',
             'alt',
         ],
+        isNew: false,
         Icon: Folder2Icon,
     },
     {
@@ -7517,6 +7987,7 @@ export const icons: IconData[] = [
             'tick',
             'success',
         ],
+        isNew: false,
         Icon: FolderCheckIcon,
     },
     {
@@ -7532,6 +8003,7 @@ export const icons: IconData[] = [
             'saved',
             'important',
         ],
+        isNew: false,
         Icon: FolderFavoriteStarIcon,
     },
     {
@@ -7548,6 +8020,7 @@ export const icons: IconData[] = [
             'cancel',
             'invalid',
         ],
+        isNew: false,
         Icon: FolderErrorIcon,
     },
     {
@@ -7555,6 +8028,7 @@ export const icons: IconData[] = [
         category: 'folders' as Category,
         categoryTags: ['folders', 'directories', 'organization', 'storage'],
         tags: ['delete-folder', 'trash-icon', 'directory', 'minus', 'delete', 'subtract', 'remove'],
+        isNew: false,
         Icon: RemoveFolderIcon,
     },
     {
@@ -7570,6 +8044,7 @@ export const icons: IconData[] = [
             'export',
             'send',
         ],
+        isNew: false,
         Icon: MoveToFolderIcon,
     },
     {
@@ -7577,6 +8052,7 @@ export const icons: IconData[] = [
         category: 'folders' as Category,
         categoryTags: ['folders', 'directories', 'organization', 'storage'],
         tags: ['plus-folder', 'file-addition', 'directory', 'plus', 'new', 'create'],
+        isNew: false,
         Icon: AddFolderIcon,
     },
     {
@@ -7592,6 +8068,7 @@ export const icons: IconData[] = [
             'important',
             'marked',
         ],
+        isNew: false,
         Icon: FolderFavoriteBookmarkIcon,
     },
     {
@@ -7608,6 +8085,7 @@ export const icons: IconData[] = [
             'protected',
             'private',
         ],
+        isNew: false,
         Icon: FolderSecurityIcon,
     },
     {
@@ -7615,6 +8093,7 @@ export const icons: IconData[] = [
         category: 'folders' as Category,
         categoryTags: ['folders', 'directories', 'organization', 'storage'],
         tags: ['cloud storage', 'data folder', 'directory', 'online', 'storage', 'sync', 'drive'],
+        isNew: false,
         Icon: FolderCloudIcon,
     },
     {
@@ -7630,6 +8109,7 @@ export const icons: IconData[] = [
             'content',
             'full',
         ],
+        isNew: false,
         Icon: FolderWithFilesIcon,
     },
     {
@@ -7645,6 +8125,7 @@ export const icons: IconData[] = [
             'access',
             'minus',
         ],
+        isNew: false,
         Icon: FolderOpenIcon,
     },
     {
@@ -7652,6 +8133,7 @@ export const icons: IconData[] = [
         category: 'folders' as Category,
         categoryTags: ['folders', 'directories', 'organization', 'storage'],
         tags: ['connected', 'networking', 'directory', 'network', 'shared', 'link', 'nodes'],
+        isNew: false,
         Icon: FolderPathConnectIcon,
     },
     {
@@ -7668,6 +8150,7 @@ export const icons: IconData[] = [
             'flat',
             'circle',
         ],
+        isNew: false,
         Icon: ExpressionlessCircleIcon,
     },
     {
@@ -7675,6 +8158,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['smiling face', 'happy expression', 'face', 'emoji', 'happy', 'joy', 'box'],
+        isNew: false,
         Icon: SmileSquareIcon,
     },
     {
@@ -7682,6 +8166,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['happy-face', 'smiling', 'circled smile', 'face', 'emoji', 'happy', 'joy', 'circle'],
+        isNew: false,
         Icon: SmileCircleIcon,
     },
     {
@@ -7689,6 +8174,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['pensive', 'depressed', 'emo', 'face', 'emoji', 'unhappy', 'cry', 'sorrow', 'box'],
+        isNew: false,
         Icon: SadSquareIcon,
     },
     {
@@ -7705,6 +8191,7 @@ export const icons: IconData[] = [
             'flat',
             'box',
         ],
+        isNew: false,
         Icon: ExpressionlessSquareIcon,
     },
     {
@@ -7712,6 +8199,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['smile', 'circle', 'face', 'biometrics', 'recognition', 'security', 'scan'],
+        isNew: false,
         Icon: FaceScanCircleIcon,
     },
     {
@@ -7729,6 +8217,7 @@ export const icons: IconData[] = [
             'sorrow',
             'circle',
         ],
+        isNew: false,
         Icon: SadCircleIcon,
     },
     {
@@ -7736,6 +8225,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['scan', 'smiley-face', 'face', 'biometrics', 'recognition', 'security', 'box'],
+        isNew: false,
         Icon: FaceScanSquareIcon,
     },
     {
@@ -7743,6 +8233,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['document', 'note', 'sticker', 'peel', 'label', 'decal', 'box'],
+        isNew: false,
         Icon: StickerSquareIcon,
     },
     {
@@ -7760,6 +8251,7 @@ export const icons: IconData[] = [
             'box',
             'playful',
         ],
+        isNew: false,
         Icon: EmojiFunnySquareIcon,
     },
     {
@@ -7776,6 +8268,7 @@ export const icons: IconData[] = [
             'happy',
             'circle',
         ],
+        isNew: false,
         Icon: StickerSmileCircleIcon,
     },
     {
@@ -7793,6 +8286,7 @@ export const icons: IconData[] = [
             'circle',
             'alt',
         ],
+        isNew: false,
         Icon: StickerSmileCircle2Icon,
     },
     {
@@ -7810,6 +8304,7 @@ export const icons: IconData[] = [
             'circle',
             'zigzag',
         ],
+        isNew: false,
         Icon: ConfoundedCircleIcon,
     },
     {
@@ -7817,6 +8312,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['mask', 'face', 'emoji', 'medical', 'health', 'covid', 'sick', 'circle'],
+        isNew: false,
         Icon: FacemaskCircleIcon,
     },
     {
@@ -7834,6 +8330,7 @@ export const icons: IconData[] = [
             'sick',
             'box',
         ],
+        isNew: false,
         Icon: FacemaskSquareIcon,
     },
     {
@@ -7850,6 +8347,7 @@ export const icons: IconData[] = [
             'happy',
             'box',
         ],
+        isNew: false,
         Icon: StickerSmileSquareIcon,
     },
     {
@@ -7857,6 +8355,7 @@ export const icons: IconData[] = [
         category: 'faces' as Category,
         categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
         tags: ['Sticker', 'Round sticker', 'sticker', 'peel', 'label', 'decal', 'circle'],
+        isNew: false,
         Icon: StickerCircleIcon,
     },
     {
@@ -7876,6 +8375,7 @@ export const icons: IconData[] = [
             'rest',
             'box',
         ],
+        isNew: false,
         Icon: SleepingSquareIcon,
     },
     {
@@ -7893,6 +8393,7 @@ export const icons: IconData[] = [
             'circle',
             'playful',
         ],
+        isNew: false,
         Icon: EmojiFunnyCircleIcon,
     },
     {
@@ -7911,6 +8412,7 @@ export const icons: IconData[] = [
             'rest',
             'circle',
         ],
+        isNew: false,
         Icon: SleepingCircleIcon,
     },
     {
@@ -7928,6 +8430,7 @@ export const icons: IconData[] = [
             'box',
             'zigzag',
         ],
+        isNew: false,
         Icon: ConfoundedSquareIcon,
     },
     {
@@ -7943,6 +8446,7 @@ export const icons: IconData[] = [
             'ride',
             'tricks',
         ],
+        isNew: false,
         Icon: SkateboardingRoundIcon,
     },
     {
@@ -7950,6 +8454,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['Skateboarder', 'Sportsman', 'skater', 'board', 'extreme', 'ride', 'tricks'],
+        isNew: false,
         Icon: SkateboardingIcon,
     },
     {
@@ -7957,6 +8462,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['runner', 'jogging', 'jog', 'sprint', 'fitness', 'cardio', 'track', 'fast'],
+        isNew: false,
         Icon: Running2Icon,
     },
     {
@@ -7964,6 +8470,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['bicycle', 'pedal', 'bike', 'cycle', 'ride', 'fitness'],
+        isNew: false,
         Icon: BicyclingRoundIcon,
     },
     {
@@ -7971,6 +8478,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['Skate', 'Board', 'skater', 'board', 'extreme', 'ride'],
+        isNew: false,
         Icon: SkateboardIcon,
     },
     {
@@ -7987,6 +8495,7 @@ export const icons: IconData[] = [
             'track',
             'fast',
         ],
+        isNew: false,
         Icon: RunningRoundIcon,
     },
     {
@@ -7994,6 +8503,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['pedestrian', 'person walking', 'stroll', 'step', 'walk', 'trek', 'outdoor'],
+        isNew: false,
         Icon: WalkingRoundIcon,
     },
     {
@@ -8011,6 +8521,7 @@ export const icons: IconData[] = [
             'backpacking',
             'mountain',
         ],
+        isNew: false,
         Icon: HikingMinimalisticIcon,
     },
     {
@@ -8018,6 +8529,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['runner', 'athlete', 'jog', 'sprint', 'fitness', 'cardio', 'track', 'fast'],
+        isNew: false,
         Icon: RunningIcon,
     },
     {
@@ -8025,6 +8537,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['meditation', 'pose', 'yoga', 'zen', 'relax', 'peace', 'mindfulness', 'lotus'],
+        isNew: false,
         Icon: MeditationRoundIcon,
     },
     {
@@ -8032,6 +8545,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['bicycle', 'cycling', 'bike', 'cycle', 'ride', 'pedal', 'fitness'],
+        isNew: false,
         Icon: BicyclingIcon,
     },
     {
@@ -8049,6 +8563,7 @@ export const icons: IconData[] = [
             'backpacking',
             'mountain',
         ],
+        isNew: false,
         Icon: HikingRoundIcon,
     },
     {
@@ -8056,6 +8571,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['Yoga pose', 'Exercise illustration'],
+        isNew: false,
         Icon: StretchingIcon,
     },
     {
@@ -8072,6 +8588,7 @@ export const icons: IconData[] = [
             'mindfulness',
             'lotus',
         ],
+        isNew: false,
         Icon: MeditationIcon,
     },
     {
@@ -8088,6 +8605,7 @@ export const icons: IconData[] = [
             'track',
             'indoor-running',
         ],
+        isNew: false,
         Icon: TreadmillIcon,
     },
     {
@@ -8104,6 +8622,7 @@ export const icons: IconData[] = [
             'track',
             'indoor-running',
         ],
+        isNew: false,
         Icon: TreadmillRoundIcon,
     },
     {
@@ -8111,6 +8630,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['running', 'exercise'],
+        isNew: false,
         Icon: StretchingRoundIcon,
     },
     {
@@ -8118,6 +8638,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['pedestrian', 'person walking', 'stroll', 'step', 'walk', 'trek', 'outdoor'],
+        isNew: false,
         Icon: WalkingIcon,
     },
     {
@@ -8125,6 +8646,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['solar wave', 'sun above waves', 'pool', 'ocean', 'sea', 'waves', 'swim', 'liquid'],
+        isNew: false,
         Icon: WaterSunIcon,
     },
     {
@@ -8132,6 +8654,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['wave', 'ocean waves', 'pool', 'ocean', 'sea', 'waves', 'swim', 'liquid'],
+        isNew: false,
         Icon: WaterIcon,
     },
     {
@@ -8149,6 +8672,7 @@ export const icons: IconData[] = [
             'backpacking',
             'mountain',
         ],
+        isNew: false,
         Icon: HikingIcon,
     },
     {
@@ -8165,6 +8689,7 @@ export const icons: IconData[] = [
             'lift',
             'fitness',
         ],
+        isNew: false,
         Icon: DumbbellIcon,
     },
     {
@@ -8172,6 +8697,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['swimmer', 'bather', 'pool', 'ocean', 'sea', 'waves', 'swim', 'stroke'],
+        isNew: false,
         Icon: SwimmingIcon,
     },
     {
@@ -8179,6 +8705,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['dumbbell', 'weightlifting'],
+        isNew: false,
         Icon: Dumbbells2Icon,
     },
     {
@@ -8186,6 +8713,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['dumbbell', 'weightlifting'],
+        isNew: false,
         Icon: DumbbellsIcon,
     },
     {
@@ -8203,6 +8731,7 @@ export const icons: IconData[] = [
             'lift',
             'barbell',
         ],
+        isNew: false,
         Icon: DumbbellSmallIcon,
     },
     {
@@ -8210,6 +8739,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['underwear', 'lingerie'],
+        isNew: false,
         Icon: BodyShapeMinimalisticIcon,
     },
     {
@@ -8227,6 +8757,7 @@ export const icons: IconData[] = [
             'lift',
             'barbell',
         ],
+        isNew: false,
         Icon: DumbbellLargeIcon,
     },
     {
@@ -8234,6 +8765,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['star', 'rank'],
+        isNew: false,
         Icon: RankingIcon,
     },
     {
@@ -8251,6 +8783,7 @@ export const icons: IconData[] = [
             'fitness',
             'barbell',
         ],
+        isNew: false,
         Icon: DumbbellLargeMinimalisticIcon,
     },
     {
@@ -8258,6 +8791,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['golf club', 'club', 'ball', 'game', 'match', 'play', 'putt', 'hole', 'flag'],
+        isNew: false,
         Icon: GolfIcon,
     },
     {
@@ -8265,6 +8799,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['ball', 'sport', 'game', 'match', 'play', 'court', 'racket', 'serve'],
+        isNew: false,
         Icon: TennisIcon,
     },
     {
@@ -8272,6 +8807,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['ball', 'golf', 'game', 'match', 'play', 'court', 'racket', 'serve'],
+        isNew: false,
         Icon: Tennis2Icon,
     },
     {
@@ -8289,6 +8825,7 @@ export const icons: IconData[] = [
             'court',
             'net',
         ],
+        isNew: false,
         Icon: VolleyballIcon,
     },
     {
@@ -8296,6 +8833,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['Volleyball', 'Sports', 'ball', 'game', 'match', 'play', 'team', 'court', 'net'],
+        isNew: false,
         Icon: Volleyball2Icon,
     },
     {
@@ -8313,6 +8851,7 @@ export const icons: IconData[] = [
             'pitch',
             'soccer',
         ],
+        isNew: false,
         Icon: FootballIcon,
     },
     {
@@ -8320,6 +8859,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['basket', 'b-ball', 'ball', 'game', 'match', 'play', 'team', 'court', 'hoop'],
+        isNew: false,
         Icon: BasketballIcon,
     },
     {
@@ -8327,6 +8867,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['golf ball', 'tennis'],
+        isNew: false,
         Icon: BallsIcon,
     },
     {
@@ -8344,6 +8885,7 @@ export const icons: IconData[] = [
             'pitch',
             'american-football',
         ],
+        isNew: false,
         Icon: RugbyIcon,
     },
     {
@@ -8351,6 +8893,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['underwear silhouette', 'bodysuit outline'],
+        isNew: false,
         Icon: BodyShapeIcon,
     },
     {
@@ -8358,6 +8901,7 @@ export const icons: IconData[] = [
         category: 'sports' as Category,
         categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
         tags: ['ball', 'ringer', 'game', 'match', 'play', 'strike', 'pins', 'alley'],
+        isNew: false,
         Icon: BowlingIcon,
     },
     {
@@ -8379,6 +8923,7 @@ export const icons: IconData[] = [
             'expand',
             'scale-up',
         ],
+        isNew: false,
         Icon: MinimalisticMagnifierZoomInIcon,
     },
     {
@@ -8400,6 +8945,7 @@ export const icons: IconData[] = [
             'reduce',
             'scale-down',
         ],
+        isNew: false,
         Icon: MinimalisticMagnifierZoomOutIcon,
     },
     {
@@ -8416,6 +8962,7 @@ export const icons: IconData[] = [
             'discover',
             'query',
         ],
+        isNew: false,
         Icon: MinimalisticMagnifierIcon,
     },
     {
@@ -8423,6 +8970,7 @@ export const icons: IconData[] = [
         category: 'search' as Category,
         categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
         tags: ['lens', 'optical', 'zoom', 'find', 'glass', 'look', 'explore', 'discover', 'query'],
+        isNew: false,
         Icon: MagnifierIcon,
     },
     {
@@ -8444,6 +8992,7 @@ export const icons: IconData[] = [
             'expand',
             'scale-up',
         ],
+        isNew: false,
         Icon: RoundedMagnifierZoomInIcon,
     },
     {
@@ -8465,6 +9014,7 @@ export const icons: IconData[] = [
             'issue',
             'find-bug',
         ],
+        isNew: false,
         Icon: MagnifierBugIcon,
     },
     {
@@ -8486,6 +9036,7 @@ export const icons: IconData[] = [
             'expand',
             'scale-up',
         ],
+        isNew: false,
         Icon: MagnifierZoomInIcon,
     },
     {
@@ -8507,6 +9058,7 @@ export const icons: IconData[] = [
             'issue',
             'find-bug',
         ],
+        isNew: false,
         Icon: RoundedMagnifierBugIcon,
     },
     {
@@ -8523,6 +9075,7 @@ export const icons: IconData[] = [
             'discover',
             'query',
         ],
+        isNew: false,
         Icon: RoundedMagnifierIcon,
     },
     {
@@ -8545,6 +9098,7 @@ export const icons: IconData[] = [
             'reduce',
             'scale-down',
         ],
+        isNew: false,
         Icon: RoundedMagnifierZoomOutIcon,
     },
     {
@@ -8566,6 +9120,7 @@ export const icons: IconData[] = [
             'issue',
             'find-bug',
         ],
+        isNew: false,
         Icon: MinimalisticMagnifierBugIcon,
     },
     {
@@ -8587,6 +9142,7 @@ export const icons: IconData[] = [
             'reduce',
             'scale-down',
         ],
+        isNew: false,
         Icon: MagnifierZoomOutIcon,
     },
     {
@@ -8604,6 +9160,7 @@ export const icons: IconData[] = [
             'watch',
             'analog',
         ],
+        isNew: false,
         Icon: ClockCircleIcon,
     },
     {
@@ -8611,6 +9168,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['clockwise arrow', 'replay', 'past', 'recent', 'undo', 'rewind', 'timeline', 'back'],
+        isNew: false,
         Icon: HistoryIcon,
     },
     {
@@ -8628,6 +9186,7 @@ export const icons: IconData[] = [
             'watch',
             'analog',
         ],
+        isNew: false,
         Icon: ClockSquareIcon,
     },
     {
@@ -8646,6 +9205,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmPlayIcon,
     },
     {
@@ -8664,6 +9224,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmIcon,
     },
     {
@@ -8682,6 +9243,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmSleepIcon,
     },
     {
@@ -8700,6 +9262,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmAddIcon,
     },
     {
@@ -8719,6 +9282,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmTurnOffIcon,
     },
     {
@@ -8736,6 +9300,7 @@ export const icons: IconData[] = [
             'fast',
             'chronometer',
         ],
+        isNew: false,
         Icon: StopwatchPlayIcon,
     },
     {
@@ -8752,6 +9317,7 @@ export const icons: IconData[] = [
             'duration',
             'glass',
         ],
+        isNew: false,
         Icon: HourglassIcon,
     },
     {
@@ -8759,6 +9325,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['pause', 'timer', 'countdown', 'speed', 'race', 'measure', 'fast', 'chronometer'],
+        isNew: false,
         Icon: StopwatchPauseIcon,
     },
     {
@@ -8766,6 +9333,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['clock', 'calendar', 'timeline', 'past', 'recent', 'undo', 'rewind', 'back'],
+        isNew: false,
         Icon: History3Icon,
     },
     {
@@ -8784,6 +9352,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarMinimalisticIcon,
     },
     {
@@ -8791,6 +9360,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['clock', 'hourglass', 'past', 'recent', 'undo', 'rewind', 'timeline', 'back'],
+        isNew: false,
         Icon: History2Icon,
     },
     {
@@ -8809,6 +9379,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarIcon,
     },
     {
@@ -8828,6 +9399,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmPauseIcon,
     },
     {
@@ -8835,6 +9407,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['timer', 'clock', 'countdown', 'speed', 'race', 'measure', 'fast', 'chronometer'],
+        isNew: false,
         Icon: StopwatchIcon,
     },
     {
@@ -8853,6 +9426,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarMarkIcon,
     },
     {
@@ -8870,6 +9444,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarDateIcon,
     },
     {
@@ -8887,6 +9462,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarAddIcon,
     },
     {
@@ -8905,6 +9481,7 @@ export const icons: IconData[] = [
             'bell',
             'ring',
         ],
+        isNew: false,
         Icon: AlarmRemoveIcon,
     },
     {
@@ -8912,6 +9489,7 @@ export const icons: IconData[] = [
         category: 'time' as Category,
         categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
         tags: ['smartwatch', 'wristwatch', 'time', 'hour', 'minute', 'schedule', 'timer', 'wrist'],
+        isNew: false,
         Icon: WatchSquareIcon,
     },
     {
@@ -8929,6 +9507,7 @@ export const icons: IconData[] = [
             'plan',
             'agenda',
         ],
+        isNew: false,
         Icon: CalendarSearchIcon,
     },
     {
@@ -8946,6 +9525,7 @@ export const icons: IconData[] = [
             'wrist',
             'smartwatch',
         ],
+        isNew: false,
         Icon: WatchRoundIcon,
     },
     {
@@ -8963,6 +9543,7 @@ export const icons: IconData[] = [
             'wrist',
             'smartwatch',
         ],
+        isNew: false,
         Icon: WatchSquareMinimalisticIcon,
     },
     {
@@ -8979,6 +9560,7 @@ export const icons: IconData[] = [
             'duration',
             'glass',
         ],
+        isNew: false,
         Icon: HourglassLineIcon,
     },
     {
@@ -8997,6 +9579,7 @@ export const icons: IconData[] = [
             'wrist',
             'smartwatch',
         ],
+        isNew: false,
         Icon: WatchSquareMinimalisticChargeIcon,
     },
     {
@@ -9014,6 +9597,7 @@ export const icons: IconData[] = [
             'tracks',
             'media',
         ],
+        isNew: false,
         Icon: PlaylistMinimalisticIcon,
     },
     {
@@ -9021,6 +9605,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['music', 'notes', 'songs', 'audio', 'queue', 'tracks', 'media'],
+        isNew: false,
         Icon: Playlist2Icon,
     },
     {
@@ -9028,6 +9613,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['music', 'playlist', 'songs', 'audio', 'queue', 'tracks', 'media'],
+        isNew: false,
         Icon: PlaylistMinimalistic2Icon,
     },
     {
@@ -9035,6 +9621,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['music', 'melody', 'songs', 'audio', 'queue', 'tracks', 'media'],
+        isNew: false,
         Icon: PlaylistMinimalistic3Icon,
     },
     {
@@ -9051,6 +9638,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: ListHeartIcon,
     },
     {
@@ -9068,6 +9656,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: ListHeartMinimalisticIcon,
     },
     {
@@ -9075,6 +9664,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['menu', 'options', 'dropdown'],
+        isNew: false,
         Icon: ListDownMinimalisticIcon,
     },
     {
@@ -9082,6 +9672,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['tick-list', 'verified-list'],
+        isNew: false,
         Icon: ListCheckIcon,
     },
     {
@@ -9089,6 +9680,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['checkmark', 'minimalist', 'icon'],
+        isNew: false,
         Icon: ListCheckMinimalisticIcon,
     },
     {
@@ -9096,6 +9688,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['cross-out', 'cancel-list'],
+        isNew: false,
         Icon: ListCrossIcon,
     },
     {
@@ -9103,6 +9696,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['minimalist', 'iconography', 'signifier'],
+        isNew: false,
         Icon: ListCrossMinimalisticIcon,
     },
     {
@@ -9110,6 +9704,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['alphabet', 'order', 'az', 'text', 'letters', 'arrange'],
+        isNew: false,
         Icon: SortAlphabeticallyIcon,
     },
     {
@@ -9117,6 +9712,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['lines', 'horizontal'],
+        isNew: false,
         Icon: ListIcon,
     },
     {
@@ -9124,6 +9720,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['arrow-down', 'arrangement'],
+        isNew: false,
         Icon: SortFromTopToBottomIcon,
     },
     {
@@ -9131,6 +9728,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['Up Arrow', 'List Icon'],
+        isNew: false,
         Icon: ListArrowUpIcon,
     },
     {
@@ -9138,6 +9736,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['checklist', 'menu', 'options'],
+        isNew: false,
         Icon: ListDownIcon,
     },
     {
@@ -9145,6 +9744,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['arrow', 'upward'],
+        isNew: false,
         Icon: SortFromBottomToTopIcon,
     },
     {
@@ -9152,6 +9752,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['three-lines', 'menu-symbol'],
+        isNew: false,
         Icon: ListUpMinimalisticIcon,
     },
     {
@@ -9159,6 +9760,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['download', 'icon'],
+        isNew: false,
         Icon: ListArrowDownIcon,
     },
     {
@@ -9166,6 +9768,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['arrow', 'downwards arrow', 'list symbol'],
+        isNew: false,
         Icon: ListArrowDownMinimalisticIcon,
     },
     {
@@ -9173,6 +9776,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['tick list', 'to-do list', 'tasks', 'todo', 'done', 'ticks', 'completed', 'board'],
+        isNew: false,
         Icon: ChecklistIcon,
     },
     {
@@ -9180,6 +9784,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['balance', 'scale'],
+        isNew: false,
         Icon: Bill2Icon,
     },
     {
@@ -9187,6 +9792,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['music', 'songlist', 'songs', 'audio', 'queue', 'tracks', 'media'],
+        isNew: false,
         Icon: PlaylistIcon,
     },
     {
@@ -9194,6 +9800,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['up arrow', 'list arrow'],
+        isNew: false,
         Icon: ListArrowUpMinimalisticIcon,
     },
     {
@@ -9201,6 +9808,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['task', 'agenda', 'tasks', 'todo', 'done', 'ticks', 'completed', 'board'],
+        isNew: false,
         Icon: ChecklistMinimalisticIcon,
     },
     {
@@ -9208,6 +9816,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['arrow-list', 'up-arrow-list'],
+        isNew: false,
         Icon: ListUpIcon,
     },
     {
@@ -9215,6 +9824,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['Vertical List', 'Tall Menu'],
+        isNew: false,
         Icon: ListVerticalIcon,
     },
     {
@@ -9222,6 +9832,7 @@ export const icons: IconData[] = [
         category: 'list' as Category,
         categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
         tags: ['clock', 'time', 'sort-by', 'order', 'recent', 'date', 'chronological'],
+        isNew: false,
         Icon: SortByTimeIcon,
     },
     {
@@ -9229,6 +9840,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['approval', 'confirmation', 'approve', 'ok', 'yes', 'success', 'tick', 'valid'],
+        isNew: false,
         Icon: CheckCircleIcon,
     },
     {
@@ -9236,6 +9848,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['circle-close', 'x-sign', 'cancel', 'no', 'exit', 'stop', 'reject', 'x'],
+        isNew: false,
         Icon: CloseCircleIcon,
     },
     {
@@ -9243,6 +9856,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['information', 'help', 'details', 'about', 'hint', 'guide'],
+        isNew: false,
         Icon: InfoCircleIcon,
     },
     {
@@ -9250,6 +9864,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['plus-circle', 'addition', 'symbol-addition', 'plus', 'new', 'create', 'insert'],
+        isNew: false,
         Icon: AddCircleIcon,
     },
     {
@@ -9257,6 +9872,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['query', 'symbol-question', 'help', 'ask', 'unknown', 'faq', 'support'],
+        isNew: false,
         Icon: QuestionCircleIcon,
     },
     {
@@ -9272,6 +9888,7 @@ export const icons: IconData[] = [
             'caution',
             'exclamation',
         ],
+        isNew: false,
         Icon: DangerCircleIcon,
     },
     {
@@ -9287,6 +9904,7 @@ export const icons: IconData[] = [
             'caution',
             'exclamation',
         ],
+        isNew: false,
         Icon: DangerTriangleIcon,
     },
     {
@@ -9302,6 +9920,7 @@ export const icons: IconData[] = [
             'caution',
             'exclamation',
         ],
+        isNew: false,
         Icon: DangerIcon,
     },
     {
@@ -9309,6 +9928,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['prohibition', 'halt', 'ban', 'block', 'stop', 'not-allowed', 'restricted'],
+        isNew: false,
         Icon: ForbiddenIcon,
     },
     {
@@ -9324,6 +9944,7 @@ export const icons: IconData[] = [
             'not-allowed',
             'restricted',
         ],
+        isNew: false,
         Icon: ForbiddenCircleIcon,
     },
     {
@@ -9331,6 +9952,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['cross', 'square-close', 'cancel', 'no', 'exit', 'stop', 'reject', 'x'],
+        isNew: false,
         Icon: CloseSquareIcon,
     },
     {
@@ -9338,6 +9960,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['plus square', 'square plus', 'input icon', 'plus', 'new', 'create', 'insert'],
+        isNew: false,
         Icon: AddSquareIcon,
     },
     {
@@ -9345,6 +9968,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['query', 'inquiry', 'help', 'ask', 'unknown', 'faq', 'support'],
+        isNew: false,
         Icon: QuestionSquareIcon,
     },
     {
@@ -9360,6 +9984,7 @@ export const icons: IconData[] = [
             'caution',
             'exclamation',
         ],
+        isNew: false,
         Icon: DangerSquareIcon,
     },
     {
@@ -9367,6 +9992,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['approval', 'confirmation', 'approve', 'ok', 'yes', 'success', 'tick', 'valid'],
+        isNew: false,
         Icon: CheckSquareIcon,
     },
     {
@@ -9374,6 +10000,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['circle-dot', 'button-menu'],
+        isNew: false,
         Icon: MenuDotsCircleIcon,
     },
     {
@@ -9381,6 +10008,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['dots', 'square'],
+        isNew: false,
         Icon: MenuDotsSquareIcon,
     },
     {
@@ -9388,6 +10016,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Checkmark Circle', 'Verification Mark'],
+        isNew: false,
         Icon: RevoteIcon,
     },
     {
@@ -9395,6 +10024,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['dots', 'icon'],
+        isNew: false,
         Icon: MenuDotsIcon,
     },
     {
@@ -9413,6 +10043,7 @@ export const icons: IconData[] = [
             'create',
             'insert',
         ],
+        isNew: false,
         Icon: HomeAddIcon,
     },
     {
@@ -9420,6 +10051,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['home-security', 'remote-access', 'house', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: SmartHomeIcon,
     },
     {
@@ -9427,6 +10059,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['information', 'square', 'help', 'details', 'about', 'hint', 'guide'],
+        isNew: false,
         Icon: InfoSquareIcon,
     },
     {
@@ -9434,6 +10067,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Minus circle', 'Circle minus sign', 'remove', 'delete', 'subtract', 'decrease'],
+        isNew: false,
         Icon: MinusCircleIcon,
     },
     {
@@ -9441,6 +10075,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house', 'dwelling', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeIcon,
     },
     {
@@ -9448,6 +10083,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house', 'smiley home', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeSmileIcon,
     },
     {
@@ -9455,6 +10091,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house icon', 'dwelling symbol', 'house', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: Home2Icon,
     },
     {
@@ -9462,6 +10099,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house', 'roof', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeAngleIcon,
     },
     {
@@ -9480,6 +10118,7 @@ export const icons: IconData[] = [
             'create',
             'insert',
         ],
+        isNew: false,
         Icon: HomeAddAngleIcon,
     },
     {
@@ -9487,6 +10126,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house', 'roof', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeAngle2Icon,
     },
     {
@@ -9494,6 +10134,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['battery-low', 'charge-indicator', 'power', 'energy', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryHalfMinimalisticIcon,
     },
     {
@@ -9501,6 +10142,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['wifi-angle', 'network-symbol', 'house', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeWiFiAngleIcon,
     },
     {
@@ -9508,6 +10150,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['home', 'network', 'house', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: SmartHomeAngleIcon,
     },
     {
@@ -9515,6 +10158,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['battery', 'charge', 'power', 'energy', 'level', 'status'],
+        isNew: false,
         Icon: BatteryChargeMinimalisticIcon,
     },
     {
@@ -9529,6 +10173,7 @@ export const icons: IconData[] = [
             'subtract',
             'decrease',
         ],
+        isNew: false,
         Icon: MinusSquareIcon,
     },
     {
@@ -9536,6 +10181,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['low-battery', 'minimal-battery', 'power', 'energy', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryLowMinimalisticIcon,
     },
     {
@@ -9543,6 +10189,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['battery', 'low', 'power', 'energy', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryLowIcon,
     },
     {
@@ -9550,6 +10197,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Wi-Fi', 'signal', 'network', 'house', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeWiFiIcon,
     },
     {
@@ -9557,6 +10205,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['powerful', 'full battery', 'power', 'energy', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryFullIcon,
     },
     {
@@ -9564,6 +10213,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['house', 'smile', 'main', 'start', 'dashboard'],
+        isNew: false,
         Icon: HomeSmileAngleIcon,
     },
     {
@@ -9579,6 +10229,7 @@ export const icons: IconData[] = [
             'setting',
             'level',
         ],
+        isNew: false,
         Icon: SliderVerticalIcon,
     },
     {
@@ -9594,6 +10245,7 @@ export const icons: IconData[] = [
             'setting',
             'level',
         ],
+        isNew: false,
         Icon: SliderMinimalisticHorizontalIcon,
     },
     {
@@ -9601,6 +10253,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['database', 'datastore'],
+        isNew: false,
         Icon: DatabaseIcon,
     },
     {
@@ -9608,6 +10261,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Crown', 'Minimal Crown', 'king', 'premium', 'pro', 'royal', 'vip', 'leader'],
+        isNew: false,
         Icon: CrownMinimalisticIcon,
     },
     {
@@ -9623,6 +10277,7 @@ export const icons: IconData[] = [
             'setting',
             'level',
         ],
+        isNew: false,
         Icon: SliderHorizontalIcon,
     },
     {
@@ -9639,6 +10294,7 @@ export const icons: IconData[] = [
             'level',
             'status',
         ],
+        isNew: false,
         Icon: BatteryChargeIcon,
     },
     {
@@ -9646,6 +10302,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['charger', 'electricity', 'energy', 'power', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryFullMinimalisticIcon,
     },
     {
@@ -9653,6 +10310,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['traffic_sign', 'street_traffic'],
+        isNew: false,
         Icon: TrafficIcon,
     },
     {
@@ -9660,6 +10318,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['pushpin', 'tacks', 'location', 'mark', 'save', 'attach', 'tack'],
+        isNew: false,
         Icon: PinIcon,
     },
     {
@@ -9667,6 +10326,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['sliding', 'rectangle', 'adjust', 'control', 'range', 'setting', 'level'],
+        isNew: false,
         Icon: SliderVerticalMinimalisticIcon,
     },
     {
@@ -9674,6 +10334,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['crowned', 'starred', 'king', 'premium', 'pro', 'royal', 'vip', 'leader'],
+        isNew: false,
         Icon: CrownStarIcon,
     },
     {
@@ -9681,6 +10342,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['crown', 'regal', 'king', 'premium', 'pro', 'royal', 'vip', 'leader'],
+        isNew: false,
         Icon: CrownLineIcon,
     },
     {
@@ -9688,6 +10350,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['nail', 'list', 'pinboard', 'location', 'mark', 'save', 'attach', 'tack'],
+        isNew: false,
         Icon: PinListIcon,
     },
     {
@@ -9695,6 +10358,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trash can', 'garbage bin', 'delete', 'remove', 'garbage', 'bin', 'recycle'],
+        isNew: false,
         Icon: TrashBin2Icon,
     },
     {
@@ -9702,6 +10366,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Wastebasket', 'Trash Can', 'delete', 'remove', 'garbage', 'bin', 'recycle'],
+        isNew: false,
         Icon: TrashBinMinimalisticIcon,
     },
     {
@@ -9709,6 +10374,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['pushpin', 'circle pin', 'location', 'mark', 'save', 'attach', 'tack'],
+        isNew: false,
         Icon: PinCircleIcon,
     },
     {
@@ -9716,6 +10382,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['pot', 'cooking-pot', 'delete', 'remove', 'garbage', 'bin', 'recycle'],
+        isNew: false,
         Icon: TrashBinMinimalistic2Icon,
     },
     {
@@ -9723,6 +10390,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['split', 'branch', 'divided', 'network', 'social', 'send', 'link', 'distribute'],
+        isNew: false,
         Icon: ShareIcon,
     },
     {
@@ -9730,6 +10398,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['car', 'road', 'economy'],
+        isNew: false,
         Icon: TrafficEconomyIcon,
     },
     {
@@ -9737,6 +10406,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['connect', 'collaborate', 'network', 'social', 'send', 'link', 'distribute'],
+        isNew: false,
         Icon: ShareCircleIcon,
     },
     {
@@ -9744,6 +10414,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trashcan', 'wastebasket', 'delete', 'remove', 'garbage', 'bin', 'recycle'],
+        isNew: false,
         Icon: TrashBinTrashIcon,
     },
     {
@@ -9751,6 +10422,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['aiming', 'sight', 'focus'],
+        isNew: false,
         Icon: TargetIcon,
     },
     {
@@ -9758,6 +10430,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['royalty', 'regality', 'king', 'premium', 'pro', 'royal', 'vip', 'leader'],
+        isNew: false,
         Icon: CrownIcon,
     },
     {
@@ -9765,6 +10438,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['food plate', 'dishware'],
+        isNew: false,
         Icon: PlateIcon,
     },
     {
@@ -9772,6 +10446,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['card', 'chip card', 'credit card', 'payment method'],
+        isNew: false,
         Icon: SubtitlesIcon,
     },
     {
@@ -9779,6 +10454,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Cat outline', 'Minimalistic feline'],
+        isNew: false,
         Icon: CatIcon,
     },
     {
@@ -9786,6 +10462,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['water', 'droplet'],
+        isNew: false,
         Icon: WaterdropIcon,
     },
     {
@@ -9793,6 +10470,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Vertical carousel', 'Post carousel'],
+        isNew: false,
         Icon: PostsCarouselVerticalIcon,
     },
     {
@@ -9800,6 +10478,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['electricity', 'power', 'danger', 'lightning', 'thunder', 'flash'],
+        isNew: false,
         Icon: BoltIcon,
     },
     {
@@ -9807,6 +10486,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['horizontal carousel', 'post slider', 'carousel view'],
+        isNew: false,
         Icon: PostsCarouselHorizontalIcon,
     },
     {
@@ -9814,6 +10494,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['open umbrella', 'black umbrella'],
+        isNew: false,
         Icon: UmbrellaIcon,
     },
     {
@@ -9821,6 +10502,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['electricity', 'power', 'danger', 'lightning', 'thunder', 'flash'],
+        isNew: false,
         Icon: BoltCircleIcon,
     },
     {
@@ -9836,6 +10518,7 @@ export const icons: IconData[] = [
             'phantom',
             'specter',
         ],
+        isNew: false,
         Icon: GhostSmileIcon,
     },
     {
@@ -9843,6 +10526,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['power button', 'on sign'],
+        isNew: false,
         Icon: PowerIcon,
     },
     {
@@ -9850,6 +10534,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['cleaning tool', 'house cleaning'],
+        isNew: false,
         Icon: BroomIcon,
     },
     {
@@ -9857,6 +10542,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['fiba', 'fiba logo'],
+        isNew: false,
         Icon: FigmaIcon,
     },
     {
@@ -9864,6 +10550,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Pawprint', 'Footprint'],
+        isNew: false,
         Icon: PawIcon,
     },
     {
@@ -9871,6 +10558,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['balloon', 'lightbulb'],
+        isNew: false,
         Icon: BalloonIcon,
     },
     {
@@ -9878,6 +10566,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['file-compression', 'storage-utility'],
+        isNew: false,
         Icon: WinRarIcon,
     },
     {
@@ -9885,6 +10574,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['signal', 'connectivity', 'report', 'country', 'mark', 'banner', 'milestone'],
+        isNew: false,
         Icon: FlagIcon,
     },
     {
@@ -9892,6 +10582,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['tank', 'liquid container'],
+        isNew: false,
         Icon: FuelIcon,
     },
     {
@@ -9899,6 +10590,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trophy', 'victory', 'award', 'prize', 'winner', 'competition'],
+        isNew: false,
         Icon: CupIcon,
     },
     {
@@ -9919,6 +10611,7 @@ export const icons: IconData[] = [
             'listen',
             'melody',
         ],
+        isNew: false,
         Icon: CupMusicIcon,
     },
     {
@@ -9926,6 +10619,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trophy', 'prize', 'award', 'winner', 'competition'],
+        isNew: false,
         Icon: CupStarIcon,
     },
     {
@@ -9933,6 +10627,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['battery', 'power', 'energy', 'charge', 'level', 'status'],
+        isNew: false,
         Icon: BatteryHalfIcon,
     },
     {
@@ -9940,6 +10635,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['lifebuoy', 'rescue', 'assistance'],
+        isNew: false,
         Icon: HelpIcon,
     },
     {
@@ -9947,6 +10643,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['square', 'symbol'],
+        isNew: false,
         Icon: ExplicitIcon,
     },
     {
@@ -9954,6 +10651,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['censored', 'obscured'],
+        isNew: false,
         Icon: XxxIcon,
     },
     {
@@ -9961,6 +10659,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['fx', 'filter'],
+        isNew: false,
         Icon: SpecialEffectsIcon,
     },
     {
@@ -9968,6 +10667,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trophy', 'first-place', 'award', 'prize', 'winner', 'competition'],
+        isNew: false,
         Icon: CupFirstIcon,
     },
     {
@@ -9975,6 +10675,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['High Definition', 'HD Video'],
+        isNew: false,
         Icon: HighDefinitionIcon,
     },
     {
@@ -9990,6 +10691,7 @@ export const icons: IconData[] = [
             'banner',
             'milestone',
         ],
+        isNew: false,
         Icon: Flag2Icon,
     },
     {
@@ -9997,6 +10699,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['AR app', 'Augmented reality'],
+        isNew: false,
         Icon: AugmentedRealityIcon,
     },
     {
@@ -10004,6 +10707,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['three horizontal lines', 'menu', 'organize'],
+        isNew: false,
         Icon: ReorderIcon,
     },
     {
@@ -10011,6 +10715,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['skeeter', 'specter', 'spooky', 'scary', 'halloween', 'phantom'],
+        isNew: false,
         Icon: GhostIcon,
     },
     {
@@ -10018,6 +10723,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['HQ', 'quality'],
+        isNew: false,
         Icon: HighQualityIcon,
     },
     {
@@ -10025,6 +10731,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Creative Commons', 'Copyright'],
+        isNew: false,
         Icon: CreativeCommonsIcon,
     },
     {
@@ -10032,6 +10739,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['copy right', 'creative copyright'],
+        isNew: false,
         Icon: CopyrightIcon,
     },
     {
@@ -10039,6 +10747,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['scissor', 'cutting tool', 'cut', 'clip', 'trim', 'snip'],
+        isNew: false,
         Icon: ScissorsIcon,
     },
     {
@@ -10046,6 +10755,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['funnel', 'filtration'],
+        isNew: false,
         Icon: FilterIcon,
     },
     {
@@ -10053,6 +10763,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['eyeglasses', 'spectacles'],
+        isNew: false,
         Icon: GlassesIcon,
     },
     {
@@ -10060,6 +10771,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['list', 'ranking'],
+        isNew: false,
         Icon: SortIcon,
     },
     {
@@ -10067,6 +10779,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['cube', 'prism', 'package', '3d', 'container', 'shipping'],
+        isNew: false,
         Icon: BoxMinimalisticIcon,
     },
     {
@@ -10074,6 +10787,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['copied', 'transfer', 'duplicate'],
+        isNew: false,
         Icon: CopyIcon,
     },
     {
@@ -10081,6 +10795,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['container', 'storage', 'package', 'cube', '3d', 'shipping'],
+        isNew: false,
         Icon: BoxIcon,
     },
     {
@@ -10088,6 +10803,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['wheel', 'amusement', 'entertainment'],
+        isNew: false,
         Icon: FerrisWheelIcon,
     },
     {
@@ -10095,6 +10811,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['Ultra HD', '4K resolution'],
+        isNew: false,
         Icon: FourKIcon,
     },
     {
@@ -10102,6 +10819,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['bottle', 'liquid'],
+        isNew: false,
         Icon: PerfumeIcon,
     },
     {
@@ -10109,6 +10827,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['trash can', 'wastepaper basket'],
+        isNew: false,
         Icon: PaperBinIcon,
     },
     {
@@ -10116,6 +10835,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['scissors', 'square-cutting-tool', 'cut', 'clip', 'trim', 'snip'],
+        isNew: false,
         Icon: ScissorsSquareIcon,
     },
     {
@@ -10123,6 +10843,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['bed', 'rest'],
+        isNew: false,
         Icon: SleepingIcon,
     },
     {
@@ -10130,6 +10851,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['cart', 'shopping'],
+        isNew: false,
         Icon: DeliveryIcon,
     },
     {
@@ -10137,6 +10859,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['file', 'folder'],
+        isNew: false,
         Icon: FeedIcon,
     },
     {
@@ -10144,6 +10867,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['ribbon', 'present'],
+        isNew: false,
         Icon: GiftIcon,
     },
     {
@@ -10151,6 +10875,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['wand', 'magical stick', 'wizard', 'auto', 'create', 'sparkle', 'edit', 'magic'],
+        isNew: false,
         Icon: MagicWandIcon,
     },
     {
@@ -10167,6 +10892,7 @@ export const icons: IconData[] = [
             'edit',
             'magic',
         ],
+        isNew: false,
         Icon: MagicWand3Icon,
     },
     {
@@ -10174,6 +10900,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['mallet', 'hammer', 'building tool'],
+        isNew: false,
         Icon: SledgehammerIcon,
     },
     {
@@ -10190,6 +10917,7 @@ export const icons: IconData[] = [
             'edit',
             'magic',
         ],
+        isNew: false,
         Icon: MagicWand2Icon,
     },
     {
@@ -10197,6 +10925,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['lamp', 'lightbulb'],
+        isNew: false,
         Icon: FlashlightOnIcon,
     },
     {
@@ -10204,6 +10933,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['lamp', 'spotlight'],
+        isNew: false,
         Icon: FlashlightIcon,
     },
     {
@@ -10211,6 +10941,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['wave magnet', 'magnetic wave'],
+        isNew: false,
         Icon: MagnetWaveIcon,
     },
     {
@@ -10218,6 +10949,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['magnetic', 'retractable', 'suspension'],
+        isNew: false,
         Icon: MagnetIcon,
     },
     {
@@ -10225,6 +10957,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['pointer', 'navigation'],
+        isNew: false,
         Icon: CursorSquareIcon,
     },
     {
@@ -10232,6 +10965,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['lipstick', 'mirror'],
+        isNew: false,
         Icon: CosmeticIcon,
     },
     {
@@ -10239,6 +10973,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['pointer', 'arrow pointer', 'scroll arrow'],
+        isNew: false,
         Icon: CursorIcon,
     },
     {
@@ -10246,6 +10981,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['party', 'celebration'],
+        isNew: false,
         Icon: ConfettiMinimalisticIcon,
     },
     {
@@ -10253,6 +10989,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['theater', 'masks'],
+        isNew: false,
         Icon: MaskHappyIcon,
     },
     {
@@ -10260,6 +10997,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['reflection', 'surface'],
+        isNew: false,
         Icon: Mirror2Icon,
     },
     {
@@ -10267,6 +11005,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['female skirt', 'clothing item', 'underwear garment'],
+        isNew: false,
         Icon: SkirtIcon,
     },
     {
@@ -10274,6 +11013,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['explosion', 'celebration'],
+        isNew: false,
         Icon: ConfettiIcon,
     },
     {
@@ -10281,6 +11021,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['stick figure', 'inclusive'],
+        isNew: false,
         Icon: AccessibilityIcon,
     },
     {
@@ -10288,6 +11029,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['shirt', 'top'],
+        isNew: false,
         Icon: TShirtIcon,
     },
     {
@@ -10295,6 +11037,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['reply square', 'at symbol', 'message inbox'],
+        isNew: false,
         Icon: MentionSquareIcon,
     },
     {
@@ -10302,6 +11045,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['shirt silhouette', 'clothing outline', 'garment shape'],
+        isNew: false,
         Icon: BodyIcon,
     },
     {
@@ -10309,6 +11053,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['sad', 'emoticon'],
+        isNew: false,
         Icon: MaskSadIcon,
     },
     {
@@ -10316,6 +11061,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['mention', 'symbol'],
+        isNew: false,
         Icon: MentionCircleIcon,
     },
     {
@@ -10323,6 +11069,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['clothing hanger', 'wardrobe accessory', 'hangar hook'],
+        isNew: false,
         Icon: HangerIcon,
     },
     {
@@ -10330,6 +11077,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['clothing hanger', 'wardrobe accessory'],
+        isNew: false,
         Icon: Hanger2Icon,
     },
     {
@@ -10337,6 +11085,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['theater', 'expression'],
+        isNew: false,
         Icon: MasksIcon,
     },
     {
@@ -10344,6 +11093,7 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['hamburger', 'menu'],
+        isNew: false,
         Icon: HamburgerMenuIcon,
     },
     {
@@ -10373,6 +11123,7 @@ export const icons: IconData[] = [
             'circle-button',
             'x-mark',
         ],
+        isNew: false,
         Icon: CallCancelRoundedIcon,
     },
     {
@@ -10397,6 +11148,7 @@ export const icons: IconData[] = [
             'circle-button',
             'receiver-down',
         ],
+        isNew: false,
         Icon: EndCallRoundedIcon,
     },
     {
@@ -10422,6 +11174,7 @@ export const icons: IconData[] = [
             'circle-button',
             'arrow-down',
         ],
+        isNew: false,
         Icon: IncomingCallRoundedIcon,
     },
     {
@@ -10447,6 +11200,7 @@ export const icons: IconData[] = [
             'circle-button',
             'arrow-up',
         ],
+        isNew: false,
         Icon: OutgoingCallRoundedIcon,
     },
     {
@@ -10463,6 +11217,7 @@ export const icons: IconData[] = [
             'dial',
         ],
         tags: ['phone', 'telephone', 'handset', 'landline', 'receiver', 'talk', 'voice'],
+        isNew: false,
         Icon: PhoneIcon,
     },
     {
@@ -10488,6 +11243,7 @@ export const icons: IconData[] = [
             'circle-button',
             'arrow-bounce',
         ],
+        isNew: false,
         Icon: CallDroppedRoundedIcon,
     },
     {
@@ -10513,6 +11269,7 @@ export const icons: IconData[] = [
             'waves',
             'vibrate',
         ],
+        isNew: false,
         Icon: PhoneCallingIcon,
     },
     {
@@ -10537,6 +11294,7 @@ export const icons: IconData[] = [
             'receiver',
             'circle-button',
         ],
+        isNew: false,
         Icon: PhoneRoundedIcon,
     },
     {
@@ -10565,6 +11323,7 @@ export const icons: IconData[] = [
             'cross',
             'x',
         ],
+        isNew: false,
         Icon: CallCancelIcon,
     },
     {
@@ -10590,6 +11349,7 @@ export const icons: IconData[] = [
             'arrow-down',
             'arrow-in',
         ],
+        isNew: false,
         Icon: IncomingCallIcon,
     },
     {
@@ -10618,6 +11378,7 @@ export const icons: IconData[] = [
             'plus',
             'circle-button',
         ],
+        isNew: false,
         Icon: CallMedicineRoundedIcon,
     },
     {
@@ -10643,6 +11404,7 @@ export const icons: IconData[] = [
             'recording',
             'cassette',
         ],
+        isNew: false,
         Icon: RecordMinimalisticIcon,
     },
     {
@@ -10669,6 +11431,7 @@ export const icons: IconData[] = [
             'vibrate',
             'circle-button',
         ],
+        isNew: false,
         Icon: PhoneCallingRoundedIcon,
     },
     {
@@ -10693,6 +11456,7 @@ export const icons: IconData[] = [
             'fail',
             'arrow-bounce',
         ],
+        isNew: false,
         Icon: CallDroppedIcon,
     },
     {
@@ -10721,6 +11485,7 @@ export const icons: IconData[] = [
             'arrow-up',
             'arrow-out',
         ],
+        isNew: false,
         Icon: OutgoingCallIcon,
     },
     {
@@ -10747,6 +11512,7 @@ export const icons: IconData[] = [
             'cassette',
             'square-button',
         ],
+        isNew: false,
         Icon: RecordSquareIcon,
     },
     {
@@ -10772,6 +11538,7 @@ export const icons: IconData[] = [
             'speech-bubble',
             'circle-button',
         ],
+        isNew: false,
         Icon: CallChatRoundedIcon,
     },
     {
@@ -10799,6 +11566,7 @@ export const icons: IconData[] = [
             'plus',
             'medical',
         ],
+        isNew: false,
         Icon: CallMedicineIcon,
     },
     {
@@ -10824,6 +11592,7 @@ export const icons: IconData[] = [
             'cassette',
             'circle-button',
         ],
+        isNew: false,
         Icon: RecordCircleIcon,
     },
     {
@@ -10840,6 +11609,7 @@ export const icons: IconData[] = [
             'dial',
         ],
         tags: ['hands-up', 'stop-sign', 'hang-up', 'finish', 'stop', 'disconnect', 'receiver-down'],
+        isNew: false,
         Icon: EndCallIcon,
     },
     {
@@ -10856,6 +11626,7 @@ export const icons: IconData[] = [
             'dial',
         ],
         tags: ['phone', 'communication', 'message', 'texting', 'sms', 'talk', 'speech-bubble'],
+        isNew: false,
         Icon: CallChatIcon,
     },
     {
@@ -10875,6 +11646,7 @@ export const icons: IconData[] = [
             'capsule',
             'dose',
         ],
+        isNew: false,
         Icon: JarOfPillsIcon,
     },
     {
@@ -10891,6 +11663,7 @@ export const icons: IconData[] = [
             'illness',
             'microscope',
         ],
+        isNew: false,
         Icon: BacteriaIcon,
     },
     {
@@ -10898,6 +11671,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['DNA strand', 'double helix', 'genetics', 'science', 'biology', 'helix', 'gene'],
+        isNew: false,
         Icon: DnaIcon,
     },
     {
@@ -10913,6 +11687,7 @@ export const icons: IconData[] = [
             'needle',
             'blood',
         ],
+        isNew: false,
         Icon: SyringeIcon,
     },
     {
@@ -10932,6 +11707,7 @@ export const icons: IconData[] = [
             'capsule',
             'dose',
         ],
+        isNew: false,
         Icon: JarOfPills2Icon,
     },
     {
@@ -10939,6 +11715,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['carbon ring', 'hexagon atom'],
+        isNew: false,
         Icon: BenzeneRingIcon,
     },
     {
@@ -10946,6 +11723,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['pill', 'tablets', 'drug', 'medication', 'tablet', 'capsule', 'dose'],
+        isNew: false,
         Icon: Pills3Icon,
     },
     {
@@ -10961,6 +11739,7 @@ export const icons: IconData[] = [
             'chemistry',
             'eye-drops',
         ],
+        isNew: false,
         Icon: Dropper2Icon,
     },
     {
@@ -10976,6 +11755,7 @@ export const icons: IconData[] = [
             'cold',
             'measure',
         ],
+        isNew: false,
         Icon: ThermometerIcon,
     },
     {
@@ -10983,6 +11763,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['medication', 'tablet', 'pill', 'drug', 'capsule', 'dose'],
+        isNew: false,
         Icon: Pills2Icon,
     },
     {
@@ -10990,6 +11771,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['intravenous', 'IV drip', 'pipette', 'liquid', 'extract', 'chemistry', 'eye-drops'],
+        isNew: false,
         Icon: Dropper3Icon,
     },
     {
@@ -11005,6 +11787,7 @@ export const icons: IconData[] = [
             'chemistry',
             'eye-drops',
         ],
+        isNew: false,
         Icon: DropperMinimalistic2Icon,
     },
     {
@@ -11020,6 +11803,7 @@ export const icons: IconData[] = [
             'anatomy',
             'fracture',
         ],
+        isNew: false,
         Icon: BoneIcon,
     },
     {
@@ -11027,6 +11811,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['bandage', 'plaster', 'first aid patch', 'wound', 'heal', 'aid', 'patch', 'cut'],
+        isNew: false,
         Icon: AdhesivePlaster2Icon,
     },
     {
@@ -11034,6 +11819,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['capsule', 'tablet', 'drug', 'medication', 'dose'],
+        isNew: false,
         Icon: PillIcon,
     },
     {
@@ -11041,6 +11827,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['dropper', 'fluid', 'pipette', 'liquid', 'extract', 'chemistry', 'eye-drops'],
+        isNew: false,
         Icon: DropperIcon,
     },
     {
@@ -11057,6 +11844,7 @@ export const icons: IconData[] = [
             'experiment',
             'blood',
         ],
+        isNew: false,
         Icon: TestTubeIcon,
     },
     {
@@ -11064,6 +11852,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['pill', 'capsule', 'drug', 'medication', 'tablet', 'dose'],
+        isNew: false,
         Icon: PillsIcon,
     },
     {
@@ -11080,6 +11869,7 @@ export const icons: IconData[] = [
             'anatomy',
             'fracture',
         ],
+        isNew: false,
         Icon: BonesIcon,
     },
     {
@@ -11087,6 +11877,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['test tube', 'chemistry', 'science', 'lab', 'flask', 'experiment', 'blood'],
+        isNew: false,
         Icon: TestTubeMinimalisticIcon,
     },
     {
@@ -11104,6 +11895,7 @@ export const icons: IconData[] = [
             'anatomy',
             'fracture',
         ],
+        isNew: false,
         Icon: BoneFractureIcon,
     },
     {
@@ -11126,6 +11918,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartPulseIcon,
     },
     {
@@ -11141,6 +11934,7 @@ export const icons: IconData[] = [
             'chemistry',
             'eye-drops',
         ],
+        isNew: false,
         Icon: DropperMinimalisticIcon,
     },
     {
@@ -11156,6 +11950,7 @@ export const icons: IconData[] = [
             'anatomy',
             'fracture',
         ],
+        isNew: false,
         Icon: BoneCrackIcon,
     },
     {
@@ -11178,6 +11973,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartPulse2Icon,
     },
     {
@@ -11193,6 +11989,7 @@ export const icons: IconData[] = [
             'diagnose',
             'instrument',
         ],
+        isNew: false,
         Icon: StethoscopeIcon,
     },
     {
@@ -11212,6 +12009,7 @@ export const icons: IconData[] = [
             'rate',
             'vital',
         ],
+        isNew: false,
         Icon: PulseIcon,
     },
     {
@@ -11229,6 +12027,7 @@ export const icons: IconData[] = [
             'cross',
             'doctor',
         ],
+        isNew: false,
         Icon: MedicalKitIcon,
     },
     {
@@ -11236,6 +12035,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['microbe', 'germ', 'pathogen', 'covid', 'germs', 'infection', 'illness', 'disease'],
+        isNew: false,
         Icon: VirusIcon,
     },
     {
@@ -11243,6 +12043,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['plaster', 'bandage', 'wound', 'heal', 'aid', 'patch', 'cut'],
+        isNew: false,
         Icon: AdhesivePlasterIcon,
     },
     {
@@ -11250,6 +12051,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['heartbeat', 'electrocardiogram', 'ecg', 'cardiology', 'lifeline', 'rate', 'vital'],
+        isNew: false,
         Icon: Pulse2Icon,
     },
     {
@@ -11257,6 +12059,7 @@ export const icons: IconData[] = [
         category: 'medicine' as Category,
         categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
         tags: ['healthcare', 'wellness', 'heart', 'cross', 'care', 'life'],
+        isNew: false,
         Icon: HealthIcon,
     },
     {
@@ -11273,6 +12076,7 @@ export const icons: IconData[] = [
             'appliance',
             'breeze',
         ],
+        isNew: false,
         Icon: ConditionerIcon,
     },
     {
@@ -11280,6 +12084,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['bottle', 'haircare', 'ac', 'air-conditioning', 'cooling', 'climate', 'appliance'],
+        isNew: false,
         Icon: Conditioner2Icon,
     },
     {
@@ -11296,6 +12101,7 @@ export const icons: IconData[] = [
             'device',
             'buttons',
         ],
+        isNew: false,
         Icon: RemoteControllerIcon,
     },
     {
@@ -11303,6 +12109,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['audio', 'stereo', 'sound', 'music', 'loudspeaker', 'smart-speaker'],
+        isNew: false,
         Icon: SpeakerIcon,
     },
     {
@@ -11310,6 +12117,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['remote', 'controller', 'tv', 'clicker', 'control', 'device', 'simple'],
+        isNew: false,
         Icon: RemoteControllerMinimalisticIcon,
     },
     {
@@ -11317,6 +12125,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['speaker', 'audio', 'sound', 'music', 'loudspeaker', 'simple'],
+        isNew: false,
         Icon: SpeakerMinimalisticIcon,
     },
     {
@@ -11332,6 +12141,7 @@ export const icons: IconData[] = [
             'appliance',
             'clothes',
         ],
+        isNew: false,
         Icon: WashingMachineIcon,
     },
     {
@@ -11339,6 +12149,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['couch', 'furniture', 'lounge', 'seat', 'living-room'],
+        isNew: false,
         Icon: Sofa3Icon,
     },
     {
@@ -11346,6 +12157,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['speaker', 'audio', 'tv', 'clicker', 'control', 'device', 'buttons', 'alt'],
+        isNew: false,
         Icon: RemoteController2Icon,
     },
     {
@@ -11353,6 +12165,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['wardrobe', 'closet', 'cupboard', 'cabinet', 'clothes', 'storage', 'furniture'],
+        isNew: false,
         Icon: ClosetIcon,
     },
     {
@@ -11360,6 +12173,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['couch', 'settee', 'furniture', 'lounge', 'seat', 'living-room'],
+        isNew: false,
         Icon: SofaIcon,
     },
     {
@@ -11375,6 +12189,7 @@ export const icons: IconData[] = [
             'looking-glass',
             'oval',
         ],
+        isNew: false,
         Icon: MirrorIcon,
     },
     {
@@ -11382,6 +12197,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['laundry machine', 'washer', 'dryer', 'laundry', 'clean', 'appliance', 'simple'],
+        isNew: false,
         Icon: WashingMachineMinimalisticIcon,
     },
     {
@@ -11389,6 +12205,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['cabinet', 'wardrobe', 'cupboard', 'clothes', 'storage', 'furniture', 'double-door'],
+        isNew: false,
         Icon: Closet2Icon,
     },
     {
@@ -11396,6 +12213,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['couch', 'sofa bed', 'sleep', 'rest', 'furniture', 'bedroom', 'mattress'],
+        isNew: false,
         Icon: BedIcon,
     },
     {
@@ -11403,6 +12221,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['couch', 'loveseat', 'furniture', 'lounge', 'seat', 'living-room', 'cushions'],
+        isNew: false,
         Icon: Sofa2Icon,
     },
     {
@@ -11418,6 +12237,7 @@ export const icons: IconData[] = [
             'table-lamp',
             'illumination',
         ],
+        isNew: false,
         Icon: LampIcon,
     },
     {
@@ -11425,6 +12245,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['bathtub', 'bathing', 'shower', 'bathroom', 'wash', 'tub', 'water'],
+        isNew: false,
         Icon: BathIcon,
     },
     {
@@ -11432,6 +12253,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['table', 'chest', 'nightstand', 'drawers', 'cabinet', 'furniture', 'bedroom'],
+        isNew: false,
         Icon: BedsideTable4Icon,
     },
     {
@@ -11439,6 +12261,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['lamp', 'lighting', 'light', 'ceiling', 'fixture', 'elegant'],
+        isNew: false,
         Icon: ChandelierIcon,
     },
     {
@@ -11446,6 +12269,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['wall', 'screen', 'dressing-table', 'mirror', 'makeup', 'desk', 'furniture'],
+        isNew: false,
         Icon: VanityIcon,
     },
     {
@@ -11453,6 +12277,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['nightstand', 'drawer', 'drawers', 'cabinet', 'furniture', 'bedroom'],
+        isNew: false,
         Icon: BedsideTableIcon,
     },
     {
@@ -11460,6 +12285,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['Chair', 'Seating', 'chair', 'seat', 'furniture', 'lounge', 'single-sofa'],
+        isNew: false,
         Icon: ArmchairIcon,
     },
     {
@@ -11467,6 +12293,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['lamp', 'minimalist', 'light', 'lighting', 'tall-lamp', 'stand', 'simple'],
+        isNew: false,
         Icon: FloorLampMinimalisticIcon,
     },
     {
@@ -11474,6 +12301,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['drawers', 'chest', 'nightstand', 'cabinet', 'furniture', 'bedroom'],
+        isNew: false,
         Icon: BedsideTable3Icon,
     },
     {
@@ -11490,6 +12318,7 @@ export const icons: IconData[] = [
             'single-sofa',
             'cushion',
         ],
+        isNew: false,
         Icon: Armchair2Icon,
     },
     {
@@ -11505,6 +12334,7 @@ export const icons: IconData[] = [
             'food-storage',
             'freezer',
         ],
+        isNew: false,
         Icon: FridgeIcon,
     },
     {
@@ -11512,6 +12342,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['sitting chair', 'seating furniture', 'seat', 'furniture', 'dining-chair', 'stool'],
+        isNew: false,
         Icon: ChairIcon,
     },
     {
@@ -11519,6 +12350,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['knob', 'control knob', 'dial', 'control', 'audio', 'sound', 'level', 'turn'],
+        isNew: false,
         Icon: VolumeKnobIcon,
     },
     {
@@ -11526,6 +12358,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['chair', 'stool', 'seat', 'furniture', 'tall-chair', 'counter'],
+        isNew: false,
         Icon: BarChairIcon,
     },
     {
@@ -11533,6 +12366,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['nightstand', 'small cabinet', 'drawers', 'cabinet', 'furniture', 'bedroom'],
+        isNew: false,
         Icon: BedsideTable2Icon,
     },
     {
@@ -11549,6 +12383,7 @@ export const icons: IconData[] = [
             'appliance',
             'roomba',
         ],
+        isNew: false,
         Icon: SmartVacuumCleanerIcon,
     },
     {
@@ -11556,6 +12391,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['office', 'desk', 'seat', 'furniture', 'office-chair', 'wheels'],
+        isNew: false,
         Icon: Chair2Icon,
     },
     {
@@ -11563,6 +12399,7 @@ export const icons: IconData[] = [
         category: 'home' as Category,
         categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
         tags: ['lamp', 'lighting', 'light', 'tall-lamp', 'stand', 'illumination'],
+        isNew: false,
         Icon: FloorLampIcon,
     },
     {
@@ -11580,6 +12417,7 @@ export const icons: IconData[] = [
             'roomba',
             'dock',
         ],
+        isNew: false,
         Icon: SmartVacuumCleaner2Icon,
     },
     {
@@ -11597,6 +12435,7 @@ export const icons: IconData[] = [
             'broadband',
             'simple',
         ],
+        isNew: false,
         Icon: WiFiRouterMinimalisticIcon,
     },
     {
@@ -11613,6 +12452,7 @@ export const icons: IconData[] = [
             'menu',
             'simple',
         ],
+        isNew: false,
         Icon: SidebarMinimalisticIcon,
     },
     {
@@ -11630,6 +12470,7 @@ export const icons: IconData[] = [
             'menu',
             'navigation',
         ],
+        isNew: false,
         Icon: SidebarIcon,
     },
     {
@@ -11647,6 +12488,7 @@ export const icons: IconData[] = [
             'broadband',
             'circle',
         ],
+        isNew: false,
         Icon: WiFiRouterRoundIcon,
     },
     {
@@ -11665,6 +12507,7 @@ export const icons: IconData[] = [
             'programming',
             'brackets',
         ],
+        isNew: false,
         Icon: SidebarCodeIcon,
     },
     {
@@ -11682,6 +12525,7 @@ export const icons: IconData[] = [
             'device',
             'antenna',
         ],
+        isNew: false,
         Icon: WiFiRouterIcon,
     },
     {
@@ -11689,6 +12533,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['screen', 'frame', 'browser', 'application', 'ui', 'interface', 'app'],
+        isNew: false,
         Icon: WindowFrameIcon,
     },
     {
@@ -11696,6 +12541,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['usb', 'connect', 'connection', 'port', 'drive', 'flash', 'hardware', 'circle'],
+        isNew: false,
         Icon: UsbCircleIcon,
     },
     {
@@ -11703,6 +12549,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['usb', 'connectivity', 'connection', 'port', 'drive', 'flash', 'hardware', 'box'],
+        isNew: false,
         Icon: UsbSquareIcon,
     },
     {
@@ -11710,6 +12557,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['syntax', 'development', 'programming', 'script', 'brackets', 'html', 'xml'],
+        isNew: false,
         Icon: CodeIcon,
     },
     {
@@ -11726,6 +12574,7 @@ export const icons: IconData[] = [
             'monitor',
             'wireless',
         ],
+        isNew: false,
         Icon: ScreencastIcon,
     },
     {
@@ -11733,6 +12582,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['translation', 'translator'],
+        isNew: false,
         Icon: Translation2Icon,
     },
     {
@@ -11749,6 +12599,7 @@ export const icons: IconData[] = [
             'command-prompt',
             'arrow',
         ],
+        isNew: false,
         Icon: ProgrammingIcon,
     },
     {
@@ -11756,6 +12607,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['Programming', 'Code', 'development', 'programming', 'script', 'brackets', 'circle'],
+        isNew: false,
         Icon: CodeCircleIcon,
     },
     {
@@ -11771,6 +12623,7 @@ export const icons: IconData[] = [
             'brackets',
             'slash',
         ],
+        isNew: false,
         Icon: Code2Icon,
     },
     {
@@ -11788,6 +12641,7 @@ export const icons: IconData[] = [
             'switch',
             'multilingual',
         ],
+        isNew: false,
         Icon: TranslationIcon,
     },
     {
@@ -11805,6 +12659,7 @@ export const icons: IconData[] = [
             'hardware',
             'symbol',
         ],
+        isNew: false,
         Icon: UsbIcon,
     },
     {
@@ -11812,6 +12667,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['network', 'connectivity', 'nodes', 'organization', 'hierarchy', 'diagram', 'chart'],
+        isNew: false,
         Icon: StructureIcon,
     },
     {
@@ -11827,6 +12683,7 @@ export const icons: IconData[] = [
             'separator',
             'box',
         ],
+        isNew: false,
         Icon: SlashSquareIcon,
     },
     {
@@ -11843,6 +12700,7 @@ export const icons: IconData[] = [
             'brackets',
             'box',
         ],
+        isNew: false,
         Icon: CodeSquareIcon,
     },
     {
@@ -11860,6 +12718,7 @@ export const icons: IconData[] = [
             'wireless',
             'alt',
         ],
+        isNew: false,
         Icon: Screencast2Icon,
     },
     {
@@ -11867,6 +12726,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['antenna', 'signal', 'transmitter', 'broadcast', 'radio', 'transmission', 'tower'],
+        isNew: false,
         Icon: StationIcon,
     },
     {
@@ -11882,6 +12742,7 @@ export const icons: IconData[] = [
             'separator',
             'circle',
         ],
+        isNew: false,
         Icon: SlashCircleIcon,
     },
     {
@@ -11889,6 +12750,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['signal', 'antenna', 'broadcast', 'radio', 'transmission', 'tower', 'simple'],
+        isNew: false,
         Icon: StationMinimalisticIcon,
     },
     {
@@ -11896,6 +12758,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['crosshair', 'target', 'cmd', 'mac', 'keyboard', 'key', 'apple', 'loop'],
+        isNew: false,
         Icon: CommandIcon,
     },
     {
@@ -11912,6 +12775,7 @@ export const icons: IconData[] = [
             'debug',
             'simple',
         ],
+        isNew: false,
         Icon: BugMinimalisticIcon,
     },
     {
@@ -11919,6 +12783,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['hash', 'tag', 'symbol', 'pound', 'number-sign', 'social', 'topic'],
+        isNew: false,
         Icon: HashtagIcon,
     },
     {
@@ -11926,6 +12791,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['hash', 'square', 'pound', 'number-sign', 'tag', 'social', 'topic', 'box'],
+        isNew: false,
         Icon: HashtagSquareIcon,
     },
     {
@@ -11943,6 +12809,7 @@ export const icons: IconData[] = [
             'message',
             'speech-bubble',
         ],
+        isNew: false,
         Icon: HashtagChatIcon,
     },
     {
@@ -11950,6 +12817,7 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
         tags: ['security', 'pest', 'insect', 'error', 'issue', 'glitch', 'debug', 'virus'],
+        isNew: false,
         Icon: BugIcon,
     },
     {
@@ -11966,6 +12834,7 @@ export const icons: IconData[] = [
             'topic',
             'circle',
         ],
+        isNew: false,
         Icon: HashtagCircleIcon,
     },
     {
@@ -11983,6 +12852,7 @@ export const icons: IconData[] = [
             'configuration',
             'setup',
         ],
+        isNew: false,
         Icon: SettingsMinimalisticIcon,
     },
     {
@@ -11990,6 +12860,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['gear', 'cogwheel', 'cog', 'preferences', 'options', 'configuration', 'setup'],
+        isNew: false,
         Icon: SettingsIcon,
     },
     {
@@ -11997,6 +12868,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['four-square', 'square-grid', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: WidgetIcon,
     },
     {
@@ -12004,6 +12876,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['eye', 'monitor', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: Widget4Icon,
     },
     {
@@ -12011,6 +12884,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['add', 'plus', 'new', 'input', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: WidgetAddIcon,
     },
     {
@@ -12027,6 +12901,7 @@ export const icons: IconData[] = [
             'modules',
             'layout',
         ],
+        isNew: false,
         Icon: Widget3Icon,
     },
     {
@@ -12034,6 +12909,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['Tuning', 'Settings', 'sliders', 'equalizer', 'controls', 'mix', 'adjust', 'levels'],
+        isNew: false,
         Icon: Tuning2Icon,
     },
     {
@@ -12041,6 +12917,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['equalizer', 'audio-settings', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
+        isNew: false,
         Icon: Tuning4Icon,
     },
     {
@@ -12048,6 +12925,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['control', 'equalizer', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
+        isNew: false,
         Icon: Tuning3Icon,
     },
     {
@@ -12055,6 +12933,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['equalizer', 'control knobs', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
+        isNew: false,
         Icon: TuningIcon,
     },
     {
@@ -12071,6 +12950,7 @@ export const icons: IconData[] = [
             'adjust',
             'levels',
         ],
+        isNew: false,
         Icon: TuningSquareIcon,
     },
     {
@@ -12078,6 +12958,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['squared', 'blocks', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: Widget5Icon,
     },
     {
@@ -12094,6 +12975,7 @@ export const icons: IconData[] = [
             'adjust',
             'levels',
         ],
+        isNew: false,
         Icon: TuningSquare2Icon,
     },
     {
@@ -12101,6 +12983,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['settings', 'options', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: Widget2Icon,
     },
     {
@@ -12108,6 +12991,7 @@ export const icons: IconData[] = [
         category: 'settings' as Category,
         categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
         tags: ['settings', 'options', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+        isNew: false,
         Icon: Widget6Icon,
     },
     {
@@ -12115,6 +12999,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['writing', 'correction', 'delete', 'remove', 'clear', 'wipe', 'rub'],
+        isNew: false,
         Icon: EraserCircleIcon,
     },
     {
@@ -12130,6 +13015,7 @@ export const icons: IconData[] = [
             'wipe',
             'rub',
         ],
+        isNew: false,
         Icon: EraserIcon,
     },
     {
@@ -12151,6 +13037,7 @@ export const icons: IconData[] = [
             'slant',
             'oblique',
         ],
+        isNew: false,
         Icon: TextItalicIcon,
     },
     {
@@ -12158,6 +13045,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['writing eraser', 'stationery eraser', 'delete', 'remove', 'clear', 'wipe', 'rub'],
+        isNew: false,
         Icon: EraserSquareIcon,
     },
     {
@@ -12179,6 +13067,7 @@ export const icons: IconData[] = [
             'slant',
             'oblique',
         ],
+        isNew: false,
         Icon: TextItalicSquareIcon,
     },
     {
@@ -12195,6 +13084,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextCircleIcon,
     },
     {
@@ -12202,6 +13092,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['text', 'cross', 'font', 'type', 'letter', 'character', 'editor', 'typography'],
+        isNew: false,
         Icon: TextCrossCircleIcon,
     },
     {
@@ -12223,6 +13114,7 @@ export const icons: IconData[] = [
             'weight',
             'thick',
         ],
+        isNew: false,
         Icon: TextBoldCircleIcon,
     },
     {
@@ -12239,6 +13131,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextCrossIcon,
     },
     {
@@ -12259,6 +13152,7 @@ export const icons: IconData[] = [
             'emphasis',
             'line-below',
         ],
+        isNew: false,
         Icon: TextUnderlineCircleIcon,
     },
     {
@@ -12280,6 +13174,7 @@ export const icons: IconData[] = [
             'slant',
             'oblique',
         ],
+        isNew: false,
         Icon: TextItalicCircleIcon,
     },
     {
@@ -12296,6 +13191,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextCrossSquareIcon,
     },
     {
@@ -12314,6 +13210,7 @@ export const icons: IconData[] = [
             'character',
             'editor',
         ],
+        isNew: false,
         Icon: TextFormatIcon,
     },
     {
@@ -12334,6 +13231,7 @@ export const icons: IconData[] = [
             'emphasis',
             'line-below',
         ],
+        isNew: false,
         Icon: TextUnderlineIcon,
     },
     {
@@ -12354,6 +13252,7 @@ export const icons: IconData[] = [
             'emphasis',
             'line-below',
         ],
+        isNew: false,
         Icon: TextUnderlineCrossIcon,
     },
     {
@@ -12370,6 +13269,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextSquareIcon,
     },
     {
@@ -12391,6 +13291,7 @@ export const icons: IconData[] = [
             'weight',
             'thick',
         ],
+        isNew: false,
         Icon: TextBoldIcon,
     },
     {
@@ -12407,6 +13308,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextSelectionIcon,
     },
     {
@@ -12414,6 +13316,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['link', 'connectivity', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
+        isNew: false,
         Icon: LinkIcon,
     },
     {
@@ -12430,6 +13333,7 @@ export const icons: IconData[] = [
             'separate',
             'remove-link',
         ],
+        isNew: false,
         Icon: UnlinkMinimalisticIcon,
     },
     {
@@ -12437,6 +13341,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['loop', 'swirl', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
+        isNew: false,
         Icon: LinkRoundIcon,
     },
     {
@@ -12444,6 +13349,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['connect', 'join', 'url', 'chain', 'hyperlink', 'anchor', 'website'],
+        isNew: false,
         Icon: LinkSquareIcon,
     },
     {
@@ -12460,6 +13366,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextSquare2Icon,
     },
     {
@@ -12467,6 +13374,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['arrows', 'alignment', 'lines', 'height', 'distance', 'layout', 'format'],
+        isNew: false,
         Icon: ParagraphSpacingIcon,
     },
     {
@@ -12484,6 +13392,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextFieldIcon,
     },
     {
@@ -12491,6 +13400,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['refresh', 'reload', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
+        isNew: false,
         Icon: LinkMinimalistic2Icon,
     },
     {
@@ -12507,6 +13417,7 @@ export const icons: IconData[] = [
             'anchor',
             'website',
         ],
+        isNew: false,
         Icon: LinkCircleIcon,
     },
     {
@@ -12528,6 +13439,7 @@ export const icons: IconData[] = [
             'weight',
             'thick',
         ],
+        isNew: false,
         Icon: TextBoldSquareIcon,
     },
     {
@@ -12544,6 +13456,7 @@ export const icons: IconData[] = [
             'editor',
             'typography',
         ],
+        isNew: false,
         Icon: TextFieldFocusIcon,
     },
     {
@@ -12561,6 +13474,7 @@ export const icons: IconData[] = [
             'separate',
             'remove-link',
         ],
+        isNew: false,
         Icon: UnlinkIcon,
     },
     {
@@ -12577,6 +13491,7 @@ export const icons: IconData[] = [
             'anchor',
             'website',
         ],
+        isNew: false,
         Icon: LinkMinimalisticIcon,
     },
     {
@@ -12594,6 +13509,7 @@ export const icons: IconData[] = [
             'rub',
             'keyboard-key',
         ],
+        isNew: false,
         Icon: BackspaceIcon,
     },
     {
@@ -12601,6 +13517,7 @@ export const icons: IconData[] = [
         category: 'text-formatting' as Category,
         categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
         tags: ['curly', 'swirl', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
+        isNew: false,
         Icon: LinkRoundAngleIcon,
     },
     {
@@ -12628,6 +13545,7 @@ export const icons: IconData[] = [
             'circle-chart',
             'distribution',
         ],
+        isNew: false,
         Icon: PieChartIcon,
     },
     {
@@ -12655,6 +13573,7 @@ export const icons: IconData[] = [
             'separated-slice',
             'focus',
         ],
+        isNew: false,
         Icon: PieChart2Icon,
     },
     {
@@ -12672,6 +13591,7 @@ export const icons: IconData[] = [
             'metrics',
         ],
         tags: ['chart', 'data', 'line-chart', 'trend', 'progress', 'growth', 'stats', 'curve'],
+        isNew: false,
         Icon: GraphIcon,
     },
     {
@@ -12701,6 +13621,7 @@ export const icons: IconData[] = [
             'arrow-up',
             'dashboard',
         ],
+        isNew: false,
         Icon: GraphNewUpIcon,
     },
     {
@@ -12727,6 +13648,7 @@ export const icons: IconData[] = [
             'percentage',
             'completion',
         ],
+        isNew: false,
         Icon: RoundGraphIcon,
     },
     {
@@ -12756,6 +13678,7 @@ export const icons: IconData[] = [
             'easel',
             'strategy',
         ],
+        isNew: false,
         Icon: PresentationGraphIcon,
     },
     {
@@ -12784,6 +13707,7 @@ export const icons: IconData[] = [
             'success',
             'dashboard',
         ],
+        isNew: false,
         Icon: GraphUpIcon,
     },
     {
@@ -12810,6 +13734,7 @@ export const icons: IconData[] = [
             'profit',
             'trend',
         ],
+        isNew: false,
         Icon: DiagramUpIcon,
     },
     {
@@ -12827,6 +13752,7 @@ export const icons: IconData[] = [
             'metrics',
         ],
         tags: ['network', 'connectivity', 'line-chart', 'data-point', 'node', 'stats', 'dashboard'],
+        isNew: false,
         Icon: GraphNewIcon,
     },
     {
@@ -12856,6 +13782,7 @@ export const icons: IconData[] = [
             'failure',
             'dashboard',
         ],
+        isNew: false,
         Icon: GraphDownIcon,
     },
     {
@@ -12883,6 +13810,7 @@ export const icons: IconData[] = [
             'decline',
             'trend',
         ],
+        isNew: false,
         Icon: DiagramDownIcon,
     },
     {
@@ -12909,6 +13837,7 @@ export const icons: IconData[] = [
             'comparison',
             'dashboard',
         ],
+        isNew: false,
         Icon: ChartSquareIcon,
     },
     {
@@ -12934,6 +13863,7 @@ export const icons: IconData[] = [
             'fraction',
             'separated-slice',
         ],
+        isNew: false,
         Icon: PieChart3Icon,
     },
     {
@@ -12959,6 +13889,7 @@ export const icons: IconData[] = [
             'columns',
             'comparison',
         ],
+        isNew: false,
         Icon: ChartIcon,
     },
     {
@@ -12984,6 +13915,7 @@ export const icons: IconData[] = [
             'columns',
             'comparison',
         ],
+        isNew: false,
         Icon: Chart2Icon,
     },
     {
@@ -13001,6 +13933,7 @@ export const icons: IconData[] = [
             'metrics',
         ],
         tags: ['chart', 'graph', 'stats'],
+        isNew: false,
         Icon: ChatSquare2Icon,
     },
     {
@@ -13028,6 +13961,7 @@ export const icons: IconData[] = [
             'bear-market',
             'loss',
         ],
+        isNew: false,
         Icon: CourseDownIcon,
     },
     {
@@ -13055,6 +13989,7 @@ export const icons: IconData[] = [
             'bull-market',
             'growth',
         ],
+        isNew: false,
         Icon: CourseUpIcon,
     },
     {
@@ -13083,6 +14018,7 @@ export const icons: IconData[] = [
             'drop',
             'dashboard',
         ],
+        isNew: false,
         Icon: GraphDownNewIcon,
     },
     {
@@ -13090,6 +14026,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['trolley', 'waggon', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartLarge2Icon,
     },
     {
@@ -13097,6 +14034,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['trolley', 'shopping cart', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartLargeMinimalisticIcon,
     },
     {
@@ -13104,6 +14042,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['trolley', 'cart', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartLargeIcon,
     },
     {
@@ -13120,6 +14059,7 @@ export const icons: IconData[] = [
             'checkout',
             'ecommerce',
         ],
+        isNew: false,
         Icon: CartCheckIcon,
     },
     {
@@ -13127,6 +14067,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['shopping cart', 'trolley', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartLarge4Icon,
     },
     {
@@ -13143,6 +14084,7 @@ export const icons: IconData[] = [
             'checkout',
             'ecommerce',
         ],
+        isNew: false,
         Icon: CartCrossIcon,
     },
     {
@@ -13159,6 +14101,7 @@ export const icons: IconData[] = [
             'checkout',
             'ecommerce',
         ],
+        isNew: false,
         Icon: CartPlusIcon,
     },
     {
@@ -13166,6 +14109,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['cart', 'basket', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartIcon,
     },
     {
@@ -13173,6 +14117,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['trolley', 'stroller', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: CartLarge3Icon,
     },
     {
@@ -13180,6 +14125,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['basket', 'shopping cart', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: Cart3Icon,
     },
     {
@@ -13187,6 +14133,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['purse', 'handbag', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
+        isNew: false,
         Icon: BagIcon,
     },
     {
@@ -13194,6 +14141,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['basket', 'container', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: Cart2Icon,
     },
     {
@@ -13201,6 +14149,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['basket', 'shopping cart', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: Cart5Icon,
     },
     {
@@ -13218,6 +14167,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagCrossIcon,
     },
     {
@@ -13225,6 +14175,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['backpack', 'luggage', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
+        isNew: false,
         Icon: Bag2Icon,
     },
     {
@@ -13242,6 +14193,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagMusic2Icon,
     },
     {
@@ -13258,6 +14210,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagMusicIcon,
     },
     {
@@ -13265,6 +14218,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['suitcase', 'luggage', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
+        isNew: false,
         Icon: Bag5Icon,
     },
     {
@@ -13281,6 +14235,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagCheckIcon,
     },
     {
@@ -13298,6 +14253,7 @@ export const icons: IconData[] = [
             'merchant',
             'awning',
         ],
+        isNew: false,
         Icon: ShopIcon,
     },
     {
@@ -13305,6 +14261,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['purse', 'handbag', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
+        isNew: false,
         Icon: Bag3Icon,
     },
     {
@@ -13312,6 +14269,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['basket', 'shopping cart', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
+        isNew: false,
         Icon: Cart4Icon,
     },
     {
@@ -13319,6 +14277,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['store', 'outlet', 'market', 'building', 'retail', 'business', 'merchant', 'awning'],
+        isNew: false,
         Icon: ShopMinimalisticIcon,
     },
     {
@@ -13326,6 +14285,7 @@ export const icons: IconData[] = [
         category: 'shopping' as Category,
         categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
         tags: ['store', 'retail', 'market', 'building', 'business', 'merchant', 'awning'],
+        isNew: false,
         Icon: Shop2Icon,
     },
     {
@@ -13342,6 +14302,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: Bag4Icon,
     },
     {
@@ -13358,6 +14319,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagSmileIcon,
     },
     {
@@ -13374,6 +14336,7 @@ export const icons: IconData[] = [
             'ecommerce',
             'retail',
         ],
+        isNew: false,
         Icon: BagHeartIcon,
     },
     {
@@ -13381,6 +14344,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['flame', 'burning', 'hot', 'burn', 'heat', 'camp', 'warmth', 'blaze'],
+        isNew: false,
         Icon: FireIcon,
     },
     {
@@ -13388,6 +14352,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['fire', 'flame', 'hot', 'burn', 'heat', 'camp', 'warmth', 'blaze'],
+        isNew: false,
         Icon: FireMinimalisticIcon,
     },
     {
@@ -13395,6 +14360,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['fire', 'ignition'],
+        isNew: false,
         Icon: FlameIcon,
     },
     {
@@ -13402,6 +14368,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['luggage', 'briefcase'],
+        isNew: false,
         Icon: SuitcaseIcon,
     },
     {
@@ -13409,6 +14376,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['bag', 'luggage', 'carrying case'],
+        isNew: false,
         Icon: SuitcaseLinesIcon,
     },
     {
@@ -13416,6 +14384,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['power', 'energy', 'flame', 'hot', 'burn', 'heat', 'camp', 'warmth', 'blaze'],
+        isNew: false,
         Icon: FireSquareIcon,
     },
     {
@@ -13423,6 +14392,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['tree', 'plant', 'green', 'ecology', 'spring', 'nature'],
+        isNew: false,
         Icon: LeafIcon,
     },
     {
@@ -13440,6 +14410,7 @@ export const icons: IconData[] = [
             'offer',
             'shopping',
         ],
+        isNew: false,
         Icon: SuitcaseTagIcon,
     },
     {
@@ -13447,6 +14418,7 @@ export const icons: IconData[] = [
         category: 'nature' as Category,
         categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
         tags: ['flame', 'fire', 'hot', 'burn', 'heat', 'camp', 'warmth', 'blaze'],
+        isNew: false,
         Icon: BonfireIcon,
     },
     {
@@ -13463,6 +14435,7 @@ export const icons: IconData[] = [
             'study',
             'travel',
         ],
+        isNew: false,
         Icon: CaseMinimalisticIcon,
     },
     {
@@ -13470,6 +14443,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['briefcase', 'portfolio case', 'bag', 'luggage', 'student', 'study', 'travel'],
+        isNew: false,
         Icon: CaseIcon,
     },
     {
@@ -13477,6 +14451,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['credential', 'degree', 'certificate', 'graduation', 'award', 'education'],
+        isNew: false,
         Icon: DiplomaIcon,
     },
     {
@@ -13484,6 +14459,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['briefcase', 'suitcase', 'bag', 'luggage', 'student', 'study', 'travel'],
+        isNew: false,
         Icon: CaseRoundIcon,
     },
     {
@@ -13500,6 +14476,7 @@ export const icons: IconData[] = [
             'college',
             'degree',
         ],
+        isNew: false,
         Icon: SquareAcademicCapIcon,
     },
     {
@@ -13517,6 +14494,7 @@ export const icons: IconData[] = [
             'library',
             'write',
         ],
+        isNew: false,
         Icon: NotebookSquareIcon,
     },
     {
@@ -13524,6 +14502,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['briefcase', 'professional case', 'bag', 'luggage', 'student', 'study', 'travel'],
+        isNew: false,
         Icon: CaseRoundMinimalisticIcon,
     },
     {
@@ -13546,6 +14525,7 @@ export const icons: IconData[] = [
             'tag',
             'ribbon',
         ],
+        isNew: false,
         Icon: NotebookBookmarkIcon,
     },
     {
@@ -13563,6 +14543,7 @@ export const icons: IconData[] = [
             'library',
             'write',
         ],
+        isNew: false,
         Icon: Notebook2Icon,
     },
     {
@@ -13579,6 +14560,7 @@ export const icons: IconData[] = [
             'degree',
             'mortarboard',
         ],
+        isNew: false,
         Icon: SquareAcademicCap2Icon,
     },
     {
@@ -13596,6 +14578,7 @@ export const icons: IconData[] = [
             'library',
             'literature',
         ],
+        isNew: false,
         Icon: BookIcon,
     },
     {
@@ -13613,6 +14596,7 @@ export const icons: IconData[] = [
             'library',
             'write',
         ],
+        isNew: false,
         Icon: NotebookMinimalisticIcon,
     },
     {
@@ -13628,6 +14612,7 @@ export const icons: IconData[] = [
             'award',
             'education',
         ],
+        isNew: false,
         Icon: DiplomaVerifiedIcon,
     },
     {
@@ -13643,6 +14628,7 @@ export const icons: IconData[] = [
             'numbers',
             'calculate',
         ],
+        isNew: false,
         Icon: CalculatorIcon,
     },
     {
@@ -13650,6 +14636,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['luggage', 'travel bag', 'bag', 'student', 'study', 'travel', 'rucksack'],
+        isNew: false,
         Icon: BackpackIcon,
     },
     {
@@ -13657,6 +14644,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['book', 'reading', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+        isNew: false,
         Icon: BookmarkSquareMinimalisticIcon,
     },
     {
@@ -13664,6 +14652,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['bookmark', 'circle', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+        isNew: false,
         Icon: BookmarkCircleIcon,
     },
     {
@@ -13671,6 +14660,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['mathematical', 'equation', 'math', 'finance', 'accounting', 'numbers', 'calculate'],
+        isNew: false,
         Icon: CalculatorMinimalisticIcon,
     },
     {
@@ -13693,6 +14683,7 @@ export const icons: IconData[] = [
             'tag',
             'ribbon',
         ],
+        isNew: false,
         Icon: BookBookmarkIcon,
     },
     {
@@ -13700,6 +14691,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['crossing-out-symbols', 'deletion-symbol', 'addition-and-deletion-icon'],
+        isNew: false,
         Icon: PlusMinusIcon,
     },
     {
@@ -13722,6 +14714,7 @@ export const icons: IconData[] = [
             'tag',
             'ribbon',
         ],
+        isNew: false,
         Icon: BookBookmarkMinimalisticIcon,
     },
     {
@@ -13739,6 +14732,7 @@ export const icons: IconData[] = [
             'library',
             'literature',
         ],
+        isNew: false,
         Icon: Book2Icon,
     },
     {
@@ -13746,6 +14740,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['travel', 'identification'],
+        isNew: false,
         Icon: PassportMinimalisticIcon,
     },
     {
@@ -13763,6 +14758,7 @@ export const icons: IconData[] = [
             'library',
             'literature',
         ],
+        isNew: false,
         Icon: BookMinimalisticIcon,
     },
     {
@@ -13770,6 +14766,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['travel', 'international document'],
+        isNew: false,
         Icon: PassportIcon,
     },
     {
@@ -13777,6 +14774,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['bookmark', 'page', 'reading', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+        isNew: false,
         Icon: BookmarkIcon,
     },
     {
@@ -13784,6 +14782,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['eye', 'goggle', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+        isNew: false,
         Icon: BookmarkOpenedIcon,
     },
     {
@@ -13791,6 +14790,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['paper', 'text'],
+        isNew: false,
         Icon: Document2Icon,
     },
     {
@@ -13798,6 +14798,7 @@ export const icons: IconData[] = [
         category: 'school' as Category,
         categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
         tags: ['bookmark', 'square', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+        isNew: false,
         Icon: BookmarkSquareIcon,
     },
     {
@@ -13819,6 +14820,7 @@ export const icons: IconData[] = [
             'ink',
             'tool',
         ],
+        isNew: false,
         Icon: RulerPenIcon,
     },
     {
@@ -13826,6 +14828,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['filtering', 'screening', 'adjust', 'edit', 'photo', 'image', 'settings', 'circles'],
+        isNew: false,
         Icon: FiltersIcon,
     },
     {
@@ -13842,6 +14845,7 @@ export const icons: IconData[] = [
             'extract',
             'tool',
         ],
+        isNew: false,
         Icon: PipetteIcon,
     },
     {
@@ -13858,6 +14862,7 @@ export const icons: IconData[] = [
             'symmetry',
             'mirror',
         ],
+        isNew: false,
         Icon: FlipHorizontalIcon,
     },
     {
@@ -13865,6 +14870,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['link', 'connect'],
+        isNew: false,
         Icon: ThreeSquaresIcon,
     },
     {
@@ -13881,6 +14887,7 @@ export const icons: IconData[] = [
             'symmetry',
             'mirror',
         ],
+        isNew: false,
         Icon: FlipVerticalIcon,
     },
     {
@@ -13896,6 +14903,7 @@ export const icons: IconData[] = [
             'transform',
             'symmetry',
         ],
+        isNew: false,
         Icon: MirrorRightIcon,
     },
     {
@@ -13903,6 +14911,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['Crop', 'Minimalist', 'cut', 'trim', 'resize', 'frame', 'photo', 'edit', 'tool'],
+        isNew: false,
         Icon: CropMinimalisticIcon,
     },
     {
@@ -13910,6 +14919,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['stack', 'arrangement', 'overlap', 'arrange', 'depth', 'z-index', 'stacking'],
+        isNew: false,
         Icon: LayersMinimalisticIcon,
     },
     {
@@ -13927,6 +14937,7 @@ export const icons: IconData[] = [
             'length',
             'scale',
         ],
+        isNew: false,
         Icon: RulerIcon,
     },
     {
@@ -13934,6 +14945,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['scissors', 'shears', 'cut', 'trim', 'resize', 'frame', 'photo', 'edit', 'tool'],
+        isNew: false,
         Icon: CropIcon,
     },
     {
@@ -13951,6 +14963,7 @@ export const icons: IconData[] = [
             'length',
             'scale',
         ],
+        isNew: false,
         Icon: RulerAngularIcon,
     },
     {
@@ -13971,6 +14984,7 @@ export const icons: IconData[] = [
             'image',
             'settings',
         ],
+        isNew: false,
         Icon: ColourTuningIcon,
     },
     {
@@ -13988,6 +15002,7 @@ export const icons: IconData[] = [
             'creative',
             'artist',
         ],
+        isNew: false,
         Icon: PaletteRoundIcon,
     },
     {
@@ -13995,6 +15010,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['left-mirror', 'mirror-tool', 'reflect', 'reverse', 'turn', 'transform', 'symmetry'],
+        isNew: false,
         Icon: MirrorLeftIcon,
     },
     {
@@ -14002,6 +15018,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['stack', 'arrangement', 'overlap', 'arrange', 'depth', 'z-index', 'stacking'],
+        isNew: false,
         Icon: LayersIcon,
     },
     {
@@ -14020,6 +15037,7 @@ export const icons: IconData[] = [
             'creative',
             'artist',
         ],
+        isNew: false,
         Icon: PaletteIcon,
     },
     {
@@ -14027,6 +15045,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['art', 'palette', 'color', 'paint', 'draw', 'brush', 'creative', 'artist'],
+        isNew: false,
         Icon: Palette2Icon,
     },
     {
@@ -14044,6 +15063,7 @@ export const icons: IconData[] = [
             'creative',
             'tool',
         ],
+        isNew: false,
         Icon: PaintRollerIcon,
     },
     {
@@ -14061,6 +15081,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignTopIcon,
     },
     {
@@ -14078,6 +15099,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignVerticalSpacingIcon,
     },
     {
@@ -14095,6 +15117,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignHorizontalCenterIcon,
     },
     {
@@ -14115,6 +15138,7 @@ export const icons: IconData[] = [
             'ink',
             'tool',
         ],
+        isNew: false,
         Icon: RulerCrossPenIcon,
     },
     {
@@ -14132,6 +15156,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignLeftIcon,
     },
     {
@@ -14149,6 +15174,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignVerticalCenterIcon,
     },
     {
@@ -14166,6 +15192,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignRightIcon,
     },
     {
@@ -14183,6 +15210,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignHorizontalSpacingIcon,
     },
     {
@@ -14200,6 +15228,7 @@ export const icons: IconData[] = [
             'distribute',
             'snap',
         ],
+        isNew: false,
         Icon: AlignBottomIcon,
     },
     {
@@ -14207,6 +15236,7 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
         tags: ['disk', 'icon', 'focus', 'effect', 'photo', 'lens', 'motion', 'blur'],
+        isNew: false,
         Icon: RadialBlurIcon,
     },
     {
@@ -14224,6 +15254,7 @@ export const icons: IconData[] = [
             'steam',
             'warm',
         ],
+        isNew: false,
         Icon: CupHotIcon,
     },
     {
@@ -14231,6 +15262,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['coffee mug', 'cup on saucer', 'coffee', 'tea', 'drink', 'beverage', 'cup'],
+        isNew: false,
         Icon: MugIcon,
     },
     {
@@ -14248,6 +15280,7 @@ export const icons: IconData[] = [
             'steam',
             'hot',
         ],
+        isNew: false,
         Icon: TeaCupIcon,
     },
     {
@@ -14264,6 +15297,7 @@ export const icons: IconData[] = [
             'plastic',
             'soda',
         ],
+        isNew: false,
         Icon: BottleIcon,
     },
     {
@@ -14271,6 +15305,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['pastry', 'baked good', 'doughnut', 'sweet', 'dessert', 'sugar', 'sprinkles'],
+        isNew: false,
         Icon: DonutIcon,
     },
     {
@@ -14287,6 +15322,7 @@ export const icons: IconData[] = [
             'baking',
             'simple',
         ],
+        isNew: false,
         Icon: ChefHatMinimalisticIcon,
     },
     {
@@ -14303,6 +15339,7 @@ export const icons: IconData[] = [
             'eaten',
             'bite',
         ],
+        isNew: false,
         Icon: DonutBittenIcon,
     },
     {
@@ -14319,6 +15356,7 @@ export const icons: IconData[] = [
             'passion',
             'favorite',
         ],
+        isNew: false,
         Icon: ChefHatHeartIcon,
     },
     {
@@ -14326,6 +15364,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['twist', 'spiral', 'wine', 'opener', 'tool', 'bottle-opener', 'kitchen'],
+        isNew: false,
         Icon: CorkscrewIcon,
     },
     {
@@ -14342,6 +15381,7 @@ export const icons: IconData[] = [
             'baking',
             'traditional',
         ],
+        isNew: false,
         Icon: ChefHatIcon,
     },
     {
@@ -14359,6 +15399,7 @@ export const icons: IconData[] = [
             'martini',
             'glass',
         ],
+        isNew: false,
         Icon: WineglassTriangleIcon,
     },
     {
@@ -14375,6 +15416,7 @@ export const icons: IconData[] = [
             'to-go',
             'latte',
         ],
+        isNew: false,
         Icon: CupPaperIcon,
     },
     {
@@ -14391,6 +15433,7 @@ export const icons: IconData[] = [
             'hot',
             'protection',
         ],
+        isNew: false,
         Icon: OvenMittsIcon,
     },
     {
@@ -14407,6 +15450,7 @@ export const icons: IconData[] = [
             'pastry',
             'tool',
         ],
+        isNew: false,
         Icon: RollingPinIcon,
     },
     {
@@ -14414,6 +15458,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['spoon', 'ladle', 'stew ladle', 'soup', 'kitchen', 'cooking', 'tool', 'scoop'],
+        isNew: false,
         Icon: LadleIcon,
     },
     {
@@ -14421,6 +15466,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['drink', 'goblet', 'wine', 'beverage', 'alcohol', 'glass'],
+        isNew: false,
         Icon: WineglassIcon,
     },
     {
@@ -14428,6 +15474,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['glove', 'cooking-glove', 'baking', 'kitchen', 'cooking', 'hot', 'heart'],
+        isNew: false,
         Icon: OvenMittsMinimalisticIcon,
     },
     {
@@ -14435,6 +15482,7 @@ export const icons: IconData[] = [
         category: 'food' as Category,
         categoryTags: ['food', 'kitchen', 'cooking', 'baking', 'drink', 'beverage', 'meal'],
         tags: ['whisk', 'beater', 'baking', 'mixer', 'kitchen', 'cooking', 'tool', 'beat'],
+        isNew: false,
         Icon: WhiskIcon,
     },
     {
@@ -14442,6 +15490,7 @@ export const icons: IconData[] = [
         category: 'like' as Category,
         categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
         tags: ['love', 'affection', 'romance', 'favorite', 'passion', 'like', 'emotion'],
+        isNew: false,
         Icon: HeartIcon,
     },
     {
@@ -14458,6 +15507,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: StarIcon,
     },
     {
@@ -14474,6 +15524,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartLockIcon,
     },
     {
@@ -14490,6 +15541,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartUnlockIcon,
     },
     {
@@ -14497,6 +15549,7 @@ export const icons: IconData[] = [
         category: 'like' as Category,
         categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
         tags: ['medal', 'prize', 'award', 'winner', 'badge', 'achievement', 'first'],
+        isNew: false,
         Icon: MedalRibbonIcon,
     },
     {
@@ -14519,6 +15572,7 @@ export const icons: IconData[] = [
             'upvote',
             'approve',
         ],
+        isNew: false,
         Icon: DislikeIcon,
     },
     {
@@ -14535,6 +15589,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: StarShineIcon,
     },
     {
@@ -14542,6 +15597,7 @@ export const icons: IconData[] = [
         category: 'like' as Category,
         categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
         tags: ['heart', 'love', 'romance', 'favorite', 'passion', 'like', 'emotion'],
+        isNew: false,
         Icon: HeartsIcon,
     },
     {
@@ -14558,6 +15614,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartShineIcon,
     },
     {
@@ -14577,6 +15634,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartCrackIcon,
     },
     {
@@ -14598,6 +15656,7 @@ export const icons: IconData[] = [
             'achievement',
             'first',
         ],
+        isNew: false,
         Icon: MedalRibbonsStarIcon,
     },
     {
@@ -14614,6 +15673,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: MedalStarSquareIcon,
     },
     {
@@ -14634,6 +15694,7 @@ export const icons: IconData[] = [
             'achievement',
             'first',
         ],
+        isNew: false,
         Icon: MedalRibbonStarIcon,
     },
     {
@@ -14651,6 +15712,7 @@ export const icons: IconData[] = [
             'like',
             'emotion',
         ],
+        isNew: false,
         Icon: HeartAngleIcon,
     },
     {
@@ -14667,6 +15729,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: MedalStarCircleIcon,
     },
     {
@@ -14683,6 +15746,7 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
+        isNew: false,
         Icon: MedalStarIcon,
     },
     {
@@ -14690,6 +15754,7 @@ export const icons: IconData[] = [
         category: 'like' as Category,
         categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
         tags: ['thumbs up', 'approval', 'thumbs-up', 'good', 'agree', 'yes', 'upvote', 'approve'],
+        isNew: false,
         Icon: LikeIcon,
     },
     {
@@ -14718,6 +15783,7 @@ export const icons: IconData[] = [
             'double',
             'fast',
         ],
+        isNew: false,
         Icon: SendTwiceSquareIcon,
     },
     {
@@ -14746,6 +15812,7 @@ export const icons: IconData[] = [
             'double',
             'fast',
         ],
+        isNew: false,
         Icon: ReceiveTwiceSquareIcon,
     },
     {
@@ -14773,6 +15840,7 @@ export const icons: IconData[] = [
             'double',
             'fast',
         ],
+        isNew: false,
         Icon: UploadTwiceSquareIcon,
     },
     {
@@ -14799,6 +15867,7 @@ export const icons: IconData[] = [
             'in',
             'pull',
         ],
+        isNew: false,
         Icon: ReceiveSquareIcon,
     },
     {
@@ -14825,6 +15894,7 @@ export const icons: IconData[] = [
             'history',
             'counter-clockwise',
         ],
+        isNew: false,
         Icon: UndoLeftRoundIcon,
     },
     {
@@ -14851,6 +15921,7 @@ export const icons: IconData[] = [
             'out',
             'submit',
         ],
+        isNew: false,
         Icon: SendSquareIcon,
     },
     {
@@ -14867,6 +15938,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['upload', 'submit', 'box', 'push', 'publish', 'outgoing', 'cloud', 'out'],
+        isNew: false,
         Icon: UploadSquareIcon,
     },
     {
@@ -14892,6 +15964,7 @@ export const icons: IconData[] = [
             'history',
             'counter-clockwise',
         ],
+        isNew: false,
         Icon: UndoLeftIcon,
     },
     {
@@ -14920,6 +15993,7 @@ export const icons: IconData[] = [
             'double',
             'fast',
         ],
+        isNew: false,
         Icon: DownloadTwiceSquareIcon,
     },
     {
@@ -14945,6 +16019,7 @@ export const icons: IconData[] = [
             'history',
             'counter-clockwise',
         ],
+        isNew: false,
         Icon: UndoLeftSquareIcon,
     },
     {
@@ -14972,6 +16047,7 @@ export const icons: IconData[] = [
             'history',
             'clockwise',
         ],
+        isNew: false,
         Icon: UndoRightRoundSquareIcon,
     },
     {
@@ -14998,6 +16074,7 @@ export const icons: IconData[] = [
             'history',
             'counter-clockwise',
         ],
+        isNew: false,
         Icon: UndoLeftRoundSquareIcon,
     },
     {
@@ -15023,6 +16100,7 @@ export const icons: IconData[] = [
             'history',
             'clockwise',
         ],
+        isNew: false,
         Icon: UndoRightIcon,
     },
     {
@@ -15039,6 +16117,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['resize', 'expand', 'enlarge', 'growth', 'scale', 'fullscreen', 'size', 'zoom'],
+        isNew: false,
         Icon: ScalingIcon,
     },
     {
@@ -15055,6 +16134,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['Download', 'Square arrow', 'box', 'save', 'incoming', 'fetch', 'cloud', 'in'],
+        isNew: false,
         Icon: DownloadSquareIcon,
     },
     {
@@ -15071,6 +16151,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['undo', 'revert', 'rewind', 'box', 'redo', 'forward', 'history', 'clockwise'],
+        isNew: false,
         Icon: UndoRightSquareIcon,
     },
     {
@@ -15095,6 +16176,7 @@ export const icons: IconData[] = [
             'history',
             'clockwise',
         ],
+        isNew: false,
         Icon: UndoRightRoundIcon,
     },
     {
@@ -15123,6 +16205,7 @@ export const icons: IconData[] = [
             'external-link',
             'open',
         ],
+        isNew: false,
         Icon: SquareTopUpIcon,
     },
     {
@@ -15139,6 +16222,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['upload', 'update', 'box', 'in', 'top', 'descend', 'internal', 'insert'],
+        isNew: false,
         Icon: SquareTopDownIcon,
     },
     {
@@ -15155,6 +16239,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['maximize', 'expand', 'fullscreen', 'size', 'zoom', 'enlarge', 'corners', 'outward'],
+        isNew: false,
         Icon: MaximizeIcon,
     },
     {
@@ -15181,6 +16266,7 @@ export const icons: IconData[] = [
             'external-link',
             'export',
         ],
+        isNew: false,
         Icon: SquareBottomDownIcon,
     },
     {
@@ -15207,6 +16293,7 @@ export const icons: IconData[] = [
             'corners',
             'inward',
         ],
+        isNew: false,
         Icon: MinimizeIcon,
     },
     {
@@ -15223,6 +16310,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['arrow', 'navigation', 'circle', 'in', 'bottom', 'ascend', 'internal', 'insert'],
+        isNew: false,
         Icon: CircleBottomUpIcon,
     },
     {
@@ -15249,6 +16337,7 @@ export const icons: IconData[] = [
             'internal',
             'insert',
         ],
+        isNew: false,
         Icon: SquareBottomUpIcon,
     },
     {
@@ -15274,6 +16363,7 @@ export const icons: IconData[] = [
             'descend',
             'external-link',
         ],
+        isNew: false,
         Icon: CircleBottomDownIcon,
     },
     {
@@ -15290,6 +16380,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['order', 'adjustment', 'arrange', 'sort', 'list', 'drag', 'move', 'swap'],
+        isNew: false,
         Icon: Reorder2Icon,
     },
     {
@@ -15316,6 +16407,7 @@ export const icons: IconData[] = [
             'external-link',
             'open',
         ],
+        isNew: false,
         Icon: CircleTopUpIcon,
     },
     {
@@ -15342,6 +16434,7 @@ export const icons: IconData[] = [
             'internal',
             'insert',
         ],
+        isNew: false,
         Icon: CircleTopDownIcon,
     },
     {
@@ -15369,6 +16462,7 @@ export const icons: IconData[] = [
             'corners',
             'outward',
         ],
+        isNew: false,
         Icon: MaximizeSquare3Icon,
     },
     {
@@ -15395,6 +16489,7 @@ export const icons: IconData[] = [
             'enlarge',
             'outward',
         ],
+        isNew: false,
         Icon: MaximizeSquareIcon,
     },
     {
@@ -15421,6 +16516,7 @@ export const icons: IconData[] = [
             'reduce',
             'inward',
         ],
+        isNew: false,
         Icon: MinimizeSquareIcon,
     },
     {
@@ -15448,6 +16544,7 @@ export const icons: IconData[] = [
             'corners',
             'inward',
         ],
+        isNew: false,
         Icon: MinimizeSquare3Icon,
     },
     {
@@ -15476,6 +16573,7 @@ export const icons: IconData[] = [
             'arrows',
             'outward',
         ],
+        isNew: false,
         Icon: MaximizeSquare2Icon,
     },
     {
@@ -15492,6 +16590,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['arrow-right', 'log-out', 'auth', 'sign-out', 'leave', 'door', 'quit', 'escape'],
+        isNew: false,
         Icon: Logout2Icon,
     },
     {
@@ -15519,6 +16618,7 @@ export const icons: IconData[] = [
             'inward',
             'simple',
         ],
+        isNew: false,
         Icon: MinimizeSquareMinimalisticIcon,
     },
     {
@@ -15535,6 +16635,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['login', 'exit', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
+        isNew: false,
         Icon: Login2Icon,
     },
     {
@@ -15551,6 +16652,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['download', 'arrow-down', 'save', 'incoming', 'fetch', 'get', 'in', 'pull', 'tray'],
+        isNew: false,
         Icon: ImportIcon,
     },
     {
@@ -15577,6 +16679,7 @@ export const icons: IconData[] = [
             'tray',
             'arrow-down',
         ],
+        isNew: false,
         Icon: DownloadIcon,
     },
     {
@@ -15603,6 +16706,7 @@ export const icons: IconData[] = [
             'out',
             'tray',
         ],
+        isNew: false,
         Icon: ExportIcon,
     },
     {
@@ -15629,6 +16733,7 @@ export const icons: IconData[] = [
             'tray',
             'arrow-up',
         ],
+        isNew: false,
         Icon: UploadIcon,
     },
     {
@@ -15656,6 +16761,7 @@ export const icons: IconData[] = [
             'arrows',
             'inward',
         ],
+        isNew: false,
         Icon: MinimizeSquare2Icon,
     },
     {
@@ -15682,6 +16788,7 @@ export const icons: IconData[] = [
             'tray',
             'simple',
         ],
+        isNew: false,
         Icon: DownloadMinimalisticIcon,
     },
     {
@@ -15709,6 +16816,7 @@ export const icons: IconData[] = [
             'outward',
             'simple',
         ],
+        isNew: false,
         Icon: MaximizeSquareMinimalisticIcon,
     },
     {
@@ -15725,6 +16833,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['door-handle', 'lock-open', 'auth', 'sign-out', 'leave', 'door', 'quit', 'escape'],
+        isNew: false,
         Icon: ExitIcon,
     },
     {
@@ -15751,6 +16860,7 @@ export const icons: IconData[] = [
             'escape',
             'arrow-right',
         ],
+        isNew: false,
         Icon: LogoutIcon,
     },
     {
@@ -15776,6 +16886,7 @@ export const icons: IconData[] = [
             'arrow-right',
             'jump',
         ],
+        isNew: false,
         Icon: ForwardIcon,
     },
     {
@@ -15802,6 +16913,7 @@ export const icons: IconData[] = [
             'jump',
             'curved',
         ],
+        isNew: false,
         Icon: Forward2Icon,
     },
     {
@@ -15827,6 +16939,7 @@ export const icons: IconData[] = [
             'arrow-left',
             'curved',
         ],
+        isNew: false,
         Icon: ReplyIcon,
     },
     {
@@ -15843,6 +16956,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['download', 'share', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-left'],
+        isNew: false,
         Icon: Login3Icon,
     },
     {
@@ -15869,6 +16983,7 @@ export const icons: IconData[] = [
             'tray',
             'simple',
         ],
+        isNew: false,
         Icon: UploadMinimalisticIcon,
     },
     {
@@ -15885,6 +17000,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['arrow-left', 'back', 'auth', 'sign-out', 'leave', 'door', 'quit', 'escape'],
+        isNew: false,
         Icon: Logout3Icon,
     },
     {
@@ -15910,6 +17026,7 @@ export const icons: IconData[] = [
             'arrow-left',
             'curved',
         ],
+        isNew: false,
         Icon: Reply2Icon,
     },
     {
@@ -15926,6 +17043,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['arrow-up', 'top-arrow', 'north-east', 'diagonal', 'top-right', 'point'],
+        isNew: false,
         Icon: ArrowToTopRightIcon,
     },
     {
@@ -15949,6 +17067,7 @@ export const icons: IconData[] = [
             'bottom-right',
             'point',
         ],
+        isNew: false,
         Icon: ArrowToDownRightIcon,
     },
     {
@@ -15965,6 +17084,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['upload-file', 'data-transfer', 'cast', 'display', 'monitor', 'broadcast', 'mirror'],
+        isNew: false,
         Icon: ScreenShareIcon,
     },
     {
@@ -15988,6 +17108,7 @@ export const icons: IconData[] = [
             'bottom-left',
             'point',
         ],
+        isNew: false,
         Icon: ArrowToDownLeftIcon,
     },
     {
@@ -16004,6 +17125,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['left arrow-up', 'up-left arrow', 'north-west', 'diagonal', 'top-left', 'point'],
+        isNew: false,
         Icon: ArrowToTopLeftIcon,
     },
     {
@@ -16020,6 +17142,7 @@ export const icons: IconData[] = [
             'process',
         ],
         tags: ['Login', 'Enter', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
+        isNew: false,
         Icon: LoginIcon,
     },
     {
@@ -16043,6 +17166,7 @@ export const icons: IconData[] = [
             'form',
             'check',
         ],
+        isNew: false,
         Icon: ClipboardHeartIcon,
     },
     {
@@ -16050,6 +17174,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['Text Document', 'Notepad', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
+        isNew: false,
         Icon: DocumentTextIcon,
     },
     {
@@ -16057,6 +17182,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['Equalize', 'Balance', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
+        isNew: false,
         Icon: DocumentIcon,
     },
     {
@@ -16064,6 +17190,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['pen-note', 'writing-pad', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
+        isNew: false,
         Icon: DocumentAddIcon,
     },
     {
@@ -16080,6 +17207,7 @@ export const icons: IconData[] = [
             'text',
             'article',
         ],
+        isNew: false,
         Icon: DocumentsMinimalisticIcon,
     },
     {
@@ -16087,6 +17215,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['clipping', 'notepad', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+        isNew: false,
         Icon: ClipboardIcon,
     },
     {
@@ -16094,6 +17223,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['notebook', 'documentation'],
+        isNew: false,
         Icon: NotesIcon,
     },
     {
@@ -16101,6 +17231,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['book', 'notebook', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
+        isNew: false,
         Icon: DocumentsIcon,
     },
     {
@@ -16117,6 +17248,7 @@ export const icons: IconData[] = [
             'form',
             'check',
         ],
+        isNew: false,
         Icon: ClipboardRemoveIcon,
     },
     {
@@ -16133,6 +17265,7 @@ export const icons: IconData[] = [
             'text',
             'article',
         ],
+        isNew: false,
         Icon: DocumentMedicineIcon,
     },
     {
@@ -16140,6 +17273,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['minimalist', 'diary'],
+        isNew: false,
         Icon: NotesMinimalisticIcon,
     },
     {
@@ -16147,6 +17281,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['clipboard', 'list', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+        isNew: false,
         Icon: ClipboardTextIcon,
     },
     {
@@ -16154,6 +17289,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['checklist', 'task-list', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+        isNew: false,
         Icon: ClipboardCheckIcon,
     },
     {
@@ -16161,6 +17297,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['download', 'file-download', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveDownMinimalisticIcon,
     },
     {
@@ -16177,6 +17314,7 @@ export const icons: IconData[] = [
             'form',
             'check',
         ],
+        isNew: false,
         Icon: ClipboardListIcon,
     },
     {
@@ -16184,6 +17322,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['upload', 'file-upload', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveUpMinimalisticIcon,
     },
     {
@@ -16191,6 +17330,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['storage container', 'bin', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveIcon,
     },
     {
@@ -16198,6 +17338,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['checklist', 'tasks', 'list', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveCheckIcon,
     },
     {
@@ -16205,6 +17346,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['upload', 'file-import', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveUpIcon,
     },
     {
@@ -16212,6 +17354,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['download', 'file-download', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+        isNew: false,
         Icon: ArchiveDownIcon,
     },
     {
@@ -16228,6 +17371,7 @@ export const icons: IconData[] = [
             'book',
             'pages',
         ],
+        isNew: false,
         Icon: NotebookIcon,
     },
     {
@@ -16245,6 +17389,7 @@ export const icons: IconData[] = [
             'drawer',
             'keep',
         ],
+        isNew: false,
         Icon: ArchiveMinimalisticIcon,
     },
     {
@@ -16252,6 +17397,7 @@ export const icons: IconData[] = [
         category: 'notes' as Category,
         categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
         tags: ['healthcare', 'medical form', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+        isNew: false,
         Icon: ClipboardAddIcon,
     },
     {
@@ -16259,6 +17405,7 @@ export const icons: IconData[] = [
         category: 'notifications' as Category,
         categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
         tags: ['alert'],
+        isNew: false,
         Icon: NotificationUnreadIcon,
     },
     {
@@ -16266,6 +17413,7 @@ export const icons: IconData[] = [
         category: 'notifications' as Category,
         categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
         tags: ['cancel-notification', 'remove-icon'],
+        isNew: false,
         Icon: NotificationRemoveIcon,
     },
     {
@@ -16273,6 +17421,7 @@ export const icons: IconData[] = [
         category: 'notifications' as Category,
         categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
         tags: ['bell', 'sound', 'alert', 'alarm', 'chime', 'reminder'],
+        isNew: false,
         Icon: BellIcon,
     },
     {
@@ -16291,6 +17440,7 @@ export const icons: IconData[] = [
             'active',
             'vibrate',
         ],
+        isNew: false,
         Icon: BellRingIcon,
     },
     {
@@ -16311,6 +17461,7 @@ export const icons: IconData[] = [
             'disabled',
             'no-sound',
         ],
+        isNew: false,
         Icon: BellOffIcon,
     },
     {
@@ -16318,6 +17469,7 @@ export const icons: IconData[] = [
         category: 'notifications' as Category,
         categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
         tags: ['remove-notification', 'delete-message', 'cancel-notification'],
+        isNew: false,
         Icon: NotificationLinesRemoveIcon,
     },
     {
@@ -16325,6 +17477,7 @@ export const icons: IconData[] = [
         category: 'notifications' as Category,
         categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
         tags: ['unread', 'line', 'document'],
+        isNew: false,
         Icon: NotificationUnreadLinesIcon,
     },
     {
@@ -16332,6 +17485,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['explosion', 'detonator', 'danger', 'explosive', 'threat', 'warning', 'error'],
+        isNew: false,
         Icon: BombMinimalisticIcon,
     },
     {
@@ -16339,6 +17493,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['padlock', 'security lock', 'secure', 'safe', 'private', 'protect'],
+        isNew: false,
         Icon: LockIcon,
     },
     {
@@ -16346,6 +17501,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['explosion', 'exploding-bomb', 'danger', 'explosive', 'threat', 'warning', 'error'],
+        isNew: false,
         Icon: BombEmojiIcon,
     },
     {
@@ -16367,6 +17523,7 @@ export const icons: IconData[] = [
             'auth',
             'pin',
         ],
+        isNew: false,
         Icon: LockPasswordIcon,
     },
     {
@@ -16386,6 +17543,7 @@ export const icons: IconData[] = [
             'public',
             'access',
         ],
+        isNew: false,
         Icon: LockUnlockedIcon,
     },
     {
@@ -16413,6 +17571,7 @@ export const icons: IconData[] = [
             'auth',
             'pin',
         ],
+        isNew: false,
         Icon: LockPasswordUnlockedIcon,
     },
     {
@@ -16420,6 +17579,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['padlock', 'locked-door', 'secure', 'safe', 'private', 'protect'],
+        isNew: false,
         Icon: LockKeyholeMinimalisticIcon,
     },
     {
@@ -16427,6 +17587,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['padlock', 'security lock', 'secure', 'safe', 'private', 'protect'],
+        isNew: false,
         Icon: LockKeyholeIcon,
     },
     {
@@ -16434,6 +17595,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['bomb', 'explosion', 'danger', 'explosive', 'threat', 'warning', 'error'],
+        isNew: false,
         Icon: BombIcon,
     },
     {
@@ -16441,6 +17603,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['eyeball', 'vision', 'visibility', 'view', 'show', 'watch', 'look'],
+        isNew: false,
         Icon: EyeIcon,
     },
     {
@@ -16460,6 +17623,7 @@ export const icons: IconData[] = [
             'public',
             'access',
         ],
+        isNew: false,
         Icon: LockKeyholeUnlockedIcon,
     },
     {
@@ -16467,6 +17631,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock key', 'access pass', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeyIcon,
     },
     {
@@ -16487,6 +17652,7 @@ export const icons: IconData[] = [
             'blind',
             'secret',
         ],
+        isNew: false,
         Icon: EyeClosedIcon,
     },
     {
@@ -16504,6 +17670,7 @@ export const icons: IconData[] = [
             'auth',
             'pin',
         ],
+        isNew: false,
         Icon: PasswordIcon,
     },
     {
@@ -16511,6 +17678,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock', 'security', 'access', 'dots', 'asterisk', 'secret', 'login', 'auth', 'pin'],
+        isNew: false,
         Icon: PasswordMinimalisticIcon,
     },
     {
@@ -16518,6 +17686,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['warning', 'alert', 'alarm', 'police', 'emergency', 'flashing'],
+        isNew: false,
         Icon: SirenRoundedIcon,
     },
     {
@@ -16525,6 +17694,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['key', 'lock', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeySquare2Icon,
     },
     {
@@ -16532,6 +17702,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock', 'icon', 'symbol', 'dots', 'asterisk', 'secret', 'login', 'auth', 'pin'],
+        isNew: false,
         Icon: PasswordMinimalisticInputIcon,
     },
     {
@@ -16539,6 +17710,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['minimalist', 'iconic', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeyMinimalisticIcon,
     },
     {
@@ -16546,6 +17718,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock', 'security', 'access', 'unlock', 'pass', 'door'],
+        isNew: false,
         Icon: KeyMinimalisticSquare2Icon,
     },
     {
@@ -16565,6 +17738,7 @@ export const icons: IconData[] = [
             'public',
             'access',
         ],
+        isNew: false,
         Icon: LockKeyholeMinimalisticUnlockedIcon,
     },
     {
@@ -16572,6 +17746,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock', 'minimalist square', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeyMinimalisticSquareIcon,
     },
     {
@@ -16579,6 +17754,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock', 'secure key', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeySquareIcon,
     },
     {
@@ -16586,6 +17762,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['alert', 'emergency', 'warning', 'alarm', 'police', 'flashing'],
+        isNew: false,
         Icon: SirenIcon,
     },
     {
@@ -16593,6 +17770,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['lock key', 'minimal lock symbol', 'access', 'unlock', 'pass', 'door', 'security'],
+        isNew: false,
         Icon: KeyMinimalisticSquare3Icon,
     },
     {
@@ -16609,6 +17787,7 @@ export const icons: IconData[] = [
             'door',
             'security',
         ],
+        isNew: false,
         Icon: KeyMinimalistic2Icon,
     },
     {
@@ -16616,6 +17795,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['Spyglass', 'Magnifying Glass'],
+        isNew: false,
         Icon: IncognitoIcon,
     },
     {
@@ -16623,6 +17803,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['protective', 'defense', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldIcon,
     },
     {
@@ -16638,6 +17819,7 @@ export const icons: IconData[] = [
             'antivirus',
             'safe',
         ],
+        isNew: false,
         Icon: ShieldMinimalisticIcon,
     },
     {
@@ -16645,6 +17827,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['minus shield', 'dashed circle', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldMinusIcon,
     },
     {
@@ -16652,6 +17835,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['protection', 'defense', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldStarIcon,
     },
     {
@@ -16659,6 +17843,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['protection', 'guard', 'protect', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldPlusIcon,
     },
     {
@@ -16666,6 +17851,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['security', 'warning', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldWarningIcon,
     },
     {
@@ -16673,6 +17859,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['shield', 'crossed shield', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldCrossIcon,
     },
     {
@@ -16680,6 +17867,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['Shield Icon', 'Security Badge', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldUserIcon,
     },
     {
@@ -16695,6 +17883,7 @@ export const icons: IconData[] = [
             'antivirus',
             'safe',
         ],
+        isNew: false,
         Icon: ShieldUpIcon,
     },
     {
@@ -16710,6 +17899,7 @@ export const icons: IconData[] = [
             'antivirus',
             'safe',
         ],
+        isNew: false,
         Icon: ShieldNetworkIcon,
     },
     {
@@ -16717,6 +17907,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['QR code', 'square barcode', 'barcode', 'read', 'digital', 'camera', 'matrix'],
+        isNew: false,
         Icon: QrCodeIcon,
     },
     {
@@ -16724,6 +17915,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['search', 'lock', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldKeyholeMinimalisticIcon,
     },
     {
@@ -16731,6 +17923,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['scanner', 'document'],
+        isNew: false,
         Icon: Scanner2Icon,
     },
     {
@@ -16738,6 +17931,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['scan', 'analysis', 'barcode', 'read', 'digital', 'camera', 'recognize'],
+        isNew: false,
         Icon: CodeScanIcon,
     },
     {
@@ -16753,6 +17947,7 @@ export const icons: IconData[] = [
             'antivirus',
             'safe',
         ],
+        isNew: false,
         Icon: ShieldCheckIcon,
     },
     {
@@ -16773,6 +17968,7 @@ export const icons: IconData[] = [
             'camera',
             'recognize',
         ],
+        isNew: false,
         Icon: EyeScanIcon,
     },
     {
@@ -16780,6 +17976,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['scan', 'security check', 'barcode', 'read', 'digital', 'camera', 'recognize'],
+        isNew: false,
         Icon: ObjectScanIcon,
     },
     {
@@ -16787,6 +17984,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['Document scanner', 'Business scanner'],
+        isNew: false,
         Icon: ScannerIcon,
     },
     {
@@ -16794,6 +17992,7 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
         tags: ['Shield', 'Security symbol', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+        isNew: false,
         Icon: ShieldKeyholeIcon,
     },
     {
@@ -16810,6 +18009,7 @@ export const icons: IconData[] = [
             'tick',
             'valid',
         ],
+        isNew: false,
         Icon: UserCheckRoundedIcon,
     },
     {
@@ -16817,6 +18017,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['user-circle', 'group-rounded', 'people', 'team', 'community', 'crowd', 'multiple'],
+        isNew: false,
         Icon: UsersGroupTwoRoundedIcon,
     },
     {
@@ -16824,6 +18025,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile-add', 'user-account', 'new-user-icon'],
+        isNew: false,
         Icon: UserPlusRoundedIcon,
     },
     {
@@ -16831,6 +18033,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile', 'avatar'],
+        isNew: false,
         Icon: UserRoundedIcon,
     },
     {
@@ -16846,6 +18049,7 @@ export const icons: IconData[] = [
             'subtract',
             'decrease',
         ],
+        isNew: false,
         Icon: UserMinusRoundedIcon,
     },
     {
@@ -16853,6 +18057,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['user-inactive', 'user-disabled', 'inactive-user', 'unavailable-user'],
+        isNew: false,
         Icon: UserBlockRoundedIcon,
     },
     {
@@ -16868,6 +18073,7 @@ export const icons: IconData[] = [
             'crowd',
             'multiple',
         ],
+        isNew: false,
         Icon: UsersGroupRoundedIcon,
     },
     {
@@ -16875,6 +18081,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['crossed user', 'deleted profile'],
+        isNew: false,
         Icon: UserCrossRoundedIcon,
     },
     {
@@ -16882,6 +18089,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['speech bubble', 'circle user', 'talk', 'communication', 'voice', 'speech', 'say'],
+        isNew: false,
         Icon: UserSpeakRoundedIcon,
     },
     {
@@ -16889,6 +18097,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['identity card', 'badge'],
+        isNew: false,
         Icon: UserIdIcon,
     },
     {
@@ -16896,6 +18105,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['User with heart', 'Profile'],
+        isNew: false,
         Icon: UserHeartRoundedIcon,
     },
     {
@@ -16903,6 +18113,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile', 'avatar'],
+        isNew: false,
         Icon: UserIcon,
     },
     {
@@ -16919,6 +18130,7 @@ export const icons: IconData[] = [
             'tick',
             'valid',
         ],
+        isNew: false,
         Icon: UserCheckIcon,
     },
     {
@@ -16926,6 +18138,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['minimize user', 'user minus', 'remove', 'delete', 'subtract', 'decrease'],
+        isNew: false,
         Icon: UserMinusIcon,
     },
     {
@@ -16933,6 +18146,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['deactivated-user', 'profile-removal', 'inactive-account'],
+        isNew: false,
         Icon: UserCrossIcon,
     },
     {
@@ -16940,6 +18154,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['deactivated user', 'inactive account'],
+        isNew: false,
         Icon: UserBlockIcon,
     },
     {
@@ -16947,6 +18162,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['Person', 'Icon'],
+        isNew: false,
         Icon: UserHandsIcon,
     },
     {
@@ -16954,6 +18170,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile', 'avatar'],
+        isNew: false,
         Icon: UserCircleIcon,
     },
     {
@@ -16961,6 +18178,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile', 'avatar', 'talk', 'communication', 'voice', 'speech', 'say'],
+        isNew: false,
         Icon: UserSpeakIcon,
     },
     {
@@ -16968,6 +18186,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['user edit', 'profile settings'],
+        isNew: false,
         Icon: UserPlusIcon,
     },
     {
@@ -16975,6 +18194,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['profile', 'love'],
+        isNew: false,
         Icon: UserHeartIcon,
     },
     {
@@ -16982,6 +18202,7 @@ export const icons: IconData[] = [
         category: 'users' as Category,
         categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
         tags: ['raised hand', 'gesture of greeting'],
+        isNew: false,
         Icon: UserHandUpIcon,
     },
     {
@@ -17006,6 +18227,7 @@ export const icons: IconData[] = [
             'headquarters',
             'commercial',
         ],
+        isNew: false,
         Icon: Buildings2Icon,
     },
     {
@@ -17022,6 +18244,7 @@ export const icons: IconData[] = [
             'facility',
         ],
         tags: ['skyscraper', 'office', 'tower', 'downtown', 'urban'],
+        isNew: false,
         Icon: BuildingsIcon,
     },
     {
@@ -17047,6 +18270,7 @@ export const icons: IconData[] = [
             'urban-area',
             'town',
         ],
+        isNew: false,
         Icon: CityIcon,
     },
     {
@@ -17071,6 +18295,7 @@ export const icons: IconData[] = [
             'residential-complex',
             'towers',
         ],
+        isNew: false,
         Icon: Buildings3Icon,
     },
     {
@@ -17098,6 +18323,7 @@ export const icons: IconData[] = [
             'cross',
             'pharmacy',
         ],
+        isNew: false,
         Icon: HospitalIcon,
     },
     {
@@ -17126,6 +18352,7 @@ export const icons: IconData[] = [
             'roof',
             'chimney',
         ],
+        isNew: false,
         Icon: HouseIcon,
     },
     {
@@ -17151,6 +18378,7 @@ export const icons: IconData[] = [
             'depot',
             'roll-up-door',
         ],
+        isNew: false,
         Icon: GarageIcon,
     },
     {
@@ -17168,6 +18396,7 @@ export const icons: IconData[] = [
             'offer',
             'palm',
         ],
+        isNew: false,
         Icon: HandHeartIcon,
     },
     {
@@ -17185,6 +18414,7 @@ export const icons: IconData[] = [
             'give',
             'palm',
         ],
+        isNew: false,
         Icon: HandPillsIcon,
     },
     {
@@ -17203,6 +18433,7 @@ export const icons: IconData[] = [
             'give',
             'palm',
         ],
+        isNew: false,
         Icon: HandMoneyIcon,
     },
     {
@@ -17219,6 +18450,7 @@ export const icons: IconData[] = [
             'trust',
             'business',
         ],
+        isNew: false,
         Icon: HandShakeIcon,
     },
     {
@@ -17236,6 +18468,7 @@ export const icons: IconData[] = [
             'give',
             'palm',
         ],
+        isNew: false,
         Icon: HandStarsIcon,
     },
     {
@@ -17243,6 +18476,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['charging', 'plug-in'],
+        isNew: false,
         Icon: ElectricRefuelingIcon,
     },
     {
@@ -17250,6 +18484,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['fuel', 'pump', 'petrol', 'oil', 'car'],
+        isNew: false,
         Icon: GasStationIcon,
     },
     {
@@ -17257,6 +18492,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['suspension', 'engine-lift-supporter'],
+        isNew: false,
         Icon: ShockAbsorberIcon,
     },
     {
@@ -17264,6 +18500,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['battery', 'power source', 'power', 'engine', 'auto', 'energy'],
+        isNew: false,
         Icon: CarBatteryIcon,
     },
     {
@@ -17271,6 +18508,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['gearbox', 'motor transmission', 'gear', 'shift', 'manual', 'auto', 'drive'],
+        isNew: false,
         Icon: TransmissionIcon,
     },
     {
@@ -17278,6 +18516,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['gearbox', 'helicopter', 'aircraft', 'gear', 'shift', 'manual', 'auto', 'drive'],
+        isNew: false,
         Icon: TransmissionCircleIcon,
     },
     {
@@ -17285,6 +18524,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['Gearbox', 'Transmission', 'gear', 'shift', 'manual', 'auto', 'drive'],
+        isNew: false,
         Icon: TransmissionSquareIcon,
     },
     {
@@ -17292,6 +18532,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['gear', 'angle', 'tire', 'auto', 'drive', 'car'],
+        isNew: false,
         Icon: WheelAngleIcon,
     },
     {
@@ -17299,6 +18540,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['suspension', 'cross-link'],
+        isNew: false,
         Icon: SuspensionCrossIcon,
     },
     {
@@ -17306,6 +18548,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['suspension', 'gearbox'],
+        isNew: false,
         Icon: SuspensionIcon,
     },
     {
@@ -17320,6 +18563,7 @@ export const icons: IconData[] = [
             'travel',
             'vehicle',
         ],
+        isNew: false,
         Icon: BusIcon,
     },
     {
@@ -17327,6 +18571,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['tire', 'wheels', 'auto', 'drive', 'car'],
+        isNew: false,
         Icon: WheelIcon,
     },
     {
@@ -17343,6 +18588,7 @@ export const icons: IconData[] = [
             'gauge',
             'meter',
         ],
+        isNew: false,
         Icon: SpeedometerMaxIcon,
     },
     {
@@ -17359,6 +18605,7 @@ export const icons: IconData[] = [
             'gauge',
             'meter',
         ],
+        isNew: false,
         Icon: SpeedometerLowIcon,
     },
     {
@@ -17376,6 +18623,7 @@ export const icons: IconData[] = [
             'gauge',
             'meter',
         ],
+        isNew: false,
         Icon: SpeedometerMiddleIcon,
     },
     {
@@ -17383,6 +18631,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['motorcycle', 'two-wheeler', 'moped', 'vespa', 'ride'],
+        isNew: false,
         Icon: ScooterIcon,
     },
     {
@@ -17390,6 +18639,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['bolt', 'screw'],
+        isNew: false,
         Icon: SuspensionBoltIcon,
     },
     {
@@ -17397,6 +18647,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['railcar', 'train', 'public transportation'],
+        isNew: false,
         Icon: TramIcon,
     },
     {
@@ -17404,6 +18655,7 @@ export const icons: IconData[] = [
         category: 'parts' as Category,
         categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
         tags: ['scooter', 'kick scooter', 'moped', 'motorcycle', 'vespa', 'ride'],
+        isNew: false,
         Icon: KickScooterIcon,
     },
 ]

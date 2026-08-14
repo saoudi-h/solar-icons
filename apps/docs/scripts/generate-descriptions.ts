@@ -3,6 +3,20 @@ import fs from 'node:fs'
 
 const outputDataFilePath = './generated/descriptions.ts'
 
+/**
+ * Icons added within this window get the "new" badge in the icon
+ * explorer. Hardcoded by design (not a user setting): adjust here and
+ * regenerate when the visibility window should change.
+ */
+const NEW_ICON_THRESHOLD_DAYS = 90
+
+// Cutoff computed at generation time so `isNew` is a static boolean
+// (no Date.now() at render, no hydration drift). ISO dates compare
+// lexicographically.
+const newIconCutoff = new Date(Date.now() - NEW_ICON_THRESHOLD_DAYS * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10)
+
 const toPascalCase = (str: string) =>
     str
         .split('-')
@@ -14,6 +28,11 @@ type IconData = {
     category: string
     categoryTags: string[]
     tags: string[]
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    aliases?: string[]
 }
 
 const generate = (iconsData: IconData[]): string => {
@@ -33,6 +52,12 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    aliases?: string[]
+    isNew: boolean
     Icon: ComponentType<{ weight?: Weight } & IconProps>
 }
 
@@ -40,11 +65,22 @@ export const icons: IconData[] = [
 `
     const res = iconEntries.map(icon => {
         const componentName = toPascalCase(icon.name) + 'Icon'
+        const optionalFields = [
+            icon.origin !== undefined && `origin: '${icon.origin}'`,
+            icon.addedAt !== undefined && `addedAt: '${icon.addedAt}'`,
+            icon.author !== undefined && `author: '${icon.author}'`,
+            icon.state !== undefined && `state: '${icon.state}'`,
+            icon.aliases !== undefined && `aliases: ${JSON.stringify(icon.aliases)}`,
+        ]
+            .filter(Boolean)
+            .join(',\n        ')
+        const isNew = Boolean(icon.addedAt && icon.addedAt >= newIconCutoff)
         return `    {
         name: '${icon.name}',
         category: '${icon.category}' as Category,
         categoryTags: ${JSON.stringify(icon.categoryTags)},
         tags: ${JSON.stringify(icon.tags)},
+        ${optionalFields ? `${optionalFields},\n        ` : ''}isNew: ${isNew},
         Icon: ${componentName},
     }`
     })

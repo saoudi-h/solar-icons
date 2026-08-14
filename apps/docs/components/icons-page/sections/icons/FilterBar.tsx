@@ -8,6 +8,7 @@ import {
     DrawerTrigger,
 } from '@/components/ui/drawer'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { cn } from '@/lib/utils'
 import { useSolar } from '@solar-icons/react'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
 import { SettingsIcon } from '@solar-icons/react/linear/settings'
@@ -23,6 +24,7 @@ import { ViewModeToggle } from './ViewModeToggle'
 import {
     activeCategoryAtom,
     DEFAULT_VALUES,
+    extendedOnlyAtom,
     filteredCountAtom,
     useSearchKeyword,
     useStyleURL,
@@ -32,6 +34,7 @@ export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
     const [weight, setWeight] = useStyleURL()
+    const [extendedOnly, setExtendedOnly] = useAtom(extendedOnlyAtom)
     const setActiveCategory = useSetAtom(activeCategoryAtom)
 
     const [inputValue, setInputValue] = useState(keyword)
@@ -81,6 +84,7 @@ export const FilterBarContent: React.FC = () => {
         setKeyword('')
         setInputValue('')
         setActiveCategory(null)
+        setExtendedOnly(false)
         if (debounceRef.current) clearTimeout(debounceRef.current)
     }
 
@@ -130,6 +134,45 @@ export const FilterBarContent: React.FC = () => {
 
             {/* Section D — View */}
             <ViewModeToggle />
+
+            {/* Section D2 — Extended only filter */}
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <button
+                        type="button"
+                        aria-pressed={extendedOnly}
+                        onClick={() => setExtendedOnly(value => !value)}
+                        className={cn(
+                            `
+                              flex h-10 items-center gap-1.5 rounded-lg px-3
+                              text-xs font-medium transition-colors
+                              focus-visible:ring-1 focus-visible:ring-ring
+                              focus-visible:outline-hidden
+                            `,
+                            extendedOnly
+                                ? `
+                                  bg-primary/10 text-foreground ring-1
+                                  ring-primary/40
+                                `
+                                : `
+                                  bg-default-200 text-muted-foreground
+                                  hover:bg-default-300
+                                `
+                        )}>
+                        <span
+                            aria-hidden="true"
+                            className={cn(
+                                'size-2 rounded-full',
+                                extendedOnly ? 'bg-green-500' : 'bg-default-400'
+                            )}
+                        />
+                        Extended
+                    </button>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <p>Show only icons added beyond the original 480 Design set</p>
+                </TooltipContent>
+            </Tooltip>
 
             {/* Section E — Search (pushed to the right) */}
             <SearchInput

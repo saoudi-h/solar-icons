@@ -12,6 +12,13 @@ export const filteredIconsAtom = atom<IconData[]>([])
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
 
 /**
+ * "Extended only" filter: reduces the grid to icons added beyond the
+ * original upstream set (`origin: 'extended'`). UI-only toggle, not
+ * persisted in the URL — same stance as {@link activeCategoryAtom}.
+ */
+export const extendedOnlyAtom = atom<boolean>(false)
+
+/**
  * Last category the user navigated to from the sidebar. UI-only
  * navigation state (sidebar scroll target + active highlight), not
  * persisted in the URL — the URL is for the *resource* (the icon
