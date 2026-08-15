@@ -354,6 +354,12 @@ importers:
 
   apps/react-app:
     dependencies:
+      '@iconify/react':
+        specifier: ^6.0.2
+        version: 6.0.2(react@19.2.8)
+      '@solar-icons/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@solar-icons/react':
         specifier: workspace:*
         version: link:../../packages/react

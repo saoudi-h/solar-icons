@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-08-15",
+  "method": "Qualitative visual review of grouped rendered candidates. A match means the reference can replace the Solar icon without changing the intended concept or specificity.",
+  "matches": [
+    {
+      "solar": "accessibility",
+      "source": "lucide",
+      "reference": "accessibility",
+      "decision": "equivalent",
+      "note": "Same accessibility symbol and specificity."
+    },
+    {
+      "solar": "accessibility",
+      "source": "material",
+      "reference": "accessibility",
+      "decision": "equivalent",
+      "note": "Same accessibility symbol and specificity."
+    },
+    {
+      "solar": "accessibility",
+      "source": "tabler",
+      "reference": "accessible",
+      "decision": "equivalent",
+      "note": "Same accessibility symbol and specificity."
+    },
+    {
+      "solar": "accessibility",
+      "source": "hugeicons",
+      "reference": "accessibility-new",
+      "decision": "variant",
+      "note": "Same concept, different drawing treatment."
+    },
+    {
+      "solar": "add",
+      "source": "lucide",
+      "reference": "plus",
+      "decision": "equivalent",
+      "note": "Standalone addition symbol."
+    },
+    {
+      "solar": "add",
+      "source": "phosphor",
+      "reference": "plus",
+      "decision": "equivalent",
+      "note": "Standalone addition symbol."
+    },
+    {
+      "solar": "add",
+      "source": "hugeicons",
+      "reference": "add-01",
+      "decision": "equivalent",
+      "note": "Standalone addition symbol."
+    },
+    {
+      "solar": "add",
+      "source": "material",
+      "reference": "add",
+      "decision": "equivalent",
+      "note": "Standalone addition symbol."
+    },
+    {
+      "solar": "add",
+      "source": "tabler",
+      "reference": "plus",
+      "decision": "equivalent",
+      "note": "Standalone addition symbol."
+    },
+    {
+      "solar": "add-circle",
+      "source": "lucide",
+      "reference": "circle-plus",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a circle."
+    },
+    {
+      "solar": "add-circle",
+      "source": "hugeicons",
+      "reference": "add-circle",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a circle."
+    },
+    {
+      "solar": "add-circle",
+      "source": "material",
+      "reference": "add-circle",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a circle."
+    },
+    {
+      "solar": "add-circle",
+      "source": "tabler",
+      "reference": "circle-plus",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a circle."
+    },
+    {
+      "solar": "add-circle",
+      "source": "phosphor",
+      "reference": "circles-three-plus",
+      "decision": "no-match",
+      "note": "Multiple circles are not interchangeable with one plus circle."
+    },
+    {
+      "solar": "add-folder",
+      "source": "lucide",
+      "reference": "folder-plus",
+      "decision": "equivalent",
+      "note": "Folder with an addition action."
+    },
+    {
+      "solar": "add-folder",
+      "source": "phosphor",
+      "reference": "folder-plus",
+      "decision": "equivalent",
+      "note": "Folder with an addition action."
+    },
+    {
+      "solar": "add-folder",
+      "source": "hugeicons",
+      "reference": "folder-add",
+      "decision": "equivalent",
+      "note": "Folder with an addition action."
+    },
+    {
+      "solar": "add-folder",
+      "source": "material",
+      "reference": null,
+      "decision": "no-match",
+      "note": "The surfaced Material leads are numeric plus variants, not a folder addition symbol."
+    },
+    {
+      "solar": "add-folder",
+      "source": "tabler",
+      "reference": "folder-plus",
+      "decision": "equivalent",
+      "note": "Folder with an addition action."
+    },
+    {
+      "solar": "add-square",
+      "source": "lucide",
+      "reference": "square-plus",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a square."
+    },
+    {
+      "solar": "add-square",
+      "source": "phosphor",
+      "reference": "plus-square",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a square."
+    },
+    {
+      "solar": "add-square",
+      "source": "hugeicons",
+      "reference": "add-square",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a square."
+    },
+    {
+      "solar": "add-square",
+      "source": "material",
+      "reference": null,
+      "decision": "no-match",
+      "note": "The surfaced Material candidates are dashboard or contrast variants, not a plain add-square symbol."
+    },
+    {
+      "solar": "add-square",
+      "source": "tabler",
+      "reference": "square-plus",
+      "decision": "equivalent",
+      "note": "Addition symbol enclosed by a square."
+    },
+    {
+      "solar": "airbuds",
+      "source": "tabler",
+      "reference": "device-airpods",
+      "decision": "equivalent",
+      "note": "The rendered symbol is a pair of wireless earbuds, not a headset or a case."
+    },
+    {
+      "solar": "airbuds",
+      "source": "lucide",
+      "reference": "headphones",
+      "decision": "no-match",
+      "note": "Headphones are a different product category from wireless earbuds."
+    },
+    {
+      "solar": "airbuds",
+      "source": "phosphor",
+      "reference": "headphones",
+      "decision": "no-match",
+      "note": "Headphones are a different product category from wireless earbuds."
+    },
+    {
+      "solar": "airbuds",
+      "source": "hugeicons",
+      "reference": "airpod-01",
+      "decision": "no-match",
+      "note": "The rendered lead is an earbud case, not a pair of earbuds."
+    },
+    {
+      "solar": "airbuds",
+      "source": "material",
+      "reference": "earbuds",
+      "decision": "equivalent",
+      "note": "The rendered symbol is a pair of wireless earbuds, not a headset or a case."
+    },
+    {
+      "solar": "airbuds-case",
+      "source": "material",
+      "reference": "earbud-case",
+      "decision": "equivalent",
+      "note": "Same wireless earbud case concept and specificity."
+    },
+    {
+      "solar": "airbuds-case",
+      "source": "tabler",
+      "reference": "device-airpods-case",
+      "decision": "equivalent",
+      "note": "Same wireless earbud case concept and specificity."
+    },
+    {
+      "solar": "airbuds-case",
+      "source": "hugeicons",
+      "reference": "airpod-01",
+      "decision": "variant",
+      "note": "Same case concept, different drawing treatment."
+    },
+    {
+      "solar": "airbuds-case-charge",
+      "source": "material",
+      "reference": "earbud-case",
+      "decision": "no-match",
+      "note": "The candidate does not communicate the charging state."
+    },
+    {
+      "solar": "airbuds-case-charge",
+      "source": "tabler",
+      "reference": "device-airpods-case",
+      "decision": "no-match",
+      "note": "The candidate does not communicate the charging state."
+    },
+    {
+      "solar": "airbuds-case-open",
+      "source": "material",
+      "reference": "earbud-case",
+      "decision": "no-match",
+      "note": "The candidate does not communicate the open case state."
+    },
+    {
+      "solar": "airbuds-case-open",
+      "source": "tabler",
+      "reference": "device-airpods-case",
+      "decision": "no-match",
+      "note": "The candidate does not communicate the open case state."
+    },
+    {
+      "solar": "airbuds-left",
+      "source": "material",
+      "reference": "earbud-left",
+      "decision": "equivalent",
+      "note": "Same single-left-earbud specificity."
+    },
+    {
+      "solar": "airbuds-right",
+      "source": "material",
+      "reference": "earbud-right",
+      "decision": "equivalent",
+      "note": "Same single-right-earbud specificity."
+    },
+    {
+      "solar": "alarm",
+      "source": "lucide",
+      "reference": "alarm-clock",
+      "decision": "equivalent",
+      "note": "Same alarm clock concept."
+    },
+    {
+      "solar": "alarm",
+      "source": "phosphor",
+      "reference": "alarm",
+      "decision": "equivalent",
+      "note": "Same alarm clock concept."
+    },
+    {
+      "solar": "alarm",
+      "source": "hugeicons",
+      "reference": "alarm-clock",
+      "decision": "equivalent",
+      "note": "Same alarm clock concept."
+    },
+    {
+      "solar": "alarm",
+      "source": "material",
+      "reference": "alarm",
+      "decision": "equivalent",
+      "note": "Same alarm clock concept."
+    },
+    {
+      "solar": "alarm",
+      "source": "tabler",
+      "reference": "alarm",
+      "decision": "equivalent",
+      "note": "Same alarm clock concept."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { SolarProvider } from '@solar-icons/react'
 import Gallery from './components/Gallery'
 import ProviderDemo from './components/ProviderDemo'
@@ -78,9 +79,23 @@ export default function Home() {
               mx-auto max-w-7xl space-y-12 px-4 py-8
               sm:px-8
             ">
-                <div className="space-y-2 text-center">
-                    <h1 className="text-4xl font-bold text-white">Solar Icons - React</h1>
-                    <p className="text-slate-400">{ALL_ICONS.length} icons x 6 styles = {ALL_ICONS.length * 6} variants</p>
+                <div className="
+                  flex flex-col items-center justify-between gap-4 text-center
+                  sm:flex-row sm:text-left
+                ">
+                    <div className="space-y-2">
+                        <h1 className="text-4xl font-bold text-white">Solar Icons - React</h1>
+                        <p className="text-slate-400">{ALL_ICONS.length} icons x 6 styles = {ALL_ICONS.length * 6} variants</p>
+                    </div>
+                    <Link href="/compare" className="
+                      rounded-xl border border-amber-400/30 bg-amber-400/10 px-4
+                      py-3 text-sm font-semibold text-amber-300
+                      transition-colors
+                      hover:border-amber-300/60 hover:bg-amber-400/20
+                      hover:text-amber-200
+                    ">
+                        Open parity workbench →
+                    </Link>
                 </div>
 
                 <Section number={1} title="Dynamic Icons" desc={`Import from @solar-icons/react/dynamic/name. One component per icon, style via weight prop.`}>

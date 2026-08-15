@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "solar": "add-square",
+      "source": "material",
+      "reference": "1k-plus",
+      "reason": "Numeric popularity symbol, not an addition symbol enclosed by a square."
+    },
+    {
+      "solar": "add-square",
+      "source": "material",
+      "reference": "dashboard-square-add",
+      "reason": "Dashboard-specific composite, not a generic addition symbol enclosed by a square."
+    },
+    {
+      "solar": "add-folder",
+      "source": "material",
+      "reference": "1k-plus",
+      "reason": "Numeric popularity symbol, unrelated to adding a folder."
+    },
+    {
+      "solar": "airbuds",
+      "source": "material",
+      "reference": "earbud-case",
+      "reason": "The rendered icon is an earbud case, not a pair of earbuds."
+    },
+    {
+      "solar": "airbuds-case-charge",
+      "source": "lucide",
+      "reference": "battery-charging",
+      "reason": "Battery state alone is not an earbud case with charge state."
+    }
+  ]
+}
