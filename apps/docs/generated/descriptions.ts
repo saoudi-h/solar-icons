@@ -4667,7 +4667,7 @@ export const icons: IconData[] = [
         Icon: WalletIcon,
     },
     {
-        name: 'ticker-star',
+        name: 'ticket-star',
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: [
