@@ -1,4 +1,9 @@
-import { applyDuotoneStyle, type IconContext, type ParsedIcon } from '@solar-icons/core'
+import {
+    applyDuotoneStyle,
+    type DeprecatedIconAlias,
+    type IconContext,
+    type ParsedIcon,
+} from '@solar-icons/core'
 import xmldom from '@xmldom/xmldom'
 
 export interface FileDefinition {
@@ -84,7 +89,10 @@ const WEIGHT_KEBAB: Record<string, string> = {
     Outline: 'outline',
 }
 
-export function angularComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
+export function angularComponentFile(
+    ctx: IconContext<ParsedIcon>,
+    deprecatedAliases: readonly DeprecatedIconAlias[] = []
+): FileDefinition {
     const icon = ctx.icon
     const globalName = toPascalCase(`${icon.name}-${icon.style}`)
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
@@ -92,6 +100,12 @@ export function angularComponentFile(ctx: IconContext<ParsedIcon>): FileDefiniti
 
     const componentName = `Solar${globalName}`
     const styleKebab = WEIGHT_KEBAB[icon.style]
+    const selectors = [
+        `svg[solar${globalName}]`,
+        ...deprecatedAliases.map(
+            alias => `svg[solar${toPascalCase(`${alias.name}-${icon.style}`)}]`
+        ),
+    ].join(', ')
 
     const content = `/* GENERATED FILE */
 import {
@@ -108,7 +122,7 @@ import { IconBase } from '../lib/icon-base';
  * \`<svg solar${globalName} [size]="24" color="#ef4444" />\`
  */
 @Component({
-    selector: 'svg[solar${globalName}]',
+    selector: '${selectors}',
     template: \`@if (titleAttr(); as title) { <title>{{ title }}</title> }@else if (alt(); as title) { <title>{{ title }}</title> }${template}\`,
     standalone: true,
     encapsulation: ViewEncapsulation.None,

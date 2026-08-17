@@ -19,6 +19,23 @@ export interface Metadata {
     }
 }
 
+/** Metadata for a legacy icon name kept as a compatibility export. */
+export interface DeprecatedIconAlias {
+    name: string
+    replacement: string
+    reason: string
+    deprecatedSince?: string
+}
+
+/** Hand-curated description metadata for one canonical icon. */
+export interface IconDescription {
+    name: string
+    category: string
+    categoryTags: string[]
+    tags: string[]
+    deprecatedAliases?: DeprecatedIconAlias[]
+}
+
 /**
  * Icon Weight Type
  */

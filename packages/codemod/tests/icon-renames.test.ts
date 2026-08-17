@@ -14,4 +14,8 @@ describe('renameIcon', () => {
     it('does not rewrite an unrelated icon containing a generic word', () => {
         expect(renameIcon('TextSquare')).toBe('TextSquare')
     })
+
+    it('preserves a v2 compatibility alias that remains exported', () => {
+        expect(renameIcon('TickerStar')).toBe('TickerStar')
+    })
 })

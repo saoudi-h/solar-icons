@@ -4,16 +4,19 @@ import path from 'node:path'
 import pc from 'picocolors'
 
 import {
+    buildDeprecatedAliasMap,
     forEachIcon,
     forEachIconGroupedBy,
     parseSvgs,
     toPascalCase,
     WEIGHT_MAP,
     WEIGHTS,
+    type DeprecatedIconAlias,
     type ParsedIcon,
     type ParsedIconGroup,
     type Weight,
 } from '@solar-icons/core'
+import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { reactNativeComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -21,7 +24,8 @@ const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
-    groups: ReadonlyArray<ParsedIconGroup>
+    groups: ReadonlyArray<ParsedIconGroup>,
+    deprecatedAliases: ReadonlyMap<string, DeprecatedIconAlias[]>
 ): FileDefinition[] {
     const files: FileDefinition[] = []
 
@@ -29,18 +33,26 @@ function generateIndexes(
         const iconsForWeight = icons.filter(i => i.style === weight)
         const weightKebab = WEIGHT_MAP[weight]
         const seen = new Set<string>()
-        const content = iconsForWeight
-            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-            .filter(icon => {
-                if (seen.has(icon.pascalName)) return false
-                seen.add(icon.pascalName)
-                return true
-            })
-            .map(
-                icon =>
-                    `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
-            )
-            .join('\n')
+        const content = [
+            iconsForWeight
+                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+                .filter(icon => {
+                    if (seen.has(icon.pascalName)) return false
+                    seen.add(icon.pascalName)
+                    return true
+                })
+                .map(
+                    icon =>
+                        `export { ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}';`
+                )
+                .join('\n'),
+            ...iconsForWeight.flatMap(icon =>
+                (deprecatedAliases.get(icon.name) ?? []).map(
+                    alias =>
+                        `/** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */\nexport { ${toPascalCase(alias.name)}Icon } from '../${WEIGHT_MAP[icon.style]}/${alias.name}';`
+                )
+            ),
+        ].join('\n')
 
         files.push({
             path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
@@ -57,6 +69,11 @@ function generateIndexes(
         rootGlobalLines.push(
             `export { ${icon.pascalName}Icon as ${globalName} } from './${WEIGHT_MAP[icon.style]}/${icon.name}';`
         )
+        for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+            rootGlobalLines.push(
+                `/** @deprecated ${alias.reason}. Use ${globalName} instead. */\nexport { ${toPascalCase(alias.name)}Icon as ${toPascalCase(`${alias.name}-${icon.style}`)}Icon } from './${WEIGHT_MAP[icon.style]}/${alias.name}';`
+            )
+        }
     }
     rootGlobalLines.sort()
 
@@ -86,17 +103,54 @@ export * from "./icons/styled"
         content: mainEntryContent,
     })
 
-    const dynamicBarrelContent = groups
-        .map(g => {
-            return `export { ${g.pascalName}Icon } from './${g.name}'`
-        })
-        .join('\n')
+    const dynamicBarrelContent = [
+        ...groups.map(g => `export { ${g.pascalName}Icon } from './${g.name}'`),
+        ...groups.flatMap(group =>
+            (deprecatedAliases.get(group.name) ?? []).map(
+                alias =>
+                    `/** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */\nexport { ${toPascalCase(alias.name)}Icon } from './${alias.name}'`
+            )
+        ),
+    ].join('\n')
 
     files.push({
         path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
         content: dynamicBarrelContent + '\n',
     })
 
+    return files
+}
+
+function generateDeprecatedAliasFiles(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>,
+    deprecatedAliases: ReadonlyMap<string, DeprecatedIconAlias[]>
+): FileDefinition[] {
+    const files: FileDefinition[] = []
+    for (const icon of icons) {
+        for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+            const aliasPascalName = toPascalCase(alias.name)
+            files.push({
+                path: path.join(ICONS_PATH, icon.styleKebab, `${alias.name}.tsx`),
+                content: `/* GENERATED FILE */
+/** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */
+export { ${icon.pascalName}Icon as ${aliasPascalName}Icon } from './${icon.name}'
+`,
+            })
+        }
+    }
+    for (const group of groups) {
+        for (const alias of deprecatedAliases.get(group.name) ?? []) {
+            const aliasPascalName = toPascalCase(alias.name)
+            files.push({
+                path: path.join(ICONS_PATH, 'dynamic', `${alias.name}.tsx`),
+                content: `/* GENERATED FILE */
+/** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */
+export { ${group.pascalName}Icon as ${aliasPascalName}Icon } from './${group.name}'
+`,
+            })
+        }
+    }
     return files
 }
 
@@ -188,8 +242,14 @@ const main = async () => {
             return true
         })
         const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
-        const indexFiles = generateIndexes(result.icons, result.groups)
-        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
+        const deprecatedAliases = buildDeprecatedAliasMap(descriptions)
+        const indexFiles = generateIndexes(result.icons, result.groups, deprecatedAliases)
+        const aliasFiles = generateDeprecatedAliasFiles(
+            result.icons,
+            result.groups,
+            deprecatedAliases
+        )
+        writeFiles([...componentFiles, ...dynamicFiles, ...aliasFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))
         console.error(err)

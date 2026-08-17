@@ -4,15 +4,18 @@ import path from 'node:path'
 import pc from 'picocolors'
 
 import {
+    buildDeprecatedAliasMap,
     forEachIcon,
     forEachIconGroupedBy,
     parseSvgs,
     toPascalCase,
     WEIGHT_MAP,
     WEIGHTS,
+    type DeprecatedIconAlias,
     type ParsedIcon,
     type ParsedIconGroup,
 } from '@solar-icons/core'
+import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { angularComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
@@ -21,7 +24,8 @@ const INDEX_PATH = path.resolve(import.meta.dirname, '../src/public-api.ts')
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
-    groups: ReadonlyArray<ParsedIconGroup>
+    groups: ReadonlyArray<ParsedIconGroup>,
+    deprecatedAliases: ReadonlyMap<string, DeprecatedIconAlias[]>
 ): FileDefinition[] {
     const files: FileDefinition[] = []
 
@@ -35,6 +39,12 @@ function generateIndexes(
         seenIcons.add(globalName)
         const sk = WEIGHT_MAP[icon.style]
         iconLines.push(`export { Solar${globalName} } from './${icon.name}-${sk}';`)
+        for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+            const aliasGlobalName = toPascalCase(`${alias.name}-${icon.style}`)
+            iconLines.push(
+                `/** @deprecated ${alias.reason}. Use Solar${globalName} instead. */\nexport { Solar${globalName} as Solar${aliasGlobalName} } from './${icon.name}-${sk}';`
+            )
+        }
     }
 
     iconLines.sort()
@@ -49,6 +59,12 @@ function generateIndexes(
 
     for (const group of groups) {
         dynamicLines.push(`export { Solar${group.pascalName} } from './${group.name}';`)
+        for (const alias of deprecatedAliases.get(group.name) ?? []) {
+            const aliasName = toPascalCase(alias.name)
+            dynamicLines.push(
+                `/** @deprecated ${alias.reason}. Use Solar${group.pascalName} instead. */\nexport { Solar${group.pascalName} as Solar${aliasName} } from './${group.name}';`
+            )
+        }
     }
 
     dynamicLines.sort()
@@ -59,8 +75,16 @@ function generateIndexes(
     })
 
     // all-icons.types.ts — union of all icon names with Solar prefix
-    const allStaticNames = icons.map(i => `'Solar${toPascalCase(`${i.name}-${i.style}`)}'`).sort()
-    const allDynamicNames = groups.map(g => `'Solar${g.pascalName}'`).sort()
+    const allStaticNames = icons.flatMap(i => [
+        `'Solar${toPascalCase(`${i.name}-${i.style}`)}'`,
+        ...(deprecatedAliases.get(i.name) ?? []).map(
+            alias => `'Solar${toPascalCase(`${alias.name}-${i.style}`)}'`
+        ),
+    ])
+    const allDynamicNames = groups.flatMap(g => [
+        `'Solar${g.pascalName}'`,
+        ...(deprecatedAliases.get(g.name) ?? []).map(alias => `'Solar${toPascalCase(alias.name)}'`),
+    ])
     const allNames = [...allStaticNames, ...allDynamicNames].join(' | ')
 
     const typeContent = `/* GENERATED FILE */
@@ -99,7 +123,10 @@ function clean() {
     }
 }
 
-function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
+function generateDynamicFile(
+    group: ParsedIconGroup,
+    deprecatedAliases: readonly DeprecatedIconAlias[]
+): FileDefinition {
     const groups = group.styles
     const name = group.name
     const pascalName = group.pascalName
@@ -141,6 +168,10 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .join('\n *\n')
 
     const componentName = `Solar${pascalName}`
+    const selectors = [
+        `svg[solar${pascalName}]`,
+        ...deprecatedAliases.map(alias => `svg[solar${toPascalCase(alias.name)}]`),
+    ].join(', ')
 
     const content = `/* GENERATED FILE */
 import {
@@ -156,7 +187,7 @@ ${imports}
 ${previews}
  */
 @Component({
-    selector: 'svg[solar${pascalName}]',
+    selector: '${selectors}',
     template: \`
 ${conditions}
     \`,
@@ -196,15 +227,20 @@ const main = async () => {
             pc.blue(`Parsed ${result.icons.length} icons in ${result.groups.length} groups`)
         )
 
-        const allComponentFiles = await forEachIcon(angularComponentFile)
+        const deprecatedAliases = buildDeprecatedAliasMap(descriptions)
+        const allComponentFiles = await forEachIcon(ctx =>
+            angularComponentFile(ctx, deprecatedAliases.get(ctx.icon.name) ?? [])
+        )
         const seenPaths = new Set<string>()
         const componentFiles = allComponentFiles.filter(f => {
             if (seenPaths.has(f.path)) return false
             seenPaths.add(f.path)
             return true
         })
-        const dynamicFiles = await forEachIconGroupedBy(ctx => generateDynamicFile(ctx.icon))
-        const indexFiles = generateIndexes(result.icons, result.groups)
+        const dynamicFiles = await forEachIconGroupedBy(ctx =>
+            generateDynamicFile(ctx.icon, deprecatedAliases.get(ctx.icon.name) ?? [])
+        )
+        const indexFiles = generateIndexes(result.icons, result.groups, deprecatedAliases)
         writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles])
     } catch (err) {
         console.error(pc.red('Build failed'))

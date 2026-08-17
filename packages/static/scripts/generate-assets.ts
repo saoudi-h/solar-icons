@@ -18,7 +18,14 @@
  * `--solar-secondary-opacity` CSS variables (via `transformDuotoneAccent`), so
  * duotone theming works with zero runtime.
  */
-import { parseSvgs, transformDuotoneAccent, type ParsedIcon } from '@solar-icons/core'
+import {
+    buildDeprecatedAliasMap,
+    parseSvgs,
+    transformDuotoneAccent,
+    type DeprecatedIconAlias,
+    type ParsedIcon,
+} from '@solar-icons/core'
+import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
@@ -50,6 +57,13 @@ function makePascalName(icon: ParsedIcon): string {
     return `${icon.pascalName}${icon.style}Icon`
 }
 
+function makeAliasPascalName(alias: DeprecatedIconAlias, icon: ParsedIcon): string {
+    return `${alias.name
+        .split('-')
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('')}${icon.style}Icon`
+}
+
 function clean() {
     for (const p of [DIST, path.resolve(import.meta.dirname, '../src/icons'), SRC_INDEX]) {
         if (fs.existsSync(p)) {
@@ -65,6 +79,7 @@ const main = async () => {
     try {
         clean()
         const { icons } = await parseSvgs({ svgsDir: SVGS_DIR })
+        const deprecatedAliases = buildDeprecatedAliasMap(descriptions)
 
         const map: Record<string, string> = {}
         const symbols: string[] = []
@@ -101,6 +116,28 @@ const main = async () => {
             barrelLines.push(
                 `export { ${pascalName} } from "./icons/${icon.styleKebab}/${icon.kebabName}";`
             )
+
+            for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+                const aliasId = `${alias.name}-${icon.styleKebab}`
+                const aliasSvgPath = path.join(ICONS_DIR, icon.styleKebab, `${alias.name}.svg`)
+                fs.writeFileSync(aliasSvgPath, svg)
+                map[aliasId] = svg
+                symbols.push(`  <symbol id="${aliasId}" viewBox="0 0 24 24">${inner}</symbol>`)
+
+                const aliasPascalName = makeAliasPascalName(alias, icon)
+                const aliasTsPath = path.join(SRC_ICONS, icon.styleKebab, `${alias.name}.ts`)
+                fs.writeFileSync(
+                    aliasTsPath,
+                    `/* GENERATED FILE — @solar-icons/static */
+
+/** @deprecated ${alias.reason}. Use ${pascalName} instead. */
+export { ${pascalName} as ${aliasPascalName} } from './${icon.kebabName}';
+`
+                )
+                barrelLines.push(
+                    `/** @deprecated ${alias.reason}. Use ${pascalName} instead. */\nexport { ${aliasPascalName} } from "./icons/${icon.styleKebab}/${alias.name}";`
+                )
+            }
         }
 
         // --- sprite.svg ---
@@ -147,6 +184,12 @@ export default metadata\nexport { metadata }\n`
   category: string
   categoryTags: string[]
   tags: string[]
+  deprecatedAliases?: {
+    name: string
+    replacement: string
+    reason: string
+    deprecatedSince?: string
+  }[]
 }[]
 export default descriptions\nexport { descriptions }\n`
         )

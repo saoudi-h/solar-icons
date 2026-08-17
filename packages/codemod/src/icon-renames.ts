@@ -1,4 +1,4 @@
-/** Complete v1-to-v2 icon rename table. Old exports do not exist in v2. */
+/** Complete v1-to-v2 breaking rename table. Compatibility aliases are intentionally omitted. */
 export const iconRenames: Record<string, string> = {
     Accumulator: 'CarBattery',
     BellBing: 'BellRing',
