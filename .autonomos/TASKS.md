@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[ICON-FIXES]** Fix two reported icon issues: one incorrect icon name and one SVG requiring regeneration. Details and exact source-of-truth changes will be scoped after the maintainer provides the issue descriptions. `Priority: 🟠` `Complexity: S`
+
 - [x] **[DOCS-COUNT-REACT-PERF]** Keep counting `@solar-icons/react-perf` on the homepage "Weekly Downloads" stat card. The Aug 8 list fix (`b9df8a914`) had dropped it. Deprecated on npm 2026-08-10 (message points to `@solar-icons/react`); downloads keep counting, and the maintainer wants them counted until the numbers become negligible. Re-added to `NPM_PACKAGES` in `apps/docs/components/home-page/sections/community/index.tsx` (position: right after `@solar-icons/react`). Lint + typecheck green. `Priority: 🟠` `Complexity: S`
 
 - [x] **[AGENT-CLEANUP]** Refresh all AGENT.md files to the stable-v2 state. Removed dated session sections (journals belong in worklogs), fixed wrong version claims (`@3.0.0`/`@1.x` → v2 stable), renamed residual `V3-*` labels to v2, replaced the stale beta-first/prerelease release-governance entries with current facts (V2 stable since 2026-08-07, `pre` mode exited), fixed the `.autonomos` tracking note (TASKS.md is tracked; only `worklogs/` are gitignored), updated `react-perf` (deprecated) and `static`/`js` (released) status, removed the obsolete codemod "36 vs 37" constraint, corrected the nuxt changelogen release claim. Prettier clean. `Priority: 🟠` `Complexity: M`

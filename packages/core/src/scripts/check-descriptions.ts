@@ -1,14 +1,18 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
+import type { IconDescription, Metadata } from '../types'
 
 const DESCRIPTIONS_PATH = path.resolve(import.meta.dirname, '../metadata-descriptions.json')
+const METADATA_PATH = path.resolve(import.meta.dirname, '../metadata.json')
 
 const main = () => {
     console.log(pc.blue('Checking metadata-descriptions.json integrity...\n'))
 
     if (!fs.existsSync(DESCRIPTIONS_PATH)) {
-        console.log(pc.red('metadata-descriptions.json is missing — this file is required source code.'))
+        console.log(
+            pc.red('metadata-descriptions.json is missing — this file is required source code.')
+        )
         process.exit(1)
     }
 
@@ -34,19 +38,79 @@ const main = () => {
     }
 
     if (data.length === 0) {
-        console.log(pc.red('metadata-descriptions.json is empty — this file is hand-curated source code.'))
+        console.log(
+            pc.red('metadata-descriptions.json is empty — this file is hand-curated source code.')
+        )
         process.exit(1)
     }
 
-    const required = ['name', 'category']
+    if (!fs.existsSync(METADATA_PATH)) {
+        console.log(pc.red('metadata.json is missing — run `pnpm generate:svgs --offline` first.'))
+        process.exit(1)
+    }
+
+    const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf-8')) as Metadata
+    const iconNames = new Set(
+        Object.values(metadata.categories).flatMap(category => category.icons)
+    )
+
+    const required = ['name', 'category', 'categoryTags', 'tags']
     let fails = 0
+    const seenNames = new Set<string>()
+    const seenAliases = new Set<string>()
     for (let i = 0; i < data.length; i++) {
         const entry = data[i] as Record<string, unknown>
         for (const key of required) {
-            if (typeof entry[key] !== 'string') {
+            const validArray = key === 'categoryTags' || key === 'tags'
+            if (
+                (validArray &&
+                    (!Array.isArray(entry[key]) ||
+                        !(entry[key] as unknown[]).every(value => typeof value === 'string'))) ||
+                (!validArray && typeof entry[key] !== 'string')
+            ) {
                 console.log(pc.red(`  Entry #${i}: missing or invalid "${key}" field`))
                 fails++
             }
+        }
+
+        const description = entry as unknown as IconDescription
+        if (typeof description.name === 'string') {
+            if (seenNames.has(description.name)) {
+                console.log(pc.red(`  Entry #${i}: duplicate icon "${description.name}"`))
+                fails++
+            }
+            seenNames.add(description.name)
+        }
+
+        for (const alias of description.deprecatedAliases ?? []) {
+            if (
+                typeof alias.name !== 'string' ||
+                typeof alias.replacement !== 'string' ||
+                typeof alias.reason !== 'string'
+            ) {
+                console.log(pc.red(`  Entry #${i}: invalid deprecated alias metadata`))
+                fails++
+                continue
+            }
+            if (alias.replacement !== description.name) {
+                console.log(
+                    pc.red(
+                        `  Entry #${i}: deprecated alias "${alias.name}" must replace with "${description.name}"`
+                    )
+                )
+                fails++
+            }
+            if (iconNames.has(alias.name)) {
+                console.log(
+                    pc.red(`  Entry #${i}: deprecated alias "${alias.name}" is a live icon name`)
+                )
+                fails++
+            }
+            if (seenAliases.has(alias.name)) {
+                console.log(pc.red(`  Entry #${i}: duplicate deprecated alias "${alias.name}"`))
+                fails++
+            }
+            seenAliases.add(alias.name)
         }
     }
     if (fails > 0) {

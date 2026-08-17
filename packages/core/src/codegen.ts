@@ -18,7 +18,7 @@
  *     files must use it, not duplicate it.
  */
 
-import type { IconWeight } from './types.js'
+import type { DeprecatedIconAlias, IconDescription, IconWeight } from './types.js'
 
 /** Alias for {@link IconWeight} for use in the codegen layer. */
 export type Weight = IconWeight
@@ -47,6 +47,24 @@ export const WEIGHT_MAP: Readonly<Record<Weight, StyleKey>> = {
     Linear: 'linear',
     LineDuotone: 'line-duotone',
     Outline: 'outline',
+}
+
+/**
+ * Build a map of canonical icon names to their deprecated compatibility names.
+ *
+ * The metadata file remains the source of truth; framework generators only
+ * decide how to expose the resulting aliases in their native module shape.
+ */
+export function buildDeprecatedAliasMap(
+    descriptions: readonly IconDescription[]
+): Map<string, DeprecatedIconAlias[]> {
+    const aliasMap = new Map<string, DeprecatedIconAlias[]>()
+    for (const entry of descriptions) {
+        if (entry.deprecatedAliases?.length) {
+            aliasMap.set(entry.name, entry.deprecatedAliases)
+        }
+    }
+    return aliasMap
 }
 
 const DUOTONE_CSS_VARS_HTML =

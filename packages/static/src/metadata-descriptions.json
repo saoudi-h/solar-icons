@@ -3173,7 +3173,7 @@
         "tags": ["billfold", "pocketbook", "purse", "cash", "cards", "holder", "pocket", "savings"]
     },
     {
-        "name": "ticker-star",
+        "name": "ticket-star",
         "category": "money",
         "categoryTags": ["finance", "payment", "cash", "currency", "wealth", "economy", "price"],
         "tags": [
@@ -3185,6 +3185,13 @@
             "best",
             "popular",
             "shape"
+        ],
+        "deprecatedAliases": [
+            {
+                "name": "ticker-star",
+                "replacement": "ticket-star",
+                "reason": "Typo in the icon name"
+            }
         ]
     },
     {

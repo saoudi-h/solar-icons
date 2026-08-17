@@ -4,16 +4,19 @@ import path from 'node:path';
 import pc from 'picocolors';
 
 import {
+    buildDeprecatedAliasMap,
     parseSvgs,
     forEachIcon,
     forEachIconGroupedBy,
     toPascalCase,
     WEIGHTS,
     WEIGHT_MAP,
+    type DeprecatedIconAlias,
     type IconWeight,
     type ParsedIcon,
     type ParsedIconGroup,
 } from '@solar-icons/core';
+import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' };
 import { svelteComponentFile, type FileDefinition } from './parser-hook';
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons');
@@ -21,7 +24,8 @@ const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts');
 
 function generateIndexes(
     icons: ReadonlyArray<ParsedIcon>,
-    groups: ReadonlyArray<ParsedIconGroup>
+    groups: ReadonlyArray<ParsedIconGroup>,
+    deprecatedAliases: ReadonlyMap<string, DeprecatedIconAlias[]>
 ): FileDefinition[] {
     const files: FileDefinition[] = [];
 
@@ -29,18 +33,26 @@ function generateIndexes(
         const iconsForWeight = icons.filter((i) => i.style === weight);
         const weightKebab = WEIGHT_MAP[weight];
         const seen = new Set<string>();
-        const content = iconsForWeight
-            .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
-            .filter((icon) => {
-                if (seen.has(icon.pascalName)) return false;
-                seen.add(icon.pascalName);
-                return true;
-            })
-            .map(
-                (icon) =>
-                    `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}.svelte';`
-            )
-            .join('\n');
+        const content = [
+            iconsForWeight
+                .sort((a, b) => a.pascalName.localeCompare(b.pascalName))
+                .filter((icon) => {
+                    if (seen.has(icon.pascalName)) return false;
+                    seen.add(icon.pascalName);
+                    return true;
+                })
+                .map(
+                    (icon) =>
+                        `export { default as ${icon.pascalName}Icon } from '../${WEIGHT_MAP[icon.style]}/${icon.name}.svelte';`
+                )
+                .join('\n'),
+            ...iconsForWeight.flatMap((icon) =>
+                (deprecatedAliases.get(icon.name) ?? []).map(
+                    (alias) =>
+                        `/** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */\nexport { default as ${toPascalCase(alias.name)}Icon } from '../${WEIGHT_MAP[icon.style]}/${alias.name}.svelte';`
+                )
+            ),
+        ].join('\n');
 
         files.push({
             path: path.join(ICONS_PATH, 'style', `${weightKebab}.ts`),
@@ -57,6 +69,11 @@ function generateIndexes(
         rootGlobalLines.push(
             `export { default as ${globalName}Icon } from './${WEIGHT_MAP[icon.style]}/${icon.name}.svelte';`
         );
+        for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+            rootGlobalLines.push(
+                `/** @deprecated ${alias.reason}. Use ${globalName}Icon instead. */\nexport { default as ${toPascalCase(`${alias.name}-${icon.style}`)}Icon } from './${WEIGHT_MAP[icon.style]}/${alias.name}.svelte';`
+            );
+        }
     }
     rootGlobalLines.sort();
 
@@ -84,17 +101,56 @@ export * from "./icons/styled"
         content: mainEntryContent,
     });
 
-    const dynamicBarrelContent = groups
-        .map((g) => {
-            return `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'`;
-        })
-        .join('\n');
+    const dynamicBarrelContent = [
+        ...groups.map((g) => `export { default as ${g.pascalName}Icon } from './${g.name}.svelte'`),
+        ...groups.flatMap((group) =>
+            (deprecatedAliases.get(group.name) ?? []).map(
+                (alias) =>
+                    `/** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */\nexport { default as ${toPascalCase(alias.name)}Icon } from './${alias.name}.svelte'`
+            )
+        ),
+    ].join('\n');
 
     files.push({
         path: path.join(ICONS_PATH, 'dynamic', 'index.ts'),
         content: dynamicBarrelContent + '\n',
     });
 
+    return files;
+}
+
+function generateDeprecatedAliasFiles(
+    icons: ReadonlyArray<ParsedIcon>,
+    groups: ReadonlyArray<ParsedIconGroup>,
+    deprecatedAliases: ReadonlyMap<string, DeprecatedIconAlias[]>
+): FileDefinition[] {
+    const files: FileDefinition[] = [];
+    for (const icon of icons) {
+        for (const alias of deprecatedAliases.get(icon.name) ?? []) {
+            files.push({
+                path: path.join(ICONS_PATH, icon.styleKebab, `${alias.name}.svelte`),
+                content: `<!-- GENERATED FILE -->
+<script module lang="ts">
+/** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */
+export { default } from './${icon.name}.svelte';
+</script>
+`,
+            });
+        }
+    }
+    for (const group of groups) {
+        for (const alias of deprecatedAliases.get(group.name) ?? []) {
+            files.push({
+                path: path.join(ICONS_PATH, 'dynamic', `${alias.name}.svelte`),
+                content: `<!-- GENERATED FILE -->
+<script module lang="ts">
+/** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */
+export { default } from './${group.name}.svelte';
+</script>
+`,
+            });
+        }
+    }
     return files;
 }
 
@@ -187,8 +243,14 @@ const main = async () => {
             return true;
         });
         const dynamicFiles = await forEachIconGroupedBy((ctx) => generateDynamicFile(ctx.icon));
-        const indexFiles = generateIndexes(result.icons, result.groups);
-        writeFiles([...componentFiles, ...dynamicFiles, ...indexFiles]);
+        const deprecatedAliases = buildDeprecatedAliasMap(descriptions);
+        const indexFiles = generateIndexes(result.icons, result.groups, deprecatedAliases);
+        const aliasFiles = generateDeprecatedAliasFiles(
+            result.icons,
+            result.groups,
+            deprecatedAliases
+        );
+        writeFiles([...componentFiles, ...dynamicFiles, ...aliasFiles, ...indexFiles]);
     } catch (err) {
         console.error(pc.red('Build failed'));
         console.error(err);

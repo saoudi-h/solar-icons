@@ -14,6 +14,12 @@ type IconData = {
     category: string
     categoryTags: string[]
     tags: string[]
+    deprecatedAliases?: {
+        name: string
+        replacement: string
+        reason: string
+        deprecatedSince?: string
+    }[]
 }
 
 const generate = (iconsData: IconData[]): string => {
@@ -33,6 +39,12 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    deprecatedAliases?: {
+        name: string
+        replacement: string
+        reason: string
+        deprecatedSince?: string
+    }[]
     Icon: ComponentType<{ weight?: Weight } & IconProps>
 }
 
@@ -40,12 +52,15 @@ export const icons: IconData[] = [
 `
     const res = iconEntries.map(icon => {
         const componentName = toPascalCase(icon.name) + 'Icon'
+        const deprecatedAliases = icon.deprecatedAliases?.length
+            ? `         deprecatedAliases: ${JSON.stringify(icon.deprecatedAliases)},\n`
+            : ''
         return `    {
         name: '${icon.name}',
         category: '${icon.category}' as Category,
-        categoryTags: ${JSON.stringify(icon.categoryTags)},
-        tags: ${JSON.stringify(icon.tags)},
-        Icon: ${componentName},
+         categoryTags: ${JSON.stringify(icon.categoryTags)},
+         tags: ${JSON.stringify(icon.tags)},
+${deprecatedAliases}         Icon: ${componentName},
     }`
     })
 

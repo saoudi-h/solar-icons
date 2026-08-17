@@ -1109,9 +1109,9 @@ import {
     TextUnderlineIcon,
     ThermometerIcon,
     ThreeSquaresIcon,
-    TickerStarIcon,
     TicketIcon,
     TicketSaleIcon,
+    TicketStarIcon,
     ToPipIcon,
     TornadoIcon,
     TornadoSmallIcon,
@@ -1258,6 +1258,12 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    deprecatedAliases?: {
+        name: string
+        replacement: string
+        reason: string
+        deprecatedSince?: string
+    }[]
     Icon: ComponentType<{ weight?: Weight } & IconProps>
 }
 
@@ -4667,7 +4673,7 @@ export const icons: IconData[] = [
         Icon: WalletIcon,
     },
     {
-        name: 'ticker-star',
+        name: 'ticket-star',
         category: 'money' as Category,
         categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
         tags: [
@@ -4680,7 +4686,10 @@ export const icons: IconData[] = [
             'popular',
             'shape',
         ],
-        Icon: TickerStarIcon,
+        deprecatedAliases: [
+            { name: 'ticker-star', replacement: 'ticket-star', reason: 'Typo in the icon name' },
+        ],
+        Icon: TicketStarIcon,
     },
     {
         name: 'ticket-sale',
