@@ -1,5 +1,11 @@
 # @solar-icons/solid
 
+## 2.0.1
+
+### Patch Changes
+
+- [#531](https://github.com/saoudi-h/solar-icons/pull/531) [`171c9bf`](https://github.com/saoudi-h/solar-icons/commit/171c9bf09ea9c86887260db9ba23479cc7b1f5e2) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: correct the ticket-star icon name, preserve ticker-star compatibility exports, and refresh logout Bold SVG
+
 ## 2.0.0
 
 ### Breaking Changes
