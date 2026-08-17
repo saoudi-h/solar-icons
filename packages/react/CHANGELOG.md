@@ -1,5 +1,11 @@
 # @solar-icons/react
 
+## 2.0.1
+
+### Patch Changes
+
+- [#531](https://github.com/saoudi-h/solar-icons/pull/531) [`29bfda4`](https://github.com/saoudi-h/solar-icons/commit/29bfda4ced2e0db927c10fb87b8484c9400d8ed4) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: correct the ticket-star icon name, preserve ticker-star compatibility exports, and refresh logout Bold SVG
+
 ## 2.0.0
 
 ### Breaking Changes
