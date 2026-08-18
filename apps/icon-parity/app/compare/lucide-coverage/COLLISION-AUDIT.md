@@ -30,6 +30,33 @@ are best handled as explicit Solar aliases or a documented preferred target.
 Any future promotion or downgrade must be recorded in the corresponding `sheet-NN.json`, validated,
 and followed by regeneration of `coverage.json`.
 
+## Reverse-equivalent integration queue
+
+The closed reverse review also found 93 Lucide equivalents that are not yet in the semantic
+forward projection. Eleven Solar rows are proposed for more than one of those Lucide names:
+
+| Solar | Reverse Lucide names | Action |
+| --- | --- | --- |
+| `chart` | `bar-chart-3`, `bar-chart-4`, `bar-chart-big`, `chart-bar`, `chart-bar-big`, `chart-column-big` | Keep the existing preferred `chart-column`; do not replace it automatically. |
+| `calendar-date` | `calendar-1`, `calendar-days` | Keep the existing `calendar`; inspect date specificity before promotion. |
+| `expressionless-circle` | `face-neutral`, `meh` | Keep `face-expressionless`; treat the other names as aliases only after visual confirmation. |
+| `file-check` | `file-check-2`, `file-check-corner` | Existing `file-check` is already exact; no forward replacement needed. |
+| `code-file` | `file-code-2`, `file-code-corner` | Existing `file-code` is already exact; no forward replacement needed. |
+| `file-remove` | `file-minus`, `file-minus-2`, `file-minus-corner`, `file-x-2`, `file-x-corner` | Preserve existing `file-x`; do not conflate minus and X without a policy decision. |
+| `document-add` | `file-plus-2`, `file-plus-corner` | Existing `file-plus` is already exact. |
+| `gamepad` | `gamepad-2`, `gamepad-directional` | Existing `gamepad` is already exact. |
+| `hamburger-menu` | `hamburger`, `square-menu` | Existing `menu` is already exact; keep the alternatives as evidence. |
+| `microphone` | `mic-audio-lines`, `mic-signal` | Existing `mic` is already exact. |
+| `plane` | `send`, `send-horizontal` | Existing `plane` is the safer generic object; do not infer send semantics. |
+
+These rows are not missing review decisions. They are integration collisions: the reverse evidence
+is closed, but a single Solar icon cannot receive several forward references. Resolve them explicitly
+before editing `FORWARD_REFERENCE_OVERRIDES`.
+
+The `door-open` reverse packet is intentionally excluded from exact coverage by
+`REVERSE_REVIEW_NO_MATCH_IDS`: its candidates mixed `exit`, `closet-2`, and `garage`, so it is an
+ambiguous false positive rather than a promotion candidate.
+
 ## Verification
 
 - Source data: `lucide-coverage/coverage.json` and the 13 production sheets.
