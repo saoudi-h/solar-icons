@@ -1,0 +1,1372 @@
+{
+  "version": 1,
+  "batch": "solar-to-lucide-sheet-01",
+  "direction": "solar-to-lucide",
+  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+  "solarSheet": 1,
+  "totalSolarSheets": 13,
+  "phase": "complete",
+  "instructions": "Inspect this Solar sheet against the complete Lucide atlas. Record zero to three canonical Lucide candidate IDs per icon, then generate review boards and resolve every row. Do not consult or modify verified-matches.json.",
+  "entries": [
+    {
+      "solar": "accessibility",
+      "solarId": "S0001",
+      "candidates": [
+        "L0004"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "accessibility",
+      "referenceId": "L0004",
+      "decision": "equivalent",
+      "note": "Visual review confirms the same accessibility symbol and use; person construction and enclosure are stylistic."
+    },
+    {
+      "solar": "add",
+      "solarId": "S0002",
+      "candidates": [
+        "L1259"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "plus",
+      "referenceId": "L1259",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "add-circle",
+      "solarId": "S0003",
+      "candidates": [
+        "L0411"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "circle-plus",
+      "referenceId": "L0411",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "add-folder",
+      "solarId": "S0004",
+      "candidates": [
+        "L0754"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "folder-plus",
+      "referenceId": "L0754",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "add-square",
+      "solarId": "S0005",
+      "candidates": [
+        "L1542"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "square-plus",
+      "referenceId": "L1542",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "adhesive-plaster",
+      "solarId": "S0006",
+      "candidates": [
+        "L0138"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bandage",
+      "referenceId": "L0138",
+      "decision": "variant",
+      "note": "Both depict an adhesive bandage, but Solar crosses two padded strips into an X while Lucide bandage shows one horizontal strip; the object matches with a meaningful drawing difference."
+    },
+    {
+      "solar": "adhesive-plaster-2",
+      "solarId": "S0007",
+      "candidates": [
+        "L0138"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bandage",
+      "referenceId": "L0138",
+      "decision": "variant",
+      "note": "Solar shows one diagonal padded strip, while Lucide bandage shows one horizontal strip; both depict an adhesive bandage but the orientation and construction differ."
+    },
+    {
+      "solar": "airbuds",
+      "solarId": "S0008",
+      "candidates": [
+        "L0861"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts in-ear earbuds, while Lucide headphones are over-ear; no Lucide icon preserves the in-ear pair."
+    },
+    {
+      "solar": "airbuds-case",
+      "solarId": "S0009",
+      "candidates": [
+        "L1213",
+        "L0251"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts an earbud charging case; no Lucide candidate preserves that device-specific case construction."
+    },
+    {
+      "solar": "airbuds-case-charge",
+      "solarId": "S0010",
+      "candidates": [
+        "L1213",
+        "L0154",
+        "L0861"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts an earbud charging case with a charge modifier; no Lucide candidate preserves that device-specific case construction."
+    },
+    {
+      "solar": "airbuds-case-minimalistic",
+      "solarId": "S0011",
+      "candidates": [
+        "L1213",
+        "L0251"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts an earbud charging case; no Lucide candidate preserves that device-specific case construction."
+    },
+    {
+      "solar": "airbuds-case-open",
+      "solarId": "S0012",
+      "candidates": [
+        "L1213",
+        "L0251",
+        "L0750"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts an earbud charging case opened with the earbuds visible; no Lucide candidate preserves that device-specific case construction."
+    },
+    {
+      "solar": "airbuds-charge",
+      "solarId": "S0013",
+      "candidates": [
+        "L0861",
+        "L0154"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines in-ear earbuds with a charge state or direction; no Lucide candidate preserves the in-ear earbuds and this modifier."
+    },
+    {
+      "solar": "airbuds-check",
+      "solarId": "S0014",
+      "candidates": [
+        "L0861",
+        "L0345"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines in-ear earbuds with a check state or direction; no Lucide candidate preserves the in-ear earbuds and this modifier."
+    },
+    {
+      "solar": "airbuds-left",
+      "solarId": "S0015",
+      "candidates": [
+        "L0861",
+        "L0591"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines in-ear earbuds with a left state or direction; no Lucide candidate preserves the in-ear earbuds and this modifier."
+    },
+    {
+      "solar": "airbuds-remove",
+      "solarId": "S0016",
+      "candidates": [
+        "L0861",
+        "L1817"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines in-ear earbuds with a remove state or direction; no Lucide candidate preserves the in-ear earbuds and this modifier."
+    },
+    {
+      "solar": "airbuds-right",
+      "solarId": "S0017",
+      "candidates": [
+        "L0861",
+        "L0591"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines in-ear earbuds with a right state or direction; no Lucide candidate preserves the in-ear earbuds and this modifier."
+    },
+    {
+      "solar": "alarm",
+      "solarId": "S0018",
+      "candidates": [
+        "L0009"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "alarm-clock",
+      "referenceId": "L0009",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alarm-add",
+      "solarId": "S0019",
+      "candidates": [
+        "L0013"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "alarm-clock-plus",
+      "referenceId": "L0013",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alarm-pause",
+      "solarId": "S0020",
+      "candidates": [
+        "L0009",
+        "L0407",
+        "L1211"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an alarm clock with a pause state; Lucide separates the clock and modifier, so no candidate preserves the composite."
+    },
+    {
+      "solar": "alarm-play",
+      "solarId": "S0021",
+      "candidates": [
+        "L0009",
+        "L0410",
+        "L1254"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an alarm clock with a play state; Lucide separates the clock and modifier, so no candidate preserves the composite."
+    },
+    {
+      "solar": "alarm-remove",
+      "solarId": "S0022",
+      "candidates": [
+        "L0011"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "alarm-clock-minus",
+      "referenceId": "L0011",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alarm-sleep",
+      "solarId": "S0023",
+      "candidates": [
+        "L0009",
+        "L1112"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an alarm clock with a sleep state; Lucide separates the clock and modifier, so no candidate preserves the composite."
+    },
+    {
+      "solar": "alarm-turn-off",
+      "solarId": "S0024",
+      "candidates": [
+        "L0012"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "alarm-clock-off",
+      "referenceId": "L0012",
+      "decision": "variant",
+      "note": "Solar marks the alarm clock with an X, while Lucide alarm-clock-off uses a diagonal slash; both express turning the alarm off but the state glyph differs."
+    },
+    {
+      "solar": "album",
+      "solarId": "S0025",
+      "candidates": [
+        "L0015"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "album",
+      "referenceId": "L0015",
+      "decision": "variant",
+      "note": "Both denote an album, but Solar renders a media/photo album with an image while Lucide album uses a closed album or bookmark silhouette; the album concept is preserved with different specificity."
+    },
+    {
+      "solar": "align-bottom",
+      "solarId": "S0026",
+      "candidates": [
+        "L0038",
+        "L0019"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-end-horizontal",
+      "referenceId": "L0019",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar aligns vertical objects to a bottom baseline; Lucide align-end-horizontal preserves the object orientation and bottom alignment."
+    },
+    {
+      "solar": "align-horizontal-center",
+      "solarId": "S0027",
+      "candidates": [
+        "L0017",
+        "L0018"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-center-vertical",
+      "referenceId": "L0018",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar centers horizontal objects on a vertical guide; Lucide align-center-vertical preserves that guide and object orientation."
+    },
+    {
+      "solar": "align-horizontal-spacing",
+      "solarId": "S0028",
+      "candidates": [
+        "L0028"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-horizontal-space-between",
+      "referenceId": "L0028",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "align-left",
+      "solarId": "S0029",
+      "candidates": [
+        "L0030",
+        "L0033"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-start-vertical",
+      "referenceId": "L0033",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar aligns rectangular objects to a left guide; Lucide align-start-vertical is the object-alignment counterpart, while align-left is text alignment."
+    },
+    {
+      "solar": "align-right",
+      "solarId": "S0030",
+      "candidates": [
+        "L0031",
+        "L0020"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-end-vertical",
+      "referenceId": "L0020",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar aligns rectangular objects to a right guide; Lucide align-end-vertical is the object-alignment counterpart, while align-right is text alignment."
+    },
+    {
+      "solar": "align-top",
+      "solarId": "S0031",
+      "candidates": [
+        "L0039",
+        "L0032"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-start-horizontal",
+      "referenceId": "L0032",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar aligns vertical rectangles to a top horizontal guide; Lucide align-start-horizontal preserves that object orientation and guide axis."
+    },
+    {
+      "solar": "align-vertical-center",
+      "solarId": "S0032",
+      "candidates": [
+        "L0018",
+        "L0017"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-center-horizontal",
+      "referenceId": "L0017",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: Solar centers vertical rectangles on a horizontal guide; Lucide align-center-horizontal is the matching guide-axis counterpart."
+    },
+    {
+      "solar": "align-vertical-spacing",
+      "solarId": "S0033",
+      "candidates": [
+        "L0041"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "align-vertical-space-between",
+      "referenceId": "L0041",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alt-arrow-down",
+      "solarId": "S0034",
+      "candidates": [
+        "L0356"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "chevron-down",
+      "referenceId": "L0356",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alt-arrow-left",
+      "solarId": "S0035",
+      "candidates": [
+        "L0359"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "chevron-left",
+      "referenceId": "L0359",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alt-arrow-right",
+      "solarId": "S0036",
+      "candidates": [
+        "L0360"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "chevron-right",
+      "referenceId": "L0360",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "alt-arrow-up",
+      "solarId": "S0037",
+      "candidates": [
+        "L0361"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "chevron-up",
+      "referenceId": "L0361",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "archive",
+      "solarId": "S0038",
+      "candidates": [
+        "L0056"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "archive",
+      "referenceId": "L0056",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "archive-check",
+      "solarId": "S0039",
+      "candidates": [
+        "L0056",
+        "L0345"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a check state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "archive-down",
+      "solarId": "S0040",
+      "candidates": [
+        "L0056",
+        "L0073"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a down state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "archive-down-minimalistic",
+      "solarId": "S0041",
+      "candidates": [
+        "L0056",
+        "L0073"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a down-minimalistic state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "archive-minimalistic",
+      "solarId": "S0042",
+      "candidates": [
+        "L0056"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a minimalistic state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "archive-up",
+      "solarId": "S0043",
+      "candidates": [
+        "L0056",
+        "L0096"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a up state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "archive-up-minimalistic",
+      "solarId": "S0044",
+      "candidates": [
+        "L0056",
+        "L0096"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines an archive enclosure with a up-minimalistic state; Lucide archive and the corresponding modifier are separate, so no candidate preserves the composite."
+    },
+    {
+      "solar": "armchair",
+      "solarId": "S0045",
+      "candidates": [
+        "L0060"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "armchair",
+      "referenceId": "L0060",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "armchair-2",
+      "solarId": "S0046",
+      "candidates": [
+        "L0060",
+        "L1332"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "armchair",
+      "referenceId": "L0060",
+      "decision": "variant",
+      "note": "Both depict an armchair, but Solar uses a distinct second chair silhouette while Lucide armchair supplies only its single chair construction."
+    },
+    {
+      "solar": "arrow-down",
+      "solarId": "S0047",
+      "candidates": [
+        "L0069"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-down",
+      "referenceId": "L0069",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-left",
+      "solarId": "S0048",
+      "candidates": [
+        "L0082"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-left",
+      "referenceId": "L0082",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-left-down",
+      "solarId": "S0049",
+      "candidates": [
+        "L0074"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-down-left",
+      "referenceId": "L0074",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-left-up",
+      "solarId": "S0050",
+      "candidates": [
+        "L0097"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-up-left",
+      "referenceId": "L0097",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-right",
+      "solarId": "S0051",
+      "candidates": [
+        "L0086"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-right",
+      "referenceId": "L0086",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-right-down",
+      "solarId": "S0052",
+      "candidates": [
+        "L0076"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-down-right",
+      "referenceId": "L0076",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-right-up",
+      "solarId": "S0053",
+      "candidates": [
+        "L0099"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-up-right",
+      "referenceId": "L0099",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "arrow-to-down-left",
+      "solarId": "S0054",
+      "candidates": [
+        "L0518",
+        "L0074"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "corner-left-down",
+      "referenceId": "L0518",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: the Lucide corner-left-down arrow preserves the curved turn into a downward arrow; the previous diagonal arrow-down-left candidate lost the turn."
+    },
+    {
+      "solar": "arrow-to-down-right",
+      "solarId": "S0055",
+      "candidates": [
+        "L0520",
+        "L0076"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "corner-right-down",
+      "referenceId": "L0520",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: the Lucide corner-right-down arrow preserves the curved turn into a downward arrow; the previous diagonal arrow-down-right candidate lost the turn."
+    },
+    {
+      "solar": "arrow-to-top-left",
+      "solarId": "S0056",
+      "candidates": [
+        "L0519",
+        "L0097"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "corner-left-up",
+      "referenceId": "L0519",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: the Lucide corner-left-up arrow preserves the curved turn into an upward arrow; the previous diagonal arrow-up-left candidate lost the turn."
+    },
+    {
+      "solar": "arrow-to-top-right",
+      "solarId": "S0057",
+      "candidates": [
+        "L0521",
+        "L0099"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "corner-right-up",
+      "referenceId": "L0521",
+      "decision": "equivalent",
+      "note": "Corrected during the sheet-01 equivalent audit: the Lucide corner-right-up arrow preserves the curved turn into an upward arrow; the previous diagonal arrow-up-right candidate lost the turn."
+    },
+    {
+      "solar": "arrow-up",
+      "solarId": "S0058",
+      "candidates": [
+        "L0090"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "arrow-up",
+      "referenceId": "L0090",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "asteroid",
+      "solarId": "S0059",
+      "candidates": [
+        "L0105"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "astroid",
+      "referenceId": "L0105",
+      "decision": "related",
+      "note": "Solar renders a round cratered asteroid, while Lucide asteroid is a four-point celestial shape; both indicate an asteroid or celestial object, but the object silhouette is substantially different."
+    },
+    {
+      "solar": "atom",
+      "solarId": "S0060",
+      "candidates": [
+        "L0107"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "atom",
+      "referenceId": "L0107",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "augmented-reality",
+      "solarId": "S0061",
+      "candidates": [
+        "L1377",
+        "L0729",
+        "L1368"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar explicitly renders the letters AR inside a rounded enclosure; Lucide scan, focus, and scan-square render framing targets without the AR label."
+    },
+    {
+      "solar": "backpack",
+      "solarId": "S0062",
+      "candidates": [
+        "L0115"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "backpack",
+      "referenceId": "L0115",
+      "decision": "variant",
+      "note": "Both depict a backpack, but Solar uses a minimal rounded pack while Lucide adds a detailed front pocket and straps; the object matches with a different construction detail."
+    },
+    {
+      "solar": "backspace",
+      "solarId": "S0063",
+      "candidates": [
+        "L0549"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "delete",
+      "referenceId": "L0549",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "bacteria",
+      "solarId": "S0064",
+      "candidates": [
+        "L0186",
+        "L0262"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts a microscopic bacterium inside a circle; Lucide biohazard and bug depict hazard and insect symbols, not the bacterial object."
+    },
+    {
+      "solar": "bag",
+      "solarId": "S0065",
+      "candidates": [
+        "L1433",
+        "L1205",
+        "L0842"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "shopping-bag",
+      "referenceId": "L1433",
+      "decision": "related",
+      "note": "Solar is a generic handled bag, while Lucide shopping-bag is a specific paper shopping bag; the broad bag category is related but the construction and use are less specific."
+    },
+    {
+      "solar": "bag-2",
+      "solarId": "S0066",
+      "candidates": [
+        "L1433",
+        "L1205",
+        "L0842"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "shopping-bag",
+      "referenceId": "L1433",
+      "decision": "related",
+      "note": "Solar is a decorative handled bag, while Lucide shopping-bag is a specific paper shopping bag; the broad bag category is related but the construction differs."
+    },
+    {
+      "solar": "bag-3",
+      "solarId": "S0067",
+      "candidates": [
+        "L1433",
+        "L1205",
+        "L0842"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "shopping-bag",
+      "referenceId": "L1433",
+      "decision": "related",
+      "note": "Solar is a decorative handled bag, while Lucide shopping-bag is a specific paper shopping bag; the broad bag category is related but the construction differs."
+    },
+    {
+      "solar": "bag-4",
+      "solarId": "S0068",
+      "candidates": [
+        "L1433",
+        "L1205",
+        "L0842"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "shopping-bag",
+      "referenceId": "L1433",
+      "decision": "related",
+      "note": "Solar is a decorative handled bag, while Lucide shopping-bag is a specific paper shopping bag; the broad bag category is related but the construction differs."
+    },
+    {
+      "solar": "bag-5",
+      "solarId": "S0069",
+      "candidates": [
+        "L1433",
+        "L1205",
+        "L0842"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "shopping-bag",
+      "referenceId": "L1433",
+      "decision": "related",
+      "note": "Solar is a decorative handled bag, while Lucide shopping-bag is a specific paper shopping bag; the broad bag category is related but the construction differs."
+    },
+    {
+      "solar": "bag-check",
+      "solarId": "S0070",
+      "candidates": [
+        "L1433",
+        "L0345"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a check state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "bag-cross",
+      "solarId": "S0071",
+      "candidates": [
+        "L1433",
+        "L1817"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a cross state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "bag-heart",
+      "solarId": "S0072",
+      "candidates": [
+        "L1433",
+        "L0863"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a heart state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "bag-music",
+      "solarId": "S0073",
+      "candidates": [
+        "L1433",
+        "L1141"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a music state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "bag-music-2",
+      "solarId": "S0074",
+      "candidates": [
+        "L1433",
+        "L1142"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a music-2 state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "bag-smile",
+      "solarId": "S0075",
+      "candidates": [
+        "L1433",
+        "L1464"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar combines a bag with a smile state; Lucide shopping-bag and the modifier are separate icons, so no candidate preserves the composite."
+    },
+    {
+      "solar": "balloon",
+      "solarId": "S0076",
+      "candidates": [
+        "L0135"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "balloon",
+      "referenceId": "L0135",
+      "decision": "variant",
+      "note": "Both depict a balloon, but Solar uses a round balloon with a straight tie while Lucide balloon uses a teardrop balloon with a bent string; the object is preserved with a different silhouette."
+    },
+    {
+      "solar": "balls",
+      "solarId": "S0077",
+      "candidates": [
+        "L1768",
+        "L0582"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts multiple balls as a grouped sports object; Lucide volleyball and dribbble each depict one ball and cannot preserve the count and grouping."
+    },
+    {
+      "solar": "banknote",
+      "solarId": "S0078",
+      "candidates": [
+        "L0139"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "banknote",
+      "referenceId": "L0139",
+      "decision": "variant",
+      "note": "Both depict a single banknote, but Solar uses a central circular motif with side marks while Lucide banknote uses a different bill layout; the money object is preserved with a visual variant."
+    },
+    {
+      "solar": "banknote-2",
+      "solarId": "S0079",
+      "candidates": [
+        "L0139",
+        "L0140",
+        "L0141"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts two overlapping banknotes; Lucide banknote depicts one note and its arrow variants add a different action, so count and composite structure are not preserved."
+    },
+    {
+      "solar": "bar-chair",
+      "solarId": "S0080",
+      "candidates": [
+        "L1332",
+        "L0060"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar is a bar stool with a tall seat and legs; Lucide rocking-chair and armchair depict different chair types and do not preserve the stool object."
+    },
+    {
+      "solar": "basketball",
+      "solarId": "S0081",
+      "candidates": [
+        "L0582"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "dribbble",
+      "referenceId": "L0582",
+      "decision": "related",
+      "note": "Solar clearly depicts a basketball, while Lucide dribbble is a branded ball mark with basketball-like seams; the round sports-ball form is related but the canonical concept is not explicit."
+    },
+    {
+      "solar": "bath",
+      "solarId": "S0082",
+      "candidates": [
+        "L0152"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bath",
+      "referenceId": "L0152",
+      "decision": "variant",
+      "note": "Both depict a bathtub, but Solar includes a shower fixture and Lucide bath uses a different tub and faucet construction; the bath object is preserved with a meaningful fixture variant."
+    },
+    {
+      "solar": "battery-charge",
+      "solarId": "S0083",
+      "candidates": [
+        "L0154"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-charging",
+      "referenceId": "L0154",
+      "decision": "equivalent",
+      "note": "Both depict the same charging-battery state; enclosure and terminal geometry are styling differences."
+    },
+    {
+      "solar": "battery-charge-minimalistic",
+      "solarId": "S0084",
+      "candidates": [
+        "L0154"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-charging",
+      "referenceId": "L0154",
+      "decision": "variant",
+      "note": "Both depict a charging battery, but Solar uses a minimal closed enclosure while Lucide battery-charging uses an open-sided enclosure and terminal; the state is preserved but the minimal enclosure is lost."
+    },
+    {
+      "solar": "battery-full",
+      "solarId": "S0085",
+      "candidates": [
+        "L0155"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-full",
+      "referenceId": "L0155",
+      "decision": "variant",
+      "note": "Both depict a full battery, but Solar and Lucide use different enclosure proportions and charge-bar treatments; the state and object are preserved with a visual variant."
+    },
+    {
+      "solar": "battery-full-minimalistic",
+      "solarId": "S0086",
+      "candidates": [
+        "L0155"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-full",
+      "referenceId": "L0155",
+      "decision": "variant",
+      "note": "Both depict a full battery, but Solar uses a minimal closed enclosure while Lucide battery-full uses a detailed terminal and bars; the state is preserved but the drawing specificity differs."
+    },
+    {
+      "solar": "battery-half",
+      "solarId": "S0087",
+      "candidates": [
+        "L0157"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-medium",
+      "referenceId": "L0157",
+      "decision": "variant",
+      "note": "Both depict a half battery, but Solar and Lucide use different enclosure proportions and charge-bar treatments; the state and object are preserved with a visual variant."
+    },
+    {
+      "solar": "battery-half-minimalistic",
+      "solarId": "S0088",
+      "candidates": [
+        "L0157"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-medium",
+      "referenceId": "L0157",
+      "decision": "variant",
+      "note": "Both depict a half battery, but Solar uses a minimal closed enclosure while Lucide battery-medium uses a detailed terminal and bars; the state is preserved but the drawing specificity differs."
+    },
+    {
+      "solar": "battery-low",
+      "solarId": "S0089",
+      "candidates": [
+        "L0156"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-low",
+      "referenceId": "L0156",
+      "decision": "variant",
+      "note": "Both depict a low battery, but Solar and Lucide use different enclosure proportions and charge-bar treatments; the state and object are preserved with a visual variant."
+    },
+    {
+      "solar": "battery-low-minimalistic",
+      "solarId": "S0090",
+      "candidates": [
+        "L0156"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "battery-low",
+      "referenceId": "L0156",
+      "decision": "variant",
+      "note": "Both depict a low battery, but Solar uses a minimal closed enclosure while Lucide battery-low uses a detailed terminal and bars; the state is preserved but the drawing specificity differs."
+    },
+    {
+      "solar": "bed",
+      "solarId": "S0091",
+      "candidates": [
+        "L0163"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bed",
+      "referenceId": "L0163",
+      "decision": "variant",
+      "note": "Both depict a bed, but Solar uses a front-facing bed while Lucide bed uses a side-facing frame; the object is preserved but orientation and construction differ."
+    },
+    {
+      "solar": "bedside-table",
+      "solarId": "S0092",
+      "candidates": [
+        "L1606",
+        "L1607"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts a specific object or modifier combination that none of the inspected Lucide candidates preserves without losing essential specificity."
+    },
+    {
+      "solar": "bedside-table-2",
+      "solarId": "S0093",
+      "candidates": [
+        "L1606",
+        "L1607"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts a specific object or modifier combination that none of the inspected Lucide candidates preserves without losing essential specificity."
+    },
+    {
+      "solar": "bedside-table-3",
+      "solarId": "S0094",
+      "candidates": [
+        "L1606",
+        "L1607"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts a specific object or modifier combination that none of the inspected Lucide candidates preserves without losing essential specificity."
+    },
+    {
+      "solar": "bedside-table-4",
+      "solarId": "S0095",
+      "candidates": [
+        "L1606",
+        "L1607"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": null,
+      "referenceId": null,
+      "decision": "no-match",
+      "note": "Solar depicts a specific object or modifier combination that none of the inspected Lucide candidates preserves without losing essential specificity."
+    },
+    {
+      "solar": "bell",
+      "solarId": "S0096",
+      "candidates": [
+        "L0170"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bell",
+      "referenceId": "L0170",
+      "decision": "equivalent",
+      "note": ""
+    },
+    {
+      "solar": "bell-off",
+      "solarId": "S0097",
+      "candidates": [
+        "L0175"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bell-off",
+      "referenceId": "L0175",
+      "decision": "variant",
+      "note": "Solar marks the bell with a Z sleep or muted state, while Lucide bell-off uses a diagonal slash; both express an inactive bell but the state glyph differs."
+    },
+    {
+      "solar": "bell-ring",
+      "solarId": "S0098",
+      "candidates": [
+        "L0177"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bell-ring",
+      "referenceId": "L0177",
+      "decision": "variant",
+      "note": "Solar marks the bell with an internal ring indicator, while Lucide bell-ring uses external sound arcs; both express a ringing bell but the modifier placement differs."
+    },
+    {
+      "solar": "benzene-ring",
+      "solarId": "S0099",
+      "candidates": [
+        "L0873"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "hexagon",
+      "referenceId": "L0873",
+      "decision": "related",
+      "note": "Solar is a benzene ring with internal bond detail, while Lucide hexagon preserves only the six-sided enclosure; the geometry is related but the chemical specificity is lost."
+    },
+    {
+      "solar": "bicycling",
+      "solarId": "S0100",
+      "candidates": [
+        "L0183",
+        "L1115"
+      ],
+      "discoveryComplete": true,
+      "status": "resolved",
+      "reference": "bike",
+      "referenceId": "L0183",
+      "decision": "variant",
+      "note": "Both depict a person riding a bicycle, but Solar and Lucide use different rider poses and bicycle constructions; the action and object are preserved with a visual variant."
+    }
+  ]
+}

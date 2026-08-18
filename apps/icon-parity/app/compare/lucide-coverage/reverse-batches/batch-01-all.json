@@ -1,0 +1,3035 @@
+{
+  "version": 1,
+  "batch": "lucide-gap-01-all",
+  "direction": "lucide-to-solar-gap",
+  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+  "filter": {
+    "suggestedBatch": 1,
+    "coverage": "all"
+  },
+  "phase": "visual-decision",
+  "decisions": [
+    {
+      "rank": 1,
+      "suggestedBatch": 1,
+      "id": "L1488",
+      "name": "square",
+      "coverage": "non-equivalent",
+      "evidenceCount": 39,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "explicit",
+          "solarId": "S0377",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bluetooth-square",
+          "solarId": "S0112",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bookmark-square",
+          "solarId": "S0135",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bookmark-square-minimalistic",
+          "solarId": "S0136",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "camera-square",
+          "solarId": "S0171",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "clock-square",
+          "solarId": "S0253",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "code-square",
+          "solarId": "S0284",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "compass-square",
+          "solarId": "S0289",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 2,
+      "suggestedBatch": 1,
+      "id": "L1225",
+      "name": "person-standing",
+      "coverage": "non-equivalent",
+      "evidenceCount": 21,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "hiking",
+          "solarId": "S0505",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "hiking-minimalistic",
+          "solarId": "S0506",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "hiking-round",
+          "solarId": "S0507",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stretching",
+          "solarId": "S1058",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stretching-round",
+          "solarId": "S1059",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "body",
+          "solarId": "S0114",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "body-shape",
+          "solarId": "S0115",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "body-shape-minimalistic",
+          "solarId": "S0116",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 3,
+      "suggestedBatch": 1,
+      "id": "L0610",
+      "name": "expand",
+      "coverage": "non-equivalent",
+      "evidenceCount": 18,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "maximize-square-2",
+          "solarId": "S0636",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "flip-horizontal",
+          "solarId": "S0414",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "flip-vertical",
+          "solarId": "S0415",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "full-screen",
+          "solarId": "S0439",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "full-screen-circle",
+          "solarId": "S0440",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "full-screen-square",
+          "solarId": "S0441",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "maximize",
+          "solarId": "S0634",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "maximize-square",
+          "solarId": "S0635",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 4,
+      "suggestedBatch": 1,
+      "id": "L1141",
+      "name": "music",
+      "coverage": "non-equivalent",
+      "evidenceCount": 17,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "music-library",
+          "solarId": "S0689",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "music-library-2",
+          "solarId": "S0690",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "music-note",
+          "solarId": "S0691",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "music-notes",
+          "solarId": "S0697",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "bag-music",
+          "solarId": "S0073",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "boombox",
+          "solarId": "S0137",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "cassette",
+          "solarId": "S0198",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "cassette-2",
+          "solarId": "S0199",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 5,
+      "suggestedBatch": 1,
+      "id": "L1145",
+      "name": "navigation",
+      "coverage": "non-equivalent",
+      "evidenceCount": 14,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "streets-navigation",
+          "solarId": "S1057",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gps",
+          "solarId": "S0469",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "map",
+          "solarId": "S0616",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "map-arrow-down",
+          "solarId": "S0617",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "map-arrow-left",
+          "solarId": "S0618",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "map-arrow-right",
+          "solarId": "S0619",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "map-arrow-up",
+          "solarId": "S0621",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "plane",
+          "solarId": "S0757",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 6,
+      "suggestedBatch": 1,
+      "id": "L0861",
+      "name": "headphones",
+      "coverage": "non-equivalent",
+      "evidenceCount": 13,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "headphones-round",
+          "solarId": "S0488",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "headphones-round-sound",
+          "solarId": "S0489",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "headphones-square",
+          "solarId": "S0490",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "headphones-square-sound",
+          "solarId": "S0491",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "airbuds",
+          "solarId": "S0008",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-case-charge",
+          "solarId": "S0010",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-charge",
+          "solarId": "S0013",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-check",
+          "solarId": "S0014",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 7,
+      "suggestedBatch": 1,
+      "id": "L1435",
+      "name": "shopping-cart",
+      "coverage": "non-equivalent",
+      "evidenceCount": 13,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "cart",
+          "solarId": "S0180",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-2",
+          "solarId": "S0181",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-3",
+          "solarId": "S0182",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-4",
+          "solarId": "S0183",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-5",
+          "solarId": "S0184",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-large",
+          "solarId": "S0187",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-large-2",
+          "solarId": "S0188",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cart-large-3",
+          "solarId": "S0189",
+          "role": "selected-reference",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 8,
+      "suggestedBatch": 1,
+      "id": "L1475",
+      "name": "sparkles",
+      "coverage": "non-equivalent",
+      "evidenceCount": 13,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "special-effects",
+          "solarId": "S0991",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stars",
+          "solarId": "S1037",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stars-2",
+          "solarId": "S1038",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stars-line",
+          "solarId": "S1039",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "stars-minimalistic",
+          "solarId": "S1040",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "confetti",
+          "solarId": "S0292",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "gallery-favorite",
+          "solarId": "S0448",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "hand-stars",
+          "solarId": "S0481",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 9,
+      "suggestedBatch": 1,
+      "id": "L0251",
+      "name": "briefcase",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "case-round",
+          "solarId": "S0195",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "case-round-minimalistic",
+          "solarId": "S0196",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "suitcase",
+          "solarId": "S1062",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "suitcase-lines",
+          "solarId": "S1063",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "suitcase-tag",
+          "solarId": "S1064",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "airbuds-case",
+          "solarId": "S0009",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-case-minimalistic",
+          "solarId": "S0011",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-case-open",
+          "solarId": "S0012",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 10,
+      "suggestedBatch": 1,
+      "id": "L0889",
+      "name": "image",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "gallery",
+          "solarId": "S0442",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "gallery-check",
+          "solarId": "S0444",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gallery-circle",
+          "solarId": "S0445",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gallery-edit",
+          "solarId": "S0447",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gallery-favorite",
+          "solarId": "S0448",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gallery-minimalistic",
+          "solarId": "S0449",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "gallery-round",
+          "solarId": "S0451",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gallery-wide",
+          "solarId": "S0453",
+          "role": "selected-reference",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 11,
+      "suggestedBatch": 1,
+      "id": "L0967",
+      "name": "link",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "link",
+          "solarId": "S0569",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "link-circle",
+          "solarId": "S0570",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "link-round",
+          "solarId": "S0573",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "link-round-angle",
+          "solarId": "S0574",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "link-square",
+          "solarId": "S0575",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "infinite",
+          "solarId": "S0536",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "link-minimalistic",
+          "solarId": "S0571",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "link-minimalistic-2",
+          "solarId": "S0572",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 12,
+      "suggestedBatch": 1,
+      "id": "L1229",
+      "name": "phone-call",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "phone-calling",
+          "solarId": "S0741",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "phone-calling-rounded",
+          "solarId": "S0742",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "call-chat",
+          "solarId": "S0161",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "call-chat-rounded",
+          "solarId": "S0162",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "chat-round-call",
+          "solarId": "S0210",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "chat-square-call",
+          "solarId": "S0221",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "incoming-call",
+          "solarId": "S0534",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "incoming-call-rounded",
+          "solarId": "S0535",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 13,
+      "suggestedBatch": 1,
+      "id": "L1433",
+      "name": "shopping-bag",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "bag",
+          "solarId": "S0065",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bag-2",
+          "solarId": "S0066",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bag-3",
+          "solarId": "S0067",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bag-4",
+          "solarId": "S0068",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bag-5",
+          "solarId": "S0069",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bag-check",
+          "solarId": "S0070",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bag-cross",
+          "solarId": "S0071",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bag-heart",
+          "solarId": "S0072",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 14,
+      "suggestedBatch": 1,
+      "id": "L1459",
+      "name": "sliders-horizontal",
+      "coverage": "non-equivalent",
+      "evidenceCount": 12,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "colour-tuning",
+          "solarId": "S0285",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "slider-horizontal",
+          "solarId": "S0954",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "slider-minimalistic-horizontal",
+          "solarId": "S0955",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning-2",
+          "solarId": "S1132",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning-4",
+          "solarId": "S1134",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning-square-2",
+          "solarId": "S1136",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "filter",
+          "solarId": "S0403",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "music-note-slider",
+          "solarId": "S0695",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 15,
+      "suggestedBatch": 1,
+      "id": "L0335",
+      "name": "chart-line",
+      "coverage": "non-equivalent",
+      "evidenceCount": 11,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "graph",
+          "solarId": "S0470",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "graph-new",
+          "solarId": "S0473",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "chart",
+          "solarId": "S0204",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "chart-2",
+          "solarId": "S0205",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "diagram-down",
+          "solarId": "S0326",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "diagram-up",
+          "solarId": "S0327",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "graph-down",
+          "solarId": "S0471",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "graph-down-new",
+          "solarId": "S0472",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 16,
+      "suggestedBatch": 1,
+      "id": "L0704",
+      "name": "film",
+      "coverage": "non-equivalent",
+      "evidenceCount": 11,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "video-frame",
+          "solarId": "S1189",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "video-frame-2",
+          "solarId": "S1190",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "video-frame-cut",
+          "solarId": "S1191",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "video-frame-cut-2",
+          "solarId": "S1192",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "video-frame-play-horizontal",
+          "solarId": "S1193",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "video-frame-play-vertical",
+          "solarId": "S1194",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "clapperboard",
+          "solarId": "S0239",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "clapperboard-open",
+          "solarId": "S0241",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 17,
+      "suggestedBatch": 1,
+      "id": "L0732",
+      "name": "folder",
+      "coverage": "non-equivalent",
+      "evidenceCount": 11,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "folder",
+          "solarId": "S0419",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "folder-cloud",
+          "solarId": "S0422",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "folder-2",
+          "solarId": "S0420",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "folder-error",
+          "solarId": "S0423",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "folder-open",
+          "solarId": "S0426",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "folder-with-files",
+          "solarId": "S0429",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "home-2",
+          "solarId": "S0512",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "move-to-folder",
+          "solarId": "S0685",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 18,
+      "suggestedBatch": 1,
+      "id": "L0154",
+      "name": "battery-charging",
+      "coverage": "non-equivalent",
+      "evidenceCount": 10,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "battery-charge",
+          "solarId": "S0083",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "battery-charge-minimalistic",
+          "solarId": "S0084",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "electric-refueling",
+          "solarId": "S0367",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "lightning",
+          "solarId": "S0567",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "airbuds-case-charge",
+          "solarId": "S0010",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "airbuds-charge",
+          "solarId": "S0013",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "fuel",
+          "solarId": "S0438",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "gamepad-charge",
+          "solarId": "S0456",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 19,
+      "suggestedBatch": 1,
+      "id": "L0764",
+      "name": "footprints",
+      "coverage": "non-equivalent",
+      "evidenceCount": 10,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "running",
+          "solarId": "S0879",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "running-2",
+          "solarId": "S0880",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "running-round",
+          "solarId": "S0881",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "walking",
+          "solarId": "S1210",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "walking-round",
+          "solarId": "S1211",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "hiking",
+          "solarId": "S0505",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "paw",
+          "solarId": "S0733",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "skateboard",
+          "solarId": "S0942",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 20,
+      "suggestedBatch": 1,
+      "id": "L1315",
+      "name": "refresh-cw",
+      "coverage": "non-equivalent",
+      "evidenceCount": 10,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "refresh",
+          "solarId": "S0812",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "refresh-circle",
+          "solarId": "S0813",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "smartphone-update",
+          "solarId": "S0970",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "map-point-rotate",
+          "solarId": "S0627",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "refresh-square",
+          "solarId": "S0814",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "restart",
+          "solarId": "S0826",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "restart-circle",
+          "solarId": "S0827",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "rewind-10-seconds-forward",
+          "solarId": "S0831",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 21,
+      "suggestedBatch": 1,
+      "id": "L0395",
+      "name": "circle-dot",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "volume-knob",
+          "solarId": "S1207",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bowling",
+          "solarId": "S0139",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "calendar-mark",
+          "solarId": "S0156",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "hashtag-circle",
+          "solarId": "S0486",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "radial-blur",
+          "solarId": "S0799",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "record",
+          "solarId": "S0805",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "record-audio-circle",
+          "solarId": "S0806",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "record-circle",
+          "solarId": "S0807",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 22,
+      "suggestedBatch": 1,
+      "id": "L0564",
+      "name": "disc",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "record-audio-circle",
+          "solarId": "S0806",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "record-circle",
+          "solarId": "S0807",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "record-minimalistic",
+          "solarId": "S0808",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "reel",
+          "solarId": "S0810",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "reel-2",
+          "solarId": "S0811",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "vinyl",
+          "solarId": "S1200",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "diskette",
+          "solarId": "S0332",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "record",
+          "solarId": "S0805",
+          "role": "candidate",
+          "decision": "equivalent"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 23,
+      "suggestedBatch": 1,
+      "id": "L0579",
+      "name": "download",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "download",
+          "solarId": "S0351",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "download-minimalistic",
+          "solarId": "S0352",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "inbox-in",
+          "solarId": "S0529",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cloud-download",
+          "solarId": "S0263",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "download-square",
+          "solarId": "S0353",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "download-twice-square",
+          "solarId": "S0354",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "file-download",
+          "solarId": "S0395",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "gallery-download",
+          "solarId": "S0446",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 24,
+      "suggestedBatch": 1,
+      "id": "L1000",
+      "name": "lock",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "lock",
+          "solarId": "S0592",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "lock-password",
+          "solarId": "S0597",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "heart-lock",
+          "solarId": "S0496",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "lock-keyhole",
+          "solarId": "S0593",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "lock-keyhole-minimalistic",
+          "solarId": "S0594",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "lock-unlocked",
+          "solarId": "S0599",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "safe-2",
+          "solarId": "S0884",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "safe-circle",
+          "solarId": "S0885",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 25,
+      "suggestedBatch": 1,
+      "id": "L1042",
+      "name": "maximize",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "full-screen",
+          "solarId": "S0439",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "full-screen-circle",
+          "solarId": "S0440",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "full-screen-square",
+          "solarId": "S0441",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "maximize",
+          "solarId": "S0634",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "maximize-square",
+          "solarId": "S0635",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "maximize-square-2",
+          "solarId": "S0636",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "maximize-square-3",
+          "solarId": "S0637",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "maximize-square-minimalistic",
+          "solarId": "S0638",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 26,
+      "suggestedBatch": 1,
+      "id": "L1080",
+      "name": "messages-square",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "dialog-2",
+          "solarId": "S0329",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "chat-dots",
+          "solarId": "S0207",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "chat-round",
+          "solarId": "S0209",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "chat-round-dots",
+          "solarId": "S0212",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "chat-square",
+          "solarId": "S0218",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "chat-square-2",
+          "solarId": "S0219",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "chat-unread",
+          "solarId": "S0225",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "dialog",
+          "solarId": "S0328",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 27,
+      "suggestedBatch": 1,
+      "id": "L1168",
+      "name": "orbit",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "planet",
+          "solarId": "S0760",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "planet-2",
+          "solarId": "S0761",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "black-hole",
+          "solarId": "S0107",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "black-hole-2",
+          "solarId": "S0108",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "black-hole-3",
+          "solarId": "S0109",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "earth",
+          "solarId": "S0366",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "planet-3",
+          "solarId": "S0762",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "planet-4",
+          "solarId": "S0763",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 28,
+      "suggestedBatch": 1,
+      "id": "L1336",
+      "name": "rotate-ccw",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "circle-bottom-down",
+          "solarId": "S0234",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "circle-top-down",
+          "solarId": "S0236",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "history",
+          "solarId": "S0508",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "history-2",
+          "solarId": "S0509",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "history-3",
+          "solarId": "S0510",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "map-point-rotate",
+          "solarId": "S0627",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "restart",
+          "solarId": "S0826",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "restart-circle",
+          "solarId": "S0827",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 29,
+      "suggestedBatch": 1,
+      "id": "L1476",
+      "name": "speaker",
+      "coverage": "non-equivalent",
+      "evidenceCount": 9,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "smart-speaker",
+          "solarId": "S0960",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "smart-speaker-2",
+          "solarId": "S0961",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "smart-speaker-minimalistic",
+          "solarId": "S0962",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "speaker",
+          "solarId": "S0989",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "speaker-minimalistic",
+          "solarId": "S0990",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "headphones-round-sound",
+          "solarId": "S0489",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "headphones-square-sound",
+          "solarId": "S0491",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "radio-minimalistic",
+          "solarId": "S0801",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 30,
+      "suggestedBatch": 1,
+      "id": "L0005",
+      "name": "activity",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "pulse",
+          "solarId": "S0788",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "pulse-2",
+          "solarId": "S0789",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "round-graph",
+          "solarId": "S0859",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "running",
+          "solarId": "S0879",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "running-2",
+          "solarId": "S0880",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "running-round",
+          "solarId": "S0881",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "treadmill",
+          "solarId": "S1129",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "treadmill-round",
+          "solarId": "S1130",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 31,
+      "suggestedBatch": 1,
+      "id": "L0229",
+      "name": "bookmark",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "bookmark",
+          "solarId": "S0132",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "book-bookmark",
+          "solarId": "S0129",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "book-bookmark-minimalistic",
+          "solarId": "S0130",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "bookmark-circle",
+          "solarId": "S0133",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bookmark-opened",
+          "solarId": "S0134",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bookmark-square",
+          "solarId": "S0135",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "bookmark-square-minimalistic",
+          "solarId": "S0136",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "notebook-bookmark",
+          "solarId": "S0701",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 32,
+      "suggestedBatch": 1,
+      "id": "L0781",
+      "name": "gamepad",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "gamepad",
+          "solarId": "S0455",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "gamepad-charge",
+          "solarId": "S0456",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gamepad-minimalistic",
+          "solarId": "S0457",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "gamepad-no-charge",
+          "solarId": "S0458",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "gamepad-old",
+          "solarId": "S0459",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "remote-controller",
+          "solarId": "S0815",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "remote-controller-2",
+          "solarId": "S0816",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "remote-controller-minimalistic",
+          "solarId": "S0817",
+          "role": "selected-reference",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 33,
+      "suggestedBatch": 1,
+      "id": "L0811",
+      "name": "globe",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "global",
+          "solarId": "S0466",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "globe",
+          "solarId": "S0467",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "shield-network",
+          "solarId": "S0921",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "earth",
+          "solarId": "S0366",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "map",
+          "solarId": "S0616",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "planet-3",
+          "solarId": "S0762",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "planet-4",
+          "solarId": "S0763",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "translation",
+          "solarId": "S1120",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 34,
+      "suggestedBatch": 1,
+      "id": "L0914",
+      "name": "key",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "key",
+          "solarId": "S0541",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic",
+          "solarId": "S0542",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-2",
+          "solarId": "S0543",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square",
+          "solarId": "S0544",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-2",
+          "solarId": "S0545",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-3",
+          "solarId": "S0546",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-square",
+          "solarId": "S0547",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-square-2",
+          "solarId": "S0548",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 35,
+      "suggestedBatch": 1,
+      "id": "L0915",
+      "name": "key-round",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "key-minimalistic",
+          "solarId": "S0542",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-2",
+          "solarId": "S0543",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key",
+          "solarId": "S0541",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square",
+          "solarId": "S0544",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-2",
+          "solarId": "S0545",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-3",
+          "solarId": "S0546",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-square-2",
+          "solarId": "S0548",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "password",
+          "solarId": "S0728",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 36,
+      "suggestedBatch": 1,
+      "id": "L1004",
+      "name": "log-in",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "login",
+          "solarId": "S0600",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "login-2",
+          "solarId": "S0601",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "login-3",
+          "solarId": "S0602",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "logout",
+          "solarId": "S0603",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "logout-2",
+          "solarId": "S0604",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "logout-3",
+          "solarId": "S0605",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "receive-square",
+          "solarId": "S0803",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "receive-twice-square",
+          "solarId": "S0804",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 37,
+      "suggestedBatch": 1,
+      "id": "L1368",
+      "name": "scan",
+      "coverage": "non-equivalent",
+      "evidenceCount": 8,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "object-scan",
+          "solarId": "S0710",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "scanner-2",
+          "solarId": "S0893",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "augmented-reality",
+          "solarId": "S0061",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "code-scan",
+          "solarId": "S0283",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "eye-scan",
+          "solarId": "S0383",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "radar",
+          "solarId": "S0797",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "radar-2",
+          "solarId": "S0798",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "scanner",
+          "solarId": "S0892",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 38,
+      "suggestedBatch": 1,
+      "id": "L0262",
+      "name": "bug",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "bug",
+          "solarId": "S0145",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "bug-minimalistic",
+          "solarId": "S0146",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "rounded-magnifier-bug",
+          "solarId": "S0866",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bacteria",
+          "solarId": "S0064",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "magnifier-bug",
+          "solarId": "S0612",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "minimalistic-magnifier-bug",
+          "solarId": "S0659",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "virus",
+          "solarId": "S1202",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 39,
+      "suggestedBatch": 1,
+      "id": "L0593",
+      "name": "earth",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "earth",
+          "solarId": "S0366",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "planet-3",
+          "solarId": "S0762",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "planet-4",
+          "solarId": "S0763",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "global",
+          "solarId": "S0466",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "globe",
+          "solarId": "S0467",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "planet",
+          "solarId": "S0760",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "planet-2",
+          "solarId": "S0761",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 40,
+      "suggestedBatch": 1,
+      "id": "L0700",
+      "name": "file-x",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "file-remove",
+          "solarId": "S0398",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "bill-cross",
+          "solarId": "S0105",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "file-corrupted",
+          "solarId": "S0394",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "folder-error",
+          "solarId": "S0423",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "gallery-remove",
+          "solarId": "S0450",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "list-cross",
+          "solarId": "S0583",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "list-cross-minimalistic",
+          "solarId": "S0584",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 41,
+      "suggestedBatch": 1,
+      "id": "L0834",
+      "name": "hand",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "hand-shake",
+          "solarId": "S0480",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "hand-stars",
+          "solarId": "S0481",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "oven-mitts",
+          "solarId": "S0713",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "oven-mitts-minimalistic",
+          "solarId": "S0714",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "dislike",
+          "solarId": "S0333",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "hand-heart",
+          "solarId": "S0477",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "user-hand-up",
+          "solarId": "S1173",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 42,
+      "suggestedBatch": 1,
+      "id": "L0869",
+      "name": "heart-pulse",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "heart-pulse",
+          "solarId": "S0497",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "heart-pulse-2",
+          "solarId": "S0498",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "health",
+          "solarId": "S0492",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "heart",
+          "solarId": "S0493",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "heart-angle",
+          "solarId": "S0494",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "pulse",
+          "solarId": "S0788",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "pulse-2",
+          "solarId": "S0789",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 43,
+      "suggestedBatch": 1,
+      "id": "L0880",
+      "name": "house",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "home",
+          "solarId": "S0511",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "home-2",
+          "solarId": "S0512",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "home-angle",
+          "solarId": "S0515",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "home-angle-2",
+          "solarId": "S0516",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "house",
+          "solarId": "S0524",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "home-smile",
+          "solarId": "S0517",
+          "role": "candidate",
+          "decision": "no-match"
+        },
+        {
+          "solar": "home-smile-angle",
+          "solarId": "S0518",
+          "role": "candidate",
+          "decision": "no-match"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 44,
+      "suggestedBatch": 1,
+      "id": "L0899",
+      "name": "inbox",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "inbox",
+          "solarId": "S0527",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "inbox-archive",
+          "solarId": "S0528",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "inbox-line",
+          "solarId": "S0530",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "inbox-unread",
+          "solarId": "S0532",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "inbox-in",
+          "solarId": "S0529",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "inbox-out",
+          "solarId": "S0531",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "mailbox",
+          "solarId": "S0615",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 45,
+      "suggestedBatch": 1,
+      "id": "L0916",
+      "name": "key-square",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "key-minimalistic-square",
+          "solarId": "S0544",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-2",
+          "solarId": "S0545",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-square-3",
+          "solarId": "S0546",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-square",
+          "solarId": "S0547",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-square-2",
+          "solarId": "S0548",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "key",
+          "solarId": "S0541",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "key-minimalistic-2",
+          "solarId": "S0543",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 46,
+      "suggestedBatch": 1,
+      "id": "L0983",
+      "name": "list-music",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "music-note-slider",
+          "solarId": "S0695",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "music-note-slider-2",
+          "solarId": "S0696",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "playlist-2",
+          "solarId": "S0770",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "playlist-minimalistic-2",
+          "solarId": "S0772",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "playlist-minimalistic-3",
+          "solarId": "S0773",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "playlist",
+          "solarId": "S0769",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "playlist-minimalistic",
+          "solarId": "S0771",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 47,
+      "suggestedBatch": 1,
+      "id": "L1044",
+      "name": "medal",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "medal-ribbon",
+          "solarId": "S0639",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "medal-ribbon-star",
+          "solarId": "S0640",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "medal-ribbons-star",
+          "solarId": "S0641",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "medal-star",
+          "solarId": "S0642",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "medal-star-circle",
+          "solarId": "S0643",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "medal-star-square",
+          "solarId": "S0644",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "ranking",
+          "solarId": "S0802",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 48,
+      "suggestedBatch": 1,
+      "id": "L1246",
+      "name": "pill-bottle",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "jar-of-pills",
+          "solarId": "S0539",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "jar-of-pills-2",
+          "solarId": "S0540",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "bottle",
+          "solarId": "S0138",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "pill",
+          "solarId": "S0747",
+          "role": "candidate",
+          "decision": "equivalent"
+        },
+        {
+          "solar": "pills",
+          "solarId": "S0748",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "pills-2",
+          "solarId": "S0749",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "pills-3",
+          "solarId": "S0750",
+          "role": "candidate",
+          "decision": "variant"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 49,
+      "suggestedBatch": 1,
+      "id": "L1460",
+      "name": "sliders-vertical",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "slider-vertical",
+          "solarId": "S0956",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "slider-vertical-minimalistic",
+          "solarId": "S0957",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning",
+          "solarId": "S1131",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning-3",
+          "solarId": "S1133",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "tuning-square",
+          "solarId": "S1135",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "colour-tuning",
+          "solarId": "S0285",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "filters",
+          "solarId": "S0404",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    },
+    {
+      "rank": 50,
+      "suggestedBatch": 1,
+      "id": "L1775",
+      "name": "wallet",
+      "coverage": "non-equivalent",
+      "evidenceCount": 7,
+      "reason": "Lucide was selected only as a variant or related reference, so it is a near miss but not a strict Solar replacement.",
+      "solarEvidence": [
+        {
+          "solar": "money-bag",
+          "solarId": "S0673",
+          "role": "selected-reference",
+          "decision": "related"
+        },
+        {
+          "solar": "wallet",
+          "solarId": "S1212",
+          "role": "selected-reference",
+          "decision": "variant"
+        },
+        {
+          "solar": "cash-out",
+          "solarId": "S0197",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "hand-money",
+          "solarId": "S0478",
+          "role": "candidate",
+          "decision": "related"
+        },
+        {
+          "solar": "money-roll",
+          "solarId": "S0674",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "wallet-2",
+          "solarId": "S1213",
+          "role": "candidate",
+          "decision": "variant"
+        },
+        {
+          "solar": "wallet-money",
+          "solarId": "S1214",
+          "role": "candidate",
+          "decision": "related"
+        }
+      ],
+      "verdict": null,
+      "solarCandidates": [],
+      "note": ""
+    }
+  ]
+}

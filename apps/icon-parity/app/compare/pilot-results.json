@@ -1,0 +1,256 @@
+{
+    "version": 1,
+    "batch": "solar-to-lucide-calibration-30",
+    "direction": "solar-to-lucide",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "method": "Independent full-atlas candidate discovery followed by enlarged side-by-side visual decisions. The existing verified mapping was not consulted until these decisions were frozen.",
+    "summary": {
+        "total": 30,
+        "equivalent": 22,
+        "variant": 3,
+        "related": 1,
+        "no-match": 4
+    },
+    "decisions": [
+        {
+            "solar": "accessibility",
+            "solarId": "S0001",
+            "reference": "accessibility",
+            "referenceId": "L0004",
+            "decision": "related",
+            "note": "Both communicate accessibility, but Lucide depicts a wheelchair user while Solar uses a generic human accessibility mark."
+        },
+        {
+            "solar": "alarm",
+            "solarId": "S0018",
+            "reference": "alarm-clock",
+            "referenceId": "L0009",
+            "decision": "equivalent",
+            "note": "The same alarm clock, with Lucide adding only support legs."
+        },
+        {
+            "solar": "arrow-up",
+            "solarId": "S0058",
+            "reference": "arrow-up",
+            "referenceId": "L0090",
+            "decision": "equivalent",
+            "note": "The direction and standalone arrow structure are identical."
+        },
+        {
+            "solar": "bell",
+            "solarId": "S0096",
+            "reference": "bell",
+            "referenceId": "L0170",
+            "decision": "equivalent",
+            "note": "The same notification bell and clapper."
+        },
+        {
+            "solar": "camera",
+            "solarId": "S0167",
+            "reference": "camera",
+            "referenceId": "L0296",
+            "decision": "equivalent",
+            "note": "The same camera body and lens concept."
+        },
+        {
+            "solar": "check-circle",
+            "solarId": "S0226",
+            "reference": "circle-check",
+            "referenceId": "L0386",
+            "decision": "equivalent",
+            "note": "Both keep the check fully enclosed by a circle."
+        },
+        {
+            "solar": "copy",
+            "solarId": "S0296",
+            "reference": "copy",
+            "referenceId": "L0508",
+            "decision": "equivalent",
+            "note": "Both use two overlapping rounded rectangles without document details."
+        },
+        {
+            "solar": "eye",
+            "solarId": "S0381",
+            "reference": "eye",
+            "referenceId": "L0612",
+            "decision": "equivalent",
+            "note": "The same open eye and centered pupil."
+        },
+        {
+            "solar": "play",
+            "solarId": "S0765",
+            "reference": "play",
+            "referenceId": "L1254",
+            "decision": "equivalent",
+            "note": "The same standalone right-pointing play triangle."
+        },
+        {
+            "solar": "settings",
+            "solarId": "S0910",
+            "reference": "settings",
+            "referenceId": "L1406",
+            "decision": "equivalent",
+            "note": "Both use the same six-tooth settings gear."
+        },
+        {
+            "solar": "adhesive-plaster",
+            "solarId": "S0006",
+            "reference": "bandage",
+            "referenceId": "L0138",
+            "decision": "variant",
+            "note": "The subject is identical, but Solar crosses two strips while Lucide shows one horizontal strip."
+        },
+        {
+            "solar": "alt-arrow-up",
+            "solarId": "S0037",
+            "reference": "chevron-up",
+            "referenceId": "L0361",
+            "decision": "equivalent",
+            "note": "Both render the same standalone upward chevron."
+        },
+        {
+            "solar": "bolt",
+            "solarId": "S0117",
+            "reference": "zap",
+            "referenceId": "L1820",
+            "decision": "equivalent",
+            "note": "Both depict a standalone lightning bolt despite different vocabulary."
+        },
+        {
+            "solar": "case",
+            "solarId": "S0193",
+            "reference": "briefcase-business",
+            "referenceId": "L0252",
+            "decision": "equivalent",
+            "note": "Both depict a handled business case with a centered front clasp."
+        },
+        {
+            "solar": "danger-triangle",
+            "solarId": "S0322",
+            "reference": "triangle-alert",
+            "referenceId": "L1695",
+            "decision": "equivalent",
+            "note": "Both show an exclamation mark enclosed by a warning triangle."
+        },
+        {
+            "solar": "diskette",
+            "solarId": "S0332",
+            "reference": "save",
+            "referenceId": "L1359",
+            "decision": "equivalent",
+            "note": "Lucide uses the same floppy-disk pictogram under the action name save."
+        },
+        {
+            "solar": "hamburger-menu",
+            "solarId": "S0476",
+            "reference": "menu",
+            "referenceId": "L1049",
+            "decision": "equivalent",
+            "note": "Both are three equal horizontal menu lines."
+        },
+        {
+            "solar": "home",
+            "solarId": "S0511",
+            "reference": "house",
+            "referenceId": "L0880",
+            "decision": "equivalent",
+            "note": "Both are standalone house pictograms with only minor interior-detail differences."
+        },
+        {
+            "solar": "lock-unlocked",
+            "solarId": "S0599",
+            "reference": "lock-open",
+            "referenceId": "L1003",
+            "decision": "equivalent",
+            "note": "Both show an open shackle and an undecorated lock body."
+        },
+        {
+            "solar": "magnifier",
+            "solarId": "S0611",
+            "reference": "search",
+            "referenceId": "L1388",
+            "decision": "equivalent",
+            "note": "Both are the same standalone magnifying-glass symbol."
+        },
+        {
+            "solar": "airbuds",
+            "solarId": "S0008",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Lucide provides over-ear headphones and a headset, but no interchangeable pair of in-ear buds."
+        },
+        {
+            "solar": "alarm-remove",
+            "solarId": "S0022",
+            "reference": "alarm-clock-minus",
+            "referenceId": "L0011",
+            "decision": "equivalent",
+            "note": "Both preserve the alarm clock and its centered minus modifier."
+        },
+        {
+            "solar": "bookmark-circle",
+            "solarId": "S0133",
+            "reference": "bookmark",
+            "referenceId": "L0229",
+            "decision": "variant",
+            "note": "The bookmark concept matches, but Lucide lacks Solar's circular enclosure."
+        },
+        {
+            "solar": "face-scan-square",
+            "solarId": "S0385",
+            "reference": "scan-face",
+            "referenceId": "L1372",
+            "decision": "equivalent",
+            "note": "Both show a smiling face framed by four scan corners."
+        },
+        {
+            "solar": "gamepad-charge",
+            "solarId": "S0456",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Lucide gamepads match the base object but omit Solar's charging-cable modifier."
+        },
+        {
+            "solar": "rewind-10-seconds-forward",
+            "solarId": "S0831",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Lucide rotation arrows do not preserve the explicit 10-second media action."
+        },
+        {
+            "solar": "server-square-cloud",
+            "solarId": "S0908",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Lucide splits the meaning between server and monitor-cloud; neither preserves both object and cloud modifier."
+        },
+        {
+            "solar": "shield-cross",
+            "solarId": "S0916",
+            "reference": "shield-x",
+            "referenceId": "L1429",
+            "decision": "equivalent",
+            "note": "Both show an X modifier centered inside a shield."
+        },
+        {
+            "solar": "tea-cup",
+            "solarId": "S1081",
+            "reference": "coffee",
+            "referenceId": "L0487",
+            "decision": "equivalent",
+            "note": "Both show the same steaming handled hot-drink cup."
+        },
+        {
+            "solar": "text-underline-cross",
+            "solarId": "S1106",
+            "reference": "underline",
+            "referenceId": "L1713",
+            "decision": "variant",
+            "note": "The underlined U matches, but Solar places it inside a rounded-square control."
+        }
+    ]
+}

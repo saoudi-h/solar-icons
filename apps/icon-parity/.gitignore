@@ -1,0 +1,4 @@
+.next/
+.atlas/
+*.tsbuildinfo
+node_modules/

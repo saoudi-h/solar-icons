@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "name": "solar-to-lucide-calibration-30",
+    "description": "A stratified calibration batch for evaluating visual-atlas matching. Cohorts describe retrieval difficulty, not expected decisions.",
+    "icons": [
+        { "name": "accessibility", "cohort": "direct-name" },
+        { "name": "alarm", "cohort": "direct-name" },
+        { "name": "arrow-up", "cohort": "direct-name" },
+        { "name": "bell", "cohort": "direct-name" },
+        { "name": "camera", "cohort": "direct-name" },
+        { "name": "check-circle", "cohort": "direct-name" },
+        { "name": "copy", "cohort": "direct-name" },
+        { "name": "eye", "cohort": "direct-name" },
+        { "name": "play", "cohort": "direct-name" },
+        { "name": "settings", "cohort": "direct-name" },
+
+        { "name": "adhesive-plaster", "cohort": "alternate-vocabulary" },
+        { "name": "alt-arrow-up", "cohort": "alternate-vocabulary" },
+        { "name": "bolt", "cohort": "alternate-vocabulary" },
+        { "name": "case", "cohort": "alternate-vocabulary" },
+        { "name": "danger-triangle", "cohort": "alternate-vocabulary" },
+        { "name": "diskette", "cohort": "alternate-vocabulary" },
+        { "name": "hamburger-menu", "cohort": "alternate-vocabulary" },
+        { "name": "home", "cohort": "alternate-vocabulary" },
+        { "name": "lock-unlocked", "cohort": "alternate-vocabulary" },
+        { "name": "magnifier", "cohort": "alternate-vocabulary" },
+
+        { "name": "airbuds", "cohort": "specificity-trap" },
+        { "name": "alarm-remove", "cohort": "specificity-trap" },
+        { "name": "bookmark-circle", "cohort": "specificity-trap" },
+        { "name": "face-scan-square", "cohort": "specificity-trap" },
+        { "name": "gamepad-charge", "cohort": "specificity-trap" },
+        { "name": "rewind-10-seconds-forward", "cohort": "specificity-trap" },
+        { "name": "server-square-cloud", "cohort": "specificity-trap" },
+        { "name": "shield-cross", "cohort": "specificity-trap" },
+        { "name": "tea-cup", "cohort": "specificity-trap" },
+        { "name": "text-underline-cross", "cohort": "specificity-trap" }
+    ]
+}

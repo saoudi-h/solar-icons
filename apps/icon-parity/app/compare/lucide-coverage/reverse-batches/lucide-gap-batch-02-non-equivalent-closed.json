@@ -1,0 +1,3021 @@
+{
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "filter": {
+        "coverage": "non-equivalent",
+        "suggestedBatch": 1
+    },
+    "instructions": "Inspect every Lucide target against the complete Solar atlas. Fill solarCandidates with zero to three Solar IDs, then decide equivalent only when replacement meaning is interchangeable; otherwise use no-match. This artifact does not mutate production sheets or verified-matches.json.",
+    "entries": [
+        {
+            "rank": 1,
+            "lucide": "server",
+            "lucideId": "L1401",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "server",
+                    "solarId": "S0903",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "server-2",
+                    "solarId": "S0904",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "server-minimalistic",
+                    "solarId": "S0905",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "server-path",
+                    "solarId": "S0906",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "server-square",
+                    "solarId": "S0907",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 2,
+            "lucide": "sticker",
+            "lucideId": "L1577",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "sticker-circle",
+                    "solarId": "S1044",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sticker-smile-circle",
+                    "solarId": "S1045",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sticker-smile-circle-2",
+                    "solarId": "S1046",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sticker-smile-square",
+                    "solarId": "S1047",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "gift",
+                    "solarId": "S0464",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 3,
+            "lucide": "venetian-mask",
+            "lucideId": "L1758",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "facemask-circle",
+                    "solarId": "S0386",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "facemask-square",
+                    "solarId": "S0387",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "mask-happy",
+                    "solarId": "S0631",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "mask-sad",
+                    "solarId": "S0632",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "masks",
+                    "solarId": "S0633",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 4,
+            "lucide": "wand-sparkles",
+            "lucideId": "L1780",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "magic-wand",
+                    "solarId": "S0606",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "magic-wand-2",
+                    "solarId": "S0607",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "magic-wand-3",
+                    "solarId": "S0608",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "confetti",
+                    "solarId": "S0292",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "confetti-minimalistic",
+                    "solarId": "S0293",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 5,
+            "lucide": "banknote",
+            "lucideId": "L0139",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "banknote",
+                    "solarId": "S0078",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "money-roll",
+                    "solarId": "S0674",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "banknote-2",
+                    "solarId": "S0079",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "cash-out",
+                    "solarId": "S0197",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 6,
+            "lucide": "banknote-arrow-down",
+            "lucideId": "L0140",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cash-out",
+                    "solarId": "S0197",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "banknote-2",
+                    "solarId": "S0079",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "card-receive",
+                    "solarId": "S0175",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "card-transfer",
+                    "solarId": "S0178",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 7,
+            "lucide": "building-2",
+            "lucideId": "L0266",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "buildings-2",
+                    "solarId": "S0148",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "city",
+                    "solarId": "S0238",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "buildings",
+                    "solarId": "S0147",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "buildings-3",
+                    "solarId": "S0149",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 8,
+            "lucide": "circle-pause",
+            "lucideId": "L0407",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "pause-circle",
+                    "solarId": "S0732",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "stopwatch-pause",
+                    "solarId": "S1052",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "alarm-pause",
+                    "solarId": "S0020",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "pause",
+                    "solarId": "S0731",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 9,
+            "lucide": "clipboard",
+            "lucideId": "L0426",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "clipboard",
+                    "solarId": "S0245",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "clipboard-add",
+                    "solarId": "S0246",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "clipboard-heart",
+                    "solarId": "S0248",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "clipboard-text",
+                    "solarId": "S0251",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 10,
+            "lucide": "cloud-rain",
+            "lucideId": "L0473",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloud-rain",
+                    "solarId": "S0267",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-waterdrops",
+                    "solarId": "S0276",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "clouds",
+                    "solarId": "S0277",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "fog",
+                    "solarId": "S0418",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 11,
+            "lucide": "crown",
+            "lucideId": "L0531",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "crown",
+                    "solarId": "S0307",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "crown-line",
+                    "solarId": "S0308",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "crown-minimalistic",
+                    "solarId": "S0309",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "crown-star",
+                    "solarId": "S0310",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 12,
+            "lucide": "droplet",
+            "lucideId": "L0585",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "waterdrop",
+                    "solarId": "S1224",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-waterdrop",
+                    "solarId": "S0275",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pipette",
+                    "solarId": "S0756",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "waterdrops",
+                    "solarId": "S1225",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 13,
+            "lucide": "ellipsis",
+            "lucideId": "L0601",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "menu-dots",
+                    "solarId": "S0651",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "menu-dots-circle",
+                    "solarId": "S0652",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "menu-dots-square",
+                    "solarId": "S0653",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "password-minimalistic",
+                    "solarId": "S0729",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 14,
+            "lucide": "gamepad-2",
+            "lucideId": "L0782",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "gameboy",
+                    "solarId": "S0454",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "gamepad",
+                    "solarId": "S0455",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "gamepad-minimalistic",
+                    "solarId": "S0457",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "gamepad-old",
+                    "solarId": "S0459",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 15,
+            "lucide": "graduation-cap",
+            "lucideId": "L0818",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "square-academic-cap",
+                    "solarId": "S0995",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "square-academic-cap-2",
+                    "solarId": "S0996",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "diploma",
+                    "solarId": "S0330",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "diploma-verified",
+                    "solarId": "S0331",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 16,
+            "lucide": "hard-drive",
+            "lucideId": "L0844",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "ssd-round",
+                    "solarId": "S1023",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "ssd-square",
+                    "solarId": "S1024",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "diskette",
+                    "solarId": "S0332",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "flash-drive",
+                    "solarId": "S0411",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 17,
+            "lucide": "hash",
+            "lucideId": "L0848",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "hashtag",
+                    "solarId": "S0484",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "hashtag-chat",
+                    "solarId": "S0485",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "hashtag-circle",
+                    "solarId": "S0486",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "hashtag-square",
+                    "solarId": "S0487",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 18,
+            "lucide": "house-wifi",
+            "lucideId": "L0884",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "home-wi-fi",
+                    "solarId": "S0519",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "home-wi-fi-angle",
+                    "solarId": "S0520",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "smart-home",
+                    "solarId": "S0958",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "smart-home-angle",
+                    "solarId": "S0959",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 19,
+            "lucide": "laptop-minimal",
+            "lucideId": "L0930",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "laptop-minimalistic",
+                    "solarId": "S0556",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "laptop",
+                    "solarId": "S0553",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "laptop-2",
+                    "solarId": "S0554",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "laptop-3",
+                    "solarId": "S0555",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 20,
+            "lucide": "library",
+            "lucideId": "L0957",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "library",
+                    "solarId": "S0563",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "video-library",
+                    "solarId": "S1196",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "music-library",
+                    "solarId": "S0689",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "music-library-2",
+                    "solarId": "S0690",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 21,
+            "lucide": "lightbulb",
+            "lucideId": "L0961",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "lightbulb",
+                    "solarId": "S0564",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "lightbulb-bolt",
+                    "solarId": "S0565",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "lightbulb-minimalistic",
+                    "solarId": "S0566",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "chandelier",
+                    "solarId": "S0203",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 22,
+            "lucide": "locate-fixed",
+            "lucideId": "L0998",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "gps",
+                    "solarId": "S0469",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "point-on-map",
+                    "solarId": "S0777",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "point-on-map-perspective",
+                    "solarId": "S0778",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "volume-knob",
+                    "solarId": "S1207",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 23,
+            "lucide": "mail-open",
+            "lucideId": "L1014",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "letter-opened",
+                    "solarId": "S0561",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "inbox-unread",
+                    "solarId": "S0532",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "letter",
+                    "solarId": "S0560",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "letter-unread",
+                    "solarId": "S0562",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 24,
+            "lucide": "message-square-text",
+            "lucideId": "L1077",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "chat-line",
+                    "solarId": "S0208",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "chat-round-line",
+                    "solarId": "S0214",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "chat-square-2",
+                    "solarId": "S0219",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "clapperboard-text",
+                    "solarId": "S0244",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 25,
+            "lucide": "monitor-smartphone",
+            "lucideId": "L1107",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "devices",
+                    "solarId": "S0325",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "monitor-smartphone",
+                    "solarId": "S0677",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "i-phone",
+                    "solarId": "S0525",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "monitor-camera",
+                    "solarId": "S0676",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 26,
+            "lucide": "octagon-alert",
+            "lucideId": "L1162",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "danger",
+                    "solarId": "S0319",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "danger-circle",
+                    "solarId": "S0320",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "danger-square",
+                    "solarId": "S0321",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "danger-triangle",
+                    "solarId": "S0322",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 27,
+            "lucide": "phone-off",
+            "lucideId": "L1233",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "end-call",
+                    "solarId": "S0370",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "end-call-rounded",
+                    "solarId": "S0371",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "call-cancel",
+                    "solarId": "S0159",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "call-cancel-rounded",
+                    "solarId": "S0160",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 28,
+            "lucide": "picture-in-picture-2",
+            "lucideId": "L1239",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "pip-2",
+                    "solarId": "S0755",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pip",
+                    "solarId": "S0754",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "quit-pip",
+                    "solarId": "S0796",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "to-pip",
+                    "solarId": "S1112",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 29,
+            "lucide": "radio-tower",
+            "lucideId": "L1288",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "play-stream",
+                    "solarId": "S0767",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "station",
+                    "solarId": "S1041",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "station-minimalistic",
+                    "solarId": "S1042",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "radio",
+                    "solarId": "S0800",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 30,
+            "lucide": "rectangle-ellipsis",
+            "lucideId": "L1305",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "menu-dots-square",
+                    "solarId": "S0653",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "password-minimalistic",
+                    "solarId": "S0729",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "password-minimalistic-input",
+                    "solarId": "S0730",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "record-square",
+                    "solarId": "S0809",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 31,
+            "lucide": "rotate-ccw-square",
+            "lucideId": "L1339",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "undo-left-round-square",
+                    "solarId": "S1147",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "undo-left-square",
+                    "solarId": "S1148",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "refresh-square",
+                    "solarId": "S0814",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "restart-square",
+                    "solarId": "S0828",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 32,
+            "lucide": "route",
+            "lucideId": "L1343",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "route",
+                    "solarId": "S0869",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "routing",
+                    "solarId": "S0870",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "routing-2",
+                    "solarId": "S0871",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "routing-3",
+                    "solarId": "S0872",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 33,
+            "lucide": "router",
+            "lucideId": "L1345",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "wi-fi-router",
+                    "solarId": "S1229",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "wi-fi-router-minimalistic",
+                    "solarId": "S1230",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "wi-fi-router-round",
+                    "solarId": "S1231",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "delivery",
+                    "solarId": "S0324",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 34,
+            "lucide": "tablets",
+            "lucideId": "L1616",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "pills",
+                    "solarId": "S0748",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pills-2",
+                    "solarId": "S0749",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pills-3",
+                    "solarId": "S0750",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pill",
+                    "solarId": "S0747",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 35,
+            "lucide": "trending-up",
+            "lucideId": "L1692",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "course-up",
+                    "solarId": "S0301",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "diagram-up",
+                    "solarId": "S0327",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "graph-new-up",
+                    "solarId": "S0474",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "graph-up",
+                    "solarId": "S0475",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 36,
+            "lucide": "wallet-cards",
+            "lucideId": "L1776",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "wallet-money",
+                    "solarId": "S1214",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "card",
+                    "solarId": "S0173",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "card-2",
+                    "solarId": "S0174",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cardholder",
+                    "solarId": "S0179",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 37,
+            "lucide": "wine",
+            "lucideId": "L1810",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "wineglass",
+                    "solarId": "S1242",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "wineglass-triangle",
+                    "solarId": "S1243",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "bottle",
+                    "solarId": "S0138",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "corkscrew",
+                    "solarId": "S0298",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 38,
+            "lucide": "app-window",
+            "lucideId": "L0053",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "window-frame",
+                    "solarId": "S1241",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pip",
+                    "solarId": "S0754",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pip-2",
+                    "solarId": "S0755",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 39,
+            "lucide": "astroid",
+            "lucideId": "L0105",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "asteroid",
+                    "solarId": "S0059",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "planet",
+                    "solarId": "S0760",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "planet-2",
+                    "solarId": "S0761",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 40,
+            "lucide": "audio-waveform",
+            "lucideId": "L0110",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "soundwave",
+                    "solarId": "S0986",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "soundwave-circle",
+                    "solarId": "S0987",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "soundwave-square",
+                    "solarId": "S0988",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 41,
+            "lucide": "battery-low",
+            "lucideId": "L0156",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "battery-low",
+                    "solarId": "S0089",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "battery-low-minimalistic",
+                    "solarId": "S0090",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "gamepad-no-charge",
+                    "solarId": "S0458",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 42,
+            "lucide": "bed",
+            "lucideId": "L0163",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "bed",
+                    "solarId": "S0091",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sleeping",
+                    "solarId": "S0951",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "moon-sleep",
+                    "solarId": "S0680",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 43,
+            "lucide": "bell-off",
+            "lucideId": "L0175",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "bell-off",
+                    "solarId": "S0097",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "notification-lines-remove",
+                    "solarId": "S0706",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "notification-remove",
+                    "solarId": "S0707",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 44,
+            "lucide": "bomb",
+            "lucideId": "L0200",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "bomb",
+                    "solarId": "S0119",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "bomb-minimalistic",
+                    "solarId": "S0121",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "bomb-emoji",
+                    "solarId": "S0120",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 45,
+            "lucide": "bottle-wine",
+            "lucideId": "L0239",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "bottle",
+                    "solarId": "S0138",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "corkscrew",
+                    "solarId": "S0298",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "perfume",
+                    "solarId": "S0739",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 46,
+            "lucide": "chart-column",
+            "lucideId": "L0329",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "chart",
+                    "solarId": "S0204",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "chart-2",
+                    "solarId": "S0205",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "presentation-graph",
+                    "solarId": "S0782",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 47,
+            "lucide": "circle-ellipsis",
+            "lucideId": "L0397",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "menu-dots-circle",
+                    "solarId": "S0652",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "mention-circle",
+                    "solarId": "S0649",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "menu-dots",
+                    "solarId": "S0651",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 48,
+            "lucide": "cloud-drizzle",
+            "lucideId": "L0466",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloud-waterdrop",
+                    "solarId": "S0275",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-waterdrops",
+                    "solarId": "S0276",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-rain",
+                    "solarId": "S0267",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 49,
+            "lucide": "cloudy",
+            "lucideId": "L0480",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "clouds",
+                    "solarId": "S0277",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloudy-moon",
+                    "solarId": "S0278",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "fog",
+                    "solarId": "S0418",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 50,
+            "lucide": "file-heart",
+            "lucideId": "L0658",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "file-favorite",
+                    "solarId": "S0396",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "clipboard-heart",
+                    "solarId": "S0248",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "file-smile",
+                    "solarId": "S0401",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 51,
+            "lucide": "fuel",
+            "lucideId": "L0771",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "fuel",
+                    "solarId": "S0438",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "gas-station",
+                    "solarId": "S0461",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "electric-refueling",
+                    "solarId": "S0367",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 52,
+            "lucide": "gallery-horizontal",
+            "lucideId": "L0776",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "panorama",
+                    "solarId": "S0719",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "posts-carousel-horizontal",
+                    "solarId": "S0779",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "gallery-wide",
+                    "solarId": "S0453",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 53,
+            "lucide": "hand-platter",
+            "lucideId": "L0841",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "hand-pills",
+                    "solarId": "S0479",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "ladle",
+                    "solarId": "S0551",
+                    "role": "candidate",
+                    "decision": "no-match"
+                },
+                {
+                    "solar": "mug",
+                    "solarId": "S0686",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 54,
+            "lucide": "heart-crack",
+            "lucideId": "L0864",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "heart-crack",
+                    "solarId": "S0495",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "donut-bitten",
+                    "solarId": "S0346",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "heart-angle",
+                    "solarId": "S0494",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 55,
+            "lucide": "hospital",
+            "lucideId": "L0877",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "hospital",
+                    "solarId": "S0521",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "map-point-hospital",
+                    "solarId": "S0625",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "medical-kit",
+                    "solarId": "S0645",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 56,
+            "lucide": "lamp-floor",
+            "lucideId": "L0923",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "floor-lamp",
+                    "solarId": "S0416",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "floor-lamp-minimalistic",
+                    "solarId": "S0417",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "lamp",
+                    "solarId": "S0552",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 57,
+            "lucide": "layout-dashboard",
+            "lucideId": "L0944",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "widget-2",
+                    "solarId": "S1233",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "widget-5",
+                    "solarId": "S1236",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "widget-4",
+                    "solarId": "S1235",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 58,
+            "lucide": "monitor-cloud",
+            "lucideId": "L1100",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloud-storage",
+                    "solarId": "S0270",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "server-square-cloud",
+                    "solarId": "S0908",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "folder-cloud",
+                    "solarId": "S0422",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 59,
+            "lucide": "palette",
+            "lucideId": "L1182",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "palette",
+                    "solarId": "S0716",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "palette-2",
+                    "solarId": "S0717",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "palette-round",
+                    "solarId": "S0718",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 60,
+            "lucide": "pen-line",
+            "lucideId": "L1215",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "pen-2",
+                    "solarId": "S0735",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "pen-new-round",
+                    "solarId": "S0736",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "pen-new-square",
+                    "solarId": "S0737",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 61,
+            "lucide": "pencil-ruler",
+            "lucideId": "L1221",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "ruler-cross-pen",
+                    "solarId": "S0877",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "ruler-pen",
+                    "solarId": "S0878",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "ruler",
+                    "solarId": "S0875",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 62,
+            "lucide": "presentation",
+            "lucideId": "L1271",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "presentation-graph",
+                    "solarId": "S0782",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "display",
+                    "solarId": "S0334",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                },
+                {
+                    "solar": "projector",
+                    "solarId": "S0787",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 63,
+            "lucide": "radar",
+            "lucideId": "L1282",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "radar",
+                    "solarId": "S0797",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "radar-2",
+                    "solarId": "S0798",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "round-graph",
+                    "solarId": "S0859",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 64,
+            "lucide": "receipt-text",
+            "lucideId": "L1302",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "bill",
+                    "solarId": "S0102",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "bill-2",
+                    "solarId": "S0103",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "bill-list",
+                    "solarId": "S0106",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 65,
+            "lucide": "rectangle-horizontal",
+            "lucideId": "L1307",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "plate",
+                    "solarId": "S0764",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "panorama",
+                    "solarId": "S0719",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "posts-carousel-horizontal",
+                    "solarId": "S0779",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 66,
+            "lucide": "screen-share",
+            "lucideId": "L1384",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "screen-share",
+                    "solarId": "S0897",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "screencast",
+                    "solarId": "S0898",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "screencast-2",
+                    "solarId": "S0899",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 67,
+            "lucide": "sofa",
+            "lucideId": "L1469",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "sofa",
+                    "solarId": "S0976",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sofa-2",
+                    "solarId": "S0977",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "sofa-3",
+                    "solarId": "S0978",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 68,
+            "lucide": "store",
+            "lucideId": "L1586",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "shop",
+                    "solarId": "S0928",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "shop-2",
+                    "solarId": "S0929",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "shop-minimalistic",
+                    "solarId": "S0930",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 69,
+            "lucide": "strikethrough",
+            "lucideId": "L1589",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "text-cross",
+                    "solarId": "S1092",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "text-cross-circle",
+                    "solarId": "S1093",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "text-cross-square",
+                    "solarId": "S1094",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 70,
+            "lucide": "target",
+            "lucideId": "L1627",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "target",
+                    "solarId": "S1080",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "radar",
+                    "solarId": "S0797",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "radar-2",
+                    "solarId": "S0798",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 71,
+            "lucide": "text-cursor-input",
+            "lucideId": "L1641",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "text-field",
+                    "solarId": "S1095",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "text-field-focus",
+                    "solarId": "S1096",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "password-minimalistic-input",
+                    "solarId": "S0730",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 72,
+            "lucide": "thermometer",
+            "lucideId": "L1647",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "temperature",
+                    "solarId": "S1083",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "thermometer",
+                    "solarId": "S1107",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cup-hot",
+                    "solarId": "S0313",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 73,
+            "lucide": "timer",
+            "lucideId": "L1662",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "stopwatch",
+                    "solarId": "S1051",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "hourglass",
+                    "solarId": "S0522",
+                    "role": "candidate",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "hourglass-line",
+                    "solarId": "S0523",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 74,
+            "lucide": "trending-down",
+            "lucideId": "L1691",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "diagram-down",
+                    "solarId": "S0326",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "graph-down",
+                    "solarId": "S0471",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "graph-down-new",
+                    "solarId": "S0472",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 75,
+            "lucide": "user-round",
+            "lucideId": "L1734",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "user-rounded",
+                    "solarId": "S1182",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "incognito",
+                    "solarId": "S0533",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "user-speak-rounded",
+                    "solarId": "S1184",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 76,
+            "lucide": "vault",
+            "lucideId": "L1755",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "safe-2",
+                    "solarId": "S0884",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "safe-circle",
+                    "solarId": "S0885",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "safe-square",
+                    "solarId": "S0886",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 77,
+            "lucide": "zoom-out",
+            "lucideId": "L1836",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "magnifier-zoom-out",
+                    "solarId": "S0614",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "minimalistic-magnifier-zoom-out",
+                    "solarId": "S0661",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "rounded-magnifier-zoom-out",
+                    "solarId": "S0868",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 78,
+            "lucide": "air-vent",
+            "lucideId": "L0007",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "conditioner",
+                    "solarId": "S0290",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "conditioner-2",
+                    "solarId": "S0291",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 79,
+            "lucide": "airplay",
+            "lucideId": "L0008",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "screencast",
+                    "solarId": "S0898",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "screencast-2",
+                    "solarId": "S0899",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 80,
+            "lucide": "annoyed",
+            "lucideId": "L0049",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "confounded-circle",
+                    "solarId": "S0294",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "confounded-square",
+                    "solarId": "S0295",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 81,
+            "lucide": "at-sign",
+            "lucideId": "L0106",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "mention-circle",
+                    "solarId": "S0649",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "mention-square",
+                    "solarId": "S0650",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 82,
+            "lucide": "ban",
+            "lucideId": "L0136",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "forbidden",
+                    "solarId": "S0431",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "forbidden-circle",
+                    "solarId": "S0432",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 83,
+            "lucide": "bandage",
+            "lucideId": "L0138",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "adhesive-plaster",
+                    "solarId": "S0006",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "adhesive-plaster-2",
+                    "solarId": "S0007",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 84,
+            "lucide": "battery-full",
+            "lucideId": "L0155",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "battery-full",
+                    "solarId": "S0085",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "battery-full-minimalistic",
+                    "solarId": "S0086",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 85,
+            "lucide": "battery-medium",
+            "lucideId": "L0157",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "battery-half",
+                    "solarId": "S0087",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "battery-half-minimalistic",
+                    "solarId": "S0088",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 86,
+            "lucide": "bot",
+            "lucideId": "L0236",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "smart-vacuum-cleaner",
+                    "solarId": "S0963",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "smart-vacuum-cleaner-2",
+                    "solarId": "S0964",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 87,
+            "lucide": "cloud-fog",
+            "lucideId": "L0467",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "fog",
+                    "solarId": "S0418",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "moon-fog",
+                    "solarId": "S0679",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 88,
+            "lucide": "cloud-moon",
+            "lucideId": "L0470",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloudy-moon",
+                    "solarId": "S0278",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "moon-fog",
+                    "solarId": "S0679",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 89,
+            "lucide": "cloud-snow",
+            "lucideId": "L0475",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloud-snowfall",
+                    "solarId": "S0268",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-snowfall-minimalistic",
+                    "solarId": "S0269",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 90,
+            "lucide": "cloud-sun",
+            "lucideId": "L0476",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cloud-sun",
+                    "solarId": "S0272",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-sun-2",
+                    "solarId": "S0273",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 91,
+            "lucide": "cpu",
+            "lucideId": "L0524",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "cpu",
+                    "solarId": "S0302",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cpu-bolt",
+                    "solarId": "S0303",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 92,
+            "lucide": "dribbble",
+            "lucideId": "L0582",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "basketball",
+                    "solarId": "S0081",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "balls",
+                    "solarId": "S0077",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 93,
+            "lucide": "droplets",
+            "lucideId": "L0587",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "waterdrops",
+                    "solarId": "S1225",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "cloud-waterdrops",
+                    "solarId": "S0276",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 94,
+            "lucide": "face-expressionless",
+            "lucideId": "L0617",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "expressionless-circle",
+                    "solarId": "S0379",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "expressionless-square",
+                    "solarId": "S0380",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 95,
+            "lucide": "file-archive",
+            "lucideId": "L0632",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "win-rar",
+                    "solarId": "S1239",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "zip-file",
+                    "solarId": "S1247",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 96,
+            "lucide": "file-play",
+            "lucideId": "L0675",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "clapperboard-open-play",
+                    "solarId": "S0242",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "clapperboard-edit",
+                    "solarId": "S0240",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 97,
+            "lucide": "file-question-mark",
+            "lucideId": "L0679",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "question-square",
+                    "solarId": "S0792",
+                    "role": "selected-reference",
+                    "decision": "related"
+                },
+                {
+                    "solar": "question-circle",
+                    "solarId": "S0791",
+                    "role": "candidate",
+                    "decision": "equivalent"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 98,
+            "lucide": "file-up",
+            "lucideId": "L0694",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "file-send",
+                    "solarId": "S0400",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "file-left",
+                    "solarId": "S0397",
+                    "role": "candidate",
+                    "decision": "no-match"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 99,
+            "lucide": "filter",
+            "lucideId": "L0705",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "filter",
+                    "solarId": "S0403",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "filters",
+                    "solarId": "S0404",
+                    "role": "selected-reference",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 100,
+            "lucide": "flip-horizontal-2",
+            "lucideId": "L0725",
+            "coverage": "non-equivalent",
+            "evidence": [
+                {
+                    "solar": "flip-horizontal",
+                    "solarId": "S0414",
+                    "role": "selected-reference",
+                    "decision": "variant"
+                },
+                {
+                    "solar": "flip-vertical",
+                    "solarId": "S0415",
+                    "role": "candidate",
+                    "decision": "variant"
+                }
+            ],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        }
+    ]
+}

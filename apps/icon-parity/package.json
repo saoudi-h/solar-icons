@@ -1,0 +1,52 @@
+{
+    "name": "icon-parity",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm generate:icons && next dev",
+        "build": "pnpm generate:icons && next build",
+        "start": "next start",
+        "generate:icons": "tsx scripts/generate-icon-list.ts",
+        "generate:atlases": "tsx scripts/generate-compare-atlases.ts",
+        "generate:forward-match-boards": "tsx scripts/generate-forward-match-boards.ts",
+        "forward:recall-candidates": "tsx scripts/recall-forward-candidates.ts",
+        "generate:review-board": "tsx scripts/generate-compare-review-board.ts",
+        "generate:adjudication-board": "tsx scripts/generate-compare-adjudication-board.ts",
+        "evaluate:atlas-pilot": "tsx scripts/evaluate-compare-atlas-pilot.ts",
+        "validate:adjudication": "tsx scripts/validate-compare-adjudication.ts",
+        "production:prepare": "tsx scripts/prepare-compare-production-batch.ts",
+        "production:status": "tsx scripts/status-compare-production.ts",
+        "production:review": "tsx scripts/generate-compare-review-board.ts",
+        "production:validate": "tsx scripts/validate-compare-production-batch.ts",
+        "lucide:coverage": "tsx scripts/generate-lucide-coverage.ts",
+        "lucide:coverage:check": "tsx scripts/generate-lucide-coverage.ts --check",
+        "lucide:gap:board": "tsx scripts/generate-lucide-gap-board.ts",
+        "lucide:gap:check": "tsx scripts/validate-lucide-gap-review.ts",
+        "lint": "eslint . --max-warnings 0",
+        "format": "prettier \"**/*\" --ignore-unknown --list-different",
+        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "typecheck": "tsc --noEmit",
+        "clean": "rimraf *.tsbuildinfo node_modules .next"
+    },
+    "dependencies": {
+        "@iconify/react": "^6.0.2",
+        "@solar-icons/core": "workspace:*",
+        "@solar-icons/react": "workspace:*",
+        "next": "16.3.0",
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+    },
+    "devDependencies": {
+        "@iconify-json/lucide": "1.2.123",
+        "@tailwindcss/postcss": "^4.3.3",
+        "@types/node": "^26.1.2",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "eslint": "^10.8.0",
+        "eslint-config-next": "16.3.0",
+        "sharp": "0.35.3",
+        "tailwindcss": "^4.3.3",
+        "tsx": "^4.20.6",
+        "typescript": "^6.0.3"
+    }
+}
