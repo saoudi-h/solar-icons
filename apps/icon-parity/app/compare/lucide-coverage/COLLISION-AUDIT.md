@@ -38,7 +38,7 @@ and followed by regeneration of `coverage.json`.
 - Structural checks remain:
 
 ```bash
-pnpm --filter react-app production:status
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:status
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 ```

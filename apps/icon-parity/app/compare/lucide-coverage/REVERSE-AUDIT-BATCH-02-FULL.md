@@ -29,7 +29,7 @@ Those promotions, when desired, are a separate adjudication step.
 ## Verification
 
 ```bash
-pnpm --filter react-app lucide:gap:check
-pnpm --filter react-app lucide:coverage
+pnpm --filter icon-parity lucide:gap:check
+pnpm --filter icon-parity lucide:coverage
 git diff --check
 ```

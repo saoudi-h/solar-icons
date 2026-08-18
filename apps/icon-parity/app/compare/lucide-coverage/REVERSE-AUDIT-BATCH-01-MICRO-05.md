@@ -29,7 +29,7 @@ references were retained; no accepted-map file was changed.
 ## Verification
 
 - The reverse boards were generated from the updated `coverage.json` with
-  `pnpm --filter react-app lucide:gap:board -- --batch 1 --coverage non-equivalent`.
+  `pnpm --filter icon-parity lucide:gap:board -- --batch 1 --coverage non-equivalent`.
 - The Solar candidates were inspected in `.atlas/solar/solar-02.png`,
   `.atlas/solar/solar-03.png`, `.atlas/solar/solar-04.png`, `.atlas/solar/solar-06.png`,
   `.atlas/solar/solar-07.png`, `.atlas/solar/solar-08.png`, `.atlas/solar/solar-11.png`,
@@ -40,16 +40,16 @@ references were retained; no accepted-map file was changed.
 - Candidate arrays remain intact; `verified-matches.json` was not modified.
 
 ```bash
-pnpm --filter react-app production:validate -- 2
-pnpm --filter react-app production:validate -- 3
-pnpm --filter react-app production:validate -- 4
-pnpm --filter react-app production:validate -- 6
-pnpm --filter react-app production:validate -- 7
-pnpm --filter react-app production:validate -- 8
-pnpm --filter react-app production:validate -- 11
-pnpm --filter react-app production:validate -- 12
-pnpm --filter react-app lucide:coverage
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 2
+pnpm --filter icon-parity production:validate -- 3
+pnpm --filter icon-parity production:validate -- 4
+pnpm --filter icon-parity production:validate -- 6
+pnpm --filter icon-parity production:validate -- 7
+pnpm --filter icon-parity production:validate -- 8
+pnpm --filter icon-parity production:validate -- 11
+pnpm --filter icon-parity production:validate -- 12
+pnpm --filter icon-parity lucide:coverage
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

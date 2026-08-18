@@ -55,8 +55,8 @@ not choose a preferred Solar alias for reverse migration.
   changed in this batch.
 
 ```bash
-pnpm --filter react-app production:validate -- 12
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 12
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

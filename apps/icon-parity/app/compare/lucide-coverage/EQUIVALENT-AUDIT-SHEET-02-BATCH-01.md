@@ -37,7 +37,7 @@ the inspected shortlist preserves the call-drop/hang-up state exactly.
 - `verified-matches.json` was not modified.
 
 ```bash
-pnpm --filter react-app production:validate -- 02
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 02
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

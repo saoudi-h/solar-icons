@@ -27,10 +27,10 @@ non-equivalent`; the disposable board output is reproducible from the committed 
 - No other backlog or production decisions changed in this micro-batch.
 
 ```bash
-pnpm --filter react-app production:validate -- 5
-pnpm --filter react-app production:validate -- 7
-pnpm --filter react-app lucide:coverage
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 5
+pnpm --filter icon-parity production:validate -- 7
+pnpm --filter icon-parity lucide:coverage
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

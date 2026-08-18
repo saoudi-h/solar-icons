@@ -32,8 +32,8 @@ alphabetical slice. Existing packets 01–18 are closed and must never be reused
 When the semantic forward map changes, regenerate and check the report:
 
 ```bash
-pnpm --filter react-app lucide:coverage
-pnpm --filter react-app lucide:coverage:check
+pnpm --filter icon-parity lucide:coverage
+pnpm --filter icon-parity lucide:coverage:check
 ```
 
 Never reuse a closed review target. `generate-lucide-coverage.ts` rejects duplicate IDs across all

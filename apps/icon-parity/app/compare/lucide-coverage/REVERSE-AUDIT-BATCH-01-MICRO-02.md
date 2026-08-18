@@ -19,7 +19,7 @@ strict non-match for Lucide `shopping-bag` because the shopping-use specificity 
 ## Verification
 
 - Reverse boards were generated from the updated `coverage.json` with
-  `pnpm --filter react-app lucide:gap:board -- --batch 1 --coverage non-equivalent`.
+  `pnpm --filter icon-parity lucide:gap:board -- --batch 1 --coverage non-equivalent`.
 - Solar atlas source: `.atlas/solar/solar-01.png`, `.atlas/solar/solar-06.png`, and
   `.atlas/solar/solar-08.png`.
 - Lucide atlas source: `.atlas/lucide/lucide-02.png`, `.atlas/lucide/lucide-10.png`, and
@@ -27,11 +27,11 @@ strict non-match for Lucide `shopping-bag` because the shopping-use specificity 
 - Candidate arrays remain intact; `verified-matches.json` was not modified.
 
 ```bash
-pnpm --filter react-app production:validate -- 1
-pnpm --filter react-app production:validate -- 6
-pnpm --filter react-app production:validate -- 8
-pnpm --filter react-app lucide:coverage
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 1
+pnpm --filter icon-parity production:validate -- 6
+pnpm --filter icon-parity production:validate -- 8
+pnpm --filter icon-parity lucide:coverage
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

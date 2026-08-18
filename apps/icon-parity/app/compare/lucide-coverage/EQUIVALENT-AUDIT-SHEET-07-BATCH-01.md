@@ -37,7 +37,7 @@ All twelve rows remain strict matches. No production reference required correcti
 - `verified-matches.json` was not modified.
 
 ```bash
-pnpm --filter react-app production:validate -- 07
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 07
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

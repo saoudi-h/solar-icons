@@ -7,7 +7,7 @@ and are separate from the Solar production sheets.
 Generate a visual packet from the repository root with:
 
 ```bash
-pnpm --filter react-app lucide:gap:board -- --batch 1 --coverage non-equivalent
+pnpm --filter icon-parity lucide:gap:board -- --batch 1 --coverage non-equivalent
 ```
 
 The command writes temporary review boards under `.atlas/lucide-gap/` and a tracked decision
@@ -21,7 +21,7 @@ file, which closes every target with its candidates, binary decision, and ration
 closed packet with:
 
 ```bash
-pnpm --filter react-app lucide:gap:check
+pnpm --filter icon-parity lucide:gap:check
 ```
 
 Do not create micro-batches inside a generated packet. A single review commit may contain many

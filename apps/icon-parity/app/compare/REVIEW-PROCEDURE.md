@@ -181,7 +181,7 @@ This prevents the retrieval ranking from becoming a hidden verdict. When uncerta
 
 ## Resume Check
 
-To independently find incomplete icons, run this from `apps/react-app`:
+To independently find incomplete icons, run this from `apps/icon-parity`:
 
 ```bash
 node - <<'NODE'
@@ -203,7 +203,7 @@ Do not infer that a Solar icon is complete because it has one equivalent mapping
 
 ## Validation
 
-Run from `apps/react-app` after changes:
+Run from `apps/icon-parity` after changes:
 
 ```bash
 node_modules/.bin/eslint app/compare --max-warnings 0

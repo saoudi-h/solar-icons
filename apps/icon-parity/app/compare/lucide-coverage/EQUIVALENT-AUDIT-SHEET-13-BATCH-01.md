@@ -38,8 +38,8 @@ All eleven rows remain strict matches. No production reference or decision requi
   changed in this batch.
 
 ```bash
-pnpm --filter react-app production:validate -- 13
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 13
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

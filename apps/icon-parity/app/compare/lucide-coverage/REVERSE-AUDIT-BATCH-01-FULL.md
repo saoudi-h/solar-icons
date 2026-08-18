@@ -61,6 +61,6 @@ interchangeable replacements.
 ## Verification
 
 ```bash
-pnpm --filter react-app lucide:gap:check
+pnpm --filter icon-parity lucide:gap:check
 git diff --check
 ```

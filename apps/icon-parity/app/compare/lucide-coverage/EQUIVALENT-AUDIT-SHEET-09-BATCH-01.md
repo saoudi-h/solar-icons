@@ -59,9 +59,9 @@ the referenced objects are different kinds of scales. No candidate shortlist was
 - `sheet-09.json` now projects 25 strict equivalents, 38 variants, and 37 related rows.
 
 ```bash
-pnpm --filter react-app production:validate -- 09
-pnpm --filter react-app lucide:coverage
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 09
+pnpm --filter icon-parity lucide:coverage
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 git diff --check
 ```

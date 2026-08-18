@@ -36,9 +36,9 @@ orientation and guide direction.
 - Production row count and candidate/reference IDs:
 
 ```bash
-pnpm --filter react-app production:validate -- 01
-pnpm --filter react-app lucide:coverage:check
-pnpm --filter react-app exec tsc --noEmit
+pnpm --filter icon-parity production:validate -- 01
+pnpm --filter icon-parity lucide:coverage:check
+pnpm --filter icon-parity exec tsc --noEmit
 ```
 
 - `verified-matches.json` was not modified.
