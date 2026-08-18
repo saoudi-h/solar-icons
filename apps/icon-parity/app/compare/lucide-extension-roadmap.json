@@ -5,7 +5,8 @@
         "sourceName": "minus",
         "priority": "critical",
         "priorityReason": "Primitive control symbol; it is the direct counterpart to the existing extended add icon and is needed by common counters, toggles, and zoom controls.",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "minus"
     },
     {
         "source": "lucide",

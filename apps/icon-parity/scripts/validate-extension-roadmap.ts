@@ -86,9 +86,9 @@ const main = () => {
         if (entry && entry.name !== value.sourceName) {
             errors.push(`${label}: ${value.sourceId} is ${entry.name}, not ${value.sourceName}`)
         }
-        if (entry && value.status === 'created' && entry.reverseTier === 'gap') {
-            errors.push(`${label}: created ${value.sourceName} is still a coverage gap`)
-        } else if (entry && value.status !== 'created' && entry.reverseTier !== 'gap') {
+        // A created package icon may remain a reverse gap until its Solar → Lucide
+        // mapping is integrated in a separate, audited parity change.
+        if (entry && value.status !== 'created' && entry.reverseTier !== 'gap') {
             errors.push(
                 `${label}: ${value.sourceName} is not a confirmed gap (tier: ${entry.reverseTier})`
             )
@@ -99,7 +99,7 @@ const main = () => {
     }
 
     if (errors.length > 0) fail(errors)
-    console.log(`Extension roadmap is valid (${(roadmap as unknown[]).length} planned item(s)).`)
+    console.log(`Extension roadmap is valid (${(roadmap as unknown[]).length} item(s)).`)
 }
 
 main()

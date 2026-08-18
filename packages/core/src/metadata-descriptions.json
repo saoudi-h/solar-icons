@@ -15137,5 +15137,17 @@
         "addedAt": "2026-08-14",
         "author": "Hakim Saoudi",
         "state": "beta"
+    },
+    {
+        "name": "minus",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["minus", "remove", "decrease", "subtraction", "negative", "math", "less"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive control symbol and direct counterpart to the extended add icon."
     }
 ]
