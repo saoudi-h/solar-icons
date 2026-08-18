@@ -98,7 +98,16 @@ export const REVERSE_COVERAGE_OVERRIDES: Record<string, ReverseCoverageOverride>
  * objects. They must remain gaps until a dedicated visual adjudication resolves
  * the directional ambiguity.
  */
-export const REVERSE_REVIEW_NO_MATCH_IDS = new Set(['L0016', 'L0030', 'L0031'])
+export const REVERSE_REVIEW_NO_MATCH_IDS = new Set([
+    'L0016',
+    'L0030',
+    'L0031',
+    // The reverse packet grouped `exit`, `closet-2`, and `garage` under
+    // `door-open`; only `exit` is even directionally related, and it already
+    // has a more precise `log-out` forward reference. Keep this collision out
+    // of exact reverse coverage until a dedicated visual decision selects one.
+    'L0577',
+])
 
 // Families where Solar has the base object but not Lucide's additional state.
 // These are fallbacks only: the modifier can be meaningful in a specialised UI.

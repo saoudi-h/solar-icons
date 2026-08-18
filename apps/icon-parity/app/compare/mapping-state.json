@@ -68,7 +68,7 @@
         "reverseCoverageTiers": {
             "exact": 623,
             "fallback": 44,
-            "gap": 1169,
+            "gap": 1170,
             "source": "apps/icon-parity/app/compare/lucide-coverage/coverage.json",
             "policy": "apps/icon-parity/app/compare/reverse-coverage-policy.ts"
         }

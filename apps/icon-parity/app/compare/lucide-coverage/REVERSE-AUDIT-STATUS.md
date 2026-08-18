@@ -9,7 +9,7 @@ Reverse equivalents remain auditable evidence; they are not copied into `verifie
 - Forward semantic Solar coverage: 529 Lucide targets.
 - Additional reverse equivalents awaiting forward integration: 93 targets.
 - Closed reverse reviews: 1,544 targets (281 equivalents, 1,263 no-matches).
-- Semantic gaps after the closed reverse review: 1,214 Lucide targets.
+- Reverse gap tier after the collision guard: 1,170 Lucide targets.
 
 ## Visual workbench
 

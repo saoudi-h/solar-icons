@@ -28,9 +28,9 @@
     "reverseReviewed": 1544,
     "reverseEquivalent": 281,
     "reverseNoMatch": 1263,
-    "reverseExactCovered": 623,
+    "reverseExactCovered": 622,
     "reverseFallbackCovered": 44,
-    "reverseGapCount": 1169,
+    "reverseGapCount": 1170,
     "backlogItems": 0,
     "backlogBatchSize": 100
   },
@@ -23403,30 +23403,9 @@
       "strictDecision": "no-match",
       "semanticDecision": "no-match",
       "coverage": "non-equivalent",
-      "reverseTier": "exact",
-      "preferredSolarMatch": {
-        "solar": "exit",
-        "solarId": "S0376",
-        "solarSheet": 4
-      },
+      "reverseTier": "gap",
       "fallbackSolarMatches": [],
-      "reverseReviewSolarMatches": [
-        {
-          "solar": "exit",
-          "solarId": "S0376",
-          "solarSheet": 4
-        },
-        {
-          "solar": "closet-2",
-          "solarId": "S0257",
-          "solarSheet": 3
-        },
-        {
-          "solar": "garage",
-          "solarId": "S0460",
-          "solarSheet": 5
-        }
-      ],
+      "reverseReviewSolarMatches": [],
       "strictSolarMatches": [],
       "semanticSolarMatches": [],
       "reverseReview": {
