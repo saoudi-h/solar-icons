@@ -15149,5 +15149,41 @@
         "state": "beta",
         "priority": "critical",
         "priorityReason": "Primitive control symbol and direct counterpart to the extended add icon."
+    },
+    {
+        "name": "close",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["close", "cancel", "dismiss", "remove", "exit", "x"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive dismissal and cancellation control used throughout interactive interfaces."
+    },
+    {
+        "name": "exclamation-mark",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["exclamation", "alert", "warning", "attention", "important", "error"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive alert marker for warnings, validation states, and attention cues."
+    },
+    {
+        "name": "question-mark",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["question", "help", "unknown", "information", "support", "faq"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive help and clarification marker used in onboarding, tooltips, and support interfaces."
     }
 ]

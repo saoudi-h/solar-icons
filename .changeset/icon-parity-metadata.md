@@ -11,6 +11,7 @@
 "@solar-icons/vue": patch
 ---
 
-add the extended `add` icon, correct the `file-smile` name, preserve the
+add the extended `add`, `minus`, `close`, `exclamation-mark`, and
+`question-mark` icons, correct the `file-smile` name, preserve the
 metadata/deprecation validation model across generated packages, and expose
 auditable extension priorities for future icon additions.
