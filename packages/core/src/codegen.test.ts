@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildDeprecatedAliasMap } from './codegen'
+import { buildAliasMap, buildDeprecatedAliasMap } from './codegen'
 
 describe('buildDeprecatedAliasMap', () => {
     it('keeps deprecation metadata attached to the canonical icon', () => {
@@ -39,5 +39,21 @@ describe('buildDeprecatedAliasMap', () => {
                 },
             ])
         ).toEqual(new Map())
+    })
+})
+
+describe('buildAliasMap', () => {
+    it('normalizes non-deprecated aliases to PascalCase export names', () => {
+        expect(
+            buildAliasMap([
+                {
+                    name: 'add',
+                    category: 'ui',
+                    categoryTags: ['ui'],
+                    tags: ['plus'],
+                    aliases: ['plus', 'create-new'],
+                },
+            ])
+        ).toEqual(new Map([['add', ['Plus', 'CreateNew']]]))
     })
 })

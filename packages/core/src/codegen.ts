@@ -67,6 +67,23 @@ export function buildDeprecatedAliasMap(
     return aliasMap
 }
 
+/** Build a map of canonical icon names to non-deprecated PascalCase aliases. */
+export function buildAliasMap(descriptions: readonly IconDescription[]): Map<string, string[]> {
+    const aliasMap = new Map<string, string[]>()
+    const toPascalCase = (value: string): string =>
+        value
+            .split('-')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+            .join('')
+
+    for (const entry of descriptions) {
+        if (entry.aliases?.length) {
+            aliasMap.set(entry.name, entry.aliases.map(toPascalCase))
+        }
+    }
+    return aliasMap
+}
+
 const DUOTONE_CSS_VARS_HTML =
     'style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"'
 

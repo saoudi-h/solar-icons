@@ -4,13 +4,16 @@ import {
     parseSvgs,
     transformDuotoneAccent,
     type DeprecatedIconAlias,
+    type IconDescription,
     type ParsedIcon,
 } from '@solar-icons/core'
-import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
+import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { parse, type Node } from 'node-html-parser'
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
+
+const descriptions = rawDescriptions as readonly IconDescription[]
 
 const DIST = path.resolve(import.meta.dirname, '../dist')
 const SRC_ICONS = path.resolve(import.meta.dirname, '../src/icons')

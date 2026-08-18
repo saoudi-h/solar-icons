@@ -1,0 +1,93 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://solar-icons.dev/schemas/descriptions.schema.json",
+    "title": "Solar Icons icon description",
+    "description": "Per-icon metadata entry of src/metadata-descriptions.json. Absent origin means the icon comes from the upstream set (480 Design).",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name", "category", "categoryTags", "tags"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Kebab-case icon name."
+        },
+        "category": {
+            "type": "string",
+            "description": "Category the icon belongs to."
+        },
+        "categoryTags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "origin": {
+            "enum": ["upstream", "extended"],
+            "description": "upstream = part of the original 480 Design set; extended = added by this project. Absent defaults to upstream."
+        },
+        "addedAt": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "ISO date the icon was added. Required when origin is extended."
+        },
+        "author": {
+            "type": "string",
+            "minLength": 1,
+            "description": "GitHub username of the icon author. Required when origin is extended."
+        },
+        "state": {
+            "enum": ["stable", "beta"],
+            "description": "beta = not yet visually validated in the demo apps. Absent defaults to stable."
+        },
+        "aliases": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Kebab-case name synonyms (e.g. add -> plus). Must not collide with any icon name or with another entry's alias."
+        },
+        "deprecatedAliases": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "replacement", "reason"],
+                "properties": {
+                    "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+                    "replacement": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+                    "reason": { "type": "string", "minLength": 1 },
+                    "deprecatedSince": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+                }
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Legacy names retained as deprecated compatibility exports."
+        },
+        "useCases": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Common use cases of the icon, for search-by-context."
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": { "origin": { "const": "extended" } },
+                "required": ["origin"]
+            },
+            "then": {
+                "required": ["addedAt", "author"],
+                "description": "Extended icons must carry attribution and an addition date."
+            }
+        }
+    ]
+}

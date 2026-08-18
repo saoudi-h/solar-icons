@@ -23,9 +23,10 @@ import {
     parseSvgs,
     transformDuotoneAccent,
     type DeprecatedIconAlias,
+    type IconDescription,
     type ParsedIcon,
 } from '@solar-icons/core'
-import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
+import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
@@ -40,6 +41,8 @@ const JSON_PATH = path.join(DIST, 'icons.json')
 const META_PATH = path.join(DIST, 'metadata.json')
 const META_DESC_PATH = path.join(DIST, 'metadata-descriptions.json')
 const SPRITE_PATH = path.join(DIST, 'sprite.svg')
+
+const descriptions = rawDescriptions as readonly IconDescription[]
 
 const SVG_OPEN =
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5"'

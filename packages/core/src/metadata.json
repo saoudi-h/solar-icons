@@ -369,7 +369,7 @@
                 "file-remove",
                 "file-right",
                 "file-send",
-                "file-smile-",
+                "file-smile",
                 "file-text",
                 "zip-file"
             ]
@@ -1109,6 +1109,7 @@
             "tags": ["ui"],
             "icons": [
                 "accessibility",
+                "add",
                 "add-circle",
                 "add-square",
                 "augmented-reality",
