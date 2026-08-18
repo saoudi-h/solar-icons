@@ -39,6 +39,21 @@ describe('validateDescriptions', () => {
         expect(validateDescriptions([entry], iconNames)).toEqual([])
     })
 
+    it('accepts an auditable extension priority', () => {
+        const entry = {
+            ...extendedEntry,
+            priority: 'critical',
+            priorityReason: 'Common control primitive',
+        }
+        expect(validateDescriptions([entry], iconNames)).toEqual([])
+    })
+
+    it('rejects a priority without a reason', () => {
+        const entry = { ...extendedEntry, priority: 'high' }
+        const errors = validateDescriptions([entry], iconNames)
+        expect(errors.some(error => error.includes('priorityReason'))).toBe(true)
+    })
+
     it('rejects an extended entry without addedAt', () => {
         const { addedAt: _addedAt, ...entry } = extendedEntry
         const errors = validateDescriptions([entry], iconNames)

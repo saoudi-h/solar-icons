@@ -24,6 +24,7 @@ Pages utiles :
 - `/lucide-gap` : revue Lucide → Solar (exact, fallback, reverse, gap);
 - `/compare` : archive de la première comparaison multi-packs, à ne pas
   utiliser pour modifier la production Lucide.
+- `app/compare/lucide-extension-roadmap.json` : queue priorisée des extensions à créer;
 
 ## Méthode et sources
 
@@ -42,3 +43,8 @@ valider les lots Lucide.
 Les autres packs restent hors du nouveau flux de production. Les fichiers de
 `/compare` sont conservés comme historique afin de ne pas perdre les décisions
 du travail initial.
+
+Pour planifier une nouvelle icône Lucide, lire
+`app/compare/LUCIDE-EXTENSION-ROADMAP.md`, modifier la roadmap puis lancer
+`pnpm --filter icon-parity lucide:roadmap:check`. La création des SVG et des métadonnées suit
+`packages/core/EXTENDING-ICON-SET.md`.

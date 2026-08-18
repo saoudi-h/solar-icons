@@ -22,6 +22,7 @@
         "lucide:coverage:check": "tsx scripts/generate-lucide-coverage.ts --check",
         "lucide:gap:board": "tsx scripts/generate-lucide-gap-board.ts",
         "lucide:gap:check": "tsx scripts/validate-lucide-gap-review.ts",
+        "lucide:roadmap:check": "tsx scripts/validate-extension-roadmap.ts",
         "lint": "eslint . --max-warnings 0",
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",

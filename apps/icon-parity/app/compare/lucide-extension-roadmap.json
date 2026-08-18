@@ -1,0 +1,50 @@
+[
+    {
+        "source": "lucide",
+        "sourceId": "L1095",
+        "sourceName": "minus",
+        "priority": "critical",
+        "priorityReason": "Primitive control symbol; it is the direct counterpart to the existing extended add icon and is needed by common counters, toggles, and zoom controls.",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1218",
+        "sourceName": "pencil",
+        "priority": "critical",
+        "priorityReason": "Generic edit action used across forms, tables, content management, and account settings; the current Solar candidates are specialised edit compounds.",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0602",
+        "sourceName": "ellipsis-vertical",
+        "priority": "critical",
+        "priorityReason": "Primitive overflow-menu control; the existing horizontal menu-dots icon cannot preserve the vertical action layout.",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0611",
+        "sourceName": "external-link",
+        "priority": "critical",
+        "priorityReason": "Common navigation action whose external-destination meaning is not interchangeable with a generic link or exit icon.",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1748",
+        "sourceName": "users",
+        "priority": "high",
+        "priorityReason": "Generic group/people primitive used for teams, permissions, and audience controls; people-nearby adds a different proximity meaning.",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0995",
+        "sourceName": "loader-circle",
+        "priority": "high",
+        "priorityReason": "Generic loading state used in async interfaces; traffic is a domain-specific status symbol and is not a safe replacement.",
+        "status": "planned"
+    }
+]

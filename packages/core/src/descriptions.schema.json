@@ -46,6 +46,15 @@
             "enum": ["stable", "beta"],
             "description": "beta = not yet visually validated in the demo apps. Absent defaults to stable."
         },
+        "priority": {
+            "enum": ["critical", "high", "normal", "low"],
+            "description": "Qualitative delivery priority for an extension. It is not a popularity score."
+        },
+        "priorityReason": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Short explanation supporting the selected extension priority."
+        },
         "aliases": {
             "type": "array",
             "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
@@ -87,6 +96,15 @@
             "then": {
                 "required": ["addedAt", "author"],
                 "description": "Extended icons must carry attribution and an addition date."
+            }
+        },
+        {
+            "if": {
+                "required": ["priority"]
+            },
+            "then": {
+                "required": ["priorityReason"],
+                "description": "A priority must remain auditable."
             }
         }
     ]
