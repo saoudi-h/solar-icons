@@ -1,9 +1,9 @@
 {
     "version": 1,
     "objective": "Use the completed Solar to Lucide production pass to produce a strict binary replacement projection and a Lucide to Solar reverse inventory with exact replacements, explicit context-dependent fallbacks, and true gaps. Adding new icons and mutating the accepted map remain out of scope.",
-    "activeDirection": "lucide-to-solar-reverse-gap",
+    "activeDirection": "lucide-to-solar-reverse-integration",
     "activeSource": "lucide",
-    "stage": "reverse-gap-semantic-validation",
+    "stage": "reverse-review-complete-forward-integration-pending",
     "finalDecisionContract": {
         "type": "binary-canonical-output",
         "matchDecision": "equivalent plus an explicit semantic promotion set",
@@ -97,22 +97,23 @@
         "activeTask": "PARITY-LUCIDE-COVERAGE-REVERSE"
     },
     "nextAction": {
-        "id": "reverse-gap-semantic-validation",
+        "id": "reverse-equivalent-integration",
         "owner": "vision-capable agent supervised by the maintainer or a stronger reviewer",
         "instructions": [
             "Read LUCIDE-COVERAGE-RUNBOOK.md and FORWARD-SEMANTIC-ADJUDICATION.md before editing.",
-            "Use /lucide-gap as the visual workbench for Lucide → Solar; do not ask the maintainer to run a command.",
-            "Treat exact Solar coverage, explicit context-dependent fallbacks, reverse-found equivalents, and confirmed gaps as separate queues.",
-            "For each new reverse packet, record exactly one binary equivalent/no-match decision and keep verified-matches.json unchanged.",
-            "Keep verified-matches.json unchanged until the maintainer explicitly authorizes accepted-map replacement."
+            "Use /lucide-gap with the TROUVÉS EN REVERSE filter to inspect the 93 reverse equivalents not yet in the forward projection.",
+            "Resolve collisions where several Lucide names point to the same Solar icon before changing the forward projection.",
+            "Integrate only visually and semantically validated choices into forward-semantic-promotions.ts.",
+            "Keep verified-matches.json unchanged until the maintainer explicitly authorizes accepted-map replacement.",
+            "After integration, audit the remaining 1,169 gap rows for false negatives without reopening closed packets."
         ],
         "doneWhen": [
             "The /lucide-gap page exposes exact, fallback, reverse-review, and true-gap queues.",
-            "Every reviewed Lucide target has a binary equivalent/no-match decision and a durable packet.",
+            "The 93 reverse equivalents are either integrated with an explicit forward reference or documented as collision-deferred.",
             "No reverse review silently mutates verified-matches.json.",
             "No production decision has been copied into verified-matches.json."
         ]
     },
-    "blockedUntilNextActionCompletes": "Mutating the accepted map, starting another reference pack, or adding new icons from the Lucide gap backlog.",
+    "blockedUntilNextActionCompletes": "Adding another reference pack or changing verified-matches.json without completing the reverse-equivalent integration audit.",
     "lastUpdated": "2026-08-18"
 }

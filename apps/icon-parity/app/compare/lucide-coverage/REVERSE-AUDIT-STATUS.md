@@ -1,6 +1,6 @@
 # Lucide Reverse Audit Status
 
-The Solar → Lucide semantic pass is complete enough to begin the Lucide → Solar gap phase.
+The Solar → Lucide semantic pass and the first Lucide → Solar review pass are complete.
 Reverse equivalents remain auditable evidence; they are not copied into `verified-matches.json`.
 
 ## Current state
@@ -24,8 +24,15 @@ kept as a durable reverse packet and later integrated into the forward map only 
 candidate has been checked in the opposite direction. Do not mutate `verified-matches.json` during
 this phase.
 
-The first new packet should contain 100 targets selected from `/lucide-gap`, not an arbitrary
-alphabetical slice. Existing packets 01–18 are closed and must never be reused.
+There is currently no unreviewed reverse packet: all 1,836 Lucide entries are either covered by
+the semantic forward projection or have a closed binary reverse review.
+
+The next work queue is the 93 reverse `equivalent` rows that are not yet represented in the
+Solar → Lucide projection. Review them in `/lucide-gap` with `TROUVÉS EN REVERSE`, resolve
+many-to-one Solar collisions, then integrate only the validated choices into
+`forward-semantic-promotions.ts`. After that integration, audit the remaining 1,169 `gap` rows
+for false negatives. This is a quality pass over closed `no-match` decisions, not a new packet
+generation phase.
 
 ## Regeneration
 
