@@ -23,6 +23,28 @@ export interface ReverseCoverageOverride {
  * semantic inspection; this is not a lexical fallback table.
  */
 export const REVERSE_COVERAGE_OVERRIDES: Record<string, ReverseCoverageOverride> = {
+    // Forward-review corrections: these Lucide gaps already have an
+    // interchangeable Solar icon and must not enter the extension queue.
+    L1218: {
+        exactSolarIds: ['S0734'],
+        fallbackSolarIds: [],
+        note: 'Solar pen is interchangeable with Lucide pencil for the generic edit action; the catalogue names differ, but the object and meaning are the same.',
+    },
+    L0611: {
+        exactSolarIds: ['S1019'],
+        fallbackSolarIds: [],
+        note: 'Solar square-top-down preserves the external-link symbol: an arrow exits an open square toward the upper-right.',
+    },
+    L1748: {
+        exactSolarIds: ['S1185', 'S1186'],
+        fallbackSolarIds: [],
+        note: 'Solar users-group-rounded and users-group-two-rounded both preserve the generic users/group concept; the two Solar silhouettes are valid interchangeable variants.',
+    },
+    L0615: {
+        exactSolarIds: ['S0382'],
+        fallbackSolarIds: [],
+        note: 'Solar eye-closed preserves the eye-disabled state represented by Lucide eye-off; the state mark is drawn as a closed eye rather than a slash.',
+    },
     // Second-pass recalls: the Solar icon is the same object/action even
     // though the Lucide catalogue uses a different modifier or suffix.
     L0289: {
@@ -112,9 +134,26 @@ export const REVERSE_REVIEW_NO_MATCH_IDS = new Set([
 // Families where Solar has the base object but not Lucide's additional state.
 // These are fallbacks only: the modifier can be meaningful in a specialised UI.
 for (const lucideId of [
-    'L0439', 'L0440', 'L0441', 'L0442', 'L0443', 'L0444', 'L0445', 'L0446', 'L0447',
-    'L0448', 'L0449', 'L0450', 'L0451', 'L0452', 'L0453', 'L0454', 'L0455', 'L0456',
-    'L0457', 'L0458',
+    'L0439',
+    'L0440',
+    'L0441',
+    'L0442',
+    'L0443',
+    'L0444',
+    'L0445',
+    'L0446',
+    'L0447',
+    'L0448',
+    'L0449',
+    'L0450',
+    'L0451',
+    'L0452',
+    'L0453',
+    'L0454',
+    'L0455',
+    'L0456',
+    'L0457',
+    'L0458',
 ]) {
     REVERSE_COVERAGE_OVERRIDES[lucideId] ??= {
         fallbackSolarIds: ['S0252'],
@@ -123,8 +162,21 @@ for (const lucideId of [
 }
 
 for (const lucideId of [
-    'L0276', 'L0277', 'L0278', 'L0279', 'L0280', 'L0281', 'L0283', 'L0284',
-    'L0285', 'L0286', 'L0287', 'L0290', 'L0292', 'L0293', 'L0294',
+    'L0276',
+    'L0277',
+    'L0278',
+    'L0279',
+    'L0280',
+    'L0281',
+    'L0283',
+    'L0284',
+    'L0285',
+    'L0286',
+    'L0287',
+    'L0290',
+    'L0292',
+    'L0293',
+    'L0294',
 ]) {
     REVERSE_COVERAGE_OVERRIDES[lucideId] ??= {
         fallbackSolarIds: ['S0153'],

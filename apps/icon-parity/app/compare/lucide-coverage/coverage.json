@@ -28,9 +28,9 @@
     "reverseReviewed": 1544,
     "reverseEquivalent": 281,
     "reverseNoMatch": 1263,
-    "reverseExactCovered": 622,
+    "reverseExactCovered": 626,
     "reverseFallbackCovered": 44,
-    "reverseGapCount": 1170,
+    "reverseGapCount": 1166,
     "backlogItems": 0,
     "backlogBatchSize": 100
   },
@@ -24947,9 +24947,21 @@
       "strictDecision": "no-match",
       "semanticDecision": "no-match",
       "coverage": "candidate-only",
-      "reverseTier": "gap",
+      "reverseTier": "exact",
+      "preferredSolarMatch": {
+        "solar": "square-top-down",
+        "solarId": "S1019",
+        "solarSheet": 11
+      },
       "fallbackSolarMatches": [],
-      "reverseReviewSolarMatches": [],
+      "reverseCoverageNote": "Solar square-top-down preserves the external-link symbol: an arrow exits an open square toward the upper-right.",
+      "reverseReviewSolarMatches": [
+        {
+          "solar": "square-top-down",
+          "solarId": "S1019",
+          "solarSheet": 11
+        }
+      ],
       "strictSolarMatches": [],
       "semanticSolarMatches": [],
       "reverseReview": {
@@ -25162,9 +25174,21 @@
       "strictDecision": "no-match",
       "semanticDecision": "no-match",
       "coverage": "candidate-only",
-      "reverseTier": "gap",
+      "reverseTier": "exact",
+      "preferredSolarMatch": {
+        "solar": "eye-closed",
+        "solarId": "S0382",
+        "solarSheet": 4
+      },
       "fallbackSolarMatches": [],
-      "reverseReviewSolarMatches": [],
+      "reverseCoverageNote": "Solar eye-closed preserves the eye-disabled state represented by Lucide eye-off; the state mark is drawn as a closed eye rather than a slash.",
+      "reverseReviewSolarMatches": [
+        {
+          "solar": "eye-closed",
+          "solarId": "S0382",
+          "solarSheet": 4
+        }
+      ],
       "strictSolarMatches": [],
       "semanticSolarMatches": [],
       "reverseReview": {
@@ -50809,9 +50833,21 @@
       "strictDecision": "no-match",
       "semanticDecision": "no-match",
       "coverage": "candidate-only",
-      "reverseTier": "gap",
+      "reverseTier": "exact",
+      "preferredSolarMatch": {
+        "solar": "pen",
+        "solarId": "S0734",
+        "solarSheet": 8
+      },
       "fallbackSolarMatches": [],
-      "reverseReviewSolarMatches": [],
+      "reverseCoverageNote": "Solar pen is interchangeable with Lucide pencil for the generic edit action; the catalogue names differ, but the object and meaning are the same.",
+      "reverseReviewSolarMatches": [
+        {
+          "solar": "pen",
+          "solarId": "S0734",
+          "solarSheet": 8
+        }
+      ],
       "strictSolarMatches": [],
       "semanticSolarMatches": [],
       "reverseReview": {
@@ -72768,9 +72804,26 @@
       "strictDecision": "no-match",
       "semanticDecision": "no-match",
       "coverage": "non-equivalent",
-      "reverseTier": "gap",
+      "reverseTier": "exact",
+      "preferredSolarMatch": {
+        "solar": "users-group-rounded",
+        "solarId": "S1185",
+        "solarSheet": 12
+      },
       "fallbackSolarMatches": [],
-      "reverseReviewSolarMatches": [],
+      "reverseCoverageNote": "Solar users-group-rounded and users-group-two-rounded both preserve the generic users/group concept; the two Solar silhouettes are valid interchangeable variants.",
+      "reverseReviewSolarMatches": [
+        {
+          "solar": "users-group-rounded",
+          "solarId": "S1185",
+          "solarSheet": 12
+        },
+        {
+          "solar": "users-group-two-rounded",
+          "solarId": "S1186",
+          "solarSheet": 12
+        }
+      ],
       "strictSolarMatches": [],
       "semanticSolarMatches": [],
       "reverseReview": {

@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 type IconPriority = 'critical' | 'high' | 'normal' | 'low'
+type WorkType = 'derived-variant' | 'assisted-design'
 
 type RoadmapStatus = 'planned' | 'in-progress' | 'ready' | 'created' | 'deferred'
 
@@ -11,6 +12,7 @@ interface RoadmapItem {
     sourceName: string
     priority: IconPriority
     priorityReason: string
+    workType: WorkType
     status: RoadmapStatus
     createdIcon?: string
 }
@@ -49,6 +51,7 @@ const main = () => {
     const seenIds = new Set<string>()
     const seenNames = new Set<string>()
     const priorities = new Set<IconPriority>(['critical', 'high', 'normal', 'low'])
+    const workTypes = new Set<WorkType>(['derived-variant', 'assisted-design'])
     const statuses = new Set<RoadmapStatus>([
         'planned',
         'in-progress',
@@ -70,6 +73,9 @@ const main = () => {
             errors.push(`${label}: priority must be critical, high, normal, or low`)
         }
         if (!value.priorityReason?.trim()) errors.push(`${label}: priorityReason is required`)
+        if (!value.workType || !workTypes.has(value.workType)) {
+            errors.push(`${label}: workType must be derived-variant or assisted-design`)
+        }
         if (!value.status || !statuses.has(value.status)) {
             errors.push(`${label}: status is invalid`)
         }
