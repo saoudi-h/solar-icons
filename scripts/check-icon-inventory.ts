@@ -1,11 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import pc from 'picocolors'
-import type { Metadata } from '../types'
-import { scanSvgIcons } from './icon-metadata'
+import { scanSvgIcons } from '../packages/core/src/scripts/icon-metadata'
+import type { Metadata } from '../packages/core/src/types'
 
-const CORE_ROOT = path.resolve(import.meta.dirname, '../..')
-const REPOSITORY_ROOT = path.resolve(CORE_ROOT, '../..')
+const REPOSITORY_ROOT = path.resolve(import.meta.dirname, '..')
+const CORE_ROOT = path.join(REPOSITORY_ROOT, 'packages/core')
 const SVG_ROOT = path.join(CORE_ROOT, 'svgs')
 const METADATA_PATH = path.join(CORE_ROOT, 'src/metadata.json')
 const DESCRIPTIONS_PATH = path.join(CORE_ROOT, 'src/metadata-descriptions.json')
@@ -62,7 +61,7 @@ const main = () => {
         )
     }
 
-    console.log(pc.blue('Solar icon inventory (computed from packages/core):'))
+    console.log('Solar icon inventory (computed from packages/core):')
     console.log(`  Logical icons: ${iconNames.size}`)
     console.log(`  SVG files:     ${svgFiles}`)
     console.log(`  Styles/icon:   ${styleCount}`)
@@ -84,13 +83,13 @@ const main = () => {
         }
     }
 
-    for (const warning of warnings) console.log(pc.yellow(`Warning: ${warning}`))
+    for (const warning of warnings) console.log(`Warning: ${warning}`)
     if (process.argv.includes('--check-generated') && warnings.length > 0) {
         errors.push(`${warnings.length} generated icon list(s) are stale or absent`)
     }
-    for (const error of errors) console.log(pc.red(`Error: ${error}`))
+    for (const error of errors) console.log(`Error: ${error}`)
     if (errors.length > 0) process.exit(1)
-    console.log(pc.green('Inventory source checks passed.'))
+    console.log('Inventory source checks passed.')
 }
 
 main()

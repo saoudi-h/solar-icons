@@ -25,14 +25,14 @@ Then rebuild the derived core metadata and run the source checks:
 
 ```sh
 pnpm --filter @solar-icons/core generate:svgs --offline
-pnpm --filter @solar-icons/core check:inventory
+pnpm exec tsx scripts/check-icon-inventory.ts
 pnpm --filter @solar-icons/core check:svgs
 pnpm --filter @solar-icons/core check:metadata
 pnpm --filter @solar-icons/core check:descriptions
 pnpm --filter @solar-icons/core check:icons-metadata
 ```
 
-`check:inventory` prints the current count. The six-style invariant means the SVG total must be
+`scripts/check-icon-inventory.ts` prints the current count. The six-style invariant means the SVG total must be
 six times the logical-icon total. Generated `metadata.json` may be reformatted by the generator;
 run the repository formatter on that file before reviewing the diff, so formatting does not hide
 the actual inventory change.
@@ -53,7 +53,7 @@ count change:
 Confirm the derived lists with:
 
 ```sh
-pnpm --filter @solar-icons/core check:inventory:generated
+pnpm exec tsx scripts/check-icon-inventory.ts --check-generated
 ```
 
 ## Update human-facing copy

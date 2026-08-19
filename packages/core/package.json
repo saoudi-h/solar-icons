@@ -41,8 +41,6 @@
         "check:metadata": "tsx src/scripts/check-metadata.ts",
         "check:descriptions": "tsx src/scripts/check-descriptions.ts",
         "check:icons-metadata": "tsx src/scripts/check-icons-metadata.ts",
-        "check:inventory": "tsx src/scripts/check-inventory.ts",
-        "check:inventory:generated": "tsx src/scripts/check-inventory.ts --check-generated",
         "fix:icons-metadata": "tsx src/scripts/fix-icons-metadata.ts",
         "clean": "rm -rf node_modules dist",
         "clean:generated": "rimraf svgs src/metadata.json",
