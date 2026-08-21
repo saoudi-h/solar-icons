@@ -15137,5 +15137,260 @@
         "addedAt": "2026-08-14",
         "author": "Hakim Saoudi",
         "state": "beta"
+    },
+    {
+        "name": "minus",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["minus", "remove", "decrease", "subtraction", "negative", "math", "less"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive control symbol and direct counterpart to the extended add icon."
+    },
+    {
+        "name": "close",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["close", "cancel", "dismiss", "remove", "exit", "x"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive dismissal and cancellation control used throughout interactive interfaces."
+    },
+    {
+        "name": "exclamation-mark",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["exclamation", "alert", "warning", "attention", "important", "error"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive alert marker for warnings, validation states, and attention cues."
+    },
+    {
+        "name": "question-mark",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["question", "help", "unknown", "information", "support", "faq"],
+        "origin": "extended",
+        "addedAt": "2026-08-18",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive help and clarification marker used in onboarding, tooltips, and support interfaces."
+    },
+    {
+        "name": "barcode",
+        "category": "security",
+        "categoryTags": ["security", "commerce", "retail", "inventory"],
+        "tags": ["barcode", "product code", "sku", "scan", "inventory", "retail"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "barcode-scan",
+        "category": "security",
+        "categoryTags": ["security", "commerce", "retail", "inventory"],
+        "tags": ["barcode scanner", "scan", "product code", "sku", "inventory", "retail"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "binoculars",
+        "category": "devices",
+        "categoryTags": ["devices", "tools", "vision", "exploration"],
+        "tags": ["binoculars", "search", "inspect", "explore", "view", "zoom"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "bot",
+        "category": "devices",
+        "categoryTags": ["devices", "technology", "automation", "ai"],
+        "tags": ["robot", "bot", "assistant", "automation", "chatbot", "artificial intelligence"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "brain",
+        "category": "medicine",
+        "categoryTags": ["medicine", "health", "science", "ai"],
+        "tags": [
+            "brain",
+            "mind",
+            "intelligence",
+            "cognition",
+            "neuroscience",
+            "artificial intelligence"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "paint-brush",
+        "category": "tools",
+        "categoryTags": ["design", "art", "creative", "tools"],
+        "tags": ["paint brush", "brush", "paint", "art", "draw", "design", "creative"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "toolbox",
+        "category": "ui",
+        "categoryTags": ["interface", "tools", "utilities", "maintenance"],
+        "tags": ["toolbox", "tools", "repair", "maintenance", "tool kit", "utilities"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "videocamera-off",
+        "category": "video",
+        "categoryTags": ["video", "camera", "communication", "privacy"],
+        "tags": ["video camera off", "camera disabled", "no video", "video off", "privacy"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "webcam",
+        "category": "video",
+        "categoryTags": ["video", "camera", "communication", "devices"],
+        "tags": ["webcam", "camera", "video call", "meeting", "streaming", "video conference"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "webcam-off",
+        "category": "video",
+        "categoryTags": ["video", "camera", "communication", "privacy"],
+        "tags": ["webcam off", "camera disabled", "no camera", "video off", "privacy"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "connectivity"],
+        "tags": ["wifi", "wi-fi", "wireless", "internet", "network", "connection", "signal"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-cog",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "settings"],
+        "tags": [
+            "wifi settings",
+            "wi-fi settings",
+            "wireless",
+            "network settings",
+            "configure connection"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-cross",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "status"],
+        "tags": [
+            "wifi disconnected",
+            "wi-fi disconnected",
+            "no connection",
+            "network error",
+            "offline"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-high",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "status"],
+        "tags": [
+            "wifi signal high",
+            "wi-fi signal strong",
+            "wireless",
+            "network strength",
+            "connection quality"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-low",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "status"],
+        "tags": [
+            "wifi signal low",
+            "wi-fi signal weak",
+            "wireless",
+            "network strength",
+            "poor connection"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-none",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "status"],
+        "tags": [
+            "wifi no signal",
+            "wi-fi no signal",
+            "wireless unavailable",
+            "no connection",
+            "offline"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "wi-fi-off",
+        "category": "it",
+        "categoryTags": ["technology", "network", "internet", "status"],
+        "tags": ["wifi off", "wi-fi disabled", "wireless disabled", "no internet", "offline"],
+        "origin": "extended",
+        "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
     }
 ]
