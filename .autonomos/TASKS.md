@@ -9,6 +9,20 @@
 
 ## 🚧 Active
 
+- [x] **[ICON-RELEASE-PACKET]** Prepare the first extension release packet: use a minor Changeset for the 22 curated extensions, rebuild the static package, verify the Figma catalog build, and document the remaining manual publication steps. Completed in `542ec7b13`; `Priority: 🟠` `Complexity: M`
+
+- [ ] **[ICON-PUBLISH]** Merge the release PR, let Changesets publish the `2.1.0` package set, then submit the rebuilt Figma Community plugin as a separate catalog update. `Priority: 🟠` `Complexity: M`
+
+- [ ] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, and document the separate Figma Community publication step. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
+
+- [ ] **[EXTENSION-COMMUNICATION]** Update current README/docs/plugin copy to describe the maintained original Solar catalogue plus curated extensions, refresh current icon counts, and publish a release announcement without claiming new icons are from 480 Design. `Priority: 🟠` `Complexity: M`
+
+- [ ] **[ICON-REQUEST-INTAKE]** Add a GitHub icon-request template and triage labels capturing concept, use case, references, required styles, related Solar fallback, demand, and non-commitment language. **Issue:** `ISSUE-ICON-REQUESTS`. `Priority: 🔵` `Complexity: M`
+
+- [ ] **[ICON-CONTRIBUTOR-GOVERNANCE]** Define and publish the external icon contribution workflow: originality, source files, six-style validation, metadata, license, attribution, visual review, and maintainer acceptance. **Issue:** `ISSUE-ICON-CONTRIBUTIONS`. `Priority: ⚪` `Complexity: XL`
+
+- [ ] **[CATEGORY-COMPOSITE-MODEL]** Replace the category-length heuristic with an explicit, backward-compatible mapping that preserves all Figma category labels and detects collisions. **Issue:** `ISSUE-ICON-CATEGORIES`. `Priority: 🔵` `Complexity: L`
+
 - [/] **[ICON-FIXES]** Fix two reported icon issues: one incorrect icon name and one SVG requiring regeneration. Details and exact source-of-truth changes will be scoped after the maintainer provides the issue descriptions. `Priority: 🟠` `Complexity: S`
 
 - [x] **[DOCS-COUNT-REACT-PERF]** Keep counting `@solar-icons/react-perf` on the homepage "Weekly Downloads" stat card. The Aug 8 list fix (`b9df8a914`) had dropped it. Deprecated on npm 2026-08-10 (message points to `@solar-icons/react`); downloads keep counting, and the maintainer wants them counted until the numbers become negligible. Re-added to `NPM_PACKAGES` in `apps/docs/components/home-page/sections/community/index.tsx` (position: right after `@solar-icons/react`). Lint + typecheck green. `Priority: 🟠` `Complexity: S`

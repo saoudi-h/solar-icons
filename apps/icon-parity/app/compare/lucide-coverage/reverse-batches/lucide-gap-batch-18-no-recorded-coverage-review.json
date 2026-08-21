@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "direction": "lucide-to-solar-gap",
+  "phase": "visual-review-closed",
+  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+  "sourceTemplate": "lucide-gap-batch-18-no-recorded-coverage.json",
+  "filter": {
+    "coverage": "no-recorded-coverage",
+    "suggestedBatch": 1
+  },
+  "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+  "forwardIntegration": {
+    "promotedExistingReferences": 0,
+    "aliasDeferred": []
+  },
+  "entries": [
+    {
+      "rank": 1,
+      "lucideId": "L1826",
+      "lucide": "zodiac-gemini",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 2,
+      "lucideId": "L1827",
+      "lucide": "zodiac-leo",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 3,
+      "lucideId": "L1828",
+      "lucide": "zodiac-libra",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 4,
+      "lucideId": "L1829",
+      "lucide": "zodiac-ophiuchus",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 5,
+      "lucideId": "L1830",
+      "lucide": "zodiac-pisces",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 6,
+      "lucideId": "L1831",
+      "lucide": "zodiac-sagittarius",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 7,
+      "lucideId": "L1832",
+      "lucide": "zodiac-scorpio",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 8,
+      "lucideId": "L1833",
+      "lucide": "zodiac-taurus",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    },
+    {
+      "rank": 9,
+      "lucideId": "L1834",
+      "lucide": "zodiac-virgo",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "No zodiac counterpart is present in the inspected Solar atlas; no interchangeable replacement is established."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Development source for the public Solar Icons browser and inserter.
 
-The plugin embeds all 1,246 icons in all six styles from the local build output of `@solar-icons/static`. It does not make network requests, and the generated UI records the exact package version used to build it. The UI is built with Vite, React, TypeScript, Base UI, and plain CSS.
+The plugin embeds the complete current catalogue in all six styles from the local build output of `@solar-icons/static`. It does not make network requests, and the generated UI records the exact package version and icon count used to build it. The UI is built with Vite, React, TypeScript, Base UI, and plain CSS.
 
 ## Build and install locally
 
@@ -18,7 +18,7 @@ The build writes the gitignored `dist/code.js` and `dist/ui.html`. Vite bundles 
 ## Current behavior
 
 - Fuzzy-search the complete catalogue by icon name, category, and search tags using the same Fuse configuration as the docs.
-- Filter all 1,246 icons by any of the six styles and by category.
+- Filter the complete current catalogue by any of the six styles and by category.
 - Adapt the dense virtualized grid to the plugin width so only visible SVG previews are mounted.
 - Choose between immediate insertion and explicit multi-selection.
 - Scrub or keyboard-adjust icon size and the stroke width used by Linear, Broken, and Line Duotone.
@@ -34,7 +34,7 @@ The build writes the gitignored `dist/code.js` and `dist/ui.html`. Vite bundles 
 ## Validation checklist
 
 - The initial catalogue and every style switch appear without network requests or progressive CDN loading.
-- Scrolling reaches all 1,246 icons while the UI remains responsive.
+- Scrolling reaches every embedded icon while the UI remains responsive.
 - Search, category filtering, arrow-key grid navigation, and both insertion modes work.
 - Misspelled and out-of-order multi-word searches resolve through Fuse.
 - Multi-selection inserts every selected icon once and groups the action into one undo step.

@@ -9,6 +9,7 @@ const ICON_WEIGHTS: string[] = ['Broken', 'LineDuotone', 'Linear', 'Outline', 'B
 
 const checkSvgs = () => {
     let totalIcons = 0
+    const coverageErrors: string[] = []
 
     console.log(pc.blue('Checking SVGs...\n'))
 
@@ -34,6 +35,8 @@ const checkSvgs = () => {
     categories.forEach(categoryDir => {
         const categoryPath = path.join(SVGS_PATH, categoryDir.name)
 
+        const filesByWeight = new Map<string, Set<string>>()
+
         // Check each weight directory within the category
         ICON_WEIGHTS.forEach(weight => {
             const weightPath = path.join(categoryPath, weight)
@@ -42,16 +45,29 @@ const checkSvgs = () => {
                 const files = fs.readdirSync(weightPath).filter(file => file.endsWith('.svg')) // Only count SVG files
                 const fileCount = files.length
 
+                filesByWeight.set(weight, new Set(files.map(file => file.slice(0, -4))))
+
                 totalIcons += fileCount
                 rows.push({ category: categoryDir.name, weight, files: fileCount })
             } else {
-                console.log(
-                    pc.yellow(
-                        `Warning: Weight directory "${weight}" missing in category "${categoryDir.name}".`
-                    )
-                )
+                coverageErrors.push(`Missing weight directory: ${categoryDir.name}/${weight}`)
             }
         })
+
+        const iconNames = new Set<string>()
+        for (const files of filesByWeight.values()) {
+            for (const iconName of files) iconNames.add(iconName)
+        }
+
+        for (const iconName of iconNames) {
+            for (const weight of ICON_WEIGHTS) {
+                if (!filesByWeight.get(weight)?.has(iconName)) {
+                    coverageErrors.push(
+                        `Missing style variant: ${categoryDir.name}/${weight}/${iconName}.svg`
+                    )
+                }
+            }
+        }
     })
 
     // Add a final row for total icons
@@ -89,6 +105,12 @@ const checkSvgs = () => {
     })
 
     console.log(pc.blue(footer))
+    if (coverageErrors.length > 0) {
+        console.error(pc.red(`\nSVG style coverage failed (${coverageErrors.length} issue(s)):`))
+        for (const error of coverageErrors) console.error(pc.red(`- ${error}`))
+        process.exit(1)
+    }
+
     console.log(pc.green('\nSVGs check completed successfully.'))
 }
 

@@ -12,12 +12,15 @@ import {
     WEIGHT_MAP,
     WEIGHTS,
     type DeprecatedIconAlias,
+    type IconDescription,
     type ParsedIcon,
     type ParsedIconGroup,
     type Weight,
 } from '@solar-icons/core'
-import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
+import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { reactNativeComponentFile, type FileDefinition } from './parser-hook'
+
+const descriptions = rawDescriptions as readonly IconDescription[]
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')
 const INDEX_PATH = path.resolve(import.meta.dirname, '../src/index.ts')

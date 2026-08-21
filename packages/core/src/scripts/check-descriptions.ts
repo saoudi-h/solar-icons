@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import pc from 'picocolors'
 import type { IconDescription, Metadata } from '../types'
+import { validateDescriptions } from './validate-descriptions'
 
 const DESCRIPTIONS_PATH = path.resolve(import.meta.dirname, '../metadata-descriptions.json')
 const METADATA_PATH = path.resolve(import.meta.dirname, '../metadata.json')
@@ -54,8 +55,13 @@ const main = () => {
         Object.values(metadata.categories).flatMap(category => category.icons)
     )
 
+    const schemaErrors = validateDescriptions(data, iconNames)
+    for (const error of schemaErrors) {
+        console.log(pc.red(`  - ${error}`))
+    }
+
     const required = ['name', 'category', 'categoryTags', 'tags']
-    let fails = 0
+    let fails = schemaErrors.length
     const seenNames = new Set<string>()
     const seenAliases = new Set<string>()
     for (let i = 0; i < data.length; i++) {

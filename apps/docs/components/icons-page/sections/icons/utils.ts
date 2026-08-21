@@ -12,16 +12,24 @@ export const getAllIcons = (): IconData[] => {
     return icons as IconData[]
 }
 
+export type OriginFilter = 'all' | 'extended'
+
 export const searchIcons = ({
     keyword,
     categories,
+    origin = 'all',
 }: {
     keyword?: string
     categories?: CategoryOption[] | undefined
+    origin?: OriginFilter
 }): IconData[] => {
-    const preFilteredIcons = categories?.length
+    const categoryFilteredIcons = categories?.length
         ? getAllIcons().filter(icon => categories.some(c => c.value === icon.category))
         : getAllIcons()
+    const preFilteredIcons =
+        origin === 'extended'
+            ? categoryFilteredIcons.filter(icon => icon.origin === 'extended')
+            : categoryFilteredIcons
 
     if (keyword) {
         const fuseSearch = new Fuse(preFilteredIcons, {

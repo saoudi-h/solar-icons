@@ -4,16 +4,24 @@
 
 ## Scripts
 
-| Script | Purpose |
-|---|---|
-| `generate-svgs.ts` | Pull components from Figma, normalize, write to `svgs/`. Requires `FIGMA_API_TOKEN` + `FIGMA_FILE_ID`. |
-| `generate-pngs.ts` | Render each SVG to a 128px PNG via `sharp`. |
-| `generate-descriptions.ts` | LLM-assisted tag/description generation. Manual tool. |
-| `fix-descriptions.ts` | Post-process pass on the descriptions JSON. Manual tool. |
-| `check-svgs.ts` | Walk `svgs/`, assert each category has all 6 styles, exit non-zero on mismatch. |
-| `check-metadata.ts` | Validate `metadata.json` shape. |
-| `sync-filenames.ts` | One-shot: rename SVG files whose names drifted from the canonical kebab-case map. |
-| `update-metadata-names.ts` | One-shot: rewrite `metadata.json` `icons[]` arrays to use the canonical name form. |
+| Script                     | Purpose                                                                                                                                                                                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `generate-svgs.ts`         | Pull components from Figma, normalize, write to `svgs/`. Requires `FIGMA_API_TOKEN` + `FIGMA_FILE_ID`.                                                                                                                  |
+| `generate-pngs.ts`         | Render each SVG to a 128px PNG via `sharp`.                                                                                                                                                                             |
+| `generate-descriptions.ts` | LLM-assisted tag/description generation. Manual tool.                                                                                                                                                                   |
+| `fix-descriptions.ts`      | Post-process pass on the descriptions JSON. Manual tool.                                                                                                                                                                |
+| `check-svgs.ts`            | Walk `svgs/`, assert each category has all 6 styles, exit non-zero on mismatch.                                                                                                                                         |
+| `check-metadata.ts`        | Validate `metadata.json` shape.                                                                                                                                                                                         |
+| `check-descriptions.ts`    | Validate `metadata-descriptions.json` against `descriptions.schema.json` (ajv) + alias rules, including deprecated replacement targets.                                                                                 |
+| `check-icons-metadata.ts`  | Icon ↔ metadata coverage gate (EXT-DIFF-GATE): every icon on disk needs a curated entry; new icons (untracked/staged in `svgs/` vs git HEAD) need an explicit `origin`. Run by `refresh-from-figma-zip.sh` after unzip. |
+| `fix-icons-metadata.ts`    | Prints draft `metadata-descriptions.json` entries for new icons (extended defaults, author from `git config user.name`). Output is pasted and curated manually.                                                         |
+| `sync-filenames.ts`        | One-shot: rename SVG files whose names drifted from the canonical kebab-case map.                                                                                                                                       |
+| `update-metadata-names.ts` | One-shot: rewrite `metadata.json` `icons[]` arrays to use the canonical name form.                                                                                                                                      |
+
+`deprecatedAliases` remains the compatibility path for names that were previously
+published and must continue to resolve. `aliases` is reserved for non-deprecated
+synonyms and is currently metadata-only; do not use it to replace a deprecated
+alias without an explicit migration decision.
 
 ## The `workflows/` engine
 

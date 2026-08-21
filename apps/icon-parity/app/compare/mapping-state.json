@@ -1,0 +1,119 @@
+{
+    "version": 1,
+    "objective": "Use the completed Solar to Lucide production pass to produce a strict binary replacement projection and a Lucide to Solar reverse inventory with exact replacements, explicit context-dependent fallbacks, and true gaps. Adding new icons and mutating the accepted map remain out of scope.",
+    "activeDirection": "lucide-to-solar-reverse-integration",
+    "activeSource": "lucide",
+    "stage": "reverse-review-complete-forward-integration-pending",
+    "finalDecisionContract": {
+        "type": "binary-canonical-output",
+        "matchDecision": "equivalent plus an explicit semantic promotion set",
+        "explicitNonMatchDecision": "no-match after semantic review",
+        "adjudicationDecisions": ["variant", "related"],
+        "notes": "Production labels remain historical audit data. Variant rows are semantic MATCH unless their Solar ID is explicitly listed in SEMANTIC_VARIANT_NO_MATCH_IDS because the primary object or state changes. Related rows are MATCH only when listed explicitly in forward-semantic-promotions.ts; all other related rows remain NO MATCH."
+    },
+    "acceptedMappingMutationAllowed": false,
+    "sourceSnapshot": {
+        "package": "@iconify-json/lucide",
+        "version": "1.2.123",
+        "canonicalIcons": 1836
+    },
+    "inventory": {
+        "solarIcons": 1247,
+        "solarAtlasSheets": 13,
+        "lucideAtlasSheets": 19
+    },
+    "pilot": {
+        "batch": "solar-to-lucide-calibration-30",
+        "targets": 30,
+        "visualDecisionsFrozen": true,
+        "existingMapComparedAfterFreeze": true,
+        "canonicalReferenceAndDecisionAgreement": 11,
+        "adjudication": {
+            "total": 19,
+            "resolved": 19,
+            "unresolved": 0,
+            "pending": 0,
+            "progressSource": "apps/icon-parity/app/compare/pilot-adjudication.json"
+        },
+        "qualityGate": "passed-for-production",
+        "results": {
+            "equivalent": 22,
+            "variant": 3,
+            "related": 1,
+            "no-match": 4
+        }
+    },
+    "production": {
+        "batchSize": 100,
+        "solarSheets": 13,
+        "executionMode": "one-continuous-agent-session",
+        "progressDirectory": "apps/icon-parity/app/compare/lucide-production",
+        "progressCommand": "pnpm --filter icon-parity production:status",
+        "coverageCommand": "pnpm --filter icon-parity lucide:coverage",
+        "coverageCheckCommand": "pnpm --filter icon-parity lucide:coverage:check",
+        "coveragePath": "apps/icon-parity/app/compare/lucide-coverage/coverage.json",
+        "auditReport": "apps/icon-parity/app/compare/lucide-coverage/AUDIT-REPORT.md",
+        "complete": true,
+        "acceptedMapMutationAllowed": false,
+        "forwardSemanticProjection": {
+            "match": 889,
+            "noMatch": 358,
+            "variantPromoted": 459,
+            "relatedPromoted": 93,
+            "referenceOverrides": 17,
+            "source": "apps/icon-parity/app/compare/forward-semantic-promotions.ts",
+            "method": "apps/icon-parity/app/compare/FORWARD-SEMANTIC-ADJUDICATION.md",
+            "candidateRecallCommand": "pnpm --filter icon-parity forward:recall-candidates"
+        },
+        "reverseCoverageTiers": {
+            "exact": 623,
+            "fallback": 44,
+            "gap": 1170,
+            "source": "apps/icon-parity/app/compare/lucide-coverage/coverage.json",
+            "policy": "apps/icon-parity/app/compare/reverse-coverage-policy.ts"
+        }
+    },
+    "sourcesOfTruth": {
+        "pathBase": "repository-root",
+        "restartProcedure": "apps/icon-parity/app/compare/MAPPING-SESSION-RUNBOOK.md",
+        "currentState": "apps/icon-parity/app/compare/mapping-state.json",
+        "decisionPolicy": "apps/icon-parity/app/compare/REVIEW-PROCEDURE.md",
+        "coverageRunbook": "apps/icon-parity/app/compare/LUCIDE-COVERAGE-RUNBOOK.md",
+        "reverseCoveragePolicy": "apps/icon-parity/app/compare/REVERSE-COVERAGE-TIERS.md",
+        "reverseCoverageOverrides": "apps/icon-parity/app/compare/reverse-coverage-policy.ts",
+        "coverageReport": "apps/icon-parity/app/compare/lucide-coverage/AUDIT-REPORT.md",
+        "coverageData": "apps/icon-parity/app/compare/lucide-coverage/coverage.json",
+        "collisionAudit": "apps/icon-parity/app/compare/lucide-coverage/COLLISION-AUDIT.md",
+        "latestEquivalentAudit": "apps/icon-parity/app/compare/lucide-coverage/EQUIVALENT-AUDIT-SHEET-13-BATCH-01.md",
+        "latestReverseAudit": "apps/icon-parity/app/compare/lucide-coverage/REVERSE-AUDIT-BATCH-01-FULL.md",
+        "atlasMethod": "apps/icon-parity/app/compare/ATLAS-REVIEW.md",
+        "pilotTargets": "apps/icon-parity/app/compare/pilot-icons.json",
+        "pilotShortlist": "apps/icon-parity/app/compare/pilot-shortlist.json",
+        "frozenPilotDecisions": "apps/icon-parity/app/compare/pilot-results.json",
+        "adjudicationRecord": "apps/icon-parity/app/compare/pilot-adjudication.json",
+        "acceptedMap": "apps/icon-parity/app/compare/verified-matches.json",
+        "productionBatches": "apps/icon-parity/app/compare/lucide-production",
+        "latestWorklog": ".autonomos/worklogs/2026-08-17-PARITY-LUCIDE-PRODUCTION.md",
+        "activeTask": "PARITY-LUCIDE-COVERAGE-REVERSE"
+    },
+    "nextAction": {
+        "id": "reverse-equivalent-integration",
+        "owner": "vision-capable agent supervised by the maintainer or a stronger reviewer",
+        "instructions": [
+            "Read LUCIDE-COVERAGE-RUNBOOK.md and FORWARD-SEMANTIC-ADJUDICATION.md before editing.",
+            "Use /lucide-gap with the TROUVÉS EN REVERSE filter to inspect the 93 reverse equivalents not yet in the forward projection.",
+            "Resolve collisions where several Lucide names point to the same Solar icon before changing the forward projection.",
+            "Integrate only visually and semantically validated choices into forward-semantic-promotions.ts.",
+            "Keep verified-matches.json unchanged until the maintainer explicitly authorizes accepted-map replacement.",
+            "After integration, audit the remaining 1,169 gap rows for false negatives without reopening closed packets."
+        ],
+        "doneWhen": [
+            "The /lucide-gap page exposes exact, fallback, reverse-review, and true-gap queues.",
+            "The 93 reverse equivalents are either integrated with an explicit forward reference or documented as collision-deferred.",
+            "No reverse review silently mutates verified-matches.json.",
+            "No production decision has been copied into verified-matches.json."
+        ]
+    },
+    "blockedUntilNextActionCompletes": "Adding another reference pack or changing verified-matches.json without completing the reverse-equivalent integration audit.",
+    "lastUpdated": "2026-08-18"
+}

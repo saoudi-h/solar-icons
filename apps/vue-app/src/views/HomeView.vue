@@ -7,9 +7,12 @@ import { SolarProvider } from '@solar-icons/vue'
 import Gallery from '@/components/Gallery.vue'
 import ProviderDemo from '@/components/ProviderDemo.vue'
 import * as solarIcons from '@solar-icons/vue'
+import { STYLES, getIconNames } from '@/lib/icon-list'
+import * as Bold from '@solar-icons/vue/bold'
 
 const cssColor = ref('#f59e0b')
 const cssSize = ref(40)
+const iconCount = getIconNames(Bold).length
 </script>
 
 <template>
@@ -18,7 +21,10 @@ const cssSize = ref(40)
       <div class="flex flex-row items-center justify-between gap-2 w-full py-6">
         <div class="flex flex-col gap-2">
           <h1 class="text-4xl font-bold">Solar Icons - Vue</h1>
-          <p class="text-muted-foreground">1246 icons x 6 styles = 7476 variants</p>
+          <p class="text-muted-foreground">
+            {{ iconCount }} icons x {{ STYLES.length }} styles =
+            {{ iconCount * STYLES.length }} variants
+          </p>
         </div>
       </div>
 

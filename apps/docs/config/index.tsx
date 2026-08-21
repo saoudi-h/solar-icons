@@ -118,7 +118,7 @@ export const config: Config = {
             part1: 'Solar Icons',
             part2: 'for Modern Frameworks',
         },
-        content: '1,246 unique icons in six styles, packaged for modern web and mobile frameworks.',
+        content: '1,268 unique icons in six styles, packaged for modern web and mobile frameworks.',
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',

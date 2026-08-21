@@ -1,0 +1,129 @@
+[
+    {
+        "source": "lucide",
+        "sourceId": "L1095",
+        "sourceName": "minus",
+        "priority": "critical",
+        "priorityReason": "Primitive control counterpart to the existing extended add icon; required by counters, toggles, and zoom controls.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "minus"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0602",
+        "sourceName": "ellipsis-vertical",
+        "priority": "critical",
+        "priorityReason": "Common overflow-menu primitive; it is a deterministic vertical derivation of Solar menu-dots, not an AI design task.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0995",
+        "sourceName": "loader-circle",
+        "priority": "high",
+        "priorityReason": "Generic async loading state; it can be constructed deterministically from an existing Solar circular primitive.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0828",
+        "sourceName": "grip-vertical",
+        "priority": "high",
+        "priorityReason": "Common drag-and-drop handle; the three-dot grip family is simple to derive and useful in sortable interfaces.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1127",
+        "sourceName": "move",
+        "priority": "high",
+        "priorityReason": "Generic repositioning control; it can be derived from the existing maximize-square arrow geometry, with circle and square variants considered separately.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0297",
+        "sourceName": "camera-off",
+        "priority": "high",
+        "priorityReason": "Common video-call state that completes the existing camera family while requiring a deliberate slash or disabled-state treatment.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0236",
+        "sourceName": "bot",
+        "priority": "high",
+        "priorityReason": "Broadly used for assistants and AI features; Solar has no generic robot/assistant symbol, so the silhouette needs an original design.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0245",
+        "sourceName": "brain",
+        "priority": "normal",
+        "priorityReason": "Useful for intelligence, learning, and AI contexts, but more domain-specific than the primitive controls.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0149",
+        "sourceName": "barcode",
+        "priority": "high",
+        "priorityReason": "Common commerce and scanning primitive absent from Solar; the design needs controlled bar rhythm rather than a trivial modifier.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0185",
+        "sourceName": "binoculars",
+        "priority": "normal",
+        "priorityReason": "Useful inspection/search object with no Solar equivalent; it requires a balanced two-lens silhouette.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1180",
+        "sourceName": "paintbrush",
+        "priority": "high",
+        "priorityReason": "Common design and creative-tool symbol; paint-roller and palette do not preserve the brush object.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1669",
+        "sourceName": "toolbox",
+        "priority": "high",
+        "priorityReason": "Useful developer, maintenance, and settings symbol; Solar has cases and boxes but no generic toolbox silhouette.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1791",
+        "sourceName": "webcam",
+        "priority": "high",
+        "priorityReason": "Common remote-work and video-interface object distinct from a handheld camera or videocamera.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1801",
+        "sourceName": "wifi-cog",
+        "priority": "normal",
+        "priorityReason": "Useful network-configuration compound; Solar has routers and transmission symbols but no combined Wi-Fi/settings state.",
+        "workType": "assisted-design",
+        "status": "planned"
+    }
+]

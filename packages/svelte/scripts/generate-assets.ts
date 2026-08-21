@@ -130,10 +130,14 @@ function generateDeprecatedAliasFiles(
             files.push({
                 path: path.join(ICONS_PATH, icon.styleKebab, `${alias.name}.svelte`),
                 content: `<!-- GENERATED FILE -->
-<script module lang="ts">
+<script lang="ts">
 /** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */
-export { default } from './${icon.name}.svelte';
+import CanonicalIcon from './${icon.name}.svelte';
+
+let props = $props();
 </script>
+
+<CanonicalIcon {...props} />
 `,
             });
         }
@@ -143,10 +147,14 @@ export { default } from './${icon.name}.svelte';
             files.push({
                 path: path.join(ICONS_PATH, 'dynamic', `${alias.name}.svelte`),
                 content: `<!-- GENERATED FILE -->
-<script module lang="ts">
+<script lang="ts">
 /** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */
-export { default } from './${group.name}.svelte';
+import CanonicalIcon from './${group.name}.svelte';
+
+let props = $props();
 </script>
+
+<CanonicalIcon {...props} />
 `,
             });
         }

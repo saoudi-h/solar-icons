@@ -1,0 +1,418 @@
+{
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review-closed",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "sourceTemplate": "lucide-gap-batch-01-non-equivalent-calibration.json",
+    "filter": {
+        "coverage": "non-equivalent",
+        "suggestedBatch": 1
+    },
+    "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+    "forwardIntegration": {
+        "promotedExistingReferences": 21,
+        "aliasDeferred": ["L0610", "L0094", "L0577"]
+    },
+    "entries": [
+        {
+            "rank": 1,
+            "lucideId": "L1488",
+            "lucide": "square",
+            "solarCandidates": ["S0377", "S0171", "S0284"],
+            "decision": "no-match",
+            "note": "Solar evidence is always a semantic square modifier (explicit, camera, or code), not a plain square."
+        },
+        {
+            "rank": 2,
+            "lucideId": "L1225",
+            "lucide": "person-standing",
+            "solarCandidates": ["S0114", "S0505", "S1058"],
+            "decision": "no-match",
+            "note": "The Solar candidates add a body pose or activity; none is a neutral standing-person symbol."
+        },
+        {
+            "rank": 3,
+            "lucideId": "L0610",
+            "lucide": "expand",
+            "solarCandidates": ["S0439", "S0634", "S0636"],
+            "decision": "equivalent",
+            "note": "Full-screen/maximize expresses the same expand action; enclosure and corner construction are stylistic."
+        },
+        {
+            "rank": 4,
+            "lucideId": "L1145",
+            "lucide": "navigation",
+            "solarCandidates": ["S0616", "S0469", "S1057"],
+            "decision": "no-match",
+            "note": "Lucide is a navigation pointer; Solar map/GPS/street-navigation icons encode a map or location context."
+        },
+        {
+            "rank": 5,
+            "lucideId": "L1475",
+            "lucide": "sparkles",
+            "solarCandidates": ["S1037", "S1038", "S0991"],
+            "decision": "no-match",
+            "note": "Stars and special-effects are related decoration, but do not preserve the same sparkle/magic cue."
+        },
+        {
+            "rank": 6,
+            "lucideId": "L0251",
+            "lucide": "briefcase",
+            "solarCandidates": ["S0195", "S0196", "S1062"],
+            "decision": "equivalent",
+            "note": "Solar case-round is the same generic briefcase object; rounded proportions are stylistic."
+        },
+        {
+            "rank": 7,
+            "lucideId": "L1433",
+            "lucide": "shopping-bag",
+            "solarCandidates": ["S0065", "S0066", "S0067"],
+            "decision": "no-match",
+            "note": "Solar bag variants remain generic bags; the shopping-bag target requires a specific interchangeable silhouette."
+        },
+        {
+            "rank": 8,
+            "lucideId": "L1459",
+            "lucide": "sliders-horizontal",
+            "solarCandidates": ["S0954", "S0955", "S0285"],
+            "decision": "no-match",
+            "note": "Solar slider/tuning candidates represent one control or a different tuning mark, not three horizontal adjustment sliders."
+        },
+        {
+            "rank": 9,
+            "lucideId": "L0335",
+            "lucide": "chart-line",
+            "solarCandidates": ["S0470", "S0204", "S0473"],
+            "decision": "equivalent",
+            "note": "Solar graph is the same line-chart concept; axes, frame, and line treatment are stylistic."
+        },
+        {
+            "rank": 10,
+            "lucideId": "L0764",
+            "lucide": "footprints",
+            "solarCandidates": ["S0879", "S1210", "S0733"],
+            "decision": "no-match",
+            "note": "Running, walking, and paw icons do not encode a pair of footprints."
+        },
+        {
+            "rank": 11,
+            "lucideId": "L0395",
+            "lucide": "circle-dot",
+            "solarCandidates": ["S0805", "S0807", "S0486"],
+            "decision": "no-match",
+            "note": "Solar record/record-circle carries a recording or media meaning; the generic circle-dot state is not interchangeable."
+        },
+        {
+            "rank": 12,
+            "lucideId": "L0564",
+            "lucide": "disc",
+            "solarCandidates": ["S1200", "S0806", "S0808"],
+            "decision": "no-match",
+            "note": "Vinyl/record candidates encode media formats or recording, not the generic disc target."
+        },
+        {
+            "rank": 13,
+            "lucideId": "L1168",
+            "lucide": "orbit",
+            "solarCandidates": ["S0760", "S0761", "S0366"],
+            "decision": "no-match",
+            "note": "Solar planet/earth icons depict a celestial body; Lucide orbit depicts an orbital path/system."
+        },
+        {
+            "rank": 14,
+            "lucideId": "L1336",
+            "lucide": "rotate-ccw",
+            "solarCandidates": ["S0508", "S0826", "S0234"],
+            "decision": "no-match",
+            "note": "The closest Solar restart/history arrows differ in direction or action semantics."
+        },
+        {
+            "rank": 15,
+            "lucideId": "L1476",
+            "lucide": "speaker",
+            "solarCandidates": ["S0989", "S0990", "S0960"],
+            "decision": "equivalent",
+            "note": "Solar speaker is the same audio-speaker object; housing and sound-detail treatment are stylistic."
+        },
+        {
+            "rank": 16,
+            "lucideId": "L0005",
+            "lucide": "activity",
+            "solarCandidates": ["S0788", "S0789", "S0859"],
+            "decision": "no-match",
+            "note": "Pulse/graph candidates add a medical frame or graph context; none is the neutral activity waveform."
+        },
+        {
+            "rank": 17,
+            "lucideId": "L1368",
+            "lucide": "scan",
+            "solarCandidates": ["S0892", "S0710", "S0283"],
+            "decision": "no-match",
+            "note": "Solar scanner/object/code scans add a device or scan subject; Lucide is the neutral scan-corners action."
+        },
+        {
+            "rank": 18,
+            "lucideId": "L0700",
+            "lucide": "file-x",
+            "solarCandidates": ["S0398", "S0394", "S0423"],
+            "decision": "equivalent",
+            "note": "Solar file-remove is the same file-with-X action; page corner and X construction are stylistic."
+        },
+        {
+            "rank": 19,
+            "lucideId": "L0834",
+            "lucide": "hand",
+            "solarCandidates": ["S0480", "S1173", "S0477"],
+            "decision": "no-match",
+            "note": "Handshake, raised-hand, and hand-heart are distinct gestures or actions, not a neutral hand."
+        },
+        {
+            "rank": 20,
+            "lucideId": "L0983",
+            "lucide": "list-music",
+            "solarCandidates": ["S0769", "S0770", "S0695"],
+            "decision": "no-match",
+            "note": "Solar playlists use play-list or slider motifs; none preserves the neutral list-with-music-note meaning."
+        },
+        {
+            "rank": 21,
+            "lucideId": "L1044",
+            "lucide": "medal",
+            "solarCandidates": ["S0639", "S0640", "S0642"],
+            "decision": "equivalent",
+            "note": "Solar medal-ribbon is the same medal award object; ribbon and center-mark construction are stylistic."
+        },
+        {
+            "rank": 22,
+            "lucideId": "L1246",
+            "lucide": "pill-bottle",
+            "solarCandidates": ["S0539", "S0540", "S0747"],
+            "decision": "no-match",
+            "note": "Jar-of-pills and pill candidates differ from Lucide's single bottle container with label."
+        },
+        {
+            "rank": 23,
+            "lucideId": "L1460",
+            "lucide": "sliders-vertical",
+            "solarCandidates": ["S0956", "S0957", "S1131"],
+            "decision": "no-match",
+            "note": "Solar candidates are single sliders or tuning controls, not the three-control vertical sliders symbol."
+        },
+        {
+            "rank": 24,
+            "lucideId": "L0078",
+            "lucide": "arrow-down-to-line",
+            "solarCandidates": ["S0347", "S0577", "S0983"],
+            "decision": "no-match",
+            "note": "Double-arrow and list-arrow variants do not preserve the arrow-to-baseline action."
+        },
+        {
+            "rank": 25,
+            "lucideId": "L0094",
+            "lucide": "arrow-up-down",
+            "solarCandidates": ["S1119", "S0985", "S0861"],
+            "decision": "equivalent",
+            "note": "Solar transfer-vertical expresses the same bidirectional vertical transfer; circle/sort framing is optional styling."
+        },
+        {
+            "rank": 26,
+            "lucideId": "L0254",
+            "lucide": "briefcase-medical",
+            "solarCandidates": ["S0645", "S0479", "S0539"],
+            "decision": "equivalent",
+            "note": "Solar medical-kit is the same medical case/kit object; plus mark and case construction are stylistic."
+        },
+        {
+            "rank": 27,
+            "lucideId": "L0402",
+            "lucide": "circle-gauge",
+            "solarCandidates": ["S0992", "S0993", "S0994"],
+            "decision": "no-match",
+            "note": "Solar speedometers encode explicit low/max/middle states, which are not interchangeable with a neutral gauge."
+        },
+        {
+            "rank": 28,
+            "lucideId": "L0487",
+            "lucide": "coffee",
+            "solarCandidates": ["S0313", "S0686", "S1081"],
+            "decision": "equivalent",
+            "note": "Solar cup-hot is the same hot coffee/cup concept; steam and cup geometry are stylistic."
+        },
+        {
+            "rank": 29,
+            "lucideId": "L0577",
+            "lucide": "door-open",
+            "solarCandidates": ["S0376", "S0257", "S0460"],
+            "decision": "equivalent",
+            "note": "Solar exit depicts the same open-door object/action; the doorway and panel construction are stylistic."
+        },
+        {
+            "rank": 30,
+            "lucideId": "L1205",
+            "lucide": "paper-bag",
+            "solarCandidates": ["S0065", "S0066", "S0315"],
+            "decision": "no-match",
+            "note": "Solar bag/cup-paper evidence does not preserve a paper shopping bag as a specific object."
+        },
+        {
+            "rank": 31,
+            "lucideId": "L1320",
+            "lucide": "repeat",
+            "solarCandidates": ["S0821", "S0822", "S0860"],
+            "decision": "equivalent",
+            "note": "Solar repeat is the same repeat action; arrow curvature and enclosure are stylistic."
+        },
+        {
+            "rank": 32,
+            "lucideId": "L1698",
+            "lucide": "trophy",
+            "solarCandidates": ["S0311", "S0312", "S0802"],
+            "decision": "equivalent",
+            "note": "Solar cup is the same trophy/cup award object; pedestal and handle proportions are stylistic."
+        },
+        {
+            "rank": 33,
+            "lucideId": "L1709",
+            "lucide": "type",
+            "solarCandidates": ["S1097", "S1091", "S1102"],
+            "decision": "equivalent",
+            "note": "Solar text-format is the same typography/type action; enclosing marks are stylistic variants."
+        },
+        {
+            "rank": 34,
+            "lucideId": "L0004",
+            "lucide": "accessibility",
+            "solarCandidates": ["S0001", "S0738", "S0114"],
+            "decision": "equivalent",
+            "note": "Solar accessibility conveys the same accessibility symbol and use; person construction is stylistic."
+        },
+        {
+            "rank": 35,
+            "lucideId": "L0183",
+            "lucide": "bike",
+            "solarCandidates": ["S0100", "S0101", "S0896"],
+            "decision": "no-match",
+            "note": "Solar bicycling includes a rider and scooter is a different vehicle; neither is the neutral bicycle target."
+        },
+        {
+            "rank": 36,
+            "lucideId": "L0265",
+            "lucide": "building",
+            "solarCandidates": ["S0147", "S0148", "S0149"],
+            "decision": "no-match",
+            "note": "Solar candidates depict multiple buildings or a city grouping, not a singular building."
+        },
+        {
+            "rank": 37,
+            "lucideId": "L0676",
+            "lucide": "file-plus",
+            "solarCandidates": ["S0338", "S0339", "S0246"],
+            "decision": "equivalent",
+            "note": "Solar document-add is the same file/document-plus action; page framing and plus placement are stylistic."
+        },
+        {
+            "rank": 38,
+            "lucideId": "L0883",
+            "lucide": "house-plus",
+            "solarCandidates": ["S0513", "S0514", "S0511"],
+            "decision": "equivalent",
+            "note": "Solar home-add is the same house-plus action; roof and plus construction are stylistic."
+        },
+        {
+            "rank": 39,
+            "lucideId": "L0972",
+            "lucide": "list-check",
+            "solarCandidates": ["S0581", "S0582", "S0229"],
+            "decision": "equivalent",
+            "note": "Solar list-check is the same checklist/list-check action; line and check construction are stylistic."
+        },
+        {
+            "rank": 40,
+            "lucideId": "L0973",
+            "lucide": "list-checks",
+            "solarCandidates": ["S0229", "S0230", "S0581"],
+            "decision": "equivalent",
+            "note": "Solar checklist is the same multiple-checklist object; rows and check geometry are stylistic."
+        },
+        {
+            "rank": 41,
+            "lucideId": "L0992",
+            "lucide": "list-video",
+            "solarCandidates": ["S0769", "S0770", "S0771"],
+            "decision": "equivalent",
+            "note": "Solar playlist is the same video-playlist/list-with-play concept; list and play construction are stylistic."
+        },
+        {
+            "rank": 42,
+            "lucideId": "L1005",
+            "lucide": "log-out",
+            "solarCandidates": ["S0603", "S0604", "S0376"],
+            "decision": "equivalent",
+            "note": "Solar logout is the same exit/logout action; door and arrow construction are stylistic."
+        },
+        {
+            "rank": 43,
+            "lucideId": "L1082",
+            "lucide": "mic",
+            "solarCandidates": ["S0654", "S0655", "S0656"],
+            "decision": "equivalent",
+            "note": "Solar microphone is the same microphone object; capsule and stand geometry are stylistic."
+        },
+        {
+            "rank": 44,
+            "lucideId": "L1096",
+            "lucide": "mirror-rectangular",
+            "solarCandidates": ["S0669", "S0670", "S1187"],
+            "decision": "no-match",
+            "note": "Solar mirror/vanity candidates are round or furniture-like; none is a neutral rectangular hand mirror."
+        },
+        {
+            "rank": 45,
+            "lucideId": "L1097",
+            "lucide": "mirror-round",
+            "solarCandidates": ["S0669", "S0670", "S0671"],
+            "decision": "equivalent",
+            "note": "Solar mirror is the same standing mirror object; frame and stand construction are stylistic."
+        },
+        {
+            "rank": 46,
+            "lucideId": "L1113",
+            "lucide": "moon-star",
+            "solarCandidates": ["S0681", "S0680", "S0678"],
+            "decision": "equivalent",
+            "note": "Solar moon-stars is the same crescent-moon-with-star concept; star count and placement are stylistic."
+        },
+        {
+            "rank": 47,
+            "lucideId": "L1121",
+            "lucide": "mouse-pointer",
+            "solarCandidates": ["S0317", "S0318", "S0682"],
+            "decision": "equivalent",
+            "note": "Solar cursor is the same pointer cursor object; outline and enclosure are stylistic."
+        },
+        {
+            "rank": 48,
+            "lucideId": "L1149",
+            "lucide": "network",
+            "solarCandidates": ["S1060", "S0427", "S0921"],
+            "decision": "no-match",
+            "note": "Solar structure/folder-connect evidence changes the network topology or object context, so it is not a strict replacement."
+        },
+        {
+            "rank": 49,
+            "lucideId": "L1251",
+            "lucide": "plane",
+            "solarCandidates": ["S0757", "S0758", "S0759"],
+            "decision": "no-match",
+            "note": "Solar plane candidates are paper-plane/message marks, not Lucide's aircraft silhouette."
+        },
+        {
+            "rank": 50,
+            "lucideId": "L1342",
+            "lucide": "rotate-cw-square",
+            "solarCandidates": ["S0814", "S0828", "S0909"],
+            "decision": "no-match",
+            "note": "Refresh/restart/server-update candidates add a different action or object context to the square."
+        }
+    ]
+}

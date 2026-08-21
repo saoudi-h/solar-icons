@@ -17,6 +17,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
 import { GeometryControl } from './GeometryControl'
+import { ExtendedFilterToggle } from './OriginControls'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
 import { ViewModeToggle } from './ViewModeToggle'
@@ -24,6 +25,7 @@ import {
     activeCategoryAtom,
     DEFAULT_VALUES,
     filteredCountAtom,
+    useOriginFilter,
     useSearchKeyword,
     useStyleURL,
 } from './context'
@@ -31,6 +33,7 @@ import {
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
     const [keyword, setKeyword] = useSearchKeyword()
+    const [, setOrigin] = useOriginFilter()
     const [weight, setWeight] = useStyleURL()
     const setActiveCategory = useSetAtom(activeCategoryAtom)
 
@@ -79,6 +82,7 @@ export const FilterBarContent: React.FC = () => {
         setSecondaryColor(DEFAULT_VALUES.secondaryColor)
         setSecondaryOpacity(DEFAULT_VALUES.secondaryOpacity)
         setKeyword('')
+        setOrigin('all')
         setInputValue('')
         setActiveCategory(null)
         if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -130,6 +134,7 @@ export const FilterBarContent: React.FC = () => {
 
             {/* Section D — View */}
             <ViewModeToggle />
+            <ExtendedFilterToggle />
 
             {/* Section E — Search (pushed to the right) */}
             <SearchInput
@@ -138,7 +143,6 @@ export const FilterBarContent: React.FC = () => {
                 count={filteredCount}
                 className="ml-auto"
             />
-
             {/* Section F — Reset */}
             <Tooltip>
                 <TooltipTrigger asChild>

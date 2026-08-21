@@ -3,7 +3,10 @@
     "version": "2.0.0-beta.0",
     "private": true,
     "scripts": {
+        "predev": "pnpm prepare:catalog",
         "dev": "vite dev",
+        "prebuild": "pnpm prepare:catalog",
+        "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/svelte",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

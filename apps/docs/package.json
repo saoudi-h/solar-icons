@@ -4,8 +4,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "tsx ./scripts/generate-changelog.ts && next build",
+        "build": "pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build",
         "dev": "next dev --turbo",
+        "predev": "pnpm generate:catalog",
         "start": "next start",
         "postinstall": "fumadocs-mdx",
         "lint": "eslint . && pnpm lint:links",
@@ -18,6 +19,7 @@
         "generate:hero:utils": "tsx ./scripts/generateHeroUtils.ts",
         "generate:data": "tsx ./scripts/generate-data.ts",
         "generate:descriptions": "tsx ./scripts/generate-descriptions.ts",
+        "generate:catalog": "pnpm generate:data && pnpm generate:descriptions && pnpm generate:hero:utils",
         "lint-staged": "lint-staged",
         "pre-commit": "lint-staged",
         "lint:links": "fumadocs-mdx && bun scripts/lint.ts",

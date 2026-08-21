@@ -1,0 +1,200 @@
+{
+    "version": 1,
+    "batch": "solar-to-lucide-calibration-30",
+    "direction": "solar-to-lucide",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "stage": "independent-adjudication",
+    "instructions": "Resolve only the 19 disagreements shown on the generated adjudication boards. Preserve concept and specificity. Do not edit verified-matches.json from this file without maintainer acceptance.",
+    "entries": [
+        {
+            "solar": "accessibility",
+            "solarId": "S0001",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "accessibility",
+            "referenceId": "L0004",
+            "decision": "related",
+            "note": "Solar shows a generic standing person inside a circular enclosure, while Lucide shows a wheelchair user without an enclosure; both signal accessibility but the subject and containment differ."
+        },
+        {
+            "solar": "check-circle",
+            "solarId": "S0226",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "circle-check",
+            "referenceId": "L0386",
+            "decision": "equivalent",
+            "note": "Solar keeps the check fully enclosed by a complete circle, which Lucide circle-check preserves; circle-check-big instead uses an open ring and an oversized check that crosses it."
+        },
+        {
+            "solar": "adhesive-plaster",
+            "solarId": "S0006",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "bandage",
+            "referenceId": "L0138",
+            "decision": "variant",
+            "note": "Both depict an adhesive bandage, but Solar crosses two padded strips into an X while Lucide bandage shows one horizontal strip, so the object matches with a meaningful drawing difference."
+        },
+        {
+            "solar": "case",
+            "solarId": "S0193",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "briefcase-business",
+            "referenceId": "L0252",
+            "decision": "equivalent",
+            "note": "Solar is a handled briefcase with a flap and centered front clasp, matching Lucide briefcase-business; the existing divided briefcase lacks that flap-and-clasp structure."
+        },
+        {
+            "solar": "danger-triangle",
+            "solarId": "S0322",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "triangle-alert",
+            "referenceId": "L1695",
+            "decision": "equivalent",
+            "note": "Solar is an exclamation mark enclosed by a rounded warning triangle, and Lucide triangle-alert preserves both the warning modifier and the enclosing shape."
+        },
+        {
+            "solar": "diskette",
+            "solarId": "S0332",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "save",
+            "referenceId": "L1359",
+            "decision": "equivalent",
+            "note": "Solar depicts a floppy disk with its label slot and lower inset, and Lucide save preserves the same floppy-disk pictogram despite using an action name."
+        },
+        {
+            "solar": "hamburger-menu",
+            "solarId": "S0476",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "menu",
+            "referenceId": "L1049",
+            "decision": "equivalent",
+            "note": "Solar is three equal horizontal menu lines, which Lucide menu reproduces; the existing hamburger is a food pictogram rather than a navigation control."
+        },
+        {
+            "solar": "lock-unlocked",
+            "solarId": "S0599",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "lock-open",
+            "referenceId": "L1003",
+            "decision": "equivalent",
+            "note": "Solar shows an open shackle over an undecorated lock body, matching Lucide lock-open without adding a keyhole or other modifier."
+        },
+        {
+            "solar": "magnifier",
+            "solarId": "S0611",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "search",
+            "referenceId": "L1388",
+            "decision": "equivalent",
+            "note": "Solar is a simple standalone magnifying glass, and Lucide search preserves the same circular lens and angled handle without an added modifier."
+        },
+        {
+            "solar": "airbuds",
+            "solarId": "S0008",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar depicts a pair of in-ear earbuds, while the inspected Lucide headphones and headset are over-ear or head-mounted; no Lucide icon preserves the in-ear pair."
+        },
+        {
+            "solar": "alarm-remove",
+            "solarId": "S0022",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "alarm-clock-minus",
+            "referenceId": "L0011",
+            "decision": "equivalent",
+            "note": "Solar combines an alarm clock with a centered minus modifier, which Lucide alarm-clock-minus preserves; the existing alarm-clock changes that state to clock hands."
+        },
+        {
+            "solar": "bookmark-circle",
+            "solarId": "S0133",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "bookmark",
+            "referenceId": "L0229",
+            "decision": "variant",
+            "note": "The bookmark shape matches, but Solar places it inside a complete circular enclosure that Lucide bookmark omits, making the reference a meaningful variant."
+        },
+        {
+            "solar": "face-scan-square",
+            "solarId": "S0385",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "scan-face",
+            "referenceId": "L1372",
+            "decision": "equivalent",
+            "note": "Solar combines a smiling face with four scan corners, and Lucide scan-face preserves both the face and the framing; the existing scan omits the face."
+        },
+        {
+            "solar": "gamepad-charge",
+            "solarId": "S0456",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a gamepad with a charging cable or connector extending below it; the inspected Lucide gamepad variants omit that charging modifier, and separate battery or charger icons are not equivalent composites."
+        },
+        {
+            "solar": "rewind-10-seconds-forward",
+            "solarId": "S0831",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar is a circular 10-second media control with an explicit numeral, while the inspected Lucide rewind, skip, refresh, and rotate families omit the 10-second specificity."
+        },
+        {
+            "solar": "server-square-cloud",
+            "solarId": "S0908",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a server block with a cloud at the lower right; the inspected Lucide server and monitor-cloud icons split those cues by changing the object or omitting the server, so neither preserves the composite meaning."
+        },
+        {
+            "solar": "shield-cross",
+            "solarId": "S0916",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "shield-x",
+            "referenceId": "L1429",
+            "decision": "equivalent",
+            "note": "Solar is a shield with a centered X modifier, and Lucide shield-x preserves both the shield enclosure and the cross; the existing shield drops the modifier."
+        },
+        {
+            "solar": "tea-cup",
+            "solarId": "S1081",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "coffee",
+            "referenceId": "L0487",
+            "decision": "equivalent",
+            "note": "Both show a steaming handled hot-drink cup without a tea-specific modifier, so Lucide coffee preserves the same object and specificity despite the vocabulary difference."
+        },
+        {
+            "solar": "text-underline-cross",
+            "solarId": "S1106",
+            "status": "resolved",
+            "selectedBasis": "pilot",
+            "reference": "underline",
+            "referenceId": "L1713",
+            "decision": "variant",
+            "note": "Solar places the underlined U inside a rounded-square control, while Lucide underline preserves the letter and underline but omits that enclosing control."
+        }
+    ]
+}

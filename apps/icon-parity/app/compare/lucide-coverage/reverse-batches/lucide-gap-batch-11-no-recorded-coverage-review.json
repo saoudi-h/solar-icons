@@ -1,0 +1,834 @@
+{
+  "version": 1,
+  "direction": "lucide-to-solar-gap",
+  "phase": "visual-review-closed",
+  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+  "sourceTemplate": "lucide-gap-batch-11-no-recorded-coverage.json",
+  "filter": {
+    "coverage": "no-recorded-coverage",
+    "suggestedBatch": 1
+  },
+  "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+  "forwardIntegration": {
+    "promotedExistingReferences": 0,
+    "aliasDeferred": []
+  },
+  "entries": [
+    {
+      "rank": 1,
+      "lucideId": "L0545",
+      "lucide": "database-x",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 2,
+      "lucideId": "L0546",
+      "lucide": "database-zap",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 3,
+      "lucideId": "L0547",
+      "lucide": "decimals-arrow-left",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 4,
+      "lucideId": "L0548",
+      "lucide": "decimals-arrow-right",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 5,
+      "lucideId": "L0550",
+      "lucide": "dessert",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 6,
+      "lucideId": "L0551",
+      "lucide": "diameter",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 7,
+      "lucideId": "L0552",
+      "lucide": "diamond",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 8,
+      "lucideId": "L0553",
+      "lucide": "diamond-minus",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 9,
+      "lucideId": "L0554",
+      "lucide": "diamond-percent",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 10,
+      "lucideId": "L0555",
+      "lucide": "diamond-plus",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 11,
+      "lucideId": "L0556",
+      "lucide": "dice-1",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 12,
+      "lucideId": "L0557",
+      "lucide": "dice-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 13,
+      "lucideId": "L0558",
+      "lucide": "dice-3",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 14,
+      "lucideId": "L0559",
+      "lucide": "dice-4",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 15,
+      "lucideId": "L0560",
+      "lucide": "dice-5",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 16,
+      "lucideId": "L0561",
+      "lucide": "dice-6",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 17,
+      "lucideId": "L0562",
+      "lucide": "dices",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 18,
+      "lucideId": "L0563",
+      "lucide": "diff",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 19,
+      "lucideId": "L0565",
+      "lucide": "disc-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 20,
+      "lucideId": "L0568",
+      "lucide": "divide",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 21,
+      "lucideId": "L0571",
+      "lucide": "dock",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 22,
+      "lucideId": "L0576",
+      "lucide": "door-closed-locked",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 23,
+      "lucideId": "L0578",
+      "lucide": "dot",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 24,
+      "lucideId": "L0581",
+      "lucide": "drama",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 25,
+      "lucideId": "L0583",
+      "lucide": "drill",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 26,
+      "lucideId": "L0584",
+      "lucide": "drone",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 27,
+      "lucideId": "L0586",
+      "lucide": "droplet-off",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 28,
+      "lucideId": "L0588",
+      "lucide": "drum",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 29,
+      "lucideId": "L0589",
+      "lucide": "drumstick",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 30,
+      "lucideId": "L0592",
+      "lucide": "ear-off",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 31,
+      "lucideId": "L0594",
+      "lucide": "earth-lock",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 32,
+      "lucideId": "L0595",
+      "lucide": "eclipse",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 33,
+      "lucideId": "L0596",
+      "lucide": "egg",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 34,
+      "lucideId": "L0597",
+      "lucide": "egg-fried",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 35,
+      "lucideId": "L0598",
+      "lucide": "egg-off",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 36,
+      "lucideId": "L0599",
+      "lucide": "eject",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 37,
+      "lucideId": "L0600",
+      "lucide": "ellipse",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 38,
+      "lucideId": "L0603",
+      "lucide": "equal",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 39,
+      "lucideId": "L0604",
+      "lucide": "equal-approximately",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 40,
+      "lucideId": "L0605",
+      "lucide": "equal-not",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 41,
+      "lucideId": "L0607",
+      "lucide": "ethernet-port",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 42,
+      "lucideId": "L0614",
+      "lucide": "eye-dashed",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 43,
+      "lucideId": "L0621",
+      "lucide": "face-slightly-smiling",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 44,
+      "lucideId": "L0622",
+      "lucide": "face-slightly-smiling-plus",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 45,
+      "lucideId": "L0623",
+      "lucide": "facebook",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 46,
+      "lucideId": "L0624",
+      "lucide": "factory",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 47,
+      "lucideId": "L0627",
+      "lucide": "feather",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 48,
+      "lucideId": "L0628",
+      "lucide": "fence",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 49,
+      "lucideId": "L0633",
+      "lucide": "file-audio",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 50,
+      "lucideId": "L0634",
+      "lucide": "file-audio-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 51,
+      "lucideId": "L0635",
+      "lucide": "file-axis-3d",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 52,
+      "lucideId": "L0637",
+      "lucide": "file-badge-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 53,
+      "lucideId": "L0638",
+      "lucide": "file-box",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 54,
+      "lucideId": "L0639",
+      "lucide": "file-braces",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 55,
+      "lucideId": "L0640",
+      "lucide": "file-braces-corner",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 56,
+      "lucideId": "L0641",
+      "lucide": "file-chart-column",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 57,
+      "lucideId": "L0642",
+      "lucide": "file-chart-column-increasing",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 58,
+      "lucideId": "L0643",
+      "lucide": "file-chart-line",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 59,
+      "lucideId": "L0644",
+      "lucide": "file-chart-pie",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 60,
+      "lucideId": "L0647",
+      "lucide": "file-check-corner",
+      "solarCandidates": [
+        "S0393"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 61,
+      "lucideId": "L0648",
+      "lucide": "file-clock",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 62,
+      "lucideId": "L0651",
+      "lucide": "file-code-corner",
+      "solarCandidates": [
+        "S0282"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 63,
+      "lucideId": "L0652",
+      "lucide": "file-cog",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 64,
+      "lucideId": "L0654",
+      "lucide": "file-digit",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 65,
+      "lucideId": "L0656",
+      "lucide": "file-exclamation-point",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 66,
+      "lucideId": "L0657",
+      "lucide": "file-headphone",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 67,
+      "lucideId": "L0659",
+      "lucide": "file-image",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 68,
+      "lucideId": "L0660",
+      "lucide": "file-input",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 69,
+      "lucideId": "L0661",
+      "lucide": "file-json",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 70,
+      "lucideId": "L0662",
+      "lucide": "file-json-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 71,
+      "lucideId": "L0663",
+      "lucide": "file-key",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 72,
+      "lucideId": "L0664",
+      "lucide": "file-key-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 73,
+      "lucideId": "L0665",
+      "lucide": "file-lock",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 74,
+      "lucideId": "L0666",
+      "lucide": "file-lock-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 75,
+      "lucideId": "L0668",
+      "lucide": "file-minus-2",
+      "solarCandidates": [
+        "S0398"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 76,
+      "lucideId": "L0669",
+      "lucide": "file-minus-corner",
+      "solarCandidates": [
+        "S0398"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 77,
+      "lucideId": "L0673",
+      "lucide": "file-pen-line",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 78,
+      "lucideId": "L0674",
+      "lucide": "file-pie-chart",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 79,
+      "lucideId": "L0677",
+      "lucide": "file-plus-2",
+      "solarCandidates": [
+        "S0338"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 80,
+      "lucideId": "L0678",
+      "lucide": "file-plus-corner",
+      "solarCandidates": [
+        "S0338"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 81,
+      "lucideId": "L0680",
+      "lucide": "file-scan",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 82,
+      "lucideId": "L0682",
+      "lucide": "file-search-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 83,
+      "lucideId": "L0683",
+      "lucide": "file-search-corner",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 84,
+      "lucideId": "L0684",
+      "lucide": "file-signal",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 85,
+      "lucideId": "L0685",
+      "lucide": "file-sliders",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 86,
+      "lucideId": "L0686",
+      "lucide": "file-spreadsheet",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 87,
+      "lucideId": "L0687",
+      "lucide": "file-stack",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 88,
+      "lucideId": "L0688",
+      "lucide": "file-symlink",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 89,
+      "lucideId": "L0689",
+      "lucide": "file-terminal",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 90,
+      "lucideId": "L0691",
+      "lucide": "file-type",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 91,
+      "lucideId": "L0692",
+      "lucide": "file-type-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 92,
+      "lucideId": "L0693",
+      "lucide": "file-type-corner",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 93,
+      "lucideId": "L0695",
+      "lucide": "file-user",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 94,
+      "lucideId": "L0696",
+      "lucide": "file-video-camera",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 95,
+      "lucideId": "L0697",
+      "lucide": "file-volume",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 96,
+      "lucideId": "L0698",
+      "lucide": "file-volume-2",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 97,
+      "lucideId": "L0701",
+      "lucide": "file-x-2",
+      "solarCandidates": [
+        "S0398"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 98,
+      "lucideId": "L0702",
+      "lucide": "file-x-corner",
+      "solarCandidates": [
+        "S0398"
+      ],
+      "decision": "equivalent",
+      "note": "Solar preserves the same file action and object; the corner/number modifier is a visual variant."
+    },
+    {
+      "rank": 99,
+      "lucideId": "L0706",
+      "lucide": "filter-x",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    },
+    {
+      "rank": 100,
+      "lucideId": "L0707",
+      "lucide": "fingerprint-pattern",
+      "solarCandidates": [],
+      "decision": "no-match",
+      "note": "The lexical shortlist does not establish an interchangeable Solar replacement; the closest concepts change the object, action, state, or specificity."
+    }
+  ]
+}

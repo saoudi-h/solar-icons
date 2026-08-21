@@ -16,6 +16,8 @@
         "release": "changeset publish",
         "typecheck": "turbo typecheck",
         "check:exports": "node scripts/check-exports.mjs",
+        "generate:test-catalogs": "tsx scripts/generate-test-app-icon-lists.ts",
+        "prepare:visual-package": "tsx scripts/prepare-visual-package.ts",
         "spell": "cspell \"**/*\" --no-progress",
         "prepare": "husky",
         "test": "turbo test",

@@ -10,6 +10,7 @@ import {
     activeCategoryAtom,
     displayedIconsAtom,
     filteredIconsAtom,
+    useOriginFilter,
     useSearchKeyword,
     useSelectedIcon,
     useViewModeURL,
@@ -67,6 +68,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     const listRef = useRef<List>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
     const [keyword] = useSearchKeyword()
+    const [origin] = useOriginFilter()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
     const viewMode = useViewModeURL()[0]
@@ -95,10 +97,10 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     }, [detailHeight])
 
     useEffect(() => {
-        const results = searchIcons({ keyword, categories: [] })
+        const results = searchIcons({ keyword, categories: [], origin })
         setFilteredIcons(results)
         setDisplayedIcons(results)
-    }, [keyword, setFilteredIcons, setDisplayedIcons])
+    }, [keyword, origin, setFilteredIcons, setDisplayedIcons])
 
     // The measure callback is the single source of truth for the
     // grid's height. Called on mount, on `window.resize`, and

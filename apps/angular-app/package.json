@@ -3,8 +3,11 @@
   "version": "2.0.0-beta.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "pnpm prepare:catalog",
     "start": "ng serve",
+    "prebuild": "pnpm prepare:catalog",
     "build": "ng build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/angular",
     "watch": "ng build --watch --configuration development",
     "clean": "rm -rf node_modules .angular"
   },

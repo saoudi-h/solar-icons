@@ -4,7 +4,7 @@ This is the official documentation website for Solar Icons, built with Next.js 1
 
 ## Features
 
-- **7,476+ icon variations** across 6 styles
+- **7,608+ icon variations** across 6 styles
 - **Interactive icon explorer** with search and filtering
 - **Framework-specific guides** for React, Vue, Nuxt, Angular, Svelte, SolidJS, and React Native
 - **AI-powered documentation** with LLM-friendly routes (`/llms.txt` and `/llms-full.txt`)

@@ -1,0 +1,5 @@
+.next/
+.atlas/
+*.tsbuildinfo
+node_modules/
+app/icon-list.ts

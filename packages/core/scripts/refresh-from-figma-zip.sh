@@ -15,12 +15,18 @@
 #
 # What it does, in order:
 #   1. Sanity-checks the ZIP (exists, contains a 'svgs/' directory).
-#   2. Wipes packages/core/svgs/.
-#   3. Unzips the contents (the ZIP root is the 'svgs/' directory).
-#   4. Runs `pnpm generate:svgs --offline` to rebuild
+#   2. Rejects duplicate archive paths before touching the current inventory.
+#   3. Wipes packages/core/svgs/.
+#   4. Unzips the contents (the ZIP root is the 'svgs/' directory).
+#   5. Runs the six-style SVG coverage gate (`pnpm check:svgs`).
+#   6. Runs the icon metadata gate (`pnpm check:icons-metadata`) — new icons
+#      without hand-curated metadata (or without an explicit `origin`) abort
+#      the refresh; run `pnpm fix:icons-metadata` for draft entries, then
+#      re-run this script.
+#   7. Runs `pnpm generate:svgs --offline` to rebuild
 #      src/metadata.json from the new files.
-#   5. Removes the ZIP.
-#   6. Prints a `git status` summary of the changes.
+#   8. Removes the ZIP.
+#   9. Prints a `git status` summary of the changes.
 #
 # After running, the typical follow-up is:
 #   - `git diff svgs/ src/metadata.json` to inspect the changes.
@@ -54,6 +60,16 @@ if [ "$_HAS_SVGS" -eq 0 ]; then
     exit 1
 fi
 
+# Duplicate archive paths indicate an invalid export. Do not silently choose
+# one of the entries: the exporter must be fixed before the package is rebuilt.
+_DUPLICATE_PATHS=$(unzip -Z1 "$ZIP_PATH" | sort | uniq -d)
+if [ -n "$_DUPLICATE_PATHS" ]; then
+    echo "Error: ZIP contains duplicate archive paths:" >&2
+    printf '%s\n' "$_DUPLICATE_PATHS" >&2
+    echo "       Re-export from Figma after removing the duplicate entries." >&2
+    exit 1
+fi
+
 cd "$PACKAGE_DIR"
 
 echo "==> Removing old svgs/ ..."
@@ -65,6 +81,12 @@ unzip -q "$ZIP_PATH"
 # Quick sanity check
 SVG_COUNT=$(find "$SVGS_DIR" -name "*.svg" | wc -l | tr -d ' ')
 echo "    Extracted $SVG_COUNT SVG files."
+
+echo "==> Checking SVG style coverage (gate) ..."
+pnpm check:svgs
+
+echo "==> Checking icon metadata coverage (gate) ..."
+pnpm check:icons-metadata
 
 echo "==> Rebuilding metadata ..."
 pnpm generate:svgs --offline

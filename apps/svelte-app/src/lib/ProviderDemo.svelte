@@ -40,7 +40,6 @@
         </div>
         <div class="space-y-1">
             <span class="text-xs text-slate-400">Mirror</span>
-            <label class="flex items-center gap-2 cursor-pointer"> </label>
         </div>
     </div>
 

@@ -3,8 +3,11 @@
   "version": "2.0.0-beta.0",
   "private": true,
   "scripts": {
+    "predev": "pnpm prepare:catalog",
     "dev": "next dev",
+    "prebuild": "pnpm prepare:catalog",
     "build": "next build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/react",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",

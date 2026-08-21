@@ -2,6 +2,7 @@
 import {
     AccessibilityIcon,
     AddCircleIcon,
+    AddIcon,
     AddSquareIcon,
     AdhesivePlaster2Icon,
     AdhesivePlasterIcon,
@@ -78,6 +79,8 @@ import {
     Banknote2Icon,
     BanknoteIcon,
     BarChairIcon,
+    BarcodeIcon,
+    BarcodeScanIcon,
     BasketballIcon,
     BathIcon,
     BatteryChargeIcon,
@@ -101,6 +104,7 @@ import {
     BillCrossIcon,
     BillIcon,
     BillListIcon,
+    BinocularsIcon,
     BlackHole2Icon,
     BlackHole3Icon,
     BlackHoleIcon,
@@ -131,9 +135,10 @@ import {
     BookmarkSquareIcon,
     BookmarkSquareMinimalisticIcon,
     BoomboxIcon,
+    BotIcon,
     BottleIcon,
     BowlingIcon,
-    BoxIcon,
+    BrainIcon,
     BranchingPathsDownIcon,
     BranchingPathsUpIcon,
     BugIcon,
@@ -179,8 +184,6 @@ import {
     CaseRoundIcon,
     CaseRoundMinimalisticIcon,
     CashOutIcon,
-    Cassette2Icon,
-    CassetteIcon,
     Chair2Icon,
     ChairIcon,
     ChandelierIcon,
@@ -352,7 +355,6 @@ import {
     HeartCrackIcon,
     HeartIcon,
     HeartLockIcon,
-    HeartPulse2Icon,
     HeartPulseIcon,
     HeartShineIcon,
     HeartUnlockIcon,
@@ -372,7 +374,6 @@ import {
     KeyMinimalisticSquare2Icon,
     KeyMinimalisticSquare3Icon,
     KeyMinimalisticSquareIcon,
-    KeySquare2Icon,
     KeySquareIcon,
     KickScooterIcon,
     LadleIcon,
@@ -400,7 +401,6 @@ import {
     ListHeartMinimalisticIcon,
     ListIcon,
     ListUpIcon,
-    LockIcon,
     MapArrowDownIcon,
     MapArrowLeftIcon,
     MapArrowRightIcon,
@@ -635,13 +635,13 @@ export const getIconsByCategory = (category: string) => {
                     AirbudsLeftIcon,
                     AirbudsRemoveIcon,
                     AirbudsRightIcon,
+                    BinocularsIcon,
                     BluetoothIcon,
                     BluetoothCircleIcon,
                     BluetoothSquareIcon,
                     BluetoothWaveIcon,
                     BoomboxIcon,
-                    CassetteIcon,
-                    Cassette2Icon,
+                    BotIcon,
                 ],
             }
         case 'Faces':
@@ -825,6 +825,7 @@ export const getIconsByCategory = (category: string) => {
                 ],
                 outer: [
                     BonesIcon,
+                    BrainIcon,
                     DnaIcon,
                     DropperIcon,
                     Dropper2Icon,
@@ -833,7 +834,6 @@ export const getIconsByCategory = (category: string) => {
                     DropperMinimalistic2Icon,
                     HealthIcon,
                     HeartPulseIcon,
-                    HeartPulse2Icon,
                 ],
             }
         case 'Messages':
@@ -959,15 +959,17 @@ export const getIconsByCategory = (category: string) => {
         case 'Security':
             return {
                 inner: [
+                    BarcodeIcon,
+                    BarcodeScanIcon,
                     BombIcon,
                     BombEmojiIcon,
                     BombMinimalisticIcon,
                     CodeScanIcon,
                     EyeIcon,
-                    EyeClosedIcon,
-                    EyeScanIcon,
                 ],
                 outer: [
+                    EyeClosedIcon,
+                    EyeScanIcon,
                     IncognitoIcon,
                     KeyIcon,
                     KeyMinimalisticIcon,
@@ -976,8 +978,6 @@ export const getIconsByCategory = (category: string) => {
                     KeyMinimalisticSquare2Icon,
                     KeyMinimalisticSquare3Icon,
                     KeySquareIcon,
-                    KeySquare2Icon,
-                    LockIcon,
                 ],
             }
         case 'Shopping':
@@ -1104,14 +1104,15 @@ export const getIconsByCategory = (category: string) => {
             return {
                 inner: [
                     AccessibilityIcon,
+                    AddIcon,
                     AddCircleIcon,
                     AddSquareIcon,
                     AugmentedRealityIcon,
                     BalloonIcon,
                     BatteryChargeIcon,
-                    BatteryChargeMinimalisticIcon,
                 ],
                 outer: [
+                    BatteryChargeMinimalisticIcon,
                     BatteryFullIcon,
                     BatteryFullMinimalisticIcon,
                     BatteryHalfIcon,
@@ -1121,7 +1122,6 @@ export const getIconsByCategory = (category: string) => {
                     BodyIcon,
                     BoltIcon,
                     BoltCircleIcon,
-                    BoxIcon,
                 ],
             }
         case 'Users':

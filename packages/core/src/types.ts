@@ -27,13 +27,40 @@ export interface DeprecatedIconAlias {
     deprecatedSince?: string
 }
 
+/** Origin of an icon: upstream set or project extension. */
+export type IconOrigin = 'upstream' | 'extended'
+
+/** Lifecycle state for an icon introduced by the project. */
+export type IconState = 'stable' | 'beta'
+
+/**
+ * Delivery priority for an icon extension.
+ *
+ * This is deliberately qualitative: it describes the order in which the
+ * project should close the parity gap, not a popularity score.
+ */
+export type IconPriority = 'critical' | 'high' | 'normal' | 'low'
+
 /** Hand-curated description metadata for one canonical icon. */
 export interface IconDescription {
     name: string
     category: string
     categoryTags: string[]
     tags: string[]
+    /** Legacy compatibility exports, generated as deprecated aliases. */
     deprecatedAliases?: DeprecatedIconAlias[]
+    /** Non-deprecated spelling synonyms for search and optional alias exports. */
+    aliases?: string[]
+    /** Origin and lifecycle metadata for icons added outside the upstream set. */
+    origin?: IconOrigin
+    addedAt?: string
+    author?: string
+    state?: IconState
+    /** Relative priority when this icon is part of the extension roadmap. */
+    priority?: IconPriority
+    /** Short, auditable reason for the selected extension priority. */
+    priorityReason?: string
+    useCases?: string[]
 }
 
 /**

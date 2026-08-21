@@ -3,6 +3,7 @@ import type { UserConfig } from 'tsdown/config';
 import { defineConfig } from 'tsdown/config';
 
 const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline'];
+const isDevelopmentBuild = process.env.SOLAR_ICONS_DEV_BUILD === '1';
 
 const STYLE_KEBAB: Record<string, string> = {
     Bold: 'bold',
@@ -95,9 +96,11 @@ const config: UserConfig = defineConfig({
 
     fixedExtension: true,
 
-    minify: true,
+    // Demo startup does not need minified output. Keeping this opt-in mode avoids
+    // spending minutes minifying thousands of generated entrypoints on every local change.
+    minify: !isDevelopmentBuild,
 
-    treeshake: true,
+    treeshake: !isDevelopmentBuild,
 
     unbundle: true,
 

@@ -7,10 +7,13 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
+    "predev": "pnpm prepare:catalog",
     "dev": "vite",
+    "prebuild-only": "pnpm prepare:catalog",
     "build:skipped": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/vue",
     "type-check": "vue-tsc --build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",

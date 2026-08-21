@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar Path Intersections</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; color: #f3f4f6; background: #1e1e1e; font-size: 12px; }
+    h1 { font-size: 15px; margin: 0 0 5px; }
+    p { color: #a8abb2; line-height: 1.45; margin: 5px 0 14px; }
+    .muted { color: #a8abb2; }
+    .panel { border: 1px solid #3b3b3f; border-radius: 8px; padding: 11px; margin: 10px 0; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    button, select, input { color: #f3f4f6; background: #2b2b2f; border: 1px solid #55565c; border-radius: 5px; font: inherit; }
+    button { cursor: pointer; padding: 7px 10px; }
+    button.primary { background: #6870c4; border-color: #8188dc; color: white; }
+    button:disabled { cursor: default; opacity: .45; }
+    select { padding: 7px 8px; width: 100%; }
+    input[type=number] { width: 70px; padding: 6px; }
+    label { display: flex; align-items: center; gap: 7px; color: #d7d8dc; }
+    .option { margin: 9px 0; }
+    .option small { display: block; color: #90939b; margin: 3px 0 0 22px; }
+    .hits { max-height: 270px; overflow: auto; margin-top: 8px; }
+    .hit { display: flex; align-items: center; gap: 8px; padding: 8px 4px; border-top: 1px solid #343438; }
+    .hit:first-child { border-top: 0; }
+    .hit-info { flex: 1; }
+    .hit-coord { font-variant-numeric: tabular-nums; color: #f0f0f1; }
+    .hit-meta { color: #92959d; font-size: 11px; margin-top: 2px; }
+    .status { padding: 12px 4px; color: #c3c5ca; }
+    .error { color: #ff9ca7; }
+    .success { color: #9be2b0; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; }
+    .footer .buttons { display: flex; gap: 7px; }
+    .inline { display: flex; align-items: center; gap: 8px; }
+    .warning { color: #f2c77b; font-size: 11px; margin-top: 7px; }
+  </style>
+</head>
+<body>
+  <h1>Intersections de tracés <span class="muted">v0.2.0</span></h1>
+  <p>Le plugin calcule les croisements des courbes avec affinage numérique. Rien n’est modifié avant ton action.</p>
+
+  <div id="status" class="status">Analyse de la sélection…</div>
+
+  <div id="workspace" hidden>
+    <div class="panel">
+      <div class="toolbar">
+        <strong id="node-summary"></strong>
+        <button id="refresh">Actualiser</button>
+      </div>
+      <div class="toolbar" style="margin-top:10px">
+        <span class="muted"><span id="hit-count">0</span> intersection(s)</span>
+        <div class="inline"><button id="select-all">Tout</button><button id="select-none">Aucun</button></div>
+      </div>
+      <div id="hits" class="hits"></div>
+    </div>
+
+    <div class="panel">
+      <label for="mode">Action</label>
+      <select id="mode">
+        <option value="points">Ajouter un sommet sur les deux (par défaut)</option>
+        <option value="cut-a">Couper le tracé A, garder B continu</option>
+        <option value="cut-b">Couper le tracé B, garder A continu</option>
+      </select>
+      <div class="inline option">
+        <label for="gap">Ouverture (px)</label>
+        <input id="gap" type="number" min="0" max="20" step="0.1" value="0" />
+        <span class="muted">0 = coupure topologique sans ouverture visible</span>
+      </div>
+      <div id="line-warning" class="warning" hidden>Un calque LINE sera converti en VECTOR, car Figma ne permet pas d’ajouter de vertex à un LINE.</div>
+    </div>
+
+    <div class="footer">
+      <span id="message" class="muted"></span>
+      <div class="buttons"><button id="close">Fermer</button><button id="apply" class="primary">Appliquer</button></div>
+    </div>
+  </div>
+
+  <script>
+    var state = { result: null, selected: new Set(), applying: false };
+    var status = document.getElementById('status');
+    var workspace = document.getElementById('workspace');
+    var hitsContainer = document.getElementById('hits');
+    var applyButton = document.getElementById('apply');
+    var mode = document.getElementById('mode');
+    var gap = document.getElementById('gap');
+    var message = document.getElementById('message');
+
+    function send(payload) { parent.postMessage({ pluginMessage: payload }, '*'); }
+    function setStatus(text, className) { status.hidden = false; status.textContent = text; status.className = 'status ' + (className || ''); workspace.hidden = true; }
+    function render(result) {
+      state.applying = false;
+      state.result = result;
+      state.selected = new Set(result.intersections.map(function (hit) { return hit.id; }));
+      status.hidden = true;
+      workspace.hidden = false;
+      document.getElementById('node-summary').textContent = result.nodes[0].name + '  ×  ' + result.nodes[1].name;
+      document.getElementById('hit-count').textContent = result.intersections.length;
+      document.getElementById('line-warning').hidden = !(result.nodes[0].type === 'LINE' || result.nodes[1].type === 'LINE');
+      hitsContainer.innerHTML = '';
+      if (result.intersections.length === 0) {
+        hitsContainer.innerHTML = '<div class="status">Aucun croisement détecté.</div>';
+      } else {
+        result.intersections.forEach(function (hit) {
+          var row = document.createElement('label');
+          row.className = 'hit';
+          var checkbox = document.createElement('input');
+          checkbox.type = 'checkbox'; checkbox.checked = true;
+          checkbox.addEventListener('change', function () {
+            if (checkbox.checked) state.selected.add(hit.id); else state.selected.delete(hit.id);
+            applyButton.disabled = state.selected.size === 0;
+          });
+          var info = document.createElement('div'); info.className = 'hit-info';
+          info.innerHTML = '<div class="hit-coord">(' + hit.x.toFixed(6) + ', ' + hit.y.toFixed(6) + ')</div>' +
+            '<div class="hit-meta">A · segment ' + hit.aSegment + ' · t=' + hit.aT.toFixed(8) + ' &nbsp;|&nbsp; B · segment ' + hit.bSegment + ' · t=' + hit.bT.toFixed(8) + '</div>';
+          row.appendChild(checkbox); row.appendChild(info); hitsContainer.appendChild(row);
+        });
+      }
+      applyButton.disabled = result.intersections.length === 0;
+      message.textContent = result.budgetExceeded ? 'Analyse limitée pour éviter de bloquer Figma ; actualise ou réduis la sélection.' : '';
+      message.className = result.budgetExceeded ? 'warning' : 'muted';
+    }
+
+    document.getElementById('refresh').onclick = function () { send({ type: 'refresh' }); };
+    document.getElementById('select-all').onclick = function () {
+      state.selected = new Set((state.result && state.result.intersections || []).map(function (hit) { return hit.id; }));
+      render(state.result);
+    };
+    document.getElementById('select-none').onclick = function () {
+      state.selected.clear();
+      Array.prototype.forEach.call(hitsContainer.querySelectorAll('input'), function (input) { input.checked = false; });
+      applyButton.disabled = true;
+    };
+    applyButton.onclick = function () {
+      if (!state.result || state.selected.size === 0) return;
+      applyButton.disabled = true;
+      state.applying = true;
+      message.textContent = 'Application…';
+      send({ type: 'apply', nodes: state.result.nodes.map(function (node) { return node.id; }), intersections: Array.from(state.selected), mode: mode.value, gap: Number(gap.value) || 0 });
+    };
+    document.getElementById('close').onclick = function () { send({ type: 'close' }); };
+
+    window.onmessage = function (event) {
+      var msg = event.data.pluginMessage;
+      if (!msg) return;
+      if (msg.type === 'selection') {
+        // Figma can emit a transient selectionchange while a vector network is
+        // being rewritten. Do not replace the useful result view during that
+        // short window.
+        if (!state.applying) setStatus(msg.message, '');
+      }
+      if (msg.type === 'analysis') render(msg.result);
+      if (msg.type === 'error') { state.applying = false; setStatus(msg.message, 'error'); }
+      if (msg.type === 'progress') {
+        state.applying = true;
+        message.textContent = msg.message;
+        message.className = 'muted';
+      }
+      if (msg.type === 'applied') {
+        state.applying = false;
+        applyButton.disabled = true;
+        message.textContent = msg.count + ' intersection(s) traitée(s).' + (msg.convertedLines ? ' Les LINE ont été convertis en VECTOR.' : '');
+        message.className = 'success';
+      }
+    };
+  </script>
+</body>
+</html>

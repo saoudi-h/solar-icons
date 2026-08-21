@@ -1,0 +1,219 @@
+{
+    "version": 1,
+    "batch": "solar-to-lucide-calibration-30",
+    "direction": "solar-to-lucide",
+    "phase": "candidate-discovery",
+    "instructions": "Candidates were selected independently from the existing verified mapping after inspecting the complete Lucide visual atlas.",
+    "entries": [
+        {
+            "solar": "accessibility",
+            "solarId": "S0001",
+            "cohort": "direct-name",
+            "candidates": ["L0004"],
+            "retrievalNote": "Same accessibility subject, with a different human symbol."
+        },
+        {
+            "solar": "alarm",
+            "solarId": "S0018",
+            "cohort": "direct-name",
+            "candidates": ["L0009"],
+            "retrievalNote": "Alarm-clock is the closest semantic and visual family."
+        },
+        {
+            "solar": "arrow-up",
+            "solarId": "S0058",
+            "cohort": "direct-name",
+            "candidates": ["L0090"],
+            "retrievalNote": "Direct upward arrow with matching direction and structure."
+        },
+        {
+            "solar": "bell",
+            "solarId": "S0096",
+            "cohort": "direct-name",
+            "candidates": ["L0170", "L0499"],
+            "retrievalNote": "Bell is the direct match; concierge-bell is retained as a shape check."
+        },
+        {
+            "solar": "camera",
+            "solarId": "S0167",
+            "cohort": "direct-name",
+            "candidates": ["L0296"],
+            "retrievalNote": "Direct camera silhouette."
+        },
+        {
+            "solar": "check-circle",
+            "solarId": "S0226",
+            "cohort": "direct-name",
+            "candidates": ["L0386", "L0387"],
+            "retrievalNote": "Both Lucide circle-check variants are plausible at atlas scale."
+        },
+        {
+            "solar": "copy",
+            "solarId": "S0296",
+            "cohort": "direct-name",
+            "candidates": ["L0508", "L0703"],
+            "retrievalNote": "Copy is direct; files is a nearby overlapping-document alternative."
+        },
+        {
+            "solar": "eye",
+            "solarId": "S0381",
+            "cohort": "direct-name",
+            "candidates": ["L0612"],
+            "retrievalNote": "Direct eye silhouette."
+        },
+        {
+            "solar": "play",
+            "solarId": "S0765",
+            "cohort": "direct-name",
+            "candidates": ["L1254"],
+            "retrievalNote": "Direct standalone play triangle."
+        },
+        {
+            "solar": "settings",
+            "solarId": "S0910",
+            "cohort": "direct-name",
+            "candidates": ["L1406", "L1407"],
+            "retrievalNote": "Settings is the visual gear match; settings-2 checks the semantic alternative."
+        },
+        {
+            "solar": "adhesive-plaster",
+            "solarId": "S0006",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L0138"],
+            "retrievalNote": "Lucide uses bandage for the same adhesive-plaster subject."
+        },
+        {
+            "solar": "alt-arrow-up",
+            "solarId": "S0037",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L0361"],
+            "retrievalNote": "Solar alt-arrow-up is visually a chevron-up."
+        },
+        {
+            "solar": "bolt",
+            "solarId": "S0117",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1820"],
+            "retrievalNote": "Solar bolt is a lightning bolt; Lucide names that shape zap."
+        },
+        {
+            "solar": "case",
+            "solarId": "S0193",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L0251", "L0252"],
+            "retrievalNote": "Solar case is a briefcase; both Lucide variants need enlarged comparison."
+        },
+        {
+            "solar": "danger-triangle",
+            "solarId": "S0322",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1695"],
+            "retrievalNote": "Lucide triangle-alert has the same semantics and composition."
+        },
+        {
+            "solar": "diskette",
+            "solarId": "S0332",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1359"],
+            "retrievalNote": "Lucide save uses the floppy-disk form shown by Solar diskette."
+        },
+        {
+            "solar": "hamburger-menu",
+            "solarId": "S0476",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1049"],
+            "retrievalNote": "Lucide menu is the same three-line hamburger symbol."
+        },
+        {
+            "solar": "home",
+            "solarId": "S0511",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L0880"],
+            "retrievalNote": "Lucide house is the direct home pictogram."
+        },
+        {
+            "solar": "lock-unlocked",
+            "solarId": "S0599",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1003", "L1002"],
+            "retrievalNote": "Lock-open is closest; keyhole-open checks whether the inner detail matters."
+        },
+        {
+            "solar": "magnifier",
+            "solarId": "S0611",
+            "cohort": "alternate-vocabulary",
+            "candidates": ["L1388", "L1392"],
+            "retrievalNote": "Solar magnifier maps to Lucide search; search-large is a close stroke variant."
+        },
+        {
+            "solar": "airbuds",
+            "solarId": "S0008",
+            "cohort": "specificity-trap",
+            "candidates": ["L0861", "L0862"],
+            "retrievalNote": "Lucide has over-ear headphones and a headset but no matching in-ear buds."
+        },
+        {
+            "solar": "alarm-remove",
+            "solarId": "S0022",
+            "cohort": "specificity-trap",
+            "candidates": ["L0011"],
+            "retrievalNote": "Lucide alarm-clock-minus carries the same removal modifier."
+        },
+        {
+            "solar": "bookmark-circle",
+            "solarId": "S0133",
+            "cohort": "specificity-trap",
+            "candidates": ["L0229"],
+            "retrievalNote": "Lucide has bookmark but no circular-container variant."
+        },
+        {
+            "solar": "face-scan-square",
+            "solarId": "S0385",
+            "cohort": "specificity-trap",
+            "candidates": ["L1372"],
+            "retrievalNote": "Lucide scan-face matches the face framed by scan corners."
+        },
+        {
+            "solar": "gamepad-charge",
+            "solarId": "S0456",
+            "cohort": "specificity-trap",
+            "candidates": ["L0782", "L0781"],
+            "retrievalNote": "Lucide has matching gamepad bodies but no charging modifier."
+        },
+        {
+            "solar": "rewind-10-seconds-forward",
+            "solarId": "S0831",
+            "cohort": "specificity-trap",
+            "candidates": ["L1340", "L1341", "L1336"],
+            "retrievalNote": "Lucide lacks the numeral; rotate variants were retained for direction verification."
+        },
+        {
+            "solar": "server-square-cloud",
+            "solarId": "S0908",
+            "cohort": "specificity-trap",
+            "candidates": ["L1401", "L1100"],
+            "retrievalNote": "Server matches the object; monitor-cloud retains the modifier but changes the device."
+        },
+        {
+            "solar": "shield-cross",
+            "solarId": "S0916",
+            "cohort": "specificity-trap",
+            "candidates": ["L1429"],
+            "retrievalNote": "Lucide shield-x is the same shield with cross modifier."
+        },
+        {
+            "solar": "tea-cup",
+            "solarId": "S1081",
+            "cohort": "specificity-trap",
+            "candidates": ["L0487"],
+            "retrievalNote": "Lucide coffee is the matching steaming cup with handle."
+        },
+        {
+            "solar": "text-underline-cross",
+            "solarId": "S1106",
+            "cohort": "specificity-trap",
+            "candidates": ["L1713"],
+            "retrievalNote": "Lucide underline matches the rendered U; no extra cross is visible in Solar."
+        }
+    ]
+}

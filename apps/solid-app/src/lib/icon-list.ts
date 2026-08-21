@@ -1,9 +1,10 @@
 // AUTO-GENERATED FILE - DO NOT EDIT
-// Generated from @solar-icons/core SVGs
-// Total icons: 1246
+// Generated from packages/core/svgs by scripts/generate-test-app-icon-lists.ts
+// Total icons: 1268
 
 export const ALL_ICONS = [
     'Accessibility',
+    'Add',
     'AddCircle',
     'AddFolder',
     'AddSquare',
@@ -82,6 +83,8 @@ export const ALL_ICONS = [
     'Banknote',
     'Banknote2',
     'BarChair',
+    'Barcode',
+    'BarcodeScan',
     'Basketball',
     'Bath',
     'BatteryCharge',
@@ -108,6 +111,7 @@ export const ALL_ICONS = [
     'BillCheck',
     'BillCross',
     'BillList',
+    'Binoculars',
     'BlackHole',
     'BlackHole2',
     'BlackHole3',
@@ -139,10 +143,12 @@ export const ALL_ICONS = [
     'BookmarkSquare',
     'BookmarkSquareMinimalistic',
     'Boombox',
+    'Bot',
     'Bottle',
     'Bowling',
     'Box',
     'BoxMinimalistic',
+    'Brain',
     'BranchingPathsDown',
     'BranchingPathsUp',
     'Broom',
@@ -255,6 +261,7 @@ export const ALL_ICONS = [
     'ClipboardText',
     'ClockCircle',
     'ClockSquare',
+    'Close',
     'CloseCircle',
     'CloseSquare',
     'Closet',
@@ -377,6 +384,7 @@ export const ALL_ICONS = [
     'EraserCircle',
     'EraserSquare',
     'Euro',
+    'ExclamationMark',
     'Exit',
     'Explicit',
     'Export',
@@ -668,6 +676,7 @@ export const ALL_ICONS = [
     'MinimizeSquare2',
     'MinimizeSquare3',
     'MinimizeSquareMinimalistic',
+    'Minus',
     'MinusCircle',
     'MinusSquare',
     'Mirror',
@@ -716,6 +725,7 @@ export const ALL_ICONS = [
     'OutgoingCallRounded',
     'OvenMitts',
     'OvenMittsMinimalistic',
+    'PaintBrush',
     'PaintRoller',
     'Palette',
     'Palette2',
@@ -793,6 +803,7 @@ export const ALL_ICONS = [
     'Pulse2',
     'QrCode',
     'QuestionCircle',
+    'QuestionMark',
     'QuestionSquare',
     'QuitFullScreen',
     'QuitFullScreenCircle',
@@ -1110,10 +1121,11 @@ export const ALL_ICONS = [
     'TextUnderlineCross',
     'Thermometer',
     'ThreeSquares',
-    'TickerStar',
     'Ticket',
     'TicketSale',
+    'TicketStar',
     'ToPip',
+    'Toolbox',
     'Tornado',
     'TornadoSmall',
     'Traffic',
@@ -1200,6 +1212,7 @@ export const ALL_ICONS = [
     'VideoLibrary',
     'Videocamera',
     'VideocameraAdd',
+    'VideocameraOff',
     'VideocameraRecord',
     'Vinyl',
     'VinylRecord',
@@ -1227,9 +1240,18 @@ export const ALL_ICONS = [
     'WaterSun',
     'Waterdrop',
     'Waterdrops',
+    'Webcam',
+    'WebcamOff',
     'Wheel',
     'WheelAngle',
     'Whisk',
+    'WiFi',
+    'WiFiCog',
+    'WiFiCross',
+    'WiFiHigh',
+    'WiFiLow',
+    'WiFiNone',
+    'WiFiOff',
     'WiFiRouter',
     'WiFiRouterMinimalistic',
     'WiFiRouterRound',
@@ -1253,5 +1275,12 @@ export const ALL_ICONS = [
 
 export type IconName = (typeof ALL_ICONS)[number];
 
-export const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const;
+export const STYLES = [
+    'Bold',
+    'Linear',
+    'BoldDuotone',
+    'LineDuotone',
+    'Broken',
+    'Outline',
+] as const;
 export type IconStyle = (typeof STYLES)[number];
