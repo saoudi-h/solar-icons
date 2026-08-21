@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Context & Objectives
 
-Solar Icons is a public icon library: 1,246 unique icons × 6 styles (Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline) = 7,476 SVG variations. Packaged for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, Angular 17+. Icons originate from 480 Design's Figma file (CC BY 4.0). Package code is MIT. Maintainer: Saoudi Hakim. Public site: https://solar-icons.vercel.app.
+Solar Icons is a public icon library: 1,268 unique icons × 6 styles (Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline) = 7,608 SVG variations. Packaged for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, Angular 17+. Icons originate from 480 Design's Figma file (CC BY 4.0). Package code is MIT. Maintainer: Saoudi Hakim. Public site: https://solar-icons.vercel.app.
 
 For current inventory counts and the complete update checklist, use
 `docs/ICON-INVENTORY-WORKFLOW.md` and run `pnpm exec tsx scripts/check-icon-inventory.ts`. The count in

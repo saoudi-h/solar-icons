@@ -1,10 +1,10 @@
 # @solar-icons/static
 
-Static SVG assets and ESM string modules for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone) for use without any JavaScript framework.
+Static SVG assets and ESM string modules for Solar Icons. This package provides 7,608 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone) for use without any JavaScript framework.
 
 ## Features
 
-- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **7,608 SVGs:** 1,268 unique icons in 6 styles. Designed by 480 Design.
 - **Multiple formats:** `.svg` files, combined SVG sprite, JSON map, and tree-shakeable ESM string modules.
 - **Server-side ready:** Can be used in static site generators or Node.js.
 - **Global configuration:** Override size, color, and stroke width globally via CSS variables (`--solar-color`, `--solar-size`).

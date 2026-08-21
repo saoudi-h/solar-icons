@@ -1,8 +1,9 @@
 <script lang="ts">
 import { getData } from '../../data'
+import type { GridItem } from '../../data'
 
 export default {
-  data() {
+  data(): { list: GridItem[]; gridItems: number; scrollTo: number } {
     return {
       list: [],
       gridItems: 6,
@@ -12,6 +13,13 @@ export default {
 
   mounted() {
     this.list = getData(5000)
+  },
+
+  methods: {
+    scrollToItem() {
+      const scroller = this.$refs.scroller as { scrollToItem?: (index: number) => void }
+      scroller.scrollToItem?.(this.scrollTo)
+    },
   },
 }
 </script>
@@ -25,7 +33,7 @@ export default {
       </label>
       <input v-model.number="gridItems" type="range" min="2" max="20" />
       <span>
-        <button @mousedown="$refs.scroller.scrollToItem(scrollTo)">Scroll To:</button>
+        <button @mousedown="scrollToItem">Scroll To:</button>
         <input v-model.number="scrollTo" type="number" min="0" :max="list.length - 1" />
       </span>
     </div>

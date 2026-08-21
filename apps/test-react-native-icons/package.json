@@ -5,10 +5,15 @@
   "description": "Test application for @solar-icons/react-native package",
   "main": "index.ts",
   "scripts": {
+    "prestart": "pnpm prepare:catalog",
     "start": "expo start",
+    "preandroid": "pnpm prepare:catalog",
     "android": "expo start --android",
+    "preios": "pnpm prepare:catalog",
     "ios": "expo start --ios",
+    "preweb": "pnpm prepare:catalog",
     "web": "expo start --web",
+    "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/react-native build",
     "pre-commit": ""
   },
   "dependencies": {

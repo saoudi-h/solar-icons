@@ -1,4 +1,5 @@
 # AGENT: apps/svelte-app
 
 - SvelteKit demo for `@solar-icons/svelte`. Svelte 5 runes.
-- Ignored from changesets. Has a `generate:icons` script that pre-builds an icon list.
+- Ignored from changesets. Its catalog is generated from `packages/core/svgs` by the shared
+  `pnpm generate:test-catalogs` workflow; `dev` and `build` prepare it automatically.

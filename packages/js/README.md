@@ -1,10 +1,10 @@
 # @solar-icons/js
 
-Vanilla JavaScript DOM injection library for Solar Icons. This package provides 7,476 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for environments without a virtual DOM.
+Vanilla JavaScript DOM injection library for Solar Icons. This package provides 7,608 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for environments without a virtual DOM.
 
 ## Features
 
-- **7,476 SVGs:** 1,246 unique icons in 6 styles. Designed by 480 Design.
+- **7,608 SVGs:** 1,268 unique icons in 6 styles. Designed by 480 Design.
 - **Tree-shakeable:** Import only the icons you use.
 - **Vanilla DOM injection:** Injects SVG markup into elements based on their `data-solar` attributes.
 - **Global configuration:** Override size, color, and stroke width globally via CSS variables (`--solar-color`, `--solar-size`).

@@ -1,7 +1,7 @@
 <template>
   <Select @update:model-value="onWeightChange">
     <SelectTrigger>
-      <SelectValue :placeholder="modelValue || 'Select style'" />
+      <SelectValue :placeholder="props.weight || 'Select style'" />
     </SelectTrigger>
     <SelectContent>
       <SelectItem v-for="weight in weights" :key="weight" :value="weight">
@@ -19,19 +19,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { IconWeight } from '@solar-icons/vue/lib'
+import { IconStyle } from '@solar-icons/vue/lib'
 
-const weights: IconWeight[] = ['Linear', 'Outline', 'BoldDuotone', 'Bold', 'LineDuotone', 'Broken']
+const weights = [
+  IconStyle.LINEAR,
+  IconStyle.OUTLINE,
+  IconStyle.BOLD_DUOTONE,
+  IconStyle.BOLD,
+  IconStyle.LINE_DUOTONE,
+  IconStyle.BROKEN,
+]
 
-defineProps<{
-  weight?: IconWeight
-}>()
+const props = defineProps<{ weight?: IconStyle }>()
 
 const emit = defineEmits<{
-  (e: 'update:weight', weight: IconWeight): void
+  (e: 'update:weight', weight: IconStyle): void
 }>()
 
-const onWeightChange = (newWeight: string) => {
-  emit('update:weight', newWeight as IconWeight)
+const onWeightChange = (newWeight: unknown) => {
+  if (typeof newWeight === 'string' && Object.values(IconStyle).includes(newWeight as IconStyle)) {
+    emit('update:weight', newWeight as IconStyle)
+  }
 }
 </script>

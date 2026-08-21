@@ -4,8 +4,11 @@
   "version": "2.0.0-beta.0",
   "type": "module",
   "scripts": {
+    "predev": "pnpm prepare:catalog",
     "dev": "vite",
+    "prebuild": "pnpm prepare:catalog",
     "build": "tsc -b && vite build",
+    "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/js build",
     "preview": "vite preview"
   },
   "dependencies": {

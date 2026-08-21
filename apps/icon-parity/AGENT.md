@@ -3,6 +3,8 @@
 Workbench Next.js séparé de `apps/react-app`. `react-app` reste uniquement le
 laboratoire visuel du package `@solar-icons/react`; cette app contient les
 artefacts et outils expérimentaux de parité, actuellement centrés sur Lucide.
+`dev` et `build` régénèrent le catalogue partagé et reconstruisent le package React avant de lancer
+la workbench.
 
 ## Reprendre le travail
 

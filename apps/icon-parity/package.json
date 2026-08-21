@@ -3,10 +3,11 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "dev": "pnpm generate:icons && next dev",
-        "build": "pnpm generate:icons && next build",
+        "dev": "pnpm prepare:catalog && next dev",
+        "build": "pnpm prepare:catalog && next build",
         "start": "next start",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
+        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/react build",
         "generate:atlases": "tsx scripts/generate-compare-atlases.ts",
         "generate:forward-match-boards": "tsx scripts/generate-forward-match-boards.ts",
         "forward:recall-candidates": "tsx scripts/recall-forward-candidates.ts",

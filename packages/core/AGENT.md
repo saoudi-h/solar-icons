@@ -12,7 +12,7 @@ Private package (`"private": true`). Source of truth for icon assets and metadat
 
 Contains:
 
-- 7,476 committed SVGs in `svgs/` (37 categories × 6 styles).
+- 7,608 committed SVGs in `svgs/` (37 categories × 6 styles).
 - `metadata.json` (44 KB) and `metadata-descriptions.json` (254 KB), both committed.
 - The `types.ts` and `utils.ts` public surface.
 - Build-time scripts in `src/scripts/` (Figma fetch, PNG generation, descriptions, integrity checks).
@@ -49,7 +49,7 @@ Contains:
 | `EXTENDING-ICON-SET.md`                 | Production procedure for planning, drawing, attributing, validating, and releasing extensions such as Lucide parity additions.                                                                                                                                                                                                                                                          |
 | `../../docs/ICON-INVENTORY-WORKFLOW.md` | Inventory refresh checklist and the complete list of generated/documentation consumers to update after an export.                                                                                                                                                                                                                                                                       |
 | `src/descriptions.schema.json`          | JSON Schema for the hand-curated descriptions file; `check:descriptions` also validates alias collisions and deprecated replacement targets.                                                                                                                                                                                                                                            |
-| `svgs/`                                 | 37 categories × 6 styles = 7,476 SVGs, committed.                                                                                                                                                                                                                                                                                                                                       |
+| `svgs/`                                 | 37 categories × 6 styles = 7,608 SVGs, committed.                                                                                                                                                                                                                                                                                                                                       |
 | `src/scripts/`                          | Build-time CLI scripts (see `packages/core/src/scripts/AGENT.md`).                                                                                                                                                                                                                                                                                                                      |
 
 ## ⚠️ Known Constraints

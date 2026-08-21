@@ -1,5 +1,5 @@
 // AUTO-GENERATED FILE - DO NOT EDIT
-// Generated from @solar-icons/core SVGs
+// Generated from packages/core/svgs by scripts/generate-test-app-icon-lists.ts
 // Total icons: 1268
 
 export const ALL_ICONS = [

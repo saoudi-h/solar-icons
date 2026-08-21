@@ -4,8 +4,11 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "predev": "pnpm prepare:catalog",
         "dev": "vite",
+        "prebuild": "pnpm prepare:catalog",
         "build": "vite build",
+        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/static build",
         "preview": "vite preview",
         "clean": "rm -rf node_modules dist",
         "lint": "eslint . --max-warnings 0",

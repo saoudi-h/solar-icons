@@ -6,7 +6,7 @@ Core logic, SVGs, metadata, and parser utilities for Solar Icons. This package s
 
 ## Features
 
-- **Source of truth:** Contains the original optimized SVG paths and metadata for all 1,246 icons in 6 styles.
+- **Source of truth:** Contains the original optimized SVG paths and metadata for all 1,268 icons in 6 styles.
 - **Parser & codegen:** Reusable functions for parsing SVGs and transforming them (`transformDuotoneAccent`, `loadIcon`).
 - **TypeScript:** Shared interfaces (`StyleComponentsMap`, `Weight`) used by all framework packages.
 - **Agnostic:** Build-time and metadata dependency only. No UI components.
