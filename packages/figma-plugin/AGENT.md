@@ -2,7 +2,7 @@
 
 - **Type:** Public-facing Figma plugin. Not a pnpm workspace member.
 - **Role:** Browse and insert the maintained Solar Icons SVG distribution into Figma files.
-- **Asset architecture:** `scripts/build.mjs` embeds `packages/static/dist/icons.json`, `metadata-descriptions.json`, Cal Sans UI, Bricolage Grotesque, and package marks into the generated, gitignored `dist/ui.html`. All 1,246 icons × 6 styles are local in the UI iframe at runtime; `networkAccess` must remain `none`.
+- **Asset architecture:** `scripts/build.mjs` embeds `packages/static/dist/icons.json`, `metadata-descriptions.json`, Cal Sans UI, Bricolage Grotesque, and package marks into the generated, gitignored `dist/ui.html`. The complete current catalogue × 6 styles is local in the UI iframe at runtime; `networkAccess` must remain `none`.
 - **Source layout:** the Figma sandbox lives in `src/main`, shared message contracts in `src/shared`, and the React UI in `src/ui`. Edit source files, never `dist/code.js` or `dist/ui.html`.
 - **Tooling:** Vite bundles and inlines the React UI; esbuild bundles the sandbox. Base UI supplies headless Tabs and Select behavior. Keep visual styling in plain CSS and do not add Tailwind without a demonstrated product benefit.
 - **Design direction:** compact, flat utility UI aligned with the docs app and Figma itself. Use semantic Figma theme tokens, continuous grids, fine dividers, and the indigo brand accent. Avoid card grids, repeated rounded boxes, shadows, decorative gradients, and motion that delays exploration.
