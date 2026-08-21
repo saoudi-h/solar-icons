@@ -1,5 +1,6 @@
 import icons from '@solar-icons/core/metadata-descriptions.json' assert { type: 'json' }
 import fs from 'node:fs'
+import prettier from 'prettier'
 
 const outputDataFilePath = './generated/descriptions.ts'
 
@@ -76,7 +77,13 @@ export default icons
 const main = async () => {
     try {
         const data = generate(icons)
-        fs.writeFileSync(outputDataFilePath, data)
+        fs.writeFileSync(
+            outputDataFilePath,
+            await prettier.format(data, {
+                ...(await prettier.resolveConfig(outputDataFilePath)),
+                parser: 'typescript',
+            })
+        )
         console.log('The file has been generated with success !')
     } catch (error) {
         console.error('Error while generating the file:', error)

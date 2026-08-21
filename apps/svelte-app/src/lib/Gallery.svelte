@@ -11,7 +11,7 @@
 
     const solar = useSolar();
 
-    let selectedStyle: IconStyle = $state('Bold');
+    let selectedStyle = $state<IconStyle>('Bold');
     let searchQuery = $state('');
 
     const isDuotone = $derived(selectedStyle === 'BoldDuotone' || selectedStyle === 'LineDuotone');
@@ -35,7 +35,7 @@
 <div class="space-y-4">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         <div class="space-y-2">
-            <label class="text-sm font-medium text-slate-300">Style</label>
+            <span class="text-sm font-medium text-slate-300">Style</span>
             <div class="flex flex-wrap gap-2">
                 {#each STYLES as s}
                     <button
@@ -46,16 +46,18 @@
             </div>
         </div>
         <div class="space-y-2">
-            <label class="text-sm font-medium text-slate-300">Color</label>
+            <span class="text-sm font-medium text-slate-300">Color</span>
             <div class="flex items-center gap-3">
                 <input
                     type="color"
+                    aria-label="Icon color picker"
                     value={solar.color ?? '#f59e0b'}
                     oninput={(e) => solar.setColor(e.currentTarget.value)}
                     class="w-10 h-10 rounded-lg cursor-pointer border-0"
                 />
                 <input
                     type="text"
+                    aria-label="Icon color value"
                     value={solar.color ?? '#f59e0b'}
                     oninput={(e) => solar.setColor(e.currentTarget.value)}
                     class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
@@ -63,11 +65,13 @@
             </div>
         </div>
         <div class="space-y-2">
-            <label class="text-sm font-medium text-slate-300"
+            <label class="text-sm font-medium text-slate-300" for="icon-size"
                 >Size: <span class="text-amber-400">{solar.size ?? 32}px</span></label
             >
             <input
                 type="range"
+                id="icon-size"
+                aria-label="Icon size"
                 min="16"
                 max="64"
                 value={Number(solar.size) || 32}
@@ -76,11 +80,13 @@
             />
         </div>
         <div class={`space-y-2 ${!isLinearLike ? 'opacity-30 pointer-events-none' : ''}`}>
-            <label class="text-sm font-medium text-slate-300"
+            <label class="text-sm font-medium text-slate-300" for="icon-stroke"
                 >Stroke: <span class="text-amber-400">{solar.strokeWidth ?? 1.5}</span></label
             >
             <input
                 type="range"
+                id="icon-stroke"
+                aria-label="Icon stroke width"
                 min="0.5"
                 max="4"
                 step="0.1"
@@ -91,9 +97,10 @@
             />
         </div>
         <div class="space-y-2">
-            <label class="text-sm font-medium text-slate-300">Search</label>
+            <label class="text-sm font-medium text-slate-300" for="icon-search">Search</label>
             <input
                 type="text"
+                id="icon-search"
                 placeholder="Filter icons..."
                 bind:value={searchQuery}
                 class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 placeholder-slate-500"
@@ -113,20 +120,22 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300"
+                    <span class="text-sm font-medium text-slate-300"
                         >Accent Color: <span class="text-blue-400 font-mono text-xs"
                             >{solar.secondaryColor ?? '#60a5fa'}</span
-                        ></label
+                        ></span
                     >
                     <div class="flex items-center gap-3">
                         <input
                             type="color"
+                            aria-label="Duotone accent color picker"
                             value={solar.secondaryColor ?? '#60a5fa'}
                             oninput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
                             class="w-10 h-10 rounded-lg cursor-pointer border-0"
                         />
                         <input
                             type="text"
+                            aria-label="Duotone accent color value"
                             value={solar.secondaryColor ?? '#60a5fa'}
                             oninput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
                             class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
@@ -134,13 +143,15 @@
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-slate-300"
+                    <label class="text-sm font-medium text-slate-300" for="accent-opacity"
                         >Accent Opacity: <span class="text-blue-400"
                             >{solar.secondaryOpacity ?? 0.5}</span
                         ></label
                     >
                     <input
                         type="range"
+                        id="accent-opacity"
+                        aria-label="Duotone accent opacity"
                         min="0"
                         max="1"
                         step="0.05"

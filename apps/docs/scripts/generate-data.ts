@@ -1,5 +1,6 @@
 import metadata from '@solar-icons/core/metadata.json' assert { type: 'json' }
 import fs from 'node:fs'
+import prettier from 'prettier'
 
 const toPascalCase = (str: string) =>
     str
@@ -27,7 +28,13 @@ const main = async () => {
     try {
         const { utils } = generateIcons(metadata)
         console.log('The file generated/utils.ts has been generated with success !')
-        fs.writeFileSync(outputUtilsFilePath, utils)
+        fs.writeFileSync(
+            outputUtilsFilePath,
+            await prettier.format(utils, {
+                ...(await prettier.resolveConfig(outputUtilsFilePath)),
+                parser: 'typescript',
+            })
+        )
     } catch (error) {
         console.error('Error while generating the file:', error)
     }

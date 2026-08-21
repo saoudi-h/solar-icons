@@ -27,8 +27,6 @@
             class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"
             onclick={() => solar.setSize(24)}>24px</button
         >
-        <button class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"> </button>
-        <span class="text-xs text-slate-500"> </span>
     </div>
     <div class="flex gap-4">
         <HomeIcon />

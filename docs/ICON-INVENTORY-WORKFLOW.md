@@ -50,6 +50,31 @@ count change:
   `apps/test-react-native-icons/icon-list.ts` — currently maintained as generated fixtures; update
   them from the core SVG inventory when their test/demo surface is kept in sync.
 
+The documentation explorer has its own generated React data files. Regenerate them after every
+catalogue change:
+
+```sh
+pnpm --filter @solar-icons/docs generate:catalog
+```
+
+The docs `dev` and `build` scripts run this command automatically. This updates
+`apps/docs/generated/descriptions.ts`, `apps/docs/generated/utils.ts`, and
+`apps/docs/generated/generatedHeroUtils.ts`; it is what keeps `/icons` aligned with the core
+inventory instead of leaving the previous count in the generated bundle.
+
+The Svelte package must also be regenerated before checking `apps/svelte-app`, because the demo
+imports the package through its generated `dist/` output. Its `dev` script now runs this catalog
+preparation automatically; the explicit command remains useful for CI and manual checks:
+
+```sh
+pnpm --filter @solar-icons/svelte build
+pnpm --filter svelte-app generate:icons
+pnpm --filter svelte-app check
+```
+
+Deprecated Svelte aliases are generated as wrapper components. Do not hand-edit an alias to use
+`<script module> export { default }`: Svelte 5 rejects a component-level default export during SSR.
+
 Confirm the derived lists with:
 
 ```sh
@@ -67,6 +92,10 @@ packet. Replace the old count only when the text describes the current published
   `src/ui/components/InfoPanel.tsx`;
 - `apps/docs/README.md`, docs config, home-page statistics, and v1/v2 documentation pages;
 - demo copy under `apps/vue-app` and `packages/nuxt/playground`.
+
+For the documentation site, current v2 copy and homepage statistics are part of the release
+packet and must reflect the same logical count and six-style total. Versioned v1 pages are kept
+historical and are not rewritten when the extension catalogue grows.
 
 Use `rg` to find remaining old totals, but do not change numeric IDs in parity JSON files:
 

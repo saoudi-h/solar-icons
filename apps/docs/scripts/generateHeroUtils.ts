@@ -1,5 +1,6 @@
 import metadata from '@solar-icons/core/metadata.json' assert { type: 'json' }
 import fs from 'node:fs'
+import prettier from 'prettier'
 
 const toPascalCase = (str: string) =>
     str
@@ -72,7 +73,13 @@ export type Category = typeof categories[number]
 const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)
-        fs.writeFileSync(outputFilePath, outputContent)
+        fs.writeFileSync(
+            outputFilePath,
+            await prettier.format(outputContent, {
+                ...(await prettier.resolveConfig(outputFilePath)),
+                parser: 'typescript',
+            })
+        )
         console.log('The file generated/generatedHeroUtils.ts has been generated successfully !')
     } catch (error) {
         console.error('Error generating file :', error)
