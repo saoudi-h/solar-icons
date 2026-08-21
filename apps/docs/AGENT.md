@@ -50,7 +50,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **`generate-changelog.ts` hardcodes the list of public packages** in `apps/docs/scripts/generate-changelog.ts`. New public packages need to be added there.
 - **`lint:links` runs on Bun, not Node** (`preload.ts` uses `Bun.plugin(createMdxPlugin(...))`).
 - **`apps/docs/core/` duplicates pieces of `packages/core/`** (notably `generate-data.ts` reads `core/metadata.json` and emits `core/generated/utils.ts`).
-- **Explorer data is generated from the core package.** `pnpm generate:catalog` refreshes `generated/descriptions.ts`, `generated/utils.ts`, and `generated/generatedHeroUtils.ts`; `predev` and `build` run it automatically so `/icons` does not retain a stale inventory after an icon extension.
+- **Explorer data is generated from the core source metadata.** `pnpm generate:catalog` reads the committed files under `packages/core/src/` and refreshes `generated/descriptions.ts`, `generated/utils.ts`, and `generated/generatedHeroUtils.ts`; `predev` and `build` run it automatically so `/icons` does not retain a stale inventory when core `dist/` has not been rebuilt yet.
 
 ## 🎨 Icons page (FilterBar)
 

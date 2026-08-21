@@ -62,3 +62,32 @@ the six-style invariant, metadata, review gates, license declarations, attributi
 acceptance. Keep this separate from the public request intake.
 
 **Planned task:** `ICON-CONTRIBUTOR-GOVERNANCE`
+
+## [ISSUE-TSDOWN-LARGE-UNBUNDLE-PERF] tsdown build does not scale to the generated Solid package
+
+- Type: problem
+- Status: open
+- Evidence: `@solar-icons/solid` currently expands 1,268 logical icons into 7,608 SVG-derived
+  modules and 8,893 generated files. The asset generator itself completes in about 1.4 seconds,
+  while the JavaScript-only tsdown phase takes about 24 seconds. A complete tsdown build with
+  declarations repeatedly exceeded 90 seconds, used roughly 2.8–4.2 GB of memory, and did not
+  finish reliably in the tested runs. In contrast, the previous Vite plus separate TypeScript
+  declaration workflow completed in under 10 seconds, and a direct `tsgo --emitDeclarationOnly`
+  test emitted about 8,903 declarations in about 2.5 seconds. Enabling `isolatedDeclarations`
+  exposed 1,269 missing explicit-return annotations and, after those temporary annotations were
+  tested, did not produce a complete-build improvement. Updating `rolldown-plugin-dts`, Rolldown,
+  or TypeScript in isolation also produced no measured improvement and was reverted. The behavior
+  matches the open upstream scalability report for large unbundled entry graphs in
+  [tsdown#696](https://github.com/rolldown/tsdown/issues/696); tsdown's parallel-build request is
+  tracked separately in [tsdown#541](https://github.com/rolldown/tsdown/issues/541). This remains
+  unresolved.
+- Impact: Release builds are slow and memory-heavy, which makes the planned continuous addition
+  of icons expensive and increases the risk of CI or developer-machine out-of-memory failures.
+  The local development workaround that skips unchanged package builds does not solve the
+  production build bottleneck.
+- Desired outcome: Keep tsdown as the supported single configuration for JavaScript and
+  declarations while finding an upstream-supported or repository-level strategy that scales to
+  the generated graph, preserves every public export and type signature, and completes within a
+  predictable release-build time and memory budget. No optimization may silently change the
+  package API.
+- Tasks: none

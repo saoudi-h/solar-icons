@@ -1,6 +1,6 @@
-import icons from '@solar-icons/core/metadata-descriptions.json' assert { type: 'json' }
 import fs from 'node:fs'
 import prettier from 'prettier'
+import { readCoreMetadata } from './catalog-source'
 
 const outputDataFilePath = './generated/descriptions.ts'
 
@@ -15,6 +15,12 @@ type IconData = {
     category: string
     categoryTags: string[]
     tags: string[]
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    priority?: 'critical' | 'high' | 'normal' | 'low'
+    priorityReason?: string
     deprecatedAliases?: {
         name: string
         replacement: string
@@ -22,6 +28,8 @@ type IconData = {
         deprecatedSince?: string
     }[]
 }
+
+const icons = readCoreMetadata<IconData[]>('metadata-descriptions.json')
 
 const generate = (iconsData: IconData[]): string => {
     const iconEntries = Object.values(iconsData)
@@ -40,6 +48,13 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    /** Omitted for the original 480 Design catalogue; present for project extensions. */
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    priority?: 'critical' | 'high' | 'normal' | 'low'
+    priorityReason?: string
     deprecatedAliases?: {
         name: string
         replacement: string
@@ -53,6 +68,18 @@ export const icons: IconData[] = [
 `
     const res = iconEntries.map(icon => {
         const componentName = toPascalCase(icon.name) + 'Icon'
+        const lifecycle = [
+            icon.origin ? `        origin: '${icon.origin}' as const,` : '',
+            icon.addedAt ? `        addedAt: '${icon.addedAt}',` : '',
+            icon.author ? `        author: ${JSON.stringify(icon.author)},` : '',
+            icon.state ? `        state: '${icon.state}' as const,` : '',
+            icon.priority ? `        priority: '${icon.priority}' as const,` : '',
+            icon.priorityReason
+                ? `        priorityReason: ${JSON.stringify(icon.priorityReason)},`
+                : '',
+        ]
+            .filter(Boolean)
+            .join('\n')
         const deprecatedAliases = icon.deprecatedAliases?.length
             ? `         deprecatedAliases: ${JSON.stringify(icon.deprecatedAliases)},\n`
             : ''
@@ -61,7 +88,7 @@ export const icons: IconData[] = [
         category: '${icon.category}' as Category,
          categoryTags: ${JSON.stringify(icon.categoryTags)},
          tags: ${JSON.stringify(icon.tags)},
-${deprecatedAliases}         Icon: ${componentName},
+${lifecycle ? `${lifecycle}\n` : ''}${deprecatedAliases}         Icon: ${componentName},
     }`
     })
 
@@ -76,7 +103,7 @@ export default icons
 
 const main = async () => {
     try {
-        const data = generate(icons)
+        const data = generate(icons as IconData[])
         fs.writeFileSync(
             outputDataFilePath,
             await prettier.format(data, {

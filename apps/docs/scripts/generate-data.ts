@@ -1,6 +1,8 @@
-import metadata from '@solar-icons/core/metadata.json' assert { type: 'json' }
 import fs from 'node:fs'
 import prettier from 'prettier'
+import { readCoreMetadata } from './catalog-source'
+
+const metadata = readCoreMetadata<{ categories: Record<string, unknown> }>('metadata.json')
 
 const toPascalCase = (str: string) =>
     str

@@ -1280,6 +1280,13 @@ export interface IconData {
     category: Category
     categoryTags: string[]
     tags: string[]
+    /** Omitted for the original 480 Design catalogue; present for project extensions. */
+    origin?: 'upstream' | 'extended'
+    addedAt?: string
+    author?: string
+    state?: 'stable' | 'beta'
+    priority?: 'critical' | 'high' | 'normal' | 'low'
+    priorityReason?: string
     deprecatedAliases?: {
         name: string
         replacement: string
@@ -17442,6 +17449,10 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['plus', 'new', 'increase', 'addition', 'create', 'positive', 'math', 'more'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-14',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: AddIcon,
     },
     {
@@ -17449,6 +17460,12 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['minus', 'remove', 'decrease', 'subtraction', 'negative', 'math', 'less'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-18',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
+        priority: 'critical' as const,
+        priorityReason: 'Primitive control symbol and direct counterpart to the extended add icon.',
         Icon: MinusIcon,
     },
     {
@@ -17456,6 +17473,13 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['close', 'cancel', 'dismiss', 'remove', 'exit', 'x'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-18',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
+        priority: 'critical' as const,
+        priorityReason:
+            'Primitive dismissal and cancellation control used throughout interactive interfaces.',
         Icon: CloseIcon,
     },
     {
@@ -17463,6 +17487,13 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['exclamation', 'alert', 'warning', 'attention', 'important', 'error'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-18',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
+        priority: 'critical' as const,
+        priorityReason:
+            'Primitive alert marker for warnings, validation states, and attention cues.',
         Icon: ExclamationMarkIcon,
     },
     {
@@ -17470,6 +17501,13 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
         tags: ['question', 'help', 'unknown', 'information', 'support', 'faq'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-18',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
+        priority: 'critical' as const,
+        priorityReason:
+            'Primitive help and clarification marker used in onboarding, tooltips, and support interfaces.',
         Icon: QuestionMarkIcon,
     },
     {
@@ -17477,6 +17515,10 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['security', 'commerce', 'retail', 'inventory'],
         tags: ['barcode', 'product code', 'sku', 'scan', 'inventory', 'retail'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: BarcodeIcon,
     },
     {
@@ -17484,6 +17526,10 @@ export const icons: IconData[] = [
         category: 'security' as Category,
         categoryTags: ['security', 'commerce', 'retail', 'inventory'],
         tags: ['barcode scanner', 'scan', 'product code', 'sku', 'inventory', 'retail'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: BarcodeScanIcon,
     },
     {
@@ -17491,6 +17537,10 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['devices', 'tools', 'vision', 'exploration'],
         tags: ['binoculars', 'search', 'inspect', 'explore', 'view', 'zoom'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: BinocularsIcon,
     },
     {
@@ -17498,6 +17548,10 @@ export const icons: IconData[] = [
         category: 'devices' as Category,
         categoryTags: ['devices', 'technology', 'automation', 'ai'],
         tags: ['robot', 'bot', 'assistant', 'automation', 'chatbot', 'artificial intelligence'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: BotIcon,
     },
     {
@@ -17512,6 +17566,10 @@ export const icons: IconData[] = [
             'neuroscience',
             'artificial intelligence',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: BrainIcon,
     },
     {
@@ -17519,6 +17577,10 @@ export const icons: IconData[] = [
         category: 'tools' as Category,
         categoryTags: ['design', 'art', 'creative', 'tools'],
         tags: ['paint brush', 'brush', 'paint', 'art', 'draw', 'design', 'creative'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: PaintBrushIcon,
     },
     {
@@ -17526,6 +17588,10 @@ export const icons: IconData[] = [
         category: 'ui' as Category,
         categoryTags: ['interface', 'tools', 'utilities', 'maintenance'],
         tags: ['toolbox', 'tools', 'repair', 'maintenance', 'tool kit', 'utilities'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: ToolboxIcon,
     },
     {
@@ -17533,6 +17599,10 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['video', 'camera', 'communication', 'privacy'],
         tags: ['video camera off', 'camera disabled', 'no video', 'video off', 'privacy'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: VideocameraOffIcon,
     },
     {
@@ -17540,6 +17610,10 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['video', 'camera', 'communication', 'devices'],
         tags: ['webcam', 'camera', 'video call', 'meeting', 'streaming', 'video conference'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WebcamIcon,
     },
     {
@@ -17547,6 +17621,10 @@ export const icons: IconData[] = [
         category: 'video' as Category,
         categoryTags: ['video', 'camera', 'communication', 'privacy'],
         tags: ['webcam off', 'camera disabled', 'no camera', 'video off', 'privacy'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WebcamOffIcon,
     },
     {
@@ -17554,6 +17632,10 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['technology', 'network', 'internet', 'connectivity'],
         tags: ['wifi', 'wi-fi', 'wireless', 'internet', 'network', 'connection', 'signal'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiIcon,
     },
     {
@@ -17567,6 +17649,10 @@ export const icons: IconData[] = [
             'network settings',
             'configure connection',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiCogIcon,
     },
     {
@@ -17580,6 +17666,10 @@ export const icons: IconData[] = [
             'network error',
             'offline',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiCrossIcon,
     },
     {
@@ -17593,6 +17683,10 @@ export const icons: IconData[] = [
             'network strength',
             'connection quality',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiHighIcon,
     },
     {
@@ -17606,6 +17700,10 @@ export const icons: IconData[] = [
             'network strength',
             'poor connection',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiLowIcon,
     },
     {
@@ -17619,6 +17717,10 @@ export const icons: IconData[] = [
             'no connection',
             'offline',
         ],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiNoneIcon,
     },
     {
@@ -17626,6 +17728,10 @@ export const icons: IconData[] = [
         category: 'it' as Category,
         categoryTags: ['technology', 'network', 'internet', 'status'],
         tags: ['wifi off', 'wi-fi disabled', 'wireless disabled', 'no internet', 'offline'],
+        origin: 'extended' as const,
+        addedAt: '2026-08-21',
+        author: 'Hakim Saoudi',
+        state: 'beta' as const,
         Icon: WiFiOffIcon,
     },
 ]

@@ -107,6 +107,22 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
     return [keyword, setKeyword] as const
 }
 
+const ORIGIN_FILTERS = ['all', 'extended'] as const
+type OriginFilter = (typeof ORIGIN_FILTERS)[number]
+
+/** URL-backed filter for the original catalogue versus project extensions. */
+export function useOriginFilter(): readonly [OriginFilter, (value: OriginFilter) => void] {
+    const [param, setParam] = useQueryState(
+        'origin',
+        parseAsStringLiteral(ORIGIN_FILTERS).withDefault('all')
+    )
+    const setOrigin = useCallback(
+        (value: OriginFilter) => setParam(value === 'all' ? null : value),
+        [setParam]
+    )
+    return [param, setOrigin] as const
+}
+
 /**
  * Grid view mode in the URL (`?view=grouped|flat`). Default
  * `'flat'` — the first view of the icon set is a 200-icon
