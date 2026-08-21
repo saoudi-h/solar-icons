@@ -15245,7 +15245,7 @@
     },
     {
         "name": "paint-brush",
-        "category": "messages",
+        "category": "tools",
         "categoryTags": ["design", "art", "creative", "tools"],
         "tags": ["paint brush", "brush", "paint", "art", "draw", "design", "creative"],
         "origin": "extended",
