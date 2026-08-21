@@ -1,5 +1,20 @@
 # @solar-icons/vue
 
+## 2.1.0
+
+### Minor Changes
+
+- [#535](https://github.com/saoudi-h/solar-icons/pull/535) [`b5ab9d2`](https://github.com/saoudi-h/solar-icons/commit/b5ab9d2f72b93af91086711e7e073e63781a1785) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add the next curated Solar extension batch: barcode, barcode-scan, binoculars, bot, brain,
+  paint-brush, toolbox, videocamera-off, webcam, webcam-off, and the Wi-Fi status variants. All
+  extensions include the six canonical styles and auditable metadata.
+
+### Patch Changes
+
+- [#535](https://github.com/saoudi-h/solar-icons/pull/535) [`b5ab9d2`](https://github.com/saoudi-h/solar-icons/commit/b5ab9d2f72b93af91086711e7e073e63781a1785) Thanks [@saoudi-h](https://github.com/saoudi-h)! - add the extended `add`, `minus`, `close`, `exclamation-mark`, and
+  `question-mark` icons, correct the `file-smile` name, preserve the
+  metadata/deprecation validation model across generated packages, and expose
+  auditable extension priorities for future icon additions.
+
 ## 2.0.3
 
 ### Patch Changes
