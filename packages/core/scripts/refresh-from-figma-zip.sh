@@ -64,7 +64,10 @@ echo "==> Removing old svgs/ ..."
 rm -rf "$SVGS_DIR"
 
 echo "==> Unzipping $ZIP_PATH ..."
-unzip -q "$ZIP_PATH"
+# Figma exports can contain duplicate archive entries when a component was
+# exported more than once. Always take the archive contents without opening an
+# interactive overwrite prompt (the script is intentionally non-interactive).
+unzip -q -o "$ZIP_PATH"
 
 # Quick sanity check
 SVG_COUNT=$(find "$SVGS_DIR" -name "*.svg" | wc -l | tr -d ' ')
