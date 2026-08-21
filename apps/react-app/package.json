@@ -7,7 +7,7 @@
     "dev": "next dev",
     "prebuild": "pnpm prepare:catalog",
     "build": "next build",
-    "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/react build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/react",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",

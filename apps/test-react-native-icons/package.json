@@ -13,7 +13,7 @@
     "ios": "expo start --ios",
     "preweb": "pnpm prepare:catalog",
     "web": "expo start --web",
-    "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/react-native build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/react-native",
     "pre-commit": ""
   },
   "dependencies": {

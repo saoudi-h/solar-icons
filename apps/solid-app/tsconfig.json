@@ -8,9 +8,19 @@
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "target": "ESNext",
-        "rootDir": ".",
         "paths": {
-            "~/*": ["./src/*"]
+            "~/*": ["./src/*"],
+            "@solar-icons/solid": ["../../packages/solid/src/index.ts"],
+            "@solar-icons/solid/bold": ["../../packages/solid/src/icons/style/bold.ts"],
+            "@solar-icons/solid/bold-duotone": [
+                "../../packages/solid/src/icons/style/bold-duotone.ts"
+            ],
+            "@solar-icons/solid/broken": ["../../packages/solid/src/icons/style/broken.ts"],
+            "@solar-icons/solid/line-duotone": [
+                "../../packages/solid/src/icons/style/line-duotone.ts"
+            ],
+            "@solar-icons/solid/linear": ["../../packages/solid/src/icons/style/linear.ts"],
+            "@solar-icons/solid/outline": ["../../packages/solid/src/icons/style/outline.ts"]
         },
         "allowImportingTsExtensions": true,
         "types": ["vite/client"],

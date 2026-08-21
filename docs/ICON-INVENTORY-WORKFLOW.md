@@ -51,10 +51,12 @@ per-app `generate:icons` scripts remain as compatibility aliases, but they call 
 generator; do not edit any `icon-list.ts` by hand.
 
 The visual demos also prepare their catalog automatically before `dev`/`build` (or the equivalent
-platform command) and rebuild the corresponding workspace package first. This matters because the
-apps import generated package entrypoints, not the raw core SVG directory. If an app is started
-through a tool that bypasses its package scripts, run `pnpm generate:test-catalogs` and build the
-package explicitly before diagnosing a missing icon.
+platform command). Most apps fingerprint the core SVGs, metadata, and package generators and only
+rebuild their package when an input changed or the output is missing. The Solid demo is faster:
+Vite aliases it directly to generated package source, so its preparation only regenerates the
+source files and does not run the expensive full `tsdown` bundle. If an app is started through a
+tool that bypasses its package scripts, run `pnpm --filter <app> prepare:catalog` before diagnosing
+a missing icon.
 
 The documentation explorer has its own generated React data files. Regenerate them after every
 catalogue change:

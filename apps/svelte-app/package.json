@@ -6,7 +6,7 @@
         "predev": "pnpm prepare:catalog",
         "dev": "vite dev",
         "prebuild": "pnpm prepare:catalog",
-        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/svelte build",
+        "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/svelte",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

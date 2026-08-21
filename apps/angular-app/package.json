@@ -7,7 +7,7 @@
     "start": "ng serve",
     "prebuild": "pnpm prepare:catalog",
     "build": "ng build",
-    "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/angular build",
+    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/angular",
     "watch": "ng build --watch --configuration development",
     "clean": "rm -rf node_modules .angular"
   },

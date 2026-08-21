@@ -15,7 +15,7 @@
         "format": "prettier \"**/*\" --ignore-unknown --list-different",
         "format:fix": "prettier \"**/*\" --ignore-unknown --write",
         "typecheck": "tsgo --noEmit",
-        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/solid build",
+        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/solid generate:assets",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
         "pre-commit": "lint-staged"
     },
