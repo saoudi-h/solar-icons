@@ -51,8 +51,9 @@ After `pnpm check:figma-catalog` passes:
    version and icon count.
 3. If the UI changed, run `pnpm --filter @solar-icons/figma-plugin capture:community` and review the
    generated Community assets before uploading them.
-4. Publish a new version from the Figma plugin management flow and include the package version,
-   logical icon count, and catalogue hash from the build output in the release notes.
+4. Publish a new version from the Figma plugin management flow. If Figma exposes an optional
+   release-notes field, it may contain the package version and logical icon count, but do not rely
+   on it as a durable versioned changelog.
 5. Complete any Figma review requested for the update, then verify the public Community listing
    and an installed copy of the plugin.
 6. Mark `FIGMA-CATALOG-SYNC` complete in `.autonomos/TASKS.md` only after the Community update is
@@ -61,6 +62,11 @@ After `pnpm check:figma-catalog` passes:
 Do not add a runtime network request to avoid this manual step. Keeping `networkAccess.allowedDomains`
 set to `none` preserves predictable offline behavior and makes the plugin's catalogue version
 explicit and auditable.
+
+Figma Community's publication flow may allow the maintainer to edit the global listing description,
+but it does not provide a dependable, user-visible changelog for each plugin version. Update the
+current icon count in that description when it changes, and keep the full package version, counts,
+hash, publication date, and release notes in the repository commit and worklog.
 
 ## Release policy
 
