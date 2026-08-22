@@ -15,7 +15,7 @@
 
 - [x] **[ICON-PUBLISH]** Publish the `2.1.0` package set and submit the rebuilt Figma Community plugin as a separate catalog update. Completed manually by the maintainer. `Priority: 🟠` `Complexity: M`
 
-- [ ] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, and document the separate Figma Community publication step. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
+- [/] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, and document the separate Figma Community publication step. Code, CI gate, and documentation are complete; the next manual Figma Community publication remains. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
 
 - [ ] **[EXTENSION-COMMUNICATION]** Update current README/docs/plugin copy to describe the maintained original Solar catalogue plus curated extensions, refresh current icon counts, and publish a release announcement without claiming new icons are from 480 Design. `Priority: 🟠` `Complexity: M`
 

@@ -46,6 +46,9 @@ jobs:
             - name: Validate package exports
               run: pnpm check:exports
 
+            - name: Validate Figma catalog synchronization
+              run: pnpm check:figma-catalog
+
             - name: Create Release Pull Request or Publish to NPM
               id: changesets
               uses: changesets/action@v1

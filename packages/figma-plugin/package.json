@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "check:catalog": "node scripts/check-catalog.mjs",
     "capture:community": "pnpm build && node scripts/capture-community-screens.mjs && node scripts/generate-community-assets.mjs",
     "test": "vitest run",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.main.json --noEmit"

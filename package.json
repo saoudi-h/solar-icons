@@ -16,6 +16,7 @@
         "release": "changeset publish",
         "typecheck": "turbo typecheck",
         "check:exports": "node scripts/check-exports.mjs",
+        "check:figma-catalog": "pnpm --filter @solar-icons/static build && pnpm --filter @solar-icons/figma-plugin build && pnpm --filter @solar-icons/figma-plugin check:catalog",
         "check:icon-inventory": "tsx scripts/check-icon-inventory.ts --check-generated --check-docs",
         "generate:test-catalogs": "tsx scripts/generate-test-app-icon-lists.ts",
         "prepare:visual-package": "tsx scripts/prepare-visual-package.ts",

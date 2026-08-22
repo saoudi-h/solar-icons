@@ -83,6 +83,17 @@ pnpm --filter svelte-app check
 Deprecated Svelte aliases are generated as wrapper components. Do not hand-edit an alias to use
 `<script module> export { default }`: Svelte 5 rejects a component-level default export during SSR.
 
+The offline Figma plugin embeds the static catalogue and has a dedicated synchronization gate. Run
+this after a catalogue or plugin change:
+
+```sh
+pnpm check:figma-catalog
+```
+
+This rebuilds the static package and plugin, then verifies the embedded metadata, SVG map, version,
+counts, and deterministic catalogue hash. The remaining manual Figma Community submission is
+documented in [`docs/FIGMA-CATALOG-SYNC.md`](./FIGMA-CATALOG-SYNC.md).
+
 Confirm the derived lists with:
 
 ```sh
