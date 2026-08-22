@@ -4,6 +4,8 @@ The Figma plugin is an offline application. Its UI embeds the catalogue generate
 `@solar-icons/static`; it does not fetch new icons at runtime. This makes the generated plugin
 artifact the boundary between the package release and the Figma Community listing.
 
+For the complete maintainer procedure, see [`FIGMA-PLUGIN-PUBLISHING.md`](./FIGMA-PLUGIN-PUBLISHING.md).
+
 ## Synchronization contract
 
 `packages/figma-plugin/scripts/build.mjs` embeds three catalogue payloads in `dist/ui.html`:

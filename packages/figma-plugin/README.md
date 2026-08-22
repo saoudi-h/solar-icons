@@ -19,7 +19,8 @@ The build writes the gitignored `dist/code.js` and `dist/ui.html`. Vite bundles 
 
 The repository automates static-package generation, plugin embedding, and catalogue verification.
 Figma Community publication still requires a maintainer's review and submission in Figma Desktop.
-Follow the complete procedure in [`docs/FIGMA-CATALOG-SYNC.md`](../../docs/FIGMA-CATALOG-SYNC.md).
+Follow the complete procedure in [`docs/FIGMA-PLUGIN-PUBLISHING.md`](../../docs/FIGMA-PLUGIN-PUBLISHING.md)
+and the synchronization contract in [`docs/FIGMA-CATALOG-SYNC.md`](../../docs/FIGMA-CATALOG-SYNC.md).
 
 ## Current behavior
 
