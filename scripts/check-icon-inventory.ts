@@ -18,7 +18,61 @@ const GENERATED_ICON_LISTS = [
     'apps/icon-parity/app/icon-list.ts',
 ]
 
+type InventoryCountKind = 'logical' | 'svg'
+
+const CURRENT_DOCUMENTATION_FILES: Array<{
+    relativePath: string
+    counts: InventoryCountKind[]
+}> = [
+    { relativePath: 'README.md', counts: ['logical', 'svg'] },
+    { relativePath: 'AGENT.md', counts: ['logical', 'svg'] },
+    { relativePath: 'apps/docs/README.md', counts: ['svg'] },
+    { relativePath: 'apps/docs/config/index.tsx', counts: ['logical'] },
+    {
+        relativePath: 'apps/docs/components/home-page/sections/community/index.tsx',
+        counts: ['svg'],
+    },
+    { relativePath: 'apps/docs/content/docs/v2/index.mdx', counts: ['logical', 'svg'] },
+    {
+        relativePath: 'apps/docs/content/docs/v2/icon-reference/categories.mdx',
+        counts: ['logical'],
+    },
+    { relativePath: 'apps/docs/content/docs/v2/figma-plugin.mdx', counts: ['logical'] },
+    { relativePath: 'apps/docs/content/docs/v2/packages/js.mdx', counts: ['svg'] },
+    { relativePath: 'apps/docs/content/docs/v2/packages/nuxt.mdx', counts: ['logical', 'svg'] },
+    { relativePath: 'packages/core/README.md', counts: ['logical'] },
+    { relativePath: 'packages/core/AGENT.md', counts: ['svg'] },
+    { relativePath: 'packages/core/EXTENDING-ICON-SET.md', counts: ['logical'] },
+    { relativePath: 'packages/figma-plugin/community/presentation.html', counts: ['logical'] },
+    { relativePath: 'packages/nuxt/AGENT.md', counts: ['logical', 'svg'] },
+    { relativePath: 'packages/nuxt/playground/app/pages/gallery.vue', counts: ['logical', 'svg'] },
+    { relativePath: 'packages/vue/AGENT.md', counts: ['logical'] },
+]
+
+const PUBLIC_ICON_PACKAGE_READMES = [
+    'angular',
+    'js',
+    'nuxt',
+    'react',
+    'react-native',
+    'solid',
+    'static',
+    'svelte',
+    'vue',
+].map(name => ({
+    relativePath: `packages/${name}/README.md`,
+    counts: ['logical', 'svg'] as InventoryCountKind[],
+}))
+
 const readJson = <T>(filename: string): T => JSON.parse(fs.readFileSync(filename, 'utf8')) as T
+
+const hasCount = (content: string, count: number): boolean => {
+    const variants = [String(count), count.toLocaleString('en-US')]
+    return variants.some(variant => {
+        const escaped = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        return new RegExp(`(?<!\\d)${escaped}(?!\\d)`).test(content)
+    })
+}
 
 const countSvgFiles = (): number => {
     let count = 0
@@ -80,6 +134,32 @@ const main = () => {
             warnings.push(`${relativePath} has no generated inventory comment`)
         } else if (Number(match[1]) !== iconNames.size) {
             warnings.push(`${relativePath} reports ${match[1]} icons (expected ${iconNames.size})`)
+        }
+    }
+
+    if (process.argv.includes('--check-docs')) {
+        const documentationChecks = [...CURRENT_DOCUMENTATION_FILES, ...PUBLIC_ICON_PACKAGE_READMES]
+        const expectedCounts: Record<InventoryCountKind, number> = {
+            logical: iconNames.size,
+            svg: svgFiles,
+        }
+
+        for (const { relativePath, counts } of documentationChecks) {
+            const filename = path.join(REPOSITORY_ROOT, relativePath)
+            if (!fs.existsSync(filename)) {
+                errors.push(`${relativePath} is missing from the documentation inventory checks`)
+                continue
+            }
+
+            const content = fs.readFileSync(filename, 'utf8')
+            for (const kind of counts) {
+                const expected = expectedCounts[kind]
+                if (!hasCount(content, expected)) {
+                    errors.push(
+                        `${relativePath} does not report the current ${kind} count (${expected})`
+                    )
+                }
+            }
         }
     }
 

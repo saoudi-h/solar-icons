@@ -9,7 +9,7 @@ the same checks and human visual review still apply.
 
 If the icon closes a Lucide gap, add it to `apps/icon-parity/app/compare/lucide-extension-roadmap.json`
 first. Use the Lucide `sourceId`, a qualitative `priority`, and a short `priorityReason`. The
-roadmap is for missing icons; it is not a second copy of the 1,247 existing Solar entries.
+roadmap is for missing icons; it is not a second copy of the 1,268 existing Solar entries.
 
 Keep the first release packet small (normally up to six icons). A priority does not mean that the
 icon is already designed or that its name must be copied blindly. The final Solar name, category,
