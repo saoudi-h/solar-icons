@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import prettier from 'prettier'
+
 import { readCoreMetadata } from './catalog-source'
 
 const metadata = readCoreMetadata<{ categories: Record<string, { icons: string[] }> }>(
@@ -54,6 +54,15 @@ import type { ComponentType } from 'react'
 import type { IconProps } from '@solar-icons/react/lib/types'
 import type { Weight } from '@solar-icons/core'
 
+import { execFileSync } from 'node:child_process'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' },
+    )
+
 export const styles = ['Broken', 'Outline', 'Linear', 'Bold', 'LineDuotone', 'BoldDuotone'] as const
 export type Style = (typeof styles)[number]
 
@@ -77,13 +86,7 @@ export type Category = typeof categories[number]
 const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)
-        fs.writeFileSync(
-            outputFilePath,
-            await prettier.format(outputContent, {
-                ...(await prettier.resolveConfig(outputFilePath)),
-                parser: 'typescript',
-            })
-        )
+        fs.writeFileSync(outputFilePath, oxfmtFormat(outputFilePath, outputContent))
         console.log('The file generated/generatedHeroUtils.ts has been generated successfully !')
     } catch (error) {
         console.error('Error generating file :', error)

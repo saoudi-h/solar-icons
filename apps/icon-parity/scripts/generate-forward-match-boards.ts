@@ -3,8 +3,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import sharp from 'sharp'
-import { FORWARD_REFERENCE_OVERRIDES, SEMANTIC_RELATED_MATCH_IDS, SEMANTIC_VARIANT_NO_MATCH_IDS } from '../app/compare/forward-semantic-promotions'
+
+import {
+    FORWARD_REFERENCE_OVERRIDES,
+    SEMANTIC_RELATED_MATCH_IDS,
+    SEMANTIC_VARIANT_NO_MATCH_IDS,
+} from '../app/compare/forward-semantic-promotions'
 
 interface AtlasIcon {
     id: string
@@ -100,56 +106,89 @@ async function main(): Promise<void> {
     for (let sheet = 1; sheet <= 13; sheet += 1) {
         const filename = path.join(productionRoot, `sheet-${String(sheet).padStart(2, '0')}.json`)
         const production = readJson<ProductionSheet>(filename)
-        all.push(...production.entries.map(entry => ({
-            ...entry,
-            reference: FORWARD_REFERENCE_OVERRIDES[entry.solarId]?.reference ?? entry.reference,
-            referenceId: FORWARD_REFERENCE_OVERRIDES[entry.solarId]?.referenceId ?? entry.referenceId,
-            binary: (FORWARD_REFERENCE_OVERRIDES[entry.solarId] || entry.decision === 'equivalent' || (entry.decision === 'variant' && !SEMANTIC_VARIANT_NO_MATCH_IDS.has(entry.solarId)) || SEMANTIC_RELATED_MATCH_IDS.has(entry.solarId) ? 'match' : 'no-match') as
-                | 'match'
-                | 'no-match',
-        })))
+        all.push(
+            ...production.entries.map(entry => ({
+                ...entry,
+                reference: FORWARD_REFERENCE_OVERRIDES[entry.solarId]?.reference ?? entry.reference,
+                referenceId:
+                    FORWARD_REFERENCE_OVERRIDES[entry.solarId]?.referenceId ?? entry.referenceId,
+                binary: (FORWARD_REFERENCE_OVERRIDES[entry.solarId] ||
+                entry.decision === 'equivalent' ||
+                (entry.decision === 'variant' &&
+                    !SEMANTIC_VARIANT_NO_MATCH_IDS.has(entry.solarId)) ||
+                SEMANTIC_RELATED_MATCH_IDS.has(entry.solarId)
+                    ? 'match'
+                    : 'no-match') as 'match' | 'no-match',
+            }))
+        )
     }
 
     const matches = all.filter(entry => entry.binary === 'match' && entry.referenceId)
     const noMatches = all.filter(entry => entry.binary === 'no-match')
     fs.rmSync(outputRoot, { recursive: true, force: true })
     fs.mkdirSync(outputRoot, { recursive: true })
-    fs.writeFileSync(path.join(outputRoot, 'binary-map.json'), `${JSON.stringify({
-        version: 1,
-        direction: 'solar-to-lucide',
-        sourceSnapshot: '@iconify-json/lucide@1.2.123',
-        contract: 'semantic match or no-match; equivalent, variant, and explicit semantic promotions are matches',
-        solarIcons: all.length,
-        matches: matches.length,
-        noMatches: noMatches.length,
-        entries: all,
-    }, null, 2)}\n`)
+    fs.writeFileSync(
+        path.join(outputRoot, 'binary-map.json'),
+        `${JSON.stringify(
+            {
+                version: 1,
+                direction: 'solar-to-lucide',
+                sourceSnapshot: '@iconify-json/lucide@1.2.123',
+                contract:
+                    'semantic match or no-match; equivalent, variant, and explicit semantic promotions are matches',
+                solarIcons: all.length,
+                matches: matches.length,
+                noMatches: noMatches.length,
+                entries: all,
+            },
+            null,
+            2
+        )}\n`
+    )
 
     const boardCount = Math.ceil(matches.length / rowsPerBoard)
     for (let board = 0; board < boardCount; board += 1) {
         const entries = matches.slice(board * rowsPerBoard, (board + 1) * rowsPerBoard)
-        const composites: Array<{ input: Buffer; left: number; top: number }> = [{
-            input: boardHeader(`matches ${board * rowsPerBoard + 1}–${board * rowsPerBoard + entries.length}`, board + 1, boardCount),
-            left: 0,
-            top: 0,
-        }]
+        const composites: Array<{ input: Buffer; left: number; top: number }> = [
+            {
+                input: boardHeader(
+                    `matches ${board * rowsPerBoard + 1}–${board * rowsPerBoard + entries.length}`,
+                    board + 1,
+                    boardCount
+                ),
+                left: 0,
+                top: 0,
+            },
+        ]
         for (const [row, entry] of entries.entries()) {
             const solar = solarById.get(entry.solarId)
             const lucide = entry.referenceId ? lucideById.get(entry.referenceId) : undefined
-            if (!solar || !lucide) throw new Error(`Missing atlas reference for ${entry.solarId}/${entry.referenceId}`)
+            if (!solar || !lucide)
+                throw new Error(`Missing atlas reference for ${entry.solarId}/${entry.referenceId}`)
             const top = header + row * cell
             composites.push({ input: await crop('solar', solar), left: 0, top })
             composites.push({ input: await crop('lucide', lucide), left: cell, top })
-            composites.push({ input: label(`${entry.solarId} ↔ ${entry.referenceId}`, '#16a34a'), left: cell * 2, top })
+            composites.push({
+                input: label(`${entry.solarId} ↔ ${entry.referenceId}`, '#16a34a'),
+                left: cell * 2,
+                top,
+            })
         }
         await sharp({
-            create: { width: columns * cell, height: header + entries.length * cell, channels: 4, background: '#ebe8df' },
+            create: {
+                width: columns * cell,
+                height: header + entries.length * cell,
+                channels: 4,
+                background: '#ebe8df',
+            },
         })
             .composite(composites)
             .png({ compressionLevel: 9 })
             .toFile(path.join(outputRoot, `matches-${String(board + 1).padStart(2, '0')}.png`))
     }
-    console.log(`Generated ${matches.length} binary matches in ${boardCount} visual boards; ${noMatches.length} no-match rows.`)
+    console.log(
+        `Generated ${matches.length} binary matches in ${boardCount} visual boards; ${noMatches.length} no-match rows.`
+    )
 }
 
 main()

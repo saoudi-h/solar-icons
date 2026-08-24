@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef } from 'react'
+
 import type { IconBaseProps } from './types'
 
 const SOLAR_CLASS = 'solar'
@@ -49,10 +50,8 @@ const IconBase = forwardRef<SVGSVGElement, IconBaseProps & ComponentPropsWithout
         if (secondaryOpacity != null)
             baseStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
 
-        const widthAttr =
-            size !== undefined ? undefined : isolated ? '24px' : '1em'
-        const heightAttr =
-            size !== undefined ? undefined : isolated ? '24px' : '1em'
+        const widthAttr = size !== undefined ? undefined : isolated ? '24px' : '1em'
+        const heightAttr = size !== undefined ? undefined : isolated ? '24px' : '1em'
 
         if (size === undefined && !isolated) {
             if (!('fontSize' in baseStyle)) {

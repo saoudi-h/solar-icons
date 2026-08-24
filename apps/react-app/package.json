@@ -1,34 +1,33 @@
 {
-  "name": "react-app",
-  "version": "2.0.0-beta.0",
-  "private": true,
-  "scripts": {
-    "predev": "pnpm prepare:catalog",
-    "dev": "next dev",
-    "prebuild": "pnpm prepare:catalog",
-    "build": "next build",
-    "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/react",
-    "start": "next start",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier \"**/*\" --ignore-unknown --list-different",
-    "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-    "clean": "rimraf *.tsbuildinfo node_modules .next"
-  },
-  "dependencies": {
-    "@solar-icons/react": "workspace:*",
-    "next": "16.3.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.1.2",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "eslint": "^10.8.0",
-    "eslint-config-next": "16.3.0",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
-  }
+    "name": "react-app",
+    "version": "2.0.0-beta.0",
+    "private": true,
+    "scripts": {
+        "predev": "pnpm prepare:catalog",
+        "dev": "next dev",
+        "prebuild": "pnpm prepare:catalog",
+        "build": "next build",
+        "prepare:catalog": "pnpm -w prepare:visual-package @solar-icons/react",
+        "start": "next start",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
+        "clean": "rimraf *.tsbuildinfo node_modules .next"
+    },
+    "dependencies": {
+        "@solar-icons/react": "workspace:*",
+        "next": "16.3.0",
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.3.3",
+        "@types/node": "^26.1.2",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "eslint-plugin-better-tailwindcss": "^4.7.0",
+        "tailwindcss": "^4.3.3",
+        "typescript": "7.0.2"
+    }
 }

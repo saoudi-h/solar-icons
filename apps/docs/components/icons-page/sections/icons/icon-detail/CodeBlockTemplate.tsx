@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils'
 import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock'
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock'
 import type { ComponentProps } from 'react'
+
+import { cn } from '@/lib/utils'
 
 const pre = (props: ComponentProps<'pre'>) => (
     <CodeBlock {...props} className={cn('my-0', props.className)} keepBackground={true}>

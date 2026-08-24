@@ -1,870 +1,818 @@
 {
-  "version": 1,
-  "direction": "lucide-to-solar-gap",
-  "phase": "visual-review-closed",
-  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
-  "sourceTemplate": "lucide-gap-batch-05-candidate-only.json",
-  "filter": {
-    "coverage": "candidate-only",
-    "suggestedBatch": 1
-  },
-  "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
-  "forwardIntegration": {
-    "promotedExistingReferences": 0,
-    "aliasDeferred": []
-  },
-  "entries": [
-    {
-      "rank": 1,
-      "lucideId": "L0096",
-      "lucide": "arrow-up-from-line",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 2,
-      "lucideId": "L1313",
-      "lucide": "refresh-ccw",
-      "solarCandidates": [
-        "S0812"
-      ],
-      "decision": "equivalent",
-      "note": "Solar refresh (S0812) is the same refresh/reload action; circle and repeat variants remain audit evidence only."
-    },
-    {
-      "rank": 3,
-      "lucideId": "L0111",
-      "lucide": "award",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 4,
-      "lucideId": "L0340",
-      "lucide": "chart-no-axes-combined",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 5,
-      "lucideId": "L1218",
-      "lucide": "pencil",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 6,
-      "lucideId": "L1396",
-      "lucide": "send",
-      "solarCandidates": [
-        "S0757"
-      ],
-      "decision": "equivalent",
-      "note": "Solar card-send (S0757) preserves the generic send action represented by Lucide send."
-    },
-    {
-      "rank": 7,
-      "lucideId": "L1817",
-      "lucide": "x",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 8,
-      "lucideId": "L0160",
-      "lucide": "beaker",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 9,
-      "lucideId": "L0218",
-      "lucide": "book-open",
-      "solarCandidates": [
-        "S0128"
-      ],
-      "decision": "equivalent",
-      "note": "Solar book-2 (S0128) preserves the open-book object."
-    },
-    {
-      "rank": 10,
-      "lucideId": "L0722",
-      "lucide": "flask-conical",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 11,
-      "lucideId": "L0820",
-      "lucide": "grid-2x2",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 12,
-      "lucideId": "L0897",
-      "lucide": "images",
-      "solarCandidates": [
-        "S0442"
-      ],
-      "decision": "equivalent",
-      "note": "Solar gallery (S0442) is the same multi-image/gallery object."
-    },
-    {
-      "rank": 13,
-      "lucideId": "L1083",
-      "lucide": "mic-audio-lines",
-      "solarCandidates": [
-        "S0654"
-      ],
-      "decision": "equivalent",
-      "note": "Solar microphone (S0654) is the same microphone input object; audio-line decoration is non-semantic."
-    },
-    {
-      "rank": 14,
-      "lucideId": "L1170",
-      "lucide": "package",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 15,
-      "lucideId": "L1714",
-      "lucide": "undo",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 16,
-      "lucideId": "L0611",
-      "lucide": "external-link",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 17,
-      "lucideId": "L0842",
-      "lucide": "handbag",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 18,
-      "lucideId": "L1143",
-      "lucide": "music-3",
-      "solarCandidates": [
-        "S0692"
-      ],
-      "decision": "equivalent",
-      "note": "Solar music-note-2 (S0692) is the same music-note object."
-    },
-    {
-      "rank": 19,
-      "lucideId": "L1156",
-      "lucide": "notebook-text",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 20,
-      "lucideId": "L1217",
-      "lucide": "pen-tool",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 21,
-      "lucideId": "L1310",
-      "lucide": "redo",
-      "solarCandidates": [
-        "S1149"
-      ],
-      "decision": "equivalent",
-      "note": "Solar undo-right (S1149) expresses the same redo/reapply action."
-    },
-    {
-      "rank": 22,
-      "lucideId": "L1322",
-      "lucide": "repeat-2",
-      "solarCandidates": [
-        "S0821"
-      ],
-      "decision": "equivalent",
-      "note": "Solar repeat (S0821) is the same repeat playback action."
-    },
-    {
-      "rank": 23,
-      "lucideId": "L1392",
-      "lucide": "search-large",
-      "solarCandidates": [
-        "S0611"
-      ],
-      "decision": "equivalent",
-      "note": "Solar magnifier (S0611) is the same generic search action."
-    },
-    {
-      "rank": 24,
-      "lucideId": "L1606",
-      "lucide": "table",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 25,
-      "lucideId": "L1800",
-      "lucide": "wifi",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 26,
-      "lucideId": "L0259",
-      "lucide": "brush",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 27,
-      "lucideId": "L0533",
-      "lucide": "cup-soda",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 28,
-      "lucideId": "L0729",
-      "lucide": "focus",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 29,
-      "lucideId": "L0931",
-      "lucide": "laptop-minimal-check",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 30,
-      "lucideId": "L1085",
-      "lucide": "mic-signal",
-      "solarCandidates": [
-        "S0654"
-      ],
-      "decision": "equivalent",
-      "note": "Solar microphone (S0654) is the same microphone input object; signal lines are non-semantic."
-    },
-    {
-      "rank": 31,
-      "lucideId": "L1115",
-      "lucide": "motorbike",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 32,
-      "lucideId": "L1178",
-      "lucide": "paint-bucket",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 33,
-      "lucideId": "L1213",
-      "lucide": "pc-case",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 34,
-      "lucideId": "L1285",
-      "lucide": "radio",
-      "solarCandidates": [
-        "S0800"
-      ],
-      "decision": "equivalent",
-      "note": "Solar radio (S0800) is the same radio receiver object."
-    },
-    {
-      "rank": 35,
-      "lucideId": "L1294",
-      "lucide": "receipt",
-      "solarCandidates": [
-        "S0102"
-      ],
-      "decision": "equivalent",
-      "note": "Solar bill (S0102) is an interchangeable receipt/bill document."
-    },
-    {
-      "rank": 36,
-      "lucideId": "L1332",
-      "lucide": "rocking-chair",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 37,
-      "lucideId": "L1376",
-      "lucide": "scan-search",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 38,
-      "lucideId": "L1434",
-      "lucide": "shopping-basket",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 39,
-      "lucideId": "L1484",
-      "lucide": "sport-shoe",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 40,
-      "lucideId": "L1607",
-      "lucide": "table-2",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 41,
-      "lucideId": "L1750",
-      "lucide": "utensils",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 42,
-      "lucideId": "L0073",
-      "lucide": "arrow-down-from-line",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 43,
-      "lucideId": "L0199",
-      "lucide": "bolt",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 44,
-      "lucideId": "L0322",
-      "lucide": "chart-area",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 45,
-      "lucideId": "L0323",
-      "lucide": "chart-bar",
-      "solarCandidates": [
-        "S0204"
-      ],
-      "decision": "equivalent",
-      "note": "Solar chart (S0204) is the same bar-chart data visualization."
-    },
-    {
-      "rank": 46,
-      "lucideId": "L0342",
-      "lucide": "chart-pie",
-      "solarCandidates": [
-        "S0744"
-      ],
-      "decision": "equivalent",
-      "note": "Solar pie-chart (S0744) is the same pie-chart data visualization."
-    },
-    {
-      "rank": 47,
-      "lucideId": "L0517",
-      "lucide": "corner-down-right",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 48,
-      "lucideId": "L0573",
-      "lucide": "dollar-sign",
-      "solarCandidates": [
-        "S0343"
-      ],
-      "decision": "equivalent",
-      "note": "Solar dollar (S0343) is the same currency symbol."
-    },
-    {
-      "rank": 49,
-      "lucideId": "L0580",
-      "lucide": "drafting-compass",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 50,
-      "lucideId": "L0608",
-      "lucide": "euro",
-      "solarCandidates": [
-        "S0375"
-      ],
-      "decision": "equivalent",
-      "note": "Solar euro (S0375) is the same currency symbol."
-    },
-    {
-      "rank": 51,
-      "lucideId": "L0609",
-      "lucide": "ev-charger",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 52,
-      "lucideId": "L0618",
-      "lucide": "face-grinning",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 53,
-      "lucideId": "L0620",
-      "lucide": "face-slightly-frowning",
-      "solarCandidates": [
-        "S0882"
-      ],
-      "decision": "equivalent",
-      "note": "Solar sad-circle (S0882) preserves the sad/frowning-face meaning."
-    },
-    {
-      "rank": 54,
-      "lucideId": "L0763",
-      "lucide": "folders",
-      "solarCandidates": [
-        "S0419"
-      ],
-      "decision": "equivalent",
-      "note": "Solar folder (S0419) is the same generic folder collection object."
-    },
-    {
-      "rank": 55,
-      "lucideId": "L0768",
-      "lucide": "frame",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 56,
-      "lucideId": "L0865",
-      "lucide": "heart-handshake",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 57,
-      "lucideId": "L0922",
-      "lucide": "lamp-desk",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 58,
-      "lucideId": "L0939",
-      "lucide": "layers-3",
-      "solarCandidates": [
-        "S0557"
-      ],
-      "decision": "equivalent",
-      "note": "Solar layers (S0557) is the same stacked-layers object."
-    },
-    {
-      "rank": 59,
-      "lucideId": "L0996",
-      "lucide": "loader-pinwheel",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 60,
-      "lucideId": "L1008",
-      "lucide": "luggage",
-      "solarCandidates": [
-        "S1062"
-      ],
-      "decision": "equivalent",
-      "note": "Solar suitcase (S1062) is the same luggage object."
-    },
-    {
-      "rank": 61,
-      "lucideId": "L1095",
-      "lucide": "minus",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 62,
-      "lucideId": "L1116",
-      "lucide": "mountain",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 63,
-      "lucideId": "L1258",
-      "lucide": "plug-zap",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 64,
-      "lucideId": "L1273",
-      "lucide": "printer-check",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 65,
-      "lucideId": "L1274",
-      "lucide": "printer-x",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 66,
-      "lucideId": "L1407",
-      "lucide": "settings-2",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 67,
-      "lucideId": "L1779",
-      "lucide": "wand",
-      "solarCandidates": [
-        "S0606"
-      ],
-      "decision": "equivalent",
-      "note": "Solar magic-wand (S0606) is the same magic-wand tool."
-    },
-    {
-      "rank": 68,
-      "lucideId": "L1790",
-      "lucide": "waypoints",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 69,
-      "lucideId": "L0089",
-      "lucide": "arrow-right-to-line",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 70,
-      "lucideId": "L0123",
-      "lucide": "badge-info",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 71,
-      "lucideId": "L0129",
-      "lucide": "badge-question-mark",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 72,
-      "lucideId": "L0141",
-      "lucide": "banknote-arrow-up",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 73,
-      "lucideId": "L0172",
-      "lucide": "bell-dot",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 74,
-      "lucideId": "L0186",
-      "lucide": "biohazard",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 75,
-      "lucideId": "L0193",
-      "lucide": "blocks",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 76,
-      "lucideId": "L0242",
-      "lucide": "boxes",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 77,
-      "lucideId": "L0263",
-      "lucide": "bug-off",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 78,
-      "lucideId": "L0365",
-      "lucide": "chevrons-left-right",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 79,
-      "lucideId": "L0370",
-      "lucide": "chevrons-up-down",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 80,
-      "lucideId": "L0413",
-      "lucide": "circle-power",
-      "solarCandidates": [
-        "S0781"
-      ],
-      "decision": "equivalent",
-      "note": "Solar power (S0781) is the same power control symbol."
-    },
-    {
-      "rank": 81,
-      "lucideId": "L0462",
-      "lucide": "cloud-backup",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 82,
-      "lucideId": "L0472",
-      "lucide": "cloud-off",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 83,
-      "lucideId": "L0474",
-      "lucide": "cloud-rain-wind",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 84,
-      "lucideId": "L0477",
-      "lucide": "cloud-sun-rain",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 85,
-      "lucideId": "L0506",
-      "lucide": "cookie",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 86,
-      "lucideId": "L0516",
-      "lucide": "corner-down-left",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 87,
-      "lucideId": "L0522",
-      "lucide": "corner-up-left",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 88,
-      "lucideId": "L0567",
-      "lucide": "disc-album",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 89,
-      "lucideId": "L0591",
-      "lucide": "ear",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 90,
-      "lucideId": "L0616",
-      "lucide": "face-angry",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 91,
-      "lucideId": "L0619",
-      "lucide": "face-neutral",
-      "solarCandidates": [
-        "S0379"
-      ],
-      "decision": "equivalent",
-      "note": "Solar expressionless-circle (S0379) preserves the neutral-face meaning."
-    },
-    {
-      "rank": 92,
-      "lucideId": "L0625",
-      "lucide": "fan",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 93,
-      "lucideId": "L0667",
-      "lucide": "file-minus",
-      "solarCandidates": [
-        "S0398"
-      ],
-      "decision": "equivalent",
-      "note": "Solar file-remove (S0398) is the same remove-file action."
-    },
-    {
-      "rank": 94,
-      "lucideId": "L0671",
-      "lucide": "file-output",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 95,
-      "lucideId": "L0716",
-      "lucide": "flag-triangle-left",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 96,
-      "lucideId": "L0717",
-      "lucide": "flag-triangle-right",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 97,
-      "lucideId": "L0721",
-      "lucide": "flashlight-off",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 98,
-      "lucideId": "L0728",
-      "lucide": "flower-2",
-      "solarCandidates": [],
-      "decision": "no-match",
-      "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
-    },
-    {
-      "rank": 99,
-      "lucideId": "L0772",
-      "lucide": "fullscreen",
-      "solarCandidates": [
-        "S0439"
-      ],
-      "decision": "equivalent",
-      "note": "Solar full-screen (S0439) is the same fullscreen action."
-    },
-    {
-      "rank": 100,
-      "lucideId": "L0783",
-      "lucide": "gamepad-directional",
-      "solarCandidates": [
-        "S0455"
-      ],
-      "decision": "equivalent",
-      "note": "Solar gamepad (S0455) is an interchangeable game-controller symbol; directional-pad detail is a variant, not a changed purpose."
-    }
-  ]
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review-closed",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "sourceTemplate": "lucide-gap-batch-05-candidate-only.json",
+    "filter": {
+        "coverage": "candidate-only",
+        "suggestedBatch": 1
+    },
+    "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+    "forwardIntegration": {
+        "promotedExistingReferences": 0,
+        "aliasDeferred": []
+    },
+    "entries": [
+        {
+            "rank": 1,
+            "lucideId": "L0096",
+            "lucide": "arrow-up-from-line",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 2,
+            "lucideId": "L1313",
+            "lucide": "refresh-ccw",
+            "solarCandidates": ["S0812"],
+            "decision": "equivalent",
+            "note": "Solar refresh (S0812) is the same refresh/reload action; circle and repeat variants remain audit evidence only."
+        },
+        {
+            "rank": 3,
+            "lucideId": "L0111",
+            "lucide": "award",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 4,
+            "lucideId": "L0340",
+            "lucide": "chart-no-axes-combined",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 5,
+            "lucideId": "L1218",
+            "lucide": "pencil",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 6,
+            "lucideId": "L1396",
+            "lucide": "send",
+            "solarCandidates": ["S0757"],
+            "decision": "equivalent",
+            "note": "Solar card-send (S0757) preserves the generic send action represented by Lucide send."
+        },
+        {
+            "rank": 7,
+            "lucideId": "L1817",
+            "lucide": "x",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 8,
+            "lucideId": "L0160",
+            "lucide": "beaker",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 9,
+            "lucideId": "L0218",
+            "lucide": "book-open",
+            "solarCandidates": ["S0128"],
+            "decision": "equivalent",
+            "note": "Solar book-2 (S0128) preserves the open-book object."
+        },
+        {
+            "rank": 10,
+            "lucideId": "L0722",
+            "lucide": "flask-conical",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 11,
+            "lucideId": "L0820",
+            "lucide": "grid-2x2",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 12,
+            "lucideId": "L0897",
+            "lucide": "images",
+            "solarCandidates": ["S0442"],
+            "decision": "equivalent",
+            "note": "Solar gallery (S0442) is the same multi-image/gallery object."
+        },
+        {
+            "rank": 13,
+            "lucideId": "L1083",
+            "lucide": "mic-audio-lines",
+            "solarCandidates": ["S0654"],
+            "decision": "equivalent",
+            "note": "Solar microphone (S0654) is the same microphone input object; audio-line decoration is non-semantic."
+        },
+        {
+            "rank": 14,
+            "lucideId": "L1170",
+            "lucide": "package",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 15,
+            "lucideId": "L1714",
+            "lucide": "undo",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 16,
+            "lucideId": "L0611",
+            "lucide": "external-link",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 17,
+            "lucideId": "L0842",
+            "lucide": "handbag",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 18,
+            "lucideId": "L1143",
+            "lucide": "music-3",
+            "solarCandidates": ["S0692"],
+            "decision": "equivalent",
+            "note": "Solar music-note-2 (S0692) is the same music-note object."
+        },
+        {
+            "rank": 19,
+            "lucideId": "L1156",
+            "lucide": "notebook-text",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 20,
+            "lucideId": "L1217",
+            "lucide": "pen-tool",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 21,
+            "lucideId": "L1310",
+            "lucide": "redo",
+            "solarCandidates": ["S1149"],
+            "decision": "equivalent",
+            "note": "Solar undo-right (S1149) expresses the same redo/reapply action."
+        },
+        {
+            "rank": 22,
+            "lucideId": "L1322",
+            "lucide": "repeat-2",
+            "solarCandidates": ["S0821"],
+            "decision": "equivalent",
+            "note": "Solar repeat (S0821) is the same repeat playback action."
+        },
+        {
+            "rank": 23,
+            "lucideId": "L1392",
+            "lucide": "search-large",
+            "solarCandidates": ["S0611"],
+            "decision": "equivalent",
+            "note": "Solar magnifier (S0611) is the same generic search action."
+        },
+        {
+            "rank": 24,
+            "lucideId": "L1606",
+            "lucide": "table",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 25,
+            "lucideId": "L1800",
+            "lucide": "wifi",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 26,
+            "lucideId": "L0259",
+            "lucide": "brush",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 27,
+            "lucideId": "L0533",
+            "lucide": "cup-soda",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 28,
+            "lucideId": "L0729",
+            "lucide": "focus",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 29,
+            "lucideId": "L0931",
+            "lucide": "laptop-minimal-check",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 30,
+            "lucideId": "L1085",
+            "lucide": "mic-signal",
+            "solarCandidates": ["S0654"],
+            "decision": "equivalent",
+            "note": "Solar microphone (S0654) is the same microphone input object; signal lines are non-semantic."
+        },
+        {
+            "rank": 31,
+            "lucideId": "L1115",
+            "lucide": "motorbike",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 32,
+            "lucideId": "L1178",
+            "lucide": "paint-bucket",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 33,
+            "lucideId": "L1213",
+            "lucide": "pc-case",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 34,
+            "lucideId": "L1285",
+            "lucide": "radio",
+            "solarCandidates": ["S0800"],
+            "decision": "equivalent",
+            "note": "Solar radio (S0800) is the same radio receiver object."
+        },
+        {
+            "rank": 35,
+            "lucideId": "L1294",
+            "lucide": "receipt",
+            "solarCandidates": ["S0102"],
+            "decision": "equivalent",
+            "note": "Solar bill (S0102) is an interchangeable receipt/bill document."
+        },
+        {
+            "rank": 36,
+            "lucideId": "L1332",
+            "lucide": "rocking-chair",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 37,
+            "lucideId": "L1376",
+            "lucide": "scan-search",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 38,
+            "lucideId": "L1434",
+            "lucide": "shopping-basket",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 39,
+            "lucideId": "L1484",
+            "lucide": "sport-shoe",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 40,
+            "lucideId": "L1607",
+            "lucide": "table-2",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 41,
+            "lucideId": "L1750",
+            "lucide": "utensils",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 42,
+            "lucideId": "L0073",
+            "lucide": "arrow-down-from-line",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 43,
+            "lucideId": "L0199",
+            "lucide": "bolt",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 44,
+            "lucideId": "L0322",
+            "lucide": "chart-area",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 45,
+            "lucideId": "L0323",
+            "lucide": "chart-bar",
+            "solarCandidates": ["S0204"],
+            "decision": "equivalent",
+            "note": "Solar chart (S0204) is the same bar-chart data visualization."
+        },
+        {
+            "rank": 46,
+            "lucideId": "L0342",
+            "lucide": "chart-pie",
+            "solarCandidates": ["S0744"],
+            "decision": "equivalent",
+            "note": "Solar pie-chart (S0744) is the same pie-chart data visualization."
+        },
+        {
+            "rank": 47,
+            "lucideId": "L0517",
+            "lucide": "corner-down-right",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 48,
+            "lucideId": "L0573",
+            "lucide": "dollar-sign",
+            "solarCandidates": ["S0343"],
+            "decision": "equivalent",
+            "note": "Solar dollar (S0343) is the same currency symbol."
+        },
+        {
+            "rank": 49,
+            "lucideId": "L0580",
+            "lucide": "drafting-compass",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 50,
+            "lucideId": "L0608",
+            "lucide": "euro",
+            "solarCandidates": ["S0375"],
+            "decision": "equivalent",
+            "note": "Solar euro (S0375) is the same currency symbol."
+        },
+        {
+            "rank": 51,
+            "lucideId": "L0609",
+            "lucide": "ev-charger",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 52,
+            "lucideId": "L0618",
+            "lucide": "face-grinning",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 53,
+            "lucideId": "L0620",
+            "lucide": "face-slightly-frowning",
+            "solarCandidates": ["S0882"],
+            "decision": "equivalent",
+            "note": "Solar sad-circle (S0882) preserves the sad/frowning-face meaning."
+        },
+        {
+            "rank": 54,
+            "lucideId": "L0763",
+            "lucide": "folders",
+            "solarCandidates": ["S0419"],
+            "decision": "equivalent",
+            "note": "Solar folder (S0419) is the same generic folder collection object."
+        },
+        {
+            "rank": 55,
+            "lucideId": "L0768",
+            "lucide": "frame",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 56,
+            "lucideId": "L0865",
+            "lucide": "heart-handshake",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 57,
+            "lucideId": "L0922",
+            "lucide": "lamp-desk",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 58,
+            "lucideId": "L0939",
+            "lucide": "layers-3",
+            "solarCandidates": ["S0557"],
+            "decision": "equivalent",
+            "note": "Solar layers (S0557) is the same stacked-layers object."
+        },
+        {
+            "rank": 59,
+            "lucideId": "L0996",
+            "lucide": "loader-pinwheel",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 60,
+            "lucideId": "L1008",
+            "lucide": "luggage",
+            "solarCandidates": ["S1062"],
+            "decision": "equivalent",
+            "note": "Solar suitcase (S1062) is the same luggage object."
+        },
+        {
+            "rank": 61,
+            "lucideId": "L1095",
+            "lucide": "minus",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 62,
+            "lucideId": "L1116",
+            "lucide": "mountain",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 63,
+            "lucideId": "L1258",
+            "lucide": "plug-zap",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 64,
+            "lucideId": "L1273",
+            "lucide": "printer-check",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 65,
+            "lucideId": "L1274",
+            "lucide": "printer-x",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 66,
+            "lucideId": "L1407",
+            "lucide": "settings-2",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 67,
+            "lucideId": "L1779",
+            "lucide": "wand",
+            "solarCandidates": ["S0606"],
+            "decision": "equivalent",
+            "note": "Solar magic-wand (S0606) is the same magic-wand tool."
+        },
+        {
+            "rank": 68,
+            "lucideId": "L1790",
+            "lucide": "waypoints",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 69,
+            "lucideId": "L0089",
+            "lucide": "arrow-right-to-line",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 70,
+            "lucideId": "L0123",
+            "lucide": "badge-info",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 71,
+            "lucideId": "L0129",
+            "lucide": "badge-question-mark",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 72,
+            "lucideId": "L0141",
+            "lucide": "banknote-arrow-up",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 73,
+            "lucideId": "L0172",
+            "lucide": "bell-dot",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 74,
+            "lucideId": "L0186",
+            "lucide": "biohazard",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 75,
+            "lucideId": "L0193",
+            "lucide": "blocks",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 76,
+            "lucideId": "L0242",
+            "lucide": "boxes",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 77,
+            "lucideId": "L0263",
+            "lucide": "bug-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 78,
+            "lucideId": "L0365",
+            "lucide": "chevrons-left-right",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 79,
+            "lucideId": "L0370",
+            "lucide": "chevrons-up-down",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 80,
+            "lucideId": "L0413",
+            "lucide": "circle-power",
+            "solarCandidates": ["S0781"],
+            "decision": "equivalent",
+            "note": "Solar power (S0781) is the same power control symbol."
+        },
+        {
+            "rank": 81,
+            "lucideId": "L0462",
+            "lucide": "cloud-backup",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 82,
+            "lucideId": "L0472",
+            "lucide": "cloud-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 83,
+            "lucideId": "L0474",
+            "lucide": "cloud-rain-wind",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 84,
+            "lucideId": "L0477",
+            "lucide": "cloud-sun-rain",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 85,
+            "lucideId": "L0506",
+            "lucide": "cookie",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 86,
+            "lucideId": "L0516",
+            "lucide": "corner-down-left",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 87,
+            "lucideId": "L0522",
+            "lucide": "corner-up-left",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 88,
+            "lucideId": "L0567",
+            "lucide": "disc-album",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 89,
+            "lucideId": "L0591",
+            "lucide": "ear",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 90,
+            "lucideId": "L0616",
+            "lucide": "face-angry",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 91,
+            "lucideId": "L0619",
+            "lucide": "face-neutral",
+            "solarCandidates": ["S0379"],
+            "decision": "equivalent",
+            "note": "Solar expressionless-circle (S0379) preserves the neutral-face meaning."
+        },
+        {
+            "rank": 92,
+            "lucideId": "L0625",
+            "lucide": "fan",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 93,
+            "lucideId": "L0667",
+            "lucide": "file-minus",
+            "solarCandidates": ["S0398"],
+            "decision": "equivalent",
+            "note": "Solar file-remove (S0398) is the same remove-file action."
+        },
+        {
+            "rank": 94,
+            "lucideId": "L0671",
+            "lucide": "file-output",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 95,
+            "lucideId": "L0716",
+            "lucide": "flag-triangle-left",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 96,
+            "lucideId": "L0717",
+            "lucide": "flag-triangle-right",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 97,
+            "lucideId": "L0721",
+            "lucide": "flashlight-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 98,
+            "lucideId": "L0728",
+            "lucide": "flower-2",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "The closest Solar candidates are related but change the represented object, action, state, or specificity; no interchangeable replacement is established."
+        },
+        {
+            "rank": 99,
+            "lucideId": "L0772",
+            "lucide": "fullscreen",
+            "solarCandidates": ["S0439"],
+            "decision": "equivalent",
+            "note": "Solar full-screen (S0439) is the same fullscreen action."
+        },
+        {
+            "rank": 100,
+            "lucideId": "L0783",
+            "lucide": "gamepad-directional",
+            "solarCandidates": ["S0455"],
+            "decision": "equivalent",
+            "note": "Solar gamepad (S0455) is an interchangeable game-controller symbol; directional-pad detail is a variant, not a changed purpose."
+        }
+    ]
 }

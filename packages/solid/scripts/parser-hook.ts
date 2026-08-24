@@ -1,19 +1,14 @@
-import {
-    applyDuotoneStyle,
-    toPascalCase,
-    type IconContext,
-    type ParsedIcon,
-} from '@solar-icons/core';
+import { applyDuotoneStyle, type IconContext, type ParsedIcon } from '@solar-icons/core'
 
 export interface FileDefinition {
-    path: string;
-    content: string;
+    path: string
+    content: string
 }
 
 export function solidComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
-    const icon = ctx.icon;
-    const duotone = applyDuotoneStyle(icon.duotoneAccentInner, 'html');
-    const body = duotone ? `${duotone}\n        ${icon.inner.trim()}` : icon.inner.trim();
+    const icon = ctx.icon
+    const duotone = applyDuotoneStyle(icon.duotoneAccentInner, 'html')
+    const body = duotone ? `${duotone}\n        ${icon.inner.trim()}` : icon.inner.trim()
     const content = `/* GENERATED FILE */
 import IconBase from "../../lib/IconBase"
 import type { IconProps, Icon } from "../../lib/types"
@@ -24,9 +19,9 @@ import type { IconProps, Icon } from "../../lib/types"
 export const ${icon.pascalName}Icon: Icon = (props: IconProps) => (
     <IconBase {...props} iconName="${icon.kebabName}-${icon.styleKebab}" iconBody={\`${body}\`} />
 )
-`;
+`
     return {
         path: `src/icons/${icon.styleKebab}/${icon.name}.tsx`,
         content,
-    };
+    }
 }

@@ -1,7 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+
 import pc from 'picocolors'
+
 import type { CamelToPascal, Metadata } from './types'
 
 const __dirname = import.meta.dirname

@@ -11,20 +11,20 @@ Eleven rows remain strict matches. The `call-dropped-rounded` row was downgraded
 Solar arrow modifier is not interchangeable with Lucide's missed-call X modifier. No candidate in
 the inspected shortlist preserves the call-drop/hang-up state exactly.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0110 | `bluetooth` | L0194 | `bluetooth` | match | Same Bluetooth symbol; only the drawing treatment differs. |
-| S0117 | `bolt` | L1820 | `zap` | match | Same standalone lightning-bolt symbol and meaning; Lucide `bolt` is an unrelated bolt-in-hexagon symbol. |
-| S0122 | `bone` | L0201 | `bone` | match | Same single bone object and orientation. |
-| S0124 | `bone-fracture` | L0202 | `bone-fracture` | match | Same fractured bone with the fracture burst modifier. |
-| S0126 | `bonfire` | L0719 | `flame-kindling` | match | Both show a flame above crossed firewood; the bonfire concept and enclosure are preserved. |
-| S0127 | `book` | L0203 | `book` | match | Same closed book/document object. |
-| S0129 | `book-bookmark` | L0216 | `book-marked` | match | Same book with a bookmark modifier; Lucide's bookmark is rendered inside the book rather than using Solar's lower bookmark tab. |
-| S0137 | `boombox` | L0235 | `boom-box` | match | Same portable boombox object with two speaker circles. |
-| S0140 | `box` | L0241 | `box` | match | Same single three-dimensional box; `boxes` is a multiplicity mismatch. |
-| S0151 | `calculator` | L0273 | `calculator` | match | Same calculator body and display/key layout at the concept level. |
-| S0158 | `calendar-search` | L0291 | `calendar-search` | match | Same calendar with a search magnifier modifier. |
-| S0164 | `call-dropped-rounded` | L1232 | `phone-missed` | related | Corrected: Solar uses a bent outgoing/drop arrow, whereas Lucide uses an X for a missed call. The failed-call theme is related, but the state glyph is not interchangeable. |
+| Solar ID | Solar                  | Lucide ID | Lucide            | Verdict | Evidence                                                                                                                                                                    |
+| -------- | ---------------------- | --------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| S0110    | `bluetooth`            | L0194     | `bluetooth`       | match   | Same Bluetooth symbol; only the drawing treatment differs.                                                                                                                  |
+| S0117    | `bolt`                 | L1820     | `zap`             | match   | Same standalone lightning-bolt symbol and meaning; Lucide `bolt` is an unrelated bolt-in-hexagon symbol.                                                                    |
+| S0122    | `bone`                 | L0201     | `bone`            | match   | Same single bone object and orientation.                                                                                                                                    |
+| S0124    | `bone-fracture`        | L0202     | `bone-fracture`   | match   | Same fractured bone with the fracture burst modifier.                                                                                                                       |
+| S0126    | `bonfire`              | L0719     | `flame-kindling`  | match   | Both show a flame above crossed firewood; the bonfire concept and enclosure are preserved.                                                                                  |
+| S0127    | `book`                 | L0203     | `book`            | match   | Same closed book/document object.                                                                                                                                           |
+| S0129    | `book-bookmark`        | L0216     | `book-marked`     | match   | Same book with a bookmark modifier; Lucide's bookmark is rendered inside the book rather than using Solar's lower bookmark tab.                                             |
+| S0137    | `boombox`              | L0235     | `boom-box`        | match   | Same portable boombox object with two speaker circles.                                                                                                                      |
+| S0140    | `box`                  | L0241     | `box`             | match   | Same single three-dimensional box; `boxes` is a multiplicity mismatch.                                                                                                      |
+| S0151    | `calculator`           | L0273     | `calculator`      | match   | Same calculator body and display/key layout at the concept level.                                                                                                           |
+| S0158    | `calendar-search`      | L0291     | `calendar-search` | match   | Same calendar with a search magnifier modifier.                                                                                                                             |
+| S0164    | `call-dropped-rounded` | L1232     | `phone-missed`    | related | Corrected: Solar uses a bent outgoing/drop arrow, whereas Lucide uses an X for a missed call. The failed-call theme is related, but the state glyph is not interchangeable. |
 
 ## Verification
 

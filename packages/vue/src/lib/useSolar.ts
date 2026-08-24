@@ -1,4 +1,5 @@
 import { inject, ref, watch, type App, type Ref } from 'vue'
+
 import { SOLAR_CONTEXT_KEY } from './context-key'
 
 export interface SolarIconsConfig {

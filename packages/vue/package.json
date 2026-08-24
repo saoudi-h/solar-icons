@@ -2,38 +2,40 @@
     "name": "@solar-icons/vue",
     "version": "2.1.0",
     "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
     "description": "Solar Icons for Vue",
+    "keywords": [
+        "UI",
+        "UX",
+        "design",
+        "icons",
+        "interface",
+        "phosphor",
+        "solar",
+        "svg",
+        "vue"
+    ],
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Saoudi Hakim",
+        "email": "saoudihakim@gmail.com",
+        "url": "https://hakimsaoudi.dev"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/saoudi-h/solar-icons.git",
         "directory": "packages/vue"
     },
-    "type": "module",
-    "sideEffects": false,
     "files": [
         "dist",
         "README.md",
         "LICENSE",
         "LICENSE-THIRD-PARTY"
     ],
-    "scripts": {
-        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "generate:assets": "tsx scripts/generate-assets.ts",
-        "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
-        "lint": "eslint . --max-warnings 10",
-        "lint:fix": "eslint . --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "clean": "rimraf *.tsbuildinfo node_modules build dist",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "test:coverage": "vitest run --coverage",
-        "typecheck": "tsgo --noEmit",
-        "pre-commit": "lint-staged"
-    },
+    "type": "module",
+    "sideEffects": false,
     "types": "./dist/index.d.mts",
     "exports": {
         "./package.json": {
@@ -88,8 +90,23 @@
             "import": "./dist/icons/outline/*.mjs"
         }
     },
-    "peerDependencies": {
-        "vue": ">=3.0.0"
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "build": "pnpm generate:assets && pnpm tsdown -l error && pnpm copy:licenses",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
+        "clean": "rimraf *.tsbuildinfo node_modules build dist",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
     },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
@@ -98,33 +115,18 @@
         "@vue/test-utils": "^2.4.11",
         "jsdom": "^30.0.1",
         "picocolors": "^1.1.1",
+        "tsdown": "^0.22.14",
+        "typescript": "6.0.3",
         "unplugin-vue": "^7.2.0",
         "vite": "^8.2.0",
         "vitest": "^4.1.10",
         "vue": "^3.5.41",
         "vue-tsc": "3.3.9"
     },
-    "license": "MIT",
-    "keywords": [
-        "vue",
-        "icons",
-        "svg",
-        "solar",
-        "design",
-        "interface",
-        "phosphor",
-        "UI",
-        "UX"
-    ],
-    "author": {
-        "name": "Saoudi Hakim",
-        "url": "https://hakimsaoudi.dev",
-        "email": "saoudihakim@gmail.com"
+    "peerDependencies": {
+        "vue": ">=3.0.0"
     },
     "engines": {
         "node": ">=16"
-    },
-    "bugs": {
-        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
 }

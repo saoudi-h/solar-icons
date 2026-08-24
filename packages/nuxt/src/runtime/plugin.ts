@@ -15,7 +15,7 @@ export default defineNuxtPlugin({
 
     const config = {
       ...DEFAULTS,
-      ...(nuxtApp.$config.public?.solarIcons || {}),
+      ...nuxtApp.$config.public?.solarIcons,
     }
 
     const ctx = createSolarIcons(config)

@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, useMemo, useEffect, type ReactNode } from 'react'
+import React, {
+    createContext,
+    useContext,
+    useState,
+    useMemo,
+    useEffect,
+    type ReactNode,
+} from 'react'
 
 export interface SolarConfig {
     color?: string
@@ -52,24 +59,35 @@ export function SolarProvider({
         secondaryOpacity,
     })
 
-    useEffect(() => { setState(prev => ({ ...prev, color })) }, [color])
-    useEffect(() => { setState(prev => ({ ...prev, size })) }, [size])
-    useEffect(() => { setState(prev => ({ ...prev, strokeWidth })) }, [strokeWidth])
-    useEffect(() => { setState(prev => ({ ...prev, secondaryColor })) }, [secondaryColor])
-    useEffect(() => { setState(prev => ({ ...prev, secondaryOpacity })) }, [secondaryOpacity])
+    useEffect(() => {
+        setState(prev => ({ ...prev, color }))
+    }, [color])
+    useEffect(() => {
+        setState(prev => ({ ...prev, size }))
+    }, [size])
+    useEffect(() => {
+        setState(prev => ({ ...prev, strokeWidth }))
+    }, [strokeWidth])
+    useEffect(() => {
+        setState(prev => ({ ...prev, secondaryColor }))
+    }, [secondaryColor])
+    useEffect(() => {
+        setState(prev => ({ ...prev, secondaryOpacity }))
+    }, [secondaryOpacity])
 
-    const value = useMemo<SolarContextValue>(() => ({
-        ...state,
-        setColor: (val: string) => setState(prev => ({ ...prev, color: val })),
-        setSize: (val: number) => setState(prev => ({ ...prev, size: val })),
-        setStrokeWidth: (val: number) => setState(prev => ({ ...prev, strokeWidth: val })),
-        setSecondaryColor: (val: string) => setState(prev => ({ ...prev, secondaryColor: val })),
-        setSecondaryOpacity: (val: number) => setState(prev => ({ ...prev, secondaryOpacity: val })),
-    }), [state])
-
-    return (
-        <SolarContext.Provider value={value}>
-            {children}
-        </SolarContext.Provider>
+    const value = useMemo<SolarContextValue>(
+        () => ({
+            ...state,
+            setColor: (val: string) => setState(prev => ({ ...prev, color: val })),
+            setSize: (val: number) => setState(prev => ({ ...prev, size: val })),
+            setStrokeWidth: (val: number) => setState(prev => ({ ...prev, strokeWidth: val })),
+            setSecondaryColor: (val: string) =>
+                setState(prev => ({ ...prev, secondaryColor: val })),
+            setSecondaryOpacity: (val: number) =>
+                setState(prev => ({ ...prev, secondaryOpacity: val })),
+        }),
+        [state]
     )
+
+    return <SolarContext.Provider value={value}>{children}</SolarContext.Provider>
 }

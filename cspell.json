@@ -97,6 +97,7 @@
         "revote",
         "nums",
         "oxlint",
+        "oxfmt",
         "vueuse",
         "reka",
         "Vetur",

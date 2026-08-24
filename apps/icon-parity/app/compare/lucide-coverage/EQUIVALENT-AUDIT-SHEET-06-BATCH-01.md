@@ -9,14 +9,14 @@ the production sheet.
 
 All six rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0502 | `help` | L0959 | `life-buoy` | match | Same life-buoy help/support symbol. |
-| S0536 | `infinite` | L0903 | `infinity` | match | Same infinity symbol; the name difference is non-semantic. |
-| S0537 | `info-circle` | L0904 | `info` | match | Same lowercase information mark enclosed by a circle. |
-| S0549 | `keyboard` | L0917 | `keyboard` | match | Same keyboard device object. |
-| S0568 | `like` | L1651 | `thumbs-up` | match | Same thumbs-up/like action. |
-| S0576 | `list` | L0971 | `list` | match | Same bulleted list structure without a modifier. |
+| Solar ID | Solar         | Lucide ID | Lucide      | Verdict | Evidence                                                   |
+| -------- | ------------- | --------- | ----------- | ------- | ---------------------------------------------------------- |
+| S0502    | `help`        | L0959     | `life-buoy` | match   | Same life-buoy help/support symbol.                        |
+| S0536    | `infinite`    | L0903     | `infinity`  | match   | Same infinity symbol; the name difference is non-semantic. |
+| S0537    | `info-circle` | L0904     | `info`      | match   | Same lowercase information mark enclosed by a circle.      |
+| S0549    | `keyboard`    | L0917     | `keyboard`  | match   | Same keyboard device object.                               |
+| S0568    | `like`        | L1651     | `thumbs-up` | match   | Same thumbs-up/like action.                                |
+| S0576    | `list`        | L0971     | `list`      | match   | Same bulleted list structure without a modifier.           |
 
 ## Verification
 

@@ -1,10 +1,12 @@
+import fs from 'node:fs/promises'
+import path from 'node:path'
+
 import axios from 'axios'
 import dotenv from 'dotenv'
 import * as Figma from 'figma-api'
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import pLimit from 'p-limit'
 import pc from 'picocolors'
+
 import iconWeights from '../icon-weights.json' with { type: 'json' }
 import type { Metadata } from '../types'
 import { fixIconName, toKebabCase } from '../utils'
@@ -216,14 +218,11 @@ const fetchImageUrls = async (
 
         const response = await withRetry(
             () =>
-                api.getImages(
-                    { file_key: fileId },
-                    {
-                        ids: chunkIdsStr,
-                        format: 'svg',
-                        svg_simplify_stroke: true,
-                    } as any
-                ),
+                api.getImages({ file_key: fileId }, {
+                    ids: chunkIdsStr,
+                    format: 'svg',
+                    svg_simplify_stroke: true,
+                } as any),
             8,
             5000,
             `Figma getImages (Chunk ${Math.floor(i / chunkSize) + 1})`

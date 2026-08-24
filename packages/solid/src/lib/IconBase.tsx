@@ -1,14 +1,15 @@
-import { mergeProps, splitProps, type JSX } from 'solid-js';
-import type { IconProps } from './types';
+import { mergeProps, splitProps, type JSX } from 'solid-js'
 
-const SOLAR_CLASS = 'solar';
+import type { IconProps } from './types'
+
+const SOLAR_CLASS = 'solar'
 
 function hasA11yProp(props: Record<string, unknown>): boolean {
-    return props['aria-label'] !== undefined || props['title'] !== undefined;
+    return props['aria-label'] !== undefined || props['title'] !== undefined
 }
 
 function IconBase(allProps: IconProps): JSX.Element {
-    const props = mergeProps({}, allProps);
+    const props = mergeProps({}, allProps)
     const [local, others] = splitProps(props, [
         'alt',
         'color',
@@ -20,65 +21,65 @@ function IconBase(allProps: IconProps): JSX.Element {
         'iconBody',
         'isolated',
         'children',
-    ]);
+    ])
 
     const iconClass = () => {
-        const name = local.iconName;
-        return name ? `${SOLAR_CLASS} solar-${name}` : SOLAR_CLASS;
-    };
+        const name = local.iconName
+        return name ? `${SOLAR_CLASS} solar-${name}` : SOLAR_CLASS
+    }
 
-    const userClass = () => (others as any).class;
+    const userClass = () => (others as any).class
     const className = () => {
-        const uc = userClass();
-        return uc ? `${iconClass()} ${uc}` : iconClass();
-    };
+        const uc = userClass()
+        return uc ? `${iconClass()} ${uc}` : iconClass()
+    }
 
-    const isAccessible = () => !!local.alt || hasA11yProp(others as Record<string, unknown>);
+    const isAccessible = () => !!local.alt || hasA11yProp(others as Record<string, unknown>)
 
-    const userStyle = () => (others as any).style ?? {};
+    const userStyle = () => (others as any).style ?? {}
 
     const baseStyle = () => {
         const s: Record<string, string | undefined> = {
             ...userStyle(),
-        };
+        }
         if (local.isolated) {
-            s['--solar-secondary-color'] = 'initial';
-            s['--solar-secondary-opacity'] = 'initial';
+            s['--solar-secondary-color'] = 'initial'
+            s['--solar-secondary-opacity'] = 'initial'
         }
-        if (local.color !== undefined) s.color = local.color;
+        if (local.color !== undefined) s.color = local.color
         if (local.size !== undefined) {
-            const sv = typeof local.size === 'number' ? `${local.size}px` : local.size;
-            s.width = sv;
-            s.height = sv;
+            const sv = typeof local.size === 'number' ? `${local.size}px` : local.size
+            s.width = sv
+            s.height = sv
         }
-        if (local.strokeWidth !== undefined) s['stroke-width'] = String(local.strokeWidth);
-        if (local.secondaryColor) s['--solar-secondary-color'] = local.secondaryColor;
+        if (local.strokeWidth !== undefined) s['stroke-width'] = String(local.strokeWidth)
+        if (local.secondaryColor) s['--solar-secondary-color'] = local.secondaryColor
         if (local.secondaryOpacity != null)
-            s['--solar-secondary-opacity'] = String(local.secondaryOpacity);
+            s['--solar-secondary-opacity'] = String(local.secondaryOpacity)
         if (local.size === undefined && !local.isolated) {
-            s['font-size'] = s['font-size'] ?? 'var(--solar-size, 24px)';
+            s['font-size'] = s['font-size'] ?? 'var(--solar-size, 24px)'
         }
-        return s;
-    };
+        return s
+    }
 
     const widthAttr = () => {
-        if (local.size !== undefined) return undefined;
-        return local.isolated ? '24px' : '1em';
-    };
+        if (local.size !== undefined) return undefined
+        return local.isolated ? '24px' : '1em'
+    }
     const heightAttr = () => {
-        if (local.size !== undefined) return undefined;
-        return local.isolated ? '24px' : '1em';
-    };
+        if (local.size !== undefined) return undefined
+        return local.isolated ? '24px' : '1em'
+    }
     const colorAttr = () => {
-        if (local.color !== undefined) return undefined;
-        return local.isolated ? 'currentColor' : 'var(--solar-color, currentColor)';
-    };
+        if (local.color !== undefined) return undefined
+        return local.isolated ? 'currentColor' : 'var(--solar-color, currentColor)'
+    }
     const strokeWidthAttr = () => {
-        if (local.strokeWidth !== undefined) return undefined;
-        return local.isolated ? '1.5' : 'var(--solar-stroke-width, 1.5)';
-    };
+        if (local.strokeWidth !== undefined) return undefined
+        return local.isolated ? '1.5' : 'var(--solar-stroke-width, 1.5)'
+    }
 
-    const ariaHidden = () => (isAccessible() ? undefined : 'true');
+    const ariaHidden = () => (isAccessible() ? undefined : 'true')
 
     return (
         <svg
@@ -92,12 +93,11 @@ function IconBase(allProps: IconProps): JSX.Element {
             height={heightAttr()}
             color={colorAttr()}
             stroke-width={strokeWidthAttr()}
-            aria-hidden={ariaHidden()}
-        >
+            aria-hidden={ariaHidden()}>
             {local.alt && <title>{local.alt}</title>}
             {local.iconBody ? <g innerHTML={local.iconBody} /> : local.children}
         </svg>
-    );
+    )
 }
 
-export default IconBase;
+export default IconBase

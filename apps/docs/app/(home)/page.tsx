@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
+
 import { CommunitySection } from '@/components/home-page/sections/community'
 import { FeaturesSection } from '@/components/home-page/sections/features'
 import { HeroSection } from '@/components/home-page/sections/hero'
 import { PackagesSection } from '@/components/home-page/sections/packages'
 import { config } from '@/config'
-import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Solar Icons',
@@ -22,8 +23,8 @@ export default function HomePage() {
     return (
         <main
             className={`
-              relative flex min-h-dvh w-full flex-1 flex-col justify-center
-              gap-9 bg-background py-4 text-center
+              relative flex min-h-dvh w-full flex-1 flex-col justify-center gap-9 bg-background py-4
+              text-center
               md:gap-12 md:px-10 md:py-[34px]
             `}>
             <HeroSection {...config.heroSection} />

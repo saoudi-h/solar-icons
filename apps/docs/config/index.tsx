@@ -1,7 +1,3 @@
-import type { NotFoundProps } from '@/app/not-found'
-import type { HeroSectionProps } from '@/components/home-page/sections/hero'
-import type { PackageSectionProps } from '@/components/home-page/sections/packages'
-import type { FooterProps } from '@/components/ui-blocks/footer/types'
 import { Icon } from '@iconify/react'
 import { ArrowLeftIcon } from '@solar-icons/react/linear/arrow-left'
 import { BugMinimalisticIcon } from '@solar-icons/react/linear/bug-minimalistic'
@@ -11,6 +7,11 @@ import { HouseIcon } from '@solar-icons/react/linear/house'
 import { RocketIcon } from '@solar-icons/react/linear/rocket'
 import { RoundedMagnifierIcon } from '@solar-icons/react/linear/rounded-magnifier'
 import { SmartphoneUpdateIcon } from '@solar-icons/react/linear/smartphone-update'
+
+import type { NotFoundProps } from '@/app/not-found'
+import type { HeroSectionProps } from '@/components/home-page/sections/hero'
+import type { PackageSectionProps } from '@/components/home-page/sections/packages'
+import type { FooterProps } from '@/components/ui-blocks/footer/types'
 
 export interface Config {
     footer: FooterProps

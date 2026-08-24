@@ -1,7 +1,9 @@
 import { execSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
+
 import pc from 'picocolors'
+
 import type { IconDescription } from '../types'
 import { buildSkeletonEntry, findMissingDescriptions, scanSvgIcons } from './icon-metadata'
 

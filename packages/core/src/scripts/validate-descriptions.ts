@@ -1,4 +1,5 @@
 import Ajv2020 from 'ajv/dist/2020'
+
 import schema from '../descriptions.schema.json' with { type: 'json' }
 
 const ajv = new Ajv2020({ allErrors: true })

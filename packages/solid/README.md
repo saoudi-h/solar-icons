@@ -20,7 +20,7 @@ npm install @solar-icons/solid
 ## Usage
 
 ```tsx
-import { HomeIcon, LoginIcon } from '@solar-icons/solid/linear';
+import { HomeIcon, LoginIcon } from '@solar-icons/solid/linear'
 
 function App() {
     return (
@@ -28,7 +28,7 @@ function App() {
             <HomeIcon />
             <LoginIcon color="#3b82f6" size={32} strokeWidth={2} />
         </div>
-    );
+    )
 }
 ```
 
@@ -37,15 +37,15 @@ function App() {
 Wrap your application in `<SolarProvider>` to set default properties:
 
 ```tsx
-import { SolarProvider } from '@solar-icons/solid';
-import { HomeIcon } from '@solar-icons/solid/linear';
+import { SolarProvider } from '@solar-icons/solid'
+import { HomeIcon } from '@solar-icons/solid/linear'
 
 function App() {
     return (
         <SolarProvider size={24} color="currentColor" strokeWidth={1.5}>
             <HomeIcon />
         </SolarProvider>
-    );
+    )
 }
 ```
 

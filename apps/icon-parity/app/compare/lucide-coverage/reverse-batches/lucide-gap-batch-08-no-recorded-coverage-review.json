@@ -1,112 +1,812 @@
 {
-  "version": 1,
-  "direction": "lucide-to-solar-gap",
-  "phase": "visual-review-closed",
-  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
-  "sourceTemplate": "lucide-gap-batch-08-no-recorded-coverage.json",
-  "filter": { "coverage": "no-recorded-coverage", "suggestedBatch": 1 },
-  "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
-  "forwardIntegration": { "promotedExistingReferences": 0, "aliasDeferred": [] },
-  "entries": [
-    { "rank": 1, "lucideId": "L0001", "lucide": "a-arrow-down", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The A-letter modifier is not preserved by a generic Solar arrow." },
-    { "rank": 2, "lucideId": "L0002", "lucide": "a-arrow-up", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The A-letter modifier is not preserved by a generic Solar arrow." },
-    { "rank": 3, "lucideId": "L0003", "lucide": "a-large-small", "solarCandidates": ["S0187","S0188","S0189"], "decision": "no-match", "note": "Cart candidates do not represent the Lucide typography-size action." },
-    { "rank": 4, "lucideId": "L0006", "lucide": "ad", "solarCandidates": ["S0002","S0003","S0004"], "decision": "no-match", "note": "Add icons do not preserve the AD label or meaning." },
-    { "rank": 5, "lucideId": "L0010", "lucide": "alarm-clock-check", "solarCandidates": ["S0014","S0018","S0019"], "decision": "no-match", "note": "Solar alarm candidates do not preserve the alarm-plus-check composite state." },
-    { "rank": 6, "lucideId": "L0014", "lucide": "alarm-smoke", "solarCandidates": ["S0018","S0019","S0020"], "decision": "no-match", "note": "A generic alarm does not preserve the smoke-detector object." },
-    { "rank": 7, "lucideId": "L0016", "lucide": "align-center", "solarCandidates": ["S0027"], "decision": "equivalent", "note": "Solar align-horizontal-center preserves the same center-alignment action." },
-    { "rank": 8, "lucideId": "L0021", "lucide": "align-horizontal-distribute-center", "solarCandidates": ["S0027","S0028","S0032"], "decision": "no-match", "note": "Center distribution is not the same action as simple center alignment or spacing." },
-    { "rank": 9, "lucideId": "L0022", "lucide": "align-horizontal-distribute-end", "solarCandidates": ["S0027","S0028","S0026"], "decision": "no-match", "note": "End distribution is not preserved by the closest alignment candidates." },
-    { "rank": 10, "lucideId": "L0023", "lucide": "align-horizontal-distribute-start", "solarCandidates": ["S0027","S0028","S0026"], "decision": "no-match", "note": "Start distribution is not preserved by the closest alignment candidates." },
-    { "rank": 11, "lucideId": "L0024", "lucide": "align-horizontal-justify-center", "solarCandidates": ["S0027","S0028","S0032"], "decision": "no-match", "note": "Justify-center is a distribution action, not simple center alignment." },
-    { "rank": 12, "lucideId": "L0025", "lucide": "align-horizontal-justify-end", "solarCandidates": ["S0027","S0028","S0026"], "decision": "no-match", "note": "Justify-end is not interchangeable with the closest Solar alignment icons." },
-    { "rank": 13, "lucideId": "L0026", "lucide": "align-horizontal-justify-start", "solarCandidates": ["S0027","S0028","S0026"], "decision": "no-match", "note": "Justify-start is not interchangeable with the closest Solar alignment icons." },
-    { "rank": 14, "lucideId": "L0027", "lucide": "align-horizontal-space-around", "solarCandidates": ["S0027","S0028","S0026"], "decision": "no-match", "note": "Space-around is not preserved by center, spacing, or edge alignment." },
-    { "rank": 15, "lucideId": "L0034", "lucide": "align-vertical-distribute-center", "solarCandidates": ["S0032","S0027","S0033"], "decision": "no-match", "note": "Center distribution is not preserved by the closest Solar alignment candidates." },
-    { "rank": 16, "lucideId": "L0035", "lucide": "align-vertical-distribute-end", "solarCandidates": ["S0032","S0033","S0026"], "decision": "no-match", "note": "End distribution is not preserved by the closest Solar alignment candidates." },
-    { "rank": 17, "lucideId": "L0036", "lucide": "align-vertical-distribute-start", "solarCandidates": ["S0032","S0033","S0026"], "decision": "no-match", "note": "Start distribution is not preserved by the closest Solar alignment candidates." },
-    { "rank": 18, "lucideId": "L0037", "lucide": "align-vertical-justify-center", "solarCandidates": ["S0032","S0027","S0033"], "decision": "no-match", "note": "Justify-center is not interchangeable with simple vertical center alignment." },
-    { "rank": 19, "lucideId": "L0042", "lucide": "ambulance", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable ambulance replacement is established in the inspected Solar atlas." },
-    { "rank": 20, "lucideId": "L0043", "lucide": "ampersand", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable ampersand replacement is established in the inspected Solar atlas." },
-    { "rank": 21, "lucideId": "L0044", "lucide": "ampersands", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable ampersands replacement is established in the inspected Solar atlas." },
-    { "rank": 22, "lucideId": "L0045", "lucide": "amphora", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable amphora replacement is established in the inspected Solar atlas." },
-    { "rank": 23, "lucideId": "L0046", "lucide": "anchor", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable anchor replacement is established in the inspected Solar atlas." },
-    { "rank": 24, "lucideId": "L0048", "lucide": "angry", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable angry-face replacement is established in the inspected Solar atlas." },
-    { "rank": 25, "lucideId": "L0050", "lucide": "antenna", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable antenna replacement is established in the inspected Solar atlas." },
-    { "rank": 26, "lucideId": "L0051", "lucide": "anvil", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable anvil replacement is established in the inspected Solar atlas." },
-    { "rank": 27, "lucideId": "L0054", "lucide": "app-window-mac", "solarCandidates": ["S1241"], "decision": "no-match", "note": "Solar window-frame loses the Mac-specific application-window controls." },
-    { "rank": 28, "lucideId": "L0055", "lucide": "apple", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable apple replacement is established in the inspected Solar atlas." },
-    { "rank": 29, "lucideId": "L0057", "lucide": "archive-restore", "solarCandidates": ["S0038","S0039","S0040"], "decision": "no-match", "note": "Archive candidates do not preserve the restore action." },
-    { "rank": 30, "lucideId": "L0059", "lucide": "area-chart", "solarCandidates": ["S0204","S0205","S0206"], "decision": "no-match", "note": "Generic chart candidates do not preserve the area-chart geometry." },
-    { "rank": 31, "lucideId": "L0061", "lucide": "arrow-big-down", "solarCandidates": ["S0047"], "decision": "equivalent", "note": "Solar arrow-down preserves the same downward-arrow action; big is a visual size variant." },
-    { "rank": 32, "lucideId": "L0062", "lucide": "arrow-big-down-dash", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The dash modifier conveys a distinct state not present in the generic arrows." },
-    { "rank": 33, "lucideId": "L0063", "lucide": "arrow-big-left", "solarCandidates": ["S0048"], "decision": "equivalent", "note": "Solar arrow-left preserves the same leftward-arrow action; big is a visual size variant." },
-    { "rank": 34, "lucideId": "L0064", "lucide": "arrow-big-left-dash", "solarCandidates": ["S0035","S0048","S0049"], "decision": "no-match", "note": "The dash modifier conveys a distinct state not present in the generic arrows." },
-    { "rank": 35, "lucideId": "L0065", "lucide": "arrow-big-right", "solarCandidates": ["S0051"], "decision": "equivalent", "note": "Solar arrow-right preserves the same rightward-arrow action; big is a visual size variant." },
-    { "rank": 36, "lucideId": "L0066", "lucide": "arrow-big-right-dash", "solarCandidates": ["S0036","S0051","S0052"], "decision": "no-match", "note": "The dash modifier conveys a distinct state not present in the generic arrows." },
-    { "rank": 37, "lucideId": "L0067", "lucide": "arrow-big-up", "solarCandidates": ["S0050"], "decision": "equivalent", "note": "Solar arrow-up preserves the same upward-arrow action; big is a visual size variant." },
-    { "rank": 38, "lucideId": "L0068", "lucide": "arrow-big-up-dash", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The dash modifier conveys a distinct state not present in the generic arrows." },
-    { "rank": 39, "lucideId": "L0070", "lucide": "arrow-down-0-1", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The numeric sorting action is not interchangeable with a generic down arrow." },
-    { "rank": 40, "lucideId": "L0071", "lucide": "arrow-down-1-0", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The numeric sorting action is not interchangeable with a generic down arrow." },
-    { "rank": 41, "lucideId": "L0075", "lucide": "arrow-down-narrow-wide", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The sort-width action is not interchangeable with a generic down arrow." },
-    { "rank": 42, "lucideId": "L0077", "lucide": "arrow-down-to-dot", "solarCandidates": ["S0054","S0055","S0034"], "decision": "no-match", "note": "The destination dot is an essential part of this composite action." },
-    { "rank": 43, "lucideId": "L0080", "lucide": "arrow-down-wide-narrow", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The sort-width action is not interchangeable with a generic down arrow." },
-    { "rank": 44, "lucideId": "L0081", "lucide": "arrow-down-z-a", "solarCandidates": ["S0034","S0047","S0049"], "decision": "no-match", "note": "The alphabetic sorting action is not interchangeable with a generic down arrow." },
-    { "rank": 45, "lucideId": "L0085", "lucide": "arrow-left-to-line", "solarCandidates": ["S0054","S0056","S0035"], "decision": "no-match", "note": "The line endpoint is an essential part of this composite action." },
-    { "rank": 46, "lucideId": "L0091", "lucide": "arrow-up-0-1", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The numeric sorting action is not interchangeable with a generic up arrow." },
-    { "rank": 47, "lucideId": "L0092", "lucide": "arrow-up-1-0", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The numeric sorting action is not interchangeable with a generic up arrow." },
-    { "rank": 48, "lucideId": "L0093", "lucide": "arrow-up-a-z", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The alphabetic sorting action is not interchangeable with a generic up arrow." },
-    { "rank": 49, "lucideId": "L0095", "lucide": "arrow-up-from-dot", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The source dot is an essential part of this composite action." },
-    { "rank": 50, "lucideId": "L0098", "lucide": "arrow-up-narrow-wide", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The sort-width action is not interchangeable with a generic up arrow." },
-    { "rank": 51, "lucideId": "L0101", "lucide": "arrow-up-wide-narrow", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The sort-width action is not interchangeable with a generic up arrow." },
-    { "rank": 52, "lucideId": "L0102", "lucide": "arrow-up-z-a", "solarCandidates": ["S0037","S0050","S0053"], "decision": "no-match", "note": "The alphabetic sorting action is not interchangeable with a generic up arrow." },
-    { "rank": 53, "lucideId": "L0103", "lucide": "arrows-up-from-line", "solarCandidates": ["S0037","S0043","S0044"], "decision": "no-match", "note": "The line-origin composite action is not preserved by generic arrows or archive actions." },
-    { "rank": 54, "lucideId": "L0108", "lucide": "audio-lines", "solarCandidates": ["S0706","S0709","S0806"], "decision": "no-match", "note": "Notification and recording candidates do not preserve the audio-waveform object." },
-    { "rank": 55, "lucideId": "L0109", "lucide": "audio-lines-x", "solarCandidates": ["S0706","S0709","S0806"], "decision": "no-match", "note": "Neither the waveform nor its disabled state is preserved by the candidates." },
-    { "rank": 56, "lucideId": "L0112", "lucide": "axe", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable axe replacement is established in the inspected Solar atlas." },
-    { "rank": 57, "lucideId": "L0113", "lucide": "axis-3d", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable 3D-axis replacement is established in the inspected Solar atlas." },
-    { "rank": 58, "lucideId": "L0114", "lucide": "baby", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable baby replacement is established in the inspected Solar atlas." },
-    { "rank": 59, "lucideId": "L0117", "lucide": "badge-alert", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the alert badge composite." },
-    { "rank": 60, "lucideId": "L0118", "lucide": "badge-cent", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the cent badge composite." },
-    { "rank": 61, "lucideId": "L0120", "lucide": "badge-dollar-sign", "solarCandidates": ["S0343","S0344"], "decision": "no-match", "note": "Generic currency symbols do not preserve the badge container." },
-    { "rank": 62, "lucideId": "L0122", "lucide": "badge-indian-rupee", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the Indian-rupee badge composite." },
-    { "rank": 63, "lucideId": "L0124", "lucide": "badge-japanese-yen", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the Japanese-yen badge composite." },
-    { "rank": 64, "lucideId": "L0125", "lucide": "badge-minus", "solarCandidates": ["S0265","S0667","S0668"], "decision": "no-match", "note": "Generic minus and badge-like candidates do not preserve this composite badge." },
-    { "rank": 65, "lucideId": "L0127", "lucide": "badge-plus", "solarCandidates": ["S0192","S0266","S0775"], "decision": "no-match", "note": "Generic plus and badge-like candidates do not preserve this composite badge." },
-    { "rank": 66, "lucideId": "L0128", "lucide": "badge-pound-sterling", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the pound-sterling badge composite." },
-    { "rank": 67, "lucideId": "L0130", "lucide": "badge-russian-ruble", "solarCandidates": ["S0873"], "decision": "no-match", "note": "Solar ruble is a currency symbol without the Lucide badge container." },
-    { "rank": 68, "lucideId": "L0131", "lucide": "badge-swiss-franc", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the Swiss-franc badge composite." },
-    { "rank": 69, "lucideId": "L0132", "lucide": "badge-turkish-lira", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the Turkish-lira badge composite." },
-    { "rank": 70, "lucideId": "L0133", "lucide": "badge-x", "solarCandidates": [], "decision": "no-match", "note": "No Solar badge preserves the X badge composite." },
-    { "rank": 71, "lucideId": "L0134", "lucide": "baggage-claim", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable baggage-claim replacement is established in the inspected Solar atlas." },
-    { "rank": 72, "lucideId": "L0137", "lucide": "banana", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable banana replacement is established in the inspected Solar atlas." },
-    { "rank": 73, "lucideId": "L0142", "lucide": "banknote-check", "solarCandidates": ["S0014","S0039","S0070"], "decision": "no-match", "note": "The candidates are unrelated check composites and do not preserve a checked banknote." },
-    { "rank": 74, "lucideId": "L0143", "lucide": "banknote-x", "solarCandidates": ["S0078","S0079"], "decision": "no-match", "note": "Solar banknote variants do not preserve the X state." },
-    { "rank": 75, "lucideId": "L0144", "lucide": "bar-chart-3", "solarCandidates": ["S0204"], "decision": "equivalent", "note": "Solar chart is the same bar-chart data visualization; bar count is a visual variant." },
-    { "rank": 76, "lucideId": "L0145", "lucide": "bar-chart-4", "solarCandidates": ["S0204"], "decision": "equivalent", "note": "Solar chart is the same bar-chart data visualization; bar count is a visual variant." },
-    { "rank": 77, "lucideId": "L0146", "lucide": "bar-chart-big", "solarCandidates": ["S0204"], "decision": "equivalent", "note": "Solar chart is the same bar-chart data visualization; size is a visual variant." },
-    { "rank": 78, "lucideId": "L0147", "lucide": "bar-chart-horizontal", "solarCandidates": ["S0027","S0028","S0080"], "decision": "no-match", "note": "The candidates do not establish an interchangeable horizontal bar-chart visualization." },
-    { "rank": 79, "lucideId": "L0148", "lucide": "bar-chart-horizontal-big", "solarCandidates": ["S0027","S0028","S0080"], "decision": "no-match", "note": "The candidates do not establish an interchangeable horizontal bar-chart visualization." },
-    { "rank": 80, "lucideId": "L0149", "lucide": "barcode", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable barcode replacement is established in the inspected Solar atlas." },
-    { "rank": 81, "lucideId": "L0150", "lucide": "barrel", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable barrel replacement is established in the inspected Solar atlas." },
-    { "rank": 82, "lucideId": "L0151", "lucide": "baseline", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable baseline replacement is established in the inspected Solar atlas." },
-    { "rank": 83, "lucideId": "L0158", "lucide": "battery-plus", "solarCandidates": ["S0083","S0084","S0085"], "decision": "no-match", "note": "Battery candidates do not preserve the plus-charge state." },
-    { "rank": 84, "lucideId": "L0159", "lucide": "battery-warning", "solarCandidates": ["S0083","S0084","S0085"], "decision": "no-match", "note": "Battery candidates do not preserve the warning state." },
-    { "rank": 85, "lucideId": "L0161", "lucide": "bean", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable bean replacement is established in the inspected Solar atlas." },
-    { "rank": 86, "lucideId": "L0162", "lucide": "bean-off", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable disabled-bean replacement is established in the inspected Solar atlas." },
-    { "rank": 87, "lucideId": "L0164", "lucide": "bed-double", "solarCandidates": ["S0091","S0347","S0348"], "decision": "no-match", "note": "A generic bed does not preserve the double-bed specificity." },
-    { "rank": 88, "lucideId": "L0165", "lucide": "bed-single", "solarCandidates": ["S0091"], "decision": "no-match", "note": "A generic bed does not preserve the single-bed specificity." },
-    { "rank": 89, "lucideId": "L0166", "lucide": "beef", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable beef replacement is established in the inspected Solar atlas." },
-    { "rank": 90, "lucideId": "L0167", "lucide": "beef-off", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable disabled-beef replacement is established in the inspected Solar atlas." },
-    { "rank": 91, "lucideId": "L0168", "lucide": "beer", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable beer replacement is established in the inspected Solar atlas." },
-    { "rank": 92, "lucideId": "L0169", "lucide": "beer-off", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable disabled-beer replacement is established in the inspected Solar atlas." },
-    { "rank": 93, "lucideId": "L0171", "lucide": "bell-check", "solarCandidates": ["S0014","S0039","S0070"], "decision": "no-match", "note": "Bell candidates do not preserve the checked-bell composite." },
-    { "rank": 94, "lucideId": "L0173", "lucide": "bell-electric", "solarCandidates": ["S0096","S0097","S0098"], "decision": "no-match", "note": "Generic bell states do not preserve the electric-bell specificity." },
-    { "rank": 95, "lucideId": "L0174", "lucide": "bell-minus", "solarCandidates": ["S0096","S0097","S0098"], "decision": "no-match", "note": "Bell candidates do not preserve the minus-bell composite." },
-    { "rank": 96, "lucideId": "L0176", "lucide": "bell-plus", "solarCandidates": ["S0096","S0097","S0098"], "decision": "no-match", "note": "Bell candidates do not preserve the plus-bell composite." },
-    { "rank": 97, "lucideId": "L0178", "lucide": "between-horizontal-end", "solarCandidates": ["S0027","S0028","S0370"], "decision": "no-match", "note": "Between-horizontal-end is a distinct layout relation not established by these candidates." },
-    { "rank": 98, "lucideId": "L0179", "lucide": "between-horizontal-start", "solarCandidates": ["S0027","S0028","S0414"], "decision": "no-match", "note": "Between-horizontal-start is a distinct layout relation not established by these candidates." },
-    { "rank": 99, "lucideId": "L0181", "lucide": "between-vertical-start", "solarCandidates": ["S0032","S0033","S0415"], "decision": "no-match", "note": "Between-vertical-start is a distinct layout relation not established by these candidates." },
-    { "rank": 100, "lucideId": "L0182", "lucide": "biceps-flexed", "solarCandidates": [], "decision": "no-match", "note": "No interchangeable biceps-flexed replacement is established in the inspected Solar atlas." }
-  ]
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review-closed",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "sourceTemplate": "lucide-gap-batch-08-no-recorded-coverage.json",
+    "filter": { "coverage": "no-recorded-coverage", "suggestedBatch": 1 },
+    "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+    "forwardIntegration": { "promotedExistingReferences": 0, "aliasDeferred": [] },
+    "entries": [
+        {
+            "rank": 1,
+            "lucideId": "L0001",
+            "lucide": "a-arrow-down",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The A-letter modifier is not preserved by a generic Solar arrow."
+        },
+        {
+            "rank": 2,
+            "lucideId": "L0002",
+            "lucide": "a-arrow-up",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The A-letter modifier is not preserved by a generic Solar arrow."
+        },
+        {
+            "rank": 3,
+            "lucideId": "L0003",
+            "lucide": "a-large-small",
+            "solarCandidates": ["S0187", "S0188", "S0189"],
+            "decision": "no-match",
+            "note": "Cart candidates do not represent the Lucide typography-size action."
+        },
+        {
+            "rank": 4,
+            "lucideId": "L0006",
+            "lucide": "ad",
+            "solarCandidates": ["S0002", "S0003", "S0004"],
+            "decision": "no-match",
+            "note": "Add icons do not preserve the AD label or meaning."
+        },
+        {
+            "rank": 5,
+            "lucideId": "L0010",
+            "lucide": "alarm-clock-check",
+            "solarCandidates": ["S0014", "S0018", "S0019"],
+            "decision": "no-match",
+            "note": "Solar alarm candidates do not preserve the alarm-plus-check composite state."
+        },
+        {
+            "rank": 6,
+            "lucideId": "L0014",
+            "lucide": "alarm-smoke",
+            "solarCandidates": ["S0018", "S0019", "S0020"],
+            "decision": "no-match",
+            "note": "A generic alarm does not preserve the smoke-detector object."
+        },
+        {
+            "rank": 7,
+            "lucideId": "L0016",
+            "lucide": "align-center",
+            "solarCandidates": ["S0027"],
+            "decision": "equivalent",
+            "note": "Solar align-horizontal-center preserves the same center-alignment action."
+        },
+        {
+            "rank": 8,
+            "lucideId": "L0021",
+            "lucide": "align-horizontal-distribute-center",
+            "solarCandidates": ["S0027", "S0028", "S0032"],
+            "decision": "no-match",
+            "note": "Center distribution is not the same action as simple center alignment or spacing."
+        },
+        {
+            "rank": 9,
+            "lucideId": "L0022",
+            "lucide": "align-horizontal-distribute-end",
+            "solarCandidates": ["S0027", "S0028", "S0026"],
+            "decision": "no-match",
+            "note": "End distribution is not preserved by the closest alignment candidates."
+        },
+        {
+            "rank": 10,
+            "lucideId": "L0023",
+            "lucide": "align-horizontal-distribute-start",
+            "solarCandidates": ["S0027", "S0028", "S0026"],
+            "decision": "no-match",
+            "note": "Start distribution is not preserved by the closest alignment candidates."
+        },
+        {
+            "rank": 11,
+            "lucideId": "L0024",
+            "lucide": "align-horizontal-justify-center",
+            "solarCandidates": ["S0027", "S0028", "S0032"],
+            "decision": "no-match",
+            "note": "Justify-center is a distribution action, not simple center alignment."
+        },
+        {
+            "rank": 12,
+            "lucideId": "L0025",
+            "lucide": "align-horizontal-justify-end",
+            "solarCandidates": ["S0027", "S0028", "S0026"],
+            "decision": "no-match",
+            "note": "Justify-end is not interchangeable with the closest Solar alignment icons."
+        },
+        {
+            "rank": 13,
+            "lucideId": "L0026",
+            "lucide": "align-horizontal-justify-start",
+            "solarCandidates": ["S0027", "S0028", "S0026"],
+            "decision": "no-match",
+            "note": "Justify-start is not interchangeable with the closest Solar alignment icons."
+        },
+        {
+            "rank": 14,
+            "lucideId": "L0027",
+            "lucide": "align-horizontal-space-around",
+            "solarCandidates": ["S0027", "S0028", "S0026"],
+            "decision": "no-match",
+            "note": "Space-around is not preserved by center, spacing, or edge alignment."
+        },
+        {
+            "rank": 15,
+            "lucideId": "L0034",
+            "lucide": "align-vertical-distribute-center",
+            "solarCandidates": ["S0032", "S0027", "S0033"],
+            "decision": "no-match",
+            "note": "Center distribution is not preserved by the closest Solar alignment candidates."
+        },
+        {
+            "rank": 16,
+            "lucideId": "L0035",
+            "lucide": "align-vertical-distribute-end",
+            "solarCandidates": ["S0032", "S0033", "S0026"],
+            "decision": "no-match",
+            "note": "End distribution is not preserved by the closest Solar alignment candidates."
+        },
+        {
+            "rank": 17,
+            "lucideId": "L0036",
+            "lucide": "align-vertical-distribute-start",
+            "solarCandidates": ["S0032", "S0033", "S0026"],
+            "decision": "no-match",
+            "note": "Start distribution is not preserved by the closest Solar alignment candidates."
+        },
+        {
+            "rank": 18,
+            "lucideId": "L0037",
+            "lucide": "align-vertical-justify-center",
+            "solarCandidates": ["S0032", "S0027", "S0033"],
+            "decision": "no-match",
+            "note": "Justify-center is not interchangeable with simple vertical center alignment."
+        },
+        {
+            "rank": 19,
+            "lucideId": "L0042",
+            "lucide": "ambulance",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable ambulance replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 20,
+            "lucideId": "L0043",
+            "lucide": "ampersand",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable ampersand replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 21,
+            "lucideId": "L0044",
+            "lucide": "ampersands",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable ampersands replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 22,
+            "lucideId": "L0045",
+            "lucide": "amphora",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable amphora replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 23,
+            "lucideId": "L0046",
+            "lucide": "anchor",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable anchor replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 24,
+            "lucideId": "L0048",
+            "lucide": "angry",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable angry-face replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 25,
+            "lucideId": "L0050",
+            "lucide": "antenna",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable antenna replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 26,
+            "lucideId": "L0051",
+            "lucide": "anvil",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable anvil replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 27,
+            "lucideId": "L0054",
+            "lucide": "app-window-mac",
+            "solarCandidates": ["S1241"],
+            "decision": "no-match",
+            "note": "Solar window-frame loses the Mac-specific application-window controls."
+        },
+        {
+            "rank": 28,
+            "lucideId": "L0055",
+            "lucide": "apple",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable apple replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 29,
+            "lucideId": "L0057",
+            "lucide": "archive-restore",
+            "solarCandidates": ["S0038", "S0039", "S0040"],
+            "decision": "no-match",
+            "note": "Archive candidates do not preserve the restore action."
+        },
+        {
+            "rank": 30,
+            "lucideId": "L0059",
+            "lucide": "area-chart",
+            "solarCandidates": ["S0204", "S0205", "S0206"],
+            "decision": "no-match",
+            "note": "Generic chart candidates do not preserve the area-chart geometry."
+        },
+        {
+            "rank": 31,
+            "lucideId": "L0061",
+            "lucide": "arrow-big-down",
+            "solarCandidates": ["S0047"],
+            "decision": "equivalent",
+            "note": "Solar arrow-down preserves the same downward-arrow action; big is a visual size variant."
+        },
+        {
+            "rank": 32,
+            "lucideId": "L0062",
+            "lucide": "arrow-big-down-dash",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The dash modifier conveys a distinct state not present in the generic arrows."
+        },
+        {
+            "rank": 33,
+            "lucideId": "L0063",
+            "lucide": "arrow-big-left",
+            "solarCandidates": ["S0048"],
+            "decision": "equivalent",
+            "note": "Solar arrow-left preserves the same leftward-arrow action; big is a visual size variant."
+        },
+        {
+            "rank": 34,
+            "lucideId": "L0064",
+            "lucide": "arrow-big-left-dash",
+            "solarCandidates": ["S0035", "S0048", "S0049"],
+            "decision": "no-match",
+            "note": "The dash modifier conveys a distinct state not present in the generic arrows."
+        },
+        {
+            "rank": 35,
+            "lucideId": "L0065",
+            "lucide": "arrow-big-right",
+            "solarCandidates": ["S0051"],
+            "decision": "equivalent",
+            "note": "Solar arrow-right preserves the same rightward-arrow action; big is a visual size variant."
+        },
+        {
+            "rank": 36,
+            "lucideId": "L0066",
+            "lucide": "arrow-big-right-dash",
+            "solarCandidates": ["S0036", "S0051", "S0052"],
+            "decision": "no-match",
+            "note": "The dash modifier conveys a distinct state not present in the generic arrows."
+        },
+        {
+            "rank": 37,
+            "lucideId": "L0067",
+            "lucide": "arrow-big-up",
+            "solarCandidates": ["S0050"],
+            "decision": "equivalent",
+            "note": "Solar arrow-up preserves the same upward-arrow action; big is a visual size variant."
+        },
+        {
+            "rank": 38,
+            "lucideId": "L0068",
+            "lucide": "arrow-big-up-dash",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The dash modifier conveys a distinct state not present in the generic arrows."
+        },
+        {
+            "rank": 39,
+            "lucideId": "L0070",
+            "lucide": "arrow-down-0-1",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The numeric sorting action is not interchangeable with a generic down arrow."
+        },
+        {
+            "rank": 40,
+            "lucideId": "L0071",
+            "lucide": "arrow-down-1-0",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The numeric sorting action is not interchangeable with a generic down arrow."
+        },
+        {
+            "rank": 41,
+            "lucideId": "L0075",
+            "lucide": "arrow-down-narrow-wide",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The sort-width action is not interchangeable with a generic down arrow."
+        },
+        {
+            "rank": 42,
+            "lucideId": "L0077",
+            "lucide": "arrow-down-to-dot",
+            "solarCandidates": ["S0054", "S0055", "S0034"],
+            "decision": "no-match",
+            "note": "The destination dot is an essential part of this composite action."
+        },
+        {
+            "rank": 43,
+            "lucideId": "L0080",
+            "lucide": "arrow-down-wide-narrow",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The sort-width action is not interchangeable with a generic down arrow."
+        },
+        {
+            "rank": 44,
+            "lucideId": "L0081",
+            "lucide": "arrow-down-z-a",
+            "solarCandidates": ["S0034", "S0047", "S0049"],
+            "decision": "no-match",
+            "note": "The alphabetic sorting action is not interchangeable with a generic down arrow."
+        },
+        {
+            "rank": 45,
+            "lucideId": "L0085",
+            "lucide": "arrow-left-to-line",
+            "solarCandidates": ["S0054", "S0056", "S0035"],
+            "decision": "no-match",
+            "note": "The line endpoint is an essential part of this composite action."
+        },
+        {
+            "rank": 46,
+            "lucideId": "L0091",
+            "lucide": "arrow-up-0-1",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The numeric sorting action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 47,
+            "lucideId": "L0092",
+            "lucide": "arrow-up-1-0",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The numeric sorting action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 48,
+            "lucideId": "L0093",
+            "lucide": "arrow-up-a-z",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The alphabetic sorting action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 49,
+            "lucideId": "L0095",
+            "lucide": "arrow-up-from-dot",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The source dot is an essential part of this composite action."
+        },
+        {
+            "rank": 50,
+            "lucideId": "L0098",
+            "lucide": "arrow-up-narrow-wide",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The sort-width action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 51,
+            "lucideId": "L0101",
+            "lucide": "arrow-up-wide-narrow",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The sort-width action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 52,
+            "lucideId": "L0102",
+            "lucide": "arrow-up-z-a",
+            "solarCandidates": ["S0037", "S0050", "S0053"],
+            "decision": "no-match",
+            "note": "The alphabetic sorting action is not interchangeable with a generic up arrow."
+        },
+        {
+            "rank": 53,
+            "lucideId": "L0103",
+            "lucide": "arrows-up-from-line",
+            "solarCandidates": ["S0037", "S0043", "S0044"],
+            "decision": "no-match",
+            "note": "The line-origin composite action is not preserved by generic arrows or archive actions."
+        },
+        {
+            "rank": 54,
+            "lucideId": "L0108",
+            "lucide": "audio-lines",
+            "solarCandidates": ["S0706", "S0709", "S0806"],
+            "decision": "no-match",
+            "note": "Notification and recording candidates do not preserve the audio-waveform object."
+        },
+        {
+            "rank": 55,
+            "lucideId": "L0109",
+            "lucide": "audio-lines-x",
+            "solarCandidates": ["S0706", "S0709", "S0806"],
+            "decision": "no-match",
+            "note": "Neither the waveform nor its disabled state is preserved by the candidates."
+        },
+        {
+            "rank": 56,
+            "lucideId": "L0112",
+            "lucide": "axe",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable axe replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 57,
+            "lucideId": "L0113",
+            "lucide": "axis-3d",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable 3D-axis replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 58,
+            "lucideId": "L0114",
+            "lucide": "baby",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable baby replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 59,
+            "lucideId": "L0117",
+            "lucide": "badge-alert",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the alert badge composite."
+        },
+        {
+            "rank": 60,
+            "lucideId": "L0118",
+            "lucide": "badge-cent",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the cent badge composite."
+        },
+        {
+            "rank": 61,
+            "lucideId": "L0120",
+            "lucide": "badge-dollar-sign",
+            "solarCandidates": ["S0343", "S0344"],
+            "decision": "no-match",
+            "note": "Generic currency symbols do not preserve the badge container."
+        },
+        {
+            "rank": 62,
+            "lucideId": "L0122",
+            "lucide": "badge-indian-rupee",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the Indian-rupee badge composite."
+        },
+        {
+            "rank": 63,
+            "lucideId": "L0124",
+            "lucide": "badge-japanese-yen",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the Japanese-yen badge composite."
+        },
+        {
+            "rank": 64,
+            "lucideId": "L0125",
+            "lucide": "badge-minus",
+            "solarCandidates": ["S0265", "S0667", "S0668"],
+            "decision": "no-match",
+            "note": "Generic minus and badge-like candidates do not preserve this composite badge."
+        },
+        {
+            "rank": 65,
+            "lucideId": "L0127",
+            "lucide": "badge-plus",
+            "solarCandidates": ["S0192", "S0266", "S0775"],
+            "decision": "no-match",
+            "note": "Generic plus and badge-like candidates do not preserve this composite badge."
+        },
+        {
+            "rank": 66,
+            "lucideId": "L0128",
+            "lucide": "badge-pound-sterling",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the pound-sterling badge composite."
+        },
+        {
+            "rank": 67,
+            "lucideId": "L0130",
+            "lucide": "badge-russian-ruble",
+            "solarCandidates": ["S0873"],
+            "decision": "no-match",
+            "note": "Solar ruble is a currency symbol without the Lucide badge container."
+        },
+        {
+            "rank": 68,
+            "lucideId": "L0131",
+            "lucide": "badge-swiss-franc",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the Swiss-franc badge composite."
+        },
+        {
+            "rank": 69,
+            "lucideId": "L0132",
+            "lucide": "badge-turkish-lira",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the Turkish-lira badge composite."
+        },
+        {
+            "rank": 70,
+            "lucideId": "L0133",
+            "lucide": "badge-x",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No Solar badge preserves the X badge composite."
+        },
+        {
+            "rank": 71,
+            "lucideId": "L0134",
+            "lucide": "baggage-claim",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable baggage-claim replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 72,
+            "lucideId": "L0137",
+            "lucide": "banana",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable banana replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 73,
+            "lucideId": "L0142",
+            "lucide": "banknote-check",
+            "solarCandidates": ["S0014", "S0039", "S0070"],
+            "decision": "no-match",
+            "note": "The candidates are unrelated check composites and do not preserve a checked banknote."
+        },
+        {
+            "rank": 74,
+            "lucideId": "L0143",
+            "lucide": "banknote-x",
+            "solarCandidates": ["S0078", "S0079"],
+            "decision": "no-match",
+            "note": "Solar banknote variants do not preserve the X state."
+        },
+        {
+            "rank": 75,
+            "lucideId": "L0144",
+            "lucide": "bar-chart-3",
+            "solarCandidates": ["S0204"],
+            "decision": "equivalent",
+            "note": "Solar chart is the same bar-chart data visualization; bar count is a visual variant."
+        },
+        {
+            "rank": 76,
+            "lucideId": "L0145",
+            "lucide": "bar-chart-4",
+            "solarCandidates": ["S0204"],
+            "decision": "equivalent",
+            "note": "Solar chart is the same bar-chart data visualization; bar count is a visual variant."
+        },
+        {
+            "rank": 77,
+            "lucideId": "L0146",
+            "lucide": "bar-chart-big",
+            "solarCandidates": ["S0204"],
+            "decision": "equivalent",
+            "note": "Solar chart is the same bar-chart data visualization; size is a visual variant."
+        },
+        {
+            "rank": 78,
+            "lucideId": "L0147",
+            "lucide": "bar-chart-horizontal",
+            "solarCandidates": ["S0027", "S0028", "S0080"],
+            "decision": "no-match",
+            "note": "The candidates do not establish an interchangeable horizontal bar-chart visualization."
+        },
+        {
+            "rank": 79,
+            "lucideId": "L0148",
+            "lucide": "bar-chart-horizontal-big",
+            "solarCandidates": ["S0027", "S0028", "S0080"],
+            "decision": "no-match",
+            "note": "The candidates do not establish an interchangeable horizontal bar-chart visualization."
+        },
+        {
+            "rank": 80,
+            "lucideId": "L0149",
+            "lucide": "barcode",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable barcode replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 81,
+            "lucideId": "L0150",
+            "lucide": "barrel",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable barrel replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 82,
+            "lucideId": "L0151",
+            "lucide": "baseline",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable baseline replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 83,
+            "lucideId": "L0158",
+            "lucide": "battery-plus",
+            "solarCandidates": ["S0083", "S0084", "S0085"],
+            "decision": "no-match",
+            "note": "Battery candidates do not preserve the plus-charge state."
+        },
+        {
+            "rank": 84,
+            "lucideId": "L0159",
+            "lucide": "battery-warning",
+            "solarCandidates": ["S0083", "S0084", "S0085"],
+            "decision": "no-match",
+            "note": "Battery candidates do not preserve the warning state."
+        },
+        {
+            "rank": 85,
+            "lucideId": "L0161",
+            "lucide": "bean",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable bean replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 86,
+            "lucideId": "L0162",
+            "lucide": "bean-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable disabled-bean replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 87,
+            "lucideId": "L0164",
+            "lucide": "bed-double",
+            "solarCandidates": ["S0091", "S0347", "S0348"],
+            "decision": "no-match",
+            "note": "A generic bed does not preserve the double-bed specificity."
+        },
+        {
+            "rank": 88,
+            "lucideId": "L0165",
+            "lucide": "bed-single",
+            "solarCandidates": ["S0091"],
+            "decision": "no-match",
+            "note": "A generic bed does not preserve the single-bed specificity."
+        },
+        {
+            "rank": 89,
+            "lucideId": "L0166",
+            "lucide": "beef",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable beef replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 90,
+            "lucideId": "L0167",
+            "lucide": "beef-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable disabled-beef replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 91,
+            "lucideId": "L0168",
+            "lucide": "beer",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable beer replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 92,
+            "lucideId": "L0169",
+            "lucide": "beer-off",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable disabled-beer replacement is established in the inspected Solar atlas."
+        },
+        {
+            "rank": 93,
+            "lucideId": "L0171",
+            "lucide": "bell-check",
+            "solarCandidates": ["S0014", "S0039", "S0070"],
+            "decision": "no-match",
+            "note": "Bell candidates do not preserve the checked-bell composite."
+        },
+        {
+            "rank": 94,
+            "lucideId": "L0173",
+            "lucide": "bell-electric",
+            "solarCandidates": ["S0096", "S0097", "S0098"],
+            "decision": "no-match",
+            "note": "Generic bell states do not preserve the electric-bell specificity."
+        },
+        {
+            "rank": 95,
+            "lucideId": "L0174",
+            "lucide": "bell-minus",
+            "solarCandidates": ["S0096", "S0097", "S0098"],
+            "decision": "no-match",
+            "note": "Bell candidates do not preserve the minus-bell composite."
+        },
+        {
+            "rank": 96,
+            "lucideId": "L0176",
+            "lucide": "bell-plus",
+            "solarCandidates": ["S0096", "S0097", "S0098"],
+            "decision": "no-match",
+            "note": "Bell candidates do not preserve the plus-bell composite."
+        },
+        {
+            "rank": 97,
+            "lucideId": "L0178",
+            "lucide": "between-horizontal-end",
+            "solarCandidates": ["S0027", "S0028", "S0370"],
+            "decision": "no-match",
+            "note": "Between-horizontal-end is a distinct layout relation not established by these candidates."
+        },
+        {
+            "rank": 98,
+            "lucideId": "L0179",
+            "lucide": "between-horizontal-start",
+            "solarCandidates": ["S0027", "S0028", "S0414"],
+            "decision": "no-match",
+            "note": "Between-horizontal-start is a distinct layout relation not established by these candidates."
+        },
+        {
+            "rank": 99,
+            "lucideId": "L0181",
+            "lucide": "between-vertical-start",
+            "solarCandidates": ["S0032", "S0033", "S0415"],
+            "decision": "no-match",
+            "note": "Between-vertical-start is a distinct layout relation not established by these candidates."
+        },
+        {
+            "rank": 100,
+            "lucideId": "L0182",
+            "lucide": "biceps-flexed",
+            "solarCandidates": [],
+            "decision": "no-match",
+            "note": "No interchangeable biceps-flexed replacement is established in the inspected Solar atlas."
+        }
+    ]
 }

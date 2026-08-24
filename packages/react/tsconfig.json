@@ -14,6 +14,12 @@
         },
         "noEmit": true
     },
-    "include": ["./src/**/*", "./scripts/**/*", "./tests/**/*", "./tsdown.config.ts", "./vitest.config.ts"],
+    "include": [
+        "./src/**/*",
+        "./scripts/**/*",
+        "./tests/**/*",
+        "./tsdown.config.ts",
+        "./vitest.config.ts"
+    ],
     "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo"]
 }

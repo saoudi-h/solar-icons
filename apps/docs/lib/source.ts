@@ -1,5 +1,6 @@
 import { loader } from 'fumadocs-core/source'
 import { docs } from 'fumadocs-mdx:collections/server'
+
 import type { IconifyFrameworkIcon } from './resolveIconUtils'
 import { iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
 

@@ -1,12 +1,14 @@
 'use client'
-import { Button } from '@/components/ui/button'
-import { CopyButton } from '@/components/ui/CopyButton'
 import { useSolar } from '@solar-icons/react'
 import { DownloadMinimalisticIcon } from '@solar-icons/react/linear/download-minimalistic'
 import { LinkMinimalistic2Icon } from '@solar-icons/react/linear/link-minimalistic-2'
 import { saveAs } from 'file-saver'
 import type { FC } from 'react'
 import { toast } from 'sonner'
+
+import { Button } from '@/components/ui/button'
+import { CopyButton } from '@/components/ui/CopyButton'
+
 import { DEFAULT_VALUES, useSelectedIcon, useStyleURL, weightToStyleSlug } from '../context'
 
 /**
@@ -228,19 +230,11 @@ export const Actions: FC = () => {
               max-lg:mb-2 max-lg:border-b max-lg:pb-2
               lg:mr-4 lg:flex-col lg:border-r lg:pr-4
             `}>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadSVG}
-                className="p-1">
+            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className="p-1">
                 Get SVG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleDownloadPNG}
-                className="p-1">
+            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className="p-1">
                 Get PNG
                 <DownloadMinimalisticIcon size={16} isolated />
             </Button>
@@ -250,11 +244,7 @@ export const Actions: FC = () => {
             <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
                 Copy PNG
             </CopyButton>
-            <Button
-                size="default"
-                variant="ghost"
-                onClick={handleShare}
-                className="p-1">
+            <Button size="default" variant="ghost" onClick={handleShare} className="p-1">
                 Share
                 <LinkMinimalistic2Icon size={16} isolated />
             </Button>

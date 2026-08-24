@@ -1,11 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import {
-    parseSvgs,
-    forEachIcon,
-    forEachIconGroupedBy,
-    loadIcon,
-    clearCache,
-} from './parser'
+
+import { parseSvgs, forEachIcon, forEachIconGroupedBy, loadIcon, clearCache } from './parser'
 
 describe('parseSvgs', () => {
     beforeEach(() => {
@@ -147,9 +142,7 @@ describe('Integrity check', () => {
     it('guards against parseSvgs not called before iteration', async () => {
         clearCache()
         await expect(forEachIcon(async () => {})).rejects.toThrow('cache is empty')
-        await expect(forEachIconGroupedBy(async () => {})).rejects.toThrow(
-            'cache is empty'
-        )
+        await expect(forEachIconGroupedBy(async () => {})).rejects.toThrow('cache is empty')
     })
 })
 
@@ -167,18 +160,14 @@ describe('Cache lifecycle', () => {
     })
 
     it('loadIcon throws when icon not cached', () => {
-        expect(() => loadIcon('arrows', 'Bold', 'nonexistent')).toThrow(
-            'icon not found in cache'
-        )
+        expect(() => loadIcon('arrows', 'Bold', 'nonexistent')).toThrow('icon not found in cache')
     })
 
     it('clearCache invalidates the cache', async () => {
         await parseSvgs()
         expect(() => loadIcon('arrows', 'Bold', 'arrow-down')).not.toThrow()
         clearCache()
-        expect(() => loadIcon('arrows', 'Bold', 'arrow-down')).toThrow(
-            'icon not found in cache'
-        )
+        expect(() => loadIcon('arrows', 'Bold', 'arrow-down')).toThrow('icon not found in cache')
     })
 })
 

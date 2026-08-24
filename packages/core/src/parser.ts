@@ -23,6 +23,7 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
+
 import type { IconWeight } from './types'
 import { toPascalCase } from './utils'
 

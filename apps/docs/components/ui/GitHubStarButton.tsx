@@ -1,10 +1,11 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
 import NumberFlow from '@number-flow/react'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { motion } from 'motion/react'
 import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface GitHubStarButtonProps {
     starCount: number | null
@@ -31,12 +32,10 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             style={style}
             className={cn(
                 `
-                  group relative flex h-13 items-center gap-4 rounded-full
-                  border border-white/10 bg-neutral-900/80 px-6 text-sm
-                  font-semibold text-neutral-200 shadow-2xl backdrop-blur-xl
-                  transition-all duration-300 ease-out select-none
-                  hover:border-warning/50 hover:bg-neutral-950/90
-                  hover:text-white
+                  group relative flex h-13 items-center gap-4 rounded-full border border-white/10
+                  bg-neutral-900/80 px-6 text-sm font-semibold text-neutral-200 shadow-2xl
+                  backdrop-blur-xl transition-all duration-300 ease-out select-none
+                  hover:border-warning/50 hover:bg-neutral-950/90 hover:text-white
                   dark:bg-black/60
                   dark:hover:bg-neutral-950/80
                 `,
@@ -45,9 +44,8 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Outer gradient glow */}
             <div
                 className="
-                  absolute -inset-px -z-10 rounded-full bg-linear-to-r
-                  from-warning/20 to-amber-500/20 opacity-0 blur-xs
-                  transition-opacity duration-300
+                  absolute -inset-px -z-10 rounded-full bg-linear-to-r from-warning/20
+                  to-amber-500/20 opacity-0 blur-xs transition-opacity duration-300
                   group-hover:opacity-100
                 "
             />
@@ -55,23 +53,18 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Background glow shadow */}
             <div
                 className="
-                  absolute inset-0 -z-20 rounded-full bg-warning/10 opacity-0
-                  blur-lg transition-opacity duration-300
+                  absolute inset-0 -z-20 rounded-full bg-warning/10 opacity-0 blur-lg
+                  transition-opacity duration-300
                   group-hover:opacity-100
                 "
             />
 
             {/* Reflection Sweep Effect */}
-            <div
-                className="
-                  pointer-events-none absolute inset-0 overflow-hidden
-                  rounded-full
-                ">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
                 <div
                     className="
-                      absolute -inset-y-2 -left-16 w-12 -rotate-12
-                      bg-linear-to-r from-transparent via-white/15
-                      to-transparent transition-transform duration-1000 ease-out
+                      absolute -inset-y-2 -left-16 w-12 -rotate-12 bg-linear-to-r from-transparent
+                      via-white/15 to-transparent transition-transform duration-1000 ease-out
                       group-hover:translate-x-[400px]
                     "
                 />
@@ -82,8 +75,7 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                 <Icon
                     icon="mdi:github"
                     className="
-                      size-5.5 text-neutral-400 transition-colors duration-200
-                      ease-out
+                      size-5.5 text-neutral-400 transition-colors duration-200 ease-out
                       group-hover:text-white
                     "
                 />
@@ -93,8 +85,7 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Separator Line */}
             <div
                 className="
-                  z-10 h-4 w-px bg-white/10 transition-colors duration-200
-                  ease-out
+                  z-10 h-4 w-px bg-white/10 transition-colors duration-200 ease-out
                   group-hover:bg-warning/30
                 "
             />
@@ -104,21 +95,19 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                 <span
                     className={cn(
                         `
-                          flex items-center justify-center transition-transform
-                          duration-300 ease-out
+                          flex items-center justify-center transition-transform duration-300
+                          ease-out
                           group-hover:scale-120 group-hover:rotate-12
                         `,
-                        starCount !== null ? 'text-warning' : `
-                          text-muted-foreground
-                        `
+                        starCount !== null ? 'text-warning' : `text-muted-foreground`
                     )}>
                     <StarIcon size={18} weight={starCount !== null ? 'Bold' : 'Linear'} />
                 </span>
 
                 <span
                     className="
-                      min-w-[18px] font-mono text-sm font-extrabold text-warning
-                      transition-colors duration-200 ease-out
+                      min-w-[18px] font-mono text-sm font-extrabold text-warning transition-colors
+                      duration-200 ease-out
                     ">
                     <NumberFlow
                         value={displayCount}

@@ -1,5 +1,7 @@
-import { Badge } from '@/components/ui/badge'
 import type { FC } from 'react'
+
+import { Badge } from '@/components/ui/badge'
+
 import { useSelectedIcon } from '../context'
 
 export const Tags: FC = () => {

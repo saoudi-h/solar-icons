@@ -1,4 +1,5 @@
 import pc from 'picocolors'
+
 import type { Metadata } from '../types'
 import { checkMetadataFileExists, isValidMetadata, loadMetadata } from '../utils'
 

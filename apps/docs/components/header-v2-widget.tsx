@@ -8,9 +8,8 @@ export function V2StableHeaderWidget() {
         <Link
             href="/docs/v2"
             className="
-              hidden items-center gap-1.5 rounded-full bg-fd-primary px-3 py-1
-              text-xs font-semibold text-fd-primary-foreground shadow-sm
-              transition-colors
+              hidden items-center gap-1.5 rounded-full bg-fd-primary px-3 py-1 text-xs font-semibold
+              text-fd-primary-foreground shadow-sm transition-colors
               hover:bg-fd-primary/90
               lg:inline-flex
             ">

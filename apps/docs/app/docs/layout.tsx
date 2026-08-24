@@ -1,8 +1,9 @@
+import { DocsLayout } from 'fumadocs-ui/layouts/docs'
+import type { ReactNode } from 'react'
+
 import { docsOptions } from '@/app/layout.config'
 import { V1Banner } from '@/components/version-banner'
 import { source } from '@/lib/source'
-import { DocsLayout } from 'fumadocs-ui/layouts/docs'
-import type { ReactNode } from 'react'
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (

@@ -1,6 +1,8 @@
+import fs from 'node:fs'
+
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 import { Ollama } from '@langchain/ollama'
-import fs from 'node:fs'
+
 import type { ProcessorStep } from '../types'
 import { isString } from '../utils'
 

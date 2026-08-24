@@ -16,3 +16,11 @@ allowBuilds:
 enablePrePostScripts: true
 minimumReleaseAge: 0
 
+# @sveltejs/package phantom-imports `typescript` without declaring it; without
+# this injection it resolves the root TypeScript 7 (no JS API) instead of the
+# TypeScript 6 that svelte2tsx requires for emitDts.
+packageExtensions:
+    "@sveltejs/package":
+        dependencies:
+            typescript: 6.0.3
+

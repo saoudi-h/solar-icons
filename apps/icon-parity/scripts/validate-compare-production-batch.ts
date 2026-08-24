@@ -3,7 +3,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { FORWARD_REFERENCE_OVERRIDES, SEMANTIC_RELATED_MATCH_IDS, SEMANTIC_VARIANT_NO_MATCH_IDS } from '../app/compare/forward-semantic-promotions'
+
+import {
+    FORWARD_REFERENCE_OVERRIDES,
+    SEMANTIC_RELATED_MATCH_IDS,
+    SEMANTIC_VARIANT_NO_MATCH_IDS,
+} from '../app/compare/forward-semantic-promotions'
 
 type BatchPhase = 'candidate-discovery' | 'visual-decision' | 'complete'
 type EntryStatus = 'pending' | 'resolved' | 'unresolved'
@@ -67,7 +72,12 @@ const statuses: EntryStatus[] = ['pending', 'resolved', 'unresolved']
 const decisions: Decision[] = ['equivalent', 'variant', 'related', 'no-match']
 
 function toCanonicalDecision(decision: Decision, solarId = ''): CanonicalDecision {
-    return FORWARD_REFERENCE_OVERRIDES[solarId] || decision === 'equivalent' || (decision === 'variant' && !SEMANTIC_VARIANT_NO_MATCH_IDS.has(solarId)) || SEMANTIC_RELATED_MATCH_IDS.has(solarId) ? 'equivalent' : 'no-match'
+    return FORWARD_REFERENCE_OVERRIDES[solarId] ||
+        decision === 'equivalent' ||
+        (decision === 'variant' && !SEMANTIC_VARIANT_NO_MATCH_IDS.has(solarId)) ||
+        SEMANTIC_RELATED_MATCH_IDS.has(solarId)
+        ? 'equivalent'
+        : 'no-match'
 }
 
 function readJson<T>(filename: string): T {
@@ -148,7 +158,9 @@ function writeEvaluation(
                     reference: entry.reference,
                     referenceId: entry.referenceId,
                     decision: entry.decision,
-                    canonicalDecision: entry.decision ? toCanonicalDecision(entry.decision, entry.solarId) : null,
+                    canonicalDecision: entry.decision
+                        ? toCanonicalDecision(entry.decision, entry.solarId)
+                        : null,
                     note: entry.note,
                 },
                 existing: {

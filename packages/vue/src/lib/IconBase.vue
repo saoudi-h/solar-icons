@@ -22,7 +22,9 @@ const iconClass = computed(() =>
     props.iconName ? `${SOLAR_CLASS} solar-${props.iconName}` : SOLAR_CLASS
 )
 
-const isAccessible = computed(() => !!props.alt || attrs['aria-label'] !== undefined || attrs['title'] !== undefined)
+const isAccessible = computed(
+    () => !!props.alt || attrs['aria-label'] !== undefined || attrs['title'] !== undefined
+)
 
 const baseStyle = computed(() => {
     const s: Record<string, string> = {}

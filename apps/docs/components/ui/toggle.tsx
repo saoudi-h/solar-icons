@@ -8,9 +8,8 @@ import { cn } from '@/lib/utils'
 
 const toggleVariants = cva(
     `
-      inline-flex items-center justify-center gap-2 rounded-md border-2 text-sm
-      font-medium whitespace-nowrap shadow-2xs transition-all duration-200
-      ease-in
+      inline-flex items-center justify-center gap-2 rounded-md border-2 text-sm font-medium
+      whitespace-nowrap shadow-2xs transition-all duration-200 ease-in
       focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
       active:scale-95
       disabled:pointer-events-none disabled:opacity-50
@@ -35,8 +34,7 @@ const toggleVariants = cva(
                 `,
                 secondary: `
                   border-border bg-secondary text-secondary-foreground/80
-                  hover:border-secondary/80 hover:bg-secondary/80
-                  hover:text-secondary-foreground
+                  hover:border-secondary/80 hover:bg-secondary/80 hover:text-secondary-foreground
                 `,
                 destructive: `
                   border-destructive bg-destructive text-destructive-foreground

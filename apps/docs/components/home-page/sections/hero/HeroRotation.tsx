@@ -1,7 +1,4 @@
 'use client'
-import type { Category, Style } from '@/generated/generatedHeroUtils'
-import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
-import { cn } from '@/lib/utils'
 import type { DynamicIconProps } from '@solar-icons/react/lib/dynamic-icon'
 import { atom, useAtom } from 'jotai'
 import type { MotionValue } from 'motion/react'
@@ -17,6 +14,10 @@ import {
 } from 'motion/react'
 import type { FC } from 'react'
 import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
+
+import type { Category, Style } from '@/generated/generatedHeroUtils'
+import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
+import { cn } from '@/lib/utils'
 
 type SolarIcon = FC<DynamicIconProps>
 
@@ -110,9 +111,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
 
         return (
             <motion.div
-                className={`
-                  absolute top-1/2 left-1/2 origin-center -translate-1/2
-                `}
+                className={`absolute top-1/2 left-1/2 origin-center -translate-1/2`}
                 style={{ rotate: rotation }}>
                 {icons.map((IconComponent, index) => (
                     <RotatingIcon
@@ -141,19 +140,16 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
             <Circle size={160} noGradient>
                 <div
                     className={`
-                      relative z-50 flex size-full flex-col items-center
-                      justify-center overflow-hidden rounded-full bg-accent/50
-                      bg-linear-to-t from-primary/50 to-transparent
-                      backdrop-contrast-150
+                      relative z-50 flex size-full flex-col items-center justify-center
+                      overflow-hidden rounded-full bg-accent/50 bg-linear-to-t from-primary/50
+                      to-transparent backdrop-contrast-150
                       dark:bg-linear-to-b
                     `}>
                     <button
                         className={`
-                          size-full rounded-t-full border-b border-primary/30
-                          font-heading text-base font-black text-foreground/70
-                          transition-colors duration-100
-                          hover:bg-primary/30 hover:text-foreground
-                          hover:backdrop-contrast-125
+                          size-full rounded-t-full border-b border-primary/30 font-heading text-base
+                          font-black text-foreground/70 transition-colors duration-100
+                          hover:bg-primary/30 hover:text-foreground hover:backdrop-contrast-125
                         `}
                         onClick={() => setNextCategory()}>
                         <motion.div
@@ -161,8 +157,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                             animate={{ filter: ['blur(10px)', 'blur(0px)'] }}
                             transition={{ duration: 0.5 }}
                             className={`
-                              flex size-full items-end justify-center
-                              rounded-t-full pb-3 transition-all duration-100
+                              flex size-full items-end justify-center rounded-t-full pb-3
+                              transition-all duration-100
                               hover:scale-110
                               active:scale-90
                             `}>
@@ -171,11 +167,9 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                     </button>
                     <button
                         className={`
-                          size-full rounded-b-full border-t border-primary/10
-                          font-heading text-base font-black text-foreground/70
-                          transition-colors duration-100
-                          hover:bg-primary/30 hover:text-foreground
-                          hover:backdrop-contrast-125
+                          size-full rounded-b-full border-t border-primary/10 font-heading text-base
+                          font-black text-foreground/70 transition-colors duration-100
+                          hover:bg-primary/30 hover:text-foreground hover:backdrop-contrast-125
                         `}
                         onClick={() => setNextStyle()}>
                         <motion.div
@@ -183,8 +177,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                             animate={{ filter: ['blur(10px)', 'blur(0px)'] }}
                             transition={{ duration: 0.5 }}
                             className={`
-                              flex size-full items-start justify-center
-                              rounded-b-full pt-3 transition-all duration-100
+                              flex size-full items-start justify-center rounded-b-full pt-3
+                              transition-all duration-100
                               hover:scale-110
                               active:scale-90
                             `}>
@@ -212,8 +206,8 @@ const Circle = forwardRef<HTMLDivElement, CircleProps>(
                 className={cn(
                     noGradient || 'hero-section-gradient',
                     `
-                      relative top-1/2 left-1/2 -translate-1/2 rounded-full
-                      shadow-2xl shadow-primary/20 backdrop-contrast-150
+                      relative top-1/2 left-1/2 -translate-1/2 rounded-full shadow-2xl
+                      shadow-primary/20 backdrop-contrast-150
                       dark:shadow-primary/20 dark:backdrop-contrast-150
                     `,
                     className

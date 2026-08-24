@@ -1,6 +1,8 @@
 import { resolve } from 'node:path'
+
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+
 import pkg from './package.json'
 
 const NODE_BUILTINS = [

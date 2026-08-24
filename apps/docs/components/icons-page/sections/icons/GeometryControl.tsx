@@ -1,7 +1,8 @@
 'use client'
+import { useCallback, useRef, useState } from 'react'
+
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { useCallback, useRef, useState } from 'react'
 
 interface GeometryControlProps {
     label: string
@@ -127,9 +128,8 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                     onDoubleClick={handleDoubleClick}
                     className={cn(
                         `
-                          relative flex h-10 w-36 items-center justify-center
-                          gap-1.5 overflow-hidden rounded-lg bg-default-200
-                          select-none
+                          relative flex h-10 w-36 items-center justify-center gap-1.5
+                          overflow-hidden rounded-lg bg-default-200 select-none
                         `,
                         !disabled &&
                             `
@@ -144,26 +144,18 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                     <div
                         aria-hidden="true"
                         className={cn(
-                            `
-                              pointer-events-none absolute inset-y-0 left-0
-                              bg-foreground/10
-                            `,
+                            `pointer-events-none absolute inset-y-0 left-0 bg-foreground/10`,
                             !isDragging && 'transition-[width] duration-150'
                         )}
                         style={{ width: `${fillPercent}%` }}
                     />
-                    <div
-                        className="
-                          relative text-xs font-medium text-muted-foreground
-                        ">
+                    <div className="relative text-xs font-medium text-muted-foreground">
                         {label}
                     </div>
                     <div
                         className={cn(
                             `relative font-mono text-sm tabular-nums`,
-                            isModified
-                                ? 'text-foreground'
-                                : `text-foreground/80`
+                            isModified ? 'text-foreground' : `text-foreground/80`
                         )}>
                         {displayValue}
                         {unit}

@@ -2,34 +2,42 @@
     "name": "@solar-icons/static",
     "version": "2.1.0",
     "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
     "description": "Solar Icons static assets: individual SVG files, an SVG sprite, icon metadata, and tree-shakable per-icon ESM modules. No framework required.",
+    "keywords": [
+        "UI",
+        "UX",
+        "design",
+        "icons",
+        "interface",
+        "metadata",
+        "solar",
+        "sprite",
+        "static",
+        "svg"
+    ],
+    "bugs": {
+        "url": "https://github.com/saoudi-h/solar-icons/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Saoudi Hakim",
+        "email": "saoudihakim@gmail.com",
+        "url": "https://hakimsaoudi.dev"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/saoudi-h/solar-icons.git",
         "directory": "packages/static"
     },
-    "type": "module",
-    "sideEffects": false,
     "files": [
         "dist",
         "README.md",
         "LICENSE",
         "LICENSE-THIRD-PARTY"
     ],
-    "scripts": {
-        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
-        "generate:assets": "tsx scripts/generate-assets.ts",
-        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
-        "clean": "rimraf dist LICENSE LICENSE-THIRD-PARTY src/icons src/index.ts",
-        "test": "vitest run",
-        "typecheck": "tsc --noEmit",
-        "lint": "eslint . --max-warnings 0",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "pre-commit": "lint-staged"
-    },
+    "type": "module",
+    "sideEffects": false,
+    "types": "./dist/index.d.mts",
     "exports": {
         "./package.json": "./package.json",
         ".": {
@@ -77,43 +85,33 @@
             "import": "./dist/metadata-descriptions.json"
         }
     },
-    "types": "./dist/index.d.mts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
+        "generate:assets": "tsx scripts/generate-assets.ts",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "clean": "rimraf dist LICENSE LICENSE-THIRD-PARTY src/icons src/index.ts",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "lint": "oxlint --deny-warnings .",
+        "format": "oxfmt --check .",
+        "pre-commit": "lint-staged",
+        "format:fix": "oxfmt --write ."
+    },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/eslint": "0.1.5",
-        "@tala-tools/prettier": "0.0.3",
         "@tala-tools/tsconfig": "0.0.2",
         "@types/node": "^26.1.2",
         "picocolors": "^1.1.1",
-        "prettier": "^3.9.6",
         "rimraf": "^6.1.3",
         "tsdown": "^0.22.14",
         "tsx": "^4.23.8",
-        "typescript": "^6.0.3",
+        "typescript": "7.0.2",
         "vitest": "^4.1.10"
     },
     "engines": {
         "node": ">=16"
-    },
-    "keywords": [
-        "icons",
-        "svg",
-        "solar",
-        "static",
-        "sprite",
-        "metadata",
-        "design",
-        "interface",
-        "UI",
-        "UX"
-    ],
-    "author": {
-        "name": "Saoudi Hakim",
-        "url": "https://hakimsaoudi.dev",
-        "email": "saoudihakim@gmail.com"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/saoudi-h/solar-icons/issues"
     }
 }

@@ -2,6 +2,7 @@
     "name": "svelte-app",
     "version": "2.0.0-beta.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "predev": "pnpm prepare:catalog",
         "dev": "vite dev",
@@ -11,30 +12,26 @@
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
         "clean": "rm -rf node_modules .svelte-kit",
-        "lint": "eslint . --max-warnings 0",
-        "lint:fix": "eslint . --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
         "typecheck": "svelte-kit sync && tsgo --noEmit",
         "pre-commit": "lint-staged"
+    },
+    "dependencies": {
+        "@solar-icons/svelte": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/adapter-auto": "^7.0.1",
         "@sveltejs/kit": "^2.70.2",
         "@sveltejs/vite-plugin-svelte": "^7.2.0",
         "@tailwindcss/vite": "^4.3.3",
-        "@tala-tools/eslint": "0.1.5",
-        "@tala-tools/prettier": "0.0.3",
-        "prettier-plugin-svelte": "^4.1.1",
         "svelte": "^5.56.8",
         "svelte-check": "^4.7.4",
         "tailwindcss": "^4.3.3",
-        "typescript": "^6.0.3",
+        "typescript": "7.0.2",
         "vite": "^8.2.0"
-    },
-    "type": "module",
-    "dependencies": {
-        "@solar-icons/svelte": "workspace:*"
     }
 }

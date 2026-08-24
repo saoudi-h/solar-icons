@@ -1,5 +1,6 @@
 import pLimit from 'p-limit'
 import pc from 'picocolors'
+
 import { StateManager } from './StateManager'
 import type { Context, IconDataExtractor, ProcessorStep } from './types'
 import { isString } from './utils'

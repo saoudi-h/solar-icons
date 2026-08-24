@@ -1,5 +1,6 @@
-import angular from '@analogjs/vite-plugin-angular'
 import { resolve } from 'path'
+
+import angular from '@analogjs/vite-plugin-angular'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({

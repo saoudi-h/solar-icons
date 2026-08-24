@@ -1,3 +1,3 @@
-import { generateTestAppIconLists } from '../../../scripts/generate-test-app-icon-lists';
+import { generateTestAppIconLists } from '../../../scripts/generate-test-app-icon-lists'
 
-await generateTestAppIconLists();
+await generateTestAppIconLists()

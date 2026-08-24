@@ -2,22 +2,17 @@
 
 export const PerformanceShowcase = () => {
     return (
-        <div
-            className="
-              mt-auto flex w-full flex-col gap-3.5 text-left font-mono
-              text-[9.5px]
-            ">
+        <div className="mt-auto flex w-full flex-col gap-3.5 text-left font-mono text-[9.5px]">
             {/* Standard Package */}
             <div
                 className="
-                  flex flex-col gap-1.5 rounded-2xl border border-neutral-200/50
-                  bg-white p-3
+                  flex flex-col gap-1.5 rounded-2xl border border-neutral-200/50 bg-white p-3
                   dark:border-neutral-800 dark:bg-neutral-950
                 ">
                 <div
                     className="
-                      flex items-center gap-1.5 text-[9px] font-bold
-                      tracking-wider text-neutral-500 uppercase select-none
+                      flex items-center gap-1.5 text-[9px] font-bold tracking-wider text-neutral-500
+                      uppercase select-none
                     ">
                     <span className="size-2 rounded-full bg-sky-500" />
                     Standard: Dynamic Morphing
@@ -30,11 +25,7 @@ export const PerformanceShowcase = () => {
                     <div>
                         <span className="text-pink-500">import</span> {`{ Star }`}{' '}
                         <span className="text-pink-500">from</span>{' '}
-                        <span
-                            className="
-                              text-emerald-600
-                              dark:text-emerald-400
-                            ">
+                        <span className="text-emerald-600 dark:text-emerald-400">
                             "@solar-icons/react"
                         </span>
                     </div>
@@ -51,14 +42,13 @@ export const PerformanceShowcase = () => {
             {/* Performance Package */}
             <div
                 className="
-                  flex flex-col gap-1.5 rounded-2xl border border-neutral-200/50
-                  bg-white p-3
+                  flex flex-col gap-1.5 rounded-2xl border border-neutral-200/50 bg-white p-3
                   dark:border-neutral-800 dark:bg-neutral-950
                 ">
                 <div
                     className="
-                      flex items-center gap-1.5 text-[9px] font-bold
-                      tracking-wider text-neutral-500 uppercase select-none
+                      flex items-center gap-1.5 text-[9px] font-bold tracking-wider text-neutral-500
+                      uppercase select-none
                     ">
                     <span className="size-2 rounded-full bg-emerald-500" />
                     Performance: Static Compile-Time

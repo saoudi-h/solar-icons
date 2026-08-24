@@ -1,6 +1,8 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { CategoryNav } from './CategoryNav'
 import { ShowcaseProvider, useStyleURL, WeightNamespaceProvider } from './context'
 import { FilterBar } from './FilterBar'
@@ -32,29 +34,21 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
             <ShowcaseProvider>
                 <section
                     className={cn(
-                        `
-                          relative flex size-full flex-1 flex-col items-center
-                          self-center px-0
-                        `,
+                        `relative flex size-full flex-1 flex-col items-center self-center px-0`,
                         className
                     )}>
                     <div
                         className={`
-                          relative flex size-full flex-1 flex-col gap-2
-                          rounded-2xl
+                          relative flex size-full flex-1 flex-col gap-2 rounded-2xl
                           md:rounded-3xl
                         `}>
-                        <div
-                            className={`
-                              relative flex flex-1 flex-col gap-4 rounded-xl p-4
-                            `}>
+                        <div className={`relative flex flex-1 flex-col gap-4 rounded-xl p-4`}>
                             <FilterBar
                                 drawerExtras={
                                     <>
                                         <div
                                             className="
-                                              my-2 px-1 text-[10px]
-                                              font-semibold tracking-widest
+                                              my-2 px-1 text-[10px] font-semibold tracking-widest
                                               text-muted-foreground uppercase
                                             ">
                                             Categories
@@ -71,8 +65,7 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                                 <aside
                                     aria-label="Categories navigation"
                                     className="
-                                      sticky top-4 hidden w-50 shrink-0
-                                      overflow-y-auto pr-1
+                                      sticky top-4 hidden w-50 shrink-0 overflow-y-auto pr-1
                                       md:block
                                     ">
                                     <CategoryNav />

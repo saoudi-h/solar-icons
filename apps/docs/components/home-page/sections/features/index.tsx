@@ -1,13 +1,14 @@
 'use client'
-import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
-import { Heading } from '@/components/ui/heading'
-import { cn } from '@/lib/utils'
+import { ArrowRightIcon } from '@solar-icons/react/linear/arrow-right'
 import { motion } from 'motion/react'
+import Link from 'next/link'
 import React from 'react'
 
+import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Button } from '@/components/ui/button'
-import { ArrowRightIcon } from '@solar-icons/react/linear/arrow-right'
-import Link from 'next/link'
+import { Heading } from '@/components/ui/heading'
+import { cn } from '@/lib/utils'
+
 import { DocsShowcase } from './DocsShowcase'
 import { DxShowcase } from './DxShowcase'
 import { ExplorerShowcase } from './ExplorerShowcase'
@@ -45,52 +46,32 @@ export const FeaturesSection = () => {
         <SectionMotion
             variants={containerVariants}
             className="
-              relative container flex w-full flex-col items-center gap-12
-              self-center px-4 py-20
+              relative container flex w-full flex-col items-center gap-12 self-center px-4 py-20
               md:px-0
             ">
             {/* Title Block */}
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col items-center gap-4 text-center">
-                <Heading
-                    size="h1"
-                    className="
-                      text-3xl font-extrabold tracking-tight
-                      md:text-5xl
-                    ">
+                <Heading size="h1" className="text-3xl font-extrabold tracking-tight md:text-5xl">
                     Built for{' '}
                     <span
                         className="
-                          box-decoration-clone underline decoration-primary
-                          underline-offset-8
+                          box-decoration-clone underline decoration-primary underline-offset-8
                         ">
                         All
                     </span>
                 </Heading>
-                <p
-                    className="
-                      max-w-145 text-sm/relaxed text-muted-foreground
-                      md:text-base
-                    ">
+                <p className="max-w-145 text-sm/relaxed text-muted-foreground md:text-base">
                     A complete icon set with six visual styles, native frontend framework packages,
                     autocomplete typings, and AI-ready documentation.
                 </p>
             </motion.div>
 
             {/* Bento Grid Layout */}
-            <div
-                className="
-                  mt-4 grid w-full grid-cols-1 gap-2
-                  md:grid-cols-12
-                ">
+            <div className="mt-4 grid w-full grid-cols-1 gap-2 md:grid-cols-12">
                 {/* Card 1: Explore & Search (md:col-span-7) */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-7
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-7">
                     <BentoCard>
                         <BentoHeader
                             title="Explore and Search"
@@ -103,12 +84,7 @@ export const FeaturesSection = () => {
                 </motion.div>
 
                 {/* Card 2: Native Frameworks (md:col-span-5) */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-5
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-5">
                     <BentoCard>
                         <BentoHeader
                             title="Native Framework Packages"
@@ -121,12 +97,7 @@ export const FeaturesSection = () => {
                 </motion.div>
 
                 {/* Card 3: Six Visual Styles (md:col-span-4) */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-4
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-4">
                     <BentoCard>
                         <BentoHeader
                             title="Six Visual Styles"
@@ -137,12 +108,7 @@ export const FeaturesSection = () => {
                 </motion.div>
 
                 {/* Card 4: AI-Ready Documentation (md:col-span-4) */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-4
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-4">
                     <BentoCard>
                         <BentoHeader
                             title="AI-Ready Documentation"
@@ -155,12 +121,7 @@ export const FeaturesSection = () => {
                 </motion.div>
 
                 {/* Card 5: Type-Safe DX (md:col-span-4) */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-4
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-4">
                     <BentoCard>
                         <BentoHeader
                             title="Type-Safe Autocomplete"
@@ -170,12 +131,7 @@ export const FeaturesSection = () => {
                     </BentoCard>
                 </motion.div>
 
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                      flex
-                      md:col-span-12
-                    ">
+                <motion.div variants={itemVariants} className="flex md:col-span-12">
                     <BentoCard>
                         <BentoHeader
                             title="Solar Icons for Figma"
@@ -197,8 +153,8 @@ const BentoCard = ({ children, className }: { children: React.ReactNode; classNa
         <div
             className={cn(
                 `
-                  relative flex w-full flex-col justify-between overflow-hidden
-                  rounded-3xl bg-default-200/70 p-6
+                  relative flex w-full flex-col justify-between overflow-hidden rounded-3xl
+                  bg-default-200/70 p-6
                   dark:bg-default-100
                 `,
                 className
@@ -207,8 +163,8 @@ const BentoCard = ({ children, className }: { children: React.ReactNode; classNa
             {/* Gradient Veil overlay at the bottom to fade visual mockups into the card base */}
             <div
                 className="
-                  pointer-events-none absolute inset-x-0 bottom-0 z-30 h-32
-                  bg-linear-to-t from-default-100 to-transparent
+                  pointer-events-none absolute inset-x-0 bottom-0 z-30 h-32 bg-linear-to-t
+                  from-default-100 to-transparent
                   dark:from-default-50/70
                 "
             />
@@ -230,20 +186,9 @@ const BentoHeader = ({
 }) => (
     <div className="relative mb-6 flex flex-col gap-1.5 text-left select-none">
         <div className="flex items-start justify-between gap-4">
-            <h3
-                className="
-                  text-lg font-bold tracking-tight text-foreground
-                  md:text-lg
-                ">
-                {title}
-            </h3>
+            <h3 className="text-lg font-bold tracking-tight text-foreground md:text-lg">{title}</h3>
             {href && buttonText && (
-                <Button
-                    asChild
-                    size="sm"
-                    variant="default"
-                    colors="muted"
-                    className="rounded-full">
+                <Button asChild size="sm" variant="default" colors="muted" className="rounded-full">
                     <Link href={href}>
                         {buttonText}
                         <ArrowRightIcon />
@@ -251,11 +196,7 @@ const BentoHeader = ({
                 </Button>
             )}
         </div>
-        <p
-            className="
-              text-xs/relaxed font-light text-muted-foreground
-              md:text-sm/relaxed
-            ">
+        <p className="text-xs/relaxed font-light text-muted-foreground md:text-sm/relaxed">
             {description}
         </p>
     </div>

@@ -5,13 +5,13 @@
 import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
 import { CloseCircleIcon } from '@solar-icons/react/dynamic/close-circle'
 import { Command as CommandPrimitive, useCommandState } from 'cmdk'
-
 import * as React from 'react'
 import { forwardRef, useEffect } from 'react'
 
 import { Badge } from '@/components/ui/badge'
 import { Command, CommandGroup, CommandItem, CommandList } from '@/components/ui/command'
 import { cn } from '@/lib/utils'
+
 import { Button } from './button'
 
 export interface Option {
@@ -441,28 +441,21 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     commandProps?.onKeyDown?.(e)
                 }}
                 className={cn(
-                    `
-                      h-auto max-w-48 overflow-visible bg-transparent
-                      md:max-w-64
-                      lg:max-w-72
-                    `,
+                    `h-auto max-w-48 overflow-visible bg-transparent md:max-w-64 lg:max-w-72`,
                     commandProps?.className
                 )}
                 shouldFilter={
                     commandProps?.shouldFilter !== undefined ? commandProps.shouldFilter : !onSearch
                 }
                 filter={commandFilter()!}>
-                {/* 451:17  error    
+                {/* 451:17  error
                    Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions   */}
                 <div
                     role="button"
                     tabIndex={disabled ? -1 : undefined}
                     aria-label="Focus input field"
                     className={cn(
-                        `
-                          relative min-h-10 rounded-md border border-input
-                          text-sm
-                        `,
+                        `relative min-h-10 rounded-md border border-input text-sm`,
                         {
                             'px-3 py-2': selected.length !== 0,
                             'cursor-text': !disabled && selected.length !== 0,
@@ -482,8 +475,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     selected.filter(s => s.fixed).length === selected.length ? (
                         <AltArrowDownIcon
                             className={`
-                              absolute top-1/2 right-3 z-10 size-4
-                              translate-y-[-50%] opacity-50
+                              absolute top-1/2 right-3 z-10 size-4 translate-y-[-50%] opacity-50
                             `}
                         />
                     ) : (
@@ -496,15 +488,10 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 onChange?.(selected.filter(s => s.fixed))
                             }}
                             className={cn(
-                                `
-                                  absolute top-1/2 right-0 z-10 size-5
-                                  translate-y-[-50%] p-0
-                                `,
+                                `absolute top-1/2 right-0 z-10 size-5 translate-y-[-50%] p-0`,
                                 (hideClearAllButton || disabled) && 'hidden'
                             )}>
-                            <CloseCircleIcon weight="Bold" isolated className={`
-                              drop-shadow-md
-                            `} />
+                            <CloseCircleIcon weight="Bold" isolated className={`drop-shadow-md`} />
                         </Button>
                     )}
                     <div className="relative flex min-h-10 flex-wrap gap-1">
@@ -515,8 +502,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     key={option.value}
                                     className={cn(
                                         `
-                                          data-disabled:bg-muted-foreground
-                                          data-disabled:text-muted
+                                          data-disabled:bg-muted-foreground data-disabled:text-muted
                                           data-disabled:hover:bg-muted-foreground
                                         `,
                                         `
@@ -532,14 +518,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     <button
                                         className={cn(
                                             `
-                                              ml-1 rounded-full
-                                              ring-offset-background
+                                              ml-1 rounded-full ring-offset-background
                                               outline-hidden
-                                              focus:ring-2 focus:ring-ring
-                                              focus:ring-offset-2
+                                              focus:ring-2 focus:ring-ring focus:ring-offset-2
                                             `,
-                                            (disabled || option.fixed) &&
-                                                `hidden`
+                                            (disabled || option.fixed) && `hidden`
                                         )}
                                         onKeyDown={e => {
                                             if (e.key === 'Enter') {
@@ -608,9 +591,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     {open && (
                         <CommandList
                             className={`
-                              absolute top-1 z-50 max-h-96 w-full rounded-xl
-                              border border-border/50 bg-popover
-                              text-popover-foreground shadow-md backdrop-blur-md
+                              absolute top-1 z-50 max-h-96 w-full rounded-xl border border-border/50
+                              bg-popover text-popover-foreground shadow-md backdrop-blur-md
                             `}
                             // className="absolute top-1 z-10 w-full rounded-md border bg-popover text-popover-foreground shadow-md outline-hidden animate-in"
                             onMouseLeave={() => {
@@ -629,9 +611,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                     {EmptyItem()}
                                     {CreatableItem()}
                                     {!selectFirstItem && (
-                                        <CommandItem value="-" className={`
-                                          hidden
-                                        `} />
+                                        <CommandItem value="-" className={`hidden`} />
                                     )}
                                     {Object.entries(selectables).map(([key, dropdowns]) => (
                                         <CommandGroup

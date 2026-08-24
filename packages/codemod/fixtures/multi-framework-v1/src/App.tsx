@@ -1,5 +1,5 @@
-import { HomeBold, WeigherBold } from '@solar-icons/react-perf'
 import { Heart, Home as HomeIcon } from '@solar-icons/react'
+import { HomeBold, WeigherBold } from '@solar-icons/react-perf'
 
 interface AppProps {
     dynamicWeight: 'Linear' | 'Outline'

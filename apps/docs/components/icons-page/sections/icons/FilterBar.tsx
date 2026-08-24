@@ -1,4 +1,11 @@
 'use client'
+import { useSolar } from '@solar-icons/react'
+import { RestartIcon } from '@solar-icons/react/linear/restart'
+import { SettingsIcon } from '@solar-icons/react/linear/settings'
+import { useAtom, useSetAtom } from 'jotai'
+import { motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/button'
 import {
     Drawer,
@@ -8,19 +15,9 @@ import {
     DrawerTrigger,
 } from '@/components/ui/drawer'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { useSolar } from '@solar-icons/react'
-import { RestartIcon } from '@solar-icons/react/linear/restart'
-import { SettingsIcon } from '@solar-icons/react/linear/settings'
-import { useAtom, useSetAtom } from 'jotai'
-import { motion } from 'motion/react'
-import { useEffect, useRef, useState } from 'react'
+
 import { ColorPicker } from './ColorPicker'
 import { ColorPickerSimple } from './ColorPickerSimple'
-import { GeometryControl } from './GeometryControl'
-import { ExtendedFilterToggle } from './OriginControls'
-import { SearchInput } from './SearchInput'
-import { StylePicker } from './StylePicker'
-import { ViewModeToggle } from './ViewModeToggle'
 import {
     activeCategoryAtom,
     DEFAULT_VALUES,
@@ -29,6 +26,11 @@ import {
     useSearchKeyword,
     useStyleURL,
 } from './context'
+import { GeometryControl } from './GeometryControl'
+import { ExtendedFilterToggle } from './OriginControls'
+import { SearchInput } from './SearchInput'
+import { StylePicker } from './StylePicker'
+import { ViewModeToggle } from './ViewModeToggle'
 
 export const FilterBarContent: React.FC = () => {
     const [filteredCount] = useAtom(filteredCountAtom)
@@ -89,11 +91,7 @@ export const FilterBarContent: React.FC = () => {
     }
 
     return (
-        <div
-            className="
-              flex flex-1 flex-wrap content-start items-center justify-start
-              gap-2
-            ">
+        <div className="flex flex-1 flex-wrap content-start items-center justify-start gap-2">
             {/* Section A — Style */}
             <StylePicker value={weight} onChange={setWeight} />
 
@@ -150,10 +148,7 @@ export const FilterBarContent: React.FC = () => {
                         onClick={reset}
                         size="icon"
                         colors="accent"
-                        className="
-                          size-10 rounded-lg border-none! bg-default-200
-                          text-foreground
-                        "
+                        className="size-10 rounded-lg border-none! bg-default-200 text-foreground"
                         aria-label="Reset filters">
                         <RestartIcon className="size-4 scale-x-[-1]" isolated />
                     </Button>
@@ -178,8 +173,8 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
         <>
             <div
                 className="
-                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl
-                  border border-border bg-default-50 p-2 shadow-xs
+                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl border border-border
+                  bg-default-50 p-2 shadow-xs
                   md:flex
                   dark:bg-default-100
                 ">
@@ -194,9 +189,8 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                             whileTap={{ scale: 0.9 }}
                             whileHover={{ x: -10 }}
                             className="
-                              fixed top-80 right-[-20px] z-50 h-12 w-20
-                              rounded-none rounded-l-full border border-border
-                              bg-default-200 p-2 text-foreground/70 shadow-md
+                              fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none rounded-l-full
+                              border border-border bg-default-200 p-2 text-foreground/70 shadow-md
                               transition-colors
                               hover:text-foreground
                             ">
@@ -206,9 +200,8 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                     </DrawerTrigger>
                     <DrawerContent
                         className="
-                          fixed! inset-y-2! right-2! z-50 flex! w-72!
-                          overflow-y-auto rounded-xl border border-border
-                          bg-default-50/90 p-2 shadow-xs backdrop-blur-sm
+                          fixed! inset-y-2! right-2! z-50 flex! w-72! overflow-y-auto rounded-xl
+                          border border-border bg-default-50/90 p-2 shadow-xs backdrop-blur-sm
                           outline-none!
                           dark:bg-default-100/80
                         "

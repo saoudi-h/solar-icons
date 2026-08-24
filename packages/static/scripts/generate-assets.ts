@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import fs from 'node:fs'
+import path from 'node:path'
+
 /**
  * Generates the complete `@solar-icons/static` output from `@solar-icons/core`'s
  * normalized SVG source (`packages/core/svgs`).
@@ -27,8 +30,6 @@ import {
     type ParsedIcon,
 } from '@solar-icons/core'
 import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
-import fs from 'node:fs'
-import path from 'node:path'
 import pc from 'picocolors'
 
 const DIST = path.resolve(import.meta.dirname, '../dist')

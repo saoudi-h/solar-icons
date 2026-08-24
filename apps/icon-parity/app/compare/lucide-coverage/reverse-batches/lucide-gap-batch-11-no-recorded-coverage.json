@@ -1,1 +1,2138 @@
-{"version":1,"direction":"lucide-to-solar-gap","phase":"visual-review","sourceSnapshot":"@iconify-json/lucide@1.2.123","filter":{"coverage":"no-recorded-coverage","suggestedBatch":1},"instructions":"Inspect every Lucide target against the complete Solar atlas. For no-recorded-coverage rows, the displayed Solar entries are lexical shortlist suggestions only and must be visually verified or replaced. Fill solarCandidates with zero to three Solar IDs, then decide equivalent only when replacement meaning is interchangeable; otherwise use no-match. This artifact does not mutate production sheets or verified-matches.json.","entries":[{"rank":1,"lucide":"database-x","lucideId":"L0545","coverage":"no-recorded-coverage","evidence":[{"solar":"database","solarId":"S0323","role":"candidate","decision":"related"}],"solarCandidates":["S0323"],"decision":null,"note":""},{"rank":2,"lucide":"database-zap","lucideId":"L0546","coverage":"no-recorded-coverage","evidence":[{"solar":"database","solarId":"S0323","role":"candidate","decision":"related"}],"solarCandidates":["S0323"],"decision":null,"note":""},{"rank":3,"lucide":"decimals-arrow-left","lucideId":"L0547","coverage":"no-recorded-coverage","evidence":[{"solar":"alt-arrow-left","solarId":"S0035","role":"candidate","decision":"related"},{"solar":"arrow-left","solarId":"S0048","role":"candidate","decision":"related"},{"solar":"arrow-left-down","solarId":"S0049","role":"candidate","decision":"related"}],"solarCandidates":["S0035","S0048","S0049"],"decision":null,"note":""},{"rank":4,"lucide":"decimals-arrow-right","lucideId":"L0548","coverage":"no-recorded-coverage","evidence":[{"solar":"alt-arrow-right","solarId":"S0036","role":"candidate","decision":"related"},{"solar":"arrow-right","solarId":"S0051","role":"candidate","decision":"related"},{"solar":"arrow-right-down","solarId":"S0052","role":"candidate","decision":"related"}],"solarCandidates":["S0036","S0051","S0052"],"decision":null,"note":""},{"rank":5,"lucide":"dessert","lucideId":"L0550","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":6,"lucide":"diameter","lucideId":"L0551","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":7,"lucide":"diamond","lucideId":"L0552","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":8,"lucide":"diamond-minus","lucideId":"L0553","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-minus","solarId":"S0265","role":"candidate","decision":"related"},{"solar":"minus-circle","solarId":"S0667","role":"candidate","decision":"related"},{"solar":"minus-square","solarId":"S0668","role":"candidate","decision":"related"}],"solarCandidates":["S0265","S0667","S0668"],"decision":null,"note":""},{"rank":9,"lucide":"diamond-percent","lucideId":"L0554","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":10,"lucide":"diamond-plus","lucideId":"L0555","coverage":"no-recorded-coverage","evidence":[{"solar":"cart-plus","solarId":"S0192","role":"candidate","decision":"related"},{"solar":"cloud-plus","solarId":"S0266","role":"candidate","decision":"related"},{"solar":"plus-minus","solarId":"S0775","role":"candidate","decision":"related"}],"solarCandidates":["S0192","S0266","S0775"],"decision":null,"note":""},{"rank":11,"lucide":"dice-1","lucideId":"L0556","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":12,"lucide":"dice-2","lucideId":"L0557","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":13,"lucide":"dice-3","lucideId":"L0558","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":14,"lucide":"dice-4","lucideId":"L0559","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":15,"lucide":"dice-5","lucideId":"L0560","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":16,"lucide":"dice-6","lucideId":"L0561","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":17,"lucide":"dices","lucideId":"L0562","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":18,"lucide":"diff","lucideId":"L0563","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":19,"lucide":"disc-2","lucideId":"L0565","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":20,"lucide":"divide","lucideId":"L0568","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":21,"lucide":"dock","lucideId":"L0571","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":22,"lucide":"door-closed-locked","lucideId":"L0576","coverage":"no-recorded-coverage","evidence":[{"solar":"eye-closed","solarId":"S0382","role":"candidate","decision":"related"}],"solarCandidates":["S0382"],"decision":null,"note":""},{"rank":23,"lucide":"dot","lucideId":"L0578","coverage":"no-recorded-coverage","evidence":[{"solar":"chat-dots","solarId":"S0207","role":"candidate","decision":"related"},{"solar":"chat-round-dots","solarId":"S0212","role":"candidate","decision":"related"},{"solar":"menu-dots","solarId":"S0651","role":"candidate","decision":"related"}],"solarCandidates":["S0207","S0212","S0651"],"decision":null,"note":""},{"rank":24,"lucide":"drama","lucideId":"L0581","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":25,"lucide":"drill","lucideId":"L0583","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":26,"lucide":"drone","lucideId":"L0584","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":27,"lucide":"droplet-off","lucideId":"L0586","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":28,"lucide":"drum","lucideId":"L0588","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":29,"lucide":"drumstick","lucideId":"L0589","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":30,"lucide":"ear-off","lucideId":"L0592","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":31,"lucide":"earth-lock","lucideId":"L0594","coverage":"no-recorded-coverage","evidence":[{"solar":"earth","solarId":"S0366","role":"candidate","decision":"related"},{"solar":"heart-lock","solarId":"S0496","role":"candidate","decision":"related"},{"solar":"lock","solarId":"S0592","role":"candidate","decision":"related"}],"solarCandidates":["S0366","S0496","S0592"],"decision":null,"note":""},{"rank":32,"lucide":"eclipse","lucideId":"L0595","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":33,"lucide":"egg","lucideId":"L0596","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":34,"lucide":"egg-fried","lucideId":"L0597","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":35,"lucide":"egg-off","lucideId":"L0598","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":36,"lucide":"eject","lucideId":"L0599","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":37,"lucide":"ellipse","lucideId":"L0600","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":38,"lucide":"equal","lucideId":"L0603","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":39,"lucide":"equal-approximately","lucideId":"L0604","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":40,"lucide":"equal-not","lucideId":"L0605","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":41,"lucide":"ethernet-port","lucideId":"L0607","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":42,"lucide":"eye-dashed","lucideId":"L0614","coverage":"no-recorded-coverage","evidence":[{"solar":"eye","solarId":"S0381","role":"candidate","decision":"related"},{"solar":"eye-closed","solarId":"S0382","role":"candidate","decision":"related"},{"solar":"eye-scan","solarId":"S0383","role":"candidate","decision":"related"}],"solarCandidates":["S0381","S0382","S0383"],"decision":null,"note":""},{"rank":43,"lucide":"face-slightly-smiling","lucideId":"L0621","coverage":"no-recorded-coverage","evidence":[{"solar":"face-scan-circle","solarId":"S0384","role":"candidate","decision":"related"},{"solar":"face-scan-square","solarId":"S0385","role":"candidate","decision":"related"}],"solarCandidates":["S0384","S0385"],"decision":null,"note":""},{"rank":44,"lucide":"face-slightly-smiling-plus","lucideId":"L0622","coverage":"no-recorded-coverage","evidence":[{"solar":"cart-plus","solarId":"S0192","role":"candidate","decision":"related"},{"solar":"cloud-plus","solarId":"S0266","role":"candidate","decision":"related"},{"solar":"face-scan-circle","solarId":"S0384","role":"candidate","decision":"related"}],"solarCandidates":["S0192","S0266","S0384"],"decision":null,"note":""},{"rank":45,"lucide":"facebook","lucideId":"L0623","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":46,"lucide":"factory","lucideId":"L0624","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":47,"lucide":"feather","lucideId":"L0627","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":48,"lucide":"fence","lucideId":"L0628","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""},{"rank":49,"lucide":"file-audio","lucideId":"L0633","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":50,"lucide":"file-audio-2","lucideId":"L0634","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":51,"lucide":"file-axis-3d","lucideId":"L0635","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":52,"lucide":"file-badge-2","lucideId":"L0637","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":53,"lucide":"file-box","lucideId":"L0638","coverage":"no-recorded-coverage","evidence":[{"solar":"box","solarId":"S0140","role":"candidate","decision":"related"},{"solar":"box-minimalistic","solarId":"S0141","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0140","S0141","S0264"],"decision":null,"note":""},{"rank":54,"lucide":"file-braces","lucideId":"L0639","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":55,"lucide":"file-braces-corner","lucideId":"L0640","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":56,"lucide":"file-chart-column","lucideId":"L0641","coverage":"no-recorded-coverage","evidence":[{"solar":"chart","solarId":"S0204","role":"candidate","decision":"related"},{"solar":"chart-2","solarId":"S0205","role":"candidate","decision":"related"},{"solar":"chart-square","solarId":"S0206","role":"candidate","decision":"related"}],"solarCandidates":["S0204","S0205","S0206"],"decision":null,"note":""},{"rank":57,"lucide":"file-chart-column-increasing","lucideId":"L0642","coverage":"no-recorded-coverage","evidence":[{"solar":"chart","solarId":"S0204","role":"candidate","decision":"related"},{"solar":"chart-2","solarId":"S0205","role":"candidate","decision":"related"},{"solar":"chart-square","solarId":"S0206","role":"candidate","decision":"related"}],"solarCandidates":["S0204","S0205","S0206"],"decision":null,"note":""},{"rank":58,"lucide":"file-chart-line","lucideId":"L0643","coverage":"no-recorded-coverage","evidence":[{"solar":"chart","solarId":"S0204","role":"candidate","decision":"related"},{"solar":"chart-2","solarId":"S0205","role":"candidate","decision":"related"},{"solar":"chart-square","solarId":"S0206","role":"candidate","decision":"related"}],"solarCandidates":["S0204","S0205","S0206"],"decision":null,"note":""},{"rank":59,"lucide":"file-chart-pie","lucideId":"L0644","coverage":"no-recorded-coverage","evidence":[{"solar":"pie-chart","solarId":"S0744","role":"candidate","decision":"related"},{"solar":"pie-chart-2","solarId":"S0745","role":"candidate","decision":"related"},{"solar":"pie-chart-3","solarId":"S0746","role":"candidate","decision":"related"}],"solarCandidates":["S0744","S0745","S0746"],"decision":null,"note":""},{"rank":60,"lucide":"file-check-corner","lucideId":"L0647","coverage":"no-recorded-coverage","evidence":[{"solar":"file-check","solarId":"S0393","role":"candidate","decision":"related"},{"solar":"airbuds-check","solarId":"S0014","role":"candidate","decision":"related"},{"solar":"archive-check","solarId":"S0039","role":"candidate","decision":"related"}],"solarCandidates":["S0393","S0014","S0039"],"decision":null,"note":""},{"rank":61,"lucide":"file-clock","lucideId":"L0648","coverage":"no-recorded-coverage","evidence":[{"solar":"clock-circle","solarId":"S0252","role":"candidate","decision":"related"},{"solar":"clock-square","solarId":"S0253","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0252","S0253","S0264"],"decision":null,"note":""},{"rank":62,"lucide":"file-code-corner","lucideId":"L0651","coverage":"no-recorded-coverage","evidence":[{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"chat-square-code","solarId":"S0223","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0282","S0223","S0264"],"decision":null,"note":""},{"rank":63,"lucide":"file-cog","lucideId":"L0652","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":64,"lucide":"file-digit","lucideId":"L0654","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":65,"lucide":"file-exclamation-point","lucideId":"L0656","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":66,"lucide":"file-headphone","lucideId":"L0657","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":67,"lucide":"file-image","lucideId":"L0659","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":68,"lucide":"file-input","lucideId":"L0660","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":69,"lucide":"file-json","lucideId":"L0661","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":70,"lucide":"file-json-2","lucideId":"L0662","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":71,"lucide":"file-key","lucideId":"L0663","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":72,"lucide":"file-key-2","lucideId":"L0664","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":73,"lucide":"file-lock","lucideId":"L0665","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":74,"lucide":"file-lock-2","lucideId":"L0666","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":75,"lucide":"file-minus-2","lucideId":"L0668","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"cloud-minus","solarId":"S0265","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0265","S0282"],"decision":null,"note":""},{"rank":76,"lucide":"file-minus-corner","lucideId":"L0669","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"cloud-minus","solarId":"S0265","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0265","S0282"],"decision":null,"note":""},{"rank":77,"lucide":"file-pen-line","lucideId":"L0673","coverage":"no-recorded-coverage","evidence":[{"solar":"chat-line","solarId":"S0208","role":"candidate","decision":"related"},{"solar":"chat-round-line","solarId":"S0214","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0208","S0214","S0264"],"decision":null,"note":""},{"rank":78,"lucide":"file-pie-chart","lucideId":"L0674","coverage":"no-recorded-coverage","evidence":[{"solar":"pie-chart","solarId":"S0744","role":"candidate","decision":"related"},{"solar":"pie-chart-2","solarId":"S0745","role":"candidate","decision":"related"},{"solar":"pie-chart-3","solarId":"S0746","role":"candidate","decision":"related"}],"solarCandidates":["S0744","S0745","S0746"],"decision":null,"note":""},{"rank":79,"lucide":"file-plus-2","lucideId":"L0677","coverage":"no-recorded-coverage","evidence":[{"solar":"cart-plus","solarId":"S0192","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"cloud-plus","solarId":"S0266","role":"candidate","decision":"related"}],"solarCandidates":["S0192","S0264","S0266"],"decision":null,"note":""},{"rank":80,"lucide":"file-plus-corner","lucideId":"L0678","coverage":"no-recorded-coverage","evidence":[{"solar":"cart-plus","solarId":"S0192","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"cloud-plus","solarId":"S0266","role":"candidate","decision":"related"}],"solarCandidates":["S0192","S0264","S0266"],"decision":null,"note":""},{"rank":81,"lucide":"file-scan","lucideId":"L0680","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"code-scan","solarId":"S0283","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0283"],"decision":null,"note":""},{"rank":82,"lucide":"file-search-2","lucideId":"L0682","coverage":"no-recorded-coverage","evidence":[{"solar":"calendar-search","solarId":"S0158","role":"candidate","decision":"related"},{"solar":"card-search","solarId":"S0176","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0158","S0176","S0264"],"decision":null,"note":""},{"rank":83,"lucide":"file-search-corner","lucideId":"L0683","coverage":"no-recorded-coverage","evidence":[{"solar":"calendar-search","solarId":"S0158","role":"candidate","decision":"related"},{"solar":"card-search","solarId":"S0176","role":"candidate","decision":"related"},{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"}],"solarCandidates":["S0158","S0176","S0264"],"decision":null,"note":""},{"rank":84,"lucide":"file-signal","lucideId":"L0684","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":85,"lucide":"file-sliders","lucideId":"L0685","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":86,"lucide":"file-spreadsheet","lucideId":"L0686","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":87,"lucide":"file-stack","lucideId":"L0687","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":88,"lucide":"file-symlink","lucideId":"L0688","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":89,"lucide":"file-terminal","lucideId":"L0689","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":90,"lucide":"file-type","lucideId":"L0691","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":91,"lucide":"file-type-2","lucideId":"L0692","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":92,"lucide":"file-type-corner","lucideId":"L0693","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":93,"lucide":"file-user","lucideId":"L0695","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":94,"lucide":"file-video-camera","lucideId":"L0696","coverage":"no-recorded-coverage","evidence":[{"solar":"camera","solarId":"S0167","role":"candidate","decision":"related"},{"solar":"camera-add","solarId":"S0168","role":"candidate","decision":"related"},{"solar":"camera-minimalistic","solarId":"S0169","role":"candidate","decision":"related"}],"solarCandidates":["S0167","S0168","S0169"],"decision":null,"note":""},{"rank":95,"lucide":"file-volume","lucideId":"L0697","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":96,"lucide":"file-volume-2","lucideId":"L0698","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":97,"lucide":"file-x-2","lucideId":"L0701","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":98,"lucide":"file-x-corner","lucideId":"L0702","coverage":"no-recorded-coverage","evidence":[{"solar":"cloud-file","solarId":"S0264","role":"candidate","decision":"related"},{"solar":"code-file","solarId":"S0282","role":"candidate","decision":"related"},{"solar":"figma-file","solarId":"S0391","role":"candidate","decision":"related"}],"solarCandidates":["S0264","S0282","S0391"],"decision":null,"note":""},{"rank":99,"lucide":"filter-x","lucideId":"L0706","coverage":"no-recorded-coverage","evidence":[{"solar":"filter","solarId":"S0403","role":"candidate","decision":"related"}],"solarCandidates":["S0403"],"decision":null,"note":""},{"rank":100,"lucide":"fingerprint-pattern","lucideId":"L0707","coverage":"no-recorded-coverage","evidence":[],"solarCandidates":[],"decision":null,"note":""}]}
+{
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "filter": { "coverage": "no-recorded-coverage", "suggestedBatch": 1 },
+    "instructions": "Inspect every Lucide target against the complete Solar atlas. For no-recorded-coverage rows, the displayed Solar entries are lexical shortlist suggestions only and must be visually verified or replaced. Fill solarCandidates with zero to three Solar IDs, then decide equivalent only when replacement meaning is interchangeable; otherwise use no-match. This artifact does not mutate production sheets or verified-matches.json.",
+    "entries": [
+        {
+            "rank": 1,
+            "lucide": "database-x",
+            "lucideId": "L0545",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "database",
+                    "solarId": "S0323",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0323"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 2,
+            "lucide": "database-zap",
+            "lucideId": "L0546",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "database",
+                    "solarId": "S0323",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0323"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 3,
+            "lucide": "decimals-arrow-left",
+            "lucideId": "L0547",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "alt-arrow-left",
+                    "solarId": "S0035",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "arrow-left",
+                    "solarId": "S0048",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "arrow-left-down",
+                    "solarId": "S0049",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0035", "S0048", "S0049"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 4,
+            "lucide": "decimals-arrow-right",
+            "lucideId": "L0548",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "alt-arrow-right",
+                    "solarId": "S0036",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "arrow-right",
+                    "solarId": "S0051",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "arrow-right-down",
+                    "solarId": "S0052",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0036", "S0051", "S0052"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 5,
+            "lucide": "dessert",
+            "lucideId": "L0550",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 6,
+            "lucide": "diameter",
+            "lucideId": "L0551",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 7,
+            "lucide": "diamond",
+            "lucideId": "L0552",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 8,
+            "lucide": "diamond-minus",
+            "lucideId": "L0553",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-minus",
+                    "solarId": "S0265",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "minus-circle",
+                    "solarId": "S0667",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "minus-square",
+                    "solarId": "S0668",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0265", "S0667", "S0668"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 9,
+            "lucide": "diamond-percent",
+            "lucideId": "L0554",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 10,
+            "lucide": "diamond-plus",
+            "lucideId": "L0555",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cart-plus",
+                    "solarId": "S0192",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-plus",
+                    "solarId": "S0266",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "plus-minus",
+                    "solarId": "S0775",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0192", "S0266", "S0775"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 11,
+            "lucide": "dice-1",
+            "lucideId": "L0556",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 12,
+            "lucide": "dice-2",
+            "lucideId": "L0557",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 13,
+            "lucide": "dice-3",
+            "lucideId": "L0558",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 14,
+            "lucide": "dice-4",
+            "lucideId": "L0559",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 15,
+            "lucide": "dice-5",
+            "lucideId": "L0560",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 16,
+            "lucide": "dice-6",
+            "lucideId": "L0561",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 17,
+            "lucide": "dices",
+            "lucideId": "L0562",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 18,
+            "lucide": "diff",
+            "lucideId": "L0563",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 19,
+            "lucide": "disc-2",
+            "lucideId": "L0565",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 20,
+            "lucide": "divide",
+            "lucideId": "L0568",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 21,
+            "lucide": "dock",
+            "lucideId": "L0571",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 22,
+            "lucide": "door-closed-locked",
+            "lucideId": "L0576",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "eye-closed",
+                    "solarId": "S0382",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0382"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 23,
+            "lucide": "dot",
+            "lucideId": "L0578",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "chat-dots",
+                    "solarId": "S0207",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chat-round-dots",
+                    "solarId": "S0212",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "menu-dots",
+                    "solarId": "S0651",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0207", "S0212", "S0651"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 24,
+            "lucide": "drama",
+            "lucideId": "L0581",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 25,
+            "lucide": "drill",
+            "lucideId": "L0583",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 26,
+            "lucide": "drone",
+            "lucideId": "L0584",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 27,
+            "lucide": "droplet-off",
+            "lucideId": "L0586",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 28,
+            "lucide": "drum",
+            "lucideId": "L0588",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 29,
+            "lucide": "drumstick",
+            "lucideId": "L0589",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 30,
+            "lucide": "ear-off",
+            "lucideId": "L0592",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 31,
+            "lucide": "earth-lock",
+            "lucideId": "L0594",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "earth",
+                    "solarId": "S0366",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "heart-lock",
+                    "solarId": "S0496",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                { "solar": "lock", "solarId": "S0592", "role": "candidate", "decision": "related" }
+            ],
+            "solarCandidates": ["S0366", "S0496", "S0592"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 32,
+            "lucide": "eclipse",
+            "lucideId": "L0595",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 33,
+            "lucide": "egg",
+            "lucideId": "L0596",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 34,
+            "lucide": "egg-fried",
+            "lucideId": "L0597",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 35,
+            "lucide": "egg-off",
+            "lucideId": "L0598",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 36,
+            "lucide": "eject",
+            "lucideId": "L0599",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 37,
+            "lucide": "ellipse",
+            "lucideId": "L0600",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 38,
+            "lucide": "equal",
+            "lucideId": "L0603",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 39,
+            "lucide": "equal-approximately",
+            "lucideId": "L0604",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 40,
+            "lucide": "equal-not",
+            "lucideId": "L0605",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 41,
+            "lucide": "ethernet-port",
+            "lucideId": "L0607",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 42,
+            "lucide": "eye-dashed",
+            "lucideId": "L0614",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                { "solar": "eye", "solarId": "S0381", "role": "candidate", "decision": "related" },
+                {
+                    "solar": "eye-closed",
+                    "solarId": "S0382",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "eye-scan",
+                    "solarId": "S0383",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0381", "S0382", "S0383"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 43,
+            "lucide": "face-slightly-smiling",
+            "lucideId": "L0621",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "face-scan-circle",
+                    "solarId": "S0384",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "face-scan-square",
+                    "solarId": "S0385",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0384", "S0385"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 44,
+            "lucide": "face-slightly-smiling-plus",
+            "lucideId": "L0622",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cart-plus",
+                    "solarId": "S0192",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-plus",
+                    "solarId": "S0266",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "face-scan-circle",
+                    "solarId": "S0384",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0192", "S0266", "S0384"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 45,
+            "lucide": "facebook",
+            "lucideId": "L0623",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 46,
+            "lucide": "factory",
+            "lucideId": "L0624",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 47,
+            "lucide": "feather",
+            "lucideId": "L0627",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 48,
+            "lucide": "fence",
+            "lucideId": "L0628",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 49,
+            "lucide": "file-audio",
+            "lucideId": "L0633",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 50,
+            "lucide": "file-audio-2",
+            "lucideId": "L0634",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 51,
+            "lucide": "file-axis-3d",
+            "lucideId": "L0635",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 52,
+            "lucide": "file-badge-2",
+            "lucideId": "L0637",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 53,
+            "lucide": "file-box",
+            "lucideId": "L0638",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                { "solar": "box", "solarId": "S0140", "role": "candidate", "decision": "related" },
+                {
+                    "solar": "box-minimalistic",
+                    "solarId": "S0141",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0140", "S0141", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 54,
+            "lucide": "file-braces",
+            "lucideId": "L0639",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 55,
+            "lucide": "file-braces-corner",
+            "lucideId": "L0640",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 56,
+            "lucide": "file-chart-column",
+            "lucideId": "L0641",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "chart",
+                    "solarId": "S0204",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-2",
+                    "solarId": "S0205",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-square",
+                    "solarId": "S0206",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0204", "S0205", "S0206"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 57,
+            "lucide": "file-chart-column-increasing",
+            "lucideId": "L0642",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "chart",
+                    "solarId": "S0204",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-2",
+                    "solarId": "S0205",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-square",
+                    "solarId": "S0206",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0204", "S0205", "S0206"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 58,
+            "lucide": "file-chart-line",
+            "lucideId": "L0643",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "chart",
+                    "solarId": "S0204",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-2",
+                    "solarId": "S0205",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chart-square",
+                    "solarId": "S0206",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0204", "S0205", "S0206"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 59,
+            "lucide": "file-chart-pie",
+            "lucideId": "L0644",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "pie-chart",
+                    "solarId": "S0744",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "pie-chart-2",
+                    "solarId": "S0745",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "pie-chart-3",
+                    "solarId": "S0746",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0744", "S0745", "S0746"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 60,
+            "lucide": "file-check-corner",
+            "lucideId": "L0647",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "file-check",
+                    "solarId": "S0393",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "airbuds-check",
+                    "solarId": "S0014",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "archive-check",
+                    "solarId": "S0039",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0393", "S0014", "S0039"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 61,
+            "lucide": "file-clock",
+            "lucideId": "L0648",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "clock-circle",
+                    "solarId": "S0252",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "clock-square",
+                    "solarId": "S0253",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0252", "S0253", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 62,
+            "lucide": "file-code-corner",
+            "lucideId": "L0651",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chat-square-code",
+                    "solarId": "S0223",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0282", "S0223", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 63,
+            "lucide": "file-cog",
+            "lucideId": "L0652",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 64,
+            "lucide": "file-digit",
+            "lucideId": "L0654",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 65,
+            "lucide": "file-exclamation-point",
+            "lucideId": "L0656",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 66,
+            "lucide": "file-headphone",
+            "lucideId": "L0657",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 67,
+            "lucide": "file-image",
+            "lucideId": "L0659",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 68,
+            "lucide": "file-input",
+            "lucideId": "L0660",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 69,
+            "lucide": "file-json",
+            "lucideId": "L0661",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 70,
+            "lucide": "file-json-2",
+            "lucideId": "L0662",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 71,
+            "lucide": "file-key",
+            "lucideId": "L0663",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 72,
+            "lucide": "file-key-2",
+            "lucideId": "L0664",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 73,
+            "lucide": "file-lock",
+            "lucideId": "L0665",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 74,
+            "lucide": "file-lock-2",
+            "lucideId": "L0666",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 75,
+            "lucide": "file-minus-2",
+            "lucideId": "L0668",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-minus",
+                    "solarId": "S0265",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0265", "S0282"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 76,
+            "lucide": "file-minus-corner",
+            "lucideId": "L0669",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-minus",
+                    "solarId": "S0265",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0265", "S0282"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 77,
+            "lucide": "file-pen-line",
+            "lucideId": "L0673",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "chat-line",
+                    "solarId": "S0208",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "chat-round-line",
+                    "solarId": "S0214",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0208", "S0214", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 78,
+            "lucide": "file-pie-chart",
+            "lucideId": "L0674",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "pie-chart",
+                    "solarId": "S0744",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "pie-chart-2",
+                    "solarId": "S0745",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "pie-chart-3",
+                    "solarId": "S0746",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0744", "S0745", "S0746"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 79,
+            "lucide": "file-plus-2",
+            "lucideId": "L0677",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cart-plus",
+                    "solarId": "S0192",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-plus",
+                    "solarId": "S0266",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0192", "S0264", "S0266"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 80,
+            "lucide": "file-plus-corner",
+            "lucideId": "L0678",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cart-plus",
+                    "solarId": "S0192",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-plus",
+                    "solarId": "S0266",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0192", "S0264", "S0266"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 81,
+            "lucide": "file-scan",
+            "lucideId": "L0680",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-scan",
+                    "solarId": "S0283",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0283"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 82,
+            "lucide": "file-search-2",
+            "lucideId": "L0682",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "calendar-search",
+                    "solarId": "S0158",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "card-search",
+                    "solarId": "S0176",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0158", "S0176", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 83,
+            "lucide": "file-search-corner",
+            "lucideId": "L0683",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "calendar-search",
+                    "solarId": "S0158",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "card-search",
+                    "solarId": "S0176",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0158", "S0176", "S0264"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 84,
+            "lucide": "file-signal",
+            "lucideId": "L0684",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 85,
+            "lucide": "file-sliders",
+            "lucideId": "L0685",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 86,
+            "lucide": "file-spreadsheet",
+            "lucideId": "L0686",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 87,
+            "lucide": "file-stack",
+            "lucideId": "L0687",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 88,
+            "lucide": "file-symlink",
+            "lucideId": "L0688",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 89,
+            "lucide": "file-terminal",
+            "lucideId": "L0689",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 90,
+            "lucide": "file-type",
+            "lucideId": "L0691",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 91,
+            "lucide": "file-type-2",
+            "lucideId": "L0692",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 92,
+            "lucide": "file-type-corner",
+            "lucideId": "L0693",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 93,
+            "lucide": "file-user",
+            "lucideId": "L0695",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 94,
+            "lucide": "file-video-camera",
+            "lucideId": "L0696",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "camera",
+                    "solarId": "S0167",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "camera-add",
+                    "solarId": "S0168",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "camera-minimalistic",
+                    "solarId": "S0169",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0167", "S0168", "S0169"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 95,
+            "lucide": "file-volume",
+            "lucideId": "L0697",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 96,
+            "lucide": "file-volume-2",
+            "lucideId": "L0698",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 97,
+            "lucide": "file-x-2",
+            "lucideId": "L0701",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 98,
+            "lucide": "file-x-corner",
+            "lucideId": "L0702",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "cloud-file",
+                    "solarId": "S0264",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "code-file",
+                    "solarId": "S0282",
+                    "role": "candidate",
+                    "decision": "related"
+                },
+                {
+                    "solar": "figma-file",
+                    "solarId": "S0391",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0264", "S0282", "S0391"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 99,
+            "lucide": "filter-x",
+            "lucideId": "L0706",
+            "coverage": "no-recorded-coverage",
+            "evidence": [
+                {
+                    "solar": "filter",
+                    "solarId": "S0403",
+                    "role": "candidate",
+                    "decision": "related"
+                }
+            ],
+            "solarCandidates": ["S0403"],
+            "decision": null,
+            "note": ""
+        },
+        {
+            "rank": 100,
+            "lucide": "fingerprint-pattern",
+            "lucideId": "L0707",
+            "coverage": "no-recorded-coverage",
+            "evidence": [],
+            "solarCandidates": [],
+            "decision": null,
+            "note": ""
+        }
+    ]
+}

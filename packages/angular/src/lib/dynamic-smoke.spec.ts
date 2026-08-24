@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
+
 import { SolarArrowUp } from '../dynamic/arrow-up'
 
 @Component({

@@ -1,7 +1,9 @@
-import type { IconData } from '@/generated/descriptions'
-import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'motion/react'
 import { forwardRef } from 'react'
+
+import type { IconData } from '@/generated/descriptions'
+import { cn } from '@/lib/utils'
+
 import {
     splitFullIconName,
     useSelectedIcon,
@@ -75,9 +77,7 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 <div
                     ref={ref}
                     style={{ width: 120, height: 120 }}
-                    className="
-                      flex flex-col items-center justify-center gap-2 rounded-lg
-                    "
+                    className="flex flex-col items-center justify-center gap-2 rounded-lg"
                     aria-hidden="true"
                 />
             )
@@ -93,9 +93,8 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 transition={{ duration: enterDuration, ease: 'easeOut' }}
                 className={cn(
                     `
-                      group relative flex cursor-pointer flex-col items-center
-                      justify-center gap-2 rounded-lg px-2 py-4
-                      transition-colors duration-200
+                      group relative flex cursor-pointer flex-col items-center justify-center gap-2
+                      rounded-lg px-2 py-4 transition-colors duration-200
                     `,
                     {
                         'border border-primary bg-primary/10': isSelected,
@@ -112,10 +111,7 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
                 />
                 <p
                     className={cn(
-                        `
-                          w-full truncate text-center text-xs font-extralight
-                          text-muted-foreground
-                        `,
+                        `w-full truncate text-center text-xs font-extralight text-muted-foreground`,
                         'transition-transform duration-300 ease-out',
                         'group-hover:translate-y-1'
                     )}>
