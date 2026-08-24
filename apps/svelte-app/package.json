@@ -17,7 +17,7 @@
         "format": "oxfmt --check .",
         "format:fix": "oxfmt --write .",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
-        "typecheck": "svelte-kit sync && tsgo --noEmit",
+        "typecheck": "svelte-kit sync && tsc --noEmit",
         "pre-commit": "lint-staged"
     },
     "dependencies": {

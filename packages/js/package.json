@@ -68,7 +68,7 @@
     },
     "scripts": {
         "build": "pnpm generate:assets && pnpm copy:licenses && tsdown -l error",
-        "build:types": "tsgo --noEmit",
+        "build:types": "tsc --noEmit",
         "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
         "generate:assets": "tsx scripts/generate.ts",
         "lint": "oxlint --deny-warnings .",
