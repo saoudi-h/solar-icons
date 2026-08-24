@@ -17,7 +17,7 @@
 
 - [x] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, document the separate Figma Community publication step, and publish the rebuilt plugin. Completed 2026-08-22; the maintainer updated the Community description to 1,268 icons. Figma did not expose a durable per-version changelog in the publication flow, so the repository remains the detailed release record. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
 
-- [/] **[TOOL-01]** Migrate lint/format from `@tala-tools/eslint`+`@tala-tools/prettier` to `@tala-tools/oxlint`+`@tala-tools/oxfmt` (reference recipe: ratelock TOOL-01), refresh dependencies, evaluate TypeScript 7 adoption per-package (ngc/vue-tsc/svelte-check may require the TS JS API). No changeset unless built output observably changes. `Priority: 🟠` `Complexity: L`
+- [x] **[TOOL-01]** Migrate lint/format from `@tala-tools/eslint`+`@tala-tools/prettier` to `@tala-tools/oxlint`+`@tala-tools/oxfmt` (reference recipe: ratelock TOOL-01), refresh dependencies, evaluate TypeScript 7 adoption per-package (ngc/vue-tsc/svelte-check may require the TS JS API). No changeset unless built output observably changes. `Priority: 🟠` `Complexity: L`
 
 - [ ] **[EXTENSION-COMMUNICATION]** Update current README/docs/plugin copy to describe the maintained original Solar catalogue plus curated extensions, refresh current icon counts, and publish a release announcement without claiming new icons are from 480 Design. `Priority: 🟠` `Complexity: M`
 
