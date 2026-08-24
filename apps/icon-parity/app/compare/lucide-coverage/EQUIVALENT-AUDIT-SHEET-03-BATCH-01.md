@@ -9,20 +9,20 @@ shortlist remains intact as audit evidence.
 
 All twelve rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0209 | `chat-round` | L1051 | `message-circle` | match | Same circular speech bubble and tail; Lucide uses a lighter outline construction. |
-| S0211 | `chat-round-check` | L1052 | `message-circle-check` | match | Same circular message bubble with a check modifier. |
-| S0212 | `chat-round-dots` | L1056 | `message-circle-more` | match | Same circular message bubble with the three-dot continuation modifier. |
-| S0213 | `chat-round-like` | L1055 | `message-circle-heart` | match | Same circular message bubble with a heart/like modifier. |
-| S0218 | `chat-square` | L1063 | `message-square` | match | Same square speech bubble and tail; corner radius is a style difference. |
-| S0222 | `chat-square-check` | L1064 | `message-square-check` | match | Same square message bubble with a check modifier. |
-| S0223 | `chat-square-code` | L1065 | `message-square-code` | match | Same square message bubble with code brackets. |
-| S0224 | `chat-square-like` | L1069 | `message-square-heart` | match | Same square message bubble with a heart/like modifier. |
-| S0226 | `check-circle` | L0386 | `circle-check` | match | Same circle container with a single check. |
-| S0227 | `check-read` | L0346 | `check-check` | match | Same double-check/read state; Lucide uses a slightly different check construction. |
-| S0228 | `check-square` | L1509 | `square-check` | match | Same square container with a single check. |
-| S0231 | `chef-hat` | L0348 | `chef-hat` | match | Same chef-hat object and silhouette; stroke treatment differs only stylistically. |
+| Solar ID | Solar               | Lucide ID | Lucide                 | Verdict | Evidence                                                                           |
+| -------- | ------------------- | --------- | ---------------------- | ------- | ---------------------------------------------------------------------------------- |
+| S0209    | `chat-round`        | L1051     | `message-circle`       | match   | Same circular speech bubble and tail; Lucide uses a lighter outline construction.  |
+| S0211    | `chat-round-check`  | L1052     | `message-circle-check` | match   | Same circular message bubble with a check modifier.                                |
+| S0212    | `chat-round-dots`   | L1056     | `message-circle-more`  | match   | Same circular message bubble with the three-dot continuation modifier.             |
+| S0213    | `chat-round-like`   | L1055     | `message-circle-heart` | match   | Same circular message bubble with a heart/like modifier.                           |
+| S0218    | `chat-square`       | L1063     | `message-square`       | match   | Same square speech bubble and tail; corner radius is a style difference.           |
+| S0222    | `chat-square-check` | L1064     | `message-square-check` | match   | Same square message bubble with a check modifier.                                  |
+| S0223    | `chat-square-code`  | L1065     | `message-square-code`  | match   | Same square message bubble with code brackets.                                     |
+| S0224    | `chat-square-like`  | L1069     | `message-square-heart` | match   | Same square message bubble with a heart/like modifier.                             |
+| S0226    | `check-circle`      | L0386     | `circle-check`         | match   | Same circle container with a single check.                                         |
+| S0227    | `check-read`        | L0346     | `check-check`          | match   | Same double-check/read state; Lucide uses a slightly different check construction. |
+| S0228    | `check-square`      | L1509     | `square-check`         | match   | Same square container with a single check.                                         |
+| S0231    | `chef-hat`          | L0348     | `chef-hat`             | match   | Same chef-hat object and silhouette; stroke treatment differs only stylistically.  |
 
 ## Verification
 

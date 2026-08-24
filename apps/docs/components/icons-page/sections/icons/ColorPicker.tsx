@@ -1,11 +1,13 @@
 'use client'
+import { useEffect, useState } from 'react'
+import { HexColorPicker } from 'react-colorful'
+
 import { CopyButton } from '@/components/ui/copy-button'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { useEffect, useState } from 'react'
-import { HexColorPicker } from 'react-colorful'
+
 import { getContrastingColor } from './color-utils'
 
 interface ColorPickerProps {
@@ -62,8 +64,8 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                                 }}
                                 aria-label={tooltip ?? 'Color'}
                                 className="
-                                  h-10 w-full rounded-l-lg rounded-r-none
-                                  border-none! text-center text-xs shadow-none!
+                                  h-10 w-full rounded-l-lg rounded-r-none border-none! text-center
+                                  text-xs shadow-none!
                                 "
                             />
                         </PopoverTrigger>
@@ -77,9 +79,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                 <PopoverContent
                     align="start"
                     sideOffset={6}
-                    className="
-                      w-72 overflow-hidden bg-default-200 p-3 shadow-md
-                    ">
+                    className="w-72 overflow-hidden bg-default-200 p-3 shadow-md">
                     <HexColorPicker
                         color={color}
                         onChange={setColor}
@@ -92,9 +92,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                 size="icon"
                 colors="accent"
                 variant="default"
-                className="
-                  size-10 shrink-0 rounded-l-none rounded-r-lg border-none
-                "
+                className="size-10 shrink-0 rounded-l-none rounded-r-lg border-none"
             />
         </div>
     )

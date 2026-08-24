@@ -1,13 +1,13 @@
-import { defineConfig } from 'vitest/config'
-import solid from 'babel-preset-solid'
 import { transformSync } from '@babel/core'
+import solid from 'babel-preset-solid'
+import { defineConfig } from 'vitest/config'
 
 function solidSSRPlugin() {
     return {
         name: 'solid-ssr',
         enforce: 'pre' as const,
         transform(source: string, id: string) {
-            if (!/\.[mc]?[tj]sx$/i.test(id)) return null;
+            if (!/\.[mc]?[tj]sx$/i.test(id)) return null
             const result = transformSync(source, {
                 filename: id,
                 presets: [[solid as any, { generate: 'ssr', hydratable: true }]],
@@ -17,10 +17,10 @@ function solidSSRPlugin() {
                 configFile: false,
                 babelrc: false,
                 parserOpts: { plugins: ['jsx', 'typescript'] },
-            });
-            return { code: result!.code!, map: result!.map };
+            })
+            return { code: result!.code!, map: result!.map }
         },
-    };
+    }
 }
 
 export default defineConfig({

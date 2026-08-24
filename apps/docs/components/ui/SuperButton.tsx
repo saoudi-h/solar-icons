@@ -1,8 +1,10 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { motion, type HTMLMotionProps } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
+
+import { cn } from '@/lib/utils'
+
 import type { ButtonProps } from './button'
 import { Button } from './button'
 
@@ -56,10 +58,7 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
         ref
     ) => {
         const defaultClasses = cn(
-            `
-              px-4 transition-none
-              hover:shadow-md
-            `,
+            `px-4 transition-none hover:shadow-md`,
             {
                 'rounded-full': rounded === 'full',
                 'rounded-md': rounded === 'default',
@@ -83,7 +82,7 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
 
         const buttonContent = (
             <>
-                {Icon && Icon}
+                {Icon}
                 {label}
             </>
         )
@@ -99,9 +98,7 @@ const SuperButton = React.forwardRef<HTMLButtonElement, SuperButtonProps>(
                     className={defaultClasses}
                     {...defaultMotionProps}
                     {...buttonProps}>
-                    <Link
-                        href={href}
-                        className={`flex flex-row items-center gap-4`}>
+                    <Link href={href} className={`flex flex-row items-center gap-4`}>
                         {buttonContent}
                     </Link>
                 </MotionButton>

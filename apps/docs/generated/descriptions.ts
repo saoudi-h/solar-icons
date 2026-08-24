@@ -1273,6 +1273,7 @@ import {
 } from '@solar-icons/react/dynamic'
 import type { IconProps } from '@solar-icons/react/lib/types'
 import type { ComponentType } from 'react'
+
 import type { Category } from './utils'
 
 export interface IconData {

@@ -1,5 +1,6 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
+
 import { useOriginFilter } from './context'
 
 const RECENT_MONTHS = 3
@@ -40,9 +41,7 @@ export function ExtendedFilterToggle() {
         <div
             role="group"
             aria-label="Icon origin"
-            className="
-              flex h-10 items-center gap-0.5 rounded-lg bg-default-200 p-1
-            ">
+            className="flex h-10 items-center gap-0.5 rounded-lg bg-default-200 p-1">
             <Tooltip>
                 <TooltipTrigger asChild>
                     <button
@@ -51,10 +50,7 @@ export function ExtendedFilterToggle() {
                         data-vaul-no-drag
                         onClick={() => setOrigin(active ? 'all' : 'extended')}
                         className={cn(
-                            `
-                              h-8 rounded-md px-3 text-xs font-medium
-                              transition-colors
-                            `,
+                            `h-8 rounded-md px-3 text-xs font-medium transition-colors`,
                             `
                               hover:bg-default-300
                               focus-visible:ring-1 focus-visible:ring-ring

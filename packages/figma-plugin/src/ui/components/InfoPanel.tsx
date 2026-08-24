@@ -1,5 +1,5 @@
 import solarLogo from '../assets/solar-logo.svg?raw'
-import { icons, packageLogos, type PackageLogo } from '../data'
+import { catalogProvenance, packageLogos, type PackageLogo } from '../data'
 import { SolarSvg } from './SolarSvg'
 
 type InfoPanelProps = {
@@ -70,7 +70,9 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                 </div>
             </div>
             <div className="info-footer">
-                <span>{icons.length.toLocaleString()} icons · 6 styles</span>
+                <span>
+                    {catalogProvenance.logicalIconCount.toLocaleString()} icons · {catalogProvenance.styleCount} styles
+                </span>
                 <button className="text-link" type="button" onClick={() => openExternal('https://github.com/saoudi-h/solar-icons')}>
                     GitHub <SolarSvg className="inline-icon" name="arrow-right-up" aria-hidden="true" />
                 </button>

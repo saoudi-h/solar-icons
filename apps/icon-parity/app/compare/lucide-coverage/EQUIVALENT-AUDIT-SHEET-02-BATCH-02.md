@@ -9,13 +9,13 @@ candidates remain preserved in the production sheet.
 
 All five rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0172 | `car-battery` | L0307 | `car-battery` | match | Both show a vehicle battery with distinct negative and positive terminals; Lucide `battery` is a generic battery and loses the vehicle-specific casing. |
-| S0173 | `card` | L0526 | `credit-card` | match | Both are generic payment-card objects; the stripe and small detail marks differ only in drawing treatment. `id-card` and `wallet-cards` add semantics not present in Solar. |
-| S0193 | `case` | L0252 | `briefcase-business` | match | Both show a closed handled work case with a front flap and clasp. Lucide `briefcase` has different rectangular geometry and `tool-case` adds tool contents. |
-| S0198 | `cassette` | L0316 | `cassette-tape` | match | Both show a cassette tape with two reels and a cassette housing; Lucide `music` and `boom-box` are different objects. |
-| S0200 | `cat` | L0319 | `cat` | match | Same cat-face concept; whisker and facial construction differences are stylistic. |
+| Solar ID | Solar         | Lucide ID | Lucide               | Verdict | Evidence                                                                                                                                                                    |
+| -------- | ------------- | --------- | -------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| S0172    | `car-battery` | L0307     | `car-battery`        | match   | Both show a vehicle battery with distinct negative and positive terminals; Lucide `battery` is a generic battery and loses the vehicle-specific casing.                     |
+| S0173    | `card`        | L0526     | `credit-card`        | match   | Both are generic payment-card objects; the stripe and small detail marks differ only in drawing treatment. `id-card` and `wallet-cards` add semantics not present in Solar. |
+| S0193    | `case`        | L0252     | `briefcase-business` | match   | Both show a closed handled work case with a front flap and clasp. Lucide `briefcase` has different rectangular geometry and `tool-case` adds tool contents.                 |
+| S0198    | `cassette`    | L0316     | `cassette-tape`      | match   | Both show a cassette tape with two reels and a cassette housing; Lucide `music` and `boom-box` are different objects.                                                       |
+| S0200    | `cat`         | L0319     | `cat`                | match   | Same cat-face concept; whisker and facial construction differences are stylistic.                                                                                           |
 
 ## Verification
 

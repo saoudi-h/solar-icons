@@ -1,203 +1,203 @@
 {
-  "version": 1,
-  "entries": [
-    {
-      "solar": "add-square",
-      "source": "material",
-      "reference": "1k-plus",
-      "reason": "Numeric popularity symbol, not an addition symbol enclosed by a square."
-    },
-    {
-      "solar": "add-square",
-      "source": "material",
-      "reference": "dashboard-square-add",
-      "reason": "Dashboard-specific composite, not a generic addition symbol enclosed by a square."
-    },
-    {
-      "solar": "add-folder",
-      "source": "material",
-      "reference": "1k-plus",
-      "reason": "Numeric popularity symbol, unrelated to adding a folder."
-    },
-    {
-      "solar": "airbuds",
-      "source": "material",
-      "reference": "earbud-case",
-      "reason": "The rendered icon is an earbud case, not a pair of earbuds."
-    },
-    {
-      "solar": "airbuds-case-charge",
-      "source": "lucide",
-      "reference": "battery-charging",
-      "reason": "Battery state alone is not an earbud case with charge state."
-    },
-    {
-      "solar": "alarm-add",
-      "source": "lucide",
-      "reference": "plus",
-      "reason": "Standalone plus symbol, not an alarm with addition indicator."
-    },
-    {
-      "solar": "alarm-add",
-      "source": "lucide",
-      "reference": "bell-plus",
-      "reason": "Bell with plus, not an alarm clock with addition indicator."
-    },
-    {
-      "solar": "alarm-pause",
-      "source": "lucide",
-      "reference": "pause",
-      "reason": "Standalone pause symbol, not an alarm in paused state."
-    },
-    {
-      "solar": "alarm-play",
-      "source": "lucide",
-      "reference": "play",
-      "reason": "Standalone play symbol, not an alarm in active state."
-    },
-    {
-      "solar": "alarm-play",
-      "source": "lucide",
-      "reference": "bug-play",
-      "reason": "Bug with play, not alarm-related."
-    },
-    {
-      "solar": "alarm-turn-off",
-      "source": "phosphor",
-      "reference": "alarm",
-      "reason": "Alarm without off state indicator."
-    },
-    {
-      "solar": "album",
-      "source": "material",
-      "reference": "photo-album",
-      "reason": "Photo album is a different concept from music album."
-    },
-    {
-      "solar": "align-bottom",
-      "source": "lucide",
-      "reference": "align-horizontal-distribute-center",
-      "reason": "Horizontal distribution, not bottom alignment."
-    },
-    {
-      "solar": "align-bottom",
-      "source": "lucide",
-      "reference": "align-vertical-distribute-center",
-      "reason": "Vertical distribution center, not bottom alignment."
-    },
-    {
-      "solar": "align-left",
-      "source": "lucide",
-      "reference": "text-align-center",
-      "reason": "Center text alignment, not left element alignment."
-    },
-    {
-      "solar": "align-left",
-      "source": "lucide",
-      "reference": "text-align-justify",
-      "reason": "Justified text alignment, not left element alignment."
-    },
-    {
-      "solar": "alt-arrow-down",
-      "source": "lucide",
-      "reference": "arrow-down-0-1",
-      "reason": "Numbered sort variant, not an alternate arrow style."
-    },
-    {
-      "solar": "alt-arrow-down",
-      "source": "lucide",
-      "reference": "arrow-down-1-0",
-      "reason": "Numbered sort variant, not an alternate arrow style."
-    },
-    {
-      "solar": "archive-check",
-      "source": "lucide",
-      "reference": "archive-x",
-      "reason": "Archive with X (remove/delete), not checkmark."
-    },
-    {
-      "solar": "archive-down",
-      "source": "lucide",
-      "reference": "file-down",
-      "reason": "File with down arrow, not archive with down arrow."
-    },
-    {
-      "solar": "archive-down",
-      "source": "lucide",
-      "reference": "file-archive",
-      "reason": "File archive, not archive with down arrow indicator."
-    },
-    {
-      "solar": "airbuds-case",
-      "source": "lucide",
-      "reference": "case-lower",
-      "reason": "Lettercase typography icon, not a wireless earbud case."
-    },
-    {
-      "solar": "airbuds-case",
-      "source": "lucide",
-      "reference": "case-sensitive",
-      "reason": "Lettercase typography icon, not a wireless earbud case."
-    },
-    {
-      "solar": "airbuds-case",
-      "source": "tabler",
-      "reference": "device-airpods",
-      "reason": "Wireless earbuds, not their charging case."
-    },
-    {
-      "solar": "airbuds-case",
-      "source": "tabler",
-      "reference": "letter-case",
-      "reason": "Lettercase typography icon, not a wireless earbud case."
-    },
-    {
-      "solar": "airbuds-case",
-      "source": "tabler",
-      "reference": "letter-case-lower",
-      "reason": "Lettercase typography icon, not a wireless earbud case."
-    },
-    {
-      "solar": "body-shape",
-      "source": "lucide",
-      "reference": "person-standing",
-      "reason": "Full stick figure with head and limbs. body-shape is a torso-only silhouette without arms, head, or legs."
-    },
-    {
-      "solar": "body-shape",
-      "source": "phosphor",
-      "reference": "finn-the-human",
-      "reason": "Cartoon character with rectangular body and distinct head. Not a dress-form or mannequin silhouette."
-    },
-    {
-      "solar": "body-shape",
-      "source": "hugeicons",
-      "reference": "body-soap",
-      "reason": "Soap bar or container shape, not a human body silhouette."
-    },
-    {
-      "solar": "body-shape",
-      "source": "hugeicons",
-      "reference": "body-armor",
-      "reason": "Protective armor/shield concept, not a torso silhouette."
-    },
-    {
-      "solar": "body-shape",
-      "source": "material",
-      "reference": "body-fat",
-      "reason": "Body fat measurement concept with calipers, not a dress-form silhouette."
-    },
-    {
-      "solar": "body-shape",
-      "source": "tabler",
-      "reference": "body-scan",
-      "reason": "Scanning/targeting concept with circular markers, not a torso silhouette."
-    },
-    {
-      "solar": "bolt",
-      "source": "lucide",
-      "reference": "bolt",
-      "reason": "lucide:bolt is a fastener (hexagon with circle), not a lightning bolt. The correct Lucide match is zap."
-    }
-  ]
+    "version": 1,
+    "entries": [
+        {
+            "solar": "add-square",
+            "source": "material",
+            "reference": "1k-plus",
+            "reason": "Numeric popularity symbol, not an addition symbol enclosed by a square."
+        },
+        {
+            "solar": "add-square",
+            "source": "material",
+            "reference": "dashboard-square-add",
+            "reason": "Dashboard-specific composite, not a generic addition symbol enclosed by a square."
+        },
+        {
+            "solar": "add-folder",
+            "source": "material",
+            "reference": "1k-plus",
+            "reason": "Numeric popularity symbol, unrelated to adding a folder."
+        },
+        {
+            "solar": "airbuds",
+            "source": "material",
+            "reference": "earbud-case",
+            "reason": "The rendered icon is an earbud case, not a pair of earbuds."
+        },
+        {
+            "solar": "airbuds-case-charge",
+            "source": "lucide",
+            "reference": "battery-charging",
+            "reason": "Battery state alone is not an earbud case with charge state."
+        },
+        {
+            "solar": "alarm-add",
+            "source": "lucide",
+            "reference": "plus",
+            "reason": "Standalone plus symbol, not an alarm with addition indicator."
+        },
+        {
+            "solar": "alarm-add",
+            "source": "lucide",
+            "reference": "bell-plus",
+            "reason": "Bell with plus, not an alarm clock with addition indicator."
+        },
+        {
+            "solar": "alarm-pause",
+            "source": "lucide",
+            "reference": "pause",
+            "reason": "Standalone pause symbol, not an alarm in paused state."
+        },
+        {
+            "solar": "alarm-play",
+            "source": "lucide",
+            "reference": "play",
+            "reason": "Standalone play symbol, not an alarm in active state."
+        },
+        {
+            "solar": "alarm-play",
+            "source": "lucide",
+            "reference": "bug-play",
+            "reason": "Bug with play, not alarm-related."
+        },
+        {
+            "solar": "alarm-turn-off",
+            "source": "phosphor",
+            "reference": "alarm",
+            "reason": "Alarm without off state indicator."
+        },
+        {
+            "solar": "album",
+            "source": "material",
+            "reference": "photo-album",
+            "reason": "Photo album is a different concept from music album."
+        },
+        {
+            "solar": "align-bottom",
+            "source": "lucide",
+            "reference": "align-horizontal-distribute-center",
+            "reason": "Horizontal distribution, not bottom alignment."
+        },
+        {
+            "solar": "align-bottom",
+            "source": "lucide",
+            "reference": "align-vertical-distribute-center",
+            "reason": "Vertical distribution center, not bottom alignment."
+        },
+        {
+            "solar": "align-left",
+            "source": "lucide",
+            "reference": "text-align-center",
+            "reason": "Center text alignment, not left element alignment."
+        },
+        {
+            "solar": "align-left",
+            "source": "lucide",
+            "reference": "text-align-justify",
+            "reason": "Justified text alignment, not left element alignment."
+        },
+        {
+            "solar": "alt-arrow-down",
+            "source": "lucide",
+            "reference": "arrow-down-0-1",
+            "reason": "Numbered sort variant, not an alternate arrow style."
+        },
+        {
+            "solar": "alt-arrow-down",
+            "source": "lucide",
+            "reference": "arrow-down-1-0",
+            "reason": "Numbered sort variant, not an alternate arrow style."
+        },
+        {
+            "solar": "archive-check",
+            "source": "lucide",
+            "reference": "archive-x",
+            "reason": "Archive with X (remove/delete), not checkmark."
+        },
+        {
+            "solar": "archive-down",
+            "source": "lucide",
+            "reference": "file-down",
+            "reason": "File with down arrow, not archive with down arrow."
+        },
+        {
+            "solar": "archive-down",
+            "source": "lucide",
+            "reference": "file-archive",
+            "reason": "File archive, not archive with down arrow indicator."
+        },
+        {
+            "solar": "airbuds-case",
+            "source": "lucide",
+            "reference": "case-lower",
+            "reason": "Lettercase typography icon, not a wireless earbud case."
+        },
+        {
+            "solar": "airbuds-case",
+            "source": "lucide",
+            "reference": "case-sensitive",
+            "reason": "Lettercase typography icon, not a wireless earbud case."
+        },
+        {
+            "solar": "airbuds-case",
+            "source": "tabler",
+            "reference": "device-airpods",
+            "reason": "Wireless earbuds, not their charging case."
+        },
+        {
+            "solar": "airbuds-case",
+            "source": "tabler",
+            "reference": "letter-case",
+            "reason": "Lettercase typography icon, not a wireless earbud case."
+        },
+        {
+            "solar": "airbuds-case",
+            "source": "tabler",
+            "reference": "letter-case-lower",
+            "reason": "Lettercase typography icon, not a wireless earbud case."
+        },
+        {
+            "solar": "body-shape",
+            "source": "lucide",
+            "reference": "person-standing",
+            "reason": "Full stick figure with head and limbs. body-shape is a torso-only silhouette without arms, head, or legs."
+        },
+        {
+            "solar": "body-shape",
+            "source": "phosphor",
+            "reference": "finn-the-human",
+            "reason": "Cartoon character with rectangular body and distinct head. Not a dress-form or mannequin silhouette."
+        },
+        {
+            "solar": "body-shape",
+            "source": "hugeicons",
+            "reference": "body-soap",
+            "reason": "Soap bar or container shape, not a human body silhouette."
+        },
+        {
+            "solar": "body-shape",
+            "source": "hugeicons",
+            "reference": "body-armor",
+            "reason": "Protective armor/shield concept, not a torso silhouette."
+        },
+        {
+            "solar": "body-shape",
+            "source": "material",
+            "reference": "body-fat",
+            "reason": "Body fat measurement concept with calipers, not a dress-form silhouette."
+        },
+        {
+            "solar": "body-shape",
+            "source": "tabler",
+            "reference": "body-scan",
+            "reason": "Scanning/targeting concept with circular markers, not a torso silhouette."
+        },
+        {
+            "solar": "bolt",
+            "source": "lucide",
+            "reference": "bolt",
+            "reason": "lucide:bolt is a fastener (hexagon with circle), not a lightning bolt. The correct Lucide match is zap."
+        }
+    ]
 }

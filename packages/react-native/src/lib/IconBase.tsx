@@ -1,7 +1,8 @@
 import React, { forwardRef, useContext } from 'react'
 import { Svg } from 'react-native-svg'
-import type { IconBaseProps } from './types'
+
 import { SolarContext } from './SolarProvider'
+import type { IconBaseProps } from './types'
 
 const IconBase = forwardRef<any, IconBaseProps>((props, ref) => {
     const {
@@ -19,14 +20,12 @@ const IconBase = forwardRef<any, IconBaseProps>((props, ref) => {
     const ctx = useContext(SolarContext)
 
     const resolvedColor = isolated
-        ? color ?? 'currentColor'
-        : color ?? ctx?.color ?? 'currentColor'
-    const resolvedSize = isolated
-        ? size ?? 24
-        : size ?? ctx?.size ?? 24
+        ? (color ?? 'currentColor')
+        : (color ?? ctx?.color ?? 'currentColor')
+    const resolvedSize = isolated ? (size ?? 24) : (size ?? ctx?.size ?? 24)
     const resolvedStrokeWidth = isolated
-        ? strokeWidth ?? 1.5
-        : strokeWidth ?? ctx?.strokeWidth ?? 1.5
+        ? (strokeWidth ?? 1.5)
+        : (strokeWidth ?? ctx?.strokeWidth ?? 1.5)
 
     return (
         <Svg

@@ -1,7 +1,0 @@
-.next
-node_modules
-dist
-coverage
-build
-*.svg
-CHANGELOG.md

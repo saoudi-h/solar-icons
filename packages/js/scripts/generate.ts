@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import fs from 'node:fs'
+import path from 'node:path'
+
 import {
     buildDeprecatedAliasMap,
     parseSvgs,
@@ -9,8 +12,6 @@ import {
 } from '@solar-icons/core'
 import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
 import { parse, type Node } from 'node-html-parser'
-import fs from 'node:fs'
-import path from 'node:path'
 import pc from 'picocolors'
 
 const descriptions = rawDescriptions as readonly IconDescription[]

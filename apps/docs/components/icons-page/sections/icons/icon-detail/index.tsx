@@ -1,10 +1,12 @@
 'use client'
 
-import { MotionTabs } from '@/components/ui/MotionTabs'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
+
+import { MotionTabs } from '@/components/ui/MotionTabs'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+
 import { activeCategoryAtom, useSelectedIcon, useStyleURL, useViewModeURL } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
@@ -53,31 +55,19 @@ const Content: FC = () => {
     if (!selectedIcon) return null
 
     return (
-        <div
-            className={`
-              flex size-full flex-col p-4
-              lg:flex-row
-            `}>
+        <div className={`flex size-full flex-col p-4 lg:flex-row`}>
             <div>
                 <div
                     className={`
-                      flex h-full min-w-64 flex-row items-start justify-start
-                      gap-4 border-dashed border-border
+                      flex h-full min-w-64 flex-row items-start justify-start gap-4 border-dashed
+                      border-border
                       max-lg:mb-2 max-lg:border-b max-lg:pb-2
-                      lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r
-                      lg:pr-4
+                      lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r lg:pr-4
                     `}>
-                    <div
-                        className={`
-                          flex items-center justify-center
-                          lg:size-56
-                        `}>
+                    <div className={`flex items-center justify-center lg:size-56`}>
                         <selectedIcon.Icon
                             weight={weight}
-                            className={`
-                              size-12
-                              lg:size-44
-                            `}
+                            className={`size-12 lg:size-44`}
                             isolated
                         />
                     </div>
@@ -91,10 +81,8 @@ const Content: FC = () => {
                                 type="button"
                                 onClick={() => handleCategoryClick(selectedIcon.category)}
                                 className="
-                                  rounded-md border border-accent bg-accent px-3
-                                  py-1 font-heading text-xs
-                                  text-accent-foreground capitalize
-                                  transition-colors
+                                  rounded-md border border-accent bg-accent px-3 py-1 font-heading
+                                  text-xs text-accent-foreground capitalize transition-colors
                                   hover:bg-accent/80
                                 ">
                                 {selectedIcon.category}

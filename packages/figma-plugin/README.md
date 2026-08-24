@@ -2,18 +2,25 @@
 
 Development source for the public Solar Icons browser and inserter.
 
-The plugin embeds the complete current catalogue in all six styles from the local build output of `@solar-icons/static`. It does not make network requests, and the generated UI records the exact package version and icon count used to build it. The UI is built with Vite, React, TypeScript, Base UI, and plain CSS.
+The plugin embeds the complete current catalogue in all six styles from the local build output of `@solar-icons/static`. It does not make network requests, and the generated UI records the exact package version, icon counts, and deterministic catalogue hash used to build it. The UI is built with Vite, React, TypeScript, Base UI, and plain CSS.
 
 ## Build and install locally
 
-1. Install the repository dependencies and build `@solar-icons/static` if its generated assets are not current.
-2. Run `pnpm --filter @solar-icons/figma-plugin build` from the repository root.
+1. Install the repository dependencies.
+2. Run `pnpm check:figma-catalog` from the repository root to rebuild the static package and plugin and verify that the embedded catalogue is current.
 3. Open Figma Desktop.
 4. Choose **Plugins → Development → Import plugin from manifest…**.
 5. Select `manifest.json` in this directory.
 6. Run **Solar Icons** from the Development plugins menu.
 
 The build writes the gitignored `dist/code.js` and `dist/ui.html`. Vite bundles the React UI, Base UI behavior, Fuse index code, CSS, fonts, and verified logo assets into one local HTML file. Esbuild produces the small Figma sandbox bundle. Rebuild after source, icon, metadata, font, or version changes, then reload the development plugin in Figma.
+
+## Catalog synchronization and publication
+
+The repository automates static-package generation, plugin embedding, and catalogue verification.
+Figma Community publication still requires a maintainer's review and submission in Figma Desktop.
+Follow the complete procedure in [`docs/FIGMA-PLUGIN-PUBLISHING.md`](../../docs/FIGMA-PLUGIN-PUBLISHING.md)
+and the synchronization contract in [`docs/FIGMA-CATALOG-SYNC.md`](../../docs/FIGMA-CATALOG-SYNC.md).
 
 ## Current behavior
 

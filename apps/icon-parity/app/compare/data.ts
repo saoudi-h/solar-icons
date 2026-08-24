@@ -1,5 +1,5 @@
-import descriptions from '@solar-icons/core/metadata-descriptions.json'
 import type { IconDescription } from '@solar-icons/core'
+import descriptions from '@solar-icons/core/metadata-descriptions.json'
 
 export const ICONIFY_API = 'https://api.iconify.design'
 
@@ -49,13 +49,7 @@ export const SOURCE_DEFINITIONS = [
 export type SourceId = (typeof SOURCE_DEFINITIONS)[number]['id']
 export type SourceDefinition = (typeof SOURCE_DEFINITIONS)[number]
 
-export type SolarStyle =
-    | 'Bold'
-    | 'BoldDuotone'
-    | 'Broken'
-    | 'Linear'
-    | 'LineDuotone'
-    | 'Outline'
+export type SolarStyle = 'Bold' | 'BoldDuotone' | 'Broken' | 'Linear' | 'LineDuotone' | 'Outline'
 
 export const SOLAR_STYLES: SolarStyle[] = [
     'Linear',
@@ -166,12 +160,14 @@ function directionFor(icon: SolarIconRecord): string | undefined {
 function isStructuralCandidate(name: string, direction: string | undefined): boolean {
     if (!direction) return false
     const normalized = normalizeName(name)
-    return normalized.includes(`chevron-${direction}`)
-        || normalized.includes(`caret-${direction}`)
-        || normalized.includes(`arrow-${direction}-01`)
-        || normalized.includes(`arrow-${direction}-1`)
-        || (direction === 'up' && normalized.includes('expand-less'))
-        || (direction === 'down' && normalized.includes('expand-more'))
+    return (
+        normalized.includes(`chevron-${direction}`) ||
+        normalized.includes(`caret-${direction}`) ||
+        normalized.includes(`arrow-${direction}-01`) ||
+        normalized.includes(`arrow-${direction}-1`) ||
+        (direction === 'up' && normalized.includes('expand-less')) ||
+        (direction === 'down' && normalized.includes('expand-more'))
+    )
 }
 
 export function toDisplayName(name: string): string {
@@ -195,12 +191,17 @@ export function nameTokens(name: string): string[] {
         .split('-')
         .filter(token => token.length > 1 && !STOP_TOKENS.has(token))
 
-    return [...new Set(tokens.flatMap(token => {
-        const singular = token.length > 4 && token.endsWith('s') && !token.endsWith('ss')
-            ? [token.slice(0, -1)]
-            : []
-        return [token, ...singular, ...(TOKEN_ALIASES[token] ?? [])]
-    }))]
+    return [
+        ...new Set(
+            tokens.flatMap(token => {
+                const singular =
+                    token.length > 4 && token.endsWith('s') && !token.endsWith('ss')
+                        ? [token.slice(0, -1)]
+                        : []
+                return [token, ...singular, ...(TOKEN_ALIASES[token] ?? [])]
+            })
+        ),
+    ]
 }
 
 export function collectionNames(payload: IconifyCollectionResponse): string[] {
@@ -220,10 +221,12 @@ export function canonicalCollectionNames(snapshot: CollectionSnapshot): string[]
     const aliasKeys = new Set(Object.keys(snapshot.aliases))
     const hidden = new Set(snapshot.hidden)
 
-    return [...new Set([
-        ...snapshot.names.filter(name => !aliasKeys.has(name)),
-        ...Object.values(snapshot.aliases),
-    ])].filter(name => !hidden.has(name))
+    return [
+        ...new Set([
+            ...snapshot.names.filter(name => !aliasKeys.has(name)),
+            ...Object.values(snapshot.aliases),
+        ]),
+    ].filter(name => !hidden.has(name))
 }
 
 export function collectionSnapshot(payload: IconifyCollectionResponse): CollectionSnapshot {
@@ -298,8 +301,9 @@ export function candidatesFor(
             const nameHits = [...nameQuery].filter(token => candidateTokens.has(token))
             const contextHits = [...contextQuery].filter(token => candidateTokens.has(token))
             const directName = normalizeName(icon.name) === normalizeName(sourceName)
-            const structuralLead = [...contextQuery].some(token => SHAPE_TOKENS.has(token))
-                && isStructuralCandidate(sourceName, direction)
+            const structuralLead =
+                [...contextQuery].some(token => SHAPE_TOKENS.has(token)) &&
+                isStructuralCandidate(sourceName, direction)
             const nameRecall = nameHits.length / Math.max(nameQuery.size, 1)
             const namePrecision = nameHits.length / Math.max(candidateTokens.size, 1)
             const contextRecall = Math.min(contextHits.length / 3, 1)
@@ -309,20 +313,29 @@ export function candidatesFor(
                     sourceCategory: collection.categoryByName[sourceName],
                     label: structuralLead
                         ? 'structural lead'
-                        : directName ? 'same name lead' : nameHits.length > 0 ? 'semantic lead' : 'context lead',
+                        : directName
+                          ? 'same name lead'
+                          : nameHits.length > 0
+                            ? 'semantic lead'
+                            : 'context lead',
                     evidence: { nameHits, contextHits, directName },
                 } satisfies Candidate,
-                relevance: nameRecall * 0.42
-                    + namePrecision * 0.2
-                    + contextRecall * 0.18
-                    + (directName ? 0.15 : 0)
-                    + (structuralLead ? 0.35 : 0),
+                relevance:
+                    nameRecall * 0.42 +
+                    namePrecision * 0.2 +
+                    contextRecall * 0.18 +
+                    (directName ? 0.15 : 0) +
+                    (structuralLead ? 0.35 : 0),
             }
         })
         .filter(candidate => {
             return candidate.relevance >= 0.15
         })
-        .sort((a, b) => b.relevance - a.relevance || a.candidate.sourceName.localeCompare(b.candidate.sourceName))
+        .sort(
+            (a, b) =>
+                b.relevance - a.relevance ||
+                a.candidate.sourceName.localeCompare(b.candidate.sourceName)
+        )
         .slice(0, limit)
         .map(item => item.candidate)
 }

@@ -1,8 +1,10 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
 import { useAtom, useAtomValue } from 'jotai'
 import { useMemo } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { activeCategoryAtom, filteredIconsAtom, useViewModeURL } from './context'
 
 interface CategoryNavProps {
@@ -43,8 +45,8 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({ className }) => {
                         onClick={() => handleClick(category)}
                         className={cn(
                             `
-                              flex items-center justify-between gap-2 rounded-md
-                              px-2.5 py-1.5 text-left transition-colors
+                              flex items-center justify-between gap-2 rounded-md px-2.5 py-1.5
+                              text-left transition-colors
                             `,
                             `
                               hover:bg-default-100
@@ -59,9 +61,7 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({ className }) => {
                         <span
                             className={cn(
                                 'shrink-0 font-mono text-xs tabular-nums',
-                                isActive ? 'text-foreground' : `
-                                  text-muted-foreground/60
-                                `
+                                isActive ? 'text-foreground' : `text-muted-foreground/60`
                             )}>
                             {count}
                         </span>

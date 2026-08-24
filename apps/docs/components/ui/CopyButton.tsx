@@ -3,6 +3,7 @@ import { CheckCircleIcon } from '@solar-icons/react/linear/check-circle'
 import { CopyIcon } from '@solar-icons/react/linear/copy'
 import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button'
 import React from 'react'
+
 import type { ButtonProps } from './button'
 import { Button } from './button'
 

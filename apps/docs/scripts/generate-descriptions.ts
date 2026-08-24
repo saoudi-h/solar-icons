@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import prettier from 'prettier'
+
 import { readCoreMetadata } from './catalog-source'
 
 const outputDataFilePath = './generated/descriptions.ts'
@@ -42,6 +42,15 @@ import type { ComponentType } from 'react'
 import type { Weight } from '@solar-icons/core'
 import type { IconProps } from '@solar-icons/react/lib/types'
 import type { Category } from './utils'
+
+import { execFileSync } from 'node:child_process'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' },
+    )
 
 export interface IconData {
     name: string
@@ -104,13 +113,7 @@ export default icons
 const main = async () => {
     try {
         const data = generate(icons as IconData[])
-        fs.writeFileSync(
-            outputDataFilePath,
-            await prettier.format(data, {
-                ...(await prettier.resolveConfig(outputDataFilePath)),
-                parser: 'typescript',
-            })
-        )
+        fs.writeFileSync(outputDataFilePath, oxfmtFormat(outputDataFilePath, data))
         console.log('The file has been generated with success !')
     } catch (error) {
         console.error('Error while generating the file:', error)

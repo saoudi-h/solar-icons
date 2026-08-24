@@ -9,19 +9,19 @@ the production sheet.
 
 All eleven rows remain strict matches. No production reference or decision required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S1201 | `vinyl-record` | L0566 | `disc-3` | match | Same grooved disc/record object; Lucide's generic disc name does not change the referent. |
-| S1203 | `volleyball` | L1768 | `volleyball` | match | Same volleyball object and panel construction. |
-| S1205 | `volume` | L1769 | `volume` | match | Same basic speaker/volume icon with no level modifier. |
-| S1208 | `volume-loud` | L1771 | `volume-2` | match | Same speaker with two outgoing sound waves. |
-| S1209 | `volume-small` | L1770 | `volume-1` | match | Same speaker with one outgoing sound wave. |
-| S1218 | `watch-round` | L1783 | `watch` | match | Same wristwatch object; the round case is preserved. |
-| S1222 | `water` | L1784 | `waves` | match | Same three-wave water symbol. |
-| S1232 | `widget` | L0946 | `layout-grid` | match | Same 2×2 grid of rounded tiles. |
-| S1235 | `widget-4` | L0948 | `layout-panel-left` | match | Same tall left panel with two stacked right panels. |
-| S1240 | `wind` | L1808 | `wind` | match | Same three flowing wind lines and direction. |
-| S1245 | `women` | L1759 | `venus` | match | Same female/venus symbol; the Lucide candidate `venus-and-mars` is not needed. |
+| Solar ID | Solar          | Lucide ID | Lucide              | Verdict | Evidence                                                                                  |
+| -------- | -------------- | --------- | ------------------- | ------- | ----------------------------------------------------------------------------------------- |
+| S1201    | `vinyl-record` | L0566     | `disc-3`            | match   | Same grooved disc/record object; Lucide's generic disc name does not change the referent. |
+| S1203    | `volleyball`   | L1768     | `volleyball`        | match   | Same volleyball object and panel construction.                                            |
+| S1205    | `volume`       | L1769     | `volume`            | match   | Same basic speaker/volume icon with no level modifier.                                    |
+| S1208    | `volume-loud`  | L1771     | `volume-2`          | match   | Same speaker with two outgoing sound waves.                                               |
+| S1209    | `volume-small` | L1770     | `volume-1`          | match   | Same speaker with one outgoing sound wave.                                                |
+| S1218    | `watch-round`  | L1783     | `watch`             | match   | Same wristwatch object; the round case is preserved.                                      |
+| S1222    | `water`        | L1784     | `waves`             | match   | Same three-wave water symbol.                                                             |
+| S1232    | `widget`       | L0946     | `layout-grid`       | match   | Same 2×2 grid of rounded tiles.                                                           |
+| S1235    | `widget-4`     | L0948     | `layout-panel-left` | match   | Same tall left panel with two stacked right panels.                                       |
+| S1240    | `wind`         | L1808     | `wind`              | match   | Same three flowing wind lines and direction.                                              |
+| S1245    | `women`        | L1759     | `venus`             | match   | Same female/venus symbol; the Lucide candidate `venus-and-mars` is not needed.            |
 
 ## Verification
 

@@ -1,4 +1,10 @@
 'use client'
+import { Icon } from '@iconify/react'
+import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
+import { AnimatePresence, motion } from 'motion/react'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Badge } from '@/components/ui/badge'
 import { ButtonWithTooltip } from '@/components/ui/button-with-tooltip'
@@ -7,11 +13,6 @@ import { Heading } from '@/components/ui/heading'
 import { MotionHeading } from '@/components/ui/motion'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { cn } from '@/lib/utils'
-import { Icon } from '@iconify/react'
-import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import { AnimatePresence, motion } from 'motion/react'
-import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
 
 export interface PackageCardProps {
     title: string
@@ -55,32 +56,24 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
         <SectionMotion
             id="available-packages"
             className={`
-              relative container flex w-full flex-col items-center gap-8
-              self-center px-3 py-12
+              relative container flex w-full flex-col items-center gap-8 self-center px-3 py-12
               md:px-0
             `}>
             <div
                 className={`
-                  relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30
-                  py-12
+                  relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30 py-12
                   md:rounded-3xl
                 `}>
-                <NoiseSvg
-                    className={`
-                      pointer-events-none absolute inset-0 size-full opacity-30
-                    `}
-                />
+                <NoiseSvg className={`pointer-events-none absolute inset-0 size-full opacity-30`} />
                 <div
                     className={`
-                      absolute top-0 left-1/3 size-1/2 -translate-1/2
-                      rounded-full bg-linear-to-b from-teal-950/80
-                      to-transparent blur-3xl
+                      absolute top-0 left-1/3 size-1/2 -translate-1/2 rounded-full bg-linear-to-b
+                      from-teal-950/80 to-transparent blur-3xl
                     `}></div>
                 <div
                     className={`
-                      absolute top-0 left-2/3 size-1/3 -translate-1/2
-                      rounded-full bg-linear-to-b from-pink-700/50
-                      to-transparent blur-3xl
+                      absolute top-0 left-2/3 size-1/3 -translate-1/2 rounded-full bg-linear-to-b
+                      from-pink-700/50 to-transparent blur-3xl
                     `}></div>
                 <div
                     className="absolute inset-0"
@@ -91,8 +84,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                 />
                 <div
                     className={`
-                      relative my-14 mt-16 flex flex-col items-center
-                      justify-center gap-6
+                      relative my-14 mt-16 flex flex-col items-center justify-center gap-6
                     `}>
                     <MotionHeading
                         size="h1"
@@ -106,24 +98,23 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                         Available{' '}
                         <span
                             className={`
-                              box-decoration-clone underline decoration-primary
-                              underline-offset-8
+                              box-decoration-clone underline decoration-primary underline-offset-8
                             `}>
                             Packages
                         </span>
                     </MotionHeading>
                     <p
                         className="
-                          max-w-[620px] pb-12 text-center text-sm/relaxed
-                          text-muted-foreground select-none
+                          max-w-[620px] pb-12 text-center text-sm/relaxed text-muted-foreground
+                          select-none
                           md:text-base
                         ">
                         Install native icon packages built specifically for your framework.
                     </p>
                     <div
                         className={`
-                          mx-auto mt-8 flex w-full max-w-4xl flex-row flex-wrap
-                          items-stretch gap-4 p-4
+                          mx-auto mt-8 flex w-full max-w-4xl flex-row flex-wrap items-stretch gap-4
+                          p-4
                         `}>
                         {packages.map((item, idx) => (
                             <motion.div
@@ -140,8 +131,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                                     {hoveredIndex === idx && (
                                         <motion.span
                                             className={`
-                                              absolute inset-0 block size-full
-                                              rounded-none border
+                                              absolute inset-0 block size-full rounded-none border
                                               border-accent/50 bg-accent/40
                                             `}
                                             layoutId="hoverBackground"
@@ -181,24 +171,20 @@ export const PackageCard: React.FC<PackageCardProps> = ({
     return (
         <Card
             className={`
-              relative z-20 flex size-full min-h-48 min-w-48 flex-col
-              overflow-hidden rounded-none bg-background/30
+              relative z-20 flex size-full min-h-48 min-w-48 flex-col overflow-hidden rounded-none
+              bg-background/30
               hover:bg-background/70
               md:min-h-64 md:min-w-64
             `}>
-            <div
-                className={`
-                  absolute bottom-0 left-0 size-24
-                  sm:size-32
-                `}>
+            <div className={`absolute bottom-0 left-0 size-24 sm:size-32`}>
                 {
                     <Icon
                         icon={iconify}
                         className={cn(
                             hovered ? 'contrast-150' : 'contrast-50',
                             `
-                              absolute inset-0 size-full blur-3xl
-                              transition-colors duration-300 ease-in-out
+                              absolute inset-0 size-full blur-3xl transition-colors duration-300
+                              ease-in-out
                             `
                         )}
                     />
@@ -212,8 +198,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         className={cn(
                             hovered && 'text-primary',
                             `
-                              flex flex-row items-center gap-4 transition-colors
-                              duration-300 ease-in-out
+                              flex flex-row items-center gap-4 transition-colors duration-300
+                              ease-in-out
                             `
                         )}>
                         {title}
@@ -226,16 +212,13 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                 </CardTitle>
             </CardHeader>
             <CardContent
-                className={`
-                  relative flex-1 text-left text-sm font-light
-                  text-muted-foreground
-                `}>
+                className={`relative flex-1 text-left text-sm font-light text-muted-foreground`}>
                 {content}
             </CardContent>
             <CardFooter
                 className={`
-                  relative flex w-full flex-row items-center justify-end
-                  bg-accent/30 p-2 backdrop-blur-lg
+                  relative flex w-full flex-row items-center justify-end bg-accent/30 p-2
+                  backdrop-blur-lg
                 `}>
                 <ButtonWithTooltip
                     tooltip="Documentation"
@@ -245,9 +228,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                     disabled={!link}
                     size="icon"
                     colors="secondary"
-                    className={`
-                      w-10 rounded-l-xl rounded-r-none! border-r-border/50
-                    `}>
+                    className={`w-10 rounded-l-xl rounded-r-none! border-r-border/50`}>
                     <ArrowRightUpIcon className="size-full" />
                 </ButtonWithTooltip>
                 <ButtonWithTooltip
@@ -280,10 +261,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                 transition={{
                     rotate: { duration: 0.5, ease: 'linear' },
                 }}
-                className={`
-                  absolute bottom-0 left-0 size-24
-                  sm:size-32
-                `}>
+                className={`absolute bottom-0 left-0 size-24 sm:size-32`}>
                 {<Icon icon={iconify} className="absolute inset-0 size-full" />}
             </motion.div>
         </Card>

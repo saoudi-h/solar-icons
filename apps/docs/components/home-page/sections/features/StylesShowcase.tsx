@@ -1,5 +1,4 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { GlobalIcon } from '@solar-icons/react/dynamic/global'
 import { HeartIcon } from '@solar-icons/react/dynamic/heart'
 import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
@@ -8,7 +7,10 @@ import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { motion } from 'motion/react'
 
+import { cn } from '@/lib/utils'
+
 export const StylesShowcase = () => {
+    // oxlint-disable-next-line better-tailwindcss/no-unknown-classes -- Solar weight names, not classes
     const styles = ['Linear', 'Bold', 'Outline', 'BoldDuotone', 'LineDuotone', 'Broken'] as const
 
     const rows = [
@@ -84,8 +86,8 @@ export const StylesShowcase = () => {
         <div className="relative h-52 w-full">
             <div
                 className="
-                  pointer-events-none absolute flex size-full items-center
-                  justify-center select-none
+                  pointer-events-none absolute flex size-full items-center justify-center
+                  select-none
                 "
                 style={{
                     perspective: 800,
@@ -115,14 +117,8 @@ export const StylesShowcase = () => {
                                     },
                                 }}
                                 viewport={{ once: true, margin: '-50px' }}
-                                className="
-                                  flex w-full items-center justify-center
-                                ">
-                                <div
-                                    className="
-                                      flex flex-1 items-center justify-center
-                                      gap-4
-                                    ">
+                                className="flex w-full items-center justify-center">
+                                <div className="flex flex-1 items-center justify-center gap-4">
                                     {styles.map((style, c) => (
                                         <motion.div
                                             key={c}
@@ -139,17 +135,13 @@ export const StylesShowcase = () => {
                                             }}
                                             viewport={{ once: true }}
                                             className="
-                                              relative flex size-10 items-center
-                                              justify-center
+                                              relative flex size-10 items-center justify-center
                                             ">
                                             <Icon
                                                 size={28}
                                                 weight={style}
                                                 className={cn(
-                                                    `
-                                                      transition-all
-                                                      duration-300
-                                                    `,
+                                                    `transition-all duration-300`,
                                                     shades[c]
                                                 )}
                                             />

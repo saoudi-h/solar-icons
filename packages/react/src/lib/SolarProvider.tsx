@@ -70,15 +70,24 @@ export function SolarProvider({
     if (size != null) wrapperStyle['--solar-size'] = typeof size === 'number' ? `${size}px` : size
     if (strokeWidth != null) wrapperStyle['--solar-stroke-width'] = String(strokeWidth)
     if (secondaryColor) wrapperStyle['--solar-secondary-color'] = secondaryColor
-    if (secondaryOpacity != null) wrapperStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
+    if (secondaryOpacity != null)
+        wrapperStyle['--solar-secondary-opacity'] = String(secondaryOpacity)
 
-    const state = useMemo<SolarState>(() => ({
-        color, setColor,
-        size, setSize,
-        strokeWidth, setStrokeWidth,
-        secondaryColor, setSecondaryColor,
-        secondaryOpacity, setSecondaryOpacity,
-    }), [color, size, strokeWidth, secondaryColor, secondaryOpacity])
+    const state = useMemo<SolarState>(
+        () => ({
+            color,
+            setColor,
+            size,
+            setSize,
+            strokeWidth,
+            setStrokeWidth,
+            secondaryColor,
+            setSecondaryColor,
+            secondaryOpacity,
+            setSecondaryOpacity,
+        }),
+        [color, size, strokeWidth, secondaryColor, secondaryOpacity]
+    )
 
     return (
         <SolarContext.Provider value={state}>

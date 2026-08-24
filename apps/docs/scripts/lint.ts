@@ -1,4 +1,5 @@
 import { type FileObject, printErrors, scanURLs, validateFiles } from 'next-validate-link'
+
 import { source } from '../lib/source'
 
 async function checkLinks() {
@@ -71,14 +72,12 @@ function extractHeadingIds(mdx: string): string[] {
 }
 
 function getFiles() {
-    const promises = source.getPages().map(
-        async (page): Promise<FileObject> => ({
-            path: page.absolutePath,
-            content: await page.data.getText('raw'),
-            url: page.url,
-            data: page.data,
-        })
-    )
+    const promises = source.getPages().map(async (page): Promise<FileObject> => ({
+        path: page.absolutePath,
+        content: await page.data.getText('raw'),
+        url: page.url,
+        data: page.data,
+    }))
 
     return Promise.all(promises)
 }

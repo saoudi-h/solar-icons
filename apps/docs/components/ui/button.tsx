@@ -1,13 +1,13 @@
-import { cn } from '@/lib/utils'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 
+import { cn } from '@/lib/utils'
+
 const buttonVariants = cva(
     `
-      inline-flex w-fit items-center justify-center gap-2 rounded-md border-2
-      text-sm font-medium whitespace-nowrap shadow-2xs transition-all
-      duration-200 ease-in
+      inline-flex w-fit items-center justify-center gap-2 rounded-md border-2 text-sm font-medium
+      whitespace-nowrap shadow-2xs transition-all duration-200 ease-in
       focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden
       active:scale-95
       disabled:pointer-events-none disabled:opacity-50
@@ -21,8 +21,7 @@ const buttonVariants = cva(
                 ghost: 'border-transparent! bg-transparent! shadow-none',
                 link: `
                   border-transparent! bg-transparent! underline-offset-4
-                  hover:border-transparent! hover:bg-transparent!
-                  hover:underline
+                  hover:border-transparent! hover:bg-transparent! hover:underline
                 `,
             },
             size: {
@@ -38,8 +37,7 @@ const buttonVariants = cva(
                   hover:bg-primary/80 hover:text-primary-foreground
                 `,
                 secondary: `
-                  border-secondary-foreground/60 bg-secondary
-                  text-secondary-foreground/80
+                  border-secondary-foreground/60 bg-secondary text-secondary-foreground/80
                   hover:border-secondary-foreground/80 hover:bg-secondary/80
                   hover:text-secondary-foreground
                 `,
@@ -70,10 +68,7 @@ const buttonVariants = cva(
             {
                 variant: 'outline',
                 colors: 'default',
-                className: `
-                  border-primary text-primary/80
-                  hover:bg-primary/80 hover:text-primary
-                `,
+                className: `border-primary text-primary/80 hover:bg-primary/80 hover:text-primary`,
             },
             {
                 variant: 'outline',
@@ -94,42 +89,27 @@ const buttonVariants = cva(
             {
                 variant: 'outline',
                 colors: 'warning',
-                className: `
-                  border-warning text-warning/80
-                  hover:bg-warning/80 hover:text-warning
-                `,
+                className: `border-warning text-warning/80 hover:bg-warning/80 hover:text-warning`,
             },
             {
                 variant: 'outline',
                 colors: 'muted',
-                className: `
-                  border-muted text-muted/80
-                  hover:bg-muted/80 hover:text-muted
-                `,
+                className: `border-muted text-muted/80 hover:bg-muted/80 hover:text-muted`,
             },
             {
                 variant: 'outline',
                 colors: 'accent',
-                className: `
-                  border-accent text-accent/80
-                  hover:bg-accent/80 hover:text-accent
-                `,
+                className: 'border-accent text-accent/80 hover:bg-accent/80 hover:text-accent',
             },
             {
                 variant: 'ghost',
                 colors: 'default',
-                className: `
-                  text-foreground/70
-                  hover:bg-default-200/50! hover:text-foreground
-                `,
+                className: 'text-foreground/70 hover:bg-default-200/50! hover:text-foreground',
             },
             {
                 variant: 'link',
                 colors: 'default',
-                className: `
-                  text-foreground/70
-                  hover:text-foreground
-                `,
+                className: 'text-foreground/70 hover:text-foreground',
             },
         ],
     }

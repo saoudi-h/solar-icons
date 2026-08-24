@@ -1,4 +1,4 @@
-import type { JSX } from 'solid-js';
+import type { JSX } from 'solid-js'
 
 export enum IconStyle {
     BROKEN = 'Broken',
@@ -10,27 +10,27 @@ export enum IconStyle {
 }
 
 export interface IconBaseProps {
-    alt?: string;
-    color?: string;
-    size?: string | number;
-    strokeWidth?: string | number;
-    secondaryColor?: string;
-    secondaryOpacity?: number;
-    iconName?: string;
+    alt?: string
+    color?: string
+    size?: string | number
+    strokeWidth?: string | number
+    secondaryColor?: string
+    secondaryOpacity?: number
+    iconName?: string
     /** When `true`, the icon ignores all `SolarProvider` values and uses hardcoded defaults. */
-    isolated?: boolean;
+    isolated?: boolean
     /**
      * Raw SVG body string, used to bypass the Solid template compiler's
      * `<svg>` namespace wrapping.
      */
-    iconBody?: string;
+    iconBody?: string
 }
 
-export type SvgSVGAttributes = JSX.SvgSVGAttributes<SVGSVGElement>;
+export type SvgSVGAttributes = JSX.SvgSVGAttributes<SVGSVGElement>
 
 export interface IconProps extends SvgSVGAttributes, IconBaseProps {
-    color?: string;
-    children?: JSX.Element;
+    color?: string
+    children?: JSX.Element
 }
 
-export type Icon = (props: IconProps) => JSX.Element;
+export type Icon = (props: IconProps) => JSX.Element

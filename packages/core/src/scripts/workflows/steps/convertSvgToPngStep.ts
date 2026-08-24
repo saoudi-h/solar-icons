@@ -1,6 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 import sharp from 'sharp'
+
 import type { ProcessorStep } from '../types'
 import { isString } from '../utils'
 

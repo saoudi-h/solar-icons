@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, provide, watch, computed } from 'vue'
 import type { Ref } from 'vue'
+
 import { SOLAR_CONTEXT_KEY } from './context-key'
 
 interface SolarState {
@@ -29,7 +30,7 @@ const props = withDefaults(
         /** Default secondary opacity for duotone styles (0–1). Sets `--solar-secondary-opacity`. */
         secondaryOpacity?: number
     }>(),
-    {},
+    {}
 )
 
 const color = ref(props.color)
@@ -38,18 +39,33 @@ const strokeWidth = ref(props.strokeWidth)
 const secondaryColor = ref(props.secondaryColor)
 const secondaryOpacity = ref(props.secondaryOpacity)
 
-const setColor = (val: string) => { color.value = val }
-const setSize = (val: string | number) => { size.value = val }
-const setStrokeWidth = (val: number) => { strokeWidth.value = val }
-const setSecondaryColor = (val: string) => { secondaryColor.value = val }
-const setSecondaryOpacity = (val: number) => { secondaryOpacity.value = val }
+const setColor = (val: string) => {
+    color.value = val
+}
+const setSize = (val: string | number) => {
+    size.value = val
+}
+const setStrokeWidth = (val: number) => {
+    strokeWidth.value = val
+}
+const setSecondaryColor = (val: string) => {
+    secondaryColor.value = val
+}
+const setSecondaryOpacity = (val: number) => {
+    secondaryOpacity.value = val
+}
 
 const state: SolarState = {
-    color, setColor,
-    size, setSize,
-    strokeWidth, setStrokeWidth,
-    secondaryColor, setSecondaryColor,
-    secondaryOpacity, setSecondaryOpacity,
+    color,
+    setColor,
+    size,
+    setSize,
+    strokeWidth,
+    setStrokeWidth,
+    secondaryColor,
+    setSecondaryColor,
+    secondaryOpacity,
+    setSecondaryOpacity,
 }
 
 provide(SOLAR_CONTEXT_KEY, state)

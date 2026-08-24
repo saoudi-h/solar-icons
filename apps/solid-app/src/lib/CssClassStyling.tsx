@@ -1,5 +1,5 @@
-import { Dynamic } from 'solid-js/web';
-import * as Bold from '@solar-icons/solid/bold';
+import * as Bold from '@solar-icons/solid/bold'
+import { Dynamic } from 'solid-js/web'
 
 export default function CssClassStyling() {
     return (
@@ -16,5 +16,5 @@ export default function CssClassStyling() {
                 <Dynamic component={Bold.HeartIcon} />
             </div>
         </div>
-    );
+    )
 }

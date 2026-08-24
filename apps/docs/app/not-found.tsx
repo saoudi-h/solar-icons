@@ -1,10 +1,11 @@
 'use client'
+import { useEffect, useState } from 'react'
+
 import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import type { SuperButtonProps } from '@/components/ui/SuperButton'
 import { SuperButton } from '@/components/ui/SuperButton'
 import { config } from '@/config'
-import { useEffect, useState } from 'react'
 
 export interface NotFoundProps {
     title: {
@@ -31,33 +32,27 @@ const NotFound = () => {
     return (
         <main
             className={`
-              relative flex min-h-dvh w-full flex-1 flex-col justify-center
-              gap-9 bg-background py-4 text-center
+              relative flex min-h-dvh w-full flex-1 flex-col justify-center gap-9 bg-background py-4
+              text-center
               md:gap-12 md:px-10 md:py-[34px]
             `}>
             <section
                 className={`
-                  relative flex w-full max-w-7xl flex-col items-center
-                  self-center px-3
+                  relative flex w-full max-w-7xl flex-col items-center self-center px-3
                   md:px-0
                 `}>
                 <div
                     className={`
-                      relative w-full gap-2 overflow-hidden rounded-2xl
-                      bg-accent/30 py-12
+                      relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30 py-12
                       md:rounded-3xl
                     `}>
                     <NoiseSvg
-                        className={`
-                          pointer-events-none absolute inset-0 size-full
-                          opacity-30
-                        `}
+                        className={`pointer-events-none absolute inset-0 size-full opacity-30`}
                     />
                     <div
                         className={`
-                          absolute top-0 left-1/2 size-2/3 -translate-1/2
-                          rounded-full bg-linear-to-b from-destructive/80
-                          to-transparent blur-3xl
+                          absolute top-0 left-1/2 size-2/3 -translate-1/2 rounded-full
+                          bg-linear-to-b from-destructive/80 to-transparent blur-3xl
                         `}></div>
                     <div
                         className="absolute inset-0"
@@ -68,8 +63,7 @@ const NotFound = () => {
                     />
                     <div
                         className={`
-                          relative my-14 mt-16 flex flex-col items-center
-                          justify-center gap-6
+                          relative my-14 mt-16 flex flex-col items-center justify-center gap-6
                         `}>
                         <Heading size="h1" justify="center">
                             {title.part1}
@@ -85,10 +79,7 @@ const NotFound = () => {
                             {description}
                         </p>
                         <div
-                            className={`
-                              mt-6 flex flex-col items-center gap-3
-                              sm:flex-row sm:gap-6
-                            `}>
+                            className={`mt-6 flex flex-col items-center gap-3 sm:flex-row sm:gap-6`}>
                             {hasHistory && (
                                 <SuperButton
                                     label={secondaryAction.label}

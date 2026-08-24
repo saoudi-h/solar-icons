@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export const HoverEffect = ({
     items,
@@ -17,15 +18,7 @@ export const HoverEffect = ({
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     return (
-        <div
-            className={cn(
-                `
-                  grid grid-cols-1 py-10
-                  md:grid-cols-2
-                  lg:grid-cols-3
-                `,
-                className
-            )}>
+        <div className={cn(`grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3`, className)}>
             {items.map((item, idx) => (
                 <Link
                     href={item.link}
@@ -37,8 +30,7 @@ export const HoverEffect = ({
                         {hoveredIndex === idx && (
                             <motion.span
                                 className={`
-                                  absolute inset-0 block size-full rounded-3xl
-                                  bg-neutral-200
+                                  absolute inset-0 block size-full rounded-3xl bg-neutral-200
                                   dark:bg-slate-800/80
                                 `}
                                 layoutId="hoverBackground"
@@ -75,8 +67,8 @@ export const Card = ({
         <div
             className={cn(
                 `
-                  relative z-20 size-full overflow-hidden rounded-2xl border
-                  border-transparent bg-black p-4
+                  relative z-20 size-full overflow-hidden rounded-2xl border border-transparent
+                  bg-black p-4
                   group-hover:border-slate-700
                   dark:border-white/20
                 `,

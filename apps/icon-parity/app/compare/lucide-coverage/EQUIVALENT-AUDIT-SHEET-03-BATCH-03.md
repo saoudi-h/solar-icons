@@ -9,15 +9,15 @@ preserved as evidence.
 
 All seven rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0279 | `code` | L0483 | `code` | match | Same angle-bracket code symbol. |
-| S0280 | `code-2` | L0484 | `code-xml` | match | Same XML/code-bracket symbol; the slash construction is retained. |
-| S0282 | `code-file` | L0649 | `file-code` | match | Same document/file object with an embedded code symbol. |
-| S0284 | `code-square` | L1515 | `square-code` | match | Same square container with an embedded code symbol. |
-| S0286 | `command` | L0495 | `command` | match | Same command-key glyph. |
-| S0287 | `compass` | L0496 | `compass` | match | Same compass object and central needle. |
-| S0297 | `copyright` | L0515 | `copyright` | match | Same copyright mark in a circular container. |
+| Solar ID | Solar         | Lucide ID | Lucide        | Verdict | Evidence                                                          |
+| -------- | ------------- | --------- | ------------- | ------- | ----------------------------------------------------------------- |
+| S0279    | `code`        | L0483     | `code`        | match   | Same angle-bracket code symbol.                                   |
+| S0280    | `code-2`      | L0484     | `code-xml`    | match   | Same XML/code-bracket symbol; the slash construction is retained. |
+| S0282    | `code-file`   | L0649     | `file-code`   | match   | Same document/file object with an embedded code symbol.           |
+| S0284    | `code-square` | L1515     | `square-code` | match   | Same square container with an embedded code symbol.               |
+| S0286    | `command`     | L0495     | `command`     | match   | Same command-key glyph.                                           |
+| S0287    | `compass`     | L0496     | `compass`     | match   | Same compass object and central needle.                           |
+| S0297    | `copyright`   | L0515     | `copyright`   | match   | Same copyright mark in a circular container.                      |
 
 ## Verification
 

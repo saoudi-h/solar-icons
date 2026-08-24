@@ -10,11 +10,11 @@
         "build": "vite build",
         "preview": "vite preview",
         "clean": "rm -rf node_modules dist",
-        "lint": "eslint . --max-warnings 0",
-        "lint:fix": "eslint . --fix",
-        "format": "prettier \"**/*\" --ignore-unknown --list-different",
-        "format:fix": "prettier \"**/*\" --ignore-unknown --write",
-        "typecheck": "tsgo --noEmit",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
+        "typecheck": "tsc --noEmit",
         "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/solid generate:assets",
         "generate:icons": "tsx scripts/generate-icon-list.ts",
         "pre-commit": "lint-staged"
@@ -25,10 +25,8 @@
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.3.3",
-        "@tala-tools/eslint": "0.1.5",
-        "@tala-tools/prettier": "0.0.3",
         "tailwindcss": "^4.3.3",
-        "typescript": "^6.0.3",
+        "typescript": "7.0.2",
         "vite": "^8.2.0",
         "vite-plugin-solid": "^2.11.14"
     }

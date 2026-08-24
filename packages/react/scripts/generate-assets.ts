@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
 import path from 'node:path'
-import pc from 'picocolors'
 
 import {
     buildDeprecatedAliasMap,
@@ -18,6 +17,8 @@ import {
     type Weight,
 } from '@solar-icons/core'
 import rawDescriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
+import pc from 'picocolors'
+
 import { reactPerfComponentFile, type FileDefinition } from './parser-hook'
 
 const descriptions = rawDescriptions as readonly IconDescription[]

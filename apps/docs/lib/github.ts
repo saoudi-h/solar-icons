@@ -1,7 +1,8 @@
-import type { ActionResponse, Feedback } from '@/components/ui-blocks/rate'
-import { env } from '@/env'
 import type { Octokit } from 'octokit'
 import { App } from 'octokit'
+
+import type { ActionResponse, Feedback } from '@/components/ui-blocks/rate'
+import { env } from '@/env'
 
 export const repo = 'solar-icons'
 export const owner = 'saoudi-h'

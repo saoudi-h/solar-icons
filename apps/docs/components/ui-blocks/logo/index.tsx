@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
 import React from 'react'
+
 import { LogoIcon } from './LogoIcon'
 
 export const Logo: React.FC = () => {
@@ -23,9 +24,7 @@ export const Logo: React.FC = () => {
 
     return (
         <motion.div
-            className={`
-              flex cursor-pointer items-center justify-center gap-4 p-2
-            `}
+            className={`flex cursor-pointer items-center justify-center gap-4 p-2`}
             initial="initial"
             whileHover="hover"
             variants={containerVariants}
@@ -37,9 +36,7 @@ export const Logo: React.FC = () => {
                 <LogoIcon className="size-8" />
             </motion.div>
 
-            <span className={`
-              pointer-events-none font-heading text-lg font-black
-            `}>
+            <span className={`pointer-events-none font-heading text-lg font-black`}>
                 Solar Icons
             </span>
         </motion.div>

@@ -11,9 +11,13 @@
 
 - [x] **[ICON-RELEASE-PACKET]** Prepare the first extension release packet: use a minor Changeset for the 22 curated extensions, rebuild the static package, verify the Figma catalog build, and document the remaining manual publication steps. Completed in `542ec7b13`; `Priority: 🟠` `Complexity: M`
 
-- [ ] **[ICON-PUBLISH]** Merge the release PR, let Changesets publish the `2.1.0` package set, then submit the rebuilt Figma Community plugin as a separate catalog update. `Priority: 🟠` `Complexity: M`
+- [x] **[ICON-COUNT-AUDIT]** Audit and correct stale human-facing icon counts after the catalogue grew from 1,246 to 1,268, while preserving historical parity artifacts and adding a repeatable drift check where appropriate. Updated the active extension guide to 1,268, added `pnpm check:icon-inventory`, and verified current copy against the core SVG inventory. `Priority: 🟠` `Complexity: M`
 
-- [ ] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, and document the separate Figma Community publication step. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
+- [x] **[ICON-PUBLISH]** Publish the `2.1.0` package set and submit the rebuilt Figma Community plugin as a separate catalog update. Completed manually by the maintainer. `Priority: 🟠` `Complexity: M`
+
+- [x] **[FIGMA-CATALOG-SYNC]** Implement the synchronization contract for the public Figma plugin: embed catalog version/hash/count provenance, verify the embedded catalog against `@solar-icons/static` in CI, document the separate Figma Community publication step, and publish the rebuilt plugin. Completed 2026-08-22; the maintainer updated the Community description to 1,268 icons. Figma did not expose a durable per-version changelog in the publication flow, so the repository remains the detailed release record. **Issue:** `ISSUE-FIGMA-CATALOG`. `Priority: 🟠` `Complexity: M`
+
+- [x] **[TOOL-01]** Migrate lint/format from `@tala-tools/eslint`+`@tala-tools/prettier` to `@tala-tools/oxlint`+`@tala-tools/oxfmt` (reference recipe: ratelock TOOL-01), refresh dependencies, evaluate TypeScript 7 adoption per-package (ngc/vue-tsc/svelte-check may require the TS JS API). No changeset unless built output observably changes. `Priority: 🟠` `Complexity: L`
 
 - [ ] **[EXTENSION-COMMUNICATION]** Update current README/docs/plugin copy to describe the maintained original Solar catalogue plus curated extensions, refresh current icon counts, and publish a release announcement without claiming new icons are from 480 Design. `Priority: 🟠` `Complexity: M`
 

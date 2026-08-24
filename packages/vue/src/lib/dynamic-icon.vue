@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, type Component } from 'vue'
 import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime'
+import { computed, type Component } from 'vue'
+
 import type { IconProps } from './types'
 
 type StyleComponents = StyleComponentsMap<Component>
@@ -17,8 +18,5 @@ const component = computed(() => {
 </script>
 
 <template>
-    <component
-        :is="component"
-        v-bind="$attrs"
-    />
+    <component :is="component" v-bind="$attrs" />
 </template>

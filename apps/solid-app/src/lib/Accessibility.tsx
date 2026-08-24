@@ -1,5 +1,5 @@
-import { Dynamic } from 'solid-js/web';
-import * as Bold from '@solar-icons/solid/bold';
+import * as Bold from '@solar-icons/solid/bold'
+import { Dynamic } from 'solid-js/web'
 
 export default function Accessibility() {
     return (
@@ -21,5 +21,5 @@ export default function Accessibility() {
                 />
             </div>
         </div>
-    );
+    )
 }

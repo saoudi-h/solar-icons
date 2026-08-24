@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
+
 import { IconBase } from './icon-base'
 
 @Component({

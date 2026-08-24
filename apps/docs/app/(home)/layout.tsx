@@ -1,10 +1,11 @@
 'use client'
-import { homeOptions } from '@/app/layout.config'
-import { Footer } from '@/components/ui-blocks/footer'
-import { config } from '@/config'
 import { HomeLayout } from 'fumadocs-ui/layouts/home'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
+
+import { homeOptions } from '@/app/layout.config'
+import { Footer } from '@/components/ui-blocks/footer'
+import { config } from '@/config'
 
 export default function Layout({ children }: { children: ReactNode }): React.ReactElement {
     const pathname = usePathname()

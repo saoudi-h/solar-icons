@@ -9,20 +9,20 @@ but a lost object, action, state, direction, or specificity is not.
 All twelve rows remain strict matches. Four alignment references were corrected after comparing
 the rendered orientation and guide axis; the remaining eight rows were left unchanged.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0002 | `add` | L1259 | `plus` | match | Same addition symbol. |
-| S0003 | `add-circle` | L0411 | `circle-plus` | match | Same plus symbol enclosed by a circle. |
-| S0004 | `add-folder` | L0754 | `folder-plus` | match | Same folder object with an addition modifier. |
-| S0005 | `add-square` | L1542 | `square-plus` | match | Same plus symbol enclosed by a square. |
-| S0018 | `alarm` | L0009 | `alarm-clock` | match | Same alarm-clock object and meaning. |
-| S0019 | `alarm-add` | L0013 | `alarm-clock-plus` | match | Same alarm-clock object with an addition modifier. |
-| S0022 | `alarm-remove` | L0011 | `alarm-clock-minus` | match | Same alarm-clock object with a removal/minus modifier. |
-| S0026 | `align-bottom` | L0019 | `align-end-horizontal` | match | Corrected: the rendered Solar objects are vertical and sit on a horizontal bottom guide. |
-| S0027 | `align-horizontal-center` | L0018 | `align-center-vertical` | match | Corrected: the rendered Solar objects are centered around a vertical guide. |
-| S0028 | `align-horizontal-spacing` | L0028 | `align-horizontal-space-between` | match | Same horizontal space-between operation. |
-| S0029 | `align-left` | L0033 | `align-start-vertical` | match | Corrected: the rendered Solar objects align to a vertical left guide; Lucide `align-left` is text-oriented. |
-| S0030 | `align-right` | L0020 | `align-end-vertical` | match | Corrected: the rendered Solar objects align to a vertical right guide; Lucide `align-right` is text-oriented. |
+| Solar ID | Solar                      | Lucide ID | Lucide                           | Verdict | Evidence                                                                                                      |
+| -------- | -------------------------- | --------- | -------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| S0002    | `add`                      | L1259     | `plus`                           | match   | Same addition symbol.                                                                                         |
+| S0003    | `add-circle`               | L0411     | `circle-plus`                    | match   | Same plus symbol enclosed by a circle.                                                                        |
+| S0004    | `add-folder`               | L0754     | `folder-plus`                    | match   | Same folder object with an addition modifier.                                                                 |
+| S0005    | `add-square`               | L1542     | `square-plus`                    | match   | Same plus symbol enclosed by a square.                                                                        |
+| S0018    | `alarm`                    | L0009     | `alarm-clock`                    | match   | Same alarm-clock object and meaning.                                                                          |
+| S0019    | `alarm-add`                | L0013     | `alarm-clock-plus`               | match   | Same alarm-clock object with an addition modifier.                                                            |
+| S0022    | `alarm-remove`             | L0011     | `alarm-clock-minus`              | match   | Same alarm-clock object with a removal/minus modifier.                                                        |
+| S0026    | `align-bottom`             | L0019     | `align-end-horizontal`           | match   | Corrected: the rendered Solar objects are vertical and sit on a horizontal bottom guide.                      |
+| S0027    | `align-horizontal-center`  | L0018     | `align-center-vertical`          | match   | Corrected: the rendered Solar objects are centered around a vertical guide.                                   |
+| S0028    | `align-horizontal-spacing` | L0028     | `align-horizontal-space-between` | match   | Same horizontal space-between operation.                                                                      |
+| S0029    | `align-left`               | L0033     | `align-start-vertical`           | match   | Corrected: the rendered Solar objects align to a vertical left guide; Lucide `align-left` is text-oriented.   |
+| S0030    | `align-right`              | L0020     | `align-end-vertical`             | match   | Corrected: the rendered Solar objects align to a vertical right guide; Lucide `align-right` is text-oriented. |
 
 The alignment rows were checked against their adjacent Lucide family members. The initial
 production choices for S0026, S0027, S0029, and S0030 selected the wrong guide axis; those four

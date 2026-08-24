@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import { defineComponent, h } from 'vue'
+
 import SolarProvider from '../src/lib/SolarProvider.vue'
 
 describe('SolarProvider', () => {

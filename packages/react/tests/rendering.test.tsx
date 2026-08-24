@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
+
 import { ArrowUpIcon as ArrowUpDynamic } from '../dist/icons/dynamic/arrow-up.mjs'
 import { ArrowUpIcon } from '../dist/icons/linear/arrow-up.mjs'
 

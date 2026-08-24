@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import { defineComponent, h } from 'vue'
+
 import { ArrowUpIcon as ArrowUpDynamic } from '../src/icons/dynamic/arrow-up'
 import { ArrowUpIcon } from '../src/icons/linear/arrow-up'
 

@@ -1,11 +1,13 @@
-import { Analytics } from '@/components/analytics'
-import { baseUrl, createMetadata } from '@/lib/metadata'
-import { cn } from '@/lib/utils'
 import { CalSansUI } from '@calcom/cal-sans-ui/ui'
 import { Provider as JotaiProvider } from 'jotai'
 import type { Viewport } from 'next'
 import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
 import { type ReactNode } from 'react'
+
+import { Analytics } from '@/components/analytics'
+import { baseUrl, createMetadata } from '@/lib/metadata'
+import { cn } from '@/lib/utils'
+
 import './globals.css'
 import Providers from './Providers'
 

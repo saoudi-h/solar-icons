@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
+
 import { IconBase, SolarIcon, provideSolarIcons } from './index'
 
 // Mock Icon component using the real base logic

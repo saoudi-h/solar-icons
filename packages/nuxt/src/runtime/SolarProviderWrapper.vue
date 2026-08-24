@@ -13,7 +13,7 @@ const DEFAULTS = {
 const config = useRuntimeConfig()
 const defaults = {
   ...DEFAULTS,
-  ...(config.public?.solarIcons || {}),
+  ...config.public?.solarIcons,
 }
 </script>
 

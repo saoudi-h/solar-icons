@@ -1,8 +1,7 @@
-import { createSignal } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
-import type { Component } from 'solid-js';
-
-import * as Bold from '@solar-icons/solid/bold';
+import * as Bold from '@solar-icons/solid/bold'
+import { createSignal } from 'solid-js'
+import type { Component } from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
 const DEMO_ICONS: Record<string, Component> = {
     Home: Bold.HomeIcon,
@@ -11,11 +10,11 @@ const DEMO_ICONS: Record<string, Component> = {
     Heart: Bold.HeartIcon,
     Star: Bold.StarIcon,
     Bell: Bold.BellIcon,
-};
+}
 
 export default function CssCustomProps() {
-    const [cssColor, setCssColor] = createSignal('#f59e0b');
-    const [cssSize, setCssSize] = createSignal(40);
+    const [cssColor, setCssColor] = createSignal('#f59e0b')
+    const [cssSize, setCssSize] = createSignal(40)
 
     return (
         <div>
@@ -25,7 +24,7 @@ export default function CssCustomProps() {
                     <input
                         type="color"
                         value={cssColor()}
-                        onInput={(e) => setCssColor(e.currentTarget.value)}
+                        onInput={e => setCssColor(e.currentTarget.value)}
                         class="w-10 h-10 rounded cursor-pointer border-0"
                     />
                 </div>
@@ -36,7 +35,7 @@ export default function CssCustomProps() {
                         min="16"
                         max="64"
                         value={cssSize()}
-                        onInput={(e) => setCssSize(parseInt(e.currentTarget.value))}
+                        onInput={e => setCssSize(parseInt(e.currentTarget.value))}
                         class="w-32 accent-amber-500"
                     />
                 </div>
@@ -51,8 +50,7 @@ export default function CssCustomProps() {
                         style={{
                             '--solar-icon-color': cssColor(),
                             '--solar-icon-size': `${cssSize()}px`,
-                        }}
-                    >
+                        }}>
                         <Dynamic component={DEMO_ICONS.Home!} />
                         <Dynamic component={DEMO_ICONS.Settings!} />
                         <Dynamic component={DEMO_ICONS.User!} />
@@ -67,8 +65,7 @@ export default function CssCustomProps() {
                         style={{
                             '--demo-color': cssColor(),
                             '--demo-size': `${cssSize()}px`,
-                        }}
-                    >
+                        }}>
                         <Dynamic component={DEMO_ICONS.Heart!} />
                         <Dynamic component={DEMO_ICONS.Star!} />
                         <Dynamic component={DEMO_ICONS.Bell!} />
@@ -76,5 +73,5 @@ export default function CssCustomProps() {
                 </div>
             </div>
         </div>
-    );
+    )
 }

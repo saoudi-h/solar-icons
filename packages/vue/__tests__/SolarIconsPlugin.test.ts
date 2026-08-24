@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { defineComponent, nextTick } from 'vue'
+
 import { SolarIconsPlugin, useSolar } from '../src/lib/useSolar'
 
 describe('SolarIconsPlugin', () => {

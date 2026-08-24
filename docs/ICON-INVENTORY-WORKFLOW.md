@@ -83,10 +83,21 @@ pnpm --filter svelte-app check
 Deprecated Svelte aliases are generated as wrapper components. Do not hand-edit an alias to use
 `<script module> export { default }`: Svelte 5 rejects a component-level default export during SSR.
 
+The offline Figma plugin embeds the static catalogue and has a dedicated synchronization gate. Run
+this after a catalogue or plugin change:
+
+```sh
+pnpm check:figma-catalog
+```
+
+This rebuilds the static package and plugin, then verifies the embedded metadata, SVG map, version,
+counts, and deterministic catalogue hash. The remaining manual Figma Community submission is
+documented in [`docs/FIGMA-CATALOG-SYNC.md`](./FIGMA-CATALOG-SYNC.md).
+
 Confirm the derived lists with:
 
 ```sh
-pnpm exec tsx scripts/check-icon-inventory.ts --check-generated
+pnpm check:icon-inventory
 ```
 
 ## Update human-facing copy
@@ -105,7 +116,8 @@ For the documentation site, current v2 copy and homepage statistics are part of 
 packet and must reflect the same logical count and six-style total. Versioned v1 pages are kept
 historical and are not rewritten when the extension catalogue grows.
 
-Use `rg` to find remaining old totals, but do not change numeric IDs in parity JSON files:
+The inventory check covers the current README, AGENT, docs, package, plugin, and playground copy.
+Use `rg` for a manual review of any new copy, but do not change numeric IDs in parity JSON files:
 
 ```sh
 rg -n --glob '!*.svg' '(1,246|1,247|7,476|7,482|7,488)' README.md AGENT.md packages apps

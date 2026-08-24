@@ -1,9 +1,9 @@
-import solid from 'unplugin-solid/rolldown';
-import type { UserConfig } from 'tsdown/config';
-import { defineConfig } from 'tsdown/config';
+import type { UserConfig } from 'tsdown/config'
+import { defineConfig } from 'tsdown/config'
+import solid from 'unplugin-solid/rolldown'
 
-const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline'];
-const isDevelopmentBuild = process.env.SOLAR_ICONS_DEV_BUILD === '1';
+const styles = ['Bold', 'BoldDuotone', 'Broken', 'LineDuotone', 'Linear', 'Outline']
+const isDevelopmentBuild = process.env.SOLAR_ICONS_DEV_BUILD === '1'
 
 const STYLE_KEBAB: Record<string, string> = {
     Bold: 'bold',
@@ -12,7 +12,7 @@ const STYLE_KEBAB: Record<string, string> = {
     Linear: 'linear',
     LineDuotone: 'line-duotone',
     Outline: 'outline',
-};
+}
 function genEntries(styles: string[]) {
     const entries: Record<string, string> = {
         index: './src/index.ts',
@@ -20,14 +20,14 @@ function genEntries(styles: string[]) {
         'lib/types': './src/lib/types.ts',
         'icons/styled': './src/icons/styled.ts',
         'icons/dynamic/index': './src/icons/dynamic/index.ts',
-    };
-
-    for (const style of styles) {
-        const kebab = STYLE_KEBAB[style];
-        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`;
     }
 
-    return entries;
+    for (const style of styles) {
+        const kebab = STYLE_KEBAB[style]
+        entries[`icons/style/${kebab}`] = `./src/icons/style/${kebab}.ts`
+    }
+
+    return entries
 }
 
 const config: UserConfig = defineConfig({
@@ -46,47 +46,47 @@ const config: UserConfig = defineConfig({
 
     exports: {
         customExports() {
-            const pkg: Record<string, any> = {};
+            const pkg: Record<string, any> = {}
 
-            pkg['./package.json'] = './package.json';
+            pkg['./package.json'] = './package.json'
             pkg['.'] = {
                 types: './dist/index.d.mts',
                 import: './dist/index.mjs',
-            };
+            }
             pkg['./lib'] = {
                 types: './dist/lib/index.d.mts',
                 import: './dist/lib/index.mjs',
-            };
+            }
 
             pkg['./lib/*'] = {
                 types: './dist/lib/*.d.mts',
                 import: './dist/lib/*.mjs',
-            };
+            }
 
             pkg['./dynamic'] = {
                 types: './dist/icons/dynamic/index.d.mts',
                 import: './dist/icons/dynamic/index.mjs',
-            };
+            }
 
             pkg['./dynamic/*'] = {
                 types: './dist/icons/dynamic/*.d.mts',
                 import: './dist/icons/dynamic/*.mjs',
-            };
+            }
 
             pkg['./*'] = {
                 types: './dist/icons/style/*.d.mts',
                 import: './dist/icons/style/*.mjs',
-            };
+            }
 
             for (const style of styles) {
-                const kebab = STYLE_KEBAB[style];
+                const kebab = STYLE_KEBAB[style]
                 pkg[`./${kebab}/*`] = {
                     types: `./dist/icons/${kebab}/*.d.mts`,
                     import: `./dist/icons/${kebab}/*.mjs`,
-                };
+                }
             }
 
-            return pkg;
+            return pkg
         },
     },
 
@@ -107,12 +107,12 @@ const config: UserConfig = defineConfig({
     target: 'es2020',
 
     onSuccess() {
-        console.info(`✨ @solar-icons/solid build succeeded!`);
+        console.info(`✨ @solar-icons/solid build succeeded!`)
     },
 
     clean: true,
 
     external: ['solid-js', 'solid-js/web', 'solid-js/store'],
-});
+})
 
-export default config;
+export default config

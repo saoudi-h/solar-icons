@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+
 import { validateDescriptions } from './validate-descriptions'
 
 const iconNames = new Set(['add-circle', 'add-square', 'plus', 'close-circle'])

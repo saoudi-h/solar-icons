@@ -1,10 +1,12 @@
 'use client'
-import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 import { CloseCircleIcon } from '@solar-icons/react/bold/close-circle'
 import { AnimatePresence, motion } from 'motion/react'
 import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
+
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+
 import { useSelectedIcon, useSelectedIconName } from '../context'
 
 export interface FloatingDrawerProps {
@@ -89,18 +91,14 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children, onHeightChan
                     exit={{ opacity: 0, y: 50, scale: 0.95 }}
                     transition={{ duration: 0.2, ease: 'easeInOut' }}
                     className={cn(
-                        `
-                          sticky flex min-h-48 w-full
-                          sm:bottom-4 sm:max-h-[calc(40vh)]
-                        `,
+                        `sticky flex min-h-48 w-full sm:bottom-4 sm:max-h-[calc(40vh)]`,
                         'inset-x-0 bottom-0 max-h-[calc(50vh)]'
                     )}>
                     <div className="relative size-full">
                         <div
                             className={`
-                              size-full max-h-[calc(40vh)] overflow-hidden
-                              rounded-xl border border-border bg-default-50/90
-                              shadow-lg backdrop-blur-lg
+                              size-full max-h-[calc(40vh)] overflow-hidden rounded-xl border
+                              border-border bg-default-50/90 shadow-lg backdrop-blur-lg
                               dark:bg-default-100/80
                             `}>
                             {children}
@@ -110,15 +108,12 @@ export const FloatingDrawer: FC<FloatingDrawerProps> = ({ children, onHeightChan
                             variant="ghost"
                             size="icon"
                             className={`
-                              absolute top-0 right-0 translate-x-1/2
-                              -translate-y-1/2 rounded-full p-0
+                              absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full
+                              p-0
                               [&_svg]:size-8
                             `}>
                             <CloseCircleIcon
-                                className={`
-                                  size-full text-muted-foreground
-                                  hover:text-foreground
-                                `}
+                                className={`size-full text-muted-foreground hover:text-foreground`}
                                 isolated
                             />
                         </Button>

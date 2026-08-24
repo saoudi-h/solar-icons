@@ -1,112 +1,812 @@
 {
-  "version": 1,
-  "direction": "lucide-to-solar-gap",
-  "phase": "visual-review-closed",
-  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
-  "sourceTemplate": "lucide-gap-batch-04-non-equivalent.json",
-  "filter": { "coverage": "non-equivalent", "suggestedBatch": 1 },
-  "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
-  "forwardIntegration": { "promotedExistingReferences": 0, "aliasDeferred": [] },
-  "entries": [
-    { "rank": 1, "lucideId": "L0726", "lucide": "flip-vertical-2", "solarCandidates": ["S0415"], "decision": "equivalent", "note": "Solar flip-vertical is the same vertical flip action." },
-    { "rank": 2, "lucideId": "L0734", "lucide": "folder-bookmark", "solarCandidates": ["S0424"], "decision": "equivalent", "note": "Solar folder-favorite-bookmark preserves the folder and bookmark meaning." },
-    { "rank": 3, "lucideId": "L0737", "lucide": "folder-closed", "solarCandidates": ["S0420"], "decision": "equivalent", "note": "Solar folder-2 is the same closed-folder object." },
-    { "rank": 4, "lucideId": "L0744", "lucide": "folder-heart", "solarCandidates": ["S0425"], "decision": "no-match", "note": "Solar folder-favorite-star uses a star modifier, not a heart." },
-    { "rank": 5, "lucideId": "L0750", "lucide": "folder-open", "solarCandidates": ["S0426"], "decision": "equivalent", "note": "Solar folder-open is the same open-folder object." },
-    { "rank": 6, "lucideId": "L0762", "lucide": "folder-x", "solarCandidates": ["S0423"], "decision": "equivalent", "note": "Solar folder-error is the same folder-with-error/remove state." },
-    { "rank": 7, "lucideId": "L0788", "lucide": "ghost", "solarCandidates": ["S0462"], "decision": "equivalent", "note": "Solar ghost is the same ghost character object." },
-    { "rank": 8, "lucideId": "L0790", "lucide": "git-branch", "solarCandidates": ["S0142"], "decision": "no-match", "note": "Solar branching-paths adds a boxed directional-map context rather than a generic Git branch." },
-    { "rank": 9, "lucideId": "L0810", "lucide": "glasses", "solarCandidates": ["S0465"], "decision": "equivalent", "note": "Solar glasses is the same eyewear object." },
-    { "rank": 10, "lucideId": "L0816", "lucide": "goal", "solarCandidates": ["S0468"], "decision": "no-match", "note": "Solar golf is a sport flag, not the generic goal/target symbol." },
-    { "rank": 11, "lucideId": "L0838", "lucide": "hand-heart", "solarCandidates": ["S0477"], "decision": "equivalent", "note": "Solar hand-heart preserves the same hand-and-heart meaning." },
-    { "rank": 12, "lucideId": "L0851", "lucide": "hd", "solarCandidates": ["S0503"], "decision": "equivalent", "note": "Solar high-definition is the same HD label." },
-    { "rank": 13, "lucideId": "L0873", "lucide": "hexagon", "solarCandidates": ["S0099"], "decision": "no-match", "note": "Solar benzene-ring adds a chemical ring context; no plain hexagon is shown." },
-    { "rank": 14, "lucideId": "L0879", "lucide": "hourglass", "solarCandidates": ["S0522"], "decision": "equivalent", "note": "Solar hourglass is the same timekeeping object." },
-    { "rank": 15, "lucideId": "L0920", "lucide": "lamp", "solarCandidates": ["S0552"], "decision": "equivalent", "note": "Solar lamp is the same generic lamp object." },
-    { "rank": 16, "lucideId": "L0928", "lucide": "languages", "solarCandidates": ["S1120"], "decision": "no-match", "note": "Solar translation is a translation/broadcast action, not a generic languages symbol." },
-    { "rank": 17, "lucideId": "L0934", "lucide": "laugh", "solarCandidates": ["S0368"], "decision": "equivalent", "note": "Solar emoji-funny-circle preserves the laughing/funny-face meaning." },
-    { "rank": 18, "lucideId": "L0937", "lucide": "layers", "solarCandidates": ["S0557"], "decision": "equivalent", "note": "Solar layers is the same stacked-layers object." },
-    { "rank": 19, "lucideId": "L0993", "lucide": "list-x", "solarCandidates": ["S0583"], "decision": "equivalent", "note": "Solar list-cross is the same list-with-X action." },
-    { "rank": 20, "lucideId": "L1020", "lucide": "mailbox", "solarCandidates": ["S0615"], "decision": "equivalent", "note": "Solar mailbox is the same mailbox object." },
-    { "rank": 21, "lucideId": "L1032", "lucide": "map-pin-plus", "solarCandidates": ["S0623"], "decision": "equivalent", "note": "Solar map-point-add is the same add-location action." },
-    { "rank": 22, "lucideId": "L1034", "lucide": "map-pin-search", "solarCandidates": ["S0629"], "decision": "equivalent", "note": "Solar map-point-search is the same location-search action." },
-    { "rank": 23, "lucideId": "L1048", "lucide": "memory-stick", "solarCandidates": ["S0411"], "decision": "no-match", "note": "Flash-drive and SD-card evidence do not establish a memory-stick form factor." },
-    { "rank": 24, "lucideId": "L1079", "lucide": "message-square-x", "solarCandidates": ["S0706"], "decision": "no-match", "note": "Solar notification-remove is not a message bubble with an X." },
-    { "rank": 25, "lucideId": "L1210", "lucide": "party-popper", "solarCandidates": ["S0292"], "decision": "no-match", "note": "Solar confetti is decorative fallout, not the party-popper object." },
-    { "rank": 26, "lucideId": "L1231", "lucide": "phone-incoming", "solarCandidates": ["S0534"], "decision": "equivalent", "note": "Solar incoming-call is the same incoming-phone action." },
-    { "rank": 27, "lucideId": "L1232", "lucide": "phone-missed", "solarCandidates": ["S0163"], "decision": "no-match", "note": "Solar call-dropped is a dropped call, not a missed-call X state." },
-    { "rank": 28, "lucideId": "L1256", "lucide": "plug", "solarCandidates": ["S0774"], "decision": "no-match", "note": "Solar plug-circle adds a circular container absent from the plain plug target." },
-    { "rank": 29, "lucideId": "L1276", "lucide": "proportions", "solarCandidates": ["S0115"], "decision": "no-match", "note": "Solar body-shape is a body/fitness symbol, not a proportions/layout control." },
-    { "rank": 30, "lucideId": "L1287", "lucide": "radio-receiver", "solarCandidates": ["S0800"], "decision": "equivalent", "note": "Solar radio is the same radio-receiver object." },
-    { "rank": 31, "lucideId": "L1321", "lucide": "repeat-1", "solarCandidates": ["S0822"], "decision": "equivalent", "note": "Solar repeat-one is the same repeat-once playback action." },
-    { "rank": 32, "lucideId": "L1372", "lucide": "scan-face", "solarCandidates": ["S0384"], "decision": "equivalent", "note": "Solar face-scan-circle is the same face-scan action." },
-    { "rank": 33, "lucideId": "L1375", "lucide": "scan-qr-code", "solarCandidates": ["S0283"], "decision": "equivalent", "note": "Solar code-scan is the same QR/code scanning action." },
-    { "rank": 34, "lucideId": "L1452", "lucide": "siren", "solarCandidates": ["S0940"], "decision": "equivalent", "note": "Solar siren is the same warning-siren object." },
-    { "rank": 35, "lucideId": "L1462", "lucide": "smartphone-charging", "solarCandidates": ["S1244"], "decision": "no-match", "note": "Solar wireless-charge is a charging method, not a smartphone charging-state icon." },
-    { "rank": 36, "lucideId": "L1486", "lucide": "spray-can", "solarCandidates": ["S0739"], "decision": "no-match", "note": "Solar perfume/cosmetic evidence is not a spray can." },
-    { "rank": 37, "lucideId": "L1524", "lucide": "square-dot", "solarCandidates": ["S0809"], "decision": "no-match", "note": "Solar record-square is a recording control, not a plain square-dot symbol." },
-    { "rank": 38, "lucideId": "L1531", "lucide": "square-minus", "solarCandidates": ["S0668"], "decision": "equivalent", "note": "Solar minus-square is the same square-minus control." },
-    { "rank": 39, "lucideId": "L1532", "lucide": "square-mouse-pointer", "solarCandidates": ["S0318"], "decision": "equivalent", "note": "Solar cursor-square is the same pointer-in-square control." },
-    { "rank": 40, "lucideId": "L1584", "lucide": "sticky-notes", "solarCandidates": ["S0704"], "decision": "no-match", "note": "Solar notes are generic notes/cards and do not establish sticky-note specificity." },
-    { "rank": 41, "lucideId": "L1632", "lucide": "test-tube", "solarCandidates": ["S1086"], "decision": "equivalent", "note": "Solar test-tube is the same laboratory tube object." },
-    { "rank": 42, "lucideId": "L1722", "lucide": "unlink-2", "solarCandidates": ["S1154"], "decision": "equivalent", "note": "Solar unlink is the same unlink action." },
-    { "rank": 43, "lucideId": "L1743", "lucide": "user-round-x", "solarCandidates": ["S1172"], "decision": "equivalent", "note": "Solar user-cross-rounded is the same remove-user state." },
-    { "rank": 44, "lucideId": "L1747", "lucide": "user-x", "solarCandidates": ["S1171"], "decision": "equivalent", "note": "Solar user-cross is the same remove-user state." },
-    { "rank": 45, "lucideId": "L1749", "lucide": "users-round", "solarCandidates": ["S1185"], "decision": "equivalent", "note": "Solar users-group-rounded is the same group-of-users object." },
-    { "rank": 46, "lucideId": "L1773", "lucide": "volume-x", "solarCandidates": ["S1206"], "decision": "equivalent", "note": "Solar volume-cross is the same muted-volume state." },
-    { "rank": 47, "lucideId": "L1777", "lucide": "wallet-minimal", "solarCandidates": ["S1213"], "decision": "equivalent", "note": "Solar wallet-2 is the same generic wallet object." },
-    { "rank": 48, "lucideId": "L1781", "lucide": "warehouse", "solarCandidates": ["S0460"], "decision": "no-match", "note": "Solar garage/gas-station evidence does not preserve a warehouse." },
-    { "rank": 49, "lucideId": "L1782", "lucide": "washing-machine", "solarCandidates": ["S1216"], "decision": "equivalent", "note": "Solar washing-machine is the same appliance object." },
-    { "rank": 50, "lucideId": "L0012", "lucide": "alarm-clock-off", "solarCandidates": ["S0024"], "decision": "equivalent", "note": "Solar alarm-turn-off is the same disabled-alarm action." },
-    { "rank": 51, "lucideId": "L0015", "lucide": "album", "solarCandidates": ["S0025"], "decision": "equivalent", "note": "Solar album is the same album/photo collection object." },
-    { "rank": 52, "lucideId": "L0029", "lucide": "align-justify", "solarCandidates": ["S0819"], "decision": "equivalent", "note": "Solar reorder preserves the aligned-list control meaning." },
-    { "rank": 53, "lucideId": "L0047", "lucide": "angle", "solarCandidates": ["S0876"], "decision": "no-match", "note": "Solar ruler-angular is a measuring tool, not a standalone angle symbol." },
-    { "rank": 54, "lucideId": "L0052", "lucide": "aperture", "solarCandidates": ["S0799"], "decision": "no-match", "note": "Solar radial-blur is a dot pattern, not a camera aperture." },
-    { "rank": 55, "lucideId": "L0072", "lucide": "arrow-down-a-z", "solarCandidates": ["S0980"], "decision": "equivalent", "note": "Solar sort-alphabetically expresses the same A–Z sorting action." },
-    { "rank": 56, "lucideId": "L0100", "lucide": "arrow-up-to-line", "solarCandidates": ["S0982"], "decision": "no-match", "note": "Solar sort-from-bottom-to-top is a sort order, not upload-to-line." },
-    { "rank": 57, "lucideId": "L0115", "lucide": "backpack", "solarCandidates": ["S0062"], "decision": "equivalent", "note": "Solar backpack is the same backpack object." },
-    { "rank": 58, "lucideId": "L0135", "lucide": "balloon", "solarCandidates": ["S0076"], "decision": "equivalent", "note": "Solar balloon is the same balloon object." },
-    { "rank": 59, "lucideId": "L0152", "lucide": "bath", "solarCandidates": ["S0082"], "decision": "equivalent", "note": "Solar bath is the same bathtub object." },
-    { "rank": 60, "lucideId": "L0177", "lucide": "bell-ring", "solarCandidates": ["S0098"], "decision": "equivalent", "note": "Solar bell-ring is the same ringing-bell state." },
-    { "rank": 61, "lucideId": "L0220", "lucide": "book-open-text", "solarCandidates": ["S0700"], "decision": "equivalent", "note": "Solar notebook-2 is the same open text-book object." },
-    { "rank": 62, "lucideId": "L0257", "lucide": "broom", "solarCandidates": ["S0144"], "decision": "equivalent", "note": "Solar broom is the same cleaning tool." },
-    { "rank": 63, "lucideId": "L0268", "lucide": "bus-front", "solarCandidates": ["S0150"], "decision": "equivalent", "note": "Solar bus is the same bus vehicle object." },
-    { "rank": 64, "lucideId": "L0288", "lucide": "calendar-plus", "solarCandidates": ["S0154"], "decision": "equivalent", "note": "Solar calendar-add is the same add-calendar action." },
-    { "rank": 65, "lucideId": "L0304", "lucide": "captions", "solarCandidates": ["S1061"], "decision": "equivalent", "note": "Solar subtitles is an interchangeable timed-text caption control." },
-    { "rank": 66, "lucideId": "L0380", "lucide": "circle-arrow-out-down-left", "solarCandidates": ["S0849"], "decision": "equivalent", "note": "Solar round-arrow-left-down is the same outgoing diagonal action." },
-    { "rank": 67, "lucideId": "L0381", "lucide": "circle-arrow-out-down-right", "solarCandidates": ["S0852"], "decision": "equivalent", "note": "Solar round-arrow-right-down is the same outgoing diagonal action." },
-    { "rank": 68, "lucideId": "L0382", "lucide": "circle-arrow-out-up-left", "solarCandidates": ["S0850"], "decision": "equivalent", "note": "Solar round-arrow-left-up is the same outgoing diagonal action." },
-    { "rank": 69, "lucideId": "L0383", "lucide": "circle-arrow-out-up-right", "solarCandidates": ["S0853"], "decision": "equivalent", "note": "Solar round-arrow-right-up is the same outgoing diagonal action." },
-    { "rank": 70, "lucideId": "L0508", "lucide": "copy", "solarCandidates": ["S0296"], "decision": "equivalent", "note": "Solar copy is the same duplicate/copy action." },
-    { "rank": 71, "lucideId": "L0535", "lucide": "cylinder", "solarCandidates": ["S0842"], "decision": "no-match", "note": "Solar rolling-pin is a kitchen tool, not a generic cylinder." },
-    { "rank": 72, "lucideId": "L0636", "lucide": "file-badge", "solarCandidates": ["S0331"], "decision": "no-match", "note": "Solar diploma-verified is a certificate/diploma, not a generic file badge." },
-    { "rank": 73, "lucideId": "L0655", "lucide": "file-down", "solarCandidates": ["S0395"], "decision": "equivalent", "note": "Solar file-download is the same file-down action." },
-    { "rank": 74, "lucideId": "L0670", "lucide": "file-music", "solarCandidates": ["S0314"], "decision": "no-match", "note": "Solar cup-music is a trophy/cup with music, not a music file." },
-    { "rank": 75, "lucideId": "L0699", "lucide": "file-warning", "solarCandidates": ["S0394"], "decision": "no-match", "note": "Solar file-corrupted expresses corruption, not a warning state." },
-    { "rank": 76, "lucideId": "L0745", "lucide": "folder-input", "solarCandidates": ["S0685"], "decision": "equivalent", "note": "Solar move-to-folder is the same folder-input action." },
-    { "rank": 77, "lucideId": "L0748", "lucide": "folder-lock", "solarCandidates": ["S0428"], "decision": "equivalent", "note": "Solar folder-security preserves the locked-folder meaning." },
-    { "rank": 78, "lucideId": "L0758", "lucide": "folder-symlink", "solarCandidates": ["S0427"], "decision": "equivalent", "note": "Solar folder-path-connect is the same linked-folder concept." },
-    { "rank": 79, "lucideId": "L0779", "lucide": "gallery-vertical", "solarCandidates": ["S0780"], "decision": "equivalent", "note": "Solar posts-carousel-vertical is the same vertical gallery layout." },
-    { "rank": 80, "lucideId": "L0789", "lucide": "gift", "solarCandidates": ["S0464"], "decision": "equivalent", "note": "Solar gift is the same present object." },
-    { "rank": 81, "lucideId": "L0822", "lucide": "grid-2x2-plus", "solarCandidates": ["S1238"], "decision": "no-match", "note": "Solar widget-add adds a settings/widget context beyond a generic 2x2 grid-plus icon." },
-    { "rank": 82, "lucideId": "L0833", "lucide": "hammer", "solarCandidates": ["S0950"], "decision": "equivalent", "note": "Solar sledgehammer is an interchangeable hammer tool symbol." },
-    { "rank": 83, "lucideId": "L0835", "lucide": "hand-coins", "solarCandidates": ["S0478"], "decision": "equivalent", "note": "Solar hand-money preserves the hand-and-coins meaning." },
-    { "rank": 84, "lucideId": "L0890", "lucide": "image-down", "solarCandidates": ["S0446"], "decision": "equivalent", "note": "Solar gallery-download is the same image-download action." },
-    { "rank": 85, "lucideId": "L0891", "lucide": "image-minus", "solarCandidates": ["S0450"], "decision": "equivalent", "note": "Solar gallery-remove is the same image-remove action." },
-    { "rank": 86, "lucideId": "L0894", "lucide": "image-plus", "solarCandidates": ["S0443"], "decision": "equivalent", "note": "Solar gallery-add is the same image-add action." },
-    { "rank": 87, "lucideId": "L0895", "lucide": "image-up", "solarCandidates": ["S0452"], "decision": "equivalent", "note": "Solar gallery-send is the same image-upload action." },
-    { "rank": 88, "lucideId": "L0898", "lucide": "import", "solarCandidates": ["S0526"], "decision": "equivalent", "note": "Solar import is the same import action." },
-    { "rank": 89, "lucideId": "L0921", "lucide": "lamp-ceiling", "solarCandidates": ["S0203"], "decision": "no-match", "note": "Solar chandelier is a different ceiling-light construction." },
-    { "rank": 90, "lucideId": "L0951", "lucide": "leaf", "solarCandidates": ["S0559"], "decision": "equivalent", "note": "Solar leaf is the same leaf/nature object." },
-    { "rank": 91, "lucideId": "L0988", "lucide": "list-sort-descending", "solarCandidates": ["S0979"], "decision": "no-match", "note": "Solar sort is generic and does not preserve descending-direction specificity." },
-    { "rank": 92, "lucideId": "L0995", "lucide": "loader-circle", "solarCandidates": ["S1115"], "decision": "no-match", "note": "Solar traffic is a traffic/loading context, not a generic loader control." },
-    { "rank": 93, "lucideId": "L1028", "lucide": "map-pin-minus", "solarCandidates": ["S0626"], "decision": "equivalent", "note": "Solar map-point-remove is the same remove-location action." },
-    { "rank": 94, "lucideId": "L1037", "lucide": "map-pinned", "solarCandidates": ["S0777"], "decision": "equivalent", "note": "Solar point-on-map is the same pinned-location object." },
-    { "rank": 95, "lucideId": "L1075", "lucide": "message-square-reply", "solarCandidates": ["S0220"], "decision": "equivalent", "note": "Solar chat-square-arrow is the same message-reply action." },
-    { "rank": 96, "lucideId": "L1150", "lucide": "newspaper", "solarCandidates": ["S0388"], "decision": "no-match", "note": "Solar feed is a feed/card layout, not a newspaper object." },
-    { "rank": 97, "lucideId": "L1188", "lucide": "panel-left", "solarCandidates": ["S0932"], "decision": "equivalent", "note": "Solar sidebar is the same left-panel layout control." },
-    { "rank": 98, "lucideId": "L1262", "lucide": "podcast", "solarCandidates": ["S0776"], "decision": "equivalent", "note": "Solar podcast is the same podcast/broadcast object." },
-    { "rank": 99, "lucideId": "L1263", "lucide": "podium", "solarCandidates": ["S0802"], "decision": "equivalent", "note": "Solar ranking is the same winners-podium concept." },
-    { "rank": 100, "lucideId": "L1317", "lucide": "refrigerator", "solarCandidates": ["S0437"], "decision": "equivalent", "note": "Solar fridge is the same refrigerator appliance." }
-  ]
+    "version": 1,
+    "direction": "lucide-to-solar-gap",
+    "phase": "visual-review-closed",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "sourceTemplate": "lucide-gap-batch-04-non-equivalent.json",
+    "filter": { "coverage": "non-equivalent", "suggestedBatch": 1 },
+    "decisionContract": "equivalent means semantically interchangeable; no-match means the closest Solar evidence changes the object, action, state, or specificity.",
+    "forwardIntegration": { "promotedExistingReferences": 0, "aliasDeferred": [] },
+    "entries": [
+        {
+            "rank": 1,
+            "lucideId": "L0726",
+            "lucide": "flip-vertical-2",
+            "solarCandidates": ["S0415"],
+            "decision": "equivalent",
+            "note": "Solar flip-vertical is the same vertical flip action."
+        },
+        {
+            "rank": 2,
+            "lucideId": "L0734",
+            "lucide": "folder-bookmark",
+            "solarCandidates": ["S0424"],
+            "decision": "equivalent",
+            "note": "Solar folder-favorite-bookmark preserves the folder and bookmark meaning."
+        },
+        {
+            "rank": 3,
+            "lucideId": "L0737",
+            "lucide": "folder-closed",
+            "solarCandidates": ["S0420"],
+            "decision": "equivalent",
+            "note": "Solar folder-2 is the same closed-folder object."
+        },
+        {
+            "rank": 4,
+            "lucideId": "L0744",
+            "lucide": "folder-heart",
+            "solarCandidates": ["S0425"],
+            "decision": "no-match",
+            "note": "Solar folder-favorite-star uses a star modifier, not a heart."
+        },
+        {
+            "rank": 5,
+            "lucideId": "L0750",
+            "lucide": "folder-open",
+            "solarCandidates": ["S0426"],
+            "decision": "equivalent",
+            "note": "Solar folder-open is the same open-folder object."
+        },
+        {
+            "rank": 6,
+            "lucideId": "L0762",
+            "lucide": "folder-x",
+            "solarCandidates": ["S0423"],
+            "decision": "equivalent",
+            "note": "Solar folder-error is the same folder-with-error/remove state."
+        },
+        {
+            "rank": 7,
+            "lucideId": "L0788",
+            "lucide": "ghost",
+            "solarCandidates": ["S0462"],
+            "decision": "equivalent",
+            "note": "Solar ghost is the same ghost character object."
+        },
+        {
+            "rank": 8,
+            "lucideId": "L0790",
+            "lucide": "git-branch",
+            "solarCandidates": ["S0142"],
+            "decision": "no-match",
+            "note": "Solar branching-paths adds a boxed directional-map context rather than a generic Git branch."
+        },
+        {
+            "rank": 9,
+            "lucideId": "L0810",
+            "lucide": "glasses",
+            "solarCandidates": ["S0465"],
+            "decision": "equivalent",
+            "note": "Solar glasses is the same eyewear object."
+        },
+        {
+            "rank": 10,
+            "lucideId": "L0816",
+            "lucide": "goal",
+            "solarCandidates": ["S0468"],
+            "decision": "no-match",
+            "note": "Solar golf is a sport flag, not the generic goal/target symbol."
+        },
+        {
+            "rank": 11,
+            "lucideId": "L0838",
+            "lucide": "hand-heart",
+            "solarCandidates": ["S0477"],
+            "decision": "equivalent",
+            "note": "Solar hand-heart preserves the same hand-and-heart meaning."
+        },
+        {
+            "rank": 12,
+            "lucideId": "L0851",
+            "lucide": "hd",
+            "solarCandidates": ["S0503"],
+            "decision": "equivalent",
+            "note": "Solar high-definition is the same HD label."
+        },
+        {
+            "rank": 13,
+            "lucideId": "L0873",
+            "lucide": "hexagon",
+            "solarCandidates": ["S0099"],
+            "decision": "no-match",
+            "note": "Solar benzene-ring adds a chemical ring context; no plain hexagon is shown."
+        },
+        {
+            "rank": 14,
+            "lucideId": "L0879",
+            "lucide": "hourglass",
+            "solarCandidates": ["S0522"],
+            "decision": "equivalent",
+            "note": "Solar hourglass is the same timekeeping object."
+        },
+        {
+            "rank": 15,
+            "lucideId": "L0920",
+            "lucide": "lamp",
+            "solarCandidates": ["S0552"],
+            "decision": "equivalent",
+            "note": "Solar lamp is the same generic lamp object."
+        },
+        {
+            "rank": 16,
+            "lucideId": "L0928",
+            "lucide": "languages",
+            "solarCandidates": ["S1120"],
+            "decision": "no-match",
+            "note": "Solar translation is a translation/broadcast action, not a generic languages symbol."
+        },
+        {
+            "rank": 17,
+            "lucideId": "L0934",
+            "lucide": "laugh",
+            "solarCandidates": ["S0368"],
+            "decision": "equivalent",
+            "note": "Solar emoji-funny-circle preserves the laughing/funny-face meaning."
+        },
+        {
+            "rank": 18,
+            "lucideId": "L0937",
+            "lucide": "layers",
+            "solarCandidates": ["S0557"],
+            "decision": "equivalent",
+            "note": "Solar layers is the same stacked-layers object."
+        },
+        {
+            "rank": 19,
+            "lucideId": "L0993",
+            "lucide": "list-x",
+            "solarCandidates": ["S0583"],
+            "decision": "equivalent",
+            "note": "Solar list-cross is the same list-with-X action."
+        },
+        {
+            "rank": 20,
+            "lucideId": "L1020",
+            "lucide": "mailbox",
+            "solarCandidates": ["S0615"],
+            "decision": "equivalent",
+            "note": "Solar mailbox is the same mailbox object."
+        },
+        {
+            "rank": 21,
+            "lucideId": "L1032",
+            "lucide": "map-pin-plus",
+            "solarCandidates": ["S0623"],
+            "decision": "equivalent",
+            "note": "Solar map-point-add is the same add-location action."
+        },
+        {
+            "rank": 22,
+            "lucideId": "L1034",
+            "lucide": "map-pin-search",
+            "solarCandidates": ["S0629"],
+            "decision": "equivalent",
+            "note": "Solar map-point-search is the same location-search action."
+        },
+        {
+            "rank": 23,
+            "lucideId": "L1048",
+            "lucide": "memory-stick",
+            "solarCandidates": ["S0411"],
+            "decision": "no-match",
+            "note": "Flash-drive and SD-card evidence do not establish a memory-stick form factor."
+        },
+        {
+            "rank": 24,
+            "lucideId": "L1079",
+            "lucide": "message-square-x",
+            "solarCandidates": ["S0706"],
+            "decision": "no-match",
+            "note": "Solar notification-remove is not a message bubble with an X."
+        },
+        {
+            "rank": 25,
+            "lucideId": "L1210",
+            "lucide": "party-popper",
+            "solarCandidates": ["S0292"],
+            "decision": "no-match",
+            "note": "Solar confetti is decorative fallout, not the party-popper object."
+        },
+        {
+            "rank": 26,
+            "lucideId": "L1231",
+            "lucide": "phone-incoming",
+            "solarCandidates": ["S0534"],
+            "decision": "equivalent",
+            "note": "Solar incoming-call is the same incoming-phone action."
+        },
+        {
+            "rank": 27,
+            "lucideId": "L1232",
+            "lucide": "phone-missed",
+            "solarCandidates": ["S0163"],
+            "decision": "no-match",
+            "note": "Solar call-dropped is a dropped call, not a missed-call X state."
+        },
+        {
+            "rank": 28,
+            "lucideId": "L1256",
+            "lucide": "plug",
+            "solarCandidates": ["S0774"],
+            "decision": "no-match",
+            "note": "Solar plug-circle adds a circular container absent from the plain plug target."
+        },
+        {
+            "rank": 29,
+            "lucideId": "L1276",
+            "lucide": "proportions",
+            "solarCandidates": ["S0115"],
+            "decision": "no-match",
+            "note": "Solar body-shape is a body/fitness symbol, not a proportions/layout control."
+        },
+        {
+            "rank": 30,
+            "lucideId": "L1287",
+            "lucide": "radio-receiver",
+            "solarCandidates": ["S0800"],
+            "decision": "equivalent",
+            "note": "Solar radio is the same radio-receiver object."
+        },
+        {
+            "rank": 31,
+            "lucideId": "L1321",
+            "lucide": "repeat-1",
+            "solarCandidates": ["S0822"],
+            "decision": "equivalent",
+            "note": "Solar repeat-one is the same repeat-once playback action."
+        },
+        {
+            "rank": 32,
+            "lucideId": "L1372",
+            "lucide": "scan-face",
+            "solarCandidates": ["S0384"],
+            "decision": "equivalent",
+            "note": "Solar face-scan-circle is the same face-scan action."
+        },
+        {
+            "rank": 33,
+            "lucideId": "L1375",
+            "lucide": "scan-qr-code",
+            "solarCandidates": ["S0283"],
+            "decision": "equivalent",
+            "note": "Solar code-scan is the same QR/code scanning action."
+        },
+        {
+            "rank": 34,
+            "lucideId": "L1452",
+            "lucide": "siren",
+            "solarCandidates": ["S0940"],
+            "decision": "equivalent",
+            "note": "Solar siren is the same warning-siren object."
+        },
+        {
+            "rank": 35,
+            "lucideId": "L1462",
+            "lucide": "smartphone-charging",
+            "solarCandidates": ["S1244"],
+            "decision": "no-match",
+            "note": "Solar wireless-charge is a charging method, not a smartphone charging-state icon."
+        },
+        {
+            "rank": 36,
+            "lucideId": "L1486",
+            "lucide": "spray-can",
+            "solarCandidates": ["S0739"],
+            "decision": "no-match",
+            "note": "Solar perfume/cosmetic evidence is not a spray can."
+        },
+        {
+            "rank": 37,
+            "lucideId": "L1524",
+            "lucide": "square-dot",
+            "solarCandidates": ["S0809"],
+            "decision": "no-match",
+            "note": "Solar record-square is a recording control, not a plain square-dot symbol."
+        },
+        {
+            "rank": 38,
+            "lucideId": "L1531",
+            "lucide": "square-minus",
+            "solarCandidates": ["S0668"],
+            "decision": "equivalent",
+            "note": "Solar minus-square is the same square-minus control."
+        },
+        {
+            "rank": 39,
+            "lucideId": "L1532",
+            "lucide": "square-mouse-pointer",
+            "solarCandidates": ["S0318"],
+            "decision": "equivalent",
+            "note": "Solar cursor-square is the same pointer-in-square control."
+        },
+        {
+            "rank": 40,
+            "lucideId": "L1584",
+            "lucide": "sticky-notes",
+            "solarCandidates": ["S0704"],
+            "decision": "no-match",
+            "note": "Solar notes are generic notes/cards and do not establish sticky-note specificity."
+        },
+        {
+            "rank": 41,
+            "lucideId": "L1632",
+            "lucide": "test-tube",
+            "solarCandidates": ["S1086"],
+            "decision": "equivalent",
+            "note": "Solar test-tube is the same laboratory tube object."
+        },
+        {
+            "rank": 42,
+            "lucideId": "L1722",
+            "lucide": "unlink-2",
+            "solarCandidates": ["S1154"],
+            "decision": "equivalent",
+            "note": "Solar unlink is the same unlink action."
+        },
+        {
+            "rank": 43,
+            "lucideId": "L1743",
+            "lucide": "user-round-x",
+            "solarCandidates": ["S1172"],
+            "decision": "equivalent",
+            "note": "Solar user-cross-rounded is the same remove-user state."
+        },
+        {
+            "rank": 44,
+            "lucideId": "L1747",
+            "lucide": "user-x",
+            "solarCandidates": ["S1171"],
+            "decision": "equivalent",
+            "note": "Solar user-cross is the same remove-user state."
+        },
+        {
+            "rank": 45,
+            "lucideId": "L1749",
+            "lucide": "users-round",
+            "solarCandidates": ["S1185"],
+            "decision": "equivalent",
+            "note": "Solar users-group-rounded is the same group-of-users object."
+        },
+        {
+            "rank": 46,
+            "lucideId": "L1773",
+            "lucide": "volume-x",
+            "solarCandidates": ["S1206"],
+            "decision": "equivalent",
+            "note": "Solar volume-cross is the same muted-volume state."
+        },
+        {
+            "rank": 47,
+            "lucideId": "L1777",
+            "lucide": "wallet-minimal",
+            "solarCandidates": ["S1213"],
+            "decision": "equivalent",
+            "note": "Solar wallet-2 is the same generic wallet object."
+        },
+        {
+            "rank": 48,
+            "lucideId": "L1781",
+            "lucide": "warehouse",
+            "solarCandidates": ["S0460"],
+            "decision": "no-match",
+            "note": "Solar garage/gas-station evidence does not preserve a warehouse."
+        },
+        {
+            "rank": 49,
+            "lucideId": "L1782",
+            "lucide": "washing-machine",
+            "solarCandidates": ["S1216"],
+            "decision": "equivalent",
+            "note": "Solar washing-machine is the same appliance object."
+        },
+        {
+            "rank": 50,
+            "lucideId": "L0012",
+            "lucide": "alarm-clock-off",
+            "solarCandidates": ["S0024"],
+            "decision": "equivalent",
+            "note": "Solar alarm-turn-off is the same disabled-alarm action."
+        },
+        {
+            "rank": 51,
+            "lucideId": "L0015",
+            "lucide": "album",
+            "solarCandidates": ["S0025"],
+            "decision": "equivalent",
+            "note": "Solar album is the same album/photo collection object."
+        },
+        {
+            "rank": 52,
+            "lucideId": "L0029",
+            "lucide": "align-justify",
+            "solarCandidates": ["S0819"],
+            "decision": "equivalent",
+            "note": "Solar reorder preserves the aligned-list control meaning."
+        },
+        {
+            "rank": 53,
+            "lucideId": "L0047",
+            "lucide": "angle",
+            "solarCandidates": ["S0876"],
+            "decision": "no-match",
+            "note": "Solar ruler-angular is a measuring tool, not a standalone angle symbol."
+        },
+        {
+            "rank": 54,
+            "lucideId": "L0052",
+            "lucide": "aperture",
+            "solarCandidates": ["S0799"],
+            "decision": "no-match",
+            "note": "Solar radial-blur is a dot pattern, not a camera aperture."
+        },
+        {
+            "rank": 55,
+            "lucideId": "L0072",
+            "lucide": "arrow-down-a-z",
+            "solarCandidates": ["S0980"],
+            "decision": "equivalent",
+            "note": "Solar sort-alphabetically expresses the same A–Z sorting action."
+        },
+        {
+            "rank": 56,
+            "lucideId": "L0100",
+            "lucide": "arrow-up-to-line",
+            "solarCandidates": ["S0982"],
+            "decision": "no-match",
+            "note": "Solar sort-from-bottom-to-top is a sort order, not upload-to-line."
+        },
+        {
+            "rank": 57,
+            "lucideId": "L0115",
+            "lucide": "backpack",
+            "solarCandidates": ["S0062"],
+            "decision": "equivalent",
+            "note": "Solar backpack is the same backpack object."
+        },
+        {
+            "rank": 58,
+            "lucideId": "L0135",
+            "lucide": "balloon",
+            "solarCandidates": ["S0076"],
+            "decision": "equivalent",
+            "note": "Solar balloon is the same balloon object."
+        },
+        {
+            "rank": 59,
+            "lucideId": "L0152",
+            "lucide": "bath",
+            "solarCandidates": ["S0082"],
+            "decision": "equivalent",
+            "note": "Solar bath is the same bathtub object."
+        },
+        {
+            "rank": 60,
+            "lucideId": "L0177",
+            "lucide": "bell-ring",
+            "solarCandidates": ["S0098"],
+            "decision": "equivalent",
+            "note": "Solar bell-ring is the same ringing-bell state."
+        },
+        {
+            "rank": 61,
+            "lucideId": "L0220",
+            "lucide": "book-open-text",
+            "solarCandidates": ["S0700"],
+            "decision": "equivalent",
+            "note": "Solar notebook-2 is the same open text-book object."
+        },
+        {
+            "rank": 62,
+            "lucideId": "L0257",
+            "lucide": "broom",
+            "solarCandidates": ["S0144"],
+            "decision": "equivalent",
+            "note": "Solar broom is the same cleaning tool."
+        },
+        {
+            "rank": 63,
+            "lucideId": "L0268",
+            "lucide": "bus-front",
+            "solarCandidates": ["S0150"],
+            "decision": "equivalent",
+            "note": "Solar bus is the same bus vehicle object."
+        },
+        {
+            "rank": 64,
+            "lucideId": "L0288",
+            "lucide": "calendar-plus",
+            "solarCandidates": ["S0154"],
+            "decision": "equivalent",
+            "note": "Solar calendar-add is the same add-calendar action."
+        },
+        {
+            "rank": 65,
+            "lucideId": "L0304",
+            "lucide": "captions",
+            "solarCandidates": ["S1061"],
+            "decision": "equivalent",
+            "note": "Solar subtitles is an interchangeable timed-text caption control."
+        },
+        {
+            "rank": 66,
+            "lucideId": "L0380",
+            "lucide": "circle-arrow-out-down-left",
+            "solarCandidates": ["S0849"],
+            "decision": "equivalent",
+            "note": "Solar round-arrow-left-down is the same outgoing diagonal action."
+        },
+        {
+            "rank": 67,
+            "lucideId": "L0381",
+            "lucide": "circle-arrow-out-down-right",
+            "solarCandidates": ["S0852"],
+            "decision": "equivalent",
+            "note": "Solar round-arrow-right-down is the same outgoing diagonal action."
+        },
+        {
+            "rank": 68,
+            "lucideId": "L0382",
+            "lucide": "circle-arrow-out-up-left",
+            "solarCandidates": ["S0850"],
+            "decision": "equivalent",
+            "note": "Solar round-arrow-left-up is the same outgoing diagonal action."
+        },
+        {
+            "rank": 69,
+            "lucideId": "L0383",
+            "lucide": "circle-arrow-out-up-right",
+            "solarCandidates": ["S0853"],
+            "decision": "equivalent",
+            "note": "Solar round-arrow-right-up is the same outgoing diagonal action."
+        },
+        {
+            "rank": 70,
+            "lucideId": "L0508",
+            "lucide": "copy",
+            "solarCandidates": ["S0296"],
+            "decision": "equivalent",
+            "note": "Solar copy is the same duplicate/copy action."
+        },
+        {
+            "rank": 71,
+            "lucideId": "L0535",
+            "lucide": "cylinder",
+            "solarCandidates": ["S0842"],
+            "decision": "no-match",
+            "note": "Solar rolling-pin is a kitchen tool, not a generic cylinder."
+        },
+        {
+            "rank": 72,
+            "lucideId": "L0636",
+            "lucide": "file-badge",
+            "solarCandidates": ["S0331"],
+            "decision": "no-match",
+            "note": "Solar diploma-verified is a certificate/diploma, not a generic file badge."
+        },
+        {
+            "rank": 73,
+            "lucideId": "L0655",
+            "lucide": "file-down",
+            "solarCandidates": ["S0395"],
+            "decision": "equivalent",
+            "note": "Solar file-download is the same file-down action."
+        },
+        {
+            "rank": 74,
+            "lucideId": "L0670",
+            "lucide": "file-music",
+            "solarCandidates": ["S0314"],
+            "decision": "no-match",
+            "note": "Solar cup-music is a trophy/cup with music, not a music file."
+        },
+        {
+            "rank": 75,
+            "lucideId": "L0699",
+            "lucide": "file-warning",
+            "solarCandidates": ["S0394"],
+            "decision": "no-match",
+            "note": "Solar file-corrupted expresses corruption, not a warning state."
+        },
+        {
+            "rank": 76,
+            "lucideId": "L0745",
+            "lucide": "folder-input",
+            "solarCandidates": ["S0685"],
+            "decision": "equivalent",
+            "note": "Solar move-to-folder is the same folder-input action."
+        },
+        {
+            "rank": 77,
+            "lucideId": "L0748",
+            "lucide": "folder-lock",
+            "solarCandidates": ["S0428"],
+            "decision": "equivalent",
+            "note": "Solar folder-security preserves the locked-folder meaning."
+        },
+        {
+            "rank": 78,
+            "lucideId": "L0758",
+            "lucide": "folder-symlink",
+            "solarCandidates": ["S0427"],
+            "decision": "equivalent",
+            "note": "Solar folder-path-connect is the same linked-folder concept."
+        },
+        {
+            "rank": 79,
+            "lucideId": "L0779",
+            "lucide": "gallery-vertical",
+            "solarCandidates": ["S0780"],
+            "decision": "equivalent",
+            "note": "Solar posts-carousel-vertical is the same vertical gallery layout."
+        },
+        {
+            "rank": 80,
+            "lucideId": "L0789",
+            "lucide": "gift",
+            "solarCandidates": ["S0464"],
+            "decision": "equivalent",
+            "note": "Solar gift is the same present object."
+        },
+        {
+            "rank": 81,
+            "lucideId": "L0822",
+            "lucide": "grid-2x2-plus",
+            "solarCandidates": ["S1238"],
+            "decision": "no-match",
+            "note": "Solar widget-add adds a settings/widget context beyond a generic 2x2 grid-plus icon."
+        },
+        {
+            "rank": 82,
+            "lucideId": "L0833",
+            "lucide": "hammer",
+            "solarCandidates": ["S0950"],
+            "decision": "equivalent",
+            "note": "Solar sledgehammer is an interchangeable hammer tool symbol."
+        },
+        {
+            "rank": 83,
+            "lucideId": "L0835",
+            "lucide": "hand-coins",
+            "solarCandidates": ["S0478"],
+            "decision": "equivalent",
+            "note": "Solar hand-money preserves the hand-and-coins meaning."
+        },
+        {
+            "rank": 84,
+            "lucideId": "L0890",
+            "lucide": "image-down",
+            "solarCandidates": ["S0446"],
+            "decision": "equivalent",
+            "note": "Solar gallery-download is the same image-download action."
+        },
+        {
+            "rank": 85,
+            "lucideId": "L0891",
+            "lucide": "image-minus",
+            "solarCandidates": ["S0450"],
+            "decision": "equivalent",
+            "note": "Solar gallery-remove is the same image-remove action."
+        },
+        {
+            "rank": 86,
+            "lucideId": "L0894",
+            "lucide": "image-plus",
+            "solarCandidates": ["S0443"],
+            "decision": "equivalent",
+            "note": "Solar gallery-add is the same image-add action."
+        },
+        {
+            "rank": 87,
+            "lucideId": "L0895",
+            "lucide": "image-up",
+            "solarCandidates": ["S0452"],
+            "decision": "equivalent",
+            "note": "Solar gallery-send is the same image-upload action."
+        },
+        {
+            "rank": 88,
+            "lucideId": "L0898",
+            "lucide": "import",
+            "solarCandidates": ["S0526"],
+            "decision": "equivalent",
+            "note": "Solar import is the same import action."
+        },
+        {
+            "rank": 89,
+            "lucideId": "L0921",
+            "lucide": "lamp-ceiling",
+            "solarCandidates": ["S0203"],
+            "decision": "no-match",
+            "note": "Solar chandelier is a different ceiling-light construction."
+        },
+        {
+            "rank": 90,
+            "lucideId": "L0951",
+            "lucide": "leaf",
+            "solarCandidates": ["S0559"],
+            "decision": "equivalent",
+            "note": "Solar leaf is the same leaf/nature object."
+        },
+        {
+            "rank": 91,
+            "lucideId": "L0988",
+            "lucide": "list-sort-descending",
+            "solarCandidates": ["S0979"],
+            "decision": "no-match",
+            "note": "Solar sort is generic and does not preserve descending-direction specificity."
+        },
+        {
+            "rank": 92,
+            "lucideId": "L0995",
+            "lucide": "loader-circle",
+            "solarCandidates": ["S1115"],
+            "decision": "no-match",
+            "note": "Solar traffic is a traffic/loading context, not a generic loader control."
+        },
+        {
+            "rank": 93,
+            "lucideId": "L1028",
+            "lucide": "map-pin-minus",
+            "solarCandidates": ["S0626"],
+            "decision": "equivalent",
+            "note": "Solar map-point-remove is the same remove-location action."
+        },
+        {
+            "rank": 94,
+            "lucideId": "L1037",
+            "lucide": "map-pinned",
+            "solarCandidates": ["S0777"],
+            "decision": "equivalent",
+            "note": "Solar point-on-map is the same pinned-location object."
+        },
+        {
+            "rank": 95,
+            "lucideId": "L1075",
+            "lucide": "message-square-reply",
+            "solarCandidates": ["S0220"],
+            "decision": "equivalent",
+            "note": "Solar chat-square-arrow is the same message-reply action."
+        },
+        {
+            "rank": 96,
+            "lucideId": "L1150",
+            "lucide": "newspaper",
+            "solarCandidates": ["S0388"],
+            "decision": "no-match",
+            "note": "Solar feed is a feed/card layout, not a newspaper object."
+        },
+        {
+            "rank": 97,
+            "lucideId": "L1188",
+            "lucide": "panel-left",
+            "solarCandidates": ["S0932"],
+            "decision": "equivalent",
+            "note": "Solar sidebar is the same left-panel layout control."
+        },
+        {
+            "rank": 98,
+            "lucideId": "L1262",
+            "lucide": "podcast",
+            "solarCandidates": ["S0776"],
+            "decision": "equivalent",
+            "note": "Solar podcast is the same podcast/broadcast object."
+        },
+        {
+            "rank": 99,
+            "lucideId": "L1263",
+            "lucide": "podium",
+            "solarCandidates": ["S0802"],
+            "decision": "equivalent",
+            "note": "Solar ranking is the same winners-podium concept."
+        },
+        {
+            "rank": 100,
+            "lucideId": "L1317",
+            "lucide": "refrigerator",
+            "solarCandidates": ["S0437"],
+            "decision": "equivalent",
+            "note": "Solar fridge is the same refrigerator appliance."
+        }
+    ]
 }
