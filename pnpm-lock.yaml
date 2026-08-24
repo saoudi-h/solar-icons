@@ -4,7 +4,7 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-packageExtensionsChecksum: sha256-hZfe6MFvmbYBzbmnBE1+CCJqVKZW8FPwPxQ1s2DhTGI=
+packageExtensionsChecksum: sha256-74gbLt4swYH0B1FGUkdKjuBzaFxd9CCcXXYY78ecTCg=
 
 importers:
 
@@ -14846,6 +14846,7 @@ snapshots:
       oxc-parser: 0.121.0(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)
       tinyglobby: 0.2.17
       ts-morph: 21.0.1
+      typescript: 6.0.3
     optionalDependencies:
       '@angular-devkit/build-angular': 22.1.3(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(@angular/compiler@22.1.0)(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2))(@angular/platform-browser@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2)))(@types/node@26.1.2)(@vitejs/devtools@0.4.12)(chokidar@5.0.0)(jiti@2.7.0)(rollup@4.62.4)(tailwindcss@4.3.3)(tsx@4.23.9)(typescript@6.0.3)(vitest@4.1.10)(yaml@2.9.0)
       '@angular/build': 22.1.3(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(@angular/compiler@22.1.0)(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2))(@angular/platform-browser@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)(zone.js@0.16.2)))(@types/node@26.1.2)(@vitejs/devtools@0.4.12)(chokidar@5.0.0)(istanbul-lib-instrument@6.0.3)(jiti@2.7.0)(less@4.6.7)(postcss@8.5.25)(rollup@4.62.4)(tailwindcss@4.3.3)(terser@5.49.2)(tslib@2.8.1)(tsx@4.23.9)(typescript@6.0.3)(vitest@4.1.10)(yaml@2.9.0)
