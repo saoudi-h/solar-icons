@@ -1,6 +1,15 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
+import path from 'node:path'
 
 import { readCoreMetadata } from './catalog-source'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' }
+    )
 
 const metadata = readCoreMetadata<{ categories: Record<string, { icons: string[] }> }>(
     'metadata.json'
@@ -53,15 +62,6 @@ import { ${sortedImports.map(n => `${n}Icon`).join(', ')} } from '@solar-icons/r
 import type { ComponentType } from 'react'
 import type { IconProps } from '@solar-icons/react/lib/types'
 import type { Weight } from '@solar-icons/core'
-
-import { execFileSync } from 'node:child_process'
-
-const oxfmtFormat = (filepath: string, code: string): string =>
-    execFileSync(
-        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
-        ['--stdin-filepath', filepath],
-        { input: code, encoding: 'utf8' },
-    )
 
 export const styles = ['Broken', 'Outline', 'Linear', 'Bold', 'LineDuotone', 'BoldDuotone'] as const
 export type Style = (typeof styles)[number]

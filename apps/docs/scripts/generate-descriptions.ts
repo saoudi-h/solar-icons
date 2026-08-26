@@ -1,6 +1,15 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
+import path from 'node:path'
 
 import { readCoreMetadata } from './catalog-source'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' }
+    )
 
 const outputDataFilePath = './generated/descriptions.ts'
 
@@ -42,15 +51,6 @@ import type { ComponentType } from 'react'
 import type { Weight } from '@solar-icons/core'
 import type { IconProps } from '@solar-icons/react/lib/types'
 import type { Category } from './utils'
-
-import { execFileSync } from 'node:child_process'
-
-const oxfmtFormat = (filepath: string, code: string): string =>
-    execFileSync(
-        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
-        ['--stdin-filepath', filepath],
-        { input: code, encoding: 'utf8' },
-    )
 
 export interface IconData {
     name: string

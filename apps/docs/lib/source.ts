@@ -1,5 +1,6 @@
 import { loader } from 'fumadocs-core/source'
-import { docs } from 'fumadocs-mdx:collections/server'
+import { toFumadocsSource } from 'fumadocs-mdx/runtime/server'
+import { blog, docs } from 'fumadocs-mdx:collections/server'
 
 import type { IconifyFrameworkIcon } from './resolveIconUtils'
 import { iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
@@ -18,4 +19,9 @@ export const source = loader({
 
         return renderSolarIcon('AltArrowRight', { className: 'size-8', weight: 'BoldDuotone' })
     },
+})
+
+export const blogSource = loader({
+    baseUrl: '/blog',
+    source: toFumadocsSource(blog, []),
 })
