@@ -25,7 +25,7 @@ export async function loadCover(source?: string) {
         if (source && /^https?:\/\//i.test(source)) {
             const response = await fetch(source)
             if (!response.ok) throw new Error('fetch failed')
-            const type = (response.headers.get('content-type') ?? '').split(';')[0]
+            const type = (response.headers.get('content-type') ?? '').split(';')[0] ?? ''
             if (!['image/png', 'image/jpeg'].includes(type)) {
                 throw new Error('unsupported type')
             }
