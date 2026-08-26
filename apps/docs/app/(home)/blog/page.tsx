@@ -99,10 +99,13 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                             className={`
                               rounded-full px-3 py-1.5 text-sm font-medium transition-colors
                               ${
-                                activeTag === postTag.toLowerCase()
-                                    ? 'bg-foreground text-background'
-                                    : 'text-muted-foreground hover:bg-accent hover:text-foreground'
-                            }`}>
+                                  activeTag === postTag.toLowerCase()
+                                      ? 'bg-foreground text-background'
+                                      : `
+                                        text-muted-foreground
+                                        hover:bg-accent hover:text-foreground
+                                      `
+                              }`}>
                             {postTag}
                         </Link>
                     ))}
@@ -128,10 +131,11 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                 href={featuredPost.url}
                                 className="group grid gap-6 sm:grid-cols-2 sm:gap-10">
                                 <div className="flex flex-col py-1">
-                                    <div className="
-                                      flex flex-wrap items-center gap-3 text-sm
-                                      text-muted-foreground
-                                    ">
+                                    <div
+                                        className="
+                                          flex flex-wrap items-center gap-3 text-sm
+                                          text-muted-foreground
+                                        ">
                                         <time
                                             dateTime={new Date(
                                                 featuredPost.data.date as Date
@@ -139,22 +143,30 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                             {formatDate(featuredPost.data.date as Date)}
                                         </time>
                                         {isDraft(featuredPost) && (
-                                            <span className="
-                                              rounded-full bg-warning/15 px-2.5 py-1 font-medium
-                                              text-warning
-                                            ">
+                                            <span
+                                                className="
+                                                  rounded-full bg-warning/15 px-2.5 py-1 font-medium
+                                                  text-warning
+                                                ">
                                                 Draft
                                             </span>
                                         )}
                                     </div>
 
-                                    <h2 className="mt-3 font-heading text-2xl leading-tight font-bold transition-colors group-hover:text-primary md:text-3xl">
+                                    <h2
+                                        className="
+                                          mt-3 font-heading text-2xl/tight font-bold
+                                          transition-colors
+                                          group-hover:text-primary
+                                          md:text-3xl
+                                        ">
                                         {featuredPost.data.title}
                                     </h2>
-                                    <p className="
-                                      mt-3 line-clamp-3 text-sm/relaxed text-muted-foreground
-                                      sm:text-base/relaxed
-                                    ">
+                                    <p
+                                        className="
+                                          mt-3 line-clamp-3 text-sm/relaxed text-muted-foreground
+                                          sm:text-base/relaxed
+                                        ">
                                         {featuredPost.data.description}
                                     </p>
 
@@ -166,10 +178,11 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                         ))}
                                     </div>
 
-                                    <span className="
-                                      mt-5 inline-flex items-center gap-2 text-sm font-semibold
-                                      text-primary
-                                    ">
+                                    <span
+                                        className="
+                                          mt-5 inline-flex items-center gap-2 text-sm font-semibold
+                                          text-primary
+                                        ">
                                         Read article
                                         <ArrowRightIcon
                                             size={16}
@@ -188,7 +201,7 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                     priority
                                     className="
                                       order-first aspect-video rounded-3xl border border-border
-                                      sm:order-none sm:aspect-auto sm:h-full
+                                      sm:order-0 sm:aspect-auto sm:h-full
                                     "
                                 />
                             </Link>
@@ -210,10 +223,11 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                                 "
                                             />
 
-                                            <div className="
-                                              mt-4 flex flex-wrap items-center gap-3 text-sm
-                                              text-muted-foreground
-                                            ">
+                                            <div
+                                                className="
+                                                  mt-4 flex flex-wrap items-center gap-3 text-sm
+                                                  text-muted-foreground
+                                                ">
                                                 <time
                                                     dateTime={new Date(
                                                         post.data.date as Date
@@ -221,22 +235,29 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
                                                     {formatDate(post.data.date as Date)}
                                                 </time>
                                                 {isDraft(post) && (
-                                                    <span className="
-                                                      rounded-full bg-warning/15 px-2.5 py-1
-                                                      font-medium text-warning
-                                                    ">
+                                                    <span
+                                                        className="
+                                                          rounded-full bg-warning/15 px-2.5 py-1
+                                                          font-medium text-warning
+                                                        ">
                                                         Draft
                                                     </span>
                                                 )}
                                             </div>
 
-                                            <h3 className="mt-2 font-heading text-xl leading-snug font-bold transition-colors group-hover:text-primary">
+                                            <h3
+                                                className="
+                                                  mt-2 font-heading text-xl/snug font-bold
+                                                  transition-colors
+                                                  group-hover:text-primary
+                                                ">
                                                 {post.data.title}
                                             </h3>
-                                            <p className="
-                                              mt-2 line-clamp-2 text-sm/relaxed
-                                              text-muted-foreground
-                                            ">
+                                            <p
+                                                className="
+                                                  mt-2 line-clamp-2 text-sm/relaxed
+                                                  text-muted-foreground
+                                                ">
                                                 {post.data.description}
                                             </p>
                                         </Link>

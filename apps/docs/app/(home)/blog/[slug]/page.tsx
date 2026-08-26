@@ -82,12 +82,13 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
             </Link>
 
             {isDraft(page) && (
-                <div className="
-                  mt-6 rounded-2xl border border-warning/35 bg-warning/10 px-4 py-3 text-sm
-                ">
+                <div
+                    className="
+                      mt-6 rounded-2xl border border-warning/35 bg-warning/10 px-4 py-3 text-sm
+                    ">
                     Draft. This article is only visible in development. Set{' '}
-                    <code className="rounded-sm bg-warning/15 px-1 py-0.5">status: published</code> to
-                    publish it.
+                    <code className="rounded-sm bg-warning/15 px-1 py-0.5">status: published</code>{' '}
+                    to publish it.
                 </div>
             )}
 
@@ -97,19 +98,22 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
                 ))}
             </div>
 
-            <h1 className="mt-4 font-heading text-4xl/tight  font-bold md:text-5xl">
+            <h1 className="mt-4 font-heading text-4xl/tight font-bold md:text-5xl">
                 {page.data.title}
             </h1>
             <p className="mt-4 text-base/relaxed text-muted-foreground">{page.data.description}</p>
 
-            <div className="
-              mt-8 flex flex-wrap items-center gap-3 rounded-2xl border border-border bg-card/60 p-1
-            ">
+            <div
+                className="
+                  mt-8 flex flex-wrap items-center gap-3 rounded-2xl border border-border bg-card/60
+                  p-1
+                ">
                 <div className="flex min-w-0 flex-1 items-center gap-3 px-3 py-2">
-                    <div className="
-                      flex size-9 shrink-0 items-center justify-center rounded-full bg-foreground
-                      text-xs font-bold text-background
-                    ">
+                    <div
+                        className="
+                          flex size-9 shrink-0 items-center justify-center rounded-full
+                          bg-foreground text-xs font-bold text-background
+                        ">
                         {(page.data.author as string).slice(0, 2).toUpperCase()}
                     </div>
                     <div className="min-w-0">
@@ -168,15 +172,17 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
                                 <div className="text-xs text-muted-foreground">
                                     {formatDate(other.data.date as Date)}
                                 </div>
-                                <h3 className="
-                                  mt-3 font-heading text-lg font-bold
-                                  group-hover:text-primary
-                                ">
+                                <h3
+                                    className="
+                                      mt-3 font-heading text-lg font-bold
+                                      group-hover:text-primary
+                                    ">
                                     {other.data.title}
                                 </h3>
-                                <span className="
-                                  mt-4 inline-flex items-center gap-2 text-sm font-medium
-                                ">
+                                <span
+                                    className="
+                                      mt-4 inline-flex items-center gap-2 text-sm font-medium
+                                    ">
                                     Read article
                                     <ArrowRightIcon size={16} weight="Linear" />
                                 </span>

@@ -162,6 +162,7 @@ export function OgTemplate({
                         border: '2px solid #12131A',
                         backgroundColor: '#ffffff',
                     }}>
+                    {/* oxlint-disable-next-line nextjs/no-img-element -- satori ImageResponse requires <img> */}
                     <img src={cover} width={440} height={430} style={{ objectFit: 'cover' }} />
                 </div>
             </div>
