@@ -1,0 +1,170 @@
+---
+title: How to Build a Consistent Icon System in React with Solar Icons
+description: Use style-specific imports, shared defaults, and accessible SVG labels to keep icons predictable across a React interface.
+author: Hakim Saoudi
+date: 2026-08-25
+tags:
+    - React
+    - SVG
+    - Design systems
+    - Solar Icons
+featured: true
+status: published
+---
+
+An icon system starts to drift when each component makes its own decisions. One button renders a 16px icon, another uses 20px. A third picks a different style because the import was convenient. Colors come from a mix of CSS, hardcoded props, and inherited text styles.
+
+Solar Icons gives React applications a small set of boundaries for those decisions: choose the visual style in the import path, set shared defaults with `SolarProvider`, and override an individual icon only when the component needs a different value.
+
+This article walks through that setup with the current `@solar-icons/react` API.
+
+## Install the React package
+
+```bash
+pnpm add @solar-icons/react
+```
+
+The package includes 1,268 distinct icons in six styles. Each style has its own import path, so the import tells you which visual treatment the component uses.
+
+## Choose the style in the import path
+
+Start with a style-specific import:
+
+```tsx
+import { HeartIcon } from '@solar-icons/react/linear'
+
+export function FavoriteButton() {
+    return <HeartIcon size={24} />
+}
+```
+
+The same icon name exists in the other style paths:
+
+```tsx
+import { HeartIcon } from '@solar-icons/react/bold'
+import { HeartIcon as DuotoneHeartIcon } from '@solar-icons/react/bold-duotone'
+```
+
+This import convention keeps style selection visible at the call site. It also lets the package expose tree-shakeable, style-specific entry points.
+
+When you want to import one icon through a narrower module path, use the icon name in kebab case:
+
+```tsx
+import { HeartIcon } from '@solar-icons/react/linear/heart'
+```
+
+The component keeps the `Icon` suffix in both forms. The style lives in the path, not in the component name.
+
+## Set application-wide defaults once
+
+Once the application has chosen its default visual language, set the common values at the boundary of the icon system:
+
+```tsx
+import { SolarProvider } from '@solar-icons/react'
+import { AppRoutes } from './app-routes'
+
+export function App() {
+    return (
+        <SolarProvider color="currentColor" size={24} strokeWidth={1.5}>
+            <AppRoutes />
+        </SolarProvider>
+    )
+}
+```
+
+`SolarProvider` writes CSS custom properties to a wrapper with `display: contents`. Icons below it read those values through the normal CSS cascade. The provider controls color, size, stroke width, and the secondary color and opacity used by duotone styles.
+
+The provider sets defaults. An explicit prop on an icon takes priority:
+
+```tsx
+<SolarProvider color="#64748b" size={24}>
+    <HeartIcon />
+    <HeartIcon color="#e11d48" size={32} />
+</SolarProvider>
+```
+
+The first icon reads the provider values. The second icon uses its own color and size without changing the defaults for the rest of the tree.
+
+## Pick a stroke strategy that matches the style
+
+Solar Icons exposes `strokeWidth` for the styles that use configurable strokes:
+
+| Styles                            | Stroke width                           | Duotone controls                                                   |
+| --------------------------------- | -------------------------------------- | ------------------------------------------------------------------ |
+| `Linear`, `Broken`, `LineDuotone` | `strokeWidth`, with a default of `1.5` | `LineDuotone` also accepts `secondaryColor` and `secondaryOpacity` |
+| `Bold`, `Outline`, `BoldDuotone`  | Use the style's own geometry           | `BoldDuotone` accepts `secondaryColor` and `secondaryOpacity`      |
+
+That distinction matters when a design system changes density. A thicker linear icon can use a different stroke width, while switching from `Linear` to `Bold` changes the asset's geometry instead of applying the same stroke setting.
+
+```tsx
+import { SettingsIcon } from '@solar-icons/react/linear'
+import { HeartIcon } from '@solar-icons/react/bold-duotone'
+
+export function IconExamples() {
+    return (
+        <div>
+            <SettingsIcon size={24} strokeWidth={2} />
+            <HeartIcon size={32} color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} />
+        </div>
+    )
+}
+```
+
+Use a provider when the value belongs to the whole interface. Use an icon prop when the value belongs to one component. That split keeps exceptions easy to find during a design review.
+
+## Make CSS inheritance work for the component
+
+Solar icons default to `currentColor` when no color prop or provider value exists. That makes them fit naturally inside text, links, and controls that already define a color:
+
+```tsx
+import { ArrowLeftIcon } from '@solar-icons/react/linear'
+
+export function BackLink() {
+    return (
+        <a className="text-slate-700 hover:text-slate-950" href="/settings">
+            <ArrowLeftIcon size="1em" />
+            Back to settings
+        </a>
+    )
+}
+```
+
+An explicit `size` keeps the icon tied to the surrounding text size through `1em`. You can use any CSS length, such as `"1rem"` or `"20px"`, and a number becomes a pixel value.
+
+If one icon must ignore the values from an ancestor `SolarProvider`, pass `isolated`. The component then uses `currentColor` for its color and hardcoded defaults of `24px` and `1.5` for size and stroke width. Use this for a deliberate escape from a shared icon theme, not as a replacement for normal component-level props.
+
+## Handle accessibility at the right layer
+
+Solar icon components are decorative by default. When you omit `alt`, `aria-label`, and `title`, the component adds `aria-hidden="true"` to the SVG.
+
+That is the right behavior for an icon inside a labelled button:
+
+```tsx
+export function FavoriteButton() {
+    return (
+        <button type="button" aria-label="Add to favorites">
+            <HeartIcon size={20} />
+        </button>
+    )
+}
+```
+
+When the icon itself carries meaning, give it a label:
+
+```tsx
+<HeartIcon alt="Favorite" size={24} />
+```
+
+The `alt` prop adds a `<title>` element inside the SVG and prevents the decorative `aria-hidden` attribute. For interactive behavior, keep the action on a semantic element such as `button` or `a`; the icon should support that control rather than replace it.
+
+## A small set of rules scales further than a large set of exceptions
+
+You can keep a React icon system predictable with three rules:
+
+1. Import the visual style from a style-specific path.
+2. Set shared color, size, and stroke defaults at the application boundary.
+3. Add a local prop only when a component has a real reason to differ.
+
+Solar Icons provides 1,268 icons across six styles, plus packages for other frameworks and framework-free use. The same separation between style choice and shared defaults gives the team a stable starting point as the interface grows.
+
+Read the [React package guide](/docs/v2/packages/react) for the full API, or [browse the icon catalog](/icons) to compare styles before you choose an import.
