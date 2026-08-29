@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import { realpathSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
+import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
+import { fileURLToPath } from 'node:url'
 
 import { Command } from 'commander'
 import pc from 'picocolors'
@@ -12,10 +15,22 @@ import { runInfo } from './commands/info.js'
 import { runList } from './commands/list.js'
 import { runSearch } from './commands/search.js'
 
+let cliVersion = '0.0.0'
+try {
+    const require = createRequire(import.meta.url)
+    cliVersion = require('@solar-icons/cli/package.json').version ?? '0.0.0'
+} catch {}
+if (cliVersion === '0.0.0') {
+    try {
+        const pkgUrl = new URL('../package.json', import.meta.url)
+        cliVersion = JSON.parse(readFileSync(fileURLToPath(pkgUrl), 'utf8')).version ?? '0.0.0'
+    } catch {}
+}
+
 const program = new Command()
     .name('solar-icons')
     .description('Solar Icons CLI — search, get and list 1,268 icons × 6 styles.')
-    .version('2.1.0', '-v, --version')
+    .version(cliVersion, '-v, --version')
     .showHelpAfterError()
     .showSuggestionAfterError()
     .configureHelp({
