@@ -1,7 +1,9 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { Icon } from '@iconify/react'
 import { motion } from 'motion/react'
+
+import { cn } from '@/lib/utils'
+
 import styles from './FrameworksShowcase.module.css'
 
 export const FrameworksShowcase = () => {
@@ -37,9 +39,8 @@ export const FrameworksShowcase = () => {
                             <div
                                 className={cn(
                                     `
-                                      flex size-18 items-center justify-center
-                                      rounded-full bg-default-200 shadow-2xs
-                                      backdrop-blur-sm transition-all
+                                      flex size-18 items-center justify-center rounded-full
+                                      bg-default-200 shadow-2xs backdrop-blur-sm transition-all
                                       duration-300 select-none
                                       hover:scale-125 hover:shadow-xl
                                     `,

@@ -1,5 +1,4 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { DislikeIcon } from '@solar-icons/react/linear/dislike'
 import { LikeIcon } from '@solar-icons/react/linear/like'
 import { cva } from 'class-variance-authority'
@@ -8,20 +7,18 @@ import { Collapsible, CollapsibleContent } from 'fumadocs-ui/components/ui/colla
 import { usePathname } from 'next/navigation'
 import { type SyntheticEvent, useEffect, useState, useTransition } from 'react'
 
+import { cn } from '@/lib/utils'
+
 const rateButtonVariants = cva(
     `
-      inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm
-      font-medium
+      inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium
       disabled:cursor-not-allowed
       [&_svg]:size-4
     `,
     {
         variants: {
             active: {
-                true: `
-                  bg-fd-accent text-fd-accent-foreground
-                  [&_svg]:fill-current
-                `,
+                true: `bg-fd-accent text-fd-accent-foreground [&_svg]:fill-current`,
                 false: 'text-fd-muted-foreground',
             },
         },
@@ -132,8 +129,8 @@ export function Rate({
                 {previous ? (
                     <div
                         className={`
-                          flex flex-col items-center gap-3 rounded-xl bg-fd-card
-                          px-3 py-6 text-center text-sm text-fd-muted-foreground
+                          flex flex-col items-center gap-3 rounded-xl bg-fd-card px-3 py-6
+                          text-center text-sm text-fd-muted-foreground
                         `}>
                         <p>Thank you for your feedback!</p>
                         <div className="flex flex-row items-center gap-2">
@@ -187,10 +184,7 @@ export function Rate({
                         />
                         <button
                             type="submit"
-                            className={cn(
-                                buttonVariants({ color: 'outline' }),
-                                `w-fit px-3`
-                            )}
+                            className={cn(buttonVariants({ color: 'outline' }), `w-fit px-3`)}
                             disabled={isPending}>
                             Submit
                         </button>

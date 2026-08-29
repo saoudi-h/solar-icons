@@ -1,11 +1,12 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
 import { AltArrowUpIcon } from '@solar-icons/react/dynamic/alt-arrow-up'
 import { CheckCircleIcon } from '@solar-icons/react/dynamic/check-circle'
 import * as React from 'react'
+
+import { cn } from '@/lib/utils'
 
 const Select = SelectPrimitive.Root
 
@@ -21,9 +22,8 @@ const SelectTrigger = React.forwardRef<
         ref={ref}
         className={cn(
             `
-              flex h-9 w-full items-center justify-between rounded-lg border
-              border-input bg-transparent px-3 py-2 text-sm whitespace-nowrap
-              shadow-xs ring-offset-background
+              flex h-9 w-full items-center justify-between rounded-lg border border-input
+              bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs ring-offset-background
               placeholder:text-muted-foreground
               disabled:cursor-not-allowed disabled:opacity-50
               [&>span]:line-clamp-1
@@ -74,9 +74,8 @@ const SelectContent = React.forwardRef<
             ref={ref}
             className={cn(
                 `
-                  relative z-50 max-h-96 min-w-32 overflow-hidden rounded-xl
-                  border border-border/50 bg-popover text-popover-foreground
-                  shadow-md backdrop-blur-md
+                  relative z-50 max-h-96 min-w-32 overflow-hidden rounded-xl border border-border/50
+                  bg-popover text-popover-foreground shadow-md backdrop-blur-md
                   data-[side=bottom]:slide-in-from-top-2
                   data-[side=left]:slide-in-from-right-2
                   data-[side=right]:slide-in-from-left-2
@@ -135,18 +134,15 @@ const SelectItem = React.forwardRef<
         ref={ref}
         className={cn(
             `
-              relative flex w-full cursor-default items-center rounded-lg py-1.5
-              pr-8 pl-2 text-sm outline-hidden select-none
+              relative flex w-full cursor-default items-center rounded-lg py-1.5 pr-8 pl-2 text-sm
+              outline-hidden select-none
               focus:bg-accent/50 focus:text-accent-foreground
               data-disabled:pointer-events-none data-disabled:opacity-50
             `,
             className
         )}
         {...props}>
-        <span
-            className={`
-              absolute right-2 flex size-3.5 items-center justify-center
-            `}>
+        <span className={`absolute right-2 flex size-3.5 items-center justify-center`}>
             <SelectPrimitive.ItemIndicator>
                 <CheckCircleIcon className="size-4" />
             </SelectPrimitive.ItemIndicator>

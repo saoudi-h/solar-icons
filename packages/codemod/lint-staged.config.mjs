@@ -1,4 +1,4 @@
 export default {
-    '*.{js,mjs,cjs,ts,mts,cts}': ['eslint --fix', 'prettier --write'],
-    '*.{json,md,yml,yaml}': ['prettier --write'],
+    '**/*.{js,cjs,mjs,ts,cts,mts,jsx,tsx}': ['oxfmt --write', 'oxlint --fix'],
+    '**/*.{json,jsonc,md,mdx,css,yaml,yml,svelte,vue}': 'oxfmt --write',
 }

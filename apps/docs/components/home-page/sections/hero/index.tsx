@@ -1,8 +1,10 @@
+import React from 'react'
+
 import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import type { SuperButtonProps } from '@/components/ui/SuperButton'
 import { SuperButton } from '@/components/ui/SuperButton'
-import React from 'react'
+
 import { HeroRotation } from './HeroRotation'
 
 export interface HeroSectionProps {
@@ -23,32 +25,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <section
             className={`
-              relative container flex h-[calc(100vh-84px)] w-full flex-col
-              items-center self-center px-3
+              relative container flex h-[calc(100vh-84px)] w-full flex-col items-center self-center
+              px-3
               md:px-0
             `}>
             <div
                 className={`
-                  relative mb-[34px] flex size-full flex-col justify-between
-                  gap-2 overflow-hidden rounded-2xl bg-accent/30 py-12
+                  relative mb-[34px] flex size-full flex-col justify-between gap-2 overflow-hidden
+                  rounded-2xl bg-accent/30 py-12
                   md:rounded-3xl
                 `}>
-                <NoiseSvg
-                    className={`
-                      pointer-events-none absolute inset-0 size-full opacity-30
-                    `}
-                />
+                <NoiseSvg className={`pointer-events-none absolute inset-0 size-full opacity-30`} />
                 <div
                     className={`
-                      absolute top-0 left-1/3 size-1/2 -translate-1/2
-                      rounded-full bg-linear-to-b from-primary/80 to-transparent
-                      blur-3xl
+                      absolute top-0 left-1/3 size-1/2 -translate-1/2 rounded-full bg-linear-to-b
+                      from-primary/80 to-transparent blur-3xl
                     `}></div>
                 <div
                     className={`
-                      absolute top-0 left-2/3 size-1/3 -translate-1/2
-                      rounded-full bg-linear-to-b from-warning/50 to-transparent
-                      blur-3xl
+                      absolute top-0 left-2/3 size-1/3 -translate-1/2 rounded-full bg-linear-to-b
+                      from-warning/50 to-transparent blur-3xl
                     `}></div>
                 <div
                     className="absolute inset-0"
@@ -59,8 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 />
                 <div
                     className={`
-                      relative my-14 mt-16 flex flex-1 flex-col items-center
-                      justify-center gap-6
+                      relative my-14 mt-16 flex flex-1 flex-col items-center justify-center gap-6
                     `}>
                     <Heading size="h1" justify="center">
                         {title.part1}
@@ -75,11 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         `}>
                         {content}
                     </p>
-                    <div
-                        className={`
-                          flex flex-col items-center gap-3
-                          sm:flex-row sm:gap-6
-                        `}>
+                    <div className={`flex flex-col items-center gap-3 sm:flex-row sm:gap-6`}>
                         <SuperButton {...getStarted}></SuperButton>
                         <SuperButton {...exploreIcons}></SuperButton>
                     </div>

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+
 import { createElement } from '../src/createElement'
 import { createIcons } from '../src/createIcons'
 import type { IconNode, Icons } from '../src/types'

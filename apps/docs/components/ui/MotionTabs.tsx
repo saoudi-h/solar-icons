@@ -1,7 +1,9 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { Button } from './button'
 
 type MotionTab = {
@@ -41,14 +43,11 @@ export const MotionTabs = ({
     }
 
     return (
-        <div
-            className={`
-              relative flex w-full grow-0 flex-col-reverse overflow-hidden
-            `}>
+        <div className={`relative flex w-full grow-0 flex-col-reverse overflow-hidden`}>
             <div
                 className={`
-                  relative h-full min-h-[160px] rounded-b-lg border
-                  border-border bg-default-100 px-2 py-4 text-left
+                  relative h-full min-h-[160px] rounded-b-lg border border-border bg-default-100
+                  px-2 py-4 text-left
                 `}>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -81,9 +80,8 @@ export const MotionTabs = ({
             <div
                 className={cn(
                     `
-                      no-visible-scrollbar relative -bottom-px flex w-full
-                      max-w-full flex-row items-center justify-start gap-2
-                      overflow-auto
+                      no-visible-scrollbar relative -bottom-px flex w-full max-w-full flex-row
+                      items-center justify-start gap-2 overflow-auto
                       md:overflow-visible
                     `,
                     containerClassName
@@ -97,13 +95,10 @@ export const MotionTabs = ({
                         onMouseEnter={() => setHoveredTab(tab.value)}
                         onMouseLeave={() => setHoveredTab(null)}
                         className={cn(
+                            `relative px-3 py-2 transition-all duration-200 ease-out`,
                             `
-                              relative px-3 py-2 transition-all duration-200
-                              ease-out
-                            `,
-                            `
-                              rounded-none rounded-t-lg border border-b-0
-                              text-sm font-medium whitespace-nowrap
+                              rounded-none rounded-t-lg border border-b-0 text-sm font-medium
+                              whitespace-nowrap
                             `,
                             // add focus in top left and right but not bottom
                             'focus:border-primary',
@@ -119,9 +114,8 @@ export const MotionTabs = ({
                                 }}
                                 className={cn(
                                     `
-                                      absolute inset-0 rounded-t-lg border
-                                      border-b-0 border-border bg-default-100
-                                      shadow-2xl
+                                      absolute inset-0 rounded-t-lg border border-b-0 border-border
+                                      bg-default-100 shadow-2xl
                                     `,
                                     activeTabClassName
                                 )}
@@ -135,8 +129,8 @@ export const MotionTabs = ({
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.2 }}
                                 className={`
-                                  absolute inset-0 rounded-t-lg bg-linear-to-b
-                                  from-accent to-transparent
+                                  absolute inset-0 rounded-t-lg bg-linear-to-b from-accent
+                                  to-transparent
                                 `}
                             />
                         )}
@@ -147,10 +141,7 @@ export const MotionTabs = ({
                                 'relative block transition-colors duration-200',
                                 isActive(tab)
                                     ? 'text-foreground'
-                                    : `
-                                      text-default-600
-                                      hover:text-default-900
-                                    `
+                                    : `text-default-600 hover:text-default-900`
                             )}>
                             {tab.title}
                         </span>

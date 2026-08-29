@@ -1,1435 +1,1112 @@
 {
-  "version": 1,
-  "batch": "solar-to-lucide-sheet-02",
-  "direction": "solar-to-lucide",
-  "sourceSnapshot": "@iconify-json/lucide@1.2.123",
-  "solarSheet": 2,
-  "totalSolarSheets": 13,
-  "phase": "complete",
-  "instructions": "Inspect this Solar sheet against the complete Lucide atlas. Record zero to three canonical Lucide candidate IDs per icon, then generate review boards and resolve every row. Do not consult or modify verified-matches.json.",
-  "entries": [
-    {
-      "solar": "bicycling-round",
-      "solarId": "S0101",
-      "candidates": [
-        "L0183",
-        "L1115"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bike",
-      "referenceId": "L0183",
-      "decision": "variant",
-      "note": "Both depict a person riding a bicycle, but Solar uses a round-wheel simplified pose while Lucide bike uses a more detailed rider and frame; the action is preserved with a visual variant."
-    },
-    {
-      "solar": "bill",
-      "solarId": "S0102",
-      "candidates": [
-        "L1294",
-        "L1302",
-        "L0690"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "receipt-text",
-      "referenceId": "L1302",
-      "decision": "variant",
-      "note": "Both depict a receipt-like bill with a wavy edge and text lines; Lucide receipt-text preserves the rendered document while changing line proportions and enclosure detail."
-    },
-    {
-      "solar": "bill-2",
-      "solarId": "S0103",
-      "candidates": [
-        "L1302",
-        "L1294",
-        "L0690"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "receipt-text",
-      "referenceId": "L1302",
-      "decision": "related",
-      "note": "Solar is a shield-shaped money document with short text lines, while Lucide receipt-text preserves the receipt/document idea but not the pointed enclosure; the relationship is conceptual with changed specificity."
-    },
-    {
-      "solar": "bill-check",
-      "solarId": "S0104",
-      "candidates": [
-        "L1294",
-        "L0645",
-        "L0345"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bill-cross",
-      "solarId": "S0105",
-      "candidates": [
-        "L1294",
-        "L0700",
-        "L1817"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bill-list",
-      "solarId": "S0106",
-      "candidates": [
-        "L1302",
-        "L0971",
-        "L0690"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "receipt-text",
-      "referenceId": "L1302",
-      "decision": "variant",
-      "note": "Both depict a receipt-like list document, but Solar adds bullet dots and Lucide receipt-text uses plain text bars; the document concept is preserved with a visual variant."
-    },
-    {
-      "solar": "black-hole",
-      "solarId": "S0107",
-      "candidates": [
-        "L1670",
-        "L1168",
-        "L0996"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
-    },
-    {
-      "solar": "black-hole-2",
-      "solarId": "S0108",
-      "candidates": [
-        "L1670",
-        "L1168",
-        "L0996"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
-    },
-    {
-      "solar": "black-hole-3",
-      "solarId": "S0109",
-      "candidates": [
-        "L1670",
-        "L1168",
-        "L0996"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
-    },
-    {
-      "solar": "bluetooth",
-      "solarId": "S0110",
-      "candidates": [
-        "L0194"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bluetooth",
-      "referenceId": "L0194",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "bluetooth-circle",
-      "solarId": "S0111",
-      "candidates": [
-        "L0194",
-        "L0376"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bluetooth-square",
-      "solarId": "S0112",
-      "candidates": [
-        "L0194",
-        "L1488"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bluetooth-wave",
-      "solarId": "S0113",
-      "candidates": [
-        "L0194",
-        "L1784",
-        "L1789"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "body",
-      "solarId": "S0114",
-      "candidates": [
-        "L1432",
-        "L1225"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shirt",
-      "referenceId": "L1432",
-      "decision": "variant",
-      "note": "Solar renders a sleeveless bodysuit or torso garment, while Lucide shirt renders a short-sleeved shirt; the clothing object is related but the garment construction differs."
-    },
-    {
-      "solar": "body-shape",
-      "solarId": "S0115",
-      "candidates": [
-        "L1276",
-        "L1432",
-        "L1225"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "proportions",
-      "referenceId": "L1276",
-      "decision": "related",
-      "note": "Solar shows a stylized human body silhouette, while Lucide proportions is an abstract measurement/enclosure symbol; both relate to body shape but the subject is not preserved exactly."
-    },
-    {
-      "solar": "body-shape-minimalistic",
-      "solarId": "S0116",
-      "candidates": [
-        "L1276",
-        "L1432",
-        "L1225"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "proportions",
-      "referenceId": "L1276",
-      "decision": "related",
-      "note": "Solar shows a minimal stylized body silhouette, while Lucide proportions is an abstract measurement/enclosure symbol; the body subject and specificity are not preserved exactly."
-    },
-    {
-      "solar": "bolt",
-      "solarId": "S0117",
-      "candidates": [
-        "L1820",
-        "L0199"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "zap",
-      "referenceId": "L1820",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "bolt-circle",
-      "solarId": "S0118",
-      "candidates": [
-        "L1820",
-        "L0376"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bomb",
-      "solarId": "S0119",
-      "candidates": [
-        "L0200"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bomb",
-      "referenceId": "L0200",
-      "decision": "variant",
-      "note": "Both depict a bomb, but Solar uses a sparkle at the fuse while Lucide bomb uses a conventional fuse loop; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "bomb-emoji",
-      "solarId": "S0120",
-      "candidates": [
-        "L0200",
-        "L1464"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bomb-minimalistic",
-      "solarId": "S0121",
-      "candidates": [
-        "L0200"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bomb",
-      "referenceId": "L0200",
-      "decision": "variant",
-      "note": "Both depict a bomb, but Solar uses a minimal round body with spark marks while Lucide bomb uses a fuse loop; the object is preserved with a different modifier detail."
-    },
-    {
-      "solar": "bone",
-      "solarId": "S0122",
-      "candidates": [
-        "L0201"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bone",
-      "referenceId": "L0201",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "bone-crack",
-      "solarId": "S0123",
-      "candidates": [
-        "L0202",
-        "L0201"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bone-fracture",
-      "referenceId": "L0202",
-      "decision": "variant",
-      "note": "Both depict a damaged bone, but Solar keeps one bone with a crack while Lucide bone-fracture separates the broken pieces; the medical object and damage state are preserved with a visual variant."
-    },
-    {
-      "solar": "bone-fracture",
-      "solarId": "S0124",
-      "candidates": [
-        "L0202",
-        "L0201"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bone-fracture",
-      "referenceId": "L0202",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "bones",
-      "solarId": "S0125",
-      "candidates": [
-        "L0201",
-        "L0202",
-        "L0376"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bonfire",
-      "solarId": "S0126",
-      "candidates": [
-        "L0718",
-        "L0719"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "flame-kindling",
-      "referenceId": "L0719",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "book",
-      "solarId": "S0127",
-      "candidates": [
-        "L0203"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "book",
-      "referenceId": "L0203",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "book-2",
-      "solarId": "S0128",
-      "candidates": [
-        "L0203",
-        "L0218"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "book",
-      "referenceId": "L0203",
-      "decision": "variant",
-      "note": "Both depict a closed book, but Solar adds a lower page or cover line and Lucide book uses a simpler cover profile; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "book-bookmark",
-      "solarId": "S0129",
-      "candidates": [
-        "L0216",
-        "L0203",
-        "L0229"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "book-marked",
-      "referenceId": "L0216",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "book-bookmark-minimalistic",
-      "solarId": "S0130",
-      "candidates": [
-        "L0216",
-        "L0203",
-        "L0229"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "book-marked",
-      "referenceId": "L0216",
-      "decision": "variant",
-      "note": "Both depict a bookmarked book, but Solar uses a minimal inset bookmark and Lucide book-marked uses a larger bookmark cutout; the object and modifier are preserved with different detail."
-    },
-    {
-      "solar": "book-minimalistic",
-      "solarId": "S0131",
-      "candidates": [
-        "L0203",
-        "L0218"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "book",
-      "referenceId": "L0203",
-      "decision": "variant",
-      "note": "Both depict a closed book, but Solar uses a minimal spine-and-page-band construction while Lucide book uses a different cover profile; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "bookmark",
-      "solarId": "S0132",
-      "candidates": [
-        "L0229"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bookmark",
-      "referenceId": "L0229",
-      "decision": "equivalent",
-      "note": "Both depict the same standalone bookmark object; the top mark and ribbon contour are stylistic."
-    },
-    {
-      "solar": "bookmark-circle",
-      "solarId": "S0133",
-      "candidates": [
-        "L0229",
-        "L0376",
-        "L0418"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bookmark-opened",
-      "solarId": "S0134",
-      "candidates": [
-        "L0229",
-        "L0203",
-        "L0218"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bookmark-square",
-      "solarId": "S0135",
-      "candidates": [
-        "L0229",
-        "L1488"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "bookmark-square-minimalistic",
-      "solarId": "S0136",
-      "candidates": [
-        "L0229",
-        "L1488"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "boombox",
-      "solarId": "S0137",
-      "candidates": [
-        "L0235",
-        "L0861",
-        "L1141"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "boom-box",
-      "referenceId": "L0235",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "bottle",
-      "solarId": "S0138",
-      "candidates": [
-        "L0239",
-        "L1246",
-        "L1810"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bottle-wine",
-      "referenceId": "L0239",
-      "decision": "related",
-      "note": "Solar is a generic bottle, while Lucide bottle-wine preserves a bottle container with wine-specific form; the container category is related but the use and silhouette differ."
-    },
-    {
-      "solar": "bowling",
-      "solarId": "S0139",
-      "candidates": [
-        "L0395",
-        "L0376"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "box",
-      "solarId": "S0140",
-      "candidates": [
-        "L0241",
-        "L0242"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "box",
-      "referenceId": "L0241",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "box-minimalistic",
-      "solarId": "S0141",
-      "candidates": [
-        "L0241"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "box",
-      "referenceId": "L0241",
-      "decision": "variant",
-      "note": "Both depict a box, but Solar uses a simplified open-box construction while Lucide box includes more explicit top and side planes; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "branching-paths-down",
-      "solarId": "S0142",
-      "candidates": [
-        "L0790",
-        "L0791",
-        "L0792"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "git-branch",
-      "referenceId": "L0790",
-      "decision": "related",
-      "note": "Solar shows a branching path with two directional arrowheads inside an enclosure, while Lucide git-branch preserves the branching topology but omits the arrows and enclosure."
-    },
-    {
-      "solar": "branching-paths-up",
-      "solarId": "S0143",
-      "candidates": [
-        "L0790",
-        "L0791",
-        "L0792"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "git-branch",
-      "referenceId": "L0790",
-      "decision": "related",
-      "note": "Solar shows a branching path with two directional arrowheads inside an enclosure, while Lucide git-branch preserves the branching topology but omits the arrows and enclosure."
-    },
-    {
-      "solar": "broom",
-      "solarId": "S0144",
-      "candidates": [
-        "L0257",
-        "L0258"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "broom",
-      "referenceId": "L0257",
-      "decision": "variant",
-      "note": "Both depict a broom, but Solar uses a soft feather-like head while Lucide broom uses a bristled angled head; the cleaning object is preserved with a different silhouette."
-    },
-    {
-      "solar": "bug",
-      "solarId": "S0145",
-      "candidates": [
-        "L0262"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bug",
-      "referenceId": "L0262",
-      "decision": "equivalent",
-      "note": "Both depict the same generic bug object; body segmentation and leg arrangement are styling differences."
-    },
-    {
-      "solar": "bug-minimalistic",
-      "solarId": "S0146",
-      "candidates": [
-        "L0262",
-        "L0263"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bug",
-      "referenceId": "L0262",
-      "decision": "variant",
-      "note": "Both depict a bug, but Solar simplifies the body to two interior bars while Lucide bug uses a detailed insect body; the object is preserved but minimal specificity changes."
-    },
-    {
-      "solar": "buildings",
-      "solarId": "S0147",
-      "candidates": [
-        "L0265",
-        "L0266"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "building",
-      "referenceId": "L0265",
-      "decision": "related",
-      "note": "Solar shows multiple buildings on a shared baseline, while Lucide building is one detailed building; the architecture category is related but count and composition differ."
-    },
-    {
-      "solar": "buildings-2",
-      "solarId": "S0148",
-      "candidates": [
-        "L0266",
-        "L0265"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "building-2",
-      "referenceId": "L0266",
-      "decision": "related",
-      "note": "Solar shows multiple buildings on a shared baseline, while Lucide building-2 is one building silhouette; the architecture category is related but count and composition differ."
-    },
-    {
-      "solar": "buildings-3",
-      "solarId": "S0149",
-      "candidates": [
-        "L0265",
-        "L0266"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "building",
-      "referenceId": "L0265",
-      "decision": "related",
-      "note": "Solar shows a group of buildings with a central tower, while Lucide building preserves only one building; the architecture category is related but count and composition differ."
-    },
-    {
-      "solar": "bus",
-      "solarId": "S0150",
-      "candidates": [
-        "L0267",
-        "L0268"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "bus-front",
-      "referenceId": "L0268",
-      "decision": "variant",
-      "note": "Both depict a bus from the front, but Solar and Lucide use different window, bumper, and wheel details; the vehicle and direction are preserved with a visual variant."
-    },
-    {
-      "solar": "calculator",
-      "solarId": "S0151",
-      "candidates": [
-        "L0273"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calculator",
-      "referenceId": "L0273",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "calculator-minimalistic",
-      "solarId": "S0152",
-      "candidates": [
-        "L0273"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calculator",
-      "referenceId": "L0273",
-      "decision": "variant",
-      "note": "Both depict a calculator, but Solar shows arithmetic symbols while Lucide calculator shows keypad dots and a display; the object is preserved with a meaningful internal-detail variant."
-    },
-    {
-      "solar": "calendar",
-      "solarId": "S0153",
-      "candidates": [
-        "L0274"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calendar",
-      "referenceId": "L0274",
-      "decision": "equivalent",
-      "note": "Both depict the same generic calendar object; the optional date-grid detail is styling."
-    },
-    {
-      "solar": "calendar-add",
-      "solarId": "S0154",
-      "candidates": [
-        "L0288",
-        "L0274",
-        "L0411"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calendar-plus",
-      "referenceId": "L0288",
-      "decision": "variant",
-      "note": "Both depict a calendar with an add modifier, but Solar places a plus inside the page while Lucide calendar-plus places it outside the lower corner; the object and action are preserved with a layout variant."
-    },
-    {
-      "solar": "calendar-date",
-      "solarId": "S0155",
-      "candidates": [
-        "L0274",
-        "L0275",
-        "L0282"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calendar",
-      "referenceId": "L0274",
-      "decision": "variant",
-      "note": "Both depict a calendar with a date marker, but Solar renders the number 10 and Lucide calendar uses a generic empty calendar in the shown candidate; the date specificity is not preserved."
-    },
-    {
-      "solar": "calendar-mark",
-      "solarId": "S0156",
-      "candidates": [
-        "L0274",
-        "L0395"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "calendar-minimalistic",
-      "solarId": "S0157",
-      "candidates": [
-        "L0274"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calendar",
-      "referenceId": "L0274",
-      "decision": "variant",
-      "note": "Both depict a calendar, but Solar uses a minimal empty page and Lucide calendar uses a more detailed header and binding rings; the object is preserved with a construction variant."
-    },
-    {
-      "solar": "calendar-search",
-      "solarId": "S0158",
-      "candidates": [
-        "L0291",
-        "L0274"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "calendar-search",
-      "referenceId": "L0291",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "call-cancel",
-      "solarId": "S0159",
-      "candidates": [
-        "L1233",
-        "L1228",
-        "L1062"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "call-cancel-rounded",
-      "solarId": "S0160",
-      "candidates": [
-        "L1233",
-        "L1228",
-        "L1062"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "call-chat",
-      "solarId": "S0161",
-      "candidates": [
-        "L1051",
-        "L1229",
-        "L1228"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "call-chat-rounded",
-      "solarId": "S0162",
-      "candidates": [
-        "L1051",
-        "L1229",
-        "L1228"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "call-dropped",
-      "solarId": "S0163",
-      "candidates": [
-        "L1232",
-        "L1230",
-        "L1228"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "phone-missed",
-      "referenceId": "L1232",
-      "decision": "related",
-      "note": "Solar shows a phone with a bent outgoing/drop arrow, while Lucide phone-missed uses an X modifier; both express an unsuccessful call state but the direction and state glyph differ."
-    },
-    {
-      "solar": "call-dropped-rounded",
-      "solarId": "S0164",
-      "candidates": [
-        "L1232",
-        "L1230",
-        "L1228"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "phone-missed",
-      "referenceId": "L1232",
-      "decision": "related",
-      "note": "Solar shows a phone with a bent outgoing/drop arrow, while Lucide phone-missed uses an X modifier; both express an unsuccessful call state but the direction and state glyph differ."
-    },
-    {
-      "solar": "call-medicine",
-      "solarId": "S0165",
-      "candidates": [
-        "L1228",
-        "L0411",
-        "L0254"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "call-medicine-rounded",
-      "solarId": "S0166",
-      "candidates": [
-        "L1228",
-        "L0411",
-        "L0254"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "camera",
-      "solarId": "S0167",
-      "candidates": [
-        "L0296"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "camera",
-      "referenceId": "L0296",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "camera-add",
-      "solarId": "S0168",
-      "candidates": [
-        "L0296",
-        "L0411"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "camera-minimalistic",
-      "solarId": "S0169",
-      "candidates": [
-        "L0296"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "camera",
-      "referenceId": "L0296",
-      "decision": "variant",
-      "note": "Both depict a camera, but Solar uses a minimal body with a top bar while Lucide camera uses a detailed top contour; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "camera-rotate",
-      "solarId": "S0170",
-      "candidates": [
-        "L1602",
-        "L0296",
-        "L1340"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "camera-square",
-      "solarId": "S0171",
-      "candidates": [
-        "L0296",
-        "L1488",
-        "L0376"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "camera",
-      "referenceId": "L0296",
-      "decision": "variant",
-      "note": "Both depict a camera, but Solar uses a square enclosure and Lucide camera uses a conventional camera body; the lens and camera object are preserved while the enclosure shape differs."
-    },
-    {
-      "solar": "car-battery",
-      "solarId": "S0172",
-      "candidates": [
-        "L0307",
-        "L0153"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "car-battery",
-      "referenceId": "L0307",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "card",
-      "solarId": "S0173",
-      "candidates": [
-        "L0526",
-        "L0887",
-        "L1776"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "credit-card",
-      "referenceId": "L0526",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "card-2",
-      "solarId": "S0174",
-      "candidates": [
-        "L0526",
-        "L0887",
-        "L1776"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "credit-card",
-      "referenceId": "L0526",
-      "decision": "variant",
-      "note": "Both depict a payment card, but Solar adds a chip and lower marks while Lucide credit-card is a simpler card silhouette; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "card-receive",
-      "solarId": "S0175",
-      "candidates": [
-        "L0526",
-        "L0073",
-        "L0140"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "card-search",
-      "solarId": "S0176",
-      "candidates": [
-        "L0526",
-        "L1388",
-        "L0681"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "card-send",
-      "solarId": "S0177",
-      "candidates": [
-        "L0526",
-        "L0096",
-        "L0141"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "card-transfer",
-      "solarId": "S0178",
-      "candidates": [
-        "L0526",
-        "L0096",
-        "L0140"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "cardholder",
-      "solarId": "S0179",
-      "candidates": [
-        "L0887",
-        "L0526",
-        "L1776"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "id-card",
-      "referenceId": "L0887",
-      "decision": "related",
-      "note": "Solar shows a cardholder or wallet enclosure with a card slot, while Lucide id-card shows an identification card; the card concept is related but the holder object is not preserved."
-    },
-    {
-      "solar": "cart",
-      "solarId": "S0180",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "equivalent",
-      "note": "Both depict the same shopping-cart object; basket, handle, and wheel construction are styling differences."
-    },
-    {
-      "solar": "cart-2",
-      "solarId": "S0181",
-      "candidates": [
-        "L1435",
-        "L1434"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a lattice basket construction absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
-    },
-    {
-      "solar": "cart-3",
-      "solarId": "S0182",
-      "candidates": [
-        "L1435",
-        "L1434"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a three-slot basket construction absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
-    },
-    {
-      "solar": "cart-4",
-      "solarId": "S0183",
-      "candidates": [
-        "L1435",
-        "L1434"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a handled basket with an interior bar absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
-    },
-    {
-      "solar": "cart-5",
-      "solarId": "S0184",
-      "candidates": [
-        "L1435",
-        "L1434"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a handled basket with two interior bars absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
-    },
-    {
-      "solar": "cart-check",
-      "solarId": "S0185",
-      "candidates": [
-        "L1435",
-        "L0345"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "cart-cross",
-      "solarId": "S0186",
-      "candidates": [
-        "L1435",
-        "L1817"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "cart-large",
-      "solarId": "S0187",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a wide low basket while Lucide shopping-cart uses a compact basket; the object is preserved with a size and silhouette variant."
-    },
-    {
-      "solar": "cart-large-2",
-      "solarId": "S0188",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a wide low basket while Lucide shopping-cart uses a compact basket; the object is preserved with a size and silhouette variant."
-    },
-    {
-      "solar": "cart-large-3",
-      "solarId": "S0189",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a wide basket with vertical interior divisions while Lucide shopping-cart has none; the object is preserved with a construction variant."
-    },
-    {
-      "solar": "cart-large-4",
-      "solarId": "S0190",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a wide basket with two interior bars while Lucide shopping-cart has none; the object is preserved with a construction variant."
-    },
-    {
-      "solar": "cart-large-minimalistic",
-      "solarId": "S0191",
-      "candidates": [
-        "L1435"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "shopping-cart",
-      "referenceId": "L1435",
-      "decision": "variant",
-      "note": "Both depict a shopping cart, but Solar uses a minimal wide basket while Lucide shopping-cart uses a compact detailed basket; the object is preserved with a visual variant."
-    },
-    {
-      "solar": "cart-plus",
-      "solarId": "S0192",
-      "candidates": [
-        "L1435",
-        "L0411"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": null,
-      "referenceId": null,
-      "decision": "no-match",
-      "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
-    },
-    {
-      "solar": "case",
-      "solarId": "S0193",
-      "candidates": [
-        "L0252",
-        "L0251",
-        "L1668"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "briefcase-business",
-      "referenceId": "L0252",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "case-minimalistic",
-      "solarId": "S0194",
-      "candidates": [
-        "L0252",
-        "L0251",
-        "L1668"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "briefcase-business",
-      "referenceId": "L0252",
-      "decision": "variant",
-      "note": "Both depict a handled briefcase, but Solar simplifies the flap and clasp while Lucide briefcase-business retains its flap and centered clasp; the object is preserved with reduced detail."
-    },
-    {
-      "solar": "case-round",
-      "solarId": "S0195",
-      "candidates": [
-        "L0251",
-        "L0252"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "briefcase",
-      "referenceId": "L0251",
-      "decision": "equivalent",
-      "note": "Visual review confirms the same generic briefcase object; rounded flap versus rectangular divided construction is stylistic."
-    },
-    {
-      "solar": "case-round-minimalistic",
-      "solarId": "S0196",
-      "candidates": [
-        "L0251",
-        "L0252"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "briefcase",
-      "referenceId": "L0251",
-      "decision": "variant",
-      "note": "Both depict a handled case, but Solar uses a minimal rounded flap case while Lucide briefcase is rectangular and divided; the case object is preserved with a different construction."
-    },
-    {
-      "solar": "cash-out",
-      "solarId": "S0197",
-      "candidates": [
-        "L0140",
-        "L1775",
-        "L0139"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "banknote-arrow-down",
-      "referenceId": "L0140",
-      "decision": "related",
-      "note": "Solar shows money leaving a container with a downward arrow, while Lucide banknote-arrow-down preserves money-out direction but uses a single banknote instead of the cash container."
-    },
-    {
-      "solar": "cassette",
-      "solarId": "S0198",
-      "candidates": [
-        "L0316",
-        "L1141",
-        "L0235"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "cassette-tape",
-      "referenceId": "L0316",
-      "decision": "equivalent",
-      "note": ""
-    },
-    {
-      "solar": "cassette-2",
-      "solarId": "S0199",
-      "candidates": [
-        "L0316",
-        "L1141",
-        "L0235"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "cassette-tape",
-      "referenceId": "L0316",
-      "decision": "variant",
-      "note": "Both depict a cassette tape, but Solar uses a second reel and label arrangement while Lucide cassette-tape uses a different tape-window construction; the device is preserved with a visual variant."
-    },
-    {
-      "solar": "cat",
-      "solarId": "S0200",
-      "candidates": [
-        "L0319"
-      ],
-      "discoveryComplete": true,
-      "status": "resolved",
-      "reference": "cat",
-      "referenceId": "L0319",
-      "decision": "equivalent",
-      "note": ""
-    }
-  ]
+    "version": 1,
+    "batch": "solar-to-lucide-sheet-02",
+    "direction": "solar-to-lucide",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "solarSheet": 2,
+    "totalSolarSheets": 13,
+    "phase": "complete",
+    "instructions": "Inspect this Solar sheet against the complete Lucide atlas. Record zero to three canonical Lucide candidate IDs per icon, then generate review boards and resolve every row. Do not consult or modify verified-matches.json.",
+    "entries": [
+        {
+            "solar": "bicycling-round",
+            "solarId": "S0101",
+            "candidates": ["L0183", "L1115"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bike",
+            "referenceId": "L0183",
+            "decision": "variant",
+            "note": "Both depict a person riding a bicycle, but Solar uses a round-wheel simplified pose while Lucide bike uses a more detailed rider and frame; the action is preserved with a visual variant."
+        },
+        {
+            "solar": "bill",
+            "solarId": "S0102",
+            "candidates": ["L1294", "L1302", "L0690"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "receipt-text",
+            "referenceId": "L1302",
+            "decision": "variant",
+            "note": "Both depict a receipt-like bill with a wavy edge and text lines; Lucide receipt-text preserves the rendered document while changing line proportions and enclosure detail."
+        },
+        {
+            "solar": "bill-2",
+            "solarId": "S0103",
+            "candidates": ["L1302", "L1294", "L0690"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "receipt-text",
+            "referenceId": "L1302",
+            "decision": "related",
+            "note": "Solar is a shield-shaped money document with short text lines, while Lucide receipt-text preserves the receipt/document idea but not the pointed enclosure; the relationship is conceptual with changed specificity."
+        },
+        {
+            "solar": "bill-check",
+            "solarId": "S0104",
+            "candidates": ["L1294", "L0645", "L0345"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bill-cross",
+            "solarId": "S0105",
+            "candidates": ["L1294", "L0700", "L1817"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bill-list",
+            "solarId": "S0106",
+            "candidates": ["L1302", "L0971", "L0690"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "receipt-text",
+            "referenceId": "L1302",
+            "decision": "variant",
+            "note": "Both depict a receipt-like list document, but Solar adds bullet dots and Lucide receipt-text uses plain text bars; the document concept is preserved with a visual variant."
+        },
+        {
+            "solar": "black-hole",
+            "solarId": "S0107",
+            "candidates": ["L1670", "L1168", "L0996"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
+        },
+        {
+            "solar": "black-hole-2",
+            "solarId": "S0108",
+            "candidates": ["L1670", "L1168", "L0996"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
+        },
+        {
+            "solar": "black-hole-3",
+            "solarId": "S0109",
+            "candidates": ["L1670", "L1168", "L0996"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar renders an astrophysical black-hole swirl, while tornado, orbit, and loader-pinwheel are weather, orbital, or loading symbols; none preserves the black-hole concept."
+        },
+        {
+            "solar": "bluetooth",
+            "solarId": "S0110",
+            "candidates": ["L0194"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bluetooth",
+            "referenceId": "L0194",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "bluetooth-circle",
+            "solarId": "S0111",
+            "candidates": ["L0194", "L0376"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bluetooth-square",
+            "solarId": "S0112",
+            "candidates": ["L0194", "L1488"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bluetooth-wave",
+            "solarId": "S0113",
+            "candidates": ["L0194", "L1784", "L1789"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "body",
+            "solarId": "S0114",
+            "candidates": ["L1432", "L1225"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shirt",
+            "referenceId": "L1432",
+            "decision": "variant",
+            "note": "Solar renders a sleeveless bodysuit or torso garment, while Lucide shirt renders a short-sleeved shirt; the clothing object is related but the garment construction differs."
+        },
+        {
+            "solar": "body-shape",
+            "solarId": "S0115",
+            "candidates": ["L1276", "L1432", "L1225"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "proportions",
+            "referenceId": "L1276",
+            "decision": "related",
+            "note": "Solar shows a stylized human body silhouette, while Lucide proportions is an abstract measurement/enclosure symbol; both relate to body shape but the subject is not preserved exactly."
+        },
+        {
+            "solar": "body-shape-minimalistic",
+            "solarId": "S0116",
+            "candidates": ["L1276", "L1432", "L1225"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "proportions",
+            "referenceId": "L1276",
+            "decision": "related",
+            "note": "Solar shows a minimal stylized body silhouette, while Lucide proportions is an abstract measurement/enclosure symbol; the body subject and specificity are not preserved exactly."
+        },
+        {
+            "solar": "bolt",
+            "solarId": "S0117",
+            "candidates": ["L1820", "L0199"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "zap",
+            "referenceId": "L1820",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "bolt-circle",
+            "solarId": "S0118",
+            "candidates": ["L1820", "L0376"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bomb",
+            "solarId": "S0119",
+            "candidates": ["L0200"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bomb",
+            "referenceId": "L0200",
+            "decision": "variant",
+            "note": "Both depict a bomb, but Solar uses a sparkle at the fuse while Lucide bomb uses a conventional fuse loop; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "bomb-emoji",
+            "solarId": "S0120",
+            "candidates": ["L0200", "L1464"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bomb-minimalistic",
+            "solarId": "S0121",
+            "candidates": ["L0200"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bomb",
+            "referenceId": "L0200",
+            "decision": "variant",
+            "note": "Both depict a bomb, but Solar uses a minimal round body with spark marks while Lucide bomb uses a fuse loop; the object is preserved with a different modifier detail."
+        },
+        {
+            "solar": "bone",
+            "solarId": "S0122",
+            "candidates": ["L0201"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bone",
+            "referenceId": "L0201",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "bone-crack",
+            "solarId": "S0123",
+            "candidates": ["L0202", "L0201"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bone-fracture",
+            "referenceId": "L0202",
+            "decision": "variant",
+            "note": "Both depict a damaged bone, but Solar keeps one bone with a crack while Lucide bone-fracture separates the broken pieces; the medical object and damage state are preserved with a visual variant."
+        },
+        {
+            "solar": "bone-fracture",
+            "solarId": "S0124",
+            "candidates": ["L0202", "L0201"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bone-fracture",
+            "referenceId": "L0202",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "bones",
+            "solarId": "S0125",
+            "candidates": ["L0201", "L0202", "L0376"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bonfire",
+            "solarId": "S0126",
+            "candidates": ["L0718", "L0719"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "flame-kindling",
+            "referenceId": "L0719",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "book",
+            "solarId": "S0127",
+            "candidates": ["L0203"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "book",
+            "referenceId": "L0203",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "book-2",
+            "solarId": "S0128",
+            "candidates": ["L0203", "L0218"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "book",
+            "referenceId": "L0203",
+            "decision": "variant",
+            "note": "Both depict a closed book, but Solar adds a lower page or cover line and Lucide book uses a simpler cover profile; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "book-bookmark",
+            "solarId": "S0129",
+            "candidates": ["L0216", "L0203", "L0229"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "book-marked",
+            "referenceId": "L0216",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "book-bookmark-minimalistic",
+            "solarId": "S0130",
+            "candidates": ["L0216", "L0203", "L0229"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "book-marked",
+            "referenceId": "L0216",
+            "decision": "variant",
+            "note": "Both depict a bookmarked book, but Solar uses a minimal inset bookmark and Lucide book-marked uses a larger bookmark cutout; the object and modifier are preserved with different detail."
+        },
+        {
+            "solar": "book-minimalistic",
+            "solarId": "S0131",
+            "candidates": ["L0203", "L0218"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "book",
+            "referenceId": "L0203",
+            "decision": "variant",
+            "note": "Both depict a closed book, but Solar uses a minimal spine-and-page-band construction while Lucide book uses a different cover profile; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "bookmark",
+            "solarId": "S0132",
+            "candidates": ["L0229"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bookmark",
+            "referenceId": "L0229",
+            "decision": "equivalent",
+            "note": "Both depict the same standalone bookmark object; the top mark and ribbon contour are stylistic."
+        },
+        {
+            "solar": "bookmark-circle",
+            "solarId": "S0133",
+            "candidates": ["L0229", "L0376", "L0418"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bookmark-opened",
+            "solarId": "S0134",
+            "candidates": ["L0229", "L0203", "L0218"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bookmark-square",
+            "solarId": "S0135",
+            "candidates": ["L0229", "L1488"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "bookmark-square-minimalistic",
+            "solarId": "S0136",
+            "candidates": ["L0229", "L1488"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "boombox",
+            "solarId": "S0137",
+            "candidates": ["L0235", "L0861", "L1141"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "boom-box",
+            "referenceId": "L0235",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "bottle",
+            "solarId": "S0138",
+            "candidates": ["L0239", "L1246", "L1810"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bottle-wine",
+            "referenceId": "L0239",
+            "decision": "related",
+            "note": "Solar is a generic bottle, while Lucide bottle-wine preserves a bottle container with wine-specific form; the container category is related but the use and silhouette differ."
+        },
+        {
+            "solar": "bowling",
+            "solarId": "S0139",
+            "candidates": ["L0395", "L0376"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "box",
+            "solarId": "S0140",
+            "candidates": ["L0241", "L0242"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "box",
+            "referenceId": "L0241",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "box-minimalistic",
+            "solarId": "S0141",
+            "candidates": ["L0241"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "box",
+            "referenceId": "L0241",
+            "decision": "variant",
+            "note": "Both depict a box, but Solar uses a simplified open-box construction while Lucide box includes more explicit top and side planes; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "branching-paths-down",
+            "solarId": "S0142",
+            "candidates": ["L0790", "L0791", "L0792"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "git-branch",
+            "referenceId": "L0790",
+            "decision": "related",
+            "note": "Solar shows a branching path with two directional arrowheads inside an enclosure, while Lucide git-branch preserves the branching topology but omits the arrows and enclosure."
+        },
+        {
+            "solar": "branching-paths-up",
+            "solarId": "S0143",
+            "candidates": ["L0790", "L0791", "L0792"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "git-branch",
+            "referenceId": "L0790",
+            "decision": "related",
+            "note": "Solar shows a branching path with two directional arrowheads inside an enclosure, while Lucide git-branch preserves the branching topology but omits the arrows and enclosure."
+        },
+        {
+            "solar": "broom",
+            "solarId": "S0144",
+            "candidates": ["L0257", "L0258"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "broom",
+            "referenceId": "L0257",
+            "decision": "variant",
+            "note": "Both depict a broom, but Solar uses a soft feather-like head while Lucide broom uses a bristled angled head; the cleaning object is preserved with a different silhouette."
+        },
+        {
+            "solar": "bug",
+            "solarId": "S0145",
+            "candidates": ["L0262"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bug",
+            "referenceId": "L0262",
+            "decision": "equivalent",
+            "note": "Both depict the same generic bug object; body segmentation and leg arrangement are styling differences."
+        },
+        {
+            "solar": "bug-minimalistic",
+            "solarId": "S0146",
+            "candidates": ["L0262", "L0263"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bug",
+            "referenceId": "L0262",
+            "decision": "variant",
+            "note": "Both depict a bug, but Solar simplifies the body to two interior bars while Lucide bug uses a detailed insect body; the object is preserved but minimal specificity changes."
+        },
+        {
+            "solar": "buildings",
+            "solarId": "S0147",
+            "candidates": ["L0265", "L0266"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "building",
+            "referenceId": "L0265",
+            "decision": "related",
+            "note": "Solar shows multiple buildings on a shared baseline, while Lucide building is one detailed building; the architecture category is related but count and composition differ."
+        },
+        {
+            "solar": "buildings-2",
+            "solarId": "S0148",
+            "candidates": ["L0266", "L0265"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "building-2",
+            "referenceId": "L0266",
+            "decision": "related",
+            "note": "Solar shows multiple buildings on a shared baseline, while Lucide building-2 is one building silhouette; the architecture category is related but count and composition differ."
+        },
+        {
+            "solar": "buildings-3",
+            "solarId": "S0149",
+            "candidates": ["L0265", "L0266"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "building",
+            "referenceId": "L0265",
+            "decision": "related",
+            "note": "Solar shows a group of buildings with a central tower, while Lucide building preserves only one building; the architecture category is related but count and composition differ."
+        },
+        {
+            "solar": "bus",
+            "solarId": "S0150",
+            "candidates": ["L0267", "L0268"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "bus-front",
+            "referenceId": "L0268",
+            "decision": "variant",
+            "note": "Both depict a bus from the front, but Solar and Lucide use different window, bumper, and wheel details; the vehicle and direction are preserved with a visual variant."
+        },
+        {
+            "solar": "calculator",
+            "solarId": "S0151",
+            "candidates": ["L0273"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calculator",
+            "referenceId": "L0273",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "calculator-minimalistic",
+            "solarId": "S0152",
+            "candidates": ["L0273"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calculator",
+            "referenceId": "L0273",
+            "decision": "variant",
+            "note": "Both depict a calculator, but Solar shows arithmetic symbols while Lucide calculator shows keypad dots and a display; the object is preserved with a meaningful internal-detail variant."
+        },
+        {
+            "solar": "calendar",
+            "solarId": "S0153",
+            "candidates": ["L0274"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calendar",
+            "referenceId": "L0274",
+            "decision": "equivalent",
+            "note": "Both depict the same generic calendar object; the optional date-grid detail is styling."
+        },
+        {
+            "solar": "calendar-add",
+            "solarId": "S0154",
+            "candidates": ["L0288", "L0274", "L0411"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calendar-plus",
+            "referenceId": "L0288",
+            "decision": "variant",
+            "note": "Both depict a calendar with an add modifier, but Solar places a plus inside the page while Lucide calendar-plus places it outside the lower corner; the object and action are preserved with a layout variant."
+        },
+        {
+            "solar": "calendar-date",
+            "solarId": "S0155",
+            "candidates": ["L0274", "L0275", "L0282"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calendar",
+            "referenceId": "L0274",
+            "decision": "variant",
+            "note": "Both depict a calendar with a date marker, but Solar renders the number 10 and Lucide calendar uses a generic empty calendar in the shown candidate; the date specificity is not preserved."
+        },
+        {
+            "solar": "calendar-mark",
+            "solarId": "S0156",
+            "candidates": ["L0274", "L0395"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "calendar-minimalistic",
+            "solarId": "S0157",
+            "candidates": ["L0274"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calendar",
+            "referenceId": "L0274",
+            "decision": "variant",
+            "note": "Both depict a calendar, but Solar uses a minimal empty page and Lucide calendar uses a more detailed header and binding rings; the object is preserved with a construction variant."
+        },
+        {
+            "solar": "calendar-search",
+            "solarId": "S0158",
+            "candidates": ["L0291", "L0274"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "calendar-search",
+            "referenceId": "L0291",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "call-cancel",
+            "solarId": "S0159",
+            "candidates": ["L1233", "L1228", "L1062"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "call-cancel-rounded",
+            "solarId": "S0160",
+            "candidates": ["L1233", "L1228", "L1062"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "call-chat",
+            "solarId": "S0161",
+            "candidates": ["L1051", "L1229", "L1228"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "call-chat-rounded",
+            "solarId": "S0162",
+            "candidates": ["L1051", "L1229", "L1228"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "call-dropped",
+            "solarId": "S0163",
+            "candidates": ["L1232", "L1230", "L1228"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "phone-missed",
+            "referenceId": "L1232",
+            "decision": "related",
+            "note": "Solar shows a phone with a bent outgoing/drop arrow, while Lucide phone-missed uses an X modifier; both express an unsuccessful call state but the direction and state glyph differ."
+        },
+        {
+            "solar": "call-dropped-rounded",
+            "solarId": "S0164",
+            "candidates": ["L1232", "L1230", "L1228"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "phone-missed",
+            "referenceId": "L1232",
+            "decision": "related",
+            "note": "Solar shows a phone with a bent outgoing/drop arrow, while Lucide phone-missed uses an X modifier; both express an unsuccessful call state but the direction and state glyph differ."
+        },
+        {
+            "solar": "call-medicine",
+            "solarId": "S0165",
+            "candidates": ["L1228", "L0411", "L0254"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "call-medicine-rounded",
+            "solarId": "S0166",
+            "candidates": ["L1228", "L0411", "L0254"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "camera",
+            "solarId": "S0167",
+            "candidates": ["L0296"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "camera",
+            "referenceId": "L0296",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "camera-add",
+            "solarId": "S0168",
+            "candidates": ["L0296", "L0411"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "camera-minimalistic",
+            "solarId": "S0169",
+            "candidates": ["L0296"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "camera",
+            "referenceId": "L0296",
+            "decision": "variant",
+            "note": "Both depict a camera, but Solar uses a minimal body with a top bar while Lucide camera uses a detailed top contour; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "camera-rotate",
+            "solarId": "S0170",
+            "candidates": ["L1602", "L0296", "L1340"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "camera-square",
+            "solarId": "S0171",
+            "candidates": ["L0296", "L1488", "L0376"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "camera",
+            "referenceId": "L0296",
+            "decision": "variant",
+            "note": "Both depict a camera, but Solar uses a square enclosure and Lucide camera uses a conventional camera body; the lens and camera object are preserved while the enclosure shape differs."
+        },
+        {
+            "solar": "car-battery",
+            "solarId": "S0172",
+            "candidates": ["L0307", "L0153"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "car-battery",
+            "referenceId": "L0307",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "card",
+            "solarId": "S0173",
+            "candidates": ["L0526", "L0887", "L1776"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "credit-card",
+            "referenceId": "L0526",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "card-2",
+            "solarId": "S0174",
+            "candidates": ["L0526", "L0887", "L1776"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "credit-card",
+            "referenceId": "L0526",
+            "decision": "variant",
+            "note": "Both depict a payment card, but Solar adds a chip and lower marks while Lucide credit-card is a simpler card silhouette; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "card-receive",
+            "solarId": "S0175",
+            "candidates": ["L0526", "L0073", "L0140"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "card-search",
+            "solarId": "S0176",
+            "candidates": ["L0526", "L1388", "L0681"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "card-send",
+            "solarId": "S0177",
+            "candidates": ["L0526", "L0096", "L0141"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "card-transfer",
+            "solarId": "S0178",
+            "candidates": ["L0526", "L0096", "L0140"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "cardholder",
+            "solarId": "S0179",
+            "candidates": ["L0887", "L0526", "L1776"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "id-card",
+            "referenceId": "L0887",
+            "decision": "related",
+            "note": "Solar shows a cardholder or wallet enclosure with a card slot, while Lucide id-card shows an identification card; the card concept is related but the holder object is not preserved."
+        },
+        {
+            "solar": "cart",
+            "solarId": "S0180",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "equivalent",
+            "note": "Both depict the same shopping-cart object; basket, handle, and wheel construction are styling differences."
+        },
+        {
+            "solar": "cart-2",
+            "solarId": "S0181",
+            "candidates": ["L1435", "L1434"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a lattice basket construction absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
+        },
+        {
+            "solar": "cart-3",
+            "solarId": "S0182",
+            "candidates": ["L1435", "L1434"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a three-slot basket construction absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
+        },
+        {
+            "solar": "cart-4",
+            "solarId": "S0183",
+            "candidates": ["L1435", "L1434"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a handled basket with an interior bar absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
+        },
+        {
+            "solar": "cart-5",
+            "solarId": "S0184",
+            "candidates": ["L1435", "L1434"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a handled basket with two interior bars absent from Lucide shopping-cart; the cart object is preserved with a meaningful construction variant."
+        },
+        {
+            "solar": "cart-check",
+            "solarId": "S0185",
+            "candidates": ["L1435", "L0345"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "cart-cross",
+            "solarId": "S0186",
+            "candidates": ["L1435", "L1817"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "cart-large",
+            "solarId": "S0187",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a wide low basket while Lucide shopping-cart uses a compact basket; the object is preserved with a size and silhouette variant."
+        },
+        {
+            "solar": "cart-large-2",
+            "solarId": "S0188",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a wide low basket while Lucide shopping-cart uses a compact basket; the object is preserved with a size and silhouette variant."
+        },
+        {
+            "solar": "cart-large-3",
+            "solarId": "S0189",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a wide basket with vertical interior divisions while Lucide shopping-cart has none; the object is preserved with a construction variant."
+        },
+        {
+            "solar": "cart-large-4",
+            "solarId": "S0190",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a wide basket with two interior bars while Lucide shopping-cart has none; the object is preserved with a construction variant."
+        },
+        {
+            "solar": "cart-large-minimalistic",
+            "solarId": "S0191",
+            "candidates": ["L1435"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "shopping-cart",
+            "referenceId": "L1435",
+            "decision": "variant",
+            "note": "Both depict a shopping cart, but Solar uses a minimal wide basket while Lucide shopping-cart uses a compact detailed basket; the object is preserved with a visual variant."
+        },
+        {
+            "solar": "cart-plus",
+            "solarId": "S0192",
+            "candidates": ["L1435", "L0411"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": null,
+            "referenceId": null,
+            "decision": "no-match",
+            "note": "Solar combines a specific object with a modifier or enclosure that no inspected Lucide candidate preserves without losing essential specificity."
+        },
+        {
+            "solar": "case",
+            "solarId": "S0193",
+            "candidates": ["L0252", "L0251", "L1668"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "briefcase-business",
+            "referenceId": "L0252",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "case-minimalistic",
+            "solarId": "S0194",
+            "candidates": ["L0252", "L0251", "L1668"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "briefcase-business",
+            "referenceId": "L0252",
+            "decision": "variant",
+            "note": "Both depict a handled briefcase, but Solar simplifies the flap and clasp while Lucide briefcase-business retains its flap and centered clasp; the object is preserved with reduced detail."
+        },
+        {
+            "solar": "case-round",
+            "solarId": "S0195",
+            "candidates": ["L0251", "L0252"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "briefcase",
+            "referenceId": "L0251",
+            "decision": "equivalent",
+            "note": "Visual review confirms the same generic briefcase object; rounded flap versus rectangular divided construction is stylistic."
+        },
+        {
+            "solar": "case-round-minimalistic",
+            "solarId": "S0196",
+            "candidates": ["L0251", "L0252"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "briefcase",
+            "referenceId": "L0251",
+            "decision": "variant",
+            "note": "Both depict a handled case, but Solar uses a minimal rounded flap case while Lucide briefcase is rectangular and divided; the case object is preserved with a different construction."
+        },
+        {
+            "solar": "cash-out",
+            "solarId": "S0197",
+            "candidates": ["L0140", "L1775", "L0139"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "banknote-arrow-down",
+            "referenceId": "L0140",
+            "decision": "related",
+            "note": "Solar shows money leaving a container with a downward arrow, while Lucide banknote-arrow-down preserves money-out direction but uses a single banknote instead of the cash container."
+        },
+        {
+            "solar": "cassette",
+            "solarId": "S0198",
+            "candidates": ["L0316", "L1141", "L0235"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "cassette-tape",
+            "referenceId": "L0316",
+            "decision": "equivalent",
+            "note": ""
+        },
+        {
+            "solar": "cassette-2",
+            "solarId": "S0199",
+            "candidates": ["L0316", "L1141", "L0235"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "cassette-tape",
+            "referenceId": "L0316",
+            "decision": "variant",
+            "note": "Both depict a cassette tape, but Solar uses a second reel and label arrangement while Lucide cassette-tape uses a different tape-window construction; the device is preserved with a visual variant."
+        },
+        {
+            "solar": "cat",
+            "solarId": "S0200",
+            "candidates": ["L0319"],
+            "discoveryComplete": true,
+            "status": "resolved",
+            "reference": "cat",
+            "referenceId": "L0319",
+            "decision": "equivalent",
+            "note": ""
+        }
+    ]
 }

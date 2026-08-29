@@ -1,15 +1,14 @@
-import { createSignal, createMemo, For, Show } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
-import { useSolar, type Icon } from '@solar-icons/solid';
+import { useSolar, type Icon } from '@solar-icons/solid'
+import * as Bold from '@solar-icons/solid/bold'
+import * as BoldDuotone from '@solar-icons/solid/bold-duotone'
+import * as Broken from '@solar-icons/solid/broken'
+import * as LineDuotone from '@solar-icons/solid/line-duotone'
+import * as Linear from '@solar-icons/solid/linear'
+import * as Outline from '@solar-icons/solid/outline'
+import { createSignal, createMemo, For, Show } from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
-import * as Bold from '@solar-icons/solid/bold';
-import * as Linear from '@solar-icons/solid/linear';
-import * as BoldDuotone from '@solar-icons/solid/bold-duotone';
-import * as LineDuotone from '@solar-icons/solid/line-duotone';
-import * as Broken from '@solar-icons/solid/broken';
-import * as Outline from '@solar-icons/solid/outline';
-
-import { ALL_ICONS, STYLES, type IconStyle } from './icon-list';
+import { ALL_ICONS, STYLES, type IconStyle } from './icon-list'
 
 const styleModules: Record<IconStyle, Record<string, Icon>> = {
     Bold,
@@ -18,25 +17,25 @@ const styleModules: Record<IconStyle, Record<string, Icon>> = {
     LineDuotone,
     Broken,
     Outline,
-};
+}
 
 function isLinearLike(s: IconStyle): boolean {
-    return s === 'Linear' || s === 'LineDuotone' || s === 'Broken';
+    return s === 'Linear' || s === 'LineDuotone' || s === 'Broken'
 }
 function isDuotone(s: IconStyle): boolean {
-    return s === 'BoldDuotone' || s === 'LineDuotone';
+    return s === 'BoldDuotone' || s === 'LineDuotone'
 }
 
 export default function Gallery() {
-    const solar = useSolar();
-    const [selectedStyle, setSelectedStyle] = createSignal<IconStyle>('Bold');
-    const [searchQuery, setSearchQuery] = createSignal('');
+    const solar = useSolar()
+    const [selectedStyle, setSelectedStyle] = createSignal<IconStyle>('Bold')
+    const [searchQuery, setSearchQuery] = createSignal('')
 
     const filteredIcons = createMemo(() => {
-        const q = searchQuery().toLowerCase();
-        if (!q) return ALL_ICONS;
-        return ALL_ICONS.filter((n) => n.toLowerCase().includes(q));
-    });
+        const q = searchQuery().toLowerCase()
+        if (!q) return ALL_ICONS
+        return ALL_ICONS.filter(n => n.toLowerCase().includes(q))
+    })
 
     return (
         <div class="space-y-4">
@@ -45,15 +44,14 @@ export default function Gallery() {
                     <label class="text-sm font-medium text-slate-300">Style</label>
                     <div class="flex flex-wrap gap-2">
                         <For each={STYLES}>
-                            {(s) => (
+                            {s => (
                                 <button
                                     class={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
                                         selectedStyle() === s
                                             ? 'bg-amber-500 text-slate-900'
                                             : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                                     }`}
-                                    onClick={() => setSelectedStyle(s)}
-                                >
+                                    onClick={() => setSelectedStyle(s)}>
                                     {s}
                                 </button>
                             )}
@@ -66,13 +64,13 @@ export default function Gallery() {
                         <input
                             type="color"
                             value={solar.color() ?? '#f59e0b'}
-                            onInput={(e) => solar.setColor(e.currentTarget.value)}
+                            onInput={e => solar.setColor(e.currentTarget.value)}
                             class="w-10 h-10 rounded-lg cursor-pointer border-0"
                         />
                         <input
                             type="text"
                             value={solar.color() ?? '#f59e0b'}
-                            onInput={(e) => solar.setColor(e.currentTarget.value)}
+                            onInput={e => solar.setColor(e.currentTarget.value)}
                             class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
                         />
                     </div>
@@ -86,13 +84,12 @@ export default function Gallery() {
                         min="16"
                         max="64"
                         value={Number(solar.size()) || 32}
-                        onInput={(e) => solar.setSize(parseInt(e.currentTarget.value))}
+                        onInput={e => solar.setSize(parseInt(e.currentTarget.value))}
                         class="w-full accent-amber-500"
                     />
                 </div>
                 <div
-                    class={`space-y-2 ${!isLinearLike(selectedStyle()) ? 'opacity-30 pointer-events-none' : ''}`}
-                >
+                    class={`space-y-2 ${!isLinearLike(selectedStyle()) ? 'opacity-30 pointer-events-none' : ''}`}>
                     <label class="text-sm font-medium text-slate-300">
                         Stroke: <span class="text-amber-400">{solar.strokeWidth() ?? 1.5}</span>
                     </label>
@@ -102,7 +99,7 @@ export default function Gallery() {
                         max="4"
                         step="0.1"
                         value={solar.strokeWidth() ?? 1.5}
-                        onInput={(e) => solar.setStrokeWidth(parseFloat(e.currentTarget.value))}
+                        onInput={e => solar.setStrokeWidth(parseFloat(e.currentTarget.value))}
                         disabled={!isLinearLike(selectedStyle())}
                         class="w-full accent-amber-500"
                     />
@@ -113,7 +110,7 @@ export default function Gallery() {
                         type="text"
                         placeholder="Filter icons..."
                         value={searchQuery()}
-                        onInput={(e) => setSearchQuery(e.currentTarget.value)}
+                        onInput={e => setSearchQuery(e.currentTarget.value)}
                         class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 placeholder-slate-500"
                     />
                 </div>
@@ -141,13 +138,13 @@ export default function Gallery() {
                                 <input
                                     type="color"
                                     value={solar.secondaryColor() ?? '#60a5fa'}
-                                    onInput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
+                                    onInput={e => solar.setSecondaryColor(e.currentTarget.value)}
                                     class="w-10 h-10 rounded-lg cursor-pointer border-0"
                                 />
                                 <input
                                     type="text"
                                     value={solar.secondaryColor() ?? '#60a5fa'}
-                                    onInput={(e) => solar.setSecondaryColor(e.currentTarget.value)}
+                                    onInput={e => solar.setSecondaryColor(e.currentTarget.value)}
                                     class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-200 text-sm font-mono"
                                 />
                             </div>
@@ -163,7 +160,7 @@ export default function Gallery() {
                                 max="1"
                                 step="0.05"
                                 value={solar.secondaryOpacity() ?? 0.5}
-                                onInput={(e) =>
+                                onInput={e =>
                                     solar.setSecondaryOpacity(parseFloat(e.currentTarget.value))
                                 }
                                 class="w-full accent-blue-400"
@@ -175,18 +172,16 @@ export default function Gallery() {
 
             <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-4">
                 <For each={filteredIcons()}>
-                    {(name) => {
+                    {name => {
                         const IconComponent = () =>
-                            styleModules[selectedStyle()][name + 'Icon'] as Icon;
+                            styleModules[selectedStyle()][name + 'Icon'] as Icon
                         return (
                             <div
                                 class="group flex flex-col items-center justify-center gap-2 p-4 bg-slate-800/30 rounded-xl border border-slate-700/30 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all cursor-pointer"
-                                title={name}
-                            >
+                                title={name}>
                                 <div
                                     class="flex items-center justify-center"
-                                    style={{ 'min-height': '64px' }}
-                                >
+                                    style={{ 'min-height': '64px' }}>
                                     <Dynamic
                                         component={IconComponent()}
                                         strokeWidth={
@@ -200,10 +195,10 @@ export default function Gallery() {
                                     {name}
                                 </span>
                             </div>
-                        );
+                        )
                     }}
                 </For>
             </div>
         </div>
-    );
+    )
 }

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+
 import { buildAliasMap, buildDeprecatedAliasMap } from './codegen'
 
 describe('buildDeprecatedAliasMap', () => {

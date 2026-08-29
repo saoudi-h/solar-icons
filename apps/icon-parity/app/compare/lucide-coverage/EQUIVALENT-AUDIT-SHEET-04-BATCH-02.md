@@ -9,18 +9,18 @@ evidence.
 
 All ten rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0349 | `double-alt-arrow-right` | L0367 | `chevrons-right` | match | Same pair of rightward chevrons. |
-| S0350 | `double-alt-arrow-up` | L0369 | `chevrons-up` | match | Same pair of upward chevrons. |
-| S0372 | `eraser` | L0606 | `eraser` | match | Same eraser object and diagonal orientation. |
-| S0375 | `euro` | L0399 | `circle-euro` | match | Same euro currency mark in a circular container. |
-| S0381 | `eye` | L0612 | `eye` | match | Same eye object. |
-| S0382 | `eye-closed` | L0613 | `eye-closed` | match | Same closed-eye state. |
-| S0389 | `ferris-wheel` | L0629 | `ferris-wheel` | match | Same ferris-wheel object. |
-| S0390 | `figma` | L0630 | `figma` | match | Same Figma mark. |
-| S0392 | `file` | L0631 | `file` | match | Same generic file/document object. |
-| S0393 | `file-check` | L0645 | `file-check` | match | Same file object with a check modifier. |
+| Solar ID | Solar                    | Lucide ID | Lucide           | Verdict | Evidence                                         |
+| -------- | ------------------------ | --------- | ---------------- | ------- | ------------------------------------------------ |
+| S0349    | `double-alt-arrow-right` | L0367     | `chevrons-right` | match   | Same pair of rightward chevrons.                 |
+| S0350    | `double-alt-arrow-up`    | L0369     | `chevrons-up`    | match   | Same pair of upward chevrons.                    |
+| S0372    | `eraser`                 | L0606     | `eraser`         | match   | Same eraser object and diagonal orientation.     |
+| S0375    | `euro`                   | L0399     | `circle-euro`    | match   | Same euro currency mark in a circular container. |
+| S0381    | `eye`                    | L0612     | `eye`            | match   | Same eye object.                                 |
+| S0382    | `eye-closed`             | L0613     | `eye-closed`     | match   | Same closed-eye state.                           |
+| S0389    | `ferris-wheel`           | L0629     | `ferris-wheel`   | match   | Same ferris-wheel object.                        |
+| S0390    | `figma`                  | L0630     | `figma`          | match   | Same Figma mark.                                 |
+| S0392    | `file`                   | L0631     | `file`           | match   | Same generic file/document object.               |
+| S0393    | `file-check`             | L0645     | `file-check`     | match   | Same file object with a check modifier.          |
 
 ## Verification
 

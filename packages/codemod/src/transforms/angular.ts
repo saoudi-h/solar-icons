@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'

@@ -8,11 +8,11 @@ coverage analysis, but it must not be passed directly to a codemod.
 
 The Lucide → Solar workbench therefore exposes three reverse tiers:
 
-| Tier | Meaning | May be used as the default replacement? |
-| --- | --- | --- |
-| `exact` | At least one Solar icon has a binary semantic match. `preferredSolarMatch` identifies the deterministic choice when several Solar icons collide on one Lucide target. | Yes, use the preferred icon. |
-| `fallback` | No precise Solar match exists, but a named Solar icon is usable when the consuming context tolerates loss of a state, intensity, or modifier. | Only with an explicit context decision. |
-| `gap` | No precise match and no reviewed fallback. This is the genuine icon-design backlog. | No. |
+| Tier       | Meaning                                                                                                                                                               | May be used as the default replacement? |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `exact`    | At least one Solar icon has a binary semantic match. `preferredSolarMatch` identifies the deterministic choice when several Solar icons collide on one Lucide target. | Yes, use the preferred icon.            |
+| `fallback` | No precise Solar match exists, but a named Solar icon is usable when the consuming context tolerates loss of a state, intensity, or modifier.                         | Only with an explicit context decision. |
+| `gap`      | No precise match and no reviewed fallback. This is the genuine icon-design backlog.                                                                                   | No.                                     |
 
 Fallbacks are never inferred from names, similarity scores, or collisions. They
 are recorded in `reverse-coverage-policy.ts` with a rationale. This keeps the

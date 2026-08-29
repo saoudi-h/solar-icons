@@ -8,7 +8,8 @@
     --solar-secondary-opacity: 0.4;
 }
 
-.solar-icons-demo svg, .sprite-icon {
+.solar-icons-demo svg,
+.sprite-icon {
     color: var(--solar-color);
     width: var(--solar-size);
     height: var(--solar-size);
@@ -25,7 +26,9 @@
     border-radius: 0.75rem;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: background 0.15s, border-color 0.15s;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
 }
 .icon-card:hover {
     background: rgba(255, 255, 255, 0.08);

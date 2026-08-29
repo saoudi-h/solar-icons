@@ -3,6 +3,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import { FORWARD_MAP } from '../app/compare/forward-map'
 import {
     REVERSE_COVERAGE_OVERRIDES,
@@ -432,7 +433,10 @@ function buildReport(): CoverageReport {
                 : []
         const preferredSolarMatch = reverseOverride?.preferredSolarId
             ? semanticSolarMatches.find(match => match.solarId === reverseOverride.preferredSolarId)
-            : strictSolarMatches[0] ?? semanticSolarMatches[0] ?? policyExactSolarMatches[0] ?? reverseReviewSolarMatches[0]
+            : (strictSolarMatches[0] ??
+              semanticSolarMatches[0] ??
+              policyExactSolarMatches[0] ??
+              reverseReviewSolarMatches[0])
         if (reverseOverride?.preferredSolarId) {
             assert(
                 preferredSolarMatch,
@@ -445,7 +449,9 @@ function buildReport(): CoverageReport {
             return match
         })
         const reverseTier: ReverseTier =
-            semanticSolarMatches.length > 0 || policyExactSolarMatches.length > 0 || reverseReviewSolarMatches.length > 0
+            semanticSolarMatches.length > 0 ||
+            policyExactSolarMatches.length > 0 ||
+            reverseReviewSolarMatches.length > 0
                 ? 'exact'
                 : fallbackSolarMatches.length > 0
                   ? 'fallback'
@@ -496,7 +502,8 @@ function buildReport(): CoverageReport {
         lucideIcons: entries.length,
         strictEquivalentCovered: entries.filter(entry => entry.strictDecision === 'match').length,
         strictNoMatch: entries.filter(entry => entry.strictDecision === 'no-match').length,
-        semanticEquivalentCovered: entries.filter(entry => entry.semanticDecision === 'match').length,
+        semanticEquivalentCovered: entries.filter(entry => entry.semanticDecision === 'match')
+            .length,
         semanticNoMatch: entries.filter(entry => entry.semanticDecision === 'no-match').length,
         nonEquivalentOnly: entries.filter(entry => entry.coverage === 'non-equivalent').length,
         candidateOnly: entries.filter(entry => entry.coverage === 'candidate-only').length,
@@ -544,7 +551,7 @@ function buildReport(): CoverageReport {
         version: 1,
         generatedFrom: {
             direction: 'solar-to-lucide',
-        projection: 'semantic-forward-projection',
+            projection: 'semantic-forward-projection',
             productionDirectory: relativeFromApp(productionRoot),
             sourceSnapshot,
             lucideIcons: lucideIndex.icons.length,

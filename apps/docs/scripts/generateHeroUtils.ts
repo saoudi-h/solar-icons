@@ -1,6 +1,15 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
-import prettier from 'prettier'
+import path from 'node:path'
+
 import { readCoreMetadata } from './catalog-source'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' }
+    )
 
 const metadata = readCoreMetadata<{ categories: Record<string, { icons: string[] }> }>(
     'metadata.json'
@@ -77,13 +86,7 @@ export type Category = typeof categories[number]
 const main = async () => {
     try {
         const outputContent = generateIconsByCategory(metadata)
-        fs.writeFileSync(
-            outputFilePath,
-            await prettier.format(outputContent, {
-                ...(await prettier.resolveConfig(outputFilePath)),
-                parser: 'typescript',
-            })
-        )
+        fs.writeFileSync(outputFilePath, oxfmtFormat(outputFilePath, outputContent))
         console.log('The file generated/generatedHeroUtils.ts has been generated successfully !')
     } catch (error) {
         console.error('Error generating file :', error)

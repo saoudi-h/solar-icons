@@ -1,7 +1,8 @@
-import { V2StableHeaderWidget } from '@/components/header-v2-widget'
-import { Logo } from '@/components/ui-blocks/logo'
 import { Widget3Icon } from '@solar-icons/react/dynamic/widget-3'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+
+import { V2StableHeaderWidget } from '@/components/header-v2-widget'
+import { Logo } from '@/components/ui-blocks/logo'
 
 /**
  * Shared layout configurations
@@ -23,6 +24,11 @@ export const baseOptions: BaseLayoutProps = {
         {
             text: 'Explore Icons',
             url: '/icons',
+            active: 'nested-url',
+        },
+        {
+            text: 'Blog',
+            url: '/blog',
             active: 'nested-url',
         },
     ],

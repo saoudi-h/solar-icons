@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
+
 import pc from 'picocolors'
+
 import { fixIconName } from '../utils'
 
 const __dirname = import.meta.dirname

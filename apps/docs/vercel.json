@@ -1,4 +1,5 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
+    "installCommand": "corepack enable && corepack prepare pnpm@11.5.3 --activate && pnpm install --no-frozen-lockfile",
     "buildCommand": "cd ../.. && pnpm turbo run build --filter=@solar-icons/docs..."
 }

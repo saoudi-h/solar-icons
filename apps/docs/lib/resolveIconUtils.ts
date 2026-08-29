@@ -41,7 +41,14 @@ export const iconWeights: Weight[] = [
 ]
 
 export type IconifyFrameworkIcon =
-    'react' | 'vue' | 'nuxt' | 'svelte' | 'solid' | 'angular' | 'static' | 'js'
+    | 'react'
+    | 'vue'
+    | 'nuxt'
+    | 'svelte'
+    | 'solid'
+    | 'angular'
+    | 'static'
+    | 'js'
 export const iconifyIcons = ['react', 'vue', 'nuxt', 'svelte', 'solid', 'angular', 'static', 'js']
 
 export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {

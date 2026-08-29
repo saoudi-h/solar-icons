@@ -9,20 +9,20 @@ the production sheet.
 
 All twelve rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0609 | `magnet` | L1009 | `magnet` | match | Same magnet object. |
-| S0611 | `magnifier` | L1388 | `search` | match | Same plain magnifying-glass/search symbol; the name difference is contextual. |
-| S0616 | `map` | L1022 | `map` | match | Same folded map object. |
-| S0622 | `map-point` | L1024 | `map-pin` | match | Same map location pin marker. |
-| S0634 | `maximize` | L1043 | `maximize-2` | match | Same diagonal expand/maximize action. |
-| S0648 | `men` | L1039 | `mars` | match | Same male/mars gender symbol. |
-| S0662 | `minimize` | L1094 | `minimize-2` | match | Same diagonal collapse/minimize action. |
-| S0667 | `minus-circle` | L0403 | `circle-minus` | match | Same minus sign enclosed in a circle. |
-| S0675 | `monitor` | L1098 | `monitor` | match | Same generic desktop monitor object; the existing display/monitor collision remains documented. |
-| S0678 | `moon` | L1112 | `moon` | match | Same crescent moon object. |
-| S0682 | `mouse` | L1118 | `mouse` | match | Same computer mouse object. |
-| S0699 | `notebook` | L1153 | `notebook` | match | Same spiral notebook object. |
+| Solar ID | Solar          | Lucide ID | Lucide         | Verdict | Evidence                                                                                        |
+| -------- | -------------- | --------- | -------------- | ------- | ----------------------------------------------------------------------------------------------- |
+| S0609    | `magnet`       | L1009     | `magnet`       | match   | Same magnet object.                                                                             |
+| S0611    | `magnifier`    | L1388     | `search`       | match   | Same plain magnifying-glass/search symbol; the name difference is contextual.                   |
+| S0616    | `map`          | L1022     | `map`          | match   | Same folded map object.                                                                         |
+| S0622    | `map-point`    | L1024     | `map-pin`      | match   | Same map location pin marker.                                                                   |
+| S0634    | `maximize`     | L1043     | `maximize-2`   | match   | Same diagonal expand/maximize action.                                                           |
+| S0648    | `men`          | L1039     | `mars`         | match   | Same male/mars gender symbol.                                                                   |
+| S0662    | `minimize`     | L1094     | `minimize-2`   | match   | Same diagonal collapse/minimize action.                                                         |
+| S0667    | `minus-circle` | L0403     | `circle-minus` | match   | Same minus sign enclosed in a circle.                                                           |
+| S0675    | `monitor`      | L1098     | `monitor`      | match   | Same generic desktop monitor object; the existing display/monitor collision remains documented. |
+| S0678    | `moon`         | L1112     | `moon`         | match   | Same crescent moon object.                                                                      |
+| S0682    | `mouse`        | L1118     | `mouse`        | match   | Same computer mouse object.                                                                     |
+| S0699    | `notebook`     | L1153     | `notebook`     | match   | Same spiral notebook object.                                                                    |
 
 ## Verification
 

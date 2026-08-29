@@ -1,7 +1,8 @@
 'use client'
 
-import { env } from '@/env'
 import Script from 'next/script'
+
+import { env } from '@/env'
 
 export function Analytics() {
     return (

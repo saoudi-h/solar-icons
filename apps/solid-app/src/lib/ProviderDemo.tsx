@@ -1,53 +1,45 @@
-import { createSignal } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
-import { SolarProvider, useSolar } from '@solar-icons/solid';
-
-import * as Bold from '@solar-icons/solid/bold';
+import { SolarProvider, useSolar } from '@solar-icons/solid'
+import * as Bold from '@solar-icons/solid/bold'
+import { createSignal } from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
 const DEMO_ICONS = {
     Home: Bold.HomeIcon,
     Star: Bold.StarIcon,
     Heart: Bold.HeartIcon,
-};
+}
 
 function ProviderDemoInner() {
-    const solar = useSolar();
+    const solar = useSolar()
     return (
         <div class="bg-slate-900 rounded-lg p-4 space-y-2">
             <div class="flex gap-2 items-center flex-wrap">
                 <button
                     class="px-3 py-1.5 bg-amber-500 text-slate-900 rounded-lg text-sm font-medium"
-                    onClick={() => solar.setColor('#ef4444')}
-                >
+                    onClick={() => solar.setColor('#ef4444')}>
                     Red
                 </button>
                 <button
                     class="px-3 py-1.5 bg-blue-500 text-white rounded-lg text-sm"
-                    onClick={() => solar.setColor('#3b82f6')}
-                >
+                    onClick={() => solar.setColor('#3b82f6')}>
                     Blue
                 </button>
                 <button
                     class="px-3 py-1.5 bg-green-500 text-white rounded-lg text-sm"
-                    onClick={() => solar.setColor('#22c55e')}
-                >
+                    onClick={() => solar.setColor('#22c55e')}>
                     Green
                 </button>
                 <button
                     class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"
-                    onClick={() => solar.setSize(48)}
-                >
+                    onClick={() => solar.setSize(48)}>
                     48px
                 </button>
                 <button
                     class="px-3 py-1.5 bg-slate-600 text-white rounded-lg text-sm"
-                    onClick={() => solar.setSize(24)}
-                >
+                    onClick={() => solar.setSize(24)}>
                     24px
                 </button>
-                <span class="text-xs text-slate-500">
-                    size: {solar.size() ?? 'default'}
-                </span>
+                <span class="text-xs text-slate-500">size: {solar.size() ?? 'default'}</span>
             </div>
             <div class="flex gap-4">
                 <Dynamic component={DEMO_ICONS.Home!} />
@@ -55,13 +47,13 @@ function ProviderDemoInner() {
                 <Dynamic component={DEMO_ICONS.Heart!} />
             </div>
         </div>
-    );
+    )
 }
 
 export default function ProviderDemo() {
-    const [providerSize, setProviderSize] = createSignal(36);
-    const [providerColor, setProviderColor] = createSignal('#f59e0b');
-    const [providerStroke, setProviderStroke] = createSignal(1.5);
+    const [providerSize, setProviderSize] = createSignal(36)
+    const [providerColor, setProviderColor] = createSignal('#f59e0b')
+    const [providerStroke, setProviderStroke] = createSignal(1.5)
     return (
         <div>
             <div class="flex items-center gap-6 mb-4">
@@ -70,7 +62,7 @@ export default function ProviderDemo() {
                     <input
                         type="color"
                         value={providerColor()}
-                        onInput={(e) => setProviderColor(e.currentTarget.value)}
+                        onInput={e => setProviderColor(e.currentTarget.value)}
                         class="w-10 h-10 rounded cursor-pointer border-0"
                     />
                 </div>
@@ -81,7 +73,7 @@ export default function ProviderDemo() {
                         min="16"
                         max="64"
                         value={providerSize()}
-                        onInput={(e) => setProviderSize(parseInt(e.currentTarget.value))}
+                        onInput={e => setProviderSize(parseInt(e.currentTarget.value))}
                         class="w-32 accent-amber-500"
                     />
                 </div>
@@ -93,7 +85,7 @@ export default function ProviderDemo() {
                         max="3"
                         step="0.1"
                         value={providerStroke()}
-                        onInput={(e) => setProviderStroke(parseFloat(e.currentTarget.value))}
+                        onInput={e => setProviderStroke(parseFloat(e.currentTarget.value))}
                         class="w-32 accent-amber-500"
                     />
                 </div>
@@ -101,11 +93,10 @@ export default function ProviderDemo() {
             <SolarProvider
                 color={providerColor()}
                 size={providerSize()}
-                strokeWidth={providerStroke()}
-            >
+                strokeWidth={providerStroke()}>
                 size: {providerSize()}
                 <ProviderDemoInner />
             </SolarProvider>
         </div>
-    );
+    )
 }

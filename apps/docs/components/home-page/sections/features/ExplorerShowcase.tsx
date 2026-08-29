@@ -26,10 +26,7 @@ export const ExplorerShowcase = () => {
                     height={1000}
                     src="/icons-explorer-light.webp"
                     alt="Solar Icons Explorer Light Mode"
-                    className="
-                      w-full object-cover object-top
-                      dark:hidden
-                    "
+                    className="w-full object-cover object-top dark:hidden"
                 />
                 {/* Dark Mode Screenshot */}
                 <Image
@@ -37,17 +34,14 @@ export const ExplorerShowcase = () => {
                     height={1200}
                     src="/icons-explorer-dark.webp"
                     alt="Solar Icons Explorer Dark Mode"
-                    className="
-                      hidden w-full object-cover object-top
-                      dark:block
-                    "
+                    className="hidden w-full object-cover object-top dark:block"
                 />
 
                 {/* Subtle overlay shadow to blend in */}
                 <div
                     className="
-                      pointer-events-none absolute inset-0 bg-linear-to-t
-                      from-default-100/20 via-transparent to-transparent
+                      pointer-events-none absolute inset-0 bg-linear-to-t from-default-100/20
+                      via-transparent to-transparent
                       dark:from-default-50/25
                     "
                 />

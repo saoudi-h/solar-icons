@@ -1,6 +1,7 @@
-import type { ComponentType } from 'react'
-import type { IconProps } from './types'
 import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime'
+import type { ComponentType } from 'react'
+
+import type { IconProps } from './types'
 
 type StyleComponents = StyleComponentsMap<ComponentType<IconProps>>
 

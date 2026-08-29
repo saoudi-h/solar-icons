@@ -10,7 +10,6 @@ import {
 } from '@solar-icons/static'
 import iconsJson from '@solar-icons/static/icons.json' with { type: 'json' }
 import metadataJson from '@solar-icons/static/metadata.json' with { type: 'json' }
-
 import spriteSvg from '@solar-icons/static/sprite?raw'
 
 // Inline sprite SVG to the DOM to allow <use href="#id"> to work properly
@@ -42,9 +41,9 @@ function injectSvg(parent: HTMLElement, svgString: string, label: string) {
 const perIconGrid = document.getElementById('per-icon-grid')!
 injectSvg(perIconGrid, LoginLinearIcon, 'LoginLinearIcon')
 injectSvg(perIconGrid, HomeBoldIcon, 'HomeBoldIcon')
-    injectSvg(perIconGrid, SettingsBoldIcon, 'SettingsBoldIcon')
-    injectSvg(perIconGrid, BellRingLinearIcon, 'BellRingLinearIcon')
-    injectSvg(perIconGrid, ShieldBrokenIcon, 'ShieldBrokenIcon')
+injectSvg(perIconGrid, SettingsBoldIcon, 'SettingsBoldIcon')
+injectSvg(perIconGrid, BellRingLinearIcon, 'BellRingLinearIcon')
+injectSvg(perIconGrid, ShieldBrokenIcon, 'ShieldBrokenIcon')
 injectSvg(perIconGrid, UserOutlineIcon, 'UserOutlineIcon')
 injectSvg(perIconGrid, StarLineDuotoneIcon, 'StarLineDuotoneIcon')
 injectSvg(perIconGrid, AccessibilityBoldDuotoneIcon, 'AccessibilityBoldDuotoneIcon')
@@ -136,12 +135,13 @@ function renderSprite() {
     function renderGrid() {
         const style = styleSelect.value
         themeGrid.innerHTML = ''
-        
+
         const suffix = `-${style}`
         for (const [key, svg] of Object.entries(iconsJson as Record<string, string>)) {
             if (key.endsWith(suffix)) {
                 const wrapper = document.createElement('div')
-                wrapper.className = 'flex items-center justify-center p-2 rounded hover:bg-white/5 transition-colors cursor-pointer'
+                wrapper.className =
+                    'flex items-center justify-center p-2 rounded hover:bg-white/5 transition-colors cursor-pointer'
                 wrapper.title = key
                 wrapper.innerHTML = svg
                 themeGrid.appendChild(wrapper)
@@ -156,7 +156,9 @@ function renderSprite() {
     const sizeInput = <HTMLInputElement>document.getElementById('theme-size')!
     const strokeInput = <HTMLInputElement>document.getElementById('theme-stroke')!
     const secondaryColorInput = <HTMLInputElement>document.getElementById('theme-secondary-color')!
-    const secondaryOpacityInput = <HTMLInputElement>document.getElementById('theme-secondary-opacity')!
+    const secondaryOpacityInput = <HTMLInputElement>(
+        document.getElementById('theme-secondary-opacity')!
+    )
 
     function apply() {
         themeGrid.style.setProperty('--solar-color', colorInput.value)

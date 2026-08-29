@@ -1,6 +1,7 @@
-import { IconsContent } from '@/components/icons-page/IconsContent'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
+
+import { IconsContent } from '@/components/icons-page/IconsContent'
 
 // The icons route reads `?icon=`, `?view=`, `?search=` and
 // `?style=` from the URL via `nuqs`'s `useQueryState`, which

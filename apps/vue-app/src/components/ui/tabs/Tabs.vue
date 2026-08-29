@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { TabsRootEmits, TabsRootProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
+import type { TabsRootEmits, TabsRootProps } from 'reka-ui'
 import { TabsRoot, useForwardPropsEmits } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+
 import { cn } from '@/lib/utils'
 
 const props = defineProps<TabsRootProps & { class?: HTMLAttributes['class'] }>()
@@ -13,7 +14,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <TabsRoot data-slot="tabs" v-bind="forwarded" :class="cn('flex flex-col gap-2', props.class)">
-    <slot />
-  </TabsRoot>
+    <TabsRoot data-slot="tabs" v-bind="forwarded" :class="cn('flex flex-col gap-2', props.class)">
+        <slot />
+    </TabsRoot>
 </template>

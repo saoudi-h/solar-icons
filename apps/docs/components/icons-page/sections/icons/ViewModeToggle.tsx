@@ -1,6 +1,7 @@
 'use client'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
+
 import { useViewModeURL } from './context'
 
 export const ViewModeToggle: React.FC<{ className?: string }> = ({ className }) => {
@@ -31,14 +32,10 @@ export const ViewModeToggle: React.FC<{ className?: string }> = ({ className }) 
                                 data-vaul-no-drag
                                 onClick={() => setViewMode(opt.value)}
                                 className={cn(
-                                    `
-                                      h-8 rounded-md px-3 text-xs font-medium
-                                      transition-colors
-                                    `,
+                                    `h-8 rounded-md px-3 text-xs font-medium transition-colors`,
                                     `
                                       hover:bg-default-300
-                                      focus-visible:ring-1
-                                      focus-visible:ring-ring
+                                      focus-visible:ring-1 focus-visible:ring-ring
                                       focus-visible:outline-hidden
                                     `,
                                     isActive && 'bg-default-300 text-foreground',

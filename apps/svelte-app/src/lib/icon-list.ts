@@ -1271,16 +1271,9 @@ export const ALL_ICONS = [
     'Women',
     'Xxx',
     'ZipFile',
-] as const;
+] as const
 
-export type IconName = (typeof ALL_ICONS)[number];
+export type IconName = (typeof ALL_ICONS)[number]
 
-export const STYLES = [
-    'Bold',
-    'Linear',
-    'BoldDuotone',
-    'LineDuotone',
-    'Broken',
-    'Outline',
-] as const;
-export type IconStyle = (typeof STYLES)[number];
+export const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const
+export type IconStyle = (typeof STYLES)[number]

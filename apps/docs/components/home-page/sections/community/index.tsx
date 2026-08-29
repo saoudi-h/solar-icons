@@ -1,7 +1,4 @@
 'use client'
-import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
-import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
-import { Heading } from '@/components/ui/heading'
 import NumberFlow from '@number-flow/react'
 import type { IconWeight } from '@solar-icons/core/runtime'
 import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
@@ -31,6 +28,10 @@ import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
 import { motion, useInView } from 'motion/react'
 import React, { useEffect, useRef, useState } from 'react'
+
+import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
+import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
+import { Heading } from '@/components/ui/heading'
 
 interface Stats {
     stars: number
@@ -169,15 +170,8 @@ export const CommunitySection = () => {
     return (
         <SectionMotion
             variants={containerVariants}
-            className="
-              container self-center px-3 pb-16
-              md:px-0
-            ">
-            <div
-                className={`
-                  relative w-full overflow-hidden p-8 text-left
-                  md:rounded-4xl md:p-14
-                `}>
+            className="container self-center px-3 pb-16 md:px-0">
+            <div className={`relative w-full overflow-hidden p-8 text-left md:rounded-4xl md:p-14`}>
                 {/* Content Grid */}
                 <div
                     className={`
@@ -185,34 +179,18 @@ export const CommunitySection = () => {
                       md:grid-cols-12 md:gap-12
                     `}>
                     {/* Left: Text and dynamic metric widgets */}
-                    <div
-                        className="
-                          flex flex-col gap-6
-                          md:col-span-7
-                        ">
+                    <div className="flex flex-col gap-6 md:col-span-7">
                         {/* Title & Copy */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-col gap-4">
+                        <motion.div variants={itemVariants} className="flex flex-col gap-4">
                             <Heading
                                 size="h1"
-                                className="
-                                  text-3xl font-extrabold tracking-tight
-                                  md:text-4xl
-                                ">
-                                Built for developers.{' '}
-                                <br
-                                    className="
-                                      hidden
-                                      md:inline
-                                    "
-                                />
+                                className="text-3xl font-extrabold tracking-tight md:text-4xl">
+                                Built for developers. <br className="hidden md:inline" />
                                 Maintained with care.
                             </Heading>
                             <p
                                 className={`
-                                  max-w-[540px] text-sm/relaxed
-                                  text-muted-foreground
+                                  max-w-[540px] text-sm/relaxed text-muted-foreground
                                   md:text-base
                                 `}>
                                 Clean packages, improved search, and developer-friendly tools to
@@ -224,21 +202,15 @@ export const CommunitySection = () => {
                         {/* Stats Dashboard Grid */}
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="flex-1">
                                 <StatCard title="Weekly Downloads" value={stats.downloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="flex-1">
                                 <StatCard title="Total Icons" value={7608} />
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="flex-1">
+                            <motion.div variants={itemVariants} className="flex-1">
                                 <StatCard title="Total Packages" value={10} />
                             </motion.div>
                         </div>
@@ -247,10 +219,7 @@ export const CommunitySection = () => {
                     {/* Right: Custom GitHub Star Button CTA with geometric icon grid */}
                     <motion.div
                         variants={itemVariants}
-                        className="
-                          relative flex w-full items-center justify-center
-                          md:col-span-5
-                        ">
+                        className="relative flex w-full items-center justify-center md:col-span-5">
                         <CommunityIconGrid stars={stats.stars} isLoading={isLoading} />
                     </motion.div>
                 </div>
@@ -279,16 +248,10 @@ const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
     return (
         <div ref={ref} className={`flex flex-col gap-1 p-4`}>
             <span
-                className={`
-                  text-[10px] font-bold tracking-widest text-muted-foreground
-                  uppercase
-                `}>
+                className={`text-[10px] font-bold tracking-widest text-muted-foreground uppercase`}>
                 {title}
             </span>
-            <span
-                className={`
-                  text-3xl font-extrabold tracking-tight text-foreground
-                `}>
+            <span className={`text-3xl font-extrabold tracking-tight text-foreground`}>
                 <NumberFlow value={displayValue} format={{ minimumIntegerDigits: 1 }} trend={1} />
             </span>
         </div>
@@ -323,8 +286,8 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
             {/* The 3D Tilted Icon Grid */}
             <div
                 className="
-                  pointer-events-none absolute flex h-72 w-96 items-center
-                  justify-center select-none
+                  pointer-events-none absolute flex h-72 w-96 items-center justify-center
+                  select-none
                   sm:w-md
                 "
                 style={{
@@ -342,24 +305,16 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
                     {gridIcons.map((row, rowIndex) =>
                         row.map((IconComponent, colIndex) => {
                             if (IconComponent === null) {
-                                return (
-                                    <div
-                                        key="center-placeholder"
-                                        className="size-full"
-                                    />
-                                )
+                                return <div key="center-placeholder" className="size-full" />
                             }
 
                             return (
                                 <div
                                     key={`${rowIndex}-${colIndex}`}
-                                    className="
-                                      flex size-full items-center justify-center
-                                    ">
+                                    className="flex size-full items-center justify-center">
                                     <div
                                         className="
-                                          text-foreground/40 transition-colors
-                                          duration-300
+                                          text-foreground/40 transition-colors duration-300
                                           dark:text-foreground/25
                                         ">
                                         <IconComponent size={24} weight="BoldDuotone" />

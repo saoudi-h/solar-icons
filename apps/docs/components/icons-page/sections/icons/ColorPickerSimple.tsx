@@ -1,12 +1,14 @@
 'use client'
+import { useEffect, useState } from 'react'
+import { HexColorPicker } from 'react-colorful'
+
 import { CopyButton } from '@/components/ui/copy-button'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Slider } from '@/components/ui/slider'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-import { useEffect, useState } from 'react'
-import { HexColorPicker } from 'react-colorful'
+
 import { getContrastingColor } from './color-utils'
 
 interface ColorPickerSimpleProps {
@@ -78,8 +80,8 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                                 }}
                                 aria-label={tooltip ?? 'Color'}
                                 className="
-                                  h-10 w-full rounded-l-lg rounded-r-none
-                                  border-none! text-center text-xs shadow-none!
+                                  h-10 w-full rounded-l-lg rounded-r-none border-none! text-center
+                                  text-xs shadow-none!
                                 "
                             />
                         </PopoverTrigger>
@@ -93,10 +95,7 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                 <PopoverContent
                     align="start"
                     sideOffset={6}
-                    className="
-                      w-72 space-y-3 overflow-hidden bg-default-200 p-3
-                      shadow-md
-                    ">
+                    className="w-72 space-y-3 overflow-hidden bg-default-200 p-3 shadow-md">
                     <HexColorPicker
                         color={color}
                         onChange={setColor}
@@ -106,8 +105,7 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                         <div className="space-y-1.5">
                             <div
                                 className="
-                                  flex items-center justify-between text-xs
-                                  text-muted-foreground
+                                  flex items-center justify-between text-xs text-muted-foreground
                                 ">
                                 <span>{opacityLabel}</span>
                                 <span className="font-mono tabular-nums">
@@ -130,9 +128,7 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                 size="icon"
                 colors="accent"
                 variant="default"
-                className="
-                  size-10 shrink-0 rounded-l-none rounded-r-lg border-none
-                "
+                className="size-10 shrink-0 rounded-l-none rounded-r-lg border-none"
             />
         </div>
     )

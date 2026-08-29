@@ -3,7 +3,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { FORWARD_REFERENCE_OVERRIDES, SEMANTIC_RELATED_MATCH_IDS, SEMANTIC_VARIANT_NO_MATCH_IDS } from '../app/compare/forward-semantic-promotions'
+
+import {
+    FORWARD_REFERENCE_OVERRIDES,
+    SEMANTIC_RELATED_MATCH_IDS,
+    SEMANTIC_VARIANT_NO_MATCH_IDS,
+} from '../app/compare/forward-semantic-promotions'
 
 type EntryStatus = 'pending' | 'resolved' | 'unresolved'
 type Decision = 'equivalent' | 'variant' | 'related' | 'no-match'
@@ -29,7 +34,12 @@ interface Batch {
 }
 
 function toCanonicalDecision(decision: Decision, solarId: string): CanonicalDecision {
-    return FORWARD_REFERENCE_OVERRIDES[solarId] || decision === 'equivalent' || (decision === 'variant' && !SEMANTIC_VARIANT_NO_MATCH_IDS.has(solarId)) || SEMANTIC_RELATED_MATCH_IDS.has(solarId) ? 'equivalent' : 'no-match'
+    return FORWARD_REFERENCE_OVERRIDES[solarId] ||
+        decision === 'equivalent' ||
+        (decision === 'variant' && !SEMANTIC_VARIANT_NO_MATCH_IDS.has(solarId)) ||
+        SEMANTIC_RELATED_MATCH_IDS.has(solarId)
+        ? 'equivalent'
+        : 'no-match'
 }
 
 const currentFile = fileURLToPath(import.meta.url)

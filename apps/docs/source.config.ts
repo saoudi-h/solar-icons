@@ -1,6 +1,6 @@
 import { remarkSteps } from 'fumadocs-core/mdx-plugins'
 import { metaSchema, pageSchema } from 'fumadocs-core/source/schema'
-import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
+import { defineCollections, defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import lastModified from 'fumadocs-mdx/plugins/last-modified'
 import { z } from 'zod'
 
@@ -24,6 +24,23 @@ export const docs = defineDocs({
     },
     meta: {
         schema: metaSchema,
+    },
+})
+
+export const blog = defineCollections({
+    dir: 'content/blog',
+    type: 'doc',
+    schema: pageSchema.extend({
+        author: z.string(),
+        date: z.coerce.date(),
+        tags: z.array(z.string()).optional(),
+        image: z.string().optional(),
+        featured: z.boolean().default(false),
+        status: z.enum(['draft', 'published']).default('published'),
+    }),
+    postprocess: {
+        includeProcessedMarkdown: true,
+        extractLinkReferences: true,
     },
 })
 

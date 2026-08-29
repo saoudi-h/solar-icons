@@ -3,6 +3,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import sharp from 'sharp'
 
 type Coverage = 'non-equivalent' | 'candidate-only' | 'no-recorded-coverage'
@@ -157,16 +158,7 @@ function orderedEvidence(entry: BacklogEntry): SolarEvidence[] {
         })
 }
 
-const ignoredTokens = new Set([
-    '2',
-    '3',
-    'big',
-    'circle',
-    'minimalistic',
-    'off',
-    'round',
-    'square',
-])
+const ignoredTokens = new Set(['2', '3', 'big', 'circle', 'minimalistic', 'off', 'round', 'square'])
 
 function tokens(value: string): Set<string> {
     return new Set(
@@ -194,7 +186,9 @@ function lexicalSolarCandidates(lucide: AtlasIcon, solar: AtlasIcon[]): SolarEvi
             }
         })
         .filter(item => item.score > 0)
-        .sort((left, right) => right.score - left.score || left.icon.id.localeCompare(right.icon.id))
+        .sort(
+            (left, right) => right.score - left.score || left.icon.id.localeCompare(right.icon.id)
+        )
         .slice(0, 3)
 
     return scored.map(item => ({
@@ -250,7 +244,9 @@ async function main(): Promise<void> {
             const visibleEvidence = evidence.slice(0, 3)
             for (let evidenceIndex = 0; evidenceIndex < 3; evidenceIndex += 1) {
                 const item =
-                    evidenceIndex < visibleEvidence.length ? visibleEvidence[evidenceIndex] : undefined
+                    evidenceIndex < visibleEvidence.length
+                        ? visibleEvidence[evidenceIndex]
+                        : undefined
                 const solar = item === undefined ? undefined : solarById.get(item.solarId)
                 composites.push({
                     input: solar
@@ -290,7 +286,8 @@ async function main(): Promise<void> {
             lucideId: entry.id,
             coverage: entry.coverage,
             evidence,
-            solarCandidates: entry.coverage === 'no-recorded-coverage' ? evidence.map(item => item.solarId) : [],
+            solarCandidates:
+                entry.coverage === 'no-recorded-coverage' ? evidence.map(item => item.solarId) : [],
             decision: null,
             note: '',
         }

@@ -1,8 +1,10 @@
-import { Button } from '@/components/ui/button'
-import { toPascalCase } from '@/lib/utils'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
+
+import { Button } from '@/components/ui/button'
+import { toPascalCase } from '@/lib/utils'
+
 import { useSelectedIcon, useStyleURL, weightToStyleSlug } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 

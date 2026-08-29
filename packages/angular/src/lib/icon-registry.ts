@@ -1,4 +1,5 @@
 import { InjectionToken, type Provider, type Type } from '@angular/core'
+
 import type { IconBase } from './icon-base'
 
 /**

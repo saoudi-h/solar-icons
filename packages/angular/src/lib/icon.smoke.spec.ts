@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
+
 import { SolarArrowLeftBold } from '../icons/arrow-left-bold'
 import { SolarArrowLeftBoldDuotone } from '../icons/arrow-left-bold-duotone'
 import { SolarArrowLeftBroken } from '../icons/arrow-left-broken'

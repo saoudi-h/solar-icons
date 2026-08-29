@@ -9,6 +9,7 @@ import {
     type ComponentRef,
     type Type,
 } from '@angular/core'
+
 import type { IconBase } from './icon-base'
 import { SOLAR_ICON_REGISTRY } from './icon-registry'
 import type { IconComponent, SolarIconName } from './types'

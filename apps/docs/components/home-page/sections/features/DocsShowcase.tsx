@@ -26,9 +26,7 @@ export const DocsShowcase = () => {
     ] as const
 
     return (
-        <div ref={containerRef} className="
-          mt-auto flex w-full flex-col gap-4 font-sans text-xs
-        ">
+        <div ref={containerRef} className="mt-auto flex w-full flex-col gap-4 font-sans text-xs">
             {/* Document Header mockup */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -56,15 +54,11 @@ export const DocsShowcase = () => {
                         transition={{ delay: 0.2, duration: 0.3 }}
                         viewport={{ once: true }}
                         className="
-                          flex items-center gap-1.5 rounded-lg border
-                          border-neutral-300/20 bg-white px-3 py-1.5 font-bold
-                          text-neutral-700 shadow-2xs select-none
-                          dark:border-neutral-800 dark:bg-neutral-900
-                          dark:text-neutral-300
+                          flex items-center gap-1.5 rounded-lg border border-neutral-300/20 bg-white
+                          px-3 py-1.5 font-bold text-neutral-700 shadow-2xs select-none
+                          dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300
                         ">
-                        <Icon icon="mdi:content-copy" className="
-                          size-3.5 text-neutral-400
-                        " />
+                        <Icon icon="mdi:content-copy" className="size-3.5 text-neutral-400" />
                         Copy Markdown
                     </motion.button>
 
@@ -76,11 +70,10 @@ export const DocsShowcase = () => {
                             viewport={{ once: true }}
                             onClick={() => setIsOpen(!isOpen)}
                             className="
-                              flex cursor-pointer items-center gap-1 rounded-lg
-                              border border-neutral-300/20 bg-white px-3 py-1.5
-                              font-bold text-neutral-700 shadow-2xs select-none
-                              dark:border-neutral-800 dark:bg-neutral-900
-                              dark:text-neutral-300
+                              flex cursor-pointer items-center gap-1 rounded-lg border
+                              border-neutral-300/20 bg-white px-3 py-1.5 font-bold text-neutral-700
+                              shadow-2xs select-none
+                              dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300
                             ">
                             Open
                             <Icon
@@ -103,11 +96,9 @@ export const DocsShowcase = () => {
                                         damping: 15,
                                     }}
                                     className="
-                                      absolute top-full left-0 z-30 w-48
-                                      rounded-xl border border-neutral-200
-                                      bg-white p-1.5 shadow-lg
-                                      dark:border-neutral-800
-                                      dark:bg-neutral-900
+                                      absolute top-full left-0 z-30 w-48 rounded-xl border
+                                      border-neutral-200 bg-white p-1.5 shadow-lg
+                                      dark:border-neutral-800 dark:bg-neutral-900
                                     ">
                                     {options.map((opt, idx) => (
                                         <motion.div
@@ -121,20 +112,15 @@ export const DocsShowcase = () => {
                                                 },
                                             }}
                                             className="
-                                              flex cursor-pointer items-center
-                                              justify-between rounded-lg px-2.5
-                                              py-1.5 text-neutral-600
+                                              flex cursor-pointer items-center justify-between
+                                              rounded-lg px-2.5 py-1.5 text-neutral-600
                                               transition-colors
-                                              hover:bg-neutral-100
-                                              hover:text-neutral-900
+                                              hover:bg-neutral-100 hover:text-neutral-900
                                               dark:text-neutral-400
                                               dark:hover:bg-neutral-800/50
                                               dark:hover:text-neutral-100
                                             ">
-                                            <div
-                                                className="
-                                                  flex items-center gap-2
-                                                ">
+                                            <div className="flex items-center gap-2">
                                                 <Icon
                                                     icon={opt.icon}
                                                     className="
@@ -142,18 +128,13 @@ export const DocsShowcase = () => {
                                                       dark:text-neutral-500
                                                     "
                                                 />
-                                                <span
-                                                    className="
-                                                      text-[10.5px] font-medium
-                                                    ">
+                                                <span className="text-[10.5px] font-medium">
                                                     {opt.name}
                                                 </span>
                                             </div>
                                             <Icon
                                                 icon="material-symbols:open-in-new"
-                                                className="
-                                                  size-3 text-neutral-400
-                                                "
+                                                className="size-3 text-neutral-400"
                                             />
                                         </motion.div>
                                     ))}
@@ -169,27 +150,10 @@ export const DocsShowcase = () => {
                     whileInView={{ opacity: 0.3 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="
-                      pointer-events-none mt-2 flex flex-col gap-2 select-none
-                    ">
-                    <div
-                        className="
-                          h-3 w-1/3 rounded-sm bg-neutral-400
-                          dark:bg-neutral-600
-                        "
-                    />
-                    <div
-                        className="
-                          h-2 w-full rounded-sm bg-neutral-300
-                          dark:bg-neutral-700
-                        "
-                    />
-                    <div
-                        className="
-                          h-2 w-5/6 rounded-sm bg-neutral-300
-                          dark:bg-neutral-700
-                        "
-                    />
+                    className="pointer-events-none mt-2 flex flex-col gap-2 select-none">
+                    <div className="h-3 w-1/3 rounded-sm bg-neutral-400 dark:bg-neutral-600" />
+                    <div className="h-2 w-full rounded-sm bg-neutral-300 dark:bg-neutral-700" />
+                    <div className="h-2 w-5/6 rounded-sm bg-neutral-300 dark:bg-neutral-700" />
                 </motion.div>
             </motion.div>
         </div>

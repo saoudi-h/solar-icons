@@ -1,5 +1,0 @@
-dist
-out-tsc
-node_modules
-*.tsbuildinfo
-coverage

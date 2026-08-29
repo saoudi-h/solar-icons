@@ -1,8 +1,9 @@
 'use client'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { cn } from '@/lib/utils'
 import { STYLES, type Weight } from '@solar-icons/core/runtime'
 import { DialogIcon } from '@solar-icons/react/dynamic/dialog'
+
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { cn } from '@/lib/utils'
 
 interface StylePickerProps {
     value: Weight
@@ -17,9 +18,7 @@ export const StylePicker: React.FC<StylePickerProps> = ({ value, onChange, class
 
     return (
         <div
-            className={cn(`
-              flex h-10 items-center gap-1 rounded-lg bg-default-200 p-1
-            `, className)}
+            className={cn(`flex h-10 items-center gap-1 rounded-lg bg-default-200 p-1`, className)}
             role="radiogroup"
             aria-label="Style">
             {validStyles.map(style => {
@@ -36,20 +35,15 @@ export const StylePicker: React.FC<StylePickerProps> = ({ value, onChange, class
                                 onClick={() => onChange(style)}
                                 className={cn(
                                     `
-                                      flex size-8 items-center justify-center
-                                      rounded-md transition-colors
+                                      flex size-8 items-center justify-center rounded-md
+                                      transition-colors
                                     `,
                                     `
                                       hover:bg-default-300
-                                      focus-visible:ring-1
-                                      focus-visible:ring-ring
+                                      focus-visible:ring-1 focus-visible:ring-ring
                                       focus-visible:outline-hidden
                                     `,
-                                    isActive &&
-                                        `
-                                          bg-default-300 ring-1
-                                          ring-foreground/20
-                                        `
+                                    isActive && `bg-default-300 ring-1 ring-foreground/20`
                                 )}>
                                 <DialogIcon className="size-5" weight={style} size={24} />
                             </button>

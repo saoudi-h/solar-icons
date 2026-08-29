@@ -9,16 +9,16 @@ the production sheet.
 
 All eight rows remain strict matches. No production reference required correction.
 
-| Solar ID | Solar | Lucide ID | Lucide | Verdict | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| S0402 | `file-text` | L0690 | `file-text` | match | Same generic document with text lines. |
-| S0408 | `flag` | L0714 | `flag` | match | Same plain flag object without a state modifier. |
-| S0412 | `flashlight` | L0720 | `flashlight` | match | Same handheld flashlight object. |
-| S0421 | `folder-check` | L0735 | `folder-check` | match | Same folder object with a check modifier. |
-| S0433 | `forward` | L0767 | `forward` | match | Same rightward curved forward arrow action. |
-| S0476 | `hamburger-menu` | L1049 | `menu` | match | Same three horizontal menu bars; the naming difference is non-semantic. |
-| S0492 | `health` | L0868 | `heart-plus` | match | Same heart-with-plus health/medical symbol. |
-| S0493 | `heart` | L0863 | `heart` | match | Same plain heart object without a modifier. |
+| Solar ID | Solar            | Lucide ID | Lucide         | Verdict | Evidence                                                                |
+| -------- | ---------------- | --------- | -------------- | ------- | ----------------------------------------------------------------------- |
+| S0402    | `file-text`      | L0690     | `file-text`    | match   | Same generic document with text lines.                                  |
+| S0408    | `flag`           | L0714     | `flag`         | match   | Same plain flag object without a state modifier.                        |
+| S0412    | `flashlight`     | L0720     | `flashlight`   | match   | Same handheld flashlight object.                                        |
+| S0421    | `folder-check`   | L0735     | `folder-check` | match   | Same folder object with a check modifier.                               |
+| S0433    | `forward`        | L0767     | `forward`      | match   | Same rightward curved forward arrow action.                             |
+| S0476    | `hamburger-menu` | L1049     | `menu`         | match   | Same three horizontal menu bars; the naming difference is non-semantic. |
+| S0492    | `health`         | L0868     | `heart-plus`   | match   | Same heart-with-plus health/medical symbol.                             |
+| S0493    | `heart`          | L0863     | `heart`        | match   | Same plain heart object without a modifier.                             |
 
 ## Verification
 

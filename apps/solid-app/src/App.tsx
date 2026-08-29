@@ -1,11 +1,11 @@
-import { SolarProvider } from '@solar-icons/solid';
-import Gallery from './lib/Gallery';
-import CssCustomProps from './lib/CssCustomProps';
-import ProviderDemo from './lib/ProviderDemo';
-import CssClassStyling from './lib/CssClassStyling';
-import Accessibility from './lib/Accessibility';
+import { SolarProvider } from '@solar-icons/solid'
 
-import { ALL_ICONS } from './lib/icon-list';
+import Accessibility from './lib/Accessibility'
+import CssClassStyling from './lib/CssClassStyling'
+import CssCustomProps from './lib/CssCustomProps'
+import Gallery from './lib/Gallery'
+import { ALL_ICONS } from './lib/icon-list'
+import ProviderDemo from './lib/ProviderDemo'
 
 function Section(props: { number: number; title: string; desc: string; children: any }) {
     return (
@@ -16,7 +16,7 @@ function Section(props: { number: number; title: string; desc: string; children:
             <p class="text-slate-400 text-sm mb-4">{props.desc}</p>
             {props.children}
         </div>
-    );
+    )
 }
 
 export default function App() {
@@ -33,15 +33,13 @@ export default function App() {
                 <Section
                     number={1}
                     title="Icon Gallery"
-                    desc="Browse all icons. Controls use SolarProvider + useSolar()."
-                >
+                    desc="Browse all icons. Controls use SolarProvider + useSolar().">
                     <SolarProvider
                         color="#f59e0b"
                         size={32}
                         strokeWidth={1.5}
                         secondaryColor="#60a5fa"
-                        secondaryOpacity={0.5}
-                    >
+                        secondaryOpacity={0.5}>
                         <Gallery />
                     </SolarProvider>
                 </Section>
@@ -49,35 +47,31 @@ export default function App() {
                 <Section
                     number={2}
                     title="CSS Custom Properties"
-                    desc="Control icons via CSS custom properties on parent elements. No provider needed."
-                >
+                    desc="Control icons via CSS custom properties on parent elements. No provider needed.">
                     <CssCustomProps />
                 </Section>
 
                 <Section
                     number={3}
                     title="SolarProvider + useSolar"
-                    desc="A separate provider with its own controls. Mutations are sync'd between JS state and CSS vars."
-                >
+                    desc="A separate provider with its own controls. Mutations are sync'd between JS state and CSS vars.">
                     <ProviderDemo />
                 </Section>
 
                 <Section
                     number={4}
                     title="CSS Class Styling"
-                    desc="Every icon has class 'solar' and 'solar-{'{name}'}'. Target them with CSS selectors."
-                >
+                    desc="Every icon has class 'solar' and 'solar-{'{name}'}'. Target them with CSS selectors.">
                     <CssClassStyling />
                 </Section>
 
                 <Section
                     number={5}
                     title="Accessibility"
-                    desc="Icons have aria-hidden='true' by default. Pass alt, aria-label, or title."
-                >
+                    desc="Icons have aria-hidden='true' by default. Pass alt, aria-label, or title.">
                     <Accessibility />
                 </Section>
             </div>
         </div>
-    );
+    )
 }

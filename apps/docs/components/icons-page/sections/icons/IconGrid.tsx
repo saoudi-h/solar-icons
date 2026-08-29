@@ -1,11 +1,13 @@
 'use client'
-import type { IconData } from '@/generated/descriptions'
-import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@solar-icons/core/runtime'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { GridProps, ListProps } from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
+
+import type { IconData } from '@/generated/descriptions'
+import { cn } from '@/lib/utils'
+
 import {
     activeCategoryAtom,
     displayedIconsAtom,
@@ -284,8 +286,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                                     }}
                                     className={cn(
                                         `
-                                          flex items-end gap-2 px-1 pb-2 text-sm
-                                          font-semibold tracking-wide
+                                          flex items-end gap-2 px-1 pb-2 text-sm font-semibold
+                                          tracking-wide
                                         `,
                                         activeCategory === row.category
                                             ? 'text-foreground'
@@ -294,8 +296,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                                     <span className="uppercase">{row.category}</span>
                                     <span
                                         className="
-                                          font-mono text-xs font-normal
-                                          text-muted-foreground/70 tabular-nums
+                                          font-mono text-xs font-normal text-muted-foreground/70
+                                          tabular-nums
                                         ">
                                         {row.count}
                                     </span>

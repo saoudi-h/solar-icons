@@ -1,10 +1,12 @@
-import type { IconData } from '@/generated/descriptions'
 import { STYLES, type Weight } from '@solar-icons/core/runtime'
 import { SolarProvider } from '@solar-icons/react'
 import { atom } from 'jotai'
 import { parseAsStringLiteral, useQueryState } from 'nuqs'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
+
+import type { IconData } from '@/generated/descriptions'
+
 import { getAllIcons } from './utils'
 
 export const displayedIconsAtom = atom<IconData[]>([])

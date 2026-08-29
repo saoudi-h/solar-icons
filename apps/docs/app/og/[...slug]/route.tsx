@@ -1,6 +1,7 @@
+import { notFound } from 'next/navigation'
+
 import { generateOGImage } from '@/lib/og-template'
 import { source } from '@/lib/source'
-import { notFound } from 'next/navigation'
 
 export const revalidate = false
 

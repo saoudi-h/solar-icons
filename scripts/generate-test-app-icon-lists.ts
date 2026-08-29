@@ -1,9 +1,17 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import * as prettier from 'prettier'
 
 const REPOSITORY_ROOT = path.resolve(import.meta.dirname, '..')
+
+import { execFileSync } from 'node:child_process'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' },
+    )
 const CORE_SVGS_PATH = path.join(REPOSITORY_ROOT, 'packages/core/svgs')
 
 const OUTPUT_PATHS = [
@@ -86,8 +94,7 @@ export const generateTestAppIconLists = async (): Promise<number> => {
     for (const relativePath of OUTPUT_PATHS) {
         const outputPath = path.join(REPOSITORY_ROOT, relativePath)
         fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-        const config = (await prettier.resolveConfig(outputPath)) ?? {}
-        const content = await prettier.format(render(names), { ...config, filepath: outputPath })
+        const content = oxfmtFormat(outputPath, render(names))
         const previous = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : undefined
         if (previous !== content) fs.writeFileSync(outputPath, content)
         console.log(`Generated ${relativePath} (${names.length} icons)`)

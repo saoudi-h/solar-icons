@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
+
 import { SolarProvider, useSolar } from './solar-provider'
 
 /**

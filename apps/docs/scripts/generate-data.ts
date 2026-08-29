@@ -1,6 +1,15 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
-import prettier from 'prettier'
+import path from 'node:path'
+
 import { readCoreMetadata } from './catalog-source'
+
+const oxfmtFormat = (filepath: string, code: string): string =>
+    execFileSync(
+        path.join(import.meta.dirname, '../../../node_modules/.bin/oxfmt'),
+        ['--stdin-filepath', filepath],
+        { input: code, encoding: 'utf8' }
+    )
 
 const metadata = readCoreMetadata<{ categories: Record<string, unknown> }>('metadata.json')
 
@@ -30,13 +39,7 @@ const main = async () => {
     try {
         const { utils } = generateIcons(metadata)
         console.log('The file generated/utils.ts has been generated with success !')
-        fs.writeFileSync(
-            outputUtilsFilePath,
-            await prettier.format(utils, {
-                ...(await prettier.resolveConfig(outputUtilsFilePath)),
-                parser: 'typescript',
-            })
-        )
+        fs.writeFileSync(outputUtilsFilePath, oxfmtFormat(outputUtilsFilePath, utils))
     } catch (error) {
         console.error('Error while generating the file:', error)
     }

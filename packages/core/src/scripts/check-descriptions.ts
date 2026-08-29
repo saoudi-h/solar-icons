@@ -1,6 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 import pc from 'picocolors'
+
 import type { IconDescription, Metadata } from '../types'
 import { validateDescriptions } from './validate-descriptions'
 

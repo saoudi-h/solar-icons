@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
 import path from 'node:path'
-import pc from 'picocolors'
 
 import {
     buildDeprecatedAliasMap,
@@ -16,6 +15,8 @@ import {
     type ParsedIconGroup,
 } from '@solar-icons/core'
 import descriptions from '@solar-icons/core/metadata-descriptions.json' with { type: 'json' }
+import pc from 'picocolors'
+
 import { angularComponentFile, type FileDefinition } from './parser-hook'
 
 const ICONS_PATH = path.resolve(import.meta.dirname, '../src/icons')

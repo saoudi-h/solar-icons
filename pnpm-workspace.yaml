@@ -16,3 +16,15 @@ allowBuilds:
 enablePrePostScripts: true
 minimumReleaseAge: 0
 
+# @sveltejs/package and @analogjs/vite-plugin-angular both phantom-import
+# `typescript` without declaring it; without this injection they resolve the
+# root TypeScript 7 (no JS API) instead of the TypeScript 6 that their
+# toolchains require (svelte2tsx emitDts, Angular vite plugin).
+packageExtensions:
+    "@sveltejs/package":
+        dependencies:
+            typescript: 6.0.3
+    "@analogjs/vite-plugin-angular":
+        dependencies:
+            typescript: 6.0.3
+

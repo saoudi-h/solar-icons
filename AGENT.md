@@ -30,9 +30,10 @@ this context header is historical orientation, not a second source of truth.
 
 - **Package manager:** pnpm 11.5.3, Node ≥ 18.
 - **Monorepo orchestration:** Turborepo 2.x. `turbo.json` defines `build`, `dev`, `clean`, `typecheck`, `lint`, `format`, `pre-commit`, `test`. `test` depends on `build`.
-- **Language:** TypeScript 6, ESM-only.
-- **Shared tooling:** `@tala-tools/eslint`, `@tala-tools/prettier`, `@tala-tools/tsconfig` (base configs each package extends).
+- **Language:** TypeScript 7 (native `tsc` replaces `tsgo`), ESM-only. `vue` / `svelte` / `nuxt` / `angular` stay on TypeScript 6 for their DTS toolchains (`svelte2tsx` / `rolldown-plugin-dts`+volar / unbuild / `ngc` consume the TS JS API, incompatible with TS7 native — verified per-package). `pnpm-workspace.yaml` injects `typescript@6` into `@sveltejs/package` (phantom dep) via `packageExtensions`.
+- **Shared tooling:** `@tala-tools/oxlint`, `@tala-tools/oxfmt`, `@tala-tools/tsconfig` (base configs each package extends).
 - **Build tools by package:** Vite 8, tsdown, svelte-package, nuxt-module-build, ngc.
+- **Lint/format via oxlint + oxfmt** through `@tala-tools/oxlint` / `@tala-tools/oxfmt` presets (root configs; `apps/docs` + `apps/react-app` + `apps/icon-parity` override with next+tailwind). Canonical pipeline order is **format first, lint last** (`oxfmt --write` → `oxlint --fix`); `lint-staged` already ordered that way. Lint is the only gated tool.
 - **Test framework:** Vitest 4.
 - **Docs site:** Next.js 16 + Fumadocs at `apps/docs`.
 
