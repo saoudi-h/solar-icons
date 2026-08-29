@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/cli",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "private": false,
     "description": "CLI for Solar Icons — search, get and list 1,268 icons × 6 styles. Base for skills and MCP.",
     "keywords": [
