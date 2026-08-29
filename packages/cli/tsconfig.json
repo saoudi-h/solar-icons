@@ -1,0 +1,11 @@
+{
+    "extends": "@tala-tools/tsconfig/base.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "noEmit": true,
+        "allowImportingTsExtensions": false
+    },
+    "include": ["src/**/*", "tsdown.config.ts", "vitest.config.ts"],
+    "exclude": ["dist", "node_modules"]
+}

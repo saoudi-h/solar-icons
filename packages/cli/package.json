@@ -1,0 +1,73 @@
+{
+    "name": "@solar-icons/cli",
+    "version": "2.1.0",
+    "private": false,
+    "description": "CLI for Solar Icons — search, get and list 1,268 icons × 6 styles. Base for skills and MCP.",
+    "keywords": [
+        "cli",
+        "icons",
+        "search",
+        "solar",
+        "svg"
+    ],
+    "license": "MIT",
+    "author": {
+        "name": "Saoudi Hakim",
+        "email": "saoudihakim@gmail.com",
+        "url": "https://hakimsaoudi.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saoudi-h/solar-icons.git",
+        "directory": "packages/cli"
+    },
+    "bin": {
+        "solar-icons": "./dist/cli.mjs"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "LICENSE-THIRD-PARTY"
+    ],
+    "type": "module",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "pnpm copy:licenses && tsdown -l error",
+        "copy:licenses": "cp ../../LICENSE ./LICENSE && cp ../../LICENSE-THIRD-PARTY ./LICENSE-THIRD-PARTY",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
+        "clean": "rimraf dist LICENSE LICENSE-THIRD-PARTY",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "pre-commit": "lint-staged"
+    },
+    "dependencies": {
+        "@solar-icons/static": "workspace:*",
+        "commander": "^15.0.0",
+        "picocolors": "^1.1.1"
+    },
+    "devDependencies": {
+        "@tala-tools/tsconfig": "0.0.2",
+        "@types/node": "^26.1.2",
+        "rimraf": "^6.1.3",
+        "tsdown": "^0.22.14",
+        "tsx": "^4.23.8",
+        "typescript": "7.0.2",
+        "vitest": "^4.1.10"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}

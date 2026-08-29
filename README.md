@@ -2,6 +2,8 @@
 
 # Solar Icons
 
+[![skills.sh](https://skills.sh/b/saoudi-h/solar-icons)](https://skills.sh/saoudi-h/solar-icons)
+
 1,268 icons in 6 styles, packaged for modern web and mobile frameworks.
 
 🔗 **Explore the icons & docs:** [solar-icons.vercel.app](https://solar-icons.vercel.app)
@@ -33,6 +35,7 @@
 | **`@solar-icons/static`**       | Framework-free static assets: individual SVGs, SVG sprite, string modules. |
 | **`@solar-icons/js`**           | Vanilla JavaScript DOM injection, no framework required.                   |
 | **`@solar-icons/codemod`**      | Opt-in migration CLI for the v2 breaking changes.                          |
+| **`@solar-icons/cli`**          | Search, get and list icons from the terminal. Base for skills and MCP.      |
 
 ---
 
@@ -67,6 +70,20 @@ The documentation site exposes LLM-friendly routes:
 
 - **`/llms.txt`**: Document index.
 - **`/llms-full.txt`**: Full documentation text.
+
+**Agent Skill & CLI:**
+
+```sh
+# Install the Solar Icons skill for any agent (Claude Code, Cursor, Codex, etc.)
+npx skills add saoudi-h/solar-icons --skill solar-icons
+
+# Or use the CLI directly (no install)
+npx @solar-icons/cli search "home" --limit 10 --json
+npx @solar-icons/cli get home --style bold --framework react
+npx @solar-icons/cli overview
+```
+
+See `skills/solar-icons/SKILL.md` and `packages/cli/README.md`.
 
 ---
 
