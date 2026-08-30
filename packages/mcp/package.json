@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/mcp",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "private": false,
     "description": "MCP server for Solar Icons — search, get and list 1,268 icons × 6 styles via Model Context Protocol",
     "keywords": [
