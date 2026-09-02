@@ -28,7 +28,7 @@
         "autonomos": "autonomos"
     },
     "devDependencies": {
-        "@autonomos/cli": "^0.4.1",
+        "@autonomos/cli": "^0.6.0",
         "@commitlint/cli": "^21.2.2",
         "@commitlint/config-conventional": "^21.2.2",
         "@commitlint/types": "^21.2.0",

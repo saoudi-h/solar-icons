@@ -6,6 +6,7 @@ description: 'Optional intake for problems, proposals, and questions before choo
 # /issue — Capture and triage
 
 > Use this workflow only when the need or solution requires triage. A direct, clear, authorized change may start as a task.
+> Proposed directions remain hypotheses until an approach is accepted.
 
 ## STEP 1 — Build context
 
@@ -34,4 +35,5 @@ Merge duplicate evidence into the existing issue instead of creating another.
 
 - **Open:** preserve the signal; do not create a task before an approach is accepted.
 - **Accepted:** create one or more scoped tasks through `/task` and link both directions.
+  If the outcome spans tasks, create or link a specification; record each consequential technical choice separately.
 - **Resolved/declined:** record the outcome and concise rationale; preserve the issue as history.

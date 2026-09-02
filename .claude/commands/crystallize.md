@@ -23,9 +23,9 @@ For each candidate ask: **Would this still guide a different future task?**
 
 - **No:** keep observations, measurements, chronology, and completed actions in the worklog.
 - **Operational explanation:** update existing component documentation when within scope.
-- **Yes:** add only stable, normative, non-duplicated guidance to the narrowest applicable `AGENT.md`.
+- **Yes:** route stable operating guidance to the narrowest `AGENT.md`, target requirements to `specs/`, and decision rationale to `decisions/`; keep each non-duplicated.
 
-Consolidate or replace superseded entries; remove disproven guidance. Never create an `AGENT.md` based on file count alone.
+Consolidate or replace superseded and disproven guidance; do not turn historical worklogs, issues, or tasks into current specs/decisions without `/adopt`. Never create an `AGENT.md` based on file count alone.
 
 ## STEP 3 — Task status
 
