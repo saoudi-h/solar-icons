@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { AiToolsSection } from '@/components/home-page/sections/ai-tools'
 import { CommunitySection } from '@/components/home-page/sections/community'
 import { FeaturesSection } from '@/components/home-page/sections/features'
 import { HeroSection } from '@/components/home-page/sections/hero'
@@ -31,6 +32,7 @@ export default function HomePage() {
             <FeaturesSection />
             <PackagesSection {...config.packageSection} />
             <CommunitySection />
+            <AiToolsSection />
         </main>
     )
 }

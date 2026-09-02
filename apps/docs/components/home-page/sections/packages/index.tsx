@@ -109,7 +109,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                           select-none
                           md:text-base
                         ">
-                        Install native icon packages built specifically for your framework.
+                        Choose the package or tool that fits the way you build.
                     </p>
                     <div
                         className={`

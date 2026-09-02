@@ -57,6 +57,8 @@ const NPM_PACKAGES = [
     '@solar-icons/static',
     '@solar-icons/js',
     '@solar-icons/codemod',
+    '@solar-icons/cli',
+    '@solar-icons/mcp',
 ]
 
 export const CommunitySection = () => {
@@ -211,7 +213,7 @@ export const CommunitySection = () => {
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Packages" value={10} />
+                                <StatCard title="Total Packages" value={12} />
                             </motion.div>
                         </div>
                     </div>

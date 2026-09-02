@@ -219,6 +219,35 @@ export const config: Config = {
                 status: 'new',
                 iconify: 'devicon:javascript',
             },
+            {
+                title: 'Codemod',
+                link: '/docs/v2/migration-to-v2/codemod',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/codemod',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/codemod',
+                content:
+                    'Move a Solar Icons v1 project to v2 with a preview before any files change.',
+                status: 'new',
+                iconify: 'glyphs-poly:code',
+            },
+            {
+                title: 'CLI',
+                link: '/docs/v2/ai-tools',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/cli',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/cli',
+                content: 'Find icons and get ready-to-use code from the terminal.',
+                status: 'new',
+                iconify: 'catppuccin:powershell',
+            },
+            {
+                title: 'MCP',
+                link: '/docs/v2/ai-tools',
+                npmLink: 'https://www.npmjs.com/package/@solar-icons/mcp',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/mcp',
+                content:
+                    'Let your AI assistant search the icon catalog and find the right code for your project.',
+                status: 'new',
+                iconify: 'bxl:mcp',
+            },
         ],
     },
     notFound: {
