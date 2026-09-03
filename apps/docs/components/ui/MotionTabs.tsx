@@ -81,8 +81,7 @@ export const MotionTabs = ({
                 className={cn(
                     `
                       no-visible-scrollbar relative -bottom-px flex w-full max-w-full flex-row
-                      items-center justify-start gap-2 overflow-auto
-                      md:overflow-visible
+                      items-center justify-start gap-2 overflow-x-auto overflow-y-hidden
                     `,
                     containerClassName
                 )}>
@@ -95,7 +94,7 @@ export const MotionTabs = ({
                         onMouseEnter={() => setHoveredTab(tab.value)}
                         onMouseLeave={() => setHoveredTab(null)}
                         className={cn(
-                            `relative px-3 py-2 transition-all duration-200 ease-out`,
+                            `relative shrink-0 px-3 py-2 transition-all duration-200 ease-out`,
                             `
                               rounded-none rounded-t-lg border border-b-0 text-sm font-medium
                               whitespace-nowrap
