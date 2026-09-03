@@ -18,6 +18,15 @@
 - Desired outcome: Define and consistently apply a semantic button hierarchy that makes the intended primary action clear, gives secondary actions an appropriate level of emphasis, remains legible in light and dark themes, and provides accessible hover, focus, pressed, disabled, and loading states without breaking existing consumers.
 - Tasks: DOCS-BUTTON-HIERARCHY
 
+## [ISSUE-ICON-DETAIL-TABS-OVERFLOW] Make every icon-detail tab reachable at constrained widths
+
+- Type: problem
+- Status: open
+- Evidence: The `/icons` detail panel exposes 11 tabs for variants, tags, and framework snippets. In the local preview, the panel's tab list is about 508px wide while its content is about 838px wide. Its computed horizontal overflow is `visible`, so the tabs after the visible range are clipped rather than scrollable. The `MotionTabs` class combines `overflow-auto` with `md:overflow-visible`, which removes the scroll container at the breakpoint used by the constrained layout. The maintainer reproduced the same behavior on production, so the issue predates the current homepage button pass. The root `ReactLenis` configuration already sets `allowNestedScroll: true`, but that does not confirm whether Lenis is handling or interfering with horizontal tab input.
+- Impact: Users on tablet-sized or otherwise constrained layouts cannot reach all framework tabs, including Svelte, Solid, Angular, Static, and JS. They cannot inspect or copy the corresponding snippets even though those options remain present in the page markup.
+- Desired outcome: Every icon-detail tab remains reachable with pointer, touch, and keyboard input at supported widths. The active-tab indicator and content animation remain coherent, and the fix does not introduce page-level scrolling or regress the icon grid, category navigation, detail panel, or Lenis behavior. Validation must cover wide, intermediate, and narrow layouts in light and dark themes, including the real horizontal interaction path.
+- Tasks: none
+
 ## [ISSUE-HOMEPAGE-INFORMATION-ARCHITECTURE] Give the homepage one coherent product narrative
 
 - Type: problem
