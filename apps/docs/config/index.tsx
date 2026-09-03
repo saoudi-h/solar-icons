@@ -124,12 +124,13 @@ export const config: Config = {
             label: 'Explore Icons',
             href: '/icons',
             Icon: <RoundedMagnifierIcon size={20} />,
-            variant: 'outline',
         },
         getStarted: {
             label: 'Get Started',
             href: '/docs/v2',
             Icon: <RocketIcon size={20} />,
+            variant: 'outline',
+            colors: 'secondary',
         },
     },
     packageSection: {

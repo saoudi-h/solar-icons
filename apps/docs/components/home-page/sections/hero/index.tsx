@@ -71,8 +71,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         {content}
                     </p>
                     <div className={`flex flex-col items-center gap-3 sm:flex-row sm:gap-6`}>
-                        <SuperButton {...getStarted}></SuperButton>
                         <SuperButton {...exploreIcons}></SuperButton>
+                        <SuperButton {...getStarted}></SuperButton>
                     </div>
                 </div>
                 <HeroRotation />

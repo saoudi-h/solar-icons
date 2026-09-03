@@ -222,6 +222,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                 `}>
                 <ButtonWithTooltip
                     tooltip="Documentation"
+                    aria-label="Documentation"
                     onClick={() => {
                         if (link) router.push(link)
                     }}
@@ -233,6 +234,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                 </ButtonWithTooltip>
                 <ButtonWithTooltip
                     tooltip="GitHub Repository"
+                    aria-label="GitHub Repository"
                     onClick={() => {
                         if (githubLink) router.push(githubLink)
                     }}
@@ -244,6 +246,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                 </ButtonWithTooltip>
                 <ButtonWithTooltip
                     tooltip="NPM Package"
+                    aria-label="NPM Package"
                     onClick={() => {
                         if (npmLink) router.push(npmLink)
                     }}

@@ -72,7 +72,12 @@ export const AiToolsSection = () => {
                             Install the package for your framework, then use MCP, Skill, or CLI to
                             find exact names and imports.
                         </p>
-                        <Button asChild size="lg" className="rounded-full">
+                        <Button
+                            asChild
+                            size="lg"
+                            variant="outline"
+                            colors="secondary"
+                            className="rounded-full">
                             <Link href="/docs/v2/ai-tools">
                                 Explore AI tools
                                 <ArrowRightIcon />

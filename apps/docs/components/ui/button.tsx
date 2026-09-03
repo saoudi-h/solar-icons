@@ -37,7 +37,7 @@ const buttonVariants = cva(
             },
             colors: {
                 default: `
-                  border-primary bg-primary text-primary-foreground/80
+                  border-primary bg-primary text-primary-foreground
                   hover:bg-primary/80 hover:text-primary-foreground
                 `,
                 secondary: `
@@ -78,8 +78,9 @@ const buttonVariants = cva(
                 variant: 'outline',
                 colors: 'secondary',
                 className: `
-                  border-secondary text-secondary/80
-                  hover:bg-secondary/80 hover:text-secondary
+                  border-secondary-foreground/60 text-secondary-foreground/80
+                  hover:border-secondary-foreground/80 hover:bg-secondary/80
+                  hover:text-secondary-foreground
                 `,
             },
             {

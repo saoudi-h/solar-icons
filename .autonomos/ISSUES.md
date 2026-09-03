@@ -16,7 +16,7 @@
 - Evidence: The homepage currently presents filled and outline CTAs that both use the primary color family. The visual treatment distinguishes surface style more than semantic role, and the project does not have a clearly documented set of button roles for primary, secondary, supporting, or state-specific actions.
 - Impact: Visitors may not know which action deserves priority, and future pages have no reliable semantic system to communicate action hierarchy. Adding more buttons ad hoc would increase inconsistency across the site.
 - Desired outcome: Define and consistently apply a semantic button hierarchy that makes the intended primary action clear, gives secondary actions an appropriate level of emphasis, remains legible in light and dark themes, and provides accessible hover, focus, pressed, disabled, and loading states without breaking existing consumers.
-- Tasks: none
+- Tasks: DOCS-BUTTON-HIERARCHY
 
 ## [ISSUE-HOMEPAGE-INFORMATION-ARCHITECTURE] Give the homepage one coherent product narrative
 
