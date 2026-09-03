@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [x] **[DOCS-FUMADOCS-BASE-UI]** Move Fumadocs-owned docs surfaces from the Radix-backed `fumadocs-ui` package to `@fumadocs/base-ui` at a compatible Fumadocs version. Keep site-owned shadcn/Radix wrappers unchanged, align package versions, and verify generated MDX, typecheck, lint, build, navigation, search, theme, responsive menus, and keyboard/focus behavior. Desktop/runtime checks passed; the in-app browser did not expose a viewport override for mobile validation, which remains a manual follow-up. **Issue:** `ISSUE-UI-FOUNDATION-REFRESH`. `Priority: 🟠` `Complexity: M`
+
 - [x] **[ICON-RELEASE-PACKET]** Prepare the first extension release packet: use a minor Changeset for the 22 curated extensions, rebuild the static package, verify the Figma catalog build, and document the remaining manual publication steps. Completed in `542ec7b13`; `Priority: 🟠` `Complexity: M`
 
 - [x] **[ICON-COUNT-AUDIT]** Audit and correct stale human-facing icon counts after the catalogue grew from 1,246 to 1,268, while preserving historical parity artifacts and adding a repeatable drift check where appropriate. Updated the active extension guide to 1,268, added `pnpm check:icon-inventory`, and verified current copy against the core SVG inventory. `Priority: 🟠` `Complexity: M`
