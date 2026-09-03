@@ -8,11 +8,17 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-const Select = SelectPrimitive.Root
+function Select(props: React.ComponentProps<typeof SelectPrimitive.Root>) {
+    return <SelectPrimitive.Root data-slot="select" {...props} />
+}
 
-const SelectGroup = SelectPrimitive.Group
+function SelectGroup(props: React.ComponentProps<typeof SelectPrimitive.Group>) {
+    return <SelectPrimitive.Group data-slot="select-group" {...props} />
+}
 
-const SelectValue = SelectPrimitive.Value
+function SelectValue(props: React.ComponentProps<typeof SelectPrimitive.Value>) {
+    return <SelectPrimitive.Value data-slot="select-value" {...props} />
+}
 
 const SelectTrigger = React.forwardRef<
     React.ComponentRef<typeof SelectPrimitive.Trigger>,
@@ -20,6 +26,7 @@ const SelectTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <SelectPrimitive.Trigger
         ref={ref}
+        data-slot="select-trigger"
         className={cn(
             `
               flex h-9 w-full items-center justify-between rounded-lg border border-input
@@ -45,6 +52,7 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <SelectPrimitive.ScrollUpButton
         ref={ref}
+        data-slot="select-scroll-up-button"
         className={cn('flex cursor-default items-center justify-center py-1', className)}
         {...props}>
         <AltArrowUpIcon className="size-4" />
@@ -58,6 +66,7 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <SelectPrimitive.ScrollDownButton
         ref={ref}
+        data-slot="select-scroll-down-button"
         className={cn('flex cursor-default items-center justify-center py-1', className)}
         {...props}>
         <AltArrowDownIcon className="size-4" isolated />
@@ -72,6 +81,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Portal>
         <SelectPrimitive.Content
             ref={ref}
+            data-slot="select-content"
             className={cn(
                 `
                   relative z-50 max-h-96 min-w-32 overflow-hidden rounded-xl border border-border/50
@@ -120,6 +130,7 @@ const SelectLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <SelectPrimitive.Label
         ref={ref}
+        data-slot="select-label"
         className={cn('px-2 py-1.5 text-sm font-semibold', className)}
         {...props}
     />
@@ -132,6 +143,7 @@ const SelectItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <SelectPrimitive.Item
         ref={ref}
+        data-slot="select-item"
         className={cn(
             `
               relative flex w-full cursor-default items-center rounded-lg py-1.5 pr-8 pl-2 text-sm
@@ -142,7 +154,9 @@ const SelectItem = React.forwardRef<
             className
         )}
         {...props}>
-        <span className={`absolute right-2 flex size-3.5 items-center justify-center`}>
+        <span
+            data-slot="select-item-indicator"
+            className={`absolute right-2 flex size-3.5 items-center justify-center`}>
             <SelectPrimitive.ItemIndicator>
                 <CheckCircleIcon className="size-4" />
             </SelectPrimitive.ItemIndicator>
@@ -158,6 +172,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <SelectPrimitive.Separator
         ref={ref}
+        data-slot="select-separator"
         className={cn('-mx-1 my-1 h-px bg-muted', className)}
         {...props}
     />
