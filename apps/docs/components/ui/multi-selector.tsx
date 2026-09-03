@@ -161,6 +161,7 @@ const CommandEmpty = forwardRef<
     return (
         <div
             ref={forwardedRef}
+            data-slot="command-empty"
             className={cn('py-6 text-center text-sm', className)}
             cmdk-empty=""
             role="presentation"
