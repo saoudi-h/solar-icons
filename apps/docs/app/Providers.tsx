@@ -1,11 +1,11 @@
 'use client'
-import { TooltipProvider } from '@radix-ui/react-tooltip'
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import { ReactLenis } from 'lenis/react'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import React from 'react'
 
 import { Toaster } from '@/components/ui/sonner'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 /**
  * Providers wraps the app in the following providers:
