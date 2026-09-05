@@ -22,6 +22,7 @@ export interface Config {
 
 export const config: Config = {
     footer: {
+        showSurface: false,
         bottomText: `© ${new Date().getFullYear()} Solar Icons, Code licensed MIT. Icons by 480 Design (CC BY 4.0).`,
         sections: [
             {
