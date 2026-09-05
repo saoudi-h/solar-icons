@@ -165,6 +165,23 @@
     }
 }
 
+@keyframes site-header-surface-progress {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@supports (animation-timeline: scroll()) {
+    [data-site-header-surface] {
+        animation: site-header-surface-progress linear both;
+        animation-range: 0 96px;
+        animation-timeline: scroll(root block);
+    }
+}
+
 /* Scrollbars */
 /* Width */
 ::-webkit-scrollbar {
@@ -200,10 +217,254 @@
     }
 
     .hero-section-gradient {
-        background: radial-gradient(circle, rgb(117, 134, 164, 0.5) 0%, transparent 100%);
+        background:
+            radial-gradient(circle at 31% 22%, rgb(117 134 164 / 0.2) 0%, transparent 38%),
+            radial-gradient(
+                circle,
+                transparent 0 68%,
+                rgb(117 134 164 / 0.14) 78%,
+                rgb(74 94 129 / 0.24) 100%
+            );
+        box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / 0.28),
+            0 28px 54px -38px rgb(72 86 108 / 0.22);
+    }
+
+    .hero-section-gradient[data-hero-rotation-ring='middle'] {
+        background:
+            radial-gradient(circle at 31% 20%, rgb(117 134 164 / 0.24) 0%, transparent 34%),
+            radial-gradient(
+                circle,
+                transparent 0 60%,
+                rgb(117 134 164 / 0.24) 72%,
+                rgb(74 94 129 / 0.42) 100%
+            );
+    }
+
+    .hero-section-gradient[data-hero-rotation-ring='inner'] {
+        background:
+            radial-gradient(circle at 35% 20%, hsl(var(--foreground) / 0.04) 0%, transparent 34%),
+            radial-gradient(
+                circle,
+                transparent 0 60%,
+                hsl(var(--foreground) / 0.03) 78%,
+                hsl(var(--foreground) / 0.05) 100%
+            );
     }
 
     .dark .hero-section-gradient {
-        background: radial-gradient(circle, transparent 30%, rgb(74, 94, 129) 100%);
+        background:
+            radial-gradient(circle at 31% 22%, rgb(132 153 194 / 0.2) 0%, transparent 38%),
+            radial-gradient(
+                circle,
+                transparent 0 68%,
+                rgb(54 73 108 / 0.72) 78%,
+                rgb(13 23 38 / 0.92) 100%
+            );
+        box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / 0.055),
+            0 24px 42px -32px rgb(0 0 0 / 0.88);
+    }
+
+    .dark .hero-section-gradient[data-hero-rotation-ring='middle'] {
+        background:
+            radial-gradient(circle at 31% 20%, rgb(132 153 194 / 0.2) 0%, transparent 34%),
+            radial-gradient(
+                circle,
+                transparent 0 60%,
+                rgb(51 71 107 / 0.82) 72%,
+                rgb(10 20 34 / 0.96) 100%
+            );
+    }
+
+    .dark .hero-section-gradient[data-hero-rotation-ring='inner'] {
+        background:
+            radial-gradient(circle at 32% 18%, hsl(var(--foreground) / 0.03) 0%, transparent 32%),
+            radial-gradient(
+                circle,
+                transparent 0 58%,
+                hsl(var(--foreground) / 0.04) 78%,
+                hsl(var(--foreground) / 0.07) 100%
+            );
+    }
+
+    .hero-rotation-ripple {
+        border: 2px solid rgb(117 134 164 / 0.72);
+        box-shadow: 0 0 26px rgb(117 134 164 / 0.3);
+        will-change: transform, opacity;
+    }
+
+    .dark .hero-rotation-ripple {
+        border-color: rgb(174 187 221 / 0.84);
+        box-shadow: 0 0 30px rgb(145 164 213 / 0.34);
+    }
+}
+
+@layer utilities {
+    [data-hero-rotation-stage] {
+        --hero-rotation-icon-color: var(--hero-rotation-icon-color-light);
+        --hero-rotation-icon-secondary-color: var(--hero-rotation-icon-secondary-color-light);
+        --hero-rotation-bottom-inset: 3rem;
+        --hero-rotation-control-scale: 0.8696;
+        --hero-rotation-anchor-height: 805px;
+        --hero-rotation-scale: 1.15;
+        --hero-rotation-top: max(
+            0px,
+            calc(
+                100% + var(--hero-rotation-bottom-inset) - var(--hero-rotation-anchor-height) -
+                    var(--hero-rotation-y)
+            )
+        );
+        --hero-rotation-y: 0rem;
+    }
+
+    .dark [data-hero-rotation-stage] {
+        --hero-rotation-icon-color: var(--hero-rotation-icon-color-dark);
+        --hero-rotation-icon-secondary-color: var(--hero-rotation-icon-secondary-color-dark);
+    }
+
+    [data-hero-rotation-wheel] {
+        top: var(--hero-rotation-top);
+    }
+
+    [data-hero-rotation-readouts-side],
+    [data-hero-rotation-readouts-orbit] {
+        display: none;
+    }
+
+    @media (min-width: 1280px) {
+        [data-hero-rotation-readouts-side] {
+            display: flex;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @media (min-width: 1440px) and (min-height: 800px) {
+        [data-hero-rotation-readouts-side] {
+            display: none;
+        }
+
+        [data-hero-rotation-readouts-orbit] {
+            display: block;
+        }
+
+        [data-hero-rotation-orbit-item] {
+            position: absolute;
+            top: calc(var(--hero-rotation-top) + 402px);
+            left: 50%;
+            width: 15rem;
+        }
+
+        [data-hero-rotation-orbit-item='stroke'] {
+            transform: translate(-50%, -50%) rotate(180deg) translateX(480px) rotate(-180deg)
+                rotate(-4deg);
+        }
+
+        [data-hero-rotation-orbit-item='primary'] {
+            transform: translate(-50%, -50%) rotate(215deg) translateX(480px) rotate(-215deg)
+                rotate(-2deg);
+        }
+
+        [data-hero-rotation-orbit-item='duotone'] {
+            transform: translate(-50%, -50%) rotate(325deg) translateX(480px) rotate(-325deg)
+                rotate(3deg);
+        }
+    }
+
+    [data-hero-rotation-visual] {
+        transition: color 300ms ease-out;
+        transform: translateY(var(--hero-rotation-y)) scale(var(--hero-rotation-scale));
+        transform-origin: top center;
+    }
+
+    [data-hero-rotation-visual] .solar {
+        transition: color 300ms ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        [data-hero-rotation-visual] .solar {
+            transition: none;
+        }
+    }
+
+    [data-hero-rotation-controls] {
+        scale: var(--hero-rotation-control-scale);
+    }
+
+    @media (max-width: 767px) {
+        [data-hero-rotation-stage] {
+            --hero-rotation-bottom-inset: 2rem;
+            --hero-rotation-anchor-height: 504px;
+            --hero-rotation-scale: 0.72;
+            --hero-rotation-y: -1rem;
+        }
+
+        [data-hero-rotation-visual] {
+            --hero-rotation-control-scale: 1.3889;
+        }
+    }
+
+    @media (max-width: 359px) {
+        [data-hero-rotation-stage] {
+            --hero-rotation-anchor-height: 462px;
+            --hero-rotation-scale: 0.66;
+            --hero-rotation-y: 0rem;
+        }
+
+        [data-hero-rotation-visual] {
+            --hero-rotation-control-scale: 1.5152;
+        }
+    }
+
+    @media (min-width: 600px) and (max-width: 1023px) {
+        [data-hero-rotation-stage] {
+            --hero-rotation-anchor-height: 756px;
+            --hero-rotation-scale: 1.08;
+        }
+
+        [data-hero-rotation-visual] {
+            --hero-rotation-control-scale: 0.9259;
+        }
+    }
+
+    @media (max-height: 600px) and (orientation: portrait) {
+        [data-hero-rotation-stage] {
+            --hero-rotation-y: 0rem;
+        }
+    }
+
+    @media (max-height: 600px) and (orientation: landscape) {
+        [data-hero-section-panel] {
+            padding-block: 1rem;
+        }
+
+        [data-hero-rotation-stage] {
+            --hero-rotation-bottom-inset: 1rem;
+            --hero-rotation-control-scale: 1.818;
+            --hero-rotation-anchor-height: 385px;
+            --hero-rotation-scale: 0.55;
+            --hero-rotation-y: 8rem;
+        }
+
+        [data-hero-section-content] {
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+    }
+
+    @media (max-height: 360px) and (orientation: landscape) {
+        [data-hero-section-panel] {
+            padding-block: 0.5rem;
+        }
+
+        [data-hero-rotation-stage] {
+            --hero-rotation-bottom-inset: 0.5rem;
+        }
+
+        [data-hero-section-content] {
+            gap: 0.5rem;
+            padding-top: 0.5rem;
+        }
     }
 }

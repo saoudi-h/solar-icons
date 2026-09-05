@@ -12,7 +12,7 @@ import { IconGridVirtualized } from './IconGrid'
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
     const [weight] = useStyleURL()
     // The grid measures its own height
-    // (`window.innerHeight - <wrapper top> - 56 - detailHeight - ROW_TO_DETAIL_GAP`
+    // (`window.innerHeight - <wrapper top> - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP`
     // in `IconGrid`) and reports it back via `onHeightChange`. We use
     // that exact value as the height of the sidebar+grid row so the
     // two scrollable panels are pixel-identical — no

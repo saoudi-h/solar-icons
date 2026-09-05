@@ -46,7 +46,7 @@ export const FeaturesSection = () => {
         <SectionMotion
             variants={containerVariants}
             className="
-              relative container flex w-full flex-col items-center gap-12 self-center px-4 py-20
+              relative flex w-full max-w-384 flex-col items-center gap-12 self-center px-4 py-20
               md:px-0
             ">
             {/* Title Block */}

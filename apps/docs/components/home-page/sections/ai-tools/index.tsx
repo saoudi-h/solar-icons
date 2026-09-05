@@ -34,7 +34,9 @@ const aiTools = [
 
 export const AiToolsSection = () => {
     return (
-        <SectionMotion id="ai-tools" className="container self-center px-3 py-12 text-left md:px-0">
+        <SectionMotion
+            id="ai-tools"
+            className="w-full max-w-384 self-center px-3 py-12 text-left md:px-0">
             <div
                 className={`
                   relative w-full gap-2 overflow-hidden rounded-2xl bg-accent/30 py-12

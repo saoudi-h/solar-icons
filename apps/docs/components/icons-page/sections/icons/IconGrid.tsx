@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { GridProps, ListProps } from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
 
+import { SITE_HEADER_RESERVED_HEIGHT } from '@/components/ui-blocks/site-header/constants'
 import type { IconData } from '@/generated/descriptions'
 import { cn } from '@/lib/utils'
 
@@ -27,7 +28,8 @@ const GAP = 8
 // (`relative flex h-full flex-1 flex-col gap-4 rounded-xl p-4`)
 // sits between the sidebar+grid row and the bottom `<IconDetail>`
 // panel. It is *not* in the grid's `rect.top` (the gap is below
-// the grid), so the original `window.innerHeight - rect.top - 56`
+// the grid), so the original measurement accounted for
+// SITE_HEADER_RESERVED_HEIGHT before the detail-panel offset was added.
 // measurement missed it by exactly 16px and the page gained a
 // small vertical scroll whenever the panel opened. Subtracted
 // here in the measure callback. See DOCS-UI-02 + the user's
@@ -42,7 +44,7 @@ interface IconGridVirtualizedProps {
     /**
      * Called whenever the grid wrapper's measured height changes
      * (mount, resize, detail panel open/close). The height is
-     * `window.innerHeight - <wrapper top> - 56 - detailHeight - ROW_TO_DETAIL_GAP` —
+     * `window.innerHeight - <wrapper top> - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP` —
      * the same value the wrapper uses internally for its scroll
      * viewport, minus the floating detail panel's height (when
      * open) and minus the `gap-4` between the row and the
@@ -82,7 +84,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     // shift when the client-side `useEffect` measures the real
     // viewport. The client `measure` callback refines the value on
     // mount to the actual
-    // `window.innerHeight - top - 56 - detailHeight - ROW_TO_DETAIL_GAP`;
+    // `window.innerHeight - top - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP`;
     // the residual shift is small (and zero on common viewports).
     const [width, setWidth] = useState(1024)
     const [height, setHeight] = useState(1024)
@@ -108,8 +110,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     // grid's height. Called on mount, on `window.resize`, and
     // imperatively from the `[detailHeight, measure]` effect below
     // when the floating detail panel opens / closes / animates.
-    // The `56` is the Fumadocs header height (the user's manual
-    // fix, tighter than the previous `- 20` padding guess). The
+    // SITE_HEADER_RESERVED_HEIGHT is the shared site header footprint (the
+    // user's manual fix, tighter than the previous `- 20` padding guess). The
     // `detailHeight` offset is the live height of the bottom
     // detail panel — subtracting it from the available height
     // keeps the grid + categories sidebar fully scrollable when
@@ -123,7 +125,12 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         if (!el) return
         const rect = el.getBoundingClientRect()
         setWidth(el.offsetWidth)
-        const h = window.innerHeight - rect.top - 56 - detailHeightRef.current - ROW_TO_DETAIL_GAP
+        const h =
+            window.innerHeight -
+            rect.top -
+            SITE_HEADER_RESERVED_HEIGHT -
+            detailHeightRef.current -
+            ROW_TO_DETAIL_GAP
         setHeight(h)
         onHeightChange?.(h)
     }, [onHeightChange])

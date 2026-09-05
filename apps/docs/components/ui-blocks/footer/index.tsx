@@ -13,8 +13,8 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
         <FooterMotion className={`relative flex w-full flex-1 flex-col md:px-10`}>
             <div
                 className={`
-                  relative container mt-6 flex w-full flex-col items-center gap-8 self-center py-0
-                  md:mx-10 md:mt-12 md:py-12
+                  relative mx-auto mt-6 flex w-full max-w-384 flex-col items-center gap-8 py-0
+                  md:mt-12 md:py-12
                 `}>
                 <div
                     className={`

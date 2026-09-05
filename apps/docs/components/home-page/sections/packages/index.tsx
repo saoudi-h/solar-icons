@@ -56,7 +56,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
         <SectionMotion
             id="available-packages"
             className={`
-              relative container flex w-full flex-col items-center gap-8 self-center px-3 py-12
+              relative flex w-full max-w-384 flex-col items-center gap-8 self-center px-3 py-12
               md:px-0
             `}>
             <div

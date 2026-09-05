@@ -172,7 +172,7 @@ export const CommunitySection = () => {
     return (
         <SectionMotion
             variants={containerVariants}
-            className="container self-center px-3 pb-16 md:px-0">
+            className="w-full max-w-384 self-center px-3 pb-16 md:px-0">
             <div className={`relative w-full overflow-hidden p-8 text-left md:rounded-4xl md:p-14`}>
                 {/* Content Grid */}
                 <div

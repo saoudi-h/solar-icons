@@ -20,6 +20,7 @@ interface ColorPickerSimpleProps {
     opacity?: number
     setOpacity?: (opacity: number) => void
     opacityLabel?: string
+    syncInput?: boolean
 }
 
 export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
@@ -31,6 +32,7 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     opacity,
     setOpacity,
     opacityLabel = 'Opacity',
+    syncInput = false,
 }) => {
     const [inputColor, setInputColor] = useState<string>(color)
 
@@ -44,13 +46,17 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
 
     useEffect(() => {
         if (color === inputColor) return
+        if (syncInput) {
+            setInputColor(color)
+            return
+        }
         const timer = setTimeout(() => {
             if (inputColor !== color) {
                 setInputColor(color)
             }
         }, 10000)
         return () => clearTimeout(timer)
-    }, [color, inputColor])
+    }, [color, inputColor, syncInput])
 
     const isDark = getContrastingColor(color)
     const hasOpacity = typeof opacity === 'number' && Boolean(setOpacity)

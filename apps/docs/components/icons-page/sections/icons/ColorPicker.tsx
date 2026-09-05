@@ -15,6 +15,7 @@ interface ColorPickerProps {
     setColor: (color: string) => void
     className?: string
     tooltip?: string
+    syncInput?: boolean
 }
 
 export const ColorPicker: React.FC<ColorPickerProps> = ({
@@ -22,6 +23,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     setColor,
     className,
     tooltip,
+    syncInput = false,
 }) => {
     const [inputColor, setInputColor] = useState<string>(color)
 
@@ -35,13 +37,17 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
 
     useEffect(() => {
         if (color === inputColor) return
+        if (syncInput) {
+            setInputColor(color)
+            return
+        }
         const timer = setTimeout(() => {
             if (inputColor !== color) {
                 setInputColor(color)
             }
         }, 10000)
         return () => clearTimeout(timer)
-    }, [color, inputColor])
+    }, [color, inputColor, syncInput])
 
     const isDark = getContrastingColor(color)
 

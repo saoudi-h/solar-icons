@@ -277,6 +277,9 @@ importers:
         specifier: ^4.4.3
         version: 4.4.3
     devDependencies:
+      '@iconify-icons/mdi':
+        specifier: 2.0.0
+        version: 2.0.0
       '@iconify/react':
         specifier: ^6.0.2
         version: 6.0.2(react@19.2.8)
@@ -3579,6 +3582,9 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-icons/mdi@2.0.0':
+    resolution: {integrity: sha512-ppVItcrp6uRn9XYA4e8XkJC6VnFfBGSLJVrTrHrc7ft9iwLVat3u4ol/UldokaSZ2EyWYukdYYT2AhZP0uNOjg==}
 
   '@iconify-json/devicon@1.2.62':
     resolution: {integrity: sha512-X0o0+fOJL2t5JTbDCGLRzrmvf8Pv5q8dr86+fW+F/VJ9qvXTtny6lqGIwjE9AY4VTLm3i8f/N+VtRheSW6OkEg==}
@@ -17999,6 +18005,10 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3':
     optional: true
+
+  '@iconify-icons/mdi@2.0.0':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/devicon@1.2.62':
     dependencies:

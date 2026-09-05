@@ -73,6 +73,7 @@
         "zod": "^4.4.3"
     },
     "devDependencies": {
+        "@iconify-icons/mdi": "2.0.0",
         "@iconify/react": "^6.0.2",
         "@next/bundle-analyzer": "^16.3.0",
         "@solar-icons/core": "workspace:*",
