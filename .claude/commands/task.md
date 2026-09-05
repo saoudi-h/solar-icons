@@ -13,7 +13,8 @@ description: 'Mandatory procedure before starting a new task. Invoke before touc
 
 1. From the target file/folder, walk up to the project root. Read every `AGENT.md` you find on that path (root → target).
 2. Read the linked issue when present; if resuming, read the task's most recent worklog.
-3. Do not load unrelated worklogs or context branches.
+3. If present, read only relevant accepted specifications and decision records; drafts/proposals inform exploration, superseded records do not constrain work.
+4. Do not load unrelated worklogs or context branches.
 
 ## STEP 2 — Declare plan
 

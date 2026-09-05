@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Badge } from '@/components/ui/badge'
+import { ButtonGroup } from '@/components/ui/button-group'
 import { ButtonWithTooltip } from '@/components/ui/button-with-tooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Heading } from '@/components/ui/heading'
@@ -56,7 +57,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
         <SectionMotion
             id="available-packages"
             className={`
-              relative container flex w-full flex-col items-center gap-8 self-center px-3 py-12
+              relative flex w-full max-w-384 flex-col items-center gap-8 self-center px-3 py-12
               md:px-0
             `}>
             <div
@@ -82,39 +83,32 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                             'radial-gradient(circle at 50% -60%, transparent 0%, hsla(var(--accent)/0.5) 50%, hsla(var(--background)/0.8) 100%)',
                     }}
                 />
-                <div
-                    className={`
-                      relative my-14 mt-16 flex flex-col items-center justify-center gap-6
-                    `}>
+                <div className="relative flex flex-col items-center justify-center gap-4">
                     <MotionHeading
                         size="h1"
                         justify="center"
                         initial="hidden"
                         variants={itemVariants}
                         whileInView="visible"
-                        className="pb-4"
+                        className="max-w-4xl"
                         viewport={{ once: true, amount: 0.5 }}
                         custom={0}>
-                        Available{' '}
-                        <span
-                            className={`
-                              box-decoration-clone underline decoration-primary underline-offset-8
-                            `}>
-                            Packages
-                        </span>
+                        Integrate <span className="text-muted-foreground">Solar Icons.</span>
                     </MotionHeading>
                     <p
                         className="
-                          max-w-[620px] pb-12 text-center text-sm/relaxed text-muted-foreground
+                          max-w-[620px] text-center text-sm/relaxed text-muted-foreground
                           select-none
                           md:text-base
                         ">
-                        Install native icon packages built specifically for your framework.
+                        Choose a framework package, standalone asset, or workflow tool.
                     </p>
                     <div
                         className={`
-                          mx-auto mt-8 flex w-full max-w-4xl flex-row flex-wrap items-stretch gap-4
-                          p-4
+                          mx-auto mt-10 grid w-full max-w-6xl grid-cols-1 gap-4 px-4
+                          sm:grid-cols-2
+                          lg:grid-cols-3
+                          xl:grid-cols-4
                         `}>
                         {packages.map((item, idx) => (
                             <motion.div
@@ -124,7 +118,7 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                                 viewport={{ once: true, amount: 0.5 }}
                                 custom={idx}
                                 key={item.title}
-                                className="relative flex-1 p-2"
+                                className="relative flex min-w-0 p-2"
                                 onMouseEnter={() => setHoveredIndex(idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}>
                                 <AnimatePresence>
@@ -220,39 +214,49 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                   relative flex w-full flex-row items-center justify-end bg-accent/30 p-2
                   backdrop-blur-lg
                 `}>
-                <ButtonWithTooltip
-                    tooltip="Documentation"
-                    onClick={() => {
-                        if (link) router.push(link)
-                    }}
-                    disabled={!link}
-                    size="icon"
-                    colors="secondary"
-                    className={`w-10 rounded-l-xl rounded-r-none! border-r-border/50`}>
-                    <ArrowRightUpIcon className="size-full" />
-                </ButtonWithTooltip>
-                <ButtonWithTooltip
-                    tooltip="GitHub Repository"
-                    onClick={() => {
-                        if (githubLink) router.push(githubLink)
-                    }}
-                    disabled={!githubLink}
-                    size="icon"
-                    colors="secondary"
-                    className="rounded-none border-x-transparent">
-                    <Icon icon="mdi:github" className="size-full" />
-                </ButtonWithTooltip>
-                <ButtonWithTooltip
-                    tooltip="NPM Package"
-                    onClick={() => {
-                        if (npmLink) router.push(npmLink)
-                    }}
-                    disabled={!npmLink}
-                    size="icon"
-                    colors="secondary"
-                    className="rounded-l-none! rounded-r-xl border-l-border/50">
-                    <Icon icon="devicon:npm" className="size-full" />
-                </ButtonWithTooltip>
+                <ButtonGroup
+                    aria-label={`${title} links`}
+                    className="overflow-hidden rounded-md bg-secondary/80">
+                    <ButtonWithTooltip
+                        tooltip="Documentation"
+                        aria-label="Documentation"
+                        onClick={() => {
+                            if (link) router.push(link)
+                        }}
+                        disabled={!link}
+                        size="icon-sm"
+                        colors="secondary"
+                        variant="ghost"
+                        className="rounded-none! border-0! bg-transparent! [&_svg]:size-4">
+                        <ArrowRightUpIcon />
+                    </ButtonWithTooltip>
+                    <ButtonWithTooltip
+                        tooltip="GitHub Repository"
+                        aria-label="GitHub Repository"
+                        onClick={() => {
+                            if (githubLink) router.push(githubLink)
+                        }}
+                        disabled={!githubLink}
+                        size="icon-sm"
+                        colors="secondary"
+                        variant="ghost"
+                        className="rounded-none! border-0! bg-transparent! [&_svg]:size-4">
+                        <Icon icon="mdi:github" className="size-4" />
+                    </ButtonWithTooltip>
+                    <ButtonWithTooltip
+                        tooltip="NPM Package"
+                        aria-label="NPM Package"
+                        onClick={() => {
+                            if (npmLink) router.push(npmLink)
+                        }}
+                        disabled={!npmLink}
+                        size="icon-sm"
+                        colors="secondary"
+                        variant="ghost"
+                        className="rounded-none! border-0! bg-transparent! [&_svg]:size-4">
+                        <Icon icon="devicon:npm" className="size-4" />
+                    </ButtonWithTooltip>
+                </ButtonGroup>
             </CardFooter>
 
             <motion.div

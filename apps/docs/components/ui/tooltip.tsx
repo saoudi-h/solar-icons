@@ -5,11 +5,17 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-const TooltipProvider = TooltipPrimitive.Provider
+function TooltipProvider({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
+    return <TooltipPrimitive.Provider data-slot="tooltip-provider" {...props} />
+}
 
-const Tooltip = TooltipPrimitive.Root
+function Tooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
+    return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+}
 
-const TooltipTrigger = TooltipPrimitive.Trigger
+function TooltipTrigger({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
+    return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
+}
 
 const TooltipContent = React.forwardRef<
     React.ElementRef<typeof TooltipPrimitive.Content>,
@@ -18,6 +24,7 @@ const TooltipContent = React.forwardRef<
     <TooltipPrimitive.Portal>
         <TooltipPrimitive.Content
             ref={ref}
+            data-slot="tooltip-content"
             sideOffset={sideOffset}
             className={cn(
                 `

@@ -74,6 +74,7 @@ const Toggle = React.forwardRef<
 >(({ className, variant, size, colors, ...props }, ref) => (
     <TogglePrimitive.Root
         ref={ref}
+        data-slot="toggle"
         className={cn(toggleVariants({ variant, colors, size, className }))}
         {...props}
     />

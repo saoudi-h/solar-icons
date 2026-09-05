@@ -57,6 +57,8 @@ const NPM_PACKAGES = [
     '@solar-icons/static',
     '@solar-icons/js',
     '@solar-icons/codemod',
+    '@solar-icons/cli',
+    '@solar-icons/mcp',
 ]
 
 export const CommunitySection = () => {
@@ -170,7 +172,7 @@ export const CommunitySection = () => {
     return (
         <SectionMotion
             variants={containerVariants}
-            className="container self-center px-3 pb-16 md:px-0">
+            className="w-full max-w-384 self-center px-3 pb-16 md:px-0">
             <div className={`relative w-full overflow-hidden p-8 text-left md:rounded-4xl md:p-14`}>
                 {/* Content Grid */}
                 <div
@@ -186,7 +188,7 @@ export const CommunitySection = () => {
                                 size="h1"
                                 className="text-3xl font-extrabold tracking-tight md:text-4xl">
                                 Built for developers. <br className="hidden md:inline" />
-                                Maintained with care.
+                                <span className="text-muted-foreground">Maintained with care.</span>
                             </Heading>
                             <p
                                 className={`
@@ -211,7 +213,7 @@ export const CommunitySection = () => {
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Packages" value={10} />
+                                <StatCard title="Total Packages" value={12} />
                             </motion.div>
                         </div>
                     </div>
@@ -247,10 +249,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
 
     return (
         <div ref={ref} className={`flex flex-col gap-1 p-4`}>
-            <span
-                className={`text-[10px] font-bold tracking-widest text-muted-foreground uppercase`}>
-                {title}
-            </span>
+            <span className={`text-xs font-bold text-muted-foreground uppercase`}>{title}</span>
             <span className={`text-3xl font-extrabold tracking-tight text-foreground`}>
                 <NumberFlow value={displayValue} format={{ minimumIntegerDigits: 1 }} trend={1} />
             </span>

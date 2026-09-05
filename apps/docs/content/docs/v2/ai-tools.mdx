@@ -1,0 +1,104 @@
+---
+title: AI Tools
+description: Search, inspect, and use Solar Icons from the terminal, MCP clients, and coding agents.
+icon: CodeFileIcon
+---
+
+Solar Icons provides local tools for both developers and coding agents. The CLI and MCP server use the same static catalog, so icon names, styles, and framework snippets stay aligned with the packages.
+
+## CLI
+
+Use `@solar-icons/cli` to search the catalog, inspect an icon, generate an import or SVG, and list available categories and styles.
+
+Install it as a development dependency:
+
+```bash
+pnpm add -D @solar-icons/cli
+```
+
+Or run it without adding it to your project:
+
+```bash
+npx @solar-icons/cli search "shopping cart" --limit 10
+```
+
+Useful commands:
+
+| Command          | Purpose                                                      |
+| ---------------- | ------------------------------------------------------------ |
+| `search <query>` | Find icons by name, tags, or category.                       |
+| `get <name>`     | Get an icon import snippet and SVG output.                   |
+| `list`           | List icons, optionally filtered by category or style.        |
+| `info <name>`    | Show metadata and import paths for an icon.                  |
+| `categories`     | List all catalog categories.                                 |
+| `styles`         | List the six available styles and provider tokens.           |
+| `overview`       | Show catalog, package, Figma, and documentation information. |
+
+Pass `--framework` to get a framework-specific snippet and `--json` for machine-readable output:
+
+```bash
+npx @solar-icons/cli search "arrow" --style linear --framework react --json
+npx @solar-icons/cli get home --style bold --framework vue
+npx @solar-icons/cli info arrow-up --json
+```
+
+The catalog is read locally from `@solar-icons/static`. Once the package is installed, searches do not require an API key or a network request.
+
+## MCP
+
+Use `@solar-icons/mcp` when your AI client supports the Model Context Protocol. The server communicates over standard input and output and exposes the catalog without running a web service.
+
+Add this server to your MCP client configuration:
+
+```json
+{
+    "mcpServers": {
+        "solar-icons": {
+            "command": "npx",
+            "args": ["-y", "@solar-icons/mcp"]
+        }
+    }
+}
+```
+
+The server exposes these tools:
+
+| Tool                    | Purpose                                                        |
+| ----------------------- | -------------------------------------------------------------- |
+| `solar_search_icons`    | Search by name, tags, or category.                             |
+| `solar_get_icon`        | Return an import snippet, CDN URL, and SVG for one icon.       |
+| `solar_list_icons`      | List icons, optionally filtered by category.                   |
+| `solar_info_icon`       | Show metadata and all framework import paths.                  |
+| `solar_overview`        | Return catalog, package, Figma, and documentation information. |
+| `solar_list_categories` | List the 37 catalog categories.                                |
+| `solar_list_styles`     | List the six styles and provider tokens.                       |
+
+Run the server directly when testing a local MCP setup:
+
+```bash
+npx -y @solar-icons/mcp
+```
+
+The process is intentionally silent on standard output apart from MCP messages. Use an MCP inspector or your client to call the tools.
+
+## Skills
+
+Install the Solar Icons skill in a coding-agent environment:
+
+```bash
+npx skills add saoudi-h/solar-icons --skill solar-icons
+```
+
+The skill teaches an agent to:
+
+- detect the framework and choose the matching Solar Icons package;
+- search the catalog with `npx @solar-icons/cli` instead of guessing icon names;
+- choose a static or dynamic style import;
+- use CSS variables, `SolarProvider`, duotone props, and stroke width correctly;
+- load framework-specific references when an import or migration needs more detail.
+
+The source and installation details are available on [skills.sh](https://skills.sh/saoudi-h/solar-icons).
+
+## Migrate to v2
+
+For an existing v1 project, use [`@solar-icons/codemod`](/docs/v2/migration-to-v2/codemod) before the framework migration guide. It previews deterministic changes, supports interactive and JSON modes, and reports cases that still need a manual decision.

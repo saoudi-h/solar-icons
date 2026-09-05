@@ -26,14 +26,18 @@ const buttonVariants = cva(
             },
             size: {
                 default: 'h-9 px-5 py-2',
+                xs: 'h-6 gap-1 rounded-md border px-2 text-xs',
                 sm: 'h-8 rounded-md border px-4 text-xs',
                 lg: 'h-10 rounded-md px-9',
                 xl: 'h-12 rounded-md px-9',
                 icon: 'size-9 border!',
+                'icon-xs': 'size-6 rounded-md border!',
+                'icon-sm': 'size-8 border!',
+                'icon-lg': 'size-10 border!',
             },
             colors: {
                 default: `
-                  border-primary bg-primary text-primary-foreground/80
+                  border-primary bg-primary text-primary-foreground
                   hover:bg-primary/80 hover:text-primary-foreground
                 `,
                 secondary: `
@@ -74,8 +78,9 @@ const buttonVariants = cva(
                 variant: 'outline',
                 colors: 'secondary',
                 className: `
-                  border-secondary text-secondary/80
-                  hover:bg-secondary/80 hover:text-secondary
+                  border-secondary-foreground/60 text-secondary-foreground/80
+                  hover:border-secondary-foreground/80 hover:bg-secondary/80
+                  hover:text-secondary-foreground
                 `,
             },
             {
@@ -121,10 +126,23 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, colors, asChild = false, ...props }, ref) => {
+    (
+        {
+            className,
+            variant = 'default',
+            size = 'default',
+            colors = 'default',
+            asChild = false,
+            ...props
+        },
+        ref
+    ) => {
         const Comp = asChild ? Slot : 'button'
         return (
             <Comp
+                data-slot="button"
+                data-variant={variant}
+                data-size={size}
                 className={cn(buttonVariants({ colors, variant, size, className }))}
                 ref={ref}
                 {...props}

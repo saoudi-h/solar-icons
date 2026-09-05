@@ -35,7 +35,7 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                   group relative flex h-13 items-center gap-4 rounded-full border border-white/10
                   bg-neutral-900/80 px-6 text-sm font-semibold text-neutral-200 shadow-2xl
                   backdrop-blur-xl transition-all duration-300 ease-out select-none
-                  hover:border-warning/50 hover:bg-neutral-950/90 hover:text-white
+                  hover:border-primary/50 hover:bg-neutral-950/90 hover:text-white
                   dark:bg-black/60
                   dark:hover:bg-neutral-950/80
                 `,
@@ -44,8 +44,8 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Outer gradient glow */}
             <div
                 className="
-                  absolute -inset-px -z-10 rounded-full bg-linear-to-r from-warning/20
-                  to-amber-500/20 opacity-0 blur-xs transition-opacity duration-300
+                  absolute -inset-px -z-10 rounded-full bg-linear-to-r from-primary/20 to-primary
+                  opacity-0 blur-xs transition-opacity duration-300
                   group-hover:opacity-100
                 "
             />
@@ -53,7 +53,7 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Background glow shadow */}
             <div
                 className="
-                  absolute inset-0 -z-20 rounded-full bg-warning/10 opacity-0 blur-lg
+                  absolute inset-0 -z-20 rounded-full bg-primary/10 opacity-0 blur-lg
                   transition-opacity duration-300
                   group-hover:opacity-100
                 "
@@ -79,14 +79,14 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                       group-hover:text-white
                     "
                 />
-                <span className="tracking-wide">Star on GitHub</span>
+                Star on GitHub
             </span>
 
             {/* Separator Line */}
             <div
                 className="
                   z-10 h-4 w-px bg-white/10 transition-colors duration-200 ease-out
-                  group-hover:bg-warning/30
+                  group-hover:bg-primary/30
                 "
             />
 

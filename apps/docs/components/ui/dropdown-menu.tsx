@@ -8,17 +8,31 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 // import { CheckIcon, AltArrowRight, AltArrowLeft } from "@radix-ui/react-icons"
 
-const DropdownMenu = DropdownMenuPrimitive.Root
+function DropdownMenu(props: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
+    return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />
+}
 
-const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
+function DropdownMenuTrigger(props: React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {
+    return <DropdownMenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />
+}
 
-const DropdownMenuGroup = DropdownMenuPrimitive.Group
+function DropdownMenuGroup(props: React.ComponentProps<typeof DropdownMenuPrimitive.Group>) {
+    return <DropdownMenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />
+}
 
-const DropdownMenuPortal = DropdownMenuPrimitive.Portal
+function DropdownMenuPortal(props: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
+    return <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
+}
 
-const DropdownMenuSub = DropdownMenuPrimitive.Sub
+function DropdownMenuSub(props: React.ComponentProps<typeof DropdownMenuPrimitive.Sub>) {
+    return <DropdownMenuPrimitive.Sub data-slot="dropdown-menu-sub" {...props} />
+}
 
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
+function DropdownMenuRadioGroup(
+    props: React.ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>
+) {
+    return <DropdownMenuPrimitive.RadioGroup data-slot="dropdown-menu-radio-group" {...props} />
+}
 
 const DropdownMenuSubTrigger = React.forwardRef<
     React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
@@ -28,6 +42,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
 >(({ className, inset, children, ...props }, ref) => (
     <DropdownMenuPrimitive.SubTrigger
         ref={ref}
+        data-slot="dropdown-menu-sub-trigger"
         className={cn(
             `
               flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden
@@ -52,6 +67,7 @@ const DropdownMenuSubContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <DropdownMenuPrimitive.SubContent
         ref={ref}
+        data-slot="dropdown-menu-sub-content"
         className={cn(
             `
               z-50 min-w-32 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground
@@ -75,9 +91,10 @@ const DropdownMenuContent = React.forwardRef<
     React.ElementRef<typeof DropdownMenuPrimitive.Content>,
     React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
 >(({ className, sideOffset = 4, ...props }, ref) => (
-    <DropdownMenuPrimitive.Portal>
+    <DropdownMenuPortal>
         <DropdownMenuPrimitive.Content
             ref={ref}
+            data-slot="dropdown-menu-content"
             sideOffset={sideOffset}
             className={cn(
                 `
@@ -98,7 +115,7 @@ const DropdownMenuContent = React.forwardRef<
             )}
             {...props}
         />
-    </DropdownMenuPrimitive.Portal>
+    </DropdownMenuPortal>
 ))
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 
@@ -110,6 +127,7 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
     <DropdownMenuPrimitive.Item
         ref={ref}
+        data-slot="dropdown-menu-item"
         className={cn(
             `
               relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm
@@ -132,6 +150,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <DropdownMenuPrimitive.CheckboxItem
         ref={ref}
+        data-slot="dropdown-menu-checkbox-item"
         className={cn(
             `
               relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm
@@ -158,6 +177,7 @@ const DropdownMenuRadioItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <DropdownMenuPrimitive.RadioItem
         ref={ref}
+        data-slot="dropdown-menu-radio-item"
         className={cn(
             `
               relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm
@@ -186,6 +206,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
     <DropdownMenuPrimitive.Label
         ref={ref}
+        data-slot="dropdown-menu-label"
         className={cn('px-2 py-1.5 text-sm font-semibold', inset && 'pl-8', className)}
         {...props}
     />
@@ -198,6 +219,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <DropdownMenuPrimitive.Separator
         ref={ref}
+        data-slot="dropdown-menu-separator"
         className={cn('-mx-1 my-1 h-px bg-muted', className)}
         {...props}
     />
@@ -206,7 +228,11 @@ DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
 const DropdownMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
     return (
-        <span className={cn('ml-auto text-xs tracking-widest opacity-60', className)} {...props} />
+        <span
+            data-slot="dropdown-menu-shortcut"
+            className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
+            {...props}
+        />
     )
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'

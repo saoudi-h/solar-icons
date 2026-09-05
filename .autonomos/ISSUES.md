@@ -1,5 +1,87 @@
 # Open Issues & Proposals
 
+## [ISSUE-UI-FOUNDATION-REFRESH] Bring the UI foundation up to date without losing project customizations
+
+- Type: problem
+- Status: accepted
+- Evidence: The docs site adopted shadcn/ui conventions and Fumadocs primitives at an earlier point in their evolution. The project now has newer upstream primitives, including ButtonGroup in shadcn/ui and Base UI support in Fumadocs, while several local components and wrappers have been modified for Solar Icons. The current ownership boundaries and migration risks are not documented.
+- Impact: Stale or inconsistently chosen primitives can limit future UI quality and make later changes unpredictable. An indiscriminate refresh could also regress behavior, accessibility, theming, responsive behavior, or project-specific fixes.
+- Desired outcome: Establish a current, documented UI foundation with explicit boundaries between site-owned shadcn/ui components and Fumadocs-owned surfaces. Audit component provenance and local overrides before changing them, evaluate the relevant upstream APIs, preserve intentional behavior, and verify accessibility, theme, and responsive contracts component by component. The staged Fumadocs Base UI direction is accepted for the first task; later site-owned component migrations still require component-level review.
+- Tasks: DOCS-FUMADOCS-BASE-UI, DOCS-SHADCN-BUTTON-REFRESH, DOCS-SHADCN-BUTTON-GROUP, DOCS-SHADCN-POPOVER-CONTRACT, DOCS-SHADCN-TOOLTIP-CONTRACT, DOCS-SHADCN-INPUT-CONTRACT, DOCS-SHADCN-CARD-CONTRACT, DOCS-SHADCN-BADGE-CONTRACT, DOCS-SHADCN-COMMAND-CONTRACT, DOCS-SHADCN-REMAINING-CONTRACTS
+
+## [ISSUE-BUTTON-HIERARCHY] Establish a clear semantic hierarchy for buttons and CTAs
+
+- Type: problem
+- Status: open
+- Evidence: The homepage currently presents filled and outline CTAs that both use the primary color family. The visual treatment distinguishes surface style more than semantic role, and the project does not have a clearly documented set of button roles for primary, secondary, supporting, or state-specific actions.
+- Impact: Visitors may not know which action deserves priority, and future pages have no reliable semantic system to communicate action hierarchy. Adding more buttons ad hoc would increase inconsistency across the site.
+- Desired outcome: Define and consistently apply a semantic button hierarchy that makes the intended primary action clear, gives secondary actions an appropriate level of emphasis, remains legible in light and dark themes, and provides accessible hover, focus, pressed, disabled, and loading states without breaking existing consumers.
+- Tasks: DOCS-BUTTON-HIERARCHY
+
+## [ISSUE-ICON-DETAIL-TABS-OVERFLOW] Make every icon-detail tab reachable at constrained widths
+
+- Type: problem
+- Status: resolved
+- Evidence: The `/icons` detail panel exposes 11 tabs for variants, tags, and framework snippets. In the local preview, the panel's tab list is about 508px wide while its content is about 838px wide. Its computed horizontal overflow is `visible`, so the tabs after the visible range are clipped rather than scrollable. The `MotionTabs` class combines `overflow-auto` with `md:overflow-visible`, which removes the scroll container at the breakpoint used by the constrained layout. The maintainer reproduced the same behavior on production, so the issue predates the current homepage button pass. The root `ReactLenis` configuration already sets `allowNestedScroll: true`, but that does not confirm whether Lenis is handling or interfering with horizontal tab input.
+- Impact: Users on tablet-sized or otherwise constrained layouts cannot reach all framework tabs, including Svelte, Solid, Angular, Static, and JS. They cannot inspect or copy the corresponding snippets even though those options remain present in the page markup.
+- Desired outcome: Every icon-detail tab remains reachable with pointer, touch, and keyboard input at supported widths. The active-tab indicator and content animation remain coherent, and the fix does not introduce page-level scrolling or regress the icon grid, category navigation, detail panel, or Lenis behavior. Validation must cover wide, intermediate, and narrow layouts in light and dark themes, including the real horizontal interaction path.
+- Resolution: The tab strip now keeps native horizontal overflow at every breakpoint and each tab preserves its intrinsic width. The rendered intermediate-width panel exposes a scrollable strip, and off-screen Svelte and JS tabs were selected successfully without adding a global or local Lenis override. Mobile viewport and direct touch validation remain manual follow-ups because the integrated browser cannot emulate that viewport.
+- Tasks: DOCS-ICON-DETAIL-TABS-OVERFLOW
+
+## [ISSUE-HOMEPAGE-INFORMATION-ARCHITECTURE] Give the homepage one coherent product narrative
+
+- Type: problem
+- Status: open
+- Evidence: The homepage has accumulated sections and claims over time. Many additions make sense in isolation, but their global order, relative priority, and relationship to one another are no longer obvious. Information can repeat or compete instead of moving a visitor through a deliberate understanding of the product.
+- Impact: The page risks feeling crowded, improvised, or generic even when its individual sections are useful. Important differentiators can be buried, and new capabilities such as the CLI, MCP server, and skills can add more surface area without improving comprehension.
+- Desired outcome: Establish a coherent homepage information architecture with a defined visitor journey, explicit content priorities, deduplicated claims, and clear roles for discovery, integration, workflow, and trust. The result should preserve useful information while making omissions, repetition, and low-priority content visible before any visual redesign is attempted.
+- Tasks: none
+
+## [ISSUE-HERO-V2-PRESENTATION] Make the hero demonstrate the V2 icon system
+
+- Type: problem
+- Status: open
+- Evidence: The current rotating hero changes categories and styles, but its visual demonstration does not clearly expose the V2 capabilities that distinguish the system, especially two-color duotone rendering and different stroke widths for linear styles. The hero also feels dependent on a familiar landing-page template, with the rotating wheel carrying most of its distinctive character.
+- Impact: The most visible product moment under-communicates the work invested in V2. Visitors can miss the breadth and controllability of the icon system, while the hero spends space on motion without establishing a strong, ownable Solar Icons impression.
+- Desired outcome: Make the hero's motion and icon presentation explain the V2 system at a glance, including meaningful visual differences between styles, duotone colors, and stroke weights. The composition should feel intentional and specific to Solar Icons, preserve immediate access to the primary actions, remain performant, and respect reduced-motion preferences.
+- Tasks: none
+
+## [ISSUE-HERO-HEIGHT-ANALYTICS] Resolve the hero height trade-off between first-viewport composition and analytics
+
+- Type: problem
+- Status: open
+- Evidence: The hero currently derives its height from the viewport after the fixed header so that the header and hero fit together on one screen. The maintainer observes that Umami heatmaps do not represent clicks reliably in sections whose height is dynamic and not bounded. Removing that behavior would change how much of the following section appears at different screen heights, creating a real composition trade-off rather than a mechanical CSS fix.
+- Impact: The current geometry weakens click analysis of the page, while an unexamined replacement could produce inconsistent first impressions, clipped content, or a different perceived hierarchy across devices and monitor heights.
+- Desired outcome: Define a deliberate responsive height contract for the hero that gives Umami meaningful page geometry, keeps the primary content and actions reachable, and produces an intentional first viewport across representative screen sizes. The accepted approach must be validated against both analytics behavior and visual composition instead of optimizing one in isolation.
+- Tasks: none
+
+## [ISSUE-SITE-COMMUNICATION-TONE] Define a consistent, credible voice for the site
+
+- Type: problem
+- Status: open
+- Evidence: Homepage titles and descriptions were added incrementally and now mix product marketing, implementation detail, and feature announcement language. The maintainer considers the documentation tone mostly appropriate, but the homepage and broader site lack an explicit editorial direction that rules out exaggerated marketing, unnecessary technicality, and formulaic AI-generated phrasing.
+- Impact: Inconsistent wording weakens the product narrative and can make a design-focused icon project sound less credible or less human. Copy changes made without a shared voice will continue to create local improvements that do not add up globally.
+- Desired outcome: Establish a concise editorial voice and content rules for the homepage, with an optional site-wide extension where appropriate. Copy should be specific, human, proportionate to the product's claims, and understandable to both design-oriented and technical visitors, while the existing documentation voice remains intact unless evidence calls for a change.
+- Tasks: none
+
+## [ISSUE-HOME-NAV-IDENTITY] Give non-documentation pages a site-owned header direction
+
+- Type: problem
+- Status: open
+- Evidence: Non-documentation pages currently inherit the Fumadocs header. That is acceptable as a documentation convention, but the same pattern is shared by many Fumadocs sites and does not express the Solar Icons visual direction on the marketing and exploration surfaces.
+- Impact: The first navigational element makes the site feel interchangeable and weakens brand recognition precisely where the project needs a stronger public presence. A careless replacement could also reduce orientation, responsive behavior, or consistency between docs and non-docs pages.
+- Desired outcome: Define a navigation boundary in which documentation can retain the conventions that help it work while non-documentation surfaces receive a coherent, site-owned header treatment. The result must preserve discoverability, active location, keyboard access, responsive behavior, and a clear relationship to the rest of the visual system.
+- Tasks: none
+
+## [ISSUE-SURFACE-COLOR-MOOD] Reconsider the homepage atmosphere without losing depth
+
+- Type: problem
+- Status: open
+- Evidence: The grain/texture treatment used in the hero, footer, and closing sections is still considered valuable. The teal and pink colors at the top of the page now feel dated to the maintainer, but removing them without testing could leave the page flat, gray, or emotionally cold.
+- Impact: The current surface treatment may date the brand expression, while a simplistic removal could damage atmosphere, hierarchy, or contrast. This is a system-level mood decision that affects several sections, not a one-off gradient tweak.
+- Desired outcome: Establish an atmosphere treatment that keeps the useful texture and depth, feels current to the project, supports content hierarchy, and remains coherent and accessible in light and dark themes. Any direction should be compared across the affected sections before it is adopted globally.
+- Tasks: none
+
 ## [ISSUE-ICON-CATEGORIES] Preserve composite Figma categories
 
 **Evidence:** Figma labels may contain one to four semantic parts (`Design, Tools`,

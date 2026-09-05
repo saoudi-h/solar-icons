@@ -13,4 +13,5 @@ export interface FooterSection {
 export interface FooterProps {
     bottomText: string
     sections: FooterSection[]
+    showSurface?: boolean
 }

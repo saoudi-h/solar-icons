@@ -8,41 +8,45 @@ import { FooterMotion } from '../animations/FooterMotion'
 import { Logo } from '../logo'
 import type { FooterProps } from './types'
 
-export const Footer: React.FC<FooterProps> = ({ sections, bottomText }) => {
+export const Footer: React.FC<FooterProps> = ({ sections, bottomText, showSurface = true }) => {
     return (
         <FooterMotion className={`relative flex w-full flex-1 flex-col md:px-10`}>
             <div
                 className={`
-                  relative container mt-6 flex w-full flex-col items-center gap-8 self-center py-0
-                  md:mx-10 md:mt-12 md:py-12
+                  relative mx-auto mt-6 flex w-full max-w-384 flex-col items-center gap-8 py-0
+                  md:mt-12 md:py-12
                 `}>
                 <div
                     className={`
-                      relative w-full gap-2 overflow-hidden rounded-none bg-accent/30 py-12
-                      md:rounded-3xl
+                      relative w-full gap-2 py-12
+                      ${showSurface ? 'overflow-hidden rounded-none bg-accent/30 md:rounded-3xl' : ''}
                     `}>
-                    <div className="absolute inset-0 z-0 overflow-hidden">
-                        <NoiseSvg
-                            className={`pointer-events-none absolute inset-0 size-full opacity-30`}
-                        />
-                        <div
-                            className={`
-                              absolute top-0 left-1/3 size-1/2 -translate-1/2 rounded-full
-                              bg-linear-to-b from-teal-950/30 to-transparent blur-3xl
-                            `}></div>
-                        <div
-                            className={`
-                              absolute top-0 left-2/3 size-1/3 -translate-1/2 rounded-full
-                              bg-linear-to-b from-pink-700/20 to-transparent blur-3xl
-                            `}></div>
-                        <div
-                            className="absolute inset-0"
-                            style={{
-                                background:
-                                    'radial-gradient(circle at 50% -60%, transparent 0%, hsla(var(--accent)/0.5) 50%, hsla(var(--background)/0.8) 100%)',
-                            }}
-                        />
-                    </div>
+                    {showSurface && (
+                        <div className="absolute inset-0 z-0 overflow-hidden">
+                            <NoiseSvg
+                                className={`
+                                  pointer-events-none absolute inset-0 size-full opacity-30
+                                `}
+                            />
+                            <div
+                                className={`
+                                  absolute top-0 left-1/3 size-1/2 -translate-1/2 rounded-full
+                                  bg-linear-to-b from-teal-950/30 to-transparent blur-3xl
+                                `}></div>
+                            <div
+                                className={`
+                                  absolute top-0 left-2/3 size-1/3 -translate-1/2 rounded-full
+                                  bg-linear-to-b from-pink-700/20 to-transparent blur-3xl
+                                `}></div>
+                            <div
+                                className="absolute inset-0"
+                                style={{
+                                    background:
+                                        'radial-gradient(circle at 50% -60%, transparent 0%, hsla(var(--accent)/0.5) 50%, hsla(var(--background)/0.8) 100%)',
+                                }}
+                            />
+                        </div>
+                    )}
                     <div
                         className={`
                           relative my-14 mt-16 flex flex-col gap-12 px-12

@@ -22,7 +22,7 @@ export const SectionMotion = forwardRef<HTMLElement, SectionMotionProps>(
                 ref={ref}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 'some' }}
                 variants={itemVariants}
                 {...props}>
                 {children}
