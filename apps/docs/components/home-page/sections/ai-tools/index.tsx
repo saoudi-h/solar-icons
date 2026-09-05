@@ -1,6 +1,5 @@
 'use client'
 
-import { Icon } from '@iconify/react'
 import { ArrowRightIcon } from '@solar-icons/react/linear/arrow-right'
 import Link from 'next/link'
 import React from 'react'
@@ -11,26 +10,7 @@ import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import { cn } from '@/lib/utils'
 
-const aiTools = [
-    {
-        name: 'MCP',
-        packageName: '@solar-icons/mcp',
-        role: 'Catalog access',
-        icon: 'bxl:mcp',
-    },
-    {
-        name: 'Skill',
-        packageName: 'solar-icons',
-        role: 'Agent guidance',
-        icon: 'material-symbols:code',
-    },
-    {
-        name: 'CLI',
-        packageName: '@solar-icons/cli',
-        role: 'Local search',
-        icon: 'catppuccin:powershell',
-    },
-] as const
+import { AiToolsCards } from './AiToolsCards'
 
 export const AiToolsSection = () => {
     return (
@@ -89,61 +69,8 @@ export const AiToolsSection = () => {
                         </Button>
                     </div>
 
-                    <div
-                        className={cn(
-                            'relative rounded-2xl border p-4 md:col-span-7 md:p-6',
-                            'border-border/60 bg-background/35'
-                        )}>
-                        <div
-                            className={cn(
-                                'absolute inset-y-8 left-9 w-px bg-linear-to-b from-primary/80',
-                                'via-pink-500/60 to-teal-500/70 md:left-11'
-                            )}
-                        />
-                        <div className="relative flex flex-col">
-                            {aiTools.map(tool => (
-                                <div
-                                    key={tool.name}
-                                    className={cn(
-                                        'flex items-center gap-4 border-b border-border/50 py-4',
-                                        'first:pt-0 last:border-0 last:pb-0'
-                                    )}>
-                                    <div
-                                        className={cn(
-                                            'relative flex size-10 shrink-0 items-center',
-                                            'justify-center rounded-xl',
-                                            'border border-border/70 bg-background text-foreground'
-                                        )}>
-                                        <Icon
-                                            icon={tool.icon}
-                                            aria-hidden="true"
-                                            className="size-5"
-                                        />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div
-                                            className={cn(
-                                                'flex flex-wrap items-baseline',
-                                                'gap-x-2 gap-y-1'
-                                            )}>
-                                            <p className="font-semibold text-foreground">
-                                                {tool.name}
-                                            </p>
-                                            <code
-                                                className={cn(
-                                                    'font-mono text-[11px]',
-                                                    'text-muted-foreground'
-                                                )}>
-                                                {tool.packageName}
-                                            </code>
-                                        </div>
-                                        <p className="mt-1 text-xs text-muted-foreground">
-                                            {tool.role}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="w-full md:col-span-7">
+                        <AiToolsCards />
                     </div>
                 </div>
             </div>

@@ -54,11 +54,7 @@ export const FeaturesSection = () => {
                 variants={itemVariants}
                 className="flex flex-col items-center gap-4 text-center">
                 <Heading size="h1" className="text-3xl font-extrabold tracking-tight md:text-5xl">
-                    Built for{' '}
-                    <span
-                        className="text-muted-foreground">
-                        All
-                    </span>
+                    Built for <span className="text-muted-foreground">All</span>
                 </Heading>
                 <p className="max-w-145 text-sm/relaxed text-muted-foreground md:text-base">
                     A complete icon set with six visual styles, native frontend framework packages,
