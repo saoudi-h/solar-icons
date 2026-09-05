@@ -70,7 +70,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       md:pt-16
                     `}>
                     <Heading size="h1" justify="center" className="w-full max-w-200 text-balance">
-                        {title.part1} {title.part2}
+                        {title.part1}
+                        <br />
+                        <span className="text-muted-foreground">{title.part2}</span>
                     </Heading>
                     <p
                         className={`

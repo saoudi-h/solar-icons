@@ -56,9 +56,7 @@ export const FeaturesSection = () => {
                 <Heading size="h1" className="text-3xl font-extrabold tracking-tight md:text-5xl">
                     Built for{' '}
                     <span
-                        className="
-                          box-decoration-clone underline decoration-primary underline-offset-8
-                        ">
+                        className="text-muted-foreground">
                         All
                     </span>
                 </Heading>
@@ -186,7 +184,9 @@ const BentoHeader = ({
 }) => (
     <div className="relative mb-6 flex flex-col gap-1.5 text-left select-none">
         <div className="flex items-start justify-between gap-4">
-            <h3 className="text-lg font-bold tracking-tight text-foreground md:text-lg">{title}</h3>
+            <h3 className="font-heading text-lg font-bold tracking-tight text-foreground md:text-xl">
+                {title}
+            </h3>
             {href && buttonText && (
                 <Button asChild size="sm" variant="default" colors="muted" className="rounded-full">
                     <Link href={href}>

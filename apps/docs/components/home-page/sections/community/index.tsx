@@ -188,7 +188,7 @@ export const CommunitySection = () => {
                                 size="h1"
                                 className="text-3xl font-extrabold tracking-tight md:text-4xl">
                                 Built for developers. <br className="hidden md:inline" />
-                                Maintained with care.
+                                <span className="text-muted-foreground">Maintained with care.</span>
                             </Heading>
                             <p
                                 className={`
@@ -249,10 +249,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
 
     return (
         <div ref={ref} className={`flex flex-col gap-1 p-4`}>
-            <span
-                className={`text-[10px] font-bold tracking-widest text-muted-foreground uppercase`}>
-                {title}
-            </span>
+            <span className={`text-xs font-bold text-muted-foreground uppercase`}>{title}</span>
             <span className={`text-3xl font-extrabold tracking-tight text-foreground`}>
                 <NumberFlow value={displayValue} format={{ minimumIntegerDigits: 1 }} trend={1} />
             </span>

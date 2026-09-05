@@ -68,7 +68,9 @@ export const AiToolsSection = () => {
                     )}>
                     <div className="flex flex-col items-start gap-5 md:col-span-5">
                         <Heading size="h1" className="max-w-xl text-3xl md:text-5xl">
-                            Give your agent the right icons.
+                            Give your agent
+                            <br className="hidden md:inline" />
+                            <span className="text-muted-foreground">the right icons.</span>
                         </Heading>
                         <p className="max-w-xl text-sm/relaxed text-muted-foreground md:text-base">
                             Install the package for your framework, then use MCP, Skill, or CLI to

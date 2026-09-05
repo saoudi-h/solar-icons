@@ -116,8 +116,8 @@ export const config: Config = {
     },
     heroSection: {
         title: {
-            part1: 'Solar Icons',
-            part2: 'for Modern Frameworks',
+            part1: 'Solar Icons for',
+            part2: 'Modern Frameworks',
         },
         content: '1,268 unique icons in six styles, packaged for modern web and mobile frameworks.',
         exploreIcons: {
