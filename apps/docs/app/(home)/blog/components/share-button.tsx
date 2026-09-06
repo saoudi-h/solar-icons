@@ -18,7 +18,7 @@ export function ShareButton({ url }: { url: string }) {
             variant="outline"
             size="sm"
             className="rounded-full"
-            colors="default">
+            colors="secondary">
             {checked ? 'Copied' : 'Share'}
             {checked ? (
                 <CopyIcon size={16} weight="Linear" />

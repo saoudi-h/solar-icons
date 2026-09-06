@@ -24,7 +24,7 @@ const tools = [
         name: 'CLI',
         packageName: '@solar-icons/cli',
         description: 'Instant terminal search and framework snippet generation.',
-        icon: 'catppuccin:powershell',
+        icon: 'grommet-icons:cli',
         href: '/docs/v2/ai-tools#cli',
     },
 ] as const
@@ -37,20 +37,22 @@ export const AiToolsCards = () => {
                     key={tool.name}
                     href={tool.href}
                     className="group flex items-start gap-4 transition-all duration-150">
-                    <div className="
-                      mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-xl
-                      bg-foreground/5 text-foreground transition-colors
-                      group-hover:bg-foreground/10
-                    ">
+                    <div
+                        className="
+                          mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-xl
+                          bg-foreground/5 text-foreground transition-colors
+                          group-hover:bg-foreground/10
+                        ">
                         <Icon icon={tool.icon} className="size-5" aria-hidden="true" />
                     </div>
 
                     <div className="min-w-0 flex-1 text-left">
                         <div className="flex items-baseline gap-2.5">
-                            <span className="
-                              font-heading text-base font-bold text-foreground transition-colors
-                              group-hover:text-primary
-                            ">
+                            <span
+                                className="
+                                  font-heading text-base font-bold text-foreground transition-colors
+                                  group-hover:text-primary
+                                ">
                                 {tool.name}
                             </span>
                             <span className="font-mono text-xs text-muted-foreground">

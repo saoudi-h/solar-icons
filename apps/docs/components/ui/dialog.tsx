@@ -1,7 +1,7 @@
 'use client'
 
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { CloseCircleIcon } from '@solar-icons/react/linear/close-circle'
+import { CloseIcon } from '@solar-icons/react/linear/close'
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
@@ -42,12 +42,17 @@ const DialogOverlay = React.forwardRef<
 ))
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
+type DialogContentProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+    closeClassName?: string
+    overlayClassName?: string
+    portal?: boolean
+}
+
 const DialogContent = React.forwardRef<
     React.ElementRef<typeof DialogPrimitive.Content>,
-    React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-    <DialogPortal>
-        <DialogOverlay />
+    DialogContentProps
+>(({ className, children, closeClassName, overlayClassName, portal = true, ...props }, ref) => {
+    const content = (
         <DialogPrimitive.Content
             ref={ref}
             data-slot="dialog-content"
@@ -69,20 +74,41 @@ const DialogContent = React.forwardRef<
             {children}
             <DialogPrimitive.Close
                 data-slot="dialog-close"
-                className={`
-                  absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background
-                  transition-opacity
-                  hover:opacity-100
-                  focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden
-                  disabled:pointer-events-none
-                  data-[state=open]:bg-accent data-[state=open]:text-muted-foreground
-                `}>
-                <CloseCircleIcon className="size-4" isolated />
+                className={cn(
+                    `
+                      absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background
+                      transition-opacity
+                      hover:opacity-100
+                      focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden
+                      disabled:pointer-events-none
+                      data-[state=open]:bg-accent data-[state=open]:text-muted-foreground
+                    `,
+                    closeClassName
+                )}>
+                <CloseIcon className="size-5" />
                 <span className="sr-only">Close</span>
             </DialogPrimitive.Close>
         </DialogPrimitive.Content>
-    </DialogPortal>
-))
+    )
+
+    if (!portal) {
+        return (
+            <>
+                <DialogPortal>
+                    <DialogOverlay className={overlayClassName} />
+                </DialogPortal>
+                {content}
+            </>
+        )
+    }
+
+    return (
+        <DialogPortal>
+            <DialogOverlay className={overlayClassName} />
+            {content}
+        </DialogPortal>
+    )
+})
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (

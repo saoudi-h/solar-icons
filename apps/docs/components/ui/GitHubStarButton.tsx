@@ -32,9 +32,10 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             style={style}
             className={cn(
                 `
-                  group relative flex h-13 items-center gap-4 rounded-full border border-white/10
-                  bg-neutral-900/80 px-6 text-sm font-semibold text-neutral-200 shadow-2xl
-                  backdrop-blur-xl transition-all duration-300 ease-out select-none
+                  group relative flex h-13 w-max shrink-0 flex-nowrap items-center gap-4
+                  rounded-full border border-white/10 bg-neutral-900/80 px-6 text-sm font-semibold
+                  whitespace-nowrap text-neutral-200 shadow-2xl backdrop-blur-xl transition-all
+                  duration-300 ease-out select-none
                   hover:border-primary/50 hover:bg-neutral-950/90 hover:text-white
                   dark:bg-black/60
                   dark:hover:bg-neutral-950/80
@@ -71,11 +72,11 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             </div>
 
             {/* Left section: GitHub Logo & text */}
-            <span className="z-10 flex items-center gap-2.5">
+            <span className="z-10 flex shrink-0 items-center gap-2.5 whitespace-nowrap">
                 <Icon
                     icon="mdi:github"
                     className="
-                      size-5.5 text-neutral-400 transition-colors duration-200 ease-out
+                      size-5.5 shrink-0 text-neutral-400 transition-colors duration-200 ease-out
                       group-hover:text-white
                     "
                 />
@@ -91,7 +92,7 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             />
 
             {/* Right section: Star & Counter */}
-            <span className="z-10 flex items-center gap-1.5">
+            <span className="z-10 flex shrink-0 items-center gap-1.5">
                 <span
                     className={cn(
                         `

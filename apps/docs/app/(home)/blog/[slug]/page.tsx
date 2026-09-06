@@ -2,6 +2,7 @@ import { ArrowLeftIcon } from '@solar-icons/react/dynamic/arrow-left'
 import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { ComponentProps } from 'react'
@@ -15,6 +16,26 @@ import { ShareButton } from '../components/share-button'
 import { TagPill } from '../components/tag-pill'
 
 type BlogPost = ReturnType<typeof blogSource.getPages>[number]
+
+interface AuthorProfile {
+    name: string
+    avatar?: string
+}
+
+const AUTHOR_PROFILES: Record<string, AuthorProfile> = {
+    'saoudi-h': {
+        name: 'saoudi-h',
+        avatar: 'https://github.com/saoudi-h.png?size=96',
+    },
+    'Hakim Saoudi': {
+        name: 'saoudi-h',
+        avatar: 'https://github.com/saoudi-h.png?size=96',
+    },
+}
+
+function resolveAuthorProfile(author: string): AuthorProfile {
+    return AUTHOR_PROFILES[author] ?? { name: author }
+}
 
 function isDraft(page: BlogPost) {
     return (page.data.status as string | undefined) === 'draft'
@@ -53,6 +74,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 
     const MDX = page.data.body
     const tags = (page.data.tags as string[] | undefined) ?? []
+    const author = resolveAuthorProfile(page.data.author as string)
     const related = [...blogSource.getPages()]
         .filter(other => isVisible(other) && other.url !== page.url)
         .sort((a, b) => {
@@ -109,17 +131,25 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
                   p-1
                 ">
                 <div className="flex min-w-0 flex-1 items-center gap-3 px-3 py-2">
-                    <div
-                        className="
-                          flex size-9 shrink-0 items-center justify-center rounded-full
-                          bg-foreground text-xs font-bold text-background
-                        ">
-                        {(page.data.author as string).slice(0, 2).toUpperCase()}
-                    </div>
-                    <div className="min-w-0">
-                        <div className="truncate text-sm font-semibold">
-                            {page.data.author as string}
+                    {author.avatar ? (
+                        <Image
+                            src={author.avatar}
+                            alt=""
+                            width={36}
+                            height={36}
+                            className="size-9 shrink-0 rounded-full object-cover"
+                        />
+                    ) : (
+                        <div
+                            className="
+                              flex size-9 shrink-0 items-center justify-center rounded-full
+                              bg-foreground text-xs font-bold text-background
+                            ">
+                            {author.name.slice(0, 2).toUpperCase()}
                         </div>
+                    )}
+                    <div className="min-w-0">
+                        <div className="truncate text-sm font-semibold">{author.name}</div>
                         <div className="text-xs text-muted-foreground">
                             {formatDate(page.data.date as Date)}
                         </div>
@@ -143,7 +173,12 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
             </div>
 
             <div className="mt-10 flex flex-wrap gap-2">
-                <Button asChild size="lg" variant="outline" className="rounded-full">
+                <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    colors="secondary"
+                    className="rounded-full">
                     <Link href="/blog" className="">
                         <ArrowLeftIcon size={16} weight="Linear" />
                         More articles

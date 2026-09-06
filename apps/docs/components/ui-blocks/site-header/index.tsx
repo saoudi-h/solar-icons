@@ -2,11 +2,11 @@
 
 import githubIcon from '@iconify-icons/mdi/github'
 import { Icon } from '@iconify/react'
-import { HamburgerMenuIcon } from '@solar-icons/react/dynamic/hamburger-menu'
 import { MoonIcon } from '@solar-icons/react/dynamic/moon'
 import { SunIcon } from '@solar-icons/react/dynamic/sun'
 import { SearchTrigger } from 'fumadocs-ui/layouts/shared/slots/search-trigger'
-import { motion } from 'motion/react'
+import { useLenis } from 'lenis/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -15,22 +15,52 @@ import React, { useEffect, useState } from 'react'
 import { Logo } from '@/components/ui-blocks/logo'
 import { Button } from '@/components/ui/button'
 import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from '@/components/ui/drawer'
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogTitle,
+    DialogTrigger,
+} from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 
-import { SITE_HEADER_HEIGHT, SITE_HEADER_RESERVED_HEIGHT } from './constants'
+import { SITE_HEADER_HEIGHT, SITE_HEADER_OFFSET, SITE_HEADER_RESERVED_HEIGHT } from './constants'
 
 const NAV_LINKS = [
     { href: '/docs/v2', label: 'Documentation' },
     { href: '/icons', label: 'Explore Icons' },
     { href: '/blog', label: 'Blog' },
 ] as const
+
+const MOBILE_MENU_CLOSED_CLIP_PATH = 'inset(0 0 100% 0 round 0 0 24px 24px)'
+const MOTION_EASE = [0.23, 1, 0.32, 1] as const
+const REVEAL_EASE = [0.77, 0, 0.175, 1] as const
+
+function MenuToggleIcon({ open, reduceMotion }: { open: boolean; reduceMotion: boolean }) {
+    const transition = reduceMotion ? { duration: 0 } : { duration: 0.24, ease: MOTION_EASE }
+
+    return (
+        <span aria-hidden className="relative block size-5">
+            <motion.span
+                className="absolute top-1/2 left-0 h-px w-5 origin-center rounded-full bg-current"
+                initial={false}
+                animate={{ rotate: open ? 45 : 0, y: open ? 0 : -4 }}
+                transition={transition}
+            />
+            <motion.span
+                className="absolute top-1/2 left-0 h-px w-5 origin-center rounded-full bg-current"
+                initial={false}
+                animate={{ opacity: open ? 0 : 1, scaleX: open ? 0.4 : 1 }}
+                transition={transition}
+            />
+            <motion.span
+                className="absolute top-1/2 left-0 h-px w-5 origin-center rounded-full bg-current"
+                initial={false}
+                animate={{ rotate: open ? -45 : 0, y: open ? 0 : 4 }}
+                transition={transition}
+            />
+        </span>
+    )
+}
 
 function isNavLinkActive(pathname: string, href: string): boolean {
     return pathname === href || pathname.startsWith(href + '/')
@@ -56,9 +86,9 @@ function SiteNavLink({
             className={cn(
                 mobile
                     ? `
-                      flex h-11 w-full items-center rounded-xl px-4 text-base text-muted-foreground
-                      transition-colors
-                      hover:bg-accent/70 hover:text-foreground
+                      flex min-h-11 w-full items-center px-2 text-base tracking-tight
+                      text-muted-foreground transition-colors duration-200
+                      hover:text-foreground
                     `
                     : `
                       relative inline-flex h-11 items-center rounded-full px-4 text-sm
@@ -66,13 +96,18 @@ function SiteNavLink({
                       hover:text-foreground
                     `,
                 'focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none',
-                active && (mobile ? 'bg-accent/70 text-foreground' : 'text-foreground')
+                active && 'text-foreground'
             )}>
-            {label}
+            {mobile ? (
+                <span className="relative z-10 font-heading">{label}</span>
+            ) : (
+                <span className="relative z-10">{label}</span>
+            )}
             {active && !mobile ? (
                 <motion.span
                     layoutId="site-header-active-link"
-                    className="absolute inset-x-4 bottom-1 h-px rounded-full bg-primary"
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 z-0 rounded-full bg-accent/60"
                     transition={{ type: 'spring', stiffness: 420, damping: 32 }}
                 />
             ) : null}
@@ -127,7 +162,7 @@ function GitHubLink({ mobile = false }: { mobile?: boolean }) {
                   hover:bg-accent hover:text-foreground
                   focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
                 `,
-                mobile && 'w-full justify-start gap-3 rounded-xl px-4'
+                mobile && 'flex-1 justify-start gap-3 rounded-xl px-3'
             )}>
             <Icon icon={githubIcon} aria-hidden className="size-5" ssr />
             {mobile ? <span>GitHub</span> : null}
@@ -135,54 +170,210 @@ function GitHubLink({ mobile = false }: { mobile?: boolean }) {
     )
 }
 
-function MobileNavigation({ pathname }: { pathname: string }) {
+function MobileNavigationTrigger({ open, reduceMotion }: { open: boolean; reduceMotion: boolean }) {
     return (
-        <Drawer direction="right">
-            <DrawerTrigger asChild>
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    aria-label="Open navigation"
-                    className="
-                      rounded-full border-transparent! text-muted-foreground
-                      hover:bg-accent hover:text-foreground
-                    ">
-                    <HamburgerMenuIcon aria-hidden weight="Linear" />
-                </Button>
-            </DrawerTrigger>
-            <DrawerContent
-                hideHandler
+        <DialogTrigger asChild>
+            <Button
+                variant="ghost"
+                size="icon"
+                aria-label={open ? 'Close navigation' : 'Open navigation'}
+                aria-expanded={open}
+                aria-controls="mobile-navigation-panel"
                 className="
-                  w-[min(22rem,calc(100vw-1rem))] rounded-l-3xl border-border/70 bg-background/95
-                  p-2 backdrop-blur-xl
+                  size-11! rounded-full border-transparent! text-muted-foreground
+                  hover:bg-accent hover:text-foreground
                 ">
-                <DrawerHeader className="border-b border-border/60 px-4 pt-3 pb-5">
-                    <DrawerTitle className="font-heading text-xl">Solar Icons</DrawerTitle>
-                </DrawerHeader>
-                <div className="flex min-h-0 flex-1 flex-col gap-8 overflow-y-auto px-2 py-5">
-                    <nav aria-label="Primary navigation" className="flex flex-col gap-1">
+                <MenuToggleIcon open={open} reduceMotion={reduceMotion} />
+            </Button>
+        </DialogTrigger>
+    )
+}
+
+function MobileNavigationPanel({
+    pathname,
+    open,
+    onOpenChange,
+}: {
+    pathname: string
+    open: boolean
+    onOpenChange: (open: boolean) => void
+}) {
+    const lenis = useLenis()
+    const shouldReduceMotion = useReducedMotion() ?? false
+
+    useEffect(() => {
+        onOpenChange(false)
+    }, [onOpenChange, pathname])
+
+    useEffect(() => {
+        if (!open) return
+
+        const body = document.body
+        const previousBodyOverscrollBehavior = body.style.overscrollBehavior
+
+        body.style.overscrollBehavior = 'none'
+
+        const preventScroll = (event: Event) => event.preventDefault()
+        const preventKeyboardScroll = (event: KeyboardEvent) => {
+            if (
+                ['ArrowDown', 'ArrowUp', 'End', 'Home', 'PageDown', 'PageUp', 'Space'].includes(
+                    event.code
+                )
+            ) {
+                event.preventDefault()
+            }
+        }
+
+        window.addEventListener('wheel', preventScroll, { passive: false })
+        window.addEventListener('touchmove', preventScroll, { passive: false })
+        window.addEventListener('keydown', preventKeyboardScroll)
+        lenis?.stop()
+
+        return () => {
+            lenis?.start()
+            body.style.overscrollBehavior = previousBodyOverscrollBehavior
+            window.removeEventListener('wheel', preventScroll)
+            window.removeEventListener('touchmove', preventScroll)
+            window.removeEventListener('keydown', preventKeyboardScroll)
+        }
+    }, [lenis, open])
+
+    const panelVariants = {
+        closed: {
+            clipPath: MOBILE_MENU_CLOSED_CLIP_PATH,
+            transition: shouldReduceMotion ? { duration: 0 } : { duration: 0.3, ease: MOTION_EASE },
+        },
+        open: {
+            clipPath: 'inset(0px 0px 0px 0px round 0px)',
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.52, ease: REVEAL_EASE },
+        },
+    }
+    const navigationVariants = {
+        closed: {
+            opacity: 1,
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { delayChildren: 0.02, staggerChildren: 0.04, staggerDirection: -1 },
+        },
+        open: {
+            opacity: 1,
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { delayChildren: 0.26, staggerChildren: 0.13 },
+        },
+    }
+    const navigationItemVariants = {
+        closed: {
+            opacity: 0,
+            transform: 'translateY(10px)',
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.16, ease: MOTION_EASE },
+        },
+        open: {
+            opacity: 1,
+            transform: 'translateY(0px)',
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.32, ease: MOTION_EASE },
+        },
+    }
+    const footerVariants = {
+        closed: {
+            opacity: 0,
+            transform: 'translateY(10px)',
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { delay: 0.02, duration: 0.16, ease: MOTION_EASE },
+        },
+        open: {
+            opacity: 1,
+            transform: 'translateY(0px)',
+            transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { delay: 0.72, duration: 0.32, ease: MOTION_EASE },
+        },
+    }
+
+    return (
+        <DialogContent
+            id="mobile-navigation-panel"
+            portal={false}
+            closeClassName="hidden"
+            overlayClassName="z-30! bg-black/45!"
+            className={cn(
+                `
+                  pointer-events-none! absolute! inset-0! z-0! flex! size-full! max-w-none!
+                  translate-0! flex-col! gap-0! overflow-hidden! rounded-none! border-0!
+                  bg-transparent! p-0! shadow-none!
+                `,
+                `
+                  motion-safe:data-[state=closed]:duration-350!
+                  motion-safe:data-[state=closed]:animate-out
+                  motion-safe:data-[state=closed]:fade-out-0
+                  motion-safe:data-[state=closed]:slide-out-to-left-0!
+                  motion-safe:data-[state=closed]:slide-out-to-top-0!
+                  motion-safe:data-[state=closed]:zoom-out-100!
+                `,
+                'motion-safe:data-[state=open]:animate-in',
+                'motion-safe:data-[state=open]:fade-in-0',
+                'motion-safe:data-[state=open]:duration-200!',
+                'motion-safe:data-[state=open]:slide-in-from-left-0!',
+                'motion-safe:data-[state=open]:slide-in-from-top-0!',
+                'motion-safe:data-[state=open]:zoom-in-100!'
+            )}>
+            <motion.div
+                data-mobile-navigation
+                data-lenis-prevent
+                variants={panelVariants}
+                initial="closed"
+                animate={open ? 'open' : 'closed'}
+                className="
+                  pointer-events-auto relative flex h-full min-h-0 flex-col overflow-y-auto px-4
+                  pb-4
+                ">
+                <div
+                    className="relative flex min-h-full flex-col"
+                    style={{ paddingTop: `calc(${SITE_HEADER_HEIGHT}px + 1rem)` }}>
+                    <DialogTitle className="sr-only">Navigation menu</DialogTitle>
+                    <motion.nav
+                        aria-label="Primary navigation"
+                        variants={navigationVariants}
+                        initial="closed"
+                        animate={open ? 'open' : 'closed'}
+                        className="mx-auto flex w-full max-w-xs flex-col gap-1 px-8 sm:max-w-md">
                         {NAV_LINKS.map(link => (
-                            <DrawerClose key={link.href} asChild>
-                                <SiteNavLink {...link} mobile pathname={pathname} />
-                            </DrawerClose>
+                            <motion.div key={link.href} variants={navigationItemVariants}>
+                                <DialogClose asChild>
+                                    <SiteNavLink {...link} mobile pathname={pathname} />
+                                </DialogClose>
+                            </motion.div>
                         ))}
-                    </nav>
-                    <div className="mt-auto flex flex-col gap-1 border-t border-border/60 pt-4">
+                    </motion.nav>
+                    <motion.div
+                        variants={footerVariants}
+                        initial="closed"
+                        animate={open ? 'open' : 'closed'}
+                        className="
+                          mx-1 mt-auto flex items-center justify-between rounded-2xl bg-accent/25
+                          p-1
+                        ">
                         <GitHubLink mobile />
-                        <div className="flex items-center justify-between rounded-xl px-4 py-1">
-                            <span className="text-sm text-muted-foreground">Theme</span>
-                            <SiteThemeToggle />
-                        </div>
-                    </div>
+                        <SiteThemeToggle />
+                    </motion.div>
                 </div>
-            </DrawerContent>
-        </Drawer>
+            </motion.div>
+        </DialogContent>
     )
 }
 
 export function SiteHeader({ className, ...props }: React.ComponentProps<'header'>) {
     const pathname = usePathname()
+    const shouldReduceMotion = useReducedMotion() ?? false
     const [isScrolled, setIsScrolled] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     useEffect(() => {
         const updateScrollState = () => setIsScrolled(window.scrollY > 0)
@@ -196,78 +387,120 @@ export function SiteHeader({ className, ...props }: React.ComponentProps<'header
         <header
             {...props}
             data-site-header
-            className={cn('sticky top-0 z-40 w-full shrink-0', className)}
+            className={cn('sticky top-0 z-60 w-full shrink-0', className)}
             style={{ height: SITE_HEADER_RESERVED_HEIGHT }}>
             <div className="absolute inset-x-0 top-4 px-0 md:px-10">
                 <div className="mx-auto w-full max-w-384">
-                    <div
-                        data-site-header-shell
-                        className="relative mx-4 flex items-center rounded-full"
-                        style={{ height: SITE_HEADER_HEIGHT }}>
-                        <div
-                            data-site-header-backdrop
-                            aria-hidden
-                            className="
-                              pointer-events-none absolute inset-0 rounded-full bg-background
-                            "
-                        />
+                    <Dialog
+                        open={isMobileMenuOpen}
+                        onOpenChange={setIsMobileMenuOpen}
+                        modal={false}>
                         <motion.div
-                            data-site-header-surface
-                            aria-hidden
-                            className="
-                              pointer-events-none absolute inset-0 overflow-hidden rounded-full
-                              bg-neutral-100 shadow-xs transition-opacity duration-200 ease-out
-                              motion-reduce:transition-none
-                              dark:bg-neutral-950
-                            "
-                            style={{ opacity: isScrolled ? 1 : 0 }}></motion.div>
-                        <div className="relative flex size-full items-center px-3 md:px-5">
-                            <Link
-                                href="/"
-                                aria-label="Solar Icons home"
+                            data-site-header-shell
+                            initial={false}
+                            animate={{
+                                height: isMobileMenuOpen
+                                    ? `calc(100dvh - ${SITE_HEADER_OFFSET * 2}px)`
+                                    : SITE_HEADER_HEIGHT,
+                                borderRadius: isMobileMenuOpen ? 24 : 999,
+                            }}
+                            transition={
+                                shouldReduceMotion
+                                    ? { duration: 0 }
+                                    : {
+                                          height: {
+                                              duration: isMobileMenuOpen ? 0.52 : 0.35,
+                                              ease: isMobileMenuOpen ? REVEAL_EASE : MOTION_EASE,
+                                          },
+                                          borderRadius: {
+                                              duration: isMobileMenuOpen ? 0.42 : 0.28,
+                                              ease: MOTION_EASE,
+                                          },
+                                      }
+                            }
+                            className="relative mx-4 flex flex-col overflow-hidden"
+                            style={{ height: SITE_HEADER_HEIGHT, borderRadius: 999 }}>
+                            <div
+                                data-site-header-backdrop
+                                aria-hidden
+                                className="pointer-events-none absolute inset-0 bg-background"
+                            />
+                            <motion.div
+                                data-site-header-surface
+                                aria-hidden
                                 className="
-                                  shrink-0 rounded-xl
-                                  focus-visible:ring-2 focus-visible:ring-ring
-                                  focus-visible:outline-none
-                                ">
-                                <Logo />
-                            </Link>
-                            <nav
-                                aria-label="Primary navigation"
-                                className="ml-2 hidden items-center gap-1 lg:flex">
-                                {NAV_LINKS.map(link => (
-                                    <SiteNavLink key={link.href} {...link} pathname={pathname} />
-                                ))}
-                            </nav>
-                            <div className="ml-auto hidden items-center gap-0.5 lg:flex">
-                                <SearchTrigger
-                                    size="icon"
-                                    color="ghost"
-                                    title="Search"
+                                  pointer-events-none absolute inset-0 overflow-hidden
+                                  bg-neutral-100 shadow-xs transition-opacity duration-200 ease-out
+                                  motion-reduce:transition-none
+                                  dark:bg-neutral-950
+                                "
+                                style={{
+                                    opacity: isScrolled || isMobileMenuOpen ? 1 : 0,
+                                }}></motion.div>
+                            <div
+                                className="relative z-10 flex shrink-0 items-center px-3 md:px-5"
+                                style={{ height: SITE_HEADER_HEIGHT }}>
+                                <Link
+                                    href="/"
+                                    aria-label="Solar Icons home"
                                     className="
-                                      size-11! rounded-full border-transparent!
-                                      text-muted-foreground
-                                      hover:bg-accent hover:text-foreground
-                                    "
-                                />
-                                <SiteThemeToggle />
-                                <GitHubLink />
+                                      shrink-0 rounded-xl
+                                      focus-visible:ring-2 focus-visible:ring-ring
+                                      focus-visible:outline-none
+                                    ">
+                                    <Logo />
+                                </Link>
+                                <nav
+                                    aria-label="Primary navigation"
+                                    className="ml-2 hidden items-center gap-1 lg:flex">
+                                    {NAV_LINKS.map(link => (
+                                        <SiteNavLink
+                                            key={link.href}
+                                            {...link}
+                                            pathname={pathname}
+                                        />
+                                    ))}
+                                </nav>
+                                <div className="ml-auto hidden items-center gap-0.5 lg:flex">
+                                    <SearchTrigger
+                                        size="icon"
+                                        color="ghost"
+                                        title="Search"
+                                        className="
+                                          size-11! rounded-full border-transparent!
+                                          text-muted-foreground
+                                          hover:bg-accent hover:text-foreground
+                                        "
+                                    />
+                                    <SiteThemeToggle />
+                                    <GitHubLink />
+                                </div>
+                                <div className="ml-auto flex items-center gap-0.5 lg:hidden">
+                                    <SearchTrigger
+                                        size="icon"
+                                        color="ghost"
+                                        title="Search"
+                                        className="
+                                          size-11! rounded-full border-transparent!
+                                          text-muted-foreground
+                                          hover:bg-accent hover:text-foreground
+                                        "
+                                    />
+                                    <MobileNavigationTrigger
+                                        open={isMobileMenuOpen}
+                                        reduceMotion={shouldReduceMotion}
+                                    />
+                                </div>
                             </div>
-                            <div className="ml-auto flex items-center gap-0.5 lg:hidden">
-                                <SearchTrigger
-                                    size="icon"
-                                    color="ghost"
-                                    title="Search"
-                                    className="
-                                      size-11! rounded-full border-transparent!
-                                      text-muted-foreground
-                                      hover:bg-accent hover:text-foreground
-                                    "
+                            <div className="lg:hidden">
+                                <MobileNavigationPanel
+                                    pathname={pathname}
+                                    open={isMobileMenuOpen}
+                                    onOpenChange={setIsMobileMenuOpen}
                                 />
-                                <MobileNavigation pathname={pathname} />
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </Dialog>
                 </div>
             </div>
         </header>
