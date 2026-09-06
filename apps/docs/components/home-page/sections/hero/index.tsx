@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { SITE_HEADER_RESERVED_HEIGHT } from '@/components/ui-blocks/site-header/constants'
+import {
+    SITE_HEADER_OFFSET,
+    SITE_HEADER_RESERVED_HEIGHT,
+} from '@/components/ui-blocks/site-header/constants'
 import { Heading } from '@/components/ui/heading'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 import type { SuperButtonProps } from '@/components/ui/SuperButton'
@@ -24,19 +27,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     exploreIcons,
 }) => {
     const heroHeightStyle = {
-        '--hero-section-mobile-height':
-            'calc(100svh - ' + (SITE_HEADER_RESERVED_HEIGHT + 16) + 'px)',
-        '--hero-section-desktop-height':
-            'calc(100vh - ' + (SITE_HEADER_RESERVED_HEIGHT + 28) + 'px)',
+        '--hero-section-height': `calc(100svh - ${SITE_HEADER_RESERVED_HEIGHT + SITE_HEADER_OFFSET}px)`,
     } as React.CSSProperties
 
     return (
         <section
             style={heroHeightStyle}
             className={`
-              relative flex h-(--hero-section-mobile-height) max-h-[760px] w-full max-w-384 flex-col
+              relative flex h-(--hero-section-height) max-h-[900px] w-full max-w-384 flex-col
               items-center self-center px-3
-              md:h-(--hero-section-desktop-height) md:max-h-[900px] md:px-0
+              md:px-0
             `}>
             <div
                 data-hero-section-panel

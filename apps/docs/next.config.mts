@@ -11,6 +11,15 @@ const withMDX = createMDX()
 const config: NextConfig = {
     reactCompiler: true,
     reactStrictMode: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'github.com',
+                pathname: '/saoudi-h.png',
+            },
+        ],
+    },
     typescript: {
         ignoreBuildErrors: true,
     },

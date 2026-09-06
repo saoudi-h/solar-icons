@@ -1,6 +1,6 @@
 {
     "title": "Advanced",
-    "icon": "Settings2Icon",
+    "icon": "SettingsMinimalisticIcon",
     "defaultOpen": false,
     "pages": ["global-styling", "accessibility", "global-configuration"]
 }

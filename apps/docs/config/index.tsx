@@ -238,7 +238,7 @@ export const config: Config = {
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/cli',
                 content: 'Find icons and get ready-to-use code from the terminal.',
                 status: 'new',
-                iconify: 'catppuccin:powershell',
+                iconify: 'grommet-icons:cli',
             },
             {
                 title: 'MCP',
