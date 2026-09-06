@@ -1,0 +1,79 @@
+{
+    "alert-circle": {
+        "solar": "danger-circle",
+        "confidence": "semantic-equivalent",
+        "note": "Solar uses DangerCircle for Lucide's legacy AlertCircle alias."
+    },
+    "alert-triangle": {
+        "solar": "danger-triangle",
+        "confidence": "semantic-equivalent",
+        "note": "Solar uses DangerTriangle for Lucide's legacy AlertTriangle alias."
+    },
+    "check": {
+        "solar": "check-read",
+        "confidence": "visual-equivalent",
+        "note": "The standalone Solar check mark is published as CheckRead."
+    },
+    "check-circle-2": {
+        "solar": "check-circle",
+        "confidence": "semantic-equivalent",
+        "note": "Lucide's legacy CheckCircle2 name maps to Solar CheckCircle."
+    },
+    "circle-help": {
+        "solar": "question-circle",
+        "confidence": "semantic-equivalent",
+        "note": "Solar uses QuestionCircle for the generic help circle."
+    },
+    "circle-plus": {
+        "solar": "add-circle",
+        "confidence": "semantic-equivalent",
+        "note": "Solar uses AddCircle for the circular add control."
+    },
+    "circle-user": {
+        "solar": "user-circle",
+        "confidence": "semantic-equivalent",
+        "note": "Solar uses UserCircle for the circular user control."
+    },
+    "circle-user-round": {
+        "solar": "user-circle",
+        "status": "review",
+        "confidence": "candidate-variant",
+        "note": "The current Solar UserCircle is the closest available rounded-user candidate."
+    },
+    "home": {
+        "solar": "home",
+        "confidence": "direct-extension",
+        "note": "Lucide's legacy Home name is supported directly by Solar."
+    },
+    "paintbrush": {
+        "solar": "paint-brush",
+        "confidence": "direct-extension",
+        "note": "Solar's extended icon uses the canonical hyphenated name PaintBrush."
+    },
+    "plus": {
+        "solar": "add",
+        "confidence": "direct-extension",
+        "note": "Solar's extended add primitive is the canonical plus control."
+    },
+    "settings-2": {
+        "solar": "settings-minimalistic",
+        "confidence": "semantic-variant",
+        "note": "Solar SettingsMinimalistic is the closest two-slider settings control."
+    },
+    "terminal-square": {
+        "solar": "programming",
+        "confidence": "semantic-equivalent",
+        "note": "Solar Programming is the square terminal/programming mark."
+    },
+    "users": {
+        "solar": "users-group-rounded",
+        "status": "review",
+        "confidence": "audited-variant",
+        "note": "The current Solar users-group-rounded icon preserves the generic users concept; the exact silhouette still needs visual review."
+    },
+    "x": {
+        "solar": "close",
+        "confidence": "direct-extension",
+        "note": "Solar's extended close primitive is the canonical X control."
+    }
+}

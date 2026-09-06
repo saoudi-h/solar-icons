@@ -1,0 +1,738 @@
+{
+    "source": {
+        "repository": "https://github.com/shadcn-ui/ui",
+        "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+        "generatedFile": "apps/v4/registry/icons/__lucide__.ts",
+        "capturedAt": "2026-09-06"
+    },
+    "icons": [
+        {
+            "name": "activity",
+            "occurrences": 6
+        },
+        {
+            "name": "alert-circle",
+            "occurrences": 3
+        },
+        {
+            "name": "alert-triangle",
+            "occurrences": 3
+        },
+        {
+            "name": "app-window",
+            "occurrences": 3
+        },
+        {
+            "name": "archive",
+            "occurrences": 6
+        },
+        {
+            "name": "archive-x",
+            "occurrences": 3
+        },
+        {
+            "name": "arrow-down",
+            "occurrences": 12
+        },
+        {
+            "name": "arrow-left",
+            "occurrences": 21
+        },
+        {
+            "name": "arrow-left-circle",
+            "occurrences": 72
+        },
+        {
+            "name": "arrow-left-right",
+            "occurrences": 3
+        },
+        {
+            "name": "arrow-right",
+            "occurrences": 198
+        },
+        {
+            "name": "arrow-up",
+            "occurrences": 16
+        },
+        {
+            "name": "arrow-up-right",
+            "occurrences": 32
+        },
+        {
+            "name": "audio-lines",
+            "occurrences": 15
+        },
+        {
+            "name": "badge-check",
+            "occurrences": 39
+        },
+        {
+            "name": "bell",
+            "occurrences": 45
+        },
+        {
+            "name": "blocks",
+            "occurrences": 6
+        },
+        {
+            "name": "bluetooth",
+            "occurrences": 9
+        },
+        {
+            "name": "bold",
+            "occurrences": 32
+        },
+        {
+            "name": "book-open",
+            "occurrences": 16
+        },
+        {
+            "name": "bookmark",
+            "occurrences": 9
+        },
+        {
+            "name": "bot",
+            "occurrences": 13
+        },
+        {
+            "name": "brain",
+            "occurrences": 2
+        },
+        {
+            "name": "building-2",
+            "occurrences": 6
+        },
+        {
+            "name": "calculator",
+            "occurrences": 9
+        },
+        {
+            "name": "calendar",
+            "occurrences": 27
+        },
+        {
+            "name": "camera",
+            "occurrences": 6
+        },
+        {
+            "name": "captions",
+            "occurrences": 3
+        },
+        {
+            "name": "car",
+            "occurrences": 3
+        },
+        {
+            "name": "chart-bar",
+            "occurrences": 7
+        },
+        {
+            "name": "chart-line",
+            "occurrences": 15
+        },
+        {
+            "name": "chart-pie",
+            "occurrences": 4
+        },
+        {
+            "name": "check",
+            "occurrences": 77
+        },
+        {
+            "name": "check-circle-2",
+            "occurrences": 3
+        },
+        {
+            "name": "chevron-down",
+            "occurrences": 52
+        },
+        {
+            "name": "chevron-left",
+            "occurrences": 12
+        },
+        {
+            "name": "chevron-right",
+            "occurrences": 76
+        },
+        {
+            "name": "chevron-up",
+            "occurrences": 11
+        },
+        {
+            "name": "chevrons-left",
+            "occurrences": 3
+        },
+        {
+            "name": "chevrons-right",
+            "occurrences": 3
+        },
+        {
+            "name": "chevrons-up-down",
+            "occurrences": 39
+        },
+        {
+            "name": "circle-alert",
+            "occurrences": 40
+        },
+        {
+            "name": "circle-check",
+            "occurrences": 7
+        },
+        {
+            "name": "circle-dashed",
+            "occurrences": 18
+        },
+        {
+            "name": "circle-help",
+            "occurrences": 6
+        },
+        {
+            "name": "circle-plus",
+            "occurrences": 6
+        },
+        {
+            "name": "circle-user",
+            "occurrences": 3
+        },
+        {
+            "name": "circle-user-round",
+            "occurrences": 3
+        },
+        {
+            "name": "clipboard-paste",
+            "occurrences": 14
+        },
+        {
+            "name": "clock",
+            "occurrences": 12
+        },
+        {
+            "name": "clock-2",
+            "occurrences": 6
+        },
+        {
+            "name": "cloud",
+            "occurrences": 3
+        },
+        {
+            "name": "code",
+            "occurrences": 9
+        },
+        {
+            "name": "coffee",
+            "occurrences": 3
+        },
+        {
+            "name": "columns-3",
+            "occurrences": 3
+        },
+        {
+            "name": "command",
+            "occurrences": 3
+        },
+        {
+            "name": "container",
+            "occurrences": 3
+        },
+        {
+            "name": "copy",
+            "occurrences": 64
+        },
+        {
+            "name": "corner-up-left",
+            "occurrences": 3
+        },
+        {
+            "name": "corner-up-right",
+            "occurrences": 3
+        },
+        {
+            "name": "credit-card",
+            "occurrences": 54
+        },
+        {
+            "name": "database",
+            "occurrences": 3
+        },
+        {
+            "name": "download",
+            "occurrences": 21
+        },
+        {
+            "name": "ellipsis-vertical",
+            "occurrences": 6
+        },
+        {
+            "name": "external-link",
+            "occurrences": 5
+        },
+        {
+            "name": "eye",
+            "occurrences": 3
+        },
+        {
+            "name": "eye-off",
+            "occurrences": 3
+        },
+        {
+            "name": "file",
+            "occurrences": 29
+        },
+        {
+            "name": "file-archive",
+            "occurrences": 9
+        },
+        {
+            "name": "file-bar-chart",
+            "occurrences": 3
+        },
+        {
+            "name": "file-chart-column",
+            "occurrences": 3
+        },
+        {
+            "name": "file-code",
+            "occurrences": 21
+        },
+        {
+            "name": "file-search",
+            "occurrences": 5
+        },
+        {
+            "name": "file-text",
+            "occurrences": 67
+        },
+        {
+            "name": "file-warning",
+            "occurrences": 6
+        },
+        {
+            "name": "flip-horizontal",
+            "occurrences": 6
+        },
+        {
+            "name": "flip-vertical",
+            "occurrences": 6
+        },
+        {
+            "name": "folder",
+            "occurrences": 38
+        },
+        {
+            "name": "folder-open",
+            "occurrences": 3
+        },
+        {
+            "name": "folder-plus",
+            "occurrences": 3
+        },
+        {
+            "name": "folder-search",
+            "occurrences": 3
+        },
+        {
+            "name": "frame",
+            "occurrences": 12
+        },
+        {
+            "name": "gallery-vertical-end",
+            "occurrences": 42
+        },
+        {
+            "name": "gauge",
+            "occurrences": 3
+        },
+        {
+            "name": "git-branch",
+            "occurrences": 9
+        },
+        {
+            "name": "globe",
+            "occurrences": 10
+        },
+        {
+            "name": "grip-vertical",
+            "occurrences": 3
+        },
+        {
+            "name": "heart",
+            "occurrences": 6
+        },
+        {
+            "name": "help-circle",
+            "occurrences": 9
+        },
+        {
+            "name": "home",
+            "occurrences": 18
+        },
+        {
+            "name": "image",
+            "occurrences": 10
+        },
+        {
+            "name": "inbox",
+            "occurrences": 159
+        },
+        {
+            "name": "info",
+            "occurrences": 42
+        },
+        {
+            "name": "italic",
+            "occurrences": 32
+        },
+        {
+            "name": "keyboard",
+            "occurrences": 6
+        },
+        {
+            "name": "languages",
+            "occurrences": 3
+        },
+        {
+            "name": "layout",
+            "occurrences": 9
+        },
+        {
+            "name": "layout-dashboard",
+            "occurrences": 6
+        },
+        {
+            "name": "layout-grid",
+            "occurrences": 3
+        },
+        {
+            "name": "life-buoy",
+            "occurrences": 9
+        },
+        {
+            "name": "link",
+            "occurrences": 14
+        },
+        {
+            "name": "list",
+            "occurrences": 6
+        },
+        {
+            "name": "loader",
+            "occurrences": 3
+        },
+        {
+            "name": "loader-2",
+            "occurrences": 10
+        },
+        {
+            "name": "lock",
+            "occurrences": 6
+        },
+        {
+            "name": "lock-keyhole",
+            "occurrences": 3
+        },
+        {
+            "name": "log-out",
+            "occurrences": 35
+        },
+        {
+            "name": "mail",
+            "occurrences": 15
+        },
+        {
+            "name": "map",
+            "occurrences": 12
+        },
+        {
+            "name": "maximize",
+            "occurrences": 3
+        },
+        {
+            "name": "menu",
+            "occurrences": 3
+        },
+        {
+            "name": "message-circle",
+            "occurrences": 3
+        },
+        {
+            "name": "message-circle-question",
+            "occurrences": 6
+        },
+        {
+            "name": "message-square",
+            "occurrences": 9
+        },
+        {
+            "name": "mic",
+            "occurrences": 3
+        },
+        {
+            "name": "minimize",
+            "occurrences": 3
+        },
+        {
+            "name": "minus",
+            "occurrences": 15
+        },
+        {
+            "name": "monitor",
+            "occurrences": 7
+        },
+        {
+            "name": "moon",
+            "occurrences": 3
+        },
+        {
+            "name": "more-horizontal",
+            "occurrences": 97
+        },
+        {
+            "name": "more-vertical",
+            "occurrences": 3
+        },
+        {
+            "name": "octagon-x",
+            "occurrences": 4
+        },
+        {
+            "name": "paintbrush",
+            "occurrences": 6
+        },
+        {
+            "name": "palette",
+            "occurrences": 3
+        },
+        {
+            "name": "panel-left",
+            "occurrences": 12
+        },
+        {
+            "name": "paperclip",
+            "occurrences": 1
+        },
+        {
+            "name": "pencil",
+            "occurrences": 6
+        },
+        {
+            "name": "pie-chart",
+            "occurrences": 15
+        },
+        {
+            "name": "plus",
+            "occurrences": 106
+        },
+        {
+            "name": "plus-circle",
+            "occurrences": 3
+        },
+        {
+            "name": "presentation",
+            "occurrences": 6
+        },
+        {
+            "name": "radio",
+            "occurrences": 6
+        },
+        {
+            "name": "refresh-ccw",
+            "occurrences": 3
+        },
+        {
+            "name": "refresh-cw",
+            "occurrences": 21
+        },
+        {
+            "name": "repeat",
+            "occurrences": 3
+        },
+        {
+            "name": "rotate-cw",
+            "occurrences": 6
+        },
+        {
+            "name": "save",
+            "occurrences": 11
+        },
+        {
+            "name": "scissors",
+            "occurrences": 22
+        },
+        {
+            "name": "search",
+            "occurrences": 72
+        },
+        {
+            "name": "send",
+            "occurrences": 12
+        },
+        {
+            "name": "server",
+            "occurrences": 6
+        },
+        {
+            "name": "settings",
+            "occurrences": 33
+        },
+        {
+            "name": "settings-2",
+            "occurrences": 27
+        },
+        {
+            "name": "share",
+            "occurrences": 27
+        },
+        {
+            "name": "shield",
+            "occurrences": 6
+        },
+        {
+            "name": "shopping-bag",
+            "occurrences": 6
+        },
+        {
+            "name": "shopping-cart",
+            "occurrences": 6
+        },
+        {
+            "name": "smile",
+            "occurrences": 6
+        },
+        {
+            "name": "sparkles",
+            "occurrences": 27
+        },
+        {
+            "name": "square",
+            "occurrences": 1
+        },
+        {
+            "name": "star",
+            "occurrences": 12
+        },
+        {
+            "name": "star-off",
+            "occurrences": 6
+        },
+        {
+            "name": "stop-circle",
+            "occurrences": 3
+        },
+        {
+            "name": "sun",
+            "occurrences": 6
+        },
+        {
+            "name": "table",
+            "occurrences": 11
+        },
+        {
+            "name": "target",
+            "occurrences": 3
+        },
+        {
+            "name": "terminal",
+            "occurrences": 27
+        },
+        {
+            "name": "terminal-square",
+            "occurrences": 12
+        },
+        {
+            "name": "thermometer",
+            "occurrences": 3
+        },
+        {
+            "name": "thumbs-down",
+            "occurrences": 6
+        },
+        {
+            "name": "thumbs-up",
+            "occurrences": 6
+        },
+        {
+            "name": "timer",
+            "occurrences": 3
+        },
+        {
+            "name": "trash",
+            "occurrences": 39
+        },
+        {
+            "name": "trash-2",
+            "occurrences": 33
+        },
+        {
+            "name": "trending-down",
+            "occurrences": 6
+        },
+        {
+            "name": "trending-up",
+            "occurrences": 45
+        },
+        {
+            "name": "triangle-alert",
+            "occurrences": 4
+        },
+        {
+            "name": "tv",
+            "occurrences": 3
+        },
+        {
+            "name": "underline",
+            "occurrences": 29
+        },
+        {
+            "name": "upload-cloud",
+            "occurrences": 3
+        },
+        {
+            "name": "user",
+            "occurrences": 29
+        },
+        {
+            "name": "user-round-x",
+            "occurrences": 3
+        },
+        {
+            "name": "users",
+            "occurrences": 6
+        },
+        {
+            "name": "video",
+            "occurrences": 3
+        },
+        {
+            "name": "volume-2",
+            "occurrences": 3
+        },
+        {
+            "name": "volume-off",
+            "occurrences": 1
+        },
+        {
+            "name": "volume-x",
+            "occurrences": 2
+        },
+        {
+            "name": "wallet",
+            "occurrences": 9
+        },
+        {
+            "name": "x",
+            "occurrences": 181
+        },
+        {
+            "name": "zap",
+            "occurrences": 3
+        },
+        {
+            "name": "zoom-in",
+            "occurrences": 3
+        },
+        {
+            "name": "zoom-out",
+            "occurrences": 3
+        }
+    ]
+}

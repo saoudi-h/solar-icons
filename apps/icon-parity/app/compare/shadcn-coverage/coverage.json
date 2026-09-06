@@ -1,0 +1,2530 @@
+{
+  "source": {
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+    "generatedFile": "apps/v4/registry/icons/__lucide__.ts",
+    "capturedAt": "2026-09-06"
+  },
+  "counts": {
+    "mapped": 138,
+    "fallback": 2,
+    "review": 27,
+    "missing": 15
+  },
+  "totalIcons": 182,
+  "totalOccurrences": 3045,
+  "entries": [
+    {
+      "lucide": "activity",
+      "occurrences": 6,
+      "solar": "pulse",
+      "solarExport": "PulseIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "round-graph",
+        "running",
+        "running-2",
+        "running-round",
+        "treadmill",
+        "treadmill-round",
+        "pulse",
+        "pulse-2"
+      ]
+    },
+    {
+      "lucide": "alert-circle",
+      "occurrences": 3,
+      "solar": "danger-circle",
+      "solarExport": "DangerCircleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar uses DangerCircle for Lucide's legacy AlertCircle alias.",
+      "candidates": [
+        "danger",
+        "danger-circle",
+        "danger-square"
+      ]
+    },
+    {
+      "lucide": "alert-triangle",
+      "occurrences": 3,
+      "solar": "danger-triangle",
+      "solarExport": "DangerTriangleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar uses DangerTriangle for Lucide's legacy AlertTriangle alias.",
+      "candidates": [
+        "danger",
+        "danger-triangle"
+      ]
+    },
+    {
+      "lucide": "app-window",
+      "occurrences": 3,
+      "solar": "window-frame",
+      "solarExport": "WindowFrameIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "pip",
+        "pip-2",
+        "window-frame"
+      ]
+    },
+    {
+      "lucide": "archive",
+      "occurrences": 6,
+      "solar": "archive",
+      "solarExport": "ArchiveIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "archive-x",
+      "occurrences": 3,
+      "solar": "paper-bin",
+      "solarExport": "PaperBinIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "paper-bin"
+      ]
+    },
+    {
+      "lucide": "arrow-down",
+      "occurrences": 12,
+      "solar": "arrow-down",
+      "solarExport": "ArrowDownIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "arrow-left",
+      "occurrences": 21,
+      "solar": "arrow-left",
+      "solarExport": "ArrowLeftIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "arrow-left-circle",
+      "occurrences": 72,
+      "solar": "round-arrow-left",
+      "solarExport": "RoundArrowLeftIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "Resolved through Lucide alias circle-arrow-left.",
+      "candidates": [
+        "rewind-back-circle",
+        "round-alt-arrow-left",
+        "round-arrow-left-down",
+        "round-arrow-left-up",
+        "round-double-alt-arrow-left",
+        "round-arrow-left"
+      ]
+    },
+    {
+      "lucide": "arrow-left-right",
+      "occurrences": 3,
+      "solar": "transfer-horizontal",
+      "solarExport": "TransferHorizontalIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "round-sort-horizontal",
+        "round-transfer-horizontal",
+        "sort-horizontal",
+        "square-sort-horizontal",
+        "square-transfer-horizontal",
+        "transfer-horizontal"
+      ]
+    },
+    {
+      "lucide": "arrow-right",
+      "occurrences": 198,
+      "solar": "arrow-right",
+      "solarExport": "ArrowRightIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "arrow-up",
+      "occurrences": 16,
+      "solar": "arrow-up",
+      "solarExport": "ArrowUpIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "arrow-up-right",
+      "occurrences": 32,
+      "solar": "arrow-right-up",
+      "solarExport": "ArrowRightUpIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "arrow-to-top-right",
+        "course-up",
+        "round-arrow-right-up",
+        "arrow-right-up"
+      ]
+    },
+    {
+      "lucide": "audio-lines",
+      "occurrences": 15,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "badge-check",
+      "occurrences": 39,
+      "solar": "verified-check",
+      "solarExport": "VerifiedCheckIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "diploma-verified",
+        "high-definition",
+        "high-quality",
+        "verified-check"
+      ]
+    },
+    {
+      "lucide": "bell",
+      "occurrences": 45,
+      "solar": "bell",
+      "solarExport": "BellIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "blocks",
+      "occurrences": 6,
+      "solar": "dumbbells",
+      "solarExport": "DumbbellsIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "dumbbells",
+        "dumbbells-2"
+      ]
+    },
+    {
+      "lucide": "bluetooth",
+      "occurrences": 9,
+      "solar": "bluetooth",
+      "solarExport": "BluetoothIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "bold",
+      "occurrences": 32,
+      "solar": "text-bold",
+      "solarExport": "TextBoldIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "text-bold"
+      ]
+    },
+    {
+      "lucide": "book-open",
+      "occurrences": 16,
+      "solar": "book-2",
+      "solarExport": "Book2Icon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "book-2",
+        "book-minimalistic",
+        "bookmark-opened",
+        "notebook-2",
+        "notebook-minimalistic",
+        "notebook-square"
+      ]
+    },
+    {
+      "lucide": "bookmark",
+      "occurrences": 9,
+      "solar": "bookmark",
+      "solarExport": "BookmarkIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "bot",
+      "occurrences": 13,
+      "solar": "bot",
+      "solarExport": "BotIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "brain",
+      "occurrences": 2,
+      "solar": "brain",
+      "solarExport": "BrainIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "building-2",
+      "occurrences": 6,
+      "solar": "buildings",
+      "solarExport": "BuildingsIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "buildings",
+        "buildings-3"
+      ]
+    },
+    {
+      "lucide": "calculator",
+      "occurrences": 9,
+      "solar": "calculator",
+      "solarExport": "CalculatorIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "calendar",
+      "occurrences": 27,
+      "solar": "calendar",
+      "solarExport": "CalendarIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "camera",
+      "occurrences": 6,
+      "solar": "camera",
+      "solarExport": "CameraIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "captions",
+      "occurrences": 3,
+      "solar": "subtitles",
+      "solarExport": "SubtitlesIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "subtitles"
+      ]
+    },
+    {
+      "lucide": "car",
+      "occurrences": 3,
+      "solar": "transmission",
+      "solarExport": "TransmissionIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "transmission"
+      ]
+    },
+    {
+      "lucide": "chart-bar",
+      "occurrences": 7,
+      "solar": "chart",
+      "solarExport": "ChartIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "chart",
+        "chart-2",
+        "chart-square"
+      ]
+    },
+    {
+      "lucide": "chart-line",
+      "occurrences": 15,
+      "solar": "graph",
+      "solarExport": "GraphIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "chart",
+        "chart-2",
+        "diagram-down",
+        "diagram-up",
+        "graph-down",
+        "graph-down-new",
+        "graph-new-up",
+        "graph-up"
+      ]
+    },
+    {
+      "lucide": "chart-pie",
+      "occurrences": 4,
+      "solar": "pie-chart",
+      "solarExport": "PieChartIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "pie-chart",
+        "pie-chart-2",
+        "pie-chart-3"
+      ]
+    },
+    {
+      "lucide": "check",
+      "occurrences": 77,
+      "solar": "check-read",
+      "solarExport": "CheckReadIcon",
+      "status": "mapped",
+      "confidence": "visual-equivalent",
+      "source": "shadcn-override",
+      "note": "The standalone Solar check mark is published as CheckRead.",
+      "candidates": [
+        "airbuds-check",
+        "archive-check",
+        "bag-check",
+        "bill-check",
+        "cart-check",
+        "check-read",
+        "verified-check",
+        "unread"
+      ]
+    },
+    {
+      "lucide": "check-circle-2",
+      "occurrences": 3,
+      "solar": "check-circle",
+      "solarExport": "CheckCircleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Lucide's legacy CheckCircle2 name maps to Solar CheckCircle.",
+      "candidates": [
+        "chat-round-check",
+        "clipboard-check",
+        "cloud-check",
+        "folder-check",
+        "gallery-check",
+        "high-quality",
+        "check-circle"
+      ]
+    },
+    {
+      "lucide": "chevron-down",
+      "occurrences": 52,
+      "solar": "alt-arrow-down",
+      "solarExport": "AltArrowDownIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "alt-arrow-down"
+      ]
+    },
+    {
+      "lucide": "chevron-left",
+      "occurrences": 12,
+      "solar": "alt-arrow-left",
+      "solarExport": "AltArrowLeftIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "alt-arrow-left"
+      ]
+    },
+    {
+      "lucide": "chevron-right",
+      "occurrences": 76,
+      "solar": "alt-arrow-right",
+      "solarExport": "AltArrowRightIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "alt-arrow-right"
+      ]
+    },
+    {
+      "lucide": "chevron-up",
+      "occurrences": 11,
+      "solar": "alt-arrow-up",
+      "solarExport": "AltArrowUpIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "alt-arrow-up"
+      ]
+    },
+    {
+      "lucide": "chevrons-left",
+      "occurrences": 3,
+      "solar": "double-alt-arrow-left",
+      "solarExport": "DoubleAltArrowLeftIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "double-alt-arrow-left",
+        "multiple-forward-left",
+        "round-double-alt-arrow-left",
+        "square-double-alt-arrow-left"
+      ]
+    },
+    {
+      "lucide": "chevrons-right",
+      "occurrences": 3,
+      "solar": "double-alt-arrow-right",
+      "solarExport": "DoubleAltArrowRightIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "double-alt-arrow-right",
+        "multiple-forward-right",
+        "round-double-alt-arrow-right",
+        "square-double-alt-arrow-right"
+      ]
+    },
+    {
+      "lucide": "chevrons-up-down",
+      "occurrences": 39,
+      "solar": "round-sort-vertical",
+      "solarExport": "RoundSortVerticalIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "round-sort-vertical",
+        "round-transfer-vertical"
+      ]
+    },
+    {
+      "lucide": "circle-alert",
+      "occurrences": 40,
+      "solar": "danger-circle",
+      "solarExport": "DangerCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "danger",
+        "danger-circle",
+        "danger-square"
+      ]
+    },
+    {
+      "lucide": "circle-check",
+      "occurrences": 7,
+      "solar": "check-circle",
+      "solarExport": "CheckCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "chat-round-check",
+        "clipboard-check",
+        "cloud-check",
+        "folder-check",
+        "gallery-check",
+        "high-quality",
+        "check-circle"
+      ]
+    },
+    {
+      "lucide": "circle-dashed",
+      "occurrences": 18,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "circle-help",
+      "occurrences": 6,
+      "solar": "question-circle",
+      "solarExport": "QuestionCircleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar uses QuestionCircle for the generic help circle.",
+      "candidates": [
+        "help",
+        "question-square",
+        "question-circle"
+      ]
+    },
+    {
+      "lucide": "circle-plus",
+      "occurrences": 6,
+      "solar": "add-circle",
+      "solarExport": "AddCircleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar uses AddCircle for the circular add control.",
+      "candidates": [
+        "calendar-add",
+        "call-medicine",
+        "call-medicine-rounded",
+        "camera-add",
+        "cart-plus",
+        "cloud-plus",
+        "home-add",
+        "home-add-angle"
+      ]
+    },
+    {
+      "lucide": "circle-user",
+      "occurrences": 3,
+      "solar": "user-circle",
+      "solarExport": "UserCircleIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar uses UserCircle for the circular user control.",
+      "candidates": [
+        "user-circle"
+      ]
+    },
+    {
+      "lucide": "circle-user-round",
+      "occurrences": 3,
+      "solar": "user-circle",
+      "solarExport": "UserCircleIcon",
+      "status": "review",
+      "confidence": "candidate-variant",
+      "source": "shadcn-override",
+      "note": "The current Solar UserCircle is the closest available rounded-user candidate.",
+      "candidates": [
+        "user-circle"
+      ]
+    },
+    {
+      "lucide": "clipboard-paste",
+      "occurrences": 14,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "clock",
+      "occurrences": 12,
+      "solar": "clock-circle",
+      "solarExport": "ClockCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "history",
+        "history-2",
+        "history-3",
+        "clock-circle",
+        "clock-square"
+      ]
+    },
+    {
+      "lucide": "clock-2",
+      "occurrences": 6,
+      "solar": "clock-circle",
+      "solarExport": "ClockCircleIcon",
+      "status": "fallback",
+      "confidence": "audited-fallback",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "clock-circle"
+      ]
+    },
+    {
+      "lucide": "cloud",
+      "occurrences": 3,
+      "solar": "cloud",
+      "solarExport": "CloudIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "code",
+      "occurrences": 9,
+      "solar": "code",
+      "solarExport": "CodeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "coffee",
+      "occurrences": 3,
+      "solar": "cup-hot",
+      "solarExport": "CupHotIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "cup",
+        "cup-music",
+        "cup-paper",
+        "cup-hot",
+        "tea-cup"
+      ]
+    },
+    {
+      "lucide": "columns-3",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "command",
+      "occurrences": 3,
+      "solar": "command",
+      "solarExport": "CommandIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "container",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "copy",
+      "occurrences": 64,
+      "solar": "copy",
+      "solarExport": "CopyIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "corner-up-left",
+      "occurrences": 3,
+      "solar": "reply",
+      "solarExport": "ReplyIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "reply",
+        "reply-2"
+      ]
+    },
+    {
+      "lucide": "corner-up-right",
+      "occurrences": 3,
+      "solar": "forward-right",
+      "solarExport": "ForwardRightIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "forward-right"
+      ]
+    },
+    {
+      "lucide": "credit-card",
+      "occurrences": 54,
+      "solar": "card",
+      "solarExport": "CardIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "card-receive",
+        "card-search",
+        "card-send",
+        "card-transfer",
+        "cardholder",
+        "sd-card",
+        "card",
+        "card-2"
+      ]
+    },
+    {
+      "lucide": "database",
+      "occurrences": 3,
+      "solar": "database",
+      "solarExport": "DatabaseIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "download",
+      "occurrences": 21,
+      "solar": "download",
+      "solarExport": "DownloadIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "ellipsis-vertical",
+      "occurrences": 6,
+      "solar": "menu-dots",
+      "solarExport": "MenuDotsIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "menu-dots"
+      ]
+    },
+    {
+      "lucide": "external-link",
+      "occurrences": 5,
+      "solar": "exit",
+      "solarExport": "ExitIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "exit",
+        "export",
+        "link",
+        "quit-pip",
+        "screen-share"
+      ]
+    },
+    {
+      "lucide": "eye",
+      "occurrences": 3,
+      "solar": "eye",
+      "solarExport": "EyeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "eye-off",
+      "occurrences": 3,
+      "solar": "incognito",
+      "solarExport": "IncognitoIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "incognito"
+      ]
+    },
+    {
+      "lucide": "file",
+      "occurrences": 29,
+      "solar": "file",
+      "solarExport": "FileIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "file-archive",
+      "occurrences": 9,
+      "solar": "win-rar",
+      "solarExport": "WinRarIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "win-rar",
+        "zip-file"
+      ]
+    },
+    {
+      "lucide": "file-bar-chart",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "file-chart-column",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "file-code",
+      "occurrences": 21,
+      "solar": "code-file",
+      "solarExport": "CodeFileIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "code-2",
+        "figma-file",
+        "code-file"
+      ]
+    },
+    {
+      "lucide": "file-search",
+      "occurrences": 5,
+      "solar": "card-search",
+      "solarExport": "CardSearchIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "card-search"
+      ]
+    },
+    {
+      "lucide": "file-text",
+      "occurrences": 67,
+      "solar": "file-text",
+      "solarExport": "FileTextIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "file-warning",
+      "occurrences": 6,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "flip-horizontal",
+      "occurrences": 6,
+      "solar": "flip-horizontal",
+      "solarExport": "FlipHorizontalIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "flip-vertical",
+      "occurrences": 6,
+      "solar": "flip-vertical",
+      "solarExport": "FlipVerticalIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "folder",
+      "occurrences": 38,
+      "solar": "folder",
+      "solarExport": "FolderIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "folder-open",
+      "occurrences": 3,
+      "solar": "folder-open",
+      "solarExport": "FolderOpenIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "folder-plus",
+      "occurrences": 3,
+      "solar": "add-folder",
+      "solarExport": "AddFolderIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "add-folder"
+      ]
+    },
+    {
+      "lucide": "folder-search",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "frame",
+      "occurrences": 12,
+      "solar": "video-frame",
+      "solarExport": "VideoFrameIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "video-frame",
+        "video-frame-2",
+        "window-frame"
+      ]
+    },
+    {
+      "lucide": "gallery-vertical-end",
+      "occurrences": 42,
+      "solar": "gallery",
+      "solarExport": "GalleryIcon",
+      "status": "fallback",
+      "confidence": "audited-fallback",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "posts-carousel-vertical",
+        "gallery"
+      ]
+    },
+    {
+      "lucide": "gauge",
+      "occurrences": 3,
+      "solar": "playback-speed",
+      "solarExport": "PlaybackSpeedIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "playback-speed"
+      ]
+    },
+    {
+      "lucide": "git-branch",
+      "occurrences": 9,
+      "solar": "branching-paths-down",
+      "solarExport": "BranchingPathsDownIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "branching-paths-down",
+        "branching-paths-up"
+      ]
+    },
+    {
+      "lucide": "globe",
+      "occurrences": 10,
+      "solar": "globe",
+      "solarExport": "GlobeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "grip-vertical",
+      "occurrences": 3,
+      "solar": "shock-absorber",
+      "solarExport": "ShockAbsorberIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "shock-absorber"
+      ]
+    },
+    {
+      "lucide": "heart",
+      "occurrences": 6,
+      "solar": "heart",
+      "solarExport": "HeartIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "help-circle",
+      "occurrences": 9,
+      "solar": "question-circle",
+      "solarExport": "QuestionCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "Resolved through Lucide alias circle-question-mark.",
+      "candidates": [
+        "help",
+        "question-square",
+        "question-circle"
+      ]
+    },
+    {
+      "lucide": "home",
+      "occurrences": 18,
+      "solar": "home",
+      "solarExport": "HomeIcon",
+      "status": "mapped",
+      "confidence": "direct-extension",
+      "source": "shadcn-override",
+      "note": "Lucide's legacy Home name is supported directly by Solar.",
+      "candidates": [
+        "home-smile",
+        "home-smile-angle",
+        "home",
+        "home-2",
+        "home-angle",
+        "home-angle-2",
+        "house"
+      ]
+    },
+    {
+      "lucide": "image",
+      "occurrences": 10,
+      "solar": "gallery",
+      "solarExport": "GalleryIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "gallery-add",
+        "gallery-download",
+        "gallery-remove",
+        "gallery-send",
+        "gallery",
+        "gallery-minimalistic",
+        "gallery-wide"
+      ]
+    },
+    {
+      "lucide": "inbox",
+      "occurrences": 159,
+      "solar": "inbox",
+      "solarExport": "InboxIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "info",
+      "occurrences": 42,
+      "solar": "info-circle",
+      "solarExport": "InfoCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "info-circle",
+        "info-square"
+      ]
+    },
+    {
+      "lucide": "italic",
+      "occurrences": 32,
+      "solar": "text-italic",
+      "solarExport": "TextItalicIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "text-italic"
+      ]
+    },
+    {
+      "lucide": "keyboard",
+      "occurrences": 6,
+      "solar": "keyboard",
+      "solarExport": "KeyboardIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "languages",
+      "occurrences": 3,
+      "solar": "translation",
+      "solarExport": "TranslationIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "translation",
+        "translation-2"
+      ]
+    },
+    {
+      "lucide": "layout",
+      "occurrences": 9,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "layout-dashboard",
+      "occurrences": 6,
+      "solar": "widget-2",
+      "solarExport": "Widget2Icon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "widget-4",
+        "widget-2",
+        "widget-5"
+      ]
+    },
+    {
+      "lucide": "layout-grid",
+      "occurrences": 3,
+      "solar": "widget",
+      "solarExport": "WidgetIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "widget-2",
+        "widget-5",
+        "widget",
+        "widget-3",
+        "widget-6"
+      ]
+    },
+    {
+      "lucide": "life-buoy",
+      "occurrences": 9,
+      "solar": "help",
+      "solarExport": "HelpIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "help"
+      ]
+    },
+    {
+      "lucide": "link",
+      "occurrences": 14,
+      "solar": "link",
+      "solarExport": "LinkIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "list",
+      "occurrences": 6,
+      "solar": "list",
+      "solarExport": "ListIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "loader",
+      "occurrences": 3,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "loader-2",
+      "occurrences": 10,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "lock",
+      "occurrences": 6,
+      "solar": "lock",
+      "solarExport": "LockIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "lock-keyhole",
+      "occurrences": 3,
+      "solar": "lock-keyhole",
+      "solarExport": "LockKeyholeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "log-out",
+      "occurrences": 35,
+      "solar": "logout",
+      "solarExport": "LogoutIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "export",
+        "exit",
+        "logout",
+        "logout-2",
+        "logout-3"
+      ]
+    },
+    {
+      "lucide": "mail",
+      "occurrences": 15,
+      "solar": "letter",
+      "solarExport": "LetterIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "inbox",
+        "inbox-unread",
+        "letter-opened",
+        "mailbox",
+        "letter"
+      ]
+    },
+    {
+      "lucide": "map",
+      "occurrences": 12,
+      "solar": "map",
+      "solarExport": "MapIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "maximize",
+      "occurrences": 3,
+      "solar": "maximize",
+      "solarExport": "MaximizeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "menu",
+      "occurrences": 3,
+      "solar": "hamburger-menu",
+      "solarExport": "HamburgerMenuIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "reorder",
+        "hamburger-menu"
+      ]
+    },
+    {
+      "lucide": "message-circle",
+      "occurrences": 3,
+      "solar": "chat-round",
+      "solarExport": "ChatRoundIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "call-chat",
+        "call-chat-rounded",
+        "chat-line",
+        "chat-round-call",
+        "chat-round-line",
+        "chat-round-money",
+        "chat-round-unread",
+        "chat-round-video"
+      ]
+    },
+    {
+      "lucide": "message-circle-question",
+      "occurrences": 6,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "message-square",
+      "occurrences": 9,
+      "solar": "chat-square",
+      "solarExport": "ChatSquareIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "chat-line",
+        "chat-round",
+        "chat-round-call",
+        "chat-round-line",
+        "chat-round-video",
+        "chat-square-arrow",
+        "chat-square-call",
+        "dialog"
+      ]
+    },
+    {
+      "lucide": "mic",
+      "occurrences": 3,
+      "solar": "microphone",
+      "solarExport": "MicrophoneIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "podcast",
+        "microphone",
+        "microphone-2",
+        "microphone-3",
+        "microphone-large"
+      ]
+    },
+    {
+      "lucide": "minimize",
+      "occurrences": 3,
+      "solar": "minimize",
+      "solarExport": "MinimizeIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "minus",
+      "occurrences": 15,
+      "solar": "minus",
+      "solarExport": "MinusIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "monitor",
+      "occurrences": 7,
+      "solar": "monitor",
+      "solarExport": "MonitorIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "moon",
+      "occurrences": 3,
+      "solar": "moon",
+      "solarExport": "MoonIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "more-horizontal",
+      "occurrences": 97,
+      "solar": "menu-dots",
+      "solarExport": "MenuDotsIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "Resolved through Lucide alias ellipsis.",
+      "candidates": [
+        "menu-dots-circle",
+        "menu-dots-square",
+        "password-minimalistic",
+        "menu-dots"
+      ]
+    },
+    {
+      "lucide": "more-vertical",
+      "occurrences": 3,
+      "solar": "menu-dots",
+      "solarExport": "MenuDotsIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "menu-dots"
+      ]
+    },
+    {
+      "lucide": "octagon-x",
+      "occurrences": 4,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "paintbrush",
+      "occurrences": 6,
+      "solar": "paint-brush",
+      "solarExport": "PaintBrushIcon",
+      "status": "mapped",
+      "confidence": "direct-extension",
+      "source": "shadcn-override",
+      "note": "Solar's extended icon uses the canonical hyphenated name PaintBrush.",
+      "candidates": []
+    },
+    {
+      "lucide": "palette",
+      "occurrences": 3,
+      "solar": "palette",
+      "solarExport": "PaletteIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "panel-left",
+      "occurrences": 12,
+      "solar": "sidebar",
+      "solarExport": "SidebarIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "sidebar"
+      ]
+    },
+    {
+      "lucide": "paperclip",
+      "occurrences": 1,
+      "solar": "paperclip",
+      "solarExport": "PaperclipIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "pencil",
+      "occurrences": 6,
+      "solar": "clapperboard-edit",
+      "solarExport": "ClapperboardEditIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "clapperboard-edit",
+        "gallery-edit",
+        "hanger",
+        "hanger-2",
+        "pen",
+        "pen-2",
+        "rolling-pin"
+      ]
+    },
+    {
+      "lucide": "pie-chart",
+      "occurrences": 15,
+      "solar": "pie-chart",
+      "solarExport": "PieChartIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "plus",
+      "occurrences": 106,
+      "solar": "add",
+      "solarExport": "AddIcon",
+      "status": "mapped",
+      "confidence": "direct-extension",
+      "source": "shadcn-override",
+      "note": "Solar's extended add primitive is the canonical plus control.",
+      "candidates": [
+        "cloud-plus",
+        "home-add",
+        "home-add-angle",
+        "plus-minus",
+        "add"
+      ]
+    },
+    {
+      "lucide": "plus-circle",
+      "occurrences": 3,
+      "solar": "add-circle",
+      "solarExport": "AddCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "Resolved through Lucide alias circle-plus.",
+      "candidates": [
+        "calendar-add",
+        "call-medicine",
+        "call-medicine-rounded",
+        "camera-add",
+        "cart-plus",
+        "cloud-plus",
+        "home-add",
+        "home-add-angle"
+      ]
+    },
+    {
+      "lucide": "presentation",
+      "occurrences": 6,
+      "solar": "display",
+      "solarExport": "DisplayIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "display",
+        "projector"
+      ]
+    },
+    {
+      "lucide": "radio",
+      "occurrences": 6,
+      "solar": "radio",
+      "solarExport": "RadioIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "refresh-ccw",
+      "occurrences": 3,
+      "solar": "refresh",
+      "solarExport": "RefreshIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "refresh",
+        "refresh-circle",
+        "repeat",
+        "repeat-one-minimalistic",
+        "revote",
+        "rewind-10-seconds-back",
+        "rewind-15-seconds-back",
+        "rewind-5-seconds-back"
+      ]
+    },
+    {
+      "lucide": "refresh-cw",
+      "occurrences": 21,
+      "solar": "refresh",
+      "solarExport": "RefreshIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "map-point-rotate",
+        "refresh-square",
+        "restart",
+        "restart-circle",
+        "rewind-10-seconds-forward",
+        "rewind-15-seconds-forward",
+        "rewind-5-seconds-forward",
+        "refresh"
+      ]
+    },
+    {
+      "lucide": "repeat",
+      "occurrences": 3,
+      "solar": "repeat",
+      "solarExport": "RepeatIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "rotate-cw",
+      "occurrences": 6,
+      "solar": "restart",
+      "solarExport": "RestartIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "camera-rotate",
+        "refresh-circle",
+        "restart-square",
+        "circle-bottom-up",
+        "circle-top-up",
+        "restart",
+        "restart-circle"
+      ]
+    },
+    {
+      "lucide": "save",
+      "occurrences": 11,
+      "solar": "diskette",
+      "solarExport": "DisketteIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "diskette"
+      ]
+    },
+    {
+      "lucide": "scissors",
+      "occurrences": 22,
+      "solar": "scissors",
+      "solarExport": "ScissorsIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "search",
+      "occurrences": 72,
+      "solar": "magnifier",
+      "solarExport": "MagnifierIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "card-search",
+        "magnifier-zoom-in",
+        "magnifier-zoom-out",
+        "map-point-search",
+        "minimalistic-magnifier-zoom-in",
+        "minimalistic-magnifier-zoom-out",
+        "rounded-magnifier-bug",
+        "rounded-magnifier-zoom-in"
+      ]
+    },
+    {
+      "lucide": "send",
+      "occurrences": 12,
+      "solar": "file-send",
+      "solarExport": "FileSendIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "file-send",
+        "gallery-send",
+        "plane",
+        "plane-2",
+        "plane-3",
+        "rocket",
+        "rocket-2"
+      ]
+    },
+    {
+      "lucide": "server",
+      "occurrences": 6,
+      "solar": "server",
+      "solarExport": "ServerIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "settings",
+      "occurrences": 33,
+      "solar": "settings",
+      "solarExport": "SettingsIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "settings-2",
+      "occurrences": 27,
+      "solar": "settings-minimalistic",
+      "solarExport": "SettingsMinimalisticIcon",
+      "status": "mapped",
+      "confidence": "semantic-variant",
+      "source": "shadcn-override",
+      "note": "Solar SettingsMinimalistic is the closest two-slider settings control.",
+      "candidates": [
+        "transmission",
+        "transmission-circle",
+        "transmission-square"
+      ]
+    },
+    {
+      "lucide": "share",
+      "occurrences": 27,
+      "solar": "share",
+      "solarExport": "ShareIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "shield",
+      "occurrences": 6,
+      "solar": "shield",
+      "solarExport": "ShieldIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "shopping-bag",
+      "occurrences": 6,
+      "solar": "bag",
+      "solarExport": "BagIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "bag-check",
+        "bag-cross",
+        "bag-heart",
+        "bag-music",
+        "bag-music-2",
+        "bag-smile",
+        "money-bag",
+        "bag"
+      ]
+    },
+    {
+      "lucide": "shopping-cart",
+      "occurrences": 6,
+      "solar": "cart",
+      "solarExport": "CartIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "cart-check",
+        "cart-cross",
+        "cart-plus",
+        "cart",
+        "cart-2",
+        "cart-3",
+        "cart-4",
+        "cart-5"
+      ]
+    },
+    {
+      "lucide": "smile",
+      "occurrences": 6,
+      "solar": "smile-circle",
+      "solarExport": "SmileCircleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "bag-smile",
+        "bomb-emoji",
+        "emoji-funny-circle",
+        "emoji-funny-square",
+        "file-smile",
+        "ghost",
+        "ghost-smile",
+        "home-smile"
+      ]
+    },
+    {
+      "lucide": "sparkles",
+      "occurrences": 27,
+      "solar": "special-effects",
+      "solarExport": "SpecialEffectsIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "confetti",
+        "gallery-favorite",
+        "hand-stars",
+        "heart-shine",
+        "magic-wand",
+        "magic-wand-2",
+        "magic-wand-3",
+        "moon-stars"
+      ]
+    },
+    {
+      "lucide": "square",
+      "occurrences": 1,
+      "solar": "bluetooth-square",
+      "solarExport": "BluetoothSquareIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "bluetooth-square",
+        "bookmark-square",
+        "bookmark-square-minimalistic",
+        "camera-square",
+        "clock-square",
+        "code-square",
+        "compass-square",
+        "confounded-square"
+      ]
+    },
+    {
+      "lucide": "star",
+      "occurrences": 12,
+      "solar": "star",
+      "solarExport": "StarIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "star-off",
+      "occurrences": 6,
+      "solar": null,
+      "solarExport": null,
+      "status": "missing",
+      "confidence": "no-accepted-match",
+      "source": "lucide-coverage",
+      "note": "No current Solar icon or accepted candidate is available.",
+      "candidates": []
+    },
+    {
+      "lucide": "stop-circle",
+      "occurrences": 3,
+      "solar": "stop-circle",
+      "solarExport": "StopCircleIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "sun",
+      "occurrences": 6,
+      "solar": "sun",
+      "solarExport": "SunIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "table",
+      "occurrences": 11,
+      "solar": "bedside-table",
+      "solarExport": "BedsideTableIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "bedside-table",
+        "bedside-table-2",
+        "bedside-table-3",
+        "bedside-table-4",
+        "vanity"
+      ]
+    },
+    {
+      "lucide": "target",
+      "occurrences": 3,
+      "solar": "target",
+      "solarExport": "TargetIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "terminal",
+      "occurrences": 27,
+      "solar": "programming",
+      "solarExport": "ProgrammingIcon",
+      "status": "review",
+      "confidence": "candidate-only",
+      "source": "lucide-coverage",
+      "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+      "candidates": [
+        "programming"
+      ]
+    },
+    {
+      "lucide": "terminal-square",
+      "occurrences": 12,
+      "solar": "programming",
+      "solarExport": "ProgrammingIcon",
+      "status": "mapped",
+      "confidence": "semantic-equivalent",
+      "source": "shadcn-override",
+      "note": "Solar Programming is the square terminal/programming mark.",
+      "candidates": [
+        "programming"
+      ]
+    },
+    {
+      "lucide": "thermometer",
+      "occurrences": 3,
+      "solar": "thermometer",
+      "solarExport": "ThermometerIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "thumbs-down",
+      "occurrences": 6,
+      "solar": "dislike",
+      "solarExport": "DislikeIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "like",
+        "dislike"
+      ]
+    },
+    {
+      "lucide": "thumbs-up",
+      "occurrences": 6,
+      "solar": "like",
+      "solarExport": "LikeIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "chat-round-like",
+        "chat-square-like",
+        "dislike",
+        "like"
+      ]
+    },
+    {
+      "lucide": "timer",
+      "occurrences": 3,
+      "solar": "stopwatch",
+      "solarExport": "StopwatchIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "hourglass",
+        "hourglass-line",
+        "stopwatch"
+      ]
+    },
+    {
+      "lucide": "trash",
+      "occurrences": 39,
+      "solar": "trash-bin-2",
+      "solarExport": "TrashBin2Icon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "paper-bin",
+        "trash-bin-minimalistic",
+        "trash-bin-trash",
+        "trash-bin-2",
+        "trash-bin-minimalistic-2"
+      ]
+    },
+    {
+      "lucide": "trash-2",
+      "occurrences": 33,
+      "solar": "trash-bin-minimalistic",
+      "solarExport": "TrashBinMinimalisticIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "trash-bin-2",
+        "trash-bin-minimalistic-2",
+        "paper-bin",
+        "trash-bin-minimalistic",
+        "trash-bin-trash"
+      ]
+    },
+    {
+      "lucide": "trending-down",
+      "occurrences": 6,
+      "solar": "diagram-down",
+      "solarExport": "DiagramDownIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "diagram-down"
+      ]
+    },
+    {
+      "lucide": "trending-up",
+      "occurrences": 45,
+      "solar": "course-up",
+      "solarExport": "CourseUpIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "course-up",
+        "diagram-up",
+        "graph-up"
+      ]
+    },
+    {
+      "lucide": "triangle-alert",
+      "occurrences": 4,
+      "solar": "danger-triangle",
+      "solarExport": "DangerTriangleIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "danger",
+        "danger-triangle"
+      ]
+    },
+    {
+      "lucide": "tv",
+      "occurrences": 3,
+      "solar": "tv",
+      "solarExport": "TvIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "underline",
+      "occurrences": 29,
+      "solar": "text-underline",
+      "solarExport": "TextUnderlineIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "text-underline",
+        "text-underline-circle"
+      ]
+    },
+    {
+      "lucide": "upload-cloud",
+      "occurrences": 3,
+      "solar": "cloud-upload",
+      "solarExport": "CloudUploadIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "Resolved through Lucide alias cloud-upload.",
+      "candidates": [
+        "cloud-upload"
+      ]
+    },
+    {
+      "lucide": "user",
+      "occurrences": 29,
+      "solar": "user",
+      "solarExport": "UserIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "user-round-x",
+      "occurrences": 3,
+      "solar": "user-block-rounded",
+      "solarExport": "UserBlockRoundedIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "user-block-rounded",
+        "user-cross-rounded"
+      ]
+    },
+    {
+      "lucide": "users",
+      "occurrences": 6,
+      "solar": "users-group-rounded",
+      "solarExport": "UsersGroupRoundedIcon",
+      "status": "review",
+      "confidence": "audited-variant",
+      "source": "shadcn-override",
+      "note": "The current Solar users-group-rounded icon preserves the generic users concept; the exact silhouette still needs visual review.",
+      "candidates": []
+    },
+    {
+      "lucide": "video",
+      "occurrences": 3,
+      "solar": "videocamera",
+      "solarExport": "VideocameraIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "chat-round-video",
+        "video-library",
+        "videocamera",
+        "videocamera-record"
+      ]
+    },
+    {
+      "lucide": "volume-2",
+      "occurrences": 3,
+      "solar": "volume-loud",
+      "solarExport": "VolumeLoudIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "volume-loud"
+      ]
+    },
+    {
+      "lucide": "volume-off",
+      "occurrences": 1,
+      "solar": "muted",
+      "solarExport": "MutedIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "muted"
+      ]
+    },
+    {
+      "lucide": "volume-x",
+      "occurrences": 2,
+      "solar": "volume-cross",
+      "solarExport": "VolumeCrossIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "muted",
+        "volume-cross"
+      ]
+    },
+    {
+      "lucide": "wallet",
+      "occurrences": 9,
+      "solar": "wallet",
+      "solarExport": "WalletIcon",
+      "status": "mapped",
+      "confidence": "direct-name",
+      "source": "current-solar-catalogue",
+      "note": "The current Solar catalogue contains the same kebab-case name.",
+      "candidates": []
+    },
+    {
+      "lucide": "x",
+      "occurrences": 181,
+      "solar": "close",
+      "solarExport": "CloseIcon",
+      "status": "mapped",
+      "confidence": "direct-extension",
+      "source": "shadcn-override",
+      "note": "Solar's extended close primitive is the canonical X control.",
+      "candidates": [
+        "airbuds-remove",
+        "bag-cross",
+        "bill-cross",
+        "cart-cross",
+        "end-call",
+        "end-call-rounded",
+        "xxx"
+      ]
+    },
+    {
+      "lucide": "zap",
+      "occurrences": 3,
+      "solar": "bolt",
+      "solarExport": "BoltIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "bolt-circle",
+        "cpu-bolt",
+        "lightbulb",
+        "lightbulb-bolt",
+        "lightning",
+        "wireless-charge",
+        "bolt"
+      ]
+    },
+    {
+      "lucide": "zoom-in",
+      "occurrences": 3,
+      "solar": "magnifier-zoom-in",
+      "solarExport": "MagnifierZoomInIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "magnifier",
+        "minimalistic-magnifier",
+        "rounded-magnifier",
+        "magnifier-zoom-in",
+        "minimalistic-magnifier-zoom-in",
+        "rounded-magnifier-zoom-in"
+      ]
+    },
+    {
+      "lucide": "zoom-out",
+      "occurrences": 3,
+      "solar": "magnifier-zoom-out",
+      "solarExport": "MagnifierZoomOutIcon",
+      "status": "mapped",
+      "confidence": "audited-equivalent",
+      "source": "lucide-coverage",
+      "note": "",
+      "candidates": [
+        "magnifier-zoom-out",
+        "minimalistic-magnifier-zoom-out",
+        "rounded-magnifier-zoom-out"
+      ]
+    }
+  ]
+}
