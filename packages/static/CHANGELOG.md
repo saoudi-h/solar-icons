@@ -1,5 +1,11 @@
 # @solar-icons/static
 
+## 2.1.1
+
+### Patch Changes
+
+- [#548](https://github.com/saoudi-h/solar-icons/pull/548) [`1e3a1e3`](https://github.com/saoudi-h/solar-icons/commit/1e3a1e36afc8e198f05c9a2593ea52d12cf645e9) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Correct semantic icon metadata in the published static catalogue, including false-positive tags and category tags, and add a regression guard for reviewed metadata errors. The Figma plugin catalogue must be rebuilt and published manually after the package release.
+
 ## 2.1.0
 
 ### Minor Changes

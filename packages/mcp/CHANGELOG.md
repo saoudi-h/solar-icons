@@ -1,5 +1,12 @@
 # @solar-icons/mcp
 
+## 2.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @solar-icons/cli@2.2.2
+
 ## 2.0.0
 
 ### Major Changes
