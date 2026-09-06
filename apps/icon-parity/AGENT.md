@@ -50,3 +50,12 @@ Pour planifier une nouvelle icône Lucide, lire
 `app/compare/LUCIDE-EXTENSION-ROADMAP.md`, modifier la roadmap puis lancer
 `pnpm --filter icon-parity lucide:roadmap:check`. La création des SVG et des métadonnées suit
 `packages/core/EXTENDING-ICON-SET.md`.
+
+## shadcn compatibility lane
+
+The current shadcn registry capture and Solar mapping audit live under
+`app/compare/shadcn-coverage/`. Regenerate or validate them with
+`pnpm --filter icon-parity shadcn:coverage` and
+`pnpm --filter icon-parity shadcn:coverage:check`. The package export smoke check is
+`pnpm --filter icon-parity shadcn:package:check` and requires a built
+`packages/react/dist/`.

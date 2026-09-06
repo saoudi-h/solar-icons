@@ -8,11 +8,14 @@ The pinned source capture is stored in `apps/icon-parity/app/compare/shadcn-cove
 
 The current registry surface contains 182 unique Lucide names and 3,045 `IconPlaceholder` uses. The generated audit is available in `apps/icon-parity/app/compare/shadcn-coverage/AUDIT-REPORT.md`.
 
+The current baseline has 138 accepted mappings, 2 fallback mappings, 27 candidates awaiting review, and 15 unresolved entries. The unresolved and high-risk candidates are also tracked in `apps/icon-parity/app/compare/lucide-extension-roadmap.json` with their Lucide source IDs and shadcn usage rationale.
+
 Run the audit with:
 
 ```sh
 pnpm --filter icon-parity shadcn:coverage
 pnpm --filter icon-parity shadcn:coverage:check
+pnpm --filter icon-parity shadcn:package:check
 ```
 
 To refresh the source capture after cloning a newer shadcn/ui revision:
