@@ -55,6 +55,8 @@
 
 - [/] **[ICON-FIXES]** Fix two reported icon issues: one incorrect icon name and one SVG requiring regeneration. Details and exact source-of-truth changes will be scoped after the maintainer provides the issue descriptions. `Priority: 🟠` `Complexity: S`
 
+- [/] **[METADATA-AUDIT]** Audit and correct semantic errors in the hand-curated icon metadata, keep generated explorer descriptions synchronized, and maintain regression checks for known false-positive tags. Do not change Fuse or search semantics. `Priority: 🔴` `Complexity: L`
+
 - [/] **[SKILL-DISCOVERY]** Research skills.sh ecosystem, benchmark icon competitors (Lucide, Phosphor, HugeIcons, Tabler, etc.), analyse top skill patterns (structure/tone/tooling/sécurité), and deliver concrete plan + draft skill(s) for Solar Icons + maintenance rules for skills.sh publication. Research complete (2026-08-28 worklog + draft `skills/solar-icons/`); CLI foundation done (`@solar-icons/cli` 2.1.0) — skill rewired to `npx @solar-icons/cli` (no shell scripts), import snippets verified (`HeartIcon` vs `HeartBoldIcon`), `catalog.md` updated to CLI source. `Priority: 🟠` `Complexity: M`
 
 - [x] **[CLI-PKG]** Create `@solar-icons/cli` (bin `solar-icons`) — rich search/get/list/info API over `@solar-icons/static` as single source of truth; base for skills and future MCP server. Scaffold + 7 commands (`search/get/list/info/categories/styles/overview`) with `--json`, dynamic catalog/packages/versions, `picocolors` + `commander` help, import snippets verified against `apps/docs` (per-file `HeartIcon` vs root `HeartBoldIcon`), 13 Vitest tests, `publint` clean. Published `2.2.0` (fix `2.2.1` for dynamic `version`). `Priority: 🟠` `Complexity: M`
