@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "status": "proposal",
+    "policy": {
+        "canonicalNames": "Use explicit family and geometry qualifiers for new icons.",
+        "compatibility": "Every published rename keeps the old name as a generated deprecated alias.",
+        "sourceOfTruth": "Canonical SVG names must be changed in the private Figma source before package exports are regenerated.",
+        "circleVsRound": {
+            "circle": "Use for a genuinely circular enclosure or circular object.",
+            "round": "Keep for established Solar families whose modifier denotes a rounded treatment or legacy family; do not infer geometry from the token alone.",
+            "migration": "Do not mass-rename existing round/circle icons without rendered review and a migration table."
+        },
+        "chat": {
+            "newVariants": "Use chat-round-* and chat-square-* explicitly.",
+            "unqualifiedNames": "Allow only as legacy aliases after the geometry has been confirmed.",
+            "missingCounterparts": "Do not invent a neutral chat-* name when only one geometry exists; add the explicit counterpart only when its artwork is intentionally created."
+        }
+    },
+    "fileRenames": [
+        {
+            "current": "cloud-file",
+            "canonical": "file-cloud",
+            "status": "proposed",
+            "reason": "Normalize compound families to object-first naming."
+        },
+        {
+            "current": "code-file",
+            "canonical": "file-code",
+            "status": "proposed",
+            "reason": "Normalize compound families to object-first naming."
+        },
+        {
+            "current": "figma-file",
+            "canonical": "file-figma",
+            "status": "proposed",
+            "reason": "Normalize compound families to object-first naming."
+        },
+        {
+            "current": "zip-file",
+            "canonical": "file-zip",
+            "status": "proposed",
+            "reason": "Normalize compound families to object-first naming."
+        }
+    ],
+    "chatRenamesRequiringVisualConfirmation": [
+        {
+            "current": "chat-dots",
+            "canonical": "chat-square-dots",
+            "status": "geometry-confirmed-by-maintainer",
+            "reason": "The current unqualified icon is the square chat-bubble variant."
+        },
+        {
+            "current": "chat-unread",
+            "canonical": "chat-square-unread",
+            "status": "visual-review-required",
+            "reason": "The unqualified name should be checked before assigning the square qualifier."
+        },
+        {
+            "current": "chat-line",
+            "canonical": "chat-square-line",
+            "status": "visual-review-required",
+            "reason": "The unqualified name should be checked before assigning the square qualifier."
+        }
+    ],
+    "chatFamilyDecisions": [
+        {
+            "name": "chat-round-money",
+            "decision": "keep",
+            "reason": "The existing geometry is explicit; absence of chat-square-money is not a naming bug."
+        },
+        {
+            "name": "chat-round-like and chat-square-like",
+            "decision": "keep",
+            "reason": "The paired explicit convention is already correct."
+        },
+        {
+            "name": "chat-round-* and chat-square-*",
+            "decision": "use-for-new-icons",
+            "reason": "New paired variants should not rely on an implicit square default."
+        }
+    ]
+}

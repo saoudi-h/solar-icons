@@ -9,7 +9,7 @@
 
 ## 🚧 Active
 
-- [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, generate mapping artifacts, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. `Priority: 🔴` `Complexity: XL`
+- [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, correct alias false positives, maintain a separate compound-family easy-win queue, define non-breaking naming normalization, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. `Priority: 🔴` `Complexity: XL`
 
 - [/] **[DOCS-AI-TOOLS-SHOWCASE]** Restyle the AI tools showcase on the docs homepage. Replace the static pseudo-stepper with an interactive "Agent in Action" window demonstrating real prompt, tool resolution, rendered Solar icon, and import snippet across MCP, Skill, and CLI modalities. `Priority: 🟠` `Complexity: M`
 

@@ -8,7 +8,9 @@ The pinned source capture is stored in `apps/icon-parity/app/compare/shadcn-cove
 
 The current registry surface contains 182 unique Lucide names and 3,045 `IconPlaceholder` uses. The generated audit is available in `apps/icon-parity/app/compare/shadcn-coverage/AUDIT-REPORT.md`.
 
-The current baseline has 138 accepted mappings, 2 fallback mappings, 27 candidates awaiting review, and 15 unresolved entries. The unresolved and high-risk candidates are also tracked in `apps/icon-parity/app/compare/lucide-extension-roadmap.json` with their Lucide source IDs and shadcn usage rationale.
+The current baseline has 139 accepted mappings, 3 fallback mappings, 27 candidates awaiting review, and 13 unresolved entries. `audio-lines` is covered by the existing `soundwave` icon. `octagon-x` has an explicit `close-square` fallback, with `close-circle` as an alternate. Lucide's exported `layout` name is a legacy alias for the canonical `panels-top-left` concept; it remains unresolved on the Solar side.
+
+The unresolved and high-risk candidates are tracked in `apps/icon-parity/app/compare/lucide-extension-roadmap.json` with their Lucide source IDs and shadcn usage rationale. Broader compound-family opportunities are tracked separately in `apps/icon-parity/app/compare/ICON-FAMILY-EASY-WINS.md` so shadcn-critical work is not diluted by the wider catalogue plan.
 
 Run the audit with:
 
@@ -16,6 +18,7 @@ Run the audit with:
 pnpm --filter icon-parity shadcn:coverage
 pnpm --filter icon-parity shadcn:coverage:check
 pnpm --filter icon-parity shadcn:package:check
+pnpm --filter icon-parity families:report:check
 ```
 
 To refresh the source capture after cloning a newer shadcn/ui revision:
@@ -70,7 +73,9 @@ The mapping layer is required because Solar and Lucide use different names. For 
 
 ## Extension policy
 
-The current shadcn queue should be handled separately from the general Lucide queue. Prioritize the missing primitives that occur in the shadcn registry: loading, overflow, grip, clipboard-paste, dashed-circle, columns, container, file search/chart/warning, folder search, gauge, message-circle-question, octagon-x, square, star-off, and table.
+The current shadcn queue should be handled separately from the general Lucide queue. Prioritize the missing primitives that occur in the shadcn registry: loading, overflow, grip, clipboard-paste, dashed-circle, columns, container, file search/chart/warning, folder search, gauge, message-circle-question, panels-top-left, square, star-off, and table. Existing Solar equivalents and explicit fallbacks must be recorded before a new glyph is planned.
+
+The family report also captures lower-cost compound work such as clipboard, file, folder, chat, grid, and table variants. Those entries are triage proposals, not automatic shadcn requirements.
 
 New icons must follow `packages/core/EXTENDING-ICON-SET.md`: six styles, curated metadata, visual validation, and core inventory checks. Do not add a one-style compatibility glyph solely to satisfy the registry.
 

@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -46,6 +47,7 @@ type MappingStatus = 'mapped' | 'fallback' | 'review' | 'missing'
 
 type AuditEntry = {
     lucide: string
+    canonicalLucide?: string
     occurrences: number
     solar: string | null
     solarExport: string | null
@@ -82,6 +84,16 @@ function readJson<T>(filePath: string): T {
 
 function writeJson(filePath: string, value: unknown) {
     fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`)
+}
+
+function formatArtifact(filePath: string, content: string): string {
+    const formatter = path.resolve(repoRoot, 'node_modules/.bin/oxfmt')
+    if (!fs.existsSync(formatter)) return content
+
+    return execFileSync(formatter, ['--stdin-filepath', filePath], {
+        input: content,
+        encoding: 'utf8',
+    })
 }
 
 function kebabCase(value: string): string {
@@ -223,6 +235,8 @@ function buildAudit(): AuditReport {
     const entries = source.icons.map<AuditEntry>(icon => {
         const override = overrides[icon.name]
         const historicalEntry = byName.get(icon.name) ?? byAlias.get(icon.name)
+        const canonicalLucide =
+            historicalEntry && historicalEntry.name !== icon.name ? historicalEntry.name : undefined
 
         if (override) {
             const status = override.status ?? 'mapped'
@@ -234,6 +248,7 @@ function buildAudit(): AuditReport {
             counts[status]++
             return {
                 lucide: icon.name,
+                canonicalLucide,
                 occurrences: icon.occurrences,
                 solar: override.solar ?? null,
                 solarExport: solarComponentName(override.solar ?? null),
@@ -249,6 +264,7 @@ function buildAudit(): AuditReport {
             counts.mapped++
             return {
                 lucide: icon.name,
+                canonicalLucide,
                 occurrences: icon.occurrences,
                 solar: icon.name,
                 solarExport: solarComponentName(icon.name),
@@ -269,6 +285,7 @@ function buildAudit(): AuditReport {
             counts.mapped++
             return {
                 lucide: icon.name,
+                canonicalLucide,
                 occurrences: icon.occurrences,
                 solar: match.solar,
                 solarExport: solarComponentName(match.solar),
@@ -288,6 +305,7 @@ function buildAudit(): AuditReport {
             counts.fallback++
             return {
                 lucide: icon.name,
+                canonicalLucide,
                 occurrences: icon.occurrences,
                 solar: fallback.solar,
                 solarExport: solarComponentName(fallback.solar),
@@ -321,13 +339,16 @@ function buildAudit(): AuditReport {
         counts.missing++
         return {
             lucide: icon.name,
+            canonicalLucide,
             occurrences: icon.occurrences,
             solar: null,
             solarExport: null,
             status: 'missing',
             confidence: 'no-accepted-match',
             source: historicalEntry ? 'lucide-coverage' : 'no-historical-entry',
-            note: 'No current Solar icon or accepted candidate is available.',
+            note: canonicalLucide
+                ? `No current Solar icon or accepted candidate is available. Lucide exports ${icon.name} as an alias of ${canonicalLucide}.`
+                : 'No current Solar icon or accepted candidate is available.',
             candidates: candidateNames(historicalEntry),
         }
     })
@@ -348,7 +369,10 @@ function renderReport(audit: AuditReport): string {
         .sort((a, b) => b.occurrences - a.occurrences || a.lucide.localeCompare(b.lucide))
         .map(entry => {
             const candidates = entry.candidates.length > 0 ? entry.candidates.join(', ') : '—'
-            return `| ${entry.lucide} | ${entry.occurrences} | ${entry.status} | ${entry.solar ?? '—'} | ${candidates} |`
+            const lucideName = entry.canonicalLucide
+                ? `${entry.lucide} → ${entry.canonicalLucide}`
+                : entry.lucide
+            return `| ${lucideName} | ${entry.occurrences} | ${entry.status} | ${entry.solar ?? '—'} | ${candidates} |`
         })
         .join('\n')
 
@@ -378,7 +402,7 @@ The source list is the current shadcn registry surface, not the full Lucide cata
 
 ## Review queue
 
-| Lucide name | Uses | Status | Current Solar candidate | Other candidates |
+| Lucide export / canonical name | Uses | Status | Current Solar candidate | Other candidates |
 | --- | ---: | --- | --- | --- |
 ${rows || '| — | 0 | — | — | — |'}
 
@@ -405,7 +429,10 @@ function main() {
     if (args.check) {
         const currentOutput = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : ''
         const currentReport = fs.existsSync(reportPath) ? fs.readFileSync(reportPath, 'utf8') : ''
-        if (currentOutput !== output || currentReport !== report) {
+        if (
+            currentOutput !== formatArtifact(outputPath, output) ||
+            currentReport !== formatArtifact(reportPath, report)
+        ) {
             throw new Error(
                 'shadcn coverage artifacts are stale; run the generator without --check'
             )
@@ -417,8 +444,8 @@ function main() {
     }
 
     fs.mkdirSync(coverageDir, { recursive: true })
-    fs.writeFileSync(outputPath, output)
-    fs.writeFileSync(reportPath, report)
+    fs.writeFileSync(outputPath, formatArtifact(outputPath, output))
+    fs.writeFileSync(reportPath, formatArtifact(reportPath, report))
     console.log(
         `Generated shadcn coverage (${audit.totalIcons} icons, ${audit.totalOccurrences} uses)`
     )

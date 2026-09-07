@@ -145,15 +145,6 @@
     },
     {
         "source": "lucide",
-        "sourceId": "L0108",
-        "sourceName": "audio-lines",
-        "priority": "high",
-        "priorityReason": "Fifteen shadcn preview uses require an audio waveform primitive that is not currently represented by an accepted Solar match.",
-        "workType": "assisted-design",
-        "status": "planned"
-    },
-    {
-        "source": "lucide",
         "sourceId": "L0193",
         "sourceName": "blocks",
         "priority": "high",
@@ -285,15 +276,6 @@
         "priority": "high",
         "priorityReason": "Six shadcn previews require a question-mark message bubble that is not present in Solar.",
         "workType": "assisted-design",
-        "status": "planned"
-    },
-    {
-        "source": "lucide",
-        "sourceId": "L1165",
-        "sourceName": "octagon-x",
-        "priority": "high",
-        "priorityReason": "The destructive octagon state is a common validation primitive and appears in four shadcn previews.",
-        "workType": "derived-variant",
         "status": "planned"
     },
     {

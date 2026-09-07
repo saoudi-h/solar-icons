@@ -50,6 +50,8 @@ Solar and Lucide names are not expected to match. The mapping layer handles name
 
 ## Known limitation before submission
 
-The current Solar audit has 15 unresolved concepts that need new six-style Solar glyphs or an explicit maintainer-approved fallback: audio-lines, circle-dashed, clipboard-paste, columns-3, container, file-chart-column, file-chart-column-increasing, file-warning, folder-search, loader, message-circle-question-mark, octagon-x, panels-top-left, square, and star-off.
+The current Solar audit has 13 unresolved registry concepts that need new six-style Solar glyphs or an explicit maintainer-approved fallback: circle-dashed, clipboard-paste, columns-3, container, file-bar-chart, file-chart-column, file-warning, folder-search, layout, loader, loader-2, message-circle-question, and star-off. The registry-specific `file-bar-chart` export is the Lucide alias for `file-chart-column-increasing`; `layout` is the alias for `panels-top-left`; and `loader-2` is the alias for `loader-circle`.
+
+`audio-lines` is covered by Solar `soundwave`. `octagon-x` is covered by the documented `close-square` fallback, with `close-circle` as an alternate. These are not new Solar glyph blockers for the upstream proposal.
 
 The PR should not silently map these to unrelated objects. The contribution can be prepared while this queue is completed, but first-class preview support should not be claimed until every placeholder has a reviewed Solar value.

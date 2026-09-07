@@ -27,6 +27,8 @@
         "shadcn:coverage": "tsx scripts/generate-shadcn-coverage.ts",
         "shadcn:coverage:check": "tsx scripts/generate-shadcn-coverage.ts --check",
         "shadcn:package:check": "tsx scripts/validate-shadcn-package.ts",
+        "families:report": "tsx scripts/generate-icon-family-report.ts",
+        "families:report:check": "tsx scripts/generate-icon-family-report.ts --check",
         "lint": "oxlint --deny-warnings .",
         "format": "oxfmt --check .",
         "format:fix": "oxfmt --write .",

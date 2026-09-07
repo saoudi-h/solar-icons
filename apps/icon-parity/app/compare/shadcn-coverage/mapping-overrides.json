@@ -9,6 +9,11 @@
         "confidence": "semantic-equivalent",
         "note": "Solar uses DangerTriangle for Lucide's legacy AlertTriangle alias."
     },
+    "audio-lines": {
+        "solar": "soundwave",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar Soundwave is the existing waveform equivalent for Lucide AudioLines."
+    },
     "check": {
         "solar": "check-read",
         "confidence": "visual-equivalent",
@@ -44,6 +49,12 @@
         "solar": "home",
         "confidence": "direct-extension",
         "note": "Lucide's legacy Home name is supported directly by Solar."
+    },
+    "octagon-x": {
+        "solar": "close-square",
+        "status": "fallback",
+        "confidence": "maintainer-approved-fallback",
+        "note": "Solar has no octagonal frame yet; CloseSquare is the documented fallback. CloseCircle is an alternate fallback when a circular status treatment is preferred."
     },
     "paintbrush": {
         "solar": "paint-brush",

@@ -58,4 +58,6 @@ The current shadcn registry capture and Solar mapping audit live under
 `pnpm --filter icon-parity shadcn:coverage` and
 `pnpm --filter icon-parity shadcn:coverage:check`. The package export smoke check is
 `pnpm --filter icon-parity shadcn:package:check` and requires a built
-`packages/react/dist/`.
+`packages/react/dist/`. Broader family proposals and naming-normalization decisions are
+generated with `pnpm --filter icon-parity families:report` and checked with
+`pnpm --filter icon-parity families:report:check`.
