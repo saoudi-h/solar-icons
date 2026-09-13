@@ -48,7 +48,7 @@ The Angular adapter renames static icon exports to their `Solar`-prefixed v2 nam
 
 The codemod reports, without rewriting, legacy providers and `useSolar`, category imports, default namespace imports, and removed `mirrored` props. These need an application-level decision and are linked to the v2 migration guide.
 
-All 37 removed icon names are converted through an explicit v1-to-v2 mapping.
+All 37 removed icon names are converted through an explicit v1-to-v2 mapping. The codemod also normalizes the six current catalogue aliases introduced by the file and chat naming cleanup (`code-file`, `cloud-file`, `figma-file`, `chat-dots`, `chat-line`, and `chat-unread`) to their canonical names while those old names remain available as deprecated compatibility exports.
 
 ## Verification
 

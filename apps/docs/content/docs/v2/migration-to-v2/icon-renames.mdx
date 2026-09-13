@@ -64,6 +64,19 @@ These icons had names ending with a style word (`bold`, `broken`), which caused 
 | `link-broken-minimalistic` | `unlink-minimalistic` |
 | `text`                     | `text-format`         |
 
+## Current catalogue normalizations
+
+The catalogue later standardized a few family names without removing the old exports immediately. Current package releases keep these old names as deprecated aliases, while the codemod normalizes them when migrating application code:
+
+| Deprecated name | Canonical name       |
+| --------------- | -------------------- |
+| `code-file`     | `file-code`          |
+| `cloud-file`    | `file-cloud`         |
+| `figma-file`    | `file-figma`         |
+| `chat-dots`     | `chat-square-dots`   |
+| `chat-line`     | `chat-square-line`   |
+| `chat-unread`   | `chat-square-unread` |
+
 ## Migration
 
 In your codebase, replace each old name with the new one in both the import path and the component name.

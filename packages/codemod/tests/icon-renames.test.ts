@@ -18,4 +18,17 @@ describe('renameIcon', () => {
     it('preserves a v2 compatibility alias that remains exported', () => {
         expect(renameIcon('TickerStar')).toBe('TickerStar')
     })
+
+    it('normalizes current deprecated file and chat names', () => {
+        expect(renameIcon('CodeFile')).toBe('FileCode')
+        expect(renameIcon('CloudFile')).toBe('FileCloud')
+        expect(renameIcon('FigmaFile')).toBe('FileFigma')
+        expect(renameIcon('ChatDots')).toBe('ChatSquareDots')
+        expect(renameIcon('ChatLine')).toBe('ChatSquareLine')
+        expect(renameIcon('ChatUnread')).toBe('ChatSquareUnread')
+    })
+
+    it('normalizes a deprecated name embedded in a compound icon name', () => {
+        expect(renameIcon('MinimalisticCodeFile')).toBe('MinimalisticFileCode')
+    })
 })

@@ -1,5 +1,6 @@
 ---
 "@solar-icons/angular": minor
+"@solar-icons/codemod": minor
 "@solar-icons/cli": minor
 "@solar-icons/core": minor
 "@solar-icons/js": minor
@@ -13,4 +14,4 @@
 "@solar-icons/vue": minor
 ---
 
-Expand the catalogue from 1,268 to 1,379 icons across all six styles, including the shadcn/ui coverage extensions and family variants. Preserve non-breaking file and chat naming changes through deprecated aliases and expose the updated catalogue across the CLI, MCP, static, and framework packages.
+Expand the catalogue from 1,268 to 1,379 icons across all six styles, including the shadcn/ui coverage extensions and family variants. Preserve non-breaking file and chat naming changes through deprecated aliases, normalize those aliases during codemod migrations, and expose the updated catalogue across the CLI, MCP, static, and framework packages.
