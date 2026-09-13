@@ -2,12 +2,12 @@ name: Release
 
 on:
     push:
-    workflow_dispatch:
         branches:
             - main
         paths-ignore:
             - 'apps/nuxt/**'
             - 'apps/vue-app/**'
+    workflow_dispatch:
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
