@@ -1,6 +1,6 @@
 # @solar-icons/cli
 
-CLI for Solar Icons — 1,268 icons × 6 styles. Search, get and list icons locally (offline) via `@solar-icons/static`. Designed as the single source of truth for `skills` and the future MCP server.
+CLI for Solar Icons — 1,379 icons × 6 styles. Search, get and list icons locally (offline) via `@solar-icons/static`. Designed as the single source of truth for `skills` and the future MCP server.
 
 ```bash
 pnpm add -D @solar-icons/cli

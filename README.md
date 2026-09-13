@@ -4,7 +4,7 @@
 
 [![skills.sh](https://skills.sh/b/saoudi-h/solar-icons)](https://skills.sh/saoudi-h/solar-icons)
 
-1,268 icons in 6 styles, packaged for modern web and mobile frameworks.
+1,379 icons in 6 styles, packaged for modern web and mobile frameworks.
 
 🔗 **Explore the icons & docs:** [solar-icons.vercel.app](https://solar-icons.vercel.app)
 
@@ -12,7 +12,7 @@
 
 ## Features
 
-- **7,608 variations**: 1,268 unique icons across 30+ categories, each available in six styles (`Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken`).
+- **8,274 variations**: 1,379 unique icons across 30+ categories, each available in six styles (`Bold`, `Linear`, `Outline`, `BoldDuotone`, `LineDuotone`, and `Broken`).
 - **Framework support**: Native packages for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, and Angular.
 - **CSS variable cascade**: `SolarProvider` + `useSolar` set global defaults for size, color, and stroke width.
 - **Built-in duotone**: `secondaryColor` and `secondaryOpacity` control the duotone accent path.

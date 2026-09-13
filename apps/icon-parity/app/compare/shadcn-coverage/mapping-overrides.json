@@ -14,6 +14,11 @@
         "confidence": "maintainer-confirmed",
         "note": "Solar Soundwave is the existing waveform equivalent for Lucide AudioLines."
     },
+    "ellipsis-vertical": {
+        "solar": "menu-dots-vertical",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar MenuDotsVertical is the rotated vertical-dots equivalent for Lucide EllipsisVertical."
+    },
     "check": {
         "solar": "check-read",
         "confidence": "visual-equivalent",
@@ -49,6 +54,43 @@
         "solar": "home",
         "confidence": "direct-extension",
         "note": "Lucide's legacy Home name is supported directly by Solar."
+    },
+    "file-bar-chart": {
+        "solar": "file-chart-2",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar FileChart2 is the confirmed equivalent of Lucide's file-chart-column-increasing alias."
+    },
+    "file-chart-column": {
+        "solar": "file-chart",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar FileChart is the confirmed equivalent of Lucide FileChartColumn."
+    },
+    "gauge": {
+        "solar": "speedometer-middle",
+        "status": "fallback",
+        "confidence": "maintainer-confirmed-family",
+        "note": "Solar's speedometer-low, speedometer-middle, and speedometer-max form the confirmed gauge family; speedometer-middle is the neutral default fallback."
+    },
+    "layout": {
+        "solar": "panels-top-left",
+        "confidence": "maintainer-confirmed",
+        "note": "Lucide exports Layout as an alias of PanelsTopLeft, which Solar now provides directly."
+    },
+    "loader-2": {
+        "solar": "loader",
+        "status": "fallback",
+        "confidence": "maintainer-confirmed-fallback",
+        "note": "Solar Loader is the confirmed single-loader fallback for Lucide's loader-circle alias; a separate loader-circle glyph is intentionally not planned."
+    },
+    "message-circle-question": {
+        "solar": "chat-round-question-mark",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar ChatRoundQuestionMark is the confirmed semantic equivalent of Lucide's message-circle-question-mark alias."
+    },
+    "more-vertical": {
+        "solar": "menu-dots-vertical",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar MenuDotsVertical covers the same vertical overflow-menu concept as Lucide MoreVertical."
     },
     "octagon-x": {
         "solar": "close-square",

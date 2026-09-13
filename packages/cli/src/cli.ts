@@ -29,7 +29,7 @@ if (cliVersion === '0.0.0') {
 
 const program = new Command()
     .name('solar-icons')
-    .description('Solar Icons CLI — search, get and list 1,268 icons × 6 styles.')
+    .description('Solar Icons CLI — search, get and list 1,379 icons × 6 styles.')
     .version(cliVersion, '-v, --version')
     .showHelpAfterError()
     .showSuggestionAfterError()

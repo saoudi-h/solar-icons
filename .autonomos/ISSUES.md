@@ -100,6 +100,16 @@ compatibility model is approved.
 
 **Planned task:** `CATEGORY-COMPOSITE-MODEL`
 
+## [ISSUE-ICON-SHAPE-NAMING] Clarify `round`, `rounded`, `circle`, and `square` naming
+
+- Type: problem
+- Status: open
+- Evidence: The current catalogue contains 1,373 logical icons and 8,238 SVGs across six styles. Exact token counts in canonical names are `round`: 63 icons / 378 SVGs, `rounded`: 26 / 156, `circle`: 65 / 390, and `square`: 138 / 828; names may contain more than one token. Placement is not uniform: `round` appears as a prefix in 22 names and suffix in 20, `rounded` as a prefix in 4 and suffix in 21, `circle` as a prefix in 5 and suffix in 59, and `square` as a prefix in 29 and suffix in 76. The naming snapshot also contains seven `*-square-2` names, three `*-square-3` names, and the exception `sticker-smile-circle-2`.
+- Evidence: In the `arrows` category there are no exact `rounded-*` names, but there are 21 `round-*` names: `round-alt-arrow-{down,left,right,up}`, `round-arrow-{down,left,left-down,left-up,right,right-down,right-up,up}`, `round-double-alt-arrow-{down,left,right,up}`, `round-sort-{horizontal,vertical}`, and `round-transfer-{diagonal,horizontal,vertical}`. Every Linear SVG in that set contains an explicit circular enclosure, making this a possible targeted `round` → `circle` normalization candidate. Outside that family, `round` and `rounded` also describe object silhouettes or established family names rather than only circular enclosures.
+- Impact: A global lexical rename would conflate distinct geometry and semantic roles, create unnecessary package and Figma migration work, and risk breaking published imports. Prefix-versus-suffix variation is partly structural: `circle-*` and `square-*` are established primitive or arrow families, while suffixes commonly identify an enclosure variant such as `quote-circle` or `move-square`. The lack of a separate `rounded-square` vocabulary also makes `square` intentionally broader than a perfect square.
+- Desired outcome: Establish a maintainer-approved naming policy for future icons, decide whether the 21 circular `round-*` arrow names merit a separate non-breaking migration, preserve historical exceptions deliberately, and document the alias/version strategy before any canonical rename. The policy must distinguish perfect circular enclosures, rounded non-circular silhouettes, square or rounded-square enclosures, and family names without requiring a catalogue-wide rewrite.
+- Tasks: `ICON-SHADCN-INTEGRATION`
+
 ## [ISSUE-FIGMA-CATALOG] Keep the public Figma plugin synchronized
 
 **Evidence:** The plugin embeds `@solar-icons/static` at build time. Publishing npm packages does
