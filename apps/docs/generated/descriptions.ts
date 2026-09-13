@@ -1520,7 +1520,7 @@ icons.push({
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
     tags: [
         'heart',
-        'speech_bubble',
+        'speech bubble',
         'bubble',
         'favorite',
         'love',
@@ -1580,14 +1580,14 @@ icons.push({
     name: 'multiple-forward-left',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['forward left arrow', 'navigation right'],
+    tags: ['forward left arrow', 'navigation left'],
     Icon: MultipleForwardLeftIcon as IconData['Icon'],
 })
 icons.push({
     name: 'chat-round-dots',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['speech bubbles', 'communication', 'dialogue icon'],
+    tags: ['speech bubbles', 'communication', 'dialogue'],
     Icon: ChatRoundDotsIcon as IconData['Icon'],
 })
 icons.push({
@@ -1646,7 +1646,7 @@ icons.push({
     name: 'letter-opened',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['mail', 'envelope', 'write', 'edit', 'pencil', 'draw', 'draft', 'author'],
+    tags: ['opened letter', 'mail', 'envelope', 'read', 'message', 'post'],
     Icon: LetterOpenedIcon as IconData['Icon'],
 })
 icons.push({
@@ -1755,7 +1755,7 @@ icons.push({
     name: 'chat-square-code',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['code-chat-icon', 'developer-discussion', 'programming-conversation'],
+    tags: ['code chat', 'developer-discussion', 'programming-conversation'],
     Icon: ChatSquareCodeIcon as IconData['Icon'],
 })
 icons.push({
@@ -1790,7 +1790,7 @@ icons.push({
     name: 'chat-square',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['speech bubble', 'message icon', 'communication symbol'],
+    tags: ['speech bubble', 'message', 'communication'],
     Icon: ChatSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -1825,7 +1825,7 @@ icons.push({
     name: 'plane',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
-    tags: ['signal', 'connectivity', 'send', 'paper-plane', 'fly', 'telegram', 'message'],
+    tags: ['send', 'paper-plane', 'fly', 'telegram', 'message'],
     Icon: PlaneIcon as IconData['Icon'],
 })
 icons.push({
@@ -1884,8 +1884,8 @@ icons.push({
         'movement',
     ],
     tags: [
-        'Square right arrow',
-        'Double right arrow',
+        'square right arrow',
+        'double right arrow',
         'box',
         'two',
         'forward',
@@ -1925,17 +1925,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: [
-        'left-menu',
-        'navigation-arrow',
-        'recycle-bin',
-        'back-button',
-        'box',
-        'back',
-        'previous',
-        'chevron',
-        'west',
-    ],
+    tags: ['navigation-arrow', 'back-button', 'box', 'back', 'previous', 'chevron', 'west'],
     Icon: SquareAltArrowLeftIcon as IconData['Icon'],
 })
 icons.push({
@@ -2008,7 +1998,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: ['Left arrow in square', 'Navigation left'],
+    tags: ['left-up arrow', 'square', 'north-west', 'diagonal', 'top-left'],
     Icon: SquareArrowLeftUpIcon as IconData['Icon'],
 })
 icons.push({
@@ -2024,14 +2014,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: [
-        'downward-pointing arrow in a square',
-        'left-to-right arrow within rectangle',
-        'box',
-        'south-west',
-        'diagonal',
-        'bottom-left',
-    ],
+    tags: ['downward-pointing arrow in a square', 'box', 'south-west', 'diagonal', 'bottom-left'],
     Icon: SquareArrowLeftDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -2107,7 +2090,6 @@ icons.push({
     ],
     tags: [
         'Vertical Arrow',
-        'Flip Icons',
         'box',
         'swap',
         'exchange',
@@ -2308,8 +2290,8 @@ icons.push({
         'movement',
     ],
     tags: [
-        'arrow-direction',
-        'icon-transfer',
+        'arrow direction',
+        'transfer',
         'box',
         'swap',
         'exchange',
@@ -2358,7 +2340,7 @@ icons.push({
     ],
     tags: [
         'double down arrow',
-        'two-step action icon',
+        'two-step action',
         'circle',
         'two',
         'descend',
@@ -2435,7 +2417,7 @@ icons.push({
     ],
     tags: [
         'downward-pointing arrow',
-        'icon-arrow-down-circle',
+        'down arrow circle',
         'circle',
         'descend',
         'south',
@@ -2515,7 +2497,6 @@ icons.push({
     ],
     tags: [
         'left-circle-arrows',
-        'backward-gear',
         'circle',
         'two',
         'back',
@@ -2594,16 +2575,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: [
-        'circle-cross',
-        'stop-sign',
-        'circle',
-        'swap',
-        'exchange',
-        'switch',
-        'diagonal',
-        'cross',
-    ],
+    tags: ['circle', 'swap', 'exchange', 'switch', 'diagonal', 'cross'],
     Icon: RoundTransferDiagonalIcon as IconData['Icon'],
 })
 icons.push({
@@ -2744,7 +2716,7 @@ icons.push({
     ],
     tags: [
         'arrow-up-down',
-        'icon-sort',
+        'sort',
         'data-direction',
         'order',
         'organize',
@@ -2863,7 +2835,7 @@ icons.push({
         'movement',
     ],
     tags: [
-        'arrow-reflex',
+        'sort arrows',
         'reverse-arrows',
         'order',
         'organize',
@@ -2888,7 +2860,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: ['double-up', 'double-forward', 'circle', 'two', 'ascend', 'north', 'chevron', 'top'],
+    tags: ['double-up', 'circle', 'two', 'ascend', 'north', 'chevron', 'top'],
     Icon: RoundDoubleAltArrowUpIcon as IconData['Icon'],
 })
 icons.push({
@@ -2930,7 +2902,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: ['leftdown', 'downleft', 'south-west', 'diagonal', 'bottom-left'],
+    tags: ['left-down arrow', 'down-left arrow', 'south-west', 'diagonal', 'bottom-left'],
     Icon: ArrowLeftDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -3256,7 +3228,7 @@ icons.push({
         'control',
         'movement',
     ],
-    tags: ['checkmark', 'down arrow', 'descend', 'south', 'chevron', 'bottom'],
+    tags: ['down arrow', 'descend', 'south', 'chevron', 'bottom'],
     Icon: AltArrowDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -3307,16 +3279,7 @@ icons.push({
     name: 'map-point-wave',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: [
-        'Wave Icon',
-        'Navigation Point',
-        'pin',
-        'marker',
-        'location',
-        'here',
-        'destination',
-        'drop',
-    ],
+    tags: ['wave', 'navigation point', 'pin', 'marker', 'location', 'here', 'destination', 'drop'],
     Icon: MapPointWaveIcon as IconData['Icon'],
 })
 icons.push({
@@ -3464,7 +3427,7 @@ icons.push({
     name: 'map-arrow-right',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['play-button', 'navigation-arrow'],
+    tags: ['right arrow', 'navigation arrow'],
     Icon: MapArrowRightIcon as IconData['Icon'],
 })
 icons.push({
@@ -3506,7 +3469,7 @@ icons.push({
     name: 'route',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['rewind', 'reverse route', 'path', 'way', 'directions', 'journey', 'trip', 'road'],
+    tags: ['route', 'path', 'way', 'directions', 'journey', 'trip', 'road'],
     Icon: RouteIcon as IconData['Icon'],
 })
 icons.push({
@@ -3527,7 +3490,7 @@ icons.push({
     name: 'streets-navigation',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['network-ban', 'connection-blocked'],
+    tags: ['navigation', 'route blocked', 'map', 'direction', 'road'],
     Icon: StreetsNavigationIcon as IconData['Icon'],
 })
 icons.push({
@@ -3535,8 +3498,8 @@ icons.push({
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
     tags: [
-        'compass',
-        'directions',
+        'rotating marker',
+        'rotate',
         'navigation',
         'pin',
         'marker',
@@ -3558,7 +3521,7 @@ icons.push({
     name: 'signpost-2',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['compass', 'directions'],
+    tags: ['signpost', 'road sign', 'directions', 'wayfinding', 'navigation', 'route'],
     Icon: Signpost2Icon as IconData['Icon'],
 })
 icons.push({
@@ -3572,7 +3535,7 @@ icons.push({
     name: 'streets-map-point',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['navigation', 'compass', 'pin', 'marker', 'location', 'here', 'destination', 'drop'],
+    tags: ['map point', 'pin', 'marker', 'location', 'location unavailable', 'disabled location'],
     Icon: StreetsMapPointIcon as IconData['Icon'],
 })
 icons.push({
@@ -3614,7 +3577,7 @@ icons.push({
     name: 'routing-3',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
-    tags: ['arrow', 'ringroad'],
+    tags: ['route', 'path', 'directions', 'junction', 'arrows'],
     Icon: Routing3Icon as IconData['Icon'],
 })
 icons.push({
@@ -3667,17 +3630,7 @@ icons.push({
     name: 'music-note-4',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'musicalnotation',
-        'score',
-        'instrumentalguide',
-        'audio',
-        'sound',
-        'song',
-        'tune',
-        'listen',
-        'melody',
-    ],
+    tags: ['musical notation', 'score', 'audio', 'sound', 'song', 'tune', 'listen', 'melody'],
     Icon: MusicNote4Icon as IconData['Icon'],
 })
 icons.push({
@@ -3698,7 +3651,7 @@ icons.push({
     name: 'record-audio-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['microphone', 'recording device', 'save', 'capture', 'media', 'red-button'],
+    tags: ['record', 'recording', 'disc', 'audio', 'media'],
     Icon: RecordAudioCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -3712,7 +3665,7 @@ icons.push({
     name: 'record',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['data', 'database', 'save', 'capture', 'media', 'red-button'],
+    tags: ['record', 'recording', 'capture', 'media', 'record button'],
     Icon: RecordIcon as IconData['Icon'],
 })
 icons.push({
@@ -3726,14 +3679,14 @@ icons.push({
     name: 'gallery',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['Image', 'Icon', 'images', 'photos', 'album', 'collection', 'pictures'],
+    tags: ['image', 'images', 'photos', 'album', 'collection', 'pictures'],
     Icon: GalleryIcon as IconData['Icon'],
 })
 icons.push({
     name: 'microphone-2',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['microphone', 'speaker', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
+    tags: ['microphone', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
     Icon: Microphone2Icon as IconData['Icon'],
 })
 icons.push({
@@ -3747,7 +3700,7 @@ icons.push({
     name: 'volume-loud',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['speaker', 'loudness', 'noise', 'sound', 'audio', 'loud', 'quiet', 'level'],
+    tags: ['speaker', 'loudness', 'noise', 'sound', 'audio', 'loud', 'level'],
     Icon: VolumeLoudIcon as IconData['Icon'],
 })
 icons.push({
@@ -3761,7 +3714,7 @@ icons.push({
     name: 'rewind-5-seconds-forward',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['rewind', 'playback', 'back', 'previous', 'reverse', 'media', 'next', 'skip', 'advance'],
+    tags: ['fast-forward', 'playback', 'media', 'next', 'skip', 'advance'],
     Icon: Rewind5SecondsForwardIcon as IconData['Icon'],
 })
 icons.push({
@@ -3775,19 +3728,7 @@ icons.push({
     name: 'vinyl-record',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'record',
-        'vinyl',
-        'audio',
-        'sound',
-        'song',
-        'retro',
-        'dj',
-        'save',
-        'capture',
-        'media',
-        'red-button',
-    ],
+    tags: ['record', 'vinyl', 'audio', 'sound', 'song', 'retro', 'dj', 'media'],
     Icon: VinylRecordIcon as IconData['Icon'],
 })
 icons.push({
@@ -3826,7 +3767,7 @@ icons.push({
     name: 'soundwave-square',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['stop', 'power-off'],
+    tags: ['soundwave', 'waveform', 'equalizer', 'audio', 'sound', 'square'],
     Icon: SoundwaveSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -3847,7 +3788,7 @@ icons.push({
     name: 'volume-small',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['speaker', 'sound', 'audio level', 'audio', 'loud', 'quiet', 'level'],
+    tags: ['speaker', 'sound', 'audio level', 'audio', 'soft', 'quiet', 'low', 'level'],
     Icon: VolumeSmallIcon as IconData['Icon'],
 })
 icons.push({
@@ -3861,14 +3802,14 @@ icons.push({
     name: 'stop',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['traffic', 'sign'],
+    tags: ['stop', 'halt', 'media', 'player control', 'square'],
     Icon: StopIcon as IconData['Icon'],
 })
 icons.push({
     name: 'microphone-3',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['microphone', 'speaker', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
+    tags: ['microphone', 'audio', 'record', 'voice', 'sing', 'karaoke', 'mic'],
     Icon: Microphone3Icon as IconData['Icon'],
 })
 icons.push({
@@ -3876,7 +3817,7 @@ icons.push({
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: [
-        'Microphone Icon',
+        'microphone',
         'Voice Input Device',
         'Sound Equipment',
         'audio',
@@ -3920,14 +3861,14 @@ icons.push({
     name: 'soundwave-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['power', 'pause'],
+    tags: ['soundwave', 'waveform', 'equalizer', 'audio', 'sound', 'circle'],
     Icon: SoundwaveCircleIcon as IconData['Icon'],
 })
 icons.push({
     name: 'pause',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['play', 'start', 'stop', 'halt', 'wait', 'media'],
+    tags: ['pause', 'halt', 'wait', 'media', 'player control'],
     Icon: PauseIcon as IconData['Icon'],
 })
 icons.push({
@@ -3962,18 +3903,7 @@ icons.push({
     name: 'rewind-15-seconds-forward',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'rewind',
-        'playback',
-        'forward skip',
-        'back',
-        'previous',
-        'reverse',
-        'media',
-        'next',
-        'skip',
-        'advance',
-    ],
+    tags: ['fast-forward', 'playback', 'forward skip', 'media', 'next', 'skip', 'advance'],
     Icon: Rewind15SecondsForwardIcon as IconData['Icon'],
 })
 icons.push({
@@ -4020,24 +3950,14 @@ icons.push({
     name: 'rewind-15-seconds-back',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['rewind', 'reverse', 'fast forward', 'back', 'previous', 'media'],
+    tags: ['rewind', 'reverse', 'back', 'previous', 'media'],
     Icon: Rewind15SecondsBackIcon as IconData['Icon'],
 })
 icons.push({
     name: 'volume',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'speaker',
-        'speakernois',
-        'speakernoise',
-        'soundnoisy',
-        'sound',
-        'audio',
-        'loud',
-        'quiet',
-        'level',
-    ],
+    tags: ['speaker', 'sound', 'audio', 'quiet', 'level'],
     Icon: VolumeIcon as IconData['Icon'],
 })
 icons.push({
@@ -4051,17 +3971,7 @@ icons.push({
     name: 'rewind-forward',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'fastforward',
-        'playback',
-        'back',
-        'previous',
-        'reverse',
-        'media',
-        'next',
-        'skip',
-        'advance',
-    ],
+    tags: ['fast-forward', 'playback', 'media', 'next', 'skip', 'advance'],
     Icon: RewindForwardIcon as IconData['Icon'],
 })
 icons.push({
@@ -4136,14 +4046,14 @@ icons.push({
     name: 'rewind-back',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['rewind', 'fast-forward', 'double-fast-forward', 'back', 'previous', 'reverse', 'media'],
+    tags: ['rewind', 'back', 'previous', 'reverse', 'media'],
     Icon: RewindBackIcon as IconData['Icon'],
 })
 icons.push({
     name: 'upload-track-2',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['upload-video', 'record-audio'],
+    tags: ['upload', 'track', 'audio', 'music', 'sound'],
     Icon: UploadTrack2Icon as IconData['Icon'],
 })
 icons.push({
@@ -4152,12 +4062,11 @@ icons.push({
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: [
         'cross-volume-control',
-        'mute-icon',
+        'mute',
         'volume-off',
         'muted-sound',
         'sound',
         'audio',
-        'loud',
         'quiet',
         'level',
         'speaker',
@@ -4184,17 +4093,7 @@ icons.push({
     name: 'rewind-10-seconds-forward',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'rewind',
-        'fastforward',
-        'back',
-        'previous',
-        'reverse',
-        'media',
-        'next',
-        'skip',
-        'advance',
-    ],
+    tags: ['fast-forward', 'playback', 'media', 'next', 'skip', 'advance'],
     Icon: Rewind10SecondsForwardIcon as IconData['Icon'],
 })
 icons.push({
@@ -4334,7 +4233,7 @@ icons.push({
     name: 'pause-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['pause', 'stop', 'halt', 'wait', 'media'],
+    tags: ['pause', 'halt', 'wait', 'media'],
     Icon: PauseCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -4355,17 +4254,7 @@ icons.push({
     name: 'rewind-forward-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'play-forward',
-        'fastforward-circle',
-        'back',
-        'previous',
-        'reverse',
-        'media',
-        'next',
-        'skip',
-        'advance',
-    ],
+    tags: ['play-forward', 'fast-forward-circle', 'media', 'next', 'skip', 'advance'],
     Icon: RewindForwardCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -4455,30 +4344,21 @@ icons.push({
     name: 'camera-minimalistic',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['Camera', 'Capture', 'photo', 'picture', 'shoot', 'capture', 'image', 'lens'],
+    tags: ['camera', 'capture', 'photo', 'picture', 'shoot', 'image', 'lens'],
     Icon: CameraMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
     name: 'camera',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'Camera Icon',
-        'Photography Symbol',
-        'photo',
-        'picture',
-        'shoot',
-        'capture',
-        'image',
-        'lens',
-    ],
+    tags: ['camera', 'photography', 'photo', 'picture', 'shoot', 'capture', 'image', 'lens'],
     Icon: CameraIcon as IconData['Icon'],
 })
 icons.push({
     name: 'rewind-10-seconds-back',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['rewind', 'fastforward-rewind', 'back', 'previous', 'reverse', 'media'],
+    tags: ['rewind', 'back', 'previous', 'reverse', 'media'],
     Icon: Rewind10SecondsBackIcon as IconData['Icon'],
 })
 icons.push({
@@ -4492,7 +4372,7 @@ icons.push({
     name: 'shuffle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['playlist', 'shuffle', 'repeat', 'random', 'mix', 'order', 'media'],
+    tags: ['playlist', 'shuffle', 'random', 'mix', 'order', 'media'],
     Icon: ShuffleIcon as IconData['Icon'],
 })
 icons.push({
@@ -4506,21 +4386,21 @@ icons.push({
     name: 'to-pip',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['settings', 'icons', 'tool', 'gear'],
+    tags: ['picture-in-picture', 'pip', 'video', 'window', 'overlay'],
     Icon: ToPipIcon as IconData['Icon'],
 })
 icons.push({
     name: 'pip',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['fountain pen', 'inkwell'],
+    tags: ['picture-in-picture', 'pip', 'video', 'window', 'overlay'],
     Icon: PipIcon as IconData['Icon'],
 })
 icons.push({
     name: 'reel-2',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['film_reel', 'camera_film'],
+    tags: ['film reel', 'camera film'],
     Icon: Reel2Icon as IconData['Icon'],
 })
 icons.push({
@@ -4534,7 +4414,7 @@ icons.push({
     name: 'pip-2',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['pipicon', 'downloadicon'],
+    tags: ['picture-in-picture', 'pip', 'video overlay', 'floating window'],
     Icon: Pip2Icon as IconData['Icon'],
 })
 icons.push({
@@ -4562,36 +4442,28 @@ icons.push({
     name: 'quit-full-screen',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['full screen exit', 'screen resize toggle', 'maximize', 'expand', 'enlarge', 'display'],
+    tags: ['exit full screen', 'screen resize toggle', 'shrink', 'reduce', 'display'],
     Icon: QuitFullScreenIcon as IconData['Icon'],
 })
 icons.push({
     name: 'quit-full-screen-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: [
-        'full-screen-close',
-        'exit-video',
-        'screen-exit',
-        'maximize',
-        'expand',
-        'enlarge',
-        'display',
-    ],
+    tags: ['full-screen-close', 'exit-video', 'screen-exit', 'shrink', 'reduce', 'display'],
     Icon: QuitFullScreenCircleIcon as IconData['Icon'],
 })
 icons.push({
     name: 'quit-full-screen-square',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['square-border', 'screen-edge', 'maximize', 'expand', 'enlarge', 'display'],
+    tags: ['square-border', 'screen-edge', 'exit full screen', 'shrink', 'reduce', 'display'],
     Icon: QuitFullScreenSquareIcon as IconData['Icon'],
 })
 icons.push({
     name: 'full-screen-circle',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
-    tags: ['Circle Interface', 'Full-Screen Mode Icon', 'maximize', 'expand', 'enlarge', 'display'],
+    tags: ['Circle Interface', 'full-screen mode', 'maximize', 'expand', 'enlarge', 'display'],
     Icon: FullScreenCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -4725,9 +4597,9 @@ icons.push({
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
     tags: [
-        'CreditCard',
-        'Search',
-        'FinancialSearch',
+        'credit card',
+        'search',
+        'financial search',
         'credit',
         'debit',
         'bank',
@@ -4855,9 +4727,9 @@ icons.push({
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
     tags: [
-        'icon-banking',
-        'icon-finance',
-        'icon-wealth',
+        'banking',
+        'finance',
+        'wealth',
         'vault',
         'secure',
         'lock',
@@ -4871,14 +4743,14 @@ icons.push({
     name: 'safe-circle',
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
-    tags: ['circle-check', 'validation-mark'],
+    tags: ['safe', 'vault', 'security', 'combination lock', 'protection', 'circle'],
     Icon: SafeCircleIcon as IconData['Icon'],
 })
 icons.push({
     name: 'safe-2',
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
-    tags: ['security', 'protection'],
+    tags: ['safe', 'vault', 'security', 'protection', 'lock'],
     Icon: Safe2Icon as IconData['Icon'],
 })
 icons.push({
@@ -4936,16 +4808,7 @@ icons.push({
     name: 'money-bag',
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
-    tags: [
-        'financial briefcase',
-        'treasure chest',
-        'sack',
-        'wealth',
-        'robbery',
-        'rich',
-        'investment',
-        'stash',
-    ],
+    tags: ['money bag', 'sack', 'wealth', 'cash', 'savings', 'investment', 'finance'],
     Icon: MoneyBagIcon as IconData['Icon'],
 })
 icons.push({
@@ -4959,7 +4822,7 @@ icons.push({
     name: 'cash-out',
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
-    tags: ['deposit', 'transfer'],
+    tags: ['cash out', 'withdrawal', 'payout', 'money transfer'],
     Icon: CashOutIcon as IconData['Icon'],
 })
 icons.push({
@@ -5253,9 +5116,8 @@ icons.push({
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
     tags: [
-        'earcase',
-        'wirelesscarf',
-        'portableaudio',
+        'earbud case',
+        'portable audio',
         'earphones',
         'audio',
         'music',
@@ -5367,15 +5229,14 @@ icons.push({
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
     tags: [
-        'Earbuds',
-        'Wireless Earphones',
+        'right earbud',
+        'wireless earphones',
         'earphones',
         'audio',
         'music',
         'wireless',
         'headphones',
-        'earbuds',
-        'R',
+        'right',
     ],
     Icon: AirbudsRightIcon as IconData['Icon'],
 })
@@ -5402,15 +5263,14 @@ icons.push({
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
     tags: [
-        'AirBuds',
-        'Earbuds',
+        'left earbud',
+        'earbuds',
         'earphones',
         'audio',
         'music',
         'wireless',
         'headphones',
-        'earbuds',
-        'L',
+        'left',
     ],
     Icon: AirbudsLeftIcon as IconData['Icon'],
 })
@@ -5516,7 +5376,7 @@ icons.push({
     name: 'boombox',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
-    tags: ['luggage', 'speaker', 'radio', 'stereo', 'music', 'audio', 'speakers', 'retro', 'tape'],
+    tags: ['speaker', 'radio', 'stereo', 'music', 'audio', 'speakers', 'retro', 'tape'],
     Icon: BoomboxIcon as IconData['Icon'],
 })
 icons.push({
@@ -5589,7 +5449,7 @@ icons.push({
     name: 'bluetooth',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
-    tags: ['Bluetooth', 'Icon', 'wireless', 'connection', 'pairing', 'network', 'device'],
+    tags: ['Bluetooth', 'wireless', 'connection', 'pairing', 'network', 'device'],
     Icon: BluetoothIcon as IconData['Icon'],
 })
 icons.push({
@@ -5719,7 +5579,7 @@ icons.push({
     name: 'radio',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
-    tags: ['radioreceiver', 'portableradio'],
+    tags: ['radio receiver', 'portable radio'],
     Icon: RadioIcon as IconData['Icon'],
 })
 icons.push({
@@ -5729,7 +5589,7 @@ icons.push({
     tags: [
         'cinema',
         'projecting',
-        'screen-projecter',
+        'screen projector',
         'presentation',
         'display',
         'screen',
@@ -5791,7 +5651,7 @@ icons.push({
     name: 'flash-drive',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
-    tags: ['USB', 'flash drive', 'usb', 'storage', 'memory', 'data', 'pen-drive'],
+    tags: ['USB', 'flash drive', 'storage', 'memory', 'data', 'pen-drive'],
     Icon: FlashDriveIcon as IconData['Icon'],
 })
 icons.push({
@@ -5872,7 +5732,16 @@ icons.push({
     name: 'devices',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
-    tags: ['database', 'documentation', 'phone', 'tablet', 'responsive', 'screens', 'multiple'],
+    tags: [
+        'devices',
+        'phone',
+        'tablet',
+        'responsive',
+        'screens',
+        'multiple',
+        'electronics',
+        'hardware',
+    ],
     Icon: DevicesIcon as IconData['Icon'],
 })
 icons.push({
@@ -5902,7 +5771,7 @@ icons.push({
     name: 'clouds',
     category: 'weather' as Category,
     categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
-    tags: ['Cloud Icon', 'Weather Symbol'],
+    tags: ['cloud', 'weather', 'sky'],
     Icon: CloudsIcon as IconData['Icon'],
 })
 icons.push({
@@ -5962,7 +5831,7 @@ icons.push({
     name: 'cloud-plus',
     category: 'weather' as Category,
     categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
-    tags: ['Cloud', 'Plus', 'Digital Storage', 'sky', 'overcast', 'weather', 'atmosphere'],
+    tags: ['cloud', 'plus', 'add', 'sky', 'overcast', 'weather', 'atmosphere'],
     Icon: CloudPlusIcon as IconData['Icon'],
 })
 icons.push({
@@ -6075,7 +5944,6 @@ icons.push({
     categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
     tags: [
         'minus cloud',
-        'decrease temperature',
         'remove',
         'delete',
         'subtract',
@@ -6247,7 +6115,7 @@ icons.push({
     name: 'wind',
     category: 'weather' as Category,
     categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
-    tags: ['wind symbol', 'airplane tail', 'weather symbol', 'breeze', 'blow', 'air', 'gale'],
+    tags: ['wind symbol', 'weather symbol', 'breeze', 'blow', 'air', 'gale'],
     Icon: WindIcon as IconData['Icon'],
 })
 icons.push({
@@ -6296,17 +6164,7 @@ icons.push({
     name: 'file-text',
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
-    tags: [
-        'Document',
-        'File Icon',
-        'document',
-        'page',
-        'paper',
-        'notes',
-        'lines',
-        'writing',
-        'content',
-    ],
+    tags: ['document', 'file', 'page', 'paper', 'notes', 'lines', 'writing', 'content'],
     Icon: FileTextIcon as IconData['Icon'],
 })
 icons.push({
@@ -6327,7 +6185,7 @@ icons.push({
     name: 'file-right',
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
-    tags: ['document', 'copy', 'download', 'page', 'paper', 'arrow-right', 'export', 'forward'],
+    tags: ['document', 'page', 'paper', 'arrow-right', 'export', 'forward'],
     Icon: FileRightIcon as IconData['Icon'],
 })
 icons.push({
@@ -6342,7 +6200,6 @@ icons.push({
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
     tags: [
-        'file-download',
         'file-corrupt',
         'document-ruined',
         'document',
@@ -6369,7 +6226,6 @@ icons.push({
     tags: [
         'delete-file',
         'file-xmark',
-        'trash-icon',
         'document',
         'page',
         'paper',
@@ -6411,15 +6267,15 @@ icons.push({
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
     tags: [
-        'Compression',
-        'Bundle',
+        'compression',
+        'bundle',
         'document',
         'page',
         'paper',
         'archive',
         'compressed',
         'zipper',
-        'bundle',
+        'archive bundle',
     ],
     origin: 'upstream' as const,
     deprecatedAliases: [
@@ -6512,17 +6368,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: [
-        'Male Symbol',
-        'Gender Icon',
-        'mars',
-        'male',
-        'gender',
-        'symbol',
-        'masculine',
-        'boy',
-        'man',
-    ],
+    tags: ['Male Symbol', 'mars', 'male', 'gender', 'symbol', 'masculine', 'boy', 'man'],
     Icon: MenIcon as IconData['Icon'],
 })
 icons.push({
@@ -6593,17 +6439,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: [
-        'Female Symbol',
-        'Gender Icon',
-        'venus',
-        'female',
-        'gender',
-        'symbol',
-        'feminine',
-        'girl',
-        'woman',
-    ],
+    tags: ['Female Symbol', 'venus', 'female', 'gender', 'symbol', 'feminine', 'girl', 'woman'],
     Icon: WomenIcon as IconData['Icon'],
 })
 icons.push({
@@ -6620,7 +6456,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: ['satellite', 'spacecraft', 'saturn', 'rings', 'orbit', 'sphere', 'globe'],
+    tags: ['saturn', 'rings', 'orbit', 'sphere', 'globe'],
     Icon: Planet2Icon as IconData['Icon'],
 })
 icons.push({
@@ -6682,7 +6518,6 @@ icons.push({
     ],
     tags: [
         'launch',
-        'ship',
         'spaceship',
         'shuttle',
         'startup',
@@ -6779,7 +6614,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: ['Saturn', 'Ringed Planet', 'mars', 'venus', 'sphere', 'globe', 'surface', 'crater'],
+    tags: ['planet', 'gas giant', 'jupiter', 'sphere', 'globe', 'surface', 'stripes'],
     Icon: Planet4Icon as IconData['Icon'],
 })
 icons.push({
@@ -6949,17 +6784,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: [
-        'star',
-        'satellite',
-        'sparkle',
-        'shine',
-        'twinkle',
-        'favorite',
-        'bookmark',
-        'rating',
-        'magic',
-    ],
+    tags: ['star', 'sun', 'sparkle', 'shine', 'twinkle', 'favorite', 'bookmark', 'rating', 'magic'],
     Icon: Star2Icon as IconData['Icon'],
 })
 icons.push({
@@ -7112,7 +6937,6 @@ icons.push({
         'saucer',
         'extraterrestrial',
         'martian',
-        'abduction',
         'flying-saucer',
         'sci-fi',
     ],
@@ -7191,16 +7015,7 @@ icons.push({
         'exploration',
         'outer-space',
     ],
-    tags: [
-        'atomic',
-        'atomistic',
-        'orbit',
-        'saturn-star',
-        'planetary-star',
-        'magic',
-        'rotation',
-        'vortex',
-    ],
+    tags: ['star', 'orbit', 'rings', 'planetary star', 'magic', 'rotation'],
     Icon: StarRingsIcon as IconData['Icon'],
 })
 icons.push({
@@ -7218,15 +7033,14 @@ icons.push({
         'outer-space',
     ],
     tags: [
-        'astromech',
-        'robotic',
+        'star',
         'sparkle',
         'shine',
         'magic',
         'favorite',
         'rating',
-        'celestial-body',
-        'angular-star',
+        'celestial body',
+        'angular star',
     ],
     Icon: StarAngleIcon as IconData['Icon'],
 })
@@ -7253,7 +7067,6 @@ icons.push({
         'extraterrestrial',
         'flying-saucer',
         'sci-fi',
-        'abduction',
     ],
     Icon: Ufo3Icon as IconData['Icon'],
 })
@@ -7261,7 +7074,7 @@ icons.push({
     name: 'folder',
     category: 'folders' as Category,
     categoryTags: ['folders', 'directories', 'organization', 'storage'],
-    tags: ['directory', 'file Cabinet', 'binder', 'organize', 'files'],
+    tags: ['directory', 'file cabinet', 'binder', 'organize', 'files'],
     Icon: FolderIcon as IconData['Icon'],
 })
 icons.push({
@@ -7306,23 +7119,14 @@ icons.push({
     name: 'folder-error',
     category: 'folders' as Category,
     categoryTags: ['folders', 'directories', 'organization', 'storage'],
-    tags: [
-        'delete-folder',
-        'error-folder',
-        'directory',
-        'cross',
-        'x',
-        'delete',
-        'cancel',
-        'invalid',
-    ],
+    tags: ['error-folder', 'directory', 'cross', 'x', 'cancel', 'invalid'],
     Icon: FolderErrorIcon as IconData['Icon'],
 })
 icons.push({
     name: 'remove-folder',
     category: 'folders' as Category,
     categoryTags: ['folders', 'directories', 'organization', 'storage'],
-    tags: ['delete-folder', 'trash-icon', 'directory', 'minus', 'delete', 'subtract', 'remove'],
+    tags: ['delete-folder', 'directory', 'minus', 'delete', 'subtract', 'remove'],
     Icon: RemoveFolderIcon as IconData['Icon'],
 })
 icons.push({
@@ -7353,7 +7157,7 @@ icons.push({
     categoryTags: ['folders', 'directories', 'organization', 'storage'],
     tags: [
         'bookmarked folder',
-        'favourited file',
+        'favorite folder',
         'directory',
         'ribbon',
         'saved',
@@ -7418,7 +7222,7 @@ icons.push({
     name: 'expressionless-circle',
     category: 'faces' as Category,
     categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
-    tags: ['neutral-face', 'smiley-circle', 'face', 'emoji', 'neutral', 'bored', 'flat', 'circle'],
+    tags: ['neutral-face', 'face', 'emoji', 'neutral', 'bored', 'flat', 'circle'],
     Icon: ExpressionlessCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -7446,16 +7250,7 @@ icons.push({
     name: 'expressionless-square',
     category: 'faces' as Category,
     categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
-    tags: [
-        'square face',
-        'expressionless icon',
-        'face',
-        'emoji',
-        'neutral',
-        'bored',
-        'flat',
-        'box',
-    ],
+    tags: ['square face', 'expressionless', 'face', 'emoji', 'neutral', 'bored', 'flat', 'box'],
     Icon: ExpressionlessSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -7493,7 +7288,7 @@ icons.push({
     name: 'sticker-square',
     category: 'faces' as Category,
     categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
-    tags: ['document', 'note', 'sticker', 'peel', 'label', 'decal', 'box'],
+    tags: ['sticker', 'peel', 'label', 'decal', 'square', 'box'],
     Icon: StickerSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -7579,7 +7374,7 @@ icons.push({
     name: 'sticker-circle',
     category: 'faces' as Category,
     categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
-    tags: ['Sticker', 'Round sticker', 'sticker', 'peel', 'label', 'decal', 'circle'],
+    tags: ['sticker', 'round sticker', 'peel', 'label', 'decal', 'circle'],
     Icon: StickerCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -7588,7 +7383,7 @@ icons.push({
     categoryTags: ['faces', 'emotions', 'stickers', 'emoji', 'expression', 'reaction'],
     tags: [
         'resting-face',
-        'dreamer-icon',
+        'dreamer',
         'slumber-sign',
         'yawning-mascot',
         'face',
@@ -7685,7 +7480,7 @@ icons.push({
     name: 'skateboard',
     category: 'sports' as Category,
     categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
-    tags: ['Skate', 'Board', 'skater', 'board', 'extreme', 'ride'],
+    tags: ['skateboard', 'skater', 'board', 'extreme', 'ride'],
     Icon: SkateboardIcon as IconData['Icon'],
 })
 icons.push({
@@ -7914,7 +7709,7 @@ icons.push({
 icons.push({
     name: 'body-shape-minimalistic',
     category: 'sports' as Category,
-    categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
+    categoryTags: ['fashion', 'clothing', 'apparel', 'garment', 'body'],
     tags: ['underwear', 'lingerie'],
     Icon: BodyShapeMinimalisticIcon as IconData['Icon'],
 })
@@ -7977,7 +7772,7 @@ icons.push({
     name: 'tennis-2',
     category: 'sports' as Category,
     categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
-    tags: ['ball', 'golf', 'game', 'match', 'play', 'court', 'racket', 'serve'],
+    tags: ['tennis ball', 'ball', 'game', 'match', 'play', 'court', 'racket', 'serve'],
     Icon: Tennis2Icon as IconData['Icon'],
 })
 icons.push({
@@ -7998,7 +7793,7 @@ icons.push({
     name: 'football',
     category: 'sports' as Category,
     categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
-    tags: ['soccer ball', 'footbal', 'ball', 'game', 'match', 'play', 'team', 'pitch', 'soccer'],
+    tags: ['soccer ball', 'football', 'ball', 'game', 'match', 'play', 'team', 'pitch', 'soccer'],
     Icon: FootballIcon as IconData['Icon'],
 })
 icons.push({
@@ -8019,23 +7814,13 @@ icons.push({
     name: 'rugby',
     category: 'sports' as Category,
     categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
-    tags: [
-        'football',
-        'ruggery ball',
-        'ball',
-        'game',
-        'match',
-        'play',
-        'team',
-        'pitch',
-        'american-football',
-    ],
+    tags: ['rugby ball', 'ball', 'game', 'match', 'play', 'team', 'pitch'],
     Icon: RugbyIcon as IconData['Icon'],
 })
 icons.push({
     name: 'body-shape',
     category: 'sports' as Category,
-    categoryTags: ['fitness', 'exercise', 'activity', 'game', 'athletics', 'workout'],
+    categoryTags: ['fashion', 'clothing', 'apparel', 'garment', 'body'],
     tags: ['underwear silhouette', 'bodysuit outline'],
     Icon: BodyShapeIcon as IconData['Icon'],
 })
@@ -8052,7 +7837,7 @@ icons.push({
     categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
     tags: [
         'magnifying glass zoom in',
-        'icon search plus',
+        'search plus',
         'find',
         'glass',
         'look',
@@ -8260,7 +8045,7 @@ icons.push({
     categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
     tags: [
         'zoom out magnifier',
-        'decrease zoom icon',
+        'decrease zoom',
         'find',
         'glass',
         'look',
@@ -8281,7 +8066,7 @@ icons.push({
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: [
         'round clock',
-        'blue circle timer',
+        'circle timer',
         'time',
         'hour',
         'minute',
@@ -8475,7 +8260,7 @@ icons.push({
     tags: [
         'datebook',
         'appointment',
-        ' scheduler',
+        'scheduler',
         'date',
         'month',
         'day',
@@ -8492,7 +8277,6 @@ icons.push({
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: [
         'pause alarm',
-        'stop clock',
         'timer pause',
         'time',
         'hour',
@@ -8534,17 +8318,7 @@ icons.push({
     name: 'calendar-date',
     category: 'time' as Category,
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
-    tags: [
-        'Date icon',
-        'Calendar date',
-        'date',
-        'month',
-        'day',
-        'schedule',
-        'event',
-        'plan',
-        'agenda',
-    ],
+    tags: ['Calendar date', 'date', 'month', 'day', 'schedule', 'event', 'plan', 'agenda'],
     Icon: CalendarDateIcon as IconData['Icon'],
 })
 icons.push({
@@ -8601,7 +8375,7 @@ icons.push({
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: [
         'wristwatch',
-        'clockround',
+        'clock round',
         'time',
         'hour',
         'minute',
@@ -8696,16 +8470,7 @@ icons.push({
     name: 'list-heart',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: [
-        'heart list',
-        'love checklist',
-        'love',
-        'romance',
-        'favorite',
-        'passion',
-        'like',
-        'emotion',
-    ],
+    tags: ['heart list', 'love', 'romance', 'favorite', 'passion', 'like', 'emotion'],
     Icon: ListHeartIcon as IconData['Icon'],
 })
 icons.push({
@@ -8743,7 +8508,7 @@ icons.push({
     name: 'list-check-minimalistic',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['checkmark', 'minimalist', 'icon'],
+    tags: ['checkmark', 'checklist', 'task-list', 'minimalist'],
     Icon: ListCheckMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -8757,7 +8522,7 @@ icons.push({
     name: 'list-cross-minimalistic',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['minimalist', 'iconography', 'signifier'],
+    tags: ['list', 'cross', 'cancel', 'remove', 'minimalist'],
     Icon: ListCrossMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -8785,14 +8550,14 @@ icons.push({
     name: 'list-arrow-up',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['Up Arrow', 'List Icon'],
+    tags: ['Up Arrow', 'list'],
     Icon: ListArrowUpIcon as IconData['Icon'],
 })
 icons.push({
     name: 'list-down',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['checklist', 'menu', 'options'],
+    tags: ['list', 'menu', 'options', 'down arrow'],
     Icon: ListDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -8806,21 +8571,21 @@ icons.push({
     name: 'list-up-minimalistic',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['three-lines', 'menu-symbol'],
+    tags: ['three-lines', 'menu'],
     Icon: ListUpMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
     name: 'list-arrow-down',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['download', 'icon'],
+    tags: ['list', 'down arrow', 'download'],
     Icon: ListArrowDownIcon as IconData['Icon'],
 })
 icons.push({
     name: 'list-arrow-down-minimalistic',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['arrow', 'downwards arrow', 'list symbol'],
+    tags: ['arrow', 'downwards arrow', 'list'],
     Icon: ListArrowDownMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -8834,7 +8599,7 @@ icons.push({
     name: 'bill-2',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
-    tags: ['balance', 'scale'],
+    tags: ['bill', 'receipt', 'invoice', 'document', 'paper'],
     Icon: Bill2Icon as IconData['Icon'],
 })
 icons.push({
@@ -8904,14 +8669,14 @@ icons.push({
     name: 'add-circle',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['plus-circle', 'addition', 'symbol-addition', 'plus', 'new', 'create', 'insert'],
+    tags: ['plus-circle', 'addition', 'addition symbol', 'plus', 'new', 'create', 'insert'],
     Icon: AddCircleIcon as IconData['Icon'],
 })
 icons.push({
     name: 'question-circle',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['query', 'symbol-question', 'help', 'ask', 'unknown', 'faq', 'support'],
+    tags: ['query', 'question symbol', 'help', 'ask', 'unknown', 'faq', 'support'],
     Icon: QuestionCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -8976,7 +8741,7 @@ icons.push({
     name: 'add-square',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['plus square', 'square plus', 'input icon', 'plus', 'new', 'create', 'insert'],
+    tags: ['plus square', 'square plus', 'input', 'plus', 'new', 'create', 'insert'],
     Icon: AddSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -9026,14 +8791,14 @@ icons.push({
     name: 'revote',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['Checkmark Circle', 'Verification Mark'],
+    tags: ['revote', 'checkmark', 'retry', 'resubmit', 'return', 'change vote'],
     Icon: RevoteIcon as IconData['Icon'],
 })
 icons.push({
     name: 'menu-dots',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['dots', 'icon'],
+    tags: ['dots'],
     Icon: MenuDotsIcon as IconData['Icon'],
 })
 icons.push({
@@ -9093,7 +8858,7 @@ icons.push({
     name: 'home-2',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['house icon', 'dwelling symbol', 'house', 'main', 'start', 'dashboard'],
+    tags: ['dwelling symbol', 'house', 'main', 'start', 'dashboard'],
     Icon: Home2Icon as IconData['Icon'],
 })
 icons.push({
@@ -9268,7 +9033,7 @@ icons.push({
     name: 'traffic',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['traffic_sign', 'street_traffic'],
+    tags: ['traffic sign', 'street traffic'],
     Icon: TrafficIcon as IconData['Icon'],
 })
 icons.push({
@@ -9331,7 +9096,7 @@ icons.push({
     name: 'trash-bin-minimalistic-2',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['pot', 'cooking-pot', 'delete', 'remove', 'garbage', 'bin', 'recycle'],
+    tags: ['delete', 'remove', 'garbage', 'bin', 'recycle'],
     Icon: TrashBinMinimalistic2Icon as IconData['Icon'],
 })
 icons.push({
@@ -9387,7 +9152,7 @@ icons.push({
     name: 'subtitles',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['card', 'chip card', 'credit card', 'payment method'],
+    tags: ['subtitle', 'captions', 'closed captions', 'text', 'dialogue'],
     Icon: SubtitlesIcon as IconData['Icon'],
 })
 icons.push({
@@ -9464,7 +9229,7 @@ icons.push({
     name: 'figma',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['fiba', 'fiba logo'],
+    tags: ['figma', 'figma logo', 'design tool', 'interface design'],
     Icon: FigmaIcon as IconData['Icon'],
 })
 icons.push({
@@ -9478,7 +9243,7 @@ icons.push({
     name: 'balloon',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['balloon', 'lightbulb'],
+    tags: ['balloon'],
     Icon: BalloonIcon as IconData['Icon'],
 })
 icons.push({
@@ -9492,7 +9257,7 @@ icons.push({
     name: 'flag',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['signal', 'connectivity', 'report', 'country', 'mark', 'banner', 'milestone'],
+    tags: ['flag', 'report', 'country', 'mark', 'banner', 'milestone'],
     Icon: FlagIcon as IconData['Icon'],
 })
 icons.push({
@@ -9610,7 +9375,7 @@ icons.push({
     name: 'ghost',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['skeeter', 'specter', 'spooky', 'scary', 'halloween', 'phantom'],
+    tags: ['ghost', 'specter', 'spooky', 'scary', 'halloween', 'phantom'],
     Icon: GhostIcon as IconData['Icon'],
 })
 icons.push({
@@ -9729,14 +9494,14 @@ icons.push({
     name: 'delivery',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['cart', 'shopping'],
+    tags: ['hand truck', 'dolly', 'delivery', 'shipping', 'package', 'transport'],
     Icon: DeliveryIcon as IconData['Icon'],
 })
 icons.push({
     name: 'feed',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['file', 'folder'],
+    tags: ['feed', 'news', 'content', 'window', 'panel'],
     Icon: FeedIcon as IconData['Icon'],
 })
 icons.push({
@@ -9787,7 +9552,7 @@ icons.push({
     name: 'flashlight-on',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['lamp', 'lightbulb'],
+    tags: ['flashlight', 'torch', 'lamp', 'light'],
     Icon: FlashlightOnIcon as IconData['Icon'],
 })
 icons.push({
@@ -9808,7 +9573,7 @@ icons.push({
     name: 'magnet',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['magnetic', 'retractable', 'suspension'],
+    tags: ['magnet', 'magnetic', 'attraction', 'force'],
     Icon: MagnetIcon as IconData['Icon'],
 })
 icons.push({
@@ -9857,7 +9622,7 @@ icons.push({
     name: 'skirt',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['female skirt', 'clothing item', 'underwear garment'],
+    tags: ['skirt', 'clothing', 'fashion', 'garment'],
     Icon: SkirtIcon as IconData['Icon'],
 })
 icons.push({
@@ -9899,7 +9664,7 @@ icons.push({
     name: 'mask-sad',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['sad', 'emoticon'],
+    tags: ['sad', 'sad face', 'emoticon'],
     Icon: MaskSadIcon as IconData['Icon'],
 })
 icons.push({
@@ -9913,7 +9678,7 @@ icons.push({
     name: 'hanger',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
-    tags: ['clothing hanger', 'wardrobe accessory', 'hangar hook'],
+    tags: ['clothing hanger', 'wardrobe accessory', 'hanger hook'],
     Icon: HangerIcon as IconData['Icon'],
 })
 icons.push({
@@ -9952,7 +9717,7 @@ icons.push({
     ],
     tags: [
         'phone-call-cancel',
-        'call-cancel-icon',
+        'call cancel',
         'call-cancel-sign',
         'hang-up',
         'decline',
@@ -10421,7 +10186,7 @@ icons.push({
         'audio',
         'dial',
     ],
-    tags: ['hands-up', 'stop-sign', 'hang-up', 'finish', 'stop', 'disconnect', 'receiver-down'],
+    tags: ['hang-up', 'finish', 'stop', 'disconnect', 'receiver-down'],
     Icon: EndCallIcon as IconData['Icon'],
 })
 icons.push({
@@ -10463,16 +10228,7 @@ icons.push({
     name: 'bacteria',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'microorganism',
-        'pathogen',
-        'germs',
-        'microbe',
-        'virus',
-        'infection',
-        'illness',
-        'microscope',
-    ],
+    tags: ['microorganism', 'pathogen', 'germs', 'microbe', 'virus', 'infection', 'illness'],
     Icon: BacteriaIcon as IconData['Icon'],
 })
 icons.push({
@@ -10486,15 +10242,7 @@ icons.push({
     name: 'syringe',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'medical syringe',
-        'injection needle',
-        'injection',
-        'vaccine',
-        'shot',
-        'needle',
-        'blood',
-    ],
+    tags: ['medical syringe', 'injection needle', 'injection', 'vaccine', 'shot', 'needle'],
     Icon: SyringeIcon as IconData['Icon'],
 })
 icons.push({
@@ -10577,15 +10325,7 @@ icons.push({
     name: 'bone',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'dog bone',
-        'veterinary symbol',
-        'skeleton',
-        'orthopedics',
-        'calcium',
-        'anatomy',
-        'fracture',
-    ],
+    tags: ['bone', 'skeleton', 'orthopedics', 'calcium', 'anatomy', 'fracture'],
     Icon: BoneIcon as IconData['Icon'],
 })
 icons.push({
@@ -10621,7 +10361,6 @@ icons.push({
         'lab',
         'flask',
         'experiment',
-        'blood',
     ],
     Icon: TestTubeIcon as IconData['Icon'],
 })
@@ -10676,37 +10415,14 @@ icons.push({
     name: 'heart-pulse',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'Heartbeat',
-        'Pulse',
-        'heartbeat',
-        'ecg',
-        'cardiology',
-        'lifeline',
-        'rate',
-        'vital',
-        'love',
-        'romance',
-        'favorite',
-        'passion',
-        'like',
-        'emotion',
-    ],
+    tags: ['heartbeat', 'pulse', 'ecg', 'cardiology', 'lifeline', 'heart rate', 'vital'],
     Icon: HeartPulseIcon as IconData['Icon'],
 })
 icons.push({
     name: 'dropper-minimalistic',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'blood-dropper',
-        'medical-device',
-        'pipette',
-        'liquid',
-        'extract',
-        'chemistry',
-        'eye-drops',
-    ],
+    tags: ['medical dropper', 'pipette', 'liquid', 'extract', 'chemistry', 'eye-drops'],
     Icon: DropperMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -10728,22 +10444,7 @@ icons.push({
     name: 'heart-pulse-2',
     category: 'medicine' as Category,
     categoryTags: ['health', 'medical', 'doctor', 'hospital', 'clinic', 'pharmacy', 'care'],
-    tags: [
-        'pulse-line',
-        'heartbeat',
-        'beating-heart',
-        'ecg',
-        'cardiology',
-        'lifeline',
-        'rate',
-        'vital',
-        'love',
-        'romance',
-        'favorite',
-        'passion',
-        'like',
-        'emotion',
-    ],
+    tags: ['pulse-line', 'heartbeat', 'ecg', 'cardiology', 'lifeline', 'heart rate', 'vital'],
     Icon: HeartPulse2Icon as IconData['Icon'],
 })
 icons.push({
@@ -10768,7 +10469,6 @@ icons.push({
     tags: [
         'cardiogram',
         'electrocardiogram',
-        'ECG',
         'waveform',
         'heart beat',
         'heartbeat',
@@ -10845,7 +10545,16 @@ icons.push({
     name: 'conditioner-2',
     category: 'home' as Category,
     categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
-    tags: ['bottle', 'haircare', 'ac', 'air-conditioning', 'cooling', 'climate', 'appliance'],
+    tags: [
+        'air conditioner',
+        'climate control',
+        'ac',
+        'air-conditioning',
+        'cooling',
+        'climate',
+        'appliance',
+        'breeze',
+    ],
     Icon: Conditioner2Icon as IconData['Icon'],
 })
 icons.push({
@@ -10903,7 +10612,7 @@ icons.push({
     name: 'remote-controller-2',
     category: 'home' as Category,
     categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
-    tags: ['speaker', 'audio', 'tv', 'clicker', 'control', 'device', 'buttons', 'alt'],
+    tags: ['remote', 'controller', 'tv', 'clicker', 'control', 'device', 'buttons', 'alt'],
     Icon: RemoteController2Icon as IconData['Icon'],
 })
 icons.push({
@@ -10953,7 +10662,7 @@ icons.push({
     name: 'bed',
     category: 'home' as Category,
     categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
-    tags: ['couch', 'sofa bed', 'sleep', 'rest', 'furniture', 'bedroom', 'mattress'],
+    tags: ['bed', 'sleep', 'rest', 'furniture', 'bedroom', 'mattress'],
     Icon: BedIcon as IconData['Icon'],
 })
 icons.push({
@@ -11003,7 +10712,7 @@ icons.push({
     name: 'vanity',
     category: 'home' as Category,
     categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
-    tags: ['wall', 'screen', 'dressing-table', 'mirror', 'makeup', 'desk', 'furniture'],
+    tags: ['dressing table', 'mirror', 'makeup', 'desk', 'furniture'],
     Icon: VanityIcon as IconData['Icon'],
 })
 icons.push({
@@ -11017,7 +10726,7 @@ icons.push({
     name: 'armchair',
     category: 'home' as Category,
     categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
-    tags: ['Chair', 'Seating', 'chair', 'seat', 'furniture', 'lounge', 'single-sofa'],
+    tags: ['chair', 'seating', 'seat', 'furniture', 'lounge', 'single-sofa'],
     Icon: ArmchairIcon as IconData['Icon'],
 })
 icons.push({
@@ -11067,7 +10776,7 @@ icons.push({
 icons.push({
     name: 'volume-knob',
     category: 'home' as Category,
-    categoryTags: ['home', 'furniture', 'house', 'interior', 'living', 'appliances'],
+    categoryTags: ['audio', 'media', 'control', 'interface', 'settings'],
     tags: ['knob', 'control knob', 'dial', 'control', 'audio', 'sound', 'level', 'turn'],
     Icon: VolumeKnobIcon as IconData['Icon'],
 })
@@ -11153,33 +10862,14 @@ icons.push({
     name: 'sidebar-minimalistic',
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
-    tags: [
-        'Minimalist Sidebar',
-        'Icon for Menu',
-        'layout',
-        'ui',
-        'interface',
-        'panel',
-        'menu',
-        'simple',
-    ],
+    tags: ['Minimalist Sidebar', 'layout', 'ui', 'interface', 'panel', 'menu', 'simple'],
     Icon: SidebarMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
     name: 'sidebar',
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
-    tags: [
-        'bookshelf',
-        'file cabinet',
-        'library',
-        'layout',
-        'ui',
-        'interface',
-        'panel',
-        'menu',
-        'navigation',
-    ],
+    tags: ['sidebar', 'layout', 'ui', 'interface', 'panel', 'menu', 'navigation'],
     Icon: SidebarIcon as IconData['Icon'],
 })
 icons.push({
@@ -11267,8 +10957,8 @@ icons.push({
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
     tags: [
-        ' broadcasting signal',
-        ' broadcast device',
+        'broadcasting signal',
+        'broadcast device',
         'broadcast',
         'stream',
         'display',
@@ -11282,7 +10972,7 @@ icons.push({
     name: 'translation-2',
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
-    tags: ['translation', 'translator'],
+    tags: ['radio signal', 'wireless', 'broadcast', 'connection', 'network', 'communication'],
     Icon: Translation2Icon as IconData['Icon'],
 })
 icons.push({
@@ -11305,7 +10995,7 @@ icons.push({
     name: 'code-circle',
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
-    tags: ['Programming', 'Code', 'development', 'programming', 'script', 'brackets', 'circle'],
+    tags: ['programming', 'code', 'development', 'script', 'brackets', 'circle'],
     Icon: CodeCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -11328,15 +11018,13 @@ icons.push({
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
     tags: [
-        'network',
-        'signal',
+        'wireless signal',
         'wireless',
-        'language',
-        'locale',
-        'international',
-        'globe',
-        'switch',
-        'multilingual',
+        'signal',
+        'broadcast',
+        'connection',
+        'network',
+        'communication',
     ],
     Icon: TranslationIcon as IconData['Icon'],
 })
@@ -11445,7 +11133,7 @@ icons.push({
     name: 'command',
     category: 'it' as Category,
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
-    tags: ['crosshair', 'target', 'cmd', 'mac', 'keyboard', 'key', 'apple', 'loop'],
+    tags: ['command', 'cmd', 'keyboard', 'key', 'shortcut', 'mac'],
     Icon: CommandIcon as IconData['Icon'],
 })
 icons.push({
@@ -11454,7 +11142,7 @@ icons.push({
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
     tags: [
         'minimalist bug',
-        'simplified bug symbol',
+        'simplified bug',
         'insect',
         'error',
         'issue',
@@ -11484,7 +11172,7 @@ icons.push({
     categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
     tags: [
         'hash tag',
-        'chat icon',
+        'chat',
         'pound',
         'number-sign',
         'tag',
@@ -11553,7 +11241,7 @@ icons.push({
     name: 'widget-4',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
-    tags: ['eye', 'monitor', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+    tags: ['widget', 'dashboard', 'apps', 'grid', 'modules', 'layout', 'panels'],
     Icon: Widget4Icon as IconData['Icon'],
 })
 icons.push({
@@ -11569,7 +11257,7 @@ icons.push({
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
     tags: [
         'four circles',
-        'utility icons',
+        'utilities',
         'menu sign',
         'dashboard',
         'apps',
@@ -11583,14 +11271,14 @@ icons.push({
     name: 'tuning-2',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
-    tags: ['Tuning', 'Settings', 'sliders', 'equalizer', 'controls', 'mix', 'adjust', 'levels'],
+    tags: ['tuning', 'settings', 'sliders', 'equalizer', 'controls', 'mix', 'adjust', 'levels'],
     Icon: Tuning2Icon as IconData['Icon'],
 })
 icons.push({
     name: 'tuning-4',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
-    tags: ['equalizer', 'audio-settings', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
+    tags: ['equalizer', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
     Icon: Tuning4Icon as IconData['Icon'],
 })
 icons.push({
@@ -11611,16 +11299,7 @@ icons.push({
     name: 'tuning-square',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
-    tags: [
-        'equalizer',
-        'sound',
-        'volume-control',
-        'sliders',
-        'controls',
-        'mix',
-        'adjust',
-        'levels',
-    ],
+    tags: ['equalizer', 'sliders', 'controls', 'mix', 'adjust', 'levels'],
     Icon: TuningSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -11662,15 +11341,7 @@ icons.push({
     name: 'eraser',
     category: 'text-formatting' as Category,
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
-    tags: [
-        'pencil-sharpening-tool',
-        'stationery-eraser',
-        'delete',
-        'remove',
-        'clear',
-        'wipe',
-        'rub',
-    ],
+    tags: ['eraser', 'stationery eraser', 'delete', 'remove', 'clear', 'wipe', 'rub'],
     Icon: EraserIcon as IconData['Icon'],
 })
 icons.push({
@@ -11707,7 +11378,7 @@ icons.push({
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
     tags: [
         'Italic',
-        'Text symbol',
+        'text',
         'font',
         'type',
         'letter',
@@ -11938,7 +11609,7 @@ icons.push({
     name: 'text-selection',
     category: 'text-formatting' as Category,
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
-    tags: ['selection', 'box-tools', 'font', 'type', 'letter', 'character', 'editor', 'typography'],
+    tags: ['selection', 'font', 'type', 'letter', 'character', 'editor', 'typography'],
     Icon: TextSelectionIcon as IconData['Icon'],
 })
 icons.push({
@@ -11982,16 +11653,7 @@ icons.push({
     name: 'text-square-2',
     category: 'text-formatting' as Category,
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
-    tags: [
-        'square-border',
-        'sign-post',
-        'font',
-        'type',
-        'letter',
-        'character',
-        'editor',
-        'typography',
-    ],
+    tags: ['text square', 'font', 'type', 'letter', 'character', 'editor', 'typography'],
     Icon: TextSquare2Icon as IconData['Icon'],
 })
 icons.push({
@@ -12022,7 +11684,7 @@ icons.push({
     name: 'link-minimalistic-2',
     category: 'text-formatting' as Category,
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
-    tags: ['refresh', 'reload', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
+    tags: ['link', 'url', 'chain', 'connect', 'hyperlink', 'anchor', 'website'],
     Icon: LinkMinimalistic2Icon as IconData['Icon'],
 })
 icons.push({
@@ -12097,17 +11759,7 @@ icons.push({
     name: 'backspace',
     category: 'text-formatting' as Category,
     categoryTags: ['editor', 'type', 'font', 'style', 'typography', 'write'],
-    tags: [
-        'delete',
-        'close-window',
-        'cancel',
-        'undo',
-        'remove',
-        'clear',
-        'wipe',
-        'rub',
-        'keyboard-key',
-    ],
+    tags: ['backspace', 'delete', 'cancel', 'remove', 'keyboard key', 'close'],
     Icon: BackspaceIcon as IconData['Icon'],
 })
 icons.push({
@@ -12344,7 +11996,6 @@ icons.push({
         'data',
         'corporate',
         'economy',
-        'growth',
         'presentation',
         'metrics',
     ],
@@ -12373,7 +12024,6 @@ icons.push({
         'data',
         'corporate',
         'economy',
-        'growth',
         'presentation',
         'metrics',
     ],
@@ -12404,16 +12054,7 @@ icons.push({
         'presentation',
         'metrics',
     ],
-    tags: [
-        'pause',
-        'stop',
-        'bar-chart',
-        'histogram',
-        'stats',
-        'columns',
-        'comparison',
-        'dashboard',
-    ],
+    tags: ['bar-chart', 'histogram', 'stats', 'columns', 'comparison', 'dashboard'],
     Icon: ChartSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -12448,8 +12089,8 @@ icons.push({
         'metrics',
     ],
     tags: [
-        'column_chart',
-        'data_visualization',
+        'column chart',
+        'data visualization',
         'bar-chart',
         'histogram',
         'stats',
@@ -12502,7 +12143,6 @@ icons.push({
         'data',
         'corporate',
         'economy',
-        'growth',
         'presentation',
         'metrics',
     ],
@@ -12556,7 +12196,6 @@ icons.push({
         'data',
         'corporate',
         'economy',
-        'growth',
         'presentation',
         'metrics',
     ],
@@ -12578,7 +12217,7 @@ icons.push({
     name: 'cart-large-2',
     category: 'shopping' as Category,
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
-    tags: ['trolley', 'waggon', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+    tags: ['trolley', 'wagon', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
     Icon: CartLarge2Icon as IconData['Icon'],
 })
 icons.push({
@@ -12640,7 +12279,7 @@ icons.push({
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
     tags: [
         'add-to-cart',
-        'shopping-bag',
+        'cart plus',
         'trolley',
         'basket',
         'buy',
@@ -12661,7 +12300,7 @@ icons.push({
     name: 'cart-large-3',
     category: 'shopping' as Category,
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
-    tags: ['trolley', 'stroller', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
+    tags: ['trolley', 'shopping cart', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
     Icon: CartLarge3Icon as IconData['Icon'],
 })
 icons.push({
@@ -12828,7 +12467,7 @@ icons.push({
     name: 'bag-smile',
     category: 'shopping' as Category,
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
-    tags: ['suitcase', 'travel-bag', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
+    tags: ['bag', 'smile', 'tote', 'buy', 'purchase', 'checkout', 'ecommerce', 'retail'],
     Icon: BagSmileIcon as IconData['Icon'],
 })
 icons.push({
@@ -12862,14 +12501,14 @@ icons.push({
 icons.push({
     name: 'suitcase',
     category: 'nature' as Category,
-    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    categoryTags: ['travel', 'luggage', 'bag', 'journey', 'transport'],
     tags: ['luggage', 'briefcase'],
     Icon: SuitcaseIcon as IconData['Icon'],
 })
 icons.push({
     name: 'suitcase-lines',
     category: 'nature' as Category,
-    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    categoryTags: ['travel', 'luggage', 'bag', 'journey', 'transport'],
     tags: ['bag', 'luggage', 'carrying case'],
     Icon: SuitcaseLinesIcon as IconData['Icon'],
 })
@@ -12890,7 +12529,7 @@ icons.push({
 icons.push({
     name: 'suitcase-tag',
     category: 'nature' as Category,
-    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    categoryTags: ['travel', 'luggage', 'bag', 'shopping', 'commerce'],
     tags: [
         'luggage',
         'baggage',
@@ -13161,7 +12800,7 @@ icons.push({
     name: 'plus-minus',
     category: 'school' as Category,
     categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
-    tags: ['crossing-out-symbols', 'deletion-symbol', 'addition-and-deletion-icon'],
+    tags: ['plus-minus', 'addition', 'subtraction', 'increase', 'decrease', 'math'],
     Icon: PlusMinusIcon as IconData['Icon'],
 })
 icons.push({
@@ -13245,7 +12884,7 @@ icons.push({
     name: 'bookmark-opened',
     category: 'school' as Category,
     categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
-    tags: ['eye', 'goggle', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
+    tags: ['bookmark', 'opened bookmark', 'save', 'favorite', 'read', 'mark', 'tag', 'ribbon'],
     Icon: BookmarkOpenedIcon as IconData['Icon'],
 })
 icons.push({
@@ -13294,16 +12933,7 @@ icons.push({
     name: 'pipette',
     category: 'tools' as Category,
     categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
-    tags: [
-        'syringe',
-        'medicine dispenser',
-        'color',
-        'picker',
-        'eyedropper',
-        'sample',
-        'extract',
-        'tool',
-    ],
+    tags: ['pipette', 'color', 'picker', 'eyedropper', 'sample', 'extract', 'tool'],
     Icon: PipetteIcon as IconData['Icon'],
 })
 icons.push({
@@ -13334,8 +12964,8 @@ icons.push({
     category: 'tools' as Category,
     categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
     tags: [
-        'symbol-flip',
-        'icon-flip',
+        'vertical flip',
+        'flip',
         'reflect',
         'reverse',
         'turn',
@@ -13420,8 +13050,7 @@ icons.push({
     category: 'tools' as Category,
     categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
     tags: [
-        'equalizer',
-        'audio',
+        'color adjustment',
         'balance',
         'sliders',
         'controls',
@@ -13643,7 +13272,7 @@ icons.push({
     categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
     tags: [
         'bottom align',
-        'icon-align-bottom',
+        'bottom alignment',
         'position',
         'layout',
         'arrange',
@@ -13658,7 +13287,7 @@ icons.push({
     name: 'radial-blur',
     category: 'tools' as Category,
     categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
-    tags: ['disk', 'icon', 'focus', 'effect', 'photo', 'lens', 'motion', 'blur'],
+    tags: ['radial blur', 'focus', 'effect', 'photo', 'lens', 'motion', 'blur'],
     Icon: RadialBlurIcon as IconData['Icon'],
 })
 icons.push({
@@ -13917,9 +13546,8 @@ icons.push({
 icons.push({
     name: 'dislike',
     category: 'like' as Category,
-    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    categoryTags: ['rating', 'feedback', 'reaction', 'opinion', 'evaluation'],
     tags: [
-        'down arrow',
         'thumbs down',
         'thumbs-down',
         'bad',
@@ -13927,12 +13555,8 @@ icons.push({
         'reject',
         'no',
         'downvote',
-        'thumbs-up',
-        'good',
-        'agree',
-        'yes',
-        'upvote',
-        'approve',
+        'disapprove',
+        'dislike',
     ],
     Icon: DislikeIcon as IconData['Icon'],
 })
@@ -13940,7 +13564,7 @@ icons.push({
     name: 'star-shine',
     category: 'like' as Category,
     categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
-    tags: ['starburst', 'radiation', 'rating', 'favorite', 'bookmark', 'best', 'popular', 'shape'],
+    tags: ['starburst', 'shine', 'rating', 'favorite', 'bookmark', 'best', 'popular', 'shape'],
     Icon: StarShineIcon as IconData['Icon'],
 })
 icons.push({
@@ -13956,7 +13580,7 @@ icons.push({
     categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
     tags: [
         'radiant heart',
-        'celebratory symbol',
+        'celebratory',
         'love',
         'romance',
         'favorite',
@@ -13969,7 +13593,7 @@ icons.push({
 icons.push({
     name: 'heart-crack',
     category: 'like' as Category,
-    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    categoryTags: ['emotion', 'reaction', 'love', 'romance', 'sadness', 'heartbreak'],
     tags: [
         'broken heart',
         'sad love',
@@ -13978,9 +13602,6 @@ icons.push({
         'emotional',
         'love',
         'romance',
-        'favorite',
-        'passion',
-        'like',
         'emotion',
     ],
     Icon: HeartCrackIcon as IconData['Icon'],
@@ -14045,18 +13666,8 @@ icons.push({
 icons.push({
     name: 'heart-angle',
     category: 'like' as Category,
-    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
-    tags: [
-        'angled heart',
-        'broken heart',
-        'heart split',
-        'love',
-        'romance',
-        'favorite',
-        'passion',
-        'like',
-        'emotion',
-    ],
+    categoryTags: ['emotion', 'reaction', 'love', 'romance', 'sadness', 'heartbreak'],
+    tags: ['angled heart', 'broken heart', 'heart split', 'love', 'romance', 'emotion'],
     Icon: HeartAngleIcon as IconData['Icon'],
 })
 icons.push({
@@ -14079,7 +13690,7 @@ icons.push({
     name: 'medal-star',
     category: 'like' as Category,
     categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
-    tags: ['security', 'protection', 'rating', 'favorite', 'bookmark', 'best', 'popular', 'shape'],
+    tags: ['rating', 'favorite', 'bookmark', 'best', 'popular', 'shape'],
     Icon: MedalStarIcon as IconData['Icon'],
 })
 icons.push({
@@ -14218,7 +13829,6 @@ icons.push({
         'circle',
         'revert',
         'back',
-        'cancel',
         'history',
         'counter-clockwise',
     ],
@@ -14285,7 +13895,6 @@ icons.push({
         'undo-arrow',
         'revert',
         'back',
-        'cancel',
         'history',
         'counter-clockwise',
     ],
@@ -14332,7 +13941,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['undo', 'backspace', 'cancel', 'box', 'revert', 'back', 'history', 'counter-clockwise'],
+    tags: ['undo', 'box', 'revert', 'back', 'history', 'counter-clockwise'],
     Icon: UndoLeftSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -14348,18 +13957,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: [
-        'reverse-left-arrow',
-        'undo-move',
-        'revert-change',
-        'box',
-        'circle',
-        'revert',
-        'forward',
-        'redo',
-        'history',
-        'clockwise',
-    ],
+    tags: ['redo', 'box', 'circle', 'forward', 'history', 'clockwise'],
     Icon: UndoRightRoundSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -14382,7 +13980,6 @@ icons.push({
         'circle',
         'revert',
         'back',
-        'cancel',
         'history',
         'counter-clockwise',
     ],
@@ -14401,7 +13998,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['reverse', 'rewind', 'backwards', 'redo', 'forward', 'cancel', 'history', 'clockwise'],
+    tags: ['redo', 'forward', 'history', 'clockwise'],
     Icon: UndoRightIcon as IconData['Icon'],
 })
 icons.push({
@@ -14449,7 +14046,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['undo', 'revert', 'rewind', 'box', 'redo', 'forward', 'history', 'clockwise'],
+    tags: ['redo', 'forward', 'box', 'history', 'clockwise'],
     Icon: UndoRightSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -14465,7 +14062,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['undo arrow', 'right round arrow', 'circle', 'redo', 'forward', 'history', 'clockwise'],
+    tags: ['right round arrow', 'circle', 'redo', 'forward', 'history', 'clockwise'],
     Icon: UndoRightRoundIcon as IconData['Icon'],
 })
 icons.push({
@@ -14481,19 +14078,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: [
-        'update',
-        'refresh',
-        'arrow',
-        'square',
-        'box',
-        'push',
-        'out',
-        'top',
-        'ascend',
-        'external-link',
-        'open',
-    ],
+    tags: ['down-left arrow', 'square', 'box', 'in', 'import', 'download', 'internal', 'insert'],
     Icon: SquareTopUpIcon as IconData['Icon'],
 })
 icons.push({
@@ -14509,7 +14094,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['upload', 'update', 'box', 'in', 'top', 'descend', 'internal', 'insert'],
+    tags: ['up-right arrow', 'square', 'box', 'out', 'export', 'upload', 'external-link', 'open'],
     Icon: SquareTopDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -14610,15 +14195,16 @@ icons.push({
         'process',
     ],
     tags: [
-        'upward-pointing-square',
         'arrow-up-right',
-        'right-arrow-in-square',
+        'square',
         'box',
-        'in',
         'bottom',
         'ascend',
-        'internal',
-        'insert',
+        'out',
+        'export',
+        'upload',
+        'external-link',
+        'open',
     ],
     Icon: SquareBottomUpIcon as IconData['Icon'],
 })
@@ -14676,17 +14262,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: [
-        'arrow-circular',
-        'refresh-arrow',
-        'circle',
-        'push',
-        'out',
-        'top',
-        'ascend',
-        'external-link',
-        'open',
-    ],
+    tags: ['circle', 'push', 'out', 'top', 'ascend', 'external-link', 'open'],
     Icon: CircleTopUpIcon as IconData['Icon'],
 })
 icons.push({
@@ -14702,7 +14278,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['clock', 'time', 'navigation', 'circle', 'in', 'top', 'descend', 'internal', 'insert'],
+    tags: ['navigation', 'circle', 'in', 'top', 'descend', 'internal', 'insert'],
     Icon: CircleTopDownIcon as IconData['Icon'],
 })
 icons.push({
@@ -14745,17 +14321,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: [
-        'Expand',
-        'Square Arrow',
-        'box',
-        'fullscreen',
-        'size',
-        'expand',
-        'zoom',
-        'enlarge',
-        'outward',
-    ],
+    tags: ['expand', 'square arrow', 'box', 'fullscreen', 'size', 'zoom', 'enlarge', 'outward'],
     Icon: MaximizeSquareIcon as IconData['Icon'],
 })
 icons.push({
@@ -14772,8 +14338,8 @@ icons.push({
         'process',
     ],
     tags: [
-        'arrow-corner',
-        'icon-move',
+        'corner arrows',
+        'move',
         'box',
         'window',
         'size',
@@ -14798,8 +14364,7 @@ icons.push({
         'process',
     ],
     tags: [
-        'arrowdown',
-        'arrowdock',
+        'square-shrink',
         'box',
         'window',
         'size',
@@ -14827,7 +14392,6 @@ icons.push({
     tags: [
         'square-maximize',
         'four-arrows',
-        'refresh-icon',
         'box',
         'fullscreen',
         'size',
@@ -14869,8 +14433,7 @@ icons.push({
         'process',
     ],
     tags: [
-        'downward-arrows',
-        'minimal-download',
+        'inward arrows',
         'box',
         'window',
         'size',
@@ -14895,7 +14458,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['login', 'exit', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
+    tags: ['login', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
     Icon: Login2Icon as IconData['Icon'],
 })
 icons.push({
@@ -14953,17 +14516,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: [
-        'arrow-up',
-        'smiley',
-        'laughing-face',
-        'push',
-        'publish',
-        'outgoing',
-        'put',
-        'out',
-        'tray',
-    ],
+    tags: ['arrow-up', 'push', 'publish', 'outgoing', 'put', 'out', 'tray'],
     Icon: ExportIcon as IconData['Icon'],
 })
 icons.push({
@@ -15049,7 +14602,7 @@ icons.push({
         'process',
     ],
     tags: [
-        'arrow-icon',
+        'arrow',
         'square-arrow',
         'box',
         'fullscreen',
@@ -15183,7 +14736,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['download', 'share', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-left'],
+    tags: ['login', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
     Icon: Login3Icon as IconData['Icon'],
 })
 icons.push({
@@ -15295,7 +14848,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['upload-file', 'data-transfer', 'cast', 'display', 'monitor', 'broadcast', 'mirror'],
+    tags: ['screen share', 'cast', 'display', 'monitor', 'broadcast', 'mirror'],
     Icon: ScreenShareIcon as IconData['Icon'],
 })
 icons.push({
@@ -15350,7 +14903,7 @@ icons.push({
         'command',
         'process',
     ],
-    tags: ['Login', 'Enter', 'auth', 'sign-in', 'enter', 'door', 'access', 'arrow-right'],
+    tags: ['login', 'enter', 'auth', 'sign-in', 'door', 'access', 'arrow-right'],
     Icon: LoginIcon as IconData['Icon'],
 })
 icons.push({
@@ -15372,7 +14925,6 @@ icons.push({
         'write',
         'survey',
         'form',
-        'check',
     ],
     Icon: ClipboardHeartIcon as IconData['Icon'],
 })
@@ -15387,7 +14939,7 @@ icons.push({
     name: 'document',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['Equalize', 'Balance', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
+    tags: ['paper', 'file', 'page', 'sheet', 'text', 'article'],
     Icon: DocumentIcon as IconData['Icon'],
 })
 icons.push({
@@ -15417,7 +14969,7 @@ icons.push({
     name: 'clipboard',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['clipping', 'notepad', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+    tags: ['clipping', 'notepad', 'board', 'paper', 'write', 'survey', 'form'],
     Icon: ClipboardIcon as IconData['Icon'],
 })
 icons.push({
@@ -15438,7 +14990,17 @@ icons.push({
     name: 'clipboard-remove',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['checklist-cancel', 'task-cancel', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+    tags: [
+        'clipboard-remove',
+        'task-cancel',
+        'board',
+        'paper',
+        'write',
+        'survey',
+        'form',
+        'cancel',
+        'remove',
+    ],
     Icon: ClipboardRemoveIcon as IconData['Icon'],
 })
 icons.push({
@@ -15468,14 +15030,24 @@ icons.push({
     name: 'clipboard-text',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['clipboard', 'list', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+    tags: ['clipboard', 'list', 'board', 'paper', 'write', 'survey', 'form'],
     Icon: ClipboardTextIcon as IconData['Icon'],
 })
 icons.push({
     name: 'clipboard-check',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['checklist', 'task-list', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+    tags: [
+        'checkmark',
+        'check',
+        'approval',
+        'verified',
+        'board',
+        'paper',
+        'write',
+        'survey',
+        'form',
+    ],
     Icon: ClipboardCheckIcon as IconData['Icon'],
 })
 icons.push({
@@ -15489,16 +15061,7 @@ icons.push({
     name: 'clipboard-list',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: [
-        'list clipboard',
-        'check list pad',
-        'board',
-        'paper',
-        'write',
-        'survey',
-        'form',
-        'check',
-    ],
+    tags: ['list clipboard', 'list pad', 'board', 'paper', 'write', 'survey', 'form'],
     Icon: ClipboardListIcon as IconData['Icon'],
 })
 icons.push({
@@ -15519,7 +15082,17 @@ icons.push({
     name: 'archive-check',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['checklist', 'tasks', 'list', 'box', 'storage', 'save', 'files', 'drawer', 'keep'],
+    tags: [
+        'checkmark',
+        'approved',
+        'verified',
+        'box',
+        'storage',
+        'save',
+        'files',
+        'drawer',
+        'keep',
+    ],
     Icon: ArchiveCheckIcon as IconData['Icon'],
 })
 icons.push({
@@ -15549,8 +15122,9 @@ icons.push({
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
     tags: [
         'minimalist',
-        'folder',
-        'task-list',
+        'checkmark',
+        'approved',
+        'verified',
         'box',
         'storage',
         'save',
@@ -15564,21 +15138,21 @@ icons.push({
     name: 'clipboard-add',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
-    tags: ['healthcare', 'medical form', 'board', 'paper', 'write', 'survey', 'form', 'check'],
+    tags: ['clipboard-add', 'add', 'new', 'board', 'paper', 'write', 'survey', 'form'],
     Icon: ClipboardAddIcon as IconData['Icon'],
 })
 icons.push({
     name: 'notification-unread',
     category: 'notifications' as Category,
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
-    tags: ['alert'],
+    tags: ['notification', 'unread', 'message', 'alert'],
     Icon: NotificationUnreadIcon as IconData['Icon'],
 })
 icons.push({
     name: 'notification-remove',
     category: 'notifications' as Category,
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
-    tags: ['cancel-notification', 'remove-icon'],
+    tags: ['cancel-notification', 'remove'],
     Icon: NotificationRemoveIcon as IconData['Icon'],
 })
 icons.push({
@@ -15594,7 +15168,7 @@ icons.push({
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
     tags: [
         'notification bell',
-        'bells icon',
+        'bells',
         'alert notification',
         'alert',
         'alarm',
@@ -15612,7 +15186,7 @@ icons.push({
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
     tags: [
         'off-bell',
-        'silence-icon',
+        'silence',
         'alert',
         'alarm',
         'chime',
@@ -15637,13 +15211,13 @@ icons.push({
     name: 'notification-unread-lines',
     category: 'notifications' as Category,
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
-    tags: ['unread', 'line', 'document'],
+    tags: ['notification', 'unread', 'lines', 'message'],
     Icon: NotificationUnreadLinesIcon as IconData['Icon'],
 })
 icons.push({
     name: 'bomb-minimalistic',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'danger', 'warning', 'threat', 'error'],
     tags: ['explosion', 'detonator', 'danger', 'explosive', 'threat', 'warning', 'error'],
     Icon: BombMinimalisticIcon as IconData['Icon'],
 })
@@ -15657,7 +15231,7 @@ icons.push({
 icons.push({
     name: 'bomb-emoji',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'danger', 'warning', 'threat', 'error'],
     tags: ['explosion', 'exploding-bomb', 'danger', 'explosive', 'threat', 'warning', 'error'],
     Icon: BombEmojiIcon as IconData['Icon'],
 })
@@ -15685,36 +15259,20 @@ icons.push({
 icons.push({
     name: 'lock-unlocked',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: [
-        'unlocked lock',
-        'open padlock',
-        'padlock',
-        'secure',
-        'safe',
-        'private',
-        'protect',
-        'open',
-        'insecure',
-        'public',
-        'access',
-    ],
+    categoryTags: ['security', 'access', 'lock', 'unlock', 'public', 'state'],
+    tags: ['unlocked lock', 'open padlock', 'padlock', 'open', 'insecure', 'public', 'access'],
     Icon: LockUnlockedIcon as IconData['Icon'],
 })
 icons.push({
     name: 'lock-password-unlocked',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'access', 'password', 'lock', 'unlock', 'public', 'state'],
     tags: [
         'unlocked-lock',
-        'password-secured',
+        'password',
         'security-lock',
         'open-security',
         'padlock',
-        'secure',
-        'safe',
-        'private',
-        'protect',
         'open',
         'insecure',
         'public',
@@ -15745,34 +15303,22 @@ icons.push({
 icons.push({
     name: 'bomb',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'danger', 'warning', 'threat', 'error'],
     tags: ['bomb', 'explosion', 'danger', 'explosive', 'threat', 'warning', 'error'],
     Icon: BombIcon as IconData['Icon'],
 })
 icons.push({
     name: 'eye',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'visibility', 'view', 'privacy'],
     tags: ['eyeball', 'vision', 'visibility', 'view', 'show', 'watch', 'look'],
     Icon: EyeIcon as IconData['Icon'],
 })
 icons.push({
     name: 'lock-keyhole-unlocked',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: [
-        'unsecured lock',
-        'keyhole unlocked',
-        'padlock',
-        'secure',
-        'safe',
-        'private',
-        'protect',
-        'open',
-        'insecure',
-        'public',
-        'access',
-    ],
+    categoryTags: ['security', 'access', 'keyhole', 'lock', 'unlock', 'public', 'state'],
+    tags: ['unsecured lock', 'keyhole unlocked', 'padlock', 'open', 'insecure', 'public', 'access'],
     Icon: LockKeyholeUnlockedIcon as IconData['Icon'],
 })
 icons.push({
@@ -15791,8 +15337,6 @@ icons.push({
         'resting eyelids',
         'visibility',
         'view',
-        'show',
-        'watch',
         'look',
         'hidden',
         'hide',
@@ -15819,7 +15363,7 @@ icons.push({
 icons.push({
     name: 'siren-rounded',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'warning', 'alert', 'emergency', 'alarm'],
     tags: ['warning', 'alert', 'alarm', 'police', 'emergency', 'flashing'],
     Icon: SirenRoundedIcon as IconData['Icon'],
 })
@@ -15834,14 +15378,14 @@ icons.push({
     name: 'password-minimalistic-input',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: ['lock', 'icon', 'symbol', 'dots', 'asterisk', 'secret', 'login', 'auth', 'pin'],
+    tags: ['lock', 'symbol', 'dots', 'asterisk', 'secret', 'login', 'auth', 'pin'],
     Icon: PasswordMinimalisticInputIcon as IconData['Icon'],
 })
 icons.push({
     name: 'key-minimalistic',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: ['minimalist', 'iconic', 'access', 'unlock', 'pass', 'door', 'security'],
+    tags: ['minimalist', 'access', 'unlock', 'pass', 'door', 'security'],
     Icon: KeyMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -15854,20 +15398,8 @@ icons.push({
 icons.push({
     name: 'lock-keyhole-minimalistic-unlocked',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: [
-        'lock',
-        'keyhole',
-        'padlock',
-        'secure',
-        'safe',
-        'private',
-        'protect',
-        'open',
-        'insecure',
-        'public',
-        'access',
-    ],
+    categoryTags: ['security', 'access', 'keyhole', 'lock', 'unlock', 'public', 'state'],
+    tags: ['unlocked lock', 'keyhole', 'padlock', 'open', 'insecure', 'public', 'access'],
     Icon: LockKeyholeMinimalisticUnlockedIcon as IconData['Icon'],
 })
 icons.push({
@@ -15887,7 +15419,7 @@ icons.push({
 icons.push({
     name: 'siren',
     category: 'security' as Category,
-    categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
+    categoryTags: ['security', 'warning', 'alert', 'emergency', 'alarm'],
     tags: ['alert', 'emergency', 'warning', 'alarm', 'police', 'flashing'],
     Icon: SirenIcon as IconData['Icon'],
 })
@@ -15902,23 +15434,14 @@ icons.push({
     name: 'key-minimalistic-2',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: [
-        'search key',
-        'minimalist search tool',
-        'simple magnifying glass',
-        'access',
-        'unlock',
-        'pass',
-        'door',
-        'security',
-    ],
+    tags: ['key', 'access key', 'access', 'unlock', 'pass', 'door', 'security'],
     Icon: KeyMinimalistic2Icon as IconData['Icon'],
 })
 icons.push({
     name: 'incognito',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: ['Spyglass', 'Magnifying Glass'],
+    tags: ['incognito', 'private browsing', 'anonymous browsing', 'privacy'],
     Icon: IncognitoIcon as IconData['Icon'],
 })
 icons.push({
@@ -15974,7 +15497,7 @@ icons.push({
     name: 'shield-user',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: ['Shield Icon', 'Security Badge', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+    tags: ['shield', 'Security Badge', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
     Icon: ShieldUserIcon as IconData['Icon'],
 })
 icons.push({
@@ -16010,7 +15533,7 @@ icons.push({
     name: 'shield-keyhole-minimalistic',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
-    tags: ['search', 'lock', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+    tags: ['shield keyhole', 'lock', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
     Icon: ShieldKeyholeMinimalisticIcon as IconData['Icon'],
 })
 icons.push({
@@ -16102,7 +15625,7 @@ icons.push({
     name: 'user-plus-rounded',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
-    tags: ['profile-add', 'user-account', 'new-user-icon'],
+    tags: ['profile-add', 'user-account', 'new user'],
     Icon: UserPlusRoundedIcon as IconData['Icon'],
 })
 icons.push({
@@ -16166,7 +15689,7 @@ icons.push({
     name: 'user-heart-rounded',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
-    tags: ['User with heart', 'Profile'],
+    tags: ['user with heart', 'profile', 'heart', 'love', 'favorite'],
     Icon: UserHeartRoundedIcon as IconData['Icon'],
 })
 icons.push({
@@ -16187,7 +15710,7 @@ icons.push({
     name: 'user-minus',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
-    tags: ['minimize user', 'user minus', 'remove', 'delete', 'subtract', 'decrease'],
+    tags: ['remove user', 'user minus', 'remove', 'delete', 'subtract', 'decrease'],
     Icon: UserMinusIcon as IconData['Icon'],
 })
 icons.push({
@@ -16208,7 +15731,7 @@ icons.push({
     name: 'user-hands',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
-    tags: ['Person', 'Icon'],
+    tags: ['user', 'person', 'profile', 'avatar'],
     Icon: UserHandsIcon as IconData['Icon'],
 })
 icons.push({
@@ -16229,7 +15752,7 @@ icons.push({
     name: 'user-plus',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
-    tags: ['user edit', 'profile settings'],
+    tags: ['user plus', 'add user', 'new user', 'profile add'],
     Icon: UserPlusIcon as IconData['Icon'],
 })
 icons.push({
@@ -16299,16 +15822,7 @@ icons.push({
         'urban',
         'facility',
     ],
-    tags: [
-        'towers',
-        'factory',
-        'cityscape',
-        'metropolis',
-        'skyline',
-        'downtown',
-        'urban-area',
-        'town',
-    ],
+    tags: ['towers', 'cityscape', 'metropolis', 'skyline', 'downtown', 'urban-area', 'town'],
     Icon: CityIcon as IconData['Icon'],
 })
 icons.push({
@@ -16480,7 +15994,7 @@ icons.push({
     categoryTags: ['hands', 'gestures', 'action', 'give', 'hold'],
     tags: [
         'support-star',
-        'help-icon',
+        'help',
         'magic',
         'sparkle',
         'special',
@@ -16509,7 +16023,7 @@ icons.push({
     name: 'shock-absorber',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['suspension', 'engine-lift-supporter'],
+    tags: ['shock absorber', 'suspension', 'vehicle', 'automotive'],
     Icon: ShockAbsorberIcon as IconData['Icon'],
 })
 icons.push({
@@ -16530,7 +16044,7 @@ icons.push({
     name: 'transmission-circle',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['gearbox', 'helicopter', 'aircraft', 'gear', 'shift', 'manual', 'auto', 'drive'],
+    tags: ['gearbox', 'gear', 'shift', 'manual', 'auto', 'drive'],
     Icon: TransmissionCircleIcon as IconData['Icon'],
 })
 icons.push({
@@ -16558,7 +16072,7 @@ icons.push({
     name: 'suspension',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['suspension', 'gearbox'],
+    tags: ['suspension', 'shock absorber', 'vehicle', 'automotive'],
     Icon: SuspensionIcon as IconData['Icon'],
 })
 icons.push({
@@ -16586,7 +16100,7 @@ icons.push({
     name: 'speedometer-max',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['sightseeing', 'compass', 'dashboard', 'speed', 'velocity', 'fast', 'gauge', 'meter'],
+    tags: ['speedometer', 'dashboard', 'speed', 'velocity', 'fast', 'gauge', 'meter'],
     Icon: SpeedometerMaxIcon as IconData['Icon'],
 })
 icons.push({
@@ -16599,7 +16113,8 @@ icons.push({
         'dashboard',
         'speed',
         'velocity',
-        'fast',
+        'slow',
+        'low',
         'gauge',
         'meter',
     ],
@@ -16609,24 +16124,14 @@ icons.push({
     name: 'speedometer-middle',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: [
-        'middleometer',
-        'speedometer',
-        'gear-circle',
-        'dashboard',
-        'speed',
-        'velocity',
-        'fast',
-        'gauge',
-        'meter',
-    ],
+    tags: ['speedometer', 'dashboard', 'speed', 'velocity', 'medium', 'gauge', 'meter'],
     Icon: SpeedometerMiddleIcon as IconData['Icon'],
 })
 icons.push({
     name: 'scooter',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['motorcycle', 'two-wheeler', 'moped', 'vespa', 'ride'],
+    tags: ['scooter', 'two-wheeler', 'ride', 'vehicle'],
     Icon: ScooterIcon as IconData['Icon'],
 })
 icons.push({
@@ -16647,7 +16152,7 @@ icons.push({
     name: 'kick-scooter',
     category: 'parts' as Category,
     categoryTags: ['automotive', 'car', 'vehicle', 'engine', 'mechanic', 'transport'],
-    tags: ['scooter', 'kick scooter', 'moped', 'motorcycle', 'vespa', 'ride'],
+    tags: ['kick scooter', 'scooter', 'two-wheeler', 'ride', 'vehicle'],
     Icon: KickScooterIcon as IconData['Icon'],
 })
 icons.push({
