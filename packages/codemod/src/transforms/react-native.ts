@@ -1,6 +1,7 @@
 import ts from 'typescript'
 
 import { renameIcon } from '../icon-renames.js'
+import { renameImportedBindingReferences } from '../import-bindings.js'
 import type { Diagnostic, TransformResult } from '../types.js'
 
 const styles: Record<string, string> = {
@@ -44,9 +45,9 @@ function rootExportName(name: string): string {
 }
 
 function binding(specifier: ts.ImportSpecifier, targetName: string): string {
-    return specifier.name.text === targetName
-        ? targetName
-        : `${targetName} as ${specifier.name.text}`
+    return specifier.propertyName && specifier.name.text !== targetName
+        ? `${targetName} as ${specifier.name.text}`
+        : targetName
 }
 
 function applyEdits(source: string, edits: Edit[]): string {
@@ -68,6 +69,7 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const edits: Edit[] = []
     const diagnostics: Diagnostic[] = []
+    const bindingRenames = new Map<string, string>()
 
     for (const statement of sourceFile.statements) {
         if (!ts.isImportDeclaration(statement) || !ts.isStringLiteral(statement.moduleSpecifier))
@@ -88,13 +90,15 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
         const remainder = moduleSpecifier.slice('@solar-icons/react-native'.length)
         if (!remainder) {
             for (const specifier of namedBindings.elements) {
+                const importedName = (specifier.propertyName ?? specifier.name).text
+                const targetName = rootExportName(importedName)
+                if (!specifier.propertyName && specifier.name.text !== targetName) {
+                    bindingRenames.set(specifier.name.text, targetName)
+                }
                 edits.push({
                     start: specifier.getStart(sourceFile),
                     end: specifier.getEnd(),
-                    text: binding(
-                        specifier,
-                        rootExportName((specifier.propertyName ?? specifier.name).text)
-                    ),
+                    text: binding(specifier, targetName),
                 })
             }
             continue
@@ -117,7 +121,11 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
         if (categoryMatch) {
             const imports = namedBindings.elements.map(specifier => {
                 const iconName = renameIcon((specifier.propertyName ?? specifier.name).text)
-                return `import { ${binding(specifier, addIconSuffix(iconName))} } from '@solar-icons/react-native/${style}/${toKebabCase(iconName)}'`
+                const targetName = addIconSuffix(iconName)
+                if (!specifier.propertyName && specifier.name.text !== targetName) {
+                    bindingRenames.set(specifier.name.text, targetName)
+                }
+                return `import { ${binding(specifier, targetName)} } from '@solar-icons/react-native/${style}/${toKebabCase(iconName)}'`
             })
             edits.push({
                 start: statement.getStart(sourceFile),
@@ -133,13 +141,15 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
             text: `@solar-icons/react-native/${style}`,
         })
         for (const specifier of namedBindings.elements) {
+            const importedName = (specifier.propertyName ?? specifier.name).text
+            const targetName = addIconSuffix(renameIcon(importedName))
+            if (!specifier.propertyName && specifier.name.text !== targetName) {
+                bindingRenames.set(specifier.name.text, targetName)
+            }
             edits.push({
                 start: specifier.getStart(sourceFile),
                 end: specifier.getEnd(),
-                text: binding(
-                    specifier,
-                    addIconSuffix(renameIcon((specifier.propertyName ?? specifier.name).text))
-                ),
+                text: binding(specifier, targetName),
             })
         }
 
@@ -188,6 +198,8 @@ export function transformReactNative(source: string, fileName = 'source.tsx'): T
         }
         ts.forEachChild(sourceFile, visit)
     }
+
+    edits.push(...renameImportedBindingReferences(source, fileName, bindingRenames))
 
     const code = applyEdits(source, edits)
     return { code, changed: code !== source, diagnostics }
