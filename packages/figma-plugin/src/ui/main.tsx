@@ -1,5 +1,5 @@
 import '@calcom/cal-sans-ui/ui.css'
-import '@fontsource-variable/bricolage-grotesque'
+import '@fontsource-variable/aleo'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './App'

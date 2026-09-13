@@ -55,6 +55,7 @@ try {
     console.info(`Captured Community source screens in ${outputDirectory}`)
 } finally {
     chromium.kill('SIGTERM')
+    await waitForExit(chromium)
     await fs.rm(profileDirectory, { recursive: true, force: true })
 }
 
@@ -124,4 +125,9 @@ function connect(url) {
 
 function wait(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+function waitForExit(child) {
+    if (child.exitCode !== null) return Promise.resolve()
+    return new Promise(resolve => child.once('exit', resolve))
 }
