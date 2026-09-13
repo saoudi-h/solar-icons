@@ -17,7 +17,7 @@ export default async function OpengraphImage() {
         />,
         {
             ...size,
-            fonts: [{ name: 'Bricolage', data: font, weight: 700, style: 'normal' }],
+            fonts: [{ name: 'Aleo', data: font, weight: 700, style: 'normal' }],
         }
     )
 }

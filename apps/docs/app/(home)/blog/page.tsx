@@ -65,7 +65,7 @@ export default async function BlogPage(props: { searchParams: Promise<{ tag?: st
     return (
         <main className="mx-auto w-full max-w-3xl px-6 py-10">
             <header>
-                <h1 className="font-heading text-4xl font-bold md:text-5xl">Blog</h1>
+                <h1 className="font-heading text-4xl font-light md:text-5xl">Blog</h1>
                 <p className="mt-4 max-w-2xl text-base/relaxed text-muted-foreground">
                     Articles about Solar Icons, interface design, and development.
                 </p>

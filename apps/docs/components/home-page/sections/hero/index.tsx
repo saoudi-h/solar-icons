@@ -69,10 +69,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       relative z-10 flex flex-col items-center gap-6 px-3 pt-8 text-center
                       md:pt-16
                     `}>
-                    <Heading size="h1" justify="center" className="w-full max-w-200 text-balance">
+                    <Heading
+                        size="h1"
+                        justify="center"
+                        className="w-full max-w-200 font-light text-balance">
                         {title.part1}
                         <br />
-                        <span className="text-muted-foreground">{title.part2}</span>
+                        <span className="font-body text-muted-foreground">{title.part2}</span>
                     </Heading>
                     <p
                         className={`

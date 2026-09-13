@@ -53,8 +53,8 @@ export const FeaturesSection = () => {
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col items-center gap-4 text-center">
-                <Heading size="h1" className="text-3xl font-extrabold tracking-tight md:text-5xl">
-                    Built for <span className="text-muted-foreground">All</span>
+                <Heading size="h1" className="text-3xl font-light md:text-5xl">
+                    Built for <span className="font-body text-muted-foreground">All</span>
                 </Heading>
                 <p className="max-w-145 text-sm/relaxed text-muted-foreground md:text-base">
                     A complete icon set with six visual styles, native frontend framework packages,
@@ -180,7 +180,11 @@ const BentoHeader = ({
 }) => (
     <div className="relative mb-6 flex flex-col gap-1.5 text-left select-none">
         <div className="flex items-start justify-between gap-4">
-            <h3 className="font-heading text-lg font-bold tracking-tight text-foreground md:text-xl">
+            <h3
+                className={`
+                  font-heading text-lg font-light tracking-tight text-foreground
+                  md:text-xl
+                `}>
                 {title}
             </h3>
             {href && buttonText && (

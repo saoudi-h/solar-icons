@@ -1,7 +1,6 @@
-import { CalSansUI } from '@calcom/cal-sans-ui/ui'
 import { Provider as JotaiProvider } from 'jotai'
 import type { Viewport } from 'next'
-import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono, Host_Grotesk, Aleo } from 'next/font/google'
 import { type ReactNode } from 'react'
 
 import { Analytics } from '@/components/analytics'
@@ -11,14 +10,21 @@ import { cn } from '@/lib/utils'
 import './globals.css'
 import Providers from './Providers'
 
-const heading = Bricolage_Grotesque({
-    subsets: ['latin'],
-    variable: '--font-heading',
-})
-
 const mono = JetBrains_Mono({
     subsets: ['latin'],
     variable: '--font-mono',
+})
+
+const bodyFont = Host_Grotesk({
+    subsets: ['latin'],
+    variable: '--font-body',
+    display: 'swap',
+})
+
+const headingFont = Aleo({
+    subsets: ['latin'],
+    variable: '--font-heading',
+    display: 'swap',
 })
 
 export const metadata = createMetadata({
@@ -41,10 +47,10 @@ export default function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
-            className={cn(heading.variable, CalSansUI.variable, mono.variable)}
+            className={cn(mono.variable, bodyFont.variable, headingFont.variable)}
             suppressHydrationWarning>
             <meta name="apple-mobile-web-app-title" content="Solar Icons" />
-            <body className="flex min-h-screen flex-col">
+            <body className="flex min-h-screen flex-col font-body">
                 <JotaiProvider>
                     <Providers>{children}</Providers>
                 </JotaiProvider>
