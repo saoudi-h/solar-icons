@@ -73,7 +73,7 @@ export interface IconData {
     Icon: ComponentType<{ weight?: Weight } & IconProps>
 }
 
-export const icons: IconData[] = [
+const icons: IconData[] = []
 `
     const res = iconEntries.map(icon => {
         const componentName = toPascalCase(icon.name) + 'Icon'
@@ -92,17 +92,17 @@ export const icons: IconData[] = [
         const deprecatedAliases = icon.deprecatedAliases?.length
             ? `         deprecatedAliases: ${JSON.stringify(icon.deprecatedAliases)},\n`
             : ''
-        return `    {
+        return `icons.push({
         name: '${icon.name}',
         category: '${icon.category}' as Category,
          categoryTags: ${JSON.stringify(icon.categoryTags)},
          tags: ${JSON.stringify(icon.tags)},
-${lifecycle ? `${lifecycle}\n` : ''}${deprecatedAliases}         Icon: ${componentName},
-    }`
+${lifecycle ? `${lifecycle}\n` : ''}${deprecatedAliases}         Icon: ${componentName} as IconData['Icon'],
+    })`
     })
 
-    data += res.join(',\n')
-    data += `\n]
+    data += res.join('\n')
+    data += `\n\nexport { icons }
 
 export default icons
 `
