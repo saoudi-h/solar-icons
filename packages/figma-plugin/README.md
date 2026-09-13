@@ -56,4 +56,4 @@ and the synchronization contract in [`docs/FIGMA-CATALOG-SYNC.md`](../../docs/FI
 
 Run `pnpm --filter @solar-icons/figma-plugin capture:community` after UI changes. The command rebuilds the plugin, captures the real Icons, Settings, and Info tabs, then regenerates the 128 px icon, 1920 × 1080 thumbnail, and three Community carousel images in `community/dist`.
 
-The editable composition lives in `community/presentation.html`. Keep publication visuals aligned with the docs site: use the canonical Solar mark, `#6b5be6` (the docs primary `hsl(247 74% 63%)`), Aleo for the lead type, Host Grotesk for the supporting copy, real plugin screens, and restrained borders and rounding. The plugin UI itself remains on Cal Sans UI to preserve its Figma-native density.
+The editable composition lives in `community/presentation.html`. Keep publication visuals aligned with the docs site: use the canonical Solar mark, `#6b5be6` (the docs primary `hsl(247 74% 63%)`), Aleo for the lead type, Host Grotesk for supporting copy, real plugin screens, and restrained borders and rounding.

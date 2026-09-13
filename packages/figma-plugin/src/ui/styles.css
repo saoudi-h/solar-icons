@@ -19,7 +19,7 @@
     color: var(--text);
     background: var(--bg);
     color-scheme: light dark;
-    font-family: 'Cal Sans UI', Inter, ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Host Grotesk', Inter, ui-sans-serif, system-ui, sans-serif;
     font-size: 11px;
 }
 
@@ -127,7 +127,7 @@ button:focus-visible, input:focus-visible, [role='combobox']:focus-visible {
 .section-label { margin: 0; padding: 14px 14px 6px; color: var(--text-tertiary); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 .setting-row { display: flex; min-height: 48px; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding: 8px 14px; }
 .setting-copy { min-width: 0; flex: 1; }
-.setting-title { display: block; font-family: 'Aleo Variable', 'Cal Sans UI', sans-serif; font-weight: 600; }
+.setting-title { display: block; font-family: 'Aleo Variable', 'Host Grotesk', sans-serif; font-weight: 600; }
 .setting-description { display: block; margin-top: 2px; color: var(--text-secondary); line-height: 1.35; }
 .number-control { display: flex; width: 72px; height: 30px; align-items: center; overflow: hidden; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
 .number-input { min-width: 0; width: 48px; height: 100%; appearance: textfield; border: 0; outline: 0; padding: 0 2px 0 8px; background: transparent; font-variant-numeric: tabular-nums; }
@@ -139,7 +139,7 @@ button:focus-visible, input:focus-visible, [role='combobox']:focus-visible {
 .mode-button:last-child { border-right: 0; }
 .mode-button[aria-pressed='true'] { color: var(--brand); background: var(--bg-selected); }
 .mode-button strong, .mode-button span { display: block; }
-.mode-button strong { font-family: 'Aleo Variable', 'Cal Sans UI', sans-serif; }
+.mode-button strong { font-family: 'Aleo Variable', 'Host Grotesk', sans-serif; }
 .mode-button span { margin-top: 3px; color: var(--text-secondary); font-size: 10px; line-height: 1.3; }
 .mode-button:active { transform: scale(0.98); }
 .geometry-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 14px; }
@@ -148,16 +148,16 @@ button:focus-visible, input:focus-visible, [role='combobox']:focus-visible {
 .geometry-fill { position: absolute; inset: 0 auto 0 0; background: color-mix(in srgb, var(--brand) 13%, transparent); transition: width 140ms var(--ease-out); pointer-events: none; }
 .geometry-fill.dragging { transition: none; }
 .geometry-label, .geometry-value { position: relative; min-width: 0; }
-.geometry-label { overflow: hidden; color: var(--text-secondary); font-family: 'Aleo Variable', 'Cal Sans UI', sans-serif; font-size: 10px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.geometry-label { overflow: hidden; color: var(--text-secondary); font-family: 'Aleo Variable', 'Host Grotesk', sans-serif; font-size: 10px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .geometry-value { color: var(--text); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-variant-numeric: tabular-nums; }
-.geometry-unit { margin-left: 1px; color: var(--text-tertiary); font-family: 'Cal Sans UI', sans-serif; font-size: 9px; }
+.geometry-unit { margin-left: 1px; color: var(--text-tertiary); font-family: 'Host Grotesk', sans-serif; font-size: 9px; }
 .reset-settings-button { width: calc(100% - 28px); height: 34px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); margin: 18px 14px 14px; color: var(--text); background: var(--bg); font-weight: 600; transition: background-color 120ms ease, transform 120ms var(--ease-out); }
 .reset-settings-button:active { transform: scale(0.98); }
 
 .info-identity { display: flex; align-items: center; gap: 14px; padding: 22px 18px 18px; border-bottom: 1px solid var(--border); }
 .brand-logo { display: block; width: 44px; height: 44px; flex: 0 0 44px; color: var(--brand); }
 .brand-logo svg, .package-logo-solar svg { display: block; width: 100%; height: 100%; }
-.info-title { margin: 0; font-family: 'Aleo Variable', 'Cal Sans UI', sans-serif; font-size: 17px; font-weight: 650; letter-spacing: -0.025em; }
+.info-title { margin: 0; font-family: 'Aleo Variable', 'Host Grotesk', sans-serif; font-size: 17px; font-weight: 650; letter-spacing: -0.025em; }
 .info-version { margin-top: 4px; color: var(--text-tertiary); font-size: 10px; }
 .info-description { margin: 0; padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.5; }
 .doc-button { display: flex; width: calc(100% - 28px); min-height: 36px; align-items: center; justify-content: space-between; border: 0; border-radius: var(--radius-md); margin: 14px; padding: 0 12px; color: var(--on-brand); background: var(--brand); font-weight: 600; transition: background-color 120ms ease, transform 120ms var(--ease-out); }
