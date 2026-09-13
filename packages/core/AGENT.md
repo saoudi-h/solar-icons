@@ -12,7 +12,7 @@ Private package (`"private": true`). Source of truth for icon assets and metadat
 
 Contains:
 
-- 7,608 committed SVGs in `svgs/` (37 categories × 6 styles).
+- 8,274 committed SVGs in `svgs/` (37 categories × 6 styles).
 - `metadata.json` (44 KB) and `metadata-descriptions.json` (254 KB), both committed.
 - The `types.ts` and `utils.ts` public surface.
 - Build-time scripts in `src/scripts/` (Figma fetch, PNG generation, descriptions, integrity checks).
@@ -49,12 +49,12 @@ Contains:
 | `EXTENDING-ICON-SET.md`                 | Production procedure for planning, drawing, attributing, validating, and releasing extensions such as Lucide parity additions.                                                                                                                                                                                                                                                          |
 | `../../docs/ICON-INVENTORY-WORKFLOW.md` | Inventory refresh checklist and the complete list of generated/documentation consumers to update after an export.                                                                                                                                                                                                                                                                       |
 | `src/descriptions.schema.json`          | JSON Schema for the hand-curated descriptions file; `check:descriptions` also validates alias collisions and deprecated replacement targets.                                                                                                                                                                                                                                            |
-| `svgs/`                                 | 37 categories × 6 styles = 7,608 SVGs, committed.                                                                                                                                                                                                                                                                                                                                       |
+| `svgs/`                                 | 37 categories × 6 styles = 8,274 SVGs, committed.                                                                                                                                                                                                                                                                                                                                       |
 | `src/scripts/`                          | Build-time CLI scripts (see `packages/core/src/scripts/AGENT.md`).                                                                                                                                                                                                                                                                                                                      |
 
 ## ⚠️ Known Constraints
 
-- **`generate-svgs.ts` requires `FIGMA_API_TOKEN` and `FIGMA_FILE_ID`** at runtime. It is the only script that needs Figma credentials. Not invoked by CI.
+- **The live path in `generate-svgs.ts` requires `FIGMA_API_TOKEN` and `FIGMA_FILE_ID`**; the `--offline` path is credential-free. It is the only script that needs Figma credentials. Not invoked by CI.
 - **`metadata-descriptions.json` is hand-curated source code.** NEVER auto-generate it. The `generate-descriptions` and `fix-descriptions` scripts are manual tools; they are not part of `pnpm build` or any `generate:assets` flow. Guard: `pnpm check:descriptions` validates the JSON schema, aliases, and deprecated aliases. All edits to this file must be manual commits.
 - **Deprecated icon names are metadata-driven.** Add a structured `deprecatedAliases` entry to the canonical icon in `metadata-descriptions.json`; do not add ad hoc rename tables to individual framework generators. The core `buildDeprecatedAliasMap` helper feeds all package generators, which must preserve both barrel and direct subpath imports without duplicating icon implementations.
 - **Extended icon metadata is declarative.** An icon added outside the upstream set must declare `origin: "extended"`, `addedAt`, and `author`; `check:icons-metadata` enforces coverage between SVGs, `metadata.json`, and `metadata-descriptions.json`.
