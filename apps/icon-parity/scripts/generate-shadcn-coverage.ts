@@ -83,7 +83,8 @@ function readJson<T>(filePath: string): T {
 }
 
 function writeJson(filePath: string, value: unknown) {
-    fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`)
+    const content = `${JSON.stringify(value, null, 2)}\n`
+    fs.writeFileSync(filePath, formatArtifact(filePath, content))
 }
 
 function formatArtifact(filePath: string, content: string): string {

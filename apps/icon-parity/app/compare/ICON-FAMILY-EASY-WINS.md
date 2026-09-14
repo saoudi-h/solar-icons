@@ -12,11 +12,11 @@ same Lucide coverage snapshot for evidence.
 
 | State                                             | Count |
 | ------------------------------------------------- | ----: |
-| Already present under the proposed canonical name |     1 |
-| Existing Solar semantic equivalent                |     2 |
-| Existing candidate requiring visual review        |    13 |
-| Lucide concept with no current Solar candidate    |    38 |
-| Solar-family proposal outside the Lucide snapshot |    21 |
+| Already present under the proposed canonical name |    72 |
+| Existing Solar semantic equivalent                |     1 |
+| Existing candidate requiring visual review        |     1 |
+| Lucide concept with no current Solar candidate    |     0 |
+| Solar-family proposal outside the Lucide snapshot |     1 |
 
 The queue is a triage instrument, not an instruction to create every item. An existing
 equivalent should be removed from the extension queue after maintainer review. A `review`
@@ -24,90 +24,90 @@ entry needs a rendered comparison before it can be accepted as a compatibility m
 
 ## Existing Solar family inventory
 
-- **clipboard:** clipboard, clipboard-add, clipboard-check, clipboard-heart, clipboard-list, clipboard-remove, clipboard-text
-- **file:** cloud-file, code-file, figma-file, file, file-check, file-corrupted, file-download, file-favorite, file-left, file-remove, file-right, file-send, file-smile, file-text, zip-file
-- **chat:** chat-dots, chat-line, chat-round, chat-round-call, chat-round-check, chat-round-dots, chat-round-like, chat-round-line, chat-round-money, chat-round-unread, chat-round-video, chat-square, chat-square-2, chat-square-arrow, chat-square-call, chat-square-check, chat-square-code, chat-square-like, chat-unread
-- **folder:** folder, folder-2, folder-check, folder-cloud, folder-error, folder-favorite-bookmark, folder-favorite-star, folder-open, folder-path-connect, folder-security, folder-with-files
-- **layout-and-data:** star, star-2, star-angle, star-circle, star-fall, star-fall-2, star-fall-minimalistic, star-fall-minimalistic-2, star-rainbow, star-ring, star-rings, star-shine, widget, widget-2, widget-3, widget-4, widget-5, widget-6, widget-add
+- **clipboard:** clipboard, clipboard-add, clipboard-check, clipboard-clock, clipboard-copy, clipboard-heart, clipboard-list, clipboard-minus, clipboard-paste, clipboard-remove, clipboard-text, clipboard-type
+- **file:** file, file-add, file-badge, file-braces, file-chart, file-chart-2, file-check, file-cloud, file-code, file-cog, file-corrupted, file-download, file-favorite, file-figma, file-left, file-minus, file-pen, file-question-mark, file-remove, file-right, file-search, file-send, file-signal, file-sliders, file-smile, file-spreadsheet, file-terminal, file-text, file-type, file-video-camera, file-warning, file-zip
+- **chat:** chat-round, chat-round-add, chat-round-call, chat-round-check, chat-round-close, chat-round-code, chat-round-dots, chat-round-like, chat-round-line, chat-round-money, chat-round-off, chat-round-question-mark, chat-round-quote, chat-round-replay, chat-round-unread, chat-round-video, chat-round-warning, chat-square, chat-square-2, chat-square-add, chat-square-arrow, chat-square-call, chat-square-check, chat-square-close, chat-square-code, chat-square-dots, chat-square-like, chat-square-line, chat-square-off, chat-square-question-mark, chat-square-quote, chat-square-replay, chat-square-unread, chat-square-warning
+- **folder:** folder, folder-2, folder-check, folder-clock, folder-cloud, folder-code, folder-cog, folder-dot, folder-dot-open, folder-down, folder-error, folder-favorite-bookmark, folder-favorite-star, folder-git, folder-kanban, folder-lock, folder-open, folder-output, folder-path-connect, folder-pen, folder-search, folder-security, folder-symlink, folder-sync, folder-tree, folder-up, folder-with-files, folder-zip, folders
+- **layout-and-data:** container, git-branch, git-commit, git-diff, git-fork, git-graph, git-pull-request, grid-2x2, grid-2x2-add, grid-2x2-check, grid-2x2-close, grid-3x3, loader, quote, quote-circle, quote-square, sheet, star, star-2, star-angle, star-circle, star-fall, star-fall-2, star-fall-minimalistic, star-fall-minimalistic-2, star-off, star-rainbow, star-ring, star-rings, star-shine, table, table-cells-merge, table-cells-split, table-columns-split, table-minimalistic, table-properties, table-rows-split, widget, widget-2, widget-3, widget-4, widget-5, widget-6, widget-add
 
 ## Proposed family queue
 
 | Family          | Requested / canonical name | State               | Lucide ID | Solar candidates                                                         |
 | --------------- | -------------------------- | ------------------- | --------- | ------------------------------------------------------------------------ |
-| clipboard       | clipboard-minus            | review              | L0431     | clipboard-remove                                                         |
-| clipboard       | clipboard-paste            | missing             | L0432     | —                                                                        |
-| clipboard       | clipboard-clock            | missing             | L0428     | —                                                                        |
-| clipboard       | clipboard-copy             | missing             | L0429     | —                                                                        |
-| clipboard       | clipboard-type             | review              | L0436     | clipboard-text                                                           |
-| file            | file-warning               | missing             | L0699     | —                                                                        |
-| file            | file-question-mark         | review              | L0679     | question-circle                                                          |
-| file            | file-add                   | untracked           | —         | —                                                                        |
-| file            | file-minus                 | review              | L0667     | file-remove, clipboard-remove                                            |
-| file            | file-search                | review              | L0681     | card-search                                                              |
-| file            | file-pen                   | review              | L0672     | gallery-edit                                                             |
-| file            | file-chart                 | untracked           | —         | —                                                                        |
-| file            | file-cog                   | missing             | L0652     | —                                                                        |
-| file            | file-badge                 | existing-equivalent | L0636     | diploma-verified                                                         |
-| file            | file-braces                | missing             | L0639     | —                                                                        |
-| file            | file-video-camera          | missing             | L0696     | —                                                                        |
-| file            | file-type                  | missing             | L0691     | —                                                                        |
-| file            | file-signal                | missing             | L0684     | —                                                                        |
-| file            | file-terminal              | missing             | L0689     | —                                                                        |
-| file            | file-spreadsheet           | missing             | L0686     | —                                                                        |
-| file            | file-sliders               | missing             | L0685     | —                                                                        |
-| chat            | chat-round-question-mark   | untracked           | —         | —                                                                        |
-| chat            | chat-round-warning         | untracked           | —         | —                                                                        |
-| chat            | chat-square-question-mark  | untracked           | —         | —                                                                        |
-| chat            | chat-square-warning        | untracked           | —         | —                                                                        |
-| chat            | chat-round-add             | untracked           | —         | —                                                                        |
-| chat            | chat-square-add            | untracked           | —         | —                                                                        |
-| chat            | chat-round-close           | untracked           | —         | —                                                                        |
-| chat            | chat-square-close          | untracked           | —         | —                                                                        |
-| chat            | chat-round-code            | untracked           | —         | —                                                                        |
+| clipboard       | clipboard-minus            | already-present     | L0431     | clipboard-remove                                                         |
+| clipboard       | clipboard-paste            | already-present     | L0432     | —                                                                        |
+| clipboard       | clipboard-clock            | already-present     | L0428     | —                                                                        |
+| clipboard       | clipboard-copy             | already-present     | L0429     | —                                                                        |
+| clipboard       | clipboard-type             | already-present     | L0436     | clipboard-text                                                           |
+| file            | file-warning               | already-present     | L0699     | —                                                                        |
+| file            | file-question-mark         | already-present     | L0679     | question-circle                                                          |
+| file            | file-add                   | already-present     | —         | —                                                                        |
+| file            | file-minus                 | already-present     | L0667     | file-remove, clipboard-remove                                            |
+| file            | file-search                | already-present     | L0681     | card-search                                                              |
+| file            | file-pen                   | already-present     | L0672     | gallery-edit                                                             |
+| file            | file-chart                 | already-present     | —         | —                                                                        |
+| file            | file-cog                   | already-present     | L0652     | —                                                                        |
+| file            | file-badge                 | already-present     | L0636     | diploma-verified                                                         |
+| file            | file-braces                | already-present     | L0639     | —                                                                        |
+| file            | file-video-camera          | already-present     | L0696     | —                                                                        |
+| file            | file-type                  | already-present     | L0691     | —                                                                        |
+| file            | file-signal                | already-present     | L0684     | —                                                                        |
+| file            | file-terminal              | already-present     | L0689     | —                                                                        |
+| file            | file-spreadsheet           | already-present     | L0686     | —                                                                        |
+| file            | file-sliders               | already-present     | L0685     | —                                                                        |
+| chat            | chat-round-question-mark   | already-present     | —         | —                                                                        |
+| chat            | chat-round-warning         | already-present     | —         | —                                                                        |
+| chat            | chat-square-question-mark  | already-present     | —         | —                                                                        |
+| chat            | chat-square-warning        | already-present     | —         | —                                                                        |
+| chat            | chat-round-add             | already-present     | —         | —                                                                        |
+| chat            | chat-square-add            | already-present     | —         | —                                                                        |
+| chat            | chat-round-close           | already-present     | —         | —                                                                        |
+| chat            | chat-square-close          | already-present     | —         | —                                                                        |
+| chat            | chat-round-code            | already-present     | —         | —                                                                        |
 | chat            | chat-square-code           | already-present     | —         | —                                                                        |
-| chat            | chat-round-quote           | untracked           | —         | —                                                                        |
-| chat            | chat-square-quote          | untracked           | —         | —                                                                        |
-| chat            | chat-round-off             | untracked           | —         | —                                                                        |
-| chat            | chat-square-off            | untracked           | —         | —                                                                        |
-| chat            | chat-round-replay          | untracked           | —         | —                                                                        |
-| chat            | chat-square-replay         | untracked           | —         | —                                                                        |
-| folder          | folder-search              | missing             | L0756     | —                                                                        |
-| folder          | folder-pen                 | missing             | L0753     | —                                                                        |
-| folder          | folder-cog                 | missing             | L0739     | —                                                                        |
-| folder          | folder-kanban              | missing             | L0746     | —                                                                        |
-| folder          | folder-tree                | missing             | L0760     | —                                                                        |
-| folder          | folder-sync                | missing             | L0759     | —                                                                        |
-| folder          | folder-up                  | missing             | L0761     | —                                                                        |
-| folder          | folder-down                | missing             | L0741     | —                                                                        |
+| chat            | chat-round-quote           | already-present     | —         | —                                                                        |
+| chat            | chat-square-quote          | already-present     | —         | —                                                                        |
+| chat            | chat-round-off             | already-present     | —         | —                                                                        |
+| chat            | chat-square-off            | already-present     | —         | —                                                                        |
+| chat            | chat-round-replay          | already-present     | —         | —                                                                        |
+| chat            | chat-square-replay         | already-present     | —         | —                                                                        |
+| folder          | folder-search              | already-present     | L0756     | —                                                                        |
+| folder          | folder-pen                 | already-present     | L0753     | —                                                                        |
+| folder          | folder-cog                 | already-present     | L0739     | —                                                                        |
+| folder          | folder-kanban              | already-present     | L0746     | —                                                                        |
+| folder          | folder-tree                | already-present     | L0760     | —                                                                        |
+| folder          | folder-sync                | already-present     | L0759     | —                                                                        |
+| folder          | folder-up                  | already-present     | L0761     | —                                                                        |
+| folder          | folder-down                | already-present     | L0741     | —                                                                        |
 | folder          | folder-input               | existing-equivalent | L0745     | move-to-folder                                                           |
-| folder          | folder-code                | missing             | L0738     | —                                                                        |
-| folder          | folder-git                 | missing             | L0742     | —                                                                        |
-| folder          | folder-clock               | missing             | L0736     | —                                                                        |
-| folder          | folder-dot                 | review              | L0740     | folder                                                                   |
+| folder          | folder-code                | already-present     | L0738     | —                                                                        |
+| folder          | folder-git                 | already-present     | L0742     | —                                                                        |
+| folder          | folder-clock               | already-present     | L0736     | —                                                                        |
+| folder          | folder-dot                 | already-present     | L0740     | folder                                                                   |
 | folder          | folder-archive             | review              | L0733     | inbox-archive                                                            |
-| folder          | folder-symlink             | review              | L0758     | folder-path-connect                                                      |
-| folder          | folder-lock                | review              | L0748     | folder-security                                                          |
-| folder          | folders                    | review              | L0763     | folder, folder-2, folder-with-files                                      |
-| layout-and-data | loader                     | missing             | L0994     | —                                                                        |
-| layout-and-data | quote                      | missing             | L1280     | —                                                                        |
-| layout-and-data | star-off                   | missing             | L1571     | —                                                                        |
-| layout-and-data | columns-3                  | missing             | L0491     | —                                                                        |
-| layout-and-data | columns-2                  | missing             | L0490     | —                                                                        |
-| layout-and-data | columns-4                  | missing             | L0493     | —                                                                        |
-| layout-and-data | columns-3-cog              | missing             | L0492     | —                                                                        |
-| layout-and-data | grid-2x2                   | review              | L0820     | widget, widget-2, widget-3, widget-5, widget-6, widget-add               |
-| layout-and-data | grid-3x3                   | missing             | L0825     | —                                                                        |
-| layout-and-data | grid-2x2-check             | missing             | L0821     | —                                                                        |
-| layout-and-data | grid-2x2-add               | untracked           | —         | —                                                                        |
-| layout-and-data | grid-2x2-close             | untracked           | —         | —                                                                        |
-| layout-and-data | table                      | review              | L1606     | bedside-table, bedside-table-2, bedside-table-3, bedside-table-4, vanity |
-| layout-and-data | table-minimalistic         | untracked           | —         | —                                                                        |
-| layout-and-data | table-properties           | missing             | L1612     | —                                                                        |
-| layout-and-data | table-columns-split        | missing             | L1610     | —                                                                        |
-| layout-and-data | table-rows-split           | missing             | L1613     | —                                                                        |
-| layout-and-data | table-cells-split          | missing             | L1609     | —                                                                        |
-| layout-and-data | sheet                      | missing             | L1411     | —                                                                        |
-| layout-and-data | container                  | missing             | L0504     | —                                                                        |
+| folder          | folder-symlink             | already-present     | L0758     | folder-path-connect                                                      |
+| folder          | folder-lock                | already-present     | L0748     | folder-security                                                          |
+| folder          | folders                    | already-present     | L0763     | folder, folder-2, folder-with-files                                      |
+| layout-and-data | loader                     | already-present     | L0994     | —                                                                        |
+| layout-and-data | quote                      | already-present     | L1280     | —                                                                        |
+| layout-and-data | star-off                   | already-present     | L1571     | —                                                                        |
+| layout-and-data | columns-3                  | already-present     | L0491     | —                                                                        |
+| layout-and-data | columns-2                  | already-present     | L0490     | —                                                                        |
+| layout-and-data | columns-4                  | already-present     | L0493     | —                                                                        |
+| layout-and-data | columns-3-cog              | already-present     | L0492     | —                                                                        |
+| layout-and-data | grid-2x2                   | already-present     | L0820     | widget, widget-2, widget-3, widget-5, widget-6, widget-add               |
+| layout-and-data | grid-3x3                   | already-present     | L0825     | —                                                                        |
+| layout-and-data | grid-2x2-check             | already-present     | L0821     | —                                                                        |
+| layout-and-data | grid-2x2-add               | already-present     | —         | —                                                                        |
+| layout-and-data | grid-2x2-close             | already-present     | —         | —                                                                        |
+| layout-and-data | table                      | already-present     | L1606     | bedside-table, bedside-table-2, bedside-table-3, bedside-table-4, vanity |
+| layout-and-data | table-minimalistic         | already-present     | —         | —                                                                        |
+| layout-and-data | table-properties           | already-present     | L1612     | —                                                                        |
+| layout-and-data | table-columns-split        | already-present     | L1610     | —                                                                        |
+| layout-and-data | table-rows-split           | already-present     | L1613     | —                                                                        |
+| layout-and-data | table-cells-split          | already-present     | L1609     | —                                                                        |
+| layout-and-data | sheet                      | already-present     | L1411     | —                                                                        |
+| layout-and-data | container                  | already-present     | L0504     | —                                                                        |
 | layout-and-data | git                        | untracked           | —         | —                                                                        |
 
 ## Input normalization

@@ -1,9 +1,9 @@
 {
     "source": {
         "repository": "https://github.com/shadcn-ui/ui",
-        "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+        "commit": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
         "generatedFile": "apps/v4/registry/icons/__lucide__.ts",
-        "capturedAt": "2026-09-06"
+        "capturedAt": "2026-09-14"
     },
     "icons": [
         {

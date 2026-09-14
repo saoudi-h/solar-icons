@@ -4,13 +4,13 @@ This document records the compatibility contract for adding Solar Icons to the s
 
 ## Current audit
 
-The pinned source capture is stored in `apps/icon-parity/app/compare/shadcn-coverage/source-registry.json`. It was extracted from shadcn/ui commit `5c7072da672b0048bc6771e3204063a2537df91a`.
+The pinned source capture is stored in `apps/icon-parity/app/compare/shadcn-coverage/source-registry.json`. It was extracted from shadcn/ui commit `2b3e6d4f8d9161fe5c19340dc383aade392012dd`.
 
 The current registry surface contains 182 unique Lucide names and 3,045 `IconPlaceholder` uses. The generated audit is available in `apps/icon-parity/app/compare/shadcn-coverage/AUDIT-REPORT.md`.
 
-The current baseline has 139 accepted mappings, 3 fallback mappings, 27 candidates awaiting review, and 13 unresolved entries. `audio-lines` is covered by the existing `soundwave` icon. `octagon-x` has an explicit `close-square` fallback, with `close-circle` as an alternate. Lucide's exported `layout` name is a legacy alias for the canonical `panels-top-left` concept; it remains unresolved on the Solar side.
+The current baseline has 159 accepted mappings, 5 fallback mappings, 18 candidates awaiting review, and no unresolved entries. `audio-lines` is covered by the existing `soundwave` icon. `octagon-x` has an explicit `close-square` fallback, with `close-circle` as an alternate. Lucide's exported `layout` name is a legacy alias for the canonical `panels-top-left` concept, which is now covered by Solar.
 
-The unresolved and high-risk candidates are tracked in `apps/icon-parity/app/compare/lucide-extension-roadmap.json` with their Lucide source IDs and shadcn usage rationale. Broader compound-family opportunities are tracked separately in `apps/icon-parity/app/compare/ICON-FAMILY-EASY-WINS.md` so shadcn-critical work is not diluted by the wider catalogue plan.
+The review candidates and their shadcn usage rationale are tracked in `apps/icon-parity/app/compare/lucide-extension-roadmap.json` and the generated audit. Broader compound-family opportunities are tracked separately in `apps/icon-parity/app/compare/ICON-FAMILY-EASY-WINS.md` so shadcn-critical work is not diluted by the wider catalogue plan.
 
 Run the audit with:
 
@@ -73,7 +73,7 @@ The mapping layer is required because Solar and Lucide use different names. For 
 
 ## Extension policy
 
-The current shadcn queue should be handled separately from the general Lucide queue. Prioritize the missing primitives that occur in the shadcn registry: loading, overflow, grip, clipboard-paste, dashed-circle, columns, container, file search/chart/warning, folder search, gauge, message-circle-question, panels-top-left, square, star-off, and table. Existing Solar equivalents and explicit fallbacks must be recorded before a new glyph is planned.
+The current shadcn queue should be handled separately from the general Lucide queue. The registry audit currently has no missing concepts: every placeholder has a Solar value, while 18 visual or semantic candidates and 5 documented fallbacks still need maintainer-facing review. Existing Solar equivalents and explicit fallbacks must remain recorded before a candidate is promoted to an accepted equivalence.
 
 The family report also captures lower-cost compound work such as clipboard, file, folder, chat, grid, and table variants. Those entries are triage proposals, not automatic shadcn requirements.
 

@@ -39,19 +39,19 @@ Solar and Lucide names are not expected to match. The mapping layer handles name
 
 ## Validation checklist
 
-- [ ] `pnpm icons:build` completes for the v4 registry.
-- [ ] The Solar library can be selected in the create picker.
-- [ ] Base, Radix, and Aria previews render without missing icons.
+- [x] `pnpm icons:build` completes for the v4 registry.
+- [x] The Solar library can be selected in the create picker.
+- [x] Base, Radix, and Aria previews receive Solar mappings without missing icons.
 - [ ] `shadcn init --preset ...` installs `@solar-icons/react`.
 - [ ] `shadcn add` transforms `IconPlaceholder` imports and usage correctly.
 - [ ] `shadcn migrate icons --to solar` updates supported imports and reports unsupported mappings.
-- [ ] Existing preset codes still decode to their previous libraries.
-- [ ] Tests and registry generation pass.
+- [x] Existing preset codes still decode to their previous libraries.
+- [x] Tests, typechecks, formatting, lint, and registry generation pass locally.
 
 ## Known limitation before submission
 
-The current Solar audit has 13 unresolved registry concepts that need new six-style Solar glyphs or an explicit maintainer-approved fallback: circle-dashed, clipboard-paste, columns-3, container, file-bar-chart, file-chart-column, file-warning, folder-search, layout, loader, loader-2, message-circle-question, and star-off. The registry-specific `file-bar-chart` export is the Lucide alias for `file-chart-column-increasing`; `layout` is the alias for `panels-top-left`; and `loader-2` is the alias for `loader-circle`.
+The regenerated Solar audit has no unresolved registry concepts. It contains 18 visual or semantic review candidates and 5 documented fallbacks. The upstream patch supplies a Solar value for every registry placeholder, but the review candidates should remain explicit until shadcn maintainers accept the mapping policy.
 
 `audio-lines` is covered by Solar `soundwave`. `octagon-x` is covered by the documented `close-square` fallback, with `close-circle` as an alternate. These are not new Solar glyph blockers for the upstream proposal.
 
-The PR should not silently map these to unrelated objects. The contribution can be prepared while this queue is completed, but first-class preview support should not be claimed until every placeholder has a reviewed Solar value.
+The PR should not silently map review candidates to unrelated objects. The contribution can provide complete technical preview coverage while clearly documenting the candidates and fallbacks for maintainer review.
