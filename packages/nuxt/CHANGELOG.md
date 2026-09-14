@@ -1,5 +1,16 @@
 # @solar-icons/nuxt
 
+## 2.2.0
+
+### Minor Changes
+
+- [#551](https://github.com/saoudi-h/solar-icons/pull/551) [`343029a`](https://github.com/saoudi-h/solar-icons/commit/343029ab152b6853e4f3bf538260d61662a3e9ee) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Expand the catalogue from 1,268 to 1,379 icons across all six styles, including the shadcn/ui coverage extensions and family variants. Preserve non-breaking file and chat naming changes through deprecated aliases, normalize those aliases during codemod migrations, and expose the updated catalogue across the CLI, MCP, static, and framework packages.
+
+### Patch Changes
+
+- Updated dependencies [[`343029a`](https://github.com/saoudi-h/solar-icons/commit/343029ab152b6853e4f3bf538260d61662a3e9ee)]:
+  - @solar-icons/vue@2.2.0
+
 ## 2.1.0
 
 ### Minor Changes
@@ -15,7 +26,7 @@
   metadata/deprecation validation model across generated packages, and expose
   auditable extension priorities for future icon additions.
 - Updated dependencies [[`b5ab9d2`](https://github.com/saoudi-h/solar-icons/commit/b5ab9d2f72b93af91086711e7e073e63781a1785), [`b5ab9d2`](https://github.com/saoudi-h/solar-icons/commit/b5ab9d2f72b93af91086711e7e073e63781a1785)]:
-    - @solar-icons/vue@2.1.0
+  - @solar-icons/vue@2.1.0
 
 ## 2.0.3
 
@@ -24,7 +35,7 @@
 - [#531](https://github.com/saoudi-h/solar-icons/pull/531) [`171c9bf`](https://github.com/saoudi-h/solar-icons/commit/171c9bf09ea9c86887260db9ba23479cc7b1f5e2) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: correct the ticket-star icon name, preserve ticker-star compatibility exports, and refresh logout Bold SVG
 
 - Updated dependencies [[`171c9bf`](https://github.com/saoudi-h/solar-icons/commit/171c9bf09ea9c86887260db9ba23479cc7b1f5e2)]:
-    - @solar-icons/vue@2.0.3
+  - @solar-icons/vue@2.0.3
 
 ## 2.0.2
 
@@ -33,7 +44,7 @@
 - [#531](https://github.com/saoudi-h/solar-icons/pull/531) [`29bfda4`](https://github.com/saoudi-h/solar-icons/commit/29bfda4ced2e0db927c10fb87b8484c9400d8ed4) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: correct the ticket-star icon name, preserve ticker-star compatibility exports, and refresh logout Bold SVG
 
 - Updated dependencies [[`29bfda4`](https://github.com/saoudi-h/solar-icons/commit/29bfda4ced2e0db927c10fb87b8484c9400d8ed4)]:
-    - @solar-icons/vue@2.0.2
+  - @solar-icons/vue@2.0.2
 
 ## 2.0.1
 
@@ -42,7 +53,7 @@
 - [`db82d4a`](https://github.com/saoudi-h/solar-icons/commit/db82d4ae32ffa2df1caf037dfa744037f08ebbff) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Republish as 2.0.1 so the pinned `@solar-icons/vue` dependency resolves: the published 2.0.0 pinned `@solar-icons/vue` at the exact (unavailable) `2.0.0` version.
 
 - Updated dependencies [[`db82d4a`](https://github.com/saoudi-h/solar-icons/commit/db82d4ae32ffa2df1caf037dfa744037f08ebbff)]:
-    - @solar-icons/vue@2.0.1
+  - @solar-icons/vue@2.0.1
 
 ## 2.0.0
 
@@ -65,14 +76,14 @@
 - [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
 
 - Updated dependencies [[`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7), [`ecec198`](https://github.com/saoudi-h/solar-icons/commit/ecec19849ac677bf1039559afc5c2d8546697c0d), [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820)]:
-    - @solar-icons/vue@2.0.0
+  - @solar-icons/vue@2.0.0
 
 ## 2.0.0-beta.3
 
 ### Patch Changes
 
 - Updated dependencies [[`b766d76`](https://github.com/saoudi-h/solar-icons/commit/b766d7630624520b819a05a1a3837c4d5f66d4e7)]:
-    - @solar-icons/vue@2.0.0-beta.3
+  - @solar-icons/vue@2.0.0-beta.3
 
 ## 2.0.0-beta.2
 
@@ -81,7 +92,7 @@
 - [`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820) Thanks [@saoudi-h](https://github.com/saoudi-h)! - update readme files
 
 - Updated dependencies [[`afce9f9`](https://github.com/saoudi-h/solar-icons/commit/afce9f92c6fb3b0e90caf14a62e27e508f9a3820)]:
-    - @solar-icons/vue@2.0.0-beta.2
+  - @solar-icons/vue@2.0.0-beta.2
 
 ## 2.0.0-beta.1
 
@@ -90,7 +101,7 @@
 - [#504](https://github.com/saoudi-h/solar-icons/pull/504) [`3723c12`](https://github.com/saoudi-h/solar-icons/commit/3723c12f5e096ff2670067a0d3df9960990c31dc) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: update airbuds and radial-blur icons (fix stroke width and styles)
 
 - Updated dependencies [[`3723c12`](https://github.com/saoudi-h/solar-icons/commit/3723c12f5e096ff2670067a0d3df9960990c31dc)]:
-    - @solar-icons/vue@2.0.0-beta.1
+  - @solar-icons/vue@2.0.0-beta.1
 
 ## 1.2.1
 
@@ -99,7 +110,7 @@
 - [#461](https://github.com/saoudi-h/solar-icons/pull/461) [`da571b7`](https://github.com/saoudi-h/solar-icons/commit/da571b744d1253dbf0e37d81f161a8645c6ae4b9) Thanks [@saoudi-h](https://github.com/saoudi-h)! - fix: logout Bold icon
 
 - Updated dependencies [[`da571b7`](https://github.com/saoudi-h/solar-icons/commit/da571b744d1253dbf0e37d81f161a8645c6ae4b9)]:
-    - @solar-icons/vue@1.2.1
+  - @solar-icons/vue@1.2.1
 
 ## 1.2.0
 
@@ -112,21 +123,21 @@
 - chore: graduation from beta to stable release
 
 - Updated dependencies [[`9c9977c`](https://github.com/saoudi-h/solar-icons/commit/9c9977cd9011a51aa76d7bd2bce44962cf128702), [`9c9977c`](https://github.com/saoudi-h/solar-icons/commit/9c9977cd9011a51aa76d7bd2bce44962cf128702)]:
-    - @solar-icons/vue@1.2.0
+  - @solar-icons/vue@1.2.0
 
 ## 1.2.0-beta.2
 
 ### Patch Changes
 
 - Updated dependencies []:
-    - @solar-icons/vue@1.2.0-beta.2
+  - @solar-icons/vue@1.2.0-beta.2
 
 ## 1.2.0-beta.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-    - @solar-icons/vue@1.2.0-beta.1
+  - @solar-icons/vue@1.2.0-beta.1
 
 ## 1.2.0-beta.0
 
@@ -137,7 +148,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-    - @solar-icons/vue@1.2.0-beta.0
+  - @solar-icons/vue@1.2.0-beta.0
 
 ## 1.1.3
 
@@ -168,4 +179,4 @@
 ### Patch Changes
 
 - Updated dependencies [[`b213337`](https://github.com/saoudi-h/solar-icons/commit/b2133371937f5000436eddeb64839ee01335656d)]:
-    - @solar-icons/vue@1.1.0
+  - @solar-icons/vue@1.1.0
