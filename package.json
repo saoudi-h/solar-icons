@@ -52,7 +52,7 @@
     },
     "packageManager": "pnpm@12.4.1",
     "engines": {
-        "node": ">=18"
+        "node": "24.x"
     },
     "repository": {
         "type": "git",
