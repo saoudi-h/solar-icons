@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, correct alias false positives, maintain a separate compound-family easy-win queue, define non-breaking naming normalization, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. **Issue:** `ISSUE-ICON-SHAPE-NAMING`. `Priority: 🔴` `Complexity: XL`
+
 - [/] **[DOCS-AI-TOOLS-SHOWCASE]** Restyle the AI tools showcase on the docs homepage. Replace the static pseudo-stepper with an interactive "Agent in Action" window demonstrating real prompt, tool resolution, rendered Solar icon, and import snippet across MCP, Skill, and CLI modalities. `Priority: 🟠` `Complexity: M`
 
 - [x] **[DOCS-ICON-DETAIL-TABS-OVERFLOW]** Restore access to every icon-detail tab at constrained widths. Kept the existing MotionTabs composition, active-state animation, tab labels, and page-level layout; made the tab strip natively scrollable on every breakpoint and preserved each tab's intrinsic width. Rendered intermediate-width checks selected the off-screen Svelte and JS tabs, updated their snippets, and scrolled the native strip without a Lenis override. Light and dark checks, typecheck, lint, format, diff check, and the production build passed. Mobile viewport and direct touch validation remain manual because the integrated browser cannot emulate that viewport. **Issue:** `ISSUE-ICON-DETAIL-TABS-OVERFLOW`. `Priority: 🔴` `Complexity: M` *See: worklogs/2026-09-03-DOCS-ICON-DETAIL-TABS-OVERFLOW*

@@ -14,10 +14,19 @@
         ]
     },
     {
-        "name": "chat-unread",
+        "name": "chat-square-unread",
         "category": "messages",
         "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
-        "tags": ["speech bubble", "message notification"]
+        "tags": ["speech bubble", "message notification"],
+        "deprecatedAliases": [
+            {
+                "name": "chat-unread",
+                "replacement": "chat-square-unread",
+                "reason": "The square chat-bubble silhouette is now explicit in the name.",
+                "deprecatedSince": "2026-09-12"
+            }
+        ],
+        "origin": "upstream"
     },
     {
         "name": "letter-unread",
@@ -26,10 +35,19 @@
         "tags": ["envelope", "unopened letter", "mail", "notification", "new", "post"]
     },
     {
-        "name": "chat-line",
+        "name": "chat-square-line",
         "category": "messages",
         "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
-        "tags": ["speech-bubble", "message-bubble"]
+        "tags": ["speech-bubble", "message-bubble"],
+        "deprecatedAliases": [
+            {
+                "name": "chat-line",
+                "replacement": "chat-square-line",
+                "reason": "The square chat-bubble silhouette is now explicit in the name.",
+                "deprecatedSince": "2026-09-12"
+            }
+        ],
+        "origin": "upstream"
     },
     {
         "name": "inbox-archive",
@@ -158,10 +176,19 @@
         "tags": ["right arrow", "advance sign"]
     },
     {
-        "name": "chat-dots",
+        "name": "chat-square-dots",
         "category": "messages",
         "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
-        "tags": ["speech-bubble", "dots"]
+        "tags": ["speech-bubble", "dots"],
+        "deprecatedAliases": [
+            {
+                "name": "chat-dots",
+                "replacement": "chat-square-dots",
+                "reason": "The square chat-bubble silhouette is now explicit in the name.",
+                "deprecatedSince": "2026-09-12"
+            }
+        ],
+        "origin": "upstream"
     },
     {
         "name": "chat-round-unread",
@@ -4790,7 +4817,7 @@
         ]
     },
     {
-        "name": "code-file",
+        "name": "file-code",
         "category": "files",
         "categoryTags": ["files", "documents", "pages", "paper", "content"],
         "tags": [
@@ -4803,10 +4830,19 @@
             "programming",
             "script",
             "brackets"
-        ]
+        ],
+        "deprecatedAliases": [
+            {
+                "name": "code-file",
+                "replacement": "file-code",
+                "reason": "Normalized the legacy *-file name to the file-* naming convention.",
+                "deprecatedSince": "2026-09-11"
+            }
+        ],
+        "origin": "upstream"
     },
     {
-        "name": "zip-file",
+        "name": "file-zip",
         "category": "files",
         "categoryTags": ["files", "documents", "pages", "paper", "content"],
         "tags": [
@@ -4819,13 +4855,31 @@
             "compressed",
             "zipper",
             "archive bundle"
-        ]
+        ],
+        "deprecatedAliases": [
+            {
+                "name": "zip-file",
+                "replacement": "file-zip",
+                "reason": "Normalized the legacy *-file name to the file-* naming convention.",
+                "deprecatedSince": "2026-09-11"
+            }
+        ],
+        "origin": "upstream"
     },
     {
-        "name": "figma-file",
+        "name": "file-figma",
         "category": "files",
         "categoryTags": ["files", "documents", "pages", "paper", "content"],
-        "tags": ["file", "paper", "document", "page", "design", "ui", "prototype", "figma-logo"]
+        "tags": ["file", "paper", "document", "page", "design", "ui", "prototype", "figma-logo"],
+        "deprecatedAliases": [
+            {
+                "name": "figma-file",
+                "replacement": "file-figma",
+                "reason": "Normalized the legacy *-file name to the file-* naming convention.",
+                "deprecatedSince": "2026-09-11"
+            }
+        ],
+        "origin": "upstream"
     },
     {
         "name": "file-favorite",
@@ -4850,7 +4904,7 @@
         "tags": ["download", "save", "document", "page", "paper", "arrow-down", "fetch"]
     },
     {
-        "name": "cloud-file",
+        "name": "file-cloud",
         "category": "files",
         "categoryTags": ["files", "documents", "pages", "paper", "content"],
         "tags": [
@@ -4863,7 +4917,16 @@
             "storage",
             "sync",
             "drive"
-        ]
+        ],
+        "deprecatedAliases": [
+            {
+                "name": "cloud-file",
+                "replacement": "file-cloud",
+                "reason": "Normalized the legacy *-file name to the file-* naming convention.",
+                "deprecatedSince": "2026-09-11"
+            }
+        ],
+        "origin": "upstream"
     },
     {
         "name": "men",
@@ -14772,6 +14835,1619 @@
         "tags": ["wifi off", "wi-fi disabled", "wireless disabled", "no internet", "offline"],
         "origin": "extended",
         "addedAt": "2026-08-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "braces",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["curly braces", "code", "programming", "syntax", "developer", "delimiters"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "brackets",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["square brackets", "code", "programming", "syntax", "developer", "delimiters"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-add",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": ["speech bubble", "message", "add", "new conversation", "plus", "communication"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-close",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": ["speech bubble", "message", "close", "dismiss", "cancel", "remove"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-code",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "code chat",
+            "programming conversation",
+            "developer",
+            "syntax",
+            "message",
+            "speech bubble"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-off",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "chat disabled",
+            "message off",
+            "mute",
+            "do not disturb",
+            "speech bubble",
+            "communication"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-question-mark",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": ["question message", "help", "support", "faq", "speech bubble", "conversation"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-quote",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "quoted message",
+            "quotation",
+            "speech bubble",
+            "blockquote",
+            "conversation",
+            "text"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-replay",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": ["reply message", "repeat", "retry", "resend", "speech bubble", "conversation"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-round-warning",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "warning message",
+            "alert",
+            "attention",
+            "caution",
+            "speech bubble",
+            "conversation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-add",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "square speech bubble",
+            "message",
+            "add",
+            "new conversation",
+            "plus",
+            "communication"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-close",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": ["square speech bubble", "message", "close", "dismiss", "cancel", "remove"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-off",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "square chat disabled",
+            "message off",
+            "mute",
+            "do not disturb",
+            "speech bubble",
+            "communication"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-question-mark",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "question square message",
+            "help",
+            "support",
+            "faq",
+            "speech bubble",
+            "conversation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-quote",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "quoted square message",
+            "quotation",
+            "speech bubble",
+            "blockquote",
+            "conversation",
+            "text"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-replay",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "reply square message",
+            "repeat",
+            "retry",
+            "resend",
+            "speech bubble",
+            "conversation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chat-square-warning",
+        "category": "messages",
+        "categoryTags": ["chat", "communication", "talk", "dialog", "conversation", "text", "mail"],
+        "tags": [
+            "warning square message",
+            "alert",
+            "attention",
+            "caution",
+            "speech bubble",
+            "conversation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "circle-dashed",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "dashed circle",
+            "circle",
+            "border",
+            "outline",
+            "loading",
+            "selection",
+            "progress",
+            "shape"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "An eighteen-use progress and placeholder primitive is absent from the current Solar catalogue."
+    },
+    {
+        "name": "square-dashed",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "dashed square",
+            "square",
+            "border",
+            "outline",
+            "loading",
+            "selection",
+            "progress",
+            "shape"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "clipboard-clock",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": ["clipboard", "clock", "schedule", "history", "time tracking", "form", "record"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "clipboard-copy",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": ["clipboard", "copy", "duplicate", "documents", "board", "paper", "write", "paste"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "clipboard-minus",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": ["clipboard", "remove", "minus", "decrease", "task", "board", "paper", "write"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "clipboard-paste",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": [
+            "clipboard",
+            "paste",
+            "insert",
+            "clipboard action",
+            "board",
+            "paper",
+            "write",
+            "form"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The shadcn registry uses the paste action in fourteen previews; a generic clipboard loses the action state."
+    },
+    {
+        "name": "clipboard-type",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": ["clipboard", "text", "typing", "input", "form", "board", "paper", "write"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "columns-2",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["two columns", "layout", "split view", "grid", "panels", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "columns-3",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["three columns", "layout", "split view", "grid", "panels", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The three-column layout control is part of the shadcn surface and has no accepted Solar equivalent."
+    },
+    {
+        "name": "columns-3-cog",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["three columns", "layout settings", "configuration", "grid", "panels", "gear"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "columns-4",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["four columns", "layout", "split view", "grid", "panels", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "container",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["container", "box", "layout", "wrapper", "component", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "The registry uses a generic container primitive that cannot be represented by a box fallback without changing the concept."
+    },
+    {
+        "name": "grid-2x2",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "two by two grid",
+            "grid",
+            "layout",
+            "dashboard",
+            "modules",
+            "squares",
+            "interface"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grid-2x2-add",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["two by two grid", "add", "create", "modules", "dashboard", "layout", "plus"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grid-2x2-check",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "two by two grid",
+            "check",
+            "approval",
+            "modules",
+            "dashboard",
+            "layout",
+            "verified"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grid-2x2-close",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["two by two grid", "close", "remove", "modules", "dashboard", "layout", "cancel"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grid-3x3",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "three by three grid",
+            "grid",
+            "layout",
+            "dashboard",
+            "modules",
+            "squares",
+            "interface"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "loader",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["loading", "spinner", "progress", "wait", "async", "processing", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The generic loader is used by shadcn independently from loader-circle; both need a stable Solar loading treatment."
+    },
+    {
+        "name": "file-add",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["add file", "new document", "create", "plus", "document", "page", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-badge",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file badge",
+            "verified document",
+            "certificate",
+            "document",
+            "page",
+            "paper",
+            "approval",
+            "credential"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-braces",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "code file",
+            "curly braces",
+            "programming",
+            "source code",
+            "document",
+            "page",
+            "paper"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-chart",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file chart",
+            "data report",
+            "analytics",
+            "statistics",
+            "document",
+            "page",
+            "paper",
+            "metrics"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The file-chart-column compound is used by shadcn and requires a dedicated document-plus-chart silhouette."
+    },
+    {
+        "name": "file-chart-2",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file chart variant",
+            "data report",
+            "analytics",
+            "statistics",
+            "growth",
+            "document",
+            "page",
+            "paper"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-cog",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["file settings", "configuration", "document", "page", "paper", "gear", "options"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-minus",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["remove file", "file minus", "delete", "document", "page", "paper", "decrease"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-pen",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["edit file", "write", "pen", "modify", "document", "page", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-question-mark",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file question",
+            "help",
+            "unknown document",
+            "support",
+            "document",
+            "page",
+            "paper"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-search",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["search file", "find document", "magnify", "inspect", "document", "page", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Five shadcn uses need a document-search compound; the current card-search candidate changes the base object."
+    },
+    {
+        "name": "file-signal",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file signal",
+            "status",
+            "connection",
+            "document",
+            "page",
+            "paper",
+            "activity",
+            "indicator"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-sliders",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file settings",
+            "adjustments",
+            "controls",
+            "document",
+            "page",
+            "paper",
+            "configuration"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-spreadsheet",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["spreadsheet", "table", "data", "cells", "document", "page", "paper", "grid"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-terminal",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["terminal file", "command line", "code", "shell", "document", "page", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-type",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "file type",
+            "format",
+            "extension",
+            "document",
+            "page",
+            "paper",
+            "label",
+            "metadata"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-video-camera",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "video file",
+            "camera",
+            "media",
+            "movie",
+            "document",
+            "page",
+            "paper",
+            "recording"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-warning",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["file warning", "alert", "caution", "error", "document", "page", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The file-warning state appears in six shadcn previews and has no accepted Solar equivalent."
+    },
+    {
+        "name": "sheet",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["spreadsheet", "sheet", "table", "cells", "data", "document", "paper"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-clock",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["folder", "clock", "schedule", "history", "directory", "files", "time"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-code",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["code folder", "programming", "source files", "directory", "folder", "developer"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-cog",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "folder settings",
+            "configuration",
+            "directory",
+            "organization",
+            "gear",
+            "options"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-down",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["download folder", "move down", "directory", "files", "import", "arrow"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-git",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "git folder",
+            "version control",
+            "repository",
+            "source code",
+            "directory",
+            "branch"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-kanban",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "kanban folder",
+            "project board",
+            "workflow",
+            "directory",
+            "organization",
+            "tasks"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-pen",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["edit folder", "rename", "directory", "write", "pen", "organization"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-search",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["search folder", "find directory", "magnify", "files", "organization", "lookup"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The folder-search compound is used in three registry previews and is absent from Solar."
+    },
+    {
+        "name": "folder-sync",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["sync folder", "synchronize", "directory", "refresh", "files", "backup"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-tree",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "folder tree",
+            "directory hierarchy",
+            "nested folders",
+            "organization",
+            "structure",
+            "files"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-up",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["upload folder", "move up", "directory", "files", "export", "arrow"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-branch",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "branch", "version control", "repository", "development", "source code"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-commit",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "commit", "version control", "repository", "changes", "source code"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-diff",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "diff", "compare changes", "version control", "repository", "code review"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-fork",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "fork", "repository", "version control", "clone", "development"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-graph",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "graph", "history", "branches", "version control", "repository"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "git-pull-request",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["git", "pull request", "code review", "merge", "repository", "collaboration"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-top",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["top panel", "window", "layout", "interface", "panel", "navigation"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-top-close",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["close top panel", "window", "dismiss", "layout", "interface", "panel"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-top-open",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["open top panel", "window", "expand", "layout", "interface", "panel"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panels-top-left",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["panels", "top left layout", "dashboard", "window", "interface", "grid", "layout"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Lucide's current layout alias appears nine times in shadcn and needs a deliberate panel-layout silhouette."
+    },
+    {
+        "name": "parentheses",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["parentheses", "round brackets", "code", "programming", "syntax", "delimiters"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "sidebar-close",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["close sidebar", "navigation", "drawer", "panel", "menu", "layout", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "sidebar-open",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["open sidebar", "navigation", "drawer", "panel", "menu", "layout", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "kanban",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": [
+            "kanban board",
+            "project management",
+            "workflow",
+            "tasks",
+            "columns",
+            "planning",
+            "productivity"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "kanban-square",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": [
+            "kanban board",
+            "project management",
+            "workflow",
+            "tasks",
+            "square",
+            "planning",
+            "productivity"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["data table", "rows", "columns", "grid", "spreadsheet", "records", "database"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "The data-table primitive appears eleven times in shadcn; a bedside-table candidate is semantically wrong."
+    },
+    {
+        "name": "table-cells-merge",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["merge cells", "table", "spreadsheet", "rows", "columns", "data", "layout"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table-cells-split",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["split cells", "table", "spreadsheet", "rows", "columns", "data", "layout"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table-columns-split",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["split columns", "table", "spreadsheet", "columns", "data", "layout", "resize"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table-minimalistic",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["minimal table", "data table", "rows", "columns", "grid", "records", "simple"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table-properties",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": [
+            "table settings",
+            "properties",
+            "data table",
+            "columns",
+            "rows",
+            "configuration",
+            "options"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "table-rows-split",
+        "category": "business",
+        "categoryTags": [
+            "finance",
+            "statistics",
+            "analytics",
+            "data",
+            "corporate",
+            "economy",
+            "growth",
+            "presentation",
+            "metrics"
+        ],
+        "tags": ["split rows", "table", "spreadsheet", "rows", "data", "layout", "resize"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "quote",
+        "category": "text-formatting",
+        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "tags": ["quotation", "blockquote", "text", "editor", "typography", "citation", "speech"],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "quote-circle",
+        "category": "text-formatting",
+        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "tags": [
+            "quotation circle",
+            "blockquote",
+            "text",
+            "editor",
+            "typography",
+            "citation",
+            "speech"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "quote-square",
+        "category": "text-formatting",
+        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "tags": [
+            "quotation square",
+            "blockquote",
+            "text",
+            "editor",
+            "typography",
+            "citation",
+            "speech"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "star-off",
+        "category": "like",
+        "categoryTags": ["favorite", "award", "achievement", "rating", "appreciation", "love"],
+        "tags": [
+            "favorite off",
+            "unfavorite",
+            "remove favorite",
+            "star",
+            "rating",
+            "bookmark",
+            "disabled"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-11",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "The favorite-off state is used in six shadcn previews and can share a deliberate state-mark family with other Solar controls."
+    },
+    {
+        "name": "folder-dot",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["folder", "directory", "dot", "status", "indicator", "organization"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-dot-open",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["open folder", "directory", "dot", "status", "indicator", "browse"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-lock",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["folder", "directory", "lock", "private", "secure", "permissions", "protected"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-output",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["folder", "directory", "output", "export", "send", "transfer"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-symlink",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": ["folder", "directory", "symlink", "link", "shortcut", "alias", "filesystem"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folders",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "folders",
+            "directories",
+            "collection",
+            "organization",
+            "file management",
+            "storage",
+            "hierarchy"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "folder-zip",
+        "category": "folders",
+        "categoryTags": ["folders", "directories", "organization", "storage"],
+        "tags": [
+            "folder zip",
+            "compressed folder",
+            "archive",
+            "compressed files",
+            "package",
+            "storage"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grip",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["drag handle", "reorder", "move", "grab", "sortable", "drag and drop", "handle"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grip-horizontal",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "horizontal drag handle",
+            "reorder",
+            "move",
+            "grab",
+            "sortable",
+            "drag and drop",
+            "handle"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "grip-vertical",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "vertical drag handle",
+            "reorder",
+            "move",
+            "grab",
+            "sortable",
+            "drag and drop",
+            "handle"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "menu-dots-vertical",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "vertical ellipsis",
+            "more options",
+            "overflow menu",
+            "kebab menu",
+            "actions",
+            "context menu",
+            "three dots"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "move",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": ["move", "four directions", "translate", "drag", "position", "transform", "pan"],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "move-circle",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "move circle",
+            "four directions",
+            "translate",
+            "drag",
+            "position",
+            "transform",
+            "pan"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "move-square",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "move square",
+            "four directions",
+            "translate",
+            "drag",
+            "position",
+            "transform",
+            "pan"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "move-3d",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "move 3d",
+            "three-dimensional",
+            "transform",
+            "axis",
+            "position",
+            "spatial",
+            "design tool"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-12",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "archive-close",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": ["close archive", "archive", "dismiss", "remove", "box", "storage", "files"],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "archive-minimalistic-close",
+        "category": "notes",
+        "categoryTags": ["document", "paper", "write", "record", "clipboard", "text"],
+        "tags": [
+            "minimalist archive",
+            "close archive",
+            "archive",
+            "dismiss",
+            "box",
+            "storage",
+            "files"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "blocks",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["blocks", "grid", "components", "modules", "dashboard", "layout", "tiles"],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "camera-off",
+        "category": "video",
+        "categoryTags": ["video", "camera", "communication", "privacy"],
+        "tags": [
+            "camera off",
+            "camera disabled",
+            "no camera",
+            "video off",
+            "video call",
+            "privacy"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "car",
+        "category": "parts",
+        "categoryTags": ["automotive", "car", "vehicle", "engine", "mechanic", "transport"],
+        "tags": ["car", "automobile", "vehicle", "automotive", "transport", "road", "drive"],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "frame",
+        "category": "tools",
+        "categoryTags": ["design", "edit", "create", "draw", "measure", "art"],
+        "tags": ["frame", "focus", "selection", "canvas", "layout", "crop", "resize"],
+        "origin": "extended",
+        "addedAt": "2026-09-13",
         "author": "Hakim Saoudi",
         "state": "beta"
     }

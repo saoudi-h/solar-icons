@@ -184,11 +184,11 @@ export const CommunitySection = () => {
                     <div className="flex flex-col gap-6 md:col-span-7">
                         {/* Title & Copy */}
                         <motion.div variants={itemVariants} className="flex flex-col gap-4">
-                            <Heading
-                                size="h1"
-                                className="text-3xl font-extrabold tracking-tight md:text-4xl">
+                            <Heading size="h1" className="text-3xl font-light md:text-4xl">
                                 Built for developers. <br className="hidden md:inline" />
-                                <span className="text-muted-foreground">Maintained with care.</span>
+                                <span className="font-body text-muted-foreground">
+                                    Maintained with care.
+                                </span>
                             </Heading>
                             <p
                                 className={`
@@ -209,7 +209,7 @@ export const CommunitySection = () => {
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Icons" value={7608} />
+                                <StatCard title="Total Icons" value={8274} />
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
                             <motion.div variants={itemVariants} className="flex-1">

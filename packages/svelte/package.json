@@ -122,13 +122,13 @@
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
         "@sveltejs/package": "^2.5.8",
-        "@sveltejs/vite-plugin-svelte": "^7.2.0",
+        "@sveltejs/vite-plugin-svelte": "^7.3.0",
         "@tala-tools/tsconfig": "0.0.2",
-        "@types/node": "^26.1.2",
+        "@types/node": "^26.5.1",
         "picocolors": "^1.1.1",
         "rimraf": "^6.1.3",
         "typescript": "6.0.3",
-        "vitest": "^4.1.10"
+        "vitest": "^4.1.11"
     },
     "peerDependencies": {
         "svelte": ">= 5.0.0"

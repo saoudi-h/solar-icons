@@ -37,7 +37,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ slu
         />,
         {
             ...size,
-            fonts: [{ name: 'Bricolage', data: font, weight: 700, style: 'normal' }],
+            fonts: [{ name: 'Aleo', data: font, weight: 700, style: 'normal' }],
         }
     )
 }

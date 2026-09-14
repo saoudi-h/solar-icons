@@ -37,10 +37,10 @@
             "cache": false
         },
         "typecheck": {
-            "dependsOn": ["^build", "^typecheck"]
+            "dependsOn": ["build", "^build", "^typecheck"]
         },
         "lint": {
-            "dependsOn": ["^build", "^lint"]
+            "dependsOn": ["build", "^build", "^lint"]
         },
         "lint:fix": {
             "dependsOn": ["^build", "^lint:fix"]

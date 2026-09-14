@@ -61,7 +61,8 @@
         "priority": "high",
         "priorityReason": "Broadly used for assistants and AI features; Solar has no generic robot/assistant symbol, so the silhouette needs an original design.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "bot"
     },
     {
         "source": "lucide",
@@ -70,7 +71,8 @@
         "priority": "normal",
         "priorityReason": "Useful for intelligence, learning, and AI contexts, but more domain-specific than the primitive controls.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "brain"
     },
     {
         "source": "lucide",
@@ -79,7 +81,8 @@
         "priority": "high",
         "priorityReason": "Common commerce and scanning primitive absent from Solar; the design needs controlled bar rhythm rather than a trivial modifier.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "barcode"
     },
     {
         "source": "lucide",
@@ -88,7 +91,8 @@
         "priority": "normal",
         "priorityReason": "Useful inspection/search object with no Solar equivalent; it requires a balanced two-lens silhouette.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "binoculars"
     },
     {
         "source": "lucide",
@@ -97,7 +101,8 @@
         "priority": "high",
         "priorityReason": "Common design and creative-tool symbol; paint-roller and palette do not preserve the brush object.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "paint-brush"
     },
     {
         "source": "lucide",
@@ -106,7 +111,8 @@
         "priority": "high",
         "priorityReason": "Useful developer, maintenance, and settings symbol; Solar has cases and boxes but no generic toolbox silhouette.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "toolbox"
     },
     {
         "source": "lucide",
@@ -115,7 +121,8 @@
         "priority": "high",
         "priorityReason": "Common remote-work and video-interface object distinct from a handheld camera or videocamera.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "webcam"
     },
     {
         "source": "lucide",
@@ -123,6 +130,187 @@
         "sourceName": "wifi-cog",
         "priority": "normal",
         "priorityReason": "Useful network-configuration compound; Solar has routers and transmission symbols but no combined Wi-Fi/settings state.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "wi-fi-cog"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0058",
+        "sourceName": "archive-x",
+        "priority": "high",
+        "priorityReason": "The shadcn registry uses this destructive archive state; the current paper-bin candidate changes the object semantics.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0193",
+        "sourceName": "blocks",
+        "priority": "high",
+        "priorityReason": "The current dumbbells candidate is not an interchangeable blocks or component-grid symbol used by shadcn previews.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0306",
+        "sourceName": "car",
+        "priority": "normal",
+        "priorityReason": "The shadcn registry uses a vehicle example and Solar's transmission candidate is not a valid car fallback.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0392",
+        "sourceName": "circle-dashed",
+        "priority": "high",
+        "priorityReason": "An eighteen-use progress and placeholder primitive is absent from the current Solar catalogue.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0432",
+        "sourceName": "clipboard-paste",
+        "priority": "high",
+        "priorityReason": "The shadcn registry uses the paste action in fourteen previews; a generic clipboard loses the action state.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0491",
+        "sourceName": "columns-3",
+        "priority": "high",
+        "priorityReason": "The three-column layout control is part of the shadcn surface and has no accepted Solar equivalent.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0504",
+        "sourceName": "container",
+        "priority": "normal",
+        "priorityReason": "The registry uses a generic container primitive that cannot be represented by a box fallback without changing the concept.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0641",
+        "sourceName": "file-chart-column",
+        "priority": "high",
+        "priorityReason": "The file-chart-column compound is used by shadcn and requires a dedicated document-plus-chart silhouette.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0642",
+        "sourceName": "file-chart-column-increasing",
+        "priority": "normal",
+        "priorityReason": "This current Lucide alias is also emitted by shadcn; the same Solar family may serve both document chart variants.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0681",
+        "sourceName": "file-search",
+        "priority": "high",
+        "priorityReason": "Five shadcn uses need a document-search compound; the current card-search candidate changes the base object.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0699",
+        "sourceName": "file-warning",
+        "priority": "high",
+        "priorityReason": "The file-warning state appears in six shadcn previews and has no accepted Solar equivalent.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0756",
+        "sourceName": "folder-search",
+        "priority": "high",
+        "priorityReason": "The folder-search compound is used in three registry previews and is absent from Solar.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0768",
+        "sourceName": "frame",
+        "priority": "normal",
+        "priorityReason": "The current video-frame candidate is too specific for the generic frame primitive used by shadcn.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0784",
+        "sourceName": "gauge",
+        "priority": "high",
+        "priorityReason": "The dashboard gauge appears in shadcn previews, while playback-speed is not a valid semantic fallback.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0994",
+        "sourceName": "loader",
+        "priority": "high",
+        "priorityReason": "The generic loader is used by shadcn independently from loader-circle; both need a stable Solar loading treatment.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1059",
+        "sourceName": "message-circle-question-mark",
+        "priority": "high",
+        "priorityReason": "Six shadcn previews require a question-mark message bubble that is not present in Solar.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1204",
+        "sourceName": "panels-top-left",
+        "priority": "high",
+        "priorityReason": "Lucide's current layout alias appears nine times in shadcn and needs a deliberate panel-layout silhouette.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1488",
+        "sourceName": "square",
+        "priority": "critical",
+        "priorityReason": "The generic square primitive is used as a fallback and loading shape throughout shadcn's icon renderer.",
+        "workType": "assisted-design",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1571",
+        "sourceName": "star-off",
+        "priority": "normal",
+        "priorityReason": "The favorite-off state is used in six shadcn previews and can share a deliberate state-mark family with other Solar controls.",
+        "workType": "derived-variant",
+        "status": "planned"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1606",
+        "sourceName": "table",
+        "priority": "high",
+        "priorityReason": "The data-table primitive appears eleven times in shadcn; a bedside-table candidate is semantically wrong.",
         "workType": "assisted-design",
         "status": "planned"
     }

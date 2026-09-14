@@ -77,7 +77,7 @@ Top-level alternative (style in name, single import): `import { HomeBoldIcon } f
 All catalog data comes from `@solar-icons/static` (not hardcoded):
 
 ```bash
-npx @solar-icons/cli overview --json   # { icons:1268, categories:37, styles:6, variations:7608, packages:[...], figma, docs }
+npx @solar-icons/cli overview --json   # { icons:1379, categories:37, styles:6, variations:8274, packages:[...], figma, docs }
 npx @solar-icons/cli list --category home --limit 20 --json
 npx @solar-icons/cli categories --json
 npx @solar-icons/cli styles --json

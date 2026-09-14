@@ -90,10 +90,11 @@ export const PackagesSection: React.FC<PackageSectionProps> = ({ packages }) => 
                         initial="hidden"
                         variants={itemVariants}
                         whileInView="visible"
-                        className="max-w-4xl"
+                        className="max-w-4xl font-light"
                         viewport={{ once: true, amount: 0.5 }}
                         custom={0}>
-                        Integrate <span className="text-muted-foreground">Solar Icons.</span>
+                        Integrate{' '}
+                        <span className="font-body text-muted-foreground">Solar Icons.</span>
                     </MotionHeading>
                     <p
                         className="
@@ -192,8 +193,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         className={cn(
                             hovered && 'text-primary',
                             `
-                              flex flex-row items-center gap-4 transition-colors duration-300
-                              ease-in-out
+                              flex flex-row items-center gap-4 font-light transition-colors
+                              duration-300 ease-in-out
                             `
                         )}>
                         {title}

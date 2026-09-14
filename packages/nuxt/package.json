@@ -103,13 +103,13 @@
         "@nuxt/devtools": "4.0.0-alpha.10",
         "@nuxt/module-builder": "^1.0.3",
         "@nuxt/schema": "^4.5.2",
-        "@nuxt/test-utils": "^4.1.0",
+        "@nuxt/test-utils": "^4.3.2",
         "@solar-icons/core": "workspace:*",
         "@types/node": "latest",
         "changelogen": "^0.6.2",
         "nuxt": "^4.5.2",
         "typescript": "6.0.3",
-        "vitest": "^4.1.10",
+        "vitest": "^4.1.11",
         "vue-tsc": "3.3.9"
     }
 }

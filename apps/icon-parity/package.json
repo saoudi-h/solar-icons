@@ -24,6 +24,11 @@
         "lucide:gap:board": "tsx scripts/generate-lucide-gap-board.ts",
         "lucide:gap:check": "tsx scripts/validate-lucide-gap-review.ts",
         "lucide:roadmap:check": "tsx scripts/validate-extension-roadmap.ts",
+        "shadcn:coverage": "tsx scripts/generate-shadcn-coverage.ts",
+        "shadcn:coverage:check": "tsx scripts/generate-shadcn-coverage.ts --check",
+        "shadcn:package:check": "tsx scripts/validate-shadcn-package.ts",
+        "families:report": "tsx scripts/generate-icon-family-report.ts",
+        "families:report:check": "tsx scripts/generate-icon-family-report.ts --check",
         "lint": "oxlint --deny-warnings .",
         "format": "oxfmt --check .",
         "format:fix": "oxfmt --write .",
@@ -34,20 +39,20 @@
         "@iconify/react": "^6.0.2",
         "@solar-icons/core": "workspace:*",
         "@solar-icons/react": "workspace:*",
-        "next": "16.3.0",
+        "next": "16.3.5",
         "react": "19.2.8",
         "react-dom": "19.2.8"
     },
     "devDependencies": {
         "@iconify-json/lucide": "1.2.123",
         "@tailwindcss/postcss": "^4.3.3",
-        "@types/node": "^26.1.2",
+        "@types/node": "^26.5.1",
         "@types/react": "^19.2.18",
-        "@types/react-dom": "^19.2.4",
+        "@types/react-dom": "^19.3.0",
         "eslint-plugin-better-tailwindcss": "^4.7.0",
-        "sharp": "0.35.3",
+        "sharp": "0.35.4",
         "tailwindcss": "^4.3.3",
-        "tsx": "^4.20.6",
+        "tsx": "^4.23.13",
         "typescript": "7.0.2"
     }
 }

@@ -39,7 +39,7 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - Fumadocs 16.x.
 - Radix UI + `cmdk` + `vaul` + `motion` (package formerly `framer-motion`; import from `motion/react`).
 - `@number-flow/react` for animated numbers.
-- `@calcom/cal-sans-ui` for the Cal Sans font.
+- `next/font/google` for Host Grotesk body copy, Aleo heading typography, and JetBrains Mono code samples; `@fontsource/aleo` supplies the static cut used by Open Graph generation.
 - `bun` for the link-check script runtime.
 
 ## ⚠️ Known Constraints

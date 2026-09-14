@@ -1,0 +1,176 @@
+{
+    "version": 1,
+    "capturedAt": "2026-09-07",
+    "source": "maintainer-curated-family-gap-list",
+    "purpose": "Track low-cost compound and variant icons separately from the shadcn compatibility queue.",
+    "normalization": [
+        {
+            "input": "clipboard-past",
+            "canonical": "clipboard-paste",
+            "reason": "Typo and duplicate occurrence in the source list."
+        },
+        {
+            "input": "file-spreadcheet",
+            "canonical": "file-spreadsheet",
+            "reason": "Spelling correction."
+        },
+        {
+            "input": "folder-canban",
+            "canonical": "folder-kanban",
+            "reason": "Spelling correction."
+        },
+        {
+            "input": "column-2",
+            "canonical": "columns-2",
+            "reason": "Plural family convention shared with columns-3 and columns-4."
+        },
+        {
+            "input": "column-3",
+            "canonical": "columns-3",
+            "reason": "Plural family convention shared with columns-2 and columns-4."
+        },
+        {
+            "input": "column-4",
+            "canonical": "columns-4",
+            "reason": "Plural family convention shared with columns-2 and columns-3."
+        },
+        {
+            "input": "column-3-cog",
+            "canonical": "columns-3-cog",
+            "reason": "Plural family convention shared with columns-3."
+        }
+    ],
+    "families": [
+        {
+            "id": "clipboard",
+            "label": "Clipboard compounds",
+            "workType": "compound-family",
+            "priority": "high",
+            "solarNamePatterns": ["clipboard"],
+            "names": [
+                "clipboard-minus",
+                "clipboard-paste",
+                "clipboard-clock",
+                "clipboard-copy",
+                "clipboard-type"
+            ]
+        },
+        {
+            "id": "file",
+            "label": "File compounds",
+            "workType": "compound-family",
+            "priority": "high",
+            "solarNamePatterns": ["file", "-file"],
+            "names": [
+                "file-warning",
+                "file-question-mark",
+                "file-add",
+                "file-minus",
+                "file-search",
+                "file-pen",
+                "file-chart",
+                "file-cog",
+                "file-badge",
+                "file-braces",
+                "file-video-camera",
+                "file-type",
+                "file-signal",
+                "file-terminal",
+                "file-spreadsheet",
+                "file-sliders"
+            ]
+        },
+        {
+            "id": "chat",
+            "label": "Chat state and action compounds",
+            "workType": "paired-family",
+            "priority": "normal",
+            "solarNamePatterns": ["chat"],
+            "names": [
+                "chat-round-question-mark",
+                "chat-round-warning",
+                "chat-square-question-mark",
+                "chat-square-warning",
+                "chat-round-add",
+                "chat-square-add",
+                "chat-round-close",
+                "chat-square-close",
+                "chat-round-code",
+                "chat-square-code",
+                "chat-round-quote",
+                "chat-square-quote",
+                "chat-round-off",
+                "chat-square-off",
+                "chat-round-replay",
+                "chat-square-replay"
+            ]
+        },
+        {
+            "id": "folder",
+            "label": "Folder compounds",
+            "workType": "compound-family",
+            "priority": "high",
+            "solarNamePatterns": ["folder", "folders"],
+            "names": [
+                "folder-search",
+                "folder-pen",
+                "folder-cog",
+                "folder-kanban",
+                "folder-tree",
+                "folder-sync",
+                "folder-up",
+                "folder-down",
+                "folder-input",
+                "folder-code",
+                "folder-git",
+                "folder-clock",
+                "folder-dot",
+                "folder-archive",
+                "folder-symlink",
+                "folder-lock",
+                "folders"
+            ]
+        },
+        {
+            "id": "layout-and-data",
+            "label": "Layout, grid, table, and data primitives",
+            "workType": "primitive-family",
+            "priority": "normal",
+            "solarNamePatterns": [
+                "loader",
+                "quote",
+                "star",
+                "column",
+                "grid",
+                "table",
+                "sheet",
+                "container",
+                "git",
+                "widget"
+            ],
+            "names": [
+                "loader",
+                "quote",
+                "star-off",
+                "columns-3",
+                "columns-2",
+                "columns-4",
+                "columns-3-cog",
+                "grid-2x2",
+                "grid-3x3",
+                "grid-2x2-check",
+                "grid-2x2-add",
+                "grid-2x2-close",
+                "table",
+                "table-minimalistic",
+                "table-properties",
+                "table-columns-split",
+                "table-rows-split",
+                "table-cells-split",
+                "sheet",
+                "container",
+                "git"
+            ]
+        }
+    ]
+}

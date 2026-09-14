@@ -21,12 +21,7 @@ const METADATA_PATH = path.resolve(__dirname, '../metadata.json')
 
 // Retrieve environment tokens
 const { FIGMA_API_TOKEN, FIGMA_FILE_ID } = process.env
-
-// Check environment variables
-if (!FIGMA_API_TOKEN || !FIGMA_FILE_ID) {
-    console.error(pc.red('Environment Variables FIGMA_API_TOKEN and FIGMA_FILE_ID are not set.'))
-    process.exit(1)
-}
+const forceOffline = process.argv.includes('--offline')
 
 // Define icon styles as in Figma
 const ICON_WEIGHTS: Record<string, string> = iconWeights
@@ -448,10 +443,15 @@ const runOfflineFallback = async (): Promise<void> => {
 
 // Main function
 const main = async (): Promise<void> => {
-    const forceOffline = process.argv.includes('--offline')
     if (forceOffline) {
         await runOfflineFallback()
         return
+    }
+
+    // Credentials are only required for the live Figma API path.
+    if (!FIGMA_API_TOKEN || !FIGMA_FILE_ID) {
+        console.error(pc.red('Environment Variables FIGMA_API_TOKEN and FIGMA_FILE_ID are not set.'))
+        process.exit(1)
     }
 
     try {

@@ -6,23 +6,18 @@
     <title>Solar Icons Community assets</title>
     <style>
         @font-face {
-            font-family: 'Cal Sans UI';
-            src: url('../node_modules/@calcom/cal-sans-ui/dist/fonts/CalSansUI-Regular.woff2') format('woff2');
-            font-weight: 400;
+            font-family: 'Aleo Variable';
+            src: url('../node_modules/@fontsource-variable/aleo/files/aleo-latin-wght-normal.woff2') format('woff2-variations');
+            font-weight: 100 900;
         }
         @font-face {
-            font-family: 'Cal Sans UI';
-            src: url('../node_modules/@calcom/cal-sans-ui/dist/fonts/CalSansUI-SemiBold.woff2') format('woff2');
-            font-weight: 600;
-        }
-        @font-face {
-            font-family: 'Bricolage Grotesque';
-            src: url('../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');
-            font-weight: 200 800;
+            font-family: 'Host Grotesk';
+            src: url('../node_modules/@fontsource-variable/host-grotesk/files/host-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+            font-weight: 100 900;
         }
 
         :root {
-            --brand: #6870c4;
+            --brand: #6b5be6;
             --ink: #11142b;
             --muted: #656982;
             --line: #dcddeb;
@@ -32,7 +27,7 @@
 
         * { box-sizing: border-box; }
         html, body { width: 1920px; height: 1080px; margin: 0; overflow: hidden; }
-        body { color: var(--ink); background: var(--paper); font-family: 'Cal Sans UI', sans-serif; }
+        body { color: var(--ink); background: var(--paper); font-family: 'Host Grotesk', sans-serif; }
         .page { position: relative; display: none; width: 1920px; height: 1080px; overflow: hidden; }
         body[data-page='thumbnail'] .thumbnail,
         body[data-page='explore'] .explore,
@@ -41,15 +36,15 @@
 
         .brand-lockup { display: flex; align-items: center; gap: 22px; }
         .brand-mark { width: 64px; height: 64px; }
-        .brand-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 650; letter-spacing: -0.03em; }
-        .eyebrow { margin: 0 0 24px; color: var(--brand); font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
-        h1 { max-width: 900px; margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 104px; font-weight: 650; letter-spacing: -0.055em; line-height: 0.96; }
-        .lede { max-width: 760px; margin: 38px 0 0; color: var(--muted); font-size: 34px; line-height: 1.35; }
-        .facts { display: flex; align-items: center; gap: 20px; margin-top: 48px; color: var(--ink); font-size: 24px; }
-        .facts span + span::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin: 0 20px 5px 0; background: var(--brand); }
+        .brand-name { font-family: 'Aleo Variable', sans-serif; font-size: 34px; font-weight: 800; }
+        h1 { max-width: 900px; margin: 0; font-family: 'Aleo Variable', sans-serif; font-size: 104px; font-weight: 300; line-height: 0.98; }
+        .title-soft { color: var(--muted); font-family: 'Host Grotesk', sans-serif; font-weight: 300; }
+        .lede { max-width: 760px; margin: 38px 0 0; font-size: 34px; line-height: 1.35; }
+        .facts { display: flex; align-items: center; gap: 24px; margin-top: 48px; color: var(--ink); font-size: 24px; }
+        .facts span + span::before { content: ''; display: inline-block; width: 1px; height: 24px; margin: 0 24px 0 0; background: var(--line); }
 
         .plugin-window { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); }
-        .plugin-titlebar { display: flex; height: 54px; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding: 0 16px; color: #222432; font-size: 15px; }
+        .plugin-titlebar { display: flex; height: 54px; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding: 0 16px; color: #222432; font-family: 'Host Grotesk', sans-serif; font-size: 15px; }
         .plugin-titlebar img { width: 24px; height: 24px; }
         .plugin-titlebar .close { width: 14px; height: 14px; margin-left: auto; }
         .plugin-titlebar .close::before,
@@ -57,125 +52,305 @@
         .plugin-titlebar .close::after { transform: rotate(-45deg); }
         .plugin-shot { display: block; width: 100%; height: auto; }
 
-        .thumbnail::before { content: ''; position: absolute; top: 0; right: 0; width: 700px; height: 1080px; background: var(--brand); }
-        .thumbnail-copy { position: absolute; top: 104px; left: 112px; z-index: 1; }
-        .thumbnail .brand-lockup { margin-bottom: 112px; }
-        .thumbnail .plugin-window { position: absolute; top: 97px; right: 110px; z-index: 1; width: 480px; box-shadow: 0 28px 80px rgba(26, 28, 59, 0.2); }
-        .thumbnail .style-row { position: absolute; bottom: 68px; left: 112px; display: flex; gap: 28px; color: var(--muted); font-size: 20px; }
-        .thumbnail .style-row span:first-child { color: var(--brand); }
+        .thumbnail-art { position: absolute; top: 28px; right: 28px; width: 932px; height: 1024px; overflow: hidden; border-radius: 40px; background: radial-gradient(circle at 50% 24%, rgba(107, 91, 230, 0.46), transparent 43%), radial-gradient(circle at 50% 94%, rgba(132, 120, 238, 0.48), transparent 54%), linear-gradient(160deg, #eef0fa 0%, #dfe1f0 52%, #c9c4f2 100%); }
+        .thumbnail-art::before { content: ''; position: absolute; right: -90px; bottom: -260px; width: 780px; height: 780px; border: 1px solid rgba(255, 255, 255, 0.62); border-radius: 50%; box-shadow: 0 0 0 72px rgba(255, 255, 255, 0.2), 0 0 0 144px rgba(255, 255, 255, 0.12); opacity: 0.65; }
+        .thumbnail-noise { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.3; }
+        .thumbnail-copy { position: absolute; top: 112px; left: 112px; z-index: 2; width: 820px; }
+        .thumbnail-partners { display: flex; align-items: center; gap: 32px; margin-bottom: 132px; }
+        .thumbnail-partners .brand-lockup { gap: 22px; }
+        .thumbnail-partners .brand-mark { width: 72px; height: 72px; }
+        .thumbnail-partners .brand-name, .figma-name { font-size: 38px; }
+        .partner-separator { color: var(--muted); font-size: 34px; }
+        .figma-lockup { display: flex; align-items: center; gap: 18px; }
+        .figma-mark { width: 56px; height: 70px; object-fit: contain; }
+        .figma-name { font-family: 'Aleo Variable', sans-serif; font-weight: 800; }
+        .thumbnail h1 { font-size: 104px; line-height: 1.02; }
+        .thumbnail .lede { max-width: 780px; margin-top: 36px; font-size: 32px; }
+        .thumbnail .facts { margin-top: 42px; font-size: 24px; }
+        .thumbnail .plugin-window { position: absolute; top: 82px; right: 244px; z-index: 3; width: 500px; box-shadow: 0 28px 80px rgba(26, 28, 59, 0.2); }
+        .thumbnail-styles { display: flex; align-items: flex-start; gap: 24px; width: max-content; margin-top: 136px; }
+        .thumbnail-style { display: flex; width: 64px; flex-direction: column; align-items: center; gap: 10px; color: var(--ink); font-size: 12px; line-height: 1; text-align: center; }
+        .thumbnail-style-tile { position: relative; display: grid; width: 56px; height: 56px; overflow: hidden; place-items: center; border-radius: 12px; background: linear-gradient(145deg, #d8d5ef 0%, #eeeeF8 100%); }
+        .thumbnail-style-noise { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.22; }
+        .thumbnail-style-icon { display: block; width: 32px; height: 32px; object-fit: contain; filter: brightness(0) saturate(100%); }
 
-        .slide-header { position: absolute; top: 62px; right: 78px; left: 78px; display: flex; align-items: center; justify-content: space-between; }
+        .page:not(.thumbnail) { position: relative; background: var(--paper); }
+        .page:not(.thumbnail)::before { content: ''; position: absolute; top: -240px; right: -120px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(107, 91, 230, 0.18), transparent 68%); filter: blur(12px); pointer-events: none; }
+        .slide-header { position: absolute; top: 62px; right: 78px; left: 78px; z-index: 2; display: flex; align-items: center; justify-content: space-between; }
         .slide-header .brand-mark { width: 52px; height: 52px; }
         .slide-header .brand-name { font-size: 28px; }
-        .slide-index { color: var(--muted); font-size: 19px; letter-spacing: 0.08em; }
-        .slide-copy { position: absolute; top: 246px; left: 118px; width: 760px; }
+        .slide-partners { display: flex; align-items: center; gap: 24px; }
+        .slide-partners .brand-lockup { gap: 18px; }
+        .slide-partners .brand-mark { width: 52px; height: 52px; }
+        .slide-partners .brand-name, .slide-partners .figma-name { font-size: 28px; }
+        .slide-partners .figma-lockup { gap: 14px; }
+        .slide-partners .figma-mark { width: 44px; height: 56px; object-fit: contain; }
+        .slide-partners .partner-separator { font-size: 28px; }
+        .slide-copy { position: absolute; top: 246px; left: 118px; z-index: 2; width: 760px; }
         .slide-copy h1 { font-size: 86px; }
         .slide-copy .lede { font-size: 30px; }
-        .feature-list { display: grid; gap: 24px; margin-top: 54px; color: var(--ink); font-size: 25px; }
-        .feature-list span { display: flex; align-items: center; gap: 15px; }
-        .feature-list span::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); }
-        .slide-stage { position: absolute; top: 150px; right: 118px; }
-        .slide-stage .plugin-window { width: 480px; }
+        .feature-list { display: grid; width: 620px; margin-top: 54px; color: var(--ink); font-size: 25px; }
+        .feature-list span { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+        .feature-list span:last-child { border-bottom: 1px solid var(--line); }
+        .feature-list span::before { content: ''; width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--brand); }
+        .slide-art-panel { position: absolute; z-index: 0; overflow: hidden; isolation: isolate; border-radius: 40px; background: radial-gradient(circle at 50% 24%, rgba(107, 91, 230, 0.46), transparent 43%), radial-gradient(circle at 50% 94%, rgba(132, 120, 238, 0.48), transparent 54%), linear-gradient(160deg, #eef0fa 0%, #dfe1f0 52%, #c9c4f2 100%); }
+        .slide-art-panel::before { content: ''; position: absolute; right: -90px; bottom: -260px; width: 780px; height: 780px; border: 1px solid rgba(255, 255, 255, 0.62); border-radius: 50%; box-shadow: 0 0 0 72px rgba(255, 255, 255, 0.2), 0 0 0 144px rgba(255, 255, 255, 0.12); opacity: 0.65; }
+        .slide-art-noise { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.3; }
+        .slide-art-panel .slide-stage { position: relative; top: auto; right: auto; z-index: 1; display: flex; width: 100%; height: 100%; align-items: flex-start; justify-content: center; padding-top: 52px; }
+        .slide-art-panel .slide-stage::before { display: none; }
+        .slide-art-panel .slide-stage .plugin-window { width: 480px; box-shadow: 0 28px 80px rgba(26, 28, 59, 0.2); }
+        .explore-art { top: 28px; right: 108px; width: 700px; height: 1024px; }
+        .explore-art .slide-stage { padding-top: 54px; }
+        .explore-art .slide-stage .plugin-window { width: 500px; }
 
-        .customize { background: #11131f; color: #f8f8fc; }
-        .customize .slide-index, .customize .lede { color: #aeb1c8; }
+        .customize { background: var(--paper); color: var(--ink); }
         .customize .slide-copy { width: 650px; }
-        .customize .slide-copy h1 { color: #f8f8fc; }
-        .customize .feature-list { color: #f8f8fc; }
-        .customize .feature-list span::before { background: #8990e4; }
-        .customize-stage { position: absolute; top: 166px; right: 100px; display: flex; align-items: flex-start; gap: 34px; }
-        .customize-stage .plugin-window { width: 430px; border-color: #3a3d50; }
-        .customize-stage .plugin-window:last-child { margin-top: 70px; }
+        .customize .slide-copy h1 { color: var(--ink); }
+        .customize .feature-list { color: var(--ink); }
+        .customize .feature-list span::before { background: var(--brand); }
+        .customize-art { top: 28px; right: 74px; width: 930px; height: 1024px; }
+        .customize-stage { position: relative; top: auto; right: auto; z-index: 1; display: flex; height: 100%; align-items: flex-start; justify-content: center; gap: 24px; padding: 54px 40px 42px; }
+        .customize-stage::before { display: none; }
+        .customize-stage .plugin-window { width: 400px; box-shadow: 0 24px 60px rgba(26, 28, 59, 0.2); }
+        .customize-stage .plugin-window:last-child { margin-top: 116px; }
 
         .ecosystem .slide-copy { width: 780px; }
-        .package-lines { display: grid; grid-template-columns: repeat(3, auto); gap: 20px 36px; margin-top: 56px; color: var(--muted); font-size: 24px; }
+        .package-lines { display: grid; grid-template-columns: repeat(3, 1fr); width: 780px; margin-top: 56px; color: var(--ink); font-size: 22px; border-top: 1px solid var(--line); }
+        .package-lines > .package-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+        .package-item img { display: block; width: 32px; height: 32px; object-fit: contain; }
+        .ecosystem-art { top: 28px; right: 108px; width: 700px; height: 1024px; }
+        .ecosystem-art .slide-stage { padding-top: 54px; }
+        .ecosystem-art .slide-stage .plugin-window { width: 500px; }
         .ecosystem .slide-stage .plugin-window { border-color: #343746; background: #11131f; }
         .ecosystem .plugin-titlebar { border-color: #343746; color: #f8f8fc; background: #11131f; }
         .ecosystem .plugin-titlebar img { filter: brightness(0) invert(1); }
         .ecosystem .plugin-titlebar .close::before,
         .ecosystem .plugin-titlebar .close::after { background: #b9bbca; }
-        .offline-note { position: absolute; bottom: 62px; left: 118px; width: 880px; color: var(--muted); font-size: 22px; line-height: 1.4; }
     </style>
 </head>
 <body>
     <section class="page thumbnail">
         <div class="thumbnail-copy">
-            <div class="brand-lockup">
-                <img class="brand-mark" src="plugin-icon.svg" alt="">
-                <span class="brand-name">Solar Icons</span>
+            <div class="thumbnail-partners">
+                <div class="brand-lockup">
+                    <img class="brand-mark" src="plugin-icon.svg" alt="Solar Icons">
+                    <span class="brand-name">Solar Icons</span>
+                </div>
+                <span class="partner-separator" aria-hidden="true">×</span>
+                <div class="figma-lockup">
+                    <img class="figma-mark" src="figma-logo.svg" alt="Figma">
+                    <span class="figma-name">Figma</span>
+                </div>
             </div>
-            <p class="eyebrow">Figma plugin</p>
-            <h1>The complete<br>Solar icon set.</h1>
+            <h1><span>The complete</span><br><span class="title-soft">Solar icon set.</span></h1>
             <p class="lede">Browse, preview and insert production-ready SVG icons directly into Figma.</p>
-            <div class="facts"><span>1,268 icons</span><span>6 styles</span><span>Editable strokes</span></div>
+            <div class="facts"><span>1,379 icons</span><span>6 styles</span></div>
+            <div class="thumbnail-styles">
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/video/Linear/soundwave.svg" alt="">
+                    </span>
+                    <span>Linear</span>
+                </div>
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/messages/Broken/chat-round-like.svg" alt="">
+                    </span>
+                    <span>Broken</span>
+                </div>
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/folders/LineDuotone/folder.svg" alt="">
+                    </span>
+                    <span>Line Duotone</span>
+                </div>
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/video/Outline/camera.svg" alt="">
+                    </span>
+                    <span>Outline</span>
+                </div>
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/messages/Bold/pen.svg" alt="">
+                    </span>
+                    <span>Bold</span>
+                </div>
+                <div class="thumbnail-style">
+                    <span class="thumbnail-style-tile">
+                        <svg class="thumbnail-style-noise" aria-hidden="true"><rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect></svg>
+                        <img class="thumbnail-style-icon" src="../../core/svgs/like/BoldDuotone/star.svg" alt="">
+                    </span>
+                    <span>Bold Duotone</span>
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-art" aria-hidden="true">
+            <svg class="thumbnail-noise">
+                <filter id="thumbnail-noise-filter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.54" numOctaves="4" stitchTiles="stitch"></feTurbulence>
+                    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="0.61"></feFuncR>
+                        <feFuncG type="linear" slope="0.61"></feFuncG>
+                        <feFuncB type="linear" slope="0.61"></feFuncB>
+                        <feFuncA type="linear" slope="1"></feFuncA>
+                    </feComponentTransfer>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="3" intercept="-1.00"></feFuncR>
+                        <feFuncG type="linear" slope="3" intercept="-1.00"></feFuncG>
+                        <feFuncB type="linear" slope="3" intercept="-1.00"></feFuncB>
+                    </feComponentTransfer>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#thumbnail-noise-filter)"></rect>
+            </svg>
         </div>
         <div class="plugin-window">
             <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
             <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
         </div>
-        <div class="style-row"><span>Linear</span><span>Broken</span><span>Line Duotone</span><span>Outline</span><span>Bold</span><span>Bold Duotone</span></div>
     </section>
 
     <section class="page explore">
         <header class="slide-header">
-            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
-            <span class="slide-index">01 / 03</span>
+            <div class="slide-partners">
+                <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt="Solar Icons"><span class="brand-name">Solar Icons</span></div>
+                <span class="partner-separator" aria-hidden="true">×</span>
+                <div class="figma-lockup"><img class="figma-mark" src="figma-logo.svg" alt="Figma"><span class="figma-name">Figma</span></div>
+            </div>
         </header>
         <div class="slide-copy">
-            <p class="eyebrow">Explore</p>
-            <h1>Find the right icon without leaving Figma.</h1>
+            <h1><span>Find the right icon</span><br><span class="title-soft">without leaving Figma.</span></h1>
             <p class="lede">Search the entire set by name, category and related metadata.</p>
-            <div class="feature-list"><span>All 1,268 icons</span><span>Six consistent styles</span><span>Instant or multi-selection insertion</span></div>
+            <div class="feature-list"><span>All 1,379 icons</span><span>Six consistent styles</span><span>Instant or multi-selection insertion</span></div>
         </div>
-        <div class="slide-stage">
-            <div class="plugin-window">
-                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
-                <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+        <div class="slide-art-panel explore-art" aria-hidden="true">
+            <svg class="slide-art-noise">
+                <filter id="explore-noise-filter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.54" numOctaves="4" stitchTiles="stitch"></feTurbulence>
+                    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="0.61"></feFuncR>
+                        <feFuncG type="linear" slope="0.61"></feFuncG>
+                        <feFuncB type="linear" slope="0.61"></feFuncB>
+                        <feFuncA type="linear" slope="1"></feFuncA>
+                    </feComponentTransfer>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="3" intercept="-1.00"></feFuncR>
+                        <feFuncG type="linear" slope="3" intercept="-1.00"></feFuncG>
+                        <feFuncB type="linear" slope="3" intercept="-1.00"></feFuncB>
+                    </feComponentTransfer>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#explore-noise-filter)"></rect>
+            </svg>
+            <div class="slide-stage">
+                <div class="plugin-window">
+                    <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                    <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+                </div>
             </div>
         </div>
     </section>
 
     <section class="page customize">
         <header class="slide-header">
-            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
-            <span class="slide-index">02 / 03</span>
+            <div class="slide-partners">
+                <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt="Solar Icons"><span class="brand-name">Solar Icons</span></div>
+                <span class="partner-separator" aria-hidden="true">×</span>
+                <div class="figma-lockup"><img class="figma-mark" src="figma-logo.svg" alt="Figma"><span class="figma-name">Figma</span></div>
+            </div>
         </header>
         <div class="slide-copy">
-            <p class="eyebrow">Control</p>
-            <h1>Preview the geometry you will insert.</h1>
-            <p class="lede">Scrub size and stroke width with familiar Figma-style controls.</p>
-            <div class="feature-list"><span>Live stroke previews</span><span>Editable vector strokes</span><span>Light, dark and system themes</span></div>
+            <h1><span>Preview the geometry</span><br><span class="title-soft">you will insert.</span></h1>
+            <p class="lede">Set the icon size and stroke width before you insert it.</p>
+            <div class="feature-list"><span>Choose the icon size</span><span>Set the stroke width</span><span>Follow your Figma theme</span></div>
         </div>
-        <div class="customize-stage">
-            <div class="plugin-window">
-                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
-                <img class="plugin-shot" src="screens/02-settings-light.png" alt="">
-            </div>
-            <div class="plugin-window">
-                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
-                <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+        <div class="slide-art-panel customize-art" aria-hidden="true">
+            <svg class="slide-art-noise">
+                <filter id="customize-noise-filter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.54" numOctaves="4" stitchTiles="stitch"></feTurbulence>
+                    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="0.61"></feFuncR>
+                        <feFuncG type="linear" slope="0.61"></feFuncG>
+                        <feFuncB type="linear" slope="0.61"></feFuncB>
+                        <feFuncA type="linear" slope="1"></feFuncA>
+                    </feComponentTransfer>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="3" intercept="-1.00"></feFuncR>
+                        <feFuncG type="linear" slope="3" intercept="-1.00"></feFuncG>
+                        <feFuncB type="linear" slope="3" intercept="-1.00"></feFuncB>
+                    </feComponentTransfer>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#customize-noise-filter)"></rect>
+            </svg>
+            <div class="customize-stage">
+                <div class="plugin-window">
+                    <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                    <img class="plugin-shot" src="screens/02-settings-light.png" alt="">
+                </div>
+                <div class="plugin-window">
+                    <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                    <img class="plugin-shot" src="screens/01-icons-light.png" alt="">
+                </div>
             </div>
         </div>
     </section>
 
     <section class="page ecosystem">
         <header class="slide-header">
-            <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt=""><span class="brand-name">Solar Icons</span></div>
-            <span class="slide-index">03 / 03</span>
+            <div class="slide-partners">
+                <div class="brand-lockup"><img class="brand-mark" src="plugin-icon.svg" alt="Solar Icons"><span class="brand-name">Solar Icons</span></div>
+                <span class="partner-separator" aria-hidden="true">×</span>
+                <div class="figma-lockup"><img class="figma-mark" src="figma-logo.svg" alt="Figma"><span class="figma-name">Figma</span></div>
+            </div>
         </header>
         <div class="slide-copy">
-            <p class="eyebrow">One source</p>
-            <h1>Consistent assets across design and code.</h1>
+            <h1><span>Consistent assets</span><br><span class="title-soft">across design and code.</span></h1>
             <p class="lede">The SVGs inserted in Figma match the maintained Solar Icons packages.</p>
-            <div class="package-lines"><span>React</span><span>Vue</span><span>Svelte</span><span>Solid</span><span>Angular</span><span>Nuxt</span><span>React Native</span><span>JavaScript</span><span>Static</span></div>
-        </div>
-        <div class="slide-stage">
-            <div class="plugin-window">
-                <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
-                <img class="plugin-shot" src="screens/03-info-dark.png" alt="">
+            <div class="package-lines">
+                <span class="package-item"><img src="https://api.iconify.design/devicon/react.svg" alt=""><span>React</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/vuejs.svg" alt=""><span>Vue</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/svelte.svg" alt=""><span>Svelte</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/solidjs.svg" alt=""><span>Solid</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/angular.svg" alt=""><span>Angular</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/nuxtjs.svg" alt=""><span>Nuxt</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/react.svg" alt=""><span>React Native</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/devicon/javascript.svg" alt=""><span>JavaScript</span></span>
+                <span class="package-item"><img src="https://api.iconify.design/vscode-icons/file-type-svg.svg" alt=""><span>Static</span></span>
             </div>
         </div>
-        <p class="offline-note">The complete library is embedded in the plugin. No CDN, account or external API is required.</p>
+        <div class="slide-art-panel ecosystem-art" aria-hidden="true">
+            <svg class="slide-art-noise">
+                <filter id="ecosystem-noise-filter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.54" numOctaves="4" stitchTiles="stitch"></feTurbulence>
+                    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="0.61"></feFuncR>
+                        <feFuncG type="linear" slope="0.61"></feFuncG>
+                        <feFuncB type="linear" slope="0.61"></feFuncB>
+                        <feFuncA type="linear" slope="1"></feFuncA>
+                    </feComponentTransfer>
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="3" intercept="-1.00"></feFuncR>
+                        <feFuncG type="linear" slope="3" intercept="-1.00"></feFuncG>
+                        <feFuncB type="linear" slope="3" intercept="-1.00"></feFuncB>
+                    </feComponentTransfer>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#ecosystem-noise-filter)"></rect>
+            </svg>
+            <div class="slide-stage">
+                <div class="plugin-window">
+                    <div class="plugin-titlebar"><img src="plugin-icon.svg" alt=""><span>Solar Icons</span><i class="close"></i></div>
+                    <img class="plugin-shot" src="screens/03-info-dark.png" alt="">
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>

@@ -2,7 +2,7 @@
     "name": "@solar-icons/cli",
     "version": "2.2.2",
     "private": false,
-    "description": "CLI for Solar Icons — search, get and list 1,268 icons × 6 styles. Base for skills and MCP.",
+    "description": "CLI for Solar Icons — search, get and list 1,379 icons × 6 styles. Base for skills and MCP.",
     "keywords": [
         "cli",
         "icons",
@@ -60,12 +60,12 @@
     },
     "devDependencies": {
         "@tala-tools/tsconfig": "0.0.2",
-        "@types/node": "^26.1.2",
+        "@types/node": "^26.5.1",
         "rimraf": "^6.1.3",
         "tsdown": "^0.22.14",
-        "tsx": "^4.23.8",
+        "tsx": "^4.23.13",
         "typescript": "7.0.2",
-        "vitest": "^4.1.10"
+        "vitest": "^4.1.11"
     },
     "engines": {
         "node": ">=18"

@@ -125,6 +125,19 @@ describe('transformReact', () => {
         expect(result.code).toContain('<ScaleIcon />')
     })
 
+    it('normalizes current deprecated catalog names', () => {
+        const result = transformReact(
+            "import { CodeFile, ChatDots } from '@solar-icons/react'\n\nexport const App = () => <><CodeFile /><ChatDots /></>"
+        )
+
+        expect(result.code).toContain("import { FileCodeIcon } from '@solar-icons/react/linear'")
+        expect(result.code).toContain(
+            "import { ChatSquareDotsIcon } from '@solar-icons/react/linear'"
+        )
+        expect(result.code).toContain('<FileCodeIcon />')
+        expect(result.code).toContain('<ChatSquareDotsIcon />')
+    })
+
     it('reports legacy providers and category imports for manual migration', () => {
         const source = [
             "import { SolarProvider, Home } from '@solar-icons/react'",

@@ -18,8 +18,8 @@
     },
     "dependencies": {
         "@solar-icons/react-native": "workspace:*",
-        "expo": "~57.0.10",
-        "expo-dev-client": "^57.0.10",
+        "expo": "~57.0.22",
+        "expo-dev-client": "^57.0.19",
         "expo-status-bar": "~57.0.1",
         "react": "19.2.8",
         "react-native": "0.86.2",
