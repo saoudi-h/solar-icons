@@ -1,5 +1,16 @@
 # @solar-icons/nuxt
 
+## 2.3.0
+
+### Minor Changes
+
+- [#555](https://github.com/saoudi-h/solar-icons/pull/555) [`747b9af`](https://github.com/saoudi-h/solar-icons/commit/747b9af569f499ad330e7679b179318da4ec61b1) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Refresh the icon catalogue and generated framework packages with the latest SVG quality corrections. Add the canonical `chart-square-2` name while preserving `chat-square-2` as a deprecated compatibility alias, and keep the codemod and package metadata aligned with the updated catalogue.
+
+### Patch Changes
+
+- Updated dependencies [[`747b9af`](https://github.com/saoudi-h/solar-icons/commit/747b9af569f499ad330e7679b179318da4ec61b1)]:
+  - @solar-icons/vue@2.3.0
+
 ## 2.2.0
 
 ### Minor Changes
