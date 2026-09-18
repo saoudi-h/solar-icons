@@ -1,14 +1,14 @@
 {
     "source": {
         "repository": "https://github.com/shadcn-ui/ui",
-        "commit": "5c7072da672b0048bc6771e3204063a2537df91a",
+        "commit": "2b3e6d4f8d9161fe5c19340dc383aade392012dd",
         "generatedFile": "apps/v4/registry/icons/__lucide__.ts",
-        "capturedAt": "2026-09-06"
+        "capturedAt": "2026-09-14"
     },
     "counts": {
-        "mapped": 156,
+        "mapped": 159,
         "fallback": 5,
-        "review": 21,
+        "review": 18,
         "missing": 0
     },
     "totalIcons": 182,
@@ -224,13 +224,13 @@
         {
             "lucide": "blocks",
             "occurrences": 6,
-            "solar": "dumbbells",
-            "solarExport": "DumbbellsIcon",
-            "status": "review",
-            "confidence": "candidate-only",
-            "source": "lucide-coverage",
-            "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
-            "candidates": ["dumbbells", "dumbbells-2"]
+            "solar": "blocks",
+            "solarExport": "BlocksIcon",
+            "status": "mapped",
+            "confidence": "direct-name",
+            "source": "current-solar-catalogue",
+            "note": "The current Solar catalogue contains the same kebab-case name.",
+            "candidates": []
         },
         {
             "lucide": "bluetooth",
@@ -363,13 +363,13 @@
         {
             "lucide": "car",
             "occurrences": 3,
-            "solar": "transmission",
-            "solarExport": "TransmissionIcon",
-            "status": "review",
-            "confidence": "candidate-only",
-            "source": "lucide-coverage",
-            "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
-            "candidates": ["transmission"]
+            "solar": "car",
+            "solarExport": "CarIcon",
+            "status": "mapped",
+            "confidence": "direct-name",
+            "source": "current-solar-catalogue",
+            "note": "The current Solar catalogue contains the same kebab-case name.",
+            "candidates": []
         },
         {
             "lucide": "chart-bar",
@@ -1013,13 +1013,13 @@
         {
             "lucide": "frame",
             "occurrences": 12,
-            "solar": "video-frame",
-            "solarExport": "VideoFrameIcon",
-            "status": "review",
-            "confidence": "candidate-only",
-            "source": "lucide-coverage",
-            "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
-            "candidates": ["video-frame", "video-frame-2", "window-frame"]
+            "solar": "frame",
+            "solarExport": "FrameIcon",
+            "status": "mapped",
+            "confidence": "direct-name",
+            "source": "current-solar-catalogue",
+            "note": "The current Solar catalogue contains the same kebab-case name.",
+            "candidates": []
         },
         {
             "lucide": "gallery-vertical-end",

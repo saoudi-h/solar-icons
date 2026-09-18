@@ -86,14 +86,15 @@ function generateIndexes(
         `'Solar${g.pascalName}'`,
         ...(deprecatedAliases.get(g.name) ?? []).map(alias => `'Solar${toPascalCase(alias.name)}'`),
     ])
-    const allNames = [...allStaticNames, ...allDynamicNames].join(' | ')
+    const allNames = [...allStaticNames, ...allDynamicNames].map(name => `    | ${name}`).join('\n')
 
     const typeContent = `/* GENERATED FILE */
 /**
  * Union of all available icon names for the dynamic SolarIcon component.
  * Provides IDE autocompletion without importing the actual components.
  */
-export type SolarIconName = ${allNames};
+export type SolarIconName =
+${allNames};
 `
 
     files.push({

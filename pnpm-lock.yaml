@@ -939,6 +939,9 @@ importers:
       '@tala-tools/tsconfig':
         specifier: 0.0.2
         version: 0.0.2
+      '@xmldom/xmldom':
+        specifier: ^0.9.12
+        version: 0.9.12
       '@types/node':
         specifier: ^26.5.1
         version: 26.5.1

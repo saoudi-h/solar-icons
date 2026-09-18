@@ -8,7 +8,7 @@
 ## CLI — source of truth (no hardcoded counts)
 
 ```bash
-npx @solar-icons/cli overview --json          # { icons:1379, categories:37, styles:6, variations:8274, packages, figma, docs }
+npx @solar-icons/cli overview --json          # { icons:1380, categories:37, styles:6, variations:8280, packages, figma, docs }
 npx @solar-icons/cli search "shopping cart" --limit 20 --json
 npx @solar-icons/cli search "arrow" --category arrows --json
 npx @solar-icons/cli get home --style bold --framework react --json

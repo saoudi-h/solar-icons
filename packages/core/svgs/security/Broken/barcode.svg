@@ -9,8 +9,8 @@
 <path d="M22 13.458C22 10.6313 22 7.80469 22 4.97803" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M2.63379 18.9785C2.63379 18.3545 2.63379 17.7305 2.63379 17.1064" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M2.63379 13.458C2.63379 10.6315 2.63379 7.80501 2.63379 4.97852" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<rect x="8.44385" y="4.95654" width="0.967885" height="8.50146" rx="0.483942" stroke="#1C274C" stroke-width="1.5"/>
-<rect x="18.127" y="4.95654" width="0.967885" height="8.50146" rx="0.483942" stroke="#1C274C" stroke-width="1.5"/>
-<rect x="18.127" y="17.1064" width="0.967885" height="1.87158" rx="0.483942" stroke="#1C274C" stroke-width="1.5"/>
-<rect x="8.44385" y="17.1064" width="0.967885" height="1.87158" rx="0.483942" stroke="#1C274C" stroke-width="1.5"/>
+<rect x="8.44385" y="4.95654" width="0.967885" height="8.50146" rx="0.483942" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="18.127" y="4.95654" width="0.967885" height="8.50146" rx="0.483942" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="18.127" y="17.1064" width="0.967885" height="1.87158" rx="0.483942" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="8.44385" y="17.1064" width="0.967885" height="1.87158" rx="0.483942" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
