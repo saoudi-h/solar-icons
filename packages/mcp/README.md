@@ -1,6 +1,6 @@
 # @solar-icons/mcp
 
-MCP server for Solar Icons — 1,379 icons × 6 styles. Exposes `solar_*` tools for search, get, list, info and overview via the Model Context Protocol.
+MCP server for Solar Icons — 1,380 icons × 6 styles. Exposes `solar_*` tools for search, get, list, info and overview via the Model Context Protocol.
 
 ## Install
 
