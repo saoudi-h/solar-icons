@@ -32,16 +32,20 @@ jobs:
                   node-version: ''
 
             - name: Build
-              run: pnpm build
+              # The Angular playground bundles the complete dynamic catalogue and
+              # exceeds the memory available on the standard GitHub runner. The
+              # release gate targets the publishable packages; playground builds
+              # remain available through the regular local build command.
+              run: pnpm turbo build --concurrency=1 --filter='*' --filter='!./apps/angular-app'
 
             - name: Typecheck
-              run: pnpm typecheck
+              run: pnpm turbo typecheck --concurrency=1 --filter='*' --filter='!./apps/angular-app'
 
             - name: Lint
-              run: pnpm lint
+              run: pnpm turbo lint --concurrency=1 --filter='*' --filter='!./apps/angular-app'
 
             - name: Tests
-              run: pnpm test
+              run: pnpm turbo test --concurrency=1 --filter='*' --filter='!./apps/angular-app'
 
             - name: Validate package exports
               run: pnpm check:exports
