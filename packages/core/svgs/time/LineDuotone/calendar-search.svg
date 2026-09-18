@@ -3,6 +3,6 @@
 <path opacity="0.5" d="M7 4V2.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path opacity="0.5" d="M17 4V2.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path opacity="0.5" d="M2 9H22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<circle cx="18" cy="18" r="3" stroke="#1C274C" stroke-width="1.5"/>
+<circle cx="18" cy="18" r="3" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M20.5 20.5L22 22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

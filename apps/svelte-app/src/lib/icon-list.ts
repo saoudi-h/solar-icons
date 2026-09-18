@@ -1,6 +1,6 @@
 // AUTO-GENERATED FILE - DO NOT EDIT
 // Generated from packages/core/svgs by scripts/generate-test-app-icon-lists.ts
-// Total icons: 1379
+// Total icons: 1380
 
 export const ALL_ICONS = [
     'Accessibility',
@@ -221,6 +221,7 @@ export const ALL_ICONS = [
     'Chart',
     'Chart2',
     'ChartSquare',
+    'ChartSquare2',
     'ChatRound',
     'ChatRoundAdd',
     'ChatRoundCall',
@@ -239,7 +240,6 @@ export const ALL_ICONS = [
     'ChatRoundVideo',
     'ChatRoundWarning',
     'ChatSquare',
-    'ChatSquare2',
     'ChatSquareAdd',
     'ChatSquareArrow',
     'ChatSquareCall',
@@ -255,6 +255,7 @@ export const ALL_ICONS = [
     'ChatSquareReplay',
     'ChatSquareUnread',
     'ChatSquareWarning',
+    'Check',
     'CheckCircle',
     'CheckRead',
     'CheckSquare',

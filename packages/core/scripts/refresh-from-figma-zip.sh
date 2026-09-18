@@ -11,22 +11,28 @@
 #
 # Usage:
 #   pnpm refresh:zip /path/to/solar-icons-svgs.zip
+#   pnpm refresh:zip /path/to/solar-icons-svgs.zip --allow-quality-issues
 #   bash scripts/refresh-from-figma-zip.sh /path/to/solar-icons-svgs.zip
 #
 # What it does, in order:
 #   1. Sanity-checks the ZIP (exists, contains a 'svgs/' directory).
 #   2. Rejects duplicate archive paths before touching the current inventory.
-#   3. Wipes packages/core/svgs/.
+#   3. Moves the current inventory to a temporary backup.
 #   4. Unzips the contents (the ZIP root is the 'svgs/' directory).
 #   5. Runs the six-style SVG coverage gate (`pnpm check:svgs`).
-#   6. Runs the icon metadata gate (`pnpm check:icons-metadata`) — new icons
+#   6. Runs the SVG visual-contract gate (`pnpm check:svg-quality`).
+#   7. Runs the icon metadata gate (`pnpm check:icons-metadata`) — new icons
 #      without hand-curated metadata (or without an explicit `origin`) abort
 #      the refresh; run `pnpm fix:icons-metadata` for draft entries, then
 #      re-run this script.
-#   7. Runs `pnpm generate:svgs --offline` to rebuild
+#   8. Runs `pnpm generate:svgs --offline` to rebuild
 #      src/metadata.json from the new files.
-#   8. Removes the ZIP.
-#   9. Prints a `git status` summary of the changes.
+#   9. Removes the ZIP.
+#  10. Prints a `git status` summary of the changes.
+#
+# By default, quality errors abort the refresh and restore the previous
+# inventory. `--allow-quality-issues` is an explicit diagnostic override for
+# importing an archive that still contains known findings.
 #
 # After running, the typical follow-up is:
 #   - `git diff svgs/ src/metadata.json` to inspect the changes.
@@ -37,13 +43,22 @@
 set -euo pipefail
 
 ZIP_PATH="${1:-}"
+ALLOW_QUALITY_ISSUES=false
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PACKAGE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 SVGS_DIR="$PACKAGE_DIR/svgs"
 
 if [ -z "$ZIP_PATH" ]; then
     echo "Usage: pnpm refresh:zip /path/to/solar-icons-svgs.zip" >&2
+    echo "       pnpm refresh:zip /path/to/solar-icons-svgs.zip --allow-quality-issues" >&2
     echo "   or: bash scripts/refresh-from-figma-zip.sh /path/to/solar-icons-svgs.zip" >&2
+    exit 1
+fi
+
+if [ "${2:-}" = "--allow-quality-issues" ]; then
+    ALLOW_QUALITY_ISSUES=true
+elif [ -n "${2:-}" ] || [ "$#" -gt 2 ]; then
+    echo "Error: unknown option. Use --allow-quality-issues only for a diagnostic import." >&2
     exit 1
 fi
 
@@ -51,6 +66,11 @@ if [ ! -f "$ZIP_PATH" ]; then
     echo "Error: ZIP file not found: $ZIP_PATH" >&2
     exit 1
 fi
+
+# Resolve the archive before changing directory below. Without this, a
+# relative path such as packages/core/solar-icons-svgs.zip is looked up again
+# from inside packages/core and fails after svgs/ has already been removed.
+ZIP_PATH="$(cd "$(dirname "$ZIP_PATH")" && pwd)/$(basename "$ZIP_PATH")"
 
 _HAS_SVGS=$(unzip -Z1 "$ZIP_PATH" 2>/dev/null | grep -c '^svgs/' || true)
 if [ "$_HAS_SVGS" -eq 0 ]; then
@@ -72,8 +92,30 @@ fi
 
 cd "$PACKAGE_DIR"
 
-echo "==> Removing old svgs/ ..."
-rm -rf "$SVGS_DIR"
+REFRESH_TMP_DIR=$(mktemp -d "/tmp/solar-icons-refresh.XXXXXX")
+OLD_SVGS_BACKUP="$REFRESH_TMP_DIR/svgs"
+
+restore_previous_inventory() {
+    refresh_status=$?
+
+    if [ "$refresh_status" -ne 0 ]; then
+        echo "==> Refresh failed; restoring the previous svgs/ inventory ..." >&2
+        rm -rf "$SVGS_DIR"
+        if [ -d "$OLD_SVGS_BACKUP" ]; then
+            mv "$OLD_SVGS_BACKUP" "$SVGS_DIR"
+        fi
+    fi
+
+    rm -rf "$REFRESH_TMP_DIR"
+    exit "$refresh_status"
+}
+
+trap restore_previous_inventory EXIT
+
+if [ -d "$SVGS_DIR" ]; then
+    echo "==> Backing up current svgs/ ..."
+    mv "$SVGS_DIR" "$OLD_SVGS_BACKUP"
+fi
 
 echo "==> Unzipping $ZIP_PATH ..."
 unzip -q "$ZIP_PATH"
@@ -84,6 +126,15 @@ echo "    Extracted $SVG_COUNT SVG files."
 
 echo "==> Checking SVG style coverage (gate) ..."
 pnpm check:svgs
+
+echo "==> Checking SVG visual contracts (gate) ..."
+if ! pnpm check:svg-quality; then
+    if [ "$ALLOW_QUALITY_ISSUES" = true ]; then
+        echo "Warning: continuing despite SVG quality findings (--allow-quality-issues)." >&2
+    else
+        exit 1
+    fi
+fi
 
 echo "==> Checking icon metadata coverage (gate) ..."
 pnpm check:icons-metadata

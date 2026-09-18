@@ -220,6 +220,7 @@ import {
     ChartIcon,
     Chart2Icon,
     ChartSquareIcon,
+    ChartSquare2Icon,
     ChatRoundIcon,
     ChatRoundAddIcon,
     ChatRoundCallIcon,
@@ -238,7 +239,6 @@ import {
     ChatRoundVideoIcon,
     ChatRoundWarningIcon,
     ChatSquareIcon,
-    ChatSquare2Icon,
     ChatSquareAddIcon,
     ChatSquareArrowIcon,
     ChatSquareCallIcon,
@@ -254,6 +254,7 @@ import {
     ChatSquareReplayIcon,
     ChatSquareUnreadIcon,
     ChatSquareWarningIcon,
+    CheckIcon,
     CheckCircleIcon,
     CheckReadIcon,
     CheckSquareIcon,
@@ -12117,7 +12118,7 @@ icons.push({
     Icon: Chart2Icon as IconData['Icon'],
 })
 icons.push({
-    name: 'chat-square-2',
+    name: 'chart-square-2',
     category: 'business' as Category,
     categoryTags: [
         'finance',
@@ -12131,7 +12132,19 @@ icons.push({
         'metrics',
     ],
     tags: ['chart', 'graph', 'stats'],
-    Icon: ChatSquare2Icon as IconData['Icon'],
+    origin: 'extended' as const,
+    addedAt: '2026-09-18',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'chat-square-2',
+            replacement: 'chart-square-2',
+            reason: 'Corrected the typo in the canonical chart-square-2 name.',
+            deprecatedSince: '2026-09-18',
+        },
+    ],
+    Icon: ChartSquare2Icon as IconData['Icon'],
 })
 icons.push({
     name: 'course-down',
@@ -17983,6 +17996,31 @@ icons.push({
     author: 'Hakim Saoudi',
     state: 'beta' as const,
     Icon: FrameIcon as IconData['Icon'],
+})
+icons.push({
+    name: 'check',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: [
+        'check',
+        'checkmark',
+        'tick',
+        'confirm',
+        'approval',
+        'done',
+        'success',
+        'complete',
+        'valid',
+        'yes',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-09-15',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'critical' as const,
+    priorityReason:
+        'Primitive confirmation and completion mark used throughout interactive interfaces.',
+    Icon: CheckIcon as IconData['Icon'],
 })
 
 export { icons }

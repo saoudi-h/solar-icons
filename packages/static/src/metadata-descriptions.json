@@ -10595,7 +10595,7 @@
         ]
     },
     {
-        "name": "chat-square-2",
+        "name": "chart-square-2",
         "category": "business",
         "categoryTags": [
             "finance",
@@ -10608,7 +10608,19 @@
             "presentation",
             "metrics"
         ],
-        "tags": ["chart", "graph", "stats"]
+        "tags": ["chart", "graph", "stats"],
+        "deprecatedAliases": [
+            {
+                "name": "chat-square-2",
+                "replacement": "chart-square-2",
+                "reason": "Corrected the typo in the canonical chart-square-2 name.",
+                "deprecatedSince": "2026-09-18"
+            }
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-18",
+        "author": "Hakim Saoudi",
+        "state": "beta"
     },
     {
         "name": "course-down",
@@ -16450,5 +16462,28 @@
         "addedAt": "2026-09-13",
         "author": "Hakim Saoudi",
         "state": "beta"
+    },
+    {
+        "name": "check",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "check",
+            "checkmark",
+            "tick",
+            "confirm",
+            "approval",
+            "done",
+            "success",
+            "complete",
+            "valid",
+            "yes"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-15",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "critical",
+        "priorityReason": "Primitive confirmation and completion mark used throughout interactive interfaces."
     }
 ]
