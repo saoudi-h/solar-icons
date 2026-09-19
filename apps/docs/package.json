@@ -4,9 +4,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build",
+        "build": "pnpm generate:catalog && pnpm generate:og-assets && tsx ./scripts/generate-changelog.ts && next build",
         "dev": "next dev --turbo",
-        "predev": "pnpm generate:catalog",
+        "predev": "pnpm generate:catalog && pnpm generate:og-assets",
         "start": "next start",
         "postinstall": "fumadocs-mdx",
         "lint": "oxlint --deny-warnings .",
@@ -20,6 +20,7 @@
         "generate:data": "tsx ./scripts/generate-data.ts",
         "generate:descriptions": "tsx ./scripts/generate-descriptions.ts",
         "generate:catalog": "pnpm generate:data && pnpm generate:descriptions && pnpm generate:hero:utils",
+        "generate:og-assets": "tsx ./scripts/generate-og-icon-field.ts",
         "lint-staged": "lint-staged",
         "pre-commit": "lint-staged",
         "lint:links": "fumadocs-mdx && bun scripts/lint.ts",
@@ -28,6 +29,7 @@
     "dependencies": {
         "@base-ui/react": "^1.8.0",
         "@fontsource/aleo": "^5.3.0",
+        "@fontsource/host-grotesk": "^5.3.0",
         "@number-flow/react": "^0.6.2",
         "@radix-ui/react-dialog": "^1.1.23",
         "@radix-ui/react-dropdown-menu": "^2.1.24",

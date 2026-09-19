@@ -23,11 +23,11 @@ export default function IconsPage() {
 }
 
 export const metadata: Metadata = {
-    title: 'Explore Icons',
-    description: 'Browse and discover the complete Solar Icons collection',
+    title: 'Explore Solar Icons',
+    description: 'Browse all six styles',
     openGraph: {
-        title: 'Explore Icons',
-        description: 'Browse and discover the complete Solar Icons collection',
+        title: 'Explore Solar Icons',
+        description: 'Browse all six styles',
         images: '/og/icons/image.png',
     },
     twitter: {

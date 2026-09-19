@@ -1,0 +1,1025 @@
+<!-- Source for README hero. Render at 1200x630 with Chromium and write the result to solar-icons-banner.png. -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1200, initial-scale=1" />
+        <title>Solar Icons README hero draft v4</title>
+        <style>
+            @font-face {
+                font-family: 'Aleo';
+                src: url('../../../node_modules/.pnpm/@fontsource+aleo@5.3.0/node_modules/@fontsource/aleo/files/aleo-latin-400-normal.woff2')
+                    format('woff2');
+                font-weight: 400;
+            }
+            @font-face {
+                font-family: 'Host Grotesk';
+                src: url('../../../node_modules/.pnpm/@fontsource-variable+host-grotesk@5.3.0/node_modules/@fontsource-variable/host-grotesk/files/host-grotesk-latin-wght-normal.woff2')
+                    format('woff2');
+                font-weight: 100 900;
+            }
+            @page {
+                size: 1200px 630px;
+                margin: 0;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                margin: 0;
+                width: 1200px;
+                height: 630px;
+            }
+            body {
+                overflow: hidden;
+                background: #f5f6fb;
+                color: #171923;
+                font-family: 'Host Grotesk', sans-serif;
+            }
+            .canvas {
+                position: relative;
+                display: flex;
+                width: 1200px;
+                height: 630px;
+                padding: 58px 50px 48px 68px;
+                gap: 42px;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        500px 460px at 92% 50%,
+                        rgba(148, 130, 225, 0.18),
+                        transparent 72%
+                    ),
+                    #f5f6fb;
+            }
+            .noise {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.19;
+                pointer-events: none;
+            }
+            .copy {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex: 0 0 450px;
+                flex-direction: column;
+                padding-top: 2px;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: #171923;
+                font-family: Aleo, serif;
+                font-size: 21px;
+                font-weight: 700;
+            }
+            .brand svg {
+                width: 31px;
+                height: 31px;
+            }
+            h1 {
+                max-width: 430px;
+                margin: 116px 0 22px;
+                color: #171923;
+                font-family: Aleo, serif;
+                font-size: 54px;
+                font-weight: 400;
+                line-height: 1.02;
+            }
+            .description {
+                max-width: 395px;
+                margin: 0;
+                color: #45464e;
+                font-size: 19px;
+                font-weight: 430;
+                line-height: 1.42;
+            }
+            .ecosystem {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                width: max-content;
+                margin-top: auto;
+            }
+            .logo-row {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: max-content;
+                min-height: 32px;
+            }
+            .framework-logos {
+                gap: 18px;
+            }
+            .tool-logos {
+                align-items: flex-start;
+                justify-content: center;
+                gap: 28px;
+                width: 100%;
+            }
+            .logo-row img {
+                width: 29px;
+                height: 29px;
+                object-fit: contain;
+            }
+            .framework-logos img:nth-child(1) {
+                width: 32px;
+                height: 32px;
+            }
+            .framework-logos img:nth-child(4) {
+                width: 34px;
+                height: 34px;
+            }
+            .framework-logos img:nth-child(5) {
+                width: 31px;
+                height: 31px;
+            }
+            .framework-logos img:nth-child(6) {
+                width: 32px;
+                height: 32px;
+            }
+            .framework-logos img:nth-child(7) {
+                width: 31px;
+                height: 31px;
+            }
+            .framework-logos img:nth-child(8) {
+                width: 30px;
+                height: 30px;
+            }
+            .tool {
+                display: flex;
+                min-width: 44px;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+            }
+            .tool img {
+                width: 29px;
+                height: 29px;
+            }
+            .tool:first-child img {
+                width: 31px;
+                height: 31px;
+            }
+            .tool-label {
+                color: #45464e;
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 1;
+            }
+            .field {
+                position: relative;
+                z-index: 1;
+                display: grid;
+                flex: 1;
+                min-width: 0;
+                height: 524px;
+                grid-template-columns: repeat(16, minmax(0, 1fr));
+                grid-template-rows: repeat(12, minmax(0, 1fr));
+                align-items: center;
+                justify-items: center;
+                gap: 0 4px;
+                padding: 12px 12px;
+                overflow: hidden;
+                border-radius: 34px;
+                background:
+                    radial-gradient(
+                        180px 160px at 18% 24%,
+                        rgba(70, 205, 239, 0.16),
+                        transparent 70%
+                    ),
+                    radial-gradient(
+                        210px 170px at 78% 21%,
+                        rgba(255, 109, 80, 0.18),
+                        transparent 70%
+                    ),
+                    radial-gradient(
+                        280px 230px at 61% 86%,
+                        rgba(92, 83, 218, 0.22),
+                        transparent 70%
+                    ),
+                    #d9d7ec;
+            }
+            .field::after {
+                position: absolute;
+                inset: 0;
+                opacity: 0.39;
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.54' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='.61'/%3E%3CfeFuncG type='linear' slope='.61'/%3E%3CfeFuncB type='linear' slope='.61'/%3E%3CfeFuncA type='linear' slope='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+                pointer-events: none;
+            }
+            .icon {
+                z-index: 1;
+                width: 26px;
+                height: 26px;
+                opacity: 0.84;
+                object-fit: contain;
+                filter: brightness(0) saturate(100%) invert(9%) sepia(8%) saturate(861%)
+                    hue-rotate(201deg) brightness(96%) contrast(95%);
+            }
+        </style>
+    </head>
+    <body>
+        <main class="canvas">
+            <svg class="noise" aria-hidden="true" viewBox="0 0 1200 630" preserveAspectRatio="none">
+                <filter id="noise-filter">
+                    <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.54"
+                        numOctaves="4"
+                        stitchTiles="stitch" />
+                    <feColorMatrix type="saturate" values="0" />
+                    <feComponentTransfer>
+                        <feFuncR type="linear" slope="0.61" />
+                        <feFuncG type="linear" slope="0.61" />
+                        <feFuncB type="linear" slope="0.61" />
+                        <feFuncA type="linear" slope="1" />
+                    </feComponentTransfer>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#noise-filter)" />
+            </svg>
+
+            <section class="copy">
+                <div class="brand">
+                    <svg viewBox="0 0 1024 1024" aria-hidden="true">
+                        <path
+                            fill="currentColor"
+                            d="M231.568 895.459s-.057-317.869 1.29-323.02c.774-2.96 2.46-.887 8.54 10.492 54.264 101.557 176.21 192.298 319.114 237.455 132.655 41.918 202.129-47.141 123.043-157.732-26.702-37.341-35.127-46.303-289.274-307.706-41.689-42.88-70.437-75.863-70.437-80.813 0-.553 8.418 3.215 18.707 8.374 22.415 11.238 124.572 57.31 187.508 84.563 154.71 66.994 174.327 77.802 214.908 118.411C880.826 621.436 813.984 849.03 626.64 888.38c-50.742 10.658-395.072 7.079-395.072 7.079zm422.915-169.18c-24.406-11.007-62.778-28.085-85.27-37.951-182.594-80.095-219.952-97.933-254.94-121.733-163.986-111.546-132.45-362.603 53.354-424.741 37.365-12.496 26.812-11.93 235.955-12.64 98.741-.335 189.132.512 189.132.512s-.104 73 .055 140.314c.184 77.805-.025 151.057.116 162.782.303 25.056.189 25.168-8.467 8.308-51.062-99.466-174.692-193.793-310.916-237.224-144.244-45.987-217.894 50.75-126.614 166.303 25.406 32.163 62.734 72.023 167.412 178.772 158.812 161.953 192.678 197.911 185.925 197.412-.752-.055-21.335-9.107-45.742-20.114z" />
+                    </svg>
+                    <span>Solar Icons</span>
+                </div>
+
+                <h1>Icons for<br />design and code.</h1>
+                <p class="description">One library for your product, docs, and developer tools.</p>
+
+                <div class="ecosystem" aria-label="Frameworks and tools supported by Solar Icons">
+                    <div class="logo-row framework-logos" aria-label="Frameworks">
+                        <img src="readme-banner-assets/react.svg" alt="React" />
+                        <img src="readme-banner-assets/vue.svg" alt="Vue" />
+                        <img src="readme-banner-assets/svelte.svg" alt="Svelte" />
+                        <img src="readme-banner-assets/solid.svg" alt="Solid" />
+                        <img src="readme-banner-assets/angular.svg" alt="Angular" />
+                        <img src="readme-banner-assets/nuxt.svg" alt="Nuxt" />
+                        <img src="readme-banner-assets/javascript.svg" alt="JavaScript" />
+                        <img src="readme-banner-assets/static.svg" alt="Static SVG" />
+                    </div>
+                    <div class="logo-row tool-logos" aria-label="Developer tools">
+                        <div class="tool">
+                            <img src="readme-banner-assets/figma.svg" alt="Figma plugin" />
+                            <span class="tool-label">plugin</span>
+                        </div>
+                        <div class="tool">
+                            <img src="readme-banner-assets/mcp.svg" alt="Model Context Protocol" />
+                            <span class="tool-label">MCP</span>
+                        </div>
+                        <div class="tool">
+                            <img src="readme-banner-assets/terminal.svg" alt="CLI" />
+                            <span class="tool-label">CLI</span>
+                        </div>
+                        <div class="tool">
+                            <img
+                                src="../../../packages/core/svgs/devices/Linear/bot.svg"
+                                alt="Agent Skills" />
+                            <span class="tool-label">SKILLS</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="field" aria-label="A selection of Solar Icons">
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Linear/lock.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Bold/battery-half-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Outline/gallery.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/list/Broken/list-arrow-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/notes/LineDuotone/clipboard-heart.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/shopping/BoldDuotone/bag.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/Linear/colour-tuning.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/home/Bold/volume-knob.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/sports/Outline/body-shape.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Broken/circle-bottom-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/LineDuotone/alt-arrow-left.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/BoldDuotone/bomb.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/home/Linear/bedside-table.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/building/Bold/hospital.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/Outline/plug-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/school/Broken/square-academic-cap.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/LineDuotone/align-vertical-spacing.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/BoldDuotone/chat-square-replay.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/text-formatting/Linear/text-cross-circle.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/ui/Bold/pin.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/weather/Outline/waterdrops.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/like/Broken/heart-shine.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/LineDuotone/paperclip-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/faces/BoldDuotone/face-scan-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/Linear/round-alt-arrow-down.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/Bold/chat-square-question-mark.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/map/Outline/map-point-add.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Broken/file-warning.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/it/LineDuotone/bug-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/BoldDuotone/chat-round.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/school/Linear/case.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Bold/siren.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/time/Outline/history-3.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/map/Broken/map-arrow-down.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/LineDuotone/align-top.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/BoldDuotone/undo-right-round.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/Linear/planet-3.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Bold/key-minimalistic-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/faces/Outline/emoji-funny-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Broken/smart-home.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/like/LineDuotone/star-shine.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/BoldDuotone/clapperboard.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/Linear/star-angle.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/parts/Bold/car.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/medicine/Outline/pills.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/Broken/banknote.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/ui/LineDuotone/cat.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/list/BoldDuotone/list-down-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/time/Linear/stopwatch-pause.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Bold/file-search.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Outline/home-wi-fi.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Broken/rewind-back-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/LineDuotone/turntable-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/BoldDuotone/star-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/business/Linear/graph-down-new.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/ui/Bold/share.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Outline/file-zip.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Broken/arrow-to-down-left.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/LineDuotone/home-wi-fi-angle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/BoldDuotone/laptop-3.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/map/Linear/point-on-map.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Bold/logout-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/it/Outline/panel-top.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/notes/Broken/archive-down-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/LineDuotone/grip.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/BoldDuotone/airbuds-left.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/text-formatting/Linear/quote-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/Bold/asteroid.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/Outline/wallet.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Broken/file-sliders.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/time/LineDuotone/hourglass.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/BoldDuotone/server-minimalistic.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/ui/Linear/delivery.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/list/Bold/list-vertical.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Outline/file-right.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/Broken/monitor-smartphone.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/like/LineDuotone/heart-crack.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/BoldDuotone/pip-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/sports/Linear/skateboarding.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/Bold/gameboy.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/Outline/inbox-line.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/weather/Broken/sunset.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/LineDuotone/filters.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/BoldDuotone/minimize.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/users/Linear/users-group-rounded.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/folders/Bold/folder-down.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/school/Outline/bookmark-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/business/Broken/diagram-down.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/LineDuotone/cup-star.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/BoldDuotone/mirror-left.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Linear/file-terminal.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/Bold/monitor.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Outline/camera-add.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/notes/Broken/archive-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/school/LineDuotone/case-round.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/like/BoldDuotone/heart.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/Linear/sort-horizontal.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/users/Bold/user-hand-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Outline/file-remove.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Broken/videocamera-off.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/search/LineDuotone/rounded-magnifier-zoom-out.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/medicine/BoldDuotone/bone-fracture.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/Linear/square-alt-arrow-right.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/users/Bold/user-speak-rounded.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/time/Outline/alarm-remove.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/home/Broken/bed.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/map/LineDuotone/map-point-wave.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/BoldDuotone/laptop.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Linear/square-top-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/business/Bold/kanban-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Outline/music-notes.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/home/Broken/chandelier.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/food/LineDuotone/ladle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/map/BoldDuotone/map-point.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Linear/home-angle.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/food/Bold/chef-hat.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/Outline/card-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Broken/eye-closed.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/LineDuotone/quit-full-screen-circle.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/BoldDuotone/ticket.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/home/Linear/armchair.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Bold/magnet-wave.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/list/Outline/checklist.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/Broken/round-double-alt-arrow-up.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/text-formatting/LineDuotone/text-bold.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/business/BoldDuotone/graph.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/map/Linear/global.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/users/Bold/user-minus.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/home/Outline/armchair-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Broken/camera-rotate.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/search/LineDuotone/rounded-magnifier-zoom-in.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/shopping/BoldDuotone/cart-large-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Linear/lock-keyhole.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows/Bold/square-arrow-up.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/files/Outline/file.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/medicine/Broken/benzene-ring.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/LineDuotone/volume-small.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/time/BoldDuotone/alarm-pause.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/text-formatting/Linear/text-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Bold/file-cloud.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Outline/shield-minimalistic.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Broken/undo-left-round.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/LineDuotone/bill-check.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/BoldDuotone/paperclip-rounded-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/weather/Linear/cloud-minus.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/Bold/music-library-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/shopping/Outline/bag-smile.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/Broken/wireless-charge.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/LineDuotone/explicit.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/BoldDuotone/quit-full-screen.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/settings/Linear/loader.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/weather/Bold/wind.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/tools/Outline/align-horizontal-spacing.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/settings/Broken/widget-6.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/LineDuotone/sim-cards.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/BoldDuotone/battery-half.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/weather/Linear/sun-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/sports/Bold/treadmill-round.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/ui/Outline/danger.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/call/Broken/phone-calling-rounded.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/LineDuotone/to-pip.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/faces/BoldDuotone/sticker-smile-circle-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Linear/lock-password.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/folders/Bold/folder-tree.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/money/Outline/ruble.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/shopping/Broken/bag-check.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/LineDuotone/inbox.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/BoldDuotone/key-square-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/it/Linear/slash-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/notes/Bold/clipboard-add.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/security/Outline/bomb-emoji.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/school/Broken/bookmark.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/LineDuotone/black-hole-3.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/business/BoldDuotone/course-down.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/search/Linear/minimalistic-magnifier-zoom-in.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/Bold/inbox-out.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/files/Outline/file-spreadsheet.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/weather/Broken/cloud-sun.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/messages/LineDuotone/chat-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/BoldDuotone/server-square-update.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/ui/Linear/check-circle.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/it/Bold/usb-circle.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/Outline/rocket-2.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/folders/Broken/folder-zip.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/devices/LineDuotone/headphones-round.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/school/BoldDuotone/book-bookmark.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/sports/Linear/swimming.svg"
+                    alt="" />
+                <img class="icon" src="../../../packages/core/svgs/it/Bold/git-branch.svg" alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/arrows-action/Outline/download-twice-square.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/astronomy/Broken/satellite.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/it/LineDuotone/structure.svg"
+                    alt="" />
+                <img
+                    class="icon"
+                    src="../../../packages/core/svgs/video/BoldDuotone/soundwave-square.svg"
+                    alt="" />
+            </section>
+        </main>
+    </body>
+</html>
