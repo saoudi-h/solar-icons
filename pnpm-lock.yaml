@@ -309,6 +309,9 @@ importers:
       '@fontsource/aleo':
         specifier: ^5.3.0
         version: 5.3.0
+      '@fontsource/host-grotesk':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@number-flow/react':
         specifier: ^0.6.2
         version: 0.6.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -3662,6 +3665,9 @@ packages:
 
   '@fontsource/aleo@5.3.0':
     resolution: {integrity: sha512-HaDP0Ac6pej4H75ljAFFSueE1te66s+sCxuGQtSOcbKRbbPbjvab6n1ZqMv+EC428afijlpMfagO/pes9hk2/w==}
+
+  '@fontsource/host-grotesk@5.3.0':
+    resolution: {integrity: sha512-/4lcEvSbI3IELjz7UHW5Z1tXuRwOJACKK1ynJKSR28/MscudnKjxXIPQYfRmguv4niURtuksL0Hiusx+SPZS8w==}
 
   '@fuma-translate/react@1.0.2':
     resolution: {integrity: sha512-uOiOtBx3nRXR8Nu1GzBf1tApgF1FErDBTHxRIAQeyQdyOoZbrNRN6H4kDCWObY4qyGeGbHydG0DHzgeUgFDMIw==}
@@ -17850,6 +17856,8 @@ snapshots:
   '@fontsource-variable/host-grotesk@5.3.0': {}
 
   '@fontsource/aleo@5.3.0': {}
+
+  '@fontsource/host-grotesk@5.3.0': {}
 
   '@fuma-translate/react@1.0.2(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
