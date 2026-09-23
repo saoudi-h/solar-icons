@@ -9,10 +9,10 @@ import { config } from '@/config'
 
 export const metadata: Metadata = {
     title: 'Solar Icons',
-    description: '1,380 icons · 6 styles',
+    description: '1,451 icons · 6 styles',
     openGraph: {
         title: 'Solar Icons',
-        description: '1,380 icons · 6 styles',
+        description: '1,451 icons · 6 styles',
         images: '/og/home/image.png',
     },
     twitter: {

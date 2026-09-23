@@ -1,10 +1,10 @@
 # @solar-icons/react-native
 
-React Native components for Solar Icons. This package provides 8,280 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for mobile applications using `react-native-svg`.
+React Native components for Solar Icons. This package provides 8,706 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for mobile applications using `react-native-svg`.
 
 ## Features
 
-- **8,280 SVGs:** 1,380 unique icons in 6 styles. Designed by 480 Design.
+- **8,706 SVGs:** 1,451 unique icons in 6 styles. Designed by 480 Design.
 - **Tree-shakeable:** Import only the icons you use.
 - **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
 - **Customizable:** Override size, color, and stroke width per icon.

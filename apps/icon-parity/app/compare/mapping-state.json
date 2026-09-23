@@ -20,7 +20,18 @@
     "inventory": {
         "solarIcons": 1247,
         "solarAtlasSheets": 13,
-        "lucideAtlasSheets": 19
+        "lucideAtlasSheets": 19,
+        "note": "solarIcons is the historical 1,247-icon input used by the frozen production coverage map; it is not the current package inventory. See LUCIDE-CATALOGUE-GROWTH.md for the audited catalogue history."
+    },
+    "catalogueAudit": {
+        "baselineCommit": "171c9bf09ea9c86887260db9ba23479cc7b1f5e2",
+        "baselineSolarIcons": 1246,
+        "productionMapCommit": "b5ab9d2f72b93af91086711e7e073e63781a1785",
+        "productionMapSolarIcons": 1247,
+        "currentWorkingTreeSolarIcons": 1451,
+        "netGrowthSinceBaseline": 171,
+        "report": "apps/icon-parity/app/compare/LUCIDE-CATALOGUE-GROWTH.md",
+        "easyWinMapping": "apps/icon-parity/app/compare/lucide-easy-win-mapping.json"
     },
     "pilot": {
         "batch": "solar-to-lucide-calibration-30",
@@ -83,6 +94,8 @@
         "reverseCoverageOverrides": "apps/icon-parity/app/compare/reverse-coverage-policy.ts",
         "coverageReport": "apps/icon-parity/app/compare/lucide-coverage/AUDIT-REPORT.md",
         "coverageData": "apps/icon-parity/app/compare/lucide-coverage/coverage.json",
+        "easyWinMapping": "apps/icon-parity/app/compare/lucide-easy-win-mapping.json",
+        "easyWinMappingGuide": "apps/icon-parity/app/compare/LUCIDE-EASY-WIN-MAPPING.md",
         "collisionAudit": "apps/icon-parity/app/compare/lucide-coverage/COLLISION-AUDIT.md",
         "latestEquivalentAudit": "apps/icon-parity/app/compare/lucide-coverage/EQUIVALENT-AUDIT-SHEET-13-BATCH-01.md",
         "latestReverseAudit": "apps/icon-parity/app/compare/lucide-coverage/REVERSE-AUDIT-BATCH-01-FULL.md",
@@ -115,5 +128,5 @@
         ]
     },
     "blockedUntilNextActionCompletes": "Adding another reference pack or changing verified-matches.json without completing the reverse-equivalent integration audit.",
-    "lastUpdated": "2026-08-18"
+    "lastUpdated": "2026-09-23"
 }

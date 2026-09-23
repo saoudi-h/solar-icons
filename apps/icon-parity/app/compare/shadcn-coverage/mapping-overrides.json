@@ -14,6 +14,11 @@
         "confidence": "maintainer-confirmed",
         "note": "Solar Soundwave is the existing waveform equivalent for Lucide AudioLines."
     },
+    "archive-x": {
+        "solar": "archive-close",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar ArchiveClose is the confirmed destructive archive-state equivalent."
+    },
     "ellipsis-vertical": {
         "solar": "menu-dots-vertical",
         "confidence": "maintainer-confirmed",
@@ -65,6 +70,11 @@
         "confidence": "maintainer-confirmed",
         "note": "Solar FileChart is the confirmed equivalent of Lucide FileChartColumn."
     },
+    "file-chart-column-increasing": {
+        "solar": "file-chart-2",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar FileChart2 is the confirmed equivalent of Lucide FileChartColumnIncreasing."
+    },
     "gauge": {
         "solar": "speedometer-middle",
         "status": "fallback",
@@ -82,10 +92,21 @@
         "confidence": "maintainer-confirmed-fallback",
         "note": "Solar Loader is the confirmed single-loader fallback for Lucide's loader-circle alias; a separate loader-circle glyph is intentionally not planned."
     },
+    "loader-circle": {
+        "solar": "loader",
+        "status": "fallback",
+        "confidence": "maintainer-confirmed-fallback",
+        "note": "Solar Loader is the confirmed fallback for Lucide LoaderCircle; a separate loader-circle glyph is intentionally not planned."
+    },
     "message-circle-question": {
         "solar": "chat-round-question-mark",
         "confidence": "maintainer-confirmed",
         "note": "Solar ChatRoundQuestionMark is the confirmed semantic equivalent of Lucide's message-circle-question-mark alias."
+    },
+    "message-circle-question-mark": {
+        "solar": "chat-round-question-mark",
+        "confidence": "maintainer-confirmed",
+        "note": "Solar ChatRoundQuestionMark is the confirmed semantic equivalent of Lucide MessageCircleQuestionMark."
     },
     "more-vertical": {
         "solar": "menu-dots-vertical",

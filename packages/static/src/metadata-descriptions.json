@@ -9344,16 +9344,58 @@
         ]
     },
     {
-        "name": "sidebar-minimalistic",
+        "name": "panel-right",
         "category": "it",
         "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
-        "tags": ["Minimalist Sidebar", "layout", "ui", "interface", "panel", "menu", "simple"]
+        "tags": [
+            "right panel",
+            "minimalist panel",
+            "layout",
+            "ui",
+            "interface",
+            "panel",
+            "menu",
+            "simple"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "deprecatedAliases": [
+            {
+                "name": "sidebar-minimalistic",
+                "replacement": "panel-right",
+                "reason": "The icon is a right-side panel rather than a generic sidebar.",
+                "deprecatedSince": "2026-09-21"
+            }
+        ]
     },
     {
-        "name": "sidebar",
+        "name": "panel-text-right",
         "category": "it",
         "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
-        "tags": ["sidebar", "layout", "ui", "interface", "panel", "menu", "navigation"]
+        "tags": [
+            "right text panel",
+            "sidebar",
+            "layout",
+            "ui",
+            "interface",
+            "panel",
+            "menu",
+            "navigation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "deprecatedAliases": [
+            {
+                "name": "sidebar",
+                "replacement": "panel-text-right",
+                "reason": "The direction and text-bearing panel variant are now explicit in the name.",
+                "deprecatedSince": "2026-09-21"
+            }
+        ]
     },
     {
         "name": "wi-fi-router-round",
@@ -15848,24 +15890,58 @@
         "state": "beta"
     },
     {
-        "name": "sidebar-close",
+        "name": "panel-right-close",
         "category": "it",
         "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
-        "tags": ["close sidebar", "navigation", "drawer", "panel", "menu", "layout", "interface"],
+        "tags": [
+            "close right panel",
+            "close sidebar",
+            "navigation",
+            "drawer",
+            "panel",
+            "menu",
+            "layout",
+            "interface"
+        ],
         "origin": "extended",
         "addedAt": "2026-09-11",
         "author": "Hakim Saoudi",
-        "state": "beta"
+        "state": "beta",
+        "deprecatedAliases": [
+            {
+                "name": "sidebar-close",
+                "replacement": "panel-right-close",
+                "reason": "The icon is the explicit close action for a right-side panel.",
+                "deprecatedSince": "2026-09-21"
+            }
+        ]
     },
     {
-        "name": "sidebar-open",
+        "name": "panel-right-open",
         "category": "it",
         "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
-        "tags": ["open sidebar", "navigation", "drawer", "panel", "menu", "layout", "interface"],
+        "tags": [
+            "open right panel",
+            "open sidebar",
+            "navigation",
+            "drawer",
+            "panel",
+            "menu",
+            "layout",
+            "interface"
+        ],
         "origin": "extended",
         "addedAt": "2026-09-11",
         "author": "Hakim Saoudi",
-        "state": "beta"
+        "state": "beta",
+        "deprecatedAliases": [
+            {
+                "name": "sidebar-open",
+                "replacement": "panel-right-open",
+                "reason": "The icon is the explicit open action for a right-side panel.",
+                "deprecatedSince": "2026-09-21"
+            }
+        ]
     },
     {
         "name": "kanban",
@@ -16485,5 +16561,1306 @@
         "state": "beta",
         "priority": "critical",
         "priorityReason": "Primitive confirmation and completion mark used throughout interactive interfaces."
+    },
+    {
+        "name": "arrow-down-from-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "down arrow",
+            "from line",
+            "extract",
+            "move out",
+            "download",
+            "transfer",
+            "descend",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-down-to-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "down arrow",
+            "to line",
+            "insert",
+            "move in",
+            "download",
+            "save",
+            "descend",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-left-from-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "left arrow",
+            "from line",
+            "extract",
+            "move out",
+            "back",
+            "previous",
+            "transfer",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-left-to-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "left arrow",
+            "to line",
+            "insert",
+            "move in",
+            "back",
+            "previous",
+            "import",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-right-from-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "right arrow",
+            "from line",
+            "extract",
+            "move out",
+            "forward",
+            "next",
+            "export",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-right-to-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "right arrow",
+            "to line",
+            "insert",
+            "move in",
+            "forward",
+            "next",
+            "import",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-up-from-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": [
+            "up arrow",
+            "from line",
+            "extract",
+            "move out",
+            "upload",
+            "transfer",
+            "ascend",
+            "action"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "arrow-up-to-line",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": ["up arrow", "to line", "insert", "move in", "upload", "save", "ascend", "action"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevron-first",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "first",
+            "jump to start",
+            "beginning",
+            "previous",
+            "pagination",
+            "navigation",
+            "chevron",
+            "start"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevron-last",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "last",
+            "jump to end",
+            "ending",
+            "next",
+            "pagination",
+            "navigation",
+            "chevron",
+            "end"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevrons-down-up",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "double chevron",
+            "down up",
+            "vertical",
+            "expand collapse",
+            "sort",
+            "reorder",
+            "toggle",
+            "direction"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevrons-left-right",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "double chevron",
+            "left right",
+            "horizontal",
+            "resize",
+            "expand collapse",
+            "swap",
+            "toggle",
+            "direction"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevrons-left-right-ellipsis",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "horizontal overflow",
+            "more",
+            "ellipsis",
+            "left right",
+            "pagination",
+            "navigation",
+            "chevrons",
+            "options"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevrons-right-left",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "double chevron",
+            "right left",
+            "horizontal",
+            "reverse",
+            "swap",
+            "back and forth",
+            "toggle",
+            "direction"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "chevrons-up-down",
+        "category": "arrows",
+        "categoryTags": [
+            "arrow",
+            "direction",
+            "navigation",
+            "pointer",
+            "wayfinding",
+            "interface",
+            "control",
+            "movement"
+        ],
+        "tags": [
+            "double chevron",
+            "up down",
+            "vertical",
+            "expand collapse",
+            "sort",
+            "reorder",
+            "toggle",
+            "direction"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-audio",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["audio file", "sound", "music", "document", "media", "track", "recording"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-image",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["image file", "photo", "picture", "document", "media", "photograph", "gallery"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-lock",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "locked file",
+            "secure document",
+            "private",
+            "protected",
+            "security",
+            "document",
+            "access"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-play",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": ["media file", "video file", "play", "movie", "document", "recording", "audio"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-stack",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "stacked files",
+            "documents",
+            "collection",
+            "file stack",
+            "multiple pages",
+            "archive",
+            "bundle"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "file-user",
+        "category": "files",
+        "categoryTags": ["files", "documents", "pages", "paper", "content"],
+        "tags": [
+            "user file",
+            "profile document",
+            "identity",
+            "person",
+            "account",
+            "document",
+            "owner"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "layout-freeform",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "freeform layout",
+            "custom layout",
+            "canvas",
+            "arrange",
+            "design",
+            "position",
+            "interface"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "layout-list",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "list layout",
+            "list view",
+            "rows",
+            "vertical layout",
+            "arrange",
+            "interface",
+            "display"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "rows-2",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["two rows", "row layout", "list", "split view", "interface", "display", "arrange"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "rows-3",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "three rows",
+            "row layout",
+            "list",
+            "split view",
+            "interface",
+            "display",
+            "arrange"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "rows-4",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "four rows",
+            "row layout",
+            "list",
+            "split view",
+            "interface",
+            "display",
+            "arrange"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "separator-horizontal",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["horizontal divider", "separator", "split", "rule", "line", "layout", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "separator-vertical",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": ["vertical divider", "separator", "split", "rule", "line", "layout", "interface"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-bottom",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["bottom panel", "drawer", "layout", "interface", "panel", "navigation", "window"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-bottom-close",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "close bottom panel",
+            "close drawer",
+            "dismiss",
+            "layout",
+            "interface",
+            "panel",
+            "navigation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-bottom-open",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "open bottom panel",
+            "open drawer",
+            "expand",
+            "layout",
+            "interface",
+            "panel",
+            "navigation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-left",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": ["left panel", "sidebar", "drawer", "layout", "interface", "panel", "navigation"],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-left-close",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "close left panel",
+            "close sidebar",
+            "dismiss",
+            "drawer",
+            "layout",
+            "interface",
+            "navigation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panel-left-open",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "open left panel",
+            "open sidebar",
+            "expand",
+            "drawer",
+            "layout",
+            "interface",
+            "navigation"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panels-bottom-left",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "bottom left panels",
+            "panel layout",
+            "window",
+            "dashboard",
+            "interface",
+            "grid",
+            "layout"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panels-bottom-right",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "bottom right panels",
+            "panel layout",
+            "window",
+            "dashboard",
+            "interface",
+            "grid",
+            "layout"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "panels-top-right",
+        "category": "it",
+        "categoryTags": ["it", "network", "programming", "development", "computing", "tech"],
+        "tags": [
+            "top right panels",
+            "panel layout",
+            "window",
+            "dashboard",
+            "interface",
+            "grid",
+            "layout"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-21",
+        "author": "Hakim Saoudi",
+        "state": "beta"
+    },
+    {
+        "name": "copy-check",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["copy", "clipboard", "duplicate", "check", "verified", "success", "confirm"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Confirms a copy or duplicate action in common interfaces.",
+        "useCases": ["copy confirmation", "duplicate success", "completed action"]
+    },
+    {
+        "name": "copy-minus",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["copy", "clipboard", "duplicate", "remove", "minus", "decrease", "subtract"],
+        "aliases": ["copy-remove"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Represents removing an item from a copy or duplication workflow.",
+        "useCases": ["remove copied item", "decrease selection", "subtract from collection"]
+    },
+    {
+        "name": "copy-add",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["copy", "clipboard", "duplicate", "add", "plus", "create", "increase"],
+        "aliases": ["copy-plus"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Represents adding another copy or duplicating an item.",
+        "useCases": ["duplicate item", "add copied item", "create a copy"]
+    },
+    {
+        "name": "copy-close",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["copy", "clipboard", "duplicate", "close", "cancel", "remove", "dismiss"],
+        "aliases": ["copy-x", "copy-cancel"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Cancels or removes a copy operation in a familiar compact form.",
+        "useCases": ["cancel copy", "remove duplicate", "dismiss copy action"]
+    },
+    {
+        "name": "filter-close",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["filter", "funnel", "remove", "clear", "reset", "close", "cancel"],
+        "aliases": ["filter-x", "clear-filter"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "A common control for clearing an active filter or search constraint.",
+        "useCases": ["clear filter", "reset query", "remove active constraint"]
+    },
+    {
+        "name": "circle-dot",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["circle", "dot", "point", "radio", "status", "target", "selection"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Useful primitive for status, radio controls, targets, and selection states.",
+        "useCases": ["status indicator", "radio option", "target marker"]
+    },
+    {
+        "name": "circle-dot-dashed",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "dashed circle",
+            "dot",
+            "point",
+            "loading",
+            "progress",
+            "placeholder",
+            "selection"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Adds a dashed status and placeholder primitive to the circle family.",
+        "useCases": ["pending status", "progress placeholder", "dashed selection"]
+    },
+    {
+        "name": "square-dot",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["square", "dot", "point", "status", "target", "selection", "shape"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Complements the circle primitive for square-shaped status and selection controls.",
+        "useCases": ["status indicator", "square selection", "target marker"]
+    },
+    {
+        "name": "square-dot-dashed",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": [
+            "dashed square",
+            "dot",
+            "point",
+            "loading",
+            "progress",
+            "placeholder",
+            "selection"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Completes the dashed square primitive for pending and selection states.",
+        "useCases": ["pending status", "progress placeholder", "dashed selection"]
+    },
+    {
+        "name": "magnifier-check",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": ["search", "magnifying glass", "find", "check", "verified", "confirm", "result"],
+        "aliases": ["search-check"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Combines a frequent search action with confirmation or validated results.",
+        "useCases": ["verified search", "validated result", "search confirmation"]
+    },
+    {
+        "name": "magnifier-slash",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": [
+            "search",
+            "magnifying glass",
+            "find",
+            "disabled search",
+            "hidden",
+            "private",
+            "blocked"
+        ],
+        "aliases": ["search-slash"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Communicates disabled, hidden, or unavailable search behavior.",
+        "useCases": ["disable search", "private search", "unavailable query"]
+    },
+    {
+        "name": "magnifier-close",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": ["search", "magnifying glass", "find", "clear", "close", "cancel", "remove query"],
+        "aliases": ["search-x", "search-close"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "A common clear-search control for inputs and result views.",
+        "useCases": ["clear search", "cancel query", "remove search term"]
+    },
+    {
+        "name": "rounded-magnifier-check",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": ["rounded search", "magnifying glass", "find", "check", "verified", "confirm"],
+        "aliases": ["round-magnifier-check"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the confirmed-search state in the existing rounded magnifier family.",
+        "useCases": ["verified search", "validated result", "search confirmation"]
+    },
+    {
+        "name": "rounded-magnifier-slash",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": [
+            "rounded search",
+            "magnifying glass",
+            "find",
+            "disabled",
+            "hidden",
+            "private",
+            "blocked"
+        ],
+        "aliases": ["round-magnifier-slash"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the disabled-search state in the existing rounded magnifier family.",
+        "useCases": ["disable search", "private search", "unavailable query"]
+    },
+    {
+        "name": "rounded-magnifier-close",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": [
+            "rounded search",
+            "magnifying glass",
+            "find",
+            "clear",
+            "close",
+            "cancel",
+            "remove query"
+        ],
+        "aliases": ["round-magnifier-close", "round-magnifier-x"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the clear-search state in the existing rounded magnifier family.",
+        "useCases": ["clear search", "cancel query", "remove search term"]
+    },
+    {
+        "name": "minimalistic-magnifier-check",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": ["minimal search", "magnifying glass", "find", "check", "verified", "confirm"],
+        "aliases": ["minimalistic-search-check"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the confirmed-search state in the existing minimalistic magnifier family.",
+        "useCases": ["verified search", "validated result", "search confirmation"]
+    },
+    {
+        "name": "minimalistic-magnifier-slash",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": [
+            "minimal search",
+            "magnifying glass",
+            "find",
+            "disabled",
+            "hidden",
+            "private",
+            "blocked"
+        ],
+        "aliases": ["minimalistic-search-slash"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the disabled-search state in the existing minimalistic magnifier family.",
+        "useCases": ["disable search", "private search", "unavailable query"]
+    },
+    {
+        "name": "minimalistic-magnifier-close",
+        "category": "search",
+        "categoryTags": ["find", "query", "look", "explore", "discover", "magnifier"],
+        "tags": [
+            "minimal search",
+            "magnifying glass",
+            "find",
+            "clear",
+            "close",
+            "cancel",
+            "remove query"
+        ],
+        "aliases": ["minimalistic-search-x", "minimalistic-search-close"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides the clear-search state in the existing minimalistic magnifier family.",
+        "useCases": ["clear search", "cancel query", "remove search term"]
+    },
+    {
+        "name": "bookmark-check",
+        "category": "school",
+        "categoryTags": ["education", "study", "learning", "student", "university", "college"],
+        "tags": ["bookmark", "saved", "check", "read", "completed", "verified", "favorite"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Adds a completed or confirmed state to the widely used bookmark primitive.",
+        "useCases": ["completed reading", "saved and verified", "confirmed bookmark"]
+    },
+    {
+        "name": "bookmark-minus",
+        "category": "school",
+        "categoryTags": ["education", "study", "learning", "student", "university", "college"],
+        "tags": ["bookmark", "saved", "remove", "minus", "decrease", "reading", "favorite"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Supports removing or reducing a saved bookmark in common reading flows.",
+        "useCases": ["remove bookmark", "decrease saved items", "reading list control"]
+    },
+    {
+        "name": "bookmark-off",
+        "category": "school",
+        "categoryTags": ["education", "study", "learning", "student", "university", "college"],
+        "tags": ["bookmark", "unsaved", "disabled", "off", "remove", "reading", "favorite"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Clearly communicates that a bookmark is disabled or no longer saved.",
+        "useCases": ["unsaved page", "disabled bookmark", "remove from reading list"]
+    },
+    {
+        "name": "bookmark-plus",
+        "category": "school",
+        "categoryTags": ["education", "study", "learning", "student", "university", "college"],
+        "tags": ["bookmark", "save", "add", "plus", "new", "reading", "favorite"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "A direct save-to-bookmarks action used in reading and content interfaces.",
+        "useCases": ["save page", "add to reading list", "favorite content"]
+    },
+    {
+        "name": "bookmark-x",
+        "category": "school",
+        "categoryTags": ["education", "study", "learning", "student", "university", "college"],
+        "tags": ["bookmark", "remove", "close", "cancel", "unsaved", "reading", "favorite"],
+        "aliases": ["bookmark-close"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides an explicit remove or cancel state for saved content.",
+        "useCases": ["remove bookmark", "cancel save", "unsave content"]
+    },
+    {
+        "name": "move-horizontal",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": ["move", "horizontal", "left right", "drag", "resize", "reposition", "direction"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Useful for horizontal movement, dragging, resizing, and directional controls.",
+        "useCases": ["horizontal move", "drag handle", "resize horizontally"]
+    },
+    {
+        "name": "move-vertical",
+        "category": "arrows-action",
+        "categoryTags": [
+            "action",
+            "operation",
+            "system",
+            "interface",
+            "interaction",
+            "control",
+            "command",
+            "process"
+        ],
+        "tags": ["move", "vertical", "up down", "drag", "resize", "reposition", "direction"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Useful for vertical movement, dragging, resizing, and directional controls.",
+        "useCases": ["vertical move", "drag handle", "resize vertically"]
+    },
+    {
+        "name": "list-plus",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["list", "add", "plus", "new item", "insert", "rows", "collection"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Common control for adding an item or row to a list.",
+        "useCases": ["add list item", "create row", "append entry"]
+    },
+    {
+        "name": "list-plus-minimalistic",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["minimal list", "add", "plus", "new item", "insert", "rows", "collection"],
+        "aliases": ["minimalistic-list-plus"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Adds an item to a list while preserving the minimalistic family style.",
+        "useCases": ["add list item", "create row", "append entry"]
+    },
+    {
+        "name": "list-minus",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["list", "remove", "minus", "delete item", "subtract", "rows", "collection"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Common control for removing an item or row from a list.",
+        "useCases": ["remove list item", "delete row", "subtract entry"]
+    },
+    {
+        "name": "list-minus-minimalistic",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": [
+            "minimal list",
+            "remove",
+            "minus",
+            "delete item",
+            "subtract",
+            "rows",
+            "collection"
+        ],
+        "aliases": ["minimalistic-list-minus"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Removes an item from a list while preserving the minimalistic family style.",
+        "useCases": ["remove list item", "delete row", "subtract entry"]
+    },
+    {
+        "name": "list-ordered",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["ordered list", "numbered list", "sequence", "sort", "rows", "ranking", "order"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Distinguishes ordered or numbered lists from generic list layouts.",
+        "useCases": ["numbered list", "ordered content", "ranked items"]
+    },
+    {
+        "name": "list-ordered-minimalistic",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["minimal ordered list", "numbered list", "sequence", "sort", "rows", "ranking"],
+        "aliases": ["minimalistic-list-ordered"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides an ordered-list control in the minimalistic list family.",
+        "useCases": ["numbered list", "ordered content", "ranked items"]
+    },
+    {
+        "name": "list-collapse",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": [
+            "collapse list",
+            "fold",
+            "close group",
+            "hide items",
+            "accordion",
+            "rows",
+            "outline"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Supports collapsing grouped list content and dense navigation structures.",
+        "useCases": ["collapse section", "hide list items", "close accordion"]
+    },
+    {
+        "name": "list-collapse-minimalistic",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["minimal collapse list", "fold", "close group", "hide items", "accordion", "rows"],
+        "aliases": ["minimalistic-list-collapse"],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Adds a compact collapse control to the minimalistic list family.",
+        "useCases": ["collapse section", "hide list items", "close accordion"]
+    },
+    {
+        "name": "grid-3x2",
+        "category": "settings",
+        "categoryTags": ["preferences", "options", "configuration", "setup", "controls", "gear"],
+        "tags": [
+            "three by two grid",
+            "grid",
+            "layout",
+            "dashboard",
+            "modules",
+            "squares",
+            "interface"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-09-23",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
+        "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
     }
 ]

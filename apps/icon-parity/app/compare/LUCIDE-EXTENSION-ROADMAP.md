@@ -35,11 +35,12 @@ semantic value, absence of a reliable fallback, and implementation effort. If th
 changes, update the reason and the queue in the same commit. Do not infer priority from the
 Lucide name alone.
 
-The current queue deliberately contains both easy wins and artistic candidates. The first pass
-must clear match corrections before creating anything. The next derived-variant pass covers
-`ellipsis-vertical`, `loader-circle`, `grip-vertical`, and `move`. The assisted-design packet is
-reserved for genuinely absent objects such as `camera-off`, `bot`, `brain`, `barcode`,
-`binoculars`, `paintbrush`, `toolbox`, `webcam`, and `wifi-cog`.
+The queue now records 132 delivered extensions or maintainer-confirmed mappings, including the
+recent directional, layout, panel, file, folder, clipboard, Git, and table families. Only
+`square` remains planned from the previous compatibility queue. The `createdIcon` field may point
+to an existing Solar canonical name when the Lucide concept is already covered; it does not
+silently rewrite the historical Solar → Lucide production map, which remains a separate visual-
+integration step.
 
 ## Lifecycle
 
