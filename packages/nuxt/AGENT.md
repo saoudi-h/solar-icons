@@ -43,7 +43,7 @@ status: 'active'
 - **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`, not `peerDependencies`.** This is unusual for a Nuxt module.
 - **`pnpm dev:prepare` must run before `nuxi dev playground`** — the module needs to be built in stub mode for Nuxt's auto-import scanner.
 - **Nuxt 4 schema is in use** (`@nuxt/kit` 4, `@nuxt/schema` 4). Supports Nuxt 3.12+ via compatibility modes; the dev playground targets Nuxt 4.
-- **~9,660 auto-imports registered** (8,280 main + 1,380 dynamic). Tree-shaking ensures only used icons are bundled.
+- **~9,660 auto-imports registered** (8,706 main + 1,451 dynamic). Tree-shaking ensures only used icons are bundled.
 
 ## Module API
 

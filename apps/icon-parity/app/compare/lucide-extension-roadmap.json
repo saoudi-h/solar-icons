@@ -14,18 +14,20 @@
         "sourceId": "L0602",
         "sourceName": "ellipsis-vertical",
         "priority": "critical",
-        "priorityReason": "Common overflow-menu primitive; it is a deterministic vertical derivation of Solar menu-dots, not an AI design task.",
+        "priorityReason": "Common overflow-menu primitive; already covered by Solar menu-dots-vertical.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "menu-dots-vertical"
     },
     {
         "source": "lucide",
         "sourceId": "L0995",
         "sourceName": "loader-circle",
         "priority": "high",
-        "priorityReason": "Generic async loading state; it can be constructed deterministically from an existing Solar circular primitive.",
+        "priorityReason": "Generic async loading state; already covered by the existing Solar loader.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "loader"
     },
     {
         "source": "lucide",
@@ -34,7 +36,8 @@
         "priority": "high",
         "priorityReason": "Common drag-and-drop handle; the three-dot grip family is simple to derive and useful in sortable interfaces.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "grip-vertical"
     },
     {
         "source": "lucide",
@@ -43,7 +46,8 @@
         "priority": "high",
         "priorityReason": "Generic repositioning control; it can be derived from the existing maximize-square arrow geometry, with circle and square variants considered separately.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "move"
     },
     {
         "source": "lucide",
@@ -52,7 +56,8 @@
         "priority": "high",
         "priorityReason": "Common video-call state that completes the existing camera family while requiring a deliberate slash or disabled-state treatment.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "camera-off"
     },
     {
         "source": "lucide",
@@ -139,9 +144,10 @@
         "sourceId": "L0058",
         "sourceName": "archive-x",
         "priority": "high",
-        "priorityReason": "The shadcn registry uses this destructive archive state; the current paper-bin candidate changes the object semantics.",
+        "priorityReason": "The shadcn registry uses this destructive archive state; Solar already provides the matching archive-close icon.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "archive-close"
     },
     {
         "source": "lucide",
@@ -150,7 +156,8 @@
         "priority": "high",
         "priorityReason": "The current dumbbells candidate is not an interchangeable blocks or component-grid symbol used by shadcn previews.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "blocks"
     },
     {
         "source": "lucide",
@@ -159,7 +166,8 @@
         "priority": "normal",
         "priorityReason": "The shadcn registry uses a vehicle example and Solar's transmission candidate is not a valid car fallback.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "car"
     },
     {
         "source": "lucide",
@@ -168,7 +176,8 @@
         "priority": "high",
         "priorityReason": "An eighteen-use progress and placeholder primitive is absent from the current Solar catalogue.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "circle-dashed"
     },
     {
         "source": "lucide",
@@ -177,7 +186,8 @@
         "priority": "high",
         "priorityReason": "The shadcn registry uses the paste action in fourteen previews; a generic clipboard loses the action state.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "clipboard-paste"
     },
     {
         "source": "lucide",
@@ -186,7 +196,8 @@
         "priority": "high",
         "priorityReason": "The three-column layout control is part of the shadcn surface and has no accepted Solar equivalent.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "columns-3"
     },
     {
         "source": "lucide",
@@ -195,25 +206,28 @@
         "priority": "normal",
         "priorityReason": "The registry uses a generic container primitive that cannot be represented by a box fallback without changing the concept.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "container"
     },
     {
         "source": "lucide",
         "sourceId": "L0641",
         "sourceName": "file-chart-column",
         "priority": "high",
-        "priorityReason": "The file-chart-column compound is used by shadcn and requires a dedicated document-plus-chart silhouette.",
+        "priorityReason": "The file-chart-column compound is already covered by Solar file-chart.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "file-chart"
     },
     {
         "source": "lucide",
         "sourceId": "L0642",
         "sourceName": "file-chart-column-increasing",
         "priority": "normal",
-        "priorityReason": "This current Lucide alias is also emitted by shadcn; the same Solar family may serve both document chart variants.",
+        "priorityReason": "This Lucide document-chart variant is already covered by Solar file-chart-2.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "file-chart-2"
     },
     {
         "source": "lucide",
@@ -222,7 +236,8 @@
         "priority": "high",
         "priorityReason": "Five shadcn uses need a document-search compound; the current card-search candidate changes the base object.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "file-search"
     },
     {
         "source": "lucide",
@@ -231,7 +246,8 @@
         "priority": "high",
         "priorityReason": "The file-warning state appears in six shadcn previews and has no accepted Solar equivalent.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "file-warning"
     },
     {
         "source": "lucide",
@@ -240,7 +256,8 @@
         "priority": "high",
         "priorityReason": "The folder-search compound is used in three registry previews and is absent from Solar.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "folder-search"
     },
     {
         "source": "lucide",
@@ -249,16 +266,19 @@
         "priority": "normal",
         "priorityReason": "The current video-frame candidate is too specific for the generic frame primitive used by shadcn.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "frame"
     },
     {
         "source": "lucide",
         "sourceId": "L0784",
         "sourceName": "gauge",
         "priority": "high",
-        "priorityReason": "The dashboard gauge appears in shadcn previews, while playback-speed is not a valid semantic fallback.",
+        "priorityReason": "The dashboard gauge is covered by the existing speedometer-low, speedometer-middle, and speedometer-max family.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "speedometer-middle",
+        "createdIcons": ["speedometer-low", "speedometer-middle", "speedometer-max"]
     },
     {
         "source": "lucide",
@@ -267,16 +287,18 @@
         "priority": "high",
         "priorityReason": "The generic loader is used by shadcn independently from loader-circle; both need a stable Solar loading treatment.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "loader"
     },
     {
         "source": "lucide",
         "sourceId": "L1059",
         "sourceName": "message-circle-question-mark",
         "priority": "high",
-        "priorityReason": "Six shadcn previews require a question-mark message bubble that is not present in Solar.",
+        "priorityReason": "Six shadcn previews require a question-mark message bubble already covered by Solar chat-round-question-mark.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "chat-round-question-mark"
     },
     {
         "source": "lucide",
@@ -285,7 +307,8 @@
         "priority": "high",
         "priorityReason": "Lucide's current layout alias appears nine times in shadcn and needs a deliberate panel-layout silhouette.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "panels-top-left"
     },
     {
         "source": "lucide",
@@ -303,7 +326,8 @@
         "priority": "normal",
         "priorityReason": "The favorite-off state is used in six shadcn previews and can share a deliberate state-mark family with other Solar controls.",
         "workType": "derived-variant",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "star-off"
     },
     {
         "source": "lucide",
@@ -312,6 +336,997 @@
         "priority": "high",
         "priorityReason": "The data-table primitive appears eleven times in shadcn; a bedside-table candidate is semantically wrong.",
         "workType": "assisted-design",
-        "status": "planned"
+        "status": "created",
+        "createdIcon": "table"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0073",
+        "sourceName": "arrow-down-from-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-down-from-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0078",
+        "sourceName": "arrow-down-to-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-down-to-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0083",
+        "sourceName": "arrow-left-from-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-left-from-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0085",
+        "sourceName": "arrow-left-to-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-left-to-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0087",
+        "sourceName": "arrow-right-from-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-right-from-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0089",
+        "sourceName": "arrow-right-to-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-right-to-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0096",
+        "sourceName": "arrow-up-from-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-up-from-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0100",
+        "sourceName": "arrow-up-to-line",
+        "priority": "high",
+        "priorityReason": "Common transfer controls that complete the directional arrow family and are straightforward to construct from existing Solar primitives.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "arrow-up-to-line"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0357",
+        "sourceName": "chevron-first",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevron-first"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0358",
+        "sourceName": "chevron-last",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevron-last"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0363",
+        "sourceName": "chevrons-down-up",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevrons-down-up"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0365",
+        "sourceName": "chevrons-left-right",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevrons-left-right"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0366",
+        "sourceName": "chevrons-left-right-ellipsis",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevrons-left-right-ellipsis"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0368",
+        "sourceName": "chevrons-right-left",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevrons-right-left"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0370",
+        "sourceName": "chevrons-up-down",
+        "priority": "high",
+        "priorityReason": "Common navigation, sorting, and pagination controls; the geometry is deterministic and now exists as a complete Solar family.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "chevrons-up-down"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0633",
+        "sourceName": "file-audio",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-audio"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0659",
+        "sourceName": "file-image",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-image"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0665",
+        "sourceName": "file-lock",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-lock"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0675",
+        "sourceName": "file-play",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-play"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0687",
+        "sourceName": "file-stack",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-stack"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0695",
+        "sourceName": "file-user",
+        "priority": "high",
+        "priorityReason": "Useful document/media state compounds that complete the file family and have now been delivered in all six Solar styles.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-user"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0945",
+        "sourceName": "layout-freeform",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "layout-freeform"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0947",
+        "sourceName": "layout-list",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "layout-list"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1346",
+        "sourceName": "rows-2",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "rows-2"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1347",
+        "sourceName": "rows-3",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "rows-3"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1348",
+        "sourceName": "rows-4",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "rows-4"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1399",
+        "sourceName": "separator-horizontal",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "separator-horizontal"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1400",
+        "sourceName": "separator-vertical",
+        "priority": "high",
+        "priorityReason": "Common layout and interface primitives with simple, reusable geometry; the complete six-style set is now present.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "separator-vertical"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1184",
+        "sourceName": "panel-bottom",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-bottom"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1185",
+        "sourceName": "panel-bottom-close",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-bottom-close"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1187",
+        "sourceName": "panel-bottom-open",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-bottom-open"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1188",
+        "sourceName": "panel-left",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-left"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1189",
+        "sourceName": "panel-left-close",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-left-close"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1191",
+        "sourceName": "panel-left-open",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-left-open"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1193",
+        "sourceName": "panel-right",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-right"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1194",
+        "sourceName": "panel-right-close",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-right-close"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1196",
+        "sourceName": "panel-right-open",
+        "priority": "high",
+        "priorityReason": "Common panel navigation controls that make panel direction and open/close state explicit across the interface.",
+        "workType": "derived-variant",
+        "status": "created",
+        "createdIcon": "panel-right-open"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0243",
+        "sourceName": "braces",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "braces"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0244",
+        "sourceName": "brackets",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "brackets"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0345",
+        "sourceName": "check",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "check"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0428",
+        "sourceName": "clipboard-clock",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "clipboard-clock"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0429",
+        "sourceName": "clipboard-copy",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "clipboard-copy"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0431",
+        "sourceName": "clipboard-minus",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "clipboard-minus"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0436",
+        "sourceName": "clipboard-type",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "clipboard-type"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0490",
+        "sourceName": "columns-2",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "columns-2"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0492",
+        "sourceName": "columns-3-cog",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "columns-3-cog"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0493",
+        "sourceName": "columns-4",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "columns-4"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0636",
+        "sourceName": "file-badge",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-badge"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0639",
+        "sourceName": "file-braces",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-braces"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0649",
+        "sourceName": "file-code",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-code"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0652",
+        "sourceName": "file-cog",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-cog"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0667",
+        "sourceName": "file-minus",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-minus"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0672",
+        "sourceName": "file-pen",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-pen"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0679",
+        "sourceName": "file-question-mark",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-question-mark"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0684",
+        "sourceName": "file-signal",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-signal"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0685",
+        "sourceName": "file-sliders",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-sliders"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0686",
+        "sourceName": "file-spreadsheet",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-spreadsheet"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0689",
+        "sourceName": "file-terminal",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-terminal"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0691",
+        "sourceName": "file-type",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-type"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0696",
+        "sourceName": "file-video-camera",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "file-video-camera"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0736",
+        "sourceName": "folder-clock",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-clock"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0738",
+        "sourceName": "folder-code",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-code"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0739",
+        "sourceName": "folder-cog",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-cog"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0740",
+        "sourceName": "folder-dot",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-dot"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0741",
+        "sourceName": "folder-down",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-down"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0742",
+        "sourceName": "folder-git",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-git"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0746",
+        "sourceName": "folder-kanban",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-kanban"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0748",
+        "sourceName": "folder-lock",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-lock"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0752",
+        "sourceName": "folder-output",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-output"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0753",
+        "sourceName": "folder-pen",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-pen"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0758",
+        "sourceName": "folder-symlink",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-symlink"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0759",
+        "sourceName": "folder-sync",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-sync"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0760",
+        "sourceName": "folder-tree",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-tree"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0761",
+        "sourceName": "folder-up",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folder-up"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0763",
+        "sourceName": "folders",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "folders"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0790",
+        "sourceName": "git-branch",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "git-branch"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0797",
+        "sourceName": "git-fork",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "git-fork"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0798",
+        "sourceName": "git-graph",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "git-graph"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0801",
+        "sourceName": "git-pull-request",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "git-pull-request"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0820",
+        "sourceName": "grid-2x2",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "grid-2x2"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0821",
+        "sourceName": "grid-2x2-check",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "grid-2x2-check"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0825",
+        "sourceName": "grid-3x3",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "grid-3x3"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0826",
+        "sourceName": "grip",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "grip"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0827",
+        "sourceName": "grip-horizontal",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "grip-horizontal"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L0912",
+        "sourceName": "kanban",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "kanban"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1128",
+        "sourceName": "move-3d",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "move-3d"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1197",
+        "sourceName": "panel-top",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "panel-top"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1199",
+        "sourceName": "panel-top-close",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "panel-top-close"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1201",
+        "sourceName": "panel-top-open",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "panel-top-open"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1208",
+        "sourceName": "parentheses",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "parentheses"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1280",
+        "sourceName": "quote",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "quote"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1411",
+        "sourceName": "sheet",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "sheet"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1516",
+        "sourceName": "square-dashed",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "square-dashed"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1608",
+        "sourceName": "table-cells-merge",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "table-cells-merge"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1609",
+        "sourceName": "table-cells-split",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "table-cells-split"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1610",
+        "sourceName": "table-columns-split",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "table-columns-split"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1612",
+        "sourceName": "table-properties",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "table-properties"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1613",
+        "sourceName": "table-rows-split",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "table-rows-split"
+    },
+    {
+        "source": "lucide",
+        "sourceId": "L1792",
+        "sourceName": "webcam-off",
+        "priority": "normal",
+        "priorityReason": "Already delivered during catalogue growth after the 1,246-icon baseline; recorded here so it is not proposed again as a missing Lucide extension.",
+        "workType": "assisted-design",
+        "status": "created",
+        "createdIcon": "webcam-off"
     }
 ]

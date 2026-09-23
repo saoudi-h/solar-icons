@@ -32,6 +32,7 @@
     min-height: 16px;
   }
   .status.error { color: #f87171; }
+  .status.warn { color: #fbbf24; }
   .status.done { color: #4ade80; }
   .progress-track {
     height: 4px;
@@ -69,6 +70,29 @@
   }
   button.primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
   button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .diagnostics {
+    margin: 12px 0 14px;
+    border: 1px solid #3e3e3e;
+    border-radius: 4px;
+    background: #171717;
+  }
+  .diagnostics summary {
+    padding: 7px 9px;
+    color: #fbbf24;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .diagnostics pre {
+    max-height: 170px;
+    overflow: auto;
+    margin: 0;
+    padding: 0 9px 9px;
+    color: #d4d4d4;
+    font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
 </style>
 </head>
 <body>
@@ -76,6 +100,10 @@
   <div class="subtitle">Export every component as SVG, bundle as ZIP. Runs in Figma's sandbox — zero REST API calls.</div>
   <div class="status" id="status">Starting...</div>
   <div class="progress-track"><div class="progress-bar" id="bar"></div></div>
+  <details class="diagnostics" id="diagnosticsPanel" hidden>
+    <summary id="diagnosticsSummary">Export diagnostics</summary>
+    <pre id="diagnostics"></pre>
+  </details>
   <div class="actions">
     <button id="cancel">Cancel</button>
     <button id="download" class="primary" disabled>Download ZIP</button>
@@ -173,20 +201,56 @@
   const files = []
   let total = 0
   let done = 0
+  let exportedFiles = 0
   let failed = 0
   let skipped = 0
+  let duplicates = 0
 
   const statusEl = document.getElementById('status')
   const barEl = document.getElementById('bar')
   const downloadBtn = document.getElementById('download')
   const cancelBtn = document.getElementById('cancel')
+  const diagnosticsPanel = document.getElementById('diagnosticsPanel')
+  const diagnosticsSummary = document.getElementById('diagnosticsSummary')
+  const diagnosticsEl = document.getElementById('diagnostics')
+
+  const formatIssue = (issue, index) => {
+    let text = (index + 1) + '. ' + (issue.kind || 'issue')
+    if (issue.reason) text += ' (' + issue.reason + ')'
+    if (issue.name) text += ' — ' + issue.name
+    if (issue.nodeId) text += ' [' + issue.nodeId + ']'
+    if (issue.path) text += '\n   Output: ' + issue.path
+    if (issue.conflictWith) {
+      text +=
+        '\n   Conflicts with: ' +
+        (issue.conflictWith.name || '(unnamed)') +
+        ' [' +
+        issue.conflictWith.nodeId +
+        ']'
+    }
+    if (issue.message) text += '\n   ' + issue.message
+    return text
+  }
+
+  const renderDiagnostics = (issues) => {
+    if (!issues || issues.length === 0) {
+      diagnosticsPanel.hidden = true
+      diagnosticsEl.textContent = ''
+      return
+    }
+    diagnosticsSummary.textContent = 'Export diagnostics (' + issues.length + ')'
+    diagnosticsEl.textContent = issues.map(formatIssue).join('\n\n')
+    diagnosticsPanel.hidden = false
+    diagnosticsPanel.open = true
+  }
 
   const updateStatus = () => {
     const pct = total === 0 ? 0 : (done / total) * 100
     barEl.style.width = pct + '%'
-    let text = done + ' / ' + total
-    if (failed > 0) text += ' (' + failed + ' failed)'
-    if (skipped > 0) text += ' (' + skipped + ' skipped)'
+    let text = done + ' / ' + total + ' — ' + exportedFiles + ' files ready'
+    if (failed > 0) text += ' · ' + failed + ' failed'
+    if (duplicates > 0) text += ' · ' + duplicates + ' duplicate paths'
+    if (skipped > 0) text += ' · ' + skipped + ' skipped'
     statusEl.textContent = text
   }
 
@@ -198,20 +262,31 @@
       updateStatus()
     } else if (msg.type === 'progress') {
       done = msg.done
+      exportedFiles = msg.exportedFiles || 0
       failed = msg.failed
       skipped = msg.skipped
+      duplicates = msg.duplicates || 0
       updateStatus()
     } else if (msg.type === 'batch') {
       for (const f of msg.files) files.push(f)
     } else if (msg.type === 'done') {
       done = msg.done
+      exportedFiles = msg.exportedFiles || files.length
       failed = msg.failed
       skipped = msg.skipped
+      duplicates = msg.duplicates || 0
+      const issues = Array.isArray(msg.issues) ? msg.issues : []
       updateStatus()
-      statusEl.classList.remove('error')
-      statusEl.classList.add('done')
-      statusEl.textContent += ' - Done. Click Download ZIP to get the archive.'
-      downloadBtn.disabled = false
+      statusEl.classList.remove('error', 'warn', 'done')
+      if (failed > 0 || duplicates > 0) statusEl.classList.add('error')
+      else if (skipped > 0) statusEl.classList.add('warn')
+      else statusEl.classList.add('done')
+      statusEl.textContent +=
+        issues.length > 0
+          ? ' — review diagnostics below.'
+          : ' — done. Click Download ZIP to get the archive.'
+      renderDiagnostics(issues)
+      downloadBtn.disabled = files.length === 0
     } else if (msg.type === 'error') {
       statusEl.classList.add('error')
       statusEl.textContent = 'Error: ' + msg.message

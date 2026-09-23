@@ -24,6 +24,29 @@ describe('SVG visual contracts', () => {
         ).not.toContain('line-style-stroke-cap')
     })
 
+    it('warns when an SVG has fewer than the style minimum drawable elements', () => {
+        const linearIssues = analyzeSvg(svg(''), 'Linear')
+        expect(linearIssues).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({ rule: 'minimum-elements', severity: 'warning' }),
+            ])
+        )
+
+        const duotoneIssues = analyzeSvg(
+            svg('<path d="M1 1L2 2" stroke="currentColor" stroke-linecap="round"/>'),
+            'LineDuotone'
+        )
+        expect(duotoneIssues).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({ rule: 'minimum-elements', severity: 'warning' }),
+            ])
+        )
+
+        expect(rules('<path d="M1 1L2 2"/><path d="M2 2L3 3"/>', 'BoldDuotone')).not.toContain(
+            'minimum-elements'
+        )
+    })
+
     it('allows omitted opacity as the opaque duotone tone', () => {
         expect(
             rules(

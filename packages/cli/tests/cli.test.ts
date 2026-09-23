@@ -4,15 +4,15 @@ import { catalogStats, loadDescriptions, STYLES } from '../src/catalog.js'
 import { searchCatalog } from '../src/search.js'
 
 describe('cli catalog', () => {
-    it('loads 1380 icons', () => {
+    it('loads 1451 icons', () => {
         const descs = loadDescriptions()
-        expect(descs.length).toBe(1380)
+        expect(descs.length).toBe(1451)
     })
     it('stats', () => {
         const s = catalogStats()
-        expect(s.icons).toBe(1380)
+        expect(s.icons).toBe(1451)
         expect(s.styles).toBe(6)
-        expect(s.variations).toBe(8280)
+        expect(s.variations).toBe(8706)
         expect(s.categories).toBeGreaterThan(30)
     })
     it('search home', () => {

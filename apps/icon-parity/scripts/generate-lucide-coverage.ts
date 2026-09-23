@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -168,6 +169,7 @@ interface CoverageReport {
 
 const currentFile = fileURLToPath(import.meta.url)
 const appRoot = path.resolve(path.dirname(currentFile), '..')
+const repositoryRoot = path.resolve(appRoot, '../..')
 const compareRoot = path.join(appRoot, 'app/compare')
 const atlasRoot = path.join(appRoot, '.atlas')
 const productionRoot = path.join(compareRoot, 'lucide-production')
@@ -566,7 +568,15 @@ function buildReport(): CoverageReport {
 }
 
 function stringifyReport(report: CoverageReport): string {
-    return `${JSON.stringify(report, null, 2)}\n`
+    const content = `${JSON.stringify(report, null, 2)}\n`
+    const formatter = path.resolve(repositoryRoot, 'node_modules/.bin/oxfmt')
+    if (!fs.existsSync(formatter)) return content
+
+    return execFileSync(formatter, ['--stdin-filepath', coveragePath], {
+        input: content,
+        encoding: 'utf8',
+        maxBuffer: 20 * 1024 * 1024,
+    })
 }
 
 function printSummary(report: CoverageReport): void {

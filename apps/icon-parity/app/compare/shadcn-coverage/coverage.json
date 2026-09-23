@@ -6,9 +6,9 @@
         "capturedAt": "2026-09-14"
     },
     "counts": {
-        "mapped": 159,
+        "mapped": 161,
         "fallback": 5,
-        "review": 18,
+        "review": 16,
         "missing": 0
     },
     "totalIcons": 182,
@@ -83,12 +83,12 @@
         {
             "lucide": "archive-x",
             "occurrences": 3,
-            "solar": "paper-bin",
-            "solarExport": "PaperBinIcon",
-            "status": "review",
-            "confidence": "candidate-only",
-            "source": "lucide-coverage",
-            "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
+            "solar": "archive-close",
+            "solarExport": "ArchiveCloseIcon",
+            "status": "mapped",
+            "confidence": "maintainer-confirmed",
+            "source": "shadcn-override",
+            "note": "Solar ArchiveClose is the confirmed destructive archive-state equivalent.",
             "candidates": ["paper-bin"]
         },
         {
@@ -532,13 +532,13 @@
         {
             "lucide": "chevrons-up-down",
             "occurrences": 39,
-            "solar": "round-sort-vertical",
-            "solarExport": "RoundSortVerticalIcon",
-            "status": "review",
-            "confidence": "candidate-only",
-            "source": "lucide-coverage",
-            "note": "A visual or semantic candidate exists but has not been promoted to an accepted equivalence.",
-            "candidates": ["round-sort-vertical", "round-transfer-vertical"]
+            "solar": "chevrons-up-down",
+            "solarExport": "ChevronsUpDownIcon",
+            "status": "mapped",
+            "confidence": "direct-name",
+            "source": "current-solar-catalogue",
+            "note": "The current Solar catalogue contains the same kebab-case name.",
+            "candidates": []
         },
         {
             "lucide": "circle-alert",
@@ -1538,13 +1538,13 @@
         {
             "lucide": "panel-left",
             "occurrences": 12,
-            "solar": "sidebar",
-            "solarExport": "SidebarIcon",
+            "solar": "panel-left",
+            "solarExport": "PanelLeftIcon",
             "status": "mapped",
-            "confidence": "audited-equivalent",
-            "source": "lucide-coverage",
-            "note": "",
-            "candidates": ["sidebar"]
+            "confidence": "direct-name",
+            "source": "current-solar-catalogue",
+            "note": "The current Solar catalogue contains the same kebab-case name.",
+            "candidates": []
         },
         {
             "lucide": "paperclip",

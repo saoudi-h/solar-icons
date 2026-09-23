@@ -172,6 +172,12 @@ const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
         expected: 'Every visible stroke in Linear, Broken and LineDuotone uses round caps.',
         action: 'Set the path end points to Round in Figma.',
     },
+    'minimum-elements': {
+        title: 'SVG contains too few drawable elements',
+        expected:
+            'Every icon contains at least one visible drawable element; LineDuotone and BoldDuotone contain at least two.',
+        action: 'Check the component in Figma and add the missing visible geometry before exporting.',
+    },
     'outline-style-paint': {
         title: 'Outline is not a single filled path',
         expected: 'Outline uses one filled path and no visible stroke.',
@@ -232,6 +238,7 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
     const root = parseSvg(raw)
     const issues: SvgQualityIssue[] = []
     const paintedOpacities: number[] = []
+    let renderedDrawableCount = 0
 
     const visit = (element: XmlElement, parent: PaintState): void => {
         const tagName = normalize(element.tagName)
@@ -280,6 +287,7 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
         }
 
         if (rendered && DRAWABLE_TAGS.has(tagName)) {
+            renderedDrawableCount += 1
             const hasFill = !isNone(state.fill)
             const hasStroke = !isNone(state.stroke)
             const hasPaint = hasFill || hasStroke
@@ -378,6 +386,25 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
     // Outline structure is intentionally not constrained here. Figma may export
     // a single visual union as several SVG drawables, and that is a valid
     // representation as long as the paint model remains fill-only.
+
+    const minimumDrawableCount = DUOTONE_STYLES.has(style) ? 2 : 1
+    if (renderedDrawableCount < minimumDrawableCount) {
+        issues.push({
+            rule: 'minimum-elements',
+            message:
+                'SVG contains ' +
+                renderedDrawableCount +
+                ' visible drawable element' +
+                (renderedDrawableCount === 1 ? '' : 's') +
+                '; expected at least ' +
+                minimumDrawableCount +
+                ' for ' +
+                style +
+                '.',
+            element: '<svg>',
+            severity: 'warning',
+        })
+    }
 
     if (DUOTONE_STYLES.has(style)) {
         if (!paintedOpacities.some(isOpaque)) {

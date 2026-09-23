@@ -7,7 +7,7 @@
         Icon Gallery
       </h1>
       <p class="text-slate-400 mt-1">
-        1380 icons × 6 styles = 8280 variants. Imports via <code class="text-amber-400">#solar-icons/{style}</code> aliases.
+        1451 icons × 6 styles = 8706 variants. Imports via <code class="text-amber-400">#solar-icons/{style}</code> aliases.
       </p>
     </div>
 

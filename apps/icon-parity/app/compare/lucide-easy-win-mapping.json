@@ -1,0 +1,201 @@
+{
+    "version": 1,
+    "updatedAt": "2026-09-23",
+    "sourceSnapshot": "@iconify-json/lucide@1.2.123",
+    "purpose": "Durable maintainer mapping for Lucide concepts, Solar equivalents, and the next easy-win families.",
+    "resolvedMappings": [
+        {
+            "lucide": ["ellipsis-vertical"],
+            "solar": ["menu-dots-vertical"],
+            "status": "existing-equivalent",
+            "note": "The existing vertical menu-dots icon is the confirmed Solar equivalent."
+        },
+        {
+            "lucide": ["loader-circle"],
+            "solar": ["loader"],
+            "status": "existing-equivalent",
+            "note": "Use the existing loader; do not create a second loader-circle glyph."
+        },
+        {
+            "lucide": ["archive-x"],
+            "solar": ["archive-close"],
+            "status": "existing-equivalent",
+            "note": "ArchiveClose already expresses the destructive archive state."
+        },
+        {
+            "lucide": ["file-chart-column"],
+            "solar": ["file-chart"],
+            "status": "existing-equivalent",
+            "note": "FileChart is the confirmed document-plus-chart equivalent."
+        },
+        {
+            "lucide": ["file-chart-column-increasing", "file-bar-chart"],
+            "solar": ["file-chart-2"],
+            "status": "existing-equivalent",
+            "note": "FileChart2 covers the increasing document-chart variant and its Lucide alias."
+        },
+        {
+            "lucide": ["gauge"],
+            "solar": ["speedometer-low", "speedometer-middle", "speedometer-max"],
+            "status": "existing-family",
+            "note": "The Solar speedometer family covers low, neutral, and maximum gauge states."
+        },
+        {
+            "lucide": ["message-circle-question-mark", "message-circle-question"],
+            "solar": ["chat-round-question-mark"],
+            "status": "existing-equivalent",
+            "note": "ChatRoundQuestionMark is the confirmed rounded message-question equivalent."
+        },
+        {
+            "lucide": ["link-2-off"],
+            "solar": ["unlink", "unlink-minimalistic"],
+            "status": "existing-family",
+            "note": "The unlink family already covers the broken-link action."
+        },
+        {
+            "lucide": ["grid-2x2-x"],
+            "solar": ["grid-2x2-close"],
+            "status": "existing-equivalent",
+            "note": "Grid2x2Close is already present; do not create a duplicate grid-2x2-x."
+        }
+    ],
+    "nextEasyWins": [
+        {
+            "id": "copy-states",
+            "family": "copy",
+            "priority": "high",
+            "styles": 6,
+            "lucide": ["copy-check", "copy-minus", "copy-plus", "copy-x"],
+            "solar": ["copy-check", "copy-minus", "copy-add", "copy-close"],
+            "status": "implemented",
+            "note": "Solar keeps its established add/close vocabulary: copy-add maps to Lucide copy-plus and copy-close maps to Lucide copy-x."
+        },
+        {
+            "id": "filter-close",
+            "family": "filter",
+            "priority": "high",
+            "styles": 6,
+            "lucide": ["filter-x"],
+            "solar": ["filter-close"],
+            "status": "implemented",
+            "note": "The Lucide x suffix becomes Solar close, matching the existing naming policy."
+        },
+        {
+            "id": "magnifier-states",
+            "family": "search",
+            "priority": "high",
+            "styles": 6,
+            "baseFamilies": ["magnifier", "rounded-magnifier", "minimalistic-magnifier"],
+            "lucide": ["search-check", "search-slash", "search-x"],
+            "solar": [
+                "magnifier-check",
+                "magnifier-slash",
+                "magnifier-close",
+                "rounded-magnifier-check",
+                "rounded-magnifier-slash",
+                "rounded-magnifier-close",
+                "minimalistic-magnifier-check",
+                "minimalistic-magnifier-slash",
+                "minimalistic-magnifier-close"
+            ],
+            "status": "implemented",
+            "note": "Every state must be created for all three existing magnifier families."
+        },
+        {
+            "id": "bookmark-states",
+            "family": "bookmark",
+            "priority": "high",
+            "styles": 6,
+            "lucide": [
+                "bookmark-check",
+                "bookmark-minus",
+                "bookmark-off",
+                "bookmark-plus",
+                "bookmark-x"
+            ],
+            "solar": [
+                "bookmark-check",
+                "bookmark-minus",
+                "bookmark-off",
+                "bookmark-plus",
+                "bookmark-x"
+            ],
+            "status": "implemented",
+            "note": "The complete bookmark state family is now present in all six styles."
+        },
+        {
+            "id": "move-axis",
+            "family": "move",
+            "priority": "high",
+            "styles": 6,
+            "lucide": ["move-horizontal", "move-vertical"],
+            "solar": ["move-horizontal", "move-vertical"],
+            "status": "implemented",
+            "note": "Both are absent and extend the existing move family directly."
+        },
+        {
+            "id": "list-states",
+            "family": "list",
+            "priority": "high",
+            "styles": 6,
+            "baseFamilies": ["list", "list-*-minimalistic"],
+            "lucide": ["list-plus", "list-minus", "list-ordered", "list-collapse"],
+            "solar": [
+                "list-plus",
+                "list-plus-minimalistic",
+                "list-minus",
+                "list-minus-minimalistic",
+                "list-ordered",
+                "list-ordered-minimalistic",
+                "list-collapse",
+                "list-collapse-minimalistic"
+            ],
+            "status": "implemented",
+            "note": "Preserve the existing per-family naming logic instead of forcing a global minimalistic suffix rule."
+        },
+        {
+            "id": "grid-3x2",
+            "family": "grid",
+            "priority": "high",
+            "styles": 6,
+            "lucide": ["grid-3x2"],
+            "solar": ["grid-3x2"],
+            "status": "implemented",
+            "note": "Grid2x2Close already covers the rejected grid-2x2-x candidate; only grid-3x2 is new here."
+        },
+        {
+            "id": "dot-primitives",
+            "family": "dot-primitives",
+            "priority": "normal",
+            "styles": 6,
+            "lucide": ["circle-dot", "circle-dot-dashed", "square-dot"],
+            "solar": ["circle-dot", "circle-dot-dashed", "square-dot", "square-dot-dashed"],
+            "status": "implemented",
+            "note": "Create the circle pair and the matching square pair for family symmetry; square-dot-dashed is a Solar extension rather than a Lucide gap."
+        }
+    ],
+    "deferredSecondWave": [
+        "panel-left-dashed",
+        "panel-right-dashed",
+        "panel-top-dashed",
+        "panel-bottom-dashed",
+        "file-input",
+        "file-output",
+        "file-clock",
+        "file-scan",
+        "folder-search-2",
+        "folder-key",
+        "folder-archive",
+        "clipboard-pen",
+        "clipboard-pen-line",
+        "table-2",
+        "table-of-contents",
+        "arrow-down-narrow-wide",
+        "arrow-up-narrow-wide",
+        "arrow-down-wide-narrow",
+        "arrow-up-wide-narrow",
+        "user-search",
+        "user-pen",
+        "user-lock"
+    ]
+}

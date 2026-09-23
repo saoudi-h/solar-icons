@@ -188,6 +188,14 @@ export default metadata\nexport { metadata }\n`
   category: string
   categoryTags: string[]
   tags: string[]
+  aliases?: string[]
+  origin?: string
+  addedAt?: string
+  author?: string
+  state?: string
+  priority?: string
+  priorityReason?: string
+  useCases?: string[]
   deprecatedAliases?: {
     name: string
     replacement: string

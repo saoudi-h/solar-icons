@@ -2,7 +2,7 @@
 
 # Solar Icons
 
-Solar Icons is a single icon catalogue for product interfaces, documentation, and developer tools: 1,380 icons, each available in six styles, with the same collection distributed across frameworks, Figma, SVG assets, the CLI, and MCP.
+Solar Icons is a single icon catalogue for product interfaces, documentation, and developer tools: 1,451 icons across six styles (8,706 SVG variations), with the same collection distributed across frameworks, Figma, SVG assets, the CLI, and MCP.
 
 [Browse the catalogue](https://solar-icons.vercel.app) · [Read the documentation](https://solar-icons.vercel.app/docs/v2) · [Install the Figma plugin](https://www.figma.com/community/plugin/1664759238792120976)
 

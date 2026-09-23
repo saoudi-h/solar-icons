@@ -12,9 +12,14 @@ Use this plugin after any Figma-side mass edit (the V3 icon rename, geometry fix
 
 1. The plugin walks the Figma document and finds every `COMPONENT`.
 2. For each component, it parses the name (convention: `Style / Category / IconName`), builds the target on-disk path `svgs/{kebab-category}/{Style}/{kebab-icon}.svg`, and calls `node.exportAsync({ format: 'SVG' })` to get the SVG bytes. The export runs in the Figma sandbox — no network call.
-3. The plugin sends the SVG bytes to the UI webview in batches of 50, with progress updates.
+3. The plugin sends the SVG bytes to the UI webview in batches of 50, with progress updates and diagnostics for skipped, failed, or duplicate exports.
 4. When the user clicks **Download ZIP**, the UI bundles all received SVGs into a ZIP using a small in-page ZIP writer (no JSZip, no dependencies).
 5. The browser triggers a download of `solar-icons-svgs.zip`.
+
+If an export cannot be completed, the plugin lists the component name, Figma node ID,
+output path, and error message in the **Export diagnostics** panel. It also reports
+components whose names cannot be mapped to an output path and duplicate output paths
+that would otherwise overwrite an icon in the ZIP.
 
 ## Installation
 

@@ -66,7 +66,12 @@ const iconPath = (name) => {
 
 const BATCH_SIZE = 50
 
-figma.showUI(__html__, { width: 480, height: 280 })
+figma.showUI(__html__, { width: 520, height: 420 })
+
+const getErrorMessage = (error) => {
+  if (error && error.message) return error.message
+  return String(error)
+}
 
 const run = async () => {
   const components = figma.root.findAllWithCriteria({ types: ['COMPONENT'] })
@@ -74,35 +79,92 @@ const run = async () => {
   figma.ui.postMessage({ type: 'start', total })
 
   let batch = []
-  let exported = 0
+  let processed = 0
+  let exportedFiles = 0
   let failed = 0
   let skipped = 0
+  let duplicates = 0
+  let processedSinceProgress = 0
+  const issues = []
+  const pathOwners = new Map()
+  const sendProgress = () => {
+    figma.ui.postMessage({
+      type: 'progress',
+      done: processed,
+      total,
+      exportedFiles,
+      failed,
+      skipped,
+      duplicates,
+    })
+    processedSinceProgress = 0
+  }
 
   for (const node of components) {
     const path = iconPath(node.name)
     if (path === null) {
       skipped++
-      exported++
+      issues.push({
+        kind: 'skipped',
+        reason: 'invalid-name',
+        nodeId: node.id,
+        name: node.name,
+        message: 'Component name does not match "Style / Category / Icon".',
+      })
+      processed++
+      processedSinceProgress++
+      if (processedSinceProgress >= BATCH_SIZE) {
+        sendProgress()
+      }
       continue
     }
+
+    const previousOwner = pathOwners.get(path)
+    if (previousOwner) {
+      duplicates++
+      issues.push({
+        kind: 'duplicate-path',
+        reason: 'duplicate-output-path',
+        nodeId: node.id,
+        name: node.name,
+        path,
+        conflictWith: previousOwner,
+        message: 'This component would overwrite another component in the ZIP.',
+      })
+      processed++
+      processedSinceProgress++
+      if (processedSinceProgress >= BATCH_SIZE) {
+        sendProgress()
+      }
+      continue
+    }
+
+    pathOwners.set(path, { nodeId: node.id, name: node.name })
+
     try {
       const bytes = await node.exportAsync({ format: 'SVG' })
       batch.push({ path, bytes })
+      exportedFiles++
     } catch (err) {
       failed++
-    }
-    exported++
-
-    if (batch.length >= BATCH_SIZE) {
-      figma.ui.postMessage({ type: 'batch', files: batch })
-      batch = []
-      figma.ui.postMessage({
-        type: 'progress',
-        done: exported,
-        total,
-        failed,
-        skipped,
+      issues.push({
+        kind: 'export-failed',
+        reason: 'export-async-failed',
+        nodeId: node.id,
+        name: node.name,
+        path,
+        message: getErrorMessage(err),
       })
+    }
+    processed++
+    processedSinceProgress++
+
+    if (batch.length >= BATCH_SIZE || processedSinceProgress >= BATCH_SIZE) {
+      if (batch.length > 0) {
+        figma.ui.postMessage({ type: 'batch', files: batch })
+        batch = []
+      }
+      sendProgress()
     }
   }
 
@@ -112,16 +174,19 @@ const run = async () => {
 
   figma.ui.postMessage({
     type: 'done',
-    done: exported,
+    done: processed,
     total,
+    exportedFiles,
     failed,
     skipped,
+    duplicates,
+    issues,
   })
 }
 
 run().catch((err) => {
   figma.ui.postMessage({
     type: 'error',
-    message: err && err.message ? err.message : String(err),
+    message: getErrorMessage(err),
   })
 })

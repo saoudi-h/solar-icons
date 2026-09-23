@@ -1,10 +1,10 @@
 # @solar-icons/nuxt
 
-Nuxt module for Solar Icons. This package provides 8,280 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Nuxt applications.
+Nuxt module for Solar Icons. This package provides 8,706 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Nuxt applications.
 
 ## Features
 
-- **8,280 SVGs:** 1,380 unique icons in 6 styles. Designed by 480 Design.
+- **8,706 SVGs:** 1,451 unique icons in 6 styles. Designed by 480 Design.
 - **Tree-shakeable:** Import only the icons you use.
 - **Auto-injected configuration:** The module injects CSS variables globally for consistent sizing and coloring.
 - **Customizable:** Override size, color, and stroke width per icon.
