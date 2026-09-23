@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 2.3.1
+
+### Patch Changes
+
+- [#560](https://github.com/saoudi-h/solar-icons/pull/560) [`95f0b7c`](https://github.com/saoudi-h/solar-icons/commit/95f0b7c94840e77e3e3a431d9f02f3f5ed007a08) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Refresh the generated packages with the latest icon catalogue, enriched metadata, and corrected public inventory counts.
+
 ## 2.3.0
 
 ### Minor Changes
