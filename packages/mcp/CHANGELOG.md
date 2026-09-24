@@ -1,5 +1,14 @@
 # @solar-icons/mcp
 
+## 2.2.2
+
+### Patch Changes
+
+- [#562](https://github.com/saoudi-h/solar-icons/pull/562) [`d08cab3`](https://github.com/saoudi-h/solar-icons/commit/d08cab3c2d29aa81e0dfc4cb00fc11a7f5c6db34) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Apply the latest Figma corrections to the generated Solar Icons SVG catalogue.
+
+- Updated dependencies [[`d08cab3`](https://github.com/saoudi-h/solar-icons/commit/d08cab3c2d29aa81e0dfc4cb00fc11a7f5c6db34)]:
+  - @solar-icons/cli@2.4.2
+
 ## 2.2.1
 
 ### Patch Changes

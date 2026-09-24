@@ -1,5 +1,12 @@
 # icon-parity
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [[`d08cab3`](https://github.com/saoudi-h/solar-icons/commit/d08cab3c2d29aa81e0dfc4cb00fc11a7f5c6db34)]:
+  - @solar-icons/react@2.3.2
+
 ## 0.0.4
 
 ### Patch Changes
