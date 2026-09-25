@@ -37,26 +37,27 @@ interface HeroIconVisualConfig {
 }
 
 /**
- * Rotation palettes, one narrative per theme. Light gets vivid hues tuned
- * for the pale page background; dark gets luminous hues tuned for the deep
- * background. Both lists stay the same length: rotation advances a shared
- * index, so switching themes mid-cycle lands on the matching pair instead
- * of a stale preset from the other theme.
+ * Rotation palettes, one narrative per theme, following the same coupling
+ * formula as the explorer: each pair stays inside one color family, the
+ * primary is deep on light / luminous on dark, the secondary is colorful
+ * but restrained. Both lists stay the same length: rotation advances a
+ * shared index, so switching themes mid-cycle lands on the matching pair
+ * instead of a stale preset from the other theme.
  */
 const HERO_LIGHT_SEQUENCE = [
-    { color: '#5b21b6', secondaryColor: '#c2410c' },
-    { color: '#1e40af', secondaryColor: '#b45309' },
-    { color: '#991b1b', secondaryColor: '#0369a1' },
-    { color: '#065f46', secondaryColor: '#6d28d9' },
-    { color: '#3730a3', secondaryColor: '#3f6212' },
+    { color: '#1e3a8a', secondaryColor: '#2563eb' },
+    { color: '#4c1d95', secondaryColor: '#7c3aed' },
+    { color: '#064e3b', secondaryColor: '#059669' },
+    { color: '#7f1d1d', secondaryColor: '#dc2626' },
+    { color: '#312e81', secondaryColor: '#4f46e5' },
 ] as const satisfies readonly HeroIconColorConfig[]
 
 const HERO_DARK_SEQUENCE = [
-    { color: '#c4b5fd', secondaryColor: '#fed7aa' },
-    { color: '#7dd3fc', secondaryColor: '#fde047' },
-    { color: '#fca5a5', secondaryColor: '#bef264' },
-    { color: '#a5b4fc', secondaryColor: '#fde68a' },
-    { color: '#67e8f9', secondaryColor: '#fdba74' },
+    { color: '#dbeafe', secondaryColor: '#60a5fa' },
+    { color: '#ede9fe', secondaryColor: '#8b5cf6' },
+    { color: '#d1fae5', secondaryColor: '#34d399' },
+    { color: '#fee2e2', secondaryColor: '#f87171' },
+    { color: '#e0e7ff', secondaryColor: '#818cf8' },
 ] as const satisfies readonly HeroIconColorConfig[]
 
 const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5, 3] as const

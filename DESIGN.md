@@ -135,12 +135,19 @@ on dark and washed out on light, and the hero cycled one shared hue sequence
 in both themes. Direction, still provisional until rendered review:
 
 - Explorer defaults follow the theme until the visitor picks custom colors.
-  Light: violet-800 `#5b21b6` + orange-700 `#c2410c`.
-  Dark: sky-300 `#7dd3fc` + orange-300 `#fdba74`.
-- Hero rotation runs separate light/dark narratives (vivid hues on pale,
-  luminous hues on deep) over a shared preset index, so theme switches land
-  on the matching pair. SSR and first paint are theme-independent and
-  deterministic; the client resolves the theme after mount.
+  Coupling formula: same color family, primary near-white on dark /
+  near-black on light, secondary colorful but restrained.
+  Light: blue-900 `#1e3a8a` + blue-600 `#2563eb`.
+  Dark: blue-100 `#dbeafe` + blue-400 `#60a5fa`.
+- Duotone opacity lives in the foreground toolbar as a Figma-style
+  `GeometryControl` slider (label + tooltip: accent-shape opacity, not the
+  whole icon), not inside the color-picker popover.
+- Hero rotation runs separate light/dark narratives over a shared preset
+  index, so theme switches land on the matching pair. Same coupling formula
+  per pair (one family; deep primary + restrained secondary on light,
+  luminous primary + restrained secondary on dark). SSR and first paint are
+  theme-independent and deterministic; the client resolves the theme after
+  mount.
 - Rule: defaults may follow the theme, but an explicit visitor choice is
   never overridden by a later theme change.
 

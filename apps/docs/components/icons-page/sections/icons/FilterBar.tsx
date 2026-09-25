@@ -128,9 +128,20 @@ export const FilterBarContent: React.FC = () => {
             <ColorPickerSimple
                 color={duotoneColor}
                 setColor={setSecondaryColor}
-                opacity={duotoneOpacity}
-                setOpacity={setSecondaryOpacity}
                 tooltip="Duotone color"
+                disabled={!isDuotone}
+            />
+            <GeometryControl
+                label="Opacity"
+                tooltip="Opacity of the duotone accent shapes, not the whole icon"
+                value={duotoneOpacity}
+                onChange={setSecondaryOpacity}
+                min={0}
+                max={1}
+                step={0.05}
+                defaultValue={DEFAULT_VALUES.secondaryOpacity}
+                decimals={2}
+                unit=""
                 disabled={!isDuotone}
             />
 

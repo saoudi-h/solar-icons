@@ -188,15 +188,15 @@ interface IconProviderWrapperProps {
 }
 
 /**
- * Curated duotone defaults, one pair per theme. The old single compromise
- * pair (blue-500 + amber-500) read muddy on dark and washed out on light;
- * each theme now gets luminous (dark) or deep (light) hues tuned for its
- * page background. Only the defaults follow the theme — any explicit user
+ * Curated duotone defaults, one pair per theme, following the coupling
+ * formula: both colors from the same large family (blue), the primary
+ * near-white on dark / near-black on light, the secondary colorful but
+ * restrained. Only the defaults follow the theme — any explicit user
  * pick (color picker, reset-to-theme) wins and is never overridden.
  */
 export const THEME_DEFAULT_COLORS = {
-    light: { color: '#5b21b6', secondaryColor: '#c2410c' },
-    dark: { color: '#7dd3fc', secondaryColor: '#fdba74' },
+    light: { color: '#1e3a8a', secondaryColor: '#2563eb' },
+    dark: { color: '#dbeafe', secondaryColor: '#60a5fa' },
 } as const
 
 export const DEFAULT_VALUES = {
