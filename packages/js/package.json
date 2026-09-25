@@ -84,7 +84,6 @@
         "@solar-icons/core": "workspace:*",
         "@tala-tools/tsconfig": "0.1.0",
         "@types/node": "^26.6.2",
-        "dotenv": "^18.0.4",
         "jsdom": "^30.1.1",
         "node-html-parser": "^9.0.4",
         "picocolors": "^1.1.1",

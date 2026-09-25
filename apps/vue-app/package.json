@@ -20,10 +20,8 @@
         "format:fix": "oxfmt --write ."
     },
     "dependencies": {
-        "@faker-js/faker": "^10.6.0",
         "@solar-icons/vue": "workspace:*",
         "@tailwindcss/vite": "^4.3.3",
-        "@tanstack/vue-virtual": "^3.13.39",
         "@vueuse/core": "^15.0.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
