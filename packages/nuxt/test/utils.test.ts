@@ -1,6 +1,25 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { getMainBarrelIconNames, getDynamicBarrelIconNames } from '../src/module'
 
+// Vitest 5 requires `vi.mock` at the top level (v4 hoisted it silently).
+// Hoisting manually preserves the exact v4 semantics; per-test error cases
+// keep using `vi.doMock`, which remains allowed inside tests.
+vi.mock('@solar-icons/vue', () => ({
+  default: {},
+  ArrowUpBoldIcon: {},
+  HomeLinearIcon: {},
+  SolarProvider: {},
+  useSolar: () => ({}),
+  IconBase: {},
+  IconStyle: {},
+}))
+
+vi.mock('@solar-icons/vue/dynamic', () => ({
+  default: {},
+  ArrowUpIcon: {},
+  HomeIcon: {},
+}))
+
 describe('getMainBarrelIconNames', () => {
   afterEach(() => {
     vi.resetModules()
@@ -8,16 +27,6 @@ describe('getMainBarrelIconNames', () => {
   })
 
   it('returns only icon names, excluding utilities and helpers', async () => {
-    vi.mock('@solar-icons/vue', () => ({
-      default: {},
-      ArrowUpBoldIcon: {},
-      HomeLinearIcon: {},
-      SolarProvider: {},
-      useSolar: () => ({}),
-      IconBase: {},
-      IconStyle: {},
-    }))
-
     const names = await getMainBarrelIconNames()
     expect(names.sort()).toEqual(['ArrowUpBoldIcon', 'HomeLinearIcon'])
   })
@@ -39,12 +48,6 @@ describe('getDynamicBarrelIconNames', () => {
   })
 
   it('returns dynamic icon names', async () => {
-    vi.mock('@solar-icons/vue/dynamic', () => ({
-      default: {},
-      ArrowUpIcon: {},
-      HomeIcon: {},
-    }))
-
     const names = await getDynamicBarrelIconNames()
     expect(names.sort()).toEqual(['ArrowUpIcon', 'HomeIcon'])
   })

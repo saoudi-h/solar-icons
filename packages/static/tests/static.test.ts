@@ -72,7 +72,9 @@ describe('@solar-icons/static build output', () => {
     it('per-icon .d.mts declares PascalCase name with Icon suffix', () => {
         const dts = fs.readFileSync(path.join(DIST, 'icons/linear/login.d.mts'), 'utf-8')
         expect(dts).toContain('LoginLinearIcon')
-        expect(dts).toContain('export { LoginLinearIcon }')
+        // tsdown >= 0.23 emits `export declare const X` instead of `export { X }`.
+        // Both declare the same public named export; accept either emission style.
+        expect(dts).toMatch(/export (declare const|\{) LoginLinearIcon/)
     })
 
     it('ships metadata.json (source of truth for external consumers)', () => {

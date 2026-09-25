@@ -39,20 +39,20 @@
         "@iconify/react": "^6.0.2",
         "@solar-icons/core": "workspace:*",
         "@solar-icons/react": "workspace:*",
-        "next": "16.3.5",
-        "react": "19.2.8",
-        "react-dom": "19.2.8"
+        "next": "16.3.6",
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
     },
     "devDependencies": {
-        "@iconify-json/lucide": "1.2.123",
+        "@iconify-json/lucide": "1.2.136",
         "@tailwindcss/postcss": "^4.3.3",
-        "@types/node": "^26.5.1",
-        "@types/react": "^19.2.18",
+        "@types/node": "^26.6.2",
+        "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
         "eslint-plugin-better-tailwindcss": "^4.7.0",
         "sharp": "0.35.4",
         "tailwindcss": "^4.3.3",
-        "tsx": "^4.23.13",
+        "tsx": "^4.23.15",
         "typescript": "7.0.2"
     }
 }
