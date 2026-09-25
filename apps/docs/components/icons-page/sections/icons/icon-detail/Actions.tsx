@@ -9,7 +9,13 @@ import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { CopyButton } from '@/components/ui/CopyButton'
 
-import { DEFAULT_VALUES, useSelectedIcon, useStyleURL, weightToStyleSlug } from '../context'
+import {
+    DEFAULT_VALUES,
+    useSelectedIcon,
+    useStyleURL,
+    useThemeDefaultColors,
+    weightToStyleSlug,
+} from '../context'
 
 /**
  * CDN base for fetching clean SVGs from @solar-icons/static.
@@ -136,14 +142,15 @@ export const Actions: FC = () => {
         secondaryColor,
         secondaryOpacity,
     } = useSolar()
+    const themeDefaults = useThemeDefaultColors()
 
     if (!selectedIcon) return null
 
     const styleSlug = weightToStyleSlug(weight)
-    const color = solarColor ?? DEFAULT_VALUES.color
+    const color = solarColor ?? themeDefaults.color
     const size = Number(solarSize ?? DEFAULT_VALUES.size)
     const strokeWidth = Number(solarStrokeWidth ?? DEFAULT_VALUES.strokeWidth)
-    const duotoneColor = secondaryColor ?? DEFAULT_VALUES.secondaryColor
+    const duotoneColor = secondaryColor ?? themeDefaults.secondaryColor
     const duotoneOpacity = Number(secondaryOpacity ?? DEFAULT_VALUES.secondaryOpacity)
 
     const rasterOptions = {

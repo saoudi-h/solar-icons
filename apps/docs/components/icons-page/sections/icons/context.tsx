@@ -1,9 +1,10 @@
 import { STYLES, type Weight } from '@solar-icons/core/runtime'
-import { SolarProvider } from '@solar-icons/react'
+import { SolarProvider, useSolar } from '@solar-icons/react'
 import { atom } from 'jotai'
+import { useTheme } from 'next-themes'
 import { parseAsStringLiteral, useQueryState } from 'nuqs'
 import type { ReactNode } from 'react'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { IconData } from '@/generated/descriptions'
 
@@ -186,15 +187,73 @@ interface IconProviderWrapperProps {
     defaultWeight?: Weight
 }
 
+/**
+ * Curated duotone defaults, one pair per theme. The old single compromise
+ * pair (blue-500 + amber-500) read muddy on dark and washed out on light;
+ * each theme now gets luminous (dark) or deep (light) hues tuned for its
+ * page background. Only the defaults follow the theme — any explicit user
+ * pick (color picker, reset-to-theme) wins and is never overridden.
+ */
+export const THEME_DEFAULT_COLORS = {
+    light: { color: '#1d4ed8', secondaryColor: '#b45309' },
+    dark: { color: '#60a5fa', secondaryColor: '#fbbf24' },
+} as const
+
 export const DEFAULT_VALUES = {
-    // #3b82f6 (Tailwind blue-500): ~50% luminance, saturated enough to read
-    // on both light and dark page backgrounds without theme syncing.
-    color: '#3b82f6',
+    // Baseline for SSR and first paint: the dark set. The server cannot
+    // know the visitor's theme, so both server and pre-mount client renders
+    // use these fixed values (deterministic, hydration-safe). The theme
+    // applier below swaps in the light set after mount when untouched.
+    ...THEME_DEFAULT_COLORS.dark,
     size: 64,
     strokeWidth: 1.5,
-    secondaryColor: '#f59e0b',
     secondaryOpacity: 0.5,
 } as const
+
+/**
+ * Concrete duotone defaults for the current theme. Resolves to the dark
+ * set before mount so the first client render matches SSR exactly
+ * (same mounted pattern as the hero readouts and `SiteThemeToggle`).
+ */
+export function useThemeDefaultColors(): (typeof THEME_DEFAULT_COLORS)[keyof typeof THEME_DEFAULT_COLORS] {
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+    const { resolvedTheme } = useTheme()
+    if (!mounted || resolvedTheme !== 'light') return THEME_DEFAULT_COLORS.dark
+    return THEME_DEFAULT_COLORS.light
+}
+
+const KNOWN_DEFAULT_COLORS = new Set<string>(
+    Object.values(THEME_DEFAULT_COLORS).map(pair => pair.color)
+)
+const KNOWN_DEFAULT_SECONDARY_COLORS = new Set<string>(
+    Object.values(THEME_DEFAULT_COLORS).map(pair => pair.secondaryColor)
+)
+
+/**
+ * Follows the theme with the curated defaults until the visitor picks
+ * their own colors. A slot is only overwritten while it still holds a
+ * known default (or is unset) — any custom hex is left alone, including
+ * across later theme toggles. Rendered inside `SolarProvider` (which is
+ * uncontrolled after mount, so initial props alone cannot do this).
+ */
+function ThemeColorDefaults(): ReactNode {
+    const defaults = useThemeDefaultColors()
+    const { color, secondaryColor, setColor, setSecondaryColor } = useSolar()
+    const appliedRef = useRef<string | null>(null)
+    useEffect(() => {
+        const key = `${defaults.color}|${defaults.secondaryColor}`
+        if (appliedRef.current === key) return
+        appliedRef.current = key
+        if (color === undefined || KNOWN_DEFAULT_COLORS.has(color)) setColor(defaults.color)
+        if (secondaryColor === undefined || KNOWN_DEFAULT_SECONDARY_COLORS.has(secondaryColor)) {
+            setSecondaryColor(defaults.secondaryColor)
+        }
+    }, [defaults, color, secondaryColor, setColor, setSecondaryColor])
+    return null
+}
 
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
@@ -208,6 +267,7 @@ export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
             strokeWidth={DEFAULT_VALUES.strokeWidth}
             secondaryColor={DEFAULT_VALUES.secondaryColor}
             secondaryOpacity={DEFAULT_VALUES.secondaryOpacity}>
+            <ThemeColorDefaults />
             {children}
         </SolarProvider>
     )

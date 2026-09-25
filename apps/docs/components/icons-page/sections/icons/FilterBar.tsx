@@ -25,6 +25,7 @@ import {
     useOriginFilter,
     useSearchKeyword,
     useStyleURL,
+    useThemeDefaultColors,
 } from './context'
 import { GeometryControl } from './GeometryControl'
 import { ExtendedFilterToggle } from './OriginControls'
@@ -38,6 +39,7 @@ export const FilterBarContent: React.FC = () => {
     const [, setOrigin] = useOriginFilter()
     const [weight, setWeight] = useStyleURL()
     const setActiveCategory = useSetAtom(activeCategoryAtom)
+    const themeDefaults = useThemeDefaultColors()
 
     const [inputValue, setInputValue] = useState(keyword)
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -68,20 +70,22 @@ export const FilterBarContent: React.FC = () => {
         strokeWidth: solarStrokeWidth,
         setStrokeWidth,
     } = useSolar()
-    const color = solarColor ?? DEFAULT_VALUES.color
+    const color = solarColor ?? themeDefaults.color
     const size = Number(solarSize ?? DEFAULT_VALUES.size)
     const strokeWidth = Number(solarStrokeWidth ?? DEFAULT_VALUES.strokeWidth)
-    const duotoneColor = secondaryColor ?? DEFAULT_VALUES.secondaryColor
+    const duotoneColor = secondaryColor ?? themeDefaults.secondaryColor
     const duotoneOpacity = Number(secondaryOpacity ?? DEFAULT_VALUES.secondaryOpacity)
 
     const isDuotone = weight.includes('Duotone')
     const hasStroke = weight === 'Linear' || weight === 'Broken' || weight === 'LineDuotone'
 
     const reset = () => {
-        setColor(DEFAULT_VALUES.color)
+        // Reset to the current theme's curated defaults (known values, so
+        // a later theme toggle re-applies the other theme's set).
+        setColor(themeDefaults.color)
         setSize(DEFAULT_VALUES.size)
         setStrokeWidth(DEFAULT_VALUES.strokeWidth)
-        setSecondaryColor(DEFAULT_VALUES.secondaryColor)
+        setSecondaryColor(themeDefaults.secondaryColor)
         setSecondaryOpacity(DEFAULT_VALUES.secondaryOpacity)
         setKeyword('')
         setOrigin('all')

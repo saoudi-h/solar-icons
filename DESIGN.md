@@ -128,6 +128,22 @@ These are maintenance findings discovered during the initial audit. They should 
 - What single proof should the community section communicate: adoption, maintenance, contribution, or a combination with clear priority?
 - What final labels and grouping should the package catalogue use?
 
+## Decided: showcase color direction (2026-09-24)
+
+The single-compromise duotone defaults (one pair for both themes) read muddy
+on dark and washed out on light, and the hero cycled one shared hue sequence
+in both themes. Direction, still provisional until rendered review:
+
+- Explorer defaults follow the theme until the visitor picks custom colors.
+  Light: blue-700 `#1d4ed8` + amber-700 `#b45309`.
+  Dark: blue-400 `#60a5fa` + amber-400 `#fbbf24`.
+- Hero rotation runs separate light/dark narratives (vivid hues on pale,
+  luminous hues on deep) over a shared preset index, so theme switches land
+  on the matching pair. SSR and first paint are theme-independent and
+  deterministic; the client resolves the theme after mount.
+- Rule: defaults may follow the theme, but an explicit visitor choice is
+  never overridden by a later theme change.
+
 ## Not decided
 
 This document does not yet decide the final copy, exact section count, color tokens, typography changes, animation style, or whether any existing section should be removed. Those decisions require a rendered comparison and an explicit checkpoint.
