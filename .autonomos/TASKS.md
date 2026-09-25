@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [x] **[DEPS-BLIND-UPDATE]** Verified the maintainer's full update (incl. majors) and committed it isolated (`4dc5f7e71`, 29 files, nothing unrelated mixed in). Reverted TS7 in the 5 DTS-toolchain packages + angular-app (native-tsc lacks the JS API: angular, nuxt, svelte, vue, codemod, angular-app stay on 6.0.3; figma-plugin keeps 7). Forced `@angular/build` 22.2.0 via workspace overrides (analog 2.7.5 needs its `hash.js` internal; pnpm kept a stale 22.1.8 peer). Relaxed one static dts assertion (tsdown style) and hoisted nuxt `vi.mock` calls (vitest 5). Final gates all green: build 21/21, typecheck, lint, test 34/34, docs build, exports 12/12, inventory 1451. Branch: `feat/docs-per-theme-colors` (local). `Priority: 🔴` `Complexity: L` *See: worklogs/2026-09-24-DEPS-BLIND-UPDATE.md*
+
 - [x] **[DOCS-SYNC-MAIN]** Local main was 4 commits behind (catalogue refresh #560: 1436→1507 entries, 1380→1451 logical icons). Fast-forwarded main, rebased `feat/docs-per-theme-colors` 6/6 with no conflicts, regenerated catalogs (`1451` everywhere, inventory check green), rebuilt `@solar-icons/react` for the new icons, committed the sync. fnm default set to 26.10.0 (repo `.nvmrc`; maintainer must `fnm use` or reopen the terminal — shell Node is per-session). `Priority: 🟠` `Complexity: S` *See: worklogs/2026-09-24-DOCS-SYNC-MAIN.md*
 
 - [x] **[DOCS-COLOR-TWEAKS]** Opacity tooltip shortened to "Duotone opacity"; hero stroke widths capped at 2.5 (explorer keeps user-driven 0–3); explorer light primary set to `#132045`. Verified clean. Same branch. `Priority: 🔵` `Complexity: XS`
