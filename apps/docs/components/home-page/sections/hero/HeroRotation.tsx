@@ -44,19 +44,19 @@ interface HeroIconVisualConfig {
  * of a stale preset from the other theme.
  */
 const HERO_LIGHT_SEQUENCE = [
-    { color: '#7c3aed', secondaryColor: '#f97316' },
-    { color: '#1d4ed8', secondaryColor: '#d97706' },
-    { color: '#dc2626', secondaryColor: '#0284c7' },
-    { color: '#059669', secondaryColor: '#7c3aed' },
-    { color: '#4f46e5', secondaryColor: '#4d7c0f' },
+    { color: '#5b21b6', secondaryColor: '#c2410c' },
+    { color: '#1e40af', secondaryColor: '#b45309' },
+    { color: '#991b1b', secondaryColor: '#0369a1' },
+    { color: '#065f46', secondaryColor: '#6d28d9' },
+    { color: '#3730a3', secondaryColor: '#3f6212' },
 ] as const satisfies readonly HeroIconColorConfig[]
 
 const HERO_DARK_SEQUENCE = [
-    { color: '#a78bfa', secondaryColor: '#fdba74' },
-    { color: '#38bdf8', secondaryColor: '#fbbf24' },
-    { color: '#f87171', secondaryColor: '#bef264' },
-    { color: '#818cf8', secondaryColor: '#fde047' },
-    { color: '#22d3ee', secondaryColor: '#fb923c' },
+    { color: '#c4b5fd', secondaryColor: '#fed7aa' },
+    { color: '#7dd3fc', secondaryColor: '#fde047' },
+    { color: '#fca5a5', secondaryColor: '#bef264' },
+    { color: '#a5b4fc', secondaryColor: '#fde68a' },
+    { color: '#67e8f9', secondaryColor: '#fdba74' },
 ] as const satisfies readonly HeroIconColorConfig[]
 
 const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5, 3] as const

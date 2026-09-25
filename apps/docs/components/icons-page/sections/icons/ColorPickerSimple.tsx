@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
 
 import { CopyButton } from '@/components/ui/copy-button'
@@ -20,7 +20,6 @@ interface ColorPickerSimpleProps {
     opacity?: number
     setOpacity?: (opacity: number) => void
     opacityLabel?: string
-    syncInput?: boolean
 }
 
 export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
@@ -32,9 +31,9 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     opacity,
     setOpacity,
     opacityLabel = 'Opacity',
-    syncInput = false,
 }) => {
     const [inputColor, setInputColor] = useState<string>(color)
+    const editingRef = useRef(false)
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
@@ -45,18 +44,11 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     }
 
     useEffect(() => {
-        if (color === inputColor) return
-        if (syncInput) {
-            setInputColor(color)
-            return
-        }
-        const timer = setTimeout(() => {
-            if (inputColor !== color) {
-                setInputColor(color)
-            }
-        }, 10000)
-        return () => clearTimeout(timer)
-    }, [color, inputColor, syncInput])
+        // Mirror external changes (picker drag, reset, theme defaults)
+        // immediately — except while the visitor is typing, so keystrokes
+        // are never clobbered mid-edit. Blur falls back to the live color.
+        if (!editingRef.current) setInputColor(color)
+    }, [color])
 
     const isDark = getContrastingColor(color)
     const hasOpacity = typeof opacity === 'number' && Boolean(setOpacity)
@@ -76,6 +68,13 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                                 type="text"
                                 value={inputColor}
                                 onChange={handleInputChange}
+                                onFocus={() => {
+                                    editingRef.current = true
+                                }}
+                                onBlur={() => {
+                                    editingRef.current = false
+                                    setInputColor(color)
+                                }}
                                 placeholder="#000000"
                                 maxLength={7}
                                 disabled={disabled}

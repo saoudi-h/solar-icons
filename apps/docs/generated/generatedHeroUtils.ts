@@ -1081,6 +1081,8 @@ export const getIconsByCategory = (category: string) => {
                     Ufo2Icon,
                     Ufo3Icon,
                     WomenIcon,
+                    AsteroidIcon,
+                    AtomIcon,
                 ],
             }
         case 'Business':
@@ -1116,6 +1118,12 @@ export const getIconsByCategory = (category: string) => {
                     TableMinimalisticIcon,
                     TablePropertiesIcon,
                     TableRowsSplitIcon,
+                    ChartIcon,
+                    Chart2Icon,
+                    ChartSquareIcon,
+                    ChartSquare2Icon,
+                    CourseDownIcon,
+                    CourseUpIcon,
                 ],
             }
         case 'Call':
@@ -1144,6 +1152,19 @@ export const getIconsByCategory = (category: string) => {
                     RecordCircleIcon,
                     RecordMinimalisticIcon,
                     RecordSquareIcon,
+                    CallCancelIcon,
+                    CallCancelRoundedIcon,
+                    CallChatIcon,
+                    CallChatRoundedIcon,
+                    CallDroppedIcon,
+                    CallDroppedRoundedIcon,
+                    CallMedicineIcon,
+                    CallMedicineRoundedIcon,
+                    EndCallIcon,
+                    EndCallRoundedIcon,
+                    IncomingCallIcon,
+                    IncomingCallRoundedIcon,
+                    OutgoingCallIcon,
                 ],
             }
         case 'Devices':
@@ -1213,6 +1234,19 @@ export const getIconsByCategory = (category: string) => {
                     StickerSmileCircle2Icon,
                     StickerSmileSquareIcon,
                     StickerSquareIcon,
+                    ConfoundedCircleIcon,
+                    ConfoundedSquareIcon,
+                    EmojiFunnyCircleIcon,
+                    EmojiFunnySquareIcon,
+                    ExpressionlessCircleIcon,
+                    ExpressionlessSquareIcon,
+                    FaceScanCircleIcon,
+                    FaceScanSquareIcon,
+                    FacemaskCircleIcon,
+                    FacemaskSquareIcon,
+                    SadCircleIcon,
+                    SadSquareIcon,
+                    SleepingCircleIcon,
                 ],
             }
         case 'Files':
@@ -1253,6 +1287,7 @@ export const getIconsByCategory = (category: string) => {
                     FileWarningIcon,
                     FileZipIcon,
                     SheetIcon,
+                    FileIcon,
                 ],
             }
         case 'Folders':
@@ -1292,6 +1327,8 @@ export const getIconsByCategory = (category: string) => {
                     FoldersIcon,
                     MoveToFolderIcon,
                     RemoveFolderIcon,
+                    AddFolderIcon,
+                    FolderIcon,
                 ],
             }
         case 'Food':
@@ -1312,7 +1349,28 @@ export const getIconsByCategory = (category: string) => {
                     OvenMittsMinimalisticIcon,
                     RollingPinIcon,
                 ],
-                outer: [TeaCupIcon, WhiskIcon, WineglassIcon, WineglassTriangleIcon],
+                outer: [
+                    TeaCupIcon,
+                    WhiskIcon,
+                    WineglassIcon,
+                    WineglassTriangleIcon,
+                    BottleIcon,
+                    ChefHatIcon,
+                    ChefHatHeartIcon,
+                    ChefHatMinimalisticIcon,
+                    CorkscrewIcon,
+                    CupHotIcon,
+                    CupPaperIcon,
+                    DonutIcon,
+                    DonutBittenIcon,
+                    LadleIcon,
+                    MugIcon,
+                    OvenMittsIcon,
+                    OvenMittsMinimalisticIcon,
+                    RollingPinIcon,
+                    TeaCupIcon,
+                    WhiskIcon,
+                ],
             }
         case 'Home':
             return {
@@ -1414,7 +1472,28 @@ export const getIconsByCategory = (category: string) => {
                     MedalStarIcon,
                     MedalStarCircleIcon,
                 ],
-                outer: [MedalStarSquareIcon, StarIcon, StarOffIcon, StarShineIcon],
+                outer: [
+                    MedalStarSquareIcon,
+                    StarIcon,
+                    StarOffIcon,
+                    StarShineIcon,
+                    DislikeIcon,
+                    HeartIcon,
+                    HeartAngleIcon,
+                    HeartCrackIcon,
+                    HeartLockIcon,
+                    HeartShineIcon,
+                    HeartUnlockIcon,
+                    HeartsIcon,
+                    LikeIcon,
+                    MedalRibbonIcon,
+                    MedalRibbonStarIcon,
+                    MedalRibbonsStarIcon,
+                    MedalStarIcon,
+                    MedalStarCircleIcon,
+                    MedalStarSquareIcon,
+                    StarIcon,
+                ],
             }
         case 'List':
             return {
@@ -1449,6 +1528,12 @@ export const getIconsByCategory = (category: string) => {
                     SortByTimeIcon,
                     SortFromBottomToTopIcon,
                     SortFromTopToBottomIcon,
+                    Bill2Icon,
+                    ChecklistIcon,
+                    ChecklistMinimalisticIcon,
+                    ListIcon,
+                    ListArrowDownIcon,
+                    ListArrowDownMinimalisticIcon,
                 ],
             }
         case 'Map':
@@ -1530,6 +1615,7 @@ export const getIconsByCategory = (category: string) => {
                     TestTubeMinimalisticIcon,
                     ThermometerIcon,
                     VirusIcon,
+                    AdhesivePlasterIcon,
                 ],
             }
         case 'Messages':
@@ -1649,6 +1735,10 @@ export const getIconsByCategory = (category: string) => {
                     NotebookIcon,
                     NotesIcon,
                     NotesMinimalisticIcon,
+                    ArchiveIcon,
+                    ArchiveCheckIcon,
+                    ArchiveCloseIcon,
+                    ArchiveDownIcon,
                 ],
             }
         case 'Parts':
@@ -1676,6 +1766,20 @@ export const getIconsByCategory = (category: string) => {
                     TransmissionSquareIcon,
                     WheelIcon,
                     WheelAngleIcon,
+                    BusIcon,
+                    CarIcon,
+                    CarBatteryIcon,
+                    ElectricRefuelingIcon,
+                    GasStationIcon,
+                    KickScooterIcon,
+                    ScooterIcon,
+                    ShockAbsorberIcon,
+                    SpeedometerLowIcon,
+                    SpeedometerMaxIcon,
+                    SpeedometerMiddleIcon,
+                    SuspensionIcon,
+                    SuspensionBoltIcon,
+                    SuspensionCrossIcon,
                 ],
             }
         case 'School':
@@ -1712,6 +1816,11 @@ export const getIconsByCategory = (category: string) => {
                     PlusMinusIcon,
                     SquareAcademicCapIcon,
                     SquareAcademicCap2Icon,
+                    BackpackIcon,
+                    BookIcon,
+                    Book2Icon,
+                    BookBookmarkIcon,
+                    BookBookmarkMinimalisticIcon,
                 ],
             }
         case 'Security':
@@ -1786,6 +1895,14 @@ export const getIconsByCategory = (category: string) => {
                     Widget5Icon,
                     Widget6Icon,
                     WidgetAddIcon,
+                    Columns2Icon,
+                    Columns3Icon,
+                    Columns3CogIcon,
+                    Columns4Icon,
+                    ContainerIcon,
+                    Grid2x2Icon,
+                    Grid2x2AddIcon,
+                    Grid2x2CheckIcon,
                 ],
             }
         case 'Shopping':
@@ -1820,6 +1937,13 @@ export const getIconsByCategory = (category: string) => {
                     ShopIcon,
                     Shop2Icon,
                     ShopMinimalisticIcon,
+                    BagIcon,
+                    Bag2Icon,
+                    Bag3Icon,
+                    Bag4Icon,
+                    Bag5Icon,
+                    BagCheckIcon,
+                    BagCrossIcon,
                 ],
             }
         case 'Sports':
@@ -1936,6 +2060,13 @@ export const getIconsByCategory = (category: string) => {
                     WatchSquareIcon,
                     WatchSquareMinimalisticIcon,
                     WatchSquareMinimalisticChargeIcon,
+                    AlarmIcon,
+                    AlarmAddIcon,
+                    AlarmPauseIcon,
+                    AlarmPlayIcon,
+                    AlarmRemoveIcon,
+                    AlarmSleepIcon,
+                    AlarmTurnOffIcon,
                 ],
             }
         case 'Tools':
@@ -1974,6 +2105,9 @@ export const getIconsByCategory = (category: string) => {
                     RulerCrossPenIcon,
                     RulerPenIcon,
                     ThreeSquaresIcon,
+                    AlignBottomIcon,
+                    AlignHorizontalCenterIcon,
+                    AlignHorizontalSpacingIcon,
                 ],
             }
         case 'Ui':
@@ -2044,6 +2178,18 @@ export const getIconsByCategory = (category: string) => {
                     UserSpeakRoundedIcon,
                     UsersGroupRoundedIcon,
                     UsersGroupTwoRoundedIcon,
+                    UserIcon,
+                    UserBlockIcon,
+                    UserBlockRoundedIcon,
+                    UserCheckIcon,
+                    UserCheckRoundedIcon,
+                    UserCircleIcon,
+                    UserCrossIcon,
+                    UserCrossRoundedIcon,
+                    UserHandUpIcon,
+                    UserHandsIcon,
+                    UserHeartIcon,
+                    UserHeartRoundedIcon,
                 ],
             }
         case 'Video':
