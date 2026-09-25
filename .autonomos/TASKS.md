@@ -9,7 +9,7 @@
 
 ## 🚧 Active
 
-- [/] **[DOCS-SYNC-MAIN]** Local main is 4 commits behind origin/main (incl. catalogue refresh #560: ~1436→1507 entries). Fast-forward main, rebase `feat/docs-per-theme-colors` onto it, regenerate the explorer catalog, and set fnm default to Node 26.10.0 (repo `.nvmrc`). `Priority: 🟠` `Complexity: S`
+- [x] **[DOCS-SYNC-MAIN]** Local main was 4 commits behind (catalogue refresh #560: 1436→1507 entries, 1380→1451 logical icons). Fast-forwarded main, rebased `feat/docs-per-theme-colors` 6/6 with no conflicts, regenerated catalogs (`1451` everywhere, inventory check green), rebuilt `@solar-icons/react` for the new icons, committed the sync. fnm default set to 26.10.0 (repo `.nvmrc`; maintainer must `fnm use` or reopen the terminal — shell Node is per-session). `Priority: 🟠` `Complexity: S` *See: worklogs/2026-09-24-DOCS-SYNC-MAIN.md*
 
 - [x] **[DOCS-COLOR-TWEAKS]** Opacity tooltip shortened to "Duotone opacity"; hero stroke widths capped at 2.5 (explorer keeps user-driven 0–3); explorer light primary set to `#132045`. Verified clean. Same branch. `Priority: 🔵` `Complexity: XS`
 
