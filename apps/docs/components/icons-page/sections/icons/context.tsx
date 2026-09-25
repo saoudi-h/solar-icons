@@ -195,8 +195,8 @@ interface IconProviderWrapperProps {
  * pick (color picker, reset-to-theme) wins and is never overridden.
  */
 export const THEME_DEFAULT_COLORS = {
-    light: { color: '#1d4ed8', secondaryColor: '#b45309' },
-    dark: { color: '#60a5fa', secondaryColor: '#fbbf24' },
+    light: { color: '#6d28d9', secondaryColor: '#ea580c' },
+    dark: { color: '#8b5cf6', secondaryColor: '#fbbf24' },
 } as const
 
 export const DEFAULT_VALUES = {
