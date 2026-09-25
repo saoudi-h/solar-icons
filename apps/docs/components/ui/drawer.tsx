@@ -47,12 +47,24 @@ export interface DrawerContentType extends React.ComponentProps<typeof DrawerPri
      * @default false
      */
     hideHandler?: boolean
+    /**
+     * Extra classes for the modal overlay rendered with the content.
+     * Lets a consumer raise the overlay above competing chrome
+     * (e.g. the floating site header) without changing the shared default.
+     */
+    overlayClassName?: string
 }
 
-function DrawerContent({ className, children, hideHandler = false, ...props }: DrawerContentType) {
+function DrawerContent({
+    className,
+    children,
+    hideHandler = false,
+    overlayClassName,
+    ...props
+}: DrawerContentType) {
     return (
         <DrawerPortal data-slot="drawer-portal">
-            <DrawerOverlay />
+            <DrawerOverlay className={overlayClassName} />
             <DrawerPrimitive.Content
                 data-slot="drawer-content"
                 className={cn(

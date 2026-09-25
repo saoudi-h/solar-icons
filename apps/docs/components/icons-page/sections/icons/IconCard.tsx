@@ -13,7 +13,15 @@ import {
 } from './context'
 import { isRecentExtension, RecentIconDot } from './OriginControls'
 
-type IconCardProps = Omit<IconData, 'Icon'>
+type IconCardProps = Omit<IconData, 'Icon'> & {
+    /**
+     * Present at runtime (the grid spreads the full `IconData` record)
+     * but re-derived from the weight namespace inside, so it is stripped
+     * before spreading onto the DOM. Typed `unknown` since only its
+     * presence matters here, never its value.
+     */
+    Icon?: unknown
+}
 
 /**
  * Convert an icon base name (kebab-case, e.g. `home-add`) to the
@@ -44,6 +52,12 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
             state: _state,
             priority: _priority,
             priorityReason: _priorityReason,
+            // `Icon` (component) and `deprecatedAliases` (objects) are not
+            // valid DOM props. The grid passes the full `IconData` record,
+            // so strip them here instead of spreading them onto `motion.div`
+            // (React warns `Invalid DOM property` otherwise).
+            Icon: _Icon,
+            deprecatedAliases: _deprecatedAliases,
             ...props
         },
         ref

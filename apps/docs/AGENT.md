@@ -93,6 +93,10 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
   indirection that used to pick the variant is gone; the
   CSS-based split (`hidden md:flex` / `md:hidden`) does it
   for free.
+- The mobile filter drawer floats below the header pill
+  (`top-20`: 72px reserved header plus 8px gap) with overlay
+  and content stacked above the header chrome, so the panel
+  never slides under the header and the modal keeps focus.
 - The categories sidebar and the icon grid sit in a row
   with height driven by the grid's measured
   `window.innerHeight - <top> - 56 - detailHeight - ROW_TO_DETAIL_GAP`.

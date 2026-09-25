@@ -213,11 +213,15 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                             <span className="sr-only">Open settings</span>
                         </motion.button>
                     </DrawerTrigger>
+                    {/* Mobile filter panel floats below the site header pill
+                        (top-20 = 72px reserved header + 8px gap) with overlay/content
+                        above the header (z-60) so the two never overlap. */}
                     <DrawerContent
+                        overlayClassName="z-70!"
                         className="
-                          fixed! inset-y-2! right-2! z-50 flex! w-72! overflow-y-auto rounded-xl
-                          border border-border bg-default-50/90 p-2 shadow-xs backdrop-blur-sm
-                          outline-none!
+                          fixed! top-20! right-2! bottom-2! z-80! flex! w-72! overflow-y-auto
+                          rounded-xl border border-border bg-default-50/90 p-2 shadow-xs
+                          backdrop-blur-sm outline-none!
                           dark:bg-default-100/80
                         "
                         style={
