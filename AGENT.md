@@ -29,7 +29,7 @@ this context header is historical orientation, not a second source of truth.
 
 ## 🏗 Stack & Architecture
 
-- **Package manager:** pnpm 11.5.3, Node ≥ 18.
+- **Package manager:** pnpm 12.4.1 (`packageManager` field), Node 26.x (`engines`, pinned in `.nvmrc`).
 - **Monorepo orchestration:** Turborepo 2.x. `turbo.json` defines `build`, `dev`, `clean`, `typecheck`, `lint`, `format`, `pre-commit`, `test`. `test` depends on `build`.
 - **Language:** TypeScript 7 (native `tsc` replaces `tsgo`), ESM-only. `vue` / `svelte` / `nuxt` / `angular` stay on TypeScript 6 for their DTS toolchains (`svelte2tsx` / `rolldown-plugin-dts`+volar / unbuild / `ngc` consume the TS JS API, incompatible with TS7 native — verified per-package). `pnpm-workspace.yaml` injects `typescript@6` into `@sveltejs/package` (phantom dep) via `packageExtensions`.
 - **Shared tooling:** `@tala-tools/oxlint`, `@tala-tools/oxfmt`, `@tala-tools/tsconfig` (base configs each package extends).
