@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[DOCS-SYNC-MAIN]** Local main is 4 commits behind origin/main (incl. catalogue refresh #560: ~1436→1507 entries). Fast-forward main, rebase `feat/docs-per-theme-colors` onto it, regenerate the explorer catalog, and set fnm default to Node 26.10.0 (repo `.nvmrc`). `Priority: 🟠` `Complexity: S`
+
 - [x] **[DOCS-COLOR-TWEAKS]** Opacity tooltip shortened to "Duotone opacity"; hero stroke widths capped at 2.5 (explorer keeps user-driven 0–3); explorer light primary set to `#132045`. Verified clean. Same branch. `Priority: 🔵` `Complexity: XS`
 
 - [x] **[DOCS-DUOTONE-SYSTEM]** Systematic coupling formula implemented (same-family pairs; primary near-white on dark / near-black on light; restrained colorful secondary): explorer blue duos (light `#1e3a8a`+`#2563eb`, dark `#dbeafe`+`#60a5fa`), hero 5-pair deep-light and luminous-dark sequences. Duotone opacity extracted from the picker popover into a foreground Figma-style `GeometryControl` (label + duotone-accent tooltip, duotone-gated like its picker). Picker hex inputs now sync immediately with focus-aware typing protection. Verified: typecheck, oxfmt, oxlint clean. Rendered checkpoint stays the maintainer's. Branch: `feat/docs-per-theme-colors` (local, not pushed). `Priority: 🟠` `Complexity: M` *See: worklogs/2026-09-24-DOCS-DUOTONE-SYSTEM.md*
