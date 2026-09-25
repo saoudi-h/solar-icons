@@ -1,11 +1,10 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
 
 import { CopyButton } from '@/components/ui/copy-button'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Slider } from '@/components/ui/slider'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 
@@ -17,10 +16,6 @@ interface ColorPickerSimpleProps {
     className?: string
     tooltip?: string
     disabled?: boolean
-    opacity?: number
-    setOpacity?: (opacity: number) => void
-    opacityLabel?: string
-    syncInput?: boolean
 }
 
 export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
@@ -29,12 +24,9 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     className,
     tooltip,
     disabled,
-    opacity,
-    setOpacity,
-    opacityLabel = 'Opacity',
-    syncInput = false,
 }) => {
     const [inputColor, setInputColor] = useState<string>(color)
+    const editingRef = useRef(false)
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
@@ -45,21 +37,13 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
     }
 
     useEffect(() => {
-        if (color === inputColor) return
-        if (syncInput) {
-            setInputColor(color)
-            return
-        }
-        const timer = setTimeout(() => {
-            if (inputColor !== color) {
-                setInputColor(color)
-            }
-        }, 10000)
-        return () => clearTimeout(timer)
-    }, [color, inputColor, syncInput])
+        // Mirror external changes (picker drag, reset, theme defaults)
+        // immediately — except while the visitor is typing, so keystrokes
+        // are never clobbered mid-edit. Blur falls back to the live color.
+        if (!editingRef.current) setInputColor(color)
+    }, [color])
 
     const isDark = getContrastingColor(color)
-    const hasOpacity = typeof opacity === 'number' && Boolean(setOpacity)
 
     return (
         <div
@@ -76,6 +60,13 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                                 type="text"
                                 value={inputColor}
                                 onChange={handleInputChange}
+                                onFocus={() => {
+                                    editingRef.current = true
+                                }}
+                                onBlur={() => {
+                                    editingRef.current = false
+                                    setInputColor(color)
+                                }}
                                 placeholder="#000000"
                                 maxLength={7}
                                 disabled={disabled}
@@ -101,32 +92,12 @@ export const ColorPickerSimple: React.FC<ColorPickerSimpleProps> = ({
                 <PopoverContent
                     align="start"
                     sideOffset={6}
-                    className="w-72 space-y-3 overflow-hidden bg-default-200 p-3 shadow-md">
+                    className="w-72 overflow-hidden bg-default-200 p-3 shadow-md">
                     <HexColorPicker
                         color={color}
                         onChange={setColor}
                         style={{ width: '100%', height: '160px' }}
                     />
-                    {hasOpacity && (
-                        <div className="space-y-1.5">
-                            <div
-                                className="
-                                  flex items-center justify-between text-xs text-muted-foreground
-                                ">
-                                <span>{opacityLabel}</span>
-                                <span className="font-mono tabular-nums">
-                                    {(opacity as number).toFixed(2)}
-                                </span>
-                            </div>
-                            <Slider
-                                value={[opacity as number]}
-                                onValueChange={value => setOpacity!(value[0]!)}
-                                min={0}
-                                max={1}
-                                step={0.05}
-                            />
-                        </div>
-                    )}
                 </PopoverContent>
             </Popover>
             <CopyButton

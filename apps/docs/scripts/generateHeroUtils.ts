@@ -21,6 +21,20 @@ const toPascalCase = (str: string) =>
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join('')
 
+/**
+ * Takes `count` icons starting at `start`, wrapping around to the
+ * beginning when the category runs out — short categories reuse their
+ * own icons so rings always render full.
+ */
+const takeCycled = (icons: string[], start: number, count: number): string[] => {
+    if (icons.length === 0) return []
+    const out: string[] = []
+    for (let i = 0; i < count; i++) {
+        out.push(icons[(start + i) % icons.length]!)
+    }
+    return out
+}
+
 const outputFilePath = './generated/generatedHeroUtils.ts'
 const generateIconsByCategory = (data: any) => {
     const categories = data.categories
@@ -31,14 +45,18 @@ const generateIconsByCategory = (data: any) => {
     Object.entries(categories).forEach(([categoryName, categoryData]: [string, any]) => {
         const icons = categoryData.icons
 
-        // Check that there are at least 17 icons for the category (7 + 10)
+        // Check that there are at least 17 icons for the category so it
+        // stays in the rotation (same gate as before doubling).
         if (icons.length < 17) return
         const categoryPascalCase = toPascalCase(categoryName)
         categoryList.push(categoryPascalCase)
 
-        // Separates icons into internal (7) and external (10)
-        const innerIconsNames = icons.slice(0, 7).map((icon: string) => toPascalCase(icon))
-        const outerIconsNames = icons.slice(7, 17).map((icon: string) => toPascalCase(icon))
+        // Separates icons into internal (14) and external (20) — twice the
+        // previous 7 + 10. Categories shorter than 34 icons reuse their own
+        // icons from the top (`takeCycled`) so both rings always render
+        // full instead of leaving visible gaps.
+        const innerIconsNames = takeCycled(icons, 0, 14).map((icon: string) => toPascalCase(icon))
+        const outerIconsNames = takeCycled(icons, 14, 20).map((icon: string) => toPascalCase(icon))
 
         innerIconsNames.forEach((name: string) => allIconsSet.add(name))
         outerIconsNames.forEach((name: string) => allIconsSet.add(name))

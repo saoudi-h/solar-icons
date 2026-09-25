@@ -47,14 +47,12 @@ jobs:
 
             - name: Publish Beta to NPM
               id: changesets
-              uses: changesets/action@v1
+              uses: changesets/action@v2
               with:
-                  publish: pnpm release
-                  version: pnpm version-packages
-                  title: 'ci(changesets): 🧪 beta version packages'
-                  commit: 'ci(changesets): beta version packages'
-                  setupGitUser: false
+                  publish-script: pnpm release
+                  version-script: pnpm version-packages
+                  pr-title: 'ci(changesets): 🧪 beta version packages'
+                  commit-message: 'ci(changesets): beta version packages'
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

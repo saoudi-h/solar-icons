@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
 
 import { CopyButton } from '@/components/ui/copy-button'
@@ -15,7 +15,6 @@ interface ColorPickerProps {
     setColor: (color: string) => void
     className?: string
     tooltip?: string
-    syncInput?: boolean
 }
 
 export const ColorPicker: React.FC<ColorPickerProps> = ({
@@ -23,9 +22,9 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     setColor,
     className,
     tooltip,
-    syncInput = false,
 }) => {
     const [inputColor, setInputColor] = useState<string>(color)
+    const editingRef = useRef(false)
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
@@ -36,18 +35,11 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     }
 
     useEffect(() => {
-        if (color === inputColor) return
-        if (syncInput) {
-            setInputColor(color)
-            return
-        }
-        const timer = setTimeout(() => {
-            if (inputColor !== color) {
-                setInputColor(color)
-            }
-        }, 10000)
-        return () => clearTimeout(timer)
-    }, [color, inputColor, syncInput])
+        // Mirror external changes (picker drag, reset, theme defaults)
+        // immediately — except while the visitor is typing, so keystrokes
+        // are never clobbered mid-edit. Blur falls back to the live color.
+        if (!editingRef.current) setInputColor(color)
+    }, [color])
 
     const isDark = getContrastingColor(color)
 
@@ -61,6 +53,13 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                                 type="text"
                                 value={inputColor}
                                 onChange={handleInputChange}
+                                onFocus={() => {
+                                    editingRef.current = true
+                                }}
+                                onBlur={() => {
+                                    editingRef.current = false
+                                    setInputColor(color)
+                                }}
                                 placeholder="#000000"
                                 maxLength={7}
                                 data-vaul-no-drag

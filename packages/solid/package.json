@@ -105,19 +105,19 @@
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
-        "@babel/core": "^8.0.5",
+        "@babel/core": "^8.0.6",
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/tsconfig": "0.0.2",
+        "@tala-tools/tsconfig": "0.1.0",
         "@testing-library/jest-dom": "^7.0.1",
-        "@types/node": "^26.5.1",
+        "@types/node": "^26.6.2",
         "babel-preset-solid": "^1.9.15",
         "picocolors": "^1.1.1",
         "rimraf": "^6.1.3",
         "solid-js": "^1.9.15",
-        "tsdown": "^0.22.14",
+        "tsdown": "^0.23.0",
         "typescript": "7.0.2",
-        "unplugin-solid": "^2.0.0",
-        "vitest": "^4.1.11"
+        "unplugin-solid": "^3.0.0",
+        "vitest": "^5.0.2"
     },
     "peerDependencies": {
         "solid-js": ">= 1.6.0"

@@ -128,6 +128,29 @@ These are maintenance findings discovered during the initial audit. They should 
 - What single proof should the community section communicate: adoption, maintenance, contribution, or a combination with clear priority?
 - What final labels and grouping should the package catalogue use?
 
+## Decided: showcase color direction (2026-09-24)
+
+The single-compromise duotone defaults (one pair for both themes) read muddy
+on dark and washed out on light, and the hero cycled one shared hue sequence
+in both themes. Direction, still provisional until rendered review:
+
+- Explorer defaults follow the theme until the visitor picks custom colors.
+  Coupling formula: same color family, primary near-white on dark /
+  near-black on light, secondary colorful but restrained.
+  Light: deep navy `#132045` + blue-600 `#2563eb`.
+  Dark: blue-100 `#dbeafe` + blue-400 `#60a5fa`.
+- Duotone opacity lives in the foreground toolbar as a Figma-style
+  `GeometryControl` slider (label + tooltip: accent-shape opacity, not the
+  whole icon), not inside the color-picker popover.
+- Hero rotation runs separate light/dark narratives over a shared preset
+  index, so theme switches land on the matching pair. Same coupling formula
+  per pair (one family; deep primary + restrained secondary on light,
+  luminous primary + restrained secondary on dark). SSR and first paint are
+  theme-independent and deterministic; the client resolves the theme after
+  mount.
+- Rule: defaults may follow the theme, but an explicit visitor choice is
+  never overridden by a later theme change.
+
 ## Not decided
 
 This document does not yet decide the final copy, exact section count, color tokens, typography changes, animation style, or whether any existing section should be removed. Those decisions require a rendered comparison and an explicit checkpoint.

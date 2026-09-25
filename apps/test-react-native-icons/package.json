@@ -18,16 +18,14 @@
     },
     "dependencies": {
         "@solar-icons/react-native": "workspace:*",
-        "expo": "~57.0.22",
-        "expo-dev-client": "^57.0.19",
+        "expo": "~57.0.25",
         "expo-status-bar": "~57.0.1",
-        "react": "19.2.8",
-        "react-native": "0.86.2",
+        "react": "19.3.0",
+        "react-native": "0.87.1",
         "react-native-svg": "^15.15.5"
     },
     "devDependencies": {
-        "@types/react": "~19.2.18",
-        "typescript": "7.0.2"
+        "@types/react": "~19.3.0"
     },
     "keywords": [
         "solar-icons",

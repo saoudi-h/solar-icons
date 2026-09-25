@@ -19,6 +19,11 @@ minimumReleaseAge: 0
 overrides:
   sharp: 0.35.4
   'xcode@3.0.1>uuid': 11.1.1
+  # @analogjs/vite-plugin-angular@2.7.5 imports the @angular/build internal
+  # `src/utils/hash.js`, which only exists in build 22.2.0+. pnpm otherwise
+  # keeps resolving the stale 22.1.8 peer snapshot (it still satisfies
+  # ^22.0.0) and vitest fails to load with a missing-module startup error.
+  '@angular/build': ^22.2.0
 
 # @sveltejs/package and @analogjs/vite-plugin-angular both phantom-import
 # `typescript` without declaring it; without this injection they resolve the

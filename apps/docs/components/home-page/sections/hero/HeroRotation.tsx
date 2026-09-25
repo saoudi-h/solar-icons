@@ -36,56 +36,71 @@ interface HeroIconVisualConfig {
     strokeWidth: number
 }
 
-const HERO_ICON_COLOR_PRESETS = [
-    {
-        light: { color: '#2563eb', secondaryColor: '#7c3aed' },
-        dark: { color: '#93c5fd', secondaryColor: '#c4b5fd' },
-    },
-    {
-        light: { color: '#7c3aed', secondaryColor: '#db2777' },
-        dark: { color: '#c4b5fd', secondaryColor: '#f9a8d4' },
-    },
-    {
-        light: { color: '#0f766e', secondaryColor: '#d97706' },
-        dark: { color: '#5eead4', secondaryColor: '#fcd34d' },
-    },
-    {
-        light: { color: '#e11d48', secondaryColor: '#ea580c' },
-        dark: { color: '#fda4af', secondaryColor: '#fdba74' },
-    },
-    {
-        light: { color: '#b45309', secondaryColor: '#0891b2' },
-        dark: { color: '#fcd34d', secondaryColor: '#67e8f9' },
-    },
-] as const satisfies readonly Omit<HeroIconVisualConfig, 'strokeWidth'>[]
+/**
+ * Rotation palettes, one narrative per theme, following the same coupling
+ * formula as the explorer: each pair stays inside one color family, the
+ * primary is deep on light / luminous on dark, the secondary is colorful
+ * but restrained. Both lists stay the same length: rotation advances a
+ * shared index, so switching themes mid-cycle lands on the matching pair
+ * instead of a stale preset from the other theme.
+ */
+const HERO_LIGHT_SEQUENCE = [
+    { color: '#1e3a8a', secondaryColor: '#2563eb' },
+    { color: '#4c1d95', secondaryColor: '#7c3aed' },
+    { color: '#064e3b', secondaryColor: '#059669' },
+    { color: '#7f1d1d', secondaryColor: '#dc2626' },
+    { color: '#312e81', secondaryColor: '#4f46e5' },
+] as const satisfies readonly HeroIconColorConfig[]
 
-const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5, 3] as const
+const HERO_DARK_SEQUENCE = [
+    { color: '#dbeafe', secondaryColor: '#60a5fa' },
+    { color: '#ede9fe', secondaryColor: '#8b5cf6' },
+    { color: '#d1fae5', secondaryColor: '#34d399' },
+    { color: '#fee2e2', secondaryColor: '#f87171' },
+    { color: '#e0e7ff', secondaryColor: '#818cf8' },
+] as const satisfies readonly HeroIconColorConfig[]
+
+const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5] as const
 const HERO_STATE_CHANGE_INTERVAL = 4000
 
-const INITIAL_HERO_ICON_VISUAL: HeroIconVisualConfig = {
-    ...HERO_ICON_COLOR_PRESETS[0],
+interface HeroRotationState {
+    presetIndex: number
+    strokeWidth: number
+}
+
+const INITIAL_HERO_ROTATION_STATE: HeroRotationState = {
+    presetIndex: 0,
     strokeWidth: 1.5,
 }
 
-const heroIconVisualAtom = atom<HeroIconVisualConfig>(INITIAL_HERO_ICON_VISUAL)
+const heroRotationStateAtom = atom<HeroRotationState>(INITIAL_HERO_ROTATION_STATE)
+
+/**
+ * Resolve the shared rotation state to the full per-theme visual consumed
+ * by the stage (CSS vars for both themes, always rendered) and the
+ * readouts (one side, theme-gated). Deterministic for SSR: index 0.
+ */
+function resolveHeroVisual(state: HeroRotationState): HeroIconVisualConfig {
+    const index = state.presetIndex % HERO_LIGHT_SEQUENCE.length
+    return {
+        light: { ...HERO_LIGHT_SEQUENCE[index]! },
+        dark: { ...HERO_DARK_SEQUENCE[index]! },
+        strokeWidth: state.strokeWidth,
+    }
+}
 
 function pickRandomItem<T>(items: readonly T[], current: T): T {
     const candidates = items.filter(item => item !== current)
     return candidates[Math.floor(Math.random() * candidates.length)] ?? items[0]!
 }
 
-function pickRandomHeroIconVisual(current: HeroIconVisualConfig): HeroIconVisualConfig {
-    const colorCandidates = HERO_ICON_COLOR_PRESETS.filter(
-        preset => preset.light.color !== current.light.color
+function pickRandomHeroRotationState(current: HeroRotationState): HeroRotationState {
+    const indices = HERO_LIGHT_SEQUENCE.map((_, index) => index).filter(
+        index => index !== current.presetIndex
     )
-    const colorPreset =
-        colorCandidates[Math.floor(Math.random() * colorCandidates.length)] ??
-        HERO_ICON_COLOR_PRESETS[0]!
-    const strokeWidth = pickRandomItem(HERO_ICON_STROKE_WIDTHS, current.strokeWidth)
-
     return {
-        ...colorPreset,
-        strokeWidth,
+        presetIndex: indices[Math.floor(Math.random() * indices.length)] ?? 0,
+        strokeWidth: pickRandomItem(HERO_ICON_STROKE_WIDTHS, current.strokeWidth),
     }
 }
 
@@ -238,10 +253,11 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
 }) => {
     const [category, setCategory] = useAtom(categoryAtom)
     const [style, setStyle] = useAtom(styleAtom)
-    const [visual, setVisual] = useAtom(heroIconVisualAtom)
+    const [rotationState, setRotationState] = useAtom(heroRotationStateAtom)
+    const visual = useMemo(() => resolveHeroVisual(rotationState), [rotationState])
     const shouldReduceMotion = useReducedMotion()
 
-    const changeVisual = () => setVisual(current => pickRandomHeroIconVisual(current))
+    const changeVisual = () => setRotationState(current => pickRandomHeroRotationState(current))
 
     const setNextCategory = () => {
         const currentIndex = categories.indexOf(category)
@@ -591,7 +607,8 @@ Circle.displayName = 'Circle'
 export const HeroRotation: FC = () => {
     const [style, setStyle] = useAtom(styleAtom)
     const [category, setCategory] = useAtom(categoryAtom)
-    const [visual, setVisual] = useAtom(heroIconVisualAtom)
+    const [rotationState, setRotationState] = useAtom(heroRotationStateAtom)
+    const visual = useMemo(() => resolveHeroVisual(rotationState), [rotationState])
     const shouldReduceMotion = useReducedMotion()
 
     // Using useMemo instead of useState + useEffect to avoid setState in effect
@@ -626,7 +643,7 @@ export const HeroRotation: FC = () => {
 
         let cycle = 0
         const interval = setInterval(() => {
-            setVisual(current => pickRandomHeroIconVisual(current))
+            setRotationState(current => pickRandomHeroRotationState(current))
 
             if (cycle % 2 === 0) {
                 setCategory(
@@ -639,7 +656,7 @@ export const HeroRotation: FC = () => {
         }, HERO_STATE_CHANGE_INTERVAL)
 
         return () => clearInterval(interval)
-    }, [setCategory, setStyle, setVisual, shouldReduceMotion])
+    }, [setCategory, setStyle, setRotationState, shouldReduceMotion])
 
     useAnimationFrame((_, delta) => {
         if (shouldReduceMotion) return

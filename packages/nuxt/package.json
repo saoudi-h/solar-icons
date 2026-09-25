@@ -100,7 +100,6 @@
         "@solar-icons/vue": "workspace:*"
     },
     "devDependencies": {
-        "@nuxt/devtools": "4.0.0-alpha.10",
         "@nuxt/module-builder": "^1.0.3",
         "@nuxt/schema": "^4.5.2",
         "@nuxt/test-utils": "^4.3.2",
@@ -109,7 +108,7 @@
         "changelogen": "^0.6.2",
         "nuxt": "^4.5.2",
         "typescript": "6.0.3",
-        "vitest": "^4.1.11",
-        "vue-tsc": "3.3.9"
+        "vitest": "^5.0.2",
+        "vue-tsc": "3.3.11"
     }
 }
