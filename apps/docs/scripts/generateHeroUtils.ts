@@ -31,14 +31,17 @@ const generateIconsByCategory = (data: any) => {
     Object.entries(categories).forEach(([categoryName, categoryData]: [string, any]) => {
         const icons = categoryData.icons
 
-        // Check that there are at least 17 icons for the category (7 + 10)
+        // Check that there are at least 17 icons for the category so it
+        // stays in the rotation (same gate as before doubling).
         if (icons.length < 17) return
         const categoryPascalCase = toPascalCase(categoryName)
         categoryList.push(categoryPascalCase)
 
-        // Separates icons into internal (7) and external (10)
-        const innerIconsNames = icons.slice(0, 7).map((icon: string) => toPascalCase(icon))
-        const outerIconsNames = icons.slice(7, 17).map((icon: string) => toPascalCase(icon))
+        // Separates icons into internal (14) and external (20) — twice the
+        // previous 7 + 10. Smaller categories contribute what they have
+        // (`slice` caps safely); nothing that rotated before drops out.
+        const innerIconsNames = icons.slice(0, 14).map((icon: string) => toPascalCase(icon))
+        const outerIconsNames = icons.slice(14, 34).map((icon: string) => toPascalCase(icon))
 
         innerIconsNames.forEach((name: string) => allIconsSet.add(name))
         outerIconsNames.forEach((name: string) => allIconsSet.add(name))

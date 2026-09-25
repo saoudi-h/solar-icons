@@ -196,7 +196,7 @@ interface IconProviderWrapperProps {
  */
 export const THEME_DEFAULT_COLORS = {
     light: { color: '#6d28d9', secondaryColor: '#ea580c' },
-    dark: { color: '#8b5cf6', secondaryColor: '#fbbf24' },
+    dark: { color: '#38bdf8', secondaryColor: '#fb923c' },
 } as const
 
 export const DEFAULT_VALUES = {

@@ -136,7 +136,7 @@ in both themes. Direction, still provisional until rendered review:
 
 - Explorer defaults follow the theme until the visitor picks custom colors.
   Light: violet-700 `#6d28d9` + orange-600 `#ea580c`.
-  Dark: violet-500 `#8b5cf6` + amber-400 `#fbbf24`.
+  Dark: sky-400 `#38bdf8` + orange-400 `#fb923c`.
 - Hero rotation runs separate light/dark narratives (vivid hues on pale,
   luminous hues on deep) over a shared preset index, so theme switches land
   on the matching pair. SSR and first paint are theme-independent and
