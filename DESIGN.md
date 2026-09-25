@@ -137,7 +137,7 @@ in both themes. Direction, still provisional until rendered review:
 - Explorer defaults follow the theme until the visitor picks custom colors.
   Coupling formula: same color family, primary near-white on dark /
   near-black on light, secondary colorful but restrained.
-  Light: blue-900 `#1e3a8a` + blue-600 `#2563eb`.
+  Light: deep navy `#132045` + blue-600 `#2563eb`.
   Dark: blue-100 `#dbeafe` + blue-400 `#60a5fa`.
 - Duotone opacity lives in the foreground toolbar as a Figma-style
   `GeometryControl` slider (label + tooltip: accent-shape opacity, not the

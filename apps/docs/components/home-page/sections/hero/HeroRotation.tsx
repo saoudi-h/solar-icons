@@ -60,7 +60,7 @@ const HERO_DARK_SEQUENCE = [
     { color: '#e0e7ff', secondaryColor: '#818cf8' },
 ] as const satisfies readonly HeroIconColorConfig[]
 
-const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5, 3] as const
+const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5] as const
 const HERO_STATE_CHANGE_INTERVAL = 4000
 
 interface HeroRotationState {

@@ -133,7 +133,7 @@ export const FilterBarContent: React.FC = () => {
             />
             <GeometryControl
                 label="Opacity"
-                tooltip="Opacity of the duotone accent shapes, not the whole icon"
+                tooltip="Duotone opacity"
                 value={duotoneOpacity}
                 onChange={setSecondaryOpacity}
                 min={0}
