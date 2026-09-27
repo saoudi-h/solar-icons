@@ -1,6 +1,7 @@
 ---
 title: Laravel Blade
 description: Solar Icons for Laravel Blade views, powered by Blade Icons.
+icon: laravel
 ---
 
 ```bash
@@ -13,7 +14,7 @@ Solar Icons Blade uses [Blade Icons](https://github.com/driesvints/blade-icons) 
 
 ## Static icons
 
-Icons ship in six styles — `linear`, `bold`, `broken`, `outline`, `bold-duotone` and `line-duotone` — as self-closing Blade components which compile to inline SVG:
+Icons ship in six styles (`linear`, `bold`, `broken`, `outline`, `bold-duotone`, `line-duotone`) as self-closing Blade components which compile to inline SVG:
 
 ```blade
 <x-solar-linear-heart />
@@ -40,17 +41,9 @@ Duotone styles (`bold-duotone`, `line-duotone`) expose a second color through CS
 <x-solar-line-duotone-heart style="--solar-secondary-color: #2563eb; --solar-secondary-opacity: 0.5" />
 ```
 
-<Callout type="warn">
-    Tailwind generates CSS by scanning your template files for literal class names — so `class="w-6 h-6"`
-    written in a Blade template works on every component, including `<x-solar-icon>`. Only computed
-    values are invisible to that scan (`:class="$variable"`, database content, PHP-built strings, or
-    files outside your `content` paths like `routes/`) — safelist those in `tailwind.config.js`, or
-    prefer `width`/`height`/`style` attributes, which always work.
-</Callout>
-
 ## Dynamic icons
 
-One component covers every icon and style — handy for switching styles server-side or rendering icon names coming from the database:
+One component covers every icon and style. Switch styles server-side or render icon names coming from the database:
 
 ```blade
 <x-solar-icon name="heart" weight="linear" />
@@ -67,8 +60,6 @@ Blade Icons also exposes a PHP-side helper, useful outside templates (mailables,
 ```php
 svg('solar-linear-heart', 'w-6 h-6', ['stroke-width' => '2'])->toHtml();
 ```
-
-The same Tailwind rule applies: literal class strings only generate CSS if the file calling `svg()` is covered by your `content` paths — `routes/` is not, by default.
 
 ## PHP enum
 
