@@ -1,0 +1,97 @@
+---
+title: Laravel Blade
+description: Solar Icons for Laravel Blade views, powered by Blade Icons.
+---
+
+```bash
+composer require solar-icons/blade
+```
+
+## Installation
+
+Solar Icons Blade uses [Blade Icons](https://github.com/driesvints/blade-icons) under the hood. Please refer to the Blade Icons readme for additional functionality such as caching and default attributes. With over 8,000 shipped SVGs, we strongly recommend enabling [icon caching](https://github.com/driesvints/blade-icons#icon-caching).
+
+## Static icons
+
+Icons ship in six styles — `linear`, `bold`, `broken`, `outline`, `bold-duotone` and `line-duotone` — as self-closing Blade components which compile to inline SVG:
+
+```blade
+<x-solar-linear-heart />
+<x-solar-bold-heart />
+<x-solar-line-duotone-heart />
+```
+
+Pass classes and inline styles like any Blade component:
+
+```blade
+<x-solar-linear-heart class="w-6 h-6 text-gray-500" />
+<x-solar-linear-heart style="color: #555" />
+```
+
+Size icons with `width`/`height` and tune stroke icons with `stroke-width`:
+
+```blade
+<x-solar-linear-heart width="48" height="48" stroke-width="2" />
+```
+
+Duotone styles (`bold-duotone`, `line-duotone`) expose a second color through CSS variables, resolved by the browser at render time:
+
+```blade
+<x-solar-line-duotone-heart style="--solar-secondary-color: #2563eb; --solar-secondary-opacity: 0.5" />
+```
+
+<Callout type="warn">
+    Tailwind generates CSS by scanning your template files. Classes passed as dynamic PHP strings
+    (variables, database values) are invisible to that scan — safelist them in `tailwind.config.js`
+    or prefer `width`/`height`/`style` attributes, which always work.
+</Callout>
+
+## Dynamic icons
+
+One component covers every icon and style — handy for switching styles server-side or rendering icon names coming from the database:
+
+```blade
+<x-solar-icon name="heart" weight="linear" />
+<x-solar-icon name="heart" weight="bold-duotone" class="w-6 h-6" />
+<x-solar-icon :name="$menuItem->icon" weight="linear" />
+```
+
+`weight` defaults to `linear`. Unknown names or weights fail fast with an exception instead of rendering silently broken output.
+
+## PHP enum
+
+Every canonical icon is available as a typed enum case, useful with Filament and other PHP-driven UIs:
+
+```php
+use SolarIcons\Blade\SolarIcon;
+
+svg(SolarIcon::LinearHeart->value)->toHtml();
+SolarIcon::LineDuotoneHeart->weight(); // 'line-duotone'
+```
+
+## Raw SVG assets
+
+Publish the raw SVGs to use them as static assets:
+
+```bash
+php artisan vendor:publish --tag=solar-icons-blade --force
+```
+
+```blade
+<img src="{{ asset('vendor/solar-icons-blade/linear-heart.svg') }}" width="10" height="10" />
+```
+
+## Configuration
+
+Publish the config file to set default classes or attributes applied to every icon:
+
+```bash
+php artisan vendor:publish --tag=solar-icons-blade-config
+```
+
+<Callout type="info">
+    Found a bug in the PHP layer? Open it in the [blade
+    repository](https://github.com/solar-icons/blade). For new icon requests and everything else,
+    use the [main repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one
+    place.
+</Callout>
