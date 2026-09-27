@@ -64,6 +64,11 @@ export const config: Config = {
                         icon: <Icon icon="devicon:angular" />,
                     },
                     {
+                        label: 'Laravel Blade',
+                        url: '/docs/v2/packages/blade',
+                        icon: <Icon icon="devicon:laravel" />,
+                    },
+                    {
                         label: 'static',
                         url: '/docs/v2/packages/static',
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
