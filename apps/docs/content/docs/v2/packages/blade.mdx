@@ -41,9 +41,11 @@ Duotone styles (`bold-duotone`, `line-duotone`) expose a second color through CS
 ```
 
 <Callout type="warn">
-    Tailwind generates CSS by scanning your template files. Classes passed as dynamic PHP strings
-    (variables, database values) are invisible to that scan — safelist them in `tailwind.config.js`
-    or prefer `width`/`height`/`style` attributes, which always work.
+    Tailwind generates CSS by scanning your template files for literal class names — so `class="w-6 h-6"`
+    written in a Blade template works on every component, including `<x-solar-icon>`. Only computed
+    values are invisible to that scan (`:class="$variable"`, database content, PHP-built strings, or
+    files outside your `content` paths like `routes/`) — safelist those in `tailwind.config.js`, or
+    prefer `width`/`height`/`style` attributes, which always work.
 </Callout>
 
 ## Dynamic icons
