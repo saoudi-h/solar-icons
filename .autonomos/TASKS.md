@@ -43,7 +43,7 @@
 
 - [x] **[BLADE-P1]** Full catalog generation in `solar-icons/blade`: 8,784 SVGs from `@solar-icons/static`, count/hex/class guards, generated `SolarIcon` enum (8,706 canonical), `output-prefix` per style. Dynamic `<x-solar-icon>` (P2 pulled forward) with fail-fast validation + `SvgMerger`. Playground (Laravel 12, grid + priority challenge) prioritized per maintainer. Class decision locked: files ship class-free, config class is the global hook. CI green (Tests 10 combos + Pint), sync-static workflow verified no-op, docs page added in flagship. `Priority: 🟠` `Complexity: M`
 
-- [ ] **[BLADE-P3]** Publish `solar-icons/blade`: Packagist submit (maintainer account) + GitHub webhook, tag `v2.0.0`, verify `composer require` from a fresh project, list on blade-ui-kit.com directory. Blocked on maintainer action. `Priority: 🟠` `Complexity: S`
+- [/] **[BLADE-P3]** Publish `solar-icons/blade`: Packagist submit done by maintainer + webhook set, tag `v2.0.0` cut via sync workflow, Packagist import + fresh-project `composer require` verified working. Left: list on blade-ui-kit.com directory (curation process owned by Dries Vints, needs outreach). `Priority: 🟠` `Complexity: S`
 
 - [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, correct alias false positives, maintain a separate compound-family easy-win queue, define non-breaking naming normalization, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. **Issue:** `ISSUE-ICON-SHAPE-NAMING`. `Priority: 🔴` `Complexity: XL`
 
