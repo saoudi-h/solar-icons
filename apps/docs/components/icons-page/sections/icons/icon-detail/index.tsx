@@ -10,6 +10,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { activeCategoryAtom, useSelectedIcon, useStyleURL, useViewModeURL } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
+import { BladeCode } from './BladeCode'
 import { FloatingDrawer } from './FloatingDrawer'
 import { IconVariants } from './IconVariants'
 import { JsCode } from './JsCode'
@@ -110,6 +111,7 @@ const Content: FC = () => {
                     { title: 'Svelte', value: 'svelte', content: <SvelteCode /> },
                     { title: 'Solid', value: 'solid', content: <SolidCode /> },
                     { title: 'Angular', value: 'angular', content: <AngularCode /> },
+                    { title: 'Blade', value: 'blade', content: <BladeCode /> },
                     { title: 'Static', value: 'static', content: <StaticCode /> },
                     { title: 'JS', value: 'js', content: <JsCode /> },
                 ]}

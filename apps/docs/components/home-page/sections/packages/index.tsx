@@ -20,6 +20,9 @@ export interface PackageCardProps {
     link?: string
     githubLink?: string
     npmLink?: string
+    registryLink?: string
+    registryTooltip?: string
+    registryIcon?: string
     content?: string
     iconify: string
     hovered?: boolean
@@ -158,11 +161,15 @@ export const PackageCard: React.FC<PackageCardProps> = ({
     iconify,
     hovered = false,
     npmLink,
+    registryLink,
+    registryTooltip = 'NPM Package',
+    registryIcon = 'devicon:npm',
     link,
     githubLink,
     status,
 }) => {
     const router = useRouter()
+    const packageLink = registryLink ?? npmLink
     return (
         <Card
             className={`
@@ -245,17 +252,17 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         <Icon icon="mdi:github" className="size-4" />
                     </ButtonWithTooltip>
                     <ButtonWithTooltip
-                        tooltip="NPM Package"
-                        aria-label="NPM Package"
+                        tooltip={registryTooltip}
+                        aria-label={registryTooltip}
                         onClick={() => {
-                            if (npmLink) router.push(npmLink)
+                            if (packageLink) router.push(packageLink)
                         }}
-                        disabled={!npmLink}
+                        disabled={!packageLink}
                         size="icon-sm"
                         colors="secondary"
                         variant="ghost"
                         className="rounded-none! border-0! bg-transparent! [&_svg]:size-4">
-                        <Icon icon="devicon:npm" className="size-4" />
+                        <Icon icon={registryIcon} className="size-4" />
                     </ButtonWithTooltip>
                 </ButtonGroup>
             </CardFooter>

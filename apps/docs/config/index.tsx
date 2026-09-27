@@ -202,6 +202,18 @@ export const config: Config = {
                 iconify: 'devicon:angular',
             },
             {
+                title: 'Laravel Blade',
+                link: '/docs/v2/packages/blade',
+                githubLink: 'https://github.com/solar-icons/blade',
+                registryLink: 'https://packagist.org/packages/solar-icons/blade',
+                registryTooltip: 'Packagist Package',
+                registryIcon: 'mdi:package-variant',
+                content:
+                    'Blade components for all six styles, plus a dynamic component and a PHP enum.',
+                status: 'released',
+                iconify: 'devicon:laravel',
+            },
+            {
                 title: 'Static',
                 link: '/docs/v2/packages/static',
                 npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
