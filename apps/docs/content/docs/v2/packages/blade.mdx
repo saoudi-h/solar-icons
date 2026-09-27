@@ -60,6 +60,16 @@ One component covers every icon and style — handy for switching styles server-
 
 `weight` defaults to `linear`. Unknown names or weights fail fast with an exception instead of rendering silently broken output.
 
+## PHP helper
+
+Blade Icons also exposes a PHP-side helper, useful outside templates (mailables, notifications, packages):
+
+```php
+svg('solar-linear-heart', 'w-6 h-6', ['stroke-width' => '2'])->toHtml();
+```
+
+The same Tailwind rule applies: literal class strings only generate CSS if the file calling `svg()` is covered by your `content` paths — `routes/` is not, by default.
+
 ## PHP enum
 
 Every canonical icon is available as a typed enum case, useful with Filament and other PHP-driven UIs:
