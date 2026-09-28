@@ -57,6 +57,7 @@ export function runSearch(query: string | undefined, opts: SearchCliOptions): vo
             tags: r.tags,
             categoryTags: r.categoryTags,
             score: r.score,
+            ...(r.matchedAlias ? { matchedAlias: r.matchedAlias } : {}),
             ...(framework ? { import: importSnippet(r.name, style ?? 'linear', framework) } : {}),
             ...(style ? { styleHint: style } : {}),
         }))
@@ -76,7 +77,8 @@ export function runSearch(query: string | undefined, opts: SearchCliOptions): vo
         const name = pc.cyan(pc.bold(r.name.padEnd(nameW)))
         const cat = pc.dim(r.category.padEnd(16))
         const tags = pc.dim(r.tags.slice(0, 4).join(', '))
-        const base = `  ${name}  ${cat}  ${tags}`
+        const aliasNote = r.matchedAlias ? pc.yellow(` (via deprecated '${r.matchedAlias}')`) : ''
+        const base = `  ${name}  ${cat}  ${tags}${aliasNote}`
         if (framework) {
             const snippet = importSnippet(r.name, style ?? 'linear', framework)
             console.log(`${base}\n    ${pc.dim('→')} ${pc.green(snippet)}`)

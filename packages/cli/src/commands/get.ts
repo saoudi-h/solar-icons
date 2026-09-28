@@ -10,6 +10,7 @@ import {
     FRAMEWORKS,
     importSnippet,
     loadDescriptions,
+    resolveIconName,
     resolveSvgPath,
     cdnSvgUrl,
 } from '../catalog.js'
@@ -43,21 +44,27 @@ export function runGet(name: string | undefined, opts: GetCliOptions): void {
     const framework = parseFramework(opts.framework)
 
     const descs = loadDescriptions()
-    const entry = descs.find(d => d.name === name)
-    if (!entry) {
-        console.error(pc.red(`error: icon '${name}' not found.`))
-        console.error(pc.dim(`Try: solar-icons search "${name}" --limit 10`))
-        process.exit(2)
-    }
-
-    const svgPath = resolveSvgPath(name, style)
-    const cdn = cdnSvgUrl(name, style)
-
-    const snippet = importSnippet(name, style, framework)
+    const resolved = ((): {
+        entry: (typeof descs)[number]
+        alias?: { name: string; reason: string }
+    } => {
+        try {
+            return resolveIconName(descs, name)
+        } catch {
+            console.error(pc.red(`error: icon '${name}' not found.`))
+            console.error(pc.dim(`Try: solar-icons search "${name}" --limit 10`))
+            process.exit(2)
+        }
+    })()
+    const { entry, alias } = resolved
+    const canonical = entry.name
+    const snippet = importSnippet(canonical, style, framework)
+    const svgPath = resolveSvgPath(canonical, style)
+    const cdn = cdnSvgUrl(canonical, style)
 
     if (opts.json) {
         const payload: Record<string, unknown> = {
-            name,
+            name: canonical,
             style,
             framework,
             category: entry.category,
@@ -65,6 +72,10 @@ export function runGet(name: string | undefined, opts: GetCliOptions): void {
             import: snippet,
             cdn,
             svgPath: svgPath ?? null,
+        }
+        if (alias) {
+            payload.requestedName = name
+            payload.deprecated = { alias: alias.name, reason: alias.reason }
         }
         if (svgPath && existsSync(svgPath)) {
             try {
@@ -94,6 +105,11 @@ export function runGet(name: string | undefined, opts: GetCliOptions): void {
     }
 
     console.log(pc.green(snippet))
+    if (alias) {
+        console.log(
+            pc.yellow(`Deprecated name '${alias.name}': ${alias.reason} Using '${canonical}'.`)
+        )
+    }
     console.log(`${pc.bold('Category')}  ${pc.cyan(entry.category)}`)
     console.log(`${pc.bold('CDN')}       ${pc.underline(pc.cyan(cdn))}`)
     if (svgPath && existsSync(svgPath)) {

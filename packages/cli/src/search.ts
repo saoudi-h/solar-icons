@@ -10,6 +10,7 @@ export type SearchOptions = {
 export type SearchResult = IconDescription & {
     score: number
     styleHint: Style
+    matchedAlias?: string
 }
 
 function lc(s: string): string {
@@ -36,12 +37,21 @@ export function searchCatalog(
         const nlc = lc(d.name)
         const tlc = (d.tags ?? []).map(lc).join(' ')
         const ctlc = (d.categoryTags ?? []).map(lc).join(' ')
+        const alc = (d.deprecatedAliases ?? []).map(a => lc(a.name)).join(' ')
 
         let score = 0
+        let matchedAlias: string | undefined
+        const aliasNames = (d.deprecatedAliases ?? []).map(a => a.name)
         if (nlc === q) score = 100
-        else if (nlc.includes(q)) score = 50
+        else if (aliasNames.some(a => lc(a) === q)) {
+            score = 90
+            matchedAlias = aliasNames.find(a => lc(a) === q)
+        } else if (nlc.includes(q)) score = 50
         else if (terms.every(t => nlc.includes(t))) score = 40
-        else if (tlc.includes(q)) score = 30
+        else if (aliasNames.some(a => lc(a).includes(q))) {
+            score = 35
+            matchedAlias = aliasNames.find(a => lc(a).includes(q))
+        } else if (tlc.includes(q)) score = 30
         else if (ctlc.includes(q)) score = 18
         else if (terms.every(t => (tlc + ' ' + ctlc).includes(t))) score = 15
         else if (terms.some(t => nlc.includes(t) || tlc.includes(t) || ctlc.includes(t))) score = 8
@@ -50,7 +60,7 @@ export function searchCatalog(
         // boost category exact match slightly
         if (opts.category) score += 2
 
-        scored.push({ ...d, score, styleHint })
+        scored.push({ ...d, score, styleHint, ...(matchedAlias ? { matchedAlias } : {}) })
     }
 
     scored.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))

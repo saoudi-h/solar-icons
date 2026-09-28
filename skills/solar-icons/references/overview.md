@@ -2,7 +2,7 @@
 
 ## Counts
 
-- `1 268` unique icons × `6` styles = `7 608` SVG variations.
+Run `npx @solar-icons/cli overview` for current figures. Never hardcode counts here; the catalog grows every release.
 - Styles: `Bold` (`bold`), `BoldDuotone` (`bold-duotone`), `Broken` (`broken`), `Linear` (`linear`), `LineDuotone` (`line-duotone`), `Outline` (`outline`).
 - Naming: kebab-case on disk (`bold/heart.svg`), `PascalCase+Icon` in JS (`HeartBoldIcon`), Angular `SolarHeartBold` directive.
 

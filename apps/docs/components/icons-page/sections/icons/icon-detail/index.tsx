@@ -1,5 +1,6 @@
 'use client'
 
+import { Icon } from '@iconify/react'
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
@@ -10,6 +11,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { activeCategoryAtom, useSelectedIcon, useStyleURL, useViewModeURL } from '../context'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
+import { BladeCode } from './BladeCode'
 import { FloatingDrawer } from './FloatingDrawer'
 import { IconVariants } from './IconVariants'
 import { JsCode } from './JsCode'
@@ -103,15 +105,66 @@ const Content: FC = () => {
                 tabs={[
                     { title: 'Icon Variants', value: 'variants', content: <IconVariants /> },
                     { title: 'Tags', value: 'tags', content: <Tags /> },
-                    { title: 'React', value: 'react', content: <ReactCode /> },
-                    { title: 'React Native', value: 'react-native', content: <ReactNativeCode /> },
-                    { title: 'Vue', value: 'vue', content: <VueCode /> },
-                    { title: 'Nuxt', value: 'nuxt', content: <NuxtCode /> },
-                    { title: 'Svelte', value: 'svelte', content: <SvelteCode /> },
-                    { title: 'Solid', value: 'solid', content: <SolidCode /> },
-                    { title: 'Angular', value: 'angular', content: <AngularCode /> },
-                    { title: 'Static', value: 'static', content: <StaticCode /> },
-                    { title: 'JS', value: 'js', content: <JsCode /> },
+                    {
+                        title: 'React',
+                        value: 'react',
+                        icon: <Icon icon="devicon:react" className="size-4" />,
+                        content: <ReactCode />,
+                    },
+                    {
+                        title: 'React Native',
+                        value: 'react-native',
+                        icon: <Icon icon="devicon:react" className="size-4" />,
+                        content: <ReactNativeCode />,
+                    },
+                    {
+                        title: 'Vue',
+                        value: 'vue',
+                        icon: <Icon icon="devicon:vuejs" className="size-4" />,
+                        content: <VueCode />,
+                    },
+                    {
+                        title: 'Nuxt',
+                        value: 'nuxt',
+                        icon: <Icon icon="devicon:nuxtjs" className="size-4" />,
+                        content: <NuxtCode />,
+                    },
+                    {
+                        title: 'Svelte',
+                        value: 'svelte',
+                        icon: <Icon icon="devicon:svelte" className="size-4" />,
+                        content: <SvelteCode />,
+                    },
+                    {
+                        title: 'Solid',
+                        value: 'solid',
+                        icon: <Icon icon="devicon:solidjs" className="size-4" />,
+                        content: <SolidCode />,
+                    },
+                    {
+                        title: 'Angular',
+                        value: 'angular',
+                        icon: <Icon icon="devicon:angular" className="size-4" />,
+                        content: <AngularCode />,
+                    },
+                    {
+                        title: 'Blade',
+                        value: 'blade',
+                        icon: <Icon icon="devicon:laravel" className="size-4" />,
+                        content: <BladeCode />,
+                    },
+                    {
+                        title: 'Static',
+                        value: 'static',
+                        icon: <Icon icon="vscode-icons:file-type-svg" className="size-4" />,
+                        content: <StaticCode />,
+                    },
+                    {
+                        title: 'JS',
+                        value: 'js',
+                        icon: <Icon icon="devicon:javascript" className="size-4" />,
+                        content: <JsCode />,
+                    },
                 ]}
             />
         </div>

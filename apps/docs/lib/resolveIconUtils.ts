@@ -49,7 +49,18 @@ export type IconifyFrameworkIcon =
     | 'angular'
     | 'static'
     | 'js'
-export const iconifyIcons = ['react', 'vue', 'nuxt', 'svelte', 'solid', 'angular', 'static', 'js']
+    | 'laravel'
+export const iconifyIcons = [
+    'react',
+    'vue',
+    'nuxt',
+    'svelte',
+    'solid',
+    'angular',
+    'static',
+    'js',
+    'laravel',
+]
 
 export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
     const iconifyMap = {
@@ -61,6 +72,7 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
         angular: 'devicon:angular',
         static: 'vscode-icons:file-type-svg',
         js: 'devicon:javascript',
+        laravel: 'devicon:laravel',
     }
     const iconName = iconifyMap[icon as keyof typeof iconifyMap]
     return createElement(Icon, { icon: iconName })

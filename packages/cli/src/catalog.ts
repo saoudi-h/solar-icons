@@ -3,11 +3,19 @@ import { createRequire } from 'node:module'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+export type DeprecatedAlias = {
+    name: string
+    replacement: string
+    reason: string
+    deprecatedSince?: string
+}
+
 export type IconDescription = {
     name: string
     category: string
     categoryTags: string[]
     tags: string[]
+    deprecatedAliases?: DeprecatedAlias[]
 }
 
 export const STYLES = [
@@ -30,6 +38,7 @@ export const FRAMEWORKS = [
     'nuxt',
     'static',
     'js',
+    'blade',
 ] as const
 export type Framework = (typeof FRAMEWORKS)[number]
 
@@ -51,6 +60,26 @@ export function toPascalKebab(kebab: string): string {
         .split('-')
         .map(p => p.charAt(0).toUpperCase() + p.slice(1))
         .join('')
+}
+
+/**
+ * Resolve a requested name to its catalog entry. Exact canonical names win;
+ * deprecated aliases redirect to their canonical entry so renames keep
+ * working with a deprecation notice instead of a "not found" error.
+ */
+export function resolveIconName(
+    descriptions: IconDescription[],
+    name: string
+): { entry: IconDescription; alias?: DeprecatedAlias } {
+    const entry = descriptions.find(d => d.name === name)
+    if (entry) return { entry }
+
+    for (const candidate of descriptions) {
+        const alias = candidate.deprecatedAliases?.find(a => a.name === name)
+        if (alias) return { entry: candidate, alias }
+    }
+
+    throw new Error(`icon '${name}' not found.`)
 }
 
 /**
@@ -86,6 +115,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   svelte: import HeartIcon from '@solar-icons/svelte/bold/heart'  (default)
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
+ *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
  */
 export function importSnippet(name: string, style: Style, framework: Framework): string {
     const kebab = name
@@ -110,6 +140,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `import url from "@solar-icons/static/${style}/${kebab}.svg"; // <img src={url} alt="${kebab}" />`
         case 'js':
             return `import { createIcons, icons } from "@solar-icons/js"; // icons["${kebab}-${style}"]`
+        case 'blade':
+            return `<x-solar-${style}-${kebab} />`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -125,6 +157,7 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'static':
         case 'js':
         case 'nuxt':
+        case 'blade':
             return importSnippet(name, style, framework)
         default:
             return `import { ${rooted} } from "@solar-icons/${framework}";`

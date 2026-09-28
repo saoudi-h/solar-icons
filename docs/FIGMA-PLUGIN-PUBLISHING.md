@@ -73,7 +73,7 @@ Figma's current flow for an existing published classic plugin is:
    `packages/figma-plugin/manifest.json`, confirm, and reopen the menu.
 6. Review the **Publish plugin** modal. Keep the existing listing information unless the current
    name, description, tags, artwork, or security information needs updating.
-7. Update the global description when a current user-facing fact changes, especially the icon count.
+7. Paste the Community description from `packages/figma-plugin/community/listing-description.md`. Update that file first if any user-facing fact changed (especially the icon count, which `pnpm check:icon-inventory` enforces), then paste verbatim.
 8. If Figma shows an optional release-notes field, use it if useful, but do not treat it as the
    repository's version history.
 9. Click **Publish**.

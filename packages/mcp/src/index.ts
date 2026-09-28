@@ -40,7 +40,7 @@ function truncate(text: string): { text: string; truncated: boolean } {
 }
 
 function toFrameworkList(): string {
-    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js'
+    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade'
 }
 
 // ---------------------------------------------------------------------------
@@ -94,6 +94,7 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
                     'nuxt',
                     'static',
                     'js',
+                    'blade',
                 ] as const)
                 .optional()
                 .describe('Framework for import snippet'),
@@ -114,10 +115,17 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
                 style: style as Style | undefined,
                 category,
             })
-            const mapped = results.map(r => ({
+            const mapped: Array<{
+                name: string
+                category: string
+                tags: string[]
+                matchedAlias?: string
+                import?: string
+            }> = results.map(r => ({
                 name: r.name,
                 category: r.category,
                 tags: r.tags.slice(0, 6),
+                ...(r.matchedAlias ? { matchedAlias: r.matchedAlias } : {}),
                 ...(framework
                     ? {
                           import: importSnippet(
@@ -137,8 +145,11 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
             }
             const lines = [`# Search: "${query}" — ${mapped.length} result(s)`, '']
             for (const r of mapped) {
+                const aliasNote = (r as any).matchedAlias
+                    ? ` (via deprecated '${(r as any).matchedAlias}')`
+                    : ''
                 lines.push(
-                    `- **${r.name}** — ${r.category} — ${r.tags.join(', ')}${(r as any).import ? ` → ${(r as any).import}` : ''}`
+                    `- **${r.name}** — ${r.category} — ${r.tags.join(', ')}${aliasNote}${(r as any).import ? ` → ${(r as any).import}` : ''}`
                 )
             }
             const text = lines.join('\n')
@@ -192,6 +203,7 @@ Returns: { name, style, framework, category, import, cdn, svg } + markdown
                     'nuxt',
                     'static',
                     'js',
+                    'blade',
                 ] as const)
                 .default('react')
                 .describe('Framework for snippet'),
@@ -379,6 +391,7 @@ Returns: { name, category, tags, styles, imports, rootImports, svg } + markdown
                 'nuxt',
                 'static',
                 'js',
+                'blade',
             ] as const) {
                 imports[fw] = importSnippet(name, 'linear', fw as any)
             }

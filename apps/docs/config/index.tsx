@@ -64,6 +64,11 @@ export const config: Config = {
                         icon: <Icon icon="devicon:angular" />,
                     },
                     {
+                        label: 'Laravel Blade',
+                        url: '/docs/v2/packages/blade',
+                        icon: <Icon icon="devicon:laravel" />,
+                    },
+                    {
                         label: 'static',
                         url: '/docs/v2/packages/static',
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
@@ -200,6 +205,18 @@ export const config: Config = {
                 content: 'Angular 17+ standalone components using Signals.',
                 status: 'released',
                 iconify: 'devicon:angular',
+            },
+            {
+                title: 'Laravel Blade',
+                link: '/docs/v2/packages/blade',
+                githubLink: 'https://github.com/solar-icons/blade',
+                registryLink: 'https://packagist.org/packages/solar-icons/blade',
+                registryTooltip: 'Packagist Package',
+                registryIcon: 'mdi:package-variant',
+                content:
+                    'Blade components for all six styles, plus a dynamic component and a PHP enum.',
+                status: 'released',
+                iconify: 'devicon:laravel',
             },
             {
                 title: 'Static',
