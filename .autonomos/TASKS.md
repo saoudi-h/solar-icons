@@ -47,6 +47,8 @@
 
 - [x] **[BLADE-CLI]** Cover `solar-icons/blade` in JS tooling: CLI `--framework blade` emits `<x-solar-bold-heart />` (enum + snippet + help + README + tests), MCP accepts `blade` in search/get/info (3 hardcoded lists), skill detects Laravel via `composer.json` + matrix row. Changesets minor for cli + mcp. CLI 14/14 tests green, e2e verified. `Priority: 🟠` `Complexity: S`
 
+- [x] **[TOOL-FRESHNESS]** Catalog freshness audit + fixes: CLI `get`/`search` resolve deprecated aliases to canonical entries (redirect + notice + `matchedAlias`), skill prose stripped of hardcoded counts (doctrine: `overview` is authoritative), new `pnpm check:skill-counts` CI gate in `release.yml`, `docs/RELEASE-PROCEDURE.md` executable checklist (npm, catalog, Blade, skill, Figma). Verified: changesets already cascades static→cli→mcp (changelogs prove it), so exact published pins stay fresh. `Priority: 🟠` `Complexity: M`
+
 - [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, correct alias false positives, maintain a separate compound-family easy-win queue, define non-breaking naming normalization, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. **Issue:** `ISSUE-ICON-SHAPE-NAMING`. `Priority: 🔴` `Complexity: XL`
 
 - [/] **[DOCS-AI-TOOLS-SHOWCASE]** Restyle the AI tools showcase on the docs homepage. Replace the static pseudo-stepper with an interactive "Agent in Action" window demonstrating real prompt, tool resolution, rendered Solar icon, and import snippet across MCP, Skill, and CLI modalities. `Priority: 🟠` `Complexity: M`
