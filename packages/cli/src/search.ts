@@ -37,7 +37,6 @@ export function searchCatalog(
         const nlc = lc(d.name)
         const tlc = (d.tags ?? []).map(lc).join(' ')
         const ctlc = (d.categoryTags ?? []).map(lc).join(' ')
-        const alc = (d.deprecatedAliases ?? []).map(a => lc(a.name)).join(' ')
 
         let score = 0
         let matchedAlias: string | undefined
