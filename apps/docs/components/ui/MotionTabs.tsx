@@ -9,6 +9,7 @@ import { Button } from './button'
 type MotionTab = {
     title: string
     value: string
+    icon?: React.ReactNode
     content?: string | React.ReactNode | any
 }
 
@@ -134,14 +135,15 @@ export const MotionTabs = ({
                             />
                         )}
 
-                        {/* Tab text */}
+                        {/* Tab icon + text */}
                         <span
                             className={cn(
-                                'relative block transition-colors duration-200',
+                                'relative flex items-center gap-1.5 transition-colors duration-200',
                                 isActive(tab)
                                     ? 'text-foreground'
                                     : `text-default-600 hover:text-default-900`
                             )}>
+                            {tab.icon}
                             {tab.title}
                         </span>
                     </Button>
