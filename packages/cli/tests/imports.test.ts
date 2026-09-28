@@ -75,6 +75,16 @@ describe('import snippets are verified against packages', () => {
         expect(rootComponentName('home', 'bold', 'angular')).toBe('SolarHomeBold')
     })
 
+    it('blade emits a Blade component tag, not an import', () => {
+        // solar-icons/blade lives outside this monorepo (solar-icons org),
+        // so there is no local file to verify — assert exact strings.
+        expect(importSnippet('heart', 'bold', 'blade')).toBe('<x-solar-bold-heart />')
+        expect(importSnippet('arrow-up', 'line-duotone', 'blade')).toBe(
+            '<x-solar-line-duotone-arrow-up />'
+        )
+        expect(rootImportSnippet('heart', 'bold', 'blade')).toBe('<x-solar-bold-heart />')
+    })
+
     it('docs example HeartIcon from bold/heart exists', () => {
         // mirrors apps/docs/content/docs/v2/packages/react.mdx examples
         expect(importSnippet('heart', 'bold', 'react')).toBe(

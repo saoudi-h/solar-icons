@@ -45,6 +45,8 @@
 
 - [/] **[BLADE-P3]** Publish `solar-icons/blade`: Packagist submit done by maintainer + webhook set, tag `v2.0.0` cut via sync workflow, Packagist import + fresh-project `composer require` verified working. Left: list on blade-ui-kit.com directory (curation process owned by Dries Vints, needs outreach). `Priority: 🟠` `Complexity: S`
 
+- [x] **[BLADE-CLI]** Cover `solar-icons/blade` in JS tooling: CLI `--framework blade` emits `<x-solar-bold-heart />` (enum + snippet + help + README + tests), MCP accepts `blade` in search/get/info (3 hardcoded lists), skill detects Laravel via `composer.json` + matrix row. Changesets minor for cli + mcp. CLI 14/14 tests green, e2e verified. `Priority: 🟠` `Complexity: S`
+
 - [/] **[ICON-SHADCN-INTEGRATION]** Build a reproducible shadcn/ui compatibility lane for Solar Icons: audit the current shadcn registry icon requirements, correct alias false positives, maintain a separate compound-family easy-win queue, define non-breaking naming normalization, prioritize and implement missing six-style icons, validate the upstream integration contract, and prepare the contribution documentation. **Issue:** `ISSUE-ICON-SHAPE-NAMING`. `Priority: 🔴` `Complexity: XL`
 
 - [/] **[DOCS-AI-TOOLS-SHOWCASE]** Restyle the AI tools showcase on the docs homepage. Replace the static pseudo-stepper with an interactive "Agent in Action" window demonstrating real prompt, tool resolution, rendered Solar icon, and import snippet across MCP, Skill, and CLI modalities. `Priority: 🟠` `Complexity: M`

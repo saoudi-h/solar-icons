@@ -40,7 +40,7 @@ function truncate(text: string): { text: string; truncated: boolean } {
 }
 
 function toFrameworkList(): string {
-    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js'
+    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade'
 }
 
 // ---------------------------------------------------------------------------
@@ -94,6 +94,7 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
                     'nuxt',
                     'static',
                     'js',
+                    'blade',
                 ] as const)
                 .optional()
                 .describe('Framework for import snippet'),
@@ -192,6 +193,7 @@ Returns: { name, style, framework, category, import, cdn, svg } + markdown
                     'nuxt',
                     'static',
                     'js',
+                    'blade',
                 ] as const)
                 .default('react')
                 .describe('Framework for snippet'),
@@ -379,6 +381,7 @@ Returns: { name, category, tags, styles, imports, rootImports, svg } + markdown
                 'nuxt',
                 'static',
                 'js',
+                'blade',
             ] as const) {
                 imports[fw] = importSnippet(name, 'linear', fw as any)
             }
