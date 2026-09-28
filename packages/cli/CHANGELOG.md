@@ -1,5 +1,13 @@
 # @solar-icons/cli
 
+## 2.5.0
+
+### Minor Changes
+
+- [#566](https://github.com/saoudi-h/solar-icons/pull/566) [`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add `blade` framework support: `--framework blade` emits `<x-solar-bold-heart />` component tags for `solar-icons/blade`.
+
+- [#566](https://github.com/saoudi-h/solar-icons/pull/566) [`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Resolve deprecated icon aliases: `get` redirects old names to canonical entries with a deprecation notice, `search` surfaces alias matches. Renames keep working instead of failing.
+
 ## 2.4.2
 
 ### Patch Changes
