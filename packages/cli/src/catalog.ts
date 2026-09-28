@@ -3,11 +3,19 @@ import { createRequire } from 'node:module'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+export type DeprecatedAlias = {
+    name: string
+    replacement: string
+    reason: string
+    deprecatedSince?: string
+}
+
 export type IconDescription = {
     name: string
     category: string
     categoryTags: string[]
     tags: string[]
+    deprecatedAliases?: DeprecatedAlias[]
 }
 
 export const STYLES = [
@@ -52,6 +60,26 @@ export function toPascalKebab(kebab: string): string {
         .split('-')
         .map(p => p.charAt(0).toUpperCase() + p.slice(1))
         .join('')
+}
+
+/**
+ * Resolve a requested name to its catalog entry. Exact canonical names win;
+ * deprecated aliases redirect to their canonical entry so renames keep
+ * working with a deprecation notice instead of a "not found" error.
+ */
+export function resolveIconName(
+    descriptions: IconDescription[],
+    name: string
+): { entry: IconDescription; alias?: DeprecatedAlias } {
+    const entry = descriptions.find(d => d.name === name)
+    if (entry) return { entry }
+
+    for (const candidate of descriptions) {
+        const alias = candidate.deprecatedAliases?.find(a => a.name === name)
+        if (alias) return { entry: candidate, alias }
+    }
+
+    throw new Error(`icon '${name}' not found.`)
 }
 
 /**

@@ -50,6 +50,9 @@ jobs:
             - name: Validate package exports
               run: pnpm check:exports
 
+            - name: Validate skill catalog freshness
+              run: pnpm check:skill-counts
+
             - name: Validate Figma catalog synchronization
               run: pnpm check:figma-catalog
 

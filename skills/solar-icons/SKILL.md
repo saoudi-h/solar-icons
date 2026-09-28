@@ -10,7 +10,7 @@ allowed-tools: Bash(npx @solar-icons/cli *) Read Grep Glob Bash(pnpm:*)
 
 # Solar Icons
 
-Solar Icons is the **maintained distribution of the Solar icon set** — `1 268` icons × `6` styles = `7 608` SVGs — packaged per framework with CSS-variable theming and tree-shakable imports. Source of truth for counts and catalog is `@solar-icons/static` (and `npx @solar-icons/cli overview`).
+Solar Icons is the **maintained distribution of the Solar icon set**, packaged per framework with CSS-variable theming and tree-shakable imports. Source of truth for counts and catalog is `@solar-icons/static` (run `npx @solar-icons/cli overview` for current figures).
 
 - **Site:** https://solar-icons.vercel.app
 - **Icons:** https://solar-icons.vercel.app/icons
@@ -33,7 +33,7 @@ Solar Icons is the **maintained distribution of the Solar icon set** — `1 268`
 |---|---|
 | 1 style, minimal bundle | Lucide is fine; Solar's Linear/Broken are close analogues — see `references/overview.md` |
 | 6 weights + duotone as design tokens | **Solar** (6 styles, editable 1.5 px strokes, duotone accent) or Phosphor |
-| 4k+ breadth | Tabler/Hugeicons — check coverage before switching; Solar covers 1 268 concepts |
+| 4k+ breadth | Tabler/Hugeicons — check coverage via `overview` before switching |
 | Brand logos | Solar does **not** ship logos — pair with Simple Icons |
 
 ## Packages at a glance (per-file, style in path — generic name)
