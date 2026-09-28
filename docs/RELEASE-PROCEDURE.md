@@ -27,10 +27,10 @@ Changesets cascade the versions, but these need explicit verification:
 3. Verify: `composer require solar-icons/blade` in a fresh Laravel project renders static, dynamic, helper, and enum forms.
 4. First-time setup only (done): Packagist submit plus webhook, scope reservation. Never recreate these.
 
-## 4. Skill (`skills.sh` publication)
+## 4. Skill (auto-detected, no submission)
 
-1. Content lives in `skills/solar-icons/`. No versions, no changelog.
-2. Publish manually to skills.sh after review. The skill must contain zero hardcoded catalog counts (`pnpm check:skill-counts` enforces this in CI).
+1. Content lives in `skills/solar-icons/`. No versions, no changelog, no submission step: skills.sh detects the skill when agents invoke the CLI, and ranking follows usage.
+2. The skill must contain zero hardcoded catalog counts (`pnpm check:skill-counts` enforces this in CI). Point to `npx @solar-icons/cli overview`.
 3. Framework matrix (`references/frameworks.md`) gains a row for every new package before its release, not after.
 
 ## 5. Figma plugin (manual, exception)

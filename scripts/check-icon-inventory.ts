@@ -44,6 +44,7 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
     { relativePath: 'packages/core/AGENT.md', counts: ['svg'] },
     { relativePath: 'packages/core/EXTENDING-ICON-SET.md', counts: ['logical'] },
     { relativePath: 'packages/figma-plugin/community/presentation.html', counts: ['logical'] },
+    { relativePath: 'packages/figma-plugin/community/listing-description.md', counts: ['logical'] },
     { relativePath: 'packages/nuxt/AGENT.md', counts: ['logical', 'svg'] },
     { relativePath: 'packages/nuxt/playground/app/pages/gallery.vue', counts: ['logical', 'svg'] },
     { relativePath: 'packages/vue/AGENT.md', counts: ['logical'] },
