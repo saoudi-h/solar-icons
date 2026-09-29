@@ -1,5 +1,17 @@
 # @solar-icons/mcp
 
+## 2.3.0
+
+### Minor Changes
+
+- [#566](https://github.com/saoudi-h/solar-icons/pull/566) [`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Accept `blade` as a framework in `solar_search` and `solar_get`, emitting `<x-solar-bold-heart />` snippets for `solar-icons/blade`.
+
+### Patch Changes
+
+- [#566](https://github.com/saoudi-h/solar-icons/pull/566) [`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Surface `matchedAlias` in search results when the match came through a deprecated icon name.
+- Updated dependencies [[`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86), [`6092e2a`](https://github.com/saoudi-h/solar-icons/commit/6092e2a6c544daf4007aa89795a64990601b3b86)]:
+  - @solar-icons/cli@2.5.0
+
 ## 2.2.2
 
 ### Patch Changes
