@@ -21,7 +21,7 @@ Adjust the path to where this package sits relative to the app. The example app 
 ## Usage
 
 ```dart
-import 'package:solar_icons/icons.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 HomeIcon(
   size: 32,
