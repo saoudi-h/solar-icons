@@ -239,14 +239,20 @@ const DYNAMIC_BUILD = `  @override
   }`
 
 /**
- * Base64 doc preview of a raw core SVG, mirroring the React package JSDoc
- * (`![img](data:image/svg+xml;base64,...)`). Doc comments never reach the
- * compiled app: the Dart toolchain discards them before tree-shaking, so
- * previews cost source-download size only, measured with
- * `dart pub publish --dry-run`.
+ * Base64 doc preview of a raw core SVG, mirroring `parseSvgs` in
+ * packages/core/src/parser.ts: 20x20 with a white background `<rect>` so the
+ * preview stays readable on dark IDE themes, then base64. Same line as the
+ * React JSDoc (`![img](data:image/svg+xml;base64,...)`).
+ * Doc comments never reach the compiled app: the Dart toolchain discards
+ * them before tree-shaking, so previews cost source-download size only,
+ * measured with `dart pub publish --dry-run`.
  */
 function docPreview(raw) {
-    return `/// ![img](data:image/svg+xml;base64,${Buffer.from(raw).toString('base64')})`
+    const preview = raw.replace(
+        /<svg[^>]*>/,
+        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="#FFF" />'
+    )
+    return `/// ![img](data:image/svg+xml;base64,${Buffer.from(preview).toString('base64')})`
 }
 
 function dataPayload(iconName, field, parsed) {
@@ -276,7 +282,6 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The \`${icon.name}\` icon in the ${field} style.
 ${docPreview(parsed.raw)}
 class ${className} extends StatelessWidget {
   /// Creates the \`${icon.name}\` icon in the ${field} style.
@@ -319,11 +324,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The \`${icon.name}\` icon in every style.
-///
-/// Prefer the static widgets (e.g. \`${pascal(icon.name)}LinearIcon\`) when the
-/// style is known upfront: they embed a single SVG. Use this widget when the
-/// style is only known at runtime.
-${STYLES.map(([styleDir, field]) => docPreview(icon.styles.get(styleDir).raw)).join('\n')}
+${STYLES.map(([styleDir]) => `${docPreview(icon.styles.get(styleDir).raw)} ${styleDir}`).join('\n')}
 class ${className} extends StatelessWidget {
   /// Creates the \`${icon.name}\` icon.
   ///

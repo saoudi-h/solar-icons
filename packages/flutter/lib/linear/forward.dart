@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `forward` icon in the linear style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjUgMTdMMTkuNSAxMkwxNC41IDdNMTkuNSAxMkw5LjUgMTJDNy44MzMzMyAxMiA0LjUgMTMgNC41IDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNC41IDE3TDE5LjUgMTJMMTQuNSA3TTE5LjUgMTJMOS41IDEyQzcuODMzMzMgMTIgNC41IDEzIDQuNSAxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class ForwardLinearIcon extends StatelessWidget {
   /// Creates the `forward` icon in the linear style.
   const ForwardLinearIcon({

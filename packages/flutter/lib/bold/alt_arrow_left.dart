@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `alt-arrow-left` icon in the bold style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMTY0ODUgMTEuNjI5NkwxNC43OTUzIDUuMTk5OUMxNS4yMDkxIDQuNzk4NjkgMTYgNS4wNDE4OSAxNiA1LjU3MDNMMTYgMTguNDI5N0MxNiAxOC45NTgxIDE1LjIwOTEgMTkuMjAxMyAxNC43OTUzIDE4LjgwMDFMOC4xNjQ4NSAxMi4zNzA0QzcuOTQ1MDUgMTIuMTU3MyA3Ljk0NTA1IDExLjg0MjcgOC4xNjQ4NSAxMS42Mjk2WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik04LjE2NDg1IDExLjYyOTZMMTQuNzk1MyA1LjE5OTlDMTUuMjA5MSA0Ljc5ODY5IDE2IDUuMDQxODkgMTYgNS41NzAzTDE2IDE4LjQyOTdDMTYgMTguOTU4MSAxNS4yMDkxIDE5LjIwMTMgMTQuNzk1MyAxOC44MDAxTDguMTY0ODUgMTIuMzcwNEM3Ljk0NTA1IDEyLjE1NzMgNy45NDUwNSAxMS44NDI3IDguMTY0ODUgMTEuNjI5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class AltArrowLeftBoldIcon extends StatelessWidget {
   /// Creates the `alt-arrow-left` icon in the bold style.
   const AltArrowLeftBoldIcon({

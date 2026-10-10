@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `alt-arrow-right` icon in the bold style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjgzNTEgMTEuNjI5Nkw5LjIwNDY3IDUuMTk5OUM4Ljc5MDk0IDQuNzk4NjkgOCA1LjA0MTg5IDggNS41NzAzTDggMTguNDI5N0M4IDE4Ljk1ODEgOC43OTA5NCAxOS4yMDEzIDkuMjA0NjcgMTguODAwMUwxNS44MzUxIDEyLjM3MDRDMTYuMDU1IDEyLjE1NzMgMTYuMDU0OSAxMS44NDI3IDE1LjgzNTEgMTEuNjI5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0xNS44MzUxIDExLjYyOTZMOS4yMDQ2NyA1LjE5OTlDOC43OTA5NCA0Ljc5ODY5IDggNS4wNDE4OSA4IDUuNTcwM0w4IDE4LjQyOTdDOCAxOC45NTgxIDguNzkwOTQgMTkuMjAxMyA5LjIwNDY3IDE4LjgwMDFMMTUuODM1MSAxMi4zNzA0QzE2LjA1NSAxMi4xNTczIDE2LjA1NDkgMTEuODQyNyAxNS44MzUxIDExLjYyOTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class AltArrowRightBoldIcon extends StatelessWidget {
   /// Creates the `alt-arrow-right` icon in the bold style.
   const AltArrowRightBoldIcon({

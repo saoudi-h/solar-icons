@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `play` icon in the bold style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjQwODYgOS4zNTI1OEMyMy41MzA1IDEwLjUwNjUgMjMuNTMwNSAxMy40OTM1IDIxLjQwODYgMTQuNjQ3NEw4LjU5NjYyIDIxLjYxNDVDNi41MzQzNSAyMi43MzYgNCAyMS4yNzYzIDQgMTguOTY3MUw0IDUuMDMyOUM0IDIuNzIzNjggNi41MzQzNSAxLjI2NDAyIDguNTk2NjEgMi4zODU0OEwyMS40MDg2IDkuMzUyNThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMS40MDg2IDkuMzUyNThDMjMuNTMwNSAxMC41MDY1IDIzLjUzMDUgMTMuNDkzNSAyMS40MDg2IDE0LjY0NzRMOC41OTY2MiAyMS42MTQ1QzYuNTM0MzUgMjIuNzM2IDQgMjEuMjc2MyA0IDE4Ljk2NzFMNCA1LjAzMjlDNCAyLjcyMzY4IDYuNTM0MzUgMS4yNjQwMiA4LjU5NjYxIDIuMzg1NDhMMjEuNDA4NiA5LjM1MjU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class PlayBoldIcon extends StatelessWidget {
   /// Creates the `play` icon in the bold style.
   const PlayBoldIcon({

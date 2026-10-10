@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `user-rounded` icon in the boldDuotone style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSI0IiBmaWxsPSIjMUMyNzRDIi8+CjxlbGxpcHNlIG9wYWNpdHk9IjAuNSIgY3g9IjEyIiBjeT0iMTciIHJ4PSI3IiByeT0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8ZWxsaXBzZSBvcGFjaXR5PSIwLjUiIGN4PSIxMiIgY3k9IjE3IiByeD0iNyIgcnk9IjQiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class UserRoundedBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `user-rounded` icon in the boldDuotone style.
   const UserRoundedBoldDuotoneIcon({

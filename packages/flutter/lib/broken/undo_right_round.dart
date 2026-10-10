@@ -8,8 +8,7 @@ import '../src/solar_icon_data.dart';
 import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
-/// The `undo-right-round` icon in the broken style.
-/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDdIOUM2LjIzODU3IDcgNCA5LjIzODU3IDMuOTk5OTkgMTJDMy45OTk5OSAxNC43NjE0IDYuMjM4NTcgMTcgOC45OTk5OSAxN00xNyAxMEwyMCA3TDE3IDRNMTYgMTdIMTMiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+/// ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkYiIC8+CjxwYXRoIGQ9Ik0yMCA3SDlDNi4yMzg1NyA3IDQgOS4yMzg1NyAzLjk5OTk5IDEyQzMuOTk5OTkgMTQuNzYxNCA2LjIzODU3IDE3IDguOTk5OTkgMTdNMTcgMTBMMjAgN0wxNyA0TTE2IDE3SDEzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
 class UndoRightRoundBrokenIcon extends StatelessWidget {
   /// Creates the `undo-right-round` icon in the broken style.
   const UndoRightRoundBrokenIcon({
