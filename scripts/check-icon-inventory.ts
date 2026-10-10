@@ -52,6 +52,7 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
 
 const PUBLIC_ICON_PACKAGE_READMES = [
     'angular',
+    'flutter',
     'js',
     'nuxt',
     'react',
