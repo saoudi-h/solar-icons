@@ -25,9 +25,8 @@ migrate_working_dir/
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
 /pubspec.lock
 
-# Generated from packages/core/svgs by tool/generate_icons.mjs
-/lib/icons/
-/lib/icons.dart
+# Generated icon output is committed (repo convention): regenerate with
+# `node tool/generate_icons.mjs` from the repository root checkout.
 **/doc/api/
 .dart_tool/
 .flutter-plugins-dependencies

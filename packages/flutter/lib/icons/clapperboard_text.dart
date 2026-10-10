@@ -1,0 +1,133 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_theme.dart';
+
+/// The `clapperboard-text` icon.
+class ClapperboardTextIcon extends StatelessWidget {
+  /// Creates the `clapperboard-text` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const ClapperboardTextIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarTheme] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.bold,
+    body: r'''<path d="M16.5401 2.08783C15.3293 2 13.8452 2 12 2H11.9014L8.40139 7.25002H13.0986L16.5401 2.08783Z" fill="currentColor"/>
+<path d="M10.0957 2.00445C6.62194 2.03072 4.71683 2.2121 3.46447 3.46447C2.6068 4.32213 2.25143 5.48593 2.10418 7.25002H6.59861L10.0957 2.00445Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.02644 8.75002C2 9.68875 2 10.7633 2 12C2 16.714 2 19.0711 3.46447 20.5355C4.92893 22 7.28595 22 12 22C16.714 22 19.0711 22 20.5355 20.5355C22 19.0711 22 16.714 22 12C22 10.7633 22 9.68875 21.9736 8.75002H2.02644ZM5.75 14C5.75 13.5858 6.08579 13.25 6.5 13.25H14.5C14.9142 13.25 15.25 13.5858 15.25 14C15.25 14.4142 14.9142 14.75 14.5 14.75H6.5C6.08579 14.75 5.75 14.4142 5.75 14ZM6.5 16.75C6.08579 16.75 5.75 17.0858 5.75 17.5C5.75 17.9142 6.08579 18.25 6.5 18.25H12C12.4142 18.25 12.75 17.9142 12.75 17.5C12.75 17.0858 12.4142 16.75 12 16.75H6.5Z" fill="currentColor"/>
+<path d="M20.5355 3.46447C21.3932 4.32213 21.7486 5.48593 21.8958 7.25002H14.9014L18.1987 2.30403C19.1924 2.51345 19.9382 2.86714 20.5355 3.46447Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.boldDuotone,
+    body: r'''<path d="M12 16.75C12.4142 16.75 12.75 17.0858 12.75 17.5C12.75 17.9142 12.4142 18.25 12 18.25H6.5C6.08579 18.25 5.75 17.9142 5.75 17.5C5.75 17.0858 6.08579 16.75 6.5 16.75H12Z" fill="currentColor"/>
+<path d="M14.5 13.25C14.9142 13.25 15.25 13.5858 15.25 14C15.25 14.4142 14.9142 14.75 14.5 14.75H6.5C6.08579 14.75 5.75 14.4142 5.75 14C5.75 13.5858 6.08579 13.25 6.5 13.25H14.5Z" fill="currentColor"/>
+<path d="M6.59863 7.25H2.10449C2.25173 5.48602 2.6073 4.32249 3.46484 3.46484C4.71718 2.21251 6.62216 2.03116 10.0957 2.00488L6.59863 7.25Z" fill="currentColor"/>
+<path d="M12 2C13.845 2 15.3293 2.00009 16.54 2.08789L13.0986 7.25H8.40137L11.9014 2H12Z" fill="currentColor"/>
+<path d="M18.1992 2.30371C19.1928 2.51314 19.9388 2.86754 20.5361 3.46484C21.3936 4.32248 21.7493 5.48613 21.8965 7.25H14.9014L18.1992 2.30371Z" fill="currentColor"/>''',
+    accent: r'''<path opacity="0.5" d="M2 12C2 10.7632 2 9.68872 2.02644 8.75H21.9736C22 9.68872 22 10.7632 22 12C22 16.714 22 19.071 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.071 2 16.714 2 12Z" fill="currentColor"/>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.broken,
+    body: r'''<path d="M10.5 2.5L7 8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M17 2.5L13.5 8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6.5 14H14.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6.5 17.5H12" stroke="currentColor" stroke-linecap="round"/>
+<path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21.9449 8H2.05493" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.linear,
+    body: r'''<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21.5 8H2.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M10.5 2.5L7 8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M17 2.5L13.5 8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6.5 14H14.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6.5 17.5H12" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.lineDuotone,
+    body: r'''<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-linecap="round"/>''',
+    accent: r'''<path opacity="0.5" d="M21.5 8H2.5M7 8L10.5 2.5M13.5 8L17 2.5" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M6.5 14H14.5" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M6.5 17.5H12" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'clapperboard-text',
+    style: SolarIconStyle.outline,
+    body: r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9426 1.25H12.0574C14.3658 1.24999 16.1748 1.24998 17.5863 1.43975C19.031 1.63399 20.1711 2.03933 21.0659 2.93414C21.9607 3.82895 22.366 4.96897 22.5603 6.41371C22.75 7.82519 22.75 9.63423 22.75 11.9426V12.0574C22.75 14.3658 22.75 16.1748 22.5603 17.5863C22.366 19.031 21.9607 20.1711 21.0659 21.0659C20.1711 21.9607 19.031 22.366 17.5863 22.5603C16.1748 22.75 14.3658 22.75 12.0574 22.75H11.9426C9.63423 22.75 7.82519 22.75 6.41371 22.5603C4.96897 22.366 3.82895 21.9607 2.93414 21.0659C2.03933 20.1711 1.63399 19.031 1.43975 17.5863C1.24998 16.1748 1.24999 14.3658 1.25 12.0574V11.9426C1.24999 9.63423 1.24998 7.82519 1.43975 6.41371C1.63399 4.96897 2.03933 3.82895 2.93414 2.93414C3.82895 2.03933 4.96897 1.63399 6.41371 1.43975C7.82519 1.24998 9.63423 1.24999 11.9426 1.25ZM6.61358 2.92637C5.33517 3.09825 4.56445 3.42514 3.9948 3.9948C3.42514 4.56445 3.09825 5.33517 2.92637 6.61358C2.89922 6.81554 2.87624 7.02735 2.85681 7.25H6.58829L9.44439 2.76185C8.31691 2.77915 7.39205 2.82171 6.61358 2.92637ZM11.2072 2.75032C11.1886 2.80268 11.1638 2.85379 11.1327 2.90266L8.36626 7.25H13.0883L15.9189 2.80191C14.8557 2.7507 13.5747 2.75 12 2.75C11.727 2.75 11.4629 2.75002 11.2072 2.75032ZM17.5982 2.95698L14.8663 7.25H21.1432C21.1238 7.02735 21.1008 6.81554 21.0736 6.61358C20.9018 5.33517 20.5749 4.56445 20.0052 3.9948C19.4677 3.45731 18.7512 3.13594 17.5982 2.95698ZM21.2233 8.75H13.5112C13.5033 8.75013 13.4953 8.75013 13.4874 8.75H7.01122C7.00327 8.75013 6.99532 8.75013 6.98737 8.75H2.77672C2.75045 9.67173 2.75 10.7422 2.75 12C2.75 14.3782 2.75159 16.0864 2.92637 17.3864C3.09825 18.6648 3.42514 19.4355 3.9948 20.0052C4.56445 20.5749 5.33517 20.9018 6.61358 21.0736C7.91356 21.2484 9.62177 21.25 12 21.25C14.3782 21.25 16.0864 21.2484 17.3864 21.0736C18.6648 20.9018 19.4355 20.5749 20.0052 20.0052C20.5749 19.4355 20.9018 18.6648 21.0736 17.3864C21.2484 16.0864 21.25 14.3782 21.25 12C21.25 10.7422 21.2496 9.67173 21.2233 8.75ZM5.75 14C5.75 13.5858 6.08579 13.25 6.5 13.25H14.5C14.9142 13.25 15.25 13.5858 15.25 14C15.25 14.4142 14.9142 14.75 14.5 14.75H6.5C6.08579 14.75 5.75 14.4142 5.75 14ZM5.75 17.5C5.75 17.0858 6.08579 16.75 6.5 16.75H12C12.4142 16.75 12.75 17.0858 12.75 17.5C12.75 17.9142 12.4142 18.25 12 18.25H6.5C6.08579 18.25 5.75 17.9142 5.75 17.5Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

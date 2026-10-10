@@ -1,7 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solar_icons/icons/arrow_right.dart';
-import 'package:solar_icons/icons/home.dart';
 import 'package:solar_icons/solar_icons.dart';
 
 void main() {

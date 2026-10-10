@@ -1,0 +1,127 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_theme.dart';
+
+/// The `closet-2` icon.
+class Closet2Icon extends StatelessWidget {
+  /// Creates the `closet-2` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const Closet2Icon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarTheme] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.bold,
+    body: r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 2H10C6.22876 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10V12C2 15.7712 2 17.6569 3.17157 18.8284C3.47599 19.1328 3.82861 19.3582 4.25 19.5249V22C4.25 22.4142 4.58579 22.75 5 22.75C5.41421 22.75 5.75 22.4142 5.75 22V19.8713C6.81989 20 8.19364 20 10 20H11.25V2ZM9 8.25C9.41421 8.25 9.75 8.58579 9.75 9V13C9.75 13.4142 9.41421 13.75 9 13.75C8.58579 13.75 8.25 13.4142 8.25 13V9C8.25 8.58579 8.58579 8.25 9 8.25Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.75 20H14C15.8064 20 17.1801 20 18.25 19.8713V22C18.25 22.4142 18.5858 22.75 19 22.75C19.4142 22.75 19.75 22.4142 19.75 22V19.5249C20.1714 19.3582 20.524 19.1328 20.8284 18.8284C22 17.6569 22 15.7712 22 12V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H12.75V20ZM15 8.25C15.4142 8.25 15.75 8.58579 15.75 9V13C15.75 13.4142 15.4142 13.75 15 13.75C14.5858 13.75 14.25 13.4142 14.25 13V9C14.25 8.58579 14.5858 8.25 15 8.25Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.boldDuotone,
+    body: r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M12 20H10C8.19364 20 6.81989 19.9998 5.75 19.8711V22C5.75 22.4142 5.41421 22.75 5 22.75C4.58579 22.75 4.25 22.4142 4.25 22V19.5254C3.82861 19.3586 3.47629 19.1325 3.17188 18.8281C2.0003 17.6566 2 15.7712 2 12V10C2 6.22876 2.0003 4.34345 3.17188 3.17188C4.34345 2.0003 6.22876 2 10 2H12V20ZM9 8.25C8.58579 8.25 8.25 8.58579 8.25 9V13C8.25 13.4142 8.58579 13.75 9 13.75C9.41421 13.75 9.75 13.4142 9.75 13V9C9.75 8.58579 9.41421 8.25 9 8.25Z" fill="currentColor"/>
+<path d="M15 8.25C15.4142 8.25 15.75 8.58579 15.75 9V13C15.75 13.4142 15.4142 13.75 15 13.75C14.5858 13.75 14.25 13.4142 14.25 13V9C14.25 8.58579 14.5858 8.25 15 8.25Z" fill="currentColor"/>''',
+    accent: r'''<path opacity="0.5" d="M14 20H12V2H14C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10V12C22 15.7712 22 17.6569 20.8284 18.8284C20.524 19.1328 20.1714 19.3582 19.75 19.5249V22C19.75 22.4142 19.4142 22.75 19 22.75C18.5858 22.75 18.25 22.4142 18.25 22V19.8713C17.1801 20 15.8064 20 14 20Z" fill="currentColor"/>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.broken,
+    body: r'''<path d="M19 22V20.5M5 22V20.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 20V18M12 2V14" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15 9V13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9 9V13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M22 10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H10C6.22876 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10V12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H14C17.7712 20 19.6569 20 20.8284 18.8284C21.7715 17.8853 21.9554 16.4796 21.9913 14" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.linear,
+    body: r'''<path d="M19 22V20.5M5 22V20.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 20V2" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15 9V13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9 9V13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M2 10C2 6.22876 2 4.34315 3.17157 3.17157C4.34315 2 6.22876 2 10 2H14C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10V12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12V10Z" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.lineDuotone,
+    body: r'''<path d="M12 20V2" stroke="currentColor" stroke-linecap="round"/>
+<path d="M2 10C2 6.22876 2 4.34315 3.17157 3.17157C4.34315 2 6.22876 2 10 2H14C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10V12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12V10Z" stroke="currentColor" stroke-linecap="round"/>''',
+    accent: r'''<path opacity="0.5" d="M19 22V20.5M5 22V20.5" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M15 9V13" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M9 9V13" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'closet-2',
+    style: SolarIconStyle.outline,
+    body: r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M9.94358 1.25H14.0564C15.8942 1.24998 17.3498 1.24997 18.489 1.40314C19.6614 1.56076 20.6104 1.89288 21.3588 2.64124C22.1071 3.38961 22.4392 4.33856 22.5969 5.51098C22.75 6.65019 22.75 8.10583 22.75 9.94359V12.0564C22.75 13.8942 22.75 15.3498 22.5969 16.489C22.4392 17.6614 22.1071 18.6104 21.3588 19.3588C20.8948 19.8227 20.3538 20.1267 19.7302 20.3282C19.7432 20.3834 19.75 20.4409 19.75 20.5V22C19.75 22.4142 19.4142 22.75 19 22.75C18.5858 22.75 18.25 22.4142 18.25 22V20.6263C17.1482 20.75 15.7681 20.75 14.0564 20.75H9.94359C8.23194 20.75 6.85177 20.75 5.75 20.6263V22C5.75 22.4142 5.41421 22.75 5 22.75C4.58579 22.75 4.25 22.4142 4.25 22V20.5C4.25 20.4409 4.25684 20.3834 4.26976 20.3282C3.6462 20.1267 3.10518 19.8227 2.64124 19.3588C1.89288 18.6104 1.56076 17.6614 1.40314 16.489C1.24997 15.3498 1.24998 13.8942 1.25 12.0564V9.94358C1.24998 8.10582 1.24997 6.65019 1.40314 5.51098C1.56076 4.33856 1.89288 3.38961 2.64124 2.64124C3.38961 1.89288 4.33856 1.56076 5.51098 1.40314C6.65019 1.24997 8.10582 1.24998 9.94358 1.25ZM12.75 19.25H14C15.9068 19.25 17.2615 19.2484 18.2892 19.1102C19.2952 18.975 19.8749 18.7213 20.2981 18.2981C20.7213 17.8749 20.975 17.2952 21.1102 16.2892C21.2484 15.2615 21.25 13.9068 21.25 12V10C21.25 8.09318 21.2484 6.73851 21.1102 5.71085C20.975 4.70476 20.7213 4.12511 20.2981 3.7019C19.8749 3.27869 19.2952 3.02502 18.2892 2.88976C17.2615 2.75159 15.9068 2.75 14 2.75H12.75V19.25ZM11.25 2.75V19.25H10C8.09318 19.25 6.73851 19.2484 5.71085 19.1102C4.70476 18.975 4.12511 18.7213 3.7019 18.2981C3.27869 17.8749 3.02502 17.2952 2.88976 16.2892C2.75159 15.2615 2.75 13.9068 2.75 12V10C2.75 8.09318 2.75159 6.73851 2.88976 5.71085C3.02502 4.70476 3.27869 4.12511 3.7019 3.7019C4.12511 3.27869 4.70476 3.02502 5.71085 2.88976C6.73851 2.75159 8.09318 2.75 10 2.75H11.25ZM9 8.25C9.41421 8.25 9.75 8.58579 9.75 9V13C9.75 13.4142 9.41421 13.75 9 13.75C8.58579 13.75 8.25 13.4142 8.25 13V9C8.25 8.58579 8.58579 8.25 9 8.25ZM15 8.25C15.4142 8.25 15.75 8.58579 15.75 9V13C15.75 13.4142 15.4142 13.75 15 13.75C14.5858 13.75 14.25 13.4142 14.25 13V9C14.25 8.58579 14.5858 8.25 15 8.25Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}
