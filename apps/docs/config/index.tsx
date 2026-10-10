@@ -69,6 +69,11 @@ export const config: Config = {
                         icon: <Icon icon="devicon:laravel" />,
                     },
                     {
+                        label: 'Flutter',
+                        url: '/docs/v2/packages/flutter',
+                        icon: <Icon icon="devicon:flutter" />,
+                    },
+                    {
                         label: 'static',
                         url: '/docs/v2/packages/static',
                         icon: <Icon icon="vscode-icons:file-type-svg" />,
@@ -217,6 +222,17 @@ export const config: Config = {
                     'Blade components for all six styles, plus a dynamic component and a PHP enum.',
                 status: 'released',
                 iconify: 'devicon:laravel',
+            },
+            {
+                title: 'Flutter',
+                link: '/docs/v2/packages/flutter',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/flutter',
+                registryLink: 'https://pub.dev/packages/solar_icons',
+                registryTooltip: 'pub.dev Package',
+                registryIcon: 'mdi:package-variant',
+                content: 'Widgets for all six styles, plus theming and duotone controls.',
+                status: 'released',
+                iconify: 'devicon:flutter',
             },
             {
                 title: 'Static',

@@ -1,0 +1,101 @@
+---
+title: Flutter
+description: Solar Icons as Flutter widgets, generated from the static catalogue.
+icon: flutter
+---
+
+```bash
+flutter pub add solar_icons
+```
+
+## Widgets
+
+Every icon ships as a widget in all six styles. `style` defaults to `linear`:
+
+```dart
+import 'package:solar_icons/solar_icons.dart';
+
+HomeIcon(
+  size: 32,
+  color: Color(0xFF1C274C),
+  strokeWidth: 2,
+)
+```
+
+```dart
+ArrowRightIcon(
+  style: SolarIconStyle.boldDuotone,
+  secondaryColor: Color(0xFF94A3B8),
+  secondaryOpacity: 0.5,
+)
+```
+
+Import a single icon when you only need that widget:
+
+```dart
+import 'package:solar_icons/icons/home.dart';
+```
+
+`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `line_duotone.dart`, and `outline.dart` export the same catalogue. They are entry points, not separate icon sets.
+
+## Data payloads
+
+Each icon exposes its six style payloads. Pass one to `SolarIcon` when you already have icon data:
+
+```dart
+SolarIcon(HomeIcon.outline, size: 20)
+```
+
+## Theme
+
+`SolarTheme` sets defaults for icons below it. Arguments on the icon win, then the theme, then the ambient `IconTheme`. Stroke width falls back to `1.5`:
+
+```dart
+SolarTheme(
+  size: 24,
+  color: Color(0xFF111827),
+  strokeWidth: 1.5,
+  child: HomeIcon(),
+)
+```
+
+Set `isolated: true` to ignore both themes and use the package defaults: 24px, `#1C274C`, and a 1.5 stroke.
+
+## Duotone
+
+`boldDuotone` and `lineDuotone` paint a second color on the accent layer. `secondaryColor` defaults to the primary color, `secondaryOpacity` defaults to `0.5`:
+
+```dart
+HeartIcon(
+  style: SolarIconStyle.lineDuotone,
+  color: Color(0xFF1C274C),
+  secondaryColor: Color(0xFF94A3B8),
+  secondaryOpacity: 0.4,
+)
+```
+
+## Deprecated names
+
+Renamed icons keep working through `@Deprecated` typedefs that point at the canonical widget:
+
+```dart
+// Deprecated: use ChatSquareUnreadIcon instead.
+ChatUnreadIcon()
+```
+
+## Accessibility
+
+Pass `semanticLabel` to announce the icon to screen readers. Icons without a label are excluded from semantics:
+
+```dart
+HomeIcon(semanticLabel: 'Home')
+```
+
+## Example gallery
+
+The package ships an exhaustive gallery app at `packages/flutter/example`: all 1,451 icons with a reactive panel for style, colors, size, stroke width, and duotone settings. It mirrors the React Native playground and is the fastest way to eyeball the whole catalogue.
+
+<Callout type="info">
+    Found a bug in the Flutter layer? Open it in the [main
+    repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one place.
+</Callout>
