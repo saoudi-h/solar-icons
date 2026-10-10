@@ -63,7 +63,7 @@ SolarIcon(HomeIcon.outline, size: 20)
 
 Static widgets expose their single payload the same way (`HomeLinearIcon.data`).
 
-### Theme
+## Theme
 
 `SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to 1.5. `style` also falls back to the provider, so one wrapper can set the style for every dynamic widget inside it; static widgets always draw their own style.
 
@@ -77,7 +77,7 @@ SolarProvider(
 )
 ```
 
-Set `isolated: true` to ignore both themes and use the package defaults: 24px, `#1C274C`, and a 1.5 stroke.
+Set `isolated: true` to ignore `SolarProvider` and the ambient `IconTheme` and use the package defaults: 24px, `#1C274C`, and a 1.5 stroke.
 
 ## License
 
