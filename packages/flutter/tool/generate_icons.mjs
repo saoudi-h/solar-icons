@@ -442,7 +442,7 @@ function main() {
     const dynamicBarrelPath = path.join(libDir, 'dynamic.dart')
     fs.writeFileSync(dynamicBarrelPath, renderStyleBarrel('dynamic', names))
     formatTargets.push(dynamicDir, dynamicBarrelPath)
-    fs.writeFileSync(path.join(libDir, 'solaricons_flutter.dart'), renderRootBarrel(names))
+    fs.writeFileSync(path.join(libDir, 'flutter_solar_icons.dart'), renderRootBarrel(names))
 
     const formatted = spawnSync('dart', ['format', ...formatTargets], {
         stdio: 'inherit',

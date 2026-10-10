@@ -1,4 +1,4 @@
-# solaricons_flutter example
+# flutter_solar_icons example
 
 Sample gallery for the Flutter package. Generate the icons from the repo root before running:
 

@@ -27,7 +27,7 @@ const map = entries.map(e => `  '${e.kebab}': ${e.cls}.new,`).join('\n')
 const out = `// Generated from lib/dynamic by tool/generate_gallery_registry.mjs. Do not edit.
 import 'package:flutter/widgets.dart';
 
-import 'package:solaricons_flutter/solaricons_flutter.dart';
+import 'package:flutter_solar_icons/flutter_solar_icons.dart';
 
 /// Every catalogue icon by kebab-case name.
 typedef IconBuilder =

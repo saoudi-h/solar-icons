@@ -86,17 +86,17 @@ describe('import snippets are verified against packages', () => {
     })
 
     it('flutter emits a static widget import and usage', () => {
-        // solaricons_flutter lives in this monorepo (packages/flutter) but ships
+        // flutter_solar_icons lives in this monorepo (packages/flutter) but ships
         // through pub.dev, so there is no local dist file to verify —
         // assert exact strings.
         expect(importSnippet('heart', 'bold', 'flutter')).toBe(
-            "import 'package:solaricons_flutter/bold/heart.dart';\nHeartBoldIcon()"
+            "import 'package:flutter_solar_icons/bold/heart.dart';\nHeartBoldIcon()"
         )
         expect(importSnippet('arrow-up', 'line-duotone', 'flutter')).toBe(
-            "import 'package:solaricons_flutter/line_duotone/arrow_up.dart';\nArrowUpLineDuotoneIcon()"
+            "import 'package:flutter_solar_icons/line_duotone/arrow_up.dart';\nArrowUpLineDuotoneIcon()"
         )
         expect(rootImportSnippet('heart', 'bold', 'flutter')).toBe(
-            "import 'package:solaricons_flutter/solaricons_flutter.dart';\nHeartBoldIcon()"
+            "import 'package:flutter_solar_icons/flutter_solar_icons.dart';\nHeartBoldIcon()"
         )
     })
 

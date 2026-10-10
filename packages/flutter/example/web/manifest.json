@@ -1,6 +1,6 @@
 {
-    "name": "solaricons_flutter_example",
-    "short_name": "solaricons_flutter_example",
+    "name": "flutter_solar_icons_example",
+    "short_name": "flutter_solar_icons_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

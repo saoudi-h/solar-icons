@@ -70,6 +70,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_solar_icons:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "2.0.0"
   flutter_svg:
     dependency: transitive
     description:
@@ -184,13 +191,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  solaricons_flutter:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "2.0.0"
   source_span:
     dependency: transitive
     description:

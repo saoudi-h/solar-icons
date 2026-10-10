@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solaricons_flutter/solaricons_flutter.dart';
+import 'package:flutter_solar_icons/flutter_solar_icons.dart';
 
 import 'icon_registry.dart';
 

@@ -45,7 +45,7 @@ export const FlutterCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="dart"
-                code={`import 'package:solaricons_flutter/${WEIGHT_TO_DART_DIR[weight]}/${file}.dart';\n\n${widget}()`}
+                code={`import 'package:flutter_solar_icons/${WEIGHT_TO_DART_DIR[weight]}/${file}.dart';\n\n${widget}()`}
             />
         </div>
     )
