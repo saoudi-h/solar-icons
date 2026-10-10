@@ -1,0 +1,3 @@
+# Generated icon widgets are gitignored (see .gitignore) but MUST ship in the
+# published archive. Negations re-include them for `dart pub publish`.
+!/lib/

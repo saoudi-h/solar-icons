@@ -12,6 +12,7 @@ To work from a local checkout instead, generate the widgets from the catalogue f
 
 ```sh
 node packages/flutter/tool/generate_icons.mjs
+node packages/flutter/tool/generate_gallery_registry.mjs # only for the example app
 ```
 
 ```yaml

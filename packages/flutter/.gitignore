@@ -25,8 +25,19 @@ migrate_working_dir/
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
 /pubspec.lock
 
-# Generated icon output is committed (repo convention): regenerate with
-# `node tool/generate_icons.mjs` from the repository root checkout.
+# Generated icon widgets are NOT versioned: regenerate with
+# `node tool/generate_icons.mjs` (plus `node tool/generate_gallery_registry.mjs`
+# for the example app). CI regenerates from the catalogue on every run, and
+# `.pubignore` re-includes the output in the published archive.
+/lib/bold/
+/lib/bold_duotone/
+/lib/broken/
+/lib/dynamic/
+/lib/line_duotone/
+/lib/linear/
+/lib/outline/
+/lib/*.dart
+/example/lib/icon_registry.dart
 **/doc/api/
 .dart_tool/
 .flutter-plugins-dependencies

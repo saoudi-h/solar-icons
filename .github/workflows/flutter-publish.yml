@@ -46,11 +46,27 @@ jobs:
                     exit 1
                   fi
 
-            - name: Regenerate and verify
+            - name: Regenerate and verify determinism
               run: |
                   node packages/flutter/tool/generate_icons.mjs
                   node packages/flutter/tool/generate_gallery_registry.mjs
-                  git diff --exit-code packages/flutter/lib packages/flutter/example/lib/icon_registry.dart
+                  cp -r packages/flutter/lib /tmp/flutter-lib-first
+                  node packages/flutter/tool/generate_icons.mjs
+                  diff -r packages/flutter/lib /tmp/flutter-lib-first
+
+            - name: Generated widgets exist for publish
+              run: |
+                  test -f packages/flutter/lib/bold/heart.dart
+                  test -f packages/flutter/lib/dynamic/home.dart
+                  test -f packages/flutter/lib/solaricons_flutter.dart
+                  test -f packages/flutter/example/lib/icon_registry.dart
+                  # .pubignore re-includes the gitignored lib/ output: the
+                  # dry-run tree must list the icon files, or publish ships
+                  # an empty package.
+                  COUNT=$(dart pub publish --dry-run 2>&1 | grep -c '\.dart')
+                  echo "dart files in publish tree: $COUNT"
+                  test "$COUNT" -gt 10000
+              working-directory: packages/flutter
 
             - name: Analyze and test
               run: |

@@ -47,8 +47,14 @@ jobs:
             - name: Regenerate gallery registry
               run: node packages/flutter/tool/generate_gallery_registry.mjs
 
-            - name: Generated output matches the catalogue
-              run: git diff --exit-code packages/flutter/lib packages/flutter/example/lib/icon_registry.dart
+            - name: Generation is deterministic
+              run: |
+                  cp -r packages/flutter/lib /tmp/flutter-lib-first
+                  cp packages/flutter/example/lib/icon_registry.dart /tmp/icon_registry-first.dart
+                  node packages/flutter/tool/generate_icons.mjs
+                  node packages/flutter/tool/generate_gallery_registry.mjs
+                  diff -r packages/flutter/lib /tmp/flutter-lib-first
+                  diff packages/flutter/example/lib/icon_registry.dart /tmp/icon_registry-first.dart
 
             - name: Analyze
               run: flutter analyze

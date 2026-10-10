@@ -12,6 +12,8 @@
         "monorepo",
         "packagist",
         "pnpm",
+        "buildlog",
+        "pubignore",
         "pubspec",
         "solaricons",
         "subosito",
