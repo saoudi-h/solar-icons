@@ -39,6 +39,7 @@ export const FRAMEWORKS = [
     'static',
     'js',
     'blade',
+    'flutter',
 ] as const
 export type Framework = (typeof FRAMEWORKS)[number]
 
@@ -53,6 +54,15 @@ const STYLE_PASCAL: Record<Style, string> = {
 
 export function styleToPascal(style: Style): string {
     return STYLE_PASCAL[style]
+}
+
+/**
+ * Dart enum value for a style (e.g. linear → linear, line-duotone →
+ * lineDuotone). Mirrors SolarIconStyle in the Flutter package.
+ */
+export function toDartStyle(style: Style): string {
+    const pascal = STYLE_PASCAL[style]
+    return pascal.charAt(0).toLowerCase() + pascal.slice(1)
 }
 
 export function toPascalKebab(kebab: string): string {
@@ -116,6 +126,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
  *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
+ *   flutter: HeartIcon(style: SolarIconStyle.bold) (widget, style is a parameter)
  */
 export function importSnippet(name: string, style: Style, framework: Framework): string {
     const kebab = name
@@ -142,6 +153,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `import { createIcons, icons } from "@solar-icons/js"; // icons["${kebab}-${style}"]`
         case 'blade':
             return `<x-solar-${style}-${kebab} />`
+        case 'flutter':
+            return `${generic}(style: SolarIconStyle.${toDartStyle(style)})`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -158,6 +171,7 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'js':
         case 'nuxt':
         case 'blade':
+        case 'flutter':
             return importSnippet(name, style, framework)
         default:
             return `import { ${rooted} } from "@solar-icons/${framework}";`

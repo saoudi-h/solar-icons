@@ -85,6 +85,21 @@ describe('import snippets are verified against packages', () => {
         expect(rootImportSnippet('heart', 'bold', 'blade')).toBe('<x-solar-bold-heart />')
     })
 
+    it('flutter emits a widget call with a style parameter', () => {
+        // solar_icons lives in this monorepo (packages/flutter) but ships
+        // through pub.dev, so there is no local dist file to verify —
+        // assert exact strings.
+        expect(importSnippet('heart', 'bold', 'flutter')).toBe(
+            'HeartIcon(style: SolarIconStyle.bold)'
+        )
+        expect(importSnippet('arrow-up', 'line-duotone', 'flutter')).toBe(
+            'ArrowUpIcon(style: SolarIconStyle.lineDuotone)'
+        )
+        expect(rootImportSnippet('heart', 'bold', 'flutter')).toBe(
+            'HeartIcon(style: SolarIconStyle.bold)'
+        )
+    })
+
     it('docs example HeartIcon from bold/heart exists', () => {
         // mirrors apps/docs/content/docs/v2/packages/react.mdx examples
         expect(importSnippet('heart', 'bold', 'react')).toBe(
