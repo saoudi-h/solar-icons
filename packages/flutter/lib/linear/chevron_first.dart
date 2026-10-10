@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `chevron-first` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjUgMTlMMTAuNSAxMkwxNi41IDUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNy41IDVMNy40OTk5OCAxOS4wMDA0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class ChevronFirstLinearIcon extends StatelessWidget {
   /// Creates the `chevron-first` icon in the linear style.
   const ChevronFirstLinearIcon({

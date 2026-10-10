@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `arrow-left-up` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjUzMDMgMTcuNDY5N0MxOC44MjMyIDE3Ljc2MjYgMTguODIzMiAxOC4yMzc0IDE4LjUzMDMgMTguNTMwM0MxOC4yMzc0IDE4LjgyMzIgMTcuNzYyNiAxOC44MjMyIDE3LjQ2OTcgMTguNTMwM0wxMC41IDExLjU2MDdMNi41MzAzMyAxNS41MzAzQzYuMzE1ODMgMTUuNzQ0OCA1Ljk5MzI0IDE1LjgwOSA1LjcxMjk5IDE1LjY5MjlDNS40MzI3MyAxNS41NzY4IDUuMjUgMTUuMzAzMyA1LjI1IDE1VjZDNS4yNSA1LjU4NTc5IDUuNTg1NzkgNS4yNSA2IDUuMjVMMTUgNS4yNUMxNS4zMDMzIDUuMjUgMTUuNTc2OCA1LjQzMjczIDE1LjY5MjkgNS43MTI5OUMxNS44MDkgNS45OTMyNCAxNS43NDQ4IDYuMzE1ODMgMTUuNTMwMyA2LjUzMDMzTDExLjU2MDcgMTAuNUwxOC41MzAzIDE3LjQ2OTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class ArrowLeftUpBoldIcon extends StatelessWidget {
   /// Creates the `arrow-left-up` icon in the bold style.
   const ArrowLeftUpBoldIcon({

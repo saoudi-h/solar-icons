@@ -227,7 +227,7 @@ export const config: Config = {
                 title: 'Flutter',
                 link: '/docs/v2/packages/flutter',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/flutter',
-                registryLink: 'https://pub.dev/packages/solar_icons',
+                registryLink: 'https://pub.dev/packages/solaricons_flutter',
                 registryTooltip: 'pub.dev Package',
                 registryIcon: 'mdi:package-variant',
                 content: 'Widgets for all six styles, plus theming and duotone controls.',

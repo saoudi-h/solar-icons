@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-arrow-right` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuNDk3NDYgMjAuODM1TDIxLjAwNzIgMTMuNDcyNUMyMi4zMzA5IDEyLjg4MjIgMjIuMzMwOSAxMS4xMTc4IDIxLjAwNzIgMTAuNTI3NUw0LjQ5NzQ2IDMuMTY0OTZDMy4wMDE2MyAyLjQ5Nzg5IDEuNDUwMDYgMy45NzkxNCAyLjE5MDk5IDUuMzY2ODlMNS4zNDMwMiAxMS4yNzA2QzUuNTg4MTcgMTEuNzI5OCA1LjU4ODE4IDEyLjI3MDIgNS4zNDMwMiAxMi43Mjk0TDIuMTkwOTkgMTguNjMzMUMxLjQ1MDA3IDIwLjAyMDkgMy4wMDE2MyAyMS41MDIxIDQuNDk3NDYgMjAuODM1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class MapArrowRightBoldIcon extends StatelessWidget {
   /// Creates the `map-arrow-right` icon in the bold style.
   const MapArrowRightBoldIcon({

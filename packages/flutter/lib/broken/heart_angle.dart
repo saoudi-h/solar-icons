@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `heart-angle` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0IDcuNDk5OTFMMTIgNS41MDA2M0M3LjUwMDE2IDAuODI1NDY0IDIgNC4yNzQxNiAyIDkuMTM3MUMyIDEwLjYzOSAyLjM4MzM4IDExLjkyNDIgMyAxMy4wNTE2TTEyIDUuNTAwNjNDMTYuNDk5OCAwLjgyNTQ2NCAyMiA0LjI3NDE2IDIyIDkuMTM3MUMyMiAxNCAxNy45ODA2IDE2LjU5MTQgMTUuMDM4MyAxOC45MTA5QzE0IDE5LjcyOTQgMTMgMjAuNSAxMiAyMC41QzExIDIwLjUgMTAgMTkuNzI5NCA4Ljk2MTczIDE4LjkxMDlDOC4xOTI0MyAxOC4zMDQ0IDcuMzQ5NDkgMTcuNjc5NCA2LjUyNDAxIDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
 class HeartAngleBrokenIcon extends StatelessWidget {
   /// Creates the `heart-angle` icon in the broken style.
   const HeartAngleBrokenIcon({

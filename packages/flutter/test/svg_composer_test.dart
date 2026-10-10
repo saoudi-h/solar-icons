@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solar_icons/src/solar_icon_data.dart';
-import 'package:solar_icons/src/solar_icon_style.dart';
-import 'package:solar_icons/src/svg_composer.dart';
+import 'package:solaricons_flutter/src/solar_icon_data.dart';
+import 'package:solaricons_flutter/src/solar_icon_style.dart';
+import 'package:solaricons_flutter/src/svg_composer.dart';
 
 void main() {
   const data = SolarIconData(

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `git-commit` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDExLjk5NzFDMTUgMTMuNjUzOSAxMy42NTY5IDE0Ljk5NzEgMTIgMTQuOTk3MUMxMC4zNDMxIDE0Ljk5NzEgOSAxMy42NTM5IDkgMTEuOTk3MUM5IDEwLjM0MDIgMTAuMzQzMSA4Ljk5NzA3IDEyIDguOTk3MDdDMTMuNjU2OSA4Ljk5NzA3IDE1IDEwLjM0MDIgMTUgMTEuOTk3MVoiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxMS45OTcxTDkgMTEuOTk3MSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNSAxMi4wMDJMMjIgMTIuMDAyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class GitCommitLinearIcon extends StatelessWidget {
   /// Creates the `git-commit` icon in the linear style.
   const GitCommitLinearIcon({

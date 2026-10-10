@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSI0IiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIwIDE3LjVDMjAgMTkuOTg1MyAyMCAyMiAxMiAyMkM0IDIyIDQgMTkuOTg1MyA0IDE3LjVDNCAxNS4wMTQ3IDcuNTgxNzIgMTMgMTIgMTNDMTYuNDE4MyAxMyAyMCAxNS4wMTQ3IDIwIDE3LjVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class UserBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `user` icon in the boldDuotone style.
   const UserBoldDuotoneIcon({

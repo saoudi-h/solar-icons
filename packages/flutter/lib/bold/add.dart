@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `add` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjAyMDUgMy4yNUMxMi40MzQ3IDMuMjUwMDUgMTIuNzcwNSAzLjU4NTgyIDEyLjc3MDUgNFYxMS4yNUgyMEMyMC40MTQyIDExLjI1IDIwLjc1IDExLjU4NTggMjAuNzUgMTJDMjAuNzUgMTIuNDE0MiAyMC40MTQyIDEyLjc1IDIwIDEyLjc1SDEyLjc3MDVWMjBDMTIuNzcwNSAyMC40MTQyIDEyLjQzNDcgMjAuNzUgMTIuMDIwNSAyMC43NUMxMS42MDYzIDIwLjc1IDExLjI3MDUgMjAuNDE0MiAxMS4yNzA1IDIwVjEyLjc1SDRDMy41ODU3OSAxMi43NSAzLjI1IDEyLjQxNDIgMy4yNSAxMkMzLjI1IDExLjU4NTggMy41ODU3OSAxMS4yNSA0IDExLjI1SDExLjI3MDVWNEMxMS4yNzA1IDMuNTg1NzkgMTEuNjA2MyAzLjI1IDEyLjAyMDUgMy4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class AddBoldIcon extends StatelessWidget {
   /// Creates the `add` icon in the bold style.
   const AddBoldIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-arrow-left` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjUwMjUgMjAuODM1TDIuOTkyODEgMTMuNDcyNUMxLjY2OTA2IDEyLjg4MjIgMS42NjkwNiAxMS4xMTc4IDIuOTkyODEgMTAuNTI3NUwxOS41MDI1IDMuMTY0OTZDMjAuOTk4NCAyLjQ5Nzg5IDIyLjU0OTkgMy45NzkxNCAyMS44MDkgNS4zNjY4OUwxOC42NTcgMTEuMjcwNkMxOC40MTE4IDExLjcyOTggMTguNDExOCAxMi4yNzAyIDE4LjY1NyAxMi43Mjk0TDIxLjgwOSAxOC42MzMxQzIyLjU0OTkgMjAuMDIwOSAyMC45OTg0IDIxLjUwMjEgMTkuNTAyNSAyMC44MzVaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class MapArrowLeftBoldIcon extends StatelessWidget {
   /// Creates the `map-arrow-left` icon in the bold style.
   const MapArrowLeftBoldIcon({

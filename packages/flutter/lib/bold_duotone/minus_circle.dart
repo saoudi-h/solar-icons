@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `minus-circle` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMjIgMTJDMjIgMTcuNTIyOCAxNy41MjI4IDIyIDEyIDIyQzYuNDc3MTUgMjIgMiAxNy41MjI4IDIgMTJDMiA2LjQ3NzE1IDYuNDc3MTUgMiAxMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTUuNzUgMTJDMTUuNzUgMTIuNDE0MiAxNS40MTQyIDEyLjc1IDE1IDEyLjc1SDlDOC41ODU3OSAxMi43NSA4LjI1IDEyLjQxNDIgOC4yNSAxMkM4LjI1IDExLjU4NTggOC41ODU3OSAxMS4yNSA5IDExLjI1SDE1QzE1LjQxNDIgMTEuMjUgMTUuNzUgMTEuNTg1OCAxNS43NSAxMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MinusCircleBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `minus-circle` icon in the boldDuotone style.
   const MinusCircleBoldDuotoneIcon({

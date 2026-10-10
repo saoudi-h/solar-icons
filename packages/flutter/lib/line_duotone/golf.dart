@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `golf` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2Ugb3BhY2l0eT0iMC41IiBjeD0iMTIiIGN5PSIxOC41IiByeD0iMTAiIHJ5PSIzLjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMThWMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMS45OTk4IDMuNUwxNy40MjIxIDYuMjExMTRDMTguOTgzMiA2Ljk5MTY5IDE5Ljc2MzggNy4zODE5NiAxOS43NjM4IDhDMTkuNzYzOCA4LjYxODA0IDE4Ljk4MzIgOS4wMDgzMSAxNy40MjIxIDkuNzg4ODZMMTEuOTk5OCAxMi41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class GolfLineDuotoneIcon extends StatelessWidget {
   /// Creates the `golf` icon in the lineDuotone style.
   const GolfLineDuotoneIcon({

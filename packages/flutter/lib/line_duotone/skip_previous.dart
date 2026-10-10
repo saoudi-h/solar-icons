@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `skip-previous` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuMzQwMTYgOS4zNTI1OEM1LjU1MzI4IDEwLjUwNjUgNS41NTMyOCAxMy40OTM1IDcuMzQwMTUgMTQuNjQ3NEwxOC4xMjkyIDIxLjYxNDVDMTkuODY1OCAyMi43MzYgMjIgMjEuMjc2MyAyMiAxOC45NjcxTDIyIDUuMDMyOUMyMiAyLjcyMzY4IDE5Ljg2NTggMS4yNjQwMiAxOC4xMjkyIDIuMzg1NDhMNy4zNDAxNiA5LjM1MjU4WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTIgNVYxOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class SkipPreviousLineDuotoneIcon extends StatelessWidget {
   /// Creates the `skip-previous` icon in the lineDuotone style.
   const SkipPreviousLineDuotoneIcon({

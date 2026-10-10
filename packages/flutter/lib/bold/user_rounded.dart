@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user-rounded` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDEzQzE1Ljg2NiAxMyAxOSAxNC43OTA5IDE5IDE3QzE5IDE5LjIwOTEgMTUuODY2IDIxIDEyIDIxQzguMTM0MDEgMjEgNSAxOS4yMDkxIDUgMTdDNSAxNC43OTA5IDguMTM0MDEgMTMgMTIgMTNaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMiAyQzE0LjIwOTEgMiAxNiAzLjc5MDg2IDE2IDZDMTYgOC4yMDkxNCAxNC4yMDkxIDEwIDEyIDEwQzkuNzkwODYgMTAgOCA4LjIwOTE0IDggNkM4IDMuNzkwODYgOS43OTA4NiAyIDEyIDJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class UserRoundedBoldIcon extends StatelessWidget {
   /// Creates the `user-rounded` icon in the bold style.
   const UserRoundedBoldIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `men` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBvcGFjaXR5PSIwLjUiIGN4PSIxMCIgY3k9IjE0IiByPSI4IiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNi45OTk4IDEuMjVDMTYuNTg1NiAxLjI1IDE2LjI0OTggMS41ODU3OSAxNi4yNDk4IDJDMTYuMjQ5OCAyLjQxNDIxIDE2LjU4NTYgMi43NSAxNi45OTk4IDIuNzVIMjAuMTg5MUwxNS4xMDE2IDcuODM3NThDMTUuNDg3MyA4LjE1NzI4IDE1Ljg0MjUgOC41MTI1IDE2LjE2MjIgOC44OTgyNEwyMS4yNDk4IDMuODEwNjZWN0MyMS4yNDk4IDcuNDE0MjEgMjEuNTg1NiA3Ljc1IDIxLjk5OTggNy43NUMyMi40MTQgNy43NSAyMi43NDk4IDcuNDE0MjEgMjIuNzQ5OCA3VjIuMjVDMjIuNzQ5OCAxLjY5NzcyIDIyLjMwMjEgMS4yNSAyMS43NDk4IDEuMjVIMTYuOTk5OFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MenBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `men` icon in the boldDuotone style.
   const MenBoldDuotoneIcon({

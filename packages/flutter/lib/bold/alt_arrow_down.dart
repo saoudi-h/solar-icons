@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `alt-arrow-down` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjM3MDQgMTUuODM1MUwxOC44MDAxIDkuMjA0NjdDMTkuMjAxMyA4Ljc5MDk0IDE4Ljk1ODEgOCAxOC40Mjk3IDhINS41NzAzQzUuMDQxODkgOCA0Ljc5ODY5IDguNzkwOTQgNS4xOTk5IDkuMjA0NjdMMTEuNjI5NiAxNS44MzUxQzExLjg0MjcgMTYuMDU0OSAxMi4xNTczIDE2LjA1NDkgMTIuMzcwNCAxNS44MzUxWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class AltArrowDownBoldIcon extends StatelessWidget {
   /// Creates the `alt-arrow-down` icon in the bold style.
   const AltArrowDownBoldIcon({

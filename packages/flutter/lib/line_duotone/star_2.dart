@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `star-2` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIwVjE3LjZNMTIgNi40VjRNMjAgMTJIMTcuNk02LjQgMTJINCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTE3LjY1NjkgNi4zNDI3N0wxNS45NTk5IDguMDM5ODNNOC4wNDAyOSAxNS45NTk0TDYuMzQzMjMgMTcuNjU2NU02LjM0MzAyIDYuMzQyOTVMOC4wNDAwNyA4LjA0MDAxTTE1Ljk1OTcgMTUuOTU5NkwxNy42NTY3IDE3LjY1NjciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class Star2LineDuotoneIcon extends StatelessWidget {
   /// Creates the `star-2` icon in the lineDuotone style.
   const Star2LineDuotoneIcon({

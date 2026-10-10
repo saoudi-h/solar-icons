@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `link-minimalistic` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguOTk5OTEgMTEuOTk5OUgxNC45OTk5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTkgMThIOEM0LjY4NjI5IDE4IDIgMTUuMzEzNyAyIDEyQzIgOC42ODYyOSA0LjY4NjI5IDYgOCA2SDkiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTUgNkgxNkMxOS4zMTM3IDYgMjIgOC42ODYyOSAyMiAxMk0xNSAxOEgxNkMxNy4yMjY3IDE4IDE4LjM2NzUgMTcuNjMxOCAxOS4zMTc4IDE3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class LinkMinimalisticBrokenIcon extends StatelessWidget {
   /// Creates the `link-minimalistic` icon in the broken style.
   const LinkMinimalisticBrokenIcon({

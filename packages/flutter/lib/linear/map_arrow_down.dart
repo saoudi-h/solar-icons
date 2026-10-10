@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-arrow-down` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuMTY0OTYgNC40OTc0N0wxMC41Mjc1IDIxLjAwNzJDMTEuMTE3OCAyMi4zMzA5IDEyLjg4MjIgMjIuMzMwOSAxMy40NzI1IDIxLjAwNzJMMjAuODM1IDQuNDk3NDdDMjEuNTAyMSAzLjAwMTYzIDIwLjAyMDkgMS40NTAwNiAxOC42MzMxIDIuMTkwOTlMMTIuNzI5NCA1LjM0MzAzQzEyLjI3MDIgNS41ODgxOCAxMS43Mjk4IDUuNTg4MTggMTEuMjcwNiA1LjM0MzAzTDUuMzY2ODkgMi4xOTA5OUMzLjk3OTE0IDEuNDUwMDcgMi40OTc4OSAzLjAwMTYzIDMuMTY0OTYgNC40OTc0N1oiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class MapArrowDownLinearIcon extends StatelessWidget {
   /// Creates the `map-arrow-down` icon in the linear style.
   const MapArrowDownLinearIcon({

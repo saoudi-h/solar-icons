@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `mouse` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDguOTc0MTRWMTQuOTg2MUMxOSAxOC44NTk4IDE1Ljg2NiAyMiAxMiAyMkM4LjEzNDAxIDIyIDUgMTguODU5OCA1IDE0Ljk4NjFWOC45NzQxNEM1IDUuMzU0MzMgNy43MzY2OCAyLjM3NDk3IDExLjI1IDJWNS4zODU0MkMxMC42NTg4IDUuNjY2ODUgMTAuMjUgNi4yNzA2NyAxMC4yNSA2Ljk3MDE2VjguOTc0MTRDMTAuMjUgOS45NDI1NiAxMS4wMzM1IDEwLjcyNzYgMTIgMTAuNzI3NkMxMi45NjY1IDEwLjcyNzYgMTMuNzUgOS45NDI1NiAxMy43NSA4Ljk3NDE0VjYuOTcwMTZDMTMuNzUgNi4yNzA2NyAxMy4zNDEyIDUuNjY2ODUgMTIuNzUgNS4zODU0MlYyQzE2LjI2MzMgMi4zNzQ5NyAxOSA1LjM1NDMzIDE5IDguOTc0MTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class MouseBoldIcon extends StatelessWidget {
   /// Creates the `mouse` icon in the bold style.
   const MouseBoldIcon({

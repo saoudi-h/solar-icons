@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `arrow-right-down` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuNDY5NjcgNi41MzAzM0M1LjE3Njc4IDYuMjM3NDQgNS4xNzY3OCA1Ljc2MjU2IDUuNDY5NjcgNS40Njk2N0M1Ljc2MjU2IDUuMTc2NzggNi4yMzc0NCA1LjE3Njc4IDYuNTMwMzMgNS40Njk2N0wxMy41IDEyLjQzOTNMMTcuNDY5NyA4LjQ2OTY3QzE3LjY4NDIgOC4yNTUxNyAxOC4wMDY4IDguMTkxIDE4LjI4NyA4LjMwNzA5QzE4LjU2NzMgOC40MjMxOCAxOC43NSA4LjY5NjY1IDE4Ljc1IDlWMThDMTguNzUgMTguNDE0MiAxOC40MTQyIDE4Ljc1IDE4IDE4Ljc1TDkgMTguNzVDOC42OTY2NSAxOC43NSA4LjQyMzE4IDE4LjU2NzMgOC4zMDcwOSAxOC4yODdDOC4xOTEwMSAxOC4wMDY4IDguMjU1MTcgMTcuNjg0MiA4LjQ2OTY3IDE3LjQ2OTdMMTIuNDM5MyAxMy41TDUuNDY5NjcgNi41MzAzM1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class ArrowRightDownBoldIcon extends StatelessWidget {
   /// Creates the `arrow-right-down` icon in the bold style.
   const ArrowRightDownBoldIcon({

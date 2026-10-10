@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-arrow-down` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjU5NzQgMTRMMTMuNDcyNSAyMS4wMDcyQzEyLjg4MjIgMjIuMzMwOSAxMS4xMTc4IDIyLjMzMDkgMTAuNTI3NSAyMS4wMDcyTDMuMTY0OTYgNC40OTc0NkMyLjQ5Nzg5IDMuMDAxNjMgMy45NzkxNCAxLjQ1MDA3IDUuMzY2ODkgMi4xOTA5OUwxMS4yNzA2IDUuMzQzMDJDMTEuNzI5OCA1LjU4ODE4IDEyLjI3MDIgNS41ODgxNyAxMi43Mjk0IDUuMzQzMDJMMTguNjMzMSAyLjE5MDk5QzIwLjAyMDkgMS40NTAwNiAyMS41MDIxIDMuMDAxNjMgMjAuODM1IDQuNDk3NDZMMTguNzE2MiA5LjI0ODczIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class MapArrowDownBrokenIcon extends StatelessWidget {
   /// Creates the `map-arrow-down` icon in the broken style.
   const MapArrowDownBrokenIcon({

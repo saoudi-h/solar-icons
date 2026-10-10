@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `slash-circle` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaTTE0LjAxODQgNy4zNjQ1QzE0LjEyNTcgNi45NjQ0IDEzLjg4ODIgNi41NTMxNSAxMy40ODgxIDYuNDQ1OTVDMTMuMDg4IDYuMzM4NzQgMTIuNjc2OCA2LjU3NjE4IDEyLjU2OTYgNi45NzYyOEw5Ljk4MTM3IDE2LjYzNTVDOS44NzQxNiAxNy4wMzU2IDEwLjExMTYgMTcuNDQ2OSAxMC41MTE3IDE3LjU1NDFDMTAuOTExOCAxNy42NjEzIDExLjMyMyAxNy40MjM5IDExLjQzMDMgMTcuMDIzOEwxNC4wMTg0IDcuMzY0NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class SlashCircleBoldIcon extends StatelessWidget {
   /// Creates the `slash-circle` icon in the bold style.
   const SlashCircleBoldIcon({

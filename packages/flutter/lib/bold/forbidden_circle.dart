@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `forbidden-circle` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA5LjUwODUzIDIxLjA4ODkgNy4yMjk4NyAxOS41ODE2IDUuNDc5MDZMNS40NzkwNSAxOS41ODE2QzcuMjI5ODcgMjEuMDg4OSA5LjUwODUzIDIyIDEyIDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNC40OTE1IDIuOTExMTQgMTYuNzcwMSA0LjQxODM5IDE4LjUyMDlMMTguNTIwOSA0LjQxODM5QzE2Ljc3MDEgMi45MTExNCAxNC40OTE1IDIgMTIgMloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class ForbiddenCircleBoldIcon extends StatelessWidget {
   /// Creates the `forbidden-circle` icon in the bold style.
   const ForbiddenCircleBoldIcon({

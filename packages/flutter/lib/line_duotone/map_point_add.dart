@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-point-add` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNCAxMC4xNDMzQzQgNS42NDU4OCA3LjU4MTcyIDIgMTIgMkMxNi40MTgzIDIgMjAgNS42NDU4OCAyMCAxMC4xNDMzQzIwIDE0LjYwNTUgMTcuNDQ2NyAxOS44MTI0IDEzLjQ2MjkgMjEuNjc0NEMxMi41MzQzIDIyLjEwODUgMTEuNDY1NyAyMi4xMDg1IDEwLjUzNzEgMjEuNjc0NEM2LjU1MzMyIDE5LjgxMjQgNCAxNC42MDU1IDQgMTAuMTQzM1oiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOS41IDEwSDE0LjVNMTIgMTIuNUwxMiA3LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class MapPointAddLineDuotoneIcon extends StatelessWidget {
   /// Creates the `map-point-add` icon in the lineDuotone style.
   const MapPointAddLineDuotoneIcon({

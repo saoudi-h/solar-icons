@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `chat-round` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDEzLjU5OTcgMi4zNzU2MiAxNS4xMTE2IDMuMDQzNDYgMTYuNDUyNUMzLjIyMDk0IDE2LjgwODggMy4yODAwMSAxNy4yMTYxIDMuMTc3MTIgMTcuNjAwNkwyLjU4MTUxIDE5LjgyNjdDMi4zMjI5NSAyMC43OTMgMy4yMDcwMSAyMS42NzcgNC4xNzMzNSAyMS40MTg1TDYuMzk5MzkgMjAuODIyOUM2Ljc4MzkzIDIwLjcyIDcuMTkxMjEgMjAuNzc5MSA3LjU0NzUzIDIwLjk1NjVDOC44ODgzNiAyMS42MjQ0IDEwLjQwMDMgMjIgMTIgMjJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class ChatRoundBoldIcon extends StatelessWidget {
   /// Creates the `chat-round` icon in the bold style.
   const ChatRoundBoldIcon({

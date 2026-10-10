@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `colour-tuning` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMTJIOS41TTIyIDEySDE0LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjAuMDAwMiAxNS42ODQzQzIwLjAwMDIgMTkgMTcuNzM0NSAyMiAxNi4wMDAyIDIyQzE0Ljc0MjcgMjIgMTMuNjcyNSAyMS4wMjk5IDEyLjk2ODIgMTguOTk5OU00LjE0NDA0IDguMzE1NjdDNC4xNDQwNCA0Ljk5OTg4IDYuNDA5NzggMS45OTk4OCA4LjE0NDA0IDEuOTk5ODhDMTAuNDEyOCAxLjk5OTg4IDEyLjA3MjMgNS4xNTc5NCAxMi4wNzIzIDEyQzEyLjA3MjMgMTMuMDkzMyAxMi4xMTQ2IDE0LjA5MjYgMTIuMTk1MSAxNC45OTk5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class ColourTuningBrokenIcon extends StatelessWidget {
   /// Creates the `colour-tuning` icon in the broken style.
   const ColourTuningBrokenIcon({

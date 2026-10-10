@@ -184,7 +184,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  solar_icons:
+  solaricons_flutter:
     dependency: "direct main"
     description:
       path: ".."

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `magnifier` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBvcGFjaXR5PSIwLjUiIGN4PSIxMS41IiBjeT0iMTEuNSIgcj0iOS41IiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0yMS43ODkxIDIwLjc2NTZDMjIuMDcxMyAyMS4wNDc5IDIyLjA3MTEgMjEuNTA1OCAyMS43ODkxIDIxLjc4ODFDMjEuNTA2OCAyMi4wNzA0IDIxLjA0ODkgMjIuMDcwNCAyMC43NjY2IDIxLjc4ODFMMTcuNjg1NSAxOC43MDdDMTguMDUxNiAxOC4zOTI2IDE4LjM5MjYgMTguMDUwNiAxOC43MDcgMTcuNjg0NkwyMS43ODkxIDIwLjc2NTZaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class MagnifierBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `magnifier` icon in the boldDuotone style.
   const MagnifierBoldDuotoneIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `star-2` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIwVjE3LjZNMTIgNi40VjRNMjAgMTJIMTcuNk02LjQgMTJINE0xNy42NTY5IDYuMzQzMTVMMTUuOTU5OCA4LjA0MDJNOC4wNDAyIDE1Ljk1OThMNi4zNDMxNSAxNy42NTY5TTYuMzQyOTMgNi4zNDMzMkw4LjAzOTk5IDguMDQwMzhNMTUuOTU5NiAxNS45NkwxNy42NTY2IDE3LjY1NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class Star2LinearIcon extends StatelessWidget {
   /// Creates the `star-2` icon in the linear style.
   const Star2LinearIcon({

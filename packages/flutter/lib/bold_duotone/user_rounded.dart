@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user-rounded` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSI0IiBmaWxsPSIjMUMyNzRDIi8+CjxlbGxpcHNlIG9wYWNpdHk9IjAuNSIgY3g9IjEyIiBjeT0iMTciIHJ4PSI3IiByeT0iNCIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class UserRoundedBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `user-rounded` icon in the boldDuotone style.
   const UserRoundedBoldDuotoneIcon({

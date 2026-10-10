@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `infinite` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDUgOEM5LjE2NDc0IDcuMzcyMDkgOC4xMjU4MiA3IDcgN0M0LjIzODU4IDcgMiA5LjIzODU4IDIgMTJDMiAxMy42MzU2IDIuNzg1MzQgMTUuMDg3OCAzLjk5OTUxIDE2TTE0IDE2QzE0LjgzNTcgMTYuNjI3OCAxNS44NzQzIDE3IDE3IDE3QzE5Ljc2MTQgMTcgMjIgMTQuNzYxNCAyMiAxMkMyMiAxMC4zNjQ0IDIxLjIxNDcgOC45MTIyMyAyMC4wMDA1IDgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNyAxN0M5Ljc2MTQyIDE3IDEwLjUgMTUgMTIgMTJDMTMuNSA5IDE0LjIzODYgNyAxNyA3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class InfiniteBrokenIcon extends StatelessWidget {
   /// Creates the `infinite` icon in the broken style.
   const InfiniteBrokenIcon({

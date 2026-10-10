@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `alt-arrow-down` icon in the outline style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjQzMDU3IDguNTExOTJDNC43MDAxNCA4LjE5NzQzIDUuMTczNjEgOC4xNjEgNS40ODgxMSA4LjQzMDU3TDEyIDE0LjAxMjJMMTguNTExOSA4LjQzMDU3QzE4LjgyNjQgOC4xNjEwMSAxOS4yOTk5IDguMTk3NDMgMTkuNTY5NSA4LjUxMTkyQzE5LjgzOSA4LjgyNjQyIDE5LjgwMjYgOS4yOTk4OSAxOS40ODgxIDkuNTY5NDZMMTIuNDg4MSAxNS41Njk1QzEyLjIwNzIgMTUuODEwMiAxMS43OTI4IDE1LjgxMDIgMTEuNTExOSAxNS41Njk1TDQuNTExOTIgOS41Njk0NkM0LjE5NzQzIDkuMjk5ODkgNC4xNjEgOC44MjY0MSA0LjQzMDU3IDguNTExOTJaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class AltArrowDownOutlineIcon extends StatelessWidget {
   /// Creates the `alt-arrow-down` icon in the outline style.
   const AltArrowDownOutlineIcon({

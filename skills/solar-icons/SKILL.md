@@ -1,6 +1,6 @@
 ---
 name: solar-icons
-description: Add Solar Icons via @solar-icons/cli to any React, Vue, Svelte, Solid, Angular, React Native, Nuxt, Static, vanilla JS, Laravel Blade, or Flutter project. Use when installing @solar-icons/react|vue|svelte|solid|angular|react-native|nuxt|static|js, solar-icons/blade, or solar_icons, choosing an icon, picking Bold|Linear|Outline|BoldDuotone|LineDuotone|Broken, or wiring SolarProvider, useSolar, secondaryColor, secondaryOpacity, strokeWidth, color, size. Triggers on solar icons, solar-icons, Icon suffix, kebab-case imports, duotone, and CSS variables --solar-*.
+description: Add Solar Icons via @solar-icons/cli to any React, Vue, Svelte, Solid, Angular, React Native, Nuxt, Static, vanilla JS, Laravel Blade, or Flutter project. Use when installing @solar-icons/react|vue|svelte|solid|angular|react-native|nuxt|static|js, solar-icons/blade, or solaricons_flutter, choosing an icon, picking Bold|Linear|Outline|BoldDuotone|LineDuotone|Broken, or wiring SolarProvider, useSolar, secondaryColor, secondaryOpacity, strokeWidth, color, size. Triggers on solar icons, solar-icons, Icon suffix, kebab-case imports, duotone, and CSS variables --solar-*.
 license: MIT
 metadata:
   author: saoudi-h
@@ -16,7 +16,7 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 - **Icons:** https://solar-icons.vercel.app/icons
 - **Docs:** https://solar-icons.vercel.app/docs
 - **Figma:** https://www.figma.com/community/plugin/1664759238792120976/solar-icons
-- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Flutter, via pub.dev)
+- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solaricons_flutter` (Flutter, via pub.dev)
 
 > Install: `npx skills add saoudi-h/solar-icons --skill solar-icons` · CLI: `npx @solar-icons/cli --help`
 
@@ -50,13 +50,13 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 | `@solar-icons/static` | `import url from "@solar-icons/static/bold/home.svg"` | none | `references/static.md` |
 | `@solar-icons/js` | `import { createIcons } from "@solar-icons/js"` | 10-line helper | `references/js.md` |
 | `solar-icons/blade` | `<x-solar-bold-home />` | config defaults (`solar-icons-blade.php`) | `references/frameworks.md` |
-| `solar_icons` | `HomeBoldIcon()` | `SolarProvider` widget + per-icon params | `references/frameworks.md` |
+| `solaricons_flutter` | `HomeBoldIcon()` | `SolarProvider` widget + per-icon params | `references/frameworks.md` |
 
 Top-level alternative (style in name, single import): `import { HomeBoldIcon } from "@solar-icons/react"` — see `references/frameworks.md`. Rule: **kebab-case** (`bold/home`, `bold-duotone/arrow-up`). `Bold/Home` is stale (V2-13). If imports fail, `pnpm build`.
 
 ## Workflow — add icons to a project
 
-1. **Detect framework** (`package.json`): `react` → `@solar-icons/react`, `vue` → `vue`, `svelte` → `svelte`, `solid-js` → `solid`, `@angular/core` → `angular`, `react-native` → `react-native`, `nuxt` → `nuxt`, none → `static`/`js`. Laravel (`composer.json` + `illuminate/*`) → `solar-icons/blade` via `composer require solar-icons/blade`. Flutter (`pubspec.yaml` + `flutter` SDK) → `solar_icons` via `flutter pub add solar_icons`.
+1. **Detect framework** (`package.json`): `react` → `@solar-icons/react`, `vue` → `vue`, `svelte` → `svelte`, `solid-js` → `solid`, `@angular/core` → `angular`, `react-native` → `react-native`, `nuxt` → `nuxt`, none → `static`/`js`. Laravel (`composer.json` + `illuminate/*`) → `solar-icons/blade` via `composer require solar-icons/blade`. Flutter (`pubspec.yaml` + `flutter` SDK) → `solaricons_flutter` via `flutter pub add solaricons_flutter`.
 2. **Install** with the project's PM (`pnpm add @solar-icons/<pkg>`; respect `packageManager` field).
 3. **Search** via CLI (offline, no API key):
    ```bash

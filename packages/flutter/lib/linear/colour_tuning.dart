@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `colour-tuning` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMTJIOS41TTIyIDEySDE0LjUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjAuMDAwMiAxNS42ODQzQzIwLjAwMDIgMTkgMTcuNzM0NSAyMiAxNi4wMDAyIDIyQzEzLjczMTUgMjIgMTIuMDcyMyAxOC44NDIxIDEyLjA3MjMgMTJDMTIuMDcyMyA1LjE1Nzk0IDEwLjQxMjggMS45OTk4OCA4LjE0NDA0IDEuOTk5ODhDNi40MDk3OCAxLjk5OTg4IDQuMTQ0MDQgNC45OTk4OCA0LjE0NDA0IDguMzE1NjciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class ColourTuningLinearIcon extends StatelessWidget {
   /// Creates the `colour-tuning` icon in the linear style.
   const ColourTuningLinearIcon({

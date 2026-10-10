@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `link-circle` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0IDEyQzE0IDE1LjMxMzcgMTEuMzEzNyAxOCA4IDE4QzQuNjg2MjkgMTggMiAxNS4zMTM3IDIgMTJDMiA4LjY4NjI5IDQuNjg2MjkgNiA4IDYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTAgMTJDMTAgOC42ODYyOSAxMi42ODYzIDYgMTYgNkMxOS4zMTM3IDYgMjIgOC42ODYyOSAyMiAxMkMyMiAxNS4zMTM3IDE5LjMxMzcgMTggMTYgMTgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class LinkCircleLinearIcon extends StatelessWidget {
   /// Creates the `link-circle` icon in the linear style.
   const LinkCircleLinearIcon({

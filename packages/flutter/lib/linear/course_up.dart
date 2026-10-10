@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `course-up` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyIDdMMTQuNjIwMyAxNC4zMzQ3QzEzLjYyMjcgMTUuMzI2MyAxMy4xMjM4IDE1LjgyMiAxMi41MDUxIDE1LjgyMkMxMS44ODY0IDE1LjgyMTkgMTEuMzg3NiAxNS4zMjYgMTAuMzkwMiAxNC4zMzQyTDEwLjE1MDkgMTQuMDk2MkM5LjE1MjU0IDEzLjEwMzUgOC42NTMzOCAxMi42MDcxIDguMDM0MjIgMTIuNjA3NEM3LjQxNTA2IDEyLjYwNzYgNi45MTYyNiAxMy4xMDQzIDUuOTE4NjcgMTQuMDk3N0wyIDE4TTE2LjQxNzkgN0gyMlYxMi41NDU4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
 class CourseUpLinearIcon extends StatelessWidget {
   /// Creates the `course-up` icon in the linear style.
   const CourseUpLinearIcon({

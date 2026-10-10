@@ -1,7 +1,7 @@
 // Generated from lib/dynamic by tool/generate_gallery_registry.mjs. Do not edit.
 import 'package:flutter/widgets.dart';
 
-import 'package:solar_icons/solar_icons.dart';
+import 'package:solaricons_flutter/solaricons_flutter.dart';
 
 /// Every catalogue icon by kebab-case name.
 typedef IconBuilder =

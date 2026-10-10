@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `women` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTEuOTk5NyAxNlYxOC41TTExLjk5OTcgMTguNUg5LjVNMTEuOTk5NyAxOC41SDE0LjVNMTEuOTk5NyAxOC41TDEyIDIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE5IDlDMTkgMTIuODY2IDE1Ljg2NiAxNiAxMiAxNkM4LjEzNDAxIDE2IDUgMTIuODY2IDUgOUM1IDUuMTM0MDEgOC4xMzQwMSAyIDEyIDJDMTUuODY2IDIgMTkgNS4xMzQwMSAxOSA5WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class WomenLineDuotoneIcon extends StatelessWidget {
   /// Creates the `women` icon in the lineDuotone style.
   const WomenLineDuotoneIcon({

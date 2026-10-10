@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `alt-arrow-right` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjgzNTEgMTEuNjI5Nkw5LjIwNDY3IDUuMTk5OUM4Ljc5MDk0IDQuNzk4NjkgOCA1LjA0MTg5IDggNS41NzAzTDggMTguNDI5N0M4IDE4Ljk1ODEgOC43OTA5NCAxOS4yMDEzIDkuMjA0NjcgMTguODAwMUwxNS44MzUxIDEyLjM3MDRDMTYuMDU1IDEyLjE1NzMgMTYuMDU0OSAxMS44NDI3IDE1LjgzNTEgMTEuNjI5NloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class AltArrowRightBoldIcon extends StatelessWidget {
   /// Creates the `alt-arrow-right` icon in the bold style.
   const AltArrowRightBoldIcon({

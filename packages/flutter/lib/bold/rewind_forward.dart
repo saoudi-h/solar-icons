@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `rewind-forward` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMTcuNTczN0wyIDYuNDI2MzJDMiA0LjU3ODk1IDMuNjAwNjQgMy40MTEyMiA0LjkwMzEyIDQuMzA4MzhMMTAuOTk5OCA4Ljc2ODQ0TDEwLjk5OTggNy4xMjMwM0MxMC45OTk4IDUuNTA2NTggMTIuNDY3IDQuNDg0ODIgMTMuNjYxIDUuMjY5ODNMMjEuMDc4NCAxMC4xNDY4QzIyLjMwNjkgMTAuOTU0NSAyMi4zMDY5IDEzLjA0NTUgMjEuMDc4NCAxMy44NTMyTDEzLjY2MSAxOC43MzAyQzEyLjQ2NyAxOS41MTUyIDEwLjk5OTggMTguNDkzNCAxMC45OTk4IDE2Ljg3N1YxNS4yMzE2TDQuOTAzMTMgMTkuNjkxNkMzLjYwMDY1IDIwLjU4ODggMiAxOS40MjExIDIgMTcuNTczN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class RewindForwardBoldIcon extends StatelessWidget {
   /// Creates the `rewind-forward` icon in the bold style.
   const RewindForwardBoldIcon({

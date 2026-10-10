@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-point` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTIgMkM3LjU4MTcyIDIgNCA2LjAwMjU4IDQgMTAuNUM0IDE0Ljk2MjIgNi41NTMzMiAxOS44MTI0IDEwLjUzNzEgMjEuNjc0NEMxMS40NjU3IDIyLjEwODUgMTIuNTM0MyAyMi4xMDg1IDEzLjQ2MjkgMjEuNjc0NEMxNy40NDY3IDE5LjgxMjQgMjAgMTQuOTYyMiAyMCAxMC41QzIwIDYuMDAyNTggMTYuNDE4MyAyIDEyIDJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xMiAxMi41QzEzLjM4MDcgMTIuNSAxNC41IDExLjM4MDcgMTQuNSAxMEMxNC41IDguNjE5MjkgMTMuMzgwNyA3LjUgMTIgNy41QzEwLjYxOTMgNy41IDkuNSA4LjYxOTI5IDkuNSAxMEM5LjUgMTEuMzgwNyAxMC42MTkzIDEyLjUgMTIgMTIuNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MapPointBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `map-point` icon in the boldDuotone style.
   const MapPointBoldDuotoneIcon({

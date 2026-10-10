@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `course-down` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyIDE4TDE0LjYyMDMgMTAuNjY1M0MxMy42MjI3IDkuNjczNzUgMTMuMTIzOCA5LjE3Nzk1IDEyLjUwNTEgOS4xNzgwMkMxMS44ODY0IDkuMTc4MDkgMTEuMzg3NiA5LjY3NCAxMC4zOTAyIDEwLjY2NThMMTAuMTUwOSAxMC45MDM4QzkuMTUyNTQgMTEuODk2NSA4LjY1MzM4IDEyLjM5MjkgOC4wMzQyMiAxMi4zOTI2QzcuNDE1MDYgMTIuMzkyNCA2LjkxNjI2IDExLjg5NTcgNS45MTg2NyAxMC45MDIzTDIgN00xNi40MTc5IDE4SDIyVjEyLjQ1NDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 class CourseDownLinearIcon extends StatelessWidget {
   /// Creates the `course-down` icon in the linear style.
   const CourseDownLinearIcon({

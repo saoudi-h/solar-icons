@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `men` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgNy4wNzAyNkM3LjE3NjY5IDYuMzg5NTggOC41NDI4NSA2IDEwIDZDMTQuNDE4MyA2IDE4IDkuNTgxNzIgMTggMTRDMTggMTguNDE4MyAxNC40MTgzIDIyIDEwIDIyQzUuNTgxNzIgMjIgMiAxOC40MTgzIDIgMTRDMiAxMi41NDI5IDIuMzg5NTggMTEuMTc2NyAzLjA3MDI2IDEwIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE1LjYzNTcgOC4zMzQyN0wyMS45OTk4IDJNMTYuOTk5OCAySDIxLjk5OThWNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class MenBrokenIcon extends StatelessWidget {
   /// Creates the `men` icon in the broken style.
   const MenBrokenIcon({

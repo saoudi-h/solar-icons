@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `undo-left-round` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgN0gxNUMxNy43NjE0IDcgMjAgOS4yMzg1NyAyMCAxMkMyMCAxNC43NjE0IDE3Ljc2MTQgMTcgMTUgMTdIOC4wMDAwMU03IDEwTDQgN0w3IDQiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 class UndoLeftRoundLinearIcon extends StatelessWidget {
   /// Creates the `undo-left-round` icon in the linear style.
   const UndoLeftRoundLinearIcon({

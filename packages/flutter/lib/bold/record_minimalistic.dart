@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `record-minimalistic` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuODg4ODkgMTZDMy43NDExMSAxNiAyIDE0LjIwOTEgMiAxMkMyIDkuNzkwODYgMy43NDExMSA4IDUuODg4ODkgOEM4LjAzNjY2IDggOS43Nzc3OCA5Ljc5MDg2IDkuNzc3NzggMTJDOS43Nzc3OCAxMi44NDk5IDkuNTIwMSAxMy42Mzc4IDkuMDgwNzMgMTQuMjg1N0gxNC45MTkzQzE0LjQ3OTkgMTMuNjM3OCAxNC4yMjIyIDEyLjg0OTkgMTQuMjIyMiAxMkMxNC4yMjIyIDkuNzkwODYgMTUuOTYzMyA4IDE4LjExMTEgOEMyMC4yNTg5IDggMjIgOS43OTA4NiAyMiAxMkMyMiAxNC4yMDkxIDIwLjI1ODkgMTYgMTguMTExMSAxNkg1Ljg4ODg5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class RecordMinimalisticBoldIcon extends StatelessWidget {
   /// Creates the `record-minimalistic` icon in the bold style.
   const RecordMinimalisticBoldIcon({

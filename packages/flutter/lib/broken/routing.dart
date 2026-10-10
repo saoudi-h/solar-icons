@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `routing` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDIxTDIwIDE5TDE4IDE3TTIwIDE5SDEzLjc1TTggNUgxMU0xMCAxOUg3LjVDNS41NjcgMTkgNCAxNy40MzMgNCAxNS41QzQgMTMuNTY3IDUuNTY3IDEyIDcuNSAxMkgxNi41QzE4LjQzMyAxMiAyMCAxMC40MzMgMjAgOC41QzIwIDYuNTY3IDE4LjQzMyA1IDE2LjUgNUgxNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxjaXJjbGUgY3g9IjYiIGN5PSI1IiByPSIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class RoutingBrokenIcon extends StatelessWidget {
   /// Creates the `routing` icon in the broken style.
   const RoutingBrokenIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `magnet` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3IDJIMTkuNUMyMC4zMjg0IDIgMjEgMi42NzE1NyAyMSAzLjVWNS41QzIxIDYuMzI4NDMgMjAuMzI4NCA3IDE5LjUgN0gxN00xNyAySDEzQzcuNDc3MTUgMiAzIDYuNDc3MTUgMyAxMkMzIDE3LjUyMjggNy40NzcxNSAyMiAxMyAyMkgxN00xNyAyVjdNMTcgN0gxM0MxMC4yMzg2IDcgOCA5LjIzODU4IDggMTJDOCAxNC43NjE0IDEwLjIzODYgMTcgMTMgMTdIMTdNMTcgMTdIMTkuNUMyMC4zMjg0IDE3IDIxIDE3LjY3MTYgMjEgMTguNVYyMC41QzIxIDIxLjMyODQgMjAuMzI4NCAyMiAxOS41IDIySDE3TTE3IDE3VjIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
 class MagnetLinearIcon extends StatelessWidget {
   /// Creates the `magnet` icon in the linear style.
   const MagnetLinearIcon({

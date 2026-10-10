@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `columns-2` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjI1IDIxSDEwQzYuMjI4NzYgMjEgNC4zNDM0NSAyMC45OTk3IDMuMTcxODggMTkuODI4MUMyLjAwMDMgMTguNjU2NiAyIDE2Ljc3MTIgMiAxM1YxMUMyIDcuMjI4NzYgMi4wMDAzIDUuMzQzNDUgMy4xNzE4OCA0LjE3MTg4QzQuMzQzNDUgMy4wMDAzIDYuMjI4NzYgMyAxMCAzSDExLjI1VjIxWk0xNCAzQzE3Ljc3MTIgMyAxOS42NTY2IDMuMDAwMyAyMC44MjgxIDQuMTcxODhDMjEuOTk5NyA1LjM0MzQ1IDIyIDcuMjI4NzYgMjIgMTFWMTNDMjIgMTYuNzcxMiAyMS45OTk3IDE4LjY1NjYgMjAuODI4MSAxOS44MjgxQzE5LjY1NjYgMjAuOTk5NyAxNy43NzEyIDIxIDE0IDIxSDEyLjc1VjNIMTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class Columns2BoldIcon extends StatelessWidget {
   /// Creates the `columns-2` icon in the bold style.
   const Columns2BoldIcon({

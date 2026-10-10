@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `music-note-2` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjc1IDJDMTMuNzUgMS41ODU3OSAxMy40MTQyIDEuMjUgMTMgMS4yNUMxMi41ODU4IDEuMjUgMTIuMjUgMS41ODU3OSAxMi4yNSAyVjE0LjUzNTlDMTEuNDAwMyAxMy43Mzg0IDEwLjI1NzIgMTMuMjUgOSAxMy4yNUM2LjM3NjY1IDEzLjI1IDQuMjUgMTUuMzc2NiA0LjI1IDE4QzQuMjUgMjAuNjIzNCA2LjM3NjY1IDIyLjc1IDkgMjIuNzVDMTEuNjIzNCAyMi43NSAxMy43NSAyMC42MjM0IDEzLjc1IDE4VjYuMjQzQzE0Ljk4NzUgNy43NzIyNSAxNi44Nzk1IDguNzUgMTkgOC43NUMxOS40MTQyIDguNzUgMTkuNzUgOC40MTQyMSAxOS43NSA4QzE5Ljc1IDcuNTg1NzkgMTkuNDE0MiA3LjI1IDE5IDcuMjVDMTYuMTAwNSA3LjI1IDEzLjc1IDQuODk5NSAxMy43NSAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class MusicNote2BoldIcon extends StatelessWidget {
   /// Creates the `music-note-2` icon in the bold style.
   const MusicNote2BoldIcon({

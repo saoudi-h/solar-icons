@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solar_icons/solar_icons.dart';
+import 'package:solaricons_flutter/solaricons_flutter.dart';
 
 /// Composed SVG string of the single rendered icon.
 Future<String> renderedSvg(WidgetTester tester) async {

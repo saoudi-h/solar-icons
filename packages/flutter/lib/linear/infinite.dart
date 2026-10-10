@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `infinite` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDUgOEM5LjE2NDc0IDcuMzcyMDkgOC4xMjU4MiA3IDcgN0M0LjIzODU4IDcgMiA5LjIzODU4IDIgMTJDMiAxNC43NjE0IDQuMjM4NTggMTcgNyAxN0M5Ljc2MTQyIDE3IDEwLjUgMTUgMTIgMTJDMTMuNSA5IDE0LjIzODYgNyAxNyA3QzE5Ljc2MTQgNyAyMiA5LjIzODU4IDIyIDEyQzIyIDE0Ljc2MTQgMTkuNzYxNCAxNyAxNyAxN0MxNS44NzQzIDE3IDE0LjgzNTcgMTYuNjI3OCAxNCAxNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class InfiniteLinearIcon extends StatelessWidget {
   /// Creates the `infinite` icon in the linear style.
   const InfiniteLinearIcon({

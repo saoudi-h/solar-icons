@@ -128,7 +128,7 @@ function readCatalogue() {
                     icons.set(name, { name, category: category.name, styles: new Map() })
                 }
                 const raw = fs.readFileSync(path.join(stylePath, filename), 'utf8')
-                icons.get(name).styles.set(styleDir, normalize(raw))
+                icons.get(name).styles.set(styleDir, { raw, ...normalize(raw) })
             }
         }
     }
@@ -238,6 +238,17 @@ const DYNAMIC_BUILD = `  @override
     );
   }`
 
+/**
+ * Base64 doc preview of a raw core SVG, mirroring the React package JSDoc
+ * (`![img](data:image/svg+xml;base64,...)`). Doc comments never reach the
+ * compiled app: the Dart toolchain discards them before tree-shaking, so
+ * previews cost source-download size only, measured with
+ * `dart pub publish --dry-run`.
+ */
+function docPreview(raw) {
+    return `/// ![img](data:image/svg+xml;base64,${Buffer.from(raw).toString('base64')})`
+}
+
 function dataPayload(iconName, field, parsed) {
     const accent = parsed.accent ? `,\n    accent: ${dartRaw(parsed.accent)}` : ''
     return `SolarIconData(
@@ -266,6 +277,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The \`${icon.name}\` icon in the ${field} style.
+${docPreview(parsed.raw)}
 class ${className} extends StatelessWidget {
   /// Creates the \`${icon.name}\` icon in the ${field} style.
   const ${className}({
@@ -311,6 +323,7 @@ import '../src/solar_provider.dart';
 /// Prefer the static widgets (e.g. \`${pascal(icon.name)}LinearIcon\`) when the
 /// style is known upfront: they embed a single SVG. Use this widget when the
 /// style is only known at runtime.
+${STYLES.map(([styleDir, field]) => docPreview(icon.styles.get(styleDir).raw)).join('\n')}
 class ${className} extends StatelessWidget {
   /// Creates the \`${icon.name}\` icon.
   ///
@@ -428,7 +441,7 @@ function main() {
     const dynamicBarrelPath = path.join(libDir, 'dynamic.dart')
     fs.writeFileSync(dynamicBarrelPath, renderStyleBarrel('dynamic', names))
     formatTargets.push(dynamicDir, dynamicBarrelPath)
-    fs.writeFileSync(path.join(libDir, 'solar_icons.dart'), renderRootBarrel(names))
+    fs.writeFileSync(path.join(libDir, 'solaricons_flutter.dart'), renderRootBarrel(names))
 
     const formatted = spawnSync('dart', ['format', ...formatTargets], {
         stdio: 'inherit',

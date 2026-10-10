@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `upload-minimalistic` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTVDMyAxNy44Mjg0IDMgMTkuMjQyNiAzLjg3ODY4IDIwLjEyMTNDNC43NTczNiAyMSA2LjE3MTU3IDIxIDkgMjFIMTVDMTcuODI4NCAyMSAxOS4yNDI2IDIxIDIwLjEyMTMgMjAuMTIxM0MyMSAxOS4yNDI2IDIxIDE3LjgyODQgMjEgMTUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMTZWM004IDcuMzc1TDEyIDNMMTYgNy4zNzUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 class UploadMinimalisticLinearIcon extends StatelessWidget {
   /// Creates the `upload-minimalistic` icon in the linear style.
   const UploadMinimalisticLinearIcon({

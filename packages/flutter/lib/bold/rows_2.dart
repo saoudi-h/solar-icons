@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `rows-2` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTEuMjVMMyAxMEMzIDYuMjI4NzYgMy4wMDAzIDQuMzQzNDUgNC4xNzE4NyAzLjE3MTg3QzUuMzQzNDUgMi4wMDAzIDcuMjI4NzYgMiAxMSAyTDEzIDJDMTYuNzcxMiAyIDE4LjY1NjYgMi4wMDAzIDE5LjgyODEgMy4xNzE4N0MyMC45OTk3IDQuMzQzNDUgMjEgNi4yMjg3NiAyMSAxMEwyMSAxMS4yNUwzIDExLjI1Wk0yMSAxNEMyMSAxNy43NzEyIDIwLjk5OTcgMTkuNjU2NiAxOS44MjgxIDIwLjgyODFDMTguNjU2NiAyMS45OTk3IDE2Ljc3MTIgMjIgMTMgMjJMMTEgMjJDNy4yMjg3NiAyMiA1LjM0MzQ1IDIxLjk5OTcgNC4xNzE4NyAyMC44MjgxQzMuMDAwMyAxOS42NTY2IDMgMTcuNzcxMiAzIDE0TDMgMTIuNzVMMjEgMTIuNzVMMjEgMTRaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class Rows2BoldIcon extends StatelessWidget {
   /// Creates the `rows-2` icon in the bold style.
   const Rows2BoldIcon({

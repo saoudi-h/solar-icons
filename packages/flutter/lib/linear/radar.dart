@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `radar` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDExLjk5OTZMNS4wMDE5NyA2LjMzNTQ2QzQuNTcyODUgNS45ODgxMyAzLjkzODY5IDYuMDUxODIgMy42MzU5OSA2LjUxMzVDMy4wNjY3OCA3LjM4MTYzIDIuNjI0MTMgOC4zNTM4OSAyLjM0MDc4IDkuNDExMzZDMC45MTEzNjQgMTQuNzQ2IDQuMDc3MTkgMjAuMjI5NCA5LjQxMTg1IDIxLjY1ODhDMTQuNzQ2NSAyMy4wODgyIDIwLjIyOTkgMTkuOTIyNCAyMS42NTkzIDE0LjU4NzdDMjMuMDg4NyA5LjI1MzA4IDE5LjkyMjkgMy43Njk3MSAxNC41ODgyIDIuMzQwMjlDMTEuOTU1NiAxLjYzNDg5IDkuMjg2ODQgMi4wNDg1NyA3LjA4NjkgMy4yODk3MiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class RadarLinearIcon extends StatelessWidget {
   /// Creates the `radar` icon in the linear style.
   const RadarLinearIcon({

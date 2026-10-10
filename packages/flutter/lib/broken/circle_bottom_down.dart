@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `circle-bottom-down` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDE0TDIgMjJNMiAxNlYyMkg4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiAxMC4xNzg2IDIxLjUxMyA4LjQ3MDg3IDIwLjY2MjIgN00yIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxMy44MjE0IDIgMTUuNTI5MSAyLjQ4Njk3IDE3IDMuMzM3ODIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class CircleBottomDownBrokenIcon extends StatelessWidget {
   /// Creates the `circle-bottom-down` icon in the broken style.
   const CircleBottomDownBrokenIcon({

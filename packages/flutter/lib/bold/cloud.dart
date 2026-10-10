@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `cloud` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjI4NTcgMjBDMTkuNDQxNiAyMCAyMiAxNy40NzE3IDIyIDE0LjM1MjlDMjIgMTEuODgxMSAyMC4zOTMgOS43ODAyNCAxOC4xNTUxIDkuMDE0OThDMTcuODM3MSA2LjE5MzcxIDE1LjQxNTkgNCAxMi40NzYyIDRDOS4zMjAyOCA0IDYuNzYxOSA2LjUyODI3IDYuNzYxOSA5LjY0NzA2QzYuNzYxOSAxMC4zMzY5IDYuODg3MDYgMTAuOTk3OCA3LjExNjE2IDExLjYwODlDNi44NDc1IDExLjU1NjcgNi41Njk4MyAxMS41Mjk0IDYuMjg1NzEgMTEuNTI5NEMzLjkxODc4IDExLjUyOTQgMiAxMy40MjU2IDIgMTUuNzY0N0MyIDE4LjEwMzggMy45MTg3OCAyMCA2LjI4NTcxIDIwSDE2LjI4NTdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class CloudBoldIcon extends StatelessWidget {
   /// Creates the `cloud` icon in the bold style.
   const CloudBoldIcon({

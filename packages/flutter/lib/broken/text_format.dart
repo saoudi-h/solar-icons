@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `text-format` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDNIOEM2LjExNDM4IDMgNS4xNzE1NyAzIDQuNTg1NzkgMy41ODU3OUM0IDQuMTcxNTcgNCA1LjExNDM4IDQgN1Y3Ljk1TTEyIDNIMTZDMTcuODg1NiAzIDE4LjgyODQgMyAxOS40MTQyIDMuNTg1NzlDMjAgNC4xNzE1NyAyMCA1LjExNDM4IDIwIDdWNy45NU0xMiAzVjhNMTIgMjFWMTIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNyAyMUgxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class TextFormatBrokenIcon extends StatelessWidget {
   /// Creates the `text-format` icon in the broken style.
   const TextFormatBrokenIcon({

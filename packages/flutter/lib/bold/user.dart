@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDEzQzE2LjQxODMgMTMgMjAgMTUuMDE0NyAyMCAxNy41QzIwIDE5Ljk4NTMgMjAgMjIgMTIgMjJDNCAyMiA0IDE5Ljk4NTMgNCAxNy41QzQgMTUuMDE0NyA3LjU4MTcyIDEzIDEyIDEzWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMkMxNC4yMDkxIDIgMTYgMy43OTA4NiAxNiA2QzE2IDguMjA5MTQgMTQuMjA5MSAxMCAxMiAxMEM5Ljc5MDg2IDEwIDggOC4yMDkxNCA4IDZDOCAzLjc5MDg2IDkuNzkwODYgMiAxMiAyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class UserBoldIcon extends StatelessWidget {
   /// Creates the `user` icon in the bold style.
   const UserBoldIcon({

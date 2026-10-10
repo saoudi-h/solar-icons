@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `wi-fi-high` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNOC42NjY5OSAxNS44OTMxQzEwLjUwNzkgMTMuOTA2MSAxMy40OTI3IDEzLjkwNjEgMTUuMzMzNyAxNS44OTMxIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNS4zMzMwMSAxMi4yOTVDOS4wMTQ5MSA4LjMyMDkzIDE0Ljk4NDQgOC4zMjA5MyAxOC42NjYzIDEyLjI5NSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMi4wMTc2IDE5LjQ2NDRIMTIuMDE3NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class WiFiHighLineDuotoneIcon extends StatelessWidget {
   /// Creates the `wi-fi-high` icon in the lineDuotone style.
   const WiFiHighLineDuotoneIcon({

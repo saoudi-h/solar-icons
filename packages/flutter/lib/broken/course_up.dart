@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `course-up` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjQxNzkgN0gyMlYxMi41NDU4TTIyIDdMMTcuNSAxMS41TTE0LjYyMDMgMTQuMzM0N0MxMy42MjI3IDE1LjMyNjMgMTMuMTIzOCAxNS44MjIgMTIuNTA1MSAxNS44MjJDMTEuODg2NCAxNS44MjE5IDExLjM4NzYgMTUuMzI2IDEwLjM5MDIgMTQuMzM0MkwxMC4xNTA5IDE0LjA5NjJDOS4xNTI1NCAxMy4xMDM1IDguNjUzMzggMTIuNjA3MSA4LjAzNDIyIDEyLjYwNzRDNy40MTUwNiAxMi42MDc2IDYuOTE2MjYgMTMuMTA0MyA1LjkxODY3IDE0LjA5NzdMMiAxOCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class CourseUpBrokenIcon extends StatelessWidget {
   /// Creates the `course-up` icon in the broken style.
   const CourseUpBrokenIcon({

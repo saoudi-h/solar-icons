@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `play` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTJMMyAxOC45NjcxQzMgMjEuMjc2MyA1LjUzNDM1IDIyLjczNiA3LjU5NjYyIDIxLjYxNDVMMTAuNzk5NiAxOS44NzI3TTMgOEwzIDUuMDMyOUMzIDIuNzIzNjggNS41MzQzNSAxLjI2NDAyIDcuNTk2NjEgMi4zODU0OEwyMC40MDg2IDkuMzUyNThDMjIuNTMwNSAxMC41MDY1IDIyLjUzMDUgMTMuNDkzNSAyMC40MDg2IDE0LjY0NzRMMTQuMDAyNiAxOC4xMzEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class PlayBrokenIcon extends StatelessWidget {
   /// Creates the `play` icon in the broken style.
   const PlayBrokenIcon({

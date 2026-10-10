@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `play` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMyAxMkMyMyAxMC45NjQ4IDIyLjQ2OTUgOS45Mjk1MyAyMS40MDg2IDkuMzUyNThMOC41OTY2MSAyLjM4NTQ4QzYuNTM0MzUgMS4yNjQwMiA0IDIuNzIzNjggNCA1LjAzMjlMNCAxMkgyM1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNOC41OTY2MiAyMS42MTQ1TDIxLjQwODYgMTQuNjQ3NEMyMi40Njk1IDE0LjA3MDUgMjMgMTMuMDM1MiAyMyAxMkg0TDQgMTguOTY3MUM0IDIxLjI3NjMgNi41MzQzNSAyMi43MzYgOC41OTY2MiAyMS42MTQ1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class PlayBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `play` icon in the boldDuotone style.
   const PlayBoldDuotoneIcon({

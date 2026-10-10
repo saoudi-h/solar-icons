@@ -20,7 +20,7 @@ Solar Icons is a single icon catalogue for product interfaces, documentation, an
 | --- | --- | --- |
 | [`@solar-icons/react`](https://www.npmjs.com/package/@solar-icons/react) | [![npm version](https://img.shields.io/npm/v/%40solar-icons%2Freact?logo=npm)](https://www.npmjs.com/package/@solar-icons/react) | React and TypeScript components |
 | [`@solar-icons/react-native`](https://www.npmjs.com/package/@solar-icons/react-native) | [![npm version](https://img.shields.io/npm/v/%40solar-icons%2Freact-native?logo=npm)](https://www.npmjs.com/package/@solar-icons/react-native) | React Native and Expo components |
-| [`solar_icons`](https://pub.dev/packages/solar_icons) | [![pub version](https://img.shields.io/pub/v/solar_icons?logo=dart)](https://pub.dev/packages/solar_icons) | Flutter widgets |
+| [`solaricons_flutter`](https://pub.dev/packages/solaricons_flutter) | [![pub version](https://img.shields.io/pub/v/solaricons_flutter?logo=dart)](https://pub.dev/packages/solaricons_flutter) | Flutter widgets |
 | [`@solar-icons/vue`](https://www.npmjs.com/package/@solar-icons/vue) | [![npm version](https://img.shields.io/npm/v/%40solar-icons%2Fvue?logo=npm)](https://www.npmjs.com/package/@solar-icons/vue) | Vue 3 components |
 | [`@solar-icons/nuxt`](https://www.npmjs.com/package/@solar-icons/nuxt) | [![npm version](https://img.shields.io/npm/v/%40solar-icons%2Fnuxt?logo=npm)](https://www.npmjs.com/package/@solar-icons/nuxt) | Nuxt 3 module |
 | [`@solar-icons/svelte`](https://www.npmjs.com/package/@solar-icons/svelte) | [![npm version](https://img.shields.io/npm/v/%40solar-icons%2Fsvelte?logo=npm)](https://www.npmjs.com/package/@solar-icons/svelte) | Svelte 5 components |
@@ -75,5 +75,5 @@ Run the [codemod](https://solar-icons.vercel.app/docs/v2/migration-to-v2/codemod
 ## Credits
 
 - **480 Design:** Original Solar icon set.
-- **Noaman Monther ([devnoaman](https://github.com/devnoaman)):** Flutter package (`solar_icons`).
+- **Noaman Monther ([devnoaman](https://github.com/devnoaman)):** Flutter package (`solaricons_flutter`).
 - **Phosphor Icons** and **Lucide Icons:** Inspiration for the package structure.

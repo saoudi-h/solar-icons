@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `text-bold` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMTJIMTJDMTQuNzYxNCAxMiAxNyA5Ljc2MTQyIDE3IDdDMTcgNC4yMzg1OCAxNC43NjE0IDIgMTIgMkg3LjYwODdDNi4xNjc5NSAyIDUgMy4xNjc5NSA1IDQuNjA4N1YxMlpNNSAxMkgxNEMxNi43NjE0IDEyIDE5IDE0LjIzODYgMTkgMTdDMTkgMTkuNzYxNCAxNi43NjE0IDIyIDE0IDIySDcuMDU4ODJDNS45MjE3NyAyMiA1IDIxLjEzNzEgNSAyME01IDEyVjE1Ljk3MDYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class TextBoldBrokenIcon extends StatelessWidget {
   /// Creates the `text-bold` icon in the broken style.
   const TextBoldBrokenIcon({

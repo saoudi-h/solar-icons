@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `paperclip-rounded-2` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjU2NDYgMTYuMTI5OUMyMi44MTE4IDEyLjg5NzUgMjIuODExOCA3LjY1NjcgMTkuNTY0NiA0LjQyNDNDMTYuMzE3NSAxLjE5MTkgMTEuMDUyOCAxLjE5MTkgNy44MDU2MyA0LjQyNDNNMTUuODg5OSAxOS43ODc4QzE0LjI2NjQgMjEuNDA0IDExLjYzNCAyMS40MDQgMTAuMDEwNCAxOS43ODc4QzguMzg2ODcgMTguMTcxNiA4LjM4Njg3IDE1LjU1MTMgMTAuMDEwNCAxMy45MzUxTDEyLjk1MDIgMTEuMDA4N000LjEzMDk1IDguMDgyMjlDMS4yODk2OCAxMC45MTA2IDEuMjg5NjggMTUuNDk2MyA0LjEzMDk1IDE4LjMyNDciIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class PaperclipRounded2BrokenIcon extends StatelessWidget {
   /// Creates the `paperclip-rounded-2` icon in the broken style.
   const PaperclipRounded2BrokenIcon({

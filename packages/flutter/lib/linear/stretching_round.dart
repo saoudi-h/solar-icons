@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `stretching-round` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQuNSIgY3k9IjQuNSIgcj0iMi41IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE5IDIxLjk5NTlWMTguMDQ4OUMxOSAxNi4yNzMgMTcuMzk1IDE0LjkxOTkgMTUuNjI2NSAxNS4yMDQ3TTcuOTQ4MDYgMTMuNDM0OEw3LjkyMzI4IDEzLjQxMDlDNi44ODE0MyAxMi40MDQgNy42ODY0IDEwLjc4NTIgOC41OTMyIDEwLjE0MjdDOS41IDkuNTAwMTYgMTMuMzQ1MSA4LjUwMDE2IDEzLjM0NTEgMTMuNDM0NUMxMy4zNDUxIDE4LjEyOSA5LjY5NDQyIDIyLjAwMDMgNSAyMi4wMDAzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class StretchingRoundLinearIcon extends StatelessWidget {
   /// Creates the `stretching-round` icon in the linear style.
   const StretchingRoundLinearIcon({

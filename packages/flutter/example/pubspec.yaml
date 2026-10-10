@@ -1,5 +1,5 @@
-name: solar_icons_example
-description: Sample app for the solar_icons package.
+name: solaricons_flutter_example
+description: Sample app for the solaricons_flutter package.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  solar_icons:
+  solaricons_flutter:
     path: ../
 
 dev_dependencies:

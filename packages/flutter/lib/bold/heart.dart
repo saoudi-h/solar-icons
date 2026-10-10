@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `heart` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgOS4xMzcxQzIgMTQgNi4wMTk0MyAxNi41OTE0IDguOTYxNzMgMTguOTEwOUMxMCAxOS43Mjk0IDExIDIwLjUgMTIgMjAuNUMxMyAyMC41IDE0IDE5LjcyOTQgMTUuMDM4MyAxOC45MTA5QzE3Ljk4MDYgMTYuNTkxNCAyMiAxNCAyMiA5LjEzNzFDMjIgNC4yNzQxNiAxNi40OTk4IDAuODI1NDY0IDEyIDUuNTAwNjNDNy41MDAxNiAwLjgyNTQ2NCAyIDQuMjc0MTYgMiA5LjEzNzFaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class HeartBoldIcon extends StatelessWidget {
   /// Creates the `heart` icon in the bold style.
   const HeartBoldIcon({

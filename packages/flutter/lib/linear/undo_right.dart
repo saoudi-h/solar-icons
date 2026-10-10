@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `undo-right` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDdIOS4wMDAwMUM3LjEzMDc3IDcgNi4xOTYxNSA3IDUuNSA3LjQwMTkzQzUuMDQzOTUgNy42NjUyMyA0LjY2NTI0IDguMDQzOTQgNC40MDE5MyA4LjQ5OTk5QzQgOS4xOTYxNSA0IDEwLjEzMDggNCAxMkM0IDEzLjg2OTIgNCAxNC44MDM4IDQuNDAxOTIgMTUuNUM0LjY2NTIzIDE1Ljk1NjEgNS4wNDM5NCAxNi4zMzQ4IDUuNSAxNi41OTgxQzYuMTk2MTUgMTcgNy4xMzA3NyAxNyA5IDE3SDE2TTE3IDEwTDIwIDdMMTcgNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class UndoRightLinearIcon extends StatelessWidget {
   /// Creates the `undo-right` icon in the linear style.
   const UndoRightLinearIcon({

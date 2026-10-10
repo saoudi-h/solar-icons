@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `restart` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjM2NCA4LjA0OTI4TDE3LjY1NjkgNy4zNDIxN0MxNC41MzI3IDQuMjE3OTggOS40NjczNCA0LjIxNzk4IDYuMzQzMTUgNy4zNDIxN0MzLjIxODk1IDEwLjQ2NjQgMy4yMTg5NSAxNS41MzE3IDYuMzQzMTUgMTguNjU1OUM5LjQ2NzM0IDIxLjc4MDEgMTQuNTMyNyAyMS43ODAxIDE3LjY1NjkgMTguNjU1OUMxOS40NzM3IDE2LjgzOTEgMjAuMjM0IDE0LjM2NTggMTkuOTM3NyAxMS45OTk1TTE4LjM2NCAzLjgwNjY0VjguMDQ5MjhIMTQuMTIxMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class RestartLinearIcon extends StatelessWidget {
   /// Creates the `restart` icon in the linear style.
   const RestartLinearIcon({

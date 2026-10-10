@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `minus` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgMTIuNzVDMy41ODU3OSAxMi43NSAzLjI1IDEyLjQxNDIgMy4yNSAxMkMzLjI1IDExLjU4NTggMy41ODU3OSAxMS4yNSA0IDExLjI1TDIwIDExLjI1QzIwLjQxNDIgMTEuMjUgMjAuNzUgMTEuNTg1OCAyMC43NSAxMkMyMC43NSAxMi40MTQyIDIwLjQxNDIgMTIuNzUgMjAgMTIuNzVMNCAxMi43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MinusBoldIcon extends StatelessWidget {
   /// Creates the `minus` icon in the bold style.
   const MinusBoldIcon({

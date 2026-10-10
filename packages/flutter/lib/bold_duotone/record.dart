@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `record` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBvcGFjaXR5PSIwLjUiIGN4PSIxMiIgY3k9IjEyIiByPSI3IiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMjJDMTcuNTIyOCAyMiAyMiAxNy41MjI4IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOCAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWk0xMiAxOUMxNS44NjYgMTkgMTkgMTUuODY2IDE5IDEyQzE5IDguMTM0MDEgMTUuODY2IDUgMTIgNUM4LjEzNDAxIDUgNSA4LjEzNDAxIDUgMTJDNSAxNS44NjYgOC4xMzQwMSAxOSAxMiAxOVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class RecordBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `record` icon in the boldDuotone style.
   const RecordBoldDuotoneIcon({

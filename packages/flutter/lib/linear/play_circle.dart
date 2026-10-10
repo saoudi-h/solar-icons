@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `play-circle` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTUuNDEzNyAxMC45NDFDMTYuMTk1NCAxMS40MDI2IDE2LjE5NTQgMTIuNTk3NCAxNS40MTM3IDEzLjA1OUwxMC42OTM1IDE1Ljg0NThDOS45MzM3MSAxNi4yOTQ0IDkgMTUuNzEwNSA5IDE0Ljc4NjhMOSA5LjIxMzE2QzkgOC4yODk0NyA5LjkzMzcxIDcuNzA1NjEgMTAuNjkzNSA4LjE1NDE5TDE1LjQxMzcgMTAuOTQxWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class PlayCircleLinearIcon extends StatelessWidget {
   /// Creates the `play-circle` icon in the linear style.
   const PlayCircleLinearIcon({

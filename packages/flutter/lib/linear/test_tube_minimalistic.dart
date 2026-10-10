@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `test-tube-minimalistic` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuODAwOCAxMS43ODM0TDguMDc1MDIgMTEuOTI1NkM5LjA5NzcyIDEyLjAzOTggOS45MDUwNiAxMi44NTA3IDEwLjAxODcgMTMuODc3OUMxMC4xMDYyIDE0LjY2ODkgMTAuNjEwNCAxNS4zNTE1IDExLjMzODcgMTUuNjY1TDEzIDE2LjM1NDdNMTMgMTYuMzU0N0wyMC4yMzg3IDkuMDgzOThMMTQuODYzNSAzLjY4NTA0TDQuMTEzMjMgMTQuNDgyOUMyLjYyODkyIDE1Ljk3MzggMi42Mjg5MiAxOC4zOTEgNC4xMTMyMyAxOS44ODE4QzUuNTk3NTQgMjEuMzcyNyA4LjAwNDA3IDIxLjM3MjcgOS40ODgzOCAxOS44ODE4TDEzIDE2LjM1NDdaTTIxIDkuODQ4NjdMMTQuMTgxNSAzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class TestTubeMinimalisticLinearIcon extends StatelessWidget {
   /// Creates the `test-tube-minimalistic` icon in the linear style.
   const TestTubeMinimalisticLinearIcon({

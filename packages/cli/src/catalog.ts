@@ -153,7 +153,7 @@ export function importSnippet(name: string, style: Style, framework: Framework):
         case 'blade':
             return `<x-solar-${style}-${kebab} />`
         case 'flutter':
-            return `import 'package:solar_icons/${toDartPath(style, kebab)}.dart';\n${rooted}()`
+            return `import 'package:solaricons_flutter/${toDartPath(style, kebab)}.dart';\n${rooted}()`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -172,7 +172,7 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'blade':
             return importSnippet(name, style, framework)
         case 'flutter':
-            return `import 'package:solar_icons/solar_icons.dart';\n${rooted}()`
+            return `import 'package:solaricons_flutter/solaricons_flutter.dart';\n${rooted}()`
         default:
             return `import { ${rooted} } from "@solar-icons/${framework}";`
     }

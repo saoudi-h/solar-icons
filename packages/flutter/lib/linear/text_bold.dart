@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `text-bold` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNC42MDg3QzUgMy4xNjc5NSA2LjE2Nzk1IDIgNy42MDg3IDJIMTJDMTQuNzYxNCAyIDE3IDQuMjM4NTggMTcgN0MxNyA5Ljc2MTQyIDE0Ljc2MTQgMTIgMTIgMTJINVY0LjYwODdaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTUgMTJIMTRDMTYuNzYxNCAxMiAxOSAxNC4yMzg2IDE5IDE3QzE5IDE5Ljc2MTQgMTYuNzYxNCAyMiAxNCAyMkg3LjA1ODgyQzUuOTIxNzcgMjIgNSAyMS4wNzgyIDUgMTkuOTQxMlYxMloiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class TextBoldLinearIcon extends StatelessWidget {
   /// Creates the `text-bold` icon in the linear style.
   const TextBoldLinearIcon({

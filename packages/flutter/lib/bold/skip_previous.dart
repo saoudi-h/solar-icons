@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `skip-previous` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMDkwMTUgMTQuNjQ3NEM2LjMwMzI4IDEzLjQ5MzUgNi4zMDMyOCAxMC41MDY1IDguMDkwMTUgOS4zNTI1OEwxOC44NzkyIDIuMzg1NDhDMjAuNjE1OCAxLjI2NDAyIDIyLjc1IDIuNzIzNjggMjIuNzUgNS4wMzI5VjE4Ljk2NzFDMjIuNzUgMjEuMjc2MyAyMC42MTU4IDIyLjczNiAxOC44NzkyIDIxLjYxNDVMOC4wOTAxNSAxNC42NDc0WiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMiA1QzIgNC41ODU3OSAyLjMzNTc5IDQuMjUgMi43NSA0LjI1QzMuMTY0MjEgNC4yNSAzLjUgNC41ODU3OSAzLjUgNVYxOUMzLjUgMTkuNDE0MiAzLjE2NDIxIDE5Ljc1IDIuNzUgMTkuNzVDMi4zMzU3OSAxOS43NSAyIDE5LjQxNDIgMiAxOVY1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class SkipPreviousBoldIcon extends StatelessWidget {
   /// Creates the `skip-previous` icon in the bold style.
   const SkipPreviousBoldIcon({

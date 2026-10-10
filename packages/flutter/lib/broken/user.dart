@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE5Ljk5NzUgMThDMjAgMTcuODM1OCAyMCAxNy42NjkgMjAgMTcuNUMyMCAxNS4wMTQ3IDE2LjQxODMgMTMgMTIgMTNDNy41ODE3MiAxMyA0IDE1LjAxNDcgNCAxNy41QzQgMTkuOTg1MyA0IDIyIDEyIDIyQzE0LjIzMSAyMiAxNS44Mzk4IDIxLjg0MzMgMTcgMjEuNTYzNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class UserBrokenIcon extends StatelessWidget {
   /// Creates the `user` icon in the broken style.
   const UserBrokenIcon({

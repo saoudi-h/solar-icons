@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `play` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjQwODYgOS4zNTI1OEMyMy41MzA1IDEwLjUwNjUgMjMuNTMwNSAxMy40OTM1IDIxLjQwODYgMTQuNjQ3NEw4LjU5NjYyIDIxLjYxNDVDNi41MzQzNSAyMi43MzYgNCAyMS4yNzYzIDQgMTguOTY3MUw0IDUuMDMyOUM0IDIuNzIzNjggNi41MzQzNSAxLjI2NDAyIDguNTk2NjEgMi4zODU0OEwyMS40MDg2IDkuMzUyNThaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class PlayBoldIcon extends StatelessWidget {
   /// Creates the `play` icon in the bold style.
   const PlayBoldIcon({

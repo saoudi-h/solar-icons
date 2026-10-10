@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `loader` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMTIuMDAwMUMyIDE3LjUyMjkgNi40NzcxNSAyMi4wMDAxIDEyIDIyLjAwMDFDMTcuNTIyOCAyMi4wMDAxIDIyIDE3LjUyMjkgMjIgMTIuMDAwMUMyMiAxMS4zMTg3IDIxLjkzMTkgMTAuNjUzMyAyMS44MDIgMTAuMDEwMyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yLjgxNzg3IDguMDMyNTVDNC4zNTM1MSA0LjQ4MzM2IDcuODg2NzEgMiAxMS45OTk5IDJDMTIuNjg1OSAyIDEzLjM1NTcgMi4wNjkwNiAxNC4wMDI4IDIuMjAwNjEiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class LoaderBrokenIcon extends StatelessWidget {
   /// Creates the `loader` icon in the broken style.
   const LoaderBrokenIcon({

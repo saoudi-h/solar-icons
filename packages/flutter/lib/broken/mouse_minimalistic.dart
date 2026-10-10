@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `mouse-minimalistic` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDE1QzE5IDE4Ljg2NiAxNS44NjYgMjIgMTIgMjJDOC4xMzQwMSAyMiA1IDE4Ljg2NiA1IDE1VjlDNSA1LjEzNDAxIDguMTM0MDEgMiAxMiAyQzE1Ljg2NiAyIDE5IDUuMTM0MDEgMTkgOVYxMSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiA1VjgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class MouseMinimalisticBrokenIcon extends StatelessWidget {
   /// Creates the `mouse-minimalistic` icon in the broken style.
   const MouseMinimalisticBrokenIcon({

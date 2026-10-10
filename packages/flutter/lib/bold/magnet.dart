@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `magnet` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjI1IDJIMTNDNy40NzcxNSAyIDMgNi40NzcxNSAzIDEyQzMgMTcuNTIyOCA3LjQ3NzE1IDIyIDEzIDIySDE2LjI1VjE3SDEzQzEwLjIzODYgMTcgOCAxNC43NjE0IDggMTJDOCA5LjIzODU4IDEwLjIzODYgNyAxMyA3SDE2LjI1VjJaIiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xNy43NSA3SDE5LjVDMjAuMzI4NCA3IDIxIDYuMzI4NDMgMjEgNS41VjMuNUMyMSAyLjY3MTU3IDIwLjMyODQgMiAxOS41IDJIMTcuNzVWN1oiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTE3Ljc1IDE3VjIySDE5LjVDMjAuMzI4NCAyMiAyMSAyMS4zMjg0IDIxIDIwLjVWMTguNUMyMSAxNy42NzE2IDIwLjMyODQgMTcgMTkuNSAxN0gxNy43NVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MagnetBoldIcon extends StatelessWidget {
   /// Creates the `magnet` icon in the bold style.
   const MagnetBoldIcon({

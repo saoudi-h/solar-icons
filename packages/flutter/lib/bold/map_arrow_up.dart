@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-arrow-up` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuMTY0OTYgMTkuNTAyNUwxMC41Mjc1IDIuOTkyODFDMTEuMTE3OCAxLjY2OTA2IDEyLjg4MjIgMS42NjkwNiAxMy40NzI1IDIuOTkyODFMMjAuODM1IDE5LjUwMjVDMjEuNTAyMSAyMC45OTg0IDIwLjAyMDkgMjIuNTQ5OSAxOC42MzMxIDIxLjgwOUwxMi43Mjk0IDE4LjY1N0MxMi4yNzAyIDE4LjQxMTggMTEuNzI5OCAxOC40MTE4IDExLjI3MDYgMTguNjU3TDUuMzY2ODkgMjEuODA5QzMuOTc5MTQgMjIuNTQ5OSAyLjQ5Nzg5IDIwLjk5ODQgMy4xNjQ5NiAxOS41MDI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class MapArrowUpBoldIcon extends StatelessWidget {
   /// Creates the `map-arrow-up` icon in the bold style.
   const MapArrowUpBoldIcon({

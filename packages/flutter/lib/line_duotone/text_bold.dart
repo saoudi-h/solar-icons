@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `text-bold` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNC42MDg3QzUgMy4xNjc5NSA2LjE2Nzk1IDIgNy42MDg3IDJIMTJDMTQuNzYxNCAyIDE3IDQuMjM4NTggMTcgN0MxNyA5Ljc2MTQyIDE0Ljc2MTQgMTIgMTIgMTJINVY0LjYwODdaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNNSAxMkgxNEMxNi43NjE0IDEyIDE5IDE0LjIzODYgMTkgMTdDMTkgMTkuNzYxNCAxNi43NjE0IDIyIDE0IDIySDcuMDU4ODJDNS45MjE3NyAyMiA1IDIxLjA3ODIgNSAxOS45NDEyVjEyWiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class TextBoldLineDuotoneIcon extends StatelessWidget {
   /// Creates the `text-bold` icon in the lineDuotone style.
   const TextBoldLineDuotoneIcon({

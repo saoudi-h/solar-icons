@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `exclamation-mark` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIxLjI1QzEyLjQxNDIgMjEuMjUgMTIuNzUgMjEuNTg1OCAxMi43NSAyMkMxMi43NSAyMi40MTQyIDEyLjQxNDIgMjIuNzUgMTIgMjIuNzVDMTEuNTg1OCAyMi43NSAxMS4yNSAyMi40MTQyIDExLjI1IDIyQzExLjI1IDIxLjU4NTggMTEuNTg1OCAyMS4yNSAxMiAyMS4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPHBhdGggZD0iTTEyIDEuMjVDMTIuNDE0MiAxLjI1IDEyLjc1IDEuNTg1NzkgMTIuNzUgMlYxNS4zMzNDMTIuNzUgMTUuNzQ3MiAxMi40MTQyIDE2LjA4MyAxMiAxNi4wODNDMTEuNTg1OCAxNi4wODMgMTEuMjUgMTUuNzQ3MiAxMS4yNSAxNS4zMzNWMkMxMS4yNSAxLjU4NTc5IDExLjU4NTggMS4yNSAxMiAxLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class ExclamationMarkBoldIcon extends StatelessWidget {
   /// Creates the `exclamation-mark` icon in the bold style.
   const ExclamationMarkBoldIcon({

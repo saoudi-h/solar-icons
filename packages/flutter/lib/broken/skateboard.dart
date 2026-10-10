@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `skateboard` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgN0wyLjgxMjUzIDguMjE4OEMzLjU1NDQgOS4zMzE2IDQuODAzMzIgMTAgNi4xNDA3MyAxMEgxMk0yMiA3TDIxLjE4NzUgOC4yMTg4QzIwLjQ0NTYgOS4zMzE1OSAxOS4xOTY3IDEwIDE3Ljg1OTMgMTBIMTYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI3IiBjeT0iMTUiIHI9IjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxNyIgY3k9IjE1IiByPSIyIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class SkateboardBrokenIcon extends StatelessWidget {
   /// Creates the `skateboard` icon in the broken style.
   const SkateboardBrokenIcon({

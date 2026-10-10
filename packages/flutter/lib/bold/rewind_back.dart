@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `rewind-back` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjk5OTggMTcuNTczN0wyMS45OTk4IDYuNDI2MzJDMjEuOTk5OCA0LjU3ODk1IDIwLjM5OTEgMy40MTEyMiAxOS4wOTY2IDQuMzA4MzhMMTMgOC43Njg0NEwxMyA3LjEyMzAzQzEzIDUuNTA2NTggMTEuNTMyNyA0LjQ4NDgyIDEwLjMzODggNS4yNjk4M0wyLjkyMTM2IDEwLjE0NjhDMS42OTI4OCAxMC45NTQ1IDEuNjkyODggMTMuMDQ1NSAyLjkyMTM1IDEzLjg1MzJMMTAuMzM4OCAxOC43MzAyQzExLjUzMjcgMTkuNTE1MiAxMyAxOC40OTM0IDEzIDE2Ljg3N1YxNS4yMzE2TDE5LjA5NjYgMTkuNjkxNkMyMC4zOTkxIDIwLjU4ODggMjEuOTk5OCAxOS40MjExIDIxLjk5OTggMTcuNTczN1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class RewindBackBoldIcon extends StatelessWidget {
   /// Creates the `rewind-back` icon in the bold style.
   const RewindBackBoldIcon({

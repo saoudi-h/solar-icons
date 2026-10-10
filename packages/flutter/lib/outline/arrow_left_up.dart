@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `arrow-left-up` icon in the outline style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjI1IDZDNS4yNSA1LjU4NTc5IDUuNTg1NzkgNS4yNSA2IDUuMjVIMTVDMTUuNDE0MiA1LjI1IDE1Ljc1IDUuNTg1NzkgMTUuNzUgNkMxNS43NSA2LjQxNDIxIDE1LjQxNDIgNi43NSAxNSA2Ljc1SDcuODEwNjZMMTguNTMwMyAxNy40Njk3QzE4LjgyMzIgMTcuNzYyNiAxOC44MjMyIDE4LjIzNzQgMTguNTMwMyAxOC41MzAzQzE4LjIzNzQgMTguODIzMiAxNy43NjI2IDE4LjgyMzIgMTcuNDY5NyAxOC41MzAzTDYuNzUgNy44MTA2NlYxNUM2Ljc1IDE1LjQxNDIgNi40MTQyMSAxNS43NSA2IDE1Ljc1QzUuNTg1NzkgMTUuNzUgNS4yNSAxNS40MTQyIDUuMjUgMTVWNloiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class ArrowLeftUpOutlineIcon extends StatelessWidget {
   /// Creates the `arrow-left-up` icon in the outline style.
   const ArrowLeftUpOutlineIcon({

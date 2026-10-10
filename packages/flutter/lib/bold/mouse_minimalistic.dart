@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `mouse-minimalistic` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOSA5VjE1QzE5IDE4Ljg2NiAxNS44NjYgMjIgMTIgMjJDOC4xMzQwMSAyMiA1IDE4Ljg2NiA1IDE1VjlDNSA1LjEzNDAxIDguMTM0MDEgMiAxMiAyQzE1Ljg2NiAyIDE5IDUuMTM0MDEgMTkgOVpNMTIgNC4yNUMxMi40MTQyIDQuMjUgMTIuNzUgNC41ODU3OSAxMi43NSA1VjhDMTIuNzUgOC40MTQyMSAxMi40MTQyIDguNzUgMTIgOC43NUMxMS41ODU4IDguNzUgMTEuMjUgOC40MTQyMSAxMS4yNSA4VjVDMTEuMjUgNC41ODU3OSAxMS41ODU4IDQuMjUgMTIgNC4yNVoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MouseMinimalisticBoldIcon extends StatelessWidget {
   /// Creates the `mouse-minimalistic` icon in the bold style.
   const MouseMinimalisticBoldIcon({

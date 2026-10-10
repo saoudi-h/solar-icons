@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `colour-tuning` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMiAxMkg5LjVNMjIgMTJIMTQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMC4wMDAyIDE1LjY4NDNDMjAuMDAwMiAxOSAxNy43MzQ1IDIyIDE2LjAwMDIgMjJDMTMuNzMxNSAyMiAxMi4wNzIzIDE4Ljg0MjEgMTIuMDcyMyAxMkMxMi4wNzIzIDUuMTU3OTQgMTAuNDEyOCAxLjk5OTg4IDguMTQ0MDQgMS45OTk4OEM2LjQwOTc4IDEuOTk5ODggNC4xNDQwNCA0Ljk5OTg4IDQuMTQ0MDQgOC4zMTU2NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class ColourTuningLineDuotoneIcon extends StatelessWidget {
   /// Creates the `colour-tuning` icon in the lineDuotone style.
   const ColourTuningLineDuotoneIcon({

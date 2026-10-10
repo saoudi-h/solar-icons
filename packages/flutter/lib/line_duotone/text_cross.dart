@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `text-cross` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNMTIgM0g4QzYuMTE0MzggMyA1LjE3MTU3IDMgNC41ODU3OSAzLjU4NTc5QzQgNC4xNzE1NyA0IDUuMTE0MzggNCA3VjcuOTVNMTIgM0gxNkMxNy44ODU2IDMgMTguODI4NCAzIDE5LjQxNDIgMy41ODU3OUMyMCA0LjE3MTU3IDIwIDUuMTE0MzggMjAgN1Y3Ljk1TTEyIDNWMTVWMjFNNyAyMUgxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik00IDEySDIwIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class TextCrossLineDuotoneIcon extends StatelessWidget {
   /// Creates the `text-cross` icon in the lineDuotone style.
   const TextCrossLineDuotoneIcon({

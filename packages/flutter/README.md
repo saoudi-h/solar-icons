@@ -1,11 +1,11 @@
-# solar_icons
+# solaricons_flutter
 
 Flutter widgets for Solar Icons. The package draws 1,451 icons across six styles (8,706 SVG variations): Bold, Broken, Linear, Outline, Bold Duotone, and Line Duotone.
 
 ## Install
 
 ```sh
-flutter pub add solar_icons
+flutter pub add solaricons_flutter
 ```
 
 To work from a local checkout instead, generate the widgets from the catalogue first, then depend on the package with a path:
@@ -16,7 +16,7 @@ node packages/flutter/tool/generate_icons.mjs
 
 ```yaml
 dependencies:
-  solar_icons:
+  solaricons_flutter:
     path: packages/flutter
 ```
 
@@ -27,7 +27,7 @@ Adjust the path to where this package sits relative to the app. The example app 
 Each icon ships one widget per style. The style is in the import path and in the widget name, and only that style's SVG is embedded:
 
 ```dart
-import 'package:solar_icons/linear/home.dart';
+import 'package:solaricons_flutter/linear/home.dart';
 
 HomeLinearIcon(
   size: 32,
@@ -43,7 +43,7 @@ Style barrels (`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `
 One widget covers every icon and style for names or styles that are only known at runtime. It embeds all six SVGs, so prefer the static widgets when the style is known upfront:
 
 ```dart
-import 'package:solar_icons/dynamic/arrow_right.dart';
+import 'package:solaricons_flutter/dynamic/arrow_right.dart';
 
 ArrowRightIcon(
   style: SolarIconStyle.boldDuotone,

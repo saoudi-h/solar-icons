@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `wineglass-triangle` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE0LjU3MTRMMjAuNTE2MiA1Ljg2MzgyQzIxLjU2MjQgNC43OTQwOCAyMC43OTk5IDMgMTkuMjk5MSAzSDQuNzAwOTVDMy4yMDAwOCAzIDIuNDM3NTkgNC43OTQwOSAzLjQ4MzgxIDUuODYzODJMMTIgMTQuNTcxNFpNMTIgMTQuNTcxNFYyMU0xMiAyMUgxNi4yNDM5TTEyIDIxSDcuNzU2MU03LjQ3MzE4IDkuNzVIMTYuNTI2OCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class WineglassTriangleLinearIcon extends StatelessWidget {
   /// Creates the `wineglass-triangle` icon in the linear style.
   const WineglassTriangleLinearIcon({

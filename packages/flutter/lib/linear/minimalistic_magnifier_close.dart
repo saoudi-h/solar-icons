@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `minimalistic-magnifier-close` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEuNSIgY3k9IjExLjUiIHI9IjkuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMCAyMEwyMiAyMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik05LjczMjIzIDkuNzMxNjNMMTEuNSAxMS40OTk0TTExLjUgMTEuNDk5NEwxMy4yNjc4IDEzLjI2NzJNMTEuNSAxMS40OTk0TDkuNzMyMjMgMTMuMjY3Mk0xMS41IDExLjQ5OTRMMTMuMjY3OCA5LjczMTYzIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class MinimalisticMagnifierCloseLinearIcon extends StatelessWidget {
   /// Creates the `minimalistic-magnifier-close` icon in the linear style.
   const MinimalisticMagnifierCloseLinearIcon({

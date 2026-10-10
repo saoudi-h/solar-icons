@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `wi-fi-low` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjAxNzYgMTkuNDY0NEgxMi4wMTc3IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTguNjY2OTkgMTUuODkzQzkuMjEwNCAxNS4zMDY1IDkuODUzNDcgMTQuODkzMSAxMC41Mzc0IDE0LjY1MjgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTMuMzc2IDE0LjYyM0MxNC4wOTI0IDE0Ljg1ODIgMTQuNzY3MiAxNS4yODE1IDE1LjMzMzcgMTUuODkyOSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class WiFiLowBrokenIcon extends StatelessWidget {
   /// Creates the `wi-fi-low` icon in the broken style.
   const WiFiLowBrokenIcon({

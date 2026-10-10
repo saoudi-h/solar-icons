@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `moon` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiAxMS41MzczIDIxLjMwNjUgMTEuNDYwOCAyMS4wNjcyIDExLjg1NjhDMTkuOTI4OSAxMy43NDA2IDE3Ljg2MTUgMTUgMTUuNSAxNUMxMS45MTAxIDE1IDkgMTIuMDg5OSA5IDguNUM5IDYuMTM4NDUgMTAuMjU5NCA0LjA3MTA1IDEyLjE0MzIgMi45MzI3NkMxMi41MzkyIDIuNjkzNDcgMTIuNDYyNyAyIDEyIDJDNi40NzcxNSAyIDIgNi40NzcxNSAyIDEyQzIgMTcuNTIyOCA2LjQ3NzE1IDIyIDEyIDIyWiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class MoonBoldIcon extends StatelessWidget {
   /// Creates the `moon` icon in the bold style.
   const MoonBoldIcon({

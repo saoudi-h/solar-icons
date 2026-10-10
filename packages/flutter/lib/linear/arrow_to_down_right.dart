@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `arrow-to-down-right` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3IDE0LjVMMTIgMTkuNUw3IDE0LjVNMTIgMTkuNUMxMiAxOS41IDEyIDExLjE2NjcgMTIgOS41QzEyIDcuODMzMzMgMTMgNC41IDE3IDQuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class ArrowToDownRightLinearIcon extends StatelessWidget {
   /// Creates the `arrow-to-down-right` icon in the linear style.
   const ArrowToDownRightLinearIcon({

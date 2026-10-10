@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `circle-dot` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyQzE3LjUyMjggMiAyMiA2LjQ3NzE1IDIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMlpNMTIgMTEuMjVDMTEuNTg1OCAxMS4yNSAxMS4yNSAxMS41ODU4IDExLjI1IDEyQzExLjI1IDEyLjQxNDIgMTEuNTg1OCAxMi43NSAxMiAxMi43NUMxMi40MTQyIDEyLjc1IDEyLjc1IDEyLjQxNDIgMTIuNzUgMTJDMTIuNzUgMTEuNTg1OCAxMi40MTQyIDExLjI1IDEyIDExLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class CircleDotBoldIcon extends StatelessWidget {
   /// Creates the `circle-dot` icon in the bold style.
   const CircleDotBoldIcon({

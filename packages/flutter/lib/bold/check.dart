@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `check` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjQ2OTcgNi40Njk2N0MxOC43NjI2IDYuMTc2NzggMTkuMjM3MyA2LjE3Njc4IDE5LjUzMDIgNi40Njk2N0MxOS44MjMxIDYuNzYyNTYgMTkuODIzMSA3LjIzNzMyIDE5LjUzMDIgNy41MzAyMkw5LjUzMDIyIDE3LjUzMDJDOS4yMzczMiAxNy44MjMxIDguNzYyNTYgMTcuODIzMSA4LjQ2OTY3IDE3LjUzMDJMNC40Njk2NyAxMy41MzAyQzQuMTc2NzggMTMuMjM3MyA0LjE3Njc4IDEyLjc2MjYgNC40Njk2NyAxMi40Njk3QzQuNzYyNTYgMTIuMTc2OCA1LjIzNzMyIDEyLjE3NjggNS41MzAyMiAxMi40Njk3TDguOTk5OTQgMTUuOTM5NEwxOC40Njk3IDYuNDY5NjdaIiBmaWxsPSIjMUMyNzRDIi8+Cjwvc3ZnPgo=)
 class CheckBoldIcon extends StatelessWidget {
   /// Creates the `check` icon in the bold style.
   const CheckBoldIcon({

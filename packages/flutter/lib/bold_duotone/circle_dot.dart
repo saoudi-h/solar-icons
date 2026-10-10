@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `circle-dot` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBvcGFjaXR5PSIwLjUiIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBkPSJNMTIgMTEuMjVDMTIuNDE0MiAxMS4yNSAxMi43NSAxMS41ODU4IDEyLjc1IDEyQzEyLjc1IDEyLjQxNDIgMTIuNDE0MiAxMi43NSAxMiAxMi43NUMxMS41ODU4IDEyLjc1IDExLjI1IDEyLjQxNDIgMTEuMjUgMTJDMTEuMjUgMTEuNTg1OCAxMS41ODU4IDExLjI1IDEyIDExLjI1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class CircleDotBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `circle-dot` icon in the boldDuotone style.
   const CircleDotBoldDuotoneIcon({

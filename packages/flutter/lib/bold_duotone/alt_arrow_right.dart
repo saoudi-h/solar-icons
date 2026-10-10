@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `alt-arrow-right` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjQwNDQgOC4zMDI3M0wxNS44MzUxIDExLjYyOTZDMTYuMDU0OSAxMS44NDI4IDE2LjA1NDkgMTIuMTU3MyAxNS44MzUxIDEyLjM3MDRMOS4yMDQ2NyAxOC44MDAxQzguNzkwOTQgMTkuMjAxMyA4IDE4Ljk1ODEgOCAxOC40Mjk3VjEyLjcwNzFMMTIuNDA0NCA4LjMwMjczWiIgZmlsbD0iIzFDMjc0QyIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik04IDExLjI5MjlMOCA1LjU3MDNDOCA1LjA0MTg5IDguNzkwOTQgNC43OTg2OSA5LjIwNDY3IDUuMTk5OUwxMS42ODY0IDcuNjA2NDhMOCAxMS4yOTI5WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class AltArrowRightBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `alt-arrow-right` icon in the boldDuotone style.
   const AltArrowRightBoldDuotoneIcon({

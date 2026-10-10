@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `wineglass-triangle` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE0LjU3MTRMMjAuNTE2MiA1Ljg2MzgyQzIxLjU2MjQgNC43OTQwOSAyMC43OTk5IDMgMTkuMjk5MSAzSDE0TTEyIDE0LjU3MTRMMy40ODM4MSA1Ljg2MzgyQzIuNDM3NTkgNC43OTQwOSAzLjIwMDA4IDMgNC43MDA5NSAzSDEwTTEyIDE0LjU3MTRWMjFNMTIgMjFIMTYuMjQzOU0xMiAyMUg3Ljc1NjFNNy40NzMxOCA5Ljc1SDE2LjUyNjgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class WineglassTriangleBrokenIcon extends StatelessWidget {
   /// Creates the `wineglass-triangle` icon in the broken style.
   const WineglassTriangleBrokenIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `parentheses` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMjJDNiAyMC4yNjggMyAxNi42OTI1IDMgMTJDMyA3LjMwNzU0IDYgMy43MzIwNSA5IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTUgMjJDMTggMjAuMjY4IDIxIDE2LjY5MjUgMjEgMTJDMjEgNy4zMDc1NCAxOCAzLjczMjA1IDE1IDIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class ParenthesesLinearIcon extends StatelessWidget {
   /// Creates the `parentheses` icon in the linear style.
   const ParenthesesLinearIcon({

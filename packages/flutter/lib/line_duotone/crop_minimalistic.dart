@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `crop-minimalistic` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyIDE5SDEzQzkuMjI4NzYgMTkgNy4zNDMxNSAxOSA2LjE3MTU3IDE3LjgyODRDNSAxNi42NTY5IDUgMTQuNzcxMiA1IDExVjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0yIDVINUgxMUMxNC43NzEyIDUgMTYuNjU2OSA1IDE3LjgyODQgNi4xNzE1N0MxOSA3LjM0MzE1IDE5IDkuMjI4NzYgMTkgMTNWMTlWMjIiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class CropMinimalisticLineDuotoneIcon extends StatelessWidget {
   /// Creates the `crop-minimalistic` icon in the lineDuotone style.
   const CropMinimalisticLineDuotoneIcon({

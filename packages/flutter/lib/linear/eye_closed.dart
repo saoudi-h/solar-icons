@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `eye-closed` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE0QzUgMTQgMiA3IDIgN00yMiA3QzIyIDcgMjEuMDU4NiA5LjE5NjYxIDE5IDExLjEyODhDMTguMDg3MiAxMS45ODU2IDE2Ljk1NDcgMTIuNzkwNCAxNS41ODcyIDEzLjMyODdDMTQuNTMzNCAxMy43NDM1IDEzLjM0IDE0IDEyIDE0TTEyIDE0VjE2LjVNMTUuNTg3MiAxMy4zMjg3TDE3IDE1LjVNMTkgMTEuMTI4OEwyMC41IDEyLjYyODhNOC40MTI4MSAxMy4zMjg3TDcgMTUuNU01IDExLjEyODhMMy41IDEyLjYyODgiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class EyeClosedLinearIcon extends StatelessWidget {
   /// Creates the `eye-closed` icon in the linear style.
   const EyeClosedLinearIcon({

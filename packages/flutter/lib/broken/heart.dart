@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `heart` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNTI0MDEgMTdDNy4zNDk0OSAxNy42Nzk0IDguMTkyNDMgMTguMzA0NCA4Ljk2MTczIDE4LjkxMDlDMTAgMTkuNzI5NCAxMSAyMC41IDEyIDIwLjVDMTMgMjAuNSAxNCAxOS43Mjk0IDE1LjAzODMgMTguOTEwOUMxNy45ODA2IDE2LjU5MTQgMjIgMTQgMjIgOS4xMzcxQzIyIDQuMjc0MTYgMTYuNDk5OCAwLjgyNTQ2NCAxMiA1LjUwMDYzQzcuNTAwMTYgMC44MjU0NjQgMiA0LjI3NDE2IDIgOS4xMzcxQzIgMTAuNjM5IDIuMzgzMzggMTEuOTI0MiAzIDEzLjA1MTYiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 class HeartBrokenIcon extends StatelessWidget {
   /// Creates the `heart` icon in the broken style.
   const HeartBrokenIcon({

@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `wi-fi-none` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjAxNzYgMTguNzE0NEMxMi40MzE4IDE4LjcxNDQgMTIuNzY3NiAxOS4wNTAxIDEyLjc2NzYgMTkuNDY0NEMxMi43Njc2IDE5Ljg3ODYgMTIuNDMxOCAyMC4yMTQ0IDEyLjAxNzYgMjAuMjE0NEMxMS42MDM0IDIwLjIxNDQgMTEuMjY3NiAxOS44Nzg2IDExLjI2NzYgMTkuNDY0NEMxMS4yNjc2IDE5LjA1MDEgMTEuNjAzNCAxOC43MTQ0IDEyLjAxNzYgMTguNzE0NFoiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class WiFiNoneBoldIcon extends StatelessWidget {
   /// Creates the `wi-fi-none` icon in the bold style.
   const WiFiNoneBoldIcon({

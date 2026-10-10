@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user-hand-up` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMTNIMTZNOCAxM1YxOEM4IDE5Ljg4NTYgOCAyMC44Mjg0IDguNTg1NzkgMjEuNDE0MkM5LjE3MTU3IDIyIDEwLjExNDQgMjIgMTIgMjJDMTMuODg1NiAyMiAxNC44Mjg0IDIyIDE1LjQxNDIgMjEuNDE0MkMxNiAyMC44Mjg0IDE2IDE5Ljg4NTYgMTYgMThWMTNNOCAxM0M1LjI0MjEgMTIuMzg3MSAzLjA2NzE3IDEwLjI2ODcgMi4zODE5NyA3LjUyNzg3TDIgNk0xNiAxM0MxNy43MTA3IDEzIDE5LjE1MDYgMTQuMjgwNCAxOS4zNTA1IDE1Ljk3OTVMMjAgMjEuNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class UserHandUpLinearIcon extends StatelessWidget {
   /// Creates the `user-hand-up` icon in the linear style.
   const UserHandUpLinearIcon({

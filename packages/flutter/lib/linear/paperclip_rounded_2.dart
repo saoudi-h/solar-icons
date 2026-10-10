@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `paperclip-rounded-2` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjk1MDIgMTEuMDA4N0wxMC4wMTA0IDEzLjkzNTFDOC4zODY4NyAxNS41NTEzIDguMzg2ODcgMTguMTcxNiAxMC4wMTA0IDE5Ljc4NzlDMTEuNjM0IDIxLjQwNDEgMTQuMjY2NCAyMS40MDQxIDE1Ljg4OTkgMTkuNzg3OUwxOS41NjQ2IDE2LjEyOTlDMjIuODExOCAxMi44OTc1IDIyLjgxMTggNy42NTY3IDE5LjU2NDYgNC40MjQzQzE2LjMxNzUgMS4xOTE5IDExLjA1MjggMS4xOTE5IDcuODA1NjMgNC40MjQzTDQuMTMwOTUgOC4wODIyOUMxLjI4OTY4IDEwLjkxMDYgMS4yODk2OCAxNS40OTYzIDQuMTMwOTUgMTguMzI0NyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class PaperclipRounded2LinearIcon extends StatelessWidget {
   /// Creates the `paperclip-rounded-2` icon in the linear style.
   const PaperclipRounded2LinearIcon({

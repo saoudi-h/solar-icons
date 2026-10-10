@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `alt-arrow-up` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjM3MDQgOC4xNjQ4NUwxOC44MDAxIDE0Ljc5NTNDMTkuMjAxMyAxNS4yMDkxIDE4Ljk1ODEgMTYgMTguNDI5NyAxNkg1LjU3MDNDNS4wNDE4OSAxNiA0Ljc5ODY5IDE1LjIwOTEgNS4xOTk5IDE0Ljc5NTNMMTEuNjI5NiA4LjE2NDg1QzExLjg0MjcgNy45NDUwNSAxMi4xNTczIDcuOTQ1MDUgMTIuMzcwNCA4LjE2NDg1WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class AltArrowUpBoldIcon extends StatelessWidget {
   /// Creates the `alt-arrow-up` icon in the bold style.
   const AltArrowUpBoldIcon({

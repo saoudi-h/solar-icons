@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `map-point-remove` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgMTAuMTQzM0M0IDUuNjQ1ODggNy41ODE3MiAyIDEyIDJDMTYuNDE4MyAyIDIwIDUuNjQ1ODggMjAgMTAuMTQzM0MyMCAxNC42MDU1IDE3LjQ0NjcgMTkuODEyNCAxMy40NjI5IDIxLjY3NDRDMTIuNTM0MyAyMi4xMDg1IDExLjQ2NTcgMjIuMTA4NSAxMC41MzcxIDIxLjY3NDRDNi41NTMzMiAxOS44MTI0IDQgMTQuNjA1NSA0IDEwLjE0MzNaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTkgMTBIMTUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class MapPointRemoveLinearIcon extends StatelessWidget {
   /// Creates the `map-point-remove` icon in the linear style.
   const MapPointRemoveLinearIcon({

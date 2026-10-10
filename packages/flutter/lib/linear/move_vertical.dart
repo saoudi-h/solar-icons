@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `move-vertical` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjE0MTYgNS45OTk1NEwxMiAxLjg1NzkxTDcuODU4MzUgNS45OTk1NE0xMiAxLjg1NzkxTDExLjk5OTkgMjIuMTQyMk03Ljg1ODI3IDE4LjAwMDVMMTEuOTk5OSAyMi4xNDIyTDE2LjE0MTUgMTguMDAwNSIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
 class MoveVerticalLinearIcon extends StatelessWidget {
   /// Creates the `move-vertical` icon in the linear style.
   const MoveVerticalLinearIcon({

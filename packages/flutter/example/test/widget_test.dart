@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solar_icons/dynamic/home.dart';
-import 'package:solar_icons_example/gallery.dart';
+import 'package:solaricons_flutter/dynamic/home.dart';
+import 'package:solaricons_flutter_example/gallery.dart';
 
 void main() {
   testWidgets('gallery shows the catalogue with a working search', (tester) async {

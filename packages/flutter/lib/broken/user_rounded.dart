@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user-rounded` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSI0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTE1IDIwLjYxNTFDMTQuMDkwNyAyMC44NjE5IDEzLjA3MzYgMjEgMTIgMjFDOC4xMzQwMSAyMSA1IDE5LjIwOTEgNSAxN0M1IDE0Ljc5MDkgOC4xMzQwMSAxMyAxMiAxM0MxNS44NjYgMTMgMTkgMTQuNzkwOSAxOSAxN0MxOSAxNy4zNDUzIDE4LjkyMzQgMTcuNjgwNCAxOC43Nzk1IDE4IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class UserRoundedBrokenIcon extends StatelessWidget {
   /// Creates the `user-rounded` icon in the broken style.
   const UserRoundedBrokenIcon({

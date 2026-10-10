@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `user-hand-up` icon in the broken style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMTNIMTZDMTcuNzEwNyAxMyAxOS4xNTA2IDE0LjI4MDQgMTkuMzUwNSAxNS45Nzk1TDIwIDIxLjVNOCAxM0M1LjI0MjEgMTIuMzg3MSAzLjA2NzE3IDEwLjI2ODcgMi4zODE5NyA3LjUyNzg3TDIgNk04IDEzVjE4QzggMTkuODg1NiA4IDIwLjgyODQgOC41ODU3OSAyMS40MTQyQzkuMTcxNTcgMjIgMTAuMTE0NCAyMiAxMiAyMkMxMy44ODU2IDIyIDE0LjgyODQgMjIgMTUuNDE0MiAyMS40MTQyQzE2IDIwLjgyODQgMTYgMTkuODg1NiAxNiAxOFYxNyIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iNCIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class UserHandUpBrokenIcon extends StatelessWidget {
   /// Creates the `user-hand-up` icon in the broken style.
   const UserHandUpBrokenIcon({

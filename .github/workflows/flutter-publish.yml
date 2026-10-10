@@ -1,7 +1,7 @@
 name: Flutter publish
 
 # First pub.dev release is 2.0.0 (v2 family alignment, same as the Blade
-# package). Publishing is tag-gated and manual: push a `solar_icons-v*` tag
+# package). Publishing is tag-gated and manual: push a `solaricons_flutter-v*` tag
 # whose version matches packages/flutter/pubspec.yaml. One-time setup by the
 # maintainer: pub.dev account, package uploader, and the PUB_TOKEN repo
 # One-time setup by the
@@ -13,7 +13,7 @@ name: Flutter publish
 on:
     push:
         tags:
-            - 'solar_icons-v*'
+            - 'solaricons_flutter-v*'
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -39,10 +39,10 @@ jobs:
 
             - name: Tag matches pubspec version
               run: |
-                  TAG="${GITHUB_REF_NAME#solar_icons-v}"
+                  TAG="${GITHUB_REF_NAME#solaricons_flutter-v}"
                   SPEC=$(grep '^version:' packages/flutter/pubspec.yaml | awk '{print $2}')
                   if [ "$TAG" != "$SPEC" ]; then
-                    echo "tag solar_icons-v$TAG does not match pubspec version $SPEC"
+                    echo "tag solaricons_flutter-v$TAG does not match pubspec version $SPEC"
                     exit 1
                   fi
 

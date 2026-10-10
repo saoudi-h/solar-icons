@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `minimalistic-magnifier` icon in the boldDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBvcGFjaXR5PSIwLjUiIGN4PSIxMS41IiBjeT0iMTEuNSIgcj0iOS41IiBmaWxsPSIjMUMyNzRDIi8+CjxwYXRoIGQ9Ik0xOS40Njk3IDE5LjQ2OTdDMTkuNzYyNiAxOS4xNzY4IDIwLjIzNzMgMTkuMTc2OCAyMC41MzAyIDE5LjQ2OTdMMjIuNTMwMiAyMS40Njk3QzIyLjgyMzEgMjEuNzYyNiAyMi44MjMxIDIyLjIzNzMgMjIuNTMwMiAyMi41MzAyQzIyLjIzNzMgMjIuODIzMSAyMS43NjI2IDIyLjgyMzEgMjEuNDY5NyAyMi41MzAyTDE5LjQ2OTcgMjAuNTMwMkMxOS4xNzY4IDIwLjIzNzMgMTkuMTc2OCAxOS43NjI2IDE5LjQ2OTcgMTkuNDY5N1oiIGZpbGw9IiMxQzI3NEMiLz4KPC9zdmc+Cg==)
 class MinimalisticMagnifierBoldDuotoneIcon extends StatelessWidget {
   /// Creates the `minimalistic-magnifier` icon in the boldDuotone style.
   const MinimalisticMagnifierBoldDuotoneIcon({

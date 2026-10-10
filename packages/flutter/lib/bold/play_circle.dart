@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `play-circle` icon in the bold style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaTTEwLjY5MzUgMTUuODQ1OEwxNS40MTM3IDEzLjA1OUMxNi4xOTU0IDEyLjU5NzQgMTYuMTk1NCAxMS40MDI2IDE1LjQxMzcgMTAuOTQxTDEwLjY5MzUgOC4xNTQxOUM5LjkzMzcxIDcuNzA1NjEgOSA4LjI4OTQ3IDkgOS4yMTMxNlYxNC43ODY4QzkgMTUuNzEwNSA5LjkzMzcxIDE2LjI5NDQgMTAuNjkzNSAxNS44NDU4WiIgZmlsbD0iIzFDMjc0QyIvPgo8L3N2Zz4K)
 class PlayCircleBoldIcon extends StatelessWidget {
   /// Creates the `play-circle` icon in the bold style.
   const PlayCircleBoldIcon({

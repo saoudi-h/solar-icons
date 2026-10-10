@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `parentheses` icon in the lineDuotone style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggb3BhY2l0eT0iMC41IiBkPSJNOSAyMkM2IDIwLjI2OCAzIDE2LjY5MjUgMyAxMkMzIDcuMzA3NTQgNiAzLjczMjA1IDkgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNSAyMkMxOCAyMC4yNjggMjEgMTYuNjkyNSAyMSAxMkMyMSA3LjMwNzU0IDE4IDMuNzMyMDUgMTUgMiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=)
 class ParenthesesLineDuotoneIcon extends StatelessWidget {
   /// Creates the `parentheses` icon in the lineDuotone style.
   const ParenthesesLineDuotoneIcon({

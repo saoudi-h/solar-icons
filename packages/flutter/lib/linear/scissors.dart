@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `scissors` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjQwMTMgMjAuNUw2IDJNMjIgMTlDMjIgMjAuNjU2OSAyMC42NTY5IDIyIDE5IDIyQzE3LjM0MzEgMjIgMTYgMjAuNjU2OSAxNiAxOUMxNiAxNy4zNDMxIDE3LjM0MzEgMTYgMTkgMTZDMjAuNjU2OSAxNiAyMiAxNy4zNDMxIDIyIDE5WiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjU5ODY1IDIwLjVMMTggMk0yIDE5QzIgMjAuNjU2OSAzLjM0MzE1IDIyIDUgMjJDNi42NTY4NSAyMiA4IDIwLjY1NjkgOCAxOUM4IDE3LjM0MzEgNi42NTY4NSAxNiA1IDE2QzMuMzQzMTUgMTYgMiAxNy4zNDMxIDIgMTlaIiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==)
 class ScissorsLinearIcon extends StatelessWidget {
   /// Creates the `scissors` icon in the linear style.
   const ScissorsLinearIcon({

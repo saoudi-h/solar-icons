@@ -9,6 +9,7 @@ import '../src/solar_icon_style.dart';
 import '../src/solar_provider.dart';
 
 /// The `power` icon in the linear style.
+/// ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJWNiIgc3Ryb2tlPSIjMUMyNzRDIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik04LjUgMy43MDYwNUM1LjI2ODA2IDUuMDcxNTcgMyA4LjI3MDk5IDMgMTIuMDAwMUMzIDE2Ljk3MDcgNy4wMjk0NCAyMS4wMDAxIDEyIDIxLjAwMDFDMTYuOTcwNiAyMS4wMDAxIDIxIDE2Ljk3MDcgMjEgMTIuMDAwMUMyMSA4LjI3MDk5IDE4LjczMTkgNS4wNzE1NyAxNS41IDMuNzA2MDUiIHN0cm9rZT0iIzFDMjc0QyIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
 class PowerLinearIcon extends StatelessWidget {
   /// Creates the `power` icon in the linear style.
   const PowerLinearIcon({
