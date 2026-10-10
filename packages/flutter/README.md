@@ -4,7 +4,12 @@ Flutter widgets for Solar Icons. The package draws 1,451 icons across six styles
 
 ## Install
 
-Generate the widgets from the catalogue, then depend on the package with a path:
+```sh
+flutter pub add solar_icons
+```
+
+To work from a local checkout instead, depend on the package with a path.
+Generate the widgets from the catalogue first, then point at the package:
 
 ```sh
 node packages/flutter/tool/generate_icons.mjs
