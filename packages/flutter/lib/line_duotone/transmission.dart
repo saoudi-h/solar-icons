@@ -1,0 +1,76 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `transmission` icon in the lineDuotone style.
+class TransmissionLineDuotoneIcon extends StatelessWidget {
+  /// Creates the `transmission` icon in the lineDuotone style.
+  const TransmissionLineDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'transmission',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M6 4C6 5.10457 5.10457 6 4 6C2.89543 6 2 5.10457 2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 18.8954 2.89543 18 4 18C5.10457 18 6 18.8954 6 20Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M22 4C22 5.10457 21.1046 6 20 6C18.8954 6 18 5.10457 18 4C18 2.89543 18.8954 2 20 2C21.1046 2 22 2.89543 22 4Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M19.8571 18.5H20.2857C21.2325 18.5 22 17.7165 22 16.75C22 15.7835 21.2325 15 20.2857 15H18V18.5M19.8571 18.5H18M19.8571 18.5L22 22M18 18.5V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M4 6V18M12 6V18M20 6V8C20 9.88562 20 10.8284 19.4142 11.4142C18.8284 12 17.8856 12 16 12H4" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

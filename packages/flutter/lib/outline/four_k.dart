@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `four-k` icon in the outline style.
+class FourKOutlineIcon extends StatelessWidget {
+  /// Creates the `four-k` icon in the outline style.
+  const FourKOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'four-k',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M10.5 7.25C10.9142 7.25 11.25 7.58579 11.25 8V16C11.25 16.4142 10.9142 16.75 10.5 16.75C10.0858 16.75 9.75 16.4142 9.75 16V12.75H7.5C5.98122 12.75 4.75 11.5188 4.75 10V8C4.75 7.58579 5.08579 7.25 5.5 7.25C5.91421 7.25 6.25 7.58579 6.25 8V10C6.25 10.6904 6.80965 11.25 7.5 11.25H9.75V8C9.75 7.58579 10.0858 7.25 10.5 7.25Z" fill="currentColor"/>
+<path d="M17.959 7.48047C18.246 7.18201 18.7209 7.17224 19.0195 7.45898C19.318 7.74597 19.3278 8.22093 19.041 8.51953L16.374 11.293L19.1318 15.5957C19.3549 15.9444 19.2528 16.4084 18.9043 16.6318C18.5556 16.8549 18.0916 16.7528 17.8682 16.4043L15.3047 12.4053L14.25 13.502V16C14.25 16.4142 13.9142 16.75 13.5 16.75C13.0858 16.75 12.75 16.4142 12.75 16V8C12.75 7.58579 13.0858 7.25 13.5 7.25C13.9142 7.25 14.25 7.58579 14.25 8V11.3379L17.959 7.48047Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0576 1.25C14.3657 1.24999 16.1746 1.24974 17.5859 1.43945C19.0307 1.63369 20.1706 2.03976 21.0654 2.93457C21.9602 3.82938 22.3663 4.96933 22.5605 6.41406C22.7503 7.82544 22.75 9.63432 22.75 11.9424V12.0576C22.75 14.3657 22.7503 16.1746 22.5605 17.5859C22.3663 19.0307 21.9602 20.1706 21.0654 21.0654C20.1706 21.9602 19.0307 22.3663 17.5859 22.5605C16.1746 22.7503 14.3657 22.75 12.0576 22.75H11.9424C9.63432 22.75 7.82544 22.7503 6.41406 22.5605C4.96933 22.3663 3.82938 21.9602 2.93457 21.0654C2.03976 20.1706 1.63369 19.0307 1.43945 17.5859C1.24974 16.1746 1.24999 14.3657 1.25 12.0576V11.9424C1.24999 9.63432 1.24974 7.82544 1.43945 6.41406C1.63369 4.96933 2.03976 3.82938 2.93457 2.93457C3.82938 2.03976 4.96933 1.63369 6.41406 1.43945C7.82544 1.24974 9.63431 1.24999 11.9424 1.25H12.0576ZM12 2.75C9.62177 2.75 7.91326 2.75198 6.61328 2.92676C5.33508 3.09865 4.56472 3.42551 3.99512 3.99512C3.42551 4.56472 3.09865 5.33508 2.92676 6.61328C2.75198 7.91326 2.75 9.62177 2.75 12C2.75 14.3782 2.75198 16.0867 2.92676 17.3867C3.09865 18.6649 3.42551 19.4353 3.99512 20.0049C4.56472 20.5745 5.33508 20.9014 6.61328 21.0732C7.91326 21.248 9.62177 21.25 12 21.25C14.3782 21.25 16.0867 21.248 17.3867 21.0732C18.6649 20.9014 19.4353 20.5745 20.0049 20.0049C20.5745 19.4353 20.9014 18.6649 21.0732 17.3867C21.248 16.0867 21.25 14.3782 21.25 12C21.25 9.62177 21.248 7.91326 21.0732 6.61328C20.9014 5.33508 20.5745 4.56472 20.0049 3.99512C19.4353 3.42551 18.6649 3.09865 17.3867 2.92676C16.0867 2.75198 14.3782 2.75 12 2.75Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

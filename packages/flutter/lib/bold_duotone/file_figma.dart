@@ -1,0 +1,77 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `file-figma` icon in the boldDuotone style.
+class FileFigmaBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `file-figma` icon in the boldDuotone style.
+  const FileFigmaBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'file-figma',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M8.62402 11.5C9.38399 11.5002 10 12.1383 10 12.9248C9.99988 13.4046 9.7704 13.8289 9.41895 14.0869C9.77063 14.345 10 14.7699 10 15.25C10 16.0365 9.38399 16.6746 8.62402 16.6748C8.29376 16.6748 7.99012 16.5542 7.75293 16.3535V17.5752C7.75293 18.3619 7.13614 19 6.37598 19C5.61601 18.9998 5 18.3617 5 17.5752C5.00012 17.0954 5.2296 16.6711 5.58105 16.4131C5.22937 16.155 5 15.7301 5 15.25C5 14.7699 5.22937 14.345 5.58105 14.0869C5.2296 13.8289 5.00012 13.4046 5 12.9248C5 12.1383 5.61601 11.5002 6.37598 11.5H8.62402Z" fill="currentColor"/>
+<path d="M11.5 2.00586C12.0266 2.01725 12.4003 2.05009 12.7842 2.14453C12.9404 2.18298 13.1407 2.24407 13.292 2.29883C13.8622 2.50534 14.2785 2.7833 15.1104 3.33887C16.0788 3.98569 17.1892 4.777 18 5.5C18.911 6.31239 19.9546 7.49387 20.7471 8.44238C20.8745 8.59494 20.938 8.67168 21.0312 8.79883C21.5613 9.52144 21.9336 10.546 21.9902 11.4404C22.0002 11.5979 22 11.7325 22 12H21.9844C21.9781 11.8216 21.9694 11.6555 21.957 11.5H17.9053C16.8082 11.5001 15.8382 11.4996 15.0566 11.3945C14.2097 11.2806 13.363 11.0192 12.6719 10.3281C11.9806 9.63685 11.7184 8.7895 11.6045 7.94238C11.4995 7.16098 11.4999 6.19157 11.5 5.09473L11.5088 2.25977L11.5 2.00586Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V10C2 6.22876 2 4.34315 3.17157 3.17157C4.34315 2 6.23869 2 10.0298 2C10.6358 2 11.1214 2 11.53 2.01666C11.5166 2.09659 11.5095 2.17813 11.5092 2.26057L11.5 5.09497C11.4999 6.19207 11.4998 7.16164 11.6049 7.94316C11.7188 8.79028 11.9803 9.63726 12.6716 10.3285C13.3628 11.0198 14.2098 11.2813 15.0569 11.3952C15.8385 11.5003 16.808 11.5002 17.9051 11.5001L18 11.5001H21.9574C22 12.0344 22 12.6901 22 13.5629V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}
+
+@Deprecated(
+  'Normalized the legacy *-file name to the file-* naming convention. Deprecated since 2026-09-11. Use FileFigmaBoldDuotoneIcon instead.',
+)
+typedef FigmaFileBoldDuotoneIcon = FileFigmaBoldDuotoneIcon;

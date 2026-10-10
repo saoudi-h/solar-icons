@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `scaling` icon in the bold style.
+class ScalingBoldIcon extends StatelessWidget {
+  /// Creates the `scaling` icon in the bold style.
+  const ScalingBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'scaling',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M15.9062 2C15.9062 2.41421 16.242 2.75 16.6562 2.75H20.1893L12.75 10.1893V8C12.75 7.58579 12.4142 7.25 12 7.25C11.5858 7.25 11.25 7.58579 11.25 8V12C11.25 12.4142 11.5858 12.75 12 12.75H16C16.4142 12.75 16.75 12.4142 16.75 12C16.75 11.5858 16.4142 11.25 16 11.25H13.8107L21.25 3.81066V7.34375C21.25 7.75796 21.5858 8.09375 22 8.09375C22.4142 8.09375 22.75 7.75796 22.75 7.34375V2C22.75 1.58579 22.4142 1.25 22 1.25H16.6562C16.242 1.25 15.9062 1.58579 15.9062 2Z" fill="currentColor"/>
+<path d="M19.7516 7.43034C19.797 8.62969 20.7812 9.5887 21.9904 9.59373C22 10.3198 22 11.1187 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C12.8813 2 13.6802 2 14.4063 2.00957C14.4113 3.21884 15.3703 4.20298 16.5697 4.24836L13.9468 6.87122C13.5572 6.20078 12.8313 5.75 12 5.75C10.7574 5.75 9.75 6.75736 9.75 8V12C9.75 13.2426 10.7574 14.25 12 14.25H16C17.2426 14.25 18.25 13.2426 18.25 12C18.25 11.1687 17.7992 10.4428 17.1288 10.0532L19.7516 7.43034Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

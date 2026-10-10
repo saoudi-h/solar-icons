@@ -1,0 +1,77 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `cart-3` icon in the boldDuotone style.
+class Cart3BoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `cart-3` icon in the boldDuotone style.
+  const Cart3BoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'cart-3',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M8 11.9999C8.41418 11.9999 8.74995 12.3357 8.75 12.7499V16.7499C8.75 17.1641 8.41421 17.4999 8 17.4999C7.58579 17.4999 7.25 17.1641 7.25 16.7499V12.7499C7.25005 12.3357 7.58582 11.9999 8 11.9999Z" fill="currentColor"/>
+<path d="M12 11.9999C12.4142 11.9999 12.75 12.3357 12.75 12.7499V16.7499C12.75 17.1641 12.4142 17.4999 12 17.4999C11.5858 17.4999 11.25 17.1641 11.25 16.7499V12.7499C11.25 12.3357 11.5858 11.9999 12 11.9999Z" fill="currentColor"/>
+<path d="M16 11.9999C16.4142 11.9999 16.75 12.3357 16.75 12.7499V16.7499C16.75 17.1641 16.4142 17.4999 16 17.4999C15.5858 17.4999 15.25 17.1641 15.25 16.7499V12.7499C15.25 12.3357 15.5858 11.9999 16 11.9999Z" fill="currentColor"/>
+<path d="M15.582 3.00089C16.2655 3.00585 16.7979 3.03775 17.2734 3.22354C17.8416 3.44561 18.3365 3.82265 18.7002 4.31241C19.0671 4.80647 19.2395 5.43985 19.4766 6.31143L19.5225 6.48135L20.0352 9.44522C19.6265 9.16329 19.0996 8.99497 18.418 8.89542L18.0566 6.80753C17.773 5.76847 17.6701 5.44148 17.4961 5.20694C17.3002 4.94322 17.0335 4.7396 16.7275 4.62003C16.5078 4.5342 16.2417 4.50855 15.5801 4.50186C15.6887 4.27401 15.75 4.01914 15.75 3.74991C15.75 3.48189 15.6897 3.22795 15.582 3.00089Z" fill="currentColor"/>
+<path d="M8.41797 3.00089C8.31026 3.22795 8.25001 3.48189 8.25 3.74991C8.25 4.01914 8.31131 4.27401 8.41992 4.50186C7.75829 4.50855 7.49222 4.53419 7.27246 4.62003C6.96651 4.7396 6.69975 4.94322 6.50391 5.20694C6.32987 5.44148 6.22696 5.7685 5.94336 6.80753L5.58203 8.89542C4.90052 8.9949 4.37352 9.16252 3.96484 9.44424L4.47754 6.48135L4.52344 6.31143C4.76049 5.43987 4.93295 4.80647 5.2998 4.31241C5.66352 3.82265 6.15838 3.44561 6.72656 3.22354C7.20206 3.03773 7.73454 3.00586 8.41797 3.00089Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M14.3142 8.75C17.8512 8.75 19.6203 8.74996 20.5212 9.90332C21.4221 11.0571 20.9934 12.7734 20.1355 16.2051C19.5898 18.3878 19.3165 19.4789 18.5027 20.1143C17.6889 20.7496 16.564 20.75 14.3142 20.75H9.68432C7.43447 20.75 6.30865 20.7496 5.49487 20.1143C4.68143 19.4788 4.4086 18.3874 3.86303 16.2051C3.0051 12.7734 2.57647 11.0571 3.47729 9.90332C4.37823 8.75001 6.14737 8.75 9.68432 8.75H14.3142Z" fill="currentColor"/>
+<path d="M13.9998 2C14.9662 2 15.7498 2.7835 15.7498 3.75C15.7498 4.7165 14.9662 5.5 13.9998 5.5H9.99975C9.03325 5.5 8.24975 4.7165 8.24975 3.75C8.24975 2.7835 9.03325 2 9.99975 2H13.9998Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

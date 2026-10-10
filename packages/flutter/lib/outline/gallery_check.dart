@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `gallery-check` icon in the outline style.
+class GalleryCheckOutlineIcon extends StatelessWidget {
+  /// Creates the `gallery-check` icon in the outline style.
+  const GalleryCheckOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'gallery-check',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2C12.75 2.41421 12.4142 2.75 12 2.75C9.62178 2.75 7.91326 2.75198 6.61328 2.92676C5.33508 3.09865 4.56472 3.42551 3.99512 3.99512C3.42551 4.56472 3.09865 5.33508 2.92676 6.61328C2.78163 7.69273 2.75553 9.05441 2.75098 10.8467L3.25781 10.4033C4.46624 9.34596 6.28744 9.40658 7.42285 10.542L11.7129 14.8311C12.1424 15.2605 12.8185 15.319 13.3154 14.9697L13.6133 14.7607C15.0436 13.7556 16.9789 13.8716 18.2783 15.041L21.0518 17.5381C21.0591 17.4885 21.0664 17.4379 21.0732 17.3867C21.248 16.0867 21.25 14.3782 21.25 12C21.25 11.5858 21.5858 11.25 22 11.25C22.4142 11.25 22.75 11.5858 22.75 12V12.0576C22.75 14.3657 22.7503 16.1746 22.5605 17.5859C22.3663 19.0307 21.9602 20.1706 21.0654 21.0654C20.1706 21.9602 19.0307 22.3663 17.5859 22.5605C16.1746 22.7503 14.3657 22.75 12.0576 22.75H11.9424C9.63432 22.75 7.82544 22.7503 6.41406 22.5605C4.96933 22.3663 3.82938 21.9602 2.93457 21.0654C2.03976 20.1706 1.63369 19.0307 1.43945 17.5859C1.24974 16.1746 1.24999 14.3657 1.25 12.0576V11.9424C1.24999 9.63432 1.24974 7.82544 1.43945 6.41406C1.63369 4.96933 2.03976 3.82938 2.93457 2.93457C3.82938 2.03976 4.96933 1.63369 6.41406 1.43945C7.82544 1.24974 9.63432 1.24999 11.9424 1.25H12ZM6.36231 11.6025C5.7853 11.0255 4.85924 10.9939 4.24512 11.5312L2.75 12.8398C2.75258 14.7884 2.77327 16.2451 2.92676 17.3867C3.09865 18.6649 3.42551 19.4353 3.99512 20.0049C4.56472 20.5745 5.33508 20.9014 6.61328 21.0732C7.91326 21.248 9.62178 21.25 12 21.25C14.3782 21.25 16.0867 21.248 17.3867 21.0732C18.6649 20.9014 19.4353 20.5745 20.0049 20.0049C20.2484 19.7614 20.4477 19.4815 20.6094 19.1406C20.5705 19.1169 20.5331 19.0892 20.498 19.0576L17.2744 16.1562C16.4948 15.4547 15.3337 15.3843 14.4756 15.9873L14.1777 16.1973C13.0844 16.9656 11.5973 16.8365 10.6523 15.8916L6.36231 11.6025Z" fill="currentColor"/>
+<path d="M19.4697 3.46973C19.7626 3.17683 20.2374 3.17683 20.5303 3.46973C20.8232 3.76262 20.8232 4.23738 20.5303 4.53027L15.5303 9.53027C15.2374 9.82317 14.7626 9.82317 14.4697 9.53027L12.4697 7.53027C12.1768 7.23738 12.1768 6.76262 12.4697 6.46973C12.7626 6.17683 13.2374 6.17683 13.5303 6.46973L15 7.93945L19.4697 3.46973Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

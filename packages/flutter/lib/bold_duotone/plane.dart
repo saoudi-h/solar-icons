@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `plane` icon in the boldDuotone style.
+class PlaneBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `plane` icon in the boldDuotone style.
+  const PlaneBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'plane',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M16.245 7.76015L21.4166 2.58855L21.414 2.58595C20.2268 1.39869 17.9776 2.14842 13.4792 3.64788L8.32987 5.36432C4.69923 6.57453 2.88392 7.17964 2.36806 8.06698C1.87731 8.91112 1.87731 9.95369 2.36806 10.7978C2.88392 11.6852 4.69923 12.2903 8.32987 13.5005C8.77981 13.6505 9.28601 13.5434 9.62294 13.2096L15.1286 7.75495C15.4383 7.44808 15.9382 7.45041 16.245 7.76015Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M18.6351 15.6695L20.3516 10.5201C21.85 6.02503 22.5997 3.77584 21.4161 2.58789L16.2445 7.75949C16.5514 8.06923 16.5491 8.56909 16.2393 8.87596L10.8226 14.2425C10.4512 14.6104 10.3337 15.1735 10.499 15.6695C11.7092 19.3001 12.3143 21.1154 13.2016 21.6313C14.0458 22.122 15.0883 22.122 15.9325 21.6313C16.8198 21.1154 17.4249 19.3001 18.6351 15.6695Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

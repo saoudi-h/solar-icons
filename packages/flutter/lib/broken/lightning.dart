@@ -1,0 +1,73 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `lightning` icon in the broken style.
+class LightningBrokenIcon extends StatelessWidget {
+  /// Creates the `lightning` icon in the broken style.
+  const LightningBrokenIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'lightning',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M17.9391 17.6364C17.8624 18.4046 17.689 18.9217 17.2971 19.3077C16.5941 20 15.4627 20 13.2 20H10.8C8.53726 20 7.40589 20 6.70294 19.3077C6 18.6154 6 17.5012 6 15.2727V12.7273C6 10.4988 6 9.38459 6.70294 8.69229C7.40589 8 8.53726 8 10.8 8H13.2C15.4627 8 16.5941 8 17.2971 8.69229C18 9.38459 18 10.4988 18 12.7273V13.9091" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 20V22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 12L10.5 14H13.5L12 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 5H13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15.5 8.05092V5.5C15.5 4.09554 15.5 3.39331 15.1629 2.88886C15.017 2.67048 14.8295 2.48298 14.6111 2.33706C14.1067 2 13.4045 2 12 2C10.5955 2 9.89331 2 9.38886 2.33706C9.17048 2.48298 8.98298 2.67048 8.83706 2.88886C8.5 3.39331 8.5 4.09554 8.5 5.5V8.05092" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

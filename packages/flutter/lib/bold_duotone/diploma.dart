@@ -1,0 +1,75 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `diploma` icon in the boldDuotone style.
+class DiplomaBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `diploma` icon in the boldDuotone style.
+  const DiplomaBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'diploma',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M7.67597 17.249C8.10942 18.752 9.30518 19.9319 10.8176 20.3428L9.73749 21.4131C9.41385 21.7322 9.25155 21.8918 9.11445 21.9473C8.80177 22.0733 8.45472 21.9657 8.29023 21.6914C8.21806 21.571 8.19555 21.354 8.15058 20.9199C8.12518 20.6747 8.11198 20.5519 8.07343 20.4492C7.98712 20.2193 7.80557 20.0402 7.57245 19.9551C7.46843 19.9172 7.34408 19.9049 7.09589 19.8799C6.65548 19.8355 6.43477 19.8134 6.31269 19.7422C6.03472 19.58 5.92537 19.2379 6.05292 18.9297C6.10899 18.7944 6.27182 18.634 6.59589 18.3145L7.67597 17.249Z" fill="currentColor"/>
+<path d="M17.4045 18.3145C17.7286 18.634 17.8914 18.7944 17.9475 18.9297C18.075 19.2379 17.9657 19.58 17.6877 19.7422C17.5656 19.8134 17.3449 19.8355 16.9045 19.8799C16.6563 19.9049 16.5319 19.9172 16.4279 19.9551C16.1948 20.0402 16.0133 20.2193 15.9269 20.4492C15.8884 20.5519 15.8752 20.6747 15.8498 20.9199C15.8048 21.354 15.7823 21.571 15.7101 21.6914C15.5457 21.9657 15.1986 22.0733 14.8859 21.9473C14.7488 21.8918 14.5865 21.7322 14.2629 21.4131L13.1828 20.3428C14.6952 19.9319 15.891 18.752 16.3244 17.249L17.4045 18.3145Z" fill="currentColor"/>
+<path d="M12.0002 13C13.6293 13 14.9552 14.2985 14.9992 15.917C15 15.9444 15.0002 15.9724 15.0002 16C15.0002 17.6569 13.657 19 12.0002 19C10.3433 19 9.00019 17.6569 9.00019 16C9.00019 15.9724 9.00042 15.9444 9.00116 15.917C9.00321 15.8417 9.00832 15.7672 9.01581 15.6934C9.16944 14.1806 10.4469 13 12.0002 13Z" fill="currentColor"/>
+<path d="M17.0002 8.75C17.4144 8.75 17.7502 9.08579 17.7502 9.5C17.7502 9.91421 17.4144 10.25 17.0002 10.25H7.00019C6.58597 10.25 6.25019 9.91421 6.25019 9.5C6.25019 9.08579 6.58597 8.75 7.00019 8.75H17.0002Z" fill="currentColor"/>
+<path d="M15.0002 5.25C15.4144 5.25 15.7502 5.58579 15.7502 6C15.7502 6.41421 15.4144 6.75 15.0002 6.75H9.00019C8.58597 6.75 8.25019 6.41421 8.25019 6C8.25019 5.58579 8.58597 5.25 9.00019 5.25H15.0002Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M2 8V12C2 14.8284 2 16.2426 2.87868 17.1213C3.35503 17.5977 3.98877 17.8158 4.9199 17.9156C4.9939 17.8157 5.06395 17.737 5.11392 17.6821C5.23008 17.5543 5.37739 17.4091 5.5202 17.2683L7.01311 15.7962L7.56446 15.2377C7.9268 13.1151 9.77461 11.5 12.0001 11.5C14.2255 11.5 16.0733 13.1151 16.4357 15.2377L16.987 15.7962L18.48 17.2684C18.6228 17.4092 18.7701 17.5544 18.8862 17.6821C18.9362 17.737 19.0062 17.8157 19.0802 17.9156C20.0113 17.8158 20.645 17.5977 21.1213 17.1213C22 16.2426 22 14.8284 22 12V8C22 5.17157 22 3.75736 21.1213 2.87868C20.2426 2 18.8284 2 16 2H8C5.17157 2 3.75736 2 2.87868 2.87868C2 3.75736 2 5.17157 2 8Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `hashtag-chat` icon in the lineDuotone style.
+class HashtagChatLineDuotoneIcon extends StatelessWidget {
+  /// Creates the `hashtag-chat` icon in the lineDuotone style.
+  const HashtagChatLineDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'hashtag-chat',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M17.8144 21.236L17.5433 21.6939C17.3017 22.102 16.6982 22.102 16.4567 21.6939L16.1856 21.236C15.9754 20.8808 15.8702 20.7032 15.7014 20.605C15.5325 20.5068 15.32 20.5031 14.8948 20.4958C14.2671 20.4849 13.8734 20.4465 13.5433 20.3097C12.9307 20.056 12.444 19.5693 12.1903 18.9567C12 18.4973 12 17.9149 12 16.75V16.25C12 14.6133 12 13.7949 12.3684 13.1938C12.5745 12.8574 12.8574 12.5745 13.1938 12.3684C13.7949 12 14.6133 12 16.25 12H17.75C19.3867 12 20.2051 12 20.8062 12.3684C21.1426 12.5745 21.4255 12.8574 21.6316 13.1938C22 13.7949 22 14.6133 22 16.25V16.75C22 17.9149 22 18.4973 21.8097 18.9567C21.556 19.5693 21.0693 20.056 20.4567 20.3097C20.1266 20.4465 19.7329 20.4849 19.1052 20.4958C18.68 20.5031 18.4674 20.5068 18.2986 20.605C18.1297 20.7032 18.0246 20.8808 17.8144 21.236Z" stroke="currentColor" stroke-linecap="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M10 3L5 21M19 3L17.1944 9.5M22 9H4M9 16H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

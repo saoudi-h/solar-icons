@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `ruler-pen` icon in the bold style.
+class RulerPenBoldIcon extends StatelessWidget {
+  /// Creates the `ruler-pen` icon in the bold style.
+  const RulerPenBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'ruler-pen',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M8 15.1934C8 15.8158 7.99963 16.1272 7.96191 16.4326C7.91737 16.793 7.83421 17.148 7.71289 17.4902C7.61003 17.7804 7.47086 18.0593 7.19238 18.6162L5.72363 21.5527C5.58659 21.8268 5.30643 22 5 22C4.69357 22 4.41341 21.8268 4.27637 21.5527L2.80762 18.6162C2.52914 18.0593 2.38997 17.7804 2.28711 17.4902C2.16579 17.148 2.08263 16.793 2.03809 16.4326C2.00037 16.1272 2 15.8157 2 15.1934V7.21387C2.769 7.53091 3.78342 7.80271 5 7.80273C6.21647 7.80273 7.23101 7.53086 8 7.21387V15.1934Z" fill="currentColor"/>
+<path d="M18 2C19.8856 2 20.8283 2.00015 21.4141 2.58594C21.9998 3.17172 22 4.11439 22 6V18C22 19.8856 21.9998 20.8283 21.4141 21.4141C20.8283 21.9998 19.8856 22 18 22H16C14.1144 22 13.1717 21.9998 12.5859 21.4141C12.0836 20.9117 12.0121 20.1469 12.002 18.75H14C14.4142 18.75 14.75 18.4142 14.75 18C14.75 17.5858 14.4142 17.25 14 17.25H12V15.75H15C15.4142 15.75 15.75 15.4142 15.75 15C15.75 14.5858 15.4142 14.25 15 14.25H12V12.75H14C14.4142 12.75 14.75 12.4142 14.75 12C14.75 11.5858 14.4142 11.25 14 11.25H12V9.75H15C15.4142 9.75 15.75 9.41421 15.75 9C15.75 8.58579 15.4142 8.25 15 8.25H12V6.75H14C14.4142 6.75 14.75 6.41421 14.75 6C14.75 5.58579 14.4142 5.25 14 5.25H12.002C12.0121 3.85307 12.0836 3.08829 12.5859 2.58594C13.1717 2.00015 14.1144 2 16 2H18Z" fill="currentColor"/>
+<path d="M5 2C6.65685 2 8 3.34315 8 5V5.95703C7.97378 5.97021 7.94717 5.98386 7.91992 5.99707C7.239 6.32721 6.24505 6.65918 5 6.65918C3.75534 6.65915 2.76193 6.32712 2.08105 5.99707C2.05369 5.9838 2.02634 5.97027 2 5.95703V5C2 3.34315 3.34315 2 5 2Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

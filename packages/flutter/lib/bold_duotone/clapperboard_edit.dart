@@ -1,0 +1,74 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `clapperboard-edit` icon in the boldDuotone style.
+class ClapperboardEditBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `clapperboard-edit` icon in the boldDuotone style.
+  const ClapperboardEditBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'clapperboard-edit',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 13C19.6213 13 20.6818 13.0002 21.3408 13.6592C21.9998 14.3182 22 15.3787 22 17.5C22 19.6213 21.9998 20.6818 21.3408 21.3408C20.6818 21.9998 19.6213 22 17.5 22C15.3787 22 14.3182 21.9998 13.6592 21.3408C13.0002 20.6818 13 19.6213 13 17.5C13 15.3787 13.0002 14.3182 13.6592 13.6592C14.3182 13.0002 15.3787 13 17.5 13ZM17.8975 15.8857C17.8773 15.8276 17.8023 15.8081 17.7588 15.8516L15.96 17.6504C15.8157 17.7946 15.7437 17.8668 15.6816 17.9463C15.6085 18.0401 15.5453 18.1416 15.4941 18.249C15.4508 18.34 15.418 18.4366 15.3535 18.6299L15.0137 19.6514C14.9821 19.7466 15.0072 19.8509 15.0781 19.9219C15.1491 19.9928 15.2534 20.0179 15.3486 19.9863L16.3701 19.6465C16.5634 19.582 16.66 19.5492 16.751 19.5059C16.8584 19.4547 16.9599 19.3915 17.0537 19.3184C17.1332 19.2563 17.2054 19.1843 17.3496 19.04L19.1484 17.2412C19.1919 17.1977 19.1724 17.1227 19.1143 17.1025C18.902 17.0289 18.6255 16.8911 18.3672 16.6328C18.1089 16.3745 17.9711 16.098 17.8975 15.8857ZM19.7119 15.2881C19.328 14.9042 18.7052 14.9042 18.3213 15.2881L18.2637 15.3457C18.2079 15.4015 18.1824 15.48 18.1963 15.5576C18.2051 15.6064 18.2215 15.6777 18.251 15.7627C18.3101 15.9332 18.4224 16.1568 18.6328 16.3672C18.8432 16.5776 19.0668 16.6899 19.2373 16.749C19.3223 16.7785 19.3936 16.7949 19.4424 16.8037C19.52 16.8176 19.5985 16.7921 19.6543 16.7363L19.7119 16.6787C20.0958 16.2948 20.0958 15.672 19.7119 15.2881Z" fill="currentColor"/>
+<path d="M6.59863 7.25H2.10449C2.25173 5.48602 2.6073 4.32249 3.46484 3.46484C4.71718 2.21251 6.62216 2.03116 10.0957 2.00488L6.59863 7.25Z" fill="currentColor"/>
+<path d="M12 2C13.845 2 15.3293 2.00009 16.54 2.08789L13.0986 7.25H8.40137L11.9014 2H12Z" fill="currentColor"/>
+<path d="M18.1992 2.30371C19.1928 2.51314 19.9388 2.86754 20.5361 3.46484C21.3936 4.32248 21.7493 5.48613 21.8965 7.25H14.9014L18.1992 2.30371Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M2.02644 8.75C2 9.68872 2 10.7632 2 12C2 16.714 2 19.071 3.46447 20.5355C4.92893 22 7.28595 22 12 22C13.3579 22 14.5203 22 15.522 21.965C14.6379 21.9068 14.0702 21.7522 13.659 21.341C13 20.682 13 19.6213 13 17.5C13 15.3787 13 14.318 13.659 13.659C14.318 13 15.3787 13 17.5 13C19.6213 13 20.682 13 21.341 13.659C21.7523 14.0703 21.9069 14.638 21.965 15.5223C22 14.5204 22 13.358 22 12C22 10.7632 22 9.68872 21.9736 8.75H2.02644Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

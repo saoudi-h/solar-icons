@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `key-minimalistic-square` icon in the broken style.
+class KeyMinimalisticSquareBrokenIcon extends StatelessWidget {
+  /// Creates the `key-minimalistic-square` icon in the broken style.
+  const KeyMinimalisticSquareBrokenIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'key-minimalistic-square',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M9.90664 16.8841L9.0797 17.711C8.86776 17.9229 8.57097 18.0271 8.27307 17.994L6.88068 17.8392C6.73223 17.8228 6.59381 17.7562 6.4882 17.6506L6.34939 17.5118C6.24377 17.4062 6.17725 17.2678 6.16075 17.1193L6.00604 15.7269C5.97294 15.429 6.07705 15.1322 6.28899 14.9203L8.76372 12.4456C8.94328 12.266 8.99937 12 8.93621 11.7541C8.5446 10.2291 8.94578 8.54257 10.1397 7.34861C11.9379 5.55046 14.8532 5.55046 16.6514 7.34861C18.4495 9.14675 18.4495 12.0621 16.6514 13.8603C15.4574 15.0542 13.7709 15.4554 12.2459 15.0638C12 15.0006 11.7342 15.0565 11.5546 15.2361L9.90664 16.8841ZM9.90664 16.8841L8.74061 15.7308M12.3905 9.72386C12.9112 9.20316 13.7554 9.20316 14.2761 9.72386C14.7968 10.2446 14.7968 11.0888 14.2761 11.6095C13.7554 12.1302 12.9112 12.1302 12.3905 11.6095C11.8698 11.0888 11.8698 10.2446 12.3905 9.72386Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `medal-ribbons-star` icon in the bold style.
+class MedalRibbonsStarBoldIcon extends StatelessWidget {
+  /// Creates the `medal-ribbons-star` icon in the bold style.
+  const MedalRibbonsStarBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'medal-ribbons-star',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M4.49519 12.9951C5.73231 15.3143 8.01363 16.9928 10.711 17.4033L8.22859 19.9727C7.68847 20.5319 7.41823 20.8114 7.18953 20.9082C6.6684 21.1286 6.09061 20.94 5.81648 20.46C5.69623 20.2493 5.65902 19.8692 5.58406 19.1094C5.54174 18.6804 5.52035 18.4658 5.45613 18.2861C5.31229 17.8838 5.00972 17.5708 4.62117 17.4219C4.44766 17.3554 4.24042 17.3338 3.82624 17.29C3.09241 17.2124 2.72506 17.1733 2.52156 17.0488C2.05793 16.765 1.87607 16.1665 2.08894 15.627C2.18239 15.3902 2.45214 15.11 2.99226 14.5508L4.49519 12.9951Z" fill="currentColor"/>
+<path d="M21.0079 14.5508C21.548 15.11 21.8178 15.3902 21.9112 15.627C22.1241 16.1665 21.9422 16.765 21.4786 17.0488C21.2751 17.1733 20.9077 17.2124 20.1739 17.29C19.7597 17.3338 19.5525 17.3554 19.379 17.4219C18.9904 17.5708 18.6879 17.8838 18.544 18.2861C18.4798 18.4658 18.4584 18.6804 18.4161 19.1094C18.3411 19.8692 18.3039 20.2493 18.1837 20.46C17.9095 20.94 17.3317 21.1286 16.8106 20.9082C16.5819 20.8114 16.3117 20.5319 15.7716 19.9727L13.2891 17.4033C15.9865 16.9928 18.2678 15.3143 19.505 12.9951L21.0079 14.5508Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 2C15.8661 2 19.0001 5.13401 19.0001 9C19.0001 12.866 15.8661 16 12.0001 16C8.13408 16 5.00007 12.866 5.00007 9C5.00007 5.13401 8.13408 2 12.0001 2ZM12.0001 6C11.716 6 11.5256 6.34079 11.1456 7.02246L11.0479 7.19922C10.94 7.39281 10.886 7.48982 10.8018 7.55371C10.7176 7.61762 10.6121 7.64103 10.4024 7.68848L10.212 7.73145C9.47408 7.8984 9.10543 7.98237 9.01765 8.26465C8.93007 8.5468 9.18094 8.84084 9.68367 9.42871L9.81453 9.58105C9.95744 9.74817 10.0285 9.83216 10.0606 9.93555C10.0927 10.0389 10.0822 10.1503 10.0606 10.373L10.0411 10.5762C9.96507 11.3606 9.9269 11.7531 10.1563 11.9277C10.3861 12.1022 10.732 11.9431 11.4229 11.625L11.6016 11.543C11.7979 11.4526 11.896 11.4072 12.0001 11.4072C12.1041 11.4072 12.2023 11.4526 12.3985 11.543L12.5772 11.625C13.2681 11.9431 13.614 12.1022 13.8438 11.9277C14.0732 11.7531 14.0351 11.3606 13.9591 10.5762L13.9395 10.373C13.9179 10.1503 13.9074 10.0389 13.9395 9.93555C13.9717 9.83216 14.0427 9.74817 14.1856 9.58105L14.3165 9.42871C14.8192 8.84084 15.0701 8.5468 14.9825 8.26465C14.8947 7.98237 14.5261 7.8984 13.7882 7.73145L13.5977 7.68848C13.388 7.64103 13.2825 7.61762 13.1983 7.55371C13.1142 7.48982 13.0601 7.39281 12.9522 7.19922L12.8546 7.02246C12.4746 6.34079 12.2841 6 12.0001 6Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

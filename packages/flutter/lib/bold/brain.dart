@@ -1,0 +1,69 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `brain` icon in the bold style.
+class BrainBoldIcon extends StatelessWidget {
+  /// Creates the `brain` icon in the bold style.
+  const BrainBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'brain',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0017 1.99999C17.034 2.04026 19.3278 3.65259 19.2898 5.85741C22.6004 7.45991 21.9276 10.7121 21.1775 12.1377C23.6285 16.1827 20.2534 21.9605 15.7527 21.999C12.1522 22.0297 12.0007 19.1367 12.0007 18.7402C12.0007 19.1366 11.849 22.0296 8.24879 21.999C3.74836 21.9603 0.372431 16.1826 2.82301 12.1377C2.07296 10.712 1.40103 7.45983 4.71168 5.85741C4.67372 3.6528 6.96671 2.04056 8.99879 1.99999C10.4316 1.9716 12.0004 3.20881 12.0007 4.60155C12.0011 3.20893 13.569 1.97183 15.0017 1.99999ZM6.19997 15.5146C6.07763 15.1266 5.65288 14.9134 5.25172 15.04C4.85066 15.1669 4.62336 15.5854 4.74489 15.9736C5.29328 17.7176 7.19058 18.6061 8.96266 17.9492C9.35723 17.8027 9.56189 17.3737 9.41969 16.9922C9.27708 16.6112 8.84145 16.4212 8.44704 16.5674C7.49315 16.9207 6.49554 16.4531 6.19997 15.5146ZM18.7498 15.04C18.3486 14.9134 17.9238 15.1265 17.8015 15.5146C17.506 16.4531 16.5083 16.9207 15.5545 16.5674C15.1601 16.4212 14.7244 16.6113 14.5818 16.9922C14.4396 17.3737 14.6444 17.8027 15.0388 17.9492C16.8108 18.606 18.7072 17.7174 19.2556 15.9736C19.3772 15.5854 19.1508 15.167 18.7498 15.04ZM7.09059 8.45605C6.96825 8.06794 6.54353 7.85472 6.14235 7.98144C5.74153 8.10849 5.51499 8.52692 5.63649 8.91503C6.18496 10.659 8.08218 11.5476 9.85426 10.8906C10.2487 10.744 10.4525 10.315 10.3103 9.93358C10.1676 9.55273 9.73204 9.36255 9.33766 9.50878C8.38384 9.8619 7.38608 9.3945 7.09059 8.45605ZM17.8582 7.98144C17.4571 7.85496 17.0332 8.068 16.9109 8.45605C16.6154 9.39471 15.6168 9.86223 14.6629 9.50878C14.2685 9.36277 13.8327 9.55263 13.6902 9.93358C13.548 10.3151 13.7528 10.7441 14.1472 10.8906C15.9194 11.5477 17.8166 10.659 18.365 8.91503C18.4866 8.52673 18.2593 8.10831 17.8582 7.98144Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

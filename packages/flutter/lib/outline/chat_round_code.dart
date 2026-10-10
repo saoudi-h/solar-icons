@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `chat-round-code` icon in the outline style.
+class ChatRoundCodeOutlineIcon extends StatelessWidget {
+  /// Creates the `chat-round-code` icon in the outline style.
+  const ChatRoundCodeOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'chat-round-code',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M12.5693 6.97559C12.6767 6.57569 13.0883 6.33814 13.4883 6.44531C13.8883 6.55257 14.1257 6.9642 14.0186 7.36426L11.4307 17.0234C11.3235 17.4235 10.9118 17.6609 10.5117 17.5537C10.1116 17.4465 9.87424 17.0349 9.98145 16.6348L12.5693 6.97559Z" fill="currentColor"/>
+<path d="M7.9707 8.46973C8.26362 8.17716 8.73847 8.17694 9.03125 8.46973C9.32357 8.76255 9.32366 9.23751 9.03125 9.53027L8.85938 9.70215C8.17789 10.3836 7.7214 10.843 7.42578 11.2305C7.14339 11.6006 7.0791 11.8157 7.0791 12C7.07913 12.1843 7.14345 12.3995 7.42578 12.7695C7.7214 13.1569 8.17799 13.6165 8.85938 14.2979L9.03125 14.4697C9.32357 14.7625 9.32366 15.2375 9.03125 15.5303C8.73851 15.823 8.26363 15.8227 7.9707 15.5303L7.79883 15.3584C7.14736 14.7069 6.60342 14.1659 6.23242 13.6797C5.84833 13.1762 5.57914 12.644 5.5791 12C5.5791 11.356 5.8483 10.8238 6.23242 10.3203C6.60342 9.8341 7.14729 9.29314 7.79883 8.6416L7.9707 8.46973Z" fill="currentColor"/>
+<path d="M14.9697 8.46973C15.2626 8.17683 15.7374 8.17683 16.0303 8.46973L16.2021 8.6416C16.8536 9.29309 17.3966 9.83412 17.7676 10.3203C18.1518 10.8239 18.4219 11.3559 18.4219 12C18.4219 12.6441 18.1518 13.1761 17.7676 13.6797C17.3966 14.1659 16.8537 14.7069 16.2021 15.3584L16.0303 15.5303C15.7374 15.8231 15.2626 15.8231 14.9697 15.5303C14.6768 15.2374 14.6768 14.7626 14.9697 14.4697L15.1416 14.2979C15.8231 13.6164 16.2796 13.157 16.5752 12.7695C16.8575 12.3995 16.9219 12.1842 16.9219 12C16.9219 11.8157 16.8575 11.6005 16.5752 11.2305C16.2796 10.8431 15.8231 10.3836 15.1416 9.70215L14.9697 9.53027C14.6768 9.23738 14.6768 8.76262 14.9697 8.46973Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C10.2817 22.75 8.65527 22.3463 7.21289 21.6279C6.99771 21.5208 6.77762 21.4984 6.59277 21.5479L4.36719 22.1426C2.84335 22.5503 1.4497 21.1566 1.85742 19.6328L2.45215 17.4072C2.50161 17.2224 2.4792 17.0023 2.37207 16.7871C1.65365 15.3447 1.25 13.7183 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 13.4811 3.09757 14.8789 3.71484 16.1182C3.96256 16.6156 4.05767 17.2108 3.90137 17.7949L3.30566 20.0205C3.19636 20.4293 3.57073 20.8036 3.97949 20.6943L6.20508 20.0986C6.78925 19.9423 7.38445 20.0374 7.88184 20.2852C9.12113 20.9024 10.5189 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

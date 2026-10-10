@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `hand-shake` icon in the broken style.
+class HandShakeBrokenIcon extends StatelessWidget {
+  /// Creates the `hand-shake` icon in the broken style.
+  const HandShakeBrokenIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'hand-shake',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M8.7838 21.9999C7.0986 21.2478 5.70665 20.0758 4.79175 18.5068" stroke="currentColor" stroke-linecap="round"/>
+<path d="M14.8252 2.18595C16.5021 1.70882 18.2333 2.16305 19.4417 3.39724" stroke="currentColor" stroke-linecap="round"/>
+<path d="M8.18595 11.7548L6.50218 8.86743C6.03722 8.0701 4.9217 7.84584 4.0106 8.36655C3.0995 8.88725 2.73784 9.95573 3.2028 10.7531L6.99128 17.2497C7.56334 18.2308 8.38161 18.9949 9.34654 19.5221M6.50218 8.86743L4.39747 5.25817C3.93251 4.46083 4.29417 3.39235 5.20527 2.87164C6.11637 2.35094 7.23189 2.57519 7.69685 3.37253L8.53873 4.81624M14.3638 7.26172L11.8381 2.9306C11.3732 2.13326 10.2576 1.90901 9.34654 2.42971C8.43544 2.95042 8.07377 4.0189 8.53873 4.81624L11.0644 9.14736M14.3638 7.26172L16.0475 10.1491C14.2253 11.1905 13.502 13.3275 14.4319 14.9222M14.3638 7.26172C13.8988 6.46438 14.2605 5.3959 15.1716 4.8752C16.0827 4.35449 17.1982 4.57875 17.6632 5.37608M19.6991 8.86743L20.1888 9.7072C22.0487 12.8965 20.602 17.1705 16.9576 19.2533C16.0071 19.7965 15.001 20.137 14 20.2871" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `end-call` icon in the lineDuotone style.
+class EndCallLineDuotoneIcon extends StatelessWidget {
+  /// Creates the `end-call` icon in the lineDuotone style.
+  const EndCallLineDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'end-call',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M8 12.8617L8 13.4782C8 14.3304 7.42329 15.0823 6.57997 15.3294L4.57997 15.9155C3.29561 16.2919 2 15.3623 2 14.0643L2 12.1414C2 11.6525 2.1247 11.1704 2.44083 10.7889M21.3703 9.85596C21.8162 10.2541 22 10.8313 22 11.4182V13.5429C22 14.7266 20.9105 15.6329 19.7004 15.4555L17.7004 15.1624C16.7227 15.0192 16 14.2063 16 13.2499V12.8617" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M16 13.2499V12.8617C16 12.8617 16.0001 11.3963 12.0001 11.3963C8.00009 11.3963 8 12.8617 8 12.8617L8 13.4782C8 14.3304 7.42329 15.0823 6.57997 15.3294L4.57997 15.9155C3.29561 16.2919 2 15.3623 2 14.0643V12.1414C2 11.6525 2.1247 11.1704 2.44083 10.7889C3.44027 9.58263 6.2515 7 12.0001 7C17.4209 7 20.2296 8.83726 21.3703 9.85596C21.8162 10.2541 22 10.8313 22 11.4182V13.5429C22 14.7267 20.9105 15.6329 19.7004 15.4555L17.7004 15.1624C16.7227 15.0192 16 14.2063 16 13.2499Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

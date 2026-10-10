@@ -1,0 +1,79 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `palette` icon in the boldDuotone style.
+class PaletteBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `palette` icon in the boldDuotone style.
+  const PaletteBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'palette',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M17.8994 14C19.2994 14 19.9994 14.0001 20.5342 14.2725C21.0046 14.5121 21.3873 14.8948 21.627 15.3652C21.8993 15.9 21.8994 16.6 21.8994 18C21.8994 19.4 21.8993 20.1 21.627 20.6348C21.3873 21.1052 21.0046 21.4879 20.5342 21.7275C19.9994 21.9999 19.2994 22 17.8994 22H6C6.91721 22 7.53428 22.0004 8.00098 21.9238L8 21.9258L8.00293 21.9229C8.24756 21.8825 8.45093 21.8212 8.63477 21.7275C9.10517 21.4879 9.48786 21.1052 9.72754 20.6348C9.82118 20.4509 9.88253 20.2476 9.92285 20.0029L13.2217 16.7041L15.8145 14H17.8994Z" fill="currentColor"/>
+<path d="M7 18.25C7.41421 18.25 7.75 18.5858 7.75 19C7.75 19.4142 7.41421 19.75 7 19.75H5C4.58579 19.75 4.25 19.4142 4.25 19C4.25 18.5858 4.58579 18.25 5 18.25H7Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C7.39998 2 8.10001 2.00007 8.63477 2.27246C9.10517 2.51214 9.48786 2.89483 9.72754 3.36523C9.99993 3.89999 10 4.60002 10 6V8.24316L13 5.24316L13.7139 4.62988C14.7181 3.86213 15.2207 3.4783 15.7676 3.36035C16.2176 3.26335 16.6856 3.29231 17.1201 3.44434C17.6481 3.62917 18.0988 4.07275 19 4.95898C19.9993 5.95828 20.4992 6.45808 20.6846 7.03027C20.8426 7.51842 20.8469 8.04369 20.6963 8.53418C20.5197 9.10932 20.0329 9.61085 19.0596 10.6143L13.2217 16.7041L9.92285 20.0029C9.92502 19.9898 9.92569 19.9763 9.92773 19.9629C9.8876 20.2254 9.82622 20.441 9.72754 20.6348C9.48786 21.1052 9.10517 21.4879 8.63477 21.7275C8.10001 21.9999 7.39998 22 6 22C4.60002 22 3.89999 21.9999 3.36523 21.7275C2.89483 21.4879 2.51214 21.1052 2.27246 20.6348C2.00007 20.1 2 19.4 2 18V6C2 4.60002 2.00007 3.89999 2.27246 3.36523C2.51214 2.89483 2.89483 2.51214 3.36523 2.27246C3.89999 2.00007 4.60002 2 6 2Z" fill="currentColor"/>
+<path d="M8 21.9258V21.9238L8.00293 21.9229L8 21.9258Z" fill="currentColor"/>
+</g>
+
+<g opacity="0.5">
+<path d="M8.00293 21.9233L8 21.9262V21.9233H8.00293Z" fill="currentColor"/>
+<path d="M15.7676 3.36079C16.2176 3.26375 16.6856 3.29269 17.1201 3.44477C17.6481 3.62958 18.099 4.07238 19 4.95844C19.9995 5.95797 20.4993 6.45835 20.6846 7.03071C20.8426 7.51886 20.8469 8.04411 20.6963 8.53461C20.5196 9.1096 20.0326 9.61151 19.0596 10.6147L13.2217 16.7045L9.92285 20.0024C9.99973 19.5356 10 18.9185 10 18.0004V8.24262L13 5.24262L13.7139 4.63032C14.7181 3.86257 15.2207 3.47873 15.7676 3.36079Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

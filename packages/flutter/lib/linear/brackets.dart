@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `brackets` icon in the linear style.
+class BracketsLinearIcon extends StatelessWidget {
+  /// Creates the `brackets` icon in the linear style.
+  const BracketsLinearIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'brackets',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<path d="M15 2.02002C17.7913 2.08384 19.4216 2.35047 20.5355 3.4644C22 4.92887 22 7.28589 22 11.9999C22 16.714 22 19.071 20.5355 20.5355C19.4216 21.6494 17.7913 21.916 15 21.9799" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9 2.02002C6.20875 2.08384 4.5784 2.35047 3.46447 3.4644C2 4.92887 2 7.28589 2 11.9999C2 16.714 2 19.071 3.46447 20.5355C4.5784 21.6494 6.20875 21.916 9 21.9799" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `chat-square-off` icon in the broken style.
+class ChatSquareOffBrokenIcon extends StatelessWidget {
+  /// Creates the `chat-square-off` icon in the broken style.
+  const ChatSquareOffBrokenIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'chat-square-off',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M18.6996 18.7003C18.0816 18.9092 17.3332 18.9728 16.2104 18.9921C15.3601 19.0068 14.9349 19.0141 14.5972 19.2105C14.2595 19.4069 14.0492 19.7621 13.6288 20.4725L13.0867 21.3883C12.6035 22.2046 11.3965 22.2046 10.9133 21.3883L10.3712 20.4725C9.95074 19.7621 9.7405 19.4069 9.4028 19.2105C9.06511 19.0141 8.63994 19.0068 7.78959 18.9921C6.53423 18.9705 5.7469 18.8936 5.0866 18.62C3.86146 18.1126 2.88809 17.1392 2.38062 15.9141" stroke="currentColor" stroke-linecap="round"/>
+<path d="M3.46447 3.46484C3.18742 3.74189 2.94294 4.0515 2.7368 4.38788C2 5.59023 2 7.22695 2 10.5004" stroke="currentColor" stroke-linecap="round"/>
+<path d="M2 2C2.48816 2.48816 2.97631 2.97631 3.46447 3.46447C3.95262 3.95262 4.44078 4.44078 4.92893 4.92893C5.21199 5.21199 5.49505 5.49505 5.77811 5.77811C7.06458 7.06458 8.35106 8.35106 9.63753 9.63753C12.6582 12.6582 15.6789 15.6789 18.6996 18.6996C18.8234 18.8234 18.9473 18.9473 19.0711 19.0711C20.0474 20.0474 21.0237 21.0237 22 22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M5.68213 2.23868C6.77577 2 8.25192 2 10.5001 2H13.5001C16.7735 2 18.4102 2 19.6126 2.7368C20.2854 3.14908 20.851 3.71473 21.2633 4.38751C22.0001 5.58985 22.0001 7.22657 22.0001 10.5V11.5C22.0001 13.8297 22.0001 14.9946 21.6195 15.9134C21.4065 16.4275 21.1116 16.8973 20.7503 17.3069" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

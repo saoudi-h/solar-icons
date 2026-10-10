@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `case-round` icon in the broken style.
+class CaseRoundBrokenIcon extends StatelessWidget {
+  /// Creates the `case-round` icon in the broken style.
+  const CaseRoundBrokenIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'case-round',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M9.1709 3.5C9.58273 2.33481 10.694 1.5 12.0002 1.5C13.3064 1.5 14.4177 2.33481 14.8295 3.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M14 13H10C9.72386 13 9.5 13.2239 9.5 13.5V15.6615C9.5 15.8659 9.62448 16.0498 9.8143 16.1257L10.5144 16.4058C11.4681 16.7872 12.5319 16.7872 13.4856 16.4058L14.1857 16.1257C14.3755 16.0498 14.5 15.8659 14.5 15.6615V13.5C14.5 13.2239 14.2761 13 14 13Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9.5 14.5418C9.5 14.1945 9.5 13.8472 9.5 13.5C9.5 13.2238 9.72386 13 10 13H14C14.2761 13 14.5 13.2238 14.5 13.5C14.5 13.8472 14.5 14.1945 14.5 14.5417M9.5 14.5418C9.5 14.915 9.5 15.2882 9.5 15.6614C9.5 15.8659 9.62448 16.0498 9.8143 16.1257L10.5144 16.4057C11.4681 16.7872 12.5319 16.7872 13.4856 16.4057L14.1857 16.1257C14.3755 16.0498 14.5 15.8659 14.5 15.6614C14.5 15.2882 14.5 14.915 14.5 14.5417M9.5 14.5418L3.3324 12.9332C2.7369 12.7779 2.43915 12.7002 2.25021 12.5141C2.21341 12.4778 2.18015 12.439 2.15078 12.3979C2 12.1871 2 11.9168 2 11.3763C2 9.24619 2 8.18113 2.67298 7.46206C2.80233 7.32385 2.94763 7.19753 3.10659 7.08508C3.9337 6.5 5.15877 6.5 7.60893 6.5H16.3911C18.8412 6.5 20.0663 6.5 20.8934 7.08508C21.0524 7.19753 21.1977 7.32385 21.327 7.46206C22 8.18113 22 9.24619 22 11.3763C22 11.9168 22 12.1871 21.8492 12.3979C21.8199 12.439 21.7866 12.4778 21.7498 12.5141C21.5999 12.6618 21.3813 12.7412 20.9999 12.8453C20.9985 16.4918 20.9549 20.1969 19.682 21.3283C18.364 22.4999 16.2426 22.4999 12 22.4999M14.5 14.5417L17.664 13.7165M8 22.435C6.10629 22.3398 4.88606 22.0901 4 21.435C3 20.3734 3 16.8524 3 13.435V12.8453" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

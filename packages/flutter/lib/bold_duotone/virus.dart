@@ -1,0 +1,82 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `virus` icon in the boldDuotone style.
+class VirusBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `virus` icon in the boldDuotone style.
+  const VirusBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'virus',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M5 18C6.10457 18 7 18.8954 7 20C7 21.1046 6.10457 22 5 22C3.89543 22 3 21.1046 3 20C3 18.8954 3.89543 18 5 18Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9434 5C15.8092 5.0312 18.9688 8.19078 19 12.0566C19.0155 13.982 18.2507 15.7183 17.0029 16.9736C17.0081 16.9684 17.0144 16.9642 17.0195 16.959L18.1611 18.1006C18.1542 18.1024 18.1475 18.1055 18.1406 18.1074C18.2708 18.0706 18.4078 18.0498 18.5498 18.0498C19.3782 18.0498 20.0498 18.7214 20.0498 19.5498C20.0498 20.3782 19.3782 21.0498 18.5498 21.0498C17.7214 21.0498 17.0498 20.3782 17.0498 19.5498C17.0498 19.4078 17.0706 19.2708 17.1074 19.1406C17.1055 19.1475 17.1024 19.1542 17.1006 19.1611L15.8486 17.9092C15.862 17.9006 15.8744 17.8905 15.8877 17.8818C14.7908 18.5983 13.4752 19.0114 12.0566 19C8.19078 18.9688 5.0312 15.8092 5 11.9434C4.96889 8.07762 8.07762 4.96889 11.9434 5ZM14.5 10.25C12.9812 10.25 11.75 11.4812 11.75 13C11.75 14.5188 12.9812 15.75 14.5 15.75C16.0188 15.75 17.25 14.5188 17.25 13C17.25 11.4812 16.0188 10.25 14.5 10.25ZM9 12C8.44772 12 8 12.4477 8 13C8 13.5523 8.44772 14 9 14C9.55228 14 10 13.5523 10 13C10 12.4477 9.55228 12 9 12ZM10 7.25C9.0335 7.25 8.25 8.0335 8.25 9C8.25 9.9665 9.0335 10.75 10 10.75C10.9665 10.75 11.75 9.9665 11.75 9C11.75 8.0335 10.9665 7.25 10 7.25Z" fill="currentColor"/>
+<path d="M4 2C5.10457 2 6 2.89543 6 4C6 5.10457 5.10457 6 4 6C2.89543 6 2 5.10457 2 4C2 2.89543 2.89543 2 4 2Z" fill="currentColor"/>
+<path d="M19.5 3C20.3284 3 21 3.67157 21 4.5C21 5.32843 20.3284 6 19.5 6C18.6716 6 18 5.32843 18 4.5C18 3.67157 18.6716 3 19.5 3Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M9.63086 18.5498C10.3879 18.8343 11.2051 18.9931 12.0566 19C12.8568 19.0065 13.6247 18.8781 14.3389 18.6367L14.1221 19.25C13.8136 20.1229 12.9809 20.75 12 20.75C11.0192 20.75 10.1864 20.1229 9.87793 19.25L9.63086 18.5498Z" fill="currentColor"/>
+<path d="M7.08496 16.9043C7.44024 17.2603 7.83268 17.5793 8.25586 17.8545L6.85645 19.2539C6.6629 18.7729 6.28724 18.3848 5.81543 18.1738L7.08496 16.9043Z" fill="currentColor"/>
+<path d="M14.5 11.75C15.1904 11.75 15.75 12.3096 15.75 13C15.75 13.6904 15.1904 14.25 14.5 14.25C13.8096 14.25 13.25 13.6904 13.25 13C13.25 12.3096 13.8096 11.75 14.5 11.75Z" fill="currentColor"/>
+<path d="M4.5 10.5C4.71819 10.5 4.92528 10.5471 5.1123 10.6309C5.03496 11.0556 4.99639 11.4944 5 11.9434C5.00389 12.4249 5.05703 12.8956 5.15332 13.3506C4.95595 13.4462 4.73401 13.5 4.5 13.5C3.67157 13.5 3 12.8284 3 12C3 11.1716 3.67157 10.5 4.5 10.5Z" fill="currentColor"/>
+<path d="M19 10.5C19.8284 10.5 20.5 11.1716 20.5 12C20.5 12.8284 19.8284 13.5 19 13.5C18.954 13.5 18.9083 13.4982 18.8633 13.4941C18.9565 13.0307 19.004 12.5497 19 12.0566C18.9957 11.5261 18.9322 11.0084 18.8164 10.5107C18.8765 10.5034 18.9379 10.5 19 10.5Z" fill="currentColor"/>
+<path d="M18.0508 4.88867C18.1888 5.40478 18.5952 5.81114 19.1113 5.94922L17.4805 7.58008C17.4576 7.60294 17.4331 7.62426 17.4082 7.64355C17.0949 7.25777 16.7422 6.9051 16.3564 6.5918C16.3757 6.5669 16.3971 6.54239 16.4199 6.51953L18.0508 4.88867Z" fill="currentColor"/>
+<path d="M7.53027 6.46973C7.54349 6.48294 7.55634 6.49682 7.56836 6.51074C7.17844 6.82371 6.82372 7.17845 6.51074 7.56836C6.49683 7.55634 6.48294 7.54348 6.46973 7.53027L4.78125 5.8418C5.25771 5.63947 5.63947 5.25771 5.8418 4.78125L7.53027 6.46973Z" fill="currentColor"/>
+<path d="M12 3C12.8284 3 13.5 3.67157 13.5 4.5C13.5 4.73401 13.4462 4.95595 13.3506 5.15332C12.8956 5.05703 12.4249 5.00389 11.9434 5C11.4944 4.99639 11.0556 5.03496 10.6309 5.1123C10.5471 4.92528 10.5 4.71819 10.5 4.5C10.5 3.67157 11.1716 3 12 3Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

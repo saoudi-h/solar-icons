@@ -1,0 +1,77 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `dna` icon in the boldDuotone style.
+class DnaBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `dna` icon in the boldDuotone style.
+  const DnaBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'dna',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0303 1.46967C15.3232 1.76256 15.3232 2.23744 15.0303 2.53033C12.4724 5.08822 11.507 8.64336 12.439 11.561C15.3566 12.493 18.9118 11.5276 21.4697 8.96967C21.7626 8.67678 22.2374 8.67678 22.5303 8.96967C22.8232 9.26256 22.8232 9.73744 22.5303 10.0303C19.9077 12.653 16.2665 13.8839 12.9736 13.2434C13.7235 16.418 12.5739 19.9867 10.0303 22.5303C9.73744 22.8232 9.26256 22.8232 8.96967 22.5303C8.67678 22.2374 8.67678 21.7626 8.96967 21.4697C11.3865 19.0528 12.2693 15.6815 11.3303 12.954L11.2575 12.7425L11.046 12.6697C8.31852 11.7307 4.94716 12.6135 2.53033 15.0303C2.23744 15.3232 1.76256 15.3232 1.46967 15.0303C1.17678 14.7374 1.17678 14.2626 1.46967 13.9697C4.01326 11.4261 7.58195 10.2765 10.7566 11.0264C10.1161 7.73352 11.347 4.09234 13.9697 1.46967C14.2626 1.17678 14.7374 1.17678 15.0303 1.46967Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M8.77441 17.6611C9.06731 17.3682 9.54207 17.3682 9.83496 17.6611L10.8975 18.7236C10.6828 19.1869 10.4258 19.6396 10.1279 20.0752L8.77441 18.7217C8.48152 18.4288 8.48152 17.954 8.77441 17.6611Z" fill="currentColor"/>
+<path d="M11.6826 15.7002C11.6443 16.2975 11.5368 16.9008 11.3613 17.4961C11.3449 17.4823 11.3289 17.4676 11.3135 17.4521L6.50098 12.6396C7.09727 12.4637 7.70147 12.3558 8.2998 12.3174L11.6826 15.7002Z" fill="currentColor"/>
+<path d="M8.03027 15.9697C8.32313 16.2626 8.32306 16.7374 8.03027 17.0303C7.73738 17.3232 7.26262 17.3232 6.96973 17.0303L3.85742 13.918C4.28939 13.6172 4.73902 13.3571 5.19922 13.1387L8.03027 15.9697Z" fill="currentColor"/>
+<path d="M17.4531 11.3125C17.4899 11.3492 17.5223 11.3889 17.5498 11.4307C16.989 11.6207 16.4196 11.7552 15.8516 11.832L12.168 8.14941C12.2456 7.57577 12.3822 7.0007 12.5752 6.43457L17.4531 11.3125Z" fill="currentColor"/>
+<path d="M15.748 6.86035C16.0409 6.56746 16.5157 6.56746 16.8086 6.86035L20.085 10.1357C19.6565 10.4374 19.2113 10.7024 18.7559 10.9287L15.748 7.9209C15.4552 7.62801 15.4552 7.15324 15.748 6.86035Z" fill="currentColor"/>
+<path d="M15.1172 5.05664C15.4097 5.34953 15.4099 5.82439 15.1172 6.11719C14.8244 6.40998 14.3496 6.40976 14.0566 6.11719L13.1084 5.16895C13.3381 4.7164 13.6058 4.27483 13.9102 3.84961L15.1172 5.05664Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

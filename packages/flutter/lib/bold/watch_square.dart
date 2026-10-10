@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `watch-square` icon in the bold style.
+class WatchSquareBoldIcon extends StatelessWidget {
+  /// Creates the `watch-square` icon in the bold style.
+  const WatchSquareBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'watch-square',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M15.9326 20.3457C15.8848 20.6589 15.8028 20.9022 15.6631 21.1113C15.5172 21.3296 15.3296 21.5172 15.1113 21.6631C14.6069 22.0001 13.9043 22 12.5 22H11.5C10.0955 22 9.39312 22.0001 8.88867 21.6631C8.67033 21.5172 8.48281 21.3297 8.33691 21.1113C8.19714 20.9021 8.11526 20.6589 8.06738 20.3457C8.22991 20.3708 8.39466 20.3912 8.56152 20.4082C9.46612 20.5002 10.5838 20.5 11.9229 20.5H12.0762C13.4152 20.5 14.5329 20.5002 15.4375 20.4082C15.6045 20.3912 15.77 20.3709 15.9326 20.3457Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 5C14.8089 5 16.2138 4.99971 17.2227 5.67383C17.6593 5.96562 18.0344 6.34068 18.3262 6.77734C19.0003 7.78624 19 9.19108 19 12C19 14.8089 19.0003 16.2138 18.3262 17.2227C18.0344 17.6593 17.6593 18.0344 17.2227 18.3262C16.2138 19.0003 14.8089 19 12 19C9.19108 19 7.78624 19.0003 6.77734 18.3262C6.34068 18.0344 5.96562 17.6593 5.67383 17.2227C4.99971 16.2138 5 14.8089 5 12C5 9.19108 4.99971 7.78624 5.67383 6.77734C5.96562 6.34068 6.34068 5.96562 6.77734 5.67383C7.78624 4.99971 9.19108 5 12 5ZM12 8.25C11.5858 8.25 11.25 8.58579 11.25 9V12.0771C11.2501 12.2811 11.3335 12.4758 11.4805 12.6172L13.4805 14.541C13.7791 14.8278 14.254 14.818 14.541 14.5195C14.8278 14.2209 14.818 13.746 14.5195 13.459L12.75 11.7578V9C12.75 8.58579 12.4142 8.25 12 8.25Z" fill="currentColor"/>
+<path d="M12.5 2C13.9043 2 14.6069 1.99987 15.1113 2.33691C15.3296 2.48281 15.5172 2.67035 15.6631 2.88867C15.8028 3.09784 15.8847 3.34116 15.9326 3.6543C15.77 3.62914 15.6045 3.60878 15.4375 3.5918C14.5329 3.4998 13.4152 3.49997 12.0762 3.5H11.9229C10.5838 3.49997 9.46612 3.49977 8.56152 3.5918C8.39467 3.60878 8.2299 3.62916 8.06738 3.6543C8.11527 3.34117 8.19716 3.09783 8.33691 2.88867C8.48282 2.67035 8.67034 2.4828 8.88867 2.33691C9.39311 1.99989 10.0956 2 11.5 2H12.5Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

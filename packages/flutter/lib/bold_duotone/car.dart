@@ -1,0 +1,76 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `car` icon in the boldDuotone style.
+class CarBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `car` icon in the boldDuotone style.
+  const CarBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'car',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M18 9.51465C19.8856 9.51465 20.8283 9.51501 21.4141 10.1719C21.9997 10.8287 22 11.8857 22 14C22 16.1143 21.9997 17.1713 21.4141 17.8281C20.8283 18.485 19.8856 18.4854 18 18.4854H6C4.11438 18.4854 3.17172 18.485 2.58594 17.8281C2.00026 17.1713 2 16.1143 2 14C2 11.8857 2.00026 10.8287 2.58594 10.1719C3.17172 9.51501 4.11438 9.51465 6 9.51465H18ZM5.50586 11.5C4.67743 11.5 4.00586 12.1716 4.00586 13C4.00586 13.8284 4.67743 14.5 5.50586 14.5C6.33429 14.5 7.00586 13.8284 7.00586 13C7.00586 12.1716 6.33429 11.5 5.50586 11.5ZM18.5244 11.5C17.696 11.5 17.0244 12.1716 17.0244 13C17.0244 13.8284 17.696 14.5 18.5244 14.5C19.3528 14.5 20.0244 13.8284 20.0244 13C20.0244 12.1716 19.3528 11.5 18.5244 11.5Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M3 18.1572C3.50341 18.4316 4.21747 18.4761 5.31348 18.4834V20.8428C5.31348 21.3877 5.31355 21.6607 5.14453 21.8301C4.97518 21.9994 4.70219 22 4.15723 22C3.61193 22 3.33835 21.9995 3.16895 21.8301C2.99993 21.6607 3 21.3877 3 20.8428V18.1572Z" fill="currentColor"/>
+<path d="M21 20.8428C21 21.3877 21.0001 21.6607 20.8311 21.8301C20.6617 21.9994 20.3887 22 19.8438 22C19.2985 22 19.0249 21.9995 18.8555 21.8301C18.6865 21.6607 18.6865 21.3877 18.6865 20.8428V18.4834C19.7825 18.4761 20.4966 18.4316 21 18.1572V20.8428Z" fill="currentColor"/>
+<path d="M5.50586 11.5C6.33429 11.5 7.00586 12.1716 7.00586 13C7.00586 13.8284 6.33429 14.5 5.50586 14.5C4.67743 14.5 4.00586 13.8284 4.00586 13C4.00586 12.1716 4.67743 11.5 5.50586 11.5Z" fill="currentColor"/>
+<path d="M18.5244 11.5C19.3528 11.5 20.0244 12.1716 20.0244 13C20.0244 13.8284 19.3528 14.5 18.5244 14.5C17.696 14.5 17.0244 13.8284 17.0244 13C17.0244 12.1716 17.696 11.5 18.5244 11.5Z" fill="currentColor"/>
+<path d="M12.7656 2C16.0021 2 17.1869 2.00034 18.1924 2.73535C19.1979 3.47043 20.5654 7.30665 20.5654 9.67285C19.9812 9.51468 19.1729 9.51465 18 9.51465H6C4.8267 9.51465 4.01795 9.5146 3.43359 9.67285C3.43361 7.30665 4.80117 3.47043 5.80664 2.73535C6.8121 2.00032 7.99691 2 11.2334 2H12.7656Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

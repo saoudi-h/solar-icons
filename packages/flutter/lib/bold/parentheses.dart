@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `parentheses` icon in the bold style.
+class ParenthesesBoldIcon extends StatelessWidget {
+  /// Creates the `parentheses` icon in the bold style.
+  const ParenthesesBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'parentheses',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M8.625 1.35061C8.98369 1.14353 9.44229 1.26636 9.64941 1.62502C9.85651 1.98372 9.73367 2.44231 9.375 2.64944C6.54195 4.2851 3.75002 7.64306 3.75 12C3.75 16.357 6.54195 19.7149 9.375 21.3506C9.73368 21.5577 9.85649 22.0163 9.64941 22.375C9.4423 22.7337 8.9837 22.8565 8.625 22.6494C5.45807 20.821 2.25 17.0279 2.25 12C2.25002 6.97212 5.45808 3.17905 8.625 1.35061Z" fill="currentColor"/>
+<path d="M14.3506 1.62502C14.5577 1.26636 15.0163 1.14355 15.375 1.35061C18.5419 3.17905 21.75 6.97212 21.75 12C21.75 17.0279 18.5419 20.821 15.375 22.6494C15.0163 22.8565 14.5577 22.7337 14.3506 22.375C14.1435 22.0163 14.2663 21.5577 14.625 21.3506C17.4581 19.7149 20.25 16.357 20.25 12C20.25 7.64306 17.458 4.2851 14.625 2.64944C14.2663 2.44231 14.1435 1.98371 14.3506 1.62502Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

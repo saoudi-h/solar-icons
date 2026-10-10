@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `panel-top-open` icon in the outline style.
+class PanelTopOpenOutlineIcon extends StatelessWidget {
+  /// Creates the `panel-top-open` icon in the outline style.
+  const PanelTopOpenOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'panel-top-open',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M15.5693 13.9766C15.8386 14.291 15.8025 14.7647 15.4883 15.0342L12.4883 17.6045C12.2074 17.8452 11.7926 17.8452 11.5117 17.6045L8.51172 15.0332C8.1976 14.7636 8.16121 14.2899 8.43066 13.9756C8.70023 13.6616 9.17393 13.6253 9.48828 13.8945L12 16.0469L14.5117 13.8945C14.8262 13.6252 15.2998 13.6623 15.5693 13.9766Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21.75 14C21.75 15.8644 21.7514 17.3384 21.5967 18.4893C21.439 19.6616 21.1067 20.6101 20.3584 21.3584C19.6101 22.1067 18.6616 22.439 17.4893 22.5967C16.3384 22.7514 14.8644 22.75 13 22.75L11 22.75C9.13558 22.75 7.66159 22.7514 6.51074 22.5967C5.33844 22.439 4.38991 22.1067 3.6416 21.3584C2.89329 20.6101 2.56096 19.6616 2.40332 18.4893C2.24859 17.3384 2.25 15.8644 2.25 14L2.25 10C2.25 9.66317 2.25112 9.33908 2.25195 9.02734C2.25163 9.01825 2.25 9.00917 2.25 9C2.25 8.98984 2.25155 8.97979 2.25195 8.96973C2.2562 7.58199 2.27827 6.44083 2.40332 5.51074C2.56096 4.33844 2.89329 3.38991 3.6416 2.6416C4.38991 1.89329 5.33844 1.56096 6.51074 1.40332C7.66159 1.24859 9.13558 1.25 11 1.25L13 1.25C14.8644 1.25 16.3384 1.24859 17.4893 1.40332C18.6616 1.56096 19.6101 1.8933 20.3584 2.6416C21.1067 3.38991 21.439 4.33844 21.5967 5.51074C21.7217 6.44083 21.7448 7.58199 21.749 8.96973C21.7494 8.97977 21.75 8.98986 21.75 9C21.75 9.00916 21.7493 9.01826 21.749 9.02734C21.7499 9.33908 21.75 9.66317 21.75 10L21.75 14ZM20.25 9.75L3.75098 9.75C3.75096 9.83226 3.75 9.91559 3.75 10L3.75 14C3.75 15.9068 3.75149 17.2614 3.88965 18.2891C4.02491 19.2952 4.27894 19.8746 4.70215 20.2979C5.12536 20.7211 5.70485 20.9751 6.71094 21.1104C7.73859 21.2485 9.09324 21.25 11 21.25L13 21.25C14.9068 21.25 16.2614 21.2485 17.2891 21.1104C18.2952 20.9751 18.8746 20.7211 19.2979 20.2979C19.7211 19.8746 19.9751 19.2952 20.1104 18.2891C20.2485 17.2614 20.25 15.9068 20.25 14L20.25 9.75ZM20.2432 8.25C20.2323 7.21641 20.2019 6.39188 20.1104 5.71094C19.9751 4.70485 19.7211 4.12536 19.2979 3.70215C18.8746 3.27894 18.2951 3.02491 17.2891 2.88965C16.2614 2.7515 14.9068 2.75 13 2.75L11 2.75C9.09324 2.75 7.73859 2.7515 6.71094 2.88965C5.70485 3.02491 5.12536 3.27894 4.70215 3.70215C4.27894 4.12536 4.02491 4.70485 3.88965 5.71094C3.79811 6.39188 3.76867 7.21642 3.75781 8.25L20.2432 8.25Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

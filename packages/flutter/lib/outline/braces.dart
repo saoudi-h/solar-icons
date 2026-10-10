@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `braces` icon in the outline style.
+class BracesOutlineIcon extends StatelessWidget {
+  /// Creates the `braces` icon in the outline style.
+  const BracesOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'braces',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M9.79252 1.25C10.2065 1.25024 10.5425 1.58594 10.5425 2C10.5425 2.41406 10.2065 2.74976 9.79252 2.75C8.18051 2.7501 7.33523 3.40882 6.85307 4.17773C6.3374 5.00027 6.19211 6.0298 6.18607 6.75977C6.18316 9.359 4.34438 10.9331 2.84818 11.8838C2.78958 11.921 2.76505 11.9539 2.75639 11.9688C2.75517 11.9708 2.7515 11.9746 2.7515 11.9746C2.75421 11.9786 2.76126 11.988 2.77494 12L2.84135 12.0439L2.89799 12.0762C4.3943 13.026 6.23382 14.5986 6.23685 17.1963C6.24289 17.9259 6.38902 18.9679 6.90678 19.8027C7.39136 20.5838 8.23709 21.25 9.84525 21.25C10.2592 21.2503 10.5953 21.586 10.5953 22C10.5953 22.414 10.2592 22.7497 9.84525 22.75C7.71476 22.75 6.38781 21.8131 5.63139 20.5938C4.90823 19.4278 4.74399 18.0707 4.73685 17.209V17.2031C4.73685 15.4168 3.49607 14.2322 2.0933 13.3418V13.3398C1.5953 13.0586 1.26641 12.5804 1.2515 12.0176C1.23626 11.4404 1.55331 10.9286 2.04349 10.6172C3.4455 9.72636 4.68592 8.54187 4.68607 6.75391V6.74707C4.69324 5.88467 4.85782 4.53688 5.58256 3.38086C6.34089 2.17163 7.66759 1.25011 9.79252 1.25Z" fill="currentColor"/>
+<path d="M14.2085 1.25C16.3333 1.25025 17.6602 2.17163 18.4185 3.38086C19.1431 4.53684 19.3078 5.88472 19.315 6.74707V6.75391C19.3151 8.542 20.5554 9.72634 21.9576 10.6172C22.4475 10.9286 22.7648 11.4406 22.7495 12.0176C22.7347 12.5803 22.4055 13.0586 21.9078 13.3398V13.3418C20.5049 14.2322 19.2642 15.4167 19.2642 17.2031V17.209C19.2571 18.0706 19.0927 19.4278 18.3697 20.5938C17.6133 21.8131 16.2861 22.7499 14.1558 22.75C13.7416 22.75 13.4058 22.4142 13.4058 22C13.4058 21.5858 13.7416 21.25 14.1558 21.25C15.7638 21.2499 16.6098 20.5838 17.0943 19.8027C17.6119 18.968 17.7582 17.9258 17.7642 17.1963C17.7672 14.5984 19.6067 13.026 21.1031 12.0762L21.1597 12.0439L21.2261 12C21.2398 11.988 21.247 11.9785 21.2495 11.9746C21.2495 11.9746 21.2462 11.9712 21.2447 11.9688C21.2361 11.954 21.2115 11.9211 21.1529 11.8838C19.6566 10.9331 17.8179 9.35918 17.815 6.75977C17.8089 6.02987 17.6635 5.00024 17.148 4.17773C16.6659 3.40881 15.8204 2.75024 14.2085 2.75C13.7943 2.75 13.4585 2.41421 13.4585 2C13.4585 1.58579 13.7943 1.25 14.2085 1.25Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

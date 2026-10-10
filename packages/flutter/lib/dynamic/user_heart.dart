@@ -1,0 +1,134 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `user-heart` icon in every style.
+///
+/// Prefer the static widgets (e.g. `UserHeartLinearIcon`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class UserHeartIcon extends StatelessWidget {
+  /// Creates the `user-heart` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const UserHeartIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M12 13C13.326 13 14.5766 13.1817 15.6777 13.5029C15.2048 13.5087 14.764 13.5255 14.3799 13.5771C13.737 13.6636 13.0336 13.8707 12.4521 14.4521C11.8707 15.0336 11.6636 15.737 11.5771 16.3799C11.4995 16.9576 11.4999 17.6635 11.5 18.4141V18.5859C11.4999 19.3365 11.4995 20.0424 11.5771 20.6201C11.6378 21.0712 11.7584 21.5523 12.0254 22C12.0171 22 12.0083 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 15C18.1499 15 18.9747 15.0001 19.4873 15.5127C19.9999 16.0253 20 16.8501 20 18.5C20 20.1499 19.9999 20.9747 19.4873 21.4873C18.9747 21.9999 18.1499 22 16.5 22C14.8501 22 14.0253 21.9999 13.5127 21.4873C13.0001 20.9747 13 20.1499 13 18.5C13 16.8501 13.0001 16.0253 13.5127 15.5127C14.0253 15.0001 14.8501 15 16.5 15ZM19 17.8594C18.9997 16.7297 17.6248 15.9286 16.5 17.0146C15.3752 15.9286 14.0003 16.7297 14 17.8594C14 18.8829 14.8244 19.4739 15.5264 19.9766C15.5993 20.0288 15.671 20.0801 15.7402 20.1309C15.9998 20.321 16.25 20.5 16.5 20.5C16.75 20.5 17.0002 20.321 17.2598 20.1309C17.329 20.0801 17.4007 20.0288 17.4736 19.9766C18.1756 19.4739 19 18.8829 19 17.8594Z" fill="currentColor"/>
+<path d="M12 2C14.2091 2 16 3.79086 16 6C16 8.20914 14.2091 10 12 10C9.79086 10 8 8.20914 8 6C8 3.79086 9.79086 2 12 2Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 15C19.1499 15 19.9747 15.0001 20.4873 15.5127C20.9999 16.0253 21 16.8501 21 18.5C21 20.1499 20.9999 20.9747 20.4873 21.4873C19.9747 21.9999 19.1499 22 17.5 22C15.8501 22 15.0253 21.9999 14.5127 21.4873C14.0001 20.9747 14 20.1499 14 18.5C14 16.8501 14.0001 16.0253 14.5127 15.5127C15.0253 15.0001 15.8501 15 17.5 15ZM20 17.8594C19.9997 16.7297 18.6248 15.9286 17.5 17.0146C16.3752 15.9286 15.0003 16.7297 15 17.8594C15 18.8829 15.8244 19.4739 16.5264 19.9766C16.5993 20.0288 16.671 20.0801 16.7402 20.1309C16.9998 20.321 17.25 20.5 17.5 20.5C17.75 20.5 18.0002 20.321 18.2598 20.1309C18.329 20.0801 18.4007 20.0288 18.4736 19.9766C19.1756 19.4739 20 18.8829 20 17.8594Z" fill="currentColor"/>
+<path d="M11 2C13.2091 2 15 3.79086 15 6C15 8.20914 13.2091 10 11 10C8.79086 10 7 8.20914 7 6C7 3.79086 8.79086 2 11 2Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M14.5942 21.5625C14.5661 21.5388 14.5389 21.5138 14.5126 21.4874C14 20.9749 14 20.1499 14 18.5C14 16.8501 14 16.0251 14.5126 15.5126C15.0251 15 15.8501 15 17.5 15C17.6501 15 17.7933 15 17.9301 15.0004C16.547 13.6551 13.9614 12.75 11 12.75C6.58172 12.75 3 14.7647 3 17.25C3 19.7353 3 21.75 11 21.75C12.4426 21.75 13.625 21.6845 14.5942 21.5625Z" fill="currentColor"/>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<circle cx="10" cy="6" r="4" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16 9.69673C16 10.6812 17.1649 11.7213 18.0429 12.3656C18.4626 12.6736 18.6725 12.8276 19 12.8276C19.3275 12.8276 19.5374 12.6736 19.9571 12.3656C20.8352 11.7214 22 10.6812 22 9.69672C22 8.0235 20.35 7.39879 19 8.69135C17.65 7.39879 16 8.0235 16 9.69673Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.9975 18C18 17.8358 18 17.669 18 17.5C18 15.0147 14.4183 13 10 13C5.58172 13 2 15.0147 2 17.5C2 19.9853 2 22 10 22C12.231 22 13.8398 21.8433 15 21.5634" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<circle cx="10" cy="6" r="4" stroke="currentColor" stroke-linecap="round"/>
+<path d="M18 17.5C18 19.9853 18 22 10 22C2 22 2 19.9853 2 17.5C2 15.0147 5.58172 13 10 13C14.4183 13 18 15.0147 18 17.5Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16 9.69973C16 11.1121 17.2058 11.8648 18.0885 12.5385C18.4 12.7762 18.7 13 19 13C19.3 13 19.6 12.7762 19.9115 12.5385C20.7942 11.8648 22 11.1121 22 9.69973C22 8.28732 20.35 7.28567 19 8.64354C17.65 7.28567 16 8.28732 16 9.69973Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<circle cx="10" cy="6" r="4" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16 9.69973C16 11.1121 17.2058 11.8648 18.0885 12.5385C18.4 12.7762 18.7 13 19 13C19.3 13 19.6 12.7762 19.9115 12.5385C20.7942 11.8648 22 11.1121 22 9.69973C22 8.28732 20.35 7.28567 19 8.64354C17.65 7.28567 16 8.28732 16 9.69973Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M18 17.5C18 19.9853 18 22 10 22C2 22 2 19.9853 2 17.5C2 15.0147 5.58172 13 10 13C14.4183 13 18 15.0147 18 17.5Z" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'user-heart',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M5.25013 6C5.25013 3.37665 7.37678 1.25 10.0001 1.25C12.6235 1.25 14.7501 3.37665 14.7501 6C14.7501 8.62335 12.6235 10.75 10.0001 10.75C7.37678 10.75 5.25013 8.62335 5.25013 6ZM10.0001 2.75C8.20521 2.75 6.75013 4.20507 6.75013 6C6.75013 7.79493 8.20521 9.25 10.0001 9.25C11.7951 9.25 13.2501 7.79493 13.2501 6C13.2501 4.20507 11.7951 2.75 10.0001 2.75Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.97558 13.6643C5.55506 12.7759 7.68658 12.25 10.0001 12.25C12.3137 12.25 14.4452 12.7759 16.0247 13.6643C17.5807 14.5396 18.7501 15.8661 18.7501 17.5L18.7502 17.602C18.7513 18.7638 18.7527 20.222 17.4737 21.2635C16.8443 21.7761 15.9637 22.1406 14.7739 22.3815C13.5809 22.6229 12.0259 22.75 10.0001 22.75C7.97436 22.75 6.4194 22.6229 5.22634 22.3815C4.03661 22.1406 3.15602 21.7761 2.52655 21.2635C1.24752 20.222 1.24894 18.7638 1.25007 17.602L1.25013 17.5C1.25013 15.8661 2.41962 14.5396 3.97558 13.6643ZM4.71098 14.9717C3.37151 15.7251 2.75013 16.6487 2.75013 17.5C2.75013 18.8078 2.79045 19.544 3.47372 20.1004C3.84425 20.4022 4.46366 20.6967 5.52393 20.9113C6.58087 21.1252 8.02591 21.25 10.0001 21.25C11.9744 21.25 13.4194 21.1252 14.4763 20.9113C15.5366 20.6967 16.156 20.4022 16.5265 20.1004C17.2098 19.544 17.2501 18.8078 17.2501 17.5C17.2501 16.6487 16.6288 15.7251 15.2893 14.9717C13.9733 14.2315 12.1049 13.75 10.0001 13.75C7.89541 13.75 6.02693 14.2315 4.71098 14.9717Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.6904 7.44694C17.411 7.12802 18.248 7.18847 19.0001 7.67889C19.7523 7.18847 20.5892 7.12802 21.3099 7.44694C22.1649 7.82533 22.7501 8.69929 22.7501 9.69973C22.7501 10.6481 22.3359 11.362 21.8396 11.9031C21.4522 12.3254 20.973 12.682 20.5946 12.9636C20.5133 13.0241 20.4367 13.0812 20.3666 13.1347L20.3646 13.1362C20.2159 13.2497 20.0236 13.3965 19.8209 13.5111C19.6169 13.6265 19.3345 13.75 19.0001 13.75C18.6658 13.75 18.3834 13.6265 18.1794 13.5111C17.9767 13.3965 17.7843 13.2497 17.6356 13.1362L17.6336 13.1347C17.5636 13.0812 17.487 13.0242 17.4058 12.9638C17.0274 12.6821 16.5481 12.3254 16.1607 11.9031C15.6644 11.362 15.2501 10.6481 15.2501 9.69973C15.2501 8.69929 15.8353 7.82533 16.6904 7.44694ZM16.7501 9.69973C16.7501 9.28775 16.99 8.95469 17.2974 8.81862C17.5637 8.7008 17.9875 8.68874 18.4683 9.17232C18.609 9.31392 18.8005 9.39354 19.0001 9.39354C19.1998 9.39354 19.3912 9.31392 19.532 9.17232C20.0128 8.68874 20.4366 8.7008 20.7029 8.81862C21.0103 8.95469 21.2501 9.28775 21.2501 9.69973C21.2501 10.1638 21.0614 10.5324 20.7342 10.8891C20.4522 11.1966 20.1158 11.448 19.7439 11.7259C19.6503 11.7959 19.5544 11.8676 19.4566 11.9423C19.2941 12.0663 19.1815 12.1495 19.0823 12.2056C19.0422 12.2283 19.0155 12.2399 19.0001 12.2456C18.9848 12.2399 18.9581 12.2283 18.918 12.2056C18.8188 12.1495 18.7062 12.0663 18.5437 11.9423C18.4459 11.8676 18.35 11.796 18.2564 11.726C17.8845 11.448 17.5481 11.1966 17.2661 10.8891C16.9388 10.5324 16.7501 10.1638 16.7501 9.69973Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

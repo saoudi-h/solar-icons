@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `folder-clock` icon in the outline style.
+class FolderClockOutlineIcon extends StatelessWidget {
+  /// Creates the `folder-clock` icon in the outline style.
+  const FolderClockOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'folder-clock',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M12 11.9629C12.4142 11.9629 12.75 12.2987 12.75 12.7129V13.6328L13.2168 14.1719C13.4879 14.4848 13.4543 14.9582 13.1416 15.2295C12.8286 15.5008 12.3543 15.4673 12.083 15.1543L11.4336 14.4043C11.3155 14.268 11.2501 14.0935 11.25 13.9131V12.7129C11.25 12.2987 11.5858 11.9629 12 11.9629Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 10.0117C14.2091 10.0117 16 11.8026 16 14.0117C16 16.2209 14.2091 18.0117 12 18.0117C9.79087 18.0117 8.00001 16.2209 8.00001 14.0117C8.00001 11.8026 9.79087 10.0117 12 10.0117ZM12 11.5117C10.6193 11.5117 9.50001 12.631 9.50001 14.0117C9.50001 15.3924 10.6193 16.5117 12 16.5117C13.3807 16.5117 14.5 15.3924 14.5 14.0117C14.5 12.631 13.3807 11.5117 12 11.5117Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.98634 1.25001C7.33762 1.24999 7.56416 1.24987 7.78517 1.27052C8.73645 1.35947 9.63945 1.73303 10.375 2.34278C10.5459 2.48449 10.7057 2.64507 10.9541 2.89356L11.5303 3.46974C12.376 4.31545 12.7016 4.6309 13.0772 4.83985C13.2951 4.96106 13.5259 5.05762 13.7656 5.12599C14.1789 5.24379 14.6324 5.25001 15.8281 5.25001H16.2529C17.5259 5.24999 18.5524 5.25047 19.3643 5.35255C20.2056 5.45835 20.9205 5.68372 21.5078 6.21192C21.6061 6.30034 21.6997 6.3939 21.7881 6.4922C22.3163 7.0795 22.5426 7.79442 22.6484 8.63575C22.7505 9.44764 22.75 10.4741 22.75 11.7471V14.0567C22.75 15.8943 22.7498 17.3501 22.5967 18.4893C22.439 19.6616 22.1067 20.6101 21.3584 21.3584C20.6101 22.1067 19.6616 22.439 18.4893 22.5967C17.3501 22.7498 15.8943 22.75 14.0567 22.75H9.94337C8.10572 22.75 6.64992 22.7498 5.51075 22.5967C4.33846 22.439 3.38992 22.1067 2.64161 21.3584C1.89331 20.6101 1.56097 19.6616 1.40333 18.4893C1.25017 17.3501 1.24999 15.8943 1.25001 14.0567V6.85938C1.2499 6.06348 1.2495 5.55665 1.33204 5.11915C1.69461 3.1978 3.1978 1.69461 5.11915 1.33204C5.55665 1.2495 6.06348 1.2499 6.85938 1.25001H6.98634ZM6.9502 2.75001C6.03356 2.75001 5.67874 2.75358 5.39747 2.80665C4.08282 3.05471 3.05471 4.08282 2.80665 5.39747C2.75358 5.67874 2.75001 6.03356 2.75001 6.9502V14C2.75001 15.9068 2.75151 17.2614 2.88966 18.2891C3.02492 19.2951 3.27896 19.8747 3.70216 20.2979C4.12537 20.7211 4.70486 20.9751 5.71095 21.1104C6.7386 21.2485 8.09325 21.25 10 21.25H14C15.9068 21.25 17.2614 21.2485 18.2891 21.1104C19.2952 20.9751 19.8747 20.7211 20.2979 20.2979C20.7211 19.8747 20.9751 19.2952 21.1104 18.2891C21.2485 17.2614 21.25 15.9068 21.25 14V11.7979C21.25 10.4622 21.2491 9.5306 21.1602 8.82325C21.0736 8.13461 20.9141 7.7633 20.6729 7.49513C20.6199 7.43623 20.5638 7.38015 20.5049 7.32716C20.2367 7.08596 19.8654 6.92741 19.1768 6.84083C18.4694 6.75191 17.5379 6.75001 16.2022 6.75001H15.7178C14.6701 6.75022 13.994 6.75067 13.3545 6.56837C13.0039 6.46842 12.6662 6.32765 12.3477 6.1504C11.7665 5.82706 11.2886 5.34947 10.5479 4.60841L9.91993 3.98048C9.63665 3.6972 9.52747 3.58963 9.417 3.49806C8.91375 3.08092 8.29634 2.82454 7.64552 2.76368C7.50279 2.75035 7.35023 2.75001 6.9502 2.75001Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

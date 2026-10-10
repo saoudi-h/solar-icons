@@ -1,0 +1,69 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `move` icon in the outline style.
+class MoveOutlineIcon extends StatelessWidget {
+  /// Creates the `move` icon in the outline style.
+  const MoveOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'move',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M12 14.2493C12.4142 14.2493 12.7509 14.5861 12.751 15.0002V20.1887L14.4697 18.47C14.7626 18.1771 15.2384 18.1771 15.5312 18.47C15.8237 18.7629 15.8239 19.2378 15.5312 19.5305L12.5303 22.5305C12.2374 22.823 11.7625 22.8233 11.4697 22.5305L8.46973 19.5305C8.17733 19.2377 8.17732 18.7628 8.46973 18.47C8.7625 18.1772 9.23735 18.1775 9.53027 18.47L11.25 20.1897V14.9993C11.2504 14.5855 11.5862 14.2495 12 14.2493ZM4.46973 8.46997C4.76262 8.17713 5.2374 8.1771 5.53027 8.46997C5.82296 8.76286 5.82305 9.23768 5.53027 9.53052L3.81055 11.2493H9C9.41401 11.2495 9.75 11.5862 9.75 12.0002C9.74983 12.4142 9.41396 12.7501 9 12.7502H3.81055L5.5293 14.47C5.82217 14.7629 5.82218 15.2376 5.5293 15.5305C5.23636 15.8228 4.76144 15.8232 4.46875 15.5305L1.46973 12.5305C1.17694 12.2377 1.17715 11.7629 1.46973 11.47L4.46973 8.46997ZM18.4697 8.46997C18.7626 8.1771 19.2374 8.17713 19.5303 8.46997L22.5303 11.47C22.8228 11.7629 22.8231 12.2377 22.5303 12.5305L19.5312 15.5305C19.2386 15.8232 18.7637 15.8227 18.4707 15.5305C18.1778 15.2376 18.1778 14.7629 18.4707 14.47L20.1895 12.7502H15C14.586 12.7501 14.2502 12.4142 14.25 12.0002C14.25 11.5861 14.5859 11.2494 15 11.2493H20.1885L18.4697 9.53052C18.1769 9.23766 18.177 8.76286 18.4697 8.46997ZM11.4697 1.46899C11.7624 1.17641 12.2374 1.17669 12.5303 1.46899L15.5312 4.46997C15.8237 4.76285 15.8239 5.23776 15.5312 5.53052C15.2384 5.82339 14.7626 5.82336 14.4697 5.53052L12.751 3.81079V8.99927C12.751 9.41348 12.4142 9.75024 12 9.75024C11.5861 9.75002 11.2502 9.41417 11.25 9.00024V3.80981L9.53027 5.52954C9.23736 5.82224 8.76256 5.82237 8.46973 5.52954C8.17744 5.23667 8.17721 4.76172 8.46973 4.46899L11.4697 1.46899Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

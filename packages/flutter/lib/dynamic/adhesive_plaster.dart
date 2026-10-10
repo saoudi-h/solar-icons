@@ -1,0 +1,162 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `adhesive-plaster` icon in every style.
+///
+/// Prefer the static widgets (e.g. `AdhesivePlasterLinearIcon`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class AdhesivePlasterIcon extends StatelessWidget {
+  /// Creates the `adhesive-plaster` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const AdhesivePlasterIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M10.9393 18.9187L9.07109 20.7869C7.45348 22.4045 4.83028 22.4045 3.21269 20.7869C1.5951 19.1693 1.59513 16.5461 3.21269 14.9285L5.08086 13.0603L10.9393 18.9187Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.21269 3.21269C4.83028 1.5951 7.45348 1.59513 9.07109 3.21269L20.7869 14.9285C22.4045 16.5461 22.4045 19.1693 20.7869 20.7869C19.1693 22.4045 16.5461 22.4045 14.9285 20.7869L3.21269 9.07109C1.59513 7.45348 1.5951 4.83028 3.21269 3.21269ZM16.7693 15.6561C16.4618 15.3485 15.9636 15.3485 15.6561 15.6561C15.3485 15.9636 15.3485 16.4618 15.6561 16.7693C15.9636 17.0766 16.4619 17.0768 16.7693 16.7693C17.0768 16.4619 17.0766 15.9636 16.7693 15.6561ZM13.9852 14.7273C13.6776 14.4198 13.1784 14.4198 12.8709 14.7273C12.5635 15.0349 12.5634 15.5341 12.8709 15.8416C13.1784 16.1491 13.6776 16.149 13.9852 15.8416C14.2927 15.5341 14.2927 15.0349 13.9852 14.7273ZM15.8416 12.8709C15.5341 12.5634 15.0349 12.5634 14.7273 12.8709C14.4198 13.1784 14.4198 13.6776 14.7273 13.9852C15.0349 14.2927 15.5341 14.2927 15.8416 13.9852C16.149 13.6776 16.1491 13.1784 15.8416 12.8709ZM13.0564 11.9432C12.7489 11.6358 12.2507 11.6357 11.9432 11.9432C11.6357 12.2507 11.6358 12.7489 11.9432 13.0564C12.2507 13.364 12.7489 13.364 13.0564 13.0564C13.364 12.7489 13.364 12.2507 13.0564 11.9432ZM10.2723 11.0154C9.96471 10.7079 9.46653 10.7079 9.15898 11.0154C8.85154 11.323 8.85147 11.8212 9.15898 12.1287C9.46651 12.4361 9.96474 12.4361 10.2723 12.1287C10.5798 11.8212 10.5797 11.323 10.2723 11.0154ZM12.1287 9.15898C11.8212 8.85147 11.323 8.85154 11.0154 9.15898C10.7079 9.46653 10.7079 9.96471 11.0154 10.2723C11.323 10.5797 11.8212 10.5798 12.1287 10.2723C12.4361 9.96474 12.4361 9.46651 12.1287 9.15898ZM9.34453 8.23027C9.03697 7.92283 8.53779 7.92276 8.23027 8.23027C7.92276 8.53779 7.92283 9.03697 8.23027 9.34453C8.53782 9.65208 9.03698 9.65208 9.34453 9.34453C9.65208 9.03698 9.65208 8.53782 9.34453 8.23027Z" fill="currentColor"/>
+<path d="M14.9285 3.21269C16.5461 1.59513 19.1693 1.5951 20.7869 3.21269C22.4045 4.83028 22.4045 7.45348 20.7869 9.07109L18.9187 10.9393L13.0603 5.08086L14.9285 3.21269Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M3.2132 3.2132C1.5956 4.83081 1.5956 7.45346 3.2132 9.07107L14.9289 20.7868C16.5465 22.4044 19.1692 22.4044 20.7868 20.7868C22.4044 19.1692 22.4044 16.5465 20.7868 14.9289L9.07107 3.2132C7.45346 1.5956 4.83081 1.5956 3.2132 3.2132ZM9.34458 8.23084C9.03703 7.92329 8.53839 7.92329 8.23084 8.23084C7.92329 8.53839 7.92329 9.03703 8.23084 9.34458C8.53839 9.65213 9.03703 9.65213 9.34458 9.34458C9.65213 9.03703 9.65213 8.53839 9.34458 8.23084ZM12.1289 9.15895C11.8214 8.8514 11.3227 8.8514 11.0152 9.15895C10.7076 9.4665 10.7076 9.96514 11.0152 10.2727C11.3227 10.5802 11.8214 10.5802 12.1289 10.2727C12.4365 9.96514 12.4365 9.4665 12.1289 9.15895ZM15.8414 12.8714C16.1489 13.179 16.1489 13.6776 15.8414 13.9852C15.5338 14.2927 15.0352 14.2927 14.7277 13.9852C14.4201 13.6776 14.4201 13.179 14.7277 12.8714C15.0352 12.5639 15.5338 12.5639 15.8414 12.8714ZM16.7695 16.7695C17.0771 16.462 17.0771 15.9633 16.7695 15.6558C16.462 15.3482 15.9633 15.3482 15.6558 15.6558C15.3482 15.9633 15.3482 16.462 15.6558 16.7695C15.9633 17.0771 16.462 17.0771 16.7695 16.7695ZM13.057 13.057C13.3646 12.7495 13.3646 12.2509 13.057 11.9433C12.7495 11.6358 12.2509 11.6358 11.9433 11.9433C11.6358 12.2509 11.6358 12.7495 11.9433 13.057C12.2509 13.3646 12.7495 13.3646 13.057 13.057ZM13.9852 14.7277C14.2927 15.0352 14.2927 15.5338 13.9852 15.8414C13.6776 16.1489 13.179 16.1489 12.8714 15.8414C12.5639 15.5338 12.5639 15.0352 12.8714 14.7277C13.179 14.4201 13.6776 14.4201 13.9852 14.7277ZM9.15895 11.0152C9.4665 10.7076 9.96514 10.7076 10.2727 11.0152C10.5802 11.3227 10.5802 11.8214 10.2727 12.1289C9.96514 12.4365 9.4665 12.4365 9.15895 12.1289C8.8514 11.8214 8.8514 11.3227 9.15895 11.0152Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M20.7868 9.07107C22.4044 7.45346 22.4044 4.83081 20.7868 3.2132C19.1692 1.5956 16.5465 1.5956 14.9289 3.2132L12 6.14214L17.8579 12L20.7868 9.07107Z" fill="currentColor"/>
+<path d="M12 17.8579L6.14214 12L3.2132 14.9289C1.5956 16.5465 1.5956 19.1692 3.2132 20.7868C4.83081 22.4044 7.45346 22.4044 9.07107 20.7868L12 17.8579Z" fill="currentColor"/>
+</g>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M13.5 7.64214L9.07107 3.2132C7.45346 1.5956 4.83081 1.5956 3.2132 3.2132C1.5956 4.83081 1.5956 7.45346 3.2132 9.07107L14.9289 20.7868C16.5465 22.4044 19.1692 22.4044 20.7868 20.7868C22.4044 19.1692 22.4044 16.5465 20.7868 14.9289L16.4289 10.5711" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 17.8579L9.07102 20.7868C7.45342 22.4044 4.83076 22.4044 3.21316 20.7868C2.97114 20.5448 2.76534 20.2803 2.59574 20M6.14209 12L3.21316 14.9289C2.89075 15.2513 2.63261 15.6137 2.43872 16M12 6.14214L14.9289 3.2132C16.5465 1.5956 19.1691 1.5956 20.7867 3.2132C22.4044 4.83081 22.4044 7.45346 20.7867 9.07107L17.8578 12" stroke="currentColor" stroke-linecap="round"/>
+<path d="M11.5735 9.71191H11.5736" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.7168 11.5688H9.7169" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 12.5H12.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.2969 13.4204H15.297" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.4297 15.2798H13.4298" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.2158 16.2026H16.2159" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.75 8.75H8.7501" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<path d="M3.2132 9.07107C1.5956 7.45346 1.5956 4.83081 3.2132 3.2132C4.83081 1.5956 7.45346 1.5956 9.07107 3.2132L20.7868 14.9289C22.4044 16.5465 22.4044 19.1692 20.7868 20.7868C19.1692 22.4044 16.5465 22.4044 14.9289 20.7868L3.2132 9.07107Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 17.8579L9.07107 20.7868C7.45346 22.4044 4.83081 22.4044 3.2132 20.7868C1.5956 19.1692 1.5956 16.5465 3.2132 14.9289L6.14214 12L12 17.8579Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 6.14214L14.9289 3.2132C16.5465 1.5956 19.1692 1.5956 20.7868 3.2132C22.4044 4.83081 22.4044 7.45346 20.7868 9.07107L17.8579 12L12 6.14214Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M11.5732 9.71191H11.5733" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.7168 11.5688H9.7169" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 12.5H12.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.2969 13.4204H15.297" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.4297 15.2798H13.4298" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.2158 16.2026H16.2159" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.75 8.75H8.7501" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M3.2132 9.07107C1.5956 7.45346 1.5956 4.83081 3.2132 3.2132C4.83081 1.5956 7.45346 1.5956 9.07107 3.2132L20.7868 14.9289C22.4044 16.5465 22.4044 19.1692 20.7868 20.7868C19.1692 22.4044 16.5465 22.4044 14.9289 20.7868L3.2132 9.07107Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M11.5735 9.71191H11.5736" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.7168 11.5688H9.7169" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.2969 13.4204H15.297" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.4297 15.2798H13.4298" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.2158 16.2026H16.2159" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.75 8.75H8.7501" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M12 17.8579L9.07107 20.7868C7.45346 22.4044 4.83081 22.4044 3.2132 20.7868C1.5956 19.1692 1.5956 16.5465 3.2132 14.9289L6.14214 12L12 17.8579Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 6.14214L14.9289 3.2132C16.5465 1.5956 19.1692 1.5956 20.7868 3.2132C22.4044 4.83081 22.4044 7.45346 20.7868 9.07107L17.8579 12L12 6.14214Z" stroke="currentColor" stroke-linecap="round"/>
+</g>
+
+<path opacity="0.5" d="M12.5 12.5H12.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'adhesive-plaster',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M9.34458 8.23084C9.03703 7.92329 8.53839 7.92329 8.23084 8.23084C7.92329 8.53839 7.92329 9.03703 8.23084 9.34458C8.53839 9.65213 9.03703 9.65213 9.34458 9.34458C9.65213 9.03703 9.65213 8.53839 9.34458 8.23084Z" fill="currentColor"/>
+<path d="M12.1289 9.15895C11.8214 8.8514 11.3227 8.8514 11.0152 9.15895C10.7076 9.4665 10.7076 9.96514 11.0152 10.2727C11.3227 10.5802 11.8214 10.5802 12.1289 10.2727C12.4365 9.96514 12.4365 9.4665 12.1289 9.15895Z" fill="currentColor"/>
+<path d="M15.8414 12.8714C16.1489 13.179 16.1489 13.6776 15.8414 13.9852C15.5338 14.2927 15.0352 14.2927 14.7277 13.9852C14.4201 13.6776 14.4201 13.179 14.7277 12.8714C15.0352 12.5639 15.5338 12.5639 15.8414 12.8714Z" fill="currentColor"/>
+<path d="M16.7695 16.7695C17.0771 16.462 17.0771 15.9633 16.7695 15.6558C16.462 15.3482 15.9633 15.3482 15.6558 15.6558C15.3482 15.9633 15.3482 16.462 15.6558 16.7695C15.9633 17.0771 16.462 17.0771 16.7695 16.7695Z" fill="currentColor"/>
+<path d="M13.057 13.057C13.3646 12.7495 13.3646 12.2509 13.057 11.9433C12.7495 11.6358 12.2509 11.6358 11.9433 11.9433C11.6358 12.2509 11.6358 12.7495 11.9433 13.057C12.2509 13.3646 12.7495 13.3646 13.057 13.057Z" fill="currentColor"/>
+<path d="M13.9852 14.7277C14.2927 15.0352 14.2927 15.5338 13.9852 15.8414C13.6776 16.1489 13.179 16.1489 12.8714 15.8414C12.5639 15.5338 12.5639 15.0352 12.8714 14.7277C13.179 14.4201 13.6776 14.4201 13.9852 14.7277Z" fill="currentColor"/>
+<path d="M9.15895 11.0152C9.4665 10.7076 9.96514 10.7076 10.2727 11.0152C10.5802 11.3227 10.5802 11.8214 10.2727 12.1289C9.96514 12.4365 9.4665 12.4365 9.15895 12.1289C8.8514 11.8214 8.8514 11.3227 9.15895 11.0152Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3986 2.68287C16.3091 0.772375 19.4066 0.772376 21.3171 2.68287C23.2276 4.59337 23.2276 7.6909 21.3171 9.6014L18.9185 12L21.3171 14.3986C23.2276 16.3091 23.2276 19.4066 21.3171 21.3171C19.4066 23.2276 16.3091 23.2276 14.3986 21.3171L12 18.9185L9.6014 21.3171C7.6909 23.2276 4.59337 23.2276 2.68287 21.3171C0.772376 19.4066 0.772376 16.3091 2.68287 14.3986L5.08148 12L2.68287 9.6014C0.772376 7.6909 0.772375 4.59337 2.68287 2.68287C4.59337 0.772376 7.6909 0.772376 9.6014 2.68287L12 5.08148L14.3986 2.68287ZM20.2565 15.4593C21.5812 16.784 21.5812 18.9318 20.2565 20.2565C18.9318 21.5812 16.784 21.5812 15.4593 20.2565L3.74353 8.54074C2.41882 7.21603 2.41882 5.06824 3.74353 3.74353C5.06824 2.41882 7.21603 2.41882 8.54074 3.74353L20.2565 15.4593ZM20.2565 8.54074L17.8579 10.9393L13.0607 6.14214L15.4593 3.74353C16.784 2.41882 18.9318 2.41882 20.2565 3.74353C21.5812 5.06825 21.5812 7.21603 20.2565 8.54074ZM3.74353 15.4593L6.14214 13.0607L10.9393 17.8579L8.54074 20.2565C7.21603 21.5812 5.06825 21.5812 3.74353 20.2565C2.41882 18.9318 2.41882 16.784 3.74353 15.4593Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

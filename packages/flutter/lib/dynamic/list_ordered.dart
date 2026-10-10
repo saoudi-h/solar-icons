@@ -1,0 +1,150 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `list-ordered` icon in every style.
+///
+/// Prefer the static widgets (e.g. `ListOrderedLinearIcon`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class ListOrderedIcon extends StatelessWidget {
+  /// Creates the `list-ordered` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const ListOrderedIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M6.09873 13.25C7.10731 13.2502 7.81149 14.1235 7.81162 15.0547C7.81162 15.4509 7.73731 15.7784 7.58701 16.0928C7.45233 16.3745 7.25959 16.6345 7.08799 16.8721C7.07578 16.889 7.06249 16.9051 7.04893 16.9209L6.7667 17.25H7.06162C7.47581 17.25 7.81158 17.5858 7.81162 18C7.81162 18.4142 7.47584 18.75 7.06162 18.75H5.13486C4.84201 18.75 4.57558 18.5796 4.45322 18.3135C4.33097 18.0474 4.3749 17.734 4.56553 17.5117L5.88975 15.9678C6.07768 15.7074 6.17202 15.574 6.2335 15.4453C6.28127 15.3453 6.31162 15.241 6.31162 15.0547C6.31156 14.9492 6.27275 14.866 6.22568 14.8145C6.17988 14.7645 6.13432 14.7501 6.09873 14.75C6.06304 14.7501 6.01677 14.7642 5.9708 14.8145C5.92375 14.866 5.88493 14.9492 5.88486 15.0547C5.88486 15.4689 5.54908 15.8047 5.13486 15.8047C4.72071 15.8046 4.38486 15.4689 4.38486 15.0547C4.385 14.1234 5.09005 13.2501 6.09873 13.25Z" fill="currentColor"/>
+<path d="M21.0001 17.25C21.4143 17.25 21.7501 17.5858 21.7501 18C21.7501 18.4142 21.4143 18.75 21.0001 18.75H13.0001C12.5859 18.75 12.2501 18.4142 12.2501 18C12.2501 17.5859 12.586 17.2501 13.0001 17.25H21.0001Z" fill="currentColor"/>
+<path d="M21.0001 13.25C21.4143 13.25 21.7501 13.5858 21.7501 14C21.7501 14.4142 21.4143 14.75 21.0001 14.75H13.0001C12.5859 14.75 12.2501 14.4142 12.2501 14C12.2501 13.5859 12.586 13.2501 13.0001 13.25H21.0001Z" fill="currentColor"/>
+<path d="M6.59873 5.41018C6.82435 5.23299 7.13167 5.20001 7.38975 5.32522C7.64791 5.45074 7.81257 5.71297 7.8126 6.00003V10C7.8126 10.4141 7.47661 10.7498 7.0626 10.75C6.64845 10.75 6.3126 10.4142 6.3126 10V7.54202L5.59775 8.10354C5.272 8.35911 4.80078 8.30225 4.54502 7.97659C4.28945 7.65086 4.34635 7.17963 4.67197 6.92386L6.59873 5.41018Z" fill="currentColor"/>
+<path d="M21.0001 9.25003C21.4143 9.25003 21.7501 9.58585 21.7501 10C21.7501 10.4142 21.4143 10.75 21.0001 10.75H13.0001C12.5859 10.75 12.2501 10.4142 12.2501 10C12.2501 9.58589 12.586 9.2501 13.0001 9.25003H21.0001Z" fill="currentColor"/>
+<path d="M21.0001 5.25003C21.4143 5.25003 21.7501 5.58585 21.7501 6.00003C21.7501 6.41424 21.4143 6.75003 21.0001 6.75003H13.0001C12.5859 6.74995 12.2501 6.41419 12.2501 6.00003C12.2501 5.58589 12.586 5.2501 13.0001 5.25003H21.0001Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M6.09873 13.25C7.10731 13.2502 7.81149 14.1235 7.81162 15.0547C7.81162 15.4509 7.73731 15.7784 7.58701 16.0928C7.45233 16.3745 7.25959 16.6345 7.08799 16.8721C7.07578 16.889 7.06249 16.9051 7.04893 16.9209L6.7667 17.25H7.06162C7.47581 17.25 7.81158 17.5858 7.81162 18C7.81162 18.4142 7.47584 18.75 7.06162 18.75H5.13486C4.84201 18.75 4.57558 18.5796 4.45322 18.3135C4.33097 18.0474 4.3749 17.734 4.56553 17.5117L5.88975 15.9678C6.07768 15.7074 6.17202 15.574 6.2335 15.4453C6.28127 15.3453 6.31162 15.241 6.31162 15.0547C6.31156 14.9492 6.27275 14.866 6.22568 14.8145C6.17988 14.7645 6.13432 14.7501 6.09873 14.75C6.06304 14.7501 6.01677 14.7642 5.9708 14.8145C5.92375 14.866 5.88493 14.9492 5.88486 15.0547C5.88486 15.4689 5.54908 15.8047 5.13486 15.8047C4.72071 15.8046 4.38486 15.4689 4.38486 15.0547C4.385 14.1234 5.09005 13.2501 6.09873 13.25Z" fill="currentColor"/>
+<path d="M6.59873 5.41018C6.82435 5.23299 7.13167 5.20001 7.38975 5.32522C7.64791 5.45074 7.81257 5.71297 7.8126 6.00003V10C7.8126 10.4141 7.47661 10.7498 7.0626 10.75C6.64845 10.75 6.3126 10.4142 6.3126 10V7.54202L5.59775 8.10354C5.272 8.35911 4.80078 8.30225 4.54502 7.97659C4.28945 7.65086 4.34635 7.17963 4.67197 6.92386L6.59873 5.41018Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M21 17.25C21.4142 17.25 21.75 17.5858 21.75 18C21.75 18.4142 21.4142 18.75 21 18.75H13C12.5858 18.75 12.25 18.4142 12.25 18C12.25 17.5858 12.5858 17.25 13 17.25H21Z" fill="currentColor"/>
+<path d="M21 13.25C21.4142 13.25 21.75 13.5858 21.75 14C21.75 14.4142 21.4142 14.75 21 14.75H13C12.5858 14.75 12.25 14.4142 12.25 14C12.25 13.5858 12.5858 13.25 13 13.25H21Z" fill="currentColor"/>
+<path d="M21 9.25C21.4142 9.25 21.75 9.58579 21.75 10C21.75 10.4142 21.4142 10.75 21 10.75H13C12.5858 10.75 12.25 10.4142 12.25 10C12.25 9.58579 12.5858 9.25 13 9.25H21Z" fill="currentColor"/>
+<path d="M21 5.25C21.4142 5.25 21.75 5.58579 21.75 6C21.75 6.41421 21.4142 6.75 21 6.75H13C12.5858 6.75 12.25 6.41421 12.25 6C12.25 5.58579 12.5858 5.25 13 5.25H21Z" fill="currentColor"/>
+</g>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M21 6L13 6" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 10L13 10" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 14L13 14" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 18H13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M5.13477 7.5136L7.06207 6V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.13477 15.0549C5.13477 14.4723 5.56616 14 6.0983 14C6.63045 14 7.06184 14.4723 7.06184 15.0549C7.06184 15.6375 6.8515 15.9177 6.47963 16.4326L5.13477 18H7.06184" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<path d="M21 6L13 6" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 10L13 10" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 14L13 14" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 18H13" stroke="currentColor" stroke-linecap="round"/>
+<path d="M5.13477 7.5136L7.06207 6V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.13477 15.0549C5.13477 14.4723 5.56616 14 6.0983 14C6.63045 14 7.06184 14.4723 7.06184 15.0549C7.06184 15.6375 6.8515 15.9177 6.47963 16.4326L5.13477 18H7.06184" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M5.13477 7.5136L7.06207 6V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.13477 15.0549C5.13477 14.4723 5.56616 14 6.0983 14C6.63045 14 7.06184 14.4723 7.06184 15.0549C7.06184 15.6375 6.8515 15.9177 6.47963 16.4326L5.13477 18H7.06184" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M21 6H13M21 10H13M21 14H13M21 18H13" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'list-ordered',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M6.09873 13.25C7.10731 13.2502 7.81149 14.1235 7.81162 15.0547C7.81162 15.4509 7.73731 15.7784 7.58701 16.0928C7.45233 16.3745 7.25959 16.6345 7.08799 16.8721C7.07578 16.889 7.06249 16.9051 7.04893 16.9209L6.7667 17.25H7.06162C7.47581 17.25 7.81158 17.5858 7.81162 18C7.81162 18.4142 7.47584 18.75 7.06162 18.75H5.13486C4.84201 18.75 4.57558 18.5796 4.45322 18.3135C4.33097 18.0474 4.3749 17.734 4.56553 17.5117L5.88975 15.9678C6.07768 15.7074 6.17202 15.574 6.2335 15.4453C6.28127 15.3453 6.31162 15.241 6.31162 15.0547C6.31156 14.9492 6.27275 14.866 6.22568 14.8145C6.17988 14.7645 6.13432 14.7501 6.09873 14.75C6.06304 14.7501 6.01677 14.7642 5.9708 14.8145C5.92375 14.866 5.88493 14.9492 5.88486 15.0547C5.88486 15.4689 5.54908 15.8047 5.13486 15.8047C4.72071 15.8046 4.38486 15.4689 4.38486 15.0547C4.385 14.1234 5.09005 13.2501 6.09873 13.25Z" fill="currentColor"/>
+<path d="M21.0001 17.25C21.4143 17.25 21.7501 17.5858 21.7501 18C21.7501 18.4142 21.4143 18.75 21.0001 18.75H13.0001C12.5859 18.75 12.2501 18.4142 12.2501 18C12.2501 17.5859 12.586 17.2501 13.0001 17.25H21.0001Z" fill="currentColor"/>
+<path d="M21.0001 13.25C21.4143 13.25 21.7501 13.5858 21.7501 14C21.7501 14.4142 21.4143 14.75 21.0001 14.75H13.0001C12.5859 14.75 12.2501 14.4142 12.2501 14C12.2501 13.5859 12.586 13.2501 13.0001 13.25H21.0001Z" fill="currentColor"/>
+<path d="M6.59873 5.41018C6.82435 5.23299 7.13167 5.20001 7.38975 5.32522C7.64791 5.45074 7.81257 5.71297 7.8126 6.00003V10C7.8126 10.4141 7.47661 10.7498 7.0626 10.75C6.64845 10.75 6.3126 10.4142 6.3126 10V7.54202L5.59775 8.10354C5.272 8.35911 4.80078 8.30225 4.54502 7.97659C4.28945 7.65086 4.34635 7.17963 4.67197 6.92386L6.59873 5.41018Z" fill="currentColor"/>
+<path d="M21.0001 9.25003C21.4143 9.25003 21.7501 9.58585 21.7501 10C21.7501 10.4142 21.4143 10.75 21.0001 10.75H13.0001C12.5859 10.75 12.2501 10.4142 12.2501 10C12.2501 9.58589 12.586 9.2501 13.0001 9.25003H21.0001Z" fill="currentColor"/>
+<path d="M21.0001 5.25003C21.4143 5.25003 21.7501 5.58585 21.7501 6.00003C21.7501 6.41424 21.4143 6.75003 21.0001 6.75003H13.0001C12.5859 6.74995 12.2501 6.41419 12.2501 6.00003C12.2501 5.58589 12.586 5.2501 13.0001 5.25003H21.0001Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

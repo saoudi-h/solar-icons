@@ -1,0 +1,74 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `notebook-bookmark` icon in the boldDuotone style.
+class NotebookBookmarkBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `notebook-bookmark` icon in the boldDuotone style.
+  const NotebookBookmarkBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'notebook-bookmark',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M20.0821 3.01774C21.1538 2.98054 22.0001 3.86139 22.0001 4.93375V16.1437C22.0001 17.2546 21.0941 18.1533 19.9854 18.2228C19.016 18.2834 17.8768 18.4026 17.0001 18.6339C15.9186 18.9193 15.0102 19.7011 13.627 20.0695C13.001 20.2362 12.3029 20.326 12.0001 20.3927V5.17399C12.3208 5.09543 13.3825 4.97156 13.6739 4.80289C13.8581 4.69626 14.0513 4.5874 14.2501 4.47965V7.53727C14.2499 7.64849 14.2493 7.8074 14.2706 7.94352C14.2966 8.10994 14.3826 8.43087 14.7149 8.62614C15.0353 8.81425 15.3492 8.7447 15.4981 8.6984C15.6279 8.65804 15.7699 8.58977 15.876 8.53922L17.0001 8.00602L18.1241 8.53922C18.2302 8.58977 18.3723 8.65804 18.502 8.6984C18.651 8.7447 18.9649 8.81425 19.2852 8.62614C19.6175 8.43088 19.7035 8.10994 19.7296 7.94352C19.7508 7.80741 19.7502 7.64849 19.7501 7.53727V3.03141C19.8629 3.02611 19.9739 3.02151 20.0821 3.01774ZM19.7276 12.8185C19.6272 12.4167 19.2202 12.1723 18.8184 12.2726L14.8184 13.2726C14.4167 13.3731 14.1722 13.78 14.2725 14.1818C14.373 14.5836 14.7799 14.828 15.1817 14.7277L19.1817 13.7277C19.5835 13.6273 19.8279 13.2203 19.7276 12.8185Z" fill="currentColor"/>
+<path d="M4.27253 12.8185C4.37296 12.4168 4.78001 12.1724 5.18171 12.2726L9.18171 13.2726C9.58344 13.3731 9.82784 13.7801 9.72761 14.1818C9.62715 14.5836 9.22027 14.8281 8.81843 14.7277L4.81843 13.7277C4.41662 13.6272 4.17214 13.2203 4.27253 12.8185Z" fill="currentColor"/>
+<path d="M4.27253 8.81852C4.37296 8.41682 4.78001 8.17245 5.18171 8.27262L9.18171 9.27262C9.58344 9.37305 9.82784 9.78007 9.72761 10.1818C9.62715 10.5836 9.22027 10.8281 8.81843 10.7277L4.81843 9.7277C4.41662 9.62725 4.17214 9.22033 4.27253 8.81852Z" fill="currentColor"/>
+<path d="M18.2501 6.93864L17.501 6.58317L17.4923 6.57828C17.4531 6.55827 17.3129 6.48706 17.1378 6.45914C17.0938 6.45214 17.0475 6.44743 17.0001 6.44743C16.7637 6.44743 16.5569 6.55323 16.5079 6.57828L16.4991 6.58317L15.7501 6.93864V3.757C16.0063 3.65201 16.2585 3.55977 16.5001 3.48746C17.0206 3.33165 17.6301 3.22482 18.2501 3.15153V6.93864Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M12 5.21395C11.6658 5.15047 10.9426 5.05264 10.2823 4.87544C8.9381 4.51475 8.04921 3.76429 7 3.48742C6.11349 3.25349 4.95877 3.13488 3.9824 3.07487C2.8863 3.0075 2 3.89961 2 4.99778V16.1436C2 17.2545 2.90605 18.1534 4.01486 18.2228C4.98428 18.2834 6.12329 18.402 7 18.6333C7.48596 18.7616 8.21615 19.0645 8.87295 19.3592C9.87752 19.81 10.9247 20.1556 12 20.3926V5.21395Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

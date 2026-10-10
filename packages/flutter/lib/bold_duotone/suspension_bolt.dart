@@ -1,0 +1,77 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `suspension-bolt` icon in the boldDuotone style.
+class SuspensionBoltBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `suspension-bolt` icon in the boldDuotone style.
+  const SuspensionBoltBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'suspension-bolt',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M5.5 15C5.96466 15 6.19743 14.9997 6.39062 15.0381C7.18371 15.196 7.80401 15.8163 7.96191 16.6094C8.00034 16.8026 8 17.0353 8 17.5V19.5C8 19.9647 8.00034 20.1974 7.96191 20.3906C7.80401 21.1837 7.18371 21.804 6.39062 21.9619C6.19743 22.0003 5.96466 22 5.5 22C5.03534 22 4.80257 22.0003 4.60938 21.9619C3.81629 21.804 3.19599 21.1837 3.03809 20.3906C2.99966 20.1974 3 19.9647 3 19.5V17.5C3 17.0353 2.99966 16.8026 3.03809 16.6094C3.19599 15.8163 3.81629 15.196 4.60938 15.0381C4.80257 14.9997 5.03534 15 5.5 15Z" fill="currentColor"/>
+<path d="M18.5 15C18.9647 15 19.1974 14.9997 19.3906 15.0381C20.1837 15.196 20.804 15.8163 20.9619 16.6094C21.0003 16.8026 21 17.0353 21 17.5V19.5C21 19.9647 21.0003 20.1974 20.9619 20.3906C20.804 21.1837 20.1837 21.804 19.3906 21.9619C19.1974 22.0003 18.9647 22 18.5 22C18.0353 22 17.8026 22.0003 17.6094 21.9619C16.8163 21.804 16.196 21.1837 16.0381 20.3906C15.9997 20.1974 16 19.9647 16 19.5V17.5C16 17.0353 15.9997 16.8026 16.0381 16.6094C16.196 15.8163 16.8163 15.196 17.6094 15.0381C17.8026 14.9997 18.0353 15 18.5 15Z" fill="currentColor"/>
+<path d="M11.3564 9.11426C11.5696 8.75907 12.0306 8.64431 12.3857 8.85742C12.7407 9.07048 12.8563 9.53064 12.6436 9.88574L11.8242 11.25H13.5C13.7702 11.25 14.0192 11.3957 14.1523 11.6309C14.2854 11.8659 14.2823 12.1541 14.1436 12.3857L12.6436 14.8857C12.4305 15.2408 11.9694 15.3565 11.6143 15.1436C11.2591 14.9305 11.1435 14.4694 11.3564 14.1143L12.1758 12.75H10.5C10.23 12.75 9.98085 12.605 9.84766 12.3701C9.71457 12.1351 9.71755 11.8459 9.85645 11.6143L11.3564 9.11426Z" fill="currentColor"/>
+<path d="M5.5 2C5.96466 2 6.19743 1.99966 6.39062 2.03809C7.18371 2.19599 7.80401 2.81629 7.96191 3.60938C8.00034 3.80257 8 4.03534 8 4.5V6.5C8 6.96466 8.00034 7.19743 7.96191 7.39062C7.80401 8.18371 7.18371 8.80401 6.39062 8.96191C6.19743 9.00034 5.96466 9 5.5 9C5.03534 9 4.80257 9.00034 4.60938 8.96191C3.81629 8.80401 3.19599 8.18371 3.03809 7.39062C2.99966 7.19743 3 6.96466 3 6.5V4.5C3 4.03534 2.99966 3.80257 3.03809 3.60938C3.19599 2.81629 3.81629 2.19599 4.60938 2.03809C4.80257 1.99966 5.03534 2 5.5 2Z" fill="currentColor"/>
+<path d="M18.5 2C18.9647 2 19.1974 1.99966 19.3906 2.03809C20.1837 2.19599 20.804 2.81629 20.9619 3.60938C21.0003 3.80257 21 4.03534 21 4.5V6.5C21 6.96466 21.0003 7.19743 20.9619 7.39062C20.804 8.18371 20.1837 8.80401 19.3906 8.96191C19.1974 9.00034 18.9647 9 18.5 9C18.0353 9 17.8026 9.00034 17.6094 8.96191C16.8163 8.80401 16.196 8.18371 16.0381 7.39062C15.9997 7.19743 16 6.96466 16 6.5V4.5C16 4.03534 15.9997 3.80257 16.0381 3.60938C16.196 2.81629 16.8163 2.19599 17.6094 2.03809C17.8026 1.99966 18.0353 2 18.5 2Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M16 19.25H8V17.75H16V19.25Z" fill="currentColor"/>
+<path d="M16 6.25H8V4.75H16V6.25Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

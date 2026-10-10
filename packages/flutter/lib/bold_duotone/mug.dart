@@ -1,0 +1,73 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `mug` icon in the boldDuotone style.
+class MugBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `mug` icon in the boldDuotone style.
+  const MugBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'mug',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M3.00174 13C3 12.6878 3 12.355 3 12V7C3 5.11438 3 4.17157 3.58579 3.58579C4.17157 3 5.11438 3 7 3H13C14.8856 3 15.8284 3 16.4142 3.58579C16.649 3.82059 16.7897 4.11275 16.874 4.5H18C20.5261 4.5 22.75 6.31185 22.75 8.75C22.75 11.1882 20.5261 13 18 13H3.00174ZM16.9957 6C17 6.30037 17 6.63226 17 7V11.5H18C19.8921 11.5 21.25 10.1778 21.25 8.75C21.25 7.32216 19.8921 6 18 6H16.9957Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M22 20.25C22.4142 20.25 22.75 20.5858 22.75 21C22.75 21.4142 22.4142 21.75 22 21.75H2C1.58579 21.75 1.25 21.4142 1.25 21C1.25 20.5858 1.58579 20.25 2 20.25H22Z" fill="currentColor"/>
+<path d="M16.998 13C16.9859 15.175 16.8895 16.3527 16.1211 17.1211C15.2424 17.9997 13.8283 18 11 18H9C6.17172 18 4.75756 17.9998 3.87891 17.1211C3.11062 16.3527 3.01406 15.1749 3.00195 13H16.998Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

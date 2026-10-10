@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'solar_icon_data.dart';
 import 'solar_icon_style.dart';
-import 'solar_theme.dart';
+import 'solar_provider.dart';
 import 'svg_composer.dart';
 
 /// Draws one Solar icon from [SolarIconData].
@@ -29,13 +29,13 @@ class SolarIcon extends StatelessWidget {
   /// SVG payload to draw.
   final SolarIconData data;
 
-  /// Width and height. Falls back to [SolarTheme], then [IconTheme], then 24.
+  /// Width and height. Falls back to [SolarProvider], then [IconTheme], then 24.
   final double? size;
 
-  /// Primary color. Falls back to [SolarTheme], then [IconTheme].
+  /// Primary color. Falls back to [SolarProvider], then [IconTheme].
   final Color? color;
 
-  /// Stroke width for stroked styles. Falls back to [SolarTheme], then 1.5.
+  /// Stroke width for stroked styles. Falls back to [SolarProvider], then 1.5.
   ///
   /// Filled styles ignore this unless a shape explicitly uses a stroke.
   final double? strokeWidth;
@@ -44,13 +44,13 @@ class SolarIcon extends StatelessWidget {
   /// [SolarIconStyle.lineDuotone]. Falls back to the primary color.
   final Color? secondaryColor;
 
-  /// Accent opacity, from 0 to 1. Falls back to [SolarTheme], then 0.5.
+  /// Accent opacity, from 0 to 1. Falls back to [SolarProvider], then 0.5.
   final double? secondaryOpacity;
 
   /// Accessibility label. When null, the icon is excluded from semantics.
   final String? semanticLabel;
 
-  /// When true, ignores [SolarTheme] and [IconTheme] and uses the package
+  /// When true, ignores [SolarProvider] and [IconTheme] and uses the package
   /// defaults: 24px, `#1C274C`, stroke width 1.5, accent opacity 0.5.
   final bool isolated;
 
@@ -87,7 +87,7 @@ class SolarIcon extends StatelessWidget {
     }
 
     final iconTheme = IconTheme.of(context);
-    final solar = SolarTheme.maybeOf(context);
+    final solar = SolarProvider.maybeOf(context);
     final resolvedColor =
         color ?? solar?.color ?? iconTheme.color ?? const Color(0xFF1C274C);
     return _ResolvedIcon(

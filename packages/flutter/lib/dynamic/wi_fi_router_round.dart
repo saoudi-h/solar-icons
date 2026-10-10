@@ -1,0 +1,163 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `wi-fi-router-round` icon in every style.
+///
+/// Prefer the static widgets (e.g. `WiFiRouterRoundLinearIcon`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class WiFiRouterRoundIcon extends StatelessWidget {
+  /// Creates the `wi-fi-router-round` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const WiFiRouterRoundIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M16.4998 3.5C14.521 3.5 12.823 4.71031 12.1091 6.43399C11.9507 6.81668 11.5119 6.99844 11.1292 6.83995C10.7466 6.68146 10.5648 6.24275 10.7233 5.86005C11.6612 3.5954 13.8933 2 16.4998 2C19.1064 2 21.3385 3.5954 22.2764 5.86005C22.4349 6.24275 22.2531 6.68146 21.8704 6.83995C21.4878 6.99844 21.049 6.81668 20.8906 6.43399C20.1767 4.71032 18.4787 3.5 16.4998 3.5Z" fill="currentColor"/>
+<path d="M16.5006 6C15.4782 6 14.6133 6.68244 14.3403 7.6182C14.2243 8.01583 13.8078 8.24411 13.4102 8.12808C13.0126 8.01205 12.7843 7.59564 12.9003 7.19801C13.3551 5.63969 14.7938 4.5 16.5006 4.5C18.2074 4.5 19.6461 5.63969 20.1008 7.19801C20.2168 7.59564 19.9886 8.01205 19.5909 8.12808C19.1933 8.24411 18.7769 8.01583 18.6609 7.6182C18.3878 6.68244 17.5229 6 16.5006 6Z" fill="currentColor"/>
+<path d="M16.5 8.75C17.0523 8.75 17.5 8.30228 17.5 7.75C17.5 7.19772 17.0523 6.75 16.5 6.75C15.9477 6.75 15.5 7.19772 15.5 7.75C15.5 8.30228 15.9477 8.75 16.5 8.75Z" fill="currentColor"/>
+<path d="M7 14C6.58579 14 6.25 14.3358 6.25 14.75C6.25 15.1642 6.58579 15.5 7 15.5C7.41421 15.5 7.75 15.1642 7.75 14.75C7.75 14.3358 7.41421 14 7 14Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 14.75C2 11.9886 4.23858 9.75 7 9.75H17C19.7614 9.75 22 11.9886 22 14.75C22 16.9773 20.5437 18.8644 18.5314 19.5111L19.6432 21.3641C19.8563 21.7193 19.7411 22.18 19.3859 22.3931C19.0307 22.6062 18.57 22.4911 18.3569 22.1359L16.9254 19.75H7.07459L5.64307 22.1359C5.42996 22.4911 4.96926 22.6062 4.61407 22.3931C4.25889 22.18 4.14372 21.7193 4.35683 21.3641L5.46863 19.5111C3.45629 18.8644 2 16.9773 2 14.75ZM4.75 14.75C4.75 13.5074 5.75736 12.5 7 12.5C8.24264 12.5 9.25 13.5074 9.25 14.75C9.25 15.9926 8.24264 17 7 17C5.75736 17 4.75 15.9926 4.75 14.75ZM12 14C11.5858 14 11.25 14.3358 11.25 14.75C11.25 15.1642 11.5858 15.5 12 15.5H18.5C18.9142 15.5 19.25 15.1642 19.25 14.75C19.25 14.3358 18.9142 14 18.5 14H12Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M7 14C7.41421 14 7.75 14.3358 7.75 14.75C7.75 15.1642 7.41421 15.5 7 15.5C6.58579 15.5 6.25 15.1642 6.25 14.75C6.25 14.3358 6.58579 14 7 14Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17 9.75C19.7614 9.75 22 11.9886 22 14.75C22 17.5114 19.7614 19.75 17 19.75H7C4.23858 19.75 2 17.5114 2 14.75C2 11.9886 4.23858 9.75 7 9.75H17ZM7 12.5C5.75736 12.5 4.75 13.5074 4.75 14.75C4.75 15.9926 5.75736 17 7 17C8.24264 17 9.25 15.9926 9.25 14.75C9.25 13.5074 8.24264 12.5 7 12.5ZM12 14C11.5858 14 11.25 14.3358 11.25 14.75C11.25 15.1642 11.5858 15.5 12 15.5H18.5C18.9142 15.5 19.25 15.1642 19.25 14.75C19.25 14.3358 18.9142 14 18.5 14H12Z" fill="currentColor"/>
+<path d="M16.5 6.75C17.0523 6.75 17.5 7.19772 17.5 7.75C17.5 8.30228 17.0523 8.75 16.5 8.75C15.9477 8.75 15.5 8.30228 15.5 7.75C15.5 7.19772 15.9477 6.75 16.5 6.75Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M5.46892 19.5117C5.95146 19.6668 6.46611 19.75 7.00017 19.75H7.07537L5.64373 22.1357C5.43065 22.4909 4.96959 22.6065 4.61443 22.3936C4.25924 22.1804 4.14448 21.7194 4.35759 21.3643L5.46892 19.5117Z" fill="currentColor"/>
+<path d="M19.6427 21.3643C19.8559 21.7194 19.7411 22.1804 19.3859 22.3936C19.0308 22.6065 18.5697 22.4909 18.3566 22.1357L16.926 19.75H17.0002C17.5342 19.75 18.0489 19.6668 18.5314 19.5117L19.6427 21.3643Z" fill="currentColor"/>
+<path d="M16.5011 4.5C18.2078 4.50018 19.6461 5.64004 20.1008 7.19824C20.2167 7.59583 19.9886 8.01191 19.591 8.12793C19.1934 8.24392 18.7773 8.01575 18.6613 7.61816C18.3883 6.68253 17.5233 6.00018 16.5011 6C15.4788 6 14.6131 6.68241 14.34 7.61816C14.2239 8.01574 13.8079 8.24395 13.4103 8.12793C13.0128 8.01188 12.7847 7.59578 12.9006 7.19824C13.3553 5.63992 14.7943 4.5 16.5011 4.5Z" fill="currentColor"/>
+<path d="M16.5002 2C19.1066 2.00006 21.3387 3.59574 22.2765 5.86035C22.4348 6.24299 22.2529 6.68139 21.8703 6.83984C21.4876 6.99815 21.0492 6.81621 20.8908 6.43359C20.1769 4.71013 18.4789 3.50006 16.5002 3.5C14.5214 3.5 12.8235 4.71014 12.1095 6.43359C11.9511 6.81629 11.5118 6.99833 11.1291 6.83984C10.7466 6.68126 10.5655 6.24291 10.7238 5.86035C11.6617 3.5957 13.8936 2 16.5002 2Z" fill="currentColor"/>
+</g>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M17 10H7C4.23858 10 2 12.2386 2 15C2 17.7614 4.23858 20 7 20H17C19.7614 20 22 17.7614 22 15C22 13.8742 21.6279 12.8353 21 11.9995" stroke="currentColor" stroke-linecap="round"/>
+<path d="M18 20L19 22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 20L5 22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M8.5 15C8.5 15.8284 7.82843 16.5 7 16.5C6.17157 16.5 5.5 15.8284 5.5 15C5.5 14.1716 6.17157 13.5 7 13.5C7.82843 13.5 8.5 14.1716 8.5 15Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 15H18.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21.5833 5.39702C20.7574 3.40286 18.7924 2 16.4996 2C14.2069 2 12.2419 3.40286 11.416 5.39702" stroke="currentColor" stroke-linecap="round"/>
+<path d="M19.3806 6.65811C19.0167 5.41107 17.865 4.5 16.5004 4.5C15.1358 4.5 13.984 5.41107 13.6201 6.65811" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16.5 7H16.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<path d="M2 15C2 12.2386 4.23858 10 7 10H17C19.7614 10 22 12.2386 22 15C22 17.7614 19.7614 20 17 20H7C4.23858 20 2 17.7614 2 15Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M18 20L19 22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 20L5 22" stroke="currentColor" stroke-linecap="round"/>
+<path d="M8.5 15C8.5 15.8284 7.82843 16.5 7 16.5C6.17157 16.5 5.5 15.8284 5.5 15C5.5 14.1716 6.17157 13.5 7 13.5C7.82843 13.5 8.5 14.1716 8.5 15Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M12 15H18.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21.5833 5.39702C20.7574 3.40286 18.7924 2 16.4996 2C14.2069 2 12.2419 3.40286 11.416 5.39702" stroke="currentColor" stroke-linecap="round"/>
+<path d="M19.3806 6.65811C19.0167 5.41107 17.865 4.5 16.5004 4.5C15.1358 4.5 13.984 5.41107 13.6201 6.65811" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16.5005 7H16.5006" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M2 15C2 12.2386 4.23858 10 7 10H17C19.7614 10 22 12.2386 22 15C22 17.7614 19.7614 20 17 20H7C4.23858 20 2 17.7614 2 15Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M8.5 15C8.5 15.8284 7.82843 16.5 7 16.5C6.17157 16.5 5.5 15.8284 5.5 15C5.5 14.1716 6.17157 13.5 7 13.5C7.82843 13.5 8.5 14.1716 8.5 15Z" stroke="currentColor" stroke-linecap="round"/>
+<path d="M16.5 7H16.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M18 20L19 22" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M6 20L5 22" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M12 15H18.5" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M21.5833 5.39702C20.7574 3.40286 18.7924 2 16.4996 2C14.2069 2 12.2419 3.40286 11.416 5.39702" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M19.3806 6.65811C19.0167 5.41107 17.865 4.5 16.5004 4.5C15.1358 4.5 13.984 5.41107 13.6201 6.65811" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'wi-fi-router-round',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M12.1089 5.68399C12.8228 3.96031 14.5208 2.75 16.4996 2.75C18.4785 2.75 20.1765 3.96031 20.8904 5.68399C21.0488 6.06668 21.4876 6.24844 21.8702 6.08995C22.2529 5.93146 22.4347 5.49275 22.2762 5.11005C21.3383 2.8454 19.1062 1.25 16.4996 1.25C13.8931 1.25 11.661 2.8454 10.7231 5.11005C10.5646 5.49275 10.7464 5.93146 11.129 6.08995C11.5117 6.24844 11.9505 6.06668 12.1089 5.68399Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7 12.75C5.75736 12.75 4.75 13.7574 4.75 15C4.75 16.2426 5.75736 17.25 7 17.25C8.24264 17.25 9.25 16.2426 9.25 15C9.25 13.7574 8.24264 12.75 7 12.75ZM6.25 15C6.25 14.5858 6.58579 14.25 7 14.25C7.41421 14.25 7.75 14.5858 7.75 15C7.75 15.4142 7.41421 15.75 7 15.75C6.58579 15.75 6.25 15.4142 6.25 15Z" fill="currentColor"/>
+<path d="M11.25 15C11.25 14.5858 11.5858 14.25 12 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15C19.25 15.4142 18.9142 15.75 18.5 15.75H12C11.5858 15.75 11.25 15.4142 11.25 15Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7 9.25C3.82436 9.25 1.25 11.8244 1.25 15C1.25 17.4613 2.79642 19.5614 4.97065 20.3816L4.32918 21.6646C4.14394 22.0351 4.29411 22.4856 4.66459 22.6708C5.03507 22.8561 5.48558 22.7059 5.67082 22.3354L6.47533 20.7264C6.64813 20.742 6.82313 20.75 7 20.75H17C17.1769 20.75 17.3519 20.742 17.5247 20.7264L18.3292 22.3354C18.5144 22.7059 18.9649 22.8561 19.3354 22.6708C19.7059 22.4856 19.8561 22.0351 19.6708 21.6646L19.0294 20.3816C21.2036 19.5614 22.75 17.4613 22.75 15C22.75 11.8244 20.1756 9.25 17 9.25H7ZM2.75 15C2.75 12.6528 4.65279 10.75 7 10.75H17C19.3472 10.75 21.25 12.6528 21.25 15C21.25 17.3472 19.3472 19.25 17 19.25H7C4.65279 19.25 2.75 17.3472 2.75 15Z" fill="currentColor"/>
+<path d="M16.5004 5.25C15.478 5.25 14.6132 5.93244 14.3401 6.8682C14.2241 7.26583 13.8077 7.49411 13.41 7.37808C13.0124 7.26205 12.7841 6.84564 12.9001 6.44801C13.3549 4.88969 14.7936 3.75 16.5004 3.75C18.2072 3.75 19.6459 4.88969 20.1006 6.44801C20.2166 6.84564 19.9884 7.26205 19.5907 7.37808C19.1931 7.49411 18.7767 7.26583 18.6607 6.8682C18.3876 5.93244 17.5227 5.25 16.5004 5.25Z" fill="currentColor"/>
+<path d="M16.5 8C17.0523 8 17.5 7.55228 17.5 7C17.5 6.44772 17.0523 6 16.5 6C15.9477 6 15.5 6.44772 15.5 7C15.5 7.55228 15.9477 8 16.5 8Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

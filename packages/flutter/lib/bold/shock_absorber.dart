@@ -1,0 +1,75 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `shock-absorber` icon in the bold style.
+class ShockAbsorberBoldIcon extends StatelessWidget {
+  /// Creates the `shock-absorber` icon in the bold style.
+  const ShockAbsorberBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'shock-absorber',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C16.9428 2 17.4141 2.00008 17.707 2.29297C17.9999 2.58586 18 3.05719 18 4C18 4.94281 17.9999 5.41414 17.707 5.70703C17.4141 5.99992 16.9428 6 16 6H14.75V8.91406L16.1816 9.27246C16.5834 9.37289 16.8278 9.77991 16.7275 10.1816C16.6271 10.5835 16.2202 10.828 15.8184 10.7275L14.75 10.46V12.4141L16.1816 12.7725C16.5834 12.8729 16.8278 13.2799 16.7275 13.6816C16.6271 14.0835 16.2202 14.328 15.8184 14.2275L14.75 13.96V15.3135C15.2034 15.6297 15.5 16.1553 15.5 16.75C15.5 17.7165 14.7165 18.5 13.75 18.5H13.3232C13.7383 18.8665 14 19.4027 14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 19.4027 10.2617 18.8665 10.6768 18.5H10.25C9.2835 18.5 8.5 17.7165 8.5 16.75C8.5 16.1553 8.79663 15.6297 9.25 15.3135V12.585L7.81836 12.2275C7.41655 12.1271 7.17207 11.7202 7.27246 11.3184C7.37289 10.9167 7.77994 10.6723 8.18164 10.7725L9.25 11.0391V9.08496L7.81836 8.72754C7.41655 8.62709 7.17207 8.22017 7.27246 7.81836C7.37289 7.41666 7.77994 7.17229 8.18164 7.27246L9.25 7.53906V6H8C7.05719 6 6.58586 5.99992 6.29297 5.70703C6.00008 5.41414 6 4.94281 6 4C6 3.05719 6.00008 2.58586 6.29297 2.29297C6.58586 2.00008 7.05719 2 8 2H16ZM10.75 15H13.25V13.585L10.75 12.96V15ZM10.75 11.4141L13.25 12.0391V10.085L10.75 9.45996V11.4141ZM10.75 7.91406L13.25 8.53906V6H10.75V7.91406Z" fill="currentColor"/>
+<path d="M4.40137 13.7666C4.69577 13.4756 5.17063 13.4782 5.46191 13.7725C5.7532 14.0668 5.75039 14.5416 5.45605 14.833L4.74902 15.5332C4.45463 15.8244 3.97981 15.8217 3.68848 15.5273C3.39727 15.233 3.40003 14.7581 3.69434 14.4668L4.40137 13.7666Z" fill="currentColor"/>
+<path d="M18.5381 13.7725C18.8294 13.4782 19.3042 13.4756 19.5986 13.7666L20.3057 14.4668C20.6 14.7581 20.6027 15.233 20.3115 15.5273C20.0202 15.8217 19.5454 15.8244 19.251 15.5332L18.5439 14.833C18.2496 14.5416 18.2468 14.0668 18.5381 13.7725Z" fill="currentColor"/>
+<path d="M4 10.75C4.41405 10.75 4.74974 11.086 4.75 11.5C4.75 11.9142 4.41421 12.25 4 12.25H2C1.58579 12.25 1.25 11.9142 1.25 11.5C1.25026 11.086 1.58595 10.75 2 10.75H4Z" fill="currentColor"/>
+<path d="M22 10.75C22.4142 10.75 22.75 11.0858 22.75 11.5C22.7497 11.914 22.4141 12.25 22 12.25H20C19.5859 12.25 19.2503 11.914 19.25 11.5C19.25 11.0858 19.5858 10.75 20 10.75H22Z" fill="currentColor"/>
+<path d="M3.68848 7.47266C3.97981 7.17835 4.45463 7.17559 4.74902 7.4668L5.45605 8.16699C5.75039 8.45835 5.7532 8.93315 5.46191 9.22754C5.17063 9.5218 4.69577 9.52445 4.40137 9.2334L3.69434 8.5332C3.40003 8.24187 3.39727 7.76705 3.68848 7.47266Z" fill="currentColor"/>
+<path d="M19.251 7.4668C19.5454 7.17559 20.0202 7.17835 20.3115 7.47266C20.6027 7.76705 20.6 8.24187 20.3057 8.5332L19.5986 9.2334C19.3042 9.52445 18.8294 9.5218 18.5381 9.22754C18.2468 8.93315 18.2496 8.45835 18.5439 8.16699L19.251 7.4668Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

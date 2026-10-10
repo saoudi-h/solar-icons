@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `chat-square-arrow` icon in the bold style.
+class ChatSquareArrowBoldIcon extends StatelessWidget {
+  /// Creates the `chat-square-arrow` icon in the bold style.
+  const ChatSquareArrowBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'chat-square-arrow',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M7.65332 4.00475C7.96597 4.0011 8.12276 4.00001 8.24609 4.07604C8.36932 4.15209 8.44044 4.29683 8.58203 4.58678C9.24602 5.94647 11.0199 9.32678 13 11.0008C14.7521 12.4821 17.8633 13.6407 19.2715 14.1161C19.6337 14.2383 19.8155 14.2989 19.9102 14.4422C20.0047 14.5855 19.9906 14.7626 19.9629 15.1161C19.9178 15.692 19.8326 16.132 19.6709 16.5223C19.2139 17.625 18.3368 18.5011 17.2334 18.9579C16.6387 19.204 15.9295 19.2734 14.7988 19.2928C14.033 19.306 13.6498 19.3124 13.3457 19.4891C13.0416 19.6659 12.8523 19.9865 12.4736 20.6258L11.9854 21.4501C11.5502 22.1844 10.4636 22.1842 10.0283 21.4501L9.54004 20.6258C9.16133 19.9865 8.97114 19.6659 8.66699 19.4891C8.36297 19.3127 7.98005 19.306 7.21484 19.2928C6.0843 19.2734 5.37495 19.204 4.78027 18.9579C3.67683 18.5011 2.79983 17.625 2.34277 16.5223C2.00009 15.6954 2 14.6471 2 12.5506V11.6503C2 8.704 2.00045 7.23048 2.66406 6.1483C3.03536 5.54297 3.5446 5.03393 4.15039 4.66295C5.01701 4.13225 5.84576 4.02589 7.65332 4.00475Z" fill="currentColor"/>
+<path d="M12.5908 1.2108C12.8996 0.927003 13.3973 0.930226 13.7021 1.21764C14.0067 1.50504 14.0038 1.96799 13.6953 2.25182L12.6934 3.17272C13.5649 3.18092 14.4036 3.20122 15.1602 3.24889C15.8107 3.28989 16.4203 3.3527 16.9512 3.45104C17.4711 3.54737 17.9722 3.68775 18.3701 3.91198C19.1098 4.32883 19.7331 4.90097 20.1875 5.58287C20.6247 6.23891 20.8167 6.9807 20.9092 7.87487C20.9996 8.7498 21 9.84391 21 11.2303V11.2684C21 11.6724 20.6478 11.9999 20.2139 11.9999C19.7802 11.9997 19.4288 11.6723 19.4287 11.2684C19.4287 9.83518 19.4281 8.8121 19.3457 8.01549C19.2645 7.23013 19.109 6.7407 18.8516 6.35436C18.5287 5.86996 18.0853 5.46189 17.5566 5.16393C17.3879 5.06882 17.0941 4.96891 16.6445 4.88561C16.2057 4.80432 15.6699 4.74768 15.0537 4.70885C14.3419 4.664 13.548 4.64472 12.7061 4.63659L13.6953 5.54576C14.004 5.82967 14.007 6.2935 13.7021 6.58092C13.3972 6.86829 12.8995 6.87065 12.5908 6.58678L10.2334 4.41979C10.084 4.28244 10.0001 4.09473 10 3.89928C10 3.70381 10.0841 3.51619 10.2334 3.37877L12.5908 1.2108Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

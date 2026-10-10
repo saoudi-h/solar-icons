@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `user-speak-rounded` icon in the bold style.
+class UserSpeakRoundedBoldIcon extends StatelessWidget {
+  /// Creates the `user-speak-rounded` icon in the bold style.
+  const UserSpeakRoundedBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'user-speak-rounded',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M10 13.75C13.866 13.75 17 15.5409 17 17.75C17 19.9591 13.866 21.75 10 21.75C6.13401 21.75 3 19.9591 3 17.75C3 15.5409 6.13401 13.75 10 13.75Z" fill="currentColor"/>
+<path d="M18.3574 2.36425C18.5706 2.0092 19.0306 1.89436 19.3857 2.10742H19.3877L19.3887 2.10839L19.3926 2.11132L19.4023 2.11718C19.4097 2.12174 19.4188 2.12769 19.4297 2.13476C19.4517 2.14899 19.4814 2.16775 19.5166 2.19238C19.5869 2.24159 19.6817 2.31256 19.793 2.40527C20.0151 2.59036 20.3055 2.86719 20.5947 3.24316C21.1775 4.00088 21.75 5.15758 21.75 6.75C21.75 8.34265 21.1776 9.50007 20.5947 10.2578C20.3056 10.6336 20.015 10.9097 19.793 11.0947C19.6818 11.1874 19.5869 11.2584 19.5166 11.3076C19.4814 11.3322 19.4517 11.352 19.4297 11.3662C19.419 11.3731 19.4096 11.3783 19.4023 11.3828L19.3926 11.3896L19.3887 11.3916L19.3877 11.3926C19.3877 11.3926 19.3859 11.3931 19 10.75L19.3857 11.3935C19.0306 11.6064 18.5705 11.4908 18.3574 11.1357C18.1453 10.7821 18.2578 10.3237 18.6094 10.1094L18.6152 10.1064C18.6225 10.1017 18.6368 10.0927 18.6562 10.0791C18.6953 10.0518 18.7568 10.0059 18.833 9.94238C18.9858 9.81498 19.1948 9.61637 19.4053 9.34277C19.8224 8.8005 20.25 7.95734 20.25 6.75C20.25 5.54271 19.8224 4.69947 19.4053 4.15722C19.1948 3.88363 18.9858 3.68499 18.833 3.55761C18.757 3.49428 18.6953 3.44923 18.6562 3.42187L18.6094 3.39062C18.2579 3.17626 18.1453 2.71785 18.3574 2.36425Z" fill="currentColor"/>
+<path d="M10 2.75C12.2091 2.75 14 4.54086 14 6.75C14 8.95913 12.2091 10.75 10 10.75C7.79086 10.75 6 8.95913 6 6.75C6 4.54086 7.79086 2.75 10 2.75Z" fill="currentColor"/>
+<path d="M16.3291 4.41503C16.5143 4.04455 16.9655 3.89385 17.3359 4.0791L17.3369 4.08007L17.3428 4.083L17.3516 4.08691L17.373 4.09863C17.3893 4.10758 17.4094 4.1197 17.4326 4.13378C17.4789 4.16193 17.5385 4.20097 17.6064 4.25195C17.7423 4.35387 17.9155 4.50571 18.0859 4.71874C18.4346 5.15462 18.75 5.81787 18.75 6.75C18.75 7.68218 18.4347 8.34535 18.0859 8.78125C17.9154 8.99443 17.7424 9.14707 17.6064 9.24902C17.5384 9.30004 17.4789 9.33905 17.4326 9.36718C17.4095 9.38124 17.3893 9.39242 17.373 9.40136L17.3516 9.41308L17.3428 9.41699L17.3369 9.41992C17.3347 9.41673 17.3112 9.37141 17.0068 8.76269L17.3359 9.42089C16.9655 9.6061 16.5144 9.45625 16.3291 9.08593C16.1462 8.72006 16.2909 8.27534 16.6514 8.08593L16.6543 8.08496C16.6626 8.07989 16.6808 8.06777 16.7061 8.04882C16.7576 8.01015 16.8346 7.94305 16.9141 7.84375C17.0653 7.65464 17.25 7.31781 17.25 6.75C17.25 6.18225 17.0653 5.84533 16.9141 5.65624C16.8347 5.55702 16.7576 5.4908 16.7061 5.45214C16.6809 5.43328 16.6628 5.42121 16.6543 5.41601L16.6514 5.41406C16.2911 5.22471 16.1464 4.78084 16.3291 4.41503Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

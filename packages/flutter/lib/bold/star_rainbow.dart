@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `star-rainbow` icon in the bold style.
+class StarRainbowBoldIcon extends StatelessWidget {
+  /// Creates the `star-rainbow` icon in the bold style.
+  const StarRainbowBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'star-rainbow',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M9.04485 11.3199C9.36682 11.5707 9.72163 11.7167 10.0058 11.8081C10.0285 11.8155 10.0518 11.8225 10.0751 11.8296C10.0503 11.8525 10.0255 11.8758 10.0009 11.899C9.00597 12.8364 8.09868 14.0842 7.33587 15.3648C6.57036 16.6499 5.93217 17.9984 5.48333 19.1607C5.25884 19.742 5.07907 20.2855 4.95403 20.7564C4.83259 21.2138 4.75 21.6498 4.74993 22.0005H3.71672C2.59079 22.0005 1.70793 21.0814 2.09075 20.0318C3.27105 16.7964 5.99081 13.2692 9.04485 11.3199Z" fill="currentColor"/>
+<path d="M12.332 12.2681C11.4096 13.5555 10.6936 15.1779 10.1767 16.7085C9.47224 18.7945 9.08304 20.8765 9.08294 22.0005H6.24993C6.25001 21.8463 6.29205 21.56 6.40325 21.1411C6.51111 20.7349 6.67287 20.2452 6.88274 19.7017C7.30263 18.6143 7.90448 17.3418 8.62493 16.1324C9.34812 14.9183 10.1733 13.7981 11.0302 12.9908C11.3708 12.6699 11.7018 12.4123 12.0204 12.2173L12.332 12.2681Z" fill="currentColor"/>
+<path d="M13.2978 13.5132C13.5191 13.8589 13.7399 14.1799 13.9589 14.437C14.1488 14.6599 14.4072 14.9177 14.7411 15.1138C14.4037 16.3407 14.1082 18.0658 13.9794 19.98C13.9045 21.0937 12.9979 22.0004 11.872 22.0005H10.5829C10.583 21.104 10.9197 19.1953 11.5976 17.188C12.0467 15.8581 12.6222 14.5568 13.2978 13.5132Z" fill="currentColor"/>
+<path d="M16.9452 2.8472C18.3538 2.14969 19.0582 1.80106 19.5341 2.11771C20.0099 2.43435 19.9428 3.20615 19.8075 4.75053L19.7724 5.15092C19.734 5.58968 19.7145 5.80943 19.7831 6.00834C19.8518 6.20717 20.0013 6.3627 20.2988 6.67435L20.5693 6.95853C21.6165 8.05569 22.1403 8.60445 21.9677 9.16654C21.795 9.72852 21.04 9.93176 19.5312 10.3384L19.1415 10.4439C18.7127 10.5595 18.498 10.6173 18.3271 10.7515C18.1561 10.8857 18.0473 11.0813 17.831 11.4722L17.6347 11.8277C16.8735 13.203 16.4924 13.8904 15.9101 13.9214C15.3275 13.9522 14.9281 13.3056 14.1308 12.0122L13.9247 11.6783C13.6982 11.3108 13.5853 11.1263 13.4111 11.0103C13.2368 10.8943 13.0208 10.8597 12.5898 10.7896L12.1972 10.7251C10.6795 10.4782 9.91988 10.3551 9.73235 9.81205C9.54489 9.26896 10.053 8.66553 11.0693 7.45951L11.332 7.14799C11.6207 6.80527 11.7658 6.63319 11.829 6.42728C11.8921 6.2215 11.8665 6.00385 11.8163 5.56986L11.7714 5.17533C11.5948 3.6472 11.506 2.88258 11.9726 2.51615C12.4393 2.14976 13.1527 2.42421 14.5781 2.9722L14.9462 3.11381C15.3513 3.26953 15.5541 3.34675 15.7675 3.33549C15.9808 3.32417 16.1808 3.22503 16.581 3.02689L16.9452 2.8472Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

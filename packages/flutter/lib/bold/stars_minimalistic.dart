@@ -1,0 +1,71 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `stars-minimalistic` icon in the bold style.
+class StarsMinimalisticBoldIcon extends StatelessWidget {
+  /// Creates the `stars-minimalistic` icon in the bold style.
+  const StarsMinimalisticBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'stars-minimalistic',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M12.5002 4.99967C13.305 4.99967 13.8434 5.96572 14.9201 7.89713L15.1984 8.39616C15.5043 8.94495 15.6572 9.21997 15.8957 9.40104C16.1342 9.5821 16.4314 9.64943 17.0255 9.78385L17.5666 9.90592C19.6573 10.379 20.7026 10.6159 20.9513 11.4157C21.1997 12.2153 20.4868 13.049 19.0617 14.7155L18.6935 15.1462C18.2885 15.6198 18.0854 15.8571 17.9943 16.1501C17.9034 16.4429 17.9341 16.7589 17.9953 17.3903L18.0509 17.9655C18.2664 20.1893 18.3739 21.3013 17.7228 21.7956C17.0717 22.2897 16.0933 21.8394 14.1359 20.9381L13.6291 20.7048C13.073 20.4487 12.7949 20.321 12.5002 20.321C12.2054 20.321 11.9273 20.4487 11.3713 20.7048L10.8644 20.9381C8.90706 21.8394 7.92862 22.2897 7.2775 21.7956C6.62638 21.3013 6.73389 20.1893 6.94938 17.9655L7.00504 17.3903C7.06623 16.7589 7.09695 16.4429 7.00602 16.1501C6.91491 15.8571 6.71183 15.6198 6.3068 15.1462L5.93864 14.7155C4.51355 13.049 3.80064 12.2153 4.04899 11.4157C4.29769 10.6159 5.34304 10.379 7.43375 9.90592L7.97477 9.78385C8.56887 9.64943 8.86614 9.5821 9.10465 9.40104C9.34313 9.21997 9.496 8.94495 9.80192 8.39616L10.0802 7.89713C11.1569 5.96572 11.6953 4.99967 12.5002 4.99967Z" fill="currentColor"/>
+<path d="M4.86735 2.50065C4.89734 2.39487 5.08567 2.39409 5.11637 2.49967C5.25659 2.98176 5.51632 3.69423 5.90934 4.08463C6.30246 4.47511 7.01711 4.72992 7.50016 4.86686C7.60578 4.8969 7.60645 5.08498 7.50114 5.11588C7.01902 5.25609 6.30568 5.51573 5.9152 5.90885C5.5248 6.30201 5.2699 7.01668 5.13297 7.49967C5.10285 7.60513 4.91596 7.60577 4.88493 7.50065C4.74472 7.01854 4.48411 6.30519 4.09098 5.91471C3.69788 5.52452 2.98404 5.26941 2.50114 5.13248C2.39535 5.10249 2.39458 4.91514 2.50016 4.88444C2.98227 4.74422 3.69468 4.48358 4.08512 4.09049C4.47539 3.69746 4.73039 2.98363 4.86735 2.50065Z" fill="currentColor"/>
+<path d="M19.0002 3.24967C19.4144 3.24967 19.7502 3.58546 19.7502 3.99967V4.24967H20.0002C20.4144 4.24967 20.7502 4.58546 20.7502 4.99967C20.7502 5.41388 20.4144 5.74967 20.0002 5.74967H19.7502V5.99967C19.7502 6.41388 19.4144 6.74967 19.0002 6.74967C18.5859 6.74967 18.2502 6.41388 18.2502 5.99967V5.74967H18.0002C17.5859 5.74967 17.2502 5.41388 17.2502 4.99967C17.2502 4.58546 17.5859 4.24967 18.0002 4.24967H18.2502V3.99967C18.2502 3.58546 18.5859 3.24967 19.0002 3.24967Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

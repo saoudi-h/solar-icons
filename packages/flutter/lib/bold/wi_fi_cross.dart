@@ -1,0 +1,73 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `wi-fi-cross` icon in the bold style.
+class WiFiCrossBoldIcon extends StatelessWidget {
+  /// Creates the `wi-fi-cross` icon in the bold style.
+  const WiFiCrossBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'wi-fi-cross',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M12.0174 18.7142C12.4316 18.7142 12.7674 19.05 12.7674 19.4642C12.7674 19.8784 12.4316 20.2142 12.0174 20.2142C11.6032 20.2142 11.2674 19.8784 11.2674 19.4642C11.2674 19.05 11.6032 18.7142 12.0174 18.7142Z" fill="currentColor"/>
+<path d="M8.11701 15.3831C10.2548 13.076 13.7459 13.0759 15.8836 15.3831C16.165 15.6868 16.147 16.1611 15.8436 16.4427C15.5397 16.7241 15.0645 16.7065 14.783 16.4027C13.2389 14.7362 10.7607 14.7361 9.21662 16.4027C8.93508 16.7062 8.4608 16.7241 8.15705 16.4427C7.85355 16.1612 7.83573 15.6869 8.11701 15.3831Z" fill="currentColor"/>
+<path d="M4.78303 11.7845C7.04143 9.3471 10.1156 8.28483 13.0887 8.6263C13.5001 8.67357 13.7959 9.04598 13.7488 9.45735C13.7014 9.86863 13.3291 10.1638 12.9178 10.1165C10.4204 9.82965 7.8173 10.7159 5.88264 12.804C5.60111 13.1077 5.12687 13.1255 4.82307 12.8441C4.51975 12.5625 4.50169 12.0882 4.78303 11.7845Z" fill="currentColor"/>
+<path d="M21.4696 4.46907C21.7624 4.1765 22.2373 4.17645 22.5301 4.46907C22.8229 4.76188 22.8227 5.2367 22.5301 5.52962L20.0604 7.99934L22.5301 10.4691C22.8229 10.7619 22.8227 11.2367 22.5301 11.5296C22.2372 11.8225 21.7624 11.8225 21.4696 11.5296L18.9998 9.05989L16.5301 11.5296C16.2372 11.8225 15.7624 11.8225 15.4696 11.5296C15.1768 11.2367 15.1767 10.7619 15.4696 10.4691L17.9393 7.99934L15.4696 5.52962C15.1768 5.23671 15.1767 4.7619 15.4696 4.46907C15.7624 4.17649 16.2373 4.17645 16.5301 4.46907L18.9998 6.9388L21.4696 4.46907Z" fill="currentColor"/>
+<path d="M1.45002 8.18684C4.62324 4.76197 8.88973 3.19649 13.0662 3.51692C13.4789 3.54882 13.7881 3.9089 13.7567 4.32161C13.7249 4.73447 13.3639 5.04362 12.951 5.01204C9.23235 4.72682 5.41264 6.11616 2.54963 9.20638C2.26822 9.50998 1.79388 9.5285 1.49006 9.24739C1.18621 8.96588 1.16852 8.49069 1.45002 8.18684Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

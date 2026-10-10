@@ -1,0 +1,73 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `smartphone-vibration` icon in the boldDuotone style.
+class SmartphoneVibrationBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `smartphone-vibration` icon in the boldDuotone style.
+  const SmartphoneVibrationBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'smartphone-vibration',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M14.5001 18.2501C14.9143 18.2501 15.2501 18.5859 15.2501 19.0001C15.2501 19.4143 14.9143 19.7501 14.5001 19.7501H9.50013C9.08592 19.7501 8.75013 19.4143 8.75013 19.0001C8.75013 18.5859 9.08592 18.2501 9.50013 18.2501H14.5001Z" fill="currentColor"/>
+<path d="M1.66517 5.32924C2.0356 5.14424 2.48585 5.2948 2.67103 5.66517L3.4474 7.21791C3.69367 7.71055 3.69371 8.29071 3.4474 8.78334L2.89467 9.88881C2.85961 9.95913 2.85952 10.0421 2.89467 10.1124L3.4474 11.2179C3.69367 11.7106 3.69371 12.2907 3.4474 12.7833L2.89467 13.8888C2.85961 13.9591 2.85952 14.0421 2.89467 14.1124L3.4474 15.2179C3.69367 15.7106 3.69371 16.2907 3.4474 16.7833L2.67103 18.3361C2.48572 18.7063 2.03551 18.8561 1.66517 18.671C1.2948 18.4858 1.14424 18.0356 1.32924 17.6652L2.1056 16.1124C2.14077 16.0421 2.14072 15.9592 2.1056 15.8888L1.55287 14.7833C1.30658 14.2908 1.30667 13.7105 1.55287 13.2179L2.1056 12.1124C2.14077 12.0421 2.14072 11.9592 2.1056 11.8888L1.55287 10.7833C1.30658 10.2908 1.30667 9.71052 1.55287 9.21791L2.1056 8.11244C2.14077 8.0421 2.14072 7.95916 2.1056 7.88881L1.32924 6.33607C1.14399 5.96559 1.29469 5.51448 1.66517 5.32924Z" fill="currentColor"/>
+<path d="M21.3292 5.66517C21.5145 5.29469 21.9656 5.14399 22.3361 5.32924C22.7064 5.51454 22.8562 5.96565 22.671 6.33607L21.8947 7.88881C21.8596 7.95913 21.8595 8.04215 21.8947 8.11244L22.4474 9.21791C22.6937 9.71055 22.6937 10.2907 22.4474 10.7833L21.8947 11.8888C21.8596 11.9591 21.8595 12.0421 21.8947 12.1124L22.4474 13.2179C22.6937 13.7106 22.6937 14.2907 22.4474 14.7833L21.8947 15.8888C21.8596 15.9591 21.8595 16.0421 21.8947 16.1124L22.671 17.6652C22.8561 18.0355 22.7063 18.4857 22.3361 18.671C21.9657 18.8562 21.5145 18.7064 21.3292 18.3361L20.5529 16.7833C20.3066 16.2908 20.3067 15.7105 20.5529 15.2179L21.1056 14.1124C21.1408 14.0421 21.1407 13.9592 21.1056 13.8888L20.5529 12.7833C20.3066 12.2908 20.3067 11.7105 20.5529 11.2179L21.1056 10.1124C21.1408 10.0421 21.1407 9.95916 21.1056 9.88881L20.5529 8.78334C20.3066 8.29076 20.3067 7.71052 20.5529 7.21791L21.3292 5.66517Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M5.87868 2.87868C5 3.75736 5 5.17157 5 8V16C5 18.8284 5 20.2426 5.87868 21.1213C6.75736 22 8.17157 22 11 22H13C15.8284 22 17.2426 22 18.1213 21.1213C19 20.2426 19 18.8284 19 16V8C19 5.17157 19 3.75736 18.1213 2.87868C17.2426 2 15.8284 2 13 2H11C8.17157 2 6.75736 2 5.87868 2.87868Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

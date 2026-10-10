@@ -1,0 +1,82 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `video-frame-replace` icon in the boldDuotone style.
+class VideoFrameReplaceBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `video-frame-replace` icon in the boldDuotone style.
+  const VideoFrameReplaceBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'video-frame-replace',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M5.25 2.00169C3.85306 2.01188 3.08814 2.08343 2.58579 2.58579C2.08343 3.08814 2.01188 3.85306 2.00169 5.25H5.25V2.00169Z" fill="currentColor"/>
+<path d="M2.00169 6.75C2.01188 8.14694 2.08343 8.91186 2.58579 9.41421C3.08814 9.91657 3.85306 9.98812 5.25 9.99831V6.75H2.00169Z" fill="currentColor"/>
+<path d="M6.75 10H10.25V2H6.75V10Z" fill="currentColor"/>
+<path d="M11.75 2.00169V5.25H14.9983C14.9881 3.85306 14.9166 3.08814 14.4142 2.58579C13.9119 2.08343 13.1469 2.01188 11.75 2.00169Z" fill="currentColor"/>
+<path d="M14.9983 6.75H11.75V9.99831C13.1469 9.98812 13.9119 9.91657 14.4142 9.41421C14.9166 8.91186 14.9881 8.14694 14.9983 6.75Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.46967 12.4697C2.76256 12.1768 3.23744 12.1768 3.53033 12.4697L4.53033 13.4697C4.82322 13.7626 4.82322 14.2374 4.53033 14.5303C4.31981 14.7408 4.01528 14.8001 3.75187 14.7079C3.75402 14.9958 3.75864 15.292 3.76855 15.5673C3.77779 15.8243 3.79129 16.0518 3.81012 16.2309C3.82509 16.3733 3.83996 16.4464 3.8451 16.4716C3.84744 16.4831 3.84776 16.4847 3.84515 16.4784C3.97202 16.7846 4.21536 17.028 4.52165 17.1548C4.5988 17.1868 4.71601 17.2163 4.95674 17.2327C5.20421 17.2496 5.5238 17.25 6 17.25C6.41421 17.25 6.75 17.5858 6.75 18C6.75 18.4142 6.41421 18.75 6 18.75H5.97474C5.53028 18.75 5.15925 18.75 4.85464 18.7292C4.53754 18.7076 4.23801 18.6609 3.94762 18.5407C3.27379 18.2616 2.73844 17.7262 2.45933 17.0524C2.37486 16.8485 2.33936 16.5876 2.31834 16.3877C2.29434 16.1594 2.2793 15.8933 2.26952 15.6213C2.25885 15.3249 2.25402 15.0083 2.25182 14.7066C1.98758 14.8006 1.68118 14.7418 1.46967 14.5303C1.17678 14.2374 1.17678 13.7626 1.46967 13.4697L2.46967 12.4697Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M16.75 22H14.25V14H16.75V22Z" fill="currentColor"/>
+<path d="M12.75 21.9912C11.6641 21.9636 11.0248 21.8529 10.5859 21.4141C10.0837 20.9117 10.0121 20.1468 10.002 18.75H12.75V21.9912Z" fill="currentColor"/>
+<path d="M20.999 18.75C20.9888 20.1469 20.9164 20.9117 20.4141 21.4141C19.9752 21.8528 19.3359 21.9636 18.25 21.9912V18.75H20.999Z" fill="currentColor"/>
+<path d="M12.75 17.25H10.002C10.0121 15.8532 10.0837 15.0883 10.5859 14.5859C11.0248 14.1471 11.6641 14.0364 12.75 14.0088V17.25Z" fill="currentColor"/>
+<path d="M18.25 14.0088C19.3359 14.0364 19.9752 14.1472 20.4141 14.5859C20.9164 15.0883 20.9888 15.8531 20.999 17.25H18.25V14.0088Z" fill="currentColor"/>
+<path d="M18.0254 5.25C18.4698 5.24999 18.8409 5.24973 19.1455 5.27051C19.4626 5.29215 19.7624 5.33872 20.0527 5.45899C20.7264 5.73809 21.2619 6.27358 21.541 6.94727C21.6255 7.15118 21.6606 7.41234 21.6816 7.61231C21.7056 7.84056 21.7207 8.10693 21.7305 8.37891C21.7411 8.67507 21.7459 8.99146 21.748 9.29297C22.0123 9.19901 22.3188 9.25822 22.5303 9.46973C22.8232 9.76262 22.8232 10.2374 22.5303 10.5303L21.5303 11.5303C21.2374 11.8232 20.7626 11.8232 20.4697 11.5303L19.4697 10.5303C19.1768 10.2374 19.1768 9.76262 19.4697 9.46973C19.6802 9.25923 19.9847 9.19993 20.248 9.29199C20.2459 9.00417 20.2414 8.70792 20.2314 8.43262C20.2222 8.17586 20.2083 7.94857 20.1895 7.76953C20.1745 7.62707 20.1604 7.55355 20.1553 7.52832C20.1529 7.51684 20.1527 7.51518 20.1553 7.52149C20.0284 7.2152 19.7848 6.97159 19.4785 6.84473C19.4014 6.81277 19.2837 6.784 19.043 6.76758C18.7955 6.75071 18.476 6.75 18 6.75C17.5858 6.75 17.25 6.41421 17.25 6C17.25 5.58579 17.5858 5.25 18 5.25H18.0254Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

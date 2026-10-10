@@ -1,0 +1,69 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `dropper-3` icon in the bold style.
+class Dropper3BoldIcon extends StatelessWidget {
+  /// Creates the `dropper-3` icon in the bold style.
+  const Dropper3BoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'dropper-3',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M18 6C19.8856 6 20.8283 6.00015 21.4141 6.58594C21.9998 7.17172 22 8.11438 22 10V16.5068C22 17.1638 21.723 17.7901 21.2373 18.2324C19.951 19.4033 18.3701 20.0674 16.75 20.2236V21.25C16.75 21.6642 16.4142 22 16 22C15.5858 22 15.25 21.6642 15.25 21.25V20.2236C13.6299 20.0674 12.049 19.4033 10.7627 18.2324C10.277 17.7901 10 17.1638 10 16.5068V10C10 8.11438 10.0002 7.17172 10.5859 6.58594C11.1717 6.00015 12.1144 6 14 6H15.25V4.14844C14.6125 4.05145 13.9932 3.78904 13.46 3.3584C13.4376 3.34036 13.4126 3.31978 13.377 3.29004L13.373 3.28711L13.3418 3.26074L13.3408 3.25977C12.9434 2.93393 12.4456 2.75414 11.9316 2.75H8L4.80859 2.85352C4.07482 2.95217 3.68594 3.13242 3.40918 3.40918C3.13242 3.68594 2.95217 4.07482 2.85352 4.80859C2.75202 5.5639 2.75 6.56485 2.75 8V22.25C2.75 22.6642 2.41421 23 2 23C1.58579 23 1.25 22.6642 1.25 22.25V7.94531C1.24998 6.57784 1.24968 5.47533 1.36621 4.6084C1.48723 3.70829 1.74672 2.95055 2.34863 2.34863C2.95055 1.74672 3.70829 1.48723 4.6084 1.36621C5.47533 1.24968 6.57784 1.24998 7.94531 1.25H11.9404C12.7991 1.25619 13.6303 1.55663 14.2939 2.10156L14.2969 2.10449L14.332 2.13379L14.4023 2.19141C14.6589 2.3986 14.9482 2.5409 15.25 2.61914V2C15.25 1.58579 15.5858 1.25 16 1.25C16.4142 1.25 16.75 1.58579 16.75 2V2.48926C16.9784 2.38509 17.1923 2.24037 17.3818 2.05664C17.3932 2.04562 17.4077 2.03173 17.4473 1.99219L17.9697 1.46973C18.2626 1.17684 18.7374 1.17684 19.0303 1.46973C19.3232 1.76262 19.3232 2.23738 19.0303 2.53027L18.4268 3.13379C17.9439 3.60199 17.3632 3.91585 16.75 4.07324V6H18ZM14 15.25C13.5858 15.25 13.25 15.5858 13.25 16C13.25 16.4142 13.5858 16.75 14 16.75H18C18.4142 16.75 18.75 16.4142 18.75 16C18.75 15.5858 18.4142 15.25 18 15.25H14ZM16.6309 9.11719C16.2839 8.75126 15.7161 8.75126 15.3691 9.11719C14.783 9.73565 14 10.6971 14 11.417C14.0002 12.5674 14.8955 13.5 16 13.5C17.1045 13.5 17.9998 12.5674 18 11.417C18 10.6971 17.217 9.73565 16.6309 9.11719Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `bottle` icon in the boldDuotone style.
+class BottleBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `bottle` icon in the boldDuotone style.
+  const BottleBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'bottle',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M11.5321 8.65911C12.4872 8.18163 13.6329 8.30267 14.4667 8.96965C15.1919 9.54979 16.1618 9.72329 17.0429 9.42961L18.6395 8.89739C18.588 10.3581 17.9627 11.7413 16.8964 12.7128C16.8634 12.7429 16.8274 12.7737 16.7567 12.8359C16.6881 12.8963 16.6542 12.927 16.621 12.957C15.4236 14.0355 14.5758 15.4735 14.1942 17.0751C14.1836 17.1196 14.1739 17.1655 14.1532 17.2568L13.9013 18.3642C13.5679 19.8355 13.4016 20.5717 13.0507 21.0351C12.5155 21.7415 11.6735 22.1189 10.8114 22.038C10.2459 21.9849 9.61578 21.6053 8.35633 20.8466L7.68446 20.4413C6.42502 19.6826 5.79446 19.3037 5.46766 18.8193C4.96946 18.0808 4.86196 17.1316 5.18055 16.2948C5.3896 15.746 5.91678 15.2265 6.97157 14.1894L7.76551 13.4091C7.83099 13.3447 7.86376 13.312 7.8954 13.2802C8.94289 12.2262 9.67859 10.8853 10.0204 9.41496L11.5321 8.65911Z" fill="currentColor"/>
+<path d="M17.2128 2.0009C17.337 2.00838 17.4628 2.08409 17.7138 2.23528L18.5038 2.71086C18.7386 2.85231 18.856 2.92349 18.9198 3.02336C18.9759 3.11118 19.0035 3.21419 18.9989 3.31828C18.9936 3.43669 18.9275 3.55708 18.7948 3.7968L18.3339 4.62981L16.1552 3.31731L16.5868 2.53703C16.7285 2.28103 16.7996 2.15253 16.9032 2.08391C16.9946 2.02365 17.1035 1.99435 17.2128 2.0009Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M16.1557 3.31738L18.3344 4.62987L18.617 8.15786C18.6247 8.25408 18.6286 8.3022 18.6315 8.34785C18.737 10.0069 18.0957 11.6201 16.8963 12.7129C16.8633 12.743 16.8279 12.7741 16.7572 12.8363C16.6885 12.8968 16.6541 12.9271 16.6208 12.9571C15.4234 14.0356 14.576 15.4739 14.1945 17.0755C14.1839 17.12 14.1735 17.1656 14.1528 17.257L13.9018 18.365C13.5684 19.8367 13.4016 20.5725 13.0506 21.0359C12.5153 21.7423 11.6734 22.1191 10.8113 22.0382C10.2458 21.9851 9.6161 21.6057 8.35666 20.847L7.68411 20.4419C6.42467 19.6832 5.79495 19.3039 5.46815 18.8195C4.96988 18.0809 4.86171 17.1317 5.18044 16.2949C5.38948 15.746 5.91688 15.2274 6.97166 14.1903L7.7658 13.4094C7.83127 13.345 7.86401 13.3129 7.89565 13.281C9.03421 12.1355 9.80432 10.6507 10.1008 9.02942C10.109 8.98436 10.117 8.93816 10.1328 8.84574C10.1491 8.75076 10.1572 8.70327 10.1657 8.65842C10.473 7.02824 11.4914 5.64211 12.9212 4.90793C12.9605 4.88772 13.0024 4.86715 13.0861 4.826L16.1557 3.31738Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

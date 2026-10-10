@@ -1,0 +1,72 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `star-fall` icon in the bold style.
+class StarFallBoldIcon extends StatelessWidget {
+  /// Creates the `star-fall` icon in the bold style.
+  const StarFallBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'star-fall',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path d="M10.2772 16.5143C10.282 16.4047 10.4633 16.3612 10.5174 16.4567C10.7707 16.9064 11.2029 17.5681 11.6932 17.8688C12.1835 18.1695 12.9695 18.2541 13.4852 18.276C13.5949 18.2809 13.6385 18.4633 13.5428 18.5172C13.0931 18.7706 12.4314 19.2027 12.1307 19.693C11.8301 20.1833 11.7454 20.9684 11.7235 21.484C11.7188 21.5939 11.5362 21.6375 11.4823 21.5417C11.2289 21.092 10.7967 20.4312 10.3065 20.1305C9.81622 19.8299 9.03113 19.7442 8.51545 19.7223C8.4056 19.7177 8.36204 19.5361 8.45784 19.4821C8.90741 19.2288 9.56818 18.7964 9.86897 18.3063C10.1697 17.8159 10.2553 17.03 10.2772 16.5143Z" fill="currentColor"/>
+<path d="M18.2342 15.4528C18.2914 15.3589 18.4835 15.4047 18.492 15.5143C18.5175 15.8441 18.5845 16.2606 18.7537 16.5368C18.9231 16.813 19.2642 17.0617 19.5467 17.234C19.6405 17.2913 19.5947 17.4832 19.4852 17.4919C19.1553 17.5173 18.7389 17.5843 18.4627 17.7536C18.1865 17.9229 17.9377 18.264 17.7655 18.5465C17.708 18.64 17.5161 18.5935 17.5076 18.484C17.4821 18.1542 17.4152 17.7377 17.2459 17.4616C17.0765 17.1855 16.7354 16.9366 16.453 16.7643C16.3597 16.7067 16.406 16.5159 16.5155 16.5075C16.8453 16.482 17.2619 16.4151 17.5379 16.2458C17.814 16.0764 18.0619 15.7352 18.2342 15.4528Z" fill="currentColor"/>
+<path d="M6.21272 8.36295C6.35691 8.65767 6.54441 8.90174 6.71272 9.09244C7.06261 9.48886 7.56498 9.91351 8.07503 10.3444L8.44221 10.654C8.51181 10.7128 8.56613 10.7588 8.61213 10.7985C8.61681 10.8628 8.6208 10.9385 8.62678 11.0358L8.65706 11.5212C8.69714 12.176 8.73611 12.8154 8.83479 13.3258C6.69757 14.37 4.91876 16.0235 4.24788 17.9997C3.49542 13.2923 4.53948 10.2523 6.21272 8.36295Z" fill="currentColor"/>
+<path d="M12.5115 2.00846C13.0564 1.92113 13.5252 2.51198 14.4617 3.69498L14.7039 4.00162C14.97 4.33769 15.1031 4.50624 15.284 4.60221C15.4649 4.69806 15.6733 4.71098 16.0897 4.73697L16.4696 4.76041C17.9353 4.85191 18.6682 4.89783 18.9227 5.40885C19.1771 5.92012 18.7844 6.5583 17.9989 7.83463L17.7957 8.16471C17.5725 8.52741 17.4606 8.7096 17.4305 8.91666C17.4005 9.12357 17.4559 9.33327 17.5653 9.75162L17.6649 10.1325C18.05 11.6057 18.2419 12.3425 17.8543 12.7458C17.4667 13.1489 16.7558 12.9515 15.3338 12.5573L14.9656 12.4557C14.5616 12.3437 14.3596 12.288 14.16 12.32C13.9605 12.352 13.7861 12.4682 13.4373 12.7008L13.119 12.9128C11.8912 13.7315 11.2769 14.1412 10.783 13.8795C10.2891 13.6175 10.2426 12.8566 10.1492 11.3366L10.1248 10.944C10.0983 10.5121 10.0852 10.2954 9.99202 10.1081C9.89883 9.92096 9.73575 9.78395 9.41096 9.50943L9.11506 9.25846C7.97086 8.29135 7.39798 7.80808 7.4803 7.24283C7.55747 6.71291 8.16263 6.43991 9.36213 5.95865L9.96272 5.71842C10.3504 5.56351 10.5444 5.48626 10.6864 5.33853C10.8283 5.1908 10.9026 4.9891 11.0506 4.58658L11.1854 4.22037C11.7063 2.80388 11.9668 2.09586 12.5115 2.00846Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

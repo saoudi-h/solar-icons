@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates example/lib/icon_registry.dart from the committed lib/icons/*.dart:
+ * Generates example/lib/icon_registry.dart from the committed lib/dynamic/*.dart:
  * a kebab-case name -> constructor tear-off map covering the whole catalogue.
  * Dev-only (example app); rerun after regenerating the icon widgets.
  */
@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const packageRoot = path.resolve(here, '..')
-const iconsDir = path.join(packageRoot, 'lib/icons')
+const iconsDir = path.join(packageRoot, 'lib/dynamic')
 const outPath = path.join(packageRoot, 'example/lib/icon_registry.dart')
 
 const entries = []
@@ -24,10 +24,9 @@ for (const file of fs.readdirSync(iconsDir).sort()) {
 
 const map = entries.map(e => `  '${e.kebab}': ${e.cls}.new,`).join('\n')
 
-const out = `// Generated from lib/icons by tool/generate_gallery_registry.mjs. Do not edit.
+const out = `// Generated from lib/dynamic by tool/generate_gallery_registry.mjs. Do not edit.
 import 'package:flutter/widgets.dart';
 
-import 'package:solar_icons/icons.dart';
 import 'package:solar_icons/solar_icons.dart';
 
 /// Every catalogue icon by kebab-case name.

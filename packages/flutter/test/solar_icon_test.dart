@@ -16,10 +16,10 @@ void main() {
     );
   }
 
-  testWidgets('uses the theme size and draws an svg', (tester) async {
+  testWidgets('uses the provider size and draws an svg', (tester) async {
     await pumpIcon(
       tester,
-      const SolarTheme(
+      const SolarProvider(
         size: 40,
         color: Color(0xFF112233),
         strokeWidth: 2,
@@ -34,19 +34,19 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('an explicit size wins over the theme', (tester) async {
+  testWidgets('an explicit size wins over the provider', (tester) async {
     await pumpIcon(
       tester,
-      const SolarTheme(size: 40, child: SolarIcon(data, size: 18)),
+      const SolarProvider(size: 40, child: SolarIcon(data, size: 18)),
     );
 
     expect(tester.widget<SvgPicture>(find.byType(SvgPicture)).width, 18);
   });
 
-  testWidgets('isolated icons ignore the theme', (tester) async {
+  testWidgets('isolated icons ignore the provider', (tester) async {
     await pumpIcon(
       tester,
-      const SolarTheme(size: 40, child: SolarIcon(data, isolated: true)),
+      const SolarProvider(size: 40, child: SolarIcon(data, isolated: true)),
     );
 
     expect(tester.widget<SvgPicture>(find.byType(SvgPicture)).width, 24);

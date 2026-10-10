@@ -1,0 +1,144 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `airbuds-right` icon in every style.
+///
+/// Prefer the static widgets (e.g. `AirbudsRightLinearIcon`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class AirbudsRightIcon extends StatelessWidget {
+  /// Creates the `airbuds-right` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const AirbudsRightIcon({
+    super.key,
+    this.style = SolarIconStyle.linear,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Style to draw.
+  final SolarIconStyle style;
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  static const bold = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M10.735 4.95082C10.8174 5.35675 10.5551 5.75263 10.1492 5.83503C8.48526 6.17279 7.17279 7.48526 6.83503 9.1492C6.75263 9.55513 6.35675 9.81741 5.95082 9.73501C5.54488 9.65261 5.28261 9.25674 5.36501 8.8508C5.82261 6.59648 7.59648 4.82261 9.8508 4.36501C10.2567 4.28261 10.6526 4.54488 10.735 4.95082Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 22C10.5376 22 13 19.5376 13 16.5C13 13.4624 10.5376 11 7.5 11C4.46243 11 2 13.4624 2 16.5C2 19.5376 4.46243 22 7.5 22ZM5.25 14C5.25 13.5858 5.58579 13.25 6 13.25H7.5C8.6088 13.25 9.75 14.0232 9.75 15.25C9.75 16.0358 9.28176 16.6355 8.65373 16.9651L9.64312 18.6141C9.85623 18.9693 9.74106 19.43 9.38587 19.6431C9.03069 19.8562 8.56999 19.7411 8.35688 19.3859L7.07536 17.25H6.75V19C6.75 19.4142 6.41421 19.75 6 19.75C5.58579 19.75 5.25 19.4142 5.25 19V14ZM6.75 15.75V14.75H7.5C8.04806 14.75 8.25 15.0961 8.25 15.25C8.25 15.4039 8.04806 15.75 7.5 15.75H6.75Z" fill="currentColor"/>
+<path d="M19.6176 22C20.9334 22 22 20.8807 22 19.5H17.2353C17.2353 20.8807 18.3019 22 19.6176 22Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13 7.88889V5.54167C13 5.34832 13 5.25148 13.0038 5.16977C13.084 3.45743 14.3888 2.08814 16.0206 2.00402C16.0985 2 16.1907 2 16.375 2C16.6822 2 16.8358 2 16.9657 2.00669C19.6853 2.1469 21.86 4.42905 21.9936 7.28296C22 7.41917 22 7.58038 22 7.90278V17.8333H17.2353V12.3333C17.2353 11.7197 16.7612 11.2222 16.1765 11.2222C14.4222 11.2222 13 9.72984 13 7.88889ZM14.6765 5.125C14.6765 4.66476 15.0123 4.29167 15.4265 4.29167C15.8407 4.29167 16.1765 4.66476 16.1765 5.125V7.90278C16.1765 8.36302 15.8407 8.73611 15.4265 8.73611C15.0123 8.73611 14.6765 8.36302 14.6765 7.90278V5.125Z" fill="currentColor"/>''',
+  );
+
+  static const boldDuotone = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M22 19.5C22 20.8807 20.9329 22 19.6172 22C18.3017 21.9997 17.2354 20.8806 17.2354 19.5H22Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 13.25C8.6088 13.25 9.75 14.0232 9.75 15.25C9.75 16.0358 9.28135 16.6352 8.65332 16.9648L9.64355 18.6143C9.85643 18.9694 9.74083 19.4305 9.38574 19.6436C9.0306 19.8564 8.5695 19.7408 8.35645 19.3857L7.0752 17.25H6.75V19C6.75 19.4142 6.41421 19.75 6 19.75C5.58579 19.75 5.25 19.4142 5.25 19V14C5.25 13.5858 5.58579 13.25 6 13.25H7.5ZM6.75 15.75H7.5C8.04806 15.75 8.25 15.4039 8.25 15.25C8.25 15.0961 8.04806 14.75 7.5 14.75H6.75V15.75Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.9658 2.00684C19.6853 2.14713 21.8596 4.42935 21.9932 7.2832C21.9995 7.41931 22 7.58041 22 7.90234V17.833H17.2354V12.333C17.2352 11.7196 16.7613 11.2228 16.1768 11.2227C14.4224 11.2227 13 9.72962 13 7.88867V5.54199C13 5.34876 13.0001 5.2516 13.0039 5.16992C13.0841 3.45761 14.3888 2.08808 16.0205 2.00391C16.0984 1.99989 16.1907 2 16.375 2C16.6822 2 16.836 2.00014 16.9658 2.00684ZM15.4268 4.29199C15.0125 4.29199 14.6768 4.66476 14.6768 5.125V7.90234C14.6768 8.36258 15.0125 8.73633 15.4268 8.73633C15.8408 8.73616 16.1768 8.36247 16.1768 7.90234V5.125C16.1768 4.66487 15.8408 4.29217 15.4268 4.29199Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M7.5 10.9995C10.5376 10.9995 13 13.462 13 16.4995C13 19.5371 10.5376 21.9995 7.5 21.9995C4.46243 21.9995 2 19.5371 2 16.4995C2 13.462 4.46243 10.9995 7.5 10.9995Z" fill="currentColor"/>
+<path d="M9.85059 4.36476C10.2564 4.28239 10.6518 4.54403 10.7344 4.94973C10.8167 5.35552 10.5551 5.7519 10.1494 5.83449C8.48547 6.17225 7.17272 7.485 6.83496 9.14894C6.75237 9.55464 6.35599 9.81628 5.9502 9.73391C5.5445 9.65132 5.28286 9.25591 5.36523 8.85012C5.82285 6.59584 7.59631 4.82238 9.85059 4.36476Z" fill="currentColor"/>
+</g>''',
+  );
+
+  static const broken = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.broken,
+    body:
+        r'''<path d="M20.997 13L21 18.6667V19.5C21 19.6393 21 19.7089 20.997 19.7678C20.9366 20.973 19.973 21.9366 18.7678 21.997C18.7089 22 18.6393 22 18.5 22C18.3607 22 18.2911 22 18.2322 21.997C17.027 21.9366 16.0634 20.973 16.003 19.7678C16 19.7089 16 19.6393 16 19.5V18.6667M21 18.6667H16M16 18.6667V12C16 11.4477 15.5523 11 15 11C13.3431 11 12 9.65685 12 8V5.375L12 5.33562C12.0095 3.49738 13.4974 2.00954 15.3356 2.00004L15.375 2L15.4406 2.00007C18.5044 2.01591 20.9841 4.49563 20.9999 7.55936L21 7.625L21 9" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15 5V8" stroke="currentColor" stroke-linecap="round"/>
+<path d="M7.5 22C10.5376 22 13 19.5376 13 16.5C13 13.4624 10.5376 11 7.5 11C4.46243 11 2 13.4624 2 16.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9.00008 5.09961C7.04095 5.49729 5.49778 7.04046 5.1001 8.99959" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 19V14H7.5C8.32843 14 9 14.5596 9 15.25C9 15.9404 8.32843 16.5 7.5 16.5M6 14V16.5H7.5M7.5 16.5L9 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const linear = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.linear,
+    body:
+        r'''<path d="M16 18.6667V12C16 11.4477 15.5523 11 15 11C13.3431 11 12 9.65685 12 8V5.375L12 5.33562C12.0095 3.49738 13.4974 2.00954 15.3356 2.00004L15.375 2L15.4406 2.00007C18.5044 2.01591 20.9841 4.49563 20.9999 7.55936L21 7.625V18.6667M16 18.6667V19.5C16 19.6393 16 19.7089 16.003 19.7678C16.0634 20.973 17.027 21.9366 18.2322 21.997C18.2911 22 18.3607 22 18.5 22C18.6393 22 18.7089 22 18.7678 21.997C19.973 21.9366 20.9366 20.973 20.997 19.7678C21 19.7089 21 19.6393 21 19.5V18.6667M16 18.6667H21" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15 5V8" stroke="currentColor" stroke-linecap="round"/>
+<circle cx="7.5" cy="16.5" r="5.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9.00008 5.09961C7.04095 5.49729 5.49778 7.04046 5.1001 8.99959" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 19V14H7.5C8.32843 14 9 14.5596 9 15.25C9 15.9404 8.32843 16.5 7.5 16.5M6 14V16.5H7.5M7.5 16.5L9 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+  );
+
+  static const lineDuotone = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.lineDuotone,
+    body:
+        r'''<path d="M16 18.6667V12C16 11.4477 15.5523 11 15 11C13.3431 11 12 9.65685 12 8V5.375L12 5.33562C12.0095 3.49738 13.4974 2.00954 15.3356 2.00004L15.375 2L15.4406 2.00007C18.5044 2.01591 20.9841 4.49563 20.9999 7.55936L21 7.625V18.6667M16 18.6667V19.5C16 19.6393 16 19.7089 16.003 19.7678C16.0634 20.973 17.027 21.9366 18.2322 21.997C18.2911 22 18.3607 22 18.5 22C18.6393 22 18.7089 22 18.7678 21.997C19.973 21.9366 20.9366 20.973 20.997 19.7678C21 19.7089 21 19.6393 21 19.5V18.6667M16 18.6667H21" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 19V14H7.5C8.32843 14 9 14.5596 9 15.25C9 15.9404 8.32843 16.5 7.5 16.5M6 14V16.5H7.5M7.5 16.5L9 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M15 5V8" stroke="currentColor" stroke-linecap="round"/>
+
+<circle opacity="0.5" cx="7.5" cy="16.5" r="5.5" stroke="currentColor" stroke-linecap="round"/>
+
+<path opacity="0.5" d="M9.00008 5.09961C7.04095 5.49729 5.49778 7.04046 5.1001 8.99959" stroke="currentColor" stroke-linecap="round"/>''',
+  );
+
+  static const outline = SolarIconData(
+    name: 'airbuds-right',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M15.3759 1.25L15.4445 1.25008C18.9194 1.26804 21.732 4.08057 21.7499 7.55549L21.7499 7.55851L21.75 7.62415V19.5201C21.75 19.6398 21.75 19.7273 21.7461 19.8053C21.6663 21.3953 20.3953 22.6663 18.8053 22.7461C18.7273 22.75 18.6399 22.75 18.5202 22.75H18.4798C18.3601 22.75 18.2727 22.75 18.1947 22.7461C16.6047 22.6663 15.3337 21.3953 15.2539 19.8053C15.25 19.7273 15.25 19.6399 15.25 19.5201L15.25 12C15.25 11.8619 15.1381 11.75 15 11.75C12.9289 11.75 11.25 10.0711 11.25 8V5.375L11.25 5.33476L11.2501 5.33174C11.2617 3.08232 13.0823 1.26168 15.3317 1.25006L15.3348 1.25005L15.3759 1.25ZM15.3395 2.75004C15.339 2.75004 15.3385 2.75004 15.3381 2.75004C13.9121 2.75817 12.7581 3.91226 12.75 5.33828C12.75 5.33869 12.75 5.33909 12.75 5.33949L12.75 5.375V8C12.75 9.24264 13.7574 10.25 15 10.25C15.9665 10.25 16.75 11.0335 16.75 12V17.9167H20.25V7.62585L20.2499 7.56324C20.2499 7.56275 20.2499 7.56226 20.2499 7.56178C20.2354 4.91039 18.0896 2.76455 15.4382 2.75007C15.4377 2.75007 15.4372 2.75007 15.4368 2.75007L15.3759 2.75H15.3741L15.3395 2.75004ZM20.25 19.4167H16.75V19.5C16.75 19.6484 16.7502 19.6948 16.752 19.7302C16.7932 20.5508 17.4492 21.2068 18.2698 21.248C18.3052 21.2498 18.3516 21.25 18.5 21.25C18.6484 21.25 18.6948 21.2498 18.7302 21.248C19.5508 21.2068 20.2068 20.5508 20.248 19.7302C20.2498 19.6948 20.25 19.6484 20.25 19.5V19.4167ZM15 4.25C15.4142 4.25 15.75 4.58579 15.75 5V8C15.75 8.41422 15.4142 8.75 15 8.75C14.5858 8.75 14.25 8.41422 14.25 8V5C14.25 4.58579 14.5858 4.25 15 4.25ZM9.73501 4.95082C9.81741 5.35676 9.55513 5.75263 9.1492 5.83503C7.48526 6.17279 6.17279 7.48526 5.83503 9.1492C5.75263 9.55514 5.35675 9.81741 4.95082 9.73501C4.54488 9.65261 4.28261 9.25674 4.36501 8.8508C4.82261 6.59648 6.59648 4.82261 8.8508 4.36501C9.25674 4.28261 9.65261 4.54489 9.73501 4.95082ZM7.5 11.75C4.87665 11.75 2.75 13.8766 2.75 16.5C2.75 19.1234 4.87665 21.25 7.5 21.25C10.1234 21.25 12.25 19.1234 12.25 16.5C12.25 13.8766 10.1234 11.75 7.5 11.75ZM1.25 16.5C1.25 13.0482 4.04822 10.25 7.5 10.25C10.9518 10.25 13.75 13.0482 13.75 16.5C13.75 19.9518 10.9518 22.75 7.5 22.75C4.04822 22.75 1.25 19.9518 1.25 16.5ZM5.25 14C5.25 13.5858 5.58579 13.25 6 13.25H7.5C8.6088 13.25 9.75 14.0232 9.75 15.25C9.75 16.0358 9.28176 16.6355 8.65373 16.9651L9.64312 18.6141C9.85623 18.9693 9.74106 19.43 9.38587 19.6431C9.03069 19.8562 8.56999 19.7411 8.35688 19.3859L7.07536 17.25H6.75V19C6.75 19.4142 6.41421 19.75 6 19.75C5.58579 19.75 5.25 19.4142 5.25 19V14ZM6.75 14.75V15.75H7.5C8.04806 15.75 8.25 15.4039 8.25 15.25C8.25 15.0961 8.04806 14.75 7.5 14.75H6.75Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => switch (style) {
+    SolarIconStyle.bold => bold,
+    SolarIconStyle.boldDuotone => boldDuotone,
+    SolarIconStyle.broken => broken,
+    SolarIconStyle.linear => linear,
+    SolarIconStyle.lineDuotone => lineDuotone,
+    SolarIconStyle.outline => outline,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

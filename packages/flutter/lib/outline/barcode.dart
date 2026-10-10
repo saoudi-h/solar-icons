@@ -1,0 +1,69 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `barcode` icon in the outline style.
+class BarcodeOutlineIcon extends StatelessWidget {
+  /// Creates the `barcode` icon in the outline style.
+  const BarcodeOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'barcode',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M1.88379 18.9785V4.97852C1.88379 4.5643 2.21958 4.22852 2.63379 4.22852C3.048 4.22852 3.38379 4.5643 3.38379 4.97852V18.9785C3.38379 19.3927 3.048 19.7285 2.63379 19.7285C2.21958 19.7285 1.88379 19.3927 1.88379 18.9785ZM4.78906 18.9785V4.97852C4.78906 4.5643 5.12485 4.22852 5.53906 4.22852C5.95328 4.22852 6.28906 4.5643 6.28906 4.97852V18.9785C6.28906 19.3927 5.95328 19.7285 5.53906 19.7285C5.12485 19.7285 4.78906 19.3927 4.78906 18.9785ZM11.5674 18.9785V4.97852C11.5674 4.5643 11.9032 4.22852 12.3174 4.22852C12.7314 4.22878 13.0674 4.56446 13.0674 4.97852V18.9785C13.0674 19.3926 12.7314 19.7283 12.3174 19.7285C11.9032 19.7285 11.5674 19.3927 11.5674 18.9785ZM14.4727 18.9785V4.97852C14.4727 4.5643 14.8084 4.22852 15.2227 4.22852C15.6366 4.22878 15.9727 4.56446 15.9727 4.97852V18.9785C15.9727 19.3926 15.6366 19.7283 15.2227 19.7285C14.8084 19.7285 14.4727 19.3927 14.4727 18.9785ZM21.25 18.9785V4.97852C21.25 4.5643 21.5858 4.22754 22 4.22754C22.4142 4.22754 22.75 4.5643 22.75 4.97852V18.9785C22.7497 19.3925 22.4141 19.7285 22 19.7285C21.5859 19.7285 21.2503 19.3925 21.25 18.9785ZM10.1621 18.5156C10.1621 19.1971 9.60922 19.75 8.92773 19.75C8.24627 19.75 7.69434 19.1971 7.69434 18.5156V5.44043C7.69437 4.75898 8.24629 4.20608 8.92773 4.20605L9.05371 4.21289C9.67603 4.27597 10.1621 4.80148 10.1621 5.44043V18.5156ZM19.8447 18.4941C19.8447 19.1755 19.2926 19.7283 18.6113 19.7285C17.9299 19.7285 17.377 19.1756 17.377 18.4941V5.41895C17.377 4.73746 17.9298 4.18457 18.6113 4.18457L18.7373 4.19141C19.3594 4.25473 19.8447 4.78015 19.8447 5.41895V18.4941Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,75 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `water-sun` icon in the boldDuotone style.
+class WaterSunBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `water-sun` icon in the boldDuotone style.
+  const WaterSunBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'water-sun',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0002 1.25C12.4144 1.25 12.7502 1.58579 12.7502 2V3C12.7502 3.41421 12.4144 3.75 12.0002 3.75C11.586 3.75 11.2502 3.41421 11.2502 3V2C11.2502 1.58579 11.586 1.25 12.0002 1.25ZM1.25017 12C1.25017 11.5858 1.58596 11.25 2.00017 11.25H3.00017C3.41438 11.25 3.75017 11.5858 3.75017 12C3.75017 12.4142 3.41438 12.75 3.00017 12.75H2.00017C1.58596 12.75 1.25017 12.4142 1.25017 12ZM20.2502 12C20.2502 11.5858 20.586 11.25 21.0002 11.25H22.0002C22.4144 11.25 22.7502 11.5858 22.7502 12C22.7502 12.4142 22.4144 12.75 22.0002 12.75H21.0002C20.586 12.75 20.2502 12.4142 20.2502 12Z" fill="currentColor"/>
+<path d="M22.1722 16.0424C20.8488 15.7306 20.1708 14.9891 19.5458 14.0435C19.137 13.425 18.4905 13.1875 17.8692 13.2526C17.955 12.8486 18.0002 12.4296 18.0002 12C18.0002 8.68629 15.3139 6 12.0002 6C8.68646 6 6.00017 8.68629 6.00017 12C6.00017 12.3623 6.03228 12.7171 6.0938 13.0617C5.51698 13.0396 4.93367 13.2972 4.57004 13.8657C3.90775 14.9011 3.2291 15.7123 1.82816 16.0424C1.42498 16.1374 1.17516 16.5412 1.27016 16.9444C1.36516 17.3476 1.76901 17.5974 2.17218 17.5024C4.13929 17.0389 5.09416 15.8301 5.83365 14.674C5.88442 14.5946 5.95388 14.5619 6.02981 14.5602C6.11032 14.5585 6.20392 14.5934 6.27565 14.6853C7.38876 16.1101 9.15759 17.75 12.0002 17.75C14.7604 17.75 16.5386 16.4804 17.7063 14.9195C17.7936 14.8027 17.9223 14.7449 18.0408 14.7427C18.1519 14.7406 18.2374 14.7844 18.2944 14.8705C19.0206 15.9692 19.9762 17.066 21.8282 17.5024C22.2313 17.5974 22.6352 17.3476 22.7302 16.9444C22.8252 16.5412 22.5754 16.1374 22.1722 16.0424Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M4.56994 18.8662C5.25678 17.7924 6.72741 17.827 7.45764 18.7617C8.44761 20.0289 9.82921 21.2499 11.9996 21.2499C14.208 21.2499 15.5693 20.2715 16.5045 19.0214C17.2245 18.059 18.7906 17.9017 19.5455 19.0439C20.1705 19.9894 20.8484 20.7311 22.1715 21.0429C22.5746 21.1379 22.8249 21.5412 22.7301 21.9443C22.6351 22.3474 22.2309 22.5978 21.8278 22.5029C19.9758 22.0665 19.0197 20.9697 18.2936 19.871C18.2366 19.7849 18.1516 19.741 18.0406 19.7431C17.9221 19.7454 17.793 19.8031 17.7057 19.9199C16.538 21.4807 14.7597 22.7499 11.9996 22.7499C9.15715 22.7499 7.38811 21.1103 6.27502 19.6855C6.20343 19.5939 6.11029 19.5589 6.0299 19.5605C5.9541 19.5621 5.88436 19.5947 5.83361 19.6738C5.09412 20.8299 4.13861 22.0394 2.1715 22.5029C1.76845 22.5976 1.36511 22.3473 1.27014 21.9443C1.17526 21.5412 1.42471 21.1379 1.82775 21.0429C3.22866 20.7128 3.90767 19.9015 4.56994 18.8662Z" fill="currentColor"/>
+<path d="M18.5397 4.39838C18.8325 4.10557 19.3073 4.10575 19.6002 4.39838C19.8931 4.69127 19.8931 5.16603 19.6002 5.45893L19.2076 5.85248C18.9148 6.14507 18.4399 6.14507 18.1471 5.85248C17.8542 5.55959 17.8542 5.08385 18.1471 4.79096L18.5397 4.39838Z" fill="currentColor"/>
+<path d="M4.39904 4.39838C4.69194 4.10549 5.1667 4.10549 5.45959 4.39838L5.85217 4.79096C6.14506 5.08385 6.14506 5.55861 5.85217 5.85151C5.55927 6.1444 5.08451 6.1444 4.79162 5.85151L4.39904 5.45893C4.10615 5.16603 4.10615 4.69127 4.39904 4.39838Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

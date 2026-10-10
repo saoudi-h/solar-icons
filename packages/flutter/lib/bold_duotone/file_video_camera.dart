@@ -1,0 +1,74 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `file-video-camera` icon in the boldDuotone style.
+class FileVideoCameraBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `file-video-camera` icon in the boldDuotone style.
+  const FileVideoCameraBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'file-video-camera',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M8.32422 12.1621C9.5078 12.1621 10.0997 12.1623 10.498 12.4893C10.5708 12.549 10.6375 12.6157 10.6973 12.6885C11.0242 13.0869 11.0244 13.6794 11.0244 14.8633V15.2227C11.0244 16.4065 11.0242 16.9991 10.6973 17.3975C10.6375 17.4702 10.5708 17.5369 10.498 17.5967C10.0997 17.9236 9.5078 17.9238 8.32422 17.9238C7.14038 17.9238 6.54782 17.9236 6.14941 17.5967C6.07666 17.5369 6.00993 17.4702 5.9502 17.3975C5.62324 16.9991 5.62305 16.4065 5.62305 15.2227V14.8633C5.62305 13.6794 5.62324 13.0869 5.9502 12.6885C6.00993 12.6157 6.07666 12.549 6.14941 12.4893C6.54782 12.1623 7.14038 12.1621 8.32422 12.1621Z" fill="currentColor"/>
+<path d="M11.5 2.00586C12.0266 2.01725 12.4003 2.05009 12.7842 2.14453C12.9404 2.18298 13.1407 2.24407 13.292 2.29883C13.8622 2.50534 14.2785 2.7833 15.1104 3.33887C16.0788 3.98569 17.1892 4.777 18 5.5C18.911 6.31239 19.9546 7.49387 20.7471 8.44238C20.8745 8.59494 20.938 8.67168 21.0312 8.79883C21.5613 9.52144 21.9336 10.546 21.9902 11.4404C22.0002 11.5979 22 11.7325 22 12H21.9844C21.9781 11.8216 21.9694 11.6555 21.957 11.5H17.9053C16.8082 11.5001 15.8382 11.4996 15.0566 11.3945C14.2097 11.2806 13.363 11.0192 12.6719 10.3281C11.9806 9.63685 11.7184 8.7895 11.6045 7.94238C11.4995 7.16098 11.4999 6.19157 11.5 5.09473L11.5088 2.25977L11.5 2.00586Z" fill="currentColor"/>''',
+    accent:
+        r'''<path opacity="0.5" d="M10.0303 2C10.6361 2 11.1218 1.99994 11.5303 2.0166C11.5168 2.09653 11.5091 2.1783 11.5088 2.26074L11.5 5.09473C11.4999 6.19183 11.4994 7.16184 11.6045 7.94336C11.7184 8.79041 11.9807 9.6369 12.6719 10.3281C13.3631 11.0193 14.2096 11.2816 15.0566 11.3955C15.8382 11.5006 16.8082 11.5001 17.9053 11.5H21.957C21.9996 12.0342 22 12.6899 22 13.5625V14C22 17.7712 21.9997 19.6566 20.8281 20.8281C19.6566 21.9997 17.7712 22 14 22H10C6.22876 22 4.34345 21.9997 3.17188 20.8281C2.0003 19.6566 2 17.7712 2 14V10C2 6.22876 2.0003 4.34345 3.17188 3.17188C4.34345 2.0003 6.23918 2 10.0303 2Z" fill="currentColor"/>
+
+<path opacity="0.5" d="M11.2627 14.0235C11.9633 13.6732 12.3142 13.498 12.5703 13.6563C12.8262 13.8148 12.8262 14.2072 12.8262 14.9903V15.0948C12.8262 15.878 12.8263 16.2704 12.5703 16.4288C12.3142 16.5871 11.9633 16.4119 11.2627 16.0616L10.8652 15.8507V14.2345L11.2627 14.0235Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

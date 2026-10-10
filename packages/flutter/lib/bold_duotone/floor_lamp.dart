@@ -1,0 +1,78 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `floor-lamp` icon in the boldDuotone style.
+class FloorLampBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `floor-lamp` icon in the boldDuotone style.
+  const FloorLampBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'floor-lamp',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M15.0006 21.25C15.4145 21.2503 15.7506 21.5859 15.7506 22C15.7506 22.4141 15.4145 22.7497 15.0006 22.75H9.00056C8.58635 22.75 8.25056 22.4142 8.25056 22C8.25056 21.5858 8.58635 21.25 9.00056 21.25H15.0006Z" fill="currentColor"/>
+<path d="M5.31111 7.44238C5.66075 6.99497 6.32472 6.91288 6.62947 7.39258C7.29646 8.44251 7.28711 9.83624 6.52204 10.8906C6.50034 10.9205 6.47759 10.9501 6.45466 10.9795C5.62352 12.0435 4.2395 12.409 3.03865 11.9883C2.5056 11.8012 2.42968 11.132 2.77888 10.6846L5.31111 7.44238Z" fill="currentColor"/>
+<path d="M17.3717 7.39258C17.6765 6.91333 18.3395 6.99511 18.689 7.44238L21.2213 10.6846C21.5705 11.132 21.4946 11.8012 20.9615 11.9883C19.7606 12.409 18.3766 12.0435 17.5455 10.9795C17.5226 10.9501 17.4998 10.9205 17.4781 10.8906C16.713 9.83623 16.7046 8.44251 17.3717 7.39258Z" fill="currentColor"/>
+<path d="M13.9996 4C14.5517 4 15.0158 4.45972 14.8355 4.98145C14.4288 6.15609 13.3126 7 11.9996 7C10.6867 6.99987 9.57127 6.156 9.16462 4.98145C8.98424 4.45977 9.44753 4.00017 9.99958 4H13.9996Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M12.7502 7V13.4072C12.8724 13.2899 13.0017 13.1782 13.137 13.0732L13.1487 13.0635L17.0891 10.1709C17.1845 10.4219 17.3144 10.6642 17.4788 10.8906C17.5005 10.9206 17.5232 10.9501 17.5461 10.9795C17.6683 11.1358 17.8019 11.2774 17.9455 11.4033L14.0461 14.2666C13.2307 14.905 12.7513 15.89 12.7512 16.9365V18L12.7502 18.0156V21.25H11.2502V16.9033C11.2401 15.8694 10.7622 14.8983 9.95531 14.2666L6.0559 11.4033C6.19947 11.2775 6.33326 11.1357 6.45531 10.9795C6.47821 10.9502 6.50102 10.9205 6.5227 10.8906C6.68699 10.6642 6.81603 10.4218 6.91137 10.1709L10.8528 13.0635L10.8645 13.0732C10.9997 13.1782 11.1281 13.2899 11.2502 13.4072V7C11.2502 6.96864 11.2524 6.93758 11.2561 6.90723C11.494 6.96791 11.7435 7 12.0002 7C12.2573 7 12.5072 6.96804 12.7454 6.90723C12.7491 6.93757 12.7502 6.96864 12.7502 7Z" fill="currentColor"/>
+<path d="M2.43969 7.78613C3.13896 6.8913 4.42472 6.73795 5.31176 7.44336L2.77953 10.6846C1.89239 9.97908 1.74047 8.68124 2.43969 7.78613Z" fill="currentColor"/>
+<path d="M18.6887 7.44336C19.5758 6.73793 20.8615 6.89124 21.5608 7.78613C22.26 8.68123 22.1081 9.97907 21.2209 10.6846L18.6887 7.44336Z" fill="currentColor"/>
+<path d="M12.0002 2C13.1048 2 14.0002 2.89543 14.0002 4H10.0002C10.0002 2.89543 10.8957 2 12.0002 2Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

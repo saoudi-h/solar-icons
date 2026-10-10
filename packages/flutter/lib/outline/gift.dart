@@ -1,0 +1,69 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `gift` icon in the outline style.
+class GiftOutlineIcon extends StatelessWidget {
+  /// Creates the `gift` icon in the outline style.
+  const GiftOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'gift',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0576 1.25C14.3657 1.24999 16.1746 1.24974 17.5859 1.43945C19.0307 1.63369 20.1706 2.03976 21.0654 2.93457C21.9602 3.82938 22.3663 4.96933 22.5605 6.41406C22.7503 7.82544 22.75 9.63432 22.75 11.9424V12.0576C22.75 14.3657 22.7503 16.1746 22.5605 17.5859C22.3663 19.0307 21.9602 20.1706 21.0654 21.0654C20.1706 21.9602 19.0307 22.3663 17.5859 22.5605C16.1746 22.7503 14.3657 22.75 12.0576 22.75H11.9424C9.63432 22.75 7.82544 22.7503 6.41406 22.5605C4.96933 22.3663 3.82938 21.9602 2.93457 21.0654C2.03976 20.1706 1.63369 19.0307 1.43945 17.5859C1.24974 16.1746 1.24999 14.3657 1.25 12.0576V11.9424C1.24999 9.63432 1.24974 7.82544 1.43945 6.41406C1.63369 4.96933 2.03976 3.82938 2.93457 2.93457C3.82938 2.03976 4.96933 1.63369 6.41406 1.43945C7.82544 1.24974 9.63432 1.24999 11.9424 1.25H12.0576ZM2.75 12.75C2.75211 14.7437 2.77092 16.2276 2.92676 17.3867C3.09865 18.6649 3.42551 19.4353 3.99512 20.0049C4.56472 20.5745 5.33508 20.9014 6.61328 21.0732C7.77236 21.2291 9.25629 21.2479 11.25 21.25V14.124C10.4703 15.6811 8.85991 16.75 7 16.75C6.58579 16.75 6.25 16.4142 6.25 16C6.25 15.5858 6.58579 15.25 7 15.25C8.53679 15.25 9.8245 14.1833 10.1631 12.75H2.75ZM13.8369 12.75C14.1755 14.1833 15.4632 15.25 17 15.25C17.4142 15.25 17.75 15.5858 17.75 16C17.75 16.4142 17.4142 16.75 17 16.75C15.1401 16.75 13.5297 15.6811 12.75 14.124V21.25C14.7437 21.2479 16.2276 21.2291 17.3867 21.0732C18.6649 20.9014 19.4353 20.5745 20.0049 20.0049C20.5745 19.4353 20.9014 18.6649 21.0732 17.3867C21.2291 16.2276 21.2479 14.7437 21.25 12.75H13.8369ZM11.25 2.75C9.25629 2.75211 7.77236 2.77092 6.61328 2.92676C5.33508 3.09865 4.56472 3.42551 3.99512 3.99512C3.42551 4.56472 3.09865 5.33508 2.92676 6.61328C2.77092 7.77236 2.75211 9.25629 2.75 11.25H6.91406C6.56311 10.8116 6.30022 10.2946 6.15723 9.72266C5.61897 7.56964 7.56964 5.61897 9.72266 6.15723C10.2946 6.30022 10.8116 6.56311 11.25 6.91406V2.75ZM9.3584 7.61231C8.30426 7.34908 7.34908 8.30426 7.61231 9.3584C7.88956 10.4674 8.88486 11.2465 10.0273 11.25H11.25V10.0273C11.2465 8.88486 10.4674 7.88956 9.3584 7.61231ZM16.3877 9.3584C16.6509 8.30425 15.6957 7.34907 14.6416 7.61231C13.532 7.8897 12.7527 8.88606 12.75 10.0293V11.25H13.9727C15.1151 11.2465 16.1104 10.4674 16.3877 9.3584ZM12.75 6.91406C13.1884 6.5631 13.7054 6.30023 14.2773 6.15723C16.4304 5.61897 18.381 7.56964 17.8428 9.72266C17.6998 10.2946 17.4369 10.8116 17.0859 11.25H21.25C21.2479 9.25629 21.2291 7.77236 21.0732 6.61328C20.9014 5.33508 20.5745 4.56472 20.0049 3.99512C19.4353 3.42551 18.6649 3.09865 17.3867 2.92676C16.2276 2.77092 14.7437 2.75211 12.75 2.75V6.91406Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

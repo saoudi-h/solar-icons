@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `cloud-snowfall` icon in the outline style.
+class CloudSnowfallOutlineIcon extends StatelessWidget {
+  /// Creates the `cloud-snowfall` icon in the outline style.
+  const CloudSnowfallOutlineIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'cloud-snowfall',
+    style: SolarIconStyle.outline,
+    body:
+        r'''<path d="M12.001 14.25C12.4152 14.25 12.751 14.5858 12.751 15V17.1631L14.624 16.082C14.9827 15.8749 15.4413 15.9978 15.6484 16.3564C15.8555 16.7151 15.7327 17.1737 15.374 17.3809L13.501 18.4619L15.377 19.5449C15.7355 19.752 15.8581 20.2107 15.6514 20.5693C15.4443 20.9279 14.9856 21.0515 14.627 20.8447L12.751 19.7617V22C12.751 22.4142 12.4152 22.75 12.001 22.75C11.5868 22.75 11.251 22.4142 11.251 22V19.7617L9.375 20.8447C9.01634 21.0515 8.55761 20.9279 8.35059 20.5693C8.14385 20.2107 8.26648 19.752 8.625 19.5449L10.501 18.4619L8.62793 17.3809C8.26925 17.1737 8.14642 16.7151 8.35352 16.3564C8.56063 15.9978 9.01923 15.8749 9.37793 16.082L11.251 17.1631V15C11.251 14.5858 11.5868 14.25 12.001 14.25Z" fill="currentColor"/>
+<path d="M12.4766 2.25C15.6345 2.25018 18.2721 4.49422 18.8311 7.47168C21.1308 8.44787 22.7498 10.7091 22.75 13.3525C22.75 16.4264 20.5625 18.984 17.6572 19.6055C17.2522 19.6921 16.8533 19.4342 16.7666 19.0293C16.68 18.6244 16.9379 18.2254 17.3428 18.1387C19.5825 17.6597 21.25 15.6926 21.25 13.3525C21.2498 11.216 19.8603 9.3908 17.9121 8.72461C17.4037 8.5508 16.857 8.4561 16.2861 8.45605C15.7035 8.45605 15.1452 8.55467 14.6279 8.73535C14.237 8.87171 13.8094 8.66535 13.6729 8.27441C13.5363 7.8834 13.7428 7.45591 14.1338 7.31934C14.808 7.08384 15.533 6.95605 16.2861 6.95605L16.7256 6.9707C16.8708 6.98037 17.0147 6.99465 17.1572 7.01367C16.4979 5.17581 14.7559 3.83602 12.6787 3.75391L12.4766 3.75C9.72647 3.75 7.51172 5.95123 7.51172 8.64746C7.51176 9.10948 7.57661 9.55603 7.69727 9.97852C8.19435 10.122 8.65961 10.3391 9.08008 10.6172C9.42554 10.8457 9.52051 11.3108 9.29199 11.6562C9.06347 12.0017 8.59839 12.0967 8.25293 11.8682C7.87219 11.6163 7.43941 11.4351 6.97363 11.3447C6.75194 11.3017 6.52192 11.2793 6.28613 11.2793C4.32504 11.2793 2.75003 12.8481 2.75 14.7646C2.75 16.6812 4.32502 18.25 6.28613 18.25C6.70015 18.2502 7.03613 18.5859 7.03613 19C7.03613 19.4141 6.70015 19.7498 6.28613 19.75C3.51338 19.75 1.25 17.5263 1.25 14.7646C1.25003 12.0605 3.41977 9.87214 6.11328 9.78223C6.04653 9.41365 6.01174 9.03436 6.01172 8.64746C6.01172 5.10612 8.91483 2.25 12.4766 2.25Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

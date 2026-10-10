@@ -2,6 +2,16 @@
 /**
  * Generates Flutter icon widgets from packages/core/svgs.
  *
+ * Two complementary surfaces, mirroring the React package:
+ *
+ * - Static widgets (`lib/<style>/<icon>.dart`, e.g. `HomeLinearIcon` in
+ *   `lib/linear/home.dart`): one style embedded. Import by style path or
+ *   by style-suffixed name from a style barrel (`lib/linear.dart`) or the
+ *   root. This is the default: no unused SVG ships with the widget.
+ * - Dynamic widgets (`lib/dynamic/<icon>.dart`, e.g. `HomeIcon` with a
+ *   `style` parameter): all six styles embedded, switching at runtime.
+ *   Opt in when the style is only known at runtime.
+ *
  * Normalization matches `normalizeBody` in packages/core/src/parser.ts.
  * This script reads the SVGs directly so the Flutter package can be
  * generated without installing the pnpm workspace.
@@ -16,19 +26,20 @@ const packageRoot = path.resolve(here, '..')
 const repoRoot = path.resolve(packageRoot, '../..')
 const svgsDir = path.join(repoRoot, 'packages/core/svgs')
 const descriptionsPath = path.join(repoRoot, 'packages/core/src/metadata-descriptions.json')
-const iconsDir = path.join(packageRoot, 'lib/icons')
-const barrelPath = path.join(packageRoot, 'lib/icons.dart')
+const dynamicDir = path.join(packageRoot, 'lib/dynamic')
+const libDir = path.join(packageRoot, 'lib')
 
+// [core style dir, SolarIconStyle field, output dir, class suffix]
 const STYLES = [
-    ['Bold', 'bold'],
-    ['BoldDuotone', 'boldDuotone'],
-    ['Broken', 'broken'],
-    ['Linear', 'linear'],
-    ['LineDuotone', 'lineDuotone'],
-    ['Outline', 'outline'],
+    ['Bold', 'bold', 'bold', 'Bold'],
+    ['BoldDuotone', 'boldDuotone', 'bold_duotone', 'BoldDuotone'],
+    ['Broken', 'broken', 'broken', 'Broken'],
+    ['Linear', 'linear', 'linear', 'Linear'],
+    ['LineDuotone', 'lineDuotone', 'line_duotone', 'LineDuotone'],
+    ['Outline', 'outline', 'outline', 'Outline'],
 ]
 
-const RESERVED = new Set(['SolarIcon', 'SolarIconData', 'SolarIconStyle', 'SolarTheme'])
+const RESERVED = new Set(['SolarIcon', 'SolarIconData', 'SolarIconStyle', 'SolarProvider'])
 
 const xmlDecl = () => /^[\s\S]*?<\?xml[\s\S]*?>\s*/
 const svgOpen = () => /<svg[^>]*>/
@@ -135,68 +146,39 @@ function loadAliases() {
     return aliases
 }
 
-function renderIcon(icon, aliases) {
-    const className = `${pascal(icon.name)}Icon`
+function checkClass(seenClasses, className, what) {
     if (RESERVED.has(className)) {
-        throw new Error(`Generated class ${className} collides with the public API`)
+        throw new Error(`Generated class ${className} collides with the public API (${what})`)
     }
+    if (seenClasses.has(className)) {
+        throw new Error(`Duplicate class ${className} (${what})`)
+    }
+    seenClasses.add(className)
+}
 
-    const payloads = STYLES.map(([styleDir, field]) => {
-        const parsed = icon.styles.get(styleDir)
-        if (!parsed) {
-            throw new Error(`Icon "${icon.name}" is missing the ${styleDir} style`)
-        }
-        const accent = parsed.accent ? `\n    accent: ${dartRaw(parsed.accent)},` : ''
-        return `  static const ${field} = SolarIconData(
-    name: '${icon.name}',
-    style: SolarIconStyle.${field},
-    body: ${dartRaw(parsed.body)},${accent}
-  );`
-    }).join('\n\n')
-
-    const typedefs = (aliases.get(icon.name) ?? [])
+function deprecationTypedefs(aliasList, canonicalClass, suffix) {
+    return (aliasList ?? [])
         .map(alias => {
-            const aliasClass = `${pascal(alias.name)}Icon`
-            if (RESERVED.has(aliasClass) || aliasClass === className) {
-                throw new Error(`Alias ${aliasClass} collides with ${className}`)
-            }
+            const aliasClass = `${pascal(alias.name)}${suffix}Icon`
             const since = alias.deprecatedSince ? ` Deprecated since ${alias.deprecatedSince}.` : ''
-            const message = `${alias.reason}${since} Use ${className} instead.`
-            return `@Deprecated(${dartString(message)})\ntypedef ${aliasClass} = ${className};`
+            const message = `${alias.reason}${since} Use ${canonicalClass} instead.`
+            return { aliasClass, rendered: `@Deprecated(${dartString(message)})\ntypedef ${aliasClass} = ${canonicalClass};` }
         })
-        .join('\n\n')
+}
 
-    return `// Generated from packages/core/svgs. Do not edit.
-// ignore_for_file: public_member_api_docs
-
-import 'package:flutter/widgets.dart';
-
-import '../src/solar_icon.dart';
-import '../src/solar_icon_data.dart';
-import '../src/solar_icon_style.dart';
-import '../src/solar_theme.dart';
-
-/// The \`${icon.name}\` icon.
-class ${className} extends StatelessWidget {
-  /// Creates the \`${icon.name}\` icon.
-  ///
-  /// [style] defaults to [SolarIconStyle.linear].
-  const ${className}({
-    super.key,
-    this.style = SolarIconStyle.linear,
+function widgetParams(withStyle) {
+    return `    super.key,${withStyle ? '\n    this.style = SolarIconStyle.linear,' : ''}
     this.size,
     this.color,
     this.strokeWidth,
     this.secondaryColor,
     this.secondaryOpacity,
     this.semanticLabel,
-    this.isolated = false,
-  });
+    this.isolated = false,`
+}
 
-  /// Style to draw.
-  final SolarIconStyle style;
-
-  /// Width and height.
+function widgetFields(withStyle) {
+    return `${withStyle ? '  /// Style to draw.\n  final SolarIconStyle style;\n\n' : ''}  /// Width and height.
   final double? size;
 
   /// Primary color.
@@ -214,8 +196,106 @@ class ${className} extends StatelessWidget {
   /// Accessibility label.
   final String? semanticLabel;
 
-  /// When true, ignores [SolarTheme] and [IconTheme].
-  final bool isolated;
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;`
+}
+
+const WIDGET_BUILD = `  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }`
+
+function dataPayload(iconName, field, parsed) {
+    const accent = parsed.accent ? `,\n    accent: ${dartRaw(parsed.accent)}` : ''
+    return `SolarIconData(
+    name: '${iconName}',
+    style: SolarIconStyle.${field},
+    body: ${dartRaw(parsed.body)}${accent},
+  )`
+}
+
+function renderStatic(icon, styleDir, field, outDir, suffix, aliases) {
+    const parsed = icon.styles.get(styleDir)
+    if (!parsed) {
+        throw new Error(`Icon "${icon.name}" is missing the ${styleDir} style`)
+    }
+    const className = `${pascal(icon.name)}${suffix}Icon`
+    const typedefs = deprecationTypedefs(aliases.get(icon.name), className, suffix)
+
+    return { className, typedefs, content: `// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The \`${icon.name}\` icon in the ${field} style.
+class ${className} extends StatelessWidget {
+  /// Creates the \`${icon.name}\` icon in the ${field} style.
+  const ${className}({
+${widgetParams(false)}
+  });
+
+${widgetFields(false)}
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = ${dataPayload(icon.name, field, parsed)};
+
+  SolarIconData get _data => data;
+
+${WIDGET_BUILD}
+}
+${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`} 
+}
+
+function renderDynamic(icon, aliases) {
+    const className = `${pascal(icon.name)}Icon`
+    const payloads = STYLES.map(([styleDir, field]) => {
+        const parsed = icon.styles.get(styleDir)
+        if (!parsed) {
+            throw new Error(`Icon "${icon.name}" is missing the ${styleDir} style`)
+        }
+        return `  static const ${field} = ${dataPayload(icon.name, field, parsed)};`
+    }).join('\n\n')
+
+    const typedefs = deprecationTypedefs(aliases.get(icon.name), className, '')
+
+    return { className, typedefs, content: `// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The \`${icon.name}\` icon in every style.
+///
+/// Prefer the static widgets (e.g. \`${pascal(icon.name)}LinearIcon\`) when the
+/// style is known upfront: they embed a single SVG. Use this widget when the
+/// style is only known at runtime.
+class ${className} extends StatelessWidget {
+  /// Creates the \`${icon.name}\` icon.
+  ///
+  /// [style] defaults to [SolarIconStyle.linear].
+  const ${className}({
+${widgetParams(true)}
+  });
+
+${widgetFields(true)}
 
 ${payloads}
 
@@ -228,32 +308,37 @@ ${payloads}
     SolarIconStyle.outline => outline,
   };
 
-  @override
-  Widget build(BuildContext context) {
-    return SolarIcon(
-      _data,
-      size: size,
-      color: color,
-      strokeWidth: strokeWidth,
-      secondaryColor: secondaryColor,
-      secondaryOpacity: secondaryOpacity,
-      semanticLabel: semanticLabel,
-      isolated: isolated,
-    );
-  }
+${WIDGET_BUILD}
 }
-${typedefs ? `\n${typedefs}\n` : ''}`
+${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`}
 }
 
-function renderBarrel(names) {
+function renderStyleBarrel(outDir, names) {
     const exports = names
-        .map(name => `export 'icons/${snake(name)}.dart';`)
+        .map(name => `export '${outDir}/${snake(name)}.dart';`)
         .join('\n')
     return `// Generated from packages/core/svgs. Do not edit.
 // Logical icons: ${names.length}
 
-export 'solar_icons.dart';
 ${exports}
+`
+}
+
+function renderRootBarrel(names) {
+    return `// Generated from packages/core/svgs. Do not edit.
+// Logical icons: ${names.length}
+
+export 'src/solar_icon.dart';
+export 'src/solar_icon_data.dart';
+export 'src/solar_icon_style.dart';
+export 'src/solar_provider.dart';
+export 'bold.dart';
+export 'bold_duotone.dart';
+export 'broken.dart';
+export 'dynamic.dart';
+export 'line_duotone.dart';
+export 'linear.dart';
+export 'outline.dart';
 `
 }
 
@@ -267,36 +352,75 @@ function main() {
     const names = [...icons.keys()].sort((a, b) => a.localeCompare(b))
     if (names.length === 0) throw new Error('No icons found')
 
-    fs.rmSync(iconsDir, { recursive: true, force: true })
-    fs.mkdirSync(iconsDir, { recursive: true })
-
     const seenClasses = new Set()
-    for (const name of names) {
-        const className = `${pascal(name)}Icon`
-        if (seenClasses.has(className)) throw new Error(`Duplicate class ${className}`)
-        seenClasses.add(className)
-        const content = renderIcon(icons.get(name), aliases)
-        fs.writeFileSync(path.join(iconsDir, `${snake(name)}.dart`), content)
+    const seenCanonical = new Set()
+
+    // Static widgets, one style each.
+    for (const [, , outDir] of STYLES) {
+        const dir = path.join(libDir, outDir)
+        fs.rmSync(dir, { recursive: true, force: true })
+        fs.mkdirSync(dir, { recursive: true })
+    }
+    const staticOutputs = new Map()
+    for (const [styleDir, field, outDir, suffix] of STYLES) {
+        const rendered = []
+        for (const name of names) {
+            const { className, typedefs, content } = renderStatic(
+                icons.get(name), styleDir, field, outDir, suffix, aliases
+            )
+            checkClass(seenClasses, className, `static ${name} ${field}`)
+            seenCanonical.add(className)
+            for (const t of typedefs) {
+                checkClass(seenClasses, t.aliasClass, `static alias ${name} ${field}`)
+            }
+            fs.writeFileSync(path.join(libDir, outDir, `${snake(name)}.dart`), content)
+            rendered.push(name)
+        }
+        staticOutputs.set(outDir, rendered)
     }
 
+    // Dynamic widgets, all six styles each.
+    fs.rmSync(dynamicDir, { recursive: true, force: true })
+    fs.mkdirSync(dynamicDir, { recursive: true })
+    for (const name of names) {
+        const { className, typedefs, content } = renderDynamic(icons.get(name), aliases)
+        checkClass(seenClasses, className, `dynamic ${name}`)
+        seenCanonical.add(className)
+        for (const t of typedefs) {
+            checkClass(seenClasses, t.aliasClass, `dynamic alias ${name}`)
+        }
+        fs.writeFileSync(path.join(dynamicDir, `${snake(name)}.dart`), content)
+    }
+
+    // Cross-check: no deprecated alias may match another icon's canonical classes.
     for (const aliasList of aliases.values()) {
         for (const alias of aliasList) {
-            const aliasClass = `${pascal(alias.name)}Icon`
-            if (seenClasses.has(aliasClass)) {
-                throw new Error(`Deprecated alias ${aliasClass} matches another icon`)
+            for (const [, , , suffix] of [...STYLES, ['', '', '', '']]) {
+                const aliasClass = `${pascal(alias.name)}${suffix}Icon`
+                if (seenCanonical.has(aliasClass)) {
+                    throw new Error(`Deprecated alias ${aliasClass} matches another icon`)
+                }
             }
-            seenClasses.add(aliasClass)
         }
     }
 
-    fs.writeFileSync(barrelPath, renderBarrel(names))
-    const formatted = spawnSync('dart', ['format', iconsDir, barrelPath], {
+    const formatTargets = []
+    for (const [outDir, rendered] of staticOutputs) {
+        const barrelPath = path.join(libDir, `${outDir}.dart`)
+        fs.writeFileSync(barrelPath, renderStyleBarrel(outDir, rendered))
+        formatTargets.push(path.join(libDir, outDir), barrelPath)
+    }
+    const dynamicBarrelPath = path.join(libDir, 'dynamic.dart')
+    fs.writeFileSync(dynamicBarrelPath, renderStyleBarrel('dynamic', names))
+    formatTargets.push(dynamicDir, dynamicBarrelPath)
+    fs.writeFileSync(path.join(libDir, 'solar_icons.dart'), renderRootBarrel(names))
+
+    const formatted = spawnSync('dart', ['format', ...formatTargets], {
         stdio: 'inherit',
     })
     if (formatted.status !== 0) {
         throw new Error('dart format failed')
     }
-    console.log(`Generated ${names.length} icons in ${iconsDir}`)
+    console.log(`Generated ${names.length} icons (static x6 + dynamic) in ${libDir}`)
 }
-
 main()

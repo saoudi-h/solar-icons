@@ -1,0 +1,73 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `black-hole-3` icon in the boldDuotone style.
+class BlackHole3BoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `black-hole-3` icon in the boldDuotone style.
+  const BlackHole3BoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'black-hole-3',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M15.3115 1.25C15.7257 1.25 16.0615 1.58579 16.0615 2C16.0615 2.41421 15.7257 2.75 15.3115 2.75C12.0274 2.75 10.2245 5.31442 9.8291 8.10547C9.7378 8.75013 9.72751 9.38502 9.78906 9.97656C10.3375 9.37758 11.1238 9 12 9C12.9654 9 13.8224 9.4576 14.3711 10.166C14.7885 10.5458 15.1275 11.0198 15.3838 11.5469C16.0101 12.8353 16.1962 14.4931 15.9678 16.1055C15.5131 19.3144 13.3157 22.75 9 22.75C8.58579 22.75 8.25 22.4142 8.25 22C8.25 21.5858 8.58579 21.25 9 21.25C12.2842 21.25 14.087 18.6856 14.4824 15.8945C14.5913 15.126 14.5847 14.3714 14.4785 13.6875C13.9384 14.4792 13.0307 15 12 15C10.6158 15 9.45345 14.0618 9.10742 12.7871C9.04427 12.6782 8.98327 12.5673 8.92773 12.4531C8.30143 11.1647 8.11533 9.50689 8.34375 7.89453C8.79843 4.68565 10.9958 1.25 15.3115 1.25Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path d="M13.25 12C13.25 12.8871 12.7399 13.5765 11.7971 14.0348C10.8355 14.5023 9.49284 14.679 8.1052 14.4824C5.31415 14.087 2.75 12.2842 2.75 9C2.75 8.58579 2.41421 8.25 2 8.25C1.58579 8.25 1.25 8.58579 1.25 9C1.25 13.3158 4.68585 15.513 7.8948 15.9676C9.50716 16.196 11.1645 16.0102 12.4529 15.3839C13.7601 14.7485 14.75 13.6129 14.75 12C14.75 11.5858 14.4142 11.25 14 11.25C13.5858 11.25 13.25 11.5858 13.25 12Z" fill="currentColor"/>
+<path d="M10.75 12.3115C10.75 11.4244 11.2601 10.735 12.2029 10.2767C13.1645 9.80922 14.5072 9.63253 15.8948 9.82911C18.6858 10.2245 21.25 12.0274 21.25 15.3115C21.25 15.7257 21.5858 16.0615 22 16.0615C22.4142 16.0615 22.75 15.7257 22.75 15.3115C22.75 10.9957 19.3141 8.79854 16.1052 8.34394C14.4928 8.11552 12.8355 8.30132 11.5471 8.92762C10.2399 9.56307 9.25 10.6986 9.25 12.3115C9.25 12.7257 9.58578 13.0615 10 13.0615C10.4142 13.0615 10.75 12.7257 10.75 12.3115Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

@@ -1,0 +1,70 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `transmission` icon in the bold style.
+class TransmissionBoldIcon extends StatelessWidget {
+  /// Creates the `transmission` icon in the bold style.
+  const TransmissionBoldIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'transmission',
+    style: SolarIconStyle.bold,
+    body:
+        r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2861 14.25C21.6614 14.2502 22.75 15.3841 22.75 16.75C22.75 17.8285 22.0711 18.7621 21.1084 19.1074L22.6396 21.6084C22.8559 21.9617 22.7449 22.4234 22.3916 22.6396C22.0383 22.8559 21.5766 22.7449 21.3604 22.3916L19.4365 19.25H18.75V22C18.75 22.4142 18.4142 22.75 18 22.75C17.5858 22.75 17.25 22.4142 17.25 22V15C17.25 14.5858 17.5858 14.25 18 14.25H20.2861ZM18.75 17.75H20.2861C20.804 17.7498 21.25 17.3168 21.25 16.75C21.25 16.1832 20.804 15.7502 20.2861 15.75H18.75V17.75Z" fill="currentColor"/>
+<path d="M20 2C21.1046 2 22 2.89543 22 4C22 4.83933 21.4829 5.55779 20.75 5.85449V8.05176C20.75 8.95024 20.7499 9.70014 20.6699 10.2949C20.5855 10.9225 20.3997 11.489 19.9443 11.9443C19.489 12.3997 18.9225 12.5855 18.2949 12.6699C17.7001 12.7499 16.9502 12.75 16.0518 12.75H12.75V18.1455C13.4829 18.4422 14 19.1607 14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 19.1607 10.5171 18.4422 11.25 18.1455V12.75H4.75V18.1455C5.48293 18.4422 6 19.1607 6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 19.1607 2.51707 18.4422 3.25 18.1455V5.85449C2.51707 5.55779 2 4.83933 2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4C6 4.83933 5.48293 5.55779 4.75 5.85449V11.25H11.25V5.85449C10.5171 5.55779 10 4.83933 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4C14 4.83933 13.4829 5.55779 12.75 5.85449V11.25H16C16.964 11.25 17.6117 11.2485 18.0947 11.1836C18.5561 11.1215 18.7535 11.0141 18.8838 10.8838C19.0141 10.7535 19.1215 10.5561 19.1836 10.0947C19.2485 9.61169 19.25 8.96401 19.25 8V5.85449C18.5171 5.55779 18 4.83933 18 4C18 2.89543 18.8954 2 20 2Z" fill="currentColor"/>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

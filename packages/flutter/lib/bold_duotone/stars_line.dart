@@ -1,0 +1,74 @@
+// Generated from packages/core/svgs. Do not edit.
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/widgets.dart';
+
+import '../src/solar_icon.dart';
+import '../src/solar_icon_data.dart';
+import '../src/solar_icon_style.dart';
+import '../src/solar_provider.dart';
+
+/// The `stars-line` icon in the boldDuotone style.
+class StarsLineBoldDuotoneIcon extends StatelessWidget {
+  /// Creates the `stars-line` icon in the boldDuotone style.
+  const StarsLineBoldDuotoneIcon({
+    super.key,
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.secondaryColor,
+    this.secondaryOpacity,
+    this.semanticLabel,
+    this.isolated = false,
+  });
+
+  /// Width and height.
+  final double? size;
+
+  /// Primary color.
+  final Color? color;
+
+  /// Stroke width for stroked styles.
+  final double? strokeWidth;
+
+  /// Accent color for duotone styles.
+  final Color? secondaryColor;
+
+  /// Accent opacity for duotone styles, from 0 to 1.
+  final double? secondaryOpacity;
+
+  /// Accessibility label.
+  final String? semanticLabel;
+
+  /// When true, ignores [SolarProvider] and [IconTheme].
+  final bool isolated;
+
+  /// Static payload for composition with [SolarIcon].
+  static const data = SolarIconData(
+    name: 'stars-line',
+    style: SolarIconStyle.boldDuotone,
+    body:
+        r'''<path d="M5.13271 13.7643C5.11039 13.6569 5.28139 13.5584 5.36317 13.6315C5.60082 13.8449 5.9218 14.0881 6.22157 14.1686C6.52147 14.2489 6.9216 14.1985 7.23427 14.1325C7.34172 14.11 7.44032 14.2811 7.36708 14.3629C7.15364 14.6006 6.91044 14.9215 6.82997 15.2213C6.74961 15.5212 6.80006 15.9213 6.8661 16.234C6.88859 16.3415 6.71741 16.4402 6.63564 16.3668C6.39796 16.1534 6.07705 15.9102 5.77724 15.8297C5.47734 15.7494 5.07721 15.7998 4.76454 15.8658C4.65712 15.8882 4.5585 15.7172 4.63173 15.6354C4.84519 15.3977 5.08839 15.0768 5.16884 14.777C5.2492 14.4771 5.19876 14.077 5.13271 13.7643Z" fill="currentColor"/>
+<path d="M11.5214 2.00452C11.9021 2.04396 12.1181 2.50881 12.5497 3.43909L12.661 3.6803C12.7836 3.9445 12.8455 4.07663 12.9511 4.17054C13.0566 4.2643 13.1944 4.3091 13.4696 4.39905L13.7206 4.48108C14.6907 4.79812 15.176 4.95718 15.2616 5.33265C15.3471 5.7083 14.9769 6.0529 14.2352 6.74085L14.0429 6.91858C13.8322 7.11398 13.7267 7.21178 13.6718 7.34046C13.6169 7.46907 13.6185 7.61414 13.622 7.90394L13.6259 8.16858C13.6382 9.18949 13.644 9.70017 13.3163 9.89319C12.9883 10.086 12.5429 9.83383 11.6532 9.32874L11.4227 9.19788C11.1698 9.0543 11.0427 8.98181 10.9032 8.96741C10.7639 8.95318 10.6266 8.99839 10.3534 9.08753L10.1044 9.16858C9.14229 9.48246 8.66114 9.63946 8.37294 9.38343C8.08475 9.12698 8.18037 8.62674 8.37196 7.62659L8.42177 7.3678C8.47622 7.08357 8.50288 6.94096 8.47157 6.80335C8.4402 6.6659 8.35396 6.54795 8.18153 6.31312L8.02431 6.09925C7.41711 5.27224 7.11365 4.85878 7.26357 4.50745C7.41351 4.15617 7.91749 4.09982 8.92567 3.98694L9.18642 3.95765C9.47299 3.92556 9.61703 3.90916 9.7372 3.83851C9.85714 3.76786 9.94069 3.65075 10.1073 3.41663L10.2597 3.20276C10.8469 2.37759 11.1405 1.96522 11.5214 2.00452Z" fill="currentColor"/>''',
+    accent: r'''<g opacity="0.5">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.2054 11.279C11.6037 11.3928 11.8343 11.8079 11.7205 12.2062C11.3541 13.4888 11.2661 15.3498 11.324 17.2144C11.3813 19.0601 11.5781 20.8296 11.7407 21.8861C11.8036 22.2955 11.5228 22.6784 11.1134 22.7414C10.704 22.8044 10.3211 22.5236 10.2581 22.1142C10.0873 21.0039 9.88412 19.1735 9.82475 17.2609C9.76596 15.3671 9.84471 13.3114 10.2782 11.7941C10.392 11.3958 10.8072 11.1652 11.2054 11.279Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.6474 9.12222C22.8561 9.48001 22.7353 9.93925 22.3775 10.148C16.6657 13.4798 15.2496 18.859 15.2496 22.0001C15.2496 22.4143 14.9138 22.7501 14.4996 22.7501C14.0853 22.7501 13.7496 22.4143 13.7496 22.0001C13.7496 18.4746 15.3334 12.5204 21.6217 8.85229C21.9794 8.64358 22.4387 8.76443 22.6474 9.12222Z" fill="currentColor"/>
+</g>''',
+  );
+
+  SolarIconData get _data => data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SolarIcon(
+      _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }
+}

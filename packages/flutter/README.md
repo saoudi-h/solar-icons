@@ -8,8 +8,7 @@ Flutter widgets for Solar Icons. The package draws 1,451 icons across six styles
 flutter pub add solar_icons
 ```
 
-To work from a local checkout instead, depend on the package with a path.
-Generate the widgets from the catalogue first, then point at the package:
+To work from a local checkout instead, generate the widgets from the catalogue first, then depend on the package with a path:
 
 ```sh
 node packages/flutter/tool/generate_icons.mjs
@@ -23,21 +22,29 @@ dependencies:
 
 Adjust the path to where this package sits relative to the app. The example app at `packages/flutter/example` already does this.
 
-## Usage
+## Static widgets
+
+Each icon ships one widget per style. The style is in the import path and in the widget name, and only that style's SVG is embedded:
 
 ```dart
-import 'package:solar_icons/solar_icons.dart';
+import 'package:solar_icons/linear/home.dart';
 
-HomeIcon(
+HomeLinearIcon(
   size: 32,
   color: Color(0xFF1C274C),
   strokeWidth: 2,
 )
 ```
 
-`style` selects the weight. It defaults to linear.
+Style barrels (`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `line_duotone.dart`, `outline.dart`) and the package root export the same widgets under the same names.
+
+## Dynamic widgets
+
+One widget covers every icon and style for names or styles that are only known at runtime. It embeds all six SVGs, so prefer the static widgets when the style is known upfront:
 
 ```dart
+import 'package:solar_icons/dynamic/arrow_right.dart';
+
 ArrowRightIcon(
   style: SolarIconStyle.boldDuotone,
   secondaryColor: Color(0xFF94A3B8),
@@ -45,30 +52,24 @@ ArrowRightIcon(
 )
 ```
 
-Each icon also exposes its six payloads. Pass one to `SolarIcon` when you want the data directly:
+Each dynamic widget also exposes its six payloads. Pass one to `SolarIcon` when you want the data directly:
 
 ```dart
 SolarIcon(HomeIcon.outline, size: 20)
 ```
 
-Import one icon when you only need that widget:
-
-```dart
-import 'package:solar_icons/icons/home.dart';
-```
-
-`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `line_duotone.dart`, and `outline.dart` export the same catalogue. They are entry points, not separate icon sets.
+Static widgets expose their single payload the same way (`HomeLinearIcon.data`).
 
 ### Theme
 
-`SolarTheme` sets defaults for icons below it. Arguments on the icon win, then the theme, then the ambient `IconTheme`. Stroke width falls back to 1.5.
+`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to 1.5.
 
 ```dart
-SolarTheme(
+SolarProvider(
   size: 24,
   color: Color(0xFF111827),
   strokeWidth: 1.5,
-  child: HomeIcon(),
+  child: HomeLinearIcon(),
 )
 ```
 
