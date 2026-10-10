@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class LightbulbMinimalisticIcon extends StatelessWidget {
   /// Creates the `lightbulb-minimalistic` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const LightbulbMinimalisticIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class LightbulbMinimalisticIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -103,19 +103,21 @@ class LightbulbMinimalisticIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 8.21807C4.25 4.31332 7.80388 1.25 12 1.25C16.1961 1.25 19.75 4.31332 19.75 8.21807L19.75 8.22133C19.7404 10.4277 18.7914 12.6257 17.1055 14.2246L17.1035 14.2266L15.9994 15.2658C15.8403 15.4156 15.75 15.6245 15.75 15.843C15.75 16.8962 14.8962 17.75 13.843 17.75H10.157C9.10379 17.75 8.25 16.8962 8.25 15.843C8.25 15.6245 8.15976 15.4156 8.0006 15.2658L6.89654 14.2266L6.89447 14.2246C5.20862 12.6257 4.25961 10.4277 4.25001 8.22133L4.25 8.21807ZM5.75 8.21645C5.75824 10.002 6.53021 11.8113 7.92565 13.1353C7.926 13.1356 7.92635 13.136 7.9267 13.1363L9.02865 14.1735C9.48898 14.6068 9.75 15.2109 9.75 15.843C9.75 16.0678 9.93222 16.25 10.157 16.25H13.843C14.0678 16.25 14.25 16.0678 14.25 15.843C14.25 15.2109 14.511 14.6068 14.9713 14.1735C14.9713 14.1735 14.9713 14.1735 14.9713 14.1735L16.0733 13.1363C16.0736 13.136 16.074 13.1357 16.0743 13.1354C17.4698 11.8113 18.2418 10.002 18.25 8.21637C18.2489 5.29948 15.5352 2.75 12 2.75C8.46478 2.75 5.751 5.29953 5.75 8.21645Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

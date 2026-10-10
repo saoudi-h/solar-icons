@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class ListOrderedIcon extends StatelessWidget {
   /// Creates the `list-ordered` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const ListOrderedIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class ListOrderedIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -125,19 +125,21 @@ class ListOrderedIcon extends StatelessWidget {
 <path d="M21.0001 5.25003C21.4143 5.25003 21.7501 5.58585 21.7501 6.00003C21.7501 6.41424 21.4143 6.75003 21.0001 6.75003H13.0001C12.5859 6.74995 12.2501 6.41419 12.2501 6.00003C12.2501 5.58589 12.586 5.2501 13.0001 5.25003H21.0001Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

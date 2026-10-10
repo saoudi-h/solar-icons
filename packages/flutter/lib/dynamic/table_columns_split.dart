@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class TableColumnsSplitIcon extends StatelessWidget {
   /// Creates the `table-columns-split` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const TableColumnsSplitIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class TableColumnsSplitIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -139,19 +139,21 @@ class TableColumnsSplitIcon extends StatelessWidget {
 <path d="M13.5 1.25879C13.9142 1.25879 14.25 1.59458 14.25 2.00879V3.67285C14.2499 4.08695 13.9141 4.42285 13.5 4.42285C13.0859 4.42285 12.7501 4.08695 12.75 3.67285V2.00879C12.75 1.59458 13.0858 1.25879 13.5 1.25879Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

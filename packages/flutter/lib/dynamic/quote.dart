@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class QuoteIcon extends StatelessWidget {
   /// Creates the `quote` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const QuoteIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class QuoteIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -103,19 +103,21 @@ class QuoteIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2896 4.25C19.1381 4.25 19.8574 4.24803 20.4282 4.33204C21.0279 4.42036 21.5708 4.61679 22.0005 5.08692C22.4213 5.54765 22.589 6.11358 22.6655 6.73633C22.7402 7.34411 22.7388 8.11475 22.7388 9.04981C22.7388 9.79285 22.7642 10.5221 22.7368 11.0332C22.735 11.9388 22.673 12.4083 22.6274 12.8779C22.6054 13.1054 22.5889 13.2366 22.5718 13.3467C22.5577 13.4371 22.5364 13.5485 22.522 13.6318L22.5181 13.6494C22.253 14.9801 21.8057 16.54 20.603 17.7529C19.3798 18.9864 17.4921 19.7499 14.5894 19.75C14.2704 19.75 13.9865 19.5481 13.8813 19.2471C13.7764 18.946 13.8731 18.6115 14.1226 18.4131C14.6125 18.024 15.3657 17.2117 16.0522 16.29C16.7376 15.37 17.2674 14.4572 17.4351 13.8457C16.849 13.8384 16.3245 13.8147 15.8784 13.7188C15.3814 13.6118 14.9381 13.4071 14.5776 13.0127C14.1567 12.5519 13.9891 11.9862 13.9126 11.3633C13.838 10.7555 13.8394 9.98491 13.8394 9.04981C13.8394 8.11472 13.838 7.34412 13.9126 6.73633C13.9891 6.11349 14.1567 5.54768 14.5776 5.08692C15.0073 4.61683 15.5502 4.42032 16.1499 4.33204C16.7208 4.24807 17.4409 4.25 18.2896 4.25ZM18.2896 5.75C17.3948 5.75 16.8051 5.75225 16.3687 5.81641C15.9617 5.8763 15.797 5.97627 15.6851 6.09864C15.5642 6.2309 15.4608 6.44007 15.4019 6.91993C15.3411 7.41488 15.3394 8.07619 15.3394 9.04981C15.3394 10.0238 15.3411 10.6856 15.4019 11.1807C15.4608 11.6604 15.5642 11.8687 15.6851 12.001C15.7826 12.1077 15.9154 12.193 16.1938 12.2529C16.4987 12.3185 16.9174 12.3417 17.5483 12.3477C17.597 12.3481 17.605 12.3461 17.6948 12.3447C17.7599 12.3437 17.8652 12.3437 17.9819 12.3633C18.2323 12.4054 18.4659 12.5246 18.6548 12.7383L18.7329 12.8359L18.7944 12.9287C18.9289 13.1464 18.9902 13.3776 18.9897 13.6162C18.9893 13.843 18.9305 14.0606 18.897 14.1904C18.6614 15.102 17.9697 16.2275 17.2554 17.1865C17.0218 17.5001 16.7738 17.8075 16.5269 18.0986C17.9879 17.851 18.9175 17.3216 19.5376 16.6963C20.4133 15.8131 20.7918 14.6297 21.0435 13.3721C21.0703 13.2176 21.0769 13.2023 21.0903 13.1162C21.1007 13.0493 21.1131 12.9519 21.1343 12.7334C21.1823 12.2386 21.2378 11.8382 21.2378 10.9932V10.9736L21.2388 10.9531C21.2634 10.4922 21.2388 9.88736 21.2388 9.04981C21.2388 8.07629 21.238 7.41487 21.1772 6.91993C21.1183 6.44031 21.0138 6.23092 20.8931 6.09864C20.7811 5.97624 20.6162 5.87634 20.2095 5.81641C19.7731 5.75222 19.1841 5.75001 18.2896 5.75Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

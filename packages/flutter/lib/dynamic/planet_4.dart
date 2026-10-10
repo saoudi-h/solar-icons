@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class Planet4Icon extends StatelessWidget {
   /// Creates the `planet-4` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const Planet4Icon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class Planet4Icon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -125,19 +125,21 @@ class Planet4Icon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5301 4.04469C20.4935 3.95058 20.4492 3.85806 20.3972 3.76791C20.3451 3.67776 20.2871 3.59319 20.2239 3.51442C20.5503 3.42367 20.7725 3.41803 20.8302 3.51791C20.8879 3.6178 20.7719 3.80742 20.5301 4.04469ZM17.1063 6.0214C16.78 6.11215 16.5577 6.1178 16.5001 6.01791C16.4424 5.91803 16.5584 5.72841 16.8002 5.49114C16.8368 5.58524 16.881 5.67776 16.9331 5.76791C16.9851 5.85806 17.0431 5.94263 17.1063 6.0214ZM17.1063 6.0214C17.5613 5.89488 18.2188 5.60293 18.9151 5.20092C19.6114 4.79892 20.193 4.37549 20.5301 4.04469C20.8821 4.94909 20.5316 5.99973 19.6651 6.49996C18.7987 7.0002 17.7136 6.77846 17.1063 6.0214ZM16.8002 5.49114C16.4482 4.58673 16.7987 3.5361 17.6651 3.03586C18.5316 2.53563 19.6167 2.75737 20.2239 3.51442C19.7689 3.64095 19.1114 3.93289 18.4151 4.3349C17.7188 4.73691 17.1373 5.16034 16.8002 5.49114Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class GitDiffIcon extends StatelessWidget {
   /// Creates the `git-diff` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const GitDiffIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class GitDiffIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -113,19 +113,21 @@ class GitDiffIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5 1.25C7.07107 1.25 8.75 2.92893 8.75 5C8.75 6.81421 7.46166 8.32734 5.75 8.6748V16.3145C5.75006 16.96 6.02833 17.3572 6.18262 17.5303C6.23349 17.5873 6.26983 17.6283 6.2959 17.6572L6.31836 17.6826C6.31836 17.6826 6.32064 17.6842 6.32422 17.6875C6.33062 17.6933 6.34027 17.7022 6.35449 17.7148C6.38319 17.7403 6.42288 17.7756 6.47949 17.8252C6.65068 17.9751 7.04536 18.2461 7.68652 18.2461L10.1875 18.249L8.46973 16.5303C8.17686 16.2374 8.17684 15.7626 8.46973 15.4697C8.76261 15.1769 9.23739 15.1769 9.53027 15.4697L12.5303 18.4697C12.8232 18.7626 12.8231 19.2374 12.5303 19.5303L9.53027 22.5303C9.23738 22.8232 8.76262 22.8232 8.46973 22.5303C8.17686 22.2374 8.17684 21.7626 8.46973 21.4697L10.1904 19.749L7.68555 19.7461C6.58303 19.7459 5.85156 19.2696 5.49121 18.9541C5.39408 18.8691 5.31096 18.7959 5.26758 18.7529C5.22414 18.7098 5.15041 18.6267 5.06348 18.5293C4.74225 18.1692 4.25006 17.4313 4.25 16.3145V8.6748C2.53834 8.32734 1.25 6.81421 1.25 5C1.25 2.92893 2.92893 1.25 5 1.25ZM5 2.75C3.75736 2.75 2.75 3.75736 2.75 5C2.75 6.24264 3.75736 7.25 5 7.25C6.24264 7.25 7.25 6.24264 7.25 5C7.25 3.75736 6.24264 2.75 5 2.75Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

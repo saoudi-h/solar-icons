@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class FolderOutputIcon extends StatelessWidget {
   /// Creates the `folder-output` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const FolderOutputIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class FolderOutputIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -103,19 +103,21 @@ class FolderOutputIcon extends StatelessWidget {
 <path d="M5.68362 11.3936C6.01851 11.15 6.48778 11.2239 6.73147 11.5586C6.97504 11.8935 6.90122 12.3628 6.56643 12.6065L4.30666 14.25H13C13.4142 14.25 13.75 14.5858 13.75 15C13.75 15.4142 13.4142 15.75 13 15.75H4.30666L6.56643 17.3936C6.90122 17.6373 6.97503 18.1065 6.73147 18.4414C6.48779 18.7762 6.01853 18.85 5.68362 18.6065L1.55862 15.6065C1.36473 15.4653 1.25002 15.2399 1.25002 15C1.25004 14.7602 1.36471 14.5347 1.55862 14.3936L5.68362 11.3936Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

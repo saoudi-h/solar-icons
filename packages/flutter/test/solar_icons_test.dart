@@ -1,6 +1,21 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:solar_icons/solar_icons.dart';
+
+/// Composed SVG string of the single rendered icon.
+Future<String> renderedSvg(WidgetTester tester) async {
+  await tester.pump();
+  final svg = tester.widget<SvgPicture>(find.byType(SvgPicture));
+  final loader = svg.bytesLoader as SvgStringLoader;
+  return loader.provideSvg(null);
+}
+
+Future<void> pumpIcon(WidgetTester tester, Widget icon) {
+  return tester.pumpWidget(
+    Directionality(textDirection: TextDirection.ltr, child: icon),
+  );
+}
 
 void main() {
   testWidgets('static widgets draw one style each', (tester) async {
@@ -57,21 +72,77 @@ void main() {
   });
 
   testWidgets('deprecated aliases build the canonical widgets', (tester) async {
-    await tester.pumpWidget(
-      const Directionality(
-        textDirection: TextDirection.ltr,
-        child: Column(
-          children: [
-            ChatUnreadIcon(),
-            ChatUnreadLinearIcon(),
-          ],
-        ),
+    await pumpIcon(
+      tester,
+      const Column(
+        children: [
+          ChatUnreadIcon(),
+          ChatUnreadLinearIcon(),
+        ],
       ),
     );
     await tester.pump();
 
     expect(find.byType(ChatSquareUnreadIcon), findsOneWidget);
     expect(find.byType(ChatSquareUnreadLinearIcon), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('dynamic widgets inherit the provider style', (tester) async {
+    await pumpIcon(
+      tester,
+      const SolarProvider(
+        style: SolarIconStyle.bold,
+        child: HeartIcon(color: Color(0xFF112233)),
+      ),
+    );
+
+    // Bold heart is filled; linear heart is stroked.
+    expect(await renderedSvg(tester), contains('fill="#112233"'));
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('an explicit style wins over the provider', (tester) async {
+    await pumpIcon(
+      tester,
+      const SolarProvider(
+        style: SolarIconStyle.bold,
+        child: HeartIcon(
+          style: SolarIconStyle.linear,
+          color: Color(0xFF112233),
+        ),
+      ),
+    );
+
+    final svg = await renderedSvg(tester);
+    expect(svg, contains('stroke="#112233"'));
+    expect(svg, isNot(contains('fill="#112233"')));
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('dynamic widgets default to linear without a provider', (tester) async {
+    await pumpIcon(
+      tester,
+      const HeartIcon(color: Color(0xFF112233)),
+    );
+
+    expect(await renderedSvg(tester), contains('stroke="#112233"'));
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('isolated dynamic widgets ignore the provider style', (tester) async {
+    await pumpIcon(
+      tester,
+      const SolarProvider(
+        style: SolarIconStyle.bold,
+        child: HeartIcon(
+          isolated: true,
+          color: Color(0xFF112233),
+        ),
+      ),
+    );
+
+    expect(await renderedSvg(tester), contains('stroke="#112233"'));
     expect(tester.takeException(), isNull);
   });
 }

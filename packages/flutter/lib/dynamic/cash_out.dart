@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class CashOutIcon extends StatelessWidget {
   /// Creates the `cash-out` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const CashOutIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class CashOutIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -114,19 +114,21 @@ class CashOutIcon extends StatelessWidget {
         r'''<path fill-rule="evenodd" clip-rule="evenodd" d="M18.1113 2.75C20.6965 2.75012 22.75 4.90968 22.75 7.52051C22.7499 9.54922 21.5138 11.2988 19.75 11.9834V16.5C19.75 16.825 19.7484 17.1308 19.7451 17.417C19.7481 17.4443 19.75 17.4719 19.75 17.5C19.75 17.5335 19.7464 17.5663 19.7422 17.5986C19.7341 18.049 19.7165 18.4484 19.6699 18.7949C19.5855 19.4225 19.3997 19.989 18.9443 20.4443C18.489 20.8997 17.9225 21.0855 17.2949 21.1699C16.6887 21.2514 15.9216 21.25 15 21.25H9C8.07839 21.25 7.3113 21.2514 6.70508 21.1699C6.07747 21.0855 5.51102 20.8997 5.05566 20.4443C4.6003 19.989 4.41451 19.4225 4.33008 18.7949C4.28349 18.4484 4.26494 18.049 4.25684 17.5986C4.25259 17.5663 4.25 17.5335 4.25 17.5C4.25 17.472 4.25091 17.4442 4.25391 17.417C4.25059 17.1308 4.25 16.825 4.25 16.5V11.9834C2.48624 11.2988 1.25006 9.54922 1.25 7.52051C1.25 4.90968 3.30348 2.75012 5.88867 2.75H18.1113ZM5.81641 18.5947C5.87845 19.0561 5.9859 19.2535 6.11621 19.3838C6.24652 19.5141 6.44388 19.6215 6.90527 19.6836C7.38831 19.7485 8.03599 19.75 9 19.75H15C15.964 19.75 16.6117 19.7485 17.0947 19.6836C17.5561 19.6215 17.7535 19.5141 17.8838 19.3838C18.0141 19.2535 18.1215 19.0561 18.1836 18.5947C18.1979 18.4884 18.208 18.3739 18.2168 18.25H5.7832C5.79202 18.3739 5.80211 18.4884 5.81641 18.5947ZM9 7.25C8.03599 7.25 7.38831 7.25146 6.90527 7.31641C6.44388 7.37845 6.24652 7.4859 6.11621 7.61621C5.9859 7.74652 5.87845 7.94388 5.81641 8.40527C5.75146 8.88831 5.75 9.53599 5.75 10.5V16.5C5.75 16.5858 5.75188 16.6691 5.75195 16.75H18.248C18.2481 16.6691 18.25 16.5858 18.25 16.5V10.5C18.25 9.53599 18.2485 8.88831 18.1836 8.40527C18.1215 7.94388 18.0141 7.74652 17.8838 7.61621C17.7535 7.4859 17.5561 7.37845 17.0947 7.31641C16.6117 7.25146 15.964 7.25 15 7.25H12.75V11.4727L13.4307 10.6787C13.7002 10.3642 14.1738 10.3281 14.4883 10.5977C14.8024 10.8672 14.8386 11.3399 14.5693 11.6543L12.5693 13.9883C12.4269 14.1544 12.2189 14.25 12 14.25C11.7811 14.25 11.5731 14.1544 11.4307 13.9883L9.43066 11.6543C9.16139 11.3399 9.19759 10.8672 9.51172 10.5977C9.82621 10.3281 10.2998 10.3642 10.5693 10.6787L11.25 11.4727V7.25H9ZM5.88867 4.25C4.17852 4.25012 2.75 5.69072 2.75 7.52051C2.75005 8.70915 3.35676 9.73582 4.25 10.3076C4.25018 9.47122 4.25431 8.76861 4.33008 8.20508C4.41451 7.57747 4.6003 7.01102 5.05566 6.55566C5.51102 6.1003 6.07747 5.91451 6.70508 5.83008C7.3113 5.74857 8.07839 5.75 9 5.75H15C15.9216 5.75 16.6887 5.74857 17.2949 5.83008C17.9225 5.91451 18.489 6.1003 18.9443 6.55566C19.3997 7.01102 19.5855 7.57747 19.6699 8.20508C19.7457 8.76861 19.7488 9.47122 19.749 10.3076C20.6426 9.7359 21.2499 8.70946 21.25 7.52051C21.25 5.69072 19.8215 4.25012 18.1113 4.25H5.88867Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

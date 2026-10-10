@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class VolumeSmallIcon extends StatelessWidget {
   /// Creates the `volume-small` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const VolumeSmallIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class VolumeSmallIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -104,19 +104,21 @@ class VolumeSmallIcon extends StatelessWidget {
 <path d="M18.6563 8.63711C18.4552 8.27502 17.9979 8.14325 17.6358 8.34441C17.2768 8.54386 17.1455 8.99444 17.3393 9.35501C17.3462 9.36941 17.3643 9.40837 17.3818 9.45201C17.4167 9.53922 17.4691 9.68653 17.5235 9.89881C17.6322 10.3229 17.75 11.0101 17.75 12C17.75 12.9899 17.6322 13.6772 17.5235 14.1013C17.4691 14.3135 17.4167 14.4608 17.3818 14.5481L17.3393 14.645C17.1455 15.0056 17.2768 15.4562 17.6358 15.6557C17.9979 15.8568 18.4711 15.6951 18.6723 15.333C18.6795 15.319 18.6884 15.3012 18.6986 15.2797C18.7191 15.2367 18.7451 15.1787 18.7745 15.1051C18.8333 14.958 18.9059 14.749 18.9765 14.4738C19.1178 13.9229 19.25 13.1102 19.25 12C19.25 10.8899 19.1178 10.0772 18.9765 9.52625C18.9059 9.25103 18.8333 9.04209 18.7745 8.89493C18.7451 8.82138 18.7191 8.76338 18.6986 8.72036C18.6884 8.69885 18.6636 8.65118 18.6563 8.63711Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

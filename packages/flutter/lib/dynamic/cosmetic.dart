@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class CosmeticIcon extends StatelessWidget {
   /// Creates the `cosmetic` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const CosmeticIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class CosmeticIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -119,19 +119,21 @@ class CosmeticIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 4.24994C13.0482 4.24994 10.25 7.04816 10.25 10.4999C10.25 13.6979 12.6518 16.3349 15.75 16.7054V19.2499H13.5C13.0858 19.2499 12.75 19.5857 12.75 19.9999C12.75 20.4142 13.0858 20.7499 13.5 20.7499H19.5C19.9142 20.7499 20.25 20.4142 20.25 19.9999C20.25 19.5857 19.9142 19.2499 19.5 19.2499H17.25V16.7054C20.3482 16.3349 22.75 13.6979 22.75 10.4999C22.75 7.04816 19.9518 4.24994 16.5 4.24994ZM16.5 15.2499C19.1234 15.2499 21.25 13.1233 21.25 10.4999C21.25 7.87659 19.1234 5.74994 16.5 5.74994C13.8766 5.74994 11.75 7.87659 11.75 10.4999C11.75 13.1233 13.8766 15.2499 16.5 15.2499Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

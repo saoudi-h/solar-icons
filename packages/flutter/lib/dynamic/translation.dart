@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class TranslationIcon extends StatelessWidget {
   /// Creates the `translation` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const TranslationIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class TranslationIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -117,19 +117,21 @@ class TranslationIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9.25006C10.4812 9.25006 9.25 10.4813 9.25 12.0001C9.25 13.5188 10.4812 14.7501 12 14.7501C13.5188 14.7501 14.75 13.5188 14.75 12.0001C14.75 10.4813 13.5188 9.25006 12 9.25006ZM10.75 12.0001C10.75 11.3097 11.3096 10.7501 12 10.7501C12.6904 10.7501 13.25 11.3097 13.25 12.0001C13.25 12.6904 12.6904 13.2501 12 13.2501C11.3096 13.2501 10.75 12.6904 10.75 12.0001Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

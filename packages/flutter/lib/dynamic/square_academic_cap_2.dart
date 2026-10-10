@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class SquareAcademicCap2Icon extends StatelessWidget {
   /// Creates the `square-academic-cap-2` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const SquareAcademicCap2Icon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class SquareAcademicCap2Icon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -109,19 +109,21 @@ class SquareAcademicCap2Icon extends StatelessWidget {
 <path d="M6.68936 7.70456C6.85253 8.08528 6.67616 8.52619 6.29544 8.68936L5.21977 9.15036C4.617 9.40869 4.21985 9.58 3.928 9.74418C3.65202 9.89944 3.53244 10.0154 3.45645 10.1307C3.38046 10.2459 3.32095 10.4015 3.28696 10.7164C3.25101 11.0493 3.25 11.4818 3.25 12.1376V15C3.25 15.4142 2.91422 15.75 2.5 15.75C2.08579 15.75 1.75 15.4142 1.75 15V12.0987C1.74998 11.4923 1.74996 10.9782 1.79563 10.5553C1.84421 10.1053 1.94986 9.69064 2.20419 9.30494C2.45851 8.91925 2.79805 8.65879 3.19254 8.43686C3.56327 8.2283 4.03569 8.02585 4.59315 7.78696L5.70456 7.31064C6.08529 7.14747 6.5262 7.32384 6.68936 7.70456Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

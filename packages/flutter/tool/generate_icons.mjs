@@ -167,7 +167,7 @@ function deprecationTypedefs(aliasList, canonicalClass, suffix) {
 }
 
 function widgetParams(withStyle) {
-    return `    super.key,${withStyle ? '\n    this.style = SolarIconStyle.linear,' : ''}
+    return `    super.key,${withStyle ? '\n    this.style,' : ''}
     this.size,
     this.color,
     this.strokeWidth,
@@ -178,7 +178,7 @@ function widgetParams(withStyle) {
 }
 
 function widgetFields(withStyle) {
-    return `${withStyle ? '  /// Style to draw.\n  final SolarIconStyle style;\n\n' : ''}  /// Width and height.
+    return `${withStyle ? '  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].\n  final SolarIconStyle? style;\n\n' : ''}  /// Width and height.
   final double? size;
 
   /// Primary color.
@@ -204,6 +204,30 @@ const WIDGET_BUILD = `  @override
   Widget build(BuildContext context) {
     return SolarIcon(
       _data,
+      size: size,
+      color: color,
+      strokeWidth: strokeWidth,
+      secondaryColor: secondaryColor,
+      secondaryOpacity: secondaryOpacity,
+      semanticLabel: semanticLabel,
+      isolated: isolated,
+    );
+  }`
+
+const DYNAMIC_BUILD = `  @override
+  Widget build(BuildContext context) {
+    final SolarIconStyle fallback =
+        isolated ? SolarIconStyle.linear : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
+    return SolarIcon(
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,
@@ -290,7 +314,7 @@ import '../src/solar_provider.dart';
 class ${className} extends StatelessWidget {
   /// Creates the \`${icon.name}\` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const ${className}({
 ${widgetParams(true)}
   });
@@ -299,16 +323,7 @@ ${widgetFields(true)}
 
 ${payloads}
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
-${WIDGET_BUILD}
+${DYNAMIC_BUILD}
 }
 ${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`}
 }

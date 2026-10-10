@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class Reorder2Icon extends StatelessWidget {
   /// Creates the `reorder-2` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const Reorder2Icon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class Reorder2Icon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -114,19 +114,21 @@ class Reorder2Icon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4678 14.25H19.5322C19.972 14.25 20.3514 14.25 20.6627 14.2782C20.9918 14.308 21.3178 14.3741 21.625 14.5514C21.967 14.7489 22.2511 15.033 22.4486 15.375C22.6259 15.6822 22.692 16.0082 22.7218 16.3374C22.75 16.6486 22.75 17.0279 22.75 17.4677V17.5322C22.75 17.972 22.75 18.3514 22.7218 18.6627C22.692 18.9918 22.6259 19.3178 22.4486 19.625C22.2511 19.967 21.967 20.2511 21.625 20.4486C21.3178 20.6259 20.9918 20.692 20.6627 20.7218C20.3514 20.75 19.9721 20.75 19.5323 20.75H19.4678C19.028 20.75 18.6486 20.75 18.3374 20.7218C18.0082 20.692 17.6822 20.6259 17.375 20.4486C17.033 20.2511 16.7489 19.967 16.5514 19.625C16.3741 19.3178 16.308 18.9918 16.2782 18.6627C16.25 18.3514 16.25 17.972 16.25 17.5323V17.4678C16.25 17.028 16.25 16.6486 16.2782 16.3374C16.308 16.0082 16.3741 15.6822 16.5514 15.375C16.7489 15.033 17.033 14.7489 17.375 14.5514C17.6822 14.3741 18.0082 14.308 18.3374 14.2782C18.6486 14.25 19.028 14.25 19.4678 14.25ZM18.4727 15.7721C18.2476 15.7925 18.1659 15.8269 18.125 15.8505C18.011 15.9163 17.9163 16.011 17.8505 16.125C17.8269 16.1659 17.7925 16.2476 17.7721 16.4727C17.7507 16.7082 17.75 17.0189 17.75 17.5C17.75 17.9811 17.7507 18.2918 17.7721 18.5273C17.7925 18.7524 17.8269 18.8341 17.8505 18.875C17.9163 18.989 18.011 19.0837 18.125 19.1495C18.1659 19.1731 18.2476 19.2075 18.4727 19.2279C18.7082 19.2493 19.0189 19.25 19.5 19.25C19.9811 19.25 20.2918 19.2493 20.5273 19.2279C20.7524 19.2075 20.8341 19.1731 20.875 19.1495C20.989 19.0837 21.0837 18.989 21.1495 18.875C21.1731 18.8341 21.2075 18.7524 21.2279 18.5273C21.2493 18.2918 21.25 17.9811 21.25 17.5C21.25 17.0189 21.2493 16.7082 21.2279 16.4727C21.2075 16.2476 21.1731 16.1659 21.1495 16.125C21.0837 16.011 20.989 15.9163 20.875 15.8505C20.8341 15.8269 20.7524 15.7925 20.5273 15.7721C20.2918 15.7507 19.9811 15.75 19.5 15.75C19.0189 15.75 18.7082 15.7507 18.4727 15.7721Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class FileFigmaIcon extends StatelessWidget {
   /// Creates the `file-figma` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const FileFigmaIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class FileFigmaIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -112,19 +112,21 @@ class FileFigmaIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 11.5001C4.25 10.2574 5.25736 9.25005 6.5 9.25005H9.5C10.7426 9.25005 11.75 10.2574 11.75 11.5001C11.75 12.0763 11.5334 12.602 11.1771 13.0001C11.5334 13.3981 11.75 13.9238 11.75 14.5001C11.75 15.7427 10.7426 16.7501 9.5 16.7501C9.23702 16.7501 8.98458 16.7049 8.75 16.622V17.5C8.75 18.7427 7.74264 19.75 6.5 19.75C5.25736 19.75 4.25 18.7427 4.25 17.5C4.25 16.9238 4.46664 16.3981 4.82292 16.0001C4.46664 15.602 4.25 15.0763 4.25 14.5001C4.25 13.9238 4.46664 13.3981 4.82292 13.0001C4.46664 12.602 4.25 12.0763 4.25 11.5001ZM6.5 13.7501C6.08579 13.7501 5.75 14.0858 5.75 14.5001C5.75 14.9143 6.08579 15.2501 6.5 15.2501H7.25V13.7501H6.5ZM7.25 12.2501H6.5C6.08579 12.2501 5.75 11.9143 5.75 11.5001C5.75 11.0858 6.08579 10.7501 6.5 10.7501H7.25V12.2501ZM9.5 12.2501C9.91421 12.2501 10.25 11.9143 10.25 11.5001C10.25 11.0858 9.91421 10.7501 9.5 10.7501H8.75V12.2501H9.5ZM9.5 13.7501C9.08579 13.7501 8.75 14.0858 8.75 14.5001C8.75 14.9143 9.08579 15.2501 9.5 15.2501C9.91421 15.2501 10.25 14.9143 10.25 14.5001C10.25 14.0858 9.91421 13.7501 9.5 13.7501ZM7.25 16.7501H6.5C6.08579 16.7501 5.75 17.0858 5.75 17.5C5.75 17.9143 6.08579 18.25 6.5 18.25C6.91421 18.25 7.25 17.9143 7.25 17.5V16.7501Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

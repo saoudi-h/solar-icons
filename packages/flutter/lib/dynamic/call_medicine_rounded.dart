@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class CallMedicineRoundedIcon extends StatelessWidget {
   /// Creates the `call-medicine-rounded` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const CallMedicineRoundedIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class CallMedicineRoundedIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -107,19 +107,21 @@ class CallMedicineRoundedIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00745 6.4069C4.68752 4.72683 7.52266 4.85455 8.69248 6.95067L9.34149 8.1136C10.1054 9.48242 9.77987 11.2095 8.66157 12.3415C8.64668 12.3619 8.56774 12.4768 8.55791 12.6776C8.54536 12.9339 8.63639 13.5267 9.55482 14.4452C10.4729 15.3633 11.0656 15.4545 11.3221 15.4421C11.5231 15.4323 11.6381 15.3533 11.6585 15.3384C12.7905 14.2201 14.5176 13.8946 15.8864 14.6585L17.0493 15.3075C19.1454 16.4773 19.2731 19.3125 17.5931 20.9925C16.6944 21.8912 15.4995 22.6897 14.0953 22.7429C12.0144 22.8218 8.55913 22.2844 5.13735 18.8626C1.71556 15.4408 1.17818 11.9856 1.25706 9.90468C1.3103 8.50048 2.10879 7.30556 3.00745 6.4069ZM7.38265 7.68167C6.78363 6.60832 5.17394 6.36173 4.06811 7.46756C3.29276 8.24291 2.7887 9.09872 2.75599 9.9615C2.6902 11.6968 3.11864 14.7226 6.19801 17.802C9.27737 20.8813 12.3031 21.3098 14.0385 21.244C14.9013 21.2113 15.7571 20.7072 16.5324 19.9319C17.6382 18.826 17.3916 17.2163 16.3183 16.6173L15.1554 15.9683C14.432 15.5646 13.4158 15.7023 12.7025 16.4156C12.6325 16.4856 12.1864 16.9018 11.395 16.9403C10.5847 16.9797 9.604 16.6157 8.49416 15.5058C7.38395 14.3956 7.02003 13.4146 7.0597 12.6043C7.09846 11.8128 7.51468 11.3672 7.58432 11.2975C8.29764 10.5842 8.43539 9.56801 8.03166 8.8446L7.38265 7.68167Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

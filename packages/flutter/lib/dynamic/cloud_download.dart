@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class CloudDownloadIcon extends StatelessWidget {
   /// Creates the `cloud-download` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const CloudDownloadIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class CloudDownloadIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -104,19 +104,21 @@ class CloudDownloadIcon extends StatelessWidget {
 <path d="M12.2262 3.5C9.4761 3.5 7.2619 5.70083 7.2619 8.39706C7.2619 8.85922 7.3266 9.30551 7.44729 9.72813C7.94449 9.87162 8.40991 10.0889 8.83045 10.3671C9.17592 10.5956 9.27072 11.0609 9.04219 11.4064C8.81366 11.7519 8.34835 11.8467 8.00288 11.6181C7.62207 11.3662 7.18917 11.1855 6.7233 11.0951C6.50147 11.0521 6.27165 11.0294 6.03571 11.0294C4.0746 11.0294 2.5 12.5982 2.5 14.5147C2.5 16.4312 4.0746 18 6.03571 18C6.44993 18 6.78571 18.3358 6.78571 18.75C6.78571 19.1642 6.44993 19.5 6.03571 19.5C3.26296 19.5 1 17.2764 1 14.5147C1 11.8105 3.16987 9.62207 5.86351 9.53228C5.79673 9.16355 5.7619 8.78413 5.7619 8.39706C5.7619 4.85572 8.66446 2 12.2262 2C15.3843 2 18.0224 4.24369 18.5814 7.22127C20.8813 8.19751 22.5 10.4593 22.5 13.1029C22.5 16.1769 20.3123 18.7343 17.4068 19.3557C17.0018 19.4423 16.6032 19.1841 16.5166 18.7791C16.43 18.374 16.6881 17.9754 17.0932 17.8888C19.3329 17.4098 21 15.443 21 13.1029C21 10.9662 19.6107 9.14087 17.6624 8.47463C17.1538 8.30072 16.6068 8.20588 16.0357 8.20588C15.4531 8.20588 14.8955 8.30458 14.3783 8.48526C13.9872 8.62185 13.5595 8.41557 13.4229 8.02453C13.2863 7.63348 13.4926 7.20575 13.8836 7.06916C14.5579 6.83364 15.2826 6.70588 16.0357 6.70588C16.3312 6.70588 16.6223 6.72555 16.9077 6.76367C16.227 4.86631 14.3922 3.5 12.2262 3.5Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class StationIcon extends StatelessWidget {
   /// Creates the `station` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const StationIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class StationIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -120,19 +120,21 @@ class StationIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4242 11.4311C14.219 10.949 14.75 10.0756 14.75 9.07812C14.75 7.55934 13.5188 6.32812 12 6.32812C10.4812 6.32812 9.25 7.55934 9.25 9.07812C9.25 10.0756 9.78103 10.949 10.5758 11.4311L7.28531 21.7726C7.17688 22.1134 7.32411 22.4833 7.63704 22.6563C7.94997 22.8294 8.34156 22.7574 8.57254 22.4845L12 18.4338L15.4275 22.4845C15.6584 22.7574 16.05 22.8294 16.363 22.6563C16.6759 22.4833 16.8231 22.1134 16.7147 21.7726L13.4242 11.4311ZM12 7.82812C11.3096 7.82812 10.75 8.38777 10.75 9.07812C10.75 9.61867 11.0931 10.0791 11.5734 10.2534C11.6247 10.2585 11.6763 10.269 11.7274 10.2853C11.7519 10.2931 11.7757 10.302 11.7988 10.312C11.8643 10.3226 11.9315 10.3281 12 10.3281C12.0685 10.3281 12.1357 10.3226 12.2012 10.312C12.2243 10.302 12.2481 10.2931 12.2726 10.2853C12.3237 10.269 12.3753 10.2585 12.4266 10.2534C12.9069 10.0791 13.25 9.61867 13.25 9.07812C13.25 8.38777 12.6904 7.82812 12 7.82812ZM14.1466 18.6485L12.9825 17.2727L13.5103 16.6489L14.1466 18.6485ZM12.9275 15.0155C12.9425 14.9978 12.9582 14.9809 12.9745 14.9648L12 11.9022L11.0255 14.9648C11.0418 14.9809 11.0575 14.9978 11.0725 15.0155L12 16.1116L12.9275 15.0155ZM11.0175 17.2727L10.4897 16.6489L9.85345 18.6485L11.0175 17.2727Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

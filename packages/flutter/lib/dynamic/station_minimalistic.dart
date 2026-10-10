@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class StationMinimalisticIcon extends StatelessWidget {
   /// Creates the `station-minimalistic` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const StationMinimalisticIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class StationMinimalisticIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -115,19 +115,21 @@ class StationMinimalisticIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M14 8.75C14 9.50706 13.5794 10.1659 12.9591 10.5055L15.206 17.2462C15.2099 17.2571 15.2136 17.2681 15.217 17.2792L16.7115 21.7628C16.8425 22.1558 16.6301 22.5805 16.2372 22.7115C15.8442 22.8425 15.4195 22.6301 15.2885 22.2372L13.9594 18.25H10.0406L8.71151 22.2372C8.58053 22.6301 8.15579 22.8425 7.76283 22.7115C7.36987 22.5805 7.1575 22.1558 7.28849 21.7628L8.78302 17.2792C8.78644 17.2681 8.79011 17.2571 8.79402 17.2462L11.0409 10.5055C10.4206 10.1659 10 9.50706 10 8.75C10 7.64543 10.8954 6.75 12 6.75C13.1046 6.75 14 7.64543 14 8.75ZM11.5 8.75C11.5 8.47386 11.7239 8.25 12 8.25C12.2761 8.25 12.5 8.47386 12.5 8.75C12.5 9.02614 12.2761 9.25 12 9.25C11.7239 9.25 11.5 9.02614 11.5 8.75ZM10.5406 16.75H13.4594L12 12.3717L10.5406 16.75Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

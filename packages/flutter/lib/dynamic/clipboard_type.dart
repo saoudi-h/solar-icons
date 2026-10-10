@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class ClipboardTypeIcon extends StatelessWidget {
   /// Creates the `clipboard-type` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const ClipboardTypeIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class ClipboardTypeIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -108,19 +108,21 @@ class ClipboardTypeIcon extends StatelessWidget {
 <path d="M14.25 12.4248C14.25 11.9708 14.249 11.6997 14.2246 11.5039C14.211 11.3948 14.1939 11.3488 14.1865 11.334C14.1801 11.3267 14.1733 11.3199 14.166 11.3135C14.1512 11.3061 14.1052 11.289 13.9961 11.2754C13.8003 11.251 13.5292 11.25 13.0752 11.25H12.75V16.75H14C14.4142 16.75 14.75 17.0858 14.75 17.5C14.75 17.9142 14.4142 18.25 14 18.25H10C9.58579 18.25 9.25 17.9142 9.25 17.5C9.25 17.0858 9.58579 16.75 10 16.75H11.25V11.25H10.9248C10.4708 11.25 10.1997 11.251 10.0039 11.2754C9.89476 11.289 9.84885 11.3061 9.83399 11.3135C9.82675 11.3199 9.81992 11.3267 9.81348 11.334C9.80615 11.3488 9.78901 11.3948 9.77539 11.5039C9.75103 11.6997 9.75 11.9708 9.75 12.4248C9.75 12.839 9.41422 13.1748 9 13.1748C8.58579 13.1748 8.25 12.839 8.25 12.4248C8.25 12.0093 8.24842 11.6276 8.28711 11.3174C8.32812 10.989 8.42413 10.6389 8.69141 10.3379C8.73707 10.2865 8.78651 10.2371 8.83789 10.1914C9.13889 9.92413 9.48898 9.82811 9.81738 9.78711C10.1276 9.74842 10.5093 9.75 10.9248 9.75H13.0752C13.4907 9.75 13.8724 9.74842 14.1826 9.78711C14.511 9.82811 14.8611 9.92413 15.1621 10.1914C15.2135 10.2371 15.2629 10.2865 15.3086 10.3379C15.5759 10.6389 15.6719 10.989 15.7129 11.3174C15.7516 11.6276 15.75 12.0093 15.75 12.4248C15.75 12.839 15.4142 13.1748 15 13.1748C14.5858 13.1748 14.25 12.839 14.25 12.4248Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

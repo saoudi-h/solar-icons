@@ -52,6 +52,8 @@ ArrowRightIcon(
 )
 ```
 
+`style` wins, then `SolarProvider`, then `linear`. Static widgets always draw their own style.
+
 Each dynamic widget also exposes its six payloads. Pass one to `SolarIcon` when you want the data directly:
 
 ```dart
@@ -62,14 +64,15 @@ Static widgets expose their single payload the same way (`HomeLinearIcon.data`).
 
 ### Theme
 
-`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to 1.5.
+`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to 1.5. `style` also falls back to the provider, so one wrapper can set the style for every dynamic widget inside it; static widgets always draw their own style.
 
 ```dart
 SolarProvider(
   size: 24,
   color: Color(0xFF111827),
   strokeWidth: 1.5,
-  child: HomeLinearIcon(),
+  style: SolarIconStyle.bold,
+  child: HomeIcon(),
 )
 ```
 

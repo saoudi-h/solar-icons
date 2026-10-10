@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class LayoutFreeformIcon extends StatelessWidget {
   /// Creates the `layout-freeform` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const LayoutFreeformIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class LayoutFreeformIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -109,19 +109,21 @@ class LayoutFreeformIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50001 2.2334C7.30376 2.2334 7.98237 2.23137 8.52051 2.30372C9.08011 2.37899 9.5988 2.54704 10.0176 2.96583C10.4363 3.38459 10.6044 3.90334 10.6797 4.4629C10.752 5.001 10.75 5.67976 10.75 6.4834C10.75 7.28706 10.752 7.96582 10.6797 8.50391C10.6044 9.06343 10.4363 9.58225 10.0176 10.001C9.59882 10.4197 9.08007 10.5878 8.52051 10.6631C7.98238 10.7354 7.30374 10.7334 6.50001 10.7334C5.69627 10.7334 5.01763 10.7354 4.4795 10.6631C3.91994 10.5878 3.4012 10.4197 2.98243 10.001C2.5637 9.58225 2.3956 9.06343 2.32032 8.50391C2.24797 7.96582 2.25001 7.28706 2.25001 6.4834C2.25001 5.67977 2.248 5.001 2.32032 4.4629C2.39558 3.90334 2.56373 3.38459 2.98243 2.96583C3.40121 2.54705 3.9199 2.37899 4.4795 2.30372C5.01764 2.23137 5.69625 2.2334 6.50001 2.2334ZM6.50001 3.7334C5.65385 3.7334 5.09465 3.73523 4.67969 3.79102C4.28638 3.84391 4.13667 3.93268 4.04297 4.02637C3.94932 4.12008 3.86049 4.26992 3.80762 4.66309C3.75186 5.07803 3.75001 5.6374 3.75001 6.4834C3.75001 7.32943 3.75184 7.8888 3.80762 8.30372C3.86052 8.69689 3.94929 8.84675 4.04297 8.94044C4.13668 9.03409 4.28651 9.12292 4.67969 9.17579C5.09465 9.23157 5.65387 9.2334 6.50001 9.2334C7.34614 9.2334 7.90536 9.23157 8.32032 9.17579C8.71349 9.12292 8.86333 9.03409 8.95704 8.94044C9.05072 8.84675 9.13949 8.69688 9.19239 8.30372C9.24817 7.8888 9.25001 7.32943 9.25001 6.4834C9.25001 5.6374 9.24815 5.07803 9.19239 4.66309C9.13952 4.26991 9.05069 4.12008 8.95704 4.02637C8.86334 3.93267 8.71364 3.84391 8.32032 3.79102C7.90536 3.73523 7.34617 3.7334 6.50001 3.7334Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class WebcamOffIcon extends StatelessWidget {
   /// Creates the `webcam-off` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const WebcamOffIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class WebcamOffIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -123,19 +123,21 @@ class WebcamOffIcon extends StatelessWidget {
 <path d="M19.4306 6.93779C19.8265 6.81655 20.2457 7.03895 20.3671 7.43486C20.6157 8.24693 20.7499 9.10896 20.7499 10.0003C20.7497 14.5798 17.2309 18.3355 12.7499 18.7161V21.2503H15.9999C16.414 21.2504 16.7499 21.5861 16.7499 22.0003C16.7497 22.4143 16.4139 22.7502 15.9999 22.7503H7.99989C7.58581 22.7503 7.2501 22.4143 7.24989 22.0003C7.24989 21.5861 7.58567 21.2503 7.99989 21.2503H11.2499V18.7171C10.6243 18.6639 10.0165 18.5467 9.43446 18.3685C9.03851 18.2472 8.81533 17.8269 8.93641 17.431C9.05781 17.0351 9.47795 16.8126 9.87391 16.9339C10.5452 17.1394 11.2591 17.2503 11.9999 17.2503C16.0037 17.2502 19.2497 14.0041 19.2499 10.0003C19.2499 9.25954 19.139 8.54558 18.9335 7.87431C18.8122 7.47834 19.0347 7.05919 19.4306 6.93779Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

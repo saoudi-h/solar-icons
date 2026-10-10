@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class AdhesivePlaster2Icon extends StatelessWidget {
   /// Creates the `adhesive-plaster-2` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const AdhesivePlaster2Icon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class AdhesivePlaster2Icon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -122,19 +122,21 @@ class AdhesivePlaster2Icon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.05414 3.05414C5.45965 0.648621 9.35977 0.648621 11.7653 3.05414L20.9459 12.2347C23.3514 14.6402 23.3514 18.5403 20.9459 20.9459C18.5403 23.3514 14.6402 23.3514 12.2347 20.9459L3.05414 11.7653C0.648621 9.35977 0.648621 5.45965 3.05414 3.05414ZM10.1318 3.62692C8.31061 2.31298 5.75399 2.4756 4.1148 4.1148C2.4756 5.75399 2.31298 8.31061 3.62692 10.1318L10.1318 3.62692ZM11.235 4.64513L4.64513 11.235L12.765 19.3549L19.3549 12.765L11.235 4.64513ZM20.3731 13.8682L13.8682 20.3731C15.6894 21.687 18.246 21.5244 19.8852 19.8852C21.5244 18.246 21.687 15.6894 20.3731 13.8682Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

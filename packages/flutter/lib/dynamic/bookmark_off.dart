@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class BookmarkOffIcon extends StatelessWidget {
   /// Creates the `bookmark-off` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const BookmarkOffIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class BookmarkOffIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -106,19 +106,21 @@ class BookmarkOffIcon extends StatelessWidget {
 <path d="M20.8163 5.82227C21.2285 5.78291 21.5942 6.08488 21.6337 6.49707C21.7502 7.71117 21.7499 9.22503 21.7499 11.0977V16.0918C21.7499 17.6216 21.7513 18.8313 21.6542 19.7393C21.5593 20.627 21.3553 21.4282 20.7744 21.9639C20.308 22.3936 19.7173 22.6653 19.0878 22.7373C18.3006 22.8272 17.5648 22.4513 16.8408 21.9385C16.1 21.4137 15.1993 20.6156 14.0605 19.6084C13.5406 19.1486 13.1882 18.8378 12.8945 18.623C12.611 18.4158 12.4379 18.34 12.2919 18.3105C12.0994 18.2718 11.9005 18.2718 11.708 18.3105C11.5619 18.34 11.3881 18.4156 11.1044 18.623C10.8108 18.8378 10.4591 19.1488 9.9394 19.6084C8.98298 20.4543 8.19784 21.1483 7.53998 21.6553C6.89472 22.1525 6.28412 22.5407 5.67279 22.6865C5.2701 22.7824 4.86574 22.5334 4.76947 22.1309C4.67949 21.7533 4.89225 21.3743 5.25092 21.249L5.43647 21.1953C5.70957 21.1027 6.08186 20.8853 6.62494 20.4668C7.23315 19.9981 7.97389 19.3435 8.94526 18.4844C9.44411 18.0431 9.8566 17.6776 10.2197 17.4121C10.5926 17.1394 10.9687 16.9292 11.4121 16.8398C11.8001 16.7617 12.1998 16.7617 12.5878 16.8398C13.0312 16.9292 13.4073 17.1394 13.7802 17.4121C14.1433 17.6776 14.5558 18.0432 15.0546 18.4844C16.2207 19.5157 17.0494 20.2474 17.708 20.7139C18.383 21.192 18.7183 21.2699 18.9179 21.2471C19.2298 21.2114 19.524 21.0767 19.7578 20.8613C19.9104 20.7206 20.0734 20.4088 20.1621 19.5801C20.2485 18.771 20.2499 17.6576 20.2499 16.0918V11.0977C20.2499 9.19669 20.2486 7.76579 20.1406 6.63965C20.1012 6.2275 20.4042 5.86183 20.8163 5.82227Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

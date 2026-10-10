@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class ArchiveMinimalisticCloseIcon extends StatelessWidget {
   /// Creates the `archive-minimalistic-close` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const ArchiveMinimalisticCloseIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class ArchiveMinimalisticCloseIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -106,19 +106,21 @@ class ArchiveMinimalisticCloseIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C14.3356 1.25 16.1628 1.24817 17.5859 1.43945C19.0307 1.63369 20.1706 2.03976 21.0654 2.93457C21.9602 3.82938 22.3663 4.96933 22.5605 6.41406C22.7518 7.83717 22.75 9.66439 22.75 12H22.7373C22.7483 12.5876 22.75 13.2497 22.75 14C22.75 15.3876 22.7509 16.4734 22.6797 17.3447C22.6078 18.2249 22.4584 18.9522 22.123 19.6104C21.5718 20.6923 20.6923 21.5718 19.6104 22.123C18.9522 22.4584 18.2249 22.6078 17.3447 22.6797C16.4734 22.7509 15.3876 22.75 14 22.75H10C8.61244 22.75 7.5266 22.7509 6.65527 22.6797C5.77513 22.6078 5.04778 22.4584 4.38965 22.123C3.30774 21.5718 2.42822 20.6923 1.87695 19.6104C1.54162 18.9522 1.39222 18.2249 1.32031 17.3447C1.24915 16.4734 1.25 15.3876 1.25 14C1.25 13.2497 1.25167 12.5876 1.2627 12H1.25C1.25 9.66439 1.24817 7.83717 1.43945 6.41406C1.63369 4.96933 2.03976 3.82938 2.93457 2.93457C3.82938 2.03976 4.96933 1.63369 6.41406 1.43945C7.83717 1.24817 9.66439 1.25 12 1.25ZM10 6.75C8.58766 6.75 7.57344 6.75041 6.77734 6.81543C5.98996 6.87976 5.48174 7.00326 5.07031 7.21289C4.27066 7.62035 3.62035 8.27066 3.21289 9.07031C3.00326 9.48174 2.87976 9.98997 2.81543 10.7773C2.75041 11.5734 2.75 12.5877 2.75 14C2.75 15.4123 2.75041 16.4266 2.81543 17.2227C2.87976 18.01 3.00326 18.5183 3.21289 18.9297C3.62035 19.7293 4.27066 20.3797 5.07031 20.7871C5.48174 20.9967 5.98996 21.1202 6.77734 21.1846C7.57344 21.2496 8.58766 21.25 10 21.25H14C15.4123 21.25 16.4266 21.2496 17.2227 21.1846C18.01 21.1202 18.5183 20.9967 18.9297 20.7871C19.7293 20.3797 20.3797 19.7293 20.7871 18.9297C20.9967 18.5183 21.1202 18.01 21.1846 17.2227C21.2496 16.4266 21.25 15.4123 21.25 14C21.25 12.5877 21.2496 11.5734 21.1846 10.7773C21.1202 9.98997 20.9967 9.48174 20.7871 9.07031C20.3797 8.27066 19.7293 7.62035 18.9297 7.21289C18.5183 7.00326 18.01 6.87976 17.2227 6.81543C16.4266 6.75041 15.4123 6.75 14 6.75H10ZM12 2.75C9.62178 2.75 7.91326 2.75198 6.61328 2.92676C5.33508 3.09865 4.56472 3.42551 3.99512 3.99512C3.42551 4.56472 3.09865 5.33508 2.92676 6.61328C2.91053 6.73399 2.89718 6.85837 2.88379 6.98633C3.31932 6.53967 3.82689 6.1637 4.38965 5.87695C5.04778 5.54162 5.77513 5.39222 6.65527 5.32031C7.5266 5.24915 8.61244 5.25 10 5.25H14C15.3876 5.25 16.4734 5.24915 17.3447 5.32031C18.2249 5.39222 18.9522 5.54162 19.6104 5.87695C20.1729 6.16359 20.6798 6.53989 21.1152 6.98633C21.1019 6.8584 21.0895 6.73396 21.0732 6.61328C20.9014 5.33508 20.5745 4.56472 20.0049 3.99512C19.4353 3.42551 18.6649 3.09865 17.3867 2.92676C16.0867 2.75198 14.3782 2.75 12 2.75Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

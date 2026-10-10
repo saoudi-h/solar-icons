@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class FuelIcon extends StatelessWidget {
   /// Creates the `fuel` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const FuelIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class FuelIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -122,19 +122,21 @@ class FuelIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1215 2.378C19.2746 2.151 20.2973 2.18453 21.1755 2.81966C22.0497 3.45196 22.4147 4.41622 22.5843 5.59301C22.75 6.74256 22.75 8.25914 22.75 10.1689V15.9373C22.75 17.333 22.75 18.4551 22.6337 19.337C22.5133 20.2504 22.2561 21.0183 21.6567 21.6292C21.0554 22.2422 20.2964 22.5072 19.3937 22.6309C18.5257 22.7498 17.4226 22.7498 16.0558 22.7498H7.94423C6.57742 22.7498 5.47426 22.7498 4.60634 22.6309C3.70357 22.5072 2.94457 22.2422 2.34327 21.6292C1.74394 21.0183 1.48674 20.2504 1.36627 19.337C1.24997 18.4551 1.24998 17.333 1.25 15.9373V13.0437C1.24999 12.0321 1.24997 11.2112 1.32373 10.5463C1.40054 9.85383 1.56346 9.25652 1.93766 8.71883C2.31266 8.18 2.81458 7.82353 3.43435 7.51889C3.67957 7.39835 3.95362 7.2812 4.25685 7.16164C4.25233 7.12837 4.25 7.0944 4.25 7.05989L4.25 7.01902C4.24998 6.40138 4.24996 5.87705 4.29681 5.45315C4.34625 5.00576 4.4555 4.57857 4.7388 4.20196C4.86504 4.03414 5.01262 3.88352 5.17795 3.75412C5.55101 3.46212 5.97608 3.34886 6.4199 3.29782C6.83796 3.24975 7.35416 3.24977 7.95798 3.2498L8.90696 3.24974C9.32558 3.24934 9.67679 3.249 9.98489 3.33321C10.6457 3.51382 11.1854 3.96827 11.4874 4.56566L13.8275 3.73069C15.5932 3.10068 16.9995 2.59886 18.1215 2.378ZM18.4112 3.84975C17.4122 4.04641 16.1113 4.50846 14.2699 5.16546L6.26994 8.01989C5.28321 8.37196 4.60299 8.61587 4.09604 8.86506C3.60704 9.10542 3.34709 9.31956 3.16885 9.57568C2.9898 9.83295 2.87609 10.1572 2.81459 10.7117C2.75107 11.2843 2.75 12.0218 2.75 13.0867V15.8832C2.75 17.3457 2.75154 18.3685 2.8534 19.1409C2.95261 19.8932 3.13474 20.2941 3.41409 20.5788C3.69147 20.8616 4.07892 21.0446 4.81003 21.1448C5.56422 21.2481 6.56418 21.2498 8 21.2498H16C17.4358 21.2498 18.4358 21.2481 19.19 21.1448C19.9211 21.0446 20.3085 20.8616 20.5859 20.5788C20.8653 20.2941 21.0474 19.8932 21.1466 19.1409C21.2485 18.3685 21.25 17.3457 21.25 15.8832V10.2323C21.25 8.24485 21.2481 6.83692 21.0997 5.80704C20.9533 4.7917 20.6862 4.31705 20.2964 4.03507C19.9104 3.75593 19.3921 3.65665 18.4112 3.84975ZM10.0445 5.08049C9.92734 4.93486 9.76844 4.82907 9.58942 4.78014C9.50288 4.75648 9.3746 4.7498 8.81818 4.7498H8C7.34251 4.7498 6.91342 4.75096 6.59127 4.788C6.28522 4.8232 6.17009 4.8824 6.10247 4.93532C6.04089 4.98352 5.98536 5.04007 5.9375 5.1037C5.88265 5.17661 5.82282 5.30042 5.78773 5.61793C5.75994 5.86939 5.7526 6.1835 5.75068 6.61254L10.0445 5.08049Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

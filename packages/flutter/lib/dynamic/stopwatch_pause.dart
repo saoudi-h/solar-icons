@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class StopwatchPauseIcon extends StatelessWidget {
   /// Creates the `stopwatch-pause` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const StopwatchPauseIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class StopwatchPauseIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -112,19 +112,21 @@ class StopwatchPauseIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0982 8.26112C9.93289 8.24984 9.73604 8.24985 9.52176 8.24987H9.47824C9.26397 8.24985 9.06712 8.24984 8.90179 8.26112C8.72415 8.27324 8.52881 8.30086 8.33031 8.38308C7.90151 8.56069 7.56083 8.90137 7.38321 9.33017C7.30099 9.52867 7.27338 9.72401 7.26126 9.90166C7.24998 10.067 7.24999 10.2638 7.25 10.4781V15.5216C7.24999 15.7359 7.24998 15.9328 7.26126 16.0981C7.27338 16.2757 7.30099 16.4711 7.38321 16.6696C7.56083 17.0984 7.90151 17.439 8.33031 17.6167C8.52881 17.6989 8.72415 17.7265 8.90179 17.7386C9.06712 17.7499 9.26396 17.7499 9.47824 17.7499H9.52176C9.73604 17.7499 9.93289 17.7499 10.0982 17.7386C10.2759 17.7265 10.4712 17.6989 10.6697 17.6167C11.0985 17.439 11.4392 17.0984 11.6168 16.6696C11.699 16.4711 11.7266 16.2757 11.7387 16.0981C11.75 15.9328 11.75 15.7359 11.75 15.5216V10.4781C11.75 10.2638 11.75 10.067 11.7387 9.90166C11.7266 9.72401 11.699 9.52867 11.6168 9.33017C11.4392 8.90137 11.0985 8.56069 10.6697 8.38308C10.4712 8.30086 10.2759 8.27324 10.0982 8.26112ZM8.90131 9.77017C8.84248 9.79545 8.79558 9.84234 8.77031 9.90118C8.76844 9.90853 8.76234 9.93693 8.75778 10.0038C8.75041 10.1118 8.75 10.2566 8.75 10.4999V15.4999C8.75 15.7431 8.75041 15.888 8.75778 15.996C8.76234 16.0628 8.76844 16.0912 8.77031 16.0986C8.79558 16.1574 8.84248 16.2043 8.90131 16.2296C8.90867 16.2314 8.93707 16.2375 9.0039 16.2421C9.11191 16.2495 9.25677 16.2499 9.5 16.2499C9.74323 16.2499 9.8881 16.2495 9.9961 16.2421C10.0629 16.2375 10.0913 16.2314 10.0987 16.2296C10.1575 16.2043 10.2044 16.1574 10.2297 16.0986C10.2316 16.0912 10.2377 16.0628 10.2422 15.996C10.2496 15.888 10.25 15.7431 10.25 15.4999V10.4999C10.25 10.2566 10.2496 10.1118 10.2422 10.0038C10.2377 9.93693 10.2316 9.90853 10.2297 9.90117C10.2044 9.84234 10.1575 9.79545 10.0987 9.77017C10.0913 9.7683 10.0629 9.7622 9.9961 9.75764C9.8881 9.75027 9.74323 9.74987 9.5 9.74987C9.25677 9.74987 9.11191 9.75027 9.0039 9.75764C8.93707 9.7622 8.90867 9.7683 8.90131 9.77017Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

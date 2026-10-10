@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class KanbanIcon extends StatelessWidget {
   /// Creates the `kanban` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const KanbanIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class KanbanIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -109,19 +109,21 @@ class KanbanIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25001C12.4502 1.25001 12.8634 1.24809 13.1973 1.29298C13.5527 1.34077 13.9283 1.45371 14.2373 1.76271C14.5463 2.07172 14.6592 2.44728 14.707 2.80275C14.7519 3.13665 14.75 3.54982 14.75 4.00001V10C14.75 10.4502 14.7519 10.8634 14.707 11.1973C14.6593 11.5528 14.5463 11.9283 14.2373 12.2373C13.9283 12.5463 13.5528 12.6592 13.1973 12.707C12.8634 12.7519 12.4502 12.75 12 12.75C11.5498 12.75 11.1366 12.7519 10.8027 12.707C10.4473 12.6592 10.0717 12.5463 9.76271 12.2373C9.45371 11.9283 9.34077 11.5527 9.29298 11.1973C9.24809 10.8634 9.25001 10.4502 9.25001 10V4.00001C9.25001 3.54982 9.24809 3.13665 9.29298 2.80275C9.34078 2.44728 9.45369 2.07172 9.76271 1.76271C10.0717 1.45369 10.4473 1.34078 10.8027 1.29298C11.1366 1.24809 11.5498 1.25001 12 1.25001ZM12 2.75001C11.5076 2.75001 11.2136 2.75198 11.0029 2.78029C10.9064 2.79327 10.8577 2.80843 10.8359 2.81739C10.831 2.81945 10.8271 2.82128 10.8252 2.82228L10.8233 2.82325L10.8223 2.82521C10.8213 2.82713 10.8194 2.83097 10.8174 2.83595C10.8084 2.85773 10.7933 2.9064 10.7803 3.00294C10.752 3.21365 10.75 3.50759 10.75 4.00001V10C10.75 10.4924 10.752 10.7864 10.7803 10.9971C10.7933 11.0936 10.8084 11.1423 10.8174 11.1641C10.8194 11.169 10.8213 11.1729 10.8223 11.1748L10.8233 11.1768L10.8252 11.1777C10.8271 11.1787 10.831 11.1806 10.8359 11.1826C10.8577 11.1916 10.9064 11.2068 11.0029 11.2197C11.2136 11.248 11.5076 11.25 12 11.25C12.4924 11.25 12.7864 11.248 12.9971 11.2197C13.0936 11.2068 13.1423 11.1916 13.1641 11.1826C13.1691 11.1806 13.1729 11.1788 13.1748 11.1777L13.1768 11.1768L13.1777 11.1748C13.1788 11.1729 13.1806 11.1691 13.1826 11.1641C13.1916 11.1423 13.2068 11.0936 13.2197 10.9971C13.248 10.7864 13.25 10.4924 13.25 10V4.00001C13.25 3.50759 13.248 3.21365 13.2197 3.00294C13.2068 2.9064 13.1916 2.85773 13.1826 2.83595C13.1806 2.83098 13.1787 2.82712 13.1777 2.82521L13.1768 2.82325L13.1748 2.82228C13.1729 2.82127 13.169 2.81944 13.1641 2.81739C13.1423 2.80843 13.0936 2.79326 12.9971 2.78029C12.7864 2.75199 12.4924 2.75001 12 2.75001Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

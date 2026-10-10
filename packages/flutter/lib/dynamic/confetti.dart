@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class ConfettiIcon extends StatelessWidget {
   /// Creates the `confetti` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const ConfettiIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class ConfettiIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -158,19 +158,21 @@ class ConfettiIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.63896 6.88473C10.2253 7.31945 10.8999 7.99407 11.7185 8.81276L15.1862 12.2804C16.0049 13.0991 16.6795 13.7737 17.1142 14.36C17.5633 14.9658 17.8798 15.639 17.6968 16.4143C17.5138 17.1896 16.9296 17.6502 16.257 17.9912C15.606 18.3212 14.7009 18.6229 13.6026 18.9889L8.41228 20.719C7.08241 21.1623 6.00323 21.5221 5.16641 21.671C4.322 21.8212 3.46515 21.806 2.82904 21.1699C2.19294 20.5338 2.17779 19.6769 2.328 18.8325C2.47687 17.9957 2.83663 16.9165 3.27998 15.5865L5.01002 10.3964C5.37611 9.29803 5.67776 8.39297 6.00779 7.74194C6.34875 7.06932 6.80936 6.48517 7.58466 6.30214C8.35996 6.11912 9.03319 6.43561 9.63896 6.88473ZM8.74559 8.08968C8.72811 8.07672 8.71099 8.06423 8.69422 8.05218C8.68271 8.11445 8.67047 8.18137 8.65763 8.25262C8.57264 8.72423 8.46128 9.38373 8.35599 10.1341C8.14336 11.6495 7.96353 13.4814 8.05559 14.8852C8.11132 15.7351 8.29333 16.8345 8.46708 17.7416C8.55313 18.1908 8.6356 18.585 8.69653 18.8667C8.70955 18.9269 8.72157 18.9819 8.73243 19.0312L11.3671 18.1529C11.2979 17.9474 11.2149 17.6827 11.132 17.3746C10.933 16.6348 10.7272 15.6173 10.7272 14.5552C10.7272 13.4399 10.9321 12.4226 11.133 11.6905C11.2339 11.3225 11.3352 11.0217 11.4123 10.8105C11.4302 10.7613 11.4469 10.7169 11.462 10.6775L10.7022 9.91776C9.82802 9.04358 9.2317 8.45009 8.74559 8.08968ZM6.41321 10.9303C6.62217 10.3034 6.796 9.78369 6.95433 9.35331C6.92637 9.53684 6.89826 9.72818 6.87054 9.92569C6.65541 11.4589 6.45615 13.4179 6.5588 14.9833C6.62092 15.9306 6.81799 17.1056 6.99387 18.0238C7.08263 18.4872 7.1676 18.8933 7.23043 19.1838C7.25947 19.318 7.28382 19.4278 7.30168 19.5073C6.26086 19.851 5.49409 20.0891 4.90369 20.1941C4.18292 20.3224 3.98348 20.203 3.8897 20.1092C3.79593 20.0155 3.67659 19.816 3.80481 19.0953C3.93207 18.3799 4.25474 17.4057 4.72371 15.9987L6.41321 10.9303ZM13.0687 17.5857L12.7901 17.6786C12.7292 17.498 12.6549 17.2616 12.5805 16.985C12.5266 16.7848 12.4734 16.566 12.4252 16.334C12.3123 15.7901 12.2272 15.1738 12.2272 14.5552C12.2272 13.615 12.4013 12.7369 12.5795 12.0874C12.6013 12.0078 12.6232 11.932 12.6446 11.8602L14.0812 13.2968C14.9554 14.1709 15.5489 14.7673 15.9093 15.2534C16.2631 15.7306 16.2678 15.9387 16.2369 16.0697C16.206 16.2006 16.1087 16.3846 15.5788 16.6532C15.039 16.9269 14.2415 17.1948 13.0687 17.5857Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

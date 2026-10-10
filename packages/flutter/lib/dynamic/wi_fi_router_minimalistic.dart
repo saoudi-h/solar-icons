@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class WiFiRouterMinimalisticIcon extends StatelessWidget {
   /// Creates the `wi-fi-router-minimalistic` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const WiFiRouterMinimalisticIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class WiFiRouterMinimalisticIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -124,19 +124,21 @@ class WiFiRouterMinimalisticIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.948 11.25L15.75 11.25V9C15.75 8.58579 16.0858 8.25 16.5 8.25C16.9142 8.25 17.25 8.58579 17.25 9V11.25L18.052 11.25C18.9505 11.25 19.6997 11.2499 20.2945 11.3299C20.9223 11.4143 21.4891 11.6 21.9445 12.0555C22.4 12.5109 22.5857 13.0777 22.6701 13.7055C22.7501 14.3003 22.75 15.0495 22.75 15.948V16.052C22.75 16.9505 22.7501 17.6997 22.6701 18.2945C22.5857 18.9223 22.4 19.4891 21.9445 19.9445C21.4891 20.4 20.9223 20.5857 20.2945 20.6701C19.6997 20.7501 18.9505 20.75 18.0521 20.75H5.94801C5.04955 20.75 4.30029 20.7501 3.70552 20.6701C3.07773 20.5857 2.51093 20.4 2.05546 19.9445C1.59999 19.4891 1.41432 18.9223 1.32991 18.2945C1.24995 17.6997 1.24997 16.9505 1.25 16.052V15.948C1.24997 15.0495 1.24995 14.3003 1.32991 13.7055C1.41432 13.0777 1.59999 12.5109 2.05546 12.0555C2.51093 11.6 3.07773 11.4143 3.70552 11.3299C4.3003 11.2499 5.04952 11.25 5.948 11.25ZM18 12.75C18.964 12.75 19.6116 12.7516 20.0946 12.8165C20.5561 12.8786 20.7536 12.9858 20.8839 13.1161C21.0142 13.2464 21.1214 13.4439 21.1835 13.9054C21.2484 14.3884 21.25 15.036 21.25 16C21.25 16.964 21.2484 17.6116 21.1835 18.0946C21.1214 18.5561 21.0142 18.7536 20.8839 18.8839C20.7536 19.0142 20.5561 19.1214 20.0946 19.1835C19.6116 19.2484 18.964 19.25 18 19.25H6C5.03599 19.25 4.38843 19.2484 3.9054 19.1835C3.44393 19.1214 3.24644 19.0142 3.11612 18.8839C2.9858 18.7536 2.87858 18.5561 2.81654 18.0946C2.7516 17.6116 2.75 16.964 2.75 16C2.75 15.036 2.7516 14.3884 2.81654 13.9054C2.87858 13.4439 2.9858 13.2464 3.11612 13.1161C3.24644 12.9858 3.44393 12.8786 3.9054 12.8165C4.38843 12.7516 5.03599 12.75 6 12.75H18Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

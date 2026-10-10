@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class TextSelectionIcon extends StatelessWidget {
   /// Creates the `text-selection` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const TextSelectionIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class TextSelectionIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -135,19 +135,21 @@ class TextSelectionIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 6.64648C2.09575 6.32002 1.25 5.25878 1.25 4C1.25 2.48122 2.48122 1.25 4 1.25C5.25878 1.25 6.32002 2.09575 6.64648 3.25H17.3535C17.68 2.09575 18.7412 1.25 20 1.25C21.5188 1.25 22.75 2.48122 22.75 4C22.75 5.25878 21.9043 6.32002 20.75 6.64648V17.3535C21.9043 17.68 22.75 18.7412 22.75 20C22.75 21.5188 21.5188 22.75 20 22.75C18.7412 22.75 17.68 21.9043 17.3535 20.75H6.64648C6.32002 21.9043 5.25878 22.75 4 22.75C2.48122 22.75 1.25 21.5188 1.25 20C1.25 18.7412 2.09575 17.68 3.25 17.3535L3.25 6.64648ZM4 2.75C3.30964 2.75 2.75 3.30964 2.75 4C2.75 4.69036 3.30964 5.25 4 5.25C4.69036 5.25 5.25 4.69036 5.25 4C5.25 3.30964 4.69036 2.75 4 2.75ZM4.75 17.3535L4.75 6.64648C5.66584 6.38745 6.38745 5.66584 6.64648 4.75H17.3535C17.6125 5.66584 18.3342 6.38745 19.25 6.64648V17.3535C18.3342 17.6125 17.6125 18.3342 17.3535 19.25H6.64648C6.38745 18.3342 5.66584 17.6125 4.75 17.3535ZM4 18.75C3.30964 18.75 2.75 19.3096 2.75 20C2.75 20.6904 3.30964 21.25 4 21.25C4.69036 21.25 5.25 20.6904 5.25 20C5.25 19.3096 4.69036 18.75 4 18.75ZM21.25 4C21.25 4.69036 20.6904 5.25 20 5.25C19.3096 5.25 18.75 4.69036 18.75 4C18.75 3.30964 19.3096 2.75 20 2.75C20.6904 2.75 21.25 3.30964 21.25 4ZM18.75 20C18.75 19.3096 19.3096 18.75 20 18.75C20.6904 18.75 21.25 19.3096 21.25 20C21.25 20.6904 20.6904 21.25 20 21.25C19.3096 21.25 18.75 20.6904 18.75 20Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

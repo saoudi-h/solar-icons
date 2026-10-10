@@ -46,14 +46,15 @@ SolarIcon(HomeIcon.outline, size: 20)
 
 ## Theme
 
-`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to `1.5`:
+`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to `1.5`. `style` also falls back to the provider, so one wrapper can set the style for every dynamic widget inside it; static widgets always draw their own style:
 
 ```dart
 SolarProvider(
   size: 24,
   color: Color(0xFF111827),
   strokeWidth: 1.5,
-  child: HomeLinearIcon(),
+  style: SolarIconStyle.bold,
+  child: HomeIcon(),
 )
 ```
 
@@ -94,6 +95,5 @@ The package ships an exhaustive gallery app at `packages/flutter/example`: all 1
 
 <Callout type="info">
     Found a bug in the Flutter layer? Open it in the [main
-    repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one
-    place.
+    repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one place.
 </Callout>

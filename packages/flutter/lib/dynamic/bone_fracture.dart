@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class BoneFractureIcon extends StatelessWidget {
   /// Creates the `bone-fracture` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const BoneFractureIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class BoneFractureIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -144,19 +144,21 @@ class BoneFractureIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4626 14.4357C11.1602 13.8776 10.1224 12.8398 9.56426 11.5374C9.31643 10.9592 8.56292 10.814 8.11804 11.2589L6.83857 12.5384C6.80135 12.5756 6.72662 12.6212 6.56696 12.6352C6.40371 12.6496 6.20068 12.6251 5.98972 12.5667C4.69568 12.2086 3.12621 12.6884 2.20746 13.6071C0.930846 14.8837 0.930845 16.9535 2.20746 18.2302C2.92416 18.9468 3.89084 19.2612 4.82683 19.1732C4.73882 20.1092 5.05316 21.0758 5.76985 21.7925C7.04647 23.0692 9.11628 23.0692 10.3929 21.7925C11.3116 20.8738 11.7914 19.3043 11.4333 18.0103C11.3749 17.7993 11.3504 17.5963 11.3648 17.433C11.3788 17.2734 11.4244 17.1986 11.4616 17.1614L12.7411 15.882C13.186 15.4371 13.0408 14.6836 12.4626 14.4357ZM8.58302 12.9153L7.90291 13.5954L7.89923 13.599L7.87648 13.6214C7.52406 13.9612 7.08784 14.0951 6.69876 14.1294C6.30487 14.1642 5.91505 14.1024 5.58968 14.0124C4.85724 13.8097 3.83582 14.1001 3.26812 14.6678C2.57729 15.3586 2.57729 16.4787 3.26812 17.1695C3.95896 17.8603 5.07902 17.8603 5.76985 17.1695C5.84308 17.0963 5.92768 17.0413 6.01798 17.0047L6.02403 17.0023C6.29361 16.8957 6.61248 16.9515 6.83051 17.1695C7.1234 17.4624 7.1234 17.9373 6.83051 18.2302C6.13968 18.921 6.13968 20.041 6.83051 20.7319C7.52134 21.4227 8.64141 21.4227 9.33224 20.7319C9.89993 20.1642 10.1903 19.1428 9.98762 18.4103C9.89758 18.085 9.83581 17.6951 9.87056 17.3012C9.90562 16.9037 10.0447 16.457 10.401 16.1008L11.0847 15.417C10.051 14.8105 9.18949 13.949 8.58302 12.9153Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

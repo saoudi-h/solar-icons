@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class VideocameraOffIcon extends StatelessWidget {
   /// Creates the `videocamera-off` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const VideocameraOffIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class VideocameraOffIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -107,19 +107,21 @@ class VideocameraOffIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 3.25C11.1254 3.25 12.4104 3.24923 13.4248 3.36914C14.4557 3.49101 15.3047 3.74633 16.0137 4.32813C16.2541 4.52544 16.4746 4.74592 16.6719 4.98633C17.2537 5.69525 17.509 6.54427 17.6309 7.5752C17.6583 7.80716 17.6781 8.05336 17.6943 8.31445C18.481 7.92247 19.1476 7.60074 19.7031 7.41895C20.3546 7.20579 21.0453 7.11982 21.6826 7.51367C22.3197 7.90748 22.5526 8.56341 22.6533 9.24121C22.7523 9.90823 22.75 10.792 22.75 11.8545V12.1465C22.75 13.2088 22.7523 14.0919 22.6533 14.7588C22.5526 15.4366 22.3198 16.0935 21.6826 16.4873C21.0455 16.8808 20.3544 16.7951 19.7031 16.582C19.1475 16.4002 18.4811 16.0768 17.6943 15.6846C17.6781 15.946 17.6583 16.1926 17.6309 16.4248C17.509 17.4557 17.2537 18.3047 16.6719 19.0137C16.4746 19.2541 16.2541 19.4746 16.0137 19.6719C15.3047 20.2537 14.4557 20.509 13.4248 20.6309C12.4104 20.7508 11.1254 20.75 9.5 20.75C7.87463 20.75 6.58961 20.7508 5.5752 20.6309C4.54427 20.509 3.69525 20.2537 2.98633 19.6719C2.74592 19.4746 2.52544 19.2541 2.32813 19.0137C1.74633 18.3047 1.49101 17.4557 1.36914 16.4248C1.24923 15.4104 1.25 14.1254 1.25 12.5V11.5C1.25 9.87463 1.24923 8.58961 1.36914 7.5752C1.49101 6.54427 1.74633 5.69525 2.32813 4.98633C2.52544 4.74592 2.74592 4.52544 2.98633 4.32813C3.69525 3.74633 4.54427 3.49101 5.5752 3.36914C6.58961 3.24923 7.87463 3.25 9.5 3.25ZM9.5 4.75C7.83789 4.75 6.65689 4.75132 5.75098 4.8584C4.8621 4.9635 4.33579 5.16138 3.93848 5.4873C3.77392 5.62236 3.62236 5.77392 3.4873 5.93848C3.16138 6.33579 2.9635 6.8621 2.8584 7.75098C2.75132 8.65689 2.75 9.83789 2.75 11.5V12.5C2.75 14.1621 2.75132 15.3431 2.8584 16.249C2.9635 17.1379 3.16138 17.6642 3.4873 18.0615C3.62236 18.2261 3.77392 18.3776 3.93848 18.5127C4.33579 18.8386 4.8621 19.0365 5.75098 19.1416C6.65689 19.2487 7.83789 19.25 9.5 19.25C11.1621 19.25 12.3431 19.2487 13.249 19.1416C14.1379 19.0365 14.6642 18.8386 15.0615 18.5127C15.2261 18.3776 15.3776 18.2261 15.5127 18.0615C15.8386 17.6642 16.0365 17.1379 16.1416 16.249C16.2487 15.3431 16.25 14.1621 16.25 12.5V11.5C16.25 9.83789 16.2487 8.65689 16.1416 7.75098C16.0365 6.8621 15.8386 6.33579 15.5127 5.93848C15.3776 5.77392 15.2261 5.62236 15.0615 5.4873C14.6642 5.16138 14.1379 4.9635 13.249 4.8584C12.3431 4.75132 11.1621 4.75 9.5 4.75ZM20.8945 8.78906C20.8204 8.74327 20.669 8.68051 20.1699 8.84375C19.6601 9.01058 18.9893 9.34422 17.9941 9.8418L17.75 9.96289V14.0361L17.9941 14.1582C18.9894 14.6558 19.6601 14.9894 20.1699 15.1562C20.6686 15.3194 20.8204 15.2567 20.8945 15.2109C20.9687 15.1651 21.0919 15.0569 21.1689 14.5381C21.2477 14.0076 21.25 13.2587 21.25 12.1465V11.8545C21.25 10.7419 21.2477 9.99254 21.1689 9.46191C21.0919 8.94289 20.9687 8.83495 20.8945 8.78906Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class BracketsIcon extends StatelessWidget {
   /// Creates the `brackets` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const BracketsIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class BracketsIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -104,19 +104,21 @@ class BracketsIcon extends StatelessWidget {
 <path d="M15.0176 1.26997C17.7807 1.33317 19.7137 1.5827 21.0654 2.93404C21.9602 3.8288 22.3663 4.96891 22.5605 6.41353C22.7519 7.83656 22.75 9.66395 22.75 11.9995C22.75 14.3352 22.7519 16.1632 22.5605 17.5864C22.3663 19.031 21.9602 20.1711 21.0654 21.0659C19.7137 22.4173 17.7808 22.6667 15.0176 22.7299C14.6036 22.7393 14.2595 22.4106 14.25 21.9965C14.2409 21.5829 14.5688 21.2397 14.9824 21.2299C17.801 21.1655 19.1288 20.8812 20.0049 20.0053C20.5745 19.4357 20.9014 18.6646 21.0732 17.3862C21.248 16.0862 21.25 14.3775 21.25 11.9995C21.25 9.62169 21.248 7.91357 21.0732 6.61373C20.9014 5.33545 20.5745 4.56421 20.0049 3.99458C19.1288 3.11881 17.8009 2.83442 14.9824 2.76997C14.5686 2.76017 14.2405 2.41629 14.25 2.0024C14.2598 1.58865 14.6038 1.26062 15.0176 1.26997Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,

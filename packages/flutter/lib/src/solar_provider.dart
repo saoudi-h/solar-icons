@@ -1,9 +1,12 @@
 import 'package:flutter/widgets.dart';
 
+import 'solar_icon_style.dart';
+
 /// Defaults for Solar icons below this widget.
 ///
 /// An icon uses its own arguments first, then the nearest [SolarProvider], then
 /// the ambient [IconTheme]. [strokeWidth] is not read from [IconTheme].
+/// [style] only affects dynamic widgets; static widgets draw their own style.
 class SolarProvider extends InheritedWidget {
   /// Creates a theme that supplies icon defaults to its [child].
   const SolarProvider({
@@ -13,6 +16,7 @@ class SolarProvider extends InheritedWidget {
     this.strokeWidth,
     this.secondaryColor,
     this.secondaryOpacity,
+    this.style,
     super.key,
   });
 
@@ -30,6 +34,9 @@ class SolarProvider extends InheritedWidget {
 
   /// Default opacity of the duotone accent layer, from 0 to 1.
   final double? secondaryOpacity;
+
+  /// Default style for dynamic widgets. Static widgets ignore it.
+  final SolarIconStyle? style;
 
   /// The nearest [SolarProvider], or null when none is present.
   static SolarProvider? maybeOf(BuildContext context) {
@@ -53,6 +60,7 @@ class SolarProvider extends InheritedWidget {
         color != oldWidget.color ||
         strokeWidth != oldWidget.strokeWidth ||
         secondaryColor != oldWidget.secondaryColor ||
-        secondaryOpacity != oldWidget.secondaryOpacity;
+        secondaryOpacity != oldWidget.secondaryOpacity ||
+        style != oldWidget.style;
   }
 }

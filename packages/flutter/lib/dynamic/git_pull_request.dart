@@ -16,10 +16,10 @@ import '../src/solar_provider.dart';
 class GitPullRequestIcon extends StatelessWidget {
   /// Creates the `git-pull-request` icon.
   ///
-  /// [style] defaults to [SolarIconStyle.linear].
+  /// [style] wins, then [SolarProvider], then [SolarIconStyle.linear].
   const GitPullRequestIcon({
     super.key,
-    this.style = SolarIconStyle.linear,
+    this.style,
     this.size,
     this.color,
     this.strokeWidth,
@@ -29,8 +29,8 @@ class GitPullRequestIcon extends StatelessWidget {
     this.isolated = false,
   });
 
-  /// Style to draw.
-  final SolarIconStyle style;
+  /// Style to draw. Falls back to [SolarProvider] (unless [isolated]), then [SolarIconStyle.linear].
+  final SolarIconStyle? style;
 
   /// Width and height.
   final double? size;
@@ -115,19 +115,21 @@ class GitPullRequestIcon extends StatelessWidget {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4697 1.46973C14.7626 1.17683 15.2374 1.17683 15.5303 1.46973C15.8231 1.76262 15.8232 2.23739 15.5303 2.53027L13.8096 4.25098L16.3145 4.25391C17.417 4.25409 18.1484 4.7304 18.5088 5.0459C18.6059 5.13094 18.689 5.2041 18.7324 5.24707C18.7759 5.29017 18.8496 5.37326 18.9365 5.4707C19.2577 5.83077 19.7499 6.5687 19.75 7.68555V15.3281C21.4618 15.6755 22.75 17.1896 22.75 19.0039C22.75 21.075 21.0711 22.7539 19 22.7539C16.9289 22.7539 15.25 21.075 15.25 19.0039C15.25 17.1896 16.5382 15.6755 18.25 15.3281V7.68555C18.2499 7.03997 17.9717 6.64276 17.8174 6.46973C17.7665 6.4127 17.7302 6.37166 17.7041 6.34277L17.6816 6.31738C17.6816 6.31738 17.6794 6.31576 17.6758 6.3125C17.6694 6.30667 17.6597 6.29775 17.6455 6.28516C17.6168 6.25974 17.5771 6.22437 17.5205 6.1748C17.3493 6.02493 16.9546 5.75391 16.3135 5.75391L13.8125 5.75098L15.5303 7.46973C15.8231 7.76262 15.8232 8.23739 15.5303 8.53027C15.2374 8.82313 14.7626 8.82313 14.4697 8.53027L11.4697 5.53027C11.1768 5.23739 11.1769 4.76262 11.4697 4.46973L14.4697 1.46973ZM19 16.7539C17.7574 16.7539 16.75 17.7613 16.75 19.0039C16.75 20.2465 17.7574 21.2539 19 21.2539C20.2426 21.2539 21.25 20.2465 21.25 19.0039C21.25 17.7613 20.2426 16.7539 19 16.7539Z" fill="currentColor"/>''',
   );
 
-  SolarIconData get _data => switch (style) {
-    SolarIconStyle.bold => bold,
-    SolarIconStyle.boldDuotone => boldDuotone,
-    SolarIconStyle.broken => broken,
-    SolarIconStyle.linear => linear,
-    SolarIconStyle.lineDuotone => lineDuotone,
-    SolarIconStyle.outline => outline,
-  };
-
   @override
   Widget build(BuildContext context) {
+    final SolarIconStyle fallback = isolated
+        ? SolarIconStyle.linear
+        : SolarProvider.maybeOf(context)?.style ?? SolarIconStyle.linear;
+    final SolarIconData data = switch (style ?? fallback) {
+      SolarIconStyle.bold => bold,
+      SolarIconStyle.boldDuotone => boldDuotone,
+      SolarIconStyle.broken => broken,
+      SolarIconStyle.linear => linear,
+      SolarIconStyle.lineDuotone => lineDuotone,
+      SolarIconStyle.outline => outline,
+    };
     return SolarIcon(
-      _data,
+      data,
       size: size,
       color: color,
       strokeWidth: strokeWidth,
