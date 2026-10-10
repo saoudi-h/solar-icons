@@ -9,6 +9,7 @@
         "changesets",
         "monorepo",
         "pnpm",
+        "pubspec",
         "devDependencies",
         "tsconfig",
         "vite",
