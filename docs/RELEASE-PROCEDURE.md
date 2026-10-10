@@ -27,7 +27,15 @@ Changesets cascade the versions, but these need explicit verification:
 3. Verify: `composer require solar-icons/blade` in a fresh Laravel project renders static, dynamic, helper, and enum forms.
 4. First-time setup only (done): Packagist submit plus webhook, scope reservation. Never recreate these.
 
-## 4. Skill (auto-detected, no submission)
+## 4. Flutter package (`solar_icons` on pub.dev, in-monorepo)
+
+1. Normal state: `flutter.yml` regenerates both codegen outputs on every catalogue change and fails on drift. Regenerate locally (`node packages/flutter/tool/generate_icons.mjs`, then `node packages/flutter/tool/generate_gallery_registry.mjs`) and commit the output together with the catalogue change.
+2. Bump `version:` in `packages/flutter/pubspec.yaml` manually (patch for fixes, minor for features or catalogue growth). Changesets cannot version Dart packages. Add a CHANGELOG.md entry under the new version header.
+3. Publish: push a `solar_icons-v<version>` tag matching the pubspec version. `flutter-publish.yml` re-verifies everything and runs `dart pub publish --force`.
+4. Verify: `flutter pub add solar_icons` in a fresh project renders widget, style-param, theme, and duotone forms; the example gallery eyeballs the full catalogue.
+5. First-time setup only (pending): pub.dev account, package uploader, `PUB_TOKENS_JSON` secret. Never commit the token file.
+
+## 5. Skill (auto-detected, no submission)
 
 1. Content lives in `skills/solar-icons/`. No versions, no changelog, no submission step: skills.sh detects the skill when agents invoke the CLI, and ranking follows usage.
 2. The skill must contain zero hardcoded catalog counts (`pnpm check:skill-counts` enforces this in CI). Point to `npx @solar-icons/cli overview`.
@@ -43,6 +51,7 @@ Changesets cascade the versions, but these need explicit verification:
 | Surface | Check |
 |---|---|
 | npm | `npm view` version, `check:exports` |
+| Flutter | fresh `flutter pub add`, widget + theme + duotone forms, gallery eyeball |
 | Blade | fresh `composer require`, four render forms |
 | CLI/MCP | `get <alias> --json` redirect, `search` alias note |
 | Skill | `check:skill-counts`, counts resolve via `overview` |
