@@ -31,9 +31,9 @@ Changesets cascade the versions, but these need explicit verification:
 
 1. Normal state: `flutter.yml` regenerates both codegen outputs on every catalogue change and fails on drift. Regenerate locally (`node packages/flutter/tool/generate_icons.mjs`, then `node packages/flutter/tool/generate_gallery_registry.mjs`) and commit the output together with the catalogue change.
 2. Bump `version:` in `packages/flutter/pubspec.yaml` manually (patch for fixes, minor for features or catalogue growth). Changesets cannot version Dart packages. Add a CHANGELOG.md entry under the new version header.
-3. Publish: push a `solaricons_flutter-v<version>` tag matching the pubspec version. `flutter-publish.yml` re-verifies everything and runs `dart pub publish --force`.
+3. Publish: push a `solaricons_flutter-v<version>` tag matching the pubspec version. `flutter-publish.yml` re-verifies everything and runs `dart pub publish --force`, authenticated by a temporary GitHub OIDC token (no secret to manage).
 4. Verify: `flutter pub add solaricons_flutter` in a fresh project renders widget, style-param, theme, and duotone forms; the example gallery eyeballs the full catalogue.
-5. First-time setup only (pending): pub.dev account, package uploader, `PUB_TOKENS_JSON` secret. Never commit the token file.
+5. First-time setup only: publish 2.0.0 once by hand (`dart pub publish` from `packages/flutter`, browser OAuth with a Google account — automation only works for existing packages), then enable automated publishing on the package admin page (repo `saoudi-h/solar-icons`, tag pattern `solaricons_flutter-v{{version}}`). Consider a tag protection rule for `solaricons_flutter-v*`.
 
 ## 5. Skill (auto-detected, no submission)
 

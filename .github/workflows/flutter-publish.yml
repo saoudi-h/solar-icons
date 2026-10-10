@@ -1,19 +1,24 @@
 name: Flutter publish
 
-# First pub.dev release is 2.0.0 (v2 family alignment, same as the Blade
-# package). Publishing is tag-gated and manual: push a `solaricons_flutter-v*` tag
-# whose version matches packages/flutter/pubspec.yaml. One-time setup by the
-# maintainer: pub.dev account, package uploader, and the PUB_TOKEN repo
-# One-time setup by the
-# maintainer: pub.dev account, package uploader, and the PUB_TOKENS_JSON repo
-# secret (the content of ~/.config/dart/pub-tokens.json after running
-# `dart pub token add https://pub.dev` on a trusted machine, stored as a
-# secret, never committed).
+# Auth uses temporary GitHub-signed OIDC tokens (permissions: id-token:
+# write below). There is deliberately NO long-lived secret: the Dart team
+# discourages exported keys. One-time setup by the maintainer, all on the
+# pub.dev package admin page AFTER the first manual publish:
+# enable automated publishing from GitHub Actions for repository
+# saoudi-h/solar-icons with tag pattern `solaricons_flutter-v{{version}}`.
+# First publish is always manual (`dart pub publish` from packages/flutter,
+# browser OAuth): automation only works for existing packages.
+# Consider a tag protection rule for `solaricons_flutter-v*` so only the
+# maintainer can trigger a publish.
 
 on:
     push:
         tags:
-            - 'solaricons_flutter-v*'
+            - 'solaricons_flutter-v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+    id-token: write
+    contents: read
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -46,13 +51,16 @@ jobs:
                     exit 1
                   fi
 
-            - name: Regenerate and verify determinism
+            - name: Regenerate icon widgets and registry
               run: |
                   node packages/flutter/tool/generate_icons.mjs
                   node packages/flutter/tool/generate_gallery_registry.mjs
-                  cp -r packages/flutter/lib /tmp/flutter-lib-first
-                  node packages/flutter/tool/generate_icons.mjs
-                  diff -r packages/flutter/lib /tmp/flutter-lib-first
+
+            - name: Analyze and test
+              run: |
+                  flutter analyze
+                  flutter test
+              working-directory: packages/flutter
 
             - name: Generated widgets exist for publish
               run: |
@@ -67,19 +75,6 @@ jobs:
                   echo "dart files in publish tree: $COUNT"
                   test "$COUNT" -gt 10000
               working-directory: packages/flutter
-
-            - name: Analyze and test
-              run: |
-                  flutter analyze
-                  flutter test
-              working-directory: packages/flutter
-
-            - name: Authenticate to pub.dev
-              run: |
-                  mkdir -p ~/.config/dart
-                  printf '%s' "$PUB_TOKENS_JSON" > ~/.config/dart/pub-tokens.json
-              env:
-                  PUB_TOKENS_JSON: ${{ secrets.PUB_TOKENS_JSON }}
 
             - name: Publish
               run: dart pub publish --force
