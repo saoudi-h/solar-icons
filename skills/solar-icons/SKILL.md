@@ -50,7 +50,7 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 | `@solar-icons/static` | `import url from "@solar-icons/static/bold/home.svg"` | none | `references/static.md` |
 | `@solar-icons/js` | `import { createIcons } from "@solar-icons/js"` | 10-line helper | `references/js.md` |
 | `solar-icons/blade` | `<x-solar-bold-home />` | config defaults (`solar-icons-blade.php`) | `references/frameworks.md` |
-| `solar_icons` | `HomeIcon(style: SolarIconStyle.bold)` | `SolarTheme` widget + per-icon params | `references/frameworks.md` |
+| `solar_icons` | `HomeBoldIcon()` | `SolarProvider` widget + per-icon params | `references/frameworks.md` |
 
 Top-level alternative (style in name, single import): `import { HomeBoldIcon } from "@solar-icons/react"` — see `references/frameworks.md`. Rule: **kebab-case** (`bold/home`, `bold-duotone/arrow-up`). `Bold/Home` is stale (V2-13). If imports fail, `pnpm build`.
 

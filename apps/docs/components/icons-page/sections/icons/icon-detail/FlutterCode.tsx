@@ -1,21 +1,30 @@
-import { type Weight } from '@solar-icons/core/runtime'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import Link from 'next/link'
 import type { FC } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { toPascalCase } from '@/lib/utils'
+import { type Weight } from '@solar-icons/core/runtime'
 
 import { useSelectedIcon, useStyleURL } from '../context'
 import { CodeBlockTemplate } from './CodeBlockTemplate'
 
-const WEIGHT_TO_DART_STYLE: Record<Weight, string> = {
+const WEIGHT_TO_DART_DIR: Record<Weight, string> = {
     Bold: 'bold',
-    BoldDuotone: 'boldDuotone',
+    BoldDuotone: 'bold_duotone',
     Broken: 'broken',
     Linear: 'linear',
-    LineDuotone: 'lineDuotone',
+    LineDuotone: 'line_duotone',
     Outline: 'outline',
+}
+
+const WEIGHT_TO_DART_SUFFIX: Record<Weight, string> = {
+    Bold: 'Bold',
+    BoldDuotone: 'BoldDuotone',
+    Broken: 'Broken',
+    Linear: 'Linear',
+    LineDuotone: 'LineDuotone',
+    Outline: 'Outline',
 }
 
 export const FlutterCode: FC = () => {
@@ -23,7 +32,7 @@ export const FlutterCode: FC = () => {
     const [weight] = useStyleURL()
 
     if (!selectedIcon) return null
-    const widget = `${toPascalCase(selectedIcon.name)}Icon`
+    const widget = `${toPascalCase(selectedIcon.name)}${WEIGHT_TO_DART_SUFFIX[weight]}Icon`
     const file = selectedIcon.name.replaceAll('-', '_')
 
     return (
@@ -36,7 +45,7 @@ export const FlutterCode: FC = () => {
             </Button>
             <CodeBlockTemplate
                 lang="dart"
-                code={`import 'package:solar_icons/icons/${file}.dart';\n\n${widget}(\n  style: SolarIconStyle.${WEIGHT_TO_DART_STYLE[weight]},\n)`}
+                code={`import 'package:solar_icons/${WEIGHT_TO_DART_DIR[weight]}/${file}.dart';\n\n${widget}()`}
             />
         </div>
     )

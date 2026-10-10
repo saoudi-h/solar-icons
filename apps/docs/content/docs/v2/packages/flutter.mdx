@@ -8,21 +8,29 @@ icon: flutter
 flutter pub add solar_icons
 ```
 
-## Widgets
+## Static widgets
 
-Every icon ships as a widget in all six styles. `style` defaults to `linear`:
+Each icon ships one widget per style. The style is in the import path and in the widget name, and only that style's SVG is embedded:
 
 ```dart
-import 'package:solar_icons/solar_icons.dart';
+import 'package:solar_icons/linear/home.dart';
 
-HomeIcon(
+HomeLinearIcon(
   size: 32,
   color: Color(0xFF1C274C),
   strokeWidth: 2,
 )
 ```
 
+Style barrels (`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `line_duotone.dart`, `outline.dart`) and the package root export the same widgets under the same names.
+
+## Dynamic widgets
+
+One widget covers every icon and style for names or styles that are only known at runtime. It embeds all six SVGs, so prefer the static widgets when the style is known upfront:
+
 ```dart
+import 'package:solar_icons/dynamic/arrow_right.dart';
+
 ArrowRightIcon(
   style: SolarIconStyle.boldDuotone,
   secondaryColor: Color(0xFF94A3B8),
@@ -30,17 +38,7 @@ ArrowRightIcon(
 )
 ```
 
-Import a single icon when you only need that widget:
-
-```dart
-import 'package:solar_icons/icons/home.dart';
-```
-
-`linear.dart`, `bold.dart`, `bold_duotone.dart`, `broken.dart`, `line_duotone.dart`, and `outline.dart` export the same catalogue. They are entry points, not separate icon sets.
-
-## Data payloads
-
-Each icon exposes its six style payloads. Pass one to `SolarIcon` when you already have icon data:
+Each dynamic widget also exposes its six payloads. Pass one to `SolarIcon` when you want the data directly:
 
 ```dart
 SolarIcon(HomeIcon.outline, size: 20)
@@ -48,14 +46,14 @@ SolarIcon(HomeIcon.outline, size: 20)
 
 ## Theme
 
-`SolarTheme` sets defaults for icons below it. Arguments on the icon win, then the theme, then the ambient `IconTheme`. Stroke width falls back to `1.5`:
+`SolarProvider` sets defaults for icons below it. Arguments on the icon win, then the provider, then the ambient `IconTheme`. Stroke width falls back to `1.5`:
 
 ```dart
-SolarTheme(
+SolarProvider(
   size: 24,
   color: Color(0xFF111827),
   strokeWidth: 1.5,
-  child: HomeIcon(),
+  child: HomeLinearIcon(),
 )
 ```
 
@@ -66,8 +64,7 @@ Set `isolated: true` to ignore both themes and use the package defaults: 24px, `
 `boldDuotone` and `lineDuotone` paint a second color on the accent layer. `secondaryColor` defaults to the primary color, `secondaryOpacity` defaults to `0.5`:
 
 ```dart
-HeartIcon(
-  style: SolarIconStyle.lineDuotone,
+HeartLineDuotoneIcon(
   color: Color(0xFF1C274C),
   secondaryColor: Color(0xFF94A3B8),
   secondaryOpacity: 0.4,
@@ -79,8 +76,8 @@ HeartIcon(
 Renamed icons keep working through `@Deprecated` typedefs that point at the canonical widget:
 
 ```dart
-// Deprecated: use ChatSquareUnreadIcon instead.
-ChatUnreadIcon()
+// Deprecated: use ChatSquareUnreadLinearIcon instead.
+ChatUnreadLinearIcon()
 ```
 
 ## Accessibility
@@ -88,7 +85,7 @@ ChatUnreadIcon()
 Pass `semanticLabel` to announce the icon to screen readers. Icons without a label are excluded from semantics:
 
 ```dart
-HomeIcon(semanticLabel: 'Home')
+HomeLinearIcon(semanticLabel: 'Home')
 ```
 
 ## Example gallery
@@ -97,5 +94,6 @@ The package ships an exhaustive gallery app at `packages/flutter/example`: all 1
 
 <Callout type="info">
     Found a bug in the Flutter layer? Open it in the [main
-    repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one place.
+    repository](https://github.com/saoudi-h/solar-icons) so all feedback stays in one
+    place.
 </Callout>

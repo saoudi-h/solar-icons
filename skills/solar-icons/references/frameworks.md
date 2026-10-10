@@ -12,7 +12,7 @@
 | `@solar-icons/static` | any / no framework | `import url from "@solar-icons/static/bold/home.svg"` + sprite | N/A (files) | none | none | `static.md` |
 | `@solar-icons/js` | vanilla JS | `import { createIcons, icons }` | N/A (DOM) | 10-line CSS-var helper | none | `js.md` |
 | `solar-icons/blade` | Laravel 9+ (Blade) | `<x-solar-bold-home />` or `<x-solar-icon name="home" weight="bold" />` | component tag | config defaults (`solar-icons-blade.php`) + `SolarIcon` enum | `blade-ui-kit/blade-icons`, `illuminate/support` | `frameworks.md` |
-| `solar_icons` | Flutter 3.32+ | `HomeIcon(style: SolarIconStyle.bold)` | `HomeIcon` + style param | `SolarTheme` widget + per-icon params | `flutter`, `flutter_svg` | `frameworks.md` |
+| `solar_icons` | Flutter 3.32+ | `HomeBoldIcon()` (static) or `HomeIcon(style: ...)` (dynamic) | `HomeBoldIcon` + style param | `SolarProvider` widget + per-icon params | `flutter`, `flutter_svg` | `frameworks.md` |
 
 Also: `@solar-icons/core` (private, source of truth), `@solar-icons/codemod` (V2 migration, conservative AST).
 

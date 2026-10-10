@@ -57,12 +57,11 @@ export function styleToPascal(style: Style): string {
 }
 
 /**
- * Dart enum value for a style (e.g. linear → linear, line-duotone →
- * lineDuotone). Mirrors SolarIconStyle in the Flutter package.
+ * Flutter style directory and file stem (e.g. line-duotone/arrow-up →
+ * line_duotone/arrow_up). Mirrors lib/<style>/<icon>.dart.
  */
-export function toDartStyle(style: Style): string {
-    const pascal = STYLE_PASCAL[style]
-    return pascal.charAt(0).toLowerCase() + pascal.slice(1)
+export function toDartPath(style: Style, kebabName: string): string {
+    return `${style.replaceAll('-', '_')}/${kebabName.replaceAll('-', '_')}`
 }
 
 export function toPascalKebab(kebab: string): string {
@@ -126,7 +125,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
  *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
- *   flutter: HeartIcon(style: SolarIconStyle.bold) (widget, style is a parameter)
+ *   flutter: HeartBoldIcon() (static widget, style in name; dynamic: HomeIcon(style: ...))
  */
 export function importSnippet(name: string, style: Style, framework: Framework): string {
     const kebab = name
@@ -154,7 +153,7 @@ export function importSnippet(name: string, style: Style, framework: Framework):
         case 'blade':
             return `<x-solar-${style}-${kebab} />`
         case 'flutter':
-            return `${generic}(style: SolarIconStyle.${toDartStyle(style)})`
+            return `import 'package:solar_icons/${toDartPath(style, kebab)}.dart';\n${rooted}()`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -171,8 +170,9 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'js':
         case 'nuxt':
         case 'blade':
-        case 'flutter':
             return importSnippet(name, style, framework)
+        case 'flutter':
+            return `import 'package:solar_icons/solar_icons.dart';\n${rooted}()`
         default:
             return `import { ${rooted} } from "@solar-icons/${framework}";`
     }
