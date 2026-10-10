@@ -13,6 +13,7 @@ import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { BladeCode } from './BladeCode'
 import { FloatingDrawer } from './FloatingDrawer'
+import { FlutterCode } from './FlutterCode'
 import { IconVariants } from './IconVariants'
 import { JsCode } from './JsCode'
 import { NuxtCode } from './NuxtCode'
@@ -152,6 +153,12 @@ const Content: FC = () => {
                         value: 'blade',
                         icon: <Icon icon="devicon:laravel" className="size-4" />,
                         content: <BladeCode />,
+                    },
+                    {
+                        title: 'Flutter',
+                        value: 'flutter',
+                        icon: <Icon icon="devicon:flutter" className="size-4" />,
+                        content: <FlutterCode />,
                     },
                     {
                         title: 'Static',

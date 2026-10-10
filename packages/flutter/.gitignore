@@ -1,0 +1,45 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+# Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
+/pubspec.lock
+
+# Generated icon widgets are NOT versioned: regenerate with
+# `node tool/generate_icons.mjs` (plus `node tool/generate_gallery_registry.mjs`
+# for the example app). CI regenerates from the catalogue on every run, and
+# `.pubignore` re-includes the output in the published archive.
+/lib/bold/
+/lib/bold_duotone/
+/lib/broken/
+/lib/dynamic/
+/lib/line_duotone/
+/lib/linear/
+/lib/outline/
+/lib/*.dart
+/example/lib/icon_registry.dart
+**/doc/api/
+.dart_tool/
+.flutter-plugins-dependencies
+/build/
+/coverage/

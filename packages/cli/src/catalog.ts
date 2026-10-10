@@ -39,6 +39,7 @@ export const FRAMEWORKS = [
     'static',
     'js',
     'blade',
+    'flutter',
 ] as const
 export type Framework = (typeof FRAMEWORKS)[number]
 
@@ -53,6 +54,14 @@ const STYLE_PASCAL: Record<Style, string> = {
 
 export function styleToPascal(style: Style): string {
     return STYLE_PASCAL[style]
+}
+
+/**
+ * Flutter style directory and file stem (e.g. line-duotone/arrow-up →
+ * line_duotone/arrow_up). Mirrors lib/<style>/<icon>.dart.
+ */
+export function toDartPath(style: Style, kebabName: string): string {
+    return `${style.replaceAll('-', '_')}/${kebabName.replaceAll('-', '_')}`
 }
 
 export function toPascalKebab(kebab: string): string {
@@ -116,6 +125,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
  *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
+ *   flutter: HeartBoldIcon() (static widget, style in name; dynamic: HomeIcon(style: ...))
  */
 export function importSnippet(name: string, style: Style, framework: Framework): string {
     const kebab = name
@@ -142,6 +152,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `import { createIcons, icons } from "@solar-icons/js"; // icons["${kebab}-${style}"]`
         case 'blade':
             return `<x-solar-${style}-${kebab} />`
+        case 'flutter':
+            return `import 'package:flutter_solar_icons/${toDartPath(style, kebab)}.dart';\n${rooted}()`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -159,6 +171,8 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'nuxt':
         case 'blade':
             return importSnippet(name, style, framework)
+        case 'flutter':
+            return `import 'package:flutter_solar_icons/flutter_solar_icons.dart';\n${rooted}()`
         default:
             return `import { ${rooted} } from "@solar-icons/${framework}";`
     }

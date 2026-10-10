@@ -57,7 +57,7 @@ program
     .option('--category <category>', 'restrict to category (see: solar-icons categories)')
     .option(
         '--framework <framework>',
-        'emit import snippet for framework (react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade)'
+        'emit import snippet for framework (react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade|flutter)'
     )
     .option('--json', 'machine-readable JSON output (for agents/MCP)')
     .description('Search icons by name/tags/category')
