@@ -43,7 +43,7 @@ void main() {
     expect(svg, isNot(contains('stroke-width="2"')));
   });
 
-  test('leaves filled shapes unstroked', () {
+  test('leaves filled shapes without stroke', () {
     final svg = composeSolarSvg(
       const SolarIconData(
         name: 'custom',

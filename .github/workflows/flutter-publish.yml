@@ -1,0 +1,70 @@
+name: Flutter publish
+
+# First pub.dev release is 2.0.0 (v2 family alignment, same as the Blade
+# package). Publishing is tag-gated and manual: push a `solar_icons-v*` tag
+# whose version matches packages/flutter/pubspec.yaml. One-time setup by the
+# maintainer: pub.dev account, package uploader, and the PUB_TOKEN repo
+# One-time setup by the
+# maintainer: pub.dev account, package uploader, and the PUB_TOKENS_JSON repo
+# secret (the content of ~/.config/dart/pub-tokens.json after running
+# `dart pub token add https://pub.dev` on a trusted machine, stored as a
+# secret, never committed).
+
+on:
+    push:
+        tags:
+            - 'solar_icons-v*'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    publish:
+        name: Publish to pub.dev
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                  channel: stable
+                  cache: true
+
+            - name: Tag matches pubspec version
+              run: |
+                  TAG="${GITHUB_REF_NAME#solar_icons-v}"
+                  SPEC=$(grep '^version:' packages/flutter/pubspec.yaml | awk '{print $2}')
+                  if [ "$TAG" != "$SPEC" ]; then
+                    echo "tag solar_icons-v$TAG does not match pubspec version $SPEC"
+                    exit 1
+                  fi
+
+            - name: Regenerate and verify
+              run: |
+                  node packages/flutter/tool/generate_icons.mjs
+                  node packages/flutter/tool/generate_gallery_registry.mjs
+                  git diff --exit-code packages/flutter/lib packages/flutter/example/lib/icon_registry.dart
+
+            - name: Analyze and test
+              run: |
+                  flutter analyze
+                  flutter test
+              working-directory: packages/flutter
+
+            - name: Authenticate to pub.dev
+              run: |
+                  mkdir -p ~/.config/dart
+                  printf '%s' "$PUB_TOKENS_JSON" > ~/.config/dart/pub-tokens.json
+              env:
+                  PUB_TOKENS_JSON: ${{ secrets.PUB_TOKENS_JSON }}
+
+            - name: Publish
+              run: dart pub publish --force
+              working-directory: packages/flutter

@@ -1,0 +1,68 @@
+name: Flutter
+
+on:
+    push:
+        branches:
+            - main
+            - feat/flutter-package
+        paths:
+            - 'packages/flutter/**'
+            - 'packages/core/svgs/**'
+            - 'packages/core/src/metadata-descriptions.json'
+            - 'cspell.json'
+            - '.github/workflows/flutter*.yml'
+    pull_request:
+        paths:
+            - 'packages/flutter/**'
+            - 'packages/core/svgs/**'
+            - 'packages/core/src/metadata-descriptions.json'
+            - 'cspell.json'
+            - '.github/workflows/flutter*.yml'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    verify:
+        name: Verify
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                  channel: stable
+                  cache: true
+
+            - name: Regenerate icon widgets
+              run: node packages/flutter/tool/generate_icons.mjs
+
+            - name: Regenerate gallery registry
+              run: node packages/flutter/tool/generate_gallery_registry.mjs
+
+            - name: Generated output matches the catalogue
+              run: git diff --exit-code packages/flutter/lib packages/flutter/example/lib/icon_registry.dart
+
+            - name: Analyze
+              run: flutter analyze
+              working-directory: packages/flutter
+
+            - name: Test
+              run: flutter test
+              working-directory: packages/flutter
+
+            - name: Spell check
+              run: pnpm dlx cspell --no-progress "packages/flutter/**"
+
+            - name: Build example (web smoke test)
+              run: |
+                  flutter pub get
+                  flutter build web --no-pub
+              working-directory: packages/flutter/example
