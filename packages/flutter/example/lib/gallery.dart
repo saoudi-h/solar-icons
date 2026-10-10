@@ -77,7 +77,9 @@ class _GalleryPageState extends State<GalleryPage> {
   List<String> get _names => kSolarRegistry.keys.toList()..sort();
 
   List<String> get _filtered {
-    if (_search.isEmpty) return _names.take(60).toList();
+    // No cap: GridView.builder only builds visible rows, so showing the
+    // whole catalogue costs nothing on first paint.
+    if (_search.isEmpty) return _names;
     final q = _search.toLowerCase();
     return _names.where((n) => n.contains(q)).toList();
   }
