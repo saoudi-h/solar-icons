@@ -19,6 +19,7 @@ Changesets cascade the versions, but these need explicit verification:
 3. Alias redirect works: `pnpm --filter @solar-icons/cli exec tsx src/cli.ts get <old-name> --json` returns the canonical entry with a `deprecated` field. Add the old name to `deprecatedAliases` in `packages/core/src/metadata-descriptions.json` if a rename lacks one.
 4. CLI tests green (`pnpm --filter @solar-icons/cli test`), including the alias redirect tests.
 5. Skill prose: no catalog numbers anywhere in `skills/`. Point to `npx @solar-icons/cli overview`.
+6. New framework package: README row, docs page plus site integration, CLI/MCP/skill coverage, banner logo asset plus `<img>` row plus `pnpm generate:banner` rerun, homepage package count (all enforced by `check:icon-inventory` except the docs prose).
 
 ## 3. Blade package (`solar-icons/blade`, separate repo and org)
 

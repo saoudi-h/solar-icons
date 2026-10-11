@@ -1,3 +1,8 @@
+## 2.0.1
+
+* Pub.dev listing: gallery screenshots, documentation link, and topics.
+* Docs: complete static/dynamic sections plus duotone, aliases, and accessibility.
+
 ## 2.0.0
 
 * First stable release, aligned with the Solar Icons v2 package family.

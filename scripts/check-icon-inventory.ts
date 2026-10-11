@@ -163,6 +163,61 @@ const main = () => {
                 }
             }
         }
+
+        // Package count: README table rows must match the homepage stat card.
+        const readmeLines = fs.readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8').split('\n')
+        const tableHead = readmeLines.findIndex(line => line.startsWith('| Package |'))
+        let tableRows = 0
+        for (const line of readmeLines.slice(tableHead + 1)) {
+            if (!line.startsWith('|')) break
+            if (!line.includes('---')) tableRows += 1
+        }
+        const homepage = fs.readFileSync(
+            path.join(
+                REPOSITORY_ROOT,
+                'apps/docs/components/home-page/sections/community/index.tsx'
+            ),
+            'utf8'
+        )
+        const homepageMatch = homepage.match(/title="Total Packages" value=\{(\d+)\}/)
+        if (!homepageMatch) {
+            errors.push('homepage has no Total Packages stat card')
+        } else if (Number(homepageMatch[1]) !== tableRows) {
+            errors.push(
+                `homepage reports ${homepageMatch[1]} packages but README lists ${tableRows}`
+            )
+        }
+
+        // Banner integrity: every logo img must resolve to a committed
+        // asset and vice versa (catches broken refs and orphans).
+        const bannerHtml = fs.readFileSync(
+            path.join(REPOSITORY_ROOT, 'apps/docs/ressources/solar-icons-banner.html'),
+            'utf8'
+        )
+        if (!bannerHtml.includes('logo-row framework-logos')) {
+            errors.push('banner has no framework logo row')
+        } else {
+            const referenced = [
+                ...bannerHtml.matchAll(/src="readme-banner-assets\/([^"]+)"/g),
+            ].map(match => match[1])
+            const assetDir = path.join(
+                REPOSITORY_ROOT,
+                'apps/docs/ressources/readme-banner-assets'
+            )
+            const committed = new Set(
+                fs.readdirSync(assetDir).filter(file => file.endsWith('.svg'))
+            )
+            for (const logo of referenced) {
+                if (!committed.has(logo)) {
+                    errors.push(`banner references missing logo asset ${logo}`)
+                }
+            }
+            for (const logo of committed) {
+                if (!referenced.includes(logo)) {
+                    errors.push(`banner logo asset ${logo} is not referenced in the HTML`)
+                }
+            }
+        }
     }
 
     for (const warning of warnings) console.log(`Warning: ${warning}`)

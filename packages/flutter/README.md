@@ -79,6 +79,35 @@ SolarProvider(
 
 Set `isolated: true` to ignore `SolarProvider` and the ambient `IconTheme` and use the package defaults: 24px, `#1C274C`, and a 1.5 stroke.
 
+## Duotone
+
+`boldDuotone` and `lineDuotone` paint a second color on the accent layer. `secondaryColor` defaults to the primary color, `secondaryOpacity` defaults to `0.5`:
+
+```dart
+HeartLineDuotoneIcon(
+  color: Color(0xFF1C274C),
+  secondaryColor: Color(0xFF94A3B8),
+  secondaryOpacity: 0.4,
+)
+```
+
+## Deprecated names
+
+Renamed icons keep working through `@Deprecated` typedefs that point at the canonical widget:
+
+```dart
+// Deprecated: use ChatSquareUnreadLinearIcon instead.
+ChatUnreadLinearIcon()
+```
+
+## Accessibility
+
+Pass `semanticLabel` to announce the icon to screen readers. Icons without a label are excluded from semantics:
+
+```dart
+HomeLinearIcon(semanticLabel: 'Home')
+```
+
 ## License
 
 MIT. Icons by 480 Design (CC BY 4.0). Attribution is required.
