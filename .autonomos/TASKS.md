@@ -57,6 +57,8 @@
 
 - [x] **[FLUTTER-UNVERSION]** Generated widgets removed from git (10k-file review noise): gitignored + regenerating CI (determinism check) + `.pubignore` negation proven to re-include them in publish (10,186 dart files in dry-run tree) + publish-tree assertion. Clean-room regen re-verified all gates. `Priority: 🟠` `Complexity: M`
 
+- [x] **[FLUTTER-FINISH]** Homepage package count 13->14 with checker guard (README rows vs stat card), banner Flutter logo plus regen script (headless Chromium, PNG plus WebP), orphan logo removed, AGENT.md header, render script wired as pnpm generate:banner, catalog checklist extended. Banner has no counts (icons plus logos only), so staleness vectors are logos plus icon freshness, both guarded. Homepage screenshot proves 14 live. `Priority: 🟠` `Complexity: S`
+
 - [x] **[FLUTTER-LISTING]** 2.0.1 batch on PR #577: README section parity (duotone, aliases, accessibility), pubspec documentation link plus solar-icons topic plus 2 gallery screenshots, version bump plus changelog. Tag push after merge releases via automation. Process note: batch was first committed to the wrong local branch (ci/pr-checks) and moved via cherry-pick plus reset before any push of it — verify branch with status -sb before committing. `Priority: 🔵` `Complexity: S`
 
 - [x] **[FLUTTER-PUBLISHED]** 2.0.0 live on pub.dev (manual first publish). Fresh-project check green (static, dynamic, provider, alias). Left: admin-page automation + tag protection, merge #574, screenshots batch for 2.0.1. `Priority: 🟠` `Complexity: S`
