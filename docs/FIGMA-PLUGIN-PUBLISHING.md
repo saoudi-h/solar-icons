@@ -54,12 +54,13 @@ Use Figma Desktop:
 1. Open any Figma file.
 2. Select **Plugins → Development → Import plugin from manifest…**.
 3. Select `packages/figma-plugin/manifest.json`.
-4. Run **Solar Icons** from the Development plugins menu.
-5. Check the Icons, Settings, and Info tabs.
-6. Confirm the Info tab shows the current package version and logical icon count.
-7. Confirm the catalogue, style switching, search, insertion, and offline loading work as expected.
+4. Serve the unpublished static packs locally so style downloads resolve: from the repository root, serve `packages/static/dist` on port 8080, then build the plugin with `FIGMA_PACK_BASE=http://localhost:8080 pnpm --filter @solar-icons/figma-plugin build`. Production builds omit the variable and use the versioned CDN base.
+5. Run **Solar Icons** from the Development plugins menu.
+6. Check the Icons, Settings, and Info tabs.
+7. Confirm the Info tab shows the current package version and logical icon count.
+8. Confirm the catalogue, style switching, search, insertion, and loading work as expected: Linear renders instantly offline; switching to another style downloads its packs once (status line reports progress, skeleton cells meanwhile); after visiting every style, reload the plugin offline and confirm everything still renders from cache.
 
-The plugin must remain offline. Do not add a runtime network request to avoid the publication step.
+The manifest `networkAccess` stays scoped to the versioned static distribution with a public reasoning string. Review the scope before publishing: it must never widen beyond versioned Solar assets, and pack downloads must never fetch a newer catalogue than the embedded version.
 
 ## 3. Publish from Figma Desktop
 
