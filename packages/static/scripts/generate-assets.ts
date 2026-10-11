@@ -12,6 +12,9 @@ import path from 'node:path'
  *     - `dist/icons/<style>/<name>.svg`  individual SVG files
  *     - `dist/sprite.svg`                one SVG sprite
  *     - `dist/icons.json`               `{ "<name>-<style>": "<svg string>" }` flat map
+ *     - `dist/figma/<style>-<category>.json` minified per-chunk bodies for the
+ *       Figma plugin (`{ version, icons: { "<name>": "<body>" } }`), plus a
+ *       `manifest.json` listing every chunk
  *
  *   JS source for tsdown (generator → src/):
  *     - `src/icons/<style>/<name>.ts`    per-icon module: `export default \`<svg>…\``
@@ -42,6 +45,11 @@ const JSON_PATH = path.join(DIST, 'icons.json')
 const META_PATH = path.join(DIST, 'metadata.json')
 const META_DESC_PATH = path.join(DIST, 'metadata-descriptions.json')
 const SPRITE_PATH = path.join(DIST, 'sprite.svg')
+const STATIC_VERSION = (
+    JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../package.json'), 'utf8')) as {
+        version: string
+    }
+).version
 
 const descriptions = rawDescriptions as readonly IconDescription[]
 
@@ -152,6 +160,45 @@ export { ${pascalName} as ${aliasPascalName} } from './${icon.kebabName}';
 
         // --- icons.json ---
         fs.writeFileSync(JSON_PATH, JSON.stringify(map, null, 2))
+
+        // --- figma packs (style × category chunks of minified bodies) ---
+        // The Figma plugin bundles Linear and fetches the other styles as
+        // packs from the CDN, so the bundle stays far under Figma's 15 MiB
+        // limit no matter how the catalogue grows. Bodies are whitespace
+        // collapsed only: no coordinate, color, or attribute is touched.
+        const FIGMA_DIR = path.join(DIST, 'figma')
+        const packChunks = new Map<string, Record<string, string>>()
+        for (const icon of icons) {
+            const key = `${icon.styleKebab}-${icon.category}`
+            let chunk = packChunks.get(key)
+            if (!chunk) {
+                chunk = {}
+                packChunks.set(key, chunk)
+            }
+            const full = map[`${icon.kebabName}-${icon.styleKebab}`]
+            if (!full)
+                throw new Error(`Missing SVG map entry for ${icon.kebabName}-${icon.styleKebab}`)
+            const inner = full.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')
+            chunk[icon.kebabName] = inner.replace(/>\s+</g, '><').trim()
+        }
+        fs.rmSync(FIGMA_DIR, { recursive: true, force: true })
+        fs.mkdirSync(FIGMA_DIR, { recursive: true })
+        const packManifest: { version: string; chunks: string[] } = {
+            version: STATIC_VERSION,
+            chunks: [...packChunks.keys()].sort(),
+        }
+        for (const [key, chunkIcons] of [...packChunks.entries()].sort(([a], [b]) =>
+            a.localeCompare(b)
+        )) {
+            fs.writeFileSync(
+                path.join(FIGMA_DIR, `${key}.json`),
+                JSON.stringify({ version: STATIC_VERSION, icons: chunkIcons })
+            )
+        }
+        fs.writeFileSync(
+            path.join(FIGMA_DIR, 'manifest.json'),
+            JSON.stringify(packManifest, null, 2)
+        )
 
         // --- src/index.ts (barrel, tree-shakable re-exports) ---
         barrelLines.sort()
