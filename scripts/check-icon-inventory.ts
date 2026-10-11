@@ -165,11 +165,13 @@ const main = () => {
         }
 
         // Package count: README table rows must match the homepage stat card.
-        const readme = fs.readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8')
-        const tableRows = readme
-            .split('\n')
-            .slice(readme.split('\n').findIndex(line => line.startsWith('| Package |')) + 1)
-            .filter(line => line.startsWith('| [`')).length
+        const readmeLines = fs.readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8').split('\n')
+        const tableHead = readmeLines.findIndex(line => line.startsWith('| Package |'))
+        let tableRows = 0
+        for (const line of readmeLines.slice(tableHead + 1)) {
+            if (!line.startsWith('|')) break
+            if (!line.includes('---')) tableRows += 1
+        }
         const homepage = fs.readFileSync(
             path.join(
                 REPOSITORY_ROOT,
