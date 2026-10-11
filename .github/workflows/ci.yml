@@ -1,0 +1,52 @@
+name: CI
+
+# Fast verification for pull requests. This workflow never publishes:
+# release.yml remains the only publishing gate on main. Keep the two in
+# sync when gates change (same filters, same checks, minus publishing).
+
+on:
+    pull_request:
+        paths-ignore:
+            - 'apps/nuxt/**'
+            - 'apps/vue-app/**'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+env:
+    TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+jobs:
+    verify:
+        name: Verify
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ''
+
+            - name: Build
+              # Same memory exclusion as release.yml: the Angular playground
+              # exceeds the standard runner on a full build.
+              run: pnpm turbo build --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+
+            - name: Typecheck
+              run: pnpm turbo typecheck --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+
+            - name: Lint
+              run: pnpm turbo lint --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+
+            - name: Tests
+              run: pnpm turbo test --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+
+            - name: Validate package exports
+              run: pnpm check:exports
+
+            - name: Validate skill catalog freshness
+              run: pnpm check:skill-counts
