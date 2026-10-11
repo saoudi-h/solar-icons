@@ -8,8 +8,9 @@ import { IconBrowser } from './components/IconBrowser'
 import { InfoPanel } from './components/InfoPanel'
 import { ResizeHandles } from './components/ResizeHandles'
 import { SolarSvg } from './components/SolarSvg'
-import { iconData, icons } from './data'
+import { icons, catalogProvenance, linearChunks } from './data'
 import { createIconSearch, searchIcons } from './search'
+import { PackProvider, usePacks } from './packs'
 
 type Tab = 'icons' | 'settings' | 'info'
 type StatusKind = 'error' | 'success' | undefined
@@ -40,6 +41,22 @@ function postMessage(message: UiMessage): void {
 }
 
 export function App() {
+    const categoryOf = useMemo(() => {
+        const index = new Map(icons.map(icon => [icon.name, icon.category] as const))
+        return (name: string): string | undefined => index.get(name)
+    }, [])
+    return (
+        <PackProvider
+            version={catalogProvenance.packageVersion}
+            embeddedLinear={linearChunks}
+            categoryOf={categoryOf}
+        >
+            <AppShell />
+        </PackProvider>
+    )
+}
+
+function AppShell() {
     const [tab, setTab] = useState<Tab>('icons')
     const [query, setQuery] = useState('')
     const deferredQuery = useDeferredValue(query)
@@ -59,6 +76,34 @@ export function App() {
         [category, deferredQuery, fuse]
     )
     const selectionMode = settings.insertionMode === 'selection'
+    const { getSvg, ensurePacks, prefetchAll, pendingStyles, failedStyle, hasStyle } = usePacks()
+    const allCategories = useMemo(
+        () => [...new Set(icons.map(icon => icon.category))].sort(),
+        []
+    )
+
+    useEffect(() => {
+        ensurePacks(
+            styleName,
+            filteredIcons.map(icon => icon.name)
+        )
+    }, [ensurePacks, filteredIcons, styleName])
+
+    useEffect(() => {
+        const timer = setTimeout(() => prefetchAll(allCategories), 3000)
+        return () => clearTimeout(timer)
+    }, [allCategories, prefetchAll])
+
+    const stylePending = pendingStyles.includes(styleName)
+    const styleFailed = failedStyle === styleName && !hasStyle(styleName)
+    const displayStatus = styleFailed
+        ? {
+              message: `Couldn't download ${activeStyle.label} icons — connect once to fetch them. Linear works offline.`,
+              kind: 'error' as const,
+          }
+        : stylePending && !hasStyle(styleName)
+          ? { message: `Downloading ${activeStyle.label} icons…`, kind: undefined }
+          : status
 
     useEffect(() => {
         const handleMessage = (event: MessageEvent<{ pluginMessage?: MainMessage }>) => {
@@ -114,7 +159,9 @@ export function App() {
             return
         }
 
-        const items = names.map(name => ({ name, svg: iconData[`${name}-${styleName}`] })).filter(item => item.svg)
+        const items = names
+            .map(name => ({ name, svg: getSvg(name, styleName) ?? '' }))
+            .filter(item => item.svg)
         setInsertionPending(true)
         setStatus({
             message: names.length === 1 ? `Inserting ${titleCase(names[0])}…` : `Inserting ${names.length} icons…`,
@@ -173,7 +220,11 @@ export function App() {
             <Tabs.Panel value="icons" className="panel">
                 <div className="toolbar">
                     <div className="search-row">
-                        <SolarSvg className="search-icon" name="minimalistic-magnifier" aria-hidden="true" />
+                        <SolarSvg
+                            className="search-icon"
+                            svg={getSvg('minimalistic-magnifier', 'linear')}
+                            aria-hidden="true"
+                        />
                         <input
                             className="search-input"
                             type="search"
@@ -209,6 +260,12 @@ export function App() {
                     selectionMode={selectionMode}
                     selected={selected}
                     onIcon={handleIcon}
+                    getSvg={getSvg}
+                    unavailableMessage={
+                        styleFailed
+                            ? `${activeStyle.label} icons need one download — connect to fetch them.`
+                            : null
+                    }
                 />
 
                 <div className="bottom-bar">
@@ -226,7 +283,7 @@ export function App() {
                             </button>
                         </div>
                     ) : (
-                        <div className={`status ${status.kind ?? ''}`} role="status">{status.message}</div>
+                        <div className={`status ${displayStatus.kind ?? ''}`} role="status">{displayStatus.message}</div>
                     )}
                 </div>
             </Tabs.Panel>

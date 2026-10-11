@@ -1,0 +1,188 @@
+import {
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    type ReactNode,
+} from 'react'
+
+import type { MainMessage } from '../shared/messages'
+import { categoriesFor, EMBEDDED_STYLE, expandBody } from '../shared/packs'
+
+export type CategoryBodies = Record<string, Record<string, string>>
+export type PackStore = Record<string, CategoryBodies>
+
+type PacksContextValue = {
+    /** Complete SVG for one icon, or null while its chunk loads. */
+    getSvg: (name: string, style: string) => string | null
+    /** True when at least one category of this style is available. */
+    hasStyle: (style: string) => boolean
+    /** Request the chunks covering these icons in this style. */
+    ensurePacks: (style: string, names: readonly string[]) => void
+    /** Background-fetch every non-embedded style (idle prefetch). */
+    prefetchAll: (categories: readonly string[]) => void
+    /** In-flight chunk count, for status and skeleton display. */
+    pendingChunks: number
+    /** Styles with in-flight chunks, for status display. */
+    pendingStyles: readonly string[]
+    /** Style whose last fetch failed without connection, if any. */
+    failedStyle: string | null
+}
+
+const PacksContext = createContext<PacksContextValue | null>(null)
+
+export function usePacks(): PacksContextValue {
+    const context = useContext(PacksContext)
+    if (!context) throw new Error('usePacks must be used inside a PackProvider')
+    return context
+}
+
+function postMessage(message: object): void {
+    parent.postMessage({ pluginMessage: message }, '*')
+}
+
+export function PackProvider({
+    version,
+    embeddedLinear,
+    categoryOf,
+    children,
+}: {
+    version: string
+    embeddedLinear: CategoryBodies
+    categoryOf: (name: string) => string | undefined
+    children: ReactNode
+}): React.JSX.Element {
+    const [packs, setPacks] = useState<PackStore>(() => ({ [EMBEDDED_STYLE]: embeddedLinear }))
+    const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
+    const [failedStyle, setFailedStyle] = useState<string | null>(null)
+    const requestId = useRef(0)
+    const inFlight = useRef(new Set<string>())
+    const requestStyles = useRef(new Map<number, string>())
+    const prefetched = useRef(false)
+
+    useEffect(() => {
+        postMessage({ type: 'init-packs', version })
+    }, [version])
+
+    const forgetPending = useCallback((keys: readonly string[]) => {
+        setPending(current => {
+            if (keys.every(key => !current.has(key))) return current
+            const next = new Set(current)
+            for (const key of keys) {
+                next.delete(key)
+                inFlight.current.delete(key)
+            }
+            return next
+        })
+    }, [])
+
+    useEffect(() => {
+        const handleMessage = (event: MessageEvent<{ pluginMessage?: MainMessage }>) => {
+            const message = event.data.pluginMessage
+            if (!message) return
+            if (message.type === 'chunks-ready') {
+                requestStyles.current.delete(message.requestId)
+                setPacks(current => {
+                    const next = { ...current }
+                    for (const chunk of message.chunks) {
+                        const stylePacks = next[chunk.style] ?? {}
+                        next[chunk.style] = { ...stylePacks, [chunk.category]: chunk.icons }
+                    }
+                    return next
+                })
+                const arrived = message.chunks[0]?.style
+                if (arrived) setFailedStyle(current => (current === arrived ? null : current))
+                forgetPending(message.chunks.map(chunk => `${chunk.style}/${chunk.category}`))
+            }
+            if (message.type === 'chunks-failed') {
+                const style = requestStyles.current.get(message.requestId)
+                requestStyles.current.delete(message.requestId)
+                // A failure clears only its own request: the pack layer only
+                // fails whole requests on network errors, never partially.
+                setPending(current => {
+                    for (const key of current) inFlight.current.delete(key)
+                    return new Set<string>()
+                })
+                if (message.offline && style && style !== EMBEDDED_STYLE) setFailedStyle(style)
+            }
+        }
+        window.addEventListener('message', handleMessage)
+        return () => window.removeEventListener('message', handleMessage)
+    }, [forgetPending])
+
+    const requestChunks = useCallback(
+        (style: string, categories: readonly string[]) => {
+            const missing = categories.filter(
+                category => packs[style]?.[category] === undefined && !inFlight.current.has(`${style}/${category}`)
+            )
+            if (missing.length === 0) return
+            requestId.current += 1
+            requestStyles.current.set(requestId.current, style)
+            const keys = missing.map(category => `${style}/${category}`)
+            for (const key of keys) inFlight.current.add(key)
+            setPending(current => new Set([...current, ...keys]))
+            postMessage({
+                type: 'fetch-chunks',
+                requestId: requestId.current,
+                chunks: missing.map(category => ({ style, category })),
+            })
+        },
+        [packs]
+    )
+
+    const ensurePacks = useCallback(
+        (style: string, names: readonly string[]) => {
+            if (style === EMBEDDED_STYLE) return
+            requestChunks(style, categoriesFor(names, categoryOf))
+        },
+        [categoryOf, requestChunks]
+    )
+
+    const prefetchAll = useCallback(
+        (categories: readonly string[]) => {
+            if (prefetched.current) return
+            prefetched.current = true
+            for (const style of ['bold', 'bold-duotone', 'broken', 'line-duotone', 'outline']) {
+                requestChunks(style, categories)
+            }
+        },
+        [requestChunks]
+    )
+
+    const getSvg = useCallback(
+        (name: string, style: string): string | null => {
+            const body = packs[style]?.[categoryOf(name) ?? '']?.[name]
+            return body === undefined ? null : expandBody(body)
+        },
+        [categoryOf, packs]
+    )
+
+    const hasStyle = useCallback(
+        (style: string): boolean => Object.keys(packs[style] ?? {}).length > 0,
+        [packs]
+    )
+
+    const pendingStyles = useMemo(() => {
+        const styles = new Set<string>()
+        for (const key of pending) styles.add(key.split('/')[0])
+        return [...styles]
+    }, [pending])
+
+    const value = useMemo<PacksContextValue>(
+        () => ({
+            getSvg,
+            hasStyle,
+            ensurePacks,
+            prefetchAll,
+            pendingChunks: pending.size,
+            pendingStyles,
+            failedStyle,
+        }),
+        [ensurePacks, failedStyle, getSvg, hasStyle, pending.size, pendingStyles, prefetchAll]
+    )
+
+    return <PacksContext.Provider value={value}>{children}</PacksContext.Provider>
+}

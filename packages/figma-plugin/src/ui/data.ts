@@ -29,7 +29,9 @@ function readEmbeddedJson<T>(id: string): T {
     return JSON.parse(element.textContent ?? '') as T
 }
 
-export const iconData = readEmbeddedJson<Record<string, string>>('solar-icon-data')
+export const linearChunks = readEmbeddedJson<Record<string, Record<string, string>>>(
+    'solar-icon-data'
+)
 export const icons = readEmbeddedJson<IconMetadata[]>('solar-icon-metadata')
 export const catalogProvenance = readEmbeddedJson<CatalogProvenance>('solar-catalog-provenance')
 export const packageLogos = readEmbeddedJson<Record<string, PackageLogo>>('solar-package-logos')

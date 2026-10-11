@@ -1,14 +1,10 @@
 import type { HTMLAttributes } from 'react'
-import { iconData } from '../data'
 
 type SolarSvgProps = HTMLAttributes<HTMLSpanElement> & {
-    name: string
-    styleName?: string
+    svg?: string | null
 }
 
-export function SolarSvg({ name, styleName = 'linear', ...props }: SolarSvgProps) {
-    const svg = iconData[`${name}-${styleName}`]
-    if (!svg) return null
-
+export function SolarSvg({ svg, ...props }: SolarSvgProps) {
+    if (!svg) return <span {...props} data-loading="true" />
     return <span {...props} dangerouslySetInnerHTML={{ __html: svg }} />
 }

@@ -102,11 +102,18 @@ button:focus-visible, input:focus-visible, [role='combobox']:focus-visible {
 .icon-cell { position: relative; display: grid; height: 56px; min-width: 0; place-items: center; border: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0; background: var(--bg); touch-action: manipulation; transition: background-color 120ms ease, transform 120ms var(--ease-out); }
 .icon-cell[aria-pressed='true'] { color: var(--brand); background: var(--bg-selected); }
 .icon-cell:active { transform: scale(0.96); }
+.icon-cell:disabled { cursor: wait; }
+.icon-cell:disabled:active { transform: none; }
 .icon-preview { display: grid; width: 25px; height: 25px; place-items: center; pointer-events: none; }
 .icon-preview svg { display: block; width: 25px; height: 25px; color: currentColor; }
 .icon-preview svg { stroke-width: var(--preview-stroke-width, 1.5); }
 .icon-preview svg [stroke] { stroke: currentColor; }
 .icon-preview svg [fill]:not([fill='none']) { fill: currentColor; }
+@keyframes icon-loading-pulse {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.6; }
+}
+.icon-preview[data-loading='true'] { border-radius: 6px; background: var(--text-secondary); animation: icon-loading-pulse 1.2s ease-in-out infinite; }
 .selection-mark { position: absolute; top: 0; right: 0; display: none; width: 14px; height: 14px; place-items: center; color: var(--on-brand); background: var(--brand); font-size: 9px; line-height: 1; }
 .icon-cell[aria-pressed='true'] .selection-mark { display: grid; }
 .grid-message { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; color: var(--text-secondary); text-align: center; }
@@ -188,6 +195,7 @@ button:focus-visible, input:focus-visible, [role='combobox']:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
     .icon-cell, .insert-button, .doc-button, .reset-settings-button, .select-popup, .select-icon { transition: none; }
+    .icon-preview[data-loading='true'] { animation: none; }
 }
 
 .resize-handles { position: fixed; inset: 0; z-index: 100; pointer-events: none; }

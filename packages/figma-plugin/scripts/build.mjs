@@ -16,6 +16,7 @@ const temporaryUiDirectory = path.join(outputDirectory, '.ui-build')
 const icons = fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8')
 const metadata = fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
 const staticPackage = JSON.parse(fs.readFileSync(path.join(staticRoot, 'package.json'), 'utf8'))
+const linearChunks = readLinearChunks()
 const catalogProvenance = buildCatalogProvenance({
     icons,
     metadata,
@@ -23,7 +24,12 @@ const catalogProvenance = buildCatalogProvenance({
 })
 const packageLogos = createPackageLogos()
 
-const embeddedData = [icons, metadata, JSON.stringify(catalogProvenance)]
+// Pack CDN base: FIGMA_PACK_BASE overrides for local development
+// (serve packages/static/dist on that origin, e.g. port 8080).
+const packBase =
+    process.env.FIGMA_PACK_BASE ?? 'https://cdn.jsdelivr.net/npm/@solar-icons/static'
+
+const embeddedData = [linearChunks, metadata, JSON.stringify(catalogProvenance)]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     throw new Error(
         'Embedded icon data contains a closing script tag and cannot be safely inlined.'
@@ -45,7 +51,7 @@ html = inlineBuildAsset(
 html = inlineBuildAsset(html, 'style', /<link rel="stylesheet" crossorigin href="([^"]+)">/)
 html = html
     .replace('__SOLAR_VERSION_VALUE__', staticPackage.version)
-    .replace('__SOLAR_ICON_DATA__', icons)
+    .replace('__SOLAR_ICON_DATA__', linearChunks)
     .replace('__SOLAR_ICON_METADATA__', metadata)
     .replace('__SOLAR_CATALOG_PROVENANCE__', JSON.stringify(catalogProvenance))
     .replace('__SOLAR_PACKAGE_LOGOS__', JSON.stringify(packageLogos))
@@ -67,13 +73,48 @@ if (remainingPlaceholders.length > 0) {
 fs.writeFileSync(path.join(outputDirectory, 'ui.html'), html)
 fs.rmSync(temporaryUiDirectory, { recursive: true, force: true })
 
+const codePath = path.join(outputDirectory, 'code.js')
+const codeWithBase = fs
+    .readFileSync(codePath, 'utf8')
+    .replaceAll('__SOLAR_PACK_BASE__', packBase)
+if (codeWithBase.includes('__SOLAR_PACK_BASE__')) {
+    throw new Error('The pack base placeholder was not replaced in dist/code.js.')
+}
+fs.writeFileSync(codePath, codeWithBase)
+
+const BUNDLE_LIMIT = 10 * 1024 * 1024
+if (html.length > BUNDLE_LIMIT) {
+    throw new Error(
+        `Figma bundle is ${(html.length / 1024 / 1024).toFixed(2)} MiB, over the ${(BUNDLE_LIMIT / 1024 / 1024).toFixed(0)} MiB guard (Figma rejects over 15 MiB). Shrink the bundle before publishing.`
+    )
+}
+
 const compressedSize = zlib.gzipSync(html).byteLength
 console.info(
     `Built Solar Icons Figma plugin: ${catalogProvenance.logicalIconCount} icons × ${catalogProvenance.styleCount} styles, ${catalogProvenance.catalogHash}, ${(html.length / 1024 / 1024).toFixed(2)} MiB raw, ${(compressedSize / 1024 / 1024).toFixed(2)} MiB gzip.`
 )
 
-async function buildMain() {
-    await esbuild({
+/**
+ * Linear chunks for the offline bundle, read from the static pack output
+ * (`dist/figma/linear-<category>.json`) and nested as
+ * `{ [category]: { [name]: body } }`. Other styles download as packs.
+ */
+function readLinearChunks() {
+    const figmaDir = path.join(staticRoot, 'dist/figma')
+    const nested = {}
+    for (const file of fs.readdirSync(figmaDir).sort()) {
+        const match = file.match(/^linear-(.+)\.json$/)
+        if (!match) continue
+        const pack = JSON.parse(fs.readFileSync(path.join(figmaDir, file), 'utf8'))
+        nested[match[1]] = pack.icons
+    }
+    if (Object.keys(nested).length === 0) {
+        throw new Error(`No linear packs found in ${figmaDir} (run the static build first).`)
+    }
+    return JSON.stringify(nested)
+}
+
+async function buildMain() {    await esbuild({
         entryPoints: [path.join(pluginRoot, 'src/main/index.ts')],
         outfile: path.join(outputDirectory, 'code.js'),
         bundle: true,

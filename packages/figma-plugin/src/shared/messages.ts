@@ -13,9 +13,17 @@ export type IconInsertItem = {
     svg: string
 }
 
+export type PackChunk = {
+    style: string
+    category: string
+    icons: Record<string, string>
+}
+
 export type UiMessage =
     | { type: 'load-settings' }
     | { type: 'save-settings'; settings: PluginSettings }
+    | { type: 'init-packs'; version: string }
+    | { type: 'fetch-chunks'; requestId: number; chunks: { style: string; category: string }[] }
     | {
           type: 'insert-icons'
           items: IconInsertItem[]
@@ -33,6 +41,8 @@ export type MainMessage =
     | { type: 'settings-loaded'; settings: PluginSettings }
     | { type: 'inserted'; count: number }
     | { type: 'error'; message: string }
+    | { type: 'chunks-ready'; requestId: number; chunks: PackChunk[] }
+    | { type: 'chunks-failed'; requestId: number; offline: boolean }
 
 export const DEFAULT_SETTINGS: PluginSettings = {
     insertionMode: 'instant',

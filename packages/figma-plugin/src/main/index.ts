@@ -5,9 +5,99 @@ import {
     type PluginSettings,
     type UiMessage,
 } from '../shared/messages'
+import {
+    chunkKey,
+    isStaleChunkKey,
+    packUrl,
+    type PackChunkFile,
+} from '../shared/packs'
 
 const SETTINGS_KEY = 'settings'
+// Replaced at build time with the pack CDN base (or FIGMA_PACK_BASE for
+// local development against a static server).
+const PACK_BASE = '__SOLAR_PACK_BASE__'
 let resizeStartPosition: Vector | null = null
+
+// Icon pack cache: linear ships in the bundle, other styles download once
+// per style × category chunk and persist in clientStorage (5 MiB quota).
+let packVersion = ''
+const packMemory = new Map<string, Record<string, string>>()
+const packInFlight = new Map<string, Promise<Record<string, string>>>()
+
+async function deleteStoredKey(key: string): Promise<void> {
+    try {
+        await figma.clientStorage.deleteAsync(key)
+    } catch {
+        // Storage unavailable: the memory cache still serves this session.
+    }
+}
+
+async function purgeStalePacks(version: string): Promise<void> {
+    packVersion = version
+    packMemory.clear()
+    packInFlight.clear()
+    try {
+        const keys = await figma.clientStorage.keysAsync()
+        await Promise.all(
+            keys.filter(key => isStaleChunkKey(key, version)).map(deleteStoredKey)
+        )
+    } catch {
+        // Storage unavailable: the memory cache still serves this session.
+    }
+}
+
+async function storeChunk(key: string, icons: Record<string, string>): Promise<void> {
+    try {
+        await figma.clientStorage.setAsync(key, icons)
+    } catch {
+        // Quota exceeded: drop the oldest half of the cache and retry once,
+        // then serve memory-only for the rest of the session.
+        const keys = [...packMemory.keys()]
+        const evicted = keys.slice(0, Math.ceil(keys.length / 2))
+        for (const evictedKey of evicted) packMemory.delete(evictedKey)
+        await Promise.all(evicted.map(deleteStoredKey))
+        try {
+            await figma.clientStorage.setAsync(key, icons)
+        } catch {
+            // Serve memory-only.
+        }
+    }
+}
+
+async function loadChunk(style: string, category: string): Promise<Record<string, string>> {
+    const key = chunkKey(packVersion, style, category)
+    const cached = packMemory.get(key)
+    if (cached) return cached
+    const inFlight = packInFlight.get(key)
+    if (inFlight) return inFlight
+    const task = (async (): Promise<Record<string, string>> => {
+        try {
+            const stored = await figma.clientStorage.getAsync(key)
+            if (stored && typeof stored === 'object') {
+                const icons = stored as Record<string, string>
+                packMemory.set(key, icons)
+                return icons
+            }
+        } catch {
+            // Storage unreadable: fall through to the network.
+        }
+        const response = await fetch(packUrl(PACK_BASE, packVersion, style, category))
+        if (!response.ok) throw new Error(`pack ${response.status}`)
+        const file = (await response.json()) as PackChunkFile
+        if (!file || typeof file.icons !== 'object' || Array.isArray(file.icons)) {
+            throw new Error('pack malformed')
+        }
+        packMemory.set(key, file.icons)
+        await storeChunk(key, file.icons)
+        return file.icons
+    })()
+    packInFlight.set(key, task)
+    try {
+        return await task
+    } finally {
+        packInFlight.delete(key)
+    }
+}
 
 function postMessage(message: MainMessage): void {
     figma.ui.postMessage(message)
@@ -129,6 +219,31 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
 
     if (message.type === 'save-settings') {
         await figma.clientStorage.setAsync(SETTINGS_KEY, message.settings)
+        return
+    }
+
+    if (message.type === 'init-packs') {
+        await purgeStalePacks(message.version)
+        return
+    }
+
+    if (message.type === 'fetch-chunks') {
+        try {
+            const chunks = await Promise.all(
+                message.chunks.map(async ({ style, category }) => ({
+                    style,
+                    category,
+                    icons: await loadChunk(style, category),
+                }))
+            )
+            postMessage({ type: 'chunks-ready', requestId: message.requestId, chunks })
+        } catch (error) {
+            postMessage({
+                type: 'chunks-failed',
+                requestId: message.requestId,
+                offline: error instanceof TypeError,
+            })
+        }
         return
     }
 

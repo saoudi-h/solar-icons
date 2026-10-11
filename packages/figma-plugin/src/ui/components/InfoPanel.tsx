@@ -1,5 +1,6 @@
 import solarLogo from '../assets/solar-logo.svg?raw'
 import { catalogProvenance, packageLogos, type PackageLogo } from '../data'
+import { usePacks } from '../packs'
 import { SolarSvg } from './SolarSvg'
 
 type InfoPanelProps = {
@@ -33,6 +34,7 @@ function PackageMark({ logo }: { logo: PackageLogo }) {
 }
 
 export function InfoPanel({ openExternal }: InfoPanelProps) {
+    const { getSvg } = usePacks()
     return (
         <div className="info-scroll">
             <div className="info-identity">
@@ -48,7 +50,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
             </p>
             <button className="doc-button" type="button" onClick={() => openExternal('https://solar-icons.vercel.app')}>
                 <span>Open documentation</span>
-                <SolarSvg className="button-icon" name="arrow-right-up" aria-hidden="true" />
+                <SolarSvg className="button-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
             </button>
 
             <div className="package-section">
@@ -74,7 +76,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                     {catalogProvenance.logicalIconCount.toLocaleString()} icons · {catalogProvenance.styleCount} styles
                 </span>
                 <button className="text-link" type="button" onClick={() => openExternal('https://github.com/saoudi-h/solar-icons')}>
-                    GitHub <SolarSvg className="inline-icon" name="arrow-right-up" aria-hidden="true" />
+                    GitHub <SolarSvg className="inline-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
                 </button>
             </div>
         </div>

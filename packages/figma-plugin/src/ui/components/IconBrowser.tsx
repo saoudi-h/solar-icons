@@ -14,6 +14,8 @@ type IconBrowserProps = {
     selectionMode: boolean
     selected: Set<string>
     onIcon: (name: string) => void
+    getSvg: (name: string, style: string) => string | null
+    unavailableMessage: string | null
 }
 
 export function IconBrowser({
@@ -24,6 +26,8 @@ export function IconBrowser({
     selectionMode,
     selected,
     onIcon,
+    getSvg,
+    unavailableMessage,
 }: IconBrowserProps) {
     const browserRef = useRef<HTMLElement>(null)
     const [scrollTop, setScrollTop] = useState(0)
@@ -106,6 +110,14 @@ export function IconBrowser({
         )
     }
 
+    if (unavailableMessage) {
+        return (
+            <section ref={browserRef} className="browser" aria-label="Icon browser">
+                <div className="grid-message">{unavailableMessage}</div>
+            </section>
+        )
+    }
+
     return (
         <section ref={browserRef} className="browser" aria-label="Icon browser" onScroll={handleScroll}>
             <div className="grid-spacer" style={{ height: windowState.totalRows * CELL_HEIGHT }}>
@@ -119,23 +131,28 @@ export function IconBrowser({
                     {icons.slice(windowState.startIndex, windowState.endIndex).map((icon, offset) => {
                         const index = windowState.startIndex + offset
                         const isSelected = selected.has(icon.name)
+                        const svg = getSvg(icon.name, styleName)
                         const action = selectionMode ? 'Select' : 'Insert'
                         return (
                             <button
                                 type="button"
                                 className="icon-cell"
                                 key={icon.name}
-                                title={`${action} ${icon.name.replaceAll('-', ' ')}`}
+                                title={
+                                    svg
+                                        ? `${action} ${icon.name.replaceAll('-', ' ')}`
+                                        : 'Loading icon…'
+                                }
                                 aria-label={`${action} ${icon.name.replaceAll('-', ' ')}, ${styleLabel}`}
                                 aria-pressed={isSelected}
                                 data-index={index}
+                                disabled={!svg}
                                 onClick={() => onIcon(icon.name)}
                                 onKeyDown={event => handleKeyDown(event, index)}
                             >
                                 <SolarSvg
                                     className="icon-preview"
-                                    name={icon.name}
-                                    styleName={styleName}
+                                    svg={svg}
                                     style={
                                         strokeWidth === undefined
                                             ? undefined

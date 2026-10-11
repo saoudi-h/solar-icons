@@ -24,8 +24,29 @@ const expectedProvenance = buildCatalogProvenance({
 })
 
 const mismatches = []
-if (stableSerialize(embeddedIcons) !== stableSerialize(staticIcons)) {
-    mismatches.push('embedded icon SVG data differs from packages/static/dist/icons.json')
+// Embedded icons are the linear chunks only (other styles download as
+// packs): compare against the static pack output recombined, not icons.json.
+const expectedLinear = {}
+for (const file of fs.readdirSync(path.join(staticRoot, 'dist/figma')).sort()) {
+    const match = file.match(/^linear-(.+)\.json$/)
+    if (!match) continue
+    expectedLinear[match[1]] = readJson(path.join(staticRoot, 'dist/figma', file)).icons
+}
+if (stableSerialize(embeddedIcons) !== stableSerialize(expectedLinear)) {
+    mismatches.push('embedded linear icons differ from packages/static/dist/figma packs')
+}
+// Every style × category pack must exist, parse, and carry the version.
+const packManifest = readJson(path.join(staticRoot, 'dist/figma/manifest.json'))
+for (const chunk of packManifest.chunks) {
+    const packPath = path.join(staticRoot, 'dist/figma', `${chunk}.json`)
+    if (!fs.existsSync(packPath)) {
+        mismatches.push(`figma pack missing: ${chunk}.json`)
+        continue
+    }
+    const pack = readJson(packPath)
+    if (pack.version !== staticPackage.version || typeof pack.icons !== 'object') {
+        mismatches.push(`figma pack invalid: ${chunk}.json`)
+    }
 }
 if (stableSerialize(embeddedMetadata) !== stableSerialize(staticMetadata)) {
     mismatches.push(
