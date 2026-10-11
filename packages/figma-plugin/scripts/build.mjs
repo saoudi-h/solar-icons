@@ -26,8 +26,11 @@ const packageLogos = createPackageLogos()
 
 // Pack CDN base: FIGMA_PACK_BASE overrides for local development
 // (serve packages/static/dist on that origin, e.g. port 8080).
+// Production embeds the versioned base; dev uses the server root verbatim
+// (the local dist IS the current version, no @version suffix).
 const packBase =
-    process.env.FIGMA_PACK_BASE ?? 'https://cdn.jsdelivr.net/npm/@solar-icons/static'
+    process.env.FIGMA_PACK_BASE ??
+    `https://cdn.jsdelivr.net/npm/@solar-icons/static@${staticPackage.version}`
 
 const embeddedData = [linearChunks, metadata, JSON.stringify(catalogProvenance)]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {

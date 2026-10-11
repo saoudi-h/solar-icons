@@ -32,9 +32,11 @@ export function expandBody(body: string): string {
     return `${SVG_OPEN}${body}${SVG_CLOSE}`
 }
 
-/** Immutable pack URL for one style × category chunk. */
-export function packUrl(base: string, version: string, style: string, category: string): string {
-    return `${base}@${version}/dist/figma/${style}-${category}.json`
+/** Immutable pack URL for one style × category chunk. `base` already carries
+ * the version in production (`.../static@<version>`); a dev server root is
+ * used verbatim. */
+export function packUrl(base: string, style: string, category: string): string {
+    return `${base}/dist/figma/${style}-${category}.json`
 }
 
 /** `figma.clientStorage` key for one cached chunk. */

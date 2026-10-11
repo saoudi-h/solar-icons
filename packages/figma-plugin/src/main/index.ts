@@ -81,7 +81,7 @@ async function loadChunk(style: string, category: string): Promise<Record<string
         } catch {
             // Storage unreadable: fall through to the network.
         }
-        const response = await fetch(packUrl(PACK_BASE, packVersion, style, category))
+        const response = await fetch(packUrl(PACK_BASE, style, category))
         if (!response.ok) throw new Error(`pack ${response.status}`)
         const file = (await response.json()) as PackChunkFile
         if (!file || typeof file.icons !== 'object' || Array.isArray(file.icons)) {

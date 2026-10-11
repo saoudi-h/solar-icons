@@ -28,8 +28,10 @@ type PacksContextValue = {
     pendingChunks: number
     /** Styles with in-flight chunks, for status display. */
     pendingStyles: readonly string[]
-    /** Style whose last fetch failed without connection, if any. */
+    /** Style whose last fetch failed, if any. */
     failedStyle: string | null
+    /** True when the last failure was a connectivity error. */
+    failedOffline: boolean
 }
 
 const PacksContext = createContext<PacksContextValue | null>(null)
@@ -58,6 +60,7 @@ export function PackProvider({
     const [packs, setPacks] = useState<PackStore>(() => ({ [EMBEDDED_STYLE]: embeddedLinear }))
     const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
     const [failedStyle, setFailedStyle] = useState<string | null>(null)
+    const [failedOffline, setFailedOffline] = useState(false)
     const requestId = useRef(0)
     const inFlight = useRef(new Set<string>())
     const requestStyles = useRef(new Map<number, string>())
@@ -95,6 +98,7 @@ export function PackProvider({
                 })
                 const arrived = message.chunks[0]?.style
                 if (arrived) setFailedStyle(current => (current === arrived ? null : current))
+                setFailedOffline(false)
                 forgetPending(message.chunks.map(chunk => `${chunk.style}/${chunk.category}`))
             }
             if (message.type === 'chunks-failed') {
@@ -106,7 +110,8 @@ export function PackProvider({
                     for (const key of current) inFlight.current.delete(key)
                     return new Set<string>()
                 })
-                if (message.offline && style && style !== EMBEDDED_STYLE) setFailedStyle(style)
+                if (style && style !== EMBEDDED_STYLE) setFailedStyle(style)
+                setFailedOffline(message.offline)
             }
         }
         window.addEventListener('message', handleMessage)
@@ -180,8 +185,9 @@ export function PackProvider({
             pendingChunks: pending.size,
             pendingStyles,
             failedStyle,
+            failedOffline,
         }),
-        [ensurePacks, failedStyle, getSvg, hasStyle, pending.size, pendingStyles, prefetchAll]
+        [ensurePacks, failedOffline, failedStyle, getSvg, hasStyle, pending.size, pendingStyles, prefetchAll]
     )
 
     return <PacksContext.Provider value={value}>{children}</PacksContext.Provider>

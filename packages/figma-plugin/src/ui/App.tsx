@@ -76,7 +76,8 @@ function AppShell() {
         [category, deferredQuery, fuse]
     )
     const selectionMode = settings.insertionMode === 'selection'
-    const { getSvg, ensurePacks, prefetchAll, pendingStyles, failedStyle, hasStyle } = usePacks()
+    const { getSvg, ensurePacks, prefetchAll, pendingStyles, failedStyle, failedOffline, hasStyle } =
+        usePacks()
     const allCategories = useMemo(
         () => [...new Set(icons.map(icon => icon.category))].sort(),
         []
@@ -98,7 +99,9 @@ function AppShell() {
     const styleFailed = failedStyle === styleName && !hasStyle(styleName)
     const displayStatus = styleFailed
         ? {
-              message: `Couldn't download ${activeStyle.label} icons — connect once to fetch them. Linear works offline.`,
+              message: failedOffline
+                  ? `Couldn't download ${activeStyle.label} icons. Connect once to fetch them; Linear works offline.`
+                  : `${activeStyle.label} icons failed to load. Switching style retries.`,
               kind: 'error' as const,
           }
         : stylePending && !hasStyle(styleName)
@@ -263,7 +266,7 @@ function AppShell() {
                     getSvg={getSvg}
                     unavailableMessage={
                         styleFailed
-                            ? `${activeStyle.label} icons need one download — connect to fetch them.`
+                            ? `${activeStyle.label} icons need one download. Connect to fetch them.`
                             : null
                     }
                 />

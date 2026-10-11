@@ -19,9 +19,19 @@ describe('figma icon packs', () => {
 
     it('addresses immutable versioned pack URLs on the CDN', () => {
         expect(
-            packUrl('https://cdn.jsdelivr.net/npm/@solar-icons/static', '2.3.2', 'bold-duotone', 'arrows')
+            packUrl(
+                'https://cdn.jsdelivr.net/npm/@solar-icons/static@2.3.2',
+                'bold-duotone',
+                'arrows'
+            )
         ).toBe(
             'https://cdn.jsdelivr.net/npm/@solar-icons/static@2.3.2/dist/figma/bold-duotone-arrows.json'
+        )
+    })
+
+    it('uses a dev server root verbatim', () => {
+        expect(packUrl('http://localhost:8080', 'bold', 'arrows')).toBe(
+            'http://localhost:8080/dist/figma/bold-arrows.json'
         )
     })
 
