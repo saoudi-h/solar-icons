@@ -12,6 +12,7 @@
         "nuxt",
         "static",
         "js",
-        "blade"
+        "blade",
+        "flutter"
     ]
 }

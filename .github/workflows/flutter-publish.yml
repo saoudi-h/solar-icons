@@ -1,0 +1,81 @@
+name: Flutter publish
+
+# Auth uses temporary GitHub-signed OIDC tokens (permissions: id-token:
+# write below). There is deliberately NO long-lived secret: the Dart team
+# discourages exported keys. One-time setup by the maintainer, all on the
+# pub.dev package admin page AFTER the first manual publish:
+# enable automated publishing from GitHub Actions for repository
+# saoudi-h/solar-icons with tag pattern `flutter_solar_icons-v{{version}}`.
+# First publish is always manual (`dart pub publish` from packages/flutter,
+# browser OAuth): automation only works for existing packages.
+# Consider a tag protection rule for `flutter_solar_icons-v*` so only the
+# maintainer can trigger a publish.
+
+on:
+    push:
+        tags:
+            - 'flutter_solar_icons-v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+    id-token: write
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    publish:
+        name: Publish to pub.dev
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                  channel: stable
+                  cache: true
+
+            - name: Tag matches pubspec version
+              run: |
+                  TAG="${GITHUB_REF_NAME#flutter_solar_icons-v}"
+                  SPEC=$(grep '^version:' packages/flutter/pubspec.yaml | awk '{print $2}')
+                  if [ "$TAG" != "$SPEC" ]; then
+                    echo "tag flutter_solar_icons-v$TAG does not match pubspec version $SPEC"
+                    exit 1
+                  fi
+
+            - name: Regenerate icon widgets and registry
+              run: |
+                  node packages/flutter/tool/generate_icons.mjs
+                  node packages/flutter/tool/generate_gallery_registry.mjs
+
+            - name: Analyze and test
+              run: |
+                  flutter analyze
+                  flutter test
+              working-directory: packages/flutter
+
+            - name: Generated widgets exist for publish
+              run: |
+                  test -f packages/flutter/lib/bold/heart.dart
+                  test -f packages/flutter/lib/dynamic/home.dart
+                  test -f packages/flutter/lib/flutter_solar_icons.dart
+                  test -f packages/flutter/example/lib/icon_registry.dart
+                  # .pubignore re-includes the gitignored lib/ output: the
+                  # dry-run tree must list the icon files, or publish ships
+                  # an empty package.
+                  COUNT=$(dart pub publish --dry-run 2>&1 | grep -c '\.dart')
+                  echo "dart files in publish tree: $COUNT"
+                  test "$COUNT" -gt 10000
+              working-directory: packages/flutter
+
+            - name: Publish
+              run: dart pub publish --force
+              working-directory: packages/flutter

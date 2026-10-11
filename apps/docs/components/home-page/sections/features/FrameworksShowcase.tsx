@@ -15,6 +15,7 @@ export const FrameworksShowcase = () => {
         { name: 'Angular', icon: 'logos:angular-icon', color: 'hover:shadow-red-500/20' },
         { name: 'Nuxt', icon: 'logos:nuxt-icon', color: 'hover:shadow-green-500/20' },
         { name: 'Laravel', icon: 'logos:laravel', color: 'hover:shadow-red-600/20' },
+        { name: 'Flutter', icon: 'logos:flutter', color: 'hover:shadow-sky-400/20' },
     ]
 
     return (
