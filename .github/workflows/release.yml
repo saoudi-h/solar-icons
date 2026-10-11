@@ -16,6 +16,16 @@ env:
     TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
+# id-token:write mints the GitHub OIDC JWT that `npm publish` exchanges for
+# a short-lived token once each package trusts this workflow (npmjs.com
+# package Settings, Trusted Publisher). contents:write preserves what the
+# job already does (push version commits and tags). The npm CLI tries OIDC
+# first and falls back to NODE_AUTH_TOKEN, so token publishing keeps
+# working until every package trusts the workflow.
+permissions:
+    contents: write
+    id-token: write
+
 jobs:
     release:
         name: Release
