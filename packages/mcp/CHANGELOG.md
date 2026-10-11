@@ -1,5 +1,16 @@
 # @solar-icons/mcp
 
+## 2.4.0
+
+### Minor Changes
+
+- [#574](https://github.com/saoudi-h/solar-icons/pull/574) [`ff9e744`](https://github.com/saoudi-h/solar-icons/commit/ff9e744828faf7fa9b33bbfe4e8f319dd03e5468) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Accept `flutter` as a framework in search, get, and info tools.
+
+### Patch Changes
+
+- Updated dependencies [[`ff9e744`](https://github.com/saoudi-h/solar-icons/commit/ff9e744828faf7fa9b33bbfe4e8f319dd03e5468)]:
+  - @solar-icons/cli@2.6.0
+
 ## 2.3.0
 
 ### Minor Changes
