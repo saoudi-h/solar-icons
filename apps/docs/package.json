@@ -21,6 +21,7 @@
         "generate:descriptions": "tsx ./scripts/generate-descriptions.ts",
         "generate:catalog": "pnpm generate:data && pnpm generate:descriptions && pnpm generate:hero:utils",
         "generate:og-assets": "tsx ./scripts/generate-og-icon-field.ts",
+        "generate:banner": "node ./scripts/generate-readme-banner.mjs",
         "lint-staged": "lint-staged",
         "pre-commit": "lint-staged",
         "lint:links": "fumadocs-mdx && bun scripts/lint.ts",
