@@ -7,7 +7,7 @@
   "editorType": ["figma"],
   "documentAccess": "dynamic-page",
   "networkAccess": {
-    "allowedDomains": ["cdn.jsdelivr.net/npm/@solar-icons/"],
+    "allowedDomains": ["https://cdn.jsdelivr.net/npm/@solar-icons/"],
     "reasoning": "Downloads versioned Solar icon style packs (static SVG files) from the jsDelivr CDN on first use. No document content or personal data is ever sent.",
     "devAllowedDomains": ["http://localhost:8080"]
   }
