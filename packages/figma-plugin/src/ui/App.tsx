@@ -80,13 +80,6 @@ function AppShell() {
         usePacks()
 
     useEffect(() => {
-        ensurePacks(
-            styleName,
-            filteredIcons.map(icon => icon.name)
-        )
-    }, [ensurePacks, filteredIcons, styleName])
-
-    useEffect(() => {
         const timer = setTimeout(
             () =>
                 prefetchAll(
@@ -266,6 +259,7 @@ function AppShell() {
                     selected={selected}
                     onIcon={handleIcon}
                     getSvg={getSvg}
+                    ensurePacks={ensurePacks}
                     unavailableMessage={
                         styleFailed
                             ? `${activeStyle.label} icons need one download. Connect to fetch them.`

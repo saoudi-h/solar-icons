@@ -15,6 +15,7 @@ type IconBrowserProps = {
     selected: Set<string>
     onIcon: (name: string) => void
     getSvg: (name: string, style: string) => string | null
+    ensurePacks: (style: string, names: readonly string[]) => void
     unavailableMessage: string | null
 }
 
@@ -27,6 +28,7 @@ export function IconBrowser({
     selected,
     onIcon,
     getSvg,
+    ensurePacks,
     unavailableMessage,
 }: IconBrowserProps) {
     const browserRef = useRef<HTMLElement>(null)
@@ -65,6 +67,13 @@ export function IconBrowser({
             endIndex: Math.min(icons.length, endRow * columns),
         }
     }, [columns, icons.length, scrollTop, viewportHeight])
+
+    useEffect(() => {
+        ensurePacks(
+            styleName,
+            icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name)
+        )
+    }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 
     const handleScroll = (event: UIEvent<HTMLElement>) => {
         if (scrollFrame.current !== null) return

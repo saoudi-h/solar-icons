@@ -1,7 +1,21 @@
+import { useEffect } from 'react'
+
 import solarLogo from '../assets/solar-logo.svg?raw'
 import { catalogProvenance, packageLogos, type PackageLogo } from '../data'
 import { usePacks } from '../packs'
 import { SolarSvg } from './SolarSvg'
+
+function CacheLine() {
+    const { storage, refreshStorage } = usePacks()
+    useEffect(refreshStorage, [refreshStorage])
+    if (!storage) return null
+    const megabytes = (storage.bytes / 1024 / 1024).toFixed(1)
+    return (
+        <span>
+            Icon cache: {storage.chunks} chunks · {megabytes} MiB
+        </span>
+    )
+}
 
 type InfoPanelProps = {
     openExternal: (url: string) => void
@@ -75,6 +89,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                 <span>
                     {catalogProvenance.logicalIconCount.toLocaleString()} icons · {catalogProvenance.styleCount} styles
                 </span>
+                <CacheLine />
                 <button className="text-link" type="button" onClick={() => openExternal('https://github.com/saoudi-h/solar-icons')}>
                     GitHub <SolarSvg className="inline-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
                 </button>

@@ -23,7 +23,7 @@ type PacksContextValue = {
     /** Request the chunks covering these icons in this style. */
     ensurePacks: (style: string, names: readonly string[]) => void
     /** Background-fetch every non-embedded style (idle prefetch). */
-    prefetchAll: (categories: readonly string[]) => void
+    prefetchAll: (names: readonly string[]) => void
     /** In-flight chunk count, for status and skeleton display. */
     pendingChunks: number
     /** Styles with in-flight chunks, for status display. */
@@ -32,6 +32,10 @@ type PacksContextValue = {
     failedStyle: string | null
     /** True when the last failure was a connectivity error. */
     failedOffline: boolean
+    /** Persistent cache census, refreshed on demand. */
+    storage: { chunks: number; bytes: number } | null
+    /** Ask the sandbox for a fresh persistent cache census. */
+    refreshStorage: () => void
 }
 
 const PacksContext = createContext<PacksContextValue | null>(null)
@@ -61,6 +65,7 @@ export function PackProvider({
     const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
     const [failedStyle, setFailedStyle] = useState<string | null>(null)
     const [failedOffline, setFailedOffline] = useState(false)
+    const [storage, setStorage] = useState<{ chunks: number; bytes: number } | null>(null)
     const requestId = useRef(0)
     const inFlight = useRef(new Set<string>())
     const requestStyles = useRef(new Map<number, string>())
@@ -104,14 +109,16 @@ export function PackProvider({
             if (message.type === 'chunks-failed') {
                 const style = requestStyles.current.get(message.requestId)
                 requestStyles.current.delete(message.requestId)
-                // A failure clears only its own request: the pack layer only
-                // fails whole requests on network errors, never partially.
+                // Pack requests fail whole, never partially.
                 setPending(current => {
                     for (const key of current) inFlight.current.delete(key)
                     return new Set<string>()
                 })
                 if (style && style !== EMBEDDED_STYLE) setFailedStyle(style)
                 setFailedOffline(message.offline)
+            }
+            if (message.type === 'storage-stats') {
+                setStorage({ chunks: message.chunks, bytes: message.bytes })
             }
         }
         window.addEventListener('message', handleMessage)
@@ -177,6 +184,10 @@ export function PackProvider({
         [ensurePacks]
     )
 
+    const refreshStorage = useCallback(() => {
+        postMessage({ type: 'get-storage-stats' })
+    }, [])
+
     const getSvg = useCallback(
         (name: string, style: string): string | null => {
             const body = packs[style]?.[categoryOf(name) ?? '']?.[name]
@@ -206,8 +217,21 @@ export function PackProvider({
             pendingStyles,
             failedStyle,
             failedOffline,
+            storage,
+            refreshStorage,
         }),
-        [ensurePacks, failedOffline, failedStyle, getSvg, hasStyle, pending.size, pendingStyles, prefetchAll]
+        [
+            ensurePacks,
+            failedOffline,
+            failedStyle,
+            getSvg,
+            hasStyle,
+            pending.size,
+            pendingStyles,
+            prefetchAll,
+            refreshStorage,
+            storage,
+        ]
     )
 
     return <PacksContext.Provider value={value}>{children}</PacksContext.Provider>
