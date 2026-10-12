@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type UIEvent } from 'react'
 import type { IconMetadata } from '../data'
-import { EMBEDDED_STYLE, PACK_STYLES } from '../../shared/packs'
 import { SolarSvg } from './SolarSvg'
 
 const MIN_CELL_WIDTH = 56
@@ -71,20 +70,16 @@ export function IconBrowser({
     }, [columns, icons.length, scrollTop, viewportHeight])
 
     useEffect(() => {
-        const visible = icons
-            .slice(windowState.startIndex, windowState.endIndex)
-            .map(icon => icon.name)
-        // One batch id per settled view: main aborts older batches so stale
-        // scroll positions never clog the queue behind the visible window.
+        // Fetch exactly the visible window in the current style. No sibling
+        // prefetch here: warming four more styles on every scroll step
+        // oversubscribes the persistent cache and evicts what is on screen,
+        // which loops forever. The LRU keeps recently viewed chunks warm.
         batchRef.current += 1
-        const batchId = batchRef.current
-        ensurePacks(styleName, visible, batchId)
-        // Warm the sibling styles for exactly what's on screen, so switching
-        // styles feels instant. Bounded by the viewport; the LRU cache keeps
-        // the recently viewed ones.
-        for (const style of PACK_STYLES) {
-            if (style !== styleName && style !== EMBEDDED_STYLE) ensurePacks(style, visible, batchId)
-        }
+        ensurePacks(
+            styleName,
+            icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name),
+            batchRef.current
+        )
     }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 
     const handleScroll = (event: UIEvent<HTMLElement>) => {
