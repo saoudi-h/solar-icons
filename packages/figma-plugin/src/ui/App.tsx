@@ -1,5 +1,5 @@
 import { Tabs } from '@base-ui/react/tabs'
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import type { MainMessage, PluginSettings, ThemeMode, UiMessage } from '../shared/messages'
 import { DEFAULT_SETTINGS } from '../shared/messages'
 import { AppSelect, type SelectOption } from './components/AppSelect'
@@ -78,6 +78,20 @@ function AppShell() {
     const selectionMode = settings.insertionMode === 'selection'
     const { getSvg, ensurePacks, pendingStyles, failedStyle, failedOffline, hasStyle } =
         usePacks()
+    const launched = useRef(false)
+
+    useEffect(() => {
+        // Download everything once, up front: Linear renders instantly from
+        // the bundle while the other styles fill the persistent cache in the
+        // background. Bounded by fetch slots and the LRU budget, deduplicated
+        // with on-demand requests, so this runs exactly once per version.
+        if (launched.current) return
+        launched.current = true
+        const names = icons.map(icon => icon.name)
+        for (const style of ['bold', 'bold-duotone', 'broken', 'line-duotone', 'outline']) {
+            ensurePacks(style, names)
+        }
+    }, [ensurePacks])
 
     const stylePending = pendingStyles.includes(styleName)
     const styleFailed = failedStyle === styleName && !hasStyle(styleName)

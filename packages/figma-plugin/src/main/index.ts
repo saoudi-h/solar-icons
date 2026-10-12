@@ -38,6 +38,25 @@ const packIndex = new Map<string, { bytes: number; at: number }>()
 let packClock = 0
 let storageChain: Promise<void> = Promise.resolve()
 
+// Network slots: bound concurrent fetches so a full-catalog download
+// never floods the sandbox. Cache reads bypass the slots entirely.
+const MAX_FETCHES = 6
+let activeFetches = 0
+const fetchWaiters: (() => void)[] = []
+
+async function withFetchSlot<T>(task: () => Promise<T>): Promise<T> {
+    if (activeFetches >= MAX_FETCHES) {
+        await new Promise<void>(resolve => fetchWaiters.push(resolve))
+    }
+    activeFetches += 1
+    try {
+        return await task()
+    } finally {
+        activeFetches -= 1
+        fetchWaiters.shift()?.()
+    }
+}
+
 const indexKey = (): string => `solar:index:${packVersion}`
 
 function mutateStorage(task: () => Promise<void>): Promise<void> {
@@ -179,23 +198,18 @@ async function loadChunk(
         }
         const icons: Record<string, string> = {}
         for (const url of combineUrls(PACK_ORIGIN, packVersion, style, names)) {
-            packLog(`GET ${url}`)
-            let response
-            try {
-                response = await fetch(
+            await withFetchSlot(async () => {
+                if (signal?.aborted) throw new Error('aborted')
+                const response = await fetch(
                     url,
                     signal === undefined ? undefined : ({ signal }) as never
                 )
-            } catch (error) {
-                packLog(`fetch threw for ${style}/${category}:`, error)
-                throw error
-            }
-            packLog(`HTTP ${response.status} for ${style}/${category}`)
-            if (!response.ok) throw new Error(`pack ${response.status}`)
-            for (const document of splitCombined(await response.text())) {
-                const name = canonicalName(document)
-                if (name) icons[name] = normalizeBody(document)
-            }
+                if (!response.ok) throw new Error(`pack ${response.status}`)
+                for (const document of splitCombined(await response.text())) {
+                    const name = canonicalName(document)
+                    if (name) icons[name] = normalizeBody(document)
+                }
+            })
         }
         const missing = names.filter(name => icons[name] === undefined)
         if (missing.length > 0) {
