@@ -140,7 +140,9 @@ export function PackProvider({
             if (missing.length === 0) return
             requestId.current += 1
             const id = batchId ?? requestId.current
-            requestStyles.current.set(id, style)
+            // Siblings share one batch id: keep the first style for error
+            // attribution, every message carries its own chunks.
+            if (!requestStyles.current.has(id)) requestStyles.current.set(id, style)
             const keys = missing.map(group => `${style}/${group.category}`)
             for (const key of keys) inFlight.current.add(key)
             setPending(current => new Set([...current, ...keys]))

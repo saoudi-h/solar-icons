@@ -407,7 +407,7 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
                 postMessage({ type: 'chunks-dropped', requestId: otherId, keys: otherKeys })
             }
         }
-        if (batchId <= maxBatchId) {
+        if (batchId < maxBatchId) {
             postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
             return
         }
