@@ -102,6 +102,12 @@ export function PackProvider({
                 if (arrived) setFailedStyle(current => (current === arrived ? null : current))
                 setFailedOffline(false)
                 forgetPending(message.chunks.map(chunk => `${chunk.style}/${chunk.category}`))
+                console.log(
+                    `[packs-ui] applied #${message.requestId}:`,
+                    message.chunks
+                        .map(chunk => `${chunk.style}/${chunk.category}=${Object.keys(chunk.icons).length}`)
+                        .join(', ')
+                )
             }
             if (message.type === 'chunks-dropped') {
                 requestStyles.current.delete(message.requestId)

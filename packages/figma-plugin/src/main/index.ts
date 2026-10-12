@@ -416,34 +416,36 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
         packLog(`batch #${batchId}: ${message.chunks.length} chunk(s), abort=${controller !== null}`)
         batchControllers.set(batchId, controller)
         batchKeys.set(batchId, keys)
-        try {
-            const chunks = await Promise.all(
-                message.chunks.map(async ({ style, category, names }) => ({
-                    style,
-                    category,
-                    icons: await loadChunk(style, category, names, controller?.signal),
-                }))
-            )
-            batchControllers.delete(batchId)
-            batchKeys.delete(batchId)
-            const total = chunks.reduce((sum, chunk) => sum + Object.keys(chunk.icons).length, 0)
-            packLog(`ready #${batchId}: ${total} icons`)
-            postMessage({ type: 'chunks-ready', requestId: batchId, chunks })
-        } catch (error) {
-            batchControllers.delete(batchId)
-            batchKeys.delete(batchId)
-            if (controller?.signal.aborted) {
-                packLog(`dropped #${batchId}`)
-                postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
-            } else {
-                packLog(`failed #${batchId}:`, error)
+        // One message per chunk, never a batched blob: large postMessage
+        // payloads risk silent drops between sandbox and iframe.
+        const deliveries = message.chunks.map(async ({ style, category, names }) => {
+            const chunkKey = `${style}/${category}`
+            try {
+                const icons = await loadChunk(style, category, names, controller?.signal)
+                // Completed data always merges, even from a superseded batch:
+                // it is valid and warms the cache for free.
+                packLog(`ready #${batchId} ${chunkKey}: ${Object.keys(icons).length} icons`)
                 postMessage({
-                    type: 'chunks-failed',
+                    type: 'chunks-ready',
                     requestId: batchId,
-                    offline: error instanceof TypeError,
+                    chunks: [{ style, category, icons }],
                 })
+            } catch (error) {
+                if (controller?.signal.aborted || batchId < maxBatchId) {
+                    postMessage({ type: 'chunks-dropped', requestId: batchId, keys: [chunkKey] })
+                } else {
+                    packLog(`failed #${batchId} ${chunkKey}:`, error)
+                    postMessage({
+                        type: 'chunks-failed',
+                        requestId: batchId,
+                        offline: error instanceof TypeError,
+                    })
+                }
             }
-        }
+        })
+        await Promise.allSettled(deliveries)
+        batchControllers.delete(batchId)
+        batchKeys.delete(batchId)
         return
     }
 
