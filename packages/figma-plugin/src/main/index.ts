@@ -422,8 +422,13 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
             const chunkKey = `${style}/${category}`
             try {
                 const icons = await loadChunk(style, category, names, controller?.signal)
-                // Completed data always merges, even from a superseded batch:
-                // it is valid and warms the cache for free.
+                if (batchId < maxBatchId) {
+                    // A newer view arrived while fetching: drop instead of
+                    // posting stale data (it re-requests on its own tick).
+                    packLog(`stale #${batchId} ${chunkKey}`)
+                    postMessage({ type: 'chunks-dropped', requestId: batchId, keys: [chunkKey] })
+                    return
+                }
                 packLog(`ready #${batchId} ${chunkKey}: ${Object.keys(icons).length} icons`)
                 postMessage({
                     type: 'chunks-ready',

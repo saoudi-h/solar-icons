@@ -37,6 +37,8 @@ export function IconBrowser({
     const [columns, setColumns] = useState(5)
     const scrollFrame = useRef<number | null>(null)
     const batchRef = useRef(0)
+    const debounceRef = useRef<number | null>(null)
+    const lastStyle = useRef(styleName)
 
     useEffect(() => {
         const browser = browserRef.current
@@ -70,16 +72,34 @@ export function IconBrowser({
     }, [columns, icons.length, scrollTop, viewportHeight])
 
     useEffect(() => {
-        // Fetch exactly the visible window in the current style. No sibling
-        // prefetch here: warming four more styles on every scroll step
-        // oversubscribes the persistent cache and evicts what is on screen,
-        // which loops forever. The LRU keeps recently viewed chunks warm.
-        batchRef.current += 1
-        ensurePacks(
-            styleName,
-            icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name),
-            batchRef.current
-        )
+        // Scroll fires per frame: wait for the viewport to settle before
+        // requesting, otherwise every frame spawns its own batch. A style
+        // switch fires immediately: the user explicitly asked for it.
+        const fire = () => {
+            batchRef.current += 1
+            ensurePacks(
+                styleName,
+                icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name),
+                batchRef.current
+            )
+        }
+        if (lastStyle.current !== styleName) {
+            lastStyle.current = styleName
+            if (debounceRef.current) {
+                clearTimeout(debounceRef.current)
+                debounceRef.current = null
+            }
+            fire()
+        } else {
+            if (debounceRef.current) clearTimeout(debounceRef.current)
+            debounceRef.current = window.setTimeout(fire, 250)
+        }
+        return () => {
+            if (debounceRef.current) {
+                clearTimeout(debounceRef.current)
+                debounceRef.current = null
+            }
+        }
     }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 
     const handleScroll = (event: UIEvent<HTMLElement>) => {
