@@ -76,19 +76,8 @@ function AppShell() {
         [category, deferredQuery, fuse]
     )
     const selectionMode = settings.insertionMode === 'selection'
-    const { getSvg, ensurePacks, prefetchAll, pendingStyles, failedStyle, failedOffline, hasStyle } =
+    const { getSvg, ensurePacks, pendingStyles, failedStyle, failedOffline, hasStyle } =
         usePacks()
-
-    useEffect(() => {
-        const timer = setTimeout(
-            () =>
-                prefetchAll(
-                    icons.map(icon => icon.name)
-                ),
-            3000
-        )
-        return () => clearTimeout(timer)
-    }, [prefetchAll])
 
     const stylePending = pendingStyles.includes(styleName)
     const styleFailed = failedStyle === styleName && !hasStyle(styleName)

@@ -22,8 +22,6 @@ type PacksContextValue = {
     hasStyle: (style: string) => boolean
     /** Request the chunks covering these icons in this style. */
     ensurePacks: (style: string, names: readonly string[]) => void
-    /** Background-fetch every non-embedded style (idle prefetch). */
-    prefetchAll: (names: readonly string[]) => void
     /** In-flight chunk count, for status and skeleton display. */
     pendingChunks: number
     /** Styles with in-flight chunks, for status display. */
@@ -69,7 +67,6 @@ export function PackProvider({
     const requestId = useRef(0)
     const inFlight = useRef(new Set<string>())
     const requestStyles = useRef(new Map<number, string>())
-    const prefetched = useRef(false)
 
     useEffect(() => {
         postMessage({ type: 'init-packs', version })
@@ -173,17 +170,6 @@ export function PackProvider({
         [categoryOf, requestChunks]
     )
 
-    const prefetchAll = useCallback(
-        (names: readonly string[]) => {
-            if (prefetched.current) return
-            prefetched.current = true
-            for (const style of ['bold', 'bold-duotone', 'broken', 'line-duotone', 'outline']) {
-                ensurePacks(style, names)
-            }
-        },
-        [ensurePacks]
-    )
-
     const refreshStorage = useCallback(() => {
         postMessage({ type: 'get-storage-stats' })
     }, [])
@@ -212,7 +198,6 @@ export function PackProvider({
             getSvg,
             hasStyle,
             ensurePacks,
-            prefetchAll,
             pendingChunks: pending.size,
             pendingStyles,
             failedStyle,
@@ -228,7 +213,6 @@ export function PackProvider({
             hasStyle,
             pending.size,
             pendingStyles,
-            prefetchAll,
             refreshStorage,
             storage,
         ]

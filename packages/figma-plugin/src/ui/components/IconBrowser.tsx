@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type UIEvent } from 'react'
 import type { IconMetadata } from '../data'
+import { EMBEDDED_STYLE, PACK_STYLES } from '../../shared/packs'
 import { SolarSvg } from './SolarSvg'
 
 const MIN_CELL_WIDTH = 56
@@ -69,10 +70,16 @@ export function IconBrowser({
     }, [columns, icons.length, scrollTop, viewportHeight])
 
     useEffect(() => {
-        ensurePacks(
-            styleName,
-            icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name)
-        )
+        const visible = icons
+            .slice(windowState.startIndex, windowState.endIndex)
+            .map(icon => icon.name)
+        ensurePacks(styleName, visible)
+        // Warm the sibling styles for exactly what's on screen, so switching
+        // styles feels instant. Bounded by the viewport; the LRU cache keeps
+        // the recently viewed ones.
+        for (const style of PACK_STYLES) {
+            if (style !== styleName && style !== EMBEDDED_STYLE) ensurePacks(style, visible)
+        }
     }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 
     const handleScroll = (event: UIEvent<HTMLElement>) => {

@@ -6,23 +6,40 @@ import {
     type UiMessage,
 } from '../shared/messages'
 import {
+    CACHE_BUDGET_BYTES,
     canonicalName,
     chunkKey,
     combineUrls,
     isStaleChunkKey,
     normalizeBody,
     PACK_ORIGIN,
+    planEvictions,
     splitCombined,
+    type CacheUsage,
 } from '../shared/packs'
 
 const SETTINGS_KEY = 'settings'
 let resizeStartPosition: Vector | null = null
 
 // Icon pack cache: linear ships in the bundle, other styles download once
-// per style × category chunk and persist in clientStorage (5 MiB quota).
+// per style × category chunk and persist in clientStorage under a strict
+// byte budget (LRU, oldest first). All storage mutations run serialized
+// through one promise chain: concurrent fetches must never evict each
+// other's fresh entries.
 let packVersion = ''
 const packMemory = new Map<string, Record<string, string>>()
 const packInFlight = new Map<string, Promise<Record<string, string>>>()
+const packIndex = new Map<string, { bytes: number; at: number }>()
+let packClock = 0
+let storageChain: Promise<void> = Promise.resolve()
+
+const indexKey = (): string => `solar:index:${packVersion}`
+
+function mutateStorage(task: () => Promise<void>): Promise<void> {
+    const run = storageChain.then(task, task)
+    storageChain = run.catch(() => undefined)
+    return run
+}
 
 async function deleteStoredKey(key: string): Promise<void> {
     try {
@@ -32,36 +49,105 @@ async function deleteStoredKey(key: string): Promise<void> {
     }
 }
 
+async function writeIndex(): Promise<void> {
+    try {
+        const usage: CacheUsage[] = [...packIndex.entries()].map(([key, entry]) => ({
+            key,
+            bytes: entry.bytes,
+            at: entry.at,
+        }))
+        await figma.clientStorage.setAsync(indexKey(), usage)
+    } catch {
+        // Index loss only costs LRU precision until the next rebuild.
+    }
+}
+
+async function readIndex(): Promise<void> {
+    packIndex.clear()
+    try {
+        const stored = await figma.clientStorage.getAsync(indexKey())
+        if (Array.isArray(stored)) {
+            for (const entry of stored as CacheUsage[]) {
+                if (
+                    entry &&
+                    typeof entry.key === 'string' &&
+                    typeof entry.bytes === 'number' &&
+                    typeof entry.at === 'number'
+                ) {
+                    packIndex.set(entry.key, { bytes: entry.bytes, at: entry.at })
+                    if (entry.at > packClock) packClock = entry.at
+                }
+            }
+            return
+        }
+    } catch {
+        // Fall through to measuring.
+    }
+    // No usable index: measure every cached chunk once.
+    try {
+        const keys = await figma.clientStorage.keysAsync()
+        for (const key of keys) {
+            if (!key.startsWith(`solar:pack:${packVersion}:`)) continue
+            try {
+                const stored = await figma.clientStorage.getAsync(key)
+                if (stored && typeof stored === 'object') {
+                    packClock += 1
+                    packIndex.set(key, { bytes: JSON.stringify(stored).length, at: packClock })
+                }
+            } catch {
+                // Skip unreadable entries.
+            }
+        }
+        await writeIndex()
+    } catch {
+        // Storage unavailable: memory cache only.
+    }
+}
+
 async function purgeStalePacks(version: string): Promise<void> {
     packVersion = version
     packMemory.clear()
     packInFlight.clear()
+    packIndex.clear()
     try {
         const keys = await figma.clientStorage.keysAsync()
         await Promise.all(
-            keys.filter(key => isStaleChunkKey(key, version)).map(deleteStoredKey)
+            keys
+                .filter(
+                    key =>
+                        isStaleChunkKey(key, version) ||
+                        (key.startsWith('solar:index:') && key !== indexKey())
+                )
+                .map(deleteStoredKey)
         )
     } catch {
         // Storage unavailable: the memory cache still serves this session.
     }
+    await readIndex()
 }
 
 async function storeChunk(key: string, icons: Record<string, string>): Promise<void> {
-    try {
-        await figma.clientStorage.setAsync(key, icons)
-    } catch {
-        // Quota exceeded: drop the oldest half of the cache and retry once,
-        // then serve memory-only for the rest of the session.
-        const keys = [...packMemory.keys()]
-        const evicted = keys.slice(0, Math.ceil(keys.length / 2))
-        for (const evictedKey of evicted) packMemory.delete(evictedKey)
-        await Promise.all(evicted.map(deleteStoredKey))
-        try {
-            await figma.clientStorage.setAsync(key, icons)
-        } catch {
-            // Serve memory-only.
+    const bytes = JSON.stringify(icons).length
+    return mutateStorage(async () => {
+        packClock += 1
+        const usage: CacheUsage[] = [...packIndex.entries()].map(([entryKey, entry]) => ({
+            key: entryKey,
+            bytes: entryKey === key ? bytes : entry.bytes,
+            at: entryKey === key ? packClock : entry.at,
+        }))
+        if (!packIndex.has(key)) {
+            usage.push({ key, bytes, at: packClock })
         }
-    }
+        const evicted = planEvictions(usage, 0, CACHE_BUDGET_BYTES)
+        for (const evictedKey of evicted) {
+            packMemory.delete(evictedKey)
+            packIndex.delete(evictedKey)
+            await deleteStoredKey(evictedKey)
+        }
+        packIndex.set(key, { bytes, at: packClock })
+        await figma.clientStorage.setAsync(key, icons)
+        await writeIndex()
+    })
 }
 
 async function loadChunk(

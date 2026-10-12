@@ -95,25 +95,33 @@ export function chunkKey(staticVersion: string, style: string, category: string)
     return `solar:pack:${staticVersion}:${style}:${category}`
 }
 
+/** Persistent cache budget: stays safely under the 5 MiB clientStorage quota. */
+export const CACHE_BUDGET_BYTES = 4 * 1024 * 1024
+
+export type CacheUsage = { key: string; bytes: number; at: number }
+
+/**
+ * Keys to evict (oldest first) so `incomingBytes` fits in budget.
+ * Pure and unit-tested: the cache must never exceed quota by surprise.
+ */
+export function planEvictions(
+    usage: readonly CacheUsage[],
+    incomingBytes: number,
+    budget: number = CACHE_BUDGET_BYTES
+): string[] {
+    const ordered = [...usage].sort((a, b) => a.at - b.at)
+    const used = ordered.reduce((sum, entry) => sum + entry.bytes, 0)
+    const evicted: string[] = []
+    let freed = 0
+    for (const entry of ordered) {
+        if (used - freed + incomingBytes <= budget) break
+        freed += entry.bytes
+        evicted.push(entry.key)
+    }
+    return evicted
+}
+
 /** True when a storage key belongs to an older catalog version. */
 export function isStaleChunkKey(key: string, staticVersion: string): boolean {
     return key.startsWith('solar:pack:') && !key.startsWith(`solar:pack:${staticVersion}:`)
-}
-
-export type PackChunkFile = {
-    version: string
-    icons: Record<string, string>
-}
-
-/** Categories touched by a list of icon names, from the metadata index. */
-export function categoriesFor(
-    names: readonly string[],
-    categoryOf: (name: string) => string | undefined
-): string[] {
-    const categories = new Set<string>()
-    for (const name of names) {
-        const category = categoryOf(name)
-        if (category) categories.add(category)
-    }
-    return [...categories].sort()
 }

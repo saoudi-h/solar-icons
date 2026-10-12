@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest'
 
 import {
     canonicalName,
-    categoriesFor,
     chunkKey,
     combineUrls,
     COMBINE_BATCH_SIZE,
@@ -10,9 +9,11 @@ import {
     expandBody,
     isStaleChunkKey,
     normalizeBody,
+    planEvictions,
     splitCombined,
     SVG_CLOSE,
     SVG_OPEN,
+    type CacheUsage,
 } from './packs'
 
 const SAMPLE_SVG =
@@ -66,12 +67,14 @@ describe('figma icon packs', () => {
         expect(EMBEDDED_STYLE).toBe('linear')
     })
 
-    it('collects viewed categories for targeted fetching', () => {
-        const categoryOf = (name: string) =>
-            ({ home: 'home', heart: 'like', 'arrow-up': 'arrows' })[name]
-        expect(categoriesFor(['heart', 'home', 'heart', 'unknown'], categoryOf)).toEqual([
-            'home',
-            'like',
-        ])
+    it('plans oldest-first evictions under a byte budget', () => {
+        const usage: CacheUsage[] = [
+            { key: 'a', bytes: 2_000_000, at: 1 },
+            { key: 'b', bytes: 2_000_000, at: 2 },
+        ]
+        expect(planEvictions(usage, 100_000)).toEqual([])
+        expect(planEvictions(usage, 500_000)).toEqual(['a'])
+        expect(planEvictions(usage, 3_000_000)).toEqual(['a', 'b'])
+        expect(planEvictions([], 5_000_000)).toEqual([])
     })
 })
