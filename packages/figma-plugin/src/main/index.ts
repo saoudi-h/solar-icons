@@ -153,7 +153,8 @@ async function storeChunk(key: string, icons: Record<string, string>): Promise<v
 async function loadChunk(
     style: string,
     category: string,
-    names: readonly string[]
+    names: readonly string[],
+    signal?: { readonly aborted: boolean }
 ): Promise<Record<string, string>> {
     const key = chunkKey(packVersion, style, category)
     const cached = packMemory.get(key)
@@ -173,7 +174,10 @@ async function loadChunk(
         }
         const icons: Record<string, string> = {}
         for (const url of combineUrls(PACK_ORIGIN, packVersion, style, names)) {
-            const response = await fetch(url)
+            const response = await fetch(
+                url,
+                signal === undefined ? undefined : ({ signal }) as never
+            )
             if (!response.ok) throw new Error(`pack ${response.status}`)
             for (const document of splitCombined(await response.text())) {
                 const name = canonicalName(document)
@@ -194,6 +198,28 @@ async function loadChunk(
     } finally {
         packInFlight.delete(key)
     }
+}
+
+const batchControllers = new Map<number, SandboxAbortController | null>()
+const batchKeys = new Map<number, string[]>()
+let maxBatchId = 0
+
+type SandboxAbortController = { readonly signal: { readonly aborted: boolean }; abort(): void }
+
+function createAbortController(): SandboxAbortController | null {
+    const factory = (
+        globalThis as unknown as { AbortController?: new () => SandboxAbortController }
+    ).AbortController
+    if (typeof factory !== 'function') return null
+    try {
+        return new factory()
+    } catch {
+        return null
+    }
+}
+
+function chunkKeysOf(chunks: { style: string; category: string }[]): string[] {
+    return chunks.map(chunk => `${chunk.style}/${chunk.category}`)
 }
 
 function postMessage(message: MainMessage): void {
@@ -349,21 +375,55 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
     }
 
     if (message.type === 'fetch-chunks') {
+        const batchId = message.requestId
+        const keys = chunkKeysOf(message.chunks)
+        // A newer interaction wins: abort older batches so stale scroll
+        // positions can never clog the queue behind the visible window.
+        // Aborted batches report `dropped` so the UI pending set converges.
+        for (const [otherId, controller] of batchControllers) {
+            if (otherId < batchId) {
+                try {
+                    controller?.abort()
+                } catch {
+                    // Aborting is best-effort; staleness is also enforced below.
+                }
+                batchControllers.delete(otherId)
+                const otherKeys = batchKeys.get(otherId) ?? []
+                batchKeys.delete(otherId)
+                postMessage({ type: 'chunks-dropped', requestId: otherId, keys: otherKeys })
+            }
+        }
+        if (batchId <= maxBatchId) {
+            postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
+            return
+        }
+        maxBatchId = batchId
+        const controller = createAbortController()
+        batchControllers.set(batchId, controller)
+        batchKeys.set(batchId, keys)
         try {
             const chunks = await Promise.all(
                 message.chunks.map(async ({ style, category, names }) => ({
                     style,
                     category,
-                    icons: await loadChunk(style, category, names),
+                    icons: await loadChunk(style, category, names, controller?.signal),
                 }))
             )
-            postMessage({ type: 'chunks-ready', requestId: message.requestId, chunks })
+            batchControllers.delete(batchId)
+            batchKeys.delete(batchId)
+            postMessage({ type: 'chunks-ready', requestId: batchId, chunks })
         } catch (error) {
-            postMessage({
-                type: 'chunks-failed',
-                requestId: message.requestId,
-                offline: error instanceof TypeError,
-            })
+            batchControllers.delete(batchId)
+            batchKeys.delete(batchId)
+            if (controller?.signal.aborted) {
+                postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
+            } else {
+                postMessage({
+                    type: 'chunks-failed',
+                    requestId: batchId,
+                    offline: error instanceof TypeError,
+                })
+            }
         }
         return
     }

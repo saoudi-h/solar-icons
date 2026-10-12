@@ -28,8 +28,7 @@ export type UiMessage =
           requestId: number
           chunks: { style: string; category: string; names: string[] }[]
       }
-    | { type: 'get-storage-stats' }
-    | {
+    | { type: 'get-storage-stats' }    | {
           type: 'insert-icons'
           items: IconInsertItem[]
           styleLabel: string
@@ -48,6 +47,7 @@ export type MainMessage =
     | { type: 'error'; message: string }
     | { type: 'chunks-ready'; requestId: number; chunks: PackChunk[] }
     | { type: 'chunks-failed'; requestId: number; offline: boolean }
+    | { type: 'chunks-dropped'; requestId: number; keys: string[] }
     | { type: 'storage-stats'; version: string; chunks: number; bytes: number }
 
 export const DEFAULT_SETTINGS: PluginSettings = {

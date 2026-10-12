@@ -16,7 +16,7 @@ type IconBrowserProps = {
     selected: Set<string>
     onIcon: (name: string) => void
     getSvg: (name: string, style: string) => string | null
-    ensurePacks: (style: string, names: readonly string[]) => void
+    ensurePacks: (style: string, names: readonly string[], batchId?: number) => void
     unavailableMessage: string | null
 }
 
@@ -37,6 +37,7 @@ export function IconBrowser({
     const [viewportHeight, setViewportHeight] = useState(450)
     const [columns, setColumns] = useState(5)
     const scrollFrame = useRef<number | null>(null)
+    const batchRef = useRef(0)
 
     useEffect(() => {
         const browser = browserRef.current
@@ -73,12 +74,16 @@ export function IconBrowser({
         const visible = icons
             .slice(windowState.startIndex, windowState.endIndex)
             .map(icon => icon.name)
-        ensurePacks(styleName, visible)
+        // One batch id per settled view: main aborts older batches so stale
+        // scroll positions never clog the queue behind the visible window.
+        batchRef.current += 1
+        const batchId = batchRef.current
+        ensurePacks(styleName, visible, batchId)
         // Warm the sibling styles for exactly what's on screen, so switching
         // styles feels instant. Bounded by the viewport; the LRU cache keeps
         // the recently viewed ones.
         for (const style of PACK_STYLES) {
-            if (style !== styleName && style !== EMBEDDED_STYLE) ensurePacks(style, visible)
+            if (style !== styleName && style !== EMBEDDED_STYLE) ensurePacks(style, visible, batchId)
         }
     }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 

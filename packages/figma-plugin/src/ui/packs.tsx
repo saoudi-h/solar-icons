@@ -21,7 +21,7 @@ type PacksContextValue = {
     /** True when at least one category of this style is available. */
     hasStyle: (style: string) => boolean
     /** Request the chunks covering these icons in this style. */
-    ensurePacks: (style: string, names: readonly string[]) => void
+    ensurePacks: (style: string, names: readonly string[], batchId?: number) => void
     /** In-flight chunk count, for status and skeleton display. */
     pendingChunks: number
     /** Styles with in-flight chunks, for status display. */
@@ -103,6 +103,10 @@ export function PackProvider({
                 setFailedOffline(false)
                 forgetPending(message.chunks.map(chunk => `${chunk.style}/${chunk.category}`))
             }
+            if (message.type === 'chunks-dropped') {
+                requestStyles.current.delete(message.requestId)
+                forgetPending(message.keys)
+            }
             if (message.type === 'chunks-failed') {
                 const style = requestStyles.current.get(message.requestId)
                 requestStyles.current.delete(message.requestId)
@@ -123,7 +127,11 @@ export function PackProvider({
     }, [forgetPending])
 
     const requestChunks = useCallback(
-        (style: string, groups: { category: string; names: string[] }[]) => {
+        (
+            style: string,
+            groups: { category: string; names: string[] }[],
+            batchId?: number
+        ) => {
             const missing = groups.filter(
                 group =>
                     packs[style]?.[group.category] === undefined &&
@@ -131,13 +139,14 @@ export function PackProvider({
             )
             if (missing.length === 0) return
             requestId.current += 1
-            requestStyles.current.set(requestId.current, style)
+            const id = batchId ?? requestId.current
+            requestStyles.current.set(id, style)
             const keys = missing.map(group => `${style}/${group.category}`)
             for (const key of keys) inFlight.current.add(key)
             setPending(current => new Set([...current, ...keys]))
             postMessage({
                 type: 'fetch-chunks',
-                requestId: requestId.current,
+                requestId: id,
                 chunks: missing.map(group => ({
                     style,
                     category: group.category,
@@ -149,7 +158,7 @@ export function PackProvider({
     )
 
     const ensurePacks = useCallback(
-        (style: string, names: readonly string[]) => {
+        (style: string, names: readonly string[], batchId?: number) => {
             if (style === EMBEDDED_STYLE) return
             const byCategory = new Map<string, string[]>()
             for (const name of names) {
@@ -164,7 +173,8 @@ export function PackProvider({
                 [...byCategory.entries()].map(([category, groupNames]) => ({
                     category,
                     names: groupNames,
-                }))
+                })),
+                batchId
             )
         },
         [categoryOf, requestChunks]
