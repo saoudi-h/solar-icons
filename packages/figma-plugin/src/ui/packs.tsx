@@ -12,8 +12,7 @@ import {
 import type { MainMessage } from '../shared/messages'
 import { EMBEDDED_STYLE, expandBody } from '../shared/packs'
 
-export type CategoryBodies = Record<string, Record<string, string>>
-export type PackStore = Record<string, CategoryBodies>
+export type PackStore = Record<string, Record<string, string>>
 
 type PacksContextValue = {
     /** Complete SVG for one icon, or null while its chunk loads. */
@@ -55,11 +54,16 @@ export function PackProvider({
     children,
 }: {
     version: string
-    embeddedLinear: CategoryBodies
+    embeddedLinear: Record<string, Record<string, string>>
     categoryOf: (name: string) => string | undefined
     children: ReactNode
-}): React.JSX.Element {
-    const [packs, setPacks] = useState<PackStore>(() => ({ [EMBEDDED_STYLE]: embeddedLinear }))
+}) {
+    const [packs, setPacks] = useState<PackStore>(() => ({
+        [EMBEDDED_STYLE]: Object.values(embeddedLinear).reduce(
+            (flat, category) => ({ ...flat, ...category }),
+            {}
+        ),
+    }))
     const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
     const [failedStyle, setFailedStyle] = useState<string | null>(null)
     const [failedOffline, setFailedOffline] = useState(false)
@@ -93,8 +97,12 @@ export function PackProvider({
                 setPacks(current => {
                     const next = { ...current }
                     for (const chunk of message.chunks) {
-                        const stylePacks = next[chunk.style] ?? {}
-                        next[chunk.style] = { ...stylePacks, [chunk.category]: chunk.icons }
+                        const stylePacks = next[chunk.style]
+                        if (stylePacks === undefined) {
+                            next[chunk.style] = { ...chunk.icons }
+                        } else {
+                            next[chunk.style] = { ...stylePacks, ...chunk.icons }
+                        }
                     }
                     return next
                 })
@@ -194,10 +202,10 @@ export function PackProvider({
 
     const getSvg = useCallback(
         (name: string, style: string): string | null => {
-            const body = packs[style]?.[categoryOf(name) ?? '']?.[name]
+            const body = packs[style]?.[name]
             return body === undefined ? null : expandBody(body)
         },
-        [categoryOf, packs]
+        [packs]
     )
 
     const hasStyle = useCallback(

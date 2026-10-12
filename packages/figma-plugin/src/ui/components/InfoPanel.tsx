@@ -1,18 +1,34 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 
 import solarLogo from '../assets/solar-logo.svg?raw'
-import { catalogProvenance, packageLogos, type PackageLogo } from '../data'
+import { catalogProvenance, icons, packageLogos, type PackageLogo } from '../data'
 import { usePacks } from '../packs'
 import { SolarSvg } from './SolarSvg'
 
 function CacheLine() {
-    const { storage, refreshStorage } = usePacks()
+    const { getSvg, storage, refreshStorage } = usePacks()
     useEffect(refreshStorage, [refreshStorage])
+    const probe = useMemo(() => {
+        const sample = icons.filter((_, index) => index % 200 === 0).map(icon => icon.name)
+        const check = (style: string) => {
+            const missing = sample.filter(name => getSvg(name, style) === null)
+            return { hits: sample.length - missing.length, total: sample.length, missing }
+        }
+        return { linear: check('linear'), bold: check('bold') }
+    }, [getSvg])
     if (!storage) return null
     const megabytes = (storage.bytes / 1024 / 1024).toFixed(1)
+    const probeText = (['linear', 'bold'] as const)
+        .map(style => {
+            const result = probe[style]
+            const detail =
+                result.missing.length > 0 ? ` (missing: ${result.missing.slice(0, 3).join(', ')})` : ''
+            return `${style} ${result.hits}/${result.total}${detail}`
+        })
+        .join(', ')
     return (
         <span>
-            Icon cache: {storage.chunks} chunks · {megabytes} MiB
+            Icon cache: {storage.chunks} chunks · {megabytes} MiB · probe {probeText}
         </span>
     )
 }
