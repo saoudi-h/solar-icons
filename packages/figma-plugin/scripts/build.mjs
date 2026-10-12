@@ -24,14 +24,6 @@ const catalogProvenance = buildCatalogProvenance({
 })
 const packageLogos = createPackageLogos()
 
-// Pack CDN base: FIGMA_PACK_BASE overrides for local development
-// (serve packages/static/dist on that origin, e.g. port 8080).
-// Production embeds the versioned base; dev uses the server root verbatim
-// (the local dist IS the current version, no @version suffix).
-const packBase =
-    process.env.FIGMA_PACK_BASE ??
-    `https://cdn.jsdelivr.net/npm/@solar-icons/static@${staticPackage.version}`
-
 const embeddedData = [linearChunks, metadata, JSON.stringify(catalogProvenance)]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     throw new Error(
@@ -76,15 +68,6 @@ if (remainingPlaceholders.length > 0) {
 fs.writeFileSync(path.join(outputDirectory, 'ui.html'), html)
 fs.rmSync(temporaryUiDirectory, { recursive: true, force: true })
 
-const codePath = path.join(outputDirectory, 'code.js')
-const codeWithBase = fs
-    .readFileSync(codePath, 'utf8')
-    .replaceAll('__SOLAR_PACK_BASE__', packBase)
-if (codeWithBase.includes('__SOLAR_PACK_BASE__')) {
-    throw new Error('The pack base placeholder was not replaced in dist/code.js.')
-}
-fs.writeFileSync(codePath, codeWithBase)
-
 const BUNDLE_LIMIT = 10 * 1024 * 1024
 if (html.length > BUNDLE_LIMIT) {
     throw new Error(
@@ -98,21 +81,35 @@ console.info(
 )
 
 /**
- * Linear chunks for the offline bundle, read from the static pack output
- * (`dist/figma/linear-<category>.json`) and nested as
- * `{ [category]: { [name]: body } }`. Other styles download as packs.
+ * Linear chunks for the offline bundle, derived from the published-shape
+ * `dist/icons.json` map (`<name>-linear` entries) and nested as
+ * `{ [category]: { [name]: body } }`. Bodies are whitespace-collapsed only.
+ * Other styles download as jsDelivr combine batches at runtime.
  */
 function readLinearChunks() {
-    const figmaDir = path.join(staticRoot, 'dist/figma')
+    const map = JSON.parse(fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8'))
+    const descriptions = JSON.parse(
+        fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
+    )
+    const categoryOf = {}
+    for (const entry of descriptions) categoryOf[entry.name] = entry.category
     const nested = {}
-    for (const file of fs.readdirSync(figmaDir).sort()) {
-        const match = file.match(/^linear-(.+)\.json$/)
-        if (!match) continue
-        const pack = JSON.parse(fs.readFileSync(path.join(figmaDir, file), 'utf8'))
-        nested[match[1]] = pack.icons
+    for (const [key, svg] of Object.entries(map)) {
+        if (!key.endsWith('-linear')) continue
+        const name = key.slice(0, -'-linear'.length)
+        const category = categoryOf[name]
+        // Alias keys (e.g. chat-square-2-linear) have no metadata entry and
+        // are never browsed: the UI resolves canonical names only.
+        if (!category) continue
+        nested[category] = nested[category] || {}
+        nested[category][name] = svg
+            .replace(/^<svg[^>]*>/, '')
+            .replace(/<\/svg>$/, '')
+            .replace(/>\s+</g, '><')
+            .trim()
     }
     if (Object.keys(nested).length === 0) {
-        throw new Error(`No linear packs found in ${figmaDir} (run the static build first).`)
+        throw new Error('No linear icons found in dist/icons.json.')
     }
     return JSON.stringify(nested)
 }

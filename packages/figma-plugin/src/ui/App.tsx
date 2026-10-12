@@ -78,10 +78,6 @@ function AppShell() {
     const selectionMode = settings.insertionMode === 'selection'
     const { getSvg, ensurePacks, prefetchAll, pendingStyles, failedStyle, failedOffline, hasStyle } =
         usePacks()
-    const allCategories = useMemo(
-        () => [...new Set(icons.map(icon => icon.category))].sort(),
-        []
-    )
 
     useEffect(() => {
         ensurePacks(
@@ -91,9 +87,15 @@ function AppShell() {
     }, [ensurePacks, filteredIcons, styleName])
 
     useEffect(() => {
-        const timer = setTimeout(() => prefetchAll(allCategories), 3000)
+        const timer = setTimeout(
+            () =>
+                prefetchAll(
+                    icons.map(icon => icon.name)
+                ),
+            3000
+        )
         return () => clearTimeout(timer)
-    }, [allCategories, prefetchAll])
+    }, [prefetchAll])
 
     const stylePending = pendingStyles.includes(styleName)
     const styleFailed = failedStyle === styleName && !hasStyle(styleName)

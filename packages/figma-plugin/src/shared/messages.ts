@@ -23,7 +23,11 @@ export type UiMessage =
     | { type: 'load-settings' }
     | { type: 'save-settings'; settings: PluginSettings }
     | { type: 'init-packs'; version: string }
-    | { type: 'fetch-chunks'; requestId: number; chunks: { style: string; category: string }[] }
+    | {
+          type: 'fetch-chunks'
+          requestId: number
+          chunks: { style: string; category: string; names: string[] }[]
+      }
     | {
           type: 'insert-icons'
           items: IconInsertItem[]

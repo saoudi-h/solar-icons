@@ -6,16 +6,16 @@ import {
     type UiMessage,
 } from '../shared/messages'
 import {
+    canonicalName,
     chunkKey,
+    combineUrls,
     isStaleChunkKey,
-    packUrl,
-    type PackChunkFile,
+    normalizeBody,
+    PACK_ORIGIN,
+    splitCombined,
 } from '../shared/packs'
 
 const SETTINGS_KEY = 'settings'
-// Replaced at build time with the pack CDN base (or FIGMA_PACK_BASE for
-// local development against a static server).
-const PACK_BASE = '__SOLAR_PACK_BASE__'
 let resizeStartPosition: Vector | null = null
 
 // Icon pack cache: linear ships in the bundle, other styles download once
@@ -64,7 +64,11 @@ async function storeChunk(key: string, icons: Record<string, string>): Promise<v
     }
 }
 
-async function loadChunk(style: string, category: string): Promise<Record<string, string>> {
+async function loadChunk(
+    style: string,
+    category: string,
+    names: readonly string[]
+): Promise<Record<string, string>> {
     const key = chunkKey(packVersion, style, category)
     const cached = packMemory.get(key)
     if (cached) return cached
@@ -81,15 +85,22 @@ async function loadChunk(style: string, category: string): Promise<Record<string
         } catch {
             // Storage unreadable: fall through to the network.
         }
-        const response = await fetch(packUrl(PACK_BASE, style, category))
-        if (!response.ok) throw new Error(`pack ${response.status}`)
-        const file = (await response.json()) as PackChunkFile
-        if (!file || typeof file.icons !== 'object' || Array.isArray(file.icons)) {
-            throw new Error('pack malformed')
+        const icons: Record<string, string> = {}
+        for (const url of combineUrls(PACK_ORIGIN, packVersion, style, names)) {
+            const response = await fetch(url)
+            if (!response.ok) throw new Error(`pack ${response.status}`)
+            for (const document of splitCombined(await response.text())) {
+                const name = canonicalName(document)
+                if (name) icons[name] = normalizeBody(document)
+            }
         }
-        packMemory.set(key, file.icons)
-        await storeChunk(key, file.icons)
-        return file.icons
+        const missing = names.filter(name => icons[name] === undefined)
+        if (missing.length > 0) {
+            throw new Error(`pack incomplete, missing: ${missing.slice(0, 3).join(', ')}`)
+        }
+        packMemory.set(key, icons)
+        await storeChunk(key, icons)
+        return icons
     })()
     packInFlight.set(key, task)
     try {
@@ -230,10 +241,10 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
     if (message.type === 'fetch-chunks') {
         try {
             const chunks = await Promise.all(
-                message.chunks.map(async ({ style, category }) => ({
+                message.chunks.map(async ({ style, category, names }) => ({
                     style,
                     category,
-                    icons: await loadChunk(style, category),
+                    icons: await loadChunk(style, category, names),
                 }))
             )
             postMessage({ type: 'chunks-ready', requestId: message.requestId, chunks })

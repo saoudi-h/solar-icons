@@ -13,8 +13,7 @@ For the complete maintainer procedure, see [`FIGMA-PLUGIN-PUBLISHING.md`](./FIGM
 `packages/figma-plugin/scripts/build.mjs` embeds three catalogue payloads in `dist/ui.html`:
 
 - the Linear style icon bodies, nested per category (other styles download as
-  versioned `dist/figma/<style>-<category>.json` packs from the jsDelivr CDN
-  and persist in `figma.clientStorage`);
+  versioned jsDelivr combine batches and persist in `figma.clientStorage`);
 - `metadata-descriptions.json`, whose length is the logical icon count;
 - a provenance object containing the static package version, logical icon count, six-style count,
   canonical SVG count, alias SVG count, total map entries, and a deterministic SHA-256 catalogue

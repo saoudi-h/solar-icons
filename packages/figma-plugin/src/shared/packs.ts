@@ -27,16 +27,67 @@ export const SVG_OPEN =
 
 export const SVG_CLOSE = '</svg>'
 
+/** jsDelivr origin serving the published static distribution. */
+export const PACK_ORIGIN = 'https://cdn.jsdelivr.net'
+
+/** Icons per combine request: keeps URLs far under length limits. */
+export const COMBINE_BATCH_SIZE = 40
+
 /** Rebuild a complete SVG document from a stored chunk body. */
 export function expandBody(body: string): string {
     return `${SVG_OPEN}${body}${SVG_CLOSE}`
 }
 
-/** Immutable pack URL for one style × category chunk. `base` already carries
- * the version in production (`.../static@<version>`); a dev server root is
- * used verbatim. */
-export function packUrl(base: string, style: string, category: string): string {
-    return `${base}/dist/figma/${style}-${category}.json`
+/**
+ * Batched jsDelivr combine URLs covering every icon, preserving order.
+ * Each URL concatenates up to COMBINE_BATCH_SIZE individual published SVGs.
+ */
+export function combineUrls(
+    origin: string,
+    version: string,
+    style: string,
+    names: readonly string[]
+): string[] {
+    const urls: string[] = []
+    for (let index = 0; index < names.length; index += COMBINE_BATCH_SIZE) {
+        const files = names
+            .slice(index, index + COMBINE_BATCH_SIZE)
+            .map(name => `npm/@solar-icons/static@${version}/dist/icons/${style}/${name}.svg`)
+            .join(',')
+        urls.push(`${origin}/combine/${files}`)
+    }
+    return urls
+}
+
+/** Split a combine response back into individual SVG documents. */
+export function splitCombined(text: string): string[] {
+    return text.split(/(?=<svg[\s>])/).filter(part => part.trim().length > 0)
+}
+
+const CLASS_PATTERN = /class="solar solar-([a-z0-9-]+)"/
+const KNOWN_STYLES = ['bold-duotone', 'line-duotone', 'bold', 'broken', 'linear', 'outline']
+
+/** Canonical icon name from a published SVG document. Null when unparseable. */
+export function canonicalName(svg: string): string | null {
+    const match = svg.match(CLASS_PATTERN)
+    if (!match) return null
+    const full = match[1]
+    for (const style of KNOWN_STYLES) {
+        if (full.endsWith(`-${style}`)) return full.slice(0, -(style.length + 1))
+    }
+    return null
+}
+
+/**
+ * Minified chunk body: wrapper stripped, inter-tag whitespace collapsed.
+ * Coordinates, colors, and attributes are untouched.
+ */
+export function normalizeBody(svg: string): string {
+    return svg
+        .replace(/^[\s\S]*?<svg[^>]*>/, '')
+        .replace(/<\/svg>\s*$/, '')
+        .replace(/>\s+</g, '><')
+        .trim()
 }
 
 /** `figma.clientStorage` key for one cached chunk. */

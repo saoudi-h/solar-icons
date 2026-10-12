@@ -10,7 +10,7 @@ import {
 } from 'react'
 
 import type { MainMessage } from '../shared/messages'
-import { categoriesFor, EMBEDDED_STYLE, expandBody } from '../shared/packs'
+import { EMBEDDED_STYLE, expandBody } from '../shared/packs'
 
 export type CategoryBodies = Record<string, Record<string, string>>
 export type PackStore = Record<string, CategoryBodies>
@@ -119,20 +119,26 @@ export function PackProvider({
     }, [forgetPending])
 
     const requestChunks = useCallback(
-        (style: string, categories: readonly string[]) => {
-            const missing = categories.filter(
-                category => packs[style]?.[category] === undefined && !inFlight.current.has(`${style}/${category}`)
+        (style: string, groups: { category: string; names: string[] }[]) => {
+            const missing = groups.filter(
+                group =>
+                    packs[style]?.[group.category] === undefined &&
+                    !inFlight.current.has(`${style}/${group.category}`)
             )
             if (missing.length === 0) return
             requestId.current += 1
             requestStyles.current.set(requestId.current, style)
-            const keys = missing.map(category => `${style}/${category}`)
+            const keys = missing.map(group => `${style}/${group.category}`)
             for (const key of keys) inFlight.current.add(key)
             setPending(current => new Set([...current, ...keys]))
             postMessage({
                 type: 'fetch-chunks',
                 requestId: requestId.current,
-                chunks: missing.map(category => ({ style, category })),
+                chunks: missing.map(group => ({
+                    style,
+                    category: group.category,
+                    names: group.names,
+                })),
             })
         },
         [packs]
@@ -141,20 +147,34 @@ export function PackProvider({
     const ensurePacks = useCallback(
         (style: string, names: readonly string[]) => {
             if (style === EMBEDDED_STYLE) return
-            requestChunks(style, categoriesFor(names, categoryOf))
+            const byCategory = new Map<string, string[]>()
+            for (const name of names) {
+                const category = categoryOf(name)
+                if (!category) continue
+                const group = byCategory.get(category)
+                if (group) group.push(name)
+                else byCategory.set(category, [name])
+            }
+            requestChunks(
+                style,
+                [...byCategory.entries()].map(([category, groupNames]) => ({
+                    category,
+                    names: groupNames,
+                }))
+            )
         },
         [categoryOf, requestChunks]
     )
 
     const prefetchAll = useCallback(
-        (categories: readonly string[]) => {
+        (names: readonly string[]) => {
             if (prefetched.current) return
             prefetched.current = true
             for (const style of ['bold', 'bold-duotone', 'broken', 'line-duotone', 'outline']) {
-                requestChunks(style, categories)
+                ensurePacks(style, names)
             }
         },
-        [requestChunks]
+        [ensurePacks]
     )
 
     const getSvg = useCallback(
