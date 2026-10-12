@@ -21,6 +21,11 @@ import {
 const SETTINGS_KEY = 'settings'
 let resizeStartPosition: Vector | null = null
 
+function packLog(...args: unknown[]): void {
+    // Visible in Figma Desktop via Plugins → Development → Open Console.
+    console.log('[packs]', ...args)
+}
+
 // Icon pack cache: linear ships in the bundle, other styles download once
 // per style × category chunk and persist in clientStorage under a strict
 // byte budget (LRU, oldest first). All storage mutations run serialized
@@ -174,10 +179,18 @@ async function loadChunk(
         }
         const icons: Record<string, string> = {}
         for (const url of combineUrls(PACK_ORIGIN, packVersion, style, names)) {
-            const response = await fetch(
-                url,
-                signal === undefined ? undefined : ({ signal }) as never
-            )
+            packLog(`GET ${url}`)
+            let response
+            try {
+                response = await fetch(
+                    url,
+                    signal === undefined ? undefined : ({ signal }) as never
+                )
+            } catch (error) {
+                packLog(`fetch threw for ${style}/${category}:`, error)
+                throw error
+            }
+            packLog(`HTTP ${response.status} for ${style}/${category}`)
             if (!response.ok) throw new Error(`pack ${response.status}`)
             for (const document of splitCombined(await response.text())) {
                 const name = canonicalName(document)
@@ -347,6 +360,7 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
 
     if (message.type === 'init-packs') {
         await purgeStalePacks(message.version)
+        packLog(`ready (catalog ${packVersion})`)
         return
     }
 
@@ -399,6 +413,7 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
         }
         maxBatchId = batchId
         const controller = createAbortController()
+        packLog(`batch #${batchId}: ${message.chunks.length} chunk(s), abort=${controller !== null}`)
         batchControllers.set(batchId, controller)
         batchKeys.set(batchId, keys)
         try {
@@ -411,13 +426,17 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
             )
             batchControllers.delete(batchId)
             batchKeys.delete(batchId)
+            const total = chunks.reduce((sum, chunk) => sum + Object.keys(chunk.icons).length, 0)
+            packLog(`ready #${batchId}: ${total} icons`)
             postMessage({ type: 'chunks-ready', requestId: batchId, chunks })
         } catch (error) {
             batchControllers.delete(batchId)
             batchKeys.delete(batchId)
             if (controller?.signal.aborted) {
+                packLog(`dropped #${batchId}`)
                 postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
             } else {
+                packLog(`failed #${batchId}:`, error)
                 postMessage({
                     type: 'chunks-failed',
                     requestId: batchId,
