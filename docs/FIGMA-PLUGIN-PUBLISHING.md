@@ -57,7 +57,7 @@ Use Figma Desktop:
 4. Run **Solar Icons** from the Development plugins menu.
 5. Check the Icons, Settings, and Info tabs.
 6. Confirm the Info tab shows the current package version and logical icon count.
-7. Confirm the catalogue, style switching, search, insertion, and loading work as expected: Linear renders instantly offline; switching to another style downloads its icons once from the CDN (status line reports progress, skeleton cells meanwhile); after visiting every style, reload the plugin offline and confirm everything still renders from cache.
+7. Confirm the catalogue, style switching, search, insertion, and loading work as expected: every style renders straight from the bundle, with no network needed for the embedded chunks; if the catalogue ever outgrows the embed budget, the overflow downloads once from the CDN at launch (the status line reports progress, skeleton cells appear meanwhile); then reload the plugin offline and confirm the embedded styles still render without network.
 
 The manifest `networkAccess` stays scoped to the versioned static distribution with a public reasoning string. Review the scope before publishing: it must never widen beyond versioned Solar assets, and pack downloads must never fetch a newer catalogue than the embedded version.
 
