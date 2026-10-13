@@ -19,15 +19,21 @@ const EMBED_DATA_BUDGET = 12.5 * 1024 * 1024
 const icons = fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8')
 const metadata = fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
 const staticPackage = JSON.parse(fs.readFileSync(path.join(staticRoot, 'package.json'), 'utf8'))
+const registry = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'registry.json'), 'utf8'))
 const embeddedChunks = readEmbeddedChunks()
 const catalogProvenance = buildCatalogProvenance({
     icons,
     metadata,
     packageVersion: staticPackage.version,
 })
-const packageLogos = createPackageLogos()
+const packageLogos = createPackageLogos(registry)
 
-const embeddedData = [embeddedChunks.json, metadata, JSON.stringify(catalogProvenance)]
+const embeddedData = [
+    embeddedChunks.json,
+    JSON.stringify(registry),
+    metadata,
+    JSON.stringify(catalogProvenance),
+]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     throw new Error(
         'Embedded icon data contains a closing script tag and cannot be safely inlined.'
@@ -50,6 +56,7 @@ html = inlineBuildAsset(html, 'style', /<link rel="stylesheet" crossorigin href=
 html = html
     .replace('__SOLAR_VERSION_VALUE__', staticPackage.version)
     .replace('__SOLAR_ICON_DATA__', embeddedChunks.json)
+    .replace('__SOLAR_REGISTRY__', JSON.stringify(registry))
     .replace('__SOLAR_ICON_METADATA__', metadata)
     .replace('__SOLAR_CATALOG_PROVENANCE__', JSON.stringify(catalogProvenance))
     .replace('__SOLAR_PACKAGE_LOGOS__', JSON.stringify(packageLogos))
@@ -57,6 +64,7 @@ html = html
 const remainingPlaceholders = [
     '__SOLAR_VERSION_VALUE__',
     '__SOLAR_ICON_DATA__',
+    '__SOLAR_REGISTRY__',
     '__SOLAR_ICON_METADATA__',
     '__SOLAR_CATALOG_PROVENANCE__',
     '__SOLAR_PACKAGE_LOGOS__',
@@ -213,29 +221,29 @@ function inlineBuildAsset(source, type, pattern) {
     return source.replace(match[0], () => inline)
 }
 
-function createPackageLogos() {
-    const devicon = JSON.parse(
-        fs.readFileSync(
-            path.join(pluginRoot, 'node_modules/@iconify-json/devicon/icons.json'),
-            'utf8'
-        )
-    )
-    const vscodeIcons = JSON.parse(
-        fs.readFileSync(
-            path.join(pluginRoot, 'node_modules/@iconify-json/vscode-icons/icons.json'),
-            'utf8'
-        )
-    )
+function createPackageLogos(registry) {
+    const collections = {}
+    const logos = {}
+    for (const entry of registry.packages) {
+        const [set, icon] = entry.logo.split(':')
+        collections[set] ??= loadIconCollection(set)
+        logos[entry.logo] = pickIconifyIcon(collections[set], icon)
+    }
+    return logos
+}
 
-    return {
-        javascript: pickIconifyIcon(devicon, 'javascript'),
-        react: pickIconifyIcon(devicon, 'react'),
-        vue: pickIconifyIcon(devicon, 'vuejs'),
-        nuxt: pickIconifyIcon(devicon, 'nuxtjs'),
-        svelte: pickIconifyIcon(devicon, 'svelte'),
-        solid: pickIconifyIcon(devicon, 'solidjs'),
-        angular: pickIconifyIcon(devicon, 'angular'),
-        static: pickIconifyIcon(vscodeIcons, 'file-type-svg'),
+function loadIconCollection(set) {
+    try {
+        return JSON.parse(
+            fs.readFileSync(
+                path.join(pluginRoot, `node_modules/@iconify-json/${set}/icons.json`),
+                'utf8'
+            )
+        )
+    } catch {
+        throw new Error(
+            `The Iconify set "${set}" is not installed: run pnpm add -D @iconify-json/${set} in packages/figma-plugin.`
+        )
     }
 }
 

@@ -381,30 +381,6 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
         return
     }
 
-    if (message.type === 'get-storage-stats') {
-        try {
-            const keys = await figma.clientStorage.keysAsync()
-            const ours = keys.filter(
-                key => key.startsWith('solar:pack:') && !isStaleChunkKey(key, packVersion)
-            )
-            let bytes = 0
-            for (const key of ours) {
-                try {
-                    const stored = await figma.clientStorage.getAsync(key)
-                    if (stored && typeof stored === 'object') {
-                        bytes += JSON.stringify(stored).length
-                    }
-                } catch {
-                    // Count what we can read; unreadable entries still occupy quota.
-                }
-            }
-            postMessage({ type: 'storage-stats', version: packVersion, chunks: ours.length, bytes })
-        } catch {
-            postMessage({ type: 'storage-stats', version: packVersion, chunks: 0, bytes: 0 })
-        }
-        return
-    }
-
     if (message.type === 'fetch-chunks') {
         const batchId = message.requestId
         const background = message.background === true

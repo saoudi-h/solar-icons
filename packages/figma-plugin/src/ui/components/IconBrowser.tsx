@@ -40,6 +40,12 @@ export function IconBrowser({
     const [scrollTop, setScrollTop] = useState(0)
     const [viewportHeight, setViewportHeight] = useState(450)
     const [columns, setColumns] = useState(5)
+    const [tooltip, setTooltip] = useState<{
+        name: string
+        x: number
+        y: number
+        below: boolean
+    } | null>(null)
     const scrollFrame = useRef<number | null>(null)
     const batchRef = useRef(0)
     const debounceRef = useRef<number | null>(null)
@@ -108,12 +114,23 @@ export function IconBrowser({
     }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
 
     const handleScroll = (event: UIEvent<HTMLElement>) => {
+        setTooltip(null)
         if (scrollFrame.current !== null) return
         const nextScrollTop = event.currentTarget.scrollTop
         scrollFrame.current = requestAnimationFrame(() => {
             scrollFrame.current = null
             setScrollTop(nextScrollTop)
         })
+    }
+
+    const showTooltip = (name: string, element: HTMLElement) => {
+        const rect = element.getBoundingClientRect()
+        const below = rect.top < 40
+        const x = Math.min(
+            Math.max(rect.left + rect.width / 2, 44),
+            window.innerWidth - 44
+        )
+        setTooltip({ name, x, y: below ? rect.bottom + 6 : rect.top - 6, below })
     }
 
     const focusIcon = (index: number) => {
@@ -179,17 +196,14 @@ export function IconBrowser({
                                 type="button"
                                 className="icon-cell"
                                 key={icon.name}
-                                title={
-                                    svg
-                                        ? `${action} ${icon.name.replaceAll('-', ' ')}`
-                                        : 'Loading icon…'
-                                }
                                 aria-label={`${action} ${icon.name.replaceAll('-', ' ')}, ${styleLabel}`}
                                 aria-pressed={isSelected}
                                 data-index={index}
                                 disabled={!svg}
                                 onClick={() => onIcon(icon.name)}
                                 onKeyDown={event => handleKeyDown(event, index)}
+                                onMouseEnter={event => showTooltip(icon.name, event.currentTarget)}
+                                onMouseLeave={() => setTooltip(null)}
                             >
                                 <SolarSvg
                                     className="icon-preview"
@@ -205,6 +219,15 @@ export function IconBrowser({
                         )
                     })}
                 </div>
+                {tooltip ? (
+                    <div
+                        className={`icon-tooltip${tooltip.below ? ' below' : ''}`}
+                        style={{ left: tooltip.x, top: tooltip.y }}
+                        role="tooltip"
+                    >
+                        {tooltip.name}
+                    </div>
+                ) : null}
             </div>
         </section>
     )

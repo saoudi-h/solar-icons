@@ -16,6 +16,9 @@ import { EMBEDDED_STYLE, PACK_STYLES } from '../shared/packs'
 type Tab = 'icons' | 'settings' | 'info'
 type StatusKind = 'error' | 'success' | undefined
 
+/** Solar icon for each tab, shown next to its label. */
+const TAB_ICONS = { icons: 'grid-2x2', settings: 'settings', info: 'info-circle' } as const
+
 /** Styles fetched from the CDN: everything but the embedded one. */
 const RUNTIME_STYLES = PACK_STYLES.filter(style => style !== EMBEDDED_STYLE)
 
@@ -233,6 +236,11 @@ function AppShell() {
                         key={item}
                         value={item}
                     >
+                        <SolarSvg
+                            className="tab-icon"
+                            svg={getSvg(TAB_ICONS[item], 'linear')}
+                            aria-hidden="true"
+                        />
                         {titleCase(item)}
                     </Tabs.Tab>
                 ))}
@@ -312,25 +320,76 @@ function AppShell() {
 
             <Tabs.Panel value="settings" className="panel">
                 <div className="settings-scroll">
-                    <h2 className="section-label">Insertion</h2>
-                    <div className="mode-control" role="group" aria-label="Insertion behavior">
-                        <ModeButton active={settings.insertionMode === 'instant'} title="Insert on click" description="One click adds the icon" onClick={() => setInsertionMode('instant')} />
-                        <ModeButton active={settings.insertionMode === 'selection'} title="Select first" description="Choose one or more icons" onClick={() => setInsertionMode('selection')} />
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('cursor', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Insertion
+                    </h2>
+                    <div className="segmented" role="group" aria-label="Insertion behavior">
+                        <button
+                            className="segment"
+                            type="button"
+                            aria-pressed={settings.insertionMode === 'instant'}
+                            onClick={() => setInsertionMode('instant')}
+                        >
+                            Insert on click
+                        </button>
+                        <button
+                            className="segment"
+                            type="button"
+                            aria-pressed={settings.insertionMode === 'selection'}
+                            onClick={() => setInsertionMode('selection')}
+                        >
+                            Select first
+                        </button>
                     </div>
 
-                    <h2 className="section-label">Appearance</h2>
-                    <div className="mode-control theme-control" role="group" aria-label="Plugin theme">
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('palette', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Appearance
+                    </h2>
+                    <div className="segmented" role="group" aria-label="Plugin theme">
                         {([
-                            ['system', 'System', 'Follow Figma'],
-                            ['light', 'Light', 'Force light'],
-                            ['dark', 'Dark', 'Force dark'],
-                        ] as const).map(([value, title, description]) => (
-                            <ModeButton key={value} active={settings.theme === value} title={title} description={description} onClick={() => saveSettings({ ...settings, theme: value as ThemeMode })} />
+                            ['system', 'System', 'monitor'],
+                            ['light', 'Light', 'sun'],
+                            ['dark', 'Dark', 'moon'],
+                        ] as const).map(([value, title, icon]) => (
+                            <button
+                                className="segment"
+                                type="button"
+                                key={value}
+                                aria-pressed={settings.theme === value}
+                                onClick={() => saveSettings({ ...settings, theme: value as ThemeMode })}
+                            >
+                                <SolarSvg
+                                    className="segment-icon"
+                                    svg={getSvg(icon, 'linear')}
+                                    aria-hidden="true"
+                                />
+                                {title}
+                            </button>
                         ))}
                     </div>
 
-                    <h2 className="section-label">Geometry</h2>
-                    <div className="geometry-controls">
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('slider-horizontal', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Geometry
+                    </h2>
+                    <div className="setting-row">
+                        <div className="setting-copy">
+                            <span className="setting-title">Size</span>
+                        </div>
                         <GeometryControl
                             label="Size"
                             description="Size on the Figma canvas"
@@ -342,6 +401,11 @@ function AppShell() {
                             onChange={iconSize => setSettings(current => ({ ...current, iconSize }))}
                             onCommit={iconSize => commitSetting('iconSize', iconSize)}
                         />
+                    </div>
+                    <div className="setting-row">
+                        <div className="setting-copy">
+                            <span className="setting-title">Stroke</span>
+                        </div>
                         <GeometryControl
                             label="Stroke"
                             description="Linear, Broken, and Line Duotone"
@@ -367,15 +431,5 @@ function AppShell() {
             </Tabs.Panel>
             <ResizeHandles />
         </Tabs.Root>
-    )
-}
-
-type ModeButtonProps = { active: boolean; title: string; description: string; onClick: () => void }
-
-function ModeButton({ active, title, description, onClick }: ModeButtonProps) {
-    return (
-        <button className="mode-button" type="button" aria-pressed={active} onClick={onClick}>
-            <strong>{title}</strong><span>{description}</span>
-        </button>
     )
 }

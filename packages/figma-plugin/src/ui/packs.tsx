@@ -38,10 +38,6 @@ type PacksContextValue = {
     failedStyle: string | null
     /** True when the last failure was a connectivity error. */
     failedOffline: boolean
-    /** Persistent cache census, refreshed on demand. */
-    storage: { chunks: number; bytes: number } | null
-    /** Ask the sandbox for a fresh persistent cache census. */
-    refreshStorage: () => void
     /** Share of the non-embedded styles already downloaded, 0 to 1. */
     downloadProgress: number
     /** True once every non-embedded icon arrived this session. */
@@ -84,7 +80,6 @@ export function PackProvider({
     const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
     const [failedStyle, setFailedStyle] = useState<string | null>(null)
     const [failedOffline, setFailedOffline] = useState(false)
-    const [storage, setStorage] = useState<{ chunks: number; bytes: number } | null>(null)
     const requestId = useRef(0)
     const backgroundId = useRef(0)
     const inFlight = useRef(new Set<string>())
@@ -177,9 +172,6 @@ export function PackProvider({
                 if (style && style !== EMBEDDED_STYLE) setFailedStyle(style)
                 setFailedOffline(message.offline)
             }
-            if (message.type === 'storage-stats') {
-                setStorage({ chunks: message.chunks, bytes: message.bytes })
-            }
         }
         window.addEventListener('message', handleMessage)
         return () => window.removeEventListener('message', handleMessage)
@@ -253,10 +245,6 @@ export function PackProvider({
         [categoryOf, requestChunks]
     )
 
-    const refreshStorage = useCallback(() => {
-        postMessage({ type: 'get-storage-stats' })
-    }, [])
-
     const getSvg = useCallback(
         (name: string, style: string): string | null => {
             const body = packs[style]?.[name]
@@ -303,8 +291,6 @@ export function PackProvider({
             pendingStyles,
             failedStyle,
             failedOffline,
-            storage,
-            refreshStorage,
             downloadProgress,
             downloadComplete: downloadProgress >= 1,
         }),
@@ -317,8 +303,6 @@ export function PackProvider({
             hasStyle,
             pending.size,
             pendingStyles,
-            refreshStorage,
-            storage,
         ]
     )
 

@@ -33,6 +33,27 @@ function readEmbeddedJson<T>(id: string): T {
 
 /** Bundled pack bodies: every style, embedded chunks only. */
 export const embeddedStyles = readEmbeddedJson<EmbeddedStyles>('solar-icon-data')
+
+export type RegistrySkill = {
+    name: string
+    slug: string
+    registry: string
+    package: string
+    path: string
+    summary: string
+}
+
+export type RegistryPackage = RegistrySkill & {
+    logo: string
+}
+
+export type EmbeddedRegistry = {
+    packages: RegistryPackage[]
+    skills: RegistrySkill[]
+}
+
+/** Registry manifest: every published package and agent skill. */
+export const embeddedRegistry = readEmbeddedJson<EmbeddedRegistry>('solar-registry')
 export const icons = readEmbeddedJson<IconMetadata[]>('solar-icon-metadata')
 export const catalogProvenance = readEmbeddedJson<CatalogProvenance>('solar-catalog-provenance')
 export const packageLogos = readEmbeddedJson<Record<string, PackageLogo>>('solar-package-logos')

@@ -115,7 +115,6 @@ export function GeometryControl({
                 style={{ width: `${fillPercent}%` }}
                 aria-hidden="true"
             />
-            <span className="geometry-label">{label}</span>
             <span className="geometry-value">
                 {value.toFixed(decimals)}<span className="geometry-unit">{unit}</span>
             </span>
