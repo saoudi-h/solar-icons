@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type UIEvent } from 'react'
 import type { IconMetadata } from '../data'
+import type { EnsureOptions } from '../packs'
 import { SolarSvg } from './SolarSvg'
 
 const MIN_CELL_WIDTH = 56
@@ -15,7 +16,11 @@ type IconBrowserProps = {
     selected: Set<string>
     onIcon: (name: string) => void
     getSvg: (name: string, style: string) => string | null
-    ensurePacks: (style: string, names: readonly string[], batchId?: number) => void
+    ensurePacks: (
+        style: string,
+        names: readonly string[],
+        options?: EnsureOptions
+    ) => void
     unavailableMessage: string | null
 }
 
@@ -80,7 +85,7 @@ export function IconBrowser({
             ensurePacks(
                 styleName,
                 icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name),
-                batchRef.current
+                { batchId: batchRef.current }
             )
         }
         if (lastStyle.current !== styleName) {

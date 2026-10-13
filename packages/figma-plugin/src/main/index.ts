@@ -27,8 +27,10 @@ function packLog(...args: unknown[]): void {
 }
 
 // Icon pack cache: linear ships in the bundle, other styles download once
-// per style × category chunk and persist in clientStorage under a strict
-// byte budget (LRU, oldest first). All storage mutations run serialized
+// per style x category chunk. Downloaded chunks live in an unbounded
+// session memory cache (instant until the plugin closes) and mirror
+// into clientStorage under a strict byte budget (LRU, oldest first)
+// so restarts find a warm slice. All storage mutations run serialized
 // through one promise chain: concurrent fetches must never evict each
 // other's fresh entries.
 let packVersion = ''
@@ -39,8 +41,8 @@ let packClock = 0
 let storageChain: Promise<void> = Promise.resolve()
 
 // Network slots: bound concurrent fetches so a full-catalog download
-// never floods the sandbox. Cache reads bypass the slots entirely.
-const MAX_FETCHES = 6
+// never floods the CDN. Cache reads bypass the slots entirely.
+const MAX_FETCHES = 10
 let activeFetches = 0
 const fetchWaiters: (() => void)[] = []
 
@@ -164,7 +166,8 @@ async function storeChunk(key: string, icons: Record<string, string>): Promise<v
         }
         const evicted = planEvictions(usage, 0, CACHE_BUDGET_BYTES)
         for (const evictedKey of evicted) {
-            packMemory.delete(evictedKey)
+            // The session memory cache keeps every downloaded chunk for
+            // the whole session; only the persistent slice is budgeted.
             packIndex.delete(evictedKey)
             await deleteStoredKey(evictedKey)
         }
@@ -404,39 +407,51 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
 
     if (message.type === 'fetch-chunks') {
         const batchId = message.requestId
+        const background = message.background === true
         const keys = chunkKeysOf(message.chunks)
-        // A newer interaction wins: abort older batches so stale scroll
-        // positions can never clog the queue behind the visible window.
-        // Aborted batches report `dropped` so the UI pending set converges.
-        for (const [otherId, controller] of batchControllers) {
-            if (otherId < batchId) {
-                try {
-                    controller?.abort()
-                } catch {
-                    // Aborting is best-effort; staleness is also enforced below.
+        // Background fills (the launch download) never abort and are
+        // never aborted: every chunk must land exactly once, and a
+        // style switch must not cancel it mid-flight. Only
+        // interactive batches (scroll, style switch) compete, where
+        // a newer interaction wins: abort older interactive batches
+        // so stale scroll positions can never clog the queue behind
+        // the visible window. Aborted batches report `dropped` so
+        // the UI pending set converges.
+        const controller = background ? null : createAbortController()
+        if (!background) {
+            for (const [otherId, otherController] of batchControllers) {
+                if (otherId < batchId) {
+                    try {
+                        otherController?.abort()
+                    } catch {
+                        // Aborting is best-effort; staleness is also enforced below.
+                    }
+                    batchControllers.delete(otherId)
+                    const otherKeys = batchKeys.get(otherId) ?? []
+                    batchKeys.delete(otherId)
+                    postMessage({ type: 'chunks-dropped', requestId: otherId, keys: otherKeys })
                 }
-                batchControllers.delete(otherId)
-                const otherKeys = batchKeys.get(otherId) ?? []
-                batchKeys.delete(otherId)
-                postMessage({ type: 'chunks-dropped', requestId: otherId, keys: otherKeys })
             }
+            if (batchId < maxBatchId) {
+                postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
+                return
+            }
+            maxBatchId = batchId
+            packLog(`batch #${batchId}: ${message.chunks.length} chunk(s)`)
+        } else {
+            packLog(`bulk: ${message.chunks.length} chunk(s)`)
         }
-        if (batchId < maxBatchId) {
-            postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
-            return
+        if (controller !== null) {
+            batchControllers.set(batchId, controller)
+            batchKeys.set(batchId, keys)
         }
-        maxBatchId = batchId
-        const controller = createAbortController()
-        packLog(`batch #${batchId}: ${message.chunks.length} chunk(s), abort=${controller !== null}`)
-        batchControllers.set(batchId, controller)
-        batchKeys.set(batchId, keys)
         // One message per chunk, never a batched blob: large postMessage
         // payloads risk silent drops between sandbox and iframe.
         const deliveries = message.chunks.map(async ({ style, category, names }) => {
             const chunkKey = `${style}/${category}`
             try {
                 const icons = await loadChunk(style, category, names, controller?.signal)
-                if (batchId < maxBatchId) {
+                if (!background && batchId < maxBatchId) {
                     // A newer view arrived while fetching: drop instead of
                     // posting stale data (it re-requests on its own tick).
                     packLog(`stale #${batchId} ${chunkKey}`)
@@ -450,7 +465,7 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
                     chunks: [{ style, category, icons }],
                 })
             } catch (error) {
-                if (controller?.signal.aborted || batchId < maxBatchId) {
+                if (controller?.signal.aborted || (!background && batchId < maxBatchId)) {
                     postMessage({ type: 'chunks-dropped', requestId: batchId, keys: [chunkKey] })
                 } else {
                     packLog(`failed #${batchId} ${chunkKey}:`, error)

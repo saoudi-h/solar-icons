@@ -26,6 +26,8 @@ export type UiMessage =
     | {
           type: 'fetch-chunks'
           requestId: number
+          /** True for the launch download: never aborted, never aborts. */
+          background?: boolean
           chunks: { style: string; category: string; names: string[] }[]
       }
     | { type: 'get-storage-stats' }    | {

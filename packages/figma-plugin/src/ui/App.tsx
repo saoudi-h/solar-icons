@@ -11,9 +11,13 @@ import { SolarSvg } from './components/SolarSvg'
 import { icons, catalogProvenance, linearChunks } from './data'
 import { createIconSearch, searchIcons } from './search'
 import { PackProvider, usePacks } from './packs'
+import { EMBEDDED_STYLE, PACK_STYLES } from '../shared/packs'
 
 type Tab = 'icons' | 'settings' | 'info'
 type StatusKind = 'error' | 'success' | undefined
+
+/** Styles fetched from the CDN: everything but the embedded one. */
+const RUNTIME_STYLES = PACK_STYLES.filter(style => style !== EMBEDDED_STYLE)
 
 const STYLE_OPTIONS = [
     { label: 'Linear', value: 'linear', editable: true },
@@ -76,25 +80,36 @@ function AppShell() {
         [category, deferredQuery, fuse]
     )
     const selectionMode = settings.insertionMode === 'selection'
-    const { getSvg, ensurePacks, pendingStyles, failedStyle, failedOffline, hasStyle } =
-        usePacks()
+    const {
+        getSvg,
+        ensurePacks,
+        pendingStyles,
+        pendingChunks,
+        failedStyle,
+        failedOffline,
+        hasStyle,
+        downloadProgress,
+        downloadComplete,
+    } = usePacks()
     const launched = useRef(false)
 
     useEffect(() => {
-        // Download everything once, up front: Linear renders instantly from
-        // the bundle while the other styles fill the persistent cache in the
-        // background. Bounded by fetch slots and the LRU budget, deduplicated
-        // with on-demand requests, so this runs exactly once per version.
+        // Download every non-embedded style once, up front: Linear
+        // renders instantly from the bundle while the rest fills the
+        // session cache in the background. Bounded fetch slots, one
+        // request per chunk, deduplicated with on-demand requests,
+        // so this runs exactly once per version.
         if (launched.current) return
         launched.current = true
         const names = icons.map(icon => icon.name)
-        for (const style of ['bold', 'bold-duotone', 'broken', 'line-duotone', 'outline']) {
-            ensurePacks(style, names)
+        for (const style of RUNTIME_STYLES) {
+            ensurePacks(style, names, { background: true })
         }
     }, [ensurePacks])
 
     const stylePending = pendingStyles.includes(styleName)
     const styleFailed = failedStyle === styleName && !hasStyle(styleName)
+    const bulkPending = !downloadComplete && pendingChunks > 0
     const displayStatus = styleFailed
         ? {
               message: failedOffline
@@ -104,7 +119,12 @@ function AppShell() {
           }
         : stylePending && !hasStyle(styleName)
           ? { message: `Downloading ${activeStyle.label} icons…`, kind: undefined }
-          : status
+          : bulkPending
+            ? {
+                  message: `Downloading all styles… ${Math.round(downloadProgress * 100)}%`,
+                  kind: undefined,
+              }
+            : status
 
     useEffect(() => {
         const handleMessage = (event: MessageEvent<{ pluginMessage?: MainMessage }>) => {
