@@ -13,10 +13,13 @@ const staticRoot = path.join(repositoryRoot, 'packages/static')
 const outputDirectory = path.join(pluginRoot, 'dist')
 const temporaryUiDirectory = path.join(outputDirectory, '.ui-build')
 
+/** Byte budget for the embedded pack data, inside the bundle guard. */
+const EMBED_DATA_BUDGET = 12.5 * 1024 * 1024
+
 const icons = fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8')
 const metadata = fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
 const staticPackage = JSON.parse(fs.readFileSync(path.join(staticRoot, 'package.json'), 'utf8'))
-const linearChunks = readLinearChunks()
+const embeddedChunks = readEmbeddedChunks()
 const catalogProvenance = buildCatalogProvenance({
     icons,
     metadata,
@@ -24,7 +27,7 @@ const catalogProvenance = buildCatalogProvenance({
 })
 const packageLogos = createPackageLogos()
 
-const embeddedData = [linearChunks, metadata, JSON.stringify(catalogProvenance)]
+const embeddedData = [embeddedChunks.json, metadata, JSON.stringify(catalogProvenance)]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     throw new Error(
         'Embedded icon data contains a closing script tag and cannot be safely inlined.'
@@ -46,7 +49,7 @@ html = inlineBuildAsset(
 html = inlineBuildAsset(html, 'style', /<link rel="stylesheet" crossorigin href="([^"]+)">/)
 html = html
     .replace('__SOLAR_VERSION_VALUE__', staticPackage.version)
-    .replace('__SOLAR_ICON_DATA__', linearChunks)
+    .replace('__SOLAR_ICON_DATA__', embeddedChunks.json)
     .replace('__SOLAR_ICON_METADATA__', metadata)
     .replace('__SOLAR_CATALOG_PROVENANCE__', JSON.stringify(catalogProvenance))
     .replace('__SOLAR_PACKAGE_LOGOS__', JSON.stringify(packageLogos))
@@ -68,50 +71,98 @@ if (remainingPlaceholders.length > 0) {
 fs.writeFileSync(path.join(outputDirectory, 'ui.html'), html)
 fs.rmSync(temporaryUiDirectory, { recursive: true, force: true })
 
-const BUNDLE_LIMIT = 10 * 1024 * 1024
+const BUNDLE_LIMIT = 13.5 * 1024 * 1024
 if (html.length > BUNDLE_LIMIT) {
     throw new Error(
-        `Figma bundle is ${(html.length / 1024 / 1024).toFixed(2)} MiB, over the ${(BUNDLE_LIMIT / 1024 / 1024).toFixed(0)} MiB guard (Figma rejects over 15 MiB). Shrink the bundle before publishing.`
+        `Figma bundle is ${(html.length / 1024 / 1024).toFixed(2)} MiB, over the ${(BUNDLE_LIMIT / 1024 / 1024).toFixed(1)} MiB guard (Figma rejects over 15 MiB). Shrink the bundle before publishing.`
     )
 }
 
 const compressedSize = zlib.gzipSync(html).byteLength
 console.info(
-    `Built Solar Icons Figma plugin: ${catalogProvenance.logicalIconCount} icons × ${catalogProvenance.styleCount} styles, ${catalogProvenance.catalogHash}, ${(html.length / 1024 / 1024).toFixed(2)} MiB raw, ${(compressedSize / 1024 / 1024).toFixed(2)} MiB gzip.`
+    `Built Solar Icons Figma plugin: ${catalogProvenance.logicalIconCount} icons × ${catalogProvenance.styleCount} styles, ${catalogProvenance.catalogHash}, ${(html.length / 1024 / 1024).toFixed(2)} MiB raw, ${(compressedSize / 1024 / 1024).toFixed(2)} MiB gzip, ${embeddedChunks.entries}/${catalogProvenance.canonicalSvgCount} SVG entries embedded.`
 )
 
 /**
- * Linear chunks for the offline bundle, derived from the published-shape
- * `dist/icons.json` map (`<name>-linear` entries) and nested as
- * `{ [category]: { [name]: body } }`. Bodies are whitespace-collapsed only.
- * Other styles download as jsDelivr combine batches at runtime.
+ * Embedded pack data for the offline bundle, derived from the
+ * published-shape `dist/icons.json` map and nested as
+ * `{ [style]: { [category]: { [name]: body } } }`. Bodies are
+ * whitespace-collapsed only. Linear always ships whole: it is the
+ * offline guarantee. The other styles embed in display order
+ * until the data budget is spent; the runtime fetches the
+ * remaining chunks from the jsDelivr CDN at launch, so the
+ * bundle never grows past the Figma limit as the catalog does.
  */
-function readLinearChunks() {
+function readEmbeddedChunks() {
     const map = JSON.parse(fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8'))
     const descriptions = JSON.parse(
         fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
     )
     const categoryOf = {}
-    for (const entry of descriptions) categoryOf[entry.name] = entry.category
-    const nested = {}
+    const displayCategories = []
+    for (const entry of descriptions) {
+        categoryOf[entry.name] = entry.category
+        if (!displayCategories.includes(entry.category)) {
+            displayCategories.push(entry.category)
+        }
+    }
+    const byStyle = {}
     for (const [key, svg] of Object.entries(map)) {
-        if (!key.endsWith('-linear')) continue
-        const name = key.slice(0, -'-linear'.length)
+        const match = key.match(/^(.*)-(bold-duotone|line-duotone|bold|broken|linear|outline)$/)
+        if (!match) continue
+        const name = match[1]
+        const style = match[2]
+        // Alias keys (e.g. chat-square-2-linear) have no metadata
+        // entry and are never browsed: the UI resolves canonical
+        // names only.
         const category = categoryOf[name]
-        // Alias keys (e.g. chat-square-2-linear) have no metadata entry and
-        // are never browsed: the UI resolves canonical names only.
         if (!category) continue
-        nested[category] = nested[category] || {}
-        nested[category][name] = svg
+        byStyle[style] = byStyle[style] || {}
+        byStyle[style][category] = byStyle[style][category] || {}
+        byStyle[style][category][name] = svg
             .replace(/^<svg[^>]*>/, '')
             .replace(/<\/svg>$/, '')
             .replace(/>\s+</g, '><')
             .trim()
     }
-    if (Object.keys(nested).length === 0) {
+    if (Object.keys(byStyle.linear ?? {}).length === 0) {
         throw new Error('No linear icons found in dist/icons.json.')
     }
-    return JSON.stringify(nested)
+    const embedded = { linear: byStyle.linear }
+    let bytes = JSON.stringify(embedded).length
+    // Greedy fill in display order: a category embeds across the
+    // fetched styles before the next category, so the first
+    // browsed icons are always the ones shipped in the bundle.
+    const fetchedStyles = Object.keys(byStyle)
+        .filter(style => style !== 'linear')
+        .sort()
+    for (const category of displayCategories) {
+        for (const style of fetchedStyles) {
+            const chunk = byStyle[style]?.[category]
+            if (!chunk) continue
+            const cost = JSON.stringify(chunk).length
+            if (bytes + cost > EMBED_DATA_BUDGET) continue
+            embedded[style] = embedded[style] || {}
+            embedded[style][category] = chunk
+            bytes += cost
+        }
+    }
+    const json = JSON.stringify(embedded)
+    if (json.length > EMBED_DATA_BUDGET) {
+        throw new Error(
+            `Embedded pack data is ${(json.length / 1024 / 1024).toFixed(2)} MiB, over the ${(EMBED_DATA_BUDGET / 1024 / 1024).toFixed(1)} MiB budget.`
+        )
+    }
+    const entries = Object.values(embedded).reduce(
+        (sum, categories) =>
+            sum +
+            Object.values(categories).reduce(
+                (categorySum, names) => categorySum + Object.keys(names).length,
+                0
+            ),
+        0
+    )
+    return { json, entries }
 }
 
 async function buildMain() {    await esbuild({

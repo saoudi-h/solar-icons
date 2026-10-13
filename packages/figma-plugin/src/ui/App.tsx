@@ -8,7 +8,7 @@ import { IconBrowser } from './components/IconBrowser'
 import { InfoPanel } from './components/InfoPanel'
 import { ResizeHandles } from './components/ResizeHandles'
 import { SolarSvg } from './components/SolarSvg'
-import { icons, catalogProvenance, linearChunks } from './data'
+import { icons, catalogProvenance, embeddedStyles } from './data'
 import { createIconSearch, searchIcons } from './search'
 import { PackProvider, usePacks } from './packs'
 import { EMBEDDED_STYLE, PACK_STYLES } from '../shared/packs'
@@ -52,7 +52,7 @@ export function App() {
     return (
         <PackProvider
             version={catalogProvenance.packageVersion}
-            embeddedLinear={linearChunks}
+            embeddedStyles={embeddedStyles}
             categoryOf={categoryOf}
         >
             <AppShell />

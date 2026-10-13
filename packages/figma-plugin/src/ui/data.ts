@@ -23,15 +23,16 @@ export type CatalogProvenance = {
     catalogHash: string
 }
 
+export type EmbeddedStyles = Record<string, Record<string, Record<string, string>>>
+
 function readEmbeddedJson<T>(id: string): T {
     const element = document.getElementById(id)
     if (!element) throw new Error(`Missing embedded data: ${id}`)
     return JSON.parse(element.textContent ?? '') as T
 }
 
-export const linearChunks = readEmbeddedJson<Record<string, Record<string, string>>>(
-    'solar-icon-data'
-)
+/** Bundled pack bodies: every style, embedded chunks only. */
+export const embeddedStyles = readEmbeddedJson<EmbeddedStyles>('solar-icon-data')
 export const icons = readEmbeddedJson<IconMetadata[]>('solar-icon-metadata')
 export const catalogProvenance = readEmbeddedJson<CatalogProvenance>('solar-catalog-provenance')
 export const packageLogos = readEmbeddedJson<Record<string, PackageLogo>>('solar-package-logos')

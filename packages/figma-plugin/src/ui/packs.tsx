@@ -62,21 +62,25 @@ function postMessage(message: object): void {
 
 export function PackProvider({
     version,
-    embeddedLinear,
+    embeddedStyles,
     categoryOf,
     children,
 }: {
     version: string
-    embeddedLinear: Record<string, Record<string, string>>
+    embeddedStyles: Record<string, Record<string, Record<string, string>>>
     categoryOf: (name: string) => string | undefined
     children: ReactNode
 }) {
-    const [packs, setPacks] = useState<PackStore>(() => ({
-        [EMBEDDED_STYLE]: Object.values(embeddedLinear).reduce(
-            (flat, category) => ({ ...flat, ...category }),
-            {}
-        ),
-    }))
+    const [packs, setPacks] = useState<PackStore>(() => {
+        const flat: PackStore = {}
+        for (const [style, categories] of Object.entries(embeddedStyles)) {
+            flat[style] = Object.values(categories).reduce(
+                (all, category) => ({ ...all, ...category }),
+                {}
+            )
+        }
+        return flat
+    })
     const [pending, setPending] = useState<ReadonlySet<string>>(() => new Set())
     const [failedStyle, setFailedStyle] = useState<string | null>(null)
     const [failedOffline, setFailedOffline] = useState(false)
@@ -84,7 +88,15 @@ export function PackProvider({
     const requestId = useRef(0)
     const backgroundId = useRef(0)
     const inFlight = useRef(new Set<string>())
-    const loadedKeys = useRef(new Set<string>())
+    // Chunks shipped in the bundle never need a download:
+    // they count as loaded from the first render.
+    const loadedKeys = useRef(
+        new Set(
+            Object.entries(embeddedStyles).flatMap(([style, categories]) =>
+                Object.keys(categories).map(category => `${style}/${category}`)
+            )
+        )
+    )
     const backgroundIds = useRef(new Set<number>())
     const requestStyles = useRef(new Map<number, string>())
 
@@ -264,14 +276,14 @@ export function PackProvider({
         return [...styles]
     }, [pending])
 
-    const totalIcons = useMemo(
-        () =>
-            Object.values(embeddedLinear).reduce(
-                (sum, category) => sum + Object.keys(category).length,
-                0
-            ),
-        [embeddedLinear]
-    )
+    const totalIcons = useMemo(() => {
+        const linearCategories: Record<string, Record<string, string>> =
+            embeddedStyles[EMBEDDED_STYLE] ?? {}
+        return Object.values(linearCategories).reduce(
+            (sum, category) => sum + Object.keys(category).length,
+            0
+        )
+    }, [embeddedStyles])
     const downloadProgress = useMemo(() => {
         const total = RUNTIME_STYLES.length * totalIcons
         if (total === 0) return 1
