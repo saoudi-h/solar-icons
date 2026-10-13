@@ -213,7 +213,7 @@ export const CommunitySection = () => {
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Packages" value={13} />
+                                <StatCard title="Total Packages" value={14} />
                             </motion.div>
                         </div>
                     </div>
