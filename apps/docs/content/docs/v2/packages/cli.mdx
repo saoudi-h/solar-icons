@@ -1,0 +1,27 @@
+---
+title: CLI
+description: Solar Icons command-line interface to search, inspect, and export icons from the terminal.
+icon: bash
+---
+
+```bash
+pnpm add -D @solar-icons/cli
+```
+
+## Search
+
+The CLI searches the maintained catalogue offline, using `@solar-icons/static` as its source of truth:
+
+```bash
+npx @solar-icons/cli search "arrow right"
+```
+
+## Inspect and export
+
+List styles, categories, and metadata, and export the exact SVG bodies your build needs. For programmatic use, pass `--json`:
+
+```bash
+npx @solar-icons/cli search "arrow right" --json
+```
+
+See [`@solar-icons/cli`](https://www.npmjs.com/package/@solar-icons/cli) for the full command reference.
