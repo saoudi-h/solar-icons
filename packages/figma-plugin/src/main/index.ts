@@ -5,9 +5,252 @@ import {
     type PluginSettings,
     type UiMessage,
 } from '../shared/messages'
+import {
+    CACHE_BUDGET_BYTES,
+    canonicalName,
+    chunkKey,
+    combineUrls,
+    isStaleChunkKey,
+    normalizeBody,
+    PACK_ORIGIN,
+    planEvictions,
+    splitCombined,
+    type CacheUsage,
+} from '../shared/packs'
 
 const SETTINGS_KEY = 'settings'
 let resizeStartPosition: Vector | null = null
+
+function packLog(...args: unknown[]): void {
+    // Visible in Figma Desktop via Plugins → Development → Open Console.
+    console.log('[packs]', ...args)
+}
+
+// Icon pack cache: linear ships in the bundle, other styles download once
+// per style x category chunk. Downloaded chunks live in an unbounded
+// session memory cache (instant until the plugin closes) and mirror
+// into clientStorage under a strict byte budget (LRU, oldest first)
+// so restarts find a warm slice. All storage mutations run serialized
+// through one promise chain: concurrent fetches must never evict each
+// other's fresh entries.
+let packVersion = ''
+const packMemory = new Map<string, Record<string, string>>()
+const packInFlight = new Map<string, Promise<Record<string, string>>>()
+const packIndex = new Map<string, { bytes: number; at: number }>()
+let packClock = 0
+let storageChain: Promise<void> = Promise.resolve()
+
+// Network slots: bound concurrent fetches so a full-catalog download
+// never floods the CDN. Cache reads bypass the slots entirely.
+const MAX_FETCHES = 10
+let activeFetches = 0
+const fetchWaiters: (() => void)[] = []
+
+async function withFetchSlot<T>(task: () => Promise<T>): Promise<T> {
+    if (activeFetches >= MAX_FETCHES) {
+        await new Promise<void>(resolve => fetchWaiters.push(resolve))
+    }
+    activeFetches += 1
+    try {
+        return await task()
+    } finally {
+        activeFetches -= 1
+        fetchWaiters.shift()?.()
+    }
+}
+
+const indexKey = (): string => `solar:index:${packVersion}`
+
+function mutateStorage(task: () => Promise<void>): Promise<void> {
+    const run = storageChain.then(task, task)
+    storageChain = run.catch(() => undefined)
+    return run
+}
+
+async function deleteStoredKey(key: string): Promise<void> {
+    try {
+        await figma.clientStorage.deleteAsync(key)
+    } catch {
+        // Storage unavailable: the memory cache still serves this session.
+    }
+}
+
+async function writeIndex(): Promise<void> {
+    try {
+        const usage: CacheUsage[] = [...packIndex.entries()].map(([key, entry]) => ({
+            key,
+            bytes: entry.bytes,
+            at: entry.at,
+        }))
+        await figma.clientStorage.setAsync(indexKey(), usage)
+    } catch {
+        // Index loss only costs LRU precision until the next rebuild.
+    }
+}
+
+async function readIndex(): Promise<void> {
+    packIndex.clear()
+    try {
+        const stored = await figma.clientStorage.getAsync(indexKey())
+        if (Array.isArray(stored)) {
+            for (const entry of stored as CacheUsage[]) {
+                if (
+                    entry &&
+                    typeof entry.key === 'string' &&
+                    typeof entry.bytes === 'number' &&
+                    typeof entry.at === 'number'
+                ) {
+                    packIndex.set(entry.key, { bytes: entry.bytes, at: entry.at })
+                    if (entry.at > packClock) packClock = entry.at
+                }
+            }
+            return
+        }
+    } catch {
+        // Fall through to measuring.
+    }
+    // No usable index: measure every cached chunk once.
+    try {
+        const keys = await figma.clientStorage.keysAsync()
+        for (const key of keys) {
+            if (!key.startsWith(`solar:pack:${packVersion}:`)) continue
+            try {
+                const stored = await figma.clientStorage.getAsync(key)
+                if (stored && typeof stored === 'object') {
+                    packClock += 1
+                    packIndex.set(key, { bytes: JSON.stringify(stored).length, at: packClock })
+                }
+            } catch {
+                // Skip unreadable entries.
+            }
+        }
+        await writeIndex()
+    } catch {
+        // Storage unavailable: memory cache only.
+    }
+}
+
+async function purgeStalePacks(version: string): Promise<void> {
+    packVersion = version
+    packMemory.clear()
+    packInFlight.clear()
+    packIndex.clear()
+    try {
+        const keys = await figma.clientStorage.keysAsync()
+        await Promise.all(
+            keys
+                .filter(
+                    key =>
+                        isStaleChunkKey(key, version) ||
+                        (key.startsWith('solar:index:') && key !== indexKey())
+                )
+                .map(deleteStoredKey)
+        )
+    } catch {
+        // Storage unavailable: the memory cache still serves this session.
+    }
+    await readIndex()
+}
+
+async function storeChunk(key: string, icons: Record<string, string>): Promise<void> {
+    const bytes = JSON.stringify(icons).length
+    return mutateStorage(async () => {
+        packClock += 1
+        const usage: CacheUsage[] = [...packIndex.entries()].map(([entryKey, entry]) => ({
+            key: entryKey,
+            bytes: entryKey === key ? bytes : entry.bytes,
+            at: entryKey === key ? packClock : entry.at,
+        }))
+        if (!packIndex.has(key)) {
+            usage.push({ key, bytes, at: packClock })
+        }
+        const evicted = planEvictions(usage, 0, CACHE_BUDGET_BYTES)
+        for (const evictedKey of evicted) {
+            // The session memory cache keeps every downloaded chunk for
+            // the whole session; only the persistent slice is budgeted.
+            packIndex.delete(evictedKey)
+            await deleteStoredKey(evictedKey)
+        }
+        packIndex.set(key, { bytes, at: packClock })
+        await figma.clientStorage.setAsync(key, icons)
+        await writeIndex()
+    })
+}
+
+async function loadChunk(
+    style: string,
+    category: string,
+    names: readonly string[],
+    signal?: { readonly aborted: boolean }
+): Promise<Record<string, string>> {
+    const key = chunkKey(packVersion, style, category)
+    const cached = packMemory.get(key)
+    if (cached) return cached
+    const inFlight = packInFlight.get(key)
+    if (inFlight) return inFlight
+    const task = (async (): Promise<Record<string, string>> => {
+        try {
+            const stored = await figma.clientStorage.getAsync(key)
+            if (stored && typeof stored === 'object') {
+                const icons = stored as Record<string, string>
+                packMemory.set(key, icons)
+                return icons
+            }
+        } catch {
+            // Storage unreadable: fall through to the network.
+        }
+        const icons: Record<string, string> = {}
+        for (const url of combineUrls(PACK_ORIGIN, packVersion, style, names)) {
+            await withFetchSlot(async () => {
+                if (signal?.aborted) throw new Error('aborted')
+                const response = await fetch(
+                    url,
+                    signal === undefined ? undefined : ({ signal }) as never
+                )
+                if (!response.ok) throw new Error(`pack ${response.status}`)
+                for (const document of splitCombined(await response.text())) {
+                    const name = canonicalName(document)
+                    if (name) icons[name] = normalizeBody(document)
+                }
+            })
+        }
+        const missing = names.filter(name => icons[name] === undefined)
+        if (missing.length > 0) {
+            throw new Error(`pack incomplete, missing: ${missing.slice(0, 3).join(', ')}`)
+        }
+        packMemory.set(key, icons)
+        await storeChunk(key, icons)
+        return icons
+    })()
+    packInFlight.set(key, task)
+    try {
+        return await task
+    } finally {
+        packInFlight.delete(key)
+    }
+}
+
+const batchControllers = new Map<number, SandboxAbortController | null>()
+const batchKeys = new Map<number, string[]>()
+let maxBatchId = 0
+
+type SandboxAbortController = { readonly signal: { readonly aborted: boolean }; abort(): void }
+
+function createAbortController(): SandboxAbortController | null {
+    const factory = (
+        globalThis as unknown as { AbortController?: new () => SandboxAbortController }
+    ).AbortController
+    if (typeof factory !== 'function') return null
+    try {
+        return new factory()
+    } catch {
+        return null
+    }
+}
+
+function chunkKeysOf(chunks: { style: string; category: string }[]): string[] {
+    return chunks.map(chunk => `${chunk.style}/${chunk.category}`)
+}
 
 function postMessage(message: MainMessage): void {
     figma.ui.postMessage(message)
@@ -129,6 +372,90 @@ figma.ui.onmessage = async (message: UiMessage): Promise<void> => {
 
     if (message.type === 'save-settings') {
         await figma.clientStorage.setAsync(SETTINGS_KEY, message.settings)
+        return
+    }
+
+    if (message.type === 'init-packs') {
+        await purgeStalePacks(message.version)
+        packLog(`ready (catalog ${packVersion})`)
+        return
+    }
+
+    if (message.type === 'fetch-chunks') {
+        const batchId = message.requestId
+        const background = message.background === true
+        const keys = chunkKeysOf(message.chunks)
+        // Background fills (the launch download) never abort and are
+        // never aborted: every chunk must land exactly once, and a
+        // style switch must not cancel it mid-flight. Only
+        // interactive batches (scroll, style switch) compete, where
+        // a newer interaction wins: abort older interactive batches
+        // so stale scroll positions can never clog the queue behind
+        // the visible window. Aborted batches report `dropped` so
+        // the UI pending set converges.
+        const controller = background ? null : createAbortController()
+        if (!background) {
+            for (const [otherId, otherController] of batchControllers) {
+                if (otherId < batchId) {
+                    try {
+                        otherController?.abort()
+                    } catch {
+                        // Aborting is best-effort; staleness is also enforced below.
+                    }
+                    batchControllers.delete(otherId)
+                    const otherKeys = batchKeys.get(otherId) ?? []
+                    batchKeys.delete(otherId)
+                    postMessage({ type: 'chunks-dropped', requestId: otherId, keys: otherKeys })
+                }
+            }
+            if (batchId < maxBatchId) {
+                postMessage({ type: 'chunks-dropped', requestId: batchId, keys })
+                return
+            }
+            maxBatchId = batchId
+            packLog(`batch #${batchId}: ${message.chunks.length} chunk(s)`)
+        } else {
+            packLog(`bulk: ${message.chunks.length} chunk(s)`)
+        }
+        if (controller !== null) {
+            batchControllers.set(batchId, controller)
+            batchKeys.set(batchId, keys)
+        }
+        // One message per chunk, never a batched blob: large postMessage
+        // payloads risk silent drops between sandbox and iframe.
+        const deliveries = message.chunks.map(async ({ style, category, names }) => {
+            const chunkKey = `${style}/${category}`
+            try {
+                const icons = await loadChunk(style, category, names, controller?.signal)
+                if (!background && batchId < maxBatchId) {
+                    // A newer view arrived while fetching: drop instead of
+                    // posting stale data (it re-requests on its own tick).
+                    packLog(`stale #${batchId} ${chunkKey}`)
+                    postMessage({ type: 'chunks-dropped', requestId: batchId, keys: [chunkKey] })
+                    return
+                }
+                packLog(`ready #${batchId} ${chunkKey}: ${Object.keys(icons).length} icons`)
+                postMessage({
+                    type: 'chunks-ready',
+                    requestId: batchId,
+                    chunks: [{ style, category, icons }],
+                })
+            } catch (error) {
+                if (controller?.signal.aborted || (!background && batchId < maxBatchId)) {
+                    postMessage({ type: 'chunks-dropped', requestId: batchId, keys: [chunkKey] })
+                } else {
+                    packLog(`failed #${batchId} ${chunkKey}:`, error)
+                    postMessage({
+                        type: 'chunks-failed',
+                        requestId: batchId,
+                        offline: error instanceof TypeError,
+                    })
+                }
+            }
+        })
+        await Promise.allSettled(deliveries)
+        batchControllers.delete(batchId)
+        batchKeys.delete(batchId)
         return
     }
 

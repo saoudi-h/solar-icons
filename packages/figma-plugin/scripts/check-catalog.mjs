@@ -24,8 +24,56 @@ const expectedProvenance = buildCatalogProvenance({
 })
 
 const mismatches = []
-if (stableSerialize(embeddedIcons) !== stableSerialize(staticIcons)) {
-    mismatches.push('embedded icon SVG data differs from packages/static/dist/icons.json')
+// Embedded icons are the bundle's offline slice: every style,
+// the chunks the build's data budget could afford. Chunks left
+// out are fetched from the CDN at launch, so only the embedded
+// subset is compared here, normalized exactly like the build.
+const metadataByName = new Map(
+    staticMetadata.map(entry => [entry.name, entry])
+)
+const expected = {}
+for (const [key, svg] of Object.entries(staticIcons)) {
+    const match = key.match(/^(.*)-(bold-duotone|line-duotone|bold|broken|linear|outline)$/)
+    if (!match) continue
+    const name = match[1]
+    const style = match[2]
+    const entry = metadataByName.get(name)
+    // Alias keys have no metadata entry and are never embedded.
+    if (!entry) continue
+    expected[style] = expected[style] || {}
+    expected[style][entry.category] = expected[style][entry.category] || {}
+    expected[style][entry.category][name] = svg
+        .replace(/^<svg[^>]*>/, '')
+        .replace(/<\/svg>$/, '')
+        .replace(/>\s+</g, '><')
+        .trim()
+}
+let embeddedEntries = 0
+for (const [style, categories] of Object.entries(embeddedIcons)) {
+    for (const [category, entries] of Object.entries(categories)) {
+        for (const [name, body] of Object.entries(entries)) {
+            const expectedBody = expected[style]?.[category]?.[name]
+            if (expectedBody === undefined) {
+                mismatches.push(`embedded ${style}/${category}/${name} is not in the catalog`)
+            } else if (body !== expectedBody) {
+                mismatches.push(`embedded body differs from the catalog: ${style}/${name}`)
+            }
+            embeddedEntries += 1
+        }
+    }
+}
+// Linear is the offline guarantee: it must ship whole.
+const countIcons = chunks =>
+    Object.values(chunks ?? {}).reduce(
+        (sum, entries) => sum + Object.keys(entries).length,
+        0
+    )
+const linearCatalogCount = countIcons(expected.linear)
+const linearEmbeddedCount = countIcons(embeddedIcons.linear)
+if (linearEmbeddedCount !== linearCatalogCount) {
+    mismatches.push(
+        `linear is not fully embedded: ${linearEmbeddedCount}/${linearCatalogCount}`
+    )
 }
 if (stableSerialize(embeddedMetadata) !== stableSerialize(staticMetadata)) {
     mismatches.push(
@@ -53,7 +101,7 @@ if (mismatches.length > 0) {
 }
 
 console.info(
-    `Figma catalog sync is valid: ${expectedProvenance.packageVersion}, ${expectedProvenance.logicalIconCount} logical icons, ${expectedProvenance.mapEntryCount} SVG entries, ${expectedProvenance.catalogHash}`
+    `Figma catalog sync is valid: ${expectedProvenance.packageVersion}, ${expectedProvenance.logicalIconCount} logical icons, ${expectedProvenance.mapEntryCount} SVG entries, ${embeddedEntries}/${expectedProvenance.canonicalSvgCount} embedded, ${expectedProvenance.catalogHash}`
 )
 
 function readFile(filePath) {

@@ -1,22 +1,11 @@
 import solarLogo from '../assets/solar-logo.svg?raw'
-import { catalogProvenance, packageLogos, type PackageLogo } from '../data'
+import { catalogProvenance, embeddedRegistry, packageLogos, type PackageLogo } from '../data'
+import { usePacks } from '../packs'
 import { SolarSvg } from './SolarSvg'
 
 type InfoPanelProps = {
     openExternal: (url: string) => void
 }
-
-const packages: Array<{ name: string; slug: string; logo: keyof typeof packageLogos }> = [
-    { name: 'React', slug: 'react', logo: 'react' },
-    { name: 'Vue', slug: 'vue', logo: 'vue' },
-    { name: 'Svelte', slug: 'svelte', logo: 'svelte' },
-    { name: 'Solid', slug: 'solid', logo: 'solid' },
-    { name: 'Angular', slug: 'angular', logo: 'angular' },
-    { name: 'Nuxt', slug: 'nuxt', logo: 'nuxt' },
-    { name: 'React Native', slug: 'react-native', logo: 'react' },
-    { name: 'JavaScript', slug: 'js', logo: 'javascript' },
-    { name: 'Static', slug: 'static', logo: 'static' },
-]
 
 function BrandLogo({ className }: { className: string }) {
     return <span className={className} dangerouslySetInnerHTML={{ __html: solarLogo }} />
@@ -33,6 +22,7 @@ function PackageMark({ logo }: { logo: PackageLogo }) {
 }
 
 export function InfoPanel({ openExternal }: InfoPanelProps) {
+    const { getSvg } = usePacks()
     return (
         <div className="info-scroll">
             <div className="info-identity">
@@ -43,22 +33,21 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                 </div>
             </div>
             <p className="info-description">
-                A maintained Solar Icons distribution with corrected geometry, consistent naming, and assets shared by
-                design and code.
+                The maintained Solar icon set, shared between Figma and code.
             </p>
             <button className="doc-button" type="button" onClick={() => openExternal('https://solar-icons.vercel.app')}>
                 <span>Open documentation</span>
-                <SolarSvg className="button-icon" name="arrow-right-up" aria-hidden="true" />
+                <SolarSvg className="button-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
             </button>
 
             <div className="package-section">
                 <h2 className="section-label">Packages</h2>
                 <div className="package-grid">
-                    {packages.map(item => (
+                    {embeddedRegistry.packages.map(item => (
                         <button
                             className="package-link"
                             type="button"
-                            key={item.name}
+                            key={item.package}
                             onClick={() => openExternal(`https://solar-icons.vercel.app/docs/v2/packages/${item.slug}`)}
                         >
                             <span className="package-logo" aria-hidden="true">
@@ -74,7 +63,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                     {catalogProvenance.logicalIconCount.toLocaleString()} icons · {catalogProvenance.styleCount} styles
                 </span>
                 <button className="text-link" type="button" onClick={() => openExternal('https://github.com/saoudi-h/solar-icons')}>
-                    GitHub <SolarSvg className="inline-icon" name="arrow-right-up" aria-hidden="true" />
+                    GitHub <SolarSvg className="inline-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
                 </button>
             </div>
         </div>

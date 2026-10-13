@@ -1,0 +1,23 @@
+---
+title: Codemod
+description: Conservative, opt-in migrations from Solar Icons v1 to v2.
+icon: babel
+---
+
+```bash
+npx @solar-icons/codemod --interactive
+```
+
+## Interactive assistant
+
+The interactive mode detects supported frameworks, asks for the React and Vue strategy when relevant, and requires confirmation before it writes files.
+
+## Scripted migrations
+
+Use arguments for scripts, CI, or repeatable migrations. The command previews changes unless `--write` is passed:
+
+```bash
+npx @solar-icons/codemod --react-v1-mode static --write
+```
+
+See [`@solar-icons/codemod`](https://www.npmjs.com/package/@solar-icons/codemod) for the full migration reference.

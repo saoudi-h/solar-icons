@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type UIEvent } from 'react'
 import type { IconMetadata } from '../data'
+import type { EnsureOptions } from '../packs'
 import { SolarSvg } from './SolarSvg'
 
 const MIN_CELL_WIDTH = 56
@@ -14,6 +15,13 @@ type IconBrowserProps = {
     selectionMode: boolean
     selected: Set<string>
     onIcon: (name: string) => void
+    getSvg: (name: string, style: string) => string | null
+    ensurePacks: (
+        style: string,
+        names: readonly string[],
+        options?: EnsureOptions
+    ) => void
+    unavailableMessage: string | null
 }
 
 export function IconBrowser({
@@ -24,12 +32,24 @@ export function IconBrowser({
     selectionMode,
     selected,
     onIcon,
+    getSvg,
+    ensurePacks,
+    unavailableMessage,
 }: IconBrowserProps) {
     const browserRef = useRef<HTMLElement>(null)
     const [scrollTop, setScrollTop] = useState(0)
     const [viewportHeight, setViewportHeight] = useState(450)
     const [columns, setColumns] = useState(5)
+    const [tooltip, setTooltip] = useState<{
+        name: string
+        x: number
+        y: number
+        below: boolean
+    } | null>(null)
     const scrollFrame = useRef<number | null>(null)
+    const batchRef = useRef(0)
+    const debounceRef = useRef<number | null>(null)
+    const lastStyle = useRef(styleName)
 
     useEffect(() => {
         const browser = browserRef.current
@@ -62,13 +82,55 @@ export function IconBrowser({
         }
     }, [columns, icons.length, scrollTop, viewportHeight])
 
+    useEffect(() => {
+        // Scroll fires per frame: wait for the viewport to settle before
+        // requesting, otherwise every frame spawns its own batch. A style
+        // switch fires immediately: the user explicitly asked for it.
+        const fire = () => {
+            batchRef.current += 1
+            ensurePacks(
+                styleName,
+                icons.slice(windowState.startIndex, windowState.endIndex).map(icon => icon.name),
+                { batchId: batchRef.current }
+            )
+        }
+        if (lastStyle.current !== styleName) {
+            lastStyle.current = styleName
+            if (debounceRef.current) {
+                clearTimeout(debounceRef.current)
+                debounceRef.current = null
+            }
+            fire()
+        } else {
+            if (debounceRef.current) clearTimeout(debounceRef.current)
+            debounceRef.current = window.setTimeout(fire, 250)
+        }
+        return () => {
+            if (debounceRef.current) {
+                clearTimeout(debounceRef.current)
+                debounceRef.current = null
+            }
+        }
+    }, [ensurePacks, icons, styleName, windowState.startIndex, windowState.endIndex])
+
     const handleScroll = (event: UIEvent<HTMLElement>) => {
+        setTooltip(null)
         if (scrollFrame.current !== null) return
         const nextScrollTop = event.currentTarget.scrollTop
         scrollFrame.current = requestAnimationFrame(() => {
             scrollFrame.current = null
             setScrollTop(nextScrollTop)
         })
+    }
+
+    const showTooltip = (name: string, element: HTMLElement) => {
+        const rect = element.getBoundingClientRect()
+        const below = rect.top < 40
+        const x = Math.min(
+            Math.max(rect.left + rect.width / 2, 44),
+            window.innerWidth - 44
+        )
+        setTooltip({ name, x, y: below ? rect.bottom + 6 : rect.top - 6, below })
     }
 
     const focusIcon = (index: number) => {
@@ -106,6 +168,14 @@ export function IconBrowser({
         )
     }
 
+    if (unavailableMessage) {
+        return (
+            <section ref={browserRef} className="browser" aria-label="Icon browser">
+                <div className="grid-message">{unavailableMessage}</div>
+            </section>
+        )
+    }
+
     return (
         <section ref={browserRef} className="browser" aria-label="Icon browser" onScroll={handleScroll}>
             <div className="grid-spacer" style={{ height: windowState.totalRows * CELL_HEIGHT }}>
@@ -119,23 +189,25 @@ export function IconBrowser({
                     {icons.slice(windowState.startIndex, windowState.endIndex).map((icon, offset) => {
                         const index = windowState.startIndex + offset
                         const isSelected = selected.has(icon.name)
+                        const svg = getSvg(icon.name, styleName)
                         const action = selectionMode ? 'Select' : 'Insert'
                         return (
                             <button
                                 type="button"
                                 className="icon-cell"
                                 key={icon.name}
-                                title={`${action} ${icon.name.replaceAll('-', ' ')}`}
                                 aria-label={`${action} ${icon.name.replaceAll('-', ' ')}, ${styleLabel}`}
                                 aria-pressed={isSelected}
                                 data-index={index}
+                                disabled={!svg}
                                 onClick={() => onIcon(icon.name)}
                                 onKeyDown={event => handleKeyDown(event, index)}
+                                onMouseEnter={event => showTooltip(icon.name, event.currentTarget)}
+                                onMouseLeave={() => setTooltip(null)}
                             >
                                 <SolarSvg
                                     className="icon-preview"
-                                    name={icon.name}
-                                    styleName={styleName}
+                                    svg={svg}
                                     style={
                                         strokeWidth === undefined
                                             ? undefined
@@ -147,6 +219,15 @@ export function IconBrowser({
                         )
                     })}
                 </div>
+                {tooltip ? (
+                    <div
+                        className={`icon-tooltip${tooltip.below ? ' below' : ''}`}
+                        style={{ left: tooltip.x, top: tooltip.y }}
+                        role="tooltip"
+                    >
+                        {tooltip.name}
+                    </div>
+                ) : null}
             </div>
         </section>
     )

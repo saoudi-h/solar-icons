@@ -1,0 +1,155 @@
+{
+    "packages": [
+        {
+            "name": "React",
+            "slug": "react",
+            "package": "@solar-icons/react",
+            "registry": "npm",
+            "path": "packages/react",
+            "logo": "devicon:react",
+            "summary": "React and TypeScript components",
+            "guide": "packages/react"
+        },
+        {
+            "name": "React Native",
+            "slug": "react-native",
+            "package": "@solar-icons/react-native",
+            "registry": "npm",
+            "path": "packages/react-native",
+            "logo": "devicon:react",
+            "summary": "React Native and Expo components",
+            "guide": "packages/react-native"
+        },
+        {
+            "name": "Flutter",
+            "slug": "flutter",
+            "package": "flutter_solar_icons",
+            "registry": "pub.dev",
+            "path": "packages/flutter",
+            "logo": "devicon:flutter",
+            "summary": "Flutter widgets",
+            "guide": "packages/flutter"
+        },
+        {
+            "name": "Vue",
+            "slug": "vue",
+            "package": "@solar-icons/vue",
+            "registry": "npm",
+            "path": "packages/vue",
+            "logo": "devicon:vuejs",
+            "summary": "Vue 3 components",
+            "guide": "packages/vue"
+        },
+        {
+            "name": "Nuxt",
+            "slug": "nuxt",
+            "package": "@solar-icons/nuxt",
+            "registry": "npm",
+            "path": "packages/nuxt",
+            "logo": "devicon:nuxtjs",
+            "summary": "Nuxt 3 module",
+            "guide": "packages/nuxt"
+        },
+        {
+            "name": "Svelte",
+            "slug": "svelte",
+            "package": "@solar-icons/svelte",
+            "registry": "npm",
+            "path": "packages/svelte",
+            "logo": "devicon:svelte",
+            "summary": "Svelte 5 components",
+            "guide": "packages/svelte"
+        },
+        {
+            "name": "Solid",
+            "slug": "solid",
+            "package": "@solar-icons/solid",
+            "registry": "npm",
+            "path": "packages/solid",
+            "logo": "devicon:solidjs",
+            "summary": "SolidJS components",
+            "guide": "packages/solid"
+        },
+        {
+            "name": "Angular",
+            "slug": "angular",
+            "package": "@solar-icons/angular",
+            "registry": "npm",
+            "path": "packages/angular",
+            "logo": "devicon:angular",
+            "summary": "Angular standalone components",
+            "guide": "packages/angular"
+        },
+        {
+            "name": "Laravel Blade",
+            "slug": "blade",
+            "package": "solar-icons/blade",
+            "registry": "packagist",
+            "external": true,
+            "logo": "devicon:laravel",
+            "summary": "Laravel Blade components",
+            "guide": "packages/blade"
+        },
+        {
+            "name": "Static",
+            "slug": "static",
+            "package": "@solar-icons/static",
+            "registry": "npm",
+            "path": "packages/static",
+            "logo": "vscode-icons:file-type-svg",
+            "summary": "SVG files, sprite, metadata, and ESM strings",
+            "guide": "packages/static"
+        },
+        {
+            "name": "JavaScript",
+            "slug": "js",
+            "package": "@solar-icons/js",
+            "registry": "npm",
+            "path": "packages/js",
+            "logo": "devicon:javascript",
+            "summary": "Vanilla JavaScript DOM injection",
+            "guide": "packages/js"
+        },
+        {
+            "name": "Codemod",
+            "slug": "codemod",
+            "package": "@solar-icons/codemod",
+            "registry": "npm",
+            "path": "packages/codemod",
+            "logo": "glyphs-poly:code",
+            "summary": "Opt-in migrations from v1 to v2",
+            "guide": "migration-to-v2/codemod"
+        },
+        {
+            "name": "CLI",
+            "slug": "cli",
+            "package": "@solar-icons/cli",
+            "registry": "npm",
+            "path": "packages/cli",
+            "logo": "grommet-icons:cli",
+            "summary": "Search, inspect, and export icons from the terminal",
+            "guide": "ai-tools#cli"
+        },
+        {
+            "name": "MCP",
+            "slug": "mcp",
+            "package": "@solar-icons/mcp",
+            "registry": "npm",
+            "path": "packages/mcp",
+            "logo": "vscode-icons:file-type-mcp",
+            "summary": "Search and retrieve icons through MCP",
+            "guide": "ai-tools#mcp"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Agent skill",
+            "slug": "solar-icons",
+            "registry": "skills.sh",
+            "package": "saoudi-h/solar-icons",
+            "path": "skills/solar-icons",
+            "guide": "ai-tools#skills",
+            "summary": "Solar Icons guidance for AI coding agents"
+        }
+    ]
+}

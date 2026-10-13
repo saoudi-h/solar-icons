@@ -1,0 +1,23 @@
+---
+title: MCP
+description: Solar Icons MCP server exposing search, get, list, info, and overview tools to MCP-compatible clients.
+icon: vscode-icons:file-type-mcp
+---
+
+```json
+// .vscode/mcp.json, claude_desktop_config.json, etc.
+{
+    "mcpServers": {
+        "solar-icons": {
+            "command": "npx",
+            "args": ["-y", "@solar-icons/mcp"]
+        }
+    }
+}
+```
+
+## Tools
+
+The server exposes `solar_*` tools for search, get, list, info, and overview through the Model Context Protocol. All tools use `@solar-icons/static` as their source of truth, so no network is required beyond the `npx` install.
+
+See [`@solar-icons/mcp`](https://www.npmjs.com/package/@solar-icons/mcp) for the full tool reference.

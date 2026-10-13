@@ -13,17 +13,27 @@ const staticRoot = path.join(repositoryRoot, 'packages/static')
 const outputDirectory = path.join(pluginRoot, 'dist')
 const temporaryUiDirectory = path.join(outputDirectory, '.ui-build')
 
+/** Byte budget for the embedded pack data, inside the bundle guard. */
+const EMBED_DATA_BUDGET = 12.5 * 1024 * 1024
+
 const icons = fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8')
 const metadata = fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
 const staticPackage = JSON.parse(fs.readFileSync(path.join(staticRoot, 'package.json'), 'utf8'))
+const registry = JSON.parse(fs.readFileSync(path.join(repositoryRoot, 'registry.json'), 'utf8'))
+const embeddedChunks = readEmbeddedChunks()
 const catalogProvenance = buildCatalogProvenance({
     icons,
     metadata,
     packageVersion: staticPackage.version,
 })
-const packageLogos = createPackageLogos()
+const packageLogos = createPackageLogos(registry)
 
-const embeddedData = [icons, metadata, JSON.stringify(catalogProvenance)]
+const embeddedData = [
+    embeddedChunks.json,
+    JSON.stringify(registry),
+    metadata,
+    JSON.stringify(catalogProvenance),
+]
 if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     throw new Error(
         'Embedded icon data contains a closing script tag and cannot be safely inlined.'
@@ -45,7 +55,8 @@ html = inlineBuildAsset(
 html = inlineBuildAsset(html, 'style', /<link rel="stylesheet" crossorigin href="([^"]+)">/)
 html = html
     .replace('__SOLAR_VERSION_VALUE__', staticPackage.version)
-    .replace('__SOLAR_ICON_DATA__', icons)
+    .replace('__SOLAR_ICON_DATA__', embeddedChunks.json)
+    .replace('__SOLAR_REGISTRY__', JSON.stringify(registry))
     .replace('__SOLAR_ICON_METADATA__', metadata)
     .replace('__SOLAR_CATALOG_PROVENANCE__', JSON.stringify(catalogProvenance))
     .replace('__SOLAR_PACKAGE_LOGOS__', JSON.stringify(packageLogos))
@@ -53,6 +64,7 @@ html = html
 const remainingPlaceholders = [
     '__SOLAR_VERSION_VALUE__',
     '__SOLAR_ICON_DATA__',
+    '__SOLAR_REGISTRY__',
     '__SOLAR_ICON_METADATA__',
     '__SOLAR_CATALOG_PROVENANCE__',
     '__SOLAR_PACKAGE_LOGOS__',
@@ -67,13 +79,101 @@ if (remainingPlaceholders.length > 0) {
 fs.writeFileSync(path.join(outputDirectory, 'ui.html'), html)
 fs.rmSync(temporaryUiDirectory, { recursive: true, force: true })
 
+const BUNDLE_LIMIT = 13.5 * 1024 * 1024
+if (html.length > BUNDLE_LIMIT) {
+    throw new Error(
+        `Figma bundle is ${(html.length / 1024 / 1024).toFixed(2)} MiB, over the ${(BUNDLE_LIMIT / 1024 / 1024).toFixed(1)} MiB guard (Figma rejects over 15 MiB). Shrink the bundle before publishing.`
+    )
+}
+
 const compressedSize = zlib.gzipSync(html).byteLength
 console.info(
-    `Built Solar Icons Figma plugin: ${catalogProvenance.logicalIconCount} icons × ${catalogProvenance.styleCount} styles, ${catalogProvenance.catalogHash}, ${(html.length / 1024 / 1024).toFixed(2)} MiB raw, ${(compressedSize / 1024 / 1024).toFixed(2)} MiB gzip.`
+    `Built Solar Icons Figma plugin: ${catalogProvenance.logicalIconCount} icons × ${catalogProvenance.styleCount} styles, ${catalogProvenance.catalogHash}, ${(html.length / 1024 / 1024).toFixed(2)} MiB raw, ${(compressedSize / 1024 / 1024).toFixed(2)} MiB gzip, ${embeddedChunks.entries}/${catalogProvenance.canonicalSvgCount} SVG entries embedded.`
 )
 
-async function buildMain() {
-    await esbuild({
+/**
+ * Embedded pack data for the offline bundle, derived from the
+ * published-shape `dist/icons.json` map and nested as
+ * `{ [style]: { [category]: { [name]: body } } }`. Bodies are
+ * whitespace-collapsed only. Linear always ships whole: it is the
+ * offline guarantee. The other styles embed in display order
+ * until the data budget is spent; the runtime fetches the
+ * remaining chunks from the jsDelivr CDN at launch, so the
+ * bundle never grows past the Figma limit as the catalog does.
+ */
+function readEmbeddedChunks() {
+    const map = JSON.parse(fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8'))
+    const descriptions = JSON.parse(
+        fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
+    )
+    const categoryOf = {}
+    const displayCategories = []
+    for (const entry of descriptions) {
+        categoryOf[entry.name] = entry.category
+        if (!displayCategories.includes(entry.category)) {
+            displayCategories.push(entry.category)
+        }
+    }
+    const byStyle = {}
+    for (const [key, svg] of Object.entries(map)) {
+        const match = key.match(/^(.*)-(bold-duotone|line-duotone|bold|broken|linear|outline)$/)
+        if (!match) continue
+        const name = match[1]
+        const style = match[2]
+        // Alias keys (e.g. chat-square-2-linear) have no metadata
+        // entry and are never browsed: the UI resolves canonical
+        // names only.
+        const category = categoryOf[name]
+        if (!category) continue
+        byStyle[style] = byStyle[style] || {}
+        byStyle[style][category] = byStyle[style][category] || {}
+        byStyle[style][category][name] = svg
+            .replace(/^<svg[^>]*>/, '')
+            .replace(/<\/svg>$/, '')
+            .replace(/>\s+</g, '><')
+            .trim()
+    }
+    if (Object.keys(byStyle.linear ?? {}).length === 0) {
+        throw new Error('No linear icons found in dist/icons.json.')
+    }
+    const embedded = { linear: byStyle.linear }
+    let bytes = JSON.stringify(embedded).length
+    // Greedy fill in display order: a category embeds across the
+    // fetched styles before the next category, so the first
+    // browsed icons are always the ones shipped in the bundle.
+    const fetchedStyles = Object.keys(byStyle)
+        .filter(style => style !== 'linear')
+        .sort()
+    for (const category of displayCategories) {
+        for (const style of fetchedStyles) {
+            const chunk = byStyle[style]?.[category]
+            if (!chunk) continue
+            const cost = JSON.stringify(chunk).length
+            if (bytes + cost > EMBED_DATA_BUDGET) continue
+            embedded[style] = embedded[style] || {}
+            embedded[style][category] = chunk
+            bytes += cost
+        }
+    }
+    const json = JSON.stringify(embedded)
+    if (json.length > EMBED_DATA_BUDGET) {
+        throw new Error(
+            `Embedded pack data is ${(json.length / 1024 / 1024).toFixed(2)} MiB, over the ${(EMBED_DATA_BUDGET / 1024 / 1024).toFixed(1)} MiB budget.`
+        )
+    }
+    const entries = Object.values(embedded).reduce(
+        (sum, categories) =>
+            sum +
+            Object.values(categories).reduce(
+                (categorySum, names) => categorySum + Object.keys(names).length,
+                0
+            ),
+        0
+    )
+    return { json, entries }
+}
+
+async function buildMain() {    await esbuild({
         entryPoints: [path.join(pluginRoot, 'src/main/index.ts')],
         outfile: path.join(outputDirectory, 'code.js'),
         bundle: true,
@@ -121,29 +221,29 @@ function inlineBuildAsset(source, type, pattern) {
     return source.replace(match[0], () => inline)
 }
 
-function createPackageLogos() {
-    const devicon = JSON.parse(
-        fs.readFileSync(
-            path.join(pluginRoot, 'node_modules/@iconify-json/devicon/icons.json'),
-            'utf8'
-        )
-    )
-    const vscodeIcons = JSON.parse(
-        fs.readFileSync(
-            path.join(pluginRoot, 'node_modules/@iconify-json/vscode-icons/icons.json'),
-            'utf8'
-        )
-    )
+function createPackageLogos(registry) {
+    const collections = {}
+    const logos = {}
+    for (const entry of registry.packages) {
+        const [set, icon] = entry.logo.split(':')
+        collections[set] ??= loadIconCollection(set)
+        logos[entry.logo] = pickIconifyIcon(collections[set], icon)
+    }
+    return logos
+}
 
-    return {
-        javascript: pickIconifyIcon(devicon, 'javascript'),
-        react: pickIconifyIcon(devicon, 'react'),
-        vue: pickIconifyIcon(devicon, 'vuejs'),
-        nuxt: pickIconifyIcon(devicon, 'nuxtjs'),
-        svelte: pickIconifyIcon(devicon, 'svelte'),
-        solid: pickIconifyIcon(devicon, 'solidjs'),
-        angular: pickIconifyIcon(devicon, 'angular'),
-        static: pickIconifyIcon(vscodeIcons, 'file-type-svg'),
+function loadIconCollection(set) {
+    try {
+        return JSON.parse(
+            fs.readFileSync(
+                path.join(pluginRoot, `node_modules/@iconify-json/${set}/icons.json`),
+                'utf8'
+            )
+        )
+    } catch {
+        throw new Error(
+            `The Iconify set "${set}" is not installed: run pnpm add -D @iconify-json/${set} in packages/figma-plugin.`
+        )
     }
 }
 

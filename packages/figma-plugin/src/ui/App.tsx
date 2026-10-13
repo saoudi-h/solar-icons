@@ -1,5 +1,5 @@
 import { Tabs } from '@base-ui/react/tabs'
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import type { MainMessage, PluginSettings, ThemeMode, UiMessage } from '../shared/messages'
 import { DEFAULT_SETTINGS } from '../shared/messages'
 import { AppSelect, type SelectOption } from './components/AppSelect'
@@ -8,11 +8,19 @@ import { IconBrowser } from './components/IconBrowser'
 import { InfoPanel } from './components/InfoPanel'
 import { ResizeHandles } from './components/ResizeHandles'
 import { SolarSvg } from './components/SolarSvg'
-import { iconData, icons } from './data'
+import { icons, catalogProvenance, embeddedStyles } from './data'
 import { createIconSearch, searchIcons } from './search'
+import { PackProvider, usePacks } from './packs'
+import { EMBEDDED_STYLE, PACK_STYLES } from '../shared/packs'
 
 type Tab = 'icons' | 'settings' | 'info'
 type StatusKind = 'error' | 'success' | undefined
+
+/** Solar icon for each tab, shown next to its label. */
+const TAB_ICONS = { icons: 'grid-2x2', settings: 'settings', info: 'info-circle' } as const
+
+/** Styles fetched from the CDN: everything but the embedded one. */
+const RUNTIME_STYLES = PACK_STYLES.filter(style => style !== EMBEDDED_STYLE)
 
 const STYLE_OPTIONS = [
     { label: 'Linear', value: 'linear', editable: true },
@@ -40,6 +48,22 @@ function postMessage(message: UiMessage): void {
 }
 
 export function App() {
+    const categoryOf = useMemo(() => {
+        const index = new Map(icons.map(icon => [icon.name, icon.category] as const))
+        return (name: string): string | undefined => index.get(name)
+    }, [])
+    return (
+        <PackProvider
+            version={catalogProvenance.packageVersion}
+            embeddedStyles={embeddedStyles}
+            categoryOf={categoryOf}
+        >
+            <AppShell />
+        </PackProvider>
+    )
+}
+
+function AppShell() {
     const [tab, setTab] = useState<Tab>('icons')
     const [query, setQuery] = useState('')
     const deferredQuery = useDeferredValue(query)
@@ -59,6 +83,51 @@ export function App() {
         [category, deferredQuery, fuse]
     )
     const selectionMode = settings.insertionMode === 'selection'
+    const {
+        getSvg,
+        ensurePacks,
+        pendingStyles,
+        pendingChunks,
+        failedStyle,
+        failedOffline,
+        hasStyle,
+        downloadProgress,
+        downloadComplete,
+    } = usePacks()
+    const launched = useRef(false)
+
+    useEffect(() => {
+        // Download every non-embedded style once, up front: Linear
+        // renders instantly from the bundle while the rest fills the
+        // session cache in the background. Bounded fetch slots, one
+        // request per chunk, deduplicated with on-demand requests,
+        // so this runs exactly once per version.
+        if (launched.current) return
+        launched.current = true
+        const names = icons.map(icon => icon.name)
+        for (const style of RUNTIME_STYLES) {
+            ensurePacks(style, names, { background: true })
+        }
+    }, [ensurePacks])
+
+    const stylePending = pendingStyles.includes(styleName)
+    const styleFailed = failedStyle === styleName && !hasStyle(styleName)
+    const bulkPending = !downloadComplete && pendingChunks > 0
+    const displayStatus = styleFailed
+        ? {
+              message: failedOffline
+                  ? `Couldn't download ${activeStyle.label} icons. Connect once to fetch them; Linear works offline.`
+                  : `${activeStyle.label} icons failed to load. Switching style retries.`,
+              kind: 'error' as const,
+          }
+        : stylePending && !hasStyle(styleName)
+          ? { message: `Downloading ${activeStyle.label} icons…`, kind: undefined }
+          : bulkPending
+            ? {
+                  message: `Downloading all styles… ${Math.round(downloadProgress * 100)}%`,
+                  kind: undefined,
+              }
+            : status
 
     useEffect(() => {
         const handleMessage = (event: MessageEvent<{ pluginMessage?: MainMessage }>) => {
@@ -114,7 +183,9 @@ export function App() {
             return
         }
 
-        const items = names.map(name => ({ name, svg: iconData[`${name}-${styleName}`] })).filter(item => item.svg)
+        const items = names
+            .map(name => ({ name, svg: getSvg(name, styleName) ?? '' }))
+            .filter(item => item.svg)
         setInsertionPending(true)
         setStatus({
             message: names.length === 1 ? `Inserting ${titleCase(names[0])}…` : `Inserting ${names.length} icons…`,
@@ -165,6 +236,11 @@ export function App() {
                         key={item}
                         value={item}
                     >
+                        <SolarSvg
+                            className="tab-icon"
+                            svg={getSvg(TAB_ICONS[item], 'linear')}
+                            aria-hidden="true"
+                        />
                         {titleCase(item)}
                     </Tabs.Tab>
                 ))}
@@ -173,7 +249,11 @@ export function App() {
             <Tabs.Panel value="icons" className="panel">
                 <div className="toolbar">
                     <div className="search-row">
-                        <SolarSvg className="search-icon" name="minimalistic-magnifier" aria-hidden="true" />
+                        <SolarSvg
+                            className="search-icon"
+                            svg={getSvg('minimalistic-magnifier', 'linear')}
+                            aria-hidden="true"
+                        />
                         <input
                             className="search-input"
                             type="search"
@@ -209,6 +289,13 @@ export function App() {
                     selectionMode={selectionMode}
                     selected={selected}
                     onIcon={handleIcon}
+                    getSvg={getSvg}
+                    ensurePacks={ensurePacks}
+                    unavailableMessage={
+                        styleFailed
+                            ? `${activeStyle.label} icons need one download. Connect to fetch them.`
+                            : null
+                    }
                 />
 
                 <div className="bottom-bar">
@@ -226,32 +313,83 @@ export function App() {
                             </button>
                         </div>
                     ) : (
-                        <div className={`status ${status.kind ?? ''}`} role="status">{status.message}</div>
+                        <div className={`status ${displayStatus.kind ?? ''}`} role="status">{displayStatus.message}</div>
                     )}
                 </div>
             </Tabs.Panel>
 
             <Tabs.Panel value="settings" className="panel">
                 <div className="settings-scroll">
-                    <h2 className="section-label">Insertion</h2>
-                    <div className="mode-control" role="group" aria-label="Insertion behavior">
-                        <ModeButton active={settings.insertionMode === 'instant'} title="Insert on click" description="One click adds the icon" onClick={() => setInsertionMode('instant')} />
-                        <ModeButton active={settings.insertionMode === 'selection'} title="Select first" description="Choose one or more icons" onClick={() => setInsertionMode('selection')} />
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('cursor', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Insertion
+                    </h2>
+                    <div className="segmented" role="group" aria-label="Insertion behavior">
+                        <button
+                            className="segment"
+                            type="button"
+                            aria-pressed={settings.insertionMode === 'instant'}
+                            onClick={() => setInsertionMode('instant')}
+                        >
+                            Insert on click
+                        </button>
+                        <button
+                            className="segment"
+                            type="button"
+                            aria-pressed={settings.insertionMode === 'selection'}
+                            onClick={() => setInsertionMode('selection')}
+                        >
+                            Select first
+                        </button>
                     </div>
 
-                    <h2 className="section-label">Appearance</h2>
-                    <div className="mode-control theme-control" role="group" aria-label="Plugin theme">
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('palette', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Appearance
+                    </h2>
+                    <div className="segmented" role="group" aria-label="Plugin theme">
                         {([
-                            ['system', 'System', 'Follow Figma'],
-                            ['light', 'Light', 'Force light'],
-                            ['dark', 'Dark', 'Force dark'],
-                        ] as const).map(([value, title, description]) => (
-                            <ModeButton key={value} active={settings.theme === value} title={title} description={description} onClick={() => saveSettings({ ...settings, theme: value as ThemeMode })} />
+                            ['system', 'System', 'monitor'],
+                            ['light', 'Light', 'sun'],
+                            ['dark', 'Dark', 'moon'],
+                        ] as const).map(([value, title, icon]) => (
+                            <button
+                                className="segment"
+                                type="button"
+                                key={value}
+                                aria-pressed={settings.theme === value}
+                                onClick={() => saveSettings({ ...settings, theme: value as ThemeMode })}
+                            >
+                                <SolarSvg
+                                    className="segment-icon"
+                                    svg={getSvg(icon, 'linear')}
+                                    aria-hidden="true"
+                                />
+                                {title}
+                            </button>
                         ))}
                     </div>
 
-                    <h2 className="section-label">Geometry</h2>
-                    <div className="geometry-controls">
+                    <h2 className="section-label">
+                        <SolarSvg
+                            className="section-icon"
+                            svg={getSvg('slider-horizontal', 'linear')}
+                            aria-hidden="true"
+                        />
+                        Geometry
+                    </h2>
+                    <div className="setting-row">
+                        <div className="setting-copy">
+                            <span className="setting-title">Size</span>
+                        </div>
                         <GeometryControl
                             label="Size"
                             description="Size on the Figma canvas"
@@ -263,6 +401,11 @@ export function App() {
                             onChange={iconSize => setSettings(current => ({ ...current, iconSize }))}
                             onCommit={iconSize => commitSetting('iconSize', iconSize)}
                         />
+                    </div>
+                    <div className="setting-row">
+                        <div className="setting-copy">
+                            <span className="setting-title">Stroke</span>
+                        </div>
                         <GeometryControl
                             label="Stroke"
                             description="Linear, Broken, and Line Duotone"
@@ -288,15 +431,5 @@ export function App() {
             </Tabs.Panel>
             <ResizeHandles />
         </Tabs.Root>
-    )
-}
-
-type ModeButtonProps = { active: boolean; title: string; description: string; onClick: () => void }
-
-function ModeButton({ active, title, description, onClick }: ModeButtonProps) {
-    return (
-        <button className="mode-button" type="button" aria-pressed={active} onClick={onClick}>
-            <strong>{title}</strong><span>{description}</span>
-        </button>
     )
 }
