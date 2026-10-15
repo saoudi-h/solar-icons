@@ -490,8 +490,8 @@ importers:
         version: 19.3.0(react@19.3.0)
     devDependencies:
       '@iconify-json/lucide':
-        specifier: 1.2.136
-        version: 1.2.136
+        specifier: 1.2.143
+        version: 1.2.143
       '@tailwindcss/postcss':
         specifier: ^4.3.3
         version: 4.3.3
@@ -1379,6 +1379,7 @@ packages:
   '@angular-devkit/build-angular@22.2.0':
     resolution: {integrity: sha512-syOm4RmTeFOwhBGJiDr8ZEAFyzXXXPMg7TcXFcBPuaz/Mu7xGMb4CPeEztbVpa6JsZFJU2SPOOI3ZEtidH7RJA==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+    deprecated: Angular's Webpack support is deprecated. Use the esbuild and Vite-based "@angular/build" package instead.
     peerDependencies:
       '@angular/compiler-cli': ^22.0.0
       '@angular/core': ^22.0.0
@@ -3685,8 +3686,8 @@ packages:
   '@iconify-json/grommet-icons@1.2.4':
     resolution: {integrity: sha512-Muj6ViEbR235PWxDe3oM3AFVG4BtaeIihfJPhQiHWPShy24MAscq02+T1IFwIMy0MoTw+V71p5EbNa69xF7SmA==}
 
-  '@iconify-json/lucide@1.2.136':
-    resolution: {integrity: sha512-Wk+OeDVKkw+1LELZqRR3gXWIy5jNx5XjNMvVc9KoygJYmGqclv36FYqseRuJuxBIKDggdoZWNBxNRrOkiRbtwQ==}
+  '@iconify-json/lucide@1.2.143':
+    resolution: {integrity: sha512-YSggiBVmSY5IvLoKS5pUBoNYkon5g5bac0/JvYCIaFbhTfsTfkIHG2nCXWSk03tu5C4IEmyZ4qwfwbO9CXqLag==}
 
   '@iconify-json/vscode-icons@1.2.81':
     resolution: {integrity: sha512-ES/vVycj4IVC7TK8t+9T4Gnca9p/GbuL8A2Va+xWi01HGpyRCrXdRvKAUE8VcQbTkZsfy6Fv0L6TXq9eFj5+Yw==}
@@ -4643,6 +4644,7 @@ packages:
   '@ngtools/webpack@22.2.0':
     resolution: {integrity: sha512-p71fd66PAkPGQCxYuaxFFSGPUOGdLsE3af/yXAMshUE6+XJyJp7RIOYoyu1dLuAOjrYpua+lqj/yl/ldOVu+Jg==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+    deprecated: Angular's Webpack support is deprecated. Use the esbuild and Vite-based "@angular/build" package instead.
     peerDependencies:
       '@angular/compiler-cli': ^22.0.0
       typescript: '>=6.0 <6.1'
@@ -17941,7 +17943,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.136':
+  '@iconify-json/lucide@1.2.143':
     dependencies:
       '@iconify/types': 2.0.0
 
