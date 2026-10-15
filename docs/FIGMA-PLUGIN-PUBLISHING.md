@@ -95,6 +95,23 @@ with a public reasoning string. Review the scope before publishing: it must neve
 widen beyond versioned Solar assets, and pack downloads must never fetch a newer
 catalogue than the embedded version.
 
+## Listing sources: repo first, agent-assisted
+
+The tagline (`packages/figma-plugin/community/listing-tagline.txt`) and the
+description (`packages/figma-plugin/community/listing-description.md`) are the
+only sources for the Community listing text. Nothing is pasted from memory.
+
+The work splits by nature, not by effort:
+
+- **Programmatic (enforced):** `pnpm check:listing` verifies the exact icon
+  count, every style name, every registry package name, the absence of stale
+  figures and absolute offline promises, and the manifest network scope.
+  What can be checked is checked; it must be green before pasting.
+- **Judgment (human):** tone, emphasis, and new-package blurbs. When facts
+  change, the agent drafts the new wording in these files, the guard checks
+  the facts, and the maintainer validates the prose. Then paste verbatim at
+  step 4.
+
 ## 4. Publish from Figma Desktop
 
 Figma's current flow for an existing published classic plugin is:
@@ -108,15 +125,29 @@ Figma's current flow for an existing published classic plugin is:
 6. Review the **Publish plugin** modal. Keep the existing listing information
    unless the current name, description, tags, artwork, or security information
    needs updating.
-7. Paste the Community description from
-   `packages/figma-plugin/community/listing-description.md`. Update that file
-   first if any user-facing fact changed (especially the icon count, which
-   `pnpm check:icon-inventory` enforces), then paste verbatim.
+7. Paste the tagline from `packages/figma-plugin/community/listing-tagline.txt`
+   and the description from
+   `packages/figma-plugin/community/listing-description.md`. Update those files
+   first if any user-facing fact changed (see "Listing sources" below), then
+   paste verbatim.
 8. Upload the generated assets when the modal asks for icons and screenshots:
    `community/dist/plugin-icon-128.png` and the four 1920x1080 images.
-9. If Figma shows an optional release-notes field, use it if useful, but do not
-   treat it as the repository's version history.
-10. Click **Publish**.
+9. At the **Data security** step, give these answers (they match the manifest
+   scope and the plugin's actual behavior):
+   - Q1 backend service: **No, I do not host a backend service.** jsDelivr is
+     a public CDN, not our backend; we host nothing.
+   - Q2 network requests: check only **static assets** (versioned icon SVG
+     chunks from `cdn.jsdelivr.net`; no Figma API data is ever included).
+     Never check "does not make any network requests": the versioned
+     download path exists for catalogue overflow even when the current
+     bundle needs no download.
+   - Q3 authentication: **No authentication.**
+   - Q4 stored data: **No Figma-API-derived data stored.** `clientStorage`
+     holds icon chunks from the CDN and user settings only.
+   - Q5 updates: **solo developer** (the maintainer).
+10. If Figma shows an optional release-notes field, use it if useful, but do not
+    treat it as the repository's version history.
+11. Click **Publish**.
 
 The final **Publish** action is an external publication side effect. An agent may
 prepare the artifact, open the relevant flow, and guide the maintainer, but must
@@ -165,7 +196,9 @@ SVG map entries: N (including deprecated aliases)
 Catalogue hash: sha256:...
 Bundle: X.XX MiB raw, X.XX MiB gzip
 Registry: N packages, N skill(s)
+Community tagline changed: yes/no
 Community description changed: yes/no
 Community artwork changed: yes/no
+Data security answers changed: yes/no
 Maintainer smoke test: passed/failed
 ```
