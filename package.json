@@ -19,6 +19,7 @@
         "check:figma-catalog": "pnpm --filter @solar-icons/static build && pnpm --filter @solar-icons/figma-plugin build && pnpm --filter @solar-icons/figma-plugin check:catalog",
         "check:icon-inventory": "tsx scripts/check-icon-inventory.ts --check-generated --check-docs",
         "check:registry": "tsx scripts/check-registry.ts",
+        "check:listing": "tsx scripts/check-listing.ts",
         "check:skill-counts": "tsx scripts/check-skill-counts.ts",
         "generate:test-catalogs": "tsx scripts/generate-test-app-icon-lists.ts",
         "prepare:visual-package": "tsx scripts/prepare-visual-package.ts",
