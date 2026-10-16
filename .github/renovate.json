@@ -4,11 +4,18 @@
     "automergeType": "pr",
     "timezone": "Europe/Paris",
     "schedule": ["before 2am"],
+    "minimumReleaseAge": "7 days",
     "packageRules": [
         {
             "groupName": "all major dependencies",
             "groupSlug": "all-major",
             "matchUpdateTypes": ["major"],
+            "matchPackageNames": ["*"]
+        },
+        {
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-non-major",
+            "matchUpdateTypes": ["minor", "patch"],
             "matchPackageNames": ["*"]
         }
     ]
