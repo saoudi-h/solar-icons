@@ -1,5 +1,11 @@
 # @solar-icons/angular
 
+## 2.3.3
+
+### Patch Changes
+
+- [#590](https://github.com/saoudi-h/solar-icons/pull/590) [`48ed3a5`](https://github.com/saoudi-h/solar-icons/commit/48ed3a552b0968f0401adaca9ebf048c40f510ef) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Validate the npm OIDC trusted publishing configuration in the release workflow. No functional change.
+
 ## 2.3.2
 
 ### Patch Changes

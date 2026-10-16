@@ -1,5 +1,13 @@
 # @solar-icons/mcp
 
+## 2.4.1
+
+### Patch Changes
+
+- [#590](https://github.com/saoudi-h/solar-icons/pull/590) [`48ed3a5`](https://github.com/saoudi-h/solar-icons/commit/48ed3a552b0968f0401adaca9ebf048c40f510ef) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Validate the npm OIDC trusted publishing configuration in the release workflow. No functional change.
+- Updated dependencies [[`48ed3a5`](https://github.com/saoudi-h/solar-icons/commit/48ed3a552b0968f0401adaca9ebf048c40f510ef)]:
+  - @solar-icons/cli@2.6.1
+
 ## 2.4.0
 
 ### Minor Changes
