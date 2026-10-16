@@ -84,6 +84,11 @@ php artisan vendor:publish --tag=solar-icons-blade --force
 <img src="{{ asset('vendor/solar-icons-blade/linear-heart.svg') }}" width="10" height="10" />
 ```
 
+These files are normalized for framework use: like the components, they ship
+without a baked `stroke-width`, so a standalone `<img>` renders with the SVG
+default stroke width. Prefer the components, or `@solar-icons/static` when you
+need the raw artwork with its own defaults.
+
 ## Configuration
 
 Publish the config file to set default classes or attributes applied to every icon:
