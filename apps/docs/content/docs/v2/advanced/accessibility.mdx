@@ -8,11 +8,11 @@ Solar Icons renders `<svg>` elements with sensible defaults and provides props f
 
 ## Default behavior
 
-Every icon is **decorative by default**. If you do not pass an accessibility label, the SVG renders with `aria-hidden="true"` and `role="img"`. Screen readers skip it.
+Every icon is **decorative by default**. If you do not pass an accessibility label, the SVG renders with `aria-hidden="true"`. Screen readers skip it.
 
 ```jsx
 <HeartIcon color="#ef4444" size={24} />
-// Renders: <svg aria-hidden="true" role="img" ...>
+// Renders: <svg aria-hidden="true" ...>
 ```
 
 This matches the [WAI-ARIA recommendation](https://www.w3.org/WAI/tutorials/images/decorative/) for decorative images.
@@ -23,7 +23,7 @@ Pass `alt` to turn the icon into a meaningful element. The SVG gets a `<title>` 
 
 ```jsx
 <HeartIcon alt="Add to favorites" color="#ef4444" />
-// Renders: <svg role="img"><title>Add to favorites</title>...</svg>
+// Renders: <svg><title>Add to favorites</title>...</svg>
 ```
 
 Screen readers announce "Add to favorites, image".
