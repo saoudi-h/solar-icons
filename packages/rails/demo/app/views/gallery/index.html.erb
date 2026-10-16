@@ -1,0 +1,113 @@
+<h1>Solar Icons · <span id="style_name"><%= @style %></span> (<span id="count"><%= @icons.size %> / 1451</span>)</h1>
+<nav>
+    <% GalleryController::STYLES.each do |style| %>
+        <button type="button" data-style="<%= style %>" aria-pressed="<%= style == @style %>"><%= style %></button>
+    <% end %>
+</nav>
+<div class="toolbar">
+    <label>
+        Search
+        <input type="search" id="q" value="<%= params[:q] %>" placeholder="arrow right…" autocomplete="off" />
+    </label>
+    <label>
+        Color
+        <input type="color" id="color" value="<%= @color %>" />
+        <input type="text" id="color_text" value="<%= @color %>" size="8" spellcheck="false" />
+    </label>
+    <label>
+        Secondary
+        <input type="color" id="secondary_color" value="<%= @secondary_color %>" <%= "disabled" unless @duotone %> />
+    </label>
+    <label>
+        Secondary opacity: <output id="secondary_opacity_out"><%= @secondary_opacity %>%</output>
+        <input type="range" id="secondary_opacity" min="5" max="100" step="5" value="<%= @secondary_opacity %>" <%= "disabled" unless @duotone %> />
+    </label>
+    <label>
+        Size: <output id="size_out"><%= @size %>px</output>
+        <input type="range" id="size" min="16" max="64" value="<%= @size %>" />
+    </label>
+    <label>
+        Stroke: <output id="stroke_out"><%= @stroke %></output>
+        <input type="range" id="stroke" min="0.5" max="4" step="0.1" value="<%= @stroke %>" <%= "disabled" unless @stroke_enabled %> />
+    </label>
+</div>
+<div class="grid gallery" id="gallery" style="--icon-size: <%= @size %>px; --icon-color: <%= @color %>; --icon-stroke: <%= @stroke %>; --solar-secondary-color: <%= @secondary_color %>; --solar-secondary-opacity: <%= @secondary_opacity / 100.0 %>;">
+    <% @icons.each do |name| %>
+        <div class="cell" data-name="<%= name %>" title="<%= name %>"><span class="preview"><%= solar_icon(name, weight: @style) %></span><span><%= name %></span></div>
+    <% end %>
+</div>
+<script>
+    (() => {
+        const STROKE_STYLES = ['linear', 'broken', 'line-duotone']
+        const DUOTONE_STYLES = ['line-duotone', 'bold-duotone']
+        const gallery = document.getElementById('gallery')
+        const cells = [...gallery.querySelectorAll('.cell')]
+        const count = document.getElementById('count')
+        const styleName = document.getElementById('style_name')
+        const params = new URLSearchParams(location.search)
+        const cache = {}
+        let style = document.querySelector('nav button[aria-pressed="true"]').dataset.style
+        const setVar = (name, value) => gallery.style.setProperty(name, value)
+        const sync = () => history.replaceState(null, '', `${location.pathname}?${params}`)
+        const put = (key, value) => { value ? params.set(key, value) : params.delete(key); sync() }
+
+        const applySearch = term => {
+            term = term.trim().toLowerCase()
+            let visible = 0
+            for (const cell of cells) {
+                const show = cell.dataset.name.includes(term)
+                cell.style.display = show ? '' : 'none'
+                if (show) visible++
+            }
+            count.textContent = `${visible} / 1451`
+        }
+        const q = document.getElementById('q')
+        q.addEventListener('input', () => { applySearch(q.value); put('q', q.value.trim()) })
+
+        const color = document.getElementById('color')
+        const colorText = document.getElementById('color_text')
+        color.addEventListener('input', () => { colorText.value = color.value; setVar('--icon-color', color.value); put('color', color.value) })
+        colorText.addEventListener('input', () => { setVar('--icon-color', colorText.value); put('color_text', colorText.value); if (/^#[0-9a-f]{6}$/i.test(colorText.value)) color.value = colorText.value })
+
+        const secondaryColor = document.getElementById('secondary_color')
+        secondaryColor.addEventListener('input', () => { setVar('--solar-secondary-color', secondaryColor.value); put('secondary_color', secondaryColor.value) })
+
+        const secondaryOpacity = document.getElementById('secondary_opacity')
+        const secondaryOpacityOut = document.getElementById('secondary_opacity_out')
+        secondaryOpacity.addEventListener('input', () => { secondaryOpacityOut.textContent = `${secondaryOpacity.value}%`; setVar('--solar-secondary-opacity', secondaryOpacity.value / 100); put('secondary_opacity', secondaryOpacity.value) })
+
+        const size = document.getElementById('size')
+        const sizeOut = document.getElementById('size_out')
+        size.addEventListener('input', () => { sizeOut.textContent = `${size.value}px`; setVar('--icon-size', `${size.value}px`); put('size', size.value) })
+
+        const stroke = document.getElementById('stroke')
+        const strokeOut = document.getElementById('stroke_out')
+        stroke.addEventListener('input', () => { strokeOut.textContent = stroke.value; setVar('--icon-stroke', stroke.value); put('stroke', stroke.value) })
+
+        const buttons = [...document.querySelectorAll('nav button[data-style]')]
+        const refreshControls = () => {
+            const duotone = DUOTONE_STYLES.includes(style)
+            const strokeLike = STROKE_STYLES.includes(style)
+            stroke.disabled = !strokeLike
+            secondaryColor.disabled = !duotone
+            secondaryOpacity.disabled = !duotone
+            buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.style === style)))
+            styleName.textContent = style
+        }
+        buttons.forEach(button => button.addEventListener('click', async () => {
+            const next = button.dataset.style
+            if (next === style) return
+            style = next
+            params.set('style', style)
+            if (!cache[style]) {
+                const response = await fetch(`gallery/icons?style=${style}`)
+                cache[style] = await response.json()
+            }
+            const map = cache[style]
+            for (const cell of cells) cell.querySelector('.preview').innerHTML = map[cell.dataset.name]
+            applySearch(q.value)
+            refreshControls()
+            sync()
+        }))
+    })()
+</script>

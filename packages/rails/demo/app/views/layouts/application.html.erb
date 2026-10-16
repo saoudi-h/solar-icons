@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Solar Icons · Rails demo</title>
+        <style>
+            body { margin: 0; padding: 24px; background: #17181d; color: #f2f3f7; font-family: system-ui, sans-serif; }
+            h1 { font-size: 20px; }
+            nav { display: flex; gap: 8px; margin: 16px 0 24px; }
+            nav button { padding: 6px 12px; border: 1px solid #444854; border-radius: 6px; background: transparent; color: #f2f3f7; font: inherit; cursor: pointer; }
+            nav button[aria-pressed="true"] { background: #6b5be6; border-color: #6b5be6; }
+            .toolbar { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin: 0 0 24px; padding: 16px; border: 1px solid #2d3038; border-radius: 8px; }
+            .toolbar label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #b2b5c0; }
+            .toolbar input { accent-color: #6b5be6; }
+            .toolbar input[type="search"], .toolbar input[type="text"] { padding: 6px 10px; border: 1px solid #444854; border-radius: 6px; background: #1d1f25; color: #f2f3f7; font: inherit; }
+            .toolbar input[type="color"] { width: 40px; height: 30px; border: 1px solid #444854; border-radius: 6px; background: #1d1f25; padding: 2px; }
+            .toolbar input[type="range"] { width: 140px; }
+            .toolbar input:disabled { opacity: 0.3; }
+            .gallery { --icon-size: 28px; --icon-color: #f2f3f7; --icon-opacity: 1; --icon-stroke: 1.5; }
+            .preview { display: grid; place-items: center; color: var(--icon-color); opacity: var(--icon-opacity); }
+            .preview svg { width: var(--icon-size); height: var(--icon-size); }
+            .preview svg [stroke] { stroke-width: var(--icon-stroke); }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+            .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 4px; border: 1px solid #2d3038; border-radius: 8px; }
+            .cell span { font-size: 10px; font-family: ui-monospace, monospace; color: #b2b5c0; word-break: break-all; text-align: center; }
+        </style>
+    </head>
+    <body>
+        <%= yield %>
+    </body>
+</html>

@@ -91,6 +91,16 @@
             "guide": "packages/blade"
         },
         {
+            "name": "Rails",
+            "slug": "rails",
+            "package": "solar_icons",
+            "registry": "rubygems.org",
+            "path": "packages/rails",
+            "logo": "devicon:ruby",
+            "summary": "Rails view helpers with inline SVGs",
+            "guide": "packages/rails"
+        },
+        {
             "name": "Static",
             "slug": "static",
             "package": "@solar-icons/static",

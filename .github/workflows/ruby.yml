@@ -1,0 +1,81 @@
+name: Ruby
+
+# Fast verification for the Rails gem. Scoped to its own directory:
+# Ruby lives outside the pnpm/turbo graph (same lane as Flutter/Dart).
+# Release publishing is rails-publish.yml on solar_icons-v* tags.
+
+on:
+    pull_request:
+        paths:
+            - 'packages/rails/**'
+            - '.github/workflows/ruby.yml'
+    push:
+        branches: [main]
+        paths:
+            - 'packages/rails/**'
+            - '.github/workflows/ruby.yml'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    rspec:
+        name: RSpec
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: packages/rails
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Set up Ruby
+              uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: '3.4'
+                  bundler-cache: true
+                  working-directory: packages/rails
+
+            - name: Run specs
+              run: bundle exec rspec
+
+    playground:
+        name: Playground smoke test
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: packages/rails/demo
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Set up Ruby
+              uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: '3.4'
+                  bundler-cache: true
+                  working-directory: packages/rails/demo
+
+            - name: Boot gallery and check all styles
+              run: |
+                bundle exec puma -p 3210 > /tmp/puma.log 2>&1 &
+                PUMA_PID=$!
+                trap 'kill "$PUMA_PID" 2>/dev/null' EXIT
+                for i in $(seq 1 30); do
+                  curl -sf http://127.0.0.1:3210/ > /dev/null && break
+                  sleep 2
+                done
+                curl -sf http://127.0.0.1:3210/ > /dev/null || {
+                  echo "puma never answered, last log lines:"
+                  tail -50 /tmp/puma.log
+                  exit 1
+                }
+                for style in linear broken line-duotone outline bold bold-duotone; do
+                  count=$(curl -sf "http://127.0.0.1:3210/?style=${style}" | grep -o "<svg" | wc -l)
+                  test "$count" -eq 1451 || { echo "${style}: ${count} icons on the page"; exit 1; }
+                  keys=$(curl -sf "http://127.0.0.1:3210/gallery/icons?style=${style}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+                  test "$keys" -eq 1451 || { echo "${style}: ${keys} icons from the endpoint"; exit 1; }
+                  echo "${style}: page=${count} endpoint=${keys}"
+                done
+                echo "gallery OK: 6 styles x 1451 icons"

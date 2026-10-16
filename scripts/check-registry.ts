@@ -93,6 +93,10 @@ for (const entry of [...registry.packages, ...registry.skills]) {
         if (!fs.existsSync(path.join(entryRoot, 'pubspec.yaml'))) {
             problems.push(`"${entry.package}" has no pubspec.yaml in ${entry.path}`)
         }
+    } else if (entry.registry === 'rubygems.org') {
+        if (!fs.existsSync(path.join(entryRoot, `${entry.package}.gemspec`))) {
+            problems.push(`"${entry.package}" has no gemspec in ${entry.path}`)
+        }
     } else if (!fs.existsSync(path.join(entryRoot, 'package.json'))) {
         problems.push(`"${entry.package}" has no package.json in ${entry.path}`)
     }
@@ -202,6 +206,8 @@ function registryUrl(entry: RegistrySkill): string {
             return `https://pub.dev/packages/${entry.package}`
         case 'packagist':
             return `https://packagist.org/packages/${entry.package}`
+        case 'rubygems.org':
+            return `https://rubygems.org/gems/${entry.package}`
         case 'skills.sh':
             return `https://skills.sh/${entry.package}`
         default:
@@ -217,6 +223,8 @@ function badgeUrl(entry: RegistryPackage): string {
             return `https://img.shields.io/pub/v/${entry.package}?logo=dart`
         case 'packagist':
             return `https://img.shields.io/packagist/v/${entry.package}?logo=packagist`
+        case 'rubygems.org':
+            return `https://img.shields.io/gem/v/${entry.package}?logo=rubygems`
         default:
             return ''
     }

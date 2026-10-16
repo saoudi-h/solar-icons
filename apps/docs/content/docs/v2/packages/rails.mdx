@@ -1,0 +1,41 @@
+---
+title: Rails
+description: Solar Icons for Ruby on Rails views through the solar_icon helper.
+icon: ruby
+---
+
+```ruby
+# Gemfile
+gem "solar_icons"
+```
+
+## Usage
+
+The helper embeds the SVG with no network and no JavaScript:
+
+```erb
+<%= solar_icon("arrow-right") %>
+<%= solar_icon("heart", weight: "bold-duotone", size: 32, class: "icon") %>
+```
+
+Options:
+
+- `weight:` one of `linear` (default), `broken`, `line-duotone`, `outline`, `bold`, `bold-duotone`
+- `size:` sets `width` and `height` together
+- `stroke_width:` overrides the stroke on Linear, Broken, and Line Duotone icons
+- `secondary_color:` and `secondary_opacity:` (0 to 1) style the accent layer of the two duotone styles
+- `alt:` renders an accessible `<title>` and drops the default `aria-hidden`
+- any extra keyword becomes an SVG attribute (`style:`, `class:`, ...); `class:` merges with configured defaults
+
+## Configuration
+
+```ruby
+# config/initializers/solar_icons.rb
+SolarIcons.configure do |config|
+  config.default_weight = "linear"
+  config.default_size = 24
+  config.default_attrs = { class: "icon" }
+end
+```
+
+See [`solar_icons`](https://rubygems.org/gems/solar_icons) for the release history.

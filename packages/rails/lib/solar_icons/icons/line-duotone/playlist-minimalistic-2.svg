@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-playlist-minimalistic-2-line-duotone"><path d="M15 6L3 6" stroke="currentColor" stroke-linecap="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+
+<path d="M13 10L3 10" stroke="currentColor" stroke-linecap="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+
+<path d="M9 14H3" stroke="currentColor" stroke-linecap="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+
+<path d="M8 18H3" stroke="currentColor" stroke-linecap="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><path d="M17 16.5V12.5V8" stroke="currentColor" stroke-linecap="round"/>
+<circle cx="14.5" cy="16.5" r="2.5" stroke="currentColor" stroke-linecap="round"/>
+<path d="M21 12C18.7909 12 17 10.2091 17 8" stroke="currentColor" stroke-linecap="round"/></svg>

@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+/**
+ * Regenerate the versioned SVGs from the published-shape static
+ * catalogue. Only canonical icons ship: alias keys have no metadata
+ * entry and are never resolved by the helper. Run from the repository
+ * root with `node packages/rails/bin/fetch-icons`.
+ */
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const repositoryRoot = path.resolve(packageRoot, '../..')
+const icons = JSON.parse(
+    fs.readFileSync(path.join(repositoryRoot, 'packages/static/dist/icons.json'), 'utf8')
+)
+const descriptions = JSON.parse(
+    fs.readFileSync(
+        path.join(repositoryRoot, 'packages/static/dist/metadata-descriptions.json'),
+        'utf8'
+    )
+)
+const canonical = new Set(descriptions.map(entry => entry.name))
+const staticPackage = JSON.parse(
+    fs.readFileSync(path.join(repositoryRoot, 'packages/static/package.json'), 'utf8')
+)
+const outputRoot = path.join(packageRoot, 'lib/solar_icons/icons')
+fs.rmSync(outputRoot, { recursive: true, force: true })
+
+let count = 0
+const styles = new Set()
+for (const [key, svg] of Object.entries(icons)) {
+    const match = key.match(/^(.*)-(bold-duotone|line-duotone|bold|broken|linear|outline)$/)
+    if (!match) continue
+    const [, name, style] = match
+    if (!canonical.has(name)) continue
+    const directory = path.join(outputRoot, style)
+    fs.mkdirSync(directory, { recursive: true })
+    fs.writeFileSync(path.join(directory, `${name}.svg`), `${svg}\n`)
+    styles.add(style)
+    count += 1
+}
+fs.writeFileSync(
+    path.join(outputRoot, '.provenance.json'),
+    `${JSON.stringify(
+        { staticVersion: staticPackage.version, iconCount: canonical.size, styles: [...styles].sort() },
+        null,
+        2
+    )}\n`
+)
+console.info(`Wrote ${count} icons from @solar-icons/static@${staticPackage.version}.`)

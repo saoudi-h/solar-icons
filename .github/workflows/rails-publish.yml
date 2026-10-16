@@ -1,0 +1,67 @@
+name: Publish Rails gem
+
+# Publishes solar_icons to RubyGems.org through OIDC trusted publishing
+# (permissions: id-token below). There is deliberately NO long-lived API
+# key anywhere. One-time maintainer setup on rubygems.org: add a trusted
+# publisher for repository saoudi-h/solar-icons and workflow
+# rails-publish.yml. Consider a tag protection rule for `solar_icons-v*`
+# so only the maintainer can trigger a publish.
+#
+# Bundler's `rake release` is not used on purpose: it creates and pushes
+# its own `v<version>` tag, which the `solar_icons-v<version>` tag already
+# covers, and it expects to push a branch too.
+
+on:
+    push:
+        tags:
+            - 'solar_icons-v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+    id-token: write
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    publish:
+        name: Publish to RubyGems.org
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: packages/rails
+        steps:
+            - name: Checkout tag
+              uses: actions/checkout@v4
+
+            - name: Set up Ruby
+              uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: '3.4'
+                  bundler-cache: true
+                  working-directory: packages/rails
+
+            - name: Tag matches gem version
+              run: |
+                  TAG="${GITHUB_REF_NAME#solar_icons-v}"
+                  SPEC=$(ruby -Ilib -rsolar_icons/version -e 'print SolarIcons::VERSION')
+                  if [ "$TAG" != "$SPEC" ]; then
+                    echo "tag solar_icons-v$TAG does not match gem version $SPEC"
+                    exit 1
+                  fi
+
+            - name: Run specs
+              run: bundle exec rspec
+
+            - name: Build the gem and check its payload
+              run: |
+                  gem build solar_icons.gemspec
+                  COUNT=$(gem spec solar_icons-*.gem files | grep -c '\.svg')
+                  echo "SVG files in the gem: $COUNT"
+                  test "$COUNT" -eq 8706
+
+            - name: Configure RubyGems credentials
+              uses: rubygems/configure-rubygems-credentials@v2.1.0
+
+            - name: Push the gem
+              run: gem push solar_icons-*.gem
