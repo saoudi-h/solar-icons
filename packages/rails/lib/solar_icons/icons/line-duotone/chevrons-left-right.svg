@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-chevrons-left-right-line-duotone"><path d="M15 18L21 12L15 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+
+<path d="M9 18L3 12L9 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><path d="M18 9L21 12L15 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 9L3 12L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>

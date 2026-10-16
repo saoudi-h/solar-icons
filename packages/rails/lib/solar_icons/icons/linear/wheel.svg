@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-wheel-linear"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/>
+<circle cx="12" cy="12" r="6" stroke="currentColor" stroke-linecap="round"/>
+<circle cx="12" cy="12" r="2" stroke="currentColor" stroke-linecap="round"/>
+<path d="M6 12L10 12" stroke="currentColor" stroke-linecap="round"/>
+<path d="M14 12L18 12" stroke="currentColor" stroke-linecap="round"/>
+<path d="M9 17.1963L11 13.7322" stroke="currentColor" stroke-linecap="round"/>
+<path d="M13 10.2686L15 6.80445" stroke="currentColor" stroke-linecap="round"/>
+<path d="M15 17.1963L13 13.7322" stroke="currentColor" stroke-linecap="round"/>
+<path d="M11 10.2676L9 6.80348" stroke="currentColor" stroke-linecap="round"/></svg>
