@@ -44,7 +44,7 @@
         "react-dom": "19.3.0"
     },
     "devDependencies": {
-        "@iconify-json/lucide": "1.2.143",
+        "@iconify-json/lucide": "1.2.144",
         "@tailwindcss/postcss": "^4.3.3",
         "@types/node": "^26.6.2",
         "@types/react": "^19.3.0",
