@@ -3,7 +3,7 @@ import { toFumadocsSource } from 'fumadocs-mdx/runtime/server'
 import { blog, docs } from 'fumadocs-mdx:collections/server'
 
 import type { IconifyFrameworkIcon } from './resolveIconUtils'
-import { iconifyIcons, renderIconify, renderSolarIcon } from './resolveIconUtils'
+import { iconifyIcons, renderIconify, renderRawIconify, renderSolarIcon } from './resolveIconUtils'
 
 export const source = loader({
     baseUrl: '/docs',
@@ -12,6 +12,10 @@ export const source = loader({
         if (icon) {
             if (iconifyIcons.includes(icon)) {
                 return renderIconify(icon as IconifyFrameworkIcon)
+            }
+
+            if (icon.includes(':')) {
+                return renderRawIconify(icon)
             }
 
             return renderSolarIcon(icon, { className: 'size-8', weight: 'BoldDuotone' })
