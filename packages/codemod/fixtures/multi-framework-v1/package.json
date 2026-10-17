@@ -10,14 +10,14 @@
         "@solar-icons/vue": "1.2.1",
         "react": "18.3.1",
         "react-dom": "18.3.1",
-        "vue": "3.5.39"
+        "vue": "3.5.43"
     },
     "devDependencies": {
-        "@types/react": "18.3.18",
-        "@types/react-dom": "18.3.5",
-        "@vitejs/plugin-react": "4.3.4",
+        "@types/react": "18.3.31",
+        "@types/react-dom": "18.3.7",
+        "@vitejs/plugin-react": "4.7.0",
         "@vitejs/plugin-vue": "5.2.4",
-        "typescript": "5.7.3",
-        "vite": "6.1.0"
+        "typescript": "5.9.3",
+        "vite": "6.4.4"
     }
 }
