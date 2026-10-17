@@ -1,5 +1,11 @@
 # @solar-icons/cli
 
+## 2.7.0
+
+### Minor Changes
+
+- [#602](https://github.com/saoudi-h/solar-icons/pull/602) [`f099dcb`](https://github.com/saoudi-h/solar-icons/commit/f099dcbd56dc066c04b4a9ebf3ad7a4cea4f3e8c) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add `rails` framework support: `--framework rails` emits an ERB call to the `solar_icon` view helper (`<%= solar_icon("heart", weight: "bold") %>`) for the `solar_icons` gem.
+
 ## 2.6.1
 
 ### Patch Changes
