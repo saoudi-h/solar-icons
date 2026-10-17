@@ -2,10 +2,15 @@
 
 require "solar_icons/version"
 require "solar_icons/configuration"
+require "solar_icons/weights"
 require "solar_icons/helpers"
 require "solar_icons/railtie" if defined?(::Rails)
 
 module SolarIcons
+  # One frozen constant per canonical icon name (SolarIcons::Icons::ARROW_UP).
+  # Autoloaded, so applications that only pass strings never parse the file.
+  autoload :Icons, "solar_icons/icons"
+
   class << self
     def icons_root
       @icons_root ||= File.expand_path("solar_icons/icons", __dir__)
