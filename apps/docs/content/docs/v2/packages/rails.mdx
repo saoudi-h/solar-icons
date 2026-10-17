@@ -9,6 +9,8 @@ icon: ruby
 gem "solar_icons"
 ```
 
+Requires Ruby 3.1+ and Rails 7+. The railtie includes the helper in every view and mailer template, so no initializer is needed.
+
 ## Usage
 
 The helper embeds the SVG with no network and no JavaScript:
@@ -26,6 +28,8 @@ Options:
 - `secondary_color:` and `secondary_opacity:` (0 to 1) style the accent layer of the two duotone styles
 - `alt:` renders an accessible `<title>` and drops the default `aria-hidden`
 - any extra keyword becomes an SVG attribute (`style:`, `class:`, ...); `class:` merges with configured defaults
+
+Unknown names or weights raise an exception instead of rendering broken output.
 
 ## Configuration
 
