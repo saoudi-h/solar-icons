@@ -1,5 +1,16 @@
 # @solar-icons/mcp
 
+## 2.5.0
+
+### Minor Changes
+
+- [#602](https://github.com/saoudi-h/solar-icons/pull/602) [`f099dcb`](https://github.com/saoudi-h/solar-icons/commit/f099dcbd56dc066c04b4a9ebf3ad7a4cea4f3e8c) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Accept `rails` as a framework in `solar_search_icons` and `solar_get_icon`, emitting the ERB `solar_icon` call for the `solar_icons` gem.
+
+### Patch Changes
+
+- Updated dependencies [[`f099dcb`](https://github.com/saoudi-h/solar-icons/commit/f099dcbd56dc066c04b4a9ebf3ad7a4cea4f3e8c)]:
+  - @solar-icons/cli@2.7.0
+
 ## 2.4.1
 
 ### Patch Changes
