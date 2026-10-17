@@ -71,7 +71,7 @@ export const config: Config = {
                     {
                         label: 'Rails',
                         url: '/docs/v2/packages/rails',
-                        icon: <Icon icon="logos:rails" />,
+                        icon: <Icon icon="thesvg-color:ruby-on-rails" />,
                     },
                     {
                         label: 'Flutter',
@@ -238,7 +238,7 @@ export const config: Config = {
                 content:
                     'View helper for all six styles, with duotone controls and configuration defaults.',
                 status: 'released',
-                iconify: 'logos:rails',
+                iconify: 'thesvg-color:ruby-on-rails',
             },
             {
                 title: 'Flutter',

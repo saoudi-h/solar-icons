@@ -77,7 +77,7 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
         static: 'vscode-icons:file-type-svg',
         js: 'devicon:javascript',
         laravel: 'devicon:laravel',
-        rails: 'logos:rails',
+        rails: 'thesvg-color:ruby-on-rails',
         flutter: 'devicon:flutter',
     }
     const iconName = iconifyMap[icon as keyof typeof iconifyMap]

@@ -158,7 +158,7 @@ const Content: FC = () => {
                     {
                         title: 'Rails',
                         value: 'rails',
-                        icon: <Icon icon="logos:rails" className="size-4" />,
+                        icon: <Icon icon="thesvg-color:ruby-on-rails" className="size-4" />,
                         content: <RailsCode />,
                     },
                     {
