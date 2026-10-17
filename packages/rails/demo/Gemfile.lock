@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    solar_icons (2.0.0)
+    solar_icons (2.1.0)
       activesupport (>= 7.0)
 
 GEM

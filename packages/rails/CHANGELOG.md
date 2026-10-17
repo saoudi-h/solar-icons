@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.1.0
 
 - `SolarIcons::Icons::*` constants (one frozen constant per icon, autoloaded) and `SolarIcons::Weights::*` for the six styles; `solar_icon` accepts both anywhere it accepts strings.
 
