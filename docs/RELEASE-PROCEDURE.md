@@ -8,7 +8,7 @@ Executable checklist for publishing any Solar Icons package. Run top to bottom. 
 2. Catalog changes (new icons, renames, metadata) go through the static package changeset. Dependents cascade automatically: `updateInternalDependencies: minor` bumps `@solar-icons/cli` on every static release and `@solar-icons/mcp` on every CLI release. Never hand-edit versions to force this.
 3. Push to `main`. CI runs the release gates (build, typecheck, lint, test, `check:exports`, `check:figma-catalog`, `check:skill-counts`). Fix red gates before proceeding.
 4. Merge the Changesets version PR that CI opens. The next CI run publishes to npm on `latest`.
-5. Verify: `npm view <pkg> version` matches, then `pnpm check:exports` green on main.
+5. Verify: `npm view <pkg> version` matches, then `pnpm check:exports` green on main. Registry reads can lag for minutes behind the publish (one package can lag while another resolves instantly); trust the run log and the pushed tags, then re-check.
 
 ## 2. Catalog-release checklist (new icons, renames, metadata)
 
@@ -36,24 +36,33 @@ Changesets cascade the versions, but these need explicit verification:
 4. Verify: `flutter pub add flutter_solar_icons` in a fresh project renders widget, style-param, theme, and duotone forms; the example gallery eyeballs the full catalogue.
 5. First-time setup only: publish 2.0.0 once by hand (`dart pub publish` from `packages/flutter`, browser OAuth with a Google account — automation only works for existing packages), then enable automated publishing on the package admin page (repo `saoudi-h/solar-icons`, tag pattern `flutter_solar_icons-v{{version}}`). Consider a tag protection rule for `flutter_solar_icons-v*`.
 
-## 5. Skill (auto-detected, no submission)
+## 5. Rails gem (`solar_icons` on RubyGems, in-monorepo)
+
+1. Normal state: nothing happens automatically. When the catalogue moves, regenerate deliberately from the repository root (`node bin/fetch-icons`) and commit `lib/solar_icons/icons/`, `icons.rb`, and `.provenance.json` together with the catalogue change or in the release PR.
+2. Release: bump `lib/solar_icons/version.rb`, update `CHANGELOG.md`, update the path version in `demo/Gemfile.lock`, land all of it on `main` via PR.
+3. Publish: push a `solar_icons-v<version>` tag matching the version. `rails-publish.yml` re-runs the specs, builds the gem, asserts the 8,706-SVG payload, and pushes to RubyGems.org through OIDC trusted publishing (no token).
+4. Verify: the version on rubygems.org, a frozen `bundle install` of `demo/`, and the CI demo smoke test (six style pages, 1,451 SVGs each).
+5. First-time setup only (done): trusted publisher on rubygems.org for repository `saoudi-h/solar-icons` and workflow `rails-publish.yml`. Consider a tag protection rule for `solar_icons-v*`.
+
+## 6. Skill (auto-detected, no submission)
 
 1. Content lives in `skills/solar-icons/`. No versions, no changelog, no submission step: skills.sh detects the skill when agents invoke the CLI, and ranking follows usage.
 2. The skill must contain zero hardcoded catalog counts (`pnpm check:skill-counts` enforces this in CI). Point to `npx @solar-icons/cli overview`.
 3. Framework matrix (`references/frameworks.md`) gains a row for every new package before its release, not after.
 
-## 5. Figma plugin (manual, exception)
+## 7. Figma plugin (manual, exception)
 
 1. Rebuild from main, pull the refreshed catalog, regenerate community images from current sources (`packages/figma-plugin/community/`).
 2. Publish from Figma Desktop by hand. No API exists, so this step stays manual. See `docs/FIGMA-PLUGIN-PUBLISHING.md`.
 
-## 6. Post-release verification matrix
+## 8. Post-release verification matrix
 
 | Surface | Check |
 |---|---|
 | npm | `npm view` version, `check:exports` |
 | Flutter | fresh `flutter pub add`, widget + theme + duotone forms, gallery eyeball |
 | Blade | fresh `composer require`, four render forms |
+| Rails gem | rubygems.org version, frozen `bundle install` of `demo/` |
 | CLI/MCP | `get <alias> --json` redirect, `search` alias note |
 | Skill | `check:skill-counts`, counts resolve via `overview` |
 | Docs | package page, sidebar icon, icon-detail tab, homepage card |
