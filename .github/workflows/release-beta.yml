@@ -12,6 +12,17 @@ env:
     TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
+# Publishing from this workflow needs its own trusted publisher connection
+# (workflow filename release-beta.yml, not configured yet) on every package;
+# npm allows up to ten connections per package. id-token:write mints the OIDC
+# JWT, contents:write pushes version commits and tags, pull-requests:write
+# lets changesets open its version pull request. There is no token fallback
+# anymore, so the first beta publish fails until those connections exist.
+permissions:
+    contents: write
+    id-token: write
+    pull-requests: write
+
 jobs:
     release-beta:
         name: Release Beta
@@ -53,6 +64,3 @@ jobs:
                   version-script: pnpm version-packages
                   pr-title: 'ci(changesets): 🧪 beta version packages'
                   commit-message: 'ci(changesets): beta version packages'
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
