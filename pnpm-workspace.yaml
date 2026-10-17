@@ -17,7 +17,7 @@ enablePrePostScripts: true
 minimumReleaseAge: 0
 
 overrides:
-  sharp: 0.35.4
+  sharp: 0.35.5
   'xcode@3.0.1>uuid': 11.1.1
   # @analogjs/vite-plugin-angular@2.7.5 imports the @angular/build internal
   # `src/utils/hash.js`, which only exists in build 22.2.0+. pnpm otherwise

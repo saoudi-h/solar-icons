@@ -6,10 +6,10 @@
     },
     "dependencies": {
         "@solar-icons/solid": "1.0.1",
-        "solid-js": "1.9.14"
+        "solid-js": "1.9.17"
     },
     "devDependencies": {
-        "vite": "6.1.0",
-        "vite-plugin-solid": "2.11.12"
+        "vite": "6.4.4",
+        "vite-plugin-solid": "2.11.14"
     }
 }
