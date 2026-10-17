@@ -17,6 +17,7 @@ import { FlutterCode } from './FlutterCode'
 import { IconVariants } from './IconVariants'
 import { JsCode } from './JsCode'
 import { NuxtCode } from './NuxtCode'
+import { RailsCode } from './RailsCode'
 import { ReactCode } from './ReactCode'
 import { ReactNativeCode } from './ReactNativeCode'
 import { SolidCode } from './SolidCode'
@@ -153,6 +154,12 @@ const Content: FC = () => {
                         value: 'blade',
                         icon: <Icon icon="devicon:laravel" className="size-4" />,
                         content: <BladeCode />,
+                    },
+                    {
+                        title: 'Rails',
+                        value: 'rails',
+                        icon: <Icon icon="devicon:rails" className="size-4" />,
+                        content: <RailsCode />,
                     },
                     {
                         title: 'Flutter',

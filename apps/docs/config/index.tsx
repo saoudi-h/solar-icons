@@ -69,6 +69,11 @@ export const config: Config = {
                         icon: <Icon icon="devicon:laravel" />,
                     },
                     {
+                        label: 'Rails',
+                        url: '/docs/v2/packages/rails',
+                        icon: <Icon icon="devicon:rails" />,
+                    },
+                    {
                         label: 'Flutter',
                         url: '/docs/v2/packages/flutter',
                         icon: <Icon icon="devicon:flutter" />,
@@ -222,6 +227,18 @@ export const config: Config = {
                     'Blade components for all six styles, plus a dynamic component and a PHP enum.',
                 status: 'released',
                 iconify: 'devicon:laravel',
+            },
+            {
+                title: 'Rails',
+                link: '/docs/v2/packages/rails',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/rails',
+                registryLink: 'https://rubygems.org/gems/solar_icons',
+                registryTooltip: 'RubyGems Package',
+                registryIcon: 'mdi:package-variant',
+                content:
+                    'View helper for all six styles, with duotone controls and configuration defaults.',
+                status: 'released',
+                iconify: 'devicon:rails',
             },
             {
                 title: 'Flutter',
