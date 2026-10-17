@@ -71,7 +71,7 @@ export const config: Config = {
                     {
                         label: 'Rails',
                         url: '/docs/v2/packages/rails',
-                        icon: <Icon icon="devicon:rails" />,
+                        icon: <Icon icon="logos:rails" />,
                     },
                     {
                         label: 'Flutter',
@@ -238,7 +238,7 @@ export const config: Config = {
                 content:
                     'View helper for all six styles, with duotone controls and configuration defaults.',
                 status: 'released',
-                iconify: 'devicon:rails',
+                iconify: 'logos:rails',
             },
             {
                 title: 'Flutter',
