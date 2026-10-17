@@ -40,7 +40,7 @@ function truncate(text: string): { text: string; truncated: boolean } {
 }
 
 function toFrameworkList(): string {
-    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade|flutter'
+    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade|rails|flutter'
 }
 
 // ---------------------------------------------------------------------------
@@ -95,6 +95,7 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
                     'static',
                     'js',
                     'blade',
+                    'rails',
                     'flutter',
                 ] as const)
                 .optional()
@@ -205,6 +206,7 @@ Returns: { name, style, framework, category, import, cdn, svg } + markdown
                     'static',
                     'js',
                     'blade',
+                    'rails',
                     'flutter',
                 ] as const)
                 .default('react')

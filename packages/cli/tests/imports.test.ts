@@ -100,6 +100,20 @@ describe('import snippets are verified against packages', () => {
         )
     })
 
+    it('rails emits an ERB helper call, not an import', () => {
+        // the gem lives in this monorepo (packages/rails) but ships through
+        // rubygems.org, so there is no local JS file to verify — assert exact strings.
+        expect(importSnippet('heart', 'bold', 'rails')).toBe(
+            '<%= solar_icon("heart", weight: "bold") %>'
+        )
+        expect(importSnippet('arrow-up', 'line-duotone', 'rails')).toBe(
+            '<%= solar_icon("arrow-up", weight: "line-duotone") %>'
+        )
+        expect(rootImportSnippet('heart', 'bold', 'rails')).toBe(
+            '<%= solar_icon("heart", weight: "bold") %>'
+        )
+    })
+
     it('docs example HeartIcon from bold/heart exists', () => {
         // mirrors apps/docs/content/docs/v2/packages/react.mdx examples
         expect(importSnippet('heart', 'bold', 'react')).toBe(
