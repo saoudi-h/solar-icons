@@ -24,7 +24,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout branch
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
 
             - name: Install dependencies
               uses: ./.github/actions/install
