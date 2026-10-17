@@ -5,11 +5,11 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@solar-icons/solid": "1.0.1",
+        "@solar-icons/solid": "2.3.2",
         "solid-js": "1.9.17"
     },
     "devDependencies": {
-        "vite": "6.4.4",
+        "vite": "8.3.4",
         "vite-plugin-solid": "2.11.14"
     }
 }
