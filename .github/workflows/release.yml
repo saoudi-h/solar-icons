@@ -17,11 +17,11 @@ env:
     TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 # id-token:write mints the GitHub OIDC JWT that `npm publish` exchanges for
-# a short-lived token once each package trusts this workflow (npmjs.com
-# package Settings, Trusted Publisher). contents:write preserves what the
-# job already does (push version commits and tags). The npm CLI tries OIDC
-# first and falls back to NODE_AUTH_TOKEN, so token publishing keeps
-# working until every package trusts the workflow.
+# a short-lived token: every published package trusts this workflow
+# (npmjs.com, package Settings, Trusted Publisher), so releases no longer
+# use a long-lived token and npm generates provenance attestations
+# automatically. contents:write pushes version commits and tags;
+# pull-requests:write lets changesets open its version pull request.
 permissions:
     contents: write
     id-token: write
@@ -75,6 +75,3 @@ jobs:
                   version-script: pnpm version-packages
                   pr-title: 'ci(changesets): :package: version packages'
                   commit-message: 'ci(changesets): version packages'
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
