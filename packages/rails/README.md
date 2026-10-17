@@ -40,6 +40,16 @@ Options:
 
 Unknown names and weights raise `SolarIcons::Helpers::UnknownIcon` and `SolarIcons::Helpers::UnknownStyle` so typos surface immediately.
 
+## Lookup constants
+
+Generated constants cover the whole catalogue and the six weights, so editors can complete them and typos surface as `NameError`:
+
+```erb
+<%= solar_icon(SolarIcons::Icons::ARROW_UP, weight: SolarIcons::Weights::BOLD_DUOTONE) %>
+```
+
+`Icons::ARROW_UP` is a frozen string, so `solar_icon` accepts it anywhere a name string is expected, and `Weights::*` anywhere a weight is. The icon constants are autoloaded: applications that only pass strings never parse the generated file. For runtime enumeration keep using `SolarIcons.icon_names(style)`.
+
 ## Configuration
 
 ```ruby

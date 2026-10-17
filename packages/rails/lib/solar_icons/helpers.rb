@@ -2,11 +2,12 @@
 
 require "active_support/core_ext/string/output_safety"
 require "erb"
+require "solar_icons/weights"
 
 module SolarIcons
   module Helpers
-    STYLES = %w[linear broken line-duotone outline bold bold-duotone].freeze
-    STROKE_STYLES = %w[linear broken line-duotone].freeze
+    STYLES = Weights::ALL
+    STROKE_STYLES = Weights::STROKE
     A11Y_ATTRIBUTES = %w[aria-label aria-labelledby role title].freeze
 
     class UnknownIcon < ArgumentError; end
