@@ -39,6 +39,7 @@ export const FRAMEWORKS = [
     'static',
     'js',
     'blade',
+    'rails',
     'flutter',
 ] as const
 export type Framework = (typeof FRAMEWORKS)[number]
@@ -125,6 +126,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
  *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
+ *   rails:  <%= solar_icon("heart", weight: "bold") %> (view helper, style in the weight option)
  *   flutter: HeartBoldIcon() (static widget, style in name; dynamic: HomeIcon(style: ...))
  */
 export function importSnippet(name: string, style: Style, framework: Framework): string {
@@ -152,6 +154,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `import { createIcons, icons } from "@solar-icons/js"; // icons["${kebab}-${style}"]`
         case 'blade':
             return `<x-solar-${style}-${kebab} />`
+        case 'rails':
+            return `<%= solar_icon("${kebab}", weight: "${style}") %>`
         case 'flutter':
             return `import 'package:flutter_solar_icons/${toDartPath(style, kebab)}.dart';\n${rooted}()`
         default:
@@ -170,6 +174,7 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'js':
         case 'nuxt':
         case 'blade':
+        case 'rails':
             return importSnippet(name, style, framework)
         case 'flutter':
             return `import 'package:flutter_solar_icons/flutter_solar_icons.dart';\n${rooted}()`
