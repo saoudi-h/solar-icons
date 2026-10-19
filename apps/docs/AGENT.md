@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-The official Solar Icons documentation site. Public, deployed to https://solar-icons.vercel.app. Built with Next.js 16 + Fumadocs.
+The official Solar Icons documentation site. Public, deployed to https://solar-icons.dev. Built with Next.js 16 + Fumadocs.
 
 ## ⚙️ Conventions
 

@@ -67,7 +67,7 @@ When `provider: false`, the styling options are ignored. Wrap `app.vue` in `<Sol
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.vercel.app/docs/v2/packages/nuxt).
+For installation guides, API reference, and a searchable icon catalog, visit the [Nuxt Documentation](https://solar-icons.dev/docs/v2/packages/nuxt).
 
 ## License
 

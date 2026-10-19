@@ -1,10 +1,10 @@
 name: flutter_solar_icons
 description: Flutter widgets for Solar Icons. 1,451 icons in six styles, with size, color, stroke width, and duotone controls.
 version: 2.0.1
-homepage: https://solar-icons.vercel.app
+homepage: https://solar-icons.dev
 repository: https://github.com/saoudi-h/solar-icons/tree/main/packages/flutter
 issue_tracker: https://github.com/saoudi-h/solar-icons/issues
-documentation: https://solar-icons.vercel.app/docs/v2/packages/flutter
+documentation: https://solar-icons.dev/docs/v2/packages/flutter
 topics:
   - icons
   - svg

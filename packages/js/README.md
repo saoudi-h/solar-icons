@@ -29,8 +29,8 @@ Then, import the specific icons you need and initialize the library. The `create
 
 ```js
 import { createIcons } from '@solar-icons/js'
-import { HomeLinearIcon } from '@solar-icons/js/linear/home'
 import { LoginBoldIcon } from '@solar-icons/js/bold/login'
+import { HomeLinearIcon } from '@solar-icons/js/linear/home'
 
 createIcons({
     icons: {
@@ -42,7 +42,7 @@ createIcons({
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [JS Documentation](https://solar-icons.vercel.app/docs/v2/packages/js).
+For installation guides, API reference, and a searchable icon catalog, visit the [JS Documentation](https://solar-icons.dev/docs/v2/packages/js).
 
 ## License
 

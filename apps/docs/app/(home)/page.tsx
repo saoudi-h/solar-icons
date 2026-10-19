@@ -10,6 +10,7 @@ import { config } from '@/config'
 export const metadata: Metadata = {
     title: 'Solar Icons',
     description: '1,451 icons · 6 styles',
+    alternates: { canonical: '/' },
     openGraph: {
         title: 'Solar Icons',
         description: '1,451 icons · 6 styles',

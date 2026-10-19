@@ -46,7 +46,7 @@ Reference the combined sprite file in your HTML:
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Static Documentation](https://solar-icons.vercel.app/docs/v2/packages/static).
+For installation guides, API reference, and a searchable icon catalog, visit the [Static Documentation](https://solar-icons.dev/docs/v2/packages/static).
 
 ## License
 

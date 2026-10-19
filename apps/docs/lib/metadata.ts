@@ -6,7 +6,7 @@ export function createMetadata(override: Metadata): Metadata {
         openGraph: {
             title: override.title ?? undefined,
             description: override.description ?? undefined,
-            url: 'https://solar-icons.vercel.app',
+            url: siteUrl.toString(),
             images: '/banner.png',
             siteName: 'Solar Icons',
             ...override.openGraph,
@@ -26,7 +26,7 @@ export function createMetadata(override: Metadata): Metadata {
  * Canonical site URL - Always points to the primary production domain
  * (or localhost in development). Should be used for all public-facing URLs.
  *
- * @example 'https://solar-icons.vercel.app' in production
+ * @example 'https://solar-icons.dev' in production
  * @example 'http://localhost:3000' in development
  */
 export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000')
@@ -37,7 +37,7 @@ export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://local
  *
  * @note In production, differs from siteUrl when using custom domains
  * @example 'https://solar-icons-git-feature.vercel.app' for preview deployments
- * @example 'https://solar-icons.vercel.app' for production (if matching siteUrl)
+ * @example 'https://solar-icons.dev' for production (if matching siteUrl)
  */
 export const baseUrl =
     process.env.VERCEL_ENV === 'production' ||

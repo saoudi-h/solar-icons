@@ -160,7 +160,7 @@ export async function generateOGImage({ title, description }: OGImageProps) {
                         fontWeight: 400,
                         color: '#6b7187',
                     }}>
-                    solar-icons.vercel.app
+                    solar-icons.dev
                 </div>
             </div>
 

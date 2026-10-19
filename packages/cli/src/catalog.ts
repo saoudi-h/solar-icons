@@ -294,8 +294,8 @@ export function cdnSvgUrl(name: string, style: Style, version = 'latest'): strin
 // --- Overview (dynamic, not hardcoded) ---
 
 export const FIGMA_URL = 'https://www.figma.com/community/plugin/1664759238792120976/solar-icons'
-export const DOCS_URL = 'https://solar-icons.vercel.app/'
-export const ICONS_URL = 'https://solar-icons.vercel.app/icons'
+export const DOCS_URL = 'https://solar-icons.dev/'
+export const ICONS_URL = 'https://solar-icons.dev/icons'
 
 function tryReadCliVersion(): string {
     const candidates: string[] = []

@@ -259,8 +259,8 @@ function postMessage(message: MainMessage): void {
 function isAllowedExternalUrl(url: string): boolean {
     return (
         url === 'https://github.com/saoudi-h/solar-icons' ||
-        url === 'https://solar-icons.vercel.app' ||
-        url.startsWith('https://solar-icons.vercel.app/docs/v2/packages/')
+        url === 'https://solar-icons.dev' ||
+        url.startsWith('https://solar-icons.dev/docs/v2/packages/')
     )
 }
 

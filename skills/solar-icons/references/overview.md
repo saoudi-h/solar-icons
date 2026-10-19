@@ -22,7 +22,7 @@ See SKILL.md decision table. Solar's edge is **6-style matrix + CSS-var cascade 
 
 ## Site & docs
 
-- https://solar-icons.vercel.app (Next.js 16 + Fumadocs at `apps/docs`)
+- https://solar-icons.dev (Next.js 16 + Fumadocs at `apps/docs`)
 - `/docs/v2/packages/*` per framework, `/icons` catalog with live style preview, `/docs/v2/migration-to-v2/icon-renames` (31 renames).
 
 ## Inventory check

@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[DOMAIN-MIGRATION]** Move the documentation site from `solar-icons.vercel.app` to `solar-icons.dev` without changing URL paths: establish Search Console baseline, attach the domain to the existing Vercel project, update active canonical/site references, redirect the legacy host, submit the new sitemap, and verify the migration. `Priority: 🟠` `Complexity: M`
+
 - [x] **[SESSION-PR]** Integrated all session work into one PR branch `integrate/session-work`: rapatriated Node 26, drawer fix, IconCard fix, vue-app TS6, action v2 (supserseded staged branch left local). Verified docs typecheck + vue-app type-check + lint + YAML. `Priority: 🔴` `Complexity: M`
 
 - [x] **[DEPS-PRUNE]** Removed 19 confirmed-unused deps (knip OOM'd on 40k files, used depcheck + manual triage): docs `@base-ui/react` + `react-select`; vue-app faker + tanstack; angular-app router + forms + cdk; test-RN expo-dev-client + typescript; angular pbd + tala-tsconfig + types/jsdom; dotenv ×3 (kept core's); core plugin-react; nuxt devtools; root tsdown + typescript + vite-tsconfig-paths. Documented keeps (CSS-blind, script binaries, importHelpers tslib, ambient types, dynamic resolves, peers). Gates: build 21/21, typecheck, lint, test, inventory green. Branch: `chore/prune-unused-deps` (local). `Priority: 🔵` `Complexity: M` *See: worklogs/2026-09-24-DEPS-PRUNE.md*

@@ -126,7 +126,7 @@ if (tableRows.length !== registry.packages.length) {
         `README table has ${tableRows.length} package rows, registry.json has ${registry.packages.length}`
     )
 }
-const DOCS_BASE = 'https://solar-icons.vercel.app/docs/v2/'
+const DOCS_BASE = 'https://solar-icons.dev/docs/v2/'
 for (const entry of registry.packages) {
     const row = tableRows.find(candidate =>
         candidate.includes(`[\`${entry.package}\`](${registryUrl(entry)}`)

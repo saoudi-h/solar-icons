@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Hakim Saoudi"]
   spec.summary = "Solar Icons for Ruby on Rails views"
   spec.description = "Inline Solar icons in Rails views through the solar_icon helper, generated from the maintained catalogue."
-  spec.homepage = "https://solar-icons.vercel.app/docs/v2/packages/rails"
+  spec.homepage = "https://solar-icons.dev/docs/v2/packages/rails"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1"
   spec.metadata["homepage_uri"] = spec.homepage
