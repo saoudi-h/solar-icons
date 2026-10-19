@@ -12,7 +12,8 @@ type BlogPost = ReturnType<typeof blogSource.getPages>[number]
 export const metadata: Metadata = {
     title: 'Blog',
     description: 'Articles about Solar Icons, interface design, and development.',
-    openGraph: { siteName: 'Solar Icons' },
+    alternates: { canonical: '/blog' },
+    openGraph: { url: '/blog', siteName: 'Solar Icons' },
     twitter: { card: 'summary_large_image', creator: '@hakim__saoudi' },
 }
 

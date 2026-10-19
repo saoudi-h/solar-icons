@@ -240,6 +240,7 @@ export async function generateMetadata(props: {
     return {
         title: page.data.title,
         description: page.data.description ?? `Solar Icons blog: ${page.data.title}`,
+        alternates: { canonical: page.url },
         openGraph: { url: page.url, siteName: 'Solar Icons' },
         twitter: { card: 'summary_large_image', creator: '@hakim__saoudi' },
     }

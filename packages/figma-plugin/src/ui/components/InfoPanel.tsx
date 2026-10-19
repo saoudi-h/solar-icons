@@ -35,7 +35,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
             <p className="info-description">
                 The maintained Solar icon set, shared between Figma and code.
             </p>
-            <button className="doc-button" type="button" onClick={() => openExternal('https://solar-icons.vercel.app')}>
+            <button className="doc-button" type="button" onClick={() => openExternal('https://solar-icons.dev')}>
                 <span>Open documentation</span>
                 <SolarSvg className="button-icon" svg={getSvg('arrow-right-up', 'linear')} aria-hidden="true" />
             </button>
@@ -48,7 +48,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                             className="package-link"
                             type="button"
                             key={item.package}
-                            onClick={() => openExternal(`https://solar-icons.vercel.app/docs/v2/packages/${item.slug}`)}
+                            onClick={() => openExternal(`https://solar-icons.dev/docs/v2/packages/${item.slug}`)}
                         >
                             <span className="package-logo" aria-hidden="true">
                                 <PackageMark logo={packageLogos[item.logo]} />

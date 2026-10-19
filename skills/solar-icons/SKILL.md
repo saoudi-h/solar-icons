@@ -12,9 +12,9 @@ allowed-tools: Bash(npx @solar-icons/cli *) Read Grep Glob Bash(pnpm:*)
 
 Solar Icons is the **maintained distribution of the Solar icon set**, packaged per framework with CSS-variable theming and tree-shakable imports. Source of truth for counts and catalog is `@solar-icons/static` (run `npx @solar-icons/cli overview` for current figures).
 
-- **Site:** https://solar-icons.vercel.app
-- **Icons:** https://solar-icons.vercel.app/icons
-- **Docs:** https://solar-icons.vercel.app/docs
+- **Site:** https://solar-icons.dev
+- **Icons:** https://solar-icons.dev/icons
+- **Docs:** https://solar-icons.dev/docs
 - **Figma:** https://www.figma.com/community/plugin/1664759238792120976/solar-icons
 - **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Rails, via RubyGems) • `flutter_solar_icons` (Flutter, via pub.dev)
 

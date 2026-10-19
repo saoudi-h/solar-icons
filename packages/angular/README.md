@@ -41,7 +41,6 @@ export class AppComponent {}
 ```ts
 // Top-level (all icons + lib)
 import { SolarHeartBold, SolarProvider, useSolar } from '@solar-icons/angular'
-
 // Dynamic icons
 import { SolarHome } from '@solar-icons/angular/dynamic'
 ```
@@ -69,7 +68,7 @@ export class AppComponent {}
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Angular Documentation](https://solar-icons.vercel.app/docs/v2/packages/angular).
+For installation guides, API reference, and a searchable icon catalog, visit the [Angular Documentation](https://solar-icons.dev/docs/v2/packages/angular).
 
 ## License
 

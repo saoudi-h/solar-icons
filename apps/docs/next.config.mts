@@ -36,6 +36,18 @@ const config: NextConfig = {
         return [
             {
                 source: '/docs',
+                has: [{ type: 'host', value: 'solar-icons.vercel.app' }],
+                destination: 'https://solar-icons.dev/docs/v2',
+                permanent: true,
+            },
+            {
+                source: '/:path*',
+                has: [{ type: 'host', value: 'solar-icons.vercel.app' }],
+                destination: 'https://solar-icons.dev/:path*',
+                permanent: true,
+            },
+            {
+                source: '/docs',
                 destination: '/docs/v2',
                 permanent: false,
             },

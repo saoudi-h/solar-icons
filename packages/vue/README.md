@@ -54,8 +54,8 @@ import { HomeIcon } from '@solar-icons/vue/linear'
 The plugin sets the same defaults app-wide without a provider wrapper. It writes the five CSS variables on `document.body` and makes `useSolar()` available in every component. The variables are applied client-side.
 
 ```ts
-import { createApp } from 'vue'
 import { SolarIconsPlugin } from '@solar-icons/vue/lib'
+import { createApp } from 'vue'
 
 const app = createApp(App)
 app.use(SolarIconsPlugin, {
@@ -72,7 +72,7 @@ For server-rendered apps, prefer `<SolarProvider>` for an exact first paint.
 
 ## Documentation
 
-For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.vercel.app/docs/v2/packages/vue).
+For installation guides, API reference, and a searchable icon catalog, visit the [Vue Documentation](https://solar-icons.dev/docs/v2/packages/vue).
 
 ## License
 

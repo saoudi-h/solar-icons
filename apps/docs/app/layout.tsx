@@ -34,6 +34,9 @@ export const metadata = createMetadata({
     },
     description: 'The icon library for React applications and more',
     metadataBase: baseUrl,
+    verification: {
+        google: 'eCrtAVCeSQP-PXpI3PqLF48VjWmezjOAeA0pH7i4UEE',
+    },
 })
 
 export const viewport: Viewport = {
