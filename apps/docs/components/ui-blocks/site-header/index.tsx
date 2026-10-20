@@ -1,10 +1,9 @@
 'use client'
 
-import githubIcon from '@iconify-icons/mdi/github'
-import { Icon } from '@iconify/react'
+import { MagnifierIcon } from '@solar-icons/react/dynamic/magnifier'
 import { MoonIcon } from '@solar-icons/react/dynamic/moon'
 import { SunIcon } from '@solar-icons/react/dynamic/sun'
-import { SearchTrigger } from 'fumadocs-ui/layouts/shared/slots/search-trigger'
+import { useSearchContext } from 'fumadocs-ui/contexts/search'
 import { useLenis } from 'lenis/react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTheme } from 'next-themes'
@@ -21,6 +20,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from '@/components/ui/dialog'
+import { GitHubStarCountButton } from '@/components/ui/GitHubStarCountButton'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 
 import { SITE_HEADER_HEIGHT, SITE_HEADER_OFFSET, SITE_HEADER_RESERVED_HEIGHT } from './constants'
@@ -117,56 +118,62 @@ function SiteNavLink({
 
 function SiteThemeToggle() {
     const { resolvedTheme, setTheme } = useTheme()
-    const [mounted, setMounted] = useState(false)
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    const isDark = mounted && resolvedTheme === 'dark'
-
+    // The icon follows the `dark` class of the document, which the theme
+    // script sets before the first paint. Rendering both icons and
+    // letting the stylesheet pick the right one avoids the flash of the
+    // wrong icon on the first render.
     return (
-        <button
-            type="button"
-            data-theme-toggle
-            aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-            title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            className="
-              inline-flex size-11 shrink-0 items-center justify-center rounded-full
-              text-muted-foreground transition-colors
-              hover:bg-accent hover:text-foreground
-              focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
-            ">
-            {isDark ? (
-                <SunIcon aria-hidden weight="Linear" className="size-5" />
-            ) : (
-                <MoonIcon aria-hidden weight="Linear" className="size-5" />
-            )}
-        </button>
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <button
+                    type="button"
+                    data-theme-toggle
+                    aria-label="Toggle theme"
+                    onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                    className="
+                      inline-flex size-11 shrink-0 items-center justify-center rounded-full
+                      text-muted-foreground transition-colors
+                      hover:bg-accent hover:text-foreground
+                      focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
+                    ">
+                    <SunIcon aria-hidden weight="Linear" className="hidden size-5 dark:block" />
+                    <MoonIcon aria-hidden weight="Linear" className="block size-5 dark:hidden" />
+                </button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">Toggle theme</TooltipContent>
+        </Tooltip>
     )
 }
 
-function GitHubLink({ mobile = false }: { mobile?: boolean }) {
+/**
+ * Search button of the header. It opens the Fumadocs search dialog.
+ */
+function SiteSearchTrigger({ className }: { className?: string }) {
+    const { setOpenSearch } = useSearchContext()
+
     return (
-        <Link
-            href="https://github.com/saoudi-h/solar-icons"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Solar Icons on GitHub"
-            title="GitHub"
-            className={cn(
-                `
-                  inline-flex size-11 shrink-0 items-center justify-center rounded-full
-                  text-muted-foreground transition-colors
-                  hover:bg-accent hover:text-foreground
-                  focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
-                `,
-                mobile && 'flex-1 justify-start gap-3 rounded-xl px-3'
-            )}>
-            <Icon icon={githubIcon} aria-hidden className="size-5" ssr />
-            {mobile ? <span>GitHub</span> : null}
-        </Link>
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <button
+                    type="button"
+                    data-search
+                    aria-label="Open search"
+                    onClick={() => setOpenSearch(true)}
+                    className={cn(
+                        `
+                          inline-flex size-11 shrink-0 items-center justify-center rounded-full
+                          text-muted-foreground transition-colors
+                          hover:bg-accent hover:text-foreground
+                          focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
+                        `,
+                        className
+                    )}>
+                    <MagnifierIcon aria-hidden className="size-4.5" />
+                </button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">Search</TooltipContent>
+        </Tooltip>
     )
 }
 
@@ -360,7 +367,7 @@ function MobileNavigationPanel({
                           mx-1 mt-auto flex items-center justify-between rounded-2xl bg-accent/25
                           p-1
                         ">
-                        <GitHubLink mobile />
+                        <GitHubStarCountButton />
                         <SiteThemeToggle />
                     </motion.div>
                 </div>
@@ -462,30 +469,12 @@ export function SiteHeader({ className, ...props }: React.ComponentProps<'header
                                     ))}
                                 </nav>
                                 <div className="ml-auto hidden items-center gap-0.5 lg:flex">
-                                    <SearchTrigger
-                                        size="icon"
-                                        color="ghost"
-                                        title="Search"
-                                        className="
-                                          size-11! rounded-full border-transparent!
-                                          text-muted-foreground
-                                          hover:bg-accent hover:text-foreground
-                                        "
-                                    />
+                                    <SiteSearchTrigger />
                                     <SiteThemeToggle />
-                                    <GitHubLink />
+                                    <GitHubStarCountButton className="-mr-3" />
                                 </div>
                                 <div className="ml-auto flex items-center gap-0.5 lg:hidden">
-                                    <SearchTrigger
-                                        size="icon"
-                                        color="ghost"
-                                        title="Search"
-                                        className="
-                                          size-11! rounded-full border-transparent!
-                                          text-muted-foreground
-                                          hover:bg-accent hover:text-foreground
-                                        "
-                                    />
+                                    <SiteSearchTrigger />
                                     <MobileNavigationTrigger
                                         open={isMobileMenuOpen}
                                         reduceMotion={shouldReduceMotion}
