@@ -54,6 +54,21 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **The categories page is generated, never hand-written.** `scripts/generate-categories.ts` builds the 37 catalogue categories (slug, label, icon count, thumbnail) from `packages/core/src/metadata.json`. The thumbnail of each category is curated in `REPRESENTATIVE_ICONS`; a curated icon that disappears falls back to the first icon of the category and prints a warning, and `pnpm check:icon-inventory` fails in CI when the published list and the catalogue disagree. Never hardcode a category name in MDX: the list drifted once already (the page shipped 17 categories that do not exist in the catalogue).
 - **The page carries two forms of the list.** `components/icon-reference/CategoryGrid.tsx` renders the visual grid (one card per category, with its thumbnail), and the markdown table of the same categories is passed to the component as its children: the component ignores them, so the table is not rendered but stays in the page source for `/llms-full.txt` and the "Copy Markdown" button. Both come from the same generated data, so they cannot disagree.
 
+## 🎛️ Site header controls (`components/ui-blocks/site-header`)
+
+- **The theme toggle renders both icons and lets the stylesheet pick.** The `dark` class is on
+  `<html>` before the first paint (next-themes inline script), so `dark:block` / `dark:hidden`
+  shows the right icon immediately. Gating the icon on a `mounted` state (the old code) renders
+  the moon first and the sun after the re-render: a visible flash. Do not reintroduce it.
+- **The search trigger is a local component, not the Fumadocs one.** It opens the dialog with
+  `setOpenSearch` from `useSearchContext()`. It stays an icon button: a pill with the
+  keyboard shortcut was tried and dropped, it was too imposing next to the other controls.
+- **The header buttons use the site `Tooltip`, never a `title` attribute.** The native browser
+  tooltip is unstyled and duplicates the `aria-label`. The `TooltipProvider` lives in
+  `app/Providers.tsx`.
+- The star counter button (`components/ui/GitHubStarCountButton.tsx`) and the community section
+  share the count through `lib/use-github-stars.ts`: one request per page, cached for an hour.
+
 ## 🎨 Icons page (FilterBar)
 
 - `components/icons-page/sections/icons/FilterBar.tsx` is the toolbar on `/icons`. Two variants from `useScreen('md')` (`@/lib/screens`, re-exported from `tw-screens`): inline row on desktop, right-edge `vaul` drawer on mobile. Same content in both.
