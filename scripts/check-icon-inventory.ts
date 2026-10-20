@@ -185,8 +185,8 @@ const main = () => {
             }
         }
 
-        // The textual form of the categories, published on the page
-        // itself and consumed by `/llms-full.txt`, must list the same
+        // The markdown table of the categories, published in the page
+        // source and consumed by `/llms-full.txt`, must list the same
         // categories with the same counts.
         const categoriesPage = path.join(
             REPOSITORY_ROOT,

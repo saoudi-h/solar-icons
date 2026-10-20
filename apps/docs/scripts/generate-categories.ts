@@ -14,8 +14,8 @@ const oxfmtFormat = (filepath: string, code: string): string =>
 const outputFilePath = './generated/categories.ts'
 const outputIconsFilePath = './generated/categoryIcons.ts'
 const pagePath = './content/docs/v2/icon-reference/categories.mdx'
-const START_MARKER = '{/* categories:generated:start */}'
-const END_MARKER = '{/* categories:generated:end */}'
+const OPEN_TAG = '<CategoryGrid>'
+const CLOSE_TAG = '</CategoryGrid>'
 
 const toPascalCase = (str: string) =>
     str
@@ -175,7 +175,7 @@ export const categoryIcons: Record<string, CategoryIcon> = {
 
     fs.writeFileSync(outputFilePath, oxfmtFormat(outputFilePath, output))
     fs.writeFileSync(outputIconsFilePath, oxfmtFormat(outputIconsFilePath, iconsOutput))
-    writePageBlock(entries)
+    writePageTable(entries)
     for (const warning of warnings) console.warn(`Warning: ${warning}`)
     console.log(
         `The files generated/categories.ts and generated/categoryIcons.ts have been generated with success ! (${entries.length} categories)`
@@ -183,26 +183,27 @@ export const categoryIcons: Record<string, CategoryIcon> = {
 }
 
 /**
- * The categories page also carries a textual form of the list, between
- * the `categories:generated` markers. It is what `/llms-full.txt` and
- * the "Copy Markdown" button expose, so the machine-readable surface
- * lists the same categories as the page.
+ * The categories page renders the grid, and passes it the markdown
+ * table of the same categories. The component ignores its children, so
+ * the table is not rendered, but it stays in the page source: both
+ * `/llms-full.txt` and the "Copy Markdown" button read the source, and
+ * a component alone would be invisible to them.
  *
- * The file is only written when its content changes: the build runs
- * this script, and a rewrite would move the "last updated" date of the
- * page on every build.
+ * The table is written between the component tags, and the file is
+ * only written when its content changes: the build runs this script,
+ * and a rewrite would move the "last updated" date of the page.
  */
-function writePageBlock(entries: { slug: string; label: string; count: number }[]) {
+function writePageTable(entries: { slug: string; label: string; count: number }[]) {
     if (!fs.existsSync(pagePath)) {
-        console.warn(`Warning: ${pagePath} is absent, skipping the generated block`)
+        console.warn(`Warning: ${pagePath} is absent, skipping the generated table`)
         return
     }
 
     const content = fs.readFileSync(pagePath, 'utf8')
-    const start = content.indexOf(START_MARKER)
-    const end = content.indexOf(END_MARKER)
+    const start = content.indexOf(OPEN_TAG)
+    const end = content.indexOf(CLOSE_TAG)
     if (start === -1 || end === -1 || end < start) {
-        console.warn(`Warning: ${pagePath} has no ${START_MARKER} / ${END_MARKER} markers`)
+        console.warn(`Warning: ${pagePath} has no ${OPEN_TAG} / ${CLOSE_TAG} tags`)
         return
     }
 
@@ -213,24 +214,18 @@ function writePageBlock(entries: { slug: string; label: string; count: number }[
         )
         .join('\n')
 
-    const block = `${START_MARKER}
-<details>
-<summary>Text list of the categories</summary>
-
-| Category | Icons |
+    const table = `| Category | Icons |
 | -------- | ----- |
 ${rows}
+`
+    const next = content.slice(0, start + OPEN_TAG.length) + `\n\n${table}\n` + content.slice(end)
 
-</details>
-${END_MARKER}`
-
-    const next = content.slice(0, start) + block + content.slice(end + END_MARKER.length)
     // The page is formatted like the rest of the repository, so the
-    // generated block matches what `oxfmt` produces.
+    // generated table matches what `oxfmt` produces.
     const formatted = oxfmtFormat(pagePath, next)
     if (formatted === content) return
     fs.writeFileSync(pagePath, formatted)
-    console.log('The generated block of the categories page has been refreshed.')
+    console.log('The category table of the categories page has been refreshed.')
 }
 
 main()

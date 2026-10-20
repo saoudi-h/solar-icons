@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 import { categoryCards } from '@/generated/categories'
 import { categoryIcons } from '@/generated/categoryIcons'
@@ -13,11 +14,12 @@ import { categoryIcons } from '@/generated/categoryIcons'
  * script builds from `packages/core/src/metadata.json`. The list can
  * therefore never drift from the catalogue.
  *
- * The textual form of the same list lives in the page source (a
- * generated block), so `/llms-full.txt` and the "Copy Markdown" button
- * expose the categories as text.
+ * The children are ignored on purpose. The page passes the markdown
+ * table of the same categories to the component: it is not rendered,
+ * but it is what `/llms-full.txt` and the "Copy Markdown" button
+ * expose, since both read the page source.
  */
-export function CategoryGrid() {
+export function CategoryGrid({ children: _children }: { children?: ReactNode }) {
     return (
         <div className="my-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {categoryCards.map(category => {
