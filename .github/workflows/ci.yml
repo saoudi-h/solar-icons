@@ -50,3 +50,9 @@ jobs:
 
             - name: Validate skill catalog freshness
               run: pnpm check:skill-counts
+
+            - name: Validate icon inventory
+              # Counts, category list, and category thumbnails published by
+              # the docs must match the catalogue. The docs build above
+              # regenerates them, so this also fails on a stale commit.
+              run: pnpm check:icon-inventory

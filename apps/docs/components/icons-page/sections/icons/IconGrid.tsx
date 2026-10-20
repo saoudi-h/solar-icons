@@ -13,6 +13,7 @@ import {
     activeCategoryAtom,
     displayedIconsAtom,
     filteredIconsAtom,
+    useCategoryURL,
     useOriginFilter,
     useSearchKeyword,
     useSelectedIcon,
@@ -75,7 +76,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     const [origin] = useOriginFilter()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
     const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
-    const viewMode = useViewModeURL()[0]
+    const [viewMode, setViewMode] = useViewModeURL()
+    const [urlCategory] = useCategoryURL()
     const activeCategory = useAtomValue(activeCategoryAtom)
     const selectedIcon = useSelectedIcon()
     const setActiveCategory = useSetAtom(activeCategoryAtom)
@@ -206,6 +208,26 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     const [initialIconName] = useState<string | null>(() => selectedIcon?.fullName ?? null)
     const hasMountedRef = useRef(false)
 
+    // Deep link (`?category=arrows`): the targeted category becomes the
+    // active one and the grid opens in grouped mode, the only mode
+    // where a category is a section. The effect re-runs only when the
+    // URL category changes, so switching the view mode afterwards is
+    // not overridden.
+    const lastUrlCategoryRef = useRef<string | null>(null)
+    // Set while a deep-link scroll is still owed to the visitor. The
+    // reset-to-top effect reads it before scheduling its own scroll, so
+    // the deep link is not undone by the first layout pass.
+    const pendingCategoryRef = useRef<string | null>(null)
+
+    useEffect(() => {
+        if (urlCategory === lastUrlCategoryRef.current) return
+        lastUrlCategoryRef.current = urlCategory
+        if (!urlCategory) return
+        pendingCategoryRef.current = urlCategory
+        setActiveCategory(urlCategory)
+        setViewMode('grouped')
+    }, [urlCategory, setActiveCategory, setViewMode])
+
     useEffect(() => {
         if (viewMode !== 'grouped') return
         if (!selectedIcon) return
@@ -232,6 +254,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         // positions always lands the header at the very top.
         const rafId = requestAnimationFrame(() => {
             listRef.current?.scrollToPosition(scrollTop)
+            pendingCategoryRef.current = null
         })
         return () => cancelAnimationFrame(rafId)
     }, [activeCategory, categoryToRowIndex, rowPositions, viewMode])
@@ -256,9 +279,13 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                 hasMountedRef.current = true
                 return
             }
+            // Read the pending deep link before scheduling the scroll: a
+            // deep link that lands on a category must not be undone by
+            // the reset-to-top pass below.
+            const keepCategoryPosition = pendingCategoryRef.current !== null
             const rafId = requestAnimationFrame(() => {
                 listRef.current?.recomputeRowHeights()
-                listRef.current?.scrollToPosition(0)
+                if (!keepCategoryPosition) listRef.current?.scrollToPosition(0)
             })
             return () => cancelAnimationFrame(rafId)
         } else {
