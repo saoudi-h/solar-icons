@@ -32,9 +32,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
 import { Heading } from '@/components/ui/heading'
+import { useGitHubStars } from '@/lib/use-github-stars'
 
 interface Stats {
-    stars: number
     downloads: number
     timestamp: number
 }
@@ -42,7 +42,6 @@ interface Stats {
 const CACHE_KEY = 'solar-icons-community-stats-v1'
 const CACHE_TTL = 60 * 60 * 1000 // 1 hour cache TTL
 
-const DEFAULT_STARS = 96
 const DEFAULT_DOWNLOADS = 15200
 
 const NPM_PACKAGES = [
@@ -63,10 +62,12 @@ const NPM_PACKAGES = [
 
 export const CommunitySection = () => {
     const [stats, setStats] = useState({
-        stars: DEFAULT_STARS,
         downloads: DEFAULT_DOWNLOADS,
     })
     const [isLoading, setIsLoading] = useState(true)
+    // The star count is shared with the site header, so the two never
+    // disagree and the repository is queried once per page.
+    const stars = useGitHubStars()
 
     useEffect(() => {
         const fetchStats = async () => {
@@ -78,7 +79,6 @@ export const CommunitySection = () => {
                         const cachedData = JSON.parse(cachedStr) as Stats
                         if (Date.now() - cachedData.timestamp < CACHE_TTL) {
                             setStats({
-                                stars: cachedData.stars,
                                 downloads: cachedData.downloads,
                             })
                             setIsLoading(false)
@@ -92,15 +92,6 @@ export const CommunitySection = () => {
                 // 2. Cache is stale or missing, fetch live data
                 setIsLoading(true)
 
-                // Fetch GitHub Stargazers
-                const githubPromise = fetch('https://api.github.com/repos/saoudi-h/solar-icons')
-                    .then(res => {
-                        if (!res.ok) throw new Error('GitHub API error')
-                        return res.json()
-                    })
-                    .then(data => data.stargazers_count as number)
-                    .catch(() => DEFAULT_STARS)
-
                 // Fetch NPM downloads for all variants
                 const npmPromises = NPM_PACKAGES.map(pkg =>
                     fetch(`https://api.npmjs.org/downloads/point/last-week/${pkg}`)
@@ -112,17 +103,13 @@ export const CommunitySection = () => {
                         .catch(() => 0)
                 )
 
-                const [starsResult, npmDownloadsResults] = await Promise.all([
-                    githubPromise,
-                    Promise.all(npmPromises),
-                ])
+                const npmDownloadsResults = await Promise.all(npmPromises)
 
                 const totalDownloads = npmDownloadsResults.reduce((acc, curr) => acc + curr, 0)
                 const finalDownloads = totalDownloads > 0 ? totalDownloads : DEFAULT_DOWNLOADS
 
                 // Update state and cache
                 const newStats = {
-                    stars: starsResult,
                     downloads: finalDownloads,
                 }
 
@@ -222,7 +209,7 @@ export const CommunitySection = () => {
                     <motion.div
                         variants={itemVariants}
                         className="relative flex w-full items-center justify-center md:col-span-5">
-                        <CommunityIconGrid stars={stats.stars} isLoading={isLoading} />
+                        <CommunityIconGrid stars={stars} isLoading={isLoading} />
                     </motion.div>
                 </div>
             </div>

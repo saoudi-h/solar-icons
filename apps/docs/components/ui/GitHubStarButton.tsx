@@ -94,18 +94,6 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
             {/* Right section: Star & Counter */}
             <span className="z-10 flex shrink-0 items-center gap-1.5">
                 <span
-                    className={cn(
-                        `
-                          flex items-center justify-center transition-transform duration-300
-                          ease-out
-                          group-hover:scale-120 group-hover:rotate-12
-                        `,
-                        starCount !== null ? 'text-warning' : `text-muted-foreground`
-                    )}>
-                    <StarIcon size={18} weight={starCount !== null ? 'Bold' : 'Linear'} />
-                </span>
-
-                <span
                     className="
                       min-w-[18px] font-mono text-sm font-extrabold text-warning transition-colors
                       duration-200 ease-out
@@ -115,6 +103,18 @@ export const GitHubStarButton: React.FC<GitHubStarButtonProps> = ({
                         format={{ minimumIntegerDigits: 1 }}
                         trend={1}
                     />
+                </span>
+
+                <span
+                    className={cn(
+                        `
+                          flex items-center justify-center transition-transform duration-300
+                          ease-out
+                          group-hover:scale-120 group-hover:rotate-12
+                        `,
+                        starCount !== null ? 'text-warning' : `text-muted-foreground`
+                    )}>
+                    <StarIcon size={18} weight={starCount !== null ? 'Bold' : 'Linear'} />
                 </span>
             </span>
         </motion.a>

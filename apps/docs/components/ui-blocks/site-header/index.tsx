@@ -1,7 +1,5 @@
 'use client'
 
-import githubIcon from '@iconify-icons/mdi/github'
-import { Icon } from '@iconify/react'
 import { MoonIcon } from '@solar-icons/react/dynamic/moon'
 import { SunIcon } from '@solar-icons/react/dynamic/sun'
 import { SearchTrigger } from 'fumadocs-ui/layouts/shared/slots/search-trigger'
@@ -21,6 +19,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from '@/components/ui/dialog'
+import { GitHubStarCountButton } from '@/components/ui/GitHubStarCountButton'
 import { cn } from '@/lib/utils'
 
 import { SITE_HEADER_HEIGHT, SITE_HEADER_OFFSET, SITE_HEADER_RESERVED_HEIGHT } from './constants'
@@ -144,29 +143,6 @@ function SiteThemeToggle() {
                 <MoonIcon aria-hidden weight="Linear" className="size-5" />
             )}
         </button>
-    )
-}
-
-function GitHubLink({ mobile = false }: { mobile?: boolean }) {
-    return (
-        <Link
-            href="https://github.com/saoudi-h/solar-icons"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Solar Icons on GitHub"
-            title="GitHub"
-            className={cn(
-                `
-                  inline-flex size-11 shrink-0 items-center justify-center rounded-full
-                  text-muted-foreground transition-colors
-                  hover:bg-accent hover:text-foreground
-                  focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none
-                `,
-                mobile && 'flex-1 justify-start gap-3 rounded-xl px-3'
-            )}>
-            <Icon icon={githubIcon} aria-hidden className="size-5" ssr />
-            {mobile ? <span>GitHub</span> : null}
-        </Link>
     )
 }
 
@@ -360,7 +336,7 @@ function MobileNavigationPanel({
                           mx-1 mt-auto flex items-center justify-between rounded-2xl bg-accent/25
                           p-1
                         ">
-                        <GitHubLink mobile />
+                        <GitHubStarCountButton />
                         <SiteThemeToggle />
                     </motion.div>
                 </div>
@@ -473,7 +449,7 @@ export function SiteHeader({ className, ...props }: React.ComponentProps<'header
                                         "
                                     />
                                     <SiteThemeToggle />
-                                    <GitHubLink />
+                                    <GitHubStarCountButton className="-mr-3" />
                                 </div>
                                 <div className="ml-auto flex items-center gap-0.5 lg:hidden">
                                     <SearchTrigger
