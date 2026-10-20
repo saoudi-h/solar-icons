@@ -66,9 +66,14 @@ pnpm --filter @solar-icons/docs generate:catalog
 ```
 
 The docs `dev` and `build` scripts run this command automatically. This updates
-`apps/docs/generated/descriptions.ts`, `apps/docs/generated/utils.ts`, and
-`apps/docs/generated/generatedHeroUtils.ts`; it is what keeps `/icons` aligned with the core
-inventory instead of leaving the previous count in the generated bundle.
+`apps/docs/generated/descriptions.ts`, `apps/docs/generated/utils.ts`,
+`apps/docs/generated/generatedHeroUtils.ts`, `apps/docs/generated/categories.ts`, and
+`apps/docs/generated/categoryIcons.ts`; it is what keeps `/icons` aligned with the core
+inventory instead of leaving the previous count in the generated bundle. The last two files
+back the categories page: the category list, the icon count of each category, and the
+thumbnail of each category are derived from the catalogue, so they must never be written by
+hand. A curated thumbnail that disappears falls back to the first icon of its category and
+`pnpm check:icon-inventory` reports the mismatch.
 
 The Svelte package must also be regenerated before checking `apps/svelte-app`, because the demo
 imports the package through its generated `dist/` output. Its `dev` and `build` scripts now run
