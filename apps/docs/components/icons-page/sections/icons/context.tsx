@@ -1,4 +1,4 @@
-import { STYLES, type Weight } from '@solar-icons/core/runtime'
+import { CATEGORIES, STYLES, type Weight } from '@solar-icons/core/runtime'
 import { SolarProvider, useSolar } from '@solar-icons/react'
 import { atom } from 'jotai'
 import { useTheme } from 'next-themes'
@@ -108,6 +108,30 @@ export function useSearchKeyword(): readonly [string, (value: string) => void] {
         [setParam]
     )
     return [keyword, setKeyword] as const
+}
+
+/**
+ * Category targeted by the URL (`?category=arrows`).
+ *
+ * A category is a navigation target, not a filter (DOCS-UI-01): the
+ * explorer opens in grouped mode and scrolls to that category's
+ * section, the same way the category sidebar behaves. The value is
+ * validated against the catalogue, so a stale link cannot point at a
+ * category that no longer exists.
+ */
+export function useCategoryURL(): readonly [string | null, (value: string | null) => void] {
+    const [param, setParam] = useQueryState(
+        'category',
+        parseAsStringLiteral(CATEGORIES as string[])
+    )
+    const category = param ?? null
+    const setCategory = useCallback(
+        (value: string | null) => {
+            setParam(value)
+        },
+        [setParam]
+    )
+    return [category, setCategory] as const
 }
 
 const ORIGIN_FILTERS = ['all', 'extended'] as const

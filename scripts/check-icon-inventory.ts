@@ -1,5 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
+import { categoryCards } from '../apps/docs/generated/categories'
 import { scanSvgIcons } from '../packages/core/src/scripts/icon-metadata'
 import type { Metadata } from '../packages/core/src/types'
 
@@ -146,6 +148,77 @@ const main = () => {
             svg: svgFiles,
         }
 
+        // Categories published by the docs. The list is generated from
+        // the catalogue, so it must match it exactly: a stale entry
+        // means the icon reference shows a category that no longer
+        // exists, or hides one that does.
+        const catalogueCategories = Object.keys(metadata.categories)
+        if (categoryCards.length !== catalogueCategories.length) {
+            errors.push(
+                `apps/docs/generated/categories.ts lists ${categoryCards.length} categories, but the catalogue has ${catalogueCategories.length}`
+            )
+        }
+        for (const card of categoryCards) {
+            const catalogueCategory = metadata.categories[card.slug]
+            if (!catalogueCategory) {
+                errors.push(
+                    `apps/docs/generated/categories.ts publishes an unknown category "${card.slug}"`
+                )
+                continue
+            }
+            if (card.count !== catalogueCategory.icons.length) {
+                errors.push(
+                    `apps/docs/generated/categories.ts reports ${card.count} icons for "${card.slug}", but the catalogue has ${catalogueCategory.icons.length}`
+                )
+            }
+            if (!catalogueCategory.icons.includes(card.representative)) {
+                errors.push(
+                    `apps/docs/generated/categories.ts uses "${card.representative}" as the thumbnail of "${card.slug}", but that icon is not in the category`
+                )
+            }
+        }
+        for (const slug of catalogueCategories) {
+            if (!categoryCards.some(card => card.slug === slug)) {
+                errors.push(
+                    `apps/docs/generated/categories.ts does not publish the catalogue category "${slug}"`
+                )
+            }
+        }
+
+        // The markdown table of the categories, published in the page
+        // source and consumed by `/llms-full.txt`, must list the same
+        // categories with the same counts.
+        const categoriesPage = path.join(
+            REPOSITORY_ROOT,
+            'apps/docs/content/docs/v2/icon-reference/categories.mdx'
+        )
+        if (fs.existsSync(categoriesPage)) {
+            const page = fs.readFileSync(categoriesPage, 'utf8')
+            const published = new Map<string, number>()
+            for (const row of page.matchAll(
+                /^\|\s*\[([^\]]+)\]\(\/icons\?view=grouped&category=([^)]+)\)\s*\|\s*(\d+)\s*\|/gm
+            )) {
+                published.set(row[2]!, Number(row[3]))
+            }
+            for (const card of categoryCards) {
+                const count = published.get(card.slug)
+                if (count === undefined) {
+                    errors.push(`the categories page does not list the category "${card.slug}"`)
+                } else if (count !== card.count) {
+                    errors.push(
+                        `the categories page lists ${count} icons for "${card.slug}", but the catalogue has ${card.count}`
+                    )
+                }
+            }
+            for (const slug of published.keys()) {
+                if (!categoryCards.some(card => card.slug === slug)) {
+                    errors.push(`the categories page lists an unknown category "${slug}"`)
+                }
+            }
+        } else {
+            errors.push('the categories page is missing')
+        }
+
         for (const { relativePath, counts } of documentationChecks) {
             const filename = path.join(REPOSITORY_ROOT, relativePath)
             if (!fs.existsSync(filename)) {
@@ -165,7 +238,9 @@ const main = () => {
         }
 
         // Package count: README table rows must match the homepage stat card.
-        const readmeLines = fs.readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8').split('\n')
+        const readmeLines = fs
+            .readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8')
+            .split('\n')
         const tableHead = readmeLines.findIndex(line => line.startsWith('| Package |'))
         let tableRows = 0
         for (const line of readmeLines.slice(tableHead + 1)) {
@@ -197,13 +272,10 @@ const main = () => {
         if (!bannerHtml.includes('logo-row framework-logos')) {
             errors.push('banner has no framework logo row')
         } else {
-            const referenced = [
-                ...bannerHtml.matchAll(/src="readme-banner-assets\/([^"]+)"/g),
-            ].map(match => match[1])
-            const assetDir = path.join(
-                REPOSITORY_ROOT,
-                'apps/docs/ressources/readme-banner-assets'
+            const referenced = [...bannerHtml.matchAll(/src="readme-banner-assets\/([^"]+)"/g)].map(
+                match => match[1]
             )
+            const assetDir = path.join(REPOSITORY_ROOT, 'apps/docs/ressources/readme-banner-assets')
             const committed = new Set(
                 fs.readdirSync(assetDir).filter(file => file.endsWith('.svg'))
             )

@@ -50,3 +50,11 @@ jobs:
 
             - name: Validate skill catalog freshness
               run: pnpm check:skill-counts
+
+            - name: Validate icon inventory
+              # Counts, category list, and category thumbnails published by
+              # the docs must match the catalogue. The docs build above
+              # regenerates them, so this also fails on a stale commit.
+              # `--check-generated` is left out on purpose: it needs the
+              # demo app icon lists, which are not all committed.
+              run: pnpm exec tsx scripts/check-icon-inventory.ts --check-docs
