@@ -1,10 +1,10 @@
 'use client'
 
-import { Icon } from '@iconify/react'
 import { ArrowRightUpIcon } from '@solar-icons/react/dynamic/arrow-right-up'
 import React from 'react'
 
 import { Link } from '@/components/ui/link'
+import { Icon } from '@/lib/icons'
 
 const tools = [
     {

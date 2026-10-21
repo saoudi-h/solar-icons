@@ -2,14 +2,12 @@ import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import metadata from '@solar-icons/core/metadata.json'
+import icons from '@/generated/icons.json'
 
 import { iconifyIcons } from '../lib/resolveIconUtils'
 
 const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../content/docs')
-const validSolarIcons = new Set(
-    Object.values(metadata.categories).flatMap(category => category.icons)
-)
+const bundledIcons = new Set(Object.keys(icons))
 const validIconifyIcons = new Set(iconifyIcons)
 const errors: string[] = []
 let referenceCount = 0
@@ -26,18 +24,14 @@ function checkIcon(icon: string, file: string, source: string) {
 
     if (validIconifyIcons.has(icon)) return
 
-    const [collection, name] = icon.split(':')
-    if (!collection || !name) {
+    if (!icon.includes(':')) {
         errors.push(`${path.relative(docsDir, file)} (${source}): ${icon} is not an Iconify name`)
         return
     }
 
-    if (collection !== 'solar') return
-
-    const baseName = name.replace(/-(bold-duotone|line-duotone|linear|outline|broken|bold)$/, '')
-    if (validSolarIcons.has(baseName)) return
-
-    errors.push(`${path.relative(docsDir, file)} (${source}): ${icon} is not a Solar icon`)
+    if (!bundledIcons.has(icon)) {
+        errors.push(`${path.relative(docsDir, file)} (${source}): ${icon} is not bundled`)
+    }
 }
 
 function walkMeta(value: unknown, file: string) {

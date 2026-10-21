@@ -1,10 +1,9 @@
 'use client'
-import githubIcon from '@iconify-icons/mdi/github'
-import { Icon } from '@iconify/react'
 import NumberFlow from '@number-flow/react'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { Icon } from '@/lib/icons'
 import { useGitHubStars } from '@/lib/use-github-stars'
 import { cn } from '@/lib/utils'
 
@@ -44,9 +43,8 @@ export const GitHubStarCountButton: React.FC<GitHubStarCountButtonProps> = ({ cl
                         className
                     )}>
                     <Icon
-                        icon={githubIcon}
+                        icon="mdi:github"
                         aria-hidden
-                        ssr
                         className="
                           size-4.5 shrink-0 text-muted-foreground transition-colors
                           group-hover:text-primary

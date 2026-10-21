@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react'
 import { ArrowLeftIcon } from '@solar-icons/react/linear/arrow-left'
 import { BugMinimalisticIcon } from '@solar-icons/react/linear/bug-minimalistic'
 import { DiplomaIcon } from '@solar-icons/react/linear/diploma'
@@ -12,6 +11,7 @@ import type { NotFoundProps } from '@/app/not-found'
 import type { HeroSectionProps } from '@/components/home-page/sections/hero'
 import type { PackageSectionProps } from '@/components/home-page/sections/packages'
 import type { FooterProps } from '@/components/ui-blocks/footer/types'
+import { Icon } from '@/lib/icons'
 
 export interface Config {
     footer: FooterProps

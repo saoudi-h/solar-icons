@@ -1,12 +1,12 @@
 'use client'
 
-import { Icon } from '@iconify/react'
 import { InfoCircleIcon } from '@solar-icons/react/linear/info-circle'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
 
 import { MotionTabs } from '@/components/ui/MotionTabs'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { Icon } from '@/lib/icons'
 
 import {
     activeCategoryAtom,

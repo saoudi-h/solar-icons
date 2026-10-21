@@ -17,7 +17,8 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - UI primitives: Radix UI, `cmdk`, `motion`, `vaul`.
 - Search: Fumadocs built-in search over MDX content.
 - LLMs: `/llms.txt` and `/llms-full.txt` are first-class deliverables.
-- Build = `pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build`. The catalog step regenerates the explorer data from `@solar-icons/core`; the pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
+- Build = `pnpm generate:icons && pnpm check:icons && pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build`. The catalog step regenerates the explorer data from `@solar-icons/core`; the pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
+- Icons: every Iconify name (`collection:name`) is resolved **at build time** by `scripts/generate-icons.ts` and written to `generated/icons.json`. The app renders them through `lib/icons.tsx`, so no request ever reaches `api.iconify.design` at runtime. `scripts/check:icons.ts` fails the build when a content icon is unknown or missing from the bundle.
 - Lint = `eslint . && pnpm lint:links`. `lint:links` uses `next-validate-link` to scan MDX content for dead links.
 - Postinstall = `fumadocs-mdx`.
 

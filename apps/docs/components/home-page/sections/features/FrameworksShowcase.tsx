@@ -1,7 +1,7 @@
 'use client'
-import { Icon } from '@iconify/react'
 import { motion } from 'motion/react'
 
+import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 
 import styles from './FrameworksShowcase.module.css'

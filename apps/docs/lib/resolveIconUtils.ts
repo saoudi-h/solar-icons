@@ -1,8 +1,8 @@
-import { Icon } from '@iconify/react'
-import type { IconProps as IconifyIconProps } from '@iconify/react'
 import type { Weight } from '@solar-icons/core/runtime'
-import type { ReactElement } from 'react'
+import type { ComponentProps, ReactElement } from 'react'
 import { createElement } from 'react'
+
+import { Icon } from './icons'
 
 export const iconWeights: Weight[] = [
     'Bold',
@@ -64,5 +64,5 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
  */
 export const renderRawIconify = (
     icon: string,
-    props?: Omit<IconifyIconProps, 'icon'>
+    props?: Omit<ComponentProps<typeof Icon>, 'icon'>
 ): ReactElement => createElement(Icon, { icon, ...props })

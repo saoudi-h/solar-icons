@@ -419,12 +419,6 @@ importers:
         specifier: ^4.6.7
         version: 4.6.7
     devDependencies:
-      '@iconify-icons/mdi':
-        specifier: 2.0.0
-        version: 2.0.0
-      '@iconify/react':
-        specifier: ^6.0.3
-        version: 6.0.3(react@19.3.1)
       '@next/bundle-analyzer':
         specifier: ^16.4.2
         version: 16.4.2
@@ -3548,9 +3542,6 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       hono: ^4 || ^5.0.0-0
-
-  '@iconify-icons/mdi@2.0.0':
-    resolution: {integrity: sha512-ppVItcrp6uRn9XYA4e8XkJC6VnFfBGSLJVrTrHrc7ft9iwLVat3u4ol/UldokaSZ2EyWYukdYYT2AhZP0uNOjg==}
 
   '@iconify-json/devicon@1.2.71':
     resolution: {integrity: sha512-1o+Zl3QveZZoE6VMUl9hL4FEtyHC1NeUHO8sqBm2vb7oG1hL/43uzjKPXolG2tkQRkcEoi6TjH2qMss+xPCdAw==}
@@ -16858,10 +16849,6 @@ snapshots:
   '@hono/node-server@2.1.5(hono@4.13.13)':
     dependencies:
       hono: 4.13.13
-
-  '@iconify-icons/mdi@2.0.0':
-    dependencies:
-      '@iconify/types': 2.0.0
 
   '@iconify-json/devicon@1.2.71':
     dependencies:

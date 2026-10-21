@@ -4,9 +4,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "pnpm check:icons && pnpm generate:catalog && pnpm generate:og-assets && tsx ./scripts/generate-changelog.ts && next build",
+        "build": "pnpm generate:icons && pnpm check:icons && pnpm generate:catalog && pnpm generate:og-assets && tsx ./scripts/generate-changelog.ts && next build",
         "dev": "next dev --turbo",
-        "predev": "pnpm generate:catalog && pnpm generate:og-assets",
+        "predev": "pnpm generate:icons && pnpm generate:catalog && pnpm generate:og-assets",
         "start": "next start",
         "postinstall": "fumadocs-mdx",
         "lint": "oxlint --deny-warnings .",
@@ -27,7 +27,8 @@
         "pre-commit": "lint-staged",
         "lint:links": "fumadocs-mdx && bun scripts/lint.ts",
         "analyze": "ANALYZE=true pnpm run build",
-        "check:icons": "tsx ./scripts/check-icons.ts"
+        "check:icons": "tsx ./scripts/check-icons.ts",
+        "generate:icons": "tsx ./scripts/generate-icons.ts"
     },
     "dependencies": {
         "@fontsource/aleo": "^5.3.0",
@@ -76,8 +77,6 @@
         "zod": "^4.6.7"
     },
     "devDependencies": {
-        "@iconify-icons/mdi": "2.0.0",
-        "@iconify/react": "^6.0.3",
         "@next/bundle-analyzer": "^16.4.2",
         "@solar-icons/core": "workspace:*",
         "@tailwindcss/postcss": "^4.3.3",
