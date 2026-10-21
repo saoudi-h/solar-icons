@@ -66,6 +66,8 @@ const dynamicIcons: Record<string, React.ComponentType<{ weight?: Weight } & Ico
     Widget3Icon,
 }
 
+export const solarIconNames = Object.keys(dynamicIcons)
+
 function resolveDynamicIcon(
     name: string
 ): React.ComponentType<{ weight?: Weight } & IconProps> | undefined {
