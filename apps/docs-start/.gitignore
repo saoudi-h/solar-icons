@@ -1,0 +1,21 @@
+node_modules
+.DS_Store
+.cache
+.env
+.env.local
+dist
+.output
+.tanstack
+.wrangler
+worker-configuration.d.ts
+test-results
+playwright-report
+
+# Build artifacts
+public/p.js
+public/_headers
+public/robots.txt
+public/_redirects
+public/data/icons.json
+src/generated/icon-chunks
+src/generated/icon-chunk-loaders.ts

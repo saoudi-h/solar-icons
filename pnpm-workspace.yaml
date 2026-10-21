@@ -13,6 +13,7 @@ allowBuilds:
   vue-demi: true
   '@tailwindcss/oxide': true
   better-sqlite3: true
+  workerd: true
 enablePrePostScripts: true
 minimumReleaseAge: 0
 
@@ -36,3 +37,6 @@ packageExtensions:
     "@analogjs/vite-plugin-angular":
         dependencies:
             typescript: 6.0.3
+permissions:
+  '@tanstack/react-start':
+    skills: true

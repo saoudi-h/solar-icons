@@ -1,0 +1,24 @@
+{
+    "include": ["**/*.ts", "**/*.tsx", ".source/**/*.ts"],
+    "exclude": ["node_modules", "dist", ".output", ".tanstack", ".wrangler"],
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "lib": ["DOM", "DOM.Iterable", "ES2023"],
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "target": "ES2023",
+        "allowJs": true,
+        "forceConsistentCasingInFileNames": true,
+        "noUncheckedIndexedAccess": true,
+        "types": ["node", "vite/client"],
+        "paths": {
+            "~/*": ["./src/*"]
+        },
+        "noEmit": true
+    }
+}

@@ -1,0 +1,17 @@
+{
+    // Assets-only Worker: no `main` key means no Worker script is uploaded.
+    // Requests are served straight from Cloudflare's asset storage, so the
+    // site never bills a Worker invocation.
+    // Docs: https://developers.cloudflare.com/workers/static-assets/
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "solar-icons-docs-start-test",
+    "compatibility_date": "2026-10-21",
+    "workers_dev": true,
+    "assets": {
+        "directory": "dist/client",
+        // Serve `/docs/v2` from `docs/v2.html` without redirecting to
+        // `/docs/v2/`, and redirect `/docs/v2/` to `/docs/v2`.
+        "html_handling": "drop-trailing-slash",
+        "not_found_handling": "404-page"
+    }
+}
