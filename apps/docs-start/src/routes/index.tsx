@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 import { ThemeToggle } from '~/components/theme-toggle'
 import { seo } from '~/utils/seo'
@@ -87,6 +87,12 @@ function Home() {
                 ))}
             </section>
 
+            <Link
+                to="/icons"
+                search={{}}
+                className="w-fit rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-accent">
+                Open the icon explorer
+            </Link>
         </main>
     )
 }
