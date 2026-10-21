@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "build": "turbo build --concurrency=1",
-        "dev": "turbo dev",
+        "dev": "turbo dev --concurrency=20",
         "lint": "turbo lint",
         "lint:fix": "turbo lint:fix",
         "format": "turbo format",
