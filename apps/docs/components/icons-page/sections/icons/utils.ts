@@ -12,6 +12,15 @@ export const getAllIcons = (): IconData[] => {
     return icons as IconData[]
 }
 
+export function toComponentName(name: string): string {
+    return (
+        name
+            .split('-')
+            .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+            .join('') + 'Icon'
+    )
+}
+
 export type OriginFilter = 'all' | 'extended'
 
 export const searchIcons = ({

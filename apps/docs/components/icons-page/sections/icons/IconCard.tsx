@@ -12,32 +12,9 @@ import {
     useWeightNamespaceContext,
 } from './context'
 import { isRecentExtension, RecentIconDot } from './OriginControls'
+import { toComponentName } from './utils'
 
-type IconCardProps = Omit<IconData, 'Icon'> & {
-    /**
-     * Present at runtime (the grid spreads the full `IconData` record)
-     * but re-derived from the weight namespace inside, so it is stripped
-     * before spreading onto the DOM. Typed `unknown` since only its
-     * presence matters here, never its value.
-     */
-    Icon?: unknown
-}
-
-/**
- * Convert an icon base name (kebab-case, e.g. `home-add`) to the
- * component name as exported by the per-weight namespaces
- * (PascalCase + `Icon` suffix, e.g. `HomeAddIcon`). The namespace
- * object exposes them as `Namespace.HomeAddIcon`, so the lookup
- * is `Namespace[toComponentName(name)]`.
- */
-function toComponentName(name: string): string {
-    return (
-        name
-            .split('-')
-            .map(p => p.charAt(0).toUpperCase() + p.slice(1))
-            .join('') + 'Icon'
-    )
-}
+type IconCardProps = IconData
 
 export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
     (
@@ -52,11 +29,10 @@ export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
             state: _state,
             priority: _priority,
             priorityReason: _priorityReason,
-            // `Icon` (component) and `deprecatedAliases` (objects) are not
-            // valid DOM props. The grid passes the full `IconData` record,
-            // so strip them here instead of spreading them onto `motion.div`
-            // (React warns `Invalid DOM property` otherwise).
-            Icon: _Icon,
+            // `deprecatedAliases` (objects) is not a valid DOM prop. The grid
+            // passes the full `IconData` record, so strip it here instead of
+            // spreading it onto `motion.div` (React warns `Invalid DOM property`
+            // otherwise).
             deprecatedAliases: _deprecatedAliases,
             ...props
         },

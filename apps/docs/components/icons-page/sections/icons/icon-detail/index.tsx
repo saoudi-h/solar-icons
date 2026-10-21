@@ -8,7 +8,14 @@ import type { FC } from 'react'
 import { MotionTabs } from '@/components/ui/MotionTabs'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
-import { activeCategoryAtom, useSelectedIcon, useStyleURL, useViewModeURL } from '../context'
+import {
+    activeCategoryAtom,
+    useSelectedIcon,
+    useStyleURL,
+    useViewModeURL,
+    useWeightNamespaceContext,
+} from '../context'
+import { toComponentName } from '../utils'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { BladeCode } from './BladeCode'
@@ -50,6 +57,8 @@ const Content: FC = () => {
     const [weight] = useStyleURL()
     const [viewMode, setViewMode] = useViewModeURL()
     const [, setActiveCategory] = useAtom(activeCategoryAtom)
+    const namespace = useWeightNamespaceContext()
+    const IconComponent = selectedIcon ? namespace?.[toComponentName(selectedIcon.name)] : undefined
 
     const handleCategoryClick = (category: string) => {
         if (viewMode !== 'grouped') setViewMode('grouped')
@@ -69,11 +78,15 @@ const Content: FC = () => {
                       lg:mr-4 lg:flex-col-reverse lg:justify-end lg:border-r lg:pr-4
                     `}>
                     <div className={`flex items-center justify-center lg:size-56`}>
-                        <selectedIcon.Icon
-                            weight={weight}
-                            className={`size-12 lg:size-44`}
-                            isolated
-                        />
+                        {IconComponent ? (
+                            <IconComponent
+                                weight={weight}
+                                className={`size-12 lg:size-44`}
+                                isolated
+                            />
+                        ) : (
+                            <div className="size-12 lg:size-44" aria-hidden="true" />
+                        )}
                     </div>
 
                     <div className="flex flex-col items-start justify-between">
