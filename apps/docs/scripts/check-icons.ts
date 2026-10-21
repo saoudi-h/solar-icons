@@ -2,10 +2,14 @@ import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { iconifyIcons, solarIconNames } from '../lib/resolveIconUtils'
+import metadata from '@solar-icons/core/metadata.json'
+
+import { getSolarIconBaseName, iconifyIcons } from '../lib/resolveIconUtils'
 
 const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../content/docs')
-const validSolarIcons = new Set(solarIconNames)
+const validSolarIcons = new Set(
+    Object.values(metadata.categories).flatMap(category => category.icons)
+)
 const validIconifyIcons = new Set(iconifyIcons)
 const errors: string[] = []
 let referenceCount = 0
@@ -20,9 +24,10 @@ function unquote(value: string) {
 function checkIcon(icon: string, file: string, source: string) {
     referenceCount++
 
-    if (validSolarIcons.has(icon) || validIconifyIcons.has(icon) || icon.includes(':')) {
-        return
-    }
+    if (validIconifyIcons.has(icon)) return
+    if (icon.includes(':') && !icon.startsWith('solar:')) return
+
+    if (validSolarIcons.has(getSolarIconBaseName(icon))) return
 
     errors.push(`${path.relative(docsDir, file)} (${source}): ${icon}`)
 }
