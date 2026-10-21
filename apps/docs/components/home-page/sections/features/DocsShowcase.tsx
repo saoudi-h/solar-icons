@@ -1,6 +1,7 @@
-import { Icon } from '@iconify/react'
 import { AnimatePresence, motion, useInView } from 'motion/react'
 import React from 'react'
+
+import { Icon } from '@/lib/icons'
 
 export const DocsShowcase = () => {
     const [isOpen, setIsOpen] = React.useState(false)

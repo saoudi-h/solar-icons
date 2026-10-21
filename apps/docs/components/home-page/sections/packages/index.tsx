@@ -1,5 +1,4 @@
 'use client'
-import { Icon } from '@iconify/react'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
 import { AnimatePresence, motion } from 'motion/react'
 import { useRouter } from 'next/navigation'
@@ -13,6 +12,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Heading } from '@/components/ui/heading'
 import { MotionHeading } from '@/components/ui/motion'
 import { NoiseSvg } from '@/components/ui/noise-svg'
+import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 
 export interface PackageCardProps {

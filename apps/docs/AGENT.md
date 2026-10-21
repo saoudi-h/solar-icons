@@ -17,7 +17,8 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - UI primitives: Radix UI, `cmdk`, `motion`, `vaul`.
 - Search: Fumadocs built-in search over MDX content.
 - LLMs: `/llms.txt` and `/llms-full.txt` are first-class deliverables.
-- Build = `pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build`. The catalog step regenerates the explorer data from `@solar-icons/core`; the pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
+- Build = `pnpm generate:icons && pnpm check:icons && pnpm generate:catalog && tsx ./scripts/generate-changelog.ts && next build`. The catalog step regenerates the explorer data from `@solar-icons/core`; the pre-build changelog script aggregates per-package `CHANGELOG.md` into a single page.
+- Icons: every Iconify name (`collection:name`) is resolved **at build time** by `scripts/generate-icons.ts` and written to `generated/icons.json`. The app renders them through `lib/icons.tsx`, so no request ever reaches `api.iconify.design` at runtime. `scripts/check:icons.ts` fails the build when a content icon is unknown or missing from the bundle.
 - Lint = `eslint . && pnpm lint:links`. `lint:links` uses `next-validate-link` to scan MDX content for dead links.
 - Postinstall = `fumadocs-mdx`.
 
@@ -53,6 +54,35 @@ The official Solar Icons documentation site. Public, deployed to https://solar-i
 - **Explorer data is generated from the core source metadata.** `pnpm generate:catalog` reads the committed files under `packages/core/src/` and refreshes `generated/descriptions.ts`, `generated/utils.ts`, `generated/generatedHeroUtils.ts`, `generated/categories.ts`, and `generated/categoryIcons.ts`; `predev` and `build` run it automatically so `/icons` does not retain a stale inventory when core `dist/` has not been rebuilt yet.
 - **The categories page is generated, never hand-written.** `scripts/generate-categories.ts` builds the 37 catalogue categories (slug, label, icon count, thumbnail) from `packages/core/src/metadata.json`. The thumbnail of each category is curated in `REPRESENTATIVE_ICONS`; a curated icon that disappears falls back to the first icon of the category and prints a warning, and `pnpm check:icon-inventory` fails in CI when the published list and the catalogue disagree. Never hardcode a category name in MDX: the list drifted once already (the page shipped 17 categories that do not exist in the catalogue).
 - **The page carries two forms of the list.** `components/icon-reference/CategoryGrid.tsx` renders the visual grid (one card per category, with its thumbnail), and the markdown table of the same categories is passed to the component as its children: the component ignores them, so the table is not rendered but stays in the page source for `/llms-full.txt` and the "Copy Markdown" button. Both come from the same generated data, so they cannot disagree.
+
+## 🎨 Icon pipeline (build-time Iconify bundle)
+
+Icons are resolved **at build time**, never at runtime. `@iconify/react` is not a dependency of this app: the Iconify data is inlined in the JavaScript payload, so the site never calls `api.iconify.design` and Cloudflare Radar sees no third-party icon traffic.
+
+| Piece                       | Role                                                                                                                                                                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `scripts/generate-icons.ts` | Scans the content (`icon:` in MDX frontmatter, `"icon"` in `meta.json`) and the app code (`app/`, `components/`, `config/`, `lib/`) for `collection:name` strings, downloads the missing ones from the Iconify API, and writes `generated/icons.json`. |
+| `generated/icons.json`      | The bundle: `collection:name` → `{ body, width, height, left, top }`. Committed, so a clean build needs no network.                                                                                                                                    |
+| `lib/icons.tsx`             | The `<Icon icon="collection:name" />` component. Renders the bundled SVG.                                                                                                                                                                              |
+| `scripts/check-icons.ts`    | Fails the build when a content icon is not an Iconify name, is unknown, or is missing from the bundle.                                                                                                                                                 |
+
+**How to add an icon**
+
+- In content: `icon: solar:book-2-bold-duotone` in the MDX frontmatter, or `"icon": "solar:book-2-bold-duotone"` in a `meta.json`. Any name of the `solar` collection works; the weight is part of the name (`-bold-duotone`, `-linear`, `-outline`, …).
+- In code: `import { Icon } from '@/lib/icons'` then `<Icon icon="mdi:github" className="size-4" />`. Any Iconify collection works (`devicon:`, `logos:`, `material-symbols:`, `simple-icons:`, …).
+- Then run `pnpm --filter @solar-icons/docs generate:icons` to refresh `generated/icons.json` and commit it. `build` and `predev` run it automatically.
+
+**Development vs production**
+
+- Production: only the bundled data is used. A name missing from the bundle renders nothing, and `pnpm check:icons` fails the build before that happens.
+- Development: `lib/icons.tsx` falls back to the Iconify API for names that are not bundled yet, so a new icon shows up without regenerating anything. The fallback is stripped from the production bundle (`process.env.NODE_ENV` is inlined), so production can never reach the network.
+- The icons are rendered on the client. Server-rendering them instead would inline the SVG twice (DOM + RSC payload) and cost ~29 KiB of HTML per docs page.
+
+**Trade-offs to keep in mind**
+
+- The Iconify `solar` collection flattens the duotone styles: the secondary layer is `currentColor` at 50% opacity, with no separate secondary colour like `--solar-secondary-color` in the package. Use the package directly when the exact duotone matters.
+- The bundle ships every referenced icon to the client (~17 KiB gzipped for the 63 icons currently used), including the ones only displayed on the home page.
+- The `solar` collection on Iconify mirrors our set but is published separately: a new icon may exist in `packages/core` before it lands on Iconify.
 
 ## 🎛️ Site header controls (`components/ui-blocks/site-header`)
 

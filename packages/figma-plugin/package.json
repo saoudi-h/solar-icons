@@ -11,25 +11,25 @@
     "typecheck": "tsc --noEmit && tsc -p tsconfig.main.json --noEmit"
   },
   "dependencies": {
-    "@base-ui/react": "^1.8.0",
+    "@base-ui/react": "^1.9.0",
     "fuse.js": "^7.5.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.139.0",
+    "@figma/plugin-typings": "^1.142.0",
     "@fontsource-variable/aleo": "^5.3.0",
     "@fontsource-variable/host-grotesk": "^5.3.0",
-    "@iconify-json/devicon": "^1.2.67",
+    "@iconify-json/devicon": "^1.2.71",
     "@iconify-json/glyphs-poly": "^1.2.0",
     "@iconify-json/grommet-icons": "^1.2.4",
-    "@iconify-json/vscode-icons": "^1.2.81",
+    "@iconify-json/vscode-icons": "^1.2.92",
     "@solar-icons/static": "workspace:*",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "esbuild": "^0.28.2",
     "typescript": "^7.0.2",
-    "vite": "^8.3.1",
-    "vitest": "^5.0.2"
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }

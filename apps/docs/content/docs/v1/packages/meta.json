@@ -1,6 +1,6 @@
 {
     "title": "Packages",
-    "icon": "Widget2Icon",
+    "icon": "solar:widget-2-bold-duotone",
     "pages": ["react-perf", "react", "svelte", "solid", "react-native", "vue", "nuxt", "angular"],
     "defaultOpen": false
 }

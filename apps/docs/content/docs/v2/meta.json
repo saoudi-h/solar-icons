@@ -1,7 +1,7 @@
 {
     "title": "V2",
     "description": "Current version with CSS variables, duotone, and one package per framework.",
-    "icon": "InfoSquareIcon",
+    "icon": "solar:info-square-bold-duotone",
     "root": true,
     "pages": [
         "index",

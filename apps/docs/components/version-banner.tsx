@@ -1,8 +1,9 @@
 'use client'
 
 import { Banner } from 'fumadocs-ui/components/banner'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import { Link } from '@/components/ui/link'
 
 export function V1Banner() {
     const pathname = usePathname()

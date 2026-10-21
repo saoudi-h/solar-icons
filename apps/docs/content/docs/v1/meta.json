@@ -1,7 +1,7 @@
 {
     "title": "V1",
     "description": "Documentation for Solar Icons v1, the previous stable release.",
-    "icon": "HistoryIcon",
+    "icon": "solar:history-bold-duotone",
     "root": true,
     "pages": ["index", "getting-started", "packages", "icon-reference", "advanced", "community"]
 }

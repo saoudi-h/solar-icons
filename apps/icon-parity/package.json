@@ -36,20 +36,20 @@
         "clean": "rimraf *.tsbuildinfo node_modules .next"
     },
     "dependencies": {
-        "@iconify/react": "^6.0.2",
+        "@iconify/react": "^6.0.3",
         "@solar-icons/core": "workspace:*",
         "@solar-icons/react": "workspace:*",
-        "next": "16.4.0",
-        "react": "19.3.0",
-        "react-dom": "19.3.0"
+        "next": "16.4.2",
+        "react": "19.3.1",
+        "react-dom": "19.3.1"
     },
     "devDependencies": {
-        "@iconify-json/lucide": "1.2.144",
+        "@iconify-json/lucide": "1.2.147",
         "@tailwindcss/postcss": "^4.3.3",
-        "@types/node": "^26.6.2",
+        "@types/node": "^26.6.5",
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
-        "eslint-plugin-better-tailwindcss": "^4.7.0",
+        "eslint-plugin-better-tailwindcss": "^4.10.0",
         "sharp": "0.35.5",
         "tailwindcss": "^4.3.3",
         "tsx": "^4.23.15",

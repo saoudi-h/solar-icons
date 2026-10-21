@@ -1,4 +1,5 @@
 import { Widget3Icon } from '@solar-icons/react/dynamic/widget-3'
+import type { DocsLayoutProps } from 'fumadocs-ui/layouts/docs'
 import type { HomeLayoutProps } from 'fumadocs-ui/layouts/home'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
@@ -43,8 +44,11 @@ export const homeOptions: HomeLayoutProps = {
     },
 }
 
-export const docsOptions: BaseLayoutProps = {
+export const docsOptions: Omit<DocsLayoutProps, 'tree'> = {
     ...baseOptions,
+    sidebar: {
+        prefetch: false,
+    },
     links: [
         {
             text: 'Explore Icons',

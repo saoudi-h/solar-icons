@@ -1,10 +1,10 @@
 'use client'
-import { Icon } from '@iconify/react'
 import NumberFlow from '@number-flow/react'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { motion } from 'motion/react'
 import React from 'react'
 
+import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 
 export interface GitHubStarButtonProps {

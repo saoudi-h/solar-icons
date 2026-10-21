@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Link } from '@/components/ui/link'
 import { blogSource } from '@/lib/source'
 
 import { PostCover } from './components/post-cover'

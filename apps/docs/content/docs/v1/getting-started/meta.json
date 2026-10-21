@@ -1,6 +1,6 @@
 {
     "title": "Getting Started",
-    "icon": "Star2Icon",
+    "icon": "solar:star-2-bold-duotone",
     "defaultOpen": true,
     "pages": ["installation", "usage", "choosing-a-package"]
 }

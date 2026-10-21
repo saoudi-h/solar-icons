@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import type { ReactNode } from 'react'
 
+import { Link } from '@/components/ui/link'
 import { categoryCards } from '@/generated/categories'
 import { categoryIcons } from '@/generated/categoryIcons'
 

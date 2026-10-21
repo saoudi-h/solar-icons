@@ -1,6 +1,6 @@
 {
     "title": "Migration to v2",
-    "icon": "ArrowRightUpIcon",
+    "icon": "solar:arrow-right-up-bold-duotone",
     "defaultOpen": true,
     "pages": [
         "index",

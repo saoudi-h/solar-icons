@@ -1,6 +1,6 @@
 {
     "title": "Icon Reference",
-    "icon": "NotesIcon",
+    "icon": "solar:notes-bold-duotone",
     "defaultOpen": false,
     "pages": ["categories"]
 }

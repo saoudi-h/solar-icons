@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'motion/react'
-import Link from 'next/link'
 import { useState } from 'react'
 
+import { Link } from '@/components/ui/link'
 import { cn } from '@/lib/utils'
 
 export const HoverEffect = ({

@@ -83,14 +83,14 @@
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
         "@tala-tools/tsconfig": "0.1.0",
-        "@types/node": "^26.6.2",
-        "jsdom": "^30.1.1",
-        "node-html-parser": "^9.0.4",
+        "@types/node": "^26.6.5",
+        "jsdom": "^30.1.3",
+        "node-html-parser": "^9.0.5",
         "picocolors": "^1.1.1",
         "rimraf": "^6.1.3",
-        "tsdown": "^0.23.0",
+        "tsdown": "^0.23.1",
         "typescript": "7.0.2",
-        "vitest": "^5.0.2"
+        "vitest": "^5.0.5"
     },
     "engines": {
         "node": ">=16"
