@@ -4,6 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import React from 'react'
 
+import { FrameworkLink } from '@/components/ui/link'
 import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
@@ -16,7 +17,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
  */
 const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
-        <RootProvider>
+        <RootProvider components={{ Link: FrameworkLink }}>
             <NuqsAdapter>
                 <TooltipProvider>
                     <ReactLenis
