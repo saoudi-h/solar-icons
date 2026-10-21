@@ -1,8 +1,8 @@
 'use client'
 import { motion, type HTMLMotionProps } from 'motion/react'
-import Link from 'next/link'
 import React from 'react'
 
+import { Link } from '@/components/ui/link'
 import { cn } from '@/lib/utils'
 
 import type { ButtonProps } from './button'

@@ -1,9 +1,9 @@
 import { type Weight } from '@solar-icons/core/runtime'
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import Link from 'next/link'
 import type { FC } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
 import { toPascalCase } from '@/lib/utils'
 
 import { useSelectedIcon, useStyleURL } from '../context'

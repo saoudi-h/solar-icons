@@ -7,7 +7,6 @@ import { useSearchContext } from 'fumadocs-ui/contexts/search'
 import { useLenis } from 'lenis/react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTheme } from 'next-themes'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
@@ -21,6 +20,7 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog'
 import { GitHubStarCountButton } from '@/components/ui/GitHubStarCountButton'
+import { Link } from '@/components/ui/link'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 

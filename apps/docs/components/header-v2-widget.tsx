@@ -1,7 +1,8 @@
 'use client'
 
 import { RocketIcon } from '@solar-icons/react/dynamic/rocket'
-import Link from 'next/link'
+
+import { Link } from '@/components/ui/link'
 
 export function V2StableHeaderWidget() {
     return (

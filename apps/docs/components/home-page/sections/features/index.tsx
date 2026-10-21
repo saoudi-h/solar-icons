@@ -1,12 +1,12 @@
 'use client'
 import { ArrowRightIcon } from '@solar-icons/react/linear/arrow-right'
 import { motion } from 'motion/react'
-import Link from 'next/link'
 import React from 'react'
 
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { Button } from '@/components/ui/button'
 import { Heading } from '@/components/ui/heading'
+import { Link } from '@/components/ui/link'
 import { cn } from '@/lib/utils'
 
 import { DocsShowcase } from './DocsShowcase'

@@ -1,7 +1,7 @@
 import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up'
-import Link from 'next/link'
 import React from 'react'
 
+import { Link } from '@/components/ui/link'
 import { NoiseSvg } from '@/components/ui/noise-svg'
 
 import { FooterMotion } from '../animations/FooterMotion'

@@ -3,11 +3,11 @@ import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { ComponentProps } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { Link } from '@/components/ui/link'
 import { blogSource } from '@/lib/source'
 import { getMDXComponents } from '@/mdx-components'
 
