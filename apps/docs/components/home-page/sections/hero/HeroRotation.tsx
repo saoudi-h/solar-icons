@@ -1,4 +1,39 @@
 'use client'
+import type { Weight } from '@solar-icons/core/runtime'
+import { AirbudsIcon } from '@solar-icons/react/dynamic/airbuds'
+import { AirbudsCaseIcon } from '@solar-icons/react/dynamic/airbuds-case'
+import { AirbudsCaseChargeIcon } from '@solar-icons/react/dynamic/airbuds-case-charge'
+import { AirbudsCaseMinimalisticIcon } from '@solar-icons/react/dynamic/airbuds-case-minimalistic'
+import { AirbudsCaseOpenIcon } from '@solar-icons/react/dynamic/airbuds-case-open'
+import { AirbudsChargeIcon } from '@solar-icons/react/dynamic/airbuds-charge'
+import { AirbudsCheckIcon } from '@solar-icons/react/dynamic/airbuds-check'
+import { AirbudsLeftIcon } from '@solar-icons/react/dynamic/airbuds-left'
+import { AirbudsRemoveIcon } from '@solar-icons/react/dynamic/airbuds-remove'
+import { AirbudsRightIcon } from '@solar-icons/react/dynamic/airbuds-right'
+import { BinocularsIcon } from '@solar-icons/react/dynamic/binoculars'
+import { BluetoothIcon } from '@solar-icons/react/dynamic/bluetooth'
+import { BluetoothCircleIcon } from '@solar-icons/react/dynamic/bluetooth-circle'
+import { BluetoothSquareIcon } from '@solar-icons/react/dynamic/bluetooth-square'
+import { BluetoothWaveIcon } from '@solar-icons/react/dynamic/bluetooth-wave'
+import { BoomboxIcon } from '@solar-icons/react/dynamic/boombox'
+import { BotIcon } from '@solar-icons/react/dynamic/bot'
+import { CassetteIcon } from '@solar-icons/react/dynamic/cassette'
+import { Cassette2Icon } from '@solar-icons/react/dynamic/cassette-2'
+import { CloudStorageIcon } from '@solar-icons/react/dynamic/cloud-storage'
+import { CpuIcon } from '@solar-icons/react/dynamic/cpu'
+import { CpuBoltIcon } from '@solar-icons/react/dynamic/cpu-bolt'
+import { DevicesIcon } from '@solar-icons/react/dynamic/devices'
+import { DisketteIcon } from '@solar-icons/react/dynamic/diskette'
+import { DisplayIcon } from '@solar-icons/react/dynamic/display'
+import { FlashDriveIcon } from '@solar-icons/react/dynamic/flash-drive'
+import { GameboyIcon } from '@solar-icons/react/dynamic/gameboy'
+import { GamepadIcon } from '@solar-icons/react/dynamic/gamepad'
+import { GamepadChargeIcon } from '@solar-icons/react/dynamic/gamepad-charge'
+import { GamepadMinimalisticIcon } from '@solar-icons/react/dynamic/gamepad-minimalistic'
+import { GamepadNoChargeIcon } from '@solar-icons/react/dynamic/gamepad-no-charge'
+import { GamepadOldIcon } from '@solar-icons/react/dynamic/gamepad-old'
+import { HeadphonesRoundIcon } from '@solar-icons/react/dynamic/headphones-round'
+import { HeadphonesRoundSoundIcon } from '@solar-icons/react/dynamic/headphones-round-sound'
 import type { DynamicIconProps } from '@solar-icons/react/lib/dynamic-icon'
 import { atom, useAtom } from 'jotai'
 import type { MotionValue } from 'motion/react'
@@ -15,10 +50,9 @@ import {
 } from 'motion/react'
 import { useTheme } from 'next-themes'
 import type { FC } from 'react'
-import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 
-import type { Category, Style } from '@/generated/generatedHeroUtils'
-import { categories, getIconsByCategory, styles } from '@/generated/generatedHeroUtils'
+import { Link } from '@/components/ui/link'
 import { cn } from '@/lib/utils'
 
 type SolarIcon = FC<DynamicIconProps>
@@ -63,6 +97,48 @@ const HERO_DARK_SEQUENCE = [
 const HERO_ICON_STROKE_WIDTHS = [0.5, 1, 1.5, 2, 2.5] as const
 const HERO_STATE_CHANGE_INTERVAL = 4000
 
+const HERO_STYLES: Weight[] = ['Bold', 'BoldDuotone', 'Linear', 'Outline', 'LineDuotone', 'Broken']
+
+const HERO_INNER_ICONS: SolarIcon[] = [
+    AirbudsIcon,
+    AirbudsCaseIcon,
+    AirbudsCaseChargeIcon,
+    AirbudsCaseMinimalisticIcon,
+    AirbudsCaseOpenIcon,
+    AirbudsChargeIcon,
+    AirbudsCheckIcon,
+    AirbudsLeftIcon,
+    AirbudsRemoveIcon,
+    AirbudsRightIcon,
+    BinocularsIcon,
+    BluetoothIcon,
+    BluetoothCircleIcon,
+    BluetoothSquareIcon,
+]
+
+const HERO_OUTER_ICONS: SolarIcon[] = [
+    BluetoothWaveIcon,
+    BoomboxIcon,
+    BotIcon,
+    CassetteIcon,
+    Cassette2Icon,
+    CloudStorageIcon,
+    CpuIcon,
+    CpuBoltIcon,
+    DevicesIcon,
+    DisketteIcon,
+    DisplayIcon,
+    FlashDriveIcon,
+    GameboyIcon,
+    GamepadIcon,
+    GamepadChargeIcon,
+    GamepadMinimalisticIcon,
+    GamepadNoChargeIcon,
+    GamepadOldIcon,
+    HeadphonesRoundIcon,
+    HeadphonesRoundSoundIcon,
+]
+
 interface HeroRotationState {
     presetIndex: number
     strokeWidth: number
@@ -104,8 +180,7 @@ function pickRandomHeroRotationState(current: HeroRotationState): HeroRotationSt
     }
 }
 
-const categoryAtom = atom<Category>('Devices')
-const styleAtom = atom<Style>('Bold')
+const styleAtom = atom<Weight>('Bold')
 
 interface SlidingControlLabelProps {
     value: string
@@ -155,8 +230,7 @@ interface RotatingIconProps {
     IconComponent: SolarIcon
     radius: number
     angleStep: number
-    category: Category
-    selectedStyle: Style
+    selectedStyle: Weight
     visual: HeroIconVisualConfig
     parentRotation: MotionValue<number>
     staggerIndex: number
@@ -167,7 +241,6 @@ const RotatingIcon: FC<RotatingIconProps> = ({
     IconComponent,
     radius,
     angleStep,
-    category,
     selectedStyle,
     visual,
     parentRotation,
@@ -184,7 +257,7 @@ const RotatingIcon: FC<RotatingIconProps> = ({
     return (
         <AnimatePresence initial={false} mode="sync">
             <motion.div
-                key={`${index}-${category}-${selectedStyle}-${visual.light.color}-${visual.dark.color}-${visual.strokeWidth}`}
+                key={`${index}-${selectedStyle}-${visual.light.color}-${visual.dark.color}-${visual.strokeWidth}`}
                 initial={shouldReduceMotion ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={
@@ -241,7 +314,7 @@ interface RotatingCirclesProps {
     innerIcons: SolarIcon[]
     rotationOuter: MotionValue<number>
     rotationInner: MotionValue<number>
-    selectedStyle: Style
+    selectedStyle: Weight
 }
 
 export const RotatingCircles: FC<RotatingCirclesProps> = ({
@@ -251,7 +324,6 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
     rotationInner,
     selectedStyle,
 }) => {
-    const [category, setCategory] = useAtom(categoryAtom)
     const [style, setStyle] = useAtom(styleAtom)
     const [rotationState, setRotationState] = useAtom(heroRotationStateAtom)
     const visual = useMemo(() => resolveHeroVisual(rotationState), [rotationState])
@@ -259,20 +331,11 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
 
     const changeVisual = () => setRotationState(current => pickRandomHeroRotationState(current))
 
-    const setNextCategory = () => {
-        const currentIndex = categories.indexOf(category)
-        const nextIndex = (currentIndex + 1) % categories.length
-        if (categories[nextIndex]) {
-            setCategory(categories[nextIndex]!)
-            changeVisual()
-        }
-    }
-
     const setNextStyle = () => {
-        const currentIndex = styles.indexOf(style)
-        const nextIndex = (currentIndex + 1) % styles.length
-        if (styles[nextIndex]) {
-            setStyle(styles[nextIndex]!)
+        const currentIndex = HERO_STYLES.indexOf(style)
+        const nextIndex = (currentIndex + 1) % HERO_STYLES.length
+        if (HERO_STYLES[nextIndex]) {
+            setStyle(HERO_STYLES[nextIndex]!)
             changeVisual()
         }
     }
@@ -280,7 +343,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
     const generateIcons = (
         icons: SolarIcon[],
         radius: number,
-        selectedStyle: Style,
+        selectedStyle: Weight,
         rotation: MotionValue<number>,
         staggerDirection: 'forward' | 'reverse',
         visual: HeroIconVisualConfig
@@ -298,7 +361,6 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                         IconComponent={IconComponent}
                         radius={radius}
                         angleStep={angleStep}
-                        category={category}
                         selectedStyle={selectedStyle}
                         visual={visual}
                         parentRotation={rotation}
@@ -328,7 +390,8 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                       to-transparent
                       dark:bg-linear-to-b
                     `}>
-                    <button
+                    <Link
+                        href="/icons"
                         className={`
                           group relative size-full cursor-pointer overflow-hidden rounded-t-full
                           border-b border-primary/30 font-heading text-base font-black
@@ -338,15 +401,15 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
                           focus-visible:outline-none focus-visible:ring-inset
                           active:bg-primary/40
                         `}
-                        type="button"
-                        aria-label={`Change icon category, currently ${category}`}
-                        onClick={() => setNextCategory()}>
-                        <SlidingControlLabel
-                            value={category}
-                            direction="up"
-                            shouldReduceMotion={shouldReduceMotion}
-                        />
-                    </button>
+                        aria-label="Browse all icons">
+                        <span
+                            className="
+                              pointer-events-none absolute inset-0 flex items-end justify-center
+                              pb-3
+                            ">
+                            All icons
+                        </span>
+                    </Link>
                     <button
                         className={`
                           group relative size-full cursor-pointer overflow-hidden rounded-b-full
@@ -370,7 +433,7 @@ export const RotatingCircles: FC<RotatingCirclesProps> = ({
             </Circle>
             <AnimatePresence initial={false} mode="sync">
                 <motion.div
-                    key={`${category}-${style}`}
+                    key={style}
                     aria-hidden="true"
                     initial={
                         shouldReduceMotion
@@ -512,7 +575,13 @@ interface HeroRotationReadoutsProps {
 
 const HeroRotationReadouts: FC<HeroRotationReadoutsProps> = ({ visual }) => {
     const { resolvedTheme } = useTheme()
-    const theme: HeroTheme = resolvedTheme === 'light' ? 'light' : 'dark'
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const theme: HeroTheme = mounted && resolvedTheme === 'light' ? 'light' : 'dark'
     const colors = visual[theme]
     const shouldReduceMotion = useReducedMotion()
 
@@ -606,16 +675,9 @@ Circle.displayName = 'Circle'
 
 export const HeroRotation: FC = () => {
     const [style, setStyle] = useAtom(styleAtom)
-    const [category, setCategory] = useAtom(categoryAtom)
     const [rotationState, setRotationState] = useAtom(heroRotationStateAtom)
     const visual = useMemo(() => resolveHeroVisual(rotationState), [rotationState])
     const shouldReduceMotion = useReducedMotion()
-
-    // Using useMemo instead of useState + useEffect to avoid setState in effect
-    const { outerIcons, innerIcons } = useMemo(() => {
-        const { inner, outer } = getIconsByCategory(category)
-        return { outerIcons: outer, innerIcons: inner }
-    }, [category])
 
     const { scrollY } = useScroll()
     const scrollVelocity = useVelocity(scrollY)
@@ -641,22 +703,15 @@ export const HeroRotation: FC = () => {
     useEffect(() => {
         if (shouldReduceMotion) return
 
-        let cycle = 0
         const interval = setInterval(() => {
             setRotationState(current => pickRandomHeroRotationState(current))
-
-            if (cycle % 2 === 0) {
-                setCategory(
-                    current => categories[(categories.indexOf(current) + 1) % categories.length]!
-                )
-            } else {
-                setStyle(current => styles[(styles.indexOf(current) + 1) % styles.length]!)
-            }
-            cycle += 1
+            setStyle(
+                current => HERO_STYLES[(HERO_STYLES.indexOf(current) + 1) % HERO_STYLES.length]!
+            )
         }, HERO_STATE_CHANGE_INTERVAL)
 
         return () => clearInterval(interval)
-    }, [setCategory, setStyle, setRotationState, shouldReduceMotion])
+    }, [setStyle, setRotationState, shouldReduceMotion])
 
     useAnimationFrame((_, delta) => {
         if (shouldReduceMotion) return
@@ -693,8 +748,8 @@ export const HeroRotation: FC = () => {
             <div data-hero-rotation-wheel className="absolute inset-x-0">
                 <RotatingCircles
                     selectedStyle={style}
-                    outerIcons={outerIcons}
-                    innerIcons={innerIcons}
+                    outerIcons={HERO_OUTER_ICONS}
+                    innerIcons={HERO_INNER_ICONS}
                     rotationOuter={rotationOuter}
                     rotationInner={rotationInner}
                 />
