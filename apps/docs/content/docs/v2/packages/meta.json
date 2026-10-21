@@ -1,6 +1,6 @@
 {
     "title": "Packages",
-    "icon": "Widget3Icon",
+    "icon": "solar:widget-3-bold-duotone",
     "defaultOpen": true,
     "pages": [
         "react",

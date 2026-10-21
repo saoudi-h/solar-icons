@@ -1,6 +1,6 @@
 {
     "title": "Advanced",
-    "icon": "SettingsMinimalisticIcon",
+    "icon": "solar:settings-minimalistic-bold-duotone",
     "defaultOpen": false,
     "pages": ["global-styling", "accessibility", "global-configuration"]
 }

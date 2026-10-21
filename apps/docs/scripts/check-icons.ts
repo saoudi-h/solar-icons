@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 import metadata from '@solar-icons/core/metadata.json'
 
-import { getSolarIconBaseName, iconifyIcons } from '../lib/resolveIconUtils'
+import { iconifyIcons } from '../lib/resolveIconUtils'
 
 const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../content/docs')
 const validSolarIcons = new Set(
@@ -25,11 +25,19 @@ function checkIcon(icon: string, file: string, source: string) {
     referenceCount++
 
     if (validIconifyIcons.has(icon)) return
-    if (icon.includes(':') && !icon.startsWith('solar:')) return
 
-    if (validSolarIcons.has(getSolarIconBaseName(icon))) return
+    const [collection, name] = icon.split(':')
+    if (!collection || !name) {
+        errors.push(`${path.relative(docsDir, file)} (${source}): ${icon} is not an Iconify name`)
+        return
+    }
 
-    errors.push(`${path.relative(docsDir, file)} (${source}): ${icon}`)
+    if (collection !== 'solar') return
+
+    const baseName = name.replace(/-(bold-duotone|line-duotone|linear|outline|broken|bold)$/, '')
+    if (validSolarIcons.has(baseName)) return
+
+    errors.push(`${path.relative(docsDir, file)} (${source}): ${icon} is not a Solar icon`)
 }
 
 function walkMeta(value: unknown, file: string) {

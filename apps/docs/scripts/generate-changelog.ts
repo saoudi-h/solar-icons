@@ -94,7 +94,7 @@ const lines: string[] = [
     '---',
     'title: Changelog',
     'description: Full release history for all Solar Icons packages.',
-    'icon: ClipboardList',
+    'icon: solar:clipboard-list-bold-duotone',
     '---',
     '',
 ]

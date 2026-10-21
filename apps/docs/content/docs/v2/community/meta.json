@@ -1,5 +1,5 @@
 {
     "title": "Community",
-    "icon": "UsersGroupTwoRoundedIcon",
+    "icon": "solar:users-group-two-rounded-bold-duotone",
     "pages": ["contributing", "license", "changelog"]
 }
