@@ -96,19 +96,19 @@
         "clean": "rm -rf node_modules .nuxt dist"
     },
     "dependencies": {
-        "@nuxt/kit": "^4.5.2",
+        "@nuxt/kit": "^4.6.2",
         "@solar-icons/vue": "workspace:*"
     },
     "devDependencies": {
         "@nuxt/module-builder": "^1.0.3",
-        "@nuxt/schema": "^4.5.2",
-        "@nuxt/test-utils": "^4.3.2",
+        "@nuxt/schema": "^4.6.2",
+        "@nuxt/test-utils": "^4.3.4",
         "@solar-icons/core": "workspace:*",
         "@types/node": "latest",
         "changelogen": "^0.6.2",
-        "nuxt": "^4.5.2",
+        "nuxt": "^4.6.2",
         "typescript": "6.0.3",
-        "vitest": "^5.0.2",
-        "vue-tsc": "3.3.12"
+        "vitest": "^5.0.5",
+        "vue-tsc": "3.3.13"
     }
 }
