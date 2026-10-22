@@ -2,13 +2,14 @@ import { ArrowLeftIcon } from '@solar-icons/react/dynamic/arrow-left'
 import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc'
-import { Button } from '@/components/ui/button'
-import { PostCover } from '@/app/(home)/blog/components/post-cover'
-import { ShareButton } from '@/app/(home)/blog/components/share-button'
-import { TagPill } from '@/app/(home)/blog/components/tag-pill'
+import Image from 'next/image'
 import type { ComponentProps } from 'react'
 import { use, useState } from 'react'
 
+import { PostCover } from '@/app/(home)/blog/components/post-cover'
+import { ShareButton } from '@/app/(home)/blog/components/share-button'
+import { TagPill } from '@/app/(home)/blog/components/tag-pill'
+import { Button } from '@/components/ui/button'
 import { useMDXComponents } from '~/components/mdx'
 import { blogSource } from '~/lib/source'
 import { seo } from '~/utils/seo'
@@ -142,7 +143,7 @@ function BlogPost() {
             <div className="mt-8 flex flex-wrap items-center gap-3 rounded-2xl border border-border bg-card/60 p-1">
                 <div className="flex min-w-0 flex-1 items-center gap-3 px-3 py-2">
                     {author.avatar && !avatarFailed ? (
-                        <img
+                        <Image
                             src={author.avatar}
                             alt=""
                             width={36}
@@ -180,7 +181,12 @@ function BlogPost() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-2">
-                <Button asChild size="lg" variant="outline" colors="secondary" className="rounded-full">
+                <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    colors="secondary"
+                    className="rounded-full">
                     <Link to="/blog" search={{}}>
                         <ArrowLeftIcon size={16} weight="Linear" />
                         More articles

@@ -1,5 +1,7 @@
 import type { ComponentProps } from 'react'
 
+import { getWidths, optimizedImageUrl } from '../utils/image-optimization'
+
 type ImageSource = string | { src: string }
 
 type NextImageProps = Omit<ComponentProps<'img'>, 'src'> & {
@@ -12,6 +14,17 @@ type NextImageProps = Omit<ComponentProps<'img'>, 'src'> & {
     sizes?: string
 }
 
+const fillStyle = {
+    position: 'absolute' as const,
+    height: '100%',
+    width: '100%',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    color: 'transparent',
+}
+
 export default function NextImage({
     src,
     priority,
@@ -20,18 +33,35 @@ export default function NextImage({
     placeholder: _placeholder,
     blurDataURL: _blurDataURL,
     sizes,
+    width,
+    height: _height,
     style,
     ...props
 }: NextImageProps) {
-    const imageStyle = fill
-        ? { position: 'absolute' as const, inset: 0, width: '100%', height: '100%', ...style }
-        : style
+    const source = typeof src === 'string' ? src : src.src
+    const { widths, kind } = getWidths(fill ? undefined : (width as number | undefined), sizes)
+    const urls = widths.map(candidate => optimizedImageUrl(source, candidate))
+    const optimized = urls.every(url => url !== null)
+
+    const srcSet = optimized
+        ? widths
+              .map(
+                  (candidate, index) =>
+                      `${urls[index]} ${kind === 'w' ? candidate : index + 1}${kind}`
+              )
+              .join(', ')
+        : undefined
+    const resolvedSrc = optimized ? urls[urls.length - 1]! : source
+    const resolvedSizes = sizes ?? (kind === 'w' ? '100vw' : undefined)
+
+    const imageStyle = fill ? { ...fillStyle, ...style } : { color: 'transparent', ...style }
 
     return (
         <img
             {...props}
-            src={typeof src === 'string' ? src : src.src}
-            sizes={sizes}
+            src={resolvedSrc}
+            srcSet={srcSet}
+            sizes={resolvedSizes}
             style={imageStyle}
             data-nimg={fill ? 'fill' : '1'}
             loading={priority ? 'eager' : 'lazy'}
