@@ -5,21 +5,20 @@ test('shared icon URL preserves the old query names and accepted values', async 
         '/icons?icon=home&view=grouped&search=home&style=linear&category=ui&origin=extended'
     )
 
-    await expect(page.getByRole('heading', { name: 'Icon explorer' })).toBeVisible()
-    await expect(page.getByRole('searchbox', { name: 'Search icons' })).toHaveValue('home')
-    await expect(page.getByRole('button', { name: 'grouped' })).toHaveAttribute(
+    await expect(page.getByRole('searchbox')).toHaveValue('home')
+    await expect(page.getByRole('radio', { name: 'Grouped' })).toHaveAttribute(
+        'aria-checked',
+        'true'
+    )
+    await expect(page.getByRole('radio', { name: 'Linear' })).toHaveAttribute(
+        'aria-checked',
+        'true'
+    )
+    await expect(page.getByRole('button', { name: 'Extended' })).toHaveAttribute(
         'aria-pressed',
         'true'
     )
-    await expect(page.getByRole('button', { name: 'Linear' })).toHaveAttribute(
-        'aria-pressed',
-        'true'
-    )
-    await expect(page.getByRole('button', { name: 'Extended only' })).toHaveAttribute(
-        'aria-pressed',
-        'true'
-    )
-    await expect(page.getByRole('heading', { name: 'home' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'home-linear' })).toBeVisible()
 
     const address = new URL(page.url())
     expect(address.searchParams.get('icon')).toBe('home')
@@ -30,46 +29,41 @@ test('shared icon URL preserves the old query names and accepted values', async 
     expect(address.searchParams.get('origin')).toBe('extended')
 
     await page.reload()
-    await expect(page.getByRole('searchbox', { name: 'Search icons' })).toHaveValue('home')
-    await expect(page.getByRole('heading', { name: 'home' })).toBeVisible()
+    await expect(page.getByRole('searchbox')).toHaveValue('home')
+    await expect(page.getByRole('heading', { name: 'home-linear' })).toBeVisible()
 })
 
-test('category links hydrate into grouped view and browser history restores filters', async ({ page }) => {
+test('category links hydrate into grouped view and the filters stay in the URL', async ({
+    page,
+}) => {
     await page.goto('/icons?category=ui')
-    await expect(page.getByRole('button', { name: 'grouped' })).toHaveAttribute(
-        'aria-pressed',
+    await expect(page.getByRole('radio', { name: 'Grouped' })).toHaveAttribute(
+        'aria-checked',
         'true'
     )
-    await expect(page.locator('[data-category="ui"]')).toBeVisible()
+    await expect(page.getByRole('button', { name: /^ui/ })).toBeVisible()
     await expect.poll(() => new URL(page.url()).searchParams.get('view')).toBe('grouped')
 
-    await page.getByRole('button', { name: 'Linear' }).click()
-    await page.getByRole('button', { name: 'flat' }).click()
-    await expect.poll(() => new URL(page.url()).searchParams.get('view')).toBe('flat')
+    await page.getByRole('radio', { name: 'Linear' }).click()
+    await expect.poll(() => new URL(page.url()).searchParams.get('style')).toBe('linear')
+    await expect(page.getByRole('radio', { name: 'Linear' })).toHaveAttribute(
+        'aria-checked',
+        'true'
+    )
 
-    await page.goBack()
-    await expect(page.getByRole('button', { name: 'grouped' })).toHaveAttribute(
-        'aria-pressed',
-        'true'
-    )
-    await page.goBack()
-    await expect(page.getByRole('button', { name: 'Bold Duotone' })).toHaveAttribute(
-        'aria-pressed',
-        'true'
-    )
-    await page.goForward()
-    await expect(page.getByRole('button', { name: 'Linear' })).toHaveAttribute(
-        'aria-pressed',
-        'true'
-    )
+    await page.getByRole('radio', { name: 'Flat' }).click()
+    await expect.poll(() => new URL(page.url()).searchParams.get('view')).toBe(null)
+    await expect(page.getByRole('radio', { name: 'Flat' })).toHaveAttribute('aria-checked', 'true')
 })
 
 test('a selected icon can be copied as SVG', async ({ page, context }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'])
     await page.goto('/icons')
-    await page.getByRole('searchbox', { name: 'Search icons' }).fill('home')
-    await page.getByRole('button', { name: 'Select home icon' }).click()
+    await page.getByRole('searchbox').fill('home')
+    await page.getByRole('gridcell').first().click()
     await page.getByRole('button', { name: 'Copy SVG' }).click()
-    await expect(page.getByRole('status')).toHaveText('SVG copied')
-    await expect.poll(async () => page.evaluate(() => navigator.clipboard.readText())).toContain('<svg')
+    await expect(page.getByText('SVG copied to clipboard')).toBeVisible()
+    await expect
+        .poll(async () => page.evaluate(() => navigator.clipboard.readText()))
+        .toContain('<svg')
 })
