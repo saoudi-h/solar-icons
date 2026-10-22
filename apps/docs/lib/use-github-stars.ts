@@ -1,5 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+
+import { SiteStatsContext } from '@/lib/site-stats-context'
 
 const REPO = 'saoudi-h/solar-icons'
 const CACHE_KEY = 'solar-icons-github-stars-v1'
@@ -70,9 +72,12 @@ function fetchStars(): Promise<number> {
  * API rate limit on every page.
  */
 export function useGitHubStars(): number {
+    const siteStats = useContext(SiteStatsContext)
     const [stars, setStars] = useState<number | null>(null)
 
     useEffect(() => {
+        if (siteStats) return
+
         const cached = readCache()
         if (cached !== null) {
             setStars(cached)
@@ -87,7 +92,7 @@ export function useGitHubStars(): number {
         return () => {
             active = false
         }
-    }, [])
+    }, [siteStats])
 
-    return stars ?? FALLBACK_STARS
+    return siteStats?.stars ?? stars ?? FALLBACK_STARS
 }

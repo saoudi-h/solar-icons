@@ -1,0 +1,33 @@
+{
+    // The site is served from the asset storage, and the Worker only runs
+    // for the feedback endpoint, so a page view never costs an invocation.
+    // Docs: https://developers.cloudflare.com/workers/static-assets/
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "solar-icons-docs",
+    "compatibility_date": "2026-10-21",
+    "workers_dev": true,
+    "main": "worker/index.ts",
+    "assets": {
+        "directory": "dist/client",
+        // Serve `/docs/v2` from `docs/v2.html` without redirecting to
+        // `/docs/v2/`, and redirect `/docs/v2/` to `/docs/v2`.
+        "html_handling": "drop-trailing-slash",
+        "not_found_handling": "404-page",
+        // The Worker answers the feedback of the documentation pages. Every
+        // other request is served by the asset storage.
+        "run_worker_first": ["/api/feedback"],
+    },
+    "vars": {
+        // The repository and the category that hold the feedback.
+        "REPO_OWNER": "saoudi-h",
+        "REPO_NAME": "solar-icons",
+        "DISCUSSION_CATEGORY": "Docs Feedback",
+        // The origins allowed to send a feedback, on top of the origin of
+        // the request itself. Useful when the site and the Worker are served
+        // from two different addresses during a test.
+        "ALLOWED_ORIGINS": "",
+    },
+    "observability": {
+        "enabled": true,
+    },
+}

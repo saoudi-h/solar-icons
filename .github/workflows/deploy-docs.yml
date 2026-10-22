@@ -1,0 +1,48 @@
+name: Deploy docs
+
+# Deploys the documentation site (apps/docs-start) to Cloudflare Workers.
+# Pull requests are verified by ci.yml, so this workflow only builds and
+# deploys what already reached main.
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'apps/docs-start/**'
+            - 'apps/docs/content/**'
+            - 'apps/docs/generated/**'
+            - 'packages/**'
+            - 'pnpm-lock.yaml'
+            - '.github/workflows/deploy-docs.yml'
+    workflow_dispatch:
+
+concurrency:
+    group: deploy-docs
+    cancel-in-progress: false
+
+env:
+    TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+
+            - name: Build
+              run: pnpm turbo build --filter=@solar-icons/docs-start...
+
+            - name: Deploy
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: apps/docs-start
+                  command: deploy

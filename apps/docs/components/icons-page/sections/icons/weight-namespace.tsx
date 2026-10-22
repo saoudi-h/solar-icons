@@ -10,13 +10,13 @@ import {
     type ReactNode,
 } from 'react'
 
-const WEIGHT_TO_PATH: Record<Weight, string> = {
-    Bold: 'bold',
-    BoldDuotone: 'bold-duotone',
-    Broken: 'broken',
-    Linear: 'linear',
-    LineDuotone: 'line-duotone',
-    Outline: 'outline',
+const LOAD_WEIGHT_NAMESPACE: Record<Weight, () => Promise<unknown>> = {
+    Bold: () => import('@solar-icons/react/bold'),
+    BoldDuotone: () => import('@solar-icons/react/bold-duotone'),
+    Broken: () => import('@solar-icons/react/broken'),
+    Linear: () => import('@solar-icons/react/linear'),
+    LineDuotone: () => import('@solar-icons/react/line-duotone'),
+    Outline: () => import('@solar-icons/react/outline'),
 }
 
 /**
@@ -44,8 +44,9 @@ export function useWeightNamespace(weight: Weight) {
         // cascading renders and would force a skeleton flash on
         // every weight toggle, even when the chunk is already
         // cached by the browser.)
-        const path = WEIGHT_TO_PATH[weight]
-        import(`@solar-icons/react/${path}`).then(mod => {
+        // Vite needs each package entry to be statically discoverable; the
+        // explicit loaders keep one lazy chunk per style in both frameworks.
+        LOAD_WEIGHT_NAMESPACE[weight]().then(mod => {
             if (active) setNs(mod as Record<string, ComponentType<any>>)
         })
         return () => {

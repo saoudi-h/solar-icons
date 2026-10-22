@@ -27,11 +27,12 @@ import { UnlinkIcon } from '@solar-icons/react/dynamic/unlink'
 import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
 import { motion, useInView } from 'motion/react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import { SectionMotion } from '@/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '@/components/ui/GitHubStarButton'
 import { Heading } from '@/components/ui/heading'
+import { SiteStatsContext } from '@/lib/site-stats-context'
 import { useGitHubStars } from '@/lib/use-github-stars'
 
 interface Stats {
@@ -61,15 +62,18 @@ const NPM_PACKAGES = [
 ]
 
 export const CommunitySection = () => {
+    const siteStats = useContext(SiteStatsContext)
     const [stats, setStats] = useState({
-        downloads: DEFAULT_DOWNLOADS,
+        downloads: siteStats?.weeklyDownloads ?? DEFAULT_DOWNLOADS,
     })
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(siteStats === null)
     // The star count is shared with the site header, so the two never
     // disagree and the repository is queried once per page.
     const stars = useGitHubStars()
 
     useEffect(() => {
+        if (siteStats) return
+
         const fetchStats = async () => {
             try {
                 // 1. Check local cache
@@ -129,7 +133,7 @@ export const CommunitySection = () => {
         }
 
         fetchStats()
-    }, [])
+    }, [siteStats])
 
     // Stagger animation variants
     const containerVariants = {
