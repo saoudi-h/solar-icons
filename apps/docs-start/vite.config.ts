@@ -34,8 +34,33 @@ export default defineConfig({
     server: {
         port: 3001,
     },
+    build: {
+        rolldownOptions: {
+            output: {
+                // The Fumadocs packages ship one file per component, and the
+                // icon package one file per icon, so the default chunking
+                // emits a request per file. Grouping them keeps the number of
+                // requests close to the one of the Next build.
+                codeSplitting: {
+                    groups: [
+                        {
+                            name: 'fumadocs',
+                            test: /node_modules[\\/](?:\.pnpm[\\/][^\\/]+[\\/]node_modules[\\/])?(fumadocs-core|fumadocs-ui|@fumadocs[\\/]base-ui)[\\/]/,
+                            priority: 10,
+                        },
+                    ],
+                },
+            },
+        },
+    },
     resolve: {
         tsconfigPaths: true,
+        // The Next app and this app depend on the same Fumadocs packages, but
+        // pnpm installs them twice because their optional peers differ. Two
+        // copies mean two React contexts: the shared components would not see
+        // the provider of this app, and every link would fall back to a plain
+        // anchor with a full page load.
+        dedupe: ['fumadocs-core', 'fumadocs-ui', 'fumadocs-mdx', 'react', 'react-dom'],
         alias: [
             // The content and the original site components share the Next
             // app's `@/` imports. Start's own files use `~/`.
