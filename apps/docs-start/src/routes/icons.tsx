@@ -23,13 +23,15 @@ type IconStyle = (typeof STYLE_OPTIONS)[number]['value']
 type ViewMode = 'flat' | 'grouped'
 type OriginFilter = 'all' | 'extended'
 
-type IconSearch = {
+export type IconCategory = (typeof categories)[number]
+
+export type IconSearch = {
     [key: string]: unknown
     icon?: string
     view?: ViewMode
     search?: string
     style?: IconStyle
-    category?: (typeof categories)[number]
+    category?: IconCategory
     origin?: OriginFilter
 }
 

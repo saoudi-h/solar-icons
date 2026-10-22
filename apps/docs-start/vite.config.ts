@@ -1,7 +1,32 @@
 import { defineConfig } from 'vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import { fumadocsMdx } from 'fumadocs-mdx/vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
+import { collectDocsPaths } from './scripts/docs-paths.ts'
+
+const appRoot = fileURLToPath(new URL('.', import.meta.url))
+const srcDir = path.join(appRoot, 'src')
+
+const docsPaths = collectDocsPaths()
+
+const staticPages = [
+    { path: '/404', prerender: { enabled: true, outputPath: '/404.html' } },
+    { path: '/docs/v2', prerender: { enabled: true } },
+    { path: '/docs/v1', prerender: { enabled: true } },
+    { path: '/llms-txt', prerender: { enabled: true, outputPath: '/llms.txt' } },
+    { path: '/llms-full-txt', prerender: { enabled: true, outputPath: '/llms-full.txt' } },
+    { path: '/sitemap-xml', prerender: { enabled: true, outputPath: '/sitemap.xml' } },
+    { path: '/blog-rss-xml', prerender: { enabled: true, outputPath: '/blog/rss.xml' } },
+    { path: '/api-search', prerender: { enabled: true, outputPath: '/api/search' } },
+    ...docsPaths.map(docsPath => ({
+        path: `/llms-page/docs/${docsPath}`,
+        prerender: { enabled: true, outputPath: `/docs/${docsPath}.mdx` },
+    })),
+]
 
 export default defineConfig({
     server: {
@@ -9,25 +34,29 @@ export default defineConfig({
     },
     resolve: {
         tsconfigPaths: true,
+        alias: [
+            // The shared MDX files live in `apps/docs/content` and import
+            // components with the `@/` prefix. Each app resolves that prefix
+            // to its own implementation.
+            { find: /^@\//, replacement: `${srcDir}/` },
+        ],
     },
     plugins: [
         tailwindcss(),
+        fumadocsMdx(),
         tanstackStart({
             prerender: {
                 enabled: true,
                 crawlLinks: true,
                 autoSubfolderIndex: false,
                 failOnError: true,
+                // Anchors and query strings do not change the static output.
+                filter: ({ path }) => !/[#?]|%23|%3F/i.test(path),
                 onSuccess: ({ page }) => {
                     console.log(`Prerendered ${page.path}`)
                 },
             },
-            pages: [
-                {
-                    path: '/404',
-                    prerender: { enabled: true, outputPath: '/404.html' },
-                },
-            ],
+            pages: staticPages,
         }),
         viteReact(),
     ],

@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 .cache
+.source
 .env
 .env.local
 dist
@@ -17,5 +18,7 @@ public/_headers
 public/robots.txt
 public/_redirects
 public/data/icons.json
+public/saoudi-h.png
 src/generated/icon-chunks
 src/generated/icon-chunk-loaders.ts
+src/generated/site-stats.json

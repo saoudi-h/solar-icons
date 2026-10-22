@@ -17,7 +17,9 @@
         "noUncheckedIndexedAccess": true,
         "types": ["node", "vite/client"],
         "paths": {
-            "~/*": ["./src/*"]
+            "fumadocs-mdx:collections/*": ["./.source/*"],
+            "~/*": ["./src/*"],
+            "@/*": ["./src/*"]
         },
         "noEmit": true
     }

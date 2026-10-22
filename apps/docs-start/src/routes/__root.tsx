@@ -4,18 +4,13 @@ import {
     Scripts,
     createRootRoute,
 } from '@tanstack/react-router'
+import { RootProvider } from 'fumadocs-ui/provider/tanstack'
 import type { ReactNode } from 'react'
 
+import { FrameworkLink } from '~/components/framework-link'
 import appCss from '~/styles/app.css?url'
 import { site } from '~/utils/site'
 import { umamiEnabled, umamiId, umamiUrl } from '~/utils/umami'
-
-/**
- * Applies the persisted theme before the first paint. Mirrors the
- * `next-themes` behaviour of the current app (class attribute on `<html>`,
- * `theme` key in localStorage) without pulling a dependency.
- */
-const themeScript = `(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;var e=document.documentElement;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){}})()`
 
 export const Route = createRootRoute({
     head: () => {
@@ -42,13 +37,20 @@ function RootDocument({ children }: { children: ReactNode }) {
         <html lang="en" suppressHydrationWarning>
             <head>
                 <HeadContent />
-                <script
-                    // biome-ignore lint/security/noDangerouslySetInnerHtml: the theme must be applied before the first paint
-                    dangerouslySetInnerHTML={{ __html: themeScript }}
-                />
             </head>
-            <body className="min-h-screen bg-background text-foreground antialiased">
-                {children}
+            <body className="flex min-h-screen flex-col">
+                <RootProvider
+                    components={{ Link: FrameworkLink }}
+                    search={{
+                        options: {
+                            // The index is prerendered to `/api/search` and read
+                            // by the browser, so no server is involved.
+                            type: 'static',
+                            api: '/api/search',
+                        },
+                    }}>
+                    {children}
+                </RootProvider>
                 {umamiEnabled ? (
                     <script
                         defer

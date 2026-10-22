@@ -6,7 +6,7 @@
     "sideEffects": false,
     "scripts": {
         "dev": "vite dev",
-        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm generate:static-config && pnpm generate:icon-catalog && vite build",
+        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm fetch:avatar && pnpm generate:static-config && pnpm generate:icon-catalog && vite build",
         "preview": "vite preview",
         "test": "playwright test",
         "test:ui": "playwright test --ui",
@@ -21,7 +21,8 @@
         "cf-typegen": "wrangler types",
         "generate:static-config": "tsx ./scripts/generate-static-config.ts",
         "generate:icon-catalog": "tsx ./scripts/generate-icon-catalog.ts",
-        "ensure:icon-package": "tsx ./scripts/ensure-icon-package.ts"
+        "ensure:icon-package": "tsx ./scripts/ensure-icon-package.ts",
+        "fetch:avatar": "tsx ./scripts/fetch-github-avatar.ts"
     },
     "dependencies": {
         "@fontsource-variable/aleo": "5.3.0",
@@ -31,14 +32,21 @@
         "@tanstack/react-router": "^1.170.45",
         "@tanstack/react-start": "^1.169.3",
         "@tanstack/react-virtual": "3.14.21",
+        "fumadocs-core": "16.17.7",
+        "fumadocs-mdx": "15.4.9",
+        "fumadocs-ui": "npm:@fumadocs/base-ui@16.17.7",
         "fuse.js": "7.5.0",
+        "next-themes": "0.4.6",
         "react": "^19.3.1",
-        "react-dom": "^19.3.1"
+        "react-dom": "^19.3.1",
+        "zod": "4.6.7"
     },
     "devDependencies": {
         "@playwright/test": "^1.64.1",
+        "@solar-icons/core": "workspace:*",
         "@tailwindcss/vite": "^4.3.3",
         "@tanstack/intent": "^0.5.6",
+        "@types/mdx": "2.0.14",
         "@types/node": "26.6.5",
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
