@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
-import { collectDocsPaths } from './scripts/docs-paths.ts'
+import { collectDocsPaths } from './scripts/docs-paths'
 
 const appRoot = fileURLToPath(new URL('.', import.meta.url))
 const srcDir = path.join(appRoot, 'src')
