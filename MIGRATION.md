@@ -166,7 +166,9 @@ No token is needed for this handoff; the deployment and public URL check are lef
 
 ## M4 — feedback Worker
 
-The guide feedback widget of the docs pages needed a place to store the feedback. The Next app writes it in a GitHub discussion through a server action; the static build has no server, so the feedback goes to a separate Cloudflare Worker, in `apps/docs-feedback`. The pages themselves stay served as static assets by the other Worker, so a visitor who never sends a feedback never costs an invocation.
+The guide feedback widget of the docs pages needed a place to store the feedback. The Next app writes it in a GitHub discussion through a server action; the static build has no server, so the feedback goes to a Worker.
+
+The Worker is part of `apps/docs-start`: the pages are served from the asset storage and the Worker only runs for `/api/feedback`, because `assets.run_worker_first` holds the path of the endpoint. A page view never reaches the Worker, so it never costs an invocation. The endpoint answers on the same address as the site, so the browser needs no cross origin request.
 
 ### The discussions that exist
 
@@ -195,11 +197,28 @@ The lookup was checked against the real category: `/docs/v2/icon-reference/categ
 
 ### The endpoint
 
-The Worker answers `POST /` with `{ url, opinion, message }` and returns the address of the discussion. It refuses a request that comes from an origin that is not in `ALLOWED_ORIGINS`, a body that is not JSON, an opinion that is not `good` or `bad`, and a message that is empty or longer than 2,000 characters. The GitHub credentials are the secrets `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY`; the repository, the category and the allowed origins are the variables of `wrangler.jsonc`. The site reads the address of the Worker from `VITE_FEEDBACK_ENDPOINT`.
+The Worker answers `POST /api/feedback` with `{ url, opinion, message }` and returns the address of the discussion. It refuses a request that comes from another origin, a body that is not JSON, an opinion that is not `good` or `bad`, and a message that is empty or longer than 2,000 characters. The GitHub credentials are the secrets `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY`; the repository and the category are the variables of `wrangler.jsonc`. The site posts to `/api/feedback`, and `VITE_FEEDBACK_ENDPOINT` changes the address when the site and the Worker answer from two different places.
 
-The whole flow was checked locally: the widget sends the preflight and the request, the payload holds the path of the page, and the widget shows the discussion it created.
+The routing was checked with the local Worker: a page, a documentation page and a missing path are answered by the asset storage, and only the request of the endpoint reaches the Worker. The whole flow was checked as well: the widget sends the request, the payload holds the path of the page, and the widget shows the discussion it created.
 
 The Worker was not deployed: it needs the private key of the `solar-icons-docs` GitHub App, which is the user's. The endpoint is public, so a rate limit has to be added at the Cloudflare level before the production cutover.
+
+## Keeping `solar-icons.vercel.app`
+
+`solar-icons.vercel.app` has been the public address for more than a year, so
+search engines and other sites link to it. Only Vercel can serve that name, so
+Cloudflare cannot take it over. The Vercel project stays, reduced to a redirect
+(`apps/vercel-redirect/vercel.json`): every path answers with a permanent
+redirect to the same path on `https://solar-icons.dev`, and `/docs` goes to
+`/docs/v2`.
+
+Order of the cutover, so the old address never stops answering:
+
+1. Serve the new site on `solar-icons.dev` from Cloudflare (custom domain on the Worker).
+2. Check that `https://solar-icons.dev/...` answers on the Worker.
+3. In the existing Vercel project, set the Root Directory to `apps/vercel-redirect`, redeploy, and remove the `solar-icons.dev` domain from it.
+4. Check `curl -sI https://solar-icons.vercel.app/docs/v2/packages/react` returns a 308 to the same path on `solar-icons.dev`, with the query string kept.
+5. Keep the project and the redirect for good. The canonical tags already point to `solar-icons.dev`.
 
 ## Deferred work
 

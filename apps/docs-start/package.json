@@ -6,9 +6,9 @@
     "sideEffects": false,
     "scripts": {
         "dev": "vite dev",
-        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm sync:site-assets && pnpm fetch:avatar && pnpm optimize:images && pnpm generate:static-config && pnpm generate:icon-catalog && pnpm generate:site-stats && vite build",
+        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm sync:site-assets && pnpm generate:og-images && pnpm fetch:avatar && pnpm optimize:images && pnpm generate:static-config && pnpm generate:icon-catalog && pnpm generate:site-stats && vite build",
         "preview": "vite preview",
-        "test": "playwright test",
+        "test": "vitest run && playwright test",
         "test:ui": "playwright test --ui",
         "sync:umami": "tsx ./scripts/sync-umami.ts",
         "typecheck": "tsc --noEmit",
@@ -20,12 +20,16 @@
         "deploy:dry": "pnpm build && wrangler deploy --dry-run",
         "cf-typegen": "wrangler types",
         "generate:static-config": "tsx ./scripts/generate-static-config.ts",
+        "generate:og-images": "tsx ./scripts/generate-og-images.tsx",
         "generate:icon-catalog": "tsx ./scripts/generate-icon-catalog.ts",
         "ensure:icon-package": "tsx ./scripts/ensure-icon-package.ts",
         "fetch:avatar": "tsx ./scripts/fetch-github-avatar.ts",
         "sync:site-assets": "tsx ./scripts/sync-site-assets.ts",
         "optimize:images": "tsx ./scripts/optimize-images.ts",
-        "generate:site-stats": "tsx ./scripts/generate-site-stats.ts"
+        "generate:site-stats": "tsx ./scripts/generate-site-stats.ts",
+        "test:unit": "vitest run",
+        "test:e2e": "playwright test",
+        "feedback:list": "tsx ./scripts/list-feedback-discussions.ts"
     },
     "dependencies": {
         "@solar-icons/react": "workspace:*",
@@ -44,7 +48,10 @@
         "zod": "4.6.7"
     },
     "devDependencies": {
+        "@fontsource/aleo": "^5.3.0",
+        "@fontsource/host-grotesk": "^5.3.0",
         "@playwright/test": "^1.64.1",
+        "@resvg/resvg-js": "^2.6.2",
         "@solar-icons/core": "workspace:*",
         "@tailwindcss/vite": "^4.3.3",
         "@tanstack/intent": "^0.5.6",
@@ -53,12 +60,14 @@
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
         "@vitejs/plugin-react": "^6.1.2",
+        "satori": "^0.63.2",
         "sharp": "0.35.5",
         "tailwindcss": "^4.3.3",
         "tailwindcss-animate": "^1.0.7",
         "tsx": "^4.20.6",
         "typescript": "7.0.2",
         "vite": "^8.3.5",
+        "vitest": "^5.0.5",
         "wrangler": "^4.151.3"
     }
 }

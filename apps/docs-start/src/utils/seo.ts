@@ -39,6 +39,8 @@ export function seo({
             ...(imageUrl
                 ? [
                       { property: 'og:image', content: imageUrl },
+                      { property: 'og:image:width', content: '1200' },
+                      { property: 'og:image:height', content: '630' },
                       { name: 'twitter:card', content: 'summary_large_image' },
                   ]
                 : [{ name: 'twitter:card', content: 'summary' }]),

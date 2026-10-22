@@ -2,9 +2,9 @@ import { storeFeedback, type StoreResult } from './feedback'
 /**
  * The feedback endpoint of the documentation.
  *
- * The site is served as static assets, without a Worker, so the feedback
- * goes to this separate Worker. It stores the feedback as a GitHub
- * discussion and answers with the address of the discussion.
+ * The site is served from the asset storage, and this Worker only runs for
+ * `/api/feedback`. It stores the feedback as a GitHub discussion and answers
+ * with the address of the discussion.
  */
 import { createAppJwt, createGraphqlClient, getInstallationToken } from './github'
 import { normalizePagePath, type Opinion } from './url'
@@ -26,6 +26,7 @@ export type FeedbackPayload = {
 
 export type FeedbackStore = (env: Env, input: FeedbackPayload) => Promise<StoreResult>
 
+const PATH = '/api/feedback'
 const MAX_MESSAGE_LENGTH = 2000
 
 const CORS_HEADERS = {
@@ -43,9 +44,21 @@ function allowedOrigins(env: Env): string[] {
         .filter(Boolean)
 }
 
-function corsHeaders(request: Request, env: Env): Record<string, string> {
+/**
+ * The endpoint is served by the same address as the site, so a request from
+ * another site is refused. The extra origins are the ones of a test setup
+ * where the site and the Worker answer from two different addresses.
+ */
+function isAllowedOrigin(request: Request, env: Env): boolean {
     const origin = request.headers.get('origin')
-    if (!origin || !allowedOrigins(env).includes(origin)) return {}
+    if (!origin) return true
+
+    return origin === new URL(request.url).origin || allowedOrigins(env).includes(origin)
+}
+
+function corsHeaders(request: Request): Record<string, string> {
+    const origin = request.headers.get('origin')
+    if (!origin || origin === new URL(request.url).origin) return {}
 
     return {
         ...CORS_HEADERS,
@@ -90,13 +103,13 @@ export const storeWithGitHub: FeedbackStore = async (env, input) => {
 export function createWorker(store: FeedbackStore) {
     return {
         async fetch(request: Request, env: Env): Promise<Response> {
-            const headers = corsHeaders(request, env)
-            const origin = request.headers.get('origin')
+            if (new URL(request.url).pathname !== PATH) {
+                return json({ error: 'Not found.' }, 404, {})
+            }
 
-            // The endpoint writes to the repository, so a request that comes
-            // from another site is refused instead of being answered without
-            // the headers of a cross origin request.
-            if (origin && !allowedOrigins(env).includes(origin)) {
+            const headers = corsHeaders(request)
+
+            if (!isAllowedOrigin(request, env)) {
                 return json({ error: 'This origin cannot send a feedback.' }, 403, {})
             }
 

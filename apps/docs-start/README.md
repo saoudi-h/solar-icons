@@ -1,51 +1,51 @@
-# Solar Icons docs feedback
+# Solar Icons documentation
 
-The endpoint that stores the feedback of the documentation pages.
+The documentation of Solar Icons, served as static assets by a Cloudflare
+Worker. The pages are prerendered at build time and the Worker only runs for
+the feedback endpoint, so a page view never costs an invocation.
 
-The site is served as static assets, without a Worker, so the pages never cost
-an invocation. The feedback goes to this separate Worker, which writes a
-GitHub discussion in the `Docs Feedback` category of the repository.
+## Build
 
-## How the feedback is stored
+```sh
+pnpm --filter @solar-icons/docs-start build
+```
 
-A page always resolves to a single discussion. The title of a discussion is
-`Feedback for <path>`, with the path of the page and without the host, so the
-same page never gets a second discussion, whatever the host the feedback
-comes from. A new feedback on a page that already has a discussion is added
-as a comment of that discussion.
+The build writes the prerendered site in `dist/client` and copies the assets
+of the current Next app, so both apps render the same pages.
 
-The lookup walks the discussions of the category and compares the normalized
-path of their titles, so it never relies on a fuzzy search.
+## Test
+
+```sh
+pnpm --filter @solar-icons/docs-start test
+```
+
+The unit tests cover the feedback Worker, the end to end tests cover the
+pages, the search and the explorer.
 
 ## Deploy
 
-The Worker needs the credentials of the GitHub App that writes the
-discussions:
+The Worker needs the credentials of the GitHub App that writes the feedback
+of the documentation pages:
 
 ```sh
-pnpm --filter @solar-icons/docs-feedback deploy:dry
-pnpm --filter @solar-icons/docs-feedback exec wrangler secret put GITHUB_APP_ID
-pnpm --filter @solar-icons/docs-feedback exec wrangler secret put GITHUB_APP_PRIVATE_KEY
-pnpm --filter @solar-icons/docs-feedback deploy
+pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_ID
+pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_PRIVATE_KEY
+pnpm --filter @solar-icons/docs-start deploy
 ```
 
 `GITHUB_APP_PRIVATE_KEY` is the private key of the app, with its line breaks
-intact. The variables of the worker are in `wrangler.jsonc`: the repository,
-the category and the origins allowed to send a feedback. Add the origin of
-the deployment to `ALLOWED_ORIGINS`, otherwise the worker refuses its
-requests.
+intact. The variables of the worker are in `wrangler.jsonc`: the repository
+and the category that hold the feedback, and the origins that are allowed to
+send a feedback on top of the origin of the site itself.
 
-The site needs the address of the worker:
+The endpoint is public, so a rate limit has to be added at the Cloudflare
+level before the production cutover.
 
-```sh
-VITE_FEEDBACK_ENDPOINT=https://solar-icons-docs-feedback.<subdomain>.workers.dev
-```
-
-## Read the discussions
+## Read the feedback discussions
 
 The script lists the discussions of the category and shows which one holds
 the feedback of a page. It only reads:
 
 ```sh
-GITHUB_TOKEN=… pnpm --filter @solar-icons/docs-feedback exec tsx ./scripts/list-feedback-discussions.ts /docs/v2/packages/react
+GITHUB_TOKEN=… pnpm --filter @solar-icons/docs-start feedback:list /docs/v2/packages/react
 ```

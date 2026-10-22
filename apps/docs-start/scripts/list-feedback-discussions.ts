@@ -7,9 +7,9 @@
  *
  * Usage: GITHUB_TOKEN=… pnpm tsx ./scripts/list-feedback-discussions.ts [path]
  */
-import { listDiscussions, getCategoryId, findDiscussion } from '../src/feedback'
-import { createGraphqlClient } from '../src/github'
-import { normalizePagePath, pathFromTitle } from '../src/url'
+import { listDiscussions, getCategoryId, findDiscussion } from '../worker/feedback'
+import { createGraphqlClient } from '../worker/github'
+import { normalizePagePath, pathFromTitle } from '../worker/url'
 
 const token = process.env.GITHUB_TOKEN
 if (!token) {

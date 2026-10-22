@@ -5,11 +5,11 @@ import { createWorker, type Env, type FeedbackPayload } from './index'
 const env: Env = {
     GITHUB_APP_ID: '1',
     GITHUB_APP_PRIVATE_KEY: 'key',
-    ALLOWED_ORIGINS: 'https://solar-icons.dev',
+    ALLOWED_ORIGINS: '',
 }
 
 function post(body: unknown, origin = 'https://solar-icons.dev'): Request {
-    return new Request('https://feedback.workers.dev/', {
+    return new Request('https://solar-icons.dev/api/feedback', {
         method: 'POST',
         headers: { 'content-type': 'application/json', origin },
         body: JSON.stringify(body),
@@ -24,10 +24,20 @@ function createWorkerWith(stored: FeedbackPayload[]) {
 }
 
 describe('the feedback worker', () => {
+    it('answers only the feedback path', async () => {
+        const worker = createWorkerWith([])
+        const response = await worker.fetch(
+            new Request('https://solar-icons.dev/api/other', { method: 'POST' }),
+            env
+        )
+
+        expect(response.status).toBe(404)
+    })
+
     it('answers the preflight of the browser', async () => {
         const worker = createWorkerWith([])
         const response = await worker.fetch(
-            new Request('https://feedback.workers.dev/', {
+            new Request('https://solar-icons.dev/api/feedback', {
                 method: 'OPTIONS',
                 headers: { origin: 'https://solar-icons.dev' },
             }),
@@ -35,7 +45,22 @@ describe('the feedback worker', () => {
         )
 
         expect(response.status).toBe(204)
-        expect(response.headers.get('access-control-allow-origin')).toBe('https://solar-icons.dev')
+    })
+
+    it('answers the preflight of another allowed origin', async () => {
+        const worker = createWorkerWith([])
+        const response = await worker.fetch(
+            new Request('https://solar-icons.dev/api/feedback', {
+                method: 'OPTIONS',
+                headers: { origin: 'https://solar-icons.vercel.app' },
+            }),
+            { ...env, ALLOWED_ORIGINS: 'https://solar-icons.vercel.app' }
+        )
+
+        expect(response.status).toBe(204)
+        expect(response.headers.get('access-control-allow-origin')).toBe(
+            'https://solar-icons.vercel.app'
+        )
     })
 
     it('refuses an origin that is not allowed', async () => {
@@ -43,7 +68,7 @@ describe('the feedback worker', () => {
         const worker = createWorkerWith(stored)
         const response = await worker.fetch(
             post({ url: '/docs/v2', opinion: 'good', message: 'hello' }, 'https://evil.test'),
-            env
+            { ...env, ALLOWED_ORIGINS: 'https://solar-icons.vercel.app' }
         )
 
         expect(response.status).toBe(403)
@@ -54,7 +79,7 @@ describe('the feedback worker', () => {
     it('refuses a method that is not a post', async () => {
         const worker = createWorkerWith([])
         const response = await worker.fetch(
-            new Request('https://feedback.workers.dev/', { method: 'GET' }),
+            new Request('https://solar-icons.dev/api/feedback', { method: 'GET' }),
             env
         )
 
@@ -64,7 +89,7 @@ describe('the feedback worker', () => {
     it('refuses a body that is not json', async () => {
         const worker = createWorkerWith([])
         const response = await worker.fetch(
-            new Request('https://feedback.workers.dev/', {
+            new Request('https://solar-icons.dev/api/feedback', {
                 method: 'POST',
                 body: 'not json',
             }),

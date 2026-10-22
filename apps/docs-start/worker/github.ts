@@ -11,6 +11,10 @@ export interface GraphqlClient {
 
 const API = 'https://api.github.com'
 
+// GitHub refuses (403) the requests that have no User-Agent, and the Workers
+// runtime does not send one.
+const USER_AGENT = 'solar-icons-docs-feedback'
+
 function base64UrlEncode(bytes: Uint8Array): string {
     let binary = ''
     for (const byte of bytes) binary += String.fromCharCode(byte)
@@ -98,11 +102,14 @@ export async function getInstallationToken(jwt: string, owner: string): Promise<
         headers: {
             authorization: `Bearer ${jwt}`,
             accept: 'application/vnd.github+json',
+            'user-agent': USER_AGENT,
             'x-github-api-version': '2022-11-28',
         },
     })
     if (!installations.ok) {
-        throw new Error(`GitHub refused the installations list (${installations.status})`)
+        throw new Error(
+            `GitHub refused the installations list (${installations.status}): ${await installations.text()}`
+        )
     }
 
     const list = (await installations.json()) as { id: number; account?: { login: string } }[]
@@ -116,6 +123,7 @@ export async function getInstallationToken(jwt: string, owner: string): Promise<
         headers: {
             authorization: `Bearer ${jwt}`,
             accept: 'application/vnd.github+json',
+            'user-agent': USER_AGENT,
             'x-github-api-version': '2022-11-28',
         },
     })
@@ -136,6 +144,7 @@ export function createGraphqlClient(token: string): GraphqlClient {
                 headers: {
                     authorization: `Bearer ${token}`,
                     accept: 'application/vnd.github+json',
+                    'user-agent': USER_AGENT,
                     'content-type': 'application/json',
                     'x-github-api-version': '2022-11-28',
                 },
