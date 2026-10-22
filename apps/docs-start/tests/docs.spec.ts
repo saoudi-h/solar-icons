@@ -4,7 +4,10 @@ test('a docs page renders its content, its table of contents and its sidebar', a
     await page.goto('/docs/v2/packages/react')
 
     await expect(page.getByRole('heading', { name: 'React', level: 1 })).toBeVisible()
-    await expect(page.getByText('Import patterns', { exact: true }).first()).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Import patterns', level: 2 })).toBeVisible()
+    await expect(
+        page.locator('#nd-toc').getByRole('link', { name: 'Import patterns' })
+    ).toBeVisible()
     await expect(page.getByRole('button', { name: 'Copy Markdown' })).toBeVisible()
     await expect(page.locator('#nd-sidebar')).toBeVisible()
 
