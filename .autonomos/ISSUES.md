@@ -183,3 +183,12 @@ acceptance. Keep this separate from the public request intake.
   predictable release-build time and memory budget. No optimization may silently change the
   package API.
 - Tasks: none
+
+## [ISSUE-CI-DURATION] The CI workflow takes about 40 minutes
+
+- Type: problem
+- Status: open
+- Evidence: The CI workflow averages about 40 minutes. Measured on PR 616 (warm turbo cache), the `docs-start` steps are small: dependency install 31s, Chromium install 28s, build 24s, tests 23s, typecheck 5s, lint 5s. The time is therefore spent elsewhere: 25 workspace packages, a cold turbo cache on most runs, `--concurrency=1`, or other jobs of the workflow. The per-job split of a cold run has not been measured yet.
+- Impact: Deploying more than a couple of times a day is impractical, and every failed run costs a long wait before the next attempt.
+- Desired outcome: A CI run short enough to merge and deploy several times a day, without dropping the checks that protect the packages and the docs site. Deferred until the Cloudflare deployment of `apps/docs-start` is finished.
+- Tasks: none
