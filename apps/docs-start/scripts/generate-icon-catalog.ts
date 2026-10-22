@@ -35,7 +35,10 @@ await writeFile(outputFile, `${JSON.stringify(catalog)}\n`)
 await rm(chunksDir, { recursive: true, force: true })
 await rm(loadersFile, { force: true })
 
-const loaderGroups = new Map<string, { style: (typeof styleSlugs)[number]; category: string; chunk: number }[]>()
+const loaderGroups = new Map<
+    string,
+    { style: (typeof styleSlugs)[number]; category: string; chunk: number }[]
+>()
 let chunkModuleCount = 0
 
 for (const style of styleSlugs) {
@@ -44,7 +47,6 @@ for (const style of styleSlugs) {
         for (let offset = 0; offset < categoryIcons.length; offset += chunkSize) {
             const chunk = Math.floor(offset / chunkSize)
             const chunkIcons = categoryIcons.slice(offset, offset + chunkSize)
-            const chunkId = `${category}:${chunk}`
             const moduleDir = path.join(chunksDir, style)
             const moduleFile = path.join(moduleDir, `${category}-${chunk}.ts`)
 

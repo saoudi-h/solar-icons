@@ -42,8 +42,8 @@ const catalogResponse = await fetch(new URL('/data/icons.json', baseUrl))
 const catalog = await catalogResponse.json()
 assert.equal(catalog.length, 1451)
 
-const stylesheetPath = plainHtml.match(/href="([^\"]+app-[^\"]+\.css)"/)?.[1]
-const entryScriptPath = plainHtml.match(/src="([^\"]+index-[^\"]+\.js)"/)?.[1]
+const stylesheetPath = plainHtml.match(/href="([^"]+app-[^"]+\.css)"/)?.[1]
+const entryScriptPath = plainHtml.match(/src="([^"]+index-[^"]+\.js)"/)?.[1]
 assert.ok(stylesheetPath, 'the HTML should reference a hashed CSS bundle')
 assert.ok(entryScriptPath, 'the HTML should reference a hashed JavaScript entry')
 const stylesheet = await (await fetch(new URL(stylesheetPath, baseUrl))).text()
