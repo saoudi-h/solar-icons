@@ -1,6 +1,8 @@
 # Solar Icons migration — M0–M3
 
-**Status:** M0 and M1 are complete. M3 was validated and ported first, then M2 was completed. The work is local on `feat/docs-tanstack-start`; nothing was pushed or deployed. The Next app under `apps/docs` and its Vercel configuration remain in place.
+**Status:** M0 to M3 are complete. The work is local on `feat/docs-tanstack-start`; nothing was pushed or deployed. The Next app under `apps/docs` and its Vercel configuration remain in place.
+
+The TanStack Start app renders the same pages as the current Next app. A pixel comparison of 17 routes in the light and the dark theme finds 30 of the 34 captures byte-identical. The four remaining captures differ by a single colour step (1/255) on the antialiased edge of one SVG icon; the markup, the computed styles and the DOM of those icons are identical in both apps, so the difference comes from Chromium's gradient dithering and not from the app.
 
 ## M0 — static TanStack Start foundation
 
@@ -11,7 +13,7 @@
 
 ## M1 — `/icons` explorer
 
-The route uses TanStack Router's `validateSearch`, with no `nuqs`. It preserves the existing shared URL parameters:
+The route uses TanStack Router's `validateSearch` and a small `nuqs` compatibility adapter for the original explorer component. The adapter keeps the existing search state in the URL. The route preserves the existing shared URL parameters:
 
 | Parameter | Accepted values |
 | --- | --- |
@@ -24,16 +26,19 @@ The route uses TanStack Router's `validateSearch`, with no `nuqs`. It preserves 
 
 The generated catalog contains 1,451 records (319,969 bytes uncompressed). The explorer uses 282 ignored, lazy icon modules grouped by category and style. The catalog and icon chunks load in the browser after hydration and as the virtualized grid is scrolled.
 
-### Reproduced network measurement
+The explorer is the shared component of the Next app, so both apps write the same URL: a category link hydrates into `view=grouped`, the default view is removed from the URL, and the filters are restored by the browser history.
 
-Both production builds were served locally and measured with the same `apps/docs-start/scripts/measure-network.mjs` harness: headless Chromium at 1440×900, a fresh context, cache disabled through CDP, `networkidle`, then all scrollable regions scrolled to the bottom. The URL explicitly sets `?style=bold-duotone`, which matches both apps' default style. Byte totals are CDP `encodedDataLength`, shown in KiB.
+## M2 — homepage and build-time statistics
 
-| Build | Initial requests | Initial transfer | Initial JS | After scroll requests | After scroll transfer | After scroll JS | Prefetches |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Current Next build | 42 | 1,416.5 KiB | 1,274.3 KiB | 42 | 1,416.5 KiB | 1,274.3 KiB | 0 |
-| TanStack Start build | 43 | 436.5 KiB | 317.1 KiB | 132 | 1,092.9 KiB | 973.4 KiB | 0 |
+The homepage is implemented in `apps/docs-start`. GitHub stars and last-week npm downloads for 13 Solar Icons packages are fetched during the build and written to ignored `src/generated/site-stats.json`. The page imports that JSON, so visitors do not call GitHub or npm APIs. The latest successful build fetched 224 stars and 46,064 weekly downloads on 2026-10-22.
 
-The Next comparison build used local placeholder Umami settings: its `/p.js` and `/r.js` requests returned 502 with zero transferred bytes. The TanStack build had no Umami configuration. These figures establish a repeatable local baseline with the same URL state and harness; they do not model live analytics or Cloudflare edge transfer.
+GitHub and npm are fetched independently. If GitHub fails, its count falls back to 220. The npm total is all-or-nothing: any failed or malformed package response uses the 15,200 fallback instead of displaying a partial sum. The JSON includes its fetch time and whether each value came from the API or fallback. A build still succeeds when either API fails.
+
+The Next app reads the same counters live in the community section, with 220 as its fallback. The header of both apps shows the value baked into the build, so the first screen is identical. Below the fold the community card can differ while the GitHub API is unreachable: the Next app falls back to 220, the static build keeps the last successful count.
+
+### Daily refresh proposal
+
+A future GitHub Actions schedule can run a daily static build and deploy it to the test Worker. The build-time JSON changes only when a new build is deployed; running the build without deploying does not update the public site. No scheduled workflow or Cloudflare credential was added. The user will deploy the test build. API rate limits and transient failures may therefore leave fallback or older values in the deployed assets until the next successful build and deploy.
 
 ## M3 — Fumadocs docs, blog, and search
 
@@ -46,35 +51,69 @@ The first spike used the React migration page to validate MDX rendering with Fum
 - Search is exported as a static Orama index at `/api/search`; the Fumadocs dialog reads that index. The root theme provider supports light and dark modes.
 - Markdown pages are emitted as `.mdx` files with explicit `text/markdown` headers. `/llms.txt`, `/llms-full.txt`, the sitemap, RSS, and search index are prerendered.
 - The production build prerendered 120 pages, including both docs versions, the blog, per-page Markdown, and search data.
-- Three pages were compared in both themes at 1280×800: React package docs, React migration docs, and Global Styling. The captures were reviewed side by side; the pages are visually close. A global serif heading rule was removed from docs content to match the current Next pages.
+- The TanStack routes render the existing docs and blog MDX source and reuse the Next site's shared navigation, footer, homepage sections, icon explorer, and blog cards. Route and URL adapters handle framework navigation and query state.
+- Start uses the same Host Grotesk, Aleo, and JetBrains Mono font files and font-face metrics as the current Next build. The WOFF2 files are checked in so a clean Start build does not depend on the ignored `.next` output.
 
-The build emits non-fatal warnings for Vite's native config loader and the `::highlight(fd-search)` CSS selector. Fumadocs also imports its `node:fs/promises` server runtime from a browser-compatible bundle; the static build and all 10 Playwright tests pass, and the tested docs pages and search work in Chromium.
+### Parity with the current Next build
 
-## M2 — homepage and build-time statistics
+Four differences showed up in the pixel comparison and were fixed:
 
-The homepage is implemented in `apps/docs-start`. GitHub stars and last-week npm downloads for 13 Solar Icons packages are fetched during the build and written to ignored `src/generated/site-stats.json`. The page imports that JSON, so visitors do not call GitHub or npm APIs. The latest successful build fetched 223 stars and 46,064 weekly downloads on 2026-10-22.
+| Difference | Fix |
+| --- | --- |
+| The blog cover, the Figma thumbnail, the explorer screenshots and the author avatar were served unoptimized, so the browser scaled different bytes than the Next app. | `scripts/optimize-images.ts` reproduces the `/_next/image` optimizer during the build: the same resize, the same webp quality, the same width candidates as Next's `getWidths`. The output was compared byte for byte with the running Next app: all 16 variants are identical. |
+| The docs pages had no "How is this guide?" widget and no "Last updated on" line. | The shared feedback widget is rendered again, and the macro collection enables `lastModified` so the date read from the page body is shown. |
+| The active marker of the table of contents was missing on the first paint. | Fumadocs publishes the state of the intersection observer before the marker is mounted, so the marker misses it and stays hidden until the first scroll. `src/components/docs/toc-active-marker.tsx` applies the same state to the marker as soon as it exists. |
+| The changelog page rendered a different content than the Next build. | The tracked `changelog.mdx` was older than the package changelogs and the Next build regenerates it on every build. The file is now committed with the exact markup the generator writes, and `oxfmt` ignores it because reformatting it changes how MDX parses the inline links. A clean Next build no longer changes it. |
 
-GitHub and npm are fetched independently. If GitHub fails, its count falls back to 220. The npm total is all-or-nothing: any failed or malformed package response uses the 15,200 fallback instead of displaying a partial sum. The JSON includes its fetch time and whether each value came from the API or fallback. A build still succeeds when either API fails.
+The feedback widget renders like the Next app, but the static build has no server to store the feedback. Submitting throws until the feedback Worker of M4 exists.
 
-### Daily refresh proposal
+### Pixel comparison
 
-A future GitHub Actions schedule can run a daily static build and deploy it to the test Worker. The build-time JSON changes only when a new build is deployed; running the build without deploying does not update the public site. No scheduled workflow or Cloudflare credential was added. The user will deploy the test build. API rate limits and transient failures may therefore leave fallback or older values in the deployed assets until the next successful build and deploy.
+`apps/docs-start/scripts/compare-visuals.mjs` compares the two production builds. It serves the prerendered `dist/client` with gzip, opens a fresh context per capture, and takes the screenshot at 1280×800 with a device pixel ratio of 1, `prefers-reduced-motion: reduce`, `networkidle`, `document.fonts.ready`, and a settle delay of 1.2 s. Reduced motion is required because the homepage rotates its hero continuously, which no two captures can share.
+
+Every route is captured twice in the Next app to measure the noise floor of the harness, then compared with the Start capture. The channel tolerance is 1, so a difference of one colour step is reported separately from a real difference.
+
+| Result | Captures |
+| --- | ---: |
+| Identical | 30 of 34 |
+| Differing by at most 1/255 per channel | 4 |
+| Differing by more | 0 |
+
+The four captures are the docs pages that show the SolidJS logo in the sidebar (81 pixels) and the explorer grid (13 and 25 pixels). The SVG markup of those icons is byte-identical in both apps and the computed styles match, so the residual comes from the dithering Chromium applies to the gradients of the icon.
+
+## Network measurement
+
+Both production builds were served locally and measured with the same `apps/docs-start/scripts/measure-network.mjs` harness: headless Chromium at 1440×900, a fresh context, cache disabled through CDP, `networkidle`, then all scrollable regions scrolled to the bottom. The URL explicitly sets `?style=bold-duotone`, which matches both apps' default style. Byte totals are CDP `encodedDataLength`, shown in KiB. The Next app compresses its responses, so the static server of the harness compresses with gzip as well.
+
+| Build and path | Requests | Transfer | JavaScript |
+| --- | ---: | ---: | ---: |
+| Current Next build, `/icons?style=bold-duotone` | 42 | 1,416.4 KiB | 1,274.3 KiB |
+| TanStack Start build, `/icons?style=bold-duotone` | 119 | 1,327.9 KiB | 1,184.2 KiB |
+| Current Next build, `/` | 60 | 1,018.4 KiB | 645.2 KiB |
+| TanStack Start build, `/` | 128 | 971.3 KiB | 616.2 KiB |
+
+The Start build sends fewer bytes but more requests, because its chunks are split per route and per icon while the Next build groups them. These figures establish a repeatable local baseline with the same URL state and harness; they do not model live analytics or Cloudflare edge transfer.
+
+The Next comparison build used local placeholder Umami settings: its `/p.js` and `/r.js` requests returned 502 with zero transferred bytes. The TanStack build had no Umami configuration.
 
 ## Generated files and tracking
 
 | File or directory | Status | Producer and behavior |
 | --- | --- | --- |
-| `apps/docs/content/docs/v2/community/changelog.mdx` | Tracked | Generated by the existing Next app's `scripts/generate-changelog.ts`. A Next build can rewrite it when package changelogs are newer; the comparison build's generated diff was restored. The TanStack Start build does not generate or modify this file. |
-| `apps/docs-start/src/routeTree.gen.ts` | Tracked | TanStack file-route output. It is committed with the route changes and remains stable across the clean Start build. |
+| `apps/docs/content/docs/v2/community/changelog.mdx` | Tracked | Generated by the existing Next app's `scripts/generate-changelog.ts`. The file is committed with the exact markup the generator writes, so a Next build regenerates the same bytes and leaves the tree clean. `oxfmt` ignores it, because reformatting the inline links changes how MDX parses them. The TanStack Start build never writes it. |
+| `apps/docs-start/src/routeTree.gen.ts` | Tracked | TanStack file-route output. It is committed with the route changes and remains stable across the clean Start build. `oxfmt` ignores it, as the generated file requires. |
 | `apps/docs-start/.source/` | Ignored | Fumadocs-generated collection metadata. |
 | `apps/docs-start/public/data/icons.json` | Ignored | Generated icon catalog. |
+| `apps/docs-start/public/optimized/` | Ignored | The images of `next/image`, resized and re-encoded like the Next optimizer does. |
 | `apps/docs-start/src/generated/icon-chunks/` | Ignored | Generated lazy icon modules (282 chunks). |
 | `apps/docs-start/src/generated/icon-chunk-loaders.ts` | Ignored | Generated icon chunk loader. |
 | `apps/docs-start/src/generated/site-stats.json` | Ignored | Build-time GitHub/npm values. |
 | `apps/docs-start/public/saoudi-h.png` | Ignored | Fetched GitHub avatar used by the blog. |
+| `apps/docs-start/public/fonts/*.woff2` | Tracked | Exact font files copied from Next's current generated font output; kept as stable inputs for clean Start builds. |
+| `apps/docs-start/public/banner.png`, `banner.wep`, blog images, Figma thumbnail, explorer images, `og/` | Ignored | Build-time copies of the tracked originals in `apps/docs/public/`, produced by `sync:site-assets`. |
 | `apps/docs-start/dist/` and public `_headers`, `_redirects`, `robots.txt` | Ignored | Static build output and generated Cloudflare configuration. |
 
-After committing the route tree, a clean `@solar-icons/docs-start` build must leave `git status` clean. The Next baseline build is separate and has the tracked changelog side effect described above.
+After committing the route tree, a clean `@solar-icons/docs-start` build leaves tracked files unchanged. The Next build no longer changes the tracked changelog either.
 
 ## Verification
 
@@ -84,7 +123,10 @@ After committing the route tree, a clean `@solar-icons/docs-start` build must le
 | `SITE_NOINDEX=1 VITE_SITE_URL=https://solar-icons.dev pnpm --filter @solar-icons/docs-start build` | Passed; 120 pages prerendered. |
 | `pnpm --filter @solar-icons/docs-start typecheck` | Passed. |
 | `pnpm --filter @solar-icons/docs-start test` | Passed; 10 Playwright tests. |
-| Next production build for the network baseline | Passed with local non-secret placeholders; generated `changelog.mdx`, whose diff was restored. |
+| `pnpm --filter @solar-icons/docs-start lint` | Passed. |
+| `pnpm --filter @solar-icons/docs-start format` | Passed. |
+| `node apps/docs-start/scripts/compare-visuals.mjs --next-url … --start-url …` | 30 of 34 captures identical, 4 within one colour step, none above. |
+| Next production build for the network baseline | Passed with local non-secret placeholders; the tracked changelog is unchanged. |
 | `pnpm --filter @solar-icons/docs-start exec wrangler deploy --dry-run` | Passed previously; dry-run only. No Worker deployment was made. |
 
 ## Public `workers.dev` test checklist
@@ -101,6 +143,7 @@ After deploying the noindex build, substitute its public test URL for `TEST_URL`
 | `GET /api/search` | 200 JSON and a search index containing the docs pages. |
 | `GET /llms.txt`, `/llms-full.txt` | 200 `text/plain` and non-empty content. |
 | `GET /sitemap.xml`, `/blog/rss.xml` | 200 XML and RSS MIME types, respectively. |
+| `GET /optimized/blog-fallback-image/640.webp` | 200 `image/webp`; the same bytes as `/_next/image?url=%2Fblog-fallback-image.webp&w=640&q=75`. |
 | CSS, JavaScript, WOFF2, manifest | Correct MIME types and successful responses. |
 | A nonexistent path | 404 status with the generated not-found page. |
 
@@ -108,7 +151,7 @@ No token is needed for this handoff; the deployment and public URL check are lef
 
 ## Deferred work
 
-M4 remains unimplemented. Before building its feedback Worker, inspect several existing GitHub Discussions from the `Docs Feedback` category read-only. Feedback titles use `Feedback for <URL>`; compare the parsed absolute URL and normalize equivalent URLs across hosts before creating anything, so an existing discussion is reused and duplicates are never created. M5 production cutover and Cloudflare invocation measurements are also out of scope.
+M4 remains unimplemented. Before building its feedback Worker, inspect several existing GitHub Discussions from the `Docs Feedback` category read-only. Feedback titles use `Feedback for <URL>`; compare the parsed absolute URL and normalize equivalent URLs across hosts before creating anything, so an existing discussion is reused and duplicates are never created. The feedback widget already renders; the Worker only has to store the feedback. M5 production cutover and Cloudflare invocation measurements are also out of scope.
 
 ## References
 
