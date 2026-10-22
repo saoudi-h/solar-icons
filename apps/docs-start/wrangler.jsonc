@@ -3,7 +3,7 @@
     // for the feedback endpoint, so a page view never costs an invocation.
     // Docs: https://developers.cloudflare.com/workers/static-assets/
     "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "solar-icons-docs-start-test",
+    "name": "solar-icons-docs",
     "compatibility_date": "2026-10-21",
     "workers_dev": true,
     "main": "worker/index.ts",

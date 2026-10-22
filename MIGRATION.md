@@ -203,6 +203,22 @@ The routing was checked with the local Worker: a page, a documentation page and 
 
 The Worker was not deployed: it needs the private key of the `solar-icons-docs` GitHub App, which is the user's. The endpoint is public, so a rate limit has to be added at the Cloudflare level before the production cutover.
 
+## Deployment
+
+The Worker is named `solar-icons-docs`. `.github/workflows/deploy-docs.yml` builds
+and deploys it on every push to `main` that touches the site, with the
+repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. It can also
+be started by hand (`workflow_dispatch`).
+
+The GitHub App secrets live in Cloudflare, not in GitHub, and belong to one
+Worker name. Send them again after a rename, from the key file so the lines of
+the PEM are not altered:
+
+```sh
+pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_ID
+pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_PRIVATE_KEY < key.pem
+```
+
 ## Keeping `solar-icons.vercel.app`
 
 `solar-icons.vercel.app` has been the public address for more than a year, so
