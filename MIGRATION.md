@@ -164,9 +164,46 @@ After deploying the noindex build, substitute its public test URL for `TEST_URL`
 
 No token is needed for this handoff; the deployment and public URL check are left to the user.
 
+## M4 — feedback Worker
+
+The guide feedback widget of the docs pages needed a place to store the feedback. The Next app writes it in a GitHub discussion through a server action; the static build has no server, so the feedback goes to a separate Cloudflare Worker, in `apps/docs-feedback`. The pages themselves stay served as static assets by the other Worker, so a visitor who never sends a feedback never costs an invocation.
+
+### The discussions that exist
+
+The `Docs Feedback` category was read before anything was written. It holds seven discussions, all written by the `solar-icons-docs` app:
+
+| Discussion                                                      | Title                                             |
+| --------------------------------------------------------------- | ------------------------------------------------- |
+| [#526](https://github.com/saoudi-h/solar-icons/discussions/526) | `Feedback for /docs/v1/icon-reference/categories` |
+| [#606](https://github.com/saoudi-h/solar-icons/discussions/606) | `Feedback for /docs/v2/icon-reference/categories` |
+| [#564](https://github.com/saoudi-h/solar-icons/discussions/564) | `Feedback for /docs/v2/figma-plugin`              |
+| [#469](https://github.com/saoudi-h/solar-icons/discussions/469) | `Feedback for /docs/icon-reference/categories`    |
+| [#392](https://github.com/saoudi-h/solar-icons/discussions/392) | `Feedback for /docs/community/contributing`       |
+| [#362](https://github.com/saoudi-h/solar-icons/discussions/362) | `Feedback for /docs/packages/react-native`        |
+| [#231](https://github.com/saoudi-h/solar-icons/discussions/231) | `Feedback for /docs/getting-started/installation` |
+
+The titles hold the path of the page, without the host and without the query. The body of a feedback is `[<opinion>] <message>` followed by `> Forwarded from user feedback.`, and a second feedback on the same page is a comment of the same discussion.
+
+### The rules
+
+- The URL is normalized to its path, so the same page through `solar-icons.dev`, `solar-icons.vercel.app` or a local port resolves to the same discussion. The host, the query and the trailing slash are dropped.
+- The lookup walks the discussions of the category and compares the normalized path of their titles. It does not rely on the fuzzy search of the Next app, so it cannot attach a feedback to a discussion of another page.
+- A page that has no discussion gets one, a page that has one receives a comment. A page is never discussed twice.
+- The two versions of the documentation stay apart: `/docs/v1/icon-reference/categories` and `/docs/v2/icon-reference/categories` are two pages, and the discussions #469 and #392 of the URLs before the versioning stay as they are.
+
+The lookup was checked against the real category: `/docs/v2/icon-reference/categories` resolves to #606, `/docs/v2/figma-plugin` to #564, and the same paths sent through another host resolve to the same discussions.
+
+### The endpoint
+
+The Worker answers `POST /` with `{ url, opinion, message }` and returns the address of the discussion. It refuses a request that comes from an origin that is not in `ALLOWED_ORIGINS`, a body that is not JSON, an opinion that is not `good` or `bad`, and a message that is empty or longer than 2,000 characters. The GitHub credentials are the secrets `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY`; the repository, the category and the allowed origins are the variables of `wrangler.jsonc`. The site reads the address of the Worker from `VITE_FEEDBACK_ENDPOINT`.
+
+The whole flow was checked locally: the widget sends the preflight and the request, the payload holds the path of the page, and the widget shows the discussion it created.
+
+The Worker was not deployed: it needs the private key of the `solar-icons-docs` GitHub App, which is the user's. The endpoint is public, so a rate limit has to be added at the Cloudflare level before the production cutover.
+
 ## Deferred work
 
-M4 remains unimplemented. Before building its feedback Worker, inspect several existing GitHub Discussions from the `Docs Feedback` category read-only. Feedback titles use `Feedback for <URL>`; compare the parsed absolute URL and normalize equivalent URLs across hosts before creating anything, so an existing discussion is reused and duplicates are never created. The feedback widget already renders; the Worker only has to store the feedback. M5 production cutover and Cloudflare invocation measurements are also out of scope.
+M5 production cutover and Cloudflare invocation measurements are out of scope. The daily refresh of the build-time statistics is still a proposal: a GitHub Actions schedule would build and deploy the site every day, so the counters of the home page do not age.
 
 ## References
 
