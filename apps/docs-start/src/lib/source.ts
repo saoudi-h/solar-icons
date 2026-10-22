@@ -1,6 +1,7 @@
 import { loader } from 'fumadocs-core/source'
-import { defineCollections, defineDocs } from 'fumadocs-mdx/macro'
 import { pageSchema } from 'fumadocs-core/source/schema'
+import { defineCollections, defineDocs } from 'fumadocs-mdx/macro'
+import { z } from 'zod'
 
 import {
     type IconifyFrameworkIcon,
@@ -8,7 +9,6 @@ import {
     renderIconify,
     renderRawIconify,
 } from './resolve-icon-utils'
-import { z } from 'zod'
 
 /**
  * The collections read the MDX files of `apps/docs`, shared with the Next
@@ -19,6 +19,7 @@ const docs = defineDocs({
     dir: '../docs/content/docs',
     docs: {
         async: true,
+        lastModified: true,
         postprocess: {
             includeProcessedMarkdown: true,
             extractLinkReferences: true,

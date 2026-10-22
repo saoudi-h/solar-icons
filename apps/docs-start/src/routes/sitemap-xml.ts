@@ -13,6 +13,15 @@ export const Route = createFileRoute('/sitemap-xml')({
             GET: async () => {
                 const url = (path: string) => new URL(path, siteUrl).toString()
 
+                const docsEntries = await Promise.all(
+                    source.getPages().map(async page => ({
+                        url: url(page.url),
+                        lastModified: lastModifiedOf(await page.data.load()),
+                        changeFrequency: 'weekly',
+                        priority: 0.5,
+                    }))
+                )
+
                 const entries: {
                     url: string
                     lastModified?: Date
@@ -22,12 +31,7 @@ export const Route = createFileRoute('/sitemap-xml')({
                     { url: url('/'), changeFrequency: 'monthly', priority: 1 },
                     { url: url('/icons'), changeFrequency: 'monthly', priority: 0.8 },
                     { url: url('/blog'), changeFrequency: 'weekly', priority: 0.8 },
-                    ...source.getPages().map(page => ({
-                        url: url(page.url),
-                        lastModified: lastModifiedOf(page.data),
-                        changeFrequency: 'weekly',
-                        priority: 0.5,
-                    })),
+                    ...docsEntries,
                     ...blogSource.getPages().map(page => ({
                         url: url(page.url),
                         lastModified:

@@ -5,8 +5,9 @@ import { MarkdownCopyButton, ViewOptionsPopover } from 'fumadocs-ui/layouts/docs
 import { DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page'
 import { use } from 'react'
 
+import { DocsRate } from '~/components/docs/rate'
+import { TocActiveMarker } from '~/components/docs/toc-active-marker'
 import { useMDXComponents } from '~/components/mdx'
-import { lastModifiedOf } from '~/lib/last-modified'
 import { VersionBanner } from '~/components/version-banner'
 import { docsOptions } from '~/lib/layout-options'
 import { source } from '~/lib/source'
@@ -43,7 +44,7 @@ function DocsRoute() {
     const page = source.getPage(slugs)
     if (!page) throw notFound()
 
-    const { toc } = use(page.data.load())
+    const { toc, lastModified } = use(page.data.load())
     const MDX = page.data.body
     const markdownUrl = `/docs/${page.slugs.join('/')}.mdx`
 
@@ -62,11 +63,11 @@ function DocsRoute() {
                         />
                     </div>
                     <DocsBody>
+                        <TocActiveMarker />
                         <MDX components={useMDXComponents()} />
                     </DocsBody>
-                    {lastModifiedOf(page.data) ? (
-                        <PageLastUpdate date={lastModifiedOf(page.data) as Date} />
-                    ) : null}
+                    <DocsRate />
+                    {lastModified ? <PageLastUpdate date={lastModified} /> : null}
                 </DocsPage>
             </DocsLayout>
         </>
