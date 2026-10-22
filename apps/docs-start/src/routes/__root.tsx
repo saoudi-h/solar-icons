@@ -25,6 +25,15 @@ export const Route = createRootRoute({
             ],
             links: [
                 { rel: 'stylesheet', href: appCss },
+                // The latin subsets are fetched with the page, so the text is not
+                // laid out again when the fonts replace the fallbacks.
+                ...['host-grotesk-latin', 'aleo-latin', 'jetbrains-mono-latin'].map(font => ({
+                    rel: 'preload',
+                    href: `/fonts/${font}.woff2`,
+                    as: 'font',
+                    type: 'font/woff2',
+                    crossOrigin: 'anonymous' as const,
+                })),
                 { rel: 'icon', href: '/favicon.ico' },
                 { rel: 'manifest', href: '/manifest.json' },
             ],
