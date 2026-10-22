@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import { fumadocsMdx } from 'fumadocs-mdx/vite'
-import viteReact from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+import tailwindcss from '@tailwindcss/vite'
+import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import viteReact from '@vitejs/plugin-react'
+import { fumadocsMdx } from 'fumadocs-mdx/vite'
+import { defineConfig } from 'vite'
 
 import { collectDocsPaths } from './scripts/docs-paths'
 
@@ -39,7 +40,10 @@ export default defineConfig({
             // The content and the original site components share the Next
             // app's `@/` imports. Start's own files use `~/`.
             { find: /^@\//, replacement: `${nextAppDir}/` },
-            { find: 'next/navigation', replacement: path.join(srcDir, 'compat/next-navigation.ts') },
+            {
+                find: 'next/navigation',
+                replacement: path.join(srcDir, 'compat/next-navigation.ts'),
+            },
             { find: 'next/link', replacement: path.join(srcDir, 'compat/next-link.tsx') },
             { find: 'next/image', replacement: path.join(srcDir, 'compat/next-image.tsx') },
             { find: 'nuqs', replacement: path.join(srcDir, 'compat/nuqs.ts') },

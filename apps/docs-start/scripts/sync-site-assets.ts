@@ -11,7 +11,10 @@ async function copyMissingAssets(source: string, destination: string): Promise<v
 
     for (const entry of await readdir(source, { withFileTypes: true })) {
         if (entry.isDirectory()) {
-            await copyMissingAssets(path.join(source, entry.name), path.join(destination, entry.name))
+            await copyMissingAssets(
+                path.join(source, entry.name),
+                path.join(destination, entry.name)
+            )
             continue
         }
 

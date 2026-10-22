@@ -14,7 +14,14 @@ export interface SeoOptions {
  * expects plain descriptors, so the result is a flat list of meta objects
  * plus the canonical link.
  */
-export function seo({ title, description, path = '/', image, type = 'website', noIndex }: SeoOptions) {
+export function seo({
+    title,
+    description,
+    path = '/',
+    image,
+    type = 'website',
+    noIndex,
+}: SeoOptions) {
     const url = absoluteUrl(path)
     const fullTitle = title === site.title ? title : `${title} | ${site.name}`
     const imageUrl = image ? absoluteUrl(image) : undefined

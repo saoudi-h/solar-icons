@@ -56,9 +56,7 @@ async function fetchStars() {
 async function fetchWeeklyDownloads() {
     const counts = await Promise.all(
         NPM_PACKAGES.map(async pkg => {
-            const response = await fetch(
-                `https://api.npmjs.org/downloads/point/last-week/${pkg}`
-            )
+            const response = await fetch(`https://api.npmjs.org/downloads/point/last-week/${pkg}`)
             if (!response.ok) throw new Error(`npm API answered ${response.status} for ${pkg}`)
 
             const payload = (await response.json()) as { downloads?: unknown }

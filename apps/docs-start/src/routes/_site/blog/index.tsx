@@ -147,7 +147,10 @@ function BlogIndex() {
             {filteredPosts.length === 0 && (
                 <div className="py-12 text-center">
                     <p className="text-sm text-muted-foreground">No articles found.</p>
-                    <Link to="/blog" search={{}} className="mt-3 inline-block text-sm font-medium text-primary">
+                    <Link
+                        to="/blog"
+                        search={{}}
+                        className="mt-3 inline-block text-sm font-medium text-primary">
                         View all articles
                     </Link>
                 </div>

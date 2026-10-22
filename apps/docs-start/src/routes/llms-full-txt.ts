@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { source } from '~/lib/source'
 import { getLLMText } from '~/lib/llm-text'
+import { source } from '~/lib/source'
 
 /**
  * Prerendered to `/llms-full.txt`.

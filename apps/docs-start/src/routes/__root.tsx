@@ -9,9 +9,10 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { SiteStatsContext } from '@/lib/site-stats-context'
 import { FrameworkLink } from '~/components/framework-link'
 import siteStats from '~/generated/site-stats.json'
-import appCss from '~/styles/app.css?url'
 import { site } from '~/utils/site'
 import { umamiEnabled, umamiId, umamiUrl } from '~/utils/umami'
+
+import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
     head: () => {
@@ -67,12 +68,7 @@ function RootDocument({ children }: { children: ReactNode }) {
                     <Toaster />
                 </JotaiProvider>
                 {umamiEnabled ? (
-                    <script
-                        defer
-                        src="/p.js"
-                        data-website-id={umamiId}
-                        data-host-url={umamiUrl}
-                    />
+                    <script defer src="/p.js" data-website-id={umamiId} data-host-url={umamiUrl} />
                 ) : null}
                 <Scripts />
             </body>

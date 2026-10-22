@@ -1,11 +1,14 @@
+import { spawn } from 'node:child_process'
 import { access } from 'node:fs/promises'
 import path from 'node:path'
-import { spawn } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
 const appRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const packageEntry = path.resolve(appRoot, '../../packages/react/dist/index.mjs')
-const packageSourceEntry = path.resolve(appRoot, '../../packages/react/src/icons/bold-duotone/home.tsx')
+const packageSourceEntry = path.resolve(
+    appRoot,
+    '../../packages/react/src/icons/bold-duotone/home.tsx'
+)
 
 try {
     await access(packageEntry)

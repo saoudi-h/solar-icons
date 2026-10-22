@@ -17,18 +17,14 @@ export function collectDocsPaths(
 
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
         if (entry.isDirectory()) {
-            paths.push(
-                ...collectDocsPaths(path.join(dir, entry.name), `${prefix}${entry.name}/`)
-            )
+            paths.push(...collectDocsPaths(path.join(dir, entry.name), `${prefix}${entry.name}/`))
             continue
         }
 
         if (!entry.name.endsWith('.mdx')) continue
 
         const withoutExtension = entry.name.slice(0, -'.mdx'.length)
-        const url = `${prefix}${withoutExtension}`
-            .replace(/(^|\/)index$/, '$1')
-            .replace(/\/$/, '')
+        const url = `${prefix}${withoutExtension}`.replace(/(^|\/)index$/, '$1').replace(/\/$/, '')
         paths.push(url)
     }
 

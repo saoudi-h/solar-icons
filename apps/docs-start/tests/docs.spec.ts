@@ -1,8 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test('a docs page renders its content, its table of contents and its sidebar', async ({
-    page,
-}) => {
+test('a docs page renders its content, its table of contents and its sidebar', async ({ page }) => {
     await page.goto('/docs/v2/packages/react')
 
     await expect(page.getByRole('heading', { name: 'React', level: 1 })).toBeVisible()
@@ -27,9 +25,7 @@ test('the search dialog finds a page from the static index', async ({ page }) =>
     await page.getByRole('button', { name: /Search Ctrl K/ }).click()
     await page.getByRole('combobox', { name: 'Search' }).fill('React Native')
 
-    const result = page
-        .getByRole('option', { name: /Docs V2 Packages React Native/ })
-        .first()
+    const result = page.getByRole('option', { name: /Docs V2 Packages React Native/ }).first()
     await expect(result).toBeVisible()
     await result.click()
     await expect(page).toHaveURL(/\/docs\/v2\/packages\/react-native$/)

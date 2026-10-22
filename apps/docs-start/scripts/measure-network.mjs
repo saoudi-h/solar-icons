@@ -140,16 +140,14 @@ for (const path of paths.length > 0 ? paths : ['/']) {
         scrolled,
         prefetchCount: entries.filter(entry => entry.prefetch).length,
         byType: totalsByCategory(entries),
-        requests: entries.map(
-            ({ url, type, initiator, prefetch, transferBytes, status }) => ({
-                url,
-                type,
-                initiator,
-                prefetch,
-                transferBytes,
-                status,
-            })
-        ),
+        requests: entries.map(({ url, type, initiator, prefetch, transferBytes, status }) => ({
+            url,
+            type,
+            initiator,
+            prefetch,
+            transferBytes,
+            status,
+        })),
     })
 
     await context.close()

@@ -40,9 +40,7 @@ export function useQueryState<T extends string>(
     key: string,
     parser: LiteralParser<T>
 ): readonly [T | null, (value: T | null) => void]
-export function useQueryState(
-    key: string
-): readonly [string | null, (value: string | null) => void]
+export function useQueryState(key: string): readonly [string | null, (value: string | null) => void]
 export function useQueryState(key: string, parser?: LiteralParser<any>) {
     const search = useRouterState({ select: state => state.location.search }) as Record<
         string,
@@ -51,8 +49,7 @@ export function useQueryState(key: string, parser?: LiteralParser<any>) {
     const navigate = useNavigate({ from: '/icons' })
     const raw = search[key]
     const value =
-        typeof raw === 'string' &&
-        (!isLiteralParser(parser) || parser.values.includes(raw))
+        typeof raw === 'string' && (!isLiteralParser(parser) || parser.values.includes(raw))
             ? raw
             : (parser?.defaultValue ?? null)
 
