@@ -1,0 +1,20 @@
+{
+    // The feedback endpoint of the documentation. It runs only when a
+    // visitor sends a feedback, the pages themselves are served as static
+    // assets by the other Worker.
+    // Docs: https://developers.cloudflare.com/workers/static-assets/
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "solar-icons-docs-feedback",
+    "compatibility_date": "2026-10-21",
+    "main": "src/index.ts",
+    "observability": {
+        "enabled": true,
+    },
+    "vars": {
+        "REPO_OWNER": "saoudi-h",
+        "REPO_NAME": "solar-icons",
+        "DISCUSSION_CATEGORY": "Docs Feedback",
+        // The origins allowed to send a feedback, separated by commas.
+        "ALLOWED_ORIGINS": "https://solar-icons.dev,https://solar-icons.vercel.app",
+    },
+}
