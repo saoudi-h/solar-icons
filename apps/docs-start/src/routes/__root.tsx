@@ -1,12 +1,11 @@
-import {
-    HeadContent,
-    Link,
-    Scripts,
-    createRootRoute,
-} from '@tanstack/react-router'
+import { HeadContent, Link, Scripts, createRootRoute } from '@tanstack/react-router'
 import { RootProvider } from 'fumadocs-ui/provider/tanstack'
+import { Provider as JotaiProvider } from 'jotai'
+import { ReactLenis } from 'lenis/react'
 import type { ReactNode } from 'react'
 
+import { Toaster } from '@/components/ui/sonner'
+import { TooltipProvider } from '@/components/ui/tooltip'
 import { FrameworkLink } from '~/components/framework-link'
 import appCss from '~/styles/app.css?url'
 import { site } from '~/utils/site'
@@ -38,19 +37,31 @@ function RootDocument({ children }: { children: ReactNode }) {
             <head>
                 <HeadContent />
             </head>
-            <body className="flex min-h-screen flex-col">
-                <RootProvider
-                    components={{ Link: FrameworkLink }}
-                    search={{
-                        options: {
-                            // The index is prerendered to `/api/search` and read
-                            // by the browser, so no server is involved.
-                            type: 'static',
-                            api: '/api/search',
-                        },
-                    }}>
-                    {children}
-                </RootProvider>
+            <body className="flex min-h-screen flex-col font-body">
+                <JotaiProvider>
+                    <RootProvider
+                        components={{ Link: FrameworkLink }}
+                        search={{
+                            options: {
+                                // The index is prerendered to `/api/search` and read
+                                // by the browser, so no server is involved.
+                                type: 'static',
+                                api: '/api/search',
+                            },
+                        }}>
+                        <TooltipProvider>
+                            <ReactLenis
+                                root
+                                options={{
+                                    allowNestedScroll: true,
+                                    autoRaf: true,
+                                }}>
+                                {children}
+                            </ReactLenis>
+                        </TooltipProvider>
+                    </RootProvider>
+                    <Toaster />
+                </JotaiProvider>
                 {umamiEnabled ? (
                     <script
                         defer

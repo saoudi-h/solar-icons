@@ -10,6 +10,7 @@ import { collectDocsPaths } from './scripts/docs-paths'
 
 const appRoot = fileURLToPath(new URL('.', import.meta.url))
 const srcDir = path.join(appRoot, 'src')
+const nextAppDir = path.resolve(appRoot, '../docs')
 
 const docsPaths = collectDocsPaths()
 
@@ -35,10 +36,13 @@ export default defineConfig({
     resolve: {
         tsconfigPaths: true,
         alias: [
-            // The shared MDX files live in `apps/docs/content` and import
-            // components with the `@/` prefix. Each app resolves that prefix
-            // to its own implementation.
-            { find: /^@\//, replacement: `${srcDir}/` },
+            // The content and the original site components share the Next
+            // app's `@/` imports. Start's own files use `~/`.
+            { find: /^@\//, replacement: `${nextAppDir}/` },
+            { find: 'next/navigation', replacement: path.join(srcDir, 'compat/next-navigation.ts') },
+            { find: 'next/link', replacement: path.join(srcDir, 'compat/next-link.tsx') },
+            { find: 'next/image', replacement: path.join(srcDir, 'compat/next-image.tsx') },
+            { find: 'nuqs', replacement: path.join(srcDir, 'compat/nuqs.ts') },
         ],
     },
     plugins: [

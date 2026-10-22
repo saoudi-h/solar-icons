@@ -9,28 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
 import { Route as R404RouteImport } from './routes/404'
+import { Route as SiteRouteImport } from './routes/_site'
 import { Route as ApiSearchRouteImport } from './routes/api-search'
 import { Route as BlogRssXmlRouteImport } from './routes/blog-rss-xml'
-import { Route as IconsRouteImport } from './routes/icons'
 import { Route as LlmsFullTxtRouteImport } from './routes/llms-full-txt'
 import { Route as LlmsTxtRouteImport } from './routes/llms-txt'
 import { Route as SitemapXmlRouteImport } from './routes/sitemap-xml'
-import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as BlogSplatRouteImport } from './routes/blog/$'
+import { Route as SiteIndexRouteImport } from './routes/_site/index'
+import { Route as SiteIconsRouteImport } from './routes/_site/icons'
 import { Route as DocsSplatRouteImport } from './routes/docs/$'
+import { Route as SiteBlogIndexRouteImport } from './routes/_site/blog/index'
+import { Route as SiteBlogSplatRouteImport } from './routes/_site/blog/$'
 import { Route as DocsPathMdxRouteImport } from './routes/docs/$path.mdx'
 import { Route as LlmsPageDocsSplatRouteImport } from './routes/llms-page/docs/$'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const R404Route = R404RouteImport.update({
   id: '/404',
   path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteRoute = SiteRouteImport.update({
+  id: '/_site',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSearchRoute = ApiSearchRouteImport.update({
@@ -41,11 +41,6 @@ const ApiSearchRoute = ApiSearchRouteImport.update({
 const BlogRssXmlRoute = BlogRssXmlRouteImport.update({
   id: '/blog-rss-xml',
   path: '/blog-rss-xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IconsRoute = IconsRouteImport.update({
-  id: '/icons',
-  path: '/icons',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsFullTxtRoute = LlmsFullTxtRouteImport.update({
@@ -63,20 +58,30 @@ const SitemapXmlRoute = SitemapXmlRouteImport.update({
   path: '/sitemap-xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
+const SiteIndexRoute = SiteIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SiteRoute,
 } as any)
-const BlogSplatRoute = BlogSplatRouteImport.update({
-  id: '/blog/$',
-  path: '/blog/$',
-  getParentRoute: () => rootRouteImport,
+const SiteIconsRoute = SiteIconsRouteImport.update({
+  id: '/icons',
+  path: '/icons',
+  getParentRoute: () => SiteRoute,
 } as any)
 const DocsSplatRoute = DocsSplatRouteImport.update({
   id: '/docs/$',
   path: '/docs/$',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SiteBlogIndexRoute = SiteBlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteBlogSplatRoute = SiteBlogSplatRouteImport.update({
+  id: '/blog/$',
+  path: '/blog/$',
+  getParentRoute: () => SiteRoute,
 } as any)
 const DocsPathMdxRoute = DocsPathMdxRouteImport.update({
   id: '/docs/$path/mdx',
@@ -90,129 +95,128 @@ const LlmsPageDocsSplatRoute = LlmsPageDocsSplatRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/': typeof SiteIndexRoute
   '/api-search': typeof ApiSearchRoute
   '/blog-rss-xml': typeof BlogRssXmlRoute
-  '/icons': typeof IconsRoute
   '/llms-full-txt': typeof LlmsFullTxtRoute
   '/llms-txt': typeof LlmsTxtRoute
   '/sitemap-xml': typeof SitemapXmlRoute
-  '/blog/$': typeof BlogSplatRoute
+  '/icons': typeof SiteIconsRoute
   '/docs/$': typeof DocsSplatRoute
-  '/blog/': typeof BlogIndexRoute
+  '/blog/$': typeof SiteBlogSplatRoute
   '/docs/$path/mdx': typeof DocsPathMdxRoute
   '/llms-page/docs/$': typeof LlmsPageDocsSplatRoute
+  '/blog/': typeof SiteBlogIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/404': typeof R404Route
   '/api-search': typeof ApiSearchRoute
   '/blog-rss-xml': typeof BlogRssXmlRoute
-  '/icons': typeof IconsRoute
   '/llms-full-txt': typeof LlmsFullTxtRoute
   '/llms-txt': typeof LlmsTxtRoute
   '/sitemap-xml': typeof SitemapXmlRoute
-  '/blog/$': typeof BlogSplatRoute
+  '/icons': typeof SiteIconsRoute
   '/docs/$': typeof DocsSplatRoute
-  '/blog': typeof BlogIndexRoute
+  '/': typeof SiteIndexRoute
+  '/blog/$': typeof SiteBlogSplatRoute
   '/docs/$path/mdx': typeof DocsPathMdxRoute
   '/llms-page/docs/$': typeof LlmsPageDocsSplatRoute
+  '/blog': typeof SiteBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/_site': typeof SiteRouteWithChildren
   '/api-search': typeof ApiSearchRoute
   '/blog-rss-xml': typeof BlogRssXmlRoute
-  '/icons': typeof IconsRoute
   '/llms-full-txt': typeof LlmsFullTxtRoute
   '/llms-txt': typeof LlmsTxtRoute
   '/sitemap-xml': typeof SitemapXmlRoute
-  '/blog/$': typeof BlogSplatRoute
+  '/_site/icons': typeof SiteIconsRoute
   '/docs/$': typeof DocsSplatRoute
-  '/blog/': typeof BlogIndexRoute
+  '/_site/': typeof SiteIndexRoute
+  '/_site/blog/$': typeof SiteBlogSplatRoute
   '/docs/$path/mdx': typeof DocsPathMdxRoute
   '/llms-page/docs/$': typeof LlmsPageDocsSplatRoute
+  '/_site/blog/': typeof SiteBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
     | '/404'
+    | '/'
     | '/api-search'
     | '/blog-rss-xml'
-    | '/icons'
     | '/llms-full-txt'
     | '/llms-txt'
     | '/sitemap-xml'
-    | '/blog/$'
+    | '/icons'
     | '/docs/$'
-    | '/blog/'
+    | '/blog/$'
     | '/docs/$path/mdx'
     | '/llms-page/docs/$'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
     | '/404'
     | '/api-search'
     | '/blog-rss-xml'
-    | '/icons'
     | '/llms-full-txt'
     | '/llms-txt'
     | '/sitemap-xml'
-    | '/blog/$'
+    | '/icons'
     | '/docs/$'
-    | '/blog'
+    | '/'
+    | '/blog/$'
     | '/docs/$path/mdx'
     | '/llms-page/docs/$'
+    | '/blog'
   id:
     | '__root__'
-    | '/'
     | '/404'
+    | '/_site'
     | '/api-search'
     | '/blog-rss-xml'
-    | '/icons'
     | '/llms-full-txt'
     | '/llms-txt'
     | '/sitemap-xml'
-    | '/blog/$'
+    | '/_site/icons'
     | '/docs/$'
-    | '/blog/'
+    | '/_site/'
+    | '/_site/blog/$'
     | '/docs/$path/mdx'
     | '/llms-page/docs/$'
+    | '/_site/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
+  SiteRoute: typeof SiteRouteWithChildren
   ApiSearchRoute: typeof ApiSearchRoute
   BlogRssXmlRoute: typeof BlogRssXmlRoute
-  IconsRoute: typeof IconsRoute
   LlmsFullTxtRoute: typeof LlmsFullTxtRoute
   LlmsTxtRoute: typeof LlmsTxtRoute
   SitemapXmlRoute: typeof SitemapXmlRoute
-  BlogSplatRoute: typeof BlogSplatRoute
   DocsSplatRoute: typeof DocsSplatRoute
-  BlogIndexRoute: typeof BlogIndexRoute
   DocsPathMdxRoute: typeof DocsPathMdxRoute
   LlmsPageDocsSplatRoute: typeof LlmsPageDocsSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/404': {
       id: '/404'
       path: '/404'
       fullPath: '/404'
       preLoaderRoute: typeof R404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_site': {
+      id: '/_site'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof SiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api-search': {
@@ -227,13 +231,6 @@ declare module '@tanstack/react-router' {
       path: '/blog-rss-xml'
       fullPath: '/blog-rss-xml'
       preLoaderRoute: typeof BlogRssXmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/icons': {
-      id: '/icons'
-      path: '/icons'
-      fullPath: '/icons'
-      preLoaderRoute: typeof IconsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms-full-txt': {
@@ -257,19 +254,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapXmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_site/': {
+      id: '/_site/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof SiteIndexRouteImport
+      parentRoute: typeof SiteRoute
     }
-    '/blog/$': {
-      id: '/blog/$'
-      path: '/blog/$'
-      fullPath: '/blog/$'
-      preLoaderRoute: typeof BlogSplatRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_site/icons': {
+      id: '/_site/icons'
+      path: '/icons'
+      fullPath: '/icons'
+      preLoaderRoute: typeof SiteIconsRouteImport
+      parentRoute: typeof SiteRoute
     }
     '/docs/$': {
       id: '/docs/$'
@@ -277,6 +274,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/docs/$'
       preLoaderRoute: typeof DocsSplatRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_site/blog/': {
+      id: '/_site/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof SiteBlogIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/blog/$': {
+      id: '/_site/blog/$'
+      path: '/blog/$'
+      fullPath: '/blog/$'
+      preLoaderRoute: typeof SiteBlogSplatRouteImport
+      parentRoute: typeof SiteRoute
     }
     '/docs/$path/mdx': {
       id: '/docs/$path/mdx'
@@ -295,18 +306,31 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface SiteRouteChildren {
+  SiteIconsRoute: typeof SiteIconsRoute
+  SiteIndexRoute: typeof SiteIndexRoute
+  SiteBlogSplatRoute: typeof SiteBlogSplatRoute
+  SiteBlogIndexRoute: typeof SiteBlogIndexRoute
+}
+
+const SiteRouteChildren: SiteRouteChildren = {
+  SiteIconsRoute: SiteIconsRoute,
+  SiteIndexRoute: SiteIndexRoute,
+  SiteBlogSplatRoute: SiteBlogSplatRoute,
+  SiteBlogIndexRoute: SiteBlogIndexRoute,
+}
+
+const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   R404Route: R404Route,
+  SiteRoute: SiteRouteWithChildren,
   ApiSearchRoute: ApiSearchRoute,
   BlogRssXmlRoute: BlogRssXmlRoute,
-  IconsRoute: IconsRoute,
   LlmsFullTxtRoute: LlmsFullTxtRoute,
   LlmsTxtRoute: LlmsTxtRoute,
   SitemapXmlRoute: SitemapXmlRoute,
-  BlogSplatRoute: BlogSplatRoute,
   DocsSplatRoute: DocsSplatRoute,
-  BlogIndexRoute: BlogIndexRoute,
   DocsPathMdxRoute: DocsPathMdxRoute,
   LlmsPageDocsSplatRoute: LlmsPageDocsSplatRoute,
 }

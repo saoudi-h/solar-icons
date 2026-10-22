@@ -2,8 +2,8 @@ import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from 'react'
 
-import { PostCover } from '~/components/blog/post-cover'
-import { TagPill } from '~/components/blog/tag-pill'
+import { PostCover } from '@/app/(home)/blog/components/post-cover'
+import { TagPill } from '@/app/(home)/blog/components/tag-pill'
 import { blogSource } from '~/lib/source'
 import { seo } from '~/utils/seo'
 
@@ -11,7 +11,17 @@ type BlogSearch = {
     tag?: string
 }
 
-export const Route = createFileRoute('/blog/')({
+type BlogPost = ReturnType<typeof blogSource.getPages>[number]
+
+function isDraft(page: BlogPost) {
+    return (page.data.status as string | undefined) === 'draft'
+}
+
+function isVisible(page: BlogPost) {
+    return !isDraft(page) || !import.meta.env.PROD
+}
+
+export const Route = createFileRoute('/_site/blog/')({
     validateSearch: (search: Record<string, unknown>): BlogSearch => ({
         tag: typeof search.tag === 'string' ? search.tag : undefined,
     }),
@@ -41,7 +51,7 @@ function BlogIndex() {
 
     const posts = useMemo(
         () =>
-            [...blogSource.getPages()].sort((a, b) => {
+            [...blogSource.getPages()].filter(isVisible).sort((a, b) => {
                 const first =
                     a.data.date instanceof Date
                         ? a.data.date.getTime()
@@ -158,6 +168,11 @@ function BlogIndex() {
                                             ).toISOString()}>
                                             {formatDate(featuredPost.data.date as Date)}
                                         </time>
+                                        {isDraft(featuredPost) && (
+                                            <span className="rounded-full bg-warning/15 px-2.5 py-1 font-medium text-warning">
+                                                Draft
+                                            </span>
+                                        )}
                                     </div>
 
                                     <h2 className="mt-3 font-heading text-2xl/tight font-bold transition-colors group-hover:text-primary md:text-3xl">
@@ -215,6 +230,11 @@ function BlogIndex() {
                                                     ).toISOString()}>
                                                     {formatDate(post.data.date as Date)}
                                                 </time>
+                                                {isDraft(post) && (
+                                                    <span className="rounded-full bg-warning/15 px-2.5 py-1 font-medium text-warning">
+                                                        Draft
+                                                    </span>
+                                                )}
                                             </div>
 
                                             <h3 className="mt-2 font-heading text-xl/snug font-bold transition-colors group-hover:text-primary">

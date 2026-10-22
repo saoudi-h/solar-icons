@@ -2,11 +2,13 @@ import { ArrowLeftIcon } from '@solar-icons/react/dynamic/arrow-left'
 import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc'
+import { Button } from '@/components/ui/button'
+import { PostCover } from '@/app/(home)/blog/components/post-cover'
+import { ShareButton } from '@/app/(home)/blog/components/share-button'
+import { TagPill } from '@/app/(home)/blog/components/tag-pill'
+import type { ComponentProps } from 'react'
 import { use, useState } from 'react'
 
-import { PostCover } from '~/components/blog/post-cover'
-import { ShareButton } from '~/components/blog/share-button'
-import { TagPill } from '~/components/blog/tag-pill'
 import { useMDXComponents } from '~/components/mdx'
 import { blogSource } from '~/lib/source'
 import { seo } from '~/utils/seo'
@@ -14,6 +16,26 @@ import { seo } from '~/utils/seo'
 interface AuthorProfile {
     name: string
     avatar?: string
+}
+
+type BlogPost = ReturnType<typeof blogSource.getPages>[number]
+
+function isDraft(page: BlogPost) {
+    return (page.data.status as string | undefined) === 'draft'
+}
+
+function isVisible(page: BlogPost) {
+    return !isDraft(page) || !import.meta.env.PROD
+}
+
+function ScrollTable(props: ComponentProps<'table'>) {
+    return (
+        <div
+            tabIndex={0}
+            className="relative my-6 overflow-auto focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
+            <table {...props} />
+        </div>
+    )
 }
 
 const AUTHOR_PROFILES: Record<string, AuthorProfile> = {
@@ -40,10 +62,10 @@ function formatDate(value: Date | string) {
     })
 }
 
-export const Route = createFileRoute('/blog/$')({
+export const Route = createFileRoute('/_site/blog/$')({
     loader: async ({ params }) => {
         const page = blogSource.getPage([params._splat ?? ''])
-        if (!page) throw notFound()
+        if (!page || !isVisible(page)) throw notFound()
 
         await page.data.preload()
 
@@ -74,7 +96,7 @@ function BlogPost() {
     const tags = (page.data.tags as string[] | undefined) ?? []
     const author = resolveAuthorProfile(page.data.author as string)
     const related = [...blogSource.getPages()]
-        .filter(other => other.url !== page.url)
+        .filter(other => isVisible(other) && other.url !== page.url)
         .sort((a, b) => {
             const first =
                 a.data.date instanceof Date
@@ -97,6 +119,14 @@ function BlogPost() {
                 <ArrowLeftIcon size={16} weight="Linear" />
                 Back to blog
             </Link>
+
+            {isDraft(page) && (
+                <div className="mt-6 rounded-2xl border border-warning/35 bg-warning/10 px-4 py-3 text-sm">
+                    Draft. This article is only visible in development. Set{' '}
+                    <code className="rounded-sm bg-warning/15 px-1 py-0.5">status: published</code>{' '}
+                    to publish it.
+                </div>
+            )}
 
             <div className="mt-8 flex flex-wrap gap-2">
                 {tags.map(tag => (
@@ -146,24 +176,22 @@ function BlogPost() {
 
             <div data-post-body className="prose mt-8 max-w-none min-w-0">
                 <InlineTOC items={toc} />
-                <MDX components={useMDXComponents()} />
+                <MDX components={useMDXComponents({ table: ScrollTable })} />
             </div>
 
             <div className="mt-10 flex flex-wrap gap-2">
-                <Link
-                    to="/blog"
-                    search={{}}
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium hover:bg-accent">
-                    <ArrowLeftIcon size={16} weight="Linear" />
-                    More articles
-                </Link>
-                <Link
-                    to="/docs/$"
-                    params={{ _splat: 'v2' }}
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">
-                    Read the docs
-                    <ArrowRightIcon size={16} weight="Linear" />
-                </Link>
+                <Button asChild size="lg" variant="outline" colors="secondary" className="rounded-full">
+                    <Link to="/blog" search={{}}>
+                        <ArrowLeftIcon size={16} weight="Linear" />
+                        More articles
+                    </Link>
+                </Button>
+                <Button asChild size="lg" variant="default" className="rounded-full">
+                    <Link to="/docs/$" params={{ _splat: 'v2' }}>
+                        Read the docs
+                        <ArrowRightIcon size={16} weight="Linear" />
+                    </Link>
+                </Button>
             </div>
 
             {related.length > 0 && (

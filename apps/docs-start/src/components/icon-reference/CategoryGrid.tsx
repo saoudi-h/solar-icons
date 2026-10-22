@@ -2,9 +2,11 @@ import type { ReactNode } from 'react'
 
 import { Link } from '@tanstack/react-router'
 
-import type { IconCategory } from '~/routes/icons'
+import { categories } from '../../../../docs/generated/utils'
 import { categoryCards } from '../../../../docs/generated/categories'
 import { categoryIcons } from '../../../../docs/generated/categoryIcons'
+
+type IconCategory = (typeof categories)[number]
 
 /**
  * Category index of the icon reference. Each card shows a representative
