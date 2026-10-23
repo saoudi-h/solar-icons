@@ -13,7 +13,7 @@
         "sync:umami": "tsx ./scripts/sync-umami.ts",
         "typecheck": "tsc --noEmit",
         "pretypecheck": "pnpm ensure:icon-package && pnpm generate:icon-catalog && pnpm generate:site-stats",
-        "lint": "oxlint --deny-warnings .",
+        "lint": "oxlint --deny-warnings . && pnpm lint:links",
         "format": "oxfmt --check .",
         "format:fix": "oxfmt --write .",
         "deploy": "pnpm build && wrangler deploy",
@@ -38,7 +38,8 @@
         "generate:catalog": "pnpm generate:data && pnpm generate:descriptions && pnpm generate:hero:utils && pnpm generate:categories",
         "generate:og-assets": "tsx ./scripts/generate-og-icon-field.ts",
         "generate:changelog": "tsx ./scripts/generate-changelog.ts",
-        "generate:banner": "node ./scripts/generate-readme-banner.mjs"
+        "generate:banner": "node ./scripts/generate-readme-banner.mjs",
+        "lint:links": "tsx ./scripts/check-links.ts"
     },
     "dependencies": {
         "@number-flow/react": "^0.6.2",
