@@ -7,6 +7,12 @@ on:
         paths-ignore:
             - 'apps/nuxt/**'
             - 'apps/vue-app/**'
+            # The documentation site is verified by ci.yml and deployed by
+            # deploy-docs.yml; it does not publish anything.
+            - 'apps/docs-start/**'
+            - 'apps/vercel-redirect/**'
+            - '.autonomos/**'
+            - 'MIGRATION.md'
     workflow_dispatch:
 
 concurrency:
