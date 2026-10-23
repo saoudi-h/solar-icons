@@ -181,7 +181,7 @@
         "packages/*/src/csr/**",
         "packages/*/src/ssr/**",
         "packages/*/src/defs/**",
-        "apps/docs/core/generated/**",
+        "apps/docs-start/generated/**",
         "LICENSE*",
         "**/*.tsbuildinfo",
         "*.code-workspace",

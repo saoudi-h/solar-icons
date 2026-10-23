@@ -10,7 +10,7 @@ export const appRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url))
  * `/docs/v2/packages/react`.
  */
 export function collectDocsPaths(
-    dir: string = path.join(appRoot, '..', 'docs', 'content', 'docs'),
+    dir: string = path.join(appRoot, 'content', 'docs'),
     prefix = ''
 ): string[] {
     const paths: string[] = []

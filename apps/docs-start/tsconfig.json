@@ -19,7 +19,7 @@
         "paths": {
             "fumadocs-mdx:collections/*": ["./.source/*"],
             "~/*": ["./src/*"],
-            "~generated/*": ["../docs/generated/*"]
+            "~generated/*": ["./generated/*"]
         },
         "noEmit": true
     }

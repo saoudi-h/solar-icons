@@ -16,7 +16,7 @@
         "onlyUpdatePeerDependentsWhenOutOfRange": true
     },
     "ignore": [
-        "@solar-icons/docs",
+        "@solar-icons/docs-start",
         "react-app",
         "svelte-app",
         "vue-app",

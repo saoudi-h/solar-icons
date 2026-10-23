@@ -6,7 +6,7 @@
     "sideEffects": false,
     "scripts": {
         "dev": "vite dev",
-        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm sync:site-assets && pnpm generate:og-images && pnpm fetch:avatar && pnpm optimize:images && pnpm generate:static-config && pnpm generate:icon-catalog && pnpm generate:site-stats && vite build",
+        "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm generate:icons && pnpm check:icons && pnpm generate:catalog && pnpm generate:og-assets && pnpm generate:changelog && pnpm generate:og-images && pnpm fetch:avatar && pnpm optimize:images && pnpm generate:static-config && pnpm generate:icon-catalog && pnpm generate:site-stats && vite build",
         "preview": "vite preview",
         "test": "vitest run && playwright test",
         "test:ui": "playwright test --ui",
@@ -24,12 +24,21 @@
         "generate:icon-catalog": "tsx ./scripts/generate-icon-catalog.ts",
         "ensure:icon-package": "tsx ./scripts/ensure-icon-package.ts",
         "fetch:avatar": "tsx ./scripts/fetch-github-avatar.ts",
-        "sync:site-assets": "tsx ./scripts/sync-site-assets.ts",
         "optimize:images": "tsx ./scripts/optimize-images.ts",
         "generate:site-stats": "tsx ./scripts/generate-site-stats.ts",
         "test:unit": "vitest run",
         "test:e2e": "playwright test",
-        "feedback:list": "tsx ./scripts/list-feedback-discussions.ts"
+        "feedback:list": "tsx ./scripts/list-feedback-discussions.ts",
+        "generate:icons": "tsx ./scripts/generate-icons.ts",
+        "check:icons": "tsx ./scripts/check-icons.ts",
+        "generate:data": "tsx ./scripts/generate-data.ts",
+        "generate:descriptions": "tsx ./scripts/generate-descriptions.ts",
+        "generate:hero:utils": "tsx ./scripts/generateHeroUtils.ts",
+        "generate:categories": "tsx ./scripts/generate-categories.ts",
+        "generate:catalog": "pnpm generate:data && pnpm generate:descriptions && pnpm generate:hero:utils && pnpm generate:categories",
+        "generate:og-assets": "tsx ./scripts/generate-og-icon-field.ts",
+        "generate:changelog": "tsx ./scripts/generate-changelog.ts",
+        "generate:banner": "node ./scripts/generate-readme-banner.mjs"
     },
     "dependencies": {
         "@number-flow/react": "^0.6.2",

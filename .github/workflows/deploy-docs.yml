@@ -10,8 +10,6 @@ on:
             - main
         paths:
             - 'apps/docs-start/**'
-            - 'apps/docs/content/**'
-            - 'apps/docs/generated/**'
             - 'packages/**'
             - 'pnpm-lock.yaml'
             - '.github/workflows/deploy-docs.yml'

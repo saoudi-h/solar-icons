@@ -2,7 +2,7 @@
 
 Status: in progress.
 
-`packages/core/src/metadata-descriptions.json` is the hand-curated source of truth for icon search metadata. `apps/docs/generated/descriptions.ts` is generated from it and must be refreshed after every source edit. This audit changes metadata only. It does not change Fuse, tokenization, typo tolerance, or search ranking.
+`packages/core/src/metadata-descriptions.json` is the hand-curated source of truth for icon search metadata. `apps/docs-start/generated/descriptions.ts` is generated from it and must be refreshed after every source edit. This audit changes metadata only. It does not change Fuse, tokenization, typo tolerance, or search ranking.
 
 ## Review rules
 
@@ -54,7 +54,7 @@ Run these checks after editing the source:
 pnpm --filter @solar-icons/core check:descriptions
 pnpm --filter @solar-icons/core check:metadata
 pnpm --filter @solar-icons/core check:metadata:semantics
-pnpm --filter @solar-icons/docs generate:descriptions
+pnpm --filter @solar-icons/docs-start generate:descriptions
 ```
 
 The semantic check is intentionally a reviewed denylist plus hygiene checks. It is not an automatic relevance classifier. New findings should be visually verified, corrected manually in the source JSON, added to the guard when they are high-confidence, and recorded here.

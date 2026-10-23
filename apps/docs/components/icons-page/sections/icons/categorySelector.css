@@ -1,3 +1,0 @@
-.select__option--is-focused {
-    @apply !bg-secondary !text-foreground !rounded-xl;
-}

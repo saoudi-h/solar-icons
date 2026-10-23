@@ -21,14 +21,8 @@ public/_redirects
 public/data/icons.json
 public/optimized
 public/saoudi-h.png
-public/banner.png
-public/banner.wep
-public/blog-fallback-image-og.png
-public/blog-fallback-image.png
-public/figma-plugin-thumbnail.png
-public/icons-explorer-dark.webp
-public/icons-explorer-light.webp
-public/og/
+public/og/*
+!public/og/solar-icons-field.png
 src/generated/icon-chunks
 src/generated/icon-chunk-loaders.ts
 src/generated/site-stats.json

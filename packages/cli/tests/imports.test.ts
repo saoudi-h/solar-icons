@@ -115,7 +115,7 @@ describe('import snippets are verified against packages', () => {
     })
 
     it('docs example HeartIcon from bold/heart exists', () => {
-        // mirrors apps/docs/content/docs/v2/packages/react.mdx examples
+        // mirrors apps/docs-start/content/docs/v2/packages/react.mdx examples
         expect(importSnippet('heart', 'bold', 'react')).toBe(
             'import { HeartIcon } from "@solar-icons/react/bold/heart";'
         )
