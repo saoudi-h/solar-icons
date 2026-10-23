@@ -84,3 +84,6 @@ __pycache__/
 .autonomos/TASKS.md
 packages/core/src/*.d.ts
 packages/core/src/*.d.ts.map
+
+# Scratch clones
+.temp/
