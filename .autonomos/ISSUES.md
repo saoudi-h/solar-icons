@@ -196,7 +196,7 @@ acceptance. Keep this separate from the public request intake.
 ## [ISSUE-DOCS-COMPAT-LAYER] Replace the Next compatibility layer of the docs-start app
 
 - Type: problem
-- Status: accepted
+- Status: resolved
 - Evidence: `apps/docs-start/src/compat` re-implements `next/link`, `next/image`, `next/navigation` and `nuqs` so that the components shared from `apps/docs` (reached through the `@/*` alias) run unchanged under TanStack Start. About 17 shared files depend on it, through aliases in `tsconfig.json` and `vite.config.ts`.
 - Impact: The layer was a shortcut to migrate quickly. It hides which API each component really uses, keeps the app coupled to the Next app, and blocks removing `apps/docs`.
 - Desired outcome: The shared components live in `apps/docs-start` and use the TanStack Router and Start APIs directly. The aliases and the `compat` folder are gone, with unchanged behavior and URLs.

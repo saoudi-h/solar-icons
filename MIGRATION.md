@@ -1,6 +1,6 @@
 # Solar Icons migration — M0–M3
 
-**Status:** M0 to M3 are complete. The work is local on `feat/docs-tanstack-start`; nothing was pushed or deployed. The Next app under `apps/docs` and its Vercel configuration remain in place.
+**Status:** The migration is complete. The site is served by `apps/docs-start` and the former Next app is removed. Sections below that mention the Next app describe the comparison made during the migration.
 
 The TanStack Start app renders the same pages as the current Next app. A pixel comparison of 17 routes in the light and the dark theme finds 30 of the 34 captures byte-identical. The four remaining captures differ by a single colour step (1/255) on the antialiased edge of one SVG icon; the markup, the computed styles and the DOM of those icons are identical in both apps, so the difference comes from Chromium's gradient dithering and not from the app.
 
