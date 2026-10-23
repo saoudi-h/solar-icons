@@ -6,7 +6,8 @@
  * behaviour of the Next app, where the script is first-party, without a
  * runtime proxy and without a Worker invocation.
  *
- * The recorder (`r.js`) is not loaded: it is disabled by default.
+ * The session replay (`r.js`) is loaded the same way, with the sampling and
+ * the masking of the Next app (15 % of the sessions, moderate masking).
  */
 export const umamiId = import.meta.env.VITE_UMAMI_ID ?? ''
 export const umamiUrl = import.meta.env.VITE_UMAMI_URL ?? ''
