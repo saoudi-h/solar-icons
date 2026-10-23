@@ -1,5 +1,9 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
+    "framework": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": ".",
     "redirects": [
         { "source": "/docs", "destination": "https://solar-icons.dev/docs/v2", "permanent": true },
         { "source": "/:path*", "destination": "https://solar-icons.dev/:path*", "permanent": true }
