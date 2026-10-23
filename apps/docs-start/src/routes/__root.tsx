@@ -77,7 +77,24 @@ function RootDocument({ children }: { children: ReactNode }) {
                     <Toaster />
                 </JotaiProvider>
                 {umamiEnabled ? (
-                    <script defer src="/p.js" data-website-id={umamiId} data-host-url={umamiUrl} />
+                    <>
+                        <script
+                            defer
+                            src="/p.js"
+                            data-website-id={umamiId}
+                            data-host-url={umamiUrl}
+                            data-performance="true"
+                        />
+                        <script
+                            defer
+                            src="/r.js"
+                            data-website-id={umamiId}
+                            data-host-url={umamiUrl}
+                            data-sample-rate="0.15"
+                            data-mask-level="moderate"
+                            data-max-duration="300000"
+                        />
+                    </>
                 ) : null}
                 <Scripts />
             </body>

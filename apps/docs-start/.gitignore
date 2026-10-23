@@ -14,6 +14,7 @@ playwright-report
 
 # Build artifacts
 public/p.js
+public/r.js
 public/_headers
 public/robots.txt
 public/_redirects
