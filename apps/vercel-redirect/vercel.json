@@ -5,6 +5,7 @@
     "buildCommand": null,
     "outputDirectory": ".",
     "redirects": [
+        { "source": "/", "destination": "https://solar-icons.dev", "permanent": true },
         { "source": "/docs", "destination": "https://solar-icons.dev/docs/v2", "permanent": true },
         { "source": "/:path*", "destination": "https://solar-icons.dev/:path*", "permanent": true }
     ]
