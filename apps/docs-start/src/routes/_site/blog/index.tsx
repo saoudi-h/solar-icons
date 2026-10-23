@@ -2,8 +2,8 @@ import { ArrowRightIcon } from '@solar-icons/react/dynamic/arrow-right'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from 'react'
 
-import { PostCover } from '@/app/(home)/blog/components/post-cover'
-import { TagPill } from '@/app/(home)/blog/components/tag-pill'
+import { PostCover } from '~/components/blog/post-cover'
+import { TagPill } from '~/components/blog/tag-pill'
 import { blogSource } from '~/lib/source'
 import { seo } from '~/utils/seo'
 

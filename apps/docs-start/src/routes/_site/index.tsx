@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { AiToolsSection } from '@/components/home-page/sections/ai-tools'
-import { CommunitySection } from '@/components/home-page/sections/community'
-import { FeaturesSection } from '@/components/home-page/sections/features'
-import { HeroSection } from '@/components/home-page/sections/hero'
-import { PackagesSection } from '@/components/home-page/sections/packages'
-import { config } from '@/config'
+import { AiToolsSection } from '~/components/home-page/sections/ai-tools'
+import { CommunitySection } from '~/components/home-page/sections/community'
+import { FeaturesSection } from '~/components/home-page/sections/features'
+import { HeroSection } from '~/components/home-page/sections/hero'
+import { PackagesSection } from '~/components/home-page/sections/packages'
+import { config } from '~/config'
 import { seo } from '~/utils/seo'
 
 export const Route = createFileRoute('/_site/')({

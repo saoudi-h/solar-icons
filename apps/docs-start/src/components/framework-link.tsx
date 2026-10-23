@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
 
-import { toTanStackLocation } from '~/compat/routes'
+import { toTanStackLocation } from '~/utils/routes'
 
 /**
  * Link of the Fumadocs layouts. It receives an `href` and maps it to the

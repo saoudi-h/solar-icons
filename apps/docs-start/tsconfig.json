@@ -19,11 +19,7 @@
         "paths": {
             "fumadocs-mdx:collections/*": ["./.source/*"],
             "~/*": ["./src/*"],
-            "@/*": ["../docs/*"],
-            "next/navigation": ["./src/compat/next-navigation.ts"],
-            "next/link": ["./src/compat/next-link.tsx"],
-            "next/image": ["./src/compat/next-image.tsx"],
-            "nuqs": ["./src/compat/nuqs.ts"]
+            "~generated/*": ["../docs/generated/*"]
         },
         "noEmit": true
     }

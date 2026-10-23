@@ -1,6 +1,6 @@
 'use client'
 
-import { Rate } from '@/components/ui-blocks/rate'
+import { Rate } from '~/components/ui-blocks/rate'
 
 /**
  * The guide feedback widget.

@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { categories } from '~generated/utils'
 
-import { IconsContent } from '@/components/icons-page/IconsContent'
-import { categories } from '@/generated/utils'
+import { IconsContent } from '~/components/icons-page/IconsContent'
 import { seo } from '~/utils/seo'
 
 const styles = ['bold', 'bold-duotone', 'broken', 'linear', 'line-duotone', 'outline'] as const

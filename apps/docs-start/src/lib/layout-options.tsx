@@ -3,8 +3,8 @@ import type { DocsLayoutProps } from 'fumadocs-ui/layouts/docs'
 import type { HomeLayoutProps } from 'fumadocs-ui/layouts/home'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
-import { Logo } from '@/components/ui-blocks/logo'
-import { SiteHeader } from '@/components/ui-blocks/site-header'
+import { Logo } from '~/components/ui-blocks/logo'
+import { SiteHeader } from '~/components/ui-blocks/site-header'
 
 export function baseOptions(): BaseLayoutProps {
     return {
