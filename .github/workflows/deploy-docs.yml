@@ -10,7 +10,9 @@ on:
             - main
         paths:
             - 'apps/docs-start/**'
-            - 'packages/**'
+            # The site is built from the icon packages.
+            - 'packages/core/**'
+            - 'packages/react/**'
             - 'pnpm-lock.yaml'
             - '.github/workflows/deploy-docs.yml'
     workflow_dispatch:

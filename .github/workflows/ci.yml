@@ -1,9 +1,14 @@
 name: CI
 
-# Fast verification for pull requests. This workflow never publishes:
-# release.yml remains the only publishing gate on main. Keep the two in
-# sync when gates change (same filters, same checks, minus publishing).
-# A pull request that only touches the documentation site verifies the site.
+# Verification of pull requests. This workflow never publishes: release.yml
+# is the only publishing workflow. The `scope` job reads the changed files and
+# starts only the jobs the change can affect:
+#
+#   packages  every package and app except the docs site (any code change)
+#   site      the documentation site and what it builds from
+#   checks    the cheap consistency checks, for notes and documentation only
+#
+# A change to the notes or the task files starts nothing.
 
 on:
     pull_request:
@@ -20,30 +25,92 @@ env:
     TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
-    verify:
-        name: Verify
+    scope:
+        name: Scope
         runs-on: ubuntu-latest
+        outputs:
+            packages: ${{ steps.scope.outputs.packages }}
+            site: ${{ steps.scope.outputs.site }}
+            checks: ${{ steps.scope.outputs.checks }}
         steps:
             - name: Checkout branch
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
 
-            # A change that stays inside the documentation site only needs the
-            # site to be verified. The page content and the generated catalogue are
-            # checked against the icon inventory, so they verify the whole monorepo.
-            - name: Scope the verification
+            - name: Read the changed files
               id: scope
               run: |
-                  files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}"...HEAD)
-                  if echo "$files" | grep -qvE '^(apps/docs-start/|apps/vercel-redirect/|\.autonomos/|MIGRATION\.md$)' \
-                      || echo "$files" | grep -qE '^apps/docs-start/(content|generated)/'; then
-                      echo "full=true" >> "$GITHUB_OUTPUT"
-                      echo "filter=--filter=!./apps/angular-app" >> "$GITHUB_OUTPUT"
-                  else
-                      echo "full=false" >> "$GITHUB_OUTPUT"
-                      echo "filter=--filter=@solar-icons/docs-start..." >> "$GITHUB_OUTPUT"
+                  all=$(git diff --name-only "${{ github.event.pull_request.base.sha }}"...HEAD)
+                  # Files that no job needs to look at.
+                  files=$(echo "$all" | grep -vE '^(\.autonomos/|MIGRATION\.md$|apps/vercel-redirect/)' || true)
+                  # Notes and documentation, checked against the icon inventory.
+                  notes='^(docs/|skills/)|\.md$'
+                  site_files='^apps/docs-start/'
+
+                  packages=false
+                  site=false
+                  checks=false
+                  if echo "$files" | grep -vE "$notes|$site_files" | grep -q .; then
+                      packages=true
                   fi
+                  if echo "$files" | grep -qE "$site_files" || [ "$packages" = true ]; then
+                      site=true
+                  fi
+                  if echo "$files" | grep -qE "$notes" && [ "$site" = false ]; then
+                      checks=true
+                  fi
+
+                  {
+                      echo "packages=$packages"
+                      echo "site=$site"
+                      echo "checks=$checks"
+                  } >> "$GITHUB_OUTPUT"
+                  echo "packages=$packages site=$site checks=$checks"
+
+    packages:
+        name: Packages
+        needs: scope
+        if: needs.scope.outputs.packages == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ''
+
+            # The docs site has its own job. The Angular playground bundles the
+            # complete dynamic catalogue and exceeds the memory of the standard
+            # runner on a full build.
+            - name: Build
+              run: pnpm turbo build --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+
+            - name: Typecheck
+              run: pnpm turbo typecheck --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+
+            - name: Lint
+              run: pnpm turbo lint --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+
+            - name: Tests
+              run: pnpm turbo test --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+
+            - name: Validate package exports
+              run: pnpm check:exports
+
+            - name: Validate skill catalog freshness
+              run: pnpm check:skill-counts
+
+    site:
+        name: Site
+        needs: scope
+        if: needs.scope.outputs.site == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
 
             - name: Install dependencies
               uses: ./.github/actions/install
@@ -51,35 +118,44 @@ jobs:
                   node-version: ''
 
             - name: Build
-              # Same memory exclusion as release.yml: the Angular playground
-              # exceeds the standard runner on a full build.
-              run: pnpm turbo build --concurrency=1 ${{ steps.scope.outputs.filter }}
+              run: pnpm turbo build --concurrency=1 --filter=@solar-icons/docs-start...
 
             - name: Typecheck
-              run: pnpm turbo typecheck --concurrency=1 ${{ steps.scope.outputs.filter }}
+              run: pnpm turbo typecheck --concurrency=1 --filter=@solar-icons/docs-start...
 
             - name: Lint
-              run: pnpm turbo lint --concurrency=1 ${{ steps.scope.outputs.filter }}
+              run: pnpm turbo lint --concurrency=1 --filter=@solar-icons/docs-start...
 
-            - name: Install the browser of the docs-start tests
+            - name: Install the browser of the site tests
               run: pnpm --filter @solar-icons/docs-start exec playwright install --with-deps chromium
 
             - name: Tests
-              run: pnpm turbo test --concurrency=1 ${{ steps.scope.outputs.filter }}
+              run: pnpm turbo test --concurrency=1 --filter=@solar-icons/docs-start...
 
-            - name: Validate package exports
-              if: steps.scope.outputs.full == 'true'
-              run: pnpm check:exports
+            # Counts, category list, and category thumbnails published by the
+            # docs must match the catalogue. The build above regenerates them,
+            # so this also fails on a stale commit. `--check-generated` is left
+            # out on purpose: it needs the demo app icon lists, which are not
+            # all committed.
+            - name: Validate icon inventory
+              run: pnpm exec tsx scripts/check-icon-inventory.ts --check-docs
+
+    checks:
+        name: Checks
+        needs: scope
+        if: needs.scope.outputs.checks == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ''
 
             - name: Validate skill catalog freshness
-              if: steps.scope.outputs.full == 'true'
               run: pnpm check:skill-counts
 
             - name: Validate icon inventory
-              if: steps.scope.outputs.full == 'true'
-              # Counts, category list, and category thumbnails published by
-              # the docs must match the catalogue. The docs build above
-              # regenerates them, so this also fails on a stale commit.
-              # `--check-generated` is left out on purpose: it needs the
-              # demo app icon lists, which are not all committed.
               run: pnpm exec tsx scripts/check-icon-inventory.ts --check-docs
