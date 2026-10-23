@@ -3,6 +3,7 @@ name: CI
 # Fast verification for pull requests. This workflow never publishes:
 # release.yml remains the only publishing gate on main. Keep the two in
 # sync when gates change (same filters, same checks, minus publishing).
+# A pull request that only touches the documentation site verifies the site.
 
 on:
     pull_request:
@@ -25,6 +26,22 @@ jobs:
         steps:
             - name: Checkout branch
               uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            # A change that stays inside the documentation site only needs the
+            # site to be verified. Anything else verifies the whole monorepo.
+            - name: Scope the verification
+              id: scope
+              run: |
+                  files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}"...HEAD)
+                  if echo "$files" | grep -qvE '^(apps/docs-start/|apps/vercel-redirect/|\.autonomos/|MIGRATION\.md$)'; then
+                      echo "full=true" >> "$GITHUB_OUTPUT"
+                      echo "filter=--filter=!./apps/angular-app" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "full=false" >> "$GITHUB_OUTPUT"
+                      echo "filter=--filter=@solar-icons/docs-start..." >> "$GITHUB_OUTPUT"
+                  fi
 
             - name: Install dependencies
               uses: ./.github/actions/install
@@ -34,27 +51,30 @@ jobs:
             - name: Build
               # Same memory exclusion as release.yml: the Angular playground
               # exceeds the standard runner on a full build.
-              run: pnpm turbo build --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+              run: pnpm turbo build --concurrency=1 ${{ steps.scope.outputs.filter }}
 
             - name: Typecheck
-              run: pnpm turbo typecheck --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+              run: pnpm turbo typecheck --concurrency=1 ${{ steps.scope.outputs.filter }}
 
             - name: Lint
-              run: pnpm turbo lint --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+              run: pnpm turbo lint --concurrency=1 ${{ steps.scope.outputs.filter }}
 
             - name: Install the browser of the docs-start tests
               run: pnpm --filter @solar-icons/docs-start exec playwright install --with-deps chromium
 
             - name: Tests
-              run: pnpm turbo test --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+              run: pnpm turbo test --concurrency=1 ${{ steps.scope.outputs.filter }}
 
             - name: Validate package exports
+              if: steps.scope.outputs.full == 'true'
               run: pnpm check:exports
 
             - name: Validate skill catalog freshness
+              if: steps.scope.outputs.full == 'true'
               run: pnpm check:skill-counts
 
             - name: Validate icon inventory
+              if: steps.scope.outputs.full == 'true'
               # Counts, category list, and category thumbnails published by
               # the docs must match the catalogue. The docs build above
               # regenerates them, so this also fails on a stale commit.
