@@ -62,13 +62,13 @@ The documentation explorer has its own generated React data files. Regenerate th
 catalogue change:
 
 ```sh
-pnpm --filter @solar-icons/docs generate:catalog
+pnpm --filter @solar-icons/docs-start generate:catalog
 ```
 
 The docs `dev` and `build` scripts run this command automatically. This updates
-`apps/docs/generated/descriptions.ts`, `apps/docs/generated/utils.ts`,
-`apps/docs/generated/generatedHeroUtils.ts`, `apps/docs/generated/categories.ts`, and
-`apps/docs/generated/categoryIcons.ts`; it is what keeps `/icons` aligned with the core
+`apps/docs-start/generated/descriptions.ts`, `apps/docs-start/generated/utils.ts`,
+`apps/docs-start/generated/generatedHeroUtils.ts`, `apps/docs-start/generated/categories.ts`, and
+`apps/docs-start/generated/categoryIcons.ts`; it is what keeps `/icons` aligned with the core
 inventory instead of leaving the previous count in the generated bundle. The last two files
 back the categories page: the category list, the icon count of each category, and the
 thumbnail of each category are derived from the catalogue, so they must never be written by

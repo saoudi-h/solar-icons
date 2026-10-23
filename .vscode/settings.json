@@ -1,5 +1,5 @@
 {
-    "tailwindCSS.experimental.configFile": "apps/docs/app/globals.css",
+    "tailwindCSS.experimental.configFile": "apps/docs-start/src/styles/app.css",
     "eslint.workingDirectories": [
         {
             "mode": "auto"

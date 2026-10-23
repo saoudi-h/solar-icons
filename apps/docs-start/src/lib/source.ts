@@ -11,12 +11,12 @@ import {
 } from './resolve-icon-utils'
 
 /**
- * The collections read the MDX files of `apps/docs`, shared with the Next
- * app. `async: true` keeps the frontmatter in the client bundle and splits
+ * The collections read the MDX files of the `content` folder.
+ * `async: true` keeps the frontmatter in the client bundle and splits
  * every page body into its own chunk, loaded on demand.
  */
 const docs = defineDocs({
-    dir: '../docs/content/docs',
+    dir: './content/docs',
     docs: {
         async: true,
         lastModified: true,
@@ -30,7 +30,7 @@ const docs = defineDocs({
 
 const blog = defineCollections({
     type: 'doc',
-    dir: '../docs/content/blog',
+    dir: './content/blog',
     async: true,
     schema: pageSchema.extend({
         author: z.string(),

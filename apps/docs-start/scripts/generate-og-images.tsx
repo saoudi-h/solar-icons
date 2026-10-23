@@ -4,7 +4,7 @@
  * The site is static, so there is no server to draw them on request. Every
  * documentation page, the home page and the icons page get a PNG in
  * `public/og`, at the address the `og:image` tags point to. The layout is
- * the one of the Next app (`apps/docs/lib/og-template.tsx`).
+ * the one of the former Next app.
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
@@ -42,7 +42,7 @@ function compactDescription(value: string, max: number) {
 
 /** Reads the title and the description out of the frontmatter of a page. */
 async function readFrontmatter(url: string) {
-    const root = path.join(appRoot, '..', 'docs', 'content', 'docs')
+    const root = path.join(appRoot, 'content', 'docs')
     const candidates = [`${url}.mdx`, path.join(url, 'index.mdx')]
     for (const candidate of candidates) {
         let source: string

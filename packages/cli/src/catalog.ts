@@ -119,7 +119,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
 /**
  * Per-file import snippet (recommended, tree-shakable).
  * Style is in the path, component name is generic (no style suffix).
- * Verified against docs: apps/docs/content/docs/v2/packages/{react,vue,svelte,solid}.mdx
+ * Verified against docs: apps/docs-start/content/docs/v2/packages/{react,vue,svelte,solid}.mdx
  *   react:  import { HeartIcon } from '@solar-icons/react/bold/heart'
  *   vue:    import { HeartIcon } from '@solar-icons/vue/bold/heart'
  *   svelte: import HeartIcon from '@solar-icons/svelte/bold/heart'  (default)

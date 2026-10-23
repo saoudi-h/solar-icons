@@ -11,7 +11,6 @@ import { collectDocsPaths } from './scripts/docs-paths'
 
 const appRoot = fileURLToPath(new URL('.', import.meta.url))
 const srcDir = path.join(appRoot, 'src')
-const nextAppDir = path.resolve(appRoot, '../docs')
 
 const docsPaths = collectDocsPaths()
 
@@ -62,14 +61,9 @@ export default defineConfig({
         // anchor with a full page load.
         dedupe: ['fumadocs-core', 'fumadocs-ui', 'fumadocs-mdx', 'react', 'react-dom'],
         alias: [
-            // The MDX content is shared with the Next app, which imports this
-            // component through its own `@/` alias.
-            {
-                find: /^@\/components\/icon-reference\//,
-                replacement: path.join(srcDir, 'components/icon-reference/'),
-            },
-            // The generated icon data is still produced by the Next app.
-            { find: /^~generated\//, replacement: `${nextAppDir}/generated/` },
+            { find: /^~generated\//, replacement: path.join(appRoot, 'generated/') },
+            // MDX content imports components through `~/` as well.
+            { find: /^~\//, replacement: `${srcDir}/` },
         ],
     },
     plugins: [

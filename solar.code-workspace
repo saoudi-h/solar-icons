@@ -17,7 +17,7 @@
             "path": "packages/vue",
         },
         {
-            "path": "apps/docs",
+            "path": "apps/docs-start",
         },
         {
             "name": "vue-app",

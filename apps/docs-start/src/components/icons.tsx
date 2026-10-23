@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-import icons from '../../../docs/generated/icons.json'
+import icons from '../../generated/icons.json'
 
 export interface BundledIcon {
     body: string
@@ -20,7 +20,7 @@ const bundledIcons = icons as Record<string, BundledIcon>
 
 /**
  * Renders an Iconify icon from the bundle generated at build time in
- * `apps/docs`. The icon data is inlined in the JavaScript payload, so
+ * `generated/icons.json`. The icon data is inlined in the JavaScript payload, so
  * nothing is ever requested from the Iconify API at runtime.
  */
 export function Icon({ icon, className, width, height, ...props }: IconProps) {

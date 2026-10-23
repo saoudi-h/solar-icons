@@ -4,7 +4,7 @@ import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { SolarProvider, useSolar } from './solar-provider'
 
 /**
- * Regression test for the documented pattern in apps/docs/content/docs/v2/packages/angular.mdx:
+ * Regression test for the documented pattern in apps/docs-start/content/docs/v2/packages/angular.mdx:
  *
  *     @Component({
  *         template: `

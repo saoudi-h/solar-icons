@@ -44,7 +44,7 @@ const PRESENTATION_PATH = path.join(
     REPOSITORY_ROOT,
     'packages/figma-plugin/community/presentation.html'
 )
-const DOCS_PAGES_DIRECTORY = path.join(REPOSITORY_ROOT, 'apps/docs/content/docs/v2/packages')
+const DOCS_PAGES_DIRECTORY = path.join(REPOSITORY_ROOT, 'apps/docs-start/content/docs/v2/packages')
 const DOCS_META_PATH = path.join(DOCS_PAGES_DIRECTORY, 'meta.json')
 const UI_HTML_PATH = path.join(REPOSITORY_ROOT, 'packages/figma-plugin/dist/ui.html')
 

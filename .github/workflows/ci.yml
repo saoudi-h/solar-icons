@@ -30,12 +30,14 @@ jobs:
                   fetch-depth: 0
 
             # A change that stays inside the documentation site only needs the
-            # site to be verified. Anything else verifies the whole monorepo.
+            # site to be verified. The page content and the generated catalogue are
+            # checked against the icon inventory, so they verify the whole monorepo.
             - name: Scope the verification
               id: scope
               run: |
                   files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}"...HEAD)
-                  if echo "$files" | grep -qvE '^(apps/docs-start/|apps/vercel-redirect/|\.autonomos/|MIGRATION\.md$)'; then
+                  if echo "$files" | grep -qvE '^(apps/docs-start/|apps/vercel-redirect/|\.autonomos/|MIGRATION\.md$)' \
+                      || echo "$files" | grep -qE '^apps/docs-start/(content|generated)/'; then
                       echo "full=true" >> "$GITHUB_OUTPUT"
                       echo "filter=--filter=!./apps/angular-app" >> "$GITHUB_OUTPUT"
                   else

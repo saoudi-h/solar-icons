@@ -2,8 +2,8 @@ import { mkdir, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import icons from '../../docs/generated/descriptions'
-import { categories } from '../../docs/generated/utils'
+import icons from '../generated/descriptions'
+import { categories } from '../generated/utils'
 
 const appRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const outputDir = path.join(appRoot, 'public/data')

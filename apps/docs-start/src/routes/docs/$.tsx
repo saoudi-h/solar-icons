@@ -59,7 +59,7 @@ function DocsRoute() {
                         <MarkdownCopyButton markdownUrl={markdownUrl} />
                         <ViewOptionsPopover
                             markdownUrl={markdownUrl}
-                            githubUrl={`https://github.com/saoudi-h/solar-icons/blob/main/apps/docs/content/docs/${page.path}`}
+                            githubUrl={`https://github.com/saoudi-h/solar-icons/blob/main/apps/docs-start/content/docs/${page.path}`}
                         />
                     </div>
                     <DocsBody>

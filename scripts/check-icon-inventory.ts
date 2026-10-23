@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { categoryCards } from '../apps/docs/generated/categories'
+import { categoryCards } from '../apps/docs-start/generated/categories'
 import { scanSvgIcons } from '../packages/core/src/scripts/icon-metadata'
 import type { Metadata } from '../packages/core/src/types'
 
@@ -28,20 +28,22 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
 }> = [
     { relativePath: 'README.md', counts: ['logical', 'svg'] },
     { relativePath: 'AGENT.md', counts: ['logical', 'svg'] },
-    { relativePath: 'apps/docs/README.md', counts: ['svg'] },
-    { relativePath: 'apps/docs/config/index.tsx', counts: ['logical'] },
+    { relativePath: 'apps/docs-start/src/config/index.tsx', counts: ['logical'] },
     {
-        relativePath: 'apps/docs/components/home-page/sections/community/index.tsx',
+        relativePath: 'apps/docs-start/src/components/home-page/sections/community/index.tsx',
         counts: ['svg'],
     },
-    { relativePath: 'apps/docs/content/docs/v2/index.mdx', counts: ['logical', 'svg'] },
+    { relativePath: 'apps/docs-start/content/docs/v2/index.mdx', counts: ['logical', 'svg'] },
     {
-        relativePath: 'apps/docs/content/docs/v2/icon-reference/categories.mdx',
+        relativePath: 'apps/docs-start/content/docs/v2/icon-reference/categories.mdx',
         counts: ['logical'],
     },
-    { relativePath: 'apps/docs/content/docs/v2/figma-plugin.mdx', counts: ['logical'] },
-    { relativePath: 'apps/docs/content/docs/v2/packages/js.mdx', counts: ['svg'] },
-    { relativePath: 'apps/docs/content/docs/v2/packages/nuxt.mdx', counts: ['logical', 'svg'] },
+    { relativePath: 'apps/docs-start/content/docs/v2/figma-plugin.mdx', counts: ['logical'] },
+    { relativePath: 'apps/docs-start/content/docs/v2/packages/js.mdx', counts: ['svg'] },
+    {
+        relativePath: 'apps/docs-start/content/docs/v2/packages/nuxt.mdx',
+        counts: ['logical', 'svg'],
+    },
     { relativePath: 'packages/core/README.md', counts: ['logical'] },
     { relativePath: 'packages/core/AGENT.md', counts: ['svg'] },
     { relativePath: 'packages/core/EXTENDING-ICON-SET.md', counts: ['logical'] },
@@ -155,32 +157,32 @@ const main = () => {
         const catalogueCategories = Object.keys(metadata.categories)
         if (categoryCards.length !== catalogueCategories.length) {
             errors.push(
-                `apps/docs/generated/categories.ts lists ${categoryCards.length} categories, but the catalogue has ${catalogueCategories.length}`
+                `apps/docs-start/generated/categories.ts lists ${categoryCards.length} categories, but the catalogue has ${catalogueCategories.length}`
             )
         }
         for (const card of categoryCards) {
             const catalogueCategory = metadata.categories[card.slug]
             if (!catalogueCategory) {
                 errors.push(
-                    `apps/docs/generated/categories.ts publishes an unknown category "${card.slug}"`
+                    `apps/docs-start/generated/categories.ts publishes an unknown category "${card.slug}"`
                 )
                 continue
             }
             if (card.count !== catalogueCategory.icons.length) {
                 errors.push(
-                    `apps/docs/generated/categories.ts reports ${card.count} icons for "${card.slug}", but the catalogue has ${catalogueCategory.icons.length}`
+                    `apps/docs-start/generated/categories.ts reports ${card.count} icons for "${card.slug}", but the catalogue has ${catalogueCategory.icons.length}`
                 )
             }
             if (!catalogueCategory.icons.includes(card.representative)) {
                 errors.push(
-                    `apps/docs/generated/categories.ts uses "${card.representative}" as the thumbnail of "${card.slug}", but that icon is not in the category`
+                    `apps/docs-start/generated/categories.ts uses "${card.representative}" as the thumbnail of "${card.slug}", but that icon is not in the category`
                 )
             }
         }
         for (const slug of catalogueCategories) {
             if (!categoryCards.some(card => card.slug === slug)) {
                 errors.push(
-                    `apps/docs/generated/categories.ts does not publish the catalogue category "${slug}"`
+                    `apps/docs-start/generated/categories.ts does not publish the catalogue category "${slug}"`
                 )
             }
         }
@@ -190,7 +192,7 @@ const main = () => {
         // categories with the same counts.
         const categoriesPage = path.join(
             REPOSITORY_ROOT,
-            'apps/docs/content/docs/v2/icon-reference/categories.mdx'
+            'apps/docs-start/content/docs/v2/icon-reference/categories.mdx'
         )
         if (fs.existsSync(categoriesPage)) {
             const page = fs.readFileSync(categoriesPage, 'utf8')
@@ -250,7 +252,7 @@ const main = () => {
         const homepage = fs.readFileSync(
             path.join(
                 REPOSITORY_ROOT,
-                'apps/docs/components/home-page/sections/community/index.tsx'
+                'apps/docs-start/src/components/home-page/sections/community/index.tsx'
             ),
             'utf8'
         )
@@ -266,7 +268,7 @@ const main = () => {
         // Banner integrity: every logo img must resolve to a committed
         // asset and vice versa (catches broken refs and orphans).
         const bannerHtml = fs.readFileSync(
-            path.join(REPOSITORY_ROOT, 'apps/docs/ressources/solar-icons-banner.html'),
+            path.join(REPOSITORY_ROOT, 'apps/docs-start/ressources/solar-icons-banner.html'),
             'utf8'
         )
         if (!bannerHtml.includes('logo-row framework-logos')) {
@@ -275,7 +277,10 @@ const main = () => {
             const referenced = [...bannerHtml.matchAll(/src="readme-banner-assets\/([^"]+)"/g)].map(
                 match => match[1]
             )
-            const assetDir = path.join(REPOSITORY_ROOT, 'apps/docs/ressources/readme-banner-assets')
+            const assetDir = path.join(
+                REPOSITORY_ROOT,
+                'apps/docs-start/ressources/readme-banner-assets'
+            )
             const committed = new Set(
                 fs.readdirSync(assetDir).filter(file => file.endsWith('.svg'))
             )

@@ -6,12 +6,6 @@
 @plugin 'tailwindcss-animate';
 
 @source '../../node_modules/fumadocs-ui/dist/**/*.js';
-@source '../../../docs/components/home-page/**/*.{ts,tsx}';
-@source '../../../docs/components/ui/**/*.{ts,tsx}';
-@source '../../../docs/components/ui-blocks/**/*.{ts,tsx}';
-@source '../../../docs/components/icons-page/**/*.{ts,tsx}';
-@source '../../../docs/components/icon-reference/**/*.{ts,tsx}';
-@source '../../../docs/config/**/*.{ts,tsx}';
 
 @custom-variant dark (&:is(.dark *));
 
