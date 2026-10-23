@@ -1,16 +1,13 @@
 import type { ComponentProps } from 'react'
 
-import { getWidths, optimizedImageUrl } from '../utils/image-optimization'
+import { getWidths, optimizedImageUrl } from '~/utils/image-optimization'
 
 type ImageSource = string | { src: string }
 
-type NextImageProps = Omit<ComponentProps<'img'>, 'src'> & {
+type OptimizedImageProps = Omit<ComponentProps<'img'>, 'src'> & {
     src: ImageSource
     priority?: boolean
     fill?: boolean
-    quality?: number
-    placeholder?: 'blur' | 'empty'
-    blurDataURL?: string
     sizes?: string
 }
 
@@ -25,19 +22,16 @@ const fillStyle = {
     color: 'transparent',
 }
 
-export default function NextImage({
+export function OptimizedImage({
     src,
     priority,
     fill,
-    quality: _quality,
-    placeholder: _placeholder,
-    blurDataURL: _blurDataURL,
     sizes,
     width,
     height: _height,
     style,
     ...props
-}: NextImageProps) {
+}: OptimizedImageProps) {
     const source = typeof src === 'string' ? src : src.src
     const { widths, kind } = getWidths(fill ? undefined : (width as number | undefined), sizes)
     const urls = widths.map(candidate => optimizedImageUrl(source, candidate))

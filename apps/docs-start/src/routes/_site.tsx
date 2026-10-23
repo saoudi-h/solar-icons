@@ -1,8 +1,8 @@
 import { createFileRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import { HomeLayout } from 'fumadocs-ui/layouts/home'
 
-import { Footer } from '@/components/ui-blocks/footer'
-import { config } from '@/config'
+import { Footer } from '~/components/ui-blocks/footer'
+import { config } from '~/config'
 import { homeOptions } from '~/lib/layout-options'
 
 export const Route = createFileRoute('/_site')({

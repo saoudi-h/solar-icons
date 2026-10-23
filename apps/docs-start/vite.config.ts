@@ -62,16 +62,14 @@ export default defineConfig({
         // anchor with a full page load.
         dedupe: ['fumadocs-core', 'fumadocs-ui', 'fumadocs-mdx', 'react', 'react-dom'],
         alias: [
-            // The content and the original site components share the Next
-            // app's `@/` imports. Start's own files use `~/`.
-            { find: /^@\//, replacement: `${nextAppDir}/` },
+            // The MDX content is shared with the Next app, which imports this
+            // component through its own `@/` alias.
             {
-                find: 'next/navigation',
-                replacement: path.join(srcDir, 'compat/next-navigation.ts'),
+                find: /^@\/components\/icon-reference\//,
+                replacement: path.join(srcDir, 'components/icon-reference/'),
             },
-            { find: 'next/link', replacement: path.join(srcDir, 'compat/next-link.tsx') },
-            { find: 'next/image', replacement: path.join(srcDir, 'compat/next-image.tsx') },
-            { find: 'nuqs', replacement: path.join(srcDir, 'compat/nuqs.ts') },
+            // The generated icon data is still produced by the Next app.
+            { find: /^~generated\//, replacement: `${nextAppDir}/generated/` },
         ],
     },
     plugins: [
