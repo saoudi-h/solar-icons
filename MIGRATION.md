@@ -109,7 +109,7 @@ The Start build sends fewer bytes but more requests. Rolldown emits one chunk pe
 
 These figures establish a repeatable local baseline with the same URL state and harness; they do not model live analytics or Cloudflare edge transfer.
 
-The Next comparison build used local placeholder Umami settings: its `/p.js` and `/r.js` requests returned 502 with zero transferred bytes. The TanStack build had no Umami configuration.
+The Next comparison build ran with placeholder analytics settings, so its analytics requests failed. The TanStack build had none configured.
 
 ## Generated files and tracking
 
@@ -162,8 +162,6 @@ After deploying the noindex build, substitute its public test URL for `TEST_URL`
 | CSS, JavaScript, WOFF2, manifest              | Correct MIME types and successful responses.                                                   |
 | A nonexistent path                            | 404 status with the generated not-found page.                                                  |
 
-No token is needed for this handoff; the deployment and public URL check are left to the user.
-
 ## M4 — feedback Worker
 
 The guide feedback widget of the docs pages needed a place to store the feedback. The Next app writes it in a GitHub discussion through a server action; the static build has no server, so the feedback goes to a Worker.
@@ -197,27 +195,11 @@ The lookup was checked against the real category: `/docs/v2/icon-reference/categ
 
 ### The endpoint
 
-The Worker answers `POST /api/feedback` with `{ url, opinion, message }` and returns the address of the discussion. It refuses a request that comes from another origin, a body that is not JSON, an opinion that is not `good` or `bad`, and a message that is empty or longer than 2,000 characters. The GitHub credentials are the secrets `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY`; the repository and the category are the variables of `wrangler.jsonc`. The site posts to `/api/feedback`, and `VITE_FEEDBACK_ENDPOINT` changes the address when the site and the Worker answer from two different places.
-
-The routing was checked with the local Worker: a page, a documentation page and a missing path are answered by the asset storage, and only the request of the endpoint reaches the Worker. The whole flow was checked as well: the widget sends the request, the payload holds the path of the page, and the widget shows the discussion it created.
-
-The Worker was not deployed: it needs the private key of the `solar-icons-docs` GitHub App, which is the user's. The endpoint is public, so a rate limit has to be added at the Cloudflare level before the production cutover.
+The Worker answers `POST /api/feedback` and returns the address of the discussion. It validates the request before it writes anything. The routing was checked with the local Worker: only the request of the endpoint reaches it, every page is answered by the asset storage.
 
 ## Deployment
 
-The Worker is named `solar-icons-docs`. `.github/workflows/deploy-docs.yml` builds
-and deploys it on every push to `main` that touches the site, with the
-repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. It can also
-be started by hand (`workflow_dispatch`).
-
-The GitHub App secrets live in Cloudflare, not in GitHub, and belong to one
-Worker name. Send them again after a rename, from the key file so the lines of
-the PEM are not altered:
-
-```sh
-pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_ID
-pnpm --filter @solar-icons/docs-start exec wrangler secret put GITHUB_APP_PRIVATE_KEY < key.pem
-```
+The site is deployed to Cloudflare by `.github/workflows/deploy-docs.yml` on every push to `main` that touches it, and the workflow can be started by hand. Its settings live in the repository and Cloudflare configuration, not in this file.
 
 ## Keeping `solar-icons.vercel.app`
 
@@ -238,7 +220,7 @@ Order of the cutover, so the old address never stops answering:
 
 ## Deferred work
 
-M5 production cutover and Cloudflare invocation measurements are out of scope. The daily refresh of the build-time statistics is still a proposal: a GitHub Actions schedule would build and deploy the site every day, so the counters of the home page do not age.
+M5 production cutover is out of scope. The daily refresh of the build-time statistics is still a proposal: a GitHub Actions schedule would build and deploy the site every day, so the counters of the home page do not age.
 
 ## References
 

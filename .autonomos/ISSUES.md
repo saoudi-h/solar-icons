@@ -188,7 +188,16 @@ acceptance. Keep this separate from the public request intake.
 
 - Type: problem
 - Status: open
-- Evidence: The CI workflow averages about 40 minutes. Measured on PR 616 (warm turbo cache), the `docs-start` steps are small: dependency install 31s, Chromium install 28s, build 24s, tests 23s, typecheck 5s, lint 5s. The time is therefore spent elsewhere: 25 workspace packages, a cold turbo cache on most runs, `--concurrency=1`, or other jobs of the workflow. The per-job split of a cold run has not been measured yet.
+- Evidence: The CI workflow averages about 40 minutes. Measured on PR 616 (warm turbo cache), the `docs-start` steps are small: dependency install 31s, Chromium install 28s, build 24s, tests 23s, typecheck 5s, lint 5s. The time is therefore spent elsewhere: 25 workspace packages, a cold turbo cache on most runs, `--concurrency=1`, or other jobs of the workflow. The per-job split of a cold run has not been measured yet. Later observations: a single run took 39 minutes when the cache was cold and 9 minutes when it was warm; `release.yml` repeats the whole verification after merge, so a change waits on two long runs; small or documentation-only changes trigger the full monorepo verification.
 - Impact: Deploying more than a couple of times a day is impractical, and every failed run costs a long wait before the next attempt.
 - Desired outcome: A CI run short enough to merge and deploy several times a day, without dropping the checks that protect the packages and the docs site. Deferred until the Cloudflare deployment of `apps/docs-start` is finished.
 - Tasks: none
+
+## [ISSUE-DOCS-COMPAT-LAYER] Replace the Next compatibility layer of the docs-start app
+
+- Type: problem
+- Status: accepted
+- Evidence: `apps/docs-start/src/compat` re-implements `next/link`, `next/image`, `next/navigation` and `nuqs` so that the components shared from `apps/docs` (reached through the `@/*` alias) run unchanged under TanStack Start. About 17 shared files depend on it, through aliases in `tsconfig.json` and `vite.config.ts`.
+- Impact: The layer was a shortcut to migrate quickly. It hides which API each component really uses, keeps the app coupled to the Next app, and blocks removing `apps/docs`.
+- Desired outcome: The shared components live in `apps/docs-start` and use the TanStack Router and Start APIs directly. The aliases and the `compat` folder are gone, with unchanged behavior and URLs.
+- Tasks: DOCS-START-REMOVE-COMPAT
