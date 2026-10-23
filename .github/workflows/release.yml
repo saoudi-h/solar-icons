@@ -62,7 +62,11 @@ jobs:
               run: pnpm turbo lint --concurrency=1 --filter='*' --filter='!./apps/angular-app'
 
             - name: Tests
-              run: pnpm turbo test --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+              # The documentation site is verified by ci.yml, which installs the
+              # browser its end to end tests need. It does not gate a release.
+              run: >-
+                  pnpm turbo test --concurrency=1 --filter='*' --filter='!./apps/angular-app'
+                  --filter='!./apps/docs-start'
 
             - name: Validate package exports
               run: pnpm check:exports
