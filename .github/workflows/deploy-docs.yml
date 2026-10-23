@@ -39,14 +39,14 @@ jobs:
             - name: Check the build variables
               run: test -n "$VITE_UMAMI_ID" && test -n "$VITE_UMAMI_URL"
               env:
-                  VITE_UMAMI_ID: ${{ vars.VITE_UMAMI_ID }}
-                  VITE_UMAMI_URL: ${{ vars.VITE_UMAMI_URL }}
+                  VITE_UMAMI_ID: ${{ vars.VITE_UMAMI_ID || secrets.VITE_UMAMI_ID }}
+                  VITE_UMAMI_URL: ${{ vars.VITE_UMAMI_URL || secrets.VITE_UMAMI_URL }}
 
             - name: Build
               run: pnpm turbo build --filter=@solar-icons/docs-start...
               env:
-                  VITE_UMAMI_ID: ${{ vars.VITE_UMAMI_ID }}
-                  VITE_UMAMI_URL: ${{ vars.VITE_UMAMI_URL }}
+                  VITE_UMAMI_ID: ${{ vars.VITE_UMAMI_ID || secrets.VITE_UMAMI_ID }}
+                  VITE_UMAMI_URL: ${{ vars.VITE_UMAMI_URL || secrets.VITE_UMAMI_URL }}
 
             - name: Deploy
               uses: cloudflare/wrangler-action@v3
