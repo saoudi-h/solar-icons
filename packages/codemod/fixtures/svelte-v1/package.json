@@ -5,11 +5,11 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@solar-icons/svelte": "1.1.1",
+        "@solar-icons/svelte": "2.3.3",
         "svelte": "5.57.2"
     },
     "devDependencies": {
-        "@sveltejs/vite-plugin-svelte": "5.1.1",
-        "vite": "6.4.4"
+        "@sveltejs/vite-plugin-svelte": "7.3.1",
+        "vite": "8.3.4"
     }
 }
