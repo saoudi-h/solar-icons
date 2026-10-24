@@ -5,13 +5,13 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@solar-icons/vue": "1.2.1",
+        "@solar-icons/vue": "2.3.3",
         "vue": "3.5.44"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue": "5.2.4",
-        "typescript": "5.9.3",
-        "vite": "6.4.4",
-        "vue-tsc": "2.2.12"
+        "@vitejs/plugin-vue": "6.0.10",
+        "typescript": "7.0.2",
+        "vite": "8.3.4",
+        "vue-tsc": "3.3.13"
     }
 }

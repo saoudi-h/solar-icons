@@ -5,19 +5,19 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@solar-icons/react": "1.1.1",
+        "@solar-icons/react": "2.3.3",
         "@solar-icons/react-perf": "2.1.1",
-        "@solar-icons/vue": "1.2.1",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
+        "@solar-icons/vue": "2.3.3",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
         "vue": "3.5.44"
     },
     "devDependencies": {
-        "@types/react": "18.3.31",
-        "@types/react-dom": "18.3.7",
-        "@vitejs/plugin-react": "4.7.0",
-        "@vitejs/plugin-vue": "5.2.4",
-        "typescript": "5.9.3",
-        "vite": "6.4.4"
+        "@types/react": "19.3.0",
+        "@types/react-dom": "19.3.0",
+        "@vitejs/plugin-react": "6.1.2",
+        "@vitejs/plugin-vue": "6.0.10",
+        "typescript": "7.0.2",
+        "vite": "8.3.4"
     }
 }
