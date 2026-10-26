@@ -116,7 +116,7 @@
         "solid-js": "^1.9.17",
         "tsdown": "^0.23.1",
         "typescript": "7.0.2",
-        "unplugin-solid": "^3.0.0",
+        "unplugin-solid": "^2.0.0",
         "vitest": "^5.0.5"
     },
     "peerDependencies": {
