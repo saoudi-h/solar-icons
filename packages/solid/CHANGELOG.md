@@ -1,5 +1,11 @@
 # @solar-icons/solid
 
+## 2.3.4
+
+### Patch Changes
+
+- [#635](https://github.com/saoudi-h/solar-icons/pull/635) [`154b19f`](https://github.com/saoudi-h/solar-icons/commit/154b19f2bc90053d3de595fa15311d6a8d4e0381) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Restore compatibility with Solid 1. The 2.3.3 build imported a runtime that only exists in Solid 2, so the icons failed to load in Solid 1 projects.
+
 ## 2.3.3
 
 ### Patch Changes
