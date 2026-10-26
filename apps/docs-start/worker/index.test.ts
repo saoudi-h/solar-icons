@@ -1,11 +1,18 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
-import { createWorker, type Env, type FeedbackPayload } from './index'
+import { createWorker, type Env, type FeedbackPayload, type SiteStatsFetcher } from './index'
+import type { FetchedSiteStats } from './site-stats'
 
 const env: Env = {
     GITHUB_APP_ID: '1',
     GITHUB_APP_PRIVATE_KEY: 'key',
     ALLOWED_ORIGINS: '',
+}
+
+const siteStats: FetchedSiteStats = {
+    stars: 321,
+    weeklyDownloads: 54_321,
+    fetchedAt: '2026-10-26T10:00:00.000Z',
 }
 
 function post(body: unknown, origin = 'https://solar-icons.dev'): Request {
@@ -16,15 +23,152 @@ function post(body: unknown, origin = 'https://solar-icons.dev'): Request {
     })
 }
 
-function createWorkerWith(stored: FeedbackPayload[]) {
-    return createWorker(async (_env, input) => {
-        stored.push(input)
-        return { githubUrl: 'https://github.com/1', reused: false }
-    })
+function createWorkerWith(
+    stored: FeedbackPayload[],
+    statsFetcher: SiteStatsFetcher = async () => siteStats
+) {
+    return createWorker(
+        async (_env, input) => {
+            stored.push(input)
+            return { githubUrl: 'https://github.com/1', reused: false }
+        },
+        { statsFetcher }
+    )
 }
 
-describe('the feedback worker', () => {
-    it('answers only the feedback path', async () => {
+describe('the docs worker', () => {
+    it('answers the site statistics with a browser cache', async () => {
+        const worker = createWorkerWith([])
+        const response = await worker.fetch(
+            new Request('https://solar-icons.dev/api/site-stats'),
+            env
+        )
+
+        expect(response.status).toBe(200)
+        expect(response.headers.get('cache-control')).toBe('public, max-age=300')
+        expect(await response.json()).toEqual(siteStats)
+    })
+
+    it('coalesces concurrent site statistics requests', async () => {
+        let calls = 0
+        const worker = createWorkerWith([], async () => {
+            calls += 1
+            await Promise.resolve()
+            return siteStats
+        })
+
+        await Promise.all([
+            worker.fetch(new Request('https://solar-icons.dev/api/site-stats'), env),
+            worker.fetch(new Request('https://solar-icons.dev/api/site-stats'), env),
+        ])
+
+        expect(calls).toBe(1)
+    })
+
+    it('keeps the previous values for another hour when a refresh fails', async () => {
+        vi.useFakeTimers()
+        try {
+            const results: FetchedSiteStats[] = [
+                siteStats,
+                { stars: null, weeklyDownloads: null, fetchedAt: '2026-10-26T12:00:00.000Z' },
+                { stars: 323, weeklyDownloads: 54_999, fetchedAt: '2026-10-26T13:00:00.000Z' },
+            ]
+            let calls = 0
+            const pending: Promise<unknown>[] = []
+            const ctx = { waitUntil: (promise: Promise<unknown>) => void pending.push(promise) }
+            const worker = createWorkerWith([], async () => results[calls++]!)
+            const read = async () =>
+                (
+                    await worker.fetch(
+                        new Request('https://solar-icons.dev/api/site-stats'),
+                        env,
+                        ctx
+                    )
+                ).json()
+            const settle = async () => void (await Promise.all(pending.splice(0)))
+
+            expect(await read()).toEqual(siteStats)
+            expect(await read()).toEqual(siteStats)
+            expect(calls).toBe(1)
+
+            // The hour is over: the stale value answers, the refresh fails.
+            vi.advanceTimersByTime(60 * 60 * 1000)
+            expect(await read()).toEqual(siteStats)
+            await settle()
+            expect(calls).toBe(2)
+
+            // The failure is cached like a success: no retry within the hour.
+            expect(await read()).toEqual(siteStats)
+            await settle()
+            expect(calls).toBe(2)
+
+            // The next hour, the upstream answers and replaces the value.
+            vi.advanceTimersByTime(60 * 60 * 1000)
+            expect(await read()).toEqual(siteStats)
+            await settle()
+            expect(calls).toBe(3)
+            expect(await read()).toEqual(results[2])
+        } finally {
+            vi.useRealTimers()
+        }
+    })
+
+    it('keeps one counter when only the other one fails', async () => {
+        vi.useFakeTimers()
+        try {
+            let calls = 0
+            const pending: Promise<unknown>[] = []
+            const ctx = { waitUntil: (promise: Promise<unknown>) => void pending.push(promise) }
+            const worker = createWorkerWith([], async () =>
+                calls++ === 0 ? siteStats : { ...siteStats, stars: null, weeklyDownloads: 60_000 }
+            )
+            const read = async () =>
+                (
+                    await worker.fetch(
+                        new Request('https://solar-icons.dev/api/site-stats'),
+                        env,
+                        ctx
+                    )
+                ).json() as Promise<FetchedSiteStats>
+
+            await read()
+            vi.advanceTimersByTime(60 * 60 * 1000)
+            await read()
+            await Promise.all(pending.splice(0))
+
+            expect(await read()).toMatchObject({ stars: 321, weeklyDownloads: 60_000 })
+        } finally {
+            vi.useRealTimers()
+        }
+    })
+
+    it('serves the build seed and caches it when the very first read fails', async () => {
+        let calls = 0
+        const worker = createWorker(async () => ({ githubUrl: '', reused: false }), {
+            statsSeed: siteStats,
+            statsFetcher: async () => {
+                calls += 1
+                return { stars: null, weeklyDownloads: null, fetchedAt: 'later' }
+            },
+        })
+        const request = () => new Request('https://solar-icons.dev/api/site-stats')
+
+        expect(await (await worker.fetch(request(), env)).json()).toEqual(siteStats)
+        await worker.fetch(request(), env)
+        expect(calls).toBe(1)
+    })
+
+    it('refuses a stats method that is not a get', async () => {
+        const worker = createWorkerWith([])
+        const response = await worker.fetch(
+            new Request('https://solar-icons.dev/api/site-stats', { method: 'POST' }),
+            env
+        )
+
+        expect(response.status).toBe(405)
+    })
+
+    it('answers only the known paths', async () => {
         const worker = createWorkerWith([])
         const response = await worker.fetch(
             new Request('https://solar-icons.dev/api/other', { method: 'POST' }),

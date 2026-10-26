@@ -4,6 +4,7 @@ import { HomeLayout } from 'fumadocs-ui/layouts/home'
 import { Footer } from '~/components/ui-blocks/footer'
 import { config } from '~/config'
 import { homeOptions } from '~/lib/layout-options'
+import { SiteStatsProvider } from '~/lib/site-stats-context'
 
 export const Route = createFileRoute('/_site')({
     component: SiteLayout,
@@ -14,9 +15,11 @@ function SiteLayout() {
     const isIconsPage = pathname === '/icons' || pathname.startsWith('/icons/')
 
     return (
-        <HomeLayout {...homeOptions}>
-            <Outlet />
-            {isIconsPage ? null : <Footer {...config.footer} />}
-        </HomeLayout>
+        <SiteStatsProvider>
+            <HomeLayout {...homeOptions}>
+                <Outlet />
+                {isIconsPage ? null : <Footer {...config.footer} />}
+            </HomeLayout>
+        </SiteStatsProvider>
     )
 }

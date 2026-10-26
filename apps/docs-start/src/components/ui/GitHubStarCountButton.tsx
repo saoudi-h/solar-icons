@@ -4,7 +4,7 @@ import { StarIcon } from '@solar-icons/react/dynamic/star'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { Icon } from '~/lib/icons'
-import { useGitHubStars } from '~/lib/use-github-stars'
+import { useSiteStats } from '~/lib/site-stats-context'
 import { cn } from '~/lib/utils'
 
 export interface GitHubStarCountButtonProps {
@@ -21,7 +21,7 @@ export interface GitHubStarCountButtonProps {
  * button reads as the one that asks for a star without saying it.
  */
 export const GitHubStarCountButton: React.FC<GitHubStarCountButtonProps> = ({ className }) => {
-    const stars = useGitHubStars()
+    const { stars } = useSiteStats()
     const label = `Solar Icons on GitHub, ${stars} stars`
 
     return (

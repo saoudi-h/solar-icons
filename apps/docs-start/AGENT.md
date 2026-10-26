@@ -8,7 +8,7 @@ status: 'active'
 
 ## Role
 
-The official Solar Icons documentation site, public at https://solar-icons.dev. TanStack Start + Fumadocs, prerendered at build time and served as static assets by a Cloudflare Worker. The Worker only runs for the feedback endpoint.
+The official Solar Icons documentation site, public at https://solar-icons.dev. TanStack Start + Fumadocs, prerendered at build time and served as static assets by a Cloudflare Worker. The Worker only handles `/api/feedback` and `/api/site-stats`.
 
 ## Conventions
 

@@ -26,114 +26,16 @@ import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { UnlinkIcon } from '@solar-icons/react/dynamic/unlink'
 import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
-import { motion, useInView } from 'motion/react'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { motion } from 'motion/react'
+import React from 'react'
 
 import { SectionMotion } from '~/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '~/components/ui/GitHubStarButton'
 import { Heading } from '~/components/ui/heading'
-import { SiteStatsContext } from '~/lib/site-stats-context'
-import { useGitHubStars } from '~/lib/use-github-stars'
-
-interface Stats {
-    downloads: number
-    timestamp: number
-}
-
-const CACHE_KEY = 'solar-icons-community-stats-v1'
-const CACHE_TTL = 60 * 60 * 1000 // 1 hour cache TTL
-
-const DEFAULT_DOWNLOADS = 15200
-
-const NPM_PACKAGES = [
-    '@solar-icons/react',
-    '@solar-icons/react-perf',
-    '@solar-icons/react-native',
-    '@solar-icons/vue',
-    '@solar-icons/nuxt',
-    '@solar-icons/svelte',
-    '@solar-icons/solid',
-    '@solar-icons/angular',
-    '@solar-icons/static',
-    '@solar-icons/js',
-    '@solar-icons/codemod',
-    '@solar-icons/cli',
-    '@solar-icons/mcp',
-]
+import { useSiteStats } from '~/lib/site-stats-context'
 
 export const CommunitySection = () => {
-    const siteStats = useContext(SiteStatsContext)
-    const [stats, setStats] = useState({
-        downloads: siteStats?.weeklyDownloads ?? DEFAULT_DOWNLOADS,
-    })
-    const [isLoading, setIsLoading] = useState(siteStats === null)
-    // The star count is shared with the site header, so the two never
-    // disagree and the repository is queried once per page.
-    const stars = useGitHubStars()
-
-    useEffect(() => {
-        if (siteStats) return
-
-        const fetchStats = async () => {
-            try {
-                // 1. Check local cache
-                const cachedStr = localStorage.getItem(CACHE_KEY)
-                if (cachedStr) {
-                    try {
-                        const cachedData = JSON.parse(cachedStr) as Stats
-                        if (Date.now() - cachedData.timestamp < CACHE_TTL) {
-                            setStats({
-                                downloads: cachedData.downloads,
-                            })
-                            setIsLoading(false)
-                            return
-                        }
-                    } catch {
-                        // Ignore parse error and refetch
-                    }
-                }
-
-                // 2. Cache is stale or missing, fetch live data
-                setIsLoading(true)
-
-                // Fetch NPM downloads for all variants
-                const npmPromises = NPM_PACKAGES.map(pkg =>
-                    fetch(`https://api.npmjs.org/downloads/point/last-week/${pkg}`)
-                        .then(res => {
-                            if (!res.ok) throw new Error(`NPM API error for ${pkg}`)
-                            return res.json()
-                        })
-                        .then(data => (data.downloads as number) || 0)
-                        .catch(() => 0)
-                )
-
-                const npmDownloadsResults = await Promise.all(npmPromises)
-
-                const totalDownloads = npmDownloadsResults.reduce((acc, curr) => acc + curr, 0)
-                const finalDownloads = totalDownloads > 0 ? totalDownloads : DEFAULT_DOWNLOADS
-
-                // Update state and cache
-                const newStats = {
-                    downloads: finalDownloads,
-                }
-
-                setStats(newStats)
-                localStorage.setItem(
-                    CACHE_KEY,
-                    JSON.stringify({
-                        ...newStats,
-                        timestamp: Date.now(),
-                    })
-                )
-            } catch {
-                // Keep default state on complete failure
-            } finally {
-                setIsLoading(false)
-            }
-        }
-
-        fetchStats()
-    }, [siteStats])
+    const { stars, weeklyDownloads } = useSiteStats()
 
     // Stagger animation variants
     const containerVariants = {
@@ -196,7 +98,7 @@ export const CommunitySection = () => {
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Weekly Downloads" value={stats.downloads} />
+                                <StatCard title="Weekly Downloads" value={weeklyDownloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
                             <motion.div variants={itemVariants} className="flex-1">
@@ -213,7 +115,7 @@ export const CommunitySection = () => {
                     <motion.div
                         variants={itemVariants}
                         className="relative flex w-full items-center justify-center md:col-span-5">
-                        <CommunityIconGrid stars={stars} isLoading={isLoading} />
+                        <CommunityIconGrid stars={stars} />
                     </motion.div>
                 </div>
             </div>
@@ -227,22 +129,11 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
-    const ref = useRef<HTMLDivElement>(null)
-    const isInView = useInView(ref, { once: true, amount: 0.3 })
-    const [displayValue, setDisplayValue] = useState(0)
-
-    useEffect(() => {
-        if (isInView) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setDisplayValue(value)
-        }
-    }, [isInView, value])
-
     return (
-        <div ref={ref} className={`flex flex-col gap-1 p-4`}>
+        <div className={`flex flex-col gap-1 p-4`}>
             <span className={`text-xs font-bold text-muted-foreground uppercase`}>{title}</span>
             <span className={`text-3xl font-extrabold tracking-tight text-foreground`}>
-                <NumberFlow value={displayValue} format={{ minimumIntegerDigits: 1 }} trend={1} />
+                <NumberFlow value={value} format={{ minimumIntegerDigits: 1 }} trend={1} />
             </span>
         </div>
     )
@@ -266,11 +157,10 @@ const gridIcons: GridIcon[][] = [
 ]
 
 interface CommunityIconGridProps {
-    stars: number | null
-    isLoading: boolean
+    stars: number
 }
 
-const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading }) => {
+const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars }) => {
     return (
         <div className="relative flex h-85 w-full items-center justify-center">
             {/* The 3D Tilted Icon Grid */}
@@ -318,7 +208,7 @@ const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars, isLoading 
 
             {/* Elevated premium button container */}
             <div className="relative z-10">
-                <GitHubStarButton starCount={stars} isLoading={isLoading} />
+                <GitHubStarButton starCount={stars} />
             </div>
         </div>
     )
