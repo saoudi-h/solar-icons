@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [x] **[DOCS-LIVE-SITE-STATS]** Replace the docs homepage's build-frozen GitHub/npm counters with a same-origin Worker endpoint. Keep every page static, cache complete upstream results for about one hour, share one browser request/value between the header and homepage section, and retain the generated build values as first-paint seed/fallback. `Total Icons` and `Total Packages` remain build-time constants; `@solar-icons/react-perf` remains in the npm sum. Verified: build, typecheck, 37 unit tests, 10 e2e tests, lint, format, and Wrangler dry-run. `Priority: 🟠` `Complexity: M`
+
 - [ ] **[DOCS-START-REMOVE-COMPAT]** Move the components that `apps/docs-start` shares from `apps/docs` into `apps/docs-start`, rewrite them with the TanStack Router and Start APIs, and delete `src/compat` with its aliases. Behavior, URLs and the e2e tests stay unchanged. `Priority: 🟠` `Complexity: L` *See: ISSUE-DOCS-COMPAT-LAYER*
 
 - [/] **[DOMAIN-MIGRATION]** Move the documentation site from `solar-icons.vercel.app` to `solar-icons.dev` without changing URL paths: establish Search Console baseline, attach the domain to the existing Vercel project, update active canonical/site references, redirect the legacy host, submit the new sitemap, and verify the migration. `Priority: 🟠` `Complexity: M`

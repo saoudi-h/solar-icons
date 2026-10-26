@@ -7,8 +7,6 @@ import type { ReactNode } from 'react'
 import { FrameworkLink } from '~/components/framework-link'
 import { Toaster } from '~/components/ui/sonner'
 import { TooltipProvider } from '~/components/ui/tooltip'
-import siteStats from '~/generated/site-stats.json'
-import { SiteStatsContext } from '~/lib/site-stats-context'
 import { site } from '~/utils/site'
 import { umamiEnabled, umamiId, umamiUrl } from '~/utils/umami'
 
@@ -61,18 +59,16 @@ function RootDocument({ children }: { children: ReactNode }) {
                                 api: '/api/search',
                             },
                         }}>
-                        <SiteStatsContext.Provider value={siteStats}>
-                            <TooltipProvider>
-                                <ReactLenis
-                                    root
-                                    options={{
-                                        allowNestedScroll: true,
-                                        autoRaf: true,
-                                    }}>
-                                    {children}
-                                </ReactLenis>
-                            </TooltipProvider>
-                        </SiteStatsContext.Provider>
+                        <TooltipProvider>
+                            <ReactLenis
+                                root
+                                options={{
+                                    allowNestedScroll: true,
+                                    autoRaf: true,
+                                }}>
+                                {children}
+                            </ReactLenis>
+                        </TooltipProvider>
                     </RootProvider>
                     <Toaster />
                 </JotaiProvider>

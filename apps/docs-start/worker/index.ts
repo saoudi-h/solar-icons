@@ -1,21 +1,40 @@
+import siteStatsSeed from '../src/generated/site-stats.json'
 import { storeFeedback, type StoreResult } from './feedback'
 /**
- * The feedback endpoint of the documentation.
+ * The server endpoints of the documentation.
  *
  * The site is served from the asset storage, and this Worker only runs for
- * `/api/feedback`. It stores the feedback as a GitHub discussion and answers
- * with the address of the discussion.
+ * `/api/feedback` and `/api/site-stats`. It stores the feedback as a GitHub
+ * discussion and answers the live statistics of the home page.
  */
 import { createAppJwt, createGraphqlClient, getInstallationToken } from './github'
+import { fetchSiteStats, type FetchedSiteStats } from './site-stats'
+import { createSiteStatsCache, type SiteStatsCache } from './site-stats-cache'
 import { normalizePagePath, type Opinion } from './url'
 
 export interface Env {
     GITHUB_APP_ID: string
     GITHUB_APP_PRIVATE_KEY: string
+    /** Optional token that raises the GitHub rate limit of the stats endpoint. */
+    GITHUB_TOKEN?: string
     REPO_OWNER?: string
     REPO_NAME?: string
     DISCUSSION_CATEGORY?: string
     ALLOWED_ORIGINS?: string
+}
+
+export type SiteStatsFetcher = (env: Env) => Promise<FetchedSiteStats>
+
+/** The part of the Workers execution context that the endpoint needs. */
+export interface StatsContext {
+    waitUntil(promise: Promise<unknown>): void
+}
+
+export interface WorkerOptions {
+    /** The value served on the very first call, before anything is cached. */
+    statsSeed?: FetchedSiteStats
+    statsFetcher?: SiteStatsFetcher
+    statsCache?: SiteStatsCache
 }
 
 export type FeedbackPayload = {
@@ -26,7 +45,9 @@ export type FeedbackPayload = {
 
 export type FeedbackStore = (env: Env, input: FeedbackPayload) => Promise<StoreResult>
 
-const PATH = '/api/feedback'
+const FEEDBACK_PATH = '/api/feedback'
+const STATS_PATH = '/api/site-stats'
+const STATS_BROWSER_CACHE = 'public, max-age=300'
 const MAX_MESSAGE_LENGTH = 2000
 
 const CORS_HEADERS = {
@@ -99,11 +120,108 @@ export const storeWithGitHub: FeedbackStore = async (env, input) => {
     })
 }
 
+/** The browser may keep the answer for five minutes. */
+function siteStatsResponse(stats: FetchedSiteStats): Response {
+    return json(stats, 200, { 'cache-control': STATS_BROWSER_CACHE })
+}
+
 /** Builds the worker with the given store, so the handler can be tested. */
-export function createWorker(store: FeedbackStore) {
+export function createWorker(store: FeedbackStore, options: WorkerOptions = {}) {
+    const statsFetcher =
+        options.statsFetcher ?? ((env: Env) => fetchSiteStats({ githubToken: env.GITHUB_TOKEN }))
+    const statsCache = options.statsCache ?? createSiteStatsCache()
+    const seed: FetchedSiteStats = options.statsSeed ?? {
+        stars: siteStatsSeed.stars,
+        weeklyDownloads: siteStatsSeed.weeklyDownloads,
+        fetchedAt: siteStatsSeed.fetchedAt,
+    }
+    let pendingRefresh: Promise<FetchedSiteStats> | null = null
+
+    /**
+     * Reads the upstream counters once and stores the result for another
+     * hour. A counter that cannot be read keeps its previous value, so a
+     * failure is cached like a success and the upstream APIs are not asked
+     * again before the hour is over.
+     */
+    function refreshSiteStats(env: Env, previous: FetchedSiteStats): Promise<FetchedSiteStats> {
+        pendingRefresh ??= statsFetcher(env)
+            .then(async fetched => {
+                if (fetched.stars === null || fetched.weeklyDownloads === null) {
+                    console.warn('The site statistics refresh failed, the previous values stay.')
+                }
+
+                const merged: FetchedSiteStats = {
+                    stars: fetched.stars ?? previous.stars,
+                    weeklyDownloads: fetched.weeklyDownloads ?? previous.weeklyDownloads,
+                    fetchedAt:
+                        fetched.stars !== null || fetched.weeklyDownloads !== null
+                            ? fetched.fetchedAt
+                            : previous.fetchedAt,
+                }
+                await statsCache.set(merged)
+                return merged
+            })
+            .finally(() => {
+                pendingRefresh = null
+            })
+
+        return pendingRefresh
+    }
+
+    async function getSiteStats(env: Env, ctx?: StatsContext): Promise<FetchedSiteStats> {
+        const cached = await statsCache.get()
+        if (cached?.fresh) return cached.stats
+
+        if (cached) {
+            // A visitor never waits for the refresh: the stale value answers
+            // now, and the next visitor gets the new one.
+            const refresh = refreshSiteStats(env, cached.stats).catch(error => {
+                console.error('The site statistics could not be refreshed.', error)
+            })
+            ctx?.waitUntil(refresh)
+            return cached.stats
+        }
+
+        return refreshSiteStats(env, seed)
+    }
+
+    async function handleSiteStats(
+        request: Request,
+        env: Env,
+        ctx?: StatsContext
+    ): Promise<Response> {
+        if (request.method === 'OPTIONS') {
+            return new Response(null, { status: 204, headers: { allow: 'GET, HEAD, OPTIONS' } })
+        }
+        if (request.method !== 'GET' && request.method !== 'HEAD') {
+            return json({ error: 'Only GET is allowed.' }, 405, { allow: 'GET, HEAD' })
+        }
+
+        let stats: FetchedSiteStats
+        try {
+            stats = await getSiteStats(env, ctx)
+        } catch (error) {
+            console.error('The site statistics could not be read.', error)
+            return json({ error: 'The site statistics could not be read.' }, 503, {
+                'cache-control': 'no-store',
+            })
+        }
+
+        const response = siteStatsResponse(stats)
+        if (request.method === 'HEAD') {
+            return new Response(null, { status: response.status, headers: response.headers })
+        }
+
+        return response
+    }
+
     return {
-        async fetch(request: Request, env: Env): Promise<Response> {
-            if (new URL(request.url).pathname !== PATH) {
+        async fetch(request: Request, env: Env, ctx?: StatsContext): Promise<Response> {
+            const pathname = new URL(request.url).pathname
+
+            if (pathname === STATS_PATH) return handleSiteStats(request, env, ctx)
+
+            if (pathname !== FEEDBACK_PATH) {
                 return json({ error: 'Not found.' }, 404, {})
             }
 

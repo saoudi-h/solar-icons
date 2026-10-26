@@ -19,6 +19,7 @@ public/_headers
 public/robots.txt
 public/_redirects
 public/data/icons.json
+public/data/hero
 public/optimized
 public/saoudi-h.png
 public/og/*
@@ -26,3 +27,5 @@ public/og/*
 src/generated/icon-chunks
 src/generated/icon-chunk-loaders.ts
 src/generated/site-stats.json
+src/generated/hero-initial.json
+src/generated/hero-categories.json
