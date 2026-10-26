@@ -53,6 +53,9 @@ jobs:
             - name: Validate package exports
               run: pnpm check:exports
 
+            - name: Validate bundle imports
+              run: pnpm check:dist-imports
+
             - name: Validate Figma catalog synchronization
               run: pnpm check:figma-catalog
 

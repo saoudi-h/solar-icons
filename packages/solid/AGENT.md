@@ -51,6 +51,7 @@ The Solid compiler wraps any single SVG-element child in an `<svg>...</svg>` tem
 
 ## ⚠️ Known Constraints
 
+- **`unplugin-solid` stays on `^2`** (peer is `solid-js >= 1.6`). Version 3 compiles to the Solid 2 runtime (`@solidjs/web`), which Solid 1 consumers do not have; Renovate blocks it at `<3` until Solid 2 is stable, and `pnpm check:dist-imports` fails a build that imports an undeclared module.
 - **No Vite config, no CJS output** — all bundling goes through `tsdown`.
 - **JSX namespace must be `solid-js`** in the generated files; the `Component<Props>` shape (not React's `FC`).
 - **No `forwardRef`** — Solid components are plain functions.

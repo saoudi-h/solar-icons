@@ -7,6 +7,11 @@
     "minimumReleaseAge": "7 days",
     "packageRules": [
         {
+            "description": "unplugin-solid 3 compiles for Solid 2, which is still a release candidate; the package supports Solid 1. Lift once Solid 2 is stable.",
+            "matchPackageNames": ["unplugin-solid"],
+            "allowedVersions": "<3"
+        },
+        {
             "groupName": "all major dependencies",
             "groupSlug": "all-major",
             "matchUpdateTypes": ["major"],

@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[SOLID-V1-RUNTIME]** Fix issue #634: `@solar-icons/solid@2.3.3` imported the Solid 2 runtime (`@solidjs/web`) after the `unplugin-solid` 2 → 3 bump, breaking Solid 1 consumers. Reverted the plugin to `^2.0.0` (patch changeset), blocked `unplugin-solid` at `<3` in Renovate until Solid 2 is stable, and added `pnpm check:dist-imports` (es-module-lexer over every built `dist`, wired in CI and both release workflows) so a bundle can no longer import an undeclared module. Maintainer decision: stay on Solid 1 and move to Solid 2 once stable, no second package. Branch: `fix/solid-unplugin-v2`. `Priority: 🔴` `Complexity: S` *Issue: #634*
+
 - [x] **[DOCS-LIVE-SITE-STATS]** Replace the docs homepage's build-frozen GitHub/npm counters with a same-origin Worker endpoint. Keep every page static, cache complete upstream results for about one hour, share one browser request/value between the header and homepage section, and retain the generated build values as first-paint seed/fallback. `Total Icons` and `Total Packages` remain build-time constants; `@solar-icons/react-perf` remains in the npm sum. Verified: build, typecheck, 37 unit tests, 10 e2e tests, lint, format, and Wrangler dry-run. `Priority: 🟠` `Complexity: M`
 
 - [ ] **[DOCS-START-REMOVE-COMPAT]** Move the components that `apps/docs-start` shares from `apps/docs` into `apps/docs-start`, rewrite them with the TanStack Router and Start APIs, and delete `src/compat` with its aliases. Behavior, URLs and the e2e tests stay unchanged. `Priority: 🟠` `Complexity: L` *See: ISSUE-DOCS-COMPAT-LAYER*
