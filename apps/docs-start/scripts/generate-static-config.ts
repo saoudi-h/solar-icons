@@ -37,6 +37,8 @@ const headers = [
     '/blog/rss.xml\n  Content-Type: application/rss+xml; charset=utf-8',
     '/llms.txt\n  Content-Type: text/plain; charset=utf-8',
     '/llms-full.txt\n  Content-Type: text/plain; charset=utf-8',
+    // The file names of the hero icons carry a hash of their content.
+    '/data/hero/*\n  Cache-Control: public, max-age=31536000, immutable',
 ]
 
 if (noIndex) {
