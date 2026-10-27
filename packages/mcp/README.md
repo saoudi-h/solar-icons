@@ -43,3 +43,7 @@ pnpm --filter @solar-icons/mcp build
 pnpm --filter @solar-icons/mcp start   # stdio
 npx @modelcontextprotocol/inspector npx -y @solar-icons/mcp  # inspector
 ```
+
+## Blazor preview
+
+The Blazor package is an unreleased preview. Use `--framework blazor` in the CLI or `framework: "blazor"` in MCP search/get tools for Razor examples. Static components include the style in their name, such as `<HomeLinearIcon Size="24" />`, under `@using SolarIcons.Blazor`.

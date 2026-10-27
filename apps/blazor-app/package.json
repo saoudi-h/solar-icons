@@ -1,0 +1,10 @@
+{
+    "name": "blazor-app",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Native Blazor playground for Solar Icons",
+    "scripts": {
+        "dev:dotnet": "dotnet run --project SolarIcons.Playground -- --environment Development --urls http://127.0.0.1:5190",
+        "build:dotnet": "dotnet build SolarIcons.Playground -c Release"
+    }
+}

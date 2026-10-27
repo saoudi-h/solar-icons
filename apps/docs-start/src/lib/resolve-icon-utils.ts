@@ -25,6 +25,7 @@ export type IconifyFrameworkIcon =
     | 'laravel'
     | 'rails'
     | 'flutter'
+    | 'blazor'
 
 export const iconifyIcons = [
     'react',
@@ -38,6 +39,7 @@ export const iconifyIcons = [
     'laravel',
     'rails',
     'flutter',
+    'blazor',
 ]
 
 export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
@@ -53,6 +55,7 @@ export const renderIconify = (icon: IconifyFrameworkIcon): ReactElement => {
         laravel: 'devicon:laravel',
         rails: 'thesvg-color:ruby-on-rails',
         flutter: 'devicon:flutter',
+        blazor: 'devicon:blazor',
     }
     const iconName = iconifyMap[icon as keyof typeof iconifyMap]
     return createElement(Icon, { icon: iconName })

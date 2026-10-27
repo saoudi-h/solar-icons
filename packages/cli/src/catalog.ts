@@ -41,6 +41,7 @@ export const FRAMEWORKS = [
     'blade',
     'rails',
     'flutter',
+    'blazor',
 ] as const
 export type Framework = (typeof FRAMEWORKS)[number]
 
@@ -158,6 +159,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `<%= solar_icon("${kebab}", weight: "${style}") %>`
         case 'flutter':
             return `import 'package:flutter_solar_icons/${toDartPath(style, kebab)}.dart';\n${rooted}()`
+        case 'blazor':
+            return `@using SolarIcons.Blazor\n\n<${rooted} Size="24" />`
         default:
             return `import { ${generic} } from "@solar-icons/${framework}/${style}/${kebab}";`
     }
@@ -175,6 +178,7 @@ export function rootImportSnippet(name: string, style: Style, framework: Framewo
         case 'nuxt':
         case 'blade':
         case 'rails':
+        case 'blazor':
             return importSnippet(name, style, framework)
         case 'flutter':
             return `import 'package:flutter_solar_icons/flutter_solar_icons.dart';\n${rooted}()`

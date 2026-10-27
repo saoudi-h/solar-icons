@@ -1,0 +1,39 @@
+@using SolarIcons.Blazor
+@using System.Globalization
+
+<div class="laboratory" data-ready="@ready.ToString().ToLowerInvariant()">
+    <header><a class="brand" href="/">SOLAR <span>/ BLAZOR</span></a><nav aria-label="Rendering mode"><a href="/">Static SSR</a><a href="/server">Server</a><a href="/wasm">WebAssembly</a><a href="/auto">Auto</a></nav><span class="badge" data-runtime>@(OperatingSystem.IsBrowser() ? "WebAssembly" : "Server") · @(ready ? "interactive" : "prerendered")</span></header>
+    <section class="intro"><span class="eyebrow">LOCAL PROOF OF CONCEPT</span><h1>One catalogue.<br />Six expressions.</h1><p>Native Blazor components, generated from the Solar source catalogue.</p><span class="catalogue-count">@GalleryRegistry.Icons.Length.ToString("N0", CultureInfo.InvariantCulture) icons · 6 styles</span></section>
+    <section class="controls" aria-label="Icon controls">
+        <label>Style<select aria-label="Style" @bind="weight" disabled="@(!Interactive)">@foreach (var value in Enum.GetValues<IconWeight>()) { <option value="@value">@value</option> }</select></label>
+        <label>Size<input aria-label="Size" type="number" min="12" max="96" @bind="size" @bind:event="oninput" disabled="@(!Interactive)" /></label>
+        <label>Primary<input aria-label="Primary color" type="color" @bind="primary" disabled="@(!Interactive)" /></label>
+        <label>Accent<input aria-label="Accent color" type="color" @bind="secondary" disabled="@(!Interactive)" /></label>
+        <label>Opacity<input aria-label="Accent opacity" type="number" min="0" max="1" step="0.1" @bind="opacity" @bind:event="oninput" disabled="@(!Interactive)" /></label>
+        <button id="cycle-style" @onclick="Cycle" disabled="@(!Interactive)">Next style →</button>
+    </section>
+    <section class="spotlight" aria-label="Representative icons">
+        <div><HomeIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="Home" /><span>Home</span></div>
+        <div id="heart-preview"><HeartIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="Favorite" /><span>Heart</span></div>
+        <div><DnaIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="DNA" /><span>DNA</span></div>
+        <div><TicketStarIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="Ticket" /><span>Ticket</span></div>
+    </section>
+    <div class="section-heading"><div><h2>The catalogue</h2><p>Explore every icon with the same component API.</p></div><input aria-label="Search icons" placeholder="Search icons…" @bind="search" @bind:event="oninput" disabled="@(!Interactive)" /></div>
+    <section class="icon-grid" style="--solar-color:@primary;--solar-size:@(size)px;--solar-secondary-color:@secondary;--solar-secondary-opacity:@opacity.ToString(CultureInfo.InvariantCulture)" aria-label="Catalogue">
+        @foreach (var icon in Matches.Take(48)) { <article @key="icon.Name"><DynamicComponent Type="icon.Type" Parameters="Parameters" /><span>@icon.Name</span></article> }
+    </section>
+    <footer><span>Showing @Matches.Take(48).Count() of @Matches.Count() matching icons</span><span>Icons by <a href="https://www.figma.com/community/file/1166831539721848736">480 Design</a> · CC BY 4.0 · Experimental API</span></footer>
+</div>
+
+@code {
+    [Parameter] public bool Interactive { get; set; }
+    private IconWeight weight = IconWeight.BoldDuotone;
+    private int size=32;
+    private string primary="#172c29",secondary="#27a782",search="";
+    private double opacity=0.5;
+    private bool ready;
+    private IEnumerable<(string Name,Type Type)> Matches=>GalleryRegistry.Icons.Where(icon=>icon.Name.Contains(search,StringComparison.OrdinalIgnoreCase));
+    private IDictionary<string,object> Parameters=>new Dictionary<string,object>{{"Weight",weight}};
+    private void Cycle()=>weight=(IconWeight)(((int)weight+1)%6);
+    protected override void OnAfterRender(bool firstRender) { if(firstRender) { ready=true; StateHasChanged(); } }
+}

@@ -17,6 +17,23 @@ function repoPath(p: string): string {
 }
 
 describe('import snippets are verified against packages', () => {
+    it('blazor emits Razor namespace and static components for all six styles', () => {
+        const styles = [
+            'bold',
+            'bold-duotone',
+            'broken',
+            'linear',
+            'line-duotone',
+            'outline',
+        ] as const
+        const suffixes = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline']
+        for (const [index, style] of styles.entries()) {
+            const expected = `@using SolarIcons.Blazor\n\n<ArrowUp${suffixes[index]}Icon Size="24" />`
+            expect(importSnippet('arrow-up', style, 'blazor')).toBe(expected)
+            expect(rootImportSnippet('arrow-up', style, 'blazor')).toBe(expected)
+        }
+    })
+
     it('react per-file is generic name with style in path, not both', () => {
         const snippet = importSnippet('arrow-up', 'linear', 'react')
         expect(snippet).toBe('import { ArrowUpIcon } from "@solar-icons/react/linear/arrow-up";')

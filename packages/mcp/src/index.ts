@@ -19,6 +19,7 @@ import {
     rootImportSnippet,
     searchCatalog,
     STYLES,
+    FRAMEWORKS,
     cdnSvgUrl,
     type Style,
 } from '@solar-icons/cli'
@@ -40,7 +41,7 @@ function truncate(text: string): { text: string; truncated: boolean } {
 }
 
 function toFrameworkList(): string {
-    return 'react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade|rails|flutter'
+    return FRAMEWORKS.join('|')
 }
 
 // ---------------------------------------------------------------------------
@@ -83,23 +84,7 @@ Returns: { total, count, query, results: [{ name, category, tags, import? }] } +
                 .optional()
                 .describe('Style filter'),
             category: z.string().optional().describe('Category filter'),
-            framework: z
-                .enum([
-                    'react',
-                    'vue',
-                    'svelte',
-                    'solid',
-                    'angular',
-                    'react-native',
-                    'nuxt',
-                    'static',
-                    'js',
-                    'blade',
-                    'rails',
-                    'flutter',
-                ] as const)
-                .optional()
-                .describe('Framework for import snippet'),
+            framework: z.enum(FRAMEWORKS).optional().describe('Framework for import snippet'),
         },
         annotations: {
             readOnlyHint: true,
@@ -194,23 +179,7 @@ Returns: { name, style, framework, category, import, cdn, svg } + markdown
                 .enum([...STYLES] as [string, ...string[]])
                 .default('linear')
                 .describe('Style'),
-            framework: z
-                .enum([
-                    'react',
-                    'vue',
-                    'svelte',
-                    'solid',
-                    'angular',
-                    'react-native',
-                    'nuxt',
-                    'static',
-                    'js',
-                    'blade',
-                    'rails',
-                    'flutter',
-                ] as const)
-                .default('react')
-                .describe('Framework for snippet'),
+            framework: z.enum(FRAMEWORKS).default('react').describe('Framework for snippet'),
         },
         annotations: {
             readOnlyHint: true,
@@ -257,7 +226,7 @@ Returns: { name, style, framework, category, import, cdn, svg } + markdown
             const lines = [
                 `# ${name} — ${style} — ${framework}`,
                 '',
-                `\`\`\`ts\n${snippet}\n\`\`\``,
+                `\`\`\`${framework === 'blazor' ? 'razor' : 'ts'}\n${snippet}\n\`\`\``,
                 '',
                 `- Category: ${entry.category}`,
                 `- CDN: ${cdn}`,
@@ -385,19 +354,7 @@ Returns: { name, category, tags, styles, imports, rootImports, svg } + markdown
             }
             const styles = [...STYLES]
             const imports: Record<string, string> = {}
-            for (const fw of [
-                'react',
-                'vue',
-                'svelte',
-                'solid',
-                'angular',
-                'react-native',
-                'nuxt',
-                'static',
-                'js',
-                'blade',
-                'flutter',
-            ] as const) {
+            for (const fw of FRAMEWORKS) {
                 imports[fw] = importSnippet(name, 'linear', fw as any)
             }
             const rootImports: Record<string, string> = {}
