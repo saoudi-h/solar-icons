@@ -98,7 +98,7 @@ export const CommunitySection = () => {
                         <div className="mt-2 flex max-w-2xl gap-4">
                             {/* Stat Card 1: Downloads */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Weekly Downloads" value={weeklyDownloads} />
+                                <StatCard title="Weekly npm downloads" value={weeklyDownloads} />
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
                             <motion.div variants={itemVariants} className="flex-1">
