@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { fetchSiteStats, NPM_PACKAGES } from './site-stats'
+import { fetchSiteStats, NPM_PACKAGES, npmDownloadsWindow } from './site-stats'
 
 const downloads = Object.fromEntries(NPM_PACKAGES.map((pkg, index) => [pkg, 10 + index]))
 const totalDownloads = NPM_PACKAGES.reduce((total, pkg) => total + downloads[pkg]!, 0)
@@ -21,12 +21,27 @@ function fakeFetch(options: FakeFetchOptions = {}) {
             return options.github?.() ?? Response.json({ stargazers_count: 300 })
         }
 
-        const pkg = url.slice(url.indexOf('/last-week/') + '/last-week/'.length)
+        const pkg = url.slice(url.indexOf('/@solar-icons/') + 1)
         return options.npm?.(pkg) ?? Response.json({ downloads: downloads[pkg] ?? 0 })
     }
 
     return { impl, calls }
 }
+
+describe('npmDownloadsWindow', () => {
+    it('ends two days ago and covers seven days', () => {
+        expect(npmDownloadsWindow(new Date('2026-10-27T14:00:00Z'))).toBe('2026-10-19:2026-10-25')
+    })
+
+    it('is requested explicitly for every package', async () => {
+        const { impl, calls } = fakeFetch()
+        await fetchSiteStats({ fetchImpl: impl })
+
+        const npmCalls = calls.filter(url => url.includes('api.npmjs.org'))
+        expect(npmCalls.every(url => !url.includes('last-week'))).toBe(true)
+        expect(npmCalls.every(url => url.includes(`/point/${npmDownloadsWindow()}/`))).toBe(true)
+    })
+})
 
 describe('fetchSiteStats', () => {
     it('reads the star count and the sum of every package', async () => {

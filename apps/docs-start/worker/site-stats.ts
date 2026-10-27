@@ -33,7 +33,19 @@ export const NPM_PACKAGES = [
 
 const REPO = 'saoudi-h/solar-icons'
 const GITHUB_API = `https://api.github.com/repos/${REPO}`
-const NPM_API = 'https://api.npmjs.org/downloads/point/last-week/'
+const NPM_API = 'https://api.npmjs.org/downloads/point/'
+const DAY_MS = 24 * 60 * 60 * 1000
+
+/**
+ * The seven days that npm has fully counted. The `last-week` shortcut of the
+ * npm API can answer a window that is months old, so the window is explicit.
+ * npm publishes a day late, hence the two days of margin.
+ */
+export function npmDownloadsWindow(now = new Date()): string {
+    const day = (offset: number) =>
+        new Date(now.getTime() - offset * DAY_MS).toISOString().slice(0, 10)
+    return `${day(8)}:${day(2)}`
+}
 const REQUEST_TIMEOUT_MS = 8_000
 
 export interface FetchSiteStatsOptions {
@@ -88,7 +100,7 @@ async function fetchWeeklyDownloads(fetchImpl: typeof fetch): Promise<number> {
     const results = await Promise.allSettled(
         NPM_PACKAGES.map(async pkg => {
             const payload = await getJson(
-                `${NPM_API}${pkg}`,
+                `${NPM_API}${npmDownloadsWindow()}/${pkg}`,
                 { headers: { accept: 'application/json' } },
                 fetchImpl
             )
