@@ -1,5 +1,16 @@
 # @solar-icons/mcp
 
+## 2.6.0
+
+### Minor Changes
+
+- [#638](https://github.com/saoudi-h/solar-icons/pull/638) [`8c85a2c`](https://github.com/saoudi-h/solar-icons/commit/8c85a2cd1aa31df09f04a98e5df53d49b44cc382) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Support Blazor Razor snippets in framework selection, icon search, retrieval, and information tools.
+
+### Patch Changes
+
+- Updated dependencies [[`8c85a2c`](https://github.com/saoudi-h/solar-icons/commit/8c85a2cd1aa31df09f04a98e5df53d49b44cc382)]:
+  - @solar-icons/cli@2.8.0
+
 ## 2.5.0
 
 ### Minor Changes
