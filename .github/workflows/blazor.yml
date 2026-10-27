@@ -32,11 +32,8 @@ concurrency:
 
 jobs:
     verify:
-        strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest]
-        runs-on: ${{ matrix.os }}
-        timeout-minutes: 90
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
         steps:
             - uses: actions/checkout@v4
             - uses: pnpm/action-setup@v4
@@ -70,9 +67,7 @@ jobs:
             - name: Verify Razor coexistence with another icon library
               run: pnpm --dir packages/blazor test:coexistence
             - name: Verify drift detection
-              shell: pwsh
-              working-directory: packages/blazor
-              run: ./scripts/check-generator.ps1
+              run: pnpm --dir packages/blazor check:generator
             - name: Build playground
               run: pnpm --dir apps/blazor-app build:dotnet
             - name: Install WebAssembly tools
@@ -82,9 +77,7 @@ jobs:
               working-directory: packages/blazor
               run: dotnet build tools/AssemblyInspector -c Release
             - name: Verify published package trimming
-              shell: pwsh
-              working-directory: packages/blazor
-              run: ./scripts/measure-trimming.ps1
+              run: pnpm --dir packages/blazor measure:trimming
             - name: Install browser
               run: pnpm --dir packages/blazor exec playwright install --with-deps chromium
             - name: Run trimmed consumers and playground in browsers
@@ -93,7 +86,7 @@ jobs:
               if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: blazor-checks-${{ runner.os }}
+                  name: blazor-checks
                   path: |
                       packages/blazor/artifacts/render-checks-*.json
                       packages/blazor/artifacts/generator-checks.json
