@@ -25,8 +25,14 @@ test('the v1 documentation keeps its banner and the link to v2', async ({ page }
 test('the search dialog finds a page from the static index', async ({ page }) => {
     await page.goto('/docs/v2')
 
-    await page.getByRole('button', { name: /Search Ctrl K/ }).click()
-    await page.getByRole('combobox', { name: 'Search' }).fill('React Native')
+    const search = page.getByRole('combobox', { name: 'Search' })
+    // A prerendered button can receive the first click before hydration attaches its handler.
+    await expect(async () => {
+        if (!(await search.isVisible()))
+            await page.getByRole('button', { name: /Search Ctrl K/ }).click()
+        await expect(search).toBeVisible({ timeout: 1_000 })
+    }).toPass({ timeout: 15_000 })
+    await search.fill('React Native')
 
     const result = page.getByRole('option', { name: /Docs V2 Packages React Native/ }).first()
     await expect(result).toBeVisible()

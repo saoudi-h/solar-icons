@@ -12,6 +12,6 @@ Search by name, category, or related terms. Insert an icon immediately or select
 
 The complete icon library ships inside the plugin. No account or API key is required.
 
-The inserted SVGs match the assets distributed through the official Solar Icons packages for React, React Native, Flutter, Vue, Nuxt, Svelte, Solid, Angular, Laravel Blade, Rails, JavaScript, and Static, with Codemod, CLI, and MCP developer tools.
+The inserted SVGs match the assets distributed through the official Solar Icons packages for React, React Native, Flutter, Vue, Nuxt, Svelte, Solid, Angular, Laravel Blade, Rails, JavaScript, and Static, with Codemod, CLI, and MCP developer tools. A Blazor package is in development as an unreleased preview.
 
 Solar Icons distributes the Solar Icon Set created by 480 Design under CC BY 4.0.

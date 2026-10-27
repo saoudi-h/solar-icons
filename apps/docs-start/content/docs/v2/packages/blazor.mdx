@@ -1,0 +1,92 @@
+---
+title: Blazor
+description: Native Blazor components with static styles, runtime weights, CSS theming, and duotone controls.
+icon: blazor
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+<Callout type="info">
+    This package is an unreleased preview for .NET 8 and later. The initial version is provisional.
+    It has not been published to NuGet.org; use the local package instructions below.
+</Callout>
+
+## Install the local preview
+
+Build and pack `packages/blazor` using its README, then install the artifact into a .NET 8 or later Blazor app:
+
+```powershell
+dotnet add package SolarIcons.Blazor --version 0.1.0-preview.2 --source <repository>/packages/blazor/artifacts/packages
+```
+
+Add this namespace to `_Imports.razor`:
+
+```razor
+@using SolarIcons.Blazor
+```
+
+## Static styles
+
+Use a style-specific component when the style is known in advance. Its name includes the icon and style:
+
+```razor
+<HomeLinearIcon Size="24" />
+<HeartBoldDuotoneIcon Size="32" SecondaryColor="#ef4444" SecondaryOpacity="0.4" />
+```
+
+Every icon has `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, and `Outline` forms. Unused icons can be removed by .NET trimming.
+
+## Dynamic weights
+
+A dynamic component supports all six styles of one icon. Its `Weight` defaults to `Linear`:
+
+```razor
+<HomeIcon Weight="IconWeight.Outline" Size="24" />
+```
+
+The dynamic form retains that icon's six styles. Prefer static components when switching styles is unnecessary.
+
+## Parameters and CSS defaults
+
+`Size` accepts numeric text in pixels or CSS lengths such as `2rem`. `Color`, `StrokeWidth`, `SecondaryColor`, and `SecondaryOpacity` set per-icon values. Secondary opacity accepts finite values between zero and one, including zero.
+
+The defaults are size 24px, color `currentColor`, stroke width 1.5, and secondary opacity 0.5. Parent CSS variables provide shared defaults without a provider service:
+
+```razor
+<div style="--solar-size:32px;--solar-color:#172c29;--solar-secondary-color:#27a782">
+    <HeartLineDuotoneIcon />
+</div>
+```
+
+Supported variables are `--solar-size`, `--solar-color`, `--solar-stroke-width`, `--solar-secondary-color`, and `--solar-secondary-opacity`. `Isolated="true"` ignores their inherited defaults. Explicit `Style` follows parameter-generated CSS. `Class` is merged with the Solar classes, and additional SVG attributes are forwarded.
+
+## Accessibility
+
+Icons without a label are decorative. Supply `Title`, `aria-label`, or `aria-labelledby` for informative icons:
+
+```razor
+<HomeLinearIcon Title="Home" />
+<HeartIcon aria-label="Favorite" />
+```
+
+The library encodes title text and respects explicit accessibility attributes. Metadata aliases remain available; deprecated names carry C# `[Obsolete]` guidance.
+
+## Hosting and playground
+
+The library renders inline SVG without JavaScript interop and works with static SSR, Interactive Server, Interactive WebAssembly, and Interactive Auto. The application chooses the render mode.
+
+The existing icon explorer's **Blazor** tab shows Razor examples for the selected icon and style. The separate Blazor playground in `apps/blazor-app` exercises the real .NET components across hosting modes. Run it with `pnpm --dir packages/blazor dev:playground` after generating the catalogue.
+
+## Using another icon library
+
+Qualify component and enum names if another imported library defines the same name:
+
+```razor
+<SolarIcons.Blazor.HeartIcon Weight="SolarIcons.Blazor.IconWeight.Bold" />
+```
+
+The library targets .NET 8; its rendering and trimmed WebAssembly consumption are checked against .NET 8 and .NET 10 applications. The playground runs on .NET 10.
+
+## License
+
+Code is MIT. Icons are CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736); attribution is required. The NuGet archive includes the code license and third-party attribution notice.

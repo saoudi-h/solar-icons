@@ -3,7 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import icons from '../generated/icons.json'
-import { iconifyIcons } from '../src/lib/resolveIconUtils'
+import { iconifyIcons } from '../src/lib/resolve-icon-utils'
 
 const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../content/docs')
 const bundledIcons = new Set(Object.keys(icons))
