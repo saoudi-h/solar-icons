@@ -80,6 +80,36 @@ foreach (var (parameter, value) in new (string, object)[] { ("SecondaryOpacity",
     try { await Render(typeof(HomeIcon), new() { [parameter] = value }); } catch (ArgumentException) { rejected = true; }
     Assert(rejected, $"Invalid {parameter} rejected");
 }
+RenderFragment Probe() => builder => { builder.OpenComponent<ContextProbe>(0); builder.CloseComponent(); };
+var provided = XElement.Parse(await Render(typeof(SolarProvider), new() { ["Color"] = "#3b82f6", ["Size"] = "32", ["StrokeWidth"] = "2", ["SecondaryColor"] = "red", ["SecondaryOpacity"] = 0d, ["ChildContent"] = Probe(), ["AdditionalAttributes"] = new Dictionary<string, object> { ["class"] = "theme", ["style"] = "margin:0;" } }));
+var providedStyle = (string)provided.Attribute("style")!;
+Assert(provided.Name.LocalName == "div" && (string?)provided.Attribute("class") == "theme", "Provider wrapper keeps extra attributes");
+Assert(providedStyle.StartsWith("display:contents") && providedStyle.Contains("--solar-size:32px") && providedStyle.Contains("--solar-color:#3b82f6") && providedStyle.Contains("--solar-stroke-width:2") && providedStyle.Contains("--solar-secondary-color:red") && providedStyle.Contains("--solar-secondary-opacity:0") && providedStyle.EndsWith("margin:0"), "Provider sets the CSS variables");
+Assert(provided.Element("span")?.Value == "#3b82f6|32", "Consumers read the context");
+var bare = XElement.Parse(await Render(typeof(SolarProvider), new() { ["ChildContent"] = Probe() }));
+Assert((string?)bare.Attribute("style") == "display:contents" && bare.Element("span")?.Value == "|", "Provider without values sets nothing");
+foreach (var (parameter, value) in new (string, object)[] { ("SecondaryOpacity", 1.1d), ("SecondaryOpacity", double.NaN), ("Size", " "), ("Size", "-1") })
+{
+    var rejected = false;
+    try { await Render(typeof(SolarProvider), new() { [parameter] = value }); } catch (ArgumentException) { rejected = true; }
+    Assert(rejected, $"Invalid provider {parameter} rejected");
+}
+var nested = XElement.Parse(await Render(typeof(SolarProvider), new() { ["Color"] = "red", ["ChildContent"] = (RenderFragment)(builder =>
+{
+    builder.OpenComponent<SolarProvider>(0);
+    builder.AddComponentParameter(1, "Color", "blue");
+    builder.AddComponentParameter(2, "ChildContent", Probe());
+    builder.CloseComponent();
+}) }));
+Assert(nested.Descendants("span").Single().Value == "blue|", "The nearest provider wins");
+var changedColor = "";
+await using var live = new HtmlRenderer(services, loggerFactory);
+var liveRoot = await live.Dispatcher.InvokeAsync(() => live.RenderComponentAsync(typeof(SolarProvider), ParameterView.FromDictionary(new Dictionary<string, object?> { ["Color"] = "red", ["ColorChanged"] = EventCallback.Factory.Create<string?>(new object(), value => changedColor = value ?? ""), ["ChildContent"] = Probe() })));
+await live.Dispatcher.InvokeAsync(() => ContextProbe.Latest!.SetColorAsync("green"));
+await liveRoot.QuiescenceTask;
+var updated = XElement.Parse(await live.Dispatcher.InvokeAsync(() => liveRoot.ToHtmlString()));
+Assert(((string)updated.Attribute("style")!).Contains("--solar-color:green") && updated.Element("span")!.Value == "green|" && changedColor == "green", "A descendant updates the provider and consumers follow");
+await live.Dispatcher.InvokeAsync(() => ContextProbe.Latest!.SetSizeAsync("-1")).ContinueWith(task => Assert(task.IsFaulted, "Invalid size from a descendant is rejected"));
 var types = typeof(HomeIcon).Assembly.GetTypes().Where(type => !type.IsAbstract && typeof(SolarIconBase).IsAssignableFrom(type)).ToArray();
 var obsolete = types.Where(type => type.GetCustomAttribute<ObsoleteAttribute>() is not null).ToArray();
 var aliasTypes = types.Where(type => type.BaseType != typeof(SolarIconBase) && type.BaseType != typeof(SolarDynamicIconBase)).ToArray();
@@ -107,3 +137,16 @@ var result = new { passed = true, framework, assertions, logicalIcons = fixture.
 File.WriteAllText(Path.Combine(root, $"artifacts/render-checks-net{Environment.Version.Major}.0.json"), JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true }));
 Console.WriteLine(JsonSerializer.Serialize(result));
 record Payload(string Name, string Weight, string Type, string Body);
+
+class ContextProbe : ComponentBase
+{
+    public static SolarContext? Latest;
+    [CascadingParameter] SolarContext? Solar { get; set; }
+    protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder builder)
+    {
+        Latest = Solar;
+        builder.OpenElement(0, "span");
+        builder.AddContent(1, Solar is null ? "none" : Solar.Color + "|" + Solar.Size);
+        builder.CloseElement();
+    }
+}

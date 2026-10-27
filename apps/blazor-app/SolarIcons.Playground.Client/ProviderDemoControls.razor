@@ -1,0 +1,10 @@
+@using SolarIcons.Blazor
+
+<button id="provider-next" @onclick="Next" disabled="@(!Interactive)">Change color from a descendant (@Solar?.Color)</button>
+
+@code {
+    [CascadingParameter] private SolarContext? Solar { get; set; }
+    private static readonly string[] Palette = ["#172c29", "#27a782", "#3b82f6", "#d946ef"];
+    private bool Interactive => OperatingSystem.IsBrowser() || RendererInfo.IsInteractive;
+    private Task Next() => Solar!.SetColorAsync(Palette[(Array.IndexOf(Palette, Solar.Color) + 1) % Palette.Length]);
+}

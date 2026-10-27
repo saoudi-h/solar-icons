@@ -37,6 +37,16 @@ The default size is 24 pixels, primary color is `currentColor`, stroke width is 
 </div>
 ```
 
+`SolarProvider` sets the same variables on a `display: contents` wrapper and shares them with descendants through a `SolarContext` cascading parameter:
+
+```razor
+<SolarProvider @bind-Color="color" Size="24">
+    <HeartBoldIcon />
+</SolarProvider>
+```
+
+A descendant can call `Solar.SetColorAsync("#3b82f6")` on its `[CascadingParameter] SolarContext`. The setters need an interactive render mode; in static SSR the variables apply and the context is readable.
+
 Use `Isolated="true"` to ignore Solar variable defaults. `Class` is merged with the generated Solar classes; explicit `Style` follows parameter-generated CSS and therefore wins on equal CSS specificity. Additional SVG, ARIA, and data attributes are forwarded to the root SVG. A static icon has classes such as `solar solar-home-linear`; a dynamic icon has `solar solar-home`.
 
 ## Accessibility and aliases

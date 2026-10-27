@@ -15,3 +15,5 @@ Detect Blazor through `.csproj` and `.razor` files. After installing the package
 Use static style-suffixed components when the style is fixed. Dynamic components default to `Linear` and retain that icon's six styles. Size is a CSS string; numeric text is pixels. Shared CSS variables use the same `--solar-*` names as the web packages. Use `Title` or ARIA labels for informative icons; unlabeled icons are decorative. The package requires no JavaScript interop.
 
 `npx @solar-icons/cli get home --style linear --framework blazor` emits the static Razor example. MCP search/get accept `framework: "blazor"`. Names, weights, and component parameters use PascalCase; CSS style selection uses the separate `Weight` parameter.
+
+`<SolarProvider Color="#3b82f6" Size="24">` sets the shared `--solar-*` variables on a `display: contents` div. Descendants read and change them through `[CascadingParameter] SolarContext`; setters (`SetColorAsync`, ...) need an interactive render mode.
