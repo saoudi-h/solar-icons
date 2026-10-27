@@ -47,7 +47,10 @@ const cs = (value: string): string =>
 for (const group of selected) {
     for (const weight of WEIGHTS) {
         const icon = group.styles[weight]
-        const body = (applyDuotoneStyle(icon.duotoneAccentInner, 'html') ?? '') + icon.inner
+        // Checkouts with CRLF line endings must generate the same output as LF ones.
+        const body = (
+            (applyDuotoneStyle(icon.duotoneAccentInner, 'html') ?? '') + icon.inner
+        ).replace(/\r\n?/g, '\n')
         const type = group.pascalName + weight + 'Icon'
         add(
             type,
