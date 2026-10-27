@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageId>SolarIcons.Blazor</PackageId>
+    <Version>0.1.0-preview.2</Version>
+    <Description>Generated Blazor components for Solar Icons. Unreleased preview.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/saoudi-h/solar-icons</RepositoryUrl>
+    <IsTrimmable>true</IsTrimmable>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.32" />
+    <SupportedPlatform Include="browser" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE-THIRD-PARTY" Pack="true" PackagePath="/" />
+    <Content Update="Generated/manifest.json" Pack="false" />
+  </ItemGroup>
+</Project>

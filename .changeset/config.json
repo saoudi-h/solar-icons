@@ -24,6 +24,7 @@
         "solid-app",
         "angular-app",
         "js-app",
-        "static-app"
+        "static-app",
+        "blazor-app"
     ]
 }
