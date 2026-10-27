@@ -6,7 +6,7 @@ An unreleased preview of native Blazor components for the Solar catalogue: 1,451
 
 Build and pack the library with the contributor commands below. In a separate .NET 8 or later Blazor application, install the resulting package from the local feed:
 
-```powershell
+```sh
 dotnet add package SolarIcons.Blazor --version 0.1.0-preview.2 --source <repository>/packages/blazor/artifacts/packages
 ```
 
@@ -94,9 +94,9 @@ dotnet workload install wasm-tools wasm-tools-net8
 pnpm --dir packages/blazor measure:trimming
 ```
 
-Pack the library first. The comparison publishes 1, 50, and all canonical icons, using static Linear components and dynamic components, on .NET 8 and .NET 10. Each framework also has an empty baseline. The script validates exact retained types, rejects IL trim warnings, records Brotli and uncompressed assembly/framework sizes, and uses fresh output directories. The dynamic cases retain the full weight switch and provide a live style control. AOT and Webcil are disabled; normal managed trimming and native runtime relinking remain enabled.
+Pack the library first. The WebAssembly relink needs `python3` on the path. The comparison publishes 1, 50, and all canonical icons, using static Linear components and dynamic components, on .NET 8 and .NET 10. Each framework also has an empty baseline. The script validates exact retained types, rejects IL trim warnings, records Brotli and uncompressed assembly/framework sizes, and uses fresh output directories. The dynamic cases retain the full weight switch and provide a live style control. AOT and Webcil are disabled; normal managed trimming and native runtime relinking remain enabled.
 
-Results are written under `artifacts/`, including a hash-addressed snapshot of the measured NuGet archive. `scripts/measure-trimming.ps1 -Resume` resumes an interrupted comparison only when the package and catalogue hashes match. `-ValidateOnly` rechecks the completed matrix against its saved archive. See `BENCHMARKS.md` for measured results and their limits.
+Results are written under `artifacts/`, including a hash-addressed snapshot of the measured NuGet archive. `measure:trimming -- --resume` resumes an interrupted comparison only when the package and catalogue hashes match. `--validate-only` rechecks the completed matrix against its saved archive. See `BENCHMARKS.md` for measured results and their limits.
 
 ## Credits and releases
 

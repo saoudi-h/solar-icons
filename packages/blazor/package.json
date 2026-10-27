@@ -16,9 +16,10 @@
         "test:package": "dotnet run --project probes/PackageConsumer -c Release -f net8.0 && dotnet run --project probes/PackageConsumer -c Release -f net10.0",
         "dev:playground": "pnpm --dir ../../apps/blazor-app dev:dotnet",
         "typecheck": "tsc --noEmit",
+        "check:generator": "tsx scripts/check-generator.ts",
         "test:coexistence": "dotnet run --project tests/Coexistence -c Release",
-        "measure:build": "pwsh -NoProfile -File scripts/measure-build.ps1",
-        "measure:trimming": "pwsh -NoProfile -File scripts/measure-trimming.ps1",
+        "measure:build": "tsx scripts/measure-build.ts",
+        "measure:trimming": "tsx scripts/measure-trimming.ts",
         "test:browser": "dotnet build tools/StaticHost -c Release && dotnet build ../../apps/blazor-app/SolarIcons.Playground -c Release && playwright test"
     },
     "devDependencies": {
