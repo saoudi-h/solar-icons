@@ -78,4 +78,5 @@ Run the [codemod](https://solar-icons.dev/docs/v2/migration-to-v2/codemod) to mi
 
 - **480 Design:** Original Solar icon set.
 - **Noaman Monther ([devnoaman](https://github.com/devnoaman)):** Flutter package (`flutter_solar_icons`).
+- **Taha Reeh ([TahaReeh](https://github.com/TahaReeh)):** Blazor package (`SolarIcons.Blazor`).
 - **Phosphor Icons** and **Lucide Icons:** Inspiration for the package structure.
