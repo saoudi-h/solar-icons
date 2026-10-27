@@ -37,7 +37,7 @@
             "registry": "nuget.org",
             "path": "packages/blazor",
             "logo": "devicon:blazor",
-            "summary": "Blazor components (unreleased preview)",
+            "summary": "Blazor components",
             "guide": "packages/blazor"
         },
         {

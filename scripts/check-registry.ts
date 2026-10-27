@@ -232,7 +232,7 @@ function badgeUrl(entry: RegistryPackage): string {
         case 'rubygems.org':
             return `https://img.shields.io/gem/v/${entry.package}?logo=rubygems`
         case 'nuget.org':
-            return `https://img.shields.io/nuget/vpre/${entry.package}?logo=nuget`
+            return `https://img.shields.io/nuget/v/${entry.package}?logo=nuget`
         default:
             return ''
     }

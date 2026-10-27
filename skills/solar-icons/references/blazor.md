@@ -1,10 +1,10 @@
 # Blazor
 
-`SolarIcons.Blazor` is an unreleased NuGet preview for .NET Blazor. Do not assume it is available on NuGet.org. Follow the local package instructions in `packages/blazor/README.md` until the release is announced.
+`SolarIcons.Blazor` is the NuGet package for .NET Blazor: `dotnet add package SolarIcons.Blazor`.
 
 The library supports .NET 8 and later. Use fully qualified component names such as `<SolarIcons.Blazor.HeartIcon />` when another imported icon library defines the same name.
 
-Detect Blazor through `.csproj` and `.razor` files. After installing the packed local preview, add `@using SolarIcons.Blazor` to `_Imports.razor`.
+Detect Blazor through `.csproj` and `.razor` files. After installing the package, add `@using SolarIcons.Blazor` to `_Imports.razor`.
 
 ```razor
 <HomeLinearIcon Size="24" />

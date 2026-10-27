@@ -1,13 +1,13 @@
 # Solar Icons for Blazor
 
-An unreleased preview of native Blazor components for the Solar catalogue: 1,451 icons across six styles (8,706 SVG variations). The library targets .NET 8 and supports .NET 8 and later applications. The maintainer accepted the package name and monorepo location in [proposal 632](https://github.com/saoudi-h/solar-icons/issues/632#issuecomment-6418051432). The initial version is provisional. Publishing and maintenance belong to the Solar Icons project; no NuGet package has been published from this branch.
+Native Blazor components for the Solar catalogue: 1,451 icons across six styles (8,706 SVG variations). The library targets .NET 8 and supports .NET 8 and later applications. Publishing and maintenance belong to the Solar Icons project, which releases it to NuGet.org from this repository's CI.
 
-## Use the local preview
+## Install
 
-Build and pack the library with the contributor commands below. In a separate .NET 8 or later Blazor application, install the resulting package from the local feed:
+In a .NET 8 or later Blazor application:
 
 ```sh
-dotnet add package SolarIcons.Blazor --version 2.0.0 --source <repository>/packages/blazor/artifacts/packages
+dotnet add package SolarIcons.Blazor
 ```
 
 Add `@using SolarIcons.Blazor` to `_Imports.razor` or the consuming component.

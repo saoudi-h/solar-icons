@@ -59,7 +59,7 @@ Top-level alternative (style in name, single import): `import { HomeBoldIcon } f
 ## Workflow — add icons to a project
 
 1. **Detect framework** (`package.json`): `react` → `@solar-icons/react`, `vue` → `vue`, `svelte` → `svelte`, `solid-js` → `solid`, `@angular/core` → `angular`, `react-native` → `react-native`, `nuxt` → `nuxt`, none → `static`/`js`. Laravel (`composer.json` + `illuminate/*`) → `solar-icons/blade` via `composer require solar-icons/blade`. Flutter (`pubspec.yaml` + `flutter` SDK) → `flutter_solar_icons` via `flutter pub add flutter_solar_icons`. Rails (`Gemfile` + `rails`) → the `solar_icons` gem via `bundle add solar_icons`.
-   Blazor (`.csproj` plus `.razor` components) → `SolarIcons.Blazor`; this is an unreleased preview, so use the local package instructions in `references/blazor.md`.
+   Blazor (`.csproj` plus `.razor` components) → `SolarIcons.Blazor` via `dotnet add package SolarIcons.Blazor` (details in `references/blazor.md`).
 2. **Install** with the project's PM (`pnpm add @solar-icons/<pkg>`; respect `packageManager` field).
 3. **Search** via CLI (offline, no API key):
     ```bash

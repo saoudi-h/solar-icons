@@ -4,19 +4,12 @@ description: Native Blazor components with static styles, runtime weights, CSS t
 icon: blazor
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout'
+## Install
 
-<Callout type="info">
-    This package is an unreleased preview for .NET 8 and later. The initial version is provisional.
-    It has not been published to NuGet.org; use the local package instructions below.
-</Callout>
+Add the package from NuGet.org to a .NET 8 or later Blazor app:
 
-## Install the local preview
-
-Build and pack `packages/blazor` using its README, then install the artifact into a .NET 8 or later Blazor app:
-
-```powershell
-dotnet add package SolarIcons.Blazor --version 2.0.0 --source <repository>/packages/blazor/artifacts/packages
+```sh
+dotnet add package SolarIcons.Blazor
 ```
 
 Add this namespace to `_Imports.razor`:
