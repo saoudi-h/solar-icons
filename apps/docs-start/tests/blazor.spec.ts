@@ -30,7 +30,7 @@ test('Blazor snippets follow the selected icon and style in the existing explore
     await page.getByRole('link', { name: 'Get started with Blazor' }).click()
     await expect(page).toHaveURL(/\/docs\/v2\/packages\/blazor/)
     await expect(page.getByRole('heading', { name: 'Blazor', exact: true })).toBeVisible()
-    await expect(page.getByRole('heading', { name: 'Install', exact: true })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Install', level: 2 })).toBeVisible()
 })
 
 test('Blazor snippets remain accessible on a narrow screen', async ({ page }) => {
