@@ -17,6 +17,7 @@
         "dev:playground": "pnpm --dir ../../apps/blazor-app dev:dotnet",
         "typecheck": "tsc --noEmit",
         "check:generator": "tsx scripts/check-generator.ts",
+        "check:version": "tsx scripts/check-version.ts",
         "test:coexistence": "dotnet run --project tests/Coexistence -c Release",
         "measure:build": "tsx scripts/measure-build.ts",
         "measure:trimming": "tsx scripts/measure-trimming.ts",

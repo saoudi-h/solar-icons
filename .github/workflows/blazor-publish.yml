@@ -53,6 +53,9 @@ jobs:
                     exit 1
                   fi
 
+            - name: Verify the package version is consistent
+              run: pnpm --dir packages/blazor check:version
+
             - name: Generate the catalogue
               run: |
                   pnpm --filter @solar-icons/core build

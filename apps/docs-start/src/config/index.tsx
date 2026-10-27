@@ -259,9 +259,11 @@ export const config: Config = {
                 title: 'Blazor',
                 link: '/docs/v2/packages/blazor',
                 githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/blazor',
-                content:
-                    'Blazor components with static styles, runtime weights, and CSS theming. Unreleased preview.',
-                status: 'in-progress',
+                registryLink: 'https://www.nuget.org/packages/SolarIcons.Blazor',
+                registryTooltip: 'NuGet Package',
+                registryIcon: 'mdi:package-variant',
+                content: 'Blazor components with static styles, runtime weights, and CSS theming.',
+                status: 'released',
                 iconify: 'devicon:blazor',
             },
             {

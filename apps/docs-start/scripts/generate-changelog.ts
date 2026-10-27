@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const PACKAGES = [
-    { id: 'blazor', label: 'Blazor', pkg: 'SolarIcons.Blazor', unreleased: true },
+    { id: 'blazor', label: 'Blazor', pkg: 'SolarIcons.Blazor' },
     { id: 'react', label: 'React', pkg: '@solar-icons/react' },
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
     { id: 'svelte', label: 'Svelte', pkg: '@solar-icons/svelte' },
@@ -111,12 +111,6 @@ for (const pkg of PACKAGES) {
         `<a href="${changelogUrl}" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">${pkg.pkg} on GitHub →</a>`
     )
     lines.push('')
-
-    if ('unreleased' in pkg && pkg.unreleased) {
-        lines.push('*Unreleased preview. No NuGet package has been published.*')
-        lines.push('')
-        continue
-    }
 
     if (entries.length === 0) {
         lines.push('*No changelog available.*')

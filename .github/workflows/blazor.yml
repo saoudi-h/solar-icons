@@ -49,6 +49,8 @@ jobs:
               run: pnpm --dir packages/blazor check:generated
             - name: Verify committed catalogue manifest
               run: git diff --exit-code -- packages/blazor/catalogue-manifest.json
+            - name: Verify the package version is consistent
+              run: pnpm --dir packages/blazor check:version
             - name: Typecheck generator
               run: pnpm --dir packages/blazor typecheck
             - uses: actions/setup-dotnet@v4
