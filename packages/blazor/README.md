@@ -7,7 +7,7 @@ An unreleased preview of native Blazor components for the Solar catalogue: 1,451
 Build and pack the library with the contributor commands below. In a separate .NET 8 or later Blazor application, install the resulting package from the local feed:
 
 ```sh
-dotnet add package SolarIcons.Blazor --version 0.1.0-preview.2 --source <repository>/packages/blazor/artifacts/packages
+dotnet add package SolarIcons.Blazor --version 2.0.0 --source <repository>/packages/blazor/artifacts/packages
 ```
 
 Add `@using SolarIcons.Blazor` to `_Imports.razor` or the consuming component.

@@ -8,8 +8,8 @@ The library targets .NET 8. It contains 10,409 generated component types, includ
 
 | Operation   | Seconds | Warnings |
 | ----------- | ------: | -------: |
-| rebuild     |   16.39 |        0 |
-| incremental |    1.21 |        0 |
+| rebuild     |   18.29 |        0 |
+| incremental |    1.32 |        0 |
 
 The full untrimmed library is 15,433,728 bytes. Generation and restore time are excluded from the compilation figures.
 
@@ -19,12 +19,12 @@ Static consumers use Linear components. Dynamic consumers select their weight at
 
 | Runtime | Logical icons | Static DLL bytes | Dynamic DLL bytes | Static Brotli bytes | Dynamic Brotli bytes |
 | ------- | ------------: | ---------------: | ----------------: | ------------------: | -------------------: |
-| net8.0  |             1 |           12,288 |            19,968 |               4,856 |                6,823 |
-| net8.0  |            50 |           68,096 |           496,128 |              16,023 |               81,380 |
-| net8.0  |         1,451 |        1,758,720 |        14,984,192 |             315,416 |            2,487,708 |
-| net10.0 |             1 |           12,288 |            19,968 |               4,875 |                6,769 |
-| net10.0 |            50 |           68,096 |           496,128 |              16,001 |               81,284 |
-| net10.0 |         1,451 |        1,758,720 |        14,984,192 |             315,005 |            2,489,800 |
+| net8.0  |             1 |           12,288 |            19,968 |               4,837 |                6,785 |
+| net8.0  |            50 |           68,096 |           496,128 |              15,971 |               81,386 |
+| net8.0  |         1,451 |        1,758,720 |        14,984,192 |             315,287 |            2,488,741 |
+| net10.0 |             1 |           12,288 |            19,968 |               4,851 |                6,781 |
+| net10.0 |            50 |           68,096 |           496,128 |              16,019 |               81,450 |
+| net10.0 |         1,451 |        1,758,720 |        14,984,192 |             315,353 |            2,489,274 |
 
 Both empty consumers remove the icon assembly completely. Static consumers retain exactly 1, 50, or 1,451 icon types. Dynamic consumers retain exactly 7, 350, or 10,157 icon types: the dynamic component plus its six styles per logical icon. No compatibility aliases survive these canonical-only scenarios. All 14 cases pass exact retained-type validation and produce no IL trimming warnings.
 
@@ -36,20 +36,20 @@ These totals sum the files under `wwwroot/_framework`, excluding symbols, source
 
 | Runtime | Case        | Uncompressed framework bytes | Framework bytes with Brotli |
 | ------- | ----------- | ---------------------------: | --------------------------: |
-| net8.0  | EMPTY       |                    8,418,839 |                   2,504,410 |
-| net8.0  | STATIC_1    |                    8,440,941 |                   2,512,732 |
-| net8.0  | STATIC_50   |                    8,499,309 |                   2,524,648 |
-| net8.0  | STATIC_ALL  |                   10,265,709 |                   2,837,044 |
-| net8.0  | DYNAMIC_1   |                    8,449,645 |                   2,515,728 |
-| net8.0  | DYNAMIC_50  |                    8,929,389 |                   2,591,104 |
-| net8.0  | DYNAMIC_ALL |                   23,522,925 |                   5,011,434 |
-| net10.0 | EMPTY       |                    9,084,469 |                   2,696,336 |
-| net10.0 | STATIC_1    |                    9,108,752 |                   2,703,588 |
-| net10.0 | STATIC_50   |                    9,167,632 |                   2,715,448 |
-| net10.0 | STATIC_ALL  |                   10,933,520 |                   3,028,259 |
-| net10.0 | DYNAMIC_1   |                    9,117,968 |                   2,707,805 |
-| net10.0 | DYNAMIC_50  |                    9,598,224 |                   2,783,189 |
-| net10.0 | DYNAMIC_ALL |                   24,191,760 |                   5,205,526 |
+| net8.0  | EMPTY       |                    8,418,839 |                   2,504,431 |
+| net8.0  | STATIC_1    |                    8,440,941 |                   2,512,697 |
+| net8.0  | STATIC_50   |                    8,499,309 |                   2,524,605 |
+| net8.0  | STATIC_ALL  |                   10,265,709 |                   2,836,820 |
+| net8.0  | DYNAMIC_1   |                    8,449,645 |                   2,515,705 |
+| net8.0  | DYNAMIC_50  |                    8,929,389 |                   2,591,123 |
+| net8.0  | DYNAMIC_ALL |                   23,522,925 |                   5,012,523 |
+| net10.0 | EMPTY       |                    9,084,469 |                   2,696,315 |
+| net10.0 | STATIC_1    |                    9,108,752 |                   2,703,569 |
+| net10.0 | STATIC_50   |                    9,167,632 |                   2,715,479 |
+| net10.0 | STATIC_ALL  |                   10,933,520 |                   3,028,627 |
+| net10.0 | DYNAMIC_1   |                    9,117,968 |                   2,707,798 |
+| net10.0 | DYNAMIC_50  |                    9,598,224 |                   2,783,333 |
+| net10.0 | DYNAMIC_ALL |                   24,191,760 |                   5,204,706 |
 
 ## Settings and runtime verification
 
@@ -75,9 +75,9 @@ pnpm --dir packages/blazor test:browser
 
 Raw evidence is in `artifacts/build-results.json`, `artifacts/trim-comparison.json`, framework-specific rendering JSON files, and their logs. The trimming script saves a hash-addressed copy of the measured archive; `--validate-only` validates the saved comparison and `--resume` requires the current inputs to match. 
 
-- Package version: `0.1.0-preview.2`.
-- Measured archive SHA-256: `b4b9f0526849af1bc9c08f437715c390c41f7de790f91ae3c6597f27a71e442a`.
-- Runtime DLL SHA-256: `5d37bd338b886c79ea66d136a975d1b61a33bf38eb171e79317218c3d3684287`.
+- Package version: `2.0.0`.
+- Measured archive SHA-256: `2556cd09a6ea01e2af11d7400c9c1d716df816f2a787390a2af67da40587adb4`.
+- Runtime DLL SHA-256: `eba4c89b2c6860217d74026a24181fc5300b73265d59d7500fca068b19a2b74b`.
 - Generated icon-code hash: `ad2ed0c685cf1d87dbedd3f40539eb728cc4ca6f657c57cee6bdd472a3dfa76c`.
 
 These are unreleased preview results.

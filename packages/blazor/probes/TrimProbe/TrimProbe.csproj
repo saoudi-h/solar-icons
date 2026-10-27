@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(AspNetVersion)" />
-    <PackageReference Include="SolarIcons.Blazor" Version="0.1.0-preview.2" />
+    <PackageReference Include="SolarIcons.Blazor" Version="2.0.0" />
     <Compile Remove="Generated/**/*.cs" />
     <Compile Include="Generated/$(ProbeCase).g.cs" />
   </ItemGroup>

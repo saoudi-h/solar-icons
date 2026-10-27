@@ -8,4 +8,4 @@
 - TypeScript generation, a separate playground under `apps/blazor-app`, compilation measurements, and static/dynamic comparisons for 1, 50, and all icons.
 - Attribute-escaping checks, qualified-name coexistence with another icon library, and browser verification of published consumers.
 
-The package name and repository location are accepted. The initial preview version remains provisional; the project maintainer owns maintenance and publishing. No NuGet release has been published.
+The version follows the 2.x line of the other packages. The project maintainer owns maintenance and publishing, which run from this repository's CI. No NuGet release has been published yet.
