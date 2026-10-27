@@ -1,0 +1,85 @@
+name: Publish Blazor package
+
+# Publishes SolarIcons.Blazor to NuGet.org through OIDC trusted publishing
+# (permissions: id-token below). There is deliberately NO long-lived API
+# key anywhere. One-time maintainer setup on nuget.org: add a trusted
+# publishing policy for repository saoudi-h/solar-icons and workflow
+# blazor-publish.yml, and store the nuget.org profile name in the
+# repository secret NUGET_USER. Consider a tag protection rule for
+# `SolarIcons.Blazor-v*` so only the maintainer can trigger a publish.
+
+on:
+    push:
+        tags:
+            - 'SolarIcons.Blazor-v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+    id-token: write
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    publish:
+        name: Publish to NuGet.org
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - name: Checkout tag
+              uses: actions/checkout@v4
+
+            - uses: pnpm/action-setup@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: 'pnpm'
+
+            - uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: |
+                      8.0.x
+                      10.0.x
+
+            - run: pnpm install --frozen-lockfile
+
+            - name: Tag matches the package version
+              run: |
+                  TAG="${GITHUB_REF_NAME#SolarIcons.Blazor-v}"
+                  VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj)
+                  if [ "$TAG" != "$VERSION" ]; then
+                    echo "tag SolarIcons.Blazor-v$TAG does not match package version $VERSION"
+                    exit 1
+                  fi
+
+            - name: Generate the catalogue
+              run: |
+                  pnpm --filter @solar-icons/core build
+                  pnpm --dir packages/blazor generate:assets
+                  pnpm --dir packages/blazor check:generated
+
+            - name: Check the payload
+              run: |
+                  node -e "
+                  const m = require('./packages/blazor/catalogue-manifest.json')
+                  if (m.svgPayloads !== 8706) { console.error('unexpected payload', m.svgPayloads); process.exit(1) }
+                  "
+
+            - name: Render every icon
+              run: pnpm --dir packages/blazor test:dotnet
+
+            - name: Pack
+              run: pnpm --dir packages/blazor pack:dotnet
+
+            - name: Render the packed artifact
+              run: pnpm --dir packages/blazor test:package
+
+            - name: NuGet login (OIDC to a temporary API key)
+              uses: NuGet/login@v1
+              id: login
+              with:
+                  user: ${{ secrets.NUGET_USER }}
+
+            - name: Push the package
+              run: dotnet nuget push packages/blazor/artifacts/packages/SolarIcons.Blazor.*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

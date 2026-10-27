@@ -84,6 +84,11 @@ export const config: Config = {
                         icon: <Icon icon="thesvg-color:ruby-on-rails" />,
                     },
                     {
+                        label: 'Blazor',
+                        url: '/docs/v2/packages/blazor',
+                        icon: <Icon icon="devicon:blazor" />,
+                    },
+                    {
                         label: 'Flutter',
                         url: '/docs/v2/packages/flutter',
                         icon: <Icon icon="devicon:flutter" />,
@@ -249,6 +254,15 @@ export const config: Config = {
                     'View helper for all six styles, with duotone controls and configuration defaults.',
                 status: 'released',
                 iconify: 'thesvg-color:ruby-on-rails',
+            },
+            {
+                title: 'Blazor',
+                link: '/docs/v2/packages/blazor',
+                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/blazor',
+                content:
+                    'Blazor components with static styles, runtime weights, and CSS theming. Unreleased preview.',
+                status: 'in-progress',
+                iconify: 'devicon:blazor',
             },
             {
                 title: 'Flutter',

@@ -19,6 +19,7 @@ import { toComponentName } from '../utils'
 import { Actions } from './Actions'
 import { AngularCode } from './AngularCode'
 import { BladeCode } from './BladeCode'
+import { BlazorCode } from './BlazorCode'
 import { FloatingDrawer } from './FloatingDrawer'
 import { FlutterCode } from './FlutterCode'
 import { IconVariants } from './IconVariants'
@@ -179,6 +180,12 @@ const Content: FC = () => {
                         value: 'flutter',
                         icon: <Icon icon="devicon:flutter" className="size-4" />,
                         content: <FlutterCode />,
+                    },
+                    {
+                        title: 'Blazor',
+                        value: 'blazor',
+                        icon: <Icon icon="devicon:blazor" className="size-4" />,
+                        content: <BlazorCode />,
                     },
                     {
                         title: 'Static',

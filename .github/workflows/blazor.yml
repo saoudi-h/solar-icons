@@ -1,0 +1,97 @@
+name: Blazor
+
+on:
+    pull_request:
+        paths:
+            - 'packages/blazor/**'
+            - 'apps/blazor-app/**'
+            - 'packages/core/**'
+            - 'pnpm-lock.yaml'
+            - 'pnpm-workspace.yaml'
+            - 'package.json'
+            - '.nvmrc'
+            - '.github/workflows/blazor.yml'
+    push:
+        branches: [main]
+        paths:
+            - 'packages/blazor/**'
+            - 'apps/blazor-app/**'
+            - 'packages/core/**'
+            - 'pnpm-lock.yaml'
+            - 'pnpm-workspace.yaml'
+            - 'package.json'
+            - '.nvmrc'
+            - '.github/workflows/blazor.yml'
+
+permissions:
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    verify:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: 'pnpm'
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm --filter @solar-icons/core build
+            - name: Generate catalogue
+              run: pnpm --dir packages/blazor generate:assets
+            - name: Verify generated files
+              run: pnpm --dir packages/blazor check:generated
+            - name: Verify committed catalogue manifest
+              run: git diff --exit-code -- packages/blazor/catalogue-manifest.json
+            - name: Typecheck generator
+              run: pnpm --dir packages/blazor typecheck
+            - uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: |
+                      8.0.x
+                      10.0.402
+            - name: Measure clean and incremental compilation
+              run: pnpm --dir packages/blazor measure:build
+            - name: Render every icon
+              run: pnpm --dir packages/blazor test:dotnet
+            - name: Pack NuGet artifact
+              run: pnpm --dir packages/blazor pack:dotnet
+            - name: Render installed NuGet artifact
+              run: pnpm --dir packages/blazor test:package
+            - name: Verify Razor coexistence with another icon library
+              run: pnpm --dir packages/blazor test:coexistence
+            - name: Verify drift detection
+              run: pnpm --dir packages/blazor check:generator
+            - name: Build playground
+              run: pnpm --dir apps/blazor-app build:dotnet
+            - name: Install WebAssembly tools
+              working-directory: packages/blazor
+              run: dotnet workload install wasm-tools wasm-tools-net8
+            - name: Build assembly inspector
+              working-directory: packages/blazor
+              run: dotnet build tools/AssemblyInspector -c Release
+            - name: Verify published package trimming
+              run: pnpm --dir packages/blazor measure:trimming
+            - name: Install browser
+              run: pnpm --dir packages/blazor exec playwright install --with-deps chromium
+            - name: Run trimmed consumers and playground in browsers
+              run: pnpm --dir packages/blazor test:browser
+            - name: Save verification evidence
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: blazor-checks
+                  path: |
+                      packages/blazor/artifacts/render-checks-*.json
+                      packages/blazor/artifacts/generator-checks.json
+                      packages/blazor/artifacts/build-results.json
+                      packages/blazor/artifacts/build-*.log
+                      packages/blazor/artifacts/trim-comparison.json
+                      packages/blazor/artifacts/trim-*.log
+                      packages/blazor/artifacts/packages/*.nupkg

@@ -31,6 +31,16 @@
             "guide": "packages/flutter"
         },
         {
+            "name": "Blazor",
+            "slug": "blazor",
+            "package": "SolarIcons.Blazor",
+            "registry": "nuget.org",
+            "path": "packages/blazor",
+            "logo": "devicon:blazor",
+            "summary": "Blazor components (unreleased preview)",
+            "guide": "packages/blazor"
+        },
+        {
             "name": "Vue",
             "slug": "vue",
             "package": "@solar-icons/vue",

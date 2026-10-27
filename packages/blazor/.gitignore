@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+artifacts/
+src/SolarIcons.Blazor/Generated/
+example/**/Generated/
+probes/**/Generated/
+test-results/
+playwright-report/
+**/.vs/

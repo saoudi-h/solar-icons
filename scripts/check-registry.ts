@@ -93,6 +93,10 @@ for (const entry of [...registry.packages, ...registry.skills]) {
         if (!fs.existsSync(path.join(entryRoot, 'pubspec.yaml'))) {
             problems.push(`"${entry.package}" has no pubspec.yaml in ${entry.path}`)
         }
+    } else if (entry.registry === 'nuget.org') {
+        if (!fs.existsSync(path.join(entryRoot, 'src', entry.package, `${entry.package}.csproj`))) {
+            problems.push(`"${entry.package}" has no NuGet project in ${entry.path}`)
+        }
     } else if (entry.registry === 'rubygems.org') {
         if (!fs.existsSync(path.join(entryRoot, `${entry.package}.gemspec`))) {
             problems.push(`"${entry.package}" has no gemspec in ${entry.path}`)
@@ -208,6 +212,8 @@ function registryUrl(entry: RegistrySkill): string {
             return `https://packagist.org/packages/${entry.package}`
         case 'rubygems.org':
             return `https://rubygems.org/gems/${entry.package}`
+        case 'nuget.org':
+            return `https://www.nuget.org/packages/${entry.package}`
         case 'skills.sh':
             return `https://skills.sh/${entry.package}`
         default:
@@ -225,6 +231,8 @@ function badgeUrl(entry: RegistryPackage): string {
             return `https://img.shields.io/packagist/v/${entry.package}?logo=packagist`
         case 'rubygems.org':
             return `https://img.shields.io/gem/v/${entry.package}?logo=rubygems`
+        case 'nuget.org':
+            return `https://img.shields.io/nuget/vpre/${entry.package}?logo=nuget`
         default:
             return ''
     }

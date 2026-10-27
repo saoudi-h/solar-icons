@@ -1,0 +1,33 @@
+{
+    "name": "@solar-icons/blazor-tools",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Private generation and verification tools for the Blazor NuGet package",
+    "type": "module",
+    "scripts": {
+        "lint": "oxlint --deny-warnings scripts tests/browser playwright.config.ts",
+        "format": "oxfmt --check scripts tests/browser playwright.config.ts package.json tsconfig.json README.md",
+        "format:fix": "oxfmt --write scripts tests/browser playwright.config.ts package.json tsconfig.json README.md",
+        "generate:assets": "tsx scripts/generate.ts",
+        "check:generated": "tsx scripts/generate.ts --check",
+        "build:dotnet": "dotnet build src/SolarIcons.Blazor -c Release",
+        "test:dotnet": "dotnet run --project tests/RenderChecks -c Release -f net8.0 && dotnet run --project tests/RenderChecks -c Release -f net10.0",
+        "pack:dotnet": "dotnet pack src/SolarIcons.Blazor -c Release -o artifacts/packages",
+        "test:package": "dotnet run --project probes/PackageConsumer -c Release -f net8.0 && dotnet run --project probes/PackageConsumer -c Release -f net10.0",
+        "dev:playground": "pnpm --dir ../../apps/blazor-app dev:dotnet",
+        "typecheck": "tsc --noEmit",
+        "check:generator": "tsx scripts/check-generator.ts",
+        "test:coexistence": "dotnet run --project tests/Coexistence -c Release",
+        "measure:build": "tsx scripts/measure-build.ts",
+        "measure:trimming": "tsx scripts/measure-trimming.ts",
+        "test:browser": "dotnet build tools/StaticHost -c Release && dotnet build ../../apps/blazor-app/SolarIcons.Playground -c Release && playwright test"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.64.1",
+        "@solar-icons/core": "workspace:*",
+        "@tala-tools/tsconfig": "0.1.0",
+        "@types/node": "^26.6.5",
+        "tsx": "^4.23.15",
+        "typescript": "7.0.2"
+    }
+}

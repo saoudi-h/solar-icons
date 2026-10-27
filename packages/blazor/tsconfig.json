@@ -1,0 +1,10 @@
+{
+    "extends": "@tala-tools/tsconfig/base.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "noEmit": true,
+        "types": ["node"]
+    },
+    "include": ["scripts/**/*.ts", "tests/browser/**/*.ts", "playwright.config.ts"]
+}

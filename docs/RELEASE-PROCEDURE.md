@@ -57,12 +57,22 @@ Changesets cascade the versions, but these need explicit verification:
 
 ## 8. Post-release verification matrix
 
-| Surface | Check |
-|---|---|
-| npm | `npm view` version, `check:exports` |
-| Flutter | fresh `flutter pub add`, widget + theme + duotone forms, gallery eyeball |
-| Blade | fresh `composer require`, four render forms |
-| Rails gem | rubygems.org version, frozen `bundle install` of `demo/` |
-| CLI/MCP | `get <alias> --json` redirect, `search` alias note |
-| Skill | `check:skill-counts`, counts resolve via `overview` |
-| Docs | package page, sidebar icon, icon-detail tab, homepage card |
+| Surface   | Check                                                                    |
+| --------- | ------------------------------------------------------------------------ |
+| npm       | `npm view` version, `check:exports`                                      |
+| Flutter   | fresh `flutter pub add`, widget + theme + duotone forms, gallery eyeball |
+| Blade     | fresh `composer require`, four render forms                              |
+| Rails gem | rubygems.org version, frozen `bundle install` of `demo/`                 |
+| Blazor    | fresh `dotnet add package`, static + dynamic render, playground eyeball  |
+| CLI/MCP   | `get <alias> --json` redirect, `search` alias note                       |
+| Skill     | `check:skill-counts`, counts resolve via `overview`                      |
+| Docs      | package page, sidebar icon, icon-detail tab, homepage card               |
+
+## 9. Blazor package (`SolarIcons.Blazor` on NuGet.org, in-monorepo)
+
+1. Normal state: `blazor.yml` regenerates the C# on every catalogue change and fails on drift. Regenerate locally (`pnpm --filter @solar-icons/core build`, then `pnpm --dir packages/blazor generate:assets`) and commit `catalogue-manifest.json` with the catalogue change; generated C# stays ignored. The .NET steps run with the SDK 10 and the 8 and 10 runtimes, in a container if they are not installed locally.
+2. Bump `<Version>` in `packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj` together with the two probe projects (`probes/PackageConsumer`, `probes/TrimProbe`) and the install commands in the README and the docs page. Add a `CHANGELOG.md` entry. Changesets version the CLI and MCP changes only; they cannot version NuGet packages.
+3. Publish: push a `SolarIcons.Blazor-v<version>` tag matching the project version. `blazor-publish.yml` re-verifies the generation, renders every icon, packs, renders the packed artifact, and pushes to NuGet.org with a temporary API key obtained through OIDC trusted publishing (no secret to rotate; only the nuget.org profile name is stored, as `NUGET_USER`).
+4. Verify: `dotnet add package SolarIcons.Blazor` in a fresh Blazor application renders a static and a dynamic icon; the playground in `apps/blazor-app` eyeballs the full catalogue.
+5. First-time setup only: create the trusted publishing policy on nuget.org (repository owner `saoudi-h`, repository `solar-icons`, workflow file `blazor-publish.yml`; the policy scopes decide whether it may publish a new package), add the `NUGET_USER` repository secret, and consider a tag protection rule for `SolarIcons.Blazor-v*`. If the first push cannot use the policy, publish `2.0.0` once by hand with an API key and delete the key afterwards.
+6. Trimming and size figures live in `packages/blazor/BENCHMARKS.md`; refresh them with `measure:build` and `measure:trimming` after changes to the generated components.
