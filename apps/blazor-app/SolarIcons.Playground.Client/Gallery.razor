@@ -18,6 +18,7 @@
         <div><DnaIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="DNA" /><span>DNA</span></div>
         <div><TicketStarIcon Weight="weight" Size="48" Color="@primary" SecondaryColor="@secondary" SecondaryOpacity="opacity" Title="Ticket" /><span>Ticket</span></div>
     </section>
+    <ProviderDemo />
     <div class="section-heading"><div><h2>The catalogue</h2><p>Explore every icon with the same component API.</p></div><input aria-label="Search icons" placeholder="Search icons…" @bind="search" @bind:event="oninput" disabled="@(!Interactive)" /></div>
     <section class="icon-grid" style="--solar-color:@primary;--solar-size:@(size)px;--solar-secondary-color:@secondary;--solar-secondary-opacity:@opacity.ToString(CultureInfo.InvariantCulture)" aria-label="Catalogue">
         @foreach (var icon in Matches.Take(48)) { <article @key="icon.Name"><DynamicComponent Type="icon.Type" Parameters="Parameters" /><span>@icon.Name</span></article> }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+- `SolarProvider` sets the Solar CSS variables on a `display: contents` wrapper and supports `@bind-` on each value.
+- `SolarContext` cascades to descendants, which read the values and change them with `SetColorAsync` and the other setters in interactive render modes.
+
 ## 2.0.1
 
 - The package description and README no longer describe the package as an unreleased preview, and the installation instructions use NuGet.org.

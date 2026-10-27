@@ -1,49 +1,170 @@
 ---
 title: Blazor
-description: Native Blazor components with static styles, runtime weights, CSS theming, and duotone controls.
+description: SolarProvider, SolarContext, CSS variables, duotone, and stroke width for Blazor on .NET 8 and later.
 icon: blazor
 ---
-
-## Install
-
-Add the package from NuGet.org to a .NET 8 or later Blazor app:
 
 ```sh
 dotnet add package SolarIcons.Blazor
 ```
 
-Add this namespace to `_Imports.razor`:
+Add the namespace to `_Imports.razor`:
 
 ```razor
 @using SolarIcons.Blazor
 ```
 
-## Static styles
+## Import patterns
 
-Use a style-specific component when the style is known in advance. Its name includes the icon and style:
-
-```razor
-<HomeLinearIcon Size="24" />
-<HeartBoldDuotoneIcon Size="32" SecondaryColor="#ef4444" SecondaryOpacity="0.4" />
-```
-
-Every icon has `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, and `Outline` forms. Unused icons can be removed by .NET trimming.
-
-## Dynamic weights
-
-A dynamic component supports all six styles of one icon. Its `Weight` defaults to `Linear`:
+Every icon is a component in the `SolarIcons.Blazor` namespace. One import covers the whole catalogue.
 
 ```razor
-<HomeIcon Weight="IconWeight.Outline" Size="24" />
+@* Static: the style is part of the name *@
+<HeartBoldIcon />
+
+@* Dynamic: the style comes from the Weight parameter *@
+<HeartIcon Weight="IconWeight.Bold" />
 ```
 
-The dynamic form retains that icon's six styles. Prefer static components when switching styles is unnecessary.
+When another icon library defines the same name, qualify the component and the enum:
 
-## Parameters and CSS defaults
+```razor
+<SolarIcons.Blazor.HeartIcon Weight="SolarIcons.Blazor.IconWeight.Bold" />
+```
 
-`Size` accepts numeric text in pixels or CSS lengths such as `2rem`. `Color`, `StrokeWidth`, `SecondaryColor`, and `SecondaryOpacity` set per-icon values. Secondary opacity accepts finite values between zero and one, including zero.
+## Basic usage
 
-The defaults are size 24px, color `currentColor`, stroke width 1.5, and secondary opacity 0.5. Parent CSS variables provide shared defaults without a provider service:
+```razor
+<HeartBoldIcon Color="#ef4444" Size="32" />
+```
+
+Every icon has `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, and `Outline` forms. Static components keep only the icons you use, because .NET trimming removes the rest.
+
+## Duotone
+
+`BoldDuotone` and `LineDuotone` styles render a secondary accent path. Control it with `SecondaryColor` and `SecondaryOpacity`.
+
+```razor
+<HeartBoldDuotoneIcon Color="#3b82f6" SecondaryColor="#f59e0b" SecondaryOpacity="0.4" Size="48" />
+```
+
+`SecondaryOpacity` accepts values from 0 to 1, including 0.
+
+## Stroke width
+
+`Linear`, `Broken`, and `LineDuotone` icons accept `StrokeWidth`. The default is `1.5`.
+
+```razor
+<SettingsLinearIcon StrokeWidth="2" Size="24" />
+```
+
+## SolarProvider
+
+Wrap part of your app in `SolarProvider` to set defaults. Icons inherit them through the CSS cascade.
+
+```razor
+<SolarProvider Color="#3b82f6" Size="24" StrokeWidth="1.5">
+    <HeartBoldIcon />
+</SolarProvider>
+```
+
+The provider sets CSS custom properties on a `<div>` with `display: contents`. The wrapper adds no box to your layout. Extra attributes such as `class` and `style` go on that `<div>`.
+
+### Provider parameters
+
+| Parameter          | CSS variable                | Fallback       |
+| ------------------ | --------------------------- | -------------- |
+| `Color`            | `--solar-color`             | `currentColor` |
+| `Size`             | `--solar-size`              | `24px`         |
+| `StrokeWidth`      | `--solar-stroke-width`      | `1.5`          |
+| `SecondaryColor`   | `--solar-secondary-color`   | `currentColor` |
+| `SecondaryOpacity` | `--solar-secondary-opacity` | `0.5`          |
+
+The provider sets only the values you pass. Icons use the fallback column when no provider or parameter supplies a value. A numeric `Size` becomes pixels.
+
+Each parameter has a matching `Changed` callback, so `@bind-Color`, `@bind-Size`, and the other bindings work.
+
+```razor
+<SolarProvider @bind-Color="color">
+    <HeartBoldIcon />
+</SolarProvider>
+
+@code {
+    private string color = "#3b82f6";
+}
+```
+
+## SolarContext
+
+Any component inside a provider can read and change the provider values. Blazor has no hooks, so the context arrives as a cascading parameter.
+
+```razor
+@using SolarIcons.Blazor
+
+<button @onclick="Toggle">Toggle color</button>
+
+@code {
+    [CascadingParameter] private SolarContext? Solar { get; set; }
+
+    private Task Toggle() =>
+        Solar!.SetColorAsync(Solar.Color == "#ef4444" ? "#3b82f6" : "#ef4444");
+}
+```
+
+`SolarContext` exposes `Size`, `Color`, `StrokeWidth`, `SecondaryColor`, and `SecondaryOpacity`, which are `null` when the provider sets nothing. It also has `SetSizeAsync`, `SetColorAsync`, `SetStrokeWidthAsync`, `SetSecondaryColorAsync`, and `SetSecondaryOpacityAsync`. Pass `null` to clear a value. A setter updates the wrapper, raises the matching `Changed` callback, and re-renders the components below the provider.
+
+A nested provider replaces the values of its parent. Icons with `Isolated="true"` ignore every provider.
+
+### Render modes
+
+The CSS variables work in every render mode. The context and its setters need an interactive component.
+
+| Render mode             | Variables | Context values | Setters |
+| ----------------------- | --------- | -------------- | ------- |
+| Static SSR              | Yes       | Yes            | No      |
+| Interactive Server      | Yes       | Yes            | Yes     |
+| Interactive WebAssembly | Yes       | Yes            | Yes     |
+| Interactive Auto        | Yes       | Yes            | Yes     |
+
+A cascading value does not cross the boundary between a static component and an interactive one. Place the provider inside the interactive component that uses the context, or in a layout that is itself interactive. A provider in a static layout still sets the CSS variables for everything below it.
+
+## Icon parameters
+
+Every icon accepts these parameters plus any SVG attribute, which Blazor forwards to the `<svg>` element.
+
+| Parameter          | Type      | Description                                                               |
+| ------------------ | --------- | ------------------------------------------------------------------------- |
+| `Color`            | `string`  | Icon color. Overrides the provider.                                       |
+| `Size`             | `string`  | Width and height. Numbers become pixels; CSS lengths such as `2rem` work. |
+| `StrokeWidth`      | `string`  | Stroke width for Linear, Broken, and LineDuotone.                         |
+| `SecondaryColor`   | `string`  | Duotone accent color.                                                     |
+| `SecondaryOpacity` | `double?` | Duotone accent opacity (0 to 1).                                          |
+| `Isolated`         | `bool`    | Ignores the provider. Uses `24px`, `currentColor`, and `1.5`.             |
+| `Title`            | `string`  | Accessible label. Renders `<title>` in the SVG.                           |
+| `Class`            | `string`  | CSS classes, merged with the Solar classes.                               |
+| `Style`            | `string`  | Inline CSS. It applies after the CSS the other parameters generate.       |
+
+## Dynamic icons
+
+A dynamic component supports all six styles of one icon through `Weight`, which defaults to `Linear`.
+
+```razor
+<HeartIcon Weight="IconWeight.BoldDuotone" Color="#3b82f6" Size="32" />
+```
+
+`IconWeight` has the values `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, and `Outline`. A dynamic icon keeps all six styles of that icon in the compiled app, so prefer static components when the style does not change.
+
+## CSS variables
+
+Icons resolve styling through CSS custom properties. Set them on any parent element.
+
+| Variable                    | Role                                       |
+| --------------------------- | ------------------------------------------ |
+| `--solar-color`             | Fill and stroke color                      |
+| `--solar-size`              | Width and height                           |
+| `--solar-stroke-width`      | Stroke width for Linear/Broken/LineDuotone |
+| `--solar-secondary-color`   | Secondary color for duotone styles         |
+| `--solar-secondary-opacity` | Secondary opacity for duotone styles       |
 
 ```razor
 <div style="--solar-size:32px;--solar-color:#172c29;--solar-secondary-color:#27a782">
@@ -51,35 +172,47 @@ The defaults are size 24px, color `currentColor`, stroke width 1.5, and secondar
 </div>
 ```
 
-Supported variables are `--solar-size`, `--solar-color`, `--solar-stroke-width`, `--solar-secondary-color`, and `--solar-secondary-opacity`. `Isolated="true"` ignores their inherited defaults. Explicit `Style` follows parameter-generated CSS. `Class` is merged with the Solar classes, and additional SVG attributes are forwarded.
+## CSS classes
+
+Every icon renders with two classes:
+
+| Class                  | Description                                                      |
+| ---------------------- | ---------------------------------------------------------------- |
+| `solar`                | Present on every icon. Use for global styling.                   |
+| `solar-{name}-{style}` | Specific to the icon and style (for example `solar-heart-bold`). |
+
+Dynamic icons use `solar-{name}` without the style suffix.
+
+```css
+.solar {
+    vertical-align: middle;
+}
+.solar-heart-bold {
+    color: #ef4444;
+}
+```
 
 ## Accessibility
 
-Icons without a label are decorative. Supply `Title`, `aria-label`, or `aria-labelledby` for informative icons:
+Icons without a label are decorative: they render `aria-hidden="true"`. Pass `Title`, `aria-label`, or `aria-labelledby` to expose an icon to assistive technology.
 
 ```razor
 <HomeLinearIcon Title="Home" />
 <HeartIcon aria-label="Favorite" />
 ```
 
-The library encodes title text and respects explicit accessibility attributes. Metadata aliases remain available; deprecated names carry C# `[Obsolete]` guidance.
+The library encodes the title text and keeps any `aria-hidden` or `role` attribute you set. Deprecated icon names carry the C# `[Obsolete]` attribute with the replacement name.
 
-## Hosting and playground
+## Hosting
 
-The library renders inline SVG without JavaScript interop and works with static SSR, Interactive Server, Interactive WebAssembly, and Interactive Auto. The application chooses the render mode.
+The library renders inline SVG with no JavaScript interop. It works in static SSR, Interactive Server, Interactive WebAssembly, and Interactive Auto, and your application chooses the render mode. It targets .NET 8, and its rendering and trimmed WebAssembly output are checked against .NET 8 and .NET 10 applications.
 
-The existing icon explorer's **Blazor** tab shows Razor examples for the selected icon and style. The separate Blazor playground in `apps/blazor-app` exercises the real .NET components across hosting modes. Run it with `pnpm --dir packages/blazor dev:playground` after generating the catalogue.
+The **Blazor** tab in the [icon explorer](/icons) shows Razor code for the selected icon and style. The playground in `apps/blazor-app` runs the real components in every render mode:
 
-## Using another icon library
-
-Qualify component and enum names if another imported library defines the same name:
-
-```razor
-<SolarIcons.Blazor.HeartIcon Weight="SolarIcons.Blazor.IconWeight.Bold" />
+```sh
+pnpm --dir packages/blazor dev:playground
 ```
-
-The library targets .NET 8; its rendering and trimmed WebAssembly consumption are checked against .NET 8 and .NET 10 applications. The playground runs on .NET 10.
 
 ## License
 
-Code is MIT. Icons are CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736); attribution is required. The NuGet archive includes the code license and third-party attribution notice.
+Code is MIT. Icons are CC BY 4.0 by [480 Design](https://www.figma.com/community/file/1166831539721848736); attribution is required. The NuGet package includes the code license and the third-party attribution notice.

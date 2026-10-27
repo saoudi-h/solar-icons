@@ -1,0 +1,14 @@
+@using SolarIcons.Blazor
+
+<section class="provider-demo" aria-label="Provider demo">
+    <SolarProvider @bind-Color="color" Size="40" StrokeWidth="1.5">
+        <HomeIcon Weight="IconWeight.Bold" />
+        <HeartIcon Weight="IconWeight.Bold" />
+        <ProviderDemoControls />
+    </SolarProvider>
+    <span id="provider-color">Provider color: @color</span>
+</section>
+
+@code {
+    private string color = "#172c29";
+}
