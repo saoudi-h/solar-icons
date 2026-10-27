@@ -37,14 +37,14 @@ const NPM_API = 'https://api.npmjs.org/downloads/point/'
 const DAY_MS = 24 * 60 * 60 * 1000
 
 /**
- * The seven days that npm has fully counted. The `last-week` shortcut of the
+ * The week of the downloads. The `last-week` shortcut of the
  * npm API can answer a window that is months old, so the window is explicit.
- * npm publishes a day late, hence the two days of margin.
+ * It ends yesterday and covers seven days, like the weekly figure on npmjs.com.
  */
 export function npmDownloadsWindow(now = new Date()): string {
     const day = (offset: number) =>
         new Date(now.getTime() - offset * DAY_MS).toISOString().slice(0, 10)
-    return `${day(8)}:${day(2)}`
+    return `${day(7)}:${day(1)}`
 }
 const REQUEST_TIMEOUT_MS = 8_000
 

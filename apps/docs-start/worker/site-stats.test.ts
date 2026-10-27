@@ -29,8 +29,8 @@ function fakeFetch(options: FakeFetchOptions = {}) {
 }
 
 describe('npmDownloadsWindow', () => {
-    it('ends two days ago and covers seven days', () => {
-        expect(npmDownloadsWindow(new Date('2026-10-27T14:00:00Z'))).toBe('2026-10-19:2026-10-25')
+    it('ends yesterday and covers seven days', () => {
+        expect(npmDownloadsWindow(new Date('2026-10-27T14:00:00Z'))).toBe('2026-10-20:2026-10-26')
     })
 
     it('is requested explicitly for every package', async () => {
