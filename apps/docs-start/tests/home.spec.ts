@@ -22,10 +22,10 @@ test('the home page reads live stats once and caches them in the browser', async
     await page.goto('/')
 
     await expect(page.getByRole('heading', { level: 1 }).first()).toContainText('Solar Icons for')
-    await expect(page.getByText('Weekly Downloads')).toBeVisible()
+    await expect(page.getByText('Weekly npm downloads')).toBeVisible()
     await expect(page.getByText('Total Icons')).toBeVisible()
     const downloadsCounter = page
-        .getByText('Weekly Downloads')
+        .getByText('Weekly npm downloads')
         .locator('..')
         .locator('number-flow-react')
     await expect.poll(() => downloadsCounter.ariaSnapshot()).toMatch(/5\s+4\s*,\s*3\s+2\s+1/)
