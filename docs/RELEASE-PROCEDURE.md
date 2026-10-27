@@ -63,15 +63,16 @@ Changesets cascade the versions, but these need explicit verification:
 | Flutter   | fresh `flutter pub add`, widget + theme + duotone forms, gallery eyeball |
 | Blade     | fresh `composer require`, four render forms                              |
 | Rails gem | rubygems.org version, frozen `bundle install` of `demo/`                 |
+| Blazor    | fresh `dotnet add package`, static + dynamic render, playground eyeball  |
 | CLI/MCP   | `get <alias> --json` redirect, `search` alias note                       |
 | Skill     | `check:skill-counts`, counts resolve via `overview`                      |
 | Docs      | package page, sidebar icon, icon-detail tab, homepage card               |
 
-## 9. Blazor preview (`SolarIcons.Blazor`, NuGet, in-monorepo)
+## 9. Blazor package (`SolarIcons.Blazor` on NuGet.org, in-monorepo)
 
-This package is an unreleased contribution. The library targets .NET 8 and is checked against .NET 8 and .NET 10 apps. The maintainer handles publishing and maintenance from this repository under the project's NuGet account. The initial version, tag convention, and publishing authentication must be finalized before the first release. The Blazor workflow verifies artifacts and does not publish them.
-
-1. Regenerate with `pnpm --dir packages/blazor generate:assets` after building core. Include the updated `catalogue-manifest.json` with catalogue changes; generated C# remains ignored. Run `check:generated`, `build:dotnet`, `test:dotnet`, `pack:dotnet`, `test:package`, and `test:coexistence` from that package's pnpm scripts. The dedicated workflow also verifies the Linux build, `apps/blazor-app`, drift rejection, compilation timings, and static/dynamic trimming for 1, 50, and all icons on both target runtimes.
-2. Update the version in `packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj`, both package-consuming probe projects, and the local-preview documentation together. Add a changelog entry. Changesets version the CLI and MCP changes only; they do not version NuGet packages.
-3. Before the first release, the maintainer configures NuGet publishing credentials or trusted publishing and the version-tag trigger. Review the packed `.nupkg` for its target framework, dependencies, README, and both license notices. Document the publishing mechanism in a separate reviewed change and preserve the contributor credit in the README.
-4. After an authorized release, verify a fresh application's install from NuGet.org and its static and dynamic SVG output. Replace the site's unreleased-preview instructions and package status only after the package is available.
+1. Normal state: `blazor.yml` regenerates the C# on every catalogue change and fails on drift. Regenerate locally (`pnpm --filter @solar-icons/core build`, then `pnpm --dir packages/blazor generate:assets`) and commit `catalogue-manifest.json` with the catalogue change; generated C# stays ignored. The .NET steps run with the SDK 10 and the 8 and 10 runtimes, in a container if they are not installed locally.
+2. Bump `<Version>` in `packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj` together with the two probe projects (`probes/PackageConsumer`, `probes/TrimProbe`) and the install commands in the README and the docs page. Add a `CHANGELOG.md` entry. Changesets version the CLI and MCP changes only; they cannot version NuGet packages.
+3. Publish: push a `SolarIcons.Blazor-v<version>` tag matching the project version. `blazor-publish.yml` re-verifies the generation, renders every icon, packs, renders the packed artifact, and pushes to NuGet.org with a temporary API key obtained through OIDC trusted publishing (no secret to rotate; only the nuget.org profile name is stored, as `NUGET_USER`).
+4. Verify: `dotnet add package SolarIcons.Blazor` in a fresh Blazor application renders a static and a dynamic icon; the playground in `apps/blazor-app` eyeballs the full catalogue.
+5. First-time setup only: create the trusted publishing policy on nuget.org (repository owner `saoudi-h`, repository `solar-icons`, workflow file `blazor-publish.yml`; the policy scopes decide whether it may publish a new package), add the `NUGET_USER` repository secret, and consider a tag protection rule for `SolarIcons.Blazor-v*`. If the first push cannot use the policy, publish `2.0.0` once by hand with an API key and delete the key afterwards.
+6. Trimming and size figures live in `packages/blazor/BENCHMARKS.md`; refresh them with `measure:build` and `measure:trimming` after changes to the generated components.
