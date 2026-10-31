@@ -14,10 +14,10 @@ runs:
           run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_OUTPUT
 
         - name: Install dependencies
-          uses: pnpm/action-setup@v4
+          uses: pnpm/action-setup@v6
 
         - name: Set up Node.js
-          uses: actions/setup-node@v4
+          uses: actions/setup-node@v7
           with:
               node-version: ${{ steps.nvmrc.outputs.NODE_VERSION }}
               registry-url: 'https://registry.npmjs.org'
