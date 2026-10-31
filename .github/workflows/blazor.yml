@@ -35,9 +35,9 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 30
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-            - uses: actions/setup-node@v4
+            - uses: actions/checkout@v7
+            - uses: pnpm/action-setup@v6
+            - uses: actions/setup-node@v7
               with:
                   node-version-file: '.nvmrc'
                   cache: 'pnpm'
@@ -53,7 +53,7 @@ jobs:
               run: pnpm --dir packages/blazor check:version
             - name: Typecheck generator
               run: pnpm --dir packages/blazor typecheck
-            - uses: actions/setup-dotnet@v4
+            - uses: actions/setup-dotnet@v6
               with:
                   dotnet-version: |
                       8.0.x
@@ -86,7 +86,7 @@ jobs:
               run: pnpm --dir packages/blazor test:browser
             - name: Save verification evidence
               if: always()
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: blazor-checks
                   path: |
