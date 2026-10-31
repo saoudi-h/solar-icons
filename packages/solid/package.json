@@ -107,7 +107,7 @@
     "devDependencies": {
         "@babel/core": "^8.0.7",
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/tsconfig": "0.1.0",
+        "@tala-tools/tsconfig": "0.1.2",
         "@testing-library/jest-dom": "^7.0.1",
         "@types/node": "^26.6.5",
         "babel-preset-solid": "^1.9.16",
