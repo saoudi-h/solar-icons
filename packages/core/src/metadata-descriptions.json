@@ -17862,5 +17862,16 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "shadow",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["shadow", "drop shadow", "effect", "depth", "elevation", "layer"],
+        "aliases": ["drop-shadow"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
