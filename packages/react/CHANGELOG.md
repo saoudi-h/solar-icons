@@ -1,5 +1,11 @@
 # @solar-icons/react
 
+## 2.3.4
+
+### Patch Changes
+
+- [#647](https://github.com/saoudi-h/solar-icons/pull/647) [`7cc332f`](https://github.com/saoudi-h/solar-icons/commit/7cc332f99910401784b2ce34cfd66a889ba0cf6d) Thanks [@unrevised6419](https://github.com/unrevised6419)! - Declare `@types/react` as an optional peer dependency so the published `.d.mts` files resolve their `react` type imports under strict installers (pnpm isolated/global virtual store, Yarn PnP, Bun isolated linker).
+
 ## 2.3.3
 
 ### Patch Changes
