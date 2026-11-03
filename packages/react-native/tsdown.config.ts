@@ -39,7 +39,7 @@ const config: UserConfig = defineConfig({
 
     unused: {
         level: 'error',
-        ignore: ['typescript', 'react', 'react-native', 'react-native-svg'],
+        ignore: ['typescript', '@types/react', 'react', 'react-native', 'react-native-svg'],
     },
 
     exports: {

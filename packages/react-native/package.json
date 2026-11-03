@@ -109,9 +109,15 @@
         "vitest": "^5.0.5"
     },
     "peerDependencies": {
+        "@types/react": ">= 16.8",
         "react": ">= 16.8",
         "react-native": ">= 0.72.0",
         "react-native-svg": ">= 13.0.0"
+    },
+    "peerDependenciesMeta": {
+        "@types/react": {
+            "optional": true
+        }
     },
     "engines": {
         "node": ">=16"
