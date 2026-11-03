@@ -123,7 +123,7 @@
         "@solar-icons/core": "workspace:*",
         "@sveltejs/package": "^2.5.8",
         "@sveltejs/vite-plugin-svelte": "^7.3.1",
-        "@tala-tools/tsconfig": "0.1.0",
+        "@tala-tools/tsconfig": "0.1.2",
         "@types/node": "^26.6.5",
         "picocolors": "^1.1.1",
         "rimraf": "^6.1.3",

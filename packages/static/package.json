@@ -102,7 +102,7 @@
     },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/tsconfig": "0.1.0",
+        "@tala-tools/tsconfig": "0.1.2",
         "@types/node": "^26.6.5",
         "picocolors": "^1.1.1",
         "rimraf": "^6.1.3",

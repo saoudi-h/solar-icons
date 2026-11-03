@@ -103,7 +103,7 @@
     },
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
-        "@tala-tools/tsconfig": "0.1.0",
+        "@tala-tools/tsconfig": "0.1.2",
         "@types/node": "^26.6.5",
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
