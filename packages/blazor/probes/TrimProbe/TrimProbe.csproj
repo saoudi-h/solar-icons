@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework Condition="'$(TargetFramework)' == ''">net10.0</TargetFramework>
     <AspNetVersion Condition="'$(TargetFramework)' == 'net8.0'">8.0.32</AspNetVersion>
-    <AspNetVersion Condition="'$(TargetFramework)' == 'net10.0'">10.0.13</AspNetVersion>
+    <AspNetVersion Condition="'$(TargetFramework)' == 'net10.0'">10.0.14</AspNetVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
