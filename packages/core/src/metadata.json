@@ -1280,6 +1280,7 @@
                 "ruler-angular",
                 "ruler-cross-pen",
                 "ruler-pen",
+                "selection",
                 "three-squares"
             ]
         },
