@@ -1265,6 +1265,7 @@
                 "flip-horizontal",
                 "flip-vertical",
                 "frame",
+                "intersect",
                 "layers",
                 "layers-minimalistic",
                 "mirror-left",
