@@ -1261,6 +1261,7 @@
                 "colour-tuning",
                 "crop",
                 "crop-minimalistic",
+                "exclude",
                 "filters",
                 "flip-horizontal",
                 "flip-vertical",
