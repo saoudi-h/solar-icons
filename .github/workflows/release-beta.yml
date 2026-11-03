@@ -38,17 +38,19 @@ jobs:
               with:
                   node-version: ''
 
+            # The publishable packages only: the test apps and the documentation
+            # site are not published from here.
             - name: Build
-              run: pnpm build
+              run: pnpm turbo build --concurrency=1 --filter='./packages/*'
 
             - name: Typecheck
-              run: pnpm typecheck
+              run: pnpm turbo typecheck --concurrency=1 --filter='./packages/*'
 
             - name: Lint
-              run: pnpm lint
+              run: pnpm turbo lint --concurrency=1 --filter='./packages/*'
 
             - name: Tests
-              run: pnpm test
+              run: pnpm turbo test --concurrency=1 --filter='./packages/*'
 
             - name: Validate package exports
               run: pnpm check:exports
