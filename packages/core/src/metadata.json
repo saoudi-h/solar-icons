@@ -1265,6 +1265,7 @@
                 "flip-horizontal",
                 "flip-vertical",
                 "frame",
+                "gradient",
                 "layers",
                 "layers-minimalistic",
                 "mirror-left",
