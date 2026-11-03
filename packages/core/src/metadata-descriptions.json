@@ -17862,5 +17862,16 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "bring-layer-backward",
+        "category": "tools",
+        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "tags": ["send backward", "layer down", "arrange", "order", "stack", "move down"],
+        "aliases": ["send-layer-backward"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
