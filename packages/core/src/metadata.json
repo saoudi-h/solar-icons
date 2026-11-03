@@ -492,7 +492,14 @@
         },
         "hands": {
             "tags": ["hands"],
-            "icons": ["hand-heart", "hand-money", "hand-pills", "hand-shake", "hand-stars"]
+            "icons": [
+                "hand-grabbing",
+                "hand-heart",
+                "hand-money",
+                "hand-pills",
+                "hand-shake",
+                "hand-stars"
+            ]
         },
         "home": {
             "tags": ["home", "furniture"],
