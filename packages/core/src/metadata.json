@@ -1280,7 +1280,8 @@
                 "ruler-angular",
                 "ruler-cross-pen",
                 "ruler-pen",
-                "three-squares"
+                "three-squares",
+                "warp"
             ]
         },
         "ui": {
