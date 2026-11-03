@@ -17862,5 +17862,15 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "rotate-clockwise-2",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["rotate", "clockwise", "turn right", "rotation", "transform"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
