@@ -46,7 +46,7 @@ the same core SVG inventory:
 pnpm generate:test-catalogs
 ```
 
-This updates the React, Solid, Angular, Svelte, React Native, and icon-parity demo lists. The
+This updates the React, Solid, Angular, Svelte, and React Native demo lists. The
 per-app `generate:icons` scripts remain as compatibility aliases, but they call the same shared
 generator; do not edit any `icon-list.ts` by hand.
 
@@ -122,18 +122,10 @@ packet and must reflect the same logical count and six-style total. Versioned v1
 historical and are not rewritten when the extension catalogue grows.
 
 The inventory check covers the current README, AGENT, docs, package, plugin, and playground copy.
-Use `rg` for a manual review of any new copy, but do not change numeric IDs in parity JSON files:
+Use `rg` for a manual review of any new copy:
 
 ```sh
 rg -n --glob '!*.svg' '(1,246|1,247|7,476|7,482|7,488)' README.md AGENT.md packages apps
 ```
-
-## What must not be updated automatically
-
-The Lucide parity artifacts describe a frozen historical inventory. In particular,
-`apps/icon-parity/app/compare/mapping-state.json`, the production sheets, and
-`lucide-coverage/coverage.json` must not be renumbered when adding a Solar icon. A new icon enters
-the parity mapping only through a deliberate extension-map decision and a regenerated coverage
-report. This prevents a package release from silently rewriting the audit history.
 
 Finish each packet with the core tests and a single coherent commit (or squashed pull request).

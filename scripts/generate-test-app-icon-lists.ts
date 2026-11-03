@@ -20,7 +20,6 @@ const OUTPUT_PATHS = [
     'apps/solid-app/src/lib/icon-list.ts',
     'apps/angular-app/src/app/icon-list.ts',
     'apps/test-react-native-icons/icon-list.ts',
-    'apps/icon-parity/app/icon-list.ts',
 ]
 
 const STYLES = ['Bold', 'Linear', 'BoldDuotone', 'LineDuotone', 'Broken', 'Outline'] as const
