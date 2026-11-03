@@ -117,8 +117,14 @@
         "vitest": "^5.0.5"
     },
     "peerDependencies": {
+        "@types/react": ">= 16.8",
         "react": ">= 16.8",
         "react-dom": ">= 16.8"
+    },
+    "peerDependenciesMeta": {
+        "@types/react": {
+            "optional": true
+        }
     },
     "engines": {
         "node": ">=16"

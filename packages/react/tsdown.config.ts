@@ -45,7 +45,7 @@ const config: UserConfig = defineConfig({
 
     unused: {
         level: 'error',
-        ignore: ['typescript', 'react', 'react-dom'],
+        ignore: ['typescript', '@types/react', 'react', 'react-dom'],
     },
 
     exports: {
