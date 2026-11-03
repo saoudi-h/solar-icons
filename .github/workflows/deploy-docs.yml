@@ -35,6 +35,10 @@ jobs:
 
             - name: Install dependencies
               uses: ./.github/actions/install
+              with:
+                  filter: |
+                      .
+                      @solar-icons/docs-start...
 
             - name: Check the build variables
               run: test -n "$VITE_UMAMI_ID" && test -n "$VITE_UMAMI_URL"

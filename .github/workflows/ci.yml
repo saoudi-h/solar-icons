@@ -9,12 +9,17 @@ name: CI
 #   checks    the cheap consistency checks, for notes and documentation only
 #
 # A change to the notes or the task files starts nothing.
+#
+# The framework test apps (apps/*-app, apps/test-react-native-icons) are local
+# tools for looking at the packages: they are neither installed nor built nor
+# linted here, and a change that only touches them starts nothing. Each job
+# installs only the projects it works on.
 
 on:
     pull_request:
         paths-ignore:
-            - 'apps/nuxt/**'
-            - 'apps/vue-app/**'
+            - 'apps/*-app/**'
+            - 'apps/test-react-native-icons/**'
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -43,7 +48,7 @@ jobs:
               run: |
                   all=$(git diff --name-only "${{ github.event.pull_request.base.sha }}"...HEAD)
                   # Files that no job needs to look at.
-                  files=$(echo "$all" | grep -vE '^(\.autonomos/|MIGRATION\.md$|apps/vercel-redirect/)' || true)
+                  files=$(echo "$all" | grep -vE '^(\.autonomos/|MIGRATION\.md$|apps/vercel-redirect/|apps/[^/]+-app/|apps/test-react-native-icons/)' || true)
                   # Notes and documentation, checked against the icon inventory.
                   notes='^(docs/|skills/)|\.md$'
                   site_files='^apps/docs-start/'
@@ -81,21 +86,23 @@ jobs:
               uses: ./.github/actions/install
               with:
                   node-version: ''
+                  filter: |
+                      .
+                      ./packages/*
 
-            # The docs site has its own job. The Angular playground bundles the
-            # complete dynamic catalogue and exceeds the memory of the standard
-            # runner on a full build.
+            # Only the publishable packages: the docs site has its own job and
+            # the test apps are not part of CI.
             - name: Build
-              run: pnpm turbo build --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+              run: pnpm turbo build --concurrency=1 --filter='./packages/*'
 
             - name: Typecheck
-              run: pnpm turbo typecheck --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+              run: pnpm turbo typecheck --concurrency=1 --filter='./packages/*'
 
             - name: Lint
-              run: pnpm turbo lint --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+              run: pnpm turbo lint --concurrency=1 --filter='./packages/*'
 
             - name: Tests
-              run: pnpm turbo test --concurrency=1 --filter='!./apps/angular-app' --filter='!@solar-icons/docs-start'
+              run: pnpm turbo test --concurrency=1 --filter='./packages/*'
 
             - name: Validate package exports
               run: pnpm check:exports
@@ -119,6 +126,9 @@ jobs:
               uses: ./.github/actions/install
               with:
                   node-version: ''
+                  filter: |
+                      .
+                      @solar-icons/docs-start...
 
             - name: Build
               run: pnpm turbo build --concurrency=1 --filter=@solar-icons/docs-start...
@@ -156,6 +166,7 @@ jobs:
               uses: ./.github/actions/install
               with:
                   node-version: ''
+                  filter: .
 
             - name: Validate skill catalog freshness
               run: pnpm check:skill-counts
