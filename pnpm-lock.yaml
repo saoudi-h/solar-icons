@@ -449,58 +449,6 @@ importers:
         specifier: ^4.151.3
         version: 4.152.0(@types/node@26.6.5)
 
-  apps/icon-parity:
-    dependencies:
-      '@iconify/react':
-        specifier: ^6.0.3
-        version: 6.0.3(react@19.3.1)
-      '@solar-icons/core':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@solar-icons/react':
-        specifier: workspace:*
-        version: link:../../packages/react
-      next:
-        specifier: 16.4.3
-        version: 16.4.3(@babel/core@8.0.9)(@playwright/test@1.64.1)(@types/node@26.6.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.104.1)
-      react:
-        specifier: 19.3.1
-        version: 19.3.1
-      react-dom:
-        specifier: 19.3.1
-        version: 19.3.1(react@19.3.1)
-    devDependencies:
-      '@iconify-json/lucide':
-        specifier: 1.2.147
-        version: 1.2.147
-      '@tailwindcss/postcss':
-        specifier: ^4.3.3
-        version: 4.3.3
-      '@types/node':
-        specifier: ^26.6.5
-        version: 26.6.5
-      '@types/react':
-        specifier: ^19.3.0
-        version: 19.3.0
-      '@types/react-dom':
-        specifier: ^19.3.0
-        version: 19.3.0(@types/react@19.3.0)
-      eslint-plugin-better-tailwindcss:
-        specifier: ^4.10.0
-        version: 4.10.0(oxlint@1.89.0)(tailwindcss@4.3.3)(typescript@7.0.2)
-      sharp:
-        specifier: 0.35.5
-        version: 0.35.5(@types/node@26.6.5)
-      tailwindcss:
-        specifier: ^4.3.3
-        version: 4.3.3
-      tsx:
-        specifier: ^4.23.15
-        version: 4.23.15
-      typescript:
-        specifier: 7.0.2
-        version: 7.0.2
-
   apps/js-app:
     dependencies:
       '@solar-icons/js':
@@ -3709,16 +3657,8 @@ packages:
   '@iconify-json/grommet-icons@1.2.4':
     resolution: {integrity: sha512-Muj6ViEbR235PWxDe3oM3AFVG4BtaeIihfJPhQiHWPShy24MAscq02+T1IFwIMy0MoTw+V71p5EbNa69xF7SmA==}
 
-  '@iconify-json/lucide@1.2.147':
-    resolution: {integrity: sha512-7Qqa/joSBeUxihWsQJx5nKcqMWtV3YrH90Jldxcx4J9ciTLavRUlpexQwRTcx9dcb7CJpISfjZTj42zD/30sqA==}
-
   '@iconify-json/vscode-icons@1.2.93':
     resolution: {integrity: sha512-szVltJlV2sLZViLp4QFL9Oc2ojnVw2YN7Dqt0adj8+4DOwCjEYu2pwx6nZDP2OAfKMRj+IFqoMqDHxT0F4P/OQ==}
-
-  '@iconify/react@6.0.3':
-    resolution: {integrity: sha512-2x7gVs+tpUG75aXYo/0c5wPOqrFy75YSGKmuJZyuHyrHMydzXpI/+i9/USIzWXJL9WWc2BCgPVnGY2FhbeiiDQ==}
-    peerDependencies:
-      react: '>=18.0.0'
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -17318,18 +17258,9 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.147':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@iconify-json/vscode-icons@1.2.93':
     dependencies:
       '@iconify/types': 2.0.0
-
-  '@iconify/react@6.0.3(react@19.3.1)':
-    dependencies:
-      '@iconify/types': 2.0.0
-      react: 19.3.1
 
   '@iconify/types@2.0.0': {}
 

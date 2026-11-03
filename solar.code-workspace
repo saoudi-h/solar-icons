@@ -82,12 +82,7 @@
         {
             "name": "codemod",
             "path": "packages/codemod",
-        },
-        {
-            "name": "icon-parity",
-            "path": "apps/icon-parity",
         }
-        
     ],
     "settings": {
         "biome.enabled": false,
