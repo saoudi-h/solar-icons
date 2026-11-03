@@ -17862,5 +17862,15 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "brush-cross-pen",
+        "category": "tools",
+        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "tags": ["brush", "pen", "design tools", "creative", "art", "draw", "illustration"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
