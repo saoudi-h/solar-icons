@@ -17862,5 +17862,27 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "calendar-range",
+        "category": "time",
+        "categoryTags": ["clock", "schedule", "date", "hour", "minute", "timer"],
+        "tags": [
+            "calendar",
+            "date range",
+            "period",
+            "start date",
+            "end date",
+            "from",
+            "to",
+            "schedule",
+            "booking",
+            "duration"
+        ],
+        "aliases": ["date-range"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
