@@ -17862,5 +17862,16 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "sparkles",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["sparkles", "ai", "magic", "generate", "stars", "shine", "new", "auto"],
+        "aliases": ["ai-sparkles", "magic-stars"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
