@@ -1211,6 +1211,7 @@
                 "text-underline",
                 "text-underline-circle",
                 "text-underline-cross",
+                "translate",
                 "unlink",
                 "unlink-minimalistic"
             ]

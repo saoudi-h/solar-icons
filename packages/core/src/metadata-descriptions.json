@@ -17862,5 +17862,25 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "translate",
+        "category": "text-formatting",
+        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "tags": [
+            "translate",
+            "translation",
+            "language",
+            "localization",
+            "multilingual",
+            "i18n",
+            "dictionary",
+            "interpreter"
+        ],
+        "aliases": ["language", "localization"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
