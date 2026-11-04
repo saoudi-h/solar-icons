@@ -17862,5 +17862,16 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "variable-square",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["variable", "x", "function", "formula", "math", "parameter", "token", "code"],
+        "aliases": ["variable-box"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
