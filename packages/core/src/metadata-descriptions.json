@@ -17864,16 +17864,17 @@
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
     },
     {
-        "name": "filter-effect",
+        "name": "contrast",
         "category": "tools",
         "categoryTags": ["design", "effects", "image", "edit", "tools"],
         "tags": [
+            "contrast",
+            "brightness",
+            "adjustment",
             "filter",
             "effect",
-            "adjustment",
             "image filter",
             "photo",
-            "contrast",
             "layer effect"
         ],
         "origin": "extended",
