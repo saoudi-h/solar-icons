@@ -8,6 +8,36 @@ Thank you for considering contributing to my project! Here are some ways you can
 - **Feature Requests**: Feel free to propose new features or improvements by creating an issue. Explain the feature and why it would be useful.
 - **Code Contributions**: If you'd like to contribute code, please fork the repository, create a new branch, and submit a pull request. Be sure to include tests for any new functionality.
 
+## Licensing and attribution
+
+Solar Icons’ code is distributed under the MIT license.
+
+Icons from the original 480 Design set remain under CC BY 4.0, including corrected or normalized versions.
+
+New original icons added to the catalogue are distributed under the MIT license. Their design must follow Solar’s visual language.
+
+Authors of new icons are credited in the catalogue. Accepted contributions may be maintained, modified, replaced, or removed by the project in accordance with their license. Contributing does not grant a governance role.
+
+## Proposing a new icon
+
+Before drawing an icon or opening a pull request, open an issue describing the need and any existing icons that come close to addressing it.
+
+Wait for agreement on the contribution’s scope. If you want to contribute several icons, propose the list in that discussion first.
+
+Design review starts with the Linear style. Create the other five styles after the Linear version has been approved.
+
+The project’s maintained Figma file is our source of truth. Proposals must include editable vectors that can be integrated into it. Adding SVG files to the repository alone does not complete catalogue integration.
+
+The maintainer decides whether to accept a contribution based on usefulness, visual consistency, technical conformity, and maintenance capacity.
+
+## Originality
+
+We welcome original designs that fit Solar’s visual language. We do not want drawings copied from other collections and presented as new original work.
+
+If your proposal adapts an existing drawing, disclose that in your submission.
+
+Undisclosed copying discovered after acceptance may result in the icon being removed from future releases and replaced with an original design.
+
 ## Code of Conduct
 
 Please note that all contributors are expected to adhere to the [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure a welcoming environment for everyone.
