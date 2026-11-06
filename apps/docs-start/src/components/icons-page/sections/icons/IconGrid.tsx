@@ -7,6 +7,9 @@ import { Grid, List } from 'react-virtualized'
 import type { IconData } from '~generated/descriptions'
 
 import { SITE_HEADER_RESERVED_HEIGHT } from '~/components/ui-blocks/site-header/constants'
+import { Button } from '~/components/ui/button'
+import { Link } from '~/components/ui/link'
+import { projectLinks } from '~/lib/project-links'
 import { cn } from '~/lib/utils'
 
 import {
@@ -292,6 +295,23 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
             gridRef.current?.scrollToPosition({ scrollTop: 0, scrollLeft: 0 })
         }
     }, [filteredIcons, viewMode])
+
+    if (keyword.trim() && filteredIcons.length === 0) {
+        return (
+            <div
+                ref={wrapperRef}
+                style={{ width: '100%', height }}
+                className="flex flex-col items-center justify-center gap-4 px-4 text-center">
+                <h2 className="font-heading text-xl">No icons found</h2>
+                <p className="max-w-sm text-sm/relaxed text-muted-foreground">
+                    Try another search or request an icon for your use case. No drawing is required.
+                </p>
+                <Button asChild className="rounded-full">
+                    <Link href={projectLinks.requestIcon}>Request an icon</Link>
+                </Button>
+            </div>
+        )
+    }
 
     if (viewMode === 'grouped') {
         return (

@@ -7,11 +7,14 @@ import { SectionMotion } from '~/components/ui-blocks/animations/SectionMotion'
 import { Button } from '~/components/ui/button'
 import { Heading } from '~/components/ui/heading'
 import { Link } from '~/components/ui/link'
+import { projectLinks } from '~/lib/project-links'
 import { cn } from '~/lib/utils'
 
 import { DocsShowcase } from './DocsShowcase'
 import { DxShowcase } from './DxShowcase'
 import { ExplorerShowcase } from './ExplorerShowcase'
+import { FigmaLibraryShowcase } from './FigmaLibraryShowcase'
+import { FigmaMark } from './FigmaMark'
 import { FigmaPluginShowcase } from './FigmaPluginShowcase'
 import { FrameworksShowcase } from './FrameworksShowcase'
 import { StylesShowcase } from './StylesShowcase'
@@ -79,10 +82,10 @@ export const FeaturesSection = () => {
 
                 {/* Card 2: Native Frameworks (md:col-span-5) */}
                 <motion.div variants={itemVariants} className="flex md:col-span-5">
-                    <BentoCard>
+                    <BentoCard fade={false}>
                         <BentoHeader
                             title="Native Framework Packages"
-                            description="Integrate icons directly into React, React Native, Vue, Nuxt, Svelte, SolidJS, or Angular projects without wrappers."
+                            description="One package per framework, built natively. No wrapper layer."
                             href="#available-packages"
                             buttonText="Packages"
                         />
@@ -92,10 +95,10 @@ export const FeaturesSection = () => {
 
                 {/* Card 3: Six Visual Styles (md:col-span-4) */}
                 <motion.div variants={itemVariants} className="flex md:col-span-4">
-                    <BentoCard>
+                    <BentoCard fade={false}>
                         <BentoHeader
                             title="Six Visual Styles"
-                            description="Swap weights and styles on the fly. Each icon includes Linear, Bold, Outline, BoldDuotone, LineDuotone, and Broken variants."
+                            description="Every icon comes in six styles, from light lines to solid shapes."
                         />
                         <StylesShowcase />
                     </BentoCard>
@@ -125,13 +128,28 @@ export const FeaturesSection = () => {
                     </BentoCard>
                 </motion.div>
 
-                <motion.div variants={itemVariants} className="flex md:col-span-12">
+                {/* Cards 6 and 7: Figma library and plugin (md:col-span-6 each) */}
+                <motion.div variants={itemVariants} className="flex md:col-span-6">
                     <BentoCard>
                         <BentoHeader
-                            title="Solar Icons for Figma"
-                            description="Search the complete collection, preview editable strokes, and insert the same standardized SVGs used by Solar Icons packages."
-                            href="https://www.figma.com/community/plugin/1664759238792120976"
-                            buttonText="Get the plugin"
+                            mark={<FigmaMark className="h-5" />}
+                            title="Figma Library"
+                            description="Every icon, in all six styles, as editable components."
+                            href={projectLinks.figmaLibrary}
+                            buttonText="Open library"
+                        />
+                        <FigmaLibraryShowcase />
+                    </BentoCard>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="flex md:col-span-6">
+                    <BentoCard fade={false}>
+                        <BentoHeader
+                            mark={<FigmaMark className="h-5" />}
+                            title="Figma Plugin"
+                            description="Search the catalogue and insert icons without leaving Figma."
+                            href={projectLinks.figmaPlugin}
+                            buttonText="Get plugin"
                         />
                         <FigmaPluginShowcase />
                     </BentoCard>
@@ -142,7 +160,15 @@ export const FeaturesSection = () => {
 }
 
 /* Base Bento Card Wrapper */
-const BentoCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+const BentoCard = ({
+    children,
+    className,
+    fade = true,
+}: {
+    children: React.ReactNode
+    className?: string
+    fade?: boolean
+}) => {
     return (
         <div
             className={cn(
@@ -154,25 +180,29 @@ const BentoCard = ({ children, className }: { children: React.ReactNode; classNa
                 className
             )}>
             {children}
-            {/* Gradient Veil overlay at the bottom to fade visual mockups into the card base */}
-            <div
-                className="
+            {/* Fade cropped artwork only; interactive previews keep their controls visible. */}
+            {fade && (
+                <div
+                    className="
                   pointer-events-none absolute inset-x-0 bottom-0 z-30 h-32 bg-linear-to-t
                   from-default-100 to-transparent
                   dark:from-default-50/70
                 "
-            />
+                />
+            )}
         </div>
     )
 }
 
 /* Consistent Card Header Component */
 const BentoHeader = ({
+    mark,
     title,
     description,
     href,
     buttonText,
 }: {
+    mark?: React.ReactNode
     title: string
     description: string
     href?: string
@@ -182,9 +212,11 @@ const BentoHeader = ({
         <div className="flex items-start justify-between gap-4">
             <h3
                 className={`
-                  font-heading text-lg font-light tracking-tight text-foreground
+                  flex items-center gap-2.5 font-heading text-lg font-light tracking-tight
+                  text-foreground
                   md:text-xl
                 `}>
+                {mark}
                 {title}
             </h3>
             {href && buttonText && (

@@ -12,6 +12,7 @@ import type { PackageSectionProps } from '~/components/home-page/sections/packag
 import type { FooterProps } from '~/components/ui-blocks/footer/types'
 import type { SuperButtonProps } from '~/components/ui/SuperButton'
 import { Icon } from '~/lib/icons'
+import { projectLinks } from '~/lib/project-links'
 
 export interface NotFoundProps {
     title: {
@@ -109,10 +110,15 @@ export const config: Config = {
                 title: 'Community',
                 links: [
                     {
-                        label: 'Contribute',
-                        url: 'https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md',
+                        label: 'Request an icon',
+                        url: projectLinks.requestIcon,
                         icon: <HelpIcon size={20} />,
                         external: true,
+                    },
+                    {
+                        label: 'Contribute',
+                        url: '/docs/v2/community/contributing',
+                        icon: <HelpIcon size={20} />,
                     },
                     {
                         label: 'Issues',
@@ -131,6 +137,18 @@ export const config: Config = {
             {
                 title: 'Resources',
                 links: [
+                    {
+                        label: 'Figma library',
+                        url: projectLinks.figmaLibrary,
+                        icon: <Icon icon="solar:figma-bold-duotone" />,
+                        external: true,
+                    },
+                    {
+                        label: 'Figma plugin',
+                        url: projectLinks.figmaPlugin,
+                        icon: <Icon icon="solar:figma-bold-duotone" />,
+                        external: true,
+                    },
                     {
                         label: 'License',
                         url: '/docs/v2/community/license',

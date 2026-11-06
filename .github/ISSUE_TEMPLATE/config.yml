@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+    - name: Browse the icon catalogue
+      url: https://solar-icons.dev/icons
+      about: Check whether an existing icon already meets your need.
+    - name: Contribution guide
+      url: https://solar-icons.dev/docs/v2/community/contributing
+      about: Read how to contribute code or editable icon artwork.

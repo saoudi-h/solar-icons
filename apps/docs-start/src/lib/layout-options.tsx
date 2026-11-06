@@ -23,6 +23,11 @@ export function baseOptions(): BaseLayoutProps {
                 active: 'nested-url',
             },
             {
+                text: 'Figma',
+                url: '/docs/v2/figma-library',
+                active: 'url',
+            },
+            {
                 text: 'Blog',
                 url: '/blog',
                 active: 'nested-url',
