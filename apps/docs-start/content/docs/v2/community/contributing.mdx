@@ -1,7 +1,64 @@
 ---
 title: Contributing
-description: Learn how to contribute to Solar Icons. Report bugs, suggest features, or submit pull requests.
+description: Contribute code, request an icon or propose editable icon artwork.
 icon: solar:hand-pills-bold-duotone
 ---
 
-Currently, the project is developed and maintained by a single developer. Contributions are welcome. Follow the [contribution guidelines](https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md) on GitHub.
+We welcome contributions to the code, documentation and icon catalogue.
+
+## Request an icon
+
+You do not need to draw anything to suggest a useful addition. [Request an icon](/docs/v2/community/request-an-icon) and explain where you would use it.
+
+## Contribute code or documentation
+
+1. For substantial changes or a new package, open an issue and agree on the scope first. Focused bug fixes and documentation corrections do not need a separate scope discussion.
+2. Fork the repository and create a branch from `main`.
+3. Install dependencies with `pnpm install`, then build the packages needed for your change. The repository's [development setup](https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md#development-setup) explains the full setup.
+4. Edit source files rather than generated icon components. Add meaningful tests for behavioural changes and run the checks for the affected package.
+5. Open a focused pull request linked to the relevant issue, describing the problem, the resulting behaviour and how you verified it. Include screenshots for visual changes and a Changeset when published package behaviour changes.
+
+## Contribute an icon
+
+1. Open an [icon request or design proposal](/docs/v2/community/request-an-icon) before drawing or submitting a pull request. Explain the need, existing alternatives and any related icons you want to contribute.
+2. Wait for agreement on the scope.
+3. Draw an editable **Linear** version first, using the [maintained Figma library](/docs/v2/figma-library) as a reference.
+4. Share your editable Linear drawing and a preview in the same GitHub issue, using one of the methods below.
+5. After Linear is approved, prepare Broken, Line Duotone, Outline, Bold and Bold Duotone. Review all six together.
+6. The accepted artwork is integrated into the maintained Figma source, then exported and validated for the packages. An SVG-only pull request does not complete this integration.
+
+### Share editable artwork
+
+GitHub is where we discuss the need, review the drawing and track decisions. Figma is our catalogue's source of truth; you do not need edit access to it or a paid Figma plan to contribute.
+
+**If you use Figma:**
+
+1. Work in your own draft. You can copy relevant components and keylines from the [Figma library](/docs/v2/figma-library) as references.
+2. Keep the proposed icon in a clearly named 24 × 24 frame or component.
+3. Share a link to that frame in the GitHub issue, with viewing and copying allowed. We need the vector geometry, not just a prototype or screenshot.
+4. Include a preview in the issue so the drawing can be discussed without opening the file each time. Update the same proposal as we review it.
+
+**If you use another vector editor:**
+
+Share the SVG source in an `svg` code block in the issue, alongside a visual preview. Keep live strokes editable and identify any reference artwork. We can import the vectors into Figma for review; adding SVGs directly to the repository does not complete catalogue integration.
+
+Start with Linear in either case. After we approve it, add the remaining five styles to the same proposal. We integrate the accepted vectors into the maintained Figma file, then export and validate the package assets.
+
+### Minimum technical expectations
+
+- A 24 × 24 component with proportions and optical balance consistent with the set.
+- Editable strokes for Linear, Broken and Line Duotone; 1.5 px is the standard weight, including dots.
+- Round exposed endpoints, with sound intersections. Closed paths have no exposed caps.
+- Filled geometry for Outline, Bold and Bold Duotone.
+- Duotone elements use 100% and 50% opacity. Do not add hidden geometry just to satisfy a check.
+- Clear naming, an appropriate category and no duplicate of an existing icon.
+
+The keylines are useful references, not universal snapping requirements. Visual review remains necessary; passing automated checks alone does not establish that an icon fits Solar.
+
+### Originality and attribution
+
+We want original work that fits Solar's visual language. Disclose any existing drawing you adapted and identify reference sources. Undisclosed copying discovered after acceptance may result in the icon being removed and replaced with an original design.
+
+Original 480 Design artwork, including corrections, remains CC BY 4.0. New original icons are MIT licensed and their authors are credited. Accepted work may be maintained, modified, replaced or removed under its license; contribution does not grant a governance role.
+
+See the repository's [contribution policy](https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md), [Code of Conduct](https://github.com/saoudi-h/solar-icons/blob/main/CODE_OF_CONDUCT.md) and [licensing guide](/docs/v2/community/license).

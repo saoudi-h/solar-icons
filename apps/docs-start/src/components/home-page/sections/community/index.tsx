@@ -1,37 +1,22 @@
 'use client'
 import NumberFlow from '@number-flow/react'
-import type { IconWeight } from '@solar-icons/core/runtime'
-import { AltArrowDownIcon } from '@solar-icons/react/dynamic/alt-arrow-down'
-import { AltArrowUpIcon } from '@solar-icons/react/dynamic/alt-arrow-up'
 import { ArrowRightUpIcon } from '@solar-icons/react/dynamic/arrow-right-up'
-import { BuildingsIcon } from '@solar-icons/react/dynamic/buildings'
-import { CheckCircleIcon } from '@solar-icons/react/dynamic/check-circle'
-import { CloseCircleIcon } from '@solar-icons/react/dynamic/close-circle'
 import { CodeScanIcon } from '@solar-icons/react/dynamic/code-scan'
-import { CopyIcon } from '@solar-icons/react/dynamic/copy'
-import { DialogIcon } from '@solar-icons/react/dynamic/dialog'
 import { GlobalIcon } from '@solar-icons/react/dynamic/global'
 import { HeartIcon } from '@solar-icons/react/dynamic/heart'
-import { KeyIcon } from '@solar-icons/react/dynamic/key'
-import { LikeIcon } from '@solar-icons/react/dynamic/like'
-import { LinkIcon } from '@solar-icons/react/dynamic/link'
-import { LockIcon } from '@solar-icons/react/dynamic/lock'
-import { MinimalisticMagnifierIcon } from '@solar-icons/react/dynamic/minimalistic-magnifier'
 import { PaletteRoundIcon } from '@solar-icons/react/dynamic/palette-round'
 import { PlugCircleIcon } from '@solar-icons/react/dynamic/plug-circle'
-import { RestartIcon } from '@solar-icons/react/dynamic/restart'
-import { SettingsMinimalisticIcon } from '@solar-icons/react/dynamic/settings-minimalistic'
 import { ShieldCheckIcon } from '@solar-icons/react/dynamic/shield-check'
 import { StarIcon } from '@solar-icons/react/dynamic/star'
-import { UnlinkIcon } from '@solar-icons/react/dynamic/unlink'
-import { UnreadIcon } from '@solar-icons/react/dynamic/unread'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import React from 'react'
 
 import { SectionMotion } from '~/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '~/components/ui/GitHubStarButton'
 import { Heading } from '~/components/ui/heading'
+import { Link } from '~/components/ui/link'
+import { projectLinks } from '~/lib/project-links'
 import { useSiteStats } from '~/lib/site-stats-context'
 
 export const CommunitySection = () => {
@@ -71,17 +56,19 @@ export const CommunitySection = () => {
                 <div
                     className={`
                       relative z-10 grid grid-cols-1 items-center gap-8
-                      md:grid-cols-12 md:gap-12
+                      lg:grid-cols-12 lg:gap-12
                     `}>
                     {/* Left: Text and dynamic metric widgets */}
-                    <div className="flex flex-col gap-6 md:col-span-7">
+                    <div className="flex flex-col gap-6 lg:col-span-7">
                         {/* Title & Copy */}
                         <motion.div variants={itemVariants} className="flex flex-col gap-4">
-                            <Heading size="h1" className="text-3xl font-light md:text-4xl">
-                                Built for developers. <br className="hidden md:inline" />
-                                <span className="font-body text-muted-foreground">
-                                    Maintained with care.
-                                </span>
+                            <Heading asChild size="h1" className="text-3xl font-light md:text-4xl">
+                                <h2>
+                                    Built for developers. <br className="hidden md:inline" />
+                                    <span className="font-body text-muted-foreground">
+                                        Maintained with care.
+                                    </span>
+                                </h2>
                             </Heading>
                             <p
                                 className={`
@@ -95,7 +82,7 @@ export const CommunitySection = () => {
                         </motion.div>
 
                         {/* Stats Dashboard Grid */}
-                        <div className="mt-2 flex max-w-2xl gap-4">
+                        <div className="mt-2 grid max-w-2xl grid-cols-3 gap-2 sm:gap-4">
                             {/* Stat Card 1: Downloads */}
                             <motion.div variants={itemVariants} className="flex-1">
                                 <StatCard title="Weekly npm downloads" value={weeklyDownloads} />
@@ -114,7 +101,7 @@ export const CommunitySection = () => {
                     {/* Right: Custom GitHub Star Button CTA with geometric icon grid */}
                     <motion.div
                         variants={itemVariants}
-                        className="relative flex w-full items-center justify-center md:col-span-5">
+                        className="relative flex w-full items-center justify-center lg:col-span-5">
                         <CommunityIconGrid stars={stars} />
                     </motion.div>
                 </div>
@@ -130,84 +117,103 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ title, value }) => {
     return (
-        <div className={`flex flex-col gap-1 p-4`}>
+        <div className={`flex min-w-0 flex-col gap-1 p-2 sm:p-4`}>
             <span className={`text-xs font-bold text-muted-foreground uppercase`}>{title}</span>
-            <span className={`text-3xl font-extrabold tracking-tight text-foreground`}>
+            <span className={`text-xl font-extrabold tracking-tight text-foreground sm:text-3xl`}>
                 <NumberFlow value={value} format={{ minimumIntegerDigits: 1 }} trend={1} />
             </span>
         </div>
     )
 }
 
-// Geometric Icon Grid layout (5x5, middle column 2 row 2 is empty for the button)
-type GridIcon = React.ComponentType<{ size?: number; weight?: IconWeight }> | null
-
-const gridIcons: GridIcon[][] = [
-    [HeartIcon, LikeIcon, ShieldCheckIcon, GlobalIcon, LinkIcon, MinimalisticMagnifierIcon],
-    [
-        PaletteRoundIcon,
-        PlugCircleIcon,
-        SettingsMinimalisticIcon,
-        CodeScanIcon,
-        CheckCircleIcon,
-        WidgetIcon,
-    ],
-    [CopyIcon, AltArrowDownIcon, BuildingsIcon, AltArrowUpIcon, CloseCircleIcon, StarIcon],
-    [UnreadIcon, ArrowRightUpIcon, RestartIcon, UnlinkIcon, DialogIcon, LockIcon, KeyIcon],
+// A missing tile makes requesting an icon part of the catalogue illustration.
+const communityIcons = [
+    { Icon: HeartIcon, color: 'text-rose-500 dark:text-rose-400', x: '8%', y: '15%', rotate: -12 },
+    {
+        Icon: PaletteRoundIcon,
+        color: 'text-violet-500 dark:text-violet-400',
+        x: '33%',
+        y: '5%',
+        rotate: 8,
+    },
+    { Icon: GlobalIcon, color: 'text-sky-600 dark:text-sky-400', x: '59%', y: '12%', rotate: -8 },
+    {
+        Icon: ShieldCheckIcon,
+        color: 'text-emerald-600 dark:text-emerald-400',
+        x: '84%',
+        y: '3%',
+        rotate: 12,
+    },
+    { Icon: CodeScanIcon, color: 'text-sky-600 dark:text-sky-400', x: '3%', y: '64%', rotate: 8 },
+    {
+        Icon: PlugCircleIcon,
+        color: 'text-amber-600 dark:text-amber-400',
+        x: '29%',
+        y: '71%',
+        rotate: -10,
+    },
+    {
+        Icon: WidgetIcon,
+        color: 'text-violet-500 dark:text-violet-400',
+        x: '55%',
+        y: '65%',
+        rotate: 10,
+    },
+    {
+        Icon: StarIcon,
+        color: 'text-amber-600 dark:text-amber-400',
+        x: '10%',
+        y: '86%',
+        rotate: -10,
+    },
 ]
 
-interface CommunityIconGridProps {
-    stars: number
-}
+const CommunityIconGrid = ({ stars }: { stars: number }) => {
+    const reduceMotion = useReducedMotion()
 
-const CommunityIconGrid: React.FC<CommunityIconGridProps> = ({ stars }) => {
     return (
-        <div className="relative flex h-85 w-full items-center justify-center">
-            {/* The 3D Tilted Icon Grid */}
-            <div
-                className="
-                  pointer-events-none absolute flex h-72 w-96 items-center justify-center
-                  select-none
-                  sm:w-md
-                "
-                style={{
-                    perspective: 300,
-                    transformStyle: 'preserve-3d',
-                }}>
-                <div
-                    className="grid size-full grid-cols-5 grid-rows-5 gap-3"
-                    style={{
-                        transform: 'rotateX(20deg) rotateY(-20deg) rotateZ(6deg) translateZ(-10px)',
-                        transformStyle: 'preserve-3d',
-                        maskImage: 'radial-gradient(circle, black 45%, transparent 90%)',
-                        WebkitMaskImage: 'radial-gradient(circle, black 45%, transparent 90%)',
-                    }}>
-                    {gridIcons.map((row, rowIndex) =>
-                        row.map((IconComponent, colIndex) => {
-                            if (IconComponent === null) {
-                                return <div key="center-placeholder" className="size-full" />
-                            }
-
-                            return (
-                                <div
-                                    key={`${rowIndex}-${colIndex}`}
-                                    className="flex size-full items-center justify-center">
-                                    <div
-                                        className="
-                                          text-foreground/40 transition-colors duration-300
-                                          dark:text-foreground/25
-                                        ">
-                                        <IconComponent size={24} weight="BoldDuotone" />
-                                    </div>
-                                </div>
-                            )
-                        })
-                    )}
-                </div>
+        <div className="relative mx-auto h-85 w-full max-w-96">
+            <div className="absolute inset-0" aria-hidden="true">
+                {communityIcons.map(({ Icon, color, x, y, rotate }, index) => (
+                    <motion.div
+                        key={index}
+                        className={`absolute ${color}`}
+                        style={{ left: x, top: y, rotate }}
+                        animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+                        transition={{
+                            duration: 5 + index * 0.3,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                        }}>
+                        <Icon size={index % 3 === 0 ? 36 : 32} weight="BoldDuotone" />
+                    </motion.div>
+                ))}
             </div>
 
-            {/* Elevated premium button container */}
-            <div className="relative z-10">
+            <Link
+                href={projectLinks.requestIcon}
+                className="group absolute top-48 right-0 flex flex-col items-center gap-3 rounded-xl text-center focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-ring">
+                <span className="relative flex size-16 items-center justify-center rounded-2xl border border-dashed border-primary/60 bg-primary/5 text-primary transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/10">
+                    <span aria-hidden="true" className="flex size-8 items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" className="size-8">
+                            <path
+                                d="M12 5v14M5 12h14"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                            />
+                        </svg>
+                    </span>
+                </span>
+                <span className="flex flex-col gap-1">
+                    <span className="text-sm font-medium text-foreground">Missing an icon?</span>
+                    <span className="flex items-center justify-center gap-1 text-xs text-primary">
+                        Request it <ArrowRightUpIcon size={14} weight="Linear" aria-hidden="true" />
+                    </span>
+                </span>
+            </Link>
+
+            <div className="absolute top-28 left-1/2 -translate-x-1/2">
                 <GitHubStarButton starCount={stars} />
             </div>
         </div>

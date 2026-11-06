@@ -1,0 +1,58 @@
+name: Request or propose an icon
+description: Request an icon or discuss an icon you would like to design.
+title: '[Icon] '
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Use this form to request an icon or propose one you would like to design. If a related issue already exists, continue there instead. No drawing or code is required to request an icon. Agree on the scope with us before drawing; design review starts with Linear.
+
+              [Read the contribution guide](https://github.com/saoudi-h/solar-icons/blob/main/CONTRIBUTING.md#proposing-a-new-icon) for sharing editable artwork.
+    - type: dropdown
+      id: contribute
+      attributes:
+          label: Request type
+          options:
+              - I am requesting an icon only
+              - I would like to propose and draw an icon after the scope is agreed
+      validations:
+          required: true
+    - type: checkboxes
+      id: existing
+      attributes:
+          label: Check existing icons and requests
+          options:
+              - label: I searched the catalogue and existing issues for this icon or an equivalent.
+                required: true
+    - type: input
+      id: name
+      attributes:
+          label: Icon or concept
+          description: A suggested name is enough; we will review the final name.
+          placeholder: e.g. Package tracking
+      validations:
+          required: true
+    - type: textarea
+      id: need
+      attributes:
+          label: Where would you use it?
+          description: Describe the action, screen or real situation this icon should represent.
+      validations:
+          required: true
+    - type: textarea
+      id: alternatives
+      attributes:
+          label: Closest existing icons
+          description: Which icons did you consider, and why do they not meet your need? If you found none, say so.
+      validations:
+          required: true
+    - type: textarea
+      id: references
+      attributes:
+          label: References or context (optional)
+          description: Screenshots or links can explain a concept. Identify their sources; references are not drawings to copy.
+    - type: textarea
+      id: artwork
+      attributes:
+          label: Design proposal (optional)
+          description: If the scope is already agreed, share a link to editable Linear artwork with viewing and copying allowed, or provide SVG source in a code block. Include a preview and disclose any adapted drawing or reference source. Do not prepare all six styles before Linear approval.

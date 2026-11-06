@@ -5,6 +5,7 @@
     "root": true,
     "pages": [
         "index",
+        "figma-library",
         "figma-plugin",
         "packages",
         "ai-tools",
