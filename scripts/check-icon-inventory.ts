@@ -243,7 +243,8 @@ const main = () => {
         const readmeLines = fs
             .readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8')
             .split('\n')
-        const tableHead = readmeLines.findIndex(line => line.startsWith('| Package |'))
+        const tableHead = readmeLines.findIndex(line => /^\|\s*Package\s*\|/.test(line))
+        if (tableHead === -1) errors.push('README has no package table')
         let tableRows = 0
         for (const line of readmeLines.slice(tableHead + 1)) {
             if (!line.startsWith('|')) break
