@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- Restore the corrected catalogue artwork, including editable line shapes and dashed details, from the maintained Figma source. No icons are added or removed.
+
 ## 2.1.0
 
 - `SolarProvider` sets the Solar CSS variables on a `display: contents` wrapper and supports `@bind-` on each value.

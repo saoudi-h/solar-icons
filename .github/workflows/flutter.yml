@@ -8,6 +8,7 @@ on:
         paths:
             - 'packages/flutter/**'
             - 'packages/core/svgs/**'
+            - 'packages/core/src/inline-svg-use.mjs'
             - 'packages/core/src/metadata-descriptions.json'
             - 'cspell.json'
             - '.github/workflows/flutter*.yml'
@@ -15,6 +16,7 @@ on:
         paths:
             - 'packages/flutter/**'
             - 'packages/core/svgs/**'
+            - 'packages/core/src/inline-svg-use.mjs'
             - 'packages/core/src/metadata-descriptions.json'
             - 'cspell.json'
             - '.github/workflows/flutter*.yml'
