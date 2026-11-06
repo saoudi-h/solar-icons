@@ -50,7 +50,7 @@ type PaintState = {
 
 const __dirname = import.meta.dirname
 const PACKAGE_ROOT = path.resolve(__dirname, '../..')
-const SVGS_PATH = path.resolve(__dirname, '../../svgs')
+const SVGS_PATH = path.resolve(process.env.SOLAR_SVGS_DIR || path.resolve(__dirname, '../../svgs'))
 const REPORTS_PATH = path.join(PACKAGE_ROOT, 'reports')
 const MARKDOWN_REPORT_PATH = path.join(REPORTS_PATH, 'svg-quality-report.md')
 const JSON_REPORT_PATH = path.join(REPORTS_PATH, 'svg-quality-report.json')
@@ -122,7 +122,20 @@ const resolveOpacity = (local: string, parent: number | null): number | null => 
 }
 
 const isNone = (value: string): boolean => normalize(value) === 'none'
-const isAllowedColor = (value: string): boolean => normalize(value) === '#1c274c'
+// Caps only affect open ends. Figma may serialize a closed rect as a closed path.
+const hasOpenEnds = (element: XmlElement, tag: string): boolean => {
+    if (['rect', 'circle', 'ellipse', 'polygon'].includes(tag)) return false
+    if (tag === 'path') {
+        const parts = (element.getAttribute('d') || '').match(/[mM][^mM]*/g)
+        return !parts || parts.some(part => !/[zZ]\s*$/.test(part))
+    }
+    return true
+}
+
+const isAllowedColor = (value: string): boolean =>
+    new Set(['#1c274c', '#000000', '#ffffff', '#000', '#fff', 'black', 'white']).has(
+        normalize(value)
+    )
 
 type RuleDescription = {
     title: string
@@ -139,8 +152,8 @@ const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
     'color-not-allowed': {
         title: 'Non-canonical color',
         expected:
-            'Every visible painted SVG value is #1C274C. The paint keyword none and colors inside non-rendered clipping definitions are allowed.',
-        action: 'Replace the reported visible color in Figma with #1C274C.',
+            'Visible paint uses legacy Solar navy or theme-neutral black/white. The paint keyword none and colors inside non-rendered clipping definitions are allowed.',
+        action: 'Use Solar navy, black or white for visible paint.',
     },
     'duotone-missing-accent': {
         title: 'Duotone has no 50% tone',
@@ -169,7 +182,7 @@ const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
     },
     'line-style-stroke-cap': {
         title: 'Line style has a non-round cap',
-        expected: 'Every visible stroke in Linear, Broken and LineDuotone uses round caps.',
+        expected: 'Every open stroke endpoint in Linear, Broken and LineDuotone uses round caps.',
         action: 'Set the path end points to Round in Figma.',
     },
     'minimum-elements': {
@@ -278,7 +291,10 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                         addIssue(
                             issues,
                             'color-not-allowed',
-                            paintName + ' uses "' + paintValue + '"; expected "#1C274C".',
+                            paintName +
+                                ' uses "' +
+                                paintValue +
+                                '"; expected Solar navy, black or white.',
                             element
                         )
                     }
@@ -316,7 +332,11 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                         element
                     )
                 }
-                if (hasStroke && normalize(state.strokeLinecap) !== 'round') {
+                if (
+                    hasStroke &&
+                    hasOpenEnds(element, tagName) &&
+                    normalize(state.strokeLinecap) !== 'round'
+                ) {
                     addIssue(
                         issues,
                         'line-style-stroke-cap',
@@ -402,7 +422,7 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                 style +
                 '.',
             element: '<svg>',
-            severity: 'warning',
+            severity: renderedDrawableCount === 0 ? 'error' : 'warning',
         })
     }
 

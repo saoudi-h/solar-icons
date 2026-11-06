@@ -24,11 +24,11 @@ describe('SVG visual contracts', () => {
         ).not.toContain('line-style-stroke-cap')
     })
 
-    it('warns when an SVG has fewer than the style minimum drawable elements', () => {
+    it('rejects empty SVGs and warns on a single duotone element', () => {
         const linearIssues = analyzeSvg(svg(''), 'Linear')
         expect(linearIssues).toEqual(
             expect.arrayContaining([
-                expect.objectContaining({ rule: 'minimum-elements', severity: 'warning' }),
+                expect.objectContaining({ rule: 'minimum-elements', severity: 'error' }),
             ])
         )
 
@@ -91,11 +91,28 @@ describe('SVG visual contracts', () => {
         expect(rules('<path d="M1 1L2 2" fill="#1C274C"/>', 'Outline')).toEqual([])
     })
 
-    it('allows only the canonical Solar color', () => {
+    it('requires round caps only on open subpaths', () => {
+        expect(rules('<path d="M0 0L1 1Z" fill="none" stroke="#000000"/>', 'Linear')).not.toContain(
+            'line-style-stroke-cap'
+        )
+        expect(
+            rules('<path d="M0 0L1 1ZM2 2L3 3" fill="none" stroke="#000000"/>', 'Linear')
+        ).toContain('line-style-stroke-cap')
+        expect(
+            rules('<rect width="2" height="2" fill="none" stroke="#ffffff"/>', 'Linear')
+        ).not.toContain('line-style-stroke-cap')
+    })
+
+    it('allows Solar navy and theme-neutral black or white', () => {
         expect(rules('<path d="M1 1L2 2" fill="#1c274c"/>', 'Bold')).not.toContain(
             'color-not-allowed'
         )
         expect(rules('<path d="M1 1L2 2" fill="#ff0000"/>', 'Bold')).toContain('color-not-allowed')
+        for (const color of ['#000000', '#ffffff', '#000', '#fff', 'black', 'white']) {
+            expect(rules('<path d="M1 1L2 2" fill="' + color + '"/>', 'Bold')).not.toContain(
+                'color-not-allowed'
+            )
+        }
         expect(
             rules(
                 '<defs><clipPath id="crop"><rect width="24" height="24" fill="white"/></clipPath></defs><path d="M1 1L2 2" fill="#1C274C"/>',
@@ -137,6 +154,6 @@ describe('SVG visual contracts', () => {
         const markdown = buildSvgQualityMarkdown(report, '2026-01-01T00:00:00.000Z')
         expect(markdown).toContain('Status: FAILED')
         expect(markdown).toContain('devices/Linear/gamepad-old.svg')
-        expect(markdown).toContain('Replace the reported visible color in Figma with #1C274C.')
+        expect(markdown).toContain('Use Solar navy, black or white for visible paint.')
     })
 })
