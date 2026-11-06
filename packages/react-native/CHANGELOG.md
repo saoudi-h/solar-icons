@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 2.3.5
+
+### Patch Changes
+
+- [#697](https://github.com/saoudi-h/solar-icons/pull/697) [`b1bf864`](https://github.com/saoudi-h/solar-icons/commit/b1bf8641283a2c70c562e0ca44bae69a043a9941) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Restore corrected Solar artwork from the reviewed Figma source. Preserve editable line geometry, corrected dashed details and theme-neutral colors across the catalogue without adding or removing icons.
+
 ## 2.3.4
 
 ### Patch Changes
