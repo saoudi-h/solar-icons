@@ -2,7 +2,7 @@ name: 'Install'
 description: 'Sets up Node.js and runs install'
 inputs:
     node-version:
-        description: 'Version de Node.js'
+        description: 'Node.js version'
         required: false
         default: ''
     filter:
@@ -48,4 +48,3 @@ runs:
                   if [ -n "$selector" ]; then args+=(--filter "$selector"); fi
               done <<< "$FILTER"
               pnpm install --frozen-lockfile "${args[@]}"
-

@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Restore the corrected catalogue artwork, including editable line shapes and dashed details, from the maintained Figma source. No icons are added or removed.
+
 ## 2.0.1
 
 * Pub.dev listing: gallery screenshots, documentation link, and topics.

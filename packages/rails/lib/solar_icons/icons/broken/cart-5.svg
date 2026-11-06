@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-cart-5-broken"><path d="M20.0164 16.2572C19.5294 18.5297 19.2859 19.666 18.4608 20.333C17.6357 21 16.4737 21 14.1495 21H9.85053C7.52639 21 6.36432 21 5.53925 20.333C4.71418 19.666 4.47069 18.5297 3.98372 16.2572L3.55514 14.2572C2.83668 10.9043 2.47745 9.22793 3.378 8.11397C4.27855 7 5.99302 7 9.42196 7H14.5781C18.0071 7 19.7215 7 20.6221 8.11397C21.2929 8.94376 21.2647 10.0856 20.9097 12" stroke="currentColor" stroke-linecap="round"/>
-<path d="M16 12H12M9 12H8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10 15H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18 9L15 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6 9L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-cart-5-broken"><path d="M20.0159 16.2572C19.5289 18.5297 19.2854 19.666 18.4603 20.333C17.6353 21 16.4732 21 14.1491 21H9.85004C7.5259 21 6.36383 21 5.53876 20.333C4.71369 19.666 4.4702 18.5297 3.98323 16.2572L3.55466 14.2572C2.83619 10.9043 2.47696 9.22793 3.37751 8.11397C4.27806 7 5.99253 7 9.42147 7H14.5776C18.0066 7 19.721 7 20.6216 8.11397C21.2924 8.94376 21.2642 10.0856 20.9092 12" stroke-linecap="round" stroke="currentColor"/>
+<path d="M16 12H12M9 12H8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M10 15H14" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M18 9L15 3" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M6 9L9 3" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>

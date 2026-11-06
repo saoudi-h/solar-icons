@@ -13,7 +13,8 @@ import {
     scanSvgIcons,
 } from './icon-metadata'
 
-const SVGS_PATH = path.resolve(import.meta.dirname, '../../svgs')
+const DEFAULT_SVGS_PATH = path.resolve(import.meta.dirname, '../../svgs')
+const SVGS_PATH = process.env.SOLAR_SVGS_DIR || DEFAULT_SVGS_PATH
 const DESCRIPTIONS_PATH = path.resolve(import.meta.dirname, '../metadata-descriptions.json')
 const PACKAGE_DIR = path.resolve(import.meta.dirname, '../..')
 
@@ -44,6 +45,10 @@ const main = () => {
     // New icons = untracked files plus staged-added files in svgs/ (not in git HEAD).
     const gitStatus = gitList('git status --porcelain=v1 --untracked-files=all -- svgs/')
     const newIconNames = extractAddedIconNamesFromGitStatus(gitStatus)
+    if (process.env.SOLAR_SVGS_DIR) {
+        const previous = scanSvgIcons(DEFAULT_SVGS_PATH).iconNames
+        for (const name of iconNames) if (!previous.has(name)) newIconNames.add(name)
+    }
     const newIcons = [...newIconNames].sort()
     for (const iconName of newIcons) {
         console.log(
