@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.5" d="M14 15H10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.5" d="M9.99977 19H1.96045M22.0397 19H13.9943" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path opacity="0.5" d="M14 9H10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8.73372 2H7.00007C5.50007 2 5.23053 2.77865 5.00007 4C4.7696 5.22135 2.35991 10.5619 2.00007 15C1.84226 16.9462 2.00007 20 2.00007 20C2.00007 21.1046 2.8955 22 4.00007 22H8.00007C9.10464 22 10.0001 21.1046 10.0001 20V4C10.0001 2.89543 9.83829 2 8.73372 2Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M15.2663 2H16.9999C18.4999 2 18.7695 2.77865 18.9999 4C19.2304 5.22135 21.6401 10.5619 21.9999 15C22.1577 16.9462 21.9999 20 21.9999 20C21.9999 21.1046 21.1045 22 19.9999 22H15.9999C14.8954 22 13.9999 21.1046 13.9999 20V4C13.9999 2.89543 14.1617 2 15.2663 2Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path opacity="0.5" d="M14 15H10" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
+<path opacity="0.5" d="M9.99977 19H1.96045M22.0397 19H13.9943" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
+<path opacity="0.5" d="M14 9H10" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
+<path d="M6.99982 2H8.73347C9.83804 2 9.99982 2.89543 9.99982 4V20C9.99982 21.1046 9.10439 22 7.99982 22H3.99982C2.89525 22 1.99982 21.1046 1.99982 20C1.99982 20 1.84202 16.9462 1.99982 15C2.35967 10.5619 4.76936 5.22135 4.99982 4C5.23028 2.77865 5.49982 2 6.99982 2Z" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
+<path d="M17.0002 2H15.2665C14.162 2 14.0002 2.89543 14.0002 4V20C14.0002 21.1046 14.8956 22 16.0002 22H20.0002C21.1047 22 22.0002 21.1046 22.0002 20C22.0002 20 22.158 16.9462 22.0002 15C21.6403 10.5619 19.2306 5.22135 19.0002 4C18.7697 2.77865 18.5002 2 17.0002 2Z" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 </svg>
