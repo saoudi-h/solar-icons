@@ -69,10 +69,10 @@ jobs:
 
             - name: Generated widgets exist for publish
               run: |
-                  test -f packages/flutter/lib/bold/heart.dart
-                  test -f packages/flutter/lib/dynamic/home.dart
-                  test -f packages/flutter/lib/flutter_solar_icons.dart
-                  test -f packages/flutter/example/lib/icon_registry.dart
+                  test -f lib/bold/heart.dart
+                  test -f lib/dynamic/home.dart
+                  test -f lib/flutter_solar_icons.dart
+                  test -f example/lib/icon_registry.dart
                   # .pubignore re-includes the gitignored lib/ output: the
                   # dry-run tree must list the icon files, or publish ships
                   # an empty package.
