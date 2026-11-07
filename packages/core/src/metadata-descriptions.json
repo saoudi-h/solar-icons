@@ -17862,5 +17862,452 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "hand-grab",
+        "category": "hands",
+        "categoryTags": ["hands", "gestures", "pan", "grab", "move"],
+        "tags": ["hand", "grab", "pan", "move", "drag", "open hand", "hand tool"],
+        "aliases": ["hand-pan"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "hand-grabbing",
+        "category": "hands",
+        "categoryTags": ["hands", "gestures", "pan", "grab", "move"],
+        "tags": ["hand", "grabbing", "drag", "move", "pan", "closed hand", "dragging"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "blend",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["blend", "blend mode", "mix", "overlay", "layer", "composite"],
+        "aliases": ["blend-mode"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "bring-layer-backward",
+        "category": "tools",
+        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "tags": ["send backward", "layer down", "arrange", "order", "stack", "move down"],
+        "aliases": ["send-layer-backward"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "bring-layer-forward",
+        "category": "tools",
+        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "tags": ["bring forward", "layer up", "arrange", "order", "stack", "move up"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "bring-layer-to-background",
+        "category": "tools",
+        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "tags": ["send to back", "bottom layer", "arrange", "order", "stack", "background"],
+        "aliases": ["send-to-back"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "bring-layer-to-foreground",
+        "category": "tools",
+        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "tags": ["bring to front", "top layer", "arrange", "order", "stack", "foreground"],
+        "aliases": ["bring-to-front"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "brush-cross-pen",
+        "category": "tools",
+        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "tags": ["brush", "pen", "design tools", "creative", "art", "draw", "illustration"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "checkerboard",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["checkerboard", "transparency grid", "pattern", "alpha", "background", "chess"],
+        "aliases": ["transparency-grid"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "circle",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "tags": ["circle", "round", "shape", "primitive", "draw", "dot"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "distort",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["distort", "skew", "transform", "perspective", "free transform", "deform"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "ellipse",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "tags": ["ellipse", "oval", "shape", "primitive", "draw"],
+        "aliases": ["oval"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "exclude",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["exclude", "difference", "xor", "boolean", "shape", "pathfinder"],
+        "aliases": ["boolean-exclude"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "contrast",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": [
+            "contrast",
+            "brightness",
+            "adjustment",
+            "filter",
+            "effect",
+            "image filter",
+            "photo",
+            "layer effect"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "flat-brush",
+        "category": "tools",
+        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "tags": ["flat brush", "paint brush", "wall brush", "paint", "brush", "decorate", "color"],
+        "aliases": ["wide-brush"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "gradient",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["gradient", "color", "fill", "transition", "linear gradient", "ramp"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "intersect",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["intersect", "intersection", "overlap", "boolean", "shape", "pathfinder"],
+        "aliases": ["boolean-intersect"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "intersect-minimalistic",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["intersect", "intersection", "overlap", "boolean", "shape", "pathfinder"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "noise-square",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["noise", "grain", "texture", "dither", "effect", "pattern"],
+        "aliases": ["grain"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "opacity",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["opacity", "transparency", "alpha", "fade", "layer", "visibility"],
+        "aliases": ["transparency"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "paint-bucket",
+        "category": "tools",
+        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "tags": ["paint bucket", "fill", "bucket", "color fill", "flood fill", "paint", "color"],
+        "aliases": ["fill-bucket"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "rectangle",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "tags": ["rectangle", "rect", "shape", "box", "primitive", "draw"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "rotate-anticlockwise",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": [
+            "rotate",
+            "anticlockwise",
+            "counterclockwise",
+            "turn left",
+            "rotation",
+            "transform"
+        ],
+        "aliases": ["rotate-counterclockwise"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "rotate-anticlockwise-2",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": [
+            "rotate",
+            "anticlockwise",
+            "counterclockwise",
+            "turn left",
+            "rotation",
+            "transform"
+        ],
+        "aliases": ["rotate-counterclockwise-2"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "rotate-clockwise",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["rotate", "clockwise", "turn right", "rotation", "transform"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "rotate-clockwise-2",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["rotate", "clockwise", "turn right", "rotation", "transform"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "selection",
+        "category": "tools",
+        "categoryTags": ["design", "select", "edit", "bounding box", "tools"],
+        "tags": ["selection", "select", "marquee", "bounding box", "area", "frame"],
+        "aliases": ["marquee"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "shadow",
+        "category": "tools",
+        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "tags": ["shadow", "drop shadow", "effect", "depth", "elevation", "layer"],
+        "aliases": ["drop-shadow"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "shape-rotate",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["rotate shape", "rotation", "transform", "angle", "turn", "shape"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "subtract",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["subtract", "minus front", "boolean", "shape", "pathfinder", "cut"],
+        "aliases": ["boolean-subtract"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "subtract-minimalistic",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["subtract", "minus front", "boolean", "shape", "pathfinder", "cut"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "union",
+        "category": "tools",
+        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "tags": ["union", "combine", "merge", "boolean", "shape", "pathfinder", "unite"],
+        "aliases": ["boolean-union"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "warp",
+        "category": "tools",
+        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "tags": ["warp", "bend", "deform", "mesh", "transform", "distort"],
+        "origin": "extended",
+        "addedAt": "2026-11-03",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "calendar-range",
+        "category": "time",
+        "categoryTags": ["clock", "schedule", "date", "hour", "minute", "timer"],
+        "tags": [
+            "calendar",
+            "date range",
+            "period",
+            "start date",
+            "end date",
+            "from",
+            "to",
+            "schedule",
+            "booking",
+            "duration"
+        ],
+        "aliases": ["date-range"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "translate",
+        "category": "text-formatting",
+        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "tags": [
+            "translate",
+            "translation",
+            "language",
+            "localization",
+            "multilingual",
+            "i18n",
+            "dictionary",
+            "interpreter"
+        ],
+        "aliases": ["language", "localization"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "sparkles",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["sparkles", "ai", "magic", "generate", "stars", "shine", "new", "auto"],
+        "aliases": ["ai-sparkles", "magic-stars"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "variable-brackets",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["variable", "x", "function", "formula", "math", "parameter", "expression", "code"],
+        "aliases": ["function-variable"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
+    },
+    {
+        "name": "variable-square",
+        "category": "ui",
+        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "tags": ["variable", "x", "function", "formula", "math", "parameter", "token", "code"],
+        "aliases": ["variable-box"],
+        "origin": "extended",
+        "addedAt": "2026-11-04",
+        "author": "Grand Magus",
+        "state": "beta"
     }
 ]
