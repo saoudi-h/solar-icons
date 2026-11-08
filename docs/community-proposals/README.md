@@ -53,6 +53,12 @@ The revisions standardize editable stroke styles and expanded filled styles, str
 
 The draft branch deliberately does not regenerate downstream consumers. Existing catalogue-freshness checks may therefore report stale generated files. Once the contributor approves the final artwork, the maintainer can integrate the Figma components into the catalogue categories and prepare the regular export, consumer regeneration and release validation.
 
-## Outstanding export review
+## Technical checks
 
-Do not push this packet as final artwork yet. `intersect` and `paint-bucket` each export visible filled paths in Linear, Broken and LineDuotone. Those paths require investigation against the native Figma boolean construction to preserve stroke-width customization. The SVG checker also flags missing round-cap attributes, including closed paths where caps have no visible effect; separate open-path defects from closed-path false positives before making changes. Native theme-resolved black paint was normalized to the catalogue color #1C274C in these staging SVGs; geometry and opacity were preserved.
+- All 38 families have six 24x24 SVG variants; icon/metadata coverage passes.
+- The corrected intersect and paint-bucket variants now pass the stroke-only fill check.
+- Theme-resolved black paint was normalized to #1C274C in the review SVGs; geometry and opacity were preserved.
+- The strict SVG checker still reports 49 non-round-cap attributes. Forty belong to fully closed paths, where caps have no visible effect. Nine involve open subpaths, including internal junctions, in contrast, exclude, flat-brush, opacity and subtract-minimalistic. These remain explicit follow-up items before integration; no automatic cap changes were applied to the artwork.
+- Four warnings belong to the existing WiFi None exceptions, not this proposal batch.
+
+These checks support contributor review, not merge readiness. Downstream generation and final integration checks remain deferred.
