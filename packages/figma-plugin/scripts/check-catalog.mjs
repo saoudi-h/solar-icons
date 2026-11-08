@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import zlib from 'node:zlib'
 import { buildCatalogProvenance, stableSerialize } from './catalog-provenance.mjs'
 
 const directory = path.dirname(fileURLToPath(import.meta.url))
@@ -24,10 +25,8 @@ const expectedProvenance = buildCatalogProvenance({
 })
 
 const mismatches = []
-// Embedded icons are the bundle's offline slice: every style,
-// the chunks the build's data budget could afford. Chunks left
-// out are fetched from the CDN at launch, so only the embedded
-// subset is compared here, normalized exactly like the build.
+// Embedded icons are the bundle's offline slice: every style
+// embedded whole, compressed with DEFLATE.
 const metadataByName = new Map(
     staticMetadata.map(entry => [entry.name, entry])
 )
@@ -62,7 +61,7 @@ for (const [style, categories] of Object.entries(embeddedIcons)) {
         }
     }
 }
-// Linear is the offline guarantee: it must ship whole.
+// Linear and all other styles must ship whole.
 const countIcons = chunks =>
     Object.values(chunks ?? {}).reduce(
         (sum, entries) => sum + Object.keys(entries).length,
@@ -115,11 +114,17 @@ function readJson(filePath) {
 }
 
 function readEmbeddedJson(htmlSource, id) {
-    const pattern = new RegExp(`<script id="${id}" type="application/json">([\\s\\S]*?)</script>`)
+    const pattern = new RegExp(`<script id="${id}"([^>]*)>([\\s\\S]*?)</script>`)
     const match = htmlSource.match(pattern)
     if (!match) throw new Error(`Embedded JSON block was not found in dist/ui.html: ${id}`)
     try {
-        return JSON.parse(match[1])
+        const [_, attrs, content] = match
+        if (attrs.includes('data-encoding="deflate-base64"')) {
+            const buf = Buffer.from(content.trim(), 'base64')
+            const decompressed = zlib.inflateSync(buf)
+            return JSON.parse(decompressed.toString('utf8'))
+        }
+        return JSON.parse(content)
     } catch (error) {
         throw new Error(`Embedded JSON block is invalid: ${id}`, { cause: error })
     }

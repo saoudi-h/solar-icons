@@ -1,3 +1,5 @@
+import { unzlibSync, strFromU8 } from 'fflate'
+
 export type IconMetadata = {
     name: string
     category: string
@@ -25,13 +27,29 @@ export type CatalogProvenance = {
 
 export type EmbeddedStyles = Record<string, Record<string, Record<string, string>>>
 
+function base64ToUint8Array(base64: string): Uint8Array {
+    const binString = atob(base64)
+    const len = binString.length
+    const bytes = new Uint8Array(len)
+    for (let i = 0; i < len; i++) {
+        bytes[i] = binString.charCodeAt(i)
+    }
+    return bytes
+}
+
 function readEmbeddedJson<T>(id: string): T {
     const element = document.getElementById(id)
     if (!element) throw new Error(`Missing embedded data: ${id}`)
-    return JSON.parse(element.textContent ?? '') as T
+    const text = (element.textContent ?? '').trim()
+    if (element.getAttribute('data-encoding') === 'deflate-base64') {
+        const u8 = base64ToUint8Array(text)
+        const decompressed = unzlibSync(u8)
+        return JSON.parse(strFromU8(decompressed)) as T
+    }
+    return JSON.parse(text) as T
 }
 
-/** Bundled pack bodies: every style, embedded chunks only. */
+/** Bundled pack bodies: every style, fully embedded and decompressed offline. */
 export const embeddedStyles = readEmbeddedJson<EmbeddedStyles>('solar-icon-data')
 
 export type RegistrySkill = {
