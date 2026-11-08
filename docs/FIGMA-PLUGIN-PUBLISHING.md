@@ -84,16 +84,11 @@ Use Figma Desktop:
 5. Check the Icons, Settings, and Info tabs.
 6. Confirm the Info tab shows the current package version, the icon count, and
    the full package list from `registry.json`.
-7. Confirm every style renders straight from the bundle, with no network needed;
-   if the catalogue ever outgrows the embed budget, the overflow downloads once
-   from the CDN at launch (the status line reports progress, skeleton cells
-   appear meanwhile).
-8. Reload the plugin offline and confirm the embedded styles still render.
+7. Confirm every style renders from the complete embedded bundle, with no network needed.
+8. Reload the plugin offline and confirm all styles still render.
 
-The manifest `networkAccess` stays scoped to the versioned static distribution
-with a public reasoning string. Review the scope before publishing: it must never
-widen beyond versioned Solar assets, and pack downloads must never fetch a newer
-catalogue than the embedded version.
+The manifest must declare `networkAccess.allowedDomains: ["none"]`. The build embeds all icon
+assets and the UI decompresses them locally; there is no catalogue download or CDN fallback.
 
 ## Listing sources: repo first, agent-assisted
 
@@ -105,7 +100,7 @@ The work splits by nature, not by effort:
 
 - **Programmatic (enforced):** `pnpm check:listing` verifies the exact icon
   count, every style name, every registry package name, the absence of stale
-  figures and absolute offline promises, and the manifest network scope.
+  figures, embedded catalogue coverage and the offline manifest network scope.
   What can be checked is checked; it must be green before pasting.
 - **Judgment (human):** tone, emphasis, and new-package blurbs. When facts
   change, the agent drafts the new wording in these files, the guard checks
@@ -134,17 +129,12 @@ Figma's current flow for an existing published classic plugin is:
    `community/dist/plugin-icon-128.png` and the four 1920x1080 images.
 9. At the **Data security** step, give these answers (they match the manifest
    scope and the plugin's actual behavior):
-   - Q1 backend service: **No, I do not host a backend service.** jsDelivr is
-     a public CDN, not our backend; we host nothing.
-   - Q2 network requests: check only **static assets** (versioned icon SVG
-     chunks from `cdn.jsdelivr.net`; no Figma API data is ever included).
-     Never check "does not make any network requests": the versioned
-     download path exists for catalogue overflow even when the current
-     bundle needs no download.
-   - Q3 authentication: **No authentication.**
-   - Q4 stored data: **No Figma-API-derived data stored.** `clientStorage`
-     holds icon chunks from the CDN and user settings only.
-   - Q5 updates: **solo developer** (the maintainer).
+    - Q1 backend service: **No, I do not host a backend service.**
+    - Q2 network requests: **Does not make any network requests.** All icon assets ship in the bundle.
+    - Q3 authentication: **No authentication.**
+    - Q4 stored data: **No Figma-API-derived data stored.** `clientStorage` holds user settings;
+      obsolete downloaded icon caches are removed.
+    - Q5 updates: **solo developer** (the maintainer).
 10. If Figma shows an optional release-notes field, use it if useful, but do not
     treat it as the repository's version history.
 11. Click **Publish**.
