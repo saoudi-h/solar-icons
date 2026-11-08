@@ -902,6 +902,9 @@ importers:
       '@base-ui/react':
         specifier: ^1.9.0
         version: 1.9.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      fflate:
+        specifier: ^0.8.3
+        version: 0.8.3
       fuse.js:
         specifier: ^7.5.0
         version: 7.5.0
@@ -9228,6 +9231,9 @@ packages:
   fflate@0.7.3:
     resolution: {integrity: sha512-0Zz1jOzJWERhyhsimS54VTqOteCNwRtIlh8isdL0AXLo0g7xNTfTL7oWrkmCnPhZGocKIkWHBistBrrpoNH3aw==}
 
+  fflate@0.8.3:
+    resolution: {integrity: sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==}
+
   figma-api@2.2.1-beta:
     resolution: {integrity: sha512-gK/8/O0fj+kqJglJHzVVktXo299aYt2NHXpIrQ0mlb2N+CqK1npqhdqUss51QXTafUdMA4MJqwCBZMsxQuff+Q==}
 
@@ -10925,7 +10931,7 @@ packages:
       imagemin: '*'
       lightningcss: '*'
       postcss: '*'
-      sharp: '*'
+      sharp: 0.35.5
       svgo: '*'
       uglify-js: '*'
       webpack: ^5.1.0
@@ -23242,6 +23248,8 @@ snapshots:
   fetchdts@0.2.0: {}
 
   fflate@0.7.3: {}
+
+  fflate@0.8.3: {}
 
   figma-api@2.2.1-beta(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2):
     dependencies:

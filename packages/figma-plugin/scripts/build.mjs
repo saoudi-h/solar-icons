@@ -29,7 +29,7 @@ const catalogProvenance = buildCatalogProvenance({
 const packageLogos = createPackageLogos(registry)
 
 const embeddedData = [
-    embeddedChunks.json,
+    embeddedChunks.base64,
     JSON.stringify(registry),
     metadata,
     JSON.stringify(catalogProvenance),
@@ -40,10 +40,11 @@ if (embeddedData.some(value => value.toLowerCase().includes('</script'))) {
     )
 }
 
+fs.rmSync(outputDirectory, { recursive: true, force: true })
 fs.mkdirSync(outputDirectory, { recursive: true })
-fs.rmSync(temporaryUiDirectory, { recursive: true, force: true })
 
-await Promise.all([buildMain(), buildUi()])
+await buildMain()
+await buildUi()
 
 const temporaryHtmlPath = path.join(temporaryUiDirectory, 'index.html')
 let html = fs.readFileSync(temporaryHtmlPath, 'utf8')
@@ -55,7 +56,7 @@ html = inlineBuildAsset(
 html = inlineBuildAsset(html, 'style', /<link rel="stylesheet" crossorigin href="([^"]+)">/)
 html = html
     .replace('__SOLAR_VERSION_VALUE__', staticPackage.version)
-    .replace('__SOLAR_ICON_DATA__', embeddedChunks.json)
+    .replace('__SOLAR_ICON_DATA__', embeddedChunks.base64)
     .replace('__SOLAR_REGISTRY__', JSON.stringify(registry))
     .replace('__SOLAR_ICON_METADATA__', metadata)
     .replace('__SOLAR_CATALOG_PROVENANCE__', JSON.stringify(catalogProvenance))
@@ -94,12 +95,9 @@ console.info(
 /**
  * Embedded pack data for the offline bundle, derived from the
  * published-shape `dist/icons.json` map and nested as
- * `{ [style]: { [category]: { [name]: body } } }`. Bodies are
- * whitespace-collapsed only. Linear always ships whole: it is the
- * offline guarantee. The other styles embed in display order
- * until the data budget is spent; the runtime fetches the
- * remaining chunks from the jsDelivr CDN at launch, so the
- * bundle never grows past the Figma limit as the catalog does.
+ * `{ [style]: { [category]: { [name]: body } } }`.
+ * All styles are embedded whole and compressed with DEFLATE (base64).
+ * This eliminates all network requests and fits comfortably under Figma's limits.
  */
 function readEmbeddedChunks() {
     const map = JSON.parse(fs.readFileSync(path.join(staticRoot, 'dist/icons.json'), 'utf8'))
@@ -107,12 +105,8 @@ function readEmbeddedChunks() {
         fs.readFileSync(path.join(staticRoot, 'dist/metadata-descriptions.json'), 'utf8')
     )
     const categoryOf = {}
-    const displayCategories = []
     for (const entry of descriptions) {
         categoryOf[entry.name] = entry.category
-        if (!displayCategories.includes(entry.category)) {
-            displayCategories.push(entry.category)
-        }
     }
     const byStyle = {}
     for (const [key, svg] of Object.entries(map)) {
@@ -120,9 +114,6 @@ function readEmbeddedChunks() {
         if (!match) continue
         const name = match[1]
         const style = match[2]
-        // Alias keys (e.g. chat-square-2-linear) have no metadata
-        // entry and are never browsed: the UI resolves canonical
-        // names only.
         const category = categoryOf[name]
         if (!category) continue
         byStyle[style] = byStyle[style] || {}
@@ -136,32 +127,15 @@ function readEmbeddedChunks() {
     if (Object.keys(byStyle.linear ?? {}).length === 0) {
         throw new Error('No linear icons found in dist/icons.json.')
     }
-    const embedded = { linear: byStyle.linear }
-    let bytes = JSON.stringify(embedded).length
-    // Greedy fill in display order: a category embeds across the
-    // fetched styles before the next category, so the first
-    // browsed icons are always the ones shipped in the bundle.
-    const fetchedStyles = Object.keys(byStyle)
-        .filter(style => style !== 'linear')
-        .sort()
-    for (const category of displayCategories) {
-        for (const style of fetchedStyles) {
-            const chunk = byStyle[style]?.[category]
-            if (!chunk) continue
-            const cost = JSON.stringify(chunk).length
-            if (bytes + cost > EMBED_DATA_BUDGET) continue
-            embedded[style] = embedded[style] || {}
-            embedded[style][category] = chunk
-            bytes += cost
-        }
-    }
-    const json = JSON.stringify(embedded)
-    if (json.length > EMBED_DATA_BUDGET) {
+    const json = JSON.stringify(byStyle)
+    const compressed = zlib.deflateSync(Buffer.from(json, 'utf8'), { level: 9 })
+    const base64 = compressed.toString('base64')
+    if (base64.length > EMBED_DATA_BUDGET) {
         throw new Error(
-            `Embedded pack data is ${(json.length / 1024 / 1024).toFixed(2)} MiB, over the ${(EMBED_DATA_BUDGET / 1024 / 1024).toFixed(1)} MiB budget.`
+            `Embedded pack data is ${(base64.length / 1024 / 1024).toFixed(2)} MiB, over the ${(EMBED_DATA_BUDGET / 1024 / 1024).toFixed(1)} MiB budget.`
         )
     }
-    const entries = Object.values(embedded).reduce(
+    const entries = Object.values(byStyle).reduce(
         (sum, categories) =>
             sum +
             Object.values(categories).reduce(
@@ -170,10 +144,11 @@ function readEmbeddedChunks() {
             ),
         0
     )
-    return { json, entries }
+    return { base64, json, entries }
 }
 
-async function buildMain() {    await esbuild({
+async function buildMain() {
+    await esbuild({
         entryPoints: [path.join(pluginRoot, 'src/main/index.ts')],
         outfile: path.join(outputDirectory, 'code.js'),
         bundle: true,
