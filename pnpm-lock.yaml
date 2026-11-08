@@ -682,7 +682,7 @@ importers:
     devDependencies:
       '@analogjs/vite-plugin-angular':
         specifier: ^2.9.1
-        version: 2.9.2(9b5ebcdad495a164e8ff73884935900f)
+        version: 2.9.4(9b5ebcdad495a164e8ff73884935900f)
       '@angular-devkit/build-angular':
         specifier: ^22.2.3
         version: 22.2.5(@angular/compiler-cli@22.2.4(@angular/compiler@22.2.4)(typescript@6.0.3))(@angular/compiler@22.2.4)(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.4(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)(zone.js@0.16.3)))(@types/node@26.6.6)(chokidar@5.0.0)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(jiti@2.7.0)(lightningcss@1.33.0)(rollup@4.64.12)(sass-embedded@1.104.1)(sass@1.104.1)(sharp@0.35.5(@types/node@26.6.6))(supports-color@10.2.2)(svgo@4.1.0)(tailwindcss@4.3.3)(tsx@4.23.15)(typescript@6.0.3)(vitest@5.0.5)(yaml@2.9.1)
@@ -923,7 +923,7 @@ importers:
         version: 5.3.0
       '@iconify-json/devicon':
         specifier: ^1.2.71
-        version: 1.2.74
+        version: 1.2.75
       '@iconify-json/glyphs-poly':
         specifier: ^1.2.0
         version: 1.2.0
@@ -932,7 +932,7 @@ importers:
         version: 1.2.4
       '@iconify-json/vscode-icons':
         specifier: ^1.2.92
-        version: 1.2.94
+        version: 1.2.95
       '@solar-icons/static':
         specifier: workspace:*
         version: link:../static
@@ -1307,8 +1307,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@analogjs/vite-plugin-angular@2.9.2':
-    resolution: {integrity: sha512-FuhfVLkEPPp7BX1vjHY92/wp/oCmi2LfwyEJBEeDVFqCnaNAE612bNcvgcnJX3uCKKExu60KG/tppFBNDgyP5Q==}
+  '@analogjs/vite-plugin-angular@2.9.4':
+    resolution: {integrity: sha512-YiCyGQPOs7+9ZdKM0eCPK6J1oGZs+1UxqHM1UyuVj4b5l7y7vAgID3QV1ZZWvZ2TFGr0XENknYr9bxTocDnJQQ==}
     peerDependencies:
       '@angular-devkit/build-angular': ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
       '@angular/build': ^22.2.0
@@ -3585,8 +3585,8 @@ packages:
     peerDependencies:
       hono: ^4 || ^5.0.0-0
 
-  '@iconify-json/devicon@1.2.74':
-    resolution: {integrity: sha512-wyCZ1eXu+7gDE9IYrSBij114TMLn717BCR/UBOXc1DnEuMLsvok+/QsMQ8t9RvRdZ2FCpHAaF78osT0+7tvZYg==}
+  '@iconify-json/devicon@1.2.75':
+    resolution: {integrity: sha512-Xqeu0MOJPp3hQz5KN2u8beedpRJJ4OcdjV4WkiR1Qr6mAC087KDEr5kDFy9rFVSTsLAep4BjR0V1ZhCe+kwqBg==}
 
   '@iconify-json/glyphs-poly@1.2.0':
     resolution: {integrity: sha512-jFR16jUBUf49FfZ2VEDuqY+OFcUS9LGys9MehFonNjKT4jn1XV68xqvTvuQ2uQfS6XuqyybiE8xNHACnLvMcFg==}
@@ -3594,8 +3594,8 @@ packages:
   '@iconify-json/grommet-icons@1.2.4':
     resolution: {integrity: sha512-Muj6ViEbR235PWxDe3oM3AFVG4BtaeIihfJPhQiHWPShy24MAscq02+T1IFwIMy0MoTw+V71p5EbNa69xF7SmA==}
 
-  '@iconify-json/vscode-icons@1.2.94':
-    resolution: {integrity: sha512-xn64Tfi1b+MYTcL3XSsAv3gWxrBesCnA0I442xJGgoSg76X2GhojXACnZjJu7FaNB5PCxaDVaZmULHKut4VNvw==}
+  '@iconify-json/vscode-icons@1.2.95':
+    resolution: {integrity: sha512-/MUe/hDExxplspZAD+dag8Iiop8lvooSCflAiqzZHrMals+lfmj9jTfE6WfqSEq0MUi7SyKcWBAtmogb+5RqJA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -14286,7 +14286,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
 
-  '@analogjs/vite-plugin-angular@2.9.2(9b5ebcdad495a164e8ff73884935900f)':
+  '@analogjs/vite-plugin-angular@2.9.4(9b5ebcdad495a164e8ff73884935900f)':
     dependencies:
       magic-string: 0.30.21
       obug: 2.2.1
@@ -17126,7 +17126,7 @@ snapshots:
     dependencies:
       hono: 4.13.13
 
-  '@iconify-json/devicon@1.2.74':
+  '@iconify-json/devicon@1.2.75':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -17138,7 +17138,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/vscode-icons@1.2.94':
+  '@iconify-json/vscode-icons@1.2.95':
     dependencies:
       '@iconify/types': 2.0.0
 
