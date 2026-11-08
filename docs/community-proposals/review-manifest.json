@@ -1,0 +1,1382 @@
+{
+  "baselineCommit": "3036cbd3b06f144556b257b0c05143d71e3e3854",
+  "status": "Awaiting contributor artwork approval; not for merge or release",
+  "renames": {
+    "hand-grab": "hand",
+    "hand-grabbing": "hand-grab",
+    "bring-layer-backward": "layer-arrow-down",
+    "bring-layer-forward": "layer-arrow-up",
+    "bring-layer-to-background": "layers-arrow-down",
+    "bring-layer-to-foreground": "layers-arrow-up"
+  },
+  "variants": [
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6723:961"
+    },
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6723:962"
+    },
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6723:963"
+    },
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6723:1007"
+    },
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6723:1018"
+    },
+    {
+      "name": "blend",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6723:1027"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6723:1028"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6723:1029"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6723:1030"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6723:1031"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6723:1036"
+    },
+    {
+      "name": "layer-arrow-down",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6723:1045"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:46"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:47"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:48"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:49"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:50"
+    },
+    {
+      "name": "layer-arrow-up",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:51"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:56"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:67"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:66"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:58"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:59"
+    },
+    {
+      "name": "layers-arrow-down",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:65"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:68"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:75"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:77"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:76"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:88"
+    },
+    {
+      "name": "layers-arrow-up",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:87"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:89"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:90"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:91"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:92"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:93"
+    },
+    {
+      "name": "brush-cross-pen",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:96"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "Linear",
+      "sourceNode": "6724:99"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "Broken",
+      "sourceNode": "6724:107"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "LineDuotone",
+      "sourceNode": "6724:115"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "Outline",
+      "sourceNode": "6724:132"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "Bold",
+      "sourceNode": "6724:147"
+    },
+    {
+      "name": "calendar-range",
+      "category": "time",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:167"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:176"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:183"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:188"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:201"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:216"
+    },
+    {
+      "name": "checkerboard",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:215"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:217"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:218"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:221"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:228"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:226"
+    },
+    {
+      "name": "circle",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:227"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:229"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:230"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:280"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:261"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:279"
+    },
+    {
+      "name": "contrast",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:278"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:281"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:282"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:283"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:284"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:285"
+    },
+    {
+      "name": "distort",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:286"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:295"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:296"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:297"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:298"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:299"
+    },
+    {
+      "name": "ellipse",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:300"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:307"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:308"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:309"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:310"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:311"
+    },
+    {
+      "name": "exclude",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:312"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:313"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:314"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:315"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:316"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:317"
+    },
+    {
+      "name": "flat-brush",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:318"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:319"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:320"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:321"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:322"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:323"
+    },
+    {
+      "name": "gradient",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:324"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "Linear",
+      "sourceNode": "6724:325"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "Broken",
+      "sourceNode": "6724:326"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "LineDuotone",
+      "sourceNode": "6724:327"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "Outline",
+      "sourceNode": "6724:328"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "Bold",
+      "sourceNode": "6724:329"
+    },
+    {
+      "name": "hand",
+      "category": "hands",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:330"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "Linear",
+      "sourceNode": "6724:331"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "Broken",
+      "sourceNode": "6724:332"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "LineDuotone",
+      "sourceNode": "6724:333"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "Outline",
+      "sourceNode": "6724:334"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "Bold",
+      "sourceNode": "6724:335"
+    },
+    {
+      "name": "hand-grab",
+      "category": "hands",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:336"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:337"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:338"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:339"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:340"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:341"
+    },
+    {
+      "name": "intersect",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:342"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:343"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:344"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:345"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:346"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:347"
+    },
+    {
+      "name": "intersect-minimalistic",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:348"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:349"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:350"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:351"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:352"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:353"
+    },
+    {
+      "name": "noise-square",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:354"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:355"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:356"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:357"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:358"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:359"
+    },
+    {
+      "name": "opacity",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:360"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:361"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:362"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:363"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:364"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:365"
+    },
+    {
+      "name": "paint-bucket",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:366"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:367"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:368"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:369"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:370"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:371"
+    },
+    {
+      "name": "rectangle",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:372"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:373"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:374"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:375"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:376"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:377"
+    },
+    {
+      "name": "rotate-anticlockwise",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:378"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:379"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:380"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:381"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:382"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:383"
+    },
+    {
+      "name": "rotate-anticlockwise-2",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:384"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:385"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:386"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:387"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:388"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:389"
+    },
+    {
+      "name": "rotate-clockwise",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:390"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:391"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:392"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:393"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:394"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:395"
+    },
+    {
+      "name": "rotate-clockwise-2",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:396"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:397"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:398"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:399"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:400"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:401"
+    },
+    {
+      "name": "selection",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:402"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:403"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:404"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:405"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:406"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:407"
+    },
+    {
+      "name": "shadow",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:408"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:409"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:410"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:411"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:412"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:413"
+    },
+    {
+      "name": "shape-rotate",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:414"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "Linear",
+      "sourceNode": "6724:415"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "Broken",
+      "sourceNode": "6724:416"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "LineDuotone",
+      "sourceNode": "6724:417"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "Outline",
+      "sourceNode": "6724:418"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "Bold",
+      "sourceNode": "6731:40"
+    },
+    {
+      "name": "sparkles",
+      "category": "ui",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:420"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:421"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:422"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:423"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:424"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:425"
+    },
+    {
+      "name": "subtract",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:426"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:427"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:428"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:429"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:430"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:431"
+    },
+    {
+      "name": "subtract-minimalistic",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:432"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "Linear",
+      "sourceNode": "6724:433"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "Broken",
+      "sourceNode": "6724:434"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "LineDuotone",
+      "sourceNode": "6724:435"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "Outline",
+      "sourceNode": "6724:436"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "Bold",
+      "sourceNode": "6724:437"
+    },
+    {
+      "name": "translate",
+      "category": "text-formatting",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:438"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:439"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:440"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:441"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:442"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:443"
+    },
+    {
+      "name": "union",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:444"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "Linear",
+      "sourceNode": "6724:445"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "Broken",
+      "sourceNode": "6724:446"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "LineDuotone",
+      "sourceNode": "6724:447"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "Outline",
+      "sourceNode": "6724:448"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "Bold",
+      "sourceNode": "6724:449"
+    },
+    {
+      "name": "variable-brackets",
+      "category": "it",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:450"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "Linear",
+      "sourceNode": "6724:451"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "Broken",
+      "sourceNode": "6724:452"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "LineDuotone",
+      "sourceNode": "6724:453"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "Outline",
+      "sourceNode": "6724:454"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "Bold",
+      "sourceNode": "6724:455"
+    },
+    {
+      "name": "variable-square",
+      "category": "it",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:456"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "Linear",
+      "sourceNode": "6724:457"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "Broken",
+      "sourceNode": "6724:458"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "LineDuotone",
+      "sourceNode": "6724:459"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "Outline",
+      "sourceNode": "6724:460"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "Bold",
+      "sourceNode": "6724:461"
+    },
+    {
+      "name": "warp",
+      "category": "tools",
+      "style": "BoldDuotone",
+      "sourceNode": "6724:462"
+    }
+  ]
+}

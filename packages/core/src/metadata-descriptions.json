@@ -17864,9 +17864,9 @@
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
     },
     {
-        "name": "hand-grab",
+        "name": "hand",
         "category": "hands",
-        "categoryTags": ["hands", "gestures", "pan", "grab", "move"],
+        "categoryTags": ["hands"],
         "tags": ["hand", "grab", "pan", "move", "drag", "open hand", "hand tool"],
         "aliases": ["hand-pan"],
         "origin": "extended",
@@ -17875,9 +17875,9 @@
         "state": "beta"
     },
     {
-        "name": "hand-grabbing",
+        "name": "hand-grab",
         "category": "hands",
-        "categoryTags": ["hands", "gestures", "pan", "grab", "move"],
+        "categoryTags": ["hands"],
         "tags": ["hand", "grabbing", "drag", "move", "pan", "closed hand", "dragging"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -17887,7 +17887,7 @@
     {
         "name": "blend",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["blend", "blend mode", "mix", "overlay", "layer", "composite"],
         "aliases": ["blend-mode"],
         "origin": "extended",
@@ -17896,9 +17896,9 @@
         "state": "beta"
     },
     {
-        "name": "bring-layer-backward",
+        "name": "layer-arrow-down",
         "category": "tools",
-        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["send backward", "layer down", "arrange", "order", "stack", "move down"],
         "aliases": ["send-layer-backward"],
         "origin": "extended",
@@ -17907,9 +17907,9 @@
         "state": "beta"
     },
     {
-        "name": "bring-layer-forward",
+        "name": "layer-arrow-up",
         "category": "tools",
-        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["bring forward", "layer up", "arrange", "order", "stack", "move up"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -17917,9 +17917,9 @@
         "state": "beta"
     },
     {
-        "name": "bring-layer-to-background",
+        "name": "layers-arrow-down",
         "category": "tools",
-        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["send to back", "bottom layer", "arrange", "order", "stack", "background"],
         "aliases": ["send-to-back"],
         "origin": "extended",
@@ -17928,9 +17928,9 @@
         "state": "beta"
     },
     {
-        "name": "bring-layer-to-foreground",
+        "name": "layers-arrow-up",
         "category": "tools",
-        "categoryTags": ["design", "layers", "arrange", "order", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["bring to front", "top layer", "arrange", "order", "stack", "foreground"],
         "aliases": ["bring-to-front"],
         "origin": "extended",
@@ -17941,7 +17941,7 @@
     {
         "name": "brush-cross-pen",
         "category": "tools",
-        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["brush", "pen", "design tools", "creative", "art", "draw", "illustration"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -17951,7 +17951,7 @@
     {
         "name": "checkerboard",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["checkerboard", "transparency grid", "pattern", "alpha", "background", "chess"],
         "aliases": ["transparency-grid"],
         "origin": "extended",
@@ -17962,7 +17962,7 @@
     {
         "name": "circle",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["circle", "round", "shape", "primitive", "draw", "dot"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -17972,7 +17972,7 @@
     {
         "name": "distort",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["distort", "skew", "transform", "perspective", "free transform", "deform"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -17982,7 +17982,7 @@
     {
         "name": "ellipse",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["ellipse", "oval", "shape", "primitive", "draw"],
         "aliases": ["oval"],
         "origin": "extended",
@@ -17993,7 +17993,7 @@
     {
         "name": "exclude",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["exclude", "difference", "xor", "boolean", "shape", "pathfinder"],
         "aliases": ["boolean-exclude"],
         "origin": "extended",
@@ -18004,7 +18004,7 @@
     {
         "name": "contrast",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": [
             "contrast",
             "brightness",
@@ -18023,7 +18023,7 @@
     {
         "name": "flat-brush",
         "category": "tools",
-        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["flat brush", "paint brush", "wall brush", "paint", "brush", "decorate", "color"],
         "aliases": ["wide-brush"],
         "origin": "extended",
@@ -18034,7 +18034,7 @@
     {
         "name": "gradient",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["gradient", "color", "fill", "transition", "linear gradient", "ramp"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18044,7 +18044,7 @@
     {
         "name": "intersect",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["intersect", "intersection", "overlap", "boolean", "shape", "pathfinder"],
         "aliases": ["boolean-intersect"],
         "origin": "extended",
@@ -18055,7 +18055,7 @@
     {
         "name": "intersect-minimalistic",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["intersect", "intersection", "overlap", "boolean", "shape", "pathfinder"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18065,7 +18065,7 @@
     {
         "name": "noise-square",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["noise", "grain", "texture", "dither", "effect", "pattern"],
         "aliases": ["grain"],
         "origin": "extended",
@@ -18076,7 +18076,7 @@
     {
         "name": "opacity",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["opacity", "transparency", "alpha", "fade", "layer", "visibility"],
         "aliases": ["transparency"],
         "origin": "extended",
@@ -18087,7 +18087,7 @@
     {
         "name": "paint-bucket",
         "category": "tools",
-        "categoryTags": ["design", "edit", "create", "draw", "art", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["paint bucket", "fill", "bucket", "color fill", "flood fill", "paint", "color"],
         "aliases": ["fill-bucket"],
         "origin": "extended",
@@ -18098,7 +18098,7 @@
     {
         "name": "rectangle",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "primitive", "draw", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["rectangle", "rect", "shape", "box", "primitive", "draw"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18108,7 +18108,7 @@
     {
         "name": "rotate-anticlockwise",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": [
             "rotate",
             "anticlockwise",
@@ -18126,7 +18126,7 @@
     {
         "name": "rotate-anticlockwise-2",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": [
             "rotate",
             "anticlockwise",
@@ -18144,7 +18144,7 @@
     {
         "name": "rotate-clockwise",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["rotate", "clockwise", "turn right", "rotation", "transform"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18154,7 +18154,7 @@
     {
         "name": "rotate-clockwise-2",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["rotate", "clockwise", "turn right", "rotation", "transform"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18164,7 +18164,7 @@
     {
         "name": "selection",
         "category": "tools",
-        "categoryTags": ["design", "select", "edit", "bounding box", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["selection", "select", "marquee", "bounding box", "area", "frame"],
         "aliases": ["marquee"],
         "origin": "extended",
@@ -18175,7 +18175,7 @@
     {
         "name": "shadow",
         "category": "tools",
-        "categoryTags": ["design", "effects", "image", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["shadow", "drop shadow", "effect", "depth", "elevation", "layer"],
         "aliases": ["drop-shadow"],
         "origin": "extended",
@@ -18186,7 +18186,7 @@
     {
         "name": "shape-rotate",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["rotate shape", "rotation", "transform", "angle", "turn", "shape"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18196,7 +18196,7 @@
     {
         "name": "subtract",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["subtract", "minus front", "boolean", "shape", "pathfinder", "cut"],
         "aliases": ["boolean-subtract"],
         "origin": "extended",
@@ -18207,7 +18207,7 @@
     {
         "name": "subtract-minimalistic",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["subtract", "minus front", "boolean", "shape", "pathfinder", "cut"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18217,7 +18217,7 @@
     {
         "name": "union",
         "category": "tools",
-        "categoryTags": ["design", "shapes", "boolean", "vector", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["union", "combine", "merge", "boolean", "shape", "pathfinder", "unite"],
         "aliases": ["boolean-union"],
         "origin": "extended",
@@ -18228,7 +18228,7 @@
     {
         "name": "warp",
         "category": "tools",
-        "categoryTags": ["design", "transform", "rotate", "edit", "tools"],
+        "categoryTags": ["tools", "design"],
         "tags": ["warp", "bend", "deform", "mesh", "transform", "distort"],
         "origin": "extended",
         "addedAt": "2026-11-03",
@@ -18238,7 +18238,7 @@
     {
         "name": "calendar-range",
         "category": "time",
-        "categoryTags": ["clock", "schedule", "date", "hour", "minute", "timer"],
+        "categoryTags": ["time"],
         "tags": [
             "calendar",
             "date range",
@@ -18260,7 +18260,7 @@
     {
         "name": "translate",
         "category": "text-formatting",
-        "categoryTags": ["editor", "type", "font", "style", "typography", "write"],
+        "categoryTags": ["text-formatting"],
         "tags": [
             "translate",
             "translation",
@@ -18280,7 +18280,7 @@
     {
         "name": "sparkles",
         "category": "ui",
-        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "categoryTags": ["ui"],
         "tags": ["sparkles", "ai", "magic", "generate", "stars", "shine", "new", "auto"],
         "aliases": ["ai-sparkles", "magic-stars"],
         "origin": "extended",
@@ -18290,8 +18290,8 @@
     },
     {
         "name": "variable-brackets",
-        "category": "ui",
-        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "category": "it",
+        "categoryTags": ["it", "network", "programming"],
         "tags": ["variable", "x", "function", "formula", "math", "parameter", "expression", "code"],
         "aliases": ["function-variable"],
         "origin": "extended",
@@ -18301,8 +18301,8 @@
     },
     {
         "name": "variable-square",
-        "category": "ui",
-        "categoryTags": ["interface", "web", "app", "system", "element", "essential"],
+        "category": "it",
+        "categoryTags": ["it", "network", "programming"],
         "tags": ["variable", "x", "function", "formula", "math", "parameter", "token", "code"],
         "aliases": ["variable-box"],
         "origin": "extended",
