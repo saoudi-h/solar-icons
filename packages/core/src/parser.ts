@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 /**
  * The icon parser.
  *
@@ -20,10 +21,9 @@
  *     framework-specific output (typically a `FileDefinition[]`); the
  *     framework's `generate-assets.ts` is responsible for writing.
  */
-
-import fs from 'node:fs'
 import path from 'node:path'
 
+import { inlineSvgUse } from './inline-svg-use.mjs'
 import type { IconWeight } from './types'
 import { toPascalCase } from './utils'
 
@@ -50,7 +50,7 @@ const STYLE_TO_KEBAB: Readonly<Record<IconWeight, string>> = {
     Outline: 'outline',
 }
 
-const HEX_COLOR_REGEX = /"#[0-9a-f]{6}"/gi
+const HEX_COLOR_REGEX = /"(?:#[0-9a-f]{6}|#[0-9a-f]{3})"/gi
 const XML_DECL_REGEX = /^[\s\S]*?<\?xml[\s\S]*?>\s*/
 const SVG_OPEN_REGEX = /<svg[^>]*>/
 const SVG_CLOSE_REGEX = /<\/svg>/g
@@ -159,7 +159,7 @@ const normalizeBody = (
     raw: string,
     withPreview: boolean
 ): { inner: string; duotoneAccentInner: string | null; preview: string } => {
-    let body = raw
+    let body = inlineSvgUse(raw)
         .replace(XML_DECL_REGEX, '')
         .replace(SVG_OPEN_REGEX, '')
         .replace(SVG_CLOSE_REGEX, '')
@@ -175,9 +175,13 @@ const normalizeBody = (
         body = body.replace(DUOTONE_ACCENT_REGEX, '').trim()
     }
 
-    body = body.replace(HEX_COLOR_REGEX, '"currentColor"')
+    body = body
+        .replace(HEX_COLOR_REGEX, '"currentColor"')
+        .replace(/\b(fill|stroke)\s*=\s*["'](?:black|white)["']/gi, '$1="currentColor"')
     if (duotoneAccentInner) {
-        duotoneAccentInner = duotoneAccentInner.replace(HEX_COLOR_REGEX, '"currentColor"')
+        duotoneAccentInner = duotoneAccentInner
+            .replace(HEX_COLOR_REGEX, '"currentColor"')
+            .replace(/\b(fill|stroke)\s*=\s*["'](?:black|white)["']/gi, '$1="currentColor"')
     }
 
     const preview = withPreview

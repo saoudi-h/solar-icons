@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { analyzeSvg, buildSvgQualityMarkdown } from './check-svg-quality'
+import { analyzeSvg, buildSvgQualityMarkdown, measureSvgCentering } from './check-svg-quality'
 
 const svg = (body: string): string =>
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="none">' + body + '</svg>'
@@ -24,11 +24,11 @@ describe('SVG visual contracts', () => {
         ).not.toContain('line-style-stroke-cap')
     })
 
-    it('warns when an SVG has fewer than the style minimum drawable elements', () => {
+    it('rejects empty SVGs and warns on a single duotone element', () => {
         const linearIssues = analyzeSvg(svg(''), 'Linear')
         expect(linearIssues).toEqual(
             expect.arrayContaining([
-                expect.objectContaining({ rule: 'minimum-elements', severity: 'warning' }),
+                expect.objectContaining({ rule: 'minimum-elements', severity: 'error' }),
             ])
         )
 
@@ -91,11 +91,28 @@ describe('SVG visual contracts', () => {
         expect(rules('<path d="M1 1L2 2" fill="#1C274C"/>', 'Outline')).toEqual([])
     })
 
-    it('allows only the canonical Solar color', () => {
+    it('requires round caps only on open subpaths', () => {
+        expect(rules('<path d="M0 0L1 1Z" fill="none" stroke="#000000"/>', 'Linear')).not.toContain(
+            'line-style-stroke-cap'
+        )
+        expect(
+            rules('<path d="M0 0L1 1ZM2 2L3 3" fill="none" stroke="#000000"/>', 'Linear')
+        ).toContain('line-style-stroke-cap')
+        expect(
+            rules('<rect width="2" height="2" fill="none" stroke="#ffffff"/>', 'Linear')
+        ).not.toContain('line-style-stroke-cap')
+    })
+
+    it('allows Solar navy and theme-neutral black or white', () => {
         expect(rules('<path d="M1 1L2 2" fill="#1c274c"/>', 'Bold')).not.toContain(
             'color-not-allowed'
         )
         expect(rules('<path d="M1 1L2 2" fill="#ff0000"/>', 'Bold')).toContain('color-not-allowed')
+        for (const color of ['#000000', '#ffffff', '#000', '#fff', 'black', 'white']) {
+            expect(rules('<path d="M1 1L2 2" fill="' + color + '"/>', 'Bold')).not.toContain(
+                'color-not-allowed'
+            )
+        }
         expect(
             rules(
                 '<defs><clipPath id="crop"><rect width="24" height="24" fill="white"/></clipPath></defs><path d="M1 1L2 2" fill="#1C274C"/>',
@@ -137,6 +154,24 @@ describe('SVG visual contracts', () => {
         const markdown = buildSvgQualityMarkdown(report, '2026-01-01T00:00:00.000Z')
         expect(markdown).toContain('Status: FAILED')
         expect(markdown).toContain('devices/Linear/gamepad-old.svg')
-        expect(markdown).toContain('Replace the reported visible color in Figma with #1C274C.')
+        expect(markdown).toContain('Use Solar navy, black or white for visible paint.')
+    })
+
+    it('measures visual bounding box and detects centering', async () => {
+        const centered = await measureSvgCentering(
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="black" stroke-width="1.5"/></svg>'
+        )
+        expect(centered).not.toBeNull()
+        expect(Math.abs(centered!.hOffset)).toBeLessThanOrEqual(0.1)
+        expect(Math.abs(centered!.vOffset)).toBeLessThanOrEqual(0.1)
+
+        const offCenter = await measureSvgCentering(
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="14" y="6" width="6" height="6" fill="black"/></svg>'
+        )
+        expect(offCenter).not.toBeNull()
+        expect(offCenter!.centerX).toBeCloseTo(17, 0)
+        expect(offCenter!.centerY).toBeCloseTo(9, 0)
+        expect(offCenter!.hOffset).toBeGreaterThan(4)
+        expect(offCenter!.vOffset).toBeLessThan(-2)
     })
 })

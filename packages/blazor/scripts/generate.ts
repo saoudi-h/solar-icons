@@ -177,7 +177,11 @@ const manifest = {
     probeHash: hashFiles(probeFiles),
 }
 const manifestPath = path.join(root, 'catalogue-manifest.json')
-const manifestText = JSON.stringify(manifest, null, 2) + '\n'
+const manifestText =
+    JSON.stringify(manifest, null, 4).replace(
+        /\[\n\s+"Bold",\n\s+"BoldDuotone",\n\s+"Broken",\n\s+"Linear",\n\s+"LineDuotone",\n\s+"Outline"\n\s+\]/,
+        '["Bold", "BoldDuotone", "Broken", "Linear", "LineDuotone", "Outline"]'
+    ) + '\n'
 files.set('manifest.json', manifestText)
 
 async function syncGenerated(

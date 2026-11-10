@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-microphone-off-line-duotone"><path d="M4 10V11C4 13.464 5.114 15.667 6.865 17.135M8.986 18.413C9.916 18.792 10.933 19 12 19M12 19C16.418 19 20 15.418 20 11V10M12 19V22" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+
+<path d="M13 8H16" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><path d="M22 2L2 22" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M9 15C7.785 14.088 7 12.636 7 11V8C7 5.2386 9.2386 3 12 3C14.448 3 16.486 4.76 16.916 7.084" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M16.9995 10.4561V11.0001C16.9995 13.7615 14.7609 16.0001 11.9995 16.0001C11.8075 16.0001 11.6175 15.9891 11.4785 15.9771" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>

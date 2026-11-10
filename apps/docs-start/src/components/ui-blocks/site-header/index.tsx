@@ -29,6 +29,7 @@ import { SITE_HEADER_HEIGHT, SITE_HEADER_OFFSET, SITE_HEADER_RESERVED_HEIGHT } f
 const NAV_LINKS = [
     { href: '/docs/v2', label: 'Documentation' },
     { href: '/icons', label: 'Explore Icons' },
+    { href: '/docs/v2/figma-library', label: 'Figma' },
     { href: '/blog', label: 'Blog' },
 ] as const
 
@@ -64,7 +65,10 @@ function MenuToggleIcon({ open, reduceMotion }: { open: boolean; reduceMotion: b
 }
 
 function isNavLinkActive(pathname: string, href: string): boolean {
-    return pathname === href || pathname.startsWith(href + '/')
+    const matchingLink = NAV_LINKS.filter(
+        link => pathname === link.href || pathname.startsWith(link.href + '/')
+    ).sort((a, b) => b.href.length - a.href.length)[0]
+    return matchingLink?.href === href
 }
 
 function SiteNavLink({

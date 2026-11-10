@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.0
+
+- Add 28 new icons across 12 categories (1,479 icons across six styles, 8,874 SVG variations).
+
+## 2.1.1
+
+- Restore the corrected catalogue artwork, including editable line shapes and dashed details, from the maintained Figma source. No icons are added or removed.
+
 ## 2.1.0
 
 - `SolarProvider` sets the Solar CSS variables on a `display: contents` wrapper and supports `@bind-` on each value.

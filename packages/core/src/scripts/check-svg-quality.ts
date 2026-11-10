@@ -12,6 +12,7 @@ import { pathToFileURL } from 'node:url'
 
 import xmldom from '@xmldom/xmldom'
 import pc from 'picocolors'
+import sharp from 'sharp'
 
 const { DOMParser } = xmldom
 
@@ -50,7 +51,7 @@ type PaintState = {
 
 const __dirname = import.meta.dirname
 const PACKAGE_ROOT = path.resolve(__dirname, '../..')
-const SVGS_PATH = path.resolve(__dirname, '../../svgs')
+const SVGS_PATH = path.resolve(process.env.SOLAR_SVGS_DIR || path.resolve(__dirname, '../../svgs'))
 const REPORTS_PATH = path.join(PACKAGE_ROOT, 'reports')
 const MARKDOWN_REPORT_PATH = path.join(REPORTS_PATH, 'svg-quality-report.md')
 const JSON_REPORT_PATH = path.join(REPORTS_PATH, 'svg-quality-report.json')
@@ -122,7 +123,20 @@ const resolveOpacity = (local: string, parent: number | null): number | null => 
 }
 
 const isNone = (value: string): boolean => normalize(value) === 'none'
-const isAllowedColor = (value: string): boolean => normalize(value) === '#1c274c'
+// Caps only affect open ends. Figma may serialize a closed rect as a closed path.
+const hasOpenEnds = (element: XmlElement, tag: string): boolean => {
+    if (['rect', 'circle', 'ellipse', 'polygon'].includes(tag)) return false
+    if (tag === 'path') {
+        const parts = (element.getAttribute('d') || '').match(/[mM][^mM]*/g)
+        return !parts || parts.some(part => !/[zZ]\s*$/.test(part))
+    }
+    return true
+}
+
+const isAllowedColor = (value: string): boolean =>
+    new Set(['#1c274c', '#000000', '#ffffff', '#000', '#fff', 'black', 'white']).has(
+        normalize(value)
+    )
 
 type RuleDescription = {
     title: string
@@ -131,6 +145,24 @@ type RuleDescription = {
 }
 
 const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
+    'horizontal-centering': {
+        title: 'Icon not centered horizontally',
+        expected:
+            'The visual bounding box center aligns horizontally with X = 12 within 0.5px tolerance.',
+        action: 'Review icon composition in Figma and center horizontally if not intentionally asymmetric.',
+    },
+    'vertical-centering': {
+        title: 'Icon not centered vertically',
+        expected:
+            'The visual bounding box center aligns vertically with Y = 12 within 0.5px tolerance.',
+        action: 'Review icon composition in Figma and center vertically if not intentionally asymmetric.',
+    },
+    'variant-centering-drift': {
+        title: 'Centering drift across style variants',
+        expected:
+            'All style variants in an icon family share consistent alignment (spread within 0.5px).',
+        action: 'Check variant alignment in Figma to fix accidental shifts between styles.',
+    },
     'bold-style-paint': {
         title: 'Bold style contains visible strokes',
         expected: 'Bold and BoldDuotone use filled surfaces without visible strokes.',
@@ -139,8 +171,8 @@ const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
     'color-not-allowed': {
         title: 'Non-canonical color',
         expected:
-            'Every visible painted SVG value is #1C274C. The paint keyword none and colors inside non-rendered clipping definitions are allowed.',
-        action: 'Replace the reported visible color in Figma with #1C274C.',
+            'Visible paint uses legacy Solar navy or theme-neutral black/white. The paint keyword none and colors inside non-rendered clipping definitions are allowed.',
+        action: 'Use Solar navy, black or white for visible paint.',
     },
     'duotone-missing-accent': {
         title: 'Duotone has no 50% tone',
@@ -169,7 +201,7 @@ const RULE_DESCRIPTIONS: Readonly<Record<string, RuleDescription>> = {
     },
     'line-style-stroke-cap': {
         title: 'Line style has a non-round cap',
-        expected: 'Every visible stroke in Linear, Broken and LineDuotone uses round caps.',
+        expected: 'Every open stroke endpoint in Linear, Broken and LineDuotone uses round caps.',
         action: 'Set the path end points to Round in Figma.',
     },
     'minimum-elements': {
@@ -278,7 +310,10 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                         addIssue(
                             issues,
                             'color-not-allowed',
-                            paintName + ' uses "' + paintValue + '"; expected "#1C274C".',
+                            paintName +
+                                ' uses "' +
+                                paintValue +
+                                '"; expected Solar navy, black or white.',
                             element
                         )
                     }
@@ -316,7 +351,11 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                         element
                     )
                 }
-                if (hasStroke && normalize(state.strokeLinecap) !== 'round') {
+                if (
+                    hasStroke &&
+                    hasOpenEnds(element, tagName) &&
+                    normalize(state.strokeLinecap) !== 'round'
+                ) {
                     addIssue(
                         issues,
                         'line-style-stroke-cap',
@@ -402,7 +441,7 @@ export const analyzeSvg = (raw: string, style: SvgStyle): SvgQualityIssue[] => {
                 style +
                 '.',
             element: '<svg>',
-            severity: 'warning',
+            severity: renderedDrawableCount === 0 ? 'error' : 'warning',
         })
     }
 
@@ -456,33 +495,180 @@ export type SvgQualityReport = {
     issues: ReadonlyArray<{ file: string; issue: SvgQualityIssue }>
 }
 
-export const checkSvgQuality = (svgsPath = SVGS_PATH): SvgQualityReport => {
+export type SvgCentering = {
+    centerX: number
+    centerY: number
+    hOffset: number
+    vOffset: number
+}
+
+export const measureSvgCentering = async (raw: string | Buffer): Promise<SvgCentering | null> => {
+    try {
+        const input = typeof raw === 'string' ? Buffer.from(raw) : raw
+        const { data, info } = await sharp(input, { density: 720 })
+            .resize(240, 240, { fit: 'fill' })
+            .raw()
+            .toBuffer({ resolveWithObject: true })
+
+        let minX = info.width
+        let maxX = -1
+        let minY = info.height
+        let maxY = -1
+        const channels = info.channels
+
+        for (let y = 0; y < info.height; y += 1) {
+            for (let x = 0; x < info.width; x += 1) {
+                const idx = (y * info.width + x) * channels
+                const alpha = (channels === 4 ? data[idx + 3] : 255) ?? 0
+                if (alpha > 15) {
+                    if (x < minX) minX = x
+                    if (x > maxX) maxX = x
+                    if (y < minY) minY = y
+                    if (y > maxY) maxY = y
+                }
+            }
+        }
+
+        if (maxX < 0 || maxY < 0) return null
+
+        const minXSvg = minX / 10
+        const maxXSvg = (maxX + 1) / 10
+        const minYSvg = minY / 10
+        const maxYSvg = (maxY + 1) / 10
+
+        const centerX = Number(((minXSvg + maxXSvg) / 2).toFixed(2))
+        const centerY = Number(((minYSvg + maxYSvg) / 2).toFixed(2))
+        const hOffset = Number((centerX - 12).toFixed(2))
+        const vOffset = Number((centerY - 12).toFixed(2))
+
+        return { centerX, centerY, hOffset, vOffset }
+    } catch {
+        return null
+    }
+}
+
+type FileMeasurement = {
+    file: string
+    relPath: string
+    category: string
+    style: SvgStyle
+    iconName: string
+    centering: SvgCentering | null
+}
+
+export const checkSvgQuality = async (svgsPath = SVGS_PATH): Promise<SvgQualityReport> => {
     const issues: Array<{ file: string; issue: SvgQualityIssue }> = []
     const files = collectSvgFiles(svgsPath)
+    const measurements: FileMeasurement[] = []
+    const BATCH_SIZE = 100
 
-    for (const file of files) {
-        const relative = path.relative(svgsPath, file).split(path.sep)
-        const styleName = relative.at(-2) ?? ''
-        if (!isSvgStyle(styleName)) continue
+    for (let i = 0; i < files.length; i += BATCH_SIZE) {
+        const chunk = files.slice(i, i + BATCH_SIZE)
+        await Promise.all(
+            chunk.map(async file => {
+                const relative = path.relative(svgsPath, file).split(path.sep)
+                const styleName = relative.at(-2) ?? ''
+                if (!isSvgStyle(styleName)) return
+                const category = relative[0] ?? ''
+                const iconName = (relative.at(-1) ?? '').replace('.svg', '')
+                const relPath = relative.join('/')
 
-        try {
-            const raw = fs.readFileSync(file, 'utf8')
-            for (const current of analyzeSvg(raw, styleName)) {
-                issues.push({
-                    file: path.relative(svgsPath, file).split(path.sep).join('/'),
-                    issue: current,
-                })
-            }
-        } catch (error) {
-            issues.push({
-                file: path.relative(svgsPath, file).split(path.sep).join('/'),
-                issue: {
-                    rule: 'invalid-svg',
-                    message: error instanceof Error ? error.message : String(error),
-                    element: '<svg>',
-                    severity: 'error',
-                },
+                try {
+                    const raw = fs.readFileSync(file, 'utf8')
+                    for (const current of analyzeSvg(raw, styleName)) {
+                        issues.push({
+                            file: relPath,
+                            issue: current,
+                        })
+                    }
+
+                    const centering = await measureSvgCentering(raw)
+                    measurements.push({
+                        file,
+                        relPath,
+                        category,
+                        style: styleName,
+                        iconName,
+                        centering,
+                    })
+
+                    if (centering) {
+                        if (Math.abs(centering.hOffset) > 0.5) {
+                            issues.push({
+                                file: relPath,
+                                issue: {
+                                    rule: 'horizontal-centering',
+                                    message: `Icon bounding box center is X = ${centering.centerX} (offset ${centering.hOffset > 0 ? '+' : ''}${centering.hOffset}px from center 12).`,
+                                    element: '<svg>',
+                                    severity: 'warning',
+                                },
+                            })
+                        }
+                        if (Math.abs(centering.vOffset) > 0.5) {
+                            issues.push({
+                                file: relPath,
+                                issue: {
+                                    rule: 'vertical-centering',
+                                    message: `Icon bounding box center is Y = ${centering.centerY} (offset ${centering.vOffset > 0 ? '+' : ''}${centering.vOffset}px from center 12).`,
+                                    element: '<svg>',
+                                    severity: 'warning',
+                                },
+                            })
+                        }
+                    }
+                } catch (error) {
+                    issues.push({
+                        file: relPath,
+                        issue: {
+                            rule: 'invalid-svg',
+                            message: error instanceof Error ? error.message : String(error),
+                            element: '<svg>',
+                            severity: 'error',
+                        },
+                    })
+                }
             })
+        )
+    }
+
+    // Cross-variant centering drift
+    const families = new Map<string, FileMeasurement[]>()
+    for (const m of measurements) {
+        if (!m.centering) continue
+        const key = `${m.category}/${m.iconName}`
+        const list = families.get(key) ?? []
+        list.push(m)
+        families.set(key, list)
+    }
+
+    for (const [, variants] of families) {
+        if (variants.length < 2) continue
+        const hOffsets = variants.map(v => v.centering!.hOffset)
+        const vOffsets = variants.map(v => v.centering!.vOffset)
+        const hSpread = Number((Math.max(...hOffsets) - Math.min(...hOffsets)).toFixed(2))
+        const vSpread = Number((Math.max(...vOffsets) - Math.min(...vOffsets)).toFixed(2))
+
+        if (hSpread > 0.5 || vSpread > 0.5) {
+            const sortedH = [...hOffsets].sort((a, b) => a - b)
+            const sortedV = [...vOffsets].sort((a, b) => a - b)
+            const medianH = sortedH[Math.floor(sortedH.length / 2)] ?? 0
+            const medianV = sortedV[Math.floor(sortedV.length / 2)] ?? 0
+
+            for (const v of variants) {
+                const diffH = Math.abs(v.centering!.hOffset - medianH)
+                const diffV = Math.abs(v.centering!.vOffset - medianV)
+                if (diffH > 0.25 || diffV > 0.25) {
+                    issues.push({
+                        file: v.relPath,
+                        issue: {
+                            rule: 'variant-centering-drift',
+                            message: `Variant centering drifts from family median (spread: H=${hSpread}px, V=${vSpread}px). Variant offset is (H:${v.centering!.hOffset > 0 ? '+' : ''}${v.centering!.hOffset}, V:${v.centering!.vOffset > 0 ? '+' : ''}${v.centering!.vOffset}), family median is (H:${medianH > 0 ? '+' : ''}${medianH}, V:${medianV > 0 ? '+' : ''}${medianV}).`,
+                            element: '<svg>',
+                            severity: 'warning',
+                        },
+                    })
+                }
+            }
         }
     }
 
@@ -617,7 +803,7 @@ const writeQualityReports = (
     return { markdownPath: MARKDOWN_REPORT_PATH, jsonPath: JSON_REPORT_PATH }
 }
 
-const main = (): void => {
+const main = async (): Promise<void> => {
     console.log(pc.blue('Checking SVG visual contracts...'))
 
     if (!fs.existsSync(SVGS_PATH)) {
@@ -625,7 +811,7 @@ const main = (): void => {
         process.exit(1)
     }
 
-    const report = checkSvgQuality()
+    const report = await checkSvgQuality()
     const reportPaths = writeQualityReports(report)
     console.log(
         pc.blue(
@@ -668,4 +854,9 @@ const isExecutedDirectly =
     process.argv[1] !== undefined &&
     import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
 
-if (isExecutedDirectly) main()
+if (isExecutedDirectly) {
+    main().catch(error => {
+        console.error(error)
+        process.exit(1)
+    })
+}

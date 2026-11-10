@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 import { PACK_STYLES } from '../packages/figma-plugin/src/shared/packs'
 
 /**
@@ -10,13 +11,8 @@ import { PACK_STYLES } from '../packages/figma-plugin/src/shared/packs'
  * facts inside them are checkable, and this script checks them:
  *
  * - the exact icon count, every style name, every registry package name;
- * - no stale figures and no absolute offline promise the CDN download path
- *   forbids ("no CDN", "no network required");
- * - the manifest network scope stays on versioned jsDelivr Solar assets.
- *
- * Anything this script cannot judge (tone, emphasis, a new package blurb)
- * stays a human call in `community/listing-tagline.txt` and
- * `community/listing-description.md`. What can be enforced is enforced.
+ * - no stale figures;
+ * - the plugin is completely offline: manifest declares allowedDomains: ["none"].
  */
 
 const REPOSITORY_ROOT = path.resolve(import.meta.dirname, '..')
@@ -70,33 +66,25 @@ for (const entry of registry.packages) {
     }
 }
 
-// Banned claims: stale figures, and absolute offline promises the
-// versioned CDN download path forbids even when nothing downloads today.
+// Banned claims: stale figures.
 const banned: Array<[RegExp, string]> = [
     [/\b1,268\b/, 'stale icon count 1,268'],
     [/\b1,300\b/, 'stale icon count 1,300'],
-    [/no[^.\n]{0,80}cdn/i, 'a "no CDN" claim the download path forbids'],
-    [/no[^.\n]{0,80}network[^.\n]{0,80}require/i, 'an absolute offline claim the download path forbids'],
 ]
 for (const [pattern, label] of banned) {
     if (pattern.test(tagline)) problems.push(`the tagline contains ${label}`)
     if (pattern.test(description)) problems.push(`the description contains ${label}`)
 }
 
-// Manifest scope: versioned Solar assets on jsDelivr, nothing else,
-// with a public reasoning string.
+// Offline plugin: verify manifest has allowedDomains: ["none"].
 const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')) as {
-    networkAccess?: { allowedDomains?: string[]; reasoning?: string }
+    networkAccess?: { allowedDomains?: string[] }
 }
 const domains = manifest.networkAccess?.allowedDomains ?? []
-if (domains.length === 0) problems.push('the manifest declares no network scope')
-for (const domain of domains) {
-    if (!domain.startsWith('https://cdn.jsdelivr.net/')) {
-        problems.push(`network scope reaches beyond jsDelivr: ${domain}`)
-    }
-}
-if (!manifest.networkAccess?.reasoning) {
-    problems.push('the manifest network scope has no reasoning string')
+if (domains.length !== 1 || domains[0] !== 'none') {
+    problems.push(
+        'the plugin is offline: manifest must declare networkAccess.allowedDomains as ["none"]'
+    )
 }
 
 if (problems.length > 0) {
@@ -106,5 +94,5 @@ if (problems.length > 0) {
 }
 
 console.info(
-    `Listing check passed: tagline and description carry ${iconCount} icons, ${PACK_STYLES.length} styles, ${registry.packages.length} packages.`
+    `Listing check passed: tagline and description carry ${iconCount} icons, ${PACK_STYLES.length} styles, ${registry.packages.length} packages. Manifest is explicitly declared offline with allowedDomains: ["none"].`
 )

@@ -57,8 +57,9 @@ jobs:
               run: |
                   gem build solar_icons.gemspec
                   COUNT=$(gem spec solar_icons-*.gem files | grep -c '\.svg')
-                  echo "SVG files in the gem: $COUNT"
-                  test "$COUNT" -eq 8706
+                  EXPECTED=$(ruby -rjson -e 'puts JSON.parse(File.read("lib/solar_icons/icons/.provenance.json"))["iconCount"] * 6')
+                  echo "SVG files in the gem: $COUNT (expected $EXPECTED)"
+                  test "$COUNT" -eq "$EXPECTED"
 
             - name: Configure RubyGems credentials
               uses: rubygems/configure-rubygems-credentials@v2.1.0

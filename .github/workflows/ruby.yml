@@ -1,6 +1,6 @@
 name: Ruby
 
-# Fast verification for the Rails gem. Scoped to its own directory:
+# Verify the Rails gem and its generated catalogue against the static source:
 # Ruby lives outside the pnpm/turbo graph (same lane as Flutter/Dart).
 # Release publishing is rails-publish.yml on solar_icons-v* tags.
 
@@ -8,11 +8,21 @@ on:
     pull_request:
         paths:
             - 'packages/rails/**'
+            - 'packages/core/**'
+            - 'packages/static/**'
+            - 'pnpm-lock.yaml'
+            - '.nvmrc'
+            - '.github/actions/install/**'
             - '.github/workflows/ruby.yml'
     push:
         branches: [main]
         paths:
             - 'packages/rails/**'
+            - 'packages/core/**'
+            - 'packages/static/**'
+            - 'pnpm-lock.yaml'
+            - '.nvmrc'
+            - '.github/actions/install/**'
             - '.github/workflows/ruby.yml'
 
 concurrency:
@@ -20,6 +30,27 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
+    catalogue:
+        name: Catalogue freshness
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/install
+              with:
+                  filter: |
+                      .
+                      @solar-icons/static...
+            - name: Build the source catalogue
+              run: pnpm turbo build --concurrency=1 --filter=@solar-icons/static...
+            - name: Verify committed Ruby assets and provenance
+              run: |
+                  node packages/rails/bin/fetch-icons
+                  if ! git diff --quiet -- packages/rails/lib/solar_icons/icons packages/rails/lib/solar_icons/icons.rb; then
+                    echo 'Ruby catalogue is stale. Rebuild static, run node packages/rails/bin/fetch-icons and commit its output.'
+                    git diff --shortstat -- packages/rails/lib/solar_icons/icons packages/rails/lib/solar_icons/icons.rb
+                    exit 1
+                  fi
+
     rspec:
         name: RSpec
         runs-on: ubuntu-latest
@@ -59,23 +90,29 @@ jobs:
 
             - name: Boot gallery and check all styles
               run: |
-                bundle exec puma -p 3210 > /tmp/puma.log 2>&1 &
-                PUMA_PID=$!
-                trap 'kill "$PUMA_PID" 2>/dev/null' EXIT
-                for i in $(seq 1 30); do
-                  curl -sf http://127.0.0.1:3210/ > /dev/null && break
-                  sleep 2
-                done
-                curl -sf http://127.0.0.1:3210/ > /dev/null || {
-                  echo "puma never answered, last log lines:"
-                  tail -50 /tmp/puma.log
-                  exit 1
-                }
-                for style in linear broken line-duotone outline bold bold-duotone; do
-                  count=$(curl -sf "http://127.0.0.1:3210/?style=${style}" | grep -o "<svg" | wc -l)
-                  test "$count" -eq 1451 || { echo "${style}: ${count} icons on the page"; exit 1; }
-                  keys=$(curl -sf "http://127.0.0.1:3210/gallery/icons?style=${style}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
-                  test "$keys" -eq 1451 || { echo "${style}: ${keys} icons from the endpoint"; exit 1; }
-                  echo "${style}: page=${count} endpoint=${keys}"
-                done
-                echo "gallery OK: 6 styles x 1451 icons"
+                  bundle exec puma -p 3210 > /tmp/puma.log 2>&1 &
+                  PUMA_PID=$!
+                  trap 'kill "$PUMA_PID" 2>/dev/null' EXIT
+                  for i in $(seq 1 30); do
+                    curl -sf http://127.0.0.1:3210/ > /dev/null && break
+                    sleep 2
+                  done
+                  curl -sf http://127.0.0.1:3210/ > /dev/null || {
+                    echo "puma never answered, last log lines:"
+                    tail -50 /tmp/puma.log
+                    exit 1
+                  }
+                  expected_count=0
+                  for style in linear broken line-duotone outline bold bold-duotone; do
+                    count=$(curl -sf "http://127.0.0.1:3210/?style=${style}" | grep -o "<svg" | wc -l)
+                    test "$count" -gt 0 || { echo "${style}: no icons on the page"; exit 1; }
+                    keys=$(curl -sf "http://127.0.0.1:3210/gallery/icons?style=${style}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+                    test "$count" -eq "$keys" || { echo "${style}: page count ($count) != endpoint count ($keys)"; exit 1; }
+                    if [ "$expected_count" -eq 0 ]; then
+                      expected_count=$count
+                    else
+                      test "$count" -eq "$expected_count" || { echo "${style} count ($count) != expected ($expected_count)"; exit 1; }
+                    fi
+                    echo "${style}: page=${count} endpoint=${keys}"
+                  done
+                  echo "gallery OK: 6 styles x ${expected_count} icons"

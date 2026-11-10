@@ -87,3 +87,6 @@ packages/core/src/*.d.ts.map
 
 # Scratch clones
 .temp/
+
+# Staged archives
+*.zip

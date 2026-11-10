@@ -6,12 +6,12 @@ Copy the tagline from `listing-tagline.txt` and the text below into the plugin l
 
 Browse the complete Solar Icons collection and insert icons directly into your Figma designs.
 
-Solar Icons includes 1,451 icons across six styles: Linear, Broken, Line Duotone, Outline, Bold, and Bold Duotone.
+Solar Icons includes 1,479 icons across six styles: Linear, Broken, Line Duotone, Outline, Bold, and Bold Duotone.
 
 Search by name, category, or related terms. Insert an icon immediately or select several icons before adding them to the canvas. Adjust icon size and preview stroke width for Linear, Broken, and Line Duotone icons.
 
 The complete icon library ships inside the plugin. No account or API key is required.
 
-The inserted SVGs match the assets distributed through the official Solar Icons packages for React, React Native, Flutter, Vue, Nuxt, Svelte, Solid, Angular, Laravel Blade, Rails, JavaScript, and Static, with Codemod, CLI, and MCP developer tools. A Blazor package is in development as an unreleased preview.
+The inserted SVGs match the assets distributed through the official Solar Icons packages for React, React Native, Flutter, Vue, Nuxt, Svelte, Solid, Angular, Blazor, Laravel Blade, Rails, JavaScript, and Static, with Codemod, CLI, and MCP developer tools.
 
 Solar Icons distributes the Solar Icon Set created by 480 Design under CC BY 4.0.

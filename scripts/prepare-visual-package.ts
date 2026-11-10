@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
+
 import { generateTestAppIconLists } from './generate-test-app-icon-lists'
 
 const REPOSITORY_ROOT = path.resolve(import.meta.dirname, '..')

@@ -39,3 +39,12 @@ A small in-house pipeline (~240 lines) reused by `generate-pngs.ts` and other ba
 
 - **`generate-svgs.ts` is the only script that requires Figma credentials.** Not invoked by CI.
 - **`generate-descriptions.ts` and `fix-descriptions.ts` are manual tools.** Not part of `pnpm build` or any `generate:assets` flow.
+
+## Staged Figma ZIP refresh
+
+`packages/core/scripts/refresh-from-figma-zip.sh` first runs the Python 3 archive gate into a
+temporary directory, then quality and metadata checks using `SOLAR_SVGS_DIR`. `--check-only`
+never swaps production assets. Removals require `--allow-removals`; quality overrides remain
+explicit and do not bypass metadata. Normal refresh restores both SVGs and generated metadata
+on failure and keeps the source ZIP. The parser/quality gate accepts black/white theme exports
+alongside legacy navy; only open stroke endpoints require round caps.

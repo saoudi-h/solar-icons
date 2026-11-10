@@ -217,3 +217,30 @@ describe('Iteration modes', () => {
         })
     })
 })
+
+it('normalizes black and white theme exports to currentColor', async () => {
+    const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import('node:fs')
+    const { tmpdir } = await import('node:os')
+    const path = await import('node:path')
+    const root = mkdtempSync(path.join(tmpdir(), 'solar-theme-parser-'))
+    const styles = ['Bold', 'BoldDuotone', 'Broken', 'Linear', 'LineDuotone', 'Outline']
+    const colors = ['#000000', '#ffffff', '#000', '#fff', 'black', 'white']
+    try {
+        for (let i = 0; i < styles.length; i++) {
+            const dir = path.join(root, 'ui', styles[i]!)
+            mkdirSync(dir, { recursive: true })
+            writeFileSync(
+                path.join(dir, 'sample.svg'),
+                '<svg viewBox="0 0 24 24"><path fill="' + colors[i] + '" d="M0 0L1 1"/></svg>'
+            )
+        }
+        const result = await parseSvgs({ svgsDir: root, preview: false })
+        expect(result.icons).toHaveLength(6)
+        for (const icon of result.icons) {
+            expect(icon.inner).toContain('currentColor')
+        }
+    } finally {
+        rmSync(root, { recursive: true, force: true })
+        clearCache()
+    }
+})

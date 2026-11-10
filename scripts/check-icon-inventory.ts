@@ -27,7 +27,10 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
 }> = [
     { relativePath: 'README.md', counts: ['logical', 'svg'] },
     { relativePath: 'AGENT.md', counts: ['logical', 'svg'] },
+    { relativePath: 'docs/RELEASE-PROCEDURE.md', counts: ['logical', 'svg'] },
     { relativePath: 'apps/docs-start/src/config/index.tsx', counts: ['logical'] },
+    { relativePath: 'apps/docs-start/src/routes/_site/index.tsx', counts: ['logical'] },
+    { relativePath: 'apps/docs-start/scripts/generate-og-images.tsx', counts: ['logical'] },
     {
         relativePath: 'apps/docs-start/src/components/home-page/sections/community/index.tsx',
         counts: ['svg'],
@@ -43,14 +46,26 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
         relativePath: 'apps/docs-start/content/docs/v2/packages/nuxt.mdx',
         counts: ['logical', 'svg'],
     },
+    {
+        relativePath: 'apps/docs-start/content/blog/build-consistent-icon-system-react.mdx',
+        counts: ['logical'],
+    },
     { relativePath: 'packages/core/README.md', counts: ['logical'] },
     { relativePath: 'packages/core/AGENT.md', counts: ['svg'] },
     { relativePath: 'packages/core/EXTENDING-ICON-SET.md', counts: ['logical'] },
     { relativePath: 'packages/figma-plugin/community/presentation.html', counts: ['logical'] },
     { relativePath: 'packages/figma-plugin/community/listing-description.md', counts: ['logical'] },
+    { relativePath: 'packages/figma-plugin/community/listing-tagline.txt', counts: ['logical'] },
     { relativePath: 'packages/nuxt/AGENT.md', counts: ['logical', 'svg'] },
     { relativePath: 'packages/nuxt/playground/app/pages/gallery.vue', counts: ['logical', 'svg'] },
     { relativePath: 'packages/vue/AGENT.md', counts: ['logical'] },
+    {
+        relativePath: 'packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj',
+        counts: ['logical'],
+    },
+    { relativePath: 'packages/flutter/pubspec.yaml', counts: ['logical'] },
+    { relativePath: 'packages/cli/README.md', counts: ['logical'] },
+    { relativePath: 'packages/rails/README.md', counts: ['logical'] },
 ]
 
 const PUBLIC_ICON_PACKAGE_READMES = [
@@ -221,6 +236,7 @@ const main = () => {
             errors.push('the categories page is missing')
         }
 
+        const writeMode = process.argv.includes('--write')
         for (const { relativePath, counts } of documentationChecks) {
             const filename = path.join(REPOSITORY_ROOT, relativePath)
             if (!fs.existsSync(filename)) {
@@ -228,7 +244,47 @@ const main = () => {
                 continue
             }
 
-            const content = fs.readFileSync(filename, 'utf8')
+            let content = fs.readFileSync(filename, 'utf8')
+            if (writeMode) {
+                let next = content
+                if (counts.includes('logical')) {
+                    const formattedLogical = expectedCounts.logical.toLocaleString('en-US')
+                    next = next.replace(/\b1,[4-9]\d{2}\b/g, formattedLogical)
+                }
+                if (counts.includes('svg')) {
+                    const formattedSvg = expectedCounts.svg.toLocaleString('en-US')
+                    next = next.replace(/\b(?:8,[5-9]\d{2}|9,\d{3}|1[01],\d{3})\b/g, formattedSvg)
+                }
+                if (relativePath === 'packages/nuxt/AGENT.md') {
+                    const totalAutoImports = (
+                        expectedCounts.svg + expectedCounts.logical
+                    ).toLocaleString('en-US')
+                    next = next.replace(
+                        /~\d+,\d{3} auto-imports registered/g,
+                        `~${totalAutoImports} auto-imports registered`
+                    )
+                }
+                if (relativePath === 'packages/nuxt/playground/app/pages/gallery.vue') {
+                    next = next.replace(
+                        /\b\d+ icons × 6 styles = \d+ variants/g,
+                        `${expectedCounts.logical} icons × 6 styles = ${expectedCounts.svg} variants`
+                    )
+                }
+                if (
+                    relativePath ===
+                    'apps/docs-start/src/components/home-page/sections/community/index.tsx'
+                ) {
+                    next = next.replace(
+                        /title="Total Icons" value=\{\d+\}/g,
+                        `title="Total Icons" value={${expectedCounts.svg}}`
+                    )
+                }
+                if (next !== content) {
+                    fs.writeFileSync(filename, next)
+                    content = next
+                    console.log(`Updated inventory counts in ${relativePath}`)
+                }
+            }
             for (const kind of counts) {
                 const expected = expectedCounts[kind]
                 if (!hasCount(content, expected)) {
@@ -243,7 +299,8 @@ const main = () => {
         const readmeLines = fs
             .readFileSync(path.join(REPOSITORY_ROOT, 'README.md'), 'utf8')
             .split('\n')
-        const tableHead = readmeLines.findIndex(line => line.startsWith('| Package |'))
+        const tableHead = readmeLines.findIndex(line => /^\|\s*Package\s*\|/.test(line))
+        if (tableHead === -1) errors.push('README has no package table')
         let tableRows = 0
         for (const line of readmeLines.slice(tableHead + 1)) {
             if (!line.startsWith('|')) break

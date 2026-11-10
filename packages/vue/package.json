@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/vue",
-    "version": "2.3.3",
+    "version": "2.4.0",
     "private": false,
     "description": "Solar Icons for Vue",
     "keywords": [
@@ -121,7 +121,7 @@
         "vite": "^8.3.5",
         "vitest": "^5.0.5",
         "vue": "^3.5.44",
-        "vue-tsc": "3.3.13"
+        "vue-tsc": "3.3.14"
     },
     "peerDependencies": {
         "vue": ">=3.0.0"

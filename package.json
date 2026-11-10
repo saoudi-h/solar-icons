@@ -2,6 +2,27 @@
     "name": "solar",
     "private": true,
     "description": "Solar Icons",
+    "keywords": [
+        "UI",
+        "UX",
+        "design",
+        "icons",
+        "interface",
+        "phosphor",
+        "react",
+        "solar",
+        "svg"
+    ],
+    "license": "MIT",
+    "author": {
+        "name": "Saoudi Hakim",
+        "email": "saoudihakim@gmail.com",
+        "url": "https://hakimsaoudi.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/saoudi-h/solar.git"
+    },
     "type": "module",
     "scripts": {
         "build": "turbo build --concurrency=1",
@@ -29,7 +50,14 @@
         "test": "turbo test",
         "pre-commit": "turbo pre-commit --concurrency=1",
         "setup": "pnpm install && pnpm build",
-        "autonomos": "autonomos"
+        "autonomos": "autonomos",
+        "catalog:sync": "tsx scripts/sync-catalog.ts",
+        "sync:icon-inventory": "tsx scripts/check-icon-inventory.ts --write --check-generated --check-docs",
+        "polyglot:bump": "tsx scripts/bump-polyglot-packages.ts"
+    },
+    "dependencies": {
+        "@changesets/changelog-github": "^1.0.1",
+        "@changesets/cli": "^3.0.3"
     },
     "devDependencies": {
         "@autonomos/cli": "^0.7.0",
@@ -52,33 +80,8 @@
         "turbo": "^2.11.10",
         "unplugin-unused": "^0.6.0"
     },
-    "packageManager": "pnpm@12.16.1",
     "engines": {
         "node": "24.x"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/saoudi-h/solar.git"
-    },
-    "keywords": [
-        "react",
-        "icons",
-        "svg",
-        "solar",
-        "design",
-        "interface",
-        "phosphor",
-        "UI",
-        "UX"
-    ],
-    "author": {
-        "name": "Saoudi Hakim",
-        "url": "https://hakimsaoudi.dev",
-        "email": "saoudihakim@gmail.com"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "@changesets/changelog-github": "^1.0.1",
-        "@changesets/cli": "^3.0.3"
-    }
+    "packageManager": "pnpm@12.17.0"
 }

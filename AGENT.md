@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Context & Objectives
 
-Solar Icons is a public icon library: 1,451 unique icons × 6 styles (Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline) = 8,706 SVG variations. Packaged for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, Angular 17+, and Flutter. Icons originate from 480 Design's Figma file (CC BY 4.0). Package code is MIT. Maintainer: Saoudi Hakim. Public site: https://solar-icons.dev.
+Solar Icons is a public icon library: 1,479 unique icons × 6 styles (Bold, BoldDuotone, Broken, Linear, LineDuotone, Outline) = 8,874 SVG variations. Packaged for React, React Native, Vue, Nuxt, Svelte 5, SolidJS, Angular 17+, and Flutter. Icons originate from 480 Design's Figma file (CC BY 4.0). Package code is MIT. Maintainer: Saoudi Hakim. Public site: https://solar-icons.dev.
 
 For current inventory counts and the complete update checklist, use
 `docs/ICON-INVENTORY-WORKFLOW.md` and run `pnpm exec tsx scripts/check-icon-inventory.ts`. The count in
@@ -24,6 +24,7 @@ this context header is historical orientation, not a second source of truth.
 - **PR base branch:** `main`. Prerelease versions flow through changesets `pre` mode on `main` (`.changeset/pre.json`, tag `beta`) — the `beta` branch is historical and not used for development. `release.yml` publishes on push to `main`.
 - **AGENT.md files are not journals (maintainer directive, 2026-08-05):** keep them to current facts, stack, and conventions only. No dated history entries. Session history belongs in `.autonomos/worklogs/YYYY-MM-DD-[TASK_ID].md` (gitignored), task state in `.autonomos/TASKS.md`.
 - **Language: English only — no exceptions.** Every file in this repo, including gitignored worklogs, AGENT.md files, TASKS.md, comments, commit messages, and documentation MUST be in English. Never write French (or any other language) anywhere in the codebase, regardless of what language the maintainer uses in conversation with you. This applies to all agents and all sessions. If you discover pre-existing non-English content, fix it immediately.
+- **Public voice:** use "we" for project decisions, review and contribution guidance. Use the maintainer's name for actual ownership or attribution, not as the narrator of routine processes.
 - **Pre-commit:** Husky + lint-staged at the root, per-package `lint-staged.config.mjs`.
 - **Clone repos for ground truth:** When docs are thin or unclear, clone the official repo and read the source. Trust the code over summaries.
 
@@ -56,7 +57,7 @@ this context header is historical orientation, not a second source of truth.
 
 ## ⚠️ Known Constraints
 
-- **Private corrected Figma fork:** the maintainer's corrected local Figma file is the visual source of truth for Solar assets. It is not a public Community file and must not be assumed public. It preserves editable 1.5px-default strokes for Linear, Broken, and LineDuotone icons; it also contains geometry fixes, English naming corrections, and deduplicated/renamed components. The three local Figma plugins support this authoring pipeline only: fix geometry, rename components, then export SVGs.
+- **Maintained Figma source:** the maintainer's corrected Figma workspace is the visual source of truth for Solar assets. A reviewed copy is now published at https://www.figma.com/community/file/1700288903247372375/solar-icons-dev-icon-library. The original 480 Design Community file remains the attribution reference; do not replace its credit link with the maintained file. It preserves editable 1.5px-default strokes for Linear, Broken, and LineDuotone icons; it also contains geometry fixes, English naming corrections, and deduplicated/renamed components. Accepted artwork is integrated into the maintained Figma source before SVG export and package generation.
 - **Public positioning for the Figma plugin:** present Solar Icons as the maintained distribution of the Solar Icons Set, not as a niche alternative or a self-effacing "fork." Do not claim to be the original asset creator. Lead with factual product quality: standardized SVGs, editable strokes for Linear/Broken/LineDuotone, and a direct match with the published packages. Attribution belongs in the license/about material, not as the product's primary framing. Follow `docs/FIGMA-PLUGIN-PUBLISHING.md` for updates.
 - **`apps/docs-start` generates its Fumadocs collections during the build** — run `pnpm --filter @solar-icons/docs-start build` before the first `typecheck` on a fresh clone.
 - **`packages/core` depends on `figma-api@2.2.0-beta`** — Figma generation is gated on `FIGMA_API_TOKEN` + `FIGMA_FILE_ID` env vars (declared in `turbo.json` `globalEnv`).

@@ -1,12 +1,5 @@
 {
-  "staticVersion": "2.3.3",
-  "iconCount": 1451,
-  "styles": [
-    "bold",
-    "bold-duotone",
-    "broken",
-    "line-duotone",
-    "linear",
-    "outline"
-  ]
+    "catalogHash": "b0b1fb73a65685142ede54fc7b0df7d620b97fd3a926291f403f6bedababc99c",
+    "iconCount": 1479,
+    "styles": ["bold", "bold-duotone", "broken", "line-duotone", "linear", "outline"]
 }

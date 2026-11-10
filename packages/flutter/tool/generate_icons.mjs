@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+import { spawnSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 /**
  * Generates Flutter icon widgets from packages/core/svgs.
  *
@@ -16,10 +21,7 @@
  * This script reads the SVGs directly so the Flutter package can be
  * generated without installing the pnpm workspace.
  */
-import { spawnSync } from 'node:child_process'
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { inlineSvgUse } from '../../core/src/inline-svg-use.mjs'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const packageRoot = path.resolve(here, '..')
@@ -47,12 +49,12 @@ const svgClose = () => /<\/svg>/g
 const emptyRect = () => /<rect\s+width="24[\d,.]+"\s+height="24[\d,.]+"\s+fill="none"[^>]*\/>\s*/g
 const title = () => /<title[\s\S]*?<\/title>\s*/g
 const defaultStrokeWidth = () => /\s+stroke-width=["']1\.5["']/g
-const hexColor = () => /"#[0-9a-f]{6}"/gi
+const hexColor = () => /"(?:#[0-9a-f]{6}|#[0-9a-f]{3})"/gi
 const duotoneAccent = () =>
     /(?:<g[^>]*\sopacity="0\.5"[^>]*>[\s\S]*?<\/g>|<\w[^>]*\sopacity="0\.5"[^>]*\/>)\s*/g
 
 function normalize(raw) {
-    let body = raw
+    let body = inlineSvgUse(raw)
         .replace(xmlDecl(), '')
         .replace(svgOpen(), '')
         .replace(svgClose(), '')
@@ -69,8 +71,12 @@ function normalize(raw) {
         body = body.replace(duotoneAccent(), '').trim()
     }
 
-    body = body.replace(hexColor(), '"currentColor"')
-    if (accent) accent = accent.replace(hexColor(), '"currentColor"')
+    const normalizePaint = value =>
+        value
+            .replace(hexColor(), '"currentColor"')
+            .replace(/\b(fill|stroke)\s*=\s*["'](?:black|white)["']/gi, '$1="currentColor"')
+    body = normalizePaint(body)
+    if (accent) accent = normalizePaint(accent)
     return { body, accent }
 }
 
@@ -157,13 +163,15 @@ function checkClass(seenClasses, className, what) {
 }
 
 function deprecationTypedefs(aliasList, canonicalClass, suffix) {
-    return (aliasList ?? [])
-        .map(alias => {
-            const aliasClass = `${pascal(alias.name)}${suffix}Icon`
-            const since = alias.deprecatedSince ? ` Deprecated since ${alias.deprecatedSince}.` : ''
-            const message = `${alias.reason}${since} Use ${canonicalClass} instead.`
-            return { aliasClass, rendered: `@Deprecated(${dartString(message)})\ntypedef ${aliasClass} = ${canonicalClass};` }
-        })
+    return (aliasList ?? []).map(alias => {
+        const aliasClass = `${pascal(alias.name)}${suffix}Icon`
+        const since = alias.deprecatedSince ? ` Deprecated since ${alias.deprecatedSince}.` : ''
+        const message = `${alias.reason}${since} Use ${canonicalClass} instead.`
+        return {
+            aliasClass,
+            rendered: `@Deprecated(${dartString(message)})\ntypedef ${aliasClass} = ${canonicalClass};`,
+        }
+    })
 }
 
 function widgetParams(withStyle) {
@@ -272,7 +280,10 @@ function renderStatic(icon, styleDir, field, outDir, suffix, aliases) {
     const className = `${pascal(icon.name)}${suffix}Icon`
     const typedefs = deprecationTypedefs(aliases.get(icon.name), className, suffix)
 
-    return { className, typedefs, content: `// Generated from packages/core/svgs. Do not edit.
+    return {
+        className,
+        typedefs,
+        content: `// Generated from packages/core/svgs. Do not edit.
 // ignore_for_file: public_member_api_docs
 
 import 'package:flutter/widgets.dart';
@@ -298,7 +309,8 @@ ${widgetFields(false)}
 
 ${WIDGET_BUILD}
 }
-${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`} 
+${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`,
+    }
 }
 
 function renderDynamic(icon, aliases) {
@@ -313,7 +325,10 @@ function renderDynamic(icon, aliases) {
 
     const typedefs = deprecationTypedefs(aliases.get(icon.name), className, '')
 
-    return { className, typedefs, content: `// Generated from packages/core/svgs. Do not edit.
+    return {
+        className,
+        typedefs,
+        content: `// Generated from packages/core/svgs. Do not edit.
 // ignore_for_file: public_member_api_docs
 
 import 'package:flutter/widgets.dart';
@@ -339,13 +354,12 @@ ${payloads}
 
 ${DYNAMIC_BUILD}
 }
-${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`}
+${typedefs.length > 0 ? `\n${typedefs.map(t => t.rendered).join('\n\n')}\n` : ''}`,
+    }
 }
 
 function renderStyleBarrel(outDir, names) {
-    const exports = names
-        .map(name => `export '${outDir}/${snake(name)}.dart';`)
-        .join('\n')
+    const exports = names.map(name => `export '${outDir}/${snake(name)}.dart';`).join('\n')
     return `// Generated from packages/core/svgs. Do not edit.
 // Logical icons: ${names.length}
 
@@ -395,7 +409,12 @@ function main() {
         const rendered = []
         for (const name of names) {
             const { className, typedefs, content } = renderStatic(
-                icons.get(name), styleDir, field, outDir, suffix, aliases
+                icons.get(name),
+                styleDir,
+                field,
+                outDir,
+                suffix,
+                aliases
             )
             checkClass(seenClasses, className, `static ${name} ${field}`)
             seenCanonical.add(className)
