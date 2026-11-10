@@ -519,7 +519,7 @@ export const measureSvgCentering = async (raw: string | Buffer): Promise<SvgCent
         for (let y = 0; y < info.height; y += 1) {
             for (let x = 0; x < info.width; x += 1) {
                 const idx = (y * info.width + x) * channels
-                const alpha = channels === 4 ? data[idx + 3] : 255
+                const alpha = (channels === 4 ? data[idx + 3] : 255) ?? 0
                 if (alpha > 15) {
                     if (x < minX) minX = x
                     if (x > maxX) maxX = x
@@ -651,8 +651,8 @@ export const checkSvgQuality = async (svgsPath = SVGS_PATH): Promise<SvgQualityR
         if (hSpread > 0.5 || vSpread > 0.5) {
             const sortedH = [...hOffsets].sort((a, b) => a - b)
             const sortedV = [...vOffsets].sort((a, b) => a - b)
-            const medianH = sortedH[Math.floor(sortedH.length / 2)]
-            const medianV = sortedV[Math.floor(sortedV.length / 2)]
+            const medianH = sortedH[Math.floor(sortedH.length / 2)] ?? 0
+            const medianV = sortedV[Math.floor(sortedV.length / 2)] ?? 0
 
             for (const v of variants) {
                 const diffH = Math.abs(v.centering!.hOffset - medianH)

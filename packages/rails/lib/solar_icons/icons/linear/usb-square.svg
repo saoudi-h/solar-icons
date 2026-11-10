@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-usb-square-linear"><circle cx="12" cy="17" r="1" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="8" cy="9" r="1" stroke="currentColor" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-usb-square-linear"><circle cx="12" cy="17" r="1" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="8" cy="9" r="1" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 16V14.125V6M11 7L12 6L13 7" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
 <path d="M8 10V11.0296C8 11.9044 8.5685 12.6777 9.40345 12.9386L10.8069 13.3772C11.5167 13.599 12 14.2563 12 15" stroke-linecap="round" stroke="currentColor"/>
 <path d="M16 11V12.0296C16 12.9044 15.4315 13.6777 14.5966 13.9386L13.1931 14.3772C12.4833 14.599 12 15.2563 12 16" stroke-linecap="round" stroke="currentColor"/>

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-tuning-square-broken"><circle cx="8" cy="10" r="2" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="2" cy="2" r="2" transform="matrix(1 0 0 -1 14 16)" stroke="currentColor" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-tuning-square-broken"><circle cx="8" cy="10" r="2" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="16" cy="14" r="2" stroke-linecap="round" stroke="currentColor"/>
 <path d="M8 14V19" stroke-linecap="round" stroke="currentColor"/>
 <path d="M16 10V5" stroke-linecap="round" stroke="currentColor"/>
 <path d="M8 5V6" stroke-linecap="round" stroke="currentColor"/>

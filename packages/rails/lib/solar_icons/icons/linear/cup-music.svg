@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-cup-music-linear"><path d="M5.03907 5.70647C5.21983 10.2595 6.24021 16 12.0002 16C17.7601 16 18.7805 10.2595 18.9612 5.70647C19.0115 4.43998 19.0367 3.80673 18.5609 3.22083C18.0852 2.63494 17.5159 2.53887 16.3771 2.34674C15.2531 2.15709 13.7837 2 12.0002 2C10.2166 2 8.74724 2.15709 7.62318 2.34674C6.48445 2.53887 5.91508 2.63494 5.43937 3.22083C4.96365 3.80673 4.98879 4.43998 5.03907 5.70647Z" stroke-linecap="round" stroke="currentColor"/>
 <path d="M13 10.5V7.5V5" stroke-linecap="round" stroke="currentColor"/>
-<circle cx="11.5" cy="10.5" r="1.5" stroke="currentColor" stroke-linecap="round"/>
+<circle cx="11.5" cy="10.5" r="1.5" stroke-linecap="round" stroke="currentColor"/>
 <path d="M15 7C13.8954 7 13 6.10457 13 5" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 16V19" stroke-linecap="round" stroke="currentColor"/>
 <path d="M8.5 22H15.5L15.1608 20.3039C15.0673 19.8365 14.6569 19.5 14.1802 19.5H9.8198C9.34312 19.5 8.93271 19.8365 8.83922 20.3039L8.5 22Z" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>

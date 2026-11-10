@@ -4,5 +4,5 @@
 
 <path d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
 
-<path d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="6" r="4" stroke="currentColor" stroke-linecap="round"/>
-<ellipse cx="12" cy="17" rx="6" ry="4" stroke="currentColor" stroke-linecap="round"/></svg>
+<path d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="6" r="4" stroke-linecap="round" stroke="currentColor"/>
+<ellipse cx="12" cy="17" rx="6" ry="4" stroke-linecap="round" stroke="currentColor"/></svg>
