@@ -1,6 +1,6 @@
 # solar_icons
 
-Solar Icons for Ruby on Rails views: inline any of the 1,479 icons in six styles with the `solar_icon` helper. SVGs ship inside the gem, generated from `@solar-icons/static`, so views render with no network and no JavaScript.
+Solar Icons for Ruby on Rails views: inline any of the 1,517 icons in six styles with the `solar_icon` helper. SVGs ship inside the gem, generated from `@solar-icons/static`, so views render with no network and no JavaScript.
 
 ```erb
 <%= solar_icon("arrow-right") %>
@@ -75,7 +75,7 @@ bundle install
 bundle exec rails server
 ```
 
-Open http://127.0.0.1:3210 and switch styles from the nav. CI boots the same app and asserts 1,479 inline SVGs on each of the six style pages.
+Open http://127.0.0.1:3210 and switch styles from the nav. CI boots the same app and asserts 1,517 inline SVGs on each of the six style pages.
 
 ## Release
 

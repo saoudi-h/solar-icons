@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-checkerboard-bold-duotone"><g style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)">
+<path d="M12 12V22C7.28626 22 4.92926 21.9999 3.46484 20.5361C2.00034 19.0711 2 16.714 2 12H12Z" fill="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+<path d="M12 2C16.7137 2 19.0707 2.00011 20.5352 3.46387C21.9997 4.92887 22 7.286 22 12H12V2Z" fill="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+</g><path d="M22 12C22 16.714 21.9997 19.0711 20.5352 20.5361C19.0707 21.9999 16.7137 22 12 22V12H22Z" fill="currentColor"/>
+<path d="M12 12H2C2 7.286 2.00034 4.92887 3.46484 3.46387C4.92926 2.00011 7.28626 2 12 2V12Z" fill="currentColor"/></svg>

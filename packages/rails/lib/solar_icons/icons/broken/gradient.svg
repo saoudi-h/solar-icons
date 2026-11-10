@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-gradient-broken"><path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.286 22 4.9289 22 3.4645 20.5355C2 19.0711 2 16.714 2 12C2 7.286 2 4.9289 3.4645 3.4645C4.9289 2 7.286 2 12 2C16.714 2 19.0711 2 20.5355 3.4645C21.5093 4.4382 21.8356 5.8066 21.9449 8" stroke-linecap="round" stroke="currentColor"/>
+<path d="M8.5 7H8.5001" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12.375 6.5C12.6512 6.5 12.875 6.724 12.875 7C12.875 7.276 12.6512 7.5 12.375 7.5C12.0988 7.5 11.875 7.276 11.875 7C11.875 6.724 12.0988 6.5 12.375 6.5Z" stroke-linecap="round" stroke="currentColor"/>
+<path d="M8.5 17H8.5001" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M8.5 12H8.5001" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12.3752 11.5C12.6514 11.5 12.8752 11.724 12.8752 12C12.8752 12.276 12.6514 12.5 12.3752 12.5C12.0991 12.5 11.8752 12.276 11.8752 12C11.8752 11.724 12.0991 11.5 12.3752 11.5Z" stroke-linecap="round" stroke="currentColor"/>
+<path d="M12.375 16.5C12.6512 16.5 12.875 16.724 12.875 17C12.875 17.276 12.6512 17.5 12.375 17.5C12.0988 17.5 11.875 17.276 11.875 17C11.875 16.724 12.0988 16.5 12.375 16.5Z" stroke-linecap="round" stroke="currentColor"/>
+<path d="M17.5 5.75C18.1904 5.75 18.75 6.31 18.75 7C18.75 7.69 18.1904 8.25 17.5 8.25C16.8096 8.25 16.25 7.69 16.25 7C16.25 6.31 16.8096 5.75 17.5 5.75Z" stroke-linecap="round" stroke="currentColor"/>
+<path d="M17.5 15.75C18.1904 15.75 18.75 16.31 18.75 17C18.75 17.69 18.1904 18.25 17.5 18.25C16.8096 18.25 16.25 17.69 16.25 17C16.25 16.31 16.8096 15.75 17.5 15.75Z" stroke-linecap="round" stroke="currentColor"/>
+<path d="M17.5 10.75C18.1904 10.75 18.75 11.31 18.75 12C18.75 12.69 18.1904 13.25 17.5 13.25C16.8096 13.25 16.25 12.69 16.25 12C16.25 11.31 16.8096 10.75 17.5 10.75Z" stroke-linecap="round" stroke="currentColor"/></svg>

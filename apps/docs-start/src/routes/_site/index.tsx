@@ -12,7 +12,7 @@ export const Route = createFileRoute('/_site/')({
     head: () =>
         seo({
             title: 'Solar Icons',
-            description: '1,479 icons · 6 styles',
+            description: '1,517 icons · 6 styles',
             path: '/',
             image: '/og/home/image.png',
         }),

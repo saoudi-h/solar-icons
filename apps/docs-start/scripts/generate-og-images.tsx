@@ -193,7 +193,7 @@ async function render(
     await writeFile(target, png)
 }
 
-await render('home/image.png', { title: 'Solar Icons', description: '1,479 icons · 6 styles' })
+await render('home/image.png', { title: 'Solar Icons', description: '1,517 icons · 6 styles' })
 await render('icons/image.png', {
     title: 'Explore Solar Icons',
     description: 'Browse all six styles',

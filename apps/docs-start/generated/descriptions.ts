@@ -16921,6 +16921,415 @@ icons.push({
     priority: 'normal' as const,
     priorityReason: 'Offline and cloud-sync disabled counterpart to cloud.',
 })
+icons.push({
+    name: 'hand',
+    category: 'hands' as Category,
+    categoryTags: ['hands'],
+    tags: ['hand', 'grab', 'pan', 'move', 'drag', 'open hand', 'hand tool'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'hand-grab',
+    category: 'hands' as Category,
+    categoryTags: ['hands'],
+    tags: ['hand', 'grabbing', 'drag', 'move', 'pan', 'closed hand', 'dragging'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'blend',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['blend', 'blend mode', 'mix', 'overlay', 'layer', 'composite'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'layer-arrow-down',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['send backward', 'layer down', 'arrange', 'order', 'stack', 'move down'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'layer-arrow-up',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['bring forward', 'layer up', 'arrange', 'order', 'stack', 'move up'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'layers-arrow-down',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['send to back', 'bottom layer', 'arrange', 'order', 'stack', 'background'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'layers-arrow-up',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['bring to front', 'top layer', 'arrange', 'order', 'stack', 'foreground'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'brush-cross-pen',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['brush', 'pen', 'design tools', 'creative', 'art', 'draw', 'illustration'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'checkerboard',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['checkerboard', 'transparency grid', 'pattern', 'alpha', 'background', 'chess'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'circle',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['circle', 'round', 'shape', 'primitive', 'draw', 'dot'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'distort',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['distort', 'skew', 'transform', 'perspective', 'free transform', 'deform'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'ellipse',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['ellipse', 'oval', 'shape', 'primitive', 'draw'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'exclude',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['exclude', 'difference', 'xor', 'boolean', 'shape', 'pathfinder'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'contrast',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: [
+        'contrast',
+        'brightness',
+        'adjustment',
+        'filter',
+        'effect',
+        'image filter',
+        'photo',
+        'layer effect',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'flat-brush',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['flat brush', 'paint brush', 'wall brush', 'paint', 'brush', 'decorate', 'color'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'gradient',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['gradient', 'color', 'fill', 'transition', 'linear gradient', 'ramp'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'intersect',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['intersect', 'intersection', 'overlap', 'boolean', 'shape', 'pathfinder'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'intersect-minimalistic',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['intersect', 'intersection', 'overlap', 'boolean', 'shape', 'pathfinder'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'noise-square',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['noise', 'grain', 'texture', 'dither', 'effect', 'pattern'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'opacity',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['opacity', 'transparency', 'alpha', 'fade', 'layer', 'visibility'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'paint-bucket',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['paint bucket', 'fill', 'bucket', 'color fill', 'flood fill', 'paint', 'color'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'rectangle',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rectangle', 'rect', 'shape', 'box', 'primitive', 'draw'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'rotate-anticlockwise',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rotate', 'anticlockwise', 'counterclockwise', 'turn left', 'rotation', 'transform'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'rotate-anticlockwise-2',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rotate', 'anticlockwise', 'counterclockwise', 'turn left', 'rotation', 'transform'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'rotate-clockwise',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rotate', 'clockwise', 'turn right', 'rotation', 'transform'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'rotate-clockwise-2',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rotate', 'clockwise', 'turn right', 'rotation', 'transform'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'selection',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['selection', 'select', 'marquee', 'bounding box', 'area', 'frame'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'shadow',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['shadow', 'drop shadow', 'effect', 'depth', 'elevation', 'layer'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'shape-rotate',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['rotate shape', 'rotation', 'transform', 'angle', 'turn', 'shape'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'subtract',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['subtract', 'minus front', 'boolean', 'shape', 'pathfinder', 'cut'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'subtract-minimalistic',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['subtract', 'minus front', 'boolean', 'shape', 'pathfinder', 'cut'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'union',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['union', 'combine', 'merge', 'boolean', 'shape', 'pathfinder', 'unite'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'warp',
+    category: 'tools' as Category,
+    categoryTags: ['tools', 'design'],
+    tags: ['warp', 'bend', 'deform', 'mesh', 'transform', 'distort'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-03',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'calendar-range',
+    category: 'time' as Category,
+    categoryTags: ['time'],
+    tags: [
+        'calendar',
+        'date range',
+        'period',
+        'start date',
+        'end date',
+        'from',
+        'to',
+        'schedule',
+        'booking',
+        'duration',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-04',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'translate',
+    category: 'text-formatting' as Category,
+    categoryTags: ['text-formatting'],
+    tags: [
+        'translate',
+        'translation',
+        'language',
+        'localization',
+        'multilingual',
+        'i18n',
+        'dictionary',
+        'interpreter',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-04',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'sparkles',
+    category: 'ui' as Category,
+    categoryTags: ['ui'],
+    tags: ['sparkles', 'ai', 'magic', 'generate', 'stars', 'shine', 'new', 'auto'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-04',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'variable-brackets',
+    category: 'it' as Category,
+    categoryTags: ['it', 'network', 'programming'],
+    tags: ['variable', 'x', 'function', 'formula', 'math', 'parameter', 'expression', 'code'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-04',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
+icons.push({
+    name: 'variable-square',
+    category: 'it' as Category,
+    categoryTags: ['it', 'network', 'programming'],
+    tags: ['variable', 'x', 'function', 'formula', 'math', 'parameter', 'token', 'code'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-04',
+    author: 'Grand Magus',
+    state: 'beta' as const,
+})
 
 export { icons }
 
