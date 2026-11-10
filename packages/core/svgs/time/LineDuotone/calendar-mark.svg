@@ -3,5 +3,5 @@
 <path opacity="0.5" d="M7 4V2.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path opacity="0.5" d="M17 4V2.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path opacity="0.5" d="M2 9H22" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
-<circle cx="16.5" cy="16.5" r="1.5" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="16.5" cy="16.5" r="1.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 </svg>

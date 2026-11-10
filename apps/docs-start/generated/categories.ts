@@ -75,7 +75,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'food',
         label: 'Food',
-        count: 18,
+        count: 19,
         representative: 'chef-hat',
     },
     {
@@ -105,7 +105,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'list',
         label: 'List',
-        count: 36,
+        count: 38,
         representative: 'checklist',
     },
     {
@@ -225,7 +225,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'video',
         label: 'Video',
-        count: 107,
+        count: 111,
         representative: 'play-circle',
     },
     {

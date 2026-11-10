@@ -26,12 +26,7 @@ export function renameImportedBindingReferences(
     const sourceFile = ts.createSourceFile(fileName, source, ts.ScriptTarget.Latest, true)
     const host = ts.createCompilerHost(options)
     const defaultGetSourceFile = host.getSourceFile.bind(host)
-    host.getSourceFile = (
-        requestedFileName,
-        languageVersion,
-        onError,
-        shouldCreateNewSourceFile
-    ) =>
+    host.getSourceFile = (requestedFileName, languageVersion, onError, shouldCreateNewSourceFile) =>
         requestedFileName === fileName
             ? sourceFile
             : defaultGetSourceFile(

@@ -17862,5 +17862,140 @@
         "priority": "high",
         "priorityReason": "Adds a common six-cell grid layout alongside the existing grid controls.",
         "useCases": ["six-item grid", "dashboard layout", "module arrangement"]
+    },
+    {
+        "name": "cookie",
+        "category": "food",
+        "categoryTags": ["food", "kitchen", "cooking", "baking", "drink", "beverage", "meal"],
+        "tags": [
+            "cookie",
+            "biscuit",
+            "snack",
+            "sweet",
+            "chocolate chip",
+            "pastry",
+            "dessert",
+            "browser cookie",
+            "web tracking"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Common web consent, privacy settings and confectionery icon.",
+        "useCases": ["cookie banner", "privacy consent", "snack menu", "food delivery"]
+    },
+    {
+        "name": "microphone-off",
+        "category": "video",
+        "categoryTags": ["media", "player", "movie", "film", "audio", "multimedia"],
+        "tags": [
+            "microphone off",
+            "mute",
+            "mic disabled",
+            "audio off",
+            "silent",
+            "voice input off"
+        ],
+        "aliases": ["mic-off"],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Essential communication and voice control state counterpart to microphone.",
+        "useCases": ["mute audio", "video call controls", "privacy indicator", "voice chat"]
+    },
+    {
+        "name": "microphone-2-off",
+        "category": "video",
+        "categoryTags": ["media", "player", "movie", "film", "audio", "multimedia"],
+        "tags": [
+            "microphone off",
+            "mute",
+            "podcast mic off",
+            "audio off",
+            "silent",
+            "voice recorder off"
+        ],
+        "aliases": ["mic-2-off"],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Disabled variant for the microphone-2 family style.",
+        "useCases": ["podcast mute", "recording stop", "broadcast mute"]
+    },
+    {
+        "name": "microphone-3-off",
+        "category": "video",
+        "categoryTags": ["media", "player", "movie", "film", "audio", "multimedia"],
+        "tags": [
+            "microphone off",
+            "mute",
+            "studio mic off",
+            "audio off",
+            "silent",
+            "voice input off"
+        ],
+        "aliases": ["mic-3-off"],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Disabled variant for the microphone-3 family style.",
+        "useCases": ["studio mic mute", "vocal recording disabled"]
+    },
+    {
+        "name": "microphone-large-off",
+        "category": "video",
+        "categoryTags": ["media", "player", "movie", "film", "audio", "multimedia"],
+        "tags": ["microphone off", "mute", "large mic off", "audio off", "silent", "dictation off"],
+        "aliases": ["mic-large-off"],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "normal",
+        "priorityReason": "Disabled variant for the microphone-large family style.",
+        "useCases": ["dictation mute", "voice control off"]
+    },
+    {
+        "name": "list-unordered",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": [
+            "bullet list",
+            "unordered list",
+            "bullet points",
+            "bulleted",
+            "items",
+            "tasks",
+            "checklist"
+        ],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Canonical text formatting and bulleted list control.",
+        "useCases": ["rich text editor", "bulleted list", "notes formatting", "itemized tasks"]
+    },
+    {
+        "name": "list-unordered-minimalistic",
+        "category": "list",
+        "categoryTags": ["menu", "organize", "order", "sort", "lines", "rows"],
+        "tags": ["minimal unordered list", "bullet list", "bullet points", "compact list", "items"],
+        "aliases": ["minimalistic-list-unordered"],
+        "origin": "extended",
+        "addedAt": "2026-11-10",
+        "author": "Hakim Saoudi",
+        "state": "beta",
+        "priority": "high",
+        "priorityReason": "Provides a bulleted list control in the minimalistic list family.",
+        "useCases": ["minimal text editor", "compact bullet list", "sidebar items"]
     }
 ]

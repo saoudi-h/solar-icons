@@ -1,6 +1,6 @@
 // AUTO-GENERATED FILE - DO NOT EDIT
 // Generated from packages/core/svgs by scripts/generate-test-app-icon-lists.ts
-// Total icons: 1451
+// Total icons: 1458
 
 export const ALL_ICONS = [
     'Accessibility',
@@ -358,6 +358,7 @@ export const ALL_ICONS = [
     'ConfoundedCircle',
     'ConfoundedSquare',
     'Container',
+    'Cookie',
     'Copy',
     'CopyAdd',
     'CopyCheck',
@@ -729,6 +730,8 @@ export const ALL_ICONS = [
     'ListOrderedMinimalistic',
     'ListPlus',
     'ListPlusMinimalistic',
+    'ListUnordered',
+    'ListUnorderedMinimalistic',
     'ListUp',
     'ListUpMinimalistic',
     'ListVertical',
@@ -801,8 +804,12 @@ export const ALL_ICONS = [
     'MenuDotsVertical',
     'Microphone',
     'Microphone2',
+    'Microphone2Off',
     'Microphone3',
+    'Microphone3Off',
     'MicrophoneLarge',
+    'MicrophoneLargeOff',
+    'MicrophoneOff',
     'MinimalisticMagnifier',
     'MinimalisticMagnifierBug',
     'MinimalisticMagnifierCheck',
