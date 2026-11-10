@@ -144,7 +144,12 @@
         "Horizonta",
         "parsererror",
         "calcom",
-        "analogjs"
+        "analogjs",
+        "blazor",
+        "csproj",
+        "nuget",
+        "autoloaded",
+        "trimmable"
     ],
     "ignorePaths": [
         "node_modules",

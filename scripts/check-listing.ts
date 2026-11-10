@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 import { PACK_STYLES } from '../packages/figma-plugin/src/shared/packs'
 
 /**
@@ -81,7 +82,9 @@ const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')) as {
 }
 const domains = manifest.networkAccess?.allowedDomains ?? []
 if (domains.length !== 1 || domains[0] !== 'none') {
-    problems.push('the plugin is offline: manifest must declare networkAccess.allowedDomains as ["none"]')
+    problems.push(
+        'the plugin is offline: manifest must declare networkAccess.allowedDomains as ["none"]'
+    )
 }
 
 if (problems.length > 0) {

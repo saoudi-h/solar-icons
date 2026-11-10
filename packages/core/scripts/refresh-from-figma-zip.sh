@@ -65,4 +65,5 @@ SWAPPED=true
 mv "$REFRESH_TMP_DIR/incoming/svgs" "$SVGS_DIR"
 pnpm generate:svgs --offline
 echo 'Import complete. Source ZIP retained.'
+echo 'Next step: curate any new entries in packages/core/src/metadata-descriptions.json, then run "pnpm catalog:sync" from the repository root.'
 git status --short svgs/ src/metadata.json
