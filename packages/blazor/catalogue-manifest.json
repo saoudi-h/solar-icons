@@ -1,17 +1,10 @@
 {
-  "logicalIcons": 1458,
-  "svgPayloads": 8748,
-  "componentTypes": 10493,
-  "styles": [
-    "Bold",
-    "BoldDuotone",
-    "Broken",
-    "Linear",
-    "LineDuotone",
-    "Outline"
-  ],
-  "sourceIcons": 8748,
-  "generatedHash": "a6ba91f613018cdf221276f4646ba20b76dd5a8de76097f6e94d4d7f8aa4e6d6",
-  "playgroundHash": "bec308b7733ad25cb59608b646e2c1b9f984e943aefeb518bb224d1ff8f59584",
-  "probeHash": "08f913bfff098a08bfa7047f1d9882a08d2496de818ae2ebcb96ca1ae9876a16"
+    "logicalIcons": 1479,
+    "svgPayloads": 8874,
+    "componentTypes": 10773,
+    "styles": ["Bold", "BoldDuotone", "Broken", "Linear", "LineDuotone", "Outline"],
+    "sourceIcons": 8874,
+    "generatedHash": "279a93cc143df9b461cbb2ae8f1f073cbe1fba4e5c093f056d0a03a06b8b80f4",
+    "playgroundHash": "65ad5adf2969efc38cde0411e00d3033b294f1610c48b01cc56bafd4e93009ea",
+    "probeHash": "6dbae32430f79844733c4b2f70528efe00a839f9e8ae2659c207fc341a531f1f"
 }
