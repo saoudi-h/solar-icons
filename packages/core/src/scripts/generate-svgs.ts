@@ -450,7 +450,9 @@ const main = async (): Promise<void> => {
 
     // Credentials are only required for the live Figma API path.
     if (!FIGMA_API_TOKEN || !FIGMA_FILE_ID) {
-        console.error(pc.red('Environment Variables FIGMA_API_TOKEN and FIGMA_FILE_ID are not set.'))
+        console.error(
+            pc.red('Environment Variables FIGMA_API_TOKEN and FIGMA_FILE_ID are not set.')
+        )
         process.exit(1)
     }
 

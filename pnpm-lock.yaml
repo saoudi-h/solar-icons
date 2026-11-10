@@ -10975,7 +10975,7 @@ packages:
       imagemin: '*'
       lightningcss: '*'
       postcss: '*'
-      sharp: '*'
+      sharp: 0.35.5
       svgo: '*'
       uglify-js: '*'
       webpack: ^5.1.0

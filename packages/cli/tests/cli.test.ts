@@ -4,15 +4,16 @@ import { catalogStats, loadDescriptions, resolveIconName, STYLES } from '../src/
 import { searchCatalog } from '../src/search.js'
 
 describe('cli catalog', () => {
-    it('loads 1451 icons', () => {
+    it('loads catalog descriptions', () => {
         const descs = loadDescriptions()
-        expect(descs.length).toBe(1451)
+        expect(descs.length).toBeGreaterThan(1000)
     })
-    it('stats', () => {
+    it('stats matches loaded catalog and styles count', () => {
+        const descs = loadDescriptions()
         const s = catalogStats()
-        expect(s.icons).toBe(1451)
+        expect(s.icons).toBe(descs.length)
         expect(s.styles).toBe(6)
-        expect(s.variations).toBe(8706)
+        expect(s.variations).toBe(s.icons * s.styles)
         expect(s.categories).toBeGreaterThan(30)
     })
     it('search home', () => {

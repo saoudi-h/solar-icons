@@ -6,6 +6,6 @@
 
 <path d="M20 19L20 16" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
 
-<path d="M12 10V5M4 5V7.66667" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="2" transform="rotate(180 12 12)" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="20" cy="14" r="2" transform="rotate(180 20 14)" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="2" cy="2" r="2" transform="matrix(-1 8.74228e-08 8.74228e-08 1 6 8)" stroke="currentColor" stroke-linecap="round"/></svg>
+<path d="M12 10V5M4 5V7.66667" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="2" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="20" cy="14" r="2" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="4" cy="10" r="2" stroke-linecap="round" stroke="currentColor"/></svg>

@@ -2,7 +2,7 @@
 <path d="M9 14H3" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M8 18H3" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M17 16.5V12.5V8" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
-<circle cx="14.5" cy="16.5" r="2.5" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="14.5" cy="16.5" r="2.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M21 12C18.7909 12 17 10.2091 17 8" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M3 6H10.4118M13.4118 6H15" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M13 10L6.82353 10M4.32353 10H3" stroke-width="1.5" stroke-linecap="round" stroke="black"/>

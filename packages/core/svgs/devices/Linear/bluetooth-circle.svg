@@ -3,5 +3,5 @@
 <path d="M14.2 16.1577L12.7455 17.2519C11.9838 17.8248 11.603 18.1112 11.3015 17.96C11 17.8088 11 17.3314 11 16.3766V12L14.2 14.4071C14.7333 14.8083 15 15.0089 15 15.2824C15 15.5559 14.7333 15.7565 14.2 16.1577Z" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M11 12L8 9.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M11 12L8 14.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
-<circle cx="12" cy="12" r="10" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="12" cy="12" r="10" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 </svg>

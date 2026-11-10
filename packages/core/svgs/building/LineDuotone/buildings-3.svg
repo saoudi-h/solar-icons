@@ -12,5 +12,5 @@
 <path opacity="0.5" d="M5.5 8H7" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path opacity="0.5" d="M17 8H18.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path opacity="0.5" d="M10 15H14" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
-<circle cx="12" cy="7" r="2" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="12" cy="7" r="2" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 </svg>

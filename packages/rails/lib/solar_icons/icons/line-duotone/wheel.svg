@@ -8,6 +8,6 @@
 
 <path d="M15 17.1963L13 13.7322" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
 
-<path d="M11 10.2681L9 6.80396" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="12" cy="12" r="6" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="12" cy="12" r="2" stroke="currentColor" stroke-linecap="round"/></svg>
+<path d="M11 10.2681L9 6.80396" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="12" cy="12" r="6" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="12" cy="12" r="2" stroke-linecap="round" stroke="currentColor"/></svg>

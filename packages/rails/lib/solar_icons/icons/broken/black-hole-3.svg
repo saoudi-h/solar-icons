@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-black-hole-3-broken"><circle cx="12" cy="12" r="2" stroke="currentColor" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-black-hole-3-broken"><circle cx="12" cy="12" r="2" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 10C17 10 16.6 22 9 22" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12.3115 14C7.31152 14 7.71152 2 15.3115 2" stroke-linecap="round" stroke="currentColor"/>
 <path d="M10 12.3115C10 9.53259 13.7068 8.42171 17 9.28791M20 10.8222C21.1941 11.856 22 13.342 22 15.3115" stroke-linecap="round" stroke="currentColor"/>

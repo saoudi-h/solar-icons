@@ -75,7 +75,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'food',
         label: 'Food',
-        count: 18,
+        count: 19,
         representative: 'chef-hat',
     },
     {
@@ -93,25 +93,25 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'it',
         label: 'IT',
-        count: 62,
+        count: 68,
         representative: 'code',
     },
     {
         slug: 'like',
         label: 'Like',
-        count: 18,
+        count: 20,
         representative: 'heart',
     },
     {
         slug: 'list',
         label: 'List',
-        count: 36,
+        count: 40,
         representative: 'checklist',
     },
     {
         slug: 'map',
         label: 'Map',
-        count: 37,
+        count: 38,
         representative: 'compass',
     },
     {
@@ -171,13 +171,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'security',
         label: 'Security',
-        count: 48,
+        count: 50,
         representative: 'shield-check',
     },
     {
         slug: 'settings',
         label: 'Settings',
-        count: 34,
+        count: 36,
         representative: 'tuning',
     },
     {
@@ -195,7 +195,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'text-formatting',
         label: 'Text Formatting',
-        count: 36,
+        count: 37,
         representative: 'text-bold',
     },
     {
@@ -213,7 +213,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'ui',
         label: 'UI',
-        count: 162,
+        count: 166,
         representative: 'cursor',
     },
     {
@@ -225,13 +225,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'video',
         label: 'Video',
-        count: 107,
+        count: 111,
         representative: 'play-circle',
     },
     {
         slug: 'weather',
         label: 'Weather',
-        count: 36,
+        count: 37,
         representative: 'sun',
     },
 ]

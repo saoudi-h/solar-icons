@@ -1,7 +1,7 @@
 {
-  "logicalIcons": 1451,
-  "svgPayloads": 8706,
-  "componentTypes": 10409,
+  "logicalIcons": 1479,
+  "svgPayloads": 8874,
+  "componentTypes": 10773,
   "styles": [
     "Bold",
     "BoldDuotone",
@@ -10,8 +10,8 @@
     "LineDuotone",
     "Outline"
   ],
-  "sourceIcons": 8706,
-  "generatedHash": "e90dedc5fd9191266ffd9e62f048ba9f3546946325b93c771a1f347ca330249d",
-  "playgroundHash": "32a8355431680518413c90063a7013d35ccb2706fb2da57dc2391ce09a317500",
-  "probeHash": "2c732882ecca5fb841a263474828f8e5d3c5d3e700d818f1997c4bdb0ef5a0bb"
+  "sourceIcons": 8874,
+  "generatedHash": "279a93cc143df9b461cbb2ae8f1f073cbe1fba4e5c093f056d0a03a06b8b80f4",
+  "playgroundHash": "65ad5adf2969efc38cde0411e00d3033b294f1610c48b01cc56bafd4e93009ea",
+  "probeHash": "6dbae32430f79844733c4b2f70528efe00a839f9e8ae2659c207fc341a531f1f"
 }

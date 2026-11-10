@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { analyzeSvg, buildSvgQualityMarkdown } from './check-svg-quality'
+import { analyzeSvg, buildSvgQualityMarkdown, measureSvgCentering } from './check-svg-quality'
 
 const svg = (body: string): string =>
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="none">' + body + '</svg>'
@@ -155,5 +155,23 @@ describe('SVG visual contracts', () => {
         expect(markdown).toContain('Status: FAILED')
         expect(markdown).toContain('devices/Linear/gamepad-old.svg')
         expect(markdown).toContain('Use Solar navy, black or white for visible paint.')
+    })
+
+    it('measures visual bounding box and detects centering', async () => {
+        const centered = await measureSvgCentering(
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="black" stroke-width="1.5"/></svg>'
+        )
+        expect(centered).not.toBeNull()
+        expect(Math.abs(centered!.hOffset)).toBeLessThanOrEqual(0.1)
+        expect(Math.abs(centered!.vOffset)).toBeLessThanOrEqual(0.1)
+
+        const offCenter = await measureSvgCentering(
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="14" y="6" width="6" height="6" fill="black"/></svg>'
+        )
+        expect(offCenter).not.toBeNull()
+        expect(offCenter!.centerX).toBeCloseTo(17, 0)
+        expect(offCenter!.centerY).toBeCloseTo(9, 0)
+        expect(offCenter!.hOffset).toBeGreaterThan(4)
+        expect(offCenter!.vOffset).toBeLessThan(-2)
     })
 })

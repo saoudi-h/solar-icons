@@ -10,8 +10,8 @@
 
 <path d="M7 5L6 4" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
 
-<path d="M3.68293 10.3497L3.60427 8.93769" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/>
-<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-linecap="round"/>
+<path d="M3.68293 10.3497L3.60427 8.93769" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke="currentColor"/>
+<circle cx="12" cy="12" r="3" stroke-linecap="round" stroke="currentColor"/>
 <path d="M14.5 7L16 5" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 5L11 4" stroke-linecap="round" stroke="currentColor"/>
 <path d="M20.6777 10.085L18.9996 11.5629" stroke-linecap="round" stroke="currentColor"/>

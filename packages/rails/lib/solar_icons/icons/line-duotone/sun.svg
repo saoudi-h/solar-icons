@@ -4,7 +4,7 @@
 
 <path d="M19.0703 19.0708L18.6775 18.678" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
 
-<path d="M5.32227 5.32178L4.92943 4.92894" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-linecap="round"/>
+<path d="M5.32227 5.32178L4.92943 4.92894" stroke-linecap="round" stroke="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/><circle cx="12" cy="12" r="6" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 2V3" stroke-linecap="round" stroke="currentColor"/>
 <path d="M12 21V22" stroke-linecap="round" stroke="currentColor"/>
 <path d="M22 12L21 12" stroke-linecap="round" stroke="currentColor"/>

@@ -4,6 +4,6 @@
 <path d="M22 8L12 12" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M12 19V8.8475C12 7.55704 12 6.9118 12.335 6.40841C12.67 5.90502 13.2652 5.6559 14.4556 5.15766L16.4556 4.32057C18.9626 3.27128 20.2161 2.74663 21.1081 3.34022C22 3.93381 22 5.29268 22 8.01042V12" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M7 11V6.5V2" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
-<circle cx="4.5" cy="10.5" r="2.5" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="4.5" cy="10.5" r="2.5" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 <path d="M10 5C8.75736 5 7 4.07107 7 2" stroke-width="1.5" stroke-linecap="round" stroke="black"/>
 </svg>

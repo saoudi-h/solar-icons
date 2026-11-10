@@ -2,4 +2,4 @@
 <path d="M6 14.0002C6.01447 15.7067 6.10921 16.6475 6.72963 17.2679C7.35004 17.8883 8.29083 17.9831 9.99739 17.9976" stroke-linecap="round" stroke="currentColor"/>
 <path d="M17.998 9.99739C17.9836 8.29083 17.8888 7.35004 17.2684 6.72963C16.648 6.10921 15.7072 6.01447 14.0007 6" stroke-linecap="round" stroke="currentColor"/>
 <path d="M17.998 14.0002C17.9836 15.7067 17.8888 16.6475 17.2684 17.2679C16.648 17.8883 15.7072 17.9831 14.0007 17.9976" stroke-linecap="round" stroke="currentColor"/>
-<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/></svg>
+<circle cx="12" cy="12" r="10" stroke-linecap="round" stroke="currentColor"/></svg>
