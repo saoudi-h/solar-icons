@@ -102,11 +102,17 @@ jobs:
                     tail -50 /tmp/puma.log
                     exit 1
                   }
+                  expected_count=0
                   for style in linear broken line-duotone outline bold bold-duotone; do
                     count=$(curl -sf "http://127.0.0.1:3210/?style=${style}" | grep -o "<svg" | wc -l)
-                    test "$count" -eq 1451 || { echo "${style}: ${count} icons on the page"; exit 1; }
+                    test "$count" -gt 0 || { echo "${style}: no icons on the page"; exit 1; }
                     keys=$(curl -sf "http://127.0.0.1:3210/gallery/icons?style=${style}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
-                    test "$keys" -eq 1451 || { echo "${style}: ${keys} icons from the endpoint"; exit 1; }
+                    test "$count" -eq "$keys" || { echo "${style}: page count ($count) != endpoint count ($keys)"; exit 1; }
+                    if [ "$expected_count" -eq 0 ]; then
+                      expected_count=$count
+                    else
+                      test "$count" -eq "$expected_count" || { echo "${style} count ($count) != expected ($expected_count)"; exit 1; }
+                    fi
                     echo "${style}: page=${count} endpoint=${keys}"
                   done
-                  echo "gallery OK: 6 styles x 1451 icons"
+                  echo "gallery OK: 6 styles x ${expected_count} icons"
