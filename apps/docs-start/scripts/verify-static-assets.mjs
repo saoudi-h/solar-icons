@@ -38,9 +38,20 @@ const robots = await fetch(new URL('/robots.txt', baseUrl))
 assert.equal(robots.status, 200)
 assert.match(await robots.text(), /Disallow: \/\s*$/m)
 
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const coreMetadataPath = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '../../../packages/core/src/metadata.json'
+)
+const coreMetadata = JSON.parse(fs.readFileSync(coreMetadataPath, 'utf8'))
+const expectedIconCount = Object.values(coreMetadata.categories).flatMap(c => c.icons).length
+
 const catalogResponse = await fetch(new URL('/data/icons.json', baseUrl))
 const catalog = await catalogResponse.json()
-assert.equal(catalog.length, 1451)
+assert.equal(catalog.length, expectedIconCount)
 
 const stylesheetPath = plainHtml.match(/href="([^"]+app-[^"]+\.css)"/)?.[1]
 const entryScriptPath = plainHtml.match(/src="([^"]+index-[^"]+\.js)"/)?.[1]

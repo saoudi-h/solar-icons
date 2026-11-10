@@ -1,3 +1,7 @@
+## 2.1.0
+
+* Add 28 new icons across 12 categories (1,479 icons across six styles, 8,874 SVG variations).
+
 ## 2.0.2
 
 - Restore the corrected catalogue artwork, including editable line shapes and dashed details, from the maintained Figma source. No icons are added or removed.

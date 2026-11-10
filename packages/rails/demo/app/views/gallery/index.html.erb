@@ -1,4 +1,4 @@
-<h1>Solar Icons · <span id="style_name"><%= @style %></span> (<span id="count"><%= @icons.size %> / 1451</span>)</h1>
+<h1>Solar Icons · <span id="style_name"><%= @style %></span> (<span id="count"><%= @icons.size %> / <%= @icons.size %></span>)</h1>
 <nav>
     <% GalleryController::STYLES.each do |style| %>
         <button type="button" data-style="<%= style %>" aria-pressed="<%= style == @style %>"><%= style %></button>
@@ -59,7 +59,7 @@
                 cell.style.display = show ? '' : 'none'
                 if (show) visible++
             }
-            count.textContent = `${visible} / 1451`
+            count.textContent = `${visible} / ${cells.length}`
         }
         const q = document.getElementById('q')
         q.addEventListener('input', () => { applySearch(q.value); put('q', q.value.trim()) })

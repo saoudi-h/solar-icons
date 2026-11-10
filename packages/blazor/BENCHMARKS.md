@@ -73,7 +73,7 @@ pnpm --dir packages/blazor exec playwright install --with-deps chromium
 pnpm --dir packages/blazor test:browser
 ```
 
-Raw evidence is in `artifacts/build-results.json`, `artifacts/trim-comparison.json`, framework-specific rendering JSON files, and their logs. The trimming script saves a hash-addressed copy of the measured archive; `--validate-only` validates the saved comparison and `--resume` requires the current inputs to match. 
+Raw evidence is in `artifacts/build-results.json`, `artifacts/trim-comparison.json`, framework-specific rendering JSON files, and their logs. The trimming script saves a hash-addressed copy of the measured archive; `--validate-only` validates the saved comparison and `--resume` requires the current inputs to match.
 
 - Package version: `2.0.0`.
 - Measured archive SHA-256: `2556cd09a6ea01e2af11d7400c9c1d716df816f2a787390a2af67da40587adb4`.

@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
 import pc from 'picocolors'
 
-import { getOverview, listCategories } from './catalog.js'
+import { catalogStats, getOverview, listCategories } from './catalog.js'
 import { STYLES } from './catalog.js'
 import { runGet } from './commands/get.js'
 import { runInfo } from './commands/info.js'
@@ -29,7 +29,9 @@ if (cliVersion === '0.0.0') {
 
 const program = new Command()
     .name('solar-icons')
-    .description('Solar Icons CLI — search, get and list 1,451 icons × 6 styles.')
+    .description(
+        `Solar Icons CLI — search, get and list ${catalogStats().icons.toLocaleString('en-US')} icons × 6 styles.`
+    )
     .version(cliVersion, '-v, --version')
     .showHelpAfterError()
     .showSuggestionAfterError()

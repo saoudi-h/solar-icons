@@ -10,7 +10,7 @@ const oxfmtFormat = (filepath: string, code: string): string =>
     execFileSync(
         path.join(import.meta.dirname, '../node_modules/.bin/oxfmt'),
         ['--stdin-filepath', filepath],
-        { input: code, encoding: 'utf8' },
+        { input: code, encoding: 'utf8' }
     )
 const CORE_SVGS_PATH = path.join(REPOSITORY_ROOT, 'packages/core/svgs')
 
