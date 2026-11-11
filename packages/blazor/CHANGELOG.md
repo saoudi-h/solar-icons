@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.0
+
+- Add 38 community icon families from contributor Grand Magus and align waterdrop
+
 ## 2.2.0
 
 - Add 28 new icons across 12 categories (1,479 icons across six styles, 8,874 SVG variations).
