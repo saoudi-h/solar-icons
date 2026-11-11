@@ -115,6 +115,32 @@ jobs:
             - name: Validate Figma catalog synchronization
               run: pnpm --filter @solar-icons/figma-plugin check:catalog
 
+    # Every committed file derived from the catalogue (Blazor manifest, Ruby
+    # payload, Angular names, docs counts, Flutter widgets, Figma plugin...) is
+    # regenerated in one pass and compared with what was committed. It lists
+    # all the stale files at once, in about two minutes, instead of the
+    # lane workflows reporting them one after the other. Fix: `pnpm catalog:sync`.
+    drift:
+        name: Generated files
+        needs: scope
+        if: needs.scope.outputs.packages == 'true' || needs.scope.outputs.site == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ''
+                  filter: |
+                      .
+                      ./packages/*
+                      @solar-icons/docs-start...
+
+            - name: Check that the committed generated files are up to date
+              run: pnpm catalog:check
+
     site:
         name: Site
         needs: scope
