@@ -13,8 +13,10 @@
             "allowedVersions": "<3"
         },
         {
+            "description": "Majors open a pull request only after approval on the dependency dashboard: the grouped PR was red on every run and reran three workflows on each rebase.",
             "groupName": "all major dependencies",
             "groupSlug": "all-major",
+            "dependencyDashboardApproval": true,
             "matchUpdateTypes": ["major"],
             "matchPackageNames": ["*"]
         },
