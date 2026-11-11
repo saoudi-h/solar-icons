@@ -37,6 +37,8 @@ packageExtensions:
     "@analogjs/vite-plugin-angular":
         dependencies:
             typescript: 6.0.3
+patchedDependencies:
+  rolldown-plugin-dts@0.29.0: patches/rolldown-plugin-dts@0.29.0.patch
 permissions:
   '@tanstack/react-start':
     skills: true
