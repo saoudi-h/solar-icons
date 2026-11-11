@@ -58,7 +58,7 @@ status: 'active'
 
 ## v2 API shape
 
-- Directory structure is flat (no category dirs): all icon components live directly under `src/icons/<style>/`, dynamic icons under `src/icons/dynamic/` (1,479 per-icon files + `DynamicIcon` component).
+- Directory structure is flat (no category dirs): all icon components live directly under `src/icons/<style>/`, dynamic icons under `src/icons/dynamic/` (1,517 per-icon files + `DynamicIcon` component).
 - Named exports everywhere; `displayName` removed; `mirrored` prop removed; `duotoneColor`/`duotoneOpacity` renamed to `secondaryColor`/`secondaryOpacity` (SolarProvider + useSolar).
 
 ## Dynamic icon generator

@@ -81,7 +81,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'hands',
         label: 'Hands',
-        count: 5,
+        count: 7,
         representative: 'hand-heart',
     },
     {
@@ -93,7 +93,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'it',
         label: 'IT',
-        count: 68,
+        count: 70,
         representative: 'code',
     },
     {
@@ -195,25 +195,25 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'text-formatting',
         label: 'Text Formatting',
-        count: 37,
+        count: 38,
         representative: 'text-bold',
     },
     {
         slug: 'time',
         label: 'Time',
-        count: 27,
+        count: 28,
         representative: 'clock-circle',
     },
     {
         slug: 'tools',
         label: 'Tools',
-        count: 31,
+        count: 62,
         representative: 'palette',
     },
     {
         slug: 'ui',
         label: 'UI',
-        count: 166,
+        count: 167,
         representative: 'cursor',
     },
     {
