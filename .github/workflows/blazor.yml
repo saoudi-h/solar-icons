@@ -112,6 +112,7 @@ jobs:
               if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor measure:trimming
             - name: Install browser
+              timeout-minutes: 5
               if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor exec playwright install --with-deps chromium
             - name: Run trimmed consumers and playground in browsers

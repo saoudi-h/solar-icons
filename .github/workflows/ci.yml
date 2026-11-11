@@ -168,6 +168,7 @@ jobs:
               run: pnpm turbo lint --concurrency=1 --filter=@solar-icons/docs-start...
 
             - name: Install the browser of the site tests
+              timeout-minutes: 5
               run: pnpm --filter @solar-icons/docs-start exec playwright install --with-deps chromium
 
             - name: Tests
