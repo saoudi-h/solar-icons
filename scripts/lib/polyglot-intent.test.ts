@@ -56,7 +56,9 @@ describe('kindBetween', () => {
 
 describe('assertMajorsAligned', () => {
     it('accepts independent minor and patch numbers', () => {
-        assert.doesNotThrow(() => assertMajorsAligned('2.5.0', { blazor: '2.0.4', flutter: '2.9.1' }))
+        assert.doesNotThrow(() =>
+            assertMajorsAligned('2.5.0', { blazor: '2.0.4', flutter: '2.9.1' })
+        )
     })
     it('names the packages on another major', () => {
         assert.throws(
@@ -98,7 +100,8 @@ describe('planFromStatic', () => {
         assert.deepEqual(plan, {
             skip: false,
             kind: 'minor',
-            summary: 'Expand catalogue to 1,517 icon families (9,102 SVGs) and deliver harmonized artwork',
+            summary:
+                'Expand catalogue to 1,517 icon families (9,102 SVGs) and deliver harmonized artwork',
         })
     })
     it('does nothing when static did not change', () => {
@@ -111,11 +114,18 @@ describe('planFromStatic', () => {
             ['3.0.0-beta.1', '3.0.0-beta.2'],
             ['3.0.0-beta.2', '3.0.0'],
         ] as const) {
-            assert.equal(planFromStatic({ ...base, before, after }).skip, true, `${before} -> ${after}`)
+            assert.equal(
+                planFromStatic({ ...base, before, after }).skip,
+                true,
+                `${before} -> ${after}`
+            )
         }
     })
     it('fails on a major step, a major mismatch or a missing text', () => {
-        assert.throws(() => planFromStatic({ ...base, before: '2.5.0', after: '3.0.0' }), /major step/)
+        assert.throws(
+            () => planFromStatic({ ...base, before: '2.5.0', after: '3.0.0' }),
+            /major step/
+        )
         assert.throws(
             () =>
                 planFromStatic({
