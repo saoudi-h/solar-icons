@@ -170,6 +170,7 @@ overrides:
 packageExtensionsChecksum: sha256-74gbLt4swYH0B1FGUkdKjuBzaFxd9CCcXXYY78ecTCg=
 
 patchedDependencies:
+  publint@0.3.25: e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9
   rolldown-plugin-dts@0.29.0: 13c986023a4fdd92c9e9a840a841e29c2803bf43726f53dbe5aae01da2954440
 
 importers:
@@ -227,7 +228,7 @@ importers:
         version: 1.91.0
       publint:
         specifier: ^0.3.25
-        version: 0.3.25
+        version: 0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9)
       rimraf:
         specifier: ^6.1.3
         version: 6.1.4
@@ -788,7 +789,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
@@ -828,7 +829,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3))
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
@@ -986,7 +987,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -1099,7 +1100,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -1144,7 +1145,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -1183,7 +1184,7 @@ importers:
         version: 1.9.18
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -1213,7 +1214,7 @@ importers:
         version: 6.1.4
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2))
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
@@ -1280,7 +1281,7 @@ importers:
         version: 1.1.1
       tsdown:
         specifier: ^0.23.1
-        version: 0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3))
+        version: 0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3))
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -27449,7 +27450,7 @@ snapshots:
   prr@1.0.1:
     optional: true
 
-  publint@0.3.25:
+  publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9):
     dependencies:
       '@publint/pack': 0.1.7
       package-manager-detector: 1.9.0
@@ -28946,7 +28947,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3)):
+  tsdown@0.23.5(@volar/typescript@2.4.28(typescript@6.0.3))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@6.0.3)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@6.0.3)):
     dependencies:
       cac: 7.1.0
       defu: 6.1.7
@@ -28963,7 +28964,7 @@ snapshots:
       unconfig-core: 7.5.0
       verkit: 0.5.0
     optionalDependencies:
-      publint: 0.3.25
+      publint: 0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9)
       tsx: 4.23.15
       typescript: 6.0.3
       unplugin-unused: 0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0))
@@ -28975,7 +28976,7 @@ snapshots:
       - tsrs
       - vue-tsc
 
-  tsdown@0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25)(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2)):
+  tsdown@0.23.5(@volar/typescript@2.4.28(typescript@7.0.2))(@vue/language-core@3.3.14)(publint@0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9))(tsx@4.23.15)(typescript@7.0.2)(unplugin-unused@0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)))(vue-tsc@3.3.14(typescript@7.0.2)):
     dependencies:
       cac: 7.1.0
       defu: 6.1.7
@@ -28992,7 +28993,7 @@ snapshots:
       unconfig-core: 7.5.0
       verkit: 0.5.0
     optionalDependencies:
-      publint: 0.3.25
+      publint: 0.3.25(patch_hash=e6d00524cb087980f28be68bd94924c7d9199fb00958ddace85e35a367bf81a9)
       tsx: 4.23.15
       typescript: 7.0.2
       unplugin-unused: 0.6.0(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.64.12)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.9.1(supports-color@10.2.2))(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(webpack@5.112.0(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0))
