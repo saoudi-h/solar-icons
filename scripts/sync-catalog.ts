@@ -1,4 +1,4 @@
-import { execFileSync } from 'node:child_process'
+import { execFileSync, spawnSync } from 'node:child_process'
 import crypto from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -37,6 +37,8 @@ const changedBetween = (before: Map<string, string>, after: Map<string, string>)
         .filter(file => before.get(file) !== after.get(file))
         .sort()
 
+const hasDart = (): boolean => spawnSync('dart', ['--version'], { stdio: 'ignore' }).status === 0
+
 const main = () => {
     const check = process.argv.includes('--check')
     const before = check ? treeState() : new Map<string, string>()
@@ -73,10 +75,19 @@ const main = () => {
         'packages/blazor',
         'check:generated',
     ])
-    run('Regenerating Flutter icon widgets', 'node', ['packages/flutter/tool/generate_icons.mjs'])
-    run('Regenerating Flutter example gallery registry', 'node', [
-        'packages/flutter/tool/generate_gallery_registry.mjs',
-    ])
+    // The Flutter generators format their output with `dart format`. Without the
+    // Dart SDK (the Node-only CI job) they are skipped: flutter.yml regenerates
+    // and compares them with the SDK installed.
+    if (hasDart()) {
+        run('Regenerating Flutter icon widgets', 'node', [
+            'packages/flutter/tool/generate_icons.mjs',
+        ])
+        run('Regenerating Flutter example gallery registry', 'node', [
+            'packages/flutter/tool/generate_gallery_registry.mjs',
+        ])
+    } else {
+        console.log('\n==> Skipping the Flutter generators: the Dart SDK is not installed')
+    }
     run('Regenerating Rails SVG payload and constants', 'node', ['packages/rails/bin/fetch-icons'])
     run('Updating and verifying icon inventory counts across docs and packages', 'pnpm', [
         'exec',
