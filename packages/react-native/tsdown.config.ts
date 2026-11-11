@@ -75,7 +75,10 @@ const config: UserConfig = defineConfig({
 
     format: ['esm'],
 
-    publint: true,
+    // `pnpm check:exports` already runs publint (strict) on every package, and publint
+    // costs about a minute on ~10k generated modules (its tarball file system scales with
+    // the square of the file count): running it here too only doubles that cost.
+    publint: false,
 
     fixedExtension: true,
 
