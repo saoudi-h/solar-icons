@@ -1,5 +1,19 @@
 # @solar-icons/js
 
+## 2.5.0
+
+### Minor Changes
+
+- [#711](https://github.com/saoudi-h/solar-icons/pull/711) [`c81ade3`](https://github.com/saoudi-h/solar-icons/commit/c81ade37c39319174163d213091f68e298e0cb61) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Expand catalogue to 1,517 icon families (9,102 SVGs) and deliver harmonized artwork:
+  
+  - Add 38 community icon families across all 6 styles contributed by Grand Magus:
+    - Design & Vector Tools: `blend`, `brush-cross-pen`, `checkerboard`, `contrast`, `distort`, `exclude`, `flat-brush`, `gradient`, `intersect`, `intersect-minimalistic`, `noise-square`, `opacity`, `paint-bucket`, `selection`, `shadow`, `shape-rotate`, `subtract`, `subtract-minimalistic`, `union`, `warp`.
+    - Basic Shapes: `circle`, `ellipse`, `rectangle`.
+    - Canvas Controls & Transforms: `hand`, `hand-grab`, `rotate-anticlockwise`, `rotate-anticlockwise-2`, `rotate-clockwise`, `rotate-clockwise-2`, `translate`, `sparkles`.
+    - Layers & Structure: `layer-arrow-down`, `layer-arrow-up`, `layers-arrow-down`, `layers-arrow-up`.
+    - Calendar & Programming Tokens: `calendar-range`, `variable-brackets`, `variable-square`.
+  - Harmonize `waterdrop` geometry across all 6 styles to align with teardrop proportions and consistency with `opacity`.
+
 ## 2.4.0
 
 ### Minor Changes
