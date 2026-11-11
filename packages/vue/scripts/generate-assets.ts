@@ -199,7 +199,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
         .join('\n *\n')
 
     const content = `/* GENERATED FILE */
-import { h } from 'vue'
+import { h, type VNode } from 'vue'
 import DynamicIcon from '../../lib/dynamic-icon.vue'
 import type { DynamicIconProps } from '../../lib/types'
 ${styleImports}
@@ -207,7 +207,7 @@ ${styleImports}
 /**
 ${previews}
  */
-export const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }) => {
+export const ${pascalName}Icon = (props: DynamicIconProps, { attrs }: { attrs: Record<string, unknown> }): VNode => {
     return h(DynamicIcon, {
         ...attrs,
         ...props,
