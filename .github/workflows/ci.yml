@@ -104,6 +104,9 @@ jobs:
             - name: Tests
               run: pnpm turbo test --concurrency=1 --filter='./packages/*'
 
+            - name: Release script tests
+              run: pnpm test:scripts
+
             - name: Validate package exports
               run: pnpm check:exports
 

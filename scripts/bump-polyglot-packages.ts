@@ -2,9 +2,30 @@ import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { type BumpKind, planFromStatic } from './lib/polyglot-intent'
+
 const REPOSITORY_ROOT = path.resolve(import.meta.dirname, '..')
 
-type BumpKind = 'patch' | 'minor'
+const BLAZOR_CSPROJ = 'packages/blazor/src/SolarIcons.Blazor/SolarIcons.Blazor.csproj'
+const FLUTTER_PUBSPEC = 'packages/flutter/pubspec.yaml'
+const RAILS_VERSION = 'packages/rails/lib/solar_icons/version.rb'
+const STATIC_PACKAGE = 'packages/static/package.json'
+const STATIC_CHANGELOG = 'packages/static/CHANGELOG.md'
+
+const readRepoFile = (relativePath: string): string =>
+    fs.readFileSync(path.join(REPOSITORY_ROOT, relativePath), 'utf8')
+
+const readVersion = (relativePath: string, pattern: RegExp): string => {
+    const version = pattern.exec(readRepoFile(relativePath))?.[1]
+    if (!version) throw new Error(`Could not read the version from ${relativePath}`)
+    return version
+}
+
+const readPolyglotVersions = () => ({
+    'SolarIcons.Blazor': readVersion(BLAZOR_CSPROJ, /<Version>([^<]+)<\/Version>/),
+    flutter_solar_icons: readVersion(FLUTTER_PUBSPEC, /^version:\s*(\S+)/m),
+    solar_icons: readVersion(RAILS_VERSION, /VERSION = "([^"]+)"/),
+})
 
 const bumpSemver = (version: string, kind: BumpKind): string => {
     const parts = version.split('.').map(Number)
@@ -31,18 +52,7 @@ const prependChangelog = (
     }
 }
 
-const main = () => {
-    const [kindArg, ...messageParts] = process.argv.slice(2)
-    if (kindArg !== 'patch' && kindArg !== 'minor') {
-        console.error('Usage: pnpm polyglot:bump <patch|minor> "<changelog summary>"')
-        process.exit(1)
-    }
-    const summary = messageParts.join(' ').trim()
-    if (!summary) {
-        console.error('Error: A non-empty changelog summary is required.')
-        process.exit(1)
-    }
-
+const bumpPolyglotPackages = (kindArg: BumpKind, summary: string) => {
     // 1. Blazor
     const csprojPath = path.join(
         REPOSITORY_ROOT,
@@ -134,6 +144,55 @@ const main = () => {
     console.log(
         `  git push origin SolarIcons.Blazor-v${nextBlazor} flutter_solar_icons-v${nextFlutter} solar_icons-v${nextRails}`
     )
+}
+
+/**
+ * `--from-static`: runs after `changeset version`, so the working tree already
+ * holds the new `@solar-icons/static` version and changelog while HEAD still
+ * holds the previous ones. The declaration made for static is the only input.
+ */
+const bumpFromStatic = () => {
+    const before = JSON.parse(
+        execFileSync('git', ['show', `HEAD:${STATIC_PACKAGE}`], {
+            cwd: REPOSITORY_ROOT,
+            encoding: 'utf8',
+        })
+    ).version as string
+    const after = JSON.parse(readRepoFile(STATIC_PACKAGE)).version as string
+
+    const plan = planFromStatic({
+        before,
+        after,
+        changelog: readRepoFile(STATIC_CHANGELOG),
+        packages: readPolyglotVersions(),
+    })
+    if (plan.skip) {
+        console.log(`Polyglot packages left as they are: ${plan.reason}.`)
+        return
+    }
+    console.log(`@solar-icons/static ${before} -> ${after} declares a ${plan.kind} release.`)
+    bumpPolyglotPackages(plan.kind, plan.summary)
+}
+
+const main = () => {
+    const args = process.argv.slice(2)
+    if (args.length === 1 && args[0] === '--from-static') {
+        bumpFromStatic()
+        return
+    }
+    const [kindArg, ...messageParts] = args
+    if (kindArg !== 'patch' && kindArg !== 'minor') {
+        console.error(
+            'Usage: pnpm polyglot:bump <patch|minor> "<changelog summary>"\n       pnpm polyglot:bump --from-static'
+        )
+        process.exit(1)
+    }
+    const summary = messageParts.join(' ').trim()
+    if (!summary) {
+        console.error('Error: A non-empty changelog summary is required.')
+        process.exit(1)
+    }
+    bumpPolyglotPackages(kindArg, summary)
 }
 
 main()
