@@ -2,6 +2,7 @@
     "extends": ["config:recommended", ":label(renovate)", ":semanticCommitTypeAll(chore)"],
     "automerge": true,
     "automergeType": "pr",
+    "rebaseWhen": "conflicted",
     "timezone": "Europe/Paris",
     "schedule": ["before 2am"],
     "minimumReleaseAge": "7 days",
