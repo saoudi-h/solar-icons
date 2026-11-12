@@ -6,7 +6,7 @@ test('Blazor snippets follow the selected icon and style in the existing explore
 }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'])
     await page.goto('/icons?icon=home&style=linear')
-    await page.getByRole('button', { name: 'Blazor', exact: true }).click()
+    await page.getByRole('tab', { name: 'Blazor', exact: true }).click()
     await expect(
         page.locator('pre').filter({ hasText: '<HomeLinearIcon Size="24" />' })
     ).toBeVisible()
@@ -36,7 +36,7 @@ test('Blazor snippets follow the selected icon and style in the existing explore
 test('Blazor snippets remain accessible on a narrow screen', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/icons?icon=arrow-up&style=outline')
-    await page.getByRole('button', { name: 'Blazor', exact: true }).click()
+    await page.getByRole('tab', { name: 'Blazor', exact: true }).click()
     await expect(
         page.locator('pre').filter({ hasText: '<ArrowUpOutlineIcon Size="24" />' })
     ).toBeVisible()

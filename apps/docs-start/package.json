@@ -8,7 +8,7 @@
         "dev": "vite dev",
         "build": "pnpm ensure:icon-package && pnpm sync:umami && pnpm generate:icons && pnpm check:icons && pnpm generate:catalog && pnpm generate:og-assets && pnpm generate:changelog && pnpm generate:og-images && pnpm fetch:avatar && pnpm optimize:images && pnpm generate:static-config && pnpm generate:icon-catalog && pnpm generate:hero-icons && pnpm generate:site-stats && vite build",
         "preview": "vite preview",
-        "test": "vitest run && playwright test",
+        "test": "vitest run && playwright test && pnpm test:e2e:dev",
         "test:ui": "playwright test --ui",
         "sync:umami": "tsx ./scripts/sync-umami.ts",
         "typecheck": "tsc --noEmit",
@@ -40,7 +40,9 @@
         "generate:og-assets": "tsx ./scripts/generate-og-icon-field.ts",
         "generate:changelog": "tsx ./scripts/generate-changelog.ts",
         "generate:banner": "node ./scripts/generate-readme-banner.mjs",
-        "lint:links": "tsx ./scripts/check-links.ts"
+        "lint:links": "tsx ./scripts/check-links.ts",
+        "predev": "pnpm ensure:icon-package && pnpm generate:icon-catalog && pnpm generate:hero-icons && pnpm generate:site-stats",
+        "test:e2e:dev": "PLAYWRIGHT_DEV=1 playwright test tests/icons.spec.ts tests/blazor.spec.ts --workers=2"
     },
     "dependencies": {
         "@number-flow/react": "^0.6.2",

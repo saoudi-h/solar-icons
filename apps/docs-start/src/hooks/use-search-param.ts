@@ -1,5 +1,7 @@
 import { useNavigate, useRouterState } from '@tanstack/react-router'
-import { useCallback } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
+
+const subscribeToHydration = () => () => {}
 
 type Options<T extends string> = {
     /** The accepted values. Any other value in the URL reads as absent. */
@@ -30,7 +32,14 @@ export function useSearchParam(key: string, options: Options<string> = {}) {
         unknown
     >
     const navigate = useNavigate()
-    const raw = search[key]
+    // Static HTML is shared by every query string. Read URL-specific state
+    // after hydration so shared links cannot invalidate the server markup.
+    const hydrated = useSyncExternalStore(
+        subscribeToHydration,
+        () => true,
+        () => false
+    )
+    const raw = hydrated ? search[key] : undefined
     const value =
         typeof raw === 'string' && (!values || values.includes(raw)) ? raw : (defaultValue ?? null)
 

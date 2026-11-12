@@ -1,6 +1,7 @@
 'use client'
 
-import { CheckCircleIcon, CopyIcon } from '@solar-icons/react/dynamic'
+import { CheckCircleIcon } from '@solar-icons/react/dynamic/check-circle'
+import { CopyIcon } from '@solar-icons/react/dynamic/copy'
 import * as React from 'react'
 
 import type { ButtonProps } from '~/components/ui/button'

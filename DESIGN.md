@@ -151,6 +151,18 @@ in both themes. Direction, still provisional until rendered review:
 - Rule: defaults may follow the theme, but an explicit visitor choice is
   never overridden by a later theme change.
 
+## Provisional: icon explorer direction (2026-11-12)
+
+Implemented on `/icons`, pending the maintainer's review of the rendered result.
+
+- The grid is the product: icons take the space. The toolbar is a single row, the detail sits beside the grid on desktop, and nothing covers the catalogue.
+- Icon names are optional. Hidden by default (hover, focus and the detail carry the name); one toggle shows them.
+- Inner panels have no border. A filled surface and a very short shadow separate them from the canvas.
+- The preview shows what the user will get: it follows the chosen style, size, colours and stroke.
+- Selection is a property of the cell (tint and ring), not a recolouring of the icon.
+- Framework choices are logos with tooltips, wrapped on at most two rows, never a horizontally scrolling tab strip.
+- Text that varies in length (icon names) must not move neighbouring controls: it truncates inside a fixed slot.
+
 ## Not decided
 
 This document does not yet decide the final copy, exact section count, color tokens, typography changes, animation style, or whether any existing section should be removed. Those decisions require a rendered comparison and an explicit checkpoint.

@@ -1,12 +1,10 @@
 'use client'
-import { useSolar } from '@solar-icons/react'
+import { useSolar } from '@solar-icons/react/lib/SolarProvider'
 import { RestartIcon } from '@solar-icons/react/linear/restart'
-import { SettingsIcon } from '@solar-icons/react/linear/settings'
+import { Tuning2Icon } from '@solar-icons/react/linear/tuning-2'
 import { useAtom, useSetAtom } from 'jotai'
-import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-import { Button } from '~/components/ui/button'
 import {
     Drawer,
     DrawerContent,
@@ -14,50 +12,44 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from '~/components/ui/drawer'
+import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
+import { cn } from '~/lib/utils'
 
-import { ColorPicker } from './ColorPicker'
-import { ColorPickerSimple } from './ColorPickerSimple'
+import { ColorSwatch } from './ColorSwatch'
 import {
     activeCategoryAtom,
     DEFAULT_VALUES,
     filteredCountAtom,
     useOriginFilter,
     useSearchKeyword,
+    useShowcaseReady,
     useStyleURL,
     useThemeDefaultColors,
 } from './context'
 import { GeometryControl } from './GeometryControl'
-import { ExtendedFilterToggle } from './OriginControls'
 import { SearchInput } from './SearchInput'
 import { StylePicker } from './StylePicker'
+import { CONTROL_FOCUS, CONTROL_SURFACE, PANEL_SURFACE } from './surface'
 import { ViewModeToggle } from './ViewModeToggle'
 
-export const FilterBarContent: React.FC = () => {
-    const [filteredCount] = useAtom(filteredCountAtom)
-    const [keyword, setKeyword] = useSearchKeyword()
-    const [, setOrigin] = useOriginFilter()
-    const [weight, setWeight] = useStyleURL()
-    const setActiveCategory = useSetAtom(activeCategoryAtom)
+const ICON_BUTTON = cn(
+    `
+      flex size-10 shrink-0 items-center justify-center rounded-lg text-muted-foreground
+      transition-colors
+      hover:text-foreground
+    `,
+    CONTROL_SURFACE,
+    CONTROL_FOCUS
+)
+
+/** Size, stroke, colours and duotone opacity of every icon on the page. */
+const AppearanceControls: React.FC<{ className?: string; stretch?: boolean }> = ({
+    className,
+    stretch = false,
+}) => {
+    const [weight] = useStyleURL()
     const themeDefaults = useThemeDefaultColors()
-
-    const [inputValue, setInputValue] = useState(keyword)
-    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-    const handleSearchChange = (value: string) => {
-        setInputValue(value)
-        if (debounceRef.current) clearTimeout(debounceRef.current)
-        debounceRef.current = setTimeout(() => {
-            setKeyword(value)
-        }, 300)
-    }
-
-    useEffect(() => {
-        return () => {
-            if (debounceRef.current) clearTimeout(debounceRef.current)
-        }
-    }, [])
-
     const {
         color: solarColor,
         size: solarSize,
@@ -78,6 +70,99 @@ export const FilterBarContent: React.FC = () => {
 
     const isDuotone = weight.includes('Duotone')
     const hasStroke = weight === 'Linear' || weight === 'Broken' || weight === 'LineDuotone'
+    // In a narrow column the sliders share the rows instead of keeping a fixed width.
+    const slider = stretch ? 'min-w-0 flex-1 basis-[calc(50%-0.375rem)]' : undefined
+
+    return (
+        <div className={cn('flex items-center gap-1.5', stretch && 'flex-wrap', className)}>
+            <GeometryControl
+                label="Size"
+                tooltip="Icon size, also the density of the grid"
+                value={size}
+                onChange={setSize}
+                min={16}
+                max={64}
+                step={1}
+                defaultValue={DEFAULT_VALUES.size}
+                className={slider}
+            />
+            <GeometryControl
+                label="Stroke"
+                tooltip="Stroke width (line styles)"
+                value={strokeWidth}
+                onChange={setStrokeWidth}
+                min={0.5}
+                max={3}
+                step={0.1}
+                defaultValue={DEFAULT_VALUES.strokeWidth}
+                decimals={1}
+                unit=""
+                disabled={!hasStroke}
+                className={slider}
+            />
+            <ColorSwatch label="Primary color" color={color} setColor={setColor} />
+            <ColorSwatch
+                label="Duotone color"
+                color={duotoneColor}
+                setColor={setSecondaryColor}
+                disabled={!isDuotone}
+            />
+            <GeometryControl
+                label="Opacity"
+                tooltip="Opacity of the duotone shape"
+                value={duotoneOpacity}
+                onChange={setSecondaryOpacity}
+                min={0}
+                max={1}
+                step={0.05}
+                defaultValue={DEFAULT_VALUES.secondaryOpacity}
+                decimals={2}
+                unit=""
+                disabled={!isDuotone}
+                className={slider}
+            />
+        </div>
+    )
+}
+
+/**
+ * One row, in the order of the task: find an icon, pick its style, tune its
+ * appearance, choose how the grid is laid out.
+ *
+ * The same row serves every width. Controls that do not fit move behind one
+ * button: a popover from `md`, the drawer below, where the categories join
+ * them. Search never leaves the bar.
+ */
+export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
+    const ready = useShowcaseReady()
+    const [filteredCount] = useAtom(filteredCountAtom)
+    const [keyword, setKeyword] = useSearchKeyword()
+    const [, setOrigin] = useOriginFilter()
+    const [weight, setWeight] = useStyleURL()
+    const setActiveCategory = useSetAtom(activeCategoryAtom)
+    const themeDefaults = useThemeDefaultColors()
+    const { setColor, setSize, setSecondaryColor, setSecondaryOpacity, setStrokeWidth } = useSolar()
+
+    const [inputValue, setInputValue] = useState(keyword)
+    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    useEffect(() => {
+        setInputValue(keyword)
+    }, [keyword])
+
+    const handleSearchChange = (value: string) => {
+        setInputValue(value)
+        if (debounceRef.current) clearTimeout(debounceRef.current)
+        debounceRef.current = setTimeout(() => {
+            setKeyword(value)
+        }, 100)
+    }
+
+    useEffect(() => {
+        return () => {
+            if (debounceRef.current) clearTimeout(debounceRef.current)
+        }
+    }, [])
 
     const reset = () => {
         // Reset to the current theme's curated defaults (known values, so
@@ -94,149 +179,115 @@ export const FilterBarContent: React.FC = () => {
         if (debounceRef.current) clearTimeout(debounceRef.current)
     }
 
+    const resetButton = (
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <button
+                    type="button"
+                    onClick={reset}
+                    aria-label="Reset filters"
+                    data-vaul-no-drag
+                    className={ICON_BUTTON}>
+                    <RestartIcon className="size-4 scale-x-[-1]" isolated />
+                </button>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p>Reset search and appearance</p>
+            </TooltipContent>
+        </Tooltip>
+    )
+
     return (
-        <div className="flex flex-1 flex-wrap content-start items-center justify-start gap-2">
-            {/* Section A — Style */}
-            <StylePicker value={weight} onChange={setWeight} />
-
-            {/* Section B — Geometry */}
-            <GeometryControl
-                label="Size"
-                tooltip="Icon size"
-                value={size}
-                onChange={setSize}
-                min={16}
-                max={64}
-                step={1}
-                defaultValue={DEFAULT_VALUES.size}
-            />
-            <GeometryControl
-                label="Stroke"
-                tooltip="Stroke width"
-                value={strokeWidth}
-                onChange={setStrokeWidth}
-                min={0.5}
-                max={3}
-                step={0.1}
-                defaultValue={DEFAULT_VALUES.strokeWidth}
-                decimals={1}
-                disabled={!hasStroke}
-            />
-
-            {/* Section C — Color */}
-            <ColorPicker color={color} setColor={setColor} tooltip="Primary color" />
-            <ColorPickerSimple
-                color={duotoneColor}
-                setColor={setSecondaryColor}
-                tooltip="Duotone color"
-                disabled={!isDuotone}
-            />
-            <GeometryControl
-                label="Opacity"
-                tooltip="Duotone opacity"
-                value={duotoneOpacity}
-                onChange={setSecondaryOpacity}
-                min={0}
-                max={1}
-                step={0.05}
-                defaultValue={DEFAULT_VALUES.secondaryOpacity}
-                decimals={2}
-                unit=""
-                disabled={!isDuotone}
-            />
-
-            {/* Section D — View */}
-            <ViewModeToggle />
-            <ExtendedFilterToggle />
-
-            {/* Section E — Search (pushed to the right) */}
+        <div
+            className={cn(
+                'z-20 flex w-full items-center gap-1.5 rounded-2xl p-1.5',
+                PANEL_SURFACE
+            )}>
             <SearchInput
+                disabled={!ready}
                 value={inputValue}
                 onChange={handleSearchChange}
                 count={filteredCount}
-                className="ml-auto"
+                className="flex-1"
             />
-            {/* Section F — Reset */}
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <Button
-                        onClick={reset}
-                        size="icon"
-                        colors="accent"
-                        className="size-10 rounded-lg border-none! bg-default-200 text-foreground"
-                        aria-label="Reset filters">
-                        <RestartIcon className="size-4 scale-x-[-1]" isolated />
-                    </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                    <p>Reset filters</p>
-                </TooltipContent>
-            </Tooltip>
-        </div>
-    )
-}
 
-/**
- * Both variants are in the DOM; CSS picks the visible one
- * (`hidden md:flex` for the desktop bar, `md:hidden` for the
- * mobile drawer + trigger). No JS to read the viewport, no flash
- * on the first render, no hydration mismatch — the server and
- * the first client render produce the same markup.
- */
-export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawerExtras }) => {
-    return (
-        <>
-            <div
-                className="
-                  z-20 hidden w-full flex-wrap items-center gap-2 rounded-xl border border-border
-                  bg-default-50 p-2 shadow-xs
-                  md:flex
-                  dark:bg-default-100
-                ">
-                <FilterBarContent />
-            </div>
+            <StylePicker value={weight} onChange={setWeight} className="max-md:hidden" />
 
-            <div className="md:hidden">
-                <Drawer direction="right" modal={true}>
-                    <DrawerTrigger asChild>
-                        <motion.button
-                            initial={{ x: 0 }}
-                            whileTap={{ scale: 0.9 }}
-                            whileHover={{ x: -10 }}
-                            className="
-                              fixed top-80 right-[-20px] z-50 h-12 w-20 rounded-none rounded-l-full
-                              border border-border bg-default-200 p-2 text-foreground/70 shadow-md
-                              transition-colors
-                              hover:text-foreground
-                            ">
-                            <SettingsIcon className="size-8" isolated />
-                            <span className="sr-only">Open settings</span>
-                        </motion.button>
-                    </DrawerTrigger>
-                    {/* Mobile filter panel floats below the site header pill
-                        (top-20 = 72px reserved header + 8px gap) with overlay/content
-                        above the header (z-60) so the two never overlap. */}
-                    <DrawerContent
-                        overlayClassName="z-70!"
-                        className="
-                          fixed! top-20! right-2! bottom-2! z-80! flex! w-72! overflow-y-auto
-                          rounded-xl border border-border bg-default-50/90 p-2 shadow-xs
-                          backdrop-blur-sm outline-none!
-                          dark:bg-default-100/80
-                        "
-                        style={
-                            { '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties
-                        }>
-                        <DrawerHeader>
-                            <DrawerTitle>Icon Filters</DrawerTitle>
-                        </DrawerHeader>
-                        <div className="flex flex-col gap-2">
-                            <FilterBarContent />
-                            {drawerExtras}
+            <AppearanceControls className="max-xl:hidden" />
+
+            {/* md to xl: the appearance controls behind one button. */}
+            <Popover>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <PopoverTrigger asChild>
+                            <button
+                                type="button"
+                                aria-label="Appearance"
+                                className={cn(ICON_BUTTON, 'max-md:hidden xl:hidden')}>
+                                <Tuning2Icon className="size-4" isolated />
+                            </button>
+                        </PopoverTrigger>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Size, stroke and colors</p>
+                    </TooltipContent>
+                </Tooltip>
+                <PopoverContent
+                    align="end"
+                    sideOffset={10}
+                    onOpenAutoFocus={event => event.preventDefault()}
+                    className="
+                      w-auto rounded-xl border-none bg-popover p-2 shadow-lg ring-1
+                      ring-foreground/10
+                    ">
+                    <AppearanceControls />
+                </PopoverContent>
+            </Popover>
+
+            <ViewModeToggle className="max-md:hidden" />
+            <div className="max-md:hidden">{resetButton}</div>
+
+            {/* Below md: every control and the categories in one drawer. */}
+            <Drawer direction="right" modal={true}>
+                <DrawerTrigger asChild>
+                    <button
+                        type="button"
+                        aria-label="Filters and appearance"
+                        className={cn(ICON_BUTTON, 'md:hidden')}>
+                        <Tuning2Icon className="size-4" isolated />
+                    </button>
+                </DrawerTrigger>
+                {/* The panel floats below the site header pill (top-20 = 72px
+                    reserved header + 8px gap), with overlay and content above
+                    the header (z-60) so the two never overlap. */}
+                <DrawerContent
+                    overlayClassName="z-70!"
+                    className={cn(
+                        `
+                          fixed! top-20! right-2! bottom-2! z-80! flex! w-76! overflow-y-auto
+                          rounded-2xl border-none! p-3 outline-none!
+                        `,
+                        PANEL_SURFACE
+                    )}
+                    style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}>
+                    <DrawerHeader className="px-1 pt-1 pb-3">
+                        <DrawerTitle>Filters and appearance</DrawerTitle>
+                    </DrawerHeader>
+                    <div className="flex flex-col gap-2">
+                        <StylePicker
+                            value={weight}
+                            onChange={setWeight}
+                            className="justify-between"
+                        />
+                        <AppearanceControls stretch />
+                        <div className="flex items-center gap-1.5">
+                            <ViewModeToggle />
+                            {resetButton}
                         </div>
-                    </DrawerContent>
-                </Drawer>
-            </div>
-        </>
+                        {drawerExtras}
+                    </div>
+                </DrawerContent>
+            </Drawer>
+        </div>
     )
 }

@@ -4,6 +4,8 @@ import { useCallback, useRef, useState } from 'react'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { cn } from '~/lib/utils'
 
+import { CONTROL_FOCUS, CONTROL_SURFACE } from './surface'
+
 interface GeometryControlProps {
     label: string
     tooltip: string
@@ -128,33 +130,26 @@ export const GeometryControl: React.FC<GeometryControlProps> = ({
                     onDoubleClick={handleDoubleClick}
                     className={cn(
                         `
-                          relative flex h-10 w-36 items-center justify-center gap-1.5
-                          overflow-hidden rounded-lg bg-default-200 select-none
+                          relative flex h-10 w-28 shrink-0 items-center justify-between gap-1.5
+                          overflow-hidden rounded-lg px-2.5 select-none
                         `,
-                        !disabled &&
-                            `
-                              cursor-ew-resize
-                              hover:bg-default-300
-                              focus-visible:ring-1 focus-visible:ring-ring
-                              focus-visible:outline-hidden
-                            `,
+                        CONTROL_SURFACE,
+                        !disabled && ['cursor-ew-resize', CONTROL_FOCUS],
                         disabled && 'pointer-events-none opacity-30',
                         className
                     )}>
                     <div
                         aria-hidden="true"
                         className={cn(
-                            `pointer-events-none absolute inset-y-0 left-0 bg-foreground/10`,
+                            `pointer-events-none absolute bottom-0 left-0 h-0.5 bg-foreground/40`,
                             !isDragging && 'transition-[width] duration-150'
                         )}
                         style={{ width: `${fillPercent}%` }}
                     />
-                    <div className="relative text-xs font-medium text-muted-foreground">
-                        {label}
-                    </div>
+                    <div className="relative text-xs text-muted-foreground">{label}</div>
                     <div
                         className={cn(
-                            `relative font-mono text-sm tabular-nums`,
+                            `relative font-mono text-xs tabular-nums`,
                             isModified ? 'text-foreground' : `text-foreground/80`
                         )}>
                         {displayValue}

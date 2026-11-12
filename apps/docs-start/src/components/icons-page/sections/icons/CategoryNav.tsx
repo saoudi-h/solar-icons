@@ -5,7 +5,13 @@ import { useMemo } from 'react'
 
 import { cn } from '~/lib/utils'
 
-import { activeCategoryAtom, filteredIconsAtom, useViewModeURL } from './context'
+import {
+    activeCategoryAtom,
+    categoryNavigationAtom,
+    filteredIconsAtom,
+    useViewModeURL,
+} from './context'
+import { ExtendedFilterToggle } from './OriginControls'
 
 interface CategoryNavProps {
     className?: string
@@ -25,15 +31,20 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({ className }) => {
         return map
     }, [filteredIcons])
 
+    const [, requestCategoryNavigation] = useAtom(categoryNavigationAtom)
+
     const handleClick = (category: string) => {
         if (viewMode !== 'grouped') setViewMode('grouped')
         setActiveCategory(category)
+        requestCategoryNavigation(count => count + 1)
     }
 
     const categories = CATEGORIES as string[]
 
     return (
-        <nav className={cn('flex flex-col gap-0.5 text-sm', className)} aria-label="Categories">
+        <nav className={cn('flex flex-col gap-px text-sm', className)} aria-label="Categories">
+            <ExtendedFilterToggle />
+            <span aria-hidden="true" className="mx-2.5 my-1.5 h-px bg-foreground/10" />
             {categories.map(category => {
                 const count = counts.get(category) ?? 0
                 if (count === 0) return null
@@ -45,17 +56,17 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({ className }) => {
                         onClick={() => handleClick(category)}
                         className={cn(
                             `
-                              flex items-center justify-between gap-2 rounded-md px-2.5 py-1.5
-                              text-left transition-colors
-                            `,
-                            `
-                              hover:bg-default-100
-                              focus-visible:ring-1 focus-visible:ring-ring
+                              flex h-8 shrink-0 items-center justify-between gap-2 rounded-md
+                              px-2.5 text-left transition-colors
+                              focus-visible:ring-2 focus-visible:ring-primary/70
                               focus-visible:outline-hidden
                             `,
                             isActive
-                                ? 'bg-default-200 font-medium text-foreground'
-                                : 'text-muted-foreground'
+                                ? 'bg-foreground/[0.08] font-medium text-foreground'
+                                : `
+                                  text-muted-foreground
+                                  hover:bg-foreground/[0.06] hover:text-foreground
+                                `
                         )}>
                         <span className="truncate capitalize">{category.replace(/-/g, ' ')}</span>
                         <span
