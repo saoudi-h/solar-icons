@@ -5,8 +5,23 @@ import * as React from 'react'
 
 import { cn } from '~/lib/utils'
 
-function TooltipProvider({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
-    return <TooltipPrimitive.Provider data-slot="tooltip-provider" {...props} />
+/** Wait before the first tooltip opens, and the window in which the next opens at once. */
+const TOOLTIP_DELAY_MS = 700
+const TOOLTIP_SKIP_DELAY_MS = 300
+
+function TooltipProvider({
+    delayDuration = TOOLTIP_DELAY_MS,
+    skipDelayDuration = TOOLTIP_SKIP_DELAY_MS,
+    ...props
+}: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
+    return (
+        <TooltipPrimitive.Provider
+            data-slot="tooltip-provider"
+            delayDuration={delayDuration}
+            skipDelayDuration={skipDelayDuration}
+            {...props}
+        />
+    )
 }
 
 function Tooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
@@ -45,4 +60,11 @@ const TooltipContent = React.forwardRef<
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger }
+export {
+    Tooltip,
+    TOOLTIP_DELAY_MS,
+    TOOLTIP_SKIP_DELAY_MS,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+}
