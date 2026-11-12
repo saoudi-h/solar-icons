@@ -8,45 +8,19 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/nuxt` (v2 stable). Nuxt 3/4 module that wires `@solar-icons/vue` into a Nuxt app: auto-imports icon components (main barrel + dynamic barrel), `SolarProvider`, and `useSolar`. Built on `@nuxt/kit` and `@nuxt/module-builder`.
+`@solar-icons/nuxt` (v2 stable). Nuxt 3/4 module wiring `@solar-icons/vue` auto-imports (9,102 main + 1,517 dynamic = ~10,619 components with `Solar` prefix), `SolarProvider`, and `useSolar` via `@nuxt/kit` and `@nuxt/module-builder`. See [src/runtime/AGENT.md](src/runtime/AGENT.md) for runtime plugin/provider behavior.
 
-## ⚙️ Conventions
+## ⚙️ Conventions & Stack
 
-- Standard Nuxt module shape: `src/module.ts` is the entrypoint. No `src/runtime/` directory — the module registers components and composables from `@solar-icons/vue` directly via `@nuxt/kit`'s `addComponent` and `addImports`.
+- Entrypoint: `src/module.ts` (`@nuxt/kit` 4.x, `@nuxt/schema` 4.x, `@nuxt/module-builder` 1.x; supports Nuxt 3.12+ via compat; `playground/` targets Nuxt 4 + Tailwind v4, excluded from tarball).
 - Build = `nuxt-module-build prepare && nuxt-module-build build && pnpm copy:licenses`.
-- Dev workflow uses a local `playground/` Nuxt app: `pnpm dev:prepare` (build the module in stub mode + run `nuxi prepare`) then `nuxi dev playground`.
-- Test = `vitest run` (module-level); `test:types` runs `vue-tsc` against both the module and the playground.
-- **Publishes through the root changesets flow** (`release.yml`, same as the other packages). A legacy `changelogen`-based `pnpm release` script still exists in `package.json` but is not part of the root flow.
-- **Module export must be explicitly annotated** (`const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<...>(...)` with `import type { NuxtModule } from '@nuxt/schema'`). Without it, `nuxt-module-build build` fails with TS2883: the inferred type of the default export references `NuxtModule` (from `@nuxt/schema`), which `@nuxt/kit` imports but does not re-export, so the emitted `dist/types.d.mts` cannot name it portably.
-
-## 📁 Key Directories
-
-| Path            | Description                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------------------- |
-| `src/module.ts` | Module entrypoint. Registers icons (main + dynamic barrels), SolarProvider, and useSolar via @nuxt/kit.    |
-| `playground/`   | Dev Nuxt app that consumes the module locally. Uses Tailwind v4 for styling. Not in the published tarball. |
-
-## 🏗 Stack
-
-- `@nuxt/kit` 4.x, `@nuxt/schema` 4.x.
-- `@nuxt/module-builder` 1.x.
-- `vue-tsc` 3.x for typecheck.
-- `changelogen` for this package's release notes (root repo uses changesets).
+- Dev = `pnpm dev:prepare` (stub build + `nuxi prepare`, mandatory before `nuxi dev playground`).
+- Test = `vitest run`; `test:types` runs `vue-tsc` on module + playground.
+- Publishes via root Changesets (`release.yml`); legacy `changelogen` `pnpm release` script is unused.
 
 ## ⚠️ Known Constraints
 
-- **Two barrels registered for auto-import:** Main barrel (`@solar-icons/vue`) provides disambiguated names (`SolarArrowUpBoldIcon`, `SolarArrowUpLinearIcon`, …). Dynamic barrel (`@solar-icons/vue/dynamic`) provides runtime-switchable icons (`SolarArrowUpIcon`, `SolarHomeIcon`, …). No collisions after the v2 icon renames (bone-broken→bone-fracture, heart-broken→heart-crack, link-broken→unlink, link-broken-minimalistic→unlink-minimalistic, text→text-format).
-- **`SolarNuxtModuleOptions`**: `namePrefix`, `autoImport`, `provider`, `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity`. The five styling options only apply when `provider: true`; with `provider: false` the module warns and ignores them.
-- **`provider: true` (default)**: registers a runtime plugin (`src/runtime/plugin.ts`) that creates the solar state from `runtimeConfig.public.solarIcons` and `provide`s it on the Nuxt Vue app (global context, SSR-safe), writing `--solar-*` on `document.body` client-side via a `watch`. `useSolar()` works anywhere. Also registers `SolarProvider` as a wrapper component (`src/runtime/SolarProviderWrapper.vue`) that re-renders the Vue provider with the runtime defaults.
-- **`provider: false`**: registers the plain `SolarProvider` from `@solar-icons/vue/lib` (scoped `provide`/`inject`, no global context). `useSolar()` needs a manual provider: wrap `app.vue` or call `createSolarIcons` from a Nuxt plugin.
-- **Default merge**: `plugin.ts` and `SolarProviderWrapper.vue` spread runtime config over the module defaults (`currentColor`/`24`/`1.5`/`currentColor`/`0.5`) instead of `||`, so a partial config keeps the defaults for unset options. Same body-var write semantics as the Vue plugin's `applySolarCssVariables` (`packages/vue/src/lib/useSolar.ts`); the Nuxt runtime does not call that helper, it inlines the same logic.
-- **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`, not `peerDependencies`.** This is unusual for a Nuxt module.
-- **`pnpm dev:prepare` must run before `nuxi dev playground`** — the module needs to be built in stub mode for Nuxt's auto-import scanner.
-- **Nuxt 4 schema is in use** (`@nuxt/kit` 4, `@nuxt/schema` 4). Supports Nuxt 3.12+ via compatibility modes; the dev playground targets Nuxt 4.
-- **~10,619 auto-imports registered** (9,102 main + 1,517 dynamic). Tree-shaking ensures only used icons are bundled.
-
-## Module API
-
-- `weight` is a per-icon prop, not a module option. `SolarNuxtModuleOptions` = `namePrefix`, `autoImport`, `provider`, `color`, `size`, `strokeWidth`, `secondaryColor`, `secondaryOpacity`.
-- Both barrels are registered via `addComponent` with the `Solar` prefix: `getMainBarrelIconNames()` (main barrel) and `getDynamicBarrelIconNames()` (dynamic barrel).
-- 5 icon renames resolve naming collisions between the barrels.
+- **Explicit `NuxtModule` annotation required** on `src/module.ts` default export (`const module: NuxtModule<SolarNuxtModuleOptions> = defineNuxtModule<...>(...)` importing `type { NuxtModule } from '@nuxt/schema'`). Without it, `nuxt-module-build build` fails with TS2883 because `@nuxt/kit` does not re-export `NuxtModule`.
+- **`@nuxt/kit` and `@solar-icons/vue` are `dependencies`**, not `peerDependencies` (unusual for a Nuxt module; keep intentional).
+- **Module options (`SolarNuxtModuleOptions`):** `namePrefix`, `autoImport` (`true`), `provider` (`true` boolean, not string), `color` (`'currentColor'`), `size` (`24`), `strokeWidth` (`1.5`), `secondaryColor`, `secondaryOpacity`. `weight` is a per-icon prop, not a module option.
+- **Two auto-import barrels:** Main barrel (`@solar-icons/vue`, e.g. `SolarArrowUpBoldIcon`) and dynamic barrel (`@solar-icons/vue/dynamic`, e.g. `SolarArrowUpIcon`) have no collisions after the 5 v2 renames (`bone-broken→bone-fracture`, `heart-broken→heart-crack`, `link-broken→unlink`, `link-broken-minimalistic→unlink-minimalistic`, `text→text-format`). Tree-shaking bundles only used icons.

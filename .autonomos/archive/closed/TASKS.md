@@ -166,7 +166,7 @@
 ## From TASKS.md › ✅ Completed › V2 — Next (CSS vars, classes, provider) (moved 2026-11-12)
 
 - [x] **[V2-16a]** Solar CSS-vars + classes on react (formerly react-perf). `Priority: 🔵` `Complexity: L`
-- [x] **[V2-16b]** Same pattern for solid, svelte, angular. `Priority: 🔵` `Complexity: M`
+- [x] **[V2-16b]** Same pattern for solid, svelte, angular. `Priority: 🔵` `Complexity: M` *See: archive/worklogs-format-1/2026-06-21-V2-23-session*
 
 ## From TASKS.md › ✅ Completed › V2 — Beta tasks (moved 2026-11-12)
 
@@ -202,3 +202,11 @@
 - [x] **[CLEAN-03]** Kill dead deps (Vue `@babel/core`, `vite-plugin-static-copy`; Svelte `tsdown`, `rollup-plugin-svelte`, etc.). ✅ Commit `2790e08a` *See: worklogs/2026-06-25-V2-cleanup*
 - [x] **[CLEAN-04]** Align package versions to 3.0.0 (Svelte, RN, Angular, Solid, Nuxt). ✅ Commit `396f2deb` *See: worklogs/2026-06-25-V2-cleanup*
 - [x] **[CLEAN-09]** Fix Solid nested `<svg>` bug (iconBody string prop + `<g innerHTML>`) + RN DynamicIcon re-export fix. ✅ Commit `5b4b7607` *See: worklogs/2026-06-25-V2-cleanup*
+
+## Closed 2026-11-12
+
+- [x] **[SOLID-V1-RUNTIME]** Fix issue #634: `@solar-icons/solid@2.3.3` imported the Solid 2 runtime (`@solidjs/web`) after the `unplugin-solid` 2 → 3 bump, breaking Solid 1 consumers. Reverted the plugin to `^2.0.0` (patch changeset), blocked `unplugin-solid` at `<3` in Renovate until Solid 2 is stable, and added `pnpm check:dist-imports` (es-module-lexer over every built `dist`, wired in CI and both release workflows) so a bundle can no longer import an undeclared module. Maintainer decision: stay on Solid 1 and move to Solid 2 once stable, no second package. Branch: `fix/solid-unplugin-v2`. `Priority: 🔴` `Complexity: S` `Completed: 2026-11-12` *Issue: #634. See worklogs/2026-11-12-SOLID-V1-RUNTIME.md*
+- [x] **[DOCS-START-REMOVE-COMPAT]** Move the components that `apps/docs-start` shares from `apps/docs` into `apps/docs-start`, rewrite them with the TanStack Router and Start APIs, and delete `src/compat` with its aliases. Behavior, URLs and the e2e tests stay unchanged. `Priority: 🟠` `Complexity: L` `Completed: 2026-11-12` *See: ISSUE-DOCS-COMPAT-LAYER*
+- [x] **[FLUTTER-EVAL]** Evaluate Flutter PR #571, add framework-package policy in `CONTRIBUTING.md`, and ship `flutter_solar_icons`. `Priority: 🟠` `Complexity: L` `Completed: 2026-11-12` *See worklogs/2026-11-12-FLUTTER-EVAL.md*
+- [x] **[MCP-PKG]** Create `@solar-icons/mcp` (bin `solar-icons-mcp`) with 7 `solar_*` tools over `@solar-icons/static` and `@solar-icons/cli` on stdio. `Priority: 🟠` `Complexity: M` `Completed: 2026-11-12` *See worklogs/2026-11-12-MCP-PKG.md*
+- [x] **[PROTO-UPGRADE]** Upgrade Autonomos protocol to 0.8.5-alpha (format 2) and reconcile context-budget findings. `Priority: 🟠` `Complexity: M` `Completed: 2026-11-12` *See worklogs/2026-11-12-PROTO-UPGRADE.md*

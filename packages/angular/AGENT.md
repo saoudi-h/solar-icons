@@ -8,90 +8,31 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/angular` (v2 stable). Angular 17+ distribution of Solar Icons. Ships standalone, Signals-based unit-per-style components. See [Design rationale](#-design-rationale--why-attribute-selector-on-svg) below for why the Angular API is structurally different from the other packages.
+`@solar-icons/angular` (v2 stable). Angular 17+ distribution shipping standalone, Signals-based unit-per-style components using attribute selectors (`svg[solarName]`). See [ADR-001](../../.autonomos/decisions/ADR-001-angular-svg-attribute-selector.md) for why Angular intentionally diverges from the component-renders-`<svg>` pattern, and [src/lib/AGENT.md](src/lib/AGENT.md) for runtime primitives and test details.
 
 ## ⚙️ Conventions
 
-- Angular 17–22 (peer: `@angular/common`, `@angular/core` at `"17.x - 22.x"`).
-- Standalone components (no NgModules). `input()` signals for props, `computed()` for derived state.
-- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json`. Two `ngc` passes: `.lib.json` for types, `.js.json` for JS emit.
-- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` (path passed explicitly as `svgsDir` option) and emits the per-icon folder tree. `scripts/parser-hook.ts` is the codegen template.
+- Angular 17–22 (peer: `@angular/common`, `@angular/core` at `"17.x - 22.x"`). Standalone components only (no NgModules); `input()` and `computed()` signals.
+- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json` (two `ngc` passes: types then JS emit).
+- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` (`svgsDir` option) and emits flat files under `src/icons/`. `scripts/parser-hook.ts` is the codegen template (`@xmldom/xmldom` devDep re-parses SVG bodies into `h()` trees).
 - All shared codegen helpers (`applyDuotoneStyle`, `WEIGHT_MAP`, `Weight`, `StyleKey`, `StyleComponentsMap`, `toPascalCase`, `IconWeight`, `ParsedIcon`, `IconContext`) come from `@solar-icons/core` (Path A). No local re-declarations.
 
 ## 📁 Output Shape
 
-```
-src/
-  public-api.ts              # package entrypoint (generated)
-  lib/                       # hand-written helpers (icon-base, solar-provider, icon-registry, dynamic-icon.component, ...)
-  icons/
-    <style>/
-      <name>-<style>.ts     # one component per icon per style
-    dynamic/
-      <name>-dynamic.ts     # one component per logical icon (weight input)
-    styled.ts                # global barrel
-  lib/all-icons.types.ts     # generated SolarIconName string union
-```
-
-The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts` filename pattern (e.g. `home-bold.ts`) is unique to Angular — the other packages use `<name>.ts` inside `<style>/` directories. This avoids a folder-per-icon and lets Angular's component metadata reference a single file.
+- `src/public-api.ts` — generated package entrypoint.
+- `src/lib/` — hand-written helpers (`icon-base`, `solar-provider`, `icon-registry`, `dynamic-icon.component`) and generated `all-icons.types.ts` (`SolarIconName` union).
+- `src/icons/<style>/<name>-<style>.ts` — one component per icon per style (unique to Angular; avoids folder-per-icon).
+- `src/icons/dynamic/<name>-dynamic.ts` — multi-style component switching via `weight` input.
+- `src/icons/styled.ts` — global barrel.
 
 ## 🏗 Stack
 
-- Angular 17–22 (peer: `@angular/common`, `@angular/core`).
-- `@angular-devkit/build-angular` 22, `@angular/cli` 22, `@angular/compiler-cli` 22.
-- `@analogjs/vite-plugin-angular` 2.x for Vite-based dev.
-- `tslib` for `__decorate` helpers.
-- Vitest + `jsdom` + `@vitest/coverage-v8` for tests.
-- `tsc --noEmit -p tsconfig.lib.json` for typecheck (not `tsgo`).
-
-## 🔧 CSS vars + classes + provider
-
-- **`src/lib/icon-base.ts`**: CSS vars via `computed()` signals and `??` pattern. Host bindings use `[style.width]`, `[style.height]`, `[style.color]` (not `[attr.*]`) so `var()` CSS function works. `secondaryColor`/`secondaryOpacity` inputs set `[style.--solar-secondary-*]` host bindings. `aria-hidden` computed from `alt`, `ariaLabel`, `titleAttr` inputs. `class: 'solar'` is NOT in IconBase host — each generated component sets its own `class: 'solar solar-{kebabName}-{styleKebab}'` (e.g. `solar solar-heart-bold`) via `host:` in `@Component` metadata.
-- **`src/lib/solar-provider.ts`**: `SolarProvider` (selector `solar-provider`) wraps content in `<div>` with CSS custom properties. `SolarService` (`@Injectable()`) scoped to the component-level provider, exposes `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. `useSolar()` function calls `inject(SolarService)` — must be called in injection context (constructor/property initializer).
-- **`scripts/parser-hook.ts`**: Generated `@Component` decorators include `host: { 'class': 'solar solar-{icon.kebabName}-{styleKebab}' }`.
-- **Pitfall**: `input()` signals must NOT have defaults — `undefined` falls through to CSS var. `[style.width]` (not `[attr.width]`) because `var()` only works in CSS properties.
+- Angular 17–22, `@angular-devkit/build-angular` 22, `@angular/cli` 22, `@angular/compiler-cli` 22, `@analogjs/vite-plugin-angular` 2.x, `tslib`.
+- Vitest + `jsdom` + `@vitest/coverage-v8`; `tsc --noEmit -p tsconfig.lib.json` for typecheck (not `tsgo`).
 
 ## ⚠️ Known Constraints
 
-- **Two `ngc` passes** required because type emit and JS emit need different `tsconfig` settings.
-- **`@xmldom/xmldom` is a devDep** — used by `scripts/parser-hook.ts` to re-parse generated SVG bodies into h() trees.
-- **Standalone components only.** No NgModule wrappers.
-- **Signals-based inputs** (`input()`), not `@Input()` decorators, in the generated code.
-- **Two distinct "dynamic" concepts:**
-    - **Multi-style components** (from `@solar-icons/angular/dynamic`): regular Angular components (`svg[solar{pascalName}]`) that bundle all 6 styles and switch via `weight` input. Used directly in templates, no directive needed.
-    - **`SolarIcon` directive** (selector `[solarIcon]`): renders icons at runtime from a class (no registry) or a registered string name (via `provideSolarIcons`). The `solarIcon` input accepts `IconComponent | SolarIconName | string`.
-- **ngc rootDir no longer conflicts** with `@solar-icons/core` (Path A). The import resolves to `node_modules/@solar-icons/core/dist/...`, which is outside the package source tree — no TS6059.
-- **Angular dynamic default weight must be `Linear`** (D-ANGULAR-DEFAULT-WEIGHT). The `generate-assets.ts` reorders the `@if/@else if` chain so `Linear` is first. The other frameworks default to `linear` via `const key = weight ? WEIGHT_MAP[weight] : 'linear'`. If the generator is modified, verify the default weight remains `Linear` — the `WEIGHTS` array (from `@solar-icons/core`) starts with `Bold`, so naively iterating it puts `Bold` first.
-- **`mirrored` is removed in v2** (it never worked as a CSS var). Use CSS `transform: scaleX(-1)`.
-
-## 🧠 Design rationale — why attribute selector on `<svg>`
-
-Angular is the only package in this monorepo that does NOT render its own `<svg>` element. Every generated icon component is a `@Component` whose selector is `svg[solarName]` (e.g. `svg[solarHomeBold]`) — the user writes `<svg solarHomeBold [size]="24"></svg>` and the component injects the SVG paths as children. The DOM contains a native `<svg>` element, not a custom wrapper tag.
-
-### Why this design, not the others (Component-renders-svg like React/Vue/Solid/Svelte)
-
-This is **deliberate and predates v2** (the pattern was stabilized when the pre-v2 Component+hostDirectives+icon-template architecture was simplified to the current Directive+Component pattern). Two reasons:
-
-1. **DOM cleanliness**. The rendered tree is a real `<svg>`, not `<solar-icon><svg>...</svg></solar-icon>`. This is the same choice Lucide made (`<svg lucideFileText />` — see [lucide.dev](https://lucide.dev)). Direct CSS targeting, accessibility tree, browser devtools, and screen readers see one element, not two. `<svg>` is the canonical HTML element for an icon.
-
-2. **SVG namespace safety**. Angular's template compiler is opinionated about SVG. Some pre-v2 attempts to put `<svg>` inside a Component template produced nested-svg or missing-namespace bugs. Using an attribute selector on a user-authored `<svg>` avoids the entire class of problems.
-
-### Trade-offs accepted
-
-- The selector pattern is not as discoverable as `<HomeBoldIcon />` (which is what 6 other packages do). A user coming from React/Vue may write `<HomeBoldIcon></HomeBoldIcon>` and be confused. **This is an intentional cross-package divergence** — Lucide-style native DOM is preferred over consistency.
-- Each generated component is heavier in bytes (selector string in metadata) than a tag-name selector would be. Negligible.
-- The selector is the PascalCase icon name with the `solar` prefix: `solarHomeBold` for the static `HomeBold` class, `solarHomeDynamic` for the dynamic `HomeDynamic` class. The `Icon` suffix was dropped in v2 because the `solar` prefix already namespaces and Angular's tooling does not surface selector collisions the way bundlers for the other packages do. The dynamic component uses the `Dynamic` suffix instead of `Icon` to differentiate from the static style components. Importing the component class is the only way to discover the selector name; the JSDoc on each generated component shows the correct selector.
-
-### Public inputs on `IconBase`
-
-- `alt` — sets `<title>` and `aria-label` for screen readers.
-- `color` — CSS color (defaults to `currentColor` via `--solar-icon-color` CSS var).
-- `size` — width/height in CSS units (defaults to `24px` via `--solar-icon-size`).
-- `strokeWidth` — line width, only meaningful for `Linear`, `Broken`, `LineDuotone` styles.
-- `secondaryColor` / `secondaryOpacity` — duotone accent customization (CSS vars `--solar-secondary-color`, `--solar-secondary-opacity`).
-- `isolated` — when `true`, bypasses all `SolarProvider` CSS vars; SVG attrs use hardcoded defaults (`24px`, `currentColor`, `1.5`), and duotone vars are set to `initial`.
-- `ariaLabel`, `titleAttr` — explicit a11y overrides; `aria-hidden` is auto-set to `"true"` if none of these are provided.
-
-The CSS class `solar solar-{kebabName}-{kebabStyle}` is set per-component on the static component's `host.class` binding (in the generated `@Component`), not in `IconBase` — so each icon gets its specific kebab class + style suffix for fine-grained CSS targeting. The dynamic component drops its own host class (D-NORM-ANG-1): the static child component already carries the suffix and a wrapper `host.class` only doubled the class names on nested elements.
-
-The four other web packages (React, Vue, Svelte, Solid) follow the same convention after D-NORM-1: static icons emit `solar solar-{kebabName}-{kebabStyle}`, dynamic icons keep `solar solar-{kebabName}` (no style, since the weight changes at runtime). Before that convention, only Angular applied the suffix; React/Vue/Svelte/Solid emitted `solar solar-{kebabName}` and the asymmetry was undocumented.
+- **Static vs dynamic selectors:** Static `@Component` decorators bind `host: { class: 'solar solar-{kebabName}-{styleKebab}' }` (`solarHomeBold`). Dynamic components (`solarHomeDynamic`) omit `host.class` so nested elements don't duplicate classes (D-NORM-ANG-1). `[solarIcon]` directive renders icons at runtime from a class or registered string name (`provideSolarIcons`).
+- **Dynamic default weight must be `Linear`** (D-ANGULAR-DEFAULT-WEIGHT): `generate-assets.ts` reorders `@if/@else if` so `Linear` precedes `Bold` (`WEIGHTS` starts with `Bold`).
+- **`ngc` `rootDir` resolved via Path A:** Imports come from `node_modules/@solar-icons/core/dist/...`, so TS6059 does not occur.
+- **`mirrored` removed in v2:** Use CSS `transform: scaleX(-1)`.
