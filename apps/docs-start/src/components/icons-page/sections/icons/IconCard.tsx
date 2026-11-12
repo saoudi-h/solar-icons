@@ -1,12 +1,4 @@
-import {
-    forwardRef,
-    memo,
-    useEffect,
-    useRef,
-    type CSSProperties,
-    type FocusEvent,
-    type PointerEvent,
-} from 'react'
+import { forwardRef, memo, type CSSProperties } from 'react'
 import type { IconData } from '~generated/descriptions'
 
 import { cn } from '~/lib/utils'
@@ -31,40 +23,6 @@ export const IconCard = memo(
             const { Icon, loading, error, retry } = useIconPreview(name, weight)
             const tooltip = useIconNameTooltip()
             const isSelected = selectedName === name
-            // Hover waits a beat so sweeping across the grid does not flash a
-            // tooltip on every cell; keyboard focus shows it at once.
-            const hoverTimer = useRef<number | null>(null)
-            const cancelHover = () => {
-                if (hoverTimer.current === null) return
-                clearTimeout(hoverTimer.current)
-                hoverTimer.current = null
-            }
-            useEffect(
-                () => () => {
-                    if (hoverTimer.current !== null) clearTimeout(hoverTimer.current)
-                },
-                []
-            )
-            const showTooltip = (
-                event: PointerEvent<HTMLButtonElement> | FocusEvent<HTMLButtonElement>,
-                delay = 0
-            ) => {
-                if (showName) return
-                cancelHover()
-                const anchor = event.currentTarget
-                if (delay === 0) {
-                    tooltip.show(name, anchor)
-                    return
-                }
-                hoverTimer.current = window.setTimeout(() => {
-                    hoverTimer.current = null
-                    if (anchor.isConnected) tooltip.show(name, anchor)
-                }, delay)
-            }
-            const hideTooltip = () => {
-                cancelHover()
-                tooltip.hide()
-            }
             return (
                 <button
                     ref={ref}
@@ -75,14 +33,24 @@ export const IconCard = memo(
                     aria-busy={loading}
                     disabled={!ready || (loading && !Icon)}
                     onClick={() => {
-                        hideTooltip()
+                        tooltip.hide()
                         if (error) retry()
                         else setIconName(isSelected ? null : name)
                     }}
-                    onPointerEnter={event => showTooltip(event, 150)}
-                    onPointerLeave={hideTooltip}
-                    onFocus={event => showTooltip(event)}
-                    onBlur={hideTooltip}
+                    onPointerEnter={
+                        showName ? undefined : event => tooltip.show(name, event.currentTarget)
+                    }
+                    onPointerLeave={tooltip.hide}
+                    onFocus={
+                        showName
+                            ? undefined
+                            : event => {
+                                  // Keyboard focus only: a click selects, it does not describe.
+                                  if (event.currentTarget.matches(':focus-visible'))
+                                      tooltip.show(name, event.currentTarget, true)
+                              }
+                    }
+                    onBlur={tooltip.hide}
                     className={cn(
                         `
                           group relative flex size-full cursor-pointer flex-col items-center
