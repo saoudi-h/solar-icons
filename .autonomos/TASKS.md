@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[DUOTONE-OPACITY-COMPOUND]** Fix duotone secondary opacity applied on both `<g>` and children (static, js, rails, docs previews); add regression tests and regenerate outputs. `Priority: 🔴` `Complexity: M` *Issue: #724. See worklogs/2026-11-13-DUOTONE-OPACITY-COMPOUND.md*
+
 - [/] **[RELEASE-INTENT]** Declaration-driven releases from `@solar-icons/static` across Blade, Blazor, Flutter, and Rails; PRs merged, next static release pending end-to-end. `Priority: 🟠` `Complexity: M` *See worklogs/2026-11-12-RELEASE-INTENT.md*
 
 - [/] **[BLAZOR-INTEGRATE]** Integrate PR #637 (`SolarIcons.Blazor`, issue #632) on `feat/blazor-package`; local checks green, maintainer publication decisions pending. `Priority: 🟠` `Complexity: L` *Issue: #632, PR #637. See worklogs/2026-11-12-BLAZOR-INTEGRATE.md*
