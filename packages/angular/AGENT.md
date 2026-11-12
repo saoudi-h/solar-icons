@@ -14,7 +14,7 @@ status: 'active'
 
 - Angular 17–22 (peer: `@angular/common`, `@angular/core` at `"17.x - 22.x"`).
 - Standalone components (no NgModules). `input()` signals for props, `computed()` for derived state.
-- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json`. Two `ngc` passes: `.lib.json` for types, `.js.json` for JS emit.
+- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && node scripts/strip-js-comments.mjs`. One `ngc` pass emits `.js` and `.d.ts` with comments (the `.d.ts` keep the icon documentation); `scripts/strip-js-comments.mjs` then removes the comments from the `.js` only.
 - `scripts/generate-assets.ts` reads SVGs from `core/svgs/` (path passed explicitly as `svgsDir` option) and emits the per-icon folder tree. `scripts/parser-hook.ts` is the codegen template.
 - All shared codegen helpers (`applyDuotoneStyle`, `WEIGHT_MAP`, `Weight`, `StyleKey`, `StyleComponentsMap`, `toPascalCase`, `IconWeight`, `ParsedIcon`, `IconContext`) come from `@solar-icons/core` (Path A). No local re-declarations.
 
@@ -53,7 +53,7 @@ The output shape is required by Angular's compiler. Note: the `<name>-<style>.ts
 
 ## ⚠️ Known Constraints
 
-- **Two `ngc` passes** required because type emit and JS emit need different `tsconfig` settings.
+- **JS must be comment-free, `.d.ts` must keep comments.** One `tsconfig` cannot do both, so the build strips the `.js` after the compile instead of compiling twice (a second `ngc` pass costs about 30 s on the 9k components). The script uses TypeScript's printer, which gives the same bytes as a `removeComments` compile.
 - **`@xmldom/xmldom` is a devDep** — used by `scripts/parser-hook.ts` to re-parse generated SVG bodies into h() trees.
 - **Standalone components only.** No NgModule wrappers.
 - **Signals-based inputs** (`input()`), not `@Input()` decorators, in the generated code.

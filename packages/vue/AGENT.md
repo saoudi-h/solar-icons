@@ -53,6 +53,7 @@ status: 'active'
 
 - **`@solar-icons/nuxt` depends on this package** (`workspace:*`).
 - **`IconBase.vue` cannot be imported directly by users** — icons are generated as `.ts` files that wrap it via `h()`.
+- **Generated icon functions declare `: VNode` explicitly.** Without it TypeScript infers the return type from `h()` for each of the ~10k icons while emitting declarations, which doubles the build (about 52 s against 28 s). `VNode` is the same type the inference produced, so the published signatures are unchanged.
 - **`SOLAR_CONTEXT_KEY` is in a separate `.ts` file** because `<script setup>` cannot contain ES module exports.
 - **`tsdown` `exports: true` rewrites the `bin` field on every build**: if a `bin` is ever added, declare it via `exports: { bin: { ... } }`.
 
