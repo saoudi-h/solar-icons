@@ -8,50 +8,21 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/svelte` (v2 stable). Svelte 5 distribution of Solar Icons. Ships unit-per-style components: one `.svelte` file per icon per style, statically importable, no runtime style switching. Dynamic icons (runtime-switchable) live under `src/icons/dynamic/`.
+`@solar-icons/svelte` (v2 stable). Svelte 5 distribution shipping unit-per-style `.svelte` components (`src/icons/<style>/`) and dynamic icons (`src/icons/dynamic/`).
 
-## ⚙️ Conventions
+## ⚙️ Conventions & Stack
 
-- Svelte 5 with runes (`$props`, `$state`, `$derived`).
-- Build = `pnpm generate:assets && pnpm copy:licenses && pnpm build:package` where `build:package` is `svelte-package --input ./src`.
-- `scripts/generate-assets.ts` reads SVGs from `core/svgs/` and emits `.svelte` files.
-- `scripts/parser-hook.ts` is the build-time codegen template imported by `generate-assets.ts`.
-- `prettier-plugin-svelte` is a dev dep; the shared `@tala-tools/prettier` does not include Svelte formatting.
+- Svelte 5+ (`>= 5.0.0` peer) with runes (`$props`, `$state`, `$derived`, `$effect`, `{@render}`) in both source and generated code — never legacy `export let` or `$$restProps`.
+- Build = `pnpm generate:assets && pnpm copy:licenses && pnpm build:package` (`svelte-package --input ./src`).
+- Typecheck = `svelte2tsx` + `svelte-check`. Format uses `prettier-plugin-svelte` (shared `@tala-tools/oxfmt` does not format `.svelte`). `tsdown` devDep is currently unused at build time.
+- `scripts/generate-assets.ts` reads `core/svgs/`; `scripts/parser-hook.ts` is the codegen template.
 
-## 📁 Key Directories
+## 🔧 CSS vars, provider, and API
 
-| Path                         | Description                                         |
-| ---------------------------- | --------------------------------------------------- |
-| `scripts/generate-assets.ts` | Reads from `core/svgs/`, produces SFCs.             |
-| `scripts/parser-hook.ts`     | Build-time codegen template.                        |
-| `src/icons/style/`           | Generated: one folder per style, one file per icon. |
-| `src/lib/`                   | Hand-written helpers.                               |
-| `src/index.ts`               | Barrel re-export.                                   |
-
-## 🏗 Stack
-
-- Svelte 5+ required (peer). The source and generated code use Svelte 5 runes (`$props`, `$derived`, `$effect`, `{@render}`).
-- `@sveltejs/package` for the package build, `@sveltejs/vite-plugin-svelte` for dev.
-- `svelte2tsx` + `svelte-check` for typecheck.
-- `tsdown` available as a devDep (currently unused at build time).
-- `prettier-plugin-svelte` for formatting.
-
-## 🔧 CSS vars + classes + provider
-
-- **`src/lib/IconBase.svelte`**: CSS classes `solar` + `solar-{iconName}`, CSS vars via `??` pattern (color, size, strokeWidth), `secondaryColor`/`secondaryOpacity` duotone props, `aria-hidden="true"` by default unless `alt`/`aria-label`/`title` set. User `class` and `style` merged after CSS vars (user can override).
-- **`src/lib/SolarProvider.svelte`**: Wrapper `<div>` with CSS custom properties via `solar.css`. Svelte 5 `setContext` provides a ref with `setProperty()`. Renders children via `{@render children()}`.
-- **`src/lib/useSolar.ts`**: Standalone module using `getContext(SOLAR_CONTEXT_KEY)`. Returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`. Shared context key with `SolarProvider.svelte`.
-- **`scripts/parser-hook.ts`**: Passes `iconName="${icon.kebabName}"` to generated Svelte components.
-- **Pitfall**: `$props()` destructuring must NOT use defaults for `color`, `size`, `strokeWidth` — the `??` in `$derived` must fall through to CSS var.
-
-## API notes
-
-- Barrel files export components with the `Icon` suffix (`HomeIcon`); consumers must not use `Bold.Home`-style namespace access or old names without the suffix.
-- `SolarState`/provider interface uses `secondaryColor`/`secondaryOpacity` (not `duotoneColor`/`duotoneOpacity`).
-- Dynamic icons use `$props()` runes in the generated code (`let { ...restProps }: DynamicIconProps = $props()`), never legacy `$$restProps` (Svelte 4).
-- The `Icon` suffix, `useSolar`, dynamic imports, `mirrored` removal, and the CSS var cascade are documented in the v2 docs.
+- **`src/lib/IconBase.svelte`:** Emits `solar` + `solar-{iconName}` (static icons include style suffix via `parser-hook.ts`: `solar-{kebabName}-{styleKebab}`). Uses `??` CSS var fallbacks — `$props()` destructuring MUST NOT set defaults for `color`, `size`, `strokeWidth`. Sets `aria-hidden="true"` unless `alt`/`aria-label`/`title` is provided; merges user `class`/`style` after CSS vars.
+- **`src/lib/SolarProvider.svelte` & `src/lib/useSolar.ts`:** `SolarProvider` wraps children (`{@render children()}`) in a `<div>` with CSS vars via `solar.css` and `setContext(SOLAR_CONTEXT_KEY, ...)`. `useSolar()` uses `getContext` and returns `setColor`, `setSize`, `setStrokeWidth`, `setDuotoneColor`, `setDuotoneOpacity`.
+- **V2 API:** Components use the `Icon` suffix (`HomeIcon`; no `Bold.Home` namespaces); `secondaryColor`/`secondaryOpacity` replace `duotone*`; `mirrored` is removed.
 
 ## ⚠️ Known Constraints
 
-- **Svelte 5 runes are mandatory** in both source and generated code (`$props()` destructuring, not legacy `export let`). Consumers must be on Svelte ≥ 5.0.0; the peer dependency is `">= 5.0.0"` (the code was never Svelte 4 compatible).
-- **Published subpath targets must preserve Svelte source extensions:** generated output is `.svelte` plus `.svelte.d.ts`; `exports` conditions must not point the default or type targets at nonexistent `.js`/`.d.ts` files.
+- **Published subpath targets must preserve `.svelte` extensions:** generated files are `.svelte` + `.svelte.d.ts`; `exports` conditions must not point to nonexistent `.js`/`.d.ts` files.

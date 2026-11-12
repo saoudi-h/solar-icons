@@ -10,9 +10,10 @@ description: 'Mandatory bootstrap for any new session. Invoke before any work be
 ## STEP 1 — Orient
 
 1. Read the root `AGENT.md`.
-2. Read `.autonomos/TASKS.md`.
+2. Read `.autonomos/TASKS.md`: open work and Current direction. Archives are not bootstrap context; search them only for a specific question.
+3. When the CLI is available, run `autonomos status` through the project's own install (`pnpm exec`, `npx`); a global install may be older. Note version, format or budget findings; do not fix them unasked.
 
-RESPOND with a **3-line max** summary of relevant project context. Do not continue without this response.
+RESPOND with a **3-line max** summary of relevant project context, including status findings. Do not continue without this response.
 
 ## STEP 2 — Resolve the objective
 

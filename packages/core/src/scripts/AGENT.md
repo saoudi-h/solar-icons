@@ -1,50 +1,23 @@
 # AGENT: packages/core/src/scripts
 
-- **Role:** Build-time CLI scripts. Each is invoked via `pnpm <name>` from the package root, runs under `tsx` (not `ts-node`), uses `picocolors` for output, and `process.exit(1)` on fatal errors.
+- **Role:** Build-time CLI scripts invoked via `pnpm <name>` from `packages/core`, run under `tsx`, using `picocolors` and `process.exit(1)` on fatal errors. For the `workflows/` batch engine, see [workflows/AGENT.md](workflows/AGENT.md).
 
 ## Scripts
 
-| Script                            | Purpose                                                                                                                                                                                                                                                          |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `check-svg-quality.ts`            | Validate style-specific SVG paint contracts: line-only styles, exact duotone opacity, fill-only bold styles, one-path Outline icons, round stroke caps, and the canonical Solar color. Writes complete Markdown and JSON reports under `packages/core/reports/`. |
-| `generate-svgs.ts`                | Pull components from Figma, normalize, write to `svgs/`. Requires `FIGMA_API_TOKEN` + `FIGMA_FILE_ID`.                                                                                                                                                           |
-| `generate-pngs.ts`                | Render each SVG to a 128px PNG via `sharp`.                                                                                                                                                                                                                      |
-| `generate-descriptions.ts`        | LLM-assisted tag/description generation. Manual tool.                                                                                                                                                                                                            |
-| `fix-descriptions.ts`             | Post-process pass on the descriptions JSON. Manual tool.                                                                                                                                                                                                         |
-| `check-svgs.ts`                   | Walk `svgs/`, assert each category has all 6 styles, exit non-zero on mismatch.                                                                                                                                                                                  |
-| `check-metadata.ts`               | Validate `metadata.json` shape.                                                                                                                                                                                                                                  |
-| `check-descriptions.ts`           | Validate `metadata-descriptions.json` against `descriptions.schema.json` (ajv) + alias rules, including deprecated replacement targets.                                                                                                                          |
-| `check-icons-metadata.ts`         | Icon ↔ metadata coverage gate (EXT-DIFF-GATE): every icon on disk needs a curated entry; new icons (untracked/staged in `svgs/` vs git HEAD) need an explicit `origin`. Run by `refresh-from-figma-zip.sh` after unzip.                                          |
-| `fix-icons-metadata.ts`           | Prints draft `metadata-descriptions.json` entries for new icons (extended defaults, author from `git config user.name`). Output is pasted and curated manually.                                                                                                  |
-| `sync-filenames.ts`               | One-shot: rename SVG files whose names drifted from the canonical kebab-case map.                                                                                                                                                                                |
-| `update-metadata-names.ts`        | One-shot: rewrite `metadata.json` `icons[]` arrays to use the canonical name form.                                                                                                                                                                               |
-| `experiment-svg-normalization.ts` | Experimental, non-mutating analysis of stroke-preserving SVG path consolidation and its visual edge cases.                                                                                                                                                       |
+- `check-svg-quality.ts`: validate style paint contracts (line-only, exact duotone opacity, fill-only bold, single-path Outline, round stroke caps, canonical Solar color) and write reports under `packages/core/reports/`.
+- `generate-svgs.ts`: pull components from Figma, normalize, write to `svgs/` (requires `FIGMA_API_TOKEN` + `FIGMA_FILE_ID`; not in CI).
+- `generate-pngs.ts`: render SVGs to 128px PNGs via `sharp`.
+- `generate-descriptions.ts` / `fix-descriptions.ts`: manual LLM/post-process tools for descriptions JSON (not part of `pnpm build` or `generate:assets`).
+- `check-svgs.ts`: walk `svgs/`, verify all 6 styles per icon per category.
+- `check-metadata.ts`: validate `metadata.json` shape.
+- `check-descriptions.ts`: validate `metadata-descriptions.json` against `descriptions.schema.json` (ajv) + alias rules and deprecated replacement targets.
+- `check-icons-metadata.ts`: icon ↔ metadata coverage gate (EXT-DIFF-GATE); flags untracked/staged new SVGs lacking explicit `origin`. Run by `refresh-from-figma-zip.sh`.
+- `fix-icons-metadata.ts`: prints draft `metadata-descriptions.json` entries for new icons (author from `git config user.name`) for manual curation.
+- `sync-filenames.ts` / `update-metadata-names.ts`: one-shot canonical kebab-case rename helpers.
+- `experiment-svg-normalization.ts`: experimental non-mutating stroke-preserving SVG path consolidation check.
 
-`deprecatedAliases` remains the compatibility path for names that were previously
-published and must continue to resolve. `aliases` is reserved for non-deprecated
-synonyms and is currently metadata-only; do not use it to replace a deprecated
-alias without an explicit migration decision.
-
-## The `workflows/` engine
-
-A small in-house pipeline (~240 lines) reused by `generate-pngs.ts` and other batch jobs:
-
-- `processIcons.ts` — runs an ordered list of `ProcessorStep`s over an `IconDataExtractor` output, with `p-limit` concurrency and an optional `StateManager` checkpoint.
-- `StateManager.ts` — persists per-icon `success | failure` to a JSON file under a temp dir; allows resuming long runs.
-- `extractors/` — `iconsFromCategoriesExtractor`, `iconsFromFlatArrayExtractor`. Both yield `{ iconName, category, tags }`.
-- `steps/` — `convertSvgToPngStep`, `getLinearSvgPathStep`, `getLinearPngPathStep`, `generateMetadataStep`, `filtersStepGenerator(name)`, `loggerStepGenerator(label)`, `logStep`, `saveDescriptionStepGenerator`, `deleteDescriptionStepGenerator`.
-- `types.ts` — `IconData`, `Context`, `IconDataExtractor`, `ProcessorStep`, `Predicate`.
-
-## Constraints
-
-- **`generate-svgs.ts` is the only script that requires Figma credentials.** Not invoked by CI.
-- **`generate-descriptions.ts` and `fix-descriptions.ts` are manual tools.** Not part of `pnpm build` or any `generate:assets` flow.
+`deprecatedAliases` remains the compatibility path for published names; `aliases` is for non-deprecated synonyms (metadata-only; never replace a deprecated alias without a migration decision).
 
 ## Staged Figma ZIP refresh
 
-`packages/core/scripts/refresh-from-figma-zip.sh` first runs the Python 3 archive gate into a
-temporary directory, then quality and metadata checks using `SOLAR_SVGS_DIR`. `--check-only`
-never swaps production assets. Removals require `--allow-removals`; quality overrides remain
-explicit and do not bypass metadata. Normal refresh restores both SVGs and generated metadata
-on failure and keeps the source ZIP. The parser/quality gate accepts black/white theme exports
-alongside legacy navy; only open stroke endpoints require round caps.
+`packages/core/scripts/refresh-from-figma-zip.sh` runs the Python 3 archive gate in a temp dir, then quality and metadata checks with `SOLAR_SVGS_DIR`. `--check-only` never swaps assets; removals require `--allow-removals`; quality overrides do not bypass metadata. On failure it restores SVGs and generated metadata while keeping the source ZIP. The quality gate accepts black/white theme exports alongside legacy navy; only open stroke endpoints require round caps.
