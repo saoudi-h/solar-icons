@@ -92,13 +92,16 @@ const DUOTONE_CSS_VARS_JSX =
 
 export type DuotoneFormat = 'html' | 'jsx'
 
+/** Matches one opening, closing or self-closing SVG tag (captures `/` of a closing and of a self-closing tag). */
+const TAG_REGEX = /<(\/)?[a-zA-Z][^>]*?(\/)?>/g
+
 /**
  * Transform a duotone-accent string so that `opacity="0.5"` is replaced
  * with a CSS custom property that consumers can override.
  *
- * Tracks `<g>` nesting depth so the transform only fires on top-level
- * elements (avoids double-application on elements already inside a
- * duotone group). The format flag selects the attribute syntax:
+ * Only top-level accent elements receive the style: elements nested in a
+ * `<g>` inherit it, because opacity multiplies down the tree and a second
+ * application would render the accent at the square of the requested value. The format flag selects the attribute syntax:
  *
  *   - `'html'` (default) — used by Vue, Svelte, Angular.
  *   - `'jsx'`            — used by React, Solid (object-style prop).
@@ -111,23 +114,39 @@ export function applyDuotoneStyle(
 ): string | null {
     if (!accent) return null
     const styleAttr = format === 'jsx' ? DUOTONE_CSS_VARS_JSX : DUOTONE_CSS_VARS_HTML
-    let groupDepth = 0
-    return accent
-        .replace(/\s+opacity="0\.5"/g, '')
-        .split('\n')
-        .map(line => {
-            const trimmed = line.trim()
-            if (!trimmed) return line
-            if (trimmed.startsWith('</')) {
-                if (trimmed.startsWith('</g')) groupDepth--
-                return line
-            }
-            if (groupDepth > 0) return line
-            if (trimmed.startsWith('<g')) groupDepth++
-            if (trimmed.endsWith('/>')) {
-                return trimmed.slice(0, -2) + ` ${styleAttr}/>`
-            }
-            return trimmed.replace('>', ` ${styleAttr}>`)
-        })
-        .join('\n')
+    let depth = 0
+    return accent.replace(TAG_REGEX, (tag, closing: string, selfClosing: string) => {
+        if (closing) {
+            depth--
+            return tag
+        }
+        const isRoot = depth === 0
+        if (!selfClosing) depth++
+        if (!isRoot) return tag
+        const bare = tag.replace(/\s+opacity="0\.5"/, '')
+        return selfClosing
+            ? `${bare.slice(0, -2).trimEnd()} ${styleAttr}/>`
+            : `${bare.slice(0, -1)} ${styleAttr}>`
+    })
+}
+
+/**
+ * Find an accent element that sets `opacity` while nested inside another
+ * accent element, or a group nested in a group (the accent extraction cannot
+ * delimit it). Opacity multiplies down the tree, so a nested value would be
+ * applied on top of the group's own value. Returns the offending tag or
+ * `null` when every `opacity` sits on a root element.
+ */
+export function findNestedAccentOpacity(accent: string): string | null {
+    let depth = 0
+    for (const match of accent.matchAll(TAG_REGEX)) {
+        const [tag, closing, selfClosing] = match
+        if (closing) {
+            depth--
+            continue
+        }
+        if (depth > 0 && (/\sopacity\s*=/.test(tag) || /^<g[\s>]/.test(tag))) return tag
+        if (!selfClosing) depth++
+    }
+    return null
 }

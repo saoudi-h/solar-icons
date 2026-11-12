@@ -98,9 +98,8 @@ describe('Duotone extraction', () => {
         for (const icon of withAccent) {
             expect(icon.duotoneAccentInner).toContain('opacity="0.5"')
         }
-        // Note: icons with <g opacity="0.5"> wrappers may still have
-        // opacity in inner — the DUOTONE_ACCENT_REGEX only matches
-        // standalone <path opacity="0.5" /> patterns.
+        // <g opacity="0.5"> wrappers are extracted whole; their style
+        // application is covered in duotone.test.ts.
     })
 
     it('extracts duotone accent path from LineDuotone icons', () => {
