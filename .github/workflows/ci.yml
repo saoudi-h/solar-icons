@@ -116,6 +116,9 @@ jobs:
             - name: Validate skill catalog freshness
               run: pnpm check:skill-counts
 
+            - name: Validate duotone output
+              run: pnpm check:duotone-output
+
     site:
         name: Site
         needs: scope

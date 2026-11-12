@@ -43,6 +43,7 @@
         "check:registry": "tsx scripts/check-registry.ts",
         "check:listing": "tsx scripts/check-listing.ts",
         "check:skill-counts": "tsx scripts/check-skill-counts.ts",
+        "check:duotone-output": "tsx scripts/check-duotone-output.ts",
         "generate:test-catalogs": "tsx scripts/generate-test-app-icon-lists.ts",
         "prepare:visual-package": "tsx scripts/prepare-visual-package.ts",
         "spell": "cspell \"**/*\" --no-progress",
