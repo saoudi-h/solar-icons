@@ -2,8 +2,21 @@
 import { CATEGORIES } from '@solar-icons/core/runtime'
 import { useSolar } from '@solar-icons/react/lib/SolarProvider'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { GridProps, ListProps } from 'react-virtualized'
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    type HTMLAttributes,
+} from 'react'
+import type {
+    GridImperativeAPI,
+    GridProps,
+    ListImperativeAPI,
+    ListProps,
+    RowRendererParams,
+} from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
 import type { IconData } from '~generated/descriptions'
 
@@ -34,6 +47,9 @@ import { searchIcons } from './utils'
 export const INITIAL_GRID_HEIGHT = 1024
 
 const MIN_GRID_HEIGHT = 120
+const SCROLLER_PROPS: HTMLAttributes<HTMLDivElement> & { 'data-icon-scroller': boolean } = {
+    'data-icon-scroller': true,
+}
 const SECTION_HEADER = 48
 const GAP = 8
 // The `gap-3` between the grid row and the sheet under it.
@@ -54,8 +70,8 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     onHeightChange,
     detailHeight = 0,
 }) => {
-    const gridRef = useRef<Grid>(null)
-    const listRef = useRef<List>(null)
+    const gridRef = useRef<GridImperativeAPI>(null)
+    const listRef = useRef<ListImperativeAPI>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
     const [keyword] = useSearchKeyword()
     const [origin] = useOriginFilter()
@@ -239,7 +255,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         // wrong. `scrollToPosition` with our manually-computed cumulative
         // positions always lands the header at the very top.
         const rafId = requestAnimationFrame(() => {
-            listRef.current?.scrollToPosition(scrollTop)
+            listRef.current?.scrollToPosition({ scrollTop })
             pendingCategoryRef.current = null
         })
         return () => cancelAnimationFrame(rafId)
@@ -271,7 +287,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
             const keepCategoryPosition = pendingCategoryRef.current !== null
             const rafId = requestAnimationFrame(() => {
                 listRef.current?.recomputeRowHeights()
-                if (!keepCategoryPosition) listRef.current?.scrollToPosition(0)
+                if (!keepCategoryPosition) listRef.current?.scrollToPosition({ scrollTop: 0 })
             })
             return () => cancelAnimationFrame(rafId)
         } else {
@@ -308,16 +324,16 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                 <List
                     aria-label="Icons"
                     role="grid"
-                    containerProps={{ 'data-icon-scroller': true }}
+                    containerProps={SCROLLER_PROPS}
                     ref={listRef}
                     className="*:relative"
                     width={width}
                     height={height}
                     rowCount={rows.length}
-                    rowHeight={({ index }) =>
+                    rowHeight={({ index }: { index: number }) =>
                         rows[index]?.kind === 'header' ? SECTION_HEADER : cellHeight
                     }
-                    rowRenderer={({ index, key, style }) => {
+                    rowRenderer={({ index, key, style }: RowRendererParams) => {
                         const row = rows[index]
                         if (!row) return null
                         if (row.kind === 'header') {
@@ -395,7 +411,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
             <Grid
                 aria-label="Icons"
                 role="grid"
-                containerProps={{ 'data-icon-scroller': true }}
+                containerProps={SCROLLER_PROPS}
                 ref={gridRef}
                 className="*:relative"
                 cellRenderer={cellRenderer}
@@ -414,5 +430,5 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
 // Re-export the List type so consumers (e.g. sidebar scroll helpers) can
 // type their refs against the same instance.
 export type { List }
-export type IconGridList = List
+export type IconGridList = ListImperativeAPI
 export type IconGridListProps = ListProps
