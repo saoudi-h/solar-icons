@@ -9,6 +9,9 @@ export default defineConfig({
     forbidOnly: Boolean(process.env.CI),
     retries: process.env.CI ? 1 : 0,
     reporter: 'list',
+    // A cold Vite dev server compiles the icon modules on demand; on a CI
+    // runner the first hydration can take well over the 5s default.
+    expect: { timeout: development ? 20_000 : 5_000 },
     use: {
         baseURL,
         ...devices['Desktop Chrome'],

@@ -35,6 +35,13 @@ export default defineConfig({
     server: {
         port: 3001,
     },
+    ssr: {
+        // react-virtualized v10's ESM build imports `dom-helpers/scrollbarSize`
+        // without an extension. Node rejects that directory import, which aborts
+        // the /icons prerender and forces the page into client-only rendering.
+        // Bundling it lets Vite resolve the import instead of leaving it to Node.
+        noExternal: ['react-virtualized'],
+    },
     build: {
         rolldownOptions: {
             output: {

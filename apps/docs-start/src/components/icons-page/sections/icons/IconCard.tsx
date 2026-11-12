@@ -1,10 +1,19 @@
-import { forwardRef, memo, type CSSProperties } from 'react'
+import {
+    forwardRef,
+    memo,
+    useEffect,
+    useRef,
+    type CSSProperties,
+    type FocusEvent,
+    type PointerEvent,
+} from 'react'
 import type { IconData } from '~generated/descriptions'
 
 import { cn } from '~/lib/utils'
 
 import { useSelectedIconName, useShowcaseReady, useStyleURL } from './context'
 import { useIconPreview } from './icon-registry'
+import { useIconNameTooltip } from './IconNameTooltip'
 import { isRecentExtension, RecentIconDot } from './OriginControls'
 
 type IconCardProps = Pick<IconData, 'name' | 'origin' | 'addedAt'> & {
@@ -20,7 +29,42 @@ export const IconCard = memo(
             const [selectedName, setIconName] = useSelectedIconName()
             const [weight] = useStyleURL()
             const { Icon, loading, error, retry } = useIconPreview(name, weight)
+            const tooltip = useIconNameTooltip()
             const isSelected = selectedName === name
+            // Hover waits a beat so sweeping across the grid does not flash a
+            // tooltip on every cell; keyboard focus shows it at once.
+            const hoverTimer = useRef<number | null>(null)
+            const cancelHover = () => {
+                if (hoverTimer.current === null) return
+                clearTimeout(hoverTimer.current)
+                hoverTimer.current = null
+            }
+            useEffect(
+                () => () => {
+                    if (hoverTimer.current !== null) clearTimeout(hoverTimer.current)
+                },
+                []
+            )
+            const showTooltip = (
+                event: PointerEvent<HTMLButtonElement> | FocusEvent<HTMLButtonElement>,
+                delay = 0
+            ) => {
+                if (showName) return
+                cancelHover()
+                const anchor = event.currentTarget
+                if (delay === 0) {
+                    tooltip.show(name, anchor)
+                    return
+                }
+                hoverTimer.current = window.setTimeout(() => {
+                    hoverTimer.current = null
+                    if (anchor.isConnected) tooltip.show(name, anchor)
+                }, delay)
+            }
+            const hideTooltip = () => {
+                cancelHover()
+                tooltip.hide()
+            }
             return (
                 <button
                     ref={ref}
@@ -30,7 +74,15 @@ export const IconCard = memo(
                     aria-pressed={isSelected}
                     aria-busy={loading}
                     disabled={!ready || (loading && !Icon)}
-                    onClick={() => (error ? retry() : setIconName(isSelected ? null : name))}
+                    onClick={() => {
+                        hideTooltip()
+                        if (error) retry()
+                        else setIconName(isSelected ? null : name)
+                    }}
+                    onPointerEnter={event => showTooltip(event, 150)}
+                    onPointerLeave={hideTooltip}
+                    onFocus={event => showTooltip(event)}
+                    onBlur={hideTooltip}
                     className={cn(
                         `
                           group relative flex size-full cursor-pointer flex-col items-center
@@ -75,20 +127,7 @@ export const IconCard = memo(
                             ">
                             {name}
                         </span>
-                    ) : (
-                        <span
-                            aria-hidden="true"
-                            className="
-                              pointer-events-none absolute top-full left-1/2 z-10 -mt-1.5
-                              -translate-x-1/2 rounded-md bg-foreground px-1.5 py-0.5 text-[11px]/4
-                              font-medium whitespace-nowrap text-background opacity-0 shadow-sm
-                              transition-opacity duration-100
-                              group-hover:opacity-100 group-hover:delay-150
-                              group-focus-visible:opacity-100
-                            ">
-                            {name}
-                        </span>
-                    )}
+                    ) : null}
                 </button>
             )
         }
