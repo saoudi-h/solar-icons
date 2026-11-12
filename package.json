@@ -61,7 +61,7 @@
         "@changesets/cli": "^3.0.3"
     },
     "devDependencies": {
-        "@autonomos/cli": "^0.7.0",
+        "@autonomos/cli": "^0.8.5",
         "@commitlint/cli": "^21.2.4",
         "@commitlint/config-conventional": "^21.2.4",
         "@commitlint/types": "^21.2.3",

@@ -11,7 +11,7 @@ description: 'Optional intake for problems, proposals, and questions before choo
 ## STEP 1 — Build context
 
 1. Read root and applicable root → target `AGENT.md` files.
-2. Read `.autonomos/ISSUES.md` if it exists and search for duplicates.
+2. Read `.autonomos/ISSUES.md` (open and accepted issues) if it exists and search for duplicates; targeted lookup in `.autonomos/archive/` prevents duplicate intake and identifier reuse.
 3. Read related tasks or worklogs only when they provide evidence.
 
 ## STEP 2 — Record the signal
@@ -29,11 +29,11 @@ Create `.autonomos/ISSUES.md` on first use. Record without prescribing implement
 - Tasks: none | TASK-ID, ...
 ```
 
-Merge duplicate evidence into the existing issue instead of creating another.
+Keep each field to a few factual lines. Merge duplicate evidence into the existing issue instead of creating another.
 
 ## STEP 3 — Triage
 
 - **Open:** preserve the signal; do not create a task before an approach is accepted.
 - **Accepted:** create one or more scoped tasks through `/task` and link both directions.
   If the outcome spans tasks, create or link a specification; record each consequential technical choice separately.
-- **Resolved/declined:** record the outcome and concise rationale; preserve the issue as history.
+- **Resolved/declined:** add a one-line resolution linking the task or worklog, then close it (`autonomos close <ID>`, or move it by hand to `.autonomos/archive/closed/ISSUES.md`). Progress belongs in task worklogs, never appended to the issue.
