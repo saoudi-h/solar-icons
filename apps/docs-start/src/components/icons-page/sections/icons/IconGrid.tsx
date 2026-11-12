@@ -255,6 +255,16 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         // wrong. `scrollToPosition` with our manually-computed cumulative
         // positions always lands the header at the very top.
         const rafId = requestAnimationFrame(() => {
+            console.log('[scroll-debug]', {
+                activeCategory,
+                idx,
+                scrollTop,
+                width,
+                columnCount,
+                initialIconName,
+                selected: selectedIcon?.fullName,
+                rows: rows.length,
+            })
             listRef.current?.scrollToPosition({ scrollTop })
             pendingCategoryRef.current = null
         })
@@ -330,6 +340,10 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                     width={width}
                     height={height}
                     rowCount={rows.length}
+                    // The List estimates the size of unmeasured rows with this
+                    // value when it clamps scroll positions. The default (30)
+                    // makes deep links to a far category stop short.
+                    estimatedRowSize={cellHeight}
                     rowHeight={({ index }: { index: number }) =>
                         rows[index]?.kind === 'header' ? SECTION_HEADER : cellHeight
                     }
