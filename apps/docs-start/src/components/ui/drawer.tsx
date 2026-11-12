@@ -42,7 +42,8 @@ function DrawerOverlay({
 }
 
 export interface DrawerContentType
-    extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
+    extends
+        React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
         React.HTMLAttributes<HTMLDivElement> {
     className?: string
     children?: React.ReactNode

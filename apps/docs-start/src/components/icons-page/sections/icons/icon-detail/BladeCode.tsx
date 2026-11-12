@@ -16,7 +16,11 @@ export const BladeCode: FC = () => {
 
     return (
         <>
-            <Button variant="link" size="default" asChild>
+            <Button
+                variant="link"
+                size="default"
+                className="h-auto justify-start self-start p-0 text-xs"
+                asChild>
                 <Link href="/docs/v2/packages/blade">
                     Get started with <span className="font-heading">Blade</span>{' '}
                     <ArrowRightUpIcon size={16} />

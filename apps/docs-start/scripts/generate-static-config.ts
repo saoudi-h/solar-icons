@@ -39,6 +39,8 @@ const headers = [
     '/llms-full.txt\n  Content-Type: text/plain; charset=utf-8',
     // The file names of the hero icons carry a hash of their content.
     '/data/hero/*\n  Cache-Control: public, max-age=31536000, immutable',
+    '/data/icon-svgs/*\n  Cache-Control: public, max-age=31536000, immutable',
+    '/data/icon-previews/*\n  Cache-Control: public, max-age=31536000, immutable',
 ]
 
 if (noIndex) {

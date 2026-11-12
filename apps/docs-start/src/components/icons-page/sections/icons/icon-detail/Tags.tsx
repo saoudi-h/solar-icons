@@ -1,51 +1,47 @@
 import type { FC } from 'react'
 
-import { Badge } from '~/components/ui/badge'
+import { useSearchKeyword, useSelectedIcon } from '../context'
 
-import { useSelectedIcon } from '../context'
+const TAG = `
+  rounded-md px-2 py-1 text-xs transition-colors
+  focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:outline-hidden
+`
 
+/** Tags of the selected icon. A tag is a shortcut to the matching search. */
 export const Tags: FC = () => {
     const selectedIcon = useSelectedIcon()
+    const [, setKeyword] = useSearchKeyword()
 
     if (!selectedIcon) return null
 
     return (
-        <>
-            <div
-                className={`
-                  flex flex-col gap-2 border-b border-dashed border-border p-2
-                  max-lg:mb-2 max-lg:pb-2
-                  lg:mr-4 lg:pr-4
-                `}>
-                <h4 className="font-heading text-lg font-semibold">Icon Tags</h4>
-                <div className="mt-2 flex w-full flex-wrap gap-2">
-                    {selectedIcon.tags.map(tag => (
-                        <Badge
-                            key={tag}
-                            colors="accent"
-                            variant="default"
-                            size="lg"
-                            className="rounded-full">
-                            {tag}
-                        </Badge>
-                    ))}
-                </div>
-            </div>
-            <div className="flex flex-col gap-2 p-2">
-                <h4 className="font-heading text-lg font-semibold">Category Tags</h4>
-                <div className="mt-2 flex w-full flex-wrap gap-2">
-                    {selectedIcon.categoryTags.map(tag => (
-                        <Badge
-                            key={tag}
-                            colors="accent"
-                            variant="default"
-                            size="lg"
-                            className="rounded-full">
-                            {tag}
-                        </Badge>
-                    ))}
-                </div>
-            </div>
-        </>
+        <div className="flex flex-wrap gap-1">
+            {selectedIcon.tags.map(tag => (
+                <button
+                    key={`icon-${tag}`}
+                    type="button"
+                    onClick={() => setKeyword(tag)}
+                    className={`
+                      ${TAG}
+                      bg-foreground/[0.07] text-foreground/80
+                      hover:bg-foreground/[0.12] hover:text-foreground
+                    `}>
+                    {tag}
+                </button>
+            ))}
+            {selectedIcon.categoryTags.map(tag => (
+                <button
+                    key={`category-${tag}`}
+                    type="button"
+                    onClick={() => setKeyword(tag)}
+                    className={`
+                      ${TAG}
+                      text-muted-foreground ring-1 ring-foreground/10 ring-inset
+                      hover:bg-foreground/[0.06] hover:text-foreground
+                    `}>
+                    {tag}
+                </button>
+            ))}
+        </div>
     )
 }

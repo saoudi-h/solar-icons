@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const development = process.env.PLAYWRIGHT_DEV === '1'
+const baseURL = development ? 'http://127.0.0.1:4175' : 'http://127.0.0.1:4174'
+
 export default defineConfig({
     testDir: './tests',
     fullyParallel: true,
@@ -7,15 +10,17 @@ export default defineConfig({
     retries: process.env.CI ? 1 : 0,
     reporter: 'list',
     use: {
-        baseURL: 'http://127.0.0.1:4174',
+        baseURL,
         ...devices['Desktop Chrome'],
         viewport: { width: 1440, height: 900 },
         trace: 'retain-on-failure',
     },
     webServer: {
-        command: 'pnpm exec wrangler dev --local --ip 127.0.0.1 --port 4174',
-        url: 'http://127.0.0.1:4174',
+        command: development
+            ? 'pnpm dev --host 127.0.0.1 --port 4175'
+            : 'pnpm exec wrangler dev --local --ip 127.0.0.1 --port 4174',
+        url: baseURL,
         reuseExistingServer: !process.env.CI,
-        timeout: 30_000,
+        timeout: 60_000,
     },
 })

@@ -8,6 +8,7 @@ import { Input } from '~/components/ui/input'
 import { cn } from '~/lib/utils'
 
 interface SearchInputProps {
+    disabled?: boolean
     value: string
     onChange: (value: string) => void
     count: number
@@ -17,15 +18,16 @@ interface SearchInputProps {
 
 export const SearchInput: React.FC<SearchInputProps> = ({
     value,
+    disabled,
     onChange,
     count,
     className,
-    placeholder = 'Search…',
+    placeholder = 'Search icons…',
 }) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     return (
-        <div className={cn('relative flex h-10 w-72 items-center', className)}>
+        <div className={cn('relative flex h-10 min-w-0 items-center', className)}>
             <MinimalisticMagnifierIcon
                 className="
                   pointer-events-none absolute top-1/2 left-2.5 z-10 size-4 -translate-y-1/2
@@ -36,12 +38,16 @@ export const SearchInput: React.FC<SearchInputProps> = ({
             <Input
                 ref={inputRef}
                 type="search"
+                disabled={disabled}
+                aria-label="Search icons"
                 placeholder={placeholder}
                 value={value}
                 onChange={e => onChange(e.target.value)}
                 className="
-                  h-10 w-full rounded-lg border-0 border-none! bg-default-200 pr-12 pl-9 text-sm
-                  shadow-none
+                  h-10 w-full rounded-lg border-0 border-none! bg-foreground/[0.06] pr-14 pl-9
+                  text-sm shadow-none
+                  focus-visible:ring-2 focus-visible:ring-primary/70
+                  dark:bg-foreground/[0.07]
                   placeholder:text-muted-foreground
                   [&::-webkit-search-cancel-button]:appearance-none
                 "
@@ -59,7 +65,11 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                       group-hover:scale-75 group-hover:opacity-0
                       group-focus-within:scale-75 group-focus-within:opacity-0
                     ">
-                    <NumberFlow value={count} format={{ minimumIntegerDigits: 1 }} />
+                    <NumberFlow
+                        locales="en-US"
+                        value={count}
+                        format={{ minimumIntegerDigits: 1 }}
+                    />
                 </span>
                 {value && (
                     <button

@@ -19,7 +19,11 @@ export const AngularCode: FC = () => {
 
     return (
         <div className="flex flex-col gap-2">
-            <Button variant="link" size="default" asChild>
+            <Button
+                variant="link"
+                size="default"
+                className="h-auto justify-start self-start p-0 text-xs"
+                asChild>
                 <Link href="/docs/v2/packages/angular">
                     Get started with <span className="font-heading">Angular</span>{' '}
                     <ArrowRightUpIcon size={16} />

@@ -20,13 +20,16 @@ export function IconsContent() {
             className="
               relative flex w-full flex-1 flex-col justify-start gap-9 overflow-hidden bg-background
               p-4 text-center
-              md:gap-12 md:px-10 md:py-[34px]
+              md:gap-12 md:px-6 md:py-[34px]
+              lg:px-10
             ">
             <div
-                className={`relative container flex w-full flex-1 flex-col items-center self-center`}>
+                className={`
+                  relative flex w-full max-w-[96rem] flex-1 flex-col items-center self-center
+                `}>
                 <div
                     className={`
-                      absolute container mx-4 size-full gap-2 self-center overflow-hidden
+                      absolute inset-0 overflow-hidden
                       rounded-2xl bg-default-100 px-3 py-12
                       md:rounded-3xl md:px-4
                     `}>
