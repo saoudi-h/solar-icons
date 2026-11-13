@@ -111,6 +111,10 @@ jobs:
             - name: Validate bundle imports
               run: pnpm check:dist-imports
 
+            # Reads the generated static icons, so it runs after the build.
+            - name: Validate duotone output
+              run: pnpm check:duotone-output
+
             # Also checked in release.yml; here it fails before the merge.
             - name: Validate Figma catalog synchronization
               run: pnpm --filter @solar-icons/figma-plugin check:catalog
@@ -140,9 +144,6 @@ jobs:
 
             - name: Check that the committed generated files are up to date
               run: pnpm catalog:check
-
-            - name: Validate duotone output
-              run: pnpm check:duotone-output
 
     site:
         name: Site
