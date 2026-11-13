@@ -13,6 +13,7 @@
         "sync:umami": "tsx ./scripts/sync-umami.ts",
         "typecheck": "tsc --noEmit",
         "pretypecheck": "pnpm ensure:icon-package && pnpm generate:icon-catalog && pnpm generate:hero-icons && pnpm generate:site-stats",
+        "pretest": "pnpm ensure:icon-package && pnpm generate:icon-catalog && pnpm generate:hero-icons && pnpm generate:site-stats",
         "lint": "oxlint --deny-warnings . && pnpm lint:links",
         "format": "oxfmt --check .",
         "format:fix": "oxfmt --write .",

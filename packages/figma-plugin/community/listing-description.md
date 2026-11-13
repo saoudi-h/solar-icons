@@ -6,7 +6,7 @@ Copy the tagline from `listing-tagline.txt` and the text below into the plugin l
 
 Browse the complete Solar Icons collection and insert icons directly into your Figma designs.
 
-Solar Icons includes 1,517 icons across six styles: Linear, Broken, Line Duotone, Outline, Bold, and Bold Duotone.
+Solar Icons includes 1,576 icons across six styles: Linear, Broken, Line Duotone, Outline, Bold, and Bold Duotone.
 
 Search by name, category, or related terms. Insert an icon immediately or select several icons before adding them to the canvas. Adjust icon size and preview stroke width for Linear, Broken, and Line Duotone icons.
 

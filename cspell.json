@@ -149,7 +149,8 @@
         "csproj",
         "nuget",
         "autoloaded",
-        "trimmable"
+        "trimmable",
+        "gantt"
     ],
     "ignorePaths": [
         "node_modules",

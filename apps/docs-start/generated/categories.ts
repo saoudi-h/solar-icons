@@ -33,13 +33,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'building',
         label: 'Building',
-        count: 7,
+        count: 9,
         representative: 'city',
     },
     {
         slug: 'business',
         label: 'Business',
-        count: 28,
+        count: 32,
         representative: 'chart',
     },
     {
@@ -51,7 +51,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'devices',
         label: 'Devices',
-        count: 91,
+        count: 95,
         representative: 'laptop',
     },
     {
@@ -75,7 +75,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'food',
         label: 'Food',
-        count: 19,
+        count: 25,
         representative: 'chef-hat',
     },
     {
@@ -87,13 +87,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'home',
         label: 'Home',
-        count: 35,
+        count: 36,
         representative: 'sofa',
     },
     {
         slug: 'it',
         label: 'IT',
-        count: 70,
+        count: 72,
         representative: 'code',
     },
     {
@@ -117,7 +117,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'medicine',
         label: 'Medicine',
-        count: 33,
+        count: 35,
         representative: 'medical-kit',
     },
     {
@@ -129,13 +129,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'money',
         label: 'Money',
-        count: 35,
+        count: 41,
         representative: 'banknote',
     },
     {
         slug: 'nature',
         label: 'Nature',
-        count: 9,
+        count: 14,
         representative: 'leaf',
     },
     {
@@ -153,7 +153,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'parts',
         label: 'Parts',
-        count: 20,
+        count: 25,
         representative: 'car',
     },
     {
@@ -171,13 +171,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'security',
         label: 'Security',
-        count: 50,
+        count: 51,
         representative: 'shield-check',
     },
     {
         slug: 'settings',
         label: 'Settings',
-        count: 36,
+        count: 37,
         representative: 'tuning',
     },
     {
@@ -195,25 +195,25 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'text-formatting',
         label: 'Text Formatting',
-        count: 38,
+        count: 45,
         representative: 'text-bold',
     },
     {
         slug: 'time',
         label: 'Time',
-        count: 28,
+        count: 30,
         representative: 'clock-circle',
     },
     {
         slug: 'tools',
         label: 'Tools',
-        count: 62,
+        count: 63,
         representative: 'palette',
     },
     {
         slug: 'ui',
         label: 'UI',
-        count: 167,
+        count: 176,
         representative: 'cursor',
     },
     {
@@ -225,7 +225,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'video',
         label: 'Video',
-        count: 111,
+        count: 112,
         representative: 'play-circle',
     },
     {

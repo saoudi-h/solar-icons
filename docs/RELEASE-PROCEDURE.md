@@ -40,8 +40,8 @@ Changesets cascade the versions, but these need explicit verification:
 
 1. Normal state: nothing happens automatically. When the catalogue moves, regenerate deliberately from the repository root (`node packages/rails/bin/fetch-icons`, or `pnpm catalog:sync`, which runs it with every other generator) and commit `lib/solar_icons/icons/`, `icons.rb`, and `.provenance.json` together with the catalogue change or in the release PR.
 2. Release: the version PR bumps `lib/solar_icons/version.rb`, `CHANGELOG.md` and the path version in `demo/Gemfile.lock` when `static` moves (section 11); for a Rails-only change do it by hand and land it on `main` via PR.
-3. Publish: push a `solar_icons-v<version>` tag matching the version. `rails-publish.yml` re-runs the specs, builds the gem, asserts the 9,102-SVG payload, and pushes to RubyGems.org through OIDC trusted publishing (no token).
-4. Verify: the version on rubygems.org, a frozen `bundle install` of `demo/`, and the CI demo smoke test (six style pages, 1,517 SVGs each).
+3. Publish: push a `solar_icons-v<version>` tag matching the version. `rails-publish.yml` re-runs the specs, builds the gem, asserts the 9,456-SVG payload, and pushes to RubyGems.org through OIDC trusted publishing (no token).
+4. Verify: the version on rubygems.org, a frozen `bundle install` of `demo/`, and the CI demo smoke test (six style pages, 1,576 SVGs each).
 5. First-time setup only (done): trusted publisher on rubygems.org for repository `saoudi-h/solar-icons` and workflow `rails-publish.yml`. Consider a tag protection rule for `solar_icons-v*`.
 
 ## 6. Skill (auto-detected, no submission)

@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>SolarIcons.Blazor</PackageId>
     <Version>2.3.1</Version>
-    <Description>Native Blazor components for Solar Icons: 1,517 icons in six styles.</Description>
+    <Description>Native Blazor components for Solar Icons: 1,576 icons in six styles.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/saoudi-h/solar-icons</RepositoryUrl>

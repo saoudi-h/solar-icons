@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/vue` (v2 stable). Vue 3 distribution shipping unit-per-style components (`src/icons/<style>/`), dynamic icons (`src/icons/dynamic/`, 1,517 files + `DynamicIcon`), `<SolarProvider>`, `useSolar()`, and CSS classes (`solar` / `solar-{kebab}`). See [scripts/AGENT.md](scripts/AGENT.md) for codegen/export shape and [src/lib/AGENT.md](src/lib/AGENT.md) for runtime/plugin behavior.
+`@solar-icons/vue` (v2 stable). Vue 3 distribution shipping unit-per-style components (`src/icons/<style>/`), dynamic icons (`src/icons/dynamic/`, 1,576 files + `DynamicIcon`), `<SolarProvider>`, `useSolar()`, and CSS classes (`solar` / `solar-{kebab}`). See [scripts/AGENT.md](scripts/AGENT.md) for codegen/export shape and [src/lib/AGENT.md](src/lib/AGENT.md) for runtime/plugin behavior.
 
 ## ⚙️ Conventions & Stack
 
