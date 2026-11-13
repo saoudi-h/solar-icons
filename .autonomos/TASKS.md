@@ -31,6 +31,8 @@
 
 - [ ] **[CATEGORY-COMPOSITE-MODEL]** Replace the category-length heuristic with an explicit, backward-compatible mapping that preserves all Figma category labels and detects collisions. **Issue:** `ISSUE-ICON-CATEGORIES`. `Priority: 🔵` `Complexity: L`
 
+- [x] **[ICONS-NAME-TOOLTIP]** Fix icon name tooltips being clipped by the virtualized grid's scroll viewport at the bottom and side edges; cover with a Playwright regression. `Priority: 🟠` `Complexity: S` *Issue: #719. See worklogs/2026-11-12-ICONS-NAME-TOOLTIP.md*
+
 - [/] **[ICON-FIXES]** Fix two reported icon issues: one incorrect icon name and one SVG requiring regeneration. Details and exact source-of-truth changes will be scoped after the maintainer provides the issue descriptions. `Priority: 🟠` `Complexity: S`
 
 - [/] **[METADATA-AUDIT]** Audit and correct semantic errors in the hand-curated icon metadata, keep generated explorer descriptions synchronized, and maintain regression checks for known false-positive tags. Do not change Fuse or search semantics. `Priority: 🔴` `Complexity: L`

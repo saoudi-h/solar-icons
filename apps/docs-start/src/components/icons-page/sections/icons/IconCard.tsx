@@ -5,6 +5,7 @@ import { cn } from '~/lib/utils'
 
 import { useSelectedIconName, useShowcaseReady, useStyleURL } from './context'
 import { useIconPreview } from './icon-registry'
+import { useIconNameTooltip } from './IconNameTooltip'
 import { isRecentExtension, RecentIconDot } from './OriginControls'
 
 type IconCardProps = Pick<IconData, 'name' | 'origin' | 'addedAt'> & {
@@ -20,6 +21,7 @@ export const IconCard = memo(
             const [selectedName, setIconName] = useSelectedIconName()
             const [weight] = useStyleURL()
             const { Icon, loading, error, retry } = useIconPreview(name, weight)
+            const tooltip = useIconNameTooltip()
             const isSelected = selectedName === name
             return (
                 <button
@@ -30,7 +32,25 @@ export const IconCard = memo(
                     aria-pressed={isSelected}
                     aria-busy={loading}
                     disabled={!ready || (loading && !Icon)}
-                    onClick={() => (error ? retry() : setIconName(isSelected ? null : name))}
+                    onClick={() => {
+                        tooltip.hide()
+                        if (error) retry()
+                        else setIconName(isSelected ? null : name)
+                    }}
+                    onPointerEnter={
+                        showName ? undefined : event => tooltip.show(name, event.currentTarget)
+                    }
+                    onPointerLeave={tooltip.hide}
+                    onFocus={
+                        showName
+                            ? undefined
+                            : event => {
+                                  // Keyboard focus only: a click selects, it does not describe.
+                                  if (event.currentTarget.matches(':focus-visible'))
+                                      tooltip.show(name, event.currentTarget, true)
+                              }
+                    }
+                    onBlur={tooltip.hide}
                     className={cn(
                         `
                           group relative flex size-full cursor-pointer flex-col items-center
@@ -75,20 +95,7 @@ export const IconCard = memo(
                             ">
                             {name}
                         </span>
-                    ) : (
-                        <span
-                            aria-hidden="true"
-                            className="
-                              pointer-events-none absolute top-full left-1/2 z-10 -mt-1.5
-                              -translate-x-1/2 rounded-md bg-foreground px-1.5 py-0.5 text-[11px]/4
-                              font-medium whitespace-nowrap text-background opacity-0 shadow-sm
-                              transition-opacity duration-100
-                              group-hover:opacity-100 group-hover:delay-150
-                              group-focus-visible:opacity-100
-                            ">
-                            {name}
-                        </span>
-                    )}
+                    ) : null}
                 </button>
             )
         }

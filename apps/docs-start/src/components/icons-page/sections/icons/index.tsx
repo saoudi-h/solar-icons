@@ -9,6 +9,7 @@ import { ShowcaseProvider } from './context'
 import { FilterBar } from './FilterBar'
 import { IconDetail } from './icon-detail'
 import { IconGridVirtualized, INITIAL_GRID_HEIGHT } from './IconGrid'
+import { IconNameTooltipProvider } from './IconNameTooltip'
 
 /**
  * Three zones, each with one job: the bar finds and tunes, the grid shows,
@@ -57,10 +58,12 @@ export const IconShowcase: React.FC<{ className?: string }> = ({ className }) =>
                         <CategoryNav />
                     </aside>
                     <div className="min-w-0 flex-1">
-                        <IconGridVirtualized
-                            onHeightChange={setGridHeight}
-                            detailHeight={hasRoomForColumn ? 0 : sheetHeight}
-                        />
+                        <IconNameTooltipProvider>
+                            <IconGridVirtualized
+                                onHeightChange={setGridHeight}
+                                detailHeight={hasRoomForColumn ? 0 : sheetHeight}
+                            />
+                        </IconNameTooltipProvider>
                     </div>
                     {hasRoomForColumn && <IconDetail placement="side" />}
                 </div>

@@ -390,6 +390,64 @@ test('the toolbar stays on one row and icon names are an option', async ({ page 
         .toBeGreaterThan(compact!.height)
 })
 
+test('icon name tooltips stay inside the grid at its edges', async ({ page }) => {
+    await page.goto('/icons')
+    const grid = page.getByRole('grid', { name: 'Icons', exact: true })
+    const cells = grid.getByRole('button')
+    await expect(cells.first()).toBeEnabled()
+
+    await grid.evaluate(el => {
+        el.scrollTop = el.scrollHeight
+    })
+
+    // Wait for the virtualizer to render the bottom row before sampling it.
+    await expect
+        .poll(async () => {
+            const gridBox = await grid.boundingBox()
+            const lastBox = await cells.last().boundingBox()
+            if (!gridBox || !lastBox) return false
+            return lastBox.y + lastBox.height <= gridBox.y + gridBox.height + 1
+        })
+        .toBe(true)
+
+    // The row closest to the bottom edge is the one where a tooltip below the
+    // icon used to be cut in half by the scroller's overflow.
+    const boxes = await cells.evaluateAll(nodes =>
+        nodes.map(node => {
+            const rect = node.getBoundingClientRect()
+            return { label: node.getAttribute('aria-label')!, top: rect.top }
+        })
+    )
+    const lastRowTop = Math.max(...boxes.map(box => box.top))
+    const lastRow = boxes.filter(box => box.top === lastRowTop)
+    expect(lastRow.length).toBeGreaterThan(1)
+
+    const viewport = page.viewportSize()!
+    for (const cell of [lastRow[0]!, lastRow[lastRow.length - 1]!]) {
+        await page.getByRole('button', { name: cell.label, exact: true }).hover()
+        const tooltip = page.locator('[data-slot="tooltip-content"]')
+        await expect(tooltip).toBeVisible()
+        const tooltipBox = (await tooltip.boundingBox())!
+        expect(tooltipBox.y).toBeGreaterThanOrEqual(0)
+        expect(tooltipBox.y + tooltipBox.height).toBeLessThanOrEqual(viewport.height)
+        expect(tooltipBox.x).toBeGreaterThanOrEqual(0)
+        expect(tooltipBox.x + tooltipBox.width).toBeLessThanOrEqual(viewport.width)
+        // An in-cell tooltip is clipped by the scroller's overflow, so its
+        // intersection ratio drops below 1 even while its box is on screen.
+        const fullyVisible = await tooltip.evaluate(
+            element =>
+                new Promise<boolean>(resolve => {
+                    const observer = new IntersectionObserver(entries => {
+                        observer.disconnect()
+                        resolve((entries[0]?.intersectionRatio ?? 0) >= 1)
+                    })
+                    observer.observe(element)
+                })
+        )
+        expect(fullyVisible).toBe(true)
+    }
+})
+
 test('the chosen package is kept from one icon to the next', async ({ page }) => {
     await page.goto('/icons?icon=home')
     await page.getByRole('tab', { name: 'Vue', exact: true }).click()
@@ -401,4 +459,36 @@ test('the chosen package is kept from one icon to the next', async ({ page }) =>
         'true'
     )
     await expect(page.getByRole('tabpanel')).toContainText('HeartIcon')
+})
+
+test('icon name tooltips follow the app tooltip behaviour', async ({ page }) => {
+    await page.goto('/icons')
+    const grid = page.getByRole('grid', { name: 'Icons', exact: true })
+    const cells = grid.getByRole('button')
+    await expect(cells.first()).toBeEnabled()
+    const tooltip = page.locator('[data-slot="tooltip-content"]')
+
+    const first = cells.nth(0)
+    const second = cells.nth(1)
+    const firstName = (await first.getAttribute('aria-label'))!
+    const secondName = (await second.getAttribute('aria-label'))!
+
+    await first.hover()
+    await expect(tooltip).toHaveText(firstName)
+    // Straddles the cell's bottom edge instead of sitting wholly below it.
+    const cellBox = (await first.boundingBox())!
+    const tipBox = (await tooltip.boundingBox())!
+    expect(tipBox.y).toBeLessThan(cellBox.y + cellBox.height)
+    expect(tipBox.y + tipBox.height).toBeGreaterThan(cellBox.y + cellBox.height)
+
+    // Moving to the next cell reuses the open tooltip: no second delay.
+    await second.hover()
+    await expect(tooltip).toHaveText(secondName, { timeout: 400 })
+    await expect(tooltip).toHaveCount(1)
+
+    await page.keyboard.press('Escape')
+    await expect(tooltip).toHaveCount(0)
+
+    await second.click()
+    await expect(tooltip).toHaveCount(0)
 })
