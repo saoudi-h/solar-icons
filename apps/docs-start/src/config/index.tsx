@@ -161,6 +161,21 @@ export const config: Config = {
                     },
                 ],
             },
+            {
+                title: 'Other projects',
+                links: [
+                    {
+                        label: 'Postdot',
+                        url: 'https://postdot.app/?utm_source=solar-icons.dev&utm_medium=footer',
+                        external: true,
+                    },
+                    {
+                        label: 'RateLock',
+                        url: 'https://ratelock-docs.vercel.app/?utm_source=solar-icons.dev&utm_medium=footer',
+                        external: true,
+                    },
+                ],
+            },
         ],
     },
     heroSection: {

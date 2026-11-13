@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ sections, bottomText, showSurfac
                         <div
                             className={`
                               container mx-auto grid grid-cols-1 gap-8 px-4
-                              md:grid-cols-3
+                              md:grid-cols-4
                             `}>
                             {sections.map((section, index) => {
                                 return (
