@@ -76,6 +76,16 @@ Missing an icon? [Request one](https://github.com/saoudi-h/solar-icons/issues/ne
 
 Code, documentation and icon contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, review and licensing. Agree on an icon's scope in an issue before drawing it; review starts with Linear.
 
+## Other projects
+
+Related open-source projects by [Hakim Saoudi](https://github.com/saoudi-h):
+
+- [Postdot](https://postdot.app/?utm_source=github&utm_medium=readme&utm_campaign=solar-icons): self-hosted social publishing for you and your agents
+- [RateLock](https://ratelock-docs.vercel.app/?utm_source=github&utm_medium=readme&utm_campaign=solar-icons): rate limiting for Node.js, Bun and other runtimes
+- [tw-screens](https://github.com/saoudi-h/tw-screens): responsive breakpoint hooks inspired by Tailwind CSS
+- [Autonomos](https://github.com/saoudi-h/autonomos): a protocol that gives AI coding agents structured project context
+- [Tala Tools](https://github.com/saoudi-h/tala-tools): shared lint, format, TypeScript and build configurations
+
 ## License
 
 - **Code:** MIT
