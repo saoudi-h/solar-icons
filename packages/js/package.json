@@ -1,6 +1,6 @@
 {
     "name": "@solar-icons/js",
-    "version": "2.5.1",
+    "version": "2.6.0",
     "private": false,
     "description": "Vanilla JavaScript runtime DOM injection for Solar Icons",
     "keywords": [
