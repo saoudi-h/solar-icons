@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-Private package (`"private": true`), single source of truth for icon assets and metadata consumed by all framework packages: 9,102 committed SVGs in `svgs/` (37 categories × 6 styles), `metadata.json`, `metadata-descriptions.json`, `types.ts`, `utils.ts`, and build-time scripts in `src/scripts/` (see [src/scripts/AGENT.md](src/scripts/AGENT.md)).
+Private package (`"private": true`), single source of truth for icon assets and metadata consumed by all framework packages: 9,456 committed SVGs in `svgs/` (37 categories × 6 styles), `metadata.json`, `metadata-descriptions.json`, `types.ts`, `utils.ts`, and build-time scripts in `src/scripts/` (see [src/scripts/AGENT.md](src/scripts/AGENT.md)).
 
 ## ⚙️ Conventions
 

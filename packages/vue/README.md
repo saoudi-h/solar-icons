@@ -1,10 +1,10 @@
 # @solar-icons/vue
 
-Vue components for Solar Icons. This package provides 9,102 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Vue applications.
+Vue components for Solar Icons. This package provides 9,456 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Vue applications.
 
 ## Features
 
-- **9,102 SVGs:** 1,517 unique icons in 6 styles. Designed by 480 Design.
+- **9,456 SVGs:** 1,576 unique icons in 6 styles. Designed by 480 Design.
 - **Tree-shakeable:** Import only the icons you use.
 - **Global configuration:** Set defaults for size, color, and stroke width using `<SolarProvider>`.
 - **Customizable:** Override size, color, and stroke width per icon via props or CSS variables.
