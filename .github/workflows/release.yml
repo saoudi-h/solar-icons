@@ -61,7 +61,7 @@ jobs:
             - name: Build
               # The release gate targets the publishable packages only. The test
               # apps and the documentation site are not published from here.
-              run: pnpm turbo build --concurrency=1 --filter='./packages/*'
+              run: pnpm turbo build --concurrency=3 --filter='./packages/*'
 
             - name: Validate package exports
               run: pnpm check:exports
@@ -69,8 +69,10 @@ jobs:
             - name: Validate bundle imports
               run: pnpm check:dist-imports
 
+            # static and the plugin were built just above; `check:figma-catalog`
+            # would build them a second time.
             - name: Validate Figma catalog synchronization
-              run: pnpm check:figma-catalog
+              run: pnpm --filter @solar-icons/figma-plugin check:catalog
 
             - name: Create Release Pull Request or Publish to NPM
               id: changesets

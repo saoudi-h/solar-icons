@@ -13,7 +13,7 @@ status: 'active'
 ## ⚙️ Conventions
 
 - Angular 17–22 (peer: `@angular/common`, `@angular/core` at `"17.x - 22.x"`). Standalone components only (no NgModules); `input()` and `computed()` signals.
-- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && npx ngc -p tsconfig.js.json` (two `ngc` passes: types then JS emit).
+- Build = `pnpm generate:assets && pnpm copy:licenses && rimraf dist out-tsc && npx ngc -p tsconfig.lib.json && node scripts/strip-js-comments.mjs`. One `ngc` pass emits `.js` and `.d.ts` with comments (the `.d.ts` keep the icon documentation); the script then removes the comments from the `.js` only, with TypeScript's printer (same bytes as a `removeComments` compile, without a second ~30 s pass).
 - `scripts/generate-assets.ts` reads SVGs from `core/svgs/` (`svgsDir` option) and emits flat files under `src/icons/`. `scripts/parser-hook.ts` is the codegen template (`@xmldom/xmldom` devDep re-parses SVG bodies into `h()` trees).
 - All shared codegen helpers (`applyDuotoneStyle`, `WEIGHT_MAP`, `Weight`, `StyleKey`, `StyleComponentsMap`, `toPascalCase`, `IconWeight`, `ParsedIcon`, `IconContext`) come from `@solar-icons/core` (Path A). No local re-declarations.
 

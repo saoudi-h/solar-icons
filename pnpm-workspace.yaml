@@ -39,6 +39,9 @@ packageExtensions:
         dependencies:
             typescript: 6.0.3
             '@angular/compiler': ^22.2.3
+patchedDependencies:
+  publint@0.3.25: patches/publint@0.3.25.patch
+  rolldown-plugin-dts@0.29.0: patches/rolldown-plugin-dts@0.29.0.patch
 permissions:
   '@tanstack/react-start':
     skills: true

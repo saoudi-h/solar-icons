@@ -19,6 +19,7 @@ status: 'active'
 ## ⚠️ Known Constraints
 
 - **`@solar-icons/nuxt` depends on this package** (`workspace:*`).
+- **Generated icon functions declare `: VNode` explicitly.** Without it TypeScript infers the return type from `h()` for each of the ~10k icons while emitting declarations, which doubles the build (about 52 s against 28 s); the published signatures are unchanged.
 - **Named exports required:** Per-style and dynamic files export `export const XxxIcon = ...` (no default exports). Breaking v2 change from default per-file imports.
 - **`tsdown` `exports: true` rewrites `bin`:** Declare any future `bin` via `exports: { bin: { ... } }`.
 - **V2 removals/renames:** `displayName` and `mirrored` removed; `secondaryColor`/`secondaryOpacity` replace `duotoneColor`/`duotoneOpacity`.

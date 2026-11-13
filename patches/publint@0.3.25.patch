@@ -1,0 +1,112 @@
+diff --git a/src/shared/utils.js b/src/shared/utils.js
+index 04782280c189463effc699457eb9543e5fae1823..3db208a435cfe302d9dafcfb846fd6606afcc00d 100644
+--- a/src/shared/utils.js
++++ b/src/shared/utils.js
+@@ -194,7 +194,7 @@ export async function exportsGlob(globStr, vfs, packedFiles, exportsKey, exports
+     for (const item of items) {
+       const itemPath = vfs.pathJoin(dirPath, item)
+       // ensure the file is within the packed files (if provided)
+-      if (!packedFiles || packedFiles.some((file) => file.startsWith(itemPath))) {
++      if (!packedFiles || hasPackedFileWithPrefix(packedFiles, itemPath)) {
+         if (await vfs.isPathDir(itemPath)) {
+           await scanDir(itemPath)
+         } else {
+@@ -580,3 +580,29 @@ export function replaceLast(str, search, replace) {
+ export function startsWithShebang(code) {
+   return /^#!\s*\/usr\/bin\/env/.test(code)
+ }
++
++/** @type {WeakMap<string[], string[]>} */
++const sortedPackedFiles = new WeakMap()
++
++/**
++ * Same result as `packedFiles.some((file) => file.startsWith(prefix))`, but
++ * with a binary search over a sorted copy instead of a scan of every file for
++ * every directory entry (quadratic on packages with thousands of files).
++ * @param {string[]} packedFiles
++ * @param {string} prefix
++ */
++function hasPackedFileWithPrefix(packedFiles, prefix) {
++  let sorted = sortedPackedFiles.get(packedFiles)
++  if (!sorted) {
++    sorted = [...packedFiles].sort()
++    sortedPackedFiles.set(packedFiles, sorted)
++  }
++  let low = 0
++  let high = sorted.length
++  while (low < high) {
++    const mid = (low + high) >> 1
++    if (sorted[mid] < prefix) low = mid + 1
++    else high = mid
++  }
++  return low < sorted.length && sorted[low].startsWith(prefix)
++}
+diff --git a/src/shared/vfs-tarball.js b/src/shared/vfs-tarball.js
+index 0d3453a1a6b433fd393d0dca1bee46574fad61f5..ad3f65c2eff9bc1f113a779c8fd22f4f3e39a49f 100644
+--- a/src/shared/vfs-tarball.js
++++ b/src/shared/vfs-tarball.js
+@@ -6,35 +6,47 @@ export function createTarballVfs(files) {
+   /** @type {TextDecoder | undefined} */
+   let decoder
+ 
++  // Lookup tables built once: the linear scans below made every call O(files),
++  // so a package with ~10k files cost O(files^2).
++  /** @type {Map<string, import("../index.d.ts").PackFile>} */
++  const fileByName = new Map()
++  /** @type {Map<string, Set<string>>} directory path (with trailing slash) -> direct children */
++  const children = new Map()
++  for (const file of files) {
++    if (!fileByName.has(file.name)) fileByName.set(file.name, file)
++    let name = file.name
++    while (true) {
++      const slash = name.lastIndexOf('/')
++      if (slash === -1) break
++      const dir = name.slice(0, slash + 1)
++      const item = name.slice(slash + 1)
++      let set = children.get(dir)
++      if (!set) children.set(dir, (set = new Set()))
++      if (set.has(item)) break
++      set.add(item)
++      name = name.slice(0, slash)
++    }
++  }
++  /** @param {string} path */
++  const withSlash = (path) => (path.endsWith('/') ? path : path + '/')
++
+   return {
+     getDirName: (path) => path.replace(/\/[^/]*$/, ''),
+     getExtName: (path) => path.replace(/^.*\./, '.'),
+     isPathDir: async (path) => {
+-      path = path.endsWith('/') ? path : path + '/'
+-      return files.some((file) => file.name.startsWith(path))
++      return children.has(withSlash(path))
+     },
+     isPathExist: async (path) => {
+-      const pathDirVariant = path.endsWith('/') ? path : path + '/'
+-      return files.some((file) => file.name === path || file.name.startsWith(pathDirVariant))
++      return fileByName.has(path) || children.has(withSlash(path))
+     },
+     pathJoin: (...parts) => parts.join('/').replace(/\/(\.?\/){1,}/g, '/'),
+     pathRelative: (from, to) => to.replace(from, '').slice(1),
+     readDir: async (path) => {
+-      path = path.endsWith('/') ? path : path + '/'
+-      /** @type {string[]} */
+-      const items = []
+-      for (const file of files) {
+-        if (file.name.startsWith(path) && file.name !== path) {
+-          const item = file.name.slice(path.length).replace(/\/.*$/, '')
+-          if (!items.includes(item)) {
+-            items.push(item)
+-          }
+-        }
+-      }
+-      return items
++      const set = children.get(withSlash(path))
++      return set ? [...set] : []
+     },
+     readFile: async (path) => {
+-      const file = files.find((file) => file.name === path)
++      const file = fileByName.get(path)
+       if (!file) throw new Error(`Unable to read file at path: ${path}`)
+       if (typeof file.data === 'string') {
+         return file.data

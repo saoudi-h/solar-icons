@@ -90,22 +90,20 @@ jobs:
                       .
                       ./packages/*
 
-            # Only the publishable packages: the docs site has its own job and
-            # the test apps are not part of CI.
-            - name: Build
-              run: pnpm turbo build --concurrency=1 --filter='./packages/*'
-
-            - name: Typecheck
-              run: pnpm turbo typecheck --concurrency=1 --filter='./packages/*'
-
-            - name: Lint
-              run: pnpm turbo lint --concurrency=1 --filter='./packages/*'
-
-            - name: Tests
-              run: pnpm turbo test --concurrency=1 --filter='./packages/*'
-
+            # Checks that read files only go first: they fail in seconds, not
+            # after the build.
             - name: Release script tests
               run: pnpm test:scripts
+
+            - name: Validate skill catalog freshness
+              run: pnpm check:skill-counts
+
+            # Only the publishable packages: the docs site has its own job and
+            # the test apps are not part of CI. One Turbo run schedules the four
+            # tasks together, so a package is typechecked, linted and tested as
+            # soon as it is built and a failure stops the run early.
+            - name: Build, typecheck, lint and test
+              run: pnpm turbo build typecheck lint test --concurrency=3 --filter='./packages/*'
 
             - name: Validate package exports
               run: pnpm check:exports
@@ -113,8 +111,35 @@ jobs:
             - name: Validate bundle imports
               run: pnpm check:dist-imports
 
-            - name: Validate skill catalog freshness
-              run: pnpm check:skill-counts
+            # Also checked in release.yml; here it fails before the merge.
+            - name: Validate Figma catalog synchronization
+              run: pnpm --filter @solar-icons/figma-plugin check:catalog
+
+    # Every committed file derived from the catalogue (Blazor manifest, Ruby
+    # payload, Angular names, docs counts, Flutter widgets, Figma plugin...) is
+    # regenerated in one pass and compared with what was committed. It lists
+    # all the stale files at once, in about two minutes, instead of the
+    # lane workflows reporting them one after the other. Fix: `pnpm catalog:sync`.
+    drift:
+        name: Generated files
+        needs: scope
+        if: needs.scope.outputs.packages == 'true' || needs.scope.outputs.site == 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout branch
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              uses: ./.github/actions/install
+              with:
+                  node-version: ''
+                  filter: |
+                      .
+                      ./packages/*
+                      @solar-icons/docs-start...
+
+            - name: Check that the committed generated files are up to date
+              run: pnpm catalog:check
 
             - name: Validate duotone output
               run: pnpm check:duotone-output
@@ -146,6 +171,7 @@ jobs:
               run: pnpm turbo lint --concurrency=1 --filter=@solar-icons/docs-start...
 
             - name: Install the browser of the site tests
+              timeout-minutes: 5
               run: pnpm --filter @solar-icons/docs-start exec playwright install --with-deps chromium
 
             - name: Tests

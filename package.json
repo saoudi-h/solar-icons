@@ -53,6 +53,7 @@
         "setup": "pnpm install && pnpm build",
         "autonomos": "autonomos",
         "catalog:sync": "tsx scripts/sync-catalog.ts",
+        "catalog:check": "tsx scripts/sync-catalog.ts --check",
         "sync:icon-inventory": "tsx scripts/check-icon-inventory.ts --write --check-generated --check-docs",
         "polyglot:bump": "tsx scripts/bump-polyglot-packages.ts",
         "test:scripts": "tsx --test scripts/lib/*.test.ts"

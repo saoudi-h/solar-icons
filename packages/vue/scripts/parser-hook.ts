@@ -139,13 +139,13 @@ export function vueComponentFile(ctx: IconContext<ParsedIcon>): FileDefinition {
     const nodes = parseIconNodes(body)
     const hChildren = nodes.map(n => nodeToH(n, '            ')).join(',\n')
 
-    const content = `import { h } from 'vue'
+    const content = `import { h, type VNode } from 'vue'
 import IconBase from '../../lib/IconBase.vue'
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
  */
-export const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }) => {
+export const ${icon.pascalName}Icon = (props: Record<string, unknown>, { attrs }: { attrs: Record<string, unknown> }): VNode => {
     return h(IconBase, {
         ...attrs,
         ...props,

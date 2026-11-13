@@ -36,6 +36,32 @@ jobs:
         timeout-minutes: 30
         steps:
             - uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+            # The cheap verification (generation, drift, rendering every icon,
+            # packing) always runs. The expensive part (build benchmarks,
+            # trimming matrix, browsers: about 8 minutes) runs when the Blazor
+            # package or its playground changes, and on every push to main. A
+            # catalogue refresh, a lockfile bump or a core change leaves it out:
+            # it does not change how the package trims.
+            - name: Decide whether the expensive checks are needed
+              id: scope
+              run: |
+                  if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
+                      echo "heavy=true" >> "$GITHUB_OUTPUT"
+                      exit 0
+                  fi
+                  files=$(git diff --name-only "$BASE_SHA"...HEAD)
+                  if echo "$files" \
+                      | grep -E '^(packages/blazor/|apps/blazor-app/|\.github/workflows/blazor\.yml$)' \
+                      | grep -vE '^packages/blazor/catalogue-manifest\.json$' \
+                      | grep -q .; then
+                      echo "heavy=true" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "heavy=false" >> "$GITHUB_OUTPUT"
+                  fi
+              env:
+                  BASE_SHA: ${{ github.event.pull_request.base.sha }}
             - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v7
               with:
@@ -59,6 +85,7 @@ jobs:
                       8.0.x
                       10.0.402
             - name: Measure clean and incremental compilation
+              if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor measure:build
             - name: Render every icon
               run: pnpm --dir packages/blazor test:dotnet
@@ -71,18 +98,25 @@ jobs:
             - name: Verify drift detection
               run: pnpm --dir packages/blazor check:generator
             - name: Build playground
+              if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir apps/blazor-app build:dotnet
             - name: Install WebAssembly tools
+              if: steps.scope.outputs.heavy == 'true'
               working-directory: packages/blazor
               run: dotnet workload install wasm-tools wasm-tools-net8
             - name: Build assembly inspector
+              if: steps.scope.outputs.heavy == 'true'
               working-directory: packages/blazor
               run: dotnet build tools/AssemblyInspector -c Release
             - name: Verify published package trimming
+              if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor measure:trimming
             - name: Install browser
+              timeout-minutes: 5
+              if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor exec playwright install --with-deps chromium
             - name: Run trimmed consumers and playground in browsers
+              if: steps.scope.outputs.heavy == 'true'
               run: pnpm --dir packages/blazor test:browser
             - name: Save verification evidence
               if: always()
