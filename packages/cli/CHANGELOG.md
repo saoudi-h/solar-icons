@@ -1,5 +1,12 @@
 # @solar-icons/cli
 
+## 2.10.1
+
+### Patch Changes
+
+- Updated dependencies [[`12dde74`](https://github.com/saoudi-h/solar-icons/commit/12dde7477c0e43ec09dacd8550fcb01cce09e2c7)]:
+  - @solar-icons/static@2.5.1
+
 ## 2.10.0
 
 ### Minor Changes
