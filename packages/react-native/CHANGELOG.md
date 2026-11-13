@@ -1,5 +1,13 @@
 # @solar-icons/react-native
 
+## 2.6.0
+
+### Minor Changes
+
+- [#730](https://github.com/saoudi-h/solar-icons/pull/730) [`faab472`](https://github.com/saoudi-h/solar-icons/commit/faab472b5b7aa8addae0af85511f54154d02568b) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Expand catalogue to 1,576 icon families (9,456 SVGs):
+  
+  - Add 59 new icon families across all 6 canonical styles (`Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`): `bank`, `factory`, `chart-area`, `chart-candlestick`, `chart-gantt`, `chart-scatter`, `bluetooth-off`, `lightbulb-off`, `monitor-off`, `plug`, `apple`, `burger`, `cake`, `fork-knife`, `ice-cream-cone`, `pizza`, `door-closed`, `git-merge`, `workflow`, `flask`, `microscope`, `bitcoin`, `coins`, `piggy-bank`, `pound`, `rupee`, `yen`, `fish`, `flower`, `mountains`, `sprout`, `tree`, `airplane`, `anchor`, `bicycle`, `ship`, `truck`, `fingerprint`, `wrench`, `highlighter`, `paragraph`, `subscript`, `superscript`, `text-align-center`, `text-align-left`, `text-align-right`, `calendar-check`, `calendar-close`, `pen-tool`, `cursor-click`, `diamond`, `dice`, `flag-off`, `gavel`, `justice-scale`, `megaphone`, `puzzle`, `skull`, and `gallery-off`.
+
 ## 2.5.0
 
 ### Minor Changes
