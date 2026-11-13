@@ -38,3 +38,4 @@ Private package (`"private": true`), single source of truth for icon assets and 
 - **Canonical style order:** `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
 - **`Scale` icon collision:** `Scale` exists in `arrows-action` and `devices`; package `generate-assets.ts` scripts must deduplicate `pascalName` with a `seen` Set in style barrels.
 - **`tsdown` `exports: true` rewrites `bin`:** declare binaries via `exports: { bin: { ... } }`.
+- **Duotone accent style:** `applyDuotoneStyle` is the only implementation (`transformDuotoneAccent` wraps it). Opacity multiplies down the tree, so the style goes on accent root elements only, never on children of a `<g>`; the parser throws on nested accent opacity. `duotone.test.ts` (including source-vs-generated render parity) and root `pnpm check:duotone-output` guard it.

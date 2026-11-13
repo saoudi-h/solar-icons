@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-video-frame-bold-duotone"><g style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)">
-<path d="M7.75 21.9313C8.9058 22 10.2996 22 12 22C13.7004 22 15.0942 22 16.25 21.9313V12.75H7.75V21.9313Z" fill="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
-<path d="M16.25 2.06874C15.0942 2 13.7004 2 12 2C10.2996 2 8.9058 2 7.75 2.06874V11.25H16.25V2.06874Z" fill="currentColor" style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"/>
+<path d="M7.75 21.9313C8.9058 22 10.2996 22 12 22C13.7004 22 15.0942 22 16.25 21.9313V12.75H7.75V21.9313Z" fill="currentColor"/>
+<path d="M16.25 2.06874C15.0942 2 13.7004 2 12 2C10.2996 2 8.9058 2 7.75 2.06874V11.25H16.25V2.06874Z" fill="currentColor"/>
 </g><path d="M6.24976 2.22168C5.02703 2.41594 4.14826 2.78047 3.46423 3.46451C2.78019 4.14854 2.41566 5.02731 2.2214 6.25004H6.24976V2.22168Z" fill="currentColor"/>
 <path d="M2.0685 7.75004C2.01015 8.73121 2.00133 9.88386 2 11.25H6.24976V7.75004H2.0685Z" fill="currentColor"/>
 <path d="M2 12.75C2.00133 14.1162 2.01015 15.2689 2.0685 16.25H6.24976V12.75H2Z" fill="currentColor"/>

@@ -23,6 +23,7 @@ import fs from 'node:fs'
  */
 import path from 'node:path'
 
+import { applyDuotoneStyle, findNestedAccentOpacity } from './codegen'
 import { inlineSvgUse } from './inline-svg-use.mjs'
 import type { IconWeight } from './types'
 import { toPascalCase } from './utils'
@@ -172,6 +173,12 @@ const normalizeBody = (
     const duotoneMatch = body.match(DUOTONE_ACCENT_REGEX)
     if (duotoneMatch && duotoneMatch.length > 0) {
         duotoneAccentInner = duotoneMatch.join('\n').trim()
+        const nested = findNestedAccentOpacity(duotoneAccentInner)
+        if (nested) {
+            throw new Error(
+                `Duotone accent has an opacity nested inside an accent group (${nested.slice(0, 80)}); opacity would multiply. Keep opacity on the group only.`
+            )
+        }
         body = body.replace(DUOTONE_ACCENT_REGEX, '').trim()
     }
 
@@ -377,11 +384,6 @@ export const loadIcon = (category: string, style: IconWeight, name: string): Par
     return icon
 }
 
-const DUOTONE_CSS_VARS_HTML =
-    'style="color: var(--solar-secondary-color, currentColor); opacity: var(--solar-secondary-opacity, 0.5)"'
-const DUOTONE_CSS_VARS_JSX =
-    'style={{ color: "var(--solar-secondary-color, currentColor)", opacity: "var(--solar-secondary-opacity, 0.5)" }}'
-
 /**
  * Transforms a duotone-accent string so that `opacity="0.5"` is replaced
  * with CSS custom properties, giving consumers full control over the accent
@@ -398,22 +400,12 @@ const DUOTONE_CSS_VARS_JSX =
  *                  Svelte, Angular, and framework-agnostic templates.
  *
  * @returns The transformed accent string, or `null` if the input was `null`.
+ *
+ * Kept for API compatibility; delegates to {@link applyDuotoneStyle}, the
+ * single implementation of this transform.
  */
 export function transformDuotoneAccent(accent: string | null, jsxStyle = false): string | null {
-    if (!accent) return null
-    const styleAttr = jsxStyle ? DUOTONE_CSS_VARS_JSX : DUOTONE_CSS_VARS_HTML
-    return accent
-        .split('\n')
-        .map(line => {
-            const trimmed = line.trim()
-            if (!trimmed || trimmed.startsWith('</')) return line
-            const withoutOpacity = trimmed.replace(/\s+opacity="0\.5"/g, '')
-            if (withoutOpacity.endsWith('/>')) {
-                return withoutOpacity.slice(0, -2) + ` ${styleAttr}/>`
-            }
-            return withoutOpacity.replace('>', ` ${styleAttr}>`)
-        })
-        .join('\n')
+    return applyDuotoneStyle(accent, jsxStyle ? 'jsx' : 'html')
 }
 
 /**

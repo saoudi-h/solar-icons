@@ -182,3 +182,12 @@ acceptance. Keep this separate from the public request intake.
 - Impact: Deploying more than a couple of times a day is impractical, and every failed run costs a long wait before the next attempt.
 - Desired outcome: A CI run short enough to merge and deploy several times a day, without dropping the checks that protect the packages and the docs site. Deferred until the Cloudflare deployment of `apps/docs-start` is finished.
 - Tasks: none
+
+## [ISSUE-FIGMA-DUOTONE-NORMALIZATION] Normalize duotone tone structure in the Figma source
+
+- Type: proposal
+- Status: open
+- Evidence: 302 Bold Duotone and 4 Line Duotone sources wrap the secondary tone in `<g opacity="0.5">` with several paths, while other duotones use one `<path opacity="0.5">` per element. Mixed structures caused a double-opacity bug in generated outputs (GitHub #724, fixed in the pipeline). What Figma exports for flatten and union of disjoint shapes has not been verified empirically.
+- Impact: Not a correctness issue once the pipeline handles both forms; a uniform structure would be simpler to validate and slightly smaller.
+- Desired outcome: Evaluate on a few icons what Figma exports, whether flattening each tone separately and applying 50% opacity on the result is consistent and smaller, and whether the quality checker should hint at grouped opacity. Never flatten both tones together. GitHub #725.
+- Tasks: none
