@@ -1,5 +1,11 @@
 # @solar-icons/static
 
+## 2.5.1
+
+### Patch Changes
+
+- [#726](https://github.com/saoudi-h/solar-icons/pull/726) [`12dde74`](https://github.com/saoudi-h/solar-icons/commit/12dde7477c0e43ec09dacd8550fcb01cce09e2c7) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix the secondary tone of duotone icons rendering lighter than intended on about 300 icons (for example `printer` in Bold Duotone). The secondary opacity was applied on the group and again on each element inside it, so it multiplied (0.25 instead of 0.5 by default). It is now applied once per accent layer, so `--solar-secondary-opacity` means what it says.
+
 ## 2.5.0
 
 ### Minor Changes
