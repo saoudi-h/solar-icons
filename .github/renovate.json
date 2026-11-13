@@ -13,6 +13,25 @@
             "allowedVersions": "<3"
         },
         {
+            "description": "svelte2tsx, the Angular compiler and the Vue and Nuxt declaration builds need the TypeScript 6 JS API; TypeScript 7 does not provide it. Lift once those toolchains support 7.",
+            "matchPackageNames": ["typescript"],
+            "matchFileNames": [
+                "packages/angular/package.json",
+                "packages/codemod/package.json",
+                "packages/nuxt/package.json",
+                "packages/svelte/package.json",
+                "packages/vue/package.json",
+                "apps/angular-app/package.json",
+                "apps/vue-app/package.json"
+            ],
+            "allowedVersions": "<7"
+        },
+        {
+            "description": "The SolarIcons.Blazor library targets net8.0, so it must reference the 8.x Razor components package; 9 and 10 do not restore for net8.0. Lift when the library drops net8.0.",
+            "matchPackageNames": ["Microsoft.AspNetCore.Components.Web"],
+            "allowedVersions": "<9"
+        },
+        {
             "description": "Majors open a pull request only after approval on the dependency dashboard: the grouped PR was red on every run and reran three workflows on each rebase.",
             "groupName": "all major dependencies",
             "groupSlug": "all-major",

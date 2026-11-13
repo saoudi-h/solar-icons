@@ -27,7 +27,8 @@ overrides:
   '@angular/build': ^22.2.0
 
 # @sveltejs/package and @analogjs/vite-plugin-angular both phantom-import
-# `typescript` without declaring it; without this injection they resolve the
+# `typescript` without declaring it (the Angular plugin also phantom-imports
+# `@angular/compiler`); without this injection they resolve the
 # root TypeScript 7 (no JS API) instead of the TypeScript 6 that their
 # toolchains require (svelte2tsx emitDts, Angular vite plugin).
 packageExtensions:
@@ -37,6 +38,7 @@ packageExtensions:
     "@analogjs/vite-plugin-angular":
         dependencies:
             typescript: 6.0.3
+            '@angular/compiler': ^22.2.3
 patchedDependencies:
   publint@0.3.25: patches/publint@0.3.25.patch
   rolldown-plugin-dts@0.29.0: patches/rolldown-plugin-dts@0.29.0.patch
