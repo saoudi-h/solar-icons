@@ -4,7 +4,7 @@ import { cn } from '~/lib/utils'
 import { useOriginFilter } from './context'
 
 const RECENT_MONTHS = 3
-const RECENT_DOT_CLASS = 'absolute top-2 right-2 size-1.5 rounded-full bg-primary'
+const RECENT_DOT_CLASS = 'absolute -top-1 -right-1.5 size-1.5 rounded-full bg-primary'
 
 /** Whether an extension was added within the current recent-icon window. */
 export function isRecentExtension(addedAt?: string, now = new Date()): boolean {
@@ -31,40 +31,44 @@ export function RecentIconDot() {
     )
 }
 
-/** Filter control styled like the existing view-mode segmented control. */
-export function ExtendedFilterToggle() {
+/** Narrows the catalogue to the icons added by the project. */
+export function ExtendedFilterToggle({ className }: { className?: string }) {
     const [origin, setOrigin] = useOriginFilter()
     const active = origin === 'extended'
-    const stateClass = active ? 'bg-default-300 text-foreground' : 'text-muted-foreground'
 
     return (
-        <div
-            role="group"
-            aria-label="Icon origin"
-            className="flex h-10 items-center gap-0.5 rounded-lg bg-default-200 p-1">
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <button
-                        type="button"
-                        aria-pressed={active}
-                        data-vaul-no-drag
-                        onClick={() => setOrigin(active ? 'all' : 'extended')}
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <button
+                    type="button"
+                    aria-pressed={active}
+                    data-vaul-no-drag
+                    onClick={() => setOrigin(active ? 'all' : 'extended')}
+                    className={cn(
+                        `
+                          flex h-8 items-center gap-2 rounded-md px-2.5 text-left text-sm
+                          transition-colors
+                          focus-visible:ring-2 focus-visible:ring-primary/70
+                          focus-visible:outline-hidden
+                        `,
+                        active
+                            ? 'bg-primary/15 font-medium text-foreground'
+                            : 'text-muted-foreground hover:bg-foreground/[0.06]',
+                        className
+                    )}>
+                    <span
+                        aria-hidden="true"
                         className={cn(
-                            `h-8 rounded-md px-3 text-xs font-medium transition-colors`,
-                            `
-                              hover:bg-default-300
-                              focus-visible:ring-1 focus-visible:ring-ring
-                              focus-visible:outline-hidden
-                            `,
-                            stateClass
-                        )}>
-                        Extended
-                    </button>
-                </TooltipTrigger>
-                <TooltipContent>
-                    <p>Show only extended icons</p>
-                </TooltipContent>
-            </Tooltip>
-        </div>
+                            'size-1.5 rounded-full',
+                            active ? 'bg-primary' : 'bg-muted-foreground/50'
+                        )}
+                    />
+                    Extended
+                </button>
+            </TooltipTrigger>
+            <TooltipContent side="right">
+                <p>Only the icons added to the original set</p>
+            </TooltipContent>
+        </Tooltip>
     )
 }

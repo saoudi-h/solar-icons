@@ -29,3 +29,11 @@ src/generated/icon-chunk-loaders.ts
 src/generated/site-stats.json
 src/generated/hero-initial.json
 src/generated/hero-categories.json
+
+public/data/icon-svgs
+src/generated/icon-catalog.json
+src/generated/icon-svg-files.json
+
+public/data/icon-previews
+src/generated/icon-preview-files.json
+src/generated/icon-preview-initial.json

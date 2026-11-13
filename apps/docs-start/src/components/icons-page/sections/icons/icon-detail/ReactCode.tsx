@@ -12,7 +12,6 @@ export const ReactCode: FC = () => {
     const selectedIcon = useSelectedIcon()
     const [weight] = useStyleURL()
 
-    console.log({ selectedIcon, weight })
     if (!selectedIcon) return null
     const importName = toPascalCase(selectedIcon.name) + 'Icon'
     const base = selectedIcon.name
@@ -20,7 +19,11 @@ export const ReactCode: FC = () => {
 
     return (
         <div className="flex flex-col gap-2">
-            <Button variant="link" size="default" asChild>
+            <Button
+                variant="link"
+                size="default"
+                className="h-auto justify-start self-start p-0 text-xs"
+                asChild>
                 <Link href="/docs/v2/packages/react">
                     Get started with React <ArrowRightUpIcon size={16} />
                 </Link>

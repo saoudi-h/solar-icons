@@ -41,7 +41,12 @@ function DrawerOverlay({
     )
 }
 
-export interface DrawerContentType extends React.ComponentProps<typeof DrawerPrimitive.Content> {
+export interface DrawerContentType
+    extends
+        React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
+        React.HTMLAttributes<HTMLDivElement> {
+    className?: string
+    children?: React.ReactNode
     /**
      * Hides the handler that is used to drag the drawer
      * @default false

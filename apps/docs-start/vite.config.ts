@@ -30,21 +30,28 @@ const staticPages = [
 ]
 
 export default defineConfig({
+    // Browser tests exercise a fresh dev optimizer without touching the running app's cache.
+    cacheDir: process.env.PLAYWRIGHT_DEV === '1' ? 'node_modules/.vite-playwright' : undefined,
     server: {
         port: 3001,
+    },
+    ssr: {
+        // react-virtualized v10's ESM build imports `dom-helpers/scrollbarSize`
+        // without an extension. Node rejects that directory import, which aborts
+        // the /icons prerender and forces the page into client-only rendering.
+        // Bundling it lets Vite resolve the import instead of leaving it to Node.
+        noExternal: ['react-virtualized'],
     },
     build: {
         rolldownOptions: {
             output: {
-                // The Fumadocs packages ship one file per component, and the
-                // icon package one file per icon, so the default chunking
-                // emits a request per file. Grouping them keeps the number of
-                // requests close to the one of the Next build.
                 codeSplitting: {
                     groups: [
                         {
-                            name: 'fumadocs',
-                            test: /node_modules[\\/](?:\.pnpm[\\/][^\\/]+[\\/]node_modules[\\/])?(fumadocs-core|fumadocs-ui|@fumadocs[\\/]base-ui)[\\/]/,
+                            // Group the small shared shell modules while leaving docs,
+                            // search and code rendering free to load independently.
+                            name: 'fumadocs-runtime',
+                            test: /node_modules[\\/](?:fumadocs-ui|@fumadocs[\\/]base-ui)[\\/]dist[\\/](?:provider|contexts|utils|layouts[\\/](?:home|shared))[\\/]|node_modules[\\/]fumadocs-core[\\/]dist[\\/](?:framework|utils)[\\/]/,
                             priority: 10,
                         },
                     ],

@@ -1,35 +1,38 @@
-# AUTONOMOS PROTOCOL (v0.6.0-alpha)
+# AUTONOMOS PROTOCOL (v0.8.5-alpha)
 
 > This file defines the project's AI workflow contract. The workflows execute it. Do not duplicate workflow steps here.
 
 ## Quick Reference
 
-| Action                           | How                                                                                |
-| -------------------------------- | ---------------------------------------------------------------------------------- |
-| Start a session                  | Read the `/session` workflow                                                       |
-| Start a task                     | Read the `/task` workflow                                                          |
-| Triage a problem or proposal     | Read the optional `/issue` workflow                                                |
-| Adopt existing project knowledge | Read the optional `/adopt` workflow                                                |
-| Audit accumulated drift          | Read the `/reconcile` workflow                                                     |
-| Design or critique a surface     | Read the optional `/design` workflow                                               |
-| End a session                    | Read the `/crystallize` workflow                                                   |
-| Get context                      | Read root `AGENT.md`, then only the selected scope's ancestor chain                |
-| Resolve objective                | Explicit user request first; otherwise resume `[/]` or pick highest-priority `[ ]` |
-| Log session work                 | Create `.autonomos/worklogs/YYYY-MM-DD-[TASK_ID].md`                               |
+| Action                              | How                                                                                |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| Start a session                     | Read the `/session` workflow                                                       |
+| Start a task                        | Read the `/task` workflow                                                          |
+| Triage a problem or proposal        | Read the optional `/issue` workflow                                                |
+| Adopt existing project knowledge    | Read the optional `/adopt` workflow                                                |
+| Reconcile drift and archive history | Read the `/reconcile` workflow                                                     |
+| Design or critique a surface        | Read the optional `/design` workflow                                               |
+| End a session                       | Read the `/crystallize` workflow                                                   |
+| Get context                         | Read root `AGENT.md`, then only the selected scope's ancestor chain                |
+| Resolve objective                   | Explicit user request first; otherwise resume `[/]` or pick highest-priority `[ ]` |
+| Log session work                    | Create `.autonomos/worklogs/YYYY-MM-DD-[TASK_ID].md` (shape in `/crystallize`)     |
+| Close finished work                 | `autonomos close <ID>` → `.autonomos/archive/closed/`                              |
+| Check context budgets               | `autonomos status`; upgrade old records with `autonomos migrate`                   |
 
 ## File Map
 
-| File            | Location                   | Role                                              |
-| --------------- | -------------------------- | ------------------------------------------------- |
-| `AGENT.md`      | Root + any subdirectory    | Durable guidance for its directory scope          |
-| `TASKS.md`      | `.autonomos/TASKS.md`      | Single source of truth for task state             |
-| `ISSUES.md`     | `.autonomos/ISSUES.md`     | Optional problem, proposal, and question intake   |
-| `worklogs/`     | `.autonomos/worklogs/`     | Historical session evidence, not current guidance |
-| `specs/`        | `.autonomos/specs/`        | Optional project-owned normative target state     |
-| `decisions/`    | `.autonomos/decisions/`    | Optional project-owned decision records (ADRs)    |
-| `DESIGN.md`     | Root or target scope      | Optional project-owned visual/interaction direction |
-| `PROTOCOL.md`   | `.autonomos/PROTOCOL.md`   | This file — read-only reference                   |
-| `manifest.json` | `.autonomos/manifest.json` | Protocol version metadata                         |
+| File            | Location                   | Role                                                                  |
+| --------------- | -------------------------- | --------------------------------------------------------------------- |
+| `AGENT.md`      | Root + any subdirectory    | Durable guidance for its directory scope                              |
+| `TASKS.md`      | `.autonomos/TASKS.md`      | Open tasks and optional Current direction                             |
+| `ISSUES.md`     | `.autonomos/ISSUES.md`     | Optional intake: open and accepted issues only                        |
+| `worklogs/`     | `.autonomos/worklogs/`     | Historical session evidence, not current guidance                     |
+| `archive/`      | `.autonomos/archive/`      | History (`closed/` registries, batches), searched only when justified |
+| `specs/`        | `.autonomos/specs/`        | Optional project-owned normative target state                         |
+| `decisions/`    | `.autonomos/decisions/`    | Optional project-owned decision records (ADRs)                        |
+| `DESIGN.md`     | Root or target scope       | Optional project-owned visual/interaction direction                   |
+| `PROTOCOL.md`   | `.autonomos/PROTOCOL.md`   | This file — read-only reference                                       |
+| `manifest.json` | `.autonomos/manifest.json` | Protocol version and artifact format                                  |
 
 ## Design Direction Boundary
 
@@ -40,7 +43,7 @@ The workflow supplies routing and evidence rules, not a universal visual style.
 
 ## AGENT.md Format Rules
 
-Store only stable guidance that will affect different future tasks. Keep transient evidence in worklogs and operational explanations in component documentation. Use the narrowest applicable `AGENT.md`; consolidate or replace obsolete entries instead of appending history.
+Store only stable guidance that will affect different future tasks. Keep transient evidence in worklogs and operational explanations in component documentation. Use the narrowest applicable `AGENT.md`; consolidate or replace obsolete entries instead of appending history. Preserve valid subclaims in mixed paragraphs. Check the resulting text for completed-action narratives, task progress and unsupported prohibitions; these do not belong in operating guidance.
 
 **Root `AGENT.md`** — Must use the structured template (frontmatter + sections: Context, Workflow, Stack, Key Directories, Constraints).
 
@@ -107,9 +110,28 @@ The protocol-facing name is **decision record**. **ADR** (Architecture Decision 
 
 Only user/project governance accepts a specification or decision as normative. Agents may draft and link records, but must not silently promote them; acceptance is separate from implementation completion.
 
+## Current Context and Archival Lifecycle
+
+- Current context must support ordinary work without archives, and its size follows open work, not project age. Keep applicable guidance, accepted requirements/decisions, unresolved work, dependencies and necessary next actions discoverable. Acceptance is independent of implementation; dated temporary directives remain active until lifted or their stated end condition is met.
+- `TASKS.md` holds `[ ]`, `[/]` and `[!]` tasks; `ISSUES.md` holds open and accepted issues. When work closes, move its record in the same session to the append-only `.autonomos/archive/closed/TASKS.md` or `ISSUES.md` (`autonomos close <ID>`, or by hand). Unfinished work may be closed only as abandoned, with its reason. A completed child does not satisfy unmet parent acceptance criteria; a parent with open children stays current.
+- Record new task completion dates as `Completed: YYYY-MM-DD`; do not infer missing old dates. Age, a checkbox, absent code or a newer statement alone is not proof of obsolescence.
+- Before moving history, consolidate still-needed knowledge in its existing narrowest home. Optional `Current direction` in `TASKS.md` explains present aims, recent consequential outcomes and next work; rewrite it rather than append chronology. Keep progress out of `AGENT.md`.
+- Other history may form named batches under `.autonomos/archive/<batch>/` via `/reconcile`; create `archive/README.md` and batch directories on first use only. The index maps topics to records; it is not a second journal.
+- Archive means move, not delete or rewrite conclusions. Preserve historical record content, identifiers and provenance; repair relative paths when necessary. Applicable specs/decisions stay current independently of execution records. Extraction into new normative artifacts still uses `/adopt`.
+- Archived task and issue IDs remain reserved. Before assigning an ID, search current and archived registries (`autonomos status --history` reports duplicates).
+- Verify exact source text before edits and resolvable references after moves. Re-read shared files before writing and preserve unrelated concurrent changes.
+
+## Context Budgets
+
+Advisory limits reported by `autonomos status` (`--strict` makes them fail): root `AGENT.md` 8,000 bytes, local `AGENT.md` 4,000 bytes, `TASKS.md` 16 KB, `ISSUES.md` 24 KB, one task entry 300 characters, one worklog 2,500 bytes, and no closed record in current registries. Over budget, consolidate or move knowledge to its narrowest home before adding more; never delete a record or its content to meet a limit. `autonomos status` also flags tasks and issues removed or shortened since the last commit (`--since <rev>` to review a branch) whose words appear neither in the change nor in the files they link to. It also notes a change with no task edit, worklog or closure yet. A clean status checks structure, not completion. Root `AGENT.md` admits only guidance that applies to most tasks in the project.
+
+## Artifact Format and Migration
+
+`manifest.json` records `artifactFormat` (absent means 1); this protocol defines format 2. Installing a new protocol performs no automatic cleanup: `autonomos update` only replaces managed artifacts. `autonomos migrate` is the explicit, content-preserving upgrade: it closes finished records, moves pre-format-2 worklogs to `.autonomos/archive/worklogs-format-1/` so they stop serving as examples, repairs references and records the format. It also moves checked items without an ID tag, keeps git-ignored worklogs ignored, and lists closed records that still mention unfinished work. It ends with the next steps that finish the upgrade. Run it with `--dry-run` first, with unrelated changes committed (registering the migration task first is fine); move each reported follow-up into an open record, then resolve the remaining `status` findings with `/reconcile`. In a linked git worktree, rerun it after merging in each checkout that holds git-ignored worklogs.
+
 ## Task Format
 
-`- [Status] **[ID]** Title \`Priority\` \`Complexity\``
+One line per task: `` - [Status] **[ID]** Title `Priority` `Complexity` `` plus, when useful, `Completed: YYYY-MM-DD`, a short note and links to its issue or worklog. Evidence, measurements and progress belong in the worklog, not the task entry.
 
 | Status            | Priority      | Complexity |
 | ----------------- | ------------- | ---------- |

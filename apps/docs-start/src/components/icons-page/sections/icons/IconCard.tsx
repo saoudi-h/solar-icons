@@ -1,115 +1,104 @@
-import { motion, useReducedMotion } from 'motion/react'
-import { forwardRef } from 'react'
+import { forwardRef, memo, type CSSProperties } from 'react'
 import type { IconData } from '~generated/descriptions'
 
 import { cn } from '~/lib/utils'
 
-import {
-    splitFullIconName,
-    useSelectedIcon,
-    useSelectedIconName,
-    useStyleURL,
-    useWeightNamespaceContext,
-} from './context'
+import { useSelectedIconName, useShowcaseReady, useStyleURL } from './context'
+import { useIconPreview } from './icon-registry'
+import { useIconNameTooltip } from './IconNameTooltip'
 import { isRecentExtension, RecentIconDot } from './OriginControls'
-import { toComponentName } from './utils'
 
-type IconCardProps = IconData
+type IconCardProps = Pick<IconData, 'name' | 'origin' | 'addedAt'> & {
+    style?: CSSProperties
+    /** Show the name under the icon instead of on hover and focus only. */
+    showName?: boolean
+}
 
-export const IconCard = forwardRef<HTMLDivElement, IconCardProps>(
-    (
-        {
-            name,
-            tags: _tags,
-            category: _category,
-            categoryTags: _categoryTags,
-            origin,
-            addedAt,
-            author: _author,
-            state: _state,
-            priority: _priority,
-            priorityReason: _priorityReason,
-            // `deprecatedAliases` (objects) is not a valid DOM prop. The grid
-            // passes the full `IconData` record, so strip it here instead of
-            // spreading it onto `motion.div` (React warns `Invalid DOM property`
-            // otherwise).
-            deprecatedAliases: _deprecatedAliases,
-            ...props
-        },
-        ref
-    ) => {
-        const [, setIconName] = useSelectedIconName()
-        const [, setStyleURL] = useStyleURL()
-        const selectedIcon = useSelectedIcon()
-        const [weight] = useStyleURL()
-        const ns = useWeightNamespaceContext()
-        const Icon = ns?.[toComponentName(name)]
-        const isSelected = selectedIcon?.name === name
-        const handleClick = () => {
-            const split = splitFullIconName(name)
-            if (split) {
-                setIconName(split.base)
-                setStyleURL(split.weight)
-            } else {
-                setIconName(name)
-            }
-        }
-
-        const reduceMotion = useReducedMotion()
-        const enterDuration = reduceMotion ? 0 : 0.15
-
-        // The namespace chunk for the current weight hasn't loaded
-        // yet (first render or weight switch). Render a skeleton
-        // placeholder of the same shape so the grid doesn't shift
-        // when the real icon lands.
-        if (!Icon) {
+export const IconCard = memo(
+    forwardRef<HTMLButtonElement, IconCardProps>(
+        ({ name, origin, addedAt, style, showName = false }, ref) => {
+            const ready = useShowcaseReady()
+            const [selectedName, setIconName] = useSelectedIconName()
+            const [weight] = useStyleURL()
+            const { Icon, loading, error, retry } = useIconPreview(name, weight)
+            const tooltip = useIconNameTooltip()
+            const isSelected = selectedName === name
             return (
-                <div
+                <button
                     ref={ref}
-                    style={{ width: 120, height: 120 }}
-                    className="flex flex-col items-center justify-center gap-2 rounded-lg"
-                    aria-hidden="true"
-                />
+                    type="button"
+                    style={style}
+                    aria-label={name}
+                    aria-pressed={isSelected}
+                    aria-busy={loading}
+                    disabled={!ready || (loading && !Icon)}
+                    onClick={() => {
+                        tooltip.hide()
+                        if (error) retry()
+                        else setIconName(isSelected ? null : name)
+                    }}
+                    onPointerEnter={
+                        showName ? undefined : event => tooltip.show(name, event.currentTarget)
+                    }
+                    onPointerLeave={tooltip.hide}
+                    onFocus={
+                        showName
+                            ? undefined
+                            : event => {
+                                  // Keyboard focus only: a click selects, it does not describe.
+                                  if (event.currentTarget.matches(':focus-visible'))
+                                      tooltip.show(name, event.currentTarget, true)
+                              }
+                    }
+                    onBlur={tooltip.hide}
+                    className={cn(
+                        `
+                          group relative flex size-full cursor-pointer flex-col items-center
+                          justify-center gap-1 rounded-xl transition-colors duration-150
+                          hover:z-10
+                          focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-primary
+                          focus-visible:outline-none focus-visible:ring-inset
+                          motion-reduce:transition-none
+                        `,
+                        // The selection is carried by the cell, never by the
+                        // drawing: the icon keeps the colours chosen in the bar.
+                        isSelected
+                            ? 'bg-primary/15 ring-1 ring-primary/70 ring-inset'
+                            : 'hover:bg-foreground/[0.06]'
+                    )}>
+                    <span className="relative flex shrink-0">
+                        {Icon ? (
+                            <Icon
+                                weight={weight}
+                                className="
+                                  shrink-0 transition-transform duration-150 ease-out
+                                  group-hover:scale-110
+                                  motion-reduce:transition-none
+                                "
+                            />
+                        ) : (
+                            <span
+                                aria-hidden="true"
+                                className="
+                                  flex size-8 items-center justify-center text-[10px]
+                                  text-muted-foreground
+                                ">
+                                {error ? 'Retry' : null}
+                            </span>
+                        )}
+                        {origin === 'extended' && isRecentExtension(addedAt) && <RecentIconDot />}
+                    </span>
+                    {showName ? (
+                        <span
+                            className="
+                              w-full truncate px-1.5 text-center text-[11px]/4 text-muted-foreground
+                            ">
+                            {name}
+                        </span>
+                    ) : null}
+                </button>
             )
         }
-
-        return (
-            <motion.div
-                {...props}
-                ref={ref}
-                onClick={handleClick}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: enterDuration, ease: 'easeOut' }}
-                className={cn(
-                    `
-                      group relative flex cursor-pointer flex-col items-center justify-center gap-2
-                      rounded-lg px-2 py-4 transition-colors duration-200
-                    `,
-                    {
-                        'border border-primary bg-primary/10': isSelected,
-                        'hover:bg-default-200/50': !isSelected,
-                    }
-                )}>
-                {origin === 'extended' && isRecentExtension(addedAt) && <RecentIconDot />}
-                <Icon
-                    weight={weight}
-                    className={cn('transition-transform duration-300 ease-out', {
-                        'group-hover:scale-125': !isSelected,
-                        'scale-125 text-primary': isSelected,
-                    })}
-                />
-                <p
-                    className={cn(
-                        `w-full truncate text-center text-xs font-extralight text-muted-foreground`,
-                        'transition-transform duration-300 ease-out',
-                        'group-hover:translate-y-1'
-                    )}>
-                    {name}
-                </p>
-            </motion.div>
-        )
-    }
+    )
 )
-
 IconCard.displayName = 'IconCard'

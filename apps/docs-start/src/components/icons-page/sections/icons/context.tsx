@@ -1,9 +1,9 @@
-import { CATEGORIES, STYLES, type Weight } from '@solar-icons/core/runtime'
-import { SolarProvider, useSolar } from '@solar-icons/react'
+import { CATEGORIES, type Weight } from '@solar-icons/core/runtime'
+import { SolarProvider, useSolar } from '@solar-icons/react/lib/SolarProvider'
 import { atom } from 'jotai'
 import { useTheme } from 'next-themes'
 import type { ReactNode } from 'react'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { createContext, useContext, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { IconData } from '~generated/descriptions'
 
 import { useSearchParam } from '~/hooks/use-search-param'
@@ -11,7 +11,8 @@ import { useSearchParam } from '~/hooks/use-search-param'
 import { getAllIcons } from './utils'
 
 export const displayedIconsAtom = atom<IconData[]>([])
-export const filteredIconsAtom = atom<IconData[]>([])
+// Categories and counts are available in the initial HTML, before grid effects run.
+export const filteredIconsAtom = atom<IconData[]>(getAllIcons())
 export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
 
 /**
@@ -22,6 +23,8 @@ export const filteredCountAtom = atom(get => get(filteredIconsAtom).length)
  * navigation positions within the page.
  */
 export const activeCategoryAtom = atom<string | null>(null)
+/** Also records repeated requests to jump to the current category. */
+export const categoryNavigationAtom = atom(0)
 
 const STYLE_SLUGS = ['bold', 'bold-duotone', 'broken', 'linear', 'line-duotone', 'outline'] as const
 type StyleSlug = (typeof STYLE_SLUGS)[number]
@@ -59,22 +62,6 @@ export function buildFullIconName(base: string, weight: Weight): string {
  */
 export function weightToStyleSlug(weight: Weight): StyleSlug {
     return WEIGHT_TO_STYLE_SLUG[weight]
-}
-
-/**
- * Inverse of {@link buildFullIconName}. Strips the weight suffix
- * from a full icon name. Returns `null` if no known suffix matches
- * — the icon's weight is unknown and we can't route it via the
- * `?icon=base&style=slug` shape.
- */
-export function splitFullIconName(fullName: string): { base: string; weight: Weight } | null {
-    for (const weight of STYLES) {
-        const suffix = `-${WEIGHT_TO_STYLE_SLUG[weight]}`
-        if (fullName.endsWith(suffix)) {
-            return { base: fullName.slice(0, -suffix.length), weight }
-        }
-    }
-    return null
 }
 
 /**
@@ -162,11 +149,26 @@ export function useViewModeURL() {
     return useSearchParam('view', { values: ['grouped', 'flat'] as const, defaultValue: 'flat' })
 }
 
-export {
-    useWeightNamespace,
-    useWeightNamespaceContext,
-    WeightNamespaceProvider,
-} from './weight-namespace'
+/**
+ * Whether each cell shows the icon name (`?names=on`). Off by default: the
+ * grid is a visual index, and the name stays one hover or one click away.
+ */
+export function useShowNamesURL(): readonly [boolean, (value: boolean) => void] {
+    const [param, setParam] = useSearchParam('names', { values: ['on'] as const })
+    const setShowNames = useCallback((value: boolean) => setParam(value ? 'on' : null), [setParam])
+    return [param === 'on', setShowNames] as const
+}
+
+/**
+ * Cell geometry of the grid. The cell follows the icon size, so the size
+ * control also sets the density of the grid.
+ */
+export const GRID_CELL_PADDING = 36
+export const GRID_CELL_MIN = 60
+export const GRID_NAME_HEIGHT = 20
+export function getCellSize(iconSize: number): number {
+    return Math.max(GRID_CELL_MIN, Math.round(iconSize) + GRID_CELL_PADDING)
+}
 
 /**
  * Base name of the icon currently open in the detail panel
@@ -228,7 +230,7 @@ export const DEFAULT_VALUES = {
     // use these fixed values (deterministic, hydration-safe). The theme
     // applier below swaps in the light set after mount when untouched.
     ...THEME_DEFAULT_COLORS.dark,
-    size: 64,
+    size: 40,
     strokeWidth: 1.5,
     secondaryOpacity: 0.5,
 } as const
@@ -278,20 +280,31 @@ function ThemeColorDefaults(): ReactNode {
     return null
 }
 
+const ShowcaseReadyContext = createContext(true)
+export const useShowcaseReady = () => useContext(ShowcaseReadyContext)
+
 export const ShowcaseProvider: React.FC<IconProviderWrapperProps> = ({
     children,
     defaultColor = DEFAULT_VALUES.color,
     defaultSize = DEFAULT_VALUES.size,
 }) => {
+    const [hydrated, setHydrated] = useState(false)
+    useEffect(() => {
+        setHydrated(true)
+    }, [])
     return (
-        <SolarProvider
-            color={defaultColor}
-            size={defaultSize}
-            strokeWidth={DEFAULT_VALUES.strokeWidth}
-            secondaryColor={DEFAULT_VALUES.secondaryColor}
-            secondaryOpacity={DEFAULT_VALUES.secondaryOpacity}>
-            <ThemeColorDefaults />
-            {children}
-        </SolarProvider>
+        <ShowcaseReadyContext value={hydrated}>
+            <SolarProvider
+                color={defaultColor}
+                size={defaultSize}
+                strokeWidth={DEFAULT_VALUES.strokeWidth}
+                secondaryColor={DEFAULT_VALUES.secondaryColor}
+                secondaryOpacity={DEFAULT_VALUES.secondaryOpacity}>
+                <ThemeColorDefaults />
+                <div className="contents" inert={!hydrated} aria-busy={!hydrated}>
+                    {children}
+                </div>
+            </SolarProvider>
+        </ShowcaseReadyContext>
     )
 }

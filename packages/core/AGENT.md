@@ -8,57 +8,33 @@ status: 'active'
 
 ## 🧠 Role
 
-Private package (`"private": true`). Source of truth for icon assets and metadata. Every public framework package consumes `core`'s exports.
-
-Contains:
-
-- 9,102 committed SVGs in `svgs/` (37 categories × 6 styles).
-- `metadata.json` (44 KB) and `metadata-descriptions.json` (254 KB), both committed.
-- The `types.ts` and `utils.ts` public surface.
-- Build-time scripts in `src/scripts/` (Figma fetch, PNG generation, descriptions, integrity checks).
+Private package (`"private": true`), single source of truth for icon assets and metadata consumed by all framework packages: 9,102 committed SVGs in `svgs/` (37 categories × 6 styles), `metadata.json`, `metadata-descriptions.json`, `types.ts`, `utils.ts`, and build-time scripts in `src/scripts/` (see [src/scripts/AGENT.md](src/scripts/AGENT.md)).
 
 ## ⚙️ Conventions
 
-- ESM only, ES2017 target. `package.json` has `"type": "module"`.
-- Build = `vite build && tsc --build tsconfig.build.json`. Vite produces dual ESM + CJS in `dist/`; `tsc` emits types separately.
-- `vite-plugin-static-copy` copies `metadata*.json` into `dist/` for external consumers.
-- Path alias: `@/* → src/*` in both `tsconfig.json` and Vite resolve.
-- Published entry: `dist/{esm,cjs,types}/`. Workspace consumers can also import from the source `src/index.ts`.
-- `picocolors` is a peer dependency (kept external at bundle time).
+- ESM only (`"type": "module"`), ES2017 target. Build = `vite build && tsc --build tsconfig.build.json` (dual ESM+CJS in `dist/` + types; `vite-plugin-static-copy` copies `metadata*.json`).
+- Path alias: `@/* -> src/*` in `tsconfig.json` and Vite. Workspace consumers import `@solar-icons/core` from `dist/` (Path A; source `src/index.ts` also available). `picocolors` is an external peer dep.
+- `tsconfig.json` and `tsconfig.build.json` exclude `**/*.test.ts` and `src/scripts` to avoid vitest/ollama typecheck errors.
 
 ## 🏗 Stack
 
-- TypeScript 6, Vite 8.
-- `figma-api` (beta) + `axios` + `dotenv` + `p-limit` for the Figma fetch.
-- `sharp` for SVG → PNG (128px).
-- `pino` / `pino-pretty` for structured logging in the scripts.
-- `@langchain/core` + `@langchain/ollama` for AI-assisted description generation.
+- TypeScript 6, Vite 8, `figma-api` (beta), `axios`, `dotenv`, `p-limit`, `sharp`, `pino`, `@langchain/core`, `@langchain/ollama`.
 
-## 📁 Key Directories
+## 📁 Key Files
 
-| Path                                    | Description                                                                                                                                                                                                                                                                                                                                                                             |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/index.ts`                          | Re-exports `./codegen`, `./constants`, `./parser`, `./types`, and `./utils`.                                                                                                                                                                                                                                                                                                            |
-| `src/codegen.ts`                        | Codegen helpers shared by every framework package: `Weight`, `WEIGHTS` (canonical order), `StyleKey`, `StyleComponentsMap<T>`, `WEIGHT_MAP`, `buildDeprecatedAliasMap`, `buildAliasMap`, and `applyDuotoneStyle` (`'html'`/`'jsx'` formats). Framework generators must import these from `@solar-icons/core`, not re-declare them.                                                      |
-| `src/types.ts`                          | `Metadata`, `IconDescription`, `DeprecatedIconAlias`, `IconOrigin`, `IconState`, `IconWeight` union, `CamelToPascal`.                                                                                                                                                                                                                                                                   |
-| `src/utils.ts`                          | `IconStyle` enum, `loadMetadata`, `isValidMetadata`, `ICON_RENAMES`, `fixIconName`, `toKebabCase`.                                                                                                                                                                                                                                                                                      |
-| `src/parser.ts`                         | Parser. Reads `svgs/`, normalizes every icon (strips `<?xml?>`, `<svg>` wrapper, empty `<rect>`, `<title>`, default `stroke-width="1.5"`; replaces hex with `currentColor`; extracts duotone-accent path), generates base64 preview, exposes `forEachIcon` / `forEachIconGroupedBy` iterators and a sync `loadIcon` cache. Integrity check (all 6 styles per logical name) always runs. |
-| `src/icon-weights.json`                 | Style → weight mapping.                                                                                                                                                                                                                                                                                                                                                                 |
-| `src/metadata.json`                     | 44 KB, generated from Figma, committed.                                                                                                                                                                                                                                                                                                                                                 |
-| `src/metadata-descriptions.json`        | Hand-curated, committed metadata. `deprecatedAliases` records legacy names and must remain available for compatibility exports. `aliases` records non-deprecated synonyms; `origin`, `addedAt`, `author`, `state`, and `useCases` describe extended icon lifecycle and search metadata.                                                                                                 |
-| `EXTENDING-ICON-SET.md`                 | Production procedure for planning, drawing, attributing, validating, and releasing extensions such as Lucide parity additions.                                                                                                                                                                                                                                                          |
-| `../../docs/ICON-INVENTORY-WORKFLOW.md` | Inventory refresh checklist and the complete list of generated/documentation consumers to update after an export.                                                                                                                                                                                                                                                                       |
-| `src/descriptions.schema.json`          | JSON Schema for the hand-curated descriptions file; `check:descriptions` also validates alias collisions and deprecated replacement targets.                                                                                                                                                                                                                                            |
-| `svgs/`                                 | 37 categories × 6 styles = 9,102 SVGs, committed.                                                                                                                                                                                                                                                                                                                                       |
-| `src/scripts/`                          | Build-time CLI scripts (see `packages/core/src/scripts/AGENT.md`).                                                                                                                                                                                                                                                                                                                      |
+- `src/index.ts` — re-exports `codegen`, `constants`, `parser`, `types`, `utils`.
+- `src/codegen.ts` — shared codegen helpers (`Weight`, `WEIGHTS`, `StyleKey`, `StyleComponentsMap<T>`, `WEIGHT_MAP`, `buildDeprecatedAliasMap`, `buildAliasMap`, `applyDuotoneStyle`). Framework generators must import from `@solar-icons/core`, not re-declare.
+- `src/parser.ts` — reads/normalizes `svgs/` (strips XML/svg/empty rect/title/default `stroke-width="1.5"`, replaces hex with `currentColor`, extracts duotone accent, generates base64 previews), exposes `forEachIcon`, `forEachIconGroupedBy`, `loadIcon`, and enforces all-6-styles integrity.
+- `src/types.ts` & `src/utils.ts` — types, `IconStyle`, `loadMetadata`, `isValidMetadata`, `ICON_RENAMES`, `fixIconName`, `toKebabCase`, `toCamelCase` (strips leading/trailing separators).
+- `src/metadata.json` & `src/metadata-descriptions.json` (`src/descriptions.schema.json`) — Figma-generated categories/icons + hand-curated descriptions, `aliases`, `deprecatedAliases`, and extended provenance.
+- `EXTENDING-ICON-SET.md` & `../../docs/ICON-INVENTORY-WORKFLOW.md` — extension production procedure and inventory refresh checklist.
 
 ## ⚠️ Known Constraints
 
-- **The live path in `generate-svgs.ts` requires `FIGMA_API_TOKEN` and `FIGMA_FILE_ID`**; the `--offline` path is credential-free. It is the only script that needs Figma credentials. Not invoked by CI.
-- **`metadata-descriptions.json` is hand-curated source code.** NEVER auto-generate it. The `generate-descriptions` and `fix-descriptions` scripts are manual tools; they are not part of `pnpm build` or any `generate:assets` flow. Guard: `pnpm check:descriptions` validates the JSON schema, aliases, and deprecated aliases. All edits to this file must be manual commits.
-- **Deprecated icon names are metadata-driven.** Add a structured `deprecatedAliases` entry to the canonical icon in `metadata-descriptions.json`; do not add ad hoc rename tables to individual framework generators. The core `buildDeprecatedAliasMap` helper feeds all package generators, which must preserve both barrel and direct subpath imports without duplicating icon implementations.
-- **Extended icon metadata is declarative.** An icon added outside the upstream set must declare `origin: "extended"`, `addedAt`, and `author`; `check:icons-metadata` enforces coverage between SVGs, `metadata.json`, and `metadata-descriptions.json`.
-- **Extension priority is qualitative and auditable.** `priority` (`critical`, `high`, `normal`, or `low`) is an optional delivery marker. When present, `priorityReason` is required. Missing-icon planning belongs in the icon-parity roadmap until the SVG exists.
-- **Style order is canonical:** `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
-- **Every public framework package reads SVGs through the parser** via `parser-hook.ts` + `generate-assets.ts`. The parser is the single source of truth for SVG reading, normalization, and preview generation. `scripts/generate-assets.ts` in each package is a thin orchestrator: `parseSvgs()` → `forEachIcon(hook)` or `forEachIconGroupedBy(hook)` → write files.
-- **`tsdown`'s `exports: true` rewrites the `bin` field** of a `package.json` on every build. When `tsdown` is used and a `bin` is needed, declare it via `exports: { bin: { ... } }`.
+- **Figma live fetch (`generate-svgs.ts`):** requires `FIGMA_API_TOKEN` + `FIGMA_FILE_ID`; `--offline` needs no credentials. Not run in CI.
+- **`metadata-descriptions.json` is hand-curated:** never auto-generate; `generate-descriptions` and `fix-descriptions` are manual tools. Validate with `pnpm check:descriptions`.
+- **Deprecated names are metadata-driven:** add `deprecatedAliases` in `metadata-descriptions.json`; `buildDeprecatedAliasMap` feeds all generators (preserving barrel and subpath imports without duplicate implementations).
+- **Extended icon metadata is declarative:** non-upstream icons require `origin: "extended"`, `addedAt`, `author` (enforced by `check:icons-metadata`). Optional `priority` requires `priorityReason`.
+- **Canonical style order:** `Bold`, `BoldDuotone`, `Broken`, `Linear`, `LineDuotone`, `Outline`.
+- **`Scale` icon collision:** `Scale` exists in `arrows-action` and `devices`; package `generate-assets.ts` scripts must deduplicate `pascalName` with a `seen` Set in style barrels.
+- **`tsdown` `exports: true` rewrites `bin`:** declare binaries via `exports: { bin: { ... } }`.

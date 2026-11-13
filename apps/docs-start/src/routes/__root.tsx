@@ -34,6 +34,7 @@ export const Route = createRootRoute({
                 })),
                 { rel: 'icon', href: '/favicon.ico' },
                 { rel: 'manifest', href: '/manifest.json' },
+                { rel: 'alternate', type: 'text/plain', href: '/llms.txt', title: 'LLMs Context' },
             ],
         }
     },
@@ -42,10 +43,50 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: ReactNode }) {
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'WebSite',
+                '@id': `${site.url}/#website`,
+                url: site.url,
+                name: site.name,
+                description: site.description,
+                inLanguage: 'en-US',
+            },
+            {
+                '@type': 'SoftwareApplication',
+                '@id': `${site.url}/#software`,
+                name: site.name,
+                description: site.description,
+                applicationCategory: 'DeveloperApplication',
+                operatingSystem: 'All',
+                url: site.url,
+                license: 'https://github.com/saoudi-h/solar/blob/main/LICENSE',
+                author: {
+                    '@type': 'Person',
+                    name: 'Saoudi Hakim',
+                    url: 'https://hakimsaoudi.dev',
+                },
+                offers: {
+                    '@type': 'Offer',
+                    price: '0',
+                    priceCurrency: 'USD',
+                },
+            },
+        ],
+    }
+
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
                 <HeadContent />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+                    }}
+                />
             </head>
             <body className="flex min-h-screen flex-col font-body">
                 <JotaiProvider>

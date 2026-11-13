@@ -1,12 +1,25 @@
 'use client'
 import { CATEGORIES } from '@solar-icons/core/runtime'
+import { useSolar } from '@solar-icons/react/lib/SolarProvider'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { GridProps, ListProps } from 'react-virtualized'
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    type HTMLAttributes,
+} from 'react'
+import type {
+    GridImperativeAPI,
+    GridProps,
+    ListImperativeAPI,
+    ListProps,
+    RowRendererParams,
+} from 'react-virtualized'
 import { Grid, List } from 'react-virtualized'
 import type { IconData } from '~generated/descriptions'
 
-import { SITE_HEADER_RESERVED_HEIGHT } from '~/components/ui-blocks/site-header/constants'
 import { Button } from '~/components/ui/button'
 import { Link } from '~/components/ui/link'
 import { projectLinks } from '~/lib/project-links'
@@ -14,57 +27,42 @@ import { cn } from '~/lib/utils'
 
 import {
     activeCategoryAtom,
+    categoryNavigationAtom,
+    DEFAULT_VALUES,
     displayedIconsAtom,
     filteredIconsAtom,
     useCategoryURL,
     useOriginFilter,
     useSearchKeyword,
     useSelectedIcon,
+    getCellSize,
+    GRID_NAME_HEIGHT,
+    useShowcaseReady,
+    useShowNamesURL,
     useViewModeURL,
 } from './context'
 import { IconCard } from './IconCard'
 import { searchIcons } from './utils'
 
-const ICON_CELL = 120
-const SECTION_HEADER = 56
+export const INITIAL_GRID_HEIGHT = 1024
+
+const MIN_GRID_HEIGHT = 120
+const SCROLLER_PROPS: HTMLAttributes<HTMLDivElement> & { 'data-icon-scroller': boolean } = {
+    'data-icon-scroller': true,
+}
+const SECTION_HEADER = 48
 const GAP = 8
-// The `gap-4` (1rem) on the inner `<div>` of `IconShowcase`
-// (`relative flex h-full flex-1 flex-col gap-4 rounded-xl p-4`)
-// sits between the sidebar+grid row and the bottom `<IconDetail>`
-// panel. It is *not* in the grid's `rect.top` (the gap is below
-// the grid), so the original measurement accounted for
-// SITE_HEADER_RESERVED_HEIGHT before the detail-panel offset was added.
-// measurement missed it by exactly 16px and the page gained a
-// small vertical scroll whenever the panel opened. Subtracted
-// here in the measure callback. See DOCS-UI-02 + the user's
-// follow-up.
-const ROW_TO_DETAIL_GAP = 16
+// The `gap-3` between the grid row and the sheet under it.
+const ROW_TO_SHEET_GAP = 12
 
 type GridRow =
     | { kind: 'header'; category: string; count: number }
     | { kind: 'icons'; category: string; icons: IconData[] }
 
 interface IconGridVirtualizedProps {
-    /**
-     * Called whenever the grid wrapper's measured height changes
-     * (mount, resize, detail panel open/close). The height is
-     * `window.innerHeight - <wrapper top> - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP` —
-     * the same value the wrapper uses internally for its scroll
-     * viewport, minus the floating detail panel's height (when
-     * open) and minus the `gap-4` between the row and the
-     * detail panel inside `IconShowcase` (so the page does not
-     * gain a small vertical scroll when the panel opens). Lets
-     * a sibling (the categories sidebar) match the grid height
-     * exactly without a magic number. See DOCS-UI-02.
-     */
+    /** Called with the grid height whenever it is measured again. */
     onHeightChange?: (height: number) => void
-    /**
-     * Pixel height of the bottom `<IconDetail>` panel, reported
-     * by its `FloatingDrawer`'s `ResizeObserver`. Subtracted
-     * from the grid's available height so the last row of icons
-     * stays reachable inside the grid's native scroll even when
-     * the detail panel is open. 0 when the panel is closed.
-     */
+    /** Height of the details sheet under the grid; 0 without a sheet. */
     detailHeight?: number
 }
 
@@ -72,92 +70,87 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     onHeightChange,
     detailHeight = 0,
 }) => {
-    const gridRef = useRef<Grid>(null)
-    const listRef = useRef<List>(null)
+    const gridRef = useRef<GridImperativeAPI>(null)
+    const listRef = useRef<ListImperativeAPI>(null)
     const wrapperRef = useRef<HTMLDivElement>(null)
     const [keyword] = useSearchKeyword()
     const [origin] = useOriginFilter()
     const [, setDisplayedIcons] = useAtom<IconData[]>(displayedIconsAtom)
-    const [filteredIcons, setFilteredIcons] = useAtom<IconData[]>(filteredIconsAtom)
+    const setFilteredIcons = useSetAtom(filteredIconsAtom)
+    const filteredIcons = useMemo(
+        () => searchIcons({ keyword, categories: [], origin }),
+        [keyword, origin]
+    )
     const [viewMode, setViewMode] = useViewModeURL()
     const [urlCategory] = useCategoryURL()
     const activeCategory = useAtomValue(activeCategoryAtom)
+    const categoryNavigation = useAtomValue(categoryNavigationAtom)
     const selectedIcon = useSelectedIcon()
+    const ready = useShowcaseReady()
     const setActiveCategory = useSetAtom(activeCategoryAtom)
-    // Default to a viewport-friendly height on the server so the
-    // grid container doesn't render at 0px and cause a layout
-    // shift when the client-side `useEffect` measures the real
-    // viewport. The client `measure` callback refines the value on
-    // mount to the actual
-    // `window.innerHeight - top - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP`;
-    // the residual shift is small (and zero on common viewports).
+    // A viewport-like height on the server, refined by `measure` on mount.
     const [width, setWidth] = useState(1024)
-    const [height, setHeight] = useState(1024)
+    const [height, setHeight] = useState(INITIAL_GRID_HEIGHT)
 
-    // Mirror `detailHeight` into a ref so the resize listener
-    // (registered once on mount) can read the latest value without
-    // forcing a re-subscribe on every panel height change. The
-    // `useEffect` on `[detailHeight, measure]` below handles the
-    // actual re-measure by calling `measure` directly with the
-    // current prop value.
+    // Read by the resize listener without re-subscribing it.
     const detailHeightRef = useRef(detailHeight)
     useEffect(() => {
         detailHeightRef.current = detailHeight
     }, [detailHeight])
 
     useEffect(() => {
-        const results = searchIcons({ keyword, categories: [], origin })
-        setFilteredIcons(results)
-        setDisplayedIcons(results)
-    }, [keyword, origin, setFilteredIcons, setDisplayedIcons])
+        setFilteredIcons(filteredIcons)
+        setDisplayedIcons(filteredIcons)
+    }, [filteredIcons, setFilteredIcons, setDisplayedIcons])
 
-    // The measure callback is the single source of truth for the
-    // grid's height. Called on mount, on `window.resize`, and
-    // imperatively from the `[detailHeight, measure]` effect below
-    // when the floating detail panel opens / closes / animates.
-    // SITE_HEADER_RESERVED_HEIGHT is the shared site header footprint (the
-    // user's manual fix, tighter than the previous `- 20` padding guess). The
-    // `detailHeight` offset is the live height of the bottom
-    // detail panel — subtracting it from the available height
-    // keeps the grid + categories sidebar fully scrollable when
-    // the panel is open. The `ROW_TO_DETAIL_GAP` (16px) is the
-    // `gap-4` between the row and the detail panel inside the
-    // inner div of `IconShowcase` — the gap is below the grid
-    // (not in `rect.top`), so the page gained a small vertical
-    // scroll when the panel opened until it was subtracted here.
+    // The single source of truth for the grid's height: what is left of the
+    // viewport under the grid, minus the paddings of the frame around it and
+    // the sheet when one is open. Called on mount, on resize and when the
+    // sheet changes height.
     const measure = useCallback(() => {
         const el = wrapperRef.current
         if (!el) return
         const rect = el.getBoundingClientRect()
         setWidth(el.offsetWidth)
+        const paddingBelow = ['section', 'main'].reduce((total, selector) => {
+            const ancestor = el.closest(selector)
+            return total + (ancestor ? parseFloat(getComputedStyle(ancestor).paddingBottom) : 0)
+        }, 0)
+        const sheet = detailHeightRef.current
         const h =
-            window.innerHeight -
-            rect.top -
-            SITE_HEADER_RESERVED_HEIGHT -
-            detailHeightRef.current -
-            ROW_TO_DETAIL_GAP
-        setHeight(h)
-        onHeightChange?.(h)
+            window.innerHeight - rect.top - paddingBelow - (sheet ? sheet + ROW_TO_SHEET_GAP : 0)
+        const nextHeight = Math.max(MIN_GRID_HEIGHT, Math.floor(h))
+        setHeight(nextHeight)
+        onHeightChange?.(nextHeight)
     }, [onHeightChange])
 
     useEffect(() => {
         measure()
+        const observer = new ResizeObserver(measure)
+        if (wrapperRef.current) observer.observe(wrapperRef.current)
         window.addEventListener('resize', measure)
-        return () => window.removeEventListener('resize', measure)
+        return () => {
+            observer.disconnect()
+            window.removeEventListener('resize', measure)
+        }
     }, [measure])
 
-    // Re-measure whenever the detail panel's height changes
-    // (open, close, animation, weight switch, resize, content
-    // swap). Deferred to the next frame so the parent's state
-    // update from the panel's `ResizeObserver` has settled into
-    // the DOM, otherwise the grid's `rect.top` could be read on
-    // the layout shift frame and report a stale value.
+    // Re-measure on the next frame, once the sheet's new height is laid out.
     useEffect(() => {
         const rafId = requestAnimationFrame(measure)
         return () => cancelAnimationFrame(rafId)
     }, [detailHeight, measure])
 
-    const columnCount = Math.max(1, Math.floor(width / ICON_CELL))
+    // The cell follows the icon size. Columns share the full width, so the
+    // grid never leaves a ragged gutter on the right.
+    const { size: solarSize } = useSolar()
+    const [showNames] = useShowNamesURL()
+    // Names need room to stay readable, so a named cell is also wider.
+    const baseCell =
+        getCellSize(Number(solarSize ?? DEFAULT_VALUES.size)) + (showNames ? GRID_NAME_HEIGHT : 0)
+    const columnCount = Math.max(1, Math.floor(width / baseCell))
+    const cellWidth = Math.floor(width / columnCount)
+    const cellHeight = baseCell
 
     const rows = useMemo<GridRow[]>(() => {
         if (viewMode !== 'grouped') return []
@@ -196,10 +189,10 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         let acc = 0
         for (const row of rows) {
             positions.push(acc)
-            acc += row.kind === 'header' ? SECTION_HEADER : ICON_CELL
+            acc += row.kind === 'header' ? SECTION_HEADER : cellHeight
         }
         return positions
-    }, [rows])
+    }, [rows, cellHeight])
 
     // Capture the icon that was in the URL on first render (the
     // 'shared link' case). The scroll-to-icon useEffect below only
@@ -208,7 +201,13 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
     // specific icon, not that they clicked it themselves (in which
     // case it's already on screen). `useState` with an initializer
     // runs exactly once on the first render and never updates.
-    const [initialIconName] = useState<string | null>(() => selectedIcon?.fullName ?? null)
+    const [initialIconName, setInitialIconName] = useState<string | null>(null)
+    const initialSelectionCaptured = useRef(false)
+    useEffect(() => {
+        if (!ready || initialSelectionCaptured.current) return
+        initialSelectionCaptured.current = true
+        setInitialIconName(selectedIcon?.fullName ?? null)
+    }, [ready, selectedIcon])
     const hasMountedRef = useRef(false)
 
     // Deep link (`?category=arrows`): the targeted category becomes the
@@ -256,11 +255,21 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         // wrong. `scrollToPosition` with our manually-computed cumulative
         // positions always lands the header at the very top.
         const rafId = requestAnimationFrame(() => {
-            listRef.current?.scrollToPosition(scrollTop)
+            console.log('[scroll-debug]', {
+                activeCategory,
+                idx,
+                scrollTop,
+                width,
+                columnCount,
+                initialIconName,
+                selected: selectedIcon?.fullName,
+                rows: rows.length,
+            })
+            listRef.current?.scrollToPosition({ scrollTop })
             pendingCategoryRef.current = null
         })
         return () => cancelAnimationFrame(rafId)
-    }, [activeCategory, categoryToRowIndex, rowPositions, viewMode])
+    }, [activeCategory, categoryNavigation, categoryToRowIndex, rowPositions, viewMode])
 
     useEffect(() => {
         if (viewMode === 'grouped') {
@@ -288,7 +297,7 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
             const keepCategoryPosition = pendingCategoryRef.current !== null
             const rafId = requestAnimationFrame(() => {
                 listRef.current?.recomputeRowHeights()
-                if (!keepCategoryPosition) listRef.current?.scrollToPosition(0)
+                if (!keepCategoryPosition) listRef.current?.scrollToPosition({ scrollTop: 0 })
             })
             return () => cancelAnimationFrame(rafId)
         } else {
@@ -296,7 +305,13 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         }
     }, [filteredIcons, viewMode])
 
-    if (keyword.trim() && filteredIcons.length === 0) {
+    // Cell sizes are cached by both virtualizers: a new size invalidates them.
+    useEffect(() => {
+        listRef.current?.recomputeRowHeights()
+        gridRef.current?.recomputeGridSize()
+    }, [cellHeight, cellWidth, columnCount])
+
+    if (filteredIcons.length === 0) {
         return (
             <div
                 ref={wrapperRef}
@@ -317,15 +332,22 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         return (
             <div ref={wrapperRef} style={{ width: '100%', height }}>
                 <List
+                    aria-label="Icons"
+                    role="grid"
+                    containerProps={SCROLLER_PROPS}
                     ref={listRef}
-                    className="*:relative *:mx-auto"
+                    className="*:relative"
                     width={width}
                     height={height}
                     rowCount={rows.length}
-                    rowHeight={({ index }) =>
-                        rows[index]?.kind === 'header' ? SECTION_HEADER : ICON_CELL
+                    // The List estimates the size of unmeasured rows with this
+                    // value when it clamps scroll positions. The default (30)
+                    // makes deep links to a far category stop short.
+                    estimatedRowSize={cellHeight}
+                    rowHeight={({ index }: { index: number }) =>
+                        rows[index]?.kind === 'header' ? SECTION_HEADER : cellHeight
                     }
-                    rowRenderer={({ index, key, style }) => {
+                    rowRenderer={({ index, key, style }: RowRendererParams) => {
                         const row = rows[index]
                         if (!row) return null
                         if (row.kind === 'header') {
@@ -340,14 +362,16 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                                     }}
                                     className={cn(
                                         `
-                                          flex items-end gap-2 px-1 pb-2 text-sm font-semibold
-                                          tracking-wide
+                                          flex items-end gap-2 px-2 pb-2 text-xs font-semibold
+                                          tracking-widest
                                         `,
                                         activeCategory === row.category
                                             ? 'text-foreground'
                                             : 'text-muted-foreground'
                                     )}>
-                                    <span className="uppercase">{row.category}</span>
+                                    <span className="uppercase">
+                                        {row.category.replace(/-/g, ' ')}
+                                    </span>
                                     <span
                                         className="
                                           font-mono text-xs font-normal text-muted-foreground/70
@@ -364,16 +388,15 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
                                 style={{
                                     ...style,
                                     display: 'grid',
-                                    gridTemplateColumns: `repeat(${columnCount}, ${ICON_CELL}px)`,
-                                    height: ICON_CELL,
-                                    justifyContent: 'center',
+                                    gridTemplateColumns: `repeat(${columnCount}, ${cellWidth}px)`,
+                                    height: cellHeight,
                                 }}
                                 data-grid-row={row.category}>
                                 {row.icons.map(icon => (
                                     <div
                                         key={icon.name}
-                                        style={{ width: ICON_CELL, height: ICON_CELL }}>
-                                        <IconCard {...icon} />
+                                        style={{ width: cellWidth, height: cellHeight }}>
+                                        <IconCard {...icon} showName={showNames} />
                                     </div>
                                 ))}
                             </div>
@@ -390,20 +413,27 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
         const index = rowIndex * columnCount + columnIndex
         const icon = filteredIcons[index]
         if (!icon) return null
-        return <IconCard key={key} {...{ ...icon, style }} />
+        return (
+            <div key={key} style={style} className="hover:z-10 focus-within:z-10">
+                <IconCard {...icon} showName={showNames} />
+            </div>
+        )
     }
 
     return (
         <div ref={wrapperRef} style={{ width: '100%', height }}>
             <Grid
+                aria-label="Icons"
+                role="grid"
+                containerProps={SCROLLER_PROPS}
                 ref={gridRef}
-                className="*:relative *:mx-auto"
+                className="*:relative"
                 cellRenderer={cellRenderer}
                 columnCount={columnCount}
-                columnWidth={ICON_CELL}
+                columnWidth={cellWidth}
                 height={height}
                 rowCount={rowCount}
-                rowHeight={ICON_CELL}
+                rowHeight={cellHeight}
                 width={width}
                 overscanRowCount={0}
             />
@@ -414,5 +444,5 @@ export const IconGridVirtualized: React.FC<IconGridVirtualizedProps> = ({
 // Re-export the List type so consumers (e.g. sidebar scroll helpers) can
 // type their refs against the same instance.
 export type { List }
-export type IconGridList = List
+export type IconGridList = ListImperativeAPI
 export type IconGridListProps = ListProps

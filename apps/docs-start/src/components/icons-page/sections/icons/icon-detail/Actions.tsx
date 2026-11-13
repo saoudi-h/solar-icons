@@ -1,13 +1,14 @@
 'use client'
-import { useSolar } from '@solar-icons/react'
+import { useSolar } from '@solar-icons/react/lib/SolarProvider'
+import { CopyIcon } from '@solar-icons/react/linear/copy'
 import { DownloadMinimalisticIcon } from '@solar-icons/react/linear/download-minimalistic'
 import { LinkMinimalistic2Icon } from '@solar-icons/react/linear/link-minimalistic-2'
 import fileSaver from 'file-saver'
-import type { FC } from 'react'
+import { useEffect, useState, type FC } from 'react'
 import { toast } from 'sonner'
 
-import { Button } from '~/components/ui/button'
-import { CopyButton } from '~/components/ui/CopyButton'
+import type { IconStyle } from '~/generated/icon-chunk-loaders'
+import { cn } from '~/lib/utils'
 
 import {
     DEFAULT_VALUES,
@@ -16,26 +17,10 @@ import {
     useThemeDefaultColors,
     weightToStyleSlug,
 } from '../context'
+import { fetchSvgText, loadSvgStyles } from './svg-source'
 
 /**
- * CDN base for fetching clean SVGs from @solar-icons/static.
- * Pinned to a specific beta version for predictability.
- */
-const STATIC_CDN_BASE = 'https://cdn.jsdelivr.net/npm/@solar-icons/static/dist/icons'
-
-function buildCdnUrl(iconName: string, styleSlug: string): string {
-    return `${STATIC_CDN_BASE}/${styleSlug}/${iconName}.svg`
-}
-
-async function fetchSvgText(iconName: string, styleSlug: string): Promise<string> {
-    const url = buildCdnUrl(iconName, styleSlug)
-    const response = await fetch(url)
-    if (!response.ok) throw new Error(`Failed to fetch SVG (${response.status})`)
-    return response.text()
-}
-
-/**
- * Takes a clean SVG string from @solar-icons/static and replaces
+ * Takes a clean SVG string generated with the site and replaces
  * `currentColor`, CSS variable references, and dimensions with
  * concrete values so the SVG can be rasterized in a canvas context
  * (which has no CSS inheritance).
@@ -67,23 +52,19 @@ function resolveSvgForRaster(
     // Walk all descendants and resolve currentColor + duotone vars
     const allElements = svg.querySelectorAll('*')
     for (const el of allElements) {
-        if (el.getAttribute('stroke') === 'currentColor') {
-            el.setAttribute('stroke', options.color)
-        }
-
-        if (el.getAttribute('fill') === 'currentColor') {
-            const style = el.getAttribute('style') ?? ''
-            if (
-                style.includes('--solar-secondary-color') ||
-                style.includes('--solar-secondary-opacity')
-            ) {
-                // Duotone accent element
-                el.setAttribute('fill', options.secondaryColor)
-                el.removeAttribute('style')
-                el.setAttribute('opacity', String(options.secondaryOpacity))
-            } else {
-                el.setAttribute('fill', options.color)
+        const style = el.getAttribute('style') ?? ''
+        const accent =
+            style.includes('--solar-secondary-color') || style.includes('--solar-secondary-opacity')
+        // Both filled and stroked accents use the secondary color. Leaving
+        // CSS variables in an image document loses the toolbar's settings.
+        for (const attribute of ['fill', 'stroke']) {
+            if (el.getAttribute(attribute) === 'currentColor') {
+                el.setAttribute(attribute, accent ? options.secondaryColor : options.color)
             }
+        }
+        if (accent) {
+            el.removeAttribute('style')
+            el.setAttribute('opacity', String(options.secondaryOpacity))
         }
     }
 
@@ -91,12 +72,12 @@ function resolveSvgForRaster(
 }
 
 /**
- * Fetch the clean SVG from CDN, resolve inline values from the
+ * Fetch the clean SVG from the site, resolve inline values from the
  * current filter-bar settings, and render onto a canvas.
  */
 async function renderToCanvas(
     iconName: string,
-    styleSlug: string,
+    styleSlug: IconStyle,
     options: {
         color: string
         size: number
@@ -144,6 +125,15 @@ export const Actions: FC = () => {
     } = useSolar()
     const themeDefaults = useThemeDefaultColors()
 
+    const [busy, setBusy] = useState<string | null>(null)
+    const name = selectedIcon?.name
+    useEffect(() => {
+        if (name)
+            void loadSvgStyles(name).catch(() => {
+                /* The action reports errors and allows retries. */
+            })
+    }, [name])
+
     if (!selectedIcon) return null
 
     const styleSlug = weightToStyleSlug(weight)
@@ -161,7 +151,17 @@ export const Actions: FC = () => {
         secondaryOpacity: duotoneOpacity,
     }
 
-    // --- SVG actions: clean source from @solar-icons/static ---
+    const run = async (action: string, task: () => Promise<void>) => {
+        if (busy) return
+        setBusy(action)
+        try {
+            await task()
+        } finally {
+            setBusy(null)
+        }
+    }
+
+    // SVG exports preserve the clean source; PNG exports use the toolbar settings.
 
     const handleDownloadSVG = async () => {
         try {
@@ -177,8 +177,17 @@ export const Actions: FC = () => {
 
     const handleCopySVG = async () => {
         try {
-            const svgText = await fetchSvgText(selectedIcon.name, styleSlug)
-            await navigator.clipboard.writeText(svgText)
+            const source = fetchSvgText(selectedIcon.name, styleSlug)
+            if (typeof ClipboardItem !== 'undefined') {
+                // Start writing during the click, preserving Safari's user activation.
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'text/plain': source.then(svg => new Blob([svg], { type: 'text/plain' })),
+                    }),
+                ])
+            } else {
+                await navigator.clipboard.writeText(await source)
+            }
             toast.success('SVG copied to clipboard')
         } catch (error) {
             console.error('SVG copy error:', error)
@@ -205,12 +214,16 @@ export const Actions: FC = () => {
 
     const handleCopyPNG = async () => {
         try {
-            const canvas = await renderToCanvas(selectedIcon.name, styleSlug, rasterOptions)
-            const blob = await new Promise<Blob | null>(resolve =>
-                canvas.toBlob(resolve, 'image/png')
+            const image = renderToCanvas(selectedIcon.name, styleSlug, rasterOptions).then(
+                canvas =>
+                    new Promise<Blob>((resolve, reject) =>
+                        canvas.toBlob(blob => {
+                            if (blob) resolve(blob)
+                            else reject(new Error('PNG blob creation failed'))
+                        }, 'image/png')
+                    )
             )
-            if (!blob) throw new Error('PNG blob creation failed')
-            await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+            await navigator.clipboard.write([new ClipboardItem({ 'image/png': image })])
             toast.success('PNG copied to clipboard')
         } catch (error) {
             console.error('PNG copy error:', error)
@@ -230,31 +243,72 @@ export const Actions: FC = () => {
         }
     }
 
+    const secondary = cn(
+        `
+          flex h-9 items-center justify-center gap-1.5 rounded-lg bg-foreground/[0.06] px-2 text-xs
+          font-medium text-foreground/80 transition-colors
+          hover:bg-foreground/[0.1] hover:text-foreground
+          focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:outline-hidden
+          disabled:pointer-events-none disabled:opacity-50
+        `
+    )
+
     return (
-        <div
-            className={`
-              flex shrink-0 flex-row gap-2 overflow-y-scroll border-dashed
-              max-lg:mb-2 max-lg:border-b max-lg:pb-2
-              lg:mr-4 lg:flex-col lg:border-r lg:pr-4
-            `}>
-            <Button size="default" variant="ghost" onClick={handleDownloadSVG} className="p-1">
-                Get SVG
-                <DownloadMinimalisticIcon size={16} isolated />
-            </Button>
-            <Button size="default" variant="ghost" onClick={handleDownloadPNG} className="p-1">
-                Get PNG
-                <DownloadMinimalisticIcon size={16} isolated />
-            </Button>
-            <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopySVG}>
+        <div className="grid grid-cols-6 gap-1.5">
+            <button
+                type="button"
+                disabled={busy !== null}
+                aria-busy={busy === 'copy-svg'}
+                onClick={() => void run('copy-svg', handleCopySVG)}
+                className="
+                  col-span-3 flex h-9 items-center justify-center gap-1.5 rounded-lg bg-primary px-2
+                  text-xs font-semibold text-primary-foreground transition-opacity
+                  hover:opacity-90
+                  focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2
+                  focus-visible:ring-offset-background focus-visible:outline-hidden
+                  disabled:pointer-events-none disabled:opacity-50
+                ">
+                <CopyIcon size={15} isolated />
                 Copy SVG
-            </CopyButton>
-            <CopyButton size="default" variant="ghost" className="p-1" onCopy={handleCopyPNG}>
+            </button>
+            <button
+                type="button"
+                disabled={busy !== null}
+                aria-busy={busy === 'copy-png'}
+                onClick={() => void run('copy-png', handleCopyPNG)}
+                className={cn(secondary, 'col-span-3')}>
+                <CopyIcon size={15} isolated />
                 Copy PNG
-            </CopyButton>
-            <Button size="default" variant="ghost" onClick={handleShare} className="p-1">
+            </button>
+            <button
+                type="button"
+                disabled={busy !== null}
+                aria-busy={busy === 'svg'}
+                aria-label="Get SVG"
+                onClick={() => void run('svg', handleDownloadSVG)}
+                className={cn(secondary, 'col-span-2')}>
+                <DownloadMinimalisticIcon size={15} isolated />
+                SVG
+            </button>
+            <button
+                type="button"
+                disabled={busy !== null}
+                aria-busy={busy === 'png'}
+                aria-label="Get PNG"
+                onClick={() => void run('png', handleDownloadPNG)}
+                className={cn(secondary, 'col-span-2')}>
+                <DownloadMinimalisticIcon size={15} isolated />
+                PNG
+            </button>
+            <button
+                type="button"
+                disabled={busy !== null}
+                aria-busy={busy === 'share'}
+                onClick={() => void run('share', handleShare)}
+                className={cn(secondary, 'col-span-2')}>
+                <LinkMinimalistic2Icon size={15} isolated />
                 Share
-                <LinkMinimalistic2Icon size={16} isolated />
-            </Button>
+            </button>
         </div>
     )
 }

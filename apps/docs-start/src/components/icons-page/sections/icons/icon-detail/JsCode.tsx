@@ -19,7 +19,11 @@ export const JsCode: FC = () => {
 
     return (
         <>
-            <Button variant="link" size="default" asChild>
+            <Button
+                variant="link"
+                size="default"
+                className="h-auto justify-start self-start p-0 text-xs"
+                asChild>
                 <Link href="/docs/v2/packages/js">
                     Get started with <span className="font-heading">JS</span>{' '}
                     <ArrowRightUpIcon size={16} />

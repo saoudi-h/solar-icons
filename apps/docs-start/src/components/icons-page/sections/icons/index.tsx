@@ -1,88 +1,77 @@
 'use client'
 import { useState } from 'react'
 
+import { useMediaQuery } from '~/hooks/use-media-query'
 import { cn } from '~/lib/utils'
 
 import { CategoryNav } from './CategoryNav'
-import { ShowcaseProvider, useStyleURL, WeightNamespaceProvider } from './context'
+import { ShowcaseProvider } from './context'
 import { FilterBar } from './FilterBar'
 import { IconDetail } from './icon-detail'
-import { IconGridVirtualized } from './IconGrid'
+import { IconGridVirtualized, INITIAL_GRID_HEIGHT } from './IconGrid'
+import { IconNameTooltipProvider } from './IconNameTooltip'
 
+/**
+ * Three zones, each with one job: the bar finds and tunes, the grid shows,
+ * the details hand the icon over.
+ *
+ * The grid measures the height left under the bar and reports it; the row
+ * (categories, grid, details) takes exactly that height, so each of the
+ * three scrolls on its own and the page itself never does. From `lg` the
+ * details are a column beside the grid. Below, they are a sheet under it
+ * and the grid gives up the sheet's height instead.
+ */
 export const IconShowcase: React.FC<{ className?: string }> = ({ className }) => {
-    const [weight] = useStyleURL()
-    // The grid measures its own height
-    // (`window.innerHeight - <wrapper top> - SITE_HEADER_RESERVED_HEIGHT - detailHeight - ROW_TO_DETAIL_GAP`
-    // in `IconGrid`) and reports it back via `onHeightChange`. We use
-    // that exact value as the height of the sidebar+grid row so the
-    // two scrollable panels are pixel-identical — no
-    // `calc(100dvh - 7rem)` magic number, no 3-categories-too-tall
-    // mismatch. The `detailHeight` offset is reported by the
-    // `IconDetail`'s `FloatingDrawer` via a `ResizeObserver`; when
-    // the drawer opens, the grid shrinks by exactly its height so
-    // the last row of icons + the last sidebar category stay
-    // reachable inside the row's native scroll. The
-    // `ROW_TO_DETAIL_GAP` (16px) is the `gap-4` between the row
-    // and the detail panel inside this showcase's inner div —
-    // without it, opening the panel adds 16px to the page's
-    // vertical extent and a small scroll appears. See DOCS-UI-02.
-    const [gridHeight, setGridHeight] = useState(0)
-    const [detailHeight, setDetailHeight] = useState(0)
+    // Match the grid during SSR so the category list cannot stretch the row.
+    const [gridHeight, setGridHeight] = useState(INITIAL_GRID_HEIGHT)
+    const [sheetHeight, setSheetHeight] = useState(0)
+    // Same unit as the `lg` breakpoint, so CSS and layout switch together.
+    const hasRoomForColumn = useMediaQuery('(min-width: 64rem)')
 
     return (
-        <WeightNamespaceProvider weight={weight}>
-            <ShowcaseProvider>
-                <section
-                    className={cn(
-                        `relative flex size-full flex-1 flex-col items-center self-center px-0`,
-                        className
-                    )}>
-                    <div
-                        className={`
-                          relative flex size-full flex-1 flex-col gap-2 rounded-2xl
-                          md:rounded-3xl
-                        `}>
-                        <div className={`relative flex flex-1 flex-col gap-4 rounded-xl p-4`}>
-                            <FilterBar
-                                drawerExtras={
-                                    <>
-                                        <div
-                                            className="
-                                              my-2 px-1 text-[10px] font-semibold tracking-widest
-                                              text-muted-foreground uppercase
-                                            ">
-                                            Categories
-                                        </div>
-                                        <CategoryNav />
-                                    </>
-                                }
-                            />
+        <ShowcaseProvider>
+            <section
+                className={cn(
+                    'relative flex size-full flex-1 flex-col gap-3 p-3 md:p-4',
+                    className
+                )}>
+                <FilterBar
+                    drawerExtras={
+                        <>
                             <div
-                                className="flex gap-4 overflow-hidden"
-                                style={{
-                                    height: gridHeight > 0 ? `${gridHeight}px` : undefined,
-                                }}>
-                                <aside
-                                    aria-label="Categories navigation"
-                                    className="
-                                      sticky top-4 hidden w-50 shrink-0 overflow-y-auto pr-1
-                                      md:block
-                                    ">
-                                    <CategoryNav />
-                                </aside>
-                                <div className="min-w-0 flex-1">
-                                    <IconGridVirtualized
-                                        onHeightChange={setGridHeight}
-                                        detailHeight={detailHeight}
-                                    />
-                                </div>
+                                className="
+                                  mt-3 mb-1 px-1 text-[11px] font-semibold tracking-widest
+                                  text-muted-foreground uppercase
+                                ">
+                                Categories
                             </div>
-                            <IconDetail onHeightChange={setDetailHeight} />
-                        </div>
+                            <CategoryNav />
+                        </>
+                    }
+                />
+                <div
+                    className="flex min-h-0 gap-3"
+                    style={{ height: gridHeight > 0 ? `${gridHeight}px` : undefined }}>
+                    <aside
+                        aria-label="Categories navigation"
+                        className="hidden w-44 shrink-0 overflow-y-auto md:block">
+                        <CategoryNav />
+                    </aside>
+                    <div className="min-w-0 flex-1">
+                        <IconNameTooltipProvider>
+                            <IconGridVirtualized
+                                onHeightChange={setGridHeight}
+                                detailHeight={hasRoomForColumn ? 0 : sheetHeight}
+                            />
+                        </IconNameTooltipProvider>
                     </div>
-                </section>
-            </ShowcaseProvider>
-        </WeightNamespaceProvider>
+                    {hasRoomForColumn && <IconDetail placement="side" />}
+                </div>
+                {!hasRoomForColumn && (
+                    <IconDetail placement="sheet" onHeightChange={setSheetHeight} />
+                )}
+            </section>
+        </ShowcaseProvider>
     )
 }
 
