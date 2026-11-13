@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_solar_icons/flutter_solar_icons.dart';
 
 import 'icon_registry.dart';

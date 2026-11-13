@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_solar_icons:
     path: ../
+  material_ui: ^1.11.0
 
 dev_dependencies:
   flutter_test:
