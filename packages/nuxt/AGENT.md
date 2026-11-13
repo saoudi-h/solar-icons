@@ -8,7 +8,7 @@ status: 'active'
 
 ## 🧠 Role
 
-`@solar-icons/nuxt` (v2 stable). Nuxt 3/4 module wiring `@solar-icons/vue` auto-imports (9,102 main + 1,517 dynamic = ~10,619 components with `Solar` prefix), `SolarProvider`, and `useSolar` via `@nuxt/kit` and `@nuxt/module-builder`. See [src/runtime/AGENT.md](src/runtime/AGENT.md) for runtime plugin/provider behavior.
+`@solar-icons/nuxt` (v2 stable). Nuxt 3/4 module wiring `@solar-icons/vue` auto-imports (1,517 icons in 6 styles = 9,102 SVGs; ~10,619 auto-imports registered with `Solar` prefix), `SolarProvider`, and `useSolar` via `@nuxt/kit` and `@nuxt/module-builder`. See [src/runtime/AGENT.md](src/runtime/AGENT.md) for runtime plugin/provider behavior.
 
 ## ⚙️ Conventions & Stack
 

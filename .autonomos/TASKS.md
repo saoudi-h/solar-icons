@@ -9,6 +9,8 @@
 
 ## 🚧 Active
 
+- [/] **[CI-BUILD-PERF]** Make package builds and CI fast and trustworthy: the two release lots of 2026-11-10/11 cost two days of wait-and-retry. Done: build and publint quadratic costs patched (PR #714, upstream rolldown-plugin-dts#360), one Turbo run with cheap checks first, Blazor expensive checks gated, Renovate rebase noise cut and majors behind dashboard approval, early `Generated files` drift job (`pnpm catalog:check`), dts generators compared (no change), `angular` build 67 s to 46 s (one `ngc` pass plus a comment-stripping script, output byte-identical), `vue` build 52 s to 28 s (explicit `VNode` return type on generated icons, same published types) (all stacked on #714). Left: `vue` typecheck 40 s (checks the 9k generated icons through `src/index.ts`), other over-strict gates, and checking real CI timings after merge. Measure first, least complex change, no build-system rewrite. `Priority: 🔴` `Complexity: L` *See worklogs/2026-11-11-CI-BUILD-PERF.md*
+
 - [/] **[RELEASE-INTENT]** Declaration-driven releases from `@solar-icons/static` across Blade, Blazor, Flutter, and Rails; PRs merged, next static release pending end-to-end. `Priority: 🟠` `Complexity: M` *See worklogs/2026-11-12-RELEASE-INTENT.md*
 
 - [/] **[BLAZOR-INTEGRATE]** Integrate PR #637 (`SolarIcons.Blazor`, issue #632) on `feat/blazor-package`; local checks green, maintainer publication decisions pending. `Priority: 🟠` `Complexity: L` *Issue: #632, PR #637. See worklogs/2026-11-12-BLAZOR-INTEGRATE.md*

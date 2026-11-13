@@ -5,6 +5,20 @@ also exist in `packages/core/src/metadata.json` and
 `packages/core/src/metadata-descriptions.json`. Do not maintain a hand-written “current total”
 file as a second source of truth.
 
+## Regenerate every derived file
+
+Many committed files are derived from the catalogue (Blazor manifest, Ruby payload and constants,
+Angular names, Flutter widgets, docs counts and catalogue JSON, Figma plugin, test app icon lists).
+Regenerate all of them in one pass and commit the result:
+
+```sh
+pnpm catalog:sync
+```
+
+`pnpm catalog:check` runs the same pass and fails when it had to change anything. CI runs it first
+in the `Generated files` job of `ci.yml`, so a stale file is reported with the complete list of
+files, not one lane at a time.
+
 ## After every Figma export
 
 From the repository root:
