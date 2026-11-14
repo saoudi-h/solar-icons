@@ -85,7 +85,31 @@ test('seo metadata distinguishes v1 noindex, icons h1, and blog og:image', async
 
     const postHtml = await (await request.get('/blog/build-consistent-icon-system-react')).text()
     expect(postHtml).toContain('property="og:image"')
+    expect(postHtml).toContain('property="og:image:width" content="1200"')
+    expect(postHtml).toContain('property="og:image:height" content="630"')
     expect(postHtml).toContain('"@type":"BlogPosting"')
+})
+
+test('the project guide serves its custom cover with matching share metadata', async ({
+    request,
+}) => {
+    const path = '/blog/solar-icons-design-to-code'
+    const response = await request.get(path)
+    expect(response.status()).toBe(200)
+    const html = await response.text()
+    expect(html).toContain('Solar Icons: from Figma to web and mobile')
+    expect(html).toContain('https://solar-icons.dev/blog/solar-icons-design-to-code')
+    expect(html).toContain('property="og:image:width" content="1600"')
+    expect(html).toContain('property="og:image:height" content="900"')
+    expect(html).toContain('"@type":"BlogPosting"')
+    expect(html).toContain('/images/blog/solar-icons-design-to-code/cover.png')
+    expect(html).toContain('/images/blog/solar-icons-design-to-code/six-styles.png')
+
+    for (const filename of ['cover.png', 'six-styles.png']) {
+        const image = await request.get(`/images/blog/solar-icons-design-to-code/${filename}`)
+        expect(image.status()).toBe(200)
+        expect(image.headers()['content-type']).toContain('image/png')
+    }
 })
 
 test('the blog lists its articles and opens one', async ({ page }) => {

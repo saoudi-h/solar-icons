@@ -5,6 +5,8 @@ export interface SeoOptions {
     description: string
     path?: string
     image?: string
+    imageWidth?: number
+    imageHeight?: number
     type?: 'website' | 'article'
     noIndex?: boolean
 }
@@ -19,6 +21,8 @@ export function seo({
     description,
     path = '/',
     image,
+    imageWidth = 1200,
+    imageHeight = 630,
     type = 'website',
     noIndex,
 }: SeoOptions) {
@@ -42,8 +46,8 @@ export function seo({
             ...(imageUrl
                 ? [
                       { property: 'og:image', content: imageUrl },
-                      { property: 'og:image:width', content: '1200' },
-                      { property: 'og:image:height', content: '630' },
+                      { property: 'og:image:width', content: String(imageWidth) },
+                      { property: 'og:image:height', content: String(imageHeight) },
                       { name: 'twitter:card', content: 'summary_large_image' },
                   ]
                 : [{ name: 'twitter:card', content: 'summary' }]),
