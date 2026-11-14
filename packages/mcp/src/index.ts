@@ -48,9 +48,13 @@ function toFrameworkList(): string {
 // Server
 // ---------------------------------------------------------------------------
 
+const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as {
+    version: string
+}
+
 const server = new McpServer({
     name: 'solar-icons-mcp-server',
-    version: '1.0.0',
+    version: pkg.version,
 })
 
 // ---------------------------------------------------------------------------

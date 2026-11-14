@@ -26,6 +26,7 @@
     "files": [
         "dist",
         "README.md",
+        "server.json",
         "LICENSE",
         "LICENSE-THIRD-PARTY"
     ],
@@ -65,5 +66,6 @@
     },
     "engines": {
         "node": ">=18"
-    }
+    },
+    "mcpName": "io.github.saoudi-h/solar-icons"
 }
