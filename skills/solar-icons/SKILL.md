@@ -16,7 +16,7 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 - **Icons:** https://solar-icons.dev/icons
 - **Docs:** https://solar-icons.dev/docs
 - **Figma:** https://www.figma.com/community/plugin/1664759238792120976/solar-icons
-- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Rails, via RubyGems) • `flutter_solar_icons` (Flutter, via pub.dev) • `SolarIcons.Blazor` (Blazor, unreleased NuGet preview)
+- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Rails, via RubyGems) • `flutter_solar_icons` (Flutter, via pub.dev) • `SolarIcons.Blazor` (Blazor, via NuGet)
 
 > Install: `npx skills add saoudi-h/solar-icons --skill solar-icons` · CLI: `npx @solar-icons/cli --help`
 

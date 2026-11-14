@@ -1,6 +1,6 @@
 # @solar-icons/mcp
 
-MCP server for Solar Icons — 1,380 icons × 6 styles. Exposes `solar_*` tools for search, get, list, info and overview via the Model Context Protocol.
+MCP server for Solar Icons across 6 styles. Exposes `solar_*` tools for search, get, list, info and overview via the Model Context Protocol.
 
 ## Install
 
@@ -44,6 +44,6 @@ pnpm --filter @solar-icons/mcp start   # stdio
 npx @modelcontextprotocol/inspector npx -y @solar-icons/mcp  # inspector
 ```
 
-## Blazor preview
+## Blazor
 
-The Blazor package is an unreleased preview. Use `--framework blazor` in the CLI or `framework: "blazor"` in MCP search/get tools for Razor examples. Static components include the style in their name, such as `<HomeLinearIcon Size="24" />`, under `@using SolarIcons.Blazor`.
+`SolarIcons.Blazor` is published on NuGet. Use `--framework blazor` in the CLI or `framework: "blazor"` in MCP search/get tools for Razor examples. Static components include the style in their name, such as `<HomeLinearIcon Size="24" />`, under `@using SolarIcons.Blazor`.

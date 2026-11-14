@@ -6,6 +6,7 @@ import { HouseIcon } from '@solar-icons/react/linear/house'
 import { RocketIcon } from '@solar-icons/react/linear/rocket'
 import { RoundedMagnifierIcon } from '@solar-icons/react/linear/rounded-magnifier'
 import { SmartphoneUpdateIcon } from '@solar-icons/react/linear/smartphone-update'
+import { catalogStats } from '~generated/utils'
 
 import type { HeroSectionProps } from '~/components/home-page/sections/hero'
 import type { PackageSectionProps } from '~/components/home-page/sections/packages'
@@ -183,7 +184,7 @@ export const config: Config = {
             part1: 'Solar Icons for',
             part2: 'Modern Frameworks',
         },
-        content: '1,576 unique icons in six styles, packaged for modern web and mobile frameworks.',
+        content: `${catalogStats.formattedIconCount} unique icons in six styles, packaged for modern web and mobile frameworks.`,
         exploreIcons: {
             label: 'Explore Icons',
             href: '/icons',

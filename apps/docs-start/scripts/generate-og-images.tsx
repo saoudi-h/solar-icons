@@ -12,6 +12,7 @@ import path from 'node:path'
 import { Resvg } from '@resvg/resvg-js'
 import satori from 'satori'
 
+import { catalogStats } from '../generated/utils'
 import { appRoot, collectDocsPaths } from './docs-paths'
 
 const SOLAR_LOGO_PATH =
@@ -193,10 +194,36 @@ async function render(
     await writeFile(target, png)
 }
 
-await render('home/image.png', { title: 'Solar Icons', description: '1,576 icons · 6 styles' })
+async function collectBlogPosts() {
+    const blogRoot = path.join(appRoot, 'content', 'blog')
+    const { readdirSync } = await import('node:fs')
+    return readdirSync(blogRoot, { withFileTypes: true })
+        .filter(entry => entry.isFile() && entry.name.endsWith('.mdx'))
+        .map(entry => entry.name.slice(0, -'.mdx'.length))
+        .sort()
+}
+
+async function readBlogFrontmatter(slug: string) {
+    const source = await readFile(path.join(appRoot, 'content', 'blog', `${slug}.mdx`), 'utf8')
+    const block = source.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? ''
+    const field = (key: string) => {
+        const value = block.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))?.[1]?.trim()
+        return value?.replace(/^(['"])(.*)\1$/, '$2')
+    }
+    return { title: field('title') ?? slug, description: field('description') }
+}
+
+await render('home/image.png', {
+    title: 'Solar Icons',
+    description: `${catalogStats.formattedIconCount} icons · ${catalogStats.styleCount} styles`,
+})
 await render('icons/image.png', {
     title: 'Explore Solar Icons',
-    description: 'Browse all six styles',
+    description: `Browse ${catalogStats.formattedIconCount} icons across six styles`,
+})
+await render('blog/image.png', {
+    title: 'Solar Icons Blog',
+    description: 'Engineering notes and guides',
 })
 
 const pages = collectDocsPaths()
@@ -204,4 +231,9 @@ for (const url of pages) {
     await render(`${url}/image.png`, await readFrontmatter(url))
 }
 
-console.log(`Rendered ${pages.length + 2} Open Graph images.`)
+const blogSlugs = await collectBlogPosts()
+for (const slug of blogSlugs) {
+    await render(`blog/${slug}/image.png`, await readBlogFrontmatter(slug))
+}
+
+console.log(`Rendered ${pages.length + blogSlugs.length + 3} Open Graph images.`)

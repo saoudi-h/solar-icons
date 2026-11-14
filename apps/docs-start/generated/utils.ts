@@ -43,3 +43,13 @@ export const categories = [
     'weather',
 ] as const
 export type Category = (typeof categories)[number]
+
+export const catalogStats = {
+    iconCount: 1576,
+    styleCount: 6,
+    variationCount: 9456,
+    categoryCount: 37,
+    packageCount: 16,
+    formattedIconCount: '1,576',
+    formattedVariationCount: '9,456',
+} as const

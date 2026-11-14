@@ -1,4 +1,6 @@
 'use client'
+import { catalogStats } from '~generated/utils'
+
 import { NoiseSvg } from '~/components/ui/noise-svg'
 
 import { IconShowcase } from './sections/icons'
@@ -23,6 +25,10 @@ export function IconsContent() {
               md:gap-12 md:px-6 md:py-[34px]
               lg:px-10
             ">
+            <h1 className="sr-only">
+                Explore {catalogStats.formattedIconCount} Solar Icons Across{' '}
+                {catalogStats.styleCount} Styles
+            </h1>
             <div
                 className={`
                   relative flex w-full max-w-[96rem] flex-1 flex-col items-center self-center

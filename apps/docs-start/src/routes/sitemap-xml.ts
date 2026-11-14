@@ -14,12 +14,15 @@ export const Route = createFileRoute('/sitemap-xml')({
                 const url = (path: string) => new URL(path, siteUrl).toString()
 
                 const docsEntries = await Promise.all(
-                    source.getPages().map(async page => ({
-                        url: url(page.url),
-                        lastModified: lastModifiedOf(await page.data.load()),
-                        changeFrequency: 'weekly',
-                        priority: 0.5,
-                    }))
+                    source
+                        .getPages()
+                        .filter(page => page.slugs[0] !== 'v1')
+                        .map(async page => ({
+                            url: url(page.url),
+                            lastModified: lastModifiedOf(await page.data.load()),
+                            changeFrequency: 'weekly',
+                            priority: 0.5,
+                        }))
                 )
 
                 const entries: {

@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { catalogStats } from '~generated/utils'
 
 import { AiToolsSection } from '~/components/home-page/sections/ai-tools'
 import { CommunitySection } from '~/components/home-page/sections/community'
@@ -11,8 +12,8 @@ import { seo } from '~/utils/seo'
 export const Route = createFileRoute('/_site/')({
     head: () =>
         seo({
-            title: 'Solar Icons',
-            description: '1,576 icons · 6 styles',
+            title: `Solar Icons: ${catalogStats.formattedIconCount} SVG Icons in ${catalogStats.styleCount} Styles for Code & Figma`,
+            description: `${catalogStats.formattedIconCount} open-source SVG icons in ${catalogStats.styleCount} styles (Bold, Duotone, Broken, Linear, Outline) for React, Vue, Svelte, Flutter, Blade, Rails, Blazor, Figma, CLI, and MCP.`,
             path: '/',
             image: '/og/home/image.png',
         }),

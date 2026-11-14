@@ -28,8 +28,10 @@ export const Route = createFileRoute('/_site/blog/')({
     head: () =>
         seo({
             title: 'Blog',
-            description: 'Articles about Solar Icons, interface design, and development.',
+            description:
+                'Engineering notes, guides, and releases for Solar Icons across web, mobile, server frameworks, Figma, and AI coding tools.',
             path: '/blog',
+            image: '/og/blog/image.png',
         }),
     component: BlogIndex,
 })

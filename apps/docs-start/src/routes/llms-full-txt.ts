@@ -10,7 +10,12 @@ export const Route = createFileRoute('/llms-full-txt')({
     server: {
         handlers: {
             GET: async () => {
-                const scanned = await Promise.all(source.getPages().map(page => getLLMText(page)))
+                const scanned = await Promise.all(
+                    source
+                        .getPages()
+                        .filter(page => page.slugs[0] !== 'v1')
+                        .map(page => getLLMText(page))
+                )
 
                 return new Response(scanned.join('\n\n'), {
                     headers: {

@@ -11,6 +11,7 @@ import { StarIcon } from '@solar-icons/react/dynamic/star'
 import { WidgetIcon } from '@solar-icons/react/dynamic/widget'
 import { motion, useReducedMotion } from 'motion/react'
 import React from 'react'
+import { catalogStats } from '~generated/utils'
 
 import { SectionMotion } from '~/components/ui-blocks/animations/SectionMotion'
 import { GitHubStarButton } from '~/components/ui/GitHubStarButton'
@@ -89,11 +90,14 @@ export const CommunitySection = () => {
                             </motion.div>
                             {/* Stat Card 2: Total Icons */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Icons" value={9456} />
+                                <StatCard title="Total Icons" value={catalogStats.variationCount} />
                             </motion.div>
                             {/* Stat Card 3: Total Packages */}
                             <motion.div variants={itemVariants} className="flex-1">
-                                <StatCard title="Total Packages" value={16} />
+                                <StatCard
+                                    title="Total Packages"
+                                    value={catalogStats.packageCount}
+                                />
                             </motion.div>
                         </div>
                     </div>
