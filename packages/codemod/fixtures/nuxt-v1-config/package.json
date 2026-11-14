@@ -5,8 +5,8 @@
         "build": "nuxt build"
     },
     "dependencies": {
-        "@solar-icons/nuxt": "2.3.3",
-        "@solar-icons/vue": "2.3.3",
+        "@solar-icons/nuxt": "2.3.4",
+        "@solar-icons/vue": "2.3.4",
         "nuxt": "4.6.4"
     }
 }
