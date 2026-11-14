@@ -11,8 +11,9 @@ import { seo } from '~/utils/seo'
 export const Route = createFileRoute('/_site/')({
     head: () =>
         seo({
-            title: 'Solar Icons',
-            description: '1,576 icons · 6 styles',
+            title: 'Solar Icons: 1,576 SVG Icons in 6 Styles for Code & Figma',
+            description:
+                '1,576 open-source SVG icons in 6 styles (Bold, Duotone, Broken, Linear, Outline) for React, Vue, Svelte, Flutter, Blade, Rails, Blazor, Figma, CLI, and MCP.',
             path: '/',
             image: '/og/home/image.png',
         }),

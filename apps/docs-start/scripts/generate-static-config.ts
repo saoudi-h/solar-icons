@@ -50,10 +50,10 @@ if (noIndex) {
 await writeFile(path.join(publicDir, '_headers'), `${headers.join('\n\n')}\n`)
 
 /**
- * The docs index is a temporary redirect in the current app, the test
+ * Permanently redirect `/docs` to the current v2 docs root; the test
  * environment adds a probe to check the redirect support of the platform.
  */
-const redirects = ['/docs /docs/v2 307']
+const redirects = ['/docs /docs/v2 308']
 
 if (noIndex) {
     redirects.push('/__m0-redirect-test / 308')

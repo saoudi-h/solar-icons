@@ -38,8 +38,9 @@ export const Route = createFileRoute('/_site/icons')({
     validateSearch,
     head: () =>
         seo({
-            title: 'Explore Solar Icons',
-            description: 'Browse all six styles',
+            title: 'Explore 1,576 SVG Icons in 6 Styles',
+            description:
+                'Browse, filter, and copy 1,576 SVG icons across 6 styles for React, Vue, Svelte, Flutter, Blade, Rails, Blazor, and Figma.',
             path: '/icons',
             image: '/og/icons/image.png',
         }),

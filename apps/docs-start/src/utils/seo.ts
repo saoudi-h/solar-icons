@@ -23,7 +23,10 @@ export function seo({
     noIndex,
 }: SeoOptions) {
     const url = absoluteUrl(path)
-    const fullTitle = title === site.title ? title : `${title} | ${site.name}`
+    const fullTitle =
+        title === site.title || title.startsWith(`${site.name}:`)
+            ? title
+            : `${title} | ${site.name}`
     const imageUrl = image ? absoluteUrl(image) : undefined
 
     return {

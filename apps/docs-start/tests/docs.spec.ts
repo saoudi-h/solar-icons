@@ -69,8 +69,23 @@ test('the static files are served with the expected content type', async ({ requ
 test('the docs index redirects to the v2 documentation', async ({ request }) => {
     const response = await request.get('/docs', { maxRedirects: 0 })
 
-    expect(response.status()).toBe(307)
+    expect(response.status()).toBe(308)
     expect(response.headers()['location']).toBe('/docs/v2')
+})
+
+test('seo metadata distinguishes v1 noindex, icons h1, and blog og:image', async ({ request }) => {
+    const v1Html = await (await request.get('/docs/v1')).text()
+    expect(v1Html).toContain('name="robots" content="noindex, nofollow"')
+
+    const sitemap = await (await request.get('/sitemap.xml')).text()
+    expect(sitemap).not.toContain('/docs/v1')
+
+    const iconsHtml = await (await request.get('/icons')).text()
+    expect(iconsHtml).toContain('<h1')
+
+    const postHtml = await (await request.get('/blog/build-consistent-icon-system-react')).text()
+    expect(postHtml).toContain('property="og:image"')
+    expect(postHtml).toContain('"@type":"BlogPosting"')
 })
 
 test('the blog lists its articles and opens one', async ({ page }) => {

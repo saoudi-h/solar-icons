@@ -62,7 +62,8 @@ function RootDocument({ children }: { children: ReactNode }) {
                 applicationCategory: 'DeveloperApplication',
                 operatingSystem: 'All',
                 url: site.url,
-                license: 'https://github.com/saoudi-h/solar/blob/main/LICENSE',
+                license: 'https://github.com/saoudi-h/solar-icons/blob/main/LICENSE',
+                sameAs: 'https://github.com/saoudi-h/solar-icons',
                 author: {
                     '@type': 'Person',
                     name: 'Saoudi Hakim',

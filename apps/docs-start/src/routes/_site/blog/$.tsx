@@ -13,6 +13,7 @@ import { Button } from '~/components/ui/button'
 import { OptimizedImage } from '~/components/ui/image'
 import { blogSource } from '~/lib/source'
 import { seo } from '~/utils/seo'
+import { absoluteUrl, site } from '~/utils/site'
 
 interface AuthorProfile {
     name: string
@@ -73,15 +74,51 @@ export const Route = createFileRoute('/_site/blog/$')({
         return { slug: params._splat ?? '' }
     },
     head: ({ loaderData }) => {
-        const page = loaderData ? blogSource.getPage([loaderData.slug]) : undefined
-        if (!page) return {}
+        const slug = loaderData?.slug
+        const page = slug !== undefined ? blogSource.getPage([slug]) : undefined
+        if (!page || slug === undefined) return {}
 
-        return seo({
+        const image = (page.data.image as string | undefined) ?? `/og/blog/${slug}/image.png`
+        const headData = seo({
             title: page.data.title,
             description: page.data.description ?? `Solar Icons blog: ${page.data.title}`,
             path: page.url,
+            image,
             type: 'article',
         })
+        const publishedDate =
+            page.data.date instanceof Date
+                ? page.data.date.toISOString()
+                : new Date(page.data.date as string).toISOString()
+        const articleSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: page.data.title,
+            description: page.data.description ?? `Solar Icons blog: ${page.data.title}`,
+            datePublished: publishedDate,
+            image: absoluteUrl(image),
+            url: absoluteUrl(page.url),
+            author: {
+                '@type': 'Person',
+                name: 'Saoudi Hakim',
+                url: 'https://hakimsaoudi.dev',
+            },
+            publisher: {
+                '@type': 'Organization',
+                name: site.name,
+                url: site.url,
+            },
+        }
+
+        return {
+            ...headData,
+            scripts: [
+                {
+                    type: 'application/ld+json',
+                    children: JSON.stringify(articleSchema).replace(/</g, '\\u003c'),
+                },
+            ],
+        }
     },
     component: BlogPost,
 })
