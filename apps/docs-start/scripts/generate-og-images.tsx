@@ -12,6 +12,7 @@ import path from 'node:path'
 import { Resvg } from '@resvg/resvg-js'
 import satori from 'satori'
 
+import { catalogStats } from '../generated/utils'
 import { appRoot, collectDocsPaths } from './docs-paths'
 
 const SOLAR_LOGO_PATH =
@@ -212,10 +213,13 @@ async function readBlogFrontmatter(slug: string) {
     return { title: field('title') ?? slug, description: field('description') }
 }
 
-await render('home/image.png', { title: 'Solar Icons', description: '1,576 icons · 6 styles' })
+await render('home/image.png', {
+    title: 'Solar Icons',
+    description: `${catalogStats.formattedIconCount} icons · ${catalogStats.styleCount} styles`,
+})
 await render('icons/image.png', {
     title: 'Explore Solar Icons',
-    description: 'Browse 1,576 icons across six styles',
+    description: `Browse ${catalogStats.formattedIconCount} icons across six styles`,
 })
 await render('blog/image.png', {
     title: 'Solar Icons Blog',

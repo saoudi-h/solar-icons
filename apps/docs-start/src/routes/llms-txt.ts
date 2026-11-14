@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { llms } from 'fumadocs-core/source'
+import { catalogStats } from '~generated/utils'
 
 import { blogSource, source } from '~/lib/source'
 import { site } from '~/utils/site'
@@ -33,7 +34,7 @@ export const Route = createFileRoute('/llms-txt')({
                         '',
                         `> ${site.description}`,
                         '',
-                        '- [Explore 1,576 Icons](/icons): Browse and copy all 6 styles.',
+                        `- [Explore ${catalogStats.formattedIconCount} Icons](/icons): Browse and copy all ${catalogStats.styleCount} styles.`,
                         '- [Blog](/blog): Guides and engineering notes.',
                         ...blogLinks,
                         '',

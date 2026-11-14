@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 import { categoryCards } from '../apps/docs-start/generated/categories'
+import { catalogStats } from '../apps/docs-start/generated/utils'
 import { scanSvgIcons } from '../packages/core/src/scripts/icon-metadata'
 import type { Metadata } from '../packages/core/src/types'
 
@@ -28,13 +29,6 @@ const CURRENT_DOCUMENTATION_FILES: Array<{
     { relativePath: 'README.md', counts: ['logical', 'svg'] },
     { relativePath: 'AGENT.md', counts: ['logical', 'svg'] },
     { relativePath: 'docs/RELEASE-PROCEDURE.md', counts: ['logical', 'svg'] },
-    { relativePath: 'apps/docs-start/src/config/index.tsx', counts: ['logical'] },
-    { relativePath: 'apps/docs-start/src/routes/_site/index.tsx', counts: ['logical'] },
-    { relativePath: 'apps/docs-start/scripts/generate-og-images.tsx', counts: ['logical'] },
-    {
-        relativePath: 'apps/docs-start/src/components/home-page/sections/community/index.tsx',
-        counts: ['svg'],
-    },
     { relativePath: 'apps/docs-start/content/docs/v2/index.mdx', counts: ['logical', 'svg'] },
     {
         relativePath: 'apps/docs-start/content/docs/v2/icon-reference/categories.mdx',
@@ -270,15 +264,6 @@ const main = () => {
                         `${expectedCounts.logical} icons × 6 styles = ${expectedCounts.svg} variants`
                     )
                 }
-                if (
-                    relativePath ===
-                    'apps/docs-start/src/components/home-page/sections/community/index.tsx'
-                ) {
-                    next = next.replace(
-                        /title="Total Icons" value=\{\d+\}/g,
-                        `title="Total Icons" value={${expectedCounts.svg}}`
-                    )
-                }
                 if (next !== content) {
                     fs.writeFileSync(filename, next)
                     content = next
@@ -306,20 +291,49 @@ const main = () => {
             if (!line.startsWith('|')) break
             if (!line.includes('---')) tableRows += 1
         }
-        const homepage = fs.readFileSync(
-            path.join(
-                REPOSITORY_ROOT,
-                'apps/docs-start/src/components/home-page/sections/community/index.tsx'
-            ),
-            'utf8'
-        )
-        const homepageMatch = homepage.match(/title="Total Packages" value=\{(\d+)\}/)
-        if (!homepageMatch) {
-            errors.push('homepage has no Total Packages stat card')
-        } else if (Number(homepageMatch[1]) !== tableRows) {
+        if (catalogStats.iconCount !== expectedCounts.logical) {
             errors.push(
-                `homepage reports ${homepageMatch[1]} packages but README lists ${tableRows}`
+                `apps/docs-start/generated/utils.ts catalogStats.iconCount is ${catalogStats.iconCount} (expected ${expectedCounts.logical})`
             )
+        }
+        if (catalogStats.variationCount !== expectedCounts.svg) {
+            errors.push(
+                `apps/docs-start/generated/utils.ts catalogStats.variationCount is ${catalogStats.variationCount} (expected ${expectedCounts.svg})`
+            )
+        }
+        if (catalogStats.styleCount !== styleCount) {
+            errors.push(
+                `apps/docs-start/generated/utils.ts catalogStats.styleCount is ${catalogStats.styleCount} (expected ${styleCount})`
+            )
+        }
+        if (catalogStats.categoryCount !== catalogueCategories.length) {
+            errors.push(
+                `apps/docs-start/generated/utils.ts catalogStats.categoryCount is ${catalogStats.categoryCount} (expected ${catalogueCategories.length})`
+            )
+        }
+        if (catalogStats.packageCount !== tableRows) {
+            errors.push(
+                `apps/docs-start/generated/utils.ts catalogStats.packageCount is ${catalogStats.packageCount} but README lists ${tableRows}`
+            )
+        }
+
+        const dynamicStatsConsumers = [
+            'apps/docs-start/src/utils/site.ts',
+            'apps/docs-start/src/config/index.tsx',
+            'apps/docs-start/src/routes/_site/index.tsx',
+            'apps/docs-start/src/routes/_site/icons.tsx',
+            'apps/docs-start/src/routes/llms-txt.ts',
+            'apps/docs-start/src/components/icons-page/IconsContent.tsx',
+            'apps/docs-start/src/components/home-page/sections/community/index.tsx',
+            'apps/docs-start/scripts/generate-og-images.tsx',
+        ]
+        for (const relativePath of dynamicStatsConsumers) {
+            const content = fs.readFileSync(path.join(REPOSITORY_ROOT, relativePath), 'utf8')
+            if (!content.includes('catalogStats')) {
+                errors.push(
+                    `${relativePath} must read counts from catalogStats rather than hardcoding them`
+                )
+            }
         }
 
         // Banner integrity: every logo img must resolve to a committed

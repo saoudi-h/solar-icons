@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { categories } from '~generated/utils'
+import { catalogStats, categories } from '~generated/utils'
 
 import { IconsContent } from '~/components/icons-page/IconsContent'
 import { seo } from '~/utils/seo'
@@ -38,9 +38,8 @@ export const Route = createFileRoute('/_site/icons')({
     validateSearch,
     head: () =>
         seo({
-            title: 'Explore 1,576 SVG Icons in 6 Styles',
-            description:
-                'Browse, filter, and copy 1,576 SVG icons across 6 styles for React, Vue, Svelte, Flutter, Blade, Rails, Blazor, and Figma.',
+            title: `Explore ${catalogStats.formattedIconCount} SVG Icons in ${catalogStats.styleCount} Styles`,
+            description: `Browse, filter, and copy ${catalogStats.formattedIconCount} SVG icons across ${catalogStats.styleCount} styles for React, Vue, Svelte, Flutter, Blade, Rails, Blazor, and Figma.`,
             path: '/icons',
             image: '/og/icons/image.png',
         }),
