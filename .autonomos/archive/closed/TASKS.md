@@ -210,3 +210,7 @@
 - [x] **[FLUTTER-EVAL]** Evaluate Flutter PR #571, add framework-package policy in `CONTRIBUTING.md`, and ship `flutter_solar_icons`. `Priority: 🟠` `Complexity: L` `Completed: 2026-11-12` *See worklogs/2026-11-12-FLUTTER-EVAL.md*
 - [x] **[MCP-PKG]** Create `@solar-icons/mcp` (bin `solar-icons-mcp`) with 7 `solar_*` tools over `@solar-icons/static` and `@solar-icons/cli` on stdio. `Priority: 🟠` `Complexity: M` `Completed: 2026-11-12` *See worklogs/2026-11-12-MCP-PKG.md*
 - [x] **[PROTO-UPGRADE]** Upgrade Autonomos protocol to 0.8.5-alpha (format 2) and reconcile context-budget findings. `Priority: 🟠` `Complexity: M` `Completed: 2026-11-12` *See worklogs/2026-11-12-PROTO-UPGRADE.md*
+
+## Closed 2026-11-15
+
+- [x] **[SOLID-PKG-RELIABILITY]** Diagnose and fix `@solar-icons/solid` Solid 1 distribution/packaging defects (compiled `dist/` SSR breakage, `@solar-icons/core` `dist/` leakage and `dynamic-icon.d.mts` export gap, packaging audit), and add dist-level regression tests. `Priority: 🔴` `Complexity: M` `Completed: 2026-11-15` *See worklogs/2026-11-15-SOLID-PKG-RELIABILITY.md*
