@@ -84,6 +84,8 @@ export const Route = createFileRoute('/_site/blog/$')({
             description: page.data.description ?? `Solar Icons blog: ${page.data.title}`,
             path: page.url,
             image,
+            imageWidth: page.data.imageWidth,
+            imageHeight: page.data.imageHeight,
             type: 'article',
         })
         const publishedDate =
