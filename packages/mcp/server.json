@@ -1,0 +1,25 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "io.github.saoudi-h/solar-icons",
+    "title": "Solar Icons MCP",
+    "description": "Search Solar Icons across 6 styles with verified imports for 13+ frameworks.",
+    "version": "2.9.0",
+    "websiteUrl": "https://solar-icons.dev/docs/v2/ai-tools",
+    "repository": {
+        "url": "https://github.com/saoudi-h/solar-icons",
+        "source": "github",
+        "id": "884974319",
+        "subfolder": "packages/mcp"
+    },
+    "packages": [
+        {
+            "registryType": "npm",
+            "registryBaseUrl": "https://registry.npmjs.org",
+            "identifier": "@solar-icons/mcp",
+            "version": "2.9.0",
+            "transport": {
+                "type": "stdio"
+            }
+        }
+    ]
+}

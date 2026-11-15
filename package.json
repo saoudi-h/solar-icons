@@ -33,7 +33,7 @@
         "format:fix": "turbo format:fix",
         "clean": "turbo clean && rimraf node_modules",
         "version": "changeset version",
-        "version-packages": "changeset version && tsx scripts/bump-polyglot-packages.ts --from-static && pnpm install --no-frozen-lockfile",
+        "version-packages": "changeset version && tsx scripts/sync-mcp-server-manifest.ts && tsx scripts/bump-polyglot-packages.ts --from-static && pnpm install --no-frozen-lockfile",
         "release": "changeset publish",
         "typecheck": "turbo typecheck",
         "check:exports": "node scripts/check-exports.mjs",
