@@ -1,8 +1,10 @@
 import { renderToString } from 'solid-js/web'
 import { describe, expect, it } from 'vitest'
 
+import { ArrowUpIcon as ArrowUpBoldDuotone } from '../src/icons/bold-duotone/arrow-up'
 import { ArrowUpIcon as ArrowUpDynamic } from '../src/icons/dynamic/arrow-up'
 import { ArrowUpIcon } from '../src/icons/linear/arrow-up'
+import { SolarProvider, useSolar } from '../src/lib/SolarProvider'
 
 describe('ArrowUpIcon rendering', () => {
     it('renders default SVG attributes', () => {
@@ -107,5 +109,36 @@ describe('ArrowUpDynamic (dynamic icon)', () => {
         const html = renderToString(() => <ArrowUpDynamic weight="Bold" class="text-blue-500" />)
 
         expect(html).toContain('class="solar solar-arrow-up-bold text-blue-500')
+    })
+
+    it('does not leak weight or styles attributes onto rendered SVG', () => {
+        const html = renderToString(() => <ArrowUpDynamic weight="Bold" />)
+
+        expect(html).not.toContain('weight=')
+        expect(html).not.toContain('styles=')
+    })
+})
+
+describe('SolarProvider and duotone SSR rendering', () => {
+    it('renders SolarProvider CSS custom properties and context values', () => {
+        function Probe() {
+            const solar = useSolar()
+            return <span data-color={solar.color()} data-size={String(solar.size())} />
+        }
+
+        const html = renderToString(() => (
+            <SolarProvider color="crimson" size={32} secondaryColor="gold" secondaryOpacity={0.35}>
+                <Probe />
+                <ArrowUpBoldDuotone />
+            </SolarProvider>
+        ))
+
+        expect(html).toContain('--solar-color:crimson')
+        expect(html).toContain('--solar-size:32px')
+        expect(html).toContain('--solar-secondary-color:gold')
+        expect(html).toContain('--solar-secondary-opacity:0.35')
+        expect(html).toContain('data-color="crimson"')
+        expect(html).toContain('data-size="32"')
+        expect(html).toContain('solar-arrow-up-bold-duotone')
     })
 })

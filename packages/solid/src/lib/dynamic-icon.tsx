@@ -1,5 +1,6 @@
 import { WEIGHT_MAP, type Weight, type StyleComponentsMap } from '@solar-icons/core/runtime'
-import { createComponent, type JSX } from 'solid-js'
+import { splitProps, type JSX } from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
 import type { IconProps } from './types'
 
@@ -16,7 +17,7 @@ export type DynamicIconProps = Omit<IconProps, 'weight' | 'styles'> & {
 export function DynamicIcon(
     props: { weight?: Weight; styles: StyleComponentsMap<IconComponent> } & IconProps
 ): JSX.Element {
-    const key = () => (props.weight ? WEIGHT_MAP[props.weight] : 'linear')
-    const Component = () => props.styles[key()]
-    return createComponent(Component(), props as IconProps)
+    const [local, others] = splitProps(props, ['weight', 'styles'])
+    const component = () => local.styles[local.weight ? WEIGHT_MAP[local.weight] : 'linear']
+    return <Dynamic component={component()} {...(others as IconProps)} />
 }
