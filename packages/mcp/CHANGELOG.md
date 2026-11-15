@@ -1,5 +1,11 @@
 # @solar-icons/mcp
 
+## 2.9.1
+
+### Patch Changes
+
+- [#735](https://github.com/saoudi-h/solar-icons/pull/735) [`da9352b`](https://github.com/saoudi-h/solar-icons/commit/da9352b5e05878bda9710eea0a6a6b23bd5780de) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add `mcpName` and `server.json` metadata for official MCP Registry publishing and read the server version from `package.json`.
+
 ## 2.9.0
 
 ### Minor Changes
