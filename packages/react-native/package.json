@@ -90,6 +90,7 @@
         "format:fix": "oxfmt --write .",
         "clean": "rimraf *.tsbuildinfo node_modules build dist",
         "typecheck": "tsc --noEmit",
+        "test": "vitest run",
         "pre-commit": "lint-staged"
     },
     "devDependencies": {
