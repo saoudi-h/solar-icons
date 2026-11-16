@@ -1,5 +1,11 @@
 # @solar-icons/angular
 
+## 2.6.1
+
+### Patch Changes
+
+- [#749](https://github.com/saoudi-h/solar-icons/pull/749) [`d5bd7ef`](https://github.com/saoudi-h/solar-icons/commit/d5bd7efc15c422f54a6a23933ad2ec4afcda1f05) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add explicit `.js` / `/index.js` extensions to relative imports and exports so types and ESM modules resolve under `moduleResolution: "node16"` and `"nodenext"`.
+
 ## 2.6.0
 
 ### Minor Changes
