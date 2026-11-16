@@ -1,6 +1,6 @@
 ---
 name: solar-icons
-description: Add Solar Icons via @solar-icons/cli to any React, Vue, Svelte, Solid, Angular, React Native, Nuxt, Static, vanilla JS, Laravel Blade, Rails, Flutter, or Blazor project. Use when installing @solar-icons/react|vue|svelte|solid|angular|react-native|nuxt|static|js, solar-icons/blade, solar_icons (Rails), flutter_solar_icons, or SolarIcons.Blazor, choosing an icon, picking Bold|Linear|Outline|BoldDuotone|LineDuotone|Broken, or wiring SolarProvider, useSolar, secondaryColor, secondaryOpacity, strokeWidth, color, size. Triggers on solar icons, solar-icons, Icon suffix, kebab-case imports, duotone, and CSS variables --solar-*.
+description: Add Solar Icons via @solar-icons/cli to any React, Vue, Svelte, Solid, Angular, React Native, Nuxt, Static, vanilla JS, Laravel Blade, Rails, Flutter, or Blazor project. Use when installing @solar-icons/react|vue|svelte|solid|solid-v2|angular|react-native|nuxt|static|js, solar-icons/blade, solar_icons (Rails), flutter_solar_icons, or SolarIcons.Blazor, choosing an icon, picking Bold|Linear|Outline|BoldDuotone|LineDuotone|Broken, or wiring SolarProvider, useSolar, secondaryColor, secondaryOpacity, strokeWidth, color, size. Triggers on solar icons, solar-icons, Icon suffix, kebab-case imports, duotone, and CSS variables --solar-*.
 license: MIT
 metadata:
     author: saoudi-h
@@ -16,7 +16,7 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 - **Icons:** https://solar-icons.dev/icons
 - **Docs:** https://solar-icons.dev/docs
 - **Figma:** https://www.figma.com/community/plugin/1664759238792120976/solar-icons
-- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Rails, via RubyGems) • `flutter_solar_icons` (Flutter, via pub.dev) • `SolarIcons.Blazor` (Blazor, via NuGet)
+- **Packages:** `@solar-icons/react` • `@solar-icons/vue` • `@solar-icons/svelte` • `@solar-icons/solid` • `@solar-icons/solid-v2` • `@solar-icons/angular` • `@solar-icons/react-native` • `@solar-icons/nuxt` • `@solar-icons/static` • `@solar-icons/js` • `@solar-icons/cli` • `solar-icons/blade` (Laravel, via Composer) • `solar_icons` (Rails, via RubyGems) • `flutter_solar_icons` (Flutter, via pub.dev) • `SolarIcons.Blazor` (Blazor, via NuGet)
 
 > Install: `npx skills add saoudi-h/solar-icons --skill solar-icons` · CLI: `npx @solar-icons/cli --help`
 
@@ -44,6 +44,7 @@ Solar Icons is the **maintained distribution of the Solar icon set**, packaged p
 | `@solar-icons/vue`          | `import { HomeIcon } from "@solar-icons/vue/bold/home"`           | `app.use(SolarIconsPlugin)`               | `references/vue.md`          |
 | `@solar-icons/svelte`       | `import HomeIcon from "@solar-icons/svelte/bold/heart"` (default) | Svelte 5 runes                            | `references/svelte.md`       |
 | `@solar-icons/solid`        | `import { HomeIcon } from "@solar-icons/solid/bold/home"`         | `SolarProvider` (signal)                  | `references/solid.md`        |
+| `@solar-icons/solid-v2`     | `import { HomeIcon } from "@solar-icons/solid-v2/bold/home"`      | `SolarProvider` (Solid 2 signal)          | `references/frameworks.md`   |
 | `@solar-icons/angular`      | `import { SolarHomeBold } from "@solar-icons/angular"`            | `<solar-provider>` directive              | `references/angular.md`      |
 | `@solar-icons/react-native` | `import { HomeIcon } from "@solar-icons/react-native/bold/home"`  | `alt` → `accessibilityLabel`              | `references/react-native.md` |
 | `@solar-icons/nuxt`         | `nuxt.config: modules: ["@solar-icons/nuxt"]`                     | `provider: true` default                  | `references/nuxt.md`         |
@@ -58,7 +59,7 @@ Top-level alternative (style in name, single import): `import { HomeBoldIcon } f
 
 ## Workflow — add icons to a project
 
-1. **Detect framework** (`package.json`): `react` → `@solar-icons/react`, `vue` → `vue`, `svelte` → `svelte`, `solid-js` → `solid`, `@angular/core` → `angular`, `react-native` → `react-native`, `nuxt` → `nuxt`, none → `static`/`js`. Laravel (`composer.json` + `illuminate/*`) → `solar-icons/blade` via `composer require solar-icons/blade`. Flutter (`pubspec.yaml` + `flutter` SDK) → `flutter_solar_icons` via `flutter pub add flutter_solar_icons`. Rails (`Gemfile` + `rails`) → the `solar_icons` gem via `bundle add solar_icons`.
+1. **Detect framework** (`package.json`): `react` → `@solar-icons/react`, `vue` → `vue`, `svelte` → `svelte`, `solid-js` 2.x (or `@solidjs/web` present) → `@solar-icons/solid-v2`, `solid-js` 1.x → `@solar-icons/solid`, `@angular/core` → `angular`, `react-native` → `react-native`, `nuxt` → `nuxt`, none → `static`/`js`. Laravel (`composer.json` + `illuminate/*`) → `solar-icons/blade` via `composer require solar-icons/blade`. Flutter (`pubspec.yaml` + `flutter` SDK) → `flutter_solar_icons` via `flutter pub add flutter_solar_icons`. Rails (`Gemfile` + `rails`) → the `solar_icons` gem via `bundle add solar_icons`.
    Blazor (`.csproj` plus `.razor` components) → `SolarIcons.Blazor` via `dotnet add package SolarIcons.Blazor` (details in `references/blazor.md`).
 2. **Install** with the project's PM (`pnpm add @solar-icons/<pkg>`; respect `packageManager` field).
 3. **Search** via CLI (offline, no API key):

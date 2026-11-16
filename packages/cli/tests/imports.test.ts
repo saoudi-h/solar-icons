@@ -61,6 +61,18 @@ describe('import snippets are verified against packages', () => {
         )
     })
 
+    it('solid and solid-v2 share the same per-file and root import shape', () => {
+        expect(importSnippet('heart', 'bold', 'solid')).toBe(
+            'import { HeartIcon } from "@solar-icons/solid/bold/heart";'
+        )
+        expect(importSnippet('heart', 'bold', 'solid-v2')).toBe(
+            'import { HeartIcon } from "@solar-icons/solid-v2/bold/heart";'
+        )
+        expect(rootImportSnippet('heart', 'bold', 'solid-v2')).toBe(
+            'import { HeartBoldIcon } from "@solar-icons/solid-v2";'
+        )
+    })
+
     it('svelte per-file is default import without braces and no extension', () => {
         const snippet = importSnippet('heart', 'bold', 'svelte')
         expect(snippet).toBe('import HeartIcon from "@solar-icons/svelte/bold/heart";')

@@ -7,6 +7,7 @@ const PACKAGES = [
     { id: 'vue', label: 'Vue', pkg: '@solar-icons/vue' },
     { id: 'svelte', label: 'Svelte', pkg: '@solar-icons/svelte' },
     { id: 'solid', label: 'Solid', pkg: '@solar-icons/solid' },
+    { id: 'solid-v2', label: 'Solid 2', pkg: '@solar-icons/solid-v2' },
     { id: 'angular', label: 'Angular', pkg: '@solar-icons/angular' },
     { id: 'react-native', label: 'React Native', pkg: '@solar-icons/react-native' },
     { id: 'js', label: 'JavaScript', pkg: '@solar-icons/js' },

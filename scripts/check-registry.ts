@@ -25,6 +25,7 @@ type RegistrySkill = {
     slug: string
     registry: string
     package: string
+    guide: string
     summary: string
     /** Source lives in its own repository, not this monorepo. */
     external?: boolean
@@ -106,18 +107,25 @@ for (const entry of [...registry.packages, ...registry.skills]) {
     }
 }
 
-// Documentation pages exist and the sidebar lists exactly the registry.
+// Documentation pages exist and the sidebar lists every documented package page.
 const meta = JSON.parse(fs.readFileSync(DOCS_META_PATH, 'utf8')) as { pages: string[] }
 for (const entry of registry.packages) {
-    if (!fs.existsSync(path.join(DOCS_PAGES_DIRECTORY, `${entry.slug}.mdx`))) {
-        problems.push(`"${entry.package}" has no docs page: ${entry.slug}.mdx`)
+    const docSlug = docPageSlug(entry)
+    const docPath = path.join(DOCS_PAGES_DIRECTORY, `${docSlug}.mdx`)
+    if (!fs.existsSync(docPath)) {
+        problems.push(`"${entry.package}" has no docs page: ${docSlug}.mdx`)
+    } else if (entry.guide.startsWith('packages/') && entry.guide.includes('#')) {
+        const anchor = entry.guide.split('#')[1]
+        if (anchor && !hasHeadingAnchor(fs.readFileSync(docPath, 'utf8'), anchor)) {
+            problems.push(`"${entry.package}" guide anchor #${anchor} not found in ${docSlug}.mdx`)
+        }
     }
-    if (!meta.pages.includes(entry.slug)) {
-        problems.push(`"${entry.package}" is missing from the docs sidebar meta.json`)
+    if (!meta.pages.includes(docSlug)) {
+        problems.push(`"${entry.package}" (${docSlug}) is missing from the docs sidebar meta.json`)
     }
 }
 for (const slug of meta.pages) {
-    if (!registry.packages.some(entry => entry.slug === slug)) {
+    if (!registry.packages.some(entry => docPageSlug(entry) === slug)) {
         problems.push(`docs sidebar lists "${slug}", which is not in registry.json`)
     }
 }
@@ -236,4 +244,23 @@ function badgeUrl(entry: RegistryPackage): string {
         default:
             return ''
     }
+}
+
+function docPageSlug(entry: RegistryPackage): string {
+    if (entry.guide.startsWith('packages/')) {
+        return entry.guide.slice('packages/'.length).split('#')[0]!
+    }
+    return entry.slug
+}
+
+function hasHeadingAnchor(mdxContent: string, anchor: string): boolean {
+    for (const match of mdxContent.matchAll(/^#{1,6}\s+(.+)$/gm)) {
+        const headingSlug = match[1]!
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+        if (headingSlug === anchor) return true
+    }
+    return false
 }

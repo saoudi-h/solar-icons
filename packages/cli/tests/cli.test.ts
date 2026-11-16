@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
-import { catalogStats, loadDescriptions, resolveIconName, STYLES } from '../src/catalog.js'
+import {
+    catalogStats,
+    FRAMEWORKS,
+    loadDescriptions,
+    resolveIconName,
+    STYLES,
+} from '../src/catalog.js'
 import { searchCatalog } from '../src/search.js'
 
 describe('cli catalog', () => {
@@ -25,6 +31,10 @@ describe('cli catalog', () => {
     it('styles list', () => {
         expect(STYLES).toContain('linear')
         expect(STYLES).toHaveLength(6)
+    })
+    it('frameworks list includes solid and solid-v2', () => {
+        expect(FRAMEWORKS).toContain('solid')
+        expect(FRAMEWORKS).toContain('solid-v2')
     })
     it('resolves canonical names directly', () => {
         const descs = loadDescriptions()

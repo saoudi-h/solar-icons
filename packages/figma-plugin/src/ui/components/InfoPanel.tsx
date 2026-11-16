@@ -48,7 +48,7 @@ export function InfoPanel({ openExternal }: InfoPanelProps) {
                             className="package-link"
                             type="button"
                             key={item.package}
-                            onClick={() => openExternal(`https://solar-icons.dev/docs/v2/packages/${item.slug}`)}
+                            onClick={() => openExternal(`https://solar-icons.dev/docs/v2/${item.guide}`)}
                         >
                             <span className="package-logo" aria-hidden="true">
                                 <PackageMark logo={packageLogos[item.logo]} />
