@@ -15,7 +15,7 @@ const BUNDLE_FILE = /\.(?:mjs|cjs|js|svelte|d\.ts|d\.mts|d\.cts)$/
 
 // Modules the host application always provides, even though the package does not declare them.
 const PROVIDED_BY_HOST = {
-    nuxt: ['vue'],
+    nuxt: ['vue', '@nuxt/schema'],
 }
 
 await init
