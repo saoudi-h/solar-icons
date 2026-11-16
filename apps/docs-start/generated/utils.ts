@@ -49,7 +49,7 @@ export const catalogStats = {
     styleCount: 6,
     variationCount: 9456,
     categoryCount: 37,
-    packageCount: 16,
+    packageCount: 17,
     formattedIconCount: '1,576',
     formattedVariationCount: '9,456',
 } as const

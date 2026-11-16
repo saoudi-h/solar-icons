@@ -23,6 +23,7 @@ export const NPM_PACKAGES = [
     '@solar-icons/nuxt',
     '@solar-icons/svelte',
     '@solar-icons/solid',
+    '@solar-icons/solid-v2',
     '@solar-icons/angular',
     '@solar-icons/static',
     '@solar-icons/js',
