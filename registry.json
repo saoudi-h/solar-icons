@@ -81,6 +81,16 @@
             "guide": "packages/solid"
         },
         {
+            "name": "Solid 2",
+            "slug": "solid-v2",
+            "package": "@solar-icons/solid-v2",
+            "registry": "npm",
+            "path": "packages/solid-v2",
+            "logo": "devicon:solidjs",
+            "summary": "Solid 2 components",
+            "guide": "packages/solid#solid-2"
+        },
+        {
             "name": "Angular",
             "slug": "angular",
             "package": "@solar-icons/angular",

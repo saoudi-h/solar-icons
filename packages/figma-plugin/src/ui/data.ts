@@ -58,6 +58,7 @@ export type RegistrySkill = {
     registry: string
     package: string
     path: string
+    guide: string
     summary: string
 }
 
