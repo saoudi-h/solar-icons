@@ -266,6 +266,71 @@ test('mobile detail content scrolls and filter Escape preserves the selection', 
     ).toBeTruthy()
 })
 
+test('the mobile filter drawer has no horizontal overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/icons')
+    await page.getByRole('button', { name: 'Filters and appearance', exact: true }).click()
+    const drawer = page.locator('[data-vaul-drawer]')
+    await expect(drawer).toBeVisible()
+
+    const overflow = await drawer.evaluate(element => {
+        element.scrollLeft = 9999
+        return {
+            clientWidth: element.clientWidth,
+            scrollWidth: element.scrollWidth,
+            scrollLeft: element.scrollLeft,
+        }
+    })
+    expect(overflow.scrollWidth).toBe(overflow.clientWidth)
+    expect(overflow.scrollLeft).toBe(0)
+    expect(
+        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+    ).toBeTruthy()
+})
+
+test.describe('mobile drawer touch gestures', () => {
+    test.use({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true })
+
+    test('vertical swipes scroll the filter drawer and a horizontal swipe still dismisses it', async ({
+        page,
+    }) => {
+        await page.goto('/icons')
+        await page.getByRole('button', { name: 'Filters and appearance', exact: true }).click()
+        const drawer = page.locator('[data-vaul-drawer]')
+        await expect(drawer).toBeVisible()
+        expect(await drawer.evaluate(el => getComputedStyle(el).touchAction)).toBe('pan-y')
+
+        const cdp = await page.context().newCDPSession(page)
+        const swipe = async (dx: number, dy: number) => {
+            const x = 250
+            const y = 700
+            await cdp.send('Input.dispatchTouchEvent', {
+                type: 'touchStart',
+                touchPoints: [{ x, y }],
+            })
+            for (let step = 1; step <= 12; step++) {
+                await cdp.send('Input.dispatchTouchEvent', {
+                    type: 'touchMove',
+                    touchPoints: [{ x: x + (dx * step) / 12, y: y + (dy * step) / 12 }],
+                })
+                await page.waitForTimeout(20)
+            }
+            await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
+        }
+
+        await expect
+            .poll(async () => {
+                await swipe(0, -400)
+                return drawer.evaluate(el => el.scrollTop)
+            })
+            .toBeGreaterThan(100)
+
+        await page.waitForTimeout(500)
+        await swipe(300, 0)
+        await expect(drawer).toHaveCount(0)
+    })
+})
+
 test('initial previews are rendered in HTML without waiting for icon modules', async ({
     request,
 }) => {

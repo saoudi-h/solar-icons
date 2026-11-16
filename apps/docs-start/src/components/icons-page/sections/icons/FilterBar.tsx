@@ -265,7 +265,7 @@ export const FilterBar: React.FC<{ drawerExtras?: React.ReactNode }> = ({ drawer
                     className={cn(
                         `
                           fixed! top-20! right-2! bottom-2! z-80! flex! w-76! overflow-y-auto
-                          rounded-2xl border-none! p-3 outline-none!
+                          rounded-2xl border-none! p-3 outline-none! [&::after]:hidden touch-pan-y!
                         `,
                         PANEL_SURFACE
                     )}
