@@ -1,8 +1,7 @@
 {
     "name": "@solar-icons/solid-v2",
-    "version": "2.0.0-experimental.0",
-    "private": true,
-    "description": "Solar Icons for Solid 2 (experimental)",
+    "version": "2.0.0",
+    "description": "Solar Icons for Solid 2",
     "keywords": [
         "UI",
         "UX",

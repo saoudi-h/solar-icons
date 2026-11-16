@@ -108,7 +108,7 @@ Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [Reac
 
 `@solar-icons/solid` is ESM-only. `require()` does not work.
 
-## Solid 2 (experimental)
+## Solid 2
 
 `@solar-icons/solid` is for Solid 1. Solid 2 has its own package, `@solar-icons/solid-v2`:
 
@@ -123,6 +123,6 @@ import { SolarProvider } from '@solar-icons/solid-v2'
 import { HeartIcon } from '@solar-icons/solid-v2/bold'
 ```
 
-Solid 1 and Solid 2 differ in their compiler output, runtimes (`solid-js/web` became `@solidjs/web`), reactivity rules and JSX types. One build cannot serve both without trade-offs in server rendering, hydration and typing, so the two packages exist side by side while the framework changes major version. This split is specific to Solid. We will look again at a single package once the Solid 2 ecosystem is mature, and `@solar-icons/solid` is not deprecated.
+Solid 1 and Solid 2 differ in their compiler output, runtimes (`solid-js/web` became `@solidjs/web`), reactivity rules and JSX types. One build cannot serve both without trade-offs in server rendering, hydration and typing, so the two packages exist side by side while the framework changes major version. This split is specific to Solid. We will look again at a single package once the Solid 2 ecosystem is mature, and `@solar-icons/solid` remains the package for Solid 1 and is not deprecated.
 
-`@solar-icons/solid-v2` is a prerelease and is not presented as stable while Solid 2 is a release candidate. It requires `solid-js` and `@solidjs/web` `^2.0.0-rc.22`, and a JSX build for Solid 2 (`@solidjs/vite-plugin` 3 or `unplugin-solid` 3, with `"jsxImportSource": "@solidjs/web"`). The [package README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid-v2) lists the differences with the Solid 1 package.
+`@solar-icons/solid-v2` requires Solid 2 (`solid-js` and `@solidjs/web` `^2.0.0-rc.22`, currently a release candidate and tested with `rc.22`), and a JSX build for Solid 2 (`@solidjs/vite-plugin` 3 or `unplugin-solid` 3, with `"jsxImportSource": "@solidjs/web"`). The [package README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid-v2) lists the differences with the Solid 1 package.

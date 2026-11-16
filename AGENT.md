@@ -32,11 +32,11 @@ For authoritative inventory counts and update steps, follow `docs/ICON-INVENTORY
 ## 📁 Key Directories
 
 - `packages/core` — private source of truth for SVGs, metadata, types, and codegen helpers.
-- `packages/{react,react-native,vue,nuxt,svelte,solid,angular}` — public npm framework packages. `packages/solid-v2` (Solid 2) is a private duplicate of `solid` until its first release.
+- `packages/{react,react-native,vue,nuxt,svelte,solid,solid-v2,angular}` — public npm framework packages (`packages/solid-v2` targets Solid 2 as a deliberate duplicate of `solid`).
 - `packages/{static,js,cli,mcp,codemod}` — public non-framework/tooling packages (`@solar-icons/react-perf` is deprecated/removed; downloads still summed on docs homepage).
 - `packages/{flutter,rails}` — non-workspace polyglot packages (`flutter_solar_icons` on pub.dev; Ruby gem `solar_icons`). `solar-icons/blade` lives in a separate repo.
 - `packages/figma-plugin` — Figma Community plugin (`docs/FIGMA-PLUGIN-PUBLISHING.md`).
-- `apps/docs-start` & `apps/*-app` — docs site and local visual test apps (test apps are excluded from CI).
+- `apps/docs-start` & `apps/*-app` (including `apps/solid-v2-app`) — docs site and local visual test apps (test apps are excluded from CI).
 - `scripts/` — root catalogue/release checks (`scripts/AGENT.md`).
 - `.autonomos/` & `.{agent,agents,claude,clinerules,opencode}/` — Autonomos workflow and harness mirrors.
 

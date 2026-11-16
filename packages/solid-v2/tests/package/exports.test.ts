@@ -52,9 +52,9 @@ beforeAll(async () => {
 })
 
 describe('package metadata', () => {
-    it('keeps the Solar Icons major (2) and marks the release as an experimental prerelease', () => {
+    it('keeps the Solar Icons major (2) and uses a stable semver version', () => {
         expect(pkg.name).toBe('@solar-icons/solid-v2')
-        expect(pkg.version).toMatch(/^2\.\d+\.\d+-experimental\.\d+$/)
+        expect(pkg.version).toMatch(/^2\.\d+\.\d+$/)
     })
 
     it('has no runtime dependency: Solid is a peer', () => {

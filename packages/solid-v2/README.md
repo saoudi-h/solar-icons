@@ -2,8 +2,6 @@
 
 SolidJS 2 components for Solar Icons. This package provides 9,456 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), built for Solid 2.
 
-> **Experimental.** Solid 2 is still a release candidate, so this package is a prerelease and is not presented as stable. Its API follows `@solar-icons/solid`, and details may change while Solid 2 does.
-
 ## Which package should I use?
 
 | Your app uses | Install                 |
@@ -13,7 +11,7 @@ SolidJS 2 components for Solar Icons. This package provides 9,456 SVG icons acro
 
 The `v2` in the name is the Solid major version. It is not the Solar Icons major version, which both packages share.
 
-Solid 1 and Solid 2 changed their compiler output, their DOM and server runtimes (`solid-js/web` became `@solidjs/web`), their reactivity rules and their JSX types. A single published build cannot serve both without trade-offs in SSR, hydration and typing, so the two lines are kept apart for the time being. This is a transition measure for Solid, not a pattern we plan to repeat for other frameworks. We will look again at a single package once the Solid 2 ecosystem is mature. There is no date for it, and `@solar-icons/solid` is not deprecated.
+Solid 1 and Solid 2 changed their compiler output, their DOM and server runtimes (`solid-js/web` became `@solidjs/web`), their reactivity rules and their JSX types. A single published build cannot serve both without trade-offs in SSR, hydration and typing, so the two lines are kept apart for the time being. This is a transition measure for Solid, not a pattern we plan to repeat for other frameworks. We will look again at a single package once the Solid 2 ecosystem is mature, and `@solar-icons/solid` remains the package for Solid 1 and is not deprecated.
 
 ## Features
 
@@ -32,7 +30,7 @@ Solid 1 and Solid 2 changed their compiler output, their DOM and server runtimes
 npm install @solar-icons/solid-v2 solid-js@next @solidjs/web@next
 ```
 
-Peer dependencies: `solid-js` and `@solidjs/web`, both `^2.0.0-rc.22`. Solid 1 is rejected by the install, on purpose.
+Peer dependencies: `solid-js` and `@solidjs/web`, both `^2.0.0-rc.22` (Solid 2 is currently a release candidate, tested with `2.0.0-rc.22`). Solid 1 is rejected by the install, on purpose.
 
 Your build must compile JSX for Solid 2: use `@solidjs/vite-plugin` (3.x) or `unplugin-solid` 3, and set `"jsxImportSource": "@solidjs/web"` in `tsconfig.json`.
 
@@ -92,7 +90,7 @@ The import paths, component names, props, CSS variables and CSS classes are the 
 | `class`            | String                         | String, array or object (Solid 2 class values)                           |
 | `useSolar` setters | Apply right away               | Batched like any Solid 2 signal write: the DOM updates on the next flush |
 | No provider        | `useSolar()` throws            | `useSolar()` throws Solid's context error                                |
-| Version            | Stable                         | Prerelease while Solid 2 is a release candidate                          |
+| Version            | Stable                         | Stable (requires Solid 2, currently a release candidate)                 |
 
 ## Documentation
 
