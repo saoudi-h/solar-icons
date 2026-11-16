@@ -1,6 +1,6 @@
 import { InjectionToken, type Provider, type Type } from '@angular/core'
 
-import type { IconBase } from './icon-base'
+import type { IconBase } from './icon-base.js'
 
 /**
  * A record of registered icon components.

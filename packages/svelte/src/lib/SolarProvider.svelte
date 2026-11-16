@@ -1,7 +1,7 @@
 <script lang="ts">
     import { setContext } from 'svelte';
     import type { Snippet } from 'svelte';
-    import { SOLAR_CONTEXT_KEY } from './useSolar';
+    import { SOLAR_CONTEXT_KEY } from './useSolar.js';
 
     interface Props {
         /** Default icon color. Sets `--solar-color` on the wrapper. */

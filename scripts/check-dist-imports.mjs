@@ -11,11 +11,11 @@ const packagesDir = resolve(root, 'packages')
 // the package's own dependencies and peers, or a Node built-in. Anything else
 // (for example a runtime that a build plugin started to target after an update)
 // breaks every install, and neither the build nor publint notices.
-const BUNDLE_FILE = /\.(?:mjs|cjs|js)$/
+const BUNDLE_FILE = /\.(?:mjs|cjs|js|svelte|d\.ts|d\.mts|d\.cts)$/
 
 // Modules the host application always provides, even though the package does not declare them.
 const PROVIDED_BY_HOST = {
-    nuxt: ['vue'],
+    nuxt: ['vue', '@nuxt/schema'],
 }
 
 await init
@@ -30,7 +30,8 @@ function isExternal(specifier) {
         specifier.startsWith('.') ||
         specifier.startsWith('/') ||
         specifier.startsWith('#') ||
-        specifier.startsWith('data:')
+        specifier.startsWith('data:') ||
+        specifier.startsWith('file:')
     )
 }
 
@@ -75,7 +76,12 @@ for (const { dir, pkg } of pkgs) {
     const missing = new Map()
 
     for (const file of walk(distDir)) {
-        const source = readFileSync(file, 'utf8')
+        let source = readFileSync(file, 'utf8')
+        if (file.endsWith('.svelte')) {
+            source = [...source.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)]
+                .map(m => m[1])
+                .join('\n')
+        }
         const [imports] = parse(source)
         for (const { specifier } of imports) {
             if (typeof specifier !== 'string' || !isExternal(specifier) || isBuiltin(specifier))

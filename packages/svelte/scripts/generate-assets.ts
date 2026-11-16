@@ -82,18 +82,18 @@ function generateIndexes(
         content: rootGlobalLines.join('\n') + '\n',
     })
 
-    const stylesIndexContent = WEIGHTS.map(w => `export * as ${w} from './${WEIGHT_MAP[w]}';`).join(
-        '\n'
-    )
+    const stylesIndexContent = WEIGHTS.map(
+        w => `export * as ${w} from './${WEIGHT_MAP[w]}.js';`
+    ).join('\n')
 
     files.push({
         path: path.join(ICONS_PATH, 'style', 'index.ts'),
         content: `${stylesIndexContent}\n`,
     })
 
-    const mainEntryContent = `export type { IconProps } from "./lib"
-export { IconBase, SolarProvider, useSolar, type IconStyle } from "./lib"
-export * from "./icons/styled"
+    const mainEntryContent = `export type { IconProps } from "./lib/index.js"
+export { IconBase, SolarProvider, useSolar, type IconStyle } from "./lib/index.js"
+export * from "./icons/styled.js"
 `
 
     files.push({
@@ -131,10 +131,11 @@ function generateDeprecatedAliasFiles(
                 path: path.join(ICONS_PATH, icon.styleKebab, `${alias.name}.svelte`),
                 content: `<!-- GENERATED FILE -->
 <script lang="ts">
+import type { IconProps } from '../../lib/types.js';
 /** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */
 import CanonicalIcon from './${icon.name}.svelte';
 
-let props = $props();
+let props: IconProps = $props();
 </script>
 
 <CanonicalIcon {...props} />
@@ -148,10 +149,11 @@ let props = $props();
                 path: path.join(ICONS_PATH, 'dynamic', `${alias.name}.svelte`),
                 content: `<!-- GENERATED FILE -->
 <script lang="ts">
+import type { DynamicIconProps } from '../../lib/types.js';
 /** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */
 import CanonicalIcon from './${group.name}.svelte';
 
-let props = $props();
+let props: DynamicIconProps = $props();
 </script>
 
 <CanonicalIcon {...props} />
@@ -202,7 +204,7 @@ function generateDynamicFile(group: ParsedIconGroup): FileDefinition {
 
     const content = `<!-- GENERATED FILE -->
 <script lang="ts">
-import type { DynamicIconProps } from '../../lib/types'
+import type { DynamicIconProps } from '../../lib/types.js'
 import DynamicIcon from '../../lib/dynamic-icon.svelte'
 ${styleImports}
 let { ...restProps }: DynamicIconProps = $props()
