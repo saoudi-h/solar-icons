@@ -1,0 +1,25 @@
+{
+    "extends": "@tala-tools/tsconfig/base.json",
+    "display": "Solid 2",
+    "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "@solidjs/web",
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "declarationMap": true,
+        "allowJs": false,
+        "checkJs": false,
+        "incremental": true,
+        "isolatedDeclarations": false,
+        "isolatedModules": true,
+        "moduleResolution": "Bundler",
+        "paths": {
+            "csstype": ["./node_modules/csstype"],
+            "#internal/icon-base": ["./src/lib/IconBase.tsx"],
+            "#internal/solar-provider": ["./src/lib/SolarProvider.tsx"]
+        },
+        "noEmit": true
+    },
+    "include": ["./src/**/*", "./tests/**/*", "./tsdown.config.ts", "./vitest.config.ts"],
+    "exclude": ["dist", "build", "node_modules", ".vscode", ".turbo", "scripts", "tests/fixtures"]
+}

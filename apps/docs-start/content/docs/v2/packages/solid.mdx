@@ -107,3 +107,22 @@ Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [Reac
 ## ESM only
 
 `@solar-icons/solid` is ESM-only. `require()` does not work.
+
+## Solid 2 (experimental)
+
+`@solar-icons/solid` is for Solid 1. Solid 2 has its own package, `@solar-icons/solid-v2`:
+
+```sh
+npm install @solar-icons/solid-v2 solid-js@next @solidjs/web@next
+```
+
+The `v2` in the name is the Solid major version, not the Solar Icons one. Import paths, component names, props, CSS variables and CSS classes are the same, so only the package name changes in your imports:
+
+```jsx
+import { SolarProvider } from '@solar-icons/solid-v2'
+import { HeartIcon } from '@solar-icons/solid-v2/bold'
+```
+
+Solid 1 and Solid 2 differ in their compiler output, runtimes (`solid-js/web` became `@solidjs/web`), reactivity rules and JSX types. One build cannot serve both without trade-offs in server rendering, hydration and typing, so the two packages exist side by side while the framework changes major version. This split is specific to Solid. We will look again at a single package once the Solid 2 ecosystem is mature, and `@solar-icons/solid` is not deprecated.
+
+`@solar-icons/solid-v2` is a prerelease and is not presented as stable while Solid 2 is a release candidate. It requires `solid-js` and `@solidjs/web` `^2.0.0-rc.22`, and a JSX build for Solid 2 (`@solidjs/vite-plugin` 3 or `unplugin-solid` 3, with `"jsxImportSource": "@solidjs/web"`). The [package README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid-v2) lists the differences with the Solid 1 package.
