@@ -1,11 +1,11 @@
 <script lang="ts">
     import SolarProvider from '@solar-icons/svelte/lib/SolarProvider.svelte';
-    import Gallery from '$lib/Gallery.svelte';
-    import CssCustomProps from '$lib/CssCustomProps.svelte';
-    import ProviderDemo from '$lib/ProviderDemo.svelte';
-    import CssClassStyling from '$lib/CssClassStyling.svelte';
-    import Accessibility from '$lib/Accessibility.svelte';
-    import { ALL_ICONS } from '$lib/icon-list';
+    import Gallery from '../lib/Gallery.svelte';
+    import CssCustomProps from '../lib/CssCustomProps.svelte';
+    import ProviderDemo from '../lib/ProviderDemo.svelte';
+    import CssClassStyling from '../lib/CssClassStyling.svelte';
+    import Accessibility from '../lib/Accessibility.svelte';
+    import { ALL_ICONS } from '../lib/icon-list';
 </script>
 
 <svelte:head>
