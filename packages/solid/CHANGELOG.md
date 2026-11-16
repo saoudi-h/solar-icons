@@ -1,5 +1,11 @@
 # @solar-icons/solid
 
+## 2.6.2
+
+### Patch Changes
+
+- [#744](https://github.com/saoudi-h/solar-icons/pull/744) [`58d0f27`](https://github.com/saoudi-h/solar-icons/commit/58d0f27e1a3f7d7253d3b53de30c640a97c875df) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix deep imports of deprecated alias icons such as `bold/chat-square-2` and `dynamic/chat-square-2`, which failed at runtime because their `.mjs` files were omitted from the build output.
+
 ## 2.6.1
 
 ### Patch Changes
