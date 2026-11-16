@@ -22,7 +22,8 @@
                 "packages/svelte/package.json",
                 "packages/vue/package.json",
                 "apps/angular-app/package.json",
-                "apps/vue-app/package.json"
+                "apps/vue-app/package.json",
+                "apps/svelte-app/package.json"
             ],
             "allowedVersions": "<7"
         },
