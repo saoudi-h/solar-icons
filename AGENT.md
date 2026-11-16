@@ -16,7 +16,7 @@ For authoritative inventory counts and update steps, follow `docs/ICON-INVENTORY
 
 - **Commits:** Conventional Commits enforced by `@commitlint/config-conventional` (`build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test`). Scope = `apps/*` or `packages/*` name; omit when touching 3+ workspaces or root tooling. Never use subject-based scopes. One focused commit per change.
 - **PRs & branches:** Changes go via PRs targeting `main`, each linked to a GitHub issue. Never push or merge directly to `main` locally (Changesets release PRs excepted).
-- **Versioning & publishing:** Changesets (`docs/RELEASE-PROCEDURE.md` is the single executable checklist). `2.0.0`+ is stable on `latest`; prereleases use `pre` mode on `main` (`beta` tag; `beta` branch is historical). Never run `pnpm release`, `changeset publish`, or `npm publish` locally — CI publishes on push to `main`.
+- **Versioning & publishing:** Changesets (`docs/RELEASE-PROCEDURE.md` is the single executable checklist). `2.0.0`+ is stable on `latest`; prereleases use `pre` mode on `main` (`beta` tag; `beta` branch is historical). Never run `pnpm release`, `changeset publish`, or `npm publish` locally — CI publishes on push to `main`. Merging a non-private package whose version is not on npm publishes it; a changeset on a prerelease base version computes the stable one. Keep unreleased packages `private: true`.
 - **Cross-language releases:** Every package keeps its own version (major shared). A changeset for `@solar-icons/static` drives `scripts/bump-polyglot-packages.ts --from-static` in `pnpm version-packages` (and `solar-icons/blade` `sync-static.yml`). Never hand-bump polyglot packages or run `pnpm polyglot:bump` on top.
 - **Language: English only — no exceptions.** All repo files (including gitignored worklogs, `AGENT.md`, `TASKS.md`, comments, commit messages, docs) must be English regardless of conversation language. Fix pre-existing non-English content immediately.
 - **Public voice:** Use "we" for project decisions, review, and contribution guidance; reserve the maintainer's name for ownership/attribution.
@@ -32,11 +32,11 @@ For authoritative inventory counts and update steps, follow `docs/ICON-INVENTORY
 ## 📁 Key Directories
 
 - `packages/core` — private source of truth for SVGs, metadata, types, and codegen helpers.
-- `packages/{react,react-native,vue,nuxt,svelte,solid,angular}` — public npm framework packages.
+- `packages/{react,react-native,vue,nuxt,svelte,solid,solid-v2,angular}` — public npm framework packages (`packages/solid-v2` targets Solid 2 as a deliberate duplicate of `solid`).
 - `packages/{static,js,cli,mcp,codemod}` — public non-framework/tooling packages (`@solar-icons/react-perf` is deprecated/removed; downloads still summed on docs homepage).
 - `packages/{flutter,rails}` — non-workspace polyglot packages (`flutter_solar_icons` on pub.dev; Ruby gem `solar_icons`). `solar-icons/blade` lives in a separate repo.
 - `packages/figma-plugin` — Figma Community plugin (`docs/FIGMA-PLUGIN-PUBLISHING.md`).
-- `apps/docs-start` & `apps/*-app` — docs site and local visual test apps (test apps are excluded from CI).
+- `apps/docs-start` & `apps/*-app` (including `apps/solid-v2-app`) — docs site and local visual test apps (test apps are excluded from CI).
 - `scripts/` — root catalogue/release checks (`scripts/AGENT.md`).
 - `.autonomos/` & `.{agent,agents,claude,clinerules,opencode}/` — Autonomos workflow and harness mirrors.
 
