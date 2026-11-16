@@ -16,8 +16,9 @@ export function svelteComponentFile(ctx: IconContext<ParsedIcon>): FileDefinitio
     const duotone = applyDuotoneStyle(icon.duotoneAccentInner)
     const body = duotone ? `${duotone}\n${icon.inner.trim()}` : icon.inner.trim()
     const content = `<script lang="ts">
+import type { IconProps } from '../../lib/types.js'
 import Icon from '../../lib/IconBase.svelte'
-let props = $props()
+let props: IconProps = $props()
 </script>
 
 <Icon {...props} iconName="${icon.kebabName}-${icon.styleKebab}">

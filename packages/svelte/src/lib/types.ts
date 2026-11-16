@@ -1,7 +1,25 @@
-import type { Weight } from '@solar-icons/core/runtime'
 import type { SVGAttributes } from 'svelte/elements'
 
 export type IconStyle = 'Bold' | 'BoldDuotone' | 'Broken' | 'LineDuotone' | 'Linear' | 'Outline'
+
+/** The six Solar styles, PascalCase. */
+export type Weight = IconStyle
+
+/** The kebab-case key of each style in the `styles` object. */
+export type StyleKey = 'bold' | 'bold-duotone' | 'broken' | 'linear' | 'line-duotone' | 'outline'
+
+/** Shape of the `styles` object accepted by `DynamicIcon`. */
+export type StyleComponentsMap<T> = { [K in StyleKey]: T }
+
+/** Mapping from a {@link Weight} (PascalCase) to its {@link StyleKey}. */
+export const WEIGHT_MAP: Readonly<Record<Weight, StyleKey>> = {
+    Bold: 'bold',
+    BoldDuotone: 'bold-duotone',
+    Broken: 'broken',
+    Linear: 'linear',
+    LineDuotone: 'line-duotone',
+    Outline: 'outline',
+}
 
 /**
  * Base props accepted by every Solar icon component.
