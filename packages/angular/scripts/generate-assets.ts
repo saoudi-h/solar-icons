@@ -39,11 +39,11 @@ function generateIndexes(
         if (seenIcons.has(globalName)) continue
         seenIcons.add(globalName)
         const sk = WEIGHT_MAP[icon.style]
-        iconLines.push(`export { Solar${globalName} } from './${icon.name}-${sk}';`)
+        iconLines.push(`export { Solar${globalName} } from './${icon.name}-${sk}.js';`)
         for (const alias of deprecatedAliases.get(icon.name) ?? []) {
             const aliasGlobalName = toPascalCase(`${alias.name}-${icon.style}`)
             iconLines.push(
-                `/** @deprecated ${alias.reason}. Use Solar${globalName} instead. */\nexport { Solar${globalName} as Solar${aliasGlobalName} } from './${icon.name}-${sk}';`
+                `/** @deprecated ${alias.reason}. Use Solar${globalName} instead. */\nexport { Solar${globalName} as Solar${aliasGlobalName} } from './${icon.name}-${sk}.js';`
             )
         }
     }
@@ -59,11 +59,11 @@ function generateIndexes(
     const dynamicLines: string[] = []
 
     for (const group of groups) {
-        dynamicLines.push(`export { Solar${group.pascalName} } from './${group.name}';`)
+        dynamicLines.push(`export { Solar${group.pascalName} } from './${group.name}.js';`)
         for (const alias of deprecatedAliases.get(group.name) ?? []) {
             const aliasName = toPascalCase(alias.name)
             dynamicLines.push(
-                `/** @deprecated ${alias.reason}. Use Solar${group.pascalName} instead. */\nexport { Solar${group.pascalName} as Solar${aliasName} } from './${group.name}';`
+                `/** @deprecated ${alias.reason}. Use Solar${group.pascalName} instead. */\nexport { Solar${group.pascalName} as Solar${aliasName} } from './${group.name}.js';`
             )
         }
     }
@@ -103,9 +103,9 @@ ${allNames};
     })
 
     const mainEntryContent = `/* GENERATED FILE */
-export * from './lib';
-export * from './icons';
-export * from './dynamic';
+export * from './lib/index.js';
+export * from './icons/index.js';
+export * from './dynamic/index.js';
 `
 
     files.push({
@@ -139,7 +139,7 @@ function generateDynamicFile(
             const icon = groups[w]!
             const sk = WEIGHT_MAP[w]
             const globalName = toPascalCase(`${icon.name}-${icon.style}`)
-            return `import { Solar${globalName} } from '../icons/${icon.name}-${sk}'`
+            return `import { Solar${globalName} } from '../icons/${icon.name}-${sk}.js'`
         })
         .join('\n')
 
@@ -182,7 +182,7 @@ import {
     input,
     ViewEncapsulation,
 } from '@angular/core'
-import { IconBase } from '../lib/icon-base'
+import { IconBase } from '../lib/icon-base.js'
 ${imports}
 
 /**

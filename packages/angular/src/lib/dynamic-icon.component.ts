@@ -10,9 +10,9 @@ import {
     type Type,
 } from '@angular/core'
 
-import type { IconBase } from './icon-base'
-import { SOLAR_ICON_REGISTRY } from './icon-registry'
-import type { IconComponent, SolarIconName } from './types'
+import type { IconBase } from './icon-base.js'
+import { SOLAR_ICON_REGISTRY } from './icon-registry.js'
+import type { IconComponent, SolarIconName } from './types.js'
 
 /**
  * A lightweight directive that renders a Solar Icon component dynamically by its name or class.

@@ -113,7 +113,7 @@ import {
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { IconBase } from '../lib/icon-base';
+import { IconBase } from '../lib/icon-base.js';
 
 /**
  * ![img](data:image/svg+xml;base64,${icon.preview})
