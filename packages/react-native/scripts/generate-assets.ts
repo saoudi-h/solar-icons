@@ -137,8 +137,10 @@ function generateDeprecatedAliasFiles(
             files.push({
                 path: path.join(ICONS_PATH, icon.styleKebab, `${alias.name}.tsx`),
                 content: `/* GENERATED FILE */
+import { ${icon.pascalName}Icon } from './${icon.name}'
+
 /** @deprecated ${alias.reason}. Use ${icon.pascalName}Icon instead. */
-export { ${icon.pascalName}Icon as ${aliasPascalName}Icon } from './${icon.name}'
+export const ${aliasPascalName}Icon = ${icon.pascalName}Icon
 `,
             })
         }
@@ -149,8 +151,10 @@ export { ${icon.pascalName}Icon as ${aliasPascalName}Icon } from './${icon.name}
             files.push({
                 path: path.join(ICONS_PATH, 'dynamic', `${alias.name}.tsx`),
                 content: `/* GENERATED FILE */
+import { ${group.pascalName}Icon } from './${group.name}'
+
 /** @deprecated ${alias.reason}. Use ${group.pascalName}Icon instead. */
-export { ${group.pascalName}Icon as ${aliasPascalName}Icon } from './${group.name}'
+export const ${aliasPascalName}Icon = ${group.pascalName}Icon
 `,
             })
         }
