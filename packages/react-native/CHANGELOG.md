@@ -1,5 +1,11 @@
 # @solar-icons/react-native
 
+## 2.6.1
+
+### Patch Changes
+
+- [#744](https://github.com/saoudi-h/solar-icons/pull/744) [`ea703d3`](https://github.com/saoudi-h/solar-icons/commit/ea703d3a20ae3a52194a58f929b22efea8dd5201) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Fix deep imports of deprecated alias icons such as `bold/chat-square-2`, which failed at runtime because their `.mjs` files were omitted from the build output.
+
 ## 2.6.0
 
 ### Minor Changes
