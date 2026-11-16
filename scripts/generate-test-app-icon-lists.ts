@@ -18,6 +18,7 @@ const OUTPUT_PATHS = [
     'apps/react-app/app/icon-list.ts',
     'apps/svelte-app/src/lib/icon-list.ts',
     'apps/solid-app/src/lib/icon-list.ts',
+    'apps/solid-v2-app/src/lib/icon-list.ts',
     'apps/angular-app/src/app/icon-list.ts',
     'apps/test-react-native-icons/icon-list.ts',
 ]

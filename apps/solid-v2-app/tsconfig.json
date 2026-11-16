@@ -1,0 +1,21 @@
+{
+    "extends": "@tala-tools/tsconfig/base.json",
+    "display": "Solid 2",
+    "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "@solidjs/web",
+        "noUnusedLocals": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "target": "ESNext",
+        "paths": {
+            "~/*": ["./src/*"],
+            "csstype": ["./node_modules/csstype/index.d.ts"]
+        },
+        "allowImportingTsExtensions": true,
+        "types": ["vite/client"],
+        "noEmit": true
+    },
+    "include": ["./src/**/*", "./vite.config.ts"],
+    "exclude": ["dist", "node_modules"]
+}

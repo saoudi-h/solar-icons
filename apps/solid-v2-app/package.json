@@ -1,0 +1,35 @@
+{
+    "name": "solid-v2-app",
+    "version": "2.0.0-beta.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "predev": "pnpm prepare:catalog",
+        "dev": "vite",
+        "prebuild": "pnpm prepare:catalog",
+        "build": "vite build",
+        "preview": "vite preview",
+        "clean": "rm -rf node_modules dist",
+        "lint": "oxlint --deny-warnings .",
+        "lint:fix": "oxlint --fix .",
+        "format": "oxfmt --check .",
+        "format:fix": "oxfmt --write .",
+        "typecheck": "tsc --noEmit",
+        "prepare:catalog": "pnpm -w generate:test-catalogs && pnpm --filter @solar-icons/solid-v2... build",
+        "generate:icons": "tsx scripts/generate-icon-list.ts",
+        "pre-commit": "lint-staged"
+    },
+    "dependencies": {
+        "@solar-icons/solid-v2": "workspace:*",
+        "@solidjs/web": "2.0.0-rc.22",
+        "solid-js": "2.0.0-rc.22"
+    },
+    "devDependencies": {
+        "@solidjs/vite-plugin": "3.0.0-next.57",
+        "@tailwindcss/vite": "^4.3.3",
+        "csstype": "^3.2.3",
+        "tailwindcss": "^4.3.3",
+        "typescript": "7.0.2",
+        "vite": "^8.3.8"
+    }
+}
