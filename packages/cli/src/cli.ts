@@ -8,8 +8,7 @@ import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
 import pc from 'picocolors'
 
-import { catalogStats, getOverview, listCategories } from './catalog.js'
-import { STYLES } from './catalog.js'
+import { catalogStats, FRAMEWORKS, getOverview, listCategories, STYLES } from './catalog.js'
 import { runGet } from './commands/get.js'
 import { runInfo } from './commands/info.js'
 import { runList } from './commands/list.js'
@@ -59,7 +58,7 @@ program
     .option('--category <category>', 'restrict to category (see: solar-icons categories)')
     .option(
         '--framework <framework>',
-        'emit import snippet for framework (react|vue|svelte|solid|angular|react-native|nuxt|static|js|blade|rails|flutter|blazor)'
+        `emit import snippet for framework (${FRAMEWORKS.join('|')})`
     )
     .option('--json', 'machine-readable JSON output (for agents/MCP)')
     .description('Search icons by name/tags/category')
@@ -80,7 +79,7 @@ program
     .command('get')
     .argument('<name>', 'kebab icon name, e.g. home')
     .option('--style <style>', 'style', 'linear')
-    .option('--framework <framework>', 'framework for snippet', 'react')
+    .option('--framework <framework>', `framework for snippet (${FRAMEWORKS.join('|')})`, 'react')
     .option('--out <file>', 'copy SVG to file')
     .option('--json', 'JSON output')
     .description('Get import snippet and SVG for an icon')

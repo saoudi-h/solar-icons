@@ -33,6 +33,7 @@ export const FRAMEWORKS = [
     'vue',
     'svelte',
     'solid',
+    'solid-v2',
     'angular',
     'react-native',
     'nuxt',
@@ -125,6 +126,7 @@ export function componentName(kebabName: string, style: Style, framework: Framew
  *   vue:    import { HeartIcon } from '@solar-icons/vue/bold/heart'
  *   svelte: import HeartIcon from '@solar-icons/svelte/bold/heart'  (default)
  *   solid:  import { HeartIcon } from '@solar-icons/solid/bold/heart'
+ *   solid-v2: import { HeartIcon } from '@solar-icons/solid-v2/bold/heart'
  *   angular:import { SolarHeartBold } from '@solar-icons/angular' (style in name, root)
  *   blade:  <x-solar-bold-heart /> (Blade component, style in name)
  *   rails:  <%= solar_icon("heart", weight: "bold") %> (view helper, style in the weight option)
@@ -143,6 +145,8 @@ export function importSnippet(name: string, style: Style, framework: Framework):
             return `import ${generic} from "@solar-icons/svelte/${style}/${kebab}";`
         case 'solid':
             return `import { ${generic} } from "@solar-icons/solid/${style}/${kebab}";`
+        case 'solid-v2':
+            return `import { ${generic} } from "@solar-icons/solid-v2/${style}/${kebab}";`
         case 'angular':
             return `import { ${rooted} } from "@solar-icons/angular"; // usage: <svg ${rooted.charAt(0).toLowerCase() + rooted.slice(1)}></svg> (directive)`
         case 'react-native':

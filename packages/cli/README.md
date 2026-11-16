@@ -21,7 +21,7 @@ solar-icons styles [--json]
 
 All `--json` outputs are machine-readable (for agents / MCP).
 
-Framework snippet examples: `react` → `import { HomeBoldIcon } from "@solar-icons/react/bold/home"`, `vue`, `svelte`, `solid`, `angular` (`SolarHomeBold`), `react-native`, `nuxt`, `static`, `js`, `blade` (`<x-solar-bold-home />`), `rails` (`<%= solar_icon("home", weight: "bold") %>`), `flutter` (`HomeBoldIcon()`).
+Framework snippet examples: `react` → `import { HomeBoldIcon } from "@solar-icons/react/bold/home"`, `vue`, `svelte`, `solid`, `solid-v2`, `angular` (`SolarHomeBold`), `react-native`, `nuxt`, `static`, `js`, `blade` (`<x-solar-bold-home />`), `rails` (`<%= solar_icon("home", weight: "bold") %>`), `flutter` (`HomeBoldIcon()`).
 
 ## Blazor
 
