@@ -214,3 +214,8 @@
 ## Closed 2026-11-15
 
 - [x] **[SOLID-PKG-RELIABILITY]** Diagnose and fix `@solar-icons/solid` Solid 1 distribution/packaging defects (compiled `dist/` SSR breakage, `@solar-icons/core` `dist/` leakage and `dynamic-icon.d.mts` export gap, packaging audit), and add dist-level regression tests. `Priority: 🔴` `Complexity: M` `Completed: 2026-11-15` *See worklogs/2026-11-15-SOLID-PKG-RELIABILITY.md*
+
+## Closed 2026-11-16
+
+- [x] **[DOCS-ICONS-MOBILE-FILTER-OVERFLOW]** Remove the horizontal page overflow caused by the `/icons` mobile filter drawer so the panel and page stay within the viewport at narrow widths. `Priority: 🟠` `Complexity: S` `Completed: 2026-11-16`
+- [x] **[DOCS-ICONS-MOBILE-FILTER-TOUCH-SCROLL]** Restore vertical touch scrolling in the `/icons` mobile filter drawer while keeping vaul's horizontal drag-to-dismiss. `Priority: 🟠` `Complexity: S` `Completed: 2026-11-16`
