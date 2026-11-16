@@ -1,5 +1,11 @@
 # @solar-icons/cli
 
+## 2.12.0
+
+### Minor Changes
+
+- [#747](https://github.com/saoudi-h/solar-icons/pull/747) [`931bf41`](https://github.com/saoudi-h/solar-icons/commit/931bf414c8e8d39826ccad5c2e157866510feca6) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add `solid-v2` framework support (`@solar-icons/solid-v2`) to `search`, `get`, and `info` import snippets and CLI help text.
+
 ## 2.11.0
 
 ### Minor Changes

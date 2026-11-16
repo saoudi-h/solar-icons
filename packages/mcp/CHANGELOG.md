@@ -1,5 +1,16 @@
 # @solar-icons/mcp
 
+## 2.10.0
+
+### Minor Changes
+
+- [#747](https://github.com/saoudi-h/solar-icons/pull/747) [`e08ecb9`](https://github.com/saoudi-h/solar-icons/commit/e08ecb9dda71af18741fd60162387e15a271bf34) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Expose `solid-v2` framework support (`@solar-icons/solid-v2`) in `solar_search_icons`, `solar_get_icon`, and `solar_info_icon`.
+
+### Patch Changes
+
+- Updated dependencies [[`931bf41`](https://github.com/saoudi-h/solar-icons/commit/931bf414c8e8d39826ccad5c2e157866510feca6)]:
+  - @solar-icons/cli@2.12.0
+
 ## 2.9.1
 
 ### Patch Changes
