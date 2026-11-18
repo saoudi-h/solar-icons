@@ -88,7 +88,7 @@
             "path": "packages/solid-v2",
             "logo": "devicon:solidjs",
             "summary": "Solid 2 components",
-            "guide": "packages/solid#solid-2"
+            "guide": "packages/solid"
         },
         {
             "name": "Angular",

@@ -1,6 +1,15 @@
 # @solar-icons/solid
 
-SolidJS components for Solar Icons. This package provides 9,456 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Solid applications.
+SolidJS 1 components for Solar Icons. This package provides 9,456 SVG icons across 6 styles (Bold, Broken, Linear, Outline, Bold Duotone, Line Duotone), optimized for Solid 1.6+ applications.
+
+## Which package should I use?
+
+| Your app uses | Install                                                                        |
+| ------------- | ------------------------------------------------------------------------------ |
+| Solid 2       | [`@solar-icons/solid-v2`](https://www.npmjs.com/package/@solar-icons/solid-v2) |
+| Solid 1       | `@solar-icons/solid`                                                           |
+
+The `v2` in `@solar-icons/solid-v2` is the Solid major version, not the Solar Icons major version. Import paths, component names, props, CSS variables, and CSS classes match across both packages.
 
 ## Features
 

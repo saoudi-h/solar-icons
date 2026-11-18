@@ -219,3 +219,7 @@
 
 - [x] **[DOCS-ICONS-MOBILE-FILTER-OVERFLOW]** Remove the horizontal page overflow caused by the `/icons` mobile filter drawer so the panel and page stay within the viewport at narrow widths. `Priority: 🟠` `Complexity: S` `Completed: 2026-11-16`
 - [x] **[DOCS-ICONS-MOBILE-FILTER-TOUCH-SCROLL]** Restore vertical touch scrolling in the `/icons` mobile filter drawer while keeping vaul's horizontal drag-to-dismiss. `Priority: 🟠` `Complexity: S` `Completed: 2026-11-16`
+
+## Closed 2026-11-18
+
+- [x] **[SOLID-V2-VISIBILITY]** Align `@solar-icons/solid-v2` with stable Solid 2 (`^2.0.0`) and promote it across homepage multi-package cards, docs, and the `/icons` explorer with Solid 2 first. `Priority: 🟠` `Complexity: M` `Completed: 2026-11-18` *See worklogs/2026-11-18-SOLID-V2-VISIBILITY.md*
