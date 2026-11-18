@@ -13,6 +13,7 @@ import type { PackageSectionProps } from '~/components/home-page/sections/packag
 import type { FooterProps } from '~/components/ui-blocks/footer/types'
 import type { SuperButtonProps } from '~/components/ui/SuperButton'
 import { Icon } from '~/lib/icons'
+import { packages } from '~/lib/packages'
 import { projectLinks } from '~/lib/project-links'
 
 export interface NotFoundProps {
@@ -66,7 +67,7 @@ export const config: Config = {
                         icon: <Icon icon="devicon:svelte" />,
                     },
                     {
-                        label: 'Solid',
+                        label: 'Solid (1 & 2)',
                         url: '/docs/v2/packages/solid',
                         icon: <Icon icon="devicon:solidjs" />,
                     },
@@ -199,168 +200,7 @@ export const config: Config = {
         },
     },
     packageSection: {
-        packages: [
-            {
-                title: 'React',
-                link: '/docs/v2/packages/react',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/react',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/react',
-                content:
-                    'Recommended React package. CSS custom properties, SolarProvider, unit-per-style.',
-                iconify: 'devicon:react',
-                status: 'released',
-            },
-            {
-                title: 'React Native',
-                link: '/docs/v2/packages/react-native',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/react-native',
-                githubLink:
-                    'https://github.com/saoudi-h/solar-icons/tree/main/packages/react-native',
-                content: 'React Native and Expo SVG components.',
-                iconify: 'devicon:react',
-                status: 'released',
-            },
-            {
-                title: 'Vue',
-                link: '/docs/v2/packages/vue',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/vue',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/vue',
-                content: 'Vue 3 package. Supports global configuration and dynamic weights.',
-                status: 'released',
-                iconify: 'devicon:vuejs',
-            },
-            {
-                title: 'Nuxt',
-                link: '/docs/v2/packages/nuxt',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/nuxt',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/nuxt',
-                content: 'Nuxt 3 module with auto-import and configuration support.',
-                status: 'released',
-                iconify: 'devicon:nuxtjs',
-            },
-            {
-                title: 'Svelte',
-                link: '/docs/v2/packages/svelte',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/svelte',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/svelte',
-                content: 'Svelte 5 components using runes.',
-                status: 'released',
-                iconify: 'devicon:svelte',
-            },
-            {
-                title: 'Solid',
-                link: '/docs/v2/packages/solid',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/solid',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/solid',
-                content: 'Lightweight SolidJS components.',
-                status: 'released',
-                iconify: 'devicon:solidjs',
-            },
-            {
-                title: 'Angular',
-                link: '/docs/v2/packages/angular',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/angular',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/angular',
-                content: 'Angular 17+ standalone components using Signals.',
-                status: 'released',
-                iconify: 'devicon:angular',
-            },
-            {
-                title: 'Laravel Blade',
-                link: '/docs/v2/packages/blade',
-                githubLink: 'https://github.com/solar-icons/blade',
-                registryLink: 'https://packagist.org/packages/solar-icons/blade',
-                registryTooltip: 'Packagist Package',
-                registryIcon: 'mdi:package-variant',
-                content:
-                    'Blade components for all six styles, plus a dynamic component and a PHP enum.',
-                status: 'released',
-                iconify: 'devicon:laravel',
-            },
-            {
-                title: 'Rails',
-                link: '/docs/v2/packages/rails',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/rails',
-                registryLink: 'https://rubygems.org/gems/solar_icons',
-                registryTooltip: 'RubyGems Package',
-                registryIcon: 'mdi:package-variant',
-                content:
-                    'View helper for all six styles, with duotone controls and configuration defaults.',
-                status: 'released',
-                iconify: 'thesvg-color:ruby-on-rails',
-            },
-            {
-                title: 'Blazor',
-                link: '/docs/v2/packages/blazor',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/blazor',
-                registryLink: 'https://www.nuget.org/packages/SolarIcons.Blazor',
-                registryTooltip: 'NuGet Package',
-                registryIcon: 'mdi:package-variant',
-                content: 'Blazor components with static styles, runtime weights, and CSS theming.',
-                status: 'released',
-                iconify: 'devicon:blazor',
-            },
-            {
-                title: 'Flutter',
-                link: '/docs/v2/packages/flutter',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/flutter',
-                registryLink: 'https://pub.dev/packages/flutter_solar_icons',
-                registryTooltip: 'pub.dev Package',
-                registryIcon: 'mdi:package-variant',
-                content: 'Widgets for all six styles, plus theming and duotone controls.',
-                status: 'released',
-                iconify: 'devicon:flutter',
-            },
-            {
-                title: 'Static',
-                link: '/docs/v2/packages/static',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/static',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/static',
-                content:
-                    'Framework-agnostic SVGs, sprites, and string templates. Drop icons anywhere, zero JS required.',
-                status: 'new',
-                iconify: 'vscode-icons:file-type-svg',
-            },
-            {
-                title: 'JS',
-                link: '/docs/v2/packages/js',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/js',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/js',
-                content:
-                    'Native DOM injection with zero VDOM overhead. Just SVG, no framework required.',
-                status: 'new',
-                iconify: 'devicon:javascript',
-            },
-            {
-                title: 'Codemod',
-                link: '/docs/v2/migration-to-v2/codemod',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/codemod',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/codemod',
-                content:
-                    'Move a Solar Icons v1 project to v2 with a preview before any files change.',
-                status: 'new',
-                iconify: 'glyphs-poly:code',
-            },
-            {
-                title: 'CLI',
-                link: '/docs/v2/ai-tools',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/cli',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/cli',
-                content: 'Find icons and get ready-to-use code from the terminal.',
-                status: 'new',
-                iconify: 'grommet-icons:cli',
-            },
-            {
-                title: 'MCP',
-                link: '/docs/v2/ai-tools',
-                npmLink: 'https://www.npmjs.com/package/@solar-icons/mcp',
-                githubLink: 'https://github.com/saoudi-h/solar-icons/tree/main/packages/mcp',
-                content:
-                    'Let your AI assistant search the icon catalog and find the right code for your project.',
-                status: 'new',
-                iconify: 'bxl:mcp',
-            },
-        ],
+        packages,
     },
     notFound: {
         title: {

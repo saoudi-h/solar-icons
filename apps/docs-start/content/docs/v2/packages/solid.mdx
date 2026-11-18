@@ -1,14 +1,57 @@
 ---
 title: SolidJS
-description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for SolidJS 1.6+.
+description: SolarProvider, useSolar, CSS variables, duotone, and stroke width for Solid 2 (@solar-icons/solid-v2) and Solid 1 (@solar-icons/solid).
 icon: solid
 ---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+
+<Tabs groupId="solid-version" persist items={['Solid 2 (@solar-icons/solid-v2)', 'Solid 1 (@solar-icons/solid)']}>
+<Tab value="Solid 2 (@solar-icons/solid-v2)">
+
+```package-install
+@solar-icons/solid-v2
+```
+
+Requires `solid-js` and `@solidjs/web` `^2.0.0`, and a Solid 2 JSX build (`@solidjs/vite-plugin` 3 or `unplugin-solid` 3 with `"jsxImportSource": "@solidjs/web"` in `tsconfig.json`).
+
+</Tab>
+<Tab value="Solid 1 (@solar-icons/solid)">
 
 ```package-install
 @solar-icons/solid
 ```
 
+Requires `solid-js` `^1.6.0`.
+
+</Tab>
+</Tabs>
+
+<Callout type="info">
+    The `v2` in `@solar-icons/solid-v2` refers to the **Solid major version**, not the Solar Icons
+    major version. Both `@solar-icons/solid-v2` and `@solar-icons/solid` share the same Solar Icons
+    v2 API: identical import paths, component names, props, CSS variables, and CSS classes.
+</Callout>
+
 ## Import patterns
+
+<Tabs groupId="solid-version" persist items={['Solid 2 (@solar-icons/solid-v2)', 'Solid 1 (@solar-icons/solid)']}>
+<Tab value="Solid 2 (@solar-icons/solid-v2)">
+
+```jsx
+// Per-style (no style suffix - style in path)
+import { HeartIcon } from '@solar-icons/solid-v2/bold'
+
+// Single icon
+import { HeartIcon } from '@solar-icons/solid-v2/bold/heart'
+
+// Top-level (style suffix in name)
+import { HeartBoldIcon } from '@solar-icons/solid-v2'
+```
+
+</Tab>
+<Tab value="Solid 1 (@solar-icons/solid)">
 
 ```jsx
 // Per-style (no style suffix - style in path)
@@ -21,10 +64,13 @@ import { HeartIcon } from '@solar-icons/solid/bold/heart'
 import { HeartBoldIcon } from '@solar-icons/solid'
 ```
 
+</Tab>
+</Tabs>
+
 ## Basic usage
 
 ```jsx
-import { HeartIcon } from '@solar-icons/solid/bold'
+import { HeartIcon } from '@solar-icons/solid-v2/bold'
 
 function App() {
     return <HeartIcon color="#ef4444" size={32} />
@@ -34,7 +80,7 @@ function App() {
 ## Duotone
 
 ```jsx
-import { HeartIcon } from '@solar-icons/solid/bold-duotone'
+import { HeartIcon } from '@solar-icons/solid-v2/bold-duotone'
 
 function App() {
     return <HeartIcon color="#3b82f6" secondaryColor="#f59e0b" secondaryOpacity={0.4} size={48} />
@@ -44,7 +90,7 @@ function App() {
 ## Stroke width
 
 ```jsx
-import { SettingsIcon } from '@solar-icons/solid/linear'
+import { SettingsIcon } from '@solar-icons/solid-v2/linear'
 
 function App() {
     return <SettingsIcon strokeWidth={2} size={24} />
@@ -56,8 +102,8 @@ function App() {
 Uses Solid signals internally.
 
 ```jsx
-import { SolarProvider } from '@solar-icons/solid'
-import { HeartIcon } from '@solar-icons/solid/bold'
+import { SolarProvider } from '@solar-icons/solid-v2'
+import { HeartIcon } from '@solar-icons/solid-v2/bold'
 
 function App() {
     return (
@@ -73,7 +119,7 @@ function App() {
 Returns Solid `Accessor`s. Must be called inside a `<SolarProvider>`.
 
 ```jsx
-import { useSolar } from '@solar-icons/solid'
+import { useSolar } from '@solar-icons/solid-v2'
 
 function ColorToggle() {
     const { color, setColor } = useSolar()
@@ -106,23 +152,18 @@ Every icon renders with class `solar` plus `solar-{name}-{style}`. See the [Reac
 
 ## ESM only
 
-`@solar-icons/solid` is ESM-only. `require()` does not work.
+Both `@solar-icons/solid-v2` and `@solar-icons/solid` are ESM-only. `require()` does not work.
 
-## Solid 2
+## Solid 2 vs Solid 1
 
-`@solar-icons/solid` is for Solid 1. Solid 2 has its own package, `@solar-icons/solid-v2`:
+Solid 1 and Solid 2 differ in their compiler output, runtimes (`solid-js/web` became `@solidjs/web`), reactivity rules, and JSX types. One build cannot serve both without trade-offs in server rendering, hydration, and typing, so the two packages exist side by side. `@solar-icons/solid` remains actively maintained for Solid 1 and is not deprecated.
 
-```sh
-npm install @solar-icons/solid-v2 solid-js@next @solidjs/web@next
-```
+| Topic              | `@solar-icons/solid-v2` (Solid 2)                                        | `@solar-icons/solid` (Solid 1) |
+| ------------------ | ------------------------------------------------------------------------ | ------------------------------ |
+| Peer dependency    | `solid-js` and `@solidjs/web`, `^2.0.0`                                  | `solid-js` `^1.6.0`            |
+| JSX types          | `JSX` from `@solidjs/web`                                                | `JSX` from `solid-js`          |
+| `class`            | String, array, or object (Solid 2 class values)                          | String                         |
+| `useSolar` setters | Batched like any Solid 2 signal write: the DOM updates on the next flush | Apply right away               |
+| No provider        | `useSolar()` throws Solid's context error                                | `useSolar()` throws            |
 
-The `v2` in the name is the Solid major version, not the Solar Icons one. Import paths, component names, props, CSS variables and CSS classes are the same, so only the package name changes in your imports:
-
-```jsx
-import { SolarProvider } from '@solar-icons/solid-v2'
-import { HeartIcon } from '@solar-icons/solid-v2/bold'
-```
-
-Solid 1 and Solid 2 differ in their compiler output, runtimes (`solid-js/web` became `@solidjs/web`), reactivity rules and JSX types. One build cannot serve both without trade-offs in server rendering, hydration and typing, so the two packages exist side by side while the framework changes major version. This split is specific to Solid. We will look again at a single package once the Solid 2 ecosystem is mature, and `@solar-icons/solid` remains the package for Solid 1 and is not deprecated.
-
-`@solar-icons/solid-v2` requires Solid 2 (`solid-js` and `@solidjs/web` `^2.0.0-rc.22`, currently a release candidate and tested with `rc.22`), and a JSX build for Solid 2 (`@solidjs/vite-plugin` 3 or `unplugin-solid` 3, with `"jsxImportSource": "@solidjs/web"`). The [package README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid-v2) lists the differences with the Solid 1 package.
+See the [`@solar-icons/solid-v2` README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid-v2) and [`@solar-icons/solid` README](https://github.com/saoudi-h/solar-icons/tree/main/packages/solid) for full package metadata.

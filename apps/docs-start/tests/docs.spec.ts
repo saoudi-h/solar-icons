@@ -125,3 +125,24 @@ test('the blog lists its articles and opens one', async ({ page }) => {
         page.getByRole('heading', { name: /How to Build a Consistent Icon System/ })
     ).toBeVisible()
 })
+
+test('the SolidJS docs page puts Solid 2 first and switches synced tabs to Solid 1', async ({
+    page,
+}) => {
+    await page.goto('/docs/v2/packages/solid')
+
+    await expect(page.getByRole('heading', { name: 'SolidJS', level: 1 })).toBeVisible()
+
+    const solid2Tab = page.getByRole('tab', { name: 'Solid 2 (@solar-icons/solid-v2)' }).first()
+    const solid1Tab = page.getByRole('tab', { name: 'Solid 1 (@solar-icons/solid)' }).first()
+
+    await expect(solid2Tab).toHaveAttribute('aria-selected', 'true')
+    await expect(page.getByRole('tabpanel').first()).toContainText('@solar-icons/solid-v2')
+
+    // A prerendered tab can receive the first click before hydration attaches its handler.
+    await expect(async () => {
+        await solid1Tab.click()
+        await expect(solid1Tab).toHaveAttribute('aria-selected', 'true', { timeout: 1_000 })
+    }).toPass({ timeout: 15_000 })
+    await expect(page.getByRole('tabpanel').first()).toContainText('@solar-icons/solid')
+})

@@ -45,3 +45,43 @@ test('the home page reads live stats once and caches them in the browser', async
     expect(requests.filter(url => url.includes('api.github.com'))).toHaveLength(0)
     expect(requests.filter(url => url.includes('api.npmjs.org'))).toHaveLength(0)
 })
+
+test('the Solid package card defaults to Solid 2 and switches cleanly to Solid 1', async ({
+    page,
+}) => {
+    await page.goto('/')
+
+    const packagesSection = page.locator('#available-packages')
+    const versionsGroup = packagesSection.getByRole('group', { name: 'Solid package versions' })
+    const solidCard = packagesSection.locator('[data-slot="card"]', {
+        has: page.getByRole('group', { name: 'Solid package versions' }),
+    })
+
+    const solid2Button = versionsGroup.getByRole('button', { name: 'Solid 2', exact: true })
+    const solid1Button = versionsGroup.getByRole('button', { name: 'Solid 1', exact: true })
+
+    await expect(solid2Button).toHaveAttribute('aria-pressed', 'true')
+    await expect(solid1Button).toHaveAttribute('aria-pressed', 'false')
+    await expect(solidCard).toContainText('@solar-icons/solid-v2')
+    await expect(solidCard).toContainText('new')
+    await expect(solidCard.getByRole('group', { name: 'Solid (Solid 2) links' })).toBeVisible()
+
+    // Wait for hydration before asserting click state on the prerendered card toggle.
+    await expect(async () => {
+        await solid1Button.click()
+        await expect(solid1Button).toHaveAttribute('aria-pressed', 'true', { timeout: 1_000 })
+    }).toPass({ timeout: 15_000 })
+    await expect(solid2Button).toHaveAttribute('aria-pressed', 'false')
+    await expect(solidCard).toContainText('@solar-icons/solid')
+    await expect(solidCard).not.toContainText('@solar-icons/solid-v2')
+    await expect(solidCard.getByRole('group', { name: 'Solid (Solid 1) links' })).toBeVisible()
+
+    await expect(page.getByRole('link', { name: 'Solid 2' }).first()).toHaveAttribute(
+        'href',
+        '/docs/v2/packages/solid'
+    )
+    await expect(page.getByRole('link', { name: 'Solid 1' }).first()).toHaveAttribute(
+        'href',
+        '/docs/v2/packages/solid'
+    )
+})
