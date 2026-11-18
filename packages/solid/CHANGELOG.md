@@ -1,5 +1,11 @@
 # @solar-icons/solid
 
+## 2.6.3
+
+### Patch Changes
+
+- [#755](https://github.com/saoudi-h/solar-icons/pull/755) [`1789fb6`](https://github.com/saoudi-h/solar-icons/commit/1789fb6b80515e5f4789c2ed8282a24b83a801b4) Thanks [@saoudi-h](https://github.com/saoudi-h)! - Add a Solid 1 vs Solid 2 guidance table linking to `@solar-icons/solid-v2` in the package README.
+
 ## 2.6.2
 
 ### Patch Changes
