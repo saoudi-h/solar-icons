@@ -17,4 +17,4 @@ status: 'active'
 - **Entries are explicit:** every icon module plus `lib/dynamic-icon` is a `tsdown` entry. Deprecated alias modules are re-export-only and are otherwise dropped, and `dynamic-icon` loses its `DynamicIcon` declaration.
 - **Tests:** `tests/package/` needs a fresh `build`; `consumer.test.ts` packs the tarball and uses it from an empty project. A passing `tsc` or `src/` test is not proof for `dist/`.
 - **Solid 2 API:** state updates batch until `flush()`; use `omit`/`merge`, `dynamicComponent`, context as provider, and `JSX` from `@solidjs/web`.
-- **Upstream RC gaps:** `@solidjs/web` rc.22 types import `csstype` (undeclared) and `heldRead` (not declared by `solid-js`). The repo maps `csstype` in `tsconfig.json`; filter the `heldRead` error in `tsc` checks with `skipLibCheck: false`.
+- **Upstream Solid 2 gaps:** `@solidjs/web@2.0.0` types import `heldRead` (not declared by `solid-js@2.0.0`). Filter the `heldRead` error in `tsc` checks with `skipLibCheck: false` (`csstype` is now declared by `@solidjs/web@2.0.0`, though `tsconfig.json` keeps the fallback mapping).

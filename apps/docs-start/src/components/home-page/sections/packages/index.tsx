@@ -15,6 +15,33 @@ import { useNavigateTo } from '~/hooks/use-navigate-to'
 import { Icon } from '~/lib/icons'
 import { cn } from '~/lib/utils'
 
+export type PackageStatus =
+    | 'released'
+    | 'in-progress'
+    | 'coming-soon'
+    | 'not-started'
+    | 'abandoned'
+    | 'deprecated'
+    | 'maintenance'
+    | 'new'
+
+export interface PackageVariant {
+    /** Short target label displayed in the card version switcher, e.g. 'Solid 2'. */
+    label: string
+    /** Registry package name, e.g. '@solar-icons/solid-v2'. */
+    packageName: string
+    /** Optional label used in the scrolling framework showcase pills. */
+    showcaseLabel?: string
+    status?: PackageStatus
+    content?: string
+    link?: string
+    githubLink?: string
+    npmLink?: string
+    registryLink?: string
+    registryTooltip?: string
+    registryIcon?: string
+}
+
 export interface PackageCardProps {
     title: string
     link?: string
@@ -26,15 +53,8 @@ export interface PackageCardProps {
     content?: string
     iconify: string
     hovered?: boolean
-    status:
-        | 'released'
-        | 'in-progress'
-        | 'coming-soon'
-        | 'not-started'
-        | 'abandoned'
-        | 'deprecated'
-        | 'maintenance'
-        | 'new'
+    status: PackageStatus
+    variants?: PackageVariant[]
 }
 
 export interface PackageSectionProps {
@@ -167,9 +187,25 @@ export const PackageCard: React.FC<PackageCardProps> = ({
     link,
     githubLink,
     status,
+    variants,
 }) => {
     const navigateTo = useNavigateTo()
-    const packageLink = registryLink ?? npmLink
+    const [selectedVariantIndex, setSelectedVariantIndex] = useState(0)
+    const activeVariant =
+        variants && variants.length > 0
+            ? (variants[selectedVariantIndex] ?? variants[0])
+            : undefined
+    const effectiveStatus = activeVariant?.status ?? status
+    const effectiveContent = activeVariant?.content ?? content
+    const effectiveLink = activeVariant?.link ?? link
+    const effectiveGithubLink = activeVariant?.githubLink ?? githubLink
+    const effectiveRegistryLink = activeVariant?.registryLink ?? registryLink
+    const effectiveNpmLink = activeVariant?.npmLink ?? npmLink
+    const effectiveRegistryTooltip = activeVariant?.registryTooltip ?? registryTooltip
+    const effectiveRegistryIcon = activeVariant?.registryIcon ?? registryIcon
+    const packageLink = effectiveRegistryLink ?? effectiveNpmLink
+    const linksLabel = activeVariant ? `${title} (${activeVariant.label}) links` : `${title} links`
+
     return (
         <Card
             className={`
@@ -205,17 +241,54 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                             `
                         )}>
                         {title}
-                        {status !== 'released' && (
+                        {effectiveStatus !== 'released' && (
                             <Badge variant="default" colors="default" size="sm">
-                                {status}
+                                {effectiveStatus}
                             </Badge>
                         )}
                     </Heading>
                 </CardTitle>
+                {variants && variants.length > 0 && (
+                    <div
+                        role="group"
+                        aria-label={`${title} package versions`}
+                        className="mt-2 inline-flex w-fit items-center gap-1 rounded-md border border-foreground/10 bg-secondary/50 p-0.5">
+                        {variants.map((variant, idx) => {
+                            const isSelected = idx === selectedVariantIndex
+                            return (
+                                <button
+                                    key={variant.packageName}
+                                    type="button"
+                                    aria-pressed={isSelected}
+                                    onClick={() => setSelectedVariantIndex(idx)}
+                                    className={cn(
+                                        `
+                                          rounded-sm px-2 py-0.5 text-xs font-medium
+                                          transition-colors
+                                          focus-visible:ring-2 focus-visible:ring-ring
+                                          focus-visible:outline-hidden
+                                        `,
+                                        isSelected
+                                            ? 'bg-background text-foreground shadow-2xs ring-1 ring-foreground/15'
+                                            : 'text-muted-foreground hover:text-foreground'
+                                    )}>
+                                    {variant.label}
+                                </button>
+                            )
+                        })}
+                    </div>
+                )}
             </CardHeader>
             <CardContent
                 className={`relative flex-1 text-left text-sm font-light text-muted-foreground`}>
-                {content}
+                {activeVariant && (
+                    <div className="mb-1.5">
+                        <code className="rounded bg-foreground/[0.06] px-1.5 py-0.5 font-mono text-[11px] text-foreground/85">
+                            {activeVariant.packageName}
+                        </code>
+                    </div>
+                )}
+                {effectiveContent}
             </CardContent>
             <CardFooter
                 className={`
@@ -223,15 +296,15 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                   backdrop-blur-lg
                 `}>
                 <ButtonGroup
-                    aria-label={`${title} links`}
+                    aria-label={linksLabel}
                     className="overflow-hidden rounded-md bg-secondary/80">
                     <ButtonWithTooltip
                         tooltip="Documentation"
                         aria-label="Documentation"
                         onClick={() => {
-                            if (link) navigateTo(link)
+                            if (effectiveLink) navigateTo(effectiveLink)
                         }}
-                        disabled={!link}
+                        disabled={!effectiveLink}
                         size="icon-sm"
                         colors="secondary"
                         variant="ghost"
@@ -242,9 +315,9 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         tooltip="GitHub Repository"
                         aria-label="GitHub Repository"
                         onClick={() => {
-                            if (githubLink) navigateTo(githubLink)
+                            if (effectiveGithubLink) navigateTo(effectiveGithubLink)
                         }}
-                        disabled={!githubLink}
+                        disabled={!effectiveGithubLink}
                         size="icon-sm"
                         colors="secondary"
                         variant="ghost"
@@ -252,8 +325,8 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         <Icon icon="mdi:github" className="size-4" />
                     </ButtonWithTooltip>
                     <ButtonWithTooltip
-                        tooltip={registryTooltip}
-                        aria-label={registryTooltip}
+                        tooltip={effectiveRegistryTooltip}
+                        aria-label={effectiveRegistryTooltip}
                         onClick={() => {
                             if (packageLink) navigateTo(packageLink)
                         }}
@@ -262,7 +335,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                         colors="secondary"
                         variant="ghost"
                         className="rounded-none! border-0! bg-transparent! [&_svg]:size-4">
-                        <Icon icon={registryIcon} className="size-4" />
+                        <Icon icon={effectiveRegistryIcon} className="size-4" />
                     </ButtonWithTooltip>
                 </ButtonGroup>
             </CardFooter>

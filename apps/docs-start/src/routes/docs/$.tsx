@@ -38,7 +38,7 @@ export const Route = createFileRoute('/docs/$')({
             vue: 'Vue 3 SVG Icons (@solar-icons/vue)',
             nuxt: 'Nuxt SVG Icons (@solar-icons/nuxt)',
             svelte: 'Svelte 5 SVG Icons (@solar-icons/svelte)',
-            solid: 'SolidJS SVG Icons (@solar-icons/solid)',
+            solid: 'SolidJS 2 & 1 SVG Icons (@solar-icons/solid-v2 & @solar-icons/solid)',
             angular: 'Angular SVG Icons (@solar-icons/angular)',
             js: 'Vanilla JavaScript SVG Icons (@solar-icons/js)',
             static: 'Static SVG Assets & Sprites (@solar-icons/static)',

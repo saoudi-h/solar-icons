@@ -27,10 +27,10 @@ Solid 1 and Solid 2 changed their compiler output, their DOM and server runtimes
 ## Install
 
 ```sh
-npm install @solar-icons/solid-v2 solid-js@next @solidjs/web@next
+npm install @solar-icons/solid-v2 solid-js @solidjs/web
 ```
 
-Peer dependencies: `solid-js` and `@solidjs/web`, both `^2.0.0-rc.22` (Solid 2 is currently a release candidate, tested with `2.0.0-rc.22`). Solid 1 is rejected by the install, on purpose.
+Peer dependencies: `solid-js` and `@solidjs/web`, both `^2.0.0`. Solid 1 is rejected by the install, on purpose.
 
 Your build must compile JSX for Solid 2: use `@solidjs/vite-plugin` (3.x) or `unplugin-solid` 3, and set `"jsxImportSource": "@solidjs/web"` in `tsconfig.json`.
 
@@ -85,12 +85,12 @@ The import paths, component names, props, CSS variables and CSS classes are the 
 
 | Topic              | `@solar-icons/solid` (Solid 1) | `@solar-icons/solid-v2` (Solid 2)                                        |
 | ------------------ | ------------------------------ | ------------------------------------------------------------------------ |
-| Peer dependency    | `solid-js` `^1.6.0`            | `solid-js` and `@solidjs/web`, `^2.0.0-rc.22`                            |
+| Peer dependency    | `solid-js` `^1.6.0`            | `solid-js` and `@solidjs/web`, `^2.0.0`                                  |
 | JSX types          | `JSX` from `solid-js`          | `JSX` from `@solidjs/web`                                                |
 | `class`            | String                         | String, array or object (Solid 2 class values)                           |
 | `useSolar` setters | Apply right away               | Batched like any Solid 2 signal write: the DOM updates on the next flush |
 | No provider        | `useSolar()` throws            | `useSolar()` throws Solid's context error                                |
-| Version            | Stable                         | Stable (requires Solid 2, currently a release candidate)                 |
+| Version            | Stable                         | Stable                                                                   |
 
 ## Documentation
 
@@ -98,17 +98,7 @@ For the API reference and a searchable icon catalog, visit the [Solid Documentat
 
 ## Versions this package is tested with
 
-`solid-js` and `@solidjs/web` 2.0.0-rc.22, `@solidjs/vite-plugin` 3.0.0-next.57, `unplugin-solid` 3.0.0.
-
-## Type checking
-
-`@solidjs/web` 2.0.0-rc.22 imports `csstype` in its types without declaring it. With pnpm's strict `node_modules` layout, TypeScript cannot resolve that import from inside `@solidjs/web`, and `style` objects then fail to typecheck (for example `style={{ opacity: '0.5' }}`). This comes from Solid, not from this package. Installing `csstype` and mapping it in `tsconfig.json` restores the types:
-
-```json
-{ "compilerOptions": { "paths": { "csstype": ["./node_modules/csstype/index.d.ts"] } } }
-```
-
-A flat `npm` install resolves it without any change.
+`solid-js` and `@solidjs/web` 2.0.0, `@solidjs/vite-plugin` 3.0.1, `unplugin-solid` 3.0.0.
 
 ## License
 

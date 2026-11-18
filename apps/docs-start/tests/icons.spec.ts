@@ -557,3 +557,33 @@ test('icon name tooltips follow the app tooltip behaviour', async ({ page }) => 
     await second.click()
     await expect(tooltip).toHaveCount(0)
 })
+
+test('the Solid detail snippet defaults to Solid 2 and remembers switching to Solid 1', async ({
+    page,
+}) => {
+    await page.goto('/icons?icon=home&style=linear')
+
+    await page.getByRole('tab', { name: 'Solid', exact: true }).click()
+    const panel = page.getByRole('tabpanel')
+    const versionsGroup = panel.getByRole('group', { name: 'Solid version' })
+    const solid2Button = versionsGroup.getByRole('button', { name: 'Solid 2', exact: true })
+    const solid1Button = versionsGroup.getByRole('button', { name: 'Solid 1', exact: true })
+
+    await expect(solid2Button).toHaveAttribute('aria-pressed', 'true')
+    await expect(panel).toContainText('@solar-icons/solid-v2/linear/home')
+
+    await solid1Button.click()
+    await expect(solid1Button).toHaveAttribute('aria-pressed', 'true')
+    await expect(panel).toContainText('@solar-icons/solid/linear/home')
+
+    await page.reload()
+    await expect(page.getByRole('tab', { name: 'Solid', exact: true })).toHaveAttribute(
+        'aria-selected',
+        'true'
+    )
+    await expect(panel.getByRole('button', { name: 'Solid 1', exact: true })).toHaveAttribute(
+        'aria-pressed',
+        'true'
+    )
+    await expect(panel).toContainText('@solar-icons/solid/linear/home')
+})

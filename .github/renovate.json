@@ -8,8 +8,9 @@
     "minimumReleaseAge": "7 days",
     "packageRules": [
         {
-            "description": "unplugin-solid 3 compiles for Solid 2, which is still a release candidate; the package supports Solid 1. Lift once Solid 2 is stable.",
+            "description": "unplugin-solid 3 compiles for Solid 2; @solar-icons/solid and its demo app stay on Solid 1 while @solar-icons/solid-v2 targets Solid 2.",
             "matchPackageNames": ["unplugin-solid"],
+            "matchFileNames": ["packages/solid/package.json", "apps/solid-app/package.json"],
             "allowedVersions": "<3"
         },
         {

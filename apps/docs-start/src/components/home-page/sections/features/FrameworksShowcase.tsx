@@ -13,7 +13,17 @@ import styles from './FrameworksShowcase.module.css'
  * The pills come from the package catalogue so this card and the catalogue cannot drift.
  */
 
-const frameworks = packages.filter(item => item.status === 'released').slice(0, 10)
+const frameworks = packages
+    .filter(item => item.kind === 'framework')
+    .flatMap(item =>
+        item.variants?.length
+            ? item.variants.map(variant => ({
+                  title: variant.showcaseLabel ?? variant.label,
+                  link: variant.link ?? item.link,
+                  iconify: item.iconify,
+              }))
+            : [{ title: item.title, link: item.link, iconify: item.iconify }]
+    )
 
 /** Each row starts at a different pill so the same framework never lines up above another. */
 const rows = [
