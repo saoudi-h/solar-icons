@@ -722,9 +722,9 @@ export function TypeFixture() {
             })
         )
 
-        // `@solidjs/web@2.0.0-rc.22` imports `heldRead`, which `solid-js` does not declare:
-        // that error shows up as soon as `skipLibCheck` is off and is not ours. Everything
-        // reported against this package, the fixture or its declarations must stay empty.
+        // `@solidjs/web@2.0.0` imports `heldRead` from `solid-js/internal`, which `solid-js`
+        // does not declare: that error shows up as soon as `skipLibCheck` is off and is not ours.
+        // Everything reported against this package, the fixture or its declarations must stay empty.
         const UPSTREAM = /node_modules\/(@solidjs\/web|solid-js)\//
         const diagnostics = (...args: string[]) => {
             try {
