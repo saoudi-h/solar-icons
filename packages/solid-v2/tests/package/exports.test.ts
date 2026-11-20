@@ -304,7 +304,7 @@ describe('public API', () => {
 
         expect(new Set(names).size).toBe(names.length)
         expect(new Set(names)).toEqual(expected.styled)
-        expect(expected.styled.size).toBeGreaterThanOrEqual(9456)
+        expect(expected.styled.size).toBeGreaterThanOrEqual(9576)
     })
 
     it('exports every icon of each style barrel', () => {

@@ -1,6 +1,6 @@
 # flutter_solar_icons
 
-Flutter widgets for Solar Icons. The package draws 1,576 icons across six styles (9,456 SVG variations): Bold, Broken, Linear, Outline, Bold Duotone, and Line Duotone.
+Flutter widgets for Solar Icons. The package draws 1,596 icons across six styles (9,576 SVG variations): Bold, Broken, Linear, Outline, Bold Duotone, and Line Duotone.
 
 ## Install
 
