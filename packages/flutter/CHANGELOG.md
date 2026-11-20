@@ -1,3 +1,7 @@
+## 2.4.0
+
+* Expand catalogue to 1,596 icon families (9,576 SVGs)
+
 ## 2.3.0
 
 * Expand catalogue to 1,576 icon families (9,456 SVGs)
