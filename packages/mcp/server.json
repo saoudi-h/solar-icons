@@ -3,7 +3,7 @@
     "name": "io.github.saoudi-h/solar-icons",
     "title": "Solar Icons MCP",
     "description": "Search Solar Icons across 6 styles with verified imports for 13+ frameworks.",
-    "version": "2.10.0",
+    "version": "2.11.0",
     "websiteUrl": "https://solar-icons.dev/docs/v2/ai-tools",
     "repository": {
         "url": "https://github.com/saoudi-h/solar-icons",
@@ -16,7 +16,7 @@
             "registryType": "npm",
             "registryBaseUrl": "https://registry.npmjs.org",
             "identifier": "@solar-icons/mcp",
-            "version": "2.10.0",
+            "version": "2.11.0",
             "transport": {
                 "type": "stdio"
             }
