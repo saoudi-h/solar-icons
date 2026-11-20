@@ -150,7 +150,8 @@
         "nuget",
         "autoloaded",
         "trimmable",
-        "gantt"
+        "gantt",
+        "kettlebell"
     ],
     "ignorePaths": [
         "node_modules",

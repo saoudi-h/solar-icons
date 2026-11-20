@@ -11266,4 +11266,4 @@ export type SolarIconName =
     | 'SolarTornadoSmall'
     | 'SolarTornado'
     | 'SolarWaterdrops'
-    | 'SolarWind';
+    | 'SolarWind'
