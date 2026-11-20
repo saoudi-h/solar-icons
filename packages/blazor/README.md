@@ -1,6 +1,6 @@
 # Solar Icons for Blazor
 
-Native Blazor components for the Solar catalogue: 1,576 icons across six styles (9,456 SVG variations). The library targets .NET 8 and supports .NET 8 and later applications. Publishing and maintenance belong to the Solar Icons project, which releases it to NuGet.org from this repository's CI.
+Native Blazor components for the Solar catalogue: 1,596 icons across six styles (9,576 SVG variations). The library targets .NET 8 and supports .NET 8 and later applications. Publishing and maintenance belong to the Solar Icons project, which releases it to NuGet.org from this repository's CI.
 
 ## Install
 

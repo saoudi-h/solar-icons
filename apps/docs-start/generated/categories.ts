@@ -189,7 +189,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'sports',
         label: 'Sports',
-        count: 41,
+        count: 61,
         representative: 'basketball',
     },
     {
