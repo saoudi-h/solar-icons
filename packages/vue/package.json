@@ -111,7 +111,7 @@
     "devDependencies": {
         "@solar-icons/core": "workspace:*",
         "@vitejs/plugin-vue": "^6.0.10",
-        "@vue/compiler-sfc": "3.5.44",
+        "@vue/compiler-sfc": "3.5.45",
         "@vue/test-utils": "^2.5.1",
         "jsdom": "^31.0.0",
         "picocolors": "^1.1.1",
