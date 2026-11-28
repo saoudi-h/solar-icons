@@ -1,3 +1,7 @@
+## 2.5.0
+
+* Expand catalogue to 1,692 icon families (10,152 SVGs), normalize `*-off` icons, and standardize modifier suffixes
+
 ## 2.4.0
 
 * Expand catalogue to 1,596 icon families (9,576 SVGs)
