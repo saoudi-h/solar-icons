@@ -72,6 +72,7 @@ const PUBLIC_ICON_PACKAGE_READMES = [
     'react',
     'react-native',
     'solid',
+    'solid-v2',
     'static',
     'svelte',
     'vue',

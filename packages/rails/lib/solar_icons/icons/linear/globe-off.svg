@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-globe-off-linear"><path d="M7.83105 4.3759C8.99555 3.5114 10.4379 3 11.9996 3C15.8656 3 18.9996 6.134 18.9996 10C18.9996 11.5617 18.4882 13.004 17.6237 14.1685" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M15.8482 15.8482C14.7441 16.5763 13.4215 17 12 17C8.134 17 5 13.866 5 9.99999C5 8.57849 5.4237 7.25589 6.1518 6.15179" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M4 16.5623C5.8884 18.6722 8.6326 20 11.687 20C14.0249 20 16.1811 19.2221 17.9109 17.9109" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M19.6712 16.2154C21.1268 14.4373 22.0002 12.1642 22.0002 9.687C22.0002 6.6326 20.6724 3.8884 18.5625 2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M9.1084 9.10822C9.4088 10.0125 10.047 10.7097 10.9284 10.9282" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12.5215 9.06599C12.5298 8.93659 12.5611 8.80239 12.6246 8.66659C13.082 7.68859 13.9817 7.42589 14.6945 6.89479C15.0107 6.65919 15.2991 6.41069 15.4263 6.21049C15.7297 5.73279 16.0332 4.84229 15.9966 4.25259" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M18.8197 11.5868C18.5975 12.2357 18.1395 13.0601 16.6963 13.2404" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M13.8826 13.8826C13.6399 14.0461 13.4308 14.2537 13.291 14.5172C12.8053 15.4325 13.0283 16.418 13.2382 16.8908" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12 22V20" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12 22H10" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M14 22H12" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M2 2L22 22" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>
