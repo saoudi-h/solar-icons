@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SolarIcons.Playground.Client\SolarIcons.Playground.Client.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.15" />
   </ItemGroup>
 
 </Project>
