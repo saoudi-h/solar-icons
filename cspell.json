@@ -157,6 +157,8 @@
         "node_modules",
         "dist",
         "build",
+        "**/obj/**",
+        "**/bin/**",
         ".turbo",
         ".git",
         "pnpm-lock.yaml",

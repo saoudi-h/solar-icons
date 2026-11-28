@@ -1796,7 +1796,7 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'map-point-remove',
+    name: 'map-point-minus',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
     tags: [
@@ -1808,6 +1808,14 @@ icons.push({
         'here',
         'destination',
         'drop',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'map-point-remove',
+            replacement: 'map-point-minus',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -minus).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -1895,7 +1903,7 @@ icons.push({
     tags: ['left-arrow', 'navigation-arrow'],
 })
 icons.push({
-    name: 'map-point-add',
+    name: 'map-point-plus',
     category: 'map' as Category,
     categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
     tags: [
@@ -1908,6 +1916,14 @@ icons.push({
         'here',
         'destination',
         'drop',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'map-point-add',
+            replacement: 'map-point-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -2398,7 +2414,7 @@ icons.push({
     tags: ['upload', 'send', 'images', 'photos', 'album', 'collection', 'pictures'],
 })
 icons.push({
-    name: 'gallery-add',
+    name: 'gallery-plus',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: [
@@ -2414,6 +2430,14 @@ icons.push({
         'collection',
         'pictures',
     ],
+    deprecatedAliases: [
+        {
+            name: 'gallery-add',
+            replacement: 'gallery-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'video-frame-2',
@@ -2422,10 +2446,18 @@ icons.push({
     tags: ['camera', 'cinema', 'movie'],
 })
 icons.push({
-    name: 'gallery-remove',
+    name: 'gallery-x',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: ['Photo Remove', 'Image Delete', 'images', 'photos', 'album', 'collection', 'pictures'],
+    deprecatedAliases: [
+        {
+            name: 'gallery-remove',
+            replacement: 'gallery-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'wallpaper',
@@ -2464,7 +2496,7 @@ icons.push({
     tags: ['upload', 'track', 'audio', 'music', 'sound'],
 })
 icons.push({
-    name: 'volume-cross',
+    name: 'volume-off',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: [
@@ -2477,6 +2509,14 @@ icons.push({
         'quiet',
         'level',
         'speaker',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'volume-cross',
+            replacement: 'volume-off',
+            reason: 'Normalized diagonal-slash mute icon to the -off suffix.',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -2693,13 +2733,21 @@ icons.push({
     tags: ['circle', 'stop'],
 })
 icons.push({
-    name: 'videocamera-add',
+    name: 'videocamera-plus',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: ['add-video-camera', 'camera-plus', 'plus', 'new', 'create', 'insert'],
+    deprecatedAliases: [
+        {
+            name: 'videocamera-add',
+            replacement: 'videocamera-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'camera-add',
+    name: 'camera-plus',
     category: 'video' as Category,
     categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
     tags: [
@@ -2715,6 +2763,14 @@ icons.push({
         'capture',
         'image',
         'lens',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'camera-add',
+            replacement: 'camera-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -3120,10 +3176,18 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'bill-cross',
+    name: 'bill-x',
     category: 'money' as Category,
     categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
     tags: ['crossed bill', 'bill cancellation'],
+    deprecatedAliases: [
+        {
+            name: 'bill-cross',
+            replacement: 'bill-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'bill-check',
@@ -3425,7 +3489,7 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'airbuds-remove',
+    name: 'airbuds-x',
     category: 'devices' as Category,
     categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
     tags: [
@@ -3437,6 +3501,14 @@ icons.push({
         'headphones',
         'delete',
         'minus',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'airbuds-remove',
+            replacement: 'airbuds-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -4027,10 +4099,18 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'cloud-cross',
+    name: 'cloud-x',
     category: 'weather' as Category,
     categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
     tags: ['cloud x', 'crossed-out cloud', 'sky', 'overcast', 'weather', 'atmosphere'],
+    deprecatedAliases: [
+        {
+            name: 'cloud-cross',
+            replacement: 'cloud-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'cloud-check',
@@ -4411,7 +4491,7 @@ icons.push({
     tags: ['upload', 'data-transfer', 'document', 'page', 'paper', 'arrow-up', 'submit'],
 })
 icons.push({
-    name: 'file-remove',
+    name: 'file-x',
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
     tags: [
@@ -4424,6 +4504,14 @@ icons.push({
         'cross',
         'x',
         'cancel',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'file-remove',
+            replacement: 'file-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -6203,7 +6291,7 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'alarm-add',
+    name: 'alarm-plus',
     category: 'time' as Category,
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: [
@@ -6217,6 +6305,14 @@ icons.push({
         'wake',
         'bell',
         'ring',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'alarm-add',
+            replacement: 'alarm-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -6367,7 +6463,7 @@ icons.push({
     tags: ['Calendar date', 'date', 'month', 'day', 'schedule', 'event', 'plan', 'agenda'],
 })
 icons.push({
-    name: 'calendar-add',
+    name: 'calendar-plus',
     category: 'time' as Category,
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: [
@@ -6381,12 +6477,28 @@ icons.push({
         'plan',
         'agenda',
     ],
+    deprecatedAliases: [
+        {
+            name: 'calendar-add',
+            replacement: 'calendar-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'alarm-remove',
+    name: 'alarm-minus',
     category: 'time' as Category,
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: ['alarm', 'clock', 'timer', 'time', 'hour', 'minute', 'schedule', 'wake', 'bell', 'ring'],
+    deprecatedAliases: [
+        {
+            name: 'alarm-remove',
+            replacement: 'alarm-minus',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -minus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'watch-square',
@@ -6540,10 +6652,18 @@ icons.push({
     tags: ['checkmark', 'checklist', 'task-list', 'minimalist'],
 })
 icons.push({
-    name: 'list-cross',
+    name: 'list-x',
     category: 'list' as Category,
     categoryTags: ['menu', 'organize', 'order', 'sort', 'lines', 'rows'],
     tags: ['cross-out', 'cancel-list'],
+    deprecatedAliases: [
+        {
+            name: 'list-cross',
+            replacement: 'list-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'list-cross-minimalistic',
@@ -6792,7 +6912,7 @@ icons.push({
     tags: ['dots'],
 })
 icons.push({
-    name: 'home-add',
+    name: 'home-plus',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
     tags: [
@@ -6806,6 +6926,14 @@ icons.push({
         'new',
         'create',
         'insert',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'home-add',
+            replacement: 'home-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -9034,10 +9162,18 @@ icons.push({
     tags: ['widget', 'dashboard', 'apps', 'grid', 'modules', 'layout', 'panels'],
 })
 icons.push({
-    name: 'widget-add',
+    name: 'widget-plus',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
     tags: ['add', 'plus', 'new', 'input', 'dashboard', 'apps', 'grid', 'modules', 'layout'],
+    deprecatedAliases: [
+        {
+            name: 'widget-add',
+            replacement: 'widget-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'widget-3',
@@ -9991,7 +10127,7 @@ icons.push({
     tags: ['shopping cart', 'trolley', 'basket', 'buy', 'purchase', 'checkout', 'ecommerce'],
 })
 icons.push({
-    name: 'cart-cross',
+    name: 'cart-x',
     category: 'shopping' as Category,
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
     tags: [
@@ -10003,6 +10139,14 @@ icons.push({
         'purchase',
         'checkout',
         'ecommerce',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'cart-cross',
+            replacement: 'cart-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -10057,7 +10201,7 @@ icons.push({
     tags: ['basket', 'shopping cart', 'trolley', 'buy', 'purchase', 'checkout', 'ecommerce'],
 })
 icons.push({
-    name: 'bag-cross',
+    name: 'bag-x',
     category: 'shopping' as Category,
     categoryTags: ['ecommerce', 'buy', 'purchase', 'store', 'market', 'retail'],
     tags: [
@@ -10070,6 +10214,14 @@ icons.push({
         'checkout',
         'ecommerce',
         'retail',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'bag-cross',
+            replacement: 'bag-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -12530,7 +12682,7 @@ icons.push({
     tags: ['book', 'notebook', 'paper', 'file', 'page', 'sheet', 'text', 'article'],
 })
 icons.push({
-    name: 'clipboard-remove',
+    name: 'clipboard-x',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
     tags: [
@@ -12543,6 +12695,14 @@ icons.push({
         'form',
         'cancel',
         'remove',
+    ],
+    deprecatedAliases: [
+        {
+            name: 'clipboard-remove',
+            replacement: 'clipboard-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
     ],
 })
 icons.push({
@@ -12664,10 +12824,18 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'clipboard-add',
+    name: 'clipboard-plus',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
     tags: ['clipboard-add', 'add', 'new', 'board', 'paper', 'write', 'survey', 'form'],
+    deprecatedAliases: [
+        {
+            name: 'clipboard-add',
+            replacement: 'clipboard-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'notification-unread',
@@ -12676,10 +12844,18 @@ icons.push({
     tags: ['notification', 'unread', 'message', 'alert'],
 })
 icons.push({
-    name: 'notification-remove',
+    name: 'notification-x',
     category: 'notifications' as Category,
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
     tags: ['cancel-notification', 'remove'],
+    deprecatedAliases: [
+        {
+            name: 'notification-remove',
+            replacement: 'notification-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'bell',
@@ -12724,10 +12900,18 @@ icons.push({
     ],
 })
 icons.push({
-    name: 'notification-lines-remove',
+    name: 'notification-lines-x',
     category: 'notifications' as Category,
     categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
     tags: ['remove-notification', 'delete-message', 'cancel-notification'],
+    deprecatedAliases: [
+        {
+            name: 'notification-lines-remove',
+            replacement: 'notification-lines-x',
+            reason: 'Normalized modifier suffix to geometric convention (-remove -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'notification-unread-lines',
@@ -12975,10 +13159,18 @@ icons.push({
     tags: ['security', 'warning', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
 })
 icons.push({
-    name: 'shield-cross',
+    name: 'shield-x',
     category: 'security' as Category,
     categoryTags: ['protection', 'safe', 'guard', 'defend', 'private', 'lock'],
     tags: ['shield', 'crossed shield', 'protect', 'guard', 'defend', 'antivirus', 'safe'],
+    deprecatedAliases: [
+        {
+            name: 'shield-cross',
+            replacement: 'shield-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'shield-user',
@@ -13175,10 +13367,18 @@ icons.push({
     tags: ['remove user', 'user minus', 'remove', 'delete', 'subtract', 'decrease'],
 })
 icons.push({
-    name: 'user-cross',
+    name: 'user-x',
     category: 'users' as Category,
     categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
     tags: ['deactivated-user', 'profile-removal', 'inactive-account'],
+    deprecatedAliases: [
+        {
+            name: 'user-cross',
+            replacement: 'user-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'user-block',
@@ -13764,7 +13964,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'wi-fi-cross',
+    name: 'wi-fi-x',
     category: 'it' as Category,
     categoryTags: ['technology', 'network', 'internet', 'status'],
     tags: ['wifi disconnected', 'wi-fi disconnected', 'no connection', 'network error', 'offline'],
@@ -13772,6 +13972,14 @@ icons.push({
     addedAt: '2026-08-21',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'wi-fi-cross',
+            replacement: 'wi-fi-x',
+            reason: 'Normalized modifier suffix to geometric convention (-cross -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'wi-fi-high',
@@ -13846,7 +14054,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'chat-round-add',
+    name: 'chat-round-plus',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
     tags: ['speech bubble', 'message', 'add', 'new conversation', 'plus', 'communication'],
@@ -13854,9 +14062,17 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'chat-round-add',
+            replacement: 'chat-round-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'chat-round-close',
+    name: 'chat-round-x',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
     tags: ['speech bubble', 'message', 'close', 'dismiss', 'cancel', 'remove'],
@@ -13864,6 +14080,14 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'chat-round-close',
+            replacement: 'chat-round-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'chat-round-code',
@@ -13940,7 +14164,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'chat-square-add',
+    name: 'chat-square-plus',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
     tags: ['square speech bubble', 'message', 'add', 'new conversation', 'plus', 'communication'],
@@ -13948,9 +14172,17 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'chat-square-add',
+            replacement: 'chat-square-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'chat-square-close',
+    name: 'chat-square-x',
     category: 'messages' as Category,
     categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
     tags: ['square speech bubble', 'message', 'close', 'dismiss', 'cancel', 'remove'],
@@ -13958,6 +14190,14 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'chat-square-close',
+            replacement: 'chat-square-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'chat-square-off',
@@ -14191,7 +14431,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'grid-2x2-add',
+    name: 'grid-2x2-plus',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
     tags: ['two by two grid', 'add', 'create', 'modules', 'dashboard', 'layout', 'plus'],
@@ -14199,6 +14439,14 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'grid-2x2-add',
+            replacement: 'grid-2x2-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'grid-2x2-check',
@@ -14211,7 +14459,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'grid-2x2-close',
+    name: 'grid-2x2-x',
     category: 'settings' as Category,
     categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
     tags: ['two by two grid', 'close', 'remove', 'modules', 'dashboard', 'layout', 'cancel'],
@@ -14219,6 +14467,14 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'grid-2x2-close',
+            replacement: 'grid-2x2-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'grid-3x3',
@@ -14244,7 +14500,7 @@ icons.push({
         'The generic loader is used by shadcn independently from loader-circle; both need a stable Solar loading treatment.',
 })
 icons.push({
-    name: 'file-add',
+    name: 'file-plus',
     category: 'files' as Category,
     categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
     tags: ['add file', 'new document', 'create', 'plus', 'document', 'page', 'paper'],
@@ -14252,6 +14508,14 @@ icons.push({
     addedAt: '2026-09-11',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'file-add',
+            replacement: 'file-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'file-badge',
@@ -15248,7 +15512,7 @@ icons.push({
     state: 'beta' as const,
 })
 icons.push({
-    name: 'archive-close',
+    name: 'archive-x',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
     tags: ['close archive', 'archive', 'dismiss', 'remove', 'box', 'storage', 'files'],
@@ -15256,9 +15520,17 @@ icons.push({
     addedAt: '2026-09-13',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'archive-close',
+            replacement: 'archive-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'archive-minimalistic-close',
+    name: 'archive-minimalistic-x',
     category: 'notes' as Category,
     categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
     tags: ['minimalist archive', 'close archive', 'archive', 'dismiss', 'box', 'storage', 'files'],
@@ -15266,6 +15538,14 @@ icons.push({
     addedAt: '2026-09-13',
     author: 'Hakim Saoudi',
     state: 'beta' as const,
+    deprecatedAliases: [
+        {
+            name: 'archive-minimalistic-close',
+            replacement: 'archive-minimalistic-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'blocks',
@@ -16039,7 +16319,7 @@ icons.push({
     priorityReason: 'Represents removing an item from a copy or duplication workflow.',
 })
 icons.push({
-    name: 'copy-add',
+    name: 'copy-plus',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
     tags: ['copy', 'clipboard', 'duplicate', 'add', 'plus', 'create', 'increase'],
@@ -16049,9 +16329,17 @@ icons.push({
     state: 'beta' as const,
     priority: 'high' as const,
     priorityReason: 'Represents adding another copy or duplicating an item.',
+    deprecatedAliases: [
+        {
+            name: 'copy-add',
+            replacement: 'copy-plus',
+            reason: 'Normalized modifier suffix to geometric convention (-add -> -plus).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'copy-close',
+    name: 'copy-x',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
     tags: ['copy', 'clipboard', 'duplicate', 'close', 'cancel', 'remove', 'dismiss'],
@@ -16061,9 +16349,17 @@ icons.push({
     state: 'beta' as const,
     priority: 'high' as const,
     priorityReason: 'Cancels or removes a copy operation in a familiar compact form.',
+    deprecatedAliases: [
+        {
+            name: 'copy-close',
+            replacement: 'copy-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
-    name: 'filter-close',
+    name: 'filter-x',
     category: 'ui' as Category,
     categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
     tags: ['filter', 'funnel', 'remove', 'clear', 'reset', 'close', 'cancel'],
@@ -16073,6 +16369,14 @@ icons.push({
     state: 'beta' as const,
     priority: 'high' as const,
     priorityReason: 'A common control for clearing an active filter or search constraint.',
+    deprecatedAliases: [
+        {
+            name: 'filter-close',
+            replacement: 'filter-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'circle-dot',
@@ -16148,7 +16452,7 @@ icons.push({
     priorityReason: 'Communicates disabled, hidden, or unavailable search behavior.',
 })
 icons.push({
-    name: 'magnifier-close',
+    name: 'magnifier-x',
     category: 'search' as Category,
     categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
     tags: ['search', 'magnifying glass', 'find', 'clear', 'close', 'cancel', 'remove query'],
@@ -16158,6 +16462,14 @@ icons.push({
     state: 'beta' as const,
     priority: 'high' as const,
     priorityReason: 'A common clear-search control for inputs and result views.',
+    deprecatedAliases: [
+        {
+            name: 'magnifier-close',
+            replacement: 'magnifier-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'rounded-magnifier-check',
@@ -16192,7 +16504,7 @@ icons.push({
     priorityReason: 'Provides the disabled-search state in the existing rounded magnifier family.',
 })
 icons.push({
-    name: 'rounded-magnifier-close',
+    name: 'rounded-magnifier-x',
     category: 'search' as Category,
     categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
     tags: [
@@ -16210,6 +16522,14 @@ icons.push({
     state: 'beta' as const,
     priority: 'high' as const,
     priorityReason: 'Provides the clear-search state in the existing rounded magnifier family.',
+    deprecatedAliases: [
+        {
+            name: 'rounded-magnifier-close',
+            replacement: 'rounded-magnifier-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'minimalistic-magnifier-check',
@@ -16246,7 +16566,7 @@ icons.push({
         'Provides the disabled-search state in the existing minimalistic magnifier family.',
 })
 icons.push({
-    name: 'minimalistic-magnifier-close',
+    name: 'minimalistic-magnifier-x',
     category: 'search' as Category,
     categoryTags: ['find', 'query', 'look', 'explore', 'discover', 'magnifier'],
     tags: [
@@ -16265,6 +16585,14 @@ icons.push({
     priority: 'high' as const,
     priorityReason:
         'Provides the clear-search state in the existing minimalistic magnifier family.',
+    deprecatedAliases: [
+        {
+            name: 'minimalistic-magnifier-close',
+            replacement: 'minimalistic-magnifier-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'bookmark-check',
@@ -18078,7 +18406,7 @@ icons.push({
         'Common booking-confirmed and completed-event state counterpart in the Calendar family.',
 })
 icons.push({
-    name: 'calendar-close',
+    name: 'calendar-x',
     category: 'time' as Category,
     categoryTags: ['clock', 'schedule', 'date', 'hour', 'minute', 'timer'],
     tags: ['calendar', 'close', 'cancel', 'remove', 'unavailable', 'schedule', 'event', 'declined'],
@@ -18089,6 +18417,14 @@ icons.push({
     priority: 'high' as const,
     priorityReason:
         'Common cancelled-event and unavailable-date state counterpart in the Calendar family.',
+    deprecatedAliases: [
+        {
+            name: 'calendar-close',
+            replacement: 'calendar-x',
+            reason: 'Normalized modifier suffix to geometric convention (-close -> -x).',
+            deprecatedSince: '2026-11-28',
+        },
+    ],
 })
 icons.push({
     name: 'pen-tool',
@@ -18561,6 +18897,1257 @@ icons.push({
     state: 'beta' as const,
     priority: 'normal' as const,
     priorityReason: 'Universal finish and race-flag symbol for sports and progress UIs.',
+})
+icons.push({
+    name: 'banknote-check',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['banknote', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'banknote-x',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['banknote', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'bell-check',
+    category: 'notifications' as Category,
+    categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
+    tags: ['bell', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'bell-minus',
+    category: 'notifications' as Category,
+    categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
+    tags: ['bell', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'bell-plus',
+    category: 'notifications' as Category,
+    categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
+    tags: ['bell', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'bell-x',
+    category: 'notifications' as Category,
+    categoryTags: ['alert', 'alarm', 'notice', 'message', 'attention'],
+    tags: ['bell', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'bird',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['bird', 'animal', 'wildlife', 'nature', 'songbird', 'wing', 'beak', 'pet'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Community-requested generalist animal icon expanding the Nature category.',
+})
+icons.push({
+    name: 'book-check',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'book-lock',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'lock', 'locked', 'private', 'secure', 'protected', 'security'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -lock modifier family for privacy and access-control states.',
+})
+icons.push({
+    name: 'book-minus',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'book-plus',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'book-search',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'search', 'find', 'lookup', 'inspect', 'query', 'magnifier'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -search modifier family for scoped search controls.',
+})
+icons.push({
+    name: 'book-x',
+    category: 'school' as Category,
+    categoryTags: ['education', 'study', 'learning', 'student', 'university', 'college'],
+    tags: ['book', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'bot-off',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['bot', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'bot-plus',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['bot', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'bot-x',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['bot', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'bug-off',
+    category: 'it' as Category,
+    categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
+    tags: ['bug', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'butterfly',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['butterfly', 'insect', 'wings', 'nature', 'spring', 'garden', 'animal'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Popular generalist nature and insect icon.',
+})
+icons.push({
+    name: 'clipboard-pen',
+    category: 'notes' as Category,
+    categoryTags: ['document', 'paper', 'write', 'record', 'clipboard', 'text'],
+    tags: ['clipboard', 'edit', 'modify', 'write', 'rename', 'compose', 'pen'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -pen modifier family for inline editing actions.',
+})
+icons.push({
+    name: 'cloud-cog',
+    category: 'weather' as Category,
+    categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
+    tags: ['cloud', 'settings', 'configure', 'preferences', 'options', 'gear', 'cog'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -cog modifier family for item-level configuration actions.',
+})
+icons.push({
+    name: 'cloud-sync',
+    category: 'weather' as Category,
+    categoryTags: ['forecast', 'meteorology', 'climate', 'nature', 'sky'],
+    tags: ['cloud', 'sync', 'synchronize', 'refresh', 'update'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -sync modifier family for live synchronization indicators.',
+})
+icons.push({
+    name: 'database-check',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['database', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'database-minus',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['database', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'database-plus',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['database', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'database-search',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['database', 'search', 'find', 'lookup', 'inspect', 'query', 'magnifier'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -search modifier family for scoped search controls.',
+})
+icons.push({
+    name: 'database-x',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['database', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'diamond-minus',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['diamond', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'diamond-plus',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['diamond', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'dog',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['dog', 'puppy', 'pet', 'animal', 'canine', 'companion', 'nature'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Core companion animal icon pairing with the existing cat icon.',
+})
+icons.push({
+    name: 'feather',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['feather', 'quill', 'light', 'bird', 'write', 'nature', 'soft'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Versatile nature and lightweight-writing metaphor icon.',
+})
+icons.push({
+    name: 'file-clock',
+    category: 'files' as Category,
+    categoryTags: ['files', 'documents', 'pages', 'paper', 'content'],
+    tags: ['file', 'clock', 'history', 'recent', 'schedule', 'time', 'pending'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -clock modifier family for time and history indicators.',
+})
+icons.push({
+    name: 'flashlight-off',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['flashlight', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'folder-minus',
+    category: 'folders' as Category,
+    categoryTags: ['folders', 'directories', 'organization', 'storage'],
+    tags: ['folder', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'folder-plus',
+    category: 'folders' as Category,
+    categoryTags: ['folders', 'directories', 'organization', 'storage'],
+    tags: ['folder', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'folder-x',
+    category: 'folders' as Category,
+    categoryTags: ['folders', 'directories', 'organization', 'storage'],
+    tags: ['folder', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'git-branch-minus',
+    category: 'it' as Category,
+    categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
+    tags: ['git branch', 'git', 'branch', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'git-branch-plus',
+    category: 'it' as Category,
+    categoryTags: ['it', 'network', 'programming', 'development', 'computing', 'tech'],
+    tags: ['git branch', 'git', 'branch', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'globe-check',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['globe', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'globe-lock',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['globe', 'lock', 'locked', 'private', 'secure', 'protected', 'security'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -lock modifier family for privacy and access-control states.',
+})
+icons.push({
+    name: 'globe-off',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['globe', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'globe-x',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['globe', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'heart-minus',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['heart', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'heart-x',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['heart', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'keyboard-off',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['keyboard', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'layers-minus',
+    category: 'tools' as Category,
+    categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
+    tags: ['layers', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'layers-plus',
+    category: 'tools' as Category,
+    categoryTags: ['design', 'edit', 'create', 'draw', 'measure', 'art'],
+    tags: ['layers', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'map-minus',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['map', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'map-plus',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['map', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'megaphone-off',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['megaphone', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'monitor-check',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['monitor', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'monitor-cog',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['monitor', 'settings', 'configure', 'preferences', 'options', 'gear', 'cog'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -cog modifier family for item-level configuration actions.',
+})
+icons.push({
+    name: 'monitor-x',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['monitor', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'mouse-off',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['mouse', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'owl',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['owl', 'bird', 'night', 'wisdom', 'nocturnal', 'animal', 'nature'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Recognizable nocturnal bird icon for nature and learning apps.',
+})
+icons.push({
+    name: 'paw-print',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['paw', 'paw print', 'pet', 'animal', 'tracks', 'dog', 'cat', 'wildlife'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'High-utility generalist pet and animal indicator icon.',
+})
+icons.push({
+    name: 'pen-off',
+    category: 'messages' as Category,
+    categoryTags: ['chat', 'communication', 'talk', 'dialog', 'conversation', 'text', 'mail'],
+    tags: ['pen', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'pin-off',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['pin', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'printer-check',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['printer', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'printer-x',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['printer', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'rabbit',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['rabbit', 'bunny', 'hare', 'pet', 'animal', 'nature', 'ears'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Companion animal head icon matching the cat and dog family.',
+})
+icons.push({
+    name: 'radio-off',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['radio', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'refresh-off',
+    category: 'arrows' as Category,
+    categoryTags: [
+        'arrow',
+        'direction',
+        'navigation',
+        'pointer',
+        'wayfinding',
+        'interface',
+        'control',
+        'movement',
+    ],
+    tags: ['refresh', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'repeat-off',
+    category: 'video' as Category,
+    categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
+    tags: ['repeat', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'restart-off',
+    category: 'arrows' as Category,
+    categoryTags: [
+        'arrow',
+        'direction',
+        'navigation',
+        'pointer',
+        'wayfinding',
+        'interface',
+        'control',
+        'movement',
+    ],
+    tags: ['restart', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'rewind-20-seconds-back',
+    category: 'video' as Category,
+    categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
+    tags: ['rewind', 'skip', 'back', '20 seconds', 'media', 'player', 'video', 'audio', 'podcast'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Extends the media rewind series (5/10/15/20/30 seconds) per community request.',
+})
+icons.push({
+    name: 'rewind-20-seconds-forward',
+    category: 'video' as Category,
+    categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
+    tags: [
+        'rewind',
+        'skip',
+        'forward',
+        '20 seconds',
+        'media',
+        'player',
+        'video',
+        'audio',
+        'podcast',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Extends the media rewind series (5/10/15/20/30 seconds) per community request.',
+})
+icons.push({
+    name: 'rewind-30-seconds-back',
+    category: 'video' as Category,
+    categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
+    tags: ['rewind', 'skip', 'back', '30 seconds', 'media', 'player', 'video', 'audio', 'podcast'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Extends the media rewind series (5/10/15/20/30 seconds) per community request.',
+})
+icons.push({
+    name: 'rewind-30-seconds-forward',
+    category: 'video' as Category,
+    categoryTags: ['media', 'player', 'movie', 'film', 'audio', 'multimedia'],
+    tags: [
+        'rewind',
+        'skip',
+        'forward',
+        '30 seconds',
+        'media',
+        'player',
+        'video',
+        'audio',
+        'podcast',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Extends the media rewind series (5/10/15/20/30 seconds) per community request.',
+})
+icons.push({
+    name: 'route-off',
+    category: 'map' as Category,
+    categoryTags: ['location', 'navigation', 'gps', 'place', 'destination', 'pin', 'travel'],
+    tags: ['route', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'screen-share-off',
+    category: 'arrows-action' as Category,
+    categoryTags: [
+        'action',
+        'operation',
+        'system',
+        'interface',
+        'interaction',
+        'control',
+        'command',
+        'process',
+    ],
+    tags: [
+        'screen share',
+        'screen',
+        'share',
+        'off',
+        'disabled',
+        'muted',
+        'inactive',
+        'slash',
+        'turn off',
+    ],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'server-check',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['server', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'server-cog',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['server', 'settings', 'configure', 'preferences', 'options', 'gear', 'cog'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -cog modifier family for item-level configuration actions.',
+})
+icons.push({
+    name: 'server-off',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['server', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'server-plus',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['server', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'server-x',
+    category: 'devices' as Category,
+    categoryTags: ['electronics', 'hardware', 'gadgets', 'technology', 'equipment'],
+    tags: ['server', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'shield-cog',
+    category: 'security' as Category,
+    categoryTags: ['security', 'danger', 'warning', 'threat', 'error'],
+    tags: ['shield', 'settings', 'configure', 'preferences', 'options', 'gear', 'cog'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -cog modifier family for item-level configuration actions.',
+})
+icons.push({
+    name: 'shield-lock',
+    category: 'security' as Category,
+    categoryTags: ['security', 'danger', 'warning', 'threat', 'error'],
+    tags: ['shield', 'lock', 'locked', 'private', 'secure', 'protected', 'security'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -lock modifier family for privacy and access-control states.',
+})
+icons.push({
+    name: 'snail',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['snail', 'shell', 'slow', 'mollusk', 'garden', 'animal', 'nature'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Generalist nature icon also used for slow-mode and pacing UI.',
+})
+icons.push({
+    name: 'squirrel',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['squirrel', 'rodent', 'forest', 'wildlife', 'animal', 'nature', 'tail'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Generalist forest wildlife icon expanding the Nature category.',
+})
+icons.push({
+    name: 'star-check',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['star', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'star-minus',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['star', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'star-plus',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['star', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'star-x',
+    category: 'like' as Category,
+    categoryTags: ['favorite', 'award', 'achievement', 'rating', 'appreciation', 'love'],
+    tags: ['star', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'tag-plus',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['tag', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'tag-x',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['tag', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'ticket-check',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['ticket', 'confirm', 'verified', 'done', 'success', 'approve', 'complete'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -check modifier family for verified and completed states.',
+})
+icons.push({
+    name: 'ticket-minus',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['ticket', 'remove', 'subtract', 'decrease', 'minus', 'hide'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -minus modifier family for subtraction and removal flows.',
+})
+icons.push({
+    name: 'ticket-plus',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['ticket', 'add', 'new', 'create', 'insert', 'plus', 'append'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -plus modifier family for creation and addition flows.',
+})
+icons.push({
+    name: 'ticket-x',
+    category: 'money' as Category,
+    categoryTags: ['finance', 'payment', 'cash', 'currency', 'wealth', 'economy', 'price'],
+    tags: ['ticket', 'remove', 'close', 'delete', 'cancel', 'clear', 'dismiss', 'error'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason:
+        'Completes the geometric -x modifier family for remove, cancel, and error states.',
+})
+icons.push({
+    name: 'turtle',
+    category: 'nature' as Category,
+    categoryTags: ['environment', 'outdoor', 'plant', 'ecology', 'organic'],
+    tags: ['turtle', 'tortoise', 'reptile', 'animal', 'shell', 'slow', 'nature'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Recognizable generalist animal icon for nature and pace indicators.',
+})
+icons.push({
+    name: 'umbrella-off',
+    category: 'ui' as Category,
+    categoryTags: ['interface', 'web', 'app', 'system', 'element', 'essential'],
+    tags: ['umbrella', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
+})
+icons.push({
+    name: 'user-cog',
+    category: 'users' as Category,
+    categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
+    tags: ['user', 'settings', 'configure', 'preferences', 'options', 'gear', 'cog'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -cog modifier family for item-level configuration actions.',
+})
+icons.push({
+    name: 'user-lock',
+    category: 'users' as Category,
+    categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
+    tags: ['user', 'lock', 'locked', 'private', 'secure', 'protected', 'security'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -lock modifier family for privacy and access-control states.',
+})
+icons.push({
+    name: 'user-pen',
+    category: 'users' as Category,
+    categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
+    tags: ['user', 'edit', 'modify', 'write', 'rename', 'compose', 'pen'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -pen modifier family for inline editing actions.',
+})
+icons.push({
+    name: 'user-search',
+    category: 'users' as Category,
+    categoryTags: ['people', 'person', 'account', 'profile', 'avatar', 'human'],
+    tags: ['user', 'search', 'find', 'lookup', 'inspect', 'query', 'magnifier'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'normal' as const,
+    priorityReason: 'Completes the -search modifier family for scoped search controls.',
+})
+icons.push({
+    name: 'wrench-off',
+    category: 'settings' as Category,
+    categoryTags: ['preferences', 'options', 'configuration', 'setup', 'controls', 'gear'],
+    tags: ['wrench', 'off', 'disabled', 'muted', 'inactive', 'slash', 'turn off'],
+    origin: 'extended' as const,
+    addedAt: '2026-11-28',
+    author: 'Hakim Saoudi',
+    state: 'beta' as const,
+    priority: 'high' as const,
+    priorityReason: 'Completes the -off slashed state family for toggle and disabled controls.',
 })
 
 export { icons }

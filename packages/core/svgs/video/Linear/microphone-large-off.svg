@@ -1,9 +1,9 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22 2L2 22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
-<path d="M7.287 16.713C6.481 15.692 6 14.402 6 13V8C6 4.6863 8.6863 2 12 2C14.708 2 16.996 3.793 17.742 6.258" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
-<path d="M18.001 9.45605V13.0001C18.001 16.3138 15.3147 19.0001 12.001 19.0001C10.961 19.0001 9.98097 18.7361 9.16797 18.2891" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
-<path d="M3 11V13C3 15.231 3.812 17.272 5.156 18.844" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
-<path d="M6.98047 20.47C8.41047 21.43 10.1405 22 12.0005 22C16.9715 22 21.0005 17.971 21.0005 13V11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M16.7132 16.7132C15.6145 18.106 13.9116 19 12 19C8.6863 19 6 16.3137 6 13V7.99998C6 7.39378 6.0899 6.80858 6.2571 6.25708" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M7.49414 4.0382C8.59374 2.7886 10.2049 2 12.0003 2C15.314 2 18.0003 4.6863 18.0003 8V13C18.0003 13.4763 17.9448 13.9397 17.8399 14.384" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
 <path d="M10 6.5C10 6.5 10.4727 6 12 6C13.5273 6 14 6.5 14 6.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
-<path d="M10 9.5C10 9.5 10.4727 9 12 9C13.5273 9 14 9.5 14 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M12.4727 9.01733C13.6268 9.10543 13.9998 9.50003 13.9998 9.50003" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M21.0007 11V13C21.0007 14.3325 20.7111 15.5974 20.1914 16.7351" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M18.8444 18.8444C17.1937 20.7757 14.7398 22 12 22C7.0294 22 3 17.9706 3 13V11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
+<path d="M2 2L22 22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="black"/>
 </svg>

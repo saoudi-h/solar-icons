@@ -45,11 +45,11 @@ export const categories = [
 export type Category = (typeof categories)[number]
 
 export const catalogStats = {
-    iconCount: 1596,
+    iconCount: 1692,
     styleCount: 6,
-    variationCount: 9576,
+    variationCount: 10152,
     categoryCount: 37,
     packageCount: 17,
-    formattedIconCount: '1,596',
-    formattedVariationCount: '9,576',
+    formattedIconCount: '1,692',
+    formattedVariationCount: '10,152',
 } as const

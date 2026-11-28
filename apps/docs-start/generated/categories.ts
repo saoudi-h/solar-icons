@@ -15,13 +15,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'arrows',
         label: 'Arrows',
-        count: 74,
+        count: 76,
         representative: 'arrow-right',
     },
     {
         slug: 'arrows-action',
         label: 'Arrows Action',
-        count: 72,
+        count: 73,
         representative: 'download',
     },
     {
@@ -51,7 +51,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'devices',
         label: 'Devices',
-        count: 95,
+        count: 111,
         representative: 'laptop',
     },
     {
@@ -63,13 +63,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'files',
         label: 'Files',
-        count: 39,
+        count: 40,
         representative: 'file-text',
     },
     {
         slug: 'folders',
         label: 'Folders',
-        count: 32,
+        count: 35,
         representative: 'folder',
     },
     {
@@ -93,13 +93,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'it',
         label: 'IT',
-        count: 72,
+        count: 75,
         representative: 'code',
     },
     {
         slug: 'like',
         label: 'Like',
-        count: 20,
+        count: 26,
         representative: 'heart',
     },
     {
@@ -111,7 +111,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'map',
         label: 'Map',
-        count: 38,
+        count: 45,
         representative: 'compass',
     },
     {
@@ -123,31 +123,31 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'messages',
         label: 'Messages',
-        count: 63,
+        count: 64,
         representative: 'chat-round',
     },
     {
         slug: 'money',
         label: 'Money',
-        count: 41,
+        count: 49,
         representative: 'banknote',
     },
     {
         slug: 'nature',
         label: 'Nature',
-        count: 14,
+        count: 24,
         representative: 'leaf',
     },
     {
         slug: 'notes',
         label: 'Notes',
-        count: 30,
+        count: 31,
         representative: 'notebook',
     },
     {
         slug: 'notifications',
         label: 'Notifications',
-        count: 7,
+        count: 11,
         representative: 'bell',
     },
     {
@@ -159,7 +159,7 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'school',
         label: 'School',
-        count: 34,
+        count: 40,
         representative: 'backpack',
     },
     {
@@ -171,13 +171,13 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'security',
         label: 'Security',
-        count: 51,
+        count: 53,
         representative: 'shield-check',
     },
     {
         slug: 'settings',
         label: 'Settings',
-        count: 37,
+        count: 38,
         representative: 'tuning',
     },
     {
@@ -207,31 +207,31 @@ export const categoryCards: CategoryCardData[] = [
     {
         slug: 'tools',
         label: 'Tools',
-        count: 63,
+        count: 65,
         representative: 'palette',
     },
     {
         slug: 'ui',
         label: 'UI',
-        count: 176,
+        count: 187,
         representative: 'cursor',
     },
     {
         slug: 'users',
         label: 'Users',
-        count: 22,
+        count: 26,
         representative: 'user',
     },
     {
         slug: 'video',
         label: 'Video',
-        count: 112,
+        count: 117,
         representative: 'play-circle',
     },
     {
         slug: 'weather',
         label: 'Weather',
-        count: 37,
+        count: 39,
         representative: 'sun',
     },
 ]

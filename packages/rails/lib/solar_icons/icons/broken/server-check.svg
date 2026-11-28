@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-server-check-broken"><path d="M13 21H6C4.1144 21 3.1716 21 2.5858 20.4142C2 19.8284 2 18.8856 2 17C2 15.1144 2 14.1716 2.5858 13.5858C3.1716 13 4.1144 13 6 13H18C19.8856 13 20.8284 13 21.4142 13.5858C21.6291 13.8007 21.7652 14.0636 21.8513 14.4035" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M11 2H18C19.8856 2 20.8284 2 21.4142 2.5858C22 3.1716 22 4.1144 22 6C22 7.8856 22 8.8284 21.4142 9.4142C20.8284 10 19.8856 10 18 10H6C4.1144 10 3.1716 10 2.5858 9.4142C2 8.8284 2 7.8856 2 6C2 4.1144 2 3.1716 2.5858 2.5858C3.1716 2 4.1144 2 6 2H7" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M11 6H18" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M6 6H8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M11 17H15.4024" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M6 17H8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M17.5 19.35L19.1 20.95L22 17.55" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>

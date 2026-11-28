@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-webcam-off-linear"><path d="M14.8715 9.12853C14.4981 7.89669 13.3538 7 12 7C10.3431 7 9 8.34315 9 10C9 11.3538 9.8967 12.4981 11.1285 12.8715" stroke-linecap="round" stroke="currentColor"/>
-<path d="M22 2L2 22" stroke-linecap="round" stroke="currentColor"/>
-<path d="M12 4.50098H12.0001" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
-<path d="M18.5246 5.47544C17.0618 3.3948 14.6512 2.02218 11.9354 2.00027C7.51731 1.96461 3.96461 5.51731 4.00027 9.93545C4.02218 12.6512 5.3948 15.0618 7.47545 16.5246" stroke-linecap="round" stroke="currentColor"/>
-<path d="M16 22H8" stroke-linecap="round" stroke="currentColor"/>
-<path d="M12 18.0031V22" stroke-linecap="round" stroke="currentColor"/>
-<path d="M9.6543 17.6507C10.3962 17.8779 11.1839 18.0002 12.0002 18.0002C16.4184 18.0002 20.0002 14.4184 20.0002 10.0002C20.0002 9.18388 19.8779 8.39616 19.6507 7.6543" stroke-linecap="round" stroke="currentColor"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="solar solar-webcam-off-linear"><path d="M12 4.50049H12.0001" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M16 22H8" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12 18.0029V21.9998" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M12.8715 12.8714C12.5957 12.955 12.3031 12.9999 12 12.9999C10.3431 12.9999 9 11.6568 9 9.99992C9 9.69682 9.0449 9.40422 9.1285 9.12842" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M10.7344 7.2791C11.1189 7.1 11.5476 7 11.9997 7C13.6566 7 14.9997 8.3431 14.9997 10C14.9997 10.4521 14.8997 10.8808 14.7206 11.2653" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M7.07422 3.61777C8.41552 2.58967 10.1012 1.98547 11.9362 2.00027C16.3544 2.03587 19.9649 5.64637 20.0005 10.0646C20.0153 11.8996 19.4111 13.5853 18.383 14.9266" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M16.6116 16.6118C15.3255 17.4997 13.7587 18.0136 12.0646 17.9999C7.64637 17.9643 4.03587 14.3538 4.00027 9.93557C3.98657 8.24157 4.50047 6.67467 5.38847 5.38867" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/>
+<path d="M2 2L22 22" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>
